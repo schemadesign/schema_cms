@@ -1,0 +1,38 @@
+version: '3.6'
+
+x-build-args: &build_args
+  INSTALL_PYTHON_VERSION: 3.7
+  INSTALL_NODE_VERSION: 12
+
+services:
+  backend:
+    build:
+      context: ""
+      target: development
+      args:
+        <<: *build_args
+    image: "gist-development"
+    ports:
+      - "5000:5000"
+      - "2992:2992"
+    env_file: .env
+    volumes:
+      - ./:/app
+      - node-modules:/app/node_modules
+    depends_on:
+      - db
+
+  db:
+    image: postgres:11.4
+    ports:
+      - "5432:5432"
+    env_file: .env
+    volumes:
+      - dev-db:/var/lib/postgresql/data
+
+volumes:
+  node-modules:
+  static-build:
+  dev-db:
+    external:
+      name: gist-db
