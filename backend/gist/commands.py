@@ -1,14 +1,61 @@
 # -*- coding: utf-8 -*-
 """Click commands."""
 import os
+import logging
 from glob import glob
 from subprocess import call
 
+from gist import extensions, app as app_module
+from gist.user import models as user_models
+
 import click
+
+logger = logging.getLogger(__name__)
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.join(HERE, os.pardir)
 TEST_PATH = os.path.join(PROJECT_ROOT, "tests")
+
+
+@click.command()
+@click.option(
+    "--email",
+    required=True,
+    help="Superuser email.",
+)
+@click.option(
+    '--password',
+    prompt=True,
+    confirmation_prompt=True,
+    hide_input=True,
+    required=True,
+    help="Superuser password.",
+)
+@click.option(
+    '-s',
+    '--silent',
+    default=True,
+    is_flag=True,
+)
+def createsuperuser(email, password, silent):
+    """Create superuser"""
+    app = app_module.create_app()
+    app.app_context().push()
+
+    if extensions.db.session.query(extensions.db.exists().where(user_models.User.email == email)).scalar():
+        logger.error('A user already exists!')
+        exit(0 if silent else 1)
+
+    user = user_models.User(
+        email=email,
+        is_admin=True,
+        name='Administrator',
+        auth0_id=None,
+    )
+    user.set_password(password)
+    extensions.db.session.add(user)
+    extensions.db.session.commit()
+    logger.info('User added.')
 
 
 @click.command()

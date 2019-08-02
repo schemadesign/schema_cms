@@ -3,17 +3,10 @@
 import logging
 import sys
 
-from flask import Flask, render_template
+from flask import Flask, jsonify
 
-from gist import commands, public, user
-from gist.extensions import (
-    bcrypt,
-    cache,
-    db,
-    login_manager,
-    migrate,
-    webpack,
-)
+from gist import commands, admin as admin_app, public, user
+from gist import extensions
 
 
 def create_app(config_object="gist.settings"):
@@ -29,23 +22,28 @@ def create_app(config_object="gist.settings"):
     register_shellcontext(app)
     register_commands(app)
     configure_logger(app)
+    configure_login(extensions.login_manager)
+    configure_admin(extensions.admin, extensions.db)
     return app
 
 
 def register_extensions(app):
     """Register Flask extensions."""
-    bcrypt.init_app(app)
-    cache.init_app(app)
-    db.init_app(app)
-    login_manager.init_app(app)
-    migrate.init_app(app, db)
-    webpack.init_app(app)
+    extensions.bcrypt.init_app(app)
+    extensions.cache.init_app(app)
+    extensions.db.init_app(app)
+    extensions.csrf_protect.init_app(app)
+    extensions.login_manager.init_app(app)
+    extensions.migrate.init_app(app, extensions.db)
+    extensions.webpack.init_app(app)
+    extensions.admin.init_app(app)
     return None
 
 
 def register_blueprints(app):
     """Register Flask blueprints."""
     app.register_blueprint(public.views.blueprint)
+    app.register_blueprint(admin_app.views.admin_login_blueprint)
     return None
 
 
@@ -56,11 +54,10 @@ def register_errorhandlers(app):
         """Render error template."""
         # If a HTTPException, pull the `code` attribute; default to 500
         error_code = getattr(error, "code", 500)
-        return render_template("{0}.html".format(error_code)), error_code
+        return jsonify({'error_code': error_code})
 
-    for errcode in [401, 404, 500]:
+    for errcode in [401, 403, 404, 500]:
         app.errorhandler(errcode)(render_error)
-    return None
 
 
 def register_shellcontext(app):
@@ -68,7 +65,11 @@ def register_shellcontext(app):
 
     def shell_context():
         """Shell context objects."""
-        return {"db": db, "User": user.models.User}
+        return {
+            "db": extensions.db,
+            "bcrypt": extensions.bcrypt,
+            "User": user.models.User
+        }
 
     app.shell_context_processor(shell_context)
 
@@ -77,6 +78,7 @@ def register_commands(app):
     """Register Click commands."""
     app.cli.add_command(commands.test)
     app.cli.add_command(commands.lint)
+    app.cli.add_command(commands.createsuperuser)
 
 
 def configure_logger(app):
@@ -84,3 +86,13 @@ def configure_logger(app):
     handler = logging.StreamHandler(sys.stdout)
     if not app.logger.handlers:
         app.logger.addHandler(handler)
+
+
+def configure_login(login_manager):
+    def load_user(user_id):
+        return user.models.User.get_by_id(user_id)
+    login_manager.user_loader(load_user)
+
+
+def configure_admin(admin, db):
+    admin_app.views.configure(admin, db)

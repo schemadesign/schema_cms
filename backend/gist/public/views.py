@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 """Public section"""
-from flask import Blueprint, jsonify
+from flask import Blueprint
 
-blueprint = Blueprint("public", __name__, static_folder="../static")
-
-
-@blueprint.route("/", methods=["GET"])
-def home():
-    return jsonify({'msg': 'OK'})
+blueprint = Blueprint("public", __name__)
