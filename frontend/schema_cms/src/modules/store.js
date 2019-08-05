@@ -1,10 +1,18 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import Immutable from 'seamless-immutable';
 import createSagaMiddleware from 'redux-saga';
+import { persistStore, persistCombineReducers } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
 import createReducer from './reducers';
 import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
+
+const persistConfig = {
+  key: 'root',
+  storage,
+};
 
 export default function configureStore(initialState = {}) {
   const middlewares = [sagaMiddleware];
@@ -27,14 +35,18 @@ export default function configureStore(initialState = {}) {
     ]);
   }
 
+  const persistedReducer = persistCombineReducers(persistConfig, createReducer());
+
   const store = createStore(
-    createReducer(),
+    persistedReducer,
     Immutable(initialState),
     compose(
       applyMiddleware(...middlewares),
       ...enhancers
     )
   );
+
+  const persistor = persistStore(store);
 
   sagaMiddleware.run(rootSaga);
 
@@ -47,5 +59,5 @@ export default function configureStore(initialState = {}) {
     });
   }
 
-  return store;
+  return { store, persistor };
 }
