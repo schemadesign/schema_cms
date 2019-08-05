@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 
 // Needed for redux-saga es6 generator support
 import '@babel/polyfill';
@@ -33,7 +34,7 @@ openSansObserver.load().then(
 // Optionally, this could be changed to leverage a created history
 // e.g. `const browserHistory = useRouterHistory(createBrowserHistory)();`
 const initialState = {};
-const store = configureStore(initialState);
+const { store, persistor } = configureStore(initialState);
 
 if (process.env.NODE_ENV === 'development') {
   if (!window.__REDUX_DEVTOOLS_EXTENSION__) {
@@ -56,9 +57,11 @@ const render = () => {
 
   ReactDOM.render(
     <Provider store={store}>
-      <Router history={browserHistory}>
-        <NextApp />
-      </Router>
+      <PersistGate loading={null} persistor={persistor}>
+        <Router history={browserHistory}>
+          <NextApp />
+        </Router>
+      </PersistGate>
     </Provider>,
     document.getElementById('app')
   );
