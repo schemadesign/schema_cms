@@ -14,7 +14,5 @@ exports[`Home: Component should render correctly 1`] = `
       values={Object {}}
     />
   </styled.h1>
-  <Styled(Component) />
-  <Connect(withRouter(LanguageSwitcher)) />
 </styled.div>
 `;

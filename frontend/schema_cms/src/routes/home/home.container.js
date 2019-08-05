@@ -7,11 +7,8 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'ramda';
 
 import { Home } from './home.component';
-import { selectLocalesLanguage } from '../../modules/locales';
 
-const mapStateToProps = createStructuredSelector({
-  language: selectLocalesLanguage,
-});
+const mapStateToProps = createStructuredSelector({});
 
 export const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 
