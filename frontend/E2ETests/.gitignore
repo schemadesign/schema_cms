@@ -1,5 +1,10 @@
 # Dependency directories
 node_modules/
 
-.DS_Store
-/frontend/.DS_Store
+# File with credentials
+creds.json
+
+# Folder with reports
+allure-results
+
+package-lock.json
