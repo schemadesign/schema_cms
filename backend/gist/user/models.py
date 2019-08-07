@@ -2,7 +2,8 @@
 """User models."""
 import datetime as dt
 
-from flask_login import UserMixin
+import flask_login
+import flask_jwt_extended
 
 from gist.database import (
     Column,
@@ -32,16 +33,16 @@ class Role(SurrogatePK, Model):
         return "<Role({name})>".format(name=self.name)
 
 
-class User(UserMixin, SurrogatePK, Model):
+class User(flask_login.UserMixin, SurrogatePK, Model):
     """A user of the app."""
 
     __tablename__ = "users"
-    auth0_id = Column(db.String(80), unique=True, nullable=True, default=None)
-    email = Column(db.String(80), nullable=False, default='')
+    email = Column(db.String(80), nullable=True, unique=True)
     password = Column(db.LargeBinary(128), nullable=True)  #: The hashed password
     name = Column(db.String(100), nullable=True)
     is_admin = Column(db.Boolean(), default=False)
     created_at = Column(db.DateTime, nullable=False, default=dt.datetime.utcnow)
+    auth = relationship("UserAuth", back_populates="user", cascade="delete")
 
     def __init__(self, password=None, **kwargs):
         """Create instance."""
@@ -51,6 +52,10 @@ class User(UserMixin, SurrogatePK, Model):
         else:
             self.password = None
 
+    @property
+    def jwt_identity(self):
+        return str(self.id)
+
     def set_password(self, password):
         """Set password."""
         self.password = bcrypt.generate_password_hash(password)
@@ -58,6 +63,19 @@ class User(UserMixin, SurrogatePK, Model):
     def check_password(self, value):
         """Check password."""
         return bcrypt.check_password_hash(self.password, value)
+
+    def create_access_token(self):
+        return flask_jwt_extended.create_access_token(identity=self.jwt_identity)
+
+    def create_refresh_token(self):
+        return flask_jwt_extended.create_refresh_token(identity=self.jwt_identity)
+
+    def create_tokens(self):
+        """Create access and refresh token for authorization"""
+        return {
+            "access_token": self.create_access_token(),
+            "refresh_token": self.create_refresh_token(),
+        }
 
     def __repr__(self):
         """Represent instance as a unique string."""

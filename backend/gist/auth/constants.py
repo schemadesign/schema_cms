@@ -1,0 +1,2 @@
+AUTH0_NAME = "auth0"
+UID_LENGTH = 255

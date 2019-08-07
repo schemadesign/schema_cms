@@ -8,6 +8,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_webpack import Webpack
 from flask_admin import Admin
 from flask_wtf.csrf import CSRFProtect
+from authlib.flask.client import OAuth
+from flask_jwt_extended import JWTManager
+from flask_restful import Api
 
 bcrypt = Bcrypt()
 csrf_protect = CSRFProtect()
@@ -17,3 +20,6 @@ migrate = Migrate()
 cache = Cache()
 webpack = Webpack()
 admin = Admin(name='Schema CMS', template_mode='bootstrap3')
+oauth = OAuth()
+api = Api()
+jwt = JWTManager()

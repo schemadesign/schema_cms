@@ -50,7 +50,6 @@ def createsuperuser(email, password, silent):
         email=email,
         is_admin=True,
         name='Administrator',
-        auth0_id=None,
     )
     user.set_password(password)
     extensions.db.session.add(user)

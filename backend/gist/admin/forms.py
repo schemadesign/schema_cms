@@ -25,9 +25,6 @@ class AdminLoginForm(FlaskForm):
             return False
 
         self.user = user_models.User.query.filter_by(email=self.email.data).first()
-        if not self.user.is_admin:
-            self.email.errors.append("Not authorized user")
-            return False
 
         if not self.user:
             self.email.errors.append("Unknown email")
@@ -35,5 +32,9 @@ class AdminLoginForm(FlaskForm):
 
         if not self.user.check_password(self.password.data):
             self.password.errors.append("Invalid password")
+            return False
+
+        if not self.user.is_admin:
+            self.email.errors.append("Not authorized user")
             return False
         return True

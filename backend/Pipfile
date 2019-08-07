@@ -28,13 +28,16 @@ Flask-Caching = ">=1.0.0"
 environs = "==5.2.0"
 # Admin
 flask-admin = "*"
+authlib = "*"
+flask-restful = "*"
+flask-jwt-extended = "*"
+passlib = "*"
 
 [dev-packages]
 # Testing
 pytest = "==5.0.1"
 WebTest = "==2.0.33"
 factory-boy = "==2.12.*"
-pdbpp = "==0.10.0"
 # Lint and code style
 black = "==19.3b0"
 flake8 = "==3.7.8"
@@ -45,3 +48,4 @@ pydocstyle = "<4" #temporary until flake8-docstrings is fixed
 flake8-isort = "==2.7.0"
 isort = "==4.3.21"
 pep8-naming = "==0.8.2"
+ipdb = "==0.12.2"

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Database module, including the SQLAlchemy database object and DB-related utilities."""
+import sqlalchemy.sql
+
 from .compat import basestring
 from .extensions import db
 
@@ -82,3 +84,19 @@ def reference_col(
         nullable=nullable,
         **column_kwargs
     )
+
+
+def get_or_create(session, model, defaults=None, **kwargs):
+    instance = session.query(model).filter_by(**kwargs).first()
+    if instance:
+        return instance, False
+    else:
+        params = dict((k, v) for k, v in kwargs.iteritems() if not isinstance(v, sqlalchemy.sql.ClauseElement))
+        params.update(defaults or {})
+        instance = model(**params)
+        session.add(instance)
+        return instance, True
+
+
+def exists(session, model, **kwargs):
+    return session.query(model.query.filter_by(kwargs).exists()).scalar()

@@ -4,8 +4,9 @@ import logging
 import sys
 
 from flask import Flask, jsonify
+import flask_jwt_extended
 
-from gist import commands, admin as admin_app, public, user
+from gist import (commands, admin as admin_app, auth, api, public, user as user_app)
 from gist import extensions
 
 
@@ -17,13 +18,12 @@ def create_app(config_object="gist.settings"):
     app = Flask(__name__.split(".")[0])
     app.config.from_object(config_object)
     register_extensions(app)
+    for configure_fn in (configure_logger, configure_login, configure_admin, configure_oauth, configure_api):
+        configure_fn(app)
     register_blueprints(app)
     register_errorhandlers(app)
     register_shellcontext(app)
     register_commands(app)
-    configure_logger(app)
-    configure_login(extensions.login_manager)
-    configure_admin(extensions.admin, extensions.db)
     return app
 
 
@@ -37,13 +37,18 @@ def register_extensions(app):
     extensions.migrate.init_app(app, extensions.db)
     extensions.webpack.init_app(app)
     extensions.admin.init_app(app)
+    extensions.oauth.init_app(app)
+    extensions.api.init_app(api.blueprints.default_blueprint)
+    extensions.jwt.init_app(app)
     return None
 
 
 def register_blueprints(app):
     """Register Flask blueprints."""
     app.register_blueprint(public.views.blueprint)
-    app.register_blueprint(admin_app.views.admin_login_blueprint)
+    app.register_blueprint(admin_app.blueprints.default_blueprint)
+    app.register_blueprint(auth.blueprints.default_blueprint, url_prefix='/auth')
+    app.register_blueprint(api.blueprints.default_blueprint, url_prefix='/api')
     return None
 
 
@@ -68,7 +73,7 @@ def register_shellcontext(app):
         return {
             "db": extensions.db,
             "bcrypt": extensions.bcrypt,
-            "User": user.models.User
+            "User": user_app.models.User
         }
 
     app.shell_context_processor(shell_context)
@@ -88,11 +93,30 @@ def configure_logger(app):
         app.logger.addHandler(handler)
 
 
-def configure_login(login_manager):
+def configure_login(app):
     def load_user(user_id):
-        return user.models.User.get_by_id(user_id)
-    login_manager.user_loader(load_user)
+        return user_app.models.User.get_by_id(user_id)
+
+    def load_user_from_request(request):
+        flask_jwt_extended.verify_jwt_in_request()
+        identity = flask_jwt_extended.get_jwt_identity()
+        if identity:
+            return user_app.models.User.get_by_id(identity)
+        return None
+    extensions.login_manager.user_loader(load_user)
+    extensions.login_manager.request_loader(load_user_from_request)
+    extensions.login_manager.blueprint_login_views = {
+        'admin': '/admin/login'
+    }
 
 
-def configure_admin(admin, db):
-    admin_app.views.configure(admin, db)
+def configure_admin(app):
+    admin_app.configure(extensions.admin, extensions.db)
+
+
+def configure_oauth(app):
+    auth.configure(app, extensions.oauth)
+
+
+def configure_api(app):
+    api.configure(extensions.api)
