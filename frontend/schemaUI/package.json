@@ -43,20 +43,6 @@
     "storybook": "start-storybook --config-dir './.storybook'",
     "build-storybook": "build-storybook"
   },
-  "babel": {
-    "presets": [
-      "@babel/env",
-      "@babel/react"
-    ],
-    "env": {
-      "test": {
-        "plugins": [
-          "transform-es2015-modules-commonjs",
-          "@babel/plugin-proposal-class-properties"
-        ]
-      }
-    }
-  },
   "jest": {
     "collectCoverageFrom": [
       "components/**/*.{js,jsx,ts,tsx}",
@@ -96,6 +82,11 @@
     "watchPlugins": [
       "/Users/danielcapeletti/schema_cms/frontend/schemaUI/node_modules/jest-watch-typeahead/filename.js",
       "/Users/danielcapeletti/schema_cms/frontend/schemaUI/node_modules/jest-watch-typeahead/testname.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "react-app"
     ]
   }
 }
