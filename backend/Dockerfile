@@ -1,28 +1,17 @@
-# ==================================== BASE ====================================
-ARG INSTALL_PYTHON_VERSION=${INSTALL_PYTHON_VERSION:-3.7}
-FROM python:${INSTALL_PYTHON_VERSION}-slim-stretch AS base
+FROM python:3.6
+ENV PYTHONUNBUFFERED 1
 
-RUN apt-get update
-RUN apt-get install -y \
-    curl
+# Allows docker to cache installed dependencies between builds
+COPY ./requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
-ARG INSTALL_NODE_VERSION=${INSTALL_NODE_VERSION:-12}
-RUN curl -sL https://deb.nodesource.com/setup_${INSTALL_NODE_VERSION}.x | bash -
-RUN apt-get install -y \
-    nodejs \
-    && apt-get -y autoclean
+# Adds our application code to the image
+COPY . code
+WORKDIR code
 
-WORKDIR /app
-COPY ["Pipfile", "shell_scripts", "./"]
-RUN pip install pipenv
+EXPOSE 8000
 
-COPY [ "assets", "package.json", "webpack.config.js", "./" ]
-RUN npm install --no-optional --no-shrinkwrap --no-package-lock
-
-# ================================= DEVELOPMENT ================================
-FROM base AS development
-RUN pipenv install --dev
-EXPOSE 2992
-EXPOSE 5000
-ENTRYPOINT [ "/app/shell_scripts/entrypoint.sh" ]
-CMD [ "pipenv", "run", "npm", "start" ]
+# Migrates the database, uploads staticfiles, and runs the production server
+CMD ./manage.py migrate && \
+    ./manage.py collectstatic --noinput && \
+    gunicorn --bind 0.0.0.0:$PORT --access-logfile - schemacms.wsgi:application
