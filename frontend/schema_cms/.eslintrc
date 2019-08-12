@@ -62,7 +62,8 @@
       "asyncArrow": "always"
     }],
     "import/newline-after-import": ["error", { "count": 1 }],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "import/no-unresolved": [2, { "ignore": ["schemaUI"] }]
   },
   "settings": {
     "import/core-modules": [
@@ -71,7 +72,8 @@
       "report-error",
       "json-server",
       "nock",
-      "inquirer-directory"
+      "inquirer-directory",
+      "schemaUI"
     ]
   }
 }

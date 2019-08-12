@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { Button } from 'schemaUI';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -17,7 +18,7 @@ export class Home extends PureComponent {
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-
+        <Button>Test</Button>
         <H1>
           <FormattedMessage {...messages.welcome} />
         </H1>

@@ -7,6 +7,6 @@ export class Button extends PureComponent {
   static propTypes = {};
 
   render() {
-    return <div style={containerStyles} >Button component</div>;
+    return <div style={containerStyles}>Button component</div>;
   }
 }
