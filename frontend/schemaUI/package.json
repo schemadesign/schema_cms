@@ -65,8 +65,7 @@
     "lint": "yarn run lint:js",
     "lint:js": "eslint .",
     "storybook": "start-storybook --config-dir './.storybook'",
-    "build-storybook": "build-storybook",
-    "transpile": "NODE_ENV=production babel components -d dist --copy-files"
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "collectCoverageFrom": [

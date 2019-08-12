@@ -4,6 +4,7 @@ exports[`Button: Component should render correctly 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "red",
       "border": "1px solid blue",
     }
   }
