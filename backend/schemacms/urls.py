@@ -11,11 +11,15 @@ router = DefaultRouter()
 router.register(r'users', user_views.UserViewSet)
 router.register(r'users', user_views.UserCreateViewSet)
 urlpatterns = [
+    urls.path(
+        'api/v1/', urls.include([
+            urls.path('auth/token', auth_views.obtain_jwt_token),
+            urls.path('auth/', urls.include('social_django.urls')),
+            urls.path('', urls.include(router.urls)),
+            urls.path('', urls.include('rest_framework.urls', namespace='rest_framework')),
+        ])
+    ),
     urls.path('admin/', admin.site.urls),
-    urls.path('api/v1/auth/token', auth_views.obtain_jwt_token),
-    urls.path('api/v1/', urls.include(router.urls)),
-    urls.path('api-auth/', urls.include('rest_framework.urls', namespace='rest_framework')),
-    urls.path('auth/', urls.include('social_django.urls')),
 
     # the 'api-root' from django rest-frameworks default router
     # http://www.django-rest-framework.org/api-guide/routers/#defaultrouter
