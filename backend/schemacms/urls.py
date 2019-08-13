@@ -5,7 +5,6 @@ from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 
 from .users import views as user_views
-from .authorization import views as auth_views
 
 router = DefaultRouter()
 router.register(r'users', user_views.UserViewSet)
@@ -13,7 +12,7 @@ router.register(r'users', user_views.UserCreateViewSet)
 urlpatterns = [
     urls.path(
         'api/v1/', urls.include([
-            urls.path('auth/token', auth_views.obtain_jwt_token),
+            urls.path('auth/', urls.include('schemacms.authorization.urls', namespace='authorization')),
             urls.path('auth/', urls.include('social_django.urls')),
             urls.path('', urls.include(router.urls)),
             urls.path('', urls.include('rest_framework.urls', namespace='rest_framework')),
