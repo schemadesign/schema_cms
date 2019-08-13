@@ -1,8 +1,8 @@
 site_name: schemacms
 site_description: ''
-repo_url: https://github.com/khanek/schemacms
+repo_url: https://github.com/schemadesign/schema_cms
 site_dir: site
-copyright: Copyright &copy; 2019, <a href="https://github.com/khanek">khanek</a>.
+copyright: Copyright &copy; 2019, <a href="https://github.com/schemadesign/schema_cms">Schema CMS</a>.
 dev_addr: 0.0.0.0:8001
 
 nav:

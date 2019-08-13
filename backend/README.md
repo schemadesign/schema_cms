@@ -1,6 +1,6 @@
 # schemacms
 
-''. Check out the project's [documentation](http://khanek.github.io/schemacms/).
+''. Check out the project's [documentation](https://github.com/schemadesign/schema_cms).
 
 # Prerequisites
 
