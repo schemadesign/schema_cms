@@ -104,8 +104,8 @@
       "node"
     ],
     "watchPlugins": [
-      "/Users/danielcapeletti/schema_cms/frontend/schemaUI/node_modules/jest-watch-typeahead/filename.js",
-      "/Users/danielcapeletti/schema_cms/frontend/schemaUI/node_modules/jest-watch-typeahead/testname.js"
+      "./node_modules/jest-watch-typeahead/filename.js",
+      "./node_modules/jest-watch-typeahead/testname.js"
     ]
   },
   "babel": {
