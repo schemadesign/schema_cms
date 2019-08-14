@@ -4,13 +4,13 @@ services:
   db:
     image: postgres:9.6
     env_file:
-      - .env
+      - local.env
     volumes:
       - dev-db:/var/lib/postgresql/data
   backend:
     restart: always
     env_file:
-      - .env
+      - local.env
     image: schemacms_backend
     build: ./
     command: >
