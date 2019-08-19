@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card: Component should render children when passed in 1`] = `
+<div
+  style={
+    Object {
+      "background-color": "#f0efef",
+      "border-top": "2px solid #1d1d20",
+      "color": "#1d1d20",
+      "padding": "12px 14px 14px 14px",
+    }
+  }
+>
+  <div>
+    <h1>
+      Test
+    </h1>
+    <p>
+      Content
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card: Component should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "background-color": "#f0efef",
+      "border-top": "2px solid #1d1d20",
+      "color": "#1d1d20",
+      "padding": "12px 14px 14px 14px",
+    }
+  }
+/>
+`;
