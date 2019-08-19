@@ -2,7 +2,7 @@ import {theme} from '../../utils/theme';
 
 const {primary} = theme;
 
-export const containerStyles = {
+export const containerStyle = {
   'border-top': `2px solid ${primary.border}`,
   'background-color': primary.background,
   color: primary.text,
@@ -12,7 +12,7 @@ export const containerStyles = {
 
 };
 
-export const headerStyles = {
+export const headerStyle = {
   'margin-bottom': '14px',
   color: primary.label,
   'font-size': '12px'

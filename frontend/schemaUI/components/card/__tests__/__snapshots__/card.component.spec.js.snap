@@ -45,7 +45,7 @@ exports[`Card: Component should render header with custom styles 1`] = `
     Object {
       "background-color": "#f0efef",
       "border-top": "2px solid #1d1d20",
-      "color": "blue",
+      "color": "#1d1d20",
       "display": "flex",
       "flex-direction": "column",
       "padding": "12px 14px 14px",
@@ -55,13 +55,15 @@ exports[`Card: Component should render header with custom styles 1`] = `
   <div
     style={
       Object {
-        "color": "red",
+        "color": "#a6a7aa",
         "font-size": "12px",
         "margin-bottom": "14px",
       }
     }
   >
-    <h1>
+    <h1
+      style="color: red"
+    >
       header
     </h1>
   </div>
