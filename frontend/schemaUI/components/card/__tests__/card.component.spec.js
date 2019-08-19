@@ -28,4 +28,20 @@ describe('Card: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render header with custom styles', () => {
+    const header = (<h1>header</h1>);
+    const headerStyles = {color: 'red'};
+    const componentStyles = {color: 'blue'};
+
+    const wrapper = shallow((
+      <Card headerComponent={header} headerStyles={headerStyles} componentStyles={componentStyles}>
+        <div>
+          <p>Content</p>
+        </div>
+      </Card>
+    ));
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

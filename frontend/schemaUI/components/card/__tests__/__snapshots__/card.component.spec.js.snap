@@ -7,7 +7,9 @@ exports[`Card: Component should render children when passed in 1`] = `
       "background-color": "#f0efef",
       "border-top": "2px solid #1d1d20",
       "color": "#1d1d20",
-      "padding": "12px 14px 14px 14px",
+      "display": "flex",
+      "flex-direction": "column",
+      "padding": "12px 14px 14px",
     }
   }
 >
@@ -29,8 +31,44 @@ exports[`Card: Component should render correctly 1`] = `
       "background-color": "#f0efef",
       "border-top": "2px solid #1d1d20",
       "color": "#1d1d20",
-      "padding": "12px 14px 14px 14px",
+      "display": "flex",
+      "flex-direction": "column",
+      "padding": "12px 14px 14px",
     }
   }
 />
+`;
+
+exports[`Card: Component should render header with custom styles 1`] = `
+<div
+  style={
+    Object {
+      "background-color": "#f0efef",
+      "border-top": "2px solid #1d1d20",
+      "color": "blue",
+      "display": "flex",
+      "flex-direction": "column",
+      "padding": "12px 14px 14px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "color": "red",
+        "font-size": "12px",
+        "margin-bottom": "14px",
+      }
+    }
+  >
+    <h1>
+      header
+    </h1>
+  </div>
+  <div>
+    <p>
+      Content
+    </p>
+  </div>
+</div>
 `;
