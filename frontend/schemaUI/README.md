@@ -14,6 +14,9 @@ Until we have it released to NPM, we are going to use `npm link`. If not already
 simply run `npm link` command and wait for indexing.
 In `Schema CMS project` run `npm link schemaUI` to make the module available.
 
+Obs. In order to make the components available you have to run `yarn build`.
+Otherwise Schema CMS will throw an error that webpack couldn't resolve `schemaUI` path.
+
 
 ## Creating Components with Plop
 
