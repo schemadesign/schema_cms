@@ -4,8 +4,8 @@ import Immutable from 'seamless-immutable';
 
 export const { Types: UserAuthTypes, Creators: UserAuthActions } = createActions(
   {
-    userDetailsFetchSuccess: ['data'],
-    userDetailsFetchError: null,
+    fetchUserDetailsSuccess: ['data'],
+    fetchUserDetailsError: null,
     logout: null,
     logoutSuccess: null,
   },
@@ -13,8 +13,9 @@ export const { Types: UserAuthTypes, Creators: UserAuthActions } = createActions
 );
 
 export const UserAuthRoutines = {
+  fetchUserDetails: createRoutine(`${prefix}_FETCH_USER_DETAILS`),
   resetPassword: createRoutine(`${prefix}RESET_PASSWORD`),
-  resendVerificationEmail: createRoutine(`${prefix}RESEND_VERIFICATION_EMAIL`),x
+  resendVerificationEmail: createRoutine(`${prefix}RESEND_VERIFICATION_EMAIL`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -24,15 +25,17 @@ export const INITIAL_STATE = new Immutable({
   isPractice: false,
 });
 
-const fetchUserSuccess = state => state.set('isAuthenticated', true).set('isFetched', true);
+const fetchUserSuccess = (state = INITIAL_STATE, { data }) => state.set('isAuthenticated', true)
+  .set('isFetched', true)
+  .set('user', data);
 
 const fetchUserFailure = state => state.set('isAuthenticated', false).set('isFetched', true);
 
 const logoutSuccess = state => state.set('isAuthenticated', false).set('isFetched', true);
 
 const HANDLERS = {
-  [UserAuthTypes.USER_DETAILS_FETCH_SUCCESS]: fetchUserSuccess,
-  [UserAuthTypes.USER_DETAILS_FETCH_ERROR]: fetchUserFailure,
+  [UserAuthTypes.FETCH_USER_DETAILS_SUCCESS]: fetchUserSuccess,
+  [UserAuthTypes.FETCH_USER_DETAILS_ERROR]: fetchUserFailure,
   [UserAuthTypes.LOGOUT_SUCCESS]: logoutSuccess,
 };
 
