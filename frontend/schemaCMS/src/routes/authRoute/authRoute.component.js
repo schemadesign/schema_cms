@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect, Route } from 'react-router-dom';
+import { AUTH_PATH } from '../../shared/utils/api.constants';
 
 class ExternalRedirect extends PureComponent {
   static propTypes = {
@@ -60,6 +61,6 @@ export class AuthRoute extends PureComponent {
     /**
      * Redirect to register by default
      */
-    return <ExternalRedirect to="/api/login/auth0/" />;
+    return <ExternalRedirect to={AUTH_PATH} />;
   }
 }

@@ -1,9 +1,8 @@
-import { all, put, takeEvery, takeLatest, select } from 'redux-saga/effects';
+import { all, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 
 import { UserAuthTypes, UserAuthActions, UserAuthRoutines } from './userAuth.redux';
-import { selectIsAuthenticated } from './userAuth.selectors';
 import { StartupTypes } from '../startup/startup.redux';
 import { AUTH_PATH, TOKEN_PATH, USER_PATH } from '../../shared/utils/api.constants';
 
@@ -17,25 +16,28 @@ function* redirectExternal(path) {
   window.location.href = path;
 }
 
+function* getJwtToken({ uid, token }) {
+  const { JWT } = yield api.post(TOKEN_PATH, {
+    uid,
+    token,
+  });
+
+  yield setAuthorizationToken(JWT);
+}
+
+function* fetchUserDetails() {
+  yield put(UserAuthRoutines.fetchUserDetails.request());
+
+  const { data } = yield api.get(USER_PATH);
+
+  yield put(UserAuthRoutines.fetchUserDetails.success(data));
+}
+
 function* startup() {
   try {
-    yield put(UserAuthRoutines.fetchUserDetails.request());
-    const isAuthenticated = yield select(selectIsAuthenticated);
-
-    if (!isAuthenticated) {
-      yield put(UserAuthRoutines.fetchUserDetails.failure());
-      return yield redirectExternal(AUTH_PATH);
-    }
-
-    const { JWT } = yield api.get(TOKEN_PATH);
-    yield setAuthorizationToken(JWT);
-
-    const { data } = yield api.get(USER_PATH);
-
-    yield put(UserAuthRoutines.fetchUserDetails.success(data));
+    yield fetchUserDetails();
   } catch (error) {
-    yield put(UserAuthRoutines.fetchUserDetails.failure());
-    yield redirectExternal(AUTH_PATH);
+    yield redirectExternal(`${AUTH_PATH}?next=http://localhost:3000/jwt/`);
   }
 }
 
@@ -81,5 +83,6 @@ export function* watchUserAuth() {
     takeEvery(UserAuthRoutines.resetPassword.TRIGGER, resetPassword),
     takeEvery(UserAuthRoutines.resendVerificationEmail.TRIGGER, resendVerificationEmail),
     takeLatest(StartupTypes.STARTUP, startup),
+    takeLatest(UserAuthTypes.GET_JWT_TOKEN, getJwtToken),
   ]);
 }

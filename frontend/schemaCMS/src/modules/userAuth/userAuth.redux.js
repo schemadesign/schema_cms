@@ -8,6 +8,7 @@ export const { Types: UserAuthTypes, Creators: UserAuthActions } = createActions
   {
     fetchUserDetailsSuccess: ['data'],
     fetchUserDetailsError: null,
+    getJwtToken: ['uid, token'],
     logout: null,
     logoutSuccess: null,
   },
