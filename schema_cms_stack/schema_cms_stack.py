@@ -17,6 +17,7 @@ class BaseResources(core.Stack):
             self,
             'db',
             master_username='root',
+            database_name='gistdb',
             engine=aws_rds.DatabaseInstanceEngine.POSTGRES,
             storage_encrypted=True,
             allocated_storage=50,
@@ -44,6 +45,7 @@ class Workers(core.Stack):
             logging=aws_ecs.AwsLogDriver(stream_prefix='worker-container'),
             environment={
                 'DB_SECRET_ARN': scope.base.db.secret.secret_arn,
+                'POSTGRES_DB': 'gistdb'
             }
         )
 

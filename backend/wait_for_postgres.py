@@ -2,14 +2,25 @@ import os
 import logging
 from time import time, sleep
 import psycopg2
+import boto3
+import json
+
+secrets_manager = boto3.client('secretsmanager', endpoint_url=os.environ.get('SECRET_MANAGER_ENDPOINT_URL', None))
+
+db_secret_arn = os.environ['DB_SECRET_ARN']
+
+db_secret_value = secrets_manager.get_secret_value(SecretId=db_secret_arn)
+# contains host, username, password and port
+db_connection_config = json.loads(db_secret_value.get('SecretString'))
+
 check_timeout = os.getenv("POSTGRES_CHECK_TIMEOUT", 30)
 check_interval = os.getenv("POSTGRES_CHECK_INTERVAL", 1)
 interval_unit = "second" if check_interval == 1 else "seconds"
 config = {
     "dbname": os.getenv("POSTGRES_DB", "postgres"),
-    "user": os.getenv("POSTGRES_USER", "postgres"),
-    "password": os.getenv("POSTGRES_PASSWORD", ""),
-    "host": os.getenv("POSTGRES_HOST", "postgres")
+    "user": db_connection_config.get('username'),
+    "password": db_connection_config.get('password'),
+    "host": db_connection_config.get('host'),
 }
 
 start_time = time()

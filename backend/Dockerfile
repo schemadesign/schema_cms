@@ -1,6 +1,10 @@
 FROM python:3.7.0a2-alpine3.6
 ENV PYTHONUNBUFFERED 1
 
+RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+
+RUN pip install psycopg2-binary
+
 RUN pip install awscli
 
 # Allows docker to cache installed dependencies between builds

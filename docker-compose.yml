@@ -55,7 +55,8 @@ services:
 
   documentation:
     restart: always
-    build: ./
+    build:
+      context: ./backend
     command: "mkdocs serve"
     volumes:
     - ./backend:/app
