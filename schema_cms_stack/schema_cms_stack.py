@@ -41,7 +41,7 @@ class Workers(core.Stack):
 
         self.worker_container = self.worker_task_definition.add_container(
             'worker',
-            image=aws_ecs.ContainerImage.from_asset('task_image'),
+            image=aws_ecs.ContainerImage.from_asset('backend/worker'),
             logging=aws_ecs.AwsLogDriver(stream_prefix='worker-container'),
             environment={
                 'DB_SECRET_ARN': scope.base.db.secret.secret_arn,
@@ -53,7 +53,7 @@ class Workers(core.Stack):
         self.worker_lambda = aws_lambda.Function(
             self,
             'worker-lambda',
-            code=aws_lambda.AssetCode('functions/worker'),
+            code=aws_lambda.AssetCode('backend/functions/worker'),
             handler='handlers.handle_queue_event',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             environment={
@@ -100,7 +100,7 @@ class API(core.Stack):
             self,
             'api-service',
             cluster=scope.base.cluster,
-            image=aws_ecs.ContainerImage.from_asset('backend'),
+            image=aws_ecs.ContainerImage.from_asset('backend/app'),
             desired_count=1,
             cpu=256,
             memory_limit_mib=512,
@@ -125,7 +125,7 @@ class PublicAPI(core.Stack):
         self.publicApiLambda = aws_lambda.Function(
             self,
             'public-api-lambda',
-            code=aws_lambda.AssetCode('functions/public_api'),
+            code=aws_lambda.AssetCode('backend/functions/public_api'),
             handler='handlers.handle',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             vpc=scope.base.vpc,

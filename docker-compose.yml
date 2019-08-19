@@ -30,14 +30,14 @@ services:
     volumes:
       - "/tmp/localstack:/tmp"
       - "/var/run/docker.sock:/var/run/docker.sock"
-      - "./functions:/app/functions"
+      - "./backend/functions:/app/functions"
 
   backend:
     image: schema_cms_backend
     build:
       context: backend
     volumes:
-      - ./backend:/app
+      - ./backend/app:/app
     ports:
       - "8000:8000"
     depends_on:
@@ -56,10 +56,10 @@ services:
   documentation:
     restart: always
     build:
-      context: ./backend
+      context: ./backend/app
     command: "mkdocs serve"
     volumes:
-    - ./backend:/app
+    - ./backend/app:/app
     ports:
     - "8001:8001"
 
