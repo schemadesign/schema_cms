@@ -9,11 +9,10 @@ export const containerStyle = {
   padding: '12px 14px 14px',
   display: 'flex',
   'flex-direction': 'column',
-
 };
 
 export const headerStyle = {
   'margin-bottom': '14px',
   color: primary.label,
-  'font-size': '12px'
+  'font-size': '12px',
 };
