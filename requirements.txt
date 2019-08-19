@@ -1,9 +1,1 @@
-aws-cdk.aws-apigateway==1.4.0
-aws-cdk.aws-ec2==1.4.0
-aws-cdk.aws-ecs==1.4.0
-aws-cdk.aws-ecs-patterns==1.4.0
-aws-cdk.aws-iam==1.4.0
-aws-cdk.aws-lambda==1.4.0
-aws-cdk.aws-rds==1.4.0
-aws-cdk.aws-sqs==1.4.0
-aws-cdk.core==1.4.0
+-e .

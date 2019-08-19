@@ -9,7 +9,7 @@ setuptools.setup(
     name="schema_cms_stack",
     version="0.0.1",
 
-    description="An empty CDK Python app",
+    description="Schema CMS",
     long_description=long_description,
     long_description_content_type="text/markdown",
 
@@ -20,6 +20,14 @@ setuptools.setup(
 
     install_requires=[
         "aws-cdk.core",
+        "aws-cdk.aws-apigateway",
+        "aws-cdk.aws-ec2",
+        "aws-cdk.aws-ecs",
+        "aws-cdk.aws-ecs-patterns",
+        "aws-cdk.aws-iam",
+        "aws-cdk.aws-lambda",
+        "aws-cdk.aws-rds",
+        "aws-cdk.aws-sqs",
     ],
 
     python_requires=">=3.6",
