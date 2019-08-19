@@ -3,15 +3,24 @@ import Immutable from 'seamless-immutable';
 import createSagaMiddleware from 'redux-saga';
 import { persistStore, persistCombineReducers } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { seamlessImmutableReconciler, seamlessImmutableTransformCreator } from 'redux-persist-seamless-immutable';
 
 import createReducer from './reducers';
 import rootSaga from './sagas';
 
+const transformerConfig = {
+  whitelistPerReducer: {
+    userAuth: ['isAuthenticated', 'user'],
+  },
+};
+
 const sagaMiddleware = createSagaMiddleware();
 
 const persistConfig = {
-  key: 'root',
+  key: 'schemaCMS',
   storage,
+  stateReconciler: seamlessImmutableReconciler,
+  transforms: [seamlessImmutableTransformCreator(transformerConfig)],
 };
 
 export default function configureStore(initialState = {}) {

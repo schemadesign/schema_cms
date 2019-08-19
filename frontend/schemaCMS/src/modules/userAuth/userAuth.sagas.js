@@ -1,18 +1,18 @@
 import { all, put, takeEvery, takeLatest, select } from 'redux-saga/effects';
-import browserHistory from '../../shared/utils/history'
+import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 
 import { UserAuthTypes, UserAuthActions, UserAuthRoutines } from './userAuth.redux';
-import { selectUser } from './userAuth.selectors';
-import { StartupTypes } from './startup.redux';
+import { selectIsAuthenticated } from './userAuth.selectors';
+import { StartupTypes } from '../startup/startup.redux';
 
 function* startup() {
   yield put(UserAuthRoutines.fetchUserDetails.request());
-  const user = yield select(selectUser);
+  const isAuthenticated = yield select(selectIsAuthenticated);
 
-  if (!user) {
+  if (!isAuthenticated) {
     yield put(UserAuthRoutines.fetchUserDetails.failure());
-    return yield history.push('/auth/login/auth0');
+    return yield browserHistory.push('/auth/login/auth0');
   }
 
   const { data } = yield api.get('/user/');

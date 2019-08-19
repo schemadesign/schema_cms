@@ -10,5 +10,4 @@ export const { Types: AppConfigTypes, Creators: AppConfigActions } = createActio
 
 export const INITIAL_STATE = new Immutable({});
 
-export const reducer = createReducer(INITIAL_STATE, {
-});
+export const reducer = createReducer(INITIAL_STATE, {});

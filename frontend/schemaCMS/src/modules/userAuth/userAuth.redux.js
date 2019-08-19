@@ -2,6 +2,8 @@ import { createActions, createReducer } from 'reduxsauce';
 import { createRoutine } from 'redux-saga-routines';
 import Immutable from 'seamless-immutable';
 
+const prefix = 'USER_AUTH/';
+
 export const { Types: UserAuthTypes, Creators: UserAuthActions } = createActions(
   {
     fetchUserDetailsSuccess: ['data'],
@@ -9,7 +11,7 @@ export const { Types: UserAuthTypes, Creators: UserAuthActions } = createActions
     logout: null,
     logoutSuccess: null,
   },
-  { prefix: 'USER_AUTH/' }
+  { prefix: prefix }
 );
 
 export const UserAuthRoutines = {
@@ -25,9 +27,11 @@ export const INITIAL_STATE = new Immutable({
   isPractice: false,
 });
 
-const fetchUserSuccess = (state = INITIAL_STATE, { data }) => state.set('isAuthenticated', true)
-  .set('isFetched', true)
-  .set('user', data);
+const fetchUserSuccess = (state = INITIAL_STATE, { data }) =>
+  state
+    .set('isAuthenticated', true)
+    .set('isFetched', true)
+    .set('user', data);
 
 const fetchUserFailure = state => state.set('isAuthenticated', false).set('isFetched', true);
 
