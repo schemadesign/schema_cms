@@ -29,12 +29,12 @@ describe('Card: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render header with custom styles', () => {
+  it('should render component  with custom style and with header', () => {
     const header = (<h1 style='color: red'>header</h1>);
-    const styles = {color: 'blue'};
+    const style = {color: 'blue'};
 
     const wrapper = shallow((
-      <Card styles={styles} headerComponent={header}>
+      <Card style={style} headerComponent={header}>
         <div>
           <p>Content</p>
         </div>
