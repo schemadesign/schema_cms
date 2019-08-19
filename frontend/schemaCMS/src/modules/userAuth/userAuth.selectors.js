@@ -5,10 +5,15 @@ export const selectUserAuthDomain = prop('userAuth');
 
 export const selectUser = createSelector(
   selectUserAuthDomain,
-  state => state.get('user')
+  prop('user')
 );
 
 export const selectIsAuthenticated = createSelector(
   selectUserAuthDomain,
   prop('isAuthenticated')
+);
+
+export const selectIsFetched = createSelector(
+  selectUserAuthDomain,
+  prop('isUserFetched')
 );

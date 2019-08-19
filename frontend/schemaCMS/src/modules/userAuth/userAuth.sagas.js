@@ -5,19 +5,38 @@ import api from '../../shared/services/api';
 import { UserAuthTypes, UserAuthActions, UserAuthRoutines } from './userAuth.redux';
 import { selectIsAuthenticated } from './userAuth.selectors';
 import { StartupTypes } from '../startup/startup.redux';
+import { AUTH_PATH, TOKEN_PATH, USER_PATH } from '../../shared/utils/api.constants';
+
+function* setAuthorizationToken(token) {
+  if (token) {
+    api.defaults.headers.common['X-Authorization'] = `JWT ${token}`;
+  }
+}
+
+function* redirectExternal(path) {
+  window.location.href = path;
+}
 
 function* startup() {
-  yield put(UserAuthRoutines.fetchUserDetails.request());
-  const isAuthenticated = yield select(selectIsAuthenticated);
+  try {
+    yield put(UserAuthRoutines.fetchUserDetails.request());
+    const isAuthenticated = yield select(selectIsAuthenticated);
 
-  if (!isAuthenticated) {
+    if (!isAuthenticated) {
+      yield put(UserAuthRoutines.fetchUserDetails.failure());
+      return yield redirectExternal(AUTH_PATH);
+    }
+
+    const { JWT } = yield api.get(TOKEN_PATH);
+    yield setAuthorizationToken(JWT);
+
+    const { data } = yield api.get(USER_PATH);
+
+    yield put(UserAuthRoutines.fetchUserDetails.success(data));
+  } catch (error) {
     yield put(UserAuthRoutines.fetchUserDetails.failure());
-    return yield browserHistory.push('/auth/login/auth0');
+    yield redirectExternal(AUTH_PATH);
   }
-
-  const { data } = yield api.get('/user/');
-
-  yield put(UserAuthRoutines.fetchUserDetails.success(data));
 }
 
 function* logout() {

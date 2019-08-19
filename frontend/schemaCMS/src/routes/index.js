@@ -1,50 +1,34 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Route, Switch } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 
+import browserHistory from '../shared/utils/history';
 import App from './app.container';
-import { DEFAULT_LOCALE, appLocales, translationMessages } from '../i18n';
+import AuthRoute from './authRoute/authRoute.container';
+import { DEFAULT_LOCALE, translationMessages } from '../i18n';
 import { Home } from './home';
 import { NotFound } from './notFound';
+import { AUTH_PATH } from '../shared/utils/api.constants';
 
 export const ROUTES = {
-  home: '/',
-  notFound: '/404',
+  HOME: '/',
+  NOT_FOUND: '/404',
 };
-
-class MatchedLanguageComponent extends Component {
-  static propTypes = {
-    match: PropTypes.object.isRequired,
-  };
-
-  render() {
-    const { match } = this.props;
-
-    return (
-      <App>
-        <Switch>
-          <Route exact path={`${match.path}${ROUTES.home}`} component={Home} />
-
-          <Route component={NotFound} />
-        </Switch>
-      </App>
-    );
-  }
-}
 
 export default class RootContainer extends Component {
   render() {
     return (
-      <Switch>
-        <Route exact path="/" render={() => <Redirect to={DEFAULT_LOCALE} />} />
+      <App>
+        <Switch>
+          <AuthRoute exact path={ROUTES.HOME} component={Home} />
 
-        <Route path={`/:lang(${appLocales.join('|')})`} component={MatchedLanguageComponent} />
+          <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
-        <IntlProvider locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
-          <Route component={NotFound} />
-        </IntlProvider>
-      </Switch>
+          <IntlProvider locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
+            <Route component={NotFound} />
+          </IntlProvider>
+        </Switch>
+      </App>
     );
   }
 }
