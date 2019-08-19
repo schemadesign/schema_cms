@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9.6.8
+    ports:
+    - "5432:5432"
+    volumes:
+    - schema_cms_db_data:/var/lib/postgresql/data
+    env_file: local.env
+
+  localstack:
+    image: localstack/localstack:0.10.2
+    ports:
+      - "4567-4584:4567-4584"
+      - "${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}"
+    environment:
+      - SERVICES=sqs,secretsmanager,lambda,apigateway,cloudformation
+      - DEBUG=${DEBUG- }
+      - DATA_DIR=${DATA_DIR- }
+      - PORT_WEB_UI=${PORT_WEB_UI- }
+      - LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR- }
+      - LAMBDA_REMOTE_DOCKER=false
+      - KINESIS_ERROR_PROBABILITY=${KINESIS_ERROR_PROBABILITY- }
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - AWS_EXECUTION_ENV=True
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=foo
+      - AWS_SECRET_ACCESS_KEY=bar
+    volumes:
+      - "/tmp/localstack:/tmp"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./functions:/app/functions"
+
+  backend:
+    image: schema_cms_backend
+    build:
+      context: backend
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - localstack
+      - mailcatcher
+    restart: on-failure
+    env_file: local.env
+    command: sh ./scripts/run_dev.sh
+
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+    - 1080:1080
+
+  documentation:
+    restart: always
+    build: ./
+    command: "mkdocs serve"
+    volumes:
+    - ./backend:/app
+    ports:
+    - "8001:8001"
+
+volumes:
+  schema_cms_db_data:
+    external: true
