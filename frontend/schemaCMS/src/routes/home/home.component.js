@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Button } from 'schemaUI';
+import { Button, Card } from 'schemaUI';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -22,6 +22,9 @@ export class Home extends PureComponent {
         <H1>
           <FormattedMessage {...messages.welcome} />
         </H1>
+        <Card>
+          <span>Content</span>
+        </Card>
       </Container>
     );
   }
