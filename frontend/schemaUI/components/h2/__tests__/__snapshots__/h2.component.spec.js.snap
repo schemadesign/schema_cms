@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`H2: Component should render children when passed in 1`] = `
+<h2
+  style={
+    Object {
+      "fontFamily": "Inter-BETA, Arial, Helvetica, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": 200,
+    }
+  }
+>
+  Super title
+</h2>
+`;
+
+exports[`H2: Component should render correctly 1`] = `
+<h2
+  style={
+    Object {
+      "fontFamily": "Inter-BETA, Arial, Helvetica, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": 200,
+    }
+  }
+/>
+`;
+
+exports[`H2: Component should render with custom styles 1`] = `
+<h2
+  style={
+    Object {
+      "color": "blue",
+      "fontFamily": "Inter-BETA, Arial, Helvetica, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": 200,
+    }
+  }
+>
+  Blue title
+</h2>
+`;
