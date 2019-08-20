@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card: Component should render children when passed in 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#f0efef",
+      "borderTop": "2px solid #1d1d20",
+      "color": "#1d1d20",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "12px 14px 14px",
+    }
+  }
+>
+  <div>
+    <h1>
+      Test
+    </h1>
+    <p>
+      Content
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card: Component should render component  with custom style and with header 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#f0efef",
+      "borderTop": "2px solid #1d1d20",
+      "color": "blue",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "12px 14px 14px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "color": "#a6a7aa",
+        "fontSize": "12px",
+        "marginBottom": "14px",
+      }
+    }
+  >
+    <h1
+      style="color: red"
+    >
+      header
+    </h1>
+  </div>
+  <div>
+    <p>
+      Content
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card: Component should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#f0efef",
+      "borderTop": "2px solid #1d1d20",
+      "color": "#1d1d20",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "12px 14px 14px",
+    }
+  }
+/>
+`;
