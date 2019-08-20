@@ -9,7 +9,7 @@ storiesOf('H1', module).add('Default', () => (
   </H1>
 ));
 
-const defaultProps = {
+const withStylesProps = {
   customStyles: {
     color: 'red',
     textDecoration: 'underline',
@@ -19,7 +19,7 @@ const defaultProps = {
 };
 
 storiesOf('H1', module).add('with styles', () => (
-  <H1 {...defaultProps} >
+  <H1 {...withStylesProps} >
     Some title
   </H1>
 ));

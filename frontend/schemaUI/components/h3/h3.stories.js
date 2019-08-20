@@ -9,7 +9,7 @@ storiesOf('H3', module).add('Default', () => (
   </H3>
 ));
 
-const defaultProps = {
+const withStylesProps = {
   customStyles: {
     color: 'blue',
     fontStyle: 'italic',
@@ -18,7 +18,7 @@ const defaultProps = {
 };
 
 storiesOf('H3', module).add('with styles', () => (
-  <H3 {...defaultProps} >
+  <H3 {...withStylesProps} >
     This title has got custom styles
   </H3>
 ));
