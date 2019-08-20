@@ -1,11 +1,13 @@
-from aws_cdk import core, aws_ec2, aws_sqs, aws_apigateway, aws_lambda, aws_ecs, aws_iam, aws_ecs_patterns, aws_rds
+from aws_cdk import core, aws_ec2, aws_sqs, aws_apigateway, aws_lambda, aws_ecs, aws_iam, aws_ecs_patterns, aws_rds,\
+    aws_secretsmanager
+
+DB_NAME = 'gistdb'
 
 
 class BaseResources(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        # self.registry = aws_ecr.Repository(self, 'images')
         self.vpc = aws_ec2.Vpc(self, 'vpc', nat_gateways=1)
         self.cluster = aws_ecs.Cluster(
             self,
@@ -17,12 +19,14 @@ class BaseResources(core.Stack):
             self,
             'db',
             master_username='root',
-            database_name='gistdb',
+            database_name=DB_NAME,
             engine=aws_rds.DatabaseInstanceEngine.POSTGRES,
             storage_encrypted=True,
             allocated_storage=50,
             instance_class=aws_ec2.InstanceType.of(aws_ec2.InstanceClass.BURSTABLE2, aws_ec2.InstanceSize.SMALL),
             vpc=self.vpc,
+            # deletion_protection=False,
+            # delete_automated_backups=True,
         )
         self.db_secret_rotation = self.db.add_rotation_single_user('db-rotation')
 
@@ -96,6 +100,8 @@ class API(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
+        self.djangoSecret = aws_secretsmanager.Secret(self, 'django-secret')
+        django_secret_key = aws_ecs.Secret.from_secrets_manager(self.djangoSecret)
         self.api = aws_ecs_patterns.LoadBalancedFargateService(
             self,
             'api-service',
@@ -109,13 +115,19 @@ class API(core.Stack):
             environment={
                 'SQS_QUEUE_URL': scope.workers.worker_queue.queue_url,
                 'DB_SECRET_ARN': scope.base.db.secret.secret_arn,
+                'POSTGRES_DB': DB_NAME,
             },
-            container_port=5000,
+            container_port=8000,
+            secrets={
+                'DJANGO_SECRET_KEY': django_secret_key,
+            }
         )
+        self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
 
         scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.execution_role)
         scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.task_role)
         scope.base.db.secret.grant_read(self.api.service.task_definition.task_role)
+        self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
 
 class PublicAPI(core.Stack):
