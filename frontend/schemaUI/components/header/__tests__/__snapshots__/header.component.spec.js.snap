@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header: Component should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "flex-start",
+      "backgroundColor": "#000",
+      "color": "#FFF",
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "padding": "6px 0 18px 20px",
+    }
+  }
+>
+  <div />
+  <Button
+    customStyles={Object {}}
+    onClick={[Function]}
+  >
+    <MenuIcon />
+  </Button>
+</div>
+`;
+
+exports[`Header: Component should render with children and custom styles 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "flex-start",
+      "backgroundColor": "#FFF",
+      "color": "#FFF",
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "padding": "6px 0 18px 20px",
+    }
+  }
+>
+  <div />
+  <Button
+    customStyles={Object {}}
+    onClick={[Function]}
+  >
+    icon
+  </Button>
+</div>
+`;

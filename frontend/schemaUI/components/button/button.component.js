@@ -4,9 +4,18 @@ import PropTypes from 'prop-types';
 import { containerStyles } from './button.styles';
 
 export class Button extends PureComponent {
-  static propTypes = {};
+  static propTypes = {
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
+    customStyles: PropTypes.object,
+  };
+
+  static defaultProps = {
+    customStyles: {},
+  };
 
   render() {
-    return <div style={containerStyles}>Button component</div>;
+    const style = { ...containerStyles, ...this.props.customStyles };
+
+    return <button style={style}>{this.props.children}</button>;
   }
 }
