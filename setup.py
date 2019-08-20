@@ -28,6 +28,8 @@ setuptools.setup(
         "aws-cdk.aws-lambda",
         "aws-cdk.aws-rds",
         "aws-cdk.aws-sqs",
+        "aws-cdk.aws-codebuild",
+        "aws_cdk.aws_ecr",
     ],
 
     python_requires=">=3.6",

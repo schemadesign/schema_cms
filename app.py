@@ -2,7 +2,7 @@
 
 from aws_cdk import core
 
-from schema_cms_stack.schema_cms_stack import API, Workers, BaseResources, PublicAPI
+from schema_cms_stack.schema_cms_stack import API, Workers, BaseResources, PublicAPI, CIPipeline
 
 
 class App(core.App):
@@ -11,7 +11,8 @@ class App(core.App):
         self.base = BaseResources(self, 'base')
         self.workers = Workers(self, 'workers')
         self.api = API(self, 'api')
-        self.publicApi = PublicAPI(self, 'public-api')
+        self.public_api = PublicAPI(self, 'public-api')
+        self.ci_pipeline = CIPipeline(self, 'ci-pipeline')
 
 
 app = App()

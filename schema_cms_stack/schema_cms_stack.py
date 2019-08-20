@@ -1,5 +1,5 @@
 from aws_cdk import core, aws_ec2, aws_sqs, aws_apigateway, aws_lambda, aws_ecs, aws_iam, aws_ecs_patterns, aws_rds,\
-    aws_secretsmanager
+    aws_secretsmanager, aws_codebuild, aws_ecr
 
 DB_NAME = 'gistdb'
 
@@ -127,6 +127,7 @@ class API(core.Stack):
         scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.execution_role)
         scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.task_role)
         scope.base.db.secret.grant_read(self.api.service.task_definition.task_role)
+        # scope.base.registry.grant_pull_push(self.api.service.task_definition.task_role)
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
 
@@ -151,3 +152,34 @@ class PublicAPI(core.Stack):
         self.publicApiGateway = aws_apigateway.RestApi(self, 'rest-api')
         self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.publicApiLambda)
         self.publicApiGateway.root.add_method('GET', self.publicApiLambdaIntegration)
+
+
+class CIPipeline(core.Stack):
+
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+        self.registry = aws_ecr.Repository(self, 'schema-cms-ecr')
+        gh_source = aws_codebuild.Source.git_hub(
+            owner='schemadesign',
+            repo='schema_cms',
+            webhook=True,
+            webhook_filters=[
+                aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PUSH)
+                .and_branch_is('feature/CMS-5_infra-setup')
+            ],
+        )
+        self.project = aws_codebuild.Project(
+            self,
+            'schema_cms_project',
+            source=gh_source,
+            environment=aws_codebuild.BuildEnvironment(
+                environment_variables={
+                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(value=self.registry.repository_uri),
+                },
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+                privileged=True,
+            ),
+        )
+        self.registry.grant_pull_push(self.project.role)
+

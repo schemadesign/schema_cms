@@ -7,3 +7,5 @@ aws-cdk.aws-iam
 aws-cdk.aws-lambda
 aws-cdk.aws-rds
 aws-cdk.aws-sqs
+aws-cdk.aws-codebuild
+aws_cdk.aws_ecr
