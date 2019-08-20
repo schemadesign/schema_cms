@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Span: Component should render children when passed in 1`] = `
+<span
+  style={
+    Object {
+      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontSize": "14px",
+    }
+  }
+>
+  Short text
+</span>
+`;
+
+exports[`Span: Component should render correctly 1`] = `
+<span
+  style={
+    Object {
+      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontSize": "14px",
+    }
+  }
+/>
+`;
+
+exports[`Span: Component should render with custom styles 1`] = `
+<span
+  style={
+    Object {
+      "color": "blue",
+      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontSize": "14px",
+    }
+  }
+>
+  Span with styles
+</span>
+`;
