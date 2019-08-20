@@ -30,15 +30,15 @@ describe('Header: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should fire function from props after click on icon', () => {
-    const handleIconClick = spy();
+  it('should call onButtonClick prop on button click if component is provided', () => {
+    const onButtonClick = spy();
     const props = {
-      handleIconClick,
+      onButtonClick,
     };
     const wrapper = render(props);
 
     wrapper.find(Button).simulate('click');
 
-    expect(props.handleIconClick).to.have.been.calledOnce;
+    expect(props.onButtonClick).to.have.been.calledOnce;
   });
 });

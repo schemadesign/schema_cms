@@ -14,8 +14,13 @@ export class Button extends PureComponent {
   };
 
   render() {
+    const { children, customStyles, ...restProps } = this.props;
     const style = { ...containerStyles, ...this.props.customStyles };
 
-    return <button style={style}>{this.props.children}</button>;
+    return (
+      <button {...restProps} style={style}>
+        {children}
+      </button>
+    );
   }
 }

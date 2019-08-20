@@ -7,10 +7,7 @@ const primary = {
 
 const secondary = {
   background: '#1d1d20',
-  text: '#fff'
+  text: '#fff',
 };
 
-export const theme = {
-  primary,
-  secondary,
-};
+export { primary, secondary };

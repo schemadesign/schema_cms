@@ -1,6 +1,8 @@
+import { primary } from '../../utils/theme';
+
 export const containerStyles = {
-  backgroundColor: '#000',
-  color: '#FFF',
+  backgroundColor: primary.background,
+  color: primary.text,
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',

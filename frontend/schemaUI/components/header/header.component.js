@@ -10,16 +10,16 @@ export class Header extends PureComponent {
     customStyles: PropTypes.object,
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     iconComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    handleIconClick: PropTypes.func,
+    onButtonClick: PropTypes.func,
   };
 
   static defaultProps = {
     iconComponent: <MenuIcon />,
-    handleIconClick: () => {},
+    onButtonClick: () => {},
     customStyles: {},
   };
 
-  renderIcon = () => <Button onClick={this.props.handleIconClick}>{this.props.iconComponent}</Button>;
+  renderIcon = () => <Button onClick={this.props.onButtonClick}>{this.props.iconComponent}</Button>;
 
   render() {
     const style = { ...containerStyles, ...this.props.customStyles };
