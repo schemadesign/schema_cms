@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { H2 } from './h2.component';
 
-storiesOf('H2', module).add('Default', () => (
+storiesOf('Typography.H2', module).add('Default', () => (
   <H2>
     Some title
   </H2>
@@ -17,7 +17,7 @@ const withStylesProps = {
   },
 };
 
-storiesOf('H2', module).add('with styles', () => (
+storiesOf('Typography.H2', module).add('with styles', () => (
   <H2 {...withStylesProps} >
     Some title with styles
   </H2>

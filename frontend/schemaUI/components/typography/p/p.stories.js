@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { P } from './p.component';
 
-storiesOf('P', module).add('Default', () => (
+storiesOf('Typography.P', module).add('Default', () => (
   <P>
     Regular paragraph. Aliquam erat volutpat. Vivamus diam ex, pellentesque at ullamcorper a, vestibulum eget ex. Nunc id sollicitudin metus. Maecenas eget suscipit justo.
   </P>
@@ -18,7 +18,7 @@ const withStylesProps = {
   },
 };
 
-storiesOf('P', module).add('with styles', () => (
+storiesOf('Typography.P', module).add('with styles', () => (
   <P {...withStylesProps} >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh. Donec sodales, libero non fermentum aliquam, justo dui venenatis libero, eu efficitur odio sapien vel lorem.
   </P>
