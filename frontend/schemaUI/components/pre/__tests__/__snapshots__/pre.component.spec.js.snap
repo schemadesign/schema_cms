@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pre: Component should render children when passed in 1`] = `
+<pre
+  style={
+    Object {
+      "fontFamily": "Hack, monospace",
+      "fontSize": "18px",
+    }
+  }
+>
+  Short paragraph
+</pre>
+`;
+
+exports[`Pre: Component should render correctly 1`] = `
+<pre
+  style={
+    Object {
+      "fontFamily": "Hack, monospace",
+      "fontSize": "18px",
+    }
+  }
+/>
+`;
+
+exports[`Pre: Component should render with custom styles 1`] = `
+<pre
+  style={
+    Object {
+      "color": "blue",
+      "fontFamily": "Hack, monospace",
+      "fontSize": "18px",
+    }
+  }
+>
+  Paragraph with custom styles
+</pre>
+`;
