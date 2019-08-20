@@ -1,18 +1,18 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { headerStyle } from './h1.styles';
+import { headerStyles } from './h1.styles';
 
 export class H1 extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    style: PropTypes.object,
+    customStyles: PropTypes.object,
   };
 
   render() {
-    const {style: componentStyle = {}, children} = this.props;
-    const style = {...headerStyle, ...componentStyle};
+    const {customStyles = {}, children} = this.props;
+    const styles = {...headerStyles, ...customStyles};
 
-    return <h1 style={style} >{children}</h1>;
+    return <h1 style={styles} >{children}</h1>;
   }
 }

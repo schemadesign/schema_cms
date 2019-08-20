@@ -1,3 +1,3 @@
-export const headerStyle = {
-    'font-size': '24px',
+export const headerStyles = {
+    fontSize: '24px',
 };

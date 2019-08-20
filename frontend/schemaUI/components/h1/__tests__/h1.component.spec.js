@@ -26,10 +26,10 @@ describe('H1: Component', () => {
   });
 
   it('should render with custom styles', () => {
-    const style = {color: 'blue'};
+    const customStyles = {color: 'blue'};
 
     const wrapper = shallow((
-      <H1 style={style}>
+      <H1 customStyles={customStyles}>
         Blue title
       </H1>
     ));

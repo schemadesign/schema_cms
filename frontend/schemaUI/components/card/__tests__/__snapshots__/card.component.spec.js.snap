@@ -4,11 +4,11 @@ exports[`Card: Component should render children when passed in 1`] = `
 <div
   style={
     Object {
-      "background-color": "#f0efef",
-      "border-top": "2px solid #1d1d20",
+      "backgroundColor": "#f0efef",
+      "borderTop": "2px solid #1d1d20",
       "color": "#1d1d20",
       "display": "flex",
-      "flex-direction": "column",
+      "flexDirection": "column",
       "padding": "12px 14px 14px",
     }
   }
@@ -28,11 +28,11 @@ exports[`Card: Component should render component  with custom style and with hea
 <div
   style={
     Object {
-      "background-color": "#f0efef",
-      "border-top": "2px solid #1d1d20",
+      "backgroundColor": "#f0efef",
+      "borderTop": "2px solid #1d1d20",
       "color": "blue",
       "display": "flex",
-      "flex-direction": "column",
+      "flexDirection": "column",
       "padding": "12px 14px 14px",
     }
   }
@@ -41,8 +41,8 @@ exports[`Card: Component should render component  with custom style and with hea
     style={
       Object {
         "color": "#a6a7aa",
-        "font-size": "12px",
-        "margin-bottom": "14px",
+        "fontSize": "12px",
+        "marginBottom": "14px",
       }
     }
   >
@@ -64,11 +64,11 @@ exports[`Card: Component should render correctly 1`] = `
 <div
   style={
     Object {
-      "background-color": "#f0efef",
-      "border-top": "2px solid #1d1d20",
+      "backgroundColor": "#f0efef",
+      "borderTop": "2px solid #1d1d20",
       "color": "#1d1d20",
       "display": "flex",
-      "flex-direction": "column",
+      "flexDirection": "column",
       "padding": "12px 14px 14px",
     }
   }

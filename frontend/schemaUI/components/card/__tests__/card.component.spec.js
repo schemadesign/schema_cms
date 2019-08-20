@@ -31,10 +31,10 @@ describe('Card: Component', () => {
 
   it('should render component  with custom style and with header', () => {
     const header = (<h1 style='color: red'>header</h1>);
-    const style = {color: 'blue'};
+    const customStyles = {color: 'blue'};
 
     const wrapper = shallow((
-      <Card style={style} headerComponent={header}>
+      <Card customStyles={customStyles} headerComponent={header}>
         <div>
           <p>Content</p>
         </div>
