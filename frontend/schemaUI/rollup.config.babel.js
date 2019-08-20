@@ -35,6 +35,7 @@ export default {
     }),
     babel({
       exclude: 'node_modules/**',
+      plugins: ['@babel/plugin-proposal-export-default-from'],
       runtimeHelpers: true,
     }),
     replace({
