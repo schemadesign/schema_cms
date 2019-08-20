@@ -1,5 +1,5 @@
 from aws_cdk import core, aws_ec2, aws_sqs, aws_apigateway, aws_lambda, aws_ecs, aws_iam, aws_ecs_patterns, aws_rds,\
-    aws_secretsmanager, aws_codebuild, aws_ecr
+    aws_secretsmanager, aws_codebuild, aws_ecr, aws_codepipeline, aws_codepipeline_actions
 
 DB_NAME = 'gistdb'
 
@@ -159,20 +159,41 @@ class CIPipeline(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        self.registry = aws_ecr.Repository(self, 'schema-cms-ecr')
-        gh_source = aws_codebuild.Source.git_hub(
+        self.registry = aws_ecr.Repository(self, 'schema-cms-ecr', repository_name='schema-cms')
+
+        self.pipeline = aws_codepipeline.Pipeline(
+            self,
+            'ci-pipeline',
+            pipeline_name='schema-cms-pipeline',
+        )
+
+        source_output = aws_codepipeline.Artifact()
+        oauth_token = aws_secretsmanager.Secret.from_secret_arn(
+            self,
+            'gh-token',
+            'arn:aws:secretsmanager:eu-central-1:314820667159:secret:github-token-TRQAXN'
+        )
+
+        pipeline_source_action = aws_codepipeline_actions.GitHubSourceAction(
+            action_name='github_source',
             owner='schemadesign',
             repo='schema_cms',
-            webhook=True,
-            webhook_filters=[
-                aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PUSH)
-                .and_branch_is('feature/CMS-5_infra-setup')
-            ],
+            branch='feature/CMS-5_infra-setup',
+            trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
+            output=source_output,
+            # todo: pass ARN somehow
+            oauth_token=oauth_token.secret_value,
         )
-        self.project = aws_codebuild.Project(
+
+        self.pipeline.add_stage(
+            stage_name='source',
+            actions=[pipeline_source_action],
+        )
+
+        build_app_project = aws_codebuild.PipelineProject(
             self,
-            'schema_cms_project',
-            source=gh_source,
+            'build_app_project',
+            project_name='schema_cms_ci',
             environment=aws_codebuild.BuildEnvironment(
                 environment_variables={
                     'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(value=self.registry.repository_uri),
@@ -180,6 +201,46 @@ class CIPipeline(core.Stack):
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
             ),
+            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename('app-buildspec.yaml'),
         )
-        self.registry.grant_pull_push(self.project.role)
+        self.registry.grant_pull_push(build_app_project)
+
+        build_app_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name='build_app',
+            input=source_output,
+            project=build_app_project,
+        )
+
+        self.pipeline.add_stage(
+            stage_name='build_app',
+            actions=[build_app_action]
+        )
+
+        # gh_source = aws_codebuild.Source.git_hub(
+        #     owner='schemadesign',
+        #     repo='schema_cms',
+        #     webhook=True,
+        #     webhook_filters=[
+        #         aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PUSH)
+        #         .and_branch_is('feature/CMS-5_infra-setup')
+        #     ],
+        # )
+
+        # self.project = aws_codebuild.Project(
+        #     self,
+        #     'schema_cms_project',
+        #     project_name='schema_cms_ci',
+        #     source=gh_source,
+        #     environment=aws_codebuild.BuildEnvironment(
+        #         environment_variables={
+        #             'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(value=self.registry.repository_uri),
+        #         },
+        #         build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+        #         privileged=True,
+        #     ),
+        #     cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
+        #     build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec.yaml')
+        # )
+        # self.registry.grant_pull_push(self.project.role)
 
