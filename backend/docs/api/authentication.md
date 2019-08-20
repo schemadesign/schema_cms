@@ -27,13 +27,20 @@ Auth0 authentication using oauth2 flow
 
 `GET` `/api/v1/auth/login/auth0`
 
+Parameters:
+
+Name       | Type   | Required | Description
+-----------|--------|----------|------------
+next   | string | No      | Optional url where user should be redirected.
+
+
 **Response**:
 ```http request
 Redirect: https://schemadesign.auth0.com/login?state=X&client=Y&protocol=oauth2&redirect_uri=Z&response_type=code&scope=openid%20profile%20email
 ```
 
 After user authorization by Auth0 user is redirected to home page with authorization cookies.
-Token and User ID is added to the redirected url query string: `?token=X&uid=Y`
+Token and User ID is appended to the redirected url path: `/{uid}/{token}`.
 
 
 ## Retrieving Tokens
