@@ -33,18 +33,44 @@ Redirect: https://schemadesign.auth0.com/login?state=X&client=Y&protocol=oauth2&
 ```
 
 After user authorization by Auth0 user is redirected to home page with authorization cookies.
+Token and User ID is added to the redirected url query string: `?token=X&uid=Y`
 
 
 ## Retrieving Tokens
-A user need to be authorized by [Auth0](https://auth0.com/) and through by backend's login process. A logged in user can retrieve their token with the following request:
+Retrieve JWT Token with exchange token generated based on User's last login date.
+All exchange tokens became invalid after retrieving JWT Token.
 
 **Request**:
 
-`GET` `/api/v1/auth/token`
+`POST` `/api/v1/auth/token`
 
-**Response**:
+Parameters:
+
+Name       | Type   | Required | Description
+-----------|--------|----------|------------
+uid   | string | Yes      | The ID of user.
+token   | string | Yes      | The generated exchange token.
+
+**Responses**:
+
+Success:
 ```json
+Content-Type application/json
+200 Created
+
 { 
     "token" : "9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b" 
+}
+```
+
+Error:
+
+```json
+Content-Type application/json
+400 Created
+
+{
+    "uid": ["This field is required."],
+    "token": ["This field is required."],
 }
 ```
