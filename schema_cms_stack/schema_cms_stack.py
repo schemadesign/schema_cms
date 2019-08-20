@@ -159,7 +159,8 @@ class CIPipeline(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        self.registry = aws_ecr.Repository(self, 'schema-cms-ecr', repository_name='schema-cms')
+        self.app_registry = aws_ecr.Repository(self, 'schema-cms-app-ecr', repository_name='schema-cms-app')
+        self.worker_registry = aws_ecr.Repository(self, 'schema-cms-worker-ecr', repository_name='schema-cms-worker')
 
         self.pipeline = aws_codepipeline.Pipeline(
             self,
@@ -178,6 +179,7 @@ class CIPipeline(core.Stack):
             action_name='github_source',
             owner='schemadesign',
             repo='schema_cms',
+            # todo: update branch name
             branch='feature/CMS-5_infra-setup',
             trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
             output=source_output,
@@ -193,18 +195,18 @@ class CIPipeline(core.Stack):
         build_app_project = aws_codebuild.PipelineProject(
             self,
             'build_app_project',
-            project_name='schema_cms_ci',
+            project_name='schema_cms_app_ci',
             environment=aws_codebuild.BuildEnvironment(
                 environment_variables={
-                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(value=self.registry.repository_uri),
+                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(value=self.app_registry.repository_uri),
                 },
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
             ),
             cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename('app-buildspec.yaml'),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec-app.yaml'),
         )
-        self.registry.grant_pull_push(build_app_project)
+        self.app_registry.grant_pull_push(build_app_project)
 
         build_app_action = aws_codepipeline_actions.CodeBuildAction(
             action_name='build_app',
@@ -212,9 +214,31 @@ class CIPipeline(core.Stack):
             project=build_app_project,
         )
 
+        build_worker_project = aws_codebuild.PipelineProject(
+            self,
+            'build_worker_project',
+            project_name='schema_cms_worker_ci',
+            environment=aws_codebuild.BuildEnvironment(
+                environment_variables={
+                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(value=self.worker_registry.repository_uri),
+                },
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+                privileged=True,
+            ),
+            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec-worker.yaml'),
+        )
+        self.worker_registry.grant_pull_push(build_worker_project)
+
+        build_worker_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name='build_worker',
+            input=source_output,
+            project=build_worker_project,
+        )
+
         self.pipeline.add_stage(
             stage_name='build_app',
-            actions=[build_app_action]
+            actions=[build_app_action, build_worker_action]
         )
 
         # gh_source = aws_codebuild.Source.git_hub(
