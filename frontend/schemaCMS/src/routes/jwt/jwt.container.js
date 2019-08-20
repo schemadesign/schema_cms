@@ -13,7 +13,7 @@ const mapStateToProps = createStructuredSelector({});
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      getJwtToken: UserAuthActions.getJWT,
+      getJwtToken: UserAuthActions.getJwtToken,
     },
     dispatch
   );

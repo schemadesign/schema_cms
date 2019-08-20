@@ -19,34 +19,36 @@ export const ROUTES = {
 export default class RootContainer extends Component {
   render() {
     return (
-      <App>
-        <Switch>
-          <AuthRoute exact path={ROUTES.HOME} component={Home} />
+      <Switch>
+        <Route exact path="/not-found" component={NotFound} anonymous />
 
-          <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
-          <Route exact path="/jwt" component={JWT} />
+        <App>
+          <Switch>
+            <AuthRoute exact path={ROUTES.HOME} component={Home} />
 
-          <Route
-            exact
-            path="jwt/:user/:token/"
-            render={({ match }) => {
-              const location = {
-                pathname: '/login',
-                state: {
-                  user: match.params.uid,
-                  token: match.params.token,
-                },
-              };
+            <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
-              return <Redirect to={location} />;
-            }}
-          />
+            <Route exact path="/jwt" component={JWT} />
 
-          <IntlProvider locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
-            <Route component={NotFound} />
-          </IntlProvider>
-        </Switch>
-      </App>
+            <Route
+              exact
+              path="jwt/:user/:token/"
+              render={({ match }) => {
+                debugger;
+                const location = {
+                  pathname: '/jwt',
+                  state: {
+                    user: match.params.uid,
+                    token: match.params.token,
+                  },
+                };
+
+                return <Redirect to={location} />;
+              }}
+            />
+          </Switch>
+        </App>
+      </Switch>
     );
   }
 }

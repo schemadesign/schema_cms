@@ -9,6 +9,7 @@ export class Jwt extends PureComponent {
 
   componentDidMount() {
     const { location, getJwtToken } = this.props;
+    debugger;
 
     if (location.state && location.state.token && location.state.user) {
       return getJwtToken({ user: location.state.user, token: location.state.token });
@@ -16,6 +17,6 @@ export class Jwt extends PureComponent {
   }
 
   render() {
-    return null;
+    return <div />;
   }
 }
