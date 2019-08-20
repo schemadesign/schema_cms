@@ -262,6 +262,7 @@ class Common(Configuration):
         # Redirect user and add exchange token to query string
         'schemacms.authorization.pipeline.redirect_with_token',
     )
+    SOCIAL_AUTH_SANITIZE_REDIRECTS = False
     SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
     SOCIAL_AUTH_AUTH0_DOMAIN = os.getenv('DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN')
     SOCIAL_AUTH_AUTH0_KEY = os.getenv('DJANGO_SOCIAL_AUTH_AUTH0_KEY')
