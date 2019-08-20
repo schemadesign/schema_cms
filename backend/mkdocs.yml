@@ -9,4 +9,3 @@ nav:
   - Home: 'index.md'
   - API:
     - Authentication: 'api/authentication.md'
-    - Users: 'api/users.md'
