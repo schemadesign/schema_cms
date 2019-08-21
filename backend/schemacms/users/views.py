@@ -1,12 +1,15 @@
-from rest_framework import decorators
-from rest_framework import mixins
-from rest_framework import permissions
-from rest_framework import response
-from rest_framework import viewsets
-
-from . import models as user_models
-from . import permissions as user_permissions
-from . import serializers as user_serializers
+from rest_framework import (
+    decorators,
+    mixins,
+    permissions,
+    response,
+    viewsets,
+)
+from . import (
+    models as user_models,
+    permissions as user_permissions,
+    serializers as user_serializers
+)
 
 
 class UserViewSet(mixins.RetrieveModelMixin,
