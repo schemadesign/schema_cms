@@ -25,6 +25,7 @@ class Common(Configuration):
         # Your apps
         'schemacms.users',
         'schemacms.authorization',
+        'schemacms.projects',
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
