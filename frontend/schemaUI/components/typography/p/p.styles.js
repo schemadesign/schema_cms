@@ -1,7 +1,7 @@
-import {theme} from '../../../utils/theme';
+import {secondary} from '../../../utils/theme';
 
 export const containerStyles = {
   fontSize: '18px',
-  fontFamily: theme.secondary.fontFamily,
+  fontFamily: secondary.fontFamily,
   lineHeight: '1.33em',
 };
