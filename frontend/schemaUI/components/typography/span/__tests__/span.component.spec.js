@@ -16,23 +16,15 @@ describe('Span: Component', () => {
   });
 
   it('should render children when passed in', () => {
-    const wrapper = shallow((
-      <Span>
-        Short text
-      </Span>
-    ));
+    const wrapper = shallow(<Span>Short text</Span>);
 
     global.expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with custom styles', () => {
-    const customStyles = {color: 'blue'};
+    const customStyles = { color: 'blue' };
 
-    const wrapper = shallow((
-      <Span customStyles={customStyles}>
-        Span with styles
-      </Span>
-    ));
+    const wrapper = shallow(<Span customStyles={customStyles}>Span with styles</Span>);
 
     global.expect(wrapper).toMatchSnapshot();
   });

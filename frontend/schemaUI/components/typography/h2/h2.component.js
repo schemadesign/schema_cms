@@ -10,9 +10,13 @@ export class H2 extends PureComponent {
   };
 
   render() {
-    const {customStyles = {}, children, ...restProps} = this.props;
-    const styles = {...headerStyles, ...customStyles};
+    const { customStyles = {}, children, ...restProps } = this.props;
+    const styles = { ...headerStyles, ...customStyles };
 
-    return <h2 style={styles} {...restProps}>{children}</h2>;
+    return (
+      <h2 style={styles} {...restProps}>
+        {children}
+      </h2>
+    );
   }
 }

@@ -16,23 +16,15 @@ describe('P: Component', () => {
   });
 
   it('should render children when passed in', () => {
-    const wrapper = shallow((
-      <P>
-        Short paragraph
-      </P>
-    ));
+    const wrapper = shallow(<P>Short paragraph</P>);
 
     global.expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with custom styles', () => {
-    const customStyles = {color: 'blue'};
+    const customStyles = { color: 'blue' };
 
-    const wrapper = shallow((
-      <P customStyles={customStyles}>
-        Paragraph with custom styles
-      </P>
-    ));
+    const wrapper = shallow(<P customStyles={customStyles}>Paragraph with custom styles</P>);
 
     global.expect(wrapper).toMatchSnapshot();
   });

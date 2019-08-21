@@ -10,15 +10,11 @@ export class Card extends PureComponent {
     headerComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   };
 
-  renderHeader = (component) => component ? (
-      <div style={headerStyles}>
-        {component}
-      </div>
-    ) : null;
+  renderHeader = component => (component ? <div style={headerStyles}>{component}</div> : null);
 
   render() {
-    const {customStyles, headerComponent, children, ...restProps} = this.props;
-    const styles = {...containerStyles, ...customStyles};
+    const { customStyles, headerComponent, children, ...restProps } = this.props;
+    const styles = { ...containerStyles, ...customStyles };
 
     return (
       <div style={styles} {...restProps}>

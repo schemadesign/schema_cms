@@ -16,23 +16,15 @@ describe('H2: Component', () => {
   });
 
   it('should render children when passed in', () => {
-    const wrapper = shallow((
-      <H2>
-        Super title
-      </H2>
-    ));
+    const wrapper = shallow(<H2>Super title</H2>);
 
     global.expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with custom styles', () => {
-    const customStyles = {color: 'blue'};
+    const customStyles = { color: 'blue' };
 
-    const wrapper = shallow((
-      <H2 customStyles={customStyles}>
-        Blue title
-      </H2>
-    ));
+    const wrapper = shallow(<H2 customStyles={customStyles}>Blue title</H2>);
 
     global.expect(wrapper).toMatchSnapshot();
   });

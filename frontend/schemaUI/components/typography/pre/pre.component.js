@@ -10,9 +10,13 @@ export class Pre extends PureComponent {
   };
 
   render() {
-    const {customStyles = {}, children, ...restProps} = this.props;
-    const styles = {...containerStyles, ...customStyles};
+    const { customStyles = {}, children, ...restProps } = this.props;
+    const styles = { ...containerStyles, ...customStyles };
 
-    return <pre style={styles} {...restProps}>{children}</pre>;
+    return (
+      <pre style={styles} {...restProps}>
+        {children}
+      </pre>
+    );
   }
 }

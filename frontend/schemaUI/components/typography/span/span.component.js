@@ -10,9 +10,13 @@ export class Span extends PureComponent {
   };
 
   render() {
-    const {customStyles = {}, children, ...restProps} = this.props;
-    const styles = {...containerStyles, ...customStyles};
+    const { customStyles = {}, children, ...restProps } = this.props;
+    const styles = { ...containerStyles, ...customStyles };
 
-    return <span style={styles} {...restProps}>{children}</span>;
+    return (
+      <span style={styles} {...restProps}>
+        {children}
+      </span>
+    );
   }
 }

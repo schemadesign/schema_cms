@@ -1,4 +1,4 @@
-import {primary} from '../../../utils/theme';
+import { primary } from '../../../utils/theme';
 
 export const headerStyles = {
   fontSize: '24px',

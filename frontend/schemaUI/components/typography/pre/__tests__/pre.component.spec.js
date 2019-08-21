@@ -16,23 +16,15 @@ describe('Pre: Component', () => {
   });
 
   it('should render children when passed in', () => {
-    const wrapper = shallow((
-      <Pre>
-        Short paragraph
-      </Pre>
-    ));
+    const wrapper = shallow(<Pre>Short paragraph</Pre>);
 
     global.expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with custom styles', () => {
-    const customStyles = {color: 'blue'};
+    const customStyles = { color: 'blue' };
 
-    const wrapper = shallow((
-      <Pre customStyles={customStyles}>
-        Paragraph with custom styles
-      </Pre>
-    ));
+    const wrapper = shallow(<Pre customStyles={customStyles}>Paragraph with custom styles</Pre>);
 
     global.expect(wrapper).toMatchSnapshot();
   });

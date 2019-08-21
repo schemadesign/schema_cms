@@ -1,4 +1,4 @@
-import {secondary} from '../../../utils/theme';
+import { secondary } from '../../../utils/theme';
 
 export const headerStyles = {
   fontSize: '24px',
