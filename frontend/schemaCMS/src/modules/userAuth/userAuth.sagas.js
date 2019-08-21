@@ -8,7 +8,7 @@ import { TOKEN_PATH, ME_PATH } from '../../shared/utils/api.constants';
 
 function* setAuthorizationToken(token) {
   if (token) {
-    api.defaults.headers.common['X-Authorization'] = `JWT ${token}`;
+    api.defaults.headers.common['Authorization'] = `JWT ${token}`;
   }
 }
 
@@ -17,7 +17,9 @@ function* redirectExternal(path) {
 }
 
 function* getJwtToken({ uid, token }) {
-  const { token: jwt } = yield api.post(TOKEN_PATH, {
+  const {
+    data: { token: jwt },
+  } = yield api.post(TOKEN_PATH, {
     uid,
     token,
   });
