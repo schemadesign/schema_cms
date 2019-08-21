@@ -1,14 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button: Component should render correctly 1`] = `
-<div
+<button
   style={
     Object {
-      "backgroundColor": "red",
-      "border": "1px solid blue",
+      "backgroundColor": "transparent",
+      "border": "none",
+      "cursor": "pointer",
+      "margin": "0",
+      "outline": "none",
+      "padding": "0",
     }
   }
 >
-  Button component
-</div>
+  button
+</button>
+`;
+
+exports[`Button: Component should render with custom styles 1`] = `
+<button
+  style={
+    Object {
+      "backgroundColor": "red",
+      "border": "none",
+      "cursor": "pointer",
+      "margin": "0",
+      "outline": "none",
+      "padding": "0",
+    }
+  }
+>
+  button
+</button>
 `;

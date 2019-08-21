@@ -22,11 +22,12 @@ class Common(Configuration):
         'django_filters',            # for filtering rest endpoints
         'social_django',             # authorization by auth0
         'django_extensions',         # Django extensions
+        'corsheaders',               # cors
+
 
         # Your apps
         'schemacms.users',
         'schemacms.authorization',
-        'schemacms.projects',
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
