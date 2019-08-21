@@ -48,6 +48,14 @@ class TestMeView:
     def test_url(self):
         assert '/api/v1/users/me' == self._url
 
+    def test_authorize(self, api_client, user):
+        token = user.get_jwt_token()
+
+        api_client.credentials(HTTP_AUTHORIZATION='JWT {}'.format(token))
+        response = api_client.get(self._url)
+
+        assert response.status_code == status.HTTP_200_OK
+
     @property
     def _url(self):
         return urls.reverse('user-me')
