@@ -7,7 +7,6 @@ class Local(Common):
     DEBUG = True
 
     INSTALLED_APPS = Common.INSTALLED_APPS + (
-        'django_extensions',
     )
 
     # Mail

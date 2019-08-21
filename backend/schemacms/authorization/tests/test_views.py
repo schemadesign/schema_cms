@@ -1,6 +1,5 @@
 import uuid
 
-import social_core.pipeline.user
 from rest_framework import exceptions
 from django import urls
 from rest_framework import status

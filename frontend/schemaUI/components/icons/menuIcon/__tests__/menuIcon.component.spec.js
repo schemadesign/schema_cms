@@ -14,4 +14,13 @@ describe('MenuIcon: Component', () => {
     const wrapper = render();
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with custom styles', () => {
+    const customStyles = {
+      fill: 'blue',
+    };
+
+    const wrapper = render({ customStyles });
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });
