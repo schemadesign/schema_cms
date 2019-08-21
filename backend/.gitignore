@@ -106,5 +106,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# macos
+.idea/
+
 # custom project files
 local.env
