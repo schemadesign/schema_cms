@@ -12,7 +12,4 @@ const secondary = {
   fontFamily: 'Inter-BETA, Arial, Helvetica, sans-serif',
 };
 
-export const theme = {
-  primary,
-  secondary,
-};
+export { primary, secondary };
