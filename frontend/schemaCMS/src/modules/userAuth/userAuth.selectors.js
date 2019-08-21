@@ -15,5 +15,5 @@ export const selectIsAuthenticated = createSelector(
 
 export const selectIsFetched = createSelector(
   selectUserAuthDomain,
-  prop('isUserFetched')
+  prop('isFetched')
 );

@@ -23,22 +23,26 @@ function* getJwtToken({ uid, token }) {
   });
 
   yield setAuthorizationToken(JWT);
+  yield fetchUserDetails();
 }
 
 function* fetchUserDetails() {
-  yield put(UserAuthRoutines.fetchUserDetails.request());
+  try {
+    yield put(UserAuthRoutines.fetchUserDetails.request());
 
-  const { data } = yield api.get(USER_PATH);
+    const { data } = yield api.get(USER_PATH);
 
-  yield put(UserAuthRoutines.fetchUserDetails.success(data));
+    yield put(UserAuthRoutines.fetchUserDetails.success(data));
+  } catch (error) {
+    yield put(UserAuthRoutines.fetchUserDetails.failure(error));
+    yield put(UserAuthActions.fetchUserDetailsError());
+  } finally {
+    yield put(UserAuthRoutines.fetchUserDetails.fulfill());
+  }
 }
 
 function* startup() {
-  try {
-    yield fetchUserDetails();
-  } catch (error) {
-    yield redirectExternal(`${AUTH_PATH}?next=http://localhost:3000/jwt/`);
-  }
+  yield fetchUserDetails();
 }
 
 function* logout() {

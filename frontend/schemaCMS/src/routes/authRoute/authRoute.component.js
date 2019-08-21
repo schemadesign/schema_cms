@@ -12,6 +12,10 @@ class ExternalRedirect extends PureComponent {
     window.location.replace(this.props.to);
   }
 
+  componentDidUpdate(prevProps) {
+    console.log(this.props);
+  }
+
   render = () => null;
 }
 

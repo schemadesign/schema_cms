@@ -9,14 +9,13 @@ export class Jwt extends PureComponent {
 
   componentDidMount() {
     const { location, getJwtToken } = this.props;
-    debugger;
 
     if (location.state && location.state.token && location.state.user) {
-      return getJwtToken({ user: location.state.user, token: location.state.token });
+      return getJwtToken(location.state.user, location.state.token);
     }
   }
 
   render() {
-    return <div />;
+    return <div>Validating</div>;
   }
 }

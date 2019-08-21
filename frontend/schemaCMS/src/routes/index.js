@@ -6,7 +6,6 @@ import browserHistory from '../shared/utils/history';
 import App from './app.container';
 import AuthRoute from './authRoute/authRoute.container';
 import JWT from './jwt/jwt.container';
-import { DEFAULT_LOCALE, translationMessages } from '../i18n';
 import { Home } from './home';
 import { NotFound } from './notFound';
 import { AUTH_PATH } from '../shared/utils/api.constants';
@@ -32,13 +31,12 @@ export default class RootContainer extends Component {
 
             <Route
               exact
-              path="jwt/:user/:token/"
+              path="/jwt/:user/:token/"
               render={({ match }) => {
-                debugger;
                 const location = {
                   pathname: '/jwt',
                   state: {
-                    user: match.params.uid,
+                    user: match.params.user,
                     token: match.params.token,
                   },
                 };
