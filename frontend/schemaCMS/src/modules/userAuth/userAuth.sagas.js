@@ -4,7 +4,7 @@ import api from '../../shared/services/api';
 
 import { UserAuthTypes, UserAuthActions, UserAuthRoutines } from './userAuth.redux';
 import { StartupTypes } from '../startup/startup.redux';
-import { AUTH_PATH, TOKEN_PATH, USER_PATH } from '../../shared/utils/api.constants';
+import { TOKEN_PATH, ME_PATH } from '../../shared/utils/api.constants';
 
 function* setAuthorizationToken(token) {
   if (token) {
@@ -17,12 +17,12 @@ function* redirectExternal(path) {
 }
 
 function* getJwtToken({ uid, token }) {
-  const { JWT } = yield api.post(TOKEN_PATH, {
+  const { token: jwt } = yield api.post(TOKEN_PATH, {
     uid,
     token,
   });
 
-  yield setAuthorizationToken(JWT);
+  yield setAuthorizationToken(jwt);
   yield fetchUserDetails();
 }
 
@@ -30,7 +30,7 @@ function* fetchUserDetails() {
   try {
     yield put(UserAuthRoutines.fetchUserDetails.request());
 
-    const { data } = yield api.get(USER_PATH);
+    const { data } = yield api.get(ME_PATH);
 
     yield put(UserAuthRoutines.fetchUserDetails.success(data));
   } catch (error) {
