@@ -11,4 +11,3 @@ def api_client():
 @pytest.fixture()
 def faker():
     return faker_.Faker()
-
