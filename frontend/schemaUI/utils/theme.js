@@ -9,6 +9,7 @@ const primary = {
 const secondary = {
   background: '#1d1d20',
   text: '#fff',
+  label: '#71737e',
 };
 
 const INTER_FONT = 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';
