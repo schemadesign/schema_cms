@@ -18,6 +18,7 @@
     "@storybook/addon-links": "^5.0.6",
     "@storybook/addon-storyshots": "^5.0.6",
     "@storybook/react": "^5.0.6",
+    "@svgr/rollup": "^4.3.2",
     "babel-cli": "^6.26.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.1",

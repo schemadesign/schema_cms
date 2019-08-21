@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { MenuIcon } from '../menuIcon.component';
+import { CloseIcon } from '../closeIcon.component';
 
-describe('MenuIcon: Component', () => {
+describe('CloseIcon: Component', () => {
   const defaultProps = {};
 
-  const component = props => <MenuIcon {...defaultProps} {...props} />;
+  const component = props => <CloseIcon {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
