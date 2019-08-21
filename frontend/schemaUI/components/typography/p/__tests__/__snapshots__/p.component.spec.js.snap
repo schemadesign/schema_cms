@@ -26,6 +26,22 @@ exports[`P: Component should render correctly 1`] = `
 />
 `;
 
+exports[`P: Component should render with attributes 1`] = `
+<p
+  id="test-id"
+  style={
+    Object {
+      "fontFamily": "Inter-BETA, Arial, Helvetica, sans-serif",
+      "fontSize": "18px",
+      "lineHeight": "1.33em",
+    }
+  }
+  title="test title"
+>
+  Paragraph with attributes
+</p>
+`;
+
 exports[`P: Component should render with custom styles 1`] = `
 <p
   style={

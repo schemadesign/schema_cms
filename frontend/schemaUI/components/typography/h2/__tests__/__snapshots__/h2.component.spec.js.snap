@@ -26,6 +26,22 @@ exports[`H2: Component should render correctly 1`] = `
 />
 `;
 
+exports[`H2: Component should render with attributes 1`] = `
+<h2
+  id="test-id"
+  style={
+    Object {
+      "fontFamily": "Inter-BETA, Arial, Helvetica, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": 200,
+    }
+  }
+  title="test title"
+>
+  Title with attributes
+</h2>
+`;
+
 exports[`H2: Component should render with custom styles 1`] = `
 <h2
   style={

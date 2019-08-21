@@ -74,3 +74,22 @@ exports[`Card: Component should render correctly 1`] = `
   }
 />
 `;
+
+exports[`Card: Component should render with attributes 1`] = `
+<div
+  id="test-id"
+  style={
+    Object {
+      "backgroundColor": "#f0efef",
+      "borderTop": "2px solid #1d1d20",
+      "color": "blue",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "12px 14px 14px",
+    }
+  }
+  title="test title"
+>
+  Card with attributes
+</div>
+`;

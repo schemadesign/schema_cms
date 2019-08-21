@@ -43,4 +43,15 @@ describe('Card: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with attributes', () => {
+    const customStyles = { color: 'blue' };
+    const wrapper = shallow(
+      <Card customStyles={customStyles} id="test-id" title="test title">
+        Card with attributes
+      </Card>
+    );
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

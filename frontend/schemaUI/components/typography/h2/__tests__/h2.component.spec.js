@@ -28,4 +28,14 @@ describe('H2: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with attributes', () => {
+    const wrapper = shallow(
+      <H2 id="test-id" title="test title">
+        Title with attributes
+      </H2>
+    );
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

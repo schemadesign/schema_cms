@@ -28,4 +28,14 @@ describe('Span: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with attributes', () => {
+    const wrapper = shallow(
+      <Span id="test-id" title="test title">
+        Span with attributes
+      </Span>
+    );
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

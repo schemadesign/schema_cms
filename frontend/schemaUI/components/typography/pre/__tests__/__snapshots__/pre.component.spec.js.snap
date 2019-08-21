@@ -24,6 +24,21 @@ exports[`Pre: Component should render correctly 1`] = `
 />
 `;
 
+exports[`Pre: Component should render with attributes 1`] = `
+<pre
+  id="test-id"
+  style={
+    Object {
+      "fontFamily": "Hack, monospace",
+      "fontSize": "18px",
+    }
+  }
+  title="test title"
+>
+  Pre tag with attributes
+</pre>
+`;
+
 exports[`Pre: Component should render with custom styles 1`] = `
 <pre
   style={

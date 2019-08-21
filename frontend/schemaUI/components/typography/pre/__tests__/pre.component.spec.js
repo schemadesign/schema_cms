@@ -28,4 +28,10 @@ describe('Pre: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with attributes', () => {
+    const wrapper = shallow(<Pre id="test-id" title="test title">Pre tag with attributes</Pre>);
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

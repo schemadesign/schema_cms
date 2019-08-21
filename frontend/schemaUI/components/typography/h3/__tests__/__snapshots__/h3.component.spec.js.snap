@@ -28,6 +28,23 @@ exports[`H3: Component should render correctly 1`] = `
 />
 `;
 
+exports[`H3: Component should render with attributes 1`] = `
+<h3
+  id="test-id"
+  style={
+    Object {
+      "color": "#a6a7aa",
+      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": 600,
+    }
+  }
+  title="test title"
+>
+  Title with attributes
+</h3>
+`;
+
 exports[`H3: Component should render with custom styles 1`] = `
 <h3
   style={

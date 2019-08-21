@@ -24,6 +24,21 @@ exports[`Span: Component should render correctly 1`] = `
 />
 `;
 
+exports[`Span: Component should render with attributes 1`] = `
+<span
+  id="test-id"
+  style={
+    Object {
+      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontSize": "14px",
+    }
+  }
+  title="test title"
+>
+  Span with attributes
+</span>
+`;
+
 exports[`Span: Component should render with custom styles 1`] = `
 <span
   style={

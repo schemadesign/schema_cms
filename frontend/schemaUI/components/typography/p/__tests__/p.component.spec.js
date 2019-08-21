@@ -28,4 +28,14 @@ describe('P: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with attributes', () => {
+    const wrapper = shallow(
+      <P id="test-id" title="test title">
+        Paragraph with attributes
+      </P>
+    );
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });
