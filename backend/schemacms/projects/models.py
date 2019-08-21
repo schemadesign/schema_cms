@@ -1,6 +1,5 @@
 from django.db import models
 from django.conf import settings
-from django.utils import timezone
 from django.template.defaultfilters import slugify
 from django_extensions.db.fields import AutoSlugField
 
