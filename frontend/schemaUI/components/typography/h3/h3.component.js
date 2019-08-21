@@ -10,10 +10,10 @@ export class H3 extends PureComponent {
   };
 
   render() {
-    const {customStyles = {}, children} = this.props;
+    const {customStyles = {}, children, ...restProps} = this.props;
     const styles = {...headerStyles, ...customStyles};
 
-    return <h3 style={styles} >{children}</h3>;
+    return <h3 style={styles} {...restProps}>{children}</h3>;
   }
 }
 

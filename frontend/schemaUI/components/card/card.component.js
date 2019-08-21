@@ -17,11 +17,11 @@ export class Card extends PureComponent {
     ) : null;
 
   render() {
-    const {customStyles, headerComponent, children} = this.props;
+    const {customStyles, headerComponent, children, ...restProps} = this.props;
     const styles = {...containerStyles, ...customStyles};
 
     return (
-      <div style={styles}>
+      <div style={styles} {...restProps}>
         {this.renderHeader(headerComponent)}
         {children}
       </div>

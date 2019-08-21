@@ -23,3 +23,10 @@ storiesOf('Typography.H1', module).add('with styles', () => (
     Some title
   </H1>
 ));
+
+storiesOf('Typography.H1', module).add('with attributes', () => (
+  <H1 title="Oh! It's title." id="title-with-attribute">
+    Title with attributes
+    <span style={{fontSize: '10px', color: '#777', display: 'block'}}>(hover on it to show value of title attribute)</span>
+  </H1>
+));
