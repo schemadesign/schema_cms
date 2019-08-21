@@ -8,4 +8,5 @@ export const containerStyles = {
   justifyContent: 'space-between',
   padding: '6px 0 18px 20px',
   alignItems: 'flex-start',
+  width: '100%',
 };
