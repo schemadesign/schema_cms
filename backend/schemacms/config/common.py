@@ -15,12 +15,12 @@ class Common(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
 
-
         # Third party apps
         'rest_framework',            # utilities for rest apis
         'rest_framework.authtoken',  # token authentication
         'django_filters',            # for filtering rest endpoints
         'social_django',             # authorization by auth0
+        'corsheaders',               # cors
 
         # Your apps
         'schemacms.users',
@@ -31,6 +31,11 @@ class Common(Configuration):
     MIDDLEWARE = (
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
+        # CorsMiddleware should be placed as high as possible,
+        # especially before any middleware that can generate
+        # responses such as Django’s CommonMiddleware
+        # or Whitenoise’s WhiteNoiseMiddleware
+        'corsheaders.middleware.CorsMiddleware',
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -42,6 +47,9 @@ class Common(Configuration):
     ROOT_URLCONF = 'schemacms.urls'
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
     WSGI_APPLICATION = 'schemacms.wsgi.application'
+
+    # CORS
+    CORS_ORIGIN_ALLOW_ALL = True
 
     # Email
     EMAIL_BACKEND = 'anymail.backends.mandrill.EmailBackend'
