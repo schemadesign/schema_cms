@@ -1,7 +1,7 @@
-import { secondary } from '../../../utils/theme';
+import { primary } from '../../../utils/theme';
 
 export const headerStyles = {
   fontSize: '24px',
-  fontFamily: secondary.fontFamily,
-  fontWeight: 200,
+  fontFamily: primary.fontFamily,
+  fontWeight: 100,
 };

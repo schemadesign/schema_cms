@@ -41,6 +41,10 @@ export default {
     }),
     resolve(),
     commonjs(),
+    url({
+      include: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.otf'],
+      limit: Infinity,
+    }),
   ],
 
   external: ['react', 'react-dom'],
