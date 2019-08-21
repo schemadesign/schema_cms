@@ -1,6 +1,4 @@
-import {theme} from '../../utils/theme';
-
-const {primary} = theme;
+import { primary } from '../../utils/theme';
 
 export const containerStyles = {
   borderTop: `2px solid ${primary.border}`,

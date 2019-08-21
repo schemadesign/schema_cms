@@ -1,26 +1,28 @@
-from rest_framework import viewsets, mixins
-from rest_framework.permissions import AllowAny
-from .models import User
-from .permissions import IsUserOrReadOnly
-from .serializers import CreateUserSerializer, UserSerializer
+from rest_framework import (
+    decorators,
+    mixins,
+    permissions,
+    response,
+    viewsets,
+)
+from . import (
+    models as user_models,
+    permissions as user_permissions,
+    serializers as user_serializers
+)
 
 
 class UserViewSet(mixins.RetrieveModelMixin,
-                  mixins.UpdateModelMixin,
                   viewsets.GenericViewSet):
     """
-    Updates and retrieves user accounts
+    Retrieves user account details
     """
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = (IsUserOrReadOnly,)
+    queryset = user_models.User.objects.all()
+    serializer_class = user_serializers.UserSerializer
+    permission_classes = (user_permissions.IsUserOrReadOnly,)
 
-
-class UserCreateViewSet(mixins.CreateModelMixin,
-                        viewsets.GenericViewSet):
-    """
-    Creates user accounts
-    """
-    queryset = User.objects.all()
-    serializer_class = CreateUserSerializer
-    permission_classes = (AllowAny,)
+    @decorators.action(detail=False, permission_classes=(permissions.IsAuthenticated,))
+    def me(self, request):
+        instance = request.user
+        serializer = self.get_serializer(instance)
+        return response.Response(serializer.data)
