@@ -21,6 +21,7 @@ class Common(Configuration):
         'rest_framework.authtoken',  # token authentication
         'django_filters',            # for filtering rest endpoints
         'social_django',             # authorization by auth0
+        'django_extensions',         # Django extensions
 
         # Your apps
         'schemacms.users',

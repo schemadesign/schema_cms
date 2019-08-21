@@ -12,15 +12,11 @@ class Projects(models.Model):
     )
     title = models.CharField(max_length=255)
     description = models.TextField()
-    slug = AutoSlugField(max_length=255, unique=True, populate_from=('title',))
+    slug = AutoSlugField(max_length=255, unique=True, populate_from=('title',), overwrite=True)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=25, choices=status_choices)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super(Projects, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.title
