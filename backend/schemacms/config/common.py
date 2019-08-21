@@ -1,3 +1,4 @@
+import datetime
 import os
 from os.path import join
 from distutils.util import strtobool
@@ -220,6 +221,12 @@ class Common(Configuration):
     AUTHENTICATION_BACKENDS = {
         'social_core.backends.auth0.Auth0OAuth2',
         'django.contrib.auth.backends.ModelBackend',
+    }
+
+    # JWT
+    JWT_AUTH = {
+        'JWT_AUTH_HEADER_PREFIX': 'JWT',
+        'JWT_EXPIRATION_DELTA': datetime.timedelta(days=30),
     }
 
     # social-django
