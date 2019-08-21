@@ -6,6 +6,7 @@ from rest_framework.routers import DefaultRouter
 
 from .users import views as user_views
 
+
 router = DefaultRouter(trailing_slash=False)
 router.register(r'users', user_views.UserViewSet)
 urlpatterns = [

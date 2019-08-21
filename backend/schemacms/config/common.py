@@ -2,12 +2,24 @@ import os
 from os.path import join
 from distutils.util import strtobool
 from configurations import Configuration
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Common(Configuration):
 
+    if os.getenv("SENTRY_DNS"):
+        sentry_sdk.init(
+            dsn=os.getenv("SENTRY_DNS"),
+            integrations=[DjangoIntegration()]
+        )
+
     INSTALLED_APPS = (
+        'whitenoise.runserver_nostatic',
         'django.contrib.admin',
         'django.contrib.auth',
         'django.contrib.contenttypes',
@@ -30,6 +42,7 @@ class Common(Configuration):
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
     MIDDLEWARE = (
         'django.middleware.security.SecurityMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         # CorsMiddleware should be placed as high as possible,
         # especially before any middleware that can generate
@@ -94,6 +107,7 @@ class Common(Configuration):
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     )
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     # Media files
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), 'media')
