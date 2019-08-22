@@ -5,7 +5,7 @@ Supports creating, viewing, and updating projects associated with user accounts.
 
 **Request**:
 
-`POST` `/projects/`
+`POST` `/api/v1/projects/`
 
 Parameters:
 
