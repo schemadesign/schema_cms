@@ -5,4 +5,7 @@ export const containerStyles = {
   margin: '0',
   outline: 'none',
   cursor: 'pointer',
+  borderRadius: '48px',
+  minHeight: '48px',
+  fontSize: '18px',
 };

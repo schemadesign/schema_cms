@@ -3,12 +3,24 @@ import os
 from os.path import join
 from distutils.util import strtobool
 from configurations import Configuration
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Common(Configuration):
 
+    if os.getenv("SENTRY_DNS"):
+        sentry_sdk.init(
+            dsn=os.getenv("SENTRY_DNS"),
+            integrations=[DjangoIntegration()]
+        )
+
     INSTALLED_APPS = (
+        'whitenoise.runserver_nostatic',
         'django.contrib.admin',
         'django.contrib.auth',
         'django.contrib.contenttypes',
@@ -16,27 +28,28 @@ class Common(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
 
+
         # Third party apps
         'rest_framework',            # utilities for rest apis
         'rest_framework.authtoken',  # token authentication
         'django_filters',            # for filtering rest endpoints
         'social_django',             # authorization by auth0
+        'django_extensions',         # Django extensions
         'corsheaders',               # cors
+
 
         # Your apps
         'schemacms.users',
         'schemacms.authorization',
+        'schemacms.projects',
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
     MIDDLEWARE = (
         'django.middleware.security.SecurityMiddleware',
-        'django.contrib.sessions.middleware.SessionMiddleware',
-        # CorsMiddleware should be placed as high as possible,
-        # especially before any middleware that can generate
-        # responses such as Django’s CommonMiddleware
-        # or Whitenoise’s WhiteNoiseMiddleware
         'corsheaders.middleware.CorsMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -95,6 +108,7 @@ class Common(Configuration):
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     )
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     # Media files
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), 'media')
@@ -278,6 +292,8 @@ class Common(Configuration):
         # Redirect user and add exchange token to query string
         'schemacms.authorization.pipeline.redirect_with_token',
     )
+
+    # social-django
     SOCIAL_AUTH_SANITIZE_REDIRECTS = False
     SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
     SOCIAL_AUTH_AUTH0_DOMAIN = os.getenv('DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN')

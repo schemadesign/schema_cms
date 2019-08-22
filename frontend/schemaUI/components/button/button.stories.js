@@ -4,16 +4,21 @@ import { storiesOf } from '@storybook/react';
 import { Button } from './button.component';
 import { MenuIcon } from '../icons/menuIcon';
 
-const styles = {
+const customStyles = {
   backgroundColor: '#000',
   color: '#FFF',
-  padding: '20px',
+  width: '150px',
+};
+
+const customStylesForIcon = {
+  backgroundColor: '#dbdbdb',
+  fontSize: 0,
 };
 
 storiesOf('Button', module)
-  .add('Default', () => <Button customStyles={styles}>button</Button>)
+  .add('Default', () => <Button customStyles={customStyles}>Next</Button>)
   .add('with icon', () => (
-    <Button customStyles={styles}>
+    <Button customStyles={customStylesForIcon}>
       <MenuIcon />
     </Button>
   ));
