@@ -12,32 +12,30 @@ class ExternalRedirect extends PureComponent {
     window.location.replace(this.props.to);
   }
 
-  componentDidUpdate(prevProps) {
-    console.log(this.props);
-  }
-
   render = () => null;
 }
 
 export class AuthRoute extends PureComponent {
   static propTypes = {
-    isUserFetched: PropTypes.bool,
     isAuthenticated: PropTypes.bool,
     requireAnonymous: PropTypes.bool,
+    isUserFetched: PropTypes.bool,
+    fetchCurrentUser: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
-    isUserFetched: false,
     isAuthenticated: false,
     requireAnonymous: false,
+    isUserFetched: false,
   };
 
   renderRoute = () => <Route {...this.props} />;
 
   render() {
-    const { isUserFetched, requireAnonymous, isAuthenticated } = this.props;
+    const { isUserFetched, requireAnonymous, isAuthenticated, fetchCurrentUser } = this.props;
 
     if (!isUserFetched) {
+      fetchCurrentUser();
       return null;
     }
 

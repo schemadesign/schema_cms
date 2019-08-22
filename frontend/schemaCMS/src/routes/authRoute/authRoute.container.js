@@ -7,14 +7,22 @@ import { compose } from 'ramda';
 
 import { AuthRoute } from './authRoute.component';
 
-import { selectIsAuthenticated, selectIsFetched } from '../../modules/userAuth';
+import { selectIsAuthenticated } from '../../modules/userAuth';
+import { selectIsFetched } from '../../modules/userProfile';
+import { UserProfileRoutines } from '../../modules/userProfile/userProfile.redux';
 
 const mapStateToProps = createStructuredSelector({
   isAuthenticated: selectIsAuthenticated,
   isUserFetched: selectIsFetched,
 });
 
-export const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchCurrentUser: UserProfileRoutines.fetchUserDetails,
+    },
+    dispatch
+  );
 
 export default compose(
   hot(module),

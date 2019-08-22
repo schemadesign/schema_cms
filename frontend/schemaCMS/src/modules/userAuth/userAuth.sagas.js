@@ -1,10 +1,12 @@
-import { all, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { all, put, takeLatest, select } from 'redux-saga/effects';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 
-import { UserAuthTypes, UserAuthActions, UserAuthRoutines } from './userAuth.redux';
+import { UserAuthTypes, UserAuthActions } from './userAuth.redux';
 import { StartupTypes } from '../startup/startup.redux';
-import { TOKEN_PATH, ME_PATH } from '../../shared/utils/api.constants';
+import { TOKEN_PATH } from '../../shared/utils/api.constants';
+import { selectAuthToken } from './userAuth.selectors';
+import { UserProfileRoutines, UserProfileActions } from '../userProfile/userProfile.redux';
 
 function* setAuthorizationToken(token) {
   if (token) {
@@ -17,34 +19,21 @@ function* redirectExternal(path) {
 }
 
 function* getJwtToken({ uid, token }) {
-  const {
-    data: { token: jwt },
-  } = yield api.post(TOKEN_PATH, {
+  const { data } = yield api.post(TOKEN_PATH, {
     uid,
     token,
   });
 
-  yield setAuthorizationToken(jwt);
-  yield fetchUserDetails();
-}
-
-function* fetchUserDetails() {
-  try {
-    yield put(UserAuthRoutines.fetchUserDetails.request());
-
-    const { data } = yield api.get(ME_PATH);
-
-    yield put(UserAuthRoutines.fetchUserDetails.success(data));
-  } catch (error) {
-    yield put(UserAuthRoutines.fetchUserDetails.failure(error));
-    yield put(UserAuthActions.fetchUserDetailsError());
-  } finally {
-    yield put(UserAuthRoutines.fetchUserDetails.fulfill());
-  }
+  yield setAuthorizationToken(data.token);
+  yield put(UserAuthActions.getJwtTokenSuccess(data.token));
+  yield put(UserProfileRoutines.fetchUserDetails());
+  browserHistory.push('/');
 }
 
 function* startup() {
-  yield fetchUserDetails();
+  yield put(UserProfileActions.clearUserDetails());
+  const token = yield select(selectAuthToken);
+  yield setAuthorizationToken(token);
 }
 
 function* logout() {
@@ -55,39 +44,9 @@ function* logout() {
   browserHistory.push('/');
 }
 
-function* resetPassword() {
-  try {
-    yield put(UserAuthRoutines.resetPassword.request());
-
-    yield api.post('/auth/reset-password/');
-
-    yield put(UserAuthRoutines.resetPassword.success());
-  } catch (error) {
-    yield put(UserAuthRoutines.resetPassword.failure());
-  } finally {
-    yield put(UserAuthRoutines.resetPassword.fulfill());
-  }
-}
-
-function* resendVerificationEmail() {
-  try {
-    yield put(UserAuthRoutines.resendVerificationEmail.request());
-
-    yield api.post('/auth/resend-verification-email/');
-
-    yield put(UserAuthRoutines.resendVerificationEmail.success());
-  } catch (error) {
-    yield put(UserAuthRoutines.resendVerificationEmail.failure());
-  } finally {
-    yield put(UserAuthRoutines.resendVerificationEmail.fulfill());
-  }
-}
-
 export function* watchUserAuth() {
   yield all([
     takeLatest(UserAuthTypes.LOGOUT, logout),
-    takeEvery(UserAuthRoutines.resetPassword.TRIGGER, resetPassword),
-    takeEvery(UserAuthRoutines.resendVerificationEmail.TRIGGER, resendVerificationEmail),
     takeLatest(StartupTypes.STARTUP, startup),
     takeLatest(UserAuthTypes.GET_JWT_TOKEN, getJwtToken),
   ]);

@@ -13,7 +13,7 @@ export const selectIsAuthenticated = createSelector(
   prop('isAuthenticated')
 );
 
-export const selectIsFetched = createSelector(
+export const selectAuthToken = createSelector(
   selectUserAuthDomain,
-  prop('isFetched')
+  prop('jwtToken')
 );

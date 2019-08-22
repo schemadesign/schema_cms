@@ -10,7 +10,10 @@ import rootSaga from './sagas';
 
 const transformerConfig = {
   whitelistPerReducer: {
-    userAuth: ['isAuthenticated', 'user'],
+    userAuth: ['isAuthenticated', 'jwtToken'],
+  },
+  blackListPerReducer: {
+    userProfile: ['user', 'isFetched'],
   },
 };
 
