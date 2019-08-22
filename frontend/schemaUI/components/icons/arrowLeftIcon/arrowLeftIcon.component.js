@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import MenuSVG from '../../../images/icons/menu.svg';
-import { containerStyles } from './menuIcon.styles';
+import ArrowLeftSVG from '../../../images/icons/arrow-left.svg';
+import { containerStyles } from '../arrowLeftIcon/arrowLeftIcon.styles';
 
-export class MenuIcon extends PureComponent {
+export class ArrowLeftIcon extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
@@ -13,6 +13,6 @@ export class MenuIcon extends PureComponent {
     const { customStyles, ...restProps } = this.props;
     const styles = { ...containerStyles, ...customStyles };
 
-    return <MenuSVG {...restProps} style={styles} />;
+    return <ArrowLeftSVG {...restProps} style={styles} />;
   }
 }
