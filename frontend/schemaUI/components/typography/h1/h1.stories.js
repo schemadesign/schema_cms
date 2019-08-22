@@ -24,3 +24,20 @@ storiesOf('Typography.H1', module).add('with attributes', () => (
     </span>
   </H1>
 ));
+
+storiesOf('Typography.H1', module).add('with theme', () => {
+  const theme = {
+    typography: {
+      h1: {
+        fontFamily: 'serif',
+        size: '30px',
+        color: 'orange',
+        border: '1px solid gray',
+        padding: '10px',
+        display: 'inline-block',
+      },
+    },
+  };
+
+  return <H1 theme={theme}>Title styled by theme</H1>;
+});
