@@ -1,5 +1,4 @@
-import { all, put, takeLatest, takeEvery } from 'redux-saga/effects';
-import reportError from '../../shared/utils/reportError';
+import { all, put, takeEvery } from 'redux-saga/effects';
 
 import { UserProfileActions, UserProfileRoutines } from './userProfile.redux';
 import api from '../../shared/services/api';

@@ -3548,7 +3548,7 @@ babel-preset-react-app@^9.0.0:
     babel-plugin-macros "2.5.1"
     babel-plugin-transform-react-remove-prop-types "0.4.24"
 
-babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.26.0, babel-runtime@^6.6.1:
+babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.26.0, babel-runtime@^6.6.1:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -12817,6 +12817,13 @@ redux-saga-test-plan@4.0.0-beta.2:
     lodash.ismatch "^4.4.0"
     object-assign "^4.1.0"
     util-inspect "^0.1.8"
+
+redux-saga-tester@^1.0.529:
+  version "1.0.529"
+  resolved "https://registry.yarnpkg.com/redux-saga-tester/-/redux-saga-tester-1.0.529.tgz#3360579f7288af826aadce54fed5d7002eec8e19"
+  integrity sha512-ryKDyCkN54WIdh0gGSLZOidNQcO9ejfhwGm+VatsPafo9ujXYlQPMENZy4XjG3vq66v6axwEokju3083pZRGrA==
+  dependencies:
+    babel-runtime "^6.11.6"
 
 redux-saga@^1.0.2:
   version "1.0.5"
