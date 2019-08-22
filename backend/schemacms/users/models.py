@@ -7,6 +7,7 @@ from rest_framework_jwt.settings import api_settings
 
 from schemacms.authorization import tokens
 
+from . import constants
 
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
@@ -15,6 +16,10 @@ jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 @python_2_unicode_compatible
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
+    role = models.CharField(
+        max_length=25, choices=constants.USER_ROLE_CHOICES, default=constants.UserRole.UNDEFINED
+    )
 
     def __str__(self):
         return self.username

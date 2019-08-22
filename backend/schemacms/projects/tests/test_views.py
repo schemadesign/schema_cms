@@ -42,7 +42,6 @@ class TestProjectView:
     def test_list_projects(self):
         pass
 
-
     def test_url(self):
         assert "/api/v1/projects" == self.get_url()
 
