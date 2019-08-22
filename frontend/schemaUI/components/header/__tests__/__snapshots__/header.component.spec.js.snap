@@ -11,6 +11,7 @@ exports[`Header: Component should render correctly 1`] = `
       "flexDirection": "row",
       "justifyContent": "space-between",
       "padding": "6px 0 18px 20px",
+      "width": "100%",
     }
   }
 >
@@ -35,6 +36,7 @@ exports[`Header: Component should render with children and custom styles 1`] = `
       "flexDirection": "row",
       "justifyContent": "space-between",
       "padding": "6px 0 18px 20px",
+      "width": "100%",
     }
   }
 >
