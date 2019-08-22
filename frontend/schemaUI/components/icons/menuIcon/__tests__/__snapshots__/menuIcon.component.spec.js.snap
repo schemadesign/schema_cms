@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MenuIcon: Component should render correctly 1`] = `
-<menu-white.svg
+<menu.svg
   style={
     Object {
       "fill": "#1d1d20",
@@ -13,7 +13,7 @@ exports[`MenuIcon: Component should render correctly 1`] = `
 `;
 
 exports[`MenuIcon: Component should render with custom styles 1`] = `
-<menu-white.svg
+<menu.svg
   style={
     Object {
       "fill": "blue",
