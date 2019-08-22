@@ -38,4 +38,20 @@ describe('P: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with custom theme', () => {
+    const theme = {
+      typography: {
+        p: {
+          fontFamily: 'serif',
+          size: '100px',
+          color: 'gray',
+        },
+      },
+    };
+
+    const wrapper = shallow(<P theme={theme}>Paragraph with custom theme</P>);
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

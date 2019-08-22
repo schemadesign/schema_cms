@@ -4,7 +4,7 @@ exports[`H1: Component should render children when passed in 1`] = `
 <h1
   style={
     Object {
-      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "24px",
       "fontWeight": 600,
     }
@@ -18,7 +18,7 @@ exports[`H1: Component should render correctly 1`] = `
 <h1
   style={
     Object {
-      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "24px",
       "fontWeight": 600,
     }
@@ -31,7 +31,7 @@ exports[`H1: Component should render with attributes 1`] = `
   id="test-id"
   style={
     Object {
-      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "24px",
       "fontWeight": 600,
     }
@@ -47,12 +47,27 @@ exports[`H1: Component should render with custom styles 1`] = `
   style={
     Object {
       "color": "blue",
-      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "24px",
       "fontWeight": 600,
     }
   }
 >
   Blue title
+</h1>
+`;
+
+exports[`H1: Component should render with custom theme 1`] = `
+<h1
+  style={
+    Object {
+      "color": "gray",
+      "fontFamily": "serif",
+      "fontSize": "24px",
+      "size": "100px",
+    }
+  }
+>
+  Title with custom theme
 </h1>
 `;

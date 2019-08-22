@@ -4,8 +4,9 @@ exports[`P: Component should render children when passed in 1`] = `
 <p
   style={
     Object {
-      "fontFamily": "Inter-BETA, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
+      "fontWeight": 200,
       "lineHeight": "1.33em",
     }
   }
@@ -18,8 +19,9 @@ exports[`P: Component should render correctly 1`] = `
 <p
   style={
     Object {
-      "fontFamily": "Inter-BETA, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
+      "fontWeight": 200,
       "lineHeight": "1.33em",
     }
   }
@@ -31,8 +33,9 @@ exports[`P: Component should render with attributes 1`] = `
   id="test-id"
   style={
     Object {
-      "fontFamily": "Inter-BETA, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
+      "fontWeight": 200,
       "lineHeight": "1.33em",
     }
   }
@@ -47,12 +50,29 @@ exports[`P: Component should render with custom styles 1`] = `
   style={
     Object {
       "color": "blue",
-      "fontFamily": "Inter-BETA, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
+      "fontWeight": 200,
       "lineHeight": "1.33em",
     }
   }
 >
   Paragraph with custom styles
+</p>
+`;
+
+exports[`P: Component should render with custom theme 1`] = `
+<p
+  style={
+    Object {
+      "color": "gray",
+      "fontFamily": "serif",
+      "fontSize": "18px",
+      "lineHeight": "1.33em",
+      "size": "100px",
+    }
+  }
+>
+  Paragraph with custom theme
 </p>
 `;

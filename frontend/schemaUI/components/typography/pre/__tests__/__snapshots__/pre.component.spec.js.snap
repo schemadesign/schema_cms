@@ -52,3 +52,18 @@ exports[`Pre: Component should render with custom styles 1`] = `
   Paragraph with custom styles
 </pre>
 `;
+
+exports[`Pre: Component should render with custom theme 1`] = `
+<pre
+  style={
+    Object {
+      "color": "gray",
+      "fontFamily": "sans-serif",
+      "fontSize": "18px",
+      "size": "100px",
+    }
+  }
+>
+  Pre tag with custom theme
+</pre>
+`;

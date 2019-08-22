@@ -38,4 +38,20 @@ describe('Pre: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with custom theme', () => {
+    const theme = {
+      typography: {
+        pre: {
+          fontFamily: 'sans-serif',
+          size: '100px',
+          color: 'gray',
+        },
+      },
+    };
+
+    const wrapper = shallow(<Pre theme={theme}>Pre tag with custom theme</Pre>);
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

@@ -5,7 +5,7 @@ exports[`H3: Component should render children when passed in 1`] = `
   style={
     Object {
       "color": "#a6a7aa",
-      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": 600,
     }
@@ -20,7 +20,7 @@ exports[`H3: Component should render correctly 1`] = `
   style={
     Object {
       "color": "#a6a7aa",
-      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": 600,
     }
@@ -34,7 +34,7 @@ exports[`H3: Component should render with attributes 1`] = `
   style={
     Object {
       "color": "#a6a7aa",
-      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": 600,
     }
@@ -50,12 +50,27 @@ exports[`H3: Component should render with custom styles 1`] = `
   style={
     Object {
       "color": "blue",
-      "fontFamily": "Inter, Arial, Helvetica, sans-serif",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": 600,
     }
   }
 >
   Blue title
+</h3>
+`;
+
+exports[`H3: Component should render with custom theme 1`] = `
+<h3
+  style={
+    Object {
+      "color": "gray",
+      "fontFamily": "serif",
+      "fontSize": "18px",
+      "size": "100px",
+    }
+  }
+>
+  Title with custom theme
 </h3>
 `;

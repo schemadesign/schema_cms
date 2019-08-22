@@ -38,4 +38,20 @@ describe('H2: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with custom theme', () => {
+    const theme = {
+      typography: {
+        h2: {
+          fontFamily: 'serif',
+          size: '100px',
+          color: 'gray',
+        },
+      },
+    };
+
+    const wrapper = shallow(<H2 theme={theme}>Title with custom theme</H2>);
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

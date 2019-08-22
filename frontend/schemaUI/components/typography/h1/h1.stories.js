@@ -25,7 +25,7 @@ storiesOf('Typography.H1', module).add('with attributes', () => (
   </H1>
 ));
 
-storiesOf('Typography.H1', module).add('with theme', () => {
+storiesOf('Typography.H1', module).add('with custom theme', () => {
   const theme = {
     typography: {
       h1: {

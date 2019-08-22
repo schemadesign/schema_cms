@@ -38,4 +38,20 @@ describe('H3: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with custom theme', () => {
+    const theme = {
+      typography: {
+        h3: {
+          fontFamily: 'serif',
+          size: '100px',
+          color: 'gray',
+        },
+      },
+    };
+
+    const wrapper = shallow(<H3 theme={theme}>Title with custom theme</H3>);
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

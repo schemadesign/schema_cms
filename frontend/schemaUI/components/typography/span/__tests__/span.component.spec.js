@@ -38,4 +38,20 @@ describe('Span: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with custom theme', () => {
+    const theme = {
+      typography: {
+        span: {
+          fontFamily: 'serif',
+          size: '100px',
+          color: 'gray',
+        },
+      },
+    };
+
+    const wrapper = shallow(<Span theme={theme}>Span with custom theme</Span>);
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });
