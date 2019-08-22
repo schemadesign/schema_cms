@@ -12,7 +12,7 @@ from schemacms.projects import (
 pytestmark = [pytest.mark.django_db]
 
 
-class TestProjectCreateView:
+class TestProjectView:
     """
     Tests /api/v1/projects/ create operation
     """
@@ -22,7 +22,7 @@ class TestProjectCreateView:
     }
 
     def test_create_as_admin(self, api_client, user):
-        user.is_staff = True
+        user.role = None
         api_client.force_authenticate(user)
 
         response = api_client.post(self.get_url(), data=self.example_project)
@@ -32,12 +32,16 @@ class TestProjectCreateView:
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == project_serializers.ProjectSerializer(instance=project).data
 
-    def test_create_as_user(self,api_client, user):
-        user.is_staff = False
+    def test_create_as_editor(self, api_client, user):
+        user.role = None
         api_client.force_authenticate(user)
         response = api_client.post(self.get_url(), data=self.example_project)
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
+
+    def test_list_projects(self):
+        pass
+
 
     def test_url(self):
         assert "/api/v1/projects" == self.get_url()
