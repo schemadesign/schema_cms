@@ -10,3 +10,4 @@ nav:
   - API:
     - Authentication: 'api/authentication.md'
     - Users: 'api/users.md'
+    - Projects: 'api/projects.md'
