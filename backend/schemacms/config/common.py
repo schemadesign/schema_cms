@@ -42,13 +42,13 @@ class Common(Configuration):
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
     MIDDLEWARE = (
         'django.middleware.security.SecurityMiddleware',
+        'corsheaders.middleware.CorsMiddleware',
         'whitenoise.middleware.WhiteNoiseMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         # CorsMiddleware should be placed as high as possible,
         # especially before any middleware that can generate
         # responses such as Django’s CommonMiddleware
         # or Whitenoise’s WhiteNoiseMiddleware
-        'corsheaders.middleware.CorsMiddleware',
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
