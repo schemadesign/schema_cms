@@ -17,7 +17,7 @@ jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
-    status = models.CharField(
+    role = models.CharField(
         max_length=25, choices=constants.USER_ROLE_CHOICES, default=constants.UserRole.UNDEFINED
     )
 
