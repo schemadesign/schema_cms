@@ -6,8 +6,11 @@ exports[`Button: Component should render correctly 1`] = `
     Object {
       "backgroundColor": "transparent",
       "border": "none",
+      "borderRadius": "48px",
       "cursor": "pointer",
+      "fontSize": "18px",
       "margin": "0",
+      "minHeight": "48px",
       "outline": "none",
       "padding": "0",
     }
@@ -23,8 +26,11 @@ exports[`Button: Component should render with custom styles 1`] = `
     Object {
       "backgroundColor": "red",
       "border": "none",
+      "borderRadius": "48px",
       "cursor": "pointer",
+      "fontSize": "18px",
       "margin": "0",
+      "minHeight": "48px",
       "outline": "none",
       "padding": "0",
     }
