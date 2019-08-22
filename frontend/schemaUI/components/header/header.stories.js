@@ -5,8 +5,10 @@ import { Header } from './header.component';
 
 storiesOf('Header', module).add('Default', () => (
   <Header>
-    <h1>Title</h1>
-    <h2>Subtitle</h2>
+    <>
+      <h1>Title</h1>
+      <h2>Subtitle</h2>
+    </>
   </Header>
 ));
 
@@ -18,8 +20,10 @@ const defaultPropsWithCustomStyles = {
 
 storiesOf('Header', module).add('with custom styles', () => (
   <Header {...defaultPropsWithCustomStyles}>
-    <h1>Title</h1>
-    <h2>Subtitle</h2>
+    <>
+      <h1>Title</h1>
+      <h2>Subtitle</h2>
+    </>
   </Header>
 ));
 
@@ -29,7 +33,9 @@ const defaultPropsWithCustomIcon = {
 
 storiesOf('Header', module).add('with custom icon', () => (
   <Header {...defaultPropsWithCustomIcon}>
-    <h1>Title</h1>
-    <h2>Subtitle</h2>
+    <>
+      <h1>Title</h1>
+      <h2>Subtitle</h2>
+    </>
   </Header>
 ));
