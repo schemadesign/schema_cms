@@ -8,6 +8,7 @@ from .users import views as user_views
 from .projects import views as project_views
 
 
+
 router = DefaultRouter(trailing_slash=False)
 router.register(r'users', user_views.UserViewSet)
 router.register(r'projects', project_views.ProjectViewSet)
