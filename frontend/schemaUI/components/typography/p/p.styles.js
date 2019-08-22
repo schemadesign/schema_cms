@@ -1,7 +1,8 @@
-import { secondary } from '../../../utils/theme';
+import { primary } from '../../../utils/theme';
 
 export const containerStyles = {
   fontSize: '18px',
-  fontFamily: secondary.fontFamily,
+  fontFamily: primary.fontFamily,
+  fontWeight: 200,
   lineHeight: '1.33em',
 };
