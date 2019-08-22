@@ -1,6 +1,7 @@
 import { primary } from '../../utils/theme';
 
 export const containerStyles = {
+  fontFamily: primary.typography.span.fontFamily,
   borderTop: `2px solid ${primary.border}`,
   backgroundColor: primary.background,
   color: primary.text,
