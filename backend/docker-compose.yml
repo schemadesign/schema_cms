@@ -5,8 +5,8 @@ services:
     image: postgres:9.6
     env_file:
       - local.env
-#    volumes:
-#      - dev-db:/var/lib/postgresql/data
+    volumes:
+      - dev-db:/var/lib/postgresql/data
   backend:
     restart: always
     env_file:

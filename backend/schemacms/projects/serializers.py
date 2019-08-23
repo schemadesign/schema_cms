@@ -13,6 +13,7 @@ class ProjectSerializer(serializers.ModelSerializer):
     editors = serializers.PrimaryKeyRelatedField(
         many=True,
         queryset=User.objects.all(),
+        pk_field=serializers.UUIDField(format='hex_verbose'),
         allow_empty=True,
     )
 

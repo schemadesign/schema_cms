@@ -111,10 +111,11 @@ class TestRetrieveUpdateDeleteProjectView:
         assert not Project.objects.filter(pk=project.pk).exists()
 
     def test_adding_editor(self, api_client, user, project):
+        editor1, editor2 = UserFactory.create_batch(2, role=UserRole.EDITOR)
         api_client.force_authenticate(user)
 
         new_title = {
-            "user": [user]
+            "editors": [editor1.id, editor2.id]
         }
 
         response = api_client.patch(
@@ -125,6 +126,7 @@ class TestRetrieveUpdateDeleteProjectView:
         project.refresh_from_db()
         assert response.status_code == status.HTTP_200_OK
         assert response.data == ProjectSerializer(instance=project).data
+        assert len(response.data["editors"]) == 2
 
     def test_url(self, project):
         assert f"/api/v1/projects/{project.pk}" == self.get_url(pk=project.pk)
