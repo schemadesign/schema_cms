@@ -7,7 +7,7 @@ from . import constants
 
 
 # Create your models here.
-class Projects(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel, models.Model):
+class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel, models.Model):
     status = models.CharField(
         max_length=25, choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.INITIAL
     )

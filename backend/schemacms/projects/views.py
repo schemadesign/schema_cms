@@ -3,7 +3,7 @@ from rest_framework import (
     viewsets,
 )
 
-from .models import Projects
+from .models import Project
 from .serializers import ProjectSerializer
 from .permissions import IsAdminOrReadOnly
 
@@ -12,6 +12,6 @@ class ProjectViewSet(viewsets.ModelViewSet):
     """
     Creates new project
     """
-    queryset = Projects.objects.all()
+    queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    permission_classes = (permissions.IsAuthenticated, )
+    permission_classes = (IsAdminOrReadOnly, permissions.IsAuthenticated, )
