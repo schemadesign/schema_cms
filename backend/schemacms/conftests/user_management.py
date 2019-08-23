@@ -1,6 +1,12 @@
 import pytest
 
 
-@pytest.fixture()
+@pytest.fixture(autouse=True)
+def auth0_auth_token(mocker):
+    token_mock = mocker.patch('auth0.v3.authentication.GetToken')
+    token_mock.return_value.client_credentials.return_value = {'access_token': 'fakeAuth0Token'}
+
+
+@pytest.fixture(autouse=True)
 def auth0_management(mocker):
-    return mocker.path('auth0.v3.management.Auth0', autospec=True)
+    yield mocker.patch('auth0.v3.management.Auth0')
