@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label: Component should render correctly 1`] = `
+<label
+  style={
+    Object {
+      "border": "none",
+      "color": "#1d1d20",
+      "fontSize": "18px",
+      "lineHeight": "24px",
+      "outline": "none",
+    }
+  }
+/>
+`;
+
+exports[`Label: Component should render with custom styles 1`] = `
+<label
+  style={
+    Object {
+      "border": "none",
+      "color": "blue",
+      "fontSize": "18px",
+      "lineHeight": "24px",
+      "outline": "none",
+    }
+  }
+/>
+`;

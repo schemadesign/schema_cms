@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { EditIcon } from './editIcon.component';
 
-storiesOf('EditIcon', module).add('Default', () => <EditIcon />);
+const customStyles = { customStyles: { fill: 'blue' } };
 
-const defaultProps = { customStyles: { fill: 'blue' } };
-storiesOf('EditIcon', module).add('with custom styles', () => <EditIcon {...defaultProps} />);
+storiesOf('Icons/EditIcon', module)
+  .add('Default', () => <EditIcon />)
+  .add('with custom styles', () => <EditIcon {...customStyles} />);
