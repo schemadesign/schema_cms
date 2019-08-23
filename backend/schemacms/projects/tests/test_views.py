@@ -79,16 +79,16 @@ class TestRetrieveUpdateDeleteProjectView:
     def test_update_project_by_owner(self, api_client, user, project):
         api_client.force_authenticate(user)
 
-        update_project_data = ProjectSerializer(instance=project).data
-        update_project_data["title"] = "new title"
+        new_title = {
+            "title": "new title"
+        }
 
         response = api_client.patch(
             self.get_url(pk=project.pk),
-            data=update_project_data,
+            data=new_title
         )
 
         project.refresh_from_db()
-
         assert response.status_code == status.HTTP_200_OK
         assert response.data == ProjectSerializer(instance=project).data
 
