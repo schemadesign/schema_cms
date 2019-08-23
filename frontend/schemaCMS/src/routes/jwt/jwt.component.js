@@ -16,6 +16,6 @@ export class Jwt extends PureComponent {
   }
 
   render() {
-    return <div>Validating</div>;
+    return <div>Validating...</div>;
   }
 }
