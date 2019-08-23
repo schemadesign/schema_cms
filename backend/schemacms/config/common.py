@@ -65,6 +65,7 @@ class Common(Configuration):
 
     ALLOWED_HOSTS = ["*"]
     DEFAULT_HOST = os.getenv('DJANGO_HOST', 'http://localhost:8000')  # without trailing slash
+    DEFAULT_WEBAPP_HOST = os.getenv('DJANGO_WEBAPP_HOST', 'http://localhost:3000')  # without trailing slash
     ROOT_URLCONF = 'schemacms.urls'
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
     WSGI_APPLICATION = 'schemacms.wsgi.application'

@@ -1,5 +1,6 @@
 from urllib import parse
 from django import shortcuts
+from django.conf import settings
 
 from schemacms.users import constants
 
@@ -32,8 +33,8 @@ def update_external_id(backend, details, user=None, *args, **kwargs):
 
 
 def redirect_with_token(strategy, user=None, *args, **kwargs):
-    uri = strategy.session_get('next', '/')
+    uri = strategy.session_get('next', settings.DEFAULT_WEBAPP_HOST)
     if not uri.endswith('/'):
         uri = '{}/'.format(uri)
     token = user.get_exchange_token()
-    return shortcuts.redirect(parse.urljoin(uri, "{uid}/{token}".format(uid=user.id, token=token)))
+    return shortcuts.redirect(parse.urljoin(uri, "auth/confirm/{uid}/{token}".format(uid=user.id, token=token)))
