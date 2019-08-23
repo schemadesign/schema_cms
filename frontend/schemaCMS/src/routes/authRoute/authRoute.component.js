@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Redirect, Route } from 'react-router-dom';
 import { AUTH_PATH } from '../../shared/utils/api.constants';
 
-class ExternalRedirect extends PureComponent {
+export class ExternalRedirect extends PureComponent {
   static propTypes = {
     to: PropTypes.string.isRequired,
   };
