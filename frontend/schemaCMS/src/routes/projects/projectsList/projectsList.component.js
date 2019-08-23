@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Card, Typography } from 'schemaUI';
 
-import { Container, List, Item, Empty, HeaderList, HeaderItem } from './projectsList.styles';
+import { Container, Description, Empty, HeaderItem, HeaderList, Item, List, urlStyles } from './projectsList.styles';
 
 export class ProjectsList extends PureComponent {
   static propTypes = {
@@ -25,22 +25,20 @@ export class ProjectsList extends PureComponent {
       <Item>
         <Card headerComponent={header}>
           <H1>{name}</H1>
-          <P>{description}</P>
-          <Span>{url}</Span>
+          <Description>
+            <P>{description}</P>
+          </Description>
+          <Span customStyles={urlStyles}>{url}</Span>
         </Card>
       </Item>
     );
   }
 
-  renderNoData = () => {
-    const { P } = Typography;
-
-    return (
-      <Empty>
-        <P>No Projects</P>
-      </Empty>
-    );
-  };
+  renderNoData = () => (
+    <Empty>
+      <Typography.P>No Projects</Typography.P>
+    </Empty>
+  );
 
   render() {
     const { list } = this.props;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Theme } from 'schemaUI';
 
 export const Container = styled.div``;
 
@@ -24,6 +25,7 @@ export const HeaderList = styled.ul`
 
 export const HeaderItem = styled.li`
   display: inline-block;
+  line-height: 1.25;
 
   &::before {
     content: '•';
@@ -36,4 +38,21 @@ export const HeaderItem = styled.li`
   }
 `;
 
-export const Empty = styled.div``;
+export const Description = styled.div`
+  margin: 7px 0 14px;
+`;
+
+export const Empty = styled.div`
+  text-align: center;
+  padding: 10px;
+`;
+
+export const urlStyles = {
+  color: Theme.primary.label,
+  fontSize: '12px',
+  whiteSpace: 'nowrap',
+  display: 'block',
+  width: '100%',
+  textOverflow: 'ellipsis',
+  overflow: 'hidden',
+};

@@ -42,3 +42,4 @@ const primaryTypography = {
 primary.typography = primaryTypography;
 
 export { primary, secondary };
+export const Theme = { primary, secondary };
