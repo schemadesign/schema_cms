@@ -11,11 +11,11 @@ describe('UserProfile: redux', () => {
 
   describe('reducer', () => {
     it('should return initial state', () => {
-      expect(userProfileReducer(undefined, {})).to.deep.equal(state);
+      expect(userProfileReducer(undefined, {})).to.deep.equal(defaultState);
     });
 
     it('should return state on unknown action', () => {
-      expect(userProfileReducer(state, { type: 'unknown-action' })).to.deep.equal(state);
+      expect(userProfileReducer(defaultState, { type: 'unknown-action' })).to.deep.equal(defaultState);
     });
   });
 

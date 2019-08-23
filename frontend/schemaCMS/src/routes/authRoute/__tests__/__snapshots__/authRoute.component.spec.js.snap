@@ -2,7 +2,7 @@
 
 exports[`AuthRoute: Component should render <ExternalRedirect> if not authenticated 1`] = `
 <ExternalRedirect
-  to="undefined/auth/login/auth0"
+  to="http://localhost/auth/login/auth0"
 />
 `;
 

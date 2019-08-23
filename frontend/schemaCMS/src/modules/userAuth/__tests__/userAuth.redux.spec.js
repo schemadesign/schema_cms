@@ -11,11 +11,11 @@ describe('UserAuth: redux', () => {
 
   describe('reducer', () => {
     it('should return initial state', () => {
-      expect(userAuthReducer(undefined, {})).to.deep.equal(state);
+      expect(userAuthReducer(undefined, {})).to.deep.equal(defaultState);
     });
 
     it('should return state on unknown action', () => {
-      expect(userAuthReducer(state, { type: 'unknown-action' })).to.deep.equal(state);
+      expect(userAuthReducer(defaultState, { type: 'unknown-action' })).to.deep.equal(defaultState);
     });
   });
 
