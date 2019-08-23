@@ -1,6 +1,7 @@
 import { expectSaga } from 'redux-saga-test-plan';
-import mockApi from '../../../shared/utils/mockApi';
+import { OK } from 'http-status-codes';
 
+import mockApi from '../../../shared/utils/mockApi';
 import { watchUserAuth } from '../userAuth.sagas';
 import { UserAuthActions, INITIAL_STATE } from '../userAuth.redux';
 import { TOKEN_PATH } from '../../../shared/utils/api.constants';
@@ -12,11 +13,11 @@ describe('UserAuth: sagas', () => {
   const jwtToken = 'aJwtToken';
 
   beforeEach(() => {
-    mockApi.post(TOKEN_PATH).reply(200, {
+    mockApi.post(TOKEN_PATH).reply(OK, {
       token: jwtToken,
     });
 
-    mockApi.post('/auth/logout/').reply(200);
+    mockApi.post('/auth/logout/').reply(OK);
   });
 
   describe('when USER_AUTH/GET_JWT_TOKEN action is fired', () => {
