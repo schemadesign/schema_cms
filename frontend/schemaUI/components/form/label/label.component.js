@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
-import { defaultStyles } from './label.styles';
 import PropTypes from 'prop-types';
+
+import { defaultStyles } from './label.styles';
 
 export class Label extends PureComponent {
   static propTypes = {
