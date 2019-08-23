@@ -40,10 +40,10 @@ class TestListCreateProjectView:
 
         response = api_client.post(self.get_url(), data=self.example_project)
         project_id = response.data['id']
-        project = project_models.Projects.objects.get(pk=project_id)
+        project = Project.objects.get(pk=project_id)
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert response.data == project_serializers.ProjectSerializer(instance=project).data
+        assert response.data == ProjectSerializer(instance=project).data
 
     @pytest.mark.parametrize('role', [UserRole.EDITOR, UserRole.UNDEFINED])
     def test_create_as_editor(self, api_client, user, role):
@@ -61,7 +61,7 @@ class TestListCreateProjectView:
 
     @staticmethod
     def get_url():
-        return reverse("projects-list")
+        return reverse("project-list")
 
 
 class TestRetrieveUpdateDeleteProjectView:
@@ -74,12 +74,12 @@ class TestRetrieveUpdateDeleteProjectView:
         response = api_client.get(self.get_url(project.pk))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == project_serializers.ProjectSerializer(instance=project).data
+        assert response.data == ProjectSerializer(instance=project).data
 
     def test_update_project_by_owner(self, api_client, user, project):
         api_client.force_authenticate(user)
 
-        update_project_data = project_serializers.ProjectSerializer(instance=project).data
+        update_project_data = ProjectSerializer(instance=project).data
         update_project_data["title"] = "new title"
 
         response = api_client.patch(
@@ -90,7 +90,7 @@ class TestRetrieveUpdateDeleteProjectView:
         project.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == project_serializers.ProjectSerializer(instance=project).data
+        assert response.data == ProjectSerializer(instance=project).data
 
     def test_delete_project_by_owner(self, api_client, user, project):
         api_client.force_authenticate(user)
@@ -98,11 +98,11 @@ class TestRetrieveUpdateDeleteProjectView:
         response = api_client.delete(self.get_url(pk=project.pk))
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
-        assert True == project_models
+        assert not Project.objects.filter(pk=project.pk).exists()
 
     def test_url(self, project):
         assert f"/api/v1/projects/{project.pk}" == self.get_url(pk=project.pk)
 
     @staticmethod
     def get_url(pk):
-        return reverse("projects-detail", kwargs=dict(pk=pk))
+        return reverse("project-detail", kwargs=dict(pk=pk))
