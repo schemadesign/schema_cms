@@ -4,6 +4,8 @@ from rest_framework import status
 import pytest
 
 from schemacms.users.constants import UserRole
+from schemacms.users.tests.factories import UserFactory
+from schemacms.projects.tests.factories import ProjectFactory
 from schemacms.projects.serializers import ProjectSerializer
 from schemacms.projects.models import Project
 
@@ -17,7 +19,8 @@ class TestListCreateProjectView:
     """
     example_project = {
         "title": "test-title",
-        "description": "test description"
+        "description": "test description",
+        "editors": []
     }
 
     def test_list_projects_for_authenticate_users(self, api_client, user):
@@ -53,8 +56,15 @@ class TestListCreateProjectView:
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
-    def test_list_projects(self):
-        pass
+    def test_editor_can_list_only_assign_projects(self, api_client):
+        user1, user2 = UserFactory.create_batch(2, role=UserRole.EDITOR)
+        user1_projects = ProjectFactory.create_batch(2, editors=[user1])
+
+        api_client.force_authenticate(user1)
+        user1_response = api_client.get(self.get_url())
+        assert user1_response.status_code == status.HTTP_200_OK
+        assert user1_response.data['count'] == 2
+        assert user1_response.data['results'] == ProjectSerializer(user1_projects, many=True).data
 
     def test_url(self):
         assert "/api/v1/projects" == self.get_url()
@@ -99,6 +109,22 @@ class TestRetrieveUpdateDeleteProjectView:
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
         assert not Project.objects.filter(pk=project.pk).exists()
+
+    def test_adding_editor(self, api_client, user, project):
+        api_client.force_authenticate(user)
+
+        new_title = {
+            "user": [user]
+        }
+
+        response = api_client.patch(
+            self.get_url(pk=project.pk),
+            data=new_title
+        )
+
+        project.refresh_from_db()
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == ProjectSerializer(instance=project).data
 
     def test_url(self, project):
         assert f"/api/v1/projects/{project.pk}" == self.get_url(pk=project.pk)
