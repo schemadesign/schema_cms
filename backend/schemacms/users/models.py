@@ -6,6 +6,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from rest_framework_jwt.settings import api_settings
 
 from schemacms.authorization import tokens
+from . import constants
 
 from . import constants
 
@@ -16,6 +17,10 @@ jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 @python_2_unicode_compatible
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    source = models.CharField(
+        choices=constants.USER_SOURCE_CHOICES, max_length=16, default=constants.UserSource.UNDEFINED
+    )
+    external_id = models.CharField(max_length=64, blank=True)
 
     role = models.CharField(
         max_length=25, choices=constants.USER_ROLE_CHOICES, default=constants.UserRole.UNDEFINED

@@ -1,3 +1,17 @@
-from django.shortcuts import render
+from rest_framework import (
+    permissions,
+    viewsets,
+)
 
-# Create your views here.
+from .models import Project
+from .serializers import ProjectSerializer
+from .permissions import IsAdminOrReadOnly
+
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    """
+    Creates new project
+    """
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = (permissions.IsAuthenticated, IsAdminOrReadOnly, )
