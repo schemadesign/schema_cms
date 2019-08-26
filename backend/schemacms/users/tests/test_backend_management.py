@@ -41,3 +41,7 @@ class TestAuth0UserManagement:
 
     def test_get_user_source(self):
         assert auth0.Auth0UserManagement().get_user_source() == constants.UserSource.AUTH0
+
+    @pytest.fixture(autouse=True)
+    def setup(self, settings):
+        settings.USER_MGMT_AUTH0_DOMAIN = 'example.com'
