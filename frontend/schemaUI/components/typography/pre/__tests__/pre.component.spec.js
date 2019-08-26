@@ -54,4 +54,12 @@ describe('Pre: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with overwritten styles', () => {
+    const styles = { fontSize: '10px', color: 'blue' };
+
+    const wrapper = shallow(<Pre style={styles}>Pre tag with overwritten styles</Pre>);
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

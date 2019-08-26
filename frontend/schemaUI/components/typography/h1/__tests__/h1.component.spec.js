@@ -54,4 +54,12 @@ describe('H1: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with overwritten styles', () => {
+    const styles = { fontSize: '10px', color: 'blue' };
+
+    const wrapper = shallow(<H1 style={styles}>Blue title with overwritten styles</H1>);
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });
