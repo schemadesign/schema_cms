@@ -7,7 +7,8 @@ import RadioGroupContext from '../radioGroup/radioGroup.context';
 export class RadioButton extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    label: PropTypes.string,
+    label: PropTypes.string.isRequired,
+    value: PropTypes.any.isRequired,
   };
 
   render() {

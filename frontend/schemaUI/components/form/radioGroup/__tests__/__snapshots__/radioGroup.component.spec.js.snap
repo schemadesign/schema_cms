@@ -4,10 +4,75 @@ exports[`RadioGroup: Component should render correctly 1`] = `
 <div
   style={
     Object {
-      "border": "1px solid blue",
+      "display": "flex",
+      "flexDirection": "column",
     }
   }
 >
-  RadioGroup component
+  <ContextProvider
+    value={
+      Object {
+        "customCheckedStyles": Object {},
+        "customLabelStyles": Object {},
+        "name": "radio",
+        "onChange": [Function],
+        "value": null,
+      }
+    }
+  >
+    <RadioButton
+      label="label 1"
+      value="value 1"
+    >
+      label 1
+    </RadioButton>
+    <RadioButton
+      label="label 2"
+      value="value 2"
+    >
+      label 2
+    </RadioButton>
+  </ContextProvider>
+</div>
+`;
+
+exports[`RadioGroup: Component should render with custom styles 1`] = `
+<div
+  style={
+    Object {
+      "background": "blue",
+      "display": "flex",
+      "flexDirection": "column",
+    }
+  }
+>
+  <ContextProvider
+    value={
+      Object {
+        "customCheckedStyles": Object {
+          "opacity": 0.9,
+        },
+        "customLabelStyles": Object {
+          "background": "red",
+        },
+        "name": "radio",
+        "onChange": [Function],
+        "value": null,
+      }
+    }
+  >
+    <RadioButton
+      label="label 1"
+      value="value 1"
+    >
+      label 1
+    </RadioButton>
+    <RadioButton
+      label="label 2"
+      value="value 2"
+    >
+      label 2
+    </RadioButton>
+  </ContextProvider>
 </div>
 `;

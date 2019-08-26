@@ -9,6 +9,9 @@ export class RadioGroup extends PureComponent {
     customStyles: PropTypes.object,
     customLabelStyles: PropTypes.object,
     customCheckedStyles: PropTypes.object,
+    value: PropTypes.any,
+    handleChange: PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired,
     children: PropTypes.array.isRequired,
   };
 

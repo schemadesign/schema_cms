@@ -2,13 +2,38 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { RadioButton } from '../radioButton.component';
+import RadioGroupContext from '../../radioGroup/radioGroup.context';
 
 describe('RadioButton: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    value: 'value',
+    label: 'name',
+  };
 
-  const component = props => <RadioButton {...defaultProps} {...props} />;
+  const context = {
+    name: 'name',
+    onChange: () => {},
+    value: null,
+    customLabelStyles: {
+      background: 'blue',
+    },
+    customCheckedStyles: {
+      opacity: 0.3,
+    },
+  };
 
-  const render = (props = {}) => shallow(component(props));
+  const component = props => (
+    <RadioGroupContext.Provider value={context}>
+      <RadioButton {...defaultProps} {...props}>
+        radio
+      </RadioButton>
+    </RadioGroupContext.Provider>
+  );
+
+  const render = (props = {}) =>
+    shallow(component(props))
+      .dive()
+      .dive();
 
   it('should render correctly', () => {
     const wrapper = render();
