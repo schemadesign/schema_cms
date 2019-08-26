@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { ProjectsList } from './projectsList.component';
+import { List } from './list.component';
 
 const defaultProps = {
   list: [
@@ -21,10 +21,10 @@ const defaultProps = {
   ],
 };
 
-storiesOf('ProjectsList', module).add('list', () => <ProjectsList {...defaultProps} />);
-
 const emptyListProps = {
   list: [],
 };
 
-storiesOf('ProjectsList', module).add('empty', () => <ProjectsList {...emptyListProps} />);
+storiesOf('List', module)
+  .add('list', () => <List {...defaultProps} />)
+  .add('empty', () => <List {...emptyListProps} />);

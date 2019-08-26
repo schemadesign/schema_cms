@@ -3,13 +3,13 @@ import { Theme } from 'schemaUI';
 
 export const Container = styled.div``;
 
-export const List = styled.ul`
+export const ProjectsList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
 `;
 
-export const Item = styled.li`
+export const ProjectItem = styled.li`
   margin-top: 10px;
 
   &:first-child {
@@ -47,6 +47,10 @@ export const Empty = styled.div`
   padding: 10px;
 `;
 
+export const headerStyles = {
+  backgroundColor: null,
+};
+
 export const urlStyles = {
   color: Theme.primary.label,
   fontSize: '12px',
@@ -55,4 +59,12 @@ export const urlStyles = {
   width: '100%',
   textOverflow: 'ellipsis',
   overflow: 'hidden',
+};
+
+export const addProjectStyles = {
+  position: 'absolute',
+  right: '10px',
+  bottom: '10px',
+  backgroundColor: Theme.primary.label,
+  height: '60px',
 };

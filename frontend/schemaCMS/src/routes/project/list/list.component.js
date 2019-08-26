@@ -1,10 +1,23 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Typography } from 'schemaUI';
+import { Button, Card, Header, Icons, Typography } from 'schemaUI';
 
-import { Container, Description, Empty, HeaderItem, HeaderList, Item, List, urlStyles } from './projectsList.styles';
+import {
+  Container,
+  Description,
+  Empty,
+  HeaderItem,
+  HeaderList,
+  ProjectItem,
+  ProjectsList,
+  headerStyles,
+  urlStyles,
+  addProjectStyles,
+} from './list.styles';
 
-export class ProjectsList extends PureComponent {
+const { H1, H2, P, Span } = Typography;
+
+export class List extends PureComponent {
   static propTypes = {
     list: PropTypes.array.isRequired,
   };
@@ -19,10 +32,9 @@ export class ProjectsList extends PureComponent {
 
   renderItem({ name = '', description = '', url = '', details }) {
     const header = this.renderHeader(details);
-    const { H1, P, Span } = Typography;
 
     return (
-      <Item>
+      <ProjectItem>
         <Card headerComponent={header}>
           <H1>{name}</H1>
           <Description>
@@ -30,22 +42,31 @@ export class ProjectsList extends PureComponent {
           </Description>
           <Span customStyles={urlStyles}>{url}</Span>
         </Card>
-      </Item>
+      </ProjectItem>
     );
   }
 
   renderNoData = () => (
     <Empty>
-      <Typography.P>No Projects</Typography.P>
+      <P>No Projects</P>
     </Empty>
   );
 
   render() {
-    const { list } = this.props;
+    const { list = [] } = this.props;
     const count = list.length;
 
     return (
-      <Container>{count ? <List>{list.map(item => this.renderItem(item))}</List> : this.renderNoData()}</Container>
+      <Container>
+        <Header customStyles={headerStyles}>
+          <H2>Projects</H2>
+          <H1>Overview</H1>
+        </Header>
+        {count ? <ProjectsList>{list.map(item => this.renderItem(item))}</ProjectsList> : this.renderNoData()}
+        <Button customStyles={addProjectStyles}>
+          <Icons.PlusIcon />
+        </Button>
+      </Container>
     );
   }
 }
