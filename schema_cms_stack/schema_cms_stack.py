@@ -8,6 +8,9 @@ class BaseResources(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
+        self.app_registry = aws_ecr.Repository(self, 'schema-cms-app-ecr', repository_name='schema-cms-app')
+        self.worker_registry = aws_ecr.Repository(self, 'schema-cms-worker-ecr', repository_name='schema-cms-worker')
+
         self.vpc = aws_ec2.Vpc(self, 'vpc', nat_gateways=1)
         self.cluster = aws_ecs.Cluster(
             self,
@@ -106,7 +109,9 @@ class API(core.Stack):
             self,
             'api-service',
             cluster=scope.base.cluster,
-            image=aws_ecs.ContainerImage.from_asset('backend/app'),
+            # image=aws_ecs.ContainerImage.from_asset('backend/app'),
+            # todo: pass tag
+            image=aws_ecs.ContainerImage.from_ecr_repository(scope.base.app_registry),
             desired_count=1,
             cpu=256,
             memory_limit_mib=512,
@@ -160,9 +165,6 @@ class CIPipeline(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        self.app_registry = aws_ecr.Repository(self, 'schema-cms-app-ecr', repository_name='schema-cms-app')
-        self.worker_registry = aws_ecr.Repository(self, 'schema-cms-worker-ecr', repository_name='schema-cms-worker')
-
         self.pipeline = aws_codepipeline.Pipeline(
             self,
             'ci-pipeline',
@@ -199,7 +201,9 @@ class CIPipeline(core.Stack):
             project_name='schema_cms_app_ci',
             environment=aws_codebuild.BuildEnvironment(
                 environment_variables={
-                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(value=self.app_registry.repository_uri),
+                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
+                        value=scope.base.app_registry.repository_uri
+                    ),
                 },
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
@@ -207,7 +211,7 @@ class CIPipeline(core.Stack):
             cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
             build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec-app.yaml'),
         )
-        self.app_registry.grant_pull_push(build_app_project)
+        scope.base.app_registry.grant_pull_push(build_app_project)
 
         build_app_action = aws_codepipeline_actions.CodeBuildAction(
             action_name='build_app',
@@ -221,7 +225,9 @@ class CIPipeline(core.Stack):
             project_name='schema_cms_worker_ci',
             environment=aws_codebuild.BuildEnvironment(
                 environment_variables={
-                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(value=self.worker_registry.repository_uri),
+                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
+                        value=scope.base.worker_registry.repository_uri
+                    ),
                 },
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
@@ -229,7 +235,7 @@ class CIPipeline(core.Stack):
             cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
             build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec-worker.yaml'),
         )
-        self.worker_registry.grant_pull_push(build_worker_project)
+        scope.base.worker_registry.grant_pull_push(build_worker_project)
 
         build_worker_action = aws_codepipeline_actions.CodeBuildAction(
             action_name='build_worker',
@@ -288,7 +294,7 @@ class CIPipeline(core.Stack):
             stage_name='deploy_public_api',
             actions=[
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
-                    action_name='prepare_changes',
+                    action_name='prepare_public_api_changes',
                     stack_name=scope.public_api.stack_name,
                     change_set_name='publicAPIStagedChangeSet',
                     admin_permissions=True,
@@ -305,14 +311,30 @@ class CIPipeline(core.Stack):
                         lambda_build_output,
                     ]
                 ),
+
+                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
+                    action_name='prepare_api_changes',
+                    stack_name=scope.api.stack_name,
+                    change_set_name='APIStagedChangeSet',
+                    admin_permissions=True,
+                    template_path=cdk_artifact.at_path('cdk.out/api.template.json'),
+                    run_order=1,
+                ),
+
                 aws_codepipeline_actions.ManualApprovalAction(
                     action_name='approve_changes',
                     run_order=2,
                 ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
-                    action_name='execute_changes',
+                    action_name='execute_public_api_changes',
                     stack_name=scope.public_api.stack_name,
                     change_set_name='publicAPIStagedChangeSet',
+                    run_order=3,
+                ),
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                    action_name='execute_api_changes',
+                    stack_name=scope.api.stack_name,
+                    change_set_name='APIStagedChangeSet',
                     run_order=3,
                 ),
             ]
