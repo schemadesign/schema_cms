@@ -18,5 +18,4 @@ class ProjectFactory(factory.django.DjangoModelFactory):
         if not create:
             return
         if extracted:
-            for editor in extracted:
-                self.editors.add(editor)
+            self.editors.add(*extracted)

@@ -1,3 +1,4 @@
+from django.db import transaction
 from rest_framework import serializers
 
 from ..users.models import User
@@ -37,7 +38,9 @@ class ProjectSerializer(serializers.ModelSerializer):
             owner=self.context['request'].user,
             **validated_data
         )
-        project.save()
-        project.editors.add(*editors)
+
+        with transaction.atomic():
+            project.save()
+            project.editors.add(*editors)
 
         return project
