@@ -22,6 +22,7 @@ djangorestframework-jwt==1.11.0
 django-anymail==6.0
 
 # Auth0
+auth0-python
 social-auth-app-django~=3.1
 python-jose~=3.0
 python-dotenv~=0.9

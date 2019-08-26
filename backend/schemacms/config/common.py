@@ -1,14 +1,20 @@
 import datetime
 import os
+import json
 from os.path import join
 from distutils.util import strtobool
-from configurations import Configuration
 
+from configurations import Configuration
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
+from schemacms.utils import json as json_
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+json.JSONEncoder.default = json_.CustomJSONEncoder.default
 
 
 class Common(Configuration):
@@ -58,6 +64,8 @@ class Common(Configuration):
     )
 
     ALLOWED_HOSTS = ["*"]
+    DEFAULT_HOST = os.getenv('DJANGO_HOST', 'http://localhost:8000')  # without trailing slash
+    DEFAULT_WEBAPP_HOST = os.getenv('DJANGO_WEBAPP_HOST', 'http://localhost:3000')  # without trailing slash
     ROOT_URLCONF = 'schemacms.urls'
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
     WSGI_APPLICATION = 'schemacms.wsgi.application'
@@ -243,6 +251,8 @@ class Common(Configuration):
         'JWT_EXPIRATION_DELTA': datetime.timedelta(days=30),
     }
 
+    # social-django
+    SOCIAL_AUTH_SANITIZE_REDIRECTS = False
     SOCIAL_AUTH_PIPELINE = (
         # Get the information we can about the user and return it in a simple
         # format to create the user instance later. On some cases the details are
@@ -274,6 +284,9 @@ class Common(Configuration):
         # a similar email address. Disabled by default.
         # 'social_core.pipeline.social_auth.associate_by_email',
 
+        # Try to fetch user by authorization service external user ID
+        'schemacms.authorization.pipeline.associate_by_external_id',
+
         # Create a user account if we haven't found one yet.
         'social_core.pipeline.user.create_user',
 
@@ -286,6 +299,9 @@ class Common(Configuration):
 
         # Update the user record with any changed info from the auth service.
         'social_core.pipeline.user.user_details',
+
+        # Update user source and external ID from external authorization service
+        'schemacms.authorization.pipeline.update_external_id',
 
         # Redirect user and add exchange token to query string
         'schemacms.authorization.pipeline.redirect_with_token',
@@ -302,3 +318,11 @@ class Common(Configuration):
         'profile',
         'email',
     ]
+
+    # User management
+    USER_MGMT_BACKEND = os.getenv(
+        'DJANGO_USER_MGMT_BACKEND', 'schemacms.users.backend_management.auth0.Auth0UserManagement'
+    )
+    USER_MGMT_AUTH0_DOMAIN = os.getenv('DJANGO_USER_MGMT_AUTH0_DOMAIN')
+    USER_MGMT_AUTH0_KEY = os.getenv('DJANGO_USER_MGMT_AUTH0_KEY')
+    USER_MGMT_AUTH0_SECRET = os.getenv('DJANGO_USER_MGMT_AUTH0_SECRET')
