@@ -14,12 +14,12 @@ from schemacms import mail
 
 @admin.register(user_models.User)
 class UserAdmin(UserAdmin):
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'source')
+    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'source', 'role', )
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
-                                       'groups', 'user_permissions')}),
+                                       'groups', 'user_permissions', 'role', )}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
         (_('Auth'), {'fields': ('source', 'external_id')})
     )

@@ -21,8 +21,9 @@ def associate_by_external_id(backend, details, user=None, *args, **kwargs):
 def update_external_id(backend, details, user=None, *args, **kwargs):
     if not user:
         return None
-    if user.source != constants.UserSource.UNDEFINED:
-        return None
+
+    if not user.last_login and details.get('email_verified'):
+        user.is_active = True
 
     if backend.name == 'auth0':
         user.source = constants.UserSource.AUTH0
