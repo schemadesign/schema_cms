@@ -10,7 +10,7 @@ import { UserProfileRoutines, UserProfileActions } from '../userProfile/userProf
 
 function* setAuthorizationToken(token) {
   if (token) {
-    api.defaults.headers.common['Authorization'] = `JWT ${token}`;
+    api.defaults.headers.common.Authorization = `JWT ${token}`;
   }
 }
 
