@@ -25,8 +25,8 @@ class BaseResources(core.Stack):
             allocated_storage=50,
             instance_class=aws_ec2.InstanceType.of(aws_ec2.InstanceClass.BURSTABLE2, aws_ec2.InstanceSize.SMALL),
             vpc=self.vpc,
-            # deletion_protection=False,
-            # delete_automated_backups=True,
+            deletion_protection=False,
+            delete_automated_backups=True,
         )
         self.db_secret_rotation = self.db.add_rotation_single_user('db-rotation')
 
@@ -135,11 +135,13 @@ class PublicAPI(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        self.publicApiLambda = aws_lambda.Function(
+        self.function_code = aws_lambda.Code.from_cfn_parameters()
+        self.public_api_lambda = aws_lambda.Function(
             self,
             'public-api-lambda',
-            code=aws_lambda.AssetCode('backend/functions/public_api'),
-            handler='handlers.handle',
+            # code=aws_lambda.AssetCode('backend/functions/public_api'),
+            code=self.function_code,
+            handler='backend/functions/public_api/handlers.handle',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             vpc=scope.base.vpc,
             environment={
@@ -147,10 +149,10 @@ class PublicAPI(core.Stack):
             }
         )
 
-        scope.base.db.secret.grant_read(self.publicApiLambda.role)
+        scope.base.db.secret.grant_read(self.public_api_lambda.role)
 
         self.publicApiGateway = aws_apigateway.RestApi(self, 'rest-api')
-        self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.publicApiLambda)
+        self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.public_api_lambda)
         self.publicApiGateway.root.add_method('GET', self.publicApiLambdaIntegration)
 
 
@@ -235,6 +237,23 @@ class CIPipeline(core.Stack):
             project=build_worker_project,
         )
 
+        build_public_api_lambda_project = aws_codebuild.PipelineProject(
+            self,
+            'build_public_api_lambda_project',
+            environment=aws_codebuild.BuildEnvironment(
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+            ),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename('backend/functions/buildspec-public_api.yaml'),
+        )
+
+        lambda_build_output = aws_codepipeline.Artifact()
+        build_public_api_lambda_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name='build_public_api_lambda',
+            input=source_output,
+            project=build_public_api_lambda_project,
+            outputs=[lambda_build_output]
+        )
+
         build_cloudformation_project = aws_codebuild.PipelineProject(
             self,
             'build_cloudformation_project',
@@ -245,43 +264,54 @@ class CIPipeline(core.Stack):
             build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec-cdk.yaml'),
         )
 
-        cloudformation_artifact = aws_codepipeline.Artifact()
+        cdk_artifact = aws_codepipeline.Artifact()
         build_cloudformation_action = aws_codepipeline_actions.CodeBuildAction(
             action_name='build_stack',
             input=source_output,
             project=build_cloudformation_project,
-            outputs=[cloudformation_artifact]
+            outputs=[cdk_artifact]
         )
 
         self.pipeline.add_stage(
             stage_name='build_app',
-            actions=[build_app_action, build_worker_action, build_cloudformation_action]
+            actions=[
+                build_app_action,
+                build_worker_action,
+                build_public_api_lambda_action,
+                build_cloudformation_action,
+            ]
         )
 
-        # gh_source = aws_codebuild.Source.git_hub(
-        #     owner='schemadesign',
-        #     repo='schema_cms',
-        #     webhook=True,
-        #     webhook_filters=[
-        #         aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PUSH)
-        #         .and_branch_is('feature/CMS-5_infra-setup')
-        #     ],
-        # )
-
-        # self.project = aws_codebuild.Project(
-        #     self,
-        #     'schema_cms_project',
-        #     project_name='schema_cms_ci',
-        #     source=gh_source,
-        #     environment=aws_codebuild.BuildEnvironment(
-        #         environment_variables={
-        #             'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(value=self.registry.repository_uri),
-        #         },
-        #         build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
-        #         privileged=True,
-        #     ),
-        #     cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
-        #     build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec.yaml')
-        # )
-        # self.registry.grant_pull_push(self.project.role)
-
+        self.pipeline.add_stage(
+            stage_name='deploy_public_api',
+            actions=[
+                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
+                    action_name='prepare_changes',
+                    stack_name=scope.public_api.stack_name,
+                    change_set_name='publicAPIStagedChangeSet',
+                    admin_permissions=True,
+                    template_path=cdk_artifact.at_path('cdk.out/public-api.template.json'),
+                    run_order=1,
+                    parameter_overrides={
+                        **scope.public_api.function_code.assign(
+                            bucket_name=lambda_build_output.s3_location.bucket_name,
+                            object_key=lambda_build_output.s3_location.object_key,
+                            object_version=lambda_build_output.s3_location.object_version,
+                        ),
+                    },
+                    extra_inputs=[
+                        lambda_build_output,
+                    ]
+                ),
+                aws_codepipeline_actions.ManualApprovalAction(
+                    action_name='approve_changes',
+                    run_order=2,
+                ),
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                    action_name='execute_changes',
+                    stack_name=scope.public_api.stack_name,
+                    change_set_name='publicAPIStagedChangeSet',
+                    run_order=3,
+                ),
+            ]
+        )
