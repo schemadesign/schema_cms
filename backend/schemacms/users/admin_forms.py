@@ -3,6 +3,7 @@ import uuid
 from django import forms
 from django.contrib import auth
 
+
 USER_MODEL = auth.get_user_model()
 
 
@@ -11,7 +12,7 @@ class InviteUserForm(forms.ModelForm):
 
     class Meta:
         model = USER_MODEL
-        fields = ('email',)
+        fields = ('email', 'role', )
 
     def save(self, commit=True):
         self.instance.username = uuid.uuid4().hex
