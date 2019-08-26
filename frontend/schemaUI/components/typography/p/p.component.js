@@ -14,12 +14,8 @@ export class P extends PureComponent {
   render() {
     const { customStyles = {}, theme = primary, children, ...restProps } = this.props;
     const style = { ...containerStyles, ...theme.typography.p, ...customStyles };
-    const props = {style, ...restProps};
+    const props = { style, ...restProps };
 
-    return (
-      <p {...props}>
-        {children}
-      </p>
-    );
+    return <p {...props}>{children}</p>;
   }
 }

@@ -14,12 +14,8 @@ export class H1 extends PureComponent {
   render() {
     const { customStyles = {}, theme = primary, children, ...restProps } = this.props;
     const style = { ...headerStyles, ...theme.typography.h1, ...customStyles };
-    const props = {style, ...restProps};
+    const props = { style, ...restProps };
 
-    return (
-      <h1 {...props}>
-        {children}
-      </h1>
-    );
+    return <h1 {...props}>{children}</h1>;
   }
 }
