@@ -11,11 +11,13 @@ phases:
       - npm install -g aws-cdk
       - cdk --version
       - pip install -r requirements.txt
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
     commands:
       - echo Build started on `date`
       - echo Synchesize CDK stack...
-      - cdk synth
+      - cdk synth -c app_image_tag=$IMAGE_TAG
 artifacts:
   files:
     - 'cdk.out/**/*'

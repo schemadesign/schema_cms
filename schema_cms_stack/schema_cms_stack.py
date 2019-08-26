@@ -105,13 +105,14 @@ class API(core.Stack):
 
         self.djangoSecret = aws_secretsmanager.Secret(self, 'django-secret')
         django_secret_key = aws_ecs.Secret.from_secrets_manager(self.djangoSecret)
+        tag_from_context = self.node.try_get_context('app_image_tag')
+        tag = tag_from_context if tag_from_context is not 'undefined' else None
         self.api = aws_ecs_patterns.LoadBalancedFargateService(
             self,
             'api-service',
             cluster=scope.base.cluster,
             # image=aws_ecs.ContainerImage.from_asset('backend/app'),
-            # todo: pass tag
-            image=aws_ecs.ContainerImage.from_ecr_repository(scope.base.app_registry),
+            image=aws_ecs.ContainerImage.from_ecr_repository(scope.base.app_registry, tag),
             desired_count=1,
             cpu=256,
             memory_limit_mib=512,
