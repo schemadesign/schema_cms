@@ -254,6 +254,9 @@ class Common(Configuration):
     # social-django
     SOCIAL_AUTH_SANITIZE_REDIRECTS = False
     SOCIAL_AUTH_PIPELINE = (
+        # Try to fetch user by authorization service external user ID
+        'schemacms.authorization.pipeline.associate_by_external_id',
+
         # Get the information we can about the user and return it in a simple
         # format to create the user instance later. On some cases the details are
         # already part of the auth response from the provider, but sometimes this
@@ -283,9 +286,6 @@ class Common(Configuration):
         # Associates the current social details with another user account with
         # a similar email address. Disabled by default.
         # 'social_core.pipeline.social_auth.associate_by_email',
-
-        # Try to fetch user by authorization service external user ID
-        'schemacms.authorization.pipeline.associate_by_external_id',
 
         # Create a user account if we haven't found one yet.
         'social_core.pipeline.user.create_user',
