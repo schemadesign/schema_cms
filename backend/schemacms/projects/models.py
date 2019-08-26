@@ -11,7 +11,8 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
     status = models.CharField(
         max_length=25, choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.INITIAL
     )
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='projects')
+    editors = models.ManyToManyField(settings.AUTH_USER_MODEL)
 
     def __str__(self):
         return self.title

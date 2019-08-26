@@ -251,6 +251,8 @@ class Common(Configuration):
         'JWT_EXPIRATION_DELTA': datetime.timedelta(days=30),
     }
 
+    # social-django
+    SOCIAL_AUTH_SANITIZE_REDIRECTS = False
     SOCIAL_AUTH_PIPELINE = (
         # Get the information we can about the user and return it in a simple
         # format to create the user instance later. On some cases the details are

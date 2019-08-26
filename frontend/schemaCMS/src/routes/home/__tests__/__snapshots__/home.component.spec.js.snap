@@ -7,6 +7,9 @@ exports[`Home: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="home.pageTitle"
   />
+  <Button>
+    Test
+  </Button>
   <styled.h1>
     <FormattedMessage
       defaultMessage="Hello World!"

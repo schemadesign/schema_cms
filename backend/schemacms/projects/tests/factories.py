@@ -12,3 +12,10 @@ class ProjectFactory(factory.django.DjangoModelFactory):
     slug = factory.Faker('slug')
     owner = factory.SubFactory(UserFactory)
     description = factory.Faker('text')
+
+    @factory.post_generation
+    def editors(self, create, extracted, **kwargs):
+        if not create:
+            return
+        if extracted:
+            self.editors.add(*extracted)

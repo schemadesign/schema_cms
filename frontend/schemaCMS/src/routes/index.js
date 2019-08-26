@@ -1,49 +1,51 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 
+import browserHistory from '../shared/utils/history';
 import App from './app.container';
-import { DEFAULT_LOCALE, appLocales, translationMessages } from '../i18n';
+import AuthRoute from './authRoute/authRoute.container';
+import JWT from './jwt/jwt.container';
 import { Home } from './home';
 import { NotFound } from './notFound';
+import { AUTH_PATH } from '../shared/utils/api.constants';
 
 export const ROUTES = {
-  home: '/',
-  notFound: '/404',
+  HOME: '/',
+  NOT_FOUND: '/404',
 };
-
-class MatchedLanguageComponent extends Component {
-  static propTypes = {
-    match: PropTypes.object.isRequired,
-  };
-
-  render() {
-    const { match } = this.props;
-
-    return (
-      <App>
-        <Switch>
-          <Route exact path={`${match.path}${ROUTES.home}`} component={Home} />
-
-          <Route component={NotFound} />
-        </Switch>
-      </App>
-    );
-  }
-}
 
 export default class RootContainer extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={() => <Redirect to={DEFAULT_LOCALE} />} />
+        <Route exact path="/not-found" component={NotFound} anonymous />
 
-        <Route path={`/:lang(${appLocales.join('|')})`} component={MatchedLanguageComponent} />
+        <App>
+          <Switch>
+            <AuthRoute exact path={ROUTES.HOME} component={Home} />
 
-        <IntlProvider locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
-          <Route component={NotFound} />
-        </IntlProvider>
+            <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
+
+            <Route exact path="/jwt" component={JWT} />
+
+            <Route
+              exact
+              path="/jwt/:user/:token/"
+              render={({ match }) => {
+                const location = {
+                  pathname: '/jwt',
+                  state: {
+                    user: match.params.user,
+                    token: match.params.token,
+                  },
+                };
+
+                return <Redirect to={location} />;
+              }}
+            />
+          </Switch>
+        </App>
       </Switch>
     );
   }
