@@ -240,6 +240,7 @@ class CIPipeline(core.Stack):
         build_public_api_lambda_project = aws_codebuild.PipelineProject(
             self,
             'build_public_api_lambda_project',
+            project_name='schema_cms_build_public_api',
             environment=aws_codebuild.BuildEnvironment(
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
             ),
@@ -262,6 +263,7 @@ class CIPipeline(core.Stack):
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
             ),
             build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec-cdk.yaml'),
+            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.CUSTOM)
         )
 
         cdk_artifact = aws_codepipeline.Artifact()
