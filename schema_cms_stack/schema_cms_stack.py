@@ -155,7 +155,6 @@ class PublicAPI(core.Stack):
 
 
 class CIPipeline(core.Stack):
-
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
@@ -169,6 +168,7 @@ class CIPipeline(core.Stack):
         )
 
         source_output = aws_codepipeline.Artifact()
+        # todo: pass ARN somehow
         oauth_token = aws_secretsmanager.Secret.from_secret_arn(
             self,
             'gh-token',
@@ -183,7 +183,6 @@ class CIPipeline(core.Stack):
             branch='feature/CMS-5_infra-setup',
             trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
             output=source_output,
-            # todo: pass ARN somehow
             oauth_token=oauth_token.secret_value,
         )
 
@@ -236,9 +235,27 @@ class CIPipeline(core.Stack):
             project=build_worker_project,
         )
 
+        build_cloudformation_project = aws_codebuild.PipelineProject(
+            self,
+            'build_cloudformation_project',
+            project_name='schema_cms_stack_ci',
+            environment=aws_codebuild.BuildEnvironment(
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+            ),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec-cdk.yaml'),
+        )
+
+        cloudformation_artifact = aws_codepipeline.Artifact()
+        build_cloudformation_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name='build_stack',
+            input=source_output,
+            project=build_cloudformation_project,
+            outputs=[cloudformation_artifact]
+        )
+
         self.pipeline.add_stage(
             stage_name='build_app',
-            actions=[build_app_action, build_worker_action]
+            actions=[build_app_action, build_worker_action, build_cloudformation_action]
         )
 
         # gh_source = aws_codebuild.Source.git_hub(
