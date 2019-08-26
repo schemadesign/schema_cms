@@ -67,3 +67,16 @@ exports[`Pre: Component should render with custom theme 1`] = `
   Pre tag with custom theme
 </pre>
 `;
+
+exports[`Pre: Component should render with overwritten styles 1`] = `
+<pre
+  style={
+    Object {
+      "color": "blue",
+      "fontSize": "10px",
+    }
+  }
+>
+  Pre tag with overwritten styles
+</pre>
+`;

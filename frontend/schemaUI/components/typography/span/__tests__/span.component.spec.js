@@ -54,4 +54,12 @@ describe('Span: Component', () => {
 
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with overwritten styles', () => {
+    const styles = { fontSize: '10px', color: 'blue' };
+
+    const wrapper = shallow(<Span style={styles}>Paragraph with overwritten styles</Span>);
+
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

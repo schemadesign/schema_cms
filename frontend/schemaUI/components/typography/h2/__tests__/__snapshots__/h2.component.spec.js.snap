@@ -76,3 +76,16 @@ exports[`H2: Component should render with custom theme 1`] = `
   Title with custom theme
 </h2>
 `;
+
+exports[`H2: Component should render with overwritten styles 1`] = `
+<h2
+  style={
+    Object {
+      "color": "blue",
+      "fontSize": "10px",
+    }
+  }
+>
+  Blue title with overwritten styles
+</h2>
+`;

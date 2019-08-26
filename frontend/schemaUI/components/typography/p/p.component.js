@@ -13,10 +13,11 @@ export class P extends PureComponent {
 
   render() {
     const { customStyles = {}, theme = primary, children, ...restProps } = this.props;
-    const styles = { ...containerStyles, ...theme.typography.p, ...customStyles };
+    const style = { ...containerStyles, ...theme.typography.p, ...customStyles };
+    const props = {style, ...restProps};
 
     return (
-      <p style={styles} {...restProps}>
+      <p {...props}>
         {children}
       </p>
     );
