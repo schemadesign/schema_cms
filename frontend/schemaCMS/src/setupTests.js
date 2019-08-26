@@ -21,3 +21,5 @@ nock.disableNetConnect();
 afterEach(() => {
   nock.cleanAll();
 });
+
+process.env.REACT_APP_BASE_API_URL = 'http://localhost';
