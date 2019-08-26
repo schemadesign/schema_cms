@@ -50,9 +50,11 @@ const withProps = {
     backgroundColor: '#7575b3',
     borderTop: '3px dashed #38385f',
   },
+  title: 'Card component',
+  id: 'unique-card',
 };
 
-storiesOf('Card', module).add('with header and custom styles', () => (
+storiesOf('Card', module).add('with header, custom styles and other attributes', () => (
   <Card {...withProps}>
     <span>
       <b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit. Morbi a auctor ante. Ut at lorem id elit elementum

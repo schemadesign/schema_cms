@@ -13,7 +13,7 @@ exports[`MenuIcon: Component should render correctly 1`] = `
 `;
 
 exports[`MenuIcon: Component should render with custom styles 1`] = `
-<menu-white.svg
+<menu.svg
   style={
     Object {
       "fill": "blue",

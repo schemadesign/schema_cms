@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`H3: Component should render children when passed in 1`] = `
+<h3
+  style={
+    Object {
+      "color": "#a6a7aa",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": 600,
+      "margin": 0,
+    }
+  }
+>
+  Super title
+</h3>
+`;
+
+exports[`H3: Component should render correctly 1`] = `
+<h3
+  style={
+    Object {
+      "color": "#a6a7aa",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": 600,
+      "margin": 0,
+    }
+  }
+/>
+`;
+
+exports[`H3: Component should render with attributes 1`] = `
+<h3
+  id="test-id"
+  style={
+    Object {
+      "color": "#a6a7aa",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": 600,
+      "margin": 0,
+    }
+  }
+  title="test title"
+>
+  Title with attributes
+</h3>
+`;
+
+exports[`H3: Component should render with custom styles 1`] = `
+<h3
+  style={
+    Object {
+      "color": "blue",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": 600,
+      "margin": 0,
+    }
+  }
+>
+  Blue title
+</h3>
+`;
+
+exports[`H3: Component should render with custom theme 1`] = `
+<h3
+  style={
+    Object {
+      "color": "gray",
+      "fontFamily": "serif",
+      "fontSize": "18px",
+      "margin": 0,
+      "size": "100px",
+    }
+  }
+>
+  Title with custom theme
+</h3>
+`;
+
+exports[`H3: Component should render with overwritten styles 1`] = `
+<h3
+  style={
+    Object {
+      "color": "blue",
+      "fontSize": "10px",
+    }
+  }
+>
+  Blue title with overwritten styles
+</h3>
+`;

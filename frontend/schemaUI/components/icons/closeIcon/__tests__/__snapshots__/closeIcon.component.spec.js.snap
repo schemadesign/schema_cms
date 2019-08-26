@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CloseIcon: Component should render correctly 1`] = `
-<close-white.svg
+<close.svg
   style={
     Object {
       "fill": "#1d1d20",
@@ -13,7 +13,7 @@ exports[`CloseIcon: Component should render correctly 1`] = `
 `;
 
 exports[`CloseIcon: Component should render with custom styles 1`] = `
-<close-white.svg
+<close.svg
   style={
     Object {
       "fill": "blue",
