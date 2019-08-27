@@ -12,7 +12,11 @@ const defaultProps = {
       slug: 'schemacms/api/project_name',
       created: '2019-08-26T11:05:12+0000',
       status: 'Status',
-      owner: 'First Lastname',
+      owner: {
+        id: '1',
+        firstName: 'Firstname',
+        lastName: 'Lastname',
+      },
     },
     {
       name: 'Honec sodales libero non fermentum aliquam',
@@ -21,7 +25,11 @@ const defaultProps = {
       slug: 'schemacms/api/honec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam',
       created: '2019-08-26T11:05:12+0000',
       status: 'Published',
-      owner: 'Tadeusz Kosciuszko',
+      owner: {
+        id: '2',
+        firstName: 'Tadeusz',
+        lastName: 'Kosciuszko',
+      },
     },
   ],
   fetchProjectsList: identity,
