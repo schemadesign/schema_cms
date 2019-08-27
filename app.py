@@ -2,7 +2,8 @@
 
 from aws_cdk import core
 
-from schema_cms_stack.schema_cms_stack import API, Workers, BaseResources, PublicAPI, CIPipeline
+from schema_cms_stack.schema_cms_stack import API, Workers, BaseResources, PublicAPI, CIPipeline,\
+    INSTALLATION_MODE_FULL, INSTALLATION_MODE_CONTEXT_KEY
 
 
 class App(core.App):
@@ -12,7 +13,9 @@ class App(core.App):
         self.workers = Workers(self, 'workers')
         self.api = API(self, 'api')
         self.public_api = PublicAPI(self, 'public-api')
-        self.ci_pipeline = CIPipeline(self, 'ci-pipeline')
+        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
+        if installation_mode is INSTALLATION_MODE_FULL:
+            self.ci_pipeline = CIPipeline(self, 'ci-pipeline')
 
 
 app = App()

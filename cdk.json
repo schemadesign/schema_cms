@@ -1,6 +1,7 @@
 {
     "app": "python3 app.py",
     "context": {
+        "installation_mode": "full",
         "github_token_arn": "arn:aws:secretsmanager:eu-central-1:314820667159:secret:github-token-TRQAXN"
     }
 }

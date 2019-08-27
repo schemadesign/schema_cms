@@ -3,6 +3,11 @@ from aws_cdk import core, aws_ec2, aws_sqs, aws_apigateway, aws_lambda, aws_ecs,
 
 DB_NAME = 'gistdb'
 
+INSTALLATION_MODE_CONTEXT_KEY = 'installation_mode'
+
+INSTALLATION_MODE_FULL = 'full'
+INSTALLATION_MODEL_APP_ONLY = 'app_only'
+
 
 class BaseResources(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
@@ -56,11 +61,16 @@ class Workers(core.Stack):
         )
         scope.base.db.secret.grant_read(self.worker_task_definition.task_role)
 
-        tag_from_context = self.node.try_get_context('app_image_tag')
-        tag = tag_from_context if tag_from_context is not 'undefined' else None
+        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
+        worker_image = aws_ecs.ContainerImage.from_asset('backend/worker')
+        if installation_mode is INSTALLATION_MODE_FULL:
+            tag_from_context = self.node.try_get_context('app_image_tag')
+            tag = tag_from_context if tag_from_context is not 'undefined' else None
+            worker_image = aws_ecs.ContainerImage.from_ecr_repository(scope.base.worker_registry, tag)
+
         self.worker_container = self.worker_task_definition.add_container(
             'worker',
-            image=aws_ecs.ContainerImage.from_ecr_repository(scope.base.worker_registry, tag),
+            image=worker_image,
             logging=aws_ecs.AwsLogDriver(stream_prefix='worker-container'),
             environment={
                 'DB_SECRET_ARN': scope.base.db.secret.secret_arn,
@@ -70,12 +80,19 @@ class Workers(core.Stack):
 
         self.worker_queue = aws_sqs.Queue(self, 'worker-queue', queue_name='worker-queue')
 
+        worker_lambda_code = aws_lambda.AssetCode('backend/functions/worker')
+
         self.function_code = aws_lambda.Code.from_cfn_parameters()
+        handler = 'handlers.handle_queue_event'
+        if installation_mode is INSTALLATION_MODE_FULL:
+            worker_lambda_code = self.function_code
+            handler = 'backend/functions/worker/handlers.handle_queue_event'
+
         self.worker_lambda = aws_lambda.Function(
             self,
             'worker-lambda',
-            code=self.function_code,
-            handler='handlers.handle_queue_event',
+            code=worker_lambda_code,
+            handler=handler,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             environment={
                 'ECS_CLUSTER_NAME': scope.base.cluster.cluster_name,
@@ -119,13 +136,19 @@ class API(core.Stack):
 
         self.djangoSecret = aws_secretsmanager.Secret(self, 'django-secret')
         django_secret_key = aws_ecs.Secret.from_secrets_manager(self.djangoSecret)
-        tag_from_context = self.node.try_get_context('app_image_tag')
-        tag = tag_from_context if tag_from_context is not 'undefined' else None
+
+        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
+        api_image = aws_ecs.ContainerImage.from_asset('backend/app')
+        if installation_mode is INSTALLATION_MODE_FULL:
+            tag_from_context = self.node.try_get_context('app_image_tag')
+            tag = tag_from_context if tag_from_context is not 'undefined' else None
+            api_image = aws_ecs.ContainerImage.from_ecr_repository(scope.base.app_registry, tag)
+
         self.api = aws_ecs_patterns.LoadBalancedFargateService(
             self,
             'api-service',
             cluster=scope.base.cluster,
-            image=aws_ecs.ContainerImage.from_ecr_repository(scope.base.app_registry, tag),
+            image=api_image,
             desired_count=1,
             cpu=256,
             memory_limit_mib=512,
@@ -153,12 +176,19 @@ class PublicAPI(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
+        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
         self.function_code = aws_lambda.Code.from_cfn_parameters()
+        public_api_lambda_code = aws_lambda.AssetCode('backend/functions/public_api')
+        handler = 'handlers.handle'
+        if installation_mode is INSTALLATION_MODE_FULL:
+            public_api_lambda_code = self.function_code
+            handler = 'backend/functions/public_api/handlers.handle'
+
         self.public_api_lambda = aws_lambda.Function(
             self,
             'public-api-lambda',
-            code=self.function_code,
-            handler='backend/functions/public_api/handlers.handle',
+            code=public_api_lambda_code,
+            handler=handler,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             vpc=scope.base.vpc,
             environment={
@@ -176,6 +206,11 @@ class PublicAPI(core.Stack):
 class CIPipeline(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
+
+        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
+        if installation_mode is not INSTALLATION_MODE_FULL:
+            self.node.add_error('Deploy of ci-pipeline stack is only available in `full` installation_mode. '
+                                'Check your installation_mode in CDK context')
 
         self.pipeline = aws_codepipeline.Pipeline(
             self,
