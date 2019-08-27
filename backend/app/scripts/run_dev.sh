@@ -2,8 +2,6 @@
 
 set -e
 
-pip install awscli
-
 LAMBDA_EP=http://localstack:4574
 API_GTW_EP=http://localstack:4567
 WORKER_QUEUE_NAME=worker-queue

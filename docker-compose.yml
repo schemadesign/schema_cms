@@ -46,7 +46,7 @@ services:
       - mailcatcher
     restart: on-failure
     env_file: local.env
-    command: sh ./scripts/run_dev.sh
+    command: ./scripts/run_dev.sh
 
   mailcatcher:
     image: schickling/mailcatcher
