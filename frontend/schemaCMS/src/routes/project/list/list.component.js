@@ -48,7 +48,7 @@ export class List extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ title = '', description = '', slug = '', created = '', status = '', owner = {} }) {
+  renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner = {} }) {
     const { firstName = '', lastName = '' } = owner;
     const user = isEmpty(firstName) ? lastName : `${firstName} ${lastName}`;
     const whenCreated = moment(created).fromNow();
@@ -56,7 +56,7 @@ export class List extends PureComponent {
     const header = this.renderHeader([whenCreated, status, user]);
 
     return (
-      <ProjectItem>
+      <ProjectItem key={id}>
         <Card headerComponent={header}>
           <H1>{title}</H1>
           <Description>

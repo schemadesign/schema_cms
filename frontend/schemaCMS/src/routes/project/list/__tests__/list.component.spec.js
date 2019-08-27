@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { identity } from 'ramda';
 
 import { List } from '../list.component';
+import { defaultProps } from '../list.stories';
 
 describe('List: Component', () => {
-  const defaultProps = {};
-
   const component = props => <List {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

@@ -4,7 +4,10 @@ import Immutable from 'seamless-immutable';
 import { reducer as projectReducer } from '../project.redux';
 
 describe('Project: redux', () => {
-  const state = Immutable({});
+  const state = Immutable({
+    projects: [],
+    isMenuOpen: false,
+  });
 
   describe('reducer', () => {
     it('should return initial state', () => {

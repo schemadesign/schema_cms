@@ -4,7 +4,7 @@ import { identity } from 'ramda';
 
 import { List } from './list.component';
 
-const defaultProps = {
+export const defaultProps = {
   list: [
     {
       title: 'Project Name',
@@ -33,11 +33,15 @@ const defaultProps = {
     },
   ],
   fetchProjectsList: identity,
+  isMenuOpen: false,
+  toggleMenu: identity,
 };
 
-const emptyListProps = {
+export const emptyListProps = {
   list: [],
   fetchProjectsList: identity,
+  isMenuOpen: false,
+  toggleMenu: identity,
 };
 
 storiesOf('List', module)
