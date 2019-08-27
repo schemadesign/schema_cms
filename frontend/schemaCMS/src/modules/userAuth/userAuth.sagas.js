@@ -8,7 +8,7 @@ import { TOKEN_PATH } from '../../shared/utils/api.constants';
 import { selectAuthToken } from './userAuth.selectors';
 import { UserProfileRoutines, UserProfileActions } from '../userProfile/userProfile.redux';
 
-function* setAuthorizationToken(token) {
+export function* setAuthorizationToken(token) {
   if (token) {
     api.defaults.headers.common['Authorization'] = `JWT ${token}`;
   }

@@ -1,11 +1,16 @@
-import { all, put, takeEvery } from 'redux-saga/effects';
+import { all, put, select, takeLatest } from 'redux-saga/effects';
 
 import { UserProfileActions, UserProfileRoutines } from './userProfile.redux';
 import api from '../../shared/services/api';
 import { ME_PATH } from '../../shared/utils/api.constants';
+import { selectAuthToken } from '../userAuth';
+import { setAuthorizationToken } from '../userAuth/userAuth.sagas';
 
 function* fetchUserDetails() {
   try {
+    const token = yield select(selectAuthToken);
+    yield setAuthorizationToken(token);
+
     yield put(UserProfileRoutines.fetchUserDetails.request());
 
     const { data } = yield api.get(ME_PATH);
@@ -21,5 +26,5 @@ function* fetchUserDetails() {
 }
 
 export function* watchUserProfile() {
-  yield all([takeEvery(UserProfileRoutines.fetchUserDetails.TRIGGER, fetchUserDetails)]);
+  yield all([takeLatest(UserProfileRoutines.fetchUserDetails.TRIGGER, fetchUserDetails)]);
 }
