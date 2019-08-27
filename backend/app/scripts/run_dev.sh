@@ -84,11 +84,14 @@ API_ID=$(aws \
     --query "items[?name==\`$PUBLIC_API_GTW_NAME\`].id" \
     --output text \
     --region $AWS_DEFAULT_REGION)
+
+API_ID=${API_ID:0:10}
+
 PARENT_RESOURCE_ID=$(aws \
     --no-sign-request \
     --endpoint-url=$API_GTW_EP \
     apigateway get-resources \
-    --rest-api-id $API_ID \
+    --rest-api-id "$API_ID" \
     --query 'items[?path==`/`].id' \
     --output text \
     --region $AWS_DEFAULT_REGION)
