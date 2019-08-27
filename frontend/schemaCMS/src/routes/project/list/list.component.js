@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, Header, Icons, Menu, Typography } from 'schemaUI';
 import { isEmpty } from 'ramda';
+import moment from 'moment';
 
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import {
@@ -50,8 +51,9 @@ export class List extends PureComponent {
   renderItem({ name = '', description = '', slug = '', created = '', status = '', owner = {} }) {
     const { firstName = '', lastName = '' } = owner;
     const user = isEmpty(firstName) ? lastName : `${firstName} ${lastName}`;
+    const whenCreated = moment(created).fromNow();
 
-    const header = this.renderHeader([created, status, user]);
+    const header = this.renderHeader([whenCreated, status, user]);
 
     return (
       <ProjectItem>
