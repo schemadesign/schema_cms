@@ -63,7 +63,7 @@ class Workers(core.Stack):
 
         installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
         worker_image = aws_ecs.ContainerImage.from_asset('backend/worker')
-        if installation_mode is INSTALLATION_MODE_FULL:
+        if installation_mode == INSTALLATION_MODE_FULL:
             tag_from_context = self.node.try_get_context('app_image_tag')
             tag = tag_from_context if tag_from_context is not 'undefined' else None
             worker_image = aws_ecs.ContainerImage.from_ecr_repository(scope.base.worker_registry, tag)
@@ -84,7 +84,7 @@ class Workers(core.Stack):
 
         self.function_code = aws_lambda.Code.from_cfn_parameters()
         handler = 'handlers.handle_queue_event'
-        if installation_mode is INSTALLATION_MODE_FULL:
+        if installation_mode == INSTALLATION_MODE_FULL:
             worker_lambda_code = self.function_code
             handler = 'backend/functions/worker/handlers.handle_queue_event'
 
@@ -139,7 +139,7 @@ class API(core.Stack):
 
         installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
         api_image = aws_ecs.ContainerImage.from_asset('backend/app')
-        if installation_mode is INSTALLATION_MODE_FULL:
+        if installation_mode == INSTALLATION_MODE_FULL:
             tag_from_context = self.node.try_get_context('app_image_tag')
             tag = tag_from_context if tag_from_context is not 'undefined' else None
             api_image = aws_ecs.ContainerImage.from_ecr_repository(scope.base.app_registry, tag)
@@ -182,6 +182,9 @@ class API(core.Stack):
         scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.execution_role)
         scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.task_role)
         scope.base.db.secret.grant_read(self.api.service.task_definition.task_role)
+        for k, v in env.items():
+            self.grant_secret_access(v)
+
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
     def map_secret(self, secret_arn):
@@ -190,8 +193,10 @@ class API(core.Stack):
             secret_arn + '-secret',
             self.node.try_get_context(secret_arn)
         )
-        secret.grant_read(self.api.service.task_definition.task_role)
         return aws_ecs.Secret.from_secrets_manager(secret)
+
+    def grant_secret_access(self, secret):
+        secret.grant_read(self.api.service.task_definition.task_role)
 
 
 class PublicAPI(core.Stack):
@@ -202,7 +207,7 @@ class PublicAPI(core.Stack):
         self.function_code = aws_lambda.Code.from_cfn_parameters()
         public_api_lambda_code = aws_lambda.AssetCode('backend/functions/public_api')
         handler = 'handlers.handle'
-        if installation_mode is INSTALLATION_MODE_FULL:
+        if installation_mode == INSTALLATION_MODE_FULL:
             public_api_lambda_code = self.function_code
             handler = 'backend/functions/public_api/handlers.handle'
 
@@ -230,7 +235,7 @@ class CIPipeline(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
-        if installation_mode is not INSTALLATION_MODE_FULL:
+        if installation_mode != INSTALLATION_MODE_FULL:
             self.node.add_error('Deploy of ci-pipeline stack is only available in `full` installation_mode. '
                                 'Check your installation_mode in CDK context')
 
