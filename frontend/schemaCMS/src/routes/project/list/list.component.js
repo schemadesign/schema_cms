@@ -28,6 +28,10 @@ export class List extends PureComponent {
     this.props.fetchProjectsList();
   }
 
+  handleToggleMenu = () => {};
+
+  handleNewProject = () => {};
+
   renderHeader = (list = []) => (
     <HeaderList>
       {list.map((item, index) => (
@@ -66,12 +70,12 @@ export class List extends PureComponent {
 
     return (
       <Container>
-        <Header customStyles={headerStyles}>
+        <Header customStyles={headerStyles} onButtonClick={this.handleToggleMenu}>
           <H2>Projects</H2>
           <H1>Overview</H1>
         </Header>
         {content}
-        <Button customStyles={addProjectStyles}>
+        <Button customStyles={addProjectStyles} onClick={this.handleNewProject}>
           <Icons.PlusIcon />
         </Button>
       </Container>
