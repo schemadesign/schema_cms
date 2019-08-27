@@ -3,6 +3,7 @@ const primary = {
   label: '#a6a7aa',
   border: '#1d1d20',
   text: '#1d1d20',
+  active: '#1d1d20',
 };
 
 const secondary = {
