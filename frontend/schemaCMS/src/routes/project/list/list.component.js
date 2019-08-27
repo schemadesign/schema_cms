@@ -26,16 +26,26 @@ export class List extends PureComponent {
   static propTypes = {
     list: PropTypes.array.isRequired,
     fetchProjectsList: PropTypes.func.isRequired,
-    isMenuOpen: PropTypes.bool.isRequired,
-    toggleMenu: PropTypes.func.isRequired,
   };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isMenuOpen: false,
+    };
+  }
 
   componentDidMount() {
     this.props.fetchProjectsList();
   }
 
   handleToggleMenu = () => {
-    this.props.toggleMenu();
+    const { isMenuOpen } = this.state;
+
+    this.setState({
+      isMenuOpen: !isMenuOpen,
+    });
   };
 
   handleNewProject = () => {};
@@ -77,7 +87,7 @@ export class List extends PureComponent {
   );
 
   renderMenu = () => {
-    const { isMenuOpen } = this.props;
+    const { isMenuOpen } = this.state;
 
     return (
       <Menu open={isMenuOpen} onClose={this.handleToggleMenu}>
