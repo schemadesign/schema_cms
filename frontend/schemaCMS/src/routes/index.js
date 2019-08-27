@@ -30,14 +30,14 @@ export default class RootContainer extends Component {
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
-            <Route exact path="/jwt" component={JWT} />
+            <Route exact path="/auth/confirm/" component={JWT} />
 
             <Route
               exact
-              path="/jwt/:user/:token/"
+              path="/auth/confirm/:user/:token/"
               render={({ match }) => {
                 const location = {
-                  pathname: '/jwt',
+                  pathname: '/auth/confirm/',
                   state: {
                     user: match.params.user,
                     token: match.params.token,
