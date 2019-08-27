@@ -1,5 +1,4 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import reportError from '../../shared/utils/reportError';
 
 import { ProjectTypes, ProjectActions } from './project.redux';
 import api from '../../shared/services/api';

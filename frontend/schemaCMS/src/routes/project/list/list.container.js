@@ -7,16 +7,18 @@ import { compose } from 'ramda';
 
 import { List } from './list.component';
 import { ProjectActions } from '../../../modules/project';
-import { selectProjectsList } from '../../../modules/project/project.selectors';
+import { selectProjectsList, selectProjectsMenu } from '../../../modules/project/project.selectors';
 
 const mapStateToProps = createStructuredSelector({
   list: selectProjectsList,
+  isMenuOpen: selectProjectsMenu,
 });
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       fetchProjectsList: ProjectActions.fetchList,
+      toggleMenu: ProjectActions.toggleMenu,
     },
     dispatch
   );

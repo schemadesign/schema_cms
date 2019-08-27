@@ -5,7 +5,7 @@ export const Container = styled.div``;
 
 export const ProjectsList = styled.ul`
   list-style: none;
-  margin: 0 20px;
+  margin: 0 20px 60px 20px;
   padding: 0;
 `;
 
@@ -47,6 +47,20 @@ export const Empty = styled.div`
   padding: 10px;
 `;
 
+export const ActionsList = styled.ul`
+  list-style: none;
+  margin: 40px 0 0 0;
+  padding: 0;
+  font-family: ${Theme.primary.typography.h3.fontFamily};
+  font-weight: 600px;
+  font-size: 14px;
+  line-height: 1.71;
+`;
+
+export const Action = styled.li`
+  margin-top: 20px;
+`;
+
 export const headerStyles = {
   backgroundColor: null,
 };
@@ -62,7 +76,7 @@ export const urlStyles = {
 };
 
 export const addProjectStyles = {
-  position: 'absolute',
+  position: 'fixed',
   right: '10px',
   bottom: '10px',
   backgroundColor: Theme.primary.label,

@@ -7,3 +7,8 @@ export const selectProjectsList = createSelector(
   selectProjectDomain,
   prop('projects')
 );
+
+export const selectProjectsMenu = createSelector(
+  selectProjectDomain,
+  prop('isMenuOpen')
+);
