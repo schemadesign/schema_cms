@@ -2,11 +2,23 @@ from django.db import transaction
 from rest_framework import serializers
 
 from ..users.models import User
+from ..utils.serializers import NestedRelatedModelSerializer
 from .models import Project
 
 
+class ProjectOwnerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            'id',
+            'first_name',
+            'last_name'
+        )
+
+
 class ProjectSerializer(serializers.ModelSerializer):
-    owner = serializers.PrimaryKeyRelatedField(
+    owner = NestedRelatedModelSerializer(
+        serializer=ProjectOwnerSerializer(),
         read_only=True,
         pk_field=serializers.UUIDField(format='hex_verbose')
     )
