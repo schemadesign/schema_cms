@@ -40,6 +40,7 @@ pytest==4.6.4
 pytest-django==3.4.8
 pytest-factoryboy==2.0.2
 pytest-mock==1.10.3
+pytest-cov==2.7.1
 coverage==4.5.2
 
 # Static and Media Storage

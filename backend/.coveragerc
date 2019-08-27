@@ -8,3 +8,4 @@ omit = *migrations*,
        ./schemacms/config/*,
        ./schemacms/wsgi.py,
        *__init__*
+       ./wait_for_postgres.py
