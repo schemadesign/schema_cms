@@ -7,19 +7,19 @@ import { List } from './list.component';
 const defaultProps = {
   list: [
     {
-      name: 'Project Name',
+      title: 'Project Name',
       description: 'Description',
-      slug: 'schemacms/api/project_name',
+      slug: 'schemacms/api/project_title',
       created: '2019-08-26T11:05:12+0000',
       status: 'Status',
       owner: {
         id: '1',
-        firstName: 'Firstname',
-        lastName: 'Lastname',
+        firstName: 'Firsttitle',
+        lastName: 'Lasttitle',
       },
     },
     {
-      name: 'Honec sodales libero non fermentum aliquam',
+      title: 'Honec sodales libero non fermentum aliquam',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.',
       slug: 'schemacms/api/honec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam',
