@@ -68,7 +68,21 @@ If you want to install only Schema CMS without additional developer tools choose
 
 1. Set up you AWS CLI
 2. Setup up AWS CDK and create environment described in *AWS CDK* section
-3. Deploy `base`, `workers`, `public-api`, `api` stacks using command:
+3. Setup all environment variables using AWS Secrets Manager and save secrets ARNs to `cdk.json` file in `context`
+section:
+    ```bash
+   $ aws secretsmanager create-secret --name {ENV_NAME} --secret-string {VALUE}
+    ```
+   Variables you should set:
+    `DJANGO_SOCIAL_AUTH_AUTH0_KEY`,
+    `DJANGO_SOCIAL_AUTH_AUTH0_SECRET`,
+    `DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN`,
+    `DJANGO_USER_MGMT_BACKEND`,
+    `DJANGO_USER_MGMT_AUTH0_DOMAIN`,
+    `DJANGO_USER_MGMT_AUTH0_KEY`,
+    `DJANGO_USER_MGMT_AUTH0_SECRET`
+
+4. Deploy `base`, `workers`, `public-api`, `api` stacks using command:
     ```bash
     $ cdk -c installation_mode=app_only deploy base workers public-api api
     ```
@@ -79,14 +93,33 @@ Below are the steps to deploy entire dev stack
 
 1. Set up you AWS CLI
 2. Setup up AWS CDK and create environment described in *AWS CDK* section
-3. Obtain and save your github token in AWS Secrets Manager. It will be used to create webhook during pipeline
+3. Setup all environment variables using AWS Secrets Manager and save secrets ARNs to `cdk.json` file in `context`
+section:
+    ```bash
+   $ aws secretsmanager create-secret --name {ENV_NAME} --secret-string {VALUE}
+    ```
+   Variables you should set:
+    `DJANGO_SOCIAL_AUTH_AUTH0_KEY`,
+    `DJANGO_SOCIAL_AUTH_AUTH0_SECRET`,
+    `DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN`,
+    `DJANGO_USER_MGMT_BACKEND`,
+    `DJANGO_USER_MGMT_AUTH0_DOMAIN`,
+    `DJANGO_USER_MGMT_AUTH0_KEY`,
+    `DJANGO_USER_MGMT_AUTH0_SECRET`
+
+    **Commit and push changes in `cdk.json` file**
+
+4. Obtain and save your github token in AWS Secrets Manager. It will be used to create webhook during pipeline
 deployment. Save ARN of the secret and pass it to CDK using `-c github_token_arn={TOKEN_ARN}` CLI param or change value in `cdk.json` under
 `context > github_token_arn`.
-4. Deploy `base` and `ci-pipeline` stacks using commands:
+    ```bash
+   $ aws secretsmanager create-secret --name github-token --secret-string {TOKEN}
+    ```
+5. Deploy `base` and `ci-pipeline` stacks using commands:
     ```bash
     $ cdk deploy base ci-pipeline
     ```
     This might take some time. It will create base application resources along with CI pipeline using CDK/Cloudformation.
     After successful deployment pipeline will automatically start and build `api`, `public-api` and `workers` stacks.
-5. Log into AWS console and approve waiting stacks deployment on `schema-cms-pipeline` in AWS Code Pipeline service 
+6. Log into AWS console and approve waiting stacks deployment on `schema-cms-pipeline` in AWS Code Pipeline service 
 section.  

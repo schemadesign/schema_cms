@@ -144,6 +144,18 @@ class API(core.Stack):
             tag = tag_from_context if tag_from_context is not 'undefined' else None
             api_image = aws_ecs.ContainerImage.from_ecr_repository(scope.base.app_registry, tag)
 
+        env_map = {
+            'DJANGO_SOCIAL_AUTH_AUTH0_KEY': 'django_social_auth_auth0_key_arn',
+            'DJANGO_SOCIAL_AUTH_AUTH0_SECRET': 'django_social_auth_auth0_secret_arn',
+            'DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN': 'django_social_auth_auth0_domain_arn',
+            'DJANGO_USER_MGMT_BACKEND': 'django_user_mgmt_backend_arn',
+            'DJANGO_USER_MGMT_AUTH0_DOMAIN': 'django_user_mgmt_auth0_domain_arn',
+            'DJANGO_USER_MGMT_AUTH0_KEY': 'django_user_mgmt_auth0_key_arn',
+            'DJANGO_USER_MGMT_AUTH0_SECRET': 'django_user_mgmt_auth0_secret_arn',
+        }
+
+        env = {k: self.map_secret(v) for k, v in env_map.items()}
+
         self.api = aws_ecs_patterns.LoadBalancedFargateService(
             self,
             'api-service',
@@ -162,6 +174,7 @@ class API(core.Stack):
             container_port=8000,
             secrets={
                 'DJANGO_SECRET_KEY': django_secret_key,
+                **env,
             }
         )
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
@@ -170,6 +183,15 @@ class API(core.Stack):
         scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.task_role)
         scope.base.db.secret.grant_read(self.api.service.task_definition.task_role)
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
+
+    def map_secret(self, secret_arn):
+        secret = aws_secretsmanager.Secret.from_secret_arn(
+            self,
+            secret_arn + '-secret',
+            self.node.try_get_context(secret_arn)
+        )
+        secret.grant_read(self.api.service.task_definition.task_role)
+        return aws_ecs.Secret.from_secrets_manager(secret)
 
 
 class PublicAPI(core.Stack):
