@@ -1,7 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
-import { expect } from 'chai';
 
 import { Header } from '../header.component';
 import { Button } from '../../button';
@@ -31,7 +29,7 @@ describe('Header: Component', () => {
   });
 
   it('should call onButtonClick prop on button click if component is provided', () => {
-    const onButtonClick = spy();
+    const onButtonClick = jest.fn();
     const props = {
       onButtonClick,
     };
@@ -39,6 +37,6 @@ describe('Header: Component', () => {
 
     wrapper.find(Button).simulate('click');
 
-    expect(props.onButtonClick).to.have.been.calledOnce;
+    global.expect(props.onButtonClick).toHaveBeenCalled();
   });
 });

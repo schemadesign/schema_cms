@@ -14,12 +14,12 @@ from schemacms import mail
 
 @admin.register(user_models.User)
 class UserAdmin(UserAdmin):
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'source')
+    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'source', 'role', )
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
-                                       'groups', 'user_permissions')}),
+                                       'groups', 'user_permissions', 'role', )}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
         (_('Auth'), {'fields': ('source', 'external_id')})
     )
@@ -29,7 +29,7 @@ class UserAdmin(UserAdmin):
     invite_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email',),
+            'fields': ('email', 'role',),
         }),
     )
 
@@ -55,8 +55,15 @@ class UserAdmin(UserAdmin):
                     merge_data_dict={'url': url}
                 )
             except auth0.v3.Auth0Error as e:
+                if e.status_code == 409:
+                    return self.message_user(
+                        request, f"{obj.email} already exist in Auth0",
+                        django.contrib.messages.ERROR
+                    )
+
                 self.message_user(request, "Error from auth0: \"{}\"".format(e.message), django.contrib.messages.ERROR)
                 raise
+
         return obj
 
     def get_fieldsets(self, request, obj=None):

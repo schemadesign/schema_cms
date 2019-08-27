@@ -17,13 +17,15 @@ const withCustomStylesProps = {
 
 storiesOf('Card', module).add('with custom styles', () => (
   <Card {...withCustomStylesProps}>
-    <p>
-      This is a <em>green</em> card.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a auctor ante. Ut at lorem id elit elementum
-      venenatis. Quisque vulputate sit amet odio eu dictum.
-    </p>
+    <>
+      <p>
+        This is a <em>green</em> card.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a auctor ante. Ut at lorem id elit elementum
+        venenatis. Quisque vulputate sit amet odio eu dictum.
+      </p>
+    </>
   </Card>
 ));
 
@@ -33,13 +35,15 @@ const withHeaderProps = {
 
 storiesOf('Card', module).add('with header', () => (
   <Card {...withHeaderProps}>
-    <p>
-      This is a <em>card</em> with <b>header</b> content.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a auctor ante. Ut at lorem id elit elementum
-      venenatis. Quisque vulputate sit amet odio eu dictum.
-    </p>
+    <>
+      <p>
+        This is a <em>card</em> with <b>header</b> content.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a auctor ante. Ut at lorem id elit elementum
+        venenatis. Quisque vulputate sit amet odio eu dictum.
+      </p>
+    </>
   </Card>
 ));
 

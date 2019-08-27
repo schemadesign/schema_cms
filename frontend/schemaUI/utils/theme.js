@@ -3,11 +3,14 @@ const primary = {
   label: '#a6a7aa',
   border: '#1d1d20',
   text: '#1d1d20',
+  error: '#f21e29',
+  active: '#1d1d20',
 };
 
 const secondary = {
   background: '#1d1d20',
   text: '#fff',
+  label: '#71737e',
 };
 
 const INTER_FONT = 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';
