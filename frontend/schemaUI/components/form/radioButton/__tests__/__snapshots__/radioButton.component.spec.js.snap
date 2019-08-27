@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton: Component should render correctly 1`] = `
+<div
+  style={Object {}}
+>
+  <input
+    aria-hidden={true}
+    defaultChecked={false}
+    id="name"
+    name="name"
+    onChange={[Function]}
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "top": 0,
+        "visibility": "hidden",
+      }
+    }
+    type="radio"
+    value="value"
+  />
+  <label
+    htmlFor="name"
+    style={
+      Object {
+        "background": "blue",
+        "cursor": "pointer",
+      }
+    }
+  >
+    radio
+  </label>
+</div>
+`;
