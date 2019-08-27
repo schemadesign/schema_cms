@@ -6,6 +6,6 @@ def handle(event, context):
         'statusCode': 200,
         'headers': {},
         'body': json.dumps({
-            'message': 'Public api here. Version 6'
+            'message': 'Public api here. Version 7'
         })
     }

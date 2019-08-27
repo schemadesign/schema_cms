@@ -8,8 +8,18 @@ class BaseResources(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        self.app_registry = aws_ecr.Repository(self, 'schema-cms-app-ecr', repository_name='schema-cms-app')
-        self.worker_registry = aws_ecr.Repository(self, 'schema-cms-worker-ecr', repository_name='schema-cms-worker')
+        self.app_registry = aws_ecr.Repository(
+            self,
+            'schema-cms-app-ecr',
+            repository_name='schema-cms-app',
+            removal_policy=core.RemovalPolicy.DESTROY,
+        )
+        self.worker_registry = aws_ecr.Repository(
+            self,
+            'schema-cms-worker-ecr',
+            repository_name='schema-cms-worker',
+            removal_policy=core.RemovalPolicy.DESTROY,
+        )
 
         self.vpc = aws_ec2.Vpc(self, 'vpc', nat_gateways=1)
         self.cluster = aws_ecs.Cluster(
@@ -46,21 +56,25 @@ class Workers(core.Stack):
         )
         scope.base.db.secret.grant_read(self.worker_task_definition.task_role)
 
+        tag_from_context = self.node.try_get_context('app_image_tag')
+        tag = tag_from_context if tag_from_context is not 'undefined' else None
         self.worker_container = self.worker_task_definition.add_container(
             'worker',
-            image=aws_ecs.ContainerImage.from_asset('backend/worker'),
+            image=aws_ecs.ContainerImage.from_ecr_repository(scope.base.worker_registry, tag),
             logging=aws_ecs.AwsLogDriver(stream_prefix='worker-container'),
             environment={
                 'DB_SECRET_ARN': scope.base.db.secret.secret_arn,
-                'POSTGRES_DB': 'gistdb'
+                'POSTGRES_DB': DB_NAME
             }
         )
 
         self.worker_queue = aws_sqs.Queue(self, 'worker-queue', queue_name='worker-queue')
+
+        self.function_code = aws_lambda.Code.from_cfn_parameters()
         self.worker_lambda = aws_lambda.Function(
             self,
             'worker-lambda',
-            code=aws_lambda.AssetCode('backend/functions/worker'),
+            code=self.function_code,
             handler='handlers.handle_queue_event',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             environment={
@@ -111,7 +125,6 @@ class API(core.Stack):
             self,
             'api-service',
             cluster=scope.base.cluster,
-            # image=aws_ecs.ContainerImage.from_asset('backend/app'),
             image=aws_ecs.ContainerImage.from_ecr_repository(scope.base.app_registry, tag),
             desired_count=1,
             cpu=256,
@@ -133,7 +146,6 @@ class API(core.Stack):
         scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.execution_role)
         scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.task_role)
         scope.base.db.secret.grant_read(self.api.service.task_definition.task_role)
-        # scope.base.registry.grant_pull_push(self.api.service.task_definition.task_role)
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
 
@@ -145,7 +157,6 @@ class PublicAPI(core.Stack):
         self.public_api_lambda = aws_lambda.Function(
             self,
             'public-api-lambda',
-            # code=aws_lambda.AssetCode('backend/functions/public_api'),
             code=self.function_code,
             handler='backend/functions/public_api/handlers.handle',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
@@ -220,10 +231,10 @@ class CIPipeline(core.Stack):
             project=build_app_project,
         )
 
-        build_worker_project = aws_codebuild.PipelineProject(
+        build_workers_project = aws_codebuild.PipelineProject(
             self,
-            'build_worker_project',
-            project_name='schema_cms_worker_ci',
+            'build_workers_project',
+            project_name='schema_cms_workers_ci',
             environment=aws_codebuild.BuildEnvironment(
                 environment_variables={
                     'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
@@ -236,12 +247,12 @@ class CIPipeline(core.Stack):
             cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
             build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec-worker.yaml'),
         )
-        scope.base.worker_registry.grant_pull_push(build_worker_project)
+        scope.base.worker_registry.grant_pull_push(build_workers_project)
 
-        build_worker_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name='build_worker',
+        build_workers_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name='build_workers',
             input=source_output,
-            project=build_worker_project,
+            project=build_workers_project,
         )
 
         build_public_api_lambda_project = aws_codebuild.PipelineProject(
@@ -254,17 +265,35 @@ class CIPipeline(core.Stack):
             build_spec=aws_codebuild.BuildSpec.from_source_filename('backend/functions/buildspec-public_api.yaml'),
         )
 
-        lambda_build_output = aws_codepipeline.Artifact()
+        public_api_lambda_build_output = aws_codepipeline.Artifact()
         build_public_api_lambda_action = aws_codepipeline_actions.CodeBuildAction(
             action_name='build_public_api_lambda',
             input=source_output,
             project=build_public_api_lambda_project,
-            outputs=[lambda_build_output]
+            outputs=[public_api_lambda_build_output]
         )
 
-        build_cloudformation_project = aws_codebuild.PipelineProject(
+        build_workers_lambda_project = aws_codebuild.PipelineProject(
             self,
-            'build_cloudformation_project',
+            'build_workers_lambda_project',
+            project_name='schema_cms_build_workers',
+            environment=aws_codebuild.BuildEnvironment(
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+            ),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename('backend/functions/buildspec-worker.yaml'),
+        )
+
+        workers_lambda_build_output = aws_codepipeline.Artifact()
+        build_workers_lambda_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name='build_workers_lambda',
+            input=source_output,
+            project=build_workers_lambda_project,
+            outputs=[workers_lambda_build_output]
+        )
+
+        build_cdk_project = aws_codebuild.PipelineProject(
+            self,
+            'build_cdk_project',
             project_name='schema_cms_stack_ci',
             environment=aws_codebuild.BuildEnvironment(
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
@@ -274,10 +303,10 @@ class CIPipeline(core.Stack):
         )
 
         cdk_artifact = aws_codepipeline.Artifact()
-        build_cloudformation_action = aws_codepipeline_actions.CodeBuildAction(
+        build_cdk_action = aws_codepipeline_actions.CodeBuildAction(
             action_name='build_stack',
             input=source_output,
-            project=build_cloudformation_project,
+            project=build_cdk_project,
             outputs=[cdk_artifact]
         )
 
@@ -285,9 +314,10 @@ class CIPipeline(core.Stack):
             stage_name='build_app',
             actions=[
                 build_app_action,
-                build_worker_action,
+                build_workers_action,
                 build_public_api_lambda_action,
-                build_cloudformation_action,
+                build_workers_lambda_action,
+                build_cdk_action,
             ]
         )
 
@@ -303,13 +333,32 @@ class CIPipeline(core.Stack):
                     run_order=1,
                     parameter_overrides={
                         **scope.public_api.function_code.assign(
-                            bucket_name=lambda_build_output.s3_location.bucket_name,
-                            object_key=lambda_build_output.s3_location.object_key,
-                            object_version=lambda_build_output.s3_location.object_version,
+                            bucket_name=public_api_lambda_build_output.s3_location.bucket_name,
+                            object_key=public_api_lambda_build_output.s3_location.object_key,
+                            object_version=public_api_lambda_build_output.s3_location.object_version,
                         ),
                     },
                     extra_inputs=[
-                        lambda_build_output,
+                        public_api_lambda_build_output,
+                    ]
+                ),
+
+                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
+                    action_name='prepare_workers_changes',
+                    stack_name=scope.workers.stack_name,
+                    change_set_name='workersStagedChangeSet',
+                    admin_permissions=True,
+                    template_path=cdk_artifact.at_path('cdk.out/workers.template.json'),
+                    run_order=1,
+                    parameter_overrides={
+                        **scope.workers.function_code.assign(
+                            bucket_name=workers_lambda_build_output.s3_location.bucket_name,
+                            object_key=workers_lambda_build_output.s3_location.object_key,
+                            object_version=workers_lambda_build_output.s3_location.object_version,
+                        ),
+                    },
+                    extra_inputs=[
+                        workers_lambda_build_output,
                     ]
                 ),
 
@@ -326,17 +375,25 @@ class CIPipeline(core.Stack):
                     action_name='approve_changes',
                     run_order=2,
                 ),
+
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                    action_name='execute_workers_changes',
+                    stack_name=scope.workers.stack_name,
+                    change_set_name='workersStagedChangeSet',
+                    run_order=3,
+                ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name='execute_public_api_changes',
                     stack_name=scope.public_api.stack_name,
                     change_set_name='publicAPIStagedChangeSet',
                     run_order=3,
                 ),
+
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name='execute_api_changes',
                     stack_name=scope.api.stack_name,
                     change_set_name='APIStagedChangeSet',
-                    run_order=3,
+                    run_order=4,
                 ),
             ]
         )
