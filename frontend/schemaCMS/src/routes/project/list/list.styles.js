@@ -5,7 +5,7 @@ export const Container = styled.div``;
 
 export const ProjectsList = styled.ul`
   list-style: none;
-  margin: 0;
+  margin: 0 20px;
   padding: 0;
 `;
 

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, Header, Icons, Typography } from 'schemaUI';
 
+import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import {
   Container,
   Description,
@@ -25,10 +26,6 @@ export class List extends PureComponent {
 
   componentDidMount() {
     this.props.fetchProjectsList();
-  }
-
-  componentDidUpdate() {
-    console.log(this.props);
   }
 
   renderHeader = (list = []) => (
@@ -55,6 +52,8 @@ export class List extends PureComponent {
     );
   }
 
+  renderList = (_, list) => <ProjectsList>{list.map(item => this.renderItem(item))}</ProjectsList>;
+
   renderNoData = () => (
     <Empty>
       <P>No Projects</P>
@@ -63,7 +62,7 @@ export class List extends PureComponent {
 
   render() {
     const { list = [] } = this.props;
-    const count = list.length;
+    const content = renderWhenTrueOtherwise(this.renderList, this.renderNoData)(Boolean(list.length), list);
 
     return (
       <Container>
@@ -71,7 +70,7 @@ export class List extends PureComponent {
           <H2>Projects</H2>
           <H1>Overview</H1>
         </Header>
-        {count ? <ProjectsList>{list.map(item => this.renderItem(item))}</ProjectsList> : this.renderNoData()}
+        {content}
         <Button customStyles={addProjectStyles}>
           <Icons.PlusIcon />
         </Button>
