@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { Link } from 'react-router-dom';
 import { Button } from 'schemaUI';
 
 import { FormattedMessage } from 'react-intl';
@@ -22,6 +23,7 @@ export class Home extends PureComponent {
         <H1>
           <FormattedMessage {...messages.welcome} />
         </H1>
+        <Link to="/projects/list">Projects List</Link>
       </Container>
     );
   }

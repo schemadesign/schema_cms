@@ -6,6 +6,7 @@ const prefix = 'PROJECT/';
 
 export const { Types: ProjectTypes, Creators: ProjectActions } = createActions(
   {
+    fetchList: [],
     fetchListSuccess: ['data'],
     fetchListError: null,
   },
@@ -13,7 +14,7 @@ export const { Types: ProjectTypes, Creators: ProjectActions } = createActions(
 );
 
 export const ProjectRoutines = {
-  fetchList: createRoutine(`${prefix}_FETCH_LIST`),
+  fetchList: createRoutine(`${prefix}FETCH_LIST`),
 };
 
 export const INITIAL_STATE = new Immutable({

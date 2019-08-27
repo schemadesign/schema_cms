@@ -20,7 +20,16 @@ const { H1, H2, P, Span } = Typography;
 export class List extends PureComponent {
   static propTypes = {
     list: PropTypes.array.isRequired,
+    fetchProjectsList: PropTypes.func.isRequired,
   };
+
+  componentDidMount() {
+    this.props.fetchProjectsList();
+  }
+
+  componentDidUpdate() {
+    console.log(this.props);
+  }
 
   renderHeader = (list = []) => (
     <HeaderList>

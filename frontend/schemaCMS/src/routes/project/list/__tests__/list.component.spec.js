@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { List } from '../list.component';
 
-describe('ProjectsList: Component', () => {
+describe('List: Component', () => {
   const defaultProps = {};
 
   const component = props => <List {...defaultProps} {...props} />;

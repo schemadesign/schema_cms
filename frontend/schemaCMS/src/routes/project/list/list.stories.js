@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { identity } from 'ramda';
 
 import { List } from './list.component';
 
@@ -19,10 +20,12 @@ const defaultProps = {
       details: ['2 days ago', 'Published', 'Tadeusz Kosciuszko'],
     },
   ],
+  fetchProjectsList: identity,
 };
 
 const emptyListProps = {
   list: [],
+  fetchProjectsList: identity,
 };
 
 storiesOf('List', module)

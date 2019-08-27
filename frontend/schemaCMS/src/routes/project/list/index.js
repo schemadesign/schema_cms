@@ -1,1 +1,1 @@
-export { List } from './list.component';
+export { default as List } from './list.container';
