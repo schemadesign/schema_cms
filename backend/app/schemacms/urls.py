@@ -5,10 +5,13 @@ from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 
 from .users import views as user_views
+from .projects import views as project_views
 
-router = DefaultRouter()
+
+
+router = DefaultRouter(trailing_slash=False)
 router.register(r'users', user_views.UserViewSet)
-router.register(r'users', user_views.UserCreateViewSet)
+router.register(r'projects', project_views.ProjectViewSet)
 urlpatterns = [
     urls.path(
         'api/v1/', urls.include([
@@ -25,4 +28,3 @@ urlpatterns = [
     # re_path(r'^$', RedirectView.as_view(url=reverse_lazy('api-root'), permanent=False)),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

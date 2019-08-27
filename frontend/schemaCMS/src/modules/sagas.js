@@ -1,13 +1,15 @@
 import { all, fork } from 'redux-saga/effects';
 
 import reportError from '../shared/utils/reportError';
-import { watchStartup } from './startup/startup.sagas';
+import { watchUserAuth } from './userAuth/userAuth.sagas';
+import { watchUserProfile } from './userProfile/userProfile.sagas';
 //<-- IMPORT MODULE SAGA -->
 
 export default function* rootSaga() {
   try {
     yield all([
-      fork(watchStartup),
+      fork(watchUserAuth),
+      fork(watchUserProfile),
       //<-- INJECT MODULE SAGA -->
     ]);
   } catch (e) {

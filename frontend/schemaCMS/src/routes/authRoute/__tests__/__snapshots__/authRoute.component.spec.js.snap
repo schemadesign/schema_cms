@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthRoute: Component should render <ExternalRedirect> if not authenticated 1`] = `
+<ExternalRedirect
+  to="http://localhost/auth/login/auth0"
+/>
+`;
+
+exports[`AuthRoute: Component should render <Route> if is anonymous user 1`] = `
+<Route
+  fetchCurrentUser={[Function]}
+  isAuthenticated={false}
+  isUserFetched={true}
+  requireAnonymous={true}
+/>
+`;
+
+exports[`AuthRoute: Component should render <Route> if user is logged and all criterias are met 1`] = `
+<Route
+  fetchCurrentUser={[Function]}
+  isAuthenticated={true}
+  isUserFetched={true}
+  requireAnonymous={false}
+/>
+`;
+
+exports[`AuthRoute: Component should render a <Redirect /> to home page when user is authenticated, fetched and require anonymous 1`] = `
+<Redirect
+  push={false}
+  to="/"
+/>
+`;
+
+exports[`AuthRoute: Component should render null if user is not fetched 1`] = `""`;

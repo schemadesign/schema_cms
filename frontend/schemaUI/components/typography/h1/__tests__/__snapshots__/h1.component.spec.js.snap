@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`H1: Component should render children when passed in 1`] = `
+<h1
+  style={
+    Object {
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": 600,
+      "letterSpacing": "-0.12px",
+      "lineHight": 1.25,
+      "margin": 0,
+    }
+  }
+>
+  Super title
+</h1>
+`;
+
+exports[`H1: Component should render correctly 1`] = `
+<h1
+  style={
+    Object {
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": 600,
+      "letterSpacing": "-0.12px",
+      "lineHight": 1.25,
+      "margin": 0,
+    }
+  }
+/>
+`;
+
+exports[`H1: Component should render with attributes 1`] = `
+<h1
+  id="test-id"
+  style={
+    Object {
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": 600,
+      "letterSpacing": "-0.12px",
+      "lineHight": 1.25,
+      "margin": 0,
+    }
+  }
+  title="test title"
+>
+  Title with attributes
+</h1>
+`;
+
+exports[`H1: Component should render with custom styles 1`] = `
+<h1
+  style={
+    Object {
+      "color": "blue",
+      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": 600,
+      "letterSpacing": "-0.12px",
+      "lineHight": 1.25,
+      "margin": 0,
+    }
+  }
+>
+  Blue title
+</h1>
+`;
+
+exports[`H1: Component should render with custom theme 1`] = `
+<h1
+  style={
+    Object {
+      "color": "gray",
+      "fontFamily": "serif",
+      "fontSize": "24px",
+      "letterSpacing": "-0.12px",
+      "lineHight": 1.25,
+      "margin": 0,
+      "size": "100px",
+    }
+  }
+>
+  Title with custom theme
+</h1>
+`;
+
+exports[`H1: Component should render with overwritten styles 1`] = `
+<h1
+  style={
+    Object {
+      "color": "blue",
+      "fontSize": "10px",
+    }
+  }
+>
+  Blue title with overwritten styles
+</h1>
+`;

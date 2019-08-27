@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stepper: Component should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "containerStyles": Object {
+        "display": "flex",
+        "flexDirection": "row",
+      },
+    }
+  }
+>
+  <span
+    key="0"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#1d1d20",
+        "borderRadius": "50%",
+        "cursor": "default",
+        "display": "block",
+        "height": "12px",
+        "margin": "0 4px",
+        "pointerEvents": "none",
+        "width": "12px",
+      }
+    }
+  />
+  <span
+    key="1"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "borderRadius": "50%",
+        "cursor": "pointer",
+        "display": "block",
+        "height": "12px",
+        "margin": "0 4px",
+        "width": "12px",
+      }
+    }
+  />
+  <span
+    key="2"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "borderRadius": "50%",
+        "cursor": "pointer",
+        "display": "block",
+        "height": "12px",
+        "margin": "0 4px",
+        "width": "12px",
+      }
+    }
+  />
+  <span
+    key="3"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "borderRadius": "50%",
+        "cursor": "pointer",
+        "display": "block",
+        "height": "12px",
+        "margin": "0 4px",
+        "width": "12px",
+      }
+    }
+  />
+  <span
+    key="4"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "borderRadius": "50%",
+        "cursor": "pointer",
+        "display": "block",
+        "height": "12px",
+        "margin": "0 4px",
+        "width": "12px",
+      }
+    }
+  />
+  <span
+    key="5"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "borderRadius": "50%",
+        "cursor": "pointer",
+        "display": "block",
+        "height": "12px",
+        "margin": "0 4px",
+        "width": "12px",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Stepper: Component should render with custom styles 1`] = `
+<div
+  style={
+    Object {
+      "containerStyles": Object {
+        "display": "flex",
+        "flexDirection": "row",
+      },
+      "flexDirection": "column",
+    }
+  }
+>
+  <span
+    key="0"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "red",
+        "borderRadius": "50%",
+        "cursor": "default",
+        "display": "block",
+        "height": "12px",
+        "margin": "4px",
+        "pointerEvents": "none",
+        "width": "12px",
+      }
+    }
+  />
+  <span
+    key="1"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "borderRadius": "50%",
+        "cursor": "pointer",
+        "display": "block",
+        "height": "12px",
+        "margin": "4px",
+        "width": "12px",
+      }
+    }
+  />
+  <span
+    key="2"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "borderRadius": "50%",
+        "cursor": "pointer",
+        "display": "block",
+        "height": "12px",
+        "margin": "4px",
+        "width": "12px",
+      }
+    }
+  />
+  <span
+    key="3"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "borderRadius": "50%",
+        "cursor": "pointer",
+        "display": "block",
+        "height": "12px",
+        "margin": "4px",
+        "width": "12px",
+      }
+    }
+  />
+  <span
+    key="4"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "borderRadius": "50%",
+        "cursor": "pointer",
+        "display": "block",
+        "height": "12px",
+        "margin": "4px",
+        "width": "12px",
+      }
+    }
+  />
+  <span
+    key="5"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "borderRadius": "50%",
+        "cursor": "pointer",
+        "display": "block",
+        "height": "12px",
+        "margin": "4px",
+        "width": "12px",
+      }
+    }
+  />
+</div>
+`;

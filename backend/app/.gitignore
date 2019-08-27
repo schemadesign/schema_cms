@@ -24,6 +24,7 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+local.env
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -105,6 +106,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# macos
+.idea/
 
 # custom project files
 local.env

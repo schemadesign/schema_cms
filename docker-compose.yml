@@ -35,7 +35,7 @@ services:
   backend:
     image: schema_cms_backend
     build:
-      context: backend
+      context: backend/app
     volumes:
       - ./backend/app:/app
     ports:
