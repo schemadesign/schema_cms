@@ -24,7 +24,7 @@ exports[`List: Component should render correctly 1`] = `
         headerComponent={
           <ForwardRef(styled.ul)>
             <ForwardRef(styled.li)>
-              a day ago
+              3 months ago
             </ForwardRef(styled.li)>
             <ForwardRef(styled.li)>
               Status
@@ -65,7 +65,7 @@ exports[`List: Component should render correctly 1`] = `
         headerComponent={
           <ForwardRef(styled.ul)>
             <ForwardRef(styled.li)>
-              a day ago
+              3 months ago
             </ForwardRef(styled.li)>
             <ForwardRef(styled.li)>
               Published
