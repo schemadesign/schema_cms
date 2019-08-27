@@ -14,8 +14,8 @@ export const defaultProps = {
       status: 'Status',
       owner: {
         id: '1',
-        firstName: 'Firsttitle',
-        lastName: 'Lasttitle',
+        firstName: 'Firstname',
+        lastName: 'Lastname',
       },
     },
     {

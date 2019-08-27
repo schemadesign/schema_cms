@@ -24,7 +24,7 @@ exports[`List: Component should render correctly 1`] = `
         headerComponent={
           <ForwardRef(styled.ul)>
             <ForwardRef(styled.li)>
-              2019-08-26T11:05:12+0000
+              a day ago
             </ForwardRef(styled.li)>
             <ForwardRef(styled.li)>
               Status
@@ -56,7 +56,7 @@ exports[`List: Component should render correctly 1`] = `
             }
           }
         >
-          schemacms/api/project_name
+          schemacms/api/project_title
         </Span>
       </Card>
     </styled.li>
@@ -65,7 +65,7 @@ exports[`List: Component should render correctly 1`] = `
         headerComponent={
           <ForwardRef(styled.ul)>
             <ForwardRef(styled.li)>
-              2019-08-26T11:05:12+0000
+              a day ago
             </ForwardRef(styled.li)>
             <ForwardRef(styled.li)>
               Published
