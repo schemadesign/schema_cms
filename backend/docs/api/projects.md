@@ -61,7 +61,11 @@ Content-Type application/json
   "slug": "recruitter-yotta",
   "description": "This one is first project and its description",
   "status": "initial",
-  "owner": "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+  "owner": {
+      "id": "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+      "first_name": "John",
+      "last_name": "Farrel"
+  },
   "editors": [
       "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
       "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e"
@@ -100,7 +104,11 @@ Content-Type application/json
   "slug": "recruitter-yotta",
   "description": "This one is first project and its description",
   "status": "initial",
-  "owner": "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+  "owner": {
+      "id": "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
+      "first_name": "John",
+      "last_name": "Farrel"
+  },
   "editors": [
       "3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e",
       "44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e"
