@@ -9,15 +9,19 @@ const defaultProps = {
     {
       name: 'Project Name',
       description: 'Description',
-      url: 'schemacms/api/project_name',
-      details: ['0 days ago', 'Status', 'First Lastname'],
+      slug: 'schemacms/api/project_name',
+      created: '2019-08-26T11:05:12+0000',
+      status: 'Status',
+      owner: 'First Lastname',
     },
     {
       name: 'Honec sodales libero non fermentum aliquam',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.',
-      url: 'schemacms/api/honec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam',
-      details: ['2 days ago', 'Published', 'Tadeusz Kosciuszko'],
+      slug: 'schemacms/api/honec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam',
+      created: '2019-08-26T11:05:12+0000',
+      status: 'Published',
+      owner: 'Tadeusz Kosciuszko',
     },
   ],
   fetchProjectsList: identity,

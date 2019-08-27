@@ -39,8 +39,8 @@ export class List extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ name = '', description = '', url = '', details }) {
-    const header = this.renderHeader(details);
+  renderItem({ name = '', description = '', slug = '', created = '', status = '', owner = '' }) {
+    const header = this.renderHeader([created, status, owner]);
 
     return (
       <ProjectItem>
@@ -49,7 +49,7 @@ export class List extends PureComponent {
           <Description>
             <P>{description}</P>
           </Description>
-          <Span customStyles={urlStyles}>{url}</Span>
+          <Span customStyles={urlStyles}>{slug}</Span>
         </Card>
       </ProjectItem>
     );
