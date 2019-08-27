@@ -184,11 +184,11 @@ class CIPipeline(core.Stack):
         )
 
         source_output = aws_codepipeline.Artifact()
-        # todo: pass ARN somehow
+        github_token_arn = self.node.try_get_context('github_token_arn')
         oauth_token = aws_secretsmanager.Secret.from_secret_arn(
             self,
             'gh-token',
-            'arn:aws:secretsmanager:eu-central-1:314820667159:secret:github-token-TRQAXN'
+            github_token_arn
         )
 
         pipeline_source_action = aws_codepipeline_actions.GitHubSourceAction(
