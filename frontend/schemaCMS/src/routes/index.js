@@ -10,11 +10,12 @@ import { Home } from './home';
 import { NotFound } from './notFound';
 import { AUTH_PATH } from '../shared/utils/api.constants';
 import { List as ProjectsList } from './project/list';
+import { View as ProjectView } from './project/view';
 
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
-  PROJECTS_LIST: '/projects/list',
+  PROJECTS: '/projects',
 };
 
 export default class RootContainer extends Component {
@@ -26,7 +27,9 @@ export default class RootContainer extends Component {
         <App>
           <Switch>
             <AuthRoute exact path={ROUTES.HOME} component={Home} />
-            <AuthRoute exact path={ROUTES.PROJECTS_LIST} component={ProjectsList} />
+
+            <AuthRoute exact path={ROUTES.PROJECTS} component={ProjectsList} />
+            <AuthRoute exact path={`${ROUTES.PROJECTS}/:id`} component={ProjectView} />
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
