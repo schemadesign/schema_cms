@@ -5,6 +5,9 @@ from os.path import join
 from distutils.util import strtobool
 
 from configurations import Configuration
+import boto3
+import json
+
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
@@ -12,6 +15,14 @@ from schemacms.utils import json as json_
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+secrets_manager = boto3.client('secretsmanager', endpoint_url=os.environ.get('SECRET_MANAGER_ENDPOINT_URL', None))
+
+db_secret_arn = os.environ['DB_SECRET_ARN']
+
+db_secret_value = secrets_manager.get_secret_value(SecretId=db_secret_arn)
+# contains host, username, password and port
+db_connection_config = json.loads(db_secret_value.get('SecretString'))
 
 
 json.JSONEncoder.default = json_.CustomJSONEncoder.default
@@ -86,13 +97,13 @@ class Common(Configuration):
         "default": {
             "ENGINE": "django.db.backends.postgresql",
             "NAME": os.getenv("POSTGRES_DB"),
-            "USER": os.getenv("POSTGRES_USER"),
-            "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
-            "HOST": os.getenv("POSTGRES_HOST"),
+            "USER": db_connection_config.get('username'),
+            "PASSWORD": db_connection_config.get('password'),
+            "HOST": db_connection_config.get('host'),
             # Persistent connections avoid the overhead of re-establishing a connection
             # to the database in each request
             "CONN_MAX_AGE": int(os.getenv("POSTGRES_CONN_MAX_AGE", '60')),
-            "PORT": os.getenv("POSTGRES_PORT", 5432),
+            "PORT": db_connection_config.get('port'),
         }
     }
 
