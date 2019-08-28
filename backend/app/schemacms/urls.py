@@ -10,6 +10,7 @@ from schemacms.misc import views as misc_views
 
 
 router = DefaultRouter(trailing_slash=False)
+router.register(r'users/me', user_views.MeViewSet, basename='me')
 router.register(r'users', user_views.UserViewSet)
 router.register(r'projects', project_views.ProjectViewSet)
 router.register(r'projects/(?P<project_id>\d+)/datasources', project_views.DataSourceViewSet)
