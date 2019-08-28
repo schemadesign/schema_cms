@@ -6,6 +6,7 @@ from rest_framework.routers import DefaultRouter
 
 from .users import views as user_views
 from .projects import views as project_views
+from schemacms.misc import views as misc_views
 
 router = DefaultRouter(trailing_slash=False)
 router.register(r'users', user_views.UserViewSet)
@@ -20,6 +21,7 @@ urlpatterns = [
         ])
     ),
     urls.path('admin/', admin.site.urls),
+    urls.path('', misc_views.HomeView.as_view(), name='home')
 
     # the 'api-root' from django rest-frameworks default router
     # http://www.django-rest-framework.org/api-guide/routers/#defaultrouter
