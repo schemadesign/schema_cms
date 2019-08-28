@@ -8,6 +8,9 @@ INSTALLATION_MODE_CONTEXT_KEY = 'installation_mode'
 INSTALLATION_MODE_FULL = 'full'
 INSTALLATION_MODEL_APP_ONLY = 'app_only'
 
+GITHUB_REPO_OWNER = 'schemadesign'
+GITHUB_REPOSITORY = 'schema_cms'
+
 
 class BaseResources(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
@@ -239,10 +242,11 @@ class CIPipeline(core.Stack):
             self.node.add_error('Deploy of ci-pipeline stack is only available in `full` installation_mode. '
                                 'Check your installation_mode in CDK context')
 
+        # deploy to env pipeline
         self.pipeline = aws_codepipeline.Pipeline(
             self,
-            'ci-pipeline',
-            pipeline_name='schema-cms-pipeline',
+            'deploy-pipeline',
+            pipeline_name='schema-cms-deploy-pipeline',
         )
 
         source_output = aws_codepipeline.Artifact()
@@ -255,10 +259,9 @@ class CIPipeline(core.Stack):
 
         pipeline_source_action = aws_codepipeline_actions.GitHubSourceAction(
             action_name='github_source',
-            owner='schemadesign',
-            repo='schema_cms',
-            # todo: update branch name
-            branch='feature/ci-pipeline',
+            owner=GITHUB_REPO_OWNER,
+            repo=GITHUB_REPOSITORY,
+            branch='master',
             trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
             output=source_output,
             oauth_token=oauth_token.secret_value,
@@ -269,6 +272,7 @@ class CIPipeline(core.Stack):
             actions=[pipeline_source_action],
         )
 
+        app_build_spec = aws_codebuild.BuildSpec.from_source_filename('buildspec-app.yaml')
         build_app_project = aws_codebuild.PipelineProject(
             self,
             'build_app_project',
@@ -278,12 +282,15 @@ class CIPipeline(core.Stack):
                     'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
                         value=scope.base.app_registry.repository_uri
                     ),
+                    'PUSH_IMAGES': aws_codebuild.BuildEnvironmentVariable(
+                        value='1'
+                    ),
                 },
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
             ),
             cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename('buildspec-app.yaml'),
+            build_spec=app_build_spec,
         )
         scope.base.app_registry.grant_pull_push(build_app_project)
 
@@ -459,3 +466,40 @@ class CIPipeline(core.Stack):
                 ),
             ]
         )
+
+        # pull request tests
+        gh_source = aws_codebuild.Source.git_hub(
+            owner=GITHUB_REPO_OWNER,
+            repo=GITHUB_REPOSITORY,
+            webhook=True,
+            webhook_filters=[
+                aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_CREATED),
+                aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_UPDATED),
+                aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_REOPENED),
+                # todo: remove line below
+                aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PUSH)
+                .and_branch_is('feature/ci-pipeline'),
+            ],
+        )
+
+        self.app_ci_project = aws_codebuild.Project(
+            self,
+            'schema_cms_app_pr_build',
+            project_name='schema_cms_app_ci',
+            source=gh_source,
+            environment=aws_codebuild.BuildEnvironment(
+                environment_variables={
+                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
+                        value=scope.base.app_registry.repository_uri
+                    ),
+                    'PUSH_IMAGES': aws_codebuild.BuildEnvironmentVariable(
+                        value='0',
+                    ),
+                },
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+                privileged=True,
+            ),
+            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
+            build_spec=app_build_spec,
+        )
+        scope.base.app_registry.grant_pull_push(self.app_ci_project.role)
