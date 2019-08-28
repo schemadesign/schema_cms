@@ -1,6 +1,5 @@
 import datetime
 import os
-import json
 from os.path import join
 from distutils.util import strtobool
 
@@ -16,7 +15,8 @@ from schemacms.utils import json as json_
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-secrets_manager = boto3.client('secretsmanager', endpoint_url=os.environ.get('SECRET_MANAGER_ENDPOINT_URL', None))
+secrets_manager = boto3.client('secretsmanager',
+                               endpoint_url=os.environ.get('SECRET_MANAGER_ENDPOINT_URL', None))
 
 db_secret_arn = os.environ['DB_SECRET_ARN']
 

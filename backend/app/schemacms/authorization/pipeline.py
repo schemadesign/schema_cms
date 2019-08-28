@@ -36,4 +36,7 @@ def redirect_with_token(strategy, user=None, *args, **kwargs):
     if not uri.endswith('/'):
         uri = '{}/'.format(uri)
     token = user.get_exchange_token()
-    return shortcuts.redirect(parse.urljoin(uri, "auth/confirm/{uid}/{token}".format(uid=user.id, token=token)))
+    return shortcuts.redirect(parse.urljoin(uri, "auth/confirm/{uid}/{token}".format(
+        uid=user.id,
+        token=token
+    )))

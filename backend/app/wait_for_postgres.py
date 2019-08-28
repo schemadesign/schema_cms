@@ -5,7 +5,8 @@ import psycopg2
 import boto3
 import json
 
-secrets_manager = boto3.client('secretsmanager', endpoint_url=os.environ.get('SECRET_MANAGER_ENDPOINT_URL', None))
+secrets_manager = boto3.client('secretsmanager',
+                               endpoint_url=os.environ.get('SECRET_MANAGER_ENDPOINT_URL', None))
 
 db_secret_arn = os.environ['DB_SECRET_ARN']
 
