@@ -47,6 +47,8 @@ services:
     restart: on-failure
     env_file: local.env
     command: ./scripts/run_dev.sh
+    tty: true
+    stdin_open: true
 
   mailcatcher:
     image: schickling/mailcatcher
