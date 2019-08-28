@@ -9,6 +9,9 @@ export const { Types: ProjectTypes, Creators: ProjectActions } = createActions(
     fetchList: [],
     fetchListSuccess: ['data'],
     fetchListError: null,
+    fetchProject: [],
+    fetchProjectSuccess: ['data'],
+    fetchProjectError: null,
   },
   { prefix }
 );
@@ -19,10 +22,14 @@ export const ProjectRoutines = {
 
 export const INITIAL_STATE = new Immutable({
   projects: [],
+  project: {},
 });
 
 const fetchListSuccess = (state = INITIAL_STATE, { data }) => state.set('projects', data);
 
+const fetchProjectSuccess = (state = INITIAL_STATE, { data }) => state.set('project', data);
+
 export const reducer = createReducer(INITIAL_STATE, {
   [ProjectTypes.FETCH_LIST_SUCCESS]: fetchListSuccess,
+  [ProjectTypes.FETCH_PROJECT_SUCCESS]: fetchProjectSuccess,
 });

@@ -15,6 +15,20 @@ function* fetchProjectsList() {
   }
 }
 
+function* fetchProject(id) {
+  try {
+    const { data } = yield api.get(`${PROJECTS_PATH}/${id}`);
+    const { results = [] } = data;
+
+    yield put(ProjectActions.fetchProjectSuccess(results));
+  } catch (error) {
+    yield put(ProjectActions.fetchProjectError(error));
+  }
+}
+
 export function* watchProject() {
-  yield all([takeLatest(ProjectTypes.FETCH_LIST, fetchProjectsList)]);
+  yield all([
+    takeLatest(ProjectTypes.FETCH_LIST, fetchProjectsList),
+    takeLatest(ProjectTypes.FETCH_PROJECT, fetchProject),
+  ]);
 }

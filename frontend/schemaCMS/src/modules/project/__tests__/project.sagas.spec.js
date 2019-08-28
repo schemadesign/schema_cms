@@ -11,6 +11,7 @@ describe('Project: sagas', () => {
   const defaultState = Immutable({});
 
   let item;
+  let extenedProjectData;
 
   beforeEach(() => {
     item = {
@@ -26,8 +27,18 @@ describe('Project: sagas', () => {
       },
     };
 
+    extenedProjectData = {
+      editors: ['3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e', '44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e'],
+      modified: '2019-08-21T10:12:52.030069Z',
+    };
+
     mockApi.get(PROJECTS_PATH).reply(OK, {
       results: [item],
+    });
+
+    mockApi.get(`${PROJECTS_PATH}/1`).reply(OK, {
+      ...item,
+      ...extenedProjectData,
     });
   });
 
@@ -37,6 +48,21 @@ describe('Project: sagas', () => {
         .withState(defaultState)
         .put(ProjectActions.fetchListSuccess([item]))
         .dispatch(ProjectActions.fetchList())
+        .run();
+    });
+  });
+
+  describe('when /PROJECTS/1 action is fired', () => {
+    it('should put fetchProjectSuccess action', async () => {
+      await expectSaga(watchProject)
+        .withState(defaultState)
+        .put(
+          ProjectActions.fetchProjectSuccess({
+            ...item,
+            ...extenedProjectData,
+          })
+        )
+        .dispatch(ProjectActions.fetchProject())
         .run();
     });
   });
