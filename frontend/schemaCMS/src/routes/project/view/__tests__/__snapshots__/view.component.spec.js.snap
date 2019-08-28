@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View: Component should render correctly 1`] = `
+<styled.div>
+  <Header
+    customStyles={
+      Object {
+        "backgroundColor": null,
+      }
+    }
+    iconComponent={<MenuIcon />}
+    onButtonClick={[Function]}
+  >
+    <H2>
+      Project
+    </H2>
+    <H1 />
+  </Header>
+  <styled.div>
+    <P>
+      Project doesn't exist.
+    </P>
+  </styled.div>
+</styled.div>
+`;

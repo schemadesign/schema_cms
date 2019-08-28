@@ -33,11 +33,13 @@ export const defaultProps = {
     },
   ],
   fetchProjectsList: identity,
+  history: {},
 };
 
 export const emptyListProps = {
   list: [],
   fetchProjectsList: identity,
+  history: {},
 };
 
 storiesOf('List', module)

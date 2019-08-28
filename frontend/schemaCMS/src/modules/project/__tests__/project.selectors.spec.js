@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectProjectDomain, selectProjectsList } from '../project.selectors';
+import { selectProjectDomain, selectProjectsList, selectProject } from '../project.selectors';
 
 describe('Project: selectors', () => {
   const state = Immutable({
@@ -23,9 +23,9 @@ describe('Project: selectors', () => {
     });
   });
 
-  describe('selectProjectsList', () => {
+  describe('selectProject', () => {
     it('should select a single project', () => {
-      expect(selectProjectsList(state)).to.equal(state.project.project);
+      expect(selectProject(state)).to.equal(state.project.project);
     });
   });
 });

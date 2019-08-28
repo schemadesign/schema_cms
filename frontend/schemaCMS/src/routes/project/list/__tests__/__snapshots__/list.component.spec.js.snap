@@ -35,10 +35,19 @@ exports[`List: Component should render correctly 1`] = `
           </ForwardRef(styled.ul)>
         }
       >
-        <H1>
+        <H1
+          customStyles={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          onClick={[Function]}
+        >
           Project Name
         </H1>
-        <styled.div>
+        <styled.div
+          onClick={[Function]}
+        >
           <P>
             Description
           </P>
@@ -76,10 +85,19 @@ exports[`List: Component should render correctly 1`] = `
           </ForwardRef(styled.ul)>
         }
       >
-        <H1>
+        <H1
+          customStyles={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          onClick={[Function]}
+        >
           Honec sodales libero non fermentum aliquam
         </H1>
-        <styled.div>
+        <styled.div
+          onClick={[Function]}
+        >
           <P>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
           </P>

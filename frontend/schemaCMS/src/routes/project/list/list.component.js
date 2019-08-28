@@ -18,6 +18,7 @@ import {
   ProjectsList,
   headerStyles,
   urlStyles,
+  titleStyles,
   addProjectStyles,
 } from './list.styles';
 
@@ -35,18 +36,11 @@ export class List extends PureComponent {
 
     this.state = {
       isMenuOpen: false,
-      isLoading: true,
     };
   }
 
   componentDidMount() {
     this.props.fetchProjectsList();
-  }
-
-  componentDidUpdate() {
-    this.setState({
-      isLoading: false,
-    });
   }
 
   handleToggleMenu = () => {
@@ -75,12 +69,15 @@ export class List extends PureComponent {
     const whenCreated = extendedDayjs(created).fromNow();
 
     const header = this.renderHeader([whenCreated, status, user]);
+    const handleShowProject = this.handleShowProject(id);
 
     return (
-      <ProjectItem key={id} onClick={this.handleShowProject(id)}>
+      <ProjectItem key={id}>
         <Card headerComponent={header}>
-          <H1>{title}</H1>
-          <Description>
+          <H1 customStyles={titleStyles} onClick={handleShowProject}>
+            {title}
+          </H1>
+          <Description onClick={handleShowProject}>
             <P>{description}</P>
           </Description>
           <Span customStyles={urlStyles}>{slug}</Span>
@@ -114,11 +111,8 @@ export class List extends PureComponent {
 
   render() {
     const { list = [] } = this.props;
-    const { isLoading } = this.state;
 
-    const content = isLoading
-      ? 'Loading'
-      : renderWhenTrueOtherwise(this.renderList, this.renderNoData)(Boolean(list.length), list);
+    const content = renderWhenTrueOtherwise(this.renderList, this.renderNoData)(Boolean(list.length), list);
 
     return (
       <Container>

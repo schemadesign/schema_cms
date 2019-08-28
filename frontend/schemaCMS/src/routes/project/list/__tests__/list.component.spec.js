@@ -21,6 +21,7 @@ describe('List: Component', () => {
     const props = {
       fetchProjectsList,
       list: [],
+      history: {},
     };
 
     await render(props);

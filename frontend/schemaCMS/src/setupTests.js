@@ -9,8 +9,7 @@ import chaiEnzyme from 'chai-enzyme';
 import sinonChai from 'sinon-chai';
 import chaiJestDiff from 'chai-jest-diff';
 import MockDate from 'mockdate';
-
-import dayjs from './shared/utils/dayjs';
+import dayjs from 'dayjs';
 
 Enzyme.configure({ adapter: new Adapter() });
 

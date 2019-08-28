@@ -342,8 +342,10 @@ exports[`Storyshots List list 1`] = `
           </ul>
         </div>
         <h1
+          onClick={[Function]}
           style={
             Object {
+              "cursor": "pointer",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "24px",
               "fontWeight": 600,
@@ -356,7 +358,8 @@ exports[`Storyshots List list 1`] = `
           Project Name
         </h1>
         <div
-          className="sc-EHOje iykvgP"
+          className="sc-EHOje gjfrte"
+          onClick={[Function]}
         >
           <p
             style={
@@ -436,8 +439,10 @@ exports[`Storyshots List list 1`] = `
           </ul>
         </div>
         <h1
+          onClick={[Function]}
           style={
             Object {
+              "cursor": "pointer",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "24px",
               "fontWeight": 600,
@@ -450,7 +455,8 @@ exports[`Storyshots List list 1`] = `
           Honec sodales libero non fermentum aliquam
         </h1>
         <div
-          className="sc-EHOje iykvgP"
+          className="sc-EHOje gjfrte"
+          onClick={[Function]}
         >
           <p
             style={

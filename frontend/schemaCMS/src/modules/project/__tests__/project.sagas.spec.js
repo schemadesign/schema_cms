@@ -8,7 +8,10 @@ import { watchProject } from '../project.sagas';
 import { ProjectActions } from '../project.redux';
 
 describe('Project: sagas', () => {
-  const defaultState = Immutable({});
+  const defaultState = Immutable({
+    projects: [],
+    project: {},
+  });
 
   let item;
   let extenedProjectData;
@@ -62,7 +65,7 @@ describe('Project: sagas', () => {
             ...extenedProjectData,
           })
         )
-        .dispatch(ProjectActions.fetchProject())
+        .dispatch(ProjectActions.fetchProject('1'))
         .run();
     });
   });

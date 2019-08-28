@@ -6,6 +6,7 @@ import { reducer as projectReducer, ProjectActions } from '../project.redux';
 describe('Project: redux', () => {
   const defaultState = Immutable({
     projects: [],
+    project: {},
   });
 
   describe('reducer', () => {
@@ -57,8 +58,8 @@ describe('Project: redux', () => {
         modified: '2019-08-21T10:12:52.030069Z',
       };
 
-      const resultState = projectReducer(defaultState, ProjectActions.fetchProjectSuccess(projects));
-      expect(resultState.projects).to.deep.equal(projects);
+      const resultState = projectReducer(defaultState, ProjectActions.fetchProjectSuccess(project));
+      expect(resultState.project).to.deep.equal(project);
     });
   });
 });

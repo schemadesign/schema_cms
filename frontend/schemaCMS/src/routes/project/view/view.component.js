@@ -20,7 +20,7 @@ export class View extends PureComponent {
     this.props.fetchProject(id);
   }
 
-  renderProject = (_, project) => <P>{project.description}</P>;
+  renderProject = (_, project = {}) => <P>{project.description}</P>;
 
   renderNoData = () => (
     <Empty>

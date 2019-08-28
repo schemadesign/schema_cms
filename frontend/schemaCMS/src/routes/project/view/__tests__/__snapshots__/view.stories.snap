@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots View default 1`] = `
+<div
+  className="sc-bdVaJa bDWFJH"
+>
+  <div
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "backgroundColor": null,
+        "color": "#1d1d20",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "padding": "6px 0 18px 20px",
+        "width": "100%",
+      }
+    }
+  >
+    <div>
+      <h2
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Project
+      </h2>
+      <h1
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Project Name
+      </h1>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "none",
+          "borderRadius": "48px",
+          "cursor": "pointer",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#1d1d20",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+  <p
+    style={
+      Object {
+        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": 200,
+        "lineHeight": "1.33em",
+        "margin": 0,
+      }
+    }
+  >
+    Description
+  </p>
+</div>
+`;
+
+exports[`Storyshots View empty 1`] = `
+<div
+  className="sc-bdVaJa bDWFJH"
+>
+  <div
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "backgroundColor": null,
+        "color": "#1d1d20",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "padding": "6px 0 18px 20px",
+        "width": "100%",
+      }
+    }
+  >
+    <div>
+      <h2
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Project
+      </h2>
+      <h1
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      />
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "none",
+          "borderRadius": "48px",
+          "cursor": "pointer",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#1d1d20",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    className="sc-bZQynM eaXBuK"
+  >
+    <p
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "18px",
+          "fontWeight": 200,
+          "lineHeight": "1.33em",
+          "margin": 0,
+        }
+      }
+    >
+      Project doesn't exist.
+    </p>
+  </div>
+</div>
+`;
