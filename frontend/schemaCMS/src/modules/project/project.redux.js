@@ -9,7 +9,7 @@ export const { Types: ProjectTypes, Creators: ProjectActions } = createActions(
     fetchList: [],
     fetchListSuccess: ['data'],
     fetchListError: null,
-    fetchProject: [],
+    fetchProject: ['id'],
     fetchProjectSuccess: ['data'],
     fetchProjectError: null,
   },

@@ -5,6 +5,7 @@ import { isEmpty } from 'ramda';
 
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import { PROJECTS_PATH } from '../../../shared/utils/api.constants';
 import {
   Action,
   ActionsList,
@@ -26,6 +27,7 @@ export class List extends PureComponent {
   static propTypes = {
     list: PropTypes.array.isRequired,
     fetchProjectsList: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
   };
 
   constructor(props) {
@@ -33,11 +35,18 @@ export class List extends PureComponent {
 
     this.state = {
       isMenuOpen: false,
+      isLoading: true,
     };
   }
 
   componentDidMount() {
     this.props.fetchProjectsList();
+  }
+
+  componentDidUpdate() {
+    this.setState({
+      isLoading: false,
+    });
   }
 
   handleToggleMenu = () => {
@@ -47,6 +56,8 @@ export class List extends PureComponent {
       isMenuOpen: !isMenuOpen,
     });
   };
+
+  handleShowProject = id => () => this.props.history.push(`${PROJECTS_PATH}/${id}`);
 
   handleNewProject = () => {};
 
@@ -66,7 +77,7 @@ export class List extends PureComponent {
     const header = this.renderHeader([whenCreated, status, user]);
 
     return (
-      <ProjectItem key={id}>
+      <ProjectItem key={id} onClick={this.handleShowProject(id)}>
         <Card headerComponent={header}>
           <H1>{title}</H1>
           <Description>
@@ -103,7 +114,11 @@ export class List extends PureComponent {
 
   render() {
     const { list = [] } = this.props;
-    const content = renderWhenTrueOtherwise(this.renderList, this.renderNoData)(Boolean(list.length), list);
+    const { isLoading } = this.state;
+
+    const content = isLoading
+      ? 'Loading'
+      : renderWhenTrueOtherwise(this.renderList, this.renderNoData)(Boolean(list.length), list);
 
     return (
       <Container>

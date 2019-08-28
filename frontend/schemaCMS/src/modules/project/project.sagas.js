@@ -15,12 +15,11 @@ function* fetchProjectsList() {
   }
 }
 
-function* fetchProject(id) {
+function* fetchProject({ id }) {
   try {
     const { data } = yield api.get(`${PROJECTS_PATH}/${id}`);
-    const { results = [] } = data;
 
-    yield put(ProjectActions.fetchProjectSuccess(results));
+    yield put(ProjectActions.fetchProjectSuccess(data));
   } catch (error) {
     yield put(ProjectActions.fetchProjectError(error));
   }
