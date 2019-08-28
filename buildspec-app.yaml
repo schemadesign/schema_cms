@@ -12,17 +12,21 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --no-include-email)
-      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - VERSION=$(git describe --tags)
+      - echo "Build version:$VERSION"
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest ./backend/app
-      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - BACKEND_IMAGE=$REPOSITORY_URI:latest docker-compose -f ./backend/app/docker-compose-ci.yml run backend /app/scripts/run_tests.sh
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$VERSION
+      - |
+        if ["$PUSH_IMAGES" = "1"]; then
+          echo "Pushing the Docker images..."
+          docker push $REPOSITORY_URI:latest
+          docker push $REPOSITORY_URI:$VERSION
+        fi
   post_build:
     commands:
     - echo Build completed on `date`
-    - echo Pushing the Docker images...
-    - docker push $REPOSITORY_URI:latest
-    - docker push $REPOSITORY_URI:$IMAGE_TAG
