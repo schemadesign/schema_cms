@@ -7,7 +7,9 @@ exports[`Home: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="home.pageTitle"
   />
-  <Button>
+  <Button
+    customStyles={Object {}}
+  >
     Test
   </Button>
   <styled.h1>
@@ -17,5 +19,11 @@ exports[`Home: Component should render correctly 1`] = `
       values={Object {}}
     />
   </styled.h1>
+  <Link
+    replace={false}
+    to="/projects/list"
+  >
+    Projects List
+  </Link>
 </styled.div>
 `;

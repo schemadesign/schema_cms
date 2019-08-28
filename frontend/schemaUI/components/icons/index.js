@@ -1,7 +1,9 @@
-import { MenuIcon } from './menuIcon';
+import { ArrowLeftIcon } from './arrowLeftIcon';
 import { CloseIcon } from './closeIcon';
+import { MenuIcon } from './menuIcon';
+import { PlusIcon } from './plusIcon';
 
-const Icons = { MenuIcon, CloseIcon };
+const Icons = { ArrowLeftIcon, CloseIcon, MenuIcon, PlusIcon };
 
-export { MenuIcon, CloseIcon };
+export { ArrowLeftIcon, CloseIcon, MenuIcon, PlusIcon };
 export default Icons;

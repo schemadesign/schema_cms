@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List: Component should render correctly 1`] = `
+<styled.div>
+  <Header
+    customStyles={
+      Object {
+        "backgroundColor": null,
+      }
+    }
+    iconComponent={<MenuIcon />}
+    onButtonClick={[Function]}
+  >
+    <H2>
+      Projects
+    </H2>
+    <H1>
+      Overview
+    </H1>
+  </Header>
+  <styled.ul>
+    <styled.li>
+      <Card
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)>
+              3 months ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)>
+              Status
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)>
+              Firstname Lastname
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+      >
+        <H1>
+          Project Name
+        </H1>
+        <styled.div>
+          <P>
+            Description
+          </P>
+        </styled.div>
+        <Span
+          customStyles={
+            Object {
+              "color": "#a6a7aa",
+              "display": "block",
+              "fontSize": "12px",
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
+              "width": "100%",
+            }
+          }
+        >
+          schemacms/api/project_title
+        </Span>
+      </Card>
+    </styled.li>
+    <styled.li>
+      <Card
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)>
+              3 months ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)>
+              Published
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)>
+              Tadeusz Kosciuszko
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+      >
+        <H1>
+          Honec sodales libero non fermentum aliquam
+        </H1>
+        <styled.div>
+          <P>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
+          </P>
+        </styled.div>
+        <Span
+          customStyles={
+            Object {
+              "color": "#a6a7aa",
+              "display": "block",
+              "fontSize": "12px",
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
+              "width": "100%",
+            }
+          }
+        >
+          schemacms/api/honec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+        </Span>
+      </Card>
+    </styled.li>
+  </styled.ul>
+  <Button
+    customStyles={
+      Object {
+        "backgroundColor": "#a6a7aa",
+        "bottom": "10px",
+        "height": "60px",
+        "position": "fixed",
+        "right": "10px",
+      }
+    }
+    onClick={[Function]}
+  >
+    <PlusIcon />
+  </Button>
+  <Menu
+    customCloseButtonStyles={Object {}}
+    customStyles={Object {}}
+    onClose={[Function]}
+    open={false}
+  >
+    <styled.ul>
+      <styled.li>
+        Edit Project settings
+      </styled.li>
+      <styled.li>
+        Delete project
+      </styled.li>
+      <styled.li>
+        User settings
+      </styled.li>
+      <styled.li>
+        Log Out
+      </styled.li>
+    </styled.ul>
+  </Menu>
+</styled.div>
+`;

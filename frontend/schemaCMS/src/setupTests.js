@@ -8,6 +8,9 @@ import nock from 'nock';
 import chaiEnzyme from 'chai-enzyme';
 import sinonChai from 'sinon-chai';
 import chaiJestDiff from 'chai-jest-diff';
+import MockDate from 'mockdate';
+
+import dayjs from './shared/utils/dayjs';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -17,6 +20,9 @@ chai.use(chaiJestDiff());
 chai.config.includeStack = true;
 
 nock.disableNetConnect();
+
+MockDate.set('2019-12-01T01:00:00Z');
+jest.doMock('dayjs', () => dayjs);
 
 afterEach(() => {
   nock.cleanAll();
