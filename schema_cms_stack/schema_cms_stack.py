@@ -258,7 +258,7 @@ class CIPipeline(core.Stack):
             owner='schemadesign',
             repo='schema_cms',
             # todo: update branch name
-            branch='feature/CMS-5_infra-setup',
+            branch='feature/ci-pipeline',
             trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
             output=source_output,
             oauth_token=oauth_token.secret_value,
