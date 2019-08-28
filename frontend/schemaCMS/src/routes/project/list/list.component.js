@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Card, Header, Icons, Menu, Typography } from 'schemaUI';
 import { isEmpty } from 'ramda';
 
-import dayjs from '../../../shared/utils/dayjs';
+import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import {
   Action,
@@ -61,7 +61,7 @@ export class List extends PureComponent {
   renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner = {} }) {
     const { firstName = '', lastName = '' } = owner;
     const user = isEmpty(firstName) ? lastName : `${firstName} ${lastName}`;
-    const whenCreated = dayjs(created).fromNow();
+    const whenCreated = extendedDayjs(created).fromNow();
 
     const header = this.renderHeader([whenCreated, status, user]);
 
