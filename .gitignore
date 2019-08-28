@@ -1,2 +1,5 @@
 .DS_Store
-.idea/
+.env
+cdk.out
+.idea
+local.env

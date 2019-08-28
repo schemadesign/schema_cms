@@ -1,17 +1,19 @@
-FROM python:3.6
+FROM python:3.7.4-slim-buster
 ENV PYTHONUNBUFFERED 1
 
+RUN pip install awscli
+
 # Allows docker to cache installed dependencies between builds
-COPY ./requirements.txt requirements.txt
+COPY ./requirements.txt /app/
+WORKDIR /app
 RUN pip install -r requirements.txt
 
 # Adds our application code to the image
-COPY . code
-WORKDIR code
+COPY . /app
 
 EXPOSE 8000
 
 # Migrates the database, uploads staticfiles, and runs the production server
 CMD ./manage.py migrate && \
     ./manage.py collectstatic --noinput && \
-    gunicorn --bind 0.0.0.0:$PORT --access-logfile - schemacms.wsgi:application
+    gunicorn --bind 0.0.0.0:8000 --access-logfile - schemacms.wsgi:application
