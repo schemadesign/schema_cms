@@ -7,7 +7,6 @@ describe('Project: selectors', () => {
   const state = Immutable({
     project: {
       projects: [],
-      isMenuOpen: false,
     },
   });
 

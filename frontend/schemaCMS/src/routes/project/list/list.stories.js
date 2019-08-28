@@ -33,15 +33,11 @@ export const defaultProps = {
     },
   ],
   fetchProjectsList: identity,
-  isMenuOpen: false,
-  toggleMenu: identity,
 };
 
 export const emptyListProps = {
   list: [],
   fetchProjectsList: identity,
-  isMenuOpen: false,
-  toggleMenu: identity,
 };
 
 storiesOf('List', module)
