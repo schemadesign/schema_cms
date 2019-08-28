@@ -476,9 +476,6 @@ class CIPipeline(core.Stack):
                 aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_CREATED),
                 aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_UPDATED),
                 aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PULL_REQUEST_REOPENED),
-                # todo: remove line below
-                aws_codebuild.FilterGroup.in_event_of(aws_codebuild.EventAction.PUSH)
-                .and_branch_is('feature/ci-pipeline'),
             ],
         )
 
