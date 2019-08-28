@@ -6,7 +6,6 @@ from django.utils.encoding import python_2_unicode_compatible
 from rest_framework_jwt.settings import api_settings
 
 from schemacms.authorization import tokens
-
 from . import constants
 
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
