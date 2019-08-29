@@ -1,26 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Project: Component should render correctly 1`] = `
+exports[`DataSource: Component should render correctly 1`] = `
 <Switch>
   <Redirect
     exact={true}
-    path="/projects"
+    path="path"
     push={false}
-    to="/projects/list"
+    to="path/list"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/projects/list"
+    path="path/list"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="/projects/:id"
-  />
-  <Route
-    component={[Function]}
-    path="/projects/:id/datasource"
+    path="path/create"
   />
 </Switch>
 `;

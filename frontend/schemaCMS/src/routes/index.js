@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { IntlProvider } from 'react-intl';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import browserHistory from '../shared/utils/history';
 import App from './app.container';
