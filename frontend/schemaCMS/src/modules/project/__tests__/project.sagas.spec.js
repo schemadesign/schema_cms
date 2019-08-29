@@ -8,9 +8,13 @@ import { watchProject } from '../project.sagas';
 import { ProjectActions } from '../project.redux';
 
 describe('Project: sagas', () => {
-  const defaultState = Immutable({});
+  const defaultState = Immutable({
+    projects: [],
+    project: {},
+  });
 
   let item;
+  let extenedProjectData;
 
   beforeEach(() => {
     item = {
@@ -26,8 +30,18 @@ describe('Project: sagas', () => {
       },
     };
 
+    extenedProjectData = {
+      editors: ['3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e', '44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e'],
+      modified: '2019-08-21T10:12:52.030069Z',
+    };
+
     mockApi.get(PROJECTS_PATH).reply(OK, {
       results: [item],
+    });
+
+    mockApi.get(`${PROJECTS_PATH}/1`).reply(OK, {
+      ...item,
+      ...extenedProjectData,
     });
   });
 
@@ -37,6 +51,21 @@ describe('Project: sagas', () => {
         .withState(defaultState)
         .put(ProjectActions.fetchListSuccess([item]))
         .dispatch(ProjectActions.fetchList())
+        .run();
+    });
+  });
+
+  describe('when /PROJECTS/:id action is fired', () => {
+    it('should put fetchOneSuccess action', async () => {
+      await expectSaga(watchProject)
+        .withState(defaultState)
+        .put(
+          ProjectActions.fetchOneSuccess({
+            ...item,
+            ...extenedProjectData,
+          })
+        )
+        .dispatch(ProjectActions.fetchOne('1'))
         .run();
     });
   });

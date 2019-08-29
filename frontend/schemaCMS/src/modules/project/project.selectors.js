@@ -7,3 +7,8 @@ export const selectProjectsList = createSelector(
   selectProjectDomain,
   prop('projects')
 );
+
+export const selectProject = createSelector(
+  selectProjectDomain,
+  prop('project')
+);

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project: Component should render correctly 1`] = `
+<Switch>
+  <Redirect
+    exact={true}
+    path="/projects"
+    push={false}
+    to="/projects/list"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/projects/list"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/projects/:id"
+  />
+</Switch>
+`;

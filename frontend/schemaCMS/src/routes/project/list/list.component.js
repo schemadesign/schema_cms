@@ -1,10 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card, Header, Icons, Menu, Typography } from 'schemaUI';
 import { isEmpty } from 'ramda';
+import { Button, Card, Header, Icons, Menu, Typography } from 'schemaUI';
 
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import { PROJECTS_PATH } from '../../../shared/utils/api.constants';
+
 import {
   Action,
   ActionsList,
@@ -17,6 +19,7 @@ import {
   ProjectsList,
   headerStyles,
   urlStyles,
+  titleStyles,
   addProjectStyles,
 } from './list.styles';
 
@@ -26,6 +29,7 @@ export class List extends PureComponent {
   static propTypes = {
     list: PropTypes.array.isRequired,
     fetchProjectsList: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
   };
 
   constructor(props) {
@@ -48,6 +52,8 @@ export class List extends PureComponent {
     });
   };
 
+  handleShowProject = id => () => this.props.history.push(`${PROJECTS_PATH}/${id}`);
+
   handleNewProject = () => {};
 
   renderHeader = (list = []) => (
@@ -58,18 +64,21 @@ export class List extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner = {} }) {
+  renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner = {} }, index) {
     const { firstName = '', lastName = '' } = owner;
     const user = isEmpty(firstName) ? lastName : `${firstName} ${lastName}`;
     const whenCreated = extendedDayjs(created).fromNow();
 
     const header = this.renderHeader([whenCreated, status, user]);
+    const handleShowProject = this.handleShowProject(id);
 
     return (
-      <ProjectItem key={id}>
+      <ProjectItem key={index}>
         <Card headerComponent={header}>
-          <H1>{title}</H1>
-          <Description>
+          <H1 customStyles={titleStyles} onClick={handleShowProject}>
+            {title}
+          </H1>
+          <Description onClick={handleShowProject}>
             <P>{description}</P>
           </Description>
           <Span customStyles={urlStyles}>{slug}</Span>
@@ -78,7 +87,7 @@ export class List extends PureComponent {
     );
   }
 
-  renderList = (_, list) => <ProjectsList>{list.map(item => this.renderItem(item))}</ProjectsList>;
+  renderList = (_, list) => <ProjectsList>{list.map((item, index) => this.renderItem(item, index))}</ProjectsList>;
 
   renderNoData = () => (
     <Empty>
@@ -103,6 +112,7 @@ export class List extends PureComponent {
 
   render() {
     const { list = [] } = this.props;
+
     const content = renderWhenTrueOtherwise(this.renderList, this.renderNoData)(Boolean(list.length), list);
 
     return (
