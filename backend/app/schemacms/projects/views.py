@@ -11,9 +11,6 @@ from .permissions import IsAdminOrReadOnly
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
-    """
-    Creates new project
-    """
     serializer_class = ProjectSerializer
     permission_classes = (permissions.IsAuthenticated, IsAdminOrReadOnly, )
     queryset = Project.objects.none()
@@ -30,3 +27,4 @@ class ProjectViewSet(viewsets.ModelViewSet):
 class DataSourceViewSet(viewsets.ModelViewSet):
     serializer_class = DataSourceSerializer
     queryset = DataSource.objects.all()
+    permission_classes = (permissions.IsAuthenticated, IsAdminOrReadOnly,)

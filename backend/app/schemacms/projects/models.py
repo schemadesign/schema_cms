@@ -42,7 +42,6 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         validators=[
             FileExtensionValidator(
                 allowed_extensions=['csv'],
-                message='DataSource with given name already exists for this project.'
             )
         ]
     )
@@ -60,3 +59,12 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
             f"{os.getenv('STORAGE_DIR')}/projects",
             f"{self.project_id}/datasources/{self.name}/{filename}"
         )
+
+
+class DataSourceMeta(models.Model):
+    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='meta_data')
+    items = models.PositiveIntegerField()
+    fileds = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return f"DataSource {self.datasource} meta"
