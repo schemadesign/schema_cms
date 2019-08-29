@@ -21,7 +21,7 @@ exports[`Home: Component should render correctly 1`] = `
   </styled.h1>
   <Link
     replace={false}
-    to="/projects/list"
+    to="/projects"
   >
     Projects List
   </Link>

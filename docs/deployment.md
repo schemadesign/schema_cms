@@ -115,6 +115,11 @@ deployment. Save ARN of the secret and pass it to CDK using `-c github_token_arn
     ```bash
    $ aws secretsmanager create-secret --name github-token --secret-string {TOKEN}
     ```
+   Also run
+   ```bash
+   $ aws codebuild import-source-credentials --server-type GITHUB --auth-type PERSONAL_ACCESS_TOKEN --token {TOKEN}
+   ```
+   For AWS CodeBuild used for building and testing pull requests
 5. Deploy `base` and `ci-pipeline` stacks using commands:
     ```bash
     $ cdk deploy base ci-pipeline

@@ -2,7 +2,7 @@
 
 exports[`Storyshots List empty 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-htpNat KtFsv"
 >
   <div
     style={
@@ -80,7 +80,7 @@ exports[`Storyshots List empty 1`] = `
     </button>
   </div>
   <div
-    className="sc-bZQynM eaXBuK"
+    className="sc-htoDjs cNnnvC"
   >
     <p
       style={
@@ -152,25 +152,25 @@ exports[`Storyshots List empty 1`] = `
     }
   >
     <ul
-      className="sc-gzVnrw dqWmrL"
+      className="sc-dnqmqq wifqT"
     >
       <li
-        className="sc-htoDjs ctmAPd"
+        className="sc-iwsKbI kScFHn"
       >
         Edit Project settings
       </li>
       <li
-        className="sc-htoDjs ctmAPd"
+        className="sc-iwsKbI kScFHn"
       >
         Delete project
       </li>
       <li
-        className="sc-htoDjs ctmAPd"
+        className="sc-iwsKbI kScFHn"
       >
         User settings
       </li>
       <li
-        className="sc-htoDjs ctmAPd"
+        className="sc-iwsKbI kScFHn"
       >
         Log Out
       </li>
@@ -216,7 +216,7 @@ exports[`Storyshots List empty 1`] = `
 
 exports[`Storyshots List list 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-htpNat KtFsv"
 >
   <div
     style={
@@ -294,10 +294,10 @@ exports[`Storyshots List list 1`] = `
     </button>
   </div>
   <ul
-    className="sc-bwzfXH idftJs"
+    className="sc-bxivhb bWFDeF"
   >
     <li
-      className="sc-htpNat blaEwE"
+      className="sc-ifAKCX hvVIC"
     >
       <div
         style={
@@ -322,28 +322,30 @@ exports[`Storyshots List list 1`] = `
           }
         >
           <ul
-            className="sc-bxivhb ktajjB"
+            className="sc-EHOje jkqiYl"
           >
             <li
-              className="sc-ifAKCX fAJmdV"
+              className="sc-bZQynM iHBgnN"
             >
               3 months ago
             </li>
             <li
-              className="sc-ifAKCX fAJmdV"
+              className="sc-bZQynM iHBgnN"
             >
               Status
             </li>
             <li
-              className="sc-ifAKCX fAJmdV"
+              className="sc-bZQynM iHBgnN"
             >
               Firstname Lastname
             </li>
           </ul>
         </div>
         <h1
+          onClick={[Function]}
           style={
             Object {
+              "cursor": "pointer",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "24px",
               "fontWeight": 600,
@@ -356,7 +358,8 @@ exports[`Storyshots List list 1`] = `
           Project Name
         </h1>
         <div
-          className="sc-EHOje iykvgP"
+          className="sc-gzVnrw fagCOI"
+          onClick={[Function]}
         >
           <p
             style={
@@ -391,7 +394,7 @@ exports[`Storyshots List list 1`] = `
       </div>
     </li>
     <li
-      className="sc-htpNat blaEwE"
+      className="sc-ifAKCX hvVIC"
     >
       <div
         style={
@@ -416,28 +419,30 @@ exports[`Storyshots List list 1`] = `
           }
         >
           <ul
-            className="sc-bxivhb ktajjB"
+            className="sc-EHOje jkqiYl"
           >
             <li
-              className="sc-ifAKCX fAJmdV"
+              className="sc-bZQynM iHBgnN"
             >
               3 months ago
             </li>
             <li
-              className="sc-ifAKCX fAJmdV"
+              className="sc-bZQynM iHBgnN"
             >
               Published
             </li>
             <li
-              className="sc-ifAKCX fAJmdV"
+              className="sc-bZQynM iHBgnN"
             >
               Tadeusz Kosciuszko
             </li>
           </ul>
         </div>
         <h1
+          onClick={[Function]}
           style={
             Object {
+              "cursor": "pointer",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "24px",
               "fontWeight": 600,
@@ -450,7 +455,8 @@ exports[`Storyshots List list 1`] = `
           Honec sodales libero non fermentum aliquam
         </h1>
         <div
-          className="sc-EHOje iykvgP"
+          className="sc-gzVnrw fagCOI"
+          onClick={[Function]}
         >
           <p
             style={
@@ -541,25 +547,25 @@ exports[`Storyshots List list 1`] = `
     }
   >
     <ul
-      className="sc-gzVnrw dqWmrL"
+      className="sc-dnqmqq wifqT"
     >
       <li
-        className="sc-htoDjs ctmAPd"
+        className="sc-iwsKbI kScFHn"
       >
         Edit Project settings
       </li>
       <li
-        className="sc-htoDjs ctmAPd"
+        className="sc-iwsKbI kScFHn"
       >
         Delete project
       </li>
       <li
-        className="sc-htoDjs ctmAPd"
+        className="sc-iwsKbI kScFHn"
       >
         User settings
       </li>
       <li
-        className="sc-htoDjs ctmAPd"
+        className="sc-iwsKbI kScFHn"
       >
         Log Out
       </li>

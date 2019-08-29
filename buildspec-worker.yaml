@@ -13,16 +13,17 @@ phases:
       - aws --version
       - $(aws ecr get-login --no-include-email)
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - VERSION=${COMMIT_HASH:=latest}
+      - echo "Build version:$VERSION"
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest ./backend/worker
-      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$VERSION
   post_build:
     commands:
     - echo Build completed on `date`
     - echo Pushing the Docker images...
     - docker push $REPOSITORY_URI:latest
-    - docker push $REPOSITORY_URI:$IMAGE_TAG
+    - docker push $REPOSITORY_URI:$VERSION

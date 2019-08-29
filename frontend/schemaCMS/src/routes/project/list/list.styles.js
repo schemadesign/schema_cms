@@ -40,6 +40,7 @@ export const HeaderItem = styled.li`
 
 export const Description = styled.div`
   margin: 7px 0 14px;
+  cursor: pointer;
 `;
 
 export const Empty = styled.div`
@@ -73,6 +74,10 @@ export const urlStyles = {
   width: '100%',
   textOverflow: 'ellipsis',
   overflow: 'hidden',
+};
+
+export const titleStyles = {
+  cursor: 'pointer',
 };
 
 export const addProjectStyles = {

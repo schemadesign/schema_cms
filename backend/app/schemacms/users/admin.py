@@ -61,7 +61,11 @@ class UserAdmin(UserAdmin):
                         django.contrib.messages.ERROR
                     )
 
-                self.message_user(request, "Error from auth0: \"{}\"".format(e.message), django.contrib.messages.ERROR)
+                self.message_user(
+                    request,
+                    "Error from auth0: \"{}\"".format(e.message),
+                    django.contrib.messages.ERROR
+                )
                 raise
 
         return obj

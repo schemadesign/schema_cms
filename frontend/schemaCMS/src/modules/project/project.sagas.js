@@ -19,6 +19,16 @@ function* createProject({ payload }) {
   console.log(payload);
 }
 
+function* fetchOne({ id }) {
+  try {
+    const { data } = yield api.get(`${PROJECTS_PATH}/${id}`);
+
+    yield put(ProjectActions.fetchOneSuccess(data));
+  } catch (error) {
+    yield put(ProjectActions.fetchOneError(error));
+  }
+}
+
 export function* watchProject() {
-  yield all([takeLatest(ProjectTypes.FETCH_LIST, fetchProjectsList)]);
+  yield all([takeLatest(ProjectTypes.FETCH_LIST, fetchProjectsList), takeLatest(ProjectTypes.FETCH_ONE, fetchOne)]);
 }

@@ -12,12 +12,13 @@ phases:
       - cdk --version
       - pip install -r requirements.txt
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - VERSION=${COMMIT_HASH:=latest}
+      - echo "Build version:$VERSION"
   build:
     commands:
       - echo Build started on `date`
       - echo Synchesize CDK stack...
-      - cdk synth -c app_image_tag=$IMAGE_TAG
+      - cdk synth -c app_image_tag=$VERSION
 artifacts:
   files:
     - 'cdk.out/**/*'
