@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataSource: Component should render correctly 1`] = `
+<Switch>
+  <Redirect
+    exact={true}
+    path="path"
+    push={false}
+    to="path/list"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="path/list"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="path/create"
+  />
+</Switch>
+`;
