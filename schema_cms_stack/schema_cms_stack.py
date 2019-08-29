@@ -272,11 +272,32 @@ class CIPipeline(core.Stack):
             actions=[pipeline_source_action],
         )
 
+        fe_build_spec = aws_codebuild.BuildSpec.from_source_filename('buildspec-frontend.yaml')
+        build_fe_project = aws_codebuild.PipelineProject(
+            self,
+            'build_fe_project',
+            project_name='schema_cms_fe_build',
+            environment=aws_codebuild.BuildEnvironment(
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+            ),
+            build_spec=fe_build_spec,
+            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.CUSTOM)
+        )
+
+        fe_artifact = aws_codepipeline.Artifact()
+        build_fe_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name='build_fe',
+            input=source_output,
+            project=build_fe_project,
+            outputs=[fe_artifact],
+            run_order=1,
+        )
+
         app_build_spec = aws_codebuild.BuildSpec.from_source_filename('buildspec-app.yaml')
         build_app_project = aws_codebuild.PipelineProject(
             self,
             'build_app_project',
-            project_name='schema_cms_app_ci',
+            project_name='schema_cms_app_build',
             environment=aws_codebuild.BuildEnvironment(
                 environment_variables={
                     'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
@@ -298,6 +319,8 @@ class CIPipeline(core.Stack):
             action_name='build_app',
             input=source_output,
             project=build_app_project,
+            run_order=2,
+            extra_inputs=[fe_artifact]
         )
 
         build_workers_project = aws_codebuild.PipelineProject(
@@ -382,6 +405,7 @@ class CIPipeline(core.Stack):
         self.pipeline.add_stage(
             stage_name='build_app',
             actions=[
+                build_fe_action,
                 build_app_action,
                 build_workers_action,
                 build_public_api_lambda_action,
@@ -500,3 +524,16 @@ class CIPipeline(core.Stack):
             build_spec=app_build_spec,
         )
         scope.base.app_registry.grant_pull_push(self.app_ci_project.role)
+
+        self.fe_ci_project = aws_codebuild.Project(
+            self,
+            'schema_cms_fe_pr_build',
+            project_name='schema_cms_fe_ci',
+            source=gh_source,
+            environment=aws_codebuild.BuildEnvironment(
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+                privileged=True,
+            ),
+            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.CUSTOM),
+            build_spec=fe_build_spec,
+        )
