@@ -130,8 +130,8 @@ class Common(Configuration):
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     # Media files
-    MEDIA_ROOT = join(os.path.dirname(BASE_DIR), 'media')
-    MEDIA_URL = '/media/'
+    MEDIA_ROOT = join(os.path.dirname(BASE_DIR), '/')
+    MEDIA_URL = '/'
 
     TEMPLATES = [
         {
