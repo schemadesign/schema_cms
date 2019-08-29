@@ -1,6 +1,8 @@
 import os
 
-from django.db import models
+import pandas
+
+from django.db import models, transaction
 from django.conf import settings
 from django.core.validators import FileExtensionValidator
 from django.utils.translation import ugettext as _
@@ -51,6 +53,17 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        with transaction.atomic():
+            super().save(*args, **kwargs)
+            self.update_meta()
+
+    def update_meta(self):
+        items, fields = pandas.read_csv(self.file).shape
+        meta, _ = DataSourceMeta.objects.update_or_create(
+            datasource=self, defaults={"fields": fields, "items": items}
+        )
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
