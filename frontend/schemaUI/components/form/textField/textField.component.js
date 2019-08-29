@@ -27,7 +27,6 @@ export class TextField extends PureComponent {
     fullWidth: false,
     customInputStyles: {},
     customLabelStyles: {},
-    iconComponent: <EditIcon />,
   };
 
   renderLabel = ({ label, ...props }) => (label ? <Label label={label} {...props} /> : null);

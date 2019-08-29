@@ -15,6 +15,10 @@ function* fetchProjectsList() {
   }
 }
 
+function* createProject({ payload }) {
+  console.log(payload);
+}
+
 export function* watchProject() {
   yield all([takeLatest(ProjectTypes.FETCH_LIST, fetchProjectsList)]);
 }
