@@ -18,5 +18,9 @@ exports[`Project: Component should render correctly 1`] = `
     exact={true}
     path="/projects/:id"
   />
+  <Route
+    component={[Function]}
+    path="/projects/:id/datasource"
+  />
 </Switch>
 `;

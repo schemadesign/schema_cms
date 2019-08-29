@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { List } from './list';
 import { View } from './view';
+import { DataSource } from './dataSource';
 
 export class Project extends PureComponent {
   static propTypes = {
@@ -17,6 +18,7 @@ export class Project extends PureComponent {
 
     const listPath = `${match.path}/list`;
     const viewPath = `${match.path}/:id`;
+    const dataSourcePath = `${viewPath}/datasource`;
 
     return (
       <Switch>
@@ -24,6 +26,7 @@ export class Project extends PureComponent {
 
         <Route exact path={listPath} component={List} />
         <Route exact path={viewPath} component={View} />
+        <Route path={dataSourcePath} component={DataSource} />
       </Switch>
     );
   }

@@ -2,7 +2,7 @@
 
 exports[`Storyshots View default 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-htpNat KtFsv"
 >
   <div
     style={
@@ -97,7 +97,7 @@ exports[`Storyshots View default 1`] = `
 
 exports[`Storyshots View empty 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-htpNat KtFsv"
 >
   <div
     style={
@@ -173,7 +173,7 @@ exports[`Storyshots View empty 1`] = `
     </button>
   </div>
   <div
-    className="sc-bZQynM eaXBuK"
+    className="sc-htoDjs cNnnvC"
   >
     <p
       style={
