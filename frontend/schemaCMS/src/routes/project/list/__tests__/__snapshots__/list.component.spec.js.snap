@@ -19,7 +19,9 @@ exports[`List: Component should render correctly 1`] = `
     </H1>
   </Header>
   <styled.ul>
-    <styled.li>
+    <styled.li
+      key="0"
+    >
       <Card
         headerComponent={
           <ForwardRef(styled.ul)>
@@ -69,7 +71,9 @@ exports[`List: Component should render correctly 1`] = `
         </Span>
       </Card>
     </styled.li>
-    <styled.li>
+    <styled.li
+      key="1"
+    >
       <Card
         headerComponent={
           <ForwardRef(styled.ul)>

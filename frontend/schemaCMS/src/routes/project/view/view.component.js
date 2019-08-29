@@ -10,7 +10,7 @@ const { H1, H2, P } = Typography;
 
 export class View extends PureComponent {
   static propTypes = {
-    project: PropTypes.array.isRequired,
+    project: PropTypes.object.isRequired,
     fetchProject: PropTypes.func.isRequired,
   };
 

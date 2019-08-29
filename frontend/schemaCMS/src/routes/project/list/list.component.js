@@ -63,7 +63,7 @@ export class List extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner = {} }) {
+  renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner = {} }, index) {
     const { firstName = '', lastName = '' } = owner;
     const user = isEmpty(firstName) ? lastName : `${firstName} ${lastName}`;
     const whenCreated = extendedDayjs(created).fromNow();
@@ -72,7 +72,7 @@ export class List extends PureComponent {
     const handleShowProject = this.handleShowProject(id);
 
     return (
-      <ProjectItem key={id}>
+      <ProjectItem key={index}>
         <Card headerComponent={header}>
           <H1 customStyles={titleStyles} onClick={handleShowProject}>
             {title}
@@ -86,7 +86,7 @@ export class List extends PureComponent {
     );
   }
 
-  renderList = (_, list) => <ProjectsList>{list.map(item => this.renderItem(item))}</ProjectsList>;
+  renderList = (_, list) => <ProjectsList>{list.map((item, index) => this.renderItem(item, index))}</ProjectsList>;
 
   renderNoData = () => (
     <Empty>
