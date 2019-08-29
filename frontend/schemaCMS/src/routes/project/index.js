@@ -1,1 +1,1 @@
-export { Project } from './project.component';
+export { default as Project } from './project.container';
