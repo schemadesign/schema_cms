@@ -4,7 +4,11 @@ import { shallow } from 'enzyme';
 import { Project } from '../project.component';
 
 describe('Project: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    match: {
+      path: '/projects',
+    },
+  };
 
   const component = props => <Project {...defaultProps} {...props} />;
 
