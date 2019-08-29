@@ -8,7 +8,7 @@ from .models import DataSource, DataSourceMeta, Project
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
     class Meta:
-        models = DataSourceMeta
+        model = DataSourceMeta
         fields = (
             'items',
             'fields',
@@ -16,7 +16,7 @@ class DataSourceMetaSerializer(serializers.ModelSerializer):
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
-    meta = DataSourceMetaSerializer(read_only=True)
+    meta_data = DataSourceMetaSerializer(read_only=True)
 
     class Meta:
         model = DataSource
@@ -26,7 +26,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             'project',
             'type',
             'file',
-            'meta',
+            'meta_data',
         )
 
 

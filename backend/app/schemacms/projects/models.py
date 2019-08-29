@@ -57,14 +57,14 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         return os.path.join(
             base_path,
             f"{os.getenv('STORAGE_DIR')}/projects",
-            f"{self.project_id}/datasources/{self.name}/{filename}"
+            f"{self.project_id}/datasources/{self.name.replace(' ','_')}/{filename}"
         )
 
 
 class DataSourceMeta(models.Model):
-    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='meta_data')
+    datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name='meta_data')
     items = models.PositiveIntegerField()
-    fileds = models.PositiveSmallIntegerField()
+    fields = models.PositiveSmallIntegerField()
 
     def __str__(self):
         return f"DataSource {self.datasource} meta"
