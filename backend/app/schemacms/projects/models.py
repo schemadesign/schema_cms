@@ -57,6 +57,6 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         base_path = self.file.storage.location
         return os.path.join(
             base_path,
-            "projects",
+            f"{os.getenv(STORAGE_DIR)}/projects",
             f"{self.project_id}/datasources/{self.name}/{filename}"
         )
