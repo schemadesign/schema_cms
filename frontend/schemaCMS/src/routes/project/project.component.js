@@ -15,7 +15,7 @@ export class Project extends PureComponent {
   render() {
     const { match } = this.props;
 
-    const listPath = match.path;
+    const listPath = `${match.path}/list`;
     const viewPath = `${match.path}/:id`;
 
     return (

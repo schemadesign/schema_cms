@@ -27,7 +27,7 @@ export default class RootContainer extends Component {
           <Switch>
             <AuthRoute exact path={ROUTES.HOME} component={Home} />
 
-            <AuthRoute exact path={ROUTES.PROJECTS} component={Project} />
+            <AuthRoute path={ROUTES.PROJECTS} component={Project} />
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
