@@ -12,11 +12,16 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --no-include-email)
-      - VERSION=$(git describe --tags)
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"
   build:
     commands:
       - echo Build started on `date`
+      - echo Copy static files
+      - mkdir -p ./frontend/schemaCMS/public
+      - mkdir -p ./backend/app/static
+      - cp -R ./frontend/schemaCMS/public/* ./backend/app/static
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest ./backend/app
       - BACKEND_IMAGE=$REPOSITORY_URI:latest docker-compose -f ./backend/app/docker-compose-ci.yml run backend /app/scripts/run_tests.sh

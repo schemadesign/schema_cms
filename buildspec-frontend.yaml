@@ -1,0 +1,42 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+  pre_build:
+    commands:
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - VERSION=${COMMIT_HASH:=latest}
+      - echo "Build version:$VERSION"
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Install Schema UI dependencies
+      - cd $CODEBUILD_SRC_DIR/frontend/schemaUI
+      - yarn
+      - echo Run Schema UI tests
+      - CI=true yarn test
+      - echo Build Schema UI
+      - yarn build
+      - yarn link
+      - cd $CODEBUILD_SRC_DIR/frontend/schemaCMS
+      - echo Link Schema UI
+      - yarn link schemaUI
+      - cd $CODEBUILD_SRC_DIR/frontend/schemaCMS
+      - echo Install App dependencies
+      - yarn
+      - echo Run App tests
+      - CI=true yarn test
+      - echo Building dist...
+      - yarn build
+  post_build:
+    commands:
+    - echo Build completed on `date`
+artifacts:
+  files:
+    - 'frontend/schemaCMS/public/**/*'
+cache:
+  paths:
+    - 'frontend/schemaCMS/node-modules/**/*'
+    - 'frontend/schemaUI/node-modules/**/*'
