@@ -22,6 +22,9 @@ describe('List: Component', () => {
       fetchProjectsList,
       list: [],
       history: {},
+      match: {
+        path: '/projects',
+      },
     };
 
     await render(props);

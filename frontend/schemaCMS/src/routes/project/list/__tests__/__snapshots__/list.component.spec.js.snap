@@ -2,6 +2,13 @@
 
 exports[`List: Component should render correctly 1`] = `
 <styled.div>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/projects/:id"
+    />
+  </Switch>
   <Header
     customStyles={
       Object {
