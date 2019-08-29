@@ -58,7 +58,7 @@ describe('Project: redux', () => {
         modified: '2019-08-21T10:12:52.030069Z',
       };
 
-      const resultState = projectReducer(defaultState, ProjectActions.fetchProjectSuccess(project));
+      const resultState = projectReducer(defaultState, ProjectActions.fetchOneSuccess(project));
       expect(resultState.project).to.deep.equal(project);
     });
   });

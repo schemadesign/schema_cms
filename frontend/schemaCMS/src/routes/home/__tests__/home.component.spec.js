@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Immutable from 'seamless-immutable';
-import { expect } from 'chai';
 
 import { Home } from '../home.component';
 import { DEFAULT_LOCALE } from '../../../i18n';
@@ -16,6 +15,7 @@ describe('Home: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = shallow(component());
-    expect(wrapper).toMatchSnapshot();
+
+    global.expect(wrapper).toMatchSnapshot();
   });
 });

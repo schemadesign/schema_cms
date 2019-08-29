@@ -5,7 +5,7 @@ import { identity } from 'ramda';
 import { View } from './view.component';
 
 const defaultProps = {
-  fetchProject: identity,
+  fetchOne: identity,
   project: {
     title: 'Project Name',
     description: 'Description',
@@ -24,7 +24,7 @@ const defaultProps = {
 };
 
 const emptyProps = {
-  fetchProject: identity,
+  fetchOne: identity,
   project: {},
   history: {},
 };

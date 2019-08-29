@@ -16,7 +16,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      fetchProject: ProjectActions.fetchProject,
+      fetchOne: ProjectActions.fetchOne,
     },
     dispatch
   );

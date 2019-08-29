@@ -9,7 +9,6 @@ import { FormattedMessage } from 'react-intl';
 import messages from './home.messages';
 import { Container } from './home.styles';
 import { H1 } from '../../theme/typography';
-import { ROUTES } from '../index';
 
 export class Home extends PureComponent {
   static propTypes = {
@@ -24,7 +23,7 @@ export class Home extends PureComponent {
         <H1>
           <FormattedMessage {...messages.welcome} />
         </H1>
-        <Link to={ROUTES.PROJECTS}>Projects List</Link>
+        <Link to="/projects">Projects List</Link>
       </Container>
     );
   }

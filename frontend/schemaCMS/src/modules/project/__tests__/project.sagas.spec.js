@@ -55,17 +55,17 @@ describe('Project: sagas', () => {
     });
   });
 
-  describe('when /PROJECTS/1 action is fired', () => {
-    it('should put fetchProjectSuccess action', async () => {
+  describe('when /PROJECTS/:id action is fired', () => {
+    it('should put fetchOneSuccess action', async () => {
       await expectSaga(watchProject)
         .withState(defaultState)
         .put(
-          ProjectActions.fetchProjectSuccess({
+          ProjectActions.fetchOneSuccess({
             ...item,
             ...extenedProjectData,
           })
         )
-        .dispatch(ProjectActions.fetchProject('1'))
+        .dispatch(ProjectActions.fetchOne('1'))
         .run();
     });
   });
