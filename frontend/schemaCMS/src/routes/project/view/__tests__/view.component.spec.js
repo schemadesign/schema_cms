@@ -8,9 +8,14 @@ import { View } from '../view.component';
 
 describe('View: Component', () => {
   const defaultProps = {
-    fetchOne: identity,
+    fetchProject: identity,
     project: {},
     history: {},
+    match: {
+      params: {
+        id: '100',
+      },
+    },
   };
 
   const component = props => <View {...defaultProps} {...props} />;
@@ -22,12 +27,11 @@ describe('View: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call fetchOne prop on componentDidMount', async () => {
+  it('should call fetchProject prop on componentDidMount', async () => {
     const id = '1';
-    const fetchOne = spy();
+    const fetchProject = spy();
     const props = {
-      ...defaultProps,
-      fetchOne,
+      fetchProject,
       match: {
         params: {
           id,
@@ -37,6 +41,6 @@ describe('View: Component', () => {
 
     await render(props);
 
-    expect(fetchOne).to.have.been.calledWith(id);
+    expect(fetchProject).to.have.been.calledWith(id);
   });
 });

@@ -11,13 +11,16 @@ const { H1, H2, P } = Typography;
 export class View extends PureComponent {
   static propTypes = {
     project: PropTypes.object.isRequired,
-    fetchOne: PropTypes.func.isRequired,
+    fetchProject: PropTypes.func.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
   };
 
   componentDidMount() {
-    const id = path(['props', 'match', 'params', 'id'], this);
-
-    this.props.fetchOne(id);
+    this.props.fetchProject(this.props.match.params.id);
   }
 
   renderProject = (_, project = {}) => <P>{project.description}</P>;

@@ -5,7 +5,7 @@ import { identity } from 'ramda';
 import { View } from './view.component';
 
 const defaultProps = {
-  fetchOne: identity,
+  fetchProject: identity,
   project: {
     title: 'Project Name',
     description: 'Description',
@@ -21,12 +21,22 @@ const defaultProps = {
     modified: '2019-08-21T10:12:52.030069Z',
   },
   history: {},
+  match: {
+    params: {
+      id: '1',
+    },
+  },
 };
 
 const emptyProps = {
-  fetchOne: identity,
+  fetchProject: identity,
   project: {},
   history: {},
+  match: {
+    params: {
+      id: '1',
+    },
+  },
 };
 
 storiesOf('View', module)
