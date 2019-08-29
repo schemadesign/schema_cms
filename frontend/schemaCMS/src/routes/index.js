@@ -9,8 +9,7 @@ import JWT from './jwt/jwt.container';
 import { Home } from './home';
 import { NotFound } from './notFound';
 import { AUTH_PATH } from '../shared/utils/api.constants';
-import { List as ProjectsList } from './project/list';
-import { View as ProjectView } from './project/view';
+import { Project } from './project';
 
 export const ROUTES = {
   HOME: '/',
@@ -28,7 +27,7 @@ export default class RootContainer extends Component {
           <Switch>
             <AuthRoute exact path={ROUTES.HOME} component={Home} />
 
-            <AuthRoute exact path={ROUTES.PROJECTS} component={ProjectsList} />
+            <AuthRoute exact path={ROUTES.PROJECTS} component={Project} />
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 

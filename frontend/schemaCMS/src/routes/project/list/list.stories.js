@@ -34,18 +34,12 @@ export const defaultProps = {
   ],
   fetchProjectsList: identity,
   history: {},
-  match: {
-    path: '/projects',
-  },
 };
 
 export const emptyListProps = {
   list: [],
   fetchProjectsList: identity,
   history: {},
-  match: {
-    path: '/projects',
-  },
 };
 
 storiesOf('List', module)

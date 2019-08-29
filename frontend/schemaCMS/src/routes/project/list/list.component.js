@@ -1,14 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'ramda';
-import { Redirect, Route, Switch } from 'react-router-dom';
 import { Button, Card, Header, Icons, Menu, Typography } from 'schemaUI';
 
-import AuthRoute from '../../authRoute/authRoute.container';
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { PROJECTS_PATH } from '../../../shared/utils/api.constants';
-import { View } from '../view';
 
 import {
   Action,
@@ -33,9 +30,6 @@ export class List extends PureComponent {
     list: PropTypes.array.isRequired,
     fetchProjectsList: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
-    match: PropTypes.shape({
-      path: PropTypes.string.isRequired,
-    }).isRequired,
   };
 
   constructor(props) {
@@ -117,18 +111,12 @@ export class List extends PureComponent {
   };
 
   render() {
-    const { list = [], match } = this.props;
-
-    const viewPath = `${match.path}/:id`;
+    const { list = [] } = this.props;
 
     const content = renderWhenTrueOtherwise(this.renderList, this.renderNoData)(Boolean(list.length), list);
 
     return (
       <Container>
-        <Switch>
-          <Route exact path={viewPath} component={View} />
-        </Switch>
-
         <Header customStyles={headerStyles} onButtonClick={this.handleToggleMenu}>
           <H2>Projects</H2>
           <H1>Overview</H1>
