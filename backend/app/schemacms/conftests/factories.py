@@ -5,3 +5,4 @@ from schemacms.projects.tests import factories as project_factories
 
 pytest_factoryboy.register(users_factories.UserFactory)
 pytest_factoryboy.register(project_factories.ProjectFactory, 'project')
+pytest_factoryboy.register(project_factories.DataSourceFactory, 'datasource')

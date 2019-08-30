@@ -1,5 +1,11 @@
+import json
+
+import pandas
+
 from rest_framework import (
+    decorators,
     permissions,
+    response,
     viewsets,
 )
 
@@ -28,3 +34,14 @@ class DataSourceViewSet(viewsets.ModelViewSet):
     serializer_class = DataSourceSerializer
     queryset = DataSource.objects.all()
     permission_classes = (permissions.IsAuthenticated, IsAdminOrReadOnly,)
+
+    @decorators.action(detail=True, methods=['get'])
+    def preview(self, request, pk=None, **kwargs):
+        table_preview, fields_info = self.get_object().get_preview_data()
+
+        return response.Response(
+            {
+                "data": table_preview,
+                "fileds": fields_info
+            }
+        )

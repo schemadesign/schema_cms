@@ -1,6 +1,7 @@
+import json
 import os
 
-import pandas
+from pandas import read_csv
 
 from django.db import models, transaction
 from django.conf import settings
@@ -48,11 +49,11 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         ]
     )
 
-    class Meta:
-        unique_together = ('name', 'project', )
-
     def __str__(self):
         return self.name
+
+    class Meta:
+        unique_together = ('name', 'project', )
 
     def save(self, *args, **kwargs):
         with transaction.atomic():
@@ -60,7 +61,7 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
             self.update_meta()
 
     def update_meta(self):
-        items, fields = pandas.read_csv(self.file).shape
+        items, fields = read_csv(self.file).shape
         meta, _ = DataSourceMeta.objects.update_or_create(
             datasource=self, defaults={"fields": fields, "items": items}
         )
@@ -72,6 +73,20 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
             f"{os.getenv('STORAGE_DIR')}/projects",
             f"{self.project_id}/datasources/{self.name.replace(' ','_')}/{filename}"
         )
+
+    def get_preview_data(self):
+        data = read_csv(self.file.path, sep=None)
+
+        table_preview = json.loads(data.head(5).to_json(orient='records'))
+        fields_info = json.loads(data.describe(
+            include='all',
+            percentiles=[]
+        ).to_json(orient='columns'))
+
+        for key, value in dict(data.dtypes).items():
+            fields_info[key]["dtype"] = value.name
+
+        return table_preview, fields_info
 
 
 class DataSourceMeta(models.Model):
