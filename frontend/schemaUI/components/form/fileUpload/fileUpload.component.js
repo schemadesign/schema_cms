@@ -18,34 +18,10 @@ export class FileUpload extends PureComponent {
     customStyles: PropTypes.object,
     customInputStyles: PropTypes.object,
     customLabelStyles: PropTypes.object,
-    iconComponent: PropTypes.element,
   };
-
-  static defaultProps = {
-    iconComponent: (
-      <div style={{ ...defaultButtonStyles, ...buttonStyles }}>
-        <UploadIcon />
-      </div>
-    ),
-  };
-
-  iconComponent = id => (
-    <label style={labelStyles} htmlFor={id}>
-      {this.props.iconComponent}
-    </label>
-  );
 
   render() {
-    const {
-      name,
-      label,
-      id,
-      customInputStyles,
-      customLabelStyles,
-      customStyles,
-      iconComponent,
-      ...restProps
-    } = this.props;
+    const { name, label, onChange, accept, id } = this.props;
 
     return (
       <div style={containerStyles}>
@@ -58,9 +34,15 @@ export class FileUpload extends PureComponent {
           customStyles={customStyles}
           customLabelStyles={customLabelStyles}
           customInputStyles={customInputStyles}
-          iconComponent={this.iconComponent(id)}
+          iconComponent={
+            <label style={labelStyles} htmlFor={id}>
+              <div style={{ ...defaultButtonStyles, ...buttonStyles }}>
+                <UploadIcon />
+              </div>
+            </label>
+          }
         />
-        <input style={inputStyles} aria-hidden id={id} type="file" {...restProps} />
+        <input style={inputStyles} aria-hidden id={id} type="file" onChange={onChange} accept={accept} />
       </div>
     );
   }
