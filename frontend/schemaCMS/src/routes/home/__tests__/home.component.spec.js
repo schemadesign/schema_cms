@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Immutable from 'seamless-immutable';
 
 import { Home } from '../home.component';
 import { DEFAULT_LOCALE } from '../../../i18n';

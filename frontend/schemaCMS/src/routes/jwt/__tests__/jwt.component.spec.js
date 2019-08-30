@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, render as componentRender } from 'enzyme';
+import { shallow } from 'enzyme';
 import { spy } from 'sinon';
 import { expect } from 'chai';
 
