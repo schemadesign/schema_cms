@@ -1,25 +1,67 @@
 import styled from 'styled-components';
+import { Theme } from 'schemaUI';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  font-family: ${Theme.primary.typography.p.fontFamily};
+  font-weight: 600;
+`;
 
-export const Empty = styled.div``;
+export const ProjectView = styled.div`
+  margin: 7px 20px 0 20px;
+`;
 
-export const Card = styled.div``;
+export const Details = styled.ul`
+  list-style: none;
+  font-size: 14px;
+  padding: 0;
+`;
 
-export const CardValue = styled.div``;
+export const DetailItem = styled.li`
+  color: ${Theme.primary.text};
+  margin-bottom: 4px;
+  padding: 12px 0 8px 0;
+  border-top: 2px solid ${Theme.primary.background};
+  display: flex;
+  flex-direction: row;
+`;
 
-export const ProjectView = styled.div``;
+export const DetailLabel = styled.span`
+  color: ${Theme.primary.label};
+  margin-right: 5px;
+`;
 
-export const Details = styled.div``;
+export const DetailValue = styled.span`
+  display: inline-block;
+`;
 
-export const DetailItem = styled.div``;
+export const Statistics = styled.ul`
+  margin-bottom: 15px;
+  padding: 0;
+`;
 
-export const DetailLabel = styled.div``;
+export const CardWrapper = styled.li`
+  display: inline-block;
+  width: calc(50% - 14px);
+  margin-bottom: 14px;
 
-export const DetailValue = styled.div``;
+  &:nth-child(2n + 1) {
+    margin-right: 7px;
+  }
 
-export const Statistics = styled.div``;
+  &:nth-child(2n) {
+    margin-left: 7px;
+  }
+`;
 
-export const headerStyles = {};
+export const CardValue = styled.span`
+  display: block;
+  font-size: 66px;
+  line-height: 1.09;
+  letter-spacing: -3px;
+`;
 
-export const statisticCardStyles = {};
+export const buttonStyles = {
+  margin: '50px 0 20px',
+  backgroundColor: Theme.primary.background,
+  height: '60px',
+};

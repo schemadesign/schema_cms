@@ -1,15 +1,15 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Header, Typography, Card } from 'schemaUI';
-import { isEmpty, path } from 'ramda';
-import { Link } from 'react-router-dom';
+import { Button, Card, Header, Icons, Typography } from 'schemaUI';
+import { isEmpty, isNil, path } from 'ramda';
 
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
+import { Empty, headerStyles } from '../project.styles';
 import {
   Container,
-  Empty,
+  CardWrapper,
   CardValue,
   ProjectView,
   Details,
@@ -17,8 +17,7 @@ import {
   DetailLabel,
   DetailValue,
   Statistics,
-  statisticCardStyles,
-  headerStyles,
+  buttonStyles,
 } from './view.styles';
 
 const { H1, H2, P } = Typography;
@@ -27,6 +26,9 @@ export class View extends PureComponent {
   static propTypes = {
     project: PropTypes.object.isRequired,
     fetchProject: PropTypes.func.isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }),
     match: PropTypes.shape({
       params: PropTypes.shape({
         id: PropTypes.string.isRequired,
@@ -43,13 +45,10 @@ export class View extends PureComponent {
   }
 
   componentDidMount() {
-    const a = this.props.fetchProject(this.props.match.params.id);
-
-    console.log('> fetch', a);
+    this.props.fetchProject(this.props.match.params.id);
   }
 
   componentDidUpdate() {
-    console.log('> update');
     if (this.state.isLoading) {
       this.setState({
         isLoading: false,
@@ -57,10 +56,16 @@ export class View extends PureComponent {
     }
   }
 
+  countItems = (value = []) => (isNil(value) ? null : value.length);
+
+  handleGoToProjectsList = () => this.props.history.push('/projects');
+
   renderStatistic = ({ header, value }, index) => (
-    <Card header={header} customStyles={statisticCardStyles} key={index}>
-      <CardValue>{value}</CardValue>
-    </Card>
+    <CardWrapper>
+      <Card headerComponent={header} key={index}>
+        <CardValue>{value}</CardValue>
+      </Card>
+    </CardWrapper>
   );
 
   renderDetail = ({ label, field, value }, index) => (
@@ -70,11 +75,13 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = (_, { editors = [], dataSources = [], owner, slug, created } = {}) => {
+  renderProject = (_, { editors, dataSources = [], owner, slug, created, charts, pages } = {}) => {
     const statistics = [
-      { header: 'Data Sources', value: dataSources.length },
-      { header: 'Users', value: editors.length },
-    ];
+      { header: 'Data Sources', value: this.countItems(dataSources) },
+      { header: 'Charts', value: this.countItems(charts) },
+      { header: 'Pages', value: this.countItems(pages) },
+      { header: 'Users', value: this.countItems(editors) },
+    ].filter(({ value }) => !isNil(value));
 
     const { firstName = '', lastName = '' } = owner;
 
@@ -91,6 +98,9 @@ export class View extends PureComponent {
       <ProjectView>
         <Statistics>{statistics.map(this.renderStatistic)}</Statistics>
         <Details>{data.map(this.renderDetail)}</Details>
+        <Button onClick={this.handleGoToProjectsList} customStyles={buttonStyles}>
+          <Icons.ArrowLeftIcon />
+        </Button>
       </ProjectView>
     );
   };
@@ -116,7 +126,6 @@ export class View extends PureComponent {
           <H1>{title}</H1>
         </Header>
         {content}
-        <Link to="/projects">Projects</Link>
       </Container>
     );
   }

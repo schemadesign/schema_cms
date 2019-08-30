@@ -43,11 +43,6 @@ export const Description = styled.div`
   cursor: pointer;
 `;
 
-export const Empty = styled.div`
-  text-align: center;
-  padding: 10px;
-`;
-
 export const ActionsList = styled.ul`
   list-style: none;
   margin: 40px 0 0 0;
@@ -61,10 +56,6 @@ export const ActionsList = styled.ul`
 export const Action = styled.li`
   margin-top: 20px;
 `;
-
-export const headerStyles = {
-  backgroundColor: null,
-};
 
 export const urlStyles = {
   color: Theme.primary.label,
