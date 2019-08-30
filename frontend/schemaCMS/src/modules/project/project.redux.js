@@ -29,7 +29,9 @@ export const INITIAL_STATE = new Immutable({
 
 const fetchListSuccess = (state = INITIAL_STATE, { data }) => state.set('projects', data);
 
-const createProjectSuccess = (state = INITIAL_STATE, { project }) => state.merge('projects', project);
+const createProjectSuccess = (state = INITIAL_STATE, { project }) => {
+  return state.merge({ projects: state.projects.concat(project) });
+};
 
 const fetchOneSuccess = (state = INITIAL_STATE, { data }) => state.set('project', data);
 

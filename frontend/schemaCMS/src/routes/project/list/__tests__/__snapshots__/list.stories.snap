@@ -2,7 +2,7 @@
 
 exports[`Storyshots List empty 1`] = `
 <div
-  className="sc-htpNat KtFsv"
+  className="sc-EHOje jvzENE"
 >
   <div
     style={
@@ -80,7 +80,7 @@ exports[`Storyshots List empty 1`] = `
     </button>
   </div>
   <div
-    className="sc-htoDjs cNnnvC"
+    className="sc-gZMcBi swown"
   >
     <p
       style={
@@ -152,25 +152,25 @@ exports[`Storyshots List empty 1`] = `
     }
   >
     <ul
-      className="sc-dnqmqq wifqT"
+      className="sc-gqjmRU uNCqK"
     >
       <li
-        className="sc-iwsKbI kScFHn"
+        className="sc-VigVT hwAjIG"
       >
         Edit Project settings
       </li>
       <li
-        className="sc-iwsKbI kScFHn"
+        className="sc-VigVT hwAjIG"
       >
         Delete project
       </li>
       <li
-        className="sc-iwsKbI kScFHn"
+        className="sc-VigVT hwAjIG"
       >
         User settings
       </li>
       <li
-        className="sc-iwsKbI kScFHn"
+        className="sc-VigVT hwAjIG"
       >
         Log Out
       </li>
@@ -216,7 +216,7 @@ exports[`Storyshots List empty 1`] = `
 
 exports[`Storyshots List list 1`] = `
 <div
-  className="sc-htpNat KtFsv"
+  className="sc-EHOje jvzENE"
 >
   <div
     style={
@@ -294,10 +294,10 @@ exports[`Storyshots List list 1`] = `
     </button>
   </div>
   <ul
-    className="sc-bxivhb bWFDeF"
+    className="sc-bZQynM cHseiX"
   >
     <li
-      className="sc-ifAKCX hvVIC"
+      className="sc-gzVnrw jcTlqU"
     >
       <div
         style={
@@ -322,20 +322,20 @@ exports[`Storyshots List list 1`] = `
           }
         >
           <ul
-            className="sc-EHOje jkqiYl"
+            className="sc-htoDjs LPVfx"
           >
             <li
-              className="sc-bZQynM iHBgnN"
+              className="sc-dnqmqq fejgKq"
             >
               3 months ago
             </li>
             <li
-              className="sc-bZQynM iHBgnN"
+              className="sc-dnqmqq fejgKq"
             >
               Status
             </li>
             <li
-              className="sc-bZQynM iHBgnN"
+              className="sc-dnqmqq fejgKq"
             >
               Firstname Lastname
             </li>
@@ -358,7 +358,7 @@ exports[`Storyshots List list 1`] = `
           Project Name
         </h1>
         <div
-          className="sc-gzVnrw fagCOI"
+          className="sc-iwsKbI fhlDBZ"
           onClick={[Function]}
         >
           <p
@@ -394,7 +394,7 @@ exports[`Storyshots List list 1`] = `
       </div>
     </li>
     <li
-      className="sc-ifAKCX hvVIC"
+      className="sc-gzVnrw jcTlqU"
     >
       <div
         style={
@@ -419,20 +419,20 @@ exports[`Storyshots List list 1`] = `
           }
         >
           <ul
-            className="sc-EHOje jkqiYl"
+            className="sc-htoDjs LPVfx"
           >
             <li
-              className="sc-bZQynM iHBgnN"
+              className="sc-dnqmqq fejgKq"
             >
               3 months ago
             </li>
             <li
-              className="sc-bZQynM iHBgnN"
+              className="sc-dnqmqq fejgKq"
             >
               Published
             </li>
             <li
-              className="sc-bZQynM iHBgnN"
+              className="sc-dnqmqq fejgKq"
             >
               Tadeusz Kosciuszko
             </li>
@@ -455,7 +455,7 @@ exports[`Storyshots List list 1`] = `
           Honec sodales libero non fermentum aliquam
         </h1>
         <div
-          className="sc-gzVnrw fagCOI"
+          className="sc-iwsKbI fhlDBZ"
           onClick={[Function]}
         >
           <p
@@ -547,25 +547,25 @@ exports[`Storyshots List list 1`] = `
     }
   >
     <ul
-      className="sc-dnqmqq wifqT"
+      className="sc-gqjmRU uNCqK"
     >
       <li
-        className="sc-iwsKbI kScFHn"
+        className="sc-VigVT hwAjIG"
       >
         Edit Project settings
       </li>
       <li
-        className="sc-iwsKbI kScFHn"
+        className="sc-VigVT hwAjIG"
       >
         Delete project
       </li>
       <li
-        className="sc-iwsKbI kScFHn"
+        className="sc-VigVT hwAjIG"
       >
         User settings
       </li>
       <li
-        className="sc-iwsKbI kScFHn"
+        className="sc-VigVT hwAjIG"
       >
         Log Out
       </li>

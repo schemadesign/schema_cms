@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create: Component should render correctly 1`] = `
+<styled.div>
+  <form
+    onSubmit={[Function]}
+  >
+    <TextInput
+      errors={Object {}}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      name="project_title"
+      onChange={[Function]}
+      touched={Object {}}
+      value=""
+      values={
+        Object {
+          "project_title": "",
+        }
+      }
+    />
+  </form>
+</styled.div>
+`;

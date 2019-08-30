@@ -20,6 +20,11 @@ exports[`Project: Component should render correctly 1`] = `
   />
   <Route
     component={[Function]}
+    exact={true}
+    path="/projects/create"
+  />
+  <Route
+    component={[Function]}
     path="/projects/:id/datasource"
   />
 </Switch>
