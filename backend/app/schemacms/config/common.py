@@ -130,8 +130,8 @@ class Common(Configuration):
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     # Media files
-    MEDIA_ROOT = join(os.path.dirname(BASE_DIR), 'media')
-    MEDIA_URL = '/media/'
+    MEDIA_ROOT = join(os.path.dirname(BASE_DIR), '/')
+    MEDIA_URL = '/'
 
     TEMPLATES = [
         {
@@ -291,12 +291,12 @@ class Common(Configuration):
         # Disabled by default.
         # 'social_core.pipeline.mail.mail_validation',
 
-        # Associates the current social details with another user account with
-        # a similar email address. Disabled by default.
-        # 'social_core.pipeline.social_auth.associate_by_email',
-
         # Try to fetch user by authorization service external user ID
         'schemacms.authorization.pipeline.associate_by_external_id',
+
+        # Associates the current social details with another user account with
+        # a similar email address. Disabled by default.
+        'social_core.pipeline.social_auth.associate_by_email',
 
         # Create a user account if we haven't found one yet.
         'social_core.pipeline.user.create_user',

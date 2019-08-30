@@ -27,3 +27,21 @@ Content-Type application/json
 }
 ```
 
+## Redirect a user to reset password page
+
+
+**Request**:
+
+`GET` `/api/v1/users/me/reset-password`
+
+**Response**:
+
+```json
+Content-Type application/json
+200 OK
+
+{
+  "ticket": "https://schemacms.auth0.com/lo/reset",
+}
+```
+

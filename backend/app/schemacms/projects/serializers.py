@@ -3,7 +3,31 @@ from rest_framework import serializers
 
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
-from .models import Project
+from .models import DataSource, DataSourceMeta, Project
+
+
+class DataSourceMetaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DataSourceMeta
+        fields = (
+            'items',
+            'fields',
+        )
+
+
+class DataSourceSerializer(serializers.ModelSerializer):
+    meta_data = DataSourceMetaSerializer(read_only=True)
+
+    class Meta:
+        model = DataSource
+        fields = (
+            'id',
+            'name',
+            'project',
+            'type',
+            'file',
+            'meta_data',
+        )
 
 
 class ProjectOwnerSerializer(serializers.ModelSerializer):
