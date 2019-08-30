@@ -56,7 +56,7 @@ export class View extends PureComponent {
     }
   }
 
-  countItems = (value = []) => (isNil(value) ? null : value.length);
+  countItems = value => (isNil(value) ? null : value.length);
 
   handleGoToProjectsList = () => this.props.history.push('/projects');
 
