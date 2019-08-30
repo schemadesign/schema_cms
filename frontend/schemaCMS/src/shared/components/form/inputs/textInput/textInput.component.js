@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { TextField } from 'schemaUI';
+import { Form } from 'schemaUI';
 
 import { Container, ErrorWrapper } from './textInput.styles';
 import { renderWhenTrue } from '../../../../utils/rendering';
+
+const { TextField } = Form;
 
 export class TextInput extends PureComponent {
   static propTypes = {

@@ -11,11 +11,11 @@ export const INITIAL_VALUES = {
 
 export const PROJECT_SCHEMA = Yup.object().shape({
   [PROJECT_TITLE]: Yup.string()
-    .min(3, 'Project Name should have at least 3 characters!')
-    .max(50, 'Project Name should have maximum 50 characters!')
+    .min(3, 'Project Name should have at least 3 characters')
+    .max(50, 'Project Name should have maximum 50 characters')
     .required('Required'),
   [PROJECT_DESCRIPTION]: Yup.string()
-    .max(150, 'Project Description should have maximum 150 characters!')
+    .max(150, 'Project Description should have maximum 150 characters')
     .required('Required'),
   email: Yup.string()
     .email('Invalid email')

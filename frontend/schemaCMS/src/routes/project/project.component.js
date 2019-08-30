@@ -19,7 +19,7 @@ export class Project extends PureComponent {
 
     const listPath = `${match.path}/list`;
     const viewPath = `${match.path}/:id`;
-    const createPath = `${match.path}/create`;
+    const createPath = `${match.path}/create/`;
     const dataSourcePath = `${viewPath}/datasource`;
 
     return (

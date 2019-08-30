@@ -2,9 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { spy } from 'sinon';
 import { expect } from 'chai';
-import { TextField } from 'schemaUI';
+import { Form } from 'schemaUI';
 
 import { TextInput } from '../textInput.component';
+
+const { TextField } = Form;
 
 describe('TextInput: Component', () => {
   const defaultProps = {
