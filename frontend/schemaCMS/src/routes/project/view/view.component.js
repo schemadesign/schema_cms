@@ -24,6 +24,7 @@ import {
   IconEditWrapper,
   Statistics,
   buttonStyles,
+  Empty,
 } from './view.styles';
 
 const { P } = Typography;
