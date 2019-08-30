@@ -14,8 +14,10 @@ import {
   ProjectView,
   Details,
   DetailItem,
+  DetailWrapper,
   DetailLabel,
   DetailValue,
+  IconEdit,
   Statistics,
   buttonStyles,
 } from './view.styles';
@@ -70,8 +72,11 @@ export class View extends PureComponent {
 
   renderDetail = ({ label, field, value }, index) => (
     <DetailItem key={index}>
-      <DetailLabel>{label}</DetailLabel>
-      <DetailValue>{value || this.props.project[field] || ''}</DetailValue>
+      <DetailWrapper>
+        <DetailLabel>{label}</DetailLabel>
+        <DetailValue>{value || this.props.project[field] || ''}</DetailValue>
+      </DetailWrapper>
+      <IconEdit />
     </DetailItem>
   );
 
@@ -98,9 +103,6 @@ export class View extends PureComponent {
       <ProjectView>
         <Statistics>{statistics.map(this.renderStatistic)}</Statistics>
         <Details>{data.map(this.renderDetail)}</Details>
-        <Button onClick={this.handleGoToProjectsList} customStyles={buttonStyles}>
-          <Icons.ArrowLeftIcon />
-        </Button>
       </ProjectView>
     );
   };
@@ -126,6 +128,9 @@ export class View extends PureComponent {
           <H1>{title}</H1>
         </Header>
         {content}
+        <Button onClick={this.handleGoToProjectsList} customStyles={buttonStyles}>
+          <Icons.ArrowLeftIcon />
+        </Button>
       </Container>
     );
   }

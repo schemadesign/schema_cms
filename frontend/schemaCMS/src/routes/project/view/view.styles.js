@@ -19,15 +19,29 @@ export const Details = styled.ul`
 export const DetailItem = styled.li`
   color: ${Theme.primary.text};
   margin-bottom: 4px;
-  padding: 12px 0 8px 0;
   border-top: 2px solid ${Theme.primary.background};
   display: flex;
+`;
+
+export const DetailWrapper = styled.div`
+  display: flex;
   flex-direction: row;
+  width: calc(100% - 25px);
+  padding: 12px 0 8px 0;
 `;
 
 export const DetailLabel = styled.span`
   color: ${Theme.primary.label};
   margin-right: 5px;
+`;
+
+export const IconEdit = styled.div`
+  width: 18px;
+  height: 18px;
+  background: ${Theme.primary.background};
+  border-radius: 50%;
+  display: inline-block;
+  margin: 11px 0 0 7px;
 `;
 
 export const DetailValue = styled.span`
@@ -41,7 +55,7 @@ export const Statistics = styled.ul`
 
 export const CardWrapper = styled.li`
   display: inline-block;
-  width: calc(50% - 14px);
+  width: calc(50% - 7px);
   margin-bottom: 14px;
 
   &:nth-child(2n + 1) {
@@ -61,7 +75,7 @@ export const CardValue = styled.span`
 `;
 
 export const buttonStyles = {
-  margin: '50px 0 20px',
+  margin: '50px 0 20px 20px',
   backgroundColor: Theme.primary.background,
   height: '60px',
 };
