@@ -2,8 +2,409 @@
 
 exports[`Storyshots Create Default 1`] = `
 <div
-  className="sc-bxivhb bUZGRr"
+  className="sc-bdVaJa dOnPVD"
 >
-  Create component
+  <div
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "color": "#1d1d20",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "padding": "18px 0",
+        "width": "100%",
+      }
+    }
+  >
+    <div>
+      <h2
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Create Data Source
+      </h2>
+      <h1
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Source
+      </h1>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": 6,
+        }
+      }
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#1d1d20",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="Name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "1px solid #F0EFEF",
+            "color": "#a6a7aa",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Name
+      </label>
+      <input
+        id="Name"
+        name="Name"
+        style={
+          Object {
+            "border": "none",
+            "color": "#1d1d20",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+          }
+        }
+        type="text"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#1d1d20",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "1px solid #F0EFEF",
+          "color": "#a6a7aa",
+          "display": "block",
+          "fontSize": "14px",
+          "marginBottom": 20,
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Source
+    </label>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "marginBottom": "40px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "textAlign": "center",
+          }
+        }
+      >
+        <input
+          aria-hidden={true}
+          defaultChecked={false}
+          id="csv"
+          name="dataSourceType"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="radio"
+          value="csv"
+        />
+        <label
+          htmlFor="csv"
+          style={
+            Object {
+              "alignItems": "center",
+              "cursor": "pointer",
+              "display": "flex",
+              "flexDirection": "column",
+              "opacity": 0.1,
+              "width": 96,
+            }
+          }
+        >
+          <button
+            style={
+              Object {
+                "backgroundColor": "#1D1D20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#1d1d20",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontSize": "18px",
+                "height": 96,
+                "margin": "0",
+                "marginBottom": 10,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "pointerEvents": "none",
+                "width": 96,
+              }
+            }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </label>
+        Csv
+      </div>
+    </div>
+  </form>
+  <div>
+    <button
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+      type="button"
+    >
+      Cancel
+    </button>
+    <button
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+      type="submit"
+    >
+      Next
+    </button>
+  </div>
+  <div
+    className="sc-bwzfXH jIEWCi"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "margin": "0 auto",
+          "pointerEvents": "none",
+        }
+      }
+    >
+      <span
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "borderRadius": "50%",
+            "cursor": "default",
+            "display": "block",
+            "height": "12px",
+            "margin": "0 4px",
+            "pointerEvents": "none",
+            "width": "12px",
+          }
+        }
+      />
+      <span
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#f0efef",
+            "borderRadius": "50%",
+            "cursor": "pointer",
+            "display": "block",
+            "height": "12px",
+            "margin": "0 4px",
+            "width": "12px",
+          }
+        }
+      />
+      <span
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#f0efef",
+            "borderRadius": "50%",
+            "cursor": "pointer",
+            "display": "block",
+            "height": "12px",
+            "margin": "0 4px",
+            "width": "12px",
+          }
+        }
+      />
+      <span
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#f0efef",
+            "borderRadius": "50%",
+            "cursor": "pointer",
+            "display": "block",
+            "height": "12px",
+            "margin": "0 4px",
+            "width": "12px",
+          }
+        }
+      />
+      <span
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#f0efef",
+            "borderRadius": "50%",
+            "cursor": "pointer",
+            "display": "block",
+            "height": "12px",
+            "margin": "0 4px",
+            "width": "12px",
+          }
+        }
+      />
+      <span
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#f0efef",
+            "borderRadius": "50%",
+            "cursor": "pointer",
+            "display": "block",
+            "height": "12px",
+            "margin": "0 4px",
+            "width": "12px",
+          }
+        }
+      />
+    </div>
+  </div>
 </div>
 `;

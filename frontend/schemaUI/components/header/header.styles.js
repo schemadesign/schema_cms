@@ -1,12 +1,18 @@
 import { primary } from '../../utils/theme';
 
 export const containerStyles = {
-  backgroundColor: primary.background,
   color: primary.text,
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
-  padding: '6px 0 18px 20px',
+  padding: '18px 0',
   alignItems: 'flex-start',
   width: '100%',
+};
+
+export const buttonStyles = {
+  backgroundColor: 'transparent',
+  position: 'absolute',
+  top: 6,
+  right: 0,
 };

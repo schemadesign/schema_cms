@@ -28,7 +28,7 @@ storiesOf('Header', module).add('with custom styles', () => (
 ));
 
 const defaultPropsWithCustomIcon = {
-  iconComponent: <div style={{ color: 'white' }}>icon</div>,
+  iconComponent: <div style={{ color: 'black', fontSize: '10px', padding: 10 }}>icon</div>,
 };
 
 storiesOf('Header', module).add('with custom icon', () => (

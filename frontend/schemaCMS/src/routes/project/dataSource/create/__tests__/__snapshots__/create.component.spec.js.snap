@@ -2,6 +2,109 @@
 
 exports[`Create: Component should render correctly 1`] = `
 <styled.div>
-  Create component
+  <Header
+    customButtonStyles={Object {}}
+    customStyles={Object {}}
+    iconComponent={<MenuIcon />}
+    onButtonClick={[Function]}
+  >
+    <H2>
+      Create Data Source
+    </H2>
+    <H1>
+      Source
+    </H1>
+  </Header>
+  <form
+    onSubmit={[Function]}
+  >
+    <TextField
+      customInputStyles={Object {}}
+      customLabelStyles={Object {}}
+      error={false}
+      fullWidth={true}
+      iconComponent={<EditIcon />}
+      label="Name"
+      name="Name"
+      type="text"
+    />
+    <Label
+      customStyles={
+        Object {
+          "marginBottom": 20,
+        }
+      }
+    >
+      Source
+    </Label>
+    <RadioGroup
+      customCheckedStyles={Object {}}
+      customLabelStyles={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "column",
+          "width": 96,
+        }
+      }
+      customStyles={
+        Object {
+          "marginBottom": "40px",
+        }
+      }
+      name="dataSourceType"
+      onChange={[Function]}
+      value=""
+    >
+      <RadioButton
+        id="csv"
+        label="Csv"
+        value="csv"
+      >
+        <Button
+          customStyles={
+            Object {
+              "backgroundColor": "#1D1D20",
+              "height": 96,
+              "marginBottom": 10,
+              "pointerEvents": "none",
+              "width": 96,
+            }
+          }
+          type="button"
+        >
+          <CsvIcon />
+        </Button>
+      </RadioButton>
+    </RadioGroup>
+  </form>
+  <div>
+    <Button
+      customStyles={Object {}}
+      type="button"
+    >
+      Cancel
+    </Button>
+    <Button
+      customStyles={Object {}}
+      type="submit"
+    >
+      Next
+    </Button>
+  </div>
+  <styled.div>
+    <Stepper
+      activeStep={1}
+      customDotStyles={Object {}}
+      customStyles={
+        Object {
+          "margin": "0 auto",
+          "pointerEvents": "none",
+        }
+      }
+      handleStep={[Function]}
+      steps={6}
+    />
+  </styled.div>
 </styled.div>
 `;

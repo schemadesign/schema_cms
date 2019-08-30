@@ -10,11 +10,12 @@ export class Stepper extends PureComponent {
     customDotStyles: PropTypes.object,
     steps: PropTypes.number.isRequired,
     activeStep: PropTypes.number.isRequired,
-    handleStep: PropTypes.func.isRequired,
+    handleStep: PropTypes.func,
   };
 
   static defaultProps = {
     customDotStyles: {},
+    handleStep: () => {},
   };
 
   getActiveStyles = step =>

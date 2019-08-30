@@ -1,14 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { TextField } from '../textField.component';
+import { CsvIcon } from '../csvIcon.component';
 
-describe('TextField: Component', () => {
-  const defaultProps = {
-    name: 'name',
-  };
+describe('CsvIcon: Component', () => {
+  const defaultProps = {};
 
-  const component = props => <TextField {...defaultProps} {...props} />;
+  const component = props => <CsvIcon {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

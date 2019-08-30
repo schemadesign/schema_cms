@@ -7,7 +7,7 @@ export class Label extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     name: PropTypes.string,
-    label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   };
 
   static defaultProps = {
@@ -15,12 +15,12 @@ export class Label extends PureComponent {
   };
 
   render() {
-    const { label, name, customStyles, ...restProps } = this.props;
+    const { children, name, customStyles, ...restProps } = this.props;
     const labelStyles = { ...defaultStyles, ...customStyles };
 
     return (
       <label {...restProps} style={labelStyles} htmlFor={name}>
-        {label}
+        {children}
       </label>
     );
   }

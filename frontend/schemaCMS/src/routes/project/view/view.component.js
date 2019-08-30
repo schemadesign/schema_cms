@@ -9,7 +9,7 @@ import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
-import { Empty, headerStyles } from '../project.styles';
+import { Empty } from '../project.styles';
 import messages from './view.messages';
 import {
   Container,
@@ -125,7 +125,7 @@ export class View extends PureComponent {
     return (
       <Container>
         <Helmet title={title} />
-        <Header customStyles={headerStyles}>
+        <Header>
           <H2>
             <FormattedMessage {...messages.title} />
           </H2>

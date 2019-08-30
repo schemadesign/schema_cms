@@ -15,6 +15,6 @@ export class Input extends PureComponent {
     const { customStyles, ...restProps } = this.props;
     const inputStyles = { ...defaultStyles, ...customStyles };
 
-    return <input {...restProps} style={inputStyles} />;
+    return <input id={restProps.name} {...restProps} style={inputStyles} />;
   }
 }

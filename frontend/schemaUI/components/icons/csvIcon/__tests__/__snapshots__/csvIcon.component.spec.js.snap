@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CsvIcon: Component should render correctly 1`] = `
+<spreadsheet.svg
+  style={
+    Object {
+      "fill": "#FFF",
+      "height": "60px",
+      "width": "60px",
+    }
+  }
+/>
+`;

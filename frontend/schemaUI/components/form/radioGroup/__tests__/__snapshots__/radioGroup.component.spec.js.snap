@@ -5,7 +5,7 @@ exports[`RadioGroup: Component should render correctly 1`] = `
   style={
     Object {
       "display": "flex",
-      "flexDirection": "column",
+      "flexDirection": "row",
     }
   }
 >
@@ -42,7 +42,7 @@ exports[`RadioGroup: Component should render with custom styles 1`] = `
     Object {
       "background": "blue",
       "display": "flex",
-      "flexDirection": "column",
+      "flexDirection": "row",
     }
   }
 >
