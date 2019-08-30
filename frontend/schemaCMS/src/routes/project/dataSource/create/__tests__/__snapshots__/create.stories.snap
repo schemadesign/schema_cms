@@ -115,6 +115,7 @@ exports[`Storyshots Create Default 1`] = `
         Name
       </label>
       <input
+        defaultValue="My New Dataset"
         id="Name"
         name="Name"
         style={

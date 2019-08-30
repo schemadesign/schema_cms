@@ -5,18 +5,14 @@ exports[`FileUpload: Component should render correctly 1`] = `
   style={Object {}}
 >
   <TextField
-    customInputStyles={
-      Object {
-        "textOverflow": "ellipsis",
-        "width": "calc(100% - 70px)",
-      }
-    }
+    customInputStyles={Object {}}
     customLabelStyles={Object {}}
     disabled={true}
     error={false}
     fullWidth={true}
     iconComponent={
       <label
+        htmlFor="id"
         style={
           Object {
             "position": "relative",
@@ -45,11 +41,264 @@ exports[`FileUpload: Component should render correctly 1`] = `
         </div>
       </label>
     }
+    name="fileName"
     type="text"
     value="Select a file"
   />
   <input
     aria-hidden={true}
+    id="id"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "top": 0,
+        "visibility": "hidden",
+      }
+    }
+    type="file"
+  />
+</div>
+`;
+
+exports[`FileUpload: Component should render with custom icon 1`] = `
+<div
+  style={Object {}}
+>
+  <TextField
+    customInputStyles={Object {}}
+    customLabelStyles={Object {}}
+    disabled={true}
+    error={false}
+    fullWidth={true}
+    iconComponent={
+      <label
+        htmlFor="id"
+        style={
+          Object {
+            "position": "relative",
+            "top": 10,
+          }
+        }
+      >
+        <span>
+          icon
+        </span>
+      </label>
+    }
+    name="fileName"
+    type="text"
+    value="Select a file"
+  />
+  <input
+    aria-hidden={true}
+    id="id"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "top": 0,
+        "visibility": "hidden",
+      }
+    }
+    type="file"
+  />
+</div>
+`;
+
+exports[`FileUpload: Component should render with custom styles 1`] = `
+<div
+  style={Object {}}
+>
+  <TextField
+    customInputStyles={
+      Object {
+        "backgroundColor": "green",
+      }
+    }
+    customLabelStyles={
+      Object {
+        "backgroundColor": "blue",
+      }
+    }
+    customStyles={
+      Object {
+        "backgroundColor": "red",
+      }
+    }
+    disabled={true}
+    error={false}
+    fullWidth={true}
+    iconComponent={
+      <label
+        htmlFor="id"
+        style={
+          Object {
+            "position": "relative",
+            "top": 10,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#1d1d20",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fontSize": 0,
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+            }
+          }
+        >
+          <UploadIcon />
+        </div>
+      </label>
+    }
+    name="fileName"
+    type="text"
+    value="Select a file"
+  />
+  <input
+    aria-hidden={true}
+    id="id"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "top": 0,
+        "visibility": "hidden",
+      }
+    }
+    type="file"
+  />
+</div>
+`;
+
+exports[`FileUpload: Component should render with file name 1`] = `
+<div
+  style={Object {}}
+>
+  <TextField
+    customInputStyles={Object {}}
+    customLabelStyles={Object {}}
+    disabled={true}
+    error={false}
+    fullWidth={true}
+    iconComponent={
+      <label
+        htmlFor="id"
+        style={
+          Object {
+            "position": "relative",
+            "top": 10,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#1d1d20",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fontSize": 0,
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+            }
+          }
+        >
+          <UploadIcon />
+        </div>
+      </label>
+    }
+    label="label"
+    name="fileName"
+    type="text"
+    value="name.csv"
+  />
+  <input
+    aria-hidden={true}
+    id="id"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "top": 0,
+        "visibility": "hidden",
+      }
+    }
+    type="file"
+  />
+</div>
+`;
+
+exports[`FileUpload: Component should render with label 1`] = `
+<div
+  style={Object {}}
+>
+  <TextField
+    customInputStyles={Object {}}
+    customLabelStyles={Object {}}
+    disabled={true}
+    error={false}
+    fullWidth={true}
+    iconComponent={
+      <label
+        htmlFor="id"
+        style={
+          Object {
+            "position": "relative",
+            "top": 10,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#1d1d20",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fontSize": 0,
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+            }
+          }
+        >
+          <UploadIcon />
+        </div>
+      </label>
+    }
+    label="label"
+    name="fileName"
+    type="text"
+    value="Select a file"
+  />
+  <input
+    aria-hidden={true}
+    id="id"
     style={
       Object {
         "height": 0,

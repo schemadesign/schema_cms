@@ -55,7 +55,7 @@ export class Create extends PureComponent {
           <H1>Source</H1>
         </Header>
         <form onSubmit={e => e.preventDefault}>
-          <TextField label="Name" name="Name" fullWidth />
+          <TextField label="Name" name="Name" defaultValue="My New Dataset" fullWidth />
           <Label customStyles={customLabelStyles}>Source</Label>
           <RadioGroup
             name="dataSourceType"

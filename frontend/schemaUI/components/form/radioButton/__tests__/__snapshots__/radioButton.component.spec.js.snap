@@ -13,6 +13,7 @@ exports[`RadioButton: Component should render correctly 1`] = `
   <input
     aria-hidden={true}
     defaultChecked={false}
+    id="id"
     name="name"
     onChange={[Function]}
     style={
@@ -29,6 +30,7 @@ exports[`RadioButton: Component should render correctly 1`] = `
     value="value"
   />
   <label
+    htmlFor="id"
     style={
       Object {
         "background": "blue",

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { buttonStyles, containerStyles, customInputStyles, inputStyles, labelStyles } from './fileUpload.styles';
+import { buttonStyles, containerStyles, inputStyles, labelStyles } from './fileUpload.styles';
 import { containerStyles as defaultButtonStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
 import { TextField } from '../textField';
@@ -13,10 +13,37 @@ export class FileUpload extends PureComponent {
     id: PropTypes.string.isRequired,
     accept: PropTypes.string,
     onChange: PropTypes.func,
+    customStyles: PropTypes.object,
+    customInputStyles: PropTypes.object,
+    customLabelStyles: PropTypes.object,
+    iconComponent: PropTypes.element,
   };
 
+  static defaultProps = {
+    iconComponent: (
+      <div style={{ ...defaultButtonStyles, ...buttonStyles }}>
+        <UploadIcon />
+      </div>
+    ),
+  };
+
+  iconComponent = id => (
+    <label style={labelStyles} htmlFor={id}>
+      {this.props.iconComponent}
+    </label>
+  );
+
   render() {
-    const { name, label, onChange, accept, id } = this.props;
+    const {
+      name,
+      label,
+      id,
+      customInputStyles,
+      customLabelStyles,
+      customStyles,
+      iconComponent,
+      ...restProps
+    } = this.props;
 
     return (
       <div style={containerStyles}>
@@ -26,16 +53,12 @@ export class FileUpload extends PureComponent {
           value={name || 'Select a file'}
           fullWidth
           disabled
+          customStyles={customStyles}
+          customLabelStyles={customLabelStyles}
           customInputStyles={customInputStyles}
-          iconComponent={
-            <label style={labelStyles} htmlFor={id}>
-              <div style={{ ...defaultButtonStyles, ...buttonStyles }}>
-                <UploadIcon />
-              </div>
-            </label>
-          }
+          iconComponent={this.iconComponent(id)}
         />
-        <input style={inputStyles} aria-hidden id={id} type="file" onChange={onChange} accept={accept} />
+        <input style={inputStyles} aria-hidden id={id} type="file" {...restProps} />
       </div>
     );
   }

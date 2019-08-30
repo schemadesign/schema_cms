@@ -21,12 +21,14 @@ exports[`RadioGroup: Component should render correctly 1`] = `
     }
   >
     <RadioButton
+      id="label 1"
       label="label 1"
       value="value 1"
     >
       label 1
     </RadioButton>
     <RadioButton
+      id="label 2"
       label="label 2"
       value="value 2"
     >
@@ -62,12 +64,14 @@ exports[`RadioGroup: Component should render with custom styles 1`] = `
     }
   >
     <RadioButton
+      id="label 1"
       label="label 1"
       value="value 1"
     >
       label 1
     </RadioButton>
     <RadioButton
+      id="label 2"
       label="label 2"
       value="value 2"
     >

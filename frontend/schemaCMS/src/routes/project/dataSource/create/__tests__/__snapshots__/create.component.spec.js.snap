@@ -21,6 +21,7 @@ exports[`Create: Component should render correctly 1`] = `
     <TextField
       customInputStyles={Object {}}
       customLabelStyles={Object {}}
+      defaultValue="My New Dataset"
       error={false}
       fullWidth={true}
       iconComponent={<EditIcon />}
