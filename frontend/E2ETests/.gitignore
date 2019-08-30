@@ -8,3 +8,5 @@ creds.json
 allure-results
 
 package-lock.json
+
+.idea
