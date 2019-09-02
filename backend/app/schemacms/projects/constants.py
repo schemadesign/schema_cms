@@ -23,15 +23,13 @@ DATA_SOURCE_TYPE_CHOICES = (
 
 
 class DataSourceStatus:
-    INITIAL = 'initial'
-    ADDING = 'adding'
-    PROCESSING = 'preprocessing'
+    DRAFT = 'draft'
+    PROCESSING = 'processing'
     DONE = 'done'
 
 
 DATA_SOURCE_STATUS_CHOICES = (
-    (DataSourceStatus.INITIAL, 'initial'),
-    (DataSourceStatus.ADDING, 'adding'),
+    (DataSourceStatus.DRAFT, 'draft'),
     (DataSourceStatus.PROCESSING, 'processing'),
     (DataSourceStatus.DONE, 'done'),
 )
