@@ -63,4 +63,28 @@ describe('Project: redux', () => {
       expect(resultState.project).to.deep.equal(project);
     });
   });
+
+  describe('when PROJECTS/CREATE_PROJECT_SUCCESS action is received', () => {
+    it('should merge project to list of projects', () => {
+      const project = {
+        title: 'Project Name 2',
+        description: 'Description 2',
+        slug: 'schemacms/api/project_title',
+        created: '2019-08-26T11:05:12+0000',
+        status: 'Status',
+        owner: {
+          id: '1',
+          firstName: 'Firstname 2',
+          lastName: 'Lastname 2',
+        },
+        editors: ['3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e', '44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e'],
+        modified: '2019-08-21T10:12:52.030069Z',
+      };
+
+      const expectedProjects = [project];
+
+      const resultState = projectReducer(defaultState, ProjectActions.createProjectSuccess(project));
+      expect(resultState.projects).to.deep.equal(expectedProjects);
+    });
+  });
 });

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput: Component should render correctly 1`] = `
+<styled.div>
+  <TextField
+    customInputStyles={Object {}}
+    customLabelStyles={Object {}}
+    error={false}
+    fullWidth={false}
+    name="A_FIELD_NAME"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+</styled.div>
+`;
+
+exports[`TextInput: Component should render error 1`] = `
+<styled.div>
+  <TextField
+    customInputStyles={Object {}}
+    customLabelStyles={Object {}}
+    error={true}
+    fullWidth={false}
+    name="A_FIELD_NAME"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <styled.div>
+    An error message
+  </styled.div>
+</styled.div>
+`;

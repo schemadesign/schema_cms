@@ -2,7 +2,7 @@
 
 exports[`Storyshots View default 1`] = `
 <div
-  className="sc-gqjmRU VzGKa"
+  className="sc-fjdhpX ckCobq"
 >
   <div
     style={
@@ -80,13 +80,13 @@ exports[`Storyshots View default 1`] = `
     </button>
   </div>
   <div
-    className="sc-VigVT dEDnJn"
+    className="sc-jzJRlG gVgewm"
   >
     <ul
-      className="sc-kgoBCf cDWRrO"
+      className="sc-dxgOiQ ekYRAr"
     >
       <li
-        className="sc-kGXeez bTsGCu"
+        className="sc-ckVGcZ bnaKRX"
       >
         <div
           style={
@@ -113,14 +113,14 @@ exports[`Storyshots View default 1`] = `
             Data Sources
           </div>
           <span
-            className="sc-kpOJdX hFOqTf"
+            className="sc-jKJlTe jZGtKH"
           >
             0
           </span>
         </div>
       </li>
       <li
-        className="sc-kGXeez bTsGCu"
+        className="sc-ckVGcZ bnaKRX"
       >
         <div
           style={
@@ -147,7 +147,7 @@ exports[`Storyshots View default 1`] = `
             Users
           </div>
           <span
-            className="sc-kpOJdX hFOqTf"
+            className="sc-jKJlTe jZGtKH"
           >
             2
           </span>
@@ -155,132 +155,132 @@ exports[`Storyshots View default 1`] = `
       </li>
     </ul>
     <ul
-      className="sc-jTzLTM flCyHa"
+      className="sc-cSHVUG bHTIdp"
     >
       <li
-        className="sc-fjdhpX iclzSG"
+        className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-jzJRlG eOdQwI"
+          className="sc-chPdSV jYamLC"
         >
           <span
-            className="sc-cSHVUG jSxDQc"
+            className="sc-kgoBCf HVkGX"
           >
             Last Update
           </span>
           <span
-            className="sc-chPdSV dYwWfS"
+            className="sc-kpOJdX ddWphX"
           >
             3 months ago
           </span>
         </div>
         <div
-          className="sc-kAzzGY imMEUh"
+          className="sc-kGXeez idzopB"
         />
       </li>
       <li
-        className="sc-fjdhpX iclzSG"
+        className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-jzJRlG eOdQwI"
+          className="sc-chPdSV jYamLC"
         >
           <span
-            className="sc-cSHVUG jSxDQc"
+            className="sc-kgoBCf HVkGX"
           >
             Status
           </span>
           <span
-            className="sc-chPdSV dYwWfS"
+            className="sc-kpOJdX ddWphX"
           >
             Status
           </span>
         </div>
         <div
-          className="sc-kAzzGY imMEUh"
+          className="sc-kGXeez idzopB"
         />
       </li>
       <li
-        className="sc-fjdhpX iclzSG"
+        className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-jzJRlG eOdQwI"
+          className="sc-chPdSV jYamLC"
         >
           <span
-            className="sc-cSHVUG jSxDQc"
+            className="sc-kgoBCf HVkGX"
           >
             Owner
           </span>
           <span
-            className="sc-chPdSV dYwWfS"
+            className="sc-kpOJdX ddWphX"
           >
             Firstname Lastname
           </span>
         </div>
         <div
-          className="sc-kAzzGY imMEUh"
+          className="sc-kGXeez idzopB"
         />
       </li>
       <li
-        className="sc-fjdhpX iclzSG"
+        className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-jzJRlG eOdQwI"
+          className="sc-chPdSV jYamLC"
         >
           <span
-            className="sc-cSHVUG jSxDQc"
+            className="sc-kgoBCf HVkGX"
           >
             Title
           </span>
           <span
-            className="sc-chPdSV dYwWfS"
+            className="sc-kpOJdX ddWphX"
           >
             Project Name
           </span>
         </div>
         <div
-          className="sc-kAzzGY imMEUh"
+          className="sc-kGXeez idzopB"
         />
       </li>
       <li
-        className="sc-fjdhpX iclzSG"
+        className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-jzJRlG eOdQwI"
+          className="sc-chPdSV jYamLC"
         >
           <span
-            className="sc-cSHVUG jSxDQc"
+            className="sc-kgoBCf HVkGX"
           >
             Description
           </span>
           <span
-            className="sc-chPdSV dYwWfS"
+            className="sc-kpOJdX ddWphX"
           >
             Description
           </span>
         </div>
         <div
-          className="sc-kAzzGY imMEUh"
+          className="sc-kGXeez idzopB"
         />
       </li>
       <li
-        className="sc-fjdhpX iclzSG"
+        className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-jzJRlG eOdQwI"
+          className="sc-chPdSV jYamLC"
         >
           <span
-            className="sc-cSHVUG jSxDQc"
+            className="sc-kgoBCf HVkGX"
           >
             API
           </span>
           <span
-            className="sc-chPdSV dYwWfS"
+            className="sc-kpOJdX ddWphX"
           >
             schemacms/api/schemacms/api/project_title
           </span>
         </div>
         <div
-          className="sc-kAzzGY imMEUh"
+          className="sc-kGXeez idzopB"
         />
       </li>
     </ul>
@@ -322,7 +322,7 @@ exports[`Storyshots View default 1`] = `
 
 exports[`Storyshots View empty 1`] = `
 <div
-  className="sc-gqjmRU VzGKa"
+  className="sc-fjdhpX ckCobq"
 >
   <div
     style={
@@ -398,7 +398,7 @@ exports[`Storyshots View empty 1`] = `
     </button>
   </div>
   <div
-    className="sc-htpNat gDYiEH"
+    className="sc-EHOje cCUgrr"
   >
     <p
       style={

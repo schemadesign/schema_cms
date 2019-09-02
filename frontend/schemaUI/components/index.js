@@ -6,3 +6,4 @@ export { Header } from './header';
 export Icons from './icons';
 export { Menu } from './menu';
 export Typography from './typography';
+export Form from './form';

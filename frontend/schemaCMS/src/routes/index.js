@@ -13,7 +13,7 @@ import { Project } from './project';
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
-  PROJECTS: '/projects',
+  PROJECTS: '/project',
 };
 
 export default class RootContainer extends Component {

@@ -1,6 +1,6 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 
-import { ProjectTypes, ProjectActions } from './project.redux';
+import { ProjectTypes, ProjectActions, ProjectRoutines } from './project.redux';
 import api from '../../shared/services/api';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
 
@@ -13,6 +13,10 @@ function* fetchProjectsList() {
   } catch (error) {
     yield put(ProjectActions.fetchListError(error));
   }
+}
+
+function* createProject() {
+  //should call backend
 }
 
 function* fetchOne({ id }) {
@@ -28,5 +32,9 @@ function* fetchOne({ id }) {
 }
 
 export function* watchProject() {
-  yield all([takeLatest(ProjectTypes.FETCH_LIST, fetchProjectsList), takeLatest(ProjectTypes.FETCH_ONE, fetchOne)]);
+  yield all([
+    takeLatest(ProjectTypes.FETCH_LIST, fetchProjectsList),
+    takeLatest(ProjectTypes.FETCH_ONE, fetchOne),
+    takeLatest(ProjectRoutines.createProject.TRIGGER, createProject),
+  ]);
 }
