@@ -2,7 +2,7 @@
 
 exports[`Storyshots View default 1`] = `
 <div
-  className="sc-htpNat KtFsv"
+  className="sc-gqjmRU VzGKa"
 >
   <div
     style={
@@ -79,25 +79,250 @@ exports[`Storyshots View default 1`] = `
       </svg>
     </button>
   </div>
-  <p
+  <div
+    className="sc-VigVT dEDnJn"
+  >
+    <ul
+      className="sc-kgoBCf cDWRrO"
+    >
+      <li
+        className="sc-kGXeez bTsGCu"
+      >
+        <div
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "borderTop": "2px solid #1d1d20",
+              "color": "#1d1d20",
+              "display": "flex",
+              "flexDirection": "column",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "padding": "12px 14px 14px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#a6a7aa",
+                "fontSize": "12px",
+                "marginBottom": "14px",
+              }
+            }
+          >
+            Data Sources
+          </div>
+          <span
+            className="sc-kpOJdX hFOqTf"
+          >
+            0
+          </span>
+        </div>
+      </li>
+      <li
+        className="sc-kGXeez bTsGCu"
+      >
+        <div
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "borderTop": "2px solid #1d1d20",
+              "color": "#1d1d20",
+              "display": "flex",
+              "flexDirection": "column",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "padding": "12px 14px 14px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#a6a7aa",
+                "fontSize": "12px",
+                "marginBottom": "14px",
+              }
+            }
+          >
+            Users
+          </div>
+          <span
+            className="sc-kpOJdX hFOqTf"
+          >
+            2
+          </span>
+        </div>
+      </li>
+    </ul>
+    <ul
+      className="sc-jTzLTM flCyHa"
+    >
+      <li
+        className="sc-fjdhpX iclzSG"
+      >
+        <div
+          className="sc-jzJRlG eOdQwI"
+        >
+          <span
+            className="sc-cSHVUG jSxDQc"
+          >
+            Last Update
+          </span>
+          <span
+            className="sc-chPdSV dYwWfS"
+          >
+            3 months ago
+          </span>
+        </div>
+        <div
+          className="sc-kAzzGY imMEUh"
+        />
+      </li>
+      <li
+        className="sc-fjdhpX iclzSG"
+      >
+        <div
+          className="sc-jzJRlG eOdQwI"
+        >
+          <span
+            className="sc-cSHVUG jSxDQc"
+          >
+            Status
+          </span>
+          <span
+            className="sc-chPdSV dYwWfS"
+          >
+            Status
+          </span>
+        </div>
+        <div
+          className="sc-kAzzGY imMEUh"
+        />
+      </li>
+      <li
+        className="sc-fjdhpX iclzSG"
+      >
+        <div
+          className="sc-jzJRlG eOdQwI"
+        >
+          <span
+            className="sc-cSHVUG jSxDQc"
+          >
+            Owner
+          </span>
+          <span
+            className="sc-chPdSV dYwWfS"
+          >
+            Firstname Lastname
+          </span>
+        </div>
+        <div
+          className="sc-kAzzGY imMEUh"
+        />
+      </li>
+      <li
+        className="sc-fjdhpX iclzSG"
+      >
+        <div
+          className="sc-jzJRlG eOdQwI"
+        >
+          <span
+            className="sc-cSHVUG jSxDQc"
+          >
+            Title
+          </span>
+          <span
+            className="sc-chPdSV dYwWfS"
+          >
+            Project Name
+          </span>
+        </div>
+        <div
+          className="sc-kAzzGY imMEUh"
+        />
+      </li>
+      <li
+        className="sc-fjdhpX iclzSG"
+      >
+        <div
+          className="sc-jzJRlG eOdQwI"
+        >
+          <span
+            className="sc-cSHVUG jSxDQc"
+          >
+            Description
+          </span>
+          <span
+            className="sc-chPdSV dYwWfS"
+          >
+            Description
+          </span>
+        </div>
+        <div
+          className="sc-kAzzGY imMEUh"
+        />
+      </li>
+      <li
+        className="sc-fjdhpX iclzSG"
+      >
+        <div
+          className="sc-jzJRlG eOdQwI"
+        >
+          <span
+            className="sc-cSHVUG jSxDQc"
+          >
+            API
+          </span>
+          <span
+            className="sc-chPdSV dYwWfS"
+          >
+            schemacms/api/schemacms/api/project_title
+          </span>
+        </div>
+        <div
+          className="sc-kAzzGY imMEUh"
+        />
+      </li>
+    </ul>
+  </div>
+  <button
+    onClick={[Function]}
     style={
       Object {
-        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+        "backgroundColor": "#f0efef",
+        "border": "none",
+        "borderRadius": "48px",
+        "cursor": "pointer",
         "fontSize": "18px",
-        "fontWeight": 200,
-        "lineHeight": "1.33em",
-        "margin": 0,
+        "height": "60px",
+        "margin": "50px 0 20px 20px",
+        "minHeight": "48px",
+        "outline": "none",
+        "padding": "0",
       }
     }
   >
-    Description
-  </p>
+    <svg
+      style={
+        Object {
+          "fill": "#1d1d20",
+          "height": "60px",
+          "width": "60px",
+        }
+      }
+      viewBox="0 0 60 60"
+    >
+      <path
+        d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+      />
+    </svg>
+  </button>
 </div>
 `;
 
 exports[`Storyshots View empty 1`] = `
 <div
-  className="sc-htpNat KtFsv"
+  className="sc-gqjmRU VzGKa"
 >
   <div
     style={
@@ -173,7 +398,7 @@ exports[`Storyshots View empty 1`] = `
     </button>
   </div>
   <div
-    className="sc-htoDjs cNnnvC"
+    className="sc-htpNat gDYiEH"
   >
     <p
       style={
@@ -189,5 +414,37 @@ exports[`Storyshots View empty 1`] = `
       Project doesn't exist.
     </p>
   </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "border": "none",
+        "borderRadius": "48px",
+        "cursor": "pointer",
+        "fontSize": "18px",
+        "height": "60px",
+        "margin": "50px 0 20px 20px",
+        "minHeight": "48px",
+        "outline": "none",
+        "padding": "0",
+      }
+    }
+  >
+    <svg
+      style={
+        Object {
+          "fill": "#1d1d20",
+          "height": "60px",
+          "width": "60px",
+        }
+      }
+      viewBox="0 0 60 60"
+    >
+      <path
+        d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+      />
+    </svg>
+  </button>
 </div>
 `;

@@ -22,6 +22,8 @@ function* fetchOne({ id }) {
     yield put(ProjectActions.fetchOneSuccess(data));
   } catch (error) {
     yield put(ProjectActions.fetchOneError(error));
+  } finally {
+    yield put(ProjectActions.setFetched());
   }
 }
 

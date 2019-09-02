@@ -6,7 +6,7 @@ import { isEmpty, isNil, path } from 'ramda';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
-import { Empty, headerStyles } from '../project.styles';
+import { Empty, Loader, headerStyles } from '../project.styles';
 import {
   Container,
   CardWrapper,
@@ -28,6 +28,8 @@ export class View extends PureComponent {
   static propTypes = {
     project: PropTypes.object.isRequired,
     fetchProject: PropTypes.func.isRequired,
+    unsetFetchedProject: PropTypes.func.isRequired,
+    isFetchedProject: PropTypes.bool.isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }),
@@ -38,24 +40,12 @@ export class View extends PureComponent {
     }).isRequired,
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isLoading: true,
-    };
-  }
-
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.id);
   }
 
-  componentDidUpdate() {
-    if (this.state.isLoading) {
-      this.setState({
-        isLoading: false,
-      });
-    }
+  componentWillUnmount() {
+    return this.props.unsetFetchedProject();
   }
 
   countItems = value => (isNil(value) ? null : value.length);
@@ -63,8 +53,8 @@ export class View extends PureComponent {
   handleGoToProjectsList = () => this.props.history.push('/projects');
 
   renderStatistic = ({ header, value }, index) => (
-    <CardWrapper>
-      <Card headerComponent={header} key={index}>
+    <CardWrapper key={index}>
+      <Card headerComponent={header}>
         <CardValue>{value}</CardValue>
       </Card>
     </CardWrapper>
@@ -114,12 +104,14 @@ export class View extends PureComponent {
   );
 
   render() {
-    const { project } = this.props;
+    const { project, isFetchedProject } = this.props;
     const title = path(['title'], project, '');
 
-    const content = this.state.isLoading
-      ? 'Loading...'
-      : renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(isEmpty(project), project);
+    const content = isFetchedProject ? (
+      renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(isEmpty(project), project)
+    ) : (
+      <Loader />
+    );
 
     return (
       <Container>

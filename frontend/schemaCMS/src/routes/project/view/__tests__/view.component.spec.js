@@ -9,6 +9,8 @@ import { View } from '../view.component';
 describe('View: Component', () => {
   const defaultProps = {
     fetchProject: identity,
+    unsetFetchedProject: identity,
+    isFetchedProject: true,
     project: {},
     history: {},
     match: {

@@ -6,6 +6,8 @@ import { View } from './view.component';
 
 const defaultProps = {
   fetchProject: identity,
+  unsetFetchedProject: identity,
+  isFetchedProject: true,
   project: {
     title: 'Project Name',
     description: 'Description',
@@ -30,6 +32,8 @@ const defaultProps = {
 
 const emptyProps = {
   fetchProject: identity,
+  unsetFetchedProject: identity,
+  isFetchedProject: true,
   project: {},
   history: {},
   match: {

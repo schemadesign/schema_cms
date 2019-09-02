@@ -14,7 +14,7 @@ exports[`Home: Component should render correctly 1`] = `
   </Button>
   <styled.h1>
     <FormattedMessage
-      defaultMessage="Hello World!"
+      defaultMessage="SchemaCMS"
       id="home.welcome"
       values={Object {}}
     />
@@ -24,6 +24,12 @@ exports[`Home: Component should render correctly 1`] = `
     to="/projects"
   >
     Projects List
+  </Link>
+  <Link
+    replace={false}
+    to="/projects/5678-wrong"
+  >
+    Non exist project
   </Link>
 </styled.div>
 `;
