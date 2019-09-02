@@ -1,3 +1,6 @@
+export const HEADER_COLOR = '#1D1D20';
+export const TEXT_COLOR = '#71737e';
+
 export const containerStyles = {
   display: 'flex',
   flexDirection: 'column',
@@ -6,9 +9,10 @@ export const containerStyles = {
 
 export const columnStyles = {
   columnItem: {
-    display: 'flex',
-    width: '100%',
-    justifyContent: 'space-between',
+    backgroundColor: HEADER_COLOR,
+    color: TEXT_COLOR,
+    border: '1px solid #fff',
+    padding: '10px 15px',
   },
   columnHeader: {
     display: 'flex',
@@ -17,12 +21,10 @@ export const columnStyles = {
 
 export const rowStyles = {
   rowItem: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    width: '100%',
-    justifyContent: 'space-between',
+    padding: '10px 15px',
   },
   rowHeader: {
+    width: '100%',
     display: 'flex',
     flexWrap: 'wrap',
   },
