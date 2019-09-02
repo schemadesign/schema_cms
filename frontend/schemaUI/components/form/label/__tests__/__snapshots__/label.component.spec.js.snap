@@ -5,7 +5,7 @@ exports[`Label: Component should render correctly 1`] = `
   style={
     Object {
       "border": "none",
-      "color": "#1d1d20",
+      "color": "#a6a7aa",
       "fontSize": "18px",
       "lineHeight": "24px",
       "outline": "none",

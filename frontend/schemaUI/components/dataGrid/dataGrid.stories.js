@@ -2,11 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { DataGrid } from './dataGrid.component';
-
-const BLUE_COLOR = '#778DA9';
-const BLACK_COLOR = '#3C474B';
-const WHITE_COLOR = '#fff';
-const GRAY_COLOR = '#E0E1DD';
+import { BLACK_COLOR, BLUE_COLOR, WHITE_COLOR, GRAY_COLOR } from './dataGrid.styles';
 
 const data = {
   columns: [
