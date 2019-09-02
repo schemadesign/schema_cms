@@ -17,7 +17,7 @@ import {
   DetailWrapper,
   DetailLabel,
   DetailValue,
-  IconEdit,
+  IconEditWrapper,
   Statistics,
   buttonStyles,
 } from './view.styles';
@@ -50,7 +50,7 @@ export class View extends PureComponent {
 
   countItems = value => (isNil(value) ? null : value.length);
 
-  handleGoToProjectsList = () => this.props.history.push('/projects');
+  handleGoToProjectsList = () => this.props.history.push('/project');
 
   renderStatistic = ({ header, value }, index) => (
     <CardWrapper key={index}>
@@ -66,7 +66,9 @@ export class View extends PureComponent {
         <DetailLabel>{label}</DetailLabel>
         <DetailValue>{value || this.props.project[field] || ''}</DetailValue>
       </DetailWrapper>
-      <IconEdit />
+      <IconEditWrapper>
+        <Icons.EditIcon />
+      </IconEditWrapper>
     </DetailItem>
   );
 

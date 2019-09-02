@@ -11,7 +11,7 @@ const defaultProps = {
   project: {
     title: 'Project Name',
     description: 'Description',
-    slug: 'schemacms/api/project_title',
+    slug: 'project_title',
     created: '2019-08-26T11:05:12+0000',
     status: 'Status',
     owner: {

@@ -26,7 +26,7 @@ export const DetailItem = styled.li`
 export const DetailWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: calc(100% - 25px);
+  width: calc(100% - 37px);
   padding: 12px 0 8px 0;
 `;
 
@@ -35,13 +35,8 @@ export const DetailLabel = styled.span`
   margin-right: 5px;
 `;
 
-export const IconEdit = styled.div`
-  width: 18px;
-  height: 18px;
-  background: ${Theme.primary.background};
-  border-radius: 50%;
-  display: inline-block;
-  margin: 11px 0 0 7px;
+export const IconEditWrapper = styled.div`
+  margin: 5px 0 0 7px;
 `;
 
 export const DetailValue = styled.span`

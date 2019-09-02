@@ -21,15 +21,15 @@ exports[`Home: Component should render correctly 1`] = `
   </styled.h1>
   <Link
     replace={false}
-    to="/projects"
+    to="/project/list"
   >
     Projects List
   </Link>
   <Link
     replace={false}
-    to="/projects/5678-wrong"
+    to="/project/5678-wrong"
   >
-    Non exist project
+    Nonexistent project
   </Link>
 </styled.div>
 `;

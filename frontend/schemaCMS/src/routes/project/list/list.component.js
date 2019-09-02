@@ -5,7 +5,7 @@ import { Button, Card, Header, Icons, Menu, Typography } from 'schemaUI';
 
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
-import { PROJECTS_PATH } from '../../../shared/utils/api.constants';
+import { generateApiUrl } from '../../../shared/utils/helpers';
 import { Empty, headerStyles } from '../project.styles';
 import {
   Action,
@@ -50,7 +50,7 @@ export class List extends PureComponent {
     });
   };
 
-  handleShowProject = id => () => this.props.history.push(`${PROJECTS_PATH}/${id}`);
+  handleShowProject = id => () => this.props.history.push(`/project/${id}`);
 
   handleNewProject = () => {};
 
@@ -79,7 +79,7 @@ export class List extends PureComponent {
           <Description onClick={handleShowProject}>
             <P>{description}</P>
           </Description>
-          <Span customStyles={urlStyles}>{slug}</Span>
+          <Span customStyles={urlStyles}>{generateApiUrl(slug)}</Span>
         </Card>
       </ProjectItem>
     );

@@ -23,8 +23,8 @@ export class Home extends PureComponent {
         <H1>
           <FormattedMessage {...messages.welcome} />
         </H1>
-        <Link to="/projects">Projects List</Link>
-        <Link to="/projects/5678-wrong">Non exist project</Link>
+        <Link to="/project/list">Projects List</Link>
+        <Link to="/project/5678-wrong">Nonexistent project</Link>
       </Container>
     );
   }

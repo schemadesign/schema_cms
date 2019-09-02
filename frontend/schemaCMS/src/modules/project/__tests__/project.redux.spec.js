@@ -87,4 +87,18 @@ describe('Project: redux', () => {
       expect(resultState.projects).to.deep.equal(expectedProjects);
     });
   });
+
+  describe('when PROJECTS/SET_FETCHED action is received', () => {
+    it('should merge project to list of projects', () => {
+      const resultState = projectReducer(defaultState, ProjectActions.setFetched());
+      expect(resultState.isFetched).to.deep.equal(true);
+    });
+  });
+
+  describe('when PROJECTS/UNSET_FETCHED action is received', () => {
+    it('should merge project to list of projects', () => {
+      const resultState = projectReducer(defaultState, ProjectActions.unsetFetched());
+      expect(resultState.isFetched).to.deep.equal(false);
+    });
+  });
 });

@@ -161,7 +161,7 @@ exports[`Storyshots View default 1`] = `
         className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-chPdSV jYamLC"
+          className="sc-chPdSV eyAtrL"
         >
           <span
             className="sc-kgoBCf HVkGX"
@@ -175,14 +175,30 @@ exports[`Storyshots View default 1`] = `
           </span>
         </div>
         <div
-          className="sc-kGXeez idzopB"
-        />
+          className="sc-kGXeez jIsgPY"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
       </li>
       <li
         className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-chPdSV jYamLC"
+          className="sc-chPdSV eyAtrL"
         >
           <span
             className="sc-kgoBCf HVkGX"
@@ -196,14 +212,30 @@ exports[`Storyshots View default 1`] = `
           </span>
         </div>
         <div
-          className="sc-kGXeez idzopB"
-        />
+          className="sc-kGXeez jIsgPY"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
       </li>
       <li
         className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-chPdSV jYamLC"
+          className="sc-chPdSV eyAtrL"
         >
           <span
             className="sc-kgoBCf HVkGX"
@@ -217,14 +249,30 @@ exports[`Storyshots View default 1`] = `
           </span>
         </div>
         <div
-          className="sc-kGXeez idzopB"
-        />
+          className="sc-kGXeez jIsgPY"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
       </li>
       <li
         className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-chPdSV jYamLC"
+          className="sc-chPdSV eyAtrL"
         >
           <span
             className="sc-kgoBCf HVkGX"
@@ -238,14 +286,30 @@ exports[`Storyshots View default 1`] = `
           </span>
         </div>
         <div
-          className="sc-kGXeez idzopB"
-        />
+          className="sc-kGXeez jIsgPY"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
       </li>
       <li
         className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-chPdSV jYamLC"
+          className="sc-chPdSV eyAtrL"
         >
           <span
             className="sc-kgoBCf HVkGX"
@@ -259,14 +323,30 @@ exports[`Storyshots View default 1`] = `
           </span>
         </div>
         <div
-          className="sc-kGXeez idzopB"
-        />
+          className="sc-kGXeez jIsgPY"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
       </li>
       <li
         className="sc-kAzzGY btvAqj"
       >
         <div
-          className="sc-chPdSV jYamLC"
+          className="sc-chPdSV eyAtrL"
         >
           <span
             className="sc-kgoBCf HVkGX"
@@ -276,12 +356,28 @@ exports[`Storyshots View default 1`] = `
           <span
             className="sc-kpOJdX ddWphX"
           >
-            schemacms/api/schemacms/api/project_title
+            schemacms/api/project_title
           </span>
         </div>
         <div
-          className="sc-kGXeez idzopB"
-        />
+          className="sc-kGXeez jIsgPY"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
       </li>
     </ul>
   </div>
