@@ -1,7 +1,3 @@
-import json
-
-import pandas
-
 from rest_framework import (
     decorators,
     permissions,
@@ -42,6 +38,6 @@ class DataSourceViewSet(viewsets.ModelViewSet):
         return response.Response(
             {
                 "data": table_preview,
-                "fileds": fields_info
+                "fields": fields_info
             }
         )
