@@ -12,7 +12,9 @@ describe('View: Component', () => {
     unsetFetchedProject: identity,
     isFetchedProject: true,
     project: {},
-    history: {},
+    history: {
+      push: identity,
+    },
     match: {
       params: {
         id: '100',
