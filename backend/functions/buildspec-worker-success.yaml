@@ -9,4 +9,4 @@ phases:
       - echo Install deps here...
 artifacts:
   files:
-    - 'backend/functions/worker/**/*'
+    - 'backend/functions/worker_success/**/*'

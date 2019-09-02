@@ -1,5 +1,6 @@
 from aws_cdk import core, aws_ec2, aws_sqs, aws_apigateway, aws_lambda, aws_ecs, aws_iam, aws_ecs_patterns, aws_rds,\
-    aws_secretsmanager, aws_codebuild, aws_ecr, aws_codepipeline, aws_codepipeline_actions
+    aws_secretsmanager, aws_codebuild, aws_ecr, aws_codepipeline, aws_codepipeline_actions, aws_stepfunctions,\
+    aws_stepfunctions_tasks
 
 DB_NAME = 'gistdb'
 
@@ -46,6 +47,7 @@ class BaseResources(core.Stack):
             allocated_storage=50,
             instance_class=aws_ec2.InstanceType.of(aws_ec2.InstanceClass.BURSTABLE2, aws_ec2.InstanceSize.SMALL),
             vpc=self.vpc,
+            # todo: remove lines below
             deletion_protection=False,
             delete_automated_backups=True,
         )
@@ -81,55 +83,72 @@ class Workers(core.Stack):
             }
         )
 
-        self.worker_queue = aws_sqs.Queue(self, 'worker-queue', queue_name='worker-queue')
+        worker_success_lambda_code = aws_lambda.AssetCode('backend/functions/worker_success')
 
-        worker_lambda_code = aws_lambda.AssetCode('backend/functions/worker')
-
-        self.function_code = aws_lambda.Code.from_cfn_parameters()
-        handler = 'handlers.handle_queue_event'
+        self.success_function_code = aws_lambda.Code.from_cfn_parameters()
+        handler = 'handlers.handle'
         if installation_mode == INSTALLATION_MODE_FULL:
-            worker_lambda_code = self.function_code
-            handler = 'backend/functions/worker/handlers.handle_queue_event'
+            worker_success_lambda_code = self.success_function_code
+            handler = 'backend/functions/worker_success/handlers.handle'
 
-        self.worker_lambda = aws_lambda.Function(
+        self.worker_success_lambda = aws_lambda.Function(
             self,
-            'worker-lambda',
-            code=worker_lambda_code,
+            'worker-success-lambda',
+            code=worker_success_lambda_code,
             handler=handler,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
-            environment={
-                'ECS_CLUSTER_NAME': scope.base.cluster.cluster_name,
-                'TASK_DEFINITION_ARN': self.worker_task_definition.task_definition_arn,
-                'VPC_SUBNET': scope.base.vpc.private_subnets[0].subnet_id,
-            },
             vpc=scope.base.vpc,
         )
 
-        pass_role_iam_stmt = aws_iam.PolicyStatement(
-            effect=aws_iam.Effect.ALLOW,
-        )
-        pass_role_iam_stmt.add_resources(
-            self.worker_task_definition.task_role.role_arn,
-            self.worker_task_definition.execution_role.role_arn
-        )
-        pass_role_iam_stmt.add_actions('iam:PassRole')
-        self.worker_lambda.add_to_role_policy(pass_role_iam_stmt)
+        worker_failure_lambda_code = aws_lambda.AssetCode('backend/functions/worker_failure')
 
-        run_task_iam_stmt = aws_iam.PolicyStatement(
-            effect=aws_iam.Effect.ALLOW,
-        )
-        run_task_iam_stmt.add_resources(self.worker_task_definition.task_definition_arn)
-        run_task_iam_stmt.add_actions('ecs:RunTask')
-        self.worker_lambda.add_to_role_policy(run_task_iam_stmt)
+        self.failure_function_code = aws_lambda.Code.from_cfn_parameters()
+        handler = 'handlers.handle'
+        if installation_mode == INSTALLATION_MODE_FULL:
+            worker_failure_lambda_code = self.failure_function_code
+            handler = 'backend/functions/worker_failure/handlers.handle'
 
-        self.worker_queue.grant_consume_messages(self.worker_lambda.role)
-        self.event_source_mapping = aws_lambda.EventSourceMapping(
+        self.worker_failure_lambda = aws_lambda.Function(
             self,
-            'worker-event-source-map',
-            enabled=True,
-            batch_size=10,
-            event_source_arn=self.worker_queue.queue_arn,
-            target=self.worker_lambda,
+            'worker-failure-lambda',
+            code=worker_failure_lambda_code,
+            handler=handler,
+            runtime=aws_lambda.Runtime.PYTHON_3_7,
+            vpc=scope.base.vpc,
+        )
+
+        run_worker_task = aws_stepfunctions_tasks.RunEcsFargateTask(
+            cluster=scope.base.cluster,
+            task_definition=self.worker_task_definition,
+            subnets=scope.base.vpc.select_subnets(),
+            integration_pattern=aws_stepfunctions.ServiceIntegrationPattern.SYNC,
+        )
+        run_worker_task.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
+        self.start_worker_job = aws_stepfunctions.Task(
+            self,
+            'Start Worker',
+            task=run_worker_task,
+        )
+
+        run_worker_success = aws_stepfunctions.Task(
+            self,
+            'Worker Success',
+            task=aws_stepfunctions_tasks.InvokeFunction(self.worker_success_lambda),
+        )
+
+        run_worker_failure = aws_stepfunctions.Task(
+            self,
+            'Worker Failure',
+            task=aws_stepfunctions_tasks.InvokeFunction(self.worker_failure_lambda),
+        )
+
+        stm_definition = self.start_worker_job.next(run_worker_success)
+        self.start_worker_job.add_catch(run_worker_failure)
+
+        self.worker_state_machine = aws_stepfunctions.StateMachine(
+            self,
+            'WorkerStateMachine',
+            definition=stm_definition,
         )
 
 
@@ -170,7 +189,7 @@ class API(core.Stack):
             container_name='backend',
             enable_logging=True,
             environment={
-                'SQS_QUEUE_URL': scope.workers.worker_queue.queue_url,
+                'WORKER_STM_ARN': scope.workers.worker_state_machine.state_machine_arn,
                 'DB_SECRET_ARN': scope.base.db.secret.secret_arn,
                 'POSTGRES_DB': DB_NAME,
             },
@@ -181,9 +200,8 @@ class API(core.Stack):
             }
         )
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
+        scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
 
-        scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.execution_role)
-        scope.workers.worker_queue.grant_send_messages(self.api.service.task_definition.task_role)
         scope.base.db.secret.grant_read(self.api.service.task_definition.task_role)
         for k, v in env.items():
             self.grant_secret_access(v)
@@ -261,7 +279,9 @@ class CIPipeline(core.Stack):
             action_name='github_source',
             owner=GITHUB_REPO_OWNER,
             repo=GITHUB_REPOSITORY,
-            branch='master',
+            # branch='master',
+            # todo: remove below line
+            branch='feature/step-functions',
             trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
             output=source_output,
             oauth_token=oauth_token.secret_value,
@@ -365,22 +385,40 @@ class CIPipeline(core.Stack):
             outputs=[public_api_lambda_build_output]
         )
 
-        build_workers_lambda_project = aws_codebuild.PipelineProject(
+        build_workers_success_lambda_project = aws_codebuild.PipelineProject(
             self,
-            'build_workers_lambda_project',
-            project_name='schema_cms_build_workers',
+            'build_workers_success_lambda_project',
+            project_name='schema_cms_build_workers_success',
             environment=aws_codebuild.BuildEnvironment(
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
             ),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename('backend/functions/buildspec-worker.yaml'),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename('backend/functions/buildspec-worker-success.yaml'),
         )
 
-        workers_lambda_build_output = aws_codepipeline.Artifact()
-        build_workers_lambda_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name='build_workers_lambda',
+        workers_success_lambda_build_output = aws_codepipeline.Artifact()
+        build_workers_success_lambda_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name='build_workers_success_lambda',
             input=source_output,
-            project=build_workers_lambda_project,
-            outputs=[workers_lambda_build_output]
+            project=build_workers_success_lambda_project,
+            outputs=[workers_success_lambda_build_output]
+        )
+
+        build_workers_failure_lambda_project = aws_codebuild.PipelineProject(
+            self,
+            'build_workers_failure_lambda_project',
+            project_name='schema_cms_build_workers_failure',
+            environment=aws_codebuild.BuildEnvironment(
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+            ),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename('backend/functions/buildspec-worker-failure.yaml'),
+        )
+
+        workers_failure_lambda_build_output = aws_codepipeline.Artifact()
+        build_workers_failure_lambda_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name='build_workers_failure_lambda',
+            input=source_output,
+            project=build_workers_failure_lambda_project,
+            outputs=[workers_failure_lambda_build_output]
         )
 
         build_cdk_project = aws_codebuild.PipelineProject(
@@ -409,7 +447,8 @@ class CIPipeline(core.Stack):
                 build_app_action,
                 build_workers_action,
                 build_public_api_lambda_action,
-                build_workers_lambda_action,
+                build_workers_success_lambda_action,
+                build_workers_failure_lambda_action,
                 build_cdk_action,
             ]
         )
@@ -444,14 +483,20 @@ class CIPipeline(core.Stack):
                     template_path=cdk_artifact.at_path('cdk.out/workers.template.json'),
                     run_order=1,
                     parameter_overrides={
-                        **scope.workers.function_code.assign(
-                            bucket_name=workers_lambda_build_output.s3_location.bucket_name,
-                            object_key=workers_lambda_build_output.s3_location.object_key,
-                            object_version=workers_lambda_build_output.s3_location.object_version,
+                        **scope.workers.success_function_code.assign(
+                            bucket_name=workers_success_lambda_build_output.s3_location.bucket_name,
+                            object_key=workers_success_lambda_build_output.s3_location.object_key,
+                            object_version=workers_success_lambda_build_output.s3_location.object_version,
+                        ),
+                        **scope.workers.failure_function_code.assign(
+                            bucket_name=workers_failure_lambda_build_output.s3_location.bucket_name,
+                            object_key=workers_failure_lambda_build_output.s3_location.object_key,
+                            object_version=workers_failure_lambda_build_output.s3_location.object_version,
                         ),
                     },
                     extra_inputs=[
-                        workers_lambda_build_output,
+                        workers_success_lambda_build_output,
+                        workers_failure_lambda_build_output,
                     ]
                 ),
 

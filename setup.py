@@ -32,6 +32,9 @@ setuptools.setup(
         "aws-cdk.aws-codebuild",
         "aws_cdk_aws-codepipeline",
         "aws_cdk_aws-codepipeline-actions",
+        "aws_cdk_aws-stepfunctions",
+        "aws_cdk.aws_stepfunctions",
+        "aws_cdk.aws_stepfunctions_tasks",
     ],
 
     python_requires=">=3.6",
