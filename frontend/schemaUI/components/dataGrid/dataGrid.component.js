@@ -26,31 +26,33 @@ export class DataGrid extends PureComponent {
     this.cellWidths[name] = this.getCellWidth(size);
   };
 
-  getCustomStyles = ({ styles }, defaultStyle = {}) => styles || defaultStyle;
+  getCustomStyles = (styles, defaultStyle = {}) => styles || defaultStyle;
 
   renderColumns = (column, index) => {
     return (
       <Grid
         key={index}
         size={this.cellWidths[column.name]}
-        customStyles={this.getCustomStyles(column, columnStyles.columnItem)}
+        customStyles={this.getCustomStyles(column.styles, columnStyles.columnItem)}
       >
         {column.displayName}
       </Grid>
     );
   };
 
-  renderRows = (row, index) => {
-    return (
-      <Grid key={index} size={100}>
-        {this.props.data.columns.map(({ name }, index) => (
-          <Grid key={index} size={this.cellWidths[name]} customStyles={this.getCustomStyles(row)}>
+  renderRows = (row, index) => (
+    <Grid key={index} size={100}>
+      {this.props.data.columns.map(({ name }, index) => {
+        const styles = row.styles ? row.styles[name] : {};
+
+        return (
+          <Grid key={index} size={this.cellWidths[name]} customStyles={this.getCustomStyles(styles)}>
             {row[name]}
           </Grid>
-        ))}
-      </Grid>
-    );
-  }
+        );
+      })}
+    </Grid>
+  );
 
   render() {
     const {
