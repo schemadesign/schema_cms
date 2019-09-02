@@ -7,3 +7,4 @@ export Icons from './icons';
 export { Menu } from './menu';
 export Typography from './typography';
 export Form from './form';
+export DataGrid from './dataGrid';

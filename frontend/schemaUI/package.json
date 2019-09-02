@@ -44,6 +44,7 @@
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
     "inquirer-directory": "^2.2.0",
+    "isomorphic-fetch": "^2.2.1",
     "jest": "^24.8.0",
     "jest-enzyme": "^7.1.0",
     "jest-watch-typeahead": "^0.2.1",
