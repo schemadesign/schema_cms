@@ -13,7 +13,7 @@ import { Project } from './project';
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
-  PROJECTS: '/project',
+  PROJECT: '/project',
 };
 
 export default class RootContainer extends Component {
@@ -26,7 +26,7 @@ export default class RootContainer extends Component {
           <Switch>
             <AuthRoute exact path={ROUTES.HOME} component={Home} />
 
-            <AuthRoute path={ROUTES.PROJECTS} component={Project} />
+            <AuthRoute path={ROUTES.PROJECT} component={Project} />
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
