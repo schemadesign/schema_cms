@@ -25,6 +25,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             'name',
             'project',
             'type',
+            'status',
             'file',
             'meta_data',
         )

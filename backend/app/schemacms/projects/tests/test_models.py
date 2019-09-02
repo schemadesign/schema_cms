@@ -31,7 +31,7 @@ class TestDataSourceModelMethods:
         correct_path = os.path.join(
             base_path,
             f"{os.getenv('STORAGE_DIR')}/projects",
-            f"{dsource.project_id}/datasources/{dsource.name.replace(' ', '_')}/{filename}"
+            f"{dsource.project_id}/datasources/{dsource.id}/{filename}"
         )
 
         assert correct_path == dsource.file.path
