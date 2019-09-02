@@ -1,6 +1,7 @@
 import factory
 
 from schemacms.users.tests.factories import UserFactory
+from schemacms.conftests.utils import make_csv
 
 
 class ProjectFactory(factory.django.DjangoModelFactory):
@@ -19,3 +20,18 @@ class ProjectFactory(factory.django.DjangoModelFactory):
             return
         if extracted:
             self.editors.add(*extracted)
+
+
+class DataSourceFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = 'projects.DataSource'
+
+    project = factory.SubFactory(ProjectFactory)
+    file = factory.django.FileField(filename='test.csv', data=make_csv().getvalue())
+
+
+class DataSourceMetaFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = 'projects.DataSourceMeta'
+
+    datasource = factory.SubFactory(DataSourceFactory)
