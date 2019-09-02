@@ -24,7 +24,6 @@ exports[`Create: Component should render correctly 1`] = `
       defaultValue="My New Dataset"
       error={false}
       fullWidth={true}
-      iconComponent={<EditIcon />}
       label="Name"
       name="Name"
       type="text"
