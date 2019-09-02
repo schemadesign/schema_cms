@@ -2,6 +2,7 @@ import os
 import json
 
 import pytest
+from django.conf import settings
 from factory.django import FileField
 from pandas import read_csv
 
@@ -20,7 +21,8 @@ class TestDataSourceModelMethods:
     def create_dsource(filename):
         return DataSourceFactory.create(
             name='Test Data Source',
-            file=FileField(filename=filename, data=make_csv().getvalue())
+            file=FileField(filename=filename, data=make_csv().getvalue()),
+            meta_data=None,
         )
 
     def test_file_path(self):
@@ -30,7 +32,7 @@ class TestDataSourceModelMethods:
         base_path = dsource.file.storage.location
         correct_path = os.path.join(
             base_path,
-            f"{os.getenv('STORAGE_DIR')}/projects",
+            f"{settings.STORAGE_DIR}/projects",
             f"{dsource.project_id}/datasources/{dsource.id}/{filename}"
         )
 
@@ -56,10 +58,10 @@ class TestDataSourceModelMethods:
         assert datasource.meta_data.fields == cols_number
         assert datasource.meta_data.items == rows_number
 
-    def test_get_preview(self, datasource):
-        source_file = read_csv(datasource.file.path)
+    def test_get_preview(self, data_source):
+        source_file = read_csv(data_source.file.path)
 
-        preview, fields_info = datasource.get_preview_data()
+        preview, fields_info = data_source.get_preview_data()
 
         expected_preview = json.loads(source_file.head(5).to_json(orient='records'))
         expected_fields_info = json.loads(source_file.describe(

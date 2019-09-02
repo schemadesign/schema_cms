@@ -1,8 +1,4 @@
-from rest_framework import (
-    response,
-    status,
-    views
-)
+from rest_framework import response, status, views
 
 
 class HomeView(views.APIView):

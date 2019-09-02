@@ -1,4 +1,3 @@
-from django import http
 from rest_framework import (
     decorators,
     mixins,
@@ -14,11 +13,11 @@ from . import (
 from .backend_management import user_mgtm_backend
 
 
-class UserViewSet(mixins.RetrieveModelMixin,
-                  viewsets.GenericViewSet):
+class UserViewSet(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     """
     Retrieves user account details
     """
+
     queryset = user_models.User.objects.all()
     serializer_class = user_serializers.UserSerializer
     permission_classes = (user_permissions.IsUserOrReadOnly,)

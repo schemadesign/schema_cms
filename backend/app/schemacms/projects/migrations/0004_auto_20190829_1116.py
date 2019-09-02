@@ -8,27 +8,35 @@ import schemacms.projects.models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('projects', '0003_auto_20190829_0724'),
-    ]
+    dependencies = [("projects", "0003_auto_20190829_0724")]
 
     operations = [
         migrations.CreateModel(
-            name='DataSourceMeta',
+            name="DataSourceMeta",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('items', models.PositiveIntegerField()),
-                ('fields', models.PositiveSmallIntegerField()),
+                (
+                    "id",
+                    models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID"),
+                ),
+                ("items", models.PositiveIntegerField()),
+                ("fields", models.PositiveSmallIntegerField()),
             ],
         ),
         migrations.AlterField(
-            model_name='datasource',
-            name='file',
-            field=models.FileField(upload_to=schemacms.projects.models.file_upload_path, validators=[django.core.validators.FileExtensionValidator(allowed_extensions=['csv'])]),
+            model_name="datasource",
+            name="file",
+            field=models.FileField(
+                upload_to=schemacms.projects.models.file_upload_path,
+                validators=[django.core.validators.FileExtensionValidator(allowed_extensions=["csv"])],
+            ),
         ),
         migrations.AddField(
-            model_name='datasourcemeta',
-            name='datasource',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='meta_data', to='projects.DataSource'),
+            model_name="datasourcemeta",
+            name="datasource",
+            field=models.OneToOneField(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="meta_data",
+                to="projects.DataSource",
+            ),
         ),
     ]

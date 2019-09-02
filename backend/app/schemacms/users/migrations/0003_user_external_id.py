@@ -5,19 +5,17 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('users', '0002_user_role'),
-    ]
+    dependencies = [("users", "0002_user_role")]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='external_id',
-            field=models.CharField(blank=True, max_length=64),
+            model_name="user", name="external_id", field=models.CharField(blank=True, max_length=64)
         ),
         migrations.AddField(
-            model_name='user',
-            name='source',
-            field=models.CharField(choices=[('undefined', 'undefined'), ('auth0', 'auth0')], default='undefined', max_length=16),
+            model_name="user",
+            name="source",
+            field=models.CharField(
+                choices=[("undefined", "undefined"), ("auth0", "auth0")], default="undefined", max_length=16
+            ),
         ),
     ]

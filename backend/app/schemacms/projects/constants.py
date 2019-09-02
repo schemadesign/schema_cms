@@ -1,24 +1,26 @@
+# PROJECTS
 class ProjectStatus:
-    INITIAL = 'initial'
-    PROCESSING = 'processing'
+    INITIAL = "initial"
+    PROCESSING = "processing"
 
 
-PROJECT_STATUS_CHOICES = (
-    (ProjectStatus.INITIAL, 'initial'),
-    (ProjectStatus.PROCESSING, 'processing'),
-)
+PROJECT_STATUS_CHOICES = ((ProjectStatus.INITIAL, "initial"), (ProjectStatus.PROCESSING, "processing"))
+
+
+# DATASOURCES
+DATASOURCE_NAME_MAX_LENGTH = 25
 
 
 class DataSourceType:
-    FILE = 'file'
-    DATABASE = 'database'
-    API = 'api'
+    FILE = "file"
+    DATABASE = "database"
+    API = "api"
 
 
 DATA_SOURCE_TYPE_CHOICES = (
-    (DataSourceType.FILE, 'file'),
-    (DataSourceType.DATABASE, 'database'),
-    (DataSourceType.API, 'api'),
+    (DataSourceType.FILE, "file"),
+    (DataSourceType.DATABASE, "database"),
+    (DataSourceType.API, "api"),
 )
 
 
