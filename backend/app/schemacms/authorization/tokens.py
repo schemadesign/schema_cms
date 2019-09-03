@@ -14,7 +14,7 @@ class ExchangeTokenGenerator(PasswordResetTokenGenerator):
         # Truncate microseconds so that tokens are consistent even if the
         # database doesn't support microseconds.
         if user.last_login is None:
-            login_timestamp = ''
+            login_timestamp = ""
         else:
             login_timestamp = user.last_login.replace(microsecond=0, tzinfo=None)
         return "".join((six.text_type(user.pk), six.text_type(timestamp), six.text_type(login_timestamp)))

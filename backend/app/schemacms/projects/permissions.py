@@ -15,3 +15,8 @@ class IsAdminOrReadOnly(BasePermission):
             return True
 
         return request.user.role == UserRole.ADMIN or obj.owner == request.user
+
+
+class HasProjectPermission(BasePermission):
+    def has_permission(self, request, view):
+        return view.project.user_has_access(request.user)

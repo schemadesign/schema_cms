@@ -11,6 +11,7 @@ from django_extensions.db import models as ext_models
 
 
 from . import constants
+from schemacms.users import constants as users_constants
 
 
 def file_upload_path(instance, filename):
@@ -22,7 +23,7 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
     status = models.CharField(
         max_length=25, choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.INITIAL
     )
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='projects')
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
     editors = models.ManyToManyField(settings.AUTH_USER_MODEL)
 
     def __str__(self):
@@ -32,10 +33,23 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
         verbose_name = _("Project")
         verbose_name_plural = _("Projects")
 
+    def user_has_access(self, user):
+        return self.get_projects_for_user(user).filter(pk=self.id).exists()
+
+    @classmethod
+    def get_projects_for_user(cls, user):
+        role = getattr(user, "role", users_constants.UserRole.UNDEFINED)
+        if role == users_constants.UserRole.ADMIN:
+            return cls.objects.all()
+        elif role == users_constants.UserRole.EDITOR:
+            return cls.objects.filter(editors=user)
+        else:
+            return cls.objects.none()
+
 
 class DataSourceManager(models.Manager):
     def create(self, *args, **kwargs):
-        file = kwargs.pop('file')
+        file = kwargs.pop("file", None)
         dsource = super().create(*args, **kwargs)
 
         if file:
@@ -45,29 +59,24 @@ class DataSourceManager(models.Manager):
 
 
 class DataSource(ext_models.TimeStampedModel, models.Model):
-    name = models.CharField(max_length=25, null=True)
+    name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='data_sources')
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="data_sources")
     status = models.CharField(
         max_length=25, choices=constants.DATA_SOURCE_STATUS_CHOICES, default=constants.DataSourceStatus.DRAFT
     )
     file = models.FileField(
-        null=True,
-        upload_to=file_upload_path,
-        validators=[
-            FileExtensionValidator(
-                allowed_extensions=['csv'],
-            )
-        ]
+        null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
     )
 
     objects = DataSourceManager()
 
     def __str__(self):
-        return self.name
+        # name could be None but __str__ method should always return string
+        return self.name or str(self.id)
 
     class Meta:
-        unique_together = ('name', 'project', )
+        unique_together = ("name", "project")
 
     def save(self, *args, **kwargs):
         with transaction.atomic():
@@ -76,27 +85,26 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
                 self.update_meta()
 
     def update_meta(self):
-        items, fields = read_csv(self.file).shape
+        items, fields = read_csv(self.file.path).shape
         meta, _ = DataSourceMeta.objects.update_or_create(
             datasource=self, defaults={"fields": fields, "items": items}
         )
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
+        if not (self.id and self.project_id):
+            raise ValueError("Project or DataSource id is not set")
         return os.path.join(
             base_path,
-            f"{os.getenv('STORAGE_DIR')}/projects",
-            f"{self.project_id}/datasources/{self.id}/{filename}"
+            f"{settings.STORAGE_DIR}/projects",
+            f"{self.project_id}/datasources/{self.id}/{filename}",
         )
 
     def get_preview_data(self):
         data = read_csv(self.file.path, sep=None)
 
-        table_preview = json.loads(data.head(5).to_json(orient='records'))
-        fields_info = json.loads(data.describe(
-            include='all',
-            percentiles=[]
-        ).to_json(orient='columns'))
+        table_preview = json.loads(data.head(5).to_json(orient="records"))
+        fields_info = json.loads(data.describe(include="all", percentiles=[]).to_json(orient="columns"))
 
         for key, value in dict(data.dtypes).items():
             fields_info[key]["dtype"] = value.name
@@ -105,7 +113,7 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
 
 
 class DataSourceMeta(models.Model):
-    datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name='meta_data')
+    datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
     items = models.PositiveIntegerField()
     fields = models.PositiveSmallIntegerField()
 
