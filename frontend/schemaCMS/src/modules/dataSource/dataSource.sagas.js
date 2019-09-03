@@ -2,8 +2,6 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
-import api from '../../shared/services/api';
-import { DATA_SOURCE_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 
 function* create({ payload }) {
   try {
