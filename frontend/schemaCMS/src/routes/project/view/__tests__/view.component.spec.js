@@ -2,18 +2,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { spy } from 'sinon';
 import { expect } from 'chai';
-import { identity } from 'ramda';
 
 import { View } from '../view.component';
 
 describe('View: Component', () => {
   const defaultProps = {
-    fetchProject: identity,
-    unsetFetchedProject: identity,
+    fetchProject: Function.prototype,
+    unsetFetchedProject: Function.prototype,
     isFetchedProject: true,
     project: {},
     history: {
-      push: identity,
+      push: Function.prototype,
     },
     match: {
       params: {

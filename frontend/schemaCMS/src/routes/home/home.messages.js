@@ -4,10 +4,10 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   pageTitle: {
     id: 'home.pageTitle',
-    defaultMessage: 'SchemaCMS',
+    defaultMessage: 'Homepage',
   },
   welcome: {
     id: 'home.welcome',
-    defaultMessage: 'SchemaCMS',
+    defaultMessage: 'Hello World!',
   },
 });

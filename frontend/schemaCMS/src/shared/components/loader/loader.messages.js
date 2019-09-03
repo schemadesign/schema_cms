@@ -2,8 +2,8 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  pageTitle: {
-    id: 'app.pageTitle',
-    defaultMessage: 'SchemaCMS',
+  loading: {
+    id: 'shared.components.loader.loading',
+    defaultMessage: 'Loading...',
   },
 });

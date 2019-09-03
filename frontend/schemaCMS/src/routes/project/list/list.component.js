@@ -1,12 +1,15 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { isEmpty } from 'ramda';
 import { Button, Card, Header, Icons, Menu, Typography } from 'schemaUI';
+import { FormattedMessage } from 'react-intl';
 
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import { Empty, headerStyles } from '../project.styles';
+import messages from './list.messages';
 import {
   Action,
   ActionsList,
@@ -28,6 +31,7 @@ export class List extends PureComponent {
     list: PropTypes.array.isRequired,
     fetchProjectsList: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
+    intl: PropTypes.object.isRequired,
   };
 
   constructor(props) {
@@ -89,7 +93,7 @@ export class List extends PureComponent {
 
   renderNoData = () => (
     <Empty>
-      <P>No Projects</P>
+      <P>{this.props.intl.formatMessage(messages.noProjects)} </P>
     </Empty>
   );
 
@@ -115,9 +119,14 @@ export class List extends PureComponent {
 
     return (
       <Container>
+        <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <Header customStyles={headerStyles} onButtonClick={this.handleToggleMenu}>
-          <H2>Projects</H2>
-          <H1>Overview</H1>
+          <H2>
+            <FormattedMessage {...messages.title} />
+          </H2>
+          <H1>
+            <FormattedMessage {...messages.overview} />
+          </H1>
         </Header>
         {content}
         <Button customStyles={addProjectStyles} onClick={this.handleNewProject}>

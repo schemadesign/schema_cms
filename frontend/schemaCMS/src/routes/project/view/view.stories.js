@@ -1,12 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { identity } from 'ramda';
 
 import { View } from './view.component';
 
 const defaultProps = {
-  fetchProject: identity,
-  unsetFetchedProject: identity,
+  fetchProject: Function.prototype,
+  unsetFetchedProject: Function.prototype,
   isFetchedProject: true,
   project: {
     title: 'Project Name',
@@ -23,7 +22,7 @@ const defaultProps = {
     modified: '2019-08-21T10:12:52.030069Z',
   },
   history: {
-    push: identity,
+    push: Function.prototype,
   },
   match: {
     params: {
@@ -33,12 +32,12 @@ const defaultProps = {
 };
 
 const emptyProps = {
-  fetchProject: identity,
-  unsetFetchedProject: identity,
+  fetchProject: Function.prototype,
+  unsetFetchedProject: Function.prototype,
   isFetchedProject: true,
   project: {},
   history: {
-    push: identity,
+    push: Function.prototype,
   },
   match: {
     params: {

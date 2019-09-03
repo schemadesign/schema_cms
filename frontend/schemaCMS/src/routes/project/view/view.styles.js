@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Theme } from 'schemaUI';
 
 export const Container = styled.div`
-  font-family: ${Theme.primary.typography.p.fontFamily};
   font-weight: 600;
 `;
 

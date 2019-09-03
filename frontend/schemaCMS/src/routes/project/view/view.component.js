@@ -1,12 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { Button, Card, Header, Icons, Typography } from 'schemaUI';
 import { isEmpty, isNil, path } from 'ramda';
+import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
-import { Empty, Loader, headerStyles } from '../project.styles';
+import { Loader } from '../../../shared/components/loader';
+import { Empty, headerStyles } from '../project.styles';
+import messages from './view.messages';
 import {
   Container,
   CardWrapper,
@@ -35,13 +39,14 @@ export class View extends PureComponent {
     }),
     match: PropTypes.shape({
       params: PropTypes.shape({
-        id: PropTypes.string.isRequired,
+        projectId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
+    intl: PropTypes.object.isRequired,
   };
 
   componentDidMount() {
-    this.props.fetchProject(this.props.match.params.id);
+    this.props.fetchProject(this.props.match.params.projectId);
   }
 
   componentWillUnmount() {
@@ -49,6 +54,8 @@ export class View extends PureComponent {
   }
 
   countItems = value => (isNil(value) ? null : value.length);
+
+  formatMessage = value => this.props.intl.formatMessage(value);
 
   handleGoToProjectsList = () => this.props.history.push('/project');
 
@@ -74,21 +81,21 @@ export class View extends PureComponent {
 
   renderProject = (_, { editors, dataSources = [], owner, slug, created, charts, pages } = {}) => {
     const statistics = [
-      { header: 'Data Sources', value: this.countItems(dataSources) },
-      { header: 'Charts', value: this.countItems(charts) },
-      { header: 'Pages', value: this.countItems(pages) },
-      { header: 'Users', value: this.countItems(editors) },
+      { header: this.formatMessage(messages.dataSources), value: this.countItems(dataSources) },
+      { header: this.formatMessage(messages.charts), value: this.countItems(charts) },
+      { header: this.formatMessage(messages.pages), value: this.countItems(pages) },
+      { header: this.formatMessage(messages.users), value: this.countItems(editors) },
     ].filter(({ value }) => !isNil(value));
 
     const { firstName = '', lastName = '' } = owner;
 
     const data = [
-      { label: 'Last Update', field: 'created', value: extendedDayjs(created).fromNow() },
-      { label: 'Status', field: 'status' },
-      { label: 'Owner', field: 'owner', value: `${firstName} ${lastName}` },
-      { label: 'Title', field: 'title' },
-      { label: 'Description', field: 'description' },
-      { label: 'API', field: 'slug', value: generateApiUrl(slug) },
+      { label: this.formatMessage(messages.lastUpdate), field: 'created', value: extendedDayjs(created).fromNow() },
+      { label: this.formatMessage(messages.status), field: 'status' },
+      { label: this.formatMessage(messages.owner), field: 'owner', value: `${firstName} ${lastName}` },
+      { label: this.formatMessage(messages.titleField), field: 'title' },
+      { label: this.formatMessage(messages.description), field: 'description' },
+      { label: this.formatMessage(messages.api), field: 'slug', value: generateApiUrl(slug) },
     ];
 
     return (
@@ -101,13 +108,14 @@ export class View extends PureComponent {
 
   renderNoData = () => (
     <Empty>
-      <P>Project doesn't exist.</P>
+      <P>{this.formatMessage(messages.noProject)}</P>
     </Empty>
   );
 
   render() {
     const { project, isFetchedProject } = this.props;
-    const title = path(['title'], project, '');
+    const projectName = path(['title'], project, '');
+    const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
 
     const content = isFetchedProject ? (
       renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(isEmpty(project), project)
@@ -117,9 +125,12 @@ export class View extends PureComponent {
 
     return (
       <Container>
+        <Helmet title={title} />
         <Header customStyles={headerStyles}>
-          <H2>Project</H2>
-          <H1>{title}</H1>
+          <H2>
+            <FormattedMessage {...messages.title} />
+          </H2>
+          <H1>{projectName}</H1>
         </Header>
         {content}
         <Button onClick={this.handleGoToProjectsList} customStyles={buttonStyles}>

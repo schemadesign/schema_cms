@@ -24,7 +24,6 @@ export class Home extends PureComponent {
           <FormattedMessage {...messages.welcome} />
         </H1>
         <Link to="/project/list">Projects List</Link>
-        <Link to="/project/5678-wrong">Nonexistent project</Link>
       </Container>
     );
   }

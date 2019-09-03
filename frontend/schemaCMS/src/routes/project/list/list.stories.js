@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { identity } from 'ramda';
 
 import { List } from './list.component';
 
@@ -32,13 +31,13 @@ export const defaultProps = {
       },
     },
   ],
-  fetchProjectsList: identity,
+  fetchProjectsList: Function.prototype,
   history: {},
 };
 
 export const emptyListProps = {
   list: [],
-  fetchProjectsList: identity,
+  fetchProjectsList: Function.prototype,
   history: {},
 };
 
