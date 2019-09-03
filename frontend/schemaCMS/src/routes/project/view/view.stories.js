@@ -5,8 +5,7 @@ import { View } from './view.component';
 
 const defaultProps = {
   fetchProject: Function.prototype,
-  unsetFetchedProject: Function.prototype,
-  isFetchedProject: true,
+  unmountProject: Function.prototype,
   project: {
     title: 'Project Name',
     description: 'Description',
@@ -26,24 +25,25 @@ const defaultProps = {
   },
   match: {
     params: {
-      id: '1',
+      projectId: '1',
     },
   },
+  intl: { formatMessage: ({ id }) => id },
 };
 
 const emptyProps = {
   fetchProject: Function.prototype,
-  unsetFetchedProject: Function.prototype,
-  isFetchedProject: true,
+  unmountProject: Function.prototype,
   project: {},
   history: {
     push: Function.prototype,
   },
   match: {
     params: {
-      id: '1',
+      projectId: '1',
     },
   },
+  intl: { formatMessage: ({ id }) => id },
 };
 
 storiesOf('View', module)

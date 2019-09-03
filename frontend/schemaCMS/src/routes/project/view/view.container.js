@@ -8,18 +8,17 @@ import { compose } from 'ramda';
 
 import { View } from './view.component';
 import { ProjectActions } from '../../../modules/project';
-import { selectProject, selectIsFetched } from '../../../modules/project/project.selectors';
+import { selectProject } from '../../../modules/project/project.selectors';
 
 const mapStateToProps = createStructuredSelector({
   project: selectProject,
-  isFetchedProject: selectIsFetched,
 });
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       fetchProject: ProjectActions.fetchOne,
-      unsetFetchedProject: ProjectActions.unsetFetched,
+      unmountProject: ProjectActions.unmountOne,
     },
     dispatch
   );

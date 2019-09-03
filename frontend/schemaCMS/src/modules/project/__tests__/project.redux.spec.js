@@ -7,7 +7,6 @@ describe('Project: redux', () => {
   const defaultState = Immutable({
     projects: [],
     project: {},
-    isFetched: false,
   });
 
   describe('reducer', () => {
@@ -88,17 +87,10 @@ describe('Project: redux', () => {
     });
   });
 
-  describe('when PROJECTS/SET_FETCHED action is received', () => {
+  describe('when PROJECTS/UNMOUNT_ONE action is received', () => {
     it('should merge project to list of projects', () => {
-      const resultState = projectReducer(defaultState, ProjectActions.setFetched());
-      expect(resultState.isFetched).to.deep.equal(true);
-    });
-  });
-
-  describe('when PROJECTS/UNSET_FETCHED action is received', () => {
-    it('should merge project to list of projects', () => {
-      const resultState = projectReducer(defaultState, ProjectActions.unsetFetched());
-      expect(resultState.isFetched).to.deep.equal(false);
+      const resultState = projectReducer(defaultState, ProjectActions.unmountOne());
+      expect(resultState.project).to.deep.equal(defaultState.project);
     });
   });
 });

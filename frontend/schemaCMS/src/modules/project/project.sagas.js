@@ -1,4 +1,5 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
+import { path } from 'ramda';
 
 import { ProjectTypes, ProjectActions, ProjectRoutines } from './project.redux';
 import api from '../../shared/services/api';
@@ -25,9 +26,10 @@ function* fetchOne({ id }) {
 
     yield put(ProjectActions.fetchOneSuccess(data));
   } catch (error) {
-    yield put(ProjectActions.fetchOneError(error));
-  } finally {
-    yield put(ProjectActions.setFetched());
+    const detail = path(['response', 'data', 'detail'], error);
+    const status = path(['response', 'status'], error);
+
+    yield put(ProjectActions.fetchOneError({ id, error: { detail, status } }));
   }
 }
 

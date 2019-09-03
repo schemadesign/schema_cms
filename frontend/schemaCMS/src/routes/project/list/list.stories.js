@@ -33,12 +33,14 @@ export const defaultProps = {
   ],
   fetchProjectsList: Function.prototype,
   history: {},
+  intl: { formatMessage: ({ id }) => id },
 };
 
 export const emptyListProps = {
   list: [],
   fetchProjectsList: Function.prototype,
   history: {},
+  intl: { formatMessage: ({ id }) => id },
 };
 
 storiesOf('List', module)

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Button, Card, Header, Icons, Typography } from 'schemaUI';
-import { isEmpty, isNil, path } from 'ramda';
+import { has, isEmpty, isNil, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
@@ -32,8 +32,7 @@ export class View extends PureComponent {
   static propTypes = {
     project: PropTypes.object.isRequired,
     fetchProject: PropTypes.func.isRequired,
-    unsetFetchedProject: PropTypes.func.isRequired,
-    isFetchedProject: PropTypes.bool.isRequired,
+    unmountProject: PropTypes.func.isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }),
@@ -50,7 +49,7 @@ export class View extends PureComponent {
   }
 
   componentWillUnmount() {
-    return this.props.unsetFetchedProject();
+    return this.props.unmountProject();
   }
 
   countItems = value => (isNil(value) ? null : value.length);
@@ -113,14 +112,14 @@ export class View extends PureComponent {
   );
 
   render() {
-    const { project, isFetchedProject } = this.props;
+    const { project } = this.props;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
 
-    const content = isFetchedProject ? (
-      renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(isEmpty(project), project)
-    ) : (
+    const content = isEmpty(project) ? (
       <Loader />
+    ) : (
+      renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(has('error', project), project)
     );
 
     return (

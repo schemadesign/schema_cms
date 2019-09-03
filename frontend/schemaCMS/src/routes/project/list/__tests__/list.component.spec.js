@@ -22,6 +22,7 @@ describe('List: Component', () => {
       fetchProjectsList,
       list: [],
       history: {},
+      intl: { formatMessage: ({ id }) => id },
     };
 
     await render(props);

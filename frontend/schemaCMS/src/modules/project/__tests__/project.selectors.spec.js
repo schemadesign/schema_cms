@@ -1,14 +1,13 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectProjectDomain, selectProjectsList, selectProject, selectIsFetched } from '../project.selectors';
+import { selectProjectDomain, selectProjectsList, selectProject } from '../project.selectors';
 
 describe('Project: selectors', () => {
   const state = Immutable({
     project: {
       projects: [],
       project: {},
-      isFetched: false,
     },
   });
 
@@ -27,12 +26,6 @@ describe('Project: selectors', () => {
   describe('selectProject', () => {
     it('should select a single project', () => {
       expect(selectProject(state)).to.equal(state.project.project);
-    });
-  });
-
-  describe('selectIsFetched', () => {
-    it('should select a single project', () => {
-      expect(selectIsFetched(state)).to.equal(state.project.isFetched);
     });
   });
 });
