@@ -26,6 +26,24 @@ function* create({ payload }) {
   }
 }
 
+function* fetchOne({ payload }) {
+  try {
+    yield put(DataSourceRoutines.fetchOne.request());
+
+    const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`);
+
+    browserHistory.push(`/project/${payload.projectId}/dataSource/${data.id}`);
+    yield put(DataSourceRoutines.fetchOne.success(data));
+  } catch (error) {
+    yield put(DataSourceRoutines.fetchOne.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.fetchOne.fulfill());
+  }
+}
+
 export function* watchDataSource() {
-  yield all([takeLatest(DataSourceRoutines.create.TRIGGER, create)]);
+  yield all([
+    takeLatest(DataSourceRoutines.create.TRIGGER, create),
+    takeLatest(DataSourceRoutines.fetchOne.TRIGGER, fetchOne),
+  ]);
 }

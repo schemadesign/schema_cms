@@ -9,9 +9,18 @@ const { H1, H2 } = Typography;
 export class List extends PureComponent {
   static propTypes = {
     createDataSource: PropTypes.func.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        projectId: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
   };
 
-  handleCreateDataSource = () => this.props.createDataSource({ projectId: 1 });
+  handleCreateDataSource = () => {
+    const projectId = this.props.match.params.projectId;
+
+    this.props.createDataSource({ projectId });
+  };
 
   render() {
     return (

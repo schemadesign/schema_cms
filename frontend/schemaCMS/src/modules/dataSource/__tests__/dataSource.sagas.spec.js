@@ -33,4 +33,24 @@ describe('DataSource: sagas', () => {
         .run();
     });
   });
+
+  describe('fetchOne', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { projectId: 1, dataSourceId: 1 };
+      const responseData = {
+        id: 1,
+        status: 'draft',
+      };
+
+      mockApi
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`)
+        .reply(OK, responseData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchOne.success(responseData))
+        .dispatch(DataSourceRoutines.fetchOne(payload))
+        .run();
+    });
+  });
 });
