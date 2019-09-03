@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Button, Form as FormComponents, Header, Icons, Typography } from 'schemaUI';
+import { Button, Form, Icons } from 'schemaUI';
 import { always, cond, equals, path, T } from 'ramda';
 
 import {
@@ -8,11 +8,9 @@ import {
   customLabelStyles,
   customRadioButtonStyles,
   customRadioGroupStyles,
-  Form,
 } from './source.styles';
 
-const { TextField, RadioGroup, RadioButton, Label, FileUpload } = FormComponents;
-const { H1, H2 } = Typography;
+const { TextField, RadioGroup, RadioButton, Label, FileUpload } = Form;
 const { CsvIcon } = Icons;
 
 export class Source extends PureComponent {
@@ -49,33 +47,22 @@ export class Source extends PureComponent {
   render() {
     return (
       <Container>
-        <Header>
-          <H2>Create Data Source</H2>
-          <H1>Source</H1>
-        </Header>
-        <Form onSubmit={e => e.preventDefault}>
-          <TextField label="Name" name="Name" defaultValue="My New Dataset" fullWidth />
-          <Label customStyles={customLabelStyles}>Source</Label>
-          <RadioGroup
-            name="dataSourceType"
-            customStyles={customRadioGroupStyles}
-            customLabelStyles={customRadioButtonStyles}
-            value={this.state.dataSourceType}
-            onChange={this.handleChange}
-          >
-            <RadioButton label="Csv" value="csv" id="csv">
-              <Button customStyles={customButtonStyles} type="button">
-                <CsvIcon />
-              </Button>
-            </RadioButton>
-          </RadioGroup>
-          {this.renderSourceUpload(this.state.dataSourceType)}
-
-          <div>
-            <Button type="button">Cancel</Button>
-            <Button type="submit">Next</Button>
-          </div>
-        </Form>
+        <TextField label="Name" name="Name" defaultValue="My New Dataset" fullWidth />
+        <Label customStyles={customLabelStyles}>Source</Label>
+        <RadioGroup
+          name="dataSourceType"
+          customStyles={customRadioGroupStyles}
+          customLabelStyles={customRadioButtonStyles}
+          value={this.state.dataSourceType}
+          onChange={this.handleChange}
+        >
+          <RadioButton label="Csv" value="csv" id="csv">
+            <Button customStyles={customButtonStyles} type="button">
+              <CsvIcon />
+            </Button>
+          </RadioButton>
+        </RadioGroup>
+        {this.renderSourceUpload(this.state.dataSourceType)}
       </Container>
     );
   }

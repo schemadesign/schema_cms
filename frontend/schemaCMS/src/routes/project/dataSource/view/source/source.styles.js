@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  padding: 0 20px;
-`;
-
-export const Form = styled.form``;
+export const Container = styled.div``;
 
 export const customButtonStyles = {
   backgroundColor: '#1D1D20',

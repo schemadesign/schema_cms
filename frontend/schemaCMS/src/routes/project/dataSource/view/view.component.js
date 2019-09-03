@@ -1,10 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Stepper } from 'schemaUI';
-import { always, cond, equals, T } from 'ramda';
+import { Header, Stepper, Typography } from 'schemaUI';
+import { always, cond, equals, ifElse, T } from 'ramda';
 
 import { Container, StepperContainer, stepperStyles } from './view.styles';
 import { Source } from './source';
+import { PillButtons } from '../../../../shared/components/pillButtons';
+
+const { H1, H2 } = Typography;
 
 export class View extends PureComponent {
   static propTypes = {
@@ -21,6 +24,7 @@ export class View extends PureComponent {
 
   state = {
     activeStep: 1,
+    steps: 6,
   };
 
   componentDidMount() {
@@ -37,16 +41,30 @@ export class View extends PureComponent {
 
   handleStepChange = activeStep => this.setState({ activeStep });
 
+  handleBackClick = ifElse(equals(1), () => {}, () => this.handleStepChange(this.state.activeStep - 1));
+  handleNextClick = ifElse(equals(this.state.steps), () => {}, () => this.handleStepChange(this.state.activeStep + 1));
+
   renderContent = cond([[equals(1), always(<Source dataSource={this.props.dataSource} />)], [T, always(null)]]);
 
   render() {
+    const { activeStep, steps } = this.state;
     return (
       <Container>
-        {this.renderContent(this.state.activeStep)}
+        <Header>
+          <H2>Create Data Source</H2>
+          <H1>Source</H1>
+        </Header>
+        {this.renderContent(activeStep)}
+        <PillButtons
+          leftButtonTitle="Cancel"
+          rightButtonTitle="Next"
+          onLeftClick={() => this.handleBackClick(activeStep)}
+          onRightClick={() => this.handleNextClick(activeStep)}
+        />
         <StepperContainer>
           <Stepper
-            activeStep={this.state.activeStep}
-            steps={6}
+            activeStep={activeStep}
+            steps={steps}
             customStyles={stepperStyles}
             onStepChange={this.handleStepChange}
           />

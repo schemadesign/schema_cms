@@ -11,7 +11,7 @@ describe('DataSource: redux', () => {
 
   describe('reducer', () => {
     it('should return initial state', () => {
-      expect(dataSourceReducer(undefined, {})).to.deep.equal(state);
+      expect(dataSourceReducer(undefined, {})).to.deep.equal(defaultState);
     });
   });
 

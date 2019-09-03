@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Source: Component should render correctly 1`] = `
+<styled.div>
+  <TextField
+    customInputStyles={Object {}}
+    customLabelStyles={Object {}}
+    defaultValue="My New Dataset"
+    error={false}
+    fullWidth={true}
+    label="Name"
+    name="Name"
+    type="text"
+  />
+  <Label
+    customStyles={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    Source
+  </Label>
+  <RadioGroup
+    customCheckedStyles={Object {}}
+    customLabelStyles={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "width": 96,
+      }
+    }
+    customStyles={
+      Object {
+        "marginBottom": "40px",
+      }
+    }
+    name="dataSourceType"
+    onChange={[Function]}
+    value=""
+  >
+    <RadioButton
+      id="csv"
+      label="Csv"
+      value="csv"
+    >
+      <Button
+        customStyles={
+          Object {
+            "backgroundColor": "#1D1D20",
+            "height": 96,
+            "marginBottom": 10,
+            "pointerEvents": "none",
+            "width": 96,
+          }
+        }
+        type="button"
+      >
+        <CsvIcon />
+      </Button>
+    </RadioButton>
+  </RadioGroup>
+</styled.div>
+`;

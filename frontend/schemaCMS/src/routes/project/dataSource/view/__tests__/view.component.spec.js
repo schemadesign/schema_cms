@@ -4,7 +4,17 @@ import { shallow } from 'enzyme';
 import { View } from '../view.component';
 
 describe('View: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    dataSource: {},
+    fetchDataSource: Function.prototype,
+    unmountDataSource: Function.prototype,
+    match: {
+      params: {
+        projectId: 1,
+        dataSource: 1,
+      },
+    },
+  };
 
   const component = props => <View {...defaultProps} {...props} />;
 

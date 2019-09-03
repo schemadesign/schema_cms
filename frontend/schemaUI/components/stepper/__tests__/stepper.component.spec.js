@@ -46,6 +46,6 @@ describe('Stepper: Component', () => {
       .at(1)
       .simulate('click');
 
-    expect(props.handleStep).toHaveBeenCalledWith(2);
+    expect(props.onStepChange).toHaveBeenCalledWith(2);
   });
 });

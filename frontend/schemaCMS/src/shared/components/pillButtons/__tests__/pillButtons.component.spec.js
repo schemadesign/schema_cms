@@ -1,18 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { List } from '../list.component';
+import { PillButtons } from '../pillButtons.component';
 
-describe('List: Component', () => {
-  const defaultProps = {
-    match: {
-      params: {
-        projectId: 1,
-      },
-    },
-  };
+describe('PillButtons: Component', () => {
+  const defaultProps = {};
 
-  const component = props => <List {...defaultProps} {...props} />;
+  const component = props => <PillButtons {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
