@@ -19,7 +19,7 @@ export class PillButtons extends PureComponent {
         <Button type="button" onClick={onLeftClick} customStyles={leftButtonStyles}>
           {leftButtonTitle}
         </Button>
-        <Button type="submit" onClick={onRightClick} customStyles={rightButtonStyles}>
+        <Button type="button" onClick={onRightClick} customStyles={rightButtonStyles}>
           {rightButtonTitle}
         </Button>
       </Container>

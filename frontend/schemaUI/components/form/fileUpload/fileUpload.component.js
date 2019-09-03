@@ -11,6 +11,7 @@ const DEFAULT_TEXT_VALUE = 'Select a file';
 export class FileUpload extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
+    fileName: PropTypes.string,
     label: PropTypes.string,
     id: PropTypes.string.isRequired,
     accept: PropTypes.string,
@@ -18,29 +19,32 @@ export class FileUpload extends PureComponent {
     customStyles: PropTypes.object,
     customInputStyles: PropTypes.object,
     customLabelStyles: PropTypes.object,
+    iconComponent: PropTypes.element,
+  };
+
+  static defaultProps = {
+    iconComponent: (
+      <div style={{ ...defaultButtonStyles, ...buttonStyles }}>
+        <UploadIcon />
+      </div>
+    ),
   };
 
   render() {
-    const { name, label, onChange, accept, id } = this.props;
+    const { fileName, label, onChange, accept, id } = this.props;
 
     return (
       <div style={containerStyles}>
         <TextField
           name="fileName"
           label={label}
-          value={name || DEFAULT_TEXT_VALUE}
+          value={fileName || DEFAULT_TEXT_VALUE}
           fullWidth
           disabled
           customStyles={customStyles}
           customLabelStyles={customLabelStyles}
           customInputStyles={customInputStyles}
-          iconComponent={
-            <label style={labelStyles} htmlFor={id}>
-              <div style={{ ...defaultButtonStyles, ...buttonStyles }}>
-                <UploadIcon />
-              </div>
-            </label>
-          }
+          iconComponent={this.iconComponent(id)}
         />
         <input style={inputStyles} aria-hidden id={id} type="file" onChange={onChange} accept={accept} />
       </div>

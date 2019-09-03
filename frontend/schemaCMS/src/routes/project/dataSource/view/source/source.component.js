@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
 import { always, cond, equals, path, T } from 'ramda';
+import PropTypes from 'prop-types';
 
 import {
   Container,
@@ -14,26 +15,35 @@ const { TextField, RadioGroup, RadioButton, Label, FileUpload } = Form;
 const { CsvIcon } = Icons;
 
 export class Source extends PureComponent {
-  static propTypes = {};
+  static propTypes = {
+    values: PropTypes.object.isRequired,
+    setFieldValue: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+  };
 
   state = {
-    dataSourceType: '',
+    dataSourceType: this.props.values.type || '',
     uploadFileName: null,
   };
 
   handleChange = event => {
     const value = event.target.value;
+
+    this.props.onChange(event);
     this.setState({ dataSourceType: value });
   };
 
   handleUploadChange = event => {
-    const uploadFileName = path(['target', 'files', 0, 'name'], event);
-    this.setState({ uploadFileName });
+    const uploadFile = path(['currentTarget', 'files', 0], event);
+
+    this.props.setFieldValue('file', uploadFile);
+    this.setState({ uploadFileName: uploadFile.name });
   };
 
   renderCsvUploader = () => (
     <FileUpload
-      name={this.state.uploadFileName}
+      fileName={this.state.uploadFileName || this.props.values.file}
+      name="file"
       label="File Name"
       type="file"
       id="File name"
@@ -42,21 +52,23 @@ export class Source extends PureComponent {
     />
   );
 
-  renderSourceUpload = cond([[equals('csv'), this.renderCsvUploader], [T, always(null)]]);
+  renderSourceUpload = cond([[equals('file'), this.renderCsvUploader], [T, always(null)]]);
 
   render() {
+    const { onChange, values } = this.props;
+
     return (
       <Container>
-        <TextField label="Name" name="Name" defaultValue="My New Dataset" fullWidth />
+        <TextField label="Name" name="name" value={values.name} onChange={onChange} fullWidth />
         <Label customStyles={customLabelStyles}>Source</Label>
         <RadioGroup
-          name="dataSourceType"
+          name="type"
           customStyles={customRadioGroupStyles}
           customLabelStyles={customRadioButtonStyles}
           value={this.state.dataSourceType}
           onChange={this.handleChange}
         >
-          <RadioButton label="Csv" value="csv" id="csv">
+          <RadioButton label="Spreadsheet" value="file" id="file">
             <Button customStyles={customButtonStyles} type="button">
               <CsvIcon />
             </Button>
