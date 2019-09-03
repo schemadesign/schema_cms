@@ -120,9 +120,8 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         )
 
     def get_original_file_name(self):
-        full_file_name = self.file.name.split("/")[-1]
-        name, ext = full_file_name.split(".")
-        return name, full_file_name
+        name, ext = os.path.splitext(os.path.basename(self.file.name))
+        return name, os.path.basename(self.file.name)
 
     @staticmethod
     def get_preview_data(data_frame):
