@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { containerStyles, columnStyles, rowStyles } from './dataGrid.styles';
 import { Grid } from '../grid';
 
+const SCREEN_WIDTH_PERCENT = '100';
+
 export class DataGrid extends PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired,
@@ -19,7 +21,7 @@ export class DataGrid extends PureComponent {
     const sumSize = this.props.data.columns.reduce(this.reduceSizeSum, 0);
     const sizedItemsCount = this.props.data.columns.filter(this.filterSizedItems).length;
 
-    return size ? size : (100 - sumSize) / (this.props.data.columns.length - sizedItemsCount);
+    return size ? size : (SCREEN_WIDTH_PERCENT - sumSize) / (this.props.data.columns.length - sizedItemsCount);
   };
 
   calculateCellWidth = ({ name, size }) => {
