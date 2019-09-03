@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { containerStyles, columnStyles, rowStyles } from './dataGrid.styles';
 import { Grid } from '../grid';
 
-const SCREEN_WIDTH_PERCENT = '100';
+const SCREEN_WIDTH_PERCENT = 100;
 
 export class DataGrid extends PureComponent {
   static propTypes = {
