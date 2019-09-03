@@ -104,7 +104,7 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
                 datasource=self, defaults={"fields": fields, "items": items}
             )
 
-            filename = self.get_original_file_name()
+            filename, _ = self.get_original_file_name()
             meta.preview.save(f"preview_{filename}.json", preview_json)
             self.status = constants.DataSourceStatus.DONE
             self.save()
@@ -120,9 +120,9 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         )
 
     def get_original_file_name(self):
-        file_name = self.file.name.split("/")[-1]
-        file, ext = file_name.split(".")
-        return file
+        full_file_name = self.file.name.split("/")[-1]
+        name, ext = full_file_name.split(".")
+        return name, full_file_name
 
     @staticmethod
     def get_preview_data(data_frame):
