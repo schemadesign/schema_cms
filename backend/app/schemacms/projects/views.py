@@ -62,5 +62,6 @@ class DataSourceViewSet(viewsets.ModelViewSet):
         except Exception as e:
             logging.error(f"DataSource {self.get_object().id} processing error - {e}")
             self.get_object().status = constants.DataSourceStatus.ERROR
+            self.get_object().save()
             return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
