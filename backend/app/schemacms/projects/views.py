@@ -55,7 +55,7 @@ class DataSourceViewSet(viewsets.ModelViewSet):
     @decorators.action(detail=True, methods=["post"])
     def process(self, request, pk=None, **kwargs):
         try:
-            self.get_object().update_meta()
+            self.get_object().preview_process()
             logging.info(f"DataSource {self.get_object().id} processing DONE")
             return response.Response(status=status.HTTP_200_OK)
 

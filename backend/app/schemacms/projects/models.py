@@ -82,6 +82,9 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
+    def preview_process(self):
+        self.update_meta()
+
     def update_meta(self):
         data_frame = read_csv(self.file.path, sep=None, engine='python')
         items, fields = data_frame.shape
@@ -122,11 +125,11 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         return file
 
     @staticmethod
-    def get_preview_data(data_farame):
-        table_preview = json.loads(data_farame.head(5).to_json(orient="records"))
-        fields_info = json.loads(data_farame.describe(include="all", percentiles=[]).to_json(orient="columns"))
+    def get_preview_data(data_frame):
+        table_preview = json.loads(data_frame.head(5).to_json(orient="records"))
+        fields_info = json.loads(data_frame.describe(include="all", percentiles=[]).to_json(orient="columns"))
 
-        for key, value in dict(data_farame.dtypes).items():
+        for key, value in dict(data_frame.dtypes).items():
             fields_info[key]["dtype"] = value.name
 
         return table_preview, fields_info
