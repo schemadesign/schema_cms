@@ -12,7 +12,7 @@ from schemacms.users import constants as user_constants
 from schemacms.projects import (
     constants as projects_constants,
     serializers as projects_serializers,
-    models as projects_models
+    models as projects_models,
 )
 
 
@@ -143,8 +143,9 @@ class TestListDataSourceView:
         assert response.status_code == status.HTTP_200_OK
         assert (
             response.data["results"]
-            == projects_serializers.DataSourceSerializer(self.sort_data_sources(data_sources), many=True,
-                                                         context={'request': request}).data
+            == projects_serializers.DataSourceSerializer(
+                self.sort_data_sources(data_sources), many=True, context={"request": request}
+            ).data
         )
 
     def test_404_on_list_projects_for_non_authenticate_user(self, api_client, project):
@@ -167,8 +168,9 @@ class TestListDataSourceView:
         assert user1_response.data["count"] == len(data_sources)
         assert (
             user1_response.data["results"]
-            == projects_serializers.DataSourceSerializer(self.sort_data_sources(data_sources), many=True,
-                                                         context={'request': request}).data
+            == projects_serializers.DataSourceSerializer(
+                self.sort_data_sources(data_sources), many=True, context={"request": request}
+            ).data
         )
 
     def test_editor_cannot_access_to_not_assigned_projects_data_sources(
@@ -207,24 +209,24 @@ class TestListDataSourceView:
 class TestCreateDraftDataSourceView:
     def test_empty_payload(self, api_client, admin, project):
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(project.id), dict(), format='multipart')
+        response = api_client.post(self.get_url(project.id), dict(), format="multipart")
 
         assert response.status_code == status.HTTP_201_CREATED
 
     def test_upload_file(self, api_client, admin, project, faker):
-        payload = dict(file=faker.csv_upload_file(filename='test.csv'))
+        payload = dict(file=faker.csv_upload_file(filename="test.csv"))
 
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(project.id), payload, format='multipart')
-        dsource = projects_models.DataSource.objects.get(id=response.data['id'])
+        response = api_client.post(self.get_url(project.id), payload, format="multipart")
+        dsource = projects_models.DataSource.objects.get(id=response.data["id"])
         correct_path = os.path.join(
             dsource.file.storage.location,
             f"{settings.STORAGE_DIR}/projects",
-            f"{dsource.project_id}/datasources/{dsource.id}/test.csv"
+            f"{dsource.project_id}/datasources/{dsource.id}/test.csv",
         )
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert response.data['file'] == f"http://testserver/{correct_path.lstrip('/')}"
+        assert response.data["file"] == f"http://testserver/{correct_path.lstrip('/')}"
 
     @staticmethod
     def get_url(project_pk):
@@ -236,13 +238,11 @@ class TestUpdateDraftDataSourceView:
         data_source = data_source_factory(draft=True)
         url = self.get_url(data_source_pk=data_source.pk, project_pk=data_source.project_id)
         payload = dict(
-            name=faker.word(),
-            type=projects_constants.DataSourceType.FILE,
-            file=faker.csv_upload_file()
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
         )
 
         api_client.force_authenticate(admin)
-        response = api_client.put(url, payload, format='multipart')
+        response = api_client.put(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_200_OK
 
@@ -252,14 +252,15 @@ class TestUpdateDraftDataSourceView:
         payload = dict()
 
         api_client.force_authenticate(admin)
-        response = api_client.put(url, payload, format='multipart')
+        response = api_client.put(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data.keys() == {"name", "type", "file"}
 
     def test_url(self, data_source):
         assert f"/api/v1/projects/{data_source.project_id}/datasources/{data_source.pk}" == self.get_url(
-            data_source_pk=data_source.pk, project_pk=data_source.project_id)
+            data_source_pk=data_source.pk, project_pk=data_source.project_id
+        )
 
     @staticmethod
     def get_url(data_source_pk, project_pk):

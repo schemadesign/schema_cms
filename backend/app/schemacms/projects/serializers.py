@@ -17,14 +17,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DataSource
-        fields = (
-            'id',
-            'name',
-            'type',
-            'status',
-            'file',
-            'meta_data',
-        )
+        fields = ("id", "name", "type", "status", "file", "meta_data")
         extra_kwargs = {
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},
@@ -38,14 +31,7 @@ class DraftDataSourceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DataSource
-        fields = (
-            'id',
-            'name',
-            'type',
-            'status',
-            'file',
-            'meta_data',
-        )
+        fields = ("id", "name", "type", "status", "file", "meta_data")
         extra_kwargs = {
             "name": {"required": False, "allow_null": True},
             "type": {"required": False, "allow_null": True},

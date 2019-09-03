@@ -1,16 +1,6 @@
-from rest_framework import (
-    decorators,
-    exceptions,
-    permissions,
-    response,
-    viewsets,
-)
+from rest_framework import decorators, exceptions, permissions, response, viewsets
 
-from . import (
-    models,
-    serializers,
-    permissions as projects_permissions,
-)
+from . import models, serializers, permissions as projects_permissions
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -24,11 +14,11 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
 class DataSourceViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.order_by('-created')
+    queryset = models.DataSource.objects.order_by("-created")
     permission_classes = (
         permissions.IsAuthenticated,
         projects_permissions.IsAdminOrReadOnly,
-        projects_permissions.HasProjectPermission
+        projects_permissions.HasProjectPermission,
     )
 
     def initial(self, request, *args, **kwargs):
@@ -36,7 +26,7 @@ class DataSourceViewSet(viewsets.ModelViewSet):
         super().initial(request, *args, **kwargs)
 
     def get_serializer_class(self):
-        if self.action == 'create':
+        if self.action == "create":
             return serializers.DraftDataSourceSerializer
         return super().get_serializer_class()
 
@@ -55,13 +45,8 @@ class DataSourceViewSet(viewsets.ModelViewSet):
         except KeyError:
             raise exceptions.NotFound("Invalid project ID")
 
-    @decorators.action(detail=True, methods=['get'])
+    @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         table_preview, fields_info = self.get_object().get_preview_data()
 
-        return response.Response(
-            {
-                "data": table_preview,
-                "fields": fields_info
-            }
-        )
+        return response.Response({"data": table_preview, "fields": fields_info})

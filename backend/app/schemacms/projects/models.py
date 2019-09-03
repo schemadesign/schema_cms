@@ -49,7 +49,7 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
 
 class DataSourceManager(models.Manager):
     def create(self, *args, **kwargs):
-        file = kwargs.pop('file', None)
+        file = kwargs.pop("file", None)
         dsource = super().create(*args, **kwargs)
 
         if file:
@@ -66,8 +66,7 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         max_length=25, choices=constants.DATA_SOURCE_STATUS_CHOICES, default=constants.DataSourceStatus.DRAFT
     )
     file = models.FileField(
-        null=True,
-        upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
+        null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
     )
 
     objects = DataSourceManager()
@@ -77,7 +76,7 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         return self.name or str(self.id)
 
     class Meta:
-        unique_together = ('name', 'project', )
+        unique_together = ("name", "project")
 
     def save(self, *args, **kwargs):
         with transaction.atomic():
@@ -104,11 +103,8 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
     def get_preview_data(self):
         data = read_csv(self.file.path, sep=None)
 
-        table_preview = json.loads(data.head(5).to_json(orient='records'))
-        fields_info = json.loads(data.describe(
-            include='all',
-            percentiles=[]
-        ).to_json(orient='columns'))
+        table_preview = json.loads(data.head(5).to_json(orient="records"))
+        fields_info = json.loads(data.describe(include="all", percentiles=[]).to_json(orient="columns"))
 
         for key, value in dict(data.dtypes).items():
             fields_info[key]["dtype"] = value.name

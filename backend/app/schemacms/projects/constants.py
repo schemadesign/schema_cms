@@ -25,13 +25,13 @@ DATA_SOURCE_TYPE_CHOICES = (
 
 
 class DataSourceStatus:
-    DRAFT = 'draft'
-    PROCESSING = 'processing'
-    DONE = 'done'
+    DRAFT = "draft"
+    PROCESSING = "processing"
+    DONE = "done"
 
 
 DATA_SOURCE_STATUS_CHOICES = (
-    (DataSourceStatus.DRAFT, 'draft'),
-    (DataSourceStatus.PROCESSING, 'processing'),
-    (DataSourceStatus.DONE, 'done'),
+    (DataSourceStatus.DRAFT, "draft"),
+    (DataSourceStatus.PROCESSING, "processing"),
+    (DataSourceStatus.DONE, "done"),
 )

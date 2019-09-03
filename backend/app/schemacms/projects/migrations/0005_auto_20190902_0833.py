@@ -7,24 +7,28 @@ import schemacms.projects.models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('projects', '0004_auto_20190829_1116'),
-    ]
+    dependencies = [("projects", "0004_auto_20190829_1116")]
 
     operations = [
         migrations.AlterField(
-            model_name='datasource',
-            name='file',
-            field=models.FileField(null=True, upload_to=schemacms.projects.models.file_upload_path, validators=[django.core.validators.FileExtensionValidator(allowed_extensions=['csv'])]),
+            model_name="datasource",
+            name="file",
+            field=models.FileField(
+                null=True,
+                upload_to=schemacms.projects.models.file_upload_path,
+                validators=[django.core.validators.FileExtensionValidator(allowed_extensions=["csv"])],
+            ),
         ),
         migrations.AlterField(
-            model_name='datasource',
-            name='name',
-            field=models.CharField(max_length=25, null=True),
+            model_name="datasource", name="name", field=models.CharField(max_length=25, null=True)
         ),
         migrations.AlterField(
-            model_name='datasource',
-            name='status',
-            field=models.CharField(choices=[('draft', 'draft'), ('processing', 'processing'), ('done', 'done')], default='draft', max_length=25),
+            model_name="datasource",
+            name="status",
+            field=models.CharField(
+                choices=[("draft", "draft"), ("processing", "processing"), ("done", "done")],
+                default="draft",
+                max_length=25,
+            ),
         ),
     ]

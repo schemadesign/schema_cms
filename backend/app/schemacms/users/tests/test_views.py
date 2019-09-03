@@ -69,14 +69,14 @@ class TestMeResetPasswordView:
     def test_response(self, api_client, user, mocker, faker):
         redirect_url = faker.url()
         mocker.patch(
-            'schemacms.users.backend_management.user_mgtm_backend.password_change_url',
+            "schemacms.users.backend_management.user_mgtm_backend.password_change_url",
             return_value=redirect_url,
         )
         api_client.force_authenticate(user)
         response = api_client.get(self._url)
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == {'ticket': redirect_url}
+        assert response.data == {"ticket": redirect_url}
 
     def test_unauthorized(self, api_client):
         response = api_client.get(self._url)
@@ -84,8 +84,8 @@ class TestMeResetPasswordView:
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
     def test_url(self):
-        assert '/api/v1/users/me/reset-password' == self._url
+        assert "/api/v1/users/me/reset-password" == self._url
 
     @property
     def _url(self):
-        return urls.reverse('me-reset-password')
+        return urls.reverse("me-reset-password")

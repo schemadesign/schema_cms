@@ -27,36 +27,36 @@ class TestAssociateByExternalId:
     def test_return_value(self, user, backend):
         backend.strategy.storage.user.get_user.return_value = user
 
-        ret = pipeline.associate_by_external_id(backend=backend, details={'user_id': 'auth0|123'})
+        ret = pipeline.associate_by_external_id(backend=backend, details={"user_id": "auth0|123"})
 
-        assert ret == {'user': user, 'is_new': False}
+        assert ret == {"user": user, "is_new": False}
 
     def test_user_not_found(self, user, backend):
         backend.strategy.storage.user.get_user.return_value = None
 
-        ret = pipeline.associate_by_external_id(backend=backend, details={'user_id': 'auth0|123'})
+        ret = pipeline.associate_by_external_id(backend=backend, details={"user_id": "auth0|123"})
 
-        assert ret == {'user': None, 'is_new': False}
+        assert ret == {"user": None, "is_new": False}
 
-    @pytest.mark.parametrize('details', [dict(user_id=''), dict()])
+    @pytest.mark.parametrize("details", [dict(user_id=""), dict()])
     def test_without_external_id(self, user, backend, details):
         backend.strategy.storage.user.get_user.return_value = user
 
         ret = pipeline.associate_by_external_id(backend=backend, details=details)
 
-        assert ret == {'user': None, 'is_new': False}
+        assert ret == {"user": None, "is_new": False}
 
 
 class TestUpdateExternalId:
     def test_update_external_id(self, backend, user_factory):
-        user = user_factory(source=users_constants.UserSource.UNDEFINED, external_id='')
-        details = {'user_id': 'auth0|123'}
+        user = user_factory(source=users_constants.UserSource.UNDEFINED, external_id="")
+        details = {"user_id": "auth0|123"}
 
         pipeline.update_external_id(backend=backend, details=details, user=user)
 
         backend.strategy.storage.user.changed.assert_called_with(user)
         assert user.source == users_constants.UserSource.AUTH0
-        assert user.external_id == details['user_id']
+        assert user.external_id == details["user_id"]
 
     def test_without_user(self, backend):
         assert pipeline.update_external_id(backend=backend, details={}, user=None) is None
@@ -64,7 +64,7 @@ class TestUpdateExternalId:
     def test_set_user_is_active_flag(self, backend, user_factory):
         user = user_factory(is_active=False, last_login=None)
 
-        pipeline.update_external_id(backend=backend, details={'email_verified': True}, user=user)
+        pipeline.update_external_id(backend=backend, details={"email_verified": True}, user=user)
 
         assert user.is_active is True
 

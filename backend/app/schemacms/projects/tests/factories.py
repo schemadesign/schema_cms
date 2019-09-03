@@ -30,8 +30,10 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
     name = factory.Faker("text", max_nb_chars=project_constants.DATASOURCE_NAME_MAX_LENGTH)
     project = factory.SubFactory(ProjectFactory)
     type = project_constants.DataSourceType.FILE
-    meta_data = factory.RelatedFactory('schemacms.projects.tests.factories.DataSourceMetaFactory', 'datasource')
-    file = factory.django.FileField(filename='test.csv', from_func=make_csv)
+    meta_data = factory.RelatedFactory(
+        "schemacms.projects.tests.factories.DataSourceMetaFactory", "datasource"
+    )
+    file = factory.django.FileField(filename="test.csv", from_func=make_csv)
 
     class Params:
         draft = factory.Trait(type=project_constants.DataSourceStatus.DRAFT)
@@ -43,5 +45,5 @@ class DataSourceMetaFactory(factory.django.DjangoModelFactory):
         django_get_or_create = ("datasource",)
 
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
-    items = factory.Faker('pyint', min_value=0, max_value=9999)
-    fields = factory.Faker('pyint', min_value=0, max_value=20)
+    items = factory.Faker("pyint", min_value=0, max_value=9999)
+    fields = factory.Faker("pyint", min_value=0, max_value=20)

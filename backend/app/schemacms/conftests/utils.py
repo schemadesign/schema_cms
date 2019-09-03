@@ -22,10 +22,9 @@ class CSVProvider(faker.providers.BaseProvider):
     def csv_data(self, cols_num=3, rows_num=1):
         return make_csv(cols_num=cols_num, rows_num=rows_num).getvalue()
 
-    def csv_upload_file(self, filename='test.csv', cols_num=3, rows_num=1):
+    def csv_upload_file(self, filename="test.csv", cols_num=3, rows_num=1):
         return base.ContentFile(
-            content=make_csv(cols_num=cols_num, rows_num=rows_num).getvalue(),
-            name=filename
+            content=make_csv(cols_num=cols_num, rows_num=rows_num).getvalue(), name=filename
         )
 
 
@@ -39,4 +38,3 @@ def faker():
     fake = faker_.Faker()
     fake.add_provider(CSVProvider)
     return fake
-

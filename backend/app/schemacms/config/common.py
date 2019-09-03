@@ -121,7 +121,7 @@ class Common(Configuration):
         "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     )
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-    STORAGE_DIR = os.getenv('DJANGO_STORAGE_DIR', '/storage')
+    STORAGE_DIR = os.getenv("DJANGO_STORAGE_DIR", "/storage")
 
     # Media files
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), "/")
@@ -237,14 +237,11 @@ class Common(Configuration):
         # Send a validation email to the user to verify its email address.
         # Disabled by default.
         # 'social_core.pipeline.mail.mail_validation',
-
         # Try to fetch user by authorization service external user ID
-        'schemacms.authorization.pipeline.associate_by_external_id',
-
+        "schemacms.authorization.pipeline.associate_by_external_id",
         # Associates the current social details with another user account with
         # a similar email address. Disabled by default.
-        'social_core.pipeline.social_auth.associate_by_email',
-
+        "social_core.pipeline.social_auth.associate_by_email",
         # Create a user account if we haven't found one yet.
         "social_core.pipeline.user.create_user",
         # Create the record that associates the social account with the user.

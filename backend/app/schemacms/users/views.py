@@ -1,15 +1,5 @@
-from rest_framework import (
-    decorators,
-    mixins,
-    permissions,
-    response,
-    viewsets,
-)
-from . import (
-    models as user_models,
-    permissions as user_permissions,
-    serializers as user_serializers
-)
+from rest_framework import decorators, mixins, permissions, response, viewsets
+from . import models as user_models, permissions as user_permissions, serializers as user_serializers
 from .backend_management import user_mgtm_backend
 
 
@@ -33,8 +23,9 @@ class MeViewSet(viewsets.GenericViewSet):
         serializer = self.get_serializer(instance)
         return response.Response(serializer.data)
 
-    @decorators.action(detail=False, permission_classes=(permissions.IsAuthenticated,),
-                       url_path='reset-password')
+    @decorators.action(
+        detail=False, permission_classes=(permissions.IsAuthenticated,), url_path="reset-password"
+    )
     def reset_password(self, request):
         url = user_mgtm_backend.password_change_url(user=request.user)
-        return response.Response({'ticket': url})
+        return response.Response({"ticket": url})
