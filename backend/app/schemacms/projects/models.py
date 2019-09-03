@@ -83,7 +83,6 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         with transaction.atomic():
             super().save(*args, **kwargs)
             if self.file:
-                self.file.seek(0)
                 self.update_meta()
 
     def update_meta(self):
