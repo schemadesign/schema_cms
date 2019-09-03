@@ -40,4 +40,30 @@ describe('DataSource: redux', () => {
       expect(resultState.dataSource).to.deep.equal({});
     });
   });
+
+  describe('when CREATE/SUCCESS action is received', () => {
+    it('should set dataSource ', () => {
+      const dataSource = [{ id: 1 }];
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.create.success(dataSource));
+
+      expect(resultState.dataSource).to.deep.equal(dataSource);
+    });
+  });
+
+  describe('when FETCH_ONE/SUCCESS action is received', () => {
+    it('should set dataSource ', () => {
+      const dataSource = [{ id: 1 }];
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchOne.success(dataSource));
+
+      expect(resultState.dataSource).to.deep.equal(dataSource);
+    });
+  });
+
+  describe('when UNMOUNT_ONE/SUCCESS action is received', () => {
+    it('should unmount dataSource ', () => {
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.unmountOne.success());
+
+      expect(resultState.dataSource).to.deep.equal({});
+    });
+  });
 });
