@@ -28,10 +28,12 @@ class DataSourceStatus:
     DRAFT = "draft"
     PROCESSING = "processing"
     DONE = "done"
+    ERROR = "error"
 
 
 DATA_SOURCE_STATUS_CHOICES = (
     (DataSourceStatus.DRAFT, "draft"),
     (DataSourceStatus.PROCESSING, "processing"),
     (DataSourceStatus.DONE, "done"),
+    (DataSourceStatus.ERROR, "error")
 )

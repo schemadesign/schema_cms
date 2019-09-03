@@ -9,7 +9,7 @@ from .models import DataSource, DataSourceMeta, Project
 class DataSourceMetaSerializer(serializers.ModelSerializer):
     class Meta:
         model = DataSourceMeta
-        fields = ("items", "fields")
+        fields = ("items", "fields", "preview")
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
