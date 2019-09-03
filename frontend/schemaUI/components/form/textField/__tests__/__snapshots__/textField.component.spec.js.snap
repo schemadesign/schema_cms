@@ -4,10 +4,26 @@ exports[`TextField: Component should render correctly 1`] = `
 <div
   style={
     Object {
-      "border": "1px solid blue",
+      "display": "flex",
+      "flexDirection": "column",
+      "maxWidth": "320px",
+      "padding": "5px 0 30px",
+      "position": "relative",
     }
   }
 >
-  TextField component
+  <Input
+    customStyles={Object {}}
+    type="text"
+  />
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
 </div>
 `;

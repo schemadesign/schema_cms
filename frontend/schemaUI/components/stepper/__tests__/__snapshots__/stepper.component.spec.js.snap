@@ -4,10 +4,8 @@ exports[`Stepper: Component should render correctly 1`] = `
 <div
   style={
     Object {
-      "containerStyles": Object {
-        "display": "flex",
-        "flexDirection": "row",
-      },
+      "display": "flex",
+      "flexDirection": "row",
     }
   }
 >
@@ -109,10 +107,7 @@ exports[`Stepper: Component should render with custom styles 1`] = `
 <div
   style={
     Object {
-      "containerStyles": Object {
-        "display": "flex",
-        "flexDirection": "row",
-      },
+      "display": "flex",
       "flexDirection": "column",
     }
   }
