@@ -121,7 +121,7 @@ class Common(Configuration):
         "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     )
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-    STORAGE_DIR = os.getenv('DJANGO_STORAGE_DIR', 'storage')
+    STORAGE_DIR = os.getenv('DJANGO_STORAGE_DIR', '/storage')
 
     # Media files
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), "/")

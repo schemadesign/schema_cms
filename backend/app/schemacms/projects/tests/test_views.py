@@ -1,8 +1,8 @@
-import collections
 import operator
+import os
 
-import django.core.files
 import django.core.files.base
+from django.conf import settings
 from rest_framework import exceptions
 from django.urls import reverse
 from rest_framework import status
@@ -10,7 +10,6 @@ from rest_framework import status
 import pytest
 
 from schemacms.users import constants as user_constants
-from schemacms.projects import constants as projects_constants
 from schemacms.projects import serializers as projects_serializers
 from schemacms.projects import models as projects_models
 
@@ -132,16 +131,18 @@ class TestRetrieveUpdateDeleteProjectView:
 
 
 class TestListDataSourceView:
-    def test_list_for_authenticate_admin_user(self, api_client, admin, project, data_source_factory):
+    def test_list_for_authenticate_admin_user(self, api_client, rf, admin, project, data_source_factory):
         data_sources = data_source_factory.create_batch(2, project=project)
 
+        request = rf.get(self.get_url(project.id))
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(project.id))
 
         assert response.status_code == status.HTTP_200_OK
         assert (
             response.data["results"]
-            == projects_serializers.DataSourceSerializer(self.sort_data_sources(data_sources), many=True).data
+            == projects_serializers.DataSourceSerializer(self.sort_data_sources(data_sources), many=True,
+                                                         context={'request': request}).data
         )
 
     def test_404_on_list_projects_for_non_authenticate_user(self, api_client, project):
@@ -150,12 +151,13 @@ class TestListDataSourceView:
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
     def test_editor_can_list_only_assign_projects_data_sources(
-        self, api_client, user_factory, project_factory, data_source_factory
+        self, api_client, rf, user_factory, project_factory, data_source_factory
     ):
         user1, user2 = user_factory.create_batch(2, editor=True)
         user1_project = project_factory(editors=[user1])
         data_sources = data_source_factory.create_batch(2, project=user1_project)
 
+        request = rf.get(self.get_url(user1_project.id))
         api_client.force_authenticate(user1)
         user1_response = api_client.get(self.get_url(user1_project.id))
 
@@ -163,7 +165,8 @@ class TestListDataSourceView:
         assert user1_response.data["count"] == len(data_sources)
         assert (
             user1_response.data["results"]
-            == projects_serializers.DataSourceSerializer(self.sort_data_sources(data_sources), many=True).data
+            == projects_serializers.DataSourceSerializer(self.sort_data_sources(data_sources), many=True,
+                                                         context={'request': request}).data
         )
 
     def test_editor_cannot_access_to_not_assigned_projects_data_sources(
@@ -211,10 +214,15 @@ class TestCreateDraftDataSourceView:
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(project.id), payload, format='multipart')
+        dsource = projects_models.DataSource.objects.get(id=response.data['id'])
+        correct_path = os.path.join(
+            dsource.file.storage.location,
+            f"{settings.STORAGE_DIR}/projects",
+            f"{dsource.project_id}/datasources/{dsource.id}/test.csv"
+        )
 
         assert response.status_code == status.HTTP_201_CREATED
-        expected_file_path = f"projects/{project.id}/datasources/{response.data['id']}/test.csv"
-        assert response.data['file'] == f"http://localhost:8000/app/schemacms/test-media/storage/{expected_file_path}"
+        assert response.data['file'] == f"http://testserver/{correct_path.lstrip('/')}"
 
     @staticmethod
     def get_url(project_pk):

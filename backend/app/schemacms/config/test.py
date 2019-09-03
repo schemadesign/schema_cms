@@ -21,7 +21,3 @@ class Test(Common):
 
     # Use fast password hasher so tests run faster
     PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]
-
-    MEDIA_ROOT = os.path.join(BASE_DIR, "test-media")
-
-    DEFAULT_FILE_STORAGE = "schemacms.utils.test.InMemoryStorage"

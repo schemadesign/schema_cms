@@ -87,7 +87,7 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
                 self.update_meta()
 
     def update_meta(self):
-        items, fields = read_csv(self.file).shape
+        items, fields = read_csv(self.file.path).shape
         meta, _ = DataSourceMeta.objects.update_or_create(
             datasource=self, defaults={"fields": fields, "items": items}
         )

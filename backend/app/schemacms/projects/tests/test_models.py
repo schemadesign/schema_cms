@@ -47,16 +47,16 @@ class TestDataSourceModelMethods:
         assert dsource.meta_data.fields == fields
         assert dsource.meta_data.items == items
 
-    def test_updating_meta(self, datasource):
+    def test_updating_meta(self, data_source):
         cols_number = 4
         rows_number = 3
         new_file = make_csv(cols_number, rows_number)
 
-        datasource.file.save('new_file.csv', new_file)
-        datasource.refresh_from_db()
+        data_source.file.save('new_file.csv', new_file)
+        data_source.refresh_from_db()
 
-        assert datasource.meta_data.fields == cols_number
-        assert datasource.meta_data.items == rows_number
+        assert data_source.meta_data.fields == cols_number
+        assert data_source.meta_data.items == rows_number
 
     def test_get_preview(self, data_source):
         source_file = read_csv(data_source.file.path)

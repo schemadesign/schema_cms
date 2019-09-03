@@ -26,7 +26,6 @@ class ProjectFactory(factory.django.DjangoModelFactory):
 class DataSourceFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = "projects.DataSource"
-        django_get_or_create = ("name", "project")
 
     name = factory.Faker("text", max_nb_chars=project_constants.DATASOURCE_NAME_MAX_LENGTH)
     project = factory.SubFactory(ProjectFactory)
