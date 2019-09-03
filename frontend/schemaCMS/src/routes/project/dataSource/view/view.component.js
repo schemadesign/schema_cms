@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Stepper } from 'schemaUI';
+import { always, cond, equals, T } from 'ramda';
 
-import { Container } from './view.styles';
+import { Container, StepperContainer, stepperStyles } from './view.styles';
+import { Source } from './source';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -16,6 +19,10 @@ export class View extends PureComponent {
     }).isRequired,
   };
 
+  state = {
+    activeStep: 1,
+  };
+
   componentDidMount() {
     if (!this.props.dataSource.id) {
       const { projectId, dataSourceId } = this.props.match.params;
@@ -28,7 +35,23 @@ export class View extends PureComponent {
     this.props.unmountDataSource();
   }
 
+  handleStepChange = activeStep => this.setState({ activeStep });
+
+  renderContent = cond([[equals(1), always(<Source dataSource={this.props.dataSource} />)], [T, always(null)]]);
+
   render() {
-    return <Container>View component</Container>;
+    return (
+      <Container>
+        {this.renderContent(this.state.activeStep)}
+        <StepperContainer>
+          <Stepper
+            activeStep={this.state.activeStep}
+            steps={6}
+            customStyles={stepperStyles}
+            onStepChange={this.handleStepChange}
+          />
+        </StepperContainer>
+      </Container>
+    );
   }
 }

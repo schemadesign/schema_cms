@@ -1,22 +1,21 @@
 import React, { PureComponent } from 'react';
-import { Button, Form, Header, Icons, Stepper, Typography } from 'schemaUI';
+import { Button, Form as FormComponents, Header, Icons, Typography } from 'schemaUI';
 import { always, cond, equals, path, T } from 'ramda';
 
 import {
   Container,
-  StepperContainer,
   customButtonStyles,
   customLabelStyles,
   customRadioButtonStyles,
   customRadioGroupStyles,
-  stepperStyles,
-} from './create.styles';
+  Form,
+} from './source.styles';
 
-const { TextField, RadioGroup, RadioButton, Label, FileUpload } = Form;
+const { TextField, RadioGroup, RadioButton, Label, FileUpload } = FormComponents;
 const { H1, H2 } = Typography;
 const { CsvIcon } = Icons;
 
-export class Create extends PureComponent {
+export class Source extends PureComponent {
   static propTypes = {};
 
   state = {
@@ -54,7 +53,7 @@ export class Create extends PureComponent {
           <H2>Create Data Source</H2>
           <H1>Source</H1>
         </Header>
-        <form onSubmit={e => e.preventDefault}>
+        <Form onSubmit={e => e.preventDefault}>
           <TextField label="Name" name="Name" defaultValue="My New Dataset" fullWidth />
           <Label customStyles={customLabelStyles}>Source</Label>
           <RadioGroup
@@ -71,14 +70,12 @@ export class Create extends PureComponent {
             </RadioButton>
           </RadioGroup>
           {this.renderSourceUpload(this.state.dataSourceType)}
-        </form>
-        <div>
-          <Button type="button">Cancel</Button>
-          <Button type="submit">Next</Button>
-        </div>
-        <StepperContainer>
-          <Stepper activeStep={1} steps={6} customStyles={stepperStyles} />
-        </StepperContainer>
+
+          <div>
+            <Button type="button">Cancel</Button>
+            <Button type="submit">Next</Button>
+          </div>
+        </Form>
       </Container>
     );
   }

@@ -4,9 +4,7 @@ export const Container = styled.div`
   padding: 0 20px;
 `;
 
-export const StepperContainer = styled.div`
-  display: flex;
-`;
+export const Form = styled.form``;
 
 export const customButtonStyles = {
   backgroundColor: '#1D1D20',

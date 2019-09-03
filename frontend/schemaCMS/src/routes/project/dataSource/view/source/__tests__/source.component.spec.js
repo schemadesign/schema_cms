@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Create } from '../create.component';
+import { Source } from '../source.component';
 
-describe('Create: Component', () => {
+describe('Source: Component', () => {
   const defaultProps = {};
 
-  const component = props => <Create {...defaultProps} {...props} />;
+  const component = props => <Source {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
