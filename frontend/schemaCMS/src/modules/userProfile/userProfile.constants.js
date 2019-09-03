@@ -1,8 +1,8 @@
 import * as Yup from 'yup';
 
 export const USER_PROFILE_FORM = 'user_profile_form';
-export const FIRST_NAME = 'first_name';
-export const LAST_NAME = 'last_name';
+export const FIRST_NAME = 'firstName';
+export const LAST_NAME = 'lastName';
 export const EMAIL = 'email';
 
 export const INITIAL_VALUES = {
