@@ -29,6 +29,7 @@ export class View extends PureComponent {
   state = {
     activeStep: INITIAL_STEP,
     steps: MAX_STEPS,
+    steps: 6,
   };
 
   componentDidMount() {
