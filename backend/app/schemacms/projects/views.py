@@ -1,6 +1,6 @@
 import json
 
-from rest_framework import decorators, exceptions, permissions, response, viewsets
+from rest_framework import decorators, exceptions, permissions, response, status, viewsets
 
 from . import models, serializers, permissions as projects_permissions
 
@@ -50,3 +50,8 @@ class DataSourceViewSet(viewsets.ModelViewSet):
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         return response.Response(json.loads(self.get_object().meta_data.preview.read()))
+
+    @decorators.action(detail=True, methods=["post"])
+    def process(self, request, pk=None, **kwargs):
+        self.get_object().update_meta()
+        return response.Response(status=status.HTTP_200_OK)

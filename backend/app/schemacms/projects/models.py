@@ -80,10 +80,7 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         unique_together = ("name", "project")
 
     def save(self, *args, **kwargs):
-        with transaction.atomic():
-            super().save(*args, **kwargs)
-            if self.file:
-                self.update_meta()
+        super().save(*args, **kwargs)
 
     def update_meta(self):
         data_frame = read_csv(self.file.path, sep=None, engine='python')
@@ -99,12 +96,15 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
             indent=4
         )
 
-        meta, _ = DataSourceMeta.objects.update_or_create(
-            datasource=self, defaults={"fields": fields, "items": items}
-        )
+        with transaction.atomic():
+            meta, _ = DataSourceMeta.objects.update_or_create(
+                datasource=self, defaults={"fields": fields, "items": items}
+            )
 
-        filename = self.get_original_file_name()
-        meta.preview.save(f"preview_{filename}.json", preview_json)
+            filename = self.get_original_file_name()
+            meta.preview.save(f"preview_{filename}.json", preview_json)
+            self.status = constants.DataSourceStatus.DONE
+            self.save()
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location

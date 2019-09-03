@@ -42,6 +42,7 @@ class TestDataSourceModelMethods:
     def test_creating_meta(self):
         filename = "file_path_test.csv"
         dsource = self.create_dsource(filename)
+        dsource.update_meta()
 
         items, fields = read_csv(dsource.file.path).shape
 
@@ -57,6 +58,7 @@ class TestDataSourceModelMethods:
 
         data_source.file.save("new_file.csv", new_file)
         data_source.refresh_from_db()
+        data_source.update_meta()
 
         assert data_source.meta_data.fields == cols_number
         assert data_source.meta_data.items == rows_number

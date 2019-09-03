@@ -35,6 +35,11 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
     class Params:
         draft = factory.Trait(type=project_constants.DataSourceStatus.DRAFT)
 
+    @factory.post_generation
+    def meta_data_update(self, create, extracted, **kwargs):
+        if self.file:
+            self.update_meta()
+
 
 class DataSourceMetaFactory(factory.django.DjangoModelFactory):
     class Meta:
