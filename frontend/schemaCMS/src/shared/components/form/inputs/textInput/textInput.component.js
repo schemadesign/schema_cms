@@ -9,10 +9,10 @@ const { TextField } = Form;
 
 export class TextInput extends PureComponent {
   static propTypes = {
-    errors: PropTypes.object.isRequired,
+    errors: PropTypes.object,
     label: PropTypes.string,
     name: PropTypes.string.isRequired,
-    touched: PropTypes.object.isRequired,
+    touched: PropTypes.object,
     value: PropTypes.string,
     onChange: PropTypes.func.isRequired,
   };
