@@ -1,8 +1,9 @@
 import json
+import logging
 
 from rest_framework import decorators, exceptions, permissions, response, status, viewsets
 
-from . import models, serializers, permissions as projects_permissions
+from . import constants, models, serializers, permissions as projects_permissions
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -53,5 +54,13 @@ class DataSourceViewSet(viewsets.ModelViewSet):
 
     @decorators.action(detail=True, methods=["post"])
     def process(self, request, pk=None, **kwargs):
-        self.get_object().update_meta()
-        return response.Response(status=status.HTTP_200_OK)
+        try:
+            self.get_object().update_meta()
+            logging.info(f"DataSource {self.get_object().id} processing DONE")
+            return response.Response(status=status.HTTP_200_OK)
+
+        except Exception as e:
+            logging.error(f"DataSource {self.get_object().id} processing error - {e}")
+            self.get_object().status = constants.DataSourceStatus.ERROR
+            return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
