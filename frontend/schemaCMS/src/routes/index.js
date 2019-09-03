@@ -9,11 +9,13 @@ import { Home } from './home';
 import { NotFound } from './notFound';
 import { AUTH_PATH } from '../shared/utils/api.constants';
 import { Project } from './project';
+import { UserProfile } from './userProfile';
 
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
   PROJECTS: '/project',
+  USER_PROFILE: '/settings',
 };
 
 export default class RootContainer extends Component {
@@ -27,6 +29,8 @@ export default class RootContainer extends Component {
             <AuthRoute exact path={ROUTES.HOME} component={Home} />
 
             <AuthRoute path={ROUTES.PROJECTS} component={Project} />
+
+            <AuthRoute path={ROUTES.USER_PROFILE} component={UserProfile} />
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
