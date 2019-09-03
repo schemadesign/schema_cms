@@ -1,4 +1,5 @@
 import json
+import io
 import os
 
 from pandas import read_csv
@@ -85,10 +86,25 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
                 self.update_meta()
 
     def update_meta(self):
-        items, fields = read_csv(self.file.path).shape
+        data_frame = read_csv(self.file.path, sep=None, engine='python')
+        items, fields = data_frame.shape
+        preview, fields_info = self.get_preview_data(data_frame)
+        preview_json = io.StringIO()
+        json.dump(
+            {
+                "data": preview,
+                "fields": fields_info
+            },
+            preview_json,
+            indent=4
+        )
+
         meta, _ = DataSourceMeta.objects.update_or_create(
             datasource=self, defaults={"fields": fields, "items": items}
         )
+
+        filename = self.get_original_file_name()
+        meta.preview.save(f"preview_{filename}.json", preview_json)
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
@@ -100,13 +116,17 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
             f"{self.project_id}/datasources/{self.id}/{filename}",
         )
 
-    def get_preview_data(self):
-        data = read_csv(self.file.path, sep=None)
+    def get_original_file_name(self):
+        file_name = self.file.name.split("/")[-1]
+        file, ext = file_name.split(".")
+        return file
 
-        table_preview = json.loads(data.head(5).to_json(orient="records"))
-        fields_info = json.loads(data.describe(include="all", percentiles=[]).to_json(orient="columns"))
+    @staticmethod
+    def get_preview_data(data_farame):
+        table_preview = json.loads(data_farame.head(5).to_json(orient="records"))
+        fields_info = json.loads(data_farame.describe(include="all", percentiles=[]).to_json(orient="columns"))
 
-        for key, value in dict(data.dtypes).items():
+        for key, value in dict(data_farame.dtypes).items():
             fields_info[key]["dtype"] = value.name
 
         return table_preview, fields_info
@@ -116,6 +136,16 @@ class DataSourceMeta(models.Model):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
     items = models.PositiveIntegerField()
     fields = models.PositiveSmallIntegerField()
+    preview = models.FileField(null=True, upload_to=file_upload_path)
 
     def __str__(self):
         return f"DataSource {self.datasource} meta"
+
+    def relative_path_to_save(self, filename):
+        base_path = self.preview.storage.location
+
+        return os.path.join(
+            base_path,
+            f"{settings.STORAGE_DIR}/projects",
+            f"{self.datasource.project_id}/datasources/{self.datasource.id}/{filename}",
+        )
