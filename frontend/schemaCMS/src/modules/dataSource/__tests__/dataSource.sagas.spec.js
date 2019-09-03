@@ -1,33 +1,36 @@
 import Immutable from 'seamless-immutable';
-import SagaTester from 'redux-saga-tester';
-import { expect } from 'chai';
+import { expectSaga } from 'redux-saga-test-plan';
+import { OK } from 'http-status-codes';
 
 import { watchDataSource } from '../dataSource.sagas';
 import { DataSourceRoutines } from '../dataSource.redux';
+import mockApi from '../../../shared/utils/mockApi';
+import { DATA_SOURCE_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
 
 describe('DataSource: sagas', () => {
   const defaultState = Immutable({});
 
-  const getSagaTester = (initialState = {}) => {
-    const sagaTester = new SagaTester({
-      initialState: defaultState.merge(initialState, { deep: true }),
-    });
-    sagaTester.start(watchDataSource);
-    return sagaTester;
-  };
-
-  it('should dispatch a success action', async () => {
-    const sagaTester = getSagaTester();
-    const requestData = { ProjectId: 1 };
-
-    sagaTester.dispatch(DataSourceRoutines.create(requestData));
-
-    const expectedAction = await sagaTester.waitFor(DataSourceRoutines.create.SUCCESS);
-    expect(expectedAction).to.deep.equal(
-      DataSourceRoutines.create.success({
+  describe('create', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { projectId: 1 };
+      const requestData = {
+        project: payload.projectId,
+        name: null,
+        type: 'file',
+        file: null,
+      };
+      const responseData = {
         id: 1,
         status: 'draft',
-      })
-    );
+      };
+
+      mockApi.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`, requestData).reply(OK, responseData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.create.success(responseData))
+        .dispatch(DataSourceRoutines.create(payload))
+        .run();
+    });
   });
 });

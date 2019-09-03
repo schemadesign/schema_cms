@@ -2,6 +2,32 @@
 
 exports[`List: Component should render correctly 1`] = `
 <styled.div>
-  List component
+  <Header
+    customButtonStyles={Object {}}
+    customStyles={Object {}}
+    iconComponent={<MenuIcon />}
+    onButtonClick={[Function]}
+  >
+    <H2>
+      Data Sources
+    </H2>
+    <H1>
+      Overview
+    </H1>
+  </Header>
+  <Button
+    customStyles={
+      Object {
+        "backgroundColor": "#a6a7aa",
+        "bottom": "10px",
+        "height": "60px",
+        "position": "fixed",
+        "right": "10px",
+      }
+    }
+    onClick={[Function]}
+  >
+    <PlusIcon />
+  </Button>
 </styled.div>
 `;

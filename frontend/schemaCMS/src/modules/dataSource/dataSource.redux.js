@@ -13,4 +13,8 @@ export const INITIAL_STATE = new Immutable({
   dataSources: [],
 });
 
-export const reducer = createReducer(INITIAL_STATE, {});
+const updateDataSource = (state = INITIAL_STATE, { payload }) => state.set('dataSource', payload);
+
+export const reducer = createReducer(INITIAL_STATE, {
+  [DataSourceRoutines.create.SUCCESS]: updateDataSource,
+});
