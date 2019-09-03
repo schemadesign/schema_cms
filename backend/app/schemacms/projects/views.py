@@ -1,3 +1,5 @@
+import json
+
 from rest_framework import decorators, exceptions, permissions, response, viewsets
 
 from . import models, serializers, permissions as projects_permissions
@@ -47,6 +49,4 @@ class DataSourceViewSet(viewsets.ModelViewSet):
 
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
-        table_preview, fields_info = self.get_object().get_preview_data()
-
-        return response.Response({"data": table_preview, "fields": fields_info})
+        return response.Response(json.loads(self.get_object().meta_data.preview.read()))
