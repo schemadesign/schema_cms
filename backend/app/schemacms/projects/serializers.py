@@ -25,6 +25,11 @@ class DataSourceSerializer(serializers.ModelSerializer):
             'file',
             'meta_data',
         )
+        extra_kwargs = {
+            "name": {"required": True, "allow_null": False, "allow_blank": False},
+            "type": {"required": True, "allow_null": False},
+            "file": {"required": True, "allow_null": False},
+        }
 
 
 class DraftDataSourceSerializer(serializers.ModelSerializer):
@@ -44,6 +49,7 @@ class DraftDataSourceSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             "name": {"required": False, "allow_null": True},
             "type": {"required": False, "allow_null": True},
+            "file": {"required": False, "allow_null": True},
         }
 
 

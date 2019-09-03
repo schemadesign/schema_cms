@@ -33,6 +33,9 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
     meta_data = factory.RelatedFactory('schemacms.projects.tests.factories.DataSourceMetaFactory', 'datasource')
     file = factory.django.FileField(filename='test.csv', from_func=make_csv)
 
+    class Params:
+        draft = factory.Trait(type=project_constants.DataSourceStatus.DRAFT)
+
 
 class DataSourceMetaFactory(factory.django.DjangoModelFactory):
     class Meta:

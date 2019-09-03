@@ -1,7 +1,6 @@
 import operator
 import os
 
-import django.core.files.base
 from django.conf import settings
 from rest_framework import exceptions
 from django.urls import reverse
@@ -10,8 +9,11 @@ from rest_framework import status
 import pytest
 
 from schemacms.users import constants as user_constants
-from schemacms.projects import serializers as projects_serializers
-from schemacms.projects import models as projects_models
+from schemacms.projects import (
+    constants as projects_constants,
+    serializers as projects_serializers,
+    models as projects_models
+)
 
 
 pytestmark = [pytest.mark.django_db]
@@ -210,7 +212,7 @@ class TestCreateDraftDataSourceView:
         assert response.status_code == status.HTTP_201_CREATED
 
     def test_upload_file(self, api_client, admin, project, faker):
-        payload = dict(file=django.core.files.base.ContentFile(faker.csv_data(), name='test.csv'))
+        payload = dict(file=faker.csv_upload_file(filename='test.csv'))
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(project.id), payload, format='multipart')
@@ -227,3 +229,38 @@ class TestCreateDraftDataSourceView:
     @staticmethod
     def get_url(project_pk):
         return reverse("datasource-list", kwargs=dict(project_pk=project_pk))
+
+
+class TestUpdateDraftDataSourceView:
+    def test_response(self, api_client, faker, admin, data_source_factory):
+        data_source = data_source_factory(draft=True)
+        url = self.get_url(data_source_pk=data_source.pk, project_pk=data_source.project_id)
+        payload = dict(
+            name=faker.word(),
+            type=projects_constants.DataSourceType.FILE,
+            file=faker.csv_upload_file()
+        )
+
+        api_client.force_authenticate(admin)
+        response = api_client.put(url, payload, format='multipart')
+
+        assert response.status_code == status.HTTP_200_OK
+
+    def test_error_response(self, api_client, faker, admin, data_source_factory):
+        data_source = data_source_factory(draft=True)
+        url = self.get_url(data_source_pk=data_source.pk, project_pk=data_source.project_id)
+        payload = dict()
+
+        api_client.force_authenticate(admin)
+        response = api_client.put(url, payload, format='multipart')
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data.keys() == {"name", "type", "file"}
+
+    def test_url(self, data_source):
+        assert f"/api/v1/projects/{data_source.project_id}/datasources/{data_source.pk}" == self.get_url(
+            data_source_pk=data_source.pk, project_pk=data_source.project_id)
+
+    @staticmethod
+    def get_url(data_source_pk, project_pk):
+        return reverse("datasource-detail", kwargs=dict(pk=data_source_pk, project_pk=project_pk))

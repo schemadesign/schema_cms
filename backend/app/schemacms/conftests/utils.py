@@ -2,6 +2,7 @@ import csv
 import faker.providers
 import io
 
+from django.core.files import base
 import faker as faker_
 import pytest
 from rest_framework import test
@@ -20,6 +21,12 @@ def make_csv(cols_num=3, rows_num=1):
 class CSVProvider(faker.providers.BaseProvider):
     def csv_data(self, cols_num=3, rows_num=1):
         return make_csv(cols_num=cols_num, rows_num=rows_num).getvalue()
+
+    def csv_upload_file(self, filename='test.csv', cols_num=3, rows_num=1):
+        return base.ContentFile(
+            content=make_csv(cols_num=cols_num, rows_num=rows_num).getvalue(),
+            name=filename
+        )
 
 
 @pytest.fixture()
