@@ -16,14 +16,12 @@ class ObtainJSONWebToken(APIView):
     permission_classes = []
 
     def post(self, request, *args, **kwargs):
-        serializer = serializers.ObtainJSONWebTokenSerializer(data=request.data, context={'request': request})
+        serializer = serializers.ObtainJSONWebTokenSerializer(data=request.data, context={"request": request})
         serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['uid']
-        response = Response({
-            "token": user.get_jwt_token()
-        })
+        user = serializer.validated_data["uid"]
+        response = Response({"token": user.get_jwt_token()})
         user.last_login = timezone.now()
-        user.save(update_fields=['last_login'])  # make other exchange tokens invalid
+        user.save(update_fields=["last_login"])  # make other exchange tokens invalid
         return response
 
 

@@ -13,8 +13,8 @@ class ObtainJSONWebTokenSerializer(serializers.Serializer):
 
     def validate(self, attrs):
         validated_data = super().validate(attrs)
-        user = validated_data['uid']
-        token = validated_data['token']
+        user = validated_data["uid"]
+        token = validated_data["token"]
         if not (token and tokens.exchange_token.check_token(user, token)):
-            raise serializers.ValidationError({'token': 'Invalid Token'})
+            raise serializers.ValidationError({"token": "Invalid Token"})
         return validated_data

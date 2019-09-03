@@ -1,1 +1,1 @@
-default_app_config = 'schemacms.authorization.apps.AuthorizationConfig'
+default_app_config = "schemacms.authorization.apps.AuthorizationConfig"

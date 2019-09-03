@@ -10,31 +10,31 @@ def associate_by_external_id(backend, details, user=None, *args, **kwargs):
     Associate current auth with a user with the same ID in the DB.
     """
 
-    external_user_id = details.get('user_id')
+    external_user_id = details.get("user_id")
     if external_user_id:
         user = backend.strategy.storage.user.get_user(external_id=external_user_id)
         if user:
-            return {'user': user, 'is_new': False}
-    return {'user': None, 'is_new': False}
+            return {"user": user, "is_new": False}
+    return {"user": None, "is_new": False}
 
 
 def update_external_id(backend, details, user=None, *args, **kwargs):
     if not user:
         return None
 
-    if not user.last_login and details.get('email_verified'):
+    if not user.last_login and details.get("email_verified"):
         user.is_active = True
 
-    if backend.name == 'auth0':
+    if backend.name == "auth0":
         user.source = constants.UserSource.AUTH0
-        user.external_id = details.get('user_id')
+        user.external_id = details.get("user_id")
         backend.strategy.storage.user.changed(user)
 
 
 def redirect_with_token(strategy, user=None, *args, **kwargs):
-    uri = strategy.session_get('next', settings.DEFAULT_WEBAPP_HOST)
-    if not uri.endswith('/'):
-        uri = '{}/'.format(uri)
+    uri = strategy.session_get("next", settings.DEFAULT_WEBAPP_HOST)
+    if not uri.endswith("/"):
+        uri = "{}/".format(uri)
     token = user.get_exchange_token()
     return shortcuts.redirect(
         parse.urljoin(uri, "auth/confirm/{uid}/{token}".format(uid=user.id, token=token))

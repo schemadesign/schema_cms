@@ -2,8 +2,6 @@ from django import urls
 
 from . import views as auth_views
 
-app_name = 'authorization'
+app_name = "authorization"
 
-urlpatterns = [
-    urls.path('token', auth_views.obtain_jwt_token, name='token'),
-]
+urlpatterns = [urls.path("token", auth_views.obtain_jwt_token, name="token")]

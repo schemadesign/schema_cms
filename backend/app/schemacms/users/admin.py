@@ -14,28 +14,25 @@ from schemacms import mail
 
 @admin.register(user_models.User)
 class UserAdmin(UserAdmin):
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'source', 'role', )
+    list_display = ("username", "email", "first_name", "last_name", "is_staff", "source", "role")
     fieldsets = (
-        (None, {'fields': ('username', 'password')}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
-        (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
-                                       'groups', 'user_permissions', 'role', )}),
-        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-        (_('Auth'), {'fields': ('source', 'external_id')})
+        (None, {"fields": ("username", "password")}),
+        (_("Personal info"), {"fields": ("first_name", "last_name", "email")}),
+        (
+            _("Permissions"),
+            {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions", "role")},
+        ),
+        (_("Important dates"), {"fields": ("last_login", "date_joined")}),
+        (_("Auth"), {"fields": ("source", "external_id")}),
     )
-    add_form_template = 'users/admin/add_form.html'
-    change_list_template = 'users/admin/change_list.html'
+    add_form_template = "users/admin/add_form.html"
+    change_list_template = "users/admin/change_list.html"
     invite_user_form = admin_forms.InviteUserForm
-    invite_fieldsets = (
-        (None, {
-            'classes': ('wide',),
-            'fields': ('email', 'role',),
-        }),
-    )
+    invite_fieldsets = ((None, {"classes": ("wide",), "fields": ("email", "role")}),)
 
     def get_urls(self):
         return [
-            urls.path('invite-user/', self.admin_site.admin_view(self.add_view), name='invite_user'),
+            urls.path("invite-user/", self.admin_site.admin_view(self.add_view), name="invite_user")
         ] + super().get_urls()
 
     @transaction.atomic()
@@ -45,26 +42,23 @@ class UserAdmin(UserAdmin):
             try:
                 ret = backend_management.user_mgtm_backend.create_user(obj)
                 obj.source = backend_management.user_mgtm_backend.get_user_source()
-                obj.external_id = ret['user_id']
-                obj.save(update_fields=['source', 'external_id'])
+                obj.external_id = ret["user_id"]
+                obj.save(update_fields=["source", "external_id"])
                 url = backend_management.user_mgtm_backend.password_change_url(obj)
                 mail.send_message(
                     email=obj.email,
                     template=mail.MandrillTemplate.INVITATION,
-                    subject='Invitation',
-                    merge_data_dict={'url': url}
+                    subject="Invitation",
+                    merge_data_dict={"url": url},
                 )
             except auth0.v3.Auth0Error as e:
                 if e.status_code == 409:
                     return self.message_user(
-                        request, f"{obj.email} already exist in Auth0",
-                        django.contrib.messages.ERROR
+                        request, f"{obj.email} already exist in Auth0", django.contrib.messages.ERROR
                     )
 
                 self.message_user(
-                    request,
-                    "Error from auth0: \"{}\"".format(e.message),
-                    django.contrib.messages.ERROR
+                    request, 'Error from auth0: "{}"'.format(e.message), django.contrib.messages.ERROR
                 )
                 raise
 
@@ -82,11 +76,11 @@ class UserAdmin(UserAdmin):
         defaults = {}
         if obj is None:
             if self._is_invite_user_request(request):
-                defaults['form'] = self.invite_user_form
+                defaults["form"] = self.invite_user_form
             else:
-                defaults['form'] = self.add_form
+                defaults["form"] = self.add_form
         defaults.update(kwargs)
         return super().get_form(request, obj, **defaults)
 
     def _is_invite_user_request(self, request):
-        return request.path == urls.reverse('admin:invite_user')
+        return request.path == urls.reverse("admin:invite_user")
