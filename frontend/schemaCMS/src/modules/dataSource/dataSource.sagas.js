@@ -13,7 +13,7 @@ function* create({ payload }) {
     const requestData = { project: payload.projectId };
     const { data } = yield api.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`, requestData);
 
-    browserHistory.push(`/project/${payload.projectId}/datasource/${data.id}`);
+    browserHistory.push(`/project/${payload.projectId}/datasource/view/${data.id}`);
     yield put(DataSourceRoutines.create.success(data));
   } catch (error) {
     yield put(DataSourceRoutines.create.failure(error));

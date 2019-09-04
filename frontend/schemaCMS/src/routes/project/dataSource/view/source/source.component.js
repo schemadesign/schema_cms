@@ -12,8 +12,9 @@ import {
   customRadioGroupStyles,
 } from './source.styles';
 import messages from './source.messages';
+import { TextInput } from '../../../../../shared/components/form/inputs/textInput';
 
-const { TextField, RadioGroup, RadioButton, Label, FileUpload } = Form;
+const { RadioGroup, RadioButton, Label, FileUpload } = Form;
 const { CsvIcon } = Icons;
 
 export class Source extends PureComponent {
@@ -59,17 +60,19 @@ export class Source extends PureComponent {
   renderSourceUpload = cond([[equals('file'), this.renderCsvUploader], [T, always(null)]]);
 
   render() {
-    const { onChange, values } = this.props;
+    const { onChange, values, ...restProps } = this.props;
 
     return (
       <Container>
-        <TextField
-          label={this.props.intl.formatMessage(messages.name)}
-          name="name"
+        <TextInput
           value={values.name || ''}
           onChange={onChange}
+          name="name"
           fullWidth
+          label={this.props.intl.formatMessage(messages.name)}
+          {...restProps}
         />
+
         <Label customStyles={customLabelStyles}>
           <FormattedMessage {...messages.source} />
         </Label>

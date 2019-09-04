@@ -79,12 +79,25 @@ export class View extends PureComponent {
       <>
         <TopHeader {...topHeaderConfig} />
         <form onSubmit={handleSubmit}>
-          {this.renderContentForm({ values, activeStep, onChange: handleChange, setFieldValue, intl, dataSource })}
+          {this.renderContentForm({
+            values,
+            activeStep,
+            onChange: handleChange,
+            setFieldValue,
+            intl,
+            dataSource,
+            ...this.props,
+          })}
           <PillButtons
-            leftButtonTitle={intl.formatMessage(messages.back)}
-            rightButtonTitle={intl.formatMessage(messages.next)}
-            onLeftClick={this.handleBackClick}
-            onRightClick={handleSubmit}
+            leftButtonProps={{
+              title: intl.formatMessage(messages.back),
+              onClick: this.handleBackClick,
+            }}
+            rightButtonProps={{
+              title: intl.formatMessage(messages.next),
+              onClick: handleSubmit,
+              disabled: !(values.file || dataSource.file),
+            }}
           />
           <StepperContainer>
             <Stepper
