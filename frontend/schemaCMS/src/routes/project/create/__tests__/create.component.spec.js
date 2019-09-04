@@ -14,6 +14,9 @@ describe('Create: Component', () => {
     },
     handleChange: Function.prototype,
     handleSubmit: Function.prototype,
+    intl: {
+      formatMessage: Function.prototype,
+    },
     touched: {},
     errors: {},
   };
@@ -39,7 +42,7 @@ describe('Create: Component', () => {
     const handleChange = spy();
 
     const wrapper = render({ handleChange });
-    wrapper.find(TextInput).prop('onChange')();
+    wrapper.find(TextInput).first().prop('onChange')();
     expect(handleChange).to.have.been.calledOnce;
   });
 });

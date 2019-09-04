@@ -2,6 +2,7 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 import { path } from 'ramda';
 
 import { ProjectTypes, ProjectActions, ProjectRoutines } from './project.redux';
+import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
 
@@ -23,6 +24,7 @@ function* createProject({ payload }) {
 
     yield put(ProjectActions.createProjectSuccess(data));
     yield put(ProjectRoutines.createProject.success(data));
+    browserHistory.push('/project/list');
   } catch (e) {
     yield put(ProjectRoutines.createProject.failure());
   } finally {

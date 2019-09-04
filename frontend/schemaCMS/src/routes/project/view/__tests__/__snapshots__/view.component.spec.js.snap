@@ -8,7 +8,6 @@ exports[`View: Component should render correctly 1`] = `
     title="project.view.pageTitle"
   />
   <Header
-    customButtonStyles={Object {}}
     customStyles={Object {}}
     iconComponent={<MenuIcon />}
     onButtonClick={[Function]}
