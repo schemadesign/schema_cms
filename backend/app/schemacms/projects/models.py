@@ -2,6 +2,7 @@ import json
 import io
 import os
 
+from hashids import Hashids
 from pandas import read_csv
 
 from django.db import models, transaction
@@ -51,10 +52,17 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
 class DataSourceManager(models.Manager):
     def create(self, *args, **kwargs):
         file = kwargs.pop("file", None)
-        dsource = super().create(*args, **kwargs)
 
-        if file:
-            dsource.file.save(file.name, file)
+        with transaction.atomic():
+            dsource = super().create(*args, **kwargs)
+
+            if not kwargs.get("name", None):
+                data_source_number = Hashids(min_length=4).encode(dsource.id)
+                dsource.name = f"{constants.DATASOURCE_DRAFT_NAME} #{data_source_number}"
+                dsource.save()
+
+            if file:
+                dsource.file.save(file.name, file)
 
         return dsource
 
@@ -83,6 +91,8 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         super().save(*args, **kwargs)
 
     def preview_process(self):
+        self.status = constants.DataSourceStatus.PROCESSING
+        self.save()
         self.update_meta()
 
     def update_meta(self):
