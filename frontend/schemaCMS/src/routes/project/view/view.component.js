@@ -56,7 +56,7 @@ export class View extends PureComponent {
 
   formatMessage = value => this.props.intl.formatMessage(value);
 
-  handleGoToProjectsList = () => this.props.history.push('/project');
+  handleGoToProjectsList = () => this.props.history.push('/project/list');
 
   renderStatistic = ({ header, value }, index) => (
     <CardWrapper key={index}>
