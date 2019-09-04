@@ -3,7 +3,7 @@ import { primary } from '../../../utils/theme';
 export const containerStyles = {
   display: 'flex',
   flexDirection: 'column',
-  padding: '5px 0 30px',
+  paddingBottom: '30px',
   position: 'relative',
 };
 

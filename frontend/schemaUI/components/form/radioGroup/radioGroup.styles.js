@@ -1,4 +1,4 @@
 export const containerStyles = {
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'row',
 };

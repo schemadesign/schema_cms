@@ -86,4 +86,11 @@ describe('Project: redux', () => {
       expect(resultState.projects).to.deep.equal(expectedProjects);
     });
   });
+
+  describe('when PROJECTS/UNMOUNT_ONE action is received', () => {
+    it('should merge project to list of projects', () => {
+      const resultState = projectReducer(defaultState, ProjectActions.unmountOne());
+      expect(resultState.project).to.deep.equal(defaultState.project);
+    });
+  });
 });

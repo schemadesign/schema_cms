@@ -27,7 +27,8 @@ Content-Type: application/json
       "file": "http://localhost:8000/static/file.csv",
       "meta_data": {
         "items": 2419,
-        "fields": 3
+        "fields": 3,
+        "preview": "http://localhost:8000/static/preview_file.json"
       }
     },
     {
@@ -38,7 +39,8 @@ Content-Type: application/json
       "file": "http://localhost:8000/static/file.csv",
       "meta_data": {
         "items": 3179,
-        "fields": 9
+        "fields": 9,
+        "preview": "http://localhost:8000/static/preview_file.json"
       }
     }
   ]
@@ -82,7 +84,8 @@ Content-Type: application/json
       "file": "http://localhost:8000/static/file.csv",
       "meta_data": {
         "items": 3179,
-        "fields": 9
+        "fields": 9,
+        "preeview": "http://localhost:8000/static/preview_file.json"
       }
     }
 }
@@ -125,7 +128,8 @@ Content-Type: application/json
       "file": "http://localhost:8000/static/file.csv",
       "meta_data": {
         "items": 3179,
-        "fields": 9
+        "fields": 9,
+        "preview": "http://localhost:8000/static/preview_file.json"
       }
     }
 }

@@ -2,18 +2,17 @@
 
 exports[`Storyshots List empty 1`] = `
 <div
-  className="sc-EHOje jvzENE"
+  className="sc-dnqmqq ereunl"
 >
   <div
     style={
       Object {
         "alignItems": "flex-start",
-        "backgroundColor": null,
         "color": "#1d1d20",
         "display": "flex",
         "flexDirection": "row",
         "justifyContent": "space-between",
-        "padding": "6px 0 18px 20px",
+        "padding": "18px 0",
         "width": "100%",
       }
     }
@@ -29,7 +28,9 @@ exports[`Storyshots List empty 1`] = `
           }
         }
       >
-        Projects
+        <span>
+          Projects
+        </span>
       </h2>
       <h1
         style={
@@ -43,7 +44,9 @@ exports[`Storyshots List empty 1`] = `
           }
         }
       >
-        Overview
+        <span>
+          Overview
+        </span>
       </h1>
     </div>
     <button
@@ -53,12 +56,17 @@ exports[`Storyshots List empty 1`] = `
           "backgroundColor": "transparent",
           "border": "none",
           "borderRadius": "48px",
+          "color": "#1d1d20",
           "cursor": "pointer",
+          "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": 6,
         }
       }
     >
@@ -80,7 +88,7 @@ exports[`Storyshots List empty 1`] = `
     </button>
   </div>
   <div
-    className="sc-gZMcBi swown"
+    className="sc-htoDjs cNnnvC"
   >
     <p
       style={
@@ -93,7 +101,8 @@ exports[`Storyshots List empty 1`] = `
         }
       }
     >
-      No Projects
+      project.list.noProjects
+       
     </p>
   </div>
   <button
@@ -104,7 +113,9 @@ exports[`Storyshots List empty 1`] = `
         "border": "none",
         "borderRadius": "48px",
         "bottom": "10px",
+        "color": "#1d1d20",
         "cursor": "pointer",
+        "display": "inline-block",
         "fontSize": "18px",
         "height": "60px",
         "margin": "0",
@@ -119,7 +130,7 @@ exports[`Storyshots List empty 1`] = `
     <svg
       style={
         Object {
-          "fill": "#1d1d20",
+          "fill": "#FFF",
           "height": "60px",
           "width": "60px",
         }
@@ -152,25 +163,25 @@ exports[`Storyshots List empty 1`] = `
     }
   >
     <ul
-      className="sc-gqjmRU uNCqK"
+      className="sc-fjdhpX gRTSXn"
     >
       <li
-        className="sc-VigVT hwAjIG"
+        className="sc-jzJRlG kEYdqt"
       >
         Edit Project settings
       </li>
       <li
-        className="sc-VigVT hwAjIG"
+        className="sc-jzJRlG kEYdqt"
       >
         Delete project
       </li>
       <li
-        className="sc-VigVT hwAjIG"
+        className="sc-jzJRlG kEYdqt"
       >
         User settings
       </li>
       <li
-        className="sc-VigVT hwAjIG"
+        className="sc-jzJRlG kEYdqt"
       >
         Log Out
       </li>
@@ -179,10 +190,12 @@ exports[`Storyshots List empty 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "transparent",
+          "backgroundColor": "#f0efef",
           "border": "none",
           "borderRadius": "48px",
+          "color": "#1d1d20",
           "cursor": "pointer",
+          "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",
@@ -216,18 +229,17 @@ exports[`Storyshots List empty 1`] = `
 
 exports[`Storyshots List list 1`] = `
 <div
-  className="sc-EHOje jvzENE"
+  className="sc-dnqmqq ereunl"
 >
   <div
     style={
       Object {
         "alignItems": "flex-start",
-        "backgroundColor": null,
         "color": "#1d1d20",
         "display": "flex",
         "flexDirection": "row",
         "justifyContent": "space-between",
-        "padding": "6px 0 18px 20px",
+        "padding": "18px 0",
         "width": "100%",
       }
     }
@@ -243,7 +255,9 @@ exports[`Storyshots List list 1`] = `
           }
         }
       >
-        Projects
+        <span>
+          Projects
+        </span>
       </h2>
       <h1
         style={
@@ -257,7 +271,9 @@ exports[`Storyshots List list 1`] = `
           }
         }
       >
-        Overview
+        <span>
+          Overview
+        </span>
       </h1>
     </div>
     <button
@@ -267,12 +283,17 @@ exports[`Storyshots List list 1`] = `
           "backgroundColor": "transparent",
           "border": "none",
           "borderRadius": "48px",
+          "color": "#1d1d20",
           "cursor": "pointer",
+          "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": 6,
         }
       }
     >
@@ -294,10 +315,10 @@ exports[`Storyshots List list 1`] = `
     </button>
   </div>
   <ul
-    className="sc-bZQynM cHseiX"
+    className="sc-iwsKbI dZLTHj"
   >
     <li
-      className="sc-gzVnrw jcTlqU"
+      className="sc-gZMcBi dFerLZ"
     >
       <div
         style={
@@ -322,20 +343,20 @@ exports[`Storyshots List list 1`] = `
           }
         >
           <ul
-            className="sc-htoDjs LPVfx"
+            className="sc-gqjmRU Uwame"
           >
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-VigVT elihoU"
             >
               3 months ago
             </li>
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-VigVT elihoU"
             >
               Status
             </li>
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-VigVT elihoU"
             >
               Firstname Lastname
             </li>
@@ -358,7 +379,7 @@ exports[`Storyshots List list 1`] = `
           Project Name
         </h1>
         <div
-          className="sc-iwsKbI fhlDBZ"
+          className="sc-jTzLTM qSBbn"
           onClick={[Function]}
         >
           <p
@@ -394,7 +415,7 @@ exports[`Storyshots List list 1`] = `
       </div>
     </li>
     <li
-      className="sc-gzVnrw jcTlqU"
+      className="sc-gZMcBi dFerLZ"
     >
       <div
         style={
@@ -419,20 +440,20 @@ exports[`Storyshots List list 1`] = `
           }
         >
           <ul
-            className="sc-htoDjs LPVfx"
+            className="sc-gqjmRU Uwame"
           >
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-VigVT elihoU"
             >
               3 months ago
             </li>
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-VigVT elihoU"
             >
               Published
             </li>
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-VigVT elihoU"
             >
               Tadeusz Kosciuszko
             </li>
@@ -455,7 +476,7 @@ exports[`Storyshots List list 1`] = `
           Honec sodales libero non fermentum aliquam
         </h1>
         <div
-          className="sc-iwsKbI fhlDBZ"
+          className="sc-jTzLTM qSBbn"
           onClick={[Function]}
         >
           <p
@@ -486,7 +507,7 @@ exports[`Storyshots List list 1`] = `
             }
           }
         >
-          schemacms/api/honec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+          schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
         </span>
       </div>
     </li>
@@ -499,7 +520,9 @@ exports[`Storyshots List list 1`] = `
         "border": "none",
         "borderRadius": "48px",
         "bottom": "10px",
+        "color": "#1d1d20",
         "cursor": "pointer",
+        "display": "inline-block",
         "fontSize": "18px",
         "height": "60px",
         "margin": "0",
@@ -514,7 +537,7 @@ exports[`Storyshots List list 1`] = `
     <svg
       style={
         Object {
-          "fill": "#1d1d20",
+          "fill": "#FFF",
           "height": "60px",
           "width": "60px",
         }
@@ -547,25 +570,25 @@ exports[`Storyshots List list 1`] = `
     }
   >
     <ul
-      className="sc-gqjmRU uNCqK"
+      className="sc-fjdhpX gRTSXn"
     >
       <li
-        className="sc-VigVT hwAjIG"
+        className="sc-jzJRlG kEYdqt"
       >
         Edit Project settings
       </li>
       <li
-        className="sc-VigVT hwAjIG"
+        className="sc-jzJRlG kEYdqt"
       >
         Delete project
       </li>
       <li
-        className="sc-VigVT hwAjIG"
+        className="sc-jzJRlG kEYdqt"
       >
         User settings
       </li>
       <li
-        className="sc-VigVT hwAjIG"
+        className="sc-jzJRlG kEYdqt"
       >
         Log Out
       </li>
@@ -574,10 +597,12 @@ exports[`Storyshots List list 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "transparent",
+          "backgroundColor": "#f0efef",
           "border": "none",
           "borderRadius": "48px",
+          "color": "#1d1d20",
           "cursor": "pointer",
+          "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",

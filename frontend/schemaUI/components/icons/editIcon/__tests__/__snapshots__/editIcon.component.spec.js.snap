@@ -23,27 +23,3 @@ exports[`EditIcon: Component should render with custom styles 1`] = `
   }
 />
 `;
-
-exports[`MenuIcon: Component should render correctly 1`] = `
-<menu.svg
-  style={
-    Object {
-      "fill": "#1d1d20",
-      "height": "60px",
-      "width": "60px",
-    }
-  }
-/>
-`;
-
-exports[`MenuIcon: Component should render with custom styles 1`] = `
-<menu.svg
-  style={
-    Object {
-      "fill": "blue",
-      "height": "60px",
-      "width": "60px",
-    }
-  }
-/>
-`;

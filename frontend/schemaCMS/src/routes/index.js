@@ -14,8 +14,8 @@ import { UserProfile } from './userProfile';
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
-  PROJECTS: '/project',
   USER_PROFILE: '/settings',
+  PROJECT: '/project',
 };
 
 export default class RootContainer extends Component {
@@ -28,7 +28,7 @@ export default class RootContainer extends Component {
           <Switch>
             <AuthRoute exact path={ROUTES.HOME} component={Home} />
 
-            <AuthRoute path={ROUTES.PROJECTS} component={Project} />
+            <AuthRoute path={ROUTES.PROJECT} component={Project} />
 
             <AuthRoute path={ROUTES.USER_PROFILE} component={UserProfile} />
 

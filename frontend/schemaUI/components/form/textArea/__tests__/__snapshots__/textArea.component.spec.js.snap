@@ -12,6 +12,7 @@ exports[`TextArea: Component should render correctly 1`] = `
         "height": 0,
         "lineHeight": "24px",
         "outline": "none",
+        "padding": "0",
         "resize": "none",
       }
     }
@@ -29,6 +30,7 @@ exports[`TextArea: Component should render correctly 1`] = `
         "lineHeight": "24px",
         "outline": "none",
         "overflow": "hidden",
+        "padding": "0",
         "position": "absolute",
         "resize": "none",
         "top": 0,

@@ -4,6 +4,9 @@ export const defaultStyles = {
   border: 'none',
   outline: 'none',
   color: primary.label,
-  fontSize: '18px',
-  lineHeight: '24px',
+  fontSize: '14px',
+  borderTop: `1px solid ${primary.divider}`,
+  paddingTop: '8px',
+  display: 'block',
+  width: '100%',
 };

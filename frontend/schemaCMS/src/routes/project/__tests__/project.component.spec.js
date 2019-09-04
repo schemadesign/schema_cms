@@ -6,7 +6,7 @@ import { Project } from '../project.component';
 describe('Project: Component', () => {
   const defaultProps = {
     match: {
-      path: '/projects',
+      path: '/project',
     },
   };
 

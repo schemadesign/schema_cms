@@ -10,7 +10,7 @@ export class RadioGroup extends PureComponent {
     customLabelStyles: PropTypes.object,
     customCheckedStyles: PropTypes.object,
     value: PropTypes.any,
-    handleChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     name: PropTypes.string.isRequired,
     children: PropTypes.array.isRequired,
   };
@@ -22,8 +22,8 @@ export class RadioGroup extends PureComponent {
   };
 
   render() {
-    const { name, children, handleChange, value, customLabelStyles, customCheckedStyles, customStyles } = this.props;
-    const context = { name, onChange: handleChange, value, customLabelStyles, customCheckedStyles };
+    const { name, children, onChange, value, customLabelStyles, customCheckedStyles, customStyles } = this.props;
+    const context = { name, onChange, value, customLabelStyles, customCheckedStyles };
     const styles = { ...containerStyles, ...customStyles };
 
     return (

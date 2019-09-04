@@ -44,6 +44,8 @@ class TestListCreateProjectView:
         user.role = user_constants.UserRole.ADMIN
         api_client.force_authenticate(user)
 
+        self.example_project["editors"].append(user.id)
+
         response = api_client.post(self.get_url(), data=self.example_project)
         project_id = response.data["id"]
         project = projects_models.Project.objects.get(pk=project_id)
@@ -71,6 +73,20 @@ class TestListCreateProjectView:
             user1_response.data["results"]
             == projects_serializers.ProjectSerializer(user1_projects, many=True).data
         )
+
+    def test_create_without_editors(self, api_client, user):
+        user.role = user_constants.UserRole.ADMIN
+        api_client.force_authenticate(user)
+
+        self.example_project.pop("editors")
+
+        response = api_client.post(self.get_url(), data=self.example_project)
+
+        project_id = response.data["id"]
+        project = projects_models.Project.objects.get(pk=project_id)
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
     def test_url(self):
         assert "/api/v1/projects" == self.get_url()
@@ -265,3 +281,22 @@ class TestUpdateDraftDataSourceView:
     @staticmethod
     def get_url(data_source_pk, project_pk):
         return reverse("datasource-detail", kwargs=dict(pk=data_source_pk, project_pk=project_pk))
+
+
+class TestDataSourceProcess:
+    def test_process_file(self, api_client, admin, project, faker):
+        payload = dict(file=faker.csv_upload_file(filename="test.csv"))
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(project.id), payload, format="multipart")
+        data_source_id = response.data["id"]
+        assert not response.data["meta_data"]
+
+        api_client.post(f"{self.get_url(project.id)}/{data_source_id}/process", dict())
+        response_with_meta = api_client.get(f"{self.get_url(project.id)}/{data_source_id}")
+
+        assert response_with_meta.data["meta_data"]["items"] == 1
+        assert response_with_meta.data["meta_data"]["fields"] == 3
+
+    @staticmethod
+    def get_url(project_pk):
+        return reverse("datasource-list", kwargs=dict(project_pk=project_pk))

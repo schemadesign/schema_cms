@@ -5,10 +5,13 @@ exports[`Label: Component should render correctly 1`] = `
   style={
     Object {
       "border": "none",
-      "color": "#1d1d20",
-      "fontSize": "18px",
-      "lineHeight": "24px",
+      "borderTop": "1px solid #F0EFEF",
+      "color": "#a6a7aa",
+      "display": "block",
+      "fontSize": "14px",
       "outline": "none",
+      "paddingTop": "8px",
+      "width": "100%",
     }
   }
 />
@@ -19,10 +22,13 @@ exports[`Label: Component should render with custom styles 1`] = `
   style={
     Object {
       "border": "none",
+      "borderTop": "1px solid #F0EFEF",
       "color": "blue",
-      "fontSize": "18px",
-      "lineHeight": "24px",
+      "display": "block",
+      "fontSize": "14px",
       "outline": "none",
+      "paddingTop": "8px",
+      "width": "100%",
     }
   }
 />

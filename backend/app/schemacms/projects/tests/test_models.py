@@ -42,6 +42,7 @@ class TestDataSourceModelMethods:
     def test_creating_meta(self):
         filename = "file_path_test.csv"
         dsource = self.create_dsource(filename)
+        dsource.preview_process()
 
         items, fields = read_csv(dsource.file.path).shape
 
@@ -53,16 +54,20 @@ class TestDataSourceModelMethods:
         rows_number = 3
         new_file = make_csv(cols_number, rows_number)
 
+        old_preview = data_source.meta_data.preview
+
         data_source.file.save("new_file.csv", new_file)
         data_source.refresh_from_db()
+        data_source.preview_process()
 
         assert data_source.meta_data.fields == cols_number
         assert data_source.meta_data.items == rows_number
+        assert data_source.meta_data.preview != old_preview
 
     def test_get_preview(self, data_source):
         source_file = read_csv(data_source.file.path)
 
-        preview, fields_info = data_source.get_preview_data()
+        preview, fields_info = data_source.get_preview_data(source_file)
 
         expected_preview = json.loads(source_file.head(5).to_json(orient="records"))
         expected_fields_info = json.loads(

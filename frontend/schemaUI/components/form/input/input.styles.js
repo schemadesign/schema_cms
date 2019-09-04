@@ -6,4 +6,5 @@ export const defaultStyles = {
   color: primary.text,
   fontSize: '18px',
   lineHeight: '24px',
+  backgroundColor: 'transparent',
 };

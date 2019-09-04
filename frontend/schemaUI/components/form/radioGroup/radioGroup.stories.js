@@ -17,14 +17,15 @@ const defaultProps = {
   customCheckedStyles: {
     opacity: 1,
   },
+  onChange: value => console.log('value:', value),
 };
 
 storiesOf('Form/RadioGroup', module).add('Default', () => (
   <RadioGroup {...defaultProps}>
-    <RadioButton label="radio 1" value="radio 1">
+    <RadioButton label="radio 1" value="radio 1" id="label 1">
       <PlusIcon />
     </RadioButton>
-    <RadioButton label="radio 2" value="radio 2">
+    <RadioButton label="radio 2" value="radio 2" id="label 2">
       <PlusIcon />
     </RadioButton>
   </RadioGroup>

@@ -2,20 +2,30 @@
 
 exports[`List: Component should render correctly 1`] = `
 <styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="project.list.pageTitle"
+  />
   <Header
-    customStyles={
-      Object {
-        "backgroundColor": null,
-      }
-    }
+    customButtonStyles={Object {}}
+    customStyles={Object {}}
     iconComponent={<MenuIcon />}
     onButtonClick={[Function]}
   >
     <H2>
-      Projects
+      <FormattedMessage
+        defaultMessage="Projects"
+        id="project.list.title"
+        values={Object {}}
+      />
     </H2>
     <H1>
-      Overview
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="project.list.overview"
+        values={Object {}}
+      />
     </H1>
   </Header>
   <styled.ul>
@@ -119,7 +129,7 @@ exports[`List: Component should render correctly 1`] = `
             }
           }
         >
-          schemacms/api/honec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+          schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
         </Span>
       </Card>
     </styled.li>

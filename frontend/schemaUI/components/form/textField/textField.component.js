@@ -29,7 +29,7 @@ export class TextField extends PureComponent {
     customLabelStyles: {},
   };
 
-  renderLabel = ({ label, ...props }) => (label ? <Label label={label} {...props} /> : null);
+  renderLabel = ({ label, ...props }) => (label ? <Label {...props}>{label}</Label> : null);
   renderInput = props => <Input {...props} />;
   renderTextArea = props => <TextArea {...props} />;
 

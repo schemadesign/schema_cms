@@ -8,6 +8,7 @@ describe('RadioButton: Component', () => {
   const defaultProps = {
     value: 'value',
     label: 'name',
+    id: 'id',
   };
 
   const context = {

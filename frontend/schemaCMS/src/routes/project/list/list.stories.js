@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { identity } from 'ramda';
 
 import { List } from './list.component';
 
@@ -9,7 +8,7 @@ export const defaultProps = {
     {
       title: 'Project Name',
       description: 'Description',
-      slug: 'schemacms/api/project_title',
+      slug: 'project_title',
       created: '2019-08-26T11:05:12+0000',
       status: 'Status',
       owner: {
@@ -22,7 +21,7 @@ export const defaultProps = {
       title: 'Honec sodales libero non fermentum aliquam',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.',
-      slug: 'schemacms/api/honec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam',
+      slug: 'wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam',
       created: '2019-08-26T11:05:12+0000',
       status: 'Published',
       owner: {
@@ -32,14 +31,16 @@ export const defaultProps = {
       },
     },
   ],
-  fetchProjectsList: identity,
+  fetchProjectsList: Function.prototype,
   history: {},
+  intl: { formatMessage: ({ id }) => id },
 };
 
 export const emptyListProps = {
   list: [],
-  fetchProjectsList: identity,
+  fetchProjectsList: Function.prototype,
   history: {},
+  intl: { formatMessage: ({ id }) => id },
 };
 
 storiesOf('List', module)

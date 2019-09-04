@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { Theme } from 'schemaUI';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  margin: 0 20px 60px 20px;
+`;
 
 export const ProjectsList = styled.ul`
   list-style: none;
-  margin: 0 20px 60px 20px;
   padding: 0;
 `;
 
@@ -43,17 +44,12 @@ export const Description = styled.div`
   cursor: pointer;
 `;
 
-export const Empty = styled.div`
-  text-align: center;
-  padding: 10px;
-`;
-
 export const ActionsList = styled.ul`
   list-style: none;
   margin: 40px 0 0 0;
   padding: 0;
   font-family: ${Theme.primary.typography.h3.fontFamily};
-  font-weight: 600px;
+  font-weight: 600;
   font-size: 14px;
   line-height: 1.71;
 `;
@@ -61,10 +57,6 @@ export const ActionsList = styled.ul`
 export const Action = styled.li`
   margin-top: 20px;
 `;
-
-export const headerStyles = {
-  backgroundColor: null,
-};
 
 export const urlStyles = {
   color: Theme.primary.label,

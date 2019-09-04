@@ -10,11 +10,12 @@ export class Stepper extends PureComponent {
     customDotStyles: PropTypes.object,
     steps: PropTypes.number.isRequired,
     activeStep: PropTypes.number.isRequired,
-    handleStep: PropTypes.func.isRequired,
+    onStepChange: PropTypes.func,
   };
 
   static defaultProps = {
     customDotStyles: {},
+    handleStep: () => {},
   };
 
   getActiveStyles = step =>
@@ -25,7 +26,7 @@ export class Stepper extends PureComponent {
   renderDot = key => (
     <span
       style={{ ...dotStyles, ...this.props.customDotStyles, ...this.getActiveStyles(key + 1) }}
-      onClick={() => this.props.handleStep(key + 1)}
+      onClick={() => this.props.onStepChange(key + 1)}
       key={key}
     />
   );
