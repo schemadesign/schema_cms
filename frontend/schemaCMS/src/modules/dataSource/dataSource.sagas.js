@@ -13,7 +13,7 @@ function* create({ payload }) {
     const requestData = { project: payload.projectId };
     const { data } = yield api.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`, requestData);
 
-    browserHistory.push(`/project/${payload.projectId}/dataSource/${data.id}`);
+    browserHistory.push(`/project/${payload.projectId}/datasource/${data.id}`);
     yield put(DataSourceRoutines.create.success(data));
   } catch (error) {
     yield put(DataSourceRoutines.create.failure(error));
@@ -28,7 +28,6 @@ function* fetchOne({ payload }) {
 
     const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`);
 
-    browserHistory.push(`/project/${payload.projectId}/dataSource/${data.id}`);
     yield put(DataSourceRoutines.fetchOne.success(data));
   } catch (error) {
     yield put(DataSourceRoutines.fetchOne.failure(error));
@@ -37,7 +36,7 @@ function* fetchOne({ payload }) {
   }
 }
 
-function* updateOne({ payload: { projectId, dataSourceId, requestData } }) {
+function* updateOne({ payload: { projectId, dataSourceId, requestData, step } }) {
   try {
     yield put(DataSourceRoutines.updateOne.request());
     const formData = new FormData();
@@ -55,7 +54,8 @@ function* updateOne({ payload: { projectId, dataSourceId, requestData } }) {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
-    browserHistory.push(`/project/${projectId}/dataSource/list`);
+    const redirectUri = requestData.file ? 'list' : `${dataSourceId}/${step + 1}`;
+    browserHistory.push(`/project/${projectId}/datasource/${redirectUri}`);
     yield put(DataSourceRoutines.updateOne.success({ data }));
     yield api.post(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}/process`);
   } catch (error) {

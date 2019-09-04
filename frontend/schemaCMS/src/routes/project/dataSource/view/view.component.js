@@ -27,13 +27,14 @@ export class View extends PureComponent {
       params: PropTypes.shape({
         projectId: PropTypes.string.isRequired,
         dataSourceId: PropTypes.string.isRequired,
+        step: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   };
 
   state = {
-    activeStep: INITIAL_STEP,
     steps: MAX_STEPS,
+    activeStep: parseInt(this.props.match.params.step, 10),
   };
 
   componentDidMount() {
