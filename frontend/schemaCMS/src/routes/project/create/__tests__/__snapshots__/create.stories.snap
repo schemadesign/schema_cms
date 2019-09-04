@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Create Default 1`] = `
+exports[`Storyshots Project/Create Default 1`] = `
 <div
   className="sc-bdVaJa bDWFJH"
 >
-  <form>
+  <form
+    onSubmit={[Function]}
+  >
     <div
       className="sc-bwzfXH uTxCW"
     >
@@ -22,6 +24,7 @@ exports[`Storyshots Create Default 1`] = `
         <input
           id="project_title"
           name="project_title"
+          onChange={[Function]}
           style={
             Object {
               "backgroundColor": "transparent",

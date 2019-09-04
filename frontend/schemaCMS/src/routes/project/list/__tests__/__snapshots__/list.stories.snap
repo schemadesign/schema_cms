@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots List empty 1`] = `
+exports[`Storyshots Project/List empty 1`] = `
 <div
   className="sc-dnqmqq ereunl"
 >
@@ -101,7 +101,7 @@ exports[`Storyshots List empty 1`] = `
         }
       }
     >
-      project.list.noProjects
+      No Projects
        
     </p>
   </div>
@@ -227,7 +227,7 @@ exports[`Storyshots List empty 1`] = `
 </div>
 `;
 
-exports[`Storyshots List list 1`] = `
+exports[`Storyshots Project/List list 1`] = `
 <div
   className="sc-dnqmqq ereunl"
 >

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots View default 1`] = `
+exports[`Storyshots Project/View default 1`] = `
 <div
   className="sc-kAzzGY fupqXz"
 >
@@ -116,7 +116,7 @@ exports[`Storyshots View default 1`] = `
               }
             }
           >
-            project.view.dataSources
+            Data Sources
           </div>
           <span
             className="sc-kEYyzF gFKmPR"
@@ -150,7 +150,7 @@ exports[`Storyshots View default 1`] = `
               }
             }
           >
-            project.view.users
+            Users
           </div>
           <span
             className="sc-kEYyzF gFKmPR"
@@ -172,7 +172,7 @@ exports[`Storyshots View default 1`] = `
           <span
             className="sc-dxgOiQ eeVPia"
           >
-            project.view.lastUpdate
+            Last Update
           </span>
           <span
             className="sc-jKJlTe bkGlpl"
@@ -209,7 +209,7 @@ exports[`Storyshots View default 1`] = `
           <span
             className="sc-dxgOiQ eeVPia"
           >
-            project.view.status
+            Status
           </span>
           <span
             className="sc-jKJlTe bkGlpl"
@@ -246,7 +246,7 @@ exports[`Storyshots View default 1`] = `
           <span
             className="sc-dxgOiQ eeVPia"
           >
-            project.view.owner
+            Owner
           </span>
           <span
             className="sc-jKJlTe bkGlpl"
@@ -283,7 +283,7 @@ exports[`Storyshots View default 1`] = `
           <span
             className="sc-dxgOiQ eeVPia"
           >
-            project.view.titleField
+            Title
           </span>
           <span
             className="sc-jKJlTe bkGlpl"
@@ -320,7 +320,7 @@ exports[`Storyshots View default 1`] = `
           <span
             className="sc-dxgOiQ eeVPia"
           >
-            project.view.description
+            Description
           </span>
           <span
             className="sc-jKJlTe bkGlpl"
@@ -357,7 +357,7 @@ exports[`Storyshots View default 1`] = `
           <span
             className="sc-dxgOiQ eeVPia"
           >
-            project.view.api
+            API
           </span>
           <span
             className="sc-jKJlTe bkGlpl"
@@ -424,7 +424,7 @@ exports[`Storyshots View default 1`] = `
 </div>
 `;
 
-exports[`Storyshots View empty 1`] = `
+exports[`Storyshots Project/View empty 1`] = `
 <div
   className="sc-kAzzGY fupqXz"
 >
@@ -508,11 +508,21 @@ exports[`Storyshots View empty 1`] = `
     </button>
   </div>
   <div
-    className="sc-cSHVUG hXTvOO"
+    className="sc-htoDjs cNnnvC"
   >
-    <span>
-      Loading...
-    </span>
+    <p
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "18px",
+          "fontWeight": 200,
+          "lineHeight": "1.33em",
+          "margin": 0,
+        }
+      }
+    >
+      Project doesn't exist.
+    </p>
   </div>
   <button
     onClick={[Function]}

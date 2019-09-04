@@ -4,7 +4,9 @@ import { shallow } from 'enzyme';
 import { Menu } from '../menu.component';
 
 describe('Menu: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    onClose: Function.prototype,
+  };
 
   const component = props => <Menu {...defaultProps} {...props} />;
 

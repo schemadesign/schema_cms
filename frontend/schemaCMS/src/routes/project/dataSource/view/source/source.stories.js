@@ -5,4 +5,4 @@ import { Source } from './source.component';
 
 const defaultProps = {};
 
-storiesOf('Project/DataSource/View/Source', module).add('Default', () => <Source {...defaultProps} />);
+storiesOf('Project/DataSource/View/Source', module).add('Default', () => <Source />);

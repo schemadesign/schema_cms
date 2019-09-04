@@ -5,7 +5,7 @@ exports[`List: Component should render correctly 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="project.list.pageTitle"
+    title="Projects Overview"
   />
   <Header
     customButtonStyles={Object {}}

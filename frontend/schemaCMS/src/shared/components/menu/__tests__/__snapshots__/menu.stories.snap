@@ -1,0 +1,627 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Shared Components/Menu Default 1`] = `
+<div
+  className="sc-kkGfuU jVMdJI"
+>
+  <div
+    style={
+      Object {
+        "background": "#f9f9f9",
+        "backgroundColor": "#f0efef",
+        "color": "#1d1d20",
+        "maxWidth": "360px",
+        "minHeight": "100vh",
+        "padding": "18px 20px 27px",
+        "position": "fixed",
+        "right": 0,
+        "textAlign": "left",
+        "top": 0,
+        "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+        "visibility": 1,
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="sc-iAyFgw bfoFJM"
+    >
+      <ul
+        className="sc-hSdWYo sc-eHgmQL kbifvA"
+      >
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Data Sources
+          </span>
+        </li>
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Users
+          </span>
+        </li>
+      </ul>
+      <ul
+        className="sc-hSdWYo sc-cvbbAY dvULXj"
+      >
+        <li
+          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          onClick={[Function]}
+        >
+          <span>
+            Log Out
+          </span>
+        </li>
+      </ul>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": "6px",
+        }
+      }
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#1d1d20",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components/Menu add custom elemets 1`] = `
+<div
+  className="sc-kkGfuU jVMdJI"
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "color": "#1d1d20",
+        "maxWidth": "360px",
+        "minHeight": "100vh",
+        "padding": "18px 20px 27px",
+        "position": "fixed",
+        "right": 0,
+        "textAlign": "left",
+        "top": 0,
+        "transform": "translateX(100%)",
+        "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+        "visibility": 0,
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="sc-iAyFgw bfoFJM"
+    >
+      <ul
+        className="sc-hSdWYo sc-eHgmQL kbifvA"
+      >
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Data Sources
+          </span>
+        </li>
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Users
+          </span>
+        </li>
+      </ul>
+      <p
+        style={
+          Object {
+            "borderBottom": "2px solid orange",
+            "borderTop": "2px solid red",
+            "padding": "10px 0",
+          }
+        }
+      >
+        <i
+          style={
+            Object {
+              "color": "blue",
+              "fontSize": 20,
+            }
+          }
+        >
+           italic text
+        </i>
+      </p>
+      <svg
+        style={
+          Object {
+            "fill": "#1d1d20",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+        />
+      </svg>
+      <ul
+        className="sc-hSdWYo sc-cvbbAY dvULXj"
+      >
+        <li
+          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          onClick={[Function]}
+        >
+          <span>
+            Log Out
+          </span>
+        </li>
+      </ul>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": "6px",
+        }
+      }
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#1d1d20",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components/Menu add own items 1`] = `
+<div
+  className="sc-kkGfuU jVMdJI"
+>
+  <div
+    style={
+      Object {
+        "background": "#f9f9f9",
+        "backgroundColor": "#f0efef",
+        "color": "#1d1d20",
+        "maxWidth": "360px",
+        "minHeight": "100vh",
+        "padding": "18px 20px 27px",
+        "position": "fixed",
+        "right": 0,
+        "textAlign": "left",
+        "top": 0,
+        "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+        "visibility": 1,
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="sc-iAyFgw bfoFJM"
+    >
+      <ul
+        className="sc-hSdWYo sc-eHgmQL kbifvA"
+      >
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Data Sources
+          </span>
+        </li>
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Users
+          </span>
+        </li>
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          Edit Project Settings
+        </li>
+      </ul>
+      <ul
+        className="sc-hSdWYo sc-cvbbAY dvULXj"
+      >
+        <li
+          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          onClick={[Function]}
+        >
+          Delete project (click here)
+        </li>
+        <li
+          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          onClick={[Function]}
+        >
+          <span>
+            Log Out
+          </span>
+        </li>
+      </ul>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": "6px",
+        }
+      }
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#1d1d20",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components/Menu all changes in one 1`] = `
+<div
+  className="sc-kkGfuU jVMdJI"
+>
+  <div
+    style={
+      Object {
+        "background": "#7b67b3",
+        "backgroundColor": "#f0efef",
+        "color": "#fff",
+        "maxWidth": "360px",
+        "minHeight": "100vh",
+        "padding": "18px 20px 27px",
+        "position": "fixed",
+        "right": 0,
+        "textAlign": "left",
+        "top": 0,
+        "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+        "visibility": 1,
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="sc-iAyFgw bfoFJM"
+    >
+      <ul
+        className="sc-hSdWYo sc-eHgmQL kbifvA"
+      >
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          Charts (click here)
+        </li>
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Users
+          </span>
+        </li>
+      </ul>
+      <div
+        style={
+          Object {
+            "background": "#fff",
+            "color": "#000",
+            "padding": "10px",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#1d1d20",
+              "height": "30px",
+              "verticalAlign": "middle",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
+        <span
+          style={
+            Object {
+              "verticalAlign": "middle",
+            }
+          }
+        >
+          Rectangle
+        </span>
+      </div>
+      <ul
+        className="sc-hSdWYo sc-cvbbAY dvULXj"
+      >
+        <li
+          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          onClick={[Function]}
+        >
+          My settings
+        </li>
+        <li
+          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          onClick={[Function]}
+        >
+          Hello
+        </li>
+        <li
+          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          onClick={[Function]}
+        >
+          <span>
+            Log Out
+          </span>
+        </li>
+      </ul>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#54467b",
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "height": "50px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "position": "absolute",
+          "right": "10px",
+          "top": "6px",
+          "width": "50px",
+        }
+      }
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#fff",
+            "height": "50px",
+            "width": "50px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components/Menu show all hiden items 1`] = `
+<div
+  className="sc-kkGfuU jVMdJI"
+>
+  <div
+    style={
+      Object {
+        "background": "#f9f9f9",
+        "backgroundColor": "#f0efef",
+        "color": "#1d1d20",
+        "maxWidth": "360px",
+        "minHeight": "100vh",
+        "padding": "18px 20px 27px",
+        "position": "fixed",
+        "right": 0,
+        "textAlign": "left",
+        "top": 0,
+        "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+        "visibility": 1,
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="sc-iAyFgw bfoFJM"
+    >
+      <ul
+        className="sc-hSdWYo sc-eHgmQL kbifvA"
+      >
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Data Sources
+          </span>
+        </li>
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Charts
+          </span>
+        </li>
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Pages
+          </span>
+        </li>
+        <li
+          className="sc-jWBwVP sc-brqgnP jUotgY"
+          onClick={[Function]}
+        >
+          <span>
+            Users
+          </span>
+        </li>
+      </ul>
+      <ul
+        className="sc-hSdWYo sc-cvbbAY dvULXj"
+      >
+        <li
+          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          onClick={[Function]}
+        >
+          <span>
+            Users Settings
+          </span>
+        </li>
+        <li
+          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          onClick={[Function]}
+        >
+          <span>
+            Admin Settings
+          </span>
+        </li>
+        <li
+          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          onClick={[Function]}
+        >
+          <span>
+            Log Out
+          </span>
+        </li>
+      </ul>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": "6px",
+        }
+      }
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#1d1d20",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
