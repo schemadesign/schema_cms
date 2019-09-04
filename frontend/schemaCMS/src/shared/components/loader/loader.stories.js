@@ -3,4 +3,4 @@ import { storiesOf } from '@storybook/react';
 
 import { Loader } from './loader.component';
 
-storiesOf('Shared/Loader', module).add('Default', () => <Loader />);
+storiesOf('Shared Components/Loader', module).add('Default', () => <Loader />);

@@ -14,9 +14,9 @@ const withStylesProps = {
   },
 };
 
-storiesOf('Typography.H1', module).add('with styles', () => <H1 {...withStylesProps}>Some title</H1>);
+storiesOf('Typography/H1', module).add('with styles', () => <H1 {...withStylesProps}>Some title</H1>);
 
-storiesOf('Typography.H1', module).add('with attributes', () => (
+storiesOf('Typography/H1', module).add('with attributes', () => (
   <H1 title="Oh! It's title." id="title-with-attribute">
     Title with attributes
     <span style={{ fontSize: '10px', color: '#777', display: 'block' }}>
@@ -25,7 +25,7 @@ storiesOf('Typography.H1', module).add('with attributes', () => (
   </H1>
 ));
 
-storiesOf('Typography.H1', module).add('with custom theme', () => {
+storiesOf('Typography/H1', module).add('with custom theme', () => {
   const theme = {
     typography: {
       h1: {

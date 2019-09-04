@@ -28,13 +28,16 @@ const defaultProps = {
       projectId: '1',
     },
   },
-  intl: { formatMessage: ({ id }) => id },
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
 const emptyProps = {
   fetchProject: Function.prototype,
   unmountProject: Function.prototype,
-  project: {},
+  project: {
+    id: '1',
+    error: {},
+  },
   history: {
     push: Function.prototype,
   },
@@ -43,9 +46,9 @@ const emptyProps = {
       projectId: '1',
     },
   },
-  intl: { formatMessage: ({ id }) => id },
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
-storiesOf('View', module)
+storiesOf('Project/View', module)
   .add('default', () => <View {...defaultProps} />)
   .add('empty', () => <View {...emptyProps} />);

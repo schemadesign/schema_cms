@@ -5,4 +5,4 @@ import { List } from './list.component';
 
 const defaultProps = {};
 
-storiesOf('List', module).add('Default', () => <List {...defaultProps} />);
+storiesOf('Project/DataSource/List', module).add('Default', () => <List {...defaultProps} />);

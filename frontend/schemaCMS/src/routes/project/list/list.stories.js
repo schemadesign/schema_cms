@@ -33,16 +33,16 @@ export const defaultProps = {
   ],
   fetchProjectsList: Function.prototype,
   history: {},
-  intl: { formatMessage: ({ id }) => id },
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
 export const emptyListProps = {
   list: [],
   fetchProjectsList: Function.prototype,
   history: {},
-  intl: { formatMessage: ({ id }) => id },
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
-storiesOf('List', module)
+storiesOf('Project/List', module)
   .add('list', () => <List {...defaultProps} />)
   .add('empty', () => <List {...emptyListProps} />);

@@ -11,4 +11,4 @@ const defaultProps = {
   errors: {},
 };
 
-storiesOf('Create', module).add('Default', () => <Create {...defaultProps} />);
+storiesOf('Project/Create', module).add('Default', () => <Create {...defaultProps} />);

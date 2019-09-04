@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { H3 } from './h3.component';
 
-storiesOf('Typography.H3', module).add('Default', () => <H3>Is a nice H3 title.</H3>);
+storiesOf('Typography/H3', module).add('Default', () => <H3>Is a nice H3 title.</H3>);
 
 const withStylesProps = {
   customStyles: {
@@ -13,6 +13,6 @@ const withStylesProps = {
   },
 };
 
-storiesOf('Typography.H3', module).add('with styles', () => (
+storiesOf('Typography/H3', module).add('with styles', () => (
   <H3 {...withStylesProps}>This title has got custom styles</H3>
 ));
