@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
 import { always, cond, equals, path, T } from 'ramda';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import {
   Container,
@@ -10,6 +11,7 @@ import {
   customRadioButtonStyles,
   customRadioGroupStyles,
 } from './source.styles';
+import messages from './source.messages';
 
 const { TextField, RadioGroup, RadioButton, Label, FileUpload } = Form;
 const { CsvIcon } = Icons;
@@ -17,6 +19,8 @@ const { CsvIcon } = Icons;
 export class Source extends PureComponent {
   static propTypes = {
     values: PropTypes.object.isRequired,
+    dataSource: PropTypes.object.isRequired,
+    intl: PropTypes.object.isRequired,
     setFieldValue: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
   };
@@ -42,11 +46,11 @@ export class Source extends PureComponent {
 
   renderCsvUploader = () => (
     <FileUpload
-      fileName={this.state.uploadFileName || this.props.values.file}
+      fileName={this.state.uploadFileName || this.props.dataSource.fileName}
       name="file"
-      label="File Name"
+      label={this.props.intl.formatMessage(messages.fileName)}
       type="file"
-      id="File name"
+      id="fileUpload"
       onChange={this.handleUploadChange}
       accept=".csv,.tsv"
     />
@@ -59,8 +63,16 @@ export class Source extends PureComponent {
 
     return (
       <Container>
-        <TextField label="Name" name="name" value={values.name} onChange={onChange} fullWidth />
-        <Label customStyles={customLabelStyles}>Source</Label>
+        <TextField
+          label={this.props.intl.formatMessage(messages.name)}
+          name="name"
+          value={values.name || ''}
+          onChange={onChange}
+          fullWidth
+        />
+        <Label customStyles={customLabelStyles}>
+          <FormattedMessage {...messages.source} />
+        </Label>
         <RadioGroup
           name="type"
           customStyles={customRadioGroupStyles}
@@ -68,7 +80,7 @@ export class Source extends PureComponent {
           value={this.state.dataSourceType}
           onChange={this.handleChange}
         >
-          <RadioButton label="Spreadsheet" value="file" id="file">
+          <RadioButton label={this.props.intl.formatMessage(messages.spreadsheet)} value="file" id="file">
             <Button customStyles={customButtonStyles} type="button">
               <CsvIcon />
             </Button>

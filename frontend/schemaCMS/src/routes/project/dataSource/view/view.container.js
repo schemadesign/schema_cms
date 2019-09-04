@@ -3,7 +3,7 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
-import { compose } from 'ramda';
+import { compose, omit } from 'ramda';
 import { withFormik } from 'formik';
 import { injectIntl } from 'react-intl';
 
@@ -12,7 +12,7 @@ import { DataSourceRoutines, selectDataSource } from '../../../../modules/dataSo
 import {
   DATA_SOURCE_SCHEMA,
   UPDATE_DATA_SOURCE_FORM,
-  INITIAL_VALUES,
+  OMIT_FIELDS,
 } from '../../../../modules/dataSource/dataSource.constants';
 
 const mapStateToProps = createStructuredSelector({
@@ -42,10 +42,7 @@ export default compose(
     displayName: UPDATE_DATA_SOURCE_FORM,
     enableReinitialize: true,
     isInitialValid: true,
-    mapPropsToValues: ({ dataSource }) => ({
-      ...INITIAL_VALUES,
-      ...dataSource,
-    }),
+    mapPropsToValues: ({ dataSource }) => omit(OMIT_FIELDS, dataSource),
     validationSchema: () => DATA_SOURCE_SCHEMA,
     handleSubmit: async (requestData, { props, ...formik }) => {
       try {

@@ -51,8 +51,13 @@ function* updateOne({ payload: { projectId, dataSourceId, requestData } }) {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
+    yield api.patch(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+
     browserHistory.push(`/project/${projectId}/dataSource/list`);
     yield put(DataSourceRoutines.updateOne.success({ data }));
+    yield api.post(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}/process`);
   } catch (error) {
     yield put(DataSourceRoutines.updateOne.failure(error));
   } finally {

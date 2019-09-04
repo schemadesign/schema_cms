@@ -7,8 +7,7 @@ import { Container, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
 import { PillButtons } from '../../../../shared/components/pillButtons';
-import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
-import { STATUS_DRAFT } from '../../../../modules/dataSource/dataSource.constants';
+import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { TopHeader } from '../../../../shared/components/topHeader';
 
 const MAX_STEPS = 6;
@@ -17,6 +16,7 @@ const INITIAL_STEP = 1;
 export class View extends PureComponent {
   static propTypes = {
     values: PropTypes.object.isRequired,
+    dataSource: PropTypes.object.isRequired,
     fetchDataSource: PropTypes.func.isRequired,
     unmountDataSource: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
@@ -57,31 +57,21 @@ export class View extends PureComponent {
 
   handleBackClick = () =>
     ifElse(equals(INITIAL_STEP), () => {}, () => this.handleStepChange(this.state.activeStep - 1));
-  handleNextClick = () =>
-    ifElse(
-      equals(this.state.steps),
-      () => {},
-      () => {
-        this.props.handleSubmit();
-      }
-    );
+  handleNextClick = () => ifElse(equals(INITIAL_STEP), this.props.handleSubmit, () => {})(this.state.activeStep);
 
-  renderContentForm = (values, activeStep, handleChange, setFieldValue) =>
-    cond([
-      [equals(INITIAL_STEP), always(<Source values={values} onChange={handleChange} setFieldValue={setFieldValue} />)],
-      [T, always(null)],
-    ])(activeStep);
+  renderContentForm = ({ activeStep, ...props }) =>
+    cond([[equals(INITIAL_STEP), always(<Source {...props} />)], [T, always(null)]])(activeStep);
 
   renderContent = renderWhenTrue(() => {
     const { activeStep, steps } = this.state;
-    const { handleSubmit, values, handleChange, setFieldValue, intl } = this.props;
+    const { handleSubmit, values, handleChange, setFieldValue, intl, dataSource } = this.props;
     const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
 
     return (
       <>
         <TopHeader {...topHeaderConfig} />
         <form onSubmit={handleSubmit}>
-          {this.renderContentForm(values, activeStep, handleChange, setFieldValue)}
+          {this.renderContentForm({ values, activeStep, onChange: handleChange, setFieldValue, intl, dataSource })}
           <PillButtons
             leftButtonTitle={intl.formatMessage(messages.back)}
             rightButtonTitle={intl.formatMessage(messages.next)}
