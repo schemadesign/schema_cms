@@ -16,8 +16,18 @@ function* fetchProjectsList() {
   }
 }
 
-function* createProject() {
-  //should call backend
+function* createProject({ payload }) {
+  try {
+    yield put(ProjectRoutines.createProject.request());
+    const { data } = yield api.post(PROJECTS_PATH, payload);
+
+    yield put(ProjectActions.createProjectSuccess(data));
+    yield put(ProjectRoutines.createProject.success(data));
+  } catch (e) {
+    yield put(ProjectRoutines.createProject.failure());
+  } finally {
+    yield put(ProjectRoutines.createProject.fulfill());
+  }
 }
 
 function* fetchOne({ id }) {

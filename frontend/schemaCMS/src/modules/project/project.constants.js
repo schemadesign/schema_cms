@@ -1,8 +1,8 @@
 import * as Yup from 'yup';
 
 export const CREATE_PROJECT_FORM = 'create_project_form';
-export const PROJECT_TITLE = 'project_title';
-export const PROJECT_DESCRIPTION = 'project_description';
+export const PROJECT_TITLE = 'title';
+export const PROJECT_DESCRIPTION = 'description';
 
 export const INITIAL_VALUES = {
   [PROJECT_TITLE]: '',

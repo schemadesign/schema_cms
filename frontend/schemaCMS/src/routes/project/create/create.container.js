@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { withFormik } from 'formik';
 import { compose } from 'ramda';
+import { injectIntl } from 'react-intl';
 
 import { Create } from './create.component';
 import { INITIAL_VALUES, PROJECT_SCHEMA, CREATE_PROJECT_FORM } from '../../../modules/project/project.constants';
@@ -27,8 +28,10 @@ export default compose(
     mapDispatchToProps
   ),
   withRouter,
+  injectIntl,
   withFormik({
     displayName: CREATE_PROJECT_FORM,
+    isInitialValid: true,
     mapPropsToValues: () => INITIAL_VALUES,
     validationSchema: () => PROJECT_SCHEMA,
     handleSubmit: async (data, { props, ...formik }) => {
