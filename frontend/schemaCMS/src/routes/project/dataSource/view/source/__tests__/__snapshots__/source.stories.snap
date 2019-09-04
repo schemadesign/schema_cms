@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
+exports[`Storyshots Source Default 1`] = `
 <div
-  className="sc-jTzLTM eCMmlJ"
+  className="sc-ifAKCX cFlEyZ"
 >
   <div
     style={
@@ -16,7 +16,7 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
     }
   >
     <label
-      htmlFor="Name"
+      htmlFor="name"
       style={
         Object {
           "border": "none",
@@ -33,9 +33,9 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
       Name
     </label>
     <input
-      defaultValue="My New Dataset"
-      id="Name"
-      name="Name"
+      id="name"
+      name="name"
+      onChange={[Function]}
       style={
         Object {
           "backgroundColor": "transparent",
@@ -96,8 +96,8 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
       <input
         aria-hidden={true}
         defaultChecked={false}
-        id="csv"
-        name="dataSourceType"
+        id="file"
+        name="type"
         onChange={[Function]}
         style={
           Object {
@@ -110,10 +110,10 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
           }
         }
         type="radio"
-        value="csv"
+        value="file"
       />
       <label
-        htmlFor="csv"
+        htmlFor="file"
         style={
           Object {
             "alignItems": "center",
@@ -164,7 +164,7 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
           </svg>
         </button>
       </label>
-      Csv
+      Spreadsheet
     </div>
   </div>
 </div>

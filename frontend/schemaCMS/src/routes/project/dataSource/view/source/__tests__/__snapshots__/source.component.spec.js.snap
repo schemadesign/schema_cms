@@ -5,11 +5,11 @@ exports[`Source: Component should render correctly 1`] = `
   <TextField
     customInputStyles={Object {}}
     customLabelStyles={Object {}}
-    defaultValue="My New Dataset"
     error={false}
     fullWidth={true}
     label="Name"
-    name="Name"
+    name="name"
+    onChange={[Function]}
     type="text"
   />
   <Label
@@ -36,14 +36,14 @@ exports[`Source: Component should render correctly 1`] = `
         "marginBottom": "40px",
       }
     }
-    name="dataSourceType"
+    name="type"
     onChange={[Function]}
     value=""
   >
     <RadioButton
-      id="csv"
-      label="Csv"
-      value="csv"
+      id="file"
+      label="Spreadsheet"
+      value="file"
     >
       <Button
         customStyles={

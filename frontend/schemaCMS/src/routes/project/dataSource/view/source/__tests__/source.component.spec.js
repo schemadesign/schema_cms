@@ -4,7 +4,11 @@ import { shallow } from 'enzyme';
 import { Source } from '../source.component';
 
 describe('Source: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    values: {},
+    onChange: Function.prototype,
+    setFieldValue: Function.prototype,
+  };
 
   const component = props => <Source {...defaultProps} {...props} />;
 

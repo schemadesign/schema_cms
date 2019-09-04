@@ -11,6 +11,7 @@ import { Loader } from '../../../shared/components/loader';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { Empty } from '../project.styles';
 import messages from './view.messages';
+import { Empty } from '../project.styles';
 import {
   Container,
   CardWrapper,
@@ -24,7 +25,6 @@ import {
   IconEditWrapper,
   Statistics,
   buttonStyles,
-  Empty,
 } from './view.styles';
 
 const { P } = Typography;

@@ -41,7 +41,7 @@ exports[`Storyshots Shared Components/PillButtons Default 1`] = `
         "width": "100%",
       }
     }
-    type="submit"
+    type="button"
   />
 </div>
 `;

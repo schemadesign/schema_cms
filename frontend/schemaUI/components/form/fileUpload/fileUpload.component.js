@@ -23,6 +23,9 @@ export class FileUpload extends PureComponent {
   };
 
   static defaultProps = {
+    customStyles: {},
+    customInputStyles: {},
+    customLabelStyles: {},
     iconComponent: (
       <div style={{ ...defaultButtonStyles, ...buttonStyles }}>
         <UploadIcon />
@@ -30,8 +33,14 @@ export class FileUpload extends PureComponent {
     ),
   };
 
+  iconComponent = id => (
+    <label style={labelStyles} htmlFor={id}>
+      {this.props.iconComponent}
+    </label>
+  );
+
   render() {
-    const { fileName, label, onChange, accept, id } = this.props;
+    const { fileName, label, onChange, accept, id, customStyles, customLabelStyles, customInputStyles } = this.props;
 
     return (
       <div style={containerStyles}>

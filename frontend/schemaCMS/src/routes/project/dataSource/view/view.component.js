@@ -7,6 +7,8 @@ import { Container, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
 import { PillButtons } from '../../../../shared/components/pillButtons';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
+import { STATUS_DRAFT } from '../../../../modules/dataSource/dataSource.constants';
 import { TopHeader } from '../../../../shared/components/topHeader';
 
 const MAX_STEPS = 6;
@@ -64,22 +66,22 @@ export class View extends PureComponent {
       }
     );
 
-  renderContent = (values, activeStep, handleChange, setFieldValue) =>
+  renderContentForm = (values, activeStep, handleChange, setFieldValue) =>
     cond([
       [equals(INITIAL_STEP), always(<Source values={values} onChange={handleChange} setFieldValue={setFieldValue} />)],
       [T, always(null)],
     ])(activeStep);
 
-  render() {
+  renderContent = renderWhenTrue(() => {
     const { activeStep, steps } = this.state;
     const { handleSubmit, values, handleChange, setFieldValue, intl } = this.props;
     const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
 
-    return values.id ? (
-      <Container>
+    return (
+      <>
         <TopHeader {...topHeaderConfig} />
         <form onSubmit={handleSubmit}>
-          {this.renderContent(values, activeStep, handleChange, setFieldValue)}
+          {this.renderContentForm(values, activeStep, handleChange, setFieldValue)}
           <PillButtons
             leftButtonTitle={intl.formatMessage(messages.back)}
             rightButtonTitle={intl.formatMessage(messages.next)}
@@ -95,7 +97,11 @@ export class View extends PureComponent {
             />
           </StepperContainer>
         </form>
-      </Container>
-    ) : null;
+      </>
+    );
+  });
+
+  render() {
+    return <Container>{this.renderContent(!!this.props.values.id)}</Container>;
   }
 }

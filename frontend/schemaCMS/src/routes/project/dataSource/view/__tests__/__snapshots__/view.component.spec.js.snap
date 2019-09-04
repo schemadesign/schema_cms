@@ -1,29 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`View: Component should render correctly 1`] = `
-<styled.div>
-  <TopHeader />
-  <Source
-    dataSource={Object {}}
-  />
-  <PillButtons
-    onLeftClick={[Function]}
-    onRightClick={[Function]}
-  />
-  <styled.div>
-    <Stepper
-      activeStep={1}
-      customDotStyles={Object {}}
-      customStyles={
-        Object {
-          "margin": "0 auto",
-          "pointerEvents": "none",
-        }
-      }
-      handleStep={[Function]}
-      onStepChange={[Function]}
-      steps={6}
-    />
-  </styled.div>
-</styled.div>
-`;
+exports[`View: Component should render correctly 1`] = `<styled.div />`;
