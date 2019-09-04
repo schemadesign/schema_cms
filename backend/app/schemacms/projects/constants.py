@@ -9,6 +9,7 @@ PROJECT_STATUS_CHOICES = ((ProjectStatus.INITIAL, "initial"), (ProjectStatus.PRO
 
 # DATASOURCES
 DATASOURCE_NAME_MAX_LENGTH = 25
+DATASOURCE_DRAFT_NAME = "My New Data Source"
 
 
 class DataSourceType:
