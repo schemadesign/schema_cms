@@ -8,10 +8,13 @@ describe('View: Component', () => {
     dataSource: {},
     fetchDataSource: Function.prototype,
     unmountDataSource: Function.prototype,
+    intl: {
+      formatMessage: Function.prototype,
+    },
     match: {
       params: {
-        projectId: 1,
-        dataSource: 1,
+        projectId: '1',
+        dataSource: '1',
       },
     },
   };

@@ -9,10 +9,18 @@ exports[`List: Component should render correctly 1`] = `
     onButtonClick={[Function]}
   >
     <H2>
-      Data Sources
+      <FormattedMessage
+        defaultMessage="Data Sources"
+        id="dataSource.list.title"
+        values={Object {}}
+      />
     </H2>
     <H1>
-      Overview
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="dataSource.list.subTitle"
+        values={Object {}}
+      />
     </H1>
   </Header>
   <Button

@@ -9,12 +9,7 @@ function* create({ payload }) {
   try {
     yield put(DataSourceRoutines.create.request());
 
-    const requestData = {
-      project: payload.projectId,
-      name: null,
-      type: 'file',
-      file: null,
-    };
+    const requestData = { project: payload.projectId };
     const { data } = yield api.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`, requestData);
 
     browserHistory.push(`/project/${payload.projectId}/dataSource/${data.id}`);

@@ -6,6 +6,7 @@ import { watchDataSource } from '../dataSource.sagas';
 import { DataSourceRoutines } from '../dataSource.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCE_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
+import { STATUS_DRAFT } from '../dataSource.constants';
 
 describe('DataSource: sagas', () => {
   const defaultState = Immutable({});
@@ -13,15 +14,10 @@ describe('DataSource: sagas', () => {
   describe('create', () => {
     it('should dispatch a success action', async () => {
       const payload = { projectId: 1 };
-      const requestData = {
-        project: payload.projectId,
-        name: null,
-        type: 'file',
-        file: null,
-      };
+      const requestData = { project: payload.projectId };
       const responseData = {
         id: 1,
-        status: 'draft',
+        status: STATUS_DRAFT,
       };
 
       mockApi.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`, requestData).reply(OK, responseData);
@@ -39,7 +35,7 @@ describe('DataSource: sagas', () => {
       const payload = { projectId: 1, dataSourceId: 1 };
       const responseData = {
         id: 1,
-        status: 'draft',
+        status: STATUS_DRAFT,
       };
 
       mockApi

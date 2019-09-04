@@ -6,6 +6,8 @@ import { containerStyles as defaultButtonStyles } from '../../button/button.styl
 import { UploadIcon } from '../../icons/uploadIcon';
 import { TextField } from '../textField';
 
+const DEFAULT_TEXT_VALUE = 'Select a file';
+
 export class FileUpload extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
@@ -50,7 +52,7 @@ export class FileUpload extends PureComponent {
         <TextField
           name="fileName"
           label={label}
-          value={name || 'Select a file'}
+          value={name || DEFAULT_TEXT_VALUE}
           fullWidth
           disabled
           customStyles={customStyles}

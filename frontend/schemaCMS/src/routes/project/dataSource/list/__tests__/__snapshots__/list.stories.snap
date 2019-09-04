@@ -28,7 +28,9 @@ exports[`Storyshots List Default 1`] = `
           }
         }
       >
-        Data Sources
+        <span>
+          Data Sources
+        </span>
       </h2>
       <h1
         style={
@@ -42,7 +44,9 @@ exports[`Storyshots List Default 1`] = `
           }
         }
       >
-        Overview
+        <span>
+          Overview
+        </span>
       </h1>
     </div>
     <button

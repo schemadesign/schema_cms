@@ -9,20 +9,26 @@ exports[`View: Component should render correctly 1`] = `
     onButtonClick={[Function]}
   >
     <H2>
-      Create Data Source
+      <FormattedMessage
+        defaultMessage="Create Data Source"
+        id="dataSource.view.title"
+        values={Object {}}
+      />
     </H2>
     <H1>
-      Source
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.view.subTitle"
+        values={Object {}}
+      />
     </H1>
   </Header>
   <Source
     dataSource={Object {}}
   />
   <PillButtons
-    leftButtonTitle="Cancel"
     onLeftClick={[Function]}
     onRightClick={[Function]}
-    rightButtonTitle="Next"
   />
   <styled.div>
     <Stepper
