@@ -64,4 +64,3 @@ class DataSourceViewSet(viewsets.ModelViewSet):
             self.get_object().status = constants.DataSourceStatus.ERROR
             self.get_object().save()
             return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
-
