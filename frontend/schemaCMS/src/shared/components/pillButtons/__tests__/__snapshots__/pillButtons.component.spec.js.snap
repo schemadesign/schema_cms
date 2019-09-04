@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PillButtons: Component should render correctly 1`] = `
+<styled.div>
+  <Button
+    customStyles={
+      Object {
+        "marginRight": 10,
+        "width": "100%",
+      }
+    }
+    type="button"
+  />
+  <Button
+    customStyles={
+      Object {
+        "width": "100%",
+      }
+    }
+    type="submit"
+  />
+</styled.div>
+`;

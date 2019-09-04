@@ -4,7 +4,13 @@ import { shallow } from 'enzyme';
 import { List } from '../list.component';
 
 describe('List: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    match: {
+      params: {
+        projectId: 1,
+      },
+    },
+  };
 
   const component = props => <List {...defaultProps} {...props} />;
 

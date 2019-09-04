@@ -8,11 +8,8 @@ exports[`View: Component should render correctly 1`] = `
     title="project.view.pageTitle"
   />
   <Header
-    customStyles={
-      Object {
-        "backgroundColor": null,
-      }
-    }
+    customButtonStyles={Object {}}
+    customStyles={Object {}}
     iconComponent={<MenuIcon />}
     onButtonClick={[Function]}
   >

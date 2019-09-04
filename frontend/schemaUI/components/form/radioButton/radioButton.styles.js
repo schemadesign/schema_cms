@@ -1,4 +1,8 @@
-export const containerStyles = {};
+export const containerStyles = {
+  textAlign: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+};
 export const inputStyles = {
   visibility: 'hidden',
   position: 'absolute',
@@ -9,9 +13,10 @@ export const inputStyles = {
 };
 
 export const checkedStyles = {
-  opacity: 0.5,
+  opacity: 1,
 };
 
 export const labelStyles = {
   cursor: 'pointer',
+  opacity: 0.1,
 };

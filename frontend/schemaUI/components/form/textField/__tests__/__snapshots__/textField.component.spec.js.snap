@@ -7,13 +7,14 @@ exports[`TextField: Component should render correctly 1`] = `
       "display": "flex",
       "flexDirection": "column",
       "maxWidth": "320px",
-      "padding": "5px 0 30px",
+      "paddingBottom": "30px",
       "position": "relative",
     }
   }
 >
   <Input
     customStyles={Object {}}
+    name="name"
     type="text"
   />
   <div

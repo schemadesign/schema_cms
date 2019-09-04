@@ -120,7 +120,7 @@ export class List extends PureComponent {
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <Header customStyles={headerStyles} onButtonClick={this.handleToggleMenu}>
+        <Header onButtonClick={this.handleToggleMenu}>
           <H2>
             <FormattedMessage {...messages.title} />
           </H2>

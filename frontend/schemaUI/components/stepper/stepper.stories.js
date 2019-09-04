@@ -6,7 +6,7 @@ import { Stepper } from './stepper.component';
 const defaultProps = {
   steps: 6,
   activeStep: 1,
-  handleStep: () => {},
+  onStepChange: () => {},
 };
 
 const withCustomStyles = {

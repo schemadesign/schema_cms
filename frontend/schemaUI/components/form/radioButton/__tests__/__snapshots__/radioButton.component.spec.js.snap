@@ -2,12 +2,18 @@
 
 exports[`RadioButton: Component should render correctly 1`] = `
 <div
-  style={Object {}}
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "textAlign": "center",
+    }
+  }
 >
   <input
     aria-hidden={true}
     defaultChecked={false}
-    id="name"
+    id="id"
     name="name"
     onChange={[Function]}
     style={
@@ -24,15 +30,17 @@ exports[`RadioButton: Component should render correctly 1`] = `
     value="value"
   />
   <label
-    htmlFor="name"
+    htmlFor="id"
     style={
       Object {
         "background": "blue",
         "cursor": "pointer",
+        "opacity": 0.1,
       }
     }
   >
     radio
   </label>
+  name
 </div>
 `;
