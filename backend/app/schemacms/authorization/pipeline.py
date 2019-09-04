@@ -31,6 +31,19 @@ def update_external_id(backend, details, user=None, *args, **kwargs):
         backend.strategy.storage.user.changed(user)
 
 
+def update_user_full_name(strategy, details, user=None, *args, **kwargs):
+    """Update user name only when user does not have assigned first and last name"""
+    if not user:
+        return
+
+    first_name = details.get("first_name", "")
+    last_name = details.get("last_name", "")
+    if not (user.first_name and user.last_name) and (first_name and last_name):
+        user.first_name = first_name
+        user.last_name = last_name
+        strategy.storage.user.changed(user)
+
+
 def redirect_with_token(strategy, user=None, *args, **kwargs):
     uri = strategy.session_get("next", settings.DEFAULT_WEBAPP_HOST)
     if not uri.endswith("/"):
