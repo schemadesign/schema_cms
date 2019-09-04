@@ -2,7 +2,7 @@
 
 exports[`Storyshots List empty 1`] = `
 <div
-  className="sc-EHOje jvzENE"
+  className="sc-bZQynM bOrPFB"
 >
   <div
     style={
@@ -29,7 +29,9 @@ exports[`Storyshots List empty 1`] = `
           }
         }
       >
-        Projects
+        <span>
+          Projects
+        </span>
       </h2>
       <h1
         style={
@@ -43,7 +45,9 @@ exports[`Storyshots List empty 1`] = `
           }
         }
       >
-        Overview
+        <span>
+          Overview
+        </span>
       </h1>
     </div>
     <button
@@ -80,7 +84,7 @@ exports[`Storyshots List empty 1`] = `
     </button>
   </div>
   <div
-    className="sc-gZMcBi swown"
+    className="sc-EHOje cCUgrr"
   >
     <p
       style={
@@ -93,7 +97,8 @@ exports[`Storyshots List empty 1`] = `
         }
       }
     >
-      No Projects
+      project.list.noProjects
+       
     </p>
   </div>
   <button
@@ -216,7 +221,7 @@ exports[`Storyshots List empty 1`] = `
 
 exports[`Storyshots List list 1`] = `
 <div
-  className="sc-EHOje jvzENE"
+  className="sc-bZQynM bOrPFB"
 >
   <div
     style={
@@ -243,7 +248,9 @@ exports[`Storyshots List list 1`] = `
           }
         }
       >
-        Projects
+        <span>
+          Projects
+        </span>
       </h2>
       <h1
         style={
@@ -257,7 +264,9 @@ exports[`Storyshots List list 1`] = `
           }
         }
       >
-        Overview
+        <span>
+          Overview
+        </span>
       </h1>
     </div>
     <button
@@ -294,10 +303,10 @@ exports[`Storyshots List list 1`] = `
     </button>
   </div>
   <ul
-    className="sc-bZQynM cHseiX"
+    className="sc-gzVnrw fPzkjC"
   >
     <li
-      className="sc-gzVnrw jcTlqU"
+      className="sc-htoDjs cpAnRt"
     >
       <div
         style={
@@ -322,20 +331,20 @@ exports[`Storyshots List list 1`] = `
           }
         >
           <ul
-            className="sc-htoDjs LPVfx"
+            className="sc-dnqmqq kpjoWe"
           >
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-iwsKbI jjhHnp"
             >
               3 months ago
             </li>
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-iwsKbI jjhHnp"
             >
               Status
             </li>
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-iwsKbI jjhHnp"
             >
               Firstname Lastname
             </li>
@@ -358,7 +367,7 @@ exports[`Storyshots List list 1`] = `
           Project Name
         </h1>
         <div
-          className="sc-iwsKbI fhlDBZ"
+          className="sc-gZMcBi kFYqFR"
           onClick={[Function]}
         >
           <p
@@ -394,7 +403,7 @@ exports[`Storyshots List list 1`] = `
       </div>
     </li>
     <li
-      className="sc-gzVnrw jcTlqU"
+      className="sc-htoDjs cpAnRt"
     >
       <div
         style={
@@ -419,20 +428,20 @@ exports[`Storyshots List list 1`] = `
           }
         >
           <ul
-            className="sc-htoDjs LPVfx"
+            className="sc-dnqmqq kpjoWe"
           >
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-iwsKbI jjhHnp"
             >
               3 months ago
             </li>
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-iwsKbI jjhHnp"
             >
               Published
             </li>
             <li
-              className="sc-dnqmqq fejgKq"
+              className="sc-iwsKbI jjhHnp"
             >
               Tadeusz Kosciuszko
             </li>
@@ -455,7 +464,7 @@ exports[`Storyshots List list 1`] = `
           Honec sodales libero non fermentum aliquam
         </h1>
         <div
-          className="sc-iwsKbI fhlDBZ"
+          className="sc-gZMcBi kFYqFR"
           onClick={[Function]}
         >
           <p
@@ -486,7 +495,7 @@ exports[`Storyshots List list 1`] = `
             }
           }
         >
-          schemacms/api/honec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+          schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
         </span>
       </div>
     </li>

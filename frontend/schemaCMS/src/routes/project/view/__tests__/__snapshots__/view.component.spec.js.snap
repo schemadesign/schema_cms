@@ -2,6 +2,11 @@
 
 exports[`View: Component should render correctly 1`] = `
 <styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="project.view.pageTitle"
+  />
   <Header
     customStyles={
       Object {
@@ -12,14 +17,26 @@ exports[`View: Component should render correctly 1`] = `
     onButtonClick={[Function]}
   >
     <H2>
-      Project
+      <FormattedMessage
+        defaultMessage="Project"
+        id="project.view.title"
+        values={Object {}}
+      />
     </H2>
     <H1 />
   </Header>
-  <styled.div>
-    <P>
-      Project doesn't exist.
-    </P>
-  </styled.div>
+  <Loader />
+  <Button
+    customStyles={
+      Object {
+        "backgroundColor": "#f0efef",
+        "height": "60px",
+        "margin": "50px 0 20px 20px",
+      }
+    }
+    onClick={[Function]}
+  >
+    <ArrowLeftIcon />
+  </Button>
 </styled.div>
 `;

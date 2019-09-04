@@ -6,18 +6,35 @@ exports[`App: Component should not render App when language is not set 1`] = `
   locale="en"
   messages={
     Object {
-      "app.pageTitle": "Apptension Boilerplate",
+      "app.pageTitle": "SchemaCMS",
       "home.pageTitle": "Homepage",
       "home.welcome": "Hello World!",
       "notFound.pageTitle": "Not found",
       "notFound.title": "Error: 404",
+      "project.list.noProjects": "No Projects",
+      "project.list.overview": "Overview",
+      "project.list.pageTitle": "Projects Overview",
+      "project.list.title": "Projects",
+      "project.view.api": "API",
+      "project.view.charts": "Charts",
+      "project.view.dataSources": "Data Sources",
+      "project.view.description": "Description",
+      "project.view.lastUpdate": "Last Update",
+      "project.view.noProject": "Project doesn't exist.",
+      "project.view.owner": "Owner",
+      "project.view.pageTitle": "Project",
+      "project.view.pages": "Pages",
+      "project.view.status": "Status",
+      "project.view.title": "Project",
+      "project.view.titleField": "Title",
+      "project.view.users": "Users",
       "unsupported.pageTitle": "Unsupported Browser",
       "unsupported.title": "Unsupported Browser",
     }
   }
 >
   <FormattedMessage
-    defaultMessage="Apptension Boilerplate"
+    defaultMessage="SchemaCMS"
     id="app.pageTitle"
     values={Object {}}
   >
@@ -38,18 +55,35 @@ exports[`App: Component should render App when language is set 1`] = `
   locale="en"
   messages={
     Object {
-      "app.pageTitle": "Apptension Boilerplate",
+      "app.pageTitle": "SchemaCMS",
       "home.pageTitle": "Homepage",
       "home.welcome": "Hello World!",
       "notFound.pageTitle": "Not found",
       "notFound.title": "Error: 404",
+      "project.list.noProjects": "No Projects",
+      "project.list.overview": "Overview",
+      "project.list.pageTitle": "Projects Overview",
+      "project.list.title": "Projects",
+      "project.view.api": "API",
+      "project.view.charts": "Charts",
+      "project.view.dataSources": "Data Sources",
+      "project.view.description": "Description",
+      "project.view.lastUpdate": "Last Update",
+      "project.view.noProject": "Project doesn't exist.",
+      "project.view.owner": "Owner",
+      "project.view.pageTitle": "Project",
+      "project.view.pages": "Pages",
+      "project.view.status": "Status",
+      "project.view.title": "Project",
+      "project.view.titleField": "Title",
+      "project.view.users": "Users",
       "unsupported.pageTitle": "Unsupported Browser",
       "unsupported.title": "Unsupported Browser",
     }
   }
 >
   <FormattedMessage
-    defaultMessage="Apptension Boilerplate"
+    defaultMessage="SchemaCMS"
     id="app.pageTitle"
     values={Object {}}
   >
