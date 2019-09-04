@@ -7,12 +7,15 @@ import RadioGroupContext from '../radioGroup/radioGroup.context';
 export class RadioButton extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    label: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     value: PropTypes.any.isRequired,
   };
 
+  renderAdditionalText = label => label || null;
+
   render() {
-    const { children, label, ...restProps } = this.props;
+    const { children, id, label, ...restProps } = this.props;
 
     return (
       <RadioGroupContext.Consumer>
@@ -31,12 +34,13 @@ export class RadioButton extends PureComponent {
                 defaultChecked={checked}
                 aria-hidden
                 type="radio"
-                id={label}
+                id={id}
                 style={inputStyles}
               />
-              <label htmlFor={label} style={styles}>
+              <label htmlFor={id} style={styles}>
                 {children}
               </label>
+              {this.renderAdditionalText(label)}
             </div>
           );
         }}

@@ -5,19 +5,25 @@ exports[`Header: Component should render correctly 1`] = `
   style={
     Object {
       "alignItems": "flex-start",
-      "backgroundColor": "#f0efef",
       "color": "#1d1d20",
       "display": "flex",
       "flexDirection": "row",
       "justifyContent": "space-between",
-      "padding": "6px 0 18px 20px",
+      "padding": "18px 0",
       "width": "100%",
     }
   }
 >
   <div />
   <Button
-    customStyles={Object {}}
+    customStyles={
+      Object {
+        "backgroundColor": "transparent",
+        "position": "absolute",
+        "right": 0,
+        "top": 6,
+      }
+    }
     onClick={[Function]}
   >
     <MenuIcon />
@@ -35,14 +41,21 @@ exports[`Header: Component should render with children and custom styles 1`] = `
       "display": "flex",
       "flexDirection": "row",
       "justifyContent": "space-between",
-      "padding": "6px 0 18px 20px",
+      "padding": "18px 0",
       "width": "100%",
     }
   }
 >
   <div />
   <Button
-    customStyles={Object {}}
+    customStyles={
+      Object {
+        "backgroundColor": "transparent",
+        "position": "absolute",
+        "right": 0,
+        "top": 6,
+      }
+    }
     onClick={[Function]}
   >
     icon

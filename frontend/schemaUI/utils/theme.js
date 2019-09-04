@@ -5,6 +5,9 @@ const primary = {
   text: '#1d1d20',
   error: '#f21e29',
   active: '#1d1d20',
+  divider: '#F0EFEF',
+  iconDark: '#1d1d20',
+  iconBright: '#FFF',
 };
 
 const secondary = {

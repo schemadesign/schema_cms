@@ -2,18 +2,17 @@
 
 exports[`Storyshots View default 1`] = `
 <div
-  className="sc-fjdhpX ehLwBl"
+  className="sc-kAzzGY fupqXz"
 >
   <div
     style={
       Object {
         "alignItems": "flex-start",
-        "backgroundColor": null,
         "color": "#1d1d20",
         "display": "flex",
         "flexDirection": "row",
         "justifyContent": "space-between",
-        "padding": "6px 0 18px 20px",
+        "padding": "18px 0",
         "width": "100%",
       }
     }
@@ -55,12 +54,17 @@ exports[`Storyshots View default 1`] = `
           "backgroundColor": "transparent",
           "border": "none",
           "borderRadius": "48px",
+          "color": "#1d1d20",
           "cursor": "pointer",
+          "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": 6,
         }
       }
     >
@@ -82,13 +86,13 @@ exports[`Storyshots View default 1`] = `
     </button>
   </div>
   <div
-    className="sc-jzJRlG gVgewm"
+    className="sc-chPdSV eYEXOe"
   >
     <ul
-      className="sc-dxgOiQ ekYRAr"
+      className="sc-eNQAEJ ghMlVq"
     >
       <li
-        className="sc-ckVGcZ bnaKRX"
+        className="sc-hMqMXs bzuJqv"
       >
         <div
           style={
@@ -115,14 +119,14 @@ exports[`Storyshots View default 1`] = `
             project.view.dataSources
           </div>
           <span
-            className="sc-jKJlTe jZGtKH"
+            className="sc-kEYyzF gFKmPR"
           >
             0
           </span>
         </div>
       </li>
       <li
-        className="sc-ckVGcZ bnaKRX"
+        className="sc-hMqMXs bzuJqv"
       >
         <div
           style={
@@ -149,7 +153,7 @@ exports[`Storyshots View default 1`] = `
             project.view.users
           </div>
           <span
-            className="sc-jKJlTe jZGtKH"
+            className="sc-kEYyzF gFKmPR"
           >
             2
           </span>
@@ -157,27 +161,27 @@ exports[`Storyshots View default 1`] = `
       </li>
     </ul>
     <ul
-      className="sc-cSHVUG bHTIdp"
+      className="sc-kgoBCf ejyQnY"
     >
       <li
-        className="sc-kAzzGY btvAqj"
+        className="sc-kGXeez bctyGe"
       >
         <div
-          className="sc-chPdSV eyAtrL"
+          className="sc-kpOJdX edaacO"
         >
           <span
-            className="sc-kgoBCf HVkGX"
+            className="sc-dxgOiQ eeVPia"
           >
             project.view.lastUpdate
           </span>
           <span
-            className="sc-kpOJdX ddWphX"
+            className="sc-jKJlTe bkGlpl"
           >
             3 months ago
           </span>
         </div>
         <div
-          className="sc-kGXeez jIsgPY"
+          className="sc-ckVGcZ fWowgW"
         >
           <svg
             style={
@@ -197,24 +201,24 @@ exports[`Storyshots View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-kAzzGY btvAqj"
+        className="sc-kGXeez bctyGe"
       >
         <div
-          className="sc-chPdSV eyAtrL"
+          className="sc-kpOJdX edaacO"
         >
           <span
-            className="sc-kgoBCf HVkGX"
+            className="sc-dxgOiQ eeVPia"
           >
             project.view.status
           </span>
           <span
-            className="sc-kpOJdX ddWphX"
+            className="sc-jKJlTe bkGlpl"
           >
             Status
           </span>
         </div>
         <div
-          className="sc-kGXeez jIsgPY"
+          className="sc-ckVGcZ fWowgW"
         >
           <svg
             style={
@@ -234,24 +238,24 @@ exports[`Storyshots View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-kAzzGY btvAqj"
+        className="sc-kGXeez bctyGe"
       >
         <div
-          className="sc-chPdSV eyAtrL"
+          className="sc-kpOJdX edaacO"
         >
           <span
-            className="sc-kgoBCf HVkGX"
+            className="sc-dxgOiQ eeVPia"
           >
             project.view.owner
           </span>
           <span
-            className="sc-kpOJdX ddWphX"
+            className="sc-jKJlTe bkGlpl"
           >
             Firstname Lastname
           </span>
         </div>
         <div
-          className="sc-kGXeez jIsgPY"
+          className="sc-ckVGcZ fWowgW"
         >
           <svg
             style={
@@ -271,24 +275,24 @@ exports[`Storyshots View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-kAzzGY btvAqj"
+        className="sc-kGXeez bctyGe"
       >
         <div
-          className="sc-chPdSV eyAtrL"
+          className="sc-kpOJdX edaacO"
         >
           <span
-            className="sc-kgoBCf HVkGX"
+            className="sc-dxgOiQ eeVPia"
           >
             project.view.titleField
           </span>
           <span
-            className="sc-kpOJdX ddWphX"
+            className="sc-jKJlTe bkGlpl"
           >
             Project Name
           </span>
         </div>
         <div
-          className="sc-kGXeez jIsgPY"
+          className="sc-ckVGcZ fWowgW"
         >
           <svg
             style={
@@ -308,24 +312,24 @@ exports[`Storyshots View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-kAzzGY btvAqj"
+        className="sc-kGXeez bctyGe"
       >
         <div
-          className="sc-chPdSV eyAtrL"
+          className="sc-kpOJdX edaacO"
         >
           <span
-            className="sc-kgoBCf HVkGX"
+            className="sc-dxgOiQ eeVPia"
           >
             project.view.description
           </span>
           <span
-            className="sc-kpOJdX ddWphX"
+            className="sc-jKJlTe bkGlpl"
           >
             Description
           </span>
         </div>
         <div
-          className="sc-kGXeez jIsgPY"
+          className="sc-ckVGcZ fWowgW"
         >
           <svg
             style={
@@ -345,24 +349,24 @@ exports[`Storyshots View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-kAzzGY btvAqj"
+        className="sc-kGXeez bctyGe"
       >
         <div
-          className="sc-chPdSV eyAtrL"
+          className="sc-kpOJdX edaacO"
         >
           <span
-            className="sc-kgoBCf HVkGX"
+            className="sc-dxgOiQ eeVPia"
           >
             project.view.api
           </span>
           <span
-            className="sc-kpOJdX ddWphX"
+            className="sc-jKJlTe bkGlpl"
           >
             schemacms/api/project_title
           </span>
         </div>
         <div
-          className="sc-kGXeez jIsgPY"
+          className="sc-ckVGcZ fWowgW"
         >
           <svg
             style={
@@ -390,7 +394,9 @@ exports[`Storyshots View default 1`] = `
         "backgroundColor": "#f0efef",
         "border": "none",
         "borderRadius": "48px",
+        "color": "#1d1d20",
         "cursor": "pointer",
+        "display": "inline-block",
         "fontSize": "18px",
         "height": "60px",
         "margin": "50px 0 20px 20px",
@@ -420,18 +426,17 @@ exports[`Storyshots View default 1`] = `
 
 exports[`Storyshots View empty 1`] = `
 <div
-  className="sc-fjdhpX ehLwBl"
+  className="sc-kAzzGY fupqXz"
 >
   <div
     style={
       Object {
         "alignItems": "flex-start",
-        "backgroundColor": null,
         "color": "#1d1d20",
         "display": "flex",
         "flexDirection": "row",
         "justifyContent": "space-between",
-        "padding": "6px 0 18px 20px",
+        "padding": "18px 0",
         "width": "100%",
       }
     }
@@ -471,12 +476,17 @@ exports[`Storyshots View empty 1`] = `
           "backgroundColor": "transparent",
           "border": "none",
           "borderRadius": "48px",
+          "color": "#1d1d20",
           "cursor": "pointer",
+          "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": 6,
         }
       }
     >
@@ -498,7 +508,7 @@ exports[`Storyshots View empty 1`] = `
     </button>
   </div>
   <div
-    className="sc-jTzLTM hjJJfW"
+    className="sc-cSHVUG hXTvOO"
   >
     <span>
       Loading...
@@ -511,7 +521,9 @@ exports[`Storyshots View empty 1`] = `
         "backgroundColor": "#f0efef",
         "border": "none",
         "borderRadius": "48px",
+        "color": "#1d1d20",
         "cursor": "pointer",
+        "display": "inline-block",
         "fontSize": "18px",
         "height": "60px",
         "margin": "50px 0 20px 20px",

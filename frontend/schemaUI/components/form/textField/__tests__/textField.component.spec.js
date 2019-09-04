@@ -4,7 +4,9 @@ import { shallow } from 'enzyme';
 import { TextField } from '../textField.component';
 
 describe('TextField: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    name: 'name',
+  };
 
   const component = props => <TextField {...defaultProps} {...props} />;
 

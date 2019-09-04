@@ -4,6 +4,7 @@ exports[`Input: Component should render correctly 1`] = `
 <input
   style={
     Object {
+      "backgroundColor": "transparent",
       "border": "none",
       "color": "#1d1d20",
       "fontSize": "18px",
@@ -18,6 +19,7 @@ exports[`Input: Component should render with custom styles 1`] = `
 <input
   style={
     Object {
+      "backgroundColor": "transparent",
       "border": "none",
       "color": "blue",
       "fontSize": "18px",

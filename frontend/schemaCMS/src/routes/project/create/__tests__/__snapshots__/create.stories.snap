@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Create Default 1`] = `
+<div
+  className="sc-bdVaJa bDWFJH"
+>
+  <form>
+    <div
+      className="sc-bwzfXH uTxCW"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "320px",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <input
+          id="project_title"
+          name="project_title"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#1d1d20",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+            }
+          }
+          type="text"
+          value="title"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+  </form>
+</div>
+`;

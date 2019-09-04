@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { Create } from './create';
+import { View } from './view';
 import { List } from './list';
 
 export class DataSource extends PureComponent {
@@ -15,14 +15,14 @@ export class DataSource extends PureComponent {
   render() {
     const { match } = this.props;
     const listPath = `${match.path}/list`;
-    const createPath = `${match.path}/create`;
+    const viewPath = `${match.path}/:dataSourceId`;
 
     return (
       <Switch>
         <Redirect exact path={match.path} to={listPath} />
 
         <Route exact path={listPath} component={List} />
-        <Route exact path={createPath} component={Create} />
+        <Route exact path={viewPath} component={View} />
       </Switch>
     );
   }

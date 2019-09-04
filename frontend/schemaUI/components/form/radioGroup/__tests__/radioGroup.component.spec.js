@@ -6,17 +6,17 @@ import { RadioButton } from '../../radioButton';
 
 describe('RadioGroup: Component', () => {
   const defaultProps = {
-    handleChange: () => {},
+    onChange: () => {},
     name: 'radio',
     value: null,
   };
 
   const component = props => (
     <RadioGroup {...defaultProps} {...props}>
-      <RadioButton label="label 1" value="value 1">
+      <RadioButton label="label 1" value="value 1" id="label 1">
         label 1
       </RadioButton>
-      <RadioButton label="label 2" value="value 2">
+      <RadioButton label="label 2" value="value 2" id="label 2">
         label 2
       </RadioButton>
     </RadioGroup>

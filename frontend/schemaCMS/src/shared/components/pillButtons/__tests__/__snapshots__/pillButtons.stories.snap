@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots PillButtons Default 1`] = `
+<div
+  className="sc-gzVnrw IHUTD"
+>
+  <button
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "border": "none",
+        "borderRadius": "48px",
+        "color": "#1d1d20",
+        "cursor": "pointer",
+        "display": "inline-block",
+        "fontSize": "18px",
+        "margin": "0",
+        "marginRight": 10,
+        "minHeight": "48px",
+        "outline": "none",
+        "padding": "0",
+        "width": "100%",
+      }
+    }
+    type="button"
+  />
+  <button
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "border": "none",
+        "borderRadius": "48px",
+        "color": "#1d1d20",
+        "cursor": "pointer",
+        "display": "inline-block",
+        "fontSize": "18px",
+        "margin": "0",
+        "minHeight": "48px",
+        "outline": "none",
+        "padding": "0",
+        "width": "100%",
+      }
+    }
+    type="submit"
+  />
+</div>
+`;

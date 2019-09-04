@@ -7,7 +7,7 @@ describe('Stepper: Component', () => {
   const defaultProps = {
     steps: 6,
     activeStep: 1,
-    handleStep: () => {},
+    onStepChange: () => {},
   };
 
   const component = props => <Stepper {...defaultProps} {...props} />;
@@ -37,8 +37,8 @@ describe('Stepper: Component', () => {
   });
 
   it('should call onButtonClick prop on button click if component is provided', () => {
-    const handleStep = jest.fn();
-    const props = { handleStep };
+    const onStepChange = jest.fn();
+    const props = { onStepChange };
     const wrapper = render(props);
 
     wrapper
@@ -46,6 +46,6 @@ describe('Stepper: Component', () => {
       .at(1)
       .simulate('click');
 
-    expect(props.handleStep).toHaveBeenCalledWith(2);
+    expect(props.onStepChange).toHaveBeenCalledWith(2);
   });
 });
