@@ -17,7 +17,7 @@ export class DataSource extends PureComponent {
   render() {
     const { match } = this.props;
     const listPath = `${match.path}/list`;
-    const viewPath = `${match.path}/:dataSourceId`;
+    const viewPath = `${match.path}/view/:dataSourceId`;
     const viewPathWithStep = `${viewPath}/:step`;
 
     return (

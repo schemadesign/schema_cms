@@ -46,8 +46,8 @@ export default compose(
     validationSchema: () => DATA_SOURCE_SCHEMA,
     handleSubmit: async (requestData, { props, ...formik }) => {
       try {
-        const { projectId, dataSourceId } = props.match.params;
-        await props.updateDataSource({ requestData, projectId, dataSourceId });
+        const { projectId, dataSourceId, step } = props.match.params;
+        await props.updateDataSource({ requestData, projectId, dataSourceId, step });
 
         formik.setSubmitting(true);
       } catch ({ errors }) {

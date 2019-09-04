@@ -54,7 +54,7 @@ function* updateOne({ payload: { projectId, dataSourceId, requestData, step } })
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
-    const redirectUri = requestData.file ? 'list' : `${dataSourceId}/${step + 1}`;
+    const redirectUri = requestData.file ? 'list' : `view/${dataSourceId}/${parseInt(step, 10) + 1}`;
     browserHistory.push(`/project/${projectId}/datasource/${redirectUri}`);
     yield put(DataSourceRoutines.updateOne.success({ data }));
     yield api.post(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}/process`);

@@ -32,10 +32,7 @@ export class View extends PureComponent {
     }).isRequired,
   };
 
-  state = {
-    steps: MAX_STEPS,
-    activeStep: parseInt(this.props.match.params.step, 10),
-  };
+  state = { steps: MAX_STEPS };
 
   componentDidMount() {
     if (!this.props.values.id) {
@@ -58,15 +55,25 @@ export class View extends PureComponent {
 
   handleBackClick = () =>
     ifElse(equals(INITIAL_STEP), () => {}, () => this.handleStepChange(this.state.activeStep - 1));
-  handleNextClick = () => ifElse(equals(INITIAL_STEP), this.props.handleSubmit, () => {})(this.state.activeStep);
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([[equals(INITIAL_STEP), always(<Source {...props} />)], [T, always(null)]])(activeStep);
 
   renderContent = renderWhenTrue(() => {
-    const { activeStep, steps } = this.state;
-    const { handleSubmit, values, handleChange, setFieldValue, intl, dataSource } = this.props;
+    const { steps } = this.state;
+    const {
+      handleSubmit,
+      values,
+      handleChange,
+      setFieldValue,
+      intl,
+      dataSource,
+      match: {
+        params: { step },
+      },
+    } = this.props;
     const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
+    const activeStep = parseInt(step, 10);
 
     return (
       <>
@@ -77,7 +84,7 @@ export class View extends PureComponent {
             leftButtonTitle={intl.formatMessage(messages.back)}
             rightButtonTitle={intl.formatMessage(messages.next)}
             onLeftClick={this.handleBackClick}
-            onRightClick={this.handleNextClick}
+            onRightClick={handleSubmit}
           />
           <StepperContainer>
             <Stepper
