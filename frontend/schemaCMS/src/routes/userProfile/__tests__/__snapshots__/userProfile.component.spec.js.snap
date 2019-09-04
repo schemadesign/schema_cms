@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserProfile: Component should render correctly 1`] = `
+<styled.div>
+  <Header
+    customStyles={Object {}}
+    iconComponent={<MenuIcon />}
+    onButtonClick={[Function]}
+  >
+    <H2>
+      Admin Settings
+    </H2>
+    <H1>
+      Profile
+    </H1>
+  </Header>
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <TextInput
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      name="first_name"
+      onChange={[Function]}
+      value=""
+      values={
+        Object {
+          "email": "",
+          "first_name": "",
+          "last_name": "",
+        }
+      }
+    />
+    <TextInput
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      name="last_name"
+      onChange={[Function]}
+      value=""
+      values={
+        Object {
+          "email": "",
+          "first_name": "",
+          "last_name": "",
+        }
+      }
+    />
+    <TextInput
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      name="email"
+      onChange={[Function]}
+      value=""
+      values={
+        Object {
+          "email": "",
+          "first_name": "",
+          "last_name": "",
+        }
+      }
+    />
+  </styled.form>
+</styled.div>
+`;
