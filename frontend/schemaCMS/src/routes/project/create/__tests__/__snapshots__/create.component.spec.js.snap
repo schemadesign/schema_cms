@@ -2,6 +2,14 @@
 
 exports[`Create: Component should render correctly 1`] = `
 <styled.div>
+  <Header
+    customStyles={Object {}}
+    iconComponent={<MenuIcon />}
+    onButtonClick={[Function]}
+  >
+    <H1 />
+    <H2 />
+  </Header>
   <form
     onSubmit={[Function]}
   >
@@ -9,15 +17,43 @@ exports[`Create: Component should render correctly 1`] = `
       errors={Object {}}
       handleChange={[Function]}
       handleSubmit={[Function]}
-      name="project_title"
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      name="title"
       onChange={[Function]}
+      placeholder="Project title"
       touched={Object {}}
       value=""
       values={
         Object {
-          "project_title": "",
+          "title": "",
         }
       }
+    />
+    <TextInput
+      errors={Object {}}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      name="description"
+      onChange={[Function]}
+      placeholder="Project description"
+      touched={Object {}}
+      values={
+        Object {
+          "title": "",
+        }
+      }
+    />
+    <Button
+      customStyles={Object {}}
     />
   </form>
 </styled.div>

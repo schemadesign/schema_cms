@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
-import { Empty, headerStyles } from '../project.styles';
+import { Empty } from '../project.styles';
 import messages from './list.messages';
 import {
   Action,
@@ -54,9 +54,9 @@ export class List extends PureComponent {
     });
   };
 
-  handleShowProject = id => () => this.props.history.push(`/project/${id}`);
+  handleShowProject = id => () => this.props.history.push(`/project/view/${id}`);
 
-  handleNewProject = () => {};
+  handleNewProject = () => this.props.history.push('/project/create/');
 
   renderHeader = (list = []) => (
     <HeaderList>
