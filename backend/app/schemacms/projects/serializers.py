@@ -71,7 +71,7 @@ class ProjectSerializer(serializers.ModelSerializer):
         fields = ("id", "title", "slug", "description", "status", "owner", "editors", "created", "modified")
 
     def create(self, validated_data):
-        editors = validated_data.pop("editors")
+        editors = validated_data.pop("editors", [])
         project = Project(owner=self.context["request"].user, **validated_data)
 
         with transaction.atomic():

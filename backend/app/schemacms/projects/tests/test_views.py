@@ -44,6 +44,8 @@ class TestListCreateProjectView:
         user.role = user_constants.UserRole.ADMIN
         api_client.force_authenticate(user)
 
+        self.example_project["editors"].append(user.id)
+
         response = api_client.post(self.get_url(), data=self.example_project)
         project_id = response.data["id"]
         project = projects_models.Project.objects.get(pk=project_id)
@@ -71,6 +73,20 @@ class TestListCreateProjectView:
             user1_response.data["results"]
             == projects_serializers.ProjectSerializer(user1_projects, many=True).data
         )
+
+    def test_create_without_editors(self, api_client, user):
+        user.role = user_constants.UserRole.ADMIN
+        api_client.force_authenticate(user)
+
+        self.example_project.pop("editors")
+
+        response = api_client.post(self.get_url(), data=self.example_project)
+
+        project_id = response.data["id"]
+        project = projects_models.Project.objects.get(pk=project_id)
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
     def test_url(self):
         assert "/api/v1/projects" == self.get_url()
