@@ -265,7 +265,6 @@ class TestUpdateDraftDataSourceView:
     def test_file_overwrite(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory(draft=True)
         _, file_name_before_update = data_source.get_original_file_name()
-
         url = self.get_url(data_source_pk=data_source.pk, project_pk=data_source.project_id)
         payload = dict(
             name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
