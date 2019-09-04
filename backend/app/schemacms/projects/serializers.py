@@ -14,15 +14,21 @@ class DataSourceMetaSerializer(serializers.ModelSerializer):
 
 class DataSourceSerializer(serializers.ModelSerializer):
     meta_data = DataSourceMetaSerializer(read_only=True)
+    file_name = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = DataSource
-        fields = ("id", "name", "type", "status", "file", "meta_data")
+        fields = ("id", "name", "type", "status", "file", "file_name", "meta_data")
         extra_kwargs = {
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},
             "file": {"required": True, "allow_null": False},
         }
+
+    def get_file_name(self, obj):
+        if obj.file:
+            _, file_name = obj.get_original_file_name()
+            return file_name
 
 
 class DraftDataSourceSerializer(serializers.ModelSerializer):
