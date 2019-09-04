@@ -8,8 +8,6 @@ USER_MODEL = auth.get_user_model()
 
 
 class InviteUserForm(forms.ModelForm):
-    # email = forms.EmailField(required=True)
-
     class Meta:
         model = USER_MODEL
         fields = ("email", "first_name", "last_name", "role")
