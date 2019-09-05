@@ -278,6 +278,20 @@ class TestUpdateDraftDataSourceView:
             data_source_pk=data_source.pk, project_pk=data_source.project_id
         )
 
+    def test_file_overwrite(self, api_client, faker, admin, data_source_factory):
+        data_source = data_source_factory(draft=True)
+        _, file_name_before_update = data_source.get_original_file_name()
+        url = self.get_url(data_source_pk=data_source.pk, project_pk=data_source.project_id)
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
+
+        api_client.force_authenticate(admin)
+        response = api_client.put(url, payload, format="multipart")
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["file_name"] == file_name_before_update
+
     @staticmethod
     def get_url(data_source_pk, project_pk):
         return reverse("datasource-detail", kwargs=dict(pk=data_source_pk, project_pk=project_pk))
