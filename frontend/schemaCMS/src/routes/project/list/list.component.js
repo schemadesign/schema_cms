@@ -36,16 +36,13 @@ export class List extends PureComponent {
     this.props.fetchProjectsList();
   }
 
-  formatMessage = value => this.props.intl.formatMessage(value);
-
-  generateTopHeaderConfig = () => ({
-    title: this.formatMessage(messages.title),
-    subtitle: this.formatMessage(messages.overview),
-    menu: {
-      primaryItems: [{ label: 'Data Sources', to: '/dataSources' }],
-      secondaryItems: [{ label: 'Log Out', to: '/logout' }],
-    },
+  getHeaderAndMenuConfig = () => ({
+    headerTitle: this.formatMessage(messages.title),
+    headerSubtitle: this.formatMessage(messages.overview),
+    secondaryMenuItems: [{ label: this.formatMessage(messages.logOut), to: '/logout' }],
   });
+
+  formatMessage = value => this.props.intl.formatMessage(value);
 
   handleShowProject = id => () => this.props.history.push(`/project/view/${id}`);
 
@@ -93,7 +90,7 @@ export class List extends PureComponent {
   render() {
     const { list = [] } = this.props;
 
-    const topHeaderConfig = this.generateTopHeaderConfig();
+    const topHeaderConfig = this.getHeaderAndMenuConfig();
     const content = renderWhenTrueOtherwise(this.renderList, this.renderNoData)(Boolean(list.length), list);
 
     return (

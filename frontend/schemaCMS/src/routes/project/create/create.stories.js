@@ -10,9 +10,7 @@ const defaultProps = {
   },
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
-  intl: {
-    formatMessage: Function.prototype,
-  },
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
 storiesOf('Project/Create', module).add('Default', () => <Create {...defaultProps} />);

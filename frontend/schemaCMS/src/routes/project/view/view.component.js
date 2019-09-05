@@ -52,22 +52,34 @@ export class View extends PureComponent {
     return this.props.unmountProject();
   }
 
+  getHeaderAndMenuConfig = (headerSubtitle, projectId, hasNoData) => {
+    const primaryMenuItems = [];
+    const secondaryMenuItems = [];
+
+    if (!hasNoData) {
+      primaryMenuItems.push({
+        label: this.formatMessage(messages.dataSources),
+        to: `/project/view/${projectId}/datasource`,
+      });
+      secondaryMenuItems.push(
+        { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
+        { label: this.formatMessage(messages.deleteProject), to: `/project/delete/${projectId}` }
+      );
+    }
+
+    secondaryMenuItems.push({ label: this.formatMessage(messages.logOut), to: '/logout' });
+
+    return {
+      headerTitle: this.formatMessage(messages.title),
+      headerSubtitle,
+      primaryMenuItems,
+      secondaryMenuItems,
+    };
+  };
+
   countItems = value => (isNil(value) ? null : value.length);
 
   formatMessage = value => this.props.intl.formatMessage(value);
-
-  generateTopHeaderConfig = subtitle => ({
-    title: this.formatMessage(messages.title),
-    subtitle,
-    menu: {
-      primaryItems: [{ label: 'Data Sources', to: '/dataSources' }],
-      secondaryItems: [
-        { label: this.formatMessage(messages.editProjectSettings), to: '/edit' },
-        { label: this.formatMessage(messages.deleteProject), to: '/delete' },
-        { label: 'Log Out', to: '/logout' },
-      ],
-    },
-  });
 
   handleGoToProjectsList = () => this.props.history.push('/project/list');
 
@@ -126,14 +138,16 @@ export class View extends PureComponent {
 
   render() {
     const { project } = this.props;
+    const { projectId } = this.props.match.params;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
-    const topHeaderConfig = this.generateTopHeaderConfig(projectName);
+    const hasNoData = !project || has('error', project);
+    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, hasNoData);
 
     const content = isEmpty(project) ? (
       <Loader />
     ) : (
-      renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(has('error', project), project)
+      renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(hasNoData, project)
     );
 
     return (

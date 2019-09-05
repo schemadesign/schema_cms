@@ -62,4 +62,8 @@ export default defineMessages({
     id: 'project.view.deleteProject',
     defaultMessage: 'Delete Project',
   },
+  logOut: {
+    id: 'project.view.logOut',
+    defaultMessage: 'Log Out',
+  },
 });

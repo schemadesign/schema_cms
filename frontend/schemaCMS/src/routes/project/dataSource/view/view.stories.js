@@ -8,7 +8,7 @@ const defaultProps = {
   fetchDataSource: Function.prototype,
   unmountDataSource: Function.prototype,
   intl: {
-    formatMessage: Function.prototype,
+    formatMessage: ({ defaultMessage }) => defaultMessage,
   },
   match: {
     params: {
@@ -18,4 +18,4 @@ const defaultProps = {
   },
 };
 
-storiesOf('View', module).add('Default', () => <View {...defaultProps} />);
+storiesOf('Project/DataSource/View', module).add('Default', () => <View {...defaultProps} />);

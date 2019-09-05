@@ -11,6 +11,9 @@ describe('List: Component', () => {
         projectId: '1',
       },
     },
+    intl: {
+      formatMessage: Function.prototype,
+    },
   };
 
   const component = props => <List {...defaultProps} {...props} />;

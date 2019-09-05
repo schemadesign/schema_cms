@@ -1,14 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Header, Typography } from 'schemaUI';
 
 import { Container, Form } from './userProfile.styles';
+import { TopHeader } from '../../shared/components/topHeader';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { EMAIL, FIRST_NAME, LAST_NAME } from '../../modules/userProfile/userProfile.constants';
 
 import messages from './userProfile.messages';
-
-const { H2, H1 } = Typography;
 
 export class UserProfile extends PureComponent {
   static propTypes = {
@@ -18,18 +16,21 @@ export class UserProfile extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
+  getHeaderAndMenuConfig = intl => ({
+    headerTitle: intl.formatMessage(messages.title),
+    headerSubtitle: intl.formatMessage(messages.subTitle),
+  });
+
   render() {
     const { values, handleChange, handleSubmit, intl } = this.props;
     const firstNameLabel = intl.formatMessage(messages.firstNameLabel);
     const lastNameLabel = intl.formatMessage(messages.lastNameLabel);
     const emailLabel = intl.formatMessage(messages.emailLabel);
+    const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
 
     return (
       <Container>
-        <Header>
-          <H2>Admin Settings</H2>
-          <H1>Profile</H1>
-        </Header>
+        <TopHeader {...topHeaderConfig} />
         <Form onSubmit={handleSubmit}>
           <TextInput
             value={values[FIRST_NAME]}

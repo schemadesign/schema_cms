@@ -1,15 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { withRouter } from '../../../.storybook/decorators';
 import { TopHeader } from './topHeader.component';
 
 export const defaultProps = {
-  title: 'Projects',
-  subtitle: 'Overview',
-  menu: {
-    primaryItems: [{ label: 'Data Sources', to: '/path' }, { label: 'Charts', to: '/path' }],
-    secondaryItems: [{ label: 'Log Out', to: '/logout' }],
-  },
+  headerTitle: 'Projects',
+  headerSubtitle: 'Overview',
+  primaryMenuItems: [{ label: 'Data Sources', to: '/path' }, { label: 'Charts', to: '/path' }],
+  secondaryMenuItems: [{ label: 'Log Out', to: '/logout' }],
 };
 
-storiesOf('Shared Components/TopHeader', module).add('Default', () => <TopHeader {...defaultProps} />);
+storiesOf('Shared Components/TopHeader', module)
+  .addDecorator(withRouter)
+  .add('Default', () => <TopHeader {...defaultProps} />);

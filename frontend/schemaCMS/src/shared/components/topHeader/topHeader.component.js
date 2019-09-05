@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Header, Menu, Typography } from 'schemaUI';
 
-import browserHistory from '../../utils/history';
 import {
   Container,
   Content,
@@ -20,28 +20,15 @@ const { H1, H2 } = Typography;
 
 export class TopHeader extends PureComponent {
   static propTypes = {
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    menu: PropTypes.shape({
-      primaryItems: PropTypes.array,
-      secondaryItems: PropTypes.array,
-    }),
+    headerTitle: PropTypes.string,
+    headerSubtitle: PropTypes.string,
+    primaryMenuItems: PropTypes.array,
+    secondaryMenuItems: PropTypes.array,
   };
 
-  static defaultProps = {
-    menu: {
-      primaryItems: [],
-      secondaryItems: [],
-    },
+  state = {
+    isMenuOpen: false,
   };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isMenuOpen: false,
-    };
-  }
 
   handleToggleMenu = () => {
     const { isMenuOpen } = this.state;
@@ -51,11 +38,9 @@ export class TopHeader extends PureComponent {
     });
   };
 
-  handleItemClick = to => () => browserHistory.push(to);
-
   renderItem = Item => ({ label = '', to = '' }, index) => (
-    <Item onClick={this.handleItemClick(to)} key={index}>
-      {label}
+    <Item key={index}>
+      <Link to={to}>{label}</Link>
     </Item>
   );
 
@@ -69,16 +54,12 @@ export class TopHeader extends PureComponent {
   );
 
   render() {
-    const {
-      title,
-      subtitle,
-      menu: { primaryItems, secondaryItems },
-    } = this.props;
+    const { headerTitle, headerSubtitle, primaryMenuItems, secondaryMenuItems } = this.props;
 
-    const headerContent = this.renderHeader(title, subtitle);
+    const headerContent = this.renderHeader(headerTitle, headerSubtitle);
 
-    const primaryMenu = this.renderMenu(primaryItems, PrimaryList, PrimaryItem);
-    const secondaryMenu = this.renderMenu(secondaryItems, SecondaryList, SecondaryItem);
+    const primaryMenu = this.renderMenu(primaryMenuItems, PrimaryList, PrimaryItem);
+    const secondaryMenu = this.renderMenu(secondaryMenuItems, SecondaryList, SecondaryItem);
 
     return (
       <Container>

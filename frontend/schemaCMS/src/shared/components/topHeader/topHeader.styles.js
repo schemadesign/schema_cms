@@ -30,7 +30,12 @@ export const SecondaryList = styled(List)``;
 export const Item = styled.li`
   line-height: 1.5;
   margin: 2px 0;
-  cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: ${Theme.primary.text};
+    display: block;
+  }
 `;
 
 export const PrimaryItem = styled(Item)`
@@ -44,7 +49,9 @@ export const PrimaryItem = styled(Item)`
 `;
 
 export const SecondaryItem = styled(Item)`
-  padding: 8px 0;
+  a {
+    padding: 8px 0;
+  }
 `;
 
 export const menuStyles = {

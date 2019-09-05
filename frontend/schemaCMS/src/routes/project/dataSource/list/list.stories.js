@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { withRouter } from '../../../../.storybook/decorators';
 import { List } from './list.component';
 
 const defaultProps = {
@@ -10,6 +11,11 @@ const defaultProps = {
       projectId: '1',
     },
   },
+  intl: {
+    formatMessage: ({ defaultMessage }) => defaultMessage,
+  },
 };
 
-storiesOf('Project/DataSource/List', module).add('Default', () => <List {...defaultProps} />);
+storiesOf('Project/DataSource/List', module)
+  .addDecorator(withRouter)
+  .add('Default', () => <List {...defaultProps} />);

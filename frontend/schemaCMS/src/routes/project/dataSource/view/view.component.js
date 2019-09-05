@@ -1,15 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Header, Stepper, Typography } from 'schemaUI';
+import { Stepper } from 'schemaUI';
 import { always, cond, equals, ifElse, T } from 'ramda';
-import { FormattedMessage } from 'react-intl';
 
 import { Container, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
 import { PillButtons } from '../../../../shared/components/pillButtons';
+import { TopHeader } from '../../../../shared/components/topHeader';
 
-const { H1, H2 } = Typography;
 const MAX_STEPS = 6;
 const INITIAL_STEP = 1;
 
@@ -44,6 +43,11 @@ export class View extends PureComponent {
     this.props.unmountDataSource();
   }
 
+  getHeaderAndMenuConfig = () => ({
+    headerTitle: intl.formatMessage(messages.title),
+    headerSubtitle: intl.formatMessage(messages.subTitle),
+  });
+
   handleStepChange = activeStep => this.setState({ activeStep });
 
   handleBackClick = () =>
@@ -59,16 +63,11 @@ export class View extends PureComponent {
   render() {
     const { activeStep, steps } = this.state;
     const { intl } = this.props;
+    const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
+
     return (
       <Container>
-        <Header>
-          <H2>
-            <FormattedMessage {...messages.title} />
-          </H2>
-          <H1>
-            <FormattedMessage {...messages.subTitle} />
-          </H1>
-        </Header>
+        <TopHeader {...topHeaderConfig} />
         {this.renderContent(activeStep)}
         <PillButtons
           leftButtonTitle={intl.formatMessage(messages.back)}
