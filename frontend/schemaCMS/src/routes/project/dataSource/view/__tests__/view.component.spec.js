@@ -19,6 +19,7 @@ describe('View: Component', () => {
       params: {
         projectId: '1',
         dataSourceId: '1',
+        step: '1',
       },
     },
   };
@@ -37,7 +38,6 @@ describe('View: Component', () => {
       values: {
         id: 'id',
         name: 'name',
-        step: '1',
       },
     };
     const wrapper = render(props);
@@ -49,7 +49,13 @@ describe('View: Component', () => {
       values: {
         id: 'id',
         name: 'name',
-        step: '0',
+      },
+      match: {
+        params: {
+          projectId: '1',
+          dataSourceId: '1',
+          step: '0',
+        },
       },
     };
 

@@ -13,7 +13,7 @@ function* create({ payload }) {
     const requestData = { project: payload.projectId };
     const { data } = yield api.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`, requestData);
 
-    browserHistory.push(`/project/${payload.projectId}/datasource/view/${data.id}`);
+    browserHistory.push(`/project/view/${payload.projectId}/datasource/view/${data.id}`);
     yield put(DataSourceRoutines.create.success(data));
   } catch (error) {
     yield put(DataSourceRoutines.create.failure(error));
@@ -53,7 +53,7 @@ function* updateOne({ payload: { projectId, dataSourceId, requestData, step } })
 
     const redirectUri = requestData.file ? 'list' : `view/${dataSourceId}/${parseInt(step, 10) + 1}`;
 
-    browserHistory.push(`/project/${projectId}/datasource/${redirectUri}`);
+    browserHistory.push(`/project/view/${projectId}/datasource/${redirectUri}`);
 
     yield put(DataSourceRoutines.updateOne.success(data));
     yield api.post(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}/process`);

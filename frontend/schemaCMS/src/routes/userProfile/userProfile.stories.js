@@ -6,6 +6,7 @@ import { INITIAL_VALUES } from '../../modules/userProfile/userProfile.constants'
 
 const defaultProps = {
   values: INITIAL_VALUES,
+  errors: {},
   handleChange: Function.prototype,
   handleSubmit: Function.prototype,
   intl: {

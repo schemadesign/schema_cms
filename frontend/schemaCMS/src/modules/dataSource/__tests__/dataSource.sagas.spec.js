@@ -14,7 +14,7 @@ describe('DataSource: sagas', () => {
 
   describe('create', () => {
     it('should dispatch a success action', async () => {
-      const payload = { projectId: 1 };
+      const payload = { projectId: '1' };
       const requestData = { project: payload.projectId };
       const responseData = {
         id: 1,
@@ -33,7 +33,7 @@ describe('DataSource: sagas', () => {
 
   describe('fetchOne', () => {
     it('should dispatch a success action', async () => {
-      const payload = { projectId: 1, dataSourceId: 1 };
+      const payload = { projectId: '1', dataSourceId: '1' };
       const responseData = {
         id: 1,
         status: STATUS_DRAFT,
@@ -53,9 +53,9 @@ describe('DataSource: sagas', () => {
 
   describe('updateOne', () => {
     const payload = {
-      projectId: 1,
-      dataSourceId: 1,
-      step: 1,
+      projectId: '1',
+      dataSourceId: '1',
+      step: '1',
       requestData: {
         data: 'data',
       },
@@ -100,7 +100,7 @@ describe('DataSource: sagas', () => {
         .dispatch(DataSourceRoutines.updateOne(payload))
         .run();
 
-      expect(browserHistory.push).toBeCalledWith('/project/1/datasource/view/1/2');
+      expect(browserHistory.push).toBeCalledWith('/project/view/1/datasource/view/1/2');
     });
 
     it('should redirect to list', async () => {
@@ -112,7 +112,7 @@ describe('DataSource: sagas', () => {
         .dispatch(DataSourceRoutines.updateOne(payload))
         .run();
 
-      expect(browserHistory.push).toBeCalledWith('/project/1/datasource/list');
+      expect(browserHistory.push).toBeCalledWith('/project/view/1/datasource/list');
     });
   });
 });

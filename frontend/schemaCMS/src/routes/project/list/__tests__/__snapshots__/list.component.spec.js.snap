@@ -5,20 +5,29 @@ exports[`List: Component should render correctly 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Projects Overview"
+    title="project.list.pageTitle"
   />
-  <TopHeader
-    headerSubtitle="Overview"
-    headerTitle="Projects"
-    secondaryMenuItems={
-      Array [
-        Object {
-          "label": "Log Out",
-          "to": "/logout",
-        },
-      ]
-    }
-  />
+  <Header
+    customButtonStyles={Object {}}
+    customStyles={Object {}}
+    iconComponent={<MenuIcon />}
+    onButtonClick={[Function]}
+  >
+    <H2>
+      <FormattedMessage
+        defaultMessage="Projects"
+        id="project.list.title"
+        values={Object {}}
+      />
+    </H2>
+    <H1>
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="project.list.overview"
+        values={Object {}}
+      />
+    </H1>
+  </Header>
   <styled.ul>
     <styled.li
       key="0"
@@ -139,5 +148,26 @@ exports[`List: Component should render correctly 1`] = `
   >
     <PlusIcon />
   </Button>
+  <Menu
+    customCloseButtonStyles={Object {}}
+    customStyles={Object {}}
+    onClose={[Function]}
+    open={false}
+  >
+    <styled.ul>
+      <styled.li>
+        Edit Project settings
+      </styled.li>
+      <styled.li>
+        Delete project
+      </styled.li>
+      <styled.li>
+        User settings
+      </styled.li>
+      <styled.li>
+        Log Out
+      </styled.li>
+    </styled.ul>
+  </Menu>
 </styled.div>
 `;

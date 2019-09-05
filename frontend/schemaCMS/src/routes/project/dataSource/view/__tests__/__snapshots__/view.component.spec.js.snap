@@ -39,7 +39,7 @@ exports[`View: Component should not render any step 1`] = `
     />
     <styled.div>
       <Stepper
-        activeStep={NaN}
+        activeStep={0}
         customDotStyles={Object {}}
         customStyles={
           Object {
@@ -84,6 +84,35 @@ exports[`View: Component should render draft 1`] = `
   <form
     onSubmit={[Function]}
   >
+    <Source
+      dataSource={Object {}}
+      fetchDataSource={[Function]}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "1",
+          },
+        }
+      }
+      onChange={[Function]}
+      setFieldValue={[Function]}
+      unmountDataSource={[Function]}
+      values={
+        Object {
+          "id": "id",
+          "status": "draft",
+        }
+      }
+    />
     <PillButtons
       leftButtonProps={
         Object {
@@ -101,7 +130,7 @@ exports[`View: Component should render draft 1`] = `
     />
     <styled.div>
       <Stepper
-        activeStep={NaN}
+        activeStep={1}
         customDotStyles={Object {}}
         customStyles={
           Object {
@@ -140,6 +169,35 @@ exports[`View: Component should render source step 1`] = `
   <form
     onSubmit={[Function]}
   >
+    <Source
+      dataSource={Object {}}
+      fetchDataSource={[Function]}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "1",
+          },
+        }
+      }
+      onChange={[Function]}
+      setFieldValue={[Function]}
+      unmountDataSource={[Function]}
+      values={
+        Object {
+          "id": "id",
+          "name": "name",
+        }
+      }
+    />
     <PillButtons
       leftButtonProps={
         Object {
@@ -157,7 +215,7 @@ exports[`View: Component should render source step 1`] = `
     />
     <styled.div>
       <Stepper
-        activeStep={NaN}
+        activeStep={1}
         customDotStyles={Object {}}
         customStyles={
           Object {

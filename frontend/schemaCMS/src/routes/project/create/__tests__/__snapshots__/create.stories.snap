@@ -4,6 +4,81 @@ exports[`Storyshots Create Default 1`] = `
 <div
   className="sc-bdVaJa bDWFJH"
 >
+  <div
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "color": "#1d1d20",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "padding": "18px 0",
+        "width": "100%",
+      }
+    }
+  >
+    <div>
+      <h1
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      />
+      <h2
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      />
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": 6,
+        }
+      }
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#1d1d20",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
   <form
     onSubmit={[Function]}
   >
@@ -22,9 +97,17 @@ exports[`Storyshots Create Default 1`] = `
         }
       >
         <input
-          id="project_title"
-          name="project_title"
+          handleChange={[Function]}
+          handleSubmit={[Function]}
+          id="title"
+          intl={
+            Object {
+              "formatMessage": [Function],
+            }
+          }
+          name="title"
           onChange={[Function]}
+          placeholder="Project title"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -37,6 +120,11 @@ exports[`Storyshots Create Default 1`] = `
           }
           type="text"
           value="title"
+          values={
+            Object {
+              "title": "title",
+            }
+          }
         />
         <div
           style={
@@ -49,6 +137,77 @@ exports[`Storyshots Create Default 1`] = `
         />
       </div>
     </div>
+    <div
+      className="sc-bwzfXH uTxCW"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "320px",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <input
+          handleChange={[Function]}
+          handleSubmit={[Function]}
+          id="description"
+          intl={
+            Object {
+              "formatMessage": [Function],
+            }
+          }
+          name="description"
+          onChange={[Function]}
+          placeholder="Project description"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#1d1d20",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+            }
+          }
+          type="text"
+          values={
+            Object {
+              "title": "title",
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <button
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+    />
   </form>
 </div>
 `;

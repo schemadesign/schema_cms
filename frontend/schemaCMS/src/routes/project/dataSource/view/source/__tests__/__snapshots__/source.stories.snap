@@ -12,16 +12,23 @@ exports[`Storyshots Source Default 1`] = `
         Object {
           "display": "flex",
           "flexDirection": "column",
-          "maxWidth": "320px",
+          "maxWidth": "100%",
           "paddingBottom": "30px",
           "position": "relative",
         }
       }
     >
       <input
+        dataSource={Object {}}
         id="name"
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
         name="name"
         onChange={[Function]}
+        setFieldValue={[Function]}
         style={
           Object {
             "backgroundColor": "transparent",
