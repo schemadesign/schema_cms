@@ -28,7 +28,9 @@ class UserAdmin(UserAdmin):
     add_form_template = "users/admin/add_form.html"
     change_list_template = "users/admin/change_list.html"
     invite_user_form = admin_forms.InviteUserForm
-    invite_fieldsets = ((None, {"classes": ("wide",), "fields": ("email", "role")}),)
+    invite_fieldsets = (
+        (None, {"classes": ("wide",), "fields": ("email", "first_name", "last_name", "role")}),
+    )
 
     def get_urls(self):
         return [

@@ -12,7 +12,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
     queryset = models.Project.objects.none()
 
     def get_queryset(self):
-        return models.Project.get_projects_for_user(self.request.user)
+        return models.Project.get_projects_for_user(self.request.user).order_by('-created')
 
 
 class DataSourceViewSet(viewsets.ModelViewSet):
@@ -20,7 +20,6 @@ class DataSourceViewSet(viewsets.ModelViewSet):
     queryset = models.DataSource.objects.order_by("-created")
     permission_classes = (
         permissions.IsAuthenticated,
-        projects_permissions.IsAdminOrReadOnly,
         projects_permissions.HasProjectPermission,
     )
 
@@ -64,4 +63,3 @@ class DataSourceViewSet(viewsets.ModelViewSet):
             self.get_object().status = constants.DataSourceStatus.ERROR
             self.get_object().save()
             return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
-

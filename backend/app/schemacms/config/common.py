@@ -123,7 +123,9 @@ class Common(Configuration):
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
     STORAGE_DIR = os.getenv("DJANGO_STORAGE_DIR", "/storage")
 
-    DEFAULT_FILE_STORAGE = os.getenv("DJANGO_DEFAULT_FILE_STORAGE", "schemacms.utils.storages.OverwriteStorage")
+    DEFAULT_FILE_STORAGE = os.getenv(
+        "DJANGO_DEFAULT_FILE_STORAGE", "schemacms.utils.storages.OverwriteStorage"
+    )
 
     # Media files
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), "/")
@@ -217,7 +219,6 @@ class Common(Configuration):
     JWT_AUTH = {"JWT_AUTH_HEADER_PREFIX": "JWT", "JWT_EXPIRATION_DELTA": datetime.timedelta(days=30)}
 
     # social-django
-    SOCIAL_AUTH_SANITIZE_REDIRECTS = False
     SOCIAL_AUTH_PIPELINE = (
         # Get the information we can about the user and return it in a simple
         # format to create the user instance later. On some cases the details are
@@ -253,6 +254,8 @@ class Common(Configuration):
         "social_core.pipeline.social_auth.load_extra_data",
         # Update the user record with any changed info from the auth service.
         "social_core.pipeline.user.user_details",
+        # Update the user first and last name
+        "schemacms.authorization.pipeline.update_user_full_name",
         # Update user source and external ID from external authorization service
         "schemacms.authorization.pipeline.update_external_id",
         # Redirect user and add exchange token to query string
@@ -266,6 +269,7 @@ class Common(Configuration):
     SOCIAL_AUTH_AUTH0_KEY = os.getenv("DJANGO_SOCIAL_AUTH_AUTH0_KEY")
     SOCIAL_AUTH_AUTH0_SECRET = os.getenv("DJANGO_SOCIAL_AUTH_AUTH0_SECRET")
     SOCIAL_AUTH_AUTH0_SCOPE = ["openid", "profile", "email"]
+    SOCIAL_AUTH_PROTECTED_USER_FIELDS = ["first_name", "last_name"]
 
     # User management
     USER_MGMT_BACKEND = os.getenv(
