@@ -8,10 +8,11 @@ const defaultProps = {
   values: {
     [PROJECT_TITLE]: 'title',
   },
-  errors: {},
-  touched: {},
-  handleChange: Function.prototype,
   handleSubmit: Function.prototype,
+  onChange: Function.prototype,
+  intl: {
+    formatMessage: Function.prototype,
+  },
 };
 
 storiesOf('Project/Create', module).add('Default', () => <Create {...defaultProps} />);

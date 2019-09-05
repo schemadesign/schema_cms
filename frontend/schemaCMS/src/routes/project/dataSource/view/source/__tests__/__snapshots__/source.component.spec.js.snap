@@ -57,7 +57,7 @@ exports[`Source: Component should render correctly 1`] = `
         }
         type="button"
       >
-        <CsvIcon />
+        <Component />
       </Button>
     </RadioButton>
   </RadioGroup>

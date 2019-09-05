@@ -53,9 +53,9 @@ export class List extends PureComponent {
     });
   };
 
-  handleShowProject = id => () => this.props.history.push(`/project/${id}`);
+  handleShowProject = id => () => this.props.history.push(`/project/view/${id}`);
 
-  handleNewProject = () => {};
+  handleNewProject = () => this.props.history.push('/project/create/');
 
   renderHeader = (list = []) => (
     <HeaderList>

@@ -3,7 +3,6 @@
 exports[`View: Component should render correctly 1`] = `
 <styled.div>
   <Header
-    customButtonStyles={Object {}}
     customStyles={Object {}}
     iconComponent={<MenuIcon />}
     onButtonClick={[Function]}
@@ -31,16 +30,14 @@ exports[`View: Component should render correctly 1`] = `
     onRightClick={[Function]}
   />
   <styled.div>
-    <Stepper
+    <Component
       activeStep={1}
-      customDotStyles={Object {}}
       customStyles={
         Object {
           "margin": "0 auto",
           "pointerEvents": "none",
         }
       }
-      handleStep={[Function]}
       onStepChange={[Function]}
       steps={6}
     />

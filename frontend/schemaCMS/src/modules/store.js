@@ -12,8 +12,8 @@ const transformerConfig = {
   whitelistPerReducer: {
     userAuth: ['isAuthenticated', 'jwtToken'],
   },
-  blackListPerReducer: {
-    userProfile: ['user', 'isFetched'],
+  blacklistPerReducer: {
+    userProfile: [],
   },
 };
 

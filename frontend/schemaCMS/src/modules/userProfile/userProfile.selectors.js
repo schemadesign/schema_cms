@@ -7,3 +7,8 @@ export const selectIsFetched = createSelector(
   selectUserProfileDomain,
   prop('isFetched')
 );
+
+export const selectUserData = createSelector(
+  selectUserProfileDomain,
+  prop('user')
+);

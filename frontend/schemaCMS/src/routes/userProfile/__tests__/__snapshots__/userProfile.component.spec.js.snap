@@ -1,20 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Create: Component should render correctly 1`] = `
+exports[`UserProfile: Component should render correctly 1`] = `
 <styled.div>
   <Header
     customStyles={Object {}}
     iconComponent={<MenuIcon />}
     onButtonClick={[Function]}
   >
-    <H1 />
-    <H2 />
+    <H2>
+      Admin Settings
+    </H2>
+    <H1>
+      Profile
+    </H1>
   </Header>
-  <form
+  <styled.form
     onSubmit={[Function]}
   >
     <TextInput
-      errors={Object {}}
       handleChange={[Function]}
       handleSubmit={[Function]}
       intl={
@@ -22,19 +25,18 @@ exports[`Create: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
-      name="title"
+      name="first_name"
       onChange={[Function]}
-      placeholder="Project title"
-      touched={Object {}}
       value=""
       values={
         Object {
-          "title": "",
+          "email": "",
+          "first_name": "",
+          "last_name": "",
         }
       }
     />
     <TextInput
-      errors={Object {}}
       handleChange={[Function]}
       handleSubmit={[Function]}
       intl={
@@ -42,19 +44,36 @@ exports[`Create: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
-      name="description"
+      name="last_name"
       onChange={[Function]}
-      placeholder="Project description"
-      touched={Object {}}
+      value=""
       values={
         Object {
-          "title": "",
+          "email": "",
+          "first_name": "",
+          "last_name": "",
         }
       }
     />
-    <Button
-      customStyles={Object {}}
+    <TextInput
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      name="email"
+      onChange={[Function]}
+      value=""
+      values={
+        Object {
+          "email": "",
+          "first_name": "",
+          "last_name": "",
+        }
+      }
     />
-  </form>
+  </styled.form>
 </styled.div>
 `;
