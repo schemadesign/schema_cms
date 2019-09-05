@@ -3,25 +3,23 @@ import logging
 
 from rest_framework import decorators, exceptions, permissions, response, status, viewsets
 
+from schemacms.users import permissions as user_permissions
 from . import constants, models, serializers, permissions as projects_permissions
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ProjectSerializer
-    permission_classes = (permissions.IsAuthenticated, projects_permissions.IsAdminOrReadOnly)
+    permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
     queryset = models.Project.objects.none()
 
     def get_queryset(self):
-        return models.Project.get_projects_for_user(self.request.user).order_by('-created')
+        return models.Project.get_projects_for_user(self.request.user).order_by("-created")
 
 
 class DataSourceViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
     queryset = models.DataSource.objects.order_by("-created")
-    permission_classes = (
-        permissions.IsAuthenticated,
-        projects_permissions.HasProjectPermission,
-    )
+    permission_classes = (permissions.IsAuthenticated, projects_permissions.HasProjectPermission)
 
     def initial(self, request, *args, **kwargs):
         self.project = self.get_project(url_kwargs=kwargs)

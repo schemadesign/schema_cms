@@ -3,14 +3,19 @@ from . import models as user_models, permissions as user_permissions, serializer
 from .backend_management import user_mgtm_backend
 
 
-class UserViewSet(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class UserViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
     """
-    Retrieves user account details
+    Retrieves and updates user account details
     """
 
     queryset = user_models.User.objects.all()
     serializer_class = user_serializers.UserSerializer
-    permission_classes = (user_permissions.IsUserOrReadOnly,)
+    permission_classes = (user_permissions.IsAdminOrReadOnly,)
+
+    def get_serializer_class(self):
+        if self.request.user.is_authenticated and self.request.user.is_admin:
+            return user_serializers.UserSerializerForAdmin
+        return super().get_serializer_class()
 
 
 class MeViewSet(viewsets.GenericViewSet):
