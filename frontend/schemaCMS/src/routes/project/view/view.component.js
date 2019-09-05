@@ -1,15 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Button, Card, Header, Icons, Typography } from 'schemaUI';
+import { Button, Card, Icons, Typography } from 'schemaUI';
 import { has, isEmpty, isNil, path } from 'ramda';
-import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
-import { Menu } from '../../../shared/components/menu';
+import { TopHeader } from '../../../shared/components/topHeader';
 import { Empty } from '../project.styles';
 import messages from './view.messages';
 import {
@@ -27,7 +26,7 @@ import {
   buttonStyles,
 } from './view.styles';
 
-const { H1, H2, P } = Typography;
+const { P } = Typography;
 
 export class View extends PureComponent {
   static propTypes = {
@@ -45,14 +44,6 @@ export class View extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isMenuOpen: false,
-    };
-  }
-
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
   }
@@ -65,15 +56,20 @@ export class View extends PureComponent {
 
   formatMessage = value => this.props.intl.formatMessage(value);
 
+  generateTopHeaderConfig = subtitle => ({
+    title: this.formatMessage(messages.title),
+    subtitle,
+    menu: {
+      primaryItems: [{ label: 'Data Sources', to: '/dataSources' }],
+      secondaryItems: [
+        { label: this.formatMessage(messages.editProjectSettings), to: '/edit' },
+        { label: this.formatMessage(messages.deleteProject), to: '/delete' },
+        { label: 'Log Out', to: '/logout' },
+      ],
+    },
+  });
+
   handleGoToProjectsList = () => this.props.history.push('/project/list');
-
-  handleToggleMenu = () => {
-    const { isMenuOpen } = this.state;
-
-    this.setState({
-      isMenuOpen: !isMenuOpen,
-    });
-  };
 
   renderStatistic = ({ header, value }, index) => (
     <CardWrapper key={index}>
@@ -122,17 +118,6 @@ export class View extends PureComponent {
     );
   };
 
-  renderMenu = () => {
-    const { isMenuOpen } = this.state;
-    const secondaryItems = [
-      { name: 'editProjectSettings', label: this.formatMessage(messages.editProjectSettings) },
-      { name: 'deleteProject', label: this.formatMessage(messages.deleteProject) },
-      { name: 'adminSettings', visible: true },
-    ];
-
-    return <Menu open={isMenuOpen} onClose={this.handleToggleMenu} secondaryItems={secondaryItems} />;
-  };
-
   renderNoData = () => (
     <Empty>
       <P>{this.formatMessage(messages.noProject)}</P>
@@ -143,6 +128,7 @@ export class View extends PureComponent {
     const { project } = this.props;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
+    const topHeaderConfig = this.generateTopHeaderConfig(projectName);
 
     const content = isEmpty(project) ? (
       <Loader />
@@ -153,17 +139,11 @@ export class View extends PureComponent {
     return (
       <Container>
         <Helmet title={title} />
-        <Header onButtonClick={this.handleToggleMenu}>
-          <H2>
-            <FormattedMessage {...messages.title} />
-          </H2>
-          <H1>{projectName}</H1>
-        </Header>
+        <TopHeader {...topHeaderConfig} />
         {content}
         <Button onClick={this.handleGoToProjectsList} customStyles={buttonStyles}>
           <Icons.ArrowLeftIcon />
         </Button>
-        {this.renderMenu()}
       </Container>
     );
   }
