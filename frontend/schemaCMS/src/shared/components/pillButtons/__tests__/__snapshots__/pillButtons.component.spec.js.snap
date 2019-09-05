@@ -3,21 +3,25 @@
 exports[`PillButtons: Component should render correctly 1`] = `
 <styled.div>
   <Button
+    customProperty="custom property"
     customStyles={
       Object {
         "marginRight": 10,
         "width": "100%",
       }
     }
-    type="button"
-  />
+  >
+    left title
+  </Button>
   <Button
+    customProperty="custom property"
     customStyles={
       Object {
         "width": "100%",
       }
     }
-    type="button"
-  />
+  >
+    right title
+  </Button>
 </styled.div>
 `;

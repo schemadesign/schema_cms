@@ -4,7 +4,16 @@ import { shallow } from 'enzyme';
 import { PillButtons } from '../pillButtons.component';
 
 describe('PillButtons: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    leftButtonProps: {
+      title: 'left title',
+      customProperty: 'custom property',
+    },
+    rightButtonProps: {
+      title: 'right title',
+      customProperty: 'custom property',
+    },
+  };
 
   const component = props => <PillButtons {...defaultProps} {...props} />;
 

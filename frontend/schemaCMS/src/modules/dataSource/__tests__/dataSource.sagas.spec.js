@@ -7,6 +7,7 @@ import { DataSourceRoutines } from '../dataSource.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCE_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
 import { STATUS_DRAFT } from '../dataSource.constants';
+import browserHistory from '../../../shared/utils/history';
 
 describe('DataSource: sagas', () => {
   const defaultState = Immutable({});
@@ -47,6 +48,71 @@ describe('DataSource: sagas', () => {
         .put(DataSourceRoutines.fetchOne.success(responseData))
         .dispatch(DataSourceRoutines.fetchOne(payload))
         .run();
+    });
+  });
+
+  describe('updateOne', () => {
+    const payload = {
+      projectId: 1,
+      dataSourceId: 1,
+      step: 1,
+      requestData: {
+        data: 'data',
+      },
+    };
+    const responseData = {
+      id: 1,
+      status: STATUS_DRAFT,
+    };
+
+    beforeEach(() => {
+      const options = {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      };
+
+      mockApi
+        .patch(
+          `${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`,
+          /form-data; name="data"[^]*data/m,
+          options
+        )
+        .reply(OK, responseData);
+
+      mockApi
+        .post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}/process`)
+        .reply(OK);
+    });
+
+    it('should dispatch a success action', async () => {
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.updateOne.success(responseData))
+        .put(DataSourceRoutines.processOne.success())
+        .dispatch(DataSourceRoutines.updateOne(payload))
+        .run();
+    });
+
+    it('should should redirect to next step', async () => {
+      jest.spyOn(browserHistory, 'push');
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .dispatch(DataSourceRoutines.updateOne(payload))
+        .run();
+
+      expect(browserHistory.push).toBeCalledWith('/project/1/datasource/view/1/2');
+    });
+
+    it('should redirect to list', async () => {
+      jest.spyOn(browserHistory, 'push');
+      payload.requestData.file = 'file';
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .dispatch(DataSourceRoutines.updateOne(payload))
+        .run();
+
+      expect(browserHistory.push).toBeCalledWith('/project/1/datasource/list');
     });
   });
 });

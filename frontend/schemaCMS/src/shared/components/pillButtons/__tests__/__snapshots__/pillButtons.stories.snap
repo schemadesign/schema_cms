@@ -22,8 +22,9 @@ exports[`Storyshots Shared Components/PillButtons Default 1`] = `
         "width": "100%",
       }
     }
-    type="button"
-  />
+  >
+    left title
+  </button>
   <button
     style={
       Object {
@@ -41,7 +42,8 @@ exports[`Storyshots Shared Components/PillButtons Default 1`] = `
         "width": "100%",
       }
     }
-    type="button"
-  />
+  >
+    right title
+  </button>
 </div>
 `;

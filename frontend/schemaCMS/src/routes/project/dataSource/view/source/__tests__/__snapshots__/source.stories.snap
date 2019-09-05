@@ -5,58 +5,46 @@ exports[`Storyshots Source Default 1`] = `
   className="sc-ifAKCX cFlEyZ"
 >
   <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "maxWidth": "100%",
-        "paddingBottom": "30px",
-        "position": "relative",
-      }
-    }
+    className="sc-bwzfXH uTxCW"
   >
-    <label
-      htmlFor="name"
-      style={
-        Object {
-          "border": "none",
-          "borderTop": "1px solid #F0EFEF",
-          "color": "#a6a7aa",
-          "display": "block",
-          "fontSize": "14px",
-          "outline": "none",
-          "paddingTop": "8px",
-          "width": "100%",
-        }
-      }
-    >
-      Name
-    </label>
-    <input
-      id="name"
-      name="name"
-      onChange={[Function]}
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "border": "none",
-          "color": "#1d1d20",
-          "fontSize": "18px",
-          "lineHeight": "24px",
-          "outline": "none",
-        }
-      }
-      type="text"
-    />
     <div
       style={
         Object {
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "320px",
+          "paddingBottom": "30px",
+          "position": "relative",
         }
       }
-    />
+    >
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#1d1d20",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+          }
+        }
+        type="text"
+        value=""
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
   </div>
   <label
     style={
@@ -73,7 +61,9 @@ exports[`Storyshots Source Default 1`] = `
       }
     }
   >
-    Source
+    <span>
+      Source
+    </span>
   </label>
   <div
     style={
@@ -164,7 +154,6 @@ exports[`Storyshots Source Default 1`] = `
           </svg>
         </button>
       </label>
-      Spreadsheet
     </div>
   </div>
 </div>

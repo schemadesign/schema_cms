@@ -27,8 +27,45 @@ describe('View: Component', () => {
 
   const render = (props = {}) => shallow(component(props));
 
-  it('should render correctly', () => {
+  it('should not render content', () => {
     const wrapper = render();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render source step', () => {
+    const props = {
+      values: {
+        id: 'id',
+        name: 'name',
+        step: '1',
+      },
+    };
+    const wrapper = render(props);
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should not render any step', () => {
+    const props = {
+      values: {
+        id: 'id',
+        name: 'name',
+        step: '0',
+      },
+    };
+
+    const wrapper = render(props);
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render draft', () => {
+    const props = {
+      values: {
+        id: 'id',
+        status: 'draft',
+      },
+    };
+
+    const wrapper = render(props);
     global.expect(wrapper).toMatchSnapshot();
   });
 });

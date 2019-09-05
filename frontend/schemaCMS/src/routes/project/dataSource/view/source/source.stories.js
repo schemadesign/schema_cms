@@ -7,6 +7,12 @@ const defaultProps = {
   values: {},
   onChange: Function.prototype,
   setFieldValue: Function.prototype,
+  intl: {
+    formatMessage: Function.prototype,
+  },
+  errors: {},
+  touched: {},
+  dataSource: {},
 };
 
 storiesOf('Project/DataSource/View/Source', module).add('Default', () => <Source />);

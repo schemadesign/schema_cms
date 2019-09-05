@@ -39,6 +39,7 @@ function* fetchOne({ payload }) {
 function* updateOne({ payload: { projectId, dataSourceId, requestData, step } }) {
   try {
     yield put(DataSourceRoutines.updateOne.request());
+    yield put(DataSourceRoutines.processOne.request());
     const formData = new FormData();
 
     pipe(
@@ -50,18 +51,19 @@ function* updateOne({ payload: { projectId, dataSourceId, requestData, step } })
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
-    yield api.patch(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}`, formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
-
     const redirectUri = requestData.file ? 'list' : `view/${dataSourceId}/${parseInt(step, 10) + 1}`;
+
     browserHistory.push(`/project/${projectId}/datasource/${redirectUri}`);
-    yield put(DataSourceRoutines.updateOne.success({ data }));
+
+    yield put(DataSourceRoutines.updateOne.success(data));
     yield api.post(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}/process`);
+    yield put(DataSourceRoutines.processOne.success());
   } catch (error) {
     yield put(DataSourceRoutines.updateOne.failure(error));
+    yield put(DataSourceRoutines.processOne.failure());
   } finally {
     yield put(DataSourceRoutines.updateOne.fulfill());
+    yield put(DataSourceRoutines.processOne.fulfill());
   }
 }
 
