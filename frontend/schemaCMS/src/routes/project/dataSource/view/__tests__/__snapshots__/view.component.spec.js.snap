@@ -2,27 +2,7 @@
 
 exports[`View: Component should render correctly 1`] = `
 <styled.div>
-  <Header
-    customButtonStyles={Object {}}
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
-  >
-    <H2>
-      <FormattedMessage
-        defaultMessage="Create Data Source"
-        id="dataSource.view.title"
-        values={Object {}}
-      />
-    </H2>
-    <H1>
-      <FormattedMessage
-        defaultMessage="Source"
-        id="dataSource.view.subTitle"
-        values={Object {}}
-      />
-    </H1>
-  </Header>
+  <TopHeader />
   <Source
     dataSource={Object {}}
   />

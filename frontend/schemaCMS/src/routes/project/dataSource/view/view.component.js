@@ -43,7 +43,7 @@ export class View extends PureComponent {
     this.props.unmountDataSource();
   }
 
-  getHeaderAndMenuConfig = () => ({
+  getHeaderAndMenuConfig = intl => ({
     headerTitle: intl.formatMessage(messages.title),
     headerSubtitle: intl.formatMessage(messages.subTitle),
   });

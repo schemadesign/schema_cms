@@ -7,115 +7,45 @@ exports[`View: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="project.view.pageTitle"
   />
-  <Header
-    customButtonStyles={Object {}}
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
-  >
-    <H2>
-      <FormattedMessage
-        defaultMessage="Project"
-        id="project.view.title"
-        values={Object {}}
-      />
-    </H2>
-    <H1 />
-  </Header>
+  <TopHeader
+    headerTitle="project.view.title"
+    primaryMenuItems={
+      Array [
+        Object {
+          "label": "project.view.dataSources",
+          "to": "/project/view/100/datasource",
+        },
+      ]
+    }
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "project.view.editProjectSettings",
+          "to": "/project/edit/100",
+        },
+        Object {
+          "label": "project.view.deleteProject",
+          "to": "/project/delete/100",
+        },
+        Object {
+          "label": "project.view.logOut",
+          "to": "/logout",
+        },
+      ]
+    }
+  />
   <Loader />
   <Button
     customStyles={
       Object {
         "backgroundColor": "#f0efef",
         "height": "60px",
-        "margin": "50px 0 20px 20px",
+        "margin": "50px 0 20px 0",
       }
     }
     onClick={[Function]}
   >
     <ArrowLeftIcon />
   </Button>
-  <Menu
-    basePrimaryItems={
-      Array [
-        Object {
-          "label": Object {
-            "defaultMessage": "Data Sources",
-            "id": "shared.components.menu.dataSources",
-          },
-          "name": "dataSources",
-        },
-        Object {
-          "label": Object {
-            "defaultMessage": "Charts",
-            "id": "shared.components.menu.charts",
-          },
-          "name": "charts",
-          "visible": false,
-        },
-        Object {
-          "label": Object {
-            "defaultMessage": "Pages",
-            "id": "shared.components.menu.pages",
-          },
-          "name": "pages",
-          "visible": false,
-        },
-        Object {
-          "label": Object {
-            "defaultMessage": "Users",
-            "id": "shared.components.menu.users",
-          },
-          "name": "users",
-        },
-      ]
-    }
-    baseSecondaryItems={
-      Array [
-        Object {
-          "label": Object {
-            "defaultMessage": "Users Settings",
-            "id": "shared.components.menu.userSettings",
-          },
-          "name": "userSettings",
-          "visible": false,
-        },
-        Object {
-          "label": Object {
-            "defaultMessage": "Admin Settings",
-            "id": "shared.components.menu.adminSettings",
-          },
-          "name": "adminSettings",
-          "visible": false,
-        },
-        Object {
-          "label": Object {
-            "defaultMessage": "Log Out",
-            "id": "shared.components.menu.logOut",
-          },
-          "name": "logOut",
-          "path": "/logout",
-        },
-      ]
-    }
-    onClose={[Function]}
-    open={false}
-    secondaryItems={
-      Array [
-        Object {
-          "label": "project.view.editProjectSettings",
-          "name": "editProjectSettings",
-        },
-        Object {
-          "label": "project.view.deleteProject",
-          "name": "deleteProject",
-        },
-        Object {
-          "name": "adminSettings",
-          "visible": true,
-        },
-      ]
-    }
-  />
 </styled.div>
 `;

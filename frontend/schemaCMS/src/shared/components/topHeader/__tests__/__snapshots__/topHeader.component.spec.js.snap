@@ -47,23 +47,35 @@ exports[`TopHeader: Component should render correctly 1`] = `
       <Styled(styled.ul)>
         <Styled(styled.li)
           key="0"
-          onClick={[Function]}
         >
-          Data Sources
+          <Link
+            replace={false}
+            to="/path"
+          >
+            Data Sources
+          </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
           key="1"
-          onClick={[Function]}
         >
-          Charts
+          <Link
+            replace={false}
+            to="/path"
+          >
+            Charts
+          </Link>
         </Styled(styled.li)>
       </Styled(styled.ul)>
       <Styled(styled.ul)>
         <Styled(styled.li)
           key="0"
-          onClick={[Function]}
         >
-          Log Out
+          <Link
+            replace={false}
+            to="/logout"
+          >
+            Log Out
+          </Link>
         </Styled(styled.li)>
       </Styled(styled.ul)>
     </styled.div>
