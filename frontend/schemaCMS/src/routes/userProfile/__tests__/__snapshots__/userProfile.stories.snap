@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/Create Default 1`] = `
+exports[`Storyshots UserProfile Default 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-brqgnP SqPLV"
 >
   <div
     style={
@@ -18,6 +18,18 @@ exports[`Storyshots Project/Create Default 1`] = `
     }
   >
     <div>
+      <h2
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Admin Settings
+      </h2>
       <h1
         style={
           Object {
@@ -29,17 +41,9 @@ exports[`Storyshots Project/Create Default 1`] = `
             "margin": 0,
           }
         }
-      />
-      <h2
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      />
+      >
+        Profile
+      </h1>
     </div>
     <button
       onClick={[Function]}
@@ -80,6 +84,7 @@ exports[`Storyshots Project/Create Default 1`] = `
     </button>
   </div>
   <form
+    className="sc-cMljjf eTbdzc"
     onSubmit={[Function]}
   >
     <div
@@ -99,15 +104,14 @@ exports[`Storyshots Project/Create Default 1`] = `
         <input
           handleChange={[Function]}
           handleSubmit={[Function]}
-          id="title"
+          id="firstName"
           intl={
             Object {
               "formatMessage": [Function],
             }
           }
-          name="title"
+          name="firstName"
           onChange={[Function]}
-          placeholder="Project title"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -119,10 +123,12 @@ exports[`Storyshots Project/Create Default 1`] = `
             }
           }
           type="text"
-          value="title"
+          value=""
           values={
             Object {
-              "title": "title",
+              "email": "",
+              "firstName": "",
+              "lastName": "",
             }
           }
         />
@@ -154,15 +160,14 @@ exports[`Storyshots Project/Create Default 1`] = `
         <input
           handleChange={[Function]}
           handleSubmit={[Function]}
-          id="description"
+          id="lastName"
           intl={
             Object {
               "formatMessage": [Function],
             }
           }
-          name="description"
+          name="lastName"
           onChange={[Function]}
-          placeholder="Project description"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -174,9 +179,12 @@ exports[`Storyshots Project/Create Default 1`] = `
             }
           }
           type="text"
+          value=""
           values={
             Object {
-              "title": "title",
+              "email": "",
+              "firstName": "",
+              "lastName": "",
             }
           }
         />
@@ -191,23 +199,62 @@ exports[`Storyshots Project/Create Default 1`] = `
         />
       </div>
     </div>
-    <button
-      style={
-        Object {
-          "backgroundColor": "#f0efef",
-          "border": "none",
-          "borderRadius": "48px",
-          "color": "#1d1d20",
-          "cursor": "pointer",
-          "display": "inline-block",
-          "fontSize": "18px",
-          "margin": "0",
-          "minHeight": "48px",
-          "outline": "none",
-          "padding": "0",
+    <div
+      className="sc-bwzfXH uTxCW"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "320px",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
         }
-      }
-    />
+      >
+        <input
+          handleChange={[Function]}
+          handleSubmit={[Function]}
+          id="email"
+          intl={
+            Object {
+              "formatMessage": [Function],
+            }
+          }
+          name="email"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#1d1d20",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+            }
+          }
+          type="text"
+          value=""
+          values={
+            Object {
+              "email": "",
+              "firstName": "",
+              "lastName": "",
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </form>
 </div>
 `;

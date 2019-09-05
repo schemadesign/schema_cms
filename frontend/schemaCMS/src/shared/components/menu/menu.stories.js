@@ -54,11 +54,13 @@ storiesOf('Shared Components/Menu', module)
   .add('show all hiden items', () => <Menu {...showAllHidden} />)
   .add('add own items', () => <Menu {...addOwnItems} />)
   .add('add custom elemets', () => (
-    <Menu>
-      <p style={{ borderTop: '2px solid red', borderBottom: '2px solid orange', padding: '10px 0' }}>
-        <i style={{ color: 'blue', fontSize: 20 }}> italic text</i>
-      </p>
-      <Icons.ArrowLeftIcon />
+    <Menu {...defaultProps}>
+      <div>
+        <p style={{ borderTop: '2px solid red', borderBottom: '2px solid orange', padding: '10px 0' }}>
+          <i style={{ color: 'blue', fontSize: 20 }}> italic text</i>
+        </p>
+        <Icons.ArrowLeftIcon />
+      </div>
     </Menu>
   ))
   .add('all changes in one', () => (

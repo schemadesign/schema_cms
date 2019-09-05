@@ -9,7 +9,7 @@ const defaultProps = {
     [PROJECT_TITLE]: 'title',
   },
   handleSubmit: Function.prototype,
-  onChange: Function.prototype,
+  handleChange: Function.prototype,
   intl: {
     formatMessage: Function.prototype,
   },

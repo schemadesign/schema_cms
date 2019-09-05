@@ -8,12 +8,11 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     style={
       Object {
         "alignItems": "flex-start",
-        "backgroundColor": "#f0efef",
         "color": "#1d1d20",
         "display": "flex",
         "flexDirection": "row",
         "justifyContent": "space-between",
-        "padding": "6px 0 18px 20px",
+        "padding": "18px 0",
         "width": "100%",
       }
     }
@@ -57,12 +56,17 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           "backgroundColor": "transparent",
           "border": "none",
           "borderRadius": "48px",
+          "color": "#1d1d20",
           "cursor": "pointer",
+          "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "position": "absolute",
+          "right": 0,
+          "top": 6,
         }
       }
     >
@@ -91,7 +95,9 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         "border": "none",
         "borderRadius": "48px",
         "bottom": "10px",
+        "color": "#1d1d20",
         "cursor": "pointer",
+        "display": "inline-block",
         "fontSize": "18px",
         "height": "60px",
         "margin": "0",
@@ -106,7 +112,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     <svg
       style={
         Object {
-          "fill": "#1d1d20",
+          "fill": "#FFF",
           "height": "60px",
           "width": "60px",
         }
