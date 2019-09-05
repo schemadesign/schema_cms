@@ -10,8 +10,7 @@ export const MenuHeader = styled.div``;
 export const Content = styled.div`
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin-top: 50px;
-  margin-right: -20px;
+  margin: 20px -20px 0 0;
   padding-right: 20px;
   -webkit-overflow-scrolling: touch;
 `;
