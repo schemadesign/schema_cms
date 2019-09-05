@@ -6,7 +6,7 @@ from django.conf import settings
 from factory.django import FileField
 from pandas import read_csv
 
-from schemacms.conftests.utils import make_csv
+from schemacms.utils.test import make_csv
 from schemacms.projects.tests.factories import DataSourceFactory
 
 

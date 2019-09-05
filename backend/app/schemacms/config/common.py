@@ -123,7 +123,9 @@ class Common(Configuration):
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
     STORAGE_DIR = os.getenv("DJANGO_STORAGE_DIR", "/storage")
 
-    DEFAULT_FILE_STORAGE = os.getenv("DJANGO_DEFAULT_FILE_STORAGE", "schemacms.utils.storages.OverwriteStorage")
+    DEFAULT_FILE_STORAGE = os.getenv(
+        "DJANGO_DEFAULT_FILE_STORAGE", "schemacms.utils.storages.OverwriteStorage"
+    )
 
     # Media files
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), "/")
