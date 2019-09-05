@@ -9,6 +9,7 @@ import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
+import { Menu } from '../../../shared/components/menu';
 import { Empty } from '../project.styles';
 import messages from './view.messages';
 import {
@@ -44,6 +45,14 @@ export class View extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isMenuOpen: false,
+    };
+  }
+
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
   }
@@ -57,6 +66,14 @@ export class View extends PureComponent {
   formatMessage = value => this.props.intl.formatMessage(value);
 
   handleGoToProjectsList = () => this.props.history.push('/project');
+
+  handleToggleMenu = () => {
+    const { isMenuOpen } = this.state;
+
+    this.setState({
+      isMenuOpen: !isMenuOpen,
+    });
+  };
 
   renderStatistic = ({ header, value }, index) => (
     <CardWrapper key={index}>
@@ -105,6 +122,17 @@ export class View extends PureComponent {
     );
   };
 
+  renderMenu = () => {
+    const { isMenuOpen } = this.state;
+    const secondaryItems = [
+      { name: 'editProjectSettings', label: this.formatMessage(messages.editProjectSettings) },
+      { name: 'deleteProject', label: this.formatMessage(messages.deleteProject) },
+      { name: 'adminSettings', visible: true },
+    ];
+
+    return <Menu open={isMenuOpen} onClose={this.handleToggleMenu} secondaryItems={secondaryItems} />;
+  };
+
   renderNoData = () => (
     <Empty>
       <P>{this.formatMessage(messages.noProject)}</P>
@@ -125,7 +153,7 @@ export class View extends PureComponent {
     return (
       <Container>
         <Helmet title={title} />
-        <Header>
+        <Header onButtonClick={this.handleToggleMenu}>
           <H2>
             <FormattedMessage {...messages.title} />
           </H2>
@@ -135,6 +163,7 @@ export class View extends PureComponent {
         <Button onClick={this.handleGoToProjectsList} customStyles={buttonStyles}>
           <Icons.ArrowLeftIcon />
         </Button>
+        {this.renderMenu()}
       </Container>
     );
   }

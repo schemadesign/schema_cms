@@ -2,17 +2,16 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { isEmpty } from 'ramda';
-import { Button, Card, Header, Icons, Menu, Typography } from 'schemaUI';
+import { Button, Card, Header, Icons, Typography } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
+import { Menu } from '../../../shared/components/menu';
 import { Empty } from '../project.styles';
 import messages from './list.messages';
 import {
-  Action,
-  ActionsList,
   Container,
   Description,
   HeaderItem,
@@ -100,16 +99,7 @@ export class List extends PureComponent {
   renderMenu = () => {
     const { isMenuOpen } = this.state;
 
-    return (
-      <Menu open={isMenuOpen} onClose={this.handleToggleMenu}>
-        <ActionsList>
-          <Action>Edit Project settings</Action>
-          <Action>Delete project</Action>
-          <Action>User settings</Action>
-          <Action>Log Out</Action>
-        </ActionsList>
-      </Menu>
-    );
+    return <Menu open={isMenuOpen} onClose={this.handleToggleMenu} />;
   };
 
   render() {

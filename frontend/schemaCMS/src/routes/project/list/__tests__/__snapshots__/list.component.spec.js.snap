@@ -149,25 +149,70 @@ exports[`List: Component should render correctly 1`] = `
     <PlusIcon />
   </Button>
   <Menu
-    customCloseButtonStyles={Object {}}
-    customStyles={Object {}}
+    basePrimaryItems={
+      Array [
+        Object {
+          "label": Object {
+            "defaultMessage": "Data Sources",
+            "id": "shared.components.menu.dataSources",
+          },
+          "name": "dataSources",
+        },
+        Object {
+          "label": Object {
+            "defaultMessage": "Charts",
+            "id": "shared.components.menu.charts",
+          },
+          "name": "charts",
+          "visible": false,
+        },
+        Object {
+          "label": Object {
+            "defaultMessage": "Pages",
+            "id": "shared.components.menu.pages",
+          },
+          "name": "pages",
+          "visible": false,
+        },
+        Object {
+          "label": Object {
+            "defaultMessage": "Users",
+            "id": "shared.components.menu.users",
+          },
+          "name": "users",
+        },
+      ]
+    }
+    baseSecondaryItems={
+      Array [
+        Object {
+          "label": Object {
+            "defaultMessage": "Users Settings",
+            "id": "shared.components.menu.userSettings",
+          },
+          "name": "userSettings",
+          "visible": false,
+        },
+        Object {
+          "label": Object {
+            "defaultMessage": "Admin Settings",
+            "id": "shared.components.menu.adminSettings",
+          },
+          "name": "adminSettings",
+          "visible": false,
+        },
+        Object {
+          "label": Object {
+            "defaultMessage": "Log Out",
+            "id": "shared.components.menu.logOut",
+          },
+          "name": "logOut",
+          "path": "/logout",
+        },
+      ]
+    }
     onClose={[Function]}
     open={false}
-  >
-    <styled.ul>
-      <styled.li>
-        Edit Project settings
-      </styled.li>
-      <styled.li>
-        Delete project
-      </styled.li>
-      <styled.li>
-        User settings
-      </styled.li>
-      <styled.li>
-        Log Out
-      </styled.li>
-    </styled.ul>
-  </Menu>
+  />
 </styled.div>
 `;

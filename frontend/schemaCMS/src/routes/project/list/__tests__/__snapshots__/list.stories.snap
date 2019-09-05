@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/List empty 1`] = `
 <div
-  className="sc-dnqmqq ereunl"
+  className="sc-cSHVUG bINvlq"
 >
   <div
     style={
@@ -88,7 +88,7 @@ exports[`Storyshots Project/List empty 1`] = `
     </button>
   </div>
   <div
-    className="sc-htoDjs cNnnvC"
+    className="sc-jzJRlG cROogJ"
   >
     <p
       style={
@@ -144,92 +144,108 @@ exports[`Storyshots Project/List empty 1`] = `
     </svg>
   </button>
   <div
-    style={
-      Object {
-        "backgroundColor": "#f0efef",
-        "color": "#1d1d20",
-        "maxWidth": "360px",
-        "minHeight": "100vh",
-        "padding": "18px 20px 27px",
-        "position": "fixed",
-        "right": 0,
-        "textAlign": "left",
-        "top": 0,
-        "transform": "translateX(100%)",
-        "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-        "visibility": 0,
-        "width": "100%",
-      }
-    }
+    className="sc-htoDjs kycqz"
   >
-    <ul
-      className="sc-fjdhpX gRTSXn"
-    >
-      <li
-        className="sc-jzJRlG kEYdqt"
-      >
-        Edit Project settings
-      </li>
-      <li
-        className="sc-jzJRlG kEYdqt"
-      >
-        Delete project
-      </li>
-      <li
-        className="sc-jzJRlG kEYdqt"
-      >
-        User settings
-      </li>
-      <li
-        className="sc-jzJRlG kEYdqt"
-      >
-        Log Out
-      </li>
-    </ul>
-    <button
-      onClick={[Function]}
+    <div
       style={
         Object {
-          "backgroundColor": "#f0efef",
-          "border": "none",
-          "borderRadius": "48px",
+          "backgroundColor": "#fff",
           "color": "#1d1d20",
-          "cursor": "pointer",
-          "display": "inline-block",
-          "fontSize": "18px",
-          "margin": "0",
-          "minHeight": "48px",
-          "outline": "none",
-          "padding": "0",
-          "position": "absolute",
+          "maxWidth": "360px",
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "fixed",
           "right": 0,
-          "top": "6px",
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
         }
       }
     >
-      <svg
+      <div
+        className="sc-dnqmqq xpfMW"
+      >
+        <ul
+          className="sc-iwsKbI sc-gZMcBi fYuGYd"
+        >
+          <li
+            className="sc-VigVT sc-jTzLTM krLhSA"
+            onClick={[Function]}
+          >
+            <span>
+              Data Sources
+            </span>
+          </li>
+          <li
+            className="sc-VigVT sc-jTzLTM krLhSA"
+            onClick={[Function]}
+          >
+            <span>
+              Users
+            </span>
+          </li>
+        </ul>
+        <ul
+          className="sc-iwsKbI sc-gqjmRU Uwame"
+        >
+          <li
+            className="sc-VigVT sc-fjdhpX bAMrgH"
+            onClick={[Function]}
+          >
+            <span>
+              Log Out
+            </span>
+          </li>
+        </ul>
+      </div>
+      <button
+        onClick={[Function]}
         style={
           Object {
-            "fill": "#1d1d20",
-            "height": "60px",
-            "width": "60px",
+            "backgroundColor": "#fff",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#1d1d20",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
           }
         }
-        viewBox="0 0 60 60"
       >
-        <path
-          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </button>
+        <svg
+          style={
+            Object {
+              "fill": "#1d1d20",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Project/List list 1`] = `
 <div
-  className="sc-dnqmqq ereunl"
+  className="sc-cSHVUG bINvlq"
 >
   <div
     style={
@@ -315,10 +331,10 @@ exports[`Storyshots Project/List list 1`] = `
     </button>
   </div>
   <ul
-    className="sc-iwsKbI dZLTHj"
+    className="sc-kAzzGY gniqNP"
   >
     <li
-      className="sc-gZMcBi dFerLZ"
+      className="sc-chPdSV bloNac"
     >
       <div
         style={
@@ -343,20 +359,20 @@ exports[`Storyshots Project/List list 1`] = `
           }
         >
           <ul
-            className="sc-gqjmRU Uwame"
+            className="sc-kgoBCf bzBewh"
           >
             <li
-              className="sc-VigVT elihoU"
+              className="sc-kGXeez jdwpbX"
             >
               3 months ago
             </li>
             <li
-              className="sc-VigVT elihoU"
+              className="sc-kGXeez jdwpbX"
             >
               Status
             </li>
             <li
-              className="sc-VigVT elihoU"
+              className="sc-kGXeez jdwpbX"
             >
               Firstname Lastname
             </li>
@@ -379,7 +395,7 @@ exports[`Storyshots Project/List list 1`] = `
           Project Name
         </h1>
         <div
-          className="sc-jTzLTM qSBbn"
+          className="sc-kpOJdX fxEhUL"
           onClick={[Function]}
         >
           <p
@@ -415,7 +431,7 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </li>
     <li
-      className="sc-gZMcBi dFerLZ"
+      className="sc-chPdSV bloNac"
     >
       <div
         style={
@@ -440,20 +456,20 @@ exports[`Storyshots Project/List list 1`] = `
           }
         >
           <ul
-            className="sc-gqjmRU Uwame"
+            className="sc-kgoBCf bzBewh"
           >
             <li
-              className="sc-VigVT elihoU"
+              className="sc-kGXeez jdwpbX"
             >
               3 months ago
             </li>
             <li
-              className="sc-VigVT elihoU"
+              className="sc-kGXeez jdwpbX"
             >
               Published
             </li>
             <li
-              className="sc-VigVT elihoU"
+              className="sc-kGXeez jdwpbX"
             >
               Tadeusz Kosciuszko
             </li>
@@ -476,7 +492,7 @@ exports[`Storyshots Project/List list 1`] = `
           Honec sodales libero non fermentum aliquam
         </h1>
         <div
-          className="sc-jTzLTM qSBbn"
+          className="sc-kpOJdX fxEhUL"
           onClick={[Function]}
         >
           <p
@@ -551,85 +567,101 @@ exports[`Storyshots Project/List list 1`] = `
     </svg>
   </button>
   <div
-    style={
-      Object {
-        "backgroundColor": "#f0efef",
-        "color": "#1d1d20",
-        "maxWidth": "360px",
-        "minHeight": "100vh",
-        "padding": "18px 20px 27px",
-        "position": "fixed",
-        "right": 0,
-        "textAlign": "left",
-        "top": 0,
-        "transform": "translateX(100%)",
-        "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-        "visibility": 0,
-        "width": "100%",
-      }
-    }
+    className="sc-htoDjs kycqz"
   >
-    <ul
-      className="sc-fjdhpX gRTSXn"
-    >
-      <li
-        className="sc-jzJRlG kEYdqt"
-      >
-        Edit Project settings
-      </li>
-      <li
-        className="sc-jzJRlG kEYdqt"
-      >
-        Delete project
-      </li>
-      <li
-        className="sc-jzJRlG kEYdqt"
-      >
-        User settings
-      </li>
-      <li
-        className="sc-jzJRlG kEYdqt"
-      >
-        Log Out
-      </li>
-    </ul>
-    <button
-      onClick={[Function]}
+    <div
       style={
         Object {
-          "backgroundColor": "#f0efef",
-          "border": "none",
-          "borderRadius": "48px",
+          "backgroundColor": "#fff",
           "color": "#1d1d20",
-          "cursor": "pointer",
-          "display": "inline-block",
-          "fontSize": "18px",
-          "margin": "0",
-          "minHeight": "48px",
-          "outline": "none",
-          "padding": "0",
-          "position": "absolute",
+          "maxWidth": "360px",
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "fixed",
           "right": 0,
-          "top": "6px",
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
         }
       }
     >
-      <svg
+      <div
+        className="sc-dnqmqq xpfMW"
+      >
+        <ul
+          className="sc-iwsKbI sc-gZMcBi fYuGYd"
+        >
+          <li
+            className="sc-VigVT sc-jTzLTM krLhSA"
+            onClick={[Function]}
+          >
+            <span>
+              Data Sources
+            </span>
+          </li>
+          <li
+            className="sc-VigVT sc-jTzLTM krLhSA"
+            onClick={[Function]}
+          >
+            <span>
+              Users
+            </span>
+          </li>
+        </ul>
+        <ul
+          className="sc-iwsKbI sc-gqjmRU Uwame"
+        >
+          <li
+            className="sc-VigVT sc-fjdhpX bAMrgH"
+            onClick={[Function]}
+          >
+            <span>
+              Log Out
+            </span>
+          </li>
+        </ul>
+      </div>
+      <button
+        onClick={[Function]}
         style={
           Object {
-            "fill": "#1d1d20",
-            "height": "60px",
-            "width": "60px",
+            "backgroundColor": "#fff",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#1d1d20",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
           }
         }
-        viewBox="0 0 60 60"
       >
-        <path
-          d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </button>
+        <svg
+          style={
+            Object {
+              "fill": "#1d1d20",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;

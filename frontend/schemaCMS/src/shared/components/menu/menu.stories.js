@@ -7,9 +7,6 @@ import { Icons } from 'schemaUI';
 import { Menu } from './menu.component';
 
 const defaultProps = {
-  customStyles: {
-    background: '#f9f9f9',
-  },
   open: true,
   onClose: () => alert('Close menu'),
 };

@@ -36,14 +36,22 @@ export const Item = styled.li`
 
 export const PrimaryItem = styled(Item)`
   font-size: 24px;
-    border-bottom: 2.4px solid ${Theme.primary.background};
-    padding: 8px 0 13px;
+  border-bottom: 2.4px solid ${Theme.primary.background};
+  padding: 8px 0 13px;
 
-    &:first-of-type {
-      border-top 2.4px solid ${Theme.primary.background};
-    }
+  &:first-of-type {
+    border-top: 2.4px solid ${Theme.primary.background};
+  }
 `;
 
 export const SecondaryItem = styled(Item)`
   padding: 8px 0;
 `;
+
+export const menuStyles = {
+  backgroundColor: '#fff',
+};
+
+export const closeButtonStyles = {
+  backgroundColor: '#fff',
+};

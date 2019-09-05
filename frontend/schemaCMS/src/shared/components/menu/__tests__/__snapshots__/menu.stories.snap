@@ -2,13 +2,12 @@
 
 exports[`Storyshots Shared Components/Menu Default 1`] = `
 <div
-  className="sc-kkGfuU jVMdJI"
+  className="sc-htoDjs kycqz"
 >
   <div
     style={
       Object {
-        "background": "#f9f9f9",
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#fff",
         "color": "#1d1d20",
         "maxWidth": "360px",
         "minHeight": "100vh",
@@ -24,13 +23,13 @@ exports[`Storyshots Shared Components/Menu Default 1`] = `
     }
   >
     <div
-      className="sc-iAyFgw bfoFJM"
+      className="sc-dnqmqq xpfMW"
     >
       <ul
-        className="sc-hSdWYo sc-eHgmQL kbifvA"
+        className="sc-iwsKbI sc-gZMcBi fYuGYd"
       >
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -38,7 +37,7 @@ exports[`Storyshots Shared Components/Menu Default 1`] = `
           </span>
         </li>
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -47,10 +46,10 @@ exports[`Storyshots Shared Components/Menu Default 1`] = `
         </li>
       </ul>
       <ul
-        className="sc-hSdWYo sc-cvbbAY dvULXj"
+        className="sc-iwsKbI sc-gqjmRU Uwame"
       >
         <li
-          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          className="sc-VigVT sc-fjdhpX bAMrgH"
           onClick={[Function]}
         >
           <span>
@@ -63,7 +62,7 @@ exports[`Storyshots Shared Components/Menu Default 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#fff",
           "border": "none",
           "borderRadius": "48px",
           "color": "#1d1d20",
@@ -102,12 +101,12 @@ exports[`Storyshots Shared Components/Menu Default 1`] = `
 
 exports[`Storyshots Shared Components/Menu add custom elemets 1`] = `
 <div
-  className="sc-kkGfuU jVMdJI"
+  className="sc-htoDjs kycqz"
 >
   <div
     style={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#fff",
         "color": "#1d1d20",
         "maxWidth": "360px",
         "minHeight": "100vh",
@@ -124,13 +123,13 @@ exports[`Storyshots Shared Components/Menu add custom elemets 1`] = `
     }
   >
     <div
-      className="sc-iAyFgw bfoFJM"
+      className="sc-dnqmqq xpfMW"
     >
       <ul
-        className="sc-hSdWYo sc-eHgmQL kbifvA"
+        className="sc-iwsKbI sc-gZMcBi fYuGYd"
       >
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -138,7 +137,7 @@ exports[`Storyshots Shared Components/Menu add custom elemets 1`] = `
           </span>
         </li>
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -181,10 +180,10 @@ exports[`Storyshots Shared Components/Menu add custom elemets 1`] = `
         />
       </svg>
       <ul
-        className="sc-hSdWYo sc-cvbbAY dvULXj"
+        className="sc-iwsKbI sc-gqjmRU Uwame"
       >
         <li
-          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          className="sc-VigVT sc-fjdhpX bAMrgH"
           onClick={[Function]}
         >
           <span>
@@ -197,7 +196,7 @@ exports[`Storyshots Shared Components/Menu add custom elemets 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#fff",
           "border": "none",
           "borderRadius": "48px",
           "color": "#1d1d20",
@@ -236,13 +235,12 @@ exports[`Storyshots Shared Components/Menu add custom elemets 1`] = `
 
 exports[`Storyshots Shared Components/Menu add own items 1`] = `
 <div
-  className="sc-kkGfuU jVMdJI"
+  className="sc-htoDjs kycqz"
 >
   <div
     style={
       Object {
-        "background": "#f9f9f9",
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#fff",
         "color": "#1d1d20",
         "maxWidth": "360px",
         "minHeight": "100vh",
@@ -258,13 +256,13 @@ exports[`Storyshots Shared Components/Menu add own items 1`] = `
     }
   >
     <div
-      className="sc-iAyFgw bfoFJM"
+      className="sc-dnqmqq xpfMW"
     >
       <ul
-        className="sc-hSdWYo sc-eHgmQL kbifvA"
+        className="sc-iwsKbI sc-gZMcBi fYuGYd"
       >
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -272,7 +270,7 @@ exports[`Storyshots Shared Components/Menu add own items 1`] = `
           </span>
         </li>
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -280,23 +278,23 @@ exports[`Storyshots Shared Components/Menu add own items 1`] = `
           </span>
         </li>
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           Edit Project Settings
         </li>
       </ul>
       <ul
-        className="sc-hSdWYo sc-cvbbAY dvULXj"
+        className="sc-iwsKbI sc-gqjmRU Uwame"
       >
         <li
-          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          className="sc-VigVT sc-fjdhpX bAMrgH"
           onClick={[Function]}
         >
           Delete project (click here)
         </li>
         <li
-          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          className="sc-VigVT sc-fjdhpX bAMrgH"
           onClick={[Function]}
         >
           <span>
@@ -309,7 +307,7 @@ exports[`Storyshots Shared Components/Menu add own items 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#fff",
           "border": "none",
           "borderRadius": "48px",
           "color": "#1d1d20",
@@ -348,13 +346,13 @@ exports[`Storyshots Shared Components/Menu add own items 1`] = `
 
 exports[`Storyshots Shared Components/Menu all changes in one 1`] = `
 <div
-  className="sc-kkGfuU jVMdJI"
+  className="sc-htoDjs kycqz"
 >
   <div
     style={
       Object {
         "background": "#7b67b3",
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#fff",
         "color": "#fff",
         "maxWidth": "360px",
         "minHeight": "100vh",
@@ -370,19 +368,19 @@ exports[`Storyshots Shared Components/Menu all changes in one 1`] = `
     }
   >
     <div
-      className="sc-iAyFgw bfoFJM"
+      className="sc-dnqmqq xpfMW"
     >
       <ul
-        className="sc-hSdWYo sc-eHgmQL kbifvA"
+        className="sc-iwsKbI sc-gZMcBi fYuGYd"
       >
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           Charts (click here)
         </li>
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -426,22 +424,22 @@ exports[`Storyshots Shared Components/Menu all changes in one 1`] = `
         </span>
       </div>
       <ul
-        className="sc-hSdWYo sc-cvbbAY dvULXj"
+        className="sc-iwsKbI sc-gqjmRU Uwame"
       >
         <li
-          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          className="sc-VigVT sc-fjdhpX bAMrgH"
           onClick={[Function]}
         >
           My settings
         </li>
         <li
-          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          className="sc-VigVT sc-fjdhpX bAMrgH"
           onClick={[Function]}
         >
           Hello
         </li>
         <li
-          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          className="sc-VigVT sc-fjdhpX bAMrgH"
           onClick={[Function]}
         >
           <span>
@@ -455,7 +453,7 @@ exports[`Storyshots Shared Components/Menu all changes in one 1`] = `
       style={
         Object {
           "background": "#54467b",
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#fff",
           "border": "none",
           "borderRadius": "48px",
           "color": "#1d1d20",
@@ -496,13 +494,12 @@ exports[`Storyshots Shared Components/Menu all changes in one 1`] = `
 
 exports[`Storyshots Shared Components/Menu show all hiden items 1`] = `
 <div
-  className="sc-kkGfuU jVMdJI"
+  className="sc-htoDjs kycqz"
 >
   <div
     style={
       Object {
-        "background": "#f9f9f9",
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#fff",
         "color": "#1d1d20",
         "maxWidth": "360px",
         "minHeight": "100vh",
@@ -518,13 +515,13 @@ exports[`Storyshots Shared Components/Menu show all hiden items 1`] = `
     }
   >
     <div
-      className="sc-iAyFgw bfoFJM"
+      className="sc-dnqmqq xpfMW"
     >
       <ul
-        className="sc-hSdWYo sc-eHgmQL kbifvA"
+        className="sc-iwsKbI sc-gZMcBi fYuGYd"
       >
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -532,7 +529,7 @@ exports[`Storyshots Shared Components/Menu show all hiden items 1`] = `
           </span>
         </li>
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -540,7 +537,7 @@ exports[`Storyshots Shared Components/Menu show all hiden items 1`] = `
           </span>
         </li>
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -548,7 +545,7 @@ exports[`Storyshots Shared Components/Menu show all hiden items 1`] = `
           </span>
         </li>
         <li
-          className="sc-jWBwVP sc-brqgnP jUotgY"
+          className="sc-VigVT sc-jTzLTM krLhSA"
           onClick={[Function]}
         >
           <span>
@@ -557,10 +554,10 @@ exports[`Storyshots Shared Components/Menu show all hiden items 1`] = `
         </li>
       </ul>
       <ul
-        className="sc-hSdWYo sc-cvbbAY dvULXj"
+        className="sc-iwsKbI sc-gqjmRU Uwame"
       >
         <li
-          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          className="sc-VigVT sc-fjdhpX bAMrgH"
           onClick={[Function]}
         >
           <span>
@@ -568,7 +565,7 @@ exports[`Storyshots Shared Components/Menu show all hiden items 1`] = `
           </span>
         </li>
         <li
-          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          className="sc-VigVT sc-fjdhpX bAMrgH"
           onClick={[Function]}
         >
           <span>
@@ -576,7 +573,7 @@ exports[`Storyshots Shared Components/Menu show all hiden items 1`] = `
           </span>
         </li>
         <li
-          className="sc-jWBwVP sc-cMljjf lpfiVt"
+          className="sc-VigVT sc-fjdhpX bAMrgH"
           onClick={[Function]}
         >
           <span>
@@ -589,7 +586,7 @@ exports[`Storyshots Shared Components/Menu show all hiden items 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#fff",
           "border": "none",
           "borderRadius": "48px",
           "color": "#1d1d20",

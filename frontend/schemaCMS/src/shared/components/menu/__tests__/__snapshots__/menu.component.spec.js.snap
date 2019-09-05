@@ -3,8 +3,16 @@
 exports[`Menu: Component should render correctly 1`] = `
 <styled.div>
   <Menu
-    customCloseButtonStyles={Object {}}
-    customStyles={Object {}}
+    customCloseButtonStyles={
+      Object {
+        "backgroundColor": "#fff",
+      }
+    }
+    customStyles={
+      Object {
+        "backgroundColor": "#fff",
+      }
+    }
     onClose={[Function]}
     open={false}
   >

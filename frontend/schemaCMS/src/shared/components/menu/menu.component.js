@@ -5,7 +5,16 @@ import { Menu as MenuComponent } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
 import messages from './menu.messages';
-import { Container, Content, PrimaryList, SecondaryList, PrimaryItem, SecondaryItem } from './menu.styles';
+import {
+  Container,
+  Content,
+  PrimaryList,
+  SecondaryList,
+  PrimaryItem,
+  SecondaryItem,
+  menuStyles,
+  closeButtonStyles,
+} from './menu.styles';
 
 export class Menu extends PureComponent {
   static propTypes = {
@@ -85,14 +94,25 @@ export class Menu extends PureComponent {
   handleChangeLocation = path => (path ? this.props.history.push(path) : null);
 
   render() {
-    const { basePrimaryItems, baseSecondaryItems, primaryItems, secondaryItems, children, ...restProps } = this.props;
+    const {
+      basePrimaryItems,
+      baseSecondaryItems,
+      primaryItems,
+      secondaryItems,
+      children,
+      customStyles,
+      customCloseButtonStyles,
+      ...restProps
+    } = this.props;
 
     const primaryMenu = this.generateMenu(basePrimaryItems, primaryItems, true, PrimaryList, PrimaryItem);
     const secondaryMenu = this.generateMenu(baseSecondaryItems, secondaryItems, false, SecondaryList, SecondaryItem);
+    const styles = { ...menuStyles, ...customStyles };
+    const updatedCloseButtonStyles = { ...closeButtonStyles, ...customCloseButtonStyles };
 
     return (
       <Container>
-        <MenuComponent {...restProps}>
+        <MenuComponent customStyles={styles} customCloseButtonStyles={updatedCloseButtonStyles} {...restProps}>
           <Content>
             {primaryMenu}
             {children}
