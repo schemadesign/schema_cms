@@ -293,7 +293,9 @@ class TestUpdateDraftDataSourceView:
 
         assert response.status_code == status.HTTP_200_OK
 
-    def test_update_by_editor_assigned_to_project(self, api_client, faker, editor, project, data_source_factory):
+    def test_update_by_editor_assigned_to_project(
+        self, api_client, faker, editor, project, data_source_factory
+    ):
         project.editors.add(editor)
         data_source = data_source_factory(project=project, draft=True)
         url = self.get_url(data_source_pk=data_source.pk, project_pk=project.id)
