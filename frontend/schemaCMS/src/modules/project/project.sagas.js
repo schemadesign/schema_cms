@@ -1,4 +1,4 @@
-import { all, put, takeLatest } from 'redux-saga/effects';
+import { all, put, takeLatest, select } from 'redux-saga/effects';
 import { path } from 'ramda';
 
 import { ProjectTypes, ProjectActions, ProjectRoutines } from './project.redux';
@@ -6,6 +6,7 @@ import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { PROJECT_OWNER } from './project.constants';
+import { selectUserData } from '../userProfile';
 
 function* fetchProjectsList() {
   try {
@@ -21,7 +22,7 @@ function* fetchProjectsList() {
 function* createProject({ payload }) {
   try {
     yield put(ProjectRoutines.createProject.request());
-    const currentUser = yield select(selectCurrentUser);
+    const currentUser = yield select(selectUserData);
     const parsedPayload = { ...payload, ...{ [PROJECT_OWNER]: currentUser.id } };
     const { data } = yield api.post(PROJECTS_PATH, parsedPayload);
 
