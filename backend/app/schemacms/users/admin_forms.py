@@ -8,11 +8,15 @@ USER_MODEL = auth.get_user_model()
 
 
 class InviteUserForm(forms.ModelForm):
-    email = forms.EmailField(required=True)
-
     class Meta:
         model = USER_MODEL
-        fields = ("email", "role")
+        fields = ("email", "first_name", "last_name", "role")
+        required = ("email", "first_name", "last_name")
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for required in self.Meta.required:
+            self.fields[required].required = True
 
     def save(self, commit=True):
         self.instance.username = uuid.uuid4().hex
