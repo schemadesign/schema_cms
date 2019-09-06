@@ -17,14 +17,17 @@ export const DataSourceRoutines = {
 export const INITIAL_STATE = new Immutable({
   dataSource: {},
   dataSources: [],
-  fields: [],
+  fields: {},
+  previewTable: [],
 });
 
 const updateDataSource = (state = INITIAL_STATE, { payload }) => state.set('dataSource', payload);
 const unmountDataSource = (state = INITIAL_STATE) => state.set('dataSource', {});
 
-const updateFields = (state = INITIAL_STATE, { payload }) => state.set('fields', payload);
-const unmountFields = (state = INITIAL_STATE) => state.set('fields', INITIAL_STATE.fields);
+const updateFields = (state = INITIAL_STATE, { payload }) =>
+  state.set('fields', payload.fields).set('previewTable', payload.data);
+const unmountFields = (state = INITIAL_STATE) =>
+  state.set('fields', INITIAL_STATE.fields).set('previewTable', INITIAL_STATE.previewTable);
 
 export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.create.SUCCESS]: updateDataSource,

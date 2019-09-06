@@ -8,7 +8,8 @@ import { Container } from './fields.styles';
 
 export class Fields extends PureComponent {
   static propTypes = {
-    fields: PropTypes.array,
+    fields: PropTypes.object,
+    previewTable: PropTypes.array,
     fetchFields: PropTypes.func.isRequired,
     unmountFields: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
@@ -39,7 +40,7 @@ export class Fields extends PureComponent {
   render() {
     const topHeaderConfig = this.getHeaderAndMenuConfig('Knoll Archive');
 
-    console.log(this.props.fields);
+    console.log(this.props);
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />

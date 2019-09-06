@@ -5,4 +5,4 @@ import { PreviewTable } from './previewTable.component';
 
 const defaultProps = {};
 
-storiesOf('PreviewTable', module).add('Default', () => <PreviewTable {...defaultProps} />);
+storiesOf('Project/DataSource/Fields/PreviewTable', module).add('Default', () => <PreviewTable {...defaultProps} />);

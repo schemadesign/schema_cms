@@ -81,12 +81,12 @@ function* fetchFields({ payload }) {
 
     const { projectId, dataSourceId } = payload;
     const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}${PREVIEW_PATH}`);
-    debugger;
-    yield put(DataSourceRoutines.fetchOne.success(data));
+
+    yield put(DataSourceRoutines.fetchFields.success(data));
   } catch (error) {
-    yield put(DataSourceRoutines.fetchOne.failure(error));
+    yield put(DataSourceRoutines.fetchFields.failure(error));
   } finally {
-    yield put(DataSourceRoutines.fetchOne.fulfill());
+    yield put(DataSourceRoutines.fetchFields.fulfill());
   }
 }
 
