@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { PreviewTableComponent as PreviewTable } from '../previewTable.component';
+import { PreviewTable } from '../previewTable.component';
 
 describe('PreviewTable: Component', () => {
   const defaultProps = {};

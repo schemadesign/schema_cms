@@ -5,3 +5,4 @@ export const TOKEN_PATH = '/auth/token';
 export const ME_PATH = '/users/me';
 export const PROJECTS_PATH = '/projects';
 export const DATA_SOURCE_PATH = '/datasources';
+export const PREVIEW_PATH = '/preview';

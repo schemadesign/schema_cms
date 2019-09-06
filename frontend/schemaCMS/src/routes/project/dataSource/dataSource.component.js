@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { View } from './view';
 import { List } from './list';
+import { Fields } from './fields';
 
 const INITIAL_STEP = 1;
 
@@ -19,6 +20,7 @@ export class DataSource extends PureComponent {
     const listPath = `${match.path}/list`;
     const viewPath = `${match.path}/view/:dataSourceId`;
     const viewPathWithStep = `${viewPath}/:step`;
+    const fieldsPath = `${match.path}/:dataSourceId/fields`;
 
     return (
       <Switch>
@@ -26,7 +28,10 @@ export class DataSource extends PureComponent {
         <Redirect exact path={viewPath} to={`${viewPath}/${INITIAL_STEP}`} />
 
         <Route exact path={listPath} component={List} />
+
         <Route exact path={viewPathWithStep} component={View} />
+
+        <Route exact path={fieldsPath} component={Fields} />
       </Switch>
     );
   }

@@ -7,3 +7,8 @@ export const selectDataSource = createSelector(
   selectDataSourceDomain,
   prop('dataSource')
 );
+
+export const selectFields = createSelector(
+  selectDataSourceDomain,
+  prop('fields')
+);

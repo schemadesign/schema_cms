@@ -24,6 +24,7 @@ export class Home extends PureComponent {
           <FormattedMessage {...messages.welcome} />
         </H1>
         <Link to="/project/list">Projects List</Link>
+        <Link to="/project/view/1/datasource/1/fields">Fields</Link>
       </Container>
     );
   }
