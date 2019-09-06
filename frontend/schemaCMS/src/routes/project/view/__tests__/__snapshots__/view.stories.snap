@@ -245,11 +245,13 @@ exports[`Storyshots Project/View default 1`] = `
         className="sc-brqgnP eMoLEB"
       >
         <div
+          onClick={[Function]}
           style={
             Object {
               "backgroundColor": "#f0efef",
               "borderTop": "2px solid #1d1d20",
               "color": "#1d1d20",
+              "cursor": "pointer",
               "display": "flex",
               "flexDirection": "column",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -279,11 +281,13 @@ exports[`Storyshots Project/View default 1`] = `
         className="sc-brqgnP eMoLEB"
       >
         <div
+          onClick={[Function]}
           style={
             Object {
               "backgroundColor": "#f0efef",
               "borderTop": "2px solid #1d1d20",
               "color": "#1d1d20",
+              "cursor": "pointer",
               "display": "flex",
               "flexDirection": "column",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
