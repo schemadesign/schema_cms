@@ -17,6 +17,9 @@ description| text   | No       | Description for the created project.
 status     | string | No       | Current status of the project.
 editors    | list   | No       | Editors list of the project.
 
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
 
 **Response**:
 
@@ -47,6 +50,10 @@ Content-Type: application/json
 **Request**:
 
 `GET` `/api/v1/projects/:id`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
 
 Parameters:
 
@@ -88,9 +95,9 @@ owner      | string | The creator of the project object.
 editors    | list   | The editors list of the project object.
 
 
-
 *Note:*
 
+- **[Authorization Protected](authentication.md)**
 - All parameters are optional
 
 **Response**:
@@ -123,6 +130,10 @@ Content-Type application/json
 **Request**:
 
 `DELETE` `/api/v1/projects/:id`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
 
 **Response**:
 

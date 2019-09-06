@@ -76,8 +76,24 @@ class TestMeView:
 
     def test_response(self, api_client, user):
         api_client.force_authenticate(user)
+
         response = api_client.get(self._url)
 
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == user_serializers.UserSerializer(instance=user).data
+
+    @pytest.mark.parametrize('http_method', ['put', 'patch'])
+    def test_update_details(self, api_client, faker, user, http_method):
+        api_client.force_authenticate(user)
+        payload = {
+            "first_name": faker.first_name(),
+            "last_name": faker.last_name(),
+            "email": faker.email(),
+        }
+
+        response = getattr(api_client, http_method)(self._url, payload)
+
+        user.refresh_from_db()
         assert response.status_code == status.HTTP_200_OK
         assert response.data == user_serializers.UserSerializer(instance=user).data
 
@@ -99,7 +115,7 @@ class TestMeView:
 
     @property
     def _url(self):
-        return urls.reverse("me-list")
+        return urls.reverse("me-detail")
 
 
 class TestMeResetPasswordView:

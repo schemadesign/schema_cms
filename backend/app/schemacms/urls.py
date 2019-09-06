@@ -4,16 +4,19 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 
-from .users import views as user_views
+from .users import routers as user_routers, views as user_views
 from .projects import views as project_views
 from schemacms.misc import views as misc_views
 
 
 router = DefaultRouter(trailing_slash=False)
-router.register(r"users/me", user_views.MeViewSet, basename="me")
 router.register(r"users", user_views.UserViewSet)
 router.register(r"projects", project_views.ProjectViewSet)
 router.register(r"projects/(?P<project_pk>\d+)/datasources", project_views.DataSourceViewSet)
+
+current_user_router = user_routers.CurrentUserRouter(trailing_slash=False)
+current_user_router.register(r"users/me", user_views.CurrentUserViewSet, basename="me")
+
 urlpatterns = [
     urls.path(
         "api/v1/",
@@ -21,6 +24,7 @@ urlpatterns = [
             [
                 urls.path("auth/", urls.include("schemacms.authorization.urls", namespace="authorization")),
                 urls.path("auth/", urls.include("social_django.urls")),
+                urls.path("", urls.include(current_user_router.urls)),
                 urls.path("", urls.include(router.urls)),
                 urls.path("", urls.include("rest_framework.urls", namespace="rest_framework")),
             ]
