@@ -24,6 +24,10 @@ class User(AbstractUser):
         max_length=25, choices=constants.USER_ROLE_CHOICES, default=constants.UserRole.UNDEFINED
     )
 
+    @property
+    def is_admin(self):
+        return self.role == constants.UserRole.ADMIN
+
     def __str__(self):
         return self.username
 
