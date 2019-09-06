@@ -275,6 +275,14 @@ class TestCreateDraftDataSourceView:
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data["file"] == f"http://testserver/{correct_path.lstrip('/')}"
 
+    def test_request_user_as_created_by(self, api_client, admin, project):
+        api_client.force_authenticate(admin)
+
+        response = api_client.post(self.get_url(project.id), dict(), format="multipart")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert project.data_sources.get(id=response.data["id"]).created_by == admin
+
     @staticmethod
     def get_url(project_pk):
         return reverse("datasource-list", kwargs=dict(project_pk=project_pk))

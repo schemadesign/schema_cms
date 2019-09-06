@@ -31,7 +31,7 @@ class DataSourceViewSet(viewsets.ModelViewSet):
         return super().get_serializer_class()
 
     def perform_create(self, serializer):
-        serializer.save(project=self.project)
+        serializer.save(project=self.project, created_by=self.request.user)
 
     def get_queryset(self):
         return super().get_queryset().filter(project=self.project)
