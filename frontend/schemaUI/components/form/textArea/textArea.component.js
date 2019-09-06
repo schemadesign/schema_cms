@@ -1,4 +1,4 @@
-import React, { PureComponent, createRef } from 'react';
+import React, { PureComponent, createRef, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import { defaultStyles, shadowStyles } from './textArea.styles';
@@ -66,7 +66,7 @@ export class TextArea extends PureComponent {
     const styles = { ...defaultStyles, ...customStyles };
 
     return (
-      <>
+      <Fragment>
         <textarea
           {...restProps}
           id={name}
@@ -75,7 +75,7 @@ export class TextArea extends PureComponent {
           ref={this.textAreaRef}
         />
         <textarea aria-hidden readOnly tabIndex={-1} style={{ ...shadowStyles, ...styles }} ref={this.shadowRef} />
-      </>
+      </Fragment>
     );
   }
 }

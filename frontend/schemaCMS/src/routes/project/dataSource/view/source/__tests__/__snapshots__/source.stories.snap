@@ -5,58 +5,53 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
   className="sc-jTzLTM eCMmlJ"
 >
   <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "maxWidth": "100%",
-        "paddingBottom": "30px",
-        "position": "relative",
-      }
-    }
+    className="sc-gZMcBi giNnHm"
   >
-    <label
-      htmlFor="Name"
-      style={
-        Object {
-          "border": "none",
-          "borderTop": "1px solid #F0EFEF",
-          "color": "#a6a7aa",
-          "display": "block",
-          "fontSize": "14px",
-          "outline": "none",
-          "paddingTop": "8px",
-          "width": "100%",
-        }
-      }
-    >
-      Name
-    </label>
-    <input
-      defaultValue="My New Dataset"
-      id="Name"
-      name="Name"
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "border": "none",
-          "color": "#1d1d20",
-          "fontSize": "18px",
-          "lineHeight": "24px",
-          "outline": "none",
-        }
-      }
-      type="text"
-    />
     <div
       style={
         Object {
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
         }
       }
-    />
+    >
+      <input
+        dataSource={Object {}}
+        id="name"
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        name="name"
+        onChange={[Function]}
+        setFieldValue={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#1d1d20",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+          }
+        }
+        type="text"
+        value=""
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
   </div>
   <label
     style={
@@ -73,7 +68,9 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
       }
     }
   >
-    Source
+    <span>
+      Source
+    </span>
   </label>
   <div
     style={
@@ -96,8 +93,8 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
       <input
         aria-hidden={true}
         defaultChecked={false}
-        id="csv"
-        name="dataSourceType"
+        id="file"
+        name="type"
         onChange={[Function]}
         style={
           Object {
@@ -110,10 +107,10 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
           }
         }
         type="radio"
-        value="csv"
+        value="file"
       />
       <label
-        htmlFor="csv"
+        htmlFor="file"
         style={
           Object {
             "alignItems": "center",
@@ -164,7 +161,6 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
           </svg>
         </button>
       </label>
-      Csv
     </div>
   </div>
 </div>

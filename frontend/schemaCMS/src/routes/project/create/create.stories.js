@@ -8,8 +8,10 @@ const defaultProps = {
   values: {
     [PROJECT_TITLE]: 'title',
   },
-  handleSubmit: Function.prototype,
   handleChange: Function.prototype,
+  handleSubmit: Function.prototype,
+  touched: {},
+  errors: {},
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 

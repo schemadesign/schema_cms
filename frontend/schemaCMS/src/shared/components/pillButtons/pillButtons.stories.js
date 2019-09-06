@@ -3,6 +3,13 @@ import { storiesOf } from '@storybook/react';
 
 import { PillButtons } from './pillButtons.component';
 
-const defaultProps = {};
+const defaultProps = {
+  leftButtonProps: {
+    title: 'left title',
+  },
+  rightButtonProps: {
+    title: 'right title',
+  },
+};
 
 storiesOf('Shared Components/PillButtons', module).add('Default', () => <PillButtons {...defaultProps} />);
