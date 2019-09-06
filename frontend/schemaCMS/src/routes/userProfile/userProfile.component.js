@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'schemaUI';
 
 import { Container, Form } from './userProfile.styles';
 import { TopHeader } from '../../shared/components/topHeader';
@@ -46,7 +47,17 @@ export class UserProfile extends PureComponent {
             label={lastNameLabel}
             {...this.props}
           />
-          <TextInput value={values[EMAIL]} onChange={handleChange} name={EMAIL} label={emailLabel} {...this.props} />
+          <TextInput
+            disabled
+            readOnly
+            value={values[EMAIL]}
+            onChange={handleChange}
+            name={EMAIL}
+            label={emailLabel}
+            {...this.props}
+          />
+
+          <Button>{intl.formatMessage(messages.save)}</Button>
         </Form>
       </Container>
     );

@@ -22,4 +22,8 @@ export default defineMessages({
     id: 'userProfile.emailLabel',
     defaultMessage: 'Email',
   },
+  save: {
+    id: 'userProfile.save',
+    defaultMessage: 'Save',
+  },
 });

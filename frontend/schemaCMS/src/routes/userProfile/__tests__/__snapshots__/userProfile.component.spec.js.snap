@@ -49,6 +49,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
       }
     />
     <TextInput
+      disabled={true}
       errors={Object {}}
       handleChange={[Function]}
       handleSubmit={[Function]}
@@ -59,6 +60,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
       }
       name="email"
       onChange={[Function]}
+      readOnly={true}
       touched={Object {}}
       value=""
       values={
@@ -68,6 +70,9 @@ exports[`UserProfile: Component should render correctly 1`] = `
           "lastName": "",
         }
       }
+    />
+    <Button
+      customStyles={Object {}}
     />
   </styled.form>
 </styled.div>
