@@ -74,3 +74,7 @@ export const buttonStyles = {
   backgroundColor: Theme.primary.background,
   height: '60px',
 };
+
+export const statisticsCardStyles = {
+  cursor: 'pointer',
+};
