@@ -47,7 +47,10 @@ class DataSourceViewSet(viewsets.ModelViewSet):
 
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
-        return response.Response(json.loads(self.get_object().meta_data.preview.read()))
+        data_source = self.get_object()
+        data = json.loads(data_source.meta_data.preview.read())
+        data["data_source"] = {"name": data_source.name}
+        return response.Response(data)
 
     @decorators.action(detail=True, methods=["post"])
     def process(self, request, pk=None, **kwargs):
