@@ -17,8 +17,6 @@ describe('Create: Component', () => {
     intl: {
       formatMessage: Function.prototype,
     },
-    touched: {},
-    errors: {},
   };
 
   const component = props => <Create {...defaultProps} {...props} />;
@@ -42,7 +40,10 @@ describe('Create: Component', () => {
     const handleChange = spy();
 
     const wrapper = render({ handleChange });
-    wrapper.find(TextInput).first().prop('onChange')();
+    wrapper
+      .find(TextInput)
+      .first()
+      .prop('onChange')();
     expect(handleChange).to.have.been.calledOnce;
   });
 });

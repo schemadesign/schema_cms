@@ -2,26 +2,7 @@
 
 exports[`View: Component should render correctly 1`] = `
 <styled.div>
-  <Header
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
-  >
-    <H2>
-      <FormattedMessage
-        defaultMessage="Create Data Source"
-        id="dataSource.view.title"
-        values={Object {}}
-      />
-    </H2>
-    <H1>
-      <FormattedMessage
-        defaultMessage="Source"
-        id="dataSource.view.subTitle"
-        values={Object {}}
-      />
-    </H1>
-  </Header>
+  <TopHeader />
   <Source
     dataSource={Object {}}
   />
@@ -30,14 +11,16 @@ exports[`View: Component should render correctly 1`] = `
     onRightClick={[Function]}
   />
   <styled.div>
-    <Component
+    <Stepper
       activeStep={1}
+      customDotStyles={Object {}}
       customStyles={
         Object {
           "margin": "0 auto",
           "pointerEvents": "none",
         }
       }
+      handleStep={[Function]}
       onStepChange={[Function]}
       steps={6}
     />

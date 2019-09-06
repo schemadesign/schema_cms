@@ -5,10 +5,14 @@ import { List } from '../list.component';
 
 describe('List: Component', () => {
   const defaultProps = {
+    createDataSource: Function.prototype,
     match: {
       params: {
-        projectId: 1,
+        projectId: '1',
       },
+    },
+    intl: {
+      formatMessage: Function.prototype,
     },
   };
 

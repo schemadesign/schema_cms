@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Button, Card, Header, Icons, Typography } from 'schemaUI';
+import { Button, Card, Icons, Typography } from 'schemaUI';
 import { has, isEmpty, isNil, path } from 'ramda';
-import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
+import { TopHeader } from '../../../shared/components/topHeader';
 import { Empty } from '../project.styles';
 import messages from './view.messages';
 import {
@@ -26,7 +26,7 @@ import {
   buttonStyles,
 } from './view.styles';
 
-const { H1, H2, P } = Typography;
+const { P } = Typography;
 
 export class View extends PureComponent {
   static propTypes = {
@@ -51,6 +51,31 @@ export class View extends PureComponent {
   componentWillUnmount() {
     return this.props.unmountProject();
   }
+
+  getHeaderAndMenuConfig = (headerSubtitle, projectId, hasNoData) => {
+    const primaryMenuItems = [];
+    const secondaryMenuItems = [];
+
+    if (!hasNoData) {
+      primaryMenuItems.push({
+        label: this.formatMessage(messages.dataSources),
+        to: `/project/view/${projectId}/datasource`,
+      });
+      secondaryMenuItems.push(
+        { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
+        { label: this.formatMessage(messages.deleteProject), to: `/project/delete/${projectId}` }
+      );
+    }
+
+    secondaryMenuItems.push({ label: this.formatMessage(messages.logOut), to: '/logout' });
+
+    return {
+      headerTitle: this.formatMessage(messages.title),
+      headerSubtitle,
+      primaryMenuItems,
+      secondaryMenuItems,
+    };
+  };
 
   countItems = value => (isNil(value) ? null : value.length);
 
@@ -113,24 +138,22 @@ export class View extends PureComponent {
 
   render() {
     const { project } = this.props;
+    const { projectId } = this.props.match.params;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
+    const hasNoData = !project || has('error', project);
+    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, hasNoData);
 
     const content = isEmpty(project) ? (
       <Loader />
     ) : (
-      renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(has('error', project), project)
+      renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(hasNoData, project)
     );
 
     return (
       <Container>
         <Helmet title={title} />
-        <Header>
-          <H2>
-            <FormattedMessage {...messages.title} />
-          </H2>
-          <H1>{projectName}</H1>
-        </Header>
+        <TopHeader {...topHeaderConfig} />
         {content}
         <Button onClick={this.handleGoToProjectsList} customStyles={buttonStyles}>
           <Icons.ArrowLeftIcon />

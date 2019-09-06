@@ -2,14 +2,7 @@
 
 exports[`Create: Component should render correctly 1`] = `
 <styled.div>
-  <Header
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
-  >
-    <H1 />
-    <H2 />
-  </Header>
+  <TopHeader />
   <form
     onSubmit={[Function]}
   >

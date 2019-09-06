@@ -3,10 +3,11 @@ import { Theme } from 'schemaUI';
 
 export const Container = styled.div`
   font-weight: 600;
+  margin: 0 20px;
 `;
 
 export const ProjectView = styled.div`
-  margin: 7px 20px 0 20px;
+  margin-top: 7px;
 `;
 
 export const Details = styled.ul`
@@ -69,7 +70,7 @@ export const CardValue = styled.span`
 `;
 
 export const buttonStyles = {
-  margin: '50px 0 20px 20px',
+  margin: '50px 0 20px 0',
   backgroundColor: Theme.primary.background,
   height: '60px',
 };

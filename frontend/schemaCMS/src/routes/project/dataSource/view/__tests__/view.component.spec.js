@@ -14,7 +14,7 @@ describe('View: Component', () => {
     match: {
       params: {
         projectId: '1',
-        dataSource: '1',
+        dataSourceId: '1',
       },
     },
   };

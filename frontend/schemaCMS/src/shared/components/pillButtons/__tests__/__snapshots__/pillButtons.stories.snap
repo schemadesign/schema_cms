@@ -1,16 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots PillButtons Default 1`] = `
+exports[`Storyshots Shared Components/PillButtons Default 1`] = `
 <div
-  className="sc-gzVnrw IHUTD"
+  className="sc-cSHVUG fTeHJd"
 >
   <button
     style={
       Object {
-        "backgroundColor": "transparent",
+        "backgroundColor": "#f0efef",
         "border": "none",
         "borderRadius": "48px",
+        "color": "#1d1d20",
         "cursor": "pointer",
+        "display": "inline-block",
         "fontSize": "18px",
         "margin": "0",
         "marginRight": 10,
@@ -25,10 +27,12 @@ exports[`Storyshots PillButtons Default 1`] = `
   <button
     style={
       Object {
-        "backgroundColor": "transparent",
+        "backgroundColor": "#f0efef",
         "border": "none",
         "borderRadius": "48px",
+        "color": "#1d1d20",
         "cursor": "pointer",
+        "display": "inline-block",
         "fontSize": "18px",
         "margin": "0",
         "minHeight": "48px",

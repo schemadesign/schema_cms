@@ -8,12 +8,9 @@ const defaultProps = {
   values: {
     [PROJECT_TITLE]: 'title',
   },
-  errors: {},
-  intl: {
-    formatMessage: Function.prototype,
-  },
   handleSubmit: Function.prototype,
-  onChange: Function.prototype,
+  handleChange: Function.prototype,
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
-storiesOf('Create', module).add('Default', () => <Create {...defaultProps} />);
+storiesOf('Project/Create', module).add('Default', () => <Create {...defaultProps} />);

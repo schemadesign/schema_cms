@@ -3,6 +3,19 @@ import { storiesOf } from '@storybook/react';
 
 import { View } from './view.component';
 
-const defaultProps = {};
+const defaultProps = {
+  dataSource: {},
+  fetchDataSource: Function.prototype,
+  unmountDataSource: Function.prototype,
+  intl: {
+    formatMessage: ({ defaultMessage }) => defaultMessage,
+  },
+  match: {
+    params: {
+      projectId: '1',
+      dataSourceId: '1',
+    },
+  },
+};
 
-storiesOf('View', module).add('Default', () => <View {...defaultProps} />);
+storiesOf('Project/DataSource/View', module).add('Default', () => <View {...defaultProps} />);

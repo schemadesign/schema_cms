@@ -2,17 +2,15 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { isEmpty } from 'ramda';
-import { Button, Card, Header, Icons, Menu, Typography } from 'schemaUI';
-import { FormattedMessage } from 'react-intl';
+import { Button, Card, Icons, Typography } from 'schemaUI';
 
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
+import { TopHeader } from '../../../shared/components/topHeader';
 import { Empty } from '../project.styles';
 import messages from './list.messages';
 import {
-  Action,
-  ActionsList,
   Container,
   Description,
   HeaderItem,
@@ -24,7 +22,7 @@ import {
   addProjectStyles,
 } from './list.styles';
 
-const { H1, H2, P, Span } = Typography;
+const { H1, P, Span } = Typography;
 
 export class List extends PureComponent {
   static propTypes = {
@@ -34,25 +32,17 @@ export class List extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isMenuOpen: false,
-    };
-  }
-
   componentDidMount() {
     this.props.fetchProjectsList();
   }
 
-  handleToggleMenu = () => {
-    const { isMenuOpen } = this.state;
+  getHeaderAndMenuConfig = () => ({
+    headerTitle: this.formatMessage(messages.title),
+    headerSubtitle: this.formatMessage(messages.overview),
+    secondaryMenuItems: [{ label: this.formatMessage(messages.logOut), to: '/logout' }],
+  });
 
-    this.setState({
-      isMenuOpen: !isMenuOpen,
-    });
-  };
+  formatMessage = value => this.props.intl.formatMessage(value);
 
   handleShowProject = id => () => this.props.history.push(`/project/view/${id}`);
 
@@ -97,42 +87,20 @@ export class List extends PureComponent {
     </Empty>
   );
 
-  renderMenu = () => {
-    const { isMenuOpen } = this.state;
-
-    return (
-      <Menu open={isMenuOpen} onClose={this.handleToggleMenu}>
-        <ActionsList>
-          <Action>Edit Project settings</Action>
-          <Action>Delete project</Action>
-          <Action>User settings</Action>
-          <Action>Log Out</Action>
-        </ActionsList>
-      </Menu>
-    );
-  };
-
   render() {
     const { list = [] } = this.props;
 
+    const topHeaderConfig = this.getHeaderAndMenuConfig();
     const content = renderWhenTrueOtherwise(this.renderList, this.renderNoData)(Boolean(list.length), list);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <Header onButtonClick={this.handleToggleMenu}>
-          <H2>
-            <FormattedMessage {...messages.title} />
-          </H2>
-          <H1>
-            <FormattedMessage {...messages.overview} />
-          </H1>
-        </Header>
+        <TopHeader {...topHeaderConfig} />
         {content}
         <Button customStyles={addProjectStyles} onClick={this.handleNewProject}>
           <Icons.PlusIcon />
         </Button>
-        {this.renderMenu()}
       </Container>
     );
   }

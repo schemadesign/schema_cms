@@ -44,20 +44,6 @@ export const Description = styled.div`
   cursor: pointer;
 `;
 
-export const ActionsList = styled.ul`
-  list-style: none;
-  margin: 40px 0 0 0;
-  padding: 0;
-  font-family: ${Theme.primary.typography.h3.fontFamily};
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.71;
-`;
-
-export const Action = styled.li`
-  margin-top: 20px;
-`;
-
 export const urlStyles = {
   color: Theme.primary.label,
   fontSize: '12px',
