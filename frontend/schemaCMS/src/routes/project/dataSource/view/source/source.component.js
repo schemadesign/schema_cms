@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
-import { always, cond, equals, path, T } from 'ramda';
+import { always, cond, equals, T } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
@@ -13,6 +13,14 @@ import {
 } from './source.styles';
 import messages from './source.messages';
 import { TextInput } from '../../../../../shared/components/form/inputs/textInput';
+import {
+  DATA_SOURCE_FILE,
+  DATA_SOURCE_NAME,
+  DATA_SOURCE_TYPE,
+  SOURCE_TYPE_API,
+  SOURCE_TYPE_DATABASE,
+  SOURCE_TYPE_FILE,
+} from '../../../../../modules/dataSource/dataSource.constants';
 
 const { RadioGroup, RadioButton, Label, FileUpload } = Form;
 const { CsvIcon } = Icons;
@@ -27,20 +35,14 @@ export class Source extends PureComponent {
   };
 
   state = {
-    dataSourceType: this.props.values.type || '',
     uploadFileName: null,
   };
 
-  handleChange = event => {
-    const value = event.target.value;
-
-    this.props.onChange(event);
-    this.setState({ dataSourceType: value });
-  };
-
-  handleUploadChange = event => {
-    const uploadFile = path(['currentTarget', 'files', 0], event);
-
+  handleUploadChange = ({
+    currentTarget: {
+      files: [uploadFile],
+    },
+  }) => {
     this.props.setFieldValue('file', uploadFile);
     this.setState({ uploadFileName: uploadFile.name });
   };
@@ -48,7 +50,7 @@ export class Source extends PureComponent {
   renderCsvUploader = () => (
     <FileUpload
       fileName={this.state.uploadFileName || this.props.dataSource.fileName}
-      name="file"
+      name={DATA_SOURCE_FILE}
       label={this.props.intl.formatMessage(messages.fileName)}
       type="file"
       id="fileUpload"
@@ -57,7 +59,12 @@ export class Source extends PureComponent {
     />
   );
 
-  renderSourceUpload = cond([[equals('file'), this.renderCsvUploader], [T, always(null)]]);
+  renderSourceUpload = cond([
+    [equals(SOURCE_TYPE_FILE), this.renderCsvUploader],
+    [equals(SOURCE_TYPE_API), () => {}],
+    [equals(SOURCE_TYPE_DATABASE), () => {}],
+    [T, always(null)],
+  ]);
 
   render() {
     const { onChange, values, ...restProps } = this.props;
@@ -67,7 +74,7 @@ export class Source extends PureComponent {
         <TextInput
           value={values.name || ''}
           onChange={onChange}
-          name="name"
+          name={DATA_SOURCE_NAME}
           fullWidth
           label={this.props.intl.formatMessage(messages.name)}
           {...restProps}
@@ -77,11 +84,11 @@ export class Source extends PureComponent {
           <FormattedMessage {...messages.source} />
         </Label>
         <RadioGroup
-          name="type"
+          name={DATA_SOURCE_TYPE}
           customStyles={customRadioGroupStyles}
           customLabelStyles={customRadioButtonStyles}
-          value={this.state.dataSourceType}
-          onChange={this.handleChange}
+          value={this.props.values.type}
+          onChange={onChange}
         >
           <RadioButton label={this.props.intl.formatMessage(messages.spreadsheet)} value="file" id="file">
             <Button customStyles={customButtonStyles} type="button">
@@ -89,7 +96,7 @@ export class Source extends PureComponent {
             </Button>
           </RadioButton>
         </RadioGroup>
-        {this.renderSourceUpload(this.state.dataSourceType)}
+        {this.renderSourceUpload(this.props.values.type)}
       </Container>
     );
   }

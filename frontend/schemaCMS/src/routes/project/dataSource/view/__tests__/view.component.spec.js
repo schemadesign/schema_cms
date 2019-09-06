@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { View } from '../view.component';
+import { STATUS_DRAFT } from '../../../../../modules/dataSource/dataSource.constants';
 
 describe('View: Component', () => {
   const defaultProps = {
@@ -67,7 +68,7 @@ describe('View: Component', () => {
     const props = {
       values: {
         id: 'id',
-        status: 'draft',
+        status: STATUS_DRAFT,
       },
     };
 

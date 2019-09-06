@@ -47,7 +47,6 @@ exports[`Source: Component should render correctly 1`] = `
     }
     name="type"
     onChange={[Function]}
-    value=""
   >
     <RadioButton
       id="file"
@@ -143,6 +142,9 @@ exports[`Source: Component should render file uploader 1`] = `
   </RadioGroup>
   <FileUpload
     accept=".csv,.tsv"
+    customInputStyles={Object {}}
+    customLabelStyles={Object {}}
+    customStyles={Object {}}
     iconComponent={
       <div
         style={

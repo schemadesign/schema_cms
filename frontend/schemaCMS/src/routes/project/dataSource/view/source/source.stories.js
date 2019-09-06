@@ -15,4 +15,4 @@ const defaultProps = {
   dataSource: {},
 };
 
-storiesOf('Project/DataSource/View/Source', module).add('Default', () => <Source />);
+storiesOf('Project/DataSource/View/Source', module).add('Default', () => <Source {...defaultProps} />);

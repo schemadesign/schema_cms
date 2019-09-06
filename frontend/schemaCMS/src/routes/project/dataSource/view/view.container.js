@@ -12,7 +12,7 @@ import { DataSourceRoutines, selectDataSource } from '../../../../modules/dataSo
 import {
   DATA_SOURCE_SCHEMA,
   UPDATE_DATA_SOURCE_FORM,
-  OMIT_FIELDS,
+  IGNORED_FIELDS,
 } from '../../../../modules/dataSource/dataSource.constants';
 
 const mapStateToProps = createStructuredSelector({
@@ -42,7 +42,7 @@ export default compose(
     displayName: UPDATE_DATA_SOURCE_FORM,
     enableReinitialize: true,
     isInitialValid: true,
-    mapPropsToValues: ({ dataSource }) => omit(OMIT_FIELDS, dataSource),
+    mapPropsToValues: ({ dataSource }) => omit(IGNORED_FIELDS, dataSource),
     validationSchema: () => DATA_SOURCE_SCHEMA,
     handleSubmit: async (requestData, { props, ...formik }) => {
       try {

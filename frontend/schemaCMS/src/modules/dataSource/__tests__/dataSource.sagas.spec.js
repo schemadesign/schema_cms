@@ -87,7 +87,6 @@ describe('DataSource: sagas', () => {
       await expectSaga(watchDataSource)
         .withState(defaultState)
         .put(DataSourceRoutines.updateOne.success(responseData))
-        .put(DataSourceRoutines.processOne.success())
         .dispatch(DataSourceRoutines.updateOne(payload))
         .run();
     });
@@ -113,6 +112,25 @@ describe('DataSource: sagas', () => {
         .run();
 
       expect(browserHistory.push).toBeCalledWith('/project/view/1/datasource/list');
+    });
+  });
+
+  describe('processOne', () => {
+    it('should dispatch a success action', async () => {
+      const payload = {
+        projectId: '1',
+        dataSourceId: '1',
+      };
+
+      mockApi
+        .post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}/process`)
+        .reply(OK);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.processOne.success())
+        .dispatch(DataSourceRoutines.processOne(payload))
+        .run();
     });
   });
 });

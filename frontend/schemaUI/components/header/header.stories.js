@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Header } from './header.component';
 
 storiesOf('Header', module).add('Default', () => (
   <Header>
-    <>
+    <Fragment>
       <h1>Title</h1>
       <h2>Subtitle</h2>
-    </>
+    </Fragment>
   </Header>
 ));
 
@@ -20,10 +20,10 @@ const defaultPropsWithCustomStyles = {
 
 storiesOf('Header', module).add('with custom styles', () => (
   <Header {...defaultPropsWithCustomStyles}>
-    <>
+    <Fragment>
       <h1>Title</h1>
       <h2>Subtitle</h2>
-    </>
+    </Fragment>
   </Header>
 ));
 
@@ -33,9 +33,9 @@ const defaultPropsWithCustomIcon = {
 
 storiesOf('Header', module).add('with custom icon', () => (
   <Header {...defaultPropsWithCustomIcon}>
-    <>
+    <Fragment>
       <h1>Title</h1>
       <h2>Subtitle</h2>
-    </>
+    </Fragment>
   </Header>
 ));

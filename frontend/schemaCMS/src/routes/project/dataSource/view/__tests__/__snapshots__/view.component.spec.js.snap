@@ -2,23 +2,9 @@
 
 exports[`View: Component should not render any step 1`] = `
 <styled.div>
-  <Header
-    customButtonStyles={Object {}}
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
-  >
-    <H2>
-      name
-    </H2>
-    <H1>
-      <FormattedMessage
-        defaultMessage="Source"
-        id="dataSource.view.subTitle"
-        values={Object {}}
-      />
-    </H1>
-  </Header>
+  <TopHeader
+    headerTitle="name"
+  />
   <form
     onSubmit={[Function]}
   >
@@ -60,27 +46,7 @@ exports[`View: Component should not render content 1`] = `<styled.div />`;
 
 exports[`View: Component should render draft 1`] = `
 <styled.div>
-  <Header
-    customButtonStyles={Object {}}
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
-  >
-    <H2>
-      <FormattedMessage
-        defaultMessage="Create Data Source"
-        id="dataSource.view.title"
-        values={Object {}}
-      />
-    </H2>
-    <H1>
-      <FormattedMessage
-        defaultMessage="Source"
-        id="dataSource.view.subTitle"
-        values={Object {}}
-      />
-    </H1>
-  </Header>
+  <TopHeader />
   <form
     onSubmit={[Function]}
   >
@@ -149,23 +115,9 @@ exports[`View: Component should render draft 1`] = `
 
 exports[`View: Component should render source step 1`] = `
 <styled.div>
-  <Header
-    customButtonStyles={Object {}}
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
-  >
-    <H2>
-      name
-    </H2>
-    <H1>
-      <FormattedMessage
-        defaultMessage="Source"
-        id="dataSource.view.subTitle"
-        values={Object {}}
-      />
-    </H1>
-  </Header>
+  <TopHeader
+    headerTitle="name"
+  />
   <form
     onSubmit={[Function]}
   >

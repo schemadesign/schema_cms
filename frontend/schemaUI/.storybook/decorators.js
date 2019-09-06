@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { fontFormats, interFontFaces } from './fonts';
 
-const prepareFontFace = ({style, weight, files}) => {
+const prepareFontFace = ({ style, weight, files }) => {
   const srcs = fontFormats.map((format, index) => `url(${files[index]}) format('${format}')`);
 
   return `
@@ -13,12 +13,13 @@ const prepareFontFace = ({style, weight, files}) => {
       src: ${srcs.join(',\n')};
     }
   `;
-}
+};
 
-const prepareFontSet = () => `${ interFontFaces.map(prepareFontFace).join('\n') }`;
+const prepareFontSet = () => `${interFontFaces.map(prepareFontFace).join('\n')}`;
 
-export const FontDecorator = storyFn =>
-  <>
+export const FontDecorator = storyFn => (
+  <Fragment>
     <style>{prepareFontSet()}</style>
     {storyFn()}
-  </>;
+  </Fragment>
+);

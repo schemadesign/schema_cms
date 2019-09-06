@@ -2,23 +2,12 @@
 
 exports[`UserProfile: Component should render correctly 1`] = `
 <styled.div>
-  <Header
-    customButtonStyles={Object {}}
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
-  >
-    <H2>
-      Admin Settings
-    </H2>
-    <H1>
-      Profile
-    </H1>
-  </Header>
+  <TopHeader />
   <styled.form
     onSubmit={[Function]}
   >
     <TextInput
+      errors={Object {}}
       handleChange={[Function]}
       handleSubmit={[Function]}
       intl={
@@ -28,6 +17,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
       }
       name="firstName"
       onChange={[Function]}
+      touched={Object {}}
       value=""
       values={
         Object {
@@ -38,6 +28,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
       }
     />
     <TextInput
+      errors={Object {}}
       handleChange={[Function]}
       handleSubmit={[Function]}
       intl={
@@ -47,6 +38,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
       }
       name="lastName"
       onChange={[Function]}
+      touched={Object {}}
       value=""
       values={
         Object {
@@ -57,6 +49,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
       }
     />
     <TextInput
+      errors={Object {}}
       handleChange={[Function]}
       handleSubmit={[Function]}
       intl={
@@ -66,6 +59,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
       }
       name="email"
       onChange={[Function]}
+      touched={Object {}}
       value=""
       values={
         Object {

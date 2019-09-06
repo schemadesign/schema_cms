@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Stepper } from 'schemaUI';
 import { always, cond, equals, ifElse, T } from 'ramda';
@@ -9,6 +9,7 @@ import { Source } from './source';
 import { PillButtons } from '../../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { TopHeader } from '../../../../shared/components/topHeader';
+import { STATUS_DRAFT } from '../../../../modules/dataSource/dataSource.constants';
 
 const MAX_STEPS = 6;
 const INITIAL_STEP = 1;
@@ -46,8 +47,11 @@ export class View extends PureComponent {
     this.props.unmountDataSource();
   }
 
+  getTitle = intl =>
+    this.props.values.status === STATUS_DRAFT ? intl.formatMessage(messages.title) : this.props.values.name;
+
   getHeaderAndMenuConfig = intl => ({
-    headerTitle: intl.formatMessage(messages.title),
+    headerTitle: this.getTitle(intl),
     headerSubtitle: intl.formatMessage(messages.subTitle),
   });
 
@@ -57,7 +61,15 @@ export class View extends PureComponent {
     ifElse(equals(INITIAL_STEP), () => {}, () => this.handleStepChange(this.state.activeStep - 1));
 
   renderContentForm = ({ activeStep, ...props }) =>
-    cond([[equals(INITIAL_STEP), always(<Source {...props} />)], [T, always(null)]])(activeStep);
+    cond([
+      [equals(1), always(<Source {...props} />)],
+      [equals(2), always(null)],
+      [equals(3), always(null)],
+      [equals(4), always(null)],
+      [equals(5), always(null)],
+      [equals(6), always(null)],
+      [T, always(null)],
+    ])(activeStep);
 
   renderContent = renderWhenTrue(() => {
     const { steps } = this.state;
@@ -72,11 +84,11 @@ export class View extends PureComponent {
         params: { step },
       },
     } = this.props;
-    const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
     const activeStep = parseInt(step, 10);
+    const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
 
     return (
-      <>
+      <Fragment>
         <TopHeader {...topHeaderConfig} />
         <form onSubmit={handleSubmit}>
           {this.renderContentForm({
@@ -108,7 +120,7 @@ export class View extends PureComponent {
             />
           </StepperContainer>
         </form>
-      </>
+      </Fragment>
     );
   });
 
