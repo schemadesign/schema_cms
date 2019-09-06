@@ -23,7 +23,7 @@ function* createProject({ payload }) {
   try {
     yield put(ProjectRoutines.createProject.request());
     const currentUser = yield select(selectUserData);
-    const parsedPayload = { ...payload, ...{ [PROJECT_OWNER]: currentUser.id } };
+    const parsedPayload = { ...payload, [PROJECT_OWNER]: currentUser.id };
     const { data } = yield api.post(PROJECTS_PATH, parsedPayload);
 
     yield put(ProjectActions.createProjectSuccess(data));
