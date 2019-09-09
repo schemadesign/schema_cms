@@ -26,4 +26,12 @@ export default defineMessages({
     id: 'userProfile.save',
     defaultMessage: 'Save',
   },
+  logout: {
+    id: 'userProfile.logout',
+    defaultMessage: 'Log out',
+  },
+  resetPassword: {
+    id: 'userProfile.resetPassword',
+    defaultMessage: 'Reset Password',
+  },
 });

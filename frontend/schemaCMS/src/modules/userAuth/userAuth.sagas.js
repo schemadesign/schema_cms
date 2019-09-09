@@ -4,7 +4,7 @@ import api from '../../shared/services/api';
 
 import { UserAuthTypes, UserAuthActions } from './userAuth.redux';
 import { StartupTypes } from '../startup/startup.redux';
-import { TOKEN_PATH } from '../../shared/utils/api.constants';
+import { LOGOUT_PATH, RESET_PASSWORD_PATH, TOKEN_PATH } from '../../shared/utils/api.constants';
 import { selectAuthToken } from './userAuth.selectors';
 import { UserProfileRoutines, UserProfileActions } from '../userProfile/userProfile.redux';
 
@@ -37,11 +37,18 @@ function* startup() {
 }
 
 function* logout() {
-  yield api.post('/auth/logout/');
+  yield api.post(LOGOUT_PATH);
 
   yield put(UserAuthActions.logoutSuccess());
 
   browserHistory.push('/');
+}
+
+function* resetPassword() {
+  const { ticket } = yield api.get(RESET_PASSWORD_PATH);
+
+  yield put(UserProfileActions.clearUserDetails());
+  yield redirectExternal(ticket);
 }
 
 export function* watchUserAuth() {
@@ -49,5 +56,6 @@ export function* watchUserAuth() {
     takeLatest(UserAuthTypes.LOGOUT, logout),
     takeLatest(StartupTypes.STARTUP, startup),
     takeLatest(UserAuthTypes.GET_JWT_TOKEN, getJwtToken),
+    takeLatest(UserAuthTypes.RESET_PASSWORD, resetPassword),
   ]);
 }

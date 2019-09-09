@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'schemaUI';
 
-import { Container, Form } from './userProfile.styles';
+import { Container, Form, Link } from './userProfile.styles';
 import { TopHeader } from '../../shared/components/topHeader';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { EMAIL, FIRST_NAME, LAST_NAME } from '../../modules/userProfile/userProfile.constants';
@@ -59,6 +59,8 @@ export class UserProfile extends PureComponent {
 
           <Button>{intl.formatMessage(messages.save)}</Button>
         </Form>
+        <Link to="/reset-password">{intl.formatMessage(messages.resetPassword)}</Link>
+        <Link to="/logout">{intl.formatMessage(messages.logout)}</Link>
       </Container>
     );
   }

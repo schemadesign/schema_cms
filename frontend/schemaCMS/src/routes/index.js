@@ -10,12 +10,14 @@ import { NotFound } from './notFound';
 import { AUTH_PATH } from '../shared/utils/api.constants';
 import { Project } from './project';
 import { UserProfile } from './userProfile';
+import { ResetPassword } from './resetPassword';
 
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
   USER_PROFILE: '/settings',
   PROJECT: '/project',
+  RESET_PASSWORD: '/reset-password',
 };
 
 export default class RootContainer extends Component {
@@ -31,6 +33,8 @@ export default class RootContainer extends Component {
             <AuthRoute path={ROUTES.PROJECT} component={Project} />
 
             <AuthRoute path={ROUTES.USER_PROFILE} component={UserProfile} />
+
+            <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
