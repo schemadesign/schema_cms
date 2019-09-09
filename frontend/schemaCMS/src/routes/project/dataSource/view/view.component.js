@@ -19,6 +19,7 @@ export class View extends PureComponent {
     dataSource: PropTypes.object.isRequired,
     fetchDataSource: PropTypes.func.isRequired,
     unmountDataSource: PropTypes.func.isRequired,
+    removeDataSource: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
@@ -55,6 +56,16 @@ export class View extends PureComponent {
   getHeaderAndMenuConfig = intl => ({
     headerTitle: this.getTitle(intl),
     headerSubtitle: intl.formatMessage(messages.subTitle),
+    secondaryMenuItems: [
+      {
+        label: this.props.intl.formatMessage(messages.dataSourceList),
+        to: `/project/view/${this.props.match.params.projectId}/datasource/list`,
+      },
+      {
+        label: this.props.intl.formatMessage(messages.removeDataSource),
+        onClick: () => this.props.removeDataSource(this.props.match.params),
+      },
+    ],
   });
 
   handleStepChange = step => {

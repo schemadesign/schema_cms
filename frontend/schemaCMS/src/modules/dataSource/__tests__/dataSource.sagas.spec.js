@@ -70,6 +70,20 @@ describe('DataSource: sagas', () => {
     });
   });
 
+  describe('removeOne', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { projectId: '1', dataSourceId: '1' };
+
+      mockApi.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`).reply(OK);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.removeOne.success())
+        .dispatch(DataSourceRoutines.removeOne(payload))
+        .run();
+    });
+  });
+
   describe('updateOne', () => {
     const payload = {
       projectId: '1',

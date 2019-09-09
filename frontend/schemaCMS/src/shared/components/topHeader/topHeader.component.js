@@ -15,6 +15,7 @@ import {
   menuStyles,
   closeButtonStyles,
 } from './topHeader.styles';
+import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { H1, H2 } = Typography;
 
@@ -38,11 +39,19 @@ export class TopHeader extends PureComponent {
     });
   };
 
-  renderItem = Item => ({ label = '', to = '' }, index) => (
-    <Item key={index}>
-      <Link to={to}>{label}</Link>
-    </Item>
-  );
+  renderItem = Item => ({ label = '', to, onClick }, index) =>
+    renderWhenTrueOtherwise(
+      () => (
+        <Item key={index}>
+          <Link to={to}>{label}</Link>
+        </Item>
+      ),
+      () => (
+        <Item key={index} onClick={onClick}>
+          {label}
+        </Item>
+      )
+    )(!!to);
 
   renderMenu = (items = [], List, Item) => <List>{items.map(this.renderItem(Item))}</List>;
 

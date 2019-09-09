@@ -22,4 +22,12 @@ export default defineMessages({
     id: 'dataSource.view.cancel',
     defaultMessage: 'Cancel',
   },
+  removeDataSource: {
+    id: 'dataSource.view.removeDataSource',
+    defaultMessage: 'Remove Data Source',
+  },
+  dataSourceList: {
+    id: 'dataSource.view.dataSourceList',
+    defaultMessage: 'Data source list',
+  },
 });

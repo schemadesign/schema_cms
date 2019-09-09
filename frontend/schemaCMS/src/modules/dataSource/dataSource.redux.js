@@ -6,6 +6,7 @@ const prefix = 'DATA_SOURCE/';
 
 export const DataSourceRoutines = {
   create: createRoutine(`${prefix}CREATE`),
+  removeOne: createRoutine(`${prefix}REMOVE`),
   fetchOne: createRoutine(`${prefix}FETCH_ONE`),
   fetchList: createRoutine(`${prefix}FETCH_LIST`),
   updateOne: createRoutine(`${prefix}UPDATE_ONE`),
