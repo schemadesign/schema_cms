@@ -25,7 +25,7 @@ export default class RootContainer extends Component {
 
         <App>
           <Switch>
-            <AuthRoute exact path={ROUTES.HOME} render={() => <Redirect to={`${ROUTES.PROJECT}/list`} />} />
+            <AuthRoute exact path={ROUTES.HOME} render={() => <Redirect to={ROUTES.PROJECT} />} />
 
             <AuthRoute path={ROUTES.PROJECT} component={Project} />
 

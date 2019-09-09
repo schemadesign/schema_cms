@@ -142,9 +142,6 @@ exports[`Source: Component should render file uploader 1`] = `
   </RadioGroup>
   <FileUpload
     accept=".csv,.tsv"
-    customInputStyles={Object {}}
-    customLabelStyles={Object {}}
-    customStyles={Object {}}
     iconComponent={
       <div
         style={
