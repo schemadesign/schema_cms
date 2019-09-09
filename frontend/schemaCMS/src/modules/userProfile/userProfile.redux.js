@@ -27,15 +27,15 @@ export const INITIAL_STATE = new Immutable({
   isFetched: false,
 });
 
-const fetchUserSuccess = (state = INITIAL_STATE, { data }) => state.set('user', data).set('isFetched', true);
+const updateUser = (state = INITIAL_STATE, { payload }) => state.set('user', payload).set('isFetched', true);
 
 const fetchUserFailure = state => state.set('user', {}).set('isFetched', true);
 
 const clearUserDetails = state => state.set('user', {}).set('isFetched', false);
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [UserProfileTypes.FETCH_USER_DETAILS_SUCCESS]: fetchUserSuccess,
-  [UserProfileTypes.UPDATE_ME_SUCCESS]: fetchUserSuccess,
-  [UserProfileTypes.FETCH_USER_DETAILS_ERROR]: fetchUserFailure,
+  [UserProfileRoutines.fetchUserDetails.SUCCESS]: updateUser,
+  [UserProfileRoutines.updateMe.SUCCESS]: updateUser,
+  [UserProfileRoutines.fetchUserDetails.FAILURE]: fetchUserFailure,
   [UserProfileTypes.CLEAR_USER_DETAILS]: clearUserDetails,
 });

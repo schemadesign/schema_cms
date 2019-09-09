@@ -17,10 +17,8 @@ function* fetchUserDetails() {
     const { data } = yield api.get(ME_PATH);
 
     yield put(UserProfileRoutines.fetchUserDetails.success(data));
-    yield put(UserProfileActions.fetchUserDetailsSuccess(data));
   } catch (error) {
-    yield put(UserProfileRoutines.fetchUserDetails.failure(error));
-    yield put(UserProfileActions.fetchUserDetailsError());
+    yield put(UserProfileRoutines.fetchUserDetails.failure());
   } finally {
     yield put(UserProfileRoutines.fetchUserDetails.fulfill());
   }
@@ -33,8 +31,7 @@ function* updateMe({ payload }) {
 
     const { data } = yield api.patch(ME_PATH, payload);
 
-    yield put(UserProfileRoutines.fetchUserDetails.success(data));
-    yield put(UserProfileActions.updateMeSuccess(data));
+    yield put(UserProfileRoutines.updateMe.success(data));
   } catch (error) {
     yield put(UserProfileRoutines.updateMe.failure(error));
     yield put(UserProfileActions.updateMeError());
