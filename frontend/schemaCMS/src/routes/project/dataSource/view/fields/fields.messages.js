@@ -6,8 +6,4 @@ export default defineMessages({
     id: 'project.dataSource.fields.pageTitle',
     defaultMessage: 'Fields',
   },
-  subTitle: {
-    id: 'project.dataSource.fields.subTitle',
-    defaultMessage: 'Fields',
-  },
 });

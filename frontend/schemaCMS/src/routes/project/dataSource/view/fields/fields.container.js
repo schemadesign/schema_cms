@@ -6,7 +6,7 @@ import { injectIntl } from 'react-intl';
 import { compose } from 'ramda';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
-import { DataSourceRoutines, selectFields, selectPreviewTable } from '../../../../modules/dataSource';
+import { DataSourceRoutines, selectFields, selectPreviewTable } from '../../../../../modules/dataSource';
 import { Fields } from './fields.component';
 
 const mapStateToProps = createStructuredSelector({

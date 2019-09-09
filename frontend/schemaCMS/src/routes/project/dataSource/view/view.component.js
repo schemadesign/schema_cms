@@ -6,6 +6,7 @@ import { always, cond, equals, ifElse, T } from 'ramda';
 import { Container, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
+import { Fields } from './fields';
 import { PillButtons } from '../../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { TopHeader } from '../../../../shared/components/topHeader';
@@ -60,10 +61,14 @@ export class View extends PureComponent {
   handleBackClick = () =>
     ifElse(equals(INITIAL_STEP), () => {}, () => this.handleStepChange(this.state.activeStep - 1));
 
+  handleNextClick = () => {
+    ifElse(equals(MAX_STEPS), () => {}, () => this.handleStepChange(this.state.activeStep + 1));
+  };
+
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
       [equals(1), always(<Source {...props} />)],
-      [equals(2), always(null)],
+      [equals(2), always(<Fields {...props} />)],
       [equals(3), always(null)],
       [equals(4), always(null)],
       [equals(5), always(null)],
@@ -107,8 +112,9 @@ export class View extends PureComponent {
             }}
             rightButtonProps={{
               title: intl.formatMessage(messages.next),
-              onClick: handleSubmit,
-              disabled: !(values.file || dataSource.file),
+              // onClick: handleSubmit,
+              onClick: this.handleNextClick,
+              // disabled: !(values.file || dataSource.file),
             }}
           />
           <StepperContainer>

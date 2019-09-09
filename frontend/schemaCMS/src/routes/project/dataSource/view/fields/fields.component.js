@@ -1,16 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { DataGrid } from 'schemaUI';
 import { isEmpty } from 'ramda';
 
-import { TopHeader } from '../../../../shared/components/topHeader';
-import { Loader } from '../../../../shared/components/loader';
+import { Loader } from '../../../../../shared/components/loader';
 import { PreviewTable } from './previewTable';
 import messages from './fields.messages';
 import { Container } from './fields.styles';
-
-const INITIAL_STEP = 0;
 
 export class Fields extends PureComponent {
   static propTypes = {
@@ -27,36 +23,15 @@ export class Fields extends PureComponent {
     }).isRequired,
   };
 
-  state = {
-    step: INITIAL_STEP,
-  };
-
   componentDidMount() {
     const { projectId, dataSourceId } = this.props.match.params;
 
     this.props.fetchFields({ projectId, dataSourceId });
   }
 
-  componentDidUpdate() {
-    console.log(this.state.step);
-    const isLoading = this.isLoading();
-
-    if (!isLoading && !this.state.maxSteps) {
-      this.setState({
-        maxSteps: Object.keys(this.props.fields).length,
-      });
-    }
-  }
-
   componentWillUnmount() {
     this.props.unmountFields();
   }
-
-  getHeaderAndMenuConfig = (title = '') => ({
-    headerTitle: title,
-    headerSubtitle: this.props.intl.formatMessage(messages.subTitle),
-    secondaryMenuItems: [],
-  });
 
   isLoading = () => isEmpty(this.props.fields);
 
@@ -67,15 +42,11 @@ export class Fields extends PureComponent {
   }
 
   render() {
-    const topHeaderConfig = this.getHeaderAndMenuConfig('Knoll Archive');
-
-    console.log(this.props);
-    const content = isEmpty(this.props.fields) ? <Loader /> : this.renderTable();
+    const content = this.isLoading() ? <Loader /> : this.renderTable();
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader {...topHeaderConfig} />
         {content}
       </Container>
     );
