@@ -9,6 +9,7 @@ export const { Types: UserAuthTypes, Creators: UserAuthActions } = createActions
     getJwtTokenSuccess: ['jwt'],
     logout: null,
     logoutSuccess: null,
+    resetPassword: null,
   },
   { prefix: prefix }
 );

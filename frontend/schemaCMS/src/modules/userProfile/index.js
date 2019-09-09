@@ -1,3 +1,3 @@
-export { UserProfileTypes, UserProfileActions } from './userProfile.redux';
+export { UserProfileTypes, UserProfileActions, UserProfileRoutines } from './userProfile.redux';
 
 export * from './userProfile.selectors';

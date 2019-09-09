@@ -13,13 +13,19 @@ import {
   USER_PROFILE_SCHEMA,
   INITIAL_VALUES,
 } from '../../modules/userProfile/userProfile.constants';
-import { selectUserData } from '../../modules/userProfile';
+import { selectUserData, UserProfileRoutines } from '../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
   userData: selectUserData,
 });
 
-export const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      updateMe: UserProfileRoutines.updateMe,
+    },
+    dispatch
+  );
 
 export default compose(
   hot(module),
@@ -34,6 +40,7 @@ export default compose(
     mapPropsToValues: ({ userData }) => ({
       ...INITIAL_VALUES,
       ...userData,
+      email: 'testemail@test.com',
     }),
     validationSchema: () => USER_PROFILE_SCHEMA,
     enableReinitialize: true,
@@ -42,7 +49,7 @@ export default compose(
       try {
         formik.setSubmitting(true);
 
-        //call some action
+        await props.updateMe(data);
       } catch ({ errors }) {
         formik.setErrors(errors);
       } finally {
