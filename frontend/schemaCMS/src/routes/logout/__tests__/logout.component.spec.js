@@ -21,7 +21,7 @@ describe('Logout: Component', () => {
 
   it('should call logout function on componentDidMount', () => {
     const logout = spy();
-    render({ logout  });
+    render({ logout });
 
     expect(logout).to.have.been.calledOnce;
   });
