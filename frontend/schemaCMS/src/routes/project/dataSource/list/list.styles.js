@@ -1,23 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Theme } from 'schemaUI';
 
 export const Container = styled.div`
   margin: 0 20px 60px 20px;
 `;
-
-export const addDataSourceStyles = {
-  position: 'fixed',
-  right: '10px',
-  bottom: '10px',
-  backgroundColor: Theme.primary.label,
-  height: '60px',
-};
-
-export const customIconStyles = {
-  width: 40,
-  height: 40,
-  fill: Theme.primary.iconDark,
-};
 
 export const DataSourceItem = styled.li`
   margin-top: 10px;
@@ -64,6 +50,12 @@ export const MetaDataValue = styled.span`
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
+
+  ${({ isLock }) =>
+    isLock &&
+    css`
+      color: ${Theme.primary.label};
+    `}
 `;
 
 export const Header = styled.div`
@@ -75,3 +67,25 @@ export const Header = styled.div`
 export const HeaderIcon = styled.div`
   margin-top: -8px;
 `;
+
+export const lockTextStyles = {
+  color: Theme.primary.label,
+};
+
+export const addDataSourceStyles = {
+  position: 'fixed',
+  right: '10px',
+  bottom: '10px',
+  backgroundColor: Theme.primary.label,
+  height: '60px',
+};
+
+export const iconSourceStyles = {
+  width: 40,
+  height: 40,
+  fill: Theme.primary.iconDark,
+};
+
+export const lockIconStyles = {
+  fill: Theme.primary.label,
+};

@@ -11,6 +11,9 @@ export const SOURCE_TYPE_API = 'api';
 export const SOURCE_TYPE_DATABASE = 'database';
 
 export const STATUS_DRAFT = 'draft';
+export const STATUS_ERROR = 'error';
+export const STATUS_DONE = 'done';
+export const STATUS_PROCESSING = 'processing';
 
 export const IGNORED_FIELDS = ['file', 'metaData', 'fileName'];
 

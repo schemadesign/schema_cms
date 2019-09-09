@@ -14,4 +14,16 @@ export default defineMessages({
     id: 'dataSource.list.projectDetails',
     defaultMessage: 'Project details',
   },
+  error: {
+    id: 'dataSource.list.error',
+    defaultMessage: 'Error',
+  },
+  processing: {
+    id: 'dataSource.list.processing',
+    defaultMessage: 'Loading...',
+  },
+  draft: {
+    id: 'dataSource.list.process',
+    defaultMessage: 'Draft',
+  },
 });
