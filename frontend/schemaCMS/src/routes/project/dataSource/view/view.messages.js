@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'dataSource.view.back',
     defaultMessage: 'Back',
   },
+  cancel: {
+    id: 'dataSource.view.cancel',
+    defaultMessage: 'Cancel',
+  },
 });

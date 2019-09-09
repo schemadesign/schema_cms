@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Stepper } from 'schemaUI';
-import { always, cond, equals, ifElse, T } from 'ramda';
+import { always, cond, equals, T } from 'ramda';
 
 import { Container, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
@@ -9,6 +9,8 @@ import { Source } from './source';
 import { PillButtons } from '../../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { TopHeader } from '../../../../shared/components/topHeader';
+import { STATUS_DRAFT } from '../../../../modules/dataSource/dataSource.constants';
+import { ROUTES } from '../../../index';
 import { STATUS_DRAFT, INITIAL_STEP, MAX_STEPS } from '../../../../modules/dataSource/dataSource.constants';
 
 export class View extends PureComponent {
@@ -21,6 +23,9 @@ export class View extends PureComponent {
     handleSubmit: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }),
     match: PropTypes.shape({
       params: PropTypes.shape({
         projectId: PropTypes.string.isRequired,
@@ -52,10 +57,20 @@ export class View extends PureComponent {
     headerSubtitle: intl.formatMessage(messages.subTitle),
   });
 
-  handleStepChange = activeStep => this.setState({ activeStep });
+  handleStepChange = step => {
+    const {
+      history,
+      match: {
+        params: { projectId, dataSourceId },
+      },
+    } = this.props;
 
-  handleBackClick = () =>
-    ifElse(equals(INITIAL_STEP), () => {}, () => this.handleStepChange(this.state.activeStep - 1));
+    history.push(`${ROUTES.PROJECT}/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
+  };
+
+  handleBackClick = () => this.handleStepChange(this.props.match.params.step - 1);
+
+  handleCancelClick = () => this.props.history.push(`${ROUTES.PROJECT}/view/${this.props.match.params.projectId}`);
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
@@ -83,6 +98,15 @@ export class View extends PureComponent {
     } = this.props;
     const activeStep = parseInt(step, 10);
     const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
+    const cancelProps = {
+      title: intl.formatMessage(messages.cancel),
+      onClick: this.handleCancelClick,
+    };
+    const backProps = {
+      title: intl.formatMessage(messages.back),
+      onClick: this.handleBackClick,
+    };
+    const leftButtonProps = activeStep === INITIAL_STEP ? cancelProps : backProps;
 
     return (
       <Fragment>
@@ -98,10 +122,7 @@ export class View extends PureComponent {
             ...this.props,
           })}
           <PillButtons
-            leftButtonProps={{
-              title: intl.formatMessage(messages.back),
-              onClick: this.handleBackClick,
-            }}
+            leftButtonProps={leftButtonProps}
             rightButtonProps={{
               title: intl.formatMessage(messages.next),
               onClick: handleSubmit,

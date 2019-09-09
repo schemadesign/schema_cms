@@ -13,6 +13,9 @@ const defaultProps = {
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
+  history: {
+    push: Function.prototype,
+  },
   values: {},
   match: {
     params: {
