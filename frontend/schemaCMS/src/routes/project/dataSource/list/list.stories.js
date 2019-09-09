@@ -6,13 +6,30 @@ import { List } from './list.component';
 
 const defaultProps = {
   createDataSource: Function.prototype,
+  fetchDataSources: Function.prototype,
+  dataSources: [
+    {
+      created: '2019-09-09T11:23:40+0000',
+      createdBy: { firstName: 'firstName', lastName: 'lastName' },
+      id: 17,
+      metaData: {
+        fields: 11,
+        items: 246,
+      },
+      name: 'name',
+      status: 'done',
+    },
+  ],
+  history: {
+    push: Function.prototype,
+  },
   match: {
     params: {
       projectId: '1',
     },
   },
   intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
+    formatMessage: Function.prototype,
   },
 };
 

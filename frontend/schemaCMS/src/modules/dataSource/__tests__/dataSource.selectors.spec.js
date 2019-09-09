@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectDataSourceDomain, selectDataSource } from '../dataSource.selectors';
+import { selectDataSourceDomain, selectDataSource, selectDataSources } from '../dataSource.selectors';
 
 describe('DataSource: selectors', () => {
   const state = Immutable({
@@ -9,6 +9,11 @@ describe('DataSource: selectors', () => {
       dataSource: {
         id: 1,
       },
+      dataSources: [
+        {
+          id: 1,
+        },
+      ],
     },
   });
 
@@ -19,6 +24,10 @@ describe('DataSource: selectors', () => {
 
     it('should select a dataSource', () => {
       expect(selectDataSource(state)).to.equal(state.dataSource.dataSource);
+    });
+
+    it('should select a dataSources', () => {
+      expect(selectDataSources(state)).to.equal(state.dataSource.dataSources);
     });
   });
 });

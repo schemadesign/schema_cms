@@ -161,7 +161,6 @@ export class List extends PureComponent {
 
   render() {
     const { dataSources = [] } = this.props;
-
     const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (

@@ -52,14 +52,23 @@ describe('DataSource: redux', () => {
 
   describe('when FETCH_ONE/SUCCESS action is received', () => {
     it('should set dataSource ', () => {
-      const dataSource = [{ id: 1 }];
+      const dataSource = { id: 1 };
       const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchOne.success(dataSource));
 
       expect(resultState.dataSource).to.deep.equal(dataSource);
     });
   });
 
-  describe('when FETCH_ONE/SUCCESS action is received', () => {
+  describe('when FETCH_LIST/SUCCESS action is received', () => {
+    it('should set dataSource ', () => {
+      const dataSources = [{ id: 1 }];
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchList.success(dataSources));
+
+      expect(resultState.dataSources).to.deep.equal(dataSources);
+    });
+  });
+
+  describe('when UPDATE_ONE/SUCCESS action is received', () => {
     it('should set dataSource ', () => {
       const dataSource = [{ id: 2 }];
       const resultState = dataSourceReducer(defaultState, DataSourceRoutines.updateOne.success(dataSource));
