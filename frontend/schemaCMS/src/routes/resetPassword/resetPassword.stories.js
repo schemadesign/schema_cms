@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { ResetPassword } from './resetPassword.component';
 
-const defaultProps = {};
+const defaultProps = {
+  resetPassword: Function.prototype,
+};
 
 storiesOf('ResetPassword', module).add('Default', () => <ResetPassword {...defaultProps} />);

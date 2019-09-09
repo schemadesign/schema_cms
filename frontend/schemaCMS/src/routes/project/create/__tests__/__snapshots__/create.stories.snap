@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UserProfile Default 1`] = `
+exports[`Storyshots Project/Create Default 1`] = `
 <div
-  className="sc-gPEVay eQYmiW"
+  className="sc-bwzfXH uTxCW"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -34,7 +34,7 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Admin Settings
+            Create New Project
           </h2>
           <h1
             style={
@@ -48,7 +48,7 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Profile
+            Project Info
           </h1>
         </div>
       </div>
@@ -126,7 +126,7 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Admin Settings
+            Create New Project
           </h2>
           <h1
             style={
@@ -140,7 +140,7 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Profile
+            Project Info
           </h1>
         </div>
       </div>
@@ -194,7 +194,6 @@ exports[`Storyshots UserProfile Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-iRbamj blSEcj"
     onSubmit={[Function]}
   >
     <div
@@ -212,7 +211,7 @@ exports[`Storyshots UserProfile Default 1`] = `
         }
       >
         <label
-          htmlFor="firstName"
+          htmlFor="title"
           style={
             Object {
               "border": "none",
@@ -226,19 +225,20 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
         >
-          First Name
+          Title
         </label>
         <input
           handleChange={[Function]}
           handleSubmit={[Function]}
-          id="firstName"
+          id="title"
           intl={
             Object {
               "formatMessage": [Function],
             }
           }
-          name="firstName"
+          name="title"
           onChange={[Function]}
+          placeholder="Project title"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -250,12 +250,10 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
           type="text"
-          value=""
+          value="title"
           values={
             Object {
-              "email": "",
-              "firstName": "",
-              "lastName": "",
+              "title": "title",
             }
           }
         />
@@ -285,7 +283,7 @@ exports[`Storyshots UserProfile Default 1`] = `
         }
       >
         <label
-          htmlFor="lastName"
+          htmlFor="description"
           style={
             Object {
               "border": "none",
@@ -299,19 +297,20 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
         >
-          Last Name
+          Description
         </label>
         <input
           handleChange={[Function]}
           handleSubmit={[Function]}
-          id="lastName"
+          id="description"
           intl={
             Object {
               "formatMessage": [Function],
             }
           }
-          name="lastName"
+          name="description"
           onChange={[Function]}
+          placeholder="Project description"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -323,12 +322,9 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
           type="text"
-          value=""
           values={
             Object {
-              "email": "",
-              "firstName": "",
-              "lastName": "",
+              "title": "title",
             }
           }
         />
@@ -358,7 +354,7 @@ exports[`Storyshots UserProfile Default 1`] = `
         }
       >
         <label
-          htmlFor="email"
+          htmlFor="owner"
           style={
             Object {
               "border": "none",
@@ -372,19 +368,19 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
         >
-          Email
+          Owner
         </label>
         <input
           disabled={true}
           handleChange={[Function]}
           handleSubmit={[Function]}
-          id="email"
+          id="owner"
           intl={
             Object {
               "formatMessage": [Function],
             }
           }
-          name="email"
+          name="owner"
           onChange={[Function]}
           readOnly={true}
           style={
@@ -398,12 +394,9 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
           type="text"
-          value=""
           values={
             Object {
-              "email": "",
-              "firstName": "",
-              "lastName": "",
+              "title": "title",
             }
           }
         />
@@ -435,22 +428,8 @@ exports[`Storyshots UserProfile Default 1`] = `
         }
       }
     >
-      Save
+      Submit
     </button>
   </form>
-  <a
-    className="sc-jlyJG dPGwwm"
-    href="/reset-password"
-    onClick={[Function]}
-  >
-    Reset Password
-  </a>
-  <a
-    className="sc-jlyJG dPGwwm"
-    href="/logout"
-    onClick={[Function]}
-  >
-    Log out
-  </a>
 </div>
 `;
