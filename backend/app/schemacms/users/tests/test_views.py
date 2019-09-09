@@ -2,7 +2,7 @@ from django import urls
 import pytest
 from rest_framework import status
 
-from schemacms.users import constants as user_constants, serializers as user_serializers
+from schemacms.users import backend_management, constants as user_constants, serializers as user_serializers
 
 pytestmark = [pytest.mark.django_db]
 
@@ -82,14 +82,10 @@ class TestMeView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data == user_serializers.UserSerializer(instance=user).data
 
-    @pytest.mark.parametrize('http_method', ['put', 'patch'])
+    @pytest.mark.parametrize("http_method", ["put", "patch"])
     def test_update_details(self, api_client, faker, user, http_method):
         api_client.force_authenticate(user)
-        payload = {
-            "first_name": faker.first_name(),
-            "last_name": faker.last_name(),
-            "email": faker.email(),
-        }
+        payload = {"first_name": faker.first_name(), "last_name": faker.last_name(), "email": faker.email()}
 
         response = getattr(api_client, http_method)(self._url, payload)
 
