@@ -22,6 +22,10 @@ export default defineMessages({
     id: 'project.create.apiNameLabel',
     defaultMessage: 'API Name',
   },
+  projectOwnerLabel: {
+    id: 'project.create.projectOwnerLabel',
+    defaultMessage: 'Owner',
+  },
   submit: {
     id: 'project.create.submit',
     defaultMessage: 'Submit',

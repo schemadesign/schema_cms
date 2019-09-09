@@ -5,7 +5,7 @@ import { Button } from 'schemaUI';
 import { Container } from './create.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
-import { PROJECT_DESCRIPTION, PROJECT_TITLE } from '../../../modules/project/project.constants';
+import { PROJECT_DESCRIPTION, PROJECT_TITLE, PROJECT_OWNER } from '../../../modules/project/project.constants';
 
 import messages from './create.messages';
 
@@ -44,6 +44,16 @@ export class Create extends PureComponent {
             name={PROJECT_DESCRIPTION}
             placeholder="Project description"
             label={intl.formatMessage(messages.projectDescriptionLabel)}
+            {...this.props}
+          />
+
+          <TextInput
+            value={values[PROJECT_OWNER]}
+            onChange={handleChange}
+            name={PROJECT_OWNER}
+            disabled
+            readOnly
+            label={intl.formatMessage(messages.projectOwnerLabel)}
             {...this.props}
           />
           <Button>{intl.formatMessage(messages.submit)}</Button>
