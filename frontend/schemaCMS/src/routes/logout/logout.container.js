@@ -6,10 +6,17 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
 import { Logout } from './logout.component';
+import { UserAuthActions } from '../../modules/userAuth';
 
 const mapStateToProps = createStructuredSelector({});
 
-export const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      logout: UserAuthActions.logout,
+    },
+    dispatch
+  );
 
 export default compose(
   hot(module),

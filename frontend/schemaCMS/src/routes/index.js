@@ -11,6 +11,7 @@ import { AUTH_PATH } from '../shared/utils/api.constants';
 import { Project } from './project';
 import { UserProfile } from './userProfile';
 import { ResetPassword } from './resetPassword';
+import { Logout } from './logout';
 
 export const ROUTES = {
   HOME: '/',
@@ -18,6 +19,7 @@ export const ROUTES = {
   USER_PROFILE: '/settings',
   PROJECT: '/project',
   RESET_PASSWORD: '/reset-password',
+  LOGOUT: '/logout',
 };
 
 export default class RootContainer extends Component {
@@ -35,6 +37,8 @@ export default class RootContainer extends Component {
             <AuthRoute path={ROUTES.USER_PROFILE} component={UserProfile} />
 
             <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
+
+            <AuthRoute path={ROUTES.LOGOUT} component={Logout} />
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 

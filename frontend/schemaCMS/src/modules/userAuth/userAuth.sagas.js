@@ -4,7 +4,7 @@ import api from '../../shared/services/api';
 
 import { UserAuthTypes, UserAuthActions } from './userAuth.redux';
 import { StartupTypes } from '../startup/startup.redux';
-import { LOGOUT_PATH, RESET_PASSWORD_PATH, TOKEN_PATH } from '../../shared/utils/api.constants';
+import { RESET_PASSWORD_PATH, TOKEN_PATH } from '../../shared/utils/api.constants';
 import { selectAuthToken } from './userAuth.selectors';
 import { UserProfileRoutines, UserProfileActions } from '../userProfile/userProfile.redux';
 
@@ -37,7 +37,8 @@ function* startup() {
 }
 
 function* logout() {
-  yield api.post(LOGOUT_PATH);
+  api.defaults.headers.common.Authorization = null;
+  yield put(UserProfileActions.clearUserDetails());
 
   yield put(UserAuthActions.logoutSuccess());
 
