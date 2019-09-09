@@ -77,6 +77,9 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
     file = models.FileField(
         null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
     )
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
+    )
 
     objects = DataSourceManager()
 
