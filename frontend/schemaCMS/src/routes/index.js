@@ -5,7 +5,6 @@ import browserHistory from '../shared/utils/history';
 import App from './app.container';
 import AuthRoute from './authRoute/authRoute.container';
 import JWT from './jwt/jwt.container';
-import { Home } from './home';
 import { NotFound } from './notFound';
 import { AUTH_PATH } from '../shared/utils/api.constants';
 import { Project } from './project';
@@ -26,7 +25,7 @@ export default class RootContainer extends Component {
 
         <App>
           <Switch>
-            <AuthRoute exact path={ROUTES.HOME} component={Home} />
+            <AuthRoute exact path={ROUTES.HOME} render={() => <Redirect to={ROUTES.PROJECT} />} />
 
             <AuthRoute path={ROUTES.PROJECT} component={Project} />
 
