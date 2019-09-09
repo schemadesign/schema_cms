@@ -3,6 +3,7 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
+import { injectIntl } from 'react-intl';
 
 import { compose } from 'ramda';
 import { List } from './list.component';
@@ -25,5 +26,6 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
+  injectIntl,
   withRouter
 )(List);

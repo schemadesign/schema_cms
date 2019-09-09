@@ -14,10 +14,6 @@ export function* setAuthorizationToken(token) {
   }
 }
 
-function* redirectExternal(path) {
-  window.location.href = path;
-}
-
 function* getJwtToken({ uid, token }) {
   const { data } = yield api.post(TOKEN_PATH, {
     uid,

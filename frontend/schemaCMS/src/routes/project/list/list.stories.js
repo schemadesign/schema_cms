@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { withRouter } from '../../../.storybook/decorators';
 import { List } from './list.component';
 
 export const defaultProps = {
@@ -33,16 +34,17 @@ export const defaultProps = {
   ],
   fetchProjectsList: Function.prototype,
   history: {},
-  intl: { formatMessage: ({ id }) => id },
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
 export const emptyListProps = {
   list: [],
   fetchProjectsList: Function.prototype,
   history: {},
-  intl: { formatMessage: ({ id }) => id },
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
-storiesOf('List', module)
+storiesOf('Project/List', module)
+  .addDecorator(withRouter)
   .add('list', () => <List {...defaultProps} />)
   .add('empty', () => <List {...emptyListProps} />);

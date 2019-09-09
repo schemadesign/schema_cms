@@ -1,3 +1,4 @@
+import json
 import operator
 import os
 
@@ -30,7 +31,7 @@ class TestListCreateProjectView:
         api_client.force_authenticate(user)
         response = api_client.get(self.get_url())
 
-        queryset = projects_models.Project.objects.all()
+        queryset = projects_models.Project.objects.all().order_by("-created")
         assert response.status_code == status.HTTP_200_OK
         assert response.data["results"] == projects_serializers.ProjectSerializer(queryset, many=True).data
 
@@ -39,6 +40,19 @@ class TestListCreateProjectView:
         response = api_client.get(self.get_url())
 
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
+
+    def test_editor_can_list_only_assign_projects(self, api_client, user_factory, project_factory):
+        user1, user2 = user_factory.create_batch(2, editor=True)
+        user1_projects = project_factory.create_batch(2, editors=[user1])
+
+        api_client.force_authenticate(user1)
+        user1_response = api_client.get(self.get_url())
+        assert user1_response.status_code == status.HTTP_200_OK
+        assert user1_response.data["count"] == 2
+        assert (
+            user1_response.data["results"]
+            == projects_serializers.ProjectSerializer(self.__sort_projects(user1_projects), many=True).data
+        )
 
     def test_create_as_admin(self, api_client, user):
         user.role = user_constants.UserRole.ADMIN
@@ -61,19 +75,6 @@ class TestListCreateProjectView:
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
-    def test_editor_can_list_only_assign_projects(self, api_client, user_factory, project_factory):
-        user1, user2 = user_factory.create_batch(2, editor=True)
-        user1_projects = project_factory.create_batch(2, editors=[user1])
-
-        api_client.force_authenticate(user1)
-        user1_response = api_client.get(self.get_url())
-        assert user1_response.status_code == status.HTTP_200_OK
-        assert user1_response.data["count"] == 2
-        assert (
-            user1_response.data["results"]
-            == projects_serializers.ProjectSerializer(user1_projects, many=True).data
-        )
-
     def test_create_without_editors(self, api_client, user):
         user.role = user_constants.UserRole.ADMIN
         api_client.force_authenticate(user)
@@ -94,6 +95,10 @@ class TestListCreateProjectView:
     @staticmethod
     def get_url():
         return reverse("project-list")
+
+    @staticmethod
+    def __sort_projects(iterable):
+        return sorted(iterable, key=operator.attrgetter("created"), reverse=True)
 
 
 class TestRetrieveUpdateDeleteProjectView:
@@ -118,6 +123,17 @@ class TestRetrieveUpdateDeleteProjectView:
         project.refresh_from_db()
         assert response.status_code == status.HTTP_200_OK
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
+
+    def test_update_project_by_not_projects_editor(self, api_client, user_factory, project):
+        editor1, editor2 = user_factory.create_batch(2, editor=True)
+        project.editors.add(editor2)
+        payload = {"title": "new title"}
+
+        api_client.force_authenticate(editor1)
+        response = api_client.patch(self.get_url(pk=project.pk), data=payload)
+
+        project.refresh_from_db()
+        assert response.status_code == status.HTTP_403_FORBIDDEN
 
     def test_delete_project_by_owner(self, api_client, user, project):
         api_client.force_authenticate(user)
@@ -225,9 +241,25 @@ class TestListDataSourceView:
 class TestCreateDraftDataSourceView:
     def test_empty_payload(self, api_client, admin, project):
         api_client.force_authenticate(admin)
+
         response = api_client.post(self.get_url(project.id), dict(), format="multipart")
 
         assert response.status_code == status.HTTP_201_CREATED
+
+    def test_create_by_editor_assigned_to_project(self, api_client, editor, project):
+        project.editors.add(editor)
+        api_client.force_authenticate(editor)
+
+        response = api_client.post(self.get_url(project.id), dict(), format="multipart")
+
+        assert response.status_code == status.HTTP_201_CREATED
+
+    def test_create_by_editor_not_assigned_to_project(self, api_client, editor, project):
+        api_client.force_authenticate(editor)
+
+        response = api_client.post(self.get_url(project.id), dict(), format="multipart")
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
 
     def test_upload_file(self, api_client, admin, project, faker):
         payload = dict(file=faker.csv_upload_file(filename="test.csv"))
@@ -243,6 +275,14 @@ class TestCreateDraftDataSourceView:
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data["file"] == f"http://testserver/{correct_path.lstrip('/')}"
+
+    def test_request_user_as_created_by(self, api_client, admin, project):
+        api_client.force_authenticate(admin)
+
+        response = api_client.post(self.get_url(project.id), dict(), format="multipart")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert project.data_sources.get(id=response.data["id"]).created_by == admin
 
     @staticmethod
     def get_url(project_pk):
@@ -262,6 +302,33 @@ class TestUpdateDraftDataSourceView:
 
         assert response.status_code == status.HTTP_200_OK
 
+    def test_update_by_editor_assigned_to_project(
+        self, api_client, faker, editor, project, data_source_factory
+    ):
+        project.editors.add(editor)
+        data_source = data_source_factory(project=project, draft=True)
+        url = self.get_url(data_source_pk=data_source.pk, project_pk=project.id)
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
+
+        api_client.force_authenticate(editor)
+        response = api_client.put(url, payload, format="multipart")
+
+        assert response.status_code == status.HTTP_200_OK
+
+    def test_update_by_editor_not_assigned_to_project(self, api_client, faker, editor, data_source_factory):
+        data_source = data_source_factory(draft=True)
+        url = self.get_url(data_source_pk=data_source.pk, project_pk=data_source.project_id)
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
+
+        api_client.force_authenticate(editor)
+        response = api_client.put(url, payload, format="multipart")
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+
     def test_error_response(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory(draft=True)
         url = self.get_url(data_source_pk=data_source.pk, project_pk=data_source.project_id)
@@ -277,6 +344,20 @@ class TestUpdateDraftDataSourceView:
         assert f"/api/v1/projects/{data_source.project_id}/datasources/{data_source.pk}" == self.get_url(
             data_source_pk=data_source.pk, project_pk=data_source.project_id
         )
+
+    def test_file_overwrite(self, api_client, faker, admin, data_source_factory):
+        data_source = data_source_factory(draft=True)
+        _, file_name_before_update = data_source.get_original_file_name()
+        url = self.get_url(data_source_pk=data_source.pk, project_pk=data_source.project_id)
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
+
+        api_client.force_authenticate(admin)
+        response = api_client.put(url, payload, format="multipart")
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["file_name"] == file_name_before_update
 
     @staticmethod
     def get_url(data_source_pk, project_pk):
@@ -300,3 +381,19 @@ class TestDataSourceProcess:
     @staticmethod
     def get_url(project_pk):
         return reverse("datasource-list", kwargs=dict(project_pk=project_pk))
+
+
+class TestDataSourcePreview:
+    def test_response(self, api_client, admin, data_source):
+        api_client.force_authenticate(admin)
+        expected_data = json.loads(data_source.meta_data.preview.read())
+        expected_data["data_source"] = {"name": data_source.name}
+
+        response = api_client.get(self.get_url(data_source.project_id, data_source.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == expected_data
+
+    @staticmethod
+    def get_url(project_pk, data_source_pk):
+        return reverse("datasource-preview", kwargs=dict(pk=data_source_pk, project_pk=project_pk))

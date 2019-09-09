@@ -3,6 +3,16 @@ import { storiesOf } from '@storybook/react';
 
 import { Source } from './source.component';
 
-const defaultProps = {};
+const defaultProps = {
+  values: {},
+  onChange: Function.prototype,
+  setFieldValue: Function.prototype,
+  intl: {
+    formatMessage: Function.prototype,
+  },
+  errors: {},
+  touched: {},
+  dataSource: {},
+};
 
-storiesOf('Source', module).add('Default', () => <Source {...defaultProps} />);
+storiesOf('Project/DataSource/View/Source', module).add('Default', () => <Source {...defaultProps} />);

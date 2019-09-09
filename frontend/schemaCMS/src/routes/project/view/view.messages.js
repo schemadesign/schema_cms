@@ -54,4 +54,16 @@ export default defineMessages({
     id: 'project.view.noProject',
     defaultMessage: "Project doesn't exist.",
   },
+  editProjectSettings: {
+    id: 'project.view.editProjectSettings',
+    defaultMessage: 'Edit Project Settings',
+  },
+  deleteProject: {
+    id: 'project.view.deleteProject',
+    defaultMessage: 'Delete Project',
+  },
+  logOut: {
+    id: 'project.view.logOut',
+    defaultMessage: 'Log Out',
+  },
 });

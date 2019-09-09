@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Card } from './card.component';
@@ -17,7 +17,7 @@ const withCustomStylesProps = {
 
 storiesOf('Card', module).add('with custom styles', () => (
   <Card {...withCustomStylesProps}>
-    <>
+    <Fragment>
       <p>
         This is a <em>green</em> card.
       </p>
@@ -25,7 +25,7 @@ storiesOf('Card', module).add('with custom styles', () => (
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a auctor ante. Ut at lorem id elit elementum
         venenatis. Quisque vulputate sit amet odio eu dictum.
       </p>
-    </>
+    </Fragment>
   </Card>
 ));
 
@@ -35,7 +35,7 @@ const withHeaderProps = {
 
 storiesOf('Card', module).add('with header', () => (
   <Card {...withHeaderProps}>
-    <>
+    <Fragment>
       <p>
         This is a <em>card</em> with <b>header</b> content.
       </p>
@@ -43,7 +43,7 @@ storiesOf('Card', module).add('with header', () => (
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a auctor ante. Ut at lorem id elit elementum
         venenatis. Quisque vulputate sit amet odio eu dictum.
       </p>
-    </>
+    </Fragment>
   </Card>
 ));
 

@@ -3,26 +3,23 @@ import logging
 
 from rest_framework import decorators, exceptions, permissions, response, status, viewsets
 
+from schemacms.users import permissions as user_permissions
 from . import constants, models, serializers, permissions as projects_permissions
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ProjectSerializer
-    permission_classes = (permissions.IsAuthenticated, projects_permissions.IsAdminOrReadOnly)
+    permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
     queryset = models.Project.objects.none()
 
     def get_queryset(self):
-        return models.Project.get_projects_for_user(self.request.user)
+        return models.Project.get_projects_for_user(self.request.user).order_by("-created")
 
 
 class DataSourceViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
     queryset = models.DataSource.objects.order_by("-created")
-    permission_classes = (
-        permissions.IsAuthenticated,
-        projects_permissions.IsAdminOrReadOnly,
-        projects_permissions.HasProjectPermission,
-    )
+    permission_classes = (permissions.IsAuthenticated, projects_permissions.HasProjectPermission)
 
     def initial(self, request, *args, **kwargs):
         self.project = self.get_project(url_kwargs=kwargs)
@@ -34,7 +31,7 @@ class DataSourceViewSet(viewsets.ModelViewSet):
         return super().get_serializer_class()
 
     def perform_create(self, serializer):
-        serializer.save(project=self.project)
+        serializer.save(project=self.project, created_by=self.request.user)
 
     def get_queryset(self):
         return super().get_queryset().filter(project=self.project)
@@ -50,7 +47,10 @@ class DataSourceViewSet(viewsets.ModelViewSet):
 
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
-        return response.Response(json.loads(self.get_object().meta_data.preview.read()))
+        data_source = self.get_object()
+        data = json.loads(data_source.meta_data.preview.read())
+        data["data_source"] = {"name": data_source.name}
+        return response.Response(data)
 
     @decorators.action(detail=True, methods=["post"])
     def process(self, request, pk=None, **kwargs):
@@ -64,4 +64,3 @@ class DataSourceViewSet(viewsets.ModelViewSet):
             self.get_object().status = constants.DataSourceStatus.ERROR
             self.get_object().save()
             return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
-

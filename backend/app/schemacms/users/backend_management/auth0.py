@@ -1,3 +1,4 @@
+import auth0.v3
 from django import urls
 from auth0.v3 import authentication
 from auth0.v3 import management
@@ -50,17 +51,26 @@ class Auth0UserManagement(base.BaseUserManagement):
         return self.proxy.users.create(body)
 
     def password_change_url(self, user: models.User):
-        path = urls.reverse("social:begin", kwargs={"backend": "auth0"})
+        login_url = self.get_login_url()
         body = {
-            "result_url": "{host}{path}".format(host=settings.DEFAULT_HOST, path=path),
+            "result_url": login_url,
             "user_id": user.external_id,
             "ttl_sec": 0,
             "mark_email_as_verified": True,
         }
-        return self.proxy.tickets.create_pswd_change(body)["ticket"]
+        try:
+            return self.proxy.tickets.create_pswd_change(body)["ticket"]
+        except auth0.v3.Auth0Error as e:
+            if e.error_code == "operation_not_supported":
+                return login_url
+            raise
 
     def get_user_source(self):
         return constants.UserSource.AUTH0
+
+    def get_login_url(self):
+        path = urls.reverse("social:begin", kwargs={"backend": "auth0"})
+        return "{host}{path}".format(host=settings.DEFAULT_HOST, path=path)
 
     @classmethod
     def _get_token(cls, domain):

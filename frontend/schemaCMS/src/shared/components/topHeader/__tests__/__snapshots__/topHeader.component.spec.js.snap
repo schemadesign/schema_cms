@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopHeader: Component should render correctly 1`] = `
+<styled.div>
+  <Header
+    customButtonStyles={Object {}}
+    customStyles={Object {}}
+    iconComponent={<MenuIcon />}
+    onButtonClick={[Function]}
+  >
+    <styled.div>
+      <H2>
+        Projects
+      </H2>
+      <H1>
+        Overview
+      </H1>
+    </styled.div>
+  </Header>
+  <Menu
+    customCloseButtonStyles={
+      Object {
+        "backgroundColor": "#fff",
+      }
+    }
+    customStyles={
+      Object {
+        "backgroundColor": "#fff",
+        "maxWidth": null,
+        "zIndex": 9999,
+      }
+    }
+    onClose={[Function]}
+    open={false}
+  >
+    <styled.div>
+      <styled.div>
+        <H2>
+          Projects
+        </H2>
+        <H1>
+          Overview
+        </H1>
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <Styled(styled.ul)>
+        <Styled(styled.li)
+          key="0"
+        >
+          <Link
+            replace={false}
+            to="/path"
+          >
+            Data Sources
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="1"
+        >
+          <Link
+            replace={false}
+            to="/path"
+          >
+            Charts
+          </Link>
+        </Styled(styled.li)>
+      </Styled(styled.ul)>
+      <Styled(styled.ul)>
+        <Styled(styled.li)
+          key="0"
+        >
+          <Link
+            replace={false}
+            to="/logout"
+          >
+            Log Out
+          </Link>
+        </Styled(styled.li)>
+      </Styled(styled.ul)>
+    </styled.div>
+  </Menu>
+</styled.div>
+`;

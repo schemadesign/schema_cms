@@ -2,7 +2,7 @@ import factory
 
 from schemacms.projects import constants as project_constants
 from schemacms.users.tests.factories import UserFactory
-from schemacms.conftests.utils import make_csv
+from schemacms.utils import test as utils_test
 
 
 class ProjectFactory(factory.django.DjangoModelFactory):
@@ -30,7 +30,7 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
     name = factory.Faker("text", max_nb_chars=project_constants.DATASOURCE_NAME_MAX_LENGTH)
     project = factory.SubFactory(ProjectFactory)
     type = project_constants.DataSourceType.FILE
-    file = factory.django.FileField(filename="test.csv", from_func=make_csv)
+    file = factory.django.FileField(filename="test.csv", from_func=utils_test.make_csv)
 
     class Params:
         draft = factory.Trait(type=project_constants.DataSourceStatus.DRAFT)

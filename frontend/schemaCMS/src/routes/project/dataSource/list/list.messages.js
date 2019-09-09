@@ -10,4 +10,8 @@ export default defineMessages({
     id: 'dataSource.list.subTitle',
     defaultMessage: 'Overview',
   },
+  projectDetails: {
+    id: 'dataSource.list.projectDetails',
+    defaultMessage: 'Project details',
+  },
 });

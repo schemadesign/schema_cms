@@ -12,13 +12,24 @@ class DataSourceMetaSerializer(serializers.ModelSerializer):
         fields = ("items", "fields", "preview")
 
 
+class DataSourceCreatorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "first_name", "last_name")
+
+
 class DataSourceSerializer(serializers.ModelSerializer):
     meta_data = DataSourceMetaSerializer(read_only=True)
     file_name = serializers.SerializerMethodField(read_only=True)
+    created_by = NestedRelatedModelSerializer(
+        serializer=DataSourceCreatorSerializer(),
+        read_only=True,
+        pk_field=serializers.UUIDField(format="hex_verbose"),
+    )
 
     class Meta:
         model = DataSource
-        fields = ("id", "name", "type", "status", "file", "file_name", "meta_data")
+        fields = ("id", "name", "created_by", "type", "status", "file", "file_name", "created", "meta_data")
         extra_kwargs = {
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},

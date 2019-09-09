@@ -17,6 +17,9 @@ description| text   | No       | Description for the created project.
 status     | string | No       | Current status of the project.
 editors    | list   | No       | Editors list of the project.
 
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
 
 **Response**:
 
@@ -47,6 +50,10 @@ Content-Type: application/json
 **Request**:
 
 `GET` `/api/v1/projects/:id`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
 
 Parameters:
 
@@ -83,14 +90,14 @@ Name       | Type   | Description
 -----------|--------|---
 title      | string | The title of the project object.
 description| text   | The description of the project object.
-status     | string | The status of project object.
+status     | string | The status of project object ([available statuses](#enums)).
 owner      | string | The creator of the project object.
 editors    | list   | The editors list of the project object.
 
 
-
 *Note:*
 
+- **[Authorization Protected](authentication.md)**
 - All parameters are optional
 
 **Response**:
@@ -124,9 +131,17 @@ Content-Type application/json
 
 `DELETE` `/api/v1/projects/:id`
 
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
 **Response**:
 
 ```json
 Content-Type application/json
 204 No Content
 ```
+
+
+## Enums
+Project statuses: `initial`, `processing`

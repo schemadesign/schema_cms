@@ -6,21 +6,23 @@ import { Container, leftButtonStyles, rightButtonStyles } from './pillButtons.st
 
 export class PillButtons extends PureComponent {
   static propTypes = {
-    leftButtonTitle: PropTypes.string,
-    rightButtonTitle: PropTypes.string,
-    onLeftClick: PropTypes.func,
-    onRightClick: PropTypes.func,
+    leftButtonProps: PropTypes.object,
+    rightButtonProps: PropTypes.object,
   };
 
   render() {
-    const { onLeftClick, onRightClick, leftButtonTitle, rightButtonTitle } = this.props;
+    const {
+      leftButtonProps: { title: leftTitle, ...leftProps },
+      rightButtonProps: { title: rightTitle, ...rightProps },
+    } = this.props;
+
     return (
       <Container>
-        <Button type="button" onClick={onLeftClick} customStyles={leftButtonStyles}>
-          {leftButtonTitle}
+        <Button {...leftProps} customStyles={leftButtonStyles}>
+          {leftTitle}
         </Button>
-        <Button type="submit" onClick={onRightClick} customStyles={rightButtonStyles}>
-          {rightButtonTitle}
+        <Button {...rightProps} customStyles={rightButtonStyles}>
+          {rightTitle}
         </Button>
       </Container>
     );

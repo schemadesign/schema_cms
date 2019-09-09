@@ -11,4 +11,4 @@ const defaultProps = {
   onChange: Function.prototype,
 };
 
-storiesOf('TextInput', module).add('Default', () => <TextInput {...defaultProps} />);
+storiesOf('Shared Components/TextInput', module).add('Default', () => <TextInput {...defaultProps} />);

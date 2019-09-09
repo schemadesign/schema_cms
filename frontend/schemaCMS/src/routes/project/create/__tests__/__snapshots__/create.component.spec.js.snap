@@ -2,14 +2,7 @@
 
 exports[`Create: Component should render correctly 1`] = `
 <styled.div>
-  <Header
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
-  >
-    <H1 />
-    <H2 />
-  </Header>
+  <TopHeader />
   <form
     onSubmit={[Function]}
   >
@@ -45,6 +38,26 @@ exports[`Create: Component should render correctly 1`] = `
       name="description"
       onChange={[Function]}
       placeholder="Project description"
+      touched={Object {}}
+      values={
+        Object {
+          "title": "",
+        }
+      }
+    />
+    <TextInput
+      disabled={true}
+      errors={Object {}}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      name="owner"
+      onChange={[Function]}
+      readOnly={true}
       touched={Object {}}
       values={
         Object {

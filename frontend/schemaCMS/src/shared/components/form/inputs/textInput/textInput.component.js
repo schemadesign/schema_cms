@@ -17,6 +17,11 @@ export class TextInput extends PureComponent {
     onChange: PropTypes.func.isRequired,
   };
 
+  static defaultProps = {
+    errors: {},
+    touched: {},
+  };
+
   renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
 
   render() {

@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'project.list.noProjects',
     defaultMessage: 'No Projects',
   },
+  logOut: {
+    id: 'project.list.logOut',
+    defaultMessage: 'Log Out',
+  },
 });

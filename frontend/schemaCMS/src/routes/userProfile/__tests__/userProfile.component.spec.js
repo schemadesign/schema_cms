@@ -39,7 +39,10 @@ describe('UserProfile: Component', () => {
     const handleChange = spy();
 
     const wrapper = render({ handleChange });
-    wrapper.find(TextInput).first().prop('onChange')();
+    wrapper
+      .find(TextInput)
+      .first()
+      .prop('onChange')();
     expect(handleChange).to.have.been.calledOnce;
   });
 });

@@ -17,8 +17,6 @@ describe('Create: Component', () => {
     intl: {
       formatMessage: Function.prototype,
     },
-    touched: {},
-    errors: {},
   };
 
   const component = props => <Create {...defaultProps} {...props} />;

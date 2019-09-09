@@ -7,27 +7,40 @@ exports[`View: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="project.view.pageTitle"
   />
-  <Header
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
-  >
-    <H2>
-      <FormattedMessage
-        defaultMessage="Project"
-        id="project.view.title"
-        values={Object {}}
-      />
-    </H2>
-    <H1 />
-  </Header>
+  <TopHeader
+    headerTitle="project.view.title"
+    primaryMenuItems={
+      Array [
+        Object {
+          "label": "project.view.dataSources",
+          "to": "/project/view/100/datasource",
+        },
+      ]
+    }
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "project.view.editProjectSettings",
+          "to": "/project/edit/100",
+        },
+        Object {
+          "label": "project.view.deleteProject",
+          "to": "/project/delete/100",
+        },
+        Object {
+          "label": "project.view.logOut",
+          "to": "/logout",
+        },
+      ]
+    }
+  />
   <Loader />
   <Button
     customStyles={
       Object {
         "backgroundColor": "#f0efef",
         "height": "60px",
-        "margin": "50px 0 20px 20px",
+        "margin": "50px 0 20px 0",
       }
     }
     onClick={[Function]}
