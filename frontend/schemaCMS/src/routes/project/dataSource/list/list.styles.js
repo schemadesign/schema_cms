@@ -13,6 +13,12 @@ export const addDataSourceStyles = {
   height: '60px',
 };
 
+export const customIconStyles = {
+  width: 40,
+  height: 40,
+  fill: Theme.primary.iconDark,
+};
+
 export const DataSourceItem = styled.li`
   margin-top: 10px;
 
@@ -29,10 +35,12 @@ export const Description = styled.div`
 export const DataSourceList = styled.div`
   list-style: none;
   padding: 0;
+  margin-top: 24px;
 `;
 
 export const titleStyles = {
   cursor: 'pointer',
+  marginBottom: '20px',
 };
 
 export const MetaDataWrapper = styled.div`
@@ -46,5 +54,24 @@ export const MetaData = styled.div`
   flex-direction: column;
 `;
 
-export const MetaDataName = styled.span``;
-export const MetaDataValue = styled.span``;
+export const MetaDataName = styled.span`
+  color: ${Theme.primary.label};
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 10px;
+`;
+export const MetaDataValue = styled.span`
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+`;
+
+export const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const HeaderIcon = styled.div`
+  margin-top: -8px;
+`;
