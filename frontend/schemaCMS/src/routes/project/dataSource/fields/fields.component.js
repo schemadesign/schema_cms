@@ -6,6 +6,7 @@ import { isEmpty } from 'ramda';
 
 import { TopHeader } from '../../../../shared/components/topHeader';
 import { Loader } from '../../../../shared/components/loader';
+import { PreviewTable } from './previewTable';
 import messages from './fields.messages';
 import { Container } from './fields.styles';
 
@@ -60,12 +61,9 @@ export class Fields extends PureComponent {
   isLoading = () => isEmpty(this.props.fields);
 
   renderTable() {
-    const rows = this.props.previewTable.map((row, rowIndex) => ({ ...row, rowIndex }));
-    const columnsIds = ['rowIndex', ...Object.keys(this.props.fields)];
-    const columns = columnsIds.map(name => ({ name, displayName: name }));
-    const data = { columns, rows };
+    const { fields, previewTable } = this.props;
 
-    return <DataGrid data={data} />;
+    return <PreviewTable fields={fields} data={previewTable} />;
   }
 
   render() {
