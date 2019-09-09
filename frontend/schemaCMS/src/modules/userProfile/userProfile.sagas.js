@@ -33,8 +33,7 @@ function* updateMe({ payload }) {
 
     yield put(UserProfileRoutines.updateMe.success(data));
   } catch (error) {
-    yield put(UserProfileRoutines.updateMe.failure(error));
-    yield put(UserProfileActions.updateMeError());
+    yield put(UserProfileRoutines.updateMe.failure());
   } finally {
     yield put(UserProfileRoutines.updateMe.fulfill());
   }

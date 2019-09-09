@@ -75,5 +75,11 @@ exports[`UserProfile: Component should render correctly 1`] = `
       customStyles={Object {}}
     />
   </styled.form>
+  <Styled(Link)
+    to="/reset-password"
+  />
+  <Styled(Link)
+    to="/logout"
+  />
 </styled.div>
 `;

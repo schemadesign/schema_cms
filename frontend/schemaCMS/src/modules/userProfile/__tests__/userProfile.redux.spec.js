@@ -1,7 +1,12 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { reducer as userProfileReducer, UserProfileActions, UserProfileTypes } from '../userProfile.redux';
+import {
+  reducer as userProfileReducer,
+  UserProfileActions,
+  UserProfileRoutines,
+  UserProfileTypes,
+} from '../userProfile.redux';
 
 describe('UserProfile: redux', () => {
   const defaultState = Immutable({
@@ -25,7 +30,7 @@ describe('UserProfile: redux', () => {
         pk: 1,
       };
 
-      const resultState = userProfileReducer(defaultState, UserProfileActions.fetchUserDetailsSuccess(user));
+      const resultState = userProfileReducer(defaultState, UserProfileRoutines.fetchUserDetails.success(user));
       expect(resultState.user).to.deep.equal(user);
     });
 
@@ -34,19 +39,19 @@ describe('UserProfile: redux', () => {
         pk: 1,
       };
 
-      const resultState = userProfileReducer(defaultState, UserProfileActions.fetchUserDetailsSuccess(user));
+      const resultState = userProfileReducer(defaultState, UserProfileRoutines.fetchUserDetails.success(user));
       expect(resultState.isFetched).to.deep.equal(true);
     });
   });
 
   describe('when USER_PROFILE/FETCH_USER_DETAILS_ERROR is received', () => {
     it('should set user to empty object', async () => {
-      const resultState = userProfileReducer(defaultState, UserProfileActions.fetchUserDetailsError());
+      const resultState = userProfileReducer(defaultState, UserProfileRoutines.fetchUserDetails.failure());
       expect(resultState.user).to.deep.equal({});
     });
 
     it('should set isFetched to true', async () => {
-      const resultState = userProfileReducer(defaultState, UserProfileActions.fetchUserDetailsError());
+      const resultState = userProfileReducer(defaultState, UserProfileRoutines.fetchUserDetails.failure());
       expect(resultState.isFetched).to.deep.equal(true);
     });
   });
