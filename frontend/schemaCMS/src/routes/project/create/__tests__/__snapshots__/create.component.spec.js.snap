@@ -45,6 +45,26 @@ exports[`Create: Component should render correctly 1`] = `
         }
       }
     />
+    <TextInput
+      disabled={true}
+      errors={Object {}}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      name="owner"
+      onChange={[Function]}
+      readOnly={true}
+      touched={Object {}}
+      values={
+        Object {
+          "title": "",
+        }
+      }
+    />
     <Button
       customStyles={Object {}}
     />

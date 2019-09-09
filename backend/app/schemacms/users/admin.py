@@ -9,7 +9,6 @@ from django.utils.translation import gettext_lazy as _
 from . import models as user_models
 from . import backend_management
 from . import admin_forms
-from schemacms import mail
 
 
 @admin.register(user_models.User)
@@ -39,31 +38,26 @@ class UserAdmin(UserAdmin):
 
     @transaction.atomic()
     def save_model(self, request, obj, form, change):
+        sid = transaction.savepoint()
         super().save_model(request, obj, form, change)
         if not change and obj.email:
             try:
                 ret = backend_management.user_mgtm_backend.create_user(obj)
-                obj.source = backend_management.user_mgtm_backend.get_user_source()
-                obj.external_id = ret["user_id"]
-                obj.save(update_fields=["source", "external_id"])
-                url = backend_management.user_mgtm_backend.password_change_url(obj)
-                mail.send_message(
-                    email=obj.email,
-                    template=mail.MandrillTemplate.INVITATION,
-                    subject="Invitation",
-                    merge_data_dict={"url": url},
-                )
             except auth0.v3.Auth0Error as e:
+                transaction.savepoint_rollback(sid)
                 if e.status_code == 409:
                     return self.message_user(
                         request, f"{obj.email} already exist in Auth0", django.contrib.messages.ERROR
                     )
-
                 self.message_user(
                     request, 'Error from auth0: "{}"'.format(e.message), django.contrib.messages.ERROR
                 )
                 raise
-
+            obj.source = backend_management.user_mgtm_backend.get_user_source()
+            obj.external_id = ret["user_id"]
+            obj.save(update_fields=["source", "external_id"])
+            transaction.on_commit(obj.send_invitation_email)
+        transaction.savepoint_commit(sid)
         return obj
 
     def get_fieldsets(self, request, obj=None):

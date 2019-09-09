@@ -1,3 +1,4 @@
+import json
 import operator
 import os
 
@@ -275,6 +276,14 @@ class TestCreateDraftDataSourceView:
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data["file"] == f"http://testserver/{correct_path.lstrip('/')}"
 
+    def test_request_user_as_created_by(self, api_client, admin, project):
+        api_client.force_authenticate(admin)
+
+        response = api_client.post(self.get_url(project.id), dict(), format="multipart")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert project.data_sources.get(id=response.data["id"]).created_by == admin
+
     @staticmethod
     def get_url(project_pk):
         return reverse("datasource-list", kwargs=dict(project_pk=project_pk))
@@ -372,3 +381,19 @@ class TestDataSourceProcess:
     @staticmethod
     def get_url(project_pk):
         return reverse("datasource-list", kwargs=dict(project_pk=project_pk))
+
+
+class TestDataSourcePreview:
+    def test_response(self, api_client, admin, data_source):
+        api_client.force_authenticate(admin)
+        expected_data = json.loads(data_source.meta_data.preview.read())
+        expected_data["data_source"] = {"name": data_source.name}
+
+        response = api_client.get(self.get_url(data_source.project_id, data_source.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == expected_data
+
+    @staticmethod
+    def get_url(project_pk, data_source_pk):
+        return reverse("datasource-preview", kwargs=dict(pk=data_source_pk, project_pk=project_pk))

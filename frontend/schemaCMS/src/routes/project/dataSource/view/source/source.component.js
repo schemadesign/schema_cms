@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
-import { always, cond, equals, path, T } from 'ramda';
+import { always, cond, equals, T } from 'ramda';
+import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import {
   Container,
@@ -9,60 +11,92 @@ import {
   customRadioButtonStyles,
   customRadioGroupStyles,
 } from './source.styles';
+import messages from './source.messages';
+import { TextInput } from '../../../../../shared/components/form/inputs/textInput';
+import {
+  DATA_SOURCE_FILE,
+  DATA_SOURCE_NAME,
+  DATA_SOURCE_TYPE,
+  SOURCE_TYPE_API,
+  SOURCE_TYPE_DATABASE,
+  SOURCE_TYPE_FILE,
+} from '../../../../../modules/dataSource/dataSource.constants';
 
-const { TextField, RadioGroup, RadioButton, Label, FileUpload } = Form;
+const { RadioGroup, RadioButton, Label, FileUpload } = Form;
 const { CsvIcon } = Icons;
 
 export class Source extends PureComponent {
-  static propTypes = {};
+  static propTypes = {
+    values: PropTypes.object.isRequired,
+    dataSource: PropTypes.object.isRequired,
+    intl: PropTypes.object.isRequired,
+    setFieldValue: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+  };
 
   state = {
-    dataSourceType: '',
     uploadFileName: null,
   };
 
-  handleChange = event => {
-    const value = event.target.value;
-    this.setState({ dataSourceType: value });
-  };
-
-  handleUploadChange = event => {
-    const uploadFileName = path(['target', 'files', 0, 'name'], event);
-    this.setState({ uploadFileName });
+  handleUploadChange = ({
+    currentTarget: {
+      files: [uploadFile],
+    },
+  }) => {
+    this.props.setFieldValue('file', uploadFile);
+    this.setState({ uploadFileName: uploadFile.name });
   };
 
   renderCsvUploader = () => (
     <FileUpload
-      name={this.state.uploadFileName}
-      label="File Name"
+      fileName={this.state.uploadFileName || this.props.dataSource.fileName}
+      name={DATA_SOURCE_FILE}
+      label={this.props.intl.formatMessage(messages.fileName)}
       type="file"
-      id="File name"
+      id="fileUpload"
       onChange={this.handleUploadChange}
       accept=".csv,.tsv"
     />
   );
 
-  renderSourceUpload = cond([[equals('csv'), this.renderCsvUploader], [T, always(null)]]);
+  renderSourceUpload = cond([
+    [equals(SOURCE_TYPE_FILE), this.renderCsvUploader],
+    [equals(SOURCE_TYPE_API), () => {}],
+    [equals(SOURCE_TYPE_DATABASE), () => {}],
+    [T, always(null)],
+  ]);
 
   render() {
+    const { onChange, values, ...restProps } = this.props;
+
     return (
       <Container>
-        <TextField label="Name" name="Name" defaultValue="My New Dataset" fullWidth />
-        <Label customStyles={customLabelStyles}>Source</Label>
+        <TextInput
+          value={values.name || ''}
+          onChange={onChange}
+          name={DATA_SOURCE_NAME}
+          fullWidth
+          label={this.props.intl.formatMessage(messages.name)}
+          {...restProps}
+        />
+
+        <Label customStyles={customLabelStyles}>
+          <FormattedMessage {...messages.source} />
+        </Label>
         <RadioGroup
-          name="dataSourceType"
+          name={DATA_SOURCE_TYPE}
           customStyles={customRadioGroupStyles}
           customLabelStyles={customRadioButtonStyles}
-          value={this.state.dataSourceType}
-          onChange={this.handleChange}
+          value={this.props.values.type}
+          onChange={onChange}
         >
-          <RadioButton label="Csv" value="csv" id="csv">
+          <RadioButton label={this.props.intl.formatMessage(messages.spreadsheet)} value="file" id="file">
             <Button customStyles={customButtonStyles} type="button">
               <CsvIcon />
             </Button>
           </RadioButton>
         </RadioGroup>
-        {this.renderSourceUpload(this.state.dataSourceType)}
+        {this.renderSourceUpload(this.props.values.type)}
       </Container>
     );
   }

@@ -6,6 +6,10 @@
 
 `GET` `/api/v1/projects/<project id>/datasources`
 
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
 **Response**:
 
 
@@ -64,7 +68,8 @@ file       | file   | The CSV file.
 
 *Note:*
 
-Request's content type: `multipart/form-data`
+- Request's content type: `multipart/form-data`
+- **[Authorization Protected](authentication.md)**
 
 
 **Response**:
@@ -108,7 +113,8 @@ file       | file   | The CSV file.
 
 *Note:*
 
-Request's content type: `multipart/form-data`
+- Request's content type: `multipart/form-data`
+- **[Authorization Protected](authentication.md)**
 
 
 **Response**:

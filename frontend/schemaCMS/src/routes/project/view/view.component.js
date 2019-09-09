@@ -24,6 +24,7 @@ import {
   IconEditWrapper,
   Statistics,
   buttonStyles,
+  statisticsCardStyles,
 } from './view.styles';
 
 const { P } = Typography;
@@ -81,11 +82,11 @@ export class View extends PureComponent {
 
   formatMessage = value => this.props.intl.formatMessage(value);
 
-  handleGoToProjectsList = () => this.props.history.push('/project/list');
+  handleGoTo = to => () => (to ? this.props.history.push(to) : null);
 
-  renderStatistic = ({ header, value }, index) => (
+  renderStatistic = ({ header, value, to }, index) => (
     <CardWrapper key={index}>
-      <Card headerComponent={header}>
+      <Card headerComponent={header} onClick={this.handleGoTo(to)} customStyles={statisticsCardStyles}>
         <CardValue>{value}</CardValue>
       </Card>
     </CardWrapper>
@@ -103,9 +104,13 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = (_, { editors, dataSources = [], owner, slug, created, charts, pages } = {}) => {
+  renderProject = (_, { id: projectId, editors, dataSources = [], owner, slug, created, charts, pages } = {}) => {
     const statistics = [
-      { header: this.formatMessage(messages.dataSources), value: this.countItems(dataSources) },
+      {
+        header: this.formatMessage(messages.dataSources),
+        value: this.countItems(dataSources),
+        to: `/project/view/${projectId}/datasource`,
+      },
       { header: this.formatMessage(messages.charts), value: this.countItems(charts) },
       { header: this.formatMessage(messages.pages), value: this.countItems(pages) },
       { header: this.formatMessage(messages.users), value: this.countItems(editors) },
@@ -155,7 +160,7 @@ export class View extends PureComponent {
         <Helmet title={title} />
         <TopHeader {...topHeaderConfig} />
         {content}
-        <Button onClick={this.handleGoToProjectsList} customStyles={buttonStyles}>
+        <Button onClick={this.handleGoTo('/project/list')} customStyles={buttonStyles}>
           <Icons.ArrowLeftIcon />
         </Button>
       </Container>

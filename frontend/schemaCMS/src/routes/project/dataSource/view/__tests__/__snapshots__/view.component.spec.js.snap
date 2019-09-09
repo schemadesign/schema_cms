@@ -1,29 +1,185 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`View: Component should render correctly 1`] = `
+exports[`View: Component should not render any step 1`] = `
 <styled.div>
-  <TopHeader />
-  <Source
-    dataSource={Object {}}
+  <TopHeader
+    headerTitle="name"
   />
-  <PillButtons
-    onLeftClick={[Function]}
-    onRightClick={[Function]}
-  />
-  <styled.div>
-    <Stepper
-      activeStep={1}
-      customDotStyles={Object {}}
-      customStyles={
+  <form
+    onSubmit={[Function]}
+  >
+    <PillButtons
+      leftButtonProps={
         Object {
-          "margin": "0 auto",
-          "pointerEvents": "none",
+          "onClick": [Function],
+          "title": undefined,
         }
       }
-      handleStep={[Function]}
-      onStepChange={[Function]}
-      steps={6}
+      rightButtonProps={
+        Object {
+          "disabled": true,
+          "onClick": [Function],
+          "title": undefined,
+        }
+      }
     />
-  </styled.div>
+    <styled.div>
+      <Stepper
+        activeStep={0}
+        customDotStyles={Object {}}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+            "pointerEvents": "none",
+          }
+        }
+        handleStep={[Function]}
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </form>
+</styled.div>
+`;
+
+exports[`View: Component should not render content 1`] = `<styled.div />`;
+
+exports[`View: Component should render draft 1`] = `
+<styled.div>
+  <TopHeader />
+  <form
+    onSubmit={[Function]}
+  >
+    <Source
+      dataSource={Object {}}
+      fetchDataSource={[Function]}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "1",
+          },
+        }
+      }
+      onChange={[Function]}
+      setFieldValue={[Function]}
+      unmountDataSource={[Function]}
+      values={
+        Object {
+          "id": "id",
+          "status": "draft",
+        }
+      }
+    />
+    <PillButtons
+      leftButtonProps={
+        Object {
+          "onClick": [Function],
+          "title": undefined,
+        }
+      }
+      rightButtonProps={
+        Object {
+          "disabled": true,
+          "onClick": [Function],
+          "title": undefined,
+        }
+      }
+    />
+    <styled.div>
+      <Stepper
+        activeStep={1}
+        customDotStyles={Object {}}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+            "pointerEvents": "none",
+          }
+        }
+        handleStep={[Function]}
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </form>
+</styled.div>
+`;
+
+exports[`View: Component should render source step 1`] = `
+<styled.div>
+  <TopHeader
+    headerTitle="name"
+  />
+  <form
+    onSubmit={[Function]}
+  >
+    <Source
+      dataSource={Object {}}
+      fetchDataSource={[Function]}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "1",
+          },
+        }
+      }
+      onChange={[Function]}
+      setFieldValue={[Function]}
+      unmountDataSource={[Function]}
+      values={
+        Object {
+          "id": "id",
+          "name": "name",
+        }
+      }
+    />
+    <PillButtons
+      leftButtonProps={
+        Object {
+          "onClick": [Function],
+          "title": undefined,
+        }
+      }
+      rightButtonProps={
+        Object {
+          "disabled": true,
+          "onClick": [Function],
+          "title": undefined,
+        }
+      }
+    />
+    <styled.div>
+      <Stepper
+        activeStep={1}
+        customDotStyles={Object {}}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+            "pointerEvents": "none",
+          }
+        }
+        handleStep={[Function]}
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </form>
 </styled.div>
 `;

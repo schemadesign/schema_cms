@@ -2,15 +2,20 @@
 
 exports[`Source: Component should render correctly 1`] = `
 <styled.div>
-  <TextField
-    customInputStyles={Object {}}
-    customLabelStyles={Object {}}
-    defaultValue="My New Dataset"
-    error={false}
+  <TextInput
+    dataSource={Object {}}
+    errors={Object {}}
     fullWidth={true}
-    label="Name"
-    name="Name"
-    type="text"
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    name="name"
+    onChange={[Function]}
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value=""
   />
   <Label
     customStyles={
@@ -19,7 +24,11 @@ exports[`Source: Component should render correctly 1`] = `
       }
     }
   >
-    Source
+    <FormattedMessage
+      defaultMessage="Source"
+      id="dataSource.view.source.source"
+      values={Object {}}
+    />
   </Label>
   <RadioGroup
     customCheckedStyles={Object {}}
@@ -36,14 +45,12 @@ exports[`Source: Component should render correctly 1`] = `
         "marginBottom": "40px",
       }
     }
-    name="dataSourceType"
+    name="type"
     onChange={[Function]}
-    value=""
   >
     <RadioButton
-      id="csv"
-      label="Csv"
-      value="csv"
+      id="file"
+      value="file"
     >
       <Button
         customStyles={
@@ -61,5 +68,105 @@ exports[`Source: Component should render correctly 1`] = `
       </Button>
     </RadioButton>
   </RadioGroup>
+</styled.div>
+`;
+
+exports[`Source: Component should render file uploader 1`] = `
+<styled.div>
+  <TextInput
+    dataSource={Object {}}
+    errors={Object {}}
+    fullWidth={true}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    name="name"
+    onChange={[Function]}
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value=""
+  />
+  <Label
+    customStyles={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <FormattedMessage
+      defaultMessage="Source"
+      id="dataSource.view.source.source"
+      values={Object {}}
+    />
+  </Label>
+  <RadioGroup
+    customCheckedStyles={Object {}}
+    customLabelStyles={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "width": 96,
+      }
+    }
+    customStyles={
+      Object {
+        "marginBottom": "40px",
+      }
+    }
+    name="type"
+    onChange={[Function]}
+    value="file"
+  >
+    <RadioButton
+      id="file"
+      value="file"
+    >
+      <Button
+        customStyles={
+          Object {
+            "backgroundColor": "#1D1D20",
+            "height": 96,
+            "marginBottom": 10,
+            "pointerEvents": "none",
+            "width": 96,
+          }
+        }
+        type="button"
+      >
+        <CsvIcon />
+      </Button>
+    </RadioButton>
+  </RadioGroup>
+  <FileUpload
+    accept=".csv,.tsv"
+    iconComponent={
+      <div
+        style={
+          Object {
+            "backgroundColor": "#f0efef",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#1d1d20",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": 0,
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+          }
+        }
+      >
+        <UploadIcon />
+      </div>
+    }
+    id="fileUpload"
+    name="file"
+    onChange={[Function]}
+    type="file"
+  />
 </styled.div>
 `;
