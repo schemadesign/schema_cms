@@ -375,6 +375,7 @@ exports[`Storyshots UserProfile Default 1`] = `
           Email
         </label>
         <input
+          disabled={true}
           handleChange={[Function]}
           handleSubmit={[Function]}
           id="email"
@@ -385,6 +386,7 @@ exports[`Storyshots UserProfile Default 1`] = `
           }
           name="email"
           onChange={[Function]}
+          readOnly={true}
           style={
             Object {
               "backgroundColor": "transparent",
@@ -416,6 +418,25 @@ exports[`Storyshots UserProfile Default 1`] = `
         />
       </div>
     </div>
+    <button
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+    >
+      Save
+    </button>
   </form>
 </div>
 `;

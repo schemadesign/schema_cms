@@ -6,3 +6,4 @@ export const ME_PATH = '/users/me';
 export const PROJECTS_PATH = '/projects';
 export const DATA_SOURCE_PATH = '/datasources';
 export const PREVIEW_PATH = '/preview';
+export const RESET_PASSWORD_PATH = `${ME_PATH}/reset-password`;

@@ -22,7 +22,7 @@ export class PreviewTable extends PureComponent {
     const columnsIds = Object.keys(this.props.fields);
     const rowsData = [];
 
-    this.props.data.forEach((data, index) => {
+    this.props.data.forEach(data => {
       const row = [];
 
       columnsIds.forEach(name => {

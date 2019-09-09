@@ -10,8 +10,11 @@ import { injectIntl } from 'react-intl';
 import { Create } from './create.component';
 import { INITIAL_VALUES, PROJECT_SCHEMA, CREATE_PROJECT_FORM } from '../../../modules/project/project.constants';
 import { ProjectRoutines } from '../../../modules/project/project.redux';
+import { selectUserData } from '../../../modules/userProfile';
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectUserData,
+});
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -32,7 +35,11 @@ export default compose(
   withFormik({
     displayName: CREATE_PROJECT_FORM,
     isInitialValid: true,
-    mapPropsToValues: () => INITIAL_VALUES,
+    enableReinitialize: true,
+    mapPropsToValues: ({ currentUser: { firstName, lastName } }) => ({
+      ...INITIAL_VALUES,
+      owner: `${firstName} ${lastName}`,
+    }),
     validationSchema: () => PROJECT_SCHEMA,
     handleSubmit: async (data, { props, ...formik }) => {
       try {

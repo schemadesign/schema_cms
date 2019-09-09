@@ -5,17 +5,20 @@ import browserHistory from '../shared/utils/history';
 import App from './app.container';
 import AuthRoute from './authRoute/authRoute.container';
 import JWT from './jwt/jwt.container';
-import { Home } from './home';
 import { NotFound } from './notFound';
 import { AUTH_PATH } from '../shared/utils/api.constants';
 import { Project } from './project';
 import { UserProfile } from './userProfile';
+import { ResetPassword } from './resetPassword';
+import { Logout } from './logout';
 
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
   USER_PROFILE: '/settings',
   PROJECT: '/project',
+  RESET_PASSWORD: '/reset-password',
+  LOGOUT: '/logout',
 };
 
 export default class RootContainer extends Component {
@@ -26,11 +29,15 @@ export default class RootContainer extends Component {
 
         <App>
           <Switch>
-            <AuthRoute exact path={ROUTES.HOME} component={Home} />
+            <AuthRoute exact path={ROUTES.HOME} render={() => <Redirect to={ROUTES.PROJECT} />} />
 
             <AuthRoute path={ROUTES.PROJECT} component={Project} />
 
             <AuthRoute path={ROUTES.USER_PROFILE} component={UserProfile} />
+
+            <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
+
+            <AuthRoute path={ROUTES.LOGOUT} component={Logout} />
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
