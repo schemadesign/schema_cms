@@ -69,6 +69,36 @@ class TestUpdateExternalId:
         assert user.is_active is True
 
 
+class TestUpdateUserFullName:
+    def test_without_user(self, strategy):
+        assert pipeline.update_user_full_name(strategy, {}, user=None) is None
+
+    @pytest.mark.parametrize("details", [dict(first_name="Test"), dict(last_name="Test"), dict()])
+    def test_without_first_or_last_name(self, faker, strategy, user_factory, details):
+        user = user_factory(first_name=faker.first_name(), last_name=faker.last_name())
+
+        pipeline.update_user_full_name(strategy, details, user=user)
+
+        assert not strategy.storage.user.changed.called
+
+    def test_user_with_name(self, faker, strategy, user_factory):
+        user = user_factory(first_name=faker.first_name(), last_name=faker.last_name())
+
+        pipeline.update_user_full_name(
+            strategy, dict(first_name=faker.first_name(), last_name=faker.last_name()), user=user
+        )
+
+        assert not strategy.storage.user.changed.called
+
+    def test_change_name(self, faker, strategy, user_factory):
+        user = user_factory(first_name="", last_name="")
+        details = dict(first_name=faker.first_name(), last_name=faker.last_name())
+
+        pipeline.update_user_full_name(strategy, details, user=user)
+
+        assert strategy.storage.user.changed.called
+
+
 class TestRedirectWithToken:
     @pytest.mark.parametrize(
         "session_dict, expected_location_template",

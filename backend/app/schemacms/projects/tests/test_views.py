@@ -131,9 +131,9 @@ class TestRetrieveUpdateDeleteProjectView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
-    def test_meta_data_sources(self, api_client, faker, mocker, admin, project):
-        expected = faker.pyint(min_value=0, max_value=10)
-        mocker.patch("schemacms.projects.models.Project.data_source_count", expected)
+    def test_meta_data_sources(self, api_client, faker, admin, project, data_source_factory):
+        expected = faker.pyint(min_value=0, max_value=3)
+        data_source_factory.create_batch(expected, project=project)
         api_client.force_authenticate(admin)
 
         response = api_client.get(self.get_url(project.pk))
