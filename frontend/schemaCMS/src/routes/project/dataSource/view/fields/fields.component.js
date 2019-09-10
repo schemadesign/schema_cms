@@ -6,6 +6,7 @@ import { isEmpty } from 'ramda';
 
 import { Loader } from '../../../../../shared/components/loader';
 import { PreviewTable } from './previewTable';
+import { Details } from './details';
 import messages from './fields.messages';
 import {
   Container,
@@ -37,17 +38,26 @@ export class Fields extends PureComponent {
   state = {
     step: INITIAL_STEP,
     countFields: INITIAL_STEP,
+    fieldsIds: [],
   };
 
   componentDidMount() {
     const { projectId, dataSourceId } = this.props.match.params;
 
     this.props.fetchFields({ projectId, dataSourceId });
-    this.updateCount();
   }
 
   componentDidUpdate() {
-    this.updateCount();
+    if (!this.isLoading() && !this.state.fieldsIds.length) {
+      this.setState((state, props) => {
+        const fieldsIds = Object.keys(props.fields);
+
+        return {
+          countFields: fieldsIds.length,
+          fieldsIds: [null, ...fieldsIds],
+        };
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -55,12 +65,6 @@ export class Fields extends PureComponent {
   }
 
   isLoading = () => isEmpty(this.props.fields);
-
-  updateCount = () => {
-    this.setState((state, props) => ({
-      countFields: Object.keys(props.fields).length,
-    }));
-  };
 
   handleNavigation = direction => {
     const { step, countFields } = this.state;
@@ -112,7 +116,11 @@ export class Fields extends PureComponent {
   }
 
   renderFieldDetails() {
-    return <Content>{this.state.step} Field data</Content>;
+    const { step, fieldsIds } = this.state;
+    const id = fieldsIds[step];
+    const fieldData = this.props.fields[id];
+
+    return <Details id={id} data={fieldData} />;
   }
 
   renderContent() {
