@@ -11,7 +11,7 @@ const defaultProps = {
   handleSubmit: Function.prototype,
   setFieldValue: Function.prototype,
   intl: {
-    formatMessage: Function.prototype,
+    formatMessage: ({ defaultMessage }) => defaultMessage,
   },
   values: {},
   match: {

@@ -23,7 +23,27 @@ export default defineMessages({
     defaultMessage: 'Loading...',
   },
   draft: {
-    id: 'dataSource.list.process',
+    id: 'dataSource.list.draft',
     defaultMessage: 'Draft',
+  },
+  source: {
+    id: 'dataSource.list.source',
+    defaultMessage: 'Source',
+  },
+  items: {
+    id: 'dataSource.list.items',
+    defaultMessage: 'Items',
+  },
+  fields: {
+    id: 'dataSource.list.fields',
+    defaultMessage: 'Fields',
+  },
+  filters: {
+    id: 'dataSource.list.filters',
+    defaultMessage: 'Filters',
+  },
+  views: {
+    id: 'dataSource.list.views',
+    defaultMessage: 'Views',
   },
 });

@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Theme } from 'schemaUI';
+import { styleWhenTrue } from '../../../../shared/utils/rendering';
 
 export const Container = styled.div`
   margin: 0 20px 60px 20px;
@@ -46,16 +47,20 @@ export const MetaDataName = styled.span`
   font-size: 12px;
   margin-bottom: 10px;
 `;
+
+const lockStyles = styleWhenTrue(
+  ({ isLock }) => isLock,
+  css`
+    color: ${Theme.primary.label};
+  `
+);
+
 export const MetaDataValue = styled.span`
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
 
-  ${({ isLock }) =>
-    isLock &&
-    css`
-      color: ${Theme.primary.label};
-    `}
+  ${lockStyles}
 `;
 
 export const Header = styled.div`

@@ -18,19 +18,19 @@ describe('List: Component', () => {
       },
     },
     intl: {
-      formatMessage: Function.prototype,
+      formatMessage: ({ defaultMessage }) => defaultMessage,
     },
   };
 
   const dataSource = {
     created: '2019-09-09T11:23:40+0000',
-    createdBy: { firstName: 'Rafał', lastName: 'Gruszecki' },
+    createdBy: { firstName: 'firstName', lastName: 'lastName' },
     id: 17,
     metaData: {
       fields: 11,
       items: 246,
     },
-    name: 'My New Data Source #bDxb',
+    name: 'name',
     status: 'done',
   };
 

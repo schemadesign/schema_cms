@@ -9,10 +9,7 @@ import { Source } from './source';
 import { PillButtons } from '../../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { TopHeader } from '../../../../shared/components/topHeader';
-import { STATUS_DRAFT } from '../../../../modules/dataSource/dataSource.constants';
-
-const MAX_STEPS = 6;
-const INITIAL_STEP = 1;
+import { STATUS_DRAFT, INITIAL_STEP, MAX_STEPS } from '../../../../modules/dataSource/dataSource.constants';
 
 export class View extends PureComponent {
   static propTypes = {

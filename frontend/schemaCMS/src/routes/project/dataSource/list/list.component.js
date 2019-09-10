@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Button, Card, Icons, Typography } from 'schemaUI';
-import { always, cond, equals } from 'ramda';
+import { always, cond, equals, ifElse } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../../shared/components/topHeader';
@@ -26,6 +26,8 @@ import messages from './list.messages';
 import extendedDayjs from '../../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../../list/list.styles';
 import {
+  FIELDS_STEP,
+  INITIAL_STEP,
   STATUS_DONE,
   STATUS_DRAFT,
   STATUS_ERROR,
@@ -35,6 +37,7 @@ import { renderWhenTrue } from '../../../../shared/utils/rendering';
 
 const { H1 } = Typography;
 const { PlusIcon, CsvIcon, IntersectIcon } = Icons;
+const DEFAULT_VALUE = '—';
 
 export class List extends PureComponent {
   static propTypes = {
@@ -67,6 +70,8 @@ export class List extends PureComponent {
     ],
   });
 
+  getStep = ifElse(equals(STATUS_DRAFT), always(INITIAL_STEP), always(FIELDS_STEP));
+
   handleCreateDataSource = () => {
     const projectId = this.props.match.params.projectId;
 
@@ -74,90 +79,82 @@ export class List extends PureComponent {
   };
 
   handleShowDataSource = ({ id, status }) => {
-    const step = status === STATUS_DRAFT ? 1 : 2;
+    if (status === STATUS_PROCESSING) {
+      return;
+    }
+
+    const step = this.getStep(status);
 
     this.props.history.push(`/project/view/${this.props.match.params.projectId}/dataSource/view/${id}/${step}`);
   };
 
-  renderHeader = (list = [], status) =>
+  renderCreatedInformation = list => (
+    <Header>
+      <HeaderList>
+        {list.map((item, index) => (
+          <HeaderItem key={index}>{item}</HeaderItem>
+        ))}
+      </HeaderList>
+      <HeaderIcon>
+        <IntersectIcon />
+      </HeaderIcon>
+    </Header>
+  );
+
+  renderErrorMessage = () => <FormattedMessage {...messages.error} />;
+  renderProcessingMessage = () => <FormattedMessage {...messages.processing} />;
+  renderDraftMessage = () => <FormattedMessage {...messages.draft} />;
+
+  renderHeader = (status, list) =>
     cond([
-      [
-        equals(STATUS_DONE),
-        always(
-          <Header>
-            <HeaderList>
-              {list.map((item, index) => (
-                <HeaderItem key={index}>{item}</HeaderItem>
-              ))}
-            </HeaderList>
-            <HeaderIcon>
-              <IntersectIcon />
-            </HeaderIcon>
-          </Header>
-        ),
-      ],
-      [equals(STATUS_ERROR), always(<FormattedMessage {...messages.error} />)],
-      [equals(STATUS_PROCESSING), always(<FormattedMessage {...messages.processing} />)],
-      [equals(STATUS_DRAFT), always(<FormattedMessage {...messages.draft} />)],
+      [equals(STATUS_DONE), () => this.renderCreatedInformation(list)],
+      [equals(STATUS_ERROR), this.renderErrorMessage],
+      [equals(STATUS_PROCESSING), this.renderProcessingMessage],
+      [equals(STATUS_DRAFT), this.renderDraftMessage],
     ])(status);
 
   renderMetaData = ({ items, fields, filters, views }, isLock, isError) =>
     renderWhenTrue(() => {
       const customIconStyles = isLock ? { ...iconSourceStyles, ...lockIconStyles } : iconSourceStyles;
+      const { formatMessage } = this.props.intl;
       const list = [
-        { name: 'Source', value: <CsvIcon customStyles={customIconStyles} /> },
-        { name: 'Items', value: items },
-        { name: 'Fields', value: fields },
-        { name: 'Filters', value: filters },
-        { name: 'Views', value: views },
+        { name: formatMessage(messages.source), value: <CsvIcon customStyles={customIconStyles} /> },
+        { name: formatMessage(messages.items), value: items },
+        { name: formatMessage(messages.fields), value: fields },
+        { name: formatMessage(messages.filters), value: filters },
+        { name: formatMessage(messages.views), value: views },
       ];
 
       const elements = list.map(({ name, value }, index) => (
         <MetaData key={index}>
           <MetaDataName>{name}</MetaDataName>
-          <MetaDataValue isLock={isLock}>{value || '—'}</MetaDataValue>
+          <MetaDataValue isLock={isLock}>{value || DEFAULT_VALUE}</MetaDataValue>
         </MetaData>
       ));
 
       return <MetaDataWrapper>{elements}</MetaDataWrapper>;
     })(!isError);
 
-  renderItem(
-    {
-      name,
-      created,
-      createdBy: { firstName, lastName },
-      id,
-      metaData,
-      status,
-    },
-    index
-  ) {
+  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status }, index) => {
     const isLock = status !== STATUS_DONE;
     const isError = status === STATUS_ERROR;
-    const isProcessing = status === STATUS_PROCESSING;
     const whenCreated = extendedDayjs(created).fromNow();
-    const header = this.renderHeader([whenCreated, `${firstName} ${lastName}`], status);
+    const header = this.renderHeader(status, [whenCreated, `${firstName} ${lastName}`]);
     const customTitleStyles = isLock ? { ...titleStyles, ...lockTextStyles } : titleStyles;
 
     return (
       <DataSourceItem key={index}>
         <Card headerComponent={header}>
-          <H1
-            customStyles={customTitleStyles}
-            onClick={() => (isProcessing ? {} : this.handleShowDataSource({ id, status }))}
-          >
+          <H1 customStyles={customTitleStyles} onClick={() => this.handleShowDataSource({ id, status })}>
             {name}
           </H1>
           {this.renderMetaData(metaData || {}, isLock, isError)}
         </Card>
       </DataSourceItem>
     );
-  }
+  };
 
-  renderList = dataSources => (
-    <DataSourceList>{dataSources.map((item, index) => this.renderItem(item, index))}</DataSourceList>
-  );
+  renderList = dataSources => <DataSourceList>{dataSources.map(this.renderItem)}</DataSourceList>;
 
   render() {
     const { dataSources = [] } = this.props;

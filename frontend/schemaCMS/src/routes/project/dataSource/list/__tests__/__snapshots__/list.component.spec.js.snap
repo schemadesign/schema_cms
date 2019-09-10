@@ -5,12 +5,15 @@ exports[`List: Component should render card with draft state 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
+    title="Data Sources"
   />
   <TopHeader
+    headerSubtitle="Overview"
+    headerTitle="Data Sources"
     secondaryMenuItems={
       Array [
         Object {
-          "label": undefined,
+          "label": "Project details",
           "to": "/project/view/1",
         },
       ]
@@ -24,7 +27,7 @@ exports[`List: Component should render card with draft state 1`] = `
         headerComponent={
           <FormattedMessage
             defaultMessage="Draft"
-            id="dataSource.list.process"
+            id="dataSource.list.draft"
             values={Object {}}
           />
         }
@@ -39,7 +42,7 @@ exports[`List: Component should render card with draft state 1`] = `
           }
           onClick={[Function]}
         >
-          My New Data Source #bDxb
+          name
         </H1>
         <styled.div>
           <styled.div
@@ -136,12 +139,15 @@ exports[`List: Component should render card with error state 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
+    title="Data Sources"
   />
   <TopHeader
+    headerSubtitle="Overview"
+    headerTitle="Data Sources"
     secondaryMenuItems={
       Array [
         Object {
-          "label": undefined,
+          "label": "Project details",
           "to": "/project/view/1",
         },
       ]
@@ -170,7 +176,7 @@ exports[`List: Component should render card with error state 1`] = `
           }
           onClick={[Function]}
         >
-          My New Data Source #bDxb
+          name
         </H1>
       </Card>
     </styled.li>
@@ -197,12 +203,15 @@ exports[`List: Component should render card with processing state 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
+    title="Data Sources"
   />
   <TopHeader
+    headerSubtitle="Overview"
+    headerTitle="Data Sources"
     secondaryMenuItems={
       Array [
         Object {
-          "label": undefined,
+          "label": "Project details",
           "to": "/project/view/1",
         },
       ]
@@ -231,7 +240,7 @@ exports[`List: Component should render card with processing state 1`] = `
           }
           onClick={[Function]}
         >
-          My New Data Source #bDxb
+          name
         </H1>
         <styled.div>
           <styled.div
@@ -328,12 +337,15 @@ exports[`List: Component should render correctly 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
+    title="Data Sources"
   />
   <TopHeader
+    headerSubtitle="Overview"
+    headerTitle="Data Sources"
     secondaryMenuItems={
       Array [
         Object {
-          "label": undefined,
+          "label": "Project details",
           "to": "/project/view/1",
         },
       ]
@@ -351,7 +363,7 @@ exports[`List: Component should render correctly 1`] = `
                 3 months ago
               </ForwardRef(styled.li)>
               <ForwardRef(styled.li)>
-                Rafał Gruszecki
+                firstName lastName
               </ForwardRef(styled.li)>
             </ForwardRef(styled.ul)>
             <ForwardRef(styled.div)>
@@ -369,7 +381,7 @@ exports[`List: Component should render correctly 1`] = `
           }
           onClick={[Function]}
         >
-          My New Data Source #bDxb
+          name
         </H1>
         <styled.div>
           <styled.div
@@ -466,12 +478,15 @@ exports[`List: Component should render empty 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
+    title="Data Sources"
   />
   <TopHeader
+    headerSubtitle="Overview"
+    headerTitle="Data Sources"
     secondaryMenuItems={
       Array [
         Object {
-          "label": undefined,
+          "label": "Project details",
           "to": "/project/view/1",
         },
       ]

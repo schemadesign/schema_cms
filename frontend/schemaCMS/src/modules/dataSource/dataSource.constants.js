@@ -15,6 +15,10 @@ export const STATUS_ERROR = 'error';
 export const STATUS_DONE = 'done';
 export const STATUS_PROCESSING = 'processing';
 
+export const INITIAL_STEP = 1;
+export const FIELDS_STEP = 2;
+export const MAX_STEPS = 6;
+
 export const IGNORED_FIELDS = ['file', 'metaData', 'fileName'];
 
 export const DATA_SOURCE_SCHEMA = Yup.object().shape({

@@ -29,7 +29,7 @@ const defaultProps = {
     },
   },
   intl: {
-    formatMessage: Function.prototype,
+    formatMessage: ({ defaultMessage }) => defaultMessage,
   },
 };
 
