@@ -26,7 +26,6 @@ export class DataSource extends PureComponent {
         <Redirect exact path={viewPath} to={`${viewPath}/${INITIAL_STEP}`} />
 
         <Route exact path={listPath} component={List} />
-
         <Route exact path={viewPathWithStep} component={View} />
       </Switch>
     );
