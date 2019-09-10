@@ -103,8 +103,8 @@ export class View extends PureComponent {
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
-      [equals(1), always(<Source {...props} />)],
-      [equals(2), always(<Fields {...props} />)],
+      [equals(INITIAL_STEP), always(<Source {...props} />)],
+      [equals(FIELDS_STEP), always(<Fields {...props} />)],
       [equals(3), always(null)],
       [equals(4), always(null)],
       [equals(5), always(null)],
