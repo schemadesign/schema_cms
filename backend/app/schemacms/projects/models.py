@@ -98,7 +98,7 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         self.save()
         self.update_meta()
 
-    def ready_to_processing(self):
+    def ready_for_processing(self):
         self.status = constants.DataSourceStatus.READY_FOR_PROCESSING
         self.save(update_fields=["status"])
 

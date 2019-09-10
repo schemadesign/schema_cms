@@ -60,7 +60,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         obj = super().update(instance=instance, validated_data=validated_data)
         if obj.file:
-            obj.ready_to_processing()
+            obj.ready_for_processing()
         return obj
 
 
