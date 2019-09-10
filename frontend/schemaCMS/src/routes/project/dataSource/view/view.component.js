@@ -74,10 +74,6 @@ export class View extends PureComponent {
   handleBackClick = () =>
     ifElse(equals(INITIAL_STEP), () => {}, () => this.handleStepChange(this.state.activeStep - 1));
 
-  handleNextClick = () => {
-    ifElse(equals(MAX_STEPS), () => {}, () => this.handleStepChange(this.state.activeStep + 1));
-  };
-
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
       [equals(1), always(<Source {...props} />)],
@@ -125,9 +121,8 @@ export class View extends PureComponent {
             }}
             rightButtonProps={{
               title: intl.formatMessage(messages.next),
-              // onClick: handleSubmit,
-              onClick: this.handleNextClick,
-              // disabled: !(values.file || dataSource.file),
+              onClick: handleSubmit,
+              disabled: !(values.file || dataSource.file),
             }}
           />
           <StepperContainer>
