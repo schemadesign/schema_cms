@@ -1,3 +1,4 @@
+import django_fsm
 from django.db import transaction
 from rest_framework import serializers
 
@@ -59,7 +60,8 @@ class DataSourceSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def update(self, instance, validated_data):
         obj = super().update(instance=instance, validated_data=validated_data)
-        if obj.file:
+        user = self.context["request"].user
+        if django_fsm.has_transition_perm(obj.ready_for_processing, user):
             obj.ready_for_processing()
         return obj
 
