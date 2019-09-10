@@ -14,6 +14,7 @@ export const STATUS_DRAFT = 'draft';
 export const STATUS_ERROR = 'error';
 export const STATUS_DONE = 'done';
 export const STATUS_PROCESSING = 'processing';
+export const STATUS_READY_FOR_PROCESSING = 'ready_for_processing';
 
 export const INITIAL_STEP = 1;
 export const FIELDS_STEP = 2;

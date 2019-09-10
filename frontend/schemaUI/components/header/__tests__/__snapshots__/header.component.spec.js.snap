@@ -24,7 +24,6 @@ exports[`Header: Component should render correctly 1`] = `
         "top": 6,
       }
     }
-    onClick={[Function]}
   >
     <MenuIcon />
   </Button>
@@ -56,7 +55,6 @@ exports[`Header: Component should render with children and custom styles 1`] = `
         "top": 6,
       }
     }
-    onClick={[Function]}
   >
     icon
   </Button>

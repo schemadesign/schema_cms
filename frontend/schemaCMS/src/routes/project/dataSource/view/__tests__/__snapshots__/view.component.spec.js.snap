@@ -43,7 +43,6 @@ exports[`View: Component should not render any step 1`] = `
         customStyles={
           Object {
             "margin": "0 auto",
-            "pointerEvents": "none",
           }
         }
         handleStep={[Function]}
@@ -135,7 +134,6 @@ exports[`View: Component should render draft 1`] = `
         customStyles={
           Object {
             "margin": "0 auto",
-            "pointerEvents": "none",
           }
         }
         handleStep={[Function]}
@@ -226,7 +224,6 @@ exports[`View: Component should render second step 1`] = `
         customStyles={
           Object {
             "margin": "0 auto",
-            "pointerEvents": "none",
           }
         }
         handleStep={[Function]}
@@ -316,7 +313,6 @@ exports[`View: Component should render source step 1`] = `
         customStyles={
           Object {
             "margin": "0 auto",
-            "pointerEvents": "none",
           }
         }
         handleStep={[Function]}

@@ -12,6 +12,7 @@ export class Header extends PureComponent {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     iconComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     onButtonClick: PropTypes.func,
+    buttonProps: PropTypes.object,
   };
 
   static defaultProps = {
@@ -19,14 +20,15 @@ export class Header extends PureComponent {
     onButtonClick: () => {},
     customStyles: {},
     customButtonStyles: {},
+    buttonProps: {},
   };
 
   renderIcon = () => {
-    const { onButtonClick, iconComponent, customButtonStyles } = this.props;
+    const { iconComponent, customButtonStyles, buttonProps } = this.props;
     const styles = { ...buttonStyles, ...customButtonStyles };
 
     return (
-      <Button customStyles={styles} onClick={onButtonClick}>
+      <Button customStyles={styles} {...buttonProps}>
         {iconComponent}
       </Button>
     );

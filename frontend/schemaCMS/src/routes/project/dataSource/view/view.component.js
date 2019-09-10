@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Stepper } from 'schemaUI';
 import { always, cond, equals, T } from 'ramda';
 
-import { Container, StepperContainer, stepperStyles } from './view.styles';
+import { Container, StepperContainer, stepperStyles, stepperBlockStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
 import { Fields } from './fields';
@@ -39,8 +39,6 @@ export class View extends PureComponent {
       }).isRequired,
     }).isRequired,
   };
-
-  state = { steps: MAX_STEPS };
 
   componentDidMount() {
     if (!this.props.values.id) {
@@ -113,7 +111,6 @@ export class View extends PureComponent {
     ])(activeStep);
 
   renderContent = renderWhenTrue(() => {
-    const { steps } = this.state;
     const {
       handleSubmit,
       values,
@@ -136,6 +133,8 @@ export class View extends PureComponent {
       onClick: this.handleBackClick,
     };
     const leftButtonProps = activeStep === INITIAL_STEP ? cancelProps : backProps;
+    const customStepperStyles =
+      dataSource.status === STATUS_DRAFT ? { ...stepperStyles, ...stepperBlockStyles } : stepperStyles;
 
     return (
       <Fragment>
@@ -161,8 +160,8 @@ export class View extends PureComponent {
           <StepperContainer>
             <Stepper
               activeStep={activeStep}
-              steps={steps}
-              customStyles={stepperStyles}
+              steps={MAX_STEPS}
+              customStyles={customStepperStyles}
               onStepChange={this.handleStepChange}
             />
           </StepperContainer>

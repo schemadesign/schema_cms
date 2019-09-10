@@ -29,14 +29,14 @@ describe('Header: Component', () => {
   });
 
   it('should call onButtonClick prop on button click if component is provided', () => {
-    const onButtonClick = jest.fn();
+    const onClick = jest.fn();
     const props = {
-      onButtonClick,
+      buttonProps: { onClick },
     };
     const wrapper = render(props);
 
     wrapper.find(Button).simulate('click');
 
-    global.expect(props.onButtonClick).toHaveBeenCalled();
+    global.expect(props.buttonProps.onClick).toHaveBeenCalled();
   });
 });
