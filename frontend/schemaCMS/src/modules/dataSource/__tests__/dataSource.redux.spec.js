@@ -7,6 +7,8 @@ describe('DataSource: redux', () => {
   const defaultState = Immutable({
     dataSource: {},
     dataSources: [],
+    fields: {},
+    previewTable: [],
   });
 
   describe('reducer', () => {
@@ -82,6 +84,25 @@ describe('DataSource: redux', () => {
       const resultState = dataSourceReducer(defaultState, DataSourceRoutines.unmountOne.success());
 
       expect(resultState.dataSource).to.deep.equal({});
+    });
+  });
+
+  describe('when FETCH_FIELDS/SUCCESS action is received', () => {
+    it('should set fields and previewTable ', () => {
+      const data = [{ fields: { id: {}, data: [{ id: '1' }] } }];
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchFields.success(data));
+
+      expect(resultState.fields).to.deep.equal(data.fields);
+      expect(resultState.previewTable).to.deep.equal(data.data);
+    });
+  });
+
+  describe('when UNMOUNT_FIEDLS/SUCCESS action is received', () => {
+    it('should unmount fields and previewTable ', () => {
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.unmountFields.success());
+
+      expect(resultState.fields).to.deep.equal(defaultState.fields);
+      expect(resultState.previewTable).to.deep.equal(defaultState.previewTable);
     });
   });
 });

@@ -6,10 +6,16 @@ import { always, cond, equals, T } from 'ramda';
 import { Container, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
+import { Fields } from './fields';
 import { PillButtons } from '../../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { TopHeader } from '../../../../shared/components/topHeader';
-import { STATUS_DRAFT, INITIAL_STEP, MAX_STEPS } from '../../../../modules/dataSource/dataSource.constants';
+import {
+  STATUS_DRAFT,
+  INITIAL_STEP,
+  MAX_STEPS,
+  FIELDS_STEP,
+} from '../../../../modules/dataSource/dataSource.constants';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -51,10 +57,9 @@ export class View extends PureComponent {
   getTitle = intl =>
     this.props.values.status === STATUS_DRAFT ? intl.formatMessage(messages.title) : this.props.values.name;
 
-  getHeaderAndMenuConfig = intl => ({
-    headerTitle: this.getTitle(intl),
-    headerSubtitle: intl.formatMessage(messages.subTitle),
-    secondaryMenuItems: [
+  getHeaderAndMenuConfig = (intl, activeStep) => {
+    const headerTitle = this.getTitle(intl);
+    const secondaryMenuItems = [
       {
         label: this.props.intl.formatMessage(messages.dataSourceList),
         to: `/project/view/${this.props.match.params.projectId}/datasource/list`,
@@ -63,8 +68,22 @@ export class View extends PureComponent {
         label: this.props.intl.formatMessage(messages.removeDataSource),
         onClick: () => this.props.removeDataSource(this.props.match.params),
       },
-    ],
-  });
+    ];
+
+    if (activeStep === FIELDS_STEP) {
+      return {
+        headerTitle,
+        headerSubtitle: intl.formatMessage(messages.fields),
+        secondaryMenuItems,
+      };
+    }
+
+    return {
+      headerTitle,
+      headerSubtitle: intl.formatMessage(messages.source),
+      secondaryMenuItems,
+    };
+  };
 
   handleStepChange = step => {
     const {
@@ -84,8 +103,8 @@ export class View extends PureComponent {
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
-      [equals(1), always(<Source {...props} />)],
-      [equals(2), always(null)],
+      [equals(INITIAL_STEP), always(<Source {...props} />)],
+      [equals(FIELDS_STEP), always(<Fields {...props} />)],
       [equals(3), always(null)],
       [equals(4), always(null)],
       [equals(5), always(null)],
@@ -107,7 +126,7 @@ export class View extends PureComponent {
       },
     } = this.props;
     const activeStep = parseInt(step, 10);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
+    const topHeaderConfig = this.getHeaderAndMenuConfig(intl, activeStep);
     const cancelProps = {
       title: intl.formatMessage(messages.cancel),
       onClick: this.handleCancelClick,

@@ -12,3 +12,13 @@ export const selectDataSources = createSelector(
   selectDataSourceDomain,
   prop('dataSources')
 );
+
+export const selectFields = createSelector(
+  selectDataSourceDomain,
+  prop('fields')
+);
+
+export const selectPreviewTable = createSelector(
+  selectDataSourceDomain,
+  prop('previewTable')
+);

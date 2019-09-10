@@ -4,7 +4,7 @@ import { pipe, forEach, keys } from 'ramda';
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
-import { DATA_SOURCE_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
+import { DATA_SOURCE_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 
 function* create({ payload }) {
   try {
@@ -103,6 +103,21 @@ function* processOne({ payload: { projectId, dataSourceId } }) {
   }
 }
 
+function* fetchFields({ payload }) {
+  try {
+    yield put(DataSourceRoutines.fetchOne.request());
+
+    const { projectId, dataSourceId } = payload;
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}${PREVIEW_PATH}`);
+
+    yield put(DataSourceRoutines.fetchFields.success(data));
+  } catch (error) {
+    yield put(DataSourceRoutines.fetchFields.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.fetchFields.fulfill());
+  }
+}
+
 export function* watchDataSource() {
   yield all([
     takeLatest(DataSourceRoutines.create.TRIGGER, create),
@@ -111,5 +126,6 @@ export function* watchDataSource() {
     takeLatest(DataSourceRoutines.updateOne.TRIGGER, updateOne),
     takeLatest(DataSourceRoutines.processOne.TRIGGER, processOne),
     takeLatest(DataSourceRoutines.fetchList.TRIGGER, fetchList),
+    takeLatest(DataSourceRoutines.fetchFields.TRIGGER, fetchFields),
   ]);
 }
