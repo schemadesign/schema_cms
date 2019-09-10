@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { tableProps } from './previewTable/previewTable.stories';
 import { Fields } from './fields.component';
 
-const defaultProps = {
+export const defaultProps = {
   fields: tableProps.fields,
   previewTable: tableProps.data,
   fetchFields: Function.prototype,

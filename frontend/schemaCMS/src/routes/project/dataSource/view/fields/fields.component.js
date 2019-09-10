@@ -7,7 +7,7 @@ import { isEmpty } from 'ramda';
 import { Loader } from '../../../../../shared/components/loader';
 import { PreviewTable } from './previewTable';
 import messages from './fields.messages';
-import { Container, Navigation, NavigationLabel, Content } from './fields.styles';
+import { Container, Navigation, NavigationLabel, NavigationButton, Content, buttonStyles } from './fields.styles';
 
 const INITIAL_STEP = 0;
 
@@ -69,12 +69,6 @@ export class Fields extends PureComponent {
 
   handleNextStep = () => this.handleNavigation(1);
 
-  renderTable() {
-    const { fields, previewTable } = this.props;
-
-    return <PreviewTable fields={fields} data={previewTable} />;
-  }
-
   renderNavigation() {
     const { step, countFields } = this.state;
     const { intl } = this.props;
@@ -88,26 +82,36 @@ export class Fields extends PureComponent {
 
     return (
       <Navigation>
-        <Button onClick={this.handlePreviewStep} disabled={isPreviousDisabled}>
-          <Icons.ArrowLeftIcon />
-        </Button>
+        <NavigationButton>
+          <Button onClick={this.handlePreviewStep} disabled={isPreviousDisabled} customStyles={buttonStyles}>
+            <Icons.ArrowLeftIcon />
+          </Button>
+        </NavigationButton>
         <NavigationLabel>{label}</NavigationLabel>
-        <Button onClick={this.handleNextStep} disabled={isNextDisabled}>
-          <Icons.ArrowRightIcon />
-        </Button>
+        <NavigationButton>
+          <Button onClick={this.handleNextStep} disabled={isNextDisabled} customStyles={buttonStyles}>
+            <Icons.ArrowRightIcon />
+          </Button>
+        </NavigationButton>
       </Navigation>
     );
   }
 
-  renderFieldView() {
-    return <Content>{this.state.step} Field </Content>;
+  renderTable() {
+    const { fields, previewTable } = this.props;
+
+    return <PreviewTable fields={fields} data={previewTable} />;
+  }
+
+  renderFieldDetails() {
+    return <Content>{this.state.step} Field data</Content>;
   }
 
   renderContent() {
     const { step } = this.state;
 
     const navigation = this.renderNavigation();
-    const content = step ? this.renderFieldView() : this.renderTable();
+    const content = step ? this.renderFieldDetails() : this.renderTable();
 
     return (
       <Content>
@@ -123,7 +127,6 @@ export class Fields extends PureComponent {
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-
         {content}
       </Container>
     );

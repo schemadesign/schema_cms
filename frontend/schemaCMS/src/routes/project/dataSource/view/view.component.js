@@ -10,7 +10,12 @@ import { Fields } from './fields';
 import { PillButtons } from '../../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { TopHeader } from '../../../../shared/components/topHeader';
-import { STATUS_DRAFT, INITIAL_STEP, MAX_STEPS } from '../../../../modules/dataSource/dataSource.constants';
+import {
+  STATUS_DRAFT,
+  INITIAL_STEP,
+  MAX_STEPS,
+  FIELDS_STEP,
+} from '../../../../modules/dataSource/dataSource.constants';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -48,10 +53,21 @@ export class View extends PureComponent {
   getTitle = intl =>
     this.props.values.status === STATUS_DRAFT ? intl.formatMessage(messages.title) : this.props.values.name;
 
-  getHeaderAndMenuConfig = intl => ({
-    headerTitle: this.getTitle(intl),
-    headerSubtitle: intl.formatMessage(messages.subTitle),
-  });
+  getHeaderAndMenuConfig = (intl, activeStep) => {
+    const headerTitle = this.getTitle(intl);
+
+    if (activeStep === FIELDS_STEP) {
+      return {
+        headerTitle,
+        headerSubtitle: intl.formatMessage(messages.fields),
+      };
+    }
+
+    return {
+      headerTitle,
+      headerSubtitle: intl.formatMessage(messages.source),
+    };
+  };
 
   handleStepChange = activeStep => this.setState({ activeStep });
 
@@ -87,7 +103,7 @@ export class View extends PureComponent {
       },
     } = this.props;
     const activeStep = parseInt(step, 10);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
+    const topHeaderConfig = this.getHeaderAndMenuConfig(intl, activeStep);
 
     return (
       <Fragment>
