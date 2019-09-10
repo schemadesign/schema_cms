@@ -11,6 +11,7 @@ exports[`Source: Component should render correctly 1`] = `
         "formatMessage": [Function],
       }
     }
+    label="Name"
     name="name"
     onChange={[Function]}
     setFieldValue={[Function]}
@@ -50,6 +51,7 @@ exports[`Source: Component should render correctly 1`] = `
   >
     <RadioButton
       id="file"
+      label="Spreadsheet"
       value="file"
     >
       <Button
@@ -82,6 +84,7 @@ exports[`Source: Component should render file uploader 1`] = `
         "formatMessage": [Function],
       }
     }
+    label="Name"
     name="name"
     onChange={[Function]}
     setFieldValue={[Function]}
@@ -122,6 +125,7 @@ exports[`Source: Component should render file uploader 1`] = `
   >
     <RadioButton
       id="file"
+      label="Spreadsheet"
       value="file"
     >
       <Button
@@ -142,6 +146,9 @@ exports[`Source: Component should render file uploader 1`] = `
   </RadioGroup>
   <FileUpload
     accept=".csv,.tsv"
+    customInputStyles={Object {}}
+    customLabelStyles={Object {}}
+    customStyles={Object {}}
     iconComponent={
       <div
         style={
@@ -164,6 +171,7 @@ exports[`Source: Component should render file uploader 1`] = `
       </div>
     }
     id="fileUpload"
+    label="File Name"
     name="file"
     onChange={[Function]}
     type="file"

@@ -8,7 +8,7 @@ const defaultProps = {
   onChange: Function.prototype,
   setFieldValue: Function.prototype,
   intl: {
-    formatMessage: Function.prototype,
+    formatMessage: ({ defaultMessage }) => defaultMessage,
   },
   errors: {},
   touched: {},

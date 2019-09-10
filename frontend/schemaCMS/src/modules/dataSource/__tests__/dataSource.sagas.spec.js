@@ -51,6 +51,25 @@ describe('DataSource: sagas', () => {
     });
   });
 
+  describe('fetchList', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { projectId: '1' };
+      const responseData = {
+        results: {
+          dataSource: [],
+        },
+      };
+
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`).reply(OK, responseData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchList.success(responseData.results))
+        .dispatch(DataSourceRoutines.fetchList(payload))
+        .run();
+    });
+  });
+
   describe('updateOne', () => {
     const payload = {
       projectId: '1',
