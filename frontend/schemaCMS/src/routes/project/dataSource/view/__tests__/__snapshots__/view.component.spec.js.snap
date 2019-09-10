@@ -18,7 +18,6 @@ exports[`View: Component should not render any step 1`] = `
       }
       rightButtonProps={
         Object {
-          "disabled": true,
           "onClick": [Function],
           "title": "Next",
         }
@@ -92,7 +91,6 @@ exports[`View: Component should render draft 1`] = `
       }
       rightButtonProps={
         Object {
-          "disabled": true,
           "onClick": [Function],
           "title": "Next",
         }
@@ -164,7 +162,6 @@ exports[`View: Component should render source step 1`] = `
       }
       rightButtonProps={
         Object {
-          "disabled": true,
           "onClick": [Function],
           "title": "Next",
         }
