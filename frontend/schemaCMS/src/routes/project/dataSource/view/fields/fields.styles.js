@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Theme } from 'schemaUI';
+import { identity } from 'ramda';
+import { styleWhenTrue } from '../../../../../shared/utils/rendering';
 
 export const Container = styled.div``;
 
@@ -31,3 +33,5 @@ export const buttonStyles = {
   width: 60,
   height: 60,
 };
+
+export const arrowStyles = styleWhenTrue(identity, { opacity: 0.3 }, {});

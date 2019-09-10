@@ -7,7 +7,15 @@ import { isEmpty } from 'ramda';
 import { Loader } from '../../../../../shared/components/loader';
 import { PreviewTable } from './previewTable';
 import messages from './fields.messages';
-import { Container, Navigation, NavigationLabel, NavigationButton, Content, buttonStyles } from './fields.styles';
+import {
+  Container,
+  Navigation,
+  NavigationLabel,
+  NavigationButton,
+  Content,
+  buttonStyles,
+  arrowStyles,
+} from './fields.styles';
 
 const INITIAL_STEP = 0;
 
@@ -84,13 +92,13 @@ export class Fields extends PureComponent {
       <Navigation>
         <NavigationButton>
           <Button onClick={this.handlePreviewStep} disabled={isPreviousDisabled} customStyles={buttonStyles}>
-            <Icons.ArrowLeftIcon />
+            <Icons.ArrowLeftIcon customStyles={arrowStyles(isPreviousDisabled)} />
           </Button>
         </NavigationButton>
         <NavigationLabel>{label}</NavigationLabel>
         <NavigationButton>
           <Button onClick={this.handleNextStep} disabled={isNextDisabled} customStyles={buttonStyles}>
-            <Icons.ArrowRightIcon />
+            <Icons.ArrowRightIcon customStyles={arrowStyles(isNextDisabled)} />
           </Button>
         </NavigationButton>
       </Navigation>
