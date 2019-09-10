@@ -15,16 +15,6 @@ echo "Secrets manager is up"
 } || {
     echo "DB secrets NOT set"
 }
-{
-    create_sqs_queue &&
-    echo "SQS QUEUE created"
-} || {
-    echo "SQS QUEUE NOT created"
-}
-
-WORKER_QUEUE_ARN=$(get_worker_queue_arn)
-
-echo "Worker queue ARN: $WORKER_QUEUE_ARN"
 
 {
     create_public_api_lambda &&
@@ -63,20 +53,30 @@ PARENT_RESOURCE_ID=$(get_parent_resource_id "$API_ID")
 }
 
 
-# Worker lambda installation
+# Worker lambdas installation
 
 {
-    create_worker_lambda &&
-    echo "Public API lambda function created"
+    create_worker_success_lambda &&
+    echo "Worker success lambda function created"
 } || {
-    echo "Public API lambda function NOT created"
+    echo "Worker success lambda function NOT created"
 }
 
 {
-    create_worker_lambda_event_resource "$WORKER_QUEUE_ARN" &&
-    echo "Worker lambda event source created"
+    create_worker_failure_lambda &&
+    echo "Worker failure lambda function created"
 } || {
-    echo "Worker lambda event source NOT created"
+    echo "Worker failure lambda function NOT created"
+}
+
+WORKER_SUCCESS_ARN=$(get_worker_success_lambda_arn)
+
+{
+  wait_for_stepfunctions &&
+  create_state_machine "$WORKER_STATE_MACHINE_NAME" "$WORKER_SUCCESS_ARN" &&
+  echo "Worker state machine created"
+} || {
+  echo "Worker state machine NOT created"
 }
 
 echo "LocalStack fixtures installed"

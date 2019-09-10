@@ -1,0 +1,833 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Project/View default 1`] = `
+<div
+  className="sc-cMljjf euBGcp"
+>
+  <div
+    className="sc-htpNat KtFsv"
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#1d1d20",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "padding": "18px 0",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-bxivhb bUZGRr"
+        >
+          <h2
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            Project
+          </h2>
+          <h1
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Project Name
+          </h1>
+        </div>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#1d1d20",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": 6,
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#1d1d20",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "color": "#1d1d20",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "fixed",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 9999,
+        }
+      }
+    >
+      <div
+        className="sc-ifAKCX cFlEyZ"
+      >
+        <div
+          className="sc-bxivhb bUZGRr"
+        >
+          <h2
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            Project
+          </h2>
+          <h1
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            Project Name
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-EHOje qQtBf"
+      >
+        <ul
+          className="sc-bZQynM sc-gzVnrw JqJZP"
+        >
+          <li
+            className="sc-dnqmqq sc-iwsKbI hhzTxw"
+          >
+            <a
+              href="/project/view/1/datasource"
+              onClick={[Function]}
+            >
+              Data Sources
+            </a>
+          </li>
+        </ul>
+        <ul
+          className="sc-bZQynM sc-htoDjs LPVfx"
+        >
+          <li
+            className="sc-dnqmqq sc-gZMcBi eGeHqT"
+          >
+            <a
+              href="/project/edit/1"
+              onClick={[Function]}
+            >
+              Edit Project Settings
+            </a>
+          </li>
+          <li
+            className="sc-dnqmqq sc-gZMcBi eGeHqT"
+          >
+            <a
+              href="/project/delete/1"
+              onClick={[Function]}
+            >
+              Delete Project
+            </a>
+          </li>
+          <li
+            className="sc-dnqmqq sc-gZMcBi eGeHqT"
+          >
+            <a
+              href="/logout"
+              onClick={[Function]}
+            >
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#1d1d20",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#1d1d20",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-jAaTju lfqAiA"
+  >
+    <ul
+      className="sc-Rmtcm fIVKMh"
+    >
+      <li
+        className="sc-bRBYWo jwPboL"
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "borderTop": "2px solid #1d1d20",
+              "color": "#1d1d20",
+              "cursor": "pointer",
+              "display": "flex",
+              "flexDirection": "column",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "padding": "12px 14px 14px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#a6a7aa",
+                "fontSize": "12px",
+                "marginBottom": "14px",
+              }
+            }
+          >
+            Data Sources
+          </div>
+          <span
+            className="sc-hzDkRC geBCJZ"
+          >
+            0
+          </span>
+        </div>
+      </li>
+      <li
+        className="sc-bRBYWo jwPboL"
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "borderTop": "2px solid #1d1d20",
+              "color": "#1d1d20",
+              "cursor": "pointer",
+              "display": "flex",
+              "flexDirection": "column",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "padding": "12px 14px 14px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#a6a7aa",
+                "fontSize": "12px",
+                "marginBottom": "14px",
+              }
+            }
+          >
+            Users
+          </div>
+          <span
+            className="sc-hzDkRC geBCJZ"
+          >
+            2
+          </span>
+        </div>
+      </li>
+    </ul>
+    <ul
+      className="sc-jDwBTQ gMtKyT"
+    >
+      <li
+        className="sc-gPEVay ffffzn"
+      >
+        <div
+          className="sc-iRbamj ileAug"
+        >
+          <span
+            className="sc-jlyJG gUmwxN"
+          >
+            Last Update
+          </span>
+          <span
+            className="sc-csuQGl hETpS"
+          >
+            3 months ago
+          </span>
+        </div>
+        <div
+          className="sc-gipzik bTNgqE"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        className="sc-gPEVay ffffzn"
+      >
+        <div
+          className="sc-iRbamj ileAug"
+        >
+          <span
+            className="sc-jlyJG gUmwxN"
+          >
+            Status
+          </span>
+          <span
+            className="sc-csuQGl hETpS"
+          >
+            Status
+          </span>
+        </div>
+        <div
+          className="sc-gipzik bTNgqE"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        className="sc-gPEVay ffffzn"
+      >
+        <div
+          className="sc-iRbamj ileAug"
+        >
+          <span
+            className="sc-jlyJG gUmwxN"
+          >
+            Owner
+          </span>
+          <span
+            className="sc-csuQGl hETpS"
+          >
+            Firstname Lastname
+          </span>
+        </div>
+        <div
+          className="sc-gipzik bTNgqE"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        className="sc-gPEVay ffffzn"
+      >
+        <div
+          className="sc-iRbamj ileAug"
+        >
+          <span
+            className="sc-jlyJG gUmwxN"
+          >
+            Title
+          </span>
+          <span
+            className="sc-csuQGl hETpS"
+          >
+            Project Name
+          </span>
+        </div>
+        <div
+          className="sc-gipzik bTNgqE"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        className="sc-gPEVay ffffzn"
+      >
+        <div
+          className="sc-iRbamj ileAug"
+        >
+          <span
+            className="sc-jlyJG gUmwxN"
+          >
+            Description
+          </span>
+          <span
+            className="sc-csuQGl hETpS"
+          >
+            Description
+          </span>
+        </div>
+        <div
+          className="sc-gipzik bTNgqE"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        className="sc-gPEVay ffffzn"
+      >
+        <div
+          className="sc-iRbamj ileAug"
+        >
+          <span
+            className="sc-jlyJG gUmwxN"
+          >
+            API
+          </span>
+          <span
+            className="sc-csuQGl hETpS"
+          >
+            schemacms/api/project_title
+          </span>
+        </div>
+        <div
+          className="sc-gipzik bTNgqE"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "border": "none",
+        "borderRadius": "48px",
+        "color": "#1d1d20",
+        "cursor": "pointer",
+        "display": "inline-block",
+        "fontSize": "18px",
+        "height": "60px",
+        "margin": "50px 0 20px 0",
+        "minHeight": "48px",
+        "outline": "none",
+        "padding": "0",
+      }
+    }
+  >
+    <svg
+      style={
+        Object {
+          "fill": "#1d1d20",
+          "height": "60px",
+          "width": "60px",
+        }
+      }
+      viewBox="0 0 60 60"
+    >
+      <path
+        d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Project/View empty 1`] = `
+<div
+  className="sc-cMljjf euBGcp"
+>
+  <div
+    className="sc-htpNat KtFsv"
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#1d1d20",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "padding": "18px 0",
+          "width": "100%",
+        }
+      }
+    >
+      <div>
+        <div
+          className="sc-bxivhb bUZGRr"
+        >
+          <h2
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            Project
+          </h2>
+          <h1
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          />
+        </div>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#1d1d20",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": 6,
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#1d1d20",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "color": "#1d1d20",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "fixed",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 9999,
+        }
+      }
+    >
+      <div
+        className="sc-ifAKCX cFlEyZ"
+      >
+        <div
+          className="sc-bxivhb bUZGRr"
+        >
+          <h2
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            Project
+          </h2>
+          <h1
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-EHOje qQtBf"
+      >
+        <ul
+          className="sc-bZQynM sc-gzVnrw JqJZP"
+        />
+        <ul
+          className="sc-bZQynM sc-htoDjs LPVfx"
+        >
+          <li
+            className="sc-dnqmqq sc-gZMcBi eGeHqT"
+          >
+            <a
+              href="/logout"
+              onClick={[Function]}
+            >
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#1d1d20",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#1d1d20",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-jWBwVP jEtVxC"
+  >
+    <p
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "18px",
+          "fontWeight": 200,
+          "lineHeight": "1.33em",
+          "margin": 0,
+        }
+      }
+    >
+      Project doesn't exist.
+    </p>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#f0efef",
+        "border": "none",
+        "borderRadius": "48px",
+        "color": "#1d1d20",
+        "cursor": "pointer",
+        "display": "inline-block",
+        "fontSize": "18px",
+        "height": "60px",
+        "margin": "50px 0 20px 0",
+        "minHeight": "48px",
+        "outline": "none",
+        "padding": "0",
+      }
+    }
+  >
+    <svg
+      style={
+        Object {
+          "fill": "#1d1d20",
+          "height": "60px",
+          "width": "60px",
+        }
+      }
+      viewBox="0 0 60 60"
+    >
+      <path
+        d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+      />
+    </svg>
+  </button>
+</div>
+`;

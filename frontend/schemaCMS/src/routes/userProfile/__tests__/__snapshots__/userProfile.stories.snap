@@ -2,10 +2,10 @@
 
 exports[`Storyshots UserProfile Default 1`] = `
 <div
-  className="sc-jAaTju fNCBho"
+  className="sc-fBuWsC eeihxG"
 >
   <div
-    className="sc-bwzfXH uTxCW"
+    className="sc-htpNat KtFsv"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     >
       <div>
         <div
-          className="sc-htpNat KtFsv"
+          className="sc-bxivhb bUZGRr"
         >
           <h2
             style={
@@ -111,10 +111,10 @@ exports[`Storyshots UserProfile Default 1`] = `
       }
     >
       <div
-        className="sc-bxivhb bUZGRr"
+        className="sc-ifAKCX cFlEyZ"
       >
         <div
-          className="sc-htpNat KtFsv"
+          className="sc-bxivhb bUZGRr"
         >
           <h2
             style={
@@ -145,13 +145,13 @@ exports[`Storyshots UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-ifAKCX hRcsqF"
+        className="sc-EHOje qQtBf"
       >
         <ul
-          className="sc-EHOje sc-bZQynM gROTKY"
+          className="sc-bZQynM sc-gzVnrw JqJZP"
         />
         <ul
-          className="sc-EHOje sc-gzVnrw deSMic"
+          className="sc-bZQynM sc-htoDjs LPVfx"
         />
       </div>
       <button
@@ -194,11 +194,11 @@ exports[`Storyshots UserProfile Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-jDwBTQ dWtMUn"
+    className="sc-fMiknA bxZCMx"
     onSubmit={[Function]}
   >
     <div
-      className="sc-gZMcBi giNnHm"
+      className="sc-gqjmRU hnZXkc"
     >
       <div
         style={
@@ -271,7 +271,7 @@ exports[`Storyshots UserProfile Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-gZMcBi giNnHm"
+      className="sc-gqjmRU hnZXkc"
     >
       <div
         style={
@@ -344,7 +344,7 @@ exports[`Storyshots UserProfile Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-gZMcBi giNnHm"
+      className="sc-gqjmRU hnZXkc"
     >
       <div
         style={
@@ -438,5 +438,19 @@ exports[`Storyshots UserProfile Default 1`] = `
       Save
     </button>
   </form>
+  <a
+    className="sc-dVhcbM bgWvXS"
+    href="/reset-password"
+    onClick={[Function]}
+  >
+    Reset Password
+  </a>
+  <a
+    className="sc-dVhcbM bgWvXS"
+    href="/logout"
+    onClick={[Function]}
+  >
+    Log out
+  </a>
 </div>
 `;

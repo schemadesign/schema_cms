@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Logout Default 1`] = `
+<div
+  className="sc-bdVaJa bDWFJH"
+>
+  <span>
+    Loging out..
+  </span>
+</div>
+`;

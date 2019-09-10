@@ -15,7 +15,7 @@ describe('Create: Component', () => {
     handleChange: Function.prototype,
     handleSubmit: Function.prototype,
     intl: {
-      formatMessage: Function.prototype,
+      formatMessage: ({ defaultMessage }) => defaultMessage,
     },
   };
 

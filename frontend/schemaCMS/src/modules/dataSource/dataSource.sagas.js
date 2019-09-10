@@ -36,6 +36,20 @@ function* fetchOne({ payload }) {
   }
 }
 
+function* fetchList({ payload }) {
+  try {
+    yield put(DataSourceRoutines.fetchList.request());
+
+    const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`);
+
+    yield put(DataSourceRoutines.fetchList.success(data.results));
+  } catch (error) {
+    yield put(DataSourceRoutines.fetchList.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.fetchList.fulfill());
+  }
+}
+
 function* updateOne({ payload: { projectId, dataSourceId, requestData, step } }) {
   try {
     yield put(DataSourceRoutines.updateOne.request());
@@ -96,6 +110,7 @@ export function* watchDataSource() {
     takeLatest(DataSourceRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(DataSourceRoutines.updateOne.TRIGGER, updateOne),
     takeLatest(DataSourceRoutines.processOne.TRIGGER, processOne),
+    takeLatest(DataSourceRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(DataSourceRoutines.fetchFields.TRIGGER, fetchFields),
   ]);
 }

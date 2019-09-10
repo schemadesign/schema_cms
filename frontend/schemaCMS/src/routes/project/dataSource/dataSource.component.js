@@ -19,7 +19,6 @@ export class DataSource extends PureComponent {
     const listPath = `${match.path}/list`;
     const viewPath = `${match.path}/view/:dataSourceId`;
     const viewPathWithStep = `${viewPath}/:step`;
-    const fieldsPath = `${match.path}/:dataSourceId/fields`;
 
     return (
       <Switch>

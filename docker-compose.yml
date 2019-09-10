@@ -12,10 +12,10 @@ services:
   localstack:
     image: localstack/localstack:0.10.2
     ports:
-      - "4567-4584:4567-4584"
+      - "4567-4585:4567-4585"
       - "${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}"
     environment:
-      - SERVICES=sqs,secretsmanager,lambda,apigateway,cloudformation
+      - SERVICES=sqs,secretsmanager,lambda,apigateway,cloudformation,stepfunctions
       - DEBUG=${DEBUG- }
       - DATA_DIR=${DATA_DIR- }
       - PORT_WEB_UI=${PORT_WEB_UI- }

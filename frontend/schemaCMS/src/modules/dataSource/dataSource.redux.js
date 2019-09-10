@@ -7,6 +7,7 @@ const prefix = 'DATA_SOURCE/';
 export const DataSourceRoutines = {
   create: createRoutine(`${prefix}CREATE`),
   fetchOne: createRoutine(`${prefix}FETCH_ONE`),
+  fetchList: createRoutine(`${prefix}FETCH_LIST`),
   updateOne: createRoutine(`${prefix}UPDATE_ONE`),
   processOne: createRoutine(`${prefix}PROCESS_ONE`),
   unmountOne: createRoutine(`${prefix}UNMOUNT_ONE`),
@@ -22,6 +23,7 @@ export const INITIAL_STATE = new Immutable({
 });
 
 const updateDataSource = (state = INITIAL_STATE, { payload }) => state.set('dataSource', payload);
+const updateDataSources = (state = INITIAL_STATE, { payload }) => state.set('dataSources', payload);
 const unmountDataSource = (state = INITIAL_STATE) => state.set('dataSource', {});
 
 const updateFields = (state = INITIAL_STATE, { payload }) =>
@@ -34,6 +36,7 @@ export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.fetchOne.SUCCESS]: updateDataSource,
   [DataSourceRoutines.updateOne.SUCCESS]: updateDataSource,
   [DataSourceRoutines.unmountOne.TRIGGER]: unmountDataSource,
+  [DataSourceRoutines.fetchList.SUCCESS]: updateDataSources,
   [DataSourceRoutines.fetchFields.SUCCESS]: updateFields,
   [DataSourceRoutines.unmountFields.SUCCESS]: unmountFields,
 });
