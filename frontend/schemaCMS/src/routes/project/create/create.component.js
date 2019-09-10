@@ -16,12 +16,15 @@ export class Create extends PureComponent {
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
+    history: PropTypes.object,
   };
 
   getHeaderAndMenuConfig = intl => ({
     headerTitle: intl.formatMessage(messages.pageTitle),
     headerSubtitle: intl.formatMessage(messages.pageSubTitle),
   });
+
+  handleCancelClick = () => this.props.history.push('/');
 
   render() {
     const { values, handleChange, handleSubmit, intl } = this.props;
@@ -57,6 +60,9 @@ export class Create extends PureComponent {
             label={intl.formatMessage(messages.projectOwnerLabel)}
             {...this.props}
           />
+          <Button customStyles={buttonStyles} onClick={this.handleCancelClick}>
+            {intl.formatMessage(messages.cancel)}
+          </Button>
           <Button customStyles={buttonStyles}>{intl.formatMessage(messages.submit)}</Button>
         </Form>
       </Container>
