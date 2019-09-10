@@ -26,10 +26,22 @@ class DataSourceSerializer(serializers.ModelSerializer):
         read_only=True,
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
+    error_log = serializers.SerializerMethodField()
 
     class Meta:
         model = DataSource
-        fields = ("id", "name", "created_by", "type", "status", "file", "file_name", "created", "meta_data")
+        fields = (
+            "id",
+            "name",
+            "created_by",
+            "type",
+            "status",
+            "file",
+            "file_name",
+            "created",
+            "meta_data",
+            "error_log",
+        )
         extra_kwargs = {
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},
@@ -40,6 +52,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
         if obj.file:
             _, file_name = obj.get_original_file_name()
             return file_name
+
+    def get_error_log(self, obj):
+        return []
 
 
 class DraftDataSourceSerializer(serializers.ModelSerializer):
@@ -74,7 +89,7 @@ class ProjectSerializer(serializers.ModelSerializer):
         queryset=User.objects.all(),
         pk_field=serializers.UUIDField(format="hex_verbose"),
         allow_empty=True,
-        required=False
+        required=False,
     )
 
     class Meta:
