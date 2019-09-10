@@ -72,14 +72,21 @@ exports[`UserProfile: Component should render correctly 1`] = `
       }
     />
     <Button
-      customStyles={Object {}}
+      customStyles={
+        Object {
+          "marginRight": "20px",
+          "padding": "0 30px",
+        }
+      }
     />
   </styled.form>
-  <Styled(Link)
-    to="/reset-password"
-  />
-  <Styled(Link)
-    to="/logout"
-  />
+  <styled.div>
+    <Styled(Link)
+      to="/reset-password"
+    />
+    <Styled(Link)
+      to="/logout"
+    />
+  </styled.div>
 </styled.div>
 `;

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
 <div
-  className="sc-fjdhpX nsimD"
+  className="sc-jzJRlG enxKql"
 >
   <div
     className="sc-gqjmRU hnZXkc"
@@ -12,23 +12,16 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
         Object {
           "display": "flex",
           "flexDirection": "column",
-          "maxWidth": "100%",
+          "maxWidth": "320px",
           "paddingBottom": "30px",
           "position": "relative",
         }
       }
     >
       <input
-        dataSource={Object {}}
         id="name"
-        intl={
-          Object {
-            "formatMessage": [Function],
-          }
-        }
         name="name"
         onChange={[Function]}
-        setFieldValue={[Function]}
         style={
           Object {
             "backgroundColor": "transparent",

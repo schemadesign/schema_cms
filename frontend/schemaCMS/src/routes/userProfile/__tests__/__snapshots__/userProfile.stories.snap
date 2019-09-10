@@ -2,7 +2,7 @@
 
 exports[`Storyshots UserProfile Default 1`] = `
 <div
-  className="sc-gPEVay eQYmiW"
+  className="sc-iRbamj blSEcj"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -194,7 +194,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-iRbamj blSEcj"
+    className="sc-jlyJG bbyJzT"
     onSubmit={[Function]}
   >
     <div
@@ -229,14 +229,7 @@ exports[`Storyshots UserProfile Default 1`] = `
           First Name
         </label>
         <input
-          handleChange={[Function]}
-          handleSubmit={[Function]}
           id="firstName"
-          intl={
-            Object {
-              "formatMessage": [Function],
-            }
-          }
           name="firstName"
           onChange={[Function]}
           style={
@@ -251,13 +244,6 @@ exports[`Storyshots UserProfile Default 1`] = `
           }
           type="text"
           value=""
-          values={
-            Object {
-              "email": "",
-              "firstName": "",
-              "lastName": "",
-            }
-          }
         />
         <div
           style={
@@ -302,14 +288,7 @@ exports[`Storyshots UserProfile Default 1`] = `
           Last Name
         </label>
         <input
-          handleChange={[Function]}
-          handleSubmit={[Function]}
           id="lastName"
-          intl={
-            Object {
-              "formatMessage": [Function],
-            }
-          }
           name="lastName"
           onChange={[Function]}
           style={
@@ -324,13 +303,6 @@ exports[`Storyshots UserProfile Default 1`] = `
           }
           type="text"
           value=""
-          values={
-            Object {
-              "email": "",
-              "firstName": "",
-              "lastName": "",
-            }
-          }
         />
         <div
           style={
@@ -376,17 +348,9 @@ exports[`Storyshots UserProfile Default 1`] = `
         </label>
         <input
           disabled={true}
-          handleChange={[Function]}
-          handleSubmit={[Function]}
           id="email"
-          intl={
-            Object {
-              "formatMessage": [Function],
-            }
-          }
           name="email"
           onChange={[Function]}
-          readOnly={true}
           style={
             Object {
               "backgroundColor": "transparent",
@@ -399,13 +363,6 @@ exports[`Storyshots UserProfile Default 1`] = `
           }
           type="text"
           value=""
-          values={
-            Object {
-              "email": "",
-              "firstName": "",
-              "lastName": "",
-            }
-          }
         />
         <div
           style={
@@ -429,28 +386,33 @@ exports[`Storyshots UserProfile Default 1`] = `
           "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
+          "marginRight": "20px",
           "minHeight": "48px",
           "outline": "none",
-          "padding": "0",
+          "padding": "0 30px",
         }
       }
     >
       Save
     </button>
   </form>
-  <a
-    className="sc-jlyJG dPGwwm"
-    href="/reset-password"
-    onClick={[Function]}
+  <div
+    className="sc-csuQGl daTEEf"
   >
-    Reset Password
-  </a>
-  <a
-    className="sc-jlyJG dPGwwm"
-    href="/logout"
-    onClick={[Function]}
-  >
-    Log out
-  </a>
+    <a
+      className="sc-gipzik chzugE"
+      href="/reset-password"
+      onClick={[Function]}
+    >
+      Reset Password
+    </a>
+    <a
+      className="sc-gipzik chzugE"
+      href="/logout"
+      onClick={[Function]}
+    >
+      Log out
+    </a>
+  </div>
 </div>
 `;
