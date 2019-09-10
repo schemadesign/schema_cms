@@ -2,9 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'schemaUI';
 
-import { Container } from './create.styles';
+import { Container } from '../../../shared/components/styledComponents/container';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
+import { Form, Content } from './create.styles';
 import { PROJECT_DESCRIPTION, PROJECT_TITLE, PROJECT_OWNER } from '../../../modules/project/project.constants';
 
 import messages from './create.messages';
@@ -29,7 +30,7 @@ export class Create extends PureComponent {
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <TextInput
             value={values[PROJECT_TITLE]}
             onChange={handleChange}
@@ -57,7 +58,7 @@ export class Create extends PureComponent {
             {...this.props}
           />
           <Button>{intl.formatMessage(messages.submit)}</Button>
-        </form>
+        </Form>
       </Container>
     );
   }

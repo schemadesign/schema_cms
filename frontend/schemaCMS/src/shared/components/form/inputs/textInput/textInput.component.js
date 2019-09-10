@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'schemaUI';
+import { pick } from 'ramda';
+import elementAttributes from 'html-element-attributes/index.json';
 
 import { Container, ErrorWrapper } from './textInput.styles';
 import { renderWhenTrue } from '../../../../utils/rendering';
@@ -25,12 +27,14 @@ export class TextInput extends PureComponent {
   renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
 
   render() {
-    const { errors, touched, value, onChange, name, ...restProps } = this.props;
-    const isError = errors[name] && touched[name];
+    const { errors, touched, onChange, label, ...restProps } = this.props;
+    const filteredProps = pick(elementAttributes.input, restProps);
+
+    const isError = errors[filteredProps.name] && touched[filteredProps.name];
 
     return (
       <Container>
-        <TextField value={value} onChange={onChange} error={isError} name={name} {...restProps} />
+        <TextField label={label} onChange={onChange} error={isError} {...filteredProps} />
         {this.renderError(isError)}
       </Container>
     );
