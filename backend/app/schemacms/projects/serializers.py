@@ -56,6 +56,13 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def get_error_log(self, obj):
         return []
 
+    @transaction.atomic()
+    def update(self, instance, validated_data):
+        obj = super().update(instance=instance, validated_data=validated_data)
+        if obj.file:
+            obj.ready_to_processing()
+        return obj
+
 
 class DraftDataSourceSerializer(serializers.ModelSerializer):
     meta_data = DataSourceMetaSerializer(read_only=True)

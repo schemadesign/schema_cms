@@ -98,6 +98,10 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         self.save()
         self.update_meta()
 
+    def ready_to_processing(self):
+        self.status = constants.DataSourceStatus.READY_FOR_PROCESSING
+        self.save(update_fields=["status"])
+
     def update_meta(self):
         data_frame = read_csv(self.file.path, sep=None, engine='python')
         items, fields = data_frame.shape
