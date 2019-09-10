@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
-import { always, cond, equals, T } from 'ramda';
+import { always, cond, equals, pathOr, T } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
@@ -44,7 +44,7 @@ export class Source extends PureComponent {
     },
   }) => {
     this.props.setFieldValue('file', uploadFile);
-    this.setState({ uploadFileName: uploadFile.name });
+    this.setState({ uploadFileName: pathOr('', ['name'], uploadFile) });
   };
 
   renderCsvUploader = () => (
