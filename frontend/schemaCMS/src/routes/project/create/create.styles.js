@@ -4,8 +4,6 @@ export const Form = styled.form`
   width: 360px;
 `;
 
-export const Content = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+export const buttonStyles = {
+  padding: '0 30px',
+};

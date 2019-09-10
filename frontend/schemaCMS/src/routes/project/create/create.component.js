@@ -5,7 +5,7 @@ import { Button } from 'schemaUI';
 import { Container } from '../../../shared/components/styledComponents/container';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
-import { Form, Content } from './create.styles';
+import { Form, buttonStyles } from './create.styles';
 import { PROJECT_DESCRIPTION, PROJECT_TITLE, PROJECT_OWNER } from '../../../modules/project/project.constants';
 
 import messages from './create.messages';
@@ -57,7 +57,7 @@ export class Create extends PureComponent {
             label={intl.formatMessage(messages.projectOwnerLabel)}
             {...this.props}
           />
-          <Button>{intl.formatMessage(messages.submit)}</Button>
+          <Button customStyles={buttonStyles}>{intl.formatMessage(messages.submit)}</Button>
         </Form>
       </Container>
     );
