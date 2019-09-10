@@ -178,6 +178,18 @@ exports[`List: Component should render card with error state 1`] = `
         >
           name
         </H1>
+        <styled.div>
+          <styled.div
+            key="0"
+          >
+            error 1
+          </styled.div>
+          <styled.div
+            key="1"
+          >
+            error2
+          </styled.div>
+        </styled.div>
       </Card>
     </styled.li>
   </styled.div>

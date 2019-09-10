@@ -21,6 +21,8 @@ import {
   HeaderIcon,
   lockTextStyles,
   lockIconStyles,
+  ErrorsWrapper,
+  Error,
 } from './list.styles';
 import messages from './list.messages';
 import extendedDayjs from '../../../../shared/utils/extendedDayjs';
@@ -33,7 +35,7 @@ import {
   STATUS_ERROR,
   STATUS_PROCESSING,
 } from '../../../../modules/dataSource/dataSource.constants';
-import { renderWhenTrue } from '../../../../shared/utils/rendering';
+import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
 
 const { H1 } = Typography;
 const { PlusIcon, CsvIcon, IntersectIcon } = Icons;
@@ -113,29 +115,37 @@ export class List extends PureComponent {
       [equals(STATUS_DRAFT), this.renderDraftMessage],
     ])(status);
 
-  renderMetaData = ({ items, fields, filters, views }, isLock, isError) =>
-    renderWhenTrue(() => {
-      const customIconStyles = isLock ? { ...iconSourceStyles, ...lockIconStyles } : iconSourceStyles;
-      const { formatMessage } = this.props.intl;
-      const list = [
-        { name: formatMessage(messages.source), value: <CsvIcon customStyles={customIconStyles} /> },
-        { name: formatMessage(messages.items), value: items },
-        { name: formatMessage(messages.fields), value: fields },
-        { name: formatMessage(messages.filters), value: filters },
-        { name: formatMessage(messages.views), value: views },
-      ];
+  renderMetaData = ({ items, fields, filters, views }, isLock) => {
+    const customIconStyles = isLock ? { ...iconSourceStyles, ...lockIconStyles } : iconSourceStyles;
+    const { formatMessage } = this.props.intl;
+    const list = [
+      { name: formatMessage(messages.source), value: <CsvIcon customStyles={customIconStyles} /> },
+      { name: formatMessage(messages.items), value: items },
+      { name: formatMessage(messages.fields), value: fields },
+      { name: formatMessage(messages.filters), value: filters },
+      { name: formatMessage(messages.views), value: views },
+    ];
 
-      const elements = list.map(({ name, value }, index) => (
-        <MetaData key={index}>
-          <MetaDataName>{name}</MetaDataName>
-          <MetaDataValue isLock={isLock}>{value || DEFAULT_VALUE}</MetaDataValue>
-        </MetaData>
-      ));
+    const elements = list.map(({ name, value }, index) => (
+      <MetaData key={index}>
+        <MetaDataName>{name}</MetaDataName>
+        <MetaDataValue isLock={isLock}>{value || DEFAULT_VALUE}</MetaDataValue>
+      </MetaData>
+    ));
 
-      return <MetaDataWrapper>{elements}</MetaDataWrapper>;
-    })(!isError);
+    return <MetaDataWrapper>{elements}</MetaDataWrapper>;
+  };
 
-  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status }, index) => {
+  renderErrors = errorLog => errorLog.map((error, index) => <Error key={index}>{error}</Error>);
+
+  renderCardErrors = errorLog => <ErrorsWrapper>{this.renderErrors(errorLog)}</ErrorsWrapper>;
+
+  renderCardContent = ({ metaData = {}, isLock, isError, errorLog = [] }) =>
+    renderWhenTrueOtherwise(always(this.renderCardErrors(errorLog)), always(this.renderMetaData(metaData, isLock)))(
+      isError
+    );
+
+  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status, errorLog }, index) => {
     const isLock = status !== STATUS_DONE;
     const isError = status === STATUS_ERROR;
     const whenCreated = extendedDayjs(created).fromNow();
@@ -148,7 +158,7 @@ export class List extends PureComponent {
           <H1 customStyles={customTitleStyles} onClick={() => this.handleShowDataSource({ id, status })}>
             {name}
           </H1>
-          {this.renderMetaData(metaData || {}, isLock, isError)}
+          {this.renderCardContent({ metaData, isLock, isError, errorLog })}
         </Card>
       </DataSourceItem>
     );

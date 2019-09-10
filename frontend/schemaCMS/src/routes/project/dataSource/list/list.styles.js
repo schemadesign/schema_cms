@@ -73,6 +73,13 @@ export const HeaderIcon = styled.div`
   margin-top: -8px;
 `;
 
+export const ErrorsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Error = styled.div``;
+
 export const lockTextStyles = {
   color: Theme.primary.label,
 };

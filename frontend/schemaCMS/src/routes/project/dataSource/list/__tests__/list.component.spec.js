@@ -54,6 +54,7 @@ describe('List: Component', () => {
 
   it('should render card with error state', () => {
     dataSource.status = STATUS_ERROR;
+    dataSource.errorLog = ['error 1', 'error2'];
     const props = {
       dataSources: [dataSource],
     };
