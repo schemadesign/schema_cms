@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Stepper } from 'schemaUI';
-import { always, cond, equals, ifElse, T } from 'ramda';
+import { always, cond, equals, T } from 'ramda';
 
 import { Container, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
@@ -17,10 +17,14 @@ export class View extends PureComponent {
     dataSource: PropTypes.object.isRequired,
     fetchDataSource: PropTypes.func.isRequired,
     unmountDataSource: PropTypes.func.isRequired,
+    removeDataSource: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }),
     match: PropTypes.shape({
       params: PropTypes.shape({
         projectId: PropTypes.string.isRequired,
@@ -50,12 +54,33 @@ export class View extends PureComponent {
   getHeaderAndMenuConfig = intl => ({
     headerTitle: this.getTitle(intl),
     headerSubtitle: intl.formatMessage(messages.subTitle),
+    secondaryMenuItems: [
+      {
+        label: this.props.intl.formatMessage(messages.dataSourceList),
+        to: `/project/view/${this.props.match.params.projectId}/datasource/list`,
+      },
+      {
+        label: this.props.intl.formatMessage(messages.removeDataSource),
+        onClick: () => this.props.removeDataSource(this.props.match.params),
+      },
+    ],
   });
 
-  handleStepChange = activeStep => this.setState({ activeStep });
+  handleStepChange = step => {
+    const {
+      history,
+      match: {
+        params: { projectId, dataSourceId },
+      },
+    } = this.props;
 
-  handleBackClick = () =>
-    ifElse(equals(INITIAL_STEP), () => {}, () => this.handleStepChange(this.state.activeStep - 1));
+    history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
+  };
+
+  handleBackClick = () => this.handleStepChange(this.props.match.params.step - 1);
+
+  handleCancelClick = () =>
+    this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
@@ -83,6 +108,15 @@ export class View extends PureComponent {
     } = this.props;
     const activeStep = parseInt(step, 10);
     const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
+    const cancelProps = {
+      title: intl.formatMessage(messages.cancel),
+      onClick: this.handleCancelClick,
+    };
+    const backProps = {
+      title: intl.formatMessage(messages.back),
+      onClick: this.handleBackClick,
+    };
+    const leftButtonProps = activeStep === INITIAL_STEP ? cancelProps : backProps;
 
     return (
       <Fragment>
@@ -98,10 +132,7 @@ export class View extends PureComponent {
             ...this.props,
           })}
           <PillButtons
-            leftButtonProps={{
-              title: intl.formatMessage(messages.back),
-              onClick: this.handleBackClick,
-            }}
+            leftButtonProps={leftButtonProps}
             rightButtonProps={{
               title: intl.formatMessage(messages.next),
               onClick: handleSubmit,

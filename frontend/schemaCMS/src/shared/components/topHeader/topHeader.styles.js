@@ -30,6 +30,7 @@ export const SecondaryList = styled(List)``;
 export const Item = styled.li`
   line-height: 1.5;
   margin: 2px 0;
+  cursor: pointer;
 
   a {
     text-decoration: none;

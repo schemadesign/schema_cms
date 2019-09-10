@@ -85,7 +85,7 @@ export class List extends PureComponent {
 
     const step = this.getStep(status);
 
-    this.props.history.push(`/project/view/${this.props.match.params.projectId}/dataSource/view/${id}/${step}`);
+    this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/view/${id}/${step}`);
   };
 
   renderCreatedInformation = list => (

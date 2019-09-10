@@ -5,6 +5,18 @@ exports[`View: Component should not render any step 1`] = `
   <TopHeader
     headerSubtitle="Source"
     headerTitle="name"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Data source list",
+          "to": "/project/view/1/datasource/list",
+        },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
+      ]
+    }
   />
   <form
     onSubmit={[Function]}
@@ -50,6 +62,18 @@ exports[`View: Component should render draft 1`] = `
   <TopHeader
     headerSubtitle="Source"
     headerTitle="Create Data Source"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Data source list",
+          "to": "/project/view/1/datasource/list",
+        },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
+      ]
+    }
   />
   <form
     onSubmit={[Function]}
@@ -59,6 +83,11 @@ exports[`View: Component should render draft 1`] = `
       fetchDataSource={[Function]}
       handleChange={[Function]}
       handleSubmit={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
       intl={
         Object {
           "formatMessage": [Function],
@@ -74,6 +103,7 @@ exports[`View: Component should render draft 1`] = `
         }
       }
       onChange={[Function]}
+      removeDataSource={[Function]}
       setFieldValue={[Function]}
       unmountDataSource={[Function]}
       values={
@@ -87,7 +117,98 @@ exports[`View: Component should render draft 1`] = `
       leftButtonProps={
         Object {
           "onClick": [Function],
-          "title": "Back",
+          "title": "Cancel",
+        }
+      }
+      rightButtonProps={
+        Object {
+          "disabled": true,
+          "onClick": [Function],
+          "title": "Next",
+        }
+      }
+    />
+    <styled.div>
+      <Stepper
+        activeStep={1}
+        customDotStyles={Object {}}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+            "pointerEvents": "none",
+          }
+        }
+        handleStep={[Function]}
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </form>
+</styled.div>
+`;
+
+exports[`View: Component should render second step 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle="Source"
+    headerTitle="name"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Data source list",
+          "to": "/project/view/1/datasource/list",
+        },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
+      ]
+    }
+  />
+  <form
+    onSubmit={[Function]}
+  >
+    <Source
+      dataSource={Object {}}
+      fetchDataSource={[Function]}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "1",
+          },
+        }
+      }
+      onChange={[Function]}
+      removeDataSource={[Function]}
+      setFieldValue={[Function]}
+      unmountDataSource={[Function]}
+      values={
+        Object {
+          "id": "id",
+          "name": "name",
+          "step": "2",
+        }
+      }
+    />
+    <PillButtons
+      leftButtonProps={
+        Object {
+          "onClick": [Function],
+          "title": "Cancel",
         }
       }
       rightButtonProps={
@@ -122,6 +243,18 @@ exports[`View: Component should render source step 1`] = `
   <TopHeader
     headerSubtitle="Source"
     headerTitle="name"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Data source list",
+          "to": "/project/view/1/datasource/list",
+        },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
+      ]
+    }
   />
   <form
     onSubmit={[Function]}
@@ -131,6 +264,11 @@ exports[`View: Component should render source step 1`] = `
       fetchDataSource={[Function]}
       handleChange={[Function]}
       handleSubmit={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
       intl={
         Object {
           "formatMessage": [Function],
@@ -146,6 +284,7 @@ exports[`View: Component should render source step 1`] = `
         }
       }
       onChange={[Function]}
+      removeDataSource={[Function]}
       setFieldValue={[Function]}
       unmountDataSource={[Function]}
       values={
@@ -159,7 +298,7 @@ exports[`View: Component should render source step 1`] = `
       leftButtonProps={
         Object {
           "onClick": [Function],
-          "title": "Back",
+          "title": "Cancel",
         }
       }
       rightButtonProps={
