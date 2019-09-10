@@ -92,7 +92,6 @@ class ProjectSerializer(serializers.ModelSerializer):
         read_only=True,
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
-
     editors = serializers.PrimaryKeyRelatedField(
         many=True,
         queryset=User.objects.all(),
@@ -100,10 +99,22 @@ class ProjectSerializer(serializers.ModelSerializer):
         allow_empty=True,
         required=False,
     )
+    meta = serializers.SerializerMethodField()
 
     class Meta:
         model = Project
-        fields = ("id", "title", "slug", "description", "status", "owner", "editors", "created", "modified")
+        fields = (
+            "id",
+            "title",
+            "slug",
+            "description",
+            "status",
+            "owner",
+            "editors",
+            "created",
+            "modified",
+            "meta",
+        )
 
     def create(self, validated_data):
         editors = validated_data.pop("editors", [])
@@ -112,5 +123,7 @@ class ProjectSerializer(serializers.ModelSerializer):
         with transaction.atomic():
             project.save()
             project.editors.add(*editors)
-
         return project
+
+    def get_meta(self, project):
+        return {"data_sources": {"count": project.data_source_count}}

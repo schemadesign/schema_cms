@@ -13,7 +13,13 @@ class ProjectViewSet(viewsets.ModelViewSet):
     queryset = models.Project.objects.none()
 
     def get_queryset(self):
-        return models.Project.get_projects_for_user(self.request.user).order_by("-created")
+        return (
+            models.Project.get_projects_for_user(self.request.user)
+            .annotate_data_source_count()
+            .select_related("owner")
+            .prefetch_related("editors")
+            .order_by("-created")
+        )
 
 
 class DataSourceViewSet(viewsets.ModelViewSet):

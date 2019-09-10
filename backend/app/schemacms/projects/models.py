@@ -6,13 +6,14 @@ import django_fsm
 from django.conf import settings
 from django.core.validators import FileExtensionValidator
 from django.db import models, transaction
+from django.utils import functional
 from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
 from hashids import Hashids
 from pandas import read_csv
 
 from schemacms.users import constants as users_constants
-from . import constants
+from . import constants, managers
 
 
 def file_upload_path(instance, filename):
@@ -25,6 +26,8 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
     )
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
     editors = models.ManyToManyField(settings.AUTH_USER_MODEL)
+
+    objects = managers.ProjectQuerySet.as_manager()
 
     class Meta:
         verbose_name = _("Project")
@@ -45,6 +48,10 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
             return cls.objects.filter(editors=user)
         else:
             return cls.objects.none()
+
+    @functional.cached_property
+    def data_source_count(self):
+        return self.data_sources.count()
 
 
 class DataSourceManager(models.Manager):
