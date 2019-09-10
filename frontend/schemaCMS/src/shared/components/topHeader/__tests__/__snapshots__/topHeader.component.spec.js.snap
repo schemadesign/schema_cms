@@ -77,6 +77,12 @@ exports[`TopHeader: Component should render correctly 1`] = `
             Log Out
           </Link>
         </Styled(styled.li)>
+        <Styled(styled.li)
+          key="1"
+          onClick={[Function]}
+        >
+          Click action
+        </Styled(styled.li)>
       </Styled(styled.ul)>
     </styled.div>
   </Menu>

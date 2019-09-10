@@ -7,11 +7,15 @@ const defaultProps = {
   dataSource: {},
   fetchDataSource: Function.prototype,
   unmountDataSource: Function.prototype,
+  removeDataSource: Function.prototype,
   handleChange: Function.prototype,
   handleSubmit: Function.prototype,
   setFieldValue: Function.prototype,
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
+  },
+  history: {
+    push: Function.prototype,
   },
   values: {},
   match: {

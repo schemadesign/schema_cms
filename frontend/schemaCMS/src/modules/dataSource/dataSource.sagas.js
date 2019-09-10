@@ -22,6 +22,20 @@ function* create({ payload }) {
   }
 }
 
+function* removeOne({ payload }) {
+  try {
+    yield put(DataSourceRoutines.removeOne.request());
+    yield api.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`);
+
+    browserHistory.push(`/project/view/${payload.projectId}/datasource/list`);
+    yield put(DataSourceRoutines.removeOne.success());
+  } catch (error) {
+    yield put(DataSourceRoutines.removeOne.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.removeOne.fulfill());
+  }
+}
+
 function* fetchOne({ payload }) {
   try {
     yield put(DataSourceRoutines.fetchOne.request());
@@ -107,6 +121,7 @@ function* fetchFields({ payload }) {
 export function* watchDataSource() {
   yield all([
     takeLatest(DataSourceRoutines.create.TRIGGER, create),
+    takeLatest(DataSourceRoutines.removeOne.TRIGGER, removeOne),
     takeLatest(DataSourceRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(DataSourceRoutines.updateOne.TRIGGER, updateOne),
     takeLatest(DataSourceRoutines.processOne.TRIGGER, processOne),

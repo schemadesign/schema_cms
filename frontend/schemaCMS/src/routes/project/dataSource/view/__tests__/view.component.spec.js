@@ -9,11 +9,15 @@ describe('View: Component', () => {
     dataSource: {},
     fetchDataSource: Function.prototype,
     unmountDataSource: Function.prototype,
+    removeDataSource: Function.prototype,
     handleChange: Function.prototype,
     handleSubmit: Function.prototype,
     setFieldValue: Function.prototype,
     intl: {
       formatMessage: ({ defaultMessage }) => defaultMessage,
+    },
+    history: {
+      push: Function.prototype,
     },
     values: {},
     match: {
@@ -39,6 +43,18 @@ describe('View: Component', () => {
       values: {
         id: 'id',
         name: 'name',
+      },
+    };
+    const wrapper = render(props);
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render second step', () => {
+    const props = {
+      values: {
+        id: 'id',
+        name: 'name',
+        step: '2',
       },
     };
     const wrapper = render(props);
