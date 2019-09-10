@@ -152,4 +152,27 @@ describe('DataSource: sagas', () => {
         .run();
     });
   });
+
+  describe('fetchFields', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { projectId: '1', dataSourceId: '1' };
+      const responseData = {
+        fields: {
+          id: {},
+          name: {},
+        },
+        data: [{ id: '1', name: 'test' }],
+      };
+
+      mockApi
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}/preview`)
+        .reply(OK, responseData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchFields.success(responseData))
+        .dispatch(DataSourceRoutines.fetchFields(payload))
+        .run();
+    });
+  });
 });
