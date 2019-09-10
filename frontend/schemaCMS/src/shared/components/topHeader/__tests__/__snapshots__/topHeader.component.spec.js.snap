@@ -3,6 +3,11 @@
 exports[`TopHeader: Component should render correctly 1`] = `
 <styled.div>
   <Header
+    buttonProps={
+      Object {
+        "onClick": [Function],
+      }
+    }
     customButtonStyles={Object {}}
     customStyles={Object {}}
     iconComponent={<MenuIcon />}

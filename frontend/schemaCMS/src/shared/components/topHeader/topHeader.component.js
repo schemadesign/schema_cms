@@ -40,7 +40,7 @@ export class TopHeader extends PureComponent {
     });
   };
 
-  renderItem = Item => ({ label = '', to, onClick }, index) =>
+  renderItem = Item => ({ label = '', to = '', onClick }, index) =>
     renderWhenTrueOtherwise(
       always(
         <Item key={index}>
@@ -70,10 +70,11 @@ export class TopHeader extends PureComponent {
 
     const primaryMenu = this.renderMenu(primaryMenuItems, PrimaryList, PrimaryItem);
     const secondaryMenu = this.renderMenu(secondaryMenuItems, SecondaryList, SecondaryItem);
+    const buttonProps = { onClick: this.handleToggleMenu };
 
     return (
       <Container>
-        <Header onButtonClick={this.handleToggleMenu}>{headerContent}</Header>
+        <Header buttonProps={buttonProps}>{headerContent}</Header>
         <Menu
           open={this.state.isMenuOpen}
           onClose={this.handleToggleMenu}
