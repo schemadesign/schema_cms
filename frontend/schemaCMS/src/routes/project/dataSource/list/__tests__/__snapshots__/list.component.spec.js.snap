@@ -344,6 +344,140 @@ exports[`List: Component should render card with processing state 1`] = `
 </styled.div>
 `;
 
+exports[`List: Component should render card with ready for processing state 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Data Sources"
+  />
+  <TopHeader
+    headerSubtitle="Overview"
+    headerTitle="Data Sources"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Project details",
+          "to": "/project/view/1",
+        },
+      ]
+    }
+  />
+  <styled.div>
+    <styled.li
+      key="0"
+    >
+      <Card
+        headerComponent={
+          <FormattedMessage
+            defaultMessage="Loading..."
+            id="dataSource.list.processing"
+            values={Object {}}
+          />
+        }
+      >
+        <H1
+          customStyles={
+            Object {
+              "color": "#a6a7aa",
+              "cursor": "pointer",
+              "marginBottom": "20px",
+            }
+          }
+          onClick={[Function]}
+        >
+          name
+        </H1>
+        <styled.div>
+          <styled.div
+            key="0"
+          >
+            <styled.span>
+              Source
+            </styled.span>
+            <styled.span
+              isLock={true}
+            >
+              <CsvIcon
+                customStyles={
+                  Object {
+                    "fill": "#a6a7aa",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+              />
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="1"
+          >
+            <styled.span>
+              Items
+            </styled.span>
+            <styled.span
+              isLock={true}
+            >
+              246
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="2"
+          >
+            <styled.span>
+              Fields
+            </styled.span>
+            <styled.span
+              isLock={true}
+            >
+              11
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="3"
+          >
+            <styled.span>
+              Filters
+            </styled.span>
+            <styled.span
+              isLock={true}
+            >
+              —
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="4"
+          >
+            <styled.span>
+              Views
+            </styled.span>
+            <styled.span
+              isLock={true}
+            >
+              —
+            </styled.span>
+          </styled.div>
+        </styled.div>
+      </Card>
+    </styled.li>
+  </styled.div>
+  <Button
+    customStyles={
+      Object {
+        "backgroundColor": "#a6a7aa",
+        "bottom": "10px",
+        "height": "60px",
+        "position": "fixed",
+        "right": "10px",
+      }
+    }
+    onClick={[Function]}
+  >
+    <PlusIcon />
+  </Button>
+</styled.div>
+`;
+
 exports[`List: Component should render correctly 1`] = `
 <styled.div>
   <HelmetWrapper

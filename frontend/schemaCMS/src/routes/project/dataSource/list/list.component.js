@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Button, Card, Icons, Typography } from 'schemaUI';
-import { always, cond, equals, ifElse } from 'ramda';
+import { always, anyPass, cond, equals, ifElse } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../../shared/components/topHeader';
@@ -34,6 +34,7 @@ import {
   STATUS_DRAFT,
   STATUS_ERROR,
   STATUS_PROCESSING,
+  STATUS_READY_FOR_PROCESSING,
 } from '../../../../modules/dataSource/dataSource.constants';
 import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
 
@@ -81,7 +82,7 @@ export class List extends PureComponent {
   };
 
   handleShowDataSource = ({ id, status }) => {
-    if (status === STATUS_PROCESSING) {
+    if ([STATUS_PROCESSING, STATUS_READY_FOR_PROCESSING].includes(status)) {
       return;
     }
 
@@ -111,7 +112,7 @@ export class List extends PureComponent {
     cond([
       [equals(STATUS_DONE), () => this.renderCreatedInformation(list)],
       [equals(STATUS_ERROR), this.renderErrorMessage],
-      [equals(STATUS_PROCESSING), this.renderProcessingMessage],
+      [anyPass([equals(STATUS_PROCESSING), equals(STATUS_READY_FOR_PROCESSING)]), this.renderProcessingMessage],
       [equals(STATUS_DRAFT), this.renderDraftMessage],
     ])(status);
 
