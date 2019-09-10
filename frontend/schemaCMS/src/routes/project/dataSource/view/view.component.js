@@ -9,8 +9,6 @@ import { Source } from './source';
 import { PillButtons } from '../../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { TopHeader } from '../../../../shared/components/topHeader';
-import { STATUS_DRAFT } from '../../../../modules/dataSource/dataSource.constants';
-import { ROUTES } from '../../../index';
 import { STATUS_DRAFT, INITIAL_STEP, MAX_STEPS } from '../../../../modules/dataSource/dataSource.constants';
 
 export class View extends PureComponent {
@@ -76,12 +74,13 @@ export class View extends PureComponent {
       },
     } = this.props;
 
-    history.push(`${ROUTES.PROJECT}/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
+    history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
   };
 
   handleBackClick = () => this.handleStepChange(this.props.match.params.step - 1);
 
-  handleCancelClick = () => this.props.history.push(`${ROUTES.PROJECT}/view/${this.props.match.params.projectId}`);
+  handleCancelClick = () =>
+    this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([

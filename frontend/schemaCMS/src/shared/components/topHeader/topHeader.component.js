@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Header, Menu, Typography } from 'schemaUI';
+import { always } from 'ramda';
 
 import {
   Container,
@@ -41,12 +42,12 @@ export class TopHeader extends PureComponent {
 
   renderItem = Item => ({ label = '', to, onClick }, index) =>
     renderWhenTrueOtherwise(
-      () => (
+      always(
         <Item key={index}>
           <Link to={to}>{label}</Link>
         </Item>
       ),
-      () => (
+      always(
         <Item key={index} onClick={onClick}>
           {label}
         </Item>

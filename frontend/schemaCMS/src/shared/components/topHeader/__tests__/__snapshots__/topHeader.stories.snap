@@ -148,7 +148,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         className="sc-bZQynM sc-gzVnrw JqJZP"
       >
         <li
-          className="sc-dnqmqq sc-iwsKbI hhzTxw"
+          className="sc-dnqmqq sc-iwsKbI iOzZuy"
         >
           <a
             href="/path"
@@ -158,7 +158,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-dnqmqq sc-iwsKbI hhzTxw"
+          className="sc-dnqmqq sc-iwsKbI iOzZuy"
         >
           <a
             href="/path"
@@ -172,7 +172,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         className="sc-bZQynM sc-htoDjs LPVfx"
       >
         <li
-          className="sc-dnqmqq sc-gZMcBi eGeHqT"
+          className="sc-dnqmqq sc-gZMcBi bYVXEs"
         >
           <a
             href="/logout"
@@ -180,6 +180,12 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           >
             Log Out
           </a>
+        </li>
+        <li
+          className="sc-dnqmqq sc-gZMcBi bYVXEs"
+          onClick={[Function]}
+        >
+          Click action
         </li>
       </ul>
     </div>
