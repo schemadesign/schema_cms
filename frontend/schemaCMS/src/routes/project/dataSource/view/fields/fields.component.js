@@ -120,7 +120,7 @@ export class Fields extends PureComponent {
     const id = fieldsIds[step];
     const fieldData = this.props.fields[id];
 
-    return <Details id={id} data={fieldData} />;
+    return <Details id={id} data={fieldData} intl={this.props.intl} />;
   }
 
   renderContent() {
