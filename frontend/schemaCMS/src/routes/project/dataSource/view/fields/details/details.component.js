@@ -5,11 +5,11 @@ import { has, isNil } from 'ramda';
 import { renderWhenTrue } from '../../../../../../shared/utils/rendering';
 import messages from './details.messages';
 import { EMPTY, STRUCTURE, TYPES } from './details.constants';
-import { Container, List, LongItem, ShortItem, Label, Value, EditIcon } from './details.styles';
+import { Container, List, FieldInformation, FieldSummary, Label, Value, EditIcon } from './details.styles';
 
 const ITEMS_TYPE = {
-  [TYPES.SHORT]: ShortItem,
-  [TYPES.LONG]: LongItem,
+  [TYPES.SHORT]: FieldSummary,
+  [TYPES.LONG]: FieldInformation,
 };
 
 export class Details extends PureComponent {
@@ -51,10 +51,10 @@ export class Details extends PureComponent {
     return (
       <Container>
         <List>
-          <LongItem>
+          <FieldInformation>
             <Label>{this.props.intl.formatMessage(messages.field)}</Label>
             {this.props.id}
-          </LongItem>
+          </FieldInformation>
           {content}
         </List>
       </Container>

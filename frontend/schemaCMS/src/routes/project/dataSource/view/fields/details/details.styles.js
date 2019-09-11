@@ -18,7 +18,7 @@ export const List = styled.ul`
   font-weight: 600;
 `;
 
-export const LongItem = styled.li`
+export const FieldInformation = styled.li`
   border-bottom: 2px solid ${Theme.primary.background};
   padding: 12px 0;
   display: flex;
@@ -28,7 +28,7 @@ export const LongItem = styled.li`
   }
 `;
 
-export const ShortItem = styled(LongItem)`
+export const FieldSummary = styled(FieldInformation)`
   width: calc(50% - ${SHORT_ITEM_MARGIN});
   display: inline-block;
   ${props => setMargin(props.index)}
