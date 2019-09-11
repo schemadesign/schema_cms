@@ -3,7 +3,7 @@ import Page from './page.js';
 class ProjectsPage extends Page {
 
     get menuBtn() { return $(''); }
-    get createProjectBtn() { return $(''); }
+    get addProjectBtn() { return $('#addProjectBtn'); }
     get creationDate() { return $(''); }
     get status() { return $(''); }
     get owner() { return $(''); }
@@ -13,8 +13,8 @@ class ProjectsPage extends Page {
 
 
     waitForProjectsPageToLoad() {
-        if(!this.createProjectBtn.isDisplayed()) {
-            this.createProjectBtn.waitForDisplayed(5000);
+        if(!this.addProjectBtn.isDisplayed()) {
+            this.addProjectBtn.waitForDisplayed();
         }
     }
 }
