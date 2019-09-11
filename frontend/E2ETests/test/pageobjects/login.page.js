@@ -34,52 +34,56 @@ class LoginPage extends Page {
         }
     }
 
-    login(param1, param2) {
-        this.waitForLoginPageToLoad();
-        
-        if(param1 === ADMIN) {
+    loginByRole(userRole) {
+        if(userRole === ADMIN) {
             this.username.setValue(creds.admin.login);
             this.password.setValue(creds.admin.password);
             this.loginBtn.click();
         }
 
-        if(param1 === EDITOR) {
+        if(userRole === EDITOR) {
             this.username.setValue(creds.editor.login);
             this.password.setValue(creds.editor.password);
             this.loginBtn.click();
         }
+    }
 
-        if(param1 === INVALID && param2 === INVALID) {
+    login(loginState, passwordState) {
+        this.waitForLoginPageToLoad();
+        
+       
+
+        if(loginState === INVALID && passwordState === INVALID) {
             this.username.setValue(creds.invalidLogin);
             this.password.setValue(creds.invalidPassword);
             this.loginBtn.click();
         }
 
-        if(param1 === INVALID && param2 === VALID) {
+        if(loginState === INVALID && passwordState === VALID) {
             this.username.setValue(creds.invalidLogin);
             this.password.setValue(creds.validPassword);
             this.loginBtn.click();
         }
 
-        if(param1 === VALID && param2 === INVALID) {
+        if(loginState === VALID && passwordState === INVALID) {
             this.username.setValue(creds.validLogin);
             this.password.setValue(creds.invalidPassword);
             this.loginBtn.click();
         }
         
-        if(param1 === EMPTY && param2 === EMPTY) {
+        if(loginState === EMPTY && passwordState === EMPTY) {
             this.username.setValue('');
             this.password.setValue('');
             this.loginBtn.click();
         }
 
-        if(param1 === EMPTY && param2 === VALID) {
+        if(loginState === EMPTY && passwordState === VALID) {
             this.username.setValue('');
             this.password.setValue(creds.validPassword);
             this.loginBtn.click();
         }
 
-        if(param1 === VALID && param2 === EMPTY) {
+        if(loginState === VALID && passwordState === EMPTY) {
             this.username.setValue(creds.validLogin);
             this.password.setValue('');
             this.loginBtn.click();
