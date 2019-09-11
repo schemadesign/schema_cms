@@ -1,3 +1,4 @@
+import django_fsm
 from django.db import transaction
 from rest_framework import serializers
 
@@ -56,6 +57,14 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def get_error_log(self, obj):
         return []
 
+    @transaction.atomic()
+    def update(self, instance, validated_data):
+        obj = super().update(instance=instance, validated_data=validated_data)
+        user = self.context["request"].user
+        if django_fsm.has_transition_perm(obj.ready_for_processing, user):
+            obj.ready_for_processing()
+        return obj
+
 
 class DraftDataSourceSerializer(serializers.ModelSerializer):
     meta_data = DataSourceMetaSerializer(read_only=True)
@@ -83,7 +92,6 @@ class ProjectSerializer(serializers.ModelSerializer):
         read_only=True,
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
-
     editors = serializers.PrimaryKeyRelatedField(
         many=True,
         queryset=User.objects.all(),
@@ -91,10 +99,22 @@ class ProjectSerializer(serializers.ModelSerializer):
         allow_empty=True,
         required=False,
     )
+    meta = serializers.SerializerMethodField()
 
     class Meta:
         model = Project
-        fields = ("id", "title", "slug", "description", "status", "owner", "editors", "created", "modified")
+        fields = (
+            "id",
+            "title",
+            "slug",
+            "description",
+            "status",
+            "owner",
+            "editors",
+            "created",
+            "modified",
+            "meta",
+        )
 
     def create(self, validated_data):
         editors = validated_data.pop("editors", [])
@@ -103,5 +123,7 @@ class ProjectSerializer(serializers.ModelSerializer):
         with transaction.atomic():
             project.save()
             project.editors.add(*editors)
-
         return project
+
+    def get_meta(self, project):
+        return {"data_sources": {"count": project.data_source_count}}

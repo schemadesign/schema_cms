@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { Theme } from 'schemaUI';
 
-export const Container = styled.div`
+import { Container as DefaultContainer } from '../../../shared/components/styledComponents/container';
+
+export const Container = styled(DefaultContainer)`
   font-weight: 600;
-  margin: 0 20px;
 `;
 
 export const ProjectView = styled.div`

@@ -37,7 +37,7 @@ exports[`Fields: Component should render correctly 1`] = `
           disabled={false}
           onClick={[Function]}
         >
-          <Component />
+          <ArrowRightIcon />
         </Button>
       </styled.div>
     </styled.div>

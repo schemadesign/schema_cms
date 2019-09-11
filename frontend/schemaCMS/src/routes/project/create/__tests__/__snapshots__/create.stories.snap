@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/Create Default 1`] = `
 <div
-  className="sc-bwzfXH uTxCW"
+  className="sc-bwzfXH jsfsyl"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -194,6 +194,7 @@ exports[`Storyshots Project/Create Default 1`] = `
     </div>
   </div>
   <form
+    className="sc-jTzLTM cMDGOs"
     onSubmit={[Function]}
   >
     <div
@@ -228,14 +229,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           Title
         </label>
         <input
-          handleChange={[Function]}
-          handleSubmit={[Function]}
           id="title"
-          intl={
-            Object {
-              "formatMessage": [Function],
-            }
-          }
           name="title"
           onChange={[Function]}
           placeholder="Project title"
@@ -251,11 +245,6 @@ exports[`Storyshots Project/Create Default 1`] = `
           }
           type="text"
           value="title"
-          values={
-            Object {
-              "title": "title",
-            }
-          }
         />
         <div
           style={
@@ -300,14 +289,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           Description
         </label>
         <input
-          handleChange={[Function]}
-          handleSubmit={[Function]}
           id="description"
-          intl={
-            Object {
-              "formatMessage": [Function],
-            }
-          }
           name="description"
           onChange={[Function]}
           placeholder="Project description"
@@ -322,11 +304,6 @@ exports[`Storyshots Project/Create Default 1`] = `
             }
           }
           type="text"
-          values={
-            Object {
-              "title": "title",
-            }
-          }
         />
         <div
           style={
@@ -372,17 +349,9 @@ exports[`Storyshots Project/Create Default 1`] = `
         </label>
         <input
           disabled={true}
-          handleChange={[Function]}
-          handleSubmit={[Function]}
           id="owner"
-          intl={
-            Object {
-              "formatMessage": [Function],
-            }
-          }
           name="owner"
           onChange={[Function]}
-          readOnly={true}
           style={
             Object {
               "backgroundColor": "transparent",
@@ -394,11 +363,6 @@ exports[`Storyshots Project/Create Default 1`] = `
             }
           }
           type="text"
-          values={
-            Object {
-              "title": "title",
-            }
-          }
         />
         <div
           style={
@@ -412,6 +376,7 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <button
+      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#f0efef",
@@ -422,9 +387,30 @@ exports[`Storyshots Project/Create Default 1`] = `
           "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
+          "marginRight": "20px",
           "minHeight": "48px",
           "outline": "none",
-          "padding": "0",
+          "padding": "0 30px",
+        }
+      }
+    >
+      Cancel
+    </button>
+    <button
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "marginRight": "20px",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0 30px",
         }
       }
     >

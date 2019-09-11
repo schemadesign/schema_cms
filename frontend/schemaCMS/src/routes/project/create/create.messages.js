@@ -30,4 +30,8 @@ export default defineMessages({
     id: 'project.create.submit',
     defaultMessage: 'Submit',
   },
+  cancel: {
+    id: 'project.create.cancel',
+    defaultMessage: 'Cancel',
+  },
 });
