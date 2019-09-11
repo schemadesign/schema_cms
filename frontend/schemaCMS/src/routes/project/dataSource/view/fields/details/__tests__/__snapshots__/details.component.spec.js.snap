@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Details: Component should render correctly 1`] = `
+<styled.div>
+  <styled.ul>
+    <styled.li>
+      <styled.span>
+        Field
+      </styled.span>
+      firstName
+    </styled.li>
+    <styled.li
+      index={0}
+      key="0"
+    >
+      <styled.span>
+        Sample
+      </styled.span>
+      <styled.span>
+        Sample
+      </styled.span>
+    </styled.li>
+    <styled.li
+      index={0}
+      key="1"
+    >
+      <styled.span>
+        Type
+      </styled.span>
+      <styled.span>
+        Text
+      </styled.span>
+      <Styled(EditIcon) />
+    </styled.li>
+    <Styled(styled.li)
+      index={0}
+      key="2"
+    >
+      <styled.span>
+        Total Count (N)
+      </styled.span>
+      <styled.span>
+        127
+      </styled.span>
+    </Styled(styled.li)>
+    <Styled(styled.li)
+      index={1}
+      key="3"
+    >
+      <styled.span>
+        Unique
+      </styled.span>
+      <styled.span>
+        99
+      </styled.span>
+    </Styled(styled.li)>
+    <Styled(styled.li)
+      index={2}
+      key="4"
+    >
+      <styled.span>
+        Mean
+      </styled.span>
+      <styled.span>
+        4.00
+      </styled.span>
+    </Styled(styled.li)>
+    <Styled(styled.li)
+      index={3}
+      key="5"
+    >
+      <styled.span>
+        Min
+      </styled.span>
+      <styled.span>
+        1
+      </styled.span>
+    </Styled(styled.li)>
+    <Styled(styled.li)
+      index={4}
+      key="6"
+    >
+      <styled.span>
+        Max
+      </styled.span>
+      <styled.span>
+        100
+      </styled.span>
+    </Styled(styled.li)>
+    <Styled(styled.li)
+      index={5}
+      key="7"
+    >
+      <styled.span>
+        Std. Dev.
+      </styled.span>
+      <styled.span>
+        23.03
+      </styled.span>
+    </Styled(styled.li)>
+  </styled.ul>
+</styled.div>
+`;

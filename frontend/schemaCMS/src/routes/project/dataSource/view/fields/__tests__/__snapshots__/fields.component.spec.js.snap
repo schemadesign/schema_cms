@@ -20,7 +20,13 @@ exports[`Fields: Component should render correctly 1`] = `
           disabled={true}
           onClick={[Function]}
         >
-          <ArrowLeftIcon />
+          <ArrowLeftIcon
+            customStyles={
+              Object {
+                "opacity": 0.3,
+              }
+            }
+          />
         </Button>
       </styled.div>
       <styled.div>
@@ -34,10 +40,16 @@ exports[`Fields: Component should render correctly 1`] = `
               "width": 60,
             }
           }
-          disabled={false}
+          disabled={true}
           onClick={[Function]}
         >
-          <ArrowRightIcon />
+          <ArrowRightIcon
+            customStyles={
+              Object {
+                "opacity": 0.3,
+              }
+            }
+          />
         </Button>
       </styled.div>
     </styled.div>
