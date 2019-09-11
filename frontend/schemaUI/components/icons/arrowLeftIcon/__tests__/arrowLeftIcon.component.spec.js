@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { ArrowLeftIcon } from '../ArrowLeftIcon.component';
+import { ArrowLeftIcon } from '../arrowLeftIcon.component';
 
 describe('ArrowLeftIcon: Component', () => {
   const defaultProps = {};
