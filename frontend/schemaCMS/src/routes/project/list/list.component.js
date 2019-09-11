@@ -51,7 +51,9 @@ export class List extends PureComponent {
   renderHeader = (list = []) => (
     <HeaderList>
       {list.map((item, index) => (
-        <HeaderItem key={index}>{item}</HeaderItem>
+        <HeaderItem id={`headerItem-${index}`} key={index}>
+          {item}
+        </HeaderItem>
       ))}
     </HeaderList>
   );
@@ -67,13 +69,15 @@ export class List extends PureComponent {
     return (
       <ProjectItem key={index}>
         <Card headerComponent={header}>
-          <H1 customStyles={titleStyles} onClick={handleShowProject}>
+          <H1 id={`projectName-${index}`} customStyles={titleStyles} onClick={handleShowProject}>
             {title}
           </H1>
           <Description onClick={handleShowProject}>
-            <P>{description}</P>
+            <P id={`projectDescription-${index}`}>{description}</P>
           </Description>
-          <Span customStyles={urlStyles}>{generateApiUrl(slug)}</Span>
+          <Span id={`apiPath-${index}`} customStyles={urlStyles}>
+            {generateApiUrl(slug)}
+          </Span>
         </Card>
       </ProjectItem>
     );
@@ -98,7 +102,7 @@ export class List extends PureComponent {
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...topHeaderConfig} />
         {content}
-        <Button customStyles={addProjectStyles} onClick={this.handleNewProject}>
+        <Button id="addProjectBtn" customStyles={addProjectStyles} onClick={this.handleNewProject}>
           <Icons.PlusIcon />
         </Button>
       </Container>
