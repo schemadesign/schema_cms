@@ -38,7 +38,7 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
     @factory.post_generation
     def meta_data_update(self, create, extracted, **kwargs):
         if self.file:
-            self.preview_process()
+            self.update_meta()
 
 
 class DataSourceMetaFactory(factory.django.DjangoModelFactory):

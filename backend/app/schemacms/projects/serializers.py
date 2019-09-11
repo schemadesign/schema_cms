@@ -1,3 +1,4 @@
+import django_fsm
 from django.db import transaction
 from rest_framework import serializers
 
@@ -55,6 +56,14 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
     def get_error_log(self, obj):
         return []
+
+    @transaction.atomic()
+    def update(self, instance, validated_data):
+        obj = super().update(instance=instance, validated_data=validated_data)
+        user = self.context["request"].user
+        if django_fsm.has_transition_perm(obj.ready_for_processing, user):
+            obj.ready_for_processing()
+        return obj
 
 
 class DraftDataSourceSerializer(serializers.ModelSerializer):

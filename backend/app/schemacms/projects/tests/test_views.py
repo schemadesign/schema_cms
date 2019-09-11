@@ -301,6 +301,7 @@ class TestUpdateDraftDataSourceView:
         response = api_client.put(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_200_OK
+        assert response.data["status"] == projects_constants.DataSourceStatus.READY_FOR_PROCESSING
 
     def test_update_by_editor_assigned_to_project(
         self, api_client, faker, editor, project, data_source_factory

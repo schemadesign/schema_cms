@@ -5,6 +5,7 @@ import os
 from hashids import Hashids
 from pandas import read_csv
 
+import django_fsm
 from django.db import models, transaction
 from django.conf import settings
 from django.core.validators import FileExtensionValidator
@@ -22,8 +23,8 @@ def file_upload_path(instance, filename):
 
 # Create your models here.
 class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel, models.Model):
-    status = models.CharField(
-        max_length=25, choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.INITIAL
+    status = django_fsm.FSMField(
+        choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.INITIAL
     )
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
     editors = models.ManyToManyField(settings.AUTH_USER_MODEL)
@@ -71,8 +72,8 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="data_sources")
-    status = models.CharField(
-        max_length=25, choices=constants.DATA_SOURCE_STATUS_CHOICES, default=constants.DataSourceStatus.DRAFT
+    status = django_fsm.FSMField(
+        choices=constants.DATA_SOURCE_STATUS_CHOICES, default=constants.DataSourceStatus.DRAFT
     )
     file = models.FileField(
         null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
@@ -93,24 +94,40 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
+    @django_fsm.transition(
+        field=status,
+        source=[
+            constants.DataSourceStatus.DRAFT,
+            constants.DataSourceStatus.READY_FOR_PROCESSING,
+            constants.DataSourceStatus.ERROR,
+            constants.DataSourceStatus.DONE,
+        ],
+        target=constants.DataSourceStatus.READY_FOR_PROCESSING,
+    )
     def preview_process(self):
-        self.status = constants.DataSourceStatus.PROCESSING
-        self.save()
         self.update_meta()
 
+    @django_fsm.transition(
+        field=status,
+        source=constants.DataSourceStatus.DRAFT,
+        target=constants.DataSourceStatus.READY_FOR_PROCESSING,
+        permission=(lambda inst, user: bool(inst.file)),
+    )
+    def ready_for_processing(self):
+        pass
+
+    @django_fsm.transition(
+        field=status, source=constants.DataSourceStatus.PROCESSING, target=constants.DataSourceStatus.DONE
+    )
+    def done(self):
+        pass
+
     def update_meta(self):
-        data_frame = read_csv(self.file.path, sep=None, engine='python')
+        data_frame = read_csv(self.file.path, sep=None, engine="python")
         items, fields = data_frame.shape
         preview, fields_info = self.get_preview_data(data_frame)
         preview_json = io.StringIO()
-        json.dump(
-            {
-                "data": preview,
-                "fields": fields_info
-            },
-            preview_json,
-            indent=4
-        )
+        json.dump({"data": preview, "fields": fields_info}, preview_json, indent=4)
 
         with transaction.atomic():
             meta, _ = DataSourceMeta.objects.update_or_create(
@@ -119,8 +136,6 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
 
             filename, _ = self.get_original_file_name()
             meta.preview.save(f"preview_{filename}.json", preview_json)
-            self.status = constants.DataSourceStatus.DONE
-            self.save()
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
