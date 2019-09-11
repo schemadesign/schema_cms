@@ -11,3 +11,5 @@ aws_cdk.aws-ecr
 aws-cdk.aws-codebuild
 aws_cdk_aws-codepipeline
 aws_cdk_aws-codepipeline-actions
+aws_cdk.aws-stepfunctions
+aws_cdk.aws-stepfunctions-tasks

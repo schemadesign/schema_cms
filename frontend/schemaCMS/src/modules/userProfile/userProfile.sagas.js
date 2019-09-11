@@ -1,6 +1,6 @@
 import { all, put, select, takeLatest } from 'redux-saga/effects';
 
-import { UserProfileActions, UserProfileRoutines } from './userProfile.redux';
+import { UserProfileRoutines } from './userProfile.redux';
 import api from '../../shared/services/api';
 import { ME_PATH } from '../../shared/utils/api.constants';
 import { selectAuthToken } from '../userAuth';

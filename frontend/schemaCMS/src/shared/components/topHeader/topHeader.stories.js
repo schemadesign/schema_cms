@@ -8,7 +8,7 @@ export const defaultProps = {
   headerTitle: 'Projects',
   headerSubtitle: 'Overview',
   primaryMenuItems: [{ label: 'Data Sources', to: '/path' }, { label: 'Charts', to: '/path' }],
-  secondaryMenuItems: [{ label: 'Log Out', to: '/logout' }],
+  secondaryMenuItems: [{ label: 'Log Out', to: '/logout' }, { label: 'Click action', onClick: () => {} }],
 };
 
 storiesOf('Shared Components/TopHeader', module)

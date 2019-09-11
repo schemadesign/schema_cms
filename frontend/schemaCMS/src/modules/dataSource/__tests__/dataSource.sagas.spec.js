@@ -51,6 +51,39 @@ describe('DataSource: sagas', () => {
     });
   });
 
+  describe('fetchList', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { projectId: '1' };
+      const responseData = {
+        results: {
+          dataSource: [],
+        },
+      };
+
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`).reply(OK, responseData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchList.success(responseData.results))
+        .dispatch(DataSourceRoutines.fetchList(payload))
+        .run();
+    });
+  });
+
+  describe('removeOne', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { projectId: '1', dataSourceId: '1' };
+
+      mockApi.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`).reply(OK);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.removeOne.success())
+        .dispatch(DataSourceRoutines.removeOne(payload))
+        .run();
+    });
+  });
+
   describe('updateOne', () => {
     const payload = {
       projectId: '1',
@@ -130,6 +163,29 @@ describe('DataSource: sagas', () => {
         .withState(defaultState)
         .put(DataSourceRoutines.processOne.success())
         .dispatch(DataSourceRoutines.processOne(payload))
+        .run();
+    });
+  });
+
+  describe('fetchFields', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { projectId: '1', dataSourceId: '1' };
+      const responseData = {
+        fields: {
+          id: {},
+          name: {},
+        },
+        data: [{ id: '1', name: 'test' }],
+      };
+
+      mockApi
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}/preview`)
+        .reply(OK, responseData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchFields.success(responseData))
+        .dispatch(DataSourceRoutines.fetchFields(payload))
         .run();
     });
   });

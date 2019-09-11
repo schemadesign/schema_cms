@@ -27,6 +27,7 @@ DATA_SOURCE_TYPE_CHOICES = (
 
 class DataSourceStatus:
     DRAFT = "draft"
+    READY_FOR_PROCESSING = "ready_for_processing"
     PROCESSING = "processing"
     DONE = "done"
     ERROR = "error"
@@ -34,7 +35,8 @@ class DataSourceStatus:
 
 DATA_SOURCE_STATUS_CHOICES = (
     (DataSourceStatus.DRAFT, "draft"),
+    (DataSourceStatus.READY_FOR_PROCESSING, "ready for processing"),
     (DataSourceStatus.PROCESSING, "processing"),
     (DataSourceStatus.DONE, "done"),
-    (DataSourceStatus.ERROR, "error")
+    (DataSourceStatus.ERROR, "error"),
 )

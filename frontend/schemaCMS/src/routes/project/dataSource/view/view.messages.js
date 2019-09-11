@@ -6,10 +6,6 @@ export default defineMessages({
     id: 'dataSource.view.title',
     defaultMessage: 'Create Data Source',
   },
-  subTitle: {
-    id: 'dataSource.view.subTitle',
-    defaultMessage: 'Source',
-  },
   next: {
     id: 'dataSource.view.next',
     defaultMessage: 'Next',
@@ -17,5 +13,25 @@ export default defineMessages({
   back: {
     id: 'dataSource.view.back',
     defaultMessage: 'Back',
+  },
+  source: {
+    id: 'dataSource.view.source',
+    defaultMessage: 'Source',
+  },
+  fields: {
+    id: 'dataSource.view.fields',
+    defaultMessage: 'Fields',
+  },
+  cancel: {
+    id: 'dataSource.view.cancel',
+    defaultMessage: 'Cancel',
+  },
+  removeDataSource: {
+    id: 'dataSource.view.removeDataSource',
+    defaultMessage: 'Remove Data Source',
+  },
+  dataSourceList: {
+    id: 'dataSource.view.dataSourceList',
+    defaultMessage: 'Data source list',
   },
 });

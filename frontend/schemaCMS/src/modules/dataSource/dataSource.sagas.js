@@ -4,7 +4,7 @@ import { pipe, forEach, keys } from 'ramda';
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
-import { DATA_SOURCE_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
+import { DATA_SOURCE_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 
 function* create({ payload }) {
   try {
@@ -22,6 +22,20 @@ function* create({ payload }) {
   }
 }
 
+function* removeOne({ payload }) {
+  try {
+    yield put(DataSourceRoutines.removeOne.request());
+    yield api.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`);
+
+    browserHistory.push(`/project/view/${payload.projectId}/datasource/list`);
+    yield put(DataSourceRoutines.removeOne.success());
+  } catch (error) {
+    yield put(DataSourceRoutines.removeOne.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.removeOne.fulfill());
+  }
+}
+
 function* fetchOne({ payload }) {
   try {
     yield put(DataSourceRoutines.fetchOne.request());
@@ -33,6 +47,20 @@ function* fetchOne({ payload }) {
     yield put(DataSourceRoutines.fetchOne.failure(error));
   } finally {
     yield put(DataSourceRoutines.fetchOne.fulfill());
+  }
+}
+
+function* fetchList({ payload }) {
+  try {
+    yield put(DataSourceRoutines.fetchList.request());
+
+    const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`);
+
+    yield put(DataSourceRoutines.fetchList.success(data.results));
+  } catch (error) {
+    yield put(DataSourceRoutines.fetchList.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.fetchList.fulfill());
   }
 }
 
@@ -75,11 +103,29 @@ function* processOne({ payload: { projectId, dataSourceId } }) {
   }
 }
 
+function* fetchFields({ payload }) {
+  try {
+    yield put(DataSourceRoutines.fetchOne.request());
+
+    const { projectId, dataSourceId } = payload;
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}${PREVIEW_PATH}`);
+
+    yield put(DataSourceRoutines.fetchFields.success(data));
+  } catch (error) {
+    yield put(DataSourceRoutines.fetchFields.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.fetchFields.fulfill());
+  }
+}
+
 export function* watchDataSource() {
   yield all([
     takeLatest(DataSourceRoutines.create.TRIGGER, create),
+    takeLatest(DataSourceRoutines.removeOne.TRIGGER, removeOne),
     takeLatest(DataSourceRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(DataSourceRoutines.updateOne.TRIGGER, updateOne),
     takeLatest(DataSourceRoutines.processOne.TRIGGER, processOne),
+    takeLatest(DataSourceRoutines.fetchList.TRIGGER, fetchList),
+    takeLatest(DataSourceRoutines.fetchFields.TRIGGER, fetchFields),
   ]);
 }

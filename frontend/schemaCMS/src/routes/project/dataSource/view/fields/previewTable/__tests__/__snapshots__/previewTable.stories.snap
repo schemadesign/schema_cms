@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Project/DataSource/View/Fields/PreviewTable Default 1`] = `
+<div
+  className="sc-eHgmQL fUBxPx"
+>
+  <table
+    className="sc-cvbbAY jfCLrQ"
+  >
+    <thead
+      className="sc-jWBwVP fDrbnp"
+    >
+      <tr
+        className="sc-cMljjf lfxHVl"
+      >
+        <th
+          className="sc-jDwBTQ khizas"
+        >
+          #
+        </th>
+        <th
+          className="sc-jDwBTQ khizas"
+        >
+          First Name
+        </th>
+        <th
+          className="sc-jDwBTQ khizas"
+        >
+          Last Name
+        </th>
+        <th
+          className="sc-jDwBTQ khizas"
+        >
+          Full Name
+        </th>
+        <th
+          className="sc-jDwBTQ khizas"
+        >
+          Birthplace
+        </th>
+        <th
+          className="sc-jDwBTQ khizas"
+        >
+          State of Birth
+        </th>
+        <th
+          className="sc-jDwBTQ khizas"
+        >
+          Birthday
+        </th>
+        <th
+          className="sc-jDwBTQ khizas"
+        >
+          Url
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="sc-brqgnP SqPLV"
+    >
+      <tr
+        className="sc-cMljjf lfxHVl"
+      >
+        <td
+          className="sc-gPEVay gLBXLW"
+        >
+          1
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          George
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Washington
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          George Washington
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Westmoreland County
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          VA
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          02/22/1732
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          some.url.com
+        </td>
+      </tr>
+      <tr
+        className="sc-cMljjf lfxHVl"
+      >
+        <td
+          className="sc-gPEVay gLBXLW"
+        >
+          2
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          John
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Adams
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          John Adams
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Braintree
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          MA
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          10/30/1735
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          some.url.com
+        </td>
+      </tr>
+      <tr
+        className="sc-cMljjf lfxHVl"
+      >
+        <td
+          className="sc-gPEVay gLBXLW"
+        >
+          3
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Thomas
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Jefferson
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Thomas Jefferson
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Shadwell
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          VA
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          04/13/1743
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          some.url.com
+        </td>
+      </tr>
+      <tr
+        className="sc-cMljjf lfxHVl"
+      >
+        <td
+          className="sc-gPEVay gLBXLW"
+        >
+          4
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          James
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Madison
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          James Madison
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Port Conway
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          VA
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          03/16/1751
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          some.url.com
+        </td>
+      </tr>
+      <tr
+        className="sc-cMljjf lfxHVl"
+      >
+        <td
+          className="sc-gPEVay gLBXLW"
+        >
+          5
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          James
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Monroe
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          James Monroe
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          Monroe Hall
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          VA
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          04/28/1758
+        </td>
+        <td
+          className="sc-jAaTju cdDUMW"
+        >
+          some.url.com
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

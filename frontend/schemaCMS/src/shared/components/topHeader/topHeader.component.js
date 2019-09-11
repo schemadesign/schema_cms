@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Header, Menu, Typography } from 'schemaUI';
+import { always } from 'ramda';
 
 import {
   Container,
@@ -15,6 +16,7 @@ import {
   menuStyles,
   closeButtonStyles,
 } from './topHeader.styles';
+import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
 const { H1, H2 } = Typography;
 
@@ -38,11 +40,19 @@ export class TopHeader extends PureComponent {
     });
   };
 
-  renderItem = Item => ({ label = '', to = '' }, index) => (
-    <Item key={index}>
-      <Link to={to}>{label}</Link>
-    </Item>
-  );
+  renderItem = Item => ({ label = '', to = '', onClick }, index) =>
+    renderWhenTrueOtherwise(
+      always(
+        <Item key={index}>
+          <Link to={to}>{label}</Link>
+        </Item>
+      ),
+      always(
+        <Item key={index} onClick={onClick}>
+          {label}
+        </Item>
+      )
+    )(!!to);
 
   renderMenu = (items = [], List, Item) => <List>{items.map(this.renderItem(Item))}</List>;
 
@@ -60,10 +70,11 @@ export class TopHeader extends PureComponent {
 
     const primaryMenu = this.renderMenu(primaryMenuItems, PrimaryList, PrimaryItem);
     const secondaryMenu = this.renderMenu(secondaryMenuItems, SecondaryList, SecondaryItem);
+    const buttonProps = { onClick: this.handleToggleMenu };
 
     return (
       <Container>
-        <Header onButtonClick={this.handleToggleMenu}>{headerContent}</Header>
+        <Header buttonProps={buttonProps}>{headerContent}</Header>
         <Menu
           open={this.state.isMenuOpen}
           onClose={this.handleToggleMenu}

@@ -9,7 +9,7 @@ describe('Source: Component', () => {
     onChange: Function.prototype,
     setFieldValue: Function.prototype,
     intl: {
-      formatMessage: Function.prototype,
+      formatMessage: ({ defaultMessage }) => defaultMessage,
     },
     errors: {},
     touched: {},

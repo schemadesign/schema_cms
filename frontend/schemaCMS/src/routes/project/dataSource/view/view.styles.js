@@ -11,5 +11,8 @@ export const StepperContainer = styled.div`
 
 export const stepperStyles = {
   margin: '0 auto',
+};
+
+export const stepperBlockStyles = {
   pointerEvents: 'none',
 };

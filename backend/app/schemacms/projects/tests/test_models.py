@@ -13,6 +13,14 @@ from schemacms.projects.tests.factories import DataSourceFactory
 pytestmark = [pytest.mark.django_db]
 
 
+class TestProject:
+    def test_data_source_count(self, faker, project, data_source_factory):
+        expected = faker.pyint(min_value=0, max_value=3)
+        data_source_factory.create_batch(expected, project=project)
+
+        assert project.data_source_count == expected
+
+
 class TestDataSourceModelMethods:
     """
     Tests DataSource model additional methods
@@ -42,10 +50,10 @@ class TestDataSourceModelMethods:
     def test_creating_meta(self):
         filename = "file_path_test.csv"
         dsource = self.create_dsource(filename)
+
         dsource.preview_process()
 
         items, fields = read_csv(dsource.file.path).shape
-
         assert dsource.meta_data.fields == fields
         assert dsource.meta_data.items == items
 

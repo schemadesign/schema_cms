@@ -89,6 +89,23 @@ class TestListCreateProjectView:
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
+    @pytest.mark.slow
+    def test_num_queries(
+        self, api_client, django_assert_num_queries, faker, admin, project_factory, data_source_factory
+    ):
+        projects = project_factory.create_batch(3)
+        for project in projects:
+            data_source_factory.create_batch(2, project=project)
+        api_client.force_authenticate(admin)
+
+        # Number of queries:
+        # +1 count query for pagination
+        # +1 projects query
+        # +1 prefetch editors
+        with django_assert_num_queries(3):
+            response = api_client.get(self.get_url())
+        assert response.status_code == status.HTTP_200_OK
+
     def test_url(self):
         assert "/api/v1/projects" == self.get_url()
 
@@ -108,10 +125,22 @@ class TestRetrieveUpdateDeleteProjectView:
 
     def test_retrieve(self, api_client, user, project):
         api_client.force_authenticate(user)
+
         response = api_client.get(self.get_url(project.pk))
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
+
+    def test_meta_data_sources(self, api_client, faker, admin, project, data_source_factory):
+        expected = faker.pyint(min_value=0, max_value=3)
+        data_source_factory.create_batch(expected, project=project)
+        api_client.force_authenticate(admin)
+
+        response = api_client.get(self.get_url(project.pk))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert "meta" in response.data
+        assert response.data["meta"]["data_sources"] == {"count": expected}
 
     def test_update_project_by_owner(self, api_client, user, project):
         api_client.force_authenticate(user)
@@ -301,6 +330,7 @@ class TestUpdateDraftDataSourceView:
         response = api_client.put(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_200_OK
+        assert response.data["status"] == projects_constants.DataSourceStatus.READY_FOR_PROCESSING
 
     def test_update_by_editor_assigned_to_project(
         self, api_client, faker, editor, project, data_source_factory

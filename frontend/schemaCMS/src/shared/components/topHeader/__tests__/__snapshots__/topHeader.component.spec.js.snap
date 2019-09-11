@@ -3,6 +3,11 @@
 exports[`TopHeader: Component should render correctly 1`] = `
 <styled.div>
   <Header
+    buttonProps={
+      Object {
+        "onClick": [Function],
+      }
+    }
     customButtonStyles={Object {}}
     customStyles={Object {}}
     iconComponent={<MenuIcon />}
@@ -76,6 +81,12 @@ exports[`TopHeader: Component should render correctly 1`] = `
           >
             Log Out
           </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="1"
+          onClick={[Function]}
+        >
+          Click action
         </Styled(styled.li)>
       </Styled(styled.ul)>
     </styled.div>
