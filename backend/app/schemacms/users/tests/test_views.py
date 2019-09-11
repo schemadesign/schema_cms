@@ -2,7 +2,7 @@ from django import urls
 import pytest
 from rest_framework import status
 
-from schemacms.users import backend_management, constants as user_constants, serializers as user_serializers
+from schemacms.users import constants as user_constants, serializers as user_serializers
 
 pytestmark = [pytest.mark.django_db]
 

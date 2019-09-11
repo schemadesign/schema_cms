@@ -13,6 +13,14 @@ from schemacms.projects.tests.factories import DataSourceFactory
 pytestmark = [pytest.mark.django_db]
 
 
+class TestProject:
+    def test_data_source_count(self, faker, project, data_source_factory):
+        expected = faker.pyint(min_value=0, max_value=3)
+        data_source_factory.create_batch(expected, project=project)
+
+        assert project.data_source_count == expected
+
+
 class TestDataSourceModelMethods:
     """
     Tests DataSource model additional methods

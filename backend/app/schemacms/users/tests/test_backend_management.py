@@ -2,9 +2,23 @@ import auth0.v3
 import pytest
 
 from schemacms.users import constants
-from schemacms.users.backend_management import auth0 as auth0_
+from schemacms.users.backend_management import auth0 as auth0_, base
 
 pytestmark = [pytest.mark.django_db]
+
+
+class TestBaseUserManagement:
+    @pytest.mark.parametrize("method_name, method_kwargs", [
+        ("create_user", dict(user=None)),
+        ("password_change_url", dict(user=None)),
+        ("get_user_source", dict()),
+    ])
+    def test_interface(self, method_name, method_kwargs):
+        mgmt = base.BaseUserManagement()
+        method = getattr(mgmt, method_name)
+
+        with pytest.raises(NotImplementedError):
+            method(**method_kwargs)
 
 
 class TestAuth0UserManagement:
