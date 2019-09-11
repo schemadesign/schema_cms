@@ -21,3 +21,5 @@ class Test(Common):
 
     # Use fast password hasher so tests run faster
     PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]
+
+    USER_MGMT_AUTH0_DOMAIN = "http://localhost"
