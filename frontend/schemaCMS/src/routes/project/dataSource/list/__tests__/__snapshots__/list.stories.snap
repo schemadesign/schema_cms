@@ -158,6 +158,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           >
             <a
               href="/project/view/1"
+              id={null}
               onClick={[Function]}
             >
               Project details
