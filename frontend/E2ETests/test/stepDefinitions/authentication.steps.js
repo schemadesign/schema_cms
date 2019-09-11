@@ -12,7 +12,6 @@ After(function() {
 });
 
 
-
 Given('I am on Login page', function () {
     LoginPage.open();
     LoginPage.waitForLoginPageToLoad();
@@ -21,8 +20,6 @@ Given('I am on Login page', function () {
 });
 
 
- 
-
 When('I log in as {string} with valid login and password', function (role) {
     LoginPage.login(role);
 });
@@ -30,8 +27,6 @@ When('I log in as {string} with valid login and password', function (role) {
 When('I log in with {string} login and {string} password', function (param1, param2) {
     LoginPage.login(param1, param2);
 });
-
-
 
 
 Then('I am on Projects page', function () {
