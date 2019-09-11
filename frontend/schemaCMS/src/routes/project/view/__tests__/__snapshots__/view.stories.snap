@@ -155,6 +155,7 @@ exports[`Storyshots Project/View default 1`] = `
           >
             <a
               href="/project/view/1/datasource"
+              id={null}
               onClick={[Function]}
             >
               Data Sources
@@ -169,6 +170,7 @@ exports[`Storyshots Project/View default 1`] = `
           >
             <a
               href="/project/edit/1"
+              id={null}
               onClick={[Function]}
             >
               Edit Project Settings
@@ -179,6 +181,7 @@ exports[`Storyshots Project/View default 1`] = `
           >
             <a
               href="/project/delete/1"
+              id={null}
               onClick={[Function]}
             >
               Delete Project
@@ -189,6 +192,7 @@ exports[`Storyshots Project/View default 1`] = `
           >
             <a
               href="/logout"
+              id={null}
               onClick={[Function]}
             >
               Log Out
@@ -732,6 +736,7 @@ exports[`Storyshots Project/View empty 1`] = `
           >
             <a
               href="/logout"
+              id={null}
               onClick={[Function]}
             >
               Log Out

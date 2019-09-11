@@ -158,6 +158,7 @@ exports[`Storyshots Project/List empty 1`] = `
           >
             <a
               href="/logout"
+              id={null}
               onClick={[Function]}
             >
               Log Out
@@ -421,6 +422,7 @@ exports[`Storyshots Project/List list 1`] = `
           >
             <a
               href="/logout"
+              id={null}
               onClick={[Function]}
             >
               Log Out

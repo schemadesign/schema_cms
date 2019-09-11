@@ -141,10 +141,11 @@ export class List extends PureComponent {
 
   renderCardErrors = errorLog => <ErrorsWrapper>{this.renderErrors(errorLog)}</ErrorsWrapper>;
 
-  renderCardContent = ({ metaData = {}, isLock, isError, errorLog = [] }) =>
-    renderWhenTrueOtherwise(always(this.renderCardErrors(errorLog)), always(this.renderMetaData(metaData, isLock)))(
-      isError
-    );
+  renderCardContent = ({ metaData, isLock, isError, errorLog = [] }) =>
+    renderWhenTrueOtherwise(
+      always(this.renderCardErrors(errorLog)),
+      always(this.renderMetaData(metaData || {}, isLock))
+    )(isError);
 
   renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status, errorLog }, index) => {
     const isLock = status !== STATUS_DONE;
