@@ -6,10 +6,7 @@ import { After } from 'cucumber';
 import LoginPage from './../pageobjects/login.page.js';
 import ProjectsPage from './../pageobjects/projects.page.js';
 
-/*Before (function() {
 
-});
-*/
 After(function() {
     browser.reloadSession();
 });
