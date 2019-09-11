@@ -46,6 +46,7 @@ export class List extends PureComponent {
   static propTypes = {
     createDataSource: PropTypes.func.isRequired,
     fetchDataSources: PropTypes.func.isRequired,
+    cancelFetchListLoop: PropTypes.func.isRequired,
     dataSources: PropTypes.array.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -60,6 +61,10 @@ export class List extends PureComponent {
     const projectId = this.props.match.params.projectId;
 
     this.props.fetchDataSources({ projectId });
+  }
+
+  componentWillUnmount() {
+    this.props.cancelFetchListLoop();
   }
 
   getHeaderAndMenuConfig = () => ({
