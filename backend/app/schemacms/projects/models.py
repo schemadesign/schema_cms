@@ -1,27 +1,24 @@
-import json
 import io
+import json
 import os
 
+import django_fsm
+from django.conf import settings
+from django.core.validators import FileExtensionValidator
+from django.db import models, transaction
+from django.utils.translation import ugettext as _
+from django_extensions.db import models as ext_models
 from hashids import Hashids
 from pandas import read_csv
 
-import django_fsm
-from django.db import models, transaction
-from django.conf import settings
-from django.core.validators import FileExtensionValidator
-from django.utils.translation import ugettext as _
-from django_extensions.db import models as ext_models
-
-
-from . import constants
 from schemacms.users import constants as users_constants
+from . import constants
 
 
 def file_upload_path(instance, filename):
     return instance.relative_path_to_save(filename)
 
 
-# Create your models here.
 class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel, models.Model):
     status = django_fsm.FSMField(
         choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.INITIAL
@@ -29,12 +26,12 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
     editors = models.ManyToManyField(settings.AUTH_USER_MODEL)
 
-    def __str__(self):
-        return self.title
-
     class Meta:
         verbose_name = _("Project")
         verbose_name_plural = _("Projects")
+
+    def __str__(self):
+        return self.title
 
     def user_has_access(self, user):
         return self.get_projects_for_user(user).filter(pk=self.id).exists()
@@ -84,12 +81,12 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
 
     objects = DataSourceManager()
 
+    class Meta:
+        unique_together = ("name", "project")
+
     def __str__(self):
         # name could be None but __str__ method should always return string
         return self.name or str(self.id)
-
-    class Meta:
-        unique_together = ("name", "project")
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

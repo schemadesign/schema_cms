@@ -1,17 +1,15 @@
 import datetime
-import os
-from os.path import join
-from distutils.util import strtobool
-
-from configurations import Configuration
-import boto3
 import json
+import os
+from distutils.util import strtobool
+from os.path import join
 
+import boto3
 import sentry_sdk
+from configurations import Configuration
 from sentry_sdk.integrations.django import DjangoIntegration
 
 from schemacms.utils import json as json_
-
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
