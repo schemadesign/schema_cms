@@ -40,15 +40,17 @@ export class TopHeader extends PureComponent {
     });
   };
 
-  renderItem = Item => ({ label = '', to = '', onClick }, index) =>
+  renderItem = Item => ({ label = '', to = '', onClick, id = null }, index) =>
     renderWhenTrueOtherwise(
       always(
         <Item key={index}>
-          <Link to={to}>{label}</Link>
+          <Link id={id} to={to}>
+            {label}
+          </Link>
         </Item>
       ),
       always(
-        <Item key={index} onClick={onClick}>
+        <Item id={id} key={index} onClick={onClick}>
           {label}
         </Item>
       )

@@ -54,6 +54,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
           key="0"
         >
           <Link
+            id={null}
             replace={false}
             to="/path"
           >
@@ -64,6 +65,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
           key="1"
         >
           <Link
+            id={null}
             replace={false}
             to="/path"
           >
@@ -76,6 +78,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
           key="0"
         >
           <Link
+            id={null}
             replace={false}
             to="/logout"
           >
@@ -83,6 +86,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          id="id"
           key="1"
           onClick={[Function]}
         >

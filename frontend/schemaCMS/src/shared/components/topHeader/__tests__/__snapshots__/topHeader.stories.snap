@@ -152,6 +152,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         >
           <a
             href="/path"
+            id={null}
             onClick={[Function]}
           >
             Data Sources
@@ -162,6 +163,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         >
           <a
             href="/path"
+            id={null}
             onClick={[Function]}
           >
             Charts
@@ -176,6 +178,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         >
           <a
             href="/logout"
+            id={null}
             onClick={[Function]}
           >
             Log Out
@@ -183,6 +186,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         </li>
         <li
           className="sc-dnqmqq sc-gZMcBi bYVXEs"
+          id="id"
           onClick={[Function]}
         >
           Click action
