@@ -63,6 +63,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         user = self.context["request"].user
         if django_fsm.has_transition_perm(obj.ready_for_processing, user):
             obj.ready_for_processing()
+            obj.save()
         return obj
 
 
