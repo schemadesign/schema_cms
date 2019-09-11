@@ -279,9 +279,7 @@ class CIPipeline(core.Stack):
             action_name='github_source',
             owner=GITHUB_REPO_OWNER,
             repo=GITHUB_REPOSITORY,
-            # branch='master',
-            # todo: remove below line
-            branch='feature/step-functions',
+            branch='master',
             trigger=aws_codepipeline_actions.GitHubTrigger.WEBHOOK,
             output=source_output,
             oauth_token=oauth_token.secret_value,
