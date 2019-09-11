@@ -107,6 +107,7 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
             constants.DataSourceStatus.DONE,
         ],
         target=constants.DataSourceStatus.READY_FOR_PROCESSING,
+        on_error=constants.DataSourceStatus.ERROR,
     )
     def preview_process(self):
         self.update_meta()
