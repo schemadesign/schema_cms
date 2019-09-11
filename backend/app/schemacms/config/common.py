@@ -65,6 +65,7 @@ class Common(Configuration):
         "django.contrib.auth.middleware.AuthenticationMiddleware",
         "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.clickjacking.XFrameOptionsMiddleware",
+        "schemacms.config.middlewares.SocialAuthExceptionMiddleware",
     )
 
     ALLOWED_HOSTS = ["*"]
