@@ -1,6 +1,11 @@
 import Page from './page.js';
 const fs = require('fs');
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
+const ADMIN = 'admin';
+const EDITOR = 'editor';
+const VALID = 'valid';
+const INVALID = 'invalid';
+const EMPTY = 'empty';
 
 class LoginPage extends Page {
 
@@ -32,49 +37,49 @@ class LoginPage extends Page {
     login(param1, param2) {
         this.waitForLoginPageToLoad();
         
-        if(param1 === 'admin') {
+        if(param1 === ADMIN) {
             this.username.setValue(creds.admin.login);
             this.password.setValue(creds.admin.password);
             this.loginBtn.click();
         }
 
-        if(param1 === 'editor') {
+        if(param1 === EDITOR) {
             this.username.setValue(creds.editor.login);
             this.password.setValue(creds.editor.password);
             this.loginBtn.click();
         }
 
-        if(param1 === 'invalid' && param2 === 'invalid') {
+        if(param1 === INVALID && param2 === INVALID) {
             this.username.setValue(creds.invalidLogin);
             this.password.setValue(creds.invalidPassword);
             this.loginBtn.click();
         }
 
-        if(param1 === 'invalid' && param2 === 'valid') {
+        if(param1 === INVALID && param2 === VALID) {
             this.username.setValue(creds.invalidLogin);
             this.password.setValue(creds.validPassword);
             this.loginBtn.click();
         }
 
-        if(param1 === 'valid' && param2 === 'invalid') {
+        if(param1 === VALID && param2 === INVALID) {
             this.username.setValue(creds.validLogin);
             this.password.setValue(creds.invalidPassword);
             this.loginBtn.click();
         }
         
-        if(param1 === 'empty' && param2 === 'empty') {
+        if(param1 === EMPTY && param2 === EMPTY) {
             this.username.setValue('');
             this.password.setValue('');
             this.loginBtn.click();
         }
 
-        if(param1 === 'empty' && param2 === 'valid') {
+        if(param1 === EMPTY && param2 === VALID) {
             this.username.setValue('');
             this.password.setValue(creds.validPassword);
             this.loginBtn.click();
         }
 
-        if(param1 === 'valid' && param2 === 'empty') {
+        if(param1 === VALID && param2 === EMPTY) {
             this.username.setValue(creds.validLogin);
             this.password.setValue('');
             this.loginBtn.click();
