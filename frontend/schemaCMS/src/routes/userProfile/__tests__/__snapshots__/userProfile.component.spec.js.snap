@@ -2,7 +2,10 @@
 
 exports[`UserProfile: Component should render correctly 1`] = `
 <styled.div>
-  <TopHeader />
+  <TopHeader
+    headerSubtitle="Profile"
+    headerTitle="Admin Settings"
+  />
   <styled.form
     onSubmit={[Function]}
   >
@@ -15,6 +18,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      label="First Name"
       name="firstName"
       onChange={[Function]}
       touched={Object {}}
@@ -36,6 +40,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      label="Last Name"
       name="lastName"
       onChange={[Function]}
       touched={Object {}}
@@ -58,6 +63,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      label="Email"
       name="email"
       onChange={[Function]}
       readOnly={true}
@@ -78,15 +84,21 @@ exports[`UserProfile: Component should render correctly 1`] = `
           "padding": "0 30px",
         }
       }
-    />
+    >
+      Save
+    </Button>
   </styled.form>
   <styled.div>
     <Styled(Link)
       to="/reset-password"
-    />
+    >
+      Reset Password
+    </Styled(Link)>
     <Styled(Link)
       to="/logout"
-    />
+    >
+      Log out
+    </Styled(Link)>
   </styled.div>
 </styled.div>
 `;

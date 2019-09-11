@@ -2,7 +2,10 @@
 
 exports[`Create: Component should render correctly 1`] = `
 <styled.div>
-  <TopHeader />
+  <TopHeader
+    headerSubtitle="Project Info"
+    headerTitle="Create New Project"
+  />
   <styled.form
     onSubmit={[Function]}
   >
@@ -15,6 +18,7 @@ exports[`Create: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      label="Title"
       name="title"
       onChange={[Function]}
       placeholder="Project title"
@@ -35,6 +39,7 @@ exports[`Create: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      label="Description"
       name="description"
       onChange={[Function]}
       placeholder="Project description"
@@ -55,6 +60,7 @@ exports[`Create: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      label="Owner"
       name="owner"
       onChange={[Function]}
       readOnly={true}
@@ -73,7 +79,9 @@ exports[`Create: Component should render correctly 1`] = `
         }
       }
       onClick={[Function]}
-    />
+    >
+      Cancel
+    </Button>
     <Button
       customStyles={
         Object {
@@ -81,7 +89,9 @@ exports[`Create: Component should render correctly 1`] = `
           "padding": "0 30px",
         }
       }
-    />
+    >
+      Submit
+    </Button>
   </styled.form>
 </styled.div>
 `;

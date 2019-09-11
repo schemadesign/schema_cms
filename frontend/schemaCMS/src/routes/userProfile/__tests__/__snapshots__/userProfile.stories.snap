@@ -2,7 +2,7 @@
 
 exports[`Storyshots UserProfile Default 1`] = `
 <div
-  className="sc-iRbamj blSEcj"
+  className="sc-hqyNC keRCOE"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -194,7 +194,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-jlyJG bbyJzT"
+    className="sc-jbKcbu cWSlbe"
     onSubmit={[Function]}
   >
     <div
@@ -397,17 +397,17 @@ exports[`Storyshots UserProfile Default 1`] = `
     </button>
   </form>
   <div
-    className="sc-csuQGl daTEEf"
+    className="sc-jqCOkK eZNOMl"
   >
     <a
-      className="sc-gipzik chzugE"
+      className="sc-dNLxif kvLoCB"
       href="/reset-password"
       onClick={[Function]}
     >
       Reset Password
     </a>
     <a
-      className="sc-gipzik chzugE"
+      className="sc-dNLxif kvLoCB"
       href="/logout"
       onClick={[Function]}
     >

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/DataSource/List Default 1`] = `
 <div
-  className="sc-fjdhpX nsimD"
+  className="sc-fjdhpX dWlOlc"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -154,7 +154,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           className="sc-bZQynM sc-htoDjs LPVfx"
         >
           <li
-            className="sc-dnqmqq sc-gZMcBi eGeHqT"
+            className="sc-dnqmqq sc-gZMcBi bYVXEs"
           >
             <a
               href="/project/view/1"
@@ -203,6 +203,182 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         </svg>
       </button>
     </div>
+  </div>
+  <div
+    className="sc-kAzzGY dfKgTo"
+  >
+    <li
+      className="sc-jzJRlG hvPffk"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#f0efef",
+            "borderTop": "2px solid #1d1d20",
+            "color": "#1d1d20",
+            "display": "flex",
+            "flexDirection": "column",
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "padding": "12px 14px 14px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#a6a7aa",
+              "fontSize": "12px",
+              "marginBottom": "14px",
+            }
+          }
+        >
+          <div
+            className="sc-dxgOiQ ijyDrq"
+          >
+            <ul
+              className="sc-iAyFgw cjhNDj"
+            >
+              <li
+                className="sc-hSdWYo hYLVCx"
+              >
+                3 months ago
+              </li>
+              <li
+                className="sc-hSdWYo hYLVCx"
+              >
+                firstName lastName
+              </li>
+            </ul>
+            <div
+              className="sc-ckVGcZ hbvtFb"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#1d1d20",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                />
+                <path
+                  d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <h1
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+              "marginBottom": "20px",
+            }
+          }
+        >
+          name
+        </h1>
+        <div
+          className="sc-chPdSV gYLqpA"
+        >
+          <div
+            className="sc-kgoBCf gognBf"
+          >
+            <span
+              className="sc-kGXeez fPBcuZ"
+            >
+              Source
+            </span>
+            <span
+              className="sc-kpOJdX kZXOhz"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#1d1d20",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            className="sc-kgoBCf gognBf"
+          >
+            <span
+              className="sc-kGXeez fPBcuZ"
+            >
+              Items
+            </span>
+            <span
+              className="sc-kpOJdX kZXOhz"
+            >
+              246
+            </span>
+          </div>
+          <div
+            className="sc-kgoBCf gognBf"
+          >
+            <span
+              className="sc-kGXeez fPBcuZ"
+            >
+              Fields
+            </span>
+            <span
+              className="sc-kpOJdX kZXOhz"
+            >
+              11
+            </span>
+          </div>
+          <div
+            className="sc-kgoBCf gognBf"
+          >
+            <span
+              className="sc-kGXeez fPBcuZ"
+            >
+              Filters
+            </span>
+            <span
+              className="sc-kpOJdX kZXOhz"
+            >
+              —
+            </span>
+          </div>
+          <div
+            className="sc-kgoBCf gognBf"
+          >
+            <span
+              className="sc-kGXeez fPBcuZ"
+            >
+              Views
+            </span>
+            <span
+              className="sc-kpOJdX kZXOhz"
+            >
+              —
+            </span>
+          </div>
+        </div>
+      </div>
+    </li>
   </div>
   <button
     onClick={[Function]}

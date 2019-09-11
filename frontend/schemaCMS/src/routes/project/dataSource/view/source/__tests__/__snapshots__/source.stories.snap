@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
 <div
-  className="sc-jzJRlG enxKql"
+  className="sc-jhAzac hmXDXQ"
 >
   <div
     className="sc-gqjmRU hnZXkc"
@@ -18,6 +18,23 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
         }
       }
     >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "1px solid #F0EFEF",
+            "color": "#a6a7aa",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Name
+      </label>
       <input
         id="name"
         name="name"
@@ -154,6 +171,7 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
           </svg>
         </button>
       </label>
+      Spreadsheet
     </div>
   </div>
 </div>
