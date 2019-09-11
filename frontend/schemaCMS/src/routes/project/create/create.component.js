@@ -2,9 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'schemaUI';
 
-import { Container } from './create.styles';
+import { Container } from '../../../shared/components/styledComponents/container';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
+import { Form, buttonStyles } from './create.styles';
 import { PROJECT_DESCRIPTION, PROJECT_TITLE, PROJECT_OWNER } from '../../../modules/project/project.constants';
 
 import messages from './create.messages';
@@ -15,12 +16,15 @@ export class Create extends PureComponent {
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
+    history: PropTypes.object,
   };
 
   getHeaderAndMenuConfig = intl => ({
     headerTitle: intl.formatMessage(messages.pageTitle),
     headerSubtitle: intl.formatMessage(messages.pageSubTitle),
   });
+
+  handleCancelClick = () => this.props.history.push('/');
 
   render() {
     const { values, handleChange, handleSubmit, intl } = this.props;
@@ -29,7 +33,7 @@ export class Create extends PureComponent {
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <TextInput
             value={values[PROJECT_TITLE]}
             onChange={handleChange}
@@ -56,8 +60,11 @@ export class Create extends PureComponent {
             label={intl.formatMessage(messages.projectOwnerLabel)}
             {...this.props}
           />
-          <Button>{intl.formatMessage(messages.submit)}</Button>
-        </form>
+          <Button customStyles={buttonStyles} onClick={this.handleCancelClick}>
+            {intl.formatMessage(messages.cancel)}
+          </Button>
+          <Button customStyles={buttonStyles}>{intl.formatMessage(messages.submit)}</Button>
+        </Form>
       </Container>
     );
   }

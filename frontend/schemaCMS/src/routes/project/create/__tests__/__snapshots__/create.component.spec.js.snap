@@ -6,7 +6,7 @@ exports[`Create: Component should render correctly 1`] = `
     headerSubtitle="Project Info"
     headerTitle="Create New Project"
   />
-  <form
+  <styled.form
     onSubmit={[Function]}
   >
     <TextInput
@@ -72,10 +72,26 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <Button
-      customStyles={Object {}}
+      customStyles={
+        Object {
+          "marginRight": "20px",
+          "padding": "0 30px",
+        }
+      }
+      onClick={[Function]}
+    >
+      Cancel
+    </Button>
+    <Button
+      customStyles={
+        Object {
+          "marginRight": "20px",
+          "padding": "0 30px",
+        }
+      }
     >
       Submit
     </Button>
-  </form>
+  </styled.form>
 </styled.div>
 `;

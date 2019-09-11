@@ -6,6 +6,7 @@ import { expect } from 'chai';
 import { Create } from '../create.component';
 import { TextInput } from '../../../../shared/components/form/inputs/textInput';
 import { PROJECT_TITLE } from '../../../../modules/project/project.constants';
+import { Form } from '../create.styles';
 
 describe('Create: Component', () => {
   const defaultProps = {
@@ -32,7 +33,7 @@ describe('Create: Component', () => {
     const handleSubmit = spy();
 
     const wrapper = render({ handleSubmit });
-    wrapper.find('form').simulate('submit');
+    wrapper.find(Form).simulate('submit');
     expect(handleSubmit).to.have.been.calledOnce;
   });
 

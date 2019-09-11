@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`View: Component should render correctly 1`] = `
-<styled.div>
+<Styled(styled.div)>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
@@ -47,5 +47,5 @@ exports[`View: Component should render correctly 1`] = `
   >
     <ArrowLeftIcon />
   </Button>
-</styled.div>
+</Styled(styled.div)>
 `;

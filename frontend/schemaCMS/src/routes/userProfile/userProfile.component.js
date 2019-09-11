@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'schemaUI';
 
-import { Container, Form, Link } from './userProfile.styles';
+import { Container, Form, Link, buttonStyles, LinksWrapper } from './userProfile.styles';
 import { TopHeader } from '../../shared/components/topHeader';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { EMAIL, FIRST_NAME, LAST_NAME } from '../../modules/userProfile/userProfile.constants';
@@ -57,10 +57,12 @@ export class UserProfile extends PureComponent {
             {...this.props}
           />
 
-          <Button>{intl.formatMessage(messages.save)}</Button>
+          <Button customStyles={buttonStyles}>{intl.formatMessage(messages.save)}</Button>
         </Form>
-        <Link to="/reset-password">{intl.formatMessage(messages.resetPassword)}</Link>
-        <Link to="/logout">{intl.formatMessage(messages.logout)}</Link>
+        <LinksWrapper>
+          <Link to="/reset-password">{intl.formatMessage(messages.resetPassword)}</Link>
+          <Link to="/logout">{intl.formatMessage(messages.logout)}</Link>
+        </LinksWrapper>
       </Container>
     );
   }
