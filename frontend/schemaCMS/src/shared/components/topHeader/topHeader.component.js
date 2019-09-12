@@ -60,8 +60,8 @@ export class TopHeader extends PureComponent {
 
   renderHeader = (title, subtitle) => (
     <HeaderWrapper>
-      <H2>{title}</H2>
-      <H1>{subtitle}</H1>
+      <H2 id="projectsPageTitle">{title}</H2>
+      <H1 id="projectsPageSubtitle">{subtitle}</H1>
     </HeaderWrapper>
   );
 
