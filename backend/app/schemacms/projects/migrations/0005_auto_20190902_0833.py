@@ -2,7 +2,7 @@
 
 import django.core.validators
 from django.db import migrations, models
-import schemacms.projects.models
+import schemacms.utils.models
 
 
 class Migration(migrations.Migration):
@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name="file",
             field=models.FileField(
                 null=True,
-                upload_to=schemacms.projects.models.file_upload_path,
+                upload_to=schemacms.utils.models.file_upload_path,
                 validators=[django.core.validators.FileExtensionValidator(allowed_extensions=["csv"])],
             ),
         ),

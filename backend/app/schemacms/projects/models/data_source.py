@@ -6,87 +6,31 @@ import django_fsm
 from django.conf import settings
 from django.core.validators import FileExtensionValidator
 from django.db import models, transaction
-from django.utils import functional
-from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
-from hashids import Hashids
 from pandas import read_csv
 
-from schemacms.users import constants as users_constants
-from . import constants, managers
-
-
-def file_upload_path(instance, filename):
-    return instance.relative_path_to_save(filename)
-
-
-class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel, models.Model):
-    status = django_fsm.FSMField(
-        choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.INITIAL
-    )
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
-    editors = models.ManyToManyField(settings.AUTH_USER_MODEL)
-
-    objects = managers.ProjectQuerySet.as_manager()
-
-    class Meta:
-        verbose_name = _("Project")
-        verbose_name_plural = _("Projects")
-
-    def __str__(self):
-        return self.title
-
-    def user_has_access(self, user):
-        return self.get_projects_for_user(user).filter(pk=self.id).exists()
-
-    @classmethod
-    def get_projects_for_user(cls, user):
-        role = getattr(user, "role", users_constants.UserRole.UNDEFINED)
-        if role == users_constants.UserRole.ADMIN:
-            return cls.objects.all()
-        elif role == users_constants.UserRole.EDITOR:
-            return cls.objects.filter(editors=user)
-        else:
-            return cls.objects.none()
-
-    @functional.cached_property
-    def data_source_count(self):
-        return self.data_sources.count()
-
-
-class DataSourceManager(models.Manager):
-    def create(self, *args, **kwargs):
-        file = kwargs.pop("file", None)
-
-        with transaction.atomic():
-            dsource = super().create(*args, **kwargs)
-
-            if not kwargs.get("name", None):
-                data_source_number = Hashids(min_length=4).encode(dsource.id)
-                dsource.name = f"{constants.DATASOURCE_DRAFT_NAME} #{data_source_number}"
-                dsource.save()
-
-            if file:
-                dsource.file.save(file.name, file)
-
-        return dsource
+import schemacms.utils.models
+from schemacms.projects import constants, managers
+from schemacms.projects.models import data_source_meta
 
 
 class DataSource(ext_models.TimeStampedModel, models.Model):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="data_sources")
+    project = models.ForeignKey("projects.Project", on_delete=models.CASCADE, related_name="data_sources")
     status = django_fsm.FSMField(
         choices=constants.DATA_SOURCE_STATUS_CHOICES, default=constants.DataSourceStatus.DRAFT
     )
     file = models.FileField(
-        null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
+        null=True,
+        upload_to=schemacms.utils.models.file_upload_path,
+        validators=[FileExtensionValidator(allowed_extensions=["csv"])],
     )
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
     )
 
-    objects = DataSourceManager()
+    objects = managers.DataSourceManager()
 
     class Meta:
         unique_together = ("name", "project")
@@ -135,7 +79,7 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         json.dump({"data": preview, "fields": fields_info}, preview_json, indent=4)
 
         with transaction.atomic():
-            meta, _ = DataSourceMeta.objects.update_or_create(
+            meta, _ = data_source_meta.DataSourceMeta.objects.update_or_create(
                 datasource=self, defaults={"fields": fields, "items": items}
             )
 
@@ -165,22 +109,3 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
             fields_info[key]["dtype"] = value.name
 
         return table_preview, fields_info
-
-
-class DataSourceMeta(models.Model):
-    datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
-    items = models.PositiveIntegerField()
-    fields = models.PositiveSmallIntegerField()
-    preview = models.FileField(null=True, upload_to=file_upload_path)
-
-    def __str__(self):
-        return f"DataSource {self.datasource} meta"
-
-    def relative_path_to_save(self, filename):
-        base_path = self.preview.storage.location
-
-        return os.path.join(
-            base_path,
-            f"{settings.STORAGE_DIR}/projects",
-            f"{self.datasource.project_id}/datasources/{self.datasource.id}/{filename}",
-        )
