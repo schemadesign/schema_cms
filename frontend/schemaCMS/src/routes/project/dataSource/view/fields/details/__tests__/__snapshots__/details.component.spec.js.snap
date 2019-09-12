@@ -89,26 +89,6 @@ exports[`Details: Component should render correctly 1`] = `
         23.0332
       </styled.span>
     </Styled(styled.li)>
-    <Styled(styled.li)
-      key="8"
-    >
-      <styled.span>
-        someProp
-      </styled.span>
-      <styled.span>
-        –
-      </styled.span>
-    </Styled(styled.li)>
-    <Styled(styled.li)
-      key="9"
-    >
-      <styled.span>
-        freq
-      </styled.span>
-      <styled.span>
-        6
-      </styled.span>
-    </Styled(styled.li)>
   </styled.ul>
 </styled.div>
 `;

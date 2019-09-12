@@ -129,34 +129,6 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
         23.0332
       </span>
     </li>
-    <li
-      className="sc-brqgnP sc-cMljjf gfjBXs"
-    >
-      <span
-        className="sc-jAaTju bTBTHj"
-      >
-        someProp
-      </span>
-      <span
-        className="sc-jDwBTQ ioaAmq"
-      >
-        –
-      </span>
-    </li>
-    <li
-      className="sc-brqgnP sc-cMljjf gfjBXs"
-    >
-      <span
-        className="sc-jAaTju bTBTHj"
-      >
-        freq
-      </span>
-      <span
-        className="sc-jDwBTQ ioaAmq"
-      >
-        6
-      </span>
-    </li>
   </ul>
 </div>
 `;

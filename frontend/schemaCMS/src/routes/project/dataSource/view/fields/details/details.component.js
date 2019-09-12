@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { defaultTo, has, isNil, uniq } from 'ramda';
+import { defaultTo, innerJoin, isNil } from 'ramda';
 
 import { renderWhenTrue } from '../../../../../../shared/utils/rendering';
 import messages from './details.messages';
@@ -18,34 +18,28 @@ export class Details extends PureComponent {
 
   renderEditIcon = renderWhenTrue(() => <EditIcon />);
 
-  renderItem = (list, id) => {
-    if (!has(id)(this.props.data)) {
-      return list;
-    }
-
+  renderItem = (id, index) => {
     const value = this.props.data[id];
     const textValue = isNil(value) ? EMPTY : this.getTextValue(value);
-    const key = list.length;
     const isInformationField = INFORMATION_FIELDS.includes(id);
     const isEditable = EDITABLE_FIELDS.includes(id);
-    const message = messages[id];
-    const label = message ? this.props.intl.formatMessage(message) : id;
     const Item = isInformationField ? FieldInformation : FieldSummary;
 
-    list.push(
-      <Item key={key}>
-        <Label>{label}</Label>
+    return (
+      <Item key={index}>
+        <Label>{this.props.intl.formatMessage(messages[id])}</Label>
         <Value>{textValue}</Value>
         {this.renderEditIcon(isEditable)}
       </Item>
     );
-
-    return list;
   };
 
   render() {
-    const fieldIds = uniq([...DEFAULT_STRUCTURE, ...Object.keys(this.props.data)]);
-    const content = fieldIds.reduce(this.renderItem, []);
+    const labelsIds = innerJoin(
+      (structureId, dataId) => structureId === dataId,
+      DEFAULT_STRUCTURE,
+      Object.keys(this.props.data)
+    );
 
     return (
       <Container>
@@ -54,7 +48,7 @@ export class Details extends PureComponent {
             <Label>{this.props.intl.formatMessage(messages.field)}</Label>
             {this.props.id}
           </FieldInformation>
-          {content}
+          {labelsIds.map(this.renderItem)}
         </List>
       </Container>
     );
