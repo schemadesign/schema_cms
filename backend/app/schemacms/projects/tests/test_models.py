@@ -51,6 +51,7 @@ class TestDataSource:
         filename = "file_path_test.csv"
         dsource = self.create_dsource(filename)
 
+        dsource.ready_for_processing()
         dsource.preview_process()
 
         items, fields = read_csv(dsource.file.path).shape
@@ -66,6 +67,7 @@ class TestDataSource:
 
         data_source.file.save("new_file.csv", new_file)
         data_source.refresh_from_db()
+        data_source.ready_for_processing()
         data_source.preview_process()
 
         assert data_source.meta_data.fields == cols_number

@@ -108,23 +108,37 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         ],
         target=constants.DataSourceStatus.READY_FOR_PROCESSING,
         on_error=constants.DataSourceStatus.ERROR,
-    )
-    def preview_process(self):
-        self.update_meta()
-
-    @django_fsm.transition(
-        field=status,
-        source=constants.DataSourceStatus.DRAFT,
-        target=constants.DataSourceStatus.READY_FOR_PROCESSING,
         permission=(lambda inst, user: bool(inst.file)),
     )
     def ready_for_processing(self):
+        """
+        Update Data Source status to READY_FOR_PROCESSING
+        when object if ready to (preview/steps) process
+        """
         pass
 
     @django_fsm.transition(
         field=status,
-        source=[constants.DataSourceStatus.READY_FOR_PROCESSING, constants.DataSourceStatus.PROCESSING],
-        target=constants.DataSourceStatus.DONE,
+        source=[constants.DataSourceStatus.READY_FOR_PROCESSING],
+        target=constants.DataSourceStatus.PROCESSING,
+        on_error=constants.DataSourceStatus.ERROR,
+    )
+    def preview_process(self):
+        self.update_meta()
+
+    # @django_fsm.transition(
+    #     field=status,
+    #     source=[
+    #         constants.DataSourceStatus.READY_FOR_PROCESSING,
+    #     ],
+    #     target=constants.DataSourceStatus.PROCESSING,
+    #     on_error=constants.DataSourceStatus.ERROR,
+    # )
+    # def steps_process(self):
+    #     pass
+
+    @django_fsm.transition(
+        field=status, source=constants.DataSourceStatus.PROCESSING, target=constants.DataSourceStatus.DONE
     )
     def done(self):
         pass
