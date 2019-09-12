@@ -71,7 +71,7 @@ api.interceptors.response.use(
   }),
   error => {
     if (error.response.status === 401) {
-      // return window.location.replace(AUTH_PATH);
+      return window.location.replace(AUTH_PATH);
     }
     return Promise.reject(error);
   }
