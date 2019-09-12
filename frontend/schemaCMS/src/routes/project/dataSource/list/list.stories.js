@@ -7,6 +7,7 @@ import { List } from './list.component';
 const defaultProps = {
   createDataSource: Function.prototype,
   fetchDataSources: Function.prototype,
+  cancelFetchListLoop: Function.prototype,
   dataSources: [
     {
       created: '2019-09-09T11:23:40+0000',

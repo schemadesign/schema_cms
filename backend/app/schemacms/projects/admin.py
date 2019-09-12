@@ -17,7 +17,9 @@ class DataSource(admin.ModelAdmin):
                 super().save_model(request, obj, form, change)
                 obj.file.save(file.name, file)
                 obj.preview_process()
+                obj.save()
         else:
             with transaction.atomic():
                 super().save_model(request, obj, form, change)
                 obj.preview_process()
+                obj.save()

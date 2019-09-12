@@ -1,10 +1,11 @@
-import { all, put, takeLatest } from 'redux-saga/effects';
-import { pipe, forEach, keys } from 'ramda';
+import { all, put, takeLatest, take, delay, fork, cancel, cancelled } from 'redux-saga/effects';
+import { pipe, forEach, keys, any, anyPass, propEq } from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { DATA_SOURCE_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
+import { FETCH_LIST_DELAY, STATUS_PROCESSING, STATUS_READY_FOR_PROCESSING } from './dataSource.constants';
 
 function* create({ payload }) {
   try {
@@ -50,18 +51,39 @@ function* fetchOne({ payload }) {
   }
 }
 
-function* fetchList({ payload }) {
+const getIfAnyResultProcessing = any(
+  anyPass([propEq('status', STATUS_READY_FOR_PROCESSING), propEq('status', STATUS_PROCESSING)])
+);
+
+function* fetchListLoop(payload) {
   try {
-    yield put(DataSourceRoutines.fetchList.request());
+    while (true) {
+      yield put(DataSourceRoutines.fetchList.request());
 
-    const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`);
+      const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`);
 
-    yield put(DataSourceRoutines.fetchList.success(data.results));
+      yield put(DataSourceRoutines.fetchList.success(data.results));
+
+      if (!getIfAnyResultProcessing(data.results)) {
+        yield cancel();
+      }
+
+      yield delay(FETCH_LIST_DELAY);
+    }
   } catch (error) {
     yield put(DataSourceRoutines.fetchList.failure(error));
   } finally {
-    yield put(DataSourceRoutines.fetchList.fulfill());
+    if (yield cancelled()) {
+      yield put(DataSourceRoutines.fetchList.fulfill());
+    }
   }
+}
+
+function* fetchList({ payload }) {
+  const bgSyncTask = yield fork(fetchListLoop, payload);
+
+  yield take(DataSourceRoutines.cancelFetchListLoop.TRIGGER);
+  yield cancel(bgSyncTask);
 }
 
 function* updateOne({ payload: { projectId, dataSourceId, requestData, step } }) {
