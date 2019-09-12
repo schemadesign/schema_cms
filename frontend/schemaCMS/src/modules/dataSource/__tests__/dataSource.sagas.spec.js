@@ -1,12 +1,13 @@
 import Immutable from 'seamless-immutable';
 import { expectSaga } from 'redux-saga-test-plan';
+import * as effects from 'redux-saga/effects';
 import { OK } from 'http-status-codes';
 
 import { watchDataSource } from '../dataSource.sagas';
 import { DataSourceRoutines } from '../dataSource.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCE_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
-import { STATUS_DRAFT } from '../dataSource.constants';
+import { STATUS_DRAFT, STATUS_READY_FOR_PROCESSING, STATUS_DONE } from '../dataSource.constants';
 import browserHistory from '../../../shared/utils/history';
 
 describe('DataSource: sagas', () => {
@@ -27,7 +28,7 @@ describe('DataSource: sagas', () => {
         .withState(defaultState)
         .put(DataSourceRoutines.create.success(responseData))
         .dispatch(DataSourceRoutines.create(payload))
-        .run();
+        .silentRun();
     });
   });
 
@@ -36,7 +37,7 @@ describe('DataSource: sagas', () => {
       const payload = { projectId: '1', dataSourceId: '1' };
       const responseData = {
         id: 1,
-        status: STATUS_DRAFT,
+        status: STATUS_DONE,
       };
 
       mockApi
@@ -47,26 +48,66 @@ describe('DataSource: sagas', () => {
         .withState(defaultState)
         .put(DataSourceRoutines.fetchOne.success(responseData))
         .dispatch(DataSourceRoutines.fetchOne(payload))
-        .run();
+        .silentRun();
     });
   });
 
   describe('fetchList', () => {
-    it('should dispatch a success action', async () => {
-      const payload = { projectId: '1' };
-      const responseData = {
-        results: {
-          dataSource: [],
+    const payload = { projectId: '1' };
+    const responseData = {
+      results: [
+        {
+          status: STATUS_READY_FOR_PROCESSING,
         },
-      };
+      ],
+    };
+    const responseDoneData = {
+      results: [
+        {
+          status: STATUS_DONE,
+        },
+      ],
+    };
 
-      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`).reply(OK, responseData);
+    beforeEach(() => {
+      jest.spyOn(effects, 'delay').mockReturnValue(0);
+    });
+
+    it('should dispatch a success action', async () => {
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`).reply(OK, responseDoneData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchList.success(responseDoneData.results))
+        .dispatch(DataSourceRoutines.fetchList(payload))
+        .silentRun();
+    });
+
+    it('should dispatch a success actions until processing of some elements finish', async () => {
+      mockApi
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`)
+        .reply(OK, responseData)
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`)
+        .reply(OK, responseDoneData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
         .put(DataSourceRoutines.fetchList.success(responseData.results))
+        .put(DataSourceRoutines.fetchList.success(responseDoneData.results))
+        .put(DataSourceRoutines.fetchList.fulfill())
         .dispatch(DataSourceRoutines.fetchList(payload))
-        .run();
+        .silentRun();
+    });
+
+    it('should dispatch once fulfill actions after cancel', async () => {
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`).reply(OK, responseData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchList.fulfill())
+        .dispatch(DataSourceRoutines.fetchList(payload))
+        .dispatch(DataSourceRoutines.cancelFetchListLoop(payload))
+        .silentRun();
     });
   });
 
@@ -80,7 +121,7 @@ describe('DataSource: sagas', () => {
         .withState(defaultState)
         .put(DataSourceRoutines.removeOne.success())
         .dispatch(DataSourceRoutines.removeOne(payload))
-        .run();
+        .silentRun();
     });
   });
 
@@ -121,7 +162,7 @@ describe('DataSource: sagas', () => {
         .withState(defaultState)
         .put(DataSourceRoutines.updateOne.success(responseData))
         .dispatch(DataSourceRoutines.updateOne(payload))
-        .run();
+        .silentRun();
     });
 
     it('should should redirect to next step', async () => {
@@ -130,7 +171,7 @@ describe('DataSource: sagas', () => {
       await expectSaga(watchDataSource)
         .withState(defaultState)
         .dispatch(DataSourceRoutines.updateOne(payload))
-        .run();
+        .silentRun();
 
       expect(browserHistory.push).toBeCalledWith('/project/view/1/datasource/view/1/2');
     });
@@ -142,7 +183,7 @@ describe('DataSource: sagas', () => {
       await expectSaga(watchDataSource)
         .withState(defaultState)
         .dispatch(DataSourceRoutines.updateOne(payload))
-        .run();
+        .silentRun();
 
       expect(browserHistory.push).toBeCalledWith('/project/view/1/datasource/list');
     });
@@ -163,7 +204,7 @@ describe('DataSource: sagas', () => {
         .withState(defaultState)
         .put(DataSourceRoutines.processOne.success())
         .dispatch(DataSourceRoutines.processOne(payload))
-        .run();
+        .silentRun();
     });
   });
 
@@ -186,7 +227,7 @@ describe('DataSource: sagas', () => {
         .withState(defaultState)
         .put(DataSourceRoutines.fetchFields.success(responseData))
         .dispatch(DataSourceRoutines.fetchFields(payload))
-        .run();
+        .silentRun();
     });
   });
 });
