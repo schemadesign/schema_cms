@@ -26,13 +26,19 @@ exports[`List: Component should render correctly 1`] = `
       <Card
         headerComponent={
           <ForwardRef(styled.ul)>
-            <ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
               3 months ago
             </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
               Status
             </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-2"
+            >
               Firstname Lastname
             </ForwardRef(styled.li)>
           </ForwardRef(styled.ul)>
@@ -44,6 +50,7 @@ exports[`List: Component should render correctly 1`] = `
               "cursor": "pointer",
             }
           }
+          id="projectName-0"
           onClick={[Function]}
         >
           Project Name
@@ -51,7 +58,9 @@ exports[`List: Component should render correctly 1`] = `
         <styled.div
           onClick={[Function]}
         >
-          <P>
+          <P
+            id="projectDescription-0"
+          >
             Description
           </P>
         </styled.div>
@@ -67,6 +76,7 @@ exports[`List: Component should render correctly 1`] = `
               "width": "100%",
             }
           }
+          id="apiPath-0"
         >
           schemacms/api/project_title
         </Span>
@@ -78,13 +88,19 @@ exports[`List: Component should render correctly 1`] = `
       <Card
         headerComponent={
           <ForwardRef(styled.ul)>
-            <ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
               3 months ago
             </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
               Published
             </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-2"
+            >
               Tadeusz Kosciuszko
             </ForwardRef(styled.li)>
           </ForwardRef(styled.ul)>
@@ -96,6 +112,7 @@ exports[`List: Component should render correctly 1`] = `
               "cursor": "pointer",
             }
           }
+          id="projectName-1"
           onClick={[Function]}
         >
           Honec sodales libero non fermentum aliquam
@@ -103,7 +120,9 @@ exports[`List: Component should render correctly 1`] = `
         <styled.div
           onClick={[Function]}
         >
-          <P>
+          <P
+            id="projectDescription-1"
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
           </P>
         </styled.div>
@@ -119,6 +138,7 @@ exports[`List: Component should render correctly 1`] = `
               "width": "100%",
             }
           }
+          id="apiPath-1"
         >
           schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
         </Span>
@@ -135,6 +155,7 @@ exports[`List: Component should render correctly 1`] = `
         "right": "10px",
       }
     }
+    id="addProjectBtn"
     onClick={[Function]}
   >
     <PlusIcon />

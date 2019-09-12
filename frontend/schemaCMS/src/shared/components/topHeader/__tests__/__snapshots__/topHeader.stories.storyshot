@@ -22,6 +22,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         className="sc-bxivhb bUZGRr"
       >
         <h2
+          id="projectsPageTitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -34,6 +35,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           Projects
         </h2>
         <h1
+          id="projectsPageSubtitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -114,6 +116,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         className="sc-bxivhb bUZGRr"
       >
         <h2
+          id="projectsPageTitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -126,6 +129,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           Projects
         </h2>
         <h1
+          id="projectsPageSubtitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",

@@ -19,7 +19,9 @@ export const INITIAL_STATE = new Immutable({
   jwtToken: null,
 });
 
-const getJwtTokenSuccess = (state = INITIAL_STATE, { jwt }) => state.set('isAuthenticated', true).set('jwtToken', jwt);
+const getJwtTokenSuccess = (state, { jwt }) => {
+  return state.set('isAuthenticated', true).set('jwtToken', jwt);
+};
 
 const logoutSuccess = state => state.set('isAuthenticated', false).set('jwtToken', null);
 
