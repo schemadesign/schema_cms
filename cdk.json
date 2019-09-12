@@ -2,13 +2,13 @@
     "app": "python3 app.py",
     "context": {
         "installation_mode": "full",
-        "github_token_arn": "arn:aws:secretsmanager:eu-central-1:314820667159:secret:github-token-TRQAXN",
-        "django_social_auth_auth0_key_arn": "arn:aws:secretsmanager:eu-central-1:314820667159:secret:DJANGO_SOCIAL_AUTH_AUTH0_KEY-NWrYQB",
-        "django_social_auth_auth0_secret_arn": "arn:aws:secretsmanager:eu-central-1:314820667159:secret:DJANGO_SOCIAL_AUTH_AUTH0_SECRET-LxWUlf",
-        "django_social_auth_auth0_domain_arn": "arn:aws:secretsmanager:eu-central-1:314820667159:secret:DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN-9AOpjL",
-        "django_user_mgmt_backend_arn":  "arn:aws:secretsmanager:eu-central-1:314820667159:secret:DJANGO_USER_MGMT_BACKEND-5VWCEk",
-        "django_user_mgmt_auth0_domain_arn": "arn:aws:secretsmanager:eu-central-1:314820667159:secret:DJANGO_USER_MGMT_AUTH0_DOMAIN-D4QBEy",
-        "django_user_mgmt_auth0_key_arn":  "arn:aws:secretsmanager:eu-central-1:314820667159:secret:DJANGO_USER_MGMT_AUTH0_KEY-wlSpNa",
-        "django_user_mgmt_auth0_secret_arn": "arn:aws:secretsmanager:eu-central-1:314820667159:secret:DJANGO_USER_MGMT_AUTH0_SECRET-8pN8An"
+        "github_token_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:github-token-82UijJ",
+        "django_social_auth_auth0_key_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_SOCIAL_AUTH_AUTH0_KEY-Bxbju2",
+        "django_social_auth_auth0_secret_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_SOCIAL_AUTH_AUTH0_SECRET-02psRA",
+        "django_social_auth_auth0_domain_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_SOCIAL_AUTH_AUTH0_DOMAIN-r0U9R1",
+        "django_user_mgmt_backend_arn":  "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_BACKEND-Y4O7hn",
+        "django_user_mgmt_auth0_domain_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_AUTH0_DOMAIN-SikZIO",
+        "django_user_mgmt_auth0_key_arn":  "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_AUTH0_KEY-1hkjNJ",
+        "django_user_mgmt_auth0_secret_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_AUTH0_SECRET-nkKpoV"
     }
 }
