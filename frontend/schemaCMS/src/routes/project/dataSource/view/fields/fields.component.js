@@ -137,8 +137,6 @@ export class Fields extends PureComponent {
   }
 
   render() {
-    debugger;
-
     const content = this.state.isLoading ? <Loader /> : this.renderContent();
 
     return (
