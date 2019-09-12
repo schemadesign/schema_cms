@@ -158,7 +158,7 @@ exports[`Storyshots Project/View default 1`] = `
             className="sc-dnqmqq sc-iwsKbI iOzZuy"
           >
             <a
-              href="/project/view/1/datasource"
+              href="/project/view/100/datasource"
               id={null}
               onClick={[Function]}
             >
@@ -173,7 +173,7 @@ exports[`Storyshots Project/View default 1`] = `
             className="sc-dnqmqq sc-gZMcBi bYVXEs"
           >
             <a
-              href="/project/edit/1"
+              href="/project/edit/100"
               id={null}
               onClick={[Function]}
             >
@@ -184,7 +184,7 @@ exports[`Storyshots Project/View default 1`] = `
             className="sc-dnqmqq sc-gZMcBi bYVXEs"
           >
             <a
-              href="/project/delete/1"
+              href="/project/delete/100"
               id={null}
               onClick={[Function]}
             >

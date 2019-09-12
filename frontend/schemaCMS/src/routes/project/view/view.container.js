@@ -9,8 +9,10 @@ import { compose } from 'ramda';
 import { View } from './view.component';
 import { ProjectActions } from '../../../modules/project';
 import { selectProject } from '../../../modules/project/project.selectors';
+import { selectUserData } from '../../../modules/userProfile/userProfile.selectors';
 
 const mapStateToProps = createStructuredSelector({
+  user: selectUserData,
   project: selectProject,
 });
 
