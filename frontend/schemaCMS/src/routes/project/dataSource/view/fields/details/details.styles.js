@@ -1,14 +1,6 @@
 import styled from 'styled-components';
 import { Theme, Icons } from 'schemaUI';
 
-const SHORT_ITEM_MARGIN = '10px';
-
-const setMargin = (index, value = SHORT_ITEM_MARGIN) => {
-  const side = index % 2 ? 'left' : 'right';
-
-  return `margin-${side}: ${value};`;
-};
-
 export const Container = styled.div``;
 
 export const List = styled.ul`
@@ -16,12 +8,16 @@ export const List = styled.ul`
   margin: 0;
   list-style: none;
   font-weight: 600;
+  display: grid;
+  grid-gap: 0 20px;
+  grid-template-columns: 1fr 1fr;
 `;
 
 export const FieldInformation = styled.li`
   border-bottom: 2px solid ${Theme.primary.background};
   padding: 12px 0;
   display: flex;
+  grid-column: 1 / span 2;
 
   &:first-of-type {
     border-top: 2px solid ${Theme.primary.background};
@@ -29,9 +25,8 @@ export const FieldInformation = styled.li`
 `;
 
 export const FieldSummary = styled(FieldInformation)`
-  width: calc(50% - ${SHORT_ITEM_MARGIN});
   display: inline-block;
-  ${props => setMargin(props.index)}
+  grid-column: ${({ index }) => (index % 2 ? '2' : '1')};
 `;
 
 export const Label = styled.span`
