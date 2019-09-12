@@ -8,16 +8,16 @@ export const List = styled.ul`
   margin: 0;
   list-style: none;
   font-weight: 600;
-  display: grid;
-  grid-gap: 0 20px;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const FieldInformation = styled.li`
   border-bottom: 2px solid ${Theme.primary.background};
   padding: 12px 0;
   display: flex;
-  grid-column: 1 / span 2;
+  width: 100%;
 
   &:first-of-type {
     border-top: 2px solid ${Theme.primary.background};
@@ -26,7 +26,7 @@ export const FieldInformation = styled.li`
 
 export const FieldSummary = styled(FieldInformation)`
   display: inline-block;
-  grid-column: ${({ index }) => (index % 2 ? '2' : '1')};
+  width: calc(50% - 10px);
 `;
 
 export const Label = styled.span`

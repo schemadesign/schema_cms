@@ -10,7 +10,6 @@ exports[`Details: Component should render correctly 1`] = `
       firstName
     </styled.li>
     <styled.li
-      index={0}
       key="0"
     >
       <styled.span>
@@ -21,7 +20,6 @@ exports[`Details: Component should render correctly 1`] = `
       </styled.span>
     </styled.li>
     <styled.li
-      index={0}
       key="1"
     >
       <styled.span>
@@ -32,7 +30,6 @@ exports[`Details: Component should render correctly 1`] = `
       </styled.span>
     </styled.li>
     <Styled(styled.li)
-      index={0}
       key="2"
     >
       <styled.span>
@@ -43,7 +40,6 @@ exports[`Details: Component should render correctly 1`] = `
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
-      index={1}
       key="3"
     >
       <styled.span>
@@ -54,7 +50,6 @@ exports[`Details: Component should render correctly 1`] = `
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
-      index={2}
       key="4"
     >
       <styled.span>
@@ -65,7 +60,6 @@ exports[`Details: Component should render correctly 1`] = `
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
-      index={3}
       key="5"
     >
       <styled.span>
@@ -76,7 +70,6 @@ exports[`Details: Component should render correctly 1`] = `
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
-      index={4}
       key="6"
     >
       <styled.span>
@@ -87,7 +80,6 @@ exports[`Details: Component should render correctly 1`] = `
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
-      index={5}
       key="7"
     >
       <styled.span>
@@ -98,7 +90,6 @@ exports[`Details: Component should render correctly 1`] = `
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
-      index={6}
       key="8"
     >
       <styled.span>
@@ -109,7 +100,6 @@ exports[`Details: Component should render correctly 1`] = `
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
-      index={7}
       key="9"
     >
       <styled.span>
