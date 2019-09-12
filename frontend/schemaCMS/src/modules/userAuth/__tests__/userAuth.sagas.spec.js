@@ -29,7 +29,7 @@ describe('UserAuth: sagas', () => {
         .withState(defaultState)
         .put(UserAuthActions.getJwtTokenSuccess(jwtToken))
         .dispatch(UserAuthActions.getJwtToken(uid, token))
-        .run();
+        .silentRun();
     });
 
     it('should put fetchUserDetails action', async () => {
@@ -40,7 +40,7 @@ describe('UserAuth: sagas', () => {
         .withState(defaultState)
         .put(UserProfileRoutines.fetchUserDetails())
         .dispatch(UserAuthActions.getJwtToken(uid, token))
-        .run();
+        .silentRun();
     });
   });
 
@@ -50,7 +50,7 @@ describe('UserAuth: sagas', () => {
         .withState(defaultState)
         .put(UserProfileActions.clearUserDetails())
         .dispatch(StartupActions.startup())
-        .run();
+        .silentRun();
     });
   });
 
@@ -60,7 +60,7 @@ describe('UserAuth: sagas', () => {
         .withState(defaultState)
         .put(UserAuthActions.logoutSuccess())
         .dispatch(UserAuthActions.logout())
-        .run();
+        .silentRun();
     });
   });
 });

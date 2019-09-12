@@ -18,6 +18,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       createDataSource: promisifyRoutine(DataSourceRoutines.create),
       fetchDataSources: promisifyRoutine(DataSourceRoutines.fetchList),
+      cancelFetchListLoop: promisifyRoutine(DataSourceRoutines.cancelFetchListLoop),
     },
     dispatch
   ),

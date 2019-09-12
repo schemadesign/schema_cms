@@ -25,6 +25,7 @@ exports[`Storyshots Project/List empty 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
+            id="projectsPageTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -37,6 +38,7 @@ exports[`Storyshots Project/List empty 1`] = `
             Projects
           </h2>
           <h1
+            id="projectsPageSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -117,6 +119,7 @@ exports[`Storyshots Project/List empty 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
+            id="projectsPageTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -129,6 +132,7 @@ exports[`Storyshots Project/List empty 1`] = `
             Projects
           </h2>
           <h1
+            id="projectsPageSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -224,6 +228,7 @@ exports[`Storyshots Project/List empty 1`] = `
     </p>
   </div>
   <button
+    id="addProjectBtn"
     onClick={[Function]}
     style={
       Object {
@@ -289,6 +294,7 @@ exports[`Storyshots Project/List list 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
+            id="projectsPageTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -301,6 +307,7 @@ exports[`Storyshots Project/List list 1`] = `
             Projects
           </h2>
           <h1
+            id="projectsPageSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -381,6 +388,7 @@ exports[`Storyshots Project/List list 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
+            id="projectsPageTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -393,6 +401,7 @@ exports[`Storyshots Project/List list 1`] = `
             Projects
           </h2>
           <h1
+            id="projectsPageSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -502,22 +511,26 @@ exports[`Storyshots Project/List list 1`] = `
           >
             <li
               className="sc-hSdWYo hYLVCx"
+              id="headerItem-0"
             >
               3 months ago
             </li>
             <li
               className="sc-hSdWYo hYLVCx"
+              id="headerItem-1"
             >
               Status
             </li>
             <li
               className="sc-hSdWYo hYLVCx"
+              id="headerItem-2"
             >
               Firstname Lastname
             </li>
           </ul>
         </div>
         <h1
+          id="projectName-0"
           onClick={[Function]}
           style={
             Object {
@@ -538,6 +551,7 @@ exports[`Storyshots Project/List list 1`] = `
           onClick={[Function]}
         >
           <p
+            id="projectDescription-0"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -552,6 +566,7 @@ exports[`Storyshots Project/List list 1`] = `
           </p>
         </div>
         <span
+          id="apiPath-0"
           style={
             Object {
               "color": "#a6a7aa",
@@ -599,22 +614,26 @@ exports[`Storyshots Project/List list 1`] = `
           >
             <li
               className="sc-hSdWYo hYLVCx"
+              id="headerItem-0"
             >
               3 months ago
             </li>
             <li
               className="sc-hSdWYo hYLVCx"
+              id="headerItem-1"
             >
               Published
             </li>
             <li
               className="sc-hSdWYo hYLVCx"
+              id="headerItem-2"
             >
               Tadeusz Kosciuszko
             </li>
           </ul>
         </div>
         <h1
+          id="projectName-1"
           onClick={[Function]}
           style={
             Object {
@@ -635,6 +654,7 @@ exports[`Storyshots Project/List list 1`] = `
           onClick={[Function]}
         >
           <p
+            id="projectDescription-1"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -649,6 +669,7 @@ exports[`Storyshots Project/List list 1`] = `
           </p>
         </div>
         <span
+          id="apiPath-1"
           style={
             Object {
               "color": "#a6a7aa",
@@ -668,6 +689,7 @@ exports[`Storyshots Project/List list 1`] = `
     </li>
   </ul>
   <button
+    id="addProjectBtn"
     onClick={[Function]}
     style={
       Object {

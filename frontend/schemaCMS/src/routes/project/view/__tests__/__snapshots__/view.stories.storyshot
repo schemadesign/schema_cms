@@ -25,6 +25,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
+            id="projectsPageTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -37,6 +38,7 @@ exports[`Storyshots Project/View default 1`] = `
             Project
           </h2>
           <h1
+            id="projectsPageSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -117,6 +119,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
+            id="projectsPageTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -129,6 +132,7 @@ exports[`Storyshots Project/View default 1`] = `
             Project
           </h2>
           <h1
+            id="projectsPageSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -607,6 +611,7 @@ exports[`Storyshots Project/View empty 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
+            id="projectsPageTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -619,6 +624,7 @@ exports[`Storyshots Project/View empty 1`] = `
             Project
           </h2>
           <h1
+            id="projectsPageSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -697,6 +703,7 @@ exports[`Storyshots Project/View empty 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
+            id="projectsPageTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -709,6 +716,7 @@ exports[`Storyshots Project/View empty 1`] = `
             Project
           </h2>
           <h1
+            id="projectsPageSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",

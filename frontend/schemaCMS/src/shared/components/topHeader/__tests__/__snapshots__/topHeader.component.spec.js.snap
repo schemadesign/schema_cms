@@ -14,10 +14,14 @@ exports[`TopHeader: Component should render correctly 1`] = `
     onButtonClick={[Function]}
   >
     <styled.div>
-      <H2>
+      <H2
+        id="projectsPageTitle"
+      >
         Projects
       </H2>
-      <H1>
+      <H1
+        id="projectsPageSubtitle"
+      >
         Overview
       </H1>
     </styled.div>
@@ -40,10 +44,14 @@ exports[`TopHeader: Component should render correctly 1`] = `
   >
     <styled.div>
       <styled.div>
-        <H2>
+        <H2
+          id="projectsPageTitle"
+        >
           Projects
         </H2>
-        <H1>
+        <H1
+          id="projectsPageSubtitle"
+        >
           Overview
         </H1>
       </styled.div>

@@ -13,6 +13,7 @@ describe('List: Component', () => {
   const defaultProps = {
     createDataSource: Function.prototype,
     fetchDataSources: Function.prototype,
+    cancelFetchListLoop: Function.prototype,
     dataSources: [],
     history: {
       push: Function.prototype,

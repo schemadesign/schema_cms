@@ -23,7 +23,7 @@ describe('UserProfile: sagas', () => {
         .withState(defaultState)
         .put(UserProfileRoutines.fetchUserDetails.success(data))
         .dispatch(UserProfileRoutines.fetchUserDetails())
-        .run();
+        .silentRun();
     });
 
     it('it should put fetchUserDetails.failure action', async () => {
@@ -33,7 +33,7 @@ describe('UserProfile: sagas', () => {
         .withState(defaultState)
         .put(UserProfileRoutines.fetchUserDetails.failure())
         .dispatch(UserProfileRoutines.fetchUserDetails())
-        .run();
+        .silentRun();
     });
   });
 
@@ -49,7 +49,7 @@ describe('UserProfile: sagas', () => {
         .withState(defaultState)
         .put(UserProfileRoutines.updateMe.success(data))
         .dispatch(UserProfileRoutines.updateMe({ payload }))
-        .run();
+        .silentRun();
     });
 
     it('it should put updateMe.failure action', async () => {
@@ -63,7 +63,7 @@ describe('UserProfile: sagas', () => {
         .withState(defaultState)
         .put(UserProfileRoutines.updateMe.failure())
         .dispatch(UserProfileRoutines.updateMe({ payload }))
-        .run();
+        .silentRun();
     });
   });
 });

@@ -1,5 +1,7 @@
 import * as Yup from 'yup';
 
+export const FETCH_LIST_DELAY = 15 * 1000;
+
 export const UPDATE_DATA_SOURCE_FORM = 'update_data_source_form';
 
 export const DATA_SOURCE_NAME = 'name';

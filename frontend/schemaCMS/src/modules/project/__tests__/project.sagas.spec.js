@@ -54,7 +54,7 @@ describe('Project: sagas', () => {
         .withState(defaultState)
         .put(ProjectActions.fetchListSuccess([item]))
         .dispatch(ProjectActions.fetchList())
-        .run();
+        .silentRun();
     });
   });
 
@@ -69,7 +69,7 @@ describe('Project: sagas', () => {
           })
         )
         .dispatch(ProjectActions.fetchOne('1'))
-        .run();
+        .silentRun();
     });
   });
 
@@ -94,7 +94,7 @@ describe('Project: sagas', () => {
         .provide([[select(selectUserData), currentUser]])
         .put(ProjectActions.createProjectSuccess(item))
         .dispatch(ProjectRoutines.createProject({ payload }))
-        .run();
+        .silentRun();
     });
 
     it('should put ProjectRoutines.createProject.failure action', async () => {
@@ -117,7 +117,7 @@ describe('Project: sagas', () => {
         .provide([[select(selectUserData), currentUser]])
         .put(ProjectRoutines.createProject.failure())
         .dispatch(ProjectRoutines.createProject({ payload }))
-        .run();
+        .silentRun();
     });
   });
 });
