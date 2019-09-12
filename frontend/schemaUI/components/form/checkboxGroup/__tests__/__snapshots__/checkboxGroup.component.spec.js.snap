@@ -4,10 +4,41 @@ exports[`CheckboxGroup: Component should render correctly 1`] = `
 <div
   style={
     Object {
-      "border": "1px solid blue",
+      "borderBottom": "1px solid #F0EFEF",
+      "borderTop": "1px solid #F0EFEF",
+      "display": "flex",
+      "flexDirection": "column",
+      "width": "320px",
     }
   }
 >
-  CheckboxGroup component
+  <ContextProvider
+    value={
+      Object {
+        "checkedIcon": <CheckboxOnIcon />,
+        "customCheckboxStyles": Object {},
+        "isEdit": true,
+        "name": "name",
+        "onChange": [Function],
+        "uncCheckedIcon": <CheckboxOffIcon />,
+        "value": Array [
+          "checkbox 1",
+        ],
+      }
+    }
+  >
+    <Checkbox
+      id="checkbox 1"
+      key="1"
+      label="checkbox 1"
+      value="checkbox 1"
+    />
+    <Checkbox
+      id="checkbox 2"
+      key="2"
+      label="checkbox 2"
+      value="checkbox 2"
+    />
+  </ContextProvider>
 </div>
 `;

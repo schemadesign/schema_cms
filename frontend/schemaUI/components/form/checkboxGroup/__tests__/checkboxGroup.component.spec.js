@@ -2,11 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { CheckboxGroup } from '../checkboxGroup.component';
+import { defaultProps, children } from '../checkboxGroup.stories';
 
 describe('CheckboxGroup: Component', () => {
-  const defaultProps = {};
-
-  const component = props => <CheckboxGroup {...defaultProps} {...props} />;
+  const component = props => (
+    <CheckboxGroup {...defaultProps} {...props}>
+      {children}
+    </CheckboxGroup>
+  );
 
   const render = (props = {}) => shallow(component(props));
 
