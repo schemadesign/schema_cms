@@ -21,7 +21,7 @@ class TestProject:
         assert project.data_source_count == expected
 
 
-class TestDataSourceModelMethods:
+class TestDataSource:
     """
     Tests DataSource model additional methods
     """
@@ -87,3 +87,12 @@ class TestDataSourceModelMethods:
 
         assert expected_preview == preview
         assert expected_fields_info == fields_info
+
+
+class TestDataSourceMeta:
+    @pytest.mark.parametrize("offset, whence", [(0, 0), (0, 2)])  # test different file cursor positions
+    def test_data(self, data_source_meta, offset, whence):
+        expected = json.loads(data_source_meta.preview.read())
+        data_source_meta.preview.seek(offset, whence)
+
+        assert data_source_meta.data == expected

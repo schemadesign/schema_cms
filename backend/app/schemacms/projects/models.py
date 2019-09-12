@@ -122,7 +122,9 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         pass
 
     @django_fsm.transition(
-        field=status, source=constants.DataSourceStatus.PROCESSING, target=constants.DataSourceStatus.DONE
+        field=status,
+        source=[constants.DataSourceStatus.READY_FOR_PROCESSING, constants.DataSourceStatus.PROCESSING],
+        target=constants.DataSourceStatus.DONE,
     )
     def done(self):
         pass
@@ -184,3 +186,10 @@ class DataSourceMeta(models.Model):
             f"{settings.STORAGE_DIR}/projects",
             f"{self.datasource.project_id}/datasources/{self.datasource.id}/{filename}",
         )
+
+    @property
+    def data(self):
+        if not self.preview:
+            return {}
+        self.preview.seek(0)
+        return json.loads(self.preview.read())

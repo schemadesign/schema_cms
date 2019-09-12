@@ -54,7 +54,7 @@ class DataSourceViewSet(viewsets.ModelViewSet):
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-        data = json.loads(data_source.meta_data.preview.read())
+        data = data_source.meta_data.data
         data["data_source"] = {"name": data_source.name}
         return response.Response(data)
 
@@ -63,9 +63,10 @@ class DataSourceViewSet(viewsets.ModelViewSet):
         try:
             obj = self.get_object()
             obj.preview_process()
+            obj.done()
             obj.save()
-            logging.info(f"DataSource {self.get_object().id} processing DONE")
-            return response.Response(status=status.HTTP_200_OK)
+            logging.info(f"DataSource {obj.id} processing DONE")
+            return response.Response(obj.meta_data.data, status=status.HTTP_200_OK)
 
         except Exception as e:
             logging.error(f"DataSource {self.get_object().id} processing error - {e}")

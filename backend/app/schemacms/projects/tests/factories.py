@@ -33,7 +33,8 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
     file = factory.django.FileField(filename="test.csv", from_func=utils_test.make_csv)
 
     class Params:
-        draft = factory.Trait(type=project_constants.DataSourceStatus.DRAFT)
+        draft = factory.Trait(status=project_constants.DataSourceStatus.DRAFT)
+        ready_for_processing = factory.Trait(status=project_constants.DataSourceStatus.READY_FOR_PROCESSING)
 
     @factory.post_generation
     def meta_data_update(self, create, extracted, **kwargs):
