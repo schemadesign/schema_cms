@@ -60,7 +60,7 @@ exports[`Storyshots Project/DataSource/View/Fields Default 1`] = `
         className="sc-eqIVtm iNHbQf"
       >
         <button
-          disabled={true}
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -85,7 +85,6 @@ exports[`Storyshots Project/DataSource/View/Fields Default 1`] = `
               Object {
                 "fill": "#1d1d20",
                 "height": "60px",
-                "opacity": 0.3,
                 "width": "60px",
               }
             }

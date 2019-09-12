@@ -5,10 +5,10 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
   className="sc-cvbbAY dbHDoR"
 >
   <ul
-    className="sc-jWBwVP gvoNsP"
+    className="sc-jWBwVP klZgXZ"
   >
     <li
-      className="sc-brqgnP fsZVPc"
+      className="sc-brqgnP cLeBaL"
     >
       <span
         className="sc-jAaTju bTBTHj"
@@ -18,7 +18,7 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
       firstName
     </li>
     <li
-      className="sc-brqgnP fsZVPc"
+      className="sc-brqgnP cLeBaL"
     >
       <span
         className="sc-jAaTju bTBTHj"
@@ -32,7 +32,7 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
       </span>
     </li>
     <li
-      className="sc-brqgnP fsZVPc"
+      className="sc-brqgnP cLeBaL"
     >
       <span
         className="sc-jAaTju bTBTHj"
@@ -62,7 +62,7 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
       </svg>
     </li>
     <li
-      className="sc-brqgnP sc-cMljjf fGeLWQ"
+      className="sc-brqgnP sc-cMljjf hYAlgf"
     >
       <span
         className="sc-jAaTju bTBTHj"
@@ -76,7 +76,7 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
       </span>
     </li>
     <li
-      className="sc-brqgnP sc-cMljjf kecTXe"
+      className="sc-brqgnP sc-cMljjf cGdZiD"
     >
       <span
         className="sc-jAaTju bTBTHj"
@@ -90,7 +90,7 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
       </span>
     </li>
     <li
-      className="sc-brqgnP sc-cMljjf fGeLWQ"
+      className="sc-brqgnP sc-cMljjf hYAlgf"
     >
       <span
         className="sc-jAaTju bTBTHj"
@@ -104,7 +104,7 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
       </span>
     </li>
     <li
-      className="sc-brqgnP sc-cMljjf kecTXe"
+      className="sc-brqgnP sc-cMljjf cGdZiD"
     >
       <span
         className="sc-jAaTju bTBTHj"
@@ -118,7 +118,7 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
       </span>
     </li>
     <li
-      className="sc-brqgnP sc-cMljjf fGeLWQ"
+      className="sc-brqgnP sc-cMljjf hYAlgf"
     >
       <span
         className="sc-jAaTju bTBTHj"
@@ -132,7 +132,7 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
       </span>
     </li>
     <li
-      className="sc-brqgnP sc-cMljjf kecTXe"
+      className="sc-brqgnP sc-cMljjf cGdZiD"
     >
       <span
         className="sc-jAaTju bTBTHj"
