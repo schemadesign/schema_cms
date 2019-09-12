@@ -30,7 +30,6 @@ exports[`Details: Component should render correctly 1`] = `
       <styled.span>
         Text
       </styled.span>
-      <Styled(EditIcon) />
     </styled.li>
     <Styled(styled.li)
       index={0}
@@ -62,7 +61,7 @@ exports[`Details: Component should render correctly 1`] = `
         Mean
       </styled.span>
       <styled.span>
-        4.00
+        4
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
@@ -95,7 +94,29 @@ exports[`Details: Component should render correctly 1`] = `
         Std. Dev.
       </styled.span>
       <styled.span>
-        23.03
+        23.0332
+      </styled.span>
+    </Styled(styled.li)>
+    <Styled(styled.li)
+      index={6}
+      key="8"
+    >
+      <styled.span>
+        someProp
+      </styled.span>
+      <styled.span>
+        –
+      </styled.span>
+    </Styled(styled.li)>
+    <Styled(styled.li)
+      index={7}
+      key="9"
+    >
+      <styled.span>
+        freq
+      </styled.span>
+      <styled.span>
+        6
       </styled.span>
     </Styled(styled.li)>
   </styled.ul>

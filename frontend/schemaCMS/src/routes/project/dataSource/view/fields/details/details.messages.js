@@ -6,20 +6,20 @@ export default defineMessages({
     id: 'project.dataSource.fields.details.field',
     defaultMessage: 'Field',
   },
-  sample: {
-    id: 'project.dataSource.fields.details.sample',
+  top: {
+    id: 'project.dataSource.fields.details.top',
     defaultMessage: 'Sample',
   },
   name: {
     id: 'project.dataSource.fields.details.name',
     defaultMessage: 'Field Name',
   },
-  type: {
-    id: 'project.dataSource.fields.details.type',
+  dtype: {
+    id: 'project.dataSource.fields.details.dtype',
     defaultMessage: 'Type',
   },
-  totalCount: {
-    id: 'project.dataSource.fields.details.total',
+  count: {
+    id: 'project.dataSource.fields.details.count',
     defaultMessage: 'Total Count (N)',
   },
   blank: {
@@ -30,8 +30,8 @@ export default defineMessages({
     id: 'project.dataSource.fields.details.unique',
     defaultMessage: 'Unique',
   },
-  totalSum: {
-    id: 'project.dataSource.fields.details.totalSum',
+  sum: {
+    id: 'project.dataSource.fields.details.sum',
     defaultMessage: 'Total Sum',
   },
   mean: {
@@ -46,8 +46,8 @@ export default defineMessages({
     id: 'project.dataSource.fields.details.max',
     defaultMessage: 'Max',
   },
-  standardDeviation: {
-    id: 'project.dataSource.fields.details.standardDeviation',
+  std: {
+    id: 'project.dataSource.fields.details.std',
     defaultMessage: 'Std. Dev.',
   },
   median: {

@@ -1,16 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { add, always, equals, defaultTo, has, ifElse, isNil } from 'ramda';
+import { add, always, equals, defaultTo, has, ifElse, isNil, uniq } from 'ramda';
 
 import { renderWhenTrue } from '../../../../../../shared/utils/rendering';
 import messages from './details.messages';
-import { EMPTY, DEFAULT_STUCTURE, TYPES } from './details.constants';
+import { EDITABLE_FIELDS, EMPTY, DEFAULT_STRUCTURE, INFORMATION_FIELDS } from './details.constants';
 import { Container, List, FieldInformation, FieldSummary, Label, Value, EditIcon } from './details.styles';
-
-const ITEMS_TYPE = {
-  [TYPES.SHORT]: FieldSummary,
-  [TYPES.LONG]: FieldInformation,
-};
 
 export class Details extends PureComponent {
   static propTypes = {
@@ -21,27 +16,28 @@ export class Details extends PureComponent {
 
   getTextValue = defaultTo('');
 
-  getNextIndex = index => ifElse(equals(TYPES.SHORT), always(add(index, 1)), always(0));
+  getNextIndex = index => ifElse(equals(true), always(0), always(add(index, 1)));
 
   renderEditIcon = renderWhenTrue(() => <EditIcon />);
 
-  renderItem = (
-    [list, index],
-    { id, translationId, type = TYPES.SHORT, isEditable = false, format = this.getTextValue }
-  ) => {
+  renderItem = ([list, index], id) => {
     if (!has(id)(this.props.data)) {
       return [list, index];
     }
 
     const value = this.props.data[id];
-    const textValue = isNil(value) ? EMPTY : format(value);
+    const textValue = isNil(value) ? EMPTY : this.getTextValue(value);
     const key = list.length;
-    const nextIndex = this.getNextIndex(index)(type);
-    const Item = ITEMS_TYPE[type];
+    const isInformationField = INFORMATION_FIELDS.includes(id);
+    const nextIndex = this.getNextIndex(index)(isInformationField);
+    const isEditable = EDITABLE_FIELDS.includes(id);
+    const message = messages[id];
+    const label = message ? this.props.intl.formatMessage(message) : id;
+    const Item = isInformationField ? FieldInformation : FieldSummary;
 
     list.push(
       <Item key={key} index={index}>
-        <Label>{this.props.intl.formatMessage(messages[translationId || id])}</Label>
+        <Label>{label}</Label>
         <Value>{textValue}</Value>
         {this.renderEditIcon(isEditable)}
       </Item>
@@ -51,7 +47,9 @@ export class Details extends PureComponent {
   };
 
   render() {
-    const [content] = DEFAULT_STUCTURE.reduce(this.renderItem, [[], 0]);
+    const fieldIds = uniq([...DEFAULT_STRUCTURE, ...Object.keys(this.props.data)]);
+
+    const [content] = fieldIds.reduce(this.renderItem, [[], 0]);
 
     return (
       <Container>
