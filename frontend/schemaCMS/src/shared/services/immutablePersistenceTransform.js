@@ -17,7 +17,6 @@ const toImmutable = raw => Immutable(raw);
 export default {
   out: state => {
     state.mergeDeep = identity;
-    console.log(state, 'about to return immutable');
     return toImmutable(state);
   },
   in: raw => {
