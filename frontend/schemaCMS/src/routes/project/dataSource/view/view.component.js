@@ -7,6 +7,7 @@ import { Container, StepperContainer, stepperStyles, stepperBlockStyles } from '
 import messages from './view.messages';
 import { Source } from './source';
 import { Fields } from './fields';
+import { DataWrangling } from './dataWrangling';
 import { PillButtons } from '../../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { TopHeader } from '../../../../shared/components/topHeader';
@@ -15,12 +16,14 @@ import {
   INITIAL_STEP,
   MAX_STEPS,
   FIELDS_STEP,
+  DATA_WRANGLING_STEP,
 } from '../../../../modules/dataSource/dataSource.constants';
 
 export class View extends PureComponent {
   static propTypes = {
     values: PropTypes.object.isRequired,
     dataSource: PropTypes.object.isRequired,
+    dataWrangling: PropTypes.array,
     fetchDataSource: PropTypes.func.isRequired,
     unmountDataSource: PropTypes.func.isRequired,
     removeDataSource: PropTypes.func.isRequired,
@@ -40,6 +43,10 @@ export class View extends PureComponent {
     }).isRequired,
   };
 
+  static defaultProps = {
+    dataWrangling: ['abc', 'sdfds'],
+  };
+
   componentDidMount() {
     if (!this.props.values.id) {
       const { projectId, dataSourceId } = this.props.match.params;
@@ -55,6 +62,13 @@ export class View extends PureComponent {
   getTitle = intl =>
     this.props.values.status === STATUS_DRAFT ? intl.formatMessage(messages.title) : this.props.values.name;
 
+  getHeaderSubtitle = cond([
+    [equals(INITIAL_STEP), always(this.props.intl.formatMessage(messages.source))],
+    [equals(FIELDS_STEP), always(this.props.intl.formatMessage(messages.fields))],
+    [equals(DATA_WRANGLING_STEP), always(this.props.intl.formatMessage(messages.dataWrangling))],
+    [T, always(null)],
+  ]);
+
   getHeaderAndMenuConfig = (intl, activeStep) => {
     const headerTitle = this.getTitle(intl);
     const secondaryMenuItems = [
@@ -68,17 +82,9 @@ export class View extends PureComponent {
       },
     ];
 
-    if (activeStep === FIELDS_STEP) {
-      return {
-        headerTitle,
-        headerSubtitle: intl.formatMessage(messages.fields),
-        secondaryMenuItems,
-      };
-    }
-
     return {
       headerTitle,
-      headerSubtitle: intl.formatMessage(messages.source),
+      headerSubtitle: this.getHeaderSubtitle(activeStep),
       secondaryMenuItems,
     };
   };
@@ -103,7 +109,7 @@ export class View extends PureComponent {
     cond([
       [equals(INITIAL_STEP), always(<Source {...props} />)],
       [equals(FIELDS_STEP), always(<Fields {...props} />)],
-      [equals(3), always(null)],
+      [equals(DATA_WRANGLING_STEP), always(<DataWrangling {...props} />)],
       [equals(4), always(null)],
       [equals(5), always(null)],
       [equals(6), always(null)],

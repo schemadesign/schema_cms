@@ -7,7 +7,6 @@ import { EditIcon } from '../../icons/editIcon';
 
 export class Checkbox extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     id: PropTypes.string.isRequired,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     value: PropTypes.any.isRequired,
@@ -18,7 +17,7 @@ export class Checkbox extends PureComponent {
   renderEditIcon = isEdit => (isEdit ? <EditIcon /> : null);
 
   render() {
-    const { children, id, label, ...restProps } = this.props;
+    const { id, label, ...restProps } = this.props;
 
     return (
       <CheckboxGroupContext.Consumer>
