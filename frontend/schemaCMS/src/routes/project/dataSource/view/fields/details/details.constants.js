@@ -1,5 +1,3 @@
-import messages from './details.messages';
-
 export const EMPTY = '–';
 
 export const TYPES = {
@@ -7,86 +5,94 @@ export const TYPES = {
   LONG: 'long',
 };
 
-const { SHORT, LONG } = TYPES;
+const { LONG } = TYPES;
 
-export const STRUCTURE = [
-  {
-    id: 'top',
-    label: messages.sample,
-    type: LONG,
-  },
-  {
-    id: 'name',
-    label: messages.sample,
-    type: LONG,
-    isEditable: true,
-  },
-  {
-    id: 'dtype',
-    label: messages.type,
-    type: LONG,
-    isEditable: true,
-  },
-  {
-    id: 'count',
-    label: messages.totalCount,
-    type: SHORT,
-  },
-  {
-    id: 'blank',
-    label: messages.blank,
-    type: SHORT,
-  },
-  {
-    id: 'unique',
-    label: messages.unique,
-    type: SHORT,
-  },
-  {
-    id: 'sum',
-    label: messages.totalSum,
-    type: SHORT,
-  },
-  {
-    id: 'mean',
-    label: messages.mean,
-    type: SHORT,
-    format: value => value.toFixed(2),
-  },
-  {
-    id: 'min',
-    label: messages.min,
-    type: SHORT,
-  },
-  {
-    id: 'max',
-    label: messages.max,
-    type: SHORT,
-  },
-  {
-    id: 'std',
-    label: messages.standardDeviation,
-    type: SHORT,
-    format: value => value.toFixed(2),
-  },
-  {
-    id: 'percentile10',
-    label: messages.percentile10,
-    type: SHORT,
-  },
-  {
-    id: 'percentile25',
-    label: messages.percentile25,
-    type: SHORT,
-  },
-  {
-    id: 'percentile75',
-    label: messages.percentile75,
-    type: SHORT,
-  },
-  {
-    id: 'percentile90',
-    label: messages.percentile90,
-    type: SHORT,
-  },
+const SAMPLE = {
+  id: 'top',
+  translationId: 'sample',
+  type: LONG,
+};
+
+const NAME = {
+  id: 'name',
+  type: LONG,
+  isEditable: true,
+};
+
+const TYPE = {
+  id: 'dtype',
+  translationId: 'type',
+  type: LONG,
+  isEditable: true,
+};
+
+const TOTAL_COUNT = {
+  id: 'count',
+  translationId: 'totalCount',
+};
+
+const BLANK = {
+  id: 'blank',
+};
+
+const UNIQUE = {
+  id: 'unique',
+};
+
+const TOTAL_SUM = {
+  id: 'sum',
+  translationId: 'totalSum',
+};
+
+const MEAN = {
+  id: 'mean',
+  format: value => value.toFixed(2),
+};
+
+const MIN = {
+  id: 'min',
+};
+
+const MAX = {
+  id: 'max',
+};
+
+const STANDARD_DEVIATION = {
+  id: 'std',
+  translationId: 'standardDeviation',
+  format: value => value.toFixed(2),
+};
+
+const PERCENTILE_10 = {
+  id: 'percentile10',
+};
+
+const PERCENTILE_25 = {
+  id: 'percentile25',
+};
+
+const PERCENTILE_75 = {
+  id: 'percentile75',
+};
+
+const PERCENTILE_90 = {
+  id: 'percentile90',
+};
+
+export const DEFAULT_STUCTURE = [
+  SAMPLE,
+  NAME,
+  TYPE,
+  TOTAL_COUNT,
+  BLANK,
+  UNIQUE,
+  TOTAL_SUM,
+  MEAN,
+  MIN,
+  MAX,
+  STANDARD_DEVIATION,
+  PERCENTILE_10,
+  PERCENTILE_25,
+  PERCENTILE_75,
+  PERCENTILE_90,
 ];

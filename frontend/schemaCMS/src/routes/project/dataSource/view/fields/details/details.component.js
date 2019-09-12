@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { has, isNil } from 'ramda';
+import { add, always, equals, defaultTo, has, ifElse, isNil } from 'ramda';
 
 import { renderWhenTrue } from '../../../../../../shared/utils/rendering';
 import messages from './details.messages';
-import { EMPTY, STRUCTURE, TYPES } from './details.constants';
+import { EMPTY, DEFAULT_STUCTURE, TYPES } from './details.constants';
 import { Container, List, FieldInformation, FieldSummary, Label, Value, EditIcon } from './details.styles';
 
 const ITEMS_TYPE = {
@@ -19,11 +19,16 @@ export class Details extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
-  defaultFormat = value => `${value}`;
+  getTextValue = defaultTo('');
+
+  getNextIndex = index => ifElse(equals(TYPES.SHORT), always(add(index, 1)), always(0));
 
   renderEditIcon = renderWhenTrue(() => <EditIcon />);
 
-  renderItem = ([list, index], { id, label, type, isEditable = false, format = this.defaultFormat }) => {
+  renderItem = (
+    [list, index],
+    { id, translationId, type = TYPES.SHORT, isEditable = false, format = this.getTextValue }
+  ) => {
     if (!has(id)(this.props.data)) {
       return [list, index];
     }
@@ -31,12 +36,12 @@ export class Details extends PureComponent {
     const value = this.props.data[id];
     const textValue = isNil(value) ? EMPTY : format(value);
     const key = list.length;
-    const nextIndex = type === TYPES.SHORT ? index + 1 : 0;
+    const nextIndex = this.getNextIndex(index)(type);
     const Item = ITEMS_TYPE[type];
 
     list.push(
       <Item key={key} index={index}>
-        <Label>{this.props.intl.formatMessage(label)}</Label>
+        <Label>{this.props.intl.formatMessage(messages[translationId || id])}</Label>
         <Value>{textValue}</Value>
         {this.renderEditIcon(isEditable)}
       </Item>
@@ -46,7 +51,7 @@ export class Details extends PureComponent {
   };
 
   render() {
-    const [content] = STRUCTURE.reduce(this.renderItem, [[], 0]);
+    const [content] = DEFAULT_STUCTURE.reduce(this.renderItem, [[], 0]);
 
     return (
       <Container>
