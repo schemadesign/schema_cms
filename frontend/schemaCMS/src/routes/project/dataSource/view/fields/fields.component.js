@@ -35,10 +35,24 @@ export class Fields extends PureComponent {
     }).isRequired,
   };
 
+  static getDerivedStateFromProps({ fields }, { isLoading, step }) {
+    if (isLoading && !isEmpty(fields)) {
+      const fieldsIds = Object.keys(fields);
+
+      return {
+        step,
+        isLoading: false,
+        countFields: fieldsIds.length,
+        fieldsIds: [null, ...fieldsIds],
+      };
+    }
+
+    return null;
+  }
+
   state = {
+    isLoading: true,
     step: INITIAL_STEP,
-    countFields: INITIAL_STEP,
-    fieldsIds: [],
   };
 
   componentDidMount() {
@@ -47,24 +61,9 @@ export class Fields extends PureComponent {
     this.props.fetchFields({ projectId, dataSourceId });
   }
 
-  componentDidUpdate() {
-    if (!this.isLoading() && !this.state.fieldsIds.length) {
-      this.setState((state, props) => {
-        const fieldsIds = Object.keys(props.fields);
-
-        return {
-          countFields: fieldsIds.length,
-          fieldsIds: [null, ...fieldsIds],
-        };
-      });
-    }
-  }
-
   componentWillUnmount() {
     this.props.unmountFields();
   }
-
-  isLoading = () => isEmpty(this.props.fields);
 
   handleNavigation = direction => {
     const { step, countFields } = this.state;
@@ -138,7 +137,9 @@ export class Fields extends PureComponent {
   }
 
   render() {
-    const content = this.isLoading() ? <Loader /> : this.renderContent();
+    debugger;
+
+    const content = this.state.isLoading ? <Loader /> : this.renderContent();
 
     return (
       <Container>
