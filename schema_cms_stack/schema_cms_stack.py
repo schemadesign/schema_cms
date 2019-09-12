@@ -178,7 +178,7 @@ class API(core.Stack):
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
 
-        self.api = aws_ecs_patterns.NetworkLoadBalancedFargateService(
+        self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
             self,
             'api-service',
             cluster=scope.base.cluster,
