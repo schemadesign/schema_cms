@@ -1,6 +1,6 @@
-import json
 import logging
 
+import django_fsm
 from rest_framework import decorators, exceptions, permissions, response, status, viewsets
 
 from schemacms.users import permissions as user_permissions
@@ -54,7 +54,7 @@ class DataSourceViewSet(viewsets.ModelViewSet):
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-        data = json.loads(data_source.meta_data.preview.read())
+        data = data_source.meta_data.data
         data["data_source"] = {"name": data_source.name}
         return response.Response(data)
 
@@ -62,10 +62,14 @@ class DataSourceViewSet(viewsets.ModelViewSet):
     def process(self, request, pk=None, **kwargs):
         try:
             obj = self.get_object()
+            if not django_fsm.can_proceed(obj.ready_for_processing):
+                return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            obj.ready_for_processing()
             obj.preview_process()
+            obj.done()
             obj.save()
-            logging.info(f"DataSource {self.get_object().id} processing DONE")
-            return response.Response(status=status.HTTP_200_OK)
+            logging.info(f"DataSource {obj.id} processing DONE")
+            return response.Response(obj.meta_data.data, status=status.HTTP_200_OK)
 
         except Exception as e:
             logging.error(f"DataSource {self.get_object().id} processing error - {e}")
