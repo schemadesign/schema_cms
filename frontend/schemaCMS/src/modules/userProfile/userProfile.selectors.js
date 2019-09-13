@@ -12,3 +12,9 @@ export const selectUserData = createSelector(
   selectUserProfileDomain,
   prop('user')
 );
+
+export const selectDataWranglingDetail = createSelector(
+  selectUserProfileDomain,
+  prop('dataWranglingDetail')
+);
+

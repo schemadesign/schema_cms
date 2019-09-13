@@ -140,6 +140,23 @@ function* fetchFields({ payload }) {
   }
 }
 
+function* fetchOneDataWrangling({ payload }) {
+  try {
+    yield put(DataSourceRoutines.fetchOne.request());
+
+    const { projectId, dataSourceId, fileId } = payload;
+    const { data } = yield api.get(
+      `${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}/file/view/${fileId}`
+    );
+
+    yield put(DataSourceRoutines.fetchFields.success(data));
+  } catch (error) {
+    yield put(DataSourceRoutines.fetchFields.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.fetchFields.fulfill());
+  }
+}
+
 export function* watchDataSource() {
   yield all([
     takeLatest(DataSourceRoutines.create.TRIGGER, create),
@@ -149,5 +166,6 @@ export function* watchDataSource() {
     takeLatest(DataSourceRoutines.processOne.TRIGGER, processOne),
     takeLatest(DataSourceRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(DataSourceRoutines.fetchFields.TRIGGER, fetchFields),
+    takeLatest(DataSourceRoutines.fetchOneDataWrangling.TRIGGER, fetchOneDataWrangling),
   ]);
 }
