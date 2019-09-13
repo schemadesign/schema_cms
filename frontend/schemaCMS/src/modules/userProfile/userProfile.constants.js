@@ -1,5 +1,10 @@
 import * as Yup from 'yup';
 
+export const ROLES = {
+  ADMIN: 'admin',
+  EDITOR: 'editor',
+};
+
 export const USER_PROFILE_FORM = 'user_profile_form';
 export const FIRST_NAME = 'firstName';
 export const LAST_NAME = 'lastName';

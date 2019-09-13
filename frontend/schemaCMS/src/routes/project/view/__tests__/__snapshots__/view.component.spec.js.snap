@@ -5,14 +5,15 @@ exports[`View: Component should render correctly 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="project.view.pageTitle"
+    title="Project Name"
   />
   <TopHeader
-    headerTitle="project.view.title"
+    headerSubtitle="Project Name"
+    headerTitle="Project"
     primaryMenuItems={
       Array [
         Object {
-          "label": "project.view.dataSources",
+          "label": "Data Sources",
           "to": "/project/view/100/datasource",
         },
       ]
@@ -20,21 +21,150 @@ exports[`View: Component should render correctly 1`] = `
     secondaryMenuItems={
       Array [
         Object {
-          "label": "project.view.editProjectSettings",
+          "label": "Edit Project Settings",
           "to": "/project/edit/100",
         },
         Object {
-          "label": "project.view.deleteProject",
+          "label": "Delete Project",
           "to": "/project/delete/100",
         },
         Object {
-          "label": "project.view.logOut",
+          "label": "Log Out",
           "to": "/logout",
         },
       ]
     }
   />
-  <Loader />
+  <styled.div>
+    <styled.ul>
+      <styled.li
+        key="0"
+      >
+        <Card
+          customStyles={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          headerComponent="Data Sources"
+          onClick={[Function]}
+        >
+          <styled.span>
+            0
+          </styled.span>
+        </Card>
+      </styled.li>
+      <styled.li
+        key="1"
+      >
+        <Card
+          customStyles={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          headerComponent="Users"
+          onClick={[Function]}
+        >
+          <styled.span>
+            2
+          </styled.span>
+        </Card>
+      </styled.li>
+    </styled.ul>
+    <styled.ul>
+      <styled.li
+        key="0"
+      >
+        <styled.div>
+          <styled.span>
+            Last Update
+          </styled.span>
+          <styled.span>
+            3 months ago
+          </styled.span>
+        </styled.div>
+        <styled.div>
+          <EditIcon />
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="1"
+      >
+        <styled.div>
+          <styled.span>
+            Status
+          </styled.span>
+          <styled.span>
+            Status
+          </styled.span>
+        </styled.div>
+        <styled.div>
+          <EditIcon />
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="2"
+      >
+        <styled.div>
+          <styled.span>
+            Owner
+          </styled.span>
+          <styled.span>
+            Firstname Lastname
+          </styled.span>
+        </styled.div>
+        <styled.div>
+          <EditIcon />
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="3"
+      >
+        <styled.div>
+          <styled.span>
+            Title
+          </styled.span>
+          <styled.span>
+            Project Name
+          </styled.span>
+        </styled.div>
+        <styled.div>
+          <EditIcon />
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="4"
+      >
+        <styled.div>
+          <styled.span>
+            Description
+          </styled.span>
+          <styled.span>
+            Description
+          </styled.span>
+        </styled.div>
+        <styled.div>
+          <EditIcon />
+        </styled.div>
+      </styled.li>
+      <styled.li
+        key="5"
+      >
+        <styled.div>
+          <styled.span>
+            API
+          </styled.span>
+          <styled.span>
+            schemacms/api/project_title
+          </styled.span>
+        </styled.div>
+        <styled.div>
+          <EditIcon />
+        </styled.div>
+      </styled.li>
+    </styled.ul>
+  </styled.div>
   <Button
     customStyles={
       Object {
