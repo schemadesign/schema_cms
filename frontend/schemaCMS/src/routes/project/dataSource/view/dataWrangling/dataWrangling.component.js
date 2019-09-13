@@ -12,7 +12,11 @@ export class DataWrangling extends PureComponent {
   };
 
   renderCheckboxes = () =>
-    this.props.dataWrangling.map((item, index) => <Checkbox id={index} value={item} label={item} key={index} />);
+    this.props.dataWrangling.map((item, index) => (
+      <Checkbox id={index} value={item} key={index} isEdit>
+        {item}
+      </Checkbox>
+    ));
 
   render() {
     return (

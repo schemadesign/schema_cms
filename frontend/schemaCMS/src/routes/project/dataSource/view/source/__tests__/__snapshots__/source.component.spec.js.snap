@@ -2,179 +2,322 @@
 
 exports[`Source: Component should render correctly 1`] = `
 <styled.div>
-  <TextInput
-    dataSource={Object {}}
-    errors={Object {}}
-    fullWidth={true}
-    intl={
-      Object {
-        "formatMessage": [Function],
-      }
-    }
-    label="Name"
-    name="name"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    touched={Object {}}
-    value=""
-  />
-  <Label
-    customStyles={
-      Object {
-        "marginBottom": 20,
+  <Formik
+    enableReinitialize={true}
+    initialValues={Object {}}
+    isInitialValid={true}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+    validationSchema={
+      ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "fileName",
+          "file",
+          "type",
+          "name",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "file": SchemaType {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {},
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "mixed",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [],
+            "transforms": Array [],
+          },
+          "fileName": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "name": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "type": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
       }
     }
   >
-    <FormattedMessage
-      defaultMessage="Source"
-      id="dataSource.view.source.source"
-      values={Object {}}
-    />
-  </Label>
-  <RadioGroup
-    customCheckedStyles={Object {}}
-    customLabelStyles={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "column",
-        "width": 96,
-      }
-    }
-    customStyles={
-      Object {
-        "marginBottom": "40px",
-      }
-    }
-    name="type"
-    onChange={[Function]}
-  >
-    <RadioButton
-      id="file"
-      label="Spreadsheet"
-      value="file"
-    >
-      <Button
-        customStyles={
-          Object {
-            "backgroundColor": "#1D1D20",
-            "height": 96,
-            "marginBottom": 10,
-            "pointerEvents": "none",
-            "width": 96,
-          }
-        }
-        type="button"
-      >
-        <CsvIcon />
-      </Button>
-    </RadioButton>
-  </RadioGroup>
+    <Component />
+  </Formik>
 </styled.div>
 `;
 
 exports[`Source: Component should render file uploader 1`] = `
 <styled.div>
-  <TextInput
-    dataSource={Object {}}
-    errors={Object {}}
-    fullWidth={true}
-    intl={
-      Object {
-        "formatMessage": [Function],
-      }
-    }
-    label="Name"
-    name="name"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    touched={Object {}}
-    value=""
-  />
-  <Label
-    customStyles={
-      Object {
-        "marginBottom": 20,
+  <Formik
+    enableReinitialize={true}
+    initialValues={Object {}}
+    isInitialValid={true}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+    validationSchema={
+      ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "fileName",
+          "file",
+          "type",
+          "name",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "file": SchemaType {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {},
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "mixed",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [],
+            "transforms": Array [],
+          },
+          "fileName": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "name": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "type": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
       }
     }
   >
-    <FormattedMessage
-      defaultMessage="Source"
-      id="dataSource.view.source.source"
-      values={Object {}}
-    />
-  </Label>
-  <RadioGroup
-    customCheckedStyles={Object {}}
-    customLabelStyles={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "column",
-        "width": 96,
-      }
-    }
-    customStyles={
-      Object {
-        "marginBottom": "40px",
-      }
-    }
-    name="type"
-    onChange={[Function]}
-    value="file"
-  >
-    <RadioButton
-      id="file"
-      label="Spreadsheet"
-      value="file"
-    >
-      <Button
-        customStyles={
-          Object {
-            "backgroundColor": "#1D1D20",
-            "height": 96,
-            "marginBottom": 10,
-            "pointerEvents": "none",
-            "width": 96,
-          }
-        }
-        type="button"
-      >
-        <CsvIcon />
-      </Button>
-    </RadioButton>
-  </RadioGroup>
-  <FileUpload
-    accept=".csv,.tsv"
-    customInputStyles={Object {}}
-    customLabelStyles={Object {}}
-    customStyles={Object {}}
-    iconComponent={
-      <div
-        style={
-          Object {
-            "backgroundColor": "#f0efef",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#1d1d20",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fontSize": 0,
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-          }
-        }
-      >
-        <UploadIcon />
-      </div>
-    }
-    id="fileUpload"
-    label="File Name"
-    name="file"
-    onChange={[Function]}
-    type="file"
-  />
+    <Component />
+  </Formik>
 </styled.div>
 `;

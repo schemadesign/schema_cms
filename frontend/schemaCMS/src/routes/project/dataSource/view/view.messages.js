@@ -14,6 +14,10 @@ export default defineMessages({
     id: 'dataSource.view.back',
     defaultMessage: 'Back',
   },
+  cancel: {
+    id: 'dataSource.view.cancel',
+    defaultMessage: 'Cancel',
+  },
   source: {
     id: 'dataSource.view.source',
     defaultMessage: 'Source',
@@ -25,10 +29,6 @@ export default defineMessages({
   dataWrangling: {
     id: 'dataSource.view.dataWrangling',
     defaultMessage: 'Data Wrangling',
-  },
-  cancel: {
-    id: 'dataSource.view.cancel',
-    defaultMessage: 'Cancel',
   },
   removeDataSource: {
     id: 'dataSource.view.removeDataSource',

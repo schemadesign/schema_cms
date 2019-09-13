@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { containerStyles, inputStyles, iconContainerStyles } from './checkbox.styles';
+import { containerStyles, inputStyles, iconContainerStyles, labelStyles } from './checkbox.styles';
 import CheckboxGroupContext from '../checkboxGroup/checkboxGroup.context';
 import { EditIcon } from '../../icons/editIcon';
 
@@ -10,6 +10,8 @@ export class Checkbox extends PureComponent {
     id: PropTypes.string.isRequired,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     value: PropTypes.any.isRequired,
+    isEdit: PropTypes.bool,
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   };
 
   renderCheckboxIcon = ({ checked, checkedIcon, uncCheckedIcon }) => (checked ? checkedIcon : uncCheckedIcon);
@@ -17,11 +19,11 @@ export class Checkbox extends PureComponent {
   renderEditIcon = isEdit => (isEdit ? <EditIcon /> : null);
 
   render() {
-    const { id, label, ...restProps } = this.props;
+    const { id, children, isEdit, ...restProps } = this.props;
 
     return (
       <CheckboxGroupContext.Consumer>
-        {({ name, onChange, value = [], isEdit, checkedIcon, uncCheckedIcon, customCheckboxStyles }) => {
+        {({ name, onChange, value = [], checkedIcon, uncCheckedIcon, customCheckboxStyles }) => {
           const checked = value.includes(restProps.value);
           const styles = { ...containerStyles, ...customCheckboxStyles };
 
@@ -38,10 +40,12 @@ export class Checkbox extends PureComponent {
                 id={id}
                 style={inputStyles}
               />
-              <span>{label}</span>
+              <span>{children}</span>
               <div style={iconContainerStyles}>
                 {this.renderEditIcon(isEdit)}
-                <label htmlFor={id}>{this.renderCheckboxIcon({ checked, checkedIcon, uncCheckedIcon })}</label>
+                <label style={labelStyles} htmlFor={id}>
+                  {this.renderCheckboxIcon({ checked, checkedIcon, uncCheckedIcon })}
+                </label>
               </div>
             </div>
           );
