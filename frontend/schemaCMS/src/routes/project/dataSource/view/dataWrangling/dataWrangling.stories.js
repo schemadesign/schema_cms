@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { DataWrangling } from './dataWrangling.component';
 
-const defaultProps = {};
+export const defaultProps = {
+  dataWrangling: ['dataWrangling'],
+};
 
 storiesOf('DataWrangling', module).add('Default', () => <DataWrangling {...defaultProps} />);

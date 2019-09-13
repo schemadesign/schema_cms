@@ -2,33 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { View } from '../view.component';
+import { defaultProps } from '../view.stories';
 import { STATUS_DRAFT } from '../../../../../modules/dataSource/dataSource.constants';
 
 describe('View: Component', () => {
-  const defaultProps = {
-    dataSource: {},
-    fetchDataSource: Function.prototype,
-    unmountDataSource: Function.prototype,
-    removeDataSource: Function.prototype,
-    handleChange: Function.prototype,
-    handleSubmit: Function.prototype,
-    setFieldValue: Function.prototype,
-    intl: {
-      formatMessage: ({ defaultMessage }) => defaultMessage,
-    },
-    history: {
-      push: Function.prototype,
-    },
-    values: {},
-    match: {
-      params: {
-        projectId: '1',
-        dataSourceId: '1',
-        step: '1',
-      },
-    },
-  };
-
   const component = props => <View {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
@@ -40,7 +17,7 @@ describe('View: Component', () => {
 
   it('should render source step', () => {
     const props = {
-      values: {
+      dataSource: {
         id: 'id',
         name: 'name',
       },
@@ -51,7 +28,7 @@ describe('View: Component', () => {
 
   it('should render second step', () => {
     const props = {
-      values: {
+      dataSource: {
         id: 'id',
         name: 'name',
         step: '2',
@@ -63,7 +40,7 @@ describe('View: Component', () => {
 
   it('should not render any step', () => {
     const props = {
-      values: {
+      dataSource: {
         id: 'id',
         name: 'name',
       },
@@ -82,7 +59,7 @@ describe('View: Component', () => {
 
   it('should render draft', () => {
     const props = {
-      values: {
+      dataSource: {
         id: 'id',
         status: STATUS_DRAFT,
       },

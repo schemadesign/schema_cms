@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DataWrangling Default 1`] = `
+<div
+  className="sc-cvbbAY dbHDoR"
+>
+  <div
+    style={
+      Object {
+        "borderTop": "1px solid #F0EFEF",
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottom": "1px solid #F0EFEF",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 48,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        defaultChecked={false}
+        id={0}
+        name="dataWrangling"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="checkbox"
+        value="dataWrangling"
+      />
+      <span>
+        dataWrangling
+      </span>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#1d1d20",
+              "height": "30px",
+              "width": "30px",
+            }
+          }
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+            fillRule="evenodd"
+          />
+        </svg>
+        <label
+          htmlFor={0}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "height": "30px",
+                "stroke": "#1d1d20",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M7.5 7.5h15v15h-15z"
+              fill="none"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;

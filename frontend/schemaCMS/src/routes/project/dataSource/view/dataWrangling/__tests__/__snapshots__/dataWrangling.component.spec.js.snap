@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataWrangling: Component should render correctly 1`] = `
+<styled.div>
+  <CheckboxGroup
+    checkedIcon={<CheckboxOnIcon />}
+    customCheckboxStyles={Object {}}
+    customStyles={Object {}}
+    name="dataWrangling"
+    onChange={[Function]}
+    uncCheckedIcon={<CheckboxOffIcon />}
+  >
+    <Checkbox
+      id={0}
+      isEdit={true}
+      key="0"
+      value="dataWrangling"
+    >
+      dataWrangling
+    </Checkbox>
+  </CheckboxGroup>
+</styled.div>
+`;
