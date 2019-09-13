@@ -50,7 +50,7 @@ exports[`View: Component should render correctly 1`] = `
           onClick={[Function]}
         >
           <styled.span>
-            0
+            3
           </styled.span>
         </Card>
       </styled.li>
