@@ -1,12 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import {
-  reducer as userProfileReducer,
-  UserProfileActions,
-  UserProfileRoutines,
-  UserProfileTypes,
-} from '../userProfile.redux';
+import { reducer as userProfileReducer, UserProfileActions, UserProfileRoutines } from '../userProfile.redux';
 
 describe('UserProfile: redux', () => {
   const defaultState = Immutable({

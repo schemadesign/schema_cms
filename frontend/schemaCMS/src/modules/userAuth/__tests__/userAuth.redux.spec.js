@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { reducer as userAuthReducer, UserAuthActions, UserAuthTypes } from '../userAuth.redux';
+import { reducer as userAuthReducer, UserAuthActions } from '../userAuth.redux';
 
 describe('UserAuth: redux', () => {
   const defaultState = Immutable({
