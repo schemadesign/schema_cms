@@ -22,7 +22,7 @@ phases:
       - mkdir -p ./frontend/schemaCMS/build
       - touch ./frontend/schemaCMS/build/index.html
       - mkdir -p ./backend/app/static
-      - cp -R ./frontend/schemaCMS/build/**/* ./backend/app/static
+      - cp -R ./frontend/schemaCMS/build/* ./backend/app/static
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest ./backend/app
       - BACKEND_IMAGE=$REPOSITORY_URI:latest docker-compose -f ./backend/app/docker-compose-ci.yml run backend /app/scripts/run_tests.sh
