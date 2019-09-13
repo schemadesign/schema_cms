@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import ArrowLeftSVG from '../../../images/icons/arrow-left.svg';
-import { containerStyles } from './arrowLeftIcon.styles';
+import CheckboxOnSVG from '../../../images/icons/checkbox-on.svg';
+import { containerStyles } from './checkboxOnIcon.styles';
 
-export class ArrowLeftIcon extends PureComponent {
+export class CheckboxOnIcon extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
@@ -13,6 +13,6 @@ export class ArrowLeftIcon extends PureComponent {
     const { customStyles, ...restProps } = this.props;
     const styles = { ...containerStyles, ...customStyles };
 
-    return <ArrowLeftSVG {...restProps} style={styles} />;
+    return <CheckboxOnSVG {...restProps} style={styles} />;
   }
 }
