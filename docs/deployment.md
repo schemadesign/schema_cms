@@ -82,6 +82,21 @@ section:
     `DJANGO_USER_MGMT_AUTH0_KEY`,
     `DJANGO_USER_MGMT_AUTH0_SECRET`
 
+4. Build frontend code
+    ```bash
+    $ cd ./frontend/schemaUI
+    $ yarn
+    $ yarn build
+    $ yarn link
+    $ cd ../schemaCMS
+    $ yarn link schemaUI
+    $ yarn
+    $ yarn build
+    ```
+5. Copy built code to `nginx/dist` directory
+    ```bash
+   $ cp -R ./frontend/schemaCMS/build/* ./nginx/dist
+    ```
 4. Deploy `base`, `workers`, `public-api`, `api` stacks using command:
     ```bash
     $ cdk -c installation_mode=app_only deploy base workers public-api api
