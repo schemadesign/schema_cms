@@ -1,6 +1,15 @@
 version: '3'
 
 services:
+  nginx:
+    image: schema_cms_nginx
+    build: ./nginx
+    depends_on:
+      - backend
+    ports:
+      - "9000:80"
+    restart: on-failure
+
   db:
     image: postgres:9.6.8
     ports:
