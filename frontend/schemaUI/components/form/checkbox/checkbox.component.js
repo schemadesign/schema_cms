@@ -23,8 +23,8 @@ export class Checkbox extends PureComponent {
 
     return (
       <CheckboxGroupContext.Consumer>
-        {({ name, onChange, value = [], checkedIcon, uncCheckedIcon, customCheckboxStyles }) => {
-          const checked = value.includes(restProps.value);
+        {({ onChange, value = [], checkedIcon, uncCheckedIcon, customCheckboxStyles }) => {
+          const checked = value[restProps.value];
           const styles = { ...containerStyles, ...customCheckboxStyles };
 
           return (
@@ -33,8 +33,8 @@ export class Checkbox extends PureComponent {
                 {...restProps}
                 onChange={onChange}
                 value={restProps.value}
-                name={name}
-                defaultChecked={checked}
+                name={restProps.value}
+                checked={checked}
                 aria-hidden
                 type="checkbox"
                 id={id}

@@ -40,7 +40,7 @@ export class View extends PureComponent {
   };
 
   static defaultProps = {
-    dataWrangling: ['abc', 'sdfds'],
+    dataWrangling: [],
   };
 
   componentDidMount() {
@@ -119,7 +119,7 @@ export class View extends PureComponent {
     cond([
       [equals(INITIAL_STEP), always(<Source bindSubmitForm={this.bindSubmitForm} {...props} />)],
       [equals(FIELDS_STEP), always(<Fields {...props} />)],
-      [equals(DATA_WRANGLING_STEP), always(<DataWrangling {...props} />)],
+      [equals(DATA_WRANGLING_STEP), always(<DataWrangling bindSubmitForm={this.bindSubmitForm} {...props} />)],
       [equals(4), always(null)],
       [equals(5), always(null)],
       [equals(6), always(null)],

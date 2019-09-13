@@ -77,12 +77,7 @@ exports[`View: Component should render draft 1`] = `
         "status": "draft",
       }
     }
-    dataWrangling={
-      Array [
-        "abc",
-        "sdfds",
-      ]
-    }
+    dataWrangling={Array []}
     fetchDataSource={[Function]}
     history={
       Object {
@@ -166,12 +161,7 @@ exports[`View: Component should render second step 1`] = `
         "step": "2",
       }
     }
-    dataWrangling={
-      Array [
-        "abc",
-        "sdfds",
-      ]
-    }
+    dataWrangling={Array []}
     fetchDataSource={[Function]}
     history={
       Object {
@@ -253,12 +243,7 @@ exports[`View: Component should render source step 1`] = `
         "name": "name",
       }
     }
-    dataWrangling={
-      Array [
-        "abc",
-        "sdfds",
-      ]
-    }
+    dataWrangling={Array []}
     fetchDataSource={[Function]}
     history={
       Object {

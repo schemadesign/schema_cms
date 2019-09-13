@@ -15,10 +15,9 @@ exports[`RadioButton: Component should render correctly 1`] = `
 >
   <input
     aria-hidden={true}
-    defaultChecked={true}
     id="id"
     label="name"
-    name="name"
+    name="value"
     onChange={[Function]}
     style={
       Object {

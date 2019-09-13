@@ -2,22 +2,40 @@
 
 exports[`DataWrangling: Component should render correctly 1`] = `
 <styled.div>
-  <CheckboxGroup
-    checkedIcon={<CheckboxOnIcon />}
-    customCheckboxStyles={Object {}}
-    customStyles={Object {}}
-    name="dataWrangling"
-    onChange={[Function]}
-    uncCheckedIcon={<CheckboxOffIcon />}
+  <styled.div>
+    <styled.div />
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="{length} Step"
+        id="dataSource.view.dataWrangling.steps"
+        values={
+          Object {
+            "length": 2,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <Button
+        customStyles={Object {}}
+      >
+        <UploadIcon />
+      </Button>
+    </styled.div>
+  </styled.div>
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Object {
+        "name 1": false,
+        "name 2": true,
+      }
+    }
+    isInitialValid={false}
+    validateOnBlur={true}
+    validateOnChange={true}
   >
-    <Checkbox
-      id={0}
-      isEdit={true}
-      key="0"
-      value="dataWrangling"
-    >
-      dataWrangling
-    </Checkbox>
-  </CheckboxGroup>
+    <Component />
+  </Formik>
 </styled.div>
 `;
