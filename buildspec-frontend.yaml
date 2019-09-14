@@ -35,7 +35,7 @@ phases:
     - echo Build completed on `date`
 artifacts:
   files:
-    - 'frontend/schemaCMS/public/**/*'
+    - 'frontend/schemaCMS/build/**/*'
 cache:
   paths:
     - 'frontend/schemaCMS/node-modules/**/*'
