@@ -41,11 +41,7 @@ export class Select extends PureComponent {
   renderSelectedOption = () => {
     const selectedOption = this.props.options.find(option => option.selected) || this.props.options[0];
 
-    return (
-      <div style={selectedOptionStyles} onClick={this.toggleMenu}>
-        {selectedOption.label}
-      </div>
-    );
+    return <div style={selectedOptionStyles}>{selectedOption.label}</div>;
   };
 
   renderOptions = ({ value, label, selected }, index) => {
@@ -59,7 +55,7 @@ export class Select extends PureComponent {
       <div
         key={index}
         id={`select-item-${index}`}
-        style={customOptionStyle}
+        style={customOptionStyle(index)}
         onClick={() => this.handleOptionClick(eventObj)}
       >
         {label}
@@ -89,7 +85,9 @@ export class Select extends PureComponent {
       this.renderNativeSelect()
     ) : (
       <div style={selectWrapperStyles}>
-        <div style={selectedOptionsStyles}>{this.renderSelectedOption()}</div>
+        <div style={selectedOptionsStyles} onClick={this.toggleMenu}>
+          {this.renderSelectedOption()}
+        </div>
         <div style={optionListStyles(this.state.isMenuOpen)}>{this.props.options.map(this.renderOptions)}</div>
       </div>
     );
