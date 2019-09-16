@@ -27,8 +27,6 @@ export class Select extends PureComponent {
     isMenuOpen: false,
   };
 
-  selectRef = createRef();
-
   handleOptionClick = ({ target: { value } }) => {
     const selectedOption = this.props.options.find(option => option.value === value);
     this.props.onSelect(selectedOption);
@@ -58,7 +56,12 @@ export class Select extends PureComponent {
     };
 
     return (
-      <div key={index} style={customOptionStyle} onClick={() => this.handleOptionClick(eventObj)}>
+      <div
+        key={index}
+        id={`select-item-${index}`}
+        style={customOptionStyle}
+        onClick={() => this.handleOptionClick(eventObj)}
+      >
         {label}
       </div>
     );
@@ -75,7 +78,7 @@ export class Select extends PureComponent {
     const onChange = !!hidden ? Function.prototype : this.handleOptionClick;
 
     return (
-      <select ref={this.selectRef} style={getSelectStyle(hidden)} onChange={onChange}>
+      <select style={getSelectStyle(hidden)} onChange={onChange}>
         {options.map(this.renderNativeOptions)}
       </select>
     );

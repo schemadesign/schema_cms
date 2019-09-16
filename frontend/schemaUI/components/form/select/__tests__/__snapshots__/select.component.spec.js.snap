@@ -4,10 +4,335 @@ exports[`Select: Component should render correctly 1`] = `
 <div
   style={
     Object {
-      "border": "1px solid blue",
+      "display": "flex",
     }
   }
 >
-  Select component
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "height": "30px",
+        }
+      }
+    >
+      <div
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "height": "30px",
+          }
+        }
+      >
+        Dolphin
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "display": "none",
+          "flexDirection": "column",
+          "left": "0",
+          "maxHeight": "75px",
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": "30px",
+        }
+      }
+    >
+      <div
+        id="select-item-0"
+        key="0"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Dolphin
+      </div>
+      <div
+        id="select-item-1"
+        key="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Dog
+      </div>
+      <div
+        id="select-item-2"
+        key="2"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Parrot
+      </div>
+      <div
+        id="select-item-3"
+        key="3"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Cat
+      </div>
+      <div
+        id="select-item-4"
+        key="4"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Alligator
+      </div>
+      <div
+        id="select-item-5"
+        key="5"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Spider
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select: Component should render correctly with default options 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "height": "30px",
+        }
+      }
+    >
+      <div
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "height": "30px",
+          }
+        }
+      >
+        Select your favorite from the list
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "display": "none",
+          "flexDirection": "column",
+          "left": "0",
+          "maxHeight": "75px",
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": "30px",
+        }
+      }
+    >
+      <div
+        id="select-item-0"
+        key="0"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Dolphin
+      </div>
+      <div
+        id="select-item-1"
+        key="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Dog
+      </div>
+      <div
+        id="select-item-2"
+        key="2"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Parrot
+      </div>
+      <div
+        id="select-item-3"
+        key="3"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Cat
+      </div>
+      <div
+        id="select-item-4"
+        key="4"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Alligator
+      </div>
+      <div
+        id="select-item-5"
+        key="5"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Spider
+      </div>
+      <div
+        id="select-item-6"
+        key="6"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+          }
+        }
+      >
+        Select your favorite from the list
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select: Component should render correctly with native 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+    }
+  }
+>
+  <select
+    onChange={[Function]}
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+  >
+    <option
+      key="0"
+      value="dolphin"
+    >
+      Dolphin
+    </option>
+    <option
+      key="1"
+      value="dog"
+    >
+      Dog
+    </option>
+    <option
+      key="2"
+      value="parrot"
+    >
+      Parrot
+    </option>
+    <option
+      key="3"
+      value="cat"
+    >
+      Cat
+    </option>
+    <option
+      key="4"
+      value="alligator"
+    >
+      Alligator
+    </option>
+    <option
+      key="5"
+      value="spider"
+    >
+      Spider
+    </option>
+  </select>
 </div>
 `;
