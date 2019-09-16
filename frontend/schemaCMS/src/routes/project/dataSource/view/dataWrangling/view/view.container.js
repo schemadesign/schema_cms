@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
@@ -7,7 +6,7 @@ import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
-import { DataSourceRoutines, selectFields, selectPreviewTable } from '../../../../../../modules/dataSource';
+import { DataSourceRoutines, selectDataWranglingDetail } from '../../../../../../modules/dataSource';
 import { View } from './view.component';
 
 const mapStateToProps = createStructuredSelector({

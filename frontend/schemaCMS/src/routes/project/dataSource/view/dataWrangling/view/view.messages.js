@@ -2,6 +2,18 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
+  pageTitle: {
+    id: 'dataSource.view.dataWrangling.view.pageTitle',
+    defaultMessage: 'Edit step',
+  },
+  title: {
+    id: 'dataSource.view.dataWrangling.view.title',
+    defaultMessage: 'Data Wrangling',
+  },
+  subTitle: {
+    id: 'dataSource.view.dataWrangling.view.subTitle',
+    defaultMessage: 'Edit step',
+  },
   description: {
     id: 'dataSource.view.dataWrangling.view.description',
     defaultMessage: 'Description',
@@ -17,5 +29,17 @@ export default defineMessages({
   codePlaceholder: {
     id: 'dataSource.view.dataWrangling.view.codePlaceholder',
     defaultMessage: 'Python Code',
+  },
+  back: {
+    id: 'dataSource.view.dataWrangling.view.back',
+    defaultMessage: 'Back',
+  },
+  ok: {
+    id: 'dataSource.view.dataWrangling.view.ok',
+    defaultMessage: 'OK',
+  },
+  save: {
+    id: 'dataSource.view.dataWrangling.view.save',
+    defaultMessage: 'Save',
   },
 });
