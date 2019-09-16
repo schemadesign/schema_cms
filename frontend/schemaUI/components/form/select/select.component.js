@@ -11,11 +11,10 @@ import {
   selectedOptionStyles,
 } from './select.styles';
 
-const DEFAULT_OPTION = { value: 'default', label: 'Select one of the list', selected: true };
-
 export class Select extends PureComponent {
   static propTypes = {
     native: PropTypes.bool,
+    defaultOption: PropTypes.object,
     options: PropTypes.array.isRequired,
     onSelect: PropTypes.func.isRequired,
   };
@@ -25,7 +24,6 @@ export class Select extends PureComponent {
   };
 
   state = {
-    selectedOption: DEFAULT_OPTION,
     isMenuOpen: false,
   };
 
@@ -43,7 +41,7 @@ export class Select extends PureComponent {
   toggleMenu = () => this.setState({ isMenuOpen: !this.state.isMenuOpen });
 
   renderSelectedOption = () => {
-    const selectedOption = this.props.options.find(option => option.selected) || DEFAULT_OPTION;
+    const selectedOption = this.props.options.find(option => option.selected) || this.props.options[0];
 
     return (
       <div style={selectedOptionStyles} onClick={this.toggleMenu}>
@@ -67,16 +65,17 @@ export class Select extends PureComponent {
   };
 
   renderNativeOptions = ({ value, label, selected }, index) => (
-    <option key={index} value={value} selected={selected}>
+    <option key={index} value={value}>
       {label}
     </option>
   );
 
   renderNativeSelect = (hidden = false) => {
-    const { options, ...restPros } = this.props;
+    const { options } = this.props;
+    const onChange = !!hidden ? Function.prototype : this.handleOptionClick;
 
     return (
-      <select ref={this.selectRef} style={getSelectStyle(hidden)}>
+      <select ref={this.selectRef} style={getSelectStyle(hidden)} onChange={onChange}>
         {options.map(this.renderNativeOptions)}
       </select>
     );
@@ -87,7 +86,6 @@ export class Select extends PureComponent {
       this.renderNativeSelect()
     ) : (
       <div style={selectWrapperStyles}>
-        {this.renderNativeSelect(!isNative)}
         <div style={selectedOptionsStyles}>{this.renderSelectedOption()}</div>
         <div style={optionListStyles(this.state.isMenuOpen)}>{this.props.options.map(this.renderOptions)}</div>
       </div>

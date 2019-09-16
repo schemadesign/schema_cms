@@ -1,7 +1,7 @@
 const ITEM_HEIGHT = '30';
 
 export const containerStyles = {
-  border: '1px solid blue',
+  display: 'flex',
 };
 
 export const getSelectStyle = (hidden = false) => ({
@@ -37,4 +37,5 @@ export const optionListStyles = menuOpen => ({
   position: 'absolute',
   top: `${ITEM_HEIGHT}px`,
   left: '0',
+  backgroundColor: '#FFFFFF',
 });
