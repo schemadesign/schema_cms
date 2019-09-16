@@ -1,10 +1,11 @@
 from aws_cdk import core, aws_ec2, aws_sqs, aws_apigateway, aws_lambda, aws_ecs, aws_iam, aws_ecs_patterns, aws_rds,\
     aws_secretsmanager, aws_codebuild, aws_ecr, aws_codepipeline, aws_codepipeline_actions, aws_stepfunctions,\
-    aws_stepfunctions_tasks
+    aws_stepfunctions_tasks, aws_certificatemanager
 
 DB_NAME = 'gistdb'
 
 INSTALLATION_MODE_CONTEXT_KEY = 'installation_mode'
+DOMAIN_NAME_CONTEXT_KEY = 'domain_name'
 
 INSTALLATION_MODE_FULL = 'full'
 INSTALLATION_MODEL_APP_ONLY = 'app_only'
@@ -58,6 +59,14 @@ class BaseResources(core.Stack):
             delete_automated_backups=True,
         )
         self.db_secret_rotation = self.db.add_rotation_single_user('db-rotation')
+
+
+class CertsStack(core.Stack):
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+        domain_name = self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+        self.cert = aws_certificatemanager.Certificate(self, 'cert', domain_name=domain_name)
 
 
 class Workers(core.Stack):
@@ -197,6 +206,7 @@ class API(core.Stack):
             container_name='nginx',
             enable_logging=True,
             container_port=80,
+            certificate=scope.certs.cert,
         )
 
         self.api.task_definition.add_container(
