@@ -18,9 +18,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - echo Copy static files
+      - rm -R $CODEBUILD_SRC_DIR/nginx/dist/*
+      - cp -R $CODEBUILD_SRC_DIR_Artifact_build_app_build_fe/frontend/schemaCMS/build/* $CODEBUILD_SRC_DIR/nginx/dist
       - echo Building the Docker image...
-      - docker build -t $REPOSITORY_URI:latest ./backend/app
-      - BACKEND_IMAGE=$REPOSITORY_URI:latest docker-compose -f ./backend/app/docker-compose-ci.yml run backend /app/scripts/run_tests.sh
+      - docker build -t $REPOSITORY_URI:latest ./nginx/
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$VERSION
       - |
         if expr "${PUSH_IMAGES}" = "1"; then

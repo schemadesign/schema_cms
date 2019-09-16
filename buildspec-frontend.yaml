@@ -36,6 +36,7 @@ phases:
 artifacts:
   files:
     - 'frontend/schemaCMS/build/**/*'
+  name: 'fe_artifact'
 cache:
   paths:
     - 'frontend/schemaCMS/node-modules/**/*'
