@@ -20,7 +20,6 @@ phases:
       - echo Build started on `date`
       - echo Copy static files
       - mkdir -p ./frontend/schemaCMS/build
-      - touch ./frontend/schemaCMS/build/index.html
       - mkdir -p ./backend/app/static
       - cp -R ./frontend/schemaCMS/build/* ./backend/app/static
       - echo Building the Docker image...
