@@ -3,17 +3,11 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
-import { compose, omit } from 'ramda';
-import { withFormik } from 'formik';
+import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 
 import { View } from './view.component';
 import { DataSourceRoutines, selectDataSource } from '../../../../modules/dataSource';
-import {
-  DATA_SOURCE_SCHEMA,
-  UPDATE_DATA_SOURCE_FORM,
-  IGNORED_FIELDS,
-} from '../../../../modules/dataSource/dataSource.constants';
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
@@ -38,24 +32,5 @@ export default compose(
     mapDispatchToProps
   ),
   injectIntl,
-  withRouter,
-  withFormik({
-    displayName: UPDATE_DATA_SOURCE_FORM,
-    enableReinitialize: true,
-    isInitialValid: true,
-    mapPropsToValues: ({ dataSource }) => omit(IGNORED_FIELDS, dataSource),
-    validationSchema: () => DATA_SOURCE_SCHEMA,
-    handleSubmit: async (requestData, { props, ...formik }) => {
-      try {
-        const { projectId, dataSourceId, step } = props.match.params;
-        await props.updateDataSource({ requestData, projectId, dataSourceId, step });
-
-        formik.setSubmitting(true);
-      } catch ({ errors }) {
-        formik.setErrors(errors);
-      } finally {
-        formik.setSubmitting(false);
-      }
-    },
-  })
+  withRouter
 )(View);
