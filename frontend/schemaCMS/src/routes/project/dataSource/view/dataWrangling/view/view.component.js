@@ -18,20 +18,6 @@ export class View extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
-  static getDerivedStateFromProps({ dataWrangling }, { isLoading }) {
-    if (isLoading && !isEmpty(dataWrangling)) {
-      return {
-        isLoading: false,
-      };
-    }
-
-    return null;
-  }
-
-  state = {
-    isLoading: true,
-  };
-
   componentDidMount() {
     this.props.fetchDataWrangling();
   }
@@ -96,7 +82,7 @@ export class View extends PureComponent {
   }
 
   render() {
-    const content = this.state.isLoading ? <Loader /> : this.renderContent();
+    const content = isEmpty(this.props.dataWrangling) ? <Loader /> : this.renderContent();
     const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (
