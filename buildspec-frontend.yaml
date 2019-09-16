@@ -9,7 +9,6 @@ phases:
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"
-      - echo $VERSION > $CODEBUILD_SRC_DIR/.version
   build:
     commands:
       - echo Build started on `date`
@@ -36,7 +35,8 @@ phases:
     - echo Build completed on `date`
 artifacts:
   files:
-    - '**/*'
+    - 'frontend/schemaCMS/build/**/*'
+  name: 'fe_artifact'
 cache:
   paths:
     - 'frontend/schemaCMS/node-modules/**/*'

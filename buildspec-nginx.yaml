@@ -13,15 +13,14 @@ phases:
       - aws --version
       - $(aws ecr get-login --no-include-email)
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - VERSION=$(cat $CODEBUILD_SRC_DIR/.version)
+      - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"
   build:
     commands:
       - echo Build started on `date`
       - echo Copy static files
-      - ls -la ./frontend/schemaCMS/build
       - rm -R $CODEBUILD_SRC_DIR/nginx/dist/*
-      - cp -R ./frontend/schemaCMS/build/* $CODEBUILD_SRC_DIR/nginx/dist
+      - cp -R $CODEBUILD_SRC_DIR_Artifact_build_app_build_fe/frontend/schemaCMS/build/* $CODEBUILD_SRC_DIR/nginx/dist
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest ./nginx/
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$VERSION

@@ -381,9 +381,10 @@ class CIPipeline(core.Stack):
 
         build_nginx_action = aws_codepipeline_actions.CodeBuildAction(
             action_name='build_nginx',
-            input=fe_artifact,
+            input=source_output,
             project=build_nginx_project,
             run_order=2,
+            extra_inputs=[fe_artifact]
         )
 
         build_workers_project = aws_codebuild.PipelineProject(
