@@ -37,7 +37,8 @@ const unmountFields = (state = INITIAL_STATE) =>
   state.set('fields', INITIAL_STATE.fields).set('previewTable', INITIAL_STATE.previewTable);
 
 const updateDataWranglingDetail = (state = INITIAL_STATE, { payload }) => state.set('dataWranglingDetail', payload);
-const unmountDataWranglingDetail = (state = INITIAL_STATE, { payload }) => state.set('dataWranglingDetail', INITIAL_STATE.dataWranglingDetail;
+const unmountDataWranglingDetail = (state = INITIAL_STATE) =>
+  state.set('dataWranglingDetail', INITIAL_STATE.dataWranglingDetail);
 
 export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.create.SUCCESS]: updateDataSource,
@@ -48,5 +49,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.fetchFields.SUCCESS]: updateFields,
   [DataSourceRoutines.unmountFields.SUCCESS]: unmountFields,
   [DataSourceRoutines.fetchOneDataWrangling.SUCCESS]: updateDataWranglingDetail,
-  [DataSourceRoutines.unmountOneDataWrangling.SUCCESS]: unmountOneDataWrangling,
+  [DataSourceRoutines.unmountOneDataWrangling.SUCCESS]: unmountDataWranglingDetail,
 });

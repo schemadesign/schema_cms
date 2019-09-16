@@ -17,4 +17,3 @@ export const selectDataWranglingDetail = createSelector(
   selectUserProfileDomain,
   prop('dataWranglingDetail')
 );
-

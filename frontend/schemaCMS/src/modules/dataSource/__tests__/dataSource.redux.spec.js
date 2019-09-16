@@ -9,7 +9,7 @@ describe('DataSource: redux', () => {
     dataSources: [],
     fields: {},
     previewTable: [],
-    dataWranglingDetail: {}
+    dataWranglingDetail: {},
   });
 
   describe('reducer', () => {
@@ -110,9 +110,20 @@ describe('DataSource: redux', () => {
   describe('when FETCH_ONE_DATA_WRANGLING/SUCCESS action is received', () => {
     it('should set dataSource ', () => {
       const dataWranglingDetail = { id: 1 };
-      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchOneDataWrangling.success(dataWranglingDetail));
+      const resultState = dataSourceReducer(
+        defaultState,
+        DataSourceRoutines.fetchOneDataWrangling.success(dataWranglingDetail)
+      );
 
       expect(resultState.dataWranglingDetail).to.deep.equal(dataWranglingDetail);
+    });
+  });
+
+  describe('when UNMOUNT_ONE_DATA_WRANGLING/SUCCESS action is received', () => {
+    it('should unmount fields and previewTable ', () => {
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.unmountOneDataWrangling.success());
+
+      expect(resultState.dataWranglingDetail).to.deep.equal(defaultState.dataWranglingDetail);
     });
   });
 });

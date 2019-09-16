@@ -230,4 +230,25 @@ describe('DataSource: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('fetchOneDataWrangling', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { projectId: '1', dataSourceId: '1', fileId: '1' };
+      const responseData = {
+        data: [{ name: 'test', code: 'alert("Hello World!");' }],
+      };
+
+      mockApi
+        .get(
+          `${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}/file/view/${payload.fileId}`
+        )
+        .reply(OK, responseData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchFields.success(responseData))
+        .dispatch(DataSourceRoutines.fetchFields(payload))
+        .silentRun();
+    });
+  });
 });
