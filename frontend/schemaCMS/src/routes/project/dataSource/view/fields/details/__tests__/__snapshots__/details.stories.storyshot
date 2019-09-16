@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
+<div
+  className="sc-cvbbAY dbHDoR"
+>
+  <ul
+    className="sc-jWBwVP dxfhym"
+  >
+    <li
+      className="sc-brqgnP iDwcwd"
+    >
+      <span
+        className="sc-jAaTju bTBTHj"
+      >
+        Field
+      </span>
+      firstName
+    </li>
+    <li
+      className="sc-brqgnP iDwcwd"
+    >
+      <span
+        className="sc-jAaTju bTBTHj"
+      >
+        Sample
+      </span>
+      <span
+        className="sc-jDwBTQ ioaAmq"
+      >
+        Sample
+      </span>
+    </li>
+    <li
+      className="sc-brqgnP iDwcwd"
+    >
+      <span
+        className="sc-jAaTju bTBTHj"
+      >
+        Type
+      </span>
+      <span
+        className="sc-jDwBTQ ioaAmq"
+      >
+        Text
+      </span>
+    </li>
+    <li
+      className="sc-brqgnP sc-cMljjf gfjBXs"
+    >
+      <span
+        className="sc-jAaTju bTBTHj"
+      >
+        Total Count (N)
+      </span>
+      <span
+        className="sc-jDwBTQ ioaAmq"
+      >
+        127
+      </span>
+    </li>
+    <li
+      className="sc-brqgnP sc-cMljjf gfjBXs"
+    >
+      <span
+        className="sc-jAaTju bTBTHj"
+      >
+        Unique
+      </span>
+      <span
+        className="sc-jDwBTQ ioaAmq"
+      >
+        99
+      </span>
+    </li>
+    <li
+      className="sc-brqgnP sc-cMljjf gfjBXs"
+    >
+      <span
+        className="sc-jAaTju bTBTHj"
+      >
+        Mean
+      </span>
+      <span
+        className="sc-jDwBTQ ioaAmq"
+      >
+        4
+      </span>
+    </li>
+    <li
+      className="sc-brqgnP sc-cMljjf gfjBXs"
+    >
+      <span
+        className="sc-jAaTju bTBTHj"
+      >
+        Min
+      </span>
+      <span
+        className="sc-jDwBTQ ioaAmq"
+      >
+        1
+      </span>
+    </li>
+    <li
+      className="sc-brqgnP sc-cMljjf gfjBXs"
+    >
+      <span
+        className="sc-jAaTju bTBTHj"
+      >
+        Max
+      </span>
+      <span
+        className="sc-jDwBTQ ioaAmq"
+      >
+        100
+      </span>
+    </li>
+    <li
+      className="sc-brqgnP sc-cMljjf gfjBXs"
+    >
+      <span
+        className="sc-jAaTju bTBTHj"
+      >
+        Std. Dev.
+      </span>
+      <span
+        className="sc-jDwBTQ ioaAmq"
+      >
+        23.0332
+      </span>
+    </li>
+  </ul>
+</div>
+`;

@@ -6,8 +6,17 @@ import { isEmpty } from 'ramda';
 
 import { Loader } from '../../../../../shared/components/loader';
 import { PreviewTable } from './previewTable';
+import { Details } from './details';
 import messages from './fields.messages';
-import { Container, Navigation, NavigationLabel, NavigationButton, Content, buttonStyles } from './fields.styles';
+import {
+  Container,
+  Navigation,
+  NavigationLabel,
+  NavigationButton,
+  Content,
+  buttonStyles,
+  arrowStyles,
+} from './fields.styles';
 
 const INITIAL_STEP = 0;
 
@@ -26,33 +35,35 @@ export class Fields extends PureComponent {
     }).isRequired,
   };
 
+  static getDerivedStateFromProps({ fields }, { isLoading, step }) {
+    if (isLoading && !isEmpty(fields)) {
+      const fieldsIds = Object.keys(fields);
+
+      return {
+        step,
+        isLoading: false,
+        countFields: fieldsIds.length,
+        fieldsIds: [null, ...fieldsIds],
+      };
+    }
+
+    return null;
+  }
+
   state = {
+    isLoading: true,
     step: INITIAL_STEP,
-    countFields: INITIAL_STEP,
   };
 
   componentDidMount() {
     const { projectId, dataSourceId } = this.props.match.params;
 
     this.props.fetchFields({ projectId, dataSourceId });
-    this.updateCount();
-  }
-
-  componentDidUpdate() {
-    this.updateCount();
   }
 
   componentWillUnmount() {
     this.props.unmountFields();
   }
-
-  isLoading = () => isEmpty(this.props.fields);
-
-  updateCount = () => {
-    this.setState((state, props) => ({
-      countFields: Object.keys(props.fields).length,
-    }));
-  };
 
   handleNavigation = direction => {
     const { step, countFields } = this.state;
@@ -84,13 +95,13 @@ export class Fields extends PureComponent {
       <Navigation>
         <NavigationButton>
           <Button onClick={this.handlePreviewStep} disabled={isPreviousDisabled} customStyles={buttonStyles}>
-            <Icons.ArrowLeftIcon />
+            <Icons.ArrowLeftIcon customStyles={arrowStyles(isPreviousDisabled)} />
           </Button>
         </NavigationButton>
         <NavigationLabel>{label}</NavigationLabel>
         <NavigationButton>
           <Button onClick={this.handleNextStep} disabled={isNextDisabled} customStyles={buttonStyles}>
-            <Icons.ArrowRightIcon />
+            <Icons.ArrowRightIcon customStyles={arrowStyles(isNextDisabled)} />
           </Button>
         </NavigationButton>
       </Navigation>
@@ -104,7 +115,11 @@ export class Fields extends PureComponent {
   }
 
   renderFieldDetails() {
-    return <Content>{this.state.step} Field data</Content>;
+    const { step, fieldsIds } = this.state;
+    const id = fieldsIds[step];
+    const fieldData = this.props.fields[id];
+
+    return <Details id={id} data={fieldData} intl={this.props.intl} />;
   }
 
   renderContent() {
@@ -122,7 +137,7 @@ export class Fields extends PureComponent {
   }
 
   render() {
-    const content = this.isLoading() ? <Loader /> : this.renderContent();
+    const content = this.state.isLoading ? <Loader /> : this.renderContent();
 
     return (
       <Container>

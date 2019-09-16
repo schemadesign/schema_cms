@@ -110,11 +110,11 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = (_, { id: projectId, editors, dataSources = [], owner, slug, created, charts, pages } = {}) => {
+  renderProject = (_, { id: projectId, editors, owner, slug, created, charts, pages, meta } = {}) => {
     const statistics = [
       {
         header: this.formatMessage(messages.dataSources),
-        value: this.countItems(dataSources),
+        value: path(['dataSources', 'count'], meta),
         to: `/project/view/${projectId}/datasource`,
       },
       { header: this.formatMessage(messages.charts), value: this.countItems(charts) },

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import CloseSVG from '../../../images/icons/close.svg';
-import { containerStyles } from '../closeIcon/closeIcon.styles';
+import { containerStyles } from './closeIcon.styles';
 
 export class CloseIcon extends PureComponent {
   static propTypes = {

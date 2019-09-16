@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton: Component should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "borderBottom": "1px solid #F0EFEF",
+      "display": "flex",
+      "flexDirection": "row",
+      "height": 48,
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <input
+    aria-hidden={true}
+    defaultChecked={true}
+    id="id"
+    name="name"
+    onChange={[Function]}
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "top": 0,
+        "visibility": "hidden",
+      }
+    }
+    type="checkbox"
+    value="value"
+  />
+  <span>
+    name
+  </span>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <label
+      htmlFor="id"
+    />
+  </div>
+</div>
+`;

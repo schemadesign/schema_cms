@@ -17,7 +17,7 @@ const defaultProps = {
   customCheckedStyles: {
     opacity: 1,
   },
-  onChange: value => console.log('value:', value),
+  onChange: Function.prototype,
 };
 
 storiesOf('Form/RadioGroup', module).add('Default', () => (
