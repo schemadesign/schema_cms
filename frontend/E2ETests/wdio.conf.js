@@ -179,7 +179,7 @@ exports.config = {
         const chai    = require('chai');
         global.expect = chai.expect;
         global.assert = chai.assert;
-        global.should = chai.should();
+        global.should = chai.should;
      },
     /**
      * Runs before a WebdriverIO command gets executed.
