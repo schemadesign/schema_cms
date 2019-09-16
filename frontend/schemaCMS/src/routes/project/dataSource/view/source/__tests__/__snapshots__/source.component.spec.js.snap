@@ -1,180 +1,1267 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Source: Component should render correctly 1`] = `
-<styled.div>
-  <TextInput
-    dataSource={Object {}}
-    errors={Object {}}
-    fullWidth={true}
-    intl={
-      Object {
-        "formatMessage": [Function],
-      }
+<Source
+  bindSubmitForm={[Function]}
+  dataSource={Object {}}
+  intl={
+    Object {
+      "formatMessage": [Function],
     }
-    label="Name"
-    name="name"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    touched={Object {}}
-    value=""
-  />
-  <Label
-    customStyles={
-      Object {
-        "marginBottom": 20,
-      }
+  }
+  match={
+    Object {
+      "params": Object {
+        "dataSourceId": "1",
+        "projectId": "1",
+        "step": "1",
+      },
     }
-  >
-    <FormattedMessage
-      defaultMessage="Source"
-      id="dataSource.view.source.source"
-      values={Object {}}
-    />
-  </Label>
-  <RadioGroup
-    customCheckedStyles={Object {}}
-    customLabelStyles={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "column",
-        "width": 96,
-      }
-    }
-    customStyles={
-      Object {
-        "marginBottom": "40px",
-      }
-    }
-    name="type"
-    onChange={[Function]}
-  >
-    <RadioButton
-      id="file"
-      label="Spreadsheet"
-      value="file"
-    >
-      <Button
-        customStyles={
-          Object {
-            "backgroundColor": "#1D1D20",
-            "height": 96,
-            "marginBottom": 10,
-            "pointerEvents": "none",
-            "width": 96,
-          }
+  }
+  updateDataSource={[Function]}
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "bDWFJH",
+            "rules": Array [],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
         }
-        type="button"
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="sc-bdVaJa bDWFJH"
       >
-        <CsvIcon />
-      </Button>
-    </RadioButton>
-  </RadioGroup>
-</styled.div>
+        <Formik
+          enableReinitialize={true}
+          initialValues={Object {}}
+          isInitialValid={true}
+          onSubmit={[Function]}
+          validateOnBlur={true}
+          validateOnChange={true}
+          validationSchema={
+            ObjectSchema {
+              "_blacklist": RefSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_conditions": Array [],
+              "_defaultDefault": [Function],
+              "_deps": Array [],
+              "_excludedEdges": Array [],
+              "_exclusive": Object {},
+              "_mutate": undefined,
+              "_nodes": Array [
+                "fileName",
+                "file",
+                "type",
+                "name",
+              ],
+              "_options": Object {
+                "abortEarly": true,
+                "recursive": true,
+              },
+              "_type": "object",
+              "_typeError": [Function],
+              "_whitelist": RefSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "fields": Object {
+                "file": SchemaType {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {},
+                  "_mutate": undefined,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "mixed",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [],
+                  "transforms": Array [],
+                },
+                "fileName": StringSchema {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {
+                    "required": true,
+                  },
+                  "_mutate": undefined,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "string",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [
+                    [Function],
+                  ],
+                  "transforms": Array [
+                    [Function],
+                  ],
+                },
+                "name": StringSchema {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {
+                    "max": true,
+                    "min": true,
+                    "required": true,
+                  },
+                  "_mutate": undefined,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "string",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                  ],
+                  "transforms": Array [
+                    [Function],
+                  ],
+                },
+                "type": StringSchema {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {
+                    "required": true,
+                  },
+                  "_mutate": undefined,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "string",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [
+                    [Function],
+                  ],
+                  "transforms": Array [
+                    [Function],
+                  ],
+                },
+              },
+              "tests": Array [],
+              "transforms": Array [
+                [Function],
+              ],
+            }
+          }
+        >
+          <TextInput
+            errors={Object {}}
+            fullWidth={true}
+            intl={
+              Object {
+                "formatMessage": [Function],
+              }
+            }
+            label="Name"
+            match={
+              Object {
+                "params": Object {
+                  "dataSourceId": "1",
+                  "projectId": "1",
+                  "step": "1",
+                },
+              }
+            }
+            name="name"
+            onChange={[Function]}
+            touched={Object {}}
+            updateDataSource={[Function]}
+            value=""
+          >
+            <styled.div>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": true,
+                      "lastClassName": "uTxCW",
+                      "rules": Array [],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="sc-bwzfXH uTxCW"
+                >
+                  <TextField
+                    customInputStyles={Object {}}
+                    customLabelStyles={Object {}}
+                    error={false}
+                    fullWidth={false}
+                    label="Name"
+                    name="name"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  >
+                    <div
+                      style={
+                        Object {
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "maxWidth": "320px",
+                          "paddingBottom": "30px",
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <Label
+                        customStyles={Object {}}
+                        name="name"
+                      >
+                        <label
+                          htmlFor="name"
+                          style={
+                            Object {
+                              "border": "none",
+                              "borderTop": "1px solid #F0EFEF",
+                              "color": "#a6a7aa",
+                              "display": "block",
+                              "fontSize": "14px",
+                              "outline": "none",
+                              "paddingTop": "8px",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          Name
+                        </label>
+                      </Label>
+                      <Input
+                        customStyles={Object {}}
+                        name="name"
+                        onChange={[Function]}
+                        type="text"
+                        value=""
+                      >
+                        <input
+                          id="name"
+                          name="name"
+                          onChange={[Function]}
+                          style={
+                            Object {
+                              "backgroundColor": "transparent",
+                              "border": "none",
+                              "color": "#1d1d20",
+                              "fontSize": "18px",
+                              "lineHeight": "24px",
+                              "outline": "none",
+                            }
+                          }
+                          type="text"
+                          value=""
+                        />
+                      </Input>
+                      <div
+                        style={
+                          Object {
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          }
+                        }
+                      />
+                    </div>
+                  </TextField>
+                </div>
+              </StyledComponent>
+            </styled.div>
+          </TextInput>
+          <Label
+            customStyles={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            <label
+              style={
+                Object {
+                  "border": "none",
+                  "borderTop": "1px solid #F0EFEF",
+                  "color": "#a6a7aa",
+                  "display": "block",
+                  "fontSize": "14px",
+                  "marginBottom": 20,
+                  "outline": "none",
+                  "paddingTop": "8px",
+                  "width": "100%",
+                }
+              }
+            >
+              <FormattedMessage
+                defaultMessage="Source"
+                id="dataSource.view.source.source"
+                values={Object {}}
+              >
+                <span>
+                  Source
+                </span>
+              </FormattedMessage>
+            </label>
+          </Label>
+          <RadioGroup
+            customCheckedStyles={Object {}}
+            customLabelStyles={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "column",
+                "width": 96,
+              }
+            }
+            customStyles={
+              Object {
+                "marginBottom": "40px",
+              }
+            }
+            name="type"
+            onChange={[Function]}
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "marginBottom": "40px",
+                }
+              }
+            >
+              <RadioButton
+                id="file"
+                label="Spreadsheet"
+                value="file"
+              >
+                <div
+                  style={
+                    Object {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  <input
+                    aria-hidden={true}
+                    defaultChecked={false}
+                    id="file"
+                    name="type"
+                    onChange={[Function]}
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                      }
+                    }
+                    type="radio"
+                    value="file"
+                  />
+                  <label
+                    htmlFor="file"
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "cursor": "pointer",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "opacity": 0.1,
+                        "width": 96,
+                      }
+                    }
+                  >
+                    <Button
+                      customStyles={
+                        Object {
+                          "backgroundColor": "#1D1D20",
+                          "height": 96,
+                          "marginBottom": 10,
+                          "pointerEvents": "none",
+                          "width": 96,
+                        }
+                      }
+                      type="button"
+                    >
+                      <button
+                        style={
+                          Object {
+                            "backgroundColor": "#1D1D20",
+                            "border": "none",
+                            "borderRadius": "48px",
+                            "color": "#1d1d20",
+                            "cursor": "pointer",
+                            "display": "inline-block",
+                            "fontSize": "18px",
+                            "height": 96,
+                            "margin": "0",
+                            "marginBottom": 10,
+                            "minHeight": "48px",
+                            "outline": "none",
+                            "padding": "0",
+                            "pointerEvents": "none",
+                            "width": 96,
+                          }
+                        }
+                        type="button"
+                      >
+                        <CsvIcon>
+                          <SvgSpreadsheet
+                            style={
+                              Object {
+                                "fill": "#FFF",
+                                "height": "60px",
+                                "width": "60px",
+                              }
+                            }
+                          >
+                            <svg
+                              style={
+                                Object {
+                                  "fill": "#FFF",
+                                  "height": "60px",
+                                  "width": "60px",
+                                }
+                              }
+                              viewBox="0 0 60 60"
+                            >
+                              <path
+                                d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                                fillRule="evenodd"
+                              />
+                            </svg>
+                          </SvgSpreadsheet>
+                        </CsvIcon>
+                      </button>
+                    </Button>
+                  </label>
+                  Spreadsheet
+                </div>
+              </RadioButton>
+            </div>
+          </RadioGroup>
+        </Formik>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</Source>
 `;
 
 exports[`Source: Component should render file uploader 1`] = `
-<styled.div>
-  <TextInput
-    dataSource={Object {}}
-    errors={Object {}}
-    fullWidth={true}
-    intl={
-      Object {
-        "formatMessage": [Function],
-      }
+<Source
+  bindSubmitForm={[Function]}
+  dataSource={
+    Object {
+      "type": "file",
     }
-    label="Name"
-    name="name"
-    onChange={[Function]}
-    setFieldValue={[Function]}
-    touched={Object {}}
-    value=""
-  />
-  <Label
-    customStyles={
-      Object {
-        "marginBottom": 20,
-      }
+  }
+  intl={
+    Object {
+      "formatMessage": [Function],
     }
-  >
-    <FormattedMessage
-      defaultMessage="Source"
-      id="dataSource.view.source.source"
-      values={Object {}}
-    />
-  </Label>
-  <RadioGroup
-    customCheckedStyles={Object {}}
-    customLabelStyles={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "column",
-        "width": 96,
-      }
+  }
+  match={
+    Object {
+      "params": Object {
+        "dataSourceId": "1",
+        "projectId": "1",
+        "step": "1",
+      },
     }
-    customStyles={
-      Object {
-        "marginBottom": "40px",
+  }
+  updateDataSource={[Function]}
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "bDWFJH",
+            "rules": Array [],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
       }
-    }
-    name="type"
-    onChange={[Function]}
-    value="file"
-  >
-    <RadioButton
-      id="file"
-      label="Spreadsheet"
-      value="file"
+      forwardedRef={null}
     >
-      <Button
-        customStyles={
-          Object {
-            "backgroundColor": "#1D1D20",
-            "height": 96,
-            "marginBottom": 10,
-            "pointerEvents": "none",
-            "width": 96,
-          }
-        }
-        type="button"
-      >
-        <CsvIcon />
-      </Button>
-    </RadioButton>
-  </RadioGroup>
-  <FileUpload
-    accept=".csv,.tsv"
-    customInputStyles={Object {}}
-    customLabelStyles={Object {}}
-    customStyles={Object {}}
-    iconComponent={
       <div
-        style={
-          Object {
-            "backgroundColor": "#f0efef",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#1d1d20",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fontSize": 0,
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-          }
-        }
+        className="sc-bdVaJa bDWFJH"
       >
-        <UploadIcon />
+        <Formik
+          enableReinitialize={true}
+          initialValues={
+            Object {
+              "type": "file",
+            }
+          }
+          isInitialValid={true}
+          onSubmit={[Function]}
+          validateOnBlur={true}
+          validateOnChange={true}
+          validationSchema={
+            ObjectSchema {
+              "_blacklist": RefSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "_conditions": Array [],
+              "_defaultDefault": [Function],
+              "_deps": Array [],
+              "_excludedEdges": Array [],
+              "_exclusive": Object {},
+              "_mutate": undefined,
+              "_nodes": Array [
+                "fileName",
+                "file",
+                "type",
+                "name",
+              ],
+              "_options": Object {
+                "abortEarly": true,
+                "recursive": true,
+              },
+              "_type": "object",
+              "_typeError": [Function],
+              "_whitelist": RefSet {
+                "list": Set {},
+                "refs": Map {},
+              },
+              "fields": Object {
+                "file": SchemaType {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {},
+                  "_mutate": undefined,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "mixed",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [],
+                  "transforms": Array [],
+                },
+                "fileName": StringSchema {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {
+                    "required": true,
+                  },
+                  "_mutate": undefined,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "string",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [
+                    [Function],
+                  ],
+                  "transforms": Array [
+                    [Function],
+                  ],
+                },
+                "name": StringSchema {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {
+                    "max": true,
+                    "min": true,
+                    "required": true,
+                  },
+                  "_mutate": undefined,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "string",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                  ],
+                  "transforms": Array [
+                    [Function],
+                  ],
+                },
+                "type": StringSchema {
+                  "_blacklist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "_conditions": Array [],
+                  "_deps": Array [],
+                  "_exclusive": Object {
+                    "required": true,
+                  },
+                  "_mutate": undefined,
+                  "_options": Object {
+                    "abortEarly": true,
+                    "recursive": true,
+                  },
+                  "_type": "string",
+                  "_typeError": [Function],
+                  "_whitelist": RefSet {
+                    "list": Set {},
+                    "refs": Map {},
+                  },
+                  "tests": Array [
+                    [Function],
+                  ],
+                  "transforms": Array [
+                    [Function],
+                  ],
+                },
+              },
+              "tests": Array [],
+              "transforms": Array [
+                [Function],
+              ],
+            }
+          }
+        >
+          <TextInput
+            errors={Object {}}
+            fullWidth={true}
+            intl={
+              Object {
+                "formatMessage": [Function],
+              }
+            }
+            label="Name"
+            match={
+              Object {
+                "params": Object {
+                  "dataSourceId": "1",
+                  "projectId": "1",
+                  "step": "1",
+                },
+              }
+            }
+            name="name"
+            onChange={[Function]}
+            touched={Object {}}
+            updateDataSource={[Function]}
+            value=""
+          >
+            <styled.div>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": true,
+                      "lastClassName": "uTxCW",
+                      "rules": Array [],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="sc-bwzfXH uTxCW"
+                >
+                  <TextField
+                    customInputStyles={Object {}}
+                    customLabelStyles={Object {}}
+                    error={false}
+                    fullWidth={false}
+                    label="Name"
+                    name="name"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  >
+                    <div
+                      style={
+                        Object {
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "maxWidth": "320px",
+                          "paddingBottom": "30px",
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <Label
+                        customStyles={Object {}}
+                        name="name"
+                      >
+                        <label
+                          htmlFor="name"
+                          style={
+                            Object {
+                              "border": "none",
+                              "borderTop": "1px solid #F0EFEF",
+                              "color": "#a6a7aa",
+                              "display": "block",
+                              "fontSize": "14px",
+                              "outline": "none",
+                              "paddingTop": "8px",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          Name
+                        </label>
+                      </Label>
+                      <Input
+                        customStyles={Object {}}
+                        name="name"
+                        onChange={[Function]}
+                        type="text"
+                        value=""
+                      >
+                        <input
+                          id="name"
+                          name="name"
+                          onChange={[Function]}
+                          style={
+                            Object {
+                              "backgroundColor": "transparent",
+                              "border": "none",
+                              "color": "#1d1d20",
+                              "fontSize": "18px",
+                              "lineHeight": "24px",
+                              "outline": "none",
+                            }
+                          }
+                          type="text"
+                          value=""
+                        />
+                      </Input>
+                      <div
+                        style={
+                          Object {
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          }
+                        }
+                      />
+                    </div>
+                  </TextField>
+                </div>
+              </StyledComponent>
+            </styled.div>
+          </TextInput>
+          <Label
+            customStyles={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            <label
+              style={
+                Object {
+                  "border": "none",
+                  "borderTop": "1px solid #F0EFEF",
+                  "color": "#a6a7aa",
+                  "display": "block",
+                  "fontSize": "14px",
+                  "marginBottom": 20,
+                  "outline": "none",
+                  "paddingTop": "8px",
+                  "width": "100%",
+                }
+              }
+            >
+              <FormattedMessage
+                defaultMessage="Source"
+                id="dataSource.view.source.source"
+                values={Object {}}
+              >
+                <span>
+                  Source
+                </span>
+              </FormattedMessage>
+            </label>
+          </Label>
+          <RadioGroup
+            customCheckedStyles={Object {}}
+            customLabelStyles={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "column",
+                "width": 96,
+              }
+            }
+            customStyles={
+              Object {
+                "marginBottom": "40px",
+              }
+            }
+            name="type"
+            onChange={[Function]}
+            value="file"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "marginBottom": "40px",
+                }
+              }
+            >
+              <RadioButton
+                id="file"
+                label="Spreadsheet"
+                value="file"
+              >
+                <div
+                  style={
+                    Object {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  <input
+                    aria-hidden={true}
+                    defaultChecked={true}
+                    id="file"
+                    name="type"
+                    onChange={[Function]}
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                      }
+                    }
+                    type="radio"
+                    value="file"
+                  />
+                  <label
+                    htmlFor="file"
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "cursor": "pointer",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "opacity": 1,
+                        "width": 96,
+                      }
+                    }
+                  >
+                    <Button
+                      customStyles={
+                        Object {
+                          "backgroundColor": "#1D1D20",
+                          "height": 96,
+                          "marginBottom": 10,
+                          "pointerEvents": "none",
+                          "width": 96,
+                        }
+                      }
+                      type="button"
+                    >
+                      <button
+                        style={
+                          Object {
+                            "backgroundColor": "#1D1D20",
+                            "border": "none",
+                            "borderRadius": "48px",
+                            "color": "#1d1d20",
+                            "cursor": "pointer",
+                            "display": "inline-block",
+                            "fontSize": "18px",
+                            "height": 96,
+                            "margin": "0",
+                            "marginBottom": 10,
+                            "minHeight": "48px",
+                            "outline": "none",
+                            "padding": "0",
+                            "pointerEvents": "none",
+                            "width": 96,
+                          }
+                        }
+                        type="button"
+                      >
+                        <CsvIcon>
+                          <SvgSpreadsheet
+                            style={
+                              Object {
+                                "fill": "#FFF",
+                                "height": "60px",
+                                "width": "60px",
+                              }
+                            }
+                          >
+                            <svg
+                              style={
+                                Object {
+                                  "fill": "#FFF",
+                                  "height": "60px",
+                                  "width": "60px",
+                                }
+                              }
+                              viewBox="0 0 60 60"
+                            >
+                              <path
+                                d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                                fillRule="evenodd"
+                              />
+                            </svg>
+                          </SvgSpreadsheet>
+                        </CsvIcon>
+                      </button>
+                    </Button>
+                  </label>
+                  Spreadsheet
+                </div>
+              </RadioButton>
+            </div>
+          </RadioGroup>
+          <FileUpload
+            accept=".csv,.tsv"
+            customInputStyles={Object {}}
+            customLabelStyles={Object {}}
+            customStyles={Object {}}
+            iconComponent={
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#f0efef",
+                    "border": "none",
+                    "borderRadius": "48px",
+                    "color": "#1d1d20",
+                    "cursor": "pointer",
+                    "display": "inline-block",
+                    "fontSize": 0,
+                    "margin": "0",
+                    "minHeight": "48px",
+                    "outline": "none",
+                    "padding": "0",
+                  }
+                }
+              >
+                <UploadIcon />
+              </div>
+            }
+            id="fileUpload"
+            label="File Name"
+            name="file"
+            onChange={[Function]}
+            type="file"
+          >
+            <div
+              style={Object {}}
+            >
+              <TextField
+                customInputStyles={Object {}}
+                customLabelStyles={Object {}}
+                customStyles={Object {}}
+                disabled={true}
+                error={false}
+                fullWidth={true}
+                iconComponent={
+                  <label
+                    htmlFor="fileUpload"
+                    style={
+                      Object {
+                        "position": "relative",
+                        "top": 10,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "backgroundColor": "#f0efef",
+                          "border": "none",
+                          "borderRadius": "48px",
+                          "color": "#1d1d20",
+                          "cursor": "pointer",
+                          "display": "inline-block",
+                          "fontSize": 0,
+                          "margin": "0",
+                          "minHeight": "48px",
+                          "outline": "none",
+                          "padding": "0",
+                        }
+                      }
+                    >
+                      <UploadIcon />
+                    </div>
+                  </label>
+                }
+                label="File Name"
+                name="fileName"
+                type="text"
+                value="Select a file"
+              >
+                <div
+                  style={
+                    Object {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "maxWidth": "100%",
+                      "paddingBottom": "30px",
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <Label
+                    customStyles={Object {}}
+                    name="fileName"
+                  >
+                    <label
+                      htmlFor="fileName"
+                      style={
+                        Object {
+                          "border": "none",
+                          "borderTop": "1px solid #F0EFEF",
+                          "color": "#a6a7aa",
+                          "display": "block",
+                          "fontSize": "14px",
+                          "outline": "none",
+                          "paddingTop": "8px",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      File Name
+                    </label>
+                  </Label>
+                  <Input
+                    customStyles={Object {}}
+                    disabled={true}
+                    name="fileName"
+                    type="text"
+                    value="Select a file"
+                  >
+                    <input
+                      disabled={true}
+                      id="fileName"
+                      name="fileName"
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "border": "none",
+                          "color": "#1d1d20",
+                          "fontSize": "18px",
+                          "lineHeight": "24px",
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                      value="Select a file"
+                    />
+                  </Input>
+                  <div
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                  >
+                    <label
+                      htmlFor="fileUpload"
+                      style={
+                        Object {
+                          "position": "relative",
+                          "top": 10,
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "backgroundColor": "#f0efef",
+                            "border": "none",
+                            "borderRadius": "48px",
+                            "color": "#1d1d20",
+                            "cursor": "pointer",
+                            "display": "inline-block",
+                            "fontSize": 0,
+                            "margin": "0",
+                            "minHeight": "48px",
+                            "outline": "none",
+                            "padding": "0",
+                          }
+                        }
+                      >
+                        <UploadIcon>
+                          <SvgUpload
+                            style={
+                              Object {
+                                "fill": "#1d1d20",
+                                "height": "60px",
+                                "width": "60px",
+                              }
+                            }
+                          >
+                            <svg
+                              style={
+                                Object {
+                                  "fill": "#1d1d20",
+                                  "height": "60px",
+                                  "width": "60px",
+                                }
+                              }
+                              viewBox="0 0 60 60"
+                            >
+                              <path
+                                d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                              />
+                            </svg>
+                          </SvgUpload>
+                        </UploadIcon>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </TextField>
+              <input
+                accept=".csv,.tsv"
+                aria-hidden={true}
+                id="fileUpload"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                  }
+                }
+                type="file"
+              />
+            </div>
+          </FileUpload>
+        </Formik>
       </div>
-    }
-    id="fileUpload"
-    label="File Name"
-    name="file"
-    onChange={[Function]}
-    type="file"
-  />
-</styled.div>
+    </StyledComponent>
+  </styled.div>
+</Source>
 `;

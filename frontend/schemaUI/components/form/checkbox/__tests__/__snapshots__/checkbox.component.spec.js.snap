@@ -15,9 +15,9 @@ exports[`RadioButton: Component should render correctly 1`] = `
 >
   <input
     aria-hidden={true}
-    defaultChecked={true}
     id="id"
-    name="name"
+    label="name"
+    name="value"
     onChange={[Function]}
     style={
       Object {
@@ -33,7 +33,7 @@ exports[`RadioButton: Component should render correctly 1`] = `
     value="value"
   />
   <span>
-    name
+    radio
   </span>
   <div
     style={
@@ -46,6 +46,11 @@ exports[`RadioButton: Component should render correctly 1`] = `
   >
     <label
       htmlFor="id"
+      style={
+        Object {
+          "cursor": "pointer",
+        }
+      }
     />
   </div>
 </div>

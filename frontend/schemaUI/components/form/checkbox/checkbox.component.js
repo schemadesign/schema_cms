@@ -1,16 +1,17 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { containerStyles, inputStyles, iconContainerStyles } from './checkbox.styles';
+import { containerStyles, inputStyles, iconContainerStyles, labelStyles } from './checkbox.styles';
 import CheckboxGroupContext from '../checkboxGroup/checkboxGroup.context';
 import { EditIcon } from '../../icons/editIcon';
 
 export class Checkbox extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     id: PropTypes.string.isRequired,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     value: PropTypes.any.isRequired,
+    isEdit: PropTypes.bool,
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   };
 
   renderCheckboxIcon = ({ checked, checkedIcon, uncCheckedIcon }) => (checked ? checkedIcon : uncCheckedIcon);
@@ -18,12 +19,12 @@ export class Checkbox extends PureComponent {
   renderEditIcon = isEdit => (isEdit ? <EditIcon /> : null);
 
   render() {
-    const { children, id, label, ...restProps } = this.props;
+    const { id, children, isEdit, ...restProps } = this.props;
 
     return (
       <CheckboxGroupContext.Consumer>
-        {({ name, onChange, value = [], isEdit, checkedIcon, uncCheckedIcon, customCheckboxStyles }) => {
-          const checked = value.includes(restProps.value);
+        {({ onChange, value = [], checkedIcon, uncCheckedIcon, customCheckboxStyles }) => {
+          const checked = value[restProps.value];
           const styles = { ...containerStyles, ...customCheckboxStyles };
 
           return (
@@ -32,17 +33,19 @@ export class Checkbox extends PureComponent {
                 {...restProps}
                 onChange={onChange}
                 value={restProps.value}
-                name={name}
-                defaultChecked={checked}
+                name={restProps.value}
+                checked={checked}
                 aria-hidden
                 type="checkbox"
                 id={id}
                 style={inputStyles}
               />
-              <span>{label}</span>
+              <span>{children}</span>
               <div style={iconContainerStyles}>
                 {this.renderEditIcon(isEdit)}
-                <label htmlFor={id}>{this.renderCheckboxIcon({ checked, checkedIcon, uncCheckedIcon })}</label>
+                <label style={labelStyles} htmlFor={id}>
+                  {this.renderCheckboxIcon({ checked, checkedIcon, uncCheckedIcon })}
+                </label>
               </div>
             </div>
           );
