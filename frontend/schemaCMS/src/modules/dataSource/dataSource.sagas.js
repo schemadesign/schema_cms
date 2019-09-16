@@ -149,11 +149,11 @@ function* fetchOneDataWrangling({ payload }) {
       `${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}/file/view/${fileId}`
     );
 
-    yield put(DataSourceRoutines.fetchFields.success(data));
+    yield put(DataSourceRoutines.fetchOneDataWrangling.success(data));
   } catch (error) {
-    yield put(DataSourceRoutines.fetchFields.failure(error));
+    yield put(DataSourceRoutines.fetchOneDataWrangling.failure(error));
   } finally {
-    yield put(DataSourceRoutines.fetchFields.fulfill());
+    yield put(DataSourceRoutines.fetchOneDataWrangling.fulfill());
   }
 }
 

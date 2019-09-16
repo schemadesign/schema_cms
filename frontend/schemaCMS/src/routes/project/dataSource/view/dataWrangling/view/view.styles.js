@@ -5,8 +5,6 @@ export const Container = styled.div`
   margin: 0 20px;
 `;
 
-export const Content = styled.div``;
-
 export const Form = styled.form``;
 
 export const codeStyles = {

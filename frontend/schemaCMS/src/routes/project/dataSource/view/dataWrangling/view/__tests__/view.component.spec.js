@@ -2,10 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { View } from '../view.component';
+import { defaultProps } from '../view.stories';
 
 describe('View: Component', () => {
-  const defaultProps = {};
-
   const component = props => <View {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

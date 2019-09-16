@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { View } from './view.component';
 
-const defaultProps = {
+export const defaultProps = {
   dataWrangling: {
     description: 'Change to lowercase',
     code: 'df.columns = map(str.lower, df.columns)',

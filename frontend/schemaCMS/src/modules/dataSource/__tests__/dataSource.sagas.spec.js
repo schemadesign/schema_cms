@@ -235,7 +235,7 @@ describe('DataSource: sagas', () => {
     it('should dispatch a success action', async () => {
       const payload = { projectId: '1', dataSourceId: '1', fileId: '1' };
       const responseData = {
-        data: [{ name: 'test', code: 'alert("Hello World!");' }],
+        data: [{ description: 'test', code: 'alert("Hello World!");' }],
       };
 
       mockApi
@@ -246,8 +246,8 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(DataSourceRoutines.fetchFields.success(responseData))
-        .dispatch(DataSourceRoutines.fetchFields(payload))
+        .put(DataSourceRoutines.fetchOneDataWrangling.success(responseData))
+        .dispatch(DataSourceRoutines.fetchOneDataWrangling(payload))
         .silentRun();
     });
   });

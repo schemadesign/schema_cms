@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { isEmpty } from 'ramda';
@@ -7,7 +7,7 @@ import { TextInput } from '../../../../../../shared/components/form/inputs/textI
 import { Loader } from '../../../../../../shared/components/loader';
 import { PillButtons } from '../../../../../../shared/components/pillButtons';
 import { TopHeader } from '../../../../../../shared/components/topHeader';
-import { Container, Content, Form, codeStyles, rightButtonStyles } from './view.styles';
+import { Container, Form, codeStyles, rightButtonStyles } from './view.styles';
 import messages from './view.messages';
 
 export class View extends PureComponent {
@@ -75,7 +75,7 @@ export class View extends PureComponent {
     };
 
     return (
-      <Content>
+      <Fragment>
         <Form>
           <TextInput {...descriptionFieldProps} />
           <TextInput {...codeFieldProps} />
@@ -91,7 +91,7 @@ export class View extends PureComponent {
             customStyles: rightButtonStyles,
           }}
         />
-      </Content>
+      </Fragment>
     );
   }
 
