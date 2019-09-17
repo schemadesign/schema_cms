@@ -10,5 +10,5 @@ df = df.drop_duplicates()
 # back to original shape
 df = df.T.drop_duplicates().T
 
-# Combined
+# Combine
 df = df.T.drop_duplicates().T.drop_duplicates()
