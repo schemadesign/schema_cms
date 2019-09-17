@@ -2,129 +2,129 @@
 
 exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
 <div
-  className="sc-csuQGl CQhxV"
+  className="sc-gPEVay eQYmiW"
 >
   <ul
-    className="sc-Rmtcm djzfUQ"
+    className="sc-iRbamj hBXLQw"
   >
     <li
-      className="sc-bRBYWo ikLqJp"
+      className="sc-jlyJG jRwaeX"
     >
       <span
-        className="sc-jhAzac gYWzrz"
+        className="sc-csuQGl hOOdrl"
       >
         Field
       </span>
       firstName
     </li>
     <li
-      className="sc-bRBYWo ikLqJp"
+      className="sc-jlyJG jRwaeX"
     >
       <span
-        className="sc-jhAzac gYWzrz"
+        className="sc-csuQGl hOOdrl"
       >
         Sample
       </span>
       <span
-        className="sc-fBuWsC bZaczn"
+        className="sc-Rmtcm cigWLG"
       >
         Sample
       </span>
     </li>
     <li
-      className="sc-bRBYWo ikLqJp"
+      className="sc-jlyJG jRwaeX"
     >
       <span
-        className="sc-jhAzac gYWzrz"
+        className="sc-csuQGl hOOdrl"
       >
         Type
       </span>
       <span
-        className="sc-fBuWsC bZaczn"
+        className="sc-Rmtcm cigWLG"
       >
         Text
       </span>
     </li>
     <li
-      className="sc-bRBYWo sc-hzDkRC iBBRYG"
+      className="sc-jlyJG sc-gipzik bnqJpC"
     >
       <span
-        className="sc-jhAzac gYWzrz"
+        className="sc-csuQGl hOOdrl"
       >
         Total Count (N)
       </span>
       <span
-        className="sc-fBuWsC bZaczn"
+        className="sc-Rmtcm cigWLG"
       >
         127
       </span>
     </li>
     <li
-      className="sc-bRBYWo sc-hzDkRC iBBRYG"
+      className="sc-jlyJG sc-gipzik bnqJpC"
     >
       <span
-        className="sc-jhAzac gYWzrz"
+        className="sc-csuQGl hOOdrl"
       >
         Unique
       </span>
       <span
-        className="sc-fBuWsC bZaczn"
+        className="sc-Rmtcm cigWLG"
       >
         99
       </span>
     </li>
     <li
-      className="sc-bRBYWo sc-hzDkRC iBBRYG"
+      className="sc-jlyJG sc-gipzik bnqJpC"
     >
       <span
-        className="sc-jhAzac gYWzrz"
+        className="sc-csuQGl hOOdrl"
       >
         Mean
       </span>
       <span
-        className="sc-fBuWsC bZaczn"
+        className="sc-Rmtcm cigWLG"
       >
         4
       </span>
     </li>
     <li
-      className="sc-bRBYWo sc-hzDkRC iBBRYG"
+      className="sc-jlyJG sc-gipzik bnqJpC"
     >
       <span
-        className="sc-jhAzac gYWzrz"
+        className="sc-csuQGl hOOdrl"
       >
         Min
       </span>
       <span
-        className="sc-fBuWsC bZaczn"
+        className="sc-Rmtcm cigWLG"
       >
         1
       </span>
     </li>
     <li
-      className="sc-bRBYWo sc-hzDkRC iBBRYG"
+      className="sc-jlyJG sc-gipzik bnqJpC"
     >
       <span
-        className="sc-jhAzac gYWzrz"
+        className="sc-csuQGl hOOdrl"
       >
         Max
       </span>
       <span
-        className="sc-fBuWsC bZaczn"
+        className="sc-Rmtcm cigWLG"
       >
         100
       </span>
     </li>
     <li
-      className="sc-bRBYWo sc-hzDkRC iBBRYG"
+      className="sc-jlyJG sc-gipzik bnqJpC"
     >
       <span
-        className="sc-jhAzac gYWzrz"
+        className="sc-csuQGl hOOdrl"
       >
         Std. Dev.
       </span>
       <span
-        className="sc-fBuWsC bZaczn"
+        className="sc-Rmtcm cigWLG"
       >
         23.0332
       </span>

@@ -1,14 +1,15 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
-import { Button, Form, Icons } from 'schemaUI';
+import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
+import { always } from 'ramda';
 
 import { Container, Header, StepCounter, Empty, ButtonContainer, Link } from './dataWrangling.styles';
 import messages from './dataWrangling.messages';
+import { renderWhenTrue } from '../../../../../shared/utils/rendering';
 
-const { CheckboxGroup, Checkbox } = Form;
-const { UploadIcon } = Icons;
+const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
 export class DataWrangling extends PureComponent {
   static propTypes = {
@@ -25,6 +26,11 @@ export class DataWrangling extends PureComponent {
     }).isRequired,
   };
 
+  state = {
+    uploading: false,
+    errorOnUploading: false,
+  };
+
   componentDidMount() {
     const { dataSourceId } = this.props.match.params;
     this.props.fetchDataWrangling({ dataSourceId });
@@ -36,6 +42,27 @@ export class DataWrangling extends PureComponent {
     return `${baseUrl}${index}`;
   };
 
+  handleUploadScript = async ({
+    currentTarget: {
+      files: [file],
+    },
+  }) => {
+    if (!file) {
+      return;
+    }
+
+    try {
+      const { dataSourceId } = this.props.match.params;
+      this.setState({ uploading: true, errorOnUploading: false });
+
+      await this.props.uploadScript({ file, dataSourceId });
+
+      await this.props.uploadScript({ file, dataSourceId });
+    } catch (e) {
+      this.setState({ uploading: false, errorOnUploading: true });
+    }
+  };
+
   renderCheckboxes = values =>
     values.map(({ name }, index) => (
       <Checkbox id={index} value={name} key={index} isEdit>
@@ -43,8 +70,17 @@ export class DataWrangling extends PureComponent {
       </Checkbox>
     ));
 
+  renderErrorOnUploading = renderWhenTrue(
+    always(
+      <Error>
+        <FormattedMessage {...messages.errorOnUploading} />
+      </Error>
+    )
+  );
+
   render() {
-    const { bindSubmitForm, dataWrangling } = this.props;
+    const { bindSubmitForm, dataWrangling, sendUpdatedDataWrangling } = this.props;
+    const { uploading, errorOnUploading } = this.state;
     const data = dataWrangling.reduce((data, { name, active }) => ({ ...data, [name]: active }), {});
     const stepCopyKey = dataWrangling.length < 2 ? 'steps' : 'step';
 
@@ -54,16 +90,21 @@ export class DataWrangling extends PureComponent {
           <Empty />
           <StepCounter>
             <FormattedMessage values={{ length: dataWrangling.length }} {...messages[stepCopyKey]} />
+            {this.renderErrorOnUploading(errorOnUploading)}
           </StepCounter>
-          <ButtonContainer>
-            <Button>
-              <UploadIcon />
-            </Button>
-          </ButtonContainer>
+          <UploadContainer>
+            <FileUpload
+              type="file"
+              id="fileUpload"
+              onChange={this.handleUploadScript}
+              accept=".py"
+              disabled={uploading}
+            />
+          </UploadContainer>
         </Header>
-        <Formik initialValues={data}>
+        <Formik initialValues={data} onSubmit={sendUpdatedDataWrangling}>
           {({ handleChange, values, submitForm, dirty, isValid }) => {
-            if (dirty && isValid) {
+            if (dirty && isValid && !uploading) {
               bindSubmitForm(submitForm);
             }
             return (

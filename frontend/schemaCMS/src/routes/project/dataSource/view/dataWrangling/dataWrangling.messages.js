@@ -10,4 +10,8 @@ export default defineMessages({
     id: 'dataSource.view.dataWrangling.steps',
     defaultMessage: '{length} Steps',
   },
+  errorOnUploading: {
+    id: 'dataSource.view.dataWrangling.errorOnUploading',
+    defaultMessage: 'Error on uploading a file.',
+  },
 });

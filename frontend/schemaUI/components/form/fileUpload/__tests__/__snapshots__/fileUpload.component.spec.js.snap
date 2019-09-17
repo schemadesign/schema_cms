@@ -9,7 +9,7 @@ exports[`FileUpload: Component should render correctly 1`] = `
     style={
       Object {
         "position": "relative",
-        "top": 10,
+        "top": 0,
       }
     }
   >
@@ -227,6 +227,7 @@ exports[`FileUpload: Component should render with file name 1`] = `
   <input
     aria-hidden={true}
     id="id"
+    name="name.csv"
     style={
       Object {
         "height": 0,

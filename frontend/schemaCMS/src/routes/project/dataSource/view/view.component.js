@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Stepper } from 'schemaUI';
 import { always, cond, equals, T } from 'ramda';
 
-import { Container, StepperContainer, stepperStyles, stepperBlockStyles } from './view.styles';
+import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
 import { Fields } from './fields';
@@ -12,17 +12,17 @@ import { PillButtons } from '../../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { TopHeader } from '../../../../shared/components/topHeader';
 import {
-  STATUS_DRAFT,
+  DATA_WRANGLING_STEP,
+  FIELDS_STEP,
   INITIAL_STEP,
   MAX_STEPS,
-  FIELDS_STEP,
-  DATA_WRANGLING_STEP,
+  STATUS_DRAFT,
 } from '../../../../modules/dataSource/dataSource.constants';
 
 export class View extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
-    dataWrangling: PropTypes.array,
+    dataWrangling: PropTypes.array.isRequired,
     fetchDataSource: PropTypes.func.isRequired,
     unmountDataSource: PropTypes.func.isRequired,
     removeDataSource: PropTypes.func.isRequired,
@@ -40,10 +40,6 @@ export class View extends PureComponent {
         step: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
-  };
-
-  static defaultProps = {
-    dataWrangling: [],
   };
 
   componentDidMount() {
