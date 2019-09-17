@@ -1,12 +1,14 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { isEmpty } from 'ramda';
+import { always, isEmpty } from 'ramda';
 
+import { DESCRIPTION, CODE } from '../../../../../../modules/dataSource/dataSource.constants';
 import { TextInput } from '../../../../../../shared/components/form/inputs/textInput';
 import { Loader } from '../../../../../../shared/components/loader';
 import { PillButtons } from '../../../../../../shared/components/pillButtons';
 import { TopHeader } from '../../../../../../shared/components/topHeader';
+import { renderWhenTrueOtherwise } from '../../../../../../shared/utils/rendering';
 import { Container, Form, codeStyles, rightButtonStyles } from './view.styles';
 import messages from './view.messages';
 
@@ -35,11 +37,13 @@ export class View extends PureComponent {
     };
   };
 
+  getContentOrLoader = renderWhenTrueOtherwise(always(<Loader />), this.renderContent);
+
   renderContent() {
     const { intl, dataWrangling } = this.props;
 
     const descriptionFieldProps = {
-      name: 'description',
+      name: DESCRIPTION,
       value: dataWrangling.description,
       label: intl.formatMessage(messages.description),
       placeholder: intl.formatMessage(messages.descriptionPlaceholder),
@@ -49,7 +53,7 @@ export class View extends PureComponent {
     };
 
     const codeFieldProps = {
-      name: 'code',
+      name: CODE,
       value: dataWrangling.code,
       label: intl.formatMessage(messages.code),
       placeholder: intl.formatMessage(messages.codePlaceholder),
@@ -82,7 +86,7 @@ export class View extends PureComponent {
   }
 
   render() {
-    const content = isEmpty(this.props.dataWrangling) ? <Loader /> : this.renderContent();
+    const content = this.getContentOrLoader(isEmpty(this.props.dataWrangling));
     const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (
