@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { equals, ifElse } from 'ramda';
 
 import { buttonStyles, containerStyles, inputStyles, labelStyles } from './fileUpload.styles';
 import { containerStyles as defaultButtonStyles } from '../../button/button.styles';
@@ -39,11 +40,12 @@ export class FileUpload extends PureComponent {
     </label>
   );
 
-  render() {
-    const { fileName, label, onChange, accept, id, customStyles, customLabelStyles, customInputStyles } = this.props;
+  renderTextField = () => {
+    const { fileName, label, id, customStyles, customLabelStyles, customInputStyles } = this.props;
 
-    return (
-      <div style={containerStyles}>
+    return ifElse(
+      equals(true),
+      () => (
         <TextField
           name="fileName"
           label={label}
@@ -55,6 +57,17 @@ export class FileUpload extends PureComponent {
           customInputStyles={customInputStyles}
           iconComponent={this.iconComponent(id)}
         />
+      ),
+      () => this.iconComponent(id)
+    )(!!label);
+  };
+
+  render() {
+    const { onChange, accept, id } = this.props;
+
+    return (
+      <div style={containerStyles}>
+        {this.renderTextField()}
         <input style={inputStyles} aria-hidden id={id} type="file" onChange={onChange} accept={accept} />
       </div>
     );
