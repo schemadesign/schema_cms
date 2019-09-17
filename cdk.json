@@ -2,6 +2,7 @@
     "app": "python3 app.py",
     "context": {
         "installation_mode": "full",
+        "domain_name": "schema-test.appt5n.com",
         "github_token_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:github-token-82UijJ",
         "django_social_auth_auth0_key_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_SOCIAL_AUTH_AUTH0_KEY-Bxbju2",
         "django_social_auth_auth0_secret_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_SOCIAL_AUTH_AUTH0_SECRET-02psRA",
