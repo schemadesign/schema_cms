@@ -2,6 +2,7 @@ import Immutable from 'seamless-immutable';
 import { expectSaga } from 'redux-saga-test-plan';
 import * as effects from 'redux-saga/effects';
 import { OK } from 'http-status-codes';
+import nock from 'nock';
 
 import { watchDataSource } from '../dataSource.sagas';
 import { DataSourceRoutines } from '../dataSource.redux';
@@ -12,6 +13,10 @@ import browserHistory from '../../../shared/utils/history';
 
 describe('DataSource: sagas', () => {
   const defaultState = Immutable({});
+
+  beforeEach(() => {
+    nock.cleanAll();
+  });
 
   describe('create', () => {
     it('should dispatch a success action', async () => {
