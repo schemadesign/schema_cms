@@ -22,7 +22,6 @@ export const INITIAL_STATE = new Immutable({
   dataSources: [],
   fields: {},
   previewTable: [],
-  dataWranglingDetail: {},
 });
 
 const updateDataSource = (state = INITIAL_STATE, { payload }) => state.set('dataSource', payload);

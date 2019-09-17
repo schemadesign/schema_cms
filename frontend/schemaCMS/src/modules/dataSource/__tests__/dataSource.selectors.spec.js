@@ -25,10 +25,6 @@ describe('DataSource: selectors', () => {
         name: {},
       },
       previewTable: [{ id: '1', name: 'test' }],
-      dataWranglingDetail: {
-        description: 'test',
-        code: 'alert("Hello World!");',
-      },
     },
   });
 

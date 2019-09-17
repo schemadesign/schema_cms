@@ -16,7 +16,7 @@ function* fetchOne({ payload }) {
     // MOCK
     yield put(
       DataWranglingRoutines.fetchOne.success({
-        description: 'Some file name',
+        description: 'file description',
         code: 'df.columns = map(str.lower, df.columns)',
       })
     );
