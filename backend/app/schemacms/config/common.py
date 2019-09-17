@@ -283,7 +283,9 @@ class Common(Configuration):
     AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 
-    SCRIPTS_S3_BUCKET = 'scripts'
-    SCRIPTS_DS_UPLOAD_PATH = '/datasource/{}/'
+    DATASOURCE_S3_BUCKET = 'datasources'
+    DS_SCRIPTS_UPLOAD_PATH = '/datasource/{}/scripts/'
+    DS_JOB_UPLOAD_PATH = '/datasource/{}/jobs/'
 
-    AWS_SQS_ENDPOINT_URL = os.getenv("SQS_ENDPOINT_URL")
+    AWS_SQS_ENDPOINT_URL = os.getenv('SQS_ENDPOINT_URL')
+    SQS_WORKER_QUEUE_URL = os.getenv('SQS_WORKER_QUEUE_URL')

@@ -2,6 +2,7 @@ import django_fsm
 from django.db import transaction
 from rest_framework import serializers
 
+from schemacms.projects import models
 from schemacms.projects import services
 from .models import DataSource, DataSourceMeta, Project
 from ..users.models import User
@@ -142,3 +143,19 @@ class DataSourceScriptUploadSerializer(serializers.Serializer):
         script_file = validated_data.get('script')
         services.scripts.resources.get('s3').upload(instance, script_file)
         return instance
+
+
+class StepSerializer(serializers.Serializer):
+    key = serializers.CharField(max_length=255)
+    order = serializers.IntegerField(default=0)
+
+
+class DataSourceJobSerializer(serializers.ModelSerializer):
+    steps = StepSerializer(many=True)
+
+    class Meta:
+        model = models.DataSourceJob
+        fields = ('pk', 'steps',)
+
+    def create(self, validated_data):
+        return models.DataSourceJob.objects.create(**validated_data)

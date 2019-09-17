@@ -9,4 +9,5 @@ urlpatterns = [
     path(
         'datasource/<int:pk>/script-upload', views.DataSourceScriptUploadView.as_view(), name='script_upload'
     ),
+    path('datasource/<int:pk>/job', views.DataSourceJobView.as_view(), name='datasource_job'),
 ]

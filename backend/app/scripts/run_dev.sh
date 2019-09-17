@@ -33,7 +33,7 @@ LAMBDA_ARN=$(get_public_api_lambda_arn)
 }
 
 {
-    create_s3_bucket "scripts" &&
+    create_s3_bucket "datasources" &&
     echo "Scripts S3 bucket created"
 } || {
     echo "Scripts S3 bucket NOT created"

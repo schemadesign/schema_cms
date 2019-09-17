@@ -1,6 +1,7 @@
 import logging
 
 import django_fsm
+from django.db import transaction
 from rest_framework import (
     decorators,
     exceptions,
@@ -13,7 +14,7 @@ from rest_framework import (
 )
 
 from schemacms.users import permissions as user_permissions
-from . import constants, models, serializers, permissions as projects_permissions
+from . import constants, models, serializers, permissions as projects_permissions, services
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -107,3 +108,13 @@ class DataSourceScriptUploadView(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return response.Response(status=status.HTTP_201_CREATED)
+
+
+class DataSourceJobView(generics.CreateAPIView):
+    queryset = models.DataSource.objects.all()
+    serializer_class = serializers.DataSourceJobSerializer
+
+    @transaction.atomic
+    def perform_create(self, serializer):
+        job = serializer.save(datasource=self.get_object())
+        services.schedule_worker_with(job)

@@ -151,7 +151,8 @@ class DataSourceMeta(models.Model):
 
 class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
-    steps = psql_fields.ArrayField(base_field=models.CharField(max_length=255))
+    steps = psql_fields.JSONField(default=dict)
+    outcome = models.TextField(blank=True)
 
     def __str__(self):
         return f'DataSource Job #{self.pk}'
