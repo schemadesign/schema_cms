@@ -1,4 +1,3 @@
-# PROJECTS
 class ProjectStatus:
     INITIAL = "initial"
     PROCESSING = "processing"
@@ -7,7 +6,6 @@ class ProjectStatus:
 PROJECT_STATUS_CHOICES = ((ProjectStatus.INITIAL, "initial"), (ProjectStatus.PROCESSING, "processing"))
 
 
-# DATASOURCES
 DATASOURCE_NAME_MAX_LENGTH = 25
 DATASOURCE_DRAFT_NAME = "My New Data Source"
 
@@ -33,7 +31,7 @@ class DataSourceStatus:
     ERROR = "error"
 
 
-DATA_SOURCE_STATUS_CHOICES = (
+DATA_SOURCE_JOB_STATUS_CHOICES = (
     (DataSourceStatus.DRAFT, "draft"),
     (DataSourceStatus.READY_FOR_PROCESSING, "ready for processing"),
     (DataSourceStatus.PROCESSING, "processing"),

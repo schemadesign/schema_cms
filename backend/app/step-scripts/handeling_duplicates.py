@@ -6,10 +6,9 @@ df = pd.read_csv()
 df = df.drop_duplicates()
 
 # Drop Duplicate Columns
-# Take transpose of the data then remove duplicate rows only to take transpose again to get data back to original shape
+# Take transpose of the data then remove duplicate rows only to take transpose again to get data
+# back to original shape
 df = df.T.drop_duplicates().T
 
 # Combined
 df = df.T.drop_duplicates().T.drop_duplicates()
-
-

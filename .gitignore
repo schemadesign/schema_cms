@@ -3,3 +3,5 @@
 cdk.out
 .idea
 local.env
+.vscode
+__pycache__

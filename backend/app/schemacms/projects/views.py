@@ -1,7 +1,16 @@
 import logging
 
 import django_fsm
-from rest_framework import decorators, exceptions, permissions, response, status, viewsets
+from rest_framework import (
+    decorators,
+    exceptions,
+    permissions,
+    response,
+    status,
+    viewsets,
+    generics,
+    parsers,
+)
 
 from schemacms.users import permissions as user_permissions
 from . import constants, models, serializers, permissions as projects_permissions
@@ -65,7 +74,7 @@ class DataSourceViewSet(viewsets.ModelViewSet):
             if not django_fsm.can_proceed(obj.ready_for_processing):
                 return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
             obj.ready_for_processing()
-            obj.preview_process()
+            obj.process()
             obj.done()
             obj.save()
             logging.info(f"DataSource {obj.id} processing DONE")
@@ -76,3 +85,25 @@ class DataSourceViewSet(viewsets.ModelViewSet):
             self.get_object().status = constants.DataSourceStatus.ERROR
             self.get_object().save()
             return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+
+class DataSourceScriptView(generics.GenericAPIView):
+    queryset = models.DataSource.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        serializer = serializers.DataSourceScriptSerializer(
+            instance=self.get_object().available_scripts, many=True
+        )
+        return response.Response(data=serializer.data)
+
+
+class DataSourceScriptUploadView(generics.GenericAPIView):
+    parser_classes = (parsers.FormParser, parsers.MultiPartParser)
+    queryset = models.DataSource.objects.all()
+    serializer_class = serializers.DataSourceScriptUploadSerializer
+
+    def post(self, request, **kwargs):
+        serializer = self.get_serializer(self.get_object(), data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return response.Response(status=status.HTTP_201_CREATED)

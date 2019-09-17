@@ -32,6 +32,13 @@ LAMBDA_ARN=$(get_public_api_lambda_arn)
     echo "Public API rest api NOT created"
 }
 
+{
+    create_s3_bucket "scripts" &&
+    echo "Scripts S3 bucket created"
+} || {
+    echo "Scripts S3 bucket NOT created"
+}
+
 API_ID=$(get_rest_api_id)
 
 API_ID=${API_ID:0:10}

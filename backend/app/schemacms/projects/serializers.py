@@ -2,9 +2,10 @@ import django_fsm
 from django.db import transaction
 from rest_framework import serializers
 
+from schemacms.projects import services
+from .models import DataSource, DataSourceMeta, Project
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
-from .models import DataSource, DataSourceMeta, Project
 
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
@@ -128,3 +129,16 @@ class ProjectSerializer(serializers.ModelSerializer):
 
     def get_meta(self, project):
         return {"data_sources": {"count": project.data_source_count}}
+
+
+class DataSourceScriptSerializer(serializers.Serializer):
+    key = serializers.CharField()
+
+
+class DataSourceScriptUploadSerializer(serializers.Serializer):
+    script = serializers.FileField()
+
+    def update(self, instance, validated_data):
+        script_file = validated_data.get('script')
+        services.scripts.resources.get('s3').upload(instance, script_file)
+        return instance
