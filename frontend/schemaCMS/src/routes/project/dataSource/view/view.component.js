@@ -26,6 +26,9 @@ export class View extends PureComponent {
     fetchDataSource: PropTypes.func.isRequired,
     unmountDataSource: PropTypes.func.isRequired,
     removeDataSource: PropTypes.func.isRequired,
+    fetchDataWrangling: PropTypes.func.isRequired,
+    uploadScript: PropTypes.func.isRequired,
+    sendUpdatedDataWrangling: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
-import { Form, Button, Icons } from 'schemaUI';
+import { Button, Form, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
 import { Container, Header, StepCounter, Empty, ButtonContainer, Link } from './dataWrangling.styles';
@@ -14,10 +14,21 @@ export class DataWrangling extends PureComponent {
   static propTypes = {
     dataWrangling: PropTypes.array.isRequired,
     bindSubmitForm: PropTypes.func.isRequired,
+    fetchDataWrangling: PropTypes.func.isRequired,
+    uploadScript: PropTypes.func.isRequired,
+    sendUpdatedDataWrangling: PropTypes.func.isRequired,
     match: PropTypes.shape({
       url: PropTypes.string.isRequired,
+      params: PropTypes.shape({
+        dataSourceId: PropTypes.string.isRequired,
+      }).isRequired,
     }).isRequired,
   };
+
+  componentDidMount() {
+    const { dataSourceId } = this.props.match.params;
+    this.props.fetchDataWrangling({ dataSourceId });
+  }
 
   getScrtiptUrl = index => {
     const baseUrl = this.props.match.url.replace(/\d+\/?$/, 'script/view/');

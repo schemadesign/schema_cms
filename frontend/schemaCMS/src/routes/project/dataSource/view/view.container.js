@@ -8,9 +8,11 @@ import { injectIntl } from 'react-intl';
 
 import { View } from './view.component';
 import { DataSourceRoutines, selectDataSource } from '../../../../modules/dataSource';
+import { DataWranglingRoutines, selectDataWrangling } from '../../../../modules/dataWrangling';
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
+  dataWrangling: selectDataWrangling,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -20,6 +22,9 @@ export const mapDispatchToProps = dispatch => ({
       fetchDataSource: promisifyRoutine(DataSourceRoutines.fetchOne),
       updateDataSource: promisifyRoutine(DataSourceRoutines.updateOne),
       unmountDataSource: promisifyRoutine(DataSourceRoutines.unmountOne),
+      fetchDataWrangling: promisifyRoutine(DataWranglingRoutines.fetchList),
+      uploadScript: promisifyRoutine(DataWranglingRoutines.uploadScript),
+      sendUpdatedDataWrangling: promisifyRoutine(DataWranglingRoutines.sendList),
     },
     dispatch
   ),
