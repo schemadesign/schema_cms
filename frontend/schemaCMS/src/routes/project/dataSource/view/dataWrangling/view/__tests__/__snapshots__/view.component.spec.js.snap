@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View: Component should render correctly 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Edit step"
+  />
+  <TopHeader
+    headerSubtitle="Edit step"
+    headerTitle="Data Wrangling"
+  />
+  <styled.form>
+    <TextInput
+      disabled={true}
+      errors={Object {}}
+      fullWidth={true}
+      label="Description"
+      name="description"
+      onChange={[Function]}
+      placeholder="Description"
+      touched={Object {}}
+      value="Change to lowercase"
+    />
+    <TextInput
+      customInputStyles={
+        Object {
+          "backgroundColor": "#f0efef",
+          "fontFamily": "Hack, monospace",
+          "marginTop": "10px",
+          "padding": "10px",
+        }
+      }
+      disabled={true}
+      errors={Object {}}
+      fullWidth={true}
+      label="Python Code"
+      multiline={true}
+      name="code"
+      onChange={[Function]}
+      placeholder="Python Code"
+      touched={Object {}}
+      value="df.columns = map(str.lower, df.columns)"
+    />
+  </styled.form>
+  <PillButtons
+    leftButtonProps={
+      Object {
+        "onClick": [Function],
+        "title": "Back",
+      }
+    }
+    rightButtonProps={
+      Object {
+        "customStyles": Object {
+          "backgroundColor": "#1d1d20",
+          "color": "#fff",
+        },
+        "onClick": [Function],
+        "title": "OK",
+      }
+    }
+  />
+</styled.div>
+`;

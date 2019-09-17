@@ -12,16 +12,19 @@ export class PillButtons extends PureComponent {
 
   render() {
     const {
-      leftButtonProps: { title: leftTitle, ...leftProps },
-      rightButtonProps: { title: rightTitle, ...rightProps },
+      leftButtonProps: { title: leftTitle, customStyles: leftCustomStyles = {}, ...leftProps },
+      rightButtonProps: { title: rightTitle, customStyles: rightCustomStyles = {}, ...rightProps },
     } = this.props;
+
+    const leftStyles = { ...leftButtonStyles, ...leftCustomStyles };
+    const rightStyles = { ...rightButtonStyles, ...rightCustomStyles };
 
     return (
       <Container>
-        <Button {...leftProps} customStyles={leftButtonStyles}>
+        <Button {...leftProps} customStyles={leftStyles}>
           {leftTitle}
         </Button>
-        <Button {...rightProps} customStyles={rightButtonStyles}>
+        <Button {...rightProps} customStyles={rightStyles}>
           {rightTitle}
         </Button>
       </Container>

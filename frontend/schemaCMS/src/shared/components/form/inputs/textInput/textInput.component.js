@@ -11,8 +11,12 @@ const { TextField } = Form;
 
 export class TextInput extends PureComponent {
   static propTypes = {
+    customStyles: PropTypes.object,
+    customInputStyles: PropTypes.object,
     errors: PropTypes.object,
     label: PropTypes.string,
+    multiline: PropTypes.bool,
+    fullWidth: PropTypes.bool,
     name: PropTypes.string.isRequired,
     touched: PropTypes.object,
     value: PropTypes.string,
@@ -27,14 +31,33 @@ export class TextInput extends PureComponent {
   renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
 
   render() {
-    const { errors, touched, onChange, label, ...restProps } = this.props;
+    const {
+      errors,
+      touched,
+      onChange,
+      label,
+      multiline,
+      customStyles,
+      customInputStyles,
+      fullWidth,
+      ...restProps
+    } = this.props;
     const filteredProps = pick(elementAttributes.input, restProps);
 
     const isError = errors[filteredProps.name] && touched[filteredProps.name];
 
     return (
       <Container>
-        <TextField label={label} onChange={onChange} error={isError} {...filteredProps} />
+        <TextField
+          label={label}
+          onChange={onChange}
+          error={isError}
+          multiline={multiline}
+          customStyles={customStyles}
+          customInputStyles={customInputStyles}
+          fullWidth={fullWidth}
+          {...filteredProps}
+        />
         {this.renderError(isError)}
       </Container>
     );

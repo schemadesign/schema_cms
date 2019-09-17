@@ -39,8 +39,13 @@ export class TextArea extends PureComponent {
 
   syncHeight = () => {
     const input = this.textAreaRef.current;
-    const computedStyle = window.getComputedStyle(input);
     const inputShallow = this.shadowRef.current;
+
+    if (!input || !inputShallow) {
+      return;
+    }
+
+    const computedStyle = window.getComputedStyle(input);
 
     inputShallow.style.width = computedStyle.width;
     inputShallow.value = input.value || this.props.placeholder || 'x';

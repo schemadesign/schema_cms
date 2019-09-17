@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UserProfile Default 1`] = `
+exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
 <div
-  className="sc-feJyhm fRrBax"
+  className="sc-iRbamj jEYnvx"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -35,7 +35,7 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Admin Settings
+            Data Wrangling
           </h2>
           <h1
             id="projectsPageSubtitle"
@@ -50,7 +50,7 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Profile
+            Edit step
           </h1>
         </div>
       </div>
@@ -129,7 +129,7 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Admin Settings
+            Data Wrangling
           </h2>
           <h1
             id="projectsPageSubtitle"
@@ -144,7 +144,7 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Profile
+            Edit step
           </h1>
         </div>
       </div>
@@ -198,8 +198,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-iELTvK fyBIax"
-    onSubmit={[Function]}
+    className="sc-jlyJG bbyJzT"
   >
     <div
       className="sc-gqjmRU hnZXkc"
@@ -209,14 +208,14 @@ exports[`Storyshots UserProfile Default 1`] = `
           Object {
             "display": "flex",
             "flexDirection": "column",
-            "maxWidth": "320px",
+            "maxWidth": "100%",
             "paddingBottom": "30px",
             "position": "relative",
           }
         }
       >
         <label
-          htmlFor="firstName"
+          htmlFor="description"
           style={
             Object {
               "border": "none",
@@ -230,131 +229,14 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
         >
-          First Name
-        </label>
-        <input
-          id="firstName"
-          name="firstName"
-          onChange={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#1d1d20",
-              "fontSize": "18px",
-              "lineHeight": "24px",
-              "outline": "none",
-            }
-          }
-          type="text"
-          value=""
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="sc-gqjmRU hnZXkc"
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "320px",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
-      >
-        <label
-          htmlFor="lastName"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "1px solid #F0EFEF",
-              "color": "#a6a7aa",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          Last Name
-        </label>
-        <input
-          id="lastName"
-          name="lastName"
-          onChange={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#1d1d20",
-              "fontSize": "18px",
-              "lineHeight": "24px",
-              "outline": "none",
-            }
-          }
-          type="text"
-          value=""
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="sc-gqjmRU hnZXkc"
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "320px",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
-      >
-        <label
-          htmlFor="email"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "1px solid #F0EFEF",
-              "color": "#a6a7aa",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          Email
+          Description
         </label>
         <input
           disabled={true}
-          id="email"
-          name="email"
+          id="description"
+          name="description"
           onChange={[Function]}
+          placeholder="Description"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -366,7 +248,7 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
           type="text"
-          value=""
+          value="Change to lowercase"
         />
         <div
           style={
@@ -379,7 +261,102 @@ exports[`Storyshots UserProfile Default 1`] = `
         />
       </div>
     </div>
+    <div
+      className="sc-gqjmRU hnZXkc"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="code"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "1px solid #F0EFEF",
+              "color": "#a6a7aa",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Python Code
+        </label>
+        <textarea
+          disabled={true}
+          id="code"
+          onChange={[Function]}
+          placeholder="Python Code"
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "border": "none",
+              "color": "#1d1d20",
+              "fontFamily": "Hack, monospace",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "marginTop": "10px",
+              "outline": "none",
+              "padding": "10px",
+              "resize": "none",
+            }
+          }
+          type="text"
+          value="df.columns = map(str.lower, df.columns)"
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "border": "none",
+              "color": "#1d1d20",
+              "fontFamily": "Hack, monospace",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "marginTop": "10px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "10px",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+  </form>
+  <div
+    className="sc-gPEVay emtyvU"
+  >
     <button
+      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#f0efef",
@@ -390,33 +367,37 @@ exports[`Storyshots UserProfile Default 1`] = `
           "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
-          "marginRight": "20px",
+          "marginRight": 10,
           "minHeight": "48px",
           "outline": "none",
-          "padding": "0 30px",
+          "padding": "0",
+          "width": "100%",
         }
       }
     >
-      Save
+      Back
     </button>
-  </form>
-  <div
-    className="sc-jwKygS jgPAfV"
-  >
-    <a
-      className="sc-cmTdod clnUB"
-      href="/reset-password"
+    <button
       onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "width": "100%",
+        }
+      }
     >
-      Reset Password
-    </a>
-    <a
-      className="sc-cmTdod clnUB"
-      href="/logout"
-      onClick={[Function]}
-    >
-      Log out
-    </a>
+      OK
+    </button>
   </div>
 </div>
 `;
