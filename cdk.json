@@ -10,6 +10,7 @@
         "django_user_mgmt_backend_arn":  "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_BACKEND-Y4O7hn",
         "django_user_mgmt_auth0_domain_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_AUTH0_DOMAIN-SikZIO",
         "django_user_mgmt_auth0_key_arn":  "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_AUTH0_KEY-1hkjNJ",
-        "django_user_mgmt_auth0_secret_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_AUTH0_SECRET-nkKpoV"
+        "django_user_mgmt_auth0_secret_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_AUTH0_SECRET-nkKpoV",
+        "django_webapp_host_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_WEBAPP_HOST-7quemN"
     }
 }
