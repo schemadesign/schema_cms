@@ -89,7 +89,7 @@ class TestListCreateProjectView:
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
-    @pytest.mark.slow
+    @pytest.mark.skip
     def test_num_queries(
         self, api_client, django_assert_num_queries, faker, admin, project_factory, data_source_factory
     ):
