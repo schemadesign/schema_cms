@@ -4,30 +4,38 @@ exports[`Select: Component should render correctly 1`] = `
 <div
   style={
     Object {
+      "border": "1px solid #D2D2D2",
       "display": "flex",
+      "maxWidth": "300px",
     }
   }
 >
   <div
     style={
       Object {
+        "cursor": "pointer",
         "display": "flex",
+        "padding": "7px",
         "position": "relative",
+        "width": "100%",
       }
     }
   >
     <div
+      onClick={[Function]}
       style={
         Object {
+          "cursor": "pointer",
           "display": "flex",
           "height": "30px",
+          "width": "100%",
         }
       }
     >
       <div
-        onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "cursor": "pointer",
             "display": "flex",
             "height": "30px",
@@ -44,10 +52,11 @@ exports[`Select: Component should render correctly 1`] = `
           "display": "none",
           "flexDirection": "column",
           "left": "0",
-          "maxHeight": "75px",
+          "maxHeight": "175px",
           "overflow": "hidden",
           "position": "absolute",
-          "top": "30px",
+          "top": "46px",
+          "width": "100%",
         }
       }
     >
@@ -57,8 +66,10 @@ exports[`Select: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "none",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -70,8 +81,10 @@ exports[`Select: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -83,8 +96,10 @@ exports[`Select: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -96,8 +111,10 @@ exports[`Select: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -109,8 +126,10 @@ exports[`Select: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -122,8 +141,10 @@ exports[`Select: Component should render correctly 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -138,30 +159,38 @@ exports[`Select: Component should render correctly with default options 1`] = `
 <div
   style={
     Object {
+      "border": "1px solid #D2D2D2",
       "display": "flex",
+      "maxWidth": "300px",
     }
   }
 >
   <div
     style={
       Object {
+        "cursor": "pointer",
         "display": "flex",
+        "padding": "7px",
         "position": "relative",
+        "width": "100%",
       }
     }
   >
     <div
+      onClick={[Function]}
       style={
         Object {
+          "cursor": "pointer",
           "display": "flex",
           "height": "30px",
+          "width": "100%",
         }
       }
     >
       <div
-        onClick={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "cursor": "pointer",
             "display": "flex",
             "height": "30px",
@@ -178,10 +207,11 @@ exports[`Select: Component should render correctly with default options 1`] = `
           "display": "none",
           "flexDirection": "column",
           "left": "0",
-          "maxHeight": "75px",
+          "maxHeight": "175px",
           "overflow": "hidden",
           "position": "absolute",
-          "top": "30px",
+          "top": "46px",
+          "width": "100%",
         }
       }
     >
@@ -191,8 +221,10 @@ exports[`Select: Component should render correctly with default options 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "none",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -204,8 +236,10 @@ exports[`Select: Component should render correctly with default options 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -217,8 +251,10 @@ exports[`Select: Component should render correctly with default options 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -230,8 +266,10 @@ exports[`Select: Component should render correctly with default options 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -243,8 +281,10 @@ exports[`Select: Component should render correctly with default options 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -256,8 +296,10 @@ exports[`Select: Component should render correctly with default options 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -269,8 +311,10 @@ exports[`Select: Component should render correctly with default options 1`] = `
         onClick={[Function]}
         style={
           Object {
+            "borderTop": "1px solid #D2D2D2",
             "cursor": "pointer",
             "display": "flex",
+            "padding": "7px",
           }
         }
       >
@@ -285,7 +329,9 @@ exports[`Select: Component should render correctly with native 1`] = `
 <div
   style={
     Object {
+      "border": "1px solid #D2D2D2",
       "display": "flex",
+      "maxWidth": "300px",
     }
   }
 >
