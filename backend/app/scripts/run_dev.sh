@@ -83,4 +83,5 @@ echo "LocalStack fixtures installed"
 
 python wait_for_postgres.py &&
                ./manage.py migrate &&
+               ./manage.py initialuser &&
                ./manage.py runserver 0.0.0.0:8000
