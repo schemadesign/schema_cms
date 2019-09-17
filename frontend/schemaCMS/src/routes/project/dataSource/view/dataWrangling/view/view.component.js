@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always, isEmpty } from 'ramda';
 
-import { DESCRIPTION, CODE } from '../../../../../../modules/dataSource/dataSource.constants';
+import { DESCRIPTION, CODE } from '../../../../../../modules/dataWrangling/dataWrangling.constants';
 import { TextInput } from '../../../../../../shared/components/form/inputs/textInput';
 import { Loader } from '../../../../../../shared/components/loader';
 import { PillButtons } from '../../../../../../shared/components/pillButtons';

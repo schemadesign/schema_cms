@@ -24,9 +24,6 @@ export const MAX_STEPS = 6;
 
 export const IGNORED_FIELDS = ['file', 'metaData', 'errorLog', 'createdBy', 'status', 'created', 'id'];
 
-export const DESCRIPTION = 'description';
-export const CODE = 'code';
-
 export const DATA_SOURCE_SCHEMA = Yup.object().shape({
   [DATA_SOURCE_NAME]: Yup.string()
     .min(3, 'Data source Name should have at least 3 characters')

@@ -22,8 +22,3 @@ export const selectPreviewTable = createSelector(
   selectDataSourceDomain,
   prop('previewTable')
 );
-
-export const selectDataWranglingDetail = createSelector(
-  selectDataSourceDomain,
-  prop('dataWranglingDetail')
-);
