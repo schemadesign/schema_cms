@@ -64,11 +64,25 @@ command.
 This CDK stack is prepared to deploy Schema CMS with (first option) or without (second option) CI/CD pipeline.
 If you want to install only Schema CMS without additional developer tools choose first option.
 
-### Deploy app only stack
+### Initial step - generate certificate
+
+This is common for both deployment options.
 
 1. Set up you AWS CLI
 2. Setup up AWS CDK and create environment described in *AWS CDK* section
-3. Setup all environment variables using AWS Secrets Manager and save secrets ARNs to `cdk.json` file in `context`
+3. Set domain name in `cdk.json` file in `context` section.
+4. Set up domain MX records to be able to receive verification email fro AWS
+5. Deploy certs stack
+
+    ```bash
+   $ cdk deploy certs
+    ```
+   This will trigger verification process of the SSL cert. AWS will send email messages to administration accounts
+   of the domain. **CloudFormation stack won't finish until verification success.**
+
+### Deploy app only stack
+
+1. Setup all environment variables using AWS Secrets Manager and save secrets ARNs to `cdk.json` file in `context`
 section:
     ```bash
    $ aws secretsmanager create-secret --name {ENV_NAME} --secret-string {VALUE}
@@ -82,18 +96,32 @@ section:
     `DJANGO_USER_MGMT_AUTH0_KEY`,
     `DJANGO_USER_MGMT_AUTH0_SECRET`
 
+2. Build frontend code
+    ```bash
+    $ cd ./frontend/schemaUI
+    $ yarn
+    $ yarn build
+    $ yarn link
+    $ cd ../schemaCMS
+    $ yarn link schemaUI
+    $ yarn
+    $ yarn build
+    ```
+3. Copy built code to `nginx/dist` directory
+    ```bash
+   $ cp -R ./frontend/schemaCMS/build/* ./nginx/dist
+    ```
 4. Deploy `base`, `workers`, `public-api`, `api` stacks using command:
     ```bash
     $ cdk -c installation_mode=app_only deploy base workers public-api api
     ```
+5. Set domain DNS (A record) to point the newly created ELB
 
 ### Deploy stack with app and CI/CD pipeline
 
 Below are the steps to deploy entire dev stack
 
-1. Set up you AWS CLI
-2. Setup up AWS CDK and create environment described in *AWS CDK* section
-3. Setup all environment variables using AWS Secrets Manager and save secrets ARNs to `cdk.json` file in `context`
+1. Setup all environment variables using AWS Secrets Manager and save secrets ARNs to `cdk.json` file in `context`
 section:
     ```bash
    $ aws secretsmanager create-secret --name {ENV_NAME} --secret-string {VALUE}
@@ -109,7 +137,7 @@ section:
 
     **Commit and push changes in `cdk.json` file**
 
-4. Obtain and save your github token in AWS Secrets Manager. It will be used to create webhook during pipeline
+2. Obtain and save your github token in AWS Secrets Manager. It will be used to create webhook during pipeline
 deployment. Save ARN of the secret and pass it to CDK using `-c github_token_arn={TOKEN_ARN}` CLI param or change value in `cdk.json` under
 `context > github_token_arn`.
     ```bash
@@ -120,11 +148,12 @@ deployment. Save ARN of the secret and pass it to CDK using `-c github_token_arn
    $ aws codebuild import-source-credentials --server-type GITHUB --auth-type PERSONAL_ACCESS_TOKEN --token {TOKEN}
    ```
    For AWS CodeBuild used for building and testing pull requests
-5. Deploy `base` and `ci-pipeline` stacks using commands:
+3. Deploy `base` and `ci-pipeline` stacks using commands:
     ```bash
     $ cdk deploy base ci-pipeline
     ```
     This might take some time. It will create base application resources along with CI pipeline using CDK/Cloudformation.
     After successful deployment pipeline will automatically start and build `api`, `public-api` and `workers` stacks.
-6. Log into AWS console and approve waiting stacks deployment on `schema-cms-pipeline` in AWS Code Pipeline service 
-section.  
+4. Log into AWS console and approve waiting stacks deployment on `schema-cms-pipeline` in AWS Code Pipeline service 
+section.
+5. Set domain DNS (A record) to point the newly created ELB

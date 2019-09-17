@@ -4,7 +4,6 @@ exports[`CheckboxGroup: Component should render correctly 1`] = `
 <div
   style={
     Object {
-      "borderBottom": "1px solid #F0EFEF",
       "borderTop": "1px solid #F0EFEF",
       "display": "flex",
       "flexDirection": "column",

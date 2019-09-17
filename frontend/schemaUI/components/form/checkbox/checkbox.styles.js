@@ -23,3 +23,7 @@ export const inputStyles = {
   top: 0,
   left: 0,
 };
+
+export const labelStyles = {
+  cursor: 'pointer',
+};
