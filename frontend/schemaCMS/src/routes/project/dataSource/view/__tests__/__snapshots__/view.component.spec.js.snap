@@ -77,7 +77,18 @@ exports[`View: Component should render draft 1`] = `
         "status": "draft",
       }
     }
-    dataWrangling={Array []}
+    dataWrangling={
+      Array [
+        Object {
+          "active": false,
+          "name": "name 1",
+        },
+        Object {
+          "active": true,
+          "name": "name 2",
+        },
+      ]
+    }
     fetchDataSource={[Function]}
     history={
       Object {
@@ -96,6 +107,7 @@ exports[`View: Component should render draft 1`] = `
           "projectId": "1",
           "step": "1",
         },
+        "url": "/project/view/1/datasource/view/1/1",
       }
     }
     removeDataSource={[Function]}
@@ -161,7 +173,18 @@ exports[`View: Component should render second step 1`] = `
         "step": "2",
       }
     }
-    dataWrangling={Array []}
+    dataWrangling={
+      Array [
+        Object {
+          "active": false,
+          "name": "name 1",
+        },
+        Object {
+          "active": true,
+          "name": "name 2",
+        },
+      ]
+    }
     fetchDataSource={[Function]}
     history={
       Object {
@@ -180,6 +203,7 @@ exports[`View: Component should render second step 1`] = `
           "projectId": "1",
           "step": "1",
         },
+        "url": "/project/view/1/datasource/view/1/1",
       }
     }
     removeDataSource={[Function]}
@@ -243,7 +267,18 @@ exports[`View: Component should render source step 1`] = `
         "name": "name",
       }
     }
-    dataWrangling={Array []}
+    dataWrangling={
+      Array [
+        Object {
+          "active": false,
+          "name": "name 1",
+        },
+        Object {
+          "active": true,
+          "name": "name 2",
+        },
+      ]
+    }
     fetchDataSource={[Function]}
     history={
       Object {
@@ -262,6 +297,7 @@ exports[`View: Component should render source step 1`] = `
           "projectId": "1",
           "step": "1",
         },
+        "url": "/project/view/1/datasource/view/1/1",
       }
     }
     removeDataSource={[Function]}

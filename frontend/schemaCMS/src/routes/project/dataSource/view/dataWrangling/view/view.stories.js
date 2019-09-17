@@ -13,6 +13,9 @@ export const defaultProps = {
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
+  history: {
+    goBack: Function.prototype,
+  },
 };
 
 storiesOf('Project/DataSource/View/DataWrangling/View', module).add('Default', () => <View {...defaultProps} />);

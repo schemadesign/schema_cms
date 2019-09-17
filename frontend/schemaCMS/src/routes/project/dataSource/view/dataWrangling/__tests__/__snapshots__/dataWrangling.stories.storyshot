@@ -95,7 +95,13 @@ exports[`Storyshots DataWrangling Default 1`] = `
         value="name 1"
       />
       <span>
-        name 1
+        <a
+          className="sc-jDwBTQ flexpH"
+          href="/project/view/2/datasource/view/14/script/view/0"
+          onClick={[Function]}
+        >
+          name 1
+        </a>
       </span>
       <div
         style={
@@ -109,6 +115,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
         <svg
           style={
             Object {
+              "cursor": "pointer",
               "fill": "#1d1d20",
               "height": "30px",
               "width": "30px",
@@ -179,7 +186,13 @@ exports[`Storyshots DataWrangling Default 1`] = `
         value="name 2"
       />
       <span>
-        name 2
+        <a
+          className="sc-jDwBTQ flexpH"
+          href="/project/view/2/datasource/view/14/script/view/1"
+          onClick={[Function]}
+        >
+          name 2
+        </a>
       </span>
       <div
         style={
@@ -193,6 +206,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
         <svg
           style={
             Object {
+              "cursor": "pointer",
               "fill": "#1d1d20",
               "height": "30px",
               "width": "30px",

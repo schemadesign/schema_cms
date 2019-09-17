@@ -8,7 +8,7 @@ export const defaultProps = {
   dataWrangling: [{ name: 'name 1', active: false }, { name: 'name 2', active: true }],
   bindSubmitForm: Function.prototype,
   match: {
-    url: 'http://localhost:3000/project/view/2/datasource/view/14/3',
+    url: '/project/view/2/datasource/view/14/3',
   },
 };
 

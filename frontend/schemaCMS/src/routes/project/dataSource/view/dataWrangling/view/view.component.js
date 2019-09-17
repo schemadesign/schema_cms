@@ -18,6 +18,7 @@ export class View extends PureComponent {
     fetchDataWrangling: PropTypes.func.isRequired,
     unmountDataWrangling: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
   };
 
   componentDidMount() {
@@ -38,6 +39,8 @@ export class View extends PureComponent {
   };
 
   getContentOrLoader = renderWhenTrueOtherwise(always(<Loader />), this.renderContent);
+
+  handleBack = () => this.props.history.goBack();
 
   renderContent() {
     const { intl, dataWrangling } = this.props;
@@ -73,11 +76,11 @@ export class View extends PureComponent {
         <PillButtons
           leftButtonProps={{
             title: intl.formatMessage(messages.back),
-            onClick: () => {},
+            onClick: this.handleBack,
           }}
           rightButtonProps={{
             title: intl.formatMessage(messages.ok),
-            onClick: () => {},
+            onClick: this.handleBack,
             customStyles: rightButtonStyles,
           }}
         />
