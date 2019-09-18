@@ -6,9 +6,10 @@ import { TextInput } from './textInput.component';
 const defaultProps = {
   touched: {},
   errors: {},
-  value: '',
+  label: 'Field',
+  value: 'Value',
   name: 'A_FIELD_NAME',
   onChange: Function.prototype,
 };
 
-storiesOf('Shared Components/TextInput', module).add('Default', () => <TextInput {...defaultProps} />);
+storiesOf('Shared Components/Form/TextInput', module).add('Default', () => <TextInput {...defaultProps} />);
