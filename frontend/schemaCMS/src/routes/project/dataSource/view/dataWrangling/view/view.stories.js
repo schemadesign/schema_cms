@@ -16,6 +16,12 @@ export const defaultProps = {
   history: {
     goBack: Function.prototype,
   },
+  match: {
+    params: {
+      projectId: '1',
+      dataSourceId: '1',
+    },
+  },
 };
 
 storiesOf('Project/DataSource/View/DataWrangling/View', module).add('Default', () => <View {...defaultProps} />);

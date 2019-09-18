@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always, isEmpty } from 'ramda';
 
-import { DESCRIPTION, CODE } from '../../../../../../modules/dataWrangling/dataWrangling.constants';
+import { DATA_WRANGLING_STEP } from '../../../../../../modules/dataSource/dataSource.constants';
+import {
+  DATA_WRANGLING_FORM_NAME,
+  DESCRIPTION,
+  CODE,
+} from '../../../../../../modules/dataWrangling/dataWrangling.constants';
 import { TextInput } from '../../../../../../shared/components/form/inputs/textInput';
 import { Loader } from '../../../../../../shared/components/loader';
 import { PillButtons } from '../../../../../../shared/components/pillButtons';
@@ -19,6 +24,12 @@ export class View extends PureComponent {
     unmountDataWrangling: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        projectId: PropTypes.string.isRequired,
+        dataSourceId: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
   };
 
   componentDidMount() {
@@ -40,7 +51,11 @@ export class View extends PureComponent {
 
   getContentOrLoader = renderWhenTrueOtherwise(always(<Loader />), this.renderContent);
 
-  handleBack = () => this.props.history.goBack();
+  handleGoToDataWranglingList() {
+    const { projectId, dataSourceId } = this.match.params;
+
+    return `/project/view/${projectId}/datasource/view/${dataSourceId}/${DATA_WRANGLING_STEP}`;
+  }
 
   renderContent() {
     const { intl, dataWrangling } = this.props;
@@ -69,18 +84,18 @@ export class View extends PureComponent {
 
     return (
       <Fragment>
-        <Form>
+        <Form name={DATA_WRANGLING_FORM_NAME}>
           <TextInput {...descriptionFieldProps} />
           <TextInput {...codeFieldProps} />
         </Form>
         <PillButtons
           leftButtonProps={{
             title: intl.formatMessage(messages.back),
-            onClick: this.handleBack,
+            onClick: this.handleGoToDataWranglingList,
           }}
           rightButtonProps={{
             title: intl.formatMessage(messages.ok),
-            onClick: this.handleBack,
+            onClick: this.handleGoToDataWranglingList,
             customStyles: rightButtonStyles,
           }}
         />

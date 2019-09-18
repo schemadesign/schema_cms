@@ -11,7 +11,9 @@ exports[`View: Component should render correctly 1`] = `
     headerSubtitle="View step"
     headerTitle="Data Wrangling"
   />
-  <styled.form>
+  <styled.form
+    name="dataWranglingForm"
+  >
     <TextInput
       disabled={true}
       errors={Object {}}

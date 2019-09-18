@@ -199,6 +199,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
   </div>
   <form
     className="sc-gipzik iyhjGb"
+    name="dataWranglingForm"
   >
     <div
       className="sc-gqjmRU hnZXkc"
