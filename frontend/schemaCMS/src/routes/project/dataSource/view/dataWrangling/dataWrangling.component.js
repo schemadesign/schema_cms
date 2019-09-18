@@ -13,7 +13,7 @@ const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
 export class DataWrangling extends PureComponent {
   static propTypes = {
-    dataWrangling: PropTypes.array.isRequired,
+    dataWranglings: PropTypes.array.isRequired,
     bindSubmitForm: PropTypes.func.isRequired,
     fetchDataWrangling: PropTypes.func.isRequired,
     uploadScript: PropTypes.func.isRequired,
@@ -79,17 +79,17 @@ export class DataWrangling extends PureComponent {
   );
 
   render() {
-    const { bindSubmitForm, dataWrangling, sendUpdatedDataWrangling } = this.props;
+    const { bindSubmitForm, dataWranglings, sendUpdatedDataWrangling } = this.props;
     const { uploading, errorOnUploading } = this.state;
-    const data = dataWrangling.reduce((data, { name, active }) => ({ ...data, [name]: active }), {});
-    const stepCopyKey = dataWrangling.length < 2 ? 'steps' : 'step';
+    const data = dataWranglings.reduce((data, { name, active }) => ({ ...data, [name]: active }), {});
+    const stepCopyKey = dataWranglings.length < 2 ? 'steps' : 'step';
 
     return (
       <Container>
         <Header>
           <Empty />
           <StepCounter>
-            <FormattedMessage values={{ length: dataWrangling.length }} {...messages[stepCopyKey]} />
+            <FormattedMessage values={{ length: dataWranglings.length }} {...messages[stepCopyKey]} />
             {this.renderErrorOnUploading(errorOnUploading)}
           </StepCounter>
           <UploadContainer>
@@ -109,7 +109,7 @@ export class DataWrangling extends PureComponent {
             }
             return (
               <CheckboxGroup onChange={handleChange} value={values}>
-                {this.renderCheckboxes(dataWrangling)}
+                {this.renderCheckboxes(dataWranglings)}
               </CheckboxGroup>
             );
           }}

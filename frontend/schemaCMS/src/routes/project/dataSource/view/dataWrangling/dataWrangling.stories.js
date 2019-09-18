@@ -5,7 +5,7 @@ import { withRouter } from '../../../../../.storybook/decorators';
 import { DataWrangling } from './dataWrangling.component';
 
 export const defaultProps = {
-  dataWrangling: [{ name: 'name 1', active: false }, { name: 'name 2', active: true }],
+  dataWranglings: [{ name: 'name 1', active: false }, { name: 'name 2', active: true }],
   bindSubmitForm: Function.prototype,
   fetchDataWrangling: Function.prototype,
   uploadScript: Function.prototype,

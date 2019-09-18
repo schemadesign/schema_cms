@@ -17,7 +17,7 @@ describe('DataWrangling: selectors', () => {
     });
 
     it('should select a data wranglings', () => {
-      expect(selectDataWrangling(state)).to.equal(state.dataWrangling.dataWranglings);
+      expect(selectDataWranglings(state)).to.equal(state.dataWrangling.dataWranglings);
     });
 
     it('should select a dataWrangling', () => {

@@ -22,7 +22,7 @@ import {
 export class View extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
-    dataWrangling: PropTypes.array.isRequired,
+    dataWranglings: PropTypes.array.isRequired,
     fetchDataSource: PropTypes.func.isRequired,
     unmountDataSource: PropTypes.func.isRequired,
     removeDataSource: PropTypes.func.isRequired,

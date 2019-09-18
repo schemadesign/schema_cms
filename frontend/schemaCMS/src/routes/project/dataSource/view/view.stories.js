@@ -5,7 +5,7 @@ import { View } from './view.component';
 
 export const defaultProps = {
   dataSource: {},
-  dataWrangling: [],
+  dataWranglings: [],
   fetchDataSource: Function.prototype,
   unmountDataSource: Function.prototype,
   removeDataSource: Function.prototype,

@@ -6,7 +6,7 @@ exports[`DataWrangling: Component should render correctly 1`] = `
 >
   <DataWrangling
     bindSubmitForm={[Function]}
-    dataWrangling={
+    dataWranglings={
       Array [
         Object {
           "active": false,

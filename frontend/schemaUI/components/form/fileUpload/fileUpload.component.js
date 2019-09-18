@@ -70,7 +70,7 @@ export class FileUpload extends PureComponent {
       iconComponent,
       ...props
     } = this.props;
-    console.log('label:', label);
+
     return (
       <div style={containerStyles}>
         {this.renderTextField({ fileName, label, id, customStyles, customLabelStyles, customInputStyles })}

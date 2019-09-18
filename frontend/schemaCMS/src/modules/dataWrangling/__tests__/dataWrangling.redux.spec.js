@@ -40,11 +40,11 @@ describe('DataWrangling: redux', () => {
   });
 
   describe('when FETCH_LIST/SUCCESS action is received', () => {
-    it('should set dataWrangling ', () => {
-      const dataWrangling = ['data 1', 'data 2'];
-      const resultState = dataWranglingReducer(defaultState, DataWranglingRoutines.fetchList.success(dataWrangling));
+    it('should set dataWranglings', () => {
+      const dataWranglings = ['data 1', 'data 2'];
+      const resultState = dataWranglingReducer(defaultState, DataWranglingRoutines.fetchList.success(dataWranglings));
 
-      expect(resultState.dataWrangling).to.deep.equal(dataWrangling);
+      expect(resultState.dataWranglings).to.deep.equal(dataWranglings);
     });
   });
 });

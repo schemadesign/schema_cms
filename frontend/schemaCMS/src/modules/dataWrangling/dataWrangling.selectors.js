@@ -3,7 +3,7 @@ import { prop } from 'ramda';
 
 export const selectDataWranglingDomain = prop('dataWrangling');
 
-export const selectDataWrangling = createSelector(
+export const selectDataWranglings = createSelector(
   selectDataWranglingDomain,
-  prop('dataWrangling')
+  prop('dataWranglings')
 );
