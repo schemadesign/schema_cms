@@ -57,7 +57,7 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel)
         return self.data_sources.count()
 
 
-class DataSource(ext_models.TimeStampedModel):
+class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="data_sources")

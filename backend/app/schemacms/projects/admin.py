@@ -18,4 +18,4 @@ class DataSource(admin.ModelAdmin):
 
 @admin.register(models.DataSourceJob)
 class DataSourceJobAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'status', 'datasource', 'created')
+    list_display = ('pk', 'datasource', 'created')

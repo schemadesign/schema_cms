@@ -69,7 +69,11 @@ class LocalScriptResource(ScriptResource):
             yield {'key': self.ref_name(file)}
 
     def getvalue(self, ref_key):
-        with open(os.path.join(self.path, ref_key), 'r') as file:
+        file_path = os.path.join(self.path, ref_key)
+        if not os.path.isfile(file_path):
+            raise RuntimeError('File does not exist')
+
+        with open(file_path, 'r') as file:
             return file.read()
 
 
@@ -100,7 +104,7 @@ def schedule_worker_with(datasource_job):
         for step in datasource_job.steps:
             step_key = step['key']
             resource, ref_key = scripts.responsible(step_key)
-            zip_file.writestr(ref_key, resource.getvalue())
+            zip_file.writestr(ref_key, resource.getvalue(ref_key))
     # s3.Bucket(settings.DATASOURCE_S3_BUCKET).
     # sqs.send_message(
     #     QueueUrl=settings.SQS_WORKER_QUEUE_URL,

@@ -1,6 +1,6 @@
 import django_fsm
 from django.db import transaction
-from rest_framework import serializers
+from rest_framework import serializers, exceptions
 
 from schemacms.projects import models
 from schemacms.projects import services
@@ -71,11 +71,10 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
 class DraftDataSourceSerializer(serializers.ModelSerializer):
     meta_data = DataSourceMetaSerializer(read_only=True)
-    status = serializers.CharField(read_only=True)
 
     class Meta:
         model = DataSource
-        fields = ("id", "name", "type", "status", "file", "meta_data")
+        fields = ("id", "name", "type", "file", "meta_data")
         extra_kwargs = {
             "name": {"required": False, "allow_null": True},
             "type": {"required": False, "allow_null": True},
@@ -149,13 +148,19 @@ class StepSerializer(serializers.Serializer):
     key = serializers.CharField(max_length=255)
     order = serializers.IntegerField(default=0)
 
+    def validate_key(self, attr):
+        spliced = attr.split(':')
+        if len(spliced) != 2:
+            raise exceptions.ValidationError('Invalid key format')
+        return attr
+
 
 class DataSourceJobSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True)
 
     class Meta:
         model = models.DataSourceJob
-        fields = ('pk', 'steps',)
+        fields = ('pk', 'steps', 'job_state')
 
     def create(self, validated_data):
         return models.DataSourceJob.objects.create(**validated_data)
