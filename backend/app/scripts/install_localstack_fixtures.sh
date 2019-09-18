@@ -5,6 +5,7 @@ set -e
 LAMBDA_EP=http://localstack:4574
 API_GTW_EP=http://localstack:4567
 S3_ENDPOINT_URL=http://localstack:4572
+SQS_ENDPOINT_URL=http://localstack:4576
 STEP_FUNCTIONS_EP=http://localstack:4585
 PUBLIC_API_FUNCTION_NAME=public-api
 WORKER_SUCCESS_FUNCTION_NAME=worker-success
@@ -150,6 +151,12 @@ function create_s3_bucket {
   aws --endpoint-url=$S3_ENDPOINT_URL \
       --region $AWS_DEFAULT_REGION \
       s3 mb "s3://$1"
+}
+
+function create_sqs_queue {
+  aws --endpoint-url=$SQS_ENDPOINT_URL \
+      --region $AWS_DEFAULT_REGION \
+      sqs create-queue --queue-name "$1"
 }
 
 #{

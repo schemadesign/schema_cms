@@ -45,7 +45,7 @@ class DataSourceProcessingFSM(models.Model):
 
 class DataSourceJobFSM(models.Model):
     job_state = django_fsm.FSMField(
-        choices=constants.DATA_SOURCE_JOB_STATE_CHOICES, default=constants.DataSourceStatus.DRAFT
+        choices=constants.DATA_SOURCE_JOB_STATE_CHOICES, default=constants.DataSourceJobState.PENDING
     )
 
     class Meta:

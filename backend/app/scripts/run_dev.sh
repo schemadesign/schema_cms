@@ -39,6 +39,13 @@ LAMBDA_ARN=$(get_public_api_lambda_arn)
     echo "Scripts S3 bucket NOT created"
 }
 
+{
+    create_sqs_queue "worker" &&
+    echo "SQS Queue worker created"
+} || {
+    echo "SQS Queue worker NOT created"
+}
+
 API_ID=$(get_rest_api_id)
 
 API_ID=${API_ID:0:10}

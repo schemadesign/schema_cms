@@ -2,16 +2,7 @@ import logging
 
 import django_fsm
 from django.db import transaction
-from rest_framework import (
-    decorators,
-    exceptions,
-    permissions,
-    response,
-    status,
-    viewsets,
-    generics,
-    parsers,
-)
+from rest_framework import decorators, exceptions, permissions, response, status, viewsets, generics, parsers
 
 from schemacms.users import permissions as user_permissions
 from . import constants, models, serializers, permissions as projects_permissions, services
@@ -116,5 +107,7 @@ class DataSourceJobView(generics.CreateAPIView):
 
     @transaction.atomic
     def perform_create(self, serializer):
-        job = serializer.save(datasource=self.get_object())
+        job = serializer.save(
+            datasource=self.get_object(), scripts_ref=models.DataSourceJob.generate_scripts_ref()
+        )
         services.schedule_worker_with(job)

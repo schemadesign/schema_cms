@@ -1,9 +1,11 @@
 import io
+import json
 import os
 import zipfile
 
 import boto3
 from django.conf import settings
+from django.utils import crypto
 
 s3 = boto3.resource(
     's3',
@@ -14,7 +16,7 @@ s3 = boto3.resource(
 
 sqs = boto3.client(
     'sqs',
-    endpoint_url=settings.AWS_S3_ENDPOINT_URL,
+    endpoint_url=settings.AWS_SQS_ENDPOINT_URL,
     aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
     aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
 )
@@ -57,6 +59,10 @@ class S3ScriptResource(ScriptResource):
             Key=os.path.join(scripts_upload_path(obj), uploaded_file.name), Body=uploaded_file
         )
 
+    def getvalue(self, ref_key):
+        response = self.bucket.get_object(Key=ref_key)
+        return response['Body'].read()
+
 
 class LocalScriptResource(ScriptResource):
     PROTOCOL = 'local'
@@ -71,7 +77,7 @@ class LocalScriptResource(ScriptResource):
     def getvalue(self, ref_key):
         file_path = os.path.join(self.path, ref_key)
         if not os.path.isfile(file_path):
-            raise RuntimeError('File does not exist')
+            raise RuntimeError(f'File does not exist {ref_key}')
 
         with open(file_path, 'r') as file:
             return file.read()
@@ -105,7 +111,12 @@ def schedule_worker_with(datasource_job):
             step_key = step['key']
             resource, ref_key = scripts.responsible(step_key)
             zip_file.writestr(ref_key, resource.getvalue(ref_key))
-    # s3.Bucket(settings.DATASOURCE_S3_BUCKET).
-    # sqs.send_message(
-    #     QueueUrl=settings.SQS_WORKER_QUEUE_URL,
-    # )
+
+    s3_scripts_ref = os.path.join(
+        settings.DS_JOB_UPLOAD_PATH.format(datasource_job.datasource_id), datasource_job.scripts_ref
+    )
+    s3.Bucket(settings.DATASOURCE_S3_BUCKET).put_object(Key=s3_scripts_ref, Body=zip_stream.getvalue())
+    sqs_response = sqs.send_message(
+        QueueUrl=settings.SQS_WORKER_QUEUE_URL, MessageBody=json.dumps({'job_pk': datasource_job.pk})
+    )
+    return sqs_response['MessageId']
