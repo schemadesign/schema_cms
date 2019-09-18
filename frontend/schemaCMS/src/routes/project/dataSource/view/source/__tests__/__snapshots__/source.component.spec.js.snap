@@ -259,7 +259,7 @@ exports[`Source: Component should render correctly 1`] = `
                       customInputStyles={Object {}}
                       customLabelStyles={Object {}}
                       error={false}
-                      fullWidth={false}
+                      fullWidth={true}
                       label="Name"
                       name="name"
                       onChange={[Function]}
@@ -271,7 +271,7 @@ exports[`Source: Component should render correctly 1`] = `
                           Object {
                             "display": "flex",
                             "flexDirection": "column",
-                            "maxWidth": "320px",
+                            "maxWidth": "100%",
                             "paddingBottom": "30px",
                             "position": "relative",
                           }
@@ -789,7 +789,7 @@ exports[`Source: Component should render file uploader 1`] = `
                       customInputStyles={Object {}}
                       customLabelStyles={Object {}}
                       error={false}
-                      fullWidth={false}
+                      fullWidth={true}
                       label="Name"
                       name="name"
                       onChange={[Function]}
@@ -801,7 +801,7 @@ exports[`Source: Component should render file uploader 1`] = `
                           Object {
                             "display": "flex",
                             "flexDirection": "column",
-                            "maxWidth": "320px",
+                            "maxWidth": "100%",
                             "paddingBottom": "30px",
                             "position": "relative",
                           }
@@ -1089,10 +1089,11 @@ exports[`Source: Component should render file uploader 1`] = `
                   fullWidth={true}
                   iconComponent={
                     <label
+                      htmlFor="fileUpload"
                       style={
                         Object {
                           "position": "relative",
-                          "top": 0,
+                          "top": 10,
                         }
                       }
                     >
@@ -1190,10 +1191,11 @@ exports[`Source: Component should render file uploader 1`] = `
                       }
                     >
                       <label
+                        htmlFor="fileUpload"
                         style={
                           Object {
                             "position": "relative",
-                            "top": 0,
+                            "top": 10,
                           }
                         }
                       >
