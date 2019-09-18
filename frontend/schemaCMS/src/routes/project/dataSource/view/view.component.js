@@ -40,9 +40,7 @@ export class View extends PureComponent {
   };
 
   static defaultProps = {
-    // dataWrangling: [],
-    // MOCK
-    dataWrangling: [{ name: 'name 1', active: false }, { name: 'name 2', active: true }],
+    dataWrangling: [],
   };
 
   componentDidMount() {

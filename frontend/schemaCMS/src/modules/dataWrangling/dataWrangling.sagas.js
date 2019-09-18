@@ -1,5 +1,6 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 
+import api from '../../shared/services/api';
 import { DataWranglingRoutines } from './dataWrangling.redux';
 
 function* fetchOne({ payload }) {
@@ -11,15 +12,7 @@ function* fetchOne({ payload }) {
 
     yield put(DataWranglingRoutines.fetchOne.success(data));
   } catch (error) {
-    // yield put(DataWranglingRoutines.fetchOne.failure(error));
-
-    // MOCK
-    yield put(
-      DataWranglingRoutines.fetchOne.success({
-        description: 'file description',
-        code: 'df.columns = map(str.lower, df.columns)',
-      })
-    );
+    yield put(DataWranglingRoutines.fetchOne.failure(error));
   } finally {
     yield put(DataWranglingRoutines.fetchOne.fulfill());
   }
