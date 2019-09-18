@@ -115,7 +115,6 @@ exports[`Storyshots DataWrangling Default 1`] = `
         <svg
           style={
             Object {
-              "cursor": "pointer",
               "fill": "#1d1d20",
               "height": "30px",
               "width": "30px",
@@ -206,7 +205,6 @@ exports[`Storyshots DataWrangling Default 1`] = `
         <svg
           style={
             Object {
-              "cursor": "pointer",
               "fill": "#1d1d20",
               "height": "30px",
               "width": "30px",

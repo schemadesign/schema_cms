@@ -11,7 +11,10 @@ describe('DataWrangling: redux', () => {
 
   describe('when FETCH_ONE/SUCCESS action is received', () => {
     it('should set dataWrangling ', () => {
-      const dataWrangling = [{ id: 1 }];
+      const dataWrangling = {
+        description: 'file description',
+        code: 'df.columns = map(str.lower, df.columns)',
+      };
       const resultState = dataWranglingReducer(defaultState, DataWranglingRoutines.fetchOne.success(dataWrangling));
 
       expect(resultState.dataWrangling).to.deep.equal(dataWrangling);

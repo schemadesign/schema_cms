@@ -14,7 +14,7 @@ export const defaultProps = {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
   history: {
-    goBack: Function.prototype,
+    push: Function.prototype,
   },
   match: {
     params: {

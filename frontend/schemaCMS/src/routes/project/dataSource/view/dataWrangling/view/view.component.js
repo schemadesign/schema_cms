@@ -51,14 +51,14 @@ export class View extends PureComponent {
 
   getContentOrLoader = renderWhenTrueOtherwise(always(<Loader />), this.renderContent);
 
-  handleGoToDataWranglingList() {
-    const { projectId, dataSourceId } = this.match.params;
+  handleGoToDataWranglingList = (match, history) => () => {
+    const { projectId, dataSourceId } = match.params;
 
-    return `/project/view/${projectId}/datasource/view/${dataSourceId}/${DATA_WRANGLING_STEP}`;
-  }
+    history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${DATA_WRANGLING_STEP}`);
+  };
 
   renderContent() {
-    const { intl, dataWrangling } = this.props;
+    const { intl, dataWrangling, match, history } = this.props;
 
     const descriptionFieldProps = {
       name: DESCRIPTION,
@@ -91,11 +91,11 @@ export class View extends PureComponent {
         <PillButtons
           leftButtonProps={{
             title: intl.formatMessage(messages.back),
-            onClick: this.handleGoToDataWranglingList,
+            onClick: this.handleGoToDataWranglingList(match, history),
           }}
           rightButtonProps={{
             title: intl.formatMessage(messages.ok),
-            onClick: this.handleGoToDataWranglingList,
+            onClick: this.handleGoToDataWranglingList(match, history),
             customStyles: rightButtonStyles,
           }}
         />
