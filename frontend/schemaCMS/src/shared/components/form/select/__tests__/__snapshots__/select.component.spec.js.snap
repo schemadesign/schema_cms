@@ -11,15 +11,15 @@ exports[`Select: Component should render correctly 1`] = `
     id="selectField"
     name="selectField"
     type="hidden"
+    value="one"
   />
   <Select
     native={false}
-    onSelect={[Function]}
     options={
       Array [
         Object {
           "label": "One",
-          "selected": false,
+          "selected": true,
           "value": "one",
         },
         Object {
