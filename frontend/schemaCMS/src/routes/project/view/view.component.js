@@ -110,7 +110,7 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = (_, { id: projectId, editors, owner, slug, created, charts, pages, meta } = {}) => {
+  renderProject = (_, { id: projectId, editors, owner, slug, created, charts, pages, meta, status } = {}) => {
     const statistics = [
       {
         header: this.formatMessage(messages.dataSources),
@@ -124,9 +124,10 @@ export class View extends PureComponent {
 
     const { firstName = '', lastName = '' } = owner;
 
+    const statusValue = messages[status] ? this.formatMessage(messages[status]) : status;
     const data = [
       { label: this.formatMessage(messages.lastUpdate), field: 'created', value: extendedDayjs(created).fromNow() },
-      { label: this.formatMessage(messages.status), field: 'status' },
+      { label: this.formatMessage(messages.status), field: 'status', value: statusValue },
       { label: this.formatMessage(messages.owner), field: 'owner', value: `${firstName} ${lastName}` },
       { label: this.formatMessage(messages.titleField), field: 'title' },
       { label: this.formatMessage(messages.description), field: 'description' },
