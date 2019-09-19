@@ -25,7 +25,7 @@ def file_upload_path(instance, filename):
 
 class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
     status = django_fsm.FSMField(
-        choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.INITIAL
+        choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
     )
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
     editors = models.ManyToManyField(settings.AUTH_USER_MODEL)

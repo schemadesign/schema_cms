@@ -1,9 +1,16 @@
 class ProjectStatus:
-    INITIAL = "initial"
-    PROCESSING = "processing"
+    IN_PROGRESS = "in_progress"
+    DONE = "done"
+    HOLD = "hold"
+    PUBLISHED = "published"
 
 
-PROJECT_STATUS_CHOICES = ((ProjectStatus.INITIAL, "initial"), (ProjectStatus.PROCESSING, "processing"))
+PROJECT_STATUS_CHOICES = (
+    (ProjectStatus.IN_PROGRESS, "in progress"),
+    (ProjectStatus.DONE, "done"),
+    (ProjectStatus.HOLD, "hold"),
+    (ProjectStatus.PUBLISHED, "published"),
+)
 
 
 DATASOURCE_NAME_MAX_LENGTH = 25
