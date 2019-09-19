@@ -8,14 +8,6 @@ set -e
 wait_for_secretsmanager
 echo "Secrets manager is up"
 
-# install all localstack fixtures
-{
-    install_db_secret &&
-    echo "DB secrets set"
-} || {
-    echo "DB secrets NOT set"
-}
-
 echo "Run migrations"
 /app/manage.py makemigrations --dry-run --check || { echo "ERROR: there were changes in the models, but migration listed above have not been created and are not saved in version control"; exit 1; }
 
