@@ -179,6 +179,7 @@ class API(core.Stack):
 
         self.djangoSecret = aws_secretsmanager.Secret(self, 'django-secret')
         django_secret_key = aws_ecs.Secret.from_secrets_manager(self.djangoSecret)
+        connection_secret_key = aws_ecs.Secret.from_secrets_manager(scope.base.db.secret)
 
         installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
         api_image = aws_ecs.ContainerImage.from_asset('backend/app')
@@ -222,11 +223,11 @@ class API(core.Stack):
             logging=aws_ecs.AwsLogDriver(stream_prefix='backend-container'),
             environment={
                 'WORKER_STM_ARN': scope.workers.worker_state_machine.state_machine_arn,
-                'DB_SECRET_ARN': scope.base.db.secret.secret_arn,
                 'POSTGRES_DB': DB_NAME,
             },
             secrets={
                 'DJANGO_SECRET_KEY': django_secret_key,
+                'DB_CONNECTION': connection_secret_key,
                 **env,
             },
             cpu=256,
@@ -236,7 +237,6 @@ class API(core.Stack):
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
         scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
 
-        scope.base.db.secret.grant_read(self.api.service.task_definition.task_role)
         for k, v in env.items():
             self.grant_secret_access(v)
 
