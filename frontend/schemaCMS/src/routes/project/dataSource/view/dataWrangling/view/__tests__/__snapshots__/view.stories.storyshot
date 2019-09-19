@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
 <div
-  className="sc-csuQGl dLocLR"
+  className="sc-Rmtcm iSVWGU"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -198,7 +198,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-Rmtcm gwGgYM"
+    className="sc-bRBYWo ccSRck"
     name="dataWranglingForm"
   >
     <div
@@ -354,7 +354,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     </div>
   </form>
   <div
-    className="sc-gipzik jxLnkh"
+    className="sc-csuQGl dcDvzg"
   >
     <button
       onClick={[Function]}
