@@ -1,6 +1,7 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import Immutable from 'seamless-immutable';
 import { OK } from 'http-status-codes';
+import nock from 'nock';
 
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCE_PATH } from '../../../shared/utils/api.constants';
@@ -75,10 +76,10 @@ describe('DataWrangling: sagas', () => {
       mockApi.get(`/script/view/${payload.scriptId}`).reply(OK, responseData);
 
       await expectSaga(watchDataWrangling)
-      .withState(defaultState)
-      .put(DataWranglingRoutines.fetchOne.success(responseData))
-      .dispatch(DataWranglingRoutines.fetchOne(payload))
-      .silentRun();
+        .withState(defaultState)
+        .put(DataWranglingRoutines.fetchOne.success(responseData))
+        .dispatch(DataWranglingRoutines.fetchOne(payload))
+        .silentRun();
     });
   });
 });

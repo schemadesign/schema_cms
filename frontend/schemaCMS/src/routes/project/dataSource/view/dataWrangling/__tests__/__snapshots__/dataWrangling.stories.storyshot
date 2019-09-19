@@ -128,7 +128,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
       />
       <span>
         <a
-          className="sc-jDwBTQ flexpH"
+          className="sc-gPEVay KTqmc"
           href="/project/view/2/datasource/view/14/script/view/0"
           onClick={[Function]}
         >
@@ -218,7 +218,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
       />
       <span>
         <a
-          className="sc-jDwBTQ flexpH"
+          className="sc-gPEVay KTqmc"
           href="/project/view/2/datasource/view/14/script/view/1"
           onClick={[Function]}
         >

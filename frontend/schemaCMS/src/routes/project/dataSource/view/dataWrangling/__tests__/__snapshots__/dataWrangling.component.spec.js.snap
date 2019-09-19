@@ -1,587 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataWrangling: Component should render correctly 1`] = `
-<IntlProvider
-  locale="en"
->
-  <DataWrangling
-    bindSubmitForm={[Function]}
-    dataWranglings={
-      Array [
-        Object {
-          "key": "name 1",
-        },
-        Object {
-          "key": "name 2",
-        },
-      ]
-    }
-    fetchDataWrangling={[Function]}
-    match={
-      Object {
-        "params": Object {
-          "dataSourceId": "1",
-          "projectId": "1",
-        },
-      }
-    }
-    sendUpdatedDataWrangling={[Function]}
-    uploadScript={[Function]}
-  >
+<styled.div>
+  <styled.div>
+    <styled.div />
     <styled.div>
-      <StyledComponent
-        forwardedComponent={
+      <FormattedMessage
+        defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
+        id="dataSource.view.dataWrangling.steps"
+        values={
           Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "sc-bdVaJa",
-              "isStatic": true,
-              "lastClassName": "bDWFJH",
-              "rules": Array [],
-            },
-            "displayName": "styled.div",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-bdVaJa",
-            "target": "div",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
+            "length": 2,
           }
         }
-        forwardedRef={null}
-      >
-        <div
-          className="sc-bdVaJa bDWFJH"
-        >
-          <styled.div>
-            <StyledComponent
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "sc-bwzfXH",
-                    "isStatic": true,
-                    "lastClassName": "hjUkUg",
-                    "rules": Array [
-                      "
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 24px;
-",
-                    ],
-                  },
-                  "displayName": "styled.div",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "sc-bwzfXH",
-                  "target": "div",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
-            >
-              <div
-                className="sc-bwzfXH hjUkUg"
-              >
-                <styled.div>
-                  <StyledComponent
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "sc-bxivhb",
-                          "isStatic": true,
-                          "lastClassName": "klRcOv",
-                          "rules": Array [
-                            "
-  width: 33%;
-",
-                          ],
-                        },
-                        "displayName": "styled.div",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "sc-bxivhb",
-                        "target": "div",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <div
-                      className="sc-bxivhb klRcOv"
-                    />
-                  </StyledComponent>
-                </styled.div>
-                <styled.div>
-                  <StyledComponent
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "sc-htpNat",
-                          "isStatic": true,
-                          "lastClassName": "cDxnqg",
-                          "rules": Array [
-                            "
-  width: 34%;
-  text-align: center;
-",
-                          ],
-                        },
-                        "displayName": "styled.div",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "sc-htpNat",
-                        "target": "div",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <div
-                      className="sc-htpNat cDxnqg"
-                    >
-                      <FormattedMessage
-                        defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
-                        id="dataSource.view.dataWrangling.steps"
-                        values={
-                          Object {
-                            "length": 2,
-                          }
-                        }
-                      >
-                        <span>
-                          2 Steps
-                        </span>
-                      </FormattedMessage>
-                    </div>
-                  </StyledComponent>
-                </styled.div>
-                <styled.div>
-                  <StyledComponent
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "sc-ifAKCX",
-                          "isStatic": true,
-                          "lastClassName": "kaxgzj",
-                          "rules": Array [
-                            "
-  width: 33%;
-  text-align: right;
-",
-                          ],
-                        },
-                        "displayName": "styled.div",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "sc-ifAKCX",
-                        "target": "div",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <div
-                      className="sc-ifAKCX kaxgzj"
-                    >
-                      <FileUpload
-                        accept=".py"
-                        customInputStyles={Object {}}
-                        customLabelStyles={Object {}}
-                        customStyles={Object {}}
-                        disabled={false}
-                        iconComponent={
-                          <div
-                            style={
-                              Object {
-                                "backgroundColor": "#f0efef",
-                                "border": "none",
-                                "borderRadius": "48px",
-                                "color": "#1d1d20",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                                "fontSize": 0,
-                                "margin": "0",
-                                "minHeight": "48px",
-                                "outline": "none",
-                                "padding": "0",
-                              }
-                            }
-                          >
-                            <UploadIcon />
-                          </div>
-                        }
-                        id="fileUpload"
-                        onChange={[Function]}
-                        type="file"
-                      >
-                        <div
-                          style={Object {}}
-                        >
-                          <label
-                            htmlFor="fileUpload"
-                            style={
-                              Object {
-                                "position": "relative",
-                                "top": 0,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": "#f0efef",
-                                  "border": "none",
-                                  "borderRadius": "48px",
-                                  "color": "#1d1d20",
-                                  "cursor": "pointer",
-                                  "display": "inline-block",
-                                  "fontSize": 0,
-                                  "margin": "0",
-                                  "minHeight": "48px",
-                                  "outline": "none",
-                                  "padding": "0",
-                                }
-                              }
-                            >
-                              <UploadIcon>
-                                <SvgUpload
-                                  style={
-                                    Object {
-                                      "fill": "#1d1d20",
-                                      "height": "60px",
-                                      "width": "60px",
-                                    }
-                                  }
-                                >
-                                  <svg
-                                    style={
-                                      Object {
-                                        "fill": "#1d1d20",
-                                        "height": "60px",
-                                        "width": "60px",
-                                      }
-                                    }
-                                    viewBox="0 0 60 60"
-                                  >
-                                    <path
-                                      d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
-                                    />
-                                  </svg>
-                                </SvgUpload>
-                              </UploadIcon>
-                            </div>
-                          </label>
-                          <input
-                            accept=".py"
-                            aria-hidden={true}
-                            disabled={false}
-                            id="fileUpload"
-                            onChange={[Function]}
-                            style={
-                              Object {
-                                "height": 0,
-                                "left": 0,
-                                "overflow": "hidden",
-                                "position": "absolute",
-                                "top": 0,
-                                "visibility": "hidden",
-                              }
-                            }
-                            type="file"
-                          />
-                        </div>
-                      </FileUpload>
-                    </div>
-                  </StyledComponent>
-                </styled.div>
-              </div>
-            </StyledComponent>
-          </styled.div>
-          <Formik
-            enableReinitialize={false}
-            initialValues={
+      />
+    </styled.div>
+    <styled.div>
+      <FileUpload
+        accept=".py"
+        customInputStyles={Object {}}
+        customLabelStyles={Object {}}
+        customStyles={Object {}}
+        disabled={false}
+        iconComponent={
+          <div
+            style={
               Object {
-                "steps": Array [],
+                "backgroundColor": "#f0efef",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#1d1d20",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontSize": 0,
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
               }
             }
-            isInitialValid={false}
-            onSubmit={[Function]}
-            validateOnBlur={true}
-            validateOnChange={true}
           >
-            <CheckboxGroup
-              checkedIcon={<CheckboxOnIcon />}
-              customCheckboxStyles={Object {}}
-              customStyles={Object {}}
-              name="steps"
-              onChange={[Function]}
-              uncCheckedIcon={<CheckboxOffIcon />}
-              value={Array []}
-            >
-              <div
-                style={
-                  Object {
-                    "borderTop": "1px solid #F0EFEF",
-                    "display": "flex",
-                    "flexDirection": "column",
-                  }
-                }
-              >
-                <Checkbox
-                  id="checkbox-0"
-                  isEdit={true}
-                  key="0"
-                  value="name 1"
-                >
-                  <div
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "borderBottom": "1px solid #F0EFEF",
-                        "display": "flex",
-                        "flexDirection": "row",
-                        "height": 48,
-                        "justifyContent": "space-between",
-                      }
-                    }
-                  >
-                    <input
-                      aria-hidden={true}
-                      checked={false}
-                      id="checkbox-0"
-                      name="steps"
-                      onChange={[Function]}
-                      style={
-                        Object {
-                          "height": 0,
-                          "left": 0,
-                          "overflow": "hidden",
-                          "position": "absolute",
-                          "top": 0,
-                          "visibility": "hidden",
-                        }
-                      }
-                      type="checkbox"
-                      value="name 1"
-                    />
-                    <span>
-                      name 1
-                    </span>
-                    <div
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "display": "flex",
-                          "flexDirection": "row",
-                        }
-                      }
-                    >
-                      <EditIcon>
-                        <SvgEdit
-                          style={
-                            Object {
-                              "fill": "#1d1d20",
-                              "height": "30px",
-                              "width": "30px",
-                            }
-                          }
-                        >
-                          <svg
-                            style={
-                              Object {
-                                "fill": "#1d1d20",
-                                "height": "30px",
-                                "width": "30px",
-                              }
-                            }
-                            viewBox="0 0 30 30"
-                          >
-                            <path
-                              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                              fillRule="evenodd"
-                            />
-                          </svg>
-                        </SvgEdit>
-                      </EditIcon>
-                      <label
-                        htmlFor="checkbox-0"
-                        style={
-                          Object {
-                            "cursor": "pointer",
-                          }
-                        }
-                      >
-                        <CheckboxOffIcon>
-                          <SvgCheckboxOff
-                            style={
-                              Object {
-                                "height": "30px",
-                                "stroke": "#1d1d20",
-                                "width": "30px",
-                              }
-                            }
-                          >
-                            <svg
-                              style={
-                                Object {
-                                  "height": "30px",
-                                  "stroke": "#1d1d20",
-                                  "width": "30px",
-                                }
-                              }
-                              viewBox="0 0 30 30"
-                            >
-                              <path
-                                d="M7.5 7.5h15v15h-15z"
-                                fill="none"
-                              />
-                            </svg>
-                          </SvgCheckboxOff>
-                        </CheckboxOffIcon>
-                      </label>
-                    </div>
-                  </div>
-                </Checkbox>
-                <Checkbox
-                  id="checkbox-1"
-                  isEdit={true}
-                  key="1"
-                  value="name 2"
-                >
-                  <div
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "borderBottom": "1px solid #F0EFEF",
-                        "display": "flex",
-                        "flexDirection": "row",
-                        "height": 48,
-                        "justifyContent": "space-between",
-                      }
-                    }
-                  >
-                    <input
-                      aria-hidden={true}
-                      checked={false}
-                      id="checkbox-1"
-                      name="steps"
-                      onChange={[Function]}
-                      style={
-                        Object {
-                          "height": 0,
-                          "left": 0,
-                          "overflow": "hidden",
-                          "position": "absolute",
-                          "top": 0,
-                          "visibility": "hidden",
-                        }
-                      }
-                      type="checkbox"
-                      value="name 2"
-                    />
-                    <span>
-                      name 2
-                    </span>
-                    <div
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "display": "flex",
-                          "flexDirection": "row",
-                        }
-                      }
-                    >
-                      <EditIcon>
-                        <SvgEdit
-                          style={
-                            Object {
-                              "fill": "#1d1d20",
-                              "height": "30px",
-                              "width": "30px",
-                            }
-                          }
-                        >
-                          <svg
-                            style={
-                              Object {
-                                "fill": "#1d1d20",
-                                "height": "30px",
-                                "width": "30px",
-                              }
-                            }
-                            viewBox="0 0 30 30"
-                          >
-                            <path
-                              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                              fillRule="evenodd"
-                            />
-                          </svg>
-                        </SvgEdit>
-                      </EditIcon>
-                      <label
-                        htmlFor="checkbox-1"
-                        style={
-                          Object {
-                            "cursor": "pointer",
-                          }
-                        }
-                      >
-                        <CheckboxOffIcon>
-                          <SvgCheckboxOff
-                            style={
-                              Object {
-                                "height": "30px",
-                                "stroke": "#1d1d20",
-                                "width": "30px",
-                              }
-                            }
-                          >
-                            <svg
-                              style={
-                                Object {
-                                  "height": "30px",
-                                  "stroke": "#1d1d20",
-                                  "width": "30px",
-                                }
-                              }
-                              viewBox="0 0 30 30"
-                            >
-                              <path
-                                d="M7.5 7.5h15v15h-15z"
-                                fill="none"
-                              />
-                            </svg>
-                          </SvgCheckboxOff>
-                        </CheckboxOffIcon>
-                      </label>
-                    </div>
-                  </div>
-                </Checkbox>
-              </div>
-            </CheckboxGroup>
-          </Formik>
-        </div>
-      </StyledComponent>
+            <UploadIcon />
+          </div>
+        }
+        id="fileUpload"
+        onChange={[Function]}
+        type="file"
+      />
     </styled.div>
-  </DataWrangling>
-</IntlProvider>
+  </styled.div>
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Object {
+        "steps": Array [],
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Component />
+  </Formik>
+</styled.div>
+`;
+
+exports[`DataWrangling: Component should render correctly form 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "steps": Array [],
+      },
+      "isSubmitting": false,
+      "isValid": false,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": undefined,
+      "values": Object {
+        "steps": Array [],
+      },
+    }
+  }
+>
+  <CheckboxGroup
+    checkedIcon={<CheckboxOnIcon />}
+    customCheckboxStyles={Object {}}
+    customStyles={Object {}}
+    name="steps"
+    onChange={[Function]}
+    uncCheckedIcon={<CheckboxOffIcon />}
+    value={Array []}
+  >
+    <Checkbox
+      id="checkbox-0"
+      isEdit={true}
+      key="0"
+      value="name 1"
+    >
+      <Styled(Link)
+        to="/project/view/2/datasource/view/14/script/view/0"
+      >
+        name 1
+      </Styled(Link)>
+    </Checkbox>
+    <Checkbox
+      id="checkbox-1"
+      isEdit={true}
+      key="1"
+      value="name 2"
+    >
+      <Styled(Link)
+        to="/project/view/2/datasource/view/14/script/view/1"
+      >
+        name 2
+      </Styled(Link)>
+    </Checkbox>
+  </CheckboxGroup>
+</ContextProvider>
 `;

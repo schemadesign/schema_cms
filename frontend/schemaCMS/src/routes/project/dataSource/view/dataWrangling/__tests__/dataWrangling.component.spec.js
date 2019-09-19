@@ -1,22 +1,24 @@
 import React from 'react';
-import { IntlProvider } from 'react-intl';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
+import { Formik } from 'formik';
 
 import { DataWrangling } from '../dataWrangling.component';
 import { defaultProps } from '../dataWrangling.stories';
-import { DEFAULT_LOCALE } from '../../../../../../i18n';
 
 describe('DataWrangling: Component', () => {
-  const component = props => (
-    <IntlProvider locale={DEFAULT_LOCALE}>
-      <DataWrangling {...defaultProps} {...props} />
-    </IntlProvider>
-  );
+  const component = props => <DataWrangling {...defaultProps} {...props} />;
 
-  const render = (props = {}) => mount(component(props));
+  const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', () => {
     const wrapper = render();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly form', () => {
+    const wrapper = render()
+      .find(Formik)
+      .dive();
     global.expect(wrapper).toMatchSnapshot();
   });
 });
