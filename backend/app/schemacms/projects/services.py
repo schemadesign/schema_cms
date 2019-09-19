@@ -21,10 +21,6 @@ sqs = boto3.client(
 )
 
 
-def scripts_upload_path(datasource):
-    return settings.DS_SCRIPTS_UPLOAD_PATH.format(datasource.pk)
-
-
 class ScriptResource:
     PROTOCOL = 'none'
 
@@ -44,18 +40,22 @@ class ScriptResource:
 class S3ScriptResource(ScriptResource):
     PROTOCOL = 's3'
 
-    def __init__(self, bucket_name):
+    def __init__(self, bucket_name, upload_path):
         self.bucket = s3.Bucket(bucket_name)
+        self.upload_path = upload_path
 
-    def list(self, datasource):
+    def upload_path(self, datasource):
+        return self.upload_path.format(datasource.pk)
+
+    def list(self, obj):
         return [
             {'key': self.ref_name(obj.key)}
-            for obj in self.bucket.objects.filter(Prefix=scripts_upload_path(datasource))
+            for obj in self.bucket.objects.filter(Prefix=self.upload_path(obj))
         ]
 
     def upload(self, obj, uploaded_file):
         return self.bucket.put_object(
-            Key=os.path.join(scripts_upload_path(obj), uploaded_file.name), Body=uploaded_file
+            Key=os.path.join(self.upload_path(obj), uploaded_file.name), Body=uploaded_file
         )
 
     def getvalue(self, ref_key):
@@ -99,7 +99,7 @@ class Scripts:
 
 scripts = Scripts()
 
-S3ScriptResource(settings.DATASOURCE_S3_BUCKET).register(scripts)
+S3ScriptResource(settings.DATASOURCE_S3_BUCKET, settings.DS_SCRIPTS_UPLOAD_PATH).register(scripts)
 LocalScriptResource('./step-scripts/').register(scripts)
 
 
