@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { Form, Button, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
-import { Container, Header, StepCounter, Empty, ButtonContainer } from './dataWrangling.styles';
+import { Container, Header, StepCounter, Empty, ButtonContainer, Link } from './dataWrangling.styles';
 import messages from './dataWrangling.messages';
 
 const { CheckboxGroup, Checkbox } = Form;
@@ -14,12 +14,21 @@ export class DataWrangling extends PureComponent {
   static propTypes = {
     dataWrangling: PropTypes.array.isRequired,
     bindSubmitForm: PropTypes.func.isRequired,
+    match: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+    }).isRequired,
+  };
+
+  getScrtiptUrl = index => {
+    const baseUrl = this.props.match.url.replace(/\d+\/?$/, 'script/view/');
+
+    return `${baseUrl}${index}`;
   };
 
   renderCheckboxes = values =>
     values.map(({ name }, index) => (
       <Checkbox id={index} value={name} key={index} isEdit>
-        {name}
+        <Link to={this.getScrtiptUrl(index)}>{name}</Link>
       </Checkbox>
     ));
 

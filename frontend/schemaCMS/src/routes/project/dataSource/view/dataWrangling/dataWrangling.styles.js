@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
+import { Theme } from 'schemaUI';
 
 export const Container = styled.div``;
 
@@ -21,4 +23,9 @@ export const Empty = styled.div`
 export const ButtonContainer = styled.div`
   width: 33%;
   text-align: right;
+`;
+
+export const Link = styled(RouterLink)`
+  color: ${Theme.primary.text};
+  text-decoration: none;
 `;

@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   pageTitle: {
     id: 'dataSource.view.dataWrangling.view.pageTitle',
-    defaultMessage: 'Edit step',
+    defaultMessage: 'View step',
   },
   title: {
     id: 'dataSource.view.dataWrangling.view.title',
@@ -12,7 +12,7 @@ export default defineMessages({
   },
   subTitle: {
     id: 'dataSource.view.dataWrangling.view.subTitle',
-    defaultMessage: 'Edit step',
+    defaultMessage: 'View step',
   },
   description: {
     id: 'dataSource.view.dataWrangling.view.description',

@@ -50,7 +50,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
               }
             }
           >
-            Edit step
+            View step
           </h1>
         </div>
       </div>
@@ -144,7 +144,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
               }
             }
           >
-            Edit step
+            View step
           </h1>
         </div>
       </div>
@@ -199,6 +199,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
   </div>
   <form
     className="sc-gipzik iyhjGb"
+    name="dataWranglingForm"
   >
     <div
       className="sc-gqjmRU hnZXkc"
