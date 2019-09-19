@@ -11,7 +11,7 @@ export class Select extends PureComponent {
     defaultOption: PropTypes.object,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string,
     options: PropTypes.array.isRequired,
     onSelect: PropTypes.func.isRequired,
   };

@@ -15,6 +15,7 @@ exports[`Select: Component should render correctly 1`] = `
   />
   <Select
     native={false}
+    onSelect={[Function]}
     options={
       Array [
         Object {

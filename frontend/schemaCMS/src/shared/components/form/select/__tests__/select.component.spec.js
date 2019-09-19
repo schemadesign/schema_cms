@@ -12,6 +12,7 @@ describe('Select: Component', () => {
   it('should render correctly', () => {
     const wrapper = render({
       value: 'one',
+      onSelect: Function.prototype,
     });
     global.expect(wrapper).toMatchSnapshot();
   });
