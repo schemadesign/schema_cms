@@ -2,23 +2,23 @@
 
 exports[`Storyshots DataWrangling Default 1`] = `
 <div
-  className="sc-cvbbAY dbHDoR"
+  className="sc-jWBwVP fDrbnp"
 >
   <div
-    className="sc-jWBwVP eZHQZ"
+    className="sc-brqgnP fpQuoX"
   >
     <div
-      className="sc-cMljjf ecQoOr"
+      className="sc-jAaTju fiLMI"
     />
     <div
-      className="sc-brqgnP fKPssO"
+      className="sc-cMljjf hEDWUK"
     >
       <span>
         2 Step
       </span>
     </div>
     <div
-      className="sc-jAaTju bjcEdM"
+      className="sc-jDwBTQ gMNiDG"
     >
       <button
         style={
@@ -96,7 +96,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
       />
       <span>
         <a
-          className="sc-jDwBTQ flexpH"
+          className="sc-gPEVay KTqmc"
           href="/project/view/2/datasource/view/14/script/view/0"
           onClick={[Function]}
         >
@@ -186,7 +186,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
       />
       <span>
         <a
-          className="sc-jDwBTQ flexpH"
+          className="sc-gPEVay KTqmc"
           href="/project/view/2/datasource/view/14/script/view/1"
           onClick={[Function]}
         >

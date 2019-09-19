@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select: Component should render correctly 1`] = `
+<styled.div>
+  <Label
+    customStyles={Object {}}
+  >
+    Selector
+  </Label>
+  <input
+    hidden={true}
+    name="selectField"
+    onChange={[Function]}
+    value="one"
+  />
+  <Select
+    native={false}
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "One",
+          "selected": true,
+          "value": "one",
+        },
+        Object {
+          "label": "Two",
+          "selected": false,
+          "value": "two",
+        },
+        Object {
+          "label": "Three",
+          "selected": false,
+          "value": "three",
+        },
+      ]
+    }
+  />
+</styled.div>
+`;

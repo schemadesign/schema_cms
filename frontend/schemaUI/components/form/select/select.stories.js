@@ -67,8 +67,7 @@ class TestComponentWithDefaultOption extends PureComponent {
   }
 }
 
-storiesOf('Select', module).add('Default', () => <TestComponent />);
-
-storiesOf('Select', module).add('With Default Option', () => <TestComponentWithDefaultOption />);
-
-storiesOf('Select', module).add('Native Select', () => <TestComponent native />);
+storiesOf('Form/Select', module)
+  .add('Default', () => <TestComponent />)
+  .add('With Default Option', () => <TestComponentWithDefaultOption />)
+  .add('Native Select', () => <TestComponent native />);
