@@ -1,5 +1,8 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
+import { PROJECT_STATUSES } from '../../../modules/project/project.constants';
+
+const { IN_PROGRESS, DONE, HOLD, PUBLISHED } = PROJECT_STATUSES;
 
 export default defineMessages({
   pageTitle: {
@@ -21,5 +24,21 @@ export default defineMessages({
   logOut: {
     id: 'project.list.logOut',
     defaultMessage: 'Log Out',
+  },
+  [IN_PROGRESS]: {
+    id: `project.list.${IN_PROGRESS}`,
+    defaultMessage: 'In Progress',
+  },
+  [DONE]: {
+    id: `project.list.${DONE}`,
+    defaultMessage: 'Done',
+  },
+  [HOLD]: {
+    id: `project.list.${HOLD}`,
+    defaultMessage: 'Hold',
+  },
+  [PUBLISHED]: {
+    id: `project.list.${PUBLISHED}`,
+    defaultMessage: 'Published',
   },
 });
