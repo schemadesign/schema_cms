@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/View default 1`] = `
 <div
-  className="sc-bwzfXH sc-uJMKN eMbblb"
+  className="sc-bwzfXH sc-bbmXgH bJOcWy"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -244,13 +244,13 @@ exports[`Storyshots Project/View default 1`] = `
     </div>
   </div>
   <div
-    className="sc-bbmXgH bKWSNk"
+    className="sc-gGBfsJ drulmC"
   >
     <ul
-      className="sc-cIShpX hEwYVw"
+      className="sc-kafWEX gDsgao"
     >
       <li
-        className="sc-kafWEX ieNhPK"
+        className="sc-feJyhm dlYwAj"
       >
         <div
           onClick={[Function]}
@@ -279,14 +279,14 @@ exports[`Storyshots Project/View default 1`] = `
             Data Sources
           </div>
           <span
-            className="sc-feJyhm JhaJi"
+            className="sc-iELTvK eDvymt"
           >
             3
           </span>
         </div>
       </li>
       <li
-        className="sc-kafWEX ieNhPK"
+        className="sc-feJyhm dlYwAj"
       >
         <div
           onClick={[Function]}
@@ -315,7 +315,7 @@ exports[`Storyshots Project/View default 1`] = `
             Users
           </div>
           <span
-            className="sc-feJyhm JhaJi"
+            className="sc-iELTvK eDvymt"
           >
             2
           </span>
@@ -323,27 +323,27 @@ exports[`Storyshots Project/View default 1`] = `
       </li>
     </ul>
     <ul
-      className="sc-gGBfsJ kvwFgY"
+      className="sc-jnlKLf gPnbha"
     >
       <li
-        className="sc-jnlKLf gYPQBM"
+        className="sc-fYxtnH domKNR"
       >
         <div
-          className="sc-fYxtnH XtPtX"
+          className="sc-tilXH jGnwJK"
         >
           <span
-            className="sc-tilXH hfFpna"
+            className="sc-hEsumM bVCKRM"
           >
             Last Update
           </span>
           <span
-            className="sc-ktHwxA klLOca"
+            className="sc-cIShpX lgLaym"
           >
             3 months ago
           </span>
         </div>
         <div
-          className="sc-hEsumM ijJfMq"
+          className="sc-ktHwxA igRtLq"
         >
           <svg
             style={
@@ -363,24 +363,24 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-jnlKLf gYPQBM"
+        className="sc-fYxtnH domKNR"
       >
         <div
-          className="sc-fYxtnH XtPtX"
+          className="sc-tilXH jGnwJK"
         >
           <span
-            className="sc-tilXH hfFpna"
+            className="sc-hEsumM bVCKRM"
           >
             Status
           </span>
           <span
-            className="sc-ktHwxA klLOca"
+            className="sc-cIShpX lgLaym"
           >
             Status
           </span>
         </div>
         <div
-          className="sc-hEsumM ijJfMq"
+          className="sc-ktHwxA igRtLq"
         >
           <svg
             style={
@@ -400,24 +400,24 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-jnlKLf gYPQBM"
+        className="sc-fYxtnH domKNR"
       >
         <div
-          className="sc-fYxtnH XtPtX"
+          className="sc-tilXH jGnwJK"
         >
           <span
-            className="sc-tilXH hfFpna"
+            className="sc-hEsumM bVCKRM"
           >
             Owner
           </span>
           <span
-            className="sc-ktHwxA klLOca"
+            className="sc-cIShpX lgLaym"
           >
             Firstname Lastname
           </span>
         </div>
         <div
-          className="sc-hEsumM ijJfMq"
+          className="sc-ktHwxA igRtLq"
         >
           <svg
             style={
@@ -437,24 +437,24 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-jnlKLf gYPQBM"
+        className="sc-fYxtnH domKNR"
       >
         <div
-          className="sc-fYxtnH XtPtX"
+          className="sc-tilXH jGnwJK"
         >
           <span
-            className="sc-tilXH hfFpna"
+            className="sc-hEsumM bVCKRM"
           >
             Title
           </span>
           <span
-            className="sc-ktHwxA klLOca"
+            className="sc-cIShpX lgLaym"
           >
             Project Name
           </span>
         </div>
         <div
-          className="sc-hEsumM ijJfMq"
+          className="sc-ktHwxA igRtLq"
         >
           <svg
             style={
@@ -474,24 +474,24 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-jnlKLf gYPQBM"
+        className="sc-fYxtnH domKNR"
       >
         <div
-          className="sc-fYxtnH XtPtX"
+          className="sc-tilXH jGnwJK"
         >
           <span
-            className="sc-tilXH hfFpna"
+            className="sc-hEsumM bVCKRM"
           >
             Description
           </span>
           <span
-            className="sc-ktHwxA klLOca"
+            className="sc-cIShpX lgLaym"
           >
             Description
           </span>
         </div>
         <div
-          className="sc-hEsumM ijJfMq"
+          className="sc-ktHwxA igRtLq"
         >
           <svg
             style={
@@ -511,24 +511,24 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-jnlKLf gYPQBM"
+        className="sc-fYxtnH domKNR"
       >
         <div
-          className="sc-fYxtnH XtPtX"
+          className="sc-tilXH jGnwJK"
         >
           <span
-            className="sc-tilXH hfFpna"
+            className="sc-hEsumM bVCKRM"
           >
             API
           </span>
           <span
-            className="sc-ktHwxA klLOca"
+            className="sc-cIShpX lgLaym"
           >
             schemacms/api/project_title
           </span>
         </div>
         <div
-          className="sc-hEsumM ijJfMq"
+          className="sc-ktHwxA igRtLq"
         >
           <svg
             style={
@@ -588,7 +588,7 @@ exports[`Storyshots Project/View default 1`] = `
 
 exports[`Storyshots Project/View empty 1`] = `
 <div
-  className="sc-bwzfXH sc-uJMKN eMbblb"
+  className="sc-bwzfXH sc-bbmXgH bJOcWy"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -792,7 +792,7 @@ exports[`Storyshots Project/View empty 1`] = `
     </div>
   </div>
   <div
-    className="sc-jqCOkK cahrPt"
+    className="sc-uJMKN WXNmX"
   >
     <p
       style={
