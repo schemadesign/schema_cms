@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
+<div
+  className="sc-Rmtcm gwGgYM"
+>
+  <ul
+    className="sc-bRBYWo egVUDy"
+  >
+    <li
+      className="sc-hzDkRC fkKiUP"
+    >
+      <span
+        className="sc-fBuWsC cshdgn"
+      >
+        Field
+      </span>
+      firstName
+    </li>
+    <li
+      className="sc-hzDkRC fkKiUP"
+    >
+      <span
+        className="sc-fBuWsC cshdgn"
+      >
+        Sample
+      </span>
+      <span
+        className="sc-fMiknA fIAcAD"
+      >
+        Sample
+      </span>
+    </li>
+    <li
+      className="sc-hzDkRC fkKiUP"
+    >
+      <span
+        className="sc-fBuWsC cshdgn"
+      >
+        Type
+      </span>
+      <span
+        className="sc-fMiknA fIAcAD"
+      >
+        Text
+      </span>
+    </li>
+    <li
+      className="sc-hzDkRC sc-jhAzac nWcvH"
+    >
+      <span
+        className="sc-fBuWsC cshdgn"
+      >
+        Total Count (N)
+      </span>
+      <span
+        className="sc-fMiknA fIAcAD"
+      >
+        127
+      </span>
+    </li>
+    <li
+      className="sc-hzDkRC sc-jhAzac nWcvH"
+    >
+      <span
+        className="sc-fBuWsC cshdgn"
+      >
+        Unique
+      </span>
+      <span
+        className="sc-fMiknA fIAcAD"
+      >
+        99
+      </span>
+    </li>
+    <li
+      className="sc-hzDkRC sc-jhAzac nWcvH"
+    >
+      <span
+        className="sc-fBuWsC cshdgn"
+      >
+        Mean
+      </span>
+      <span
+        className="sc-fMiknA fIAcAD"
+      >
+        4
+      </span>
+    </li>
+    <li
+      className="sc-hzDkRC sc-jhAzac nWcvH"
+    >
+      <span
+        className="sc-fBuWsC cshdgn"
+      >
+        Min
+      </span>
+      <span
+        className="sc-fMiknA fIAcAD"
+      >
+        1
+      </span>
+    </li>
+    <li
+      className="sc-hzDkRC sc-jhAzac nWcvH"
+    >
+      <span
+        className="sc-fBuWsC cshdgn"
+      >
+        Max
+      </span>
+      <span
+        className="sc-fMiknA fIAcAD"
+      >
+        100
+      </span>
+    </li>
+    <li
+      className="sc-hzDkRC sc-jhAzac nWcvH"
+    >
+      <span
+        className="sc-fBuWsC cshdgn"
+      >
+        Std. Dev.
+      </span>
+      <span
+        className="sc-fMiknA fIAcAD"
+      >
+        23.0332
+      </span>
+    </li>
+  </ul>
+</div>
+`;

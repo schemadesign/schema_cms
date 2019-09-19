@@ -3,7 +3,7 @@
 exports[`View: Component should not render any step 1`] = `
 <styled.div>
   <TopHeader
-    headerSubtitle="Source"
+    headerSubtitle={null}
     headerTitle="name"
     secondaryMenuItems={
       Array [
@@ -18,39 +18,34 @@ exports[`View: Component should not render any step 1`] = `
       ]
     }
   />
-  <form
-    onSubmit={[Function]}
-  >
-    <PillButtons
-      leftButtonProps={
+  <PillButtons
+    leftButtonProps={
+      Object {
+        "onClick": [Function],
+        "title": "Back",
+      }
+    }
+    rightButtonProps={
+      Object {
+        "onClick": [Function],
+        "title": "Next",
+      }
+    }
+  />
+  <styled.div>
+    <Stepper
+      activeStep={0}
+      customDotStyles={Object {}}
+      customStyles={
         Object {
-          "onClick": [Function],
-          "title": "Back",
+          "margin": "0 auto",
         }
       }
-      rightButtonProps={
-        Object {
-          "disabled": true,
-          "onClick": [Function],
-          "title": "Next",
-        }
-      }
+      handleStep={[Function]}
+      onStepChange={[Function]}
+      steps={6}
     />
-    <styled.div>
-      <Stepper
-        activeStep={0}
-        customDotStyles={Object {}}
-        customStyles={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-        handleStep={[Function]}
-        onStepChange={[Function]}
-        steps={6}
-      />
-    </styled.div>
-  </form>
+  </styled.div>
 </styled.div>
 `;
 
@@ -74,74 +69,72 @@ exports[`View: Component should render draft 1`] = `
       ]
     }
   />
-  <form
-    onSubmit={[Function]}
-  >
-    <Source
-      dataSource={Object {}}
-      fetchDataSource={[Function]}
-      handleChange={[Function]}
-      handleSubmit={[Function]}
-      history={
+  <Source
+    bindSubmitForm={[Function]}
+    dataSource={
+      Object {
+        "id": "id",
+        "status": "draft",
+      }
+    }
+    dataWranglings={Array []}
+    fetchDataSource={[Function]}
+    fetchDataWrangling={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "1",
+        },
+        "url": "/project/view/1/datasource/view/1/1",
+      }
+    }
+    removeDataSource={[Function]}
+    sendUpdatedDataWrangling={[Function]}
+    unmountDataSource={[Function]}
+    updateDataSource={[Function]}
+    uploadScript={[Function]}
+  />
+  <PillButtons
+    leftButtonProps={
+      Object {
+        "onClick": [Function],
+        "title": "Cancel",
+      }
+    }
+    rightButtonProps={
+      Object {
+        "onClick": [Function],
+        "title": "Next",
+      }
+    }
+  />
+  <styled.div>
+    <Stepper
+      activeStep={1}
+      customDotStyles={Object {}}
+      customStyles={
         Object {
-          "push": [Function],
+          "margin": "0 auto",
+          "pointerEvents": "none",
         }
       }
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      match={
-        Object {
-          "params": Object {
-            "dataSourceId": "1",
-            "projectId": "1",
-            "step": "1",
-          },
-        }
-      }
-      onChange={[Function]}
-      removeDataSource={[Function]}
-      setFieldValue={[Function]}
-      unmountDataSource={[Function]}
-      values={
-        Object {
-          "id": "id",
-          "status": "draft",
-        }
-      }
+      handleStep={[Function]}
+      onStepChange={[Function]}
+      steps={6}
     />
-    <PillButtons
-      leftButtonProps={
-        Object {
-          "onClick": [Function],
-          "title": "Cancel",
-        }
-      }
-      rightButtonProps={
-        Object {
-          "disabled": true,
-          "onClick": [Function],
-          "title": "Next",
-        }
-      }
-    />
-    <styled.div>
-      <Stepper
-        activeStep={1}
-        customDotStyles={Object {}}
-        customStyles={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-        handleStep={[Function]}
-        onStepChange={[Function]}
-        steps={6}
-      />
-    </styled.div>
-  </form>
+  </styled.div>
 </styled.div>
 `;
 
@@ -163,75 +156,72 @@ exports[`View: Component should render second step 1`] = `
       ]
     }
   />
-  <form
-    onSubmit={[Function]}
-  >
-    <Source
-      dataSource={Object {}}
-      fetchDataSource={[Function]}
-      handleChange={[Function]}
-      handleSubmit={[Function]}
-      history={
+  <Source
+    bindSubmitForm={[Function]}
+    dataSource={
+      Object {
+        "id": "id",
+        "name": "name",
+        "step": "2",
+      }
+    }
+    dataWranglings={Array []}
+    fetchDataSource={[Function]}
+    fetchDataWrangling={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "1",
+        },
+        "url": "/project/view/1/datasource/view/1/1",
+      }
+    }
+    removeDataSource={[Function]}
+    sendUpdatedDataWrangling={[Function]}
+    unmountDataSource={[Function]}
+    updateDataSource={[Function]}
+    uploadScript={[Function]}
+  />
+  <PillButtons
+    leftButtonProps={
+      Object {
+        "onClick": [Function],
+        "title": "Cancel",
+      }
+    }
+    rightButtonProps={
+      Object {
+        "onClick": [Function],
+        "title": "Next",
+      }
+    }
+  />
+  <styled.div>
+    <Stepper
+      activeStep={1}
+      customDotStyles={Object {}}
+      customStyles={
         Object {
-          "push": [Function],
+          "margin": "0 auto",
         }
       }
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      match={
-        Object {
-          "params": Object {
-            "dataSourceId": "1",
-            "projectId": "1",
-            "step": "1",
-          },
-        }
-      }
-      onChange={[Function]}
-      removeDataSource={[Function]}
-      setFieldValue={[Function]}
-      unmountDataSource={[Function]}
-      values={
-        Object {
-          "id": "id",
-          "name": "name",
-          "step": "2",
-        }
-      }
+      handleStep={[Function]}
+      onStepChange={[Function]}
+      steps={6}
     />
-    <PillButtons
-      leftButtonProps={
-        Object {
-          "onClick": [Function],
-          "title": "Cancel",
-        }
-      }
-      rightButtonProps={
-        Object {
-          "disabled": true,
-          "onClick": [Function],
-          "title": "Next",
-        }
-      }
-    />
-    <styled.div>
-      <Stepper
-        activeStep={1}
-        customDotStyles={Object {}}
-        customStyles={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-        handleStep={[Function]}
-        onStepChange={[Function]}
-        steps={6}
-      />
-    </styled.div>
-  </form>
+  </styled.div>
 </styled.div>
 `;
 
@@ -253,73 +243,70 @@ exports[`View: Component should render source step 1`] = `
       ]
     }
   />
-  <form
-    onSubmit={[Function]}
-  >
-    <Source
-      dataSource={Object {}}
-      fetchDataSource={[Function]}
-      handleChange={[Function]}
-      handleSubmit={[Function]}
-      history={
+  <Source
+    bindSubmitForm={[Function]}
+    dataSource={
+      Object {
+        "id": "id",
+        "name": "name",
+      }
+    }
+    dataWranglings={Array []}
+    fetchDataSource={[Function]}
+    fetchDataWrangling={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "1",
+        },
+        "url": "/project/view/1/datasource/view/1/1",
+      }
+    }
+    removeDataSource={[Function]}
+    sendUpdatedDataWrangling={[Function]}
+    unmountDataSource={[Function]}
+    updateDataSource={[Function]}
+    uploadScript={[Function]}
+  />
+  <PillButtons
+    leftButtonProps={
+      Object {
+        "onClick": [Function],
+        "title": "Cancel",
+      }
+    }
+    rightButtonProps={
+      Object {
+        "onClick": [Function],
+        "title": "Next",
+      }
+    }
+  />
+  <styled.div>
+    <Stepper
+      activeStep={1}
+      customDotStyles={Object {}}
+      customStyles={
         Object {
-          "push": [Function],
+          "margin": "0 auto",
         }
       }
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      match={
-        Object {
-          "params": Object {
-            "dataSourceId": "1",
-            "projectId": "1",
-            "step": "1",
-          },
-        }
-      }
-      onChange={[Function]}
-      removeDataSource={[Function]}
-      setFieldValue={[Function]}
-      unmountDataSource={[Function]}
-      values={
-        Object {
-          "id": "id",
-          "name": "name",
-        }
-      }
+      handleStep={[Function]}
+      onStepChange={[Function]}
+      steps={6}
     />
-    <PillButtons
-      leftButtonProps={
-        Object {
-          "onClick": [Function],
-          "title": "Cancel",
-        }
-      }
-      rightButtonProps={
-        Object {
-          "disabled": true,
-          "onClick": [Function],
-          "title": "Next",
-        }
-      }
-    />
-    <styled.div>
-      <Stepper
-        activeStep={1}
-        customDotStyles={Object {}}
-        customStyles={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-        handleStep={[Function]}
-        onStepChange={[Function]}
-        steps={6}
-      />
-    </styled.div>
-  </form>
+  </styled.div>
 </styled.div>
 `;

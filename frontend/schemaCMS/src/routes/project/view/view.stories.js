@@ -1,12 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { withRouter } from '../../../.storybook/decorators';
 import { View } from './view.component';
 
 const emptyProps = {
   fetchProject: Function.prototype,
   unmountProject: Function.prototype,
+  user: {
+    role: ROLES.ADMIN,
+  },
   project: {
     id: '1',
     error: {},
@@ -16,13 +20,13 @@ const emptyProps = {
   },
   match: {
     params: {
-      projectId: '1',
+      projectId: '100',
     },
   },
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
-const defaultProps = {
+export const defaultProps = {
   ...emptyProps,
   project: {
     title: 'Project Name',
@@ -34,6 +38,11 @@ const defaultProps = {
       id: '1',
       firstName: 'Firstname',
       lastName: 'Lastname',
+    },
+    meta: {
+      dataSources: {
+        count: 3,
+      },
     },
     editors: ['3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e', '44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e'],
     modified: '2019-08-21T10:12:52.030069Z',

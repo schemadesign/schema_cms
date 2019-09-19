@@ -5,7 +5,7 @@ import { Button, Card, Icons, Typography } from 'schemaUI';
 import { has, isEmpty, isNil, path } from 'ramda';
 
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
-import { generateApiUrl } from '../../../shared/utils/helpers';
+import { generateApiUrl, isAdmin } from '../../../shared/utils/helpers';
 import extendedDayjs from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -31,6 +31,9 @@ const { P } = Typography;
 
 export class View extends PureComponent {
   static propTypes = {
+    user: PropTypes.shape({
+      role: PropTypes.string.isRequired,
+    }),
     project: PropTypes.object.isRequired,
     fetchProject: PropTypes.func.isRequired,
     unmountProject: PropTypes.func.isRequired,
@@ -62,10 +65,13 @@ export class View extends PureComponent {
         label: this.formatMessage(messages.dataSources),
         to: `/project/view/${projectId}/datasource`,
       });
-      secondaryMenuItems.push(
-        { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
-        { label: this.formatMessage(messages.deleteProject), to: `/project/delete/${projectId}` }
-      );
+
+      if (isAdmin(this.props.user)) {
+        secondaryMenuItems.push(
+          { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
+          { label: this.formatMessage(messages.deleteProject), to: `/project/delete/${projectId}` }
+        );
+      }
     }
 
     secondaryMenuItems.push({ label: this.formatMessage(messages.logOut), to: '/logout' });
@@ -104,11 +110,11 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = (_, { id: projectId, editors, dataSources = [], owner, slug, created, charts, pages } = {}) => {
+  renderProject = (_, { id: projectId, editors, owner, slug, created, charts, pages, meta } = {}) => {
     const statistics = [
       {
         header: this.formatMessage(messages.dataSources),
-        value: this.countItems(dataSources),
+        value: path(['dataSources', 'count'], meta),
         to: `/project/view/${projectId}/datasource`,
       },
       { header: this.formatMessage(messages.charts), value: this.countItems(charts) },

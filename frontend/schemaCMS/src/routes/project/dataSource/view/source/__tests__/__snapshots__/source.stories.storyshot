@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
 <div
-  className="sc-jhAzac hmXDXQ"
+  className="sc-hqyNC keRCOE"
 >
   <div
     className="sc-gqjmRU hnZXkc"
@@ -12,7 +12,7 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
         Object {
           "display": "flex",
           "flexDirection": "column",
-          "maxWidth": "320px",
+          "maxWidth": "100%",
           "paddingBottom": "30px",
           "position": "relative",
         }

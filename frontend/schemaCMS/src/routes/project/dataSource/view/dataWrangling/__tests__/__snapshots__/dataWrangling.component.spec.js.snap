@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataWrangling: Component should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div />
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
+        id="dataSource.view.dataWrangling.steps"
+        values={
+          Object {
+            "length": 2,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FileUpload
+        accept=".py"
+        customInputStyles={Object {}}
+        customLabelStyles={Object {}}
+        customStyles={Object {}}
+        disabled={false}
+        iconComponent={
+          <div
+            style={
+              Object {
+                "backgroundColor": "#f0efef",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#1d1d20",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontSize": 0,
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+              }
+            }
+          >
+            <UploadIcon />
+          </div>
+        }
+        id="fileUpload"
+        onChange={[Function]}
+        type="file"
+      />
+    </styled.div>
+  </styled.div>
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Object {
+        "steps": Array [],
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Component />
+  </Formik>
+</styled.div>
+`;
+
+exports[`DataWrangling: Component should render correctly form 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "steps": Array [],
+      },
+      "isSubmitting": false,
+      "isValid": false,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": undefined,
+      "values": Object {
+        "steps": Array [],
+      },
+    }
+  }
+>
+  <CheckboxGroup
+    checkedIcon={<CheckboxOnIcon />}
+    customCheckboxStyles={Object {}}
+    customStyles={Object {}}
+    name="steps"
+    onChange={[Function]}
+    uncCheckedIcon={<CheckboxOffIcon />}
+    value={Array []}
+  >
+    <Checkbox
+      id="checkbox-0"
+      isEdit={true}
+      key="0"
+      value="name 1"
+    >
+      <Styled(Link)
+        to="/project/view/2/datasource/view/14/script/view/0"
+      >
+        name 1
+      </Styled(Link)>
+    </Checkbox>
+    <Checkbox
+      id="checkbox-1"
+      isEdit={true}
+      key="1"
+      value="name 2"
+    >
+      <Styled(Link)
+        to="/project/view/2/datasource/view/14/script/view/1"
+      >
+        name 2
+      </Styled(Link)>
+    </Checkbox>
+  </CheckboxGroup>
+</ContextProvider>
+`;

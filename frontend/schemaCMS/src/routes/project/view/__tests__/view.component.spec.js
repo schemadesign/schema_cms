@@ -4,23 +4,9 @@ import { spy } from 'sinon';
 import { expect } from 'chai';
 
 import { View } from '../view.component';
+import { defaultProps } from '../view.stories';
 
 describe('View: Component', () => {
-  const defaultProps = {
-    fetchProject: Function.prototype,
-    unmountProject: Function.prototype,
-    project: {},
-    history: {
-      push: Function.prototype,
-    },
-    match: {
-      params: {
-        projectId: '100',
-      },
-    },
-    intl: { formatMessage: ({ id }) => id },
-  };
-
   const component = props => <View {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

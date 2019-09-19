@@ -1,24 +1,19 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 
 import { Source } from '../source.component';
+import { defaultProps } from '../source.stories';
+import { DEFAULT_LOCALE } from '../../../../../../i18n';
 
 describe('Source: Component', () => {
-  const defaultProps = {
-    values: {},
-    onChange: Function.prototype,
-    setFieldValue: Function.prototype,
-    intl: {
-      formatMessage: ({ defaultMessage }) => defaultMessage,
-    },
-    errors: {},
-    touched: {},
-    dataSource: {},
-  };
+  const component = props => (
+    <IntlProvider locale={DEFAULT_LOCALE}>
+      <Source {...defaultProps} {...props} />
+    </IntlProvider>
+  );
 
-  const component = props => <Source {...defaultProps} {...props} />;
-
-  const render = (props = {}) => shallow(component(props));
+  const render = (props = {}) => mount(component(props));
 
   it('should render correctly', () => {
     const wrapper = render();
@@ -27,7 +22,7 @@ describe('Source: Component', () => {
 
   it('should render file uploader', () => {
     const props = {
-      values: {
+      dataSource: {
         type: 'file',
       },
     };

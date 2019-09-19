@@ -3,16 +3,20 @@ import { storiesOf } from '@storybook/react';
 
 import { Source } from './source.component';
 
-const defaultProps = {
-  values: {},
-  onChange: Function.prototype,
-  setFieldValue: Function.prototype,
+export const defaultProps = {
+  dataSource: {},
+  bindSubmitForm: Function.prototype,
+  updateDataSource: Function.prototype,
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
-  errors: {},
-  touched: {},
-  dataSource: {},
+  match: {
+    params: {
+      projectId: '1',
+      dataSourceId: '1',
+      step: '1',
+    },
+  },
 };
 
 storiesOf('Project/DataSource/View/Source', module).add('Default', () => <Source {...defaultProps} />);

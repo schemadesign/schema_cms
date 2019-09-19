@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxOffIcon: Component should render correctly 1`] = `
+<checkbox-off.svg
+  style={
+    Object {
+      "height": "30px",
+      "stroke": "#1d1d20",
+      "width": "30px",
+    }
+  }
+/>
+`;

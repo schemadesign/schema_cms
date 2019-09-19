@@ -21,7 +21,7 @@ class TestProject:
         assert project.data_source_count == expected
 
 
-class TestDataSourceModelMethods:
+class TestDataSource:
     """
     Tests DataSource model additional methods
     """
@@ -51,7 +51,8 @@ class TestDataSourceModelMethods:
         filename = "file_path_test.csv"
         dsource = self.create_dsource(filename)
 
-        dsource.preview_process()
+        dsource.ready_for_processing()
+        dsource.process()
 
         items, fields = read_csv(dsource.file.path).shape
         assert dsource.meta_data.fields == fields
@@ -66,7 +67,8 @@ class TestDataSourceModelMethods:
 
         data_source.file.save("new_file.csv", new_file)
         data_source.refresh_from_db()
-        data_source.preview_process()
+        data_source.ready_for_processing()
+        data_source.process()
 
         assert data_source.meta_data.fields == cols_number
         assert data_source.meta_data.items == rows_number
@@ -87,3 +89,12 @@ class TestDataSourceModelMethods:
 
         assert expected_preview == preview
         assert expected_fields_info == fields_info
+
+
+class TestDataSourceMeta:
+    @pytest.mark.parametrize("offset, whence", [(0, 0), (0, 2)])  # test different file cursor positions
+    def test_data(self, data_source_meta, offset, whence):
+        expected = json.loads(data_source_meta.preview.read())
+        data_source_meta.preview.seek(offset, whence)
+
+        assert data_source_meta.data == expected

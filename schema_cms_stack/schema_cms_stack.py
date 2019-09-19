@@ -1,10 +1,11 @@
 from aws_cdk import core, aws_ec2, aws_sqs, aws_apigateway, aws_lambda, aws_ecs, aws_iam, aws_ecs_patterns, aws_rds,\
     aws_secretsmanager, aws_codebuild, aws_ecr, aws_codepipeline, aws_codepipeline_actions, aws_stepfunctions,\
-    aws_stepfunctions_tasks
+    aws_stepfunctions_tasks, aws_certificatemanager
 
 DB_NAME = 'gistdb'
 
 INSTALLATION_MODE_CONTEXT_KEY = 'installation_mode'
+DOMAIN_NAME_CONTEXT_KEY = 'domain_name'
 
 INSTALLATION_MODE_FULL = 'full'
 INSTALLATION_MODEL_APP_ONLY = 'app_only'
@@ -21,6 +22,12 @@ class BaseResources(core.Stack):
             self,
             'schema-cms-app-ecr',
             repository_name='schema-cms-app',
+            removal_policy=core.RemovalPolicy.DESTROY,
+        )
+        self.nginx_registry = aws_ecr.Repository(
+            self,
+            'schema-cms-nginx-ecr',
+            repository_name='schema-cms-nginx',
             removal_policy=core.RemovalPolicy.DESTROY,
         )
         self.worker_registry = aws_ecr.Repository(
@@ -52,6 +59,14 @@ class BaseResources(core.Stack):
             delete_automated_backups=True,
         )
         self.db_secret_rotation = self.db.add_rotation_single_user('db-rotation')
+
+
+class CertsStack(core.Stack):
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+        domain_name = self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+        self.cert = aws_certificatemanager.Certificate(self, 'cert', domain_name=domain_name)
 
 
 class Workers(core.Stack):
@@ -161,10 +176,12 @@ class API(core.Stack):
 
         installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
         api_image = aws_ecs.ContainerImage.from_asset('backend/app')
+        nginx_image = aws_ecs.ContainerImage.from_asset('nginx')
         if installation_mode == INSTALLATION_MODE_FULL:
             tag_from_context = self.node.try_get_context('app_image_tag')
             tag = tag_from_context if tag_from_context is not 'undefined' else None
             api_image = aws_ecs.ContainerImage.from_ecr_repository(scope.base.app_registry, tag)
+            nginx_image = aws_ecs.ContainerImage.from_ecr_repository(scope.base.nginx_registry, tag)
 
         env_map = {
             'DJANGO_SOCIAL_AUTH_AUTH0_KEY': 'django_social_auth_auth0_key_arn',
@@ -174,31 +191,42 @@ class API(core.Stack):
             'DJANGO_USER_MGMT_AUTH0_DOMAIN': 'django_user_mgmt_auth0_domain_arn',
             'DJANGO_USER_MGMT_AUTH0_KEY': 'django_user_mgmt_auth0_key_arn',
             'DJANGO_USER_MGMT_AUTH0_SECRET': 'django_user_mgmt_auth0_secret_arn',
+            'DJANGO_WEBAPP_HOST': 'django_webapp_host_arn',
         }
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
 
-        self.api = aws_ecs_patterns.LoadBalancedFargateService(
+        self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
             self,
             'api-service',
             cluster=scope.base.cluster,
-            image=api_image,
+            image=nginx_image,
             desired_count=1,
             cpu=256,
             memory_limit_mib=512,
-            container_name='backend',
+            container_name='nginx',
             enable_logging=True,
+            container_port=80,
+            certificate=scope.certs.cert,
+        )
+
+        self.api.task_definition.add_container(
+            'backend',
+            image=api_image,
+            logging=aws_ecs.AwsLogDriver(stream_prefix='backend-container'),
             environment={
                 'WORKER_STM_ARN': scope.workers.worker_state_machine.state_machine_arn,
                 'DB_SECRET_ARN': scope.base.db.secret.secret_arn,
                 'POSTGRES_DB': DB_NAME,
             },
-            container_port=8000,
             secrets={
                 'DJANGO_SECRET_KEY': django_secret_key,
                 **env,
-            }
+            },
+            cpu=256,
+            memory_limit_mib=512,
         )
+
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
         scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
 
@@ -337,6 +365,35 @@ class CIPipeline(core.Stack):
             action_name='build_app',
             input=source_output,
             project=build_app_project,
+            run_order=1,
+        )
+
+        nginx_build_spec = aws_codebuild.BuildSpec.from_source_filename('buildspec-nginx.yaml')
+        build_nginx_project = aws_codebuild.PipelineProject(
+            self,
+            'build_nginx_project',
+            project_name='schema_cms_nginx_build',
+            environment=aws_codebuild.BuildEnvironment(
+                environment_variables={
+                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
+                        value=scope.base.nginx_registry.repository_uri
+                    ),
+                    'PUSH_IMAGES': aws_codebuild.BuildEnvironmentVariable(
+                        value='1'
+                    ),
+                },
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+                privileged=True,
+            ),
+            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
+            build_spec=nginx_build_spec,
+        )
+        scope.base.nginx_registry.grant_pull_push(build_nginx_project)
+
+        build_nginx_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name='build_nginx',
+            input=source_output,
+            project=build_nginx_project,
             run_order=2,
             extra_inputs=[fe_artifact]
         )
@@ -443,6 +500,7 @@ class CIPipeline(core.Stack):
             actions=[
                 build_fe_action,
                 build_app_action,
+                build_nginx_action,
                 build_workers_action,
                 build_public_api_lambda_action,
                 build_workers_success_lambda_action,

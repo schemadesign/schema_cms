@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import ArrowLeftSVG from '../../../images/icons/arrow-left.svg';
-import { containerStyles } from '../arrowLeftIcon/arrowLeftIcon.styles';
+import { containerStyles } from './arrowLeftIcon.styles';
 
 export class ArrowLeftIcon extends PureComponent {
   static propTypes = {

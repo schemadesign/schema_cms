@@ -40,6 +40,7 @@ describe('FileUpload: Component', () => {
   it('should render with custom icon', () => {
     const props = {
       id: 'id',
+      label: 'label',
       iconComponent: <span>icon</span>,
     };
 
@@ -50,6 +51,7 @@ describe('FileUpload: Component', () => {
   it('should render with custom styles', () => {
     const props = {
       id: 'id',
+      label: 'label',
       customStyles: {
         backgroundColor: 'red',
       },

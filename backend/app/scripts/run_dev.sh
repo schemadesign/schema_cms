@@ -32,6 +32,20 @@ LAMBDA_ARN=$(get_public_api_lambda_arn)
     echo "Public API rest api NOT created"
 }
 
+{
+    create_s3_bucket "datasources" &&
+    echo "Scripts S3 bucket created"
+} || {
+    echo "Scripts S3 bucket NOT created"
+}
+
+{
+    create_sqs_queue "worker" &&
+    echo "SQS Queue worker created"
+} || {
+    echo "SQS Queue worker NOT created"
+}
+
 API_ID=$(get_rest_api_id)
 
 API_ID=${API_ID:0:10}
@@ -83,4 +97,5 @@ echo "LocalStack fixtures installed"
 
 python wait_for_postgres.py &&
                ./manage.py migrate &&
+               ./manage.py initialuser &&
                ./manage.py runserver 0.0.0.0:8000

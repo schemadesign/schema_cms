@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import RadioGroupContext from './radioGroup.context';
 
+import RadioGroupContext from './radioGroup.context';
 import { containerStyles } from './radioGroup.styles';
 
 export class RadioGroup extends PureComponent {

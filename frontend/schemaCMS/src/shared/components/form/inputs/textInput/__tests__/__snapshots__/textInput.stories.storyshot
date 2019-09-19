@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components/TextInput Default 1`] = `
+exports[`Storyshots Shared Components/Form/TextInput Default 1`] = `
 <div
   className="sc-gqjmRU hnZXkc"
 >
@@ -15,6 +15,23 @@ exports[`Storyshots Shared Components/TextInput Default 1`] = `
       }
     }
   >
+    <label
+      htmlFor="A_FIELD_NAME"
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "1px solid #F0EFEF",
+          "color": "#a6a7aa",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Field
+    </label>
     <input
       id="A_FIELD_NAME"
       name="A_FIELD_NAME"
@@ -30,7 +47,7 @@ exports[`Storyshots Shared Components/TextInput Default 1`] = `
         }
       }
       type="text"
-      value=""
+      value="Value"
     />
     <div
       style={

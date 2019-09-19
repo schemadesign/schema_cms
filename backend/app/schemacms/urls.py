@@ -24,6 +24,7 @@ urlpatterns = [
             [
                 urls.path("auth/", urls.include("schemacms.authorization.urls", namespace="authorization")),
                 urls.path("auth/", urls.include("social_django.urls")),
+                urls.path('', urls.include('schemacms.projects.urls')),
                 urls.path("", urls.include(current_user_router.urls)),
                 urls.path("", urls.include(router.urls)),
                 urls.path("", urls.include("rest_framework.urls", namespace="rest_framework")),

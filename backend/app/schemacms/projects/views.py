@@ -1,10 +1,11 @@
-import json
 import logging
 
-from rest_framework import decorators, exceptions, permissions, response, status, viewsets
+import django_fsm
+from django.db import transaction
+from rest_framework import decorators, exceptions, permissions, response, status, viewsets, generics, parsers
 
 from schemacms.users import permissions as user_permissions
-from . import constants, models, serializers, permissions as projects_permissions
+from . import constants, models, serializers, permissions as projects_permissions, services
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -54,7 +55,7 @@ class DataSourceViewSet(viewsets.ModelViewSet):
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-        data = json.loads(data_source.meta_data.preview.read())
+        data = data_source.meta_data.data
         data["data_source"] = {"name": data_source.name}
         return response.Response(data)
 
@@ -62,13 +63,51 @@ class DataSourceViewSet(viewsets.ModelViewSet):
     def process(self, request, pk=None, **kwargs):
         try:
             obj = self.get_object()
-            obj.preview_process()
+            if not django_fsm.can_proceed(obj.ready_for_processing):
+                return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            obj.ready_for_processing()
+            obj.process()
+            obj.done()
             obj.save()
-            logging.info(f"DataSource {self.get_object().id} processing DONE")
-            return response.Response(status=status.HTTP_200_OK)
+            logging.info(f"DataSource {obj.id} processing DONE")
+            return response.Response(obj.meta_data.data, status=status.HTTP_200_OK)
 
         except Exception as e:
             logging.error(f"DataSource {self.get_object().id} processing error - {e}")
             self.get_object().status = constants.DataSourceStatus.ERROR
             self.get_object().save()
             return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+
+class DataSourceScriptView(generics.GenericAPIView):
+    queryset = models.DataSource.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        serializer = serializers.DataSourceScriptSerializer(
+            instance=self.get_object().available_scripts, many=True
+        )
+        return response.Response(data=serializer.data)
+
+
+class DataSourceScriptUploadView(generics.GenericAPIView):
+    parser_classes = (parsers.FormParser, parsers.MultiPartParser)
+    queryset = models.DataSource.objects.all()
+    serializer_class = serializers.DataSourceScriptUploadSerializer
+
+    def post(self, request, **kwargs):
+        serializer = self.get_serializer(self.get_object(), data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return response.Response(status=status.HTTP_201_CREATED)
+
+
+class DataSourceJobView(generics.CreateAPIView):
+    queryset = models.DataSource.objects.all()
+    serializer_class = serializers.DataSourceJobSerializer
+
+    @transaction.atomic
+    def perform_create(self, serializer):
+        job = serializer.save(
+            datasource=self.get_object(), scripts_ref=models.DataSourceJob.generate_scripts_ref()
+        )
+        services.schedule_worker_with(job)

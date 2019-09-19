@@ -16,4 +16,4 @@ const decorator = story => <RadioGroupContext.Provider value={context}>{story()}
 
 storiesOf('Form/RadioButton', module)
   .addDecorator(decorator)
-  .add('Default', () => <RadioButton {...defaultProps}>cos</RadioButton>);
+  .add('Default', () => <RadioButton {...defaultProps}>name</RadioButton>);

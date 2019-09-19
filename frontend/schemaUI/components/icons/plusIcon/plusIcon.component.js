@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import PlusSVG from '../../../images/icons/plus.svg';
-import { containerStyles } from '../plusIcon/plusIcon.styles';
+import { containerStyles } from './plusIcon.styles';
 
 export class PlusIcon extends PureComponent {
   static propTypes = {

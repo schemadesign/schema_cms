@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { View } from './view';
 import { List } from './list';
+import { View as DataWranglingView } from './view/dataWrangling/view';
 
 const INITIAL_STEP = 1;
 
@@ -19,6 +20,7 @@ export class DataSource extends PureComponent {
     const listPath = `${match.path}/list`;
     const viewPath = `${match.path}/view/:dataSourceId`;
     const viewPathWithStep = `${viewPath}/:step`;
+    const scriptPath = `${viewPath}/script/view/:id`;
 
     return (
       <Switch>
@@ -27,6 +29,8 @@ export class DataSource extends PureComponent {
 
         <Route exact path={listPath} component={List} />
         <Route exact path={viewPathWithStep} component={View} />
+
+        <Route exact path={scriptPath} component={DataWranglingView} />
       </Switch>
     );
   }

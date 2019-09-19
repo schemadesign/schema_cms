@@ -1,25 +1,21 @@
 from django.contrib import admin
 from django.db import transaction
 
-from .models import DataSource, Project
+from . import models
 
 
-admin.site.register(Project)
+admin.site.register(models.Project)
 
 
-@admin.register(DataSource)
+@admin.register(models.DataSource)
 class DataSource(admin.ModelAdmin):
+    @transaction.atomic()
     def save_model(self, request, obj, form, change):
-        if not change and obj.file:
-            file = obj.file
-            obj.file = None
-            with transaction.atomic():
-                super().save_model(request, obj, form, change)
-                obj.file.save(file.name, file)
-                obj.preview_process()
-                obj.save()
-        else:
-            with transaction.atomic():
-                super().save_model(request, obj, form, change)
-                obj.preview_process()
-                obj.save()
+        super().save_model(request, obj, form, change)
+        if 'file' in form.changed_data and obj.file:
+            obj.update_meta()
+
+
+@admin.register(models.DataSourceJob)
+class DataSourceJobAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'datasource', 'created')

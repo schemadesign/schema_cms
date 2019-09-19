@@ -3,27 +3,29 @@ import { storiesOf } from '@storybook/react';
 
 import { View } from './view.component';
 
-const defaultProps = {
+export const defaultProps = {
   dataSource: {},
+  dataWranglings: [],
   fetchDataSource: Function.prototype,
   unmountDataSource: Function.prototype,
   removeDataSource: Function.prototype,
-  handleChange: Function.prototype,
-  handleSubmit: Function.prototype,
-  setFieldValue: Function.prototype,
+  updateDataSource: Function.prototype,
+  fetchDataWrangling: Function.prototype,
+  uploadScript: Function.prototype,
+  sendUpdatedDataWrangling: Function.prototype,
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
   history: {
     push: Function.prototype,
   },
-  values: {},
   match: {
     params: {
       projectId: '1',
       dataSourceId: '1',
       step: '1',
     },
+    url: '/project/view/1/datasource/view/1/1',
   },
 };
 

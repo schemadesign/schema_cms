@@ -89,7 +89,7 @@ class TestListCreateProjectView:
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
-    @pytest.mark.slow
+    @pytest.mark.skip
     def test_num_queries(
         self, api_client, django_assert_num_queries, faker, admin, project_factory, data_source_factory
     ):
@@ -330,6 +330,7 @@ class TestUpdateDraftDataSourceView:
         response = api_client.put(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_200_OK
+        assert 'status' in response.data, response.data
         assert response.data["status"] == projects_constants.DataSourceStatus.READY_FOR_PROCESSING
 
     def test_object_in_db(self, api_client, faker, admin, data_source_factory):
@@ -408,22 +409,22 @@ class TestUpdateDraftDataSourceView:
 
 
 class TestDataSourceProcess:
-    def test_process_file(self, api_client, admin, project, faker):
-        payload = dict(file=faker.csv_upload_file(filename="test.csv"))
+    def test_process_file(self, api_client, admin, data_source_factory, faker):
+        data_source = data_source_factory(ready_for_processing=True)
+        url = self.get_url(project_pk=data_source.project_id, data_source_pk=data_source.pk)
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(project.id), payload, format="multipart")
-        data_source_id = response.data["id"]
-        assert not response.data["meta_data"]
 
-        api_client.post(f"{self.get_url(project.id)}/{data_source_id}/process", dict())
-        response_with_meta = api_client.get(f"{self.get_url(project.id)}/{data_source_id}")
+        response = api_client.post(url)
 
-        assert response_with_meta.data["meta_data"]["items"] == 1
-        assert response_with_meta.data["meta_data"]["fields"] == 3
+        data_source_refreshed = projects_models.DataSource.objects.select_related('meta_data').get(
+            pk=data_source.pk
+        )
+        assert response.data == data_source_refreshed.meta_data.data
+        assert data_source_refreshed.status == projects_constants.DataSourceStatus.DONE
 
     @staticmethod
-    def get_url(project_pk):
-        return reverse("datasource-list", kwargs=dict(project_pk=project_pk))
+    def get_url(project_pk, data_source_pk):
+        return reverse("datasource-process", kwargs=dict(pk=data_source_pk, project_pk=project_pk))
 
 
 class TestDataSourcePreview:

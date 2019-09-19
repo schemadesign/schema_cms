@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { equals, ifElse } from 'ramda';
 
-import { buttonStyles, containerStyles, inputStyles, labelStyles } from './fileUpload.styles';
+import { buttonStyles, containerStyles, getLabelStyles, inputStyles } from './fileUpload.styles';
 import { containerStyles as defaultButtonStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
 import { TextField } from '../textField';
@@ -33,17 +34,16 @@ export class FileUpload extends PureComponent {
     ),
   };
 
-  iconComponent = id => (
-    <label style={labelStyles} htmlFor={id}>
+  iconComponent = ({ id, label }) => (
+    <label style={getLabelStyles(label)} htmlFor={id}>
       {this.props.iconComponent}
     </label>
   );
 
-  render() {
-    const { fileName, label, onChange, accept, id, customStyles, customLabelStyles, customInputStyles } = this.props;
-
-    return (
-      <div style={containerStyles}>
+  renderTextField = ({ fileName, label, id, customStyles, customLabelStyles, customInputStyles }) =>
+    ifElse(
+      equals(true),
+      () => (
         <TextField
           name="fileName"
           label={label}
@@ -53,9 +53,28 @@ export class FileUpload extends PureComponent {
           customStyles={customStyles}
           customLabelStyles={customLabelStyles}
           customInputStyles={customInputStyles}
-          iconComponent={this.iconComponent(id)}
+          iconComponent={this.iconComponent({ id, label })}
         />
-        <input style={inputStyles} aria-hidden id={id} type="file" onChange={onChange} accept={accept} />
+      ),
+      () => this.iconComponent({ id, label })
+    )(!!label);
+
+  render() {
+    const {
+      id,
+      fileName,
+      label,
+      customStyles,
+      customLabelStyles,
+      customInputStyles,
+      iconComponent,
+      ...props
+    } = this.props;
+
+    return (
+      <div style={containerStyles}>
+        {this.renderTextField({ fileName, label, id, customStyles, customLabelStyles, customInputStyles })}
+        <input style={inputStyles} aria-hidden id={id} type="file" {...props} />
       </div>
     );
   }
