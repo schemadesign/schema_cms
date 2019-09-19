@@ -44,18 +44,18 @@ class S3ScriptResource(ScriptResource):
         self.bucket = s3.Bucket(bucket_name)
         self.upload_path = upload_path
 
-    def upload_path(self, datasource):
+    def get_upload_path(self, datasource):
         return self.upload_path.format(datasource.pk)
 
     def list(self, obj):
         return [
             {'key': self.ref_name(obj.key)}
-            for obj in self.bucket.objects.filter(Prefix=self.upload_path(obj))
+            for obj in self.bucket.objects.filter(Prefix=self.get_upload_path(obj))
         ]
 
     def upload(self, obj, uploaded_file):
         return self.bucket.put_object(
-            Key=os.path.join(self.upload_path(obj), uploaded_file.name), Body=uploaded_file
+            Key=os.path.join(self.get_upload_path(obj), uploaded_file.name), Body=uploaded_file
         )
 
     def getvalue(self, ref_key):
