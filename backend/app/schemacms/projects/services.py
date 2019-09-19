@@ -5,7 +5,6 @@ import zipfile
 
 import boto3
 from django.conf import settings
-from django.utils import crypto
 
 s3 = boto3.resource(
     's3',
