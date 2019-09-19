@@ -18,7 +18,7 @@ export const customInputStyles = {
   textOverflow: 'ellipsis',
 };
 
-export const labelStyles = {
-  top: 10,
+export const getLabelStyles = label => ({
+  top: label ? 10 : 0,
   position: 'relative',
-};
+});

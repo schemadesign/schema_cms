@@ -7,6 +7,9 @@ const prefix = 'DATA_WRANGLING/';
 export const DataWranglingRoutines = {
   fetchOne: createRoutine(`${prefix}FETCH_ONE`),
   unmountOne: createRoutine(`${prefix}UNMOUNT_ONE`),
+  fetchList: createRoutine(`${prefix}FETCH_LIST`),
+  sendList: createRoutine(`${prefix}SEND_LIST`),
+  uploadScript: createRoutine(`${prefix}UPLOAD_SCRIPT`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -15,9 +18,11 @@ export const INITIAL_STATE = new Immutable({
 });
 
 const updateDataWrangling = (state = INITIAL_STATE, { payload }) => state.set('dataWrangling', payload);
+const updateDataWranglings = (state = INITIAL_STATE, { payload }) => state.set('dataWranglings', payload);
 const unmountDataWrangling = (state = INITIAL_STATE) => state.set('dataWrangling', INITIAL_STATE.dataWrangling);
 
 export const reducer = createReducer(INITIAL_STATE, {
   [DataWranglingRoutines.fetchOne.SUCCESS]: updateDataWrangling,
   [DataWranglingRoutines.unmountOne.TRIGGER]: unmountDataWrangling,
+  [DataWranglingRoutines.fetchList.SUCCESS]: updateDataWranglings,
 });

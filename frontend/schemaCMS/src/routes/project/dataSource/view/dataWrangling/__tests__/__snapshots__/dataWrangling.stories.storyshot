@@ -14,44 +14,76 @@ exports[`Storyshots DataWrangling Default 1`] = `
       className="sc-cMljjf hEDWUK"
     >
       <span>
-        2 Step
+        2 Steps
       </span>
     </div>
     <div
       className="sc-jDwBTQ gMNiDG"
     >
-      <button
-        style={
-          Object {
-            "backgroundColor": "#f0efef",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#1d1d20",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fontSize": "18px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-          }
-        }
+      <div
+        style={Object {}}
       >
-        <svg
+        <label
+          htmlFor="fileUpload"
           style={
             Object {
-              "fill": "#1d1d20",
-              "height": "60px",
-              "width": "60px",
+              "position": "relative",
+              "top": 0,
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
-          />
-        </svg>
-      </button>
+          <div
+            style={
+              Object {
+                "backgroundColor": "#f0efef",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#1d1d20",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontSize": 0,
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#1d1d20",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+              />
+            </svg>
+          </div>
+        </label>
+        <input
+          accept=".py"
+          aria-hidden={true}
+          disabled={false}
+          id="fileUpload"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="file"
+        />
+      </div>
     </div>
   </div>
   <div
@@ -78,8 +110,8 @@ exports[`Storyshots DataWrangling Default 1`] = `
       <input
         aria-hidden={true}
         checked={false}
-        id={0}
-        name="name 1"
+        id="checkbox-0"
+        name="steps"
         onChange={[Function]}
         style={
           Object {
@@ -128,7 +160,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
           />
         </svg>
         <label
-          htmlFor={0}
+          htmlFor="checkbox-0"
           style={
             Object {
               "cursor": "pointer",
@@ -167,9 +199,9 @@ exports[`Storyshots DataWrangling Default 1`] = `
     >
       <input
         aria-hidden={true}
-        checked={true}
-        id={1}
-        name="name 2"
+        checked={false}
+        id="checkbox-1"
+        name="steps"
         onChange={[Function]}
         style={
           Object {
@@ -218,7 +250,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
           />
         </svg>
         <label
-          htmlFor={1}
+          htmlFor="checkbox-1"
           style={
             Object {
               "cursor": "pointer",
@@ -226,7 +258,6 @@ exports[`Storyshots DataWrangling Default 1`] = `
           }
         >
           <svg
-            stroke="#000"
             style={
               Object {
                 "height": "30px",
@@ -236,20 +267,10 @@ exports[`Storyshots DataWrangling Default 1`] = `
             }
             viewBox="0 0 30 30"
           >
-            <g
+            <path
+              d="M7.5 7.5h15v15h-15z"
               fill="none"
-              fillRule="evenodd"
-            >
-              <path
-                d="M20.455 7.5H7.5v15h15v-6.136"
-                strokeLinecap="square"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M11 12l5 5L26 7"
-                strokeWidth={3}
-              />
-            </g>
+            />
           </svg>
         </label>
       </div>

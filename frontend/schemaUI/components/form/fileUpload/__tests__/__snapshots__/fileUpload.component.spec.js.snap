@@ -4,48 +4,35 @@ exports[`FileUpload: Component should render correctly 1`] = `
 <div
   style={Object {}}
 >
-  <TextField
-    customInputStyles={Object {}}
-    customLabelStyles={Object {}}
-    customStyles={Object {}}
-    disabled={true}
-    error={false}
-    fullWidth={true}
-    iconComponent={
-      <label
-        htmlFor="id"
-        style={
-          Object {
-            "position": "relative",
-            "top": 10,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "backgroundColor": "#f0efef",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#1d1d20",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fontSize": 0,
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-            }
-          }
-        >
-          <UploadIcon />
-        </div>
-      </label>
+  <label
+    htmlFor="id"
+    style={
+      Object {
+        "position": "relative",
+        "top": 0,
+      }
     }
-    name="fileName"
-    type="text"
-    value="Select a file"
-  />
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": 0,
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+    >
+      <UploadIcon />
+    </div>
+  </label>
   <input
     aria-hidden={true}
     id="id"
@@ -90,6 +77,7 @@ exports[`FileUpload: Component should render with custom icon 1`] = `
         </span>
       </label>
     }
+    label="label"
     name="fileName"
     type="text"
     value="Select a file"
@@ -166,6 +154,7 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
         </div>
       </label>
     }
+    label="label"
     name="fileName"
     type="text"
     value="Select a file"
@@ -238,6 +227,7 @@ exports[`FileUpload: Component should render with file name 1`] = `
   <input
     aria-hidden={true}
     id="id"
+    name="name.csv"
     style={
       Object {
         "height": 0,

@@ -5,10 +5,14 @@ import { View } from './view.component';
 
 export const defaultProps = {
   dataSource: {},
+  dataWranglings: [],
   fetchDataSource: Function.prototype,
   unmountDataSource: Function.prototype,
   removeDataSource: Function.prototype,
   updateDataSource: Function.prototype,
+  fetchDataWrangling: Function.prototype,
+  uploadScript: Function.prototype,
+  sendUpdatedDataWrangling: Function.prototype,
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },

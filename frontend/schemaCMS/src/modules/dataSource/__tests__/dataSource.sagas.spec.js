@@ -7,8 +7,8 @@ import nock from 'nock';
 import { watchDataSource } from '../dataSource.sagas';
 import { DataSourceRoutines } from '../dataSource.redux';
 import mockApi from '../../../shared/utils/mockApi';
-import { DATA_SOURCE_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
-import { STATUS_DRAFT, STATUS_READY_FOR_PROCESSING, STATUS_DONE } from '../dataSource.constants';
+import { DATA_SOURCES_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
+import { STATUS_DONE, STATUS_DRAFT, STATUS_READY_FOR_PROCESSING } from '../dataSource.constants';
 import browserHistory from '../../../shared/utils/history';
 
 describe('DataSource: sagas', () => {
@@ -27,7 +27,7 @@ describe('DataSource: sagas', () => {
         status: STATUS_DRAFT,
       };
 
-      mockApi.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`, requestData).reply(OK, responseData);
+      mockApi.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`, requestData).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -46,7 +46,7 @@ describe('DataSource: sagas', () => {
       };
 
       mockApi
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`)
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`)
         .reply(OK, responseData);
 
       await expectSaga(watchDataSource)
@@ -79,7 +79,7 @@ describe('DataSource: sagas', () => {
     });
 
     it('should dispatch a success action', async () => {
-      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`).reply(OK, responseDoneData);
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`).reply(OK, responseDoneData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -90,9 +90,9 @@ describe('DataSource: sagas', () => {
 
     it('should dispatch a success actions until processing of some elements finish', async () => {
       mockApi
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`)
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`)
         .reply(OK, responseData)
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`)
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`)
         .reply(OK, responseDoneData);
 
       await expectSaga(watchDataSource)
@@ -105,7 +105,7 @@ describe('DataSource: sagas', () => {
     });
 
     it('should dispatch once fulfill actions after cancel', async () => {
-      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`).reply(OK, responseData);
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -120,7 +120,7 @@ describe('DataSource: sagas', () => {
     it('should dispatch a success action', async () => {
       const payload = { projectId: '1', dataSourceId: '1' };
 
-      mockApi.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`).reply(OK);
+      mockApi.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(OK);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -151,14 +151,14 @@ describe('DataSource: sagas', () => {
 
       mockApi
         .patch(
-          `${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`,
+          `${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`,
           /form-data; name="data"[^]*data/m,
           options
         )
         .reply(OK, responseData);
 
       mockApi
-        .post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}/process`)
+        .post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`)
         .reply(OK);
     });
 
@@ -202,7 +202,7 @@ describe('DataSource: sagas', () => {
       };
 
       mockApi
-        .post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}/process`)
+        .post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`)
         .reply(OK);
 
       await expectSaga(watchDataSource)
@@ -225,7 +225,7 @@ describe('DataSource: sagas', () => {
       };
 
       mockApi
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}/preview`)
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}/preview`)
         .reply(OK, responseData);
 
       await expectSaga(watchDataSource)
