@@ -20,9 +20,13 @@ export const Empty = styled.div`
   width: 33%;
 `;
 
-export const ButtonContainer = styled.div`
+export const UploadContainer = styled.div`
   width: 33%;
   text-align: right;
+`;
+
+export const Error = styled.div`
+  color: ${Theme.primary.error};
 `;
 
 export const Link = styled(RouterLink)`

@@ -1,7 +1,57 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 
-import api from '../../shared/services/api';
 import { DataWranglingRoutines } from './dataWrangling.redux';
+import api from '../../shared/services/api';
+import { DATA_SOURCE_PATH, DATA_WRANGLING_JOB_PATH, DATA_WRANGLING_PATH } from '../../shared/utils/api.constants';
+import browserHistory from '../../shared/utils/history';
+
+function* fetchList({ payload: { dataSourceId } }) {
+  try {
+    yield put(DataWranglingRoutines.fetchList.request());
+
+    const { data } = yield api.get(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_PATH}`);
+
+    yield put(DataWranglingRoutines.fetchList.success(data));
+  } catch (e) {
+    yield put(DataWranglingRoutines.fetchList.failure());
+  } finally {
+    yield put(DataWranglingRoutines.fetchList.fulfill());
+  }
+}
+
+function* sendList({ payload: { steps, dataSourceId, projectId } }) {
+  try {
+    yield put(DataWranglingRoutines.sendList.request());
+
+    yield api.put(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
+
+    browserHistory.push(`/project/view/${projectId}/datasource/list`);
+    yield put(DataWranglingRoutines.sendList.success());
+  } catch (e) {
+    yield put(DataWranglingRoutines.sendList.failure());
+  } finally {
+    yield put(DataWranglingRoutines.sendList.fulfill());
+  }
+}
+
+function* uploadScript({ payload: { script, dataSourceId } }) {
+  try {
+    yield put(DataWranglingRoutines.uploadScript.request());
+    const formData = new FormData();
+    const headers = { 'Content-Type': 'multipart/form-data' };
+
+    formData.append('script', script);
+
+    yield api.post(`${DATA_SOURCE_PATH}/${dataSourceId}/script-upload`, formData, { headers });
+
+    yield put(DataWranglingRoutines.fetchList({ dataSourceId }));
+    yield put(DataWranglingRoutines.uploadScript.success());
+  } catch (e) {
+    yield put(DataWranglingRoutines.uploadScript.failure());
+  } finally {
+    yield put(DataWranglingRoutines.uploadScript.fulfill());
+  }
+}
 
 function* fetchOne({ payload }) {
   try {
@@ -19,5 +69,10 @@ function* fetchOne({ payload }) {
 }
 
 export function* watchDataWrangling() {
-  yield all([takeLatest(DataWranglingRoutines.fetchOne.TRIGGER, fetchOne)]);
+  yield all([
+    takeLatest(DataWranglingRoutines.fetchList.TRIGGER, fetchList),
+    takeLatest(DataWranglingRoutines.sendList.TRIGGER, sendList),
+    takeLatest(DataWranglingRoutines.uploadScript.TRIGGER, uploadScript),
+    takeLatest(DataWranglingRoutines.fetchOne.TRIGGER, fetchOne),
+  ]);
 }

@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Shared Components/Form/Select Default 1`] = `
+<div>
+  <div
+    className="sc-jTzLTM bQNCHF"
+  >
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "1px solid #F0EFEF",
+          "color": "#a6a7aa",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Selector
+    </label>
+    <input
+      hidden={true}
+      name="selectField"
+      onChange={[Function]}
+      value="one"
+    />
+    <div
+      style={
+        Object {
+          "border": "1px solid #D2D2D2",
+          "display": "flex",
+          "maxWidth": "300px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "padding": "7px",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "height": "30px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "cursor": "pointer",
+                "display": "flex",
+                "height": "30px",
+              }
+            }
+          >
+            One
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "display": "none",
+              "flexDirection": "column",
+              "left": "0",
+              "maxHeight": "175px",
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": "46px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            id="select-item-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "none",
+                "cursor": "pointer",
+                "display": "flex",
+                "padding": "7px",
+              }
+            }
+          >
+            One
+          </div>
+          <div
+            id="select-item-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid #D2D2D2",
+                "cursor": "pointer",
+                "display": "flex",
+                "padding": "7px",
+              }
+            }
+          >
+            Two
+          </div>
+          <div
+            id="select-item-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid #D2D2D2",
+                "cursor": "pointer",
+                "display": "flex",
+                "padding": "7px",
+              }
+            }
+          >
+            Three
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  Value: 
+  one
+</div>
+`;

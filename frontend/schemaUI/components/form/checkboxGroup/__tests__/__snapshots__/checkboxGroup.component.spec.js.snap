@@ -16,7 +16,7 @@ exports[`CheckboxGroup: Component should render correctly 1`] = `
       Object {
         "checkedIcon": <CheckboxOnIcon />,
         "customCheckboxStyles": Object {},
-        "isEdit": true,
+        "isEdit": undefined,
         "name": "name",
         "onChange": [Function],
         "uncCheckedIcon": <CheckboxOffIcon />,
@@ -29,15 +29,18 @@ exports[`CheckboxGroup: Component should render correctly 1`] = `
     <Checkbox
       id="checkbox 1"
       key="1"
-      label="checkbox 1"
       value="checkbox 1"
-    />
+    >
+      checkbox 1
+    </Checkbox>
     <Checkbox
       id="checkbox 2"
+      isEdit={true}
       key="2"
-      label="checkbox 2"
       value="checkbox 2"
-    />
+    >
+      checkbox 2
+    </Checkbox>
   </ContextProvider>
 </div>
 `;

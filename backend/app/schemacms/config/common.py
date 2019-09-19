@@ -205,6 +205,7 @@ class Common(Configuration):
         "DEFAULT_AUTHENTICATION_CLASSES": (
             "rest_framework_jwt.authentication.JSONWebTokenAuthentication",
             "rest_framework.authentication.SessionAuthentication",
+            "rest_framework.authentication.TokenAuthentication",
         ),
     }
 
@@ -277,3 +278,14 @@ class Common(Configuration):
     USER_MGMT_AUTH0_DOMAIN = os.getenv("DJANGO_USER_MGMT_AUTH0_DOMAIN")
     USER_MGMT_AUTH0_KEY = os.getenv("DJANGO_USER_MGMT_AUTH0_KEY")
     USER_MGMT_AUTH0_SECRET = os.getenv("DJANGO_USER_MGMT_AUTH0_SECRET")
+
+    AWS_S3_ENDPOINT_URL = os.getenv("AWS_S3_ENDPOINT_URL")
+    AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+
+    DATASOURCE_S3_BUCKET = 'datasources'
+    DS_SCRIPTS_UPLOAD_PATH = '/datasource/{}/scripts/'
+    DS_JOB_UPLOAD_PATH = '/datasource/{}/jobs/'
+
+    AWS_SQS_ENDPOINT_URL = os.getenv('SQS_ENDPOINT_URL')
+    SQS_WORKER_QUEUE_URL = os.getenv('SQS_WORKER_QUEUE_URL')

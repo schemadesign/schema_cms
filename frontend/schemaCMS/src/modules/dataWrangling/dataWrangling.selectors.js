@@ -7,3 +7,8 @@ export const selectDataWrangling = createSelector(
   selectDataWranglingDomain,
   prop('dataWrangling')
 );
+
+export const selectDataWranglings = createSelector(
+  selectDataWranglingDomain,
+  prop('dataWranglings')
+);

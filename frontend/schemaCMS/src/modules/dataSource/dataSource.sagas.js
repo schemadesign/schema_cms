@@ -4,7 +4,7 @@ import { pipe, forEach, keys, any, anyPass, propEq } from 'ramda';
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
-import { DATA_SOURCE_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
+import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { FETCH_LIST_DELAY, STATUS_PROCESSING, STATUS_READY_FOR_PROCESSING } from './dataSource.constants';
 
 function* create({ payload }) {
@@ -12,7 +12,7 @@ function* create({ payload }) {
     yield put(DataSourceRoutines.create.request());
 
     const requestData = { project: payload.projectId };
-    const { data } = yield api.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`, requestData);
+    const { data } = yield api.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`, requestData);
 
     browserHistory.push(`/project/view/${payload.projectId}/datasource/view/${data.id}`);
     yield put(DataSourceRoutines.create.success(data));
@@ -26,7 +26,7 @@ function* create({ payload }) {
 function* removeOne({ payload }) {
   try {
     yield put(DataSourceRoutines.removeOne.request());
-    yield api.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`);
+    yield api.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`);
 
     browserHistory.push(`/project/view/${payload.projectId}/datasource/list`);
     yield put(DataSourceRoutines.removeOne.success());
@@ -41,7 +41,7 @@ function* fetchOne({ payload }) {
   try {
     yield put(DataSourceRoutines.fetchOne.request());
 
-    const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}/${payload.dataSourceId}`);
+    const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`);
 
     yield put(DataSourceRoutines.fetchOne.success(data));
   } catch (error) {
@@ -60,7 +60,7 @@ function* fetchListLoop(payload) {
     while (true) {
       yield put(DataSourceRoutines.fetchList.request());
 
-      const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCE_PATH}`);
+      const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`);
 
       yield put(DataSourceRoutines.fetchList.success(data.results));
 
@@ -96,7 +96,7 @@ function* updateOne({ payload: { projectId, dataSourceId, requestData, step } })
       forEach(name => formData.append(name, requestData[name]))
     )(requestData);
 
-    const { data } = yield api.patch(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}`, formData, {
+    const { data } = yield api.patch(`${PROJECTS_PATH}/${projectId}${DATA_SOURCES_PATH}/${dataSourceId}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
@@ -116,7 +116,7 @@ function* updateOne({ payload: { projectId, dataSourceId, requestData, step } })
 function* processOne({ payload: { projectId, dataSourceId } }) {
   try {
     yield put(DataSourceRoutines.processOne.request());
-    yield api.post(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}/process`);
+    yield api.post(`${PROJECTS_PATH}/${projectId}${DATA_SOURCES_PATH}/${dataSourceId}/process`);
     yield put(DataSourceRoutines.processOne.success());
   } catch (error) {
     yield put(DataSourceRoutines.processOne.failure());
@@ -130,7 +130,7 @@ function* fetchFields({ payload }) {
     yield put(DataSourceRoutines.fetchOne.request());
 
     const { projectId, dataSourceId } = payload;
-    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${DATA_SOURCE_PATH}/${dataSourceId}${PREVIEW_PATH}`);
+    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${DATA_SOURCES_PATH}/${dataSourceId}${PREVIEW_PATH}`);
 
     yield put(DataSourceRoutines.fetchFields.success(data));
   } catch (error) {

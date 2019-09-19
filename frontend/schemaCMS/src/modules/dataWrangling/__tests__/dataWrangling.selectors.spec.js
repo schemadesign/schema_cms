@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectDataWranglingDomain, selectDataWrangling } from '../dataWrangling.selectors';
+import { selectDataWranglings, selectDataWrangling, selectDataWranglingDomain } from '../dataWrangling.selectors';
 
 describe('DataWrangling: selectors', () => {
   const state = Immutable({
@@ -14,6 +14,10 @@ describe('DataWrangling: selectors', () => {
   describe('selectDataWranglingDomain', () => {
     it('should select a domain', () => {
       expect(selectDataWranglingDomain(state)).to.equal(state.dataWrangling);
+    });
+
+    it('should select a data wranglings', () => {
+      expect(selectDataWranglings(state)).to.equal(state.dataWrangling.dataWranglings);
     });
 
     it('should select a dataWrangling', () => {

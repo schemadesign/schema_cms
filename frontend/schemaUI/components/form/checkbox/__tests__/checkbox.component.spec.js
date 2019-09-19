@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { Checkbox } from '../checkbox.component';
-import { defaultProps, context } from '../checkbox.stories';
+import { defaultProps, checkedProps, context } from '../checkbox.stories';
 import CheckboxGroupContext from '../../checkboxGroup/checkboxGroup.context';
 
 describe('RadioButton: Component', () => {
@@ -21,6 +21,11 @@ describe('RadioButton: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render checked', () => {
+    const wrapper = render(checkedProps);
     global.expect(wrapper).toMatchSnapshot();
   });
 });
