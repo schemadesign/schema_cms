@@ -36,6 +36,12 @@ class BaseResources(core.Stack):
             repository_name='schema-cms-worker',
             removal_policy=core.RemovalPolicy.DESTROY,
         )
+        self.webapp_registry = aws_ecr.Repository(
+            self,
+            'schema-cms-webapp-ecr',
+            repository_name='schema-cms-webapp',
+            removal_policy=core.RemovalPolicy.DESTROY,
+        )
 
         self.vpc = aws_ec2.Vpc(self, 'vpc', nat_gateways=1)
         self.cluster = aws_ecs.Cluster(
@@ -324,19 +330,34 @@ class CIPipeline(core.Stack):
             'build_fe_project',
             project_name='schema_cms_fe_build',
             environment=aws_codebuild.BuildEnvironment(
+                environment_variables={
+                    'NGINX_REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
+                        value=scope.base.nginx_registry.repository_uri
+                    ),
+                    'APP_REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
+                        value=scope.base.app_registry.repository_uri
+                    ),
+                    'WEBAPP_REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
+                        value=scope.base.webapp_registry.repository_uri
+                    ),
+                    'PUSH_IMAGES': aws_codebuild.BuildEnvironmentVariable(
+                        value='1'
+                    ),
+                },
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
             ),
             build_spec=fe_build_spec,
-            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.CUSTOM)
+            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER)
         )
+        scope.base.nginx_registry.grant_pull_push(build_fe_project)
+        scope.base.app_registry.grant_pull_push(build_fe_project)
+        scope.base.webapp_registry.grant_pull_push(build_fe_project)
 
-        fe_artifact = aws_codepipeline.Artifact()
         build_fe_action = aws_codepipeline_actions.CodeBuildAction(
             action_name='build_fe',
             input=source_output,
             project=build_fe_project,
-            outputs=[fe_artifact],
-            run_order=1,
+            run_order=2,
         )
 
         app_build_spec = aws_codebuild.BuildSpec.from_source_filename('buildspec-app.yaml')
@@ -366,36 +387,6 @@ class CIPipeline(core.Stack):
             input=source_output,
             project=build_app_project,
             run_order=1,
-        )
-
-        nginx_build_spec = aws_codebuild.BuildSpec.from_source_filename('buildspec-nginx.yaml')
-        build_nginx_project = aws_codebuild.PipelineProject(
-            self,
-            'build_nginx_project',
-            project_name='schema_cms_nginx_build',
-            environment=aws_codebuild.BuildEnvironment(
-                environment_variables={
-                    'REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
-                        value=scope.base.nginx_registry.repository_uri
-                    ),
-                    'PUSH_IMAGES': aws_codebuild.BuildEnvironmentVariable(
-                        value='1'
-                    ),
-                },
-                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
-                privileged=True,
-            ),
-            cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER),
-            build_spec=nginx_build_spec,
-        )
-        scope.base.nginx_registry.grant_pull_push(build_nginx_project)
-
-        build_nginx_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name='build_nginx',
-            input=source_output,
-            project=build_nginx_project,
-            run_order=2,
-            extra_inputs=[fe_artifact]
         )
 
         build_workers_project = aws_codebuild.PipelineProject(
@@ -500,7 +491,6 @@ class CIPipeline(core.Stack):
             actions=[
                 build_fe_action,
                 build_app_action,
-                build_nginx_action,
                 build_workers_action,
                 build_public_api_lambda_action,
                 build_workers_success_lambda_action,
