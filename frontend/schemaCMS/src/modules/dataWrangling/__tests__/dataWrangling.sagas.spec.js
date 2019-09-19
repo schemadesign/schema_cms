@@ -31,9 +31,9 @@ describe('DataWrangling: sagas', () => {
 
   describe('sendList', () => {
     it('should dispatch a success action', async () => {
-      const payload = { dataSourceId: '1', list: ['data 1', 'data 2'] };
+      const payload = { dataSourceId: '1', steps: ['data 1', 'data 2'], projectId: '1' };
 
-      mockApi.put(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script`, { list: payload.list }).reply(OK);
+      mockApi.put(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK);
 
       await expectSaga(watchDataWrangling)
         .withState(defaultState)
@@ -48,11 +48,11 @@ describe('DataWrangling: sagas', () => {
       const options = {
         headers: { 'Content-Type': 'multipart/form-data' },
       };
-      const payload = { dataSourceId: '1', file: new File(['foo'], 'foo.py', { type: 'text/plain' }) };
+      const payload = { dataSourceId: '1', script: new File(['foo'], 'foo.py', { type: 'text/plain' }) };
       const responseData = ['data 1', 'data 2', 'data 3'];
 
       mockApi
-        .put(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script`, /form-data; name="file"[^]*file/m, options)
+        .post(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script-upload`, /form-data; name="script"[^]*file/m, options)
         .reply(OK);
       mockApi.get(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script`).reply(OK, responseData);
 

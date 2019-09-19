@@ -7,7 +7,6 @@ import { Checkbox } from '../checkbox/checkbox.component';
 export const defaultProps = {
   name: 'name',
   value: ['checkbox 1'],
-  isEdit: true,
   customStyles: {
     width: '320px',
   },
@@ -21,8 +20,12 @@ export const defaultProps = {
 };
 
 export const children = [
-  <Checkbox label="checkbox 1" value="checkbox 1" id="checkbox 1" key="1" />,
-  <Checkbox label="checkbox 2" value="checkbox 2" id="checkbox 2" key="2" />,
+  <Checkbox value="checkbox 1" id="checkbox 1" key="1">
+    checkbox 1
+  </Checkbox>,
+  <Checkbox value="checkbox 2" id="checkbox 2" key="2" isEdit>
+    checkbox 2
+  </Checkbox>,
 ];
 
 storiesOf('Form/CheckboxGroup', module).add('Default', () => (

@@ -5,7 +5,7 @@ import { withRouter } from '../../../../../.storybook/decorators';
 import { DataWrangling } from './dataWrangling.component';
 
 export const defaultProps = {
-  dataWranglings: [{ name: 'name 1', active: false }, { name: 'name 2', active: true }],
+  dataWranglings: [{ key: 'name 1' }, { key: 'name 2' }],
   bindSubmitForm: Function.prototype,
   fetchDataWrangling: Function.prototype,
   uploadScript: Function.prototype,
@@ -14,6 +14,7 @@ export const defaultProps = {
     url: '/project/view/2/datasource/view/14/3',
     params: {
       dataSourceId: '1',
+      projectId: '1',
     },
   },
 };

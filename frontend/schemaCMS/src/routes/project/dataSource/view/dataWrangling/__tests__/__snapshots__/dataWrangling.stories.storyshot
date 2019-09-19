@@ -14,7 +14,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
       className="sc-brqgnP fKPssO"
     >
       <span>
-        2 Step
+        2 Steps
       </span>
     </div>
     <div
@@ -110,8 +110,8 @@ exports[`Storyshots DataWrangling Default 1`] = `
       <input
         aria-hidden={true}
         checked={false}
-        id={0}
-        name="name 1"
+        id="checkbox-0"
+        name="steps"
         onChange={[Function]}
         style={
           Object {
@@ -160,7 +160,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
           />
         </svg>
         <label
-          htmlFor={0}
+          htmlFor="checkbox-0"
           style={
             Object {
               "cursor": "pointer",
@@ -199,9 +199,9 @@ exports[`Storyshots DataWrangling Default 1`] = `
     >
       <input
         aria-hidden={true}
-        checked={true}
-        id={1}
-        name="name 2"
+        checked={false}
+        id="checkbox-1"
+        name="steps"
         onChange={[Function]}
         style={
           Object {
@@ -250,7 +250,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
           />
         </svg>
         <label
-          htmlFor={1}
+          htmlFor="checkbox-1"
           style={
             Object {
               "cursor": "pointer",
@@ -258,7 +258,6 @@ exports[`Storyshots DataWrangling Default 1`] = `
           }
         >
           <svg
-            stroke="#000"
             style={
               Object {
                 "height": "30px",
@@ -268,20 +267,10 @@ exports[`Storyshots DataWrangling Default 1`] = `
             }
             viewBox="0 0 30 30"
           >
-            <g
+            <path
+              d="M7.5 7.5h15v15h-15z"
               fill="none"
-              fillRule="evenodd"
-            >
-              <path
-                d="M20.455 7.5H7.5v15h15v-6.136"
-                strokeLinecap="square"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M11 12l5 5L26 7"
-                strokeWidth={3}
-              />
-            </g>
+            />
           </svg>
         </label>
       </div>

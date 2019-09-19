@@ -2,7 +2,8 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { DataWranglingRoutines } from './dataWrangling.redux';
 import api from '../../shared/services/api';
-import { DATA_SOURCE_PATH, DATA_WRANGLING_PATH } from '../../shared/utils/api.constants';
+import { DATA_SOURCE_PATH, DATA_WRANGLING_JOB_PATH, DATA_WRANGLING_PATH } from '../../shared/utils/api.constants';
+import browserHistory from '../../shared/utils/history';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -18,12 +19,13 @@ function* fetchList({ payload: { dataSourceId } }) {
   }
 }
 
-function* sendList({ payload: { list, dataSourceId } }) {
+function* sendList({ payload: { steps, dataSourceId, projectId } }) {
   try {
     yield put(DataWranglingRoutines.sendList.request());
 
-    yield api.put(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_PATH}`, { list });
+    yield api.put(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
 
+    browserHistory.push(`/project/view/${projectId}/datasource/list`);
     yield put(DataWranglingRoutines.sendList.success());
   } catch (e) {
     yield put(DataWranglingRoutines.sendList.failure());
@@ -32,15 +34,15 @@ function* sendList({ payload: { list, dataSourceId } }) {
   }
 }
 
-function* uploadScript({ payload: { file, dataSourceId } }) {
+function* uploadScript({ payload: { script, dataSourceId } }) {
   try {
     yield put(DataWranglingRoutines.uploadScript.request());
     const formData = new FormData();
     const headers = { 'Content-Type': 'multipart/form-data' };
 
-    formData.append('file', file);
+    formData.append('script', script);
 
-    yield api.put(`${DATA_SOURCE_PATH}/${dataSourceId}/script`, formData, { headers });
+    yield api.post(`${DATA_SOURCE_PATH}/${dataSourceId}/script-upload`, formData, { headers });
 
     yield put(DataWranglingRoutines.fetchList({ dataSourceId }));
     yield put(DataWranglingRoutines.uploadScript.success());

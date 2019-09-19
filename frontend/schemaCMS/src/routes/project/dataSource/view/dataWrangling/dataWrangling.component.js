@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import { always } from 'ramda';
+import { always, append, ifElse, equals, reject } from 'ramda';
 
-import { Container, Header, StepCounter, Empty, ButtonContainer, Link } from './dataWrangling.styles';
+import { Container, Header, StepCounter, Empty, UploadContainer, Error, Link } from './dataWrangling.styles';
 import messages from './dataWrangling.messages';
 import { renderWhenTrue } from '../../../../../shared/utils/rendering';
 
@@ -22,6 +22,7 @@ export class DataWrangling extends PureComponent {
       url: PropTypes.string.isRequired,
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
+        projectId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   };
@@ -42,11 +43,8 @@ export class DataWrangling extends PureComponent {
     return `${baseUrl}${index}`;
   };
 
-  handleUploadScript = async ({
-    currentTarget: {
-      files: [file],
-    },
-  }) => {
+  handleUploadScript = async ({ target }) => {
+    const [file] = target.files;
     if (!file) {
       return;
     }
@@ -55,18 +53,30 @@ export class DataWrangling extends PureComponent {
       const { dataSourceId } = this.props.match.params;
       this.setState({ uploading: true, errorOnUploading: false });
 
-      await this.props.uploadScript({ file, dataSourceId });
-
-      await this.props.uploadScript({ file, dataSourceId });
+      await this.props.uploadScript({ script: file, dataSourceId });
     } catch (e) {
       this.setState({ uploading: false, errorOnUploading: true });
     }
   };
 
-  renderCheckboxes = values =>
-    values.map(({ name }, index) => (
-      <Checkbox id={index} value={name} key={index} isEdit>
-        <Link to={this.getScrtiptUrl(index)}>{name}</Link>
+  handleChange = ({ e, setFieldValue, steps }) => {
+    const { value, checked } = e.target;
+    const setScripts = ifElse(equals(true), always(append(value, steps)), always(reject(equals(value), steps)));
+
+    setFieldValue('steps', setScripts(checked));
+  };
+
+  handleSubmit = ({ steps }) => {
+    const { dataSourceId, projectId } = this.props.match.params;
+    steps = steps.map(step => ({ key: step }));
+
+    this.props.sendUpdatedDataWrangling({ steps, projectId, dataSourceId });
+  };
+
+  renderCheckboxes = (values, data) =>
+    values.map(({ key }, index) => (
+      <Checkbox id={`checkbox-${index}`} value={data[index]} key={index} isEdit>
+        <Link to={this.getScrtiptUrl(index)}>{key}</Link>
       </Checkbox>
     ));
 
@@ -79,17 +89,16 @@ export class DataWrangling extends PureComponent {
   );
 
   render() {
-    const { bindSubmitForm, dataWranglings, sendUpdatedDataWrangling } = this.props;
+    const { bindSubmitForm, dataWranglings } = this.props;
     const { uploading, errorOnUploading } = this.state;
-    const data = dataWranglings.reduce((data, { name, active }) => ({ ...data, [name]: active }), {});
-    const stepCopyKey = dataWranglings.length < 2 ? 'steps' : 'step';
+    const data = dataWranglings.map(({ key }) => key);
 
     return (
       <Container>
         <Header>
           <Empty />
           <StepCounter>
-            <FormattedMessage values={{ length: dataWranglings.length }} {...messages[stepCopyKey]} />
+            <FormattedMessage values={{ length: dataWranglings.length }} {...messages.steps} />
             {this.renderErrorOnUploading(errorOnUploading)}
           </StepCounter>
           <UploadContainer>
@@ -102,14 +111,14 @@ export class DataWrangling extends PureComponent {
             />
           </UploadContainer>
         </Header>
-        <Formik initialValues={data} onSubmit={sendUpdatedDataWrangling}>
-          {({ handleChange, values, submitForm, dirty, isValid }) => {
+        <Formik initialValues={{ steps: [] }} onSubmit={this.handleSubmit}>
+          {({ values: { steps }, submitForm, dirty, isValid, setFieldValue }) => {
             if (dirty && isValid && !uploading) {
               bindSubmitForm(submitForm);
             }
             return (
-              <CheckboxGroup onChange={handleChange} value={values}>
-                {this.renderCheckboxes(dataWranglings)}
+              <CheckboxGroup onChange={e => this.handleChange({ e, setFieldValue, steps })} value={steps} name="steps">
+                {this.renderCheckboxes(dataWranglings, data)}
               </CheckboxGroup>
             );
           }}
