@@ -1251,7 +1251,6 @@ exports[`Source: Component should render file uploader 1`] = `
                   accept=".csv,.tsv"
                   aria-hidden={true}
                   id="fileUpload"
-                  name="file"
                   onChange={[Function]}
                   style={
                     Object {
