@@ -43,7 +43,7 @@ export class Create extends PureComponent {
 
   handleCancelClick = () => this.props.history.push('/');
 
-  handleSelectStatus = selectedOption => this.setState({ selectedStatus: selectedOption.value });
+  handleSelectStatus = ({ value: selectedStatus }) => this.setState({ selectedStatus });
 
   render() {
     const { values, handleChange, handleSubmit, intl } = this.props;
