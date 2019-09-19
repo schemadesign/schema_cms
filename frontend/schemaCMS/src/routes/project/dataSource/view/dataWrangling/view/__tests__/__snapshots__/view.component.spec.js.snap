@@ -5,13 +5,15 @@ exports[`View: Component should render correctly 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Edit step"
+    title="View step"
   />
   <TopHeader
-    headerSubtitle="Edit step"
+    headerSubtitle="View step"
     headerTitle="Data Wrangling"
   />
-  <styled.form>
+  <styled.form
+    name="dataWranglingForm"
+  >
     <TextInput
       disabled={true}
       errors={Object {}}

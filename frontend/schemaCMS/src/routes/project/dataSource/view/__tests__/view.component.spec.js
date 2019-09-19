@@ -50,6 +50,7 @@ describe('View: Component', () => {
           dataSourceId: '1',
           step: '0',
         },
+        url: '/project/view/1/datasource/view/1/0',
       },
     };
 

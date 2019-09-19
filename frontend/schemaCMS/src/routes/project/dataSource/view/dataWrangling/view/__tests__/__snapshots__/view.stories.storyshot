@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
 <div
-  className="sc-iRbamj jEYnvx"
+  className="sc-jlyJG fQLDMs"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -50,7 +50,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
               }
             }
           >
-            Edit step
+            View step
           </h1>
         </div>
       </div>
@@ -144,7 +144,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
               }
             }
           >
-            Edit step
+            View step
           </h1>
         </div>
       </div>
@@ -198,7 +198,8 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-jlyJG bbyJzT"
+    className="sc-gipzik iyhjGb"
+    name="dataWranglingForm"
   >
     <div
       className="sc-gqjmRU hnZXkc"
@@ -353,7 +354,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     </div>
   </form>
   <div
-    className="sc-gPEVay emtyvU"
+    className="sc-iRbamj chONGf"
   >
     <button
       onClick={[Function]}

@@ -21,6 +21,7 @@ export const defaultProps = {
       dataSourceId: '1',
       step: '1',
     },
+    url: '/project/view/1/datasource/view/1/1',
   },
 };
 

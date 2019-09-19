@@ -7,7 +7,6 @@ import {
   selectDataSources,
   selectFields,
   selectPreviewTable,
-  selectDataWranglingDetail,
 } from '../dataSource.selectors';
 
 describe('DataSource: selectors', () => {
@@ -26,10 +25,6 @@ describe('DataSource: selectors', () => {
         name: {},
       },
       previewTable: [{ id: '1', name: 'test' }],
-      dataWranglingDetail: {
-        description: 'test',
-        code: 'alert("Hello World!");',
-      },
     },
   });
 
@@ -52,10 +47,6 @@ describe('DataSource: selectors', () => {
 
     it('should select a previewTable', () => {
       expect(selectPreviewTable(state)).to.equal(state.dataSource.previewTable);
-    });
-
-    it('should select a dataWranglingDetail', () => {
-      expect(selectDataWranglingDetail(state)).to.equal(state.dataSource.dataWranglingDetail);
     });
   });
 });
