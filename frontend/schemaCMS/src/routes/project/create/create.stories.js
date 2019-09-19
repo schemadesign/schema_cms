@@ -10,6 +10,7 @@ const defaultProps = {
   },
   handleChange: Function.prototype,
   handleSubmit: Function.prototype,
+  setFieldValue: Function.prototype,
   touched: {},
   errors: {},
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },

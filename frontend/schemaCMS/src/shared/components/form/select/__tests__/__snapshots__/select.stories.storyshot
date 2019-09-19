@@ -22,10 +22,9 @@ exports[`Storyshots Shared Components/Form/Select Default 1`] = `
       Selector
     </label>
     <input
-      hidden={true}
+      id="selectField"
       name="selectField"
-      onChange={[Function]}
-      value="one"
+      type="hidden"
     />
     <div
       style={

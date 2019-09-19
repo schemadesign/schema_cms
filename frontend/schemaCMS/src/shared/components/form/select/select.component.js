@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { find, propEq } from 'ramda';
 import { Form } from 'schemaUI';
 
 import { Container } from './select.styles';
@@ -12,20 +11,20 @@ export class Select extends PureComponent {
     defaultOption: PropTypes.object,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
     options: PropTypes.array.isRequired,
-    onChange: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
   };
 
   render() {
-    const { defaultOption, label, name, options, onChange, onSelect } = this.props;
-    const { value = '' } = find(propEq('selected', true))(options) || {};
+    const { defaultOption, label, name, options, onSelect, value } = this.props;
+    const updatedOptions = options.map(option => ({ ...option, selected: option.value === value }));
 
     return (
       <Container>
         <Label>{label}</Label>
-        <input hidden name={name} value={value} onChange={onChange} />
-        <SelectElement defaultOption={defaultOption} options={options} onSelect={onSelect} />
+        <input type="hidden" id={name} name={name} value={value} />
+        <SelectElement defaultOption={defaultOption} options={updatedOptions} onSelect={onSelect} />
       </Container>
     );
   }

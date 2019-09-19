@@ -399,10 +399,9 @@ exports[`Storyshots Project/Create Default 1`] = `
         Status
       </label>
       <input
-        hidden={true}
+        id="status"
         name="status"
-        onChange={[Function]}
-        value="in_progress"
+        type="hidden"
       />
       <div
         style={
