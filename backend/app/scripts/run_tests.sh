@@ -8,6 +8,8 @@ set -e
 wait_for_secretsmanager
 echo "Secrets manager is up"
 
+export DB_CONNECTION="{\"host\": \"db\", \"username\": \"${POSTGRES_USER}\", \"password\": \"${POSTGRES_PASSWORD}\", \"port\": ${POSTGRES_PORT}}"
+
 echo "Run migrations"
 /app/manage.py makemigrations --dry-run --check || { echo "ERROR: there were changes in the models, but migration listed above have not been created and are not saved in version control"; exit 1; }
 
