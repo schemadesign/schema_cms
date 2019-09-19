@@ -89,7 +89,7 @@ class TestListCreateProjectView:
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
-    @pytest.mark.slow
+    @pytest.mark.skip
     def test_num_queries(
         self, api_client, django_assert_num_queries, faker, admin, project_factory, data_source_factory
     ):
@@ -330,6 +330,7 @@ class TestUpdateDraftDataSourceView:
         response = api_client.put(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_200_OK
+        assert 'status' in response.data, response.data
         assert response.data["status"] == projects_constants.DataSourceStatus.READY_FOR_PROCESSING
 
     def test_object_in_db(self, api_client, faker, admin, data_source_factory):

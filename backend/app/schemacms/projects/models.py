@@ -4,23 +4,26 @@ import os
 
 import django_fsm
 from django.conf import settings
+from django.contrib.postgres import fields as psql_fields
 from django.core.validators import FileExtensionValidator
 from django.db import models, transaction
-from django.utils import functional
+from django.utils import functional, crypto
 from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
-from hashids import Hashids
+from django_fsm import signals as fsm_signals
 from pandas import read_csv
 
+from schemacms.projects import services
+from schemacms.projects import handlers
 from schemacms.users import constants as users_constants
-from . import constants, managers
+from . import constants, managers, fsm
 
 
 def file_upload_path(instance, filename):
     return instance.relative_path_to_save(filename)
 
 
-class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel, models.Model):
+class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
     status = django_fsm.FSMField(
         choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.INITIAL
     )
@@ -54,31 +57,10 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel,
         return self.data_sources.count()
 
 
-class DataSourceManager(models.Manager):
-    def create(self, *args, **kwargs):
-        file = kwargs.pop("file", None)
-
-        with transaction.atomic():
-            dsource = super().create(*args, **kwargs)
-
-            if not kwargs.get("name", None):
-                data_source_number = Hashids(min_length=4).encode(dsource.id)
-                dsource.name = f"{constants.DATASOURCE_DRAFT_NAME} #{data_source_number}"
-                dsource.save()
-
-            if file:
-                dsource.file.save(file.name, file)
-
-        return dsource
-
-
-class DataSource(ext_models.TimeStampedModel, models.Model):
+class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="data_sources")
-    status = django_fsm.FSMField(
-        choices=constants.DATA_SOURCE_STATUS_CHOICES, default=constants.DataSourceStatus.DRAFT
-    )
     file = models.FileField(
         null=True, upload_to=file_upload_path, validators=[FileExtensionValidator(allowed_extensions=["csv"])]
     )
@@ -86,62 +68,13 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
     )
 
-    objects = DataSourceManager()
+    objects = managers.DataSourceManager()
 
     class Meta:
         unique_together = ("name", "project")
 
     def __str__(self):
-        # name could be None but __str__ method should always return string
         return self.name or str(self.id)
-
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-
-    @django_fsm.transition(
-        field=status,
-        source=[
-            constants.DataSourceStatus.DRAFT,
-            constants.DataSourceStatus.READY_FOR_PROCESSING,
-            constants.DataSourceStatus.ERROR,
-            constants.DataSourceStatus.DONE,
-        ],
-        target=constants.DataSourceStatus.READY_FOR_PROCESSING,
-        on_error=constants.DataSourceStatus.ERROR,
-        permission=(lambda inst, user: bool(inst.file)),
-    )
-    def ready_for_processing(self):
-        """
-        Update Data Source status to READY_FOR_PROCESSING
-        when object if ready to (preview/steps) process
-        """
-        pass
-
-    @django_fsm.transition(
-        field=status,
-        source=[constants.DataSourceStatus.READY_FOR_PROCESSING],
-        target=constants.DataSourceStatus.PROCESSING,
-        on_error=constants.DataSourceStatus.ERROR,
-    )
-    def preview_process(self):
-        self.update_meta()
-
-    # @django_fsm.transition(
-    #     field=status,
-    #     source=[
-    #         constants.DataSourceStatus.READY_FOR_PROCESSING,
-    #     ],
-    #     target=constants.DataSourceStatus.PROCESSING,
-    #     on_error=constants.DataSourceStatus.ERROR,
-    # )
-    # def steps_process(self):
-    #     pass
-
-    @django_fsm.transition(
-        field=status, source=constants.DataSourceStatus.PROCESSING, target=constants.DataSourceStatus.DONE
-    )
-    def done(self):
-        pass
 
     def update_meta(self):
         data_frame = read_csv(self.file.path, sep=None, engine="python")
@@ -182,6 +115,13 @@ class DataSource(ext_models.TimeStampedModel, models.Model):
 
         return table_preview, fields_info
 
+    @property
+    def available_scripts(self):
+        return services.scripts.list(self)
+
+
+fsm_signals.post_transition.connect(handlers.handle_datasource_fsm_post_transition, sender=DataSource)
+
 
 class DataSourceMeta(models.Model):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
@@ -207,3 +147,17 @@ class DataSourceMeta(models.Model):
             return {}
         self.preview.seek(0)
         return json.loads(self.preview.read())
+
+
+class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
+    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
+    steps = psql_fields.JSONField(default=dict)
+    outcome = models.TextField(blank=True)
+    scripts_ref = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return f'DataSource Job #{self.pk}'
+
+    @staticmethod
+    def generate_scripts_ref():
+        return f'{crypto.get_random_string(length=16)}.zip'
