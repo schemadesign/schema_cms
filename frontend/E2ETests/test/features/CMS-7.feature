@@ -7,7 +7,7 @@ Feature: CMS-7
     Background: User is on login page
         Given I am on Login page
 
-    @Test
+    
     Scenario Outline: User can log in if login and password are valid
         When I log in as <user> with valid login and password
         Then I am on Projects page
