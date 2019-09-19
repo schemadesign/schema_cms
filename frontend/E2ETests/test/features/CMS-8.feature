@@ -8,11 +8,6 @@ Feature: CMS-8
         Given I am on Login page
         
     
-    Scenario: User doesn't receive a link for resetting password if provided email is invalid
-        When I provide invalid email to recover my password
-        Then I am informed that reset link was sent to me
-        And I don't receive an email with the reset link
-
     Scenario: User receives a link for resetting password if provided email is valid
         When I provide valid email to recover my password
         Then I am informed that reset link was sent to me
@@ -27,6 +22,11 @@ Feature: CMS-8
         And I am not able to log in using old password
         And I am able to log in using new password
     
+    Scenario: User doesn't receive a link for resetting password if provided email is invalid
+        When I provide invalid email to recover my password
+        Then I am informed that reset link was sent to me
+        And I don't receive an email with the reset link 
+
     Scenario: User cannot reset a password if provided passwords don't match
         Given I provided valid email to recover my password
         And I used reset link sent to me

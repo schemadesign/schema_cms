@@ -6,13 +6,14 @@ const EDITOR = 'editor';
 const VALID = 'valid';
 const INVALID = 'invalid';
 const EMPTY = 'empty';
+const TIMEOUT = 10000;
 
 class LoginPage extends Page {
 
     get username() { return $('#\\31-email'); }
     get password() { return $('.auth0-lock-input-show-password input'); }
     get forgotPassword() { return $('.auth0-lock-alternative-link'); }
-    get loginBtn() { return $('button > span'); }
+    get loginBtn() { return $('.auth0-lock-submit > span'); }
     get loginWithGoogleBtn() { return $('auth0-lock-social-Btn'); }
     get emptyLoginError() { return $('#auth0-lock-error-msg-email'); }
     get emptyPasswordError() { return $('#auth0-lock-error-msg-password'); }
@@ -30,61 +31,19 @@ class LoginPage extends Page {
 
     open() {
         super.open('');
+        this.waitForElement('loginBtn');
     }
 
-
-    waitForLoginPageToLoad() {
-        browser.waitUntil(() => {
-           return this.loginBtn.isDisplayed();
-        },10000, 'Login page not displayed after 10 seconds');
+    waitForElement(name, timeout = TIMEOUT) {
+        browser.waitUntil(() => this[name].isDisplayed(),timeout, `${name} not load after 10 seconds`);
     }
 
-    waitForCredsErrorToLoad() {
-        browser.waitUntil(() => {
-            return this.wrongCredsError.isDisplayed();
-        }, 10000, 'Error not visible after 10 seconds');
-        
-    }
-
-    waitForChangePasswordToLoad() {
-        browser.switchWindow('Change your password');
-        browser.waitUntil(() => {
-            return this.changePasswordHeader.getText() === 'Change Password'
-          }, 5000, 'Expected text is not visible');
-    }
-
-    waitForUsernameToLoad() {
-        browser.waitUntil(() => {
-            return this.username.isDisplayed();
-        }, 10000, 'Username noy visible after 10 seconds');
-    }
-
-    waitForForgotPasswordToLoad() {
-        browser.waitUntil(() => {
-            return this.forgotPassword.isDisplayed();
-        }, 10000, 'Forgot password link not visible after 10 seconds');
-    }
-
-    waitForNewPasswordToLoad() {
-        browser.waitUntil(() => {
-            return this.newPassword.isDisplayed();
-        }, 10000, 'New password not visible after 10 seconds');
-    }
-
-    waitForSuccessMsgToLoad() {
-        browser.waitUntil(() => {
-            return this.successMsg.isDisplayed();
-        }, 10000, 'Success message not visible after 10 seconds');
-    }
-
-    waitForChangePasswordFailMsgToLoad() {
-        browser.waitUntil(() => {
-            return this.changePasswordFailMsg.isDisplayed();
-        }, 10000, 'Change password fail message not visible after 10 seconds');
+    waitForText(name, text, timeout = TIMEOUT) {
+        browser.waitUntil(() => this[name].getText() === text, timeout, `Text of ${name} doesn't equal ${text}`);
     }
 
     login(loginState, passwordState) {
-        this.waitForLoginPageToLoad();
+        this.waitForElement('loginBtn');
         if(loginState === INVALID && passwordState === INVALID) {
             this.username.setValue(creds.invalidLogin);
             this.password.setValue(creds.invalidPassword);
@@ -123,6 +82,7 @@ class LoginPage extends Page {
     }
 
     loginByRole(userRole) {
+        this.waitForElement('loginBtn');
         if(userRole === ADMIN) {
             this.username.setValue(creds.admin.login);
             this.password.setValue(creds.admin.password);
@@ -138,7 +98,7 @@ class LoginPage extends Page {
 
     loginWithNewPassword() {
         browser.refresh();
-        this.waitForUsernameToLoad();
+        this.waitForElement('username');
         this.username.setValue(creds.resetPassword.validEmail);
         this.password.setValue(creds.setNewPassword.newPassword);
         this.loginBtn.click();
@@ -146,49 +106,51 @@ class LoginPage extends Page {
     }
 
     loginWithOldPassword() {
-        this.waitForUsernameToLoad();
+        this.waitForElement('username');
         this.username.setValue(creds.resetPassword.validEmail);
         this.password.setValue(creds.resetPassword.oldPassword);
         this.loginBtn.click();
+        this.waitForElement('wrongCredsError');
     }
 
     loginWithNewInvalidPassword() {
-        this.waitForUsernameToLoad();
+        this.waitForElement('username');
         this.username.setValue(creds.resetPassword.validEmail);
         this.password.setValue(creds.setNewPassword.confirmInvalidPassword);
         this.loginBtn.click();
+        this.waitForElement('wrongCredsError');
     }
 
     loginWithGoogle () {
-        this.waitForLoginPageToLoad();
+        this.waitForElement('loginBtn');
         this.loginWithGoogleBtn.click();
     }
 
     resetPassword() {
-        this.waitForForgotPasswordToLoad();
+        this.waitForElement('forgotPassword');
         this.forgotPassword.click();
-        this.waitForUsernameToLoad();
+        this.waitForElement('username');
         this.username.setValue(creds.resetPassword.validEmail);
         this.resetPasswordBtn.click(); 
     }
 
     resetPasswordWithInvalidEmail() {
-        this.waitForForgotPasswordToLoad();
+        this.waitForElement('forgotPassword');
         this.forgotPassword.click();
-        this.waitForUsernameToLoad();
+        this.waitForElement('username');
         this.username.setValue(creds.resetPassword.invalidEmail);
         this.resetPasswordBtn.click();
     }
 
     setNewPassword() {
-        this.waitForNewPasswordToLoad();
+        this.waitForElement('newPassword');
         this.newPassword.setValue(creds.setNewPassword.newPassword);
         this.confirmNewPassword.setValue(creds.setNewPassword.confirmNewPassword);
         this.submitNewPassword.click();
     }
 
     setInvalidPassword() {
-        this.waitForNewPasswordToLoad();
+        this.waitForElement('newPassword');
         this.newPassword.setValue(creds.setNewPassword.newPassword);
         this.confirmNewPassword.setValue(creds.setNewPassword.confirmInvalidPassword);
         this.submitNewPassword.click();

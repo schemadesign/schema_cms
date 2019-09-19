@@ -1,4 +1,5 @@
 import Page from './page.js';
+const TIMEOUT = 10000;
 
 class ProjectsPage extends Page {
 
@@ -12,10 +13,8 @@ class ProjectsPage extends Page {
     get apiPath() { return $(''); }
 
 
-    waitForProjectsPageToLoad() {
-        if(!this.addProjectBtn.isDisplayed()) {
-            this.addProjectBtn.waitForDisplayed();
-        }
+    waitForElement(name, timeout = TIMEOUT) {
+        browser.waitUntil(() => this[name].isDisplayed(),timeout, `${name} not load after 10 seconds`);
     }
 }
 export default new ProjectsPage();

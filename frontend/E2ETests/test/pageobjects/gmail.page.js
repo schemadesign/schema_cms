@@ -1,7 +1,9 @@
 import Page from './page.js';
-import { AssertionError } from 'assert';
 const fs = require('fs');
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
+const TIMEOUT = 10000;
+const SENT = 'linkSent';
+const NOT_SENT = 'linkNotSent';
 
 class GmailPage extends Page {
 
@@ -11,7 +13,8 @@ class GmailPage extends Page {
     get passwordNextBtn() { return $('#passwordNext'); }
     get received() { return $("[href='https://mail.google.com/mail/u/0/#inbox']")}
     get firstEmail() { return $('div > table:nth-child(1) > tbody:nth-child(2) > tr > td:nth-child(6) > div > div > div > span'); }
-    get resetUrl() { return $("[href*='reset']"); }
+    get firstUnreadEmail() { return $('.bqe:nth-child(1)'); }
+    get resetUrl() { return $("td:last-child [href*='reset']"); }
     get deleteEmailBtn() { return $("[act='10']"); }
     get selectFirstEmail() { return $('tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) > div'); }
 
@@ -19,76 +22,70 @@ class GmailPage extends Page {
         browser.url('https://www.gmail.com');
     }
 
-    waitForLoginPageToLoad() {
-        browser.waitUntil(() => {
-           return this.emailNextBtn.isDisplayed()
-        },10000, 'Login page not displayed after 10 seconds');
+    waitForElement(name, timeout = TIMEOUT) {
+        browser.waitUntil(() => this[name].isDisplayed(),timeout, `${name} not load after 10 seconds`);
     }
 
-    waitForPasswordPageToLoad() {
-        browser.waitUntil(() => {
-            return this.password.isDisplayed()
-        },10000, 'Password page not load after 10 seconds');
-    }
-
-    waitForReceivedToLoad() {
-        browser.waitUntil(() => {
-            return this.received.isDisplayed();
-        }, 10000, 'Received not visible after 10 seconds');
-    }
-
-    waitForResetUrlToLoad() {
-        browser.waitUntil(() => {
-            return this.resetUrl.isDisplayed();
-        }, 10000, 'Reset URl not displayed after 10 seconds');
+    waitForText(name, text, timeout = TIMEOUT) {
+        browser.waitUntil(() => this[name].getText() === text, timeout, `Text of ${name} doesn't equal ${text}`);
     }
 
     waitForResetLinkEmail() {     
-        while(this.firstEmail.getText() !== 'Reset your password') {
+        while(!this.firstUnreadEmail.isDisplayed()) {
             browser.refresh();
         };
     }
 
-    waitForDeleteBtnToLoad() {
-        browser.waitUntil(() => {
-            return this.deleteEmailBtn.isDisplayed();
-        }, 20000, 'Delete email button not visible after 10 seconds');
-    }
-
-    waitForResetEmailToNotExist() {
+    waitForResetEmailToNotExist(timeout = TIMEOUT) {
         browser.waitUntil(() => {
             return this.firstEmail.getText() !== 'Reset your password';
-        }, 5000, 'Reset email wasn\'t deleted');
+        }, timeout, 'Reset email wasn\'t deleted');
     }
-
-    login() {
-        this.waitForLoginPageToLoad();
-        this.email.setValue(creds.gmail.email);
-        this.emailNextBtn.click();
-        this.waitForPasswordPageToLoad();
-        this.password.setValue(creds.gmail.password);
-        this.passwordNextBtn.click();
-        this.waitForReceivedToLoad();
+    
+    login(linkStatus) {
+        if(linkStatus === SENT) {
+            this.waitForElement('emailNextBtn');
+            this.email.setValue(creds.gmail.email);
+            this.emailNextBtn.click();
+            this.waitForElement('password');
+            this.password.setValue(creds.gmail.password);
+            this.passwordNextBtn.click();
+            this.waitForElement('received');
+        }
+        
+        if(linkStatus === NOT_SENT) {
+            this.waitForElement('emailNextBtn');
+            this.email.setValue(creds.resetPassword.invalidEmail);
+            this.emailNextBtn.click();
+            this.waitForElement('passwordNextBtn');
+            this.password.setValue(creds.resetPassword.invalidPassword);
+            this.passwordNextBtn.click();
+            this.waitForElement('received');
+        }
     }
 
     useResetLink() {
         this.waitForResetLinkEmail();
-        this.firstEmail.click();
-        this.waitForResetUrlToLoad();
+        this.firstUnreadEmail.click();
+        this.waitForElement('resetUrl');
         this.resetUrl.click();
     }
 
     deleteResetEmail() {
         browser.reloadSession();
         this.open();
-        this.login();
-        this.waitForResetLinkEmail();
-        this.selectFirstEmail.click();
-        this.deleteEmailBtn.moveTo();
-        this.deleteEmailBtn.click();
-        this.waitForResetEmailToNotExist();
+        this.login('linkSent');
+        if(this.firstEmail.getText() === 'Reset your password'){
+            this.selectFirstEmail.click();
+            this.deleteEmailBtn.moveTo();
+            this.deleteEmailBtn.click();
+            this.waitForResetEmailToNotExist();
+            //I have to pause the browser for 7 seconds here because of bug in Gmail
+            //otherwise deleted email will reappear and can brake other tests
+            browser.pause(7000);
 
-        assert(this.firstEmail.getText() !== 'Reset your password', 'Reset email wasn\'t deleted');
+            assert(this.firstEmail.getText() !== 'Reset your password', 'Reset email wasn\'t deleted');
+        }
     }
 }
 

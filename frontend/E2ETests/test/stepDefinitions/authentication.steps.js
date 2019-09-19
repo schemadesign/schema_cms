@@ -12,8 +12,7 @@ After(function() {
 
 Given('I am on Login page', function () {
     LoginPage.open();
-    LoginPage.waitForLoginPageToLoad();
-    
+
     expect(browser.getTitle()).to.equal('Sign In with Auth0');
 });
 
@@ -23,12 +22,13 @@ Given('I provided valid email to recover my password', function() {
 
 Given('I used reset link sent to me', function() {
     GmailPage.open();
-    GmailPage.login();
+    GmailPage.login('linkSent');
     GmailPage.useResetLink();
 });
 
 Given('I am on page for creating new password', function() {
-    LoginPage.waitForChangePasswordToLoad();
+    browser.switchWindow('https://schemadesign-stage.auth0.com/lo/reset');
+    LoginPage.waitForText('changePasswordHeader', 'Change Password');
 
     expect(browser.getTitle()).to.equal('Change your password');
 });
@@ -59,13 +59,13 @@ When('I provide passwords that don\'t match', function() {
 });
 
 Then('I am on Projects page', function () {
-    ProjectsPage.waitForProjectsPageToLoad();
+    ProjectsPage.waitForElement('addProjectBtn');
 
-    expect(browser.getUrl()).to.equal('http://localhost:3000/project/list'); 
+    expect(browser.getUrl()).to.equal('https://schema-test.appt5n.com/project/list'); 
 });
 
 Then('I am informed about invalid login or password', function () {
-    LoginPage.waitForCredsErrorToLoad();
+    LoginPage.waitForElement('wrongCredsError');
     
     assert(LoginPage.wrongCredsError.isDisplayed(), 'Validation message is not displayed');
     expect(LoginPage.wrongCredsError.getText()).to.equal('WRONG EMAIL OR PASSWORD.');
@@ -89,7 +89,7 @@ Then('I am informed about empty password', function () {
 });
 
 Then('I am informed that reset link was sent to me', function() {
-    LoginPage.waitForSuccessMsgToLoad();
+    LoginPage.waitForElement('successMsg');
     
     expect(LoginPage.successMsg.getText()).to.equal
     ('WE\'VE JUST SENT YOU AN EMAIL TO RESET YOUR PASSWORD.');
@@ -97,10 +97,10 @@ Then('I am informed that reset link was sent to me', function() {
 
 Then('I receive an email with the reset link', function() {
     GmailPage.open();
-    GmailPage.login();
+    GmailPage.login('linkSent');
     GmailPage.firstEmail.click();
 
-    expect(GmailPage.resetUrl.getText()).to.match(/schemadesign.auth0.com\/lo\/reset/);
+    expect(GmailPage.resetUrl.getText()).to.match(/schemadesign-stage.auth0.com\/lo\/reset/);
 
     GmailPage.deleteResetEmail();
 });
@@ -112,15 +112,15 @@ Then('I am informed that my new password is created', function() {
 
 Then('I am able to log in using new password', function() {
     LoginPage.loginWithNewPassword();
-    ProjectsPage.waitForProjectsPageToLoad();
+    ProjectsPage.waitForElement('addProjectBtn');
 
-    expect(browser.getUrl()).to.equal('http://localhost:3000/project/list');
+    expect(browser.getUrl()).to.equal('https://schema-test.appt5n.com/project/list');
 
     GmailPage.deleteResetEmail();
 });
 
 Then('I am informed that my new password wasn\'t created', function() {
-    LoginPage.waitForChangePasswordFailMsgToLoad();
+    LoginPage.waitForElement('changePasswordFailMsg');
     
     expect(LoginPage.changePasswordFailMsg.getText()).to.equal
     ('Please ensure the password and the confirmation are the same.');
@@ -128,16 +128,15 @@ Then('I am informed that my new password wasn\'t created', function() {
 
 Then('I don\'t receive an email with the reset link', function() {
     GmailPage.open();
-    GmailPage.login();
+    GmailPage.login('linkNotSent');
 
     assert(GmailPage.firstEmail.getText() !== 'Reset your password', 'Reset email was found in mailbox');
 });
 
 Then('the new password is not created', function() {
     LoginPage.open();
-    LoginPage.waitForLoginPageToLoad();
+    LoginPage.waitForElement('loginBtn');
     LoginPage.loginWithNewInvalidPassword();
-    LoginPage.waitForCredsErrorToLoad();
 
     expect(LoginPage.wrongCredsError.getText()).to.equal('WRONG EMAIL OR PASSWORD.');
     
@@ -145,9 +144,8 @@ Then('the new password is not created', function() {
 });
 
 Then('I am not able to log in using old password', function() {
-    LoginPage.waitForLoginPageToLoad();
+    LoginPage.waitForElement('loginBtn');
     LoginPage.loginWithOldPassword();
-    LoginPage.waitForCredsErrorToLoad();
 
     assert(LoginPage.wrongCredsError.isDisplayed(), 'Validation message is not displayed');
     expect(LoginPage.wrongCredsError.getText()).to.equal('WRONG EMAIL OR PASSWORD.');
