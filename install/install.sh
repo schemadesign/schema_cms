@@ -13,6 +13,3 @@ yarn --cwd $SCHEMA_UI_PATH link
 echo "Installing Schema CMS"
 yarn --cwd $SCHEMA_CMS_PATH
 yarn --cwd $SCHEMA_CMS_PATH link schemaUI
-
-echo "Installing Backend"
-docker-compose build
