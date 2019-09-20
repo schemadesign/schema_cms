@@ -10,13 +10,8 @@ describe('Select: Component', () => {
   const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', () => {
-    const options = [
-      { value: 'one', label: 'One', selected: true },
-      { value: 'two', label: 'Two', selected: false },
-      { value: 'three', label: 'Three', selected: false },
-    ];
     const wrapper = render({
-      options,
+      value: 'one',
       onSelect: Function.prototype,
     });
     global.expect(wrapper).toMatchSnapshot();
