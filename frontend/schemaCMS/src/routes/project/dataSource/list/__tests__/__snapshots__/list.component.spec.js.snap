@@ -23,7 +23,7 @@ exports[`List: Component should render card with draft state 1`] = `
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <FormattedMessage
             defaultMessage="Draft"
@@ -114,7 +114,7 @@ exports[`List: Component should render card with draft state 1`] = `
             </styled.span>
           </styled.div>
         </styled.div>
-      </Card>
+      </Component>
     </styled.li>
   </styled.div>
   <styled.div>
@@ -167,7 +167,7 @@ exports[`List: Component should render card with error state 1`] = `
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <FormattedMessage
             defaultMessage="Error"
@@ -200,7 +200,7 @@ exports[`List: Component should render card with error state 1`] = `
             error2
           </styled.div>
         </styled.div>
-      </Card>
+      </Component>
     </styled.li>
   </styled.div>
   <styled.div>
@@ -253,7 +253,7 @@ exports[`List: Component should render card with processing state 1`] = `
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <FormattedMessage
             defaultMessage="Loading..."
@@ -344,7 +344,7 @@ exports[`List: Component should render card with processing state 1`] = `
             </styled.span>
           </styled.div>
         </styled.div>
-      </Card>
+      </Component>
     </styled.li>
   </styled.div>
   <styled.div>
@@ -397,7 +397,7 @@ exports[`List: Component should render card with ready for processing state 1`] 
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <FormattedMessage
             defaultMessage="Loading..."
@@ -488,7 +488,7 @@ exports[`List: Component should render card with ready for processing state 1`] 
             </styled.span>
           </styled.div>
         </styled.div>
-      </Card>
+      </Component>
     </styled.li>
   </styled.div>
   <styled.div>
@@ -541,7 +541,7 @@ exports[`List: Component should render correctly 1`] = `
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <ForwardRef(styled.div)>
             <ForwardRef(styled.ul)>
@@ -639,7 +639,7 @@ exports[`List: Component should render correctly 1`] = `
             </styled.span>
           </styled.div>
         </styled.div>
-      </Card>
+      </Component>
     </styled.li>
   </styled.div>
   <styled.div>

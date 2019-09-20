@@ -40,7 +40,7 @@ exports[`View: Component should render correctly 1`] = `
       <styled.li
         key="0"
       >
-        <Card
+        <Component
           customStyles={
             Object {
               "cursor": "pointer",
@@ -52,12 +52,12 @@ exports[`View: Component should render correctly 1`] = `
           <styled.span>
             3
           </styled.span>
-        </Card>
+        </Component>
       </styled.li>
       <styled.li
         key="1"
       >
-        <Card
+        <Component
           customStyles={
             Object {
               "cursor": "pointer",
@@ -69,7 +69,7 @@ exports[`View: Component should render correctly 1`] = `
           <styled.span>
             2
           </styled.span>
-        </Card>
+        </Component>
       </styled.li>
     </styled.ul>
     <styled.ul>

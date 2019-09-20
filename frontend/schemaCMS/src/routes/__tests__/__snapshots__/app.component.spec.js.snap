@@ -40,8 +40,21 @@ exports[`App: Component should not render App when language is not set 1`] = `
         "background": "#f0efef",
         "body": "#FFF",
         "border": "#1d1d20",
+        "button": Object {
+          "background": "#f0efef",
+          "text": "#1d1d20",
+        },
+        "card": Object {
+          "background": "#f0efef",
+          "border": "#1d1d20",
+          "label": "#a6a7aa",
+        },
         "divider": "#F0EFEF",
         "error": "#f21e29",
+        "icon": Object {
+          "dark": "#1d1d20",
+          "light": "#FFF",
+        },
         "iconBright": "#FFF",
         "iconDark": "#1d1d20",
         "label": "#a6a7aa",
@@ -131,8 +144,21 @@ exports[`App: Component should render App when language is set 1`] = `
         "background": "#f0efef",
         "body": "#FFF",
         "border": "#1d1d20",
+        "button": Object {
+          "background": "#f0efef",
+          "text": "#1d1d20",
+        },
+        "card": Object {
+          "background": "#f0efef",
+          "border": "#1d1d20",
+          "label": "#a6a7aa",
+        },
         "divider": "#F0EFEF",
         "error": "#f21e29",
+        "icon": Object {
+          "dark": "#1d1d20",
+          "light": "#FFF",
+        },
         "iconBright": "#FFF",
         "iconDark": "#1d1d20",
         "label": "#a6a7aa",

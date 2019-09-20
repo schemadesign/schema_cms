@@ -8,6 +8,7 @@ class ButtonComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     customStyles: PropTypes.object,
+    theme: PropTypes.object,
   };
 
   static defaultProps = {

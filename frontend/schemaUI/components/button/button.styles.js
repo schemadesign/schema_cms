@@ -3,8 +3,8 @@ import { light } from '../../utils/theme';
 export const getStyles = (theme = light) => ({
   containerStyles: {
     border: 'none',
-    backgroundColor: theme.background,
-    color: theme.text,
+    backgroundColor: theme.button.background,
+    color: theme.button.text,
     padding: '0',
     margin: '0',
     outline: 'none',

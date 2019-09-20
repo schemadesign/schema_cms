@@ -1,13 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button: Component should render correctly 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<Component>
+  <ButtonComponent
+    customStyles={Object {}}
+  >
+    <button
+      style={
+        Object {
+          "backgroundColor": "#f0efef",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+    >
+      button
+    </button>
+  </ButtonComponent>
+</Component>
 `;
 
 exports[`Button: Component should render with custom styles 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<Component
+  customStyles={
+    Object {
+      "backgroundColor": "red",
+    }
+  }
+>
+  <ButtonComponent
+    customStyles={
+      Object {
+        "backgroundColor": "red",
+      }
+    }
+  >
+    <button
+      style={
+        Object {
+          "backgroundColor": "red",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#1d1d20",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+    >
+      button
+    </button>
+  </ButtonComponent>
+</Component>
 `;

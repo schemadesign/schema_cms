@@ -23,7 +23,7 @@ exports[`List: Component should render correctly 1`] = `
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <ForwardRef(styled.ul)>
             <ForwardRef(styled.li)
@@ -80,12 +80,12 @@ exports[`List: Component should render correctly 1`] = `
         >
           schemacms/api/project_title
         </Span>
-      </Card>
+      </Component>
     </styled.li>
     <styled.li
       key="1"
     >
-      <Card
+      <Component
         headerComponent={
           <ForwardRef(styled.ul)>
             <ForwardRef(styled.li)
@@ -142,7 +142,7 @@ exports[`List: Component should render correctly 1`] = `
         >
           schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
         </Span>
-      </Card>
+      </Component>
     </styled.li>
   </styled.ul>
   <Component

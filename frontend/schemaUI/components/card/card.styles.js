@@ -1,17 +1,18 @@
 import { light } from '../../utils/theme';
 
-export const containerStyles = {
-  fontFamily: light.typography.span.fontFamily,
-  borderTop: `2px solid ${light.border}`,
-  backgroundColor: light.background,
-  color: light.text,
-  padding: '12px 14px 14px',
-  display: 'flex',
-  flexDirection: 'column',
-};
-
-export const headerStyles = {
-  marginBottom: '14px',
-  color: light.label,
-  fontSize: '12px',
-};
+export const getStyles = (theme = light) => ({
+  headerStyles: {
+    marginBottom: '14px',
+    color: theme.card.label,
+    fontSize: '12px',
+  },
+  containerStyles: {
+    fontFamily: theme.typography.span.fontFamily,
+    borderTop: `2px solid ${theme.card.border}`,
+    backgroundColor: theme.card.background,
+    color: light.text,
+    padding: '12px 14px 14px',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+});

@@ -1,4 +1,4 @@
-const light = {
+const colors = {
   body: '#FFF',
   background: '#f0efef',
   label: '#a6a7aa',
@@ -11,7 +11,34 @@ const light = {
   iconBright: '#FFF',
 };
 
+const light = {
+  button: {
+    background: colors.background,
+    text: colors.text,
+  },
+  card: {
+    label: colors.label,
+    border: colors.border,
+    background: colors.background,
+  },
+  body: '#FFF',
+  background: '#f0efef',
+  label: '#a6a7aa',
+  border: '#1d1d20',
+  text: '#1d1d20',
+  error: '#f21e29',
+  active: '#1d1d20',
+  divider: '#F0EFEF',
+  iconDark: '#1d1d20',
+  iconBright: '#FFF',
+  icon: {
+    dark: '#1d1d20',
+    light: '#FFF',
+  },
+};
+
 const dark = {
+  body: '#000',
   background: '#1d1d20',
   text: '#fff',
   label: '#71737e',
