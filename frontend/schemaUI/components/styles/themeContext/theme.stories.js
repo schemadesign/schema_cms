@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import { ThemeContext } from '../themeContext';
 import { Button } from '../../button';
-import { secondary } from '../../../utils/theme';
+import { dark } from '../../../utils/theme';
 
-const decorator = story => <ThemeContext.Provider value={{ theme: secondary }}>{story()}</ThemeContext.Provider>;
+const decorator = story => <ThemeContext.Provider value={{ theme: dark }}>{story()}</ThemeContext.Provider>;
 
 storiesOf('Styles/ThemeContext', module)
   .addDecorator(decorator)

@@ -6,7 +6,7 @@ import { buttonStyles, containerStyles, getLabelStyles, inputStyles } from './fi
 import { getStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
 import { TextField } from '../textField';
-import { primary } from '../../../utils/theme';
+import { light } from '../../../utils/theme';
 
 const DEFAULT_TEXT_VALUE = 'Select a file';
 
@@ -29,7 +29,7 @@ export class FileUpload extends PureComponent {
     customInputStyles: {},
     customLabelStyles: {},
     iconComponent: (
-      <div style={{ ...getStyles(primary).containerStyles, ...buttonStyles }}>
+      <div style={{ ...getStyles(light).containerStyles, ...buttonStyles }}>
         <UploadIcon />
       </div>
     ),

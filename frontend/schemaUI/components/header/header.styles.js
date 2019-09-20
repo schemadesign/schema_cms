@@ -1,7 +1,7 @@
-import { primary } from '../../utils/theme';
+import { light } from '../../utils/theme';
 
 export const containerStyles = {
-  color: primary.text,
+  color: light.text,
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',

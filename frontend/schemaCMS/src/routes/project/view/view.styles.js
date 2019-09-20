@@ -18,9 +18,9 @@ export const Details = styled.ul`
 `;
 
 export const DetailItem = styled.li`
-  color: ${Theme.primary.text};
+  color: ${Theme.light.text};
   margin-bottom: 4px;
-  border-top: 2px solid ${Theme.primary.background};
+  border-top: 2px solid ${Theme.light.background};
   display: flex;
 `;
 
@@ -32,7 +32,7 @@ export const DetailWrapper = styled.div`
 `;
 
 export const DetailLabel = styled.span`
-  color: ${Theme.primary.label};
+  color: ${Theme.light.label};
   margin-right: 5px;
 `;
 
@@ -72,7 +72,7 @@ export const CardValue = styled.span`
 
 export const buttonStyles = {
   margin: '50px 0 20px 0',
-  backgroundColor: Theme.primary.background,
+  backgroundColor: Theme.light.background,
   height: '60px',
 };
 

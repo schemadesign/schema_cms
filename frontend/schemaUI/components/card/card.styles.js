@@ -1,10 +1,10 @@
-import { primary } from '../../utils/theme';
+import { light } from '../../utils/theme';
 
 export const containerStyles = {
-  fontFamily: primary.typography.span.fontFamily,
-  borderTop: `2px solid ${primary.border}`,
-  backgroundColor: primary.background,
-  color: primary.text,
+  fontFamily: light.typography.span.fontFamily,
+  borderTop: `2px solid ${light.border}`,
+  backgroundColor: light.background,
+  color: light.text,
   padding: '12px 14px 14px',
   display: 'flex',
   flexDirection: 'column',
@@ -12,6 +12,6 @@ export const containerStyles = {
 
 export const headerStyles = {
   marginBottom: '14px',
-  color: primary.label,
+  color: light.label,
   fontSize: '12px',
 };

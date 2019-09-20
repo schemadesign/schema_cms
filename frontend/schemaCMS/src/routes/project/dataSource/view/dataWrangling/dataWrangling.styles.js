@@ -26,10 +26,10 @@ export const UploadContainer = styled.div`
 `;
 
 export const Error = styled.div`
-  color: ${Theme.primary.error};
+  color: ${Theme.light.error};
 `;
 
 export const Link = styled(RouterLink)`
-  color: ${Theme.primary.text};
+  color: ${Theme.light.text};
   text-decoration: none;
 `;

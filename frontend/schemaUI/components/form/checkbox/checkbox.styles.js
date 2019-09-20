@@ -1,4 +1,4 @@
-import { primary } from '../../../utils/theme';
+import { light } from '../../../utils/theme';
 
 export const containerStyles = {
   display: 'flex',
@@ -6,7 +6,7 @@ export const containerStyles = {
   justifyContent: 'space-between',
   alignItems: 'center',
   height: 48,
-  borderBottom: `1px solid ${primary.divider}`,
+  borderBottom: `1px solid ${light.divider}`,
 };
 
 export const iconContainerStyles = {

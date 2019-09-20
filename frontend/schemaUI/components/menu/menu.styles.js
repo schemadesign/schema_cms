@@ -1,8 +1,8 @@
-import { primary } from '../../utils/theme';
+import { light } from '../../utils/theme';
 
 const containerStyles = {
-  backgroundColor: primary.background,
-  color: primary.text,
+  backgroundColor: light.background,
+  color: light.text,
   position: 'fixed',
   top: 0,
   right: 0,

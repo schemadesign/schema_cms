@@ -1,4 +1,4 @@
-const primary = {
+const light = {
   body: '#FFF',
   background: '#f0efef',
   label: '#a6a7aa',
@@ -11,7 +11,7 @@ const primary = {
   iconBright: '#FFF',
 };
 
-const secondary = {
+const dark = {
   background: '#1d1d20',
   text: '#fff',
   label: '#71737e',
@@ -37,7 +37,7 @@ const primaryTypography = {
   h3: {
     fontFamily: INTER_FONT,
     fontWeight: 600,
-    color: primary.label,
+    color: light.label,
   },
   p: {
     fontFamily: INTER_FONT,
@@ -51,7 +51,7 @@ const primaryTypography = {
   },
 };
 
-primary.typography = primaryTypography;
+light.typography = primaryTypography;
 
-export { primary, secondary };
-export const Theme = { primary, secondary };
+export { light, dark };
+export const Theme = { light, dark };

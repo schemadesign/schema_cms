@@ -1,4 +1,4 @@
-import { primary } from '../../utils/theme';
+import { light } from '../../utils/theme';
 
 export const containerStyles = {
   display: 'flex',
@@ -8,7 +8,7 @@ export const containerStyles = {
 export const dotStyles = {
   width: '12px',
   height: '12px',
-  backgroundColor: primary.background,
+  backgroundColor: light.background,
   display: 'block',
   borderRadius: '50%',
   margin: '0 4px',
@@ -16,7 +16,7 @@ export const dotStyles = {
 };
 
 export const dotActiveStyles = {
-  backgroundColor: primary.active,
+  backgroundColor: light.active,
   cursor: 'default',
   pointerEvents: 'none',
 };

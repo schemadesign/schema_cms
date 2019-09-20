@@ -1,6 +1,6 @@
-import { primary } from '../../utils/theme';
+import { light } from '../../utils/theme';
 
-export const getStyles = (theme = primary) => ({
+export const getStyles = (theme = light) => ({
   containerStyles: {
     border: 'none',
     backgroundColor: theme.background,

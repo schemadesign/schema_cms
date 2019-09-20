@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import { ThemeContext } from '../themeContext';
-import { primary } from '../../../utils/theme';
+import { light } from '../../../utils/theme';
 
 export class ThemeProvider extends PureComponent {
   static propTypes = {
@@ -11,7 +11,7 @@ export class ThemeProvider extends PureComponent {
   };
 
   static defaultProps = {
-    theme: primary,
+    theme: light,
   };
 
   render() {

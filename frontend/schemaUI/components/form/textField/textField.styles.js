@@ -1,4 +1,4 @@
-import { primary } from '../../../utils/theme';
+import { light } from '../../../utils/theme';
 
 export const containerStyles = {
   display: 'flex',
@@ -8,13 +8,13 @@ export const containerStyles = {
 };
 
 export const defaultLabelStyles = {
-  color: primary.label,
+  color: light.label,
   fontSize: '18px',
   lineHeight: '24px',
 };
 
 export const errorStyles = {
-  color: primary.error,
+  color: light.error,
 };
 
 export const iconContainerStyles = {

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { primary } from '../../../utils/theme';
+import { light } from '../../../utils/theme';
 import { containerStyles } from './p.styles';
 
 export class P extends PureComponent {
@@ -12,7 +12,7 @@ export class P extends PureComponent {
   };
 
   render() {
-    const { customStyles = {}, theme = primary, children, ...restProps } = this.props;
+    const { customStyles = {}, theme = light, children, ...restProps } = this.props;
     const style = { ...containerStyles, ...theme.typography.p, ...customStyles };
     const props = { style, ...restProps };
 

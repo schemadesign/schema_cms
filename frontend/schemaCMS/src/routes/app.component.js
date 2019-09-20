@@ -26,7 +26,7 @@ export class App extends PureComponent {
   }
 
   render() {
-    const theme = this.props.userData.role !== ROLES.ADMIN ? Theme.primary : Theme.secondary;
+    const theme = this.props.userData.role !== ROLES.ADMIN ? Theme.light : Theme.dark;
 
     return (
       <IntlProvider key={DEFAULT_LOCALE} locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>

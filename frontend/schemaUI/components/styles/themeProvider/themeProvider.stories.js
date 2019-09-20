@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { ThemeProvider } from './themeProvider.component';
 import { Button } from '../../button';
-import { secondary } from '../../../utils/theme';
+import { dark } from '../../../utils/theme';
 
 storiesOf('Styles/ThemeProvider', module)
   .add('default', () => (
@@ -12,7 +12,7 @@ storiesOf('Styles/ThemeProvider', module)
     </ThemeProvider>
   ))
   .add('with dark theme', () => (
-    <ThemeProvider theme={secondary}>
+    <ThemeProvider theme={dark}>
       <Button>Button</Button>
     </ThemeProvider>
   ));

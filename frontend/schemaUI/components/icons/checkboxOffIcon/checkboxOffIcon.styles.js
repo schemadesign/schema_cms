@@ -1,7 +1,7 @@
-import { primary } from '../../../utils/theme';
+import { light } from '../../../utils/theme';
 
 export const containerStyles = {
-  stroke: primary.iconDark,
+  stroke: light.iconDark,
   width: '30px',
   height: '30px',
 };

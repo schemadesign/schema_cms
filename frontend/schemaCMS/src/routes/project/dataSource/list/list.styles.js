@@ -44,7 +44,7 @@ export const MetaData = styled.div`
 `;
 
 export const MetaDataName = styled.span`
-  color: ${Theme.primary.label};
+  color: ${Theme.light.label};
   font-weight: 600;
   font-size: 12px;
   margin-bottom: 10px;
@@ -53,7 +53,7 @@ export const MetaDataName = styled.span`
 const lockStyles = styleWhenTrue(
   ({ isLock }) => isLock,
   css`
-    color: ${Theme.primary.label};
+    color: ${Theme.light.label};
   `
 );
 
@@ -86,7 +86,7 @@ export const ButtonsContainer = styled.div`
   position: fixed;
   bottom: 0;
   padding: 50px 0 24px;
-  background: ${Theme.primary.body};
+  background: ${Theme.light.body};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,20 +94,20 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const lockTextStyles = {
-  color: Theme.primary.label,
+  color: Theme.light.label,
 };
 
 export const buttonStyles = {
-  backgroundColor: Theme.primary.background,
+  backgroundColor: Theme.light.background,
   height: '60px',
 };
 
 export const iconSourceStyles = {
   width: 40,
   height: 40,
-  fill: Theme.primary.iconDark,
+  fill: Theme.light.iconDark,
 };
 
 export const lockIconStyles = {
-  fill: Theme.primary.label,
+  fill: Theme.light.label,
 };
