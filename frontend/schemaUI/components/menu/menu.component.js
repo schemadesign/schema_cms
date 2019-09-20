@@ -26,7 +26,7 @@ export class Menu extends PureComponent {
     const buttonStyles = { ...closeButtonStyles, ...this.props.customCloseButtonStyles };
 
     return (
-      <Button class="close-menu-button" onClick={this.props.onClose} customStyles={buttonStyles}>
+      <Button class="schema-ui-close-menu" onClick={this.props.onClose} customStyles={buttonStyles}>
         <CloseIcon customStyles={this.props.customCloseIconStyles} />
       </Button>
     );
