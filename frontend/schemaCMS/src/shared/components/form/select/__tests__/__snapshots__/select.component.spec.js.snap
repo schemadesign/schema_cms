@@ -8,9 +8,9 @@ exports[`Select: Component should render correctly 1`] = `
     Selector
   </Label>
   <input
-    hidden={true}
+    id="selectField"
     name="selectField"
-    onChange={[Function]}
+    type="hidden"
     value="one"
   />
   <Select

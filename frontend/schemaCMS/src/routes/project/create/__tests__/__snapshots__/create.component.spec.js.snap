@@ -22,6 +22,7 @@ exports[`Create: Component should render correctly 1`] = `
       name="title"
       onChange={[Function]}
       placeholder="Project title"
+      setFieldValue={[Function]}
       touched={Object {}}
       value=""
       values={
@@ -43,6 +44,7 @@ exports[`Create: Component should render correctly 1`] = `
       name="description"
       onChange={[Function]}
       placeholder="Project description"
+      setFieldValue={[Function]}
       touched={Object {}}
       values={
         Object {
@@ -64,6 +66,7 @@ exports[`Create: Component should render correctly 1`] = `
       name="owner"
       onChange={[Function]}
       readOnly={true}
+      setFieldValue={[Function]}
       touched={Object {}}
       values={
         Object {
@@ -74,28 +77,23 @@ exports[`Create: Component should render correctly 1`] = `
     <Select
       label="Status"
       name="status"
-      onChange={[Function]}
       onSelect={[Function]}
       options={
         Array [
           Object {
             "label": "In Progress",
-            "selected": true,
             "value": "in_progress",
           },
           Object {
             "label": "Done",
-            "selected": false,
             "value": "done",
           },
           Object {
             "label": "Hold",
-            "selected": false,
             "value": "hold",
           },
           Object {
             "label": "Published",
-            "selected": false,
             "value": "published",
           },
         ]

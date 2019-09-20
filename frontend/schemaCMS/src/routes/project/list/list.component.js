@@ -63,7 +63,9 @@ export class List extends PureComponent {
     const user = isEmpty(firstName) ? lastName : `${firstName} ${lastName}`;
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
 
-    const header = this.renderHeader([whenCreated, status, user]);
+    const statusValue = messages[status] ? this.formatMessage(messages[status]) : status;
+
+    const header = this.renderHeader([whenCreated, statusValue, user]);
     const handleShowProject = this.handleShowProject(id);
 
     return (
