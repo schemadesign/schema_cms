@@ -4,7 +4,6 @@ import os
 from distutils.util import strtobool
 from os.path import join
 
-import boto3
 import sentry_sdk
 from configurations import Configuration
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -13,15 +12,9 @@ from schemacms.utils import json as json_
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-secrets_manager = boto3.client(
-    "secretsmanager", endpoint_url=os.environ.get("SECRET_MANAGER_ENDPOINT_URL", None)
-)
-
-db_secret_arn = os.environ["DB_SECRET_ARN"]
-
-db_secret_value = secrets_manager.get_secret_value(SecretId=db_secret_arn)
+db_connection = os.environ.get('DB_CONNECTION', '{}')
 # contains host, username, password and port
-db_connection_config = json.loads(db_secret_value.get("SecretString"))
+db_connection_config = json.loads(db_connection)
 
 
 json.JSONEncoder.default = json_.CustomJSONEncoder.default

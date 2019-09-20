@@ -9,12 +9,6 @@ wait_for_secretsmanager
 echo "Secrets manager is up"
 
 # install all localstack fixtures
-{
-    install_db_secret &&
-    echo "DB secrets set"
-} || {
-    echo "DB secrets NOT set"
-}
 
 {
     create_public_api_lambda &&
@@ -94,6 +88,8 @@ WORKER_SUCCESS_ARN=$(get_worker_success_lambda_arn)
 }
 
 echo "LocalStack fixtures installed"
+
+export DB_CONNECTION="{\"host\": \"db\", \"username\": \"${POSTGRES_USER}\", \"password\": \"${POSTGRES_PASSWORD}\", \"port\": ${POSTGRES_PORT}}"
 
 python wait_for_postgres.py &&
                ./manage.py migrate &&
