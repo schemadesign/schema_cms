@@ -15,7 +15,7 @@ exports[`Header: Component should render correctly 1`] = `
   }
 >
   <div />
-  <Button
+  <Component
     customStyles={
       Object {
         "backgroundColor": "transparent",
@@ -26,7 +26,7 @@ exports[`Header: Component should render correctly 1`] = `
     }
   >
     <MenuIcon />
-  </Button>
+  </Component>
 </div>
 `;
 
@@ -46,7 +46,7 @@ exports[`Header: Component should render with children and custom styles 1`] = `
   }
 >
   <div />
-  <Button
+  <Component
     customStyles={
       Object {
         "backgroundColor": "transparent",
@@ -57,6 +57,6 @@ exports[`Header: Component should render with children and custom styles 1`] = `
     }
   >
     icon
-  </Button>
+  </Component>
 </div>
 `;

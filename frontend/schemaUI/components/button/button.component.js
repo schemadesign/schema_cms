@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { containerStyles } from './button.styles';
+import { getStyles } from './button.styles';
+import { withStyles } from '../styles/withStyles';
 
-export class Button extends PureComponent {
+class ButtonComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     customStyles: PropTypes.object,
@@ -14,9 +15,10 @@ export class Button extends PureComponent {
   };
 
   render() {
-    const { children, customStyles, ...restProps } = this.props;
-    const style = { ...containerStyles, ...this.props.customStyles };
+    const { children, customStyles, theme, ...restProps } = this.props;
+    const { containerStyles } = getStyles(theme);
 
+    const style = { ...containerStyles, ...this.props.customStyles };
     return (
       <button {...restProps} style={style}>
         {children}
@@ -24,3 +26,5 @@ export class Button extends PureComponent {
     );
   }
 }
+
+export const Button = withStyles(ButtonComponent);

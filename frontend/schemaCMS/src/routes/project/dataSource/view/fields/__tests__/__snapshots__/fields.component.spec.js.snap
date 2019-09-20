@@ -10,7 +10,7 @@ exports[`Fields: Component should render correctly 1`] = `
   <styled.div>
     <styled.div>
       <styled.div>
-        <Button
+        <Component
           customStyles={
             Object {
               "height": 60,
@@ -27,13 +27,13 @@ exports[`Fields: Component should render correctly 1`] = `
               }
             }
           />
-        </Button>
+        </Component>
       </styled.div>
       <styled.div>
         {countFields} {countFields, plural,one {Field} other {Fields}}
       </styled.div>
       <styled.div>
-        <Button
+        <Component
           customStyles={
             Object {
               "height": 60,
@@ -46,7 +46,7 @@ exports[`Fields: Component should render correctly 1`] = `
           <ArrowRightIcon
             customStyles={Object {}}
           />
-        </Button>
+        </Component>
       </styled.div>
     </styled.div>
     <PreviewTable

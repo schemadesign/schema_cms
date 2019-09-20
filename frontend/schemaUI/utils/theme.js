@@ -15,6 +15,11 @@ const secondary = {
   background: '#1d1d20',
   text: '#fff',
   label: '#71737e',
+  error: '#f21e29',
+  active: '#1d1d20',
+  divider: '#F0EFEF',
+  iconDark: '#1d1d20',
+  iconBright: '#FFF',
 };
 
 const INTER_FONT = 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';

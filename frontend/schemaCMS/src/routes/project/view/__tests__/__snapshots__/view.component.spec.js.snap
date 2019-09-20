@@ -165,7 +165,7 @@ exports[`View: Component should render correctly 1`] = `
       </styled.li>
     </styled.ul>
   </styled.div>
-  <Button
+  <Component
     customStyles={
       Object {
         "backgroundColor": "#f0efef",
@@ -176,6 +176,6 @@ exports[`View: Component should render correctly 1`] = `
     onClick={[Function]}
   >
     <ArrowLeftIcon />
-  </Button>
+  </Component>
 </Styled(styled.div)>
 `;

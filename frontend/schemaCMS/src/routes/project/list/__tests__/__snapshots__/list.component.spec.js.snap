@@ -145,7 +145,7 @@ exports[`List: Component should render correctly 1`] = `
       </Card>
     </styled.li>
   </styled.ul>
-  <Button
+  <Component
     customStyles={
       Object {
         "backgroundColor": "#a6a7aa",
@@ -159,6 +159,6 @@ exports[`List: Component should render correctly 1`] = `
     onClick={[Function]}
   >
     <PlusIcon />
-  </Button>
+  </Component>
 </styled.div>
 `;
