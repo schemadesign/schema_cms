@@ -171,6 +171,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         </ul>
       </div>
       <button
+        class="schema-ui-close-menu"
         onClick={[Function]}
         style={
           Object {
@@ -386,7 +387,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     </li>
   </div>
   <div
-    className="sc-kEYyzF hXwpMO"
+    className="sc-kEYyzF kuHvLF"
   >
     <button
       onClick={[Function]}

@@ -159,6 +159,7 @@ exports[`Storyshots UserProfile Default 1`] = `
         />
       </div>
       <button
+        class="schema-ui-close-menu"
         onClick={[Function]}
         style={
           Object {
