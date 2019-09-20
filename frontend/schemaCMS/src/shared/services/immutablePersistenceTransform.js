@@ -19,7 +19,7 @@ export default {
     state.mergeDeep = identity;
     return toImmutable(state);
   },
-  in: raw => {
+  'in': raw => { // eslint-disable-line
     return fromImmutable(raw);
   },
 };
