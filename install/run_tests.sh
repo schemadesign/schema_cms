@@ -8,5 +8,3 @@ SCHEMA_CMS_PATH="./frontend/schemaCMS"
 CI=true yarn --cwd $SCHEMA_UI_PATH test
 CI=true yarn --cwd $SCHEMA_UI_PATH build
 CI=true yarn --cwd $SCHEMA_CMS_PATH test
-docker-compose exec backend pytest
-
