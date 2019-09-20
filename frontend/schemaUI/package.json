@@ -48,6 +48,7 @@
     "jest": "^24.8.0",
     "jest-enzyme": "^7.1.0",
     "jest-watch-typeahead": "^0.2.1",
+    "lint-staged": "^9.2.5",
     "nock": "^10.0.6",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
@@ -71,6 +72,17 @@
     "lint:js": "eslint .",
     "storybook": "start-storybook --config-dir './.storybook'",
     "build-storybook": "build-storybook"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "bash ../../install/run_tests.sh"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint"
+    ]
   },
   "jest": {
     "collectCoverageFrom": [
