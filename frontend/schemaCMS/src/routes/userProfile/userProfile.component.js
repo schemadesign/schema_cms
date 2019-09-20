@@ -61,6 +61,7 @@ export class UserProfile extends PureComponent {
         </Form>
         <LinksWrapper>
           <Link to="/reset-password">{intl.formatMessage(messages.resetPassword)}</Link>
+
           <Link to="/logout">{intl.formatMessage(messages.logout)}</Link>
         </LinksWrapper>
       </Container>
