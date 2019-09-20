@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { isEmpty } from 'ramda';
 import { Button, Card, Icons, Typography } from 'schemaUI';
 
-import extendedDayjs from '../../../shared/utils/extendedDayjs';
+import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -61,7 +61,8 @@ export class List extends PureComponent {
   renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner = {} }, index) {
     const { firstName = '', lastName = '' } = owner;
     const user = isEmpty(firstName) ? lastName : `${firstName} ${lastName}`;
-    const whenCreated = extendedDayjs(created).fromNow();
+    const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
+
     const statusValue = messages[status] ? this.formatMessage(messages[status]) : status;
 
     const header = this.renderHeader([whenCreated, statusValue, user]);
