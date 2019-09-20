@@ -345,6 +345,7 @@ class CIPipeline(core.Stack):
                     ),
                 },
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
+                privileged=True,
             ),
             build_spec=fe_build_spec,
             cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.DOCKER_LAYER)
