@@ -1,4 +1,5 @@
 const primary = {
+  body: '#FFF',
   background: '#f0efef',
   label: '#a6a7aa',
   border: '#1d1d20',

@@ -7,22 +7,23 @@ import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../../shared/components/topHeader';
 import {
-  addDataSourceStyles,
+  buttonStyles,
+  ButtonsContainer,
   Container,
   DataSourceItem,
   DataSourceList,
-  titleStyles,
-  MetaDataWrapper,
+  Error,
+  ErrorsWrapper,
+  Header,
+  HeaderIcon,
+  iconSourceStyles,
+  lockIconStyles,
+  lockTextStyles,
   MetaData,
   MetaDataName,
   MetaDataValue,
-  iconSourceStyles,
-  Header,
-  HeaderIcon,
-  lockTextStyles,
-  lockIconStyles,
-  ErrorsWrapper,
-  Error,
+  MetaDataWrapper,
+  titleStyles,
 } from './list.styles';
 import messages from './list.messages';
 import extendedDayjs from '../../../../shared/utils/extendedDayjs';
@@ -39,7 +40,7 @@ import {
 import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
 
 const { H1 } = Typography;
-const { PlusIcon, CsvIcon, IntersectIcon } = Icons;
+const { PlusIcon, CsvIcon, IntersectIcon, ArrowLeftIcon } = Icons;
 const DEFAULT_VALUE = '—';
 
 export class List extends PureComponent {
@@ -79,6 +80,8 @@ export class List extends PureComponent {
   });
 
   getStep = ifElse(equals(STATUS_DRAFT), always(INITIAL_STEP), always(FIELDS_STEP));
+
+  handleShowProject = () => this.props.history.push(`/project/view/${this.props.match.params.projectId}`);
 
   handleCreateDataSource = () => {
     const projectId = this.props.match.params.projectId;
@@ -182,9 +185,15 @@ export class List extends PureComponent {
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
         <TopHeader {...topHeaderConfig} />
         {this.renderList(dataSources)}
-        <Button customStyles={addDataSourceStyles} onClick={this.handleCreateDataSource}>
-          <PlusIcon />
-        </Button>
+
+        <ButtonsContainer>
+          <Button onClick={this.handleShowProject} customStyles={buttonStyles}>
+            <ArrowLeftIcon />
+          </Button>
+          <Button customStyles={buttonStyles} onClick={this.handleCreateDataSource}>
+            <PlusIcon />
+          </Button>
+        </ButtonsContainer>
       </Container>
     );
   }
