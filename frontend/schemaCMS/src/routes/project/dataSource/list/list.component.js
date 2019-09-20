@@ -81,6 +81,8 @@ export class List extends PureComponent {
 
   getStep = ifElse(equals(STATUS_DRAFT), always(INITIAL_STEP), always(FIELDS_STEP));
 
+  handleShowProject = () => this.props.history.push(`/project/view/${this.props.match.params.projectId}`);
+
   handleCreateDataSource = () => {
     const projectId = this.props.match.params.projectId;
 
@@ -175,12 +177,7 @@ export class List extends PureComponent {
   renderList = dataSources => <DataSourceList>{dataSources.map(this.renderItem)}</DataSourceList>;
 
   render() {
-    const {
-      dataSources = [],
-      match: {
-        params: { projectId },
-      },
-    } = this.props;
+    const { dataSources = [] } = this.props;
     const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (
@@ -190,7 +187,7 @@ export class List extends PureComponent {
         {this.renderList(dataSources)}
 
         <ButtonsContainer>
-          <Button onClick={() => this.props.history.push(`project/view/${projectId}`)} customStyles={buttonStyles}>
+          <Button onClick={this.handleShowProject} customStyles={buttonStyles}>
             <ArrowLeftIcon />
           </Button>
           <Button customStyles={buttonStyles} onClick={this.handleCreateDataSource}>
