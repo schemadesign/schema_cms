@@ -104,10 +104,14 @@ class Scripts:
         return next(filter(lambda r: r.PROTOCOL == protocol, self.resources.values()), None), ref_key
 
 
-scripts = Scripts()
+def setup_scripts():
+    scripts_ = Scripts()
+    S3ScriptResource(settings.DATASOURCE_S3_BUCKET, settings.DS_SCRIPTS_UPLOAD_PATH).register(scripts_)
+    LocalScriptResource('./step-scripts/').register(scripts_)
+    return scripts_
 
-S3ScriptResource(settings.DATASOURCE_S3_BUCKET, settings.DS_SCRIPTS_UPLOAD_PATH).register(scripts)
-LocalScriptResource('./step-scripts/').register(scripts)
+
+scripts = functional.SimpleLazyObject(setup_scripts)
 
 
 def schedule_worker_with(datasource_job):
