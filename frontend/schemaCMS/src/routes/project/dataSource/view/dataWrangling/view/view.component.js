@@ -2,6 +2,8 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always, isEmpty } from 'ramda';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { DATA_WRANGLING_STEP } from '../../../../../../modules/dataSource/dataSource.constants';
 import {
@@ -28,12 +30,18 @@ export class View extends PureComponent {
       params: PropTypes.shape({
         projectId: PropTypes.string.isRequired,
         dataSourceId: PropTypes.string.isRequired,
+        scriptId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   };
 
   componentDidMount() {
-    this.props.fetchDataWrangling();
+    const {
+      match: {
+        params: { scriptId },
+      },
+    } = this.props;
+    this.props.fetchDataWrangling({ scriptId });
   }
 
   componentWillUnmount() {
@@ -70,23 +78,13 @@ export class View extends PureComponent {
       onChange: Function.prototype,
     };
 
-    const codeFieldProps = {
-      name: CODE,
-      value: dataWrangling.code,
-      label: intl.formatMessage(messages.code),
-      placeholder: intl.formatMessage(messages.codePlaceholder),
-      fullWidth: true,
-      disabled: true,
-      multiline: true,
-      customInputStyles: codeStyles,
-      onChange: Function.prototype,
-    };
-
     return (
       <Fragment>
         <Form name={DATA_WRANGLING_FORM_NAME}>
           <TextInput {...descriptionFieldProps} />
-          <TextInput {...codeFieldProps} />
+          <SyntaxHighlighter language="python" style={docco}>
+            {dataWrangling.content}
+          </SyntaxHighlighter>
         </Form>
         <PillButtons
           leftButtonProps={{
