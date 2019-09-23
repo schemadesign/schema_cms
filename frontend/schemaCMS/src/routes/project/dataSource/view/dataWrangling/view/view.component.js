@@ -6,17 +6,13 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { DATA_WRANGLING_STEP } from '../../../../../../modules/dataSource/dataSource.constants';
-import {
-  DATA_WRANGLING_FORM_NAME,
-  DESCRIPTION,
-  CODE,
-} from '../../../../../../modules/dataWrangling/dataWrangling.constants';
+import { DATA_WRANGLING_FORM_NAME, DESCRIPTION } from '../../../../../../modules/dataWrangling/dataWrangling.constants';
 import { TextInput } from '../../../../../../shared/components/form/inputs/textInput';
 import { Loader } from '../../../../../../shared/components/loader';
 import { PillButtons } from '../../../../../../shared/components/pillButtons';
 import { TopHeader } from '../../../../../../shared/components/topHeader';
 import { renderWhenTrueOtherwise } from '../../../../../../shared/utils/rendering';
-import { Container, Form, codeStyles, rightButtonStyles } from './view.styles';
+import { Container, Form, rightButtonStyles } from './view.styles';
 import messages from './view.messages';
 
 export class View extends PureComponent {
@@ -70,7 +66,7 @@ export class View extends PureComponent {
 
     const descriptionFieldProps = {
       name: DESCRIPTION,
-      value: dataWrangling.description,
+      value: dataWrangling.name,
       label: intl.formatMessage(messages.description),
       placeholder: intl.formatMessage(messages.descriptionPlaceholder),
       fullWidth: true,

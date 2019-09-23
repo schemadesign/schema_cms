@@ -5,8 +5,8 @@ import { View } from './view.component';
 
 export const defaultProps = {
   dataWrangling: {
-    description: 'Change to lowercase',
-    code: 'df.columns = map(str.lower, df.columns)',
+    name: 'Change to lowercase',
+    content: 'df.columns = map(str.lower, df.columns)',
   },
   fetchDataWrangling: Function.prototype,
   unmountDataWrangling: Function.prototype,
@@ -20,6 +20,7 @@ export const defaultProps = {
     params: {
       projectId: '1',
       dataSourceId: '1',
+      scriptId: '1',
     },
   },
 };
