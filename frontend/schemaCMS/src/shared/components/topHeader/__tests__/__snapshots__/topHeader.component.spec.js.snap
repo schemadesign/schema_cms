@@ -27,9 +27,12 @@ exports[`TopHeader: Component should render correctly 1`] = `
     </styled.div>
   </Header>
   <Menu
-    customCloseButtonStyles={
+    closeButtonProps={
       Object {
-        "backgroundColor": "#fff",
+        "customStyles": Object {
+          "backgroundColor": "#fff",
+        },
+        "id": "topHeaderCloseMenuButton",
       }
     }
     customStyles={

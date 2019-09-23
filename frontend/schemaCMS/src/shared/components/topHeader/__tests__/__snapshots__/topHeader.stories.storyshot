@@ -198,7 +198,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       </ul>
     </div>
     <button
-      class="schema-ui-close-menu"
+      id="topHeaderCloseMenuButton"
       onClick={[Function]}
       style={
         Object {

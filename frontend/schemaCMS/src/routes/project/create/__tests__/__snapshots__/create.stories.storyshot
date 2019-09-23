@@ -159,7 +159,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         />
       </div>
       <button
-        class="schema-ui-close-menu"
+        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {

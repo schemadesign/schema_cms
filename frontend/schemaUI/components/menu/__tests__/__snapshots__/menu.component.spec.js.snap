@@ -22,7 +22,6 @@ exports[`Menu: Component should render correctly 1`] = `
 >
   items
   <Button
-    class="schema-ui-close-menu"
     customStyles={
       Object {
         "position": "absolute",
@@ -32,7 +31,9 @@ exports[`Menu: Component should render correctly 1`] = `
     }
     onClick={[Function]}
   >
-    <CloseIcon />
+    <CloseIcon
+      customStyles={Object {}}
+    />
   </Button>
 </div>
 `;
@@ -58,7 +59,6 @@ exports[`Menu: Component should render opened 1`] = `
 >
   items
   <Button
-    class="schema-ui-close-menu"
     customStyles={
       Object {
         "position": "absolute",
@@ -68,7 +68,9 @@ exports[`Menu: Component should render opened 1`] = `
     }
     onClick={[Function]}
   >
-    <CloseIcon />
+    <CloseIcon
+      customStyles={Object {}}
+    />
   </Button>
 </div>
 `;
@@ -95,7 +97,6 @@ exports[`Menu: Component should with custom styles 1`] = `
 >
   items
   <Button
-    class="schema-ui-close-menu"
     customStyles={
       Object {
         "backgroundColor": "black",
@@ -104,6 +105,7 @@ exports[`Menu: Component should with custom styles 1`] = `
         "top": "6px",
       }
     }
+    id="close-button"
     onClick={[Function]}
   >
     <CloseIcon />

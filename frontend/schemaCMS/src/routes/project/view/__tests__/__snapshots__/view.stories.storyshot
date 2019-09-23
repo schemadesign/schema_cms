@@ -205,7 +205,7 @@ exports[`Storyshots Project/View default 1`] = `
         </ul>
       </div>
       <button
-        class="schema-ui-close-menu"
+        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {
@@ -754,7 +754,7 @@ exports[`Storyshots Project/View empty 1`] = `
         </ul>
       </div>
       <button
-        class="schema-ui-close-menu"
+        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {
