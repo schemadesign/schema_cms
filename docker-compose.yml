@@ -25,6 +25,8 @@ services:
       - DOCKER_HOST=unix:///var/run/docker.sock
       - AWS_EXECUTION_ENV=True
       - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=foo
+      - AWS_SECRET_ACCESS_KEY=bar
     volumes:
       - "/tmp/localstack:/tmp"
       - "/var/run/docker.sock:/var/run/docker.sock"
