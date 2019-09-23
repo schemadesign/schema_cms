@@ -198,6 +198,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       </ul>
     </div>
     <button
+      id="topHeaderCloseMenuButton"
       onClick={[Function]}
       style={
         Object {

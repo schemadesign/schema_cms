@@ -73,6 +73,10 @@ export class TopHeader extends PureComponent {
     const primaryMenu = this.renderMenu(primaryMenuItems, PrimaryList, PrimaryItem);
     const secondaryMenu = this.renderMenu(secondaryMenuItems, SecondaryList, SecondaryItem);
     const buttonProps = { onClick: this.handleToggleMenu };
+    const closeButtonProps = {
+      customStyles: closeButtonStyles,
+      id: 'topHeaderCloseMenuButton',
+    };
 
     return (
       <Container>
@@ -81,7 +85,7 @@ export class TopHeader extends PureComponent {
           open={this.state.isMenuOpen}
           onClose={this.handleToggleMenu}
           customStyles={menuStyles}
-          customCloseButtonStyles={closeButtonStyles}
+          closeButtonProps={closeButtonProps}
         >
           <MenuHeader>{headerContent}</MenuHeader>
           <Content>

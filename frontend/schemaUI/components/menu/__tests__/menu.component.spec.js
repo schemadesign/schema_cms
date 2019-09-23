@@ -28,10 +28,11 @@ describe('Menu: Component', () => {
     const customStyles = {
       backgroundColor: 'black',
     };
-    const customCloseButtonStyles = {
-      backgroundColor: 'black',
+    const closeButtonProps = {
+      customStyles,
+      id: 'close-button',
     };
-    const wrapper = render({ customStyles, customCloseButtonStyles });
+    const wrapper = render({ customStyles, closeButtonProps });
     global.expect(wrapper).toMatchSnapshot();
   });
 });

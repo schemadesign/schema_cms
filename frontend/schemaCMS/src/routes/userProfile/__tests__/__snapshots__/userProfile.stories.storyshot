@@ -159,6 +159,7 @@ exports[`Storyshots UserProfile Default 1`] = `
         />
       </div>
       <button
+        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {

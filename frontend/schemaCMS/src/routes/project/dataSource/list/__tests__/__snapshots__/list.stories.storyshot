@@ -171,6 +171,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         </ul>
       </div>
       <button
+        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {
