@@ -16,6 +16,12 @@ class DataSource(admin.ModelAdmin):
             obj.update_meta()
 
 
+class DataSourceJobStepInline(admin.TabularInline):
+    model = models.DataSourceJobStep
+    extra = 0
+
+
 @admin.register(models.DataSourceJob)
 class DataSourceJobAdmin(admin.ModelAdmin):
     list_display = ('pk', 'datasource', 'created')
+    inlines = [DataSourceJobStepInline]
