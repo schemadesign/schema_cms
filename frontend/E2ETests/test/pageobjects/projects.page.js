@@ -1,20 +1,18 @@
 import Page from './page.js';
-const TIMEOUT = 10000;
+import HeaderComponent from './../pageobjects/components/header.component.js';
+import MenuComponent from './../pageobjects/components/menu.component.js';
+
 
 class ProjectsPage extends Page {
+    get Header() { return HeaderComponent; }
+    get Menu() { return MenuComponent; }
 
-    get menuBtn() { return $(''); }
     get addProjectBtn() { return $('#addProjectBtn'); }
-    get creationDate() { return $(''); }
-    get status() { return $(''); }
-    get owner() { return $(''); }
-    get title() { return $(''); }
-    get description() { return $(''); }
-    get apiPath() { return $(''); }
-
-
-    waitForElement(name, timeout = TIMEOUT) {
-        browser.waitUntil(() => this[name].isDisplayed(),timeout, `${name} not load after 10 seconds`);
-    }
+    get creationDate() { return $('#headerItem-0'); }
+    get status() { return $('#headerItem-1'); }
+    get owner() { return $('#headerItem-2'); }
+    get projectTitle() { return $('#projectName-0'); }
+    get projectDesc() { return $('#projectDescription-0'); }
+    get apiPath() { return $('#apiPath-0'); }
 }
 export default new ProjectsPage();

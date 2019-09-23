@@ -1,12 +1,9 @@
 import Page from './page.js';
+import { waitForElement } from './../utils/utils.js';
+import { ADMIN, EDITOR, VALID, INVALID, EMPTY} from './../constants/login.constants.js';
 const fs = require('fs');
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
-const ADMIN = 'admin';
-const EDITOR = 'editor';
-const VALID = 'valid';
-const INVALID = 'invalid';
-const EMPTY = 'empty';
-const TIMEOUT = 10000;
+
 
 class LoginPage extends Page {
 
@@ -31,19 +28,11 @@ class LoginPage extends Page {
 
     open() {
         super.open('');
-        this.waitForElement('loginBtn');
-    }
-
-    waitForElement(name, timeout = TIMEOUT) {
-        browser.waitUntil(() => this[name].isDisplayed(),timeout, `${name} not load after 10 seconds`);
-    }
-
-    waitForText(name, text, timeout = TIMEOUT) {
-        browser.waitUntil(() => this[name].getText() === text, timeout, `Text of ${name} doesn't equal ${text}`);
+        waitForElement(this, 'loginBtn');
     }
 
     login(loginState, passwordState) {
-        this.waitForElement('loginBtn');
+        waitForElement(this, 'loginBtn');
         if(loginState === INVALID && passwordState === INVALID) {
             this.username.setValue(creds.invalidLogin);
             this.password.setValue(creds.invalidPassword);
@@ -82,7 +71,7 @@ class LoginPage extends Page {
     }
 
     loginByRole(userRole) {
-        this.waitForElement('loginBtn');
+        waitForElement(this, 'loginBtn');
         if(userRole === ADMIN) {
             this.username.setValue(creds.admin.login);
             this.password.setValue(creds.admin.password);
@@ -98,7 +87,7 @@ class LoginPage extends Page {
 
     loginWithNewPassword() {
         browser.refresh();
-        this.waitForElement('username');
+        waitForElement(this, 'username');
         this.username.setValue(creds.resetPassword.validEmail);
         this.password.setValue(creds.setNewPassword.newPassword);
         this.loginBtn.click();
@@ -106,51 +95,51 @@ class LoginPage extends Page {
     }
 
     loginWithOldPassword() {
-        this.waitForElement('username');
+        waitForElement(this, 'username');
         this.username.setValue(creds.resetPassword.validEmail);
         this.password.setValue(creds.resetPassword.oldPassword);
         this.loginBtn.click();
-        this.waitForElement('wrongCredsError');
+        waitForElement(this, 'wrongCredsError');
     }
 
     loginWithNewInvalidPassword() {
-        this.waitForElement('username');
+        waitForElement(this, 'username');
         this.username.setValue(creds.resetPassword.validEmail);
         this.password.setValue(creds.setNewPassword.confirmInvalidPassword);
         this.loginBtn.click();
-        this.waitForElement('wrongCredsError');
+        waitForElement(this, 'wrongCredsError');
     }
 
     loginWithGoogle () {
-        this.waitForElement('loginBtn');
+        waitForElement(this, 'loginBtn');
         this.loginWithGoogleBtn.click();
     }
 
     resetPassword() {
-        this.waitForElement('forgotPassword');
+        waitForElement(this, 'forgotPassword');
         this.forgotPassword.click();
-        this.waitForElement('username');
+        waitForElement(this, 'username');
         this.username.setValue(creds.resetPassword.validEmail);
         this.resetPasswordBtn.click(); 
     }
 
     resetPasswordWithInvalidEmail() {
-        this.waitForElement('forgotPassword');
+        waitForElement(this, 'forgotPassword');
         this.forgotPassword.click();
-        this.waitForElement('username');
+        waitForElement(this, 'username');
         this.username.setValue(creds.resetPassword.invalidEmail);
         this.resetPasswordBtn.click();
     }
 
     setNewPassword() {
-        this.waitForElement('newPassword');
+        waitForElement(this, 'newPassword');
         this.newPassword.setValue(creds.setNewPassword.newPassword);
         this.confirmNewPassword.setValue(creds.setNewPassword.confirmNewPassword);
         this.submitNewPassword.click();
     }
 
     setInvalidPassword() {
-        this.waitForElement('newPassword');
+        waitForElement(this, 'newPassword');
         this.newPassword.setValue(creds.setNewPassword.newPassword);
         this.confirmNewPassword.setValue(creds.setNewPassword.confirmInvalidPassword);
         this.submitNewPassword.click();
