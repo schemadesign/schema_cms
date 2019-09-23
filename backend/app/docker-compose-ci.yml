@@ -22,8 +22,6 @@ services:
       - DOCKER_HOST=unix:///var/run/docker.sock
       - AWS_EXECUTION_ENV=True
       - AWS_DEFAULT_REGION=us-east-1
-      - AWS_ACCESS_KEY_ID=foo
-      - AWS_SECRET_ACCESS_KEY=bar
 
   backend:
     image: ${BACKEND_IMAGE}
