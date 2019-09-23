@@ -1,7 +1,5 @@
-import io
 import json
 import os
-import zipfile
 
 import boto3
 from django.conf import settings
@@ -92,8 +90,8 @@ class Scripts:
             listed.extend(resource.list(datasource))
         return listed
 
-    def responsible(self, file):
-        protocol, ref_key = file.split(':')
+    def responsible(self, key):
+        protocol, ref_key = key.split(':')
         return next(filter(lambda r: r.PROTOCOL == protocol, self.resources.values()), None), ref_key
 
 
@@ -104,17 +102,6 @@ LocalScriptResource('./step-scripts/').register(scripts)
 
 
 def schedule_worker_with(datasource_job):
-    zip_stream = io.BytesIO()
-    with zipfile.ZipFile(zip_stream, 'w') as zip_file:
-        for step in datasource_job.steps:
-            step_key = step['key']
-            resource, ref_key = scripts.responsible(step_key)
-            zip_file.writestr(ref_key, resource.getvalue(ref_key))
-
-    s3_scripts_ref = os.path.join(
-        settings.DS_JOB_UPLOAD_PATH.format(datasource_job.datasource_id), datasource_job.scripts_ref
-    )
-    s3.Bucket(settings.DATASOURCE_S3_BUCKET).put_object(Key=s3_scripts_ref, Body=zip_stream.getvalue())
     sqs_response = sqs.send_message(
         QueueUrl=settings.SQS_WORKER_QUEUE_URL, MessageBody=json.dumps({'job_pk': datasource_job.pk})
     )

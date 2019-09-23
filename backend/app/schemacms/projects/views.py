@@ -107,7 +107,10 @@ class DataSourceJobView(generics.CreateAPIView):
 
     @transaction.atomic
     def perform_create(self, serializer):
-        job = serializer.save(
-            datasource=self.get_object(), scripts_ref=models.DataSourceJob.generate_scripts_ref()
-        )
+        job = serializer.save(datasource=self.get_object())
         services.schedule_worker_with(job)
+
+
+class DataSourceJobDetailView(generics.RetrieveAPIView):
+    queryset = models.DataSourceJob.objects.all()
+    serializer_class = serializers.DataSourceJobSerializer
