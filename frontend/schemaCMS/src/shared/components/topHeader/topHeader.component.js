@@ -85,7 +85,7 @@ export class TopHeader extends PureComponent {
           open={this.state.isMenuOpen}
           onClose={this.handleToggleMenu}
           customStyles={menuStyles}
-          closeButtonProps= {closeButtonProps}
+          closeButtonProps={closeButtonProps}
         >
           <MenuHeader>{headerContent}</MenuHeader>
           <Content>
