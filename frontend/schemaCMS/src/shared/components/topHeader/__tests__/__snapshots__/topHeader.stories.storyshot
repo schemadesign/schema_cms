@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components/TopHeader Default 1`] = `
 <div
-  className="sc-htpNat KtFsv"
+  className="sc-bdVaJa bDWFJH"
 >
   <div
     style={
@@ -19,7 +19,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
   >
     <div>
       <div
-        className="sc-bxivhb bUZGRr"
+        className="sc-bwzfXH uTxCW"
       >
         <h2
           id="projectsPageTitle"
@@ -110,10 +110,10 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
     }
   >
     <div
-      className="sc-ifAKCX cFlEyZ"
+      className="sc-htpNat KtFsv"
     >
       <div
-        className="sc-bxivhb bUZGRr"
+        className="sc-bwzfXH uTxCW"
       >
         <h2
           id="projectsPageTitle"
@@ -146,13 +146,13 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-EHOje qQtBf"
+      className="sc-bxivhb fxvYgT"
     >
       <ul
-        className="sc-bZQynM sc-gzVnrw JqJZP"
+        className="sc-ifAKCX sc-EHOje bVzUGK"
       >
         <li
-          className="sc-dnqmqq sc-iwsKbI iOzZuy"
+          className="sc-gzVnrw sc-htoDjs icPHiF"
         >
           <a
             href="/path"
@@ -163,7 +163,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-dnqmqq sc-iwsKbI iOzZuy"
+          className="sc-gzVnrw sc-htoDjs icPHiF"
         >
           <a
             href="/path"
@@ -175,10 +175,10 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         </li>
       </ul>
       <ul
-        className="sc-bZQynM sc-htoDjs LPVfx"
+        className="sc-ifAKCX sc-bZQynM hRyDTQ"
       >
         <li
-          className="sc-dnqmqq sc-gZMcBi bYVXEs"
+          className="sc-gzVnrw sc-dnqmqq gTWOHt"
         >
           <a
             href="/logout"
@@ -189,7 +189,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-dnqmqq sc-gZMcBi bYVXEs"
+          className="sc-gzVnrw sc-dnqmqq gTWOHt"
           id="id"
           onClick={[Function]}
         >

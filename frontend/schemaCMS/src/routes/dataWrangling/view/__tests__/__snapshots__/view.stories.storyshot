@@ -2,10 +2,10 @@
 
 exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
 <div
-  className="sc-Rmtcm iSVWGU"
+  className="sc-kvZOFW hxJcVs"
 >
   <div
-    className="sc-htpNat KtFsv"
+    className="sc-bdVaJa bDWFJH"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     >
       <div>
         <div
-          className="sc-bxivhb bUZGRr"
+          className="sc-bwzfXH uTxCW"
         >
           <h2
             id="projectsPageTitle"
@@ -113,10 +113,10 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
       }
     >
       <div
-        className="sc-ifAKCX cFlEyZ"
+        className="sc-htpNat KtFsv"
       >
         <div
-          className="sc-bxivhb bUZGRr"
+          className="sc-bwzfXH uTxCW"
         >
           <h2
             id="projectsPageTitle"
@@ -149,13 +149,13 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-EHOje qQtBf"
+        className="sc-bxivhb fxvYgT"
       >
         <ul
-          className="sc-bZQynM sc-gzVnrw JqJZP"
+          className="sc-ifAKCX sc-EHOje bVzUGK"
         />
         <ul
-          className="sc-bZQynM sc-htoDjs LPVfx"
+          className="sc-ifAKCX sc-bZQynM hRyDTQ"
         />
       </div>
       <button
@@ -199,11 +199,11 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-bRBYWo ccSRck"
+    className="sc-hqyNC keRCOE"
     name="dataWranglingForm"
   >
     <div
-      className="sc-gqjmRU hnZXkc"
+      className="sc-eqIVtm kRufpp"
     >
       <div
         style={
@@ -264,7 +264,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-gqjmRU hnZXkc"
+      className="sc-eqIVtm kRufpp"
     >
       <div
         style={
@@ -355,7 +355,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     </div>
   </form>
   <div
-    className="sc-csuQGl dcDvzg"
+    className="sc-frDJqD cNUyiv"
   >
     <button
       onClick={[Function]}
