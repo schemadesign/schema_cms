@@ -7,7 +7,7 @@ exports[`Card: Component should render children when passed in 1`] = `
       style={
         Object {
           "backgroundColor": "#f0efef",
-          "borderTop": "2px solid #1d1d20",
+          "borderTop": "2px solid #FFF",
           "color": "#1d1d20",
           "display": "flex",
           "flexDirection": "column",
@@ -70,7 +70,7 @@ exports[`Card: Component should render component  with custom style and with hea
       style={
         Object {
           "backgroundColor": "#f0efef",
-          "borderTop": "2px solid #1d1d20",
+          "borderTop": "2px solid #FFF",
           "color": "blue",
           "display": "flex",
           "flexDirection": "column",
@@ -82,7 +82,7 @@ exports[`Card: Component should render component  with custom style and with hea
       <div
         style={
           Object {
-            "color": "#a6a7aa",
+            "color": "#71737e",
             "fontSize": "12px",
             "marginBottom": "14px",
           }
@@ -115,7 +115,7 @@ exports[`Card: Component should render correctly 1`] = `
       style={
         Object {
           "backgroundColor": "#f0efef",
-          "borderTop": "2px solid #1d1d20",
+          "borderTop": "2px solid #FFF",
           "color": "#1d1d20",
           "display": "flex",
           "flexDirection": "column",
@@ -152,7 +152,7 @@ exports[`Card: Component should render with attributes 1`] = `
       style={
         Object {
           "backgroundColor": "#f0efef",
-          "borderTop": "2px solid #1d1d20",
+          "borderTop": "2px solid #FFF",
           "color": "blue",
           "display": "flex",
           "flexDirection": "column",

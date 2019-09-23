@@ -10,7 +10,7 @@ export const getStyles = (theme = light) => ({
     fontFamily: theme.typography.span.fontFamily,
     borderTop: `2px solid ${theme.card.border}`,
     backgroundColor: theme.card.background,
-    color: light.text,
+    color: theme.text,
     padding: '12px 14px 14px',
     display: 'flex',
     flexDirection: 'column',

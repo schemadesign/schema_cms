@@ -15,6 +15,10 @@ export class ThemeProvider extends PureComponent {
   };
 
   render() {
-    return <ThemeContext.Provider value={{ theme: this.props.theme }}>{this.props.children}</ThemeContext.Provider>;
+    return (
+      <ThemeContext.Provider value={{ theme: this.props.theme }}>
+        <div style={this.props.theme.providerContainer}>{this.props.children}</div>
+      </ThemeContext.Provider>
+    );
   }
 }

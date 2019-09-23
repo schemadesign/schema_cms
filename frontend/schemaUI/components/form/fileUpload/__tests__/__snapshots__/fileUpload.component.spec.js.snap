@@ -16,10 +16,10 @@ exports[`FileUpload: Component should render correctly 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#000",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
           "fontSize": 0,
@@ -136,10 +136,10 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#f0efef",
+              "backgroundColor": "#000",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
               "fontSize": 0,
@@ -201,10 +201,10 @@ exports[`FileUpload: Component should render with file name 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#f0efef",
+              "backgroundColor": "#000",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
               "fontSize": 0,
@@ -267,10 +267,10 @@ exports[`FileUpload: Component should render with label 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#f0efef",
+              "backgroundColor": "#000",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
               "fontSize": 0,

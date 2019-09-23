@@ -35,10 +35,10 @@ exports[`Storyshots DataWrangling Default 1`] = `
           <div
             style={
               Object {
-                "backgroundColor": "#f0efef",
+                "backgroundColor": "#000",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#1d1d20",
+                "color": "#FFF",
                 "cursor": "pointer",
                 "display": "inline-block",
                 "fontSize": 0,

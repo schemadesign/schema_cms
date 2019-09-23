@@ -7,16 +7,20 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
       "theme": Object {
         "active": "#1d1d20",
         "background": "#f0efef",
-        "body": "#FFF",
         "border": "#1d1d20",
         "button": Object {
-          "background": "#f0efef",
-          "text": "#1d1d20",
+          "background": "#000",
+          "text": "#FFF",
         },
         "card": Object {
           "background": "#f0efef",
-          "border": "#1d1d20",
-          "label": "#a6a7aa",
+          "border": "#FFF",
+          "label": "#71737e",
+          "text": "#FFF",
+        },
+        "dataGrid": Object {
+          "background": "#f0efef",
+          "text": "#a6a7aa",
         },
         "divider": "#F0EFEF",
         "error": "#f21e29",
@@ -27,6 +31,10 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
         "iconBright": "#FFF",
         "iconDark": "#1d1d20",
         "label": "#a6a7aa",
+        "providerContainer": Object {
+          "backgroundColor": "#FFF",
+          "minHeight": "100vh",
+        },
         "text": "#1d1d20",
         "typography": Object {
           "h1": Object {
@@ -57,6 +65,15 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
     }
   }
 >
-  children
+  <div
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "minHeight": "100vh",
+      }
+    }
+  >
+    children
+  </div>
 </ContextProvider>
 `;

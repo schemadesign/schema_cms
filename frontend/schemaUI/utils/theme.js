@@ -1,5 +1,12 @@
 const colors = {
+  white: '#FFF',
+  black: '#000',
+  darkGrey: '#1d1d20',
+  lightGrey: '#71737e',
+  veryLightPink: '#f0efef',
+  coolGray: '#a6a7aa',
   body: '#FFF',
+  bodyDark: '#000',
   background: '#f0efef',
   label: '#a6a7aa',
   border: '#1d1d20',
@@ -13,15 +20,23 @@ const colors = {
 
 const light = {
   button: {
-    background: colors.background,
-    text: colors.text,
+    background: colors.black,
+    text: colors.white,
   },
   card: {
-    label: colors.label,
-    border: colors.border,
+    label: colors.lightGrey,
+    text: colors.white,
+    border: colors.white,
     background: colors.background,
   },
-  body: '#FFF',
+  providerContainer: {
+    backgroundColor: colors.body,
+    minHeight: '100vh',
+  },
+  dataGrid: {
+    background: colors.veryLightPink,
+    text: colors.coolGray,
+  },
   background: '#f0efef',
   label: '#a6a7aa',
   border: '#1d1d20',
@@ -38,7 +53,23 @@ const light = {
 };
 
 const dark = {
-  body: '#000',
+  button: {
+    background: colors.white,
+    text: colors.black,
+  },
+  card: {
+    label: colors.label,
+    border: colors.border,
+    background: colors.darkGrey,
+  },
+  providerContainer: {
+    backgroundColor: colors.bodyDark,
+    minHeight: '100vh',
+  },
+  dataGrid: {
+    background: colors.black,
+    text: colors.lightGrey,
+  },
   background: '#1d1d20',
   text: '#fff',
   label: '#71737e',
@@ -79,6 +110,7 @@ const primaryTypography = {
 };
 
 light.typography = primaryTypography;
+dark.typography = primaryTypography;
 
-export { light, dark };
-export const Theme = { light, dark };
+export { light, dark, colors };
+export const Theme = { light, dark, colors };

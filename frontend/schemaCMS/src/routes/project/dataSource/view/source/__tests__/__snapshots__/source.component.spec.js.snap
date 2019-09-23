@@ -475,7 +475,7 @@ exports[`Source: Component should render correctly 1`] = `
                                 "backgroundColor": "#1D1D20",
                                 "border": "none",
                                 "borderRadius": "48px",
-                                "color": "#1d1d20",
+                                "color": "#FFF",
                                 "cursor": "pointer",
                                 "display": "inline-block",
                                 "fontSize": "18px",
@@ -1019,7 +1019,7 @@ exports[`Source: Component should render file uploader 1`] = `
                                 "backgroundColor": "#1D1D20",
                                 "border": "none",
                                 "borderRadius": "48px",
-                                "color": "#1d1d20",
+                                "color": "#FFF",
                                 "cursor": "pointer",
                                 "display": "inline-block",
                                 "fontSize": "18px",
@@ -1080,10 +1080,10 @@ exports[`Source: Component should render file uploader 1`] = `
                 <div
                   style={
                     Object {
-                      "backgroundColor": "#f0efef",
+                      "backgroundColor": "#000",
                       "border": "none",
                       "borderRadius": "48px",
-                      "color": "#1d1d20",
+                      "color": "#FFF",
                       "cursor": "pointer",
                       "display": "inline-block",
                       "fontSize": 0,
@@ -1126,10 +1126,10 @@ exports[`Source: Component should render file uploader 1`] = `
                       <div
                         style={
                           Object {
-                            "backgroundColor": "#f0efef",
+                            "backgroundColor": "#000",
                             "border": "none",
                             "borderRadius": "48px",
-                            "color": "#1d1d20",
+                            "color": "#FFF",
                             "cursor": "pointer",
                             "display": "inline-block",
                             "fontSize": 0,
@@ -1228,10 +1228,10 @@ exports[`Source: Component should render file uploader 1`] = `
                         <div
                           style={
                             Object {
-                              "backgroundColor": "#f0efef",
+                              "backgroundColor": "#000",
                               "border": "none",
                               "borderRadius": "48px",
-                              "color": "#1d1d20",
+                              "color": "#FFF",
                               "cursor": "pointer",
                               "display": "inline-block",
                               "fontSize": 0,

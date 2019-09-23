@@ -61,7 +61,7 @@ exports[`Storyshots UserProfile Default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
             "fontSize": "18px",
@@ -166,7 +166,7 @@ exports[`Storyshots UserProfile Default 1`] = `
             "backgroundColor": "#fff",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
             "fontSize": "18px",
@@ -383,10 +383,10 @@ exports[`Storyshots UserProfile Default 1`] = `
     <button
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#000",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
           "fontSize": "18px",

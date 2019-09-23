@@ -138,7 +138,7 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
               "backgroundColor": "#1D1D20",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
               "fontSize": "18px",

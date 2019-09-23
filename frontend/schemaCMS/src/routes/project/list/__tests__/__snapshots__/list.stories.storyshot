@@ -61,7 +61,7 @@ exports[`Storyshots Project/List empty 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
             "fontSize": "18px",
@@ -178,7 +178,7 @@ exports[`Storyshots Project/List empty 1`] = `
             "backgroundColor": "#fff",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
             "fontSize": "18px",
@@ -237,7 +237,7 @@ exports[`Storyshots Project/List empty 1`] = `
         "border": "none",
         "borderRadius": "48px",
         "bottom": "10px",
-        "color": "#1d1d20",
+        "color": "#FFF",
         "cursor": "pointer",
         "display": "inline-block",
         "fontSize": "18px",
@@ -331,7 +331,7 @@ exports[`Storyshots Project/List list 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
             "fontSize": "18px",
@@ -448,7 +448,7 @@ exports[`Storyshots Project/List list 1`] = `
             "backgroundColor": "#fff",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
             "fontSize": "18px",
@@ -490,7 +490,7 @@ exports[`Storyshots Project/List list 1`] = `
         style={
           Object {
             "backgroundColor": "#f0efef",
-            "borderTop": "2px solid #1d1d20",
+            "borderTop": "2px solid #FFF",
             "color": "#1d1d20",
             "display": "flex",
             "flexDirection": "column",
@@ -502,7 +502,7 @@ exports[`Storyshots Project/List list 1`] = `
         <div
           style={
             Object {
-              "color": "#a6a7aa",
+              "color": "#71737e",
               "fontSize": "12px",
               "marginBottom": "14px",
             }
@@ -593,7 +593,7 @@ exports[`Storyshots Project/List list 1`] = `
         style={
           Object {
             "backgroundColor": "#f0efef",
-            "borderTop": "2px solid #1d1d20",
+            "borderTop": "2px solid #FFF",
             "color": "#1d1d20",
             "display": "flex",
             "flexDirection": "column",
@@ -605,7 +605,7 @@ exports[`Storyshots Project/List list 1`] = `
         <div
           style={
             Object {
-              "color": "#a6a7aa",
+              "color": "#71737e",
               "fontSize": "12px",
               "marginBottom": "14px",
             }
@@ -699,7 +699,7 @@ exports[`Storyshots Project/List list 1`] = `
         "border": "none",
         "borderRadius": "48px",
         "bottom": "10px",
-        "color": "#1d1d20",
+        "color": "#FFF",
         "cursor": "pointer",
         "display": "inline-block",
         "fontSize": "18px",
