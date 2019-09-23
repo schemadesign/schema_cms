@@ -22,7 +22,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         className="sc-bxivhb bUZGRr"
       >
         <h2
-          id="projectsPageTitle"
+          id="headerTitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -35,7 +35,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           Projects
         </h2>
         <h1
-          id="projectsPageSubtitle"
+          id="headerSubtitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -52,6 +52,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       </div>
     </div>
     <button
+      id="topHeaderOpenMenuBtn"
       onClick={[Function]}
       style={
         Object {
@@ -116,7 +117,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         className="sc-bxivhb bUZGRr"
       >
         <h2
-          id="projectsPageTitle"
+          id="headerTitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -129,7 +130,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           Projects
         </h2>
         <h1
-          id="projectsPageSubtitle"
+          id="headerSubtitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",

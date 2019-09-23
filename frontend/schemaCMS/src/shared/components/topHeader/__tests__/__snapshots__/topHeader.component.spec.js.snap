@@ -5,6 +5,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
   <Header
     buttonProps={
       Object {
+        "id": "topHeaderOpenMenuBtn",
         "onClick": [Function],
       }
     }
@@ -15,12 +16,12 @@ exports[`TopHeader: Component should render correctly 1`] = `
   >
     <styled.div>
       <H2
-        id="projectsPageTitle"
+        id="headerTitle"
       >
         Projects
       </H2>
       <H1
-        id="projectsPageSubtitle"
+        id="headerSubtitle"
       >
         Overview
       </H1>
@@ -45,12 +46,12 @@ exports[`TopHeader: Component should render correctly 1`] = `
     <styled.div>
       <styled.div>
         <H2
-          id="projectsPageTitle"
+          id="headerTitle"
         >
           Projects
         </H2>
         <H1
-          id="projectsPageSubtitle"
+          id="headerSubtitle"
         >
           Overview
         </H1>

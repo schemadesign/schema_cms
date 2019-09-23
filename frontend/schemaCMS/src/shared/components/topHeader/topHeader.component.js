@@ -60,8 +60,8 @@ export class TopHeader extends PureComponent {
 
   renderHeader = (title, subtitle) => (
     <HeaderWrapper>
-      <H2 id="projectsPageTitle">{title}</H2>
-      <H1 id="projectsPageSubtitle">{subtitle}</H1>
+      <H2 id="headerTitle">{title}</H2>
+      <H1 id="headerSubtitle">{subtitle}</H1>
     </HeaderWrapper>
   );
 
@@ -72,7 +72,7 @@ export class TopHeader extends PureComponent {
 
     const primaryMenu = this.renderMenu(primaryMenuItems, PrimaryList, PrimaryItem);
     const secondaryMenu = this.renderMenu(secondaryMenuItems, SecondaryList, SecondaryItem);
-    const buttonProps = { onClick: this.handleToggleMenu };
+    const buttonProps = { onClick: this.handleToggleMenu, id: 'topHeaderOpenMenuBtn' };
 
     return (
       <Container>

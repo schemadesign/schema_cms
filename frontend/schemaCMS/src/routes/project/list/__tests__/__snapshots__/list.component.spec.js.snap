@@ -13,6 +13,7 @@ exports[`List: Component should render correctly 1`] = `
     secondaryMenuItems={
       Array [
         Object {
+          "id": "logoutBtn",
           "label": "Log Out",
           "to": "/logout",
         },
