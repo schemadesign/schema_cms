@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
+<div
+  className="sc-kkGfuU gqJIVH"
+>
+  <ul
+    className="sc-iAyFgw hLNWho"
+  >
+    <li
+      className="sc-hSdWYo ekjJsu"
+    >
+      <span
+        className="sc-cvbbAY gBRihi"
+      >
+        Field
+      </span>
+      firstName
+    </li>
+    <li
+      className="sc-hSdWYo ekjJsu"
+    >
+      <span
+        className="sc-cvbbAY gBRihi"
+      >
+        Sample
+      </span>
+      <span
+        className="sc-jWBwVP cUSipt"
+      >
+        Sample
+      </span>
+    </li>
+    <li
+      className="sc-hSdWYo ekjJsu"
+    >
+      <span
+        className="sc-cvbbAY gBRihi"
+      >
+        Type
+      </span>
+      <span
+        className="sc-jWBwVP cUSipt"
+      >
+        Text
+      </span>
+    </li>
+    <li
+      className="sc-hSdWYo sc-eHgmQL kjXkfa"
+    >
+      <span
+        className="sc-cvbbAY gBRihi"
+      >
+        Total Count (N)
+      </span>
+      <span
+        className="sc-jWBwVP cUSipt"
+      >
+        127
+      </span>
+    </li>
+    <li
+      className="sc-hSdWYo sc-eHgmQL kjXkfa"
+    >
+      <span
+        className="sc-cvbbAY gBRihi"
+      >
+        Unique
+      </span>
+      <span
+        className="sc-jWBwVP cUSipt"
+      >
+        99
+      </span>
+    </li>
+    <li
+      className="sc-hSdWYo sc-eHgmQL kjXkfa"
+    >
+      <span
+        className="sc-cvbbAY gBRihi"
+      >
+        Mean
+      </span>
+      <span
+        className="sc-jWBwVP cUSipt"
+      >
+        4
+      </span>
+    </li>
+    <li
+      className="sc-hSdWYo sc-eHgmQL kjXkfa"
+    >
+      <span
+        className="sc-cvbbAY gBRihi"
+      >
+        Min
+      </span>
+      <span
+        className="sc-jWBwVP cUSipt"
+      >
+        1
+      </span>
+    </li>
+    <li
+      className="sc-hSdWYo sc-eHgmQL kjXkfa"
+    >
+      <span
+        className="sc-cvbbAY gBRihi"
+      >
+        Max
+      </span>
+      <span
+        className="sc-jWBwVP cUSipt"
+      >
+        100
+      </span>
+    </li>
+    <li
+      className="sc-hSdWYo sc-eHgmQL kjXkfa"
+    >
+      <span
+        className="sc-cvbbAY gBRihi"
+      >
+        Std. Dev.
+      </span>
+      <span
+        className="sc-jWBwVP cUSipt"
+      >
+        23.0332
+      </span>
+    </li>
+  </ul>
+</div>
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Project/DataSource/View Default 1`] = `
+<div
+  className="sc-caSCKo eckYYO"
+/>
+`;

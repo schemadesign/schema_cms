@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/Create Default 1`] = `
+exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
 <div
-  className="sc-dNLxif fAdjEA"
+  className="sc-kvZOFW hxJcVs"
 >
   <div
     className="sc-bdVaJa bDWFJH"
@@ -35,7 +35,7 @@ exports[`Storyshots Project/Create Default 1`] = `
               }
             }
           >
-            Create New Project
+            Data Wrangling
           </h2>
           <h1
             id="projectsPageSubtitle"
@@ -50,7 +50,7 @@ exports[`Storyshots Project/Create Default 1`] = `
               }
             }
           >
-            Project Info
+            View step
           </h1>
         </div>
       </div>
@@ -129,7 +129,7 @@ exports[`Storyshots Project/Create Default 1`] = `
               }
             }
           >
-            Create New Project
+            Data Wrangling
           </h2>
           <h1
             id="projectsPageSubtitle"
@@ -144,7 +144,7 @@ exports[`Storyshots Project/Create Default 1`] = `
               }
             }
           >
-            Project Info
+            View step
           </h1>
         </div>
       </div>
@@ -199,8 +199,8 @@ exports[`Storyshots Project/Create Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-uJMKN dsXgWn"
-    onSubmit={[Function]}
+    className="sc-hqyNC keRCOE"
+    name="dataWranglingForm"
   >
     <div
       className="sc-eqIVtm kRufpp"
@@ -210,67 +210,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           Object {
             "display": "flex",
             "flexDirection": "column",
-            "maxWidth": "320px",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
-      >
-        <label
-          htmlFor="title"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "1px solid #F0EFEF",
-              "color": "#a6a7aa",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          Title
-        </label>
-        <input
-          id="title"
-          name="title"
-          onChange={[Function]}
-          placeholder="Project title"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#1d1d20",
-              "fontSize": "18px",
-              "lineHeight": "24px",
-              "outline": "none",
-            }
-          }
-          type="text"
-          value="title"
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="sc-eqIVtm kRufpp"
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "320px",
+            "maxWidth": "100%",
             "paddingBottom": "30px",
             "position": "relative",
           }
@@ -294,10 +234,11 @@ exports[`Storyshots Project/Create Default 1`] = `
           Description
         </label>
         <input
+          disabled={true}
           id="description"
           name="description"
           onChange={[Function]}
-          placeholder="Project description"
+          placeholder="Description"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -309,6 +250,7 @@ exports[`Storyshots Project/Create Default 1`] = `
             }
           }
           type="text"
+          value="Change to lowercase"
         />
         <div
           style={
@@ -329,14 +271,14 @@ exports[`Storyshots Project/Create Default 1`] = `
           Object {
             "display": "flex",
             "flexDirection": "column",
-            "maxWidth": "320px",
+            "maxWidth": "100%",
             "paddingBottom": "30px",
             "position": "relative",
           }
         }
       >
         <label
-          htmlFor="owner"
+          htmlFor="code"
           style={
             Object {
               "border": "none",
@@ -350,24 +292,55 @@ exports[`Storyshots Project/Create Default 1`] = `
             }
           }
         >
-          Owner
+          Python Code
         </label>
-        <input
+        <textarea
           disabled={true}
-          id="owner"
-          name="owner"
+          id="code"
           onChange={[Function]}
+          placeholder="Python Code"
           style={
             Object {
-              "backgroundColor": "transparent",
+              "backgroundColor": "#f0efef",
               "border": "none",
               "color": "#1d1d20",
+              "fontFamily": "Hack, monospace",
               "fontSize": "18px",
+              "height": 0,
               "lineHeight": "24px",
+              "marginTop": "10px",
               "outline": "none",
+              "padding": "10px",
+              "resize": "none",
             }
           }
           type="text"
+          value="df.columns = map(str.lower, df.columns)"
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "border": "none",
+              "color": "#1d1d20",
+              "fontFamily": "Hack, monospace",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "marginTop": "10px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "10px",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
         />
         <div
           style={
@@ -380,149 +353,10 @@ exports[`Storyshots Project/Create Default 1`] = `
         />
       </div>
     </div>
-    <div
-      className="sc-jqCOkK brHQCA"
-    >
-      <label
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "1px solid #F0EFEF",
-            "color": "#a6a7aa",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Status
-      </label>
-      <input
-        id="status"
-        name="status"
-        type="hidden"
-      />
-      <div
-        style={
-          Object {
-            "border": "1px solid #D2D2D2",
-            "display": "flex",
-            "maxWidth": "300px",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "cursor": "pointer",
-              "display": "flex",
-              "padding": "7px",
-              "position": "relative",
-              "width": "100%",
-            }
-          }
-        >
-          <div
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-                "display": "flex",
-                "height": "30px",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "alignItems": "center",
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "height": "30px",
-                }
-              }
-            >
-              In Progress
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "backgroundColor": "#FFFFFF",
-                "display": "none",
-                "flexDirection": "column",
-                "left": "0",
-                "maxHeight": "175px",
-                "overflow": "hidden",
-                "position": "absolute",
-                "top": "46px",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              id="select-item-0"
-              onClick={[Function]}
-              style={
-                Object {
-                  "borderTop": "none",
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "padding": "7px",
-                }
-              }
-            >
-              In Progress
-            </div>
-            <div
-              id="select-item-1"
-              onClick={[Function]}
-              style={
-                Object {
-                  "borderTop": "1px solid #D2D2D2",
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "padding": "7px",
-                }
-              }
-            >
-              Done
-            </div>
-            <div
-              id="select-item-2"
-              onClick={[Function]}
-              style={
-                Object {
-                  "borderTop": "1px solid #D2D2D2",
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "padding": "7px",
-                }
-              }
-            >
-              Hold
-            </div>
-            <div
-              id="select-item-3"
-              onClick={[Function]}
-              style={
-                Object {
-                  "borderTop": "1px solid #D2D2D2",
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "padding": "7px",
-                }
-              }
-            >
-              Published
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </form>
+  <div
+    className="sc-frDJqD cNUyiv"
+  >
     <button
       onClick={[Function]}
       style={
@@ -535,35 +369,37 @@ exports[`Storyshots Project/Create Default 1`] = `
           "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
-          "marginRight": "20px",
+          "marginRight": 10,
           "minHeight": "48px",
           "outline": "none",
-          "padding": "0 30px",
+          "padding": "0",
+          "width": "100%",
         }
       }
     >
-      Cancel
+      Back
     </button>
     <button
+      onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#1d1d20",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#1d1d20",
+          "color": "#fff",
           "cursor": "pointer",
           "display": "inline-block",
           "fontSize": "18px",
           "margin": "0",
-          "marginRight": "20px",
           "minHeight": "48px",
           "outline": "none",
-          "padding": "0 30px",
+          "padding": "0",
+          "width": "100%",
         }
       }
     >
-      Submit
+      OK
     </button>
-  </form>
+  </div>
 </div>
 `;
