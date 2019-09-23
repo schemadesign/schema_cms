@@ -7,7 +7,7 @@ import { CheckboxOnIcon } from '../../icons/checkboxOnIcon';
 import { CheckboxOffIcon } from '../../icons/checkboxOffIcon';
 import { withStyles } from '../../styles/withStyles';
 
-export class CheckboxGroupComponent extends PureComponent {
+class CheckboxGroupComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     customCheckboxStyles: PropTypes.object,

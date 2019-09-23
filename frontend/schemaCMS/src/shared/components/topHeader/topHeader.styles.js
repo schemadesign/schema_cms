@@ -56,7 +56,6 @@ export const SecondaryItem = styled(Item)`
 `;
 
 export const menuStyles = {
-  backgroundColor: '#fff',
   zIndex: 9999,
   maxWidth: null,
 };

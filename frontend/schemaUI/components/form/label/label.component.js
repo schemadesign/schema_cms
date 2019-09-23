@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { getStyles } from './label.styles';
 import { withStyles } from '../../styles/withStyles';
 
-export class LabelComponent extends PureComponent {
+class LabelComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     name: PropTypes.string,

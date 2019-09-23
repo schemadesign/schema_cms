@@ -2,17 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import PlusSVG from '../../../images/icons/plus.svg';
-import { containerStyles } from './plusIcon.styles';
+import { getStyles } from './plusIcon.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class PlusIcon extends PureComponent {
+export class PlusIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
 
   render() {
-    const { customStyles, ...restProps } = this.props;
+    const { customStyles, theme, ...restProps } = this.props;
+    const containerStyles = getStyles(theme);
     const styles = { ...containerStyles, ...customStyles };
 
     return <PlusSVG {...restProps} style={styles} />;
   }
 }
+
+export const PlusIcon = withStyles(PlusIconComponent);

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { getStyles } from './input.styles';
 import { withStyles } from '../../styles/withStyles';
 
-export class InputComponent extends PureComponent {
+class InputComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };

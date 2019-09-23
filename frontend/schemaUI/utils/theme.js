@@ -60,6 +60,17 @@ const light = {
   header: {
     text: colors.white,
   },
+  menu: {
+    background: colors.white,
+    text: colors.black,
+  },
+  stepper: {
+    background: colors.veryLightPink,
+    active: colors.darkGrey,
+  },
+  icon: {
+    fill: colors.darkGrey,
+  },
   background: '#f0efef',
   border: '#1d1d20',
   text: '#1d1d20',
@@ -68,10 +79,6 @@ const light = {
   divider: '#F0EFEF',
   iconDark: '#1d1d20',
   iconBright: '#FFF',
-  icon: {
-    dark: '#1d1d20',
-    light: '#FFF',
-  },
 };
 
 const dark = {
@@ -112,6 +119,17 @@ const dark = {
   },
   header: {
     text: colors.white,
+  },
+  menu: {
+    background: colors.black,
+    text: colors.white,
+  },
+  stepper: {
+    background: colors.darkGrey,
+    active: colors.white,
+  },
+  icon: {
+    fill: colors.white,
   },
   background: '#1d1d20',
   text: '#fff',

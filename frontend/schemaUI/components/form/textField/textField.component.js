@@ -7,7 +7,7 @@ import { TextArea } from '../textArea';
 import { Label } from '../label';
 import { withStyles } from '../../styles/withStyles';
 
-export class TextFieldComponent extends PureComponent {
+class TextFieldComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     customInputStyles: PropTypes.object,

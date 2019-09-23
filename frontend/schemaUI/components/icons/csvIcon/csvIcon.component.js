@@ -2,17 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import CsvSVG from '../../../images/icons/spreadsheet.svg';
-import { containerStyles } from './csvIcon.styles';
+import { getStyles } from './csvIcon.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class CsvIcon extends PureComponent {
+class CsvIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
 
   render() {
-    const { customStyles, ...restProps } = this.props;
-    const styles = { ...containerStyles, ...this.props.customStyles };
+    const { customStyles, theme, ...restProps } = this.props;
+    const containerStyles = getStyles(theme);
+    const styles = { ...containerStyles, ...customStyles };
 
     return <CsvSVG {...restProps} style={styles} />;
   }
 }
+
+export const CsvIcon = withStyles(CsvIconComponent);

@@ -2,17 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import IntersectSVG from '../../../images/icons/intersect.svg';
-import { containerStyles } from './intersectIcon.styles';
+import { getStyles } from './intersectIcon.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class IntersectIcon extends PureComponent {
+export class IntersectIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
 
   render() {
-    const { customStyles, ...restProps } = this.props;
-    const styles = { ...containerStyles, ...this.props.customStyles };
+    const { customStyles, theme, ...restProps } = this.props;
+    const containerStyles = getStyles(theme);
+    const styles = { ...containerStyles, ...customStyles };
 
     return <IntersectSVG {...restProps} style={styles} />;
   }
 }
+
+export const IntersectIcon = withStyles(IntersectIconComponent);

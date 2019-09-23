@@ -7,7 +7,7 @@ import { withStyles } from '../styles/withStyles';
 
 const SCREEN_WIDTH_PERCENT = 100;
 
-export class DataGridComponent extends PureComponent {
+class DataGridComponent extends PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired,
   };
