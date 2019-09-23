@@ -2,23 +2,22 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import { injectIntl } from 'react-intl';
 import { compose } from 'ramda';
+import { injectIntl } from 'react-intl';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
-import { DataSourceRoutines, selectFields, selectPreviewTable } from '../../../../../modules/dataSource';
-import { Fields } from './fields.component';
+import { DataWranglingRoutines, selectDataWrangling } from '../../../modules/dataWrangling';
+import { View } from './view.component';
 
 const mapStateToProps = createStructuredSelector({
-  fields: selectFields,
-  previewTable: selectPreviewTable,
+  dataWrangling: selectDataWrangling,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchFields: promisifyRoutine(DataSourceRoutines.fetchFields),
-      unmountFields: promisifyRoutine(DataSourceRoutines.unmountFields),
+      fetchDataWrangling: promisifyRoutine(DataWranglingRoutines.fetchOne),
+      unmountDataWrangling: promisifyRoutine(DataWranglingRoutines.unmountOne),
     },
     dispatch
   ),
@@ -32,4 +31,4 @@ export default compose(
   ),
   injectIntl,
   withRouter
-)(Fields);
+)(View);

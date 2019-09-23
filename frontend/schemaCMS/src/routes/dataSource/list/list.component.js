@@ -5,7 +5,7 @@ import { Button, Card, Icons, Typography } from 'schemaUI';
 import { always, anyPass, cond, equals, ifElse } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
-import { TopHeader } from '../../../../shared/components/topHeader';
+import { TopHeader } from '../../../shared/components/topHeader';
 import {
   buttonStyles,
   ButtonsContainer,
@@ -26,8 +26,8 @@ import {
   titleStyles,
 } from './list.styles';
 import messages from './list.messages';
-import extendedDayjs from '../../../../shared/utils/extendedDayjs';
-import { HeaderItem, HeaderList } from '../../list/list.styles';
+import extendedDayjs from '../../../shared/utils/extendedDayjs';
+import { HeaderItem, HeaderList } from '../../project/list/list.styles';
 import {
   FIELDS_STEP,
   INITIAL_STEP,
@@ -36,8 +36,8 @@ import {
   STATUS_ERROR,
   STATUS_PROCESSING,
   STATUS_READY_FOR_PROCESSING,
-} from '../../../../modules/dataSource/dataSource.constants';
-import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
+} from '../../../modules/dataSource/dataSource.constants';
+import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 
 const { H1 } = Typography;
 const { PlusIcon, CsvIcon, IntersectIcon, ArrowLeftIcon } = Icons;

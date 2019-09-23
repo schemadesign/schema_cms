@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Theme } from 'schemaUI';
 import { identity } from 'ramda';
-import { styleWhenTrue } from '../../../../../shared/utils/rendering';
+import { styleWhenTrue } from '../../../../shared/utils/rendering';
 
 export const Container = styled.div``;
 

@@ -7,8 +7,8 @@ import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 
 import { View } from './view.component';
-import { DataSourceRoutines, selectDataSource } from '../../../../modules/dataSource';
-import { DataWranglingRoutines, selectDataWranglings } from '../../../../modules/dataWrangling';
+import { DataSourceRoutines, selectDataSource } from '../../../modules/dataSource';
+import { DataWranglingRoutines, selectDataWranglings } from '../../../modules/dataWrangling';
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,

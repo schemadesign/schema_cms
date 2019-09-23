@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { View } from '../view.component';
 import { defaultProps } from '../view.stories';
-import { STATUS_DRAFT } from '../../../../../modules/dataSource/dataSource.constants';
+import { STATUS_DRAFT } from '../../../../modules/dataSource/dataSource.constants';
 
 describe('View: Component', () => {
   const component = props => <View {...defaultProps} {...props} />;

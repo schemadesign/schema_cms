@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withRouter } from '../../../../../.storybook/decorators';
+import { withRouter } from '../../.storybook/decorators';
 
 import { DataWrangling } from './dataWrangling.component';
 

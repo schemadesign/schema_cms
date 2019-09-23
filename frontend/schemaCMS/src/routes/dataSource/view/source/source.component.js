@@ -13,7 +13,7 @@ import {
   customRadioGroupStyles,
 } from './source.styles';
 import messages from './source.messages';
-import { TextInput } from '../../../../../shared/components/form/inputs/textInput';
+import { TextInput } from '../../../../shared/components/form/inputs/textInput';
 import {
   DATA_SOURCE_FILE,
   DATA_SOURCE_NAME,
@@ -23,7 +23,7 @@ import {
   SOURCE_TYPE_API,
   SOURCE_TYPE_DATABASE,
   SOURCE_TYPE_FILE,
-} from '../../../../../modules/dataSource/dataSource.constants';
+} from '../../../../modules/dataSource/dataSource.constants';
 
 const { RadioGroup, RadioButton, Label, FileUpload } = Form;
 const { CsvIcon } = Icons;

@@ -4,7 +4,7 @@ import { IntlProvider } from 'react-intl';
 
 import { Source } from '../source.component';
 import { defaultProps } from '../source.stories';
-import { DEFAULT_LOCALE } from '../../../../../../i18n';
+import { DEFAULT_LOCALE } from '../../../../../i18n';
 
 describe('Source: Component', () => {
   const component = props => (

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { View } from './view';
 import { List } from './list';
-import { View as DataWranglingView } from './view/dataWrangling/view';
+import { View as DataWranglingView } from '../dataWrangling/view';
 
 const INITIAL_STEP = 1;
 

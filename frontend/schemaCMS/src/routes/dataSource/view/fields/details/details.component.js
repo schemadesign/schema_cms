@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { defaultTo, innerJoin, isNil } from 'ramda';
 
-import { renderWhenTrue } from '../../../../../../shared/utils/rendering';
+import { renderWhenTrue } from '../../../../../shared/utils/rendering';
 import messages from './details.messages';
 import { EDITABLE_FIELDS, EMPTY, DEFAULT_STRUCTURE, INFORMATION_FIELDS } from './details.constants';
 import { Container, List, FieldInformation, FieldSummary, Label, Value, EditIcon } from './details.styles';

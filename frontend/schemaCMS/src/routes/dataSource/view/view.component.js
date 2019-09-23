@@ -7,17 +7,17 @@ import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from '
 import messages from './view.messages';
 import { Source } from './source';
 import { Fields } from './fields';
-import { DataWrangling } from './dataWrangling';
-import { PillButtons } from '../../../../shared/components/pillButtons';
-import { renderWhenTrue } from '../../../../shared/utils/rendering';
-import { TopHeader } from '../../../../shared/components/topHeader';
+import { DataWrangling } from '../../dataWrangling';
+import { PillButtons } from '../../../shared/components/pillButtons';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { TopHeader } from '../../../shared/components/topHeader';
 import {
   DATA_WRANGLING_STEP,
   FIELDS_STEP,
   INITIAL_STEP,
   MAX_STEPS,
   STATUS_DRAFT,
-} from '../../../../modules/dataSource/dataSource.constants';
+} from '../../../modules/dataSource/dataSource.constants';
 
 export class View extends PureComponent {
   static propTypes = {

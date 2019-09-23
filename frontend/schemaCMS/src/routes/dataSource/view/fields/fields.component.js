@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { Button, Icons } from 'schemaUI';
 import { isEmpty } from 'ramda';
 
-import { Loader } from '../../../../../shared/components/loader';
+import { Loader } from '../../../../shared/components/loader';
 import { PreviewTable } from './previewTable';
 import { Details } from './details';
 import messages from './fields.messages';

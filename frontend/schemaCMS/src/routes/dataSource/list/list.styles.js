@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Theme } from 'schemaUI';
-import { styleWhenTrue } from '../../../../shared/utils/rendering';
+import { styleWhenTrue } from '../../../shared/utils/rendering';
 
 const horizontalMargin = 20;
 

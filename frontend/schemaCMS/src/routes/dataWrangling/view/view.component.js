@@ -3,17 +3,13 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always, isEmpty } from 'ramda';
 
-import { DATA_WRANGLING_STEP } from '../../../../../../modules/dataSource/dataSource.constants';
-import {
-  DATA_WRANGLING_FORM_NAME,
-  DESCRIPTION,
-  CODE,
-} from '../../../../../../modules/dataWrangling/dataWrangling.constants';
-import { TextInput } from '../../../../../../shared/components/form/inputs/textInput';
-import { Loader } from '../../../../../../shared/components/loader';
-import { PillButtons } from '../../../../../../shared/components/pillButtons';
-import { TopHeader } from '../../../../../../shared/components/topHeader';
-import { renderWhenTrueOtherwise } from '../../../../../../shared/utils/rendering';
+import { DATA_WRANGLING_STEP } from '../../../modules/dataSource/dataSource.constants';
+import { DATA_WRANGLING_FORM_NAME, DESCRIPTION, CODE } from '../../../modules/dataWrangling/dataWrangling.constants';
+import { TextInput } from '../../../shared/components/form/inputs/textInput';
+import { Loader } from '../../../shared/components/loader';
+import { PillButtons } from '../../../shared/components/pillButtons';
+import { TopHeader } from '../../../shared/components/topHeader';
+import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { Container, Form, codeStyles, rightButtonStyles } from './view.styles';
 import messages from './view.messages';
 

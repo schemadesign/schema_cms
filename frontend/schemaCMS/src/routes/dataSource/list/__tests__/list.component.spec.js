@@ -7,7 +7,7 @@ import {
   STATUS_ERROR,
   STATUS_PROCESSING,
   STATUS_READY_FOR_PROCESSING,
-} from '../../../../../modules/dataSource/dataSource.constants';
+} from '../../../../modules/dataSource/dataSource.constants';
 
 describe('List: Component', () => {
   const defaultProps = {
