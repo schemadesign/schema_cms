@@ -623,9 +623,27 @@ class CIPipeline(core.Stack):
             project_name='schema_cms_fe_ci',
             source=gh_source,
             environment=aws_codebuild.BuildEnvironment(
+                environment_variables={
+                    'NGINX_REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
+                        value=scope.base.nginx_registry.repository_uri
+                    ),
+                    'APP_REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
+                        value=scope.base.app_registry.repository_uri
+                    ),
+                    'WEBAPP_REPOSITORY_URI': aws_codebuild.BuildEnvironmentVariable(
+                        value=scope.base.webapp_registry.repository_uri
+                    ),
+                    'PUSH_IMAGES': aws_codebuild.BuildEnvironmentVariable(
+                        value='0'
+                    ),
+                },
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0,
                 privileged=True,
             ),
             cache=aws_codebuild.Cache.local(aws_codebuild.LocalCacheMode.CUSTOM),
             build_spec=fe_build_spec,
         )
+
+        scope.base.nginx_registry.grant_pull(self.fe_ci_project)
+        scope.base.app_registry.grant_pull(self.fe_ci_project)
+        scope.base.webapp_registry.grant_pull(self.fe_ci_project)
