@@ -1,10 +1,10 @@
 import { light } from '../../../utils/theme';
 
-export const defaultStyles = {
+export const getStyles = (theme = light) => ({
   border: 'none',
   outline: 'none',
-  color: light.text,
+  color: theme.input.text,
   fontSize: '18px',
   lineHeight: '24px',
   backgroundColor: 'transparent',
-};
+});

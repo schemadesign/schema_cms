@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { defaultStyles } from './input.styles';
+import { getStyles } from './input.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class Input extends PureComponent {
+export class InputComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
@@ -12,9 +13,12 @@ export class Input extends PureComponent {
   };
 
   render() {
-    const { customStyles, ...restProps } = this.props;
+    const { customStyles, theme, ...restProps } = this.props;
+    const defaultStyles = getStyles(theme);
     const inputStyles = { ...defaultStyles, ...customStyles };
 
     return <input id={restProps.name} {...restProps} style={inputStyles} />;
   }
 }
+
+export const Input = withStyles(InputComponent);

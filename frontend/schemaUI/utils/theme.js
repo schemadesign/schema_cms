@@ -5,6 +5,7 @@ const colors = {
   lightGrey: '#71737e',
   veryLightPink: '#f0efef',
   coolGray: '#a6a7aa',
+  mediumGray: '#2F2F36',
   body: '#FFF',
   bodyDark: '#000',
   background: '#f0efef',
@@ -36,6 +37,12 @@ const light = {
   dataGrid: {
     background: colors.veryLightPink,
     text: colors.coolGray,
+  },
+  checkbox: {
+    border: colors.mediumGray,
+  },
+  input: {
+    text: colors.black,
   },
   background: '#f0efef',
   label: '#a6a7aa',
@@ -69,6 +76,12 @@ const dark = {
   dataGrid: {
     background: colors.black,
     text: colors.lightGrey,
+  },
+  checkbox: {
+    border: colors.mediumGray,
+  },
+  input: {
+    text: colors.white,
   },
   background: '#1d1d20',
   text: '#fff',

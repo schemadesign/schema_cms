@@ -2,11 +2,12 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import CheckboxGroupContext from './checkboxGroup.context';
-import { containerStyles } from './checkboxGroup.styles';
+import { getStyles } from './checkboxGroup.styles';
 import { CheckboxOnIcon } from '../../icons/checkboxOnIcon';
 import { CheckboxOffIcon } from '../../icons/checkboxOffIcon';
+import { withStyles } from '../../styles/withStyles';
 
-export class CheckboxGroup extends PureComponent {
+export class CheckboxGroupComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     customCheckboxStyles: PropTypes.object,
@@ -36,8 +37,10 @@ export class CheckboxGroup extends PureComponent {
       checkedIcon,
       uncCheckedIcon,
       customCheckboxStyles,
+      theme,
     } = this.props;
     const context = { name, onChange, value, isEdit, checkedIcon, uncCheckedIcon, customCheckboxStyles };
+    const { containerStyles } = getStyles(theme);
     const styles = { ...containerStyles, ...customStyles };
 
     return (
@@ -47,3 +50,5 @@ export class CheckboxGroup extends PureComponent {
     );
   }
 }
+
+export const CheckboxGroup = withStyles(CheckboxGroupComponent);
