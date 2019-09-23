@@ -24,6 +24,7 @@ services:
       - AWS_DEFAULT_REGION=us-east-1
       - AWS_ACCESS_KEY_ID=foo
       - AWS_SECRET_ACCESS_KEY=bar
+      - AWS_STORAGE_BUCKET_NAME=cibucket
 
   backend:
     image: ${BACKEND_IMAGE}

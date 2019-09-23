@@ -2,6 +2,8 @@ FROM backend as static_collect
 
 ENV DJANGO_SECRET_KEY = 'tmp'
 ENV AWS_DEFAULT_REGION = 'us-east-1'
+ENV AWS_ACCESS_KEY_ID = 'foo'
+ENV AWS_SECRET_ACCESS_KEY = 'bar'
 RUN python manage.py collectstatic --no-input
 
 
