@@ -6,6 +6,7 @@ const colors = {
   veryLightPink: '#f0efef',
   coolGray: '#a6a7aa',
   mediumGray: '#2F2F36',
+  red: '#f21e29',
   body: '#FFF',
   bodyDark: '#000',
   background: '#f0efef',
@@ -40,12 +41,26 @@ const light = {
   },
   checkbox: {
     border: colors.mediumGray,
+    text: colors.black,
   },
   input: {
     text: colors.black,
   },
+  label: {
+    text: colors.coolGray,
+    border: colors.darkGrey,
+  },
+  textArea: {
+    text: colors.black,
+  },
+  textField: {
+    label: colors.coolGray,
+    error: colors.red,
+  },
+  header: {
+    text: colors.white,
+  },
   background: '#f0efef',
-  label: '#a6a7aa',
   border: '#1d1d20',
   text: '#1d1d20',
   error: '#f21e29',
@@ -79,13 +94,27 @@ const dark = {
   },
   checkbox: {
     border: colors.mediumGray,
+    text: colors.white,
   },
   input: {
     text: colors.white,
   },
+  label: {
+    text: colors.lightGrey,
+    border: colors.mediumGray,
+  },
+  textArea: {
+    text: colors.white,
+  },
+  textField: {
+    label: colors.lightGrey,
+    error: colors.red,
+  },
+  header: {
+    text: colors.white,
+  },
   background: '#1d1d20',
   text: '#fff',
-  label: '#71737e',
   error: '#f21e29',
   active: '#1d1d20',
   divider: '#F0EFEF',

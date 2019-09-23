@@ -7,7 +7,8 @@ export const getStyles = (theme = light) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: 48,
-    borderBottom: `1px solid ${theme.divider}`,
+    color: theme.checkbox.text,
+    borderBottom: `1px solid ${theme.checkbox.border}`,
   },
   iconContainerStyles: {
     display: 'flex',

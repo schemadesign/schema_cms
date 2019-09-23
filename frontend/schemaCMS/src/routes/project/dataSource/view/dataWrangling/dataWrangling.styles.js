@@ -30,6 +30,6 @@ export const Error = styled.div`
 `;
 
 export const Link = styled(RouterLink)`
-  color: ${Theme.light.text};
+  color: inherit;
   text-decoration: none;
 `;

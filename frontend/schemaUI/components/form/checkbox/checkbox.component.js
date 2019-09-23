@@ -20,11 +20,11 @@ export class CheckboxComponent extends PureComponent {
   renderEditIcon = isEdit => (isEdit ? <EditIcon /> : null);
 
   render() {
-    const { id, children, isEdit, ...restProps } = this.props;
+    const { id, children, isEdit, theme, ...restProps } = this.props;
 
     return (
       <CheckboxGroupContext.Consumer>
-        {({ onChange, value = [], name, checkedIcon, uncCheckedIcon, customCheckboxStyles, theme }) => {
+        {({ onChange, value = [], name, checkedIcon, uncCheckedIcon, customCheckboxStyles }) => {
           const checked = value.includes(restProps.value);
           const { containerStyles, inputStyles, iconContainerStyles, labelStyles } = getStyles(theme);
           const styles = { ...containerStyles, ...customCheckboxStyles };

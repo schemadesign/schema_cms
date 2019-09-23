@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { defaultStyles } from './label.styles';
+import { getStyles } from './label.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class Label extends PureComponent {
+export class LabelComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     name: PropTypes.string,
@@ -15,7 +16,8 @@ export class Label extends PureComponent {
   };
 
   render() {
-    const { children, name, customStyles, ...restProps } = this.props;
+    const { children, name, theme, customStyles, ...restProps } = this.props;
+    const defaultStyles = getStyles(theme);
     const labelStyles = { ...defaultStyles, ...customStyles };
 
     return (
@@ -25,3 +27,5 @@ export class Label extends PureComponent {
     );
   }
 }
+
+export const Label = withStyles(LabelComponent);

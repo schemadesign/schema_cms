@@ -1,12 +1,12 @@
 import { light } from '../../../utils/theme';
 
-export const defaultStyles = {
+export const getStyles = (theme = light) => ({
   border: 'none',
   outline: 'none',
-  color: light.label,
+  color: theme.label.text,
   fontSize: '14px',
-  borderTop: `1px solid ${light.divider}`,
+  borderTop: `1px solid ${theme.label.border}`,
   paddingTop: '8px',
   display: 'block',
   width: '100%',
-};
+});

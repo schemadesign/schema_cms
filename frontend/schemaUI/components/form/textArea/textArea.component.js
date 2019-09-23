@@ -1,9 +1,10 @@
-import React, { PureComponent, createRef, Fragment } from 'react';
+import React, { createRef, Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { defaultStyles, shadowStyles } from './textArea.styles';
+import { getStyles } from './textArea.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class TextArea extends PureComponent {
+export class TextAreaComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
@@ -66,8 +67,9 @@ export class TextArea extends PureComponent {
   };
 
   render() {
-    const { customStyles, name, ...restProps } = this.props;
+    const { customStyles, name, theme, ...restProps } = this.props;
     const { height } = this.state;
+    const { defaultStyles, shadowStyles } = getStyles(theme);
     const styles = { ...defaultStyles, ...customStyles };
 
     return (
@@ -84,3 +86,5 @@ export class TextArea extends PureComponent {
     );
   }
 }
+
+export const TextArea = withStyles(TextAreaComponent);

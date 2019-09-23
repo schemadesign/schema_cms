@@ -40,7 +40,7 @@ export class CheckboxGroupComponent extends PureComponent {
       theme,
     } = this.props;
     const context = { name, onChange, value, isEdit, checkedIcon, uncCheckedIcon, customCheckboxStyles };
-    const { containerStyles } = getStyles(theme);
+    const containerStyles = getStyles(theme);
     const styles = { ...containerStyles, ...customStyles };
 
     return (
