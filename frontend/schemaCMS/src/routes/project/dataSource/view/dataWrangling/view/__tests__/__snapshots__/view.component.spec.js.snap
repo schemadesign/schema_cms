@@ -25,26 +25,12 @@ exports[`View: Component should render correctly 1`] = `
       touched={Object {}}
       value="Change to lowercase"
     />
-    <TextInput
-      customInputStyles={
-        Object {
-          "backgroundColor": "#f0efef",
-          "fontFamily": "Hack, monospace",
-          "marginTop": "10px",
-          "padding": "10px",
-        }
-      }
-      disabled={true}
-      errors={Object {}}
-      fullWidth={true}
-      label="Python Code"
-      multiline={true}
-      name="code"
-      onChange={[Function]}
-      placeholder="Python Code"
-      touched={Object {}}
-      value="df.columns = map(str.lower, df.columns)"
-    />
+    <SyntaxHighlighter
+      language="python"
+      style={Object {}}
+    >
+      df.columns = map(str.lower, df.columns)
+    </SyntaxHighlighter>
   </styled.form>
   <PillButtons
     leftButtonProps={

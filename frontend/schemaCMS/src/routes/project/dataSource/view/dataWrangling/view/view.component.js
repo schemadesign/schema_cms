@@ -2,19 +2,17 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always, isEmpty } from 'ramda';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { DATA_WRANGLING_STEP } from '../../../../../../modules/dataSource/dataSource.constants';
-import {
-  DATA_WRANGLING_FORM_NAME,
-  DESCRIPTION,
-  CODE,
-} from '../../../../../../modules/dataWrangling/dataWrangling.constants';
+import { DATA_WRANGLING_FORM_NAME, DESCRIPTION } from '../../../../../../modules/dataWrangling/dataWrangling.constants';
 import { TextInput } from '../../../../../../shared/components/form/inputs/textInput';
 import { Loader } from '../../../../../../shared/components/loader';
 import { PillButtons } from '../../../../../../shared/components/pillButtons';
 import { TopHeader } from '../../../../../../shared/components/topHeader';
 import { renderWhenTrueOtherwise } from '../../../../../../shared/utils/rendering';
-import { Container, Form, codeStyles, rightButtonStyles } from './view.styles';
+import { Container, Form, rightButtonStyles } from './view.styles';
 import messages from './view.messages';
 
 export class View extends PureComponent {
@@ -28,12 +26,18 @@ export class View extends PureComponent {
       params: PropTypes.shape({
         projectId: PropTypes.string.isRequired,
         dataSourceId: PropTypes.string.isRequired,
+        scriptId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   };
 
   componentDidMount() {
-    this.props.fetchDataWrangling();
+    const {
+      match: {
+        params: { scriptId },
+      },
+    } = this.props;
+    this.props.fetchDataWrangling({ scriptId });
   }
 
   componentWillUnmount() {
@@ -62,7 +66,7 @@ export class View extends PureComponent {
 
     const descriptionFieldProps = {
       name: DESCRIPTION,
-      value: dataWrangling.description,
+      value: dataWrangling.name,
       label: intl.formatMessage(messages.description),
       placeholder: intl.formatMessage(messages.descriptionPlaceholder),
       fullWidth: true,
@@ -70,23 +74,13 @@ export class View extends PureComponent {
       onChange: Function.prototype,
     };
 
-    const codeFieldProps = {
-      name: CODE,
-      value: dataWrangling.code,
-      label: intl.formatMessage(messages.code),
-      placeholder: intl.formatMessage(messages.codePlaceholder),
-      fullWidth: true,
-      disabled: true,
-      multiline: true,
-      customInputStyles: codeStyles,
-      onChange: Function.prototype,
-    };
-
     return (
       <Fragment>
         <Form name={DATA_WRANGLING_FORM_NAME}>
           <TextInput {...descriptionFieldProps} />
-          <TextInput {...codeFieldProps} />
+          <SyntaxHighlighter language="python" style={docco}>
+            {dataWrangling.content}
+          </SyntaxHighlighter>
         </Form>
         <PillButtons
           leftButtonProps={{
