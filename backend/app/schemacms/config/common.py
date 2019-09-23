@@ -212,6 +212,7 @@ class Common(Configuration):
     JWT_AUTH = {"JWT_AUTH_HEADER_PREFIX": "JWT", "JWT_EXPIRATION_DELTA": datetime.timedelta(days=30)}
 
     # social-django
+
     SOCIAL_AUTH_PIPELINE = (
         # Get the information we can about the user and return it in a simple
         # format to create the user instance later. On some cases the details are
@@ -221,6 +222,7 @@ class Common(Configuration):
         # Get the social uid from whichever service we're authing thru. The uid is
         # the unique identifier of the given user in the provider.
         "social_core.pipeline.social_auth.social_uid",
+        "schemacms.authorization.pipeline.user_exist_in_db",
         # Verifies that the current auth process is valid within the current
         # project, this is where emails and domains whitelists are applied (if
         # defined).
@@ -254,7 +256,6 @@ class Common(Configuration):
         # Redirect user and add exchange token to query string
         "schemacms.authorization.pipeline.redirect_with_token",
     )
-
     # social-django
     SOCIAL_AUTH_SANITIZE_REDIRECTS = False
     SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
