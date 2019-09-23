@@ -8,26 +8,32 @@ import { CloseIcon } from '../icons/closeIcon';
 export class Menu extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
-    customCloseButtonStyles: PropTypes.object,
-    customCloseIconStyles: PropTypes.object,
     customStyles: PropTypes.object,
-    onClose: PropTypes.func.isRequired,
     open: PropTypes.bool,
+    onClose: PropTypes.func.isRequired,
+    closeButtonProps: PropTypes.shape({
+      customStyles: PropTypes.object,
+      iconStyles: PropTypes.object
+    })
   };
 
   static defaultProps = {
-    customCloseButtonStyles: {},
     customStyles: {},
     open: false,
     onClose: () => {},
+    closeButtonProps: {
+      customStyles: {},
+      iconStyles: {}
+    },
   };
 
   renderCloseButton = () => {
-    const buttonStyles = { ...closeButtonStyles, ...this.props.customCloseButtonStyles };
+    const {customStyles, iconStyles, ...restProps} = this.props.closeButtonProps;
+    const buttonStyles = { ...closeButtonStyles, ...customStyles };
 
     return (
-      <Button class="schema-ui-close-menu" onClick={this.props.onClose} customStyles={buttonStyles}>
-        <CloseIcon customStyles={this.props.customCloseIconStyles} />
+      <Button {...restProps} onClick={this.props.onClose} customStyles={buttonStyles}>
+        <CloseIcon customStyles={iconStyles} />
       </Button>
     );
   };
