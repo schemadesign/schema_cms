@@ -249,6 +249,9 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
             }
           }
           type="text"

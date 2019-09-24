@@ -238,7 +238,7 @@ exports[`Storyshots Project/List empty 1`] = `
         "backgroundColor": "#1d1d20",
         "border": "none",
         "borderRadius": "48px",
-        "bottom": "10px",
+        "bottom": "24px",
         "color": "#FFF",
         "cursor": "pointer",
         "display": "inline-block",
@@ -250,7 +250,7 @@ exports[`Storyshots Project/List empty 1`] = `
         "outline": "none",
         "padding": "0",
         "position": "fixed",
-        "right": "10px",
+        "right": "20px",
       }
     }
   >
@@ -489,13 +489,13 @@ exports[`Storyshots Project/List list 1`] = `
     className="sc-iAyFgw fVDUTi"
   >
     <li
-      className="sc-hSdWYo jneYMH"
+      className="sc-hSdWYo cClSyI"
     >
       <div
         style={
           Object {
             "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #1d1d20",
+            "borderTop": "2px solid #FFF",
             "color": "#fff",
             "display": "flex",
             "flexDirection": "column",
@@ -592,13 +592,13 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </li>
     <li
-      className="sc-hSdWYo jneYMH"
+      className="sc-hSdWYo cClSyI"
     >
       <div
         style={
           Object {
             "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #1d1d20",
+            "borderTop": "2px solid #FFF",
             "color": "#fff",
             "display": "flex",
             "flexDirection": "column",
@@ -703,7 +703,7 @@ exports[`Storyshots Project/List list 1`] = `
         "backgroundColor": "#1d1d20",
         "border": "none",
         "borderRadius": "48px",
-        "bottom": "10px",
+        "bottom": "24px",
         "color": "#FFF",
         "cursor": "pointer",
         "display": "inline-block",
@@ -715,7 +715,7 @@ exports[`Storyshots Project/List list 1`] = `
         "outline": "none",
         "padding": "0",
         "position": "fixed",
-        "right": "10px",
+        "right": "20px",
       }
     }
   >

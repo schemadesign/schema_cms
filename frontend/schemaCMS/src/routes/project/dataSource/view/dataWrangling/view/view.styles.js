@@ -18,3 +18,9 @@ export const rightButtonStyles = {
   backgroundColor: Theme.dark.background,
   color: Theme.dark.text,
 };
+
+export const customInputStyles = {
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+};

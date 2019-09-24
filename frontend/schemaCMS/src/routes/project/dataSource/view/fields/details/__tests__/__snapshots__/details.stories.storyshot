@@ -15,7 +15,11 @@ exports[`Storyshots Project/DataSource/View/Fields/Details Default 1`] = `
       >
         Field
       </span>
-      firstName
+      <span
+        className="sc-eqIVtm dhOcgN"
+      >
+        firstName
+      </span>
     </li>
     <li
       className="sc-fBuWsC diMCEA"

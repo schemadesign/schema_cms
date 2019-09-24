@@ -5,6 +5,10 @@ import { Container as DefaultContainer } from '../../../shared/components/styled
 
 export const Container = styled(DefaultContainer)`
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
 `;
 
 export const ProjectView = styled.div`
@@ -72,9 +76,10 @@ export const CardValue = styled.span`
 `;
 
 export const buttonStyles = {
-  margin: '50px 0 20px 0',
+  margin: '50px 0 0 0',
   backgroundColor: Theme.dark.background,
   height: '60px',
+  width: '60px',
 };
 
 export const statisticsCardStyles = {

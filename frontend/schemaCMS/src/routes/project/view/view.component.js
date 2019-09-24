@@ -168,9 +168,11 @@ export class View extends PureComponent {
 
     return (
       <Container>
-        <Helmet title={title} />
-        <TopHeader {...topHeaderConfig} />
-        {content}
+        <div>
+          <Helmet title={title} />
+          <TopHeader {...topHeaderConfig} />
+          {content}
+        </div>
         <Button onClick={this.handleGoTo('/project/list')} customStyles={buttonStyles}>
           <Icons.ArrowLeftIcon />
         </Button>

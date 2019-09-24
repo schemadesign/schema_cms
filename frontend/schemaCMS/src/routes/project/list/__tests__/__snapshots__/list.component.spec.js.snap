@@ -150,10 +150,10 @@ exports[`List: Component should render correctly 1`] = `
     customStyles={
       Object {
         "backgroundColor": "#1d1d20",
-        "bottom": "10px",
+        "bottom": "24px",
         "height": "60px",
         "position": "fixed",
-        "right": "10px",
+        "right": "20px",
       }
     }
     id="addProjectBtn"

@@ -15,6 +15,13 @@ exports[`View: Component should render correctly 1`] = `
     name="dataWranglingForm"
   >
     <TextInput
+      customInputStyles={
+        Object {
+          "overflow": "hidden",
+          "textOverflow": "ellipsis",
+          "whiteSpace": "nowrap",
+        }
+      }
       disabled={true}
       errors={Object {}}
       fullWidth={true}
