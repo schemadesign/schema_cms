@@ -1,7 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextField: Component should render correctly 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<Component
+  name="name"
+>
+  <TextFieldComponent
+    customInputStyles={Object {}}
+    customLabelStyles={Object {}}
+    error={false}
+    fullWidth={false}
+    name="name"
+    type="text"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "320px",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <Component
+        customStyles={Object {}}
+        name="name"
+        type="text"
+      >
+        <InputComponent
+          customStyles={Object {}}
+          name="name"
+          type="text"
+        >
+          <input
+            id="name"
+            name="name"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+              }
+            }
+            type="text"
+          />
+        </InputComponent>
+      </Component>
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </TextFieldComponent>
+</Component>
 `;

@@ -5,7 +5,7 @@ import ArrowLeftSVG from '../../../images/icons/arrow-left.svg';
 import { getStyles } from './arrowLeftIcon.styles';
 import { withStyles } from '../../styles/withStyles';
 
-class ArrowLeftIconComponent extends PureComponent {
+export class ArrowLeftIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };

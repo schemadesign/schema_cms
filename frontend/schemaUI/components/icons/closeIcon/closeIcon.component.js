@@ -5,7 +5,7 @@ import CloseSVG from '../../../images/icons/close.svg';
 import { getStyles } from './closeIcon.styles';
 import { withStyles } from '../../styles/withStyles';
 
-class CloseIconComponent extends PureComponent {
+export class CloseIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };

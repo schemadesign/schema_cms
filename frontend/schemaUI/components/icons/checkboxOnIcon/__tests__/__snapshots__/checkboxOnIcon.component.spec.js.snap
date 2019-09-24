@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CheckboxOnIcon: Component should render correctly 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<checkbox-on.svg
+  style={
+    Object {
+      "height": "30px",
+      "stroke": "#FFF",
+      "width": "30px",
+    }
+  }
+/>
 `;

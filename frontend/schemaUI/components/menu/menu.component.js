@@ -6,7 +6,7 @@ import { Button } from '../button';
 import { CloseIcon } from '../icons/closeIcon';
 import { withStyles } from '../styles/withStyles';
 
-class MenuComponent extends PureComponent {
+export class MenuComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     customStyles: PropTypes.object,

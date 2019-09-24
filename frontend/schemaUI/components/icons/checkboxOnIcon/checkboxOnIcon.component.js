@@ -5,7 +5,7 @@ import CheckboxOnSVG from '../../../images/icons/checkbox-on.svg';
 import { getStyles } from './checkboxOnIcon.styles';
 import { withStyles } from '../../styles/withStyles';
 
-class CheckboxOnIconComponent extends PureComponent {
+export class CheckboxOnIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };

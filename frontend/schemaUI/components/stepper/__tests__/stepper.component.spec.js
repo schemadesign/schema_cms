@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import { StepperComponent } from '../stepper.component';
 
@@ -12,7 +12,7 @@ describe('Stepper: Component', () => {
 
   const component = props => <StepperComponent {...defaultProps} {...props} />;
 
-  const render = (props = {}) => shallow(component(props));
+  const render = (props = {}) => mount(component(props));
 
   it('should render correctly', () => {
     const wrapper = render();

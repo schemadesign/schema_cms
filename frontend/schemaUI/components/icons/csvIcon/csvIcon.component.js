@@ -5,7 +5,7 @@ import CsvSVG from '../../../images/icons/spreadsheet.svg';
 import { getStyles } from './csvIcon.styles';
 import { withStyles } from '../../styles/withStyles';
 
-class CsvIconComponent extends PureComponent {
+export class CsvIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };

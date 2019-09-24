@@ -6,7 +6,7 @@ import CheckboxGroupContext from '../checkboxGroup/checkboxGroup.context';
 import { EditIcon } from '../../icons/editIcon';
 import { withStyles } from '../../styles/withStyles';
 
-class CheckboxComponent extends PureComponent {
+export class CheckboxComponent extends PureComponent {
   static propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),

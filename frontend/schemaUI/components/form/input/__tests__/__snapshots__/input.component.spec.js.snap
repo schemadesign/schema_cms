@@ -1,13 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input: Component should render correctly 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<Component>
+  <InputComponent
+    customStyles={Object {}}
+  >
+    <input
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "none",
+          "color": "#FFF",
+          "fontSize": "18px",
+          "lineHeight": "24px",
+          "outline": "none",
+        }
+      }
+    />
+  </InputComponent>
+</Component>
 `;
 
 exports[`Input: Component should render with custom styles 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<Component
+  customStyles={
+    Object {
+      "color": "blue",
+    }
+  }
+>
+  <InputComponent
+    customStyles={
+      Object {
+        "color": "blue",
+      }
+    }
+  >
+    <input
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "border": "none",
+          "color": "blue",
+          "fontSize": "18px",
+          "lineHeight": "24px",
+          "outline": "none",
+        }
+      }
+    />
+  </InputComponent>
+</Component>
 `;
