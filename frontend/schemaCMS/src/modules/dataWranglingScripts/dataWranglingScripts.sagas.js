@@ -2,7 +2,11 @@ import { all, put, takeLatest, select } from 'redux-saga/effects';
 
 import { DataWranglingScriptsRoutines } from './dataWranglingScripts.redux';
 import api from '../../shared/services/api';
-import { DATA_SOURCE_PATH, DATA_WRANGLING_JOB_PATH, DATA_WRANGLING_PATH } from '../../shared/utils/api.constants';
+import {
+  DATA_SOURCE_PATH,
+  DATA_WRANGLING_JOB_PATH,
+  DATA_WRANGLING_SCRIPTS_PATH,
+} from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 
 import mockScriptsData from './scripts.mock';
@@ -12,7 +16,7 @@ function* fetchList({ payload: { dataSourceId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.fetchList.request());
 
-    const { data } = yield api.get(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_PATH}`);
+    const { data } = yield api.get(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
 
     yield put(DataWranglingScriptsRoutines.fetchList.success(data));
   } catch (e) {
