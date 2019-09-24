@@ -5,7 +5,7 @@ import { styleWhenTrue } from '../../../../shared/utils/rendering';
 const horizontalMargin = 20;
 
 export const Container = styled.div`
-  margin: 0 ${horizontalMargin}px 118px;
+  padding: 0 ${horizontalMargin}px 118px;
 `;
 
 export const DataSourceItem = styled.li`
@@ -98,16 +98,16 @@ export const lockTextStyles = {
 };
 
 export const buttonStyles = {
-  backgroundColor: Theme.light.background,
+  backgroundColor: Theme.dark.background,
   height: '60px',
 };
 
 export const iconSourceStyles = {
   width: 40,
   height: 40,
-  fill: Theme.light.iconDark,
+  fill: Theme.colors.white,
 };
 
 export const lockIconStyles = {
-  fill: Theme.light.label,
+  display: 'none',
 };

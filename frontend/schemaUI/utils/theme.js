@@ -69,6 +69,7 @@ const light = {
     active: colors.darkGrey,
   },
   icon: {
+    background: colors.veryLightPink,
     fill: colors.darkGrey,
   },
   background: '#f0efef',
@@ -83,8 +84,8 @@ const light = {
 
 const dark = {
   button: {
-    background: colors.white,
-    text: colors.black,
+    background: colors.darkGrey,
+    text: colors.white,
   },
   card: {
     label: colors.label,
@@ -129,9 +130,11 @@ const dark = {
     active: colors.white,
   },
   icon: {
+    background: colors.darkGrey,
     fill: colors.white,
   },
   background: '#1d1d20',
+  border: '#1d1d20',
   text: '#fff',
   error: '#f21e29',
   active: '#1d1d20',
@@ -171,6 +174,7 @@ const primaryTypography = {
 
 light.typography = primaryTypography;
 dark.typography = primaryTypography;
+const defaultTheme = dark;
 
-export { light, dark, colors };
+export { light, dark, colors, defaultTheme };
 export const Theme = { light, dark, colors };

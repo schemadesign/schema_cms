@@ -1,9 +1,10 @@
-import { light } from '../../utils/theme';
+import { defaultTheme } from '../../utils/theme';
 
-export const getStyles = (theme = light) => ({
+export const getStyles = (theme = defaultTheme) => ({
   containerStyles: {
     border: 'none',
     backgroundColor: theme.button.background,
+    fill: theme.icon.fill,
     color: theme.button.text,
     padding: '0',
     margin: '0',

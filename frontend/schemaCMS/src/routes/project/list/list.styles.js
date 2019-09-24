@@ -45,7 +45,7 @@ export const Description = styled.div`
 `;
 
 export const urlStyles = {
-  color: Theme.light.label,
+  color: Theme.dark.text,
   fontSize: '12px',
   whiteSpace: 'nowrap',
   display: 'block',
@@ -62,6 +62,6 @@ export const addProjectStyles = {
   position: 'fixed',
   right: '10px',
   bottom: '10px',
-  backgroundColor: Theme.light.label,
+  backgroundColor: Theme.dark.background,
   height: '60px',
 };

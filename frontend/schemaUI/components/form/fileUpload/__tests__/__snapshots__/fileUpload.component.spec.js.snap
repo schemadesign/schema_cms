@@ -16,12 +16,13 @@ exports[`FileUpload: Component should render correctly 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#000",
+          "backgroundColor": "#1d1d20",
           "border": "none",
           "borderRadius": "48px",
           "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": 0,
           "margin": "0",
           "minHeight": "48px",
@@ -133,12 +134,13 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#000",
+              "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
               "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
+              "fill": "#FFF",
               "fontSize": 0,
               "margin": "0",
               "minHeight": "48px",
@@ -196,12 +198,13 @@ exports[`FileUpload: Component should render with file name 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#000",
+              "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
               "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
+              "fill": "#FFF",
               "fontSize": 0,
               "margin": "0",
               "minHeight": "48px",
@@ -260,12 +263,13 @@ exports[`FileUpload: Component should render with label 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#000",
+              "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
               "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
+              "fill": "#FFF",
               "fontSize": 0,
               "margin": "0",
               "minHeight": "48px",

@@ -18,12 +18,13 @@ exports[`Storyshots Project/DataSource/View/Fields Default 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#000",
+              "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
               "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
+              "fill": "#FFF",
               "fontSize": "18px",
               "height": 60,
               "margin": "0",
@@ -37,7 +38,7 @@ exports[`Storyshots Project/DataSource/View/Fields Default 1`] = `
           <svg
             style={
               Object {
-                "fill": "#1d1d20",
+                "fill": "#FFF",
                 "height": "60px",
                 "opacity": 0.3,
                 "width": "60px",
@@ -64,12 +65,13 @@ exports[`Storyshots Project/DataSource/View/Fields Default 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#000",
+              "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
               "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
+              "fill": "#FFF",
               "fontSize": "18px",
               "height": 60,
               "margin": "0",
@@ -83,7 +85,7 @@ exports[`Storyshots Project/DataSource/View/Fields Default 1`] = `
           <svg
             style={
               Object {
-                "fill": "#1d1d20",
+                "fill": "#FFF",
                 "height": "60px",
                 "width": "60px",
               }

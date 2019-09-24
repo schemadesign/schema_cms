@@ -35,12 +35,13 @@ exports[`Storyshots DataWrangling Default 1`] = `
           <div
             style={
               Object {
-                "backgroundColor": "#000",
+                "backgroundColor": "#1d1d20",
                 "border": "none",
                 "borderRadius": "48px",
                 "color": "#FFF",
                 "cursor": "pointer",
                 "display": "inline-block",
+                "fill": "#FFF",
                 "fontSize": 0,
                 "margin": "0",
                 "minHeight": "48px",
@@ -52,7 +53,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
             <svg
               style={
                 Object {
-                  "fill": "#1d1d20",
+                  "fill": "#FFF",
                   "height": "60px",
                   "width": "60px",
                 }
@@ -100,7 +101,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
         Object {
           "alignItems": "center",
           "borderBottom": "1px solid #2F2F36",
-          "color": "#000",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "height": 48,
@@ -148,7 +149,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "30px",
               "width": "30px",
             }
@@ -172,7 +173,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
             style={
               Object {
                 "height": "30px",
-                "stroke": "#1d1d20",
+                "stroke": "#FFF",
                 "width": "30px",
               }
             }
@@ -191,7 +192,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
         Object {
           "alignItems": "center",
           "borderBottom": "1px solid #2F2F36",
-          "color": "#000",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "height": 48,
@@ -239,7 +240,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "30px",
               "width": "30px",
             }
@@ -263,7 +264,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
             style={
               Object {
                 "height": "30px",
-                "stroke": "#1d1d20",
+                "stroke": "#FFF",
                 "width": "30px",
               }
             }

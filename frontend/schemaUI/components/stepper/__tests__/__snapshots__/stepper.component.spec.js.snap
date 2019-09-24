@@ -14,7 +14,7 @@ exports[`Stepper: Component should render correctly 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#1d1d20",
+        "backgroundColor": "#FFF",
         "borderRadius": "50%",
         "cursor": "default",
         "display": "block",
@@ -30,7 +30,7 @@ exports[`Stepper: Component should render correctly 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#1d1d20",
         "borderRadius": "50%",
         "cursor": "pointer",
         "display": "block",
@@ -45,7 +45,7 @@ exports[`Stepper: Component should render correctly 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#1d1d20",
         "borderRadius": "50%",
         "cursor": "pointer",
         "display": "block",
@@ -60,7 +60,7 @@ exports[`Stepper: Component should render correctly 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#1d1d20",
         "borderRadius": "50%",
         "cursor": "pointer",
         "display": "block",
@@ -75,7 +75,7 @@ exports[`Stepper: Component should render correctly 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#1d1d20",
         "borderRadius": "50%",
         "cursor": "pointer",
         "display": "block",
@@ -90,7 +90,7 @@ exports[`Stepper: Component should render correctly 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#1d1d20",
         "borderRadius": "50%",
         "cursor": "pointer",
         "display": "block",

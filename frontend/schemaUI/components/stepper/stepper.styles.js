@@ -1,6 +1,6 @@
-import { light } from '../../utils/theme';
+import { defaultTheme } from '../../utils/theme';
 
-export const getStyles = (theme = light) => ({
+export const getStyles = (theme = defaultTheme) => ({
   containerStyles: {
     display: 'flex',
     flexDirection: 'row',

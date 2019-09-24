@@ -6,9 +6,9 @@ exports[`Card: Component should render children when passed in 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#f0efef",
-          "borderTop": "2px solid #FFF",
-          "color": "#1d1d20",
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #1d1d20",
+          "color": "#fff",
           "display": "flex",
           "flexDirection": "column",
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -69,8 +69,8 @@ exports[`Card: Component should render component  with custom style and with hea
     <div
       style={
         Object {
-          "backgroundColor": "#f0efef",
-          "borderTop": "2px solid #FFF",
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #1d1d20",
           "color": "blue",
           "display": "flex",
           "flexDirection": "column",
@@ -82,7 +82,7 @@ exports[`Card: Component should render component  with custom style and with hea
       <div
         style={
           Object {
-            "color": "#71737e",
+            "color": "#a6a7aa",
             "fontSize": "12px",
             "marginBottom": "14px",
           }
@@ -114,9 +114,9 @@ exports[`Card: Component should render correctly 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#f0efef",
-          "borderTop": "2px solid #FFF",
-          "color": "#1d1d20",
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #1d1d20",
+          "color": "#fff",
           "display": "flex",
           "flexDirection": "column",
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -151,8 +151,8 @@ exports[`Card: Component should render with attributes 1`] = `
       id="test-id"
       style={
         Object {
-          "backgroundColor": "#f0efef",
-          "borderTop": "2px solid #FFF",
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #1d1d20",
           "color": "blue",
           "display": "flex",
           "flexDirection": "column",

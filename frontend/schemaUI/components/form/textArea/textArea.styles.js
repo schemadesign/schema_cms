@@ -1,6 +1,6 @@
-import { light } from '../../../utils/theme';
+import { defaultTheme } from '../../../utils/theme';
 
-export const getStyles = (theme = light) => ({
+export const getStyles = (theme = defaultTheme) => ({
   defaultStyles: {
     border: 'none',
     outline: 'none',

@@ -20,7 +20,7 @@ export const Details = styled.ul`
 export const DetailItem = styled.li`
   color: ${Theme.light.text};
   margin-bottom: 4px;
-  border-top: 2px solid ${Theme.light.background};
+  border-top: 2px solid ${Theme.dark.background};
   display: flex;
 `;
 
@@ -32,7 +32,7 @@ export const DetailWrapper = styled.div`
 `;
 
 export const DetailLabel = styled.span`
-  color: ${Theme.light.label};
+  color: ${Theme.colors.lightGrey};
   margin-right: 5px;
 `;
 
@@ -41,6 +41,7 @@ export const IconEditWrapper = styled.div`
 `;
 
 export const DetailValue = styled.span`
+  color: ${Theme.dark.text};
   display: inline-block;
 `;
 
@@ -72,7 +73,7 @@ export const CardValue = styled.span`
 
 export const buttonStyles = {
   margin: '50px 0 20px 0',
-  backgroundColor: Theme.light.background,
+  backgroundColor: Theme.dark.background,
   height: '60px',
 };
 

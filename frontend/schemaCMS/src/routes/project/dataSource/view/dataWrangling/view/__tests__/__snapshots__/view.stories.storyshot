@@ -64,6 +64,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -78,7 +79,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -95,8 +96,8 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#FFF",
-          "color": "#000",
+          "backgroundColor": "#000",
+          "color": "#FFF",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -162,12 +163,13 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
             "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -182,7 +184,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -220,8 +222,8 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #1d1d20",
-              "color": "#a6a7aa",
+              "borderTop": "1px solid #2F2F36",
+              "color": "#71737e",
               "display": "block",
               "fontSize": "14px",
               "outline": "none",
@@ -242,7 +244,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             Object {
               "backgroundColor": "transparent",
               "border": "none",
-              "color": "#000",
+              "color": "#FFF",
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
@@ -281,8 +283,8 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #1d1d20",
-              "color": "#a6a7aa",
+              "borderTop": "1px solid #2F2F36",
+              "color": "#71737e",
               "display": "block",
               "fontSize": "14px",
               "outline": "none",
@@ -302,7 +304,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             Object {
               "backgroundColor": "#f0efef",
               "border": "none",
-              "color": "#000",
+              "color": "#FFF",
               "fontFamily": "Hack, monospace",
               "fontSize": "18px",
               "height": 0,
@@ -323,7 +325,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             Object {
               "backgroundColor": "#f0efef",
               "border": "none",
-              "color": "#000",
+              "color": "#FFF",
               "fontFamily": "Hack, monospace",
               "fontSize": "18px",
               "height": 0,
@@ -360,12 +362,13 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#000",
+          "backgroundColor": "#1d1d20",
           "border": "none",
           "borderRadius": "48px",
           "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "margin": "0",
           "marginRight": 10,
@@ -388,6 +391,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
           "color": "#fff",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",

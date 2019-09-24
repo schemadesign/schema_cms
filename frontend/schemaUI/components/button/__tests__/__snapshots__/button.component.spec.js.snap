@@ -8,12 +8,13 @@ exports[`Button: Component should render correctly 1`] = `
     <button
       style={
         Object {
-          "backgroundColor": "#000",
+          "backgroundColor": "#1d1d20",
           "border": "none",
           "borderRadius": "48px",
           "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",
@@ -52,6 +53,7 @@ exports[`Button: Component should render with custom styles 1`] = `
           "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",

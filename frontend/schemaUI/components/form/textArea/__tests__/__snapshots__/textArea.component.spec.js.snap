@@ -10,7 +10,7 @@ exports[`TextArea: Component should render correctly 1`] = `
       style={
         Object {
           "border": "none",
-          "color": "#000",
+          "color": "#FFF",
           "fontSize": "18px",
           "height": 0,
           "lineHeight": "24px",
@@ -26,7 +26,7 @@ exports[`TextArea: Component should render correctly 1`] = `
       style={
         Object {
           "border": "none",
-          "color": "#000",
+          "color": "#FFF",
           "fontSize": "18px",
           "height": 0,
           "left": 0,
@@ -66,7 +66,7 @@ exports[`TextArea: Component should render with custom styles 1`] = `
       style={
         Object {
           "border": "none",
-          "color": "#000",
+          "color": "#FFF",
           "fontSize": "18px",
           "height": -20,
           "lineHeight": "24px",
@@ -82,7 +82,7 @@ exports[`TextArea: Component should render with custom styles 1`] = `
       style={
         Object {
           "border": "none",
-          "color": "#000",
+          "color": "#FFF",
           "fontSize": "18px",
           "height": 0,
           "left": 0,

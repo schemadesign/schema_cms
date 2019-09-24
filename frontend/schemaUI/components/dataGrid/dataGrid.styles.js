@@ -1,14 +1,11 @@
-import { light } from '../../utils/theme';
-
-export const HEADER_COLOR = '#1D1D20';
-export const TEXT_COLOR = '#71737e';
+import { defaultTheme } from '../../utils/theme';
 
 export const BLUE_COLOR = '#778DA9';
 export const BLACK_COLOR = '#3C474B';
 export const WHITE_COLOR = '#fff';
 export const GRAY_COLOR = '#E0E1DD';
 
-export const getStyles = (theme = light) => ({
+export const getStyles = (theme = defaultTheme) => ({
   containerStyles: {
     display: 'flex',
     flexDirection: 'column',

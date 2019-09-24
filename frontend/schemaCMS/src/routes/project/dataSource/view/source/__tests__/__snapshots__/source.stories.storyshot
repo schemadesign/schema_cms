@@ -23,8 +23,8 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
         style={
           Object {
             "border": "none",
-            "borderTop": "1px solid #1d1d20",
-            "color": "#a6a7aa",
+            "borderTop": "1px solid #2F2F36",
+            "color": "#71737e",
             "display": "block",
             "fontSize": "14px",
             "outline": "none",
@@ -43,7 +43,7 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
           Object {
             "backgroundColor": "transparent",
             "border": "none",
-            "color": "#000",
+            "color": "#FFF",
             "fontSize": "18px",
             "lineHeight": "24px",
             "outline": "none",
@@ -67,8 +67,8 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
     style={
       Object {
         "border": "none",
-        "borderTop": "1px solid #1d1d20",
-        "color": "#a6a7aa",
+        "borderTop": "1px solid #2F2F36",
+        "color": "#71737e",
         "display": "block",
         "fontSize": "14px",
         "marginBottom": 20,
@@ -135,12 +135,13 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
         <button
           style={
             Object {
-              "backgroundColor": "#1D1D20",
+              "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
               "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
+              "fill": "#FFF",
               "fontSize": "18px",
               "height": 96,
               "margin": "0",
@@ -157,7 +158,7 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
           <svg
             style={
               Object {
-                "fill": "#1d1d20",
+                "fill": "#FFF",
                 "height": "60px",
                 "width": "60px",
               }

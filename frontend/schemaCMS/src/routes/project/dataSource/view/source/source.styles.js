@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { Theme } from 'schemaUI';
 
 export const Container = styled.div``;
 
 export const customButtonStyles = {
-  backgroundColor: '#1D1D20',
+  backgroundColor: Theme.colors.darkGrey,
   width: 96,
   height: 96,
   marginBottom: 10,
@@ -19,11 +20,6 @@ export const customRadioButtonStyles = {
 
 export const customLabelStyles = {
   marginBottom: 20,
-};
-
-export const stepperStyles = {
-  margin: '0 auto',
-  pointerEvents: 'none',
 };
 
 export const customRadioGroupStyles = {
