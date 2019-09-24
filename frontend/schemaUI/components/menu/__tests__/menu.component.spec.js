@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Menu } from '../menu.component';
+import { MenuComponent } from '../menu.component';
 
 describe('Menu: Component', () => {
   const defaultProps = {};
 
   const component = props => (
-    <Menu {...defaultProps} {...props}>
+    <MenuComponent {...defaultProps} {...props}>
       items
-    </Menu>
+    </MenuComponent>
   );
 
   const render = (props = {}) => shallow(component(props));
@@ -28,10 +28,11 @@ describe('Menu: Component', () => {
     const customStyles = {
       backgroundColor: 'black',
     };
-    const customCloseButtonStyles = {
-      backgroundColor: 'black',
+    const closeButtonProps = {
+      customStyles,
+      id: 'close-button',
     };
-    const wrapper = render({ customStyles, customCloseButtonStyles });
+    const wrapper = render({ customStyles, closeButtonProps });
     global.expect(wrapper).toMatchSnapshot();
   });
 });

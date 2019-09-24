@@ -3,11 +3,10 @@ import { storiesOf } from '@storybook/react';
 
 import { View } from './view.component';
 
+import mockScripts, { BLANK_CELLS } from '../../../../../../modules/dataWrangling/scripts.mock';
+
 export const defaultProps = {
-  dataWrangling: {
-    description: 'Change to lowercase',
-    code: 'df.columns = map(str.lower, df.columns)',
-  },
+  dataWrangling: mockScripts[BLANK_CELLS],
   fetchDataWrangling: Function.prototype,
   unmountDataWrangling: Function.prototype,
   intl: {
@@ -20,6 +19,7 @@ export const defaultProps = {
     params: {
       projectId: '1',
       dataSourceId: '1',
+      scriptId: '1',
     },
   },
 };

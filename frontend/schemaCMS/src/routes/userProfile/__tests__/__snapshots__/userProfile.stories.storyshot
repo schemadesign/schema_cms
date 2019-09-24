@@ -2,7 +2,7 @@
 
 exports[`Storyshots UserProfile Default 1`] = `
 <div
-  className="sc-jwKygS fBWxJW"
+  className="sc-btzYZH dcBPpq"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -11,7 +11,7 @@ exports[`Storyshots UserProfile Default 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -62,9 +62,10 @@ exports[`Storyshots UserProfile Default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -79,7 +80,7 @@ exports[`Storyshots UserProfile Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -96,8 +97,8 @@ exports[`Storyshots UserProfile Default 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#000",
+          "color": "#FFF",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -160,15 +161,17 @@ exports[`Storyshots UserProfile Default 1`] = `
         />
       </div>
       <button
+        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -183,7 +186,7 @@ exports[`Storyshots UserProfile Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -199,7 +202,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-btzYZH dcBPpq"
+    className="sc-lhVmIH iBkPsG"
     onSubmit={[Function]}
   >
     <div
@@ -221,8 +224,8 @@ exports[`Storyshots UserProfile Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #F0EFEF",
-              "color": "#a6a7aa",
+              "borderTop": "1px solid #2F2F36",
+              "color": "#71737e",
               "display": "block",
               "fontSize": "14px",
               "outline": "none",
@@ -241,7 +244,7 @@ exports[`Storyshots UserProfile Default 1`] = `
             Object {
               "backgroundColor": "transparent",
               "border": "none",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
@@ -280,8 +283,8 @@ exports[`Storyshots UserProfile Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #F0EFEF",
-              "color": "#a6a7aa",
+              "borderTop": "1px solid #2F2F36",
+              "color": "#71737e",
               "display": "block",
               "fontSize": "14px",
               "outline": "none",
@@ -300,7 +303,7 @@ exports[`Storyshots UserProfile Default 1`] = `
             Object {
               "backgroundColor": "transparent",
               "border": "none",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
@@ -339,8 +342,8 @@ exports[`Storyshots UserProfile Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #F0EFEF",
-              "color": "#a6a7aa",
+              "borderTop": "1px solid #2F2F36",
+              "color": "#71737e",
               "display": "block",
               "fontSize": "14px",
               "outline": "none",
@@ -360,7 +363,7 @@ exports[`Storyshots UserProfile Default 1`] = `
             Object {
               "backgroundColor": "transparent",
               "border": "none",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
@@ -383,12 +386,13 @@ exports[`Storyshots UserProfile Default 1`] = `
     <button
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#1d1d20",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "margin": "0",
           "marginRight": "20px",
@@ -402,17 +406,17 @@ exports[`Storyshots UserProfile Default 1`] = `
     </button>
   </form>
   <div
-    className="sc-bYSBpT bFElfK"
+    className="sc-elJkPf gqFUnK"
   >
     <a
-      className="sc-lhVmIH hMxCkI"
+      className="sc-bYSBpT jdQBVs"
       href="/reset-password"
       onClick={[Function]}
     >
       Reset Password
     </a>
     <a
-      className="sc-lhVmIH hMxCkI"
+      className="sc-bYSBpT jdQBVs"
       href="/logout"
       onClick={[Function]}
     >

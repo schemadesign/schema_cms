@@ -23,7 +23,7 @@ exports[`List: Component should render card with draft state 1`] = `
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <FormattedMessage
             defaultMessage="Draft"
@@ -35,7 +35,10 @@ exports[`List: Component should render card with draft state 1`] = `
         <H1
           customStyles={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -54,10 +57,11 @@ exports[`List: Component should render card with draft state 1`] = `
             <styled.span
               isLock={true}
             >
-              <CsvIcon
+              <Component
                 customStyles={
                   Object {
-                    "fill": "#a6a7aa",
+                    "display": "none",
+                    "fill": "#FFF",
                     "height": 40,
                     "width": 40,
                   }
@@ -114,23 +118,33 @@ exports[`List: Component should render card with draft state 1`] = `
             </styled.span>
           </styled.div>
         </styled.div>
-      </Card>
+      </Component>
     </styled.li>
   </styled.div>
-  <Button
-    customStyles={
-      Object {
-        "backgroundColor": "#a6a7aa",
-        "bottom": "10px",
-        "height": "60px",
-        "position": "fixed",
-        "right": "10px",
+  <styled.div>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
       }
-    }
-    onClick={[Function]}
-  >
-    <PlusIcon />
-  </Button>
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
+      }
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+  </styled.div>
 </styled.div>
 `;
 
@@ -157,7 +171,7 @@ exports[`List: Component should render card with error state 1`] = `
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <FormattedMessage
             defaultMessage="Error"
@@ -169,7 +183,10 @@ exports[`List: Component should render card with error state 1`] = `
         <H1
           customStyles={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -190,23 +207,33 @@ exports[`List: Component should render card with error state 1`] = `
             error2
           </styled.div>
         </styled.div>
-      </Card>
+      </Component>
     </styled.li>
   </styled.div>
-  <Button
-    customStyles={
-      Object {
-        "backgroundColor": "#a6a7aa",
-        "bottom": "10px",
-        "height": "60px",
-        "position": "fixed",
-        "right": "10px",
+  <styled.div>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
       }
-    }
-    onClick={[Function]}
-  >
-    <PlusIcon />
-  </Button>
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
+      }
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+  </styled.div>
 </styled.div>
 `;
 
@@ -233,7 +260,7 @@ exports[`List: Component should render card with processing state 1`] = `
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <FormattedMessage
             defaultMessage="Loading..."
@@ -245,7 +272,10 @@ exports[`List: Component should render card with processing state 1`] = `
         <H1
           customStyles={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -264,10 +294,11 @@ exports[`List: Component should render card with processing state 1`] = `
             <styled.span
               isLock={true}
             >
-              <CsvIcon
+              <Component
                 customStyles={
                   Object {
-                    "fill": "#a6a7aa",
+                    "display": "none",
+                    "fill": "#FFF",
                     "height": 40,
                     "width": 40,
                   }
@@ -324,23 +355,33 @@ exports[`List: Component should render card with processing state 1`] = `
             </styled.span>
           </styled.div>
         </styled.div>
-      </Card>
+      </Component>
     </styled.li>
   </styled.div>
-  <Button
-    customStyles={
-      Object {
-        "backgroundColor": "#a6a7aa",
-        "bottom": "10px",
-        "height": "60px",
-        "position": "fixed",
-        "right": "10px",
+  <styled.div>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
       }
-    }
-    onClick={[Function]}
-  >
-    <PlusIcon />
-  </Button>
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
+      }
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+  </styled.div>
 </styled.div>
 `;
 
@@ -367,7 +408,7 @@ exports[`List: Component should render card with ready for processing state 1`] 
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <FormattedMessage
             defaultMessage="Loading..."
@@ -379,7 +420,10 @@ exports[`List: Component should render card with ready for processing state 1`] 
         <H1
           customStyles={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -398,10 +442,11 @@ exports[`List: Component should render card with ready for processing state 1`] 
             <styled.span
               isLock={true}
             >
-              <CsvIcon
+              <Component
                 customStyles={
                   Object {
-                    "fill": "#a6a7aa",
+                    "display": "none",
+                    "fill": "#FFF",
                     "height": 40,
                     "width": 40,
                   }
@@ -458,23 +503,33 @@ exports[`List: Component should render card with ready for processing state 1`] 
             </styled.span>
           </styled.div>
         </styled.div>
-      </Card>
+      </Component>
     </styled.li>
   </styled.div>
-  <Button
-    customStyles={
-      Object {
-        "backgroundColor": "#a6a7aa",
-        "bottom": "10px",
-        "height": "60px",
-        "position": "fixed",
-        "right": "10px",
+  <styled.div>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
       }
-    }
-    onClick={[Function]}
-  >
-    <PlusIcon />
-  </Button>
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
+      }
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+  </styled.div>
 </styled.div>
 `;
 
@@ -501,7 +556,7 @@ exports[`List: Component should render correctly 1`] = `
     <styled.li
       key="0"
     >
-      <Card
+      <Component
         headerComponent={
           <ForwardRef(styled.div)>
             <ForwardRef(styled.ul)>
@@ -513,7 +568,7 @@ exports[`List: Component should render correctly 1`] = `
               </ForwardRef(styled.li)>
             </ForwardRef(styled.ul)>
             <ForwardRef(styled.div)>
-              <IntersectIcon />
+              <Unknown />
             </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
         }
@@ -539,10 +594,10 @@ exports[`List: Component should render correctly 1`] = `
             <styled.span
               isLock={false}
             >
-              <CsvIcon
+              <Component
                 customStyles={
                   Object {
-                    "fill": "#1d1d20",
+                    "fill": "#FFF",
                     "height": 40,
                     "width": 40,
                   }
@@ -599,23 +654,33 @@ exports[`List: Component should render correctly 1`] = `
             </styled.span>
           </styled.div>
         </styled.div>
-      </Card>
+      </Component>
     </styled.li>
   </styled.div>
-  <Button
-    customStyles={
-      Object {
-        "backgroundColor": "#a6a7aa",
-        "bottom": "10px",
-        "height": "60px",
-        "position": "fixed",
-        "right": "10px",
+  <styled.div>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
       }
-    }
-    onClick={[Function]}
-  >
-    <PlusIcon />
-  </Button>
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
+      }
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+  </styled.div>
 </styled.div>
 `;
 
@@ -639,19 +704,29 @@ exports[`List: Component should render empty 1`] = `
     }
   />
   <styled.div />
-  <Button
-    customStyles={
-      Object {
-        "backgroundColor": "#a6a7aa",
-        "bottom": "10px",
-        "height": "60px",
-        "position": "fixed",
-        "right": "10px",
+  <styled.div>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
       }
-    }
-    onClick={[Function]}
-  >
-    <PlusIcon />
-  </Button>
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "height": "60px",
+        }
+      }
+      onClick={[Function]}
+    >
+      <Component />
+    </Component>
+  </styled.div>
 </styled.div>
 `;

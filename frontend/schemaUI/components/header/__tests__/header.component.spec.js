@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Header } from '../header.component';
+import { HeaderComponent } from '../header.component';
 import { Button } from '../../button';
 
 describe('Header: Component', () => {
   const defaultProps = {};
 
-  const component = props => <Header {...defaultProps} {...props} />;
+  const component = props => <HeaderComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

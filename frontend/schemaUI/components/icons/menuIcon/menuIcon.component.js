@@ -2,17 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import MenuSVG from '../../../images/icons/menu.svg';
-import { containerStyles } from './menuIcon.styles';
+import { getStyles } from './menuIcon.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class MenuIcon extends PureComponent {
+export class MenuIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
 
   render() {
-    const { customStyles, ...restProps } = this.props;
+    const { customStyles, theme, ...restProps } = this.props;
+    const containerStyles = getStyles(theme);
     const styles = { ...containerStyles, ...customStyles };
 
     return <MenuSVG {...restProps} style={styles} />;
   }
 }
+
+export const MenuIcon = withStyles(MenuIconComponent);

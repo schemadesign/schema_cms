@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeProvider: Component should render correctly 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "theme": Object {
+        "active": "#1d1d20",
+        "background": "#f0efef",
+        "border": "#1d1d20",
+        "button": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "card": Object {
+          "background": "#f0efef",
+          "border": "#FFF",
+          "label": "#71737e",
+          "text": "#FFF",
+        },
+        "checkbox": Object {
+          "border": "#2F2F36",
+          "text": "#000",
+        },
+        "dataGrid": Object {
+          "background": "#f0efef",
+          "text": "#a6a7aa",
+        },
+        "divider": "#F0EFEF",
+        "error": "#f21e29",
+        "header": Object {
+          "text": "#FFF",
+        },
+        "icon": Object {
+          "background": "#f0efef",
+          "fill": "#1d1d20",
+        },
+        "iconBright": "#FFF",
+        "iconDark": "#1d1d20",
+        "input": Object {
+          "text": "#000",
+        },
+        "label": Object {
+          "border": "#1d1d20",
+          "text": "#a6a7aa",
+        },
+        "menu": Object {
+          "background": "#FFF",
+          "text": "#000",
+        },
+        "providerContainer": Object {
+          "backgroundColor": "#FFF",
+          "minHeight": "100vh",
+        },
+        "stepper": Object {
+          "active": "#1d1d20",
+          "background": "#f0efef",
+        },
+        "text": "#1d1d20",
+        "textArea": Object {
+          "text": "#000",
+        },
+        "textField": Object {
+          "error": "#f21e29",
+          "label": "#a6a7aa",
+        },
+        "typography": Object {
+          "h1": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "h2": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 100,
+          },
+          "h3": Object {
+            "color": Object {
+              "border": "#1d1d20",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "p": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 200,
+          },
+          "pre": Object {
+            "fontFamily": "Hack, monospace",
+          },
+          "span": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          },
+        },
+      },
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "minHeight": "100vh",
+      }
+    }
+  >
+    children
+  </div>
+</ContextProvider>
+`;

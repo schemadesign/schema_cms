@@ -2,15 +2,13 @@
 
 exports[`Select: Component should render correctly 1`] = `
 <styled.div>
-  <Label
-    customStyles={Object {}}
-  >
+  <Component>
     Selector
-  </Label>
+  </Component>
   <input
-    hidden={true}
+    id="selectField"
     name="selectField"
-    onChange={[Function]}
+    type="hidden"
     value="one"
   />
   <Select

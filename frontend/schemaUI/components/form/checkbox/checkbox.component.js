@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { containerStyles, inputStyles, iconContainerStyles, labelStyles } from './checkbox.styles';
+import { getStyles } from './checkbox.styles';
 import CheckboxGroupContext from '../checkboxGroup/checkboxGroup.context';
 import { EditIcon } from '../../icons/editIcon';
+import { withStyles } from '../../styles/withStyles';
 
-export class Checkbox extends PureComponent {
+export class CheckboxComponent extends PureComponent {
   static propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
@@ -19,12 +20,13 @@ export class Checkbox extends PureComponent {
   renderEditIcon = isEdit => (isEdit ? <EditIcon /> : null);
 
   render() {
-    const { id, children, isEdit, ...restProps } = this.props;
+    const { id, children, isEdit, theme, ...restProps } = this.props;
 
     return (
       <CheckboxGroupContext.Consumer>
         {({ onChange, value = [], name, checkedIcon, uncCheckedIcon, customCheckboxStyles }) => {
           const checked = value.includes(restProps.value);
+          const { containerStyles, inputStyles, iconContainerStyles, labelStyles } = getStyles(theme);
           const styles = { ...containerStyles, ...customCheckboxStyles };
 
           return (
@@ -54,3 +56,5 @@ export class Checkbox extends PureComponent {
     );
   }
 }
+
+export const Checkbox = withStyles(CheckboxComponent);

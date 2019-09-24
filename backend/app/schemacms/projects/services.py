@@ -1,24 +1,31 @@
-import io
 import json
 import os
-import zipfile
 
 import boto3
+from django.utils import functional
 from django.conf import settings
 
-s3 = boto3.resource(
-    's3',
-    endpoint_url=settings.AWS_S3_ENDPOINT_URL,
-    aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-    aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
-)
 
-sqs = boto3.client(
-    'sqs',
-    endpoint_url=settings.AWS_SQS_ENDPOINT_URL,
-    aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-    aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
-)
+def get_s3():
+    return boto3.resource(
+        's3',
+        endpoint_url=settings.AWS_S3_ENDPOINT_URL,
+        aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
+    )
+
+
+def get_sqs():
+    return boto3.client(
+        'sqs',
+        endpoint_url=settings.AWS_SQS_ENDPOINT_URL,
+        aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
+    )
+
+
+s3 = functional.SimpleLazyObject(get_s3)
+sqs = functional.SimpleLazyObject(get_sqs)
 
 
 class ScriptResource:
@@ -49,7 +56,7 @@ class S3ScriptResource(ScriptResource):
 
     def list(self, obj):
         return [
-            {'key': self.ref_name(obj.key)}
+            {'key': self.ref_name(obj.key), 'resource': self, 'ref_key': obj.key}
             for obj in self.bucket.objects.filter(Prefix=self.get_upload_path(obj))
         ]
 
@@ -71,7 +78,7 @@ class LocalScriptResource(ScriptResource):
 
     def list(self, datasource):
         for file in os.listdir(self.path):
-            yield {'key': self.ref_name(file)}
+            yield {'key': self.ref_name(file), 'resource': self, 'ref_key': file}
 
     def getvalue(self, ref_key):
         file_path = os.path.join(self.path, ref_key)
@@ -92,29 +99,22 @@ class Scripts:
             listed.extend(resource.list(datasource))
         return listed
 
-    def responsible(self, file):
-        protocol, ref_key = file.split(':')
+    def responsible(self, key):
+        protocol, ref_key = key.split(':')
         return next(filter(lambda r: r.PROTOCOL == protocol, self.resources.values()), None), ref_key
 
 
-scripts = Scripts()
+def setup_scripts():
+    scripts_ = Scripts()
+    S3ScriptResource(settings.DATASOURCE_S3_BUCKET, settings.DS_SCRIPTS_UPLOAD_PATH).register(scripts_)
+    LocalScriptResource('./step-scripts/').register(scripts_)
+    return scripts_
 
-S3ScriptResource(settings.DATASOURCE_S3_BUCKET, settings.DS_SCRIPTS_UPLOAD_PATH).register(scripts)
-LocalScriptResource('./step-scripts/').register(scripts)
+
+scripts = functional.SimpleLazyObject(setup_scripts)
 
 
 def schedule_worker_with(datasource_job):
-    zip_stream = io.BytesIO()
-    with zipfile.ZipFile(zip_stream, 'w') as zip_file:
-        for step in datasource_job.steps:
-            step_key = step['key']
-            resource, ref_key = scripts.responsible(step_key)
-            zip_file.writestr(ref_key, resource.getvalue(ref_key))
-
-    s3_scripts_ref = os.path.join(
-        settings.DS_JOB_UPLOAD_PATH.format(datasource_job.datasource_id), datasource_job.scripts_ref
-    )
-    s3.Bucket(settings.DATASOURCE_S3_BUCKET).put_object(Key=s3_scripts_ref, Body=zip_stream.getvalue())
     sqs_response = sqs.send_message(
         QueueUrl=settings.SQS_WORKER_QUEUE_URL, MessageBody=json.dumps({'job_pk': datasource_job.pk})
     )

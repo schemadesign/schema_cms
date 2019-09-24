@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { EditIcon } from '../editIcon.component';
+import { EditIconComponent } from '../editIcon.component';
 
 describe('EditIcon: Component', () => {
   const defaultProps = {};
 
-  const component = props => <EditIcon {...defaultProps} {...props} />;
+  const component = props => <EditIconComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

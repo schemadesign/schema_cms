@@ -22,6 +22,9 @@ nock.disableNetConnect();
 
 MockDate.set('2019-12-01T01:00:00Z');
 jest.doMock('dayjs', () => dayjs);
+jest.doMock('react-syntax-highlighter/dist/esm/styles/hljs', () => ({
+  docco: {},
+}));
 
 afterEach(() => {
   nock.cleanAll();

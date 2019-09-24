@@ -133,6 +133,10 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 class DataSourceScriptSerializer(serializers.Serializer):
     key = serializers.CharField()
+    body = serializers.SerializerMethodField()
+
+    def get_body(self, attr):
+        return attr['resource'].getvalue(attr['ref_key'])
 
 
 class DataSourceScriptUploadSerializer(serializers.Serializer):
@@ -146,7 +150,7 @@ class DataSourceScriptUploadSerializer(serializers.Serializer):
 
 class StepSerializer(serializers.Serializer):
     key = serializers.CharField(max_length=255)
-    order = serializers.IntegerField(default=0)
+    exec_order = serializers.IntegerField(default=0)
 
     def validate_key(self, attr):
         spliced = attr.split(':')
@@ -162,5 +166,21 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
         model = models.DataSourceJob
         fields = ('pk', 'steps', 'job_state')
 
+    def validate_steps(self, attr):
+        if not attr:
+            raise exceptions.ValidationError('At least single step is required')
+        return attr
+
     def create(self, validated_data):
-        return models.DataSourceJob.objects.create(**validated_data)
+        steps = validated_data.pop('steps')
+        job = models.DataSourceJob.objects.create(**validated_data)
+        for step in steps:
+            step_key = step['key']
+            step_resource, ref_key = services.scripts.responsible(key=step_key)
+            models.DataSourceJobStep.objects.create(
+                datasource_job=job,
+                key=step_key,
+                exec_order=step['exec_order'],
+                body=step_resource.getvalue(ref_key),
+            )
+        return job

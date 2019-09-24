@@ -43,11 +43,13 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
+    "husky": "^4.0.0-beta.1",
     "inquirer-directory": "^2.2.0",
     "isomorphic-fetch": "^2.2.1",
     "jest": "^24.8.0",
     "jest-enzyme": "^7.1.0",
     "jest-watch-typeahead": "^0.2.1",
+    "lint-staged": "^9.2.5",
     "nock": "^10.0.6",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
@@ -71,6 +73,17 @@
     "lint:js": "eslint .",
     "storybook": "start-storybook --config-dir './.storybook'",
     "build-storybook": "build-storybook"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "bash ../../install/run_tests.sh"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint"
+    ]
   },
   "jest": {
     "collectCoverageFrom": [

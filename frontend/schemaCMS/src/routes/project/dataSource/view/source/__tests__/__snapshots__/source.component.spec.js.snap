@@ -255,123 +255,152 @@ exports[`Source: Component should render correctly 1`] = `
                   <div
                     className="sc-bwzfXH uTxCW"
                   >
-                    <TextField
-                      customInputStyles={Object {}}
-                      customLabelStyles={Object {}}
-                      error={false}
+                    <Component
                       fullWidth={true}
                       label="Name"
                       name="name"
                       onChange={[Function]}
-                      type="text"
                       value=""
                     >
-                      <div
-                        style={
-                          Object {
-                            "display": "flex",
-                            "flexDirection": "column",
-                            "maxWidth": "100%",
-                            "paddingBottom": "30px",
-                            "position": "relative",
-                          }
-                        }
+                      <TextFieldComponent
+                        customInputStyles={Object {}}
+                        customLabelStyles={Object {}}
+                        error={false}
+                        fullWidth={true}
+                        label="Name"
+                        name="name"
+                        onChange={[Function]}
+                        type="text"
+                        value=""
                       >
-                        <Label
-                          customStyles={Object {}}
-                          name="name"
-                        >
-                          <label
-                            htmlFor="name"
-                            style={
-                              Object {
-                                "border": "none",
-                                "borderTop": "1px solid #F0EFEF",
-                                "color": "#a6a7aa",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "outline": "none",
-                                "paddingTop": "8px",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            Name
-                          </label>
-                        </Label>
-                        <Input
-                          customStyles={Object {}}
-                          name="name"
-                          onChange={[Function]}
-                          type="text"
-                          value=""
-                        >
-                          <input
-                            id="name"
-                            name="name"
-                            onChange={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "transparent",
-                                "border": "none",
-                                "color": "#1d1d20",
-                                "fontSize": "18px",
-                                "lineHeight": "24px",
-                                "outline": "none",
-                              }
-                            }
-                            type="text"
-                            value=""
-                          />
-                        </Input>
                         <div
                           style={
                             Object {
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "maxWidth": "100%",
+                              "paddingBottom": "30px",
+                              "position": "relative",
                             }
                           }
-                        />
-                      </div>
-                    </TextField>
+                        >
+                          <Component
+                            customStyles={Object {}}
+                            name="name"
+                          >
+                            <LabelComponent
+                              customStyles={Object {}}
+                              name="name"
+                            >
+                              <label
+                                htmlFor="name"
+                                style={
+                                  Object {
+                                    "border": "none",
+                                    "borderTop": "1px solid #2F2F36",
+                                    "color": "#71737e",
+                                    "display": "block",
+                                    "fontSize": "14px",
+                                    "outline": "none",
+                                    "paddingTop": "8px",
+                                    "width": "100%",
+                                  }
+                                }
+                              >
+                                Name
+                              </label>
+                            </LabelComponent>
+                          </Component>
+                          <Component
+                            customStyles={Object {}}
+                            name="name"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          >
+                            <InputComponent
+                              customStyles={Object {}}
+                              name="name"
+                              onChange={[Function]}
+                              type="text"
+                              value=""
+                            >
+                              <input
+                                id="name"
+                                name="name"
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "border": "none",
+                                    "color": "#FFF",
+                                    "fontSize": "18px",
+                                    "lineHeight": "24px",
+                                    "outline": "none",
+                                  }
+                                }
+                                type="text"
+                                value=""
+                              />
+                            </InputComponent>
+                          </Component>
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </div>
+                      </TextFieldComponent>
+                    </Component>
                   </div>
                 </StyledComponent>
               </styled.div>
             </TextInput>
-            <Label
+            <Component
               customStyles={
                 Object {
                   "marginBottom": 20,
                 }
               }
             >
-              <label
-                style={
+              <LabelComponent
+                customStyles={
                   Object {
-                    "border": "none",
-                    "borderTop": "1px solid #F0EFEF",
-                    "color": "#a6a7aa",
-                    "display": "block",
-                    "fontSize": "14px",
                     "marginBottom": 20,
-                    "outline": "none",
-                    "paddingTop": "8px",
-                    "width": "100%",
                   }
                 }
               >
-                <FormattedMessage
-                  defaultMessage="Source"
-                  id="dataSource.view.source.source"
-                  values={Object {}}
+                <label
+                  style={
+                    Object {
+                      "border": "none",
+                      "borderTop": "1px solid #2F2F36",
+                      "color": "#71737e",
+                      "display": "block",
+                      "fontSize": "14px",
+                      "marginBottom": 20,
+                      "outline": "none",
+                      "paddingTop": "8px",
+                      "width": "100%",
+                    }
+                  }
                 >
-                  <span>
-                    Source
-                  </span>
-                </FormattedMessage>
-              </label>
-            </Label>
+                  <FormattedMessage
+                    defaultMessage="Source"
+                    id="dataSource.view.source.source"
+                    values={Object {}}
+                  >
+                    <span>
+                      Source
+                    </span>
+                  </FormattedMessage>
+                </label>
+              </LabelComponent>
+            </Component>
             <RadioGroup
               customCheckedStyles={Object {}}
               customLabelStyles={
@@ -445,10 +474,10 @@ exports[`Source: Component should render correctly 1`] = `
                         }
                       }
                     >
-                      <Button
+                      <Component
                         customStyles={
                           Object {
-                            "backgroundColor": "#1D1D20",
+                            "backgroundColor": "#1d1d20",
                             "height": 96,
                             "marginBottom": 10,
                             "pointerEvents": "none",
@@ -457,57 +486,73 @@ exports[`Source: Component should render correctly 1`] = `
                         }
                         type="button"
                       >
-                        <button
-                          style={
+                        <ButtonComponent
+                          customStyles={
                             Object {
-                              "backgroundColor": "#1D1D20",
-                              "border": "none",
-                              "borderRadius": "48px",
-                              "color": "#1d1d20",
-                              "cursor": "pointer",
-                              "display": "inline-block",
-                              "fontSize": "18px",
+                              "backgroundColor": "#1d1d20",
                               "height": 96,
-                              "margin": "0",
                               "marginBottom": 10,
-                              "minHeight": "48px",
-                              "outline": "none",
-                              "padding": "0",
                               "pointerEvents": "none",
                               "width": 96,
                             }
                           }
                           type="button"
                         >
-                          <CsvIcon>
-                            <SvgSpreadsheet
-                              style={
-                                Object {
-                                  "fill": "#FFF",
-                                  "height": "60px",
-                                  "width": "60px",
-                                }
+                          <button
+                            style={
+                              Object {
+                                "backgroundColor": "#1d1d20",
+                                "border": "none",
+                                "borderRadius": "48px",
+                                "color": "#FFF",
+                                "cursor": "pointer",
+                                "display": "inline-block",
+                                "fill": "#FFF",
+                                "fontSize": "18px",
+                                "height": 96,
+                                "margin": "0",
+                                "marginBottom": 10,
+                                "minHeight": "48px",
+                                "outline": "none",
+                                "padding": "0",
+                                "pointerEvents": "none",
+                                "width": 96,
                               }
-                            >
-                              <svg
-                                style={
-                                  Object {
-                                    "fill": "#FFF",
-                                    "height": "60px",
-                                    "width": "60px",
+                            }
+                            type="button"
+                          >
+                            <Component>
+                              <CsvIconComponent>
+                                <SvgSpreadsheet
+                                  style={
+                                    Object {
+                                      "fill": "#FFF",
+                                      "height": "60px",
+                                      "width": "60px",
+                                    }
                                   }
-                                }
-                                viewBox="0 0 60 60"
-                              >
-                                <path
-                                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                                  fillRule="evenodd"
-                                />
-                              </svg>
-                            </SvgSpreadsheet>
-                          </CsvIcon>
-                        </button>
-                      </Button>
+                                >
+                                  <svg
+                                    style={
+                                      Object {
+                                        "fill": "#FFF",
+                                        "height": "60px",
+                                        "width": "60px",
+                                      }
+                                    }
+                                    viewBox="0 0 60 60"
+                                  >
+                                    <path
+                                      d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                                      fillRule="evenodd"
+                                    />
+                                  </svg>
+                                </SvgSpreadsheet>
+                              </CsvIconComponent>
+                            </Component>
+                          </button>
+                        </ButtonComponent>
+                      </Component>
                     </label>
                     Spreadsheet
                   </div>
@@ -785,123 +830,152 @@ exports[`Source: Component should render file uploader 1`] = `
                   <div
                     className="sc-bwzfXH uTxCW"
                   >
-                    <TextField
-                      customInputStyles={Object {}}
-                      customLabelStyles={Object {}}
-                      error={false}
+                    <Component
                       fullWidth={true}
                       label="Name"
                       name="name"
                       onChange={[Function]}
-                      type="text"
                       value=""
                     >
-                      <div
-                        style={
-                          Object {
-                            "display": "flex",
-                            "flexDirection": "column",
-                            "maxWidth": "100%",
-                            "paddingBottom": "30px",
-                            "position": "relative",
-                          }
-                        }
+                      <TextFieldComponent
+                        customInputStyles={Object {}}
+                        customLabelStyles={Object {}}
+                        error={false}
+                        fullWidth={true}
+                        label="Name"
+                        name="name"
+                        onChange={[Function]}
+                        type="text"
+                        value=""
                       >
-                        <Label
-                          customStyles={Object {}}
-                          name="name"
-                        >
-                          <label
-                            htmlFor="name"
-                            style={
-                              Object {
-                                "border": "none",
-                                "borderTop": "1px solid #F0EFEF",
-                                "color": "#a6a7aa",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "outline": "none",
-                                "paddingTop": "8px",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            Name
-                          </label>
-                        </Label>
-                        <Input
-                          customStyles={Object {}}
-                          name="name"
-                          onChange={[Function]}
-                          type="text"
-                          value=""
-                        >
-                          <input
-                            id="name"
-                            name="name"
-                            onChange={[Function]}
-                            style={
-                              Object {
-                                "backgroundColor": "transparent",
-                                "border": "none",
-                                "color": "#1d1d20",
-                                "fontSize": "18px",
-                                "lineHeight": "24px",
-                                "outline": "none",
-                              }
-                            }
-                            type="text"
-                            value=""
-                          />
-                        </Input>
                         <div
                           style={
                             Object {
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "maxWidth": "100%",
+                              "paddingBottom": "30px",
+                              "position": "relative",
                             }
                           }
-                        />
-                      </div>
-                    </TextField>
+                        >
+                          <Component
+                            customStyles={Object {}}
+                            name="name"
+                          >
+                            <LabelComponent
+                              customStyles={Object {}}
+                              name="name"
+                            >
+                              <label
+                                htmlFor="name"
+                                style={
+                                  Object {
+                                    "border": "none",
+                                    "borderTop": "1px solid #2F2F36",
+                                    "color": "#71737e",
+                                    "display": "block",
+                                    "fontSize": "14px",
+                                    "outline": "none",
+                                    "paddingTop": "8px",
+                                    "width": "100%",
+                                  }
+                                }
+                              >
+                                Name
+                              </label>
+                            </LabelComponent>
+                          </Component>
+                          <Component
+                            customStyles={Object {}}
+                            name="name"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          >
+                            <InputComponent
+                              customStyles={Object {}}
+                              name="name"
+                              onChange={[Function]}
+                              type="text"
+                              value=""
+                            >
+                              <input
+                                id="name"
+                                name="name"
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "border": "none",
+                                    "color": "#FFF",
+                                    "fontSize": "18px",
+                                    "lineHeight": "24px",
+                                    "outline": "none",
+                                  }
+                                }
+                                type="text"
+                                value=""
+                              />
+                            </InputComponent>
+                          </Component>
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </div>
+                      </TextFieldComponent>
+                    </Component>
                   </div>
                 </StyledComponent>
               </styled.div>
             </TextInput>
-            <Label
+            <Component
               customStyles={
                 Object {
                   "marginBottom": 20,
                 }
               }
             >
-              <label
-                style={
+              <LabelComponent
+                customStyles={
                   Object {
-                    "border": "none",
-                    "borderTop": "1px solid #F0EFEF",
-                    "color": "#a6a7aa",
-                    "display": "block",
-                    "fontSize": "14px",
                     "marginBottom": 20,
-                    "outline": "none",
-                    "paddingTop": "8px",
-                    "width": "100%",
                   }
                 }
               >
-                <FormattedMessage
-                  defaultMessage="Source"
-                  id="dataSource.view.source.source"
-                  values={Object {}}
+                <label
+                  style={
+                    Object {
+                      "border": "none",
+                      "borderTop": "1px solid #2F2F36",
+                      "color": "#71737e",
+                      "display": "block",
+                      "fontSize": "14px",
+                      "marginBottom": 20,
+                      "outline": "none",
+                      "paddingTop": "8px",
+                      "width": "100%",
+                    }
+                  }
                 >
-                  <span>
-                    Source
-                  </span>
-                </FormattedMessage>
-              </label>
-            </Label>
+                  <FormattedMessage
+                    defaultMessage="Source"
+                    id="dataSource.view.source.source"
+                    values={Object {}}
+                  >
+                    <span>
+                      Source
+                    </span>
+                  </FormattedMessage>
+                </label>
+              </LabelComponent>
+            </Component>
             <RadioGroup
               customCheckedStyles={Object {}}
               customLabelStyles={
@@ -976,10 +1050,10 @@ exports[`Source: Component should render file uploader 1`] = `
                         }
                       }
                     >
-                      <Button
+                      <Component
                         customStyles={
                           Object {
-                            "backgroundColor": "#1D1D20",
+                            "backgroundColor": "#1d1d20",
                             "height": 96,
                             "marginBottom": 10,
                             "pointerEvents": "none",
@@ -988,57 +1062,73 @@ exports[`Source: Component should render file uploader 1`] = `
                         }
                         type="button"
                       >
-                        <button
-                          style={
+                        <ButtonComponent
+                          customStyles={
                             Object {
-                              "backgroundColor": "#1D1D20",
-                              "border": "none",
-                              "borderRadius": "48px",
-                              "color": "#1d1d20",
-                              "cursor": "pointer",
-                              "display": "inline-block",
-                              "fontSize": "18px",
+                              "backgroundColor": "#1d1d20",
                               "height": 96,
-                              "margin": "0",
                               "marginBottom": 10,
-                              "minHeight": "48px",
-                              "outline": "none",
-                              "padding": "0",
                               "pointerEvents": "none",
                               "width": 96,
                             }
                           }
                           type="button"
                         >
-                          <CsvIcon>
-                            <SvgSpreadsheet
-                              style={
-                                Object {
-                                  "fill": "#FFF",
-                                  "height": "60px",
-                                  "width": "60px",
-                                }
+                          <button
+                            style={
+                              Object {
+                                "backgroundColor": "#1d1d20",
+                                "border": "none",
+                                "borderRadius": "48px",
+                                "color": "#FFF",
+                                "cursor": "pointer",
+                                "display": "inline-block",
+                                "fill": "#FFF",
+                                "fontSize": "18px",
+                                "height": 96,
+                                "margin": "0",
+                                "marginBottom": 10,
+                                "minHeight": "48px",
+                                "outline": "none",
+                                "padding": "0",
+                                "pointerEvents": "none",
+                                "width": 96,
                               }
-                            >
-                              <svg
-                                style={
-                                  Object {
-                                    "fill": "#FFF",
-                                    "height": "60px",
-                                    "width": "60px",
+                            }
+                            type="button"
+                          >
+                            <Component>
+                              <CsvIconComponent>
+                                <SvgSpreadsheet
+                                  style={
+                                    Object {
+                                      "fill": "#FFF",
+                                      "height": "60px",
+                                      "width": "60px",
+                                    }
                                   }
-                                }
-                                viewBox="0 0 60 60"
-                              >
-                                <path
-                                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                                  fillRule="evenodd"
-                                />
-                              </svg>
-                            </SvgSpreadsheet>
-                          </CsvIcon>
-                        </button>
-                      </Button>
+                                >
+                                  <svg
+                                    style={
+                                      Object {
+                                        "fill": "#FFF",
+                                        "height": "60px",
+                                        "width": "60px",
+                                      }
+                                    }
+                                    viewBox="0 0 60 60"
+                                  >
+                                    <path
+                                      d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                                      fillRule="evenodd"
+                                    />
+                                  </svg>
+                                </SvgSpreadsheet>
+                              </CsvIconComponent>
+                            </Component>
+                          </button>
+                        </ButtonComponent>
+                      </Component>
                     </label>
                     Spreadsheet
                   </div>
@@ -1054,12 +1144,13 @@ exports[`Source: Component should render file uploader 1`] = `
                 <div
                   style={
                     Object {
-                      "backgroundColor": "#f0efef",
+                      "backgroundColor": "#1d1d20",
                       "border": "none",
                       "borderRadius": "48px",
-                      "color": "#1d1d20",
+                      "color": "#FFF",
                       "cursor": "pointer",
                       "display": "inline-block",
+                      "fill": "#FFF",
                       "fontSize": 0,
                       "margin": "0",
                       "minHeight": "48px",
@@ -1068,7 +1159,7 @@ exports[`Source: Component should render file uploader 1`] = `
                     }
                   }
                 >
-                  <UploadIcon />
+                  <Unknown />
                 </div>
               }
               id="fileUpload"
@@ -1080,12 +1171,11 @@ exports[`Source: Component should render file uploader 1`] = `
               <div
                 style={Object {}}
               >
-                <TextField
+                <Component
                   customInputStyles={Object {}}
                   customLabelStyles={Object {}}
                   customStyles={Object {}}
                   disabled={true}
-                  error={false}
                   fullWidth={true}
                   iconComponent={
                     <label
@@ -1100,12 +1190,13 @@ exports[`Source: Component should render file uploader 1`] = `
                       <div
                         style={
                           Object {
-                            "backgroundColor": "#f0efef",
+                            "backgroundColor": "#1d1d20",
                             "border": "none",
                             "borderRadius": "48px",
-                            "color": "#1d1d20",
+                            "color": "#FFF",
                             "cursor": "pointer",
                             "display": "inline-block",
+                            "fill": "#FFF",
                             "fontSize": 0,
                             "margin": "0",
                             "minHeight": "48px",
@@ -1114,82 +1205,22 @@ exports[`Source: Component should render file uploader 1`] = `
                           }
                         }
                       >
-                        <UploadIcon />
+                        <Unknown />
                       </div>
                     </label>
                   }
                   label="File Name"
                   name="fileName"
-                  type="text"
                   value="Select a file"
                 >
-                  <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "flexDirection": "column",
-                        "maxWidth": "100%",
-                        "paddingBottom": "30px",
-                        "position": "relative",
-                      }
-                    }
-                  >
-                    <Label
-                      customStyles={Object {}}
-                      name="fileName"
-                    >
-                      <label
-                        htmlFor="fileName"
-                        style={
-                          Object {
-                            "border": "none",
-                            "borderTop": "1px solid #F0EFEF",
-                            "color": "#a6a7aa",
-                            "display": "block",
-                            "fontSize": "14px",
-                            "outline": "none",
-                            "paddingTop": "8px",
-                            "width": "100%",
-                          }
-                        }
-                      >
-                        File Name
-                      </label>
-                    </Label>
-                    <Input
-                      customStyles={Object {}}
-                      disabled={true}
-                      name="fileName"
-                      type="text"
-                      value="Select a file"
-                    >
-                      <input
-                        disabled={true}
-                        id="fileName"
-                        name="fileName"
-                        style={
-                          Object {
-                            "backgroundColor": "transparent",
-                            "border": "none",
-                            "color": "#1d1d20",
-                            "fontSize": "18px",
-                            "lineHeight": "24px",
-                            "outline": "none",
-                          }
-                        }
-                        type="text"
-                        value="Select a file"
-                      />
-                    </Input>
-                    <div
-                      style={
-                        Object {
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                        }
-                      }
-                    >
+                  <TextFieldComponent
+                    customInputStyles={Object {}}
+                    customLabelStyles={Object {}}
+                    customStyles={Object {}}
+                    disabled={true}
+                    error={false}
+                    fullWidth={true}
+                    iconComponent={
                       <label
                         htmlFor="fileUpload"
                         style={
@@ -1202,12 +1233,13 @@ exports[`Source: Component should render file uploader 1`] = `
                         <div
                           style={
                             Object {
-                              "backgroundColor": "#f0efef",
+                              "backgroundColor": "#1d1d20",
                               "border": "none",
                               "borderRadius": "48px",
-                              "color": "#1d1d20",
+                              "color": "#FFF",
                               "cursor": "pointer",
                               "display": "inline-block",
+                              "fill": "#FFF",
                               "fontSize": 0,
                               "margin": "0",
                               "minHeight": "48px",
@@ -1216,37 +1248,156 @@ exports[`Source: Component should render file uploader 1`] = `
                             }
                           }
                         >
-                          <UploadIcon>
-                            <SvgUpload
-                              style={
-                                Object {
-                                  "fill": "#1d1d20",
-                                  "height": "60px",
-                                  "width": "60px",
-                                }
-                              }
-                            >
-                              <svg
-                                style={
-                                  Object {
-                                    "fill": "#1d1d20",
-                                    "height": "60px",
-                                    "width": "60px",
-                                  }
-                                }
-                                viewBox="0 0 60 60"
-                              >
-                                <path
-                                  d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
-                                />
-                              </svg>
-                            </SvgUpload>
-                          </UploadIcon>
+                          <Unknown />
                         </div>
                       </label>
+                    }
+                    label="File Name"
+                    name="fileName"
+                    type="text"
+                    value="Select a file"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "maxWidth": "100%",
+                          "paddingBottom": "30px",
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <Component
+                        customStyles={Object {}}
+                        name="fileName"
+                      >
+                        <LabelComponent
+                          customStyles={Object {}}
+                          name="fileName"
+                        >
+                          <label
+                            htmlFor="fileName"
+                            style={
+                              Object {
+                                "border": "none",
+                                "borderTop": "1px solid #2F2F36",
+                                "color": "#71737e",
+                                "display": "block",
+                                "fontSize": "14px",
+                                "outline": "none",
+                                "paddingTop": "8px",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            File Name
+                          </label>
+                        </LabelComponent>
+                      </Component>
+                      <Component
+                        customStyles={Object {}}
+                        disabled={true}
+                        name="fileName"
+                        type="text"
+                        value="Select a file"
+                      >
+                        <InputComponent
+                          customStyles={Object {}}
+                          disabled={true}
+                          name="fileName"
+                          type="text"
+                          value="Select a file"
+                        >
+                          <input
+                            disabled={true}
+                            id="fileName"
+                            name="fileName"
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "border": "none",
+                                "color": "#FFF",
+                                "fontSize": "18px",
+                                "lineHeight": "24px",
+                                "outline": "none",
+                              }
+                            }
+                            type="text"
+                            value="Select a file"
+                          />
+                        </InputComponent>
+                      </Component>
+                      <div
+                        style={
+                          Object {
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          }
+                        }
+                      >
+                        <label
+                          htmlFor="fileUpload"
+                          style={
+                            Object {
+                              "position": "relative",
+                              "top": 10,
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": "#1d1d20",
+                                "border": "none",
+                                "borderRadius": "48px",
+                                "color": "#FFF",
+                                "cursor": "pointer",
+                                "display": "inline-block",
+                                "fill": "#FFF",
+                                "fontSize": 0,
+                                "margin": "0",
+                                "minHeight": "48px",
+                                "outline": "none",
+                                "padding": "0",
+                              }
+                            }
+                          >
+                            <Component>
+                              <UploadIconComponent>
+                                <SvgUpload
+                                  style={
+                                    Object {
+                                      "fill": "#FFF",
+                                      "height": "60px",
+                                      "width": "60px",
+                                    }
+                                  }
+                                >
+                                  <svg
+                                    style={
+                                      Object {
+                                        "fill": "#FFF",
+                                        "height": "60px",
+                                        "width": "60px",
+                                      }
+                                    }
+                                    viewBox="0 0 60 60"
+                                  >
+                                    <path
+                                      d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                                    />
+                                  </svg>
+                                </SvgUpload>
+                              </UploadIconComponent>
+                            </Component>
+                          </div>
+                        </label>
+                      </div>
                     </div>
-                  </div>
-                </TextField>
+                  </TextFieldComponent>
+                </Component>
                 <input
                   accept=".csv,.tsv"
                   aria-hidden={true}
