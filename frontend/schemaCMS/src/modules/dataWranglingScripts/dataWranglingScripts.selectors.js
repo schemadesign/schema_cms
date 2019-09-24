@@ -1,14 +1,14 @@
 import { createSelector } from 'reselect';
 import { prop } from 'ramda';
 
-export const selectDataWranglingDomain = prop('dataWranglingScripts');
+export const selectDataWranglingScriptsDomain = prop('dataWranglingScripts');
 
-export const selectDataWrangling = createSelector(
-  selectDataWranglingDomain,
+export const selectDataWranglingScript = createSelector(
+  selectDataWranglingScriptsDomain,
   prop('dataWranglingScript')
 );
 
-export const selectDataWranglings = createSelector(
-  selectDataWranglingDomain,
+export const selectDataWranglingScripts = createSelector(
+  selectDataWranglingScriptsDomain,
   prop('dataWranglingScripts')
 );

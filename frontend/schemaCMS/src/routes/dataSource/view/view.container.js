@@ -8,11 +8,11 @@ import { injectIntl } from 'react-intl';
 
 import { View } from './view.component';
 import { DataSourceRoutines, selectDataSource } from '../../../modules/dataSource';
-import { DataWranglingScriptsRoutines, selectDataWranglings } from '../../../modules/dataWranglingScripts';
+import { DataWranglingScriptsRoutines, selectDataWranglingScripts } from '../../../modules/dataWranglingScripts';
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
-  dataWranglings: selectDataWranglings,
+  dataWranglings: selectDataWranglingScripts,
 });
 
 export const mapDispatchToProps = dispatch => ({

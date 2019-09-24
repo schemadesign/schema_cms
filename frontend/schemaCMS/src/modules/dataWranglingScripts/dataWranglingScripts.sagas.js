@@ -9,7 +9,7 @@ import {
 } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 
-import { selectDataWranglings } from './dataWranglingScripts.selectors';
+import { selectDataWranglingScripts } from './dataWranglingScripts.selectors';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -63,12 +63,12 @@ function* fetchOne({ payload }) {
   try {
     yield put(DataWranglingScriptsroutines.fetchOne.request());
 
-    let scripts = yield select(selectDataWranglings);
+    let scripts = yield select(selectDataWranglingScripts);
 
     //TODO: fetch a single script by script ID only
     if (!scripts.length) {
       yield fetchList({ payload });
-      scripts = yield select(selectDataWranglings);
+      scripts = yield select(selectDataWranglingScripts);
     }
     const data = scripts[payload.scriptId];
 

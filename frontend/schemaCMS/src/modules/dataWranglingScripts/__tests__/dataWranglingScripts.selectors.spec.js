@@ -2,9 +2,9 @@ import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
 import {
-  selectDataWranglings,
-  selectDataWrangling,
-  selectDataWranglingDomain,
+  selectDataWranglingScripts,
+  selectDataWranglingScript,
+  selectDataWranglingScriptsDomain,
 } from '../dataWranglingScripts.selectors';
 
 describe('DataWranglingScripts: selectors', () => {
@@ -15,17 +15,17 @@ describe('DataWranglingScripts: selectors', () => {
     },
   });
 
-  describe('selectDataWranglingDomain', () => {
+  describe('selectDataWranglingScriptsDomain', () => {
     it('should select a domain', () => {
-      expect(selectDataWranglingDomain(state)).to.equal(state.dataWranglingScripts);
+      expect(selectDataWranglingScriptsDomain(state)).to.equal(state.dataWranglingScripts);
     });
 
     it('should select a data wranglings scripts list', () => {
-      expect(selectDataWranglings(state)).to.equal(state.dataWranglingScripts.dataWranglingScripts);
+      expect(selectDataWranglingScripts(state)).to.equal(state.dataWranglingScripts.dataWranglingScripts);
     });
 
-    it('should select a ona data wranglingscript', () => {
-      expect(selectDataWrangling(state)).to.equal(state.dataWranglingScripts.dataWranglingScript);
+    it('should select a one data wranglings script', () => {
+      expect(selectDataWranglingScript(state)).to.equal(state.dataWranglingScripts.dataWranglingScript);
     });
   });
 });
