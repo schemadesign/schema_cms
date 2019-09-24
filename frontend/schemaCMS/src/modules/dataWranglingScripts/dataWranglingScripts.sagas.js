@@ -9,7 +9,6 @@ import {
 } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 
-import mockScriptsData from './scripts.mock';
 import { selectDataWranglings } from './dataWranglingScripts.selectors';
 
 function* fetchList({ payload: { dataSourceId } }) {

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { View } from './view.component';
 
-import mockScripts, { BLANK_CELLS } from '../../../../../../modules/dataWrangling/scripts.mock';
+import mockScripts, { BLANK_CELLS } from '../../../modules/dataWranglingScripts/scripts.mock';
 
 export const defaultProps = {
   dataWrangling: mockScripts[BLANK_CELLS],
