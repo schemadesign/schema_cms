@@ -27,7 +27,6 @@ class Common(Configuration):
         sentry_sdk.init(dsn=os.getenv("SENTRY_DNS"), integrations=[DjangoIntegration()])
 
     INSTALLED_APPS = (
-        "whitenoise.runserver_nostatic",
         "django.contrib.admin",
         "django.contrib.auth",
         "django.contrib.contenttypes",
@@ -51,7 +50,6 @@ class Common(Configuration):
     MIDDLEWARE = (
         "django.middleware.security.SecurityMiddleware",
         "corsheaders.middleware.CorsMiddleware",
-        "whitenoise.middleware.WhiteNoiseMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
         "django.middleware.common.CommonMiddleware",
         "django.middleware.csrf.CsrfViewMiddleware",
@@ -112,7 +110,6 @@ class Common(Configuration):
         "django.contrib.staticfiles.finders.FileSystemFinder",
         "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     )
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
     STORAGE_DIR = os.getenv("DJANGO_STORAGE_DIR", "/storage")
 
     DEFAULT_FILE_STORAGE = os.getenv(
