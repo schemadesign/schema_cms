@@ -25,7 +25,7 @@ exports[`Storyshots Project/List empty 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
-            id="projectsPageTitle"
+            id="headerTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -38,7 +38,7 @@ exports[`Storyshots Project/List empty 1`] = `
             Projects
           </h2>
           <h1
-            id="projectsPageSubtitle"
+            id="headerSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -120,7 +120,7 @@ exports[`Storyshots Project/List empty 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
-            id="projectsPageTitle"
+            id="headerTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -133,7 +133,7 @@ exports[`Storyshots Project/List empty 1`] = `
             Projects
           </h2>
           <h1
-            id="projectsPageSubtitle"
+            id="headerSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -163,7 +163,7 @@ exports[`Storyshots Project/List empty 1`] = `
           >
             <a
               href="/logout"
-              id={null}
+              id="logoutBtn"
               onClick={[Function]}
             >
               Log Out
@@ -298,7 +298,7 @@ exports[`Storyshots Project/List list 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
-            id="projectsPageTitle"
+            id="headerTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -311,7 +311,7 @@ exports[`Storyshots Project/List list 1`] = `
             Projects
           </h2>
           <h1
-            id="projectsPageSubtitle"
+            id="headerSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -393,7 +393,7 @@ exports[`Storyshots Project/List list 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
-            id="projectsPageTitle"
+            id="headerTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -406,7 +406,7 @@ exports[`Storyshots Project/List list 1`] = `
             Projects
           </h2>
           <h1
-            id="projectsPageSubtitle"
+            id="headerSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -436,7 +436,7 @@ exports[`Storyshots Project/List list 1`] = `
           >
             <a
               href="/logout"
-              id={null}
+              id="logoutBtn"
               onClick={[Function]}
             >
               Log Out

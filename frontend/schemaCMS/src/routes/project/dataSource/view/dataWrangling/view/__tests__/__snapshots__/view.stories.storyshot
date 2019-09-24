@@ -25,7 +25,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
-            id="projectsPageTitle"
+            id="headerTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -38,7 +38,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             Data Wrangling
           </h2>
           <h1
-            id="projectsPageSubtitle"
+            id="headerSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -120,7 +120,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
-            id="projectsPageTitle"
+            id="headerTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -133,7 +133,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             Data Wrangling
           </h2>
           <h1
-            id="projectsPageSubtitle"
+            id="headerSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
