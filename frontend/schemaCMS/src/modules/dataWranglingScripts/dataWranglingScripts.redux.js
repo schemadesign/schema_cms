@@ -13,12 +13,12 @@ export const DataWranglingScriptsRoutines = {
 };
 
 export const INITIAL_STATE = new Immutable({
-  dataWranglingScript: {},
-  dataWranglingScripts: [],
+  script: {},
+  scripts: [],
 });
 
-const updateDataWranglingScript = (state = INITIAL_STATE, { payload }) => state.set('dataWranglingScript', payload);
-const updateDataWranglingScripts = (state = INITIAL_STATE, { payload }) => state.set('dataWranglingScripts', payload);
+const updateDataWranglingScript = (state = INITIAL_STATE, { payload }) => state.set('script', payload);
+const updateDataWranglingScripts = (state = INITIAL_STATE, { payload }) => state.set('scripts', payload);
 const unmountDataWranglingScript = (state = INITIAL_STATE) =>
   state.set('dataWranglingScript', INITIAL_STATE.dataWranglingScript);
 

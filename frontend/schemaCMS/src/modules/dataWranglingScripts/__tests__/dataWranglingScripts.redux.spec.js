@@ -5,8 +5,8 @@ import { DataWranglingScriptsRoutines, reducer as dataWranglingReducer } from '.
 
 describe('DataWranglingScripts: redux', () => {
   const defaultState = Immutable({
-    dataWranglingScript: {},
-    dataWranglingScripts: [],
+    script: {},
+    scripts: [],
   });
 
   describe('reducer', () => {
@@ -30,7 +30,7 @@ describe('DataWranglingScripts: redux', () => {
         DataWranglingScriptsRoutines.fetchOne.success(dataWranglingScript)
       );
 
-      expect(resultState.dataWranglingScript).to.deep.equal(dataWranglingScript);
+      expect(resultState.script).to.deep.equal(dataWranglingScript);
     });
   });
 
@@ -38,7 +38,7 @@ describe('DataWranglingScripts: redux', () => {
     it('should unmount dataWrangling ', () => {
       const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.unmountOne.success());
 
-      expect(resultState.dataWranglingScript).to.deep.equal({});
+      expect(resultState.script).to.deep.equal({});
     });
   });
 
@@ -50,7 +50,7 @@ describe('DataWranglingScripts: redux', () => {
         DataWranglingScriptsRoutines.fetchList.success(dataWranglingScripts)
       );
 
-      expect(resultState.dataWranglingScripts).to.deep.equal(dataWranglingScripts);
+      expect(resultState.scripts).to.deep.equal(dataWranglingScripts);
     });
   });
 });

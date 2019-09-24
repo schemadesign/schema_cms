@@ -5,10 +5,10 @@ export const selectDataWranglingScriptsDomain = prop('dataWranglingScripts');
 
 export const selectDataWranglingScript = createSelector(
   selectDataWranglingScriptsDomain,
-  prop('dataWranglingScript')
+  prop('script')
 );
 
 export const selectDataWranglingScripts = createSelector(
   selectDataWranglingScriptsDomain,
-  prop('dataWranglingScripts')
+  prop('scripts')
 );

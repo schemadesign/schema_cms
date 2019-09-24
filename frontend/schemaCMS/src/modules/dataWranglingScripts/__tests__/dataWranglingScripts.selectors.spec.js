@@ -10,8 +10,8 @@ import {
 describe('DataWranglingScripts: selectors', () => {
   const state = Immutable({
     dataWranglingScripts: {
-      dataWranglingScripts: [],
-      dataWranglingScript: {},
+      scripts: [],
+      script: {},
     },
   });
 
@@ -21,11 +21,11 @@ describe('DataWranglingScripts: selectors', () => {
     });
 
     it('should select a data wrangling scripts list', () => {
-      expect(selectDataWranglingScripts(state)).to.equal(state.dataWranglingScripts.dataWranglingScripts);
+      expect(selectDataWranglingScripts(state)).to.equal(state.dataWranglingScripts.scripts);
     });
 
     it('should select a one data wranglings script', () => {
-      expect(selectDataWranglingScript(state)).to.equal(state.dataWranglingScripts.dataWranglingScript);
+      expect(selectDataWranglingScript(state)).to.equal(state.dataWranglingScripts.script);
     });
   });
 });
