@@ -5,7 +5,6 @@ exports[`TopHeader: Component should render correctly 1`] = `
   <Component
     buttonProps={
       Object {
-        "id": "topHeaderOpenMenuBtn",
         "onClick": [Function],
       }
     }
