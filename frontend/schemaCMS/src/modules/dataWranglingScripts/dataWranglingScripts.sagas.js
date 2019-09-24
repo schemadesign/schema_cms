@@ -1,12 +1,12 @@
 import { all, put, takeLatest, select } from 'redux-saga/effects';
 
-import { DataWranglingRoutines } from './dataWrangling.redux';
+import { DataWranglingRoutines } from './dataWranglingScripts.redux';
 import api from '../../shared/services/api';
 import { DATA_SOURCE_PATH, DATA_WRANGLING_JOB_PATH, DATA_WRANGLING_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 
 import mockScriptsData from './scripts.mock';
-import { selectDataWranglings } from './dataWrangling.selectors';
+import { selectDataWranglings } from './dataWranglingScripts.selectors';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -74,7 +74,7 @@ function* fetchOne({ payload }) {
   }
 }
 
-export function* watchDataWrangling() {
+export function* watchDataWranglingScripts() {
   yield all([
     takeLatest(DataWranglingRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(DataWranglingRoutines.sendList.TRIGGER, sendList),

@@ -3,7 +3,7 @@ import { reducer as userAuthReducer } from './userAuth/userAuth.redux';
 import { reducer as userProfileReducer } from './userProfile/userProfile.redux';
 import { reducer as projectReducer } from './project/project.redux';
 import { reducer as dataSourceReducer } from './dataSource/dataSource.redux';
-import { reducer as dataWranglingReducer } from './dataWrangling/dataWrangling.redux';
+import { reducer as dataWranglingScriptsReducer } from './dataWranglingScripts/dataWranglingScripts.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -13,7 +13,7 @@ export default function createReducer() {
     userProfile: userProfileReducer,
     project: projectReducer,
     dataSource: dataSourceReducer,
-    dataWrangling: dataWranglingReducer,
+    dataWrangling: dataWranglingScriptsReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }

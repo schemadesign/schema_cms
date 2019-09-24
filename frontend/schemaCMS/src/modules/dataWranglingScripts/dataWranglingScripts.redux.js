@@ -2,7 +2,7 @@ import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
 
-const prefix = 'DATA_WRANGLING/';
+const prefix = 'DATA_WRANGLING_SCRIPTS/';
 
 export const DataWranglingRoutines = {
   fetchOne: createRoutine(`${prefix}FETCH_ONE`),
