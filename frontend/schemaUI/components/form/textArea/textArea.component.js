@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { getStyles } from './textArea.styles';
 import { withStyles } from '../../styles/withStyles';
 
-class TextAreaComponent extends PureComponent {
+export class TextAreaComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };

@@ -1,25 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EditIcon: Component should render correctly 1`] = `
-<edit.svg
-  style={
-    Object {
-      "fill": "#1d1d20",
-      "height": "30px",
-      "width": "30px",
-    }
-  }
-/>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
 exports[`EditIcon: Component should render with custom styles 1`] = `
-<edit.svg
-  style={
-    Object {
-      "fill": "blue",
-      "height": "30px",
-      "width": "30px",
-    }
-  }
-/>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

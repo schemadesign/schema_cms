@@ -1,119 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioButton: Component should render checked 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "borderBottom": "1px solid #F0EFEF",
-      "display": "flex",
-      "flexDirection": "row",
-      "height": 48,
-      "justifyContent": "space-between",
-    }
-  }
+<CheckboxComponent
+  id="id"
+  isEdit={true}
+  value="value"
 >
-  <input
-    aria-hidden={true}
-    checked={true}
-    id="id"
-    name="name"
-    onChange={[Function]}
-    style={
-      Object {
-        "height": 0,
-        "left": 0,
-        "overflow": "hidden",
-        "position": "absolute",
-        "top": 0,
-        "visibility": "hidden",
-      }
-    }
-    type="checkbox"
-    value="value"
-  />
-  <span>
-    radio
-  </span>
-  <div
-    style={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "row",
-      }
-    }
-  >
-    <EditIcon />
-    <label
-      htmlFor="id"
-      style={
-        Object {
-          "cursor": "pointer",
-        }
-      }
-    >
-      <CheckboxOnIcon />
-    </label>
-  </div>
-</div>
+  radio
+</CheckboxComponent>
 `;
 
 exports[`RadioButton: Component should render correctly 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "borderBottom": "1px solid #F0EFEF",
-      "display": "flex",
-      "flexDirection": "row",
-      "height": 48,
-      "justifyContent": "space-between",
-    }
-  }
+<CheckboxComponent
+  id="id"
+  isEdit={true}
+  value="value 2"
 >
-  <input
-    aria-hidden={true}
-    checked={false}
-    id="id"
-    name="name"
-    onChange={[Function]}
-    style={
-      Object {
-        "height": 0,
-        "left": 0,
-        "overflow": "hidden",
-        "position": "absolute",
-        "top": 0,
-        "visibility": "hidden",
-      }
-    }
-    type="checkbox"
-    value="value 2"
-  />
-  <span>
-    radio
-  </span>
-  <div
-    style={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "row",
-      }
-    }
-  >
-    <EditIcon />
-    <label
-      htmlFor="id"
-      style={
-        Object {
-          "cursor": "pointer",
-        }
-      }
-    >
-      <CheckboxOffIcon />
-    </label>
-  </div>
-</div>
+  radio
+</CheckboxComponent>
 `;

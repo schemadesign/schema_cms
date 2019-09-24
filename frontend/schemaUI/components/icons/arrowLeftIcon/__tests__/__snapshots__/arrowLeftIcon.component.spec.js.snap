@@ -1,25 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ArrowLeftIcon: Component should render correctly 1`] = `
-<arrow-left.svg
-  style={
-    Object {
-      "fill": "#1d1d20",
-      "height": "60px",
-      "width": "60px",
-    }
-  }
-/>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
 exports[`ArrowLeftIcon: Component should render with custom styles 1`] = `
-<arrow-left.svg
-  style={
-    Object {
-      "fill": "blue",
-      "height": "60px",
-      "width": "60px",
-    }
-  }
-/>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

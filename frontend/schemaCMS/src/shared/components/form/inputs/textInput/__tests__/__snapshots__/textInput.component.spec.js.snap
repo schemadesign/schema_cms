@@ -2,14 +2,9 @@
 
 exports[`TextInput: Component should render correctly 1`] = `
 <styled.div>
-  <TextField
-    customInputStyles={Object {}}
-    customLabelStyles={Object {}}
-    error={false}
-    fullWidth={false}
+  <Component
     name="A_FIELD_NAME"
     onChange={[Function]}
-    type="text"
     value=""
   />
 </styled.div>
@@ -17,14 +12,10 @@ exports[`TextInput: Component should render correctly 1`] = `
 
 exports[`TextInput: Component should render error 1`] = `
 <styled.div>
-  <TextField
-    customInputStyles={Object {}}
-    customLabelStyles={Object {}}
+  <Component
     error={true}
-    fullWidth={false}
     name="A_FIELD_NAME"
     onChange={[Function]}
-    type="text"
     value=""
   />
   <styled.div>

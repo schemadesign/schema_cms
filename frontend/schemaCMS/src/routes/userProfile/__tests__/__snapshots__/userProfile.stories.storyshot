@@ -11,7 +11,7 @@ exports[`Storyshots UserProfile Default 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -95,8 +95,8 @@ exports[`Storyshots UserProfile Default 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#FFF",
+          "color": "#000",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -221,7 +221,7 @@ exports[`Storyshots UserProfile Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #F0EFEF",
+              "borderTop": "1px solid #1d1d20",
               "color": "#a6a7aa",
               "display": "block",
               "fontSize": "14px",
@@ -241,7 +241,7 @@ exports[`Storyshots UserProfile Default 1`] = `
             Object {
               "backgroundColor": "transparent",
               "border": "none",
-              "color": "#1d1d20",
+              "color": "#000",
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
@@ -280,7 +280,7 @@ exports[`Storyshots UserProfile Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #F0EFEF",
+              "borderTop": "1px solid #1d1d20",
               "color": "#a6a7aa",
               "display": "block",
               "fontSize": "14px",
@@ -300,7 +300,7 @@ exports[`Storyshots UserProfile Default 1`] = `
             Object {
               "backgroundColor": "transparent",
               "border": "none",
-              "color": "#1d1d20",
+              "color": "#000",
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
@@ -339,7 +339,7 @@ exports[`Storyshots UserProfile Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #F0EFEF",
+              "borderTop": "1px solid #1d1d20",
               "color": "#a6a7aa",
               "display": "block",
               "fontSize": "14px",
@@ -360,7 +360,7 @@ exports[`Storyshots UserProfile Default 1`] = `
             Object {
               "backgroundColor": "transparent",
               "border": "none",
-              "color": "#1d1d20",
+              "color": "#000",
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",

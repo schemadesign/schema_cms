@@ -67,7 +67,10 @@ exports[`List: Component should render correctly 1`] = `
         <Span
           customStyles={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "display": "block",
               "fontSize": "12px",
               "overflow": "hidden",
@@ -129,7 +132,10 @@ exports[`List: Component should render correctly 1`] = `
         <Span
           customStyles={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "display": "block",
               "fontSize": "12px",
               "overflow": "hidden",
@@ -148,7 +154,10 @@ exports[`List: Component should render correctly 1`] = `
   <Component
     customStyles={
       Object {
-        "backgroundColor": "#a6a7aa",
+        "backgroundColor": Object {
+          "border": "#1d1d20",
+          "text": "#a6a7aa",
+        },
         "bottom": "10px",
         "height": "60px",
         "position": "fixed",
@@ -158,7 +167,7 @@ exports[`List: Component should render correctly 1`] = `
     id="addProjectBtn"
     onClick={[Function]}
   >
-    <PlusIcon />
+    <Component />
   </Component>
 </styled.div>
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Stepper } from '../stepper.component';
+import { StepperComponent } from '../stepper.component';
 
 describe('Stepper: Component', () => {
   const defaultProps = {
@@ -10,7 +10,7 @@ describe('Stepper: Component', () => {
     onStepChange: () => {},
   };
 
-  const component = props => <Stepper {...defaultProps} {...props} />;
+  const component = props => <StepperComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

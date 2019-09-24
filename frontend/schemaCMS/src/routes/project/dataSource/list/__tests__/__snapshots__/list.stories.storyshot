@@ -11,7 +11,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -95,8 +95,8 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#FFF",
+          "color": "#000",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -302,7 +302,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX YSFHw"
             >
               Source
             </span>
@@ -330,7 +330,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX YSFHw"
             >
               Items
             </span>
@@ -344,7 +344,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX YSFHw"
             >
               Fields
             </span>
@@ -358,7 +358,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX YSFHw"
             >
               Filters
             </span>
@@ -372,7 +372,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX YSFHw"
             >
               Views
             </span>
@@ -445,7 +445,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
       <svg
         style={
           Object {
-            "fill": "#FFF",
+            "fill": "#1d1d20",
             "height": "60px",
             "width": "60px",
           }

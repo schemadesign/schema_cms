@@ -11,7 +11,7 @@ exports[`Storyshots Project/View default 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -95,8 +95,8 @@ exports[`Storyshots Project/View default 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#FFF",
+          "color": "#000",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -333,7 +333,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA cICDoQ"
           >
             Last Update
           </span>
@@ -370,7 +370,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA cICDoQ"
           >
             Status
           </span>
@@ -407,7 +407,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA cICDoQ"
           >
             Owner
           </span>
@@ -444,7 +444,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA cICDoQ"
           >
             Title
           </span>
@@ -481,7 +481,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA cICDoQ"
           >
             Description
           </span>
@@ -518,7 +518,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA cICDoQ"
           >
             API
           </span>
@@ -598,7 +598,7 @@ exports[`Storyshots Project/View empty 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -680,8 +680,8 @@ exports[`Storyshots Project/View empty 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#FFF",
+          "color": "#000",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",

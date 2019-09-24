@@ -11,7 +11,7 @@ exports[`Storyshots Project/List empty 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -95,8 +95,8 @@ exports[`Storyshots Project/List empty 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#FFF",
+          "color": "#000",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -233,7 +233,10 @@ exports[`Storyshots Project/List empty 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#a6a7aa",
+        "backgroundColor": Object {
+          "border": "#1d1d20",
+          "text": "#a6a7aa",
+        },
         "border": "none",
         "borderRadius": "48px",
         "bottom": "10px",
@@ -254,7 +257,7 @@ exports[`Storyshots Project/List empty 1`] = `
     <svg
       style={
         Object {
-          "fill": "#FFF",
+          "fill": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -281,7 +284,7 @@ exports[`Storyshots Project/List list 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -365,8 +368,8 @@ exports[`Storyshots Project/List list 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#FFF",
+          "color": "#000",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -571,7 +574,10 @@ exports[`Storyshots Project/List list 1`] = `
           id="apiPath-0"
           style={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "display": "block",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "12px",
@@ -674,7 +680,10 @@ exports[`Storyshots Project/List list 1`] = `
           id="apiPath-1"
           style={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "display": "block",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "12px",
@@ -695,7 +704,10 @@ exports[`Storyshots Project/List list 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#a6a7aa",
+        "backgroundColor": Object {
+          "border": "#1d1d20",
+          "text": "#a6a7aa",
+        },
         "border": "none",
         "borderRadius": "48px",
         "bottom": "10px",
@@ -716,7 +728,7 @@ exports[`Storyshots Project/List list 1`] = `
     <svg
       style={
         Object {
-          "fill": "#FFF",
+          "fill": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }

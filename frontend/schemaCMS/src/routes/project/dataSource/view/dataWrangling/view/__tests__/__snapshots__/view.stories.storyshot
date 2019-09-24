@@ -11,7 +11,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -95,8 +95,8 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#FFF",
+          "color": "#000",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -159,7 +159,6 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         />
       </div>
       <button
-        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {
@@ -221,7 +220,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #F0EFEF",
+              "borderTop": "1px solid #1d1d20",
               "color": "#a6a7aa",
               "display": "block",
               "fontSize": "14px",
@@ -243,14 +242,14 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             Object {
               "backgroundColor": "transparent",
               "border": "none",
-              "color": "#1d1d20",
+              "color": "#000",
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
             }
           }
           type="text"
-          value="local:blank_cells.py"
+          value="Change to lowercase"
         />
         <div
           style={
@@ -263,519 +262,96 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         />
       </div>
     </div>
-    <pre
-      style={
-        Object {
-          "backgroundColor": "#fff",
-        }
-      }
+    <div
+      className="sc-gqjmRU hnZXkc"
     >
-      <code>
-        
-      
-        <span
-          className="hljs-keyword"
-          style={Object {}}
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="code"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "1px solid #1d1d20",
+              "color": "#a6a7aa",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
         >
-          import
-        </span>
-         pandas 
-        <span
-          className="hljs-keyword"
-          style={Object {}}
-        >
-          as
-        </span>
-         pd
-      
-        <span
-          className="hljs-keyword"
-          style={Object {}}
-        >
-          import
-        </span>
-         numpy 
-        <span
-          className="hljs-keyword"
-          style={Object {}}
-        >
-          as
-        </span>
-         np
-      
-      
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          """
-      Here are some ways to handle blank cells
-          1. Fill Blank cells with any value you want
-          2. Forward or backward fill the values
-          3. Remove rows with Blank cells
-      """
-        </span>
-        
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Sample dataset
-        </span>
-        
-      df = pd.DataFrame(
-          [[np.nan, 
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          2
-        </span>
-        , np.nan, 
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          0
-        </span>
-        ], [
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          3
-        </span>
-        , 
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          4
-        </span>
-        , np.nan, 
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          1
-        </span>
-        ], [np.nan, np.nan, np.nan, 
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          5
-        </span>
-        ], [np.nan, 
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          3
-        </span>
-        , np.nan, 
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          4
-        </span>
-        ]],
-          columns=list(
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'ABCD'
-        </span>
-        ),
-      )
-      
-      
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          """
-      1. Fill
-      """
-        </span>
-        
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Simple fill for entire dataset
-        </span>
-        
-      fill_value = 
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          10
-        </span>
-        
-      df = df.fillna(fill_value)
-      
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Simple fill for specific field
-        </span>
-        
-      column_fill_value = 
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          5
-        </span>
-        
-      df = df[
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          "A"
-        </span>
-        ].fillna(fill_value, inplace=
-        <span
-          className="hljs-keyword"
-          style={Object {}}
-        >
-          True
-        </span>
-        )
-      
-      
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          """
-      2. Forward and Backward fill
-      """
-        </span>
-        
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # forward fill for entire dataset (Fills with previous non-empty value)
-        </span>
-        
-      df = df.fillna(method=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          "ffill"
-        </span>
-        )
-      
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # forward fill column specific
-        </span>
-        
-      df = df[
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          "A"
-        </span>
-        ].fillna(method=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'ffill'
-        </span>
-        , inplace=
-        <span
-          className="hljs-keyword"
-          style={Object {}}
-        >
-          True
-        </span>
-        )
-      
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # backward fill (Fills with next non-empty value)
-        </span>
-        
-      df = df.fillna(method=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          "bfill"
-        </span>
-        )
-      
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # backward fill column specific
-        </span>
-        
-      df = df[
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          "A"
-        </span>
-        ].fillna(method=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'bfill'
-        </span>
-        , inplace=
-        <span
-          className="hljs-keyword"
-          style={Object {}}
-        >
-          True
-        </span>
-        )
-      
-      
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          """
-      3. Drop rows
-      It is not possible to just drop one blank cell. we would need to drop the whole row or column to
-      clean our dataset so there can be two cases of blank cells in rows and columns.
-      1. All cells are blank (empty row or column)
-      2. One or more cells are blank (partially empty row or column)
-      """
-        </span>
-        
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Empty Rows
-        </span>
-        
-      df = df.dropna(how=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'all'
-        </span>
-        , axis=
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          0
-        </span>
-        )
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Empty Columns
-        </span>
-        
-      df = df.dropna(how=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'all'
-        </span>
-        , axis=
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          1
-        </span>
-        )
-      
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Empty Rows (specific column)
-        </span>
-        
-      df = df[
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'A'
-        </span>
-        ].dropna(how=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'all'
-        </span>
-        , axis=
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          0
-        </span>
-        )
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Empty Columns (specific column)
-        </span>
-        
-      df = df[
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'A'
-        </span>
-        ].dropna(how=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'all'
-        </span>
-        , axis=
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          1
-        </span>
-        )
-      
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Partially empty Rows
-        </span>
-        
-      df = df.dropna(how=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'any'
-        </span>
-        , axis=
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          0
-        </span>
-        )
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Partially empty Columns
-        </span>
-        
-      df = df.dropna(how=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'any'
-        </span>
-        , axis=
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          1
-        </span>
-        )
-      
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Partially empty Rows (specific column)
-        </span>
-        
-      df = df.dropna(how=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'any'
-        </span>
-        , axis=
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          0
-        </span>
-        )
-      
-        <span
-          className="hljs-comment"
-          style={Object {}}
-        >
-          # Partially empty Columns (specific column)
-        </span>
-        
-      df = df.dropna(how=
-        <span
-          className="hljs-string"
-          style={Object {}}
-        >
-          'any'
-        </span>
-        , axis=
-        <span
-          className="hljs-number"
-          style={Object {}}
-        >
-          1
-        </span>
-        )
-    
-      </code>
-    </pre>
+          Python Code
+        </label>
+        <textarea
+          disabled={true}
+          id="code"
+          onChange={[Function]}
+          placeholder="Python Code"
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "border": "none",
+              "color": "#000",
+              "fontFamily": "Hack, monospace",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "marginTop": "10px",
+              "outline": "none",
+              "padding": "10px",
+              "resize": "none",
+            }
+          }
+          type="text"
+          value="df.columns = map(str.lower, df.columns)"
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "border": "none",
+              "color": "#000",
+              "fontFamily": "Hack, monospace",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "marginTop": "10px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "10px",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
   </form>
   <div
     className="sc-csuQGl dcDvzg"

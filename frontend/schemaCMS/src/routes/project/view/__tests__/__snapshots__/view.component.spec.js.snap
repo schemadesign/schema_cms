@@ -85,7 +85,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
       <styled.li
@@ -100,7 +100,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
       <styled.li
@@ -115,7 +115,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
       <styled.li
@@ -130,7 +130,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
       <styled.li
@@ -145,7 +145,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
       <styled.li
@@ -160,7 +160,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
     </styled.ul>
@@ -175,7 +175,7 @@ exports[`View: Component should render correctly 1`] = `
     }
     onClick={[Function]}
   >
-    <ArrowLeftIcon />
+    <Component />
   </Component>
 </Styled(styled.div)>
 `;

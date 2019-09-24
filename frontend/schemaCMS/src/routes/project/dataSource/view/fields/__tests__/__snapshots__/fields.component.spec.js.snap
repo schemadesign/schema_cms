@@ -20,7 +20,7 @@ exports[`Fields: Component should render correctly 1`] = `
           disabled={true}
           onClick={[Function]}
         >
-          <ArrowLeftIcon
+          <Component
             customStyles={
               Object {
                 "opacity": 0.3,
@@ -43,7 +43,7 @@ exports[`Fields: Component should render correctly 1`] = `
           disabled={false}
           onClick={[Function]}
         >
-          <ArrowRightIcon
+          <Component
             customStyles={Object {}}
           />
         </Component>

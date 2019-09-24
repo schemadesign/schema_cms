@@ -6,7 +6,7 @@ import { Button } from '../button';
 import { MenuIcon } from '../icons/menuIcon';
 import { withStyles } from '../styles/withStyles';
 
-class HeaderComponent extends PureComponent {
+export class HeaderComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     customButtonStyles: PropTypes.object,

@@ -20,7 +20,7 @@ exports[`Storyshots Shared Components/Form/TextInput Default 1`] = `
       style={
         Object {
           "border": "none",
-          "borderTop": "1px solid #F0EFEF",
+          "borderTop": "1px solid #1d1d20",
           "color": "#a6a7aa",
           "display": "block",
           "fontSize": "14px",
@@ -40,7 +40,7 @@ exports[`Storyshots Shared Components/Form/TextInput Default 1`] = `
         Object {
           "backgroundColor": "transparent",
           "border": "none",
-          "color": "#1d1d20",
+          "color": "#000",
           "fontSize": "18px",
           "lineHeight": "24px",
           "outline": "none",

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { getStyles } from './stepper.styles';
 import { withStyles } from '../styles/withStyles';
 
-class StepperComponent extends PureComponent {
+export class StepperComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     customActiveDotStyles: PropTypes.object,

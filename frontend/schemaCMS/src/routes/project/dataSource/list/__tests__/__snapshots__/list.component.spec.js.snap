@@ -35,7 +35,10 @@ exports[`List: Component should render card with draft state 1`] = `
         <H1
           customStyles={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -54,10 +57,13 @@ exports[`List: Component should render card with draft state 1`] = `
             <styled.span
               isLock={true}
             >
-              <CsvIcon
+              <Component
                 customStyles={
                   Object {
-                    "fill": "#a6a7aa",
+                    "fill": Object {
+                      "border": "#1d1d20",
+                      "text": "#a6a7aa",
+                    },
                     "height": 40,
                     "width": 40,
                   }
@@ -127,7 +133,7 @@ exports[`List: Component should render card with draft state 1`] = `
       }
       onClick={[Function]}
     >
-      <ArrowLeftIcon />
+      <Component />
     </Component>
     <Component
       customStyles={
@@ -138,7 +144,7 @@ exports[`List: Component should render card with draft state 1`] = `
       }
       onClick={[Function]}
     >
-      <PlusIcon />
+      <Component />
     </Component>
   </styled.div>
 </styled.div>
@@ -179,7 +185,10 @@ exports[`List: Component should render card with error state 1`] = `
         <H1
           customStyles={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -213,7 +222,7 @@ exports[`List: Component should render card with error state 1`] = `
       }
       onClick={[Function]}
     >
-      <ArrowLeftIcon />
+      <Component />
     </Component>
     <Component
       customStyles={
@@ -224,7 +233,7 @@ exports[`List: Component should render card with error state 1`] = `
       }
       onClick={[Function]}
     >
-      <PlusIcon />
+      <Component />
     </Component>
   </styled.div>
 </styled.div>
@@ -265,7 +274,10 @@ exports[`List: Component should render card with processing state 1`] = `
         <H1
           customStyles={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -284,10 +296,13 @@ exports[`List: Component should render card with processing state 1`] = `
             <styled.span
               isLock={true}
             >
-              <CsvIcon
+              <Component
                 customStyles={
                   Object {
-                    "fill": "#a6a7aa",
+                    "fill": Object {
+                      "border": "#1d1d20",
+                      "text": "#a6a7aa",
+                    },
                     "height": 40,
                     "width": 40,
                   }
@@ -357,7 +372,7 @@ exports[`List: Component should render card with processing state 1`] = `
       }
       onClick={[Function]}
     >
-      <ArrowLeftIcon />
+      <Component />
     </Component>
     <Component
       customStyles={
@@ -368,7 +383,7 @@ exports[`List: Component should render card with processing state 1`] = `
       }
       onClick={[Function]}
     >
-      <PlusIcon />
+      <Component />
     </Component>
   </styled.div>
 </styled.div>
@@ -409,7 +424,10 @@ exports[`List: Component should render card with ready for processing state 1`] 
         <H1
           customStyles={
             Object {
-              "color": "#a6a7aa",
+              "color": Object {
+                "border": "#1d1d20",
+                "text": "#a6a7aa",
+              },
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -428,10 +446,13 @@ exports[`List: Component should render card with ready for processing state 1`] 
             <styled.span
               isLock={true}
             >
-              <CsvIcon
+              <Component
                 customStyles={
                   Object {
-                    "fill": "#a6a7aa",
+                    "fill": Object {
+                      "border": "#1d1d20",
+                      "text": "#a6a7aa",
+                    },
                     "height": 40,
                     "width": 40,
                   }
@@ -501,7 +522,7 @@ exports[`List: Component should render card with ready for processing state 1`] 
       }
       onClick={[Function]}
     >
-      <ArrowLeftIcon />
+      <Component />
     </Component>
     <Component
       customStyles={
@@ -512,7 +533,7 @@ exports[`List: Component should render card with ready for processing state 1`] 
       }
       onClick={[Function]}
     >
-      <PlusIcon />
+      <Component />
     </Component>
   </styled.div>
 </styled.div>
@@ -553,7 +574,7 @@ exports[`List: Component should render correctly 1`] = `
               </ForwardRef(styled.li)>
             </ForwardRef(styled.ul)>
             <ForwardRef(styled.div)>
-              <IntersectIcon />
+              <Unknown />
             </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
         }
@@ -579,7 +600,7 @@ exports[`List: Component should render correctly 1`] = `
             <styled.span
               isLock={false}
             >
-              <CsvIcon
+              <Component
                 customStyles={
                   Object {
                     "fill": "#1d1d20",
@@ -652,7 +673,7 @@ exports[`List: Component should render correctly 1`] = `
       }
       onClick={[Function]}
     >
-      <ArrowLeftIcon />
+      <Component />
     </Component>
     <Component
       customStyles={
@@ -663,7 +684,7 @@ exports[`List: Component should render correctly 1`] = `
       }
       onClick={[Function]}
     >
-      <PlusIcon />
+      <Component />
     </Component>
   </styled.div>
 </styled.div>
@@ -699,7 +720,7 @@ exports[`List: Component should render empty 1`] = `
       }
       onClick={[Function]}
     >
-      <ArrowLeftIcon />
+      <Component />
     </Component>
     <Component
       customStyles={
@@ -710,7 +731,7 @@ exports[`List: Component should render empty 1`] = `
       }
       onClick={[Function]}
     >
-      <PlusIcon />
+      <Component />
     </Component>
   </styled.div>
 </styled.div>
