@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { buttonStyles, containerStyles } from './header.styles';
+import { getStyles } from './header.styles';
 import { Button } from '../button';
 import { MenuIcon } from '../icons/menuIcon';
+import { withStyles } from '../styles/withStyles';
 
-export class Header extends PureComponent {
+export class HeaderComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     customButtonStyles: PropTypes.object,
@@ -23,7 +24,7 @@ export class Header extends PureComponent {
     buttonProps: {},
   };
 
-  renderIcon = () => {
+  renderIcon = buttonStyles => {
     const { iconComponent, customButtonStyles, buttonProps } = this.props;
     const styles = { ...buttonStyles, ...customButtonStyles };
 
@@ -35,13 +36,17 @@ export class Header extends PureComponent {
   };
 
   render() {
-    const style = { ...containerStyles, ...this.props.customStyles };
+    const { theme, customStyles } = this.props;
+    const { buttonStyles, containerStyles } = getStyles(theme);
+    const style = { ...containerStyles, ...customStyles };
 
     return (
       <div style={style}>
         <div>{this.props.children}</div>
-        {this.renderIcon()}
+        {this.renderIcon(buttonStyles)}
       </div>
     );
   }
 }
+
+export const Header = withStyles(HeaderComponent);

@@ -4,7 +4,6 @@ import os
 from distutils.util import strtobool
 from os.path import join
 
-import boto3
 import sentry_sdk
 from configurations import Configuration
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -13,15 +12,9 @@ from schemacms.utils import json as json_
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-secrets_manager = boto3.client(
-    "secretsmanager", endpoint_url=os.environ.get("SECRET_MANAGER_ENDPOINT_URL", None)
-)
-
-db_secret_arn = os.environ["DB_SECRET_ARN"]
-
-db_secret_value = secrets_manager.get_secret_value(SecretId=db_secret_arn)
+db_connection = os.environ.get('DB_CONNECTION', '{}')
 # contains host, username, password and port
-db_connection_config = json.loads(db_secret_value.get("SecretString"))
+db_connection_config = json.loads(db_connection)
 
 
 json.JSONEncoder.default = json_.CustomJSONEncoder.default
@@ -219,6 +212,7 @@ class Common(Configuration):
     JWT_AUTH = {"JWT_AUTH_HEADER_PREFIX": "JWT", "JWT_EXPIRATION_DELTA": datetime.timedelta(days=30)}
 
     # social-django
+
     SOCIAL_AUTH_PIPELINE = (
         # Get the information we can about the user and return it in a simple
         # format to create the user instance later. On some cases the details are
@@ -228,6 +222,7 @@ class Common(Configuration):
         # Get the social uid from whichever service we're authing thru. The uid is
         # the unique identifier of the given user in the provider.
         "social_core.pipeline.social_auth.social_uid",
+        "schemacms.authorization.pipeline.user_exist_in_db",
         # Verifies that the current auth process is valid within the current
         # project, this is where emails and domains whitelists are applied (if
         # defined).
@@ -261,7 +256,6 @@ class Common(Configuration):
         # Redirect user and add exchange token to query string
         "schemacms.authorization.pipeline.redirect_with_token",
     )
-
     # social-django
     SOCIAL_AUTH_SANITIZE_REDIRECTS = False
     SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
@@ -282,6 +276,7 @@ class Common(Configuration):
     AWS_S3_ENDPOINT_URL = os.getenv("AWS_S3_ENDPOINT_URL")
     AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
 
     DATASOURCE_S3_BUCKET = 'datasources'
     DS_SCRIPTS_UPLOAD_PATH = '/datasource/{}/scripts/'

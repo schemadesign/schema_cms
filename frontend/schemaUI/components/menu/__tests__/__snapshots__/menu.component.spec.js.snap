@@ -4,8 +4,8 @@ exports[`Menu: Component should render correctly 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#f0efef",
-      "color": "#1d1d20",
+      "backgroundColor": "#000",
+      "color": "#FFF",
       "maxWidth": "360px",
       "minHeight": "100vh",
       "padding": "18px 20px 27px",
@@ -21,7 +21,7 @@ exports[`Menu: Component should render correctly 1`] = `
   }
 >
   items
-  <Button
+  <Component
     customStyles={
       Object {
         "position": "absolute",
@@ -31,8 +31,10 @@ exports[`Menu: Component should render correctly 1`] = `
     }
     onClick={[Function]}
   >
-    <CloseIcon />
-  </Button>
+    <Component
+      customStyles={Object {}}
+    />
+  </Component>
 </div>
 `;
 
@@ -40,8 +42,8 @@ exports[`Menu: Component should render opened 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#f0efef",
-      "color": "#1d1d20",
+      "backgroundColor": "#000",
+      "color": "#FFF",
       "maxWidth": "360px",
       "minHeight": "100vh",
       "padding": "18px 20px 27px",
@@ -56,7 +58,7 @@ exports[`Menu: Component should render opened 1`] = `
   }
 >
   items
-  <Button
+  <Component
     customStyles={
       Object {
         "position": "absolute",
@@ -66,8 +68,10 @@ exports[`Menu: Component should render opened 1`] = `
     }
     onClick={[Function]}
   >
-    <CloseIcon />
-  </Button>
+    <Component
+      customStyles={Object {}}
+    />
+  </Component>
 </div>
 `;
 
@@ -76,7 +80,7 @@ exports[`Menu: Component should with custom styles 1`] = `
   style={
     Object {
       "backgroundColor": "black",
-      "color": "#1d1d20",
+      "color": "#FFF",
       "maxWidth": "360px",
       "minHeight": "100vh",
       "padding": "18px 20px 27px",
@@ -92,7 +96,7 @@ exports[`Menu: Component should with custom styles 1`] = `
   }
 >
   items
-  <Button
+  <Component
     customStyles={
       Object {
         "backgroundColor": "black",
@@ -101,9 +105,10 @@ exports[`Menu: Component should with custom styles 1`] = `
         "top": "6px",
       }
     }
+    id="close-button"
     onClick={[Function]}
   >
-    <CloseIcon />
-  </Button>
+    <Component />
+  </Component>
 </div>
 `;

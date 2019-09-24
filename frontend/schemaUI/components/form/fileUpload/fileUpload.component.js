@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { equals, ifElse } from 'ramda';
 
 import { buttonStyles, containerStyles, getLabelStyles, inputStyles } from './fileUpload.styles';
-import { containerStyles as defaultButtonStyles } from '../../button/button.styles';
+import { getStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
 import { TextField } from '../textField';
+import { dark } from '../../../utils/theme';
 
 const DEFAULT_TEXT_VALUE = 'Select a file';
 
@@ -28,7 +29,7 @@ export class FileUpload extends PureComponent {
     customInputStyles: {},
     customLabelStyles: {},
     iconComponent: (
-      <div style={{ ...defaultButtonStyles, ...buttonStyles }}>
+      <div style={{ ...getStyles(dark).containerStyles, ...buttonStyles }}>
         <UploadIcon />
       </div>
     ),

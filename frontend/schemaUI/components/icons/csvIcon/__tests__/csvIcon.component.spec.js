@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { CsvIcon } from '../csvIcon.component';
+import { CsvIconComponent } from '../csvIcon.component';
 
 describe('CsvIcon: Component', () => {
   const defaultProps = {};
 
-  const component = props => <CsvIcon {...defaultProps} {...props} />;
+  const component = props => <CsvIconComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

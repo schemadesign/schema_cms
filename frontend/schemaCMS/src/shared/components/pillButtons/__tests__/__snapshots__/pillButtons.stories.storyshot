@@ -2,17 +2,18 @@
 
 exports[`Storyshots Shared Components/PillButtons Default 1`] = `
 <div
-  className="sc-gipzik jxLnkh"
+  className="sc-csuQGl dcDvzg"
 >
   <button
     style={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#1d1d20",
         "border": "none",
         "borderRadius": "48px",
-        "color": "#1d1d20",
+        "color": "#FFF",
         "cursor": "pointer",
         "display": "inline-block",
+        "fill": "#FFF",
         "fontSize": "18px",
         "margin": "0",
         "marginRight": 10,
@@ -28,12 +29,13 @@ exports[`Storyshots Shared Components/PillButtons Default 1`] = `
   <button
     style={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#1d1d20",
         "border": "none",
         "borderRadius": "48px",
-        "color": "#1d1d20",
+        "color": "#FFF",
         "cursor": "pointer",
         "display": "inline-block",
+        "fill": "#FFF",
         "fontSize": "18px",
         "margin": "0",
         "minHeight": "48px",

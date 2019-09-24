@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/DataSource/List Default 1`] = `
 <div
-  className="sc-jzJRlG dtMOSV"
+  className="sc-jzJRlG djaKlO"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -11,7 +11,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -62,9 +62,10 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -79,7 +80,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -96,8 +97,8 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#000",
+          "color": "#FFF",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -159,7 +160,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           className="sc-bZQynM sc-htoDjs LPVfx"
         >
           <li
-            className="sc-dnqmqq sc-gZMcBi bYVXEs"
+            className="sc-dnqmqq sc-gZMcBi dhrkCt"
           >
             <a
               href="/project/view/1"
@@ -172,15 +173,17 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         </ul>
       </div>
       <button
+        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -195,7 +198,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -219,9 +222,9 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
       <div
         style={
           Object {
-            "backgroundColor": "#f0efef",
+            "backgroundColor": "#1d1d20",
             "borderTop": "2px solid #1d1d20",
-            "color": "#1d1d20",
+            "color": "#fff",
             "display": "flex",
             "flexDirection": "column",
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -242,15 +245,15 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-ckVGcZ dOnArN"
           >
             <ul
-              className="sc-hSdWYo bpYBGU"
+              className="sc-eHgmQL gyoCRu"
             >
               <li
-                className="sc-eHgmQL inOUwl"
+                className="sc-cvbbAY cdVCef"
               >
                 3 months ago
               </li>
               <li
-                className="sc-eHgmQL inOUwl"
+                className="sc-cvbbAY cdVCef"
               >
                 firstName lastName
               </li>
@@ -261,7 +264,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
               <svg
                 style={
                   Object {
-                    "fill": "#1d1d20",
+                    "fill": "#FFF",
                     "height": "30px",
                     "width": "30px",
                   }
@@ -302,7 +305,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX YSFHw"
             >
               Source
             </span>
@@ -312,7 +315,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
               <svg
                 style={
                   Object {
-                    "fill": "#1d1d20",
+                    "fill": "#FFF",
                     "height": 40,
                     "width": 40,
                   }
@@ -330,7 +333,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX YSFHw"
             >
               Items
             </span>
@@ -344,7 +347,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX YSFHw"
             >
               Fields
             </span>
@@ -358,7 +361,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX YSFHw"
             >
               Filters
             </span>
@@ -372,7 +375,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX YSFHw"
             >
               Views
             </span>
@@ -386,43 +389,80 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
       </div>
     </li>
   </div>
-  <button
-    onClick={[Function]}
-    style={
-      Object {
-        "backgroundColor": "#a6a7aa",
-        "border": "none",
-        "borderRadius": "48px",
-        "bottom": "10px",
-        "color": "#1d1d20",
-        "cursor": "pointer",
-        "display": "inline-block",
-        "fontSize": "18px",
-        "height": "60px",
-        "margin": "0",
-        "minHeight": "48px",
-        "outline": "none",
-        "padding": "0",
-        "position": "fixed",
-        "right": "10px",
-      }
-    }
+  <div
+    className="sc-kEYyzF hXwpMO"
   >
-    <svg
+    <button
+      onClick={[Function]}
       style={
         Object {
+          "backgroundColor": "#1d1d20",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#FFF",
+          "cursor": "pointer",
+          "display": "inline-block",
           "fill": "#FFF",
+          "fontSize": "18px",
           "height": "60px",
-          "width": "60px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
         }
       }
-      viewBox="0 0 60 60"
     >
-      <path
-        d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-        fillRule="evenodd"
-      />
-    </svg>
-  </button>
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+        />
+      </svg>
+    </button>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#FFF",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fill": "#FFF",
+          "fontSize": "18px",
+          "height": "60px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
 </div>
 `;

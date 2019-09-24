@@ -20,7 +20,7 @@ export class DataSource extends PureComponent {
     const listPath = `${match.path}/list`;
     const viewPath = `${match.path}/view/:dataSourceId`;
     const viewPathWithStep = `${viewPath}/:step`;
-    const scriptPath = `${viewPath}/script/view/:id`;
+    const scriptPath = `${viewPath}/script/view/:scriptId`;
 
     return (
       <Switch>

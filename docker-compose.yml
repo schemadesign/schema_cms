@@ -1,15 +1,6 @@
 version: '3'
 
 services:
-  nginx:
-    image: schema_cms_nginx
-    build: ./nginx
-    depends_on:
-      - backend
-    ports:
-      - "9000:80"
-    restart: on-failure
-
   db:
     image: postgres:9.6.8
     ports:
@@ -36,6 +27,7 @@ services:
       - AWS_DEFAULT_REGION=us-east-1
       - AWS_ACCESS_KEY_ID=foo
       - AWS_SECRET_ACCESS_KEY=bar
+      - AWS_STORAGE_BUCKET_NAME=localbucket
     volumes:
       - "/tmp/localstack:/tmp"
       - "/var/run/docker.sock:/var/run/docker.sock"

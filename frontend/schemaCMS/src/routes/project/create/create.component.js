@@ -12,7 +12,6 @@ import {
   PROJECT_TITLE,
   PROJECT_OWNER,
   PROJECT_STATUS,
-  PROJECT_STATUSES,
   PROJECT_STATUSES_LIST,
 } from '../../../modules/project/project.constants';
 
@@ -23,30 +22,30 @@ export class Create extends PureComponent {
     values: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
+    setFieldValue: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object,
   };
-
-  state = { selectedStatus: PROJECT_STATUSES.IN_PROGRESS };
 
   getHeaderAndMenuConfig = intl => ({
     headerTitle: intl.formatMessage(messages.pageTitle),
     headerSubtitle: intl.formatMessage(messages.pageSubTitle),
   });
 
-  getStatusOptions = (selectedStatus, intl) =>
+  getStatusOptions = intl =>
     PROJECT_STATUSES_LIST.map(status => ({
       value: status,
       label: intl.formatMessage(messages[status]),
-      selected: status === selectedStatus,
     }));
 
   handleCancelClick = () => this.props.history.push('/');
 
-  handleSelectStatus = ({ value: selectedStatus }) => this.setState({ selectedStatus });
+  handleSelectStatus = setFieldValue => ({ value: selectedStatus }) => {
+    setFieldValue(PROJECT_STATUS, selectedStatus);
+  };
 
   render() {
-    const { values, handleChange, handleSubmit, intl } = this.props;
+    const { values, handleChange, handleSubmit, setFieldValue, intl } = this.props;
     const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
 
     return (
@@ -81,9 +80,9 @@ export class Create extends PureComponent {
           <Select
             label={intl.formatMessage(messages.statusLabel)}
             name={PROJECT_STATUS}
-            options={this.getStatusOptions(this.state.selectedStatus, intl)}
-            onChange={handleChange}
-            onSelect={this.handleSelectStatus}
+            value={values[PROJECT_STATUS]}
+            options={this.getStatusOptions(intl)}
+            onSelect={this.handleSelectStatus(setFieldValue)}
           />
           <Button customStyles={buttonStyles} onClick={this.handleCancelClick}>
             {intl.formatMessage(messages.cancel)}

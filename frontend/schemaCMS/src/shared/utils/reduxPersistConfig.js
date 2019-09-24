@@ -1,5 +1,5 @@
 import storage from 'redux-persist/lib/storage';
-import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
+import autoMergeLevel1 from 'redux-persist/lib/stateReconciler/autoMergeLevel1';
 import immutablePersistenceTransform from '../services/immutablePersistenceTransform';
 
 // More info here:  https://shift.infinite.red/shipping-persistant-reducers-7341691232b1
@@ -14,7 +14,7 @@ const REDUX_PERSIST_CONFIG = {
     // Optionally, just specify the keys you DO want stored to persistence.
     // An empty array means 'don't store any reducers' -> infinitered/ignite#409
     whitelist: ['userAuth'],
-    stateReconciler: hardSet,
+    stateReconciler: autoMergeLevel1,
     transforms: [immutablePersistenceTransform],
   },
 };

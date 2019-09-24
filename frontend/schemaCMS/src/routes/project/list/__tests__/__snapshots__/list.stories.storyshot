@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/List empty 1`] = `
 <div
-  className="sc-kEYyzF YPeRy"
+  className="sc-kkGfuU cQNurS"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -11,7 +11,7 @@ exports[`Storyshots Project/List empty 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -62,9 +62,10 @@ exports[`Storyshots Project/List empty 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -79,7 +80,7 @@ exports[`Storyshots Project/List empty 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -96,8 +97,8 @@ exports[`Storyshots Project/List empty 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#000",
+          "color": "#FFF",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -159,7 +160,7 @@ exports[`Storyshots Project/List empty 1`] = `
           className="sc-bZQynM sc-htoDjs LPVfx"
         >
           <li
-            className="sc-dnqmqq sc-gZMcBi bYVXEs"
+            className="sc-dnqmqq sc-gZMcBi dhrkCt"
           >
             <a
               href="/logout"
@@ -172,15 +173,17 @@ exports[`Storyshots Project/List empty 1`] = `
         </ul>
       </div>
       <button
+        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -195,7 +198,7 @@ exports[`Storyshots Project/List empty 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -211,7 +214,7 @@ exports[`Storyshots Project/List empty 1`] = `
     </div>
   </div>
   <div
-    className="sc-uJMKN WXNmX"
+    className="sc-bbmXgH cLwQsL"
   >
     <p
       style={
@@ -233,13 +236,14 @@ exports[`Storyshots Project/List empty 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#a6a7aa",
+        "backgroundColor": "#1d1d20",
         "border": "none",
         "borderRadius": "48px",
         "bottom": "10px",
-        "color": "#1d1d20",
+        "color": "#FFF",
         "cursor": "pointer",
         "display": "inline-block",
+        "fill": "#FFF",
         "fontSize": "18px",
         "height": "60px",
         "margin": "0",
@@ -272,7 +276,7 @@ exports[`Storyshots Project/List empty 1`] = `
 
 exports[`Storyshots Project/List list 1`] = `
 <div
-  className="sc-kEYyzF YPeRy"
+  className="sc-kkGfuU cQNurS"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -281,7 +285,7 @@ exports[`Storyshots Project/List list 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -332,9 +336,10 @@ exports[`Storyshots Project/List list 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -349,7 +354,7 @@ exports[`Storyshots Project/List list 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -366,8 +371,8 @@ exports[`Storyshots Project/List list 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#000",
+          "color": "#FFF",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -429,7 +434,7 @@ exports[`Storyshots Project/List list 1`] = `
           className="sc-bZQynM sc-htoDjs LPVfx"
         >
           <li
-            className="sc-dnqmqq sc-gZMcBi bYVXEs"
+            className="sc-dnqmqq sc-gZMcBi dhrkCt"
           >
             <a
               href="/logout"
@@ -442,15 +447,17 @@ exports[`Storyshots Project/List list 1`] = `
         </ul>
       </div>
       <button
+        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -465,7 +472,7 @@ exports[`Storyshots Project/List list 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -481,17 +488,17 @@ exports[`Storyshots Project/List list 1`] = `
     </div>
   </div>
   <ul
-    className="sc-kkGfuU jsroXC"
+    className="sc-iAyFgw fVDUTi"
   >
     <li
-      className="sc-iAyFgw hdkrgM"
+      className="sc-hSdWYo jneYMH"
     >
       <div
         style={
           Object {
-            "backgroundColor": "#f0efef",
+            "backgroundColor": "#1d1d20",
             "borderTop": "2px solid #1d1d20",
-            "color": "#1d1d20",
+            "color": "#fff",
             "display": "flex",
             "flexDirection": "column",
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -509,22 +516,22 @@ exports[`Storyshots Project/List list 1`] = `
           }
         >
           <ul
-            className="sc-hSdWYo bpYBGU"
+            className="sc-eHgmQL gyoCRu"
           >
             <li
-              className="sc-eHgmQL inOUwl"
+              className="sc-cvbbAY cdVCef"
               id="headerItem-0"
             >
               3 months ago
             </li>
             <li
-              className="sc-eHgmQL inOUwl"
+              className="sc-cvbbAY cdVCef"
               id="headerItem-1"
             >
               Status
             </li>
             <li
-              className="sc-eHgmQL inOUwl"
+              className="sc-cvbbAY cdVCef"
               id="headerItem-2"
             >
               Firstname Lastname
@@ -549,7 +556,7 @@ exports[`Storyshots Project/List list 1`] = `
           Project Name
         </h1>
         <div
-          className="sc-cvbbAY giNGEy"
+          className="sc-jWBwVP gyxLsl"
           onClick={[Function]}
         >
           <p
@@ -571,7 +578,7 @@ exports[`Storyshots Project/List list 1`] = `
           id="apiPath-0"
           style={
             Object {
-              "color": "#a6a7aa",
+              "color": "#fff",
               "display": "block",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "12px",
@@ -587,14 +594,14 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </li>
     <li
-      className="sc-iAyFgw hdkrgM"
+      className="sc-hSdWYo jneYMH"
     >
       <div
         style={
           Object {
-            "backgroundColor": "#f0efef",
+            "backgroundColor": "#1d1d20",
             "borderTop": "2px solid #1d1d20",
-            "color": "#1d1d20",
+            "color": "#fff",
             "display": "flex",
             "flexDirection": "column",
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -612,22 +619,22 @@ exports[`Storyshots Project/List list 1`] = `
           }
         >
           <ul
-            className="sc-hSdWYo bpYBGU"
+            className="sc-eHgmQL gyoCRu"
           >
             <li
-              className="sc-eHgmQL inOUwl"
+              className="sc-cvbbAY cdVCef"
               id="headerItem-0"
             >
               3 months ago
             </li>
             <li
-              className="sc-eHgmQL inOUwl"
+              className="sc-cvbbAY cdVCef"
               id="headerItem-1"
             >
               Published
             </li>
             <li
-              className="sc-eHgmQL inOUwl"
+              className="sc-cvbbAY cdVCef"
               id="headerItem-2"
             >
               Tadeusz Kosciuszko
@@ -652,7 +659,7 @@ exports[`Storyshots Project/List list 1`] = `
           Honec sodales libero non fermentum aliquam
         </h1>
         <div
-          className="sc-cvbbAY giNGEy"
+          className="sc-jWBwVP gyxLsl"
           onClick={[Function]}
         >
           <p
@@ -674,7 +681,7 @@ exports[`Storyshots Project/List list 1`] = `
           id="apiPath-1"
           style={
             Object {
-              "color": "#a6a7aa",
+              "color": "#fff",
               "display": "block",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "12px",
@@ -695,13 +702,14 @@ exports[`Storyshots Project/List list 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#a6a7aa",
+        "backgroundColor": "#1d1d20",
         "border": "none",
         "borderRadius": "48px",
         "bottom": "10px",
-        "color": "#1d1d20",
+        "color": "#FFF",
         "cursor": "pointer",
         "display": "inline-block",
+        "fill": "#FFF",
         "fontSize": "18px",
         "height": "60px",
         "margin": "0",

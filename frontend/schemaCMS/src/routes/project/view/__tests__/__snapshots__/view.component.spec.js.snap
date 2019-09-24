@@ -40,7 +40,7 @@ exports[`View: Component should render correctly 1`] = `
       <styled.li
         key="0"
       >
-        <Card
+        <Component
           customStyles={
             Object {
               "cursor": "pointer",
@@ -52,12 +52,12 @@ exports[`View: Component should render correctly 1`] = `
           <styled.span>
             3
           </styled.span>
-        </Card>
+        </Component>
       </styled.li>
       <styled.li
         key="1"
       >
-        <Card
+        <Component
           customStyles={
             Object {
               "cursor": "pointer",
@@ -69,7 +69,7 @@ exports[`View: Component should render correctly 1`] = `
           <styled.span>
             2
           </styled.span>
-        </Card>
+        </Component>
       </styled.li>
     </styled.ul>
     <styled.ul>
@@ -85,7 +85,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
       <styled.li
@@ -100,7 +100,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
       <styled.li
@@ -115,7 +115,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
       <styled.li
@@ -130,7 +130,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
       <styled.li
@@ -145,7 +145,7 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
       <styled.li
@@ -160,22 +160,22 @@ exports[`View: Component should render correctly 1`] = `
           </styled.span>
         </styled.div>
         <styled.div>
-          <EditIcon />
+          <Component />
         </styled.div>
       </styled.li>
     </styled.ul>
   </styled.div>
-  <Button
+  <Component
     customStyles={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#1d1d20",
         "height": "60px",
         "margin": "50px 0 20px 0",
       }
     }
     onClick={[Function]}
   >
-    <ArrowLeftIcon />
-  </Button>
+    <Component />
+  </Component>
 </Styled(styled.div)>
 `;

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { primary } from '../../../utils/theme';
+import { light } from '../../../utils/theme';
 import { headerStyles } from './h1.styles';
 
 export class H1 extends PureComponent {
@@ -12,7 +12,7 @@ export class H1 extends PureComponent {
   };
 
   render() {
-    const { customStyles = {}, theme = primary, children, ...restProps } = this.props;
+    const { customStyles = {}, theme = light, children, ...restProps } = this.props;
     const style = { ...headerStyles, ...theme.typography.h1, ...customStyles };
     const props = { style, ...restProps };
 

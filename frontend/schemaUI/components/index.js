@@ -9,3 +9,4 @@ export Typography from './typography';
 export Form from './form';
 export { Stepper } from './stepper';
 export { DataGrid } from './dataGrid';
+export { ThemeProvider } from './styles/themeProvider';

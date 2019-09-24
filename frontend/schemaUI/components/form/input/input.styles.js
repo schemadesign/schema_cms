@@ -1,10 +1,10 @@
-import { primary } from '../../../utils/theme';
+import { defaultTheme } from '../../../utils/theme';
 
-export const defaultStyles = {
+export const getStyles = (theme = defaultTheme) => ({
   border: 'none',
   outline: 'none',
-  color: primary.text,
+  color: theme.input.text,
   fontSize: '18px',
   lineHeight: '24px',
   backgroundColor: 'transparent',
-};
+});

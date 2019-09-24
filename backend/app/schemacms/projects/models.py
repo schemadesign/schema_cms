@@ -4,17 +4,16 @@ import os
 
 import django_fsm
 from django.conf import settings
-from django.contrib.postgres import fields as psql_fields
 from django.core.validators import FileExtensionValidator
 from django.db import models, transaction
-from django.utils import functional, crypto
+from django.utils import functional
 from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
 from django_fsm import signals as fsm_signals
 from pandas import read_csv
 
-from schemacms.projects import services
 from schemacms.projects import handlers
+from schemacms.projects import services
 from schemacms.users import constants as users_constants
 from . import constants, managers, fsm
 
@@ -151,13 +150,14 @@ class DataSourceMeta(models.Model):
 
 class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
-    steps = psql_fields.JSONField(default=dict)
     outcome = models.TextField(blank=True)
-    scripts_ref = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return f'DataSource Job #{self.pk}'
 
-    @staticmethod
-    def generate_scripts_ref():
-        return f'{crypto.get_random_string(length=16)}.zip'
+
+class DataSourceJobStep(models.Model):
+    datasource_job = models.ForeignKey(DataSourceJob, on_delete=models.CASCADE, related_name='steps')
+    key = models.CharField(max_length=255)
+    body = models.TextField()
+    exec_order = models.IntegerField(default=0)

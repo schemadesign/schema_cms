@@ -5,7 +5,7 @@ exports[`Header: Component should render correctly 1`] = `
   style={
     Object {
       "alignItems": "flex-start",
-      "color": "#1d1d20",
+      "color": "#FFF",
       "display": "flex",
       "flexDirection": "row",
       "justifyContent": "space-between",
@@ -15,7 +15,7 @@ exports[`Header: Component should render correctly 1`] = `
   }
 >
   <div />
-  <Button
+  <Component
     customStyles={
       Object {
         "backgroundColor": "transparent",
@@ -25,8 +25,8 @@ exports[`Header: Component should render correctly 1`] = `
       }
     }
   >
-    <MenuIcon />
-  </Button>
+    <Component />
+  </Component>
 </div>
 `;
 
@@ -36,7 +36,7 @@ exports[`Header: Component should render with children and custom styles 1`] = `
     Object {
       "alignItems": "flex-start",
       "backgroundColor": "#FFF",
-      "color": "#1d1d20",
+      "color": "#FFF",
       "display": "flex",
       "flexDirection": "row",
       "justifyContent": "space-between",
@@ -46,7 +46,7 @@ exports[`Header: Component should render with children and custom styles 1`] = `
   }
 >
   <div />
-  <Button
+  <Component
     customStyles={
       Object {
         "backgroundColor": "transparent",
@@ -57,6 +57,6 @@ exports[`Header: Component should render with children and custom styles 1`] = `
     }
   >
     icon
-  </Button>
+  </Component>
 </div>
 `;

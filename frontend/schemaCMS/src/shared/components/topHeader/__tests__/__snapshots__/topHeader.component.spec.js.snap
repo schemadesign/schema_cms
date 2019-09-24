@@ -2,17 +2,12 @@
 
 exports[`TopHeader: Component should render correctly 1`] = `
 <styled.div>
-  <Header
+  <Component
     buttonProps={
       Object {
-        "id": "topHeaderOpenMenuBtn",
         "onClick": [Function],
       }
     }
-    customButtonStyles={Object {}}
-    customStyles={Object {}}
-    iconComponent={<MenuIcon />}
-    onButtonClick={[Function]}
   >
     <styled.div>
       <H2
@@ -26,16 +21,18 @@ exports[`TopHeader: Component should render correctly 1`] = `
         Overview
       </H1>
     </styled.div>
-  </Header>
-  <Menu
-    customCloseButtonStyles={
+  </Component>
+  <Component
+    closeButtonProps={
       Object {
-        "backgroundColor": "#fff",
+        "customStyles": Object {
+          "backgroundColor": "transparent",
+        },
+        "id": "topHeaderCloseMenuButton",
       }
     }
     customStyles={
       Object {
-        "backgroundColor": "#fff",
         "maxWidth": null,
         "zIndex": 9999,
       }
@@ -103,6 +100,6 @@ exports[`TopHeader: Component should render correctly 1`] = `
         </Styled(styled.li)>
       </Styled(styled.ul)>
     </styled.div>
-  </Menu>
+  </Component>
 </styled.div>
 `;

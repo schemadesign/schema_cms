@@ -7,21 +7,34 @@ const defaultProps = {
   open: true,
 };
 
-storiesOf('Menu', module).add('Default', () => <Menu {...defaultProps}>items</Menu>);
-
-storiesOf('Menu', module).add('Closed menu', () => <Menu open={false}>items</Menu>);
-
-const customStyles = {
-  backgroundColor: 'black',
-  color: 'white',
+const customMenu = {
+  ...defaultProps,
+  customStyles: {
+    backgroundColor: 'darkblue',
+    color: 'white',
+  },
+  closeButtonProps: {
+    customStyles: {
+      backgroundColor: 'white',
+      height: 60,
+      top: 20,
+      right: 20,
+    },
+    iconStyles: {
+      fill: 'green'
+    },
+    id: 'special-close-button'
+  }
 };
 
-const customCloseIconStyles = {
-  fill: 'white',
-};
-
-storiesOf('Menu', module).add('With custom styles', () => (
-  <Menu {...defaultProps} customStyles={customStyles} customCloseIconStyles={customCloseIconStyles}>
-    items
-  </Menu>
-));
+storiesOf('Menu', module)
+  .add('Default', () => <Menu {...defaultProps}>items</Menu>)
+  .add('Closed menu', () => <Menu open={false}>items</Menu>)
+  .add('With custom styles', () => (
+    <Menu {...customMenu}>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>
+    </Menu>
+  ));

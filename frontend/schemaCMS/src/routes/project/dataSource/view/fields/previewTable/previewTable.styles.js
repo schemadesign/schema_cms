@@ -17,7 +17,7 @@ export const TableBody = styled.tbody``;
 
 export const Row = styled.tr`
   &:last-of-type td:first-of-type {
-    border-bottom-color: ${Theme.primary.background};
+    border-bottom-color: ${Theme.colors.darkGrey};
     padding-bottom: 10px;
   }
 `;
@@ -26,17 +26,18 @@ const cellStyles = `
   padding: 12px;
   font-size: 14px;
   padding: 7px 12px;
-  border-bottom: 2px solid ${Theme.primary.background};
-  border-right: 2px solid ${Theme.primary.background};
+  border-bottom: 2px solid ${Theme.colors.darkGrey};
+  border-right: 2px solid ${Theme.colors.darkGrey};
+  color: ${Theme.colors.white};
 `;
 
 const headerCellStyles = `
-  background-color: ${Theme.primary.background};
-  color: ${Theme.primary.label};
+  background-color: ${Theme.colors.darkGrey};
+  color: ${Theme.colors.lightGrey};
   font-weight: 600;
   padding: 12px;
-  border-right-color: ${Theme.secondary.text};
-  border-bottom-color: ${Theme.secondary.text};
+  border-right-color: ${Theme.colors.black};
+  border-bottom-color: ${Theme.colors.black};
 `;
 
 export const Cell = styled.td`
@@ -53,7 +54,7 @@ export const HeaderCell = styled.th`
   }
 
   &:last-of-type {
-    border-right-color: ${Theme.primary.background};
+    border-right-color: ${Theme.colors.darkGrey};
   }
 `;
 

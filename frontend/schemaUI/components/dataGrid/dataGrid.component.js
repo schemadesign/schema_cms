@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { containerStyles, columnStyles, rowStyles } from './dataGrid.styles';
+import { getStyles } from './dataGrid.styles';
 import { Grid } from '../grid';
+import { withStyles } from '../styles/withStyles';
 
 const SCREEN_WIDTH_PERCENT = 100;
 
-export class DataGrid extends PureComponent {
+class DataGridComponent extends PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired,
   };
@@ -31,6 +32,7 @@ export class DataGrid extends PureComponent {
   getCustomStyles = (styles, defaultStyle = {}) => styles || defaultStyle;
 
   renderColumns = (column, index) => {
+    const { columnStyles } = getStyles(this.props.theme);
     return (
       <Grid
         key={index}
@@ -58,9 +60,11 @@ export class DataGrid extends PureComponent {
 
   render() {
     const {
+      theme,
       data: { columns, rows },
     } = this.props;
 
+    const { containerStyles, columnStyles, rowStyles } = getStyles(theme);
     columns.forEach(this.calculateCellWidth);
 
     return (
@@ -71,3 +75,5 @@ export class DataGrid extends PureComponent {
     );
   }
 }
+
+export const DataGrid = withStyles(DataGridComponent);

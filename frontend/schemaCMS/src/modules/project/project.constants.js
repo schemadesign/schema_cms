@@ -6,11 +6,6 @@ export const PROJECT_DESCRIPTION = 'description';
 export const PROJECT_OWNER = 'owner';
 export const PROJECT_STATUS = 'status';
 
-export const INITIAL_VALUES = {
-  [PROJECT_TITLE]: '',
-  [PROJECT_DESCRIPTION]: '',
-};
-
 export const PROJECT_STATUSES = {
   IN_PROGRESS: 'in_progress',
   DONE: 'done',
@@ -24,6 +19,12 @@ export const PROJECT_STATUSES_LIST = [
   PROJECT_STATUSES.HOLD,
   PROJECT_STATUSES.PUBLISHED,
 ];
+
+export const INITIAL_VALUES = {
+  [PROJECT_TITLE]: '',
+  [PROJECT_DESCRIPTION]: '',
+  [PROJECT_STATUS]: PROJECT_STATUSES.IN_PROGRESS,
+};
 
 export const PROJECT_SCHEMA = Yup.object().shape({
   [PROJECT_TITLE]: Yup.string()

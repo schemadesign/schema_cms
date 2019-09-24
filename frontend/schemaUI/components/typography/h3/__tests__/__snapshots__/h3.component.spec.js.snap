@@ -4,7 +4,10 @@ exports[`H3: Component should render children when passed in 1`] = `
 <h3
   style={
     Object {
-      "color": "#a6a7aa",
+      "color": Object {
+        "border": "#1d1d20",
+        "text": "#a6a7aa",
+      },
       "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": 600,
@@ -20,7 +23,10 @@ exports[`H3: Component should render correctly 1`] = `
 <h3
   style={
     Object {
-      "color": "#a6a7aa",
+      "color": Object {
+        "border": "#1d1d20",
+        "text": "#a6a7aa",
+      },
       "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": 600,
@@ -35,7 +41,10 @@ exports[`H3: Component should render with attributes 1`] = `
   id="test-id"
   style={
     Object {
-      "color": "#a6a7aa",
+      "color": Object {
+        "border": "#1d1d20",
+        "text": "#a6a7aa",
+      },
       "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": 600,
