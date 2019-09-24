@@ -8,7 +8,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
     style={
       Object {
         "alignItems": "flex-start",
-        "color": "#1d1d20",
+        "color": "#FFF",
         "display": "flex",
         "flexDirection": "row",
         "justifyContent": "space-between",
@@ -58,9 +58,10 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           "backgroundColor": "transparent",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",
@@ -75,7 +76,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       <svg
         style={
           Object {
-            "fill": "#1d1d20",
+            "fill": "#FFF",
             "height": "60px",
             "width": "60px",
           }
@@ -92,8 +93,8 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
   <div
     style={
       Object {
-        "backgroundColor": "#fff",
-        "color": "#1d1d20",
+        "backgroundColor": "#000",
+        "color": "#FFF",
         "maxWidth": null,
         "minHeight": "100vh",
         "padding": "18px 20px 27px",
@@ -152,7 +153,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         className="sc-bZQynM sc-gzVnrw JqJZP"
       >
         <li
-          className="sc-dnqmqq sc-iwsKbI iOzZuy"
+          className="sc-dnqmqq sc-iwsKbI fMmDkV"
         >
           <a
             href="/path"
@@ -163,7 +164,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-dnqmqq sc-iwsKbI iOzZuy"
+          className="sc-dnqmqq sc-iwsKbI fMmDkV"
         >
           <a
             href="/path"
@@ -178,7 +179,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         className="sc-bZQynM sc-htoDjs LPVfx"
       >
         <li
-          className="sc-dnqmqq sc-gZMcBi bYVXEs"
+          className="sc-dnqmqq sc-gZMcBi dhrkCt"
         >
           <a
             href="/logout"
@@ -189,7 +190,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-dnqmqq sc-gZMcBi bYVXEs"
+          className="sc-dnqmqq sc-gZMcBi dhrkCt"
           id="id"
           onClick={[Function]}
         >
@@ -202,12 +203,13 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "transparent",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",
@@ -222,7 +224,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       <svg
         style={
           Object {
-            "fill": "#1d1d20",
+            "fill": "#FFF",
             "height": "60px",
             "width": "60px",
           }

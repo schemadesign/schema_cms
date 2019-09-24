@@ -1,26 +1,32 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { containerStyles, headerStyles } from './card.styles';
+import { getStyles } from './card.styles';
+import { withStyles } from '../styles/withStyles';
 
-export class Card extends PureComponent {
+export class CardComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     headerComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    theme: PropTypes.object,
   };
 
-  renderHeader = component => (component ? <div style={headerStyles}>{component}</div> : null);
+  renderHeader = (component, headerStyles) => (component ? <div style={headerStyles}>{component}</div> : null);
 
   render() {
-    const { customStyles, headerComponent, children, ...restProps } = this.props;
+    const { customStyles, headerComponent, children, theme, ...restProps } = this.props;
+    const { containerStyles, headerStyles } = getStyles(theme);
+
     const styles = { ...containerStyles, ...customStyles };
 
     return (
       <div style={styles} {...restProps}>
-        {this.renderHeader(headerComponent)}
+        {this.renderHeader(headerComponent, headerStyles)}
         {children}
       </div>
     );
   }
 }
+
+export const Card = withStyles(CardComponent);

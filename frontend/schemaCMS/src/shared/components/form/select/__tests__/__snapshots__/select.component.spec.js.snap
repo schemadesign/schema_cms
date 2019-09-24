@@ -2,11 +2,9 @@
 
 exports[`Select: Component should render correctly 1`] = `
 <styled.div>
-  <Label
-    customStyles={Object {}}
-  >
+  <Component>
     Selector
-  </Label>
+  </Component>
   <input
     id="selectField"
     name="selectField"

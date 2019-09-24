@@ -1,85 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextArea: Component should render correctly 1`] = `
-<Fragment>
-  <textarea
-    onChange={[Function]}
-    style={
-      Object {
-        "border": "none",
-        "color": "#1d1d20",
-        "fontSize": "18px",
-        "height": 0,
-        "lineHeight": "24px",
-        "outline": "none",
-        "padding": "0",
-        "resize": "none",
+<Component>
+  <TextAreaComponent
+    customStyles={Object {}}
+  >
+    <textarea
+      onChange={[Function]}
+      style={
+        Object {
+          "border": "none",
+          "color": "#FFF",
+          "fontSize": "18px",
+          "height": 0,
+          "lineHeight": "24px",
+          "outline": "none",
+          "padding": "0",
+          "resize": "none",
+        }
       }
-    }
-  />
-  <textarea
-    aria-hidden={true}
-    readOnly={true}
-    style={
-      Object {
-        "border": "none",
-        "color": "#1d1d20",
-        "fontSize": "18px",
-        "height": 0,
-        "left": 0,
-        "lineHeight": "24px",
-        "outline": "none",
-        "overflow": "hidden",
-        "padding": "0",
-        "position": "absolute",
-        "resize": "none",
-        "top": 0,
-        "visibility": "hidden",
+    />
+    <textarea
+      aria-hidden={true}
+      readOnly={true}
+      style={
+        Object {
+          "border": "none",
+          "color": "#FFF",
+          "fontSize": "18px",
+          "height": 0,
+          "left": 0,
+          "lineHeight": "24px",
+          "outline": "none",
+          "overflow": "hidden",
+          "padding": "0",
+          "position": "absolute",
+          "resize": "none",
+          "top": 0,
+          "visibility": "hidden",
+        }
       }
-    }
-    tabIndex={-1}
-  />
-</Fragment>
+      tabIndex={-1}
+    />
+  </TextAreaComponent>
+</Component>
 `;
 
 exports[`TextArea: Component should render with custom styles 1`] = `
-<Fragment>
-  <textarea
-    onChange={[Function]}
-    style={
+<Component
+  customStyles={
+    Object {
+      "padding": "10px",
+    }
+  }
+>
+  <TextAreaComponent
+    customStyles={
       Object {
-        "border": "none",
-        "color": "#1d1d20",
-        "fontSize": "18px",
-        "height": 0,
-        "lineHeight": "24px",
-        "outline": "none",
         "padding": "10px",
-        "resize": "none",
       }
     }
-  />
-  <textarea
-    aria-hidden={true}
-    readOnly={true}
-    style={
-      Object {
-        "border": "none",
-        "color": "#1d1d20",
-        "fontSize": "18px",
-        "height": 0,
-        "left": 0,
-        "lineHeight": "24px",
-        "outline": "none",
-        "overflow": "hidden",
-        "padding": "10px",
-        "position": "absolute",
-        "resize": "none",
-        "top": 0,
-        "visibility": "hidden",
+  >
+    <textarea
+      onChange={[Function]}
+      style={
+        Object {
+          "border": "none",
+          "color": "#FFF",
+          "fontSize": "18px",
+          "height": -20,
+          "lineHeight": "24px",
+          "outline": "none",
+          "padding": "10px",
+          "resize": "none",
+        }
       }
-    }
-    tabIndex={-1}
-  />
-</Fragment>
+    />
+    <textarea
+      aria-hidden={true}
+      readOnly={true}
+      style={
+        Object {
+          "border": "none",
+          "color": "#FFF",
+          "fontSize": "18px",
+          "height": 0,
+          "left": 0,
+          "lineHeight": "24px",
+          "outline": "none",
+          "overflow": "hidden",
+          "padding": "10px",
+          "position": "absolute",
+          "resize": "none",
+          "top": 0,
+          "visibility": "hidden",
+        }
+      }
+      tabIndex={-1}
+    />
+  </TextAreaComponent>
+</Component>
 `;

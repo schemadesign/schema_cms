@@ -2,17 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import CheckboxOffSVG from '../../../images/icons/checkbox-off.svg';
-import { containerStyles } from './checkboxOffIcon.styles';
+import { getStyles } from './checkboxOffIcon.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class CheckboxOffIcon extends PureComponent {
+export class CheckboxOffIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
 
   render() {
-    const { customStyles, ...restProps } = this.props;
+    const { customStyles, theme, ...restProps } = this.props;
+    const containerStyles = getStyles(theme);
     const styles = { ...containerStyles, ...customStyles };
 
     return <CheckboxOffSVG {...restProps} style={styles} />;
   }
 }
+
+export const CheckboxOffIcon = withStyles(CheckboxOffIconComponent);

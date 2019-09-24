@@ -26,12 +26,13 @@ exports[`DataWrangling: Component should render correctly 1`] = `
           <div
             style={
               Object {
-                "backgroundColor": "#f0efef",
+                "backgroundColor": "#1d1d20",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#1d1d20",
+                "color": "#FFF",
                 "cursor": "pointer",
                 "display": "inline-block",
+                "fill": "#FFF",
                 "fontSize": 0,
                 "margin": "0",
                 "minHeight": "48px",
@@ -40,7 +41,7 @@ exports[`DataWrangling: Component should render correctly 1`] = `
               }
             }
           >
-            <UploadIcon />
+            <Unknown />
           </div>
         }
         id="fileUpload"
@@ -111,16 +112,12 @@ exports[`DataWrangling: Component should render correctly form 1`] = `
     }
   }
 >
-  <CheckboxGroup
-    checkedIcon={<CheckboxOnIcon />}
-    customCheckboxStyles={Object {}}
-    customStyles={Object {}}
+  <Component
     name="steps"
     onChange={[Function]}
-    uncCheckedIcon={<CheckboxOffIcon />}
     value={Array []}
   >
-    <Checkbox
+    <Component
       id="checkbox-0"
       isEdit={true}
       key="0"
@@ -131,8 +128,8 @@ exports[`DataWrangling: Component should render correctly form 1`] = `
       >
         name 1
       </Styled(Link)>
-    </Checkbox>
-    <Checkbox
+    </Component>
+    <Component
       id="checkbox-1"
       isEdit={true}
       key="1"
@@ -143,7 +140,7 @@ exports[`DataWrangling: Component should render correctly form 1`] = `
       >
         name 2
       </Styled(Link)>
-    </Checkbox>
-  </CheckboxGroup>
+    </Component>
+  </Component>
 </ContextProvider>
 `;

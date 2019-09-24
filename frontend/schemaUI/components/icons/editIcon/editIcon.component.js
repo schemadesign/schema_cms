@@ -2,17 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import EditSVG from '../../../images/icons/edit.svg';
-import { containerStyles } from './editIcon.styles';
+import { getStyles } from './editIcon.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class EditIcon extends PureComponent {
+export class EditIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
 
   render() {
-    const { customStyles, ...restProps } = this.props;
-    const styles = { ...containerStyles, ...this.props.customStyles };
+    const { customStyles, theme, ...restProps } = this.props;
+    const containerStyles = getStyles(theme);
+    const styles = { ...containerStyles, ...customStyles };
 
     return <EditSVG {...restProps} style={styles} />;
   }
 }
+
+export const EditIcon = withStyles(EditIconComponent);

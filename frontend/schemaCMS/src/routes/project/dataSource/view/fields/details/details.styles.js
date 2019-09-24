@@ -14,13 +14,13 @@ export const List = styled.ul`
 `;
 
 export const FieldInformation = styled.li`
-  border-bottom: 2px solid ${Theme.primary.background};
+  border-bottom: 2px solid ${Theme.dark.background};
   padding: 12px 0;
   display: flex;
   width: 100%;
 
   &:first-of-type {
-    border-top: 2px solid ${Theme.primary.background};
+    border-top: 2px solid ${Theme.dark.background};
   }
 `;
 
@@ -30,13 +30,14 @@ export const FieldSummary = styled(FieldInformation)`
 `;
 
 export const Label = styled.span`
-  color: ${Theme.primary.label};
+  color: ${Theme.colors.lightGrey};
   display: inline-block;
   margin-right: 10px;
   flex: 0 0 auto;
 `;
 
 export const Value = styled.span`
+  color: ${Theme.colors.white};
   flex: 1 1 auto;
 `;
 

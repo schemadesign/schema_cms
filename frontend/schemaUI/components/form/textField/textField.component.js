@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { containerStyles, errorStyles, iconContainerStyles } from './textField.styles';
-import { EditIcon } from '../../icons/editIcon';
+import { getStyles } from './textField.styles';
 import { Input } from '../input';
 import { TextArea } from '../textArea';
 import { Label } from '../label';
+import { withStyles } from '../../styles/withStyles';
 
-export class TextField extends PureComponent {
+class TextFieldComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     customInputStyles: PropTypes.object,
@@ -42,10 +42,12 @@ export class TextField extends PureComponent {
       name,
       label,
       error,
+      theme,
       multiline,
       fullWidth,
       ...restProps
     } = this.props;
+    const { containerStyles, errorStyles, iconContainerStyles } = getStyles(theme);
     const errorFieldStyles = error ? errorStyles : {};
     const styles = { ...containerStyles, ...customStyles };
     const fieldStyles = { ...customInputStyles, ...errorFieldStyles };
@@ -62,3 +64,5 @@ export class TextField extends PureComponent {
     );
   }
 }
+
+export const TextField = withStyles(TextFieldComponent);

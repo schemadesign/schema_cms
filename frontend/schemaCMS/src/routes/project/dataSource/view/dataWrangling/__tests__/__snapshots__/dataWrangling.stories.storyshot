@@ -11,7 +11,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
       className="sc-jDwBTQ SyYYJ"
     />
     <div
-      className="sc-jAaTju ipspPl"
+      className="sc-jAaTju cUchJj"
     >
       <span>
         2 Steps
@@ -35,12 +35,13 @@ exports[`Storyshots DataWrangling Default 1`] = `
           <div
             style={
               Object {
-                "backgroundColor": "#f0efef",
+                "backgroundColor": "#1d1d20",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#1d1d20",
+                "color": "#FFF",
                 "cursor": "pointer",
                 "display": "inline-block",
+                "fill": "#FFF",
                 "fontSize": 0,
                 "margin": "0",
                 "minHeight": "48px",
@@ -52,7 +53,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
             <svg
               style={
                 Object {
-                  "fill": "#1d1d20",
+                  "fill": "#FFF",
                   "height": "60px",
                   "width": "60px",
                 }
@@ -89,7 +90,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
   <div
     style={
       Object {
-        "borderTop": "1px solid #F0EFEF",
+        "borderTop": "1px solid #2F2F36",
         "display": "flex",
         "flexDirection": "column",
       }
@@ -99,7 +100,8 @@ exports[`Storyshots DataWrangling Default 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderBottom": "1px solid #F0EFEF",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "height": 48,
@@ -128,7 +130,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
       />
       <span>
         <a
-          className="sc-jlyJG FamE"
+          className="sc-jlyJG aYqMe"
           href="/project/view/2/datasource/view/14/script/view/0"
           onClick={[Function]}
         >
@@ -147,7 +149,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "30px",
               "width": "30px",
             }
@@ -171,7 +173,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
             style={
               Object {
                 "height": "30px",
-                "stroke": "#1d1d20",
+                "stroke": "#FFF",
                 "width": "30px",
               }
             }
@@ -189,7 +191,8 @@ exports[`Storyshots DataWrangling Default 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderBottom": "1px solid #F0EFEF",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "height": 48,
@@ -218,7 +221,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
       />
       <span>
         <a
-          className="sc-jlyJG FamE"
+          className="sc-jlyJG aYqMe"
           href="/project/view/2/datasource/view/14/script/view/1"
           onClick={[Function]}
         >
@@ -237,7 +240,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "30px",
               "width": "30px",
             }
@@ -261,7 +264,7 @@ exports[`Storyshots DataWrangling Default 1`] = `
             style={
               Object {
                 "height": "30px",
-                "stroke": "#1d1d20",
+                "stroke": "#FFF",
                 "width": "30px",
               }
             }

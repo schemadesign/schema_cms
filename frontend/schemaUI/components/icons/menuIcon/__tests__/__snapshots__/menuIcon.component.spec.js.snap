@@ -4,7 +4,7 @@ exports[`MenuIcon: Component should render correctly 1`] = `
 <menu.svg
   style={
     Object {
-      "fill": "#1d1d20",
+      "fill": "#FFF",
       "height": "60px",
       "width": "60px",
     }

@@ -5,7 +5,7 @@ exports[`CheckboxOffIcon: Component should render correctly 1`] = `
   style={
     Object {
       "height": "30px",
-      "stroke": "#1d1d20",
+      "stroke": "#FFF",
       "width": "30px",
     }
   }
