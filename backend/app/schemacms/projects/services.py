@@ -66,7 +66,7 @@ class S3ScriptResource(ScriptResource):
         )
 
     def getvalue(self, ref_key):
-        response = self.bucket.get_object(Key=ref_key)
+        response = self.bucket.meta.client.get_object(Bucket=self.bucket.name, Key=ref_key)
         return response['Body'].read()
 
 
