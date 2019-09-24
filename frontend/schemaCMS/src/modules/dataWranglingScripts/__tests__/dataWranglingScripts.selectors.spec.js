@@ -1,9 +1,13 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectDataWranglings, selectDataWrangling, selectDataWranglingDomain } from '../dataWrangling.selectors';
+import {
+  selectDataWranglings,
+  selectDataWrangling,
+  selectDataWranglingDomain,
+} from '../dataWranglingScripts.selectors';
 
-describe('DataWrangling: selectors', () => {
+describe('DataWranglingScripts: selectors', () => {
   const state = Immutable({
     dataWrangling: {
       dataWranglings: [],

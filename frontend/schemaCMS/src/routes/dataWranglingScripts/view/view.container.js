@@ -6,7 +6,7 @@ import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
-import { DataWranglingRoutines, selectDataWrangling } from '../../../modules/dataWrangling';
+import { DataWranglingRoutines, selectDataWrangling } from '../../../modules/dataWranglingScripts';
 import { View } from './view.component';
 
 const mapStateToProps = createStructuredSelector({

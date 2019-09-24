@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { DataWranglingRoutines, reducer as dataWranglingReducer } from '../dataWrangling.redux';
+import { DataWranglingRoutines, reducer as dataWranglingReducer } from '../dataWranglingScripts.redux';
 
-describe('DataWrangling: redux', () => {
+describe('DataWranglingScripts: redux', () => {
   const defaultState = Immutable({
     dataWrangling: {},
     dataWranglings: [],

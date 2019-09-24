@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withRouter } from '../../.storybook/decorators';
 
-import { DataWrangling } from './dataWrangling.component';
+import { DataWrangling } from './dataWranglingScripts.component';
 
 export const defaultProps = {
   dataWranglings: [{ key: 'name 1' }, { key: 'name 2' }],

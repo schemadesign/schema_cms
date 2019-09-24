@@ -6,7 +6,10 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { DATA_WRANGLING_STEP } from '../../../modules/dataSource/dataSource.constants';
-import { DATA_WRANGLING_FORM_NAME, DESCRIPTION } from '../../../modules/dataWrangling/dataWrangling.constants';
+import {
+  DATA_WRANGLING_FORM_NAME,
+  DESCRIPTION,
+} from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Loader } from '../../../shared/components/loader';
 import { PillButtons } from '../../../shared/components/pillButtons';

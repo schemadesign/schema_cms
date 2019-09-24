@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Formik } from 'formik';
 
-import { DataWrangling } from '../dataWrangling.component';
-import { defaultProps } from '../dataWrangling.stories';
+import { DataWrangling } from '../dataWranglingScripts.component';
+import { defaultProps } from '../dataWranglingScripts.stories';
 
 describe('DataWrangling: Component', () => {
   const component = props => <DataWrangling {...defaultProps} {...props} />;

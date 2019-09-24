@@ -5,10 +5,10 @@ import nock from 'nock';
 
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCE_PATH } from '../../../shared/utils/api.constants';
-import { watchDataWrangling } from '../dataWrangling.sagas';
-import { DataWranglingRoutines } from '../dataWrangling.redux';
+import { watchDataWranglingScripts } from '../dataWranglingScripts.sagas';
+import { DataWranglingRoutines } from '../dataWranglingScripts.redux';
 
-describe('DataWrangling: sagas', () => {
+describe('DataWranglingScripts: sagas', () => {
   const defaultState = Immutable({});
 
   beforeEach(() => {
@@ -22,7 +22,7 @@ describe('DataWrangling: sagas', () => {
 
       mockApi.get(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script`).reply(OK, responseData);
 
-      await expectSaga(watchDataWrangling)
+      await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
         .put(DataWranglingRoutines.fetchList.success(responseData))
         .dispatch(DataWranglingRoutines.fetchList(payload))
@@ -36,7 +36,7 @@ describe('DataWrangling: sagas', () => {
 
       mockApi.put(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK);
 
-      await expectSaga(watchDataWrangling)
+      await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
         .put(DataWranglingRoutines.sendList.success())
         .dispatch(DataWranglingRoutines.sendList(payload))
@@ -57,7 +57,7 @@ describe('DataWrangling: sagas', () => {
         .reply(OK);
       mockApi.get(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script`).reply(OK, responseData);
 
-      await expectSaga(watchDataWrangling)
+      await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
         .put(DataWranglingRoutines.uploadScript.success())
         .dispatch(DataWranglingRoutines.uploadScript(payload))
@@ -75,7 +75,7 @@ describe('DataWrangling: sagas', () => {
   //
   //     // mockApi.get(`/script/view/${payload.scriptId}`).reply(OK, responseData);
   //
-  //     await expectSaga(watchDataWrangling)
+  //     await expectSaga(watchDataWranglingScripts)
   //       .withState(defaultState)
   //       .put(DataWranglingRoutines.fetchOne.success(responseData))
   //       .dispatch(DataWranglingRoutines.fetchOne(payload))

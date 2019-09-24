@@ -7,7 +7,7 @@ import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from '
 import messages from './view.messages';
 import { Source } from './source';
 import { Fields } from './fields';
-import { DataWrangling } from '../../dataWrangling';
+import { DataWrangling } from '../../dataWranglingScripts';
 import { PillButtons } from '../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';

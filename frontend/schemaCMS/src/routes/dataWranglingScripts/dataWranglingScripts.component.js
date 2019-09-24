@@ -5,8 +5,8 @@ import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 import { always, append, ifElse, equals, reject } from 'ramda';
 
-import { Container, Header, StepCounter, Empty, UploadContainer, Error, Link } from './dataWrangling.styles';
-import messages from './dataWrangling.messages';
+import { Container, Header, StepCounter, Empty, UploadContainer, Error, Link } from './dataWranglingScripts.styles';
+import messages from './dataWranglingScripts.messages';
 import { renderWhenTrue } from '../../shared/utils/rendering';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;

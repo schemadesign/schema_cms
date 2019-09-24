@@ -1,1 +1,1 @@
-export { DataWrangling } from './dataWrangling.component';
+export { DataWrangling } from './dataWranglingScripts.component';
