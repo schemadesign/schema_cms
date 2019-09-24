@@ -37,10 +37,10 @@ export class View extends PureComponent {
   componentDidMount() {
     const {
       match: {
-        params: { scriptId },
+        params: { scriptId, dataSourceId },
       },
     } = this.props;
-    this.props.fetchDataWrangling({ scriptId });
+    this.props.fetchDataWrangling({ scriptId, dataSourceId });
   }
 
   componentWillUnmount() {
@@ -69,7 +69,7 @@ export class View extends PureComponent {
 
     const descriptionFieldProps = {
       name: DESCRIPTION,
-      value: dataWrangling.name,
+      value: dataWrangling.key,
       label: intl.formatMessage(messages.description),
       placeholder: intl.formatMessage(messages.descriptionPlaceholder),
       fullWidth: true,
@@ -82,7 +82,7 @@ export class View extends PureComponent {
         <Form name={DATA_WRANGLING_FORM_NAME}>
           <TextInput {...descriptionFieldProps} />
           <SyntaxHighlighter language="python" style={docco}>
-            {dataWrangling.content}
+            {dataWrangling.body}
           </SyntaxHighlighter>
         </Form>
         <PillButtons

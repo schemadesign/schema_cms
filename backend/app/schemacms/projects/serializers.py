@@ -133,6 +133,10 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 class DataSourceScriptSerializer(serializers.Serializer):
     key = serializers.CharField()
+    body = serializers.SerializerMethodField()
+
+    def get_body(self, attr):
+        return attr['resource'].getvalue(attr['ref_key'])
 
 
 class DataSourceScriptUploadSerializer(serializers.Serializer):

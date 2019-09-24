@@ -123,3 +123,25 @@ class TestRedirectWithToken:
         ret = pipeline.redirect_with_token(strategy=strategy, user=user)
 
         assert ret["Location"] == expected_location
+
+
+class TestForbidLogInWhenNotRegistered:
+    @pytest.mark.parametrize(
+        "session_dict, expected_location_template",
+        [
+            (dict(), "{host}/{path}"),
+            (dict(next="http://localhost.com"), "http://localhost.com/{path}"),
+            (dict(next="http://localhost.com/"), "http://localhost.com/{path}"),
+            (dict(next="http://localhost.com/abc"), "http://localhost.com/abc/{path}"),
+            (dict(next="http://localhost.com/def/"), "http://localhost.com/def/{path}"),
+        ],
+    )
+    def test_redirect(self, settings, backend, strategy, session_dict, expected_location_template):
+        strategy._session = session_dict
+        ret = pipeline.user_exist_in_db(backend, details={"email": "123@123.com"})
+        expected_location = expected_location_template.format(
+            host=settings.DEFAULT_WEBAPP_HOST,
+            path="auth/not-registered"
+        )
+
+        assert ret["Location"] == expected_location

@@ -1,12 +1,12 @@
-const BLANK_CELLS = 'local:blank_cells.py';
+export const BLANK_CELLS = 'local:blank_cells.py';
 const WHITE_SPACES = 'local:white_spaces.py';
 const HANDLING_DUPLICATES = 'local:handeling_duplicates.py';
 const CASE_CONVERSION = 'local:case_conversion.py';
 
 export default {
   [BLANK_CELLS]: {
-    name: BLANK_CELLS,
-    content: `
+    key: BLANK_CELLS,
+    body: `
       import pandas as pd
       import numpy as np
       
@@ -77,8 +77,8 @@ export default {
     `,
   },
   [WHITE_SPACES]: {
-    name: WHITE_SPACES,
-    content: `
+    key: WHITE_SPACES,
+    body: `
       import pandas as pd
       
       
@@ -86,12 +86,12 @@ export default {
       
       
       # Remove trailing/following and inner two or more spaces
-      df['column name'] = df['column name'].str.replace(r'\\s+', ' ').str.strip()
+      df['column key'] = df['column key'].str.replace(r'\\s+', ' ').str.strip()
     `,
   },
   [HANDLING_DUPLICATES]: {
-    name: HANDLING_DUPLICATES,
-    content: `
+    key: HANDLING_DUPLICATES,
+    body: `
       import pandas as pd
       
       df = pd.read_csv()
@@ -109,8 +109,8 @@ export default {
     `,
   },
   [CASE_CONVERSION]: {
-    name: CASE_CONVERSION,
-    content: `
+    key: CASE_CONVERSION,
+    body: `
       import pandas as pd
   
       df = pd.DataFrame({'Place': ['newyork', 'Washington', 'Newyork', 'WASHIngton'],
