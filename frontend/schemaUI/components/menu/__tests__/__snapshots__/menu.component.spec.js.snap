@@ -31,7 +31,9 @@ exports[`Menu: Component should render correctly 1`] = `
     }
     onClick={[Function]}
   >
-    <Component />
+    <Component
+      customStyles={Object {}}
+    />
   </Component>
 </div>
 `;
@@ -66,7 +68,9 @@ exports[`Menu: Component should render opened 1`] = `
     }
     onClick={[Function]}
   >
-    <Component />
+    <Component
+      customStyles={Object {}}
+    />
   </Component>
 </div>
 `;
@@ -101,6 +105,7 @@ exports[`Menu: Component should with custom styles 1`] = `
         "top": "6px",
       }
     }
+    id="close-button"
     onClick={[Function]}
   >
     <Component />

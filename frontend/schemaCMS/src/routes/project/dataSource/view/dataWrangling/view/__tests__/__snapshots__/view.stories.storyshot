@@ -160,6 +160,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         />
       </div>
       <button
+        id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
           Object {
@@ -264,96 +265,17 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         />
       </div>
     </div>
-    <div
-      className="sc-gqjmRU hnZXkc"
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "100%",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
+    <pre
+      style={
+        Object {
+          "backgroundColor": "#fff",
         }
-      >
-        <label
-          htmlFor="code"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "1px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          Python Code
-        </label>
-        <textarea
-          disabled={true}
-          id="code"
-          onChange={[Function]}
-          placeholder="Python Code"
-          style={
-            Object {
-              "backgroundColor": "#f0efef",
-              "border": "none",
-              "color": "#FFF",
-              "fontFamily": "Hack, monospace",
-              "fontSize": "18px",
-              "height": 0,
-              "lineHeight": "24px",
-              "marginTop": "10px",
-              "outline": "none",
-              "padding": "10px",
-              "resize": "none",
-            }
-          }
-          type="text"
-          value="df.columns = map(str.lower, df.columns)"
-        />
-        <textarea
-          aria-hidden={true}
-          readOnly={true}
-          style={
-            Object {
-              "backgroundColor": "#f0efef",
-              "border": "none",
-              "color": "#FFF",
-              "fontFamily": "Hack, monospace",
-              "fontSize": "18px",
-              "height": 0,
-              "left": 0,
-              "lineHeight": "24px",
-              "marginTop": "10px",
-              "outline": "none",
-              "overflow": "hidden",
-              "padding": "10px",
-              "position": "absolute",
-              "resize": "none",
-              "top": 0,
-              "visibility": "hidden",
-            }
-          }
-          tabIndex={-1}
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        />
-      </div>
-    </div>
+      }
+    >
+      <code>
+        df.columns = map(str.lower, df.columns)
+      </code>
+    </pre>
   </form>
   <div
     className="sc-csuQGl dcDvzg"

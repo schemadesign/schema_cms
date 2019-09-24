@@ -23,9 +23,12 @@ exports[`TopHeader: Component should render correctly 1`] = `
     </styled.div>
   </Component>
   <Component
-    customCloseButtonStyles={
+    closeButtonProps={
       Object {
-        "backgroundColor": "transparent",
+        "customStyles": Object {
+          "backgroundColor": "transparent",
+        },
+        "id": "topHeaderCloseMenuButton",
       }
     }
     customStyles={

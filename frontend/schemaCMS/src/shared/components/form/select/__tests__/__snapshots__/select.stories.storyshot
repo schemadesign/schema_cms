@@ -31,6 +31,7 @@ exports[`Storyshots Shared Components/Form/Select Default 1`] = `
       style={
         Object {
           "border": "1px solid #D2D2D2",
+          "color": "#FFF",
           "display": "flex",
           "maxWidth": "300px",
         }
@@ -74,7 +75,7 @@ exports[`Storyshots Shared Components/Form/Select Default 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#FFFFFF",
+              "backgroundColor": "#1d1d20",
               "display": "none",
               "flexDirection": "column",
               "left": "0",
