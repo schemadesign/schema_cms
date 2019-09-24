@@ -55,7 +55,6 @@ exports[`Storyshots Project/List empty 1`] = `
         </div>
       </div>
       <button
-        id="topHeaderOpenMenuBtn"
         onClick={[Function]}
         style={
           Object {
@@ -329,7 +328,6 @@ exports[`Storyshots Project/List list 1`] = `
         </div>
       </div>
       <button
-        id="topHeaderOpenMenuBtn"
         onClick={[Function]}
         style={
           Object {

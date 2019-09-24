@@ -55,7 +55,6 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         </div>
       </div>
       <button
-        id="topHeaderOpenMenuBtn"
         onClick={[Function]}
         style={
           Object {
