@@ -6,8 +6,8 @@ import { View } from './view.component';
 import mockScripts, { BLANK_CELLS } from '../../../modules/dataWranglingScripts/scripts.mock';
 
 export const defaultProps = {
-  dataWrangling: mockScripts[BLANK_CELLS],
-  fetchDataWrangling: Function.prototype,
+  dataWranglingScript: mockScripts[BLANK_CELLS],
+  fetchDataWranglingScript: Function.prototype,
   unmountDataWrangling: Function.prototype,
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
@@ -24,4 +24,4 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Project/DataSource/View/DataWrangling/View', module).add('Default', () => <View {...defaultProps} />);
+storiesOf('DataWranglingScripts/View', module).add('Default', () => <View {...defaultProps} />);

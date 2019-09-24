@@ -3,43 +3,43 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   pageTitle: {
-    id: 'dataSource.view.dataWrangling.view.pageTitle',
+    id: 'dataWranglingscripts.view.pageTitle',
     defaultMessage: 'View step',
   },
   title: {
-    id: 'dataSource.view.dataWrangling.view.title',
+    id: 'dataWranglingscripts.view.title',
     defaultMessage: 'Data Wrangling',
   },
   subTitle: {
-    id: 'dataSource.view.dataWrangling.view.subTitle',
+    id: 'dataWranglingscripts.view.subTitle',
     defaultMessage: 'View step',
   },
   description: {
-    id: 'dataSource.view.dataWrangling.view.description',
+    id: 'dataWranglingscripts.view.description',
     defaultMessage: 'Description',
   },
   descriptionPlaceholder: {
-    id: 'dataSource.view.dataWrangling.view.descriptionPlaceholder',
+    id: 'dataWranglingscripts.view.descriptionPlaceholder',
     defaultMessage: 'Description',
   },
   code: {
-    id: 'dataSource.view.dataWrangling.view.code',
+    id: 'dataWranglingscripts.view.code',
     defaultMessage: 'Python Code',
   },
   codePlaceholder: {
-    id: 'dataSource.view.dataWrangling.view.codePlaceholder',
+    id: 'dataWranglingscripts.view.codePlaceholder',
     defaultMessage: 'Python Code',
   },
   back: {
-    id: 'dataSource.view.dataWrangling.view.back',
+    id: 'dataWranglingscripts.view.back',
     defaultMessage: 'Back',
   },
   ok: {
-    id: 'dataSource.view.dataWrangling.view.ok',
+    id: 'dataWranglingscripts.view.ok',
     defaultMessage: 'OK',
   },
   save: {
-    id: 'dataSource.view.dataWrangling.view.save',
+    id: 'dataWranglingscripts.view.save',
     defaultMessage: 'Save',
   },
 });

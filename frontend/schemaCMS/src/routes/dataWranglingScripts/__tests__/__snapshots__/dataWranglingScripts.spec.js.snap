@@ -7,7 +7,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
     <styled.div>
       <FormattedMessage
         defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
-        id="dataSource.view.dataWrangling.steps"
+        id="dataWranglingScripts.steps"
         values={
           Object {
             "length": 2,

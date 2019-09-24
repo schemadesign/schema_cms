@@ -22,13 +22,13 @@ import {
 export class View extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
-    dataWranglings: PropTypes.array.isRequired,
+    dataWranglingScripts: PropTypes.array.isRequired,
     fetchDataSource: PropTypes.func.isRequired,
     unmountDataSource: PropTypes.func.isRequired,
     removeDataSource: PropTypes.func.isRequired,
-    fetchDataWrangling: PropTypes.func.isRequired,
+    fetchDataWranglingScripts: PropTypes.func.isRequired,
     uploadScript: PropTypes.func.isRequired,
-    sendUpdatedDataWrangling: PropTypes.func.isRequired,
+    sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,

@@ -20,8 +20,8 @@ import messages from './view.messages';
 
 export class View extends PureComponent {
   static propTypes = {
-    dataWrangling: PropTypes.object,
-    fetchDataWrangling: PropTypes.func.isRequired,
+    dataWranglingScript: PropTypes.object,
+    fetchDataWranglingScript: PropTypes.func.isRequired,
     unmountDataWrangling: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -40,7 +40,7 @@ export class View extends PureComponent {
         params: { scriptId, dataSourceId },
       },
     } = this.props;
-    this.props.fetchDataWrangling({ scriptId, dataSourceId });
+    this.props.fetchDataWranglingScript({ scriptId, dataSourceId });
   }
 
   componentWillUnmount() {
@@ -48,10 +48,10 @@ export class View extends PureComponent {
   }
 
   getHeaderAndMenuConfig = () => {
-    const { intl, dataWrangling } = this.props;
+    const { intl, dataWranglingScript } = this.props;
 
     return {
-      headerTitle: dataWrangling.title || intl.formatMessage(messages.title),
+      headerTitle: dataWranglingScript.title || intl.formatMessage(messages.title),
       headerSubtitle: intl.formatMessage(messages.subTitle),
     };
   };
@@ -65,11 +65,11 @@ export class View extends PureComponent {
   };
 
   renderContent() {
-    const { intl, dataWrangling, match, history } = this.props;
+    const { intl, dataWranglingScript, match, history } = this.props;
 
     const descriptionFieldProps = {
       name: DESCRIPTION,
-      value: dataWrangling.key,
+      value: dataWranglingScript.key,
       label: intl.formatMessage(messages.description),
       placeholder: intl.formatMessage(messages.descriptionPlaceholder),
       fullWidth: true,
@@ -82,7 +82,7 @@ export class View extends PureComponent {
         <Form name={DATA_WRANGLING_FORM_NAME}>
           <TextInput {...descriptionFieldProps} />
           <SyntaxHighlighter language="python" style={darcula}>
-            {dataWrangling.body}
+            {dataWranglingScript.body}
           </SyntaxHighlighter>
         </Form>
         <PillButtons
@@ -101,7 +101,7 @@ export class View extends PureComponent {
   }
 
   render() {
-    const content = this.getContentOrLoader(isEmpty(this.props.dataWrangling));
+    const content = this.getContentOrLoader(isEmpty(this.props.dataWranglingScript));
     const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (

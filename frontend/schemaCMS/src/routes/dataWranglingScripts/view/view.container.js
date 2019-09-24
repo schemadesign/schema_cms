@@ -10,13 +10,13 @@ import { DataWranglingScriptsRoutines, selectDataWranglingScript } from '../../.
 import { View } from './view.component';
 
 const mapStateToProps = createStructuredSelector({
-  dataWrangling: selectDataWranglingScript,
+  dataWranglingScript: selectDataWranglingScript,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchDataWrangling: promisifyRoutine(DataWranglingScriptsRoutines.fetchOne),
+      fetchDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.fetchOne),
       unmountDataWrangling: promisifyRoutine(DataWranglingScriptsRoutines.unmountOne),
     },
     dispatch

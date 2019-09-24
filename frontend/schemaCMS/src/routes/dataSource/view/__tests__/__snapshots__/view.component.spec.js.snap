@@ -75,9 +75,9 @@ exports[`View: Component should render draft 1`] = `
         "status": "draft",
       }
     }
-    dataWranglings={Array []}
+    dataWranglingScripts={Array []}
     fetchDataSource={[Function]}
-    fetchDataWrangling={[Function]}
+    fetchDataWranglingScripts={[Function]}
     history={
       Object {
         "push": [Function],
@@ -99,7 +99,7 @@ exports[`View: Component should render draft 1`] = `
       }
     }
     removeDataSource={[Function]}
-    sendUpdatedDataWrangling={[Function]}
+    sendUpdatedDataWranglingScript={[Function]}
     unmountDataSource={[Function]}
     updateDataSource={[Function]}
     uploadScript={[Function]}
@@ -161,9 +161,9 @@ exports[`View: Component should render second step 1`] = `
         "step": "2",
       }
     }
-    dataWranglings={Array []}
+    dataWranglingScripts={Array []}
     fetchDataSource={[Function]}
-    fetchDataWrangling={[Function]}
+    fetchDataWranglingScripts={[Function]}
     history={
       Object {
         "push": [Function],
@@ -185,7 +185,7 @@ exports[`View: Component should render second step 1`] = `
       }
     }
     removeDataSource={[Function]}
-    sendUpdatedDataWrangling={[Function]}
+    sendUpdatedDataWranglingScript={[Function]}
     unmountDataSource={[Function]}
     updateDataSource={[Function]}
     uploadScript={[Function]}
@@ -245,9 +245,9 @@ exports[`View: Component should render source step 1`] = `
         "name": "name",
       }
     }
-    dataWranglings={Array []}
+    dataWranglingScripts={Array []}
     fetchDataSource={[Function]}
-    fetchDataWrangling={[Function]}
+    fetchDataWranglingScripts={[Function]}
     history={
       Object {
         "push": [Function],
@@ -269,7 +269,7 @@ exports[`View: Component should render source step 1`] = `
       }
     }
     removeDataSource={[Function]}
-    sendUpdatedDataWrangling={[Function]}
+    sendUpdatedDataWranglingScript={[Function]}
     unmountDataSource={[Function]}
     updateDataSource={[Function]}
     uploadScript={[Function]}

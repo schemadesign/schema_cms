@@ -20,7 +20,7 @@ describe('DataWranglingScripts: selectors', () => {
       expect(selectDataWranglingScriptsDomain(state)).to.equal(state.dataWranglingScripts);
     });
 
-    it('should select a data wranglings scripts list', () => {
+    it('should select a data wrangling scripts list', () => {
       expect(selectDataWranglingScripts(state)).to.equal(state.dataWranglingScripts.dataWranglingScripts);
     });
 

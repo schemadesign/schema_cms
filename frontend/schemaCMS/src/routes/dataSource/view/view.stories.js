@@ -5,14 +5,14 @@ import { View } from './view.component';
 
 export const defaultProps = {
   dataSource: {},
-  dataWranglings: [],
+  dataWranglingScripts: [],
   fetchDataSource: Function.prototype,
   unmountDataSource: Function.prototype,
   removeDataSource: Function.prototype,
   updateDataSource: Function.prototype,
-  fetchDataWrangling: Function.prototype,
+  fetchDataWranglingScripts: Function.prototype,
   uploadScript: Function.prototype,
-  sendUpdatedDataWrangling: Function.prototype,
+  sendUpdatedDataWranglingScript: Function.prototype,
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
@@ -29,4 +29,4 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Project/DataSource/View', module).add('Default', () => <View {...defaultProps} />);
+storiesOf('DataSource/View', module).add('Default', () => <View {...defaultProps} />);

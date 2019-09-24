@@ -34,6 +34,6 @@ const defaultProps = {
   },
 };
 
-storiesOf('Project/DataSource/List', module)
+storiesOf('DataSource/List', module)
   .addDecorator(withRouter)
   .add('Default', () => <List {...defaultProps} />);

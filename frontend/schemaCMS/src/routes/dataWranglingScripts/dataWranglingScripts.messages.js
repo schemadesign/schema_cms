@@ -3,11 +3,11 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   steps: {
-    id: 'dataSource.view.dataWrangling.steps',
+    id: 'dataWranglingScripts.steps',
     defaultMessage: '{length} {length, plural,one {Step} other {Steps}}',
   },
   errorOnUploading: {
-    id: 'dataSource.view.dataWrangling.errorOnUploading',
+    id: 'dataWranglingScripts.errorOnUploading',
     defaultMessage: 'Error on uploading a file.',
   },
 });

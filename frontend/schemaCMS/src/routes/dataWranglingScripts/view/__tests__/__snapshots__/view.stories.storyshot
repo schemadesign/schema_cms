@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
+exports[`Storyshots DataWranglingScripts/View Default 1`] = `
 <div
   className="sc-kvZOFW hxJcVs"
 >

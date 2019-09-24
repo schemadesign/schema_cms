@@ -13,11 +13,11 @@ const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
 export class DataWranglingScripts extends PureComponent {
   static propTypes = {
-    dataWranglings: PropTypes.array.isRequired,
+    dataWranglingScripts: PropTypes.array.isRequired,
     bindSubmitForm: PropTypes.func.isRequired,
-    fetchDataWrangling: PropTypes.func.isRequired,
+    fetchDataWranglingScripts: PropTypes.func.isRequired,
     uploadScript: PropTypes.func.isRequired,
-    sendUpdatedDataWrangling: PropTypes.func.isRequired,
+    sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     match: PropTypes.shape({
       url: PropTypes.string.isRequired,
       params: PropTypes.shape({
@@ -34,7 +34,7 @@ export class DataWranglingScripts extends PureComponent {
 
   componentDidMount() {
     const { dataSourceId } = this.props.match.params;
-    this.props.fetchDataWrangling({ dataSourceId });
+    this.props.fetchDataWranglingScripts({ dataSourceId });
   }
 
   getScrtiptUrl = index => {
@@ -70,7 +70,7 @@ export class DataWranglingScripts extends PureComponent {
     const { dataSourceId, projectId } = this.props.match.params;
     steps = steps.map(step => ({ key: step }));
 
-    this.props.sendUpdatedDataWrangling({ steps, projectId, dataSourceId });
+    this.props.sendUpdatedDataWranglingScript({ steps, projectId, dataSourceId });
   };
 
   renderCheckboxes = (values, data) =>
@@ -89,16 +89,16 @@ export class DataWranglingScripts extends PureComponent {
   );
 
   render() {
-    const { bindSubmitForm, dataWranglings } = this.props;
+    const { bindSubmitForm, dataWranglingScripts } = this.props;
     const { uploading, errorOnUploading } = this.state;
-    const data = dataWranglings.map(({ key }) => key);
+    const data = dataWranglingScripts.map(({ key }) => key);
 
     return (
       <Container>
         <Header>
           <Empty />
           <StepCounter>
-            <FormattedMessage values={{ length: dataWranglings.length }} {...messages.steps} />
+            <FormattedMessage values={{ length: dataWranglingScripts.length }} {...messages.steps} />
             {this.renderErrorOnUploading(errorOnUploading)}
           </StepCounter>
           <UploadContainer>
@@ -118,7 +118,7 @@ export class DataWranglingScripts extends PureComponent {
             }
             return (
               <CheckboxGroup onChange={e => this.handleChange({ e, setFieldValue, steps })} value={steps} name="steps">
-                {this.renderCheckboxes(dataWranglings, data)}
+                {this.renderCheckboxes(dataWranglingScripts, data)}
               </CheckboxGroup>
             );
           }}

@@ -7,7 +7,9 @@ exports[`Details: Component should render correctly 1`] = `
       <styled.span>
         Field
       </styled.span>
-      firstName
+      <styled.span>
+        firstName
+      </styled.span>
     </styled.li>
     <styled.li
       key="0"

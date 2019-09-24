@@ -5,11 +5,11 @@ import { withRouter } from '../../.storybook/decorators';
 import { DataWranglingScripts } from './dataWranglingScripts.component';
 
 export const defaultProps = {
-  dataWranglings: [{ key: 'name 1' }, { key: 'name 2' }],
+  dataWranglingScripts: [{ key: 'name 1' }, { key: 'name 2' }],
   bindSubmitForm: Function.prototype,
-  fetchDataWrangling: Function.prototype,
+  fetchDataWranglingScripts: Function.prototype,
   uploadScript: Function.prototype,
-  sendUpdatedDataWrangling: Function.prototype,
+  sendUpdatedDataWranglingScript: Function.prototype,
   match: {
     url: '/project/view/2/datasource/view/14/3',
     params: {

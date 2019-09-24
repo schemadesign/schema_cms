@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/DataSource/List Default 1`] = `
+exports[`Storyshots DataSource/List Default 1`] = `
 <div
   className="sc-iwsKbI bXausi"
 >

@@ -12,7 +12,7 @@ import { DataWranglingScriptsRoutines, selectDataWranglingScripts } from '../../
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
-  dataWranglings: selectDataWranglingScripts,
+  dataWranglingScripts: selectDataWranglingScripts,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -22,9 +22,9 @@ export const mapDispatchToProps = dispatch => ({
       fetchDataSource: promisifyRoutine(DataSourceRoutines.fetchOne),
       updateDataSource: promisifyRoutine(DataSourceRoutines.updateOne),
       unmountDataSource: promisifyRoutine(DataSourceRoutines.unmountOne),
-      fetchDataWrangling: promisifyRoutine(DataWranglingScriptsRoutines.fetchList),
+      fetchDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.fetchList),
       uploadScript: promisifyRoutine(DataWranglingScriptsRoutines.uploadScript),
-      sendUpdatedDataWrangling: promisifyRoutine(DataWranglingScriptsRoutines.sendList),
+      sendUpdatedDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.sendList),
     },
     dispatch
   ),
