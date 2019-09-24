@@ -13,7 +13,7 @@ export default function createReducer() {
     userProfile: userProfileReducer,
     project: projectReducer,
     dataSource: dataSourceReducer,
-    dataWrangling: dataWranglingScriptsReducer,
+    dataWranglingScripts: dataWranglingScriptsReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }

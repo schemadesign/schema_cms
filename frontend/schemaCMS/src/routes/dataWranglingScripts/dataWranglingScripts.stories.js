@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withRouter } from '../../.storybook/decorators';
 
-import { DataWrangling } from './dataWranglingScripts.component';
+import { DataWranglingScripts } from './dataWranglingScripts.component';
 
 export const defaultProps = {
   dataWranglings: [{ key: 'name 1' }, { key: 'name 2' }],
@@ -19,6 +19,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DataWrangling', module)
+storiesOf('DataWranglingScripts', module)
   .addDecorator(withRouter)
-  .add('Default', () => <DataWrangling {...defaultProps} />);
+  .add('Default', () => <DataWranglingScripts {...defaultProps} />);

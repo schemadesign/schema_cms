@@ -2,11 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Formik } from 'formik';
 
-import { DataWrangling } from '../dataWranglingScripts.component';
+import { DataWranglingScripts } from '../dataWranglingScripts.component';
 import { defaultProps } from '../dataWranglingScripts.stories';
 
-describe('DataWrangling: Component', () => {
-  const component = props => <DataWrangling {...defaultProps} {...props} />;
+describe('DataWranglingScripts: Component', () => {
+  const component = props => <DataWranglingScripts {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

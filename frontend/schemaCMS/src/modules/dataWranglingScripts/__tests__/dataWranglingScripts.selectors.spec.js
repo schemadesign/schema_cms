@@ -9,7 +9,7 @@ import {
 
 describe('DataWranglingScripts: selectors', () => {
   const state = Immutable({
-    dataWrangling: {
+    dataWranglingScripts: {
       dataWranglings: [],
       dataWrangling: {},
     },
@@ -17,15 +17,15 @@ describe('DataWranglingScripts: selectors', () => {
 
   describe('selectDataWranglingDomain', () => {
     it('should select a domain', () => {
-      expect(selectDataWranglingDomain(state)).to.equal(state.dataWrangling);
+      expect(selectDataWranglingDomain(state)).to.equal(state.dataWranglingScripts);
     });
 
     it('should select a data wranglings', () => {
-      expect(selectDataWranglings(state)).to.equal(state.dataWrangling.dataWranglings);
+      expect(selectDataWranglings(state)).to.equal(state.dataWranglingScripts.dataWranglings);
     });
 
     it('should select a dataWrangling', () => {
-      expect(selectDataWrangling(state)).to.equal(state.dataWrangling.dataWrangling);
+      expect(selectDataWrangling(state)).to.equal(state.dataWranglingScripts.dataWrangling);
     });
   });
 });

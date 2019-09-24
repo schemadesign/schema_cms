@@ -11,7 +11,7 @@ import { renderWhenTrue } from '../../shared/utils/rendering';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
-export class DataWrangling extends PureComponent {
+export class DataWranglingScripts extends PureComponent {
   static propTypes = {
     dataWranglings: PropTypes.array.isRequired,
     bindSubmitForm: PropTypes.func.isRequired,

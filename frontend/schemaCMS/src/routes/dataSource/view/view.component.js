@@ -7,7 +7,7 @@ import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from '
 import messages from './view.messages';
 import { Source } from './source';
 import { Fields } from './fields';
-import { DataWrangling } from '../../dataWranglingScripts';
+import { DataWranglingScripts } from '../../dataWranglingScripts';
 import { PillButtons } from '../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -118,7 +118,7 @@ export class View extends PureComponent {
     cond([
       [equals(INITIAL_STEP), always(<Source bindSubmitForm={this.bindSubmitForm} {...props} />)],
       [equals(FIELDS_STEP), always(<Fields {...props} />)],
-      [equals(DATA_WRANGLING_STEP), always(<DataWrangling bindSubmitForm={this.bindSubmitForm} {...props} />)],
+      [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts bindSubmitForm={this.bindSubmitForm} {...props} />)],
       [equals(4), always(null)],
       [equals(5), always(null)],
       [equals(6), always(null)],
