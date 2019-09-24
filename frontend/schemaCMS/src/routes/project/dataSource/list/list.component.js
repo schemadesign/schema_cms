@@ -26,7 +26,7 @@ import {
   titleStyles,
 } from './list.styles';
 import messages from './list.messages';
-import extendedDayjs from '../../../../shared/utils/extendedDayjs';
+import extendedDayjs, { BASE_DATE_FORMAT } from '../../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../../list/list.styles';
 import {
   FIELDS_STEP,
@@ -158,7 +158,7 @@ export class List extends PureComponent {
   renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status, errorLog }, index) => {
     const isLock = status !== STATUS_DONE;
     const isError = status === STATUS_ERROR;
-    const whenCreated = extendedDayjs(created).fromNow();
+    const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderHeader(status, [whenCreated, `${firstName} ${lastName}`]);
     const customTitleStyles = isLock ? { ...titleStyles, ...lockTextStyles } : titleStyles;
 
