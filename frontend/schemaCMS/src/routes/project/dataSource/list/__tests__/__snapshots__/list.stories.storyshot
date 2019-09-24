@@ -216,13 +216,13 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     className="sc-chPdSV bLdZVA"
   >
     <li
-      className="sc-cSHVUG hlUlrZ"
+      className="sc-cSHVUG cmjBKw"
     >
       <div
         style={
           Object {
             "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #1d1d20",
+            "borderTop": "2px solid #FFF",
             "color": "#fff",
             "display": "flex",
             "flexDirection": "column",
@@ -389,7 +389,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     </li>
   </div>
   <div
-    className="sc-kEYyzF hXwpMO"
+    className="sc-kEYyzF eAocbx"
   >
     <button
       onClick={[Function]}
@@ -408,6 +408,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "width": "60px",
         }
       }
     >
@@ -443,6 +444,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "width": "60px",
         }
       }
     >

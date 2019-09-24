@@ -45,7 +45,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
         },
         "card": Object {
           "background": "#f0efef",
-          "border": "#FFF",
+          "border": "#000",
           "label": "#71737e",
           "text": "#FFF",
         },
@@ -188,7 +188,7 @@ exports[`App: Component should render App when language is set 1`] = `
         },
         "card": Object {
           "background": "#f0efef",
-          "border": "#FFF",
+          "border": "#000",
           "label": "#71737e",
           "text": "#FFF",
         },

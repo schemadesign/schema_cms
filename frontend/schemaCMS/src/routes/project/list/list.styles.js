@@ -11,7 +11,7 @@ export const ProjectsList = styled.ul`
 `;
 
 export const ProjectItem = styled.li`
-  margin-top: 10px;
+  margin-top: 25px;
 
   &:first-child {
     margin-top: 0;
@@ -60,8 +60,8 @@ export const titleStyles = {
 
 export const addProjectStyles = {
   position: 'fixed',
-  right: '10px',
-  bottom: '10px',
+  right: '20px',
+  bottom: '24px',
   backgroundColor: Theme.dark.background,
   height: '60px',
 };

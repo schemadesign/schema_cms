@@ -26,4 +26,9 @@ export const getStyles = (theme = defaultTheme) => ({
   labelStyles: {
     cursor: 'pointer',
   },
+  elementStyles: {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
 });
