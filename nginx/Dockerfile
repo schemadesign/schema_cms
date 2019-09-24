@@ -13,7 +13,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY files/ /etc/nginx/
 RUN mkdir -p /app/webapp
 RUN mkdir -p /app/webapp/static
-COPY --from=static_collect /static /tmp/static
+COPY --from=static_collect /app/static /tmp/static
 COPY --from=frontend /webapp/schemaCMS/build /tmp/dist
 RUN cp -R /tmp/static/* /app/webapp/static
 RUN cp -R /tmp/dist/* /app/webapp
