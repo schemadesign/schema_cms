@@ -148,13 +148,13 @@ function get_state_machine_arn {
 }
 
 function create_s3_bucket {
-  aws --endpoint-url=$S3_ENDPOINT_URL \
+  aws --no-sign-request --endpoint-url=$S3_ENDPOINT_URL \
       --region $AWS_DEFAULT_REGION \
       s3 mb "s3://$1"
 }
 
 function create_sqs_queue {
-  aws --endpoint-url=$SQS_ENDPOINT_URL \
+  aws --no-sign-request --endpoint-url=$SQS_ENDPOINT_URL \
       --region $AWS_DEFAULT_REGION \
       sqs create-queue --queue-name "$1"
 }

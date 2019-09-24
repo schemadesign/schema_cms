@@ -12,6 +12,6 @@
         "django_user_mgmt_auth0_key_arn":  "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_AUTH0_KEY-1hkjNJ",
         "django_user_mgmt_auth0_secret_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_USER_MGMT_AUTH0_SECRET-nkKpoV",
         "django_webapp_host_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_WEBAPP_HOST-7quemN",
-        "sentry_dns_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:SENTRY_DNS-uk9pQw"
+        "sentry_dns_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:SENTRY_DNS-uk9pQw",
     }
 }

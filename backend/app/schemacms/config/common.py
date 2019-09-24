@@ -113,7 +113,7 @@ class Common(Configuration):
     STORAGE_DIR = os.getenv("DJANGO_STORAGE_DIR", "/storage")
 
     DEFAULT_FILE_STORAGE = os.getenv(
-        "DJANGO_DEFAULT_FILE_STORAGE", "schemacms.utils.storages.OverwriteStorage"
+        "DJANGO_DEFAULT_FILE_STORAGE", "storages.backends.s3boto3.S3Boto3Storage"
     )
 
     # Media files
@@ -274,8 +274,8 @@ class Common(Configuration):
     AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
+    AWS_DEFAULT_ACL = None
 
-    DATASOURCE_S3_BUCKET = 'datasources'
     DS_SCRIPTS_UPLOAD_PATH = '/datasource/{}/scripts/'
     DS_JOB_UPLOAD_PATH = '/datasource/{}/jobs/'
 
