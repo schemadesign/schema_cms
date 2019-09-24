@@ -13,16 +13,17 @@ export const DataWranglingScriptsRoutines = {
 };
 
 export const INITIAL_STATE = new Immutable({
-  dataWrangling: {},
-  dataWranglings: [],
+  dataWranglingScript: {},
+  dataWranglingScripts: [],
 });
 
-const updateDataWrangling = (state = INITIAL_STATE, { payload }) => state.set('dataWrangling', payload);
-const updateDataWranglings = (state = INITIAL_STATE, { payload }) => state.set('dataWranglings', payload);
-const unmountDataWrangling = (state = INITIAL_STATE) => state.set('dataWrangling', INITIAL_STATE.dataWrangling);
+const updateDataWranglingScript = (state = INITIAL_STATE, { payload }) => state.set('dataWranglingScript', payload);
+const updateDataWranglingScripts = (state = INITIAL_STATE, { payload }) => state.set('dataWranglingScripts', payload);
+const unmountDataWranglingScript = (state = INITIAL_STATE) =>
+  state.set('dataWranglingScript', INITIAL_STATE.dataWranglingScript);
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [DataWranglingScriptsRoutines.fetchOne.SUCCESS]: updateDataWrangling,
-  [DataWranglingScriptsRoutines.unmountOne.TRIGGER]: unmountDataWrangling,
-  [DataWranglingScriptsRoutines.fetchList.SUCCESS]: updateDataWranglings,
+  [DataWranglingScriptsRoutines.fetchOne.SUCCESS]: updateDataWranglingScript,
+  [DataWranglingScriptsRoutines.unmountOne.TRIGGER]: unmountDataWranglingScript,
+  [DataWranglingScriptsRoutines.fetchList.SUCCESS]: updateDataWranglingScripts,
 });

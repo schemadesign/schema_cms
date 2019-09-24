@@ -5,8 +5,8 @@ import { DataWranglingScriptsRoutines, reducer as dataWranglingReducer } from '.
 
 describe('DataWranglingScripts: redux', () => {
   const defaultState = Immutable({
-    dataWrangling: {},
-    dataWranglings: [],
+    dataWranglingScript: {},
+    dataWranglingScripts: [],
   });
 
   describe('reducer', () => {
@@ -21,16 +21,16 @@ describe('DataWranglingScripts: redux', () => {
 
   describe('when FETCH_ONE/SUCCESS action is received', () => {
     it('should set dataWrangling ', () => {
-      const dataWrangling = {
+      const dataWranglingScript = {
         description: 'file description',
         code: 'df.columns = map(str.lower, df.columns)',
       };
       const resultState = dataWranglingReducer(
         defaultState,
-        DataWranglingScriptsRoutines.fetchOne.success(dataWrangling)
+        DataWranglingScriptsRoutines.fetchOne.success(dataWranglingScript)
       );
 
-      expect(resultState.dataWrangling).to.deep.equal(dataWrangling);
+      expect(resultState.dataWranglingScript).to.deep.equal(dataWranglingScript);
     });
   });
 
@@ -38,19 +38,19 @@ describe('DataWranglingScripts: redux', () => {
     it('should unmount dataWrangling ', () => {
       const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.unmountOne.success());
 
-      expect(resultState.dataWrangling).to.deep.equal({});
+      expect(resultState.dataWranglingScript).to.deep.equal({});
     });
   });
 
   describe('when FETCH_LIST/SUCCESS action is received', () => {
     it('should set dataWranglings', () => {
-      const dataWranglings = ['data 1', 'data 2'];
+      const dataWranglingScripts = ['data 1', 'data 2'];
       const resultState = dataWranglingReducer(
         defaultState,
-        DataWranglingScriptsRoutines.fetchList.success(dataWranglings)
+        DataWranglingScriptsRoutines.fetchList.success(dataWranglingScripts)
       );
 
-      expect(resultState.dataWranglings).to.deep.equal(dataWranglings);
+      expect(resultState.dataWranglingScripts).to.deep.equal(dataWranglingScripts);
     });
   });
 });
