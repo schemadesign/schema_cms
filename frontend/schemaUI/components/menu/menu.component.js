@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
 
-import { closeButtonStyles, containerStyles, hideStyles, showStyles } from './menu.styles';
+import { getStyles } from './menu.styles';
 import PropTypes from 'prop-types';
 import { Button } from '../button';
 import { CloseIcon } from '../icons/closeIcon';
+import { withStyles } from '../styles/withStyles';
 
-export class Menu extends PureComponent {
+export class MenuComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     customStyles: PropTypes.object,
@@ -27,28 +28,30 @@ export class Menu extends PureComponent {
     },
   };
 
-  renderCloseButton = () => {
+  renderCloseButton = closeButtonStyles => {
     const {customStyles, iconStyles, ...restProps} = this.props.closeButtonProps;
     const buttonStyles = { ...closeButtonStyles, ...customStyles };
 
     return (
-      <Button {...restProps} onClick={this.props.onClose} customStyles={buttonStyles}>
+      <Button{...restProps} onClick={this.props.onClose} customStyles={buttonStyles}>
         <CloseIcon customStyles={iconStyles} />
       </Button>
     );
   };
 
   render() {
-    const { customStyles, children, open } = this.props;
-
+    const { customStyles, children, theme, open } = this.props;
+    const { closeButtonStyles, containerStyles, hideStyles, showStyles } = getStyles(theme);
     const animationStyles = open ? showStyles : hideStyles;
     const styles = { ...containerStyles, ...customStyles, ...animationStyles };
 
     return (
       <div style={styles}>
         {children}
-        {this.renderCloseButton()}
+        {this.renderCloseButton(closeButtonStyles)}
       </div>
     );
   }
 }
+
+export const Menu = withStyles(MenuComponent);

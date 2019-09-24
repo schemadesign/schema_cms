@@ -1,35 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Label: Component should render correctly 1`] = `
-<label
-  style={
-    Object {
-      "border": "none",
-      "borderTop": "1px solid #F0EFEF",
-      "color": "#a6a7aa",
-      "display": "block",
-      "fontSize": "14px",
-      "outline": "none",
-      "paddingTop": "8px",
-      "width": "100%",
-    }
-  }
-/>
+<Component>
+  <LabelComponent
+    customStyles={Object {}}
+  >
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "1px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    />
+  </LabelComponent>
+</Component>
 `;
 
 exports[`Label: Component should render with custom styles 1`] = `
-<label
-  style={
+<Component
+  customStyles={
     Object {
-      "border": "none",
-      "borderTop": "1px solid #F0EFEF",
       "color": "blue",
-      "display": "block",
-      "fontSize": "14px",
-      "outline": "none",
-      "paddingTop": "8px",
-      "width": "100%",
     }
   }
-/>
+>
+  <LabelComponent
+    customStyles={
+      Object {
+        "color": "blue",
+      }
+    }
+  >
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "1px solid #2F2F36",
+          "color": "blue",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    />
+  </LabelComponent>
+</Component>
 `;

@@ -1,3 +1,5 @@
+import { Theme } from '../../../utils/theme';
+
 const ITEM_HEIGHT = 30;
 const PADDING = 7;
 
@@ -5,6 +7,7 @@ export const containerStyles = {
   display: 'flex',
   maxWidth: '300px',
   border: '1px solid #D2D2D2',
+  color: Theme.colors.white,
 };
 
 export const getSelectStyle = (hidden = false) => ({
@@ -49,5 +52,5 @@ export const optionListStyles = menuOpen => ({
   width: '100%',
   top: `${ITEM_HEIGHT + PADDING * 2 + 2}px`,
   left: '0',
-  backgroundColor: '#FFFFFF',
+  backgroundColor: Theme.colors.darkGrey,
 });

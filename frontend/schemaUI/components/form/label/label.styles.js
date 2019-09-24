@@ -1,12 +1,12 @@
-import { primary } from '../../../utils/theme';
+import { defaultTheme } from '../../../utils/theme';
 
-export const defaultStyles = {
+export const getStyles = (theme = defaultTheme) => ({
   border: 'none',
   outline: 'none',
-  color: primary.label,
+  color: theme.label.text,
   fontSize: '14px',
-  borderTop: `1px solid ${primary.divider}`,
+  borderTop: `1px solid ${theme.label.border}`,
   paddingTop: '8px',
   display: 'block',
   width: '100%',
-};
+});

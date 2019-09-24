@@ -9,8 +9,8 @@ exports[`Storyshots Shared Components/Form/Select Default 1`] = `
       style={
         Object {
           "border": "none",
-          "borderTop": "1px solid #F0EFEF",
-          "color": "#a6a7aa",
+          "borderTop": "1px solid #2F2F36",
+          "color": "#71737e",
           "display": "block",
           "fontSize": "14px",
           "outline": "none",
@@ -31,6 +31,7 @@ exports[`Storyshots Shared Components/Form/Select Default 1`] = `
       style={
         Object {
           "border": "1px solid #D2D2D2",
+          "color": "#FFF",
           "display": "flex",
           "maxWidth": "300px",
         }
@@ -74,7 +75,7 @@ exports[`Storyshots Shared Components/Form/Select Default 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#FFFFFF",
+              "backgroundColor": "#1d1d20",
               "display": "none",
               "flexDirection": "column",
               "left": "0",

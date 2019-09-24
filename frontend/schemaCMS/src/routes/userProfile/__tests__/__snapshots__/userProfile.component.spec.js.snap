@@ -77,7 +77,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
         }
       }
     />
-    <Button
+    <Component
       customStyles={
         Object {
           "marginRight": "20px",
@@ -86,7 +86,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
       }
     >
       Save
-    </Button>
+    </Component>
   </styled.form>
   <styled.div>
     <Styled(Link)

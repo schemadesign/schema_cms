@@ -8,6 +8,6 @@ export const Container = styled.div`
 export const Form = styled.form``;
 
 export const rightButtonStyles = {
-  backgroundColor: Theme.secondary.background,
-  color: Theme.secondary.text,
+  backgroundColor: Theme.dark.background,
+  color: Theme.dark.text,
 };

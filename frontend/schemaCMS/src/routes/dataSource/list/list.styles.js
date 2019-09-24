@@ -5,7 +5,7 @@ import { styleWhenTrue } from '../../../shared/utils/rendering';
 const horizontalMargin = 20;
 
 export const Container = styled.div`
-  margin: 0 ${horizontalMargin}px 118px;
+  padding: 0 ${horizontalMargin}px 118px;
 `;
 
 export const DataSourceItem = styled.li`
@@ -44,7 +44,7 @@ export const MetaData = styled.div`
 `;
 
 export const MetaDataName = styled.span`
-  color: ${Theme.primary.label};
+  color: ${Theme.light.label};
   font-weight: 600;
   font-size: 12px;
   margin-bottom: 10px;
@@ -53,7 +53,7 @@ export const MetaDataName = styled.span`
 const lockStyles = styleWhenTrue(
   ({ isLock }) => isLock,
   css`
-    color: ${Theme.primary.label};
+    color: ${Theme.light.label};
   `
 );
 
@@ -86,7 +86,7 @@ export const ButtonsContainer = styled.div`
   position: fixed;
   bottom: 0;
   padding: 50px 0 24px;
-  background: ${Theme.primary.body};
+  background: ${Theme.light.body};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,20 +94,20 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const lockTextStyles = {
-  color: Theme.primary.label,
+  color: Theme.light.label,
 };
 
 export const buttonStyles = {
-  backgroundColor: Theme.primary.background,
+  backgroundColor: Theme.dark.background,
   height: '60px',
 };
 
 export const iconSourceStyles = {
   width: 40,
   height: 40,
-  fill: Theme.primary.iconDark,
+  fill: Theme.colors.white,
 };
 
 export const lockIconStyles = {
-  fill: Theme.primary.label,
+  display: 'none',
 };

@@ -2,17 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import ArrowRightSVG from '../../../images/icons/arrow-right.svg';
-import { containerStyles } from './arrowRightIcon.styles';
+import { getStyles } from './arrowRightIcon.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class ArrowRightIcon extends PureComponent {
+export class ArrowRightIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
   };
 
   render() {
-    const { customStyles, ...restProps } = this.props;
+    const { customStyles, theme, ...restProps } = this.props;
+    const containerStyles = getStyles(theme);
     const styles = { ...containerStyles, ...customStyles };
 
     return <ArrowRightSVG {...restProps} style={styles} />;
   }
 }
+
+export const ArrowRightIcon = withStyles(ArrowRightIconComponent);

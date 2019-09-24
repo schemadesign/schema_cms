@@ -27,7 +27,6 @@ exports[`View: Component should render correctly 1`] = `
     />
     <SyntaxHighlighter
       language="python"
-      style={Object {}}
     >
       
       import pandas as pd

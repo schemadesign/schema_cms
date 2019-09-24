@@ -33,15 +33,13 @@ exports[`View: Component should not render any step 1`] = `
     }
   />
   <styled.div>
-    <Stepper
+    <Component
       activeStep={0}
-      customDotStyles={Object {}}
       customStyles={
         Object {
           "margin": "0 auto",
         }
       }
-      handleStep={[Function]}
       onStepChange={[Function]}
       steps={6}
     />
@@ -121,16 +119,14 @@ exports[`View: Component should render draft 1`] = `
     }
   />
   <styled.div>
-    <Stepper
+    <Component
       activeStep={1}
-      customDotStyles={Object {}}
       customStyles={
         Object {
           "margin": "0 auto",
           "pointerEvents": "none",
         }
       }
-      handleStep={[Function]}
       onStepChange={[Function]}
       steps={6}
     />
@@ -209,15 +205,13 @@ exports[`View: Component should render second step 1`] = `
     }
   />
   <styled.div>
-    <Stepper
+    <Component
       activeStep={1}
-      customDotStyles={Object {}}
       customStyles={
         Object {
           "margin": "0 auto",
         }
       }
-      handleStep={[Function]}
       onStepChange={[Function]}
       steps={6}
     />
@@ -295,15 +289,13 @@ exports[`View: Component should render source step 1`] = `
     }
   />
   <styled.div>
-    <Stepper
+    <Component
       activeStep={1}
-      customDotStyles={Object {}}
       customStyles={
         Object {
           "margin": "0 auto",
         }
       }
-      handleStep={[Function]}
       onStepChange={[Function]}
       steps={6}
     />

@@ -16,12 +16,13 @@ exports[`FileUpload: Component should render correctly 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#1d1d20",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": 0,
           "margin": "0",
           "minHeight": "48px",
@@ -30,7 +31,7 @@ exports[`FileUpload: Component should render correctly 1`] = `
         }
       }
     >
-      <UploadIcon />
+      <Component />
     </div>
   </label>
   <input
@@ -55,12 +56,11 @@ exports[`FileUpload: Component should render with custom icon 1`] = `
 <div
   style={Object {}}
 >
-  <TextField
+  <Component
     customInputStyles={Object {}}
     customLabelStyles={Object {}}
     customStyles={Object {}}
     disabled={true}
-    error={false}
     fullWidth={true}
     iconComponent={
       <label
@@ -79,7 +79,6 @@ exports[`FileUpload: Component should render with custom icon 1`] = `
     }
     label="label"
     name="fileName"
-    type="text"
     value="Select a file"
   />
   <input
@@ -104,7 +103,7 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
 <div
   style={Object {}}
 >
-  <TextField
+  <Component
     customInputStyles={
       Object {
         "backgroundColor": "green",
@@ -121,7 +120,6 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
       }
     }
     disabled={true}
-    error={false}
     fullWidth={true}
     iconComponent={
       <label
@@ -136,12 +134,13 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#f0efef",
+              "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
+              "fill": "#FFF",
               "fontSize": 0,
               "margin": "0",
               "minHeight": "48px",
@@ -150,13 +149,12 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
             }
           }
         >
-          <UploadIcon />
+          <Unknown />
         </div>
       </label>
     }
     label="label"
     name="fileName"
-    type="text"
     value="Select a file"
   />
   <input
@@ -181,12 +179,11 @@ exports[`FileUpload: Component should render with file name 1`] = `
 <div
   style={Object {}}
 >
-  <TextField
+  <Component
     customInputStyles={Object {}}
     customLabelStyles={Object {}}
     customStyles={Object {}}
     disabled={true}
-    error={false}
     fullWidth={true}
     iconComponent={
       <label
@@ -201,12 +198,13 @@ exports[`FileUpload: Component should render with file name 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#f0efef",
+              "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
+              "fill": "#FFF",
               "fontSize": 0,
               "margin": "0",
               "minHeight": "48px",
@@ -215,13 +213,12 @@ exports[`FileUpload: Component should render with file name 1`] = `
             }
           }
         >
-          <UploadIcon />
+          <Unknown />
         </div>
       </label>
     }
     label="label"
     name="fileName"
-    type="text"
     value="Select a file"
   />
   <input
@@ -247,12 +244,11 @@ exports[`FileUpload: Component should render with label 1`] = `
 <div
   style={Object {}}
 >
-  <TextField
+  <Component
     customInputStyles={Object {}}
     customLabelStyles={Object {}}
     customStyles={Object {}}
     disabled={true}
-    error={false}
     fullWidth={true}
     iconComponent={
       <label
@@ -267,12 +263,13 @@ exports[`FileUpload: Component should render with label 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "#f0efef",
+              "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "cursor": "pointer",
               "display": "inline-block",
+              "fill": "#FFF",
               "fontSize": 0,
               "margin": "0",
               "minHeight": "48px",
@@ -281,13 +278,12 @@ exports[`FileUpload: Component should render with label 1`] = `
             }
           }
         >
-          <UploadIcon />
+          <Unknown />
         </div>
       </label>
     }
     label="label"
     name="fileName"
-    type="text"
     value="Select a file"
   />
   <input

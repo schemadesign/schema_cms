@@ -1,7 +1,7 @@
-import { primary } from '../../../utils/theme';
+import { defaultTheme } from '../../../utils/theme';
 
-export const containerStyles = {
-  stroke: primary.iconDark,
+export const getStyles = (theme = defaultTheme) => ({
+  stroke: theme.icon.fill,
   width: '30px',
   height: '30px',
-};
+});

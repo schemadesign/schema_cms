@@ -11,7 +11,7 @@ exports[`Storyshots Project/View default 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -61,9 +61,10 @@ exports[`Storyshots Project/View default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -78,7 +79,7 @@ exports[`Storyshots Project/View default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -95,8 +96,8 @@ exports[`Storyshots Project/View default 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#000",
+          "color": "#FFF",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -155,7 +156,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-ifAKCX sc-EHOje bVzUGK"
         >
           <li
-            className="sc-gzVnrw sc-htoDjs icPHiF"
+            className="sc-gzVnrw sc-htoDjs ZTdwq"
           >
             <a
               href="/project/view/100/datasource"
@@ -170,7 +171,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-ifAKCX sc-bZQynM hRyDTQ"
         >
           <li
-            className="sc-gzVnrw sc-dnqmqq gTWOHt"
+            className="sc-gzVnrw sc-dnqmqq fqeVkK"
           >
             <a
               href="/project/edit/100"
@@ -181,7 +182,7 @@ exports[`Storyshots Project/View default 1`] = `
             </a>
           </li>
           <li
-            className="sc-gzVnrw sc-dnqmqq gTWOHt"
+            className="sc-gzVnrw sc-dnqmqq fqeVkK"
           >
             <a
               href="/project/delete/100"
@@ -192,7 +193,7 @@ exports[`Storyshots Project/View default 1`] = `
             </a>
           </li>
           <li
-            className="sc-gzVnrw sc-dnqmqq gTWOHt"
+            className="sc-gzVnrw sc-dnqmqq fqeVkK"
           >
             <a
               href="/logout"
@@ -209,12 +210,13 @@ exports[`Storyshots Project/View default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -229,7 +231,7 @@ exports[`Storyshots Project/View default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -257,9 +259,9 @@ exports[`Storyshots Project/View default 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#f0efef",
+              "backgroundColor": "#1d1d20",
               "borderTop": "2px solid #1d1d20",
-              "color": "#1d1d20",
+              "color": "#fff",
               "cursor": "pointer",
               "display": "flex",
               "flexDirection": "column",
@@ -293,9 +295,9 @@ exports[`Storyshots Project/View default 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#f0efef",
+              "backgroundColor": "#1d1d20",
               "borderTop": "2px solid #1d1d20",
-              "color": "#1d1d20",
+              "color": "#fff",
               "cursor": "pointer",
               "display": "flex",
               "flexDirection": "column",
@@ -327,18 +329,18 @@ exports[`Storyshots Project/View default 1`] = `
       className="sc-fYxtnH bMoNws"
     >
       <li
-        className="sc-tilXH keLVYc"
+        className="sc-tilXH wByzn"
       >
         <div
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA ibIuZF"
           >
             Last Update
           </span>
           <span
-            className="sc-kafWEX bEMDxg"
+            className="sc-kafWEX hWTcBQ"
           >
             3 months ago
           </span>
@@ -349,7 +351,7 @@ exports[`Storyshots Project/View default 1`] = `
           <svg
             style={
               Object {
-                "fill": "#1d1d20",
+                "fill": "#FFF",
                 "height": "30px",
                 "width": "30px",
               }
@@ -364,18 +366,18 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-tilXH keLVYc"
+        className="sc-tilXH wByzn"
       >
         <div
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA ibIuZF"
           >
             Status
           </span>
           <span
-            className="sc-kafWEX bEMDxg"
+            className="sc-kafWEX hWTcBQ"
           >
             Status
           </span>
@@ -386,7 +388,7 @@ exports[`Storyshots Project/View default 1`] = `
           <svg
             style={
               Object {
-                "fill": "#1d1d20",
+                "fill": "#FFF",
                 "height": "30px",
                 "width": "30px",
               }
@@ -401,18 +403,18 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-tilXH keLVYc"
+        className="sc-tilXH wByzn"
       >
         <div
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA ibIuZF"
           >
             Owner
           </span>
           <span
-            className="sc-kafWEX bEMDxg"
+            className="sc-kafWEX hWTcBQ"
           >
             Firstname Lastname
           </span>
@@ -423,7 +425,7 @@ exports[`Storyshots Project/View default 1`] = `
           <svg
             style={
               Object {
-                "fill": "#1d1d20",
+                "fill": "#FFF",
                 "height": "30px",
                 "width": "30px",
               }
@@ -438,18 +440,18 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-tilXH keLVYc"
+        className="sc-tilXH wByzn"
       >
         <div
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA ibIuZF"
           >
             Title
           </span>
           <span
-            className="sc-kafWEX bEMDxg"
+            className="sc-kafWEX hWTcBQ"
           >
             Project Name
           </span>
@@ -460,7 +462,7 @@ exports[`Storyshots Project/View default 1`] = `
           <svg
             style={
               Object {
-                "fill": "#1d1d20",
+                "fill": "#FFF",
                 "height": "30px",
                 "width": "30px",
               }
@@ -475,18 +477,18 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-tilXH keLVYc"
+        className="sc-tilXH wByzn"
       >
         <div
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA ibIuZF"
           >
             Description
           </span>
           <span
-            className="sc-kafWEX bEMDxg"
+            className="sc-kafWEX hWTcBQ"
           >
             Description
           </span>
@@ -497,7 +499,7 @@ exports[`Storyshots Project/View default 1`] = `
           <svg
             style={
               Object {
-                "fill": "#1d1d20",
+                "fill": "#FFF",
                 "height": "30px",
                 "width": "30px",
               }
@@ -512,18 +514,18 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </li>
       <li
-        className="sc-tilXH keLVYc"
+        className="sc-tilXH wByzn"
       >
         <div
           className="sc-hEsumM kjJqII"
         >
           <span
-            className="sc-ktHwxA cAcvlr"
+            className="sc-ktHwxA ibIuZF"
           >
             API
           </span>
           <span
-            className="sc-kafWEX bEMDxg"
+            className="sc-kafWEX hWTcBQ"
           >
             schemacms/api/project_title
           </span>
@@ -534,7 +536,7 @@ exports[`Storyshots Project/View default 1`] = `
           <svg
             style={
               Object {
-                "fill": "#1d1d20",
+                "fill": "#FFF",
                 "height": "30px",
                 "width": "30px",
               }
@@ -554,12 +556,13 @@ exports[`Storyshots Project/View default 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#1d1d20",
         "border": "none",
         "borderRadius": "48px",
-        "color": "#1d1d20",
+        "color": "#FFF",
         "cursor": "pointer",
         "display": "inline-block",
+        "fill": "#FFF",
         "fontSize": "18px",
         "height": "60px",
         "margin": "50px 0 20px 0",
@@ -572,7 +575,7 @@ exports[`Storyshots Project/View default 1`] = `
     <svg
       style={
         Object {
-          "fill": "#1d1d20",
+          "fill": "#FFF",
           "height": "60px",
           "width": "60px",
         }
@@ -598,7 +601,7 @@ exports[`Storyshots Project/View empty 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -646,9 +649,10 @@ exports[`Storyshots Project/View empty 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -663,7 +667,7 @@ exports[`Storyshots Project/View empty 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -680,8 +684,8 @@ exports[`Storyshots Project/View empty 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#000",
+          "color": "#FFF",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -741,7 +745,7 @@ exports[`Storyshots Project/View empty 1`] = `
           className="sc-ifAKCX sc-bZQynM hRyDTQ"
         >
           <li
-            className="sc-gzVnrw sc-dnqmqq gTWOHt"
+            className="sc-gzVnrw sc-dnqmqq fqeVkK"
           >
             <a
               href="/logout"
@@ -758,12 +762,13 @@ exports[`Storyshots Project/View empty 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -778,7 +783,7 @@ exports[`Storyshots Project/View empty 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -814,12 +819,13 @@ exports[`Storyshots Project/View empty 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#f0efef",
+        "backgroundColor": "#1d1d20",
         "border": "none",
         "borderRadius": "48px",
-        "color": "#1d1d20",
+        "color": "#FFF",
         "cursor": "pointer",
         "display": "inline-block",
+        "fill": "#FFF",
         "fontSize": "18px",
         "height": "60px",
         "margin": "50px 0 20px 0",
@@ -832,7 +838,7 @@ exports[`Storyshots Project/View empty 1`] = `
     <svg
       style={
         Object {
-          "fill": "#1d1d20",
+          "fill": "#FFF",
           "height": "60px",
           "width": "60px",
         }

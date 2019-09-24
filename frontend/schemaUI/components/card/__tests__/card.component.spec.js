@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import { Card } from '../card.component';
 
@@ -8,7 +8,7 @@ describe('Card: Component', () => {
 
   const component = props => <Card {...defaultProps} {...props} />;
 
-  const render = (props = {}) => shallow(component(props));
+  const render = (props = {}) => mount(component(props));
 
   it('should render correctly', () => {
     const wrapper = render();
@@ -17,7 +17,7 @@ describe('Card: Component', () => {
   });
 
   it('should render children when passed in', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Card>
         <div>
           <h1>Test</h1>
@@ -30,10 +30,10 @@ describe('Card: Component', () => {
   });
 
   it('should render component  with custom style and with header', () => {
-    const header = <h1 style="color: red">header</h1>;
+    const header = <h1 style={{ color: 'red' }}>header</h1>;
     const customStyles = { color: 'blue' };
 
-    const wrapper = shallow(
+    const wrapper = mount(
       <Card customStyles={customStyles} headerComponent={header}>
         <div>
           <p>Content</p>
@@ -46,7 +46,7 @@ describe('Card: Component', () => {
 
   it('should render with attributes', () => {
     const customStyles = { color: 'blue' };
-    const wrapper = shallow(
+    const wrapper = mount(
       <Card customStyles={customStyles} id="test-id" title="test title">
         Card with attributes
       </Card>

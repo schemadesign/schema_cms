@@ -9,6 +9,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    font-family: ${Theme.primary.typography.p.fontFamily};
+    font-family: ${Theme.light.typography.p.fontFamily};
   }
 `;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { UploadIcon } from '../uploadIcon.component';
+import { UploadIconComponent } from '../uploadIcon.component';
 
 describe('UploadIcon: Component', () => {
   const defaultProps = {};
 
-  const component = props => <UploadIcon {...defaultProps} {...props} />;
+  const component = props => <UploadIconComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

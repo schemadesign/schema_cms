@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { containerStyles, dotActiveStyles, dotStyles } from './stepper.styles';
+import { getStyles } from './stepper.styles';
+import { withStyles } from '../styles/withStyles';
 
-export class Stepper extends PureComponent {
+export class StepperComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
     customActiveDotStyles: PropTypes.object,
@@ -18,18 +19,26 @@ export class Stepper extends PureComponent {
     handleStep: () => {},
   };
 
-  getActiveStyles = step =>
+  getActiveStyles = (step, dotActiveStyles) =>
     this.props.activeStep === step ? { ...dotActiveStyles, ...this.props.customActiveDotStyles } : {};
 
-  renderDots = () => [...Array(this.props.steps)].map((value, key) => this.renderDot(key));
+  renderDots = (dotActiveStyles, dotStyles) =>
+    [...Array(this.props.steps)].map((value, key) => this.renderDot(key, dotActiveStyles, dotStyles));
 
-  renderDot = key => (
+  renderDot = (key, dotActiveStyles, dotStyles) => (
     <span
-      style={{ ...dotStyles, ...this.props.customDotStyles, ...this.getActiveStyles(key + 1) }}
+      style={{ ...dotStyles, ...this.props.customDotStyles, ...this.getActiveStyles(key + 1, dotActiveStyles) }}
       onClick={() => this.props.onStepChange(key + 1)}
       key={key}
     />
   );
 
-  render = () => <div style={{ ...containerStyles, ...this.props.customStyles }}>{this.renderDots()}</div>;
+  render = () => {
+    const { customStyles, theme } = this.props;
+    const { containerStyles, dotActiveStyles, dotStyles } = getStyles(theme);
+
+    return <div style={{ ...containerStyles, ...customStyles }}>{this.renderDots(dotActiveStyles, dotStyles)}</div>;
+  };
 }
+
+export const Stepper = withStyles(StepperComponent);

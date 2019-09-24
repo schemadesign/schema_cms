@@ -1,284 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DataWrangling Default 1`] = `
-<div
-  className="sc-kjoXOD hpTAeq"
->
-  <div
-    className="sc-cHGsZl fcNuGd"
-  >
-    <div
-      className="sc-kgAjT brsDbA"
-    />
-    <div
-      className="sc-TOsTZ hxFDjl"
-    >
-      <span>
-        2 Steps
-      </span>
-    </div>
-    <div
-      className="sc-cJSrbW yCuDX"
-    >
-      <div
-        style={Object {}}
-      >
-        <label
-          htmlFor="fileUpload"
-          style={
-            Object {
-              "position": "relative",
-              "top": 0,
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#f0efef",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#1d1d20",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fontSize": 0,
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-              }
-            }
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#1d1d20",
-                  "height": "60px",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
-              />
-            </svg>
-          </div>
-        </label>
-        <input
-          accept=".py"
-          aria-hidden={true}
-          disabled={false}
-          id="fileUpload"
-          onChange={[Function]}
-          style={
-            Object {
-              "height": 0,
-              "left": 0,
-              "overflow": "hidden",
-              "position": "absolute",
-              "top": 0,
-              "visibility": "hidden",
-            }
-          }
-          type="file"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "borderTop": "1px solid #F0EFEF",
-        "display": "flex",
-        "flexDirection": "column",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "borderBottom": "1px solid #F0EFEF",
-          "display": "flex",
-          "flexDirection": "row",
-          "height": 48,
-          "justifyContent": "space-between",
-        }
-      }
-    >
-      <input
-        aria-hidden={true}
-        checked={false}
-        id="checkbox-0"
-        name="steps"
-        onChange={[Function]}
-        style={
-          Object {
-            "height": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "top": 0,
-            "visibility": "hidden",
-          }
-        }
-        type="checkbox"
-        value="name 1"
-      />
-      <span>
-        <a
-          className="sc-hmzhuo bFJbtV"
-          href="/project/view/2/datasource/view/14/script/view/0"
-          onClick={[Function]}
-        >
-          name 1
-        </a>
-      </span>
-      <div
-        style={
-          Object {
-            "alignItems": "center",
-            "display": "flex",
-            "flexDirection": "row",
-          }
-        }
-      >
-        <svg
-          style={
-            Object {
-              "fill": "#1d1d20",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
-        >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
-        <label
-          htmlFor="checkbox-0"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "height": "30px",
-                "stroke": "#1d1d20",
-                "width": "30px",
-              }
-            }
-            viewBox="0 0 30 30"
-          >
-            <path
-              d="M7.5 7.5h15v15h-15z"
-              fill="none"
-            />
-          </svg>
-        </label>
-      </div>
-    </div>
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "borderBottom": "1px solid #F0EFEF",
-          "display": "flex",
-          "flexDirection": "row",
-          "height": 48,
-          "justifyContent": "space-between",
-        }
-      }
-    >
-      <input
-        aria-hidden={true}
-        checked={false}
-        id="checkbox-1"
-        name="steps"
-        onChange={[Function]}
-        style={
-          Object {
-            "height": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "top": 0,
-            "visibility": "hidden",
-          }
-        }
-        type="checkbox"
-        value="name 2"
-      />
-      <span>
-        <a
-          className="sc-hmzhuo bFJbtV"
-          href="/project/view/2/datasource/view/14/script/view/1"
-          onClick={[Function]}
-        >
-          name 2
-        </a>
-      </span>
-      <div
-        style={
-          Object {
-            "alignItems": "center",
-            "display": "flex",
-            "flexDirection": "row",
-          }
-        }
-      >
-        <svg
-          style={
-            Object {
-              "fill": "#1d1d20",
-              "height": "30px",
-              "width": "30px",
-            }
-          }
-          viewBox="0 0 30 30"
-        >
-          <path
-            d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-            fillRule="evenodd"
-          />
-        </svg>
-        <label
-          htmlFor="checkbox-1"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "height": "30px",
-                "stroke": "#1d1d20",
-                "width": "30px",
-              }
-            }
-            viewBox="0 0 30 30"
-          >
-            <path
-              d="M7.5 7.5h15v15h-15z"
-              fill="none"
-            />
-          </svg>
-        </label>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots DataWranglingScripts Default 1`] = `
 <div
   className="sc-kjoXOD hpTAeq"
@@ -290,7 +11,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
       className="sc-kgAjT brsDbA"
     />
     <div
-      className="sc-TOsTZ hxFDjl"
+      className="sc-TOsTZ dQgaXp"
     >
       <span>
         2 Steps
@@ -314,12 +35,13 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
           <div
             style={
               Object {
-                "backgroundColor": "#f0efef",
+                "backgroundColor": "#1d1d20",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#1d1d20",
+                "color": "#FFF",
                 "cursor": "pointer",
                 "display": "inline-block",
+                "fill": "#FFF",
                 "fontSize": 0,
                 "margin": "0",
                 "minHeight": "48px",
@@ -331,7 +53,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
             <svg
               style={
                 Object {
-                  "fill": "#1d1d20",
+                  "fill": "#FFF",
                   "height": "60px",
                   "width": "60px",
                 }
@@ -368,7 +90,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
   <div
     style={
       Object {
-        "borderTop": "1px solid #F0EFEF",
+        "borderTop": "1px solid #2F2F36",
         "display": "flex",
         "flexDirection": "column",
       }
@@ -378,7 +100,8 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderBottom": "1px solid #F0EFEF",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "height": 48,
@@ -407,7 +130,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
       />
       <span>
         <a
-          className="sc-hmzhuo bFJbtV"
+          className="sc-hmzhuo ldBZst"
           href="/project/view/2/datasource/view/14/script/view/0"
           onClick={[Function]}
         >
@@ -426,7 +149,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "30px",
               "width": "30px",
             }
@@ -450,7 +173,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
             style={
               Object {
                 "height": "30px",
-                "stroke": "#1d1d20",
+                "stroke": "#FFF",
                 "width": "30px",
               }
             }
@@ -468,7 +191,8 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderBottom": "1px solid #F0EFEF",
+          "borderBottom": "1px solid #2F2F36",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "height": 48,
@@ -497,7 +221,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
       />
       <span>
         <a
-          className="sc-hmzhuo bFJbtV"
+          className="sc-hmzhuo ldBZst"
           href="/project/view/2/datasource/view/14/script/view/1"
           onClick={[Function]}
         >
@@ -516,7 +240,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "30px",
               "width": "30px",
             }
@@ -540,7 +264,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
             style={
               Object {
                 "height": "30px",
-                "stroke": "#1d1d20",
+                "stroke": "#FFF",
                 "width": "30px",
               }
             }

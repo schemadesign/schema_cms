@@ -1,23 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Checkbox } from '../checkbox.component';
+import { CheckboxComponent } from '../checkbox.component';
 import { defaultProps, checkedProps, context } from '../checkbox.stories';
 import CheckboxGroupContext from '../../checkboxGroup/checkboxGroup.context';
 
 describe('RadioButton: Component', () => {
   const component = props => (
     <CheckboxGroupContext.Provider value={context}>
-      <Checkbox {...defaultProps} {...props}>
+      <CheckboxComponent {...defaultProps} {...props}>
         radio
-      </Checkbox>
+      </CheckboxComponent>
     </CheckboxGroupContext.Provider>
   );
 
-  const render = (props = {}) =>
-    shallow(component(props))
-      .dive()
-      .dive();
+  const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', () => {
     const wrapper = render();

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always, isEmpty } from 'ramda';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { DATA_WRANGLING_STEP } from '../../../modules/dataSource/dataSource.constants';
 import {
@@ -81,7 +81,7 @@ export class View extends PureComponent {
       <Fragment>
         <Form name={DATA_WRANGLING_FORM_NAME}>
           <TextInput {...descriptionFieldProps} />
-          <SyntaxHighlighter language="python" style={docco}>
+          <SyntaxHighlighter language="python" style={darcula}>
             {dataWrangling.body}
           </SyntaxHighlighter>
         </Form>

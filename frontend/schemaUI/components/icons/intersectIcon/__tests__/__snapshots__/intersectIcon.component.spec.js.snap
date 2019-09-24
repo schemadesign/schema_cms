@@ -4,7 +4,7 @@ exports[`IntersectIcon: Component should render correctly 1`] = `
 <intersect.svg
   style={
     Object {
-      "fill": "#1d1d20",
+      "fill": "#FFF",
       "height": "30px",
       "width": "30px",
     }
