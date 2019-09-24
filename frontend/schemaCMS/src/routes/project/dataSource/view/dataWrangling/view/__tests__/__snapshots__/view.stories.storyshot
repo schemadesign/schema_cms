@@ -268,7 +268,11 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     <pre
       style={
         Object {
-          "backgroundColor": "#fff",
+          "background": "#F0F0F0",
+          "color": "#444",
+          "display": "block",
+          "overflowX": "auto",
+          "padding": "0.5em",
         }
       }
     >

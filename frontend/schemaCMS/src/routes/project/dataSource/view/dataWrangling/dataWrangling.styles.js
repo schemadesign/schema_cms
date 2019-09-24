@@ -14,6 +14,7 @@ export const Header = styled.div`
 export const StepCounter = styled.div`
   width: 34%;
   text-align: center;
+  color: ${Theme.colors.white};
 `;
 
 export const Empty = styled.div`
@@ -26,7 +27,7 @@ export const UploadContainer = styled.div`
 `;
 
 export const Error = styled.div`
-  color: ${Theme.light.error};
+  color: ${Theme.colors.red};
 `;
 
 export const Link = styled(RouterLink)`
