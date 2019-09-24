@@ -6,7 +6,7 @@ import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
-import { DataWranglingRoutines, selectDataWrangling } from '../../../modules/dataWranglingScripts';
+import { DataWranglingScriptsRoutines, selectDataWrangling } from '../../../modules/dataWranglingScripts';
 import { View } from './view.component';
 
 const mapStateToProps = createStructuredSelector({
@@ -16,8 +16,8 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchDataWrangling: promisifyRoutine(DataWranglingRoutines.fetchOne),
-      unmountDataWrangling: promisifyRoutine(DataWranglingRoutines.unmountOne),
+      fetchDataWrangling: promisifyRoutine(DataWranglingScriptsRoutines.fetchOne),
+      unmountDataWrangling: promisifyRoutine(DataWranglingScriptsRoutines.unmountOne),
     },
     dispatch
   ),

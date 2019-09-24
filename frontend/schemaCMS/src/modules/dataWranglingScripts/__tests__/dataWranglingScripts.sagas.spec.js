@@ -6,7 +6,7 @@ import nock from 'nock';
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCE_PATH } from '../../../shared/utils/api.constants';
 import { watchDataWranglingScripts } from '../dataWranglingScripts.sagas';
-import { DataWranglingRoutines } from '../dataWranglingScripts.redux';
+import { DataWranglingScriptsRoutines } from '../dataWranglingScripts.redux';
 
 describe('DataWranglingScripts: sagas', () => {
   const defaultState = Immutable({});
@@ -24,8 +24,8 @@ describe('DataWranglingScripts: sagas', () => {
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
-        .put(DataWranglingRoutines.fetchList.success(responseData))
-        .dispatch(DataWranglingRoutines.fetchList(payload))
+        .put(DataWranglingScriptsRoutines.fetchList.success(responseData))
+        .dispatch(DataWranglingScriptsRoutines.fetchList(payload))
         .silentRun();
     });
   });
@@ -38,8 +38,8 @@ describe('DataWranglingScripts: sagas', () => {
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
-        .put(DataWranglingRoutines.sendList.success())
-        .dispatch(DataWranglingRoutines.sendList(payload))
+        .put(DataWranglingScriptsRoutines.sendList.success())
+        .dispatch(DataWranglingScriptsRoutines.sendList(payload))
         .silentRun();
     });
   });
@@ -59,8 +59,8 @@ describe('DataWranglingScripts: sagas', () => {
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
-        .put(DataWranglingRoutines.uploadScript.success())
-        .dispatch(DataWranglingRoutines.uploadScript(payload))
+        .put(DataWranglingScriptsRoutines.uploadScript.success())
+        .dispatch(DataWranglingScriptsRoutines.uploadScript(payload))
         .silentRun();
     });
   });
@@ -77,8 +77,8 @@ describe('DataWranglingScripts: sagas', () => {
   //
   //     await expectSaga(watchDataWranglingScripts)
   //       .withState(defaultState)
-  //       .put(DataWranglingRoutines.fetchOne.success(responseData))
-  //       .dispatch(DataWranglingRoutines.fetchOne(payload))
+  //       .put(DataWranglingScriptsRoutines.fetchOne.success(responseData))
+  //       .dispatch(DataWranglingScriptsRoutines.fetchOne(payload))
   //       .silentRun();
   //   });
   // });

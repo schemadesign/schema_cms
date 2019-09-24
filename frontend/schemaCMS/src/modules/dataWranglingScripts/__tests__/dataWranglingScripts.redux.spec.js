@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { DataWranglingRoutines, reducer as dataWranglingReducer } from '../dataWranglingScripts.redux';
+import { DataWranglingScriptsRoutines, reducer as dataWranglingReducer } from '../dataWranglingScripts.redux';
 
 describe('DataWranglingScripts: redux', () => {
   const defaultState = Immutable({
@@ -25,7 +25,10 @@ describe('DataWranglingScripts: redux', () => {
         description: 'file description',
         code: 'df.columns = map(str.lower, df.columns)',
       };
-      const resultState = dataWranglingReducer(defaultState, DataWranglingRoutines.fetchOne.success(dataWrangling));
+      const resultState = dataWranglingReducer(
+        defaultState,
+        DataWranglingScriptsRoutines.fetchOne.success(dataWrangling)
+      );
 
       expect(resultState.dataWrangling).to.deep.equal(dataWrangling);
     });
@@ -33,7 +36,7 @@ describe('DataWranglingScripts: redux', () => {
 
   describe('when UNMOUNT_ONE/SUCCESS action is received', () => {
     it('should unmount dataWrangling ', () => {
-      const resultState = dataWranglingReducer(defaultState, DataWranglingRoutines.unmountOne.success());
+      const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.unmountOne.success());
 
       expect(resultState.dataWrangling).to.deep.equal({});
     });
@@ -42,7 +45,10 @@ describe('DataWranglingScripts: redux', () => {
   describe('when FETCH_LIST/SUCCESS action is received', () => {
     it('should set dataWranglings', () => {
       const dataWranglings = ['data 1', 'data 2'];
-      const resultState = dataWranglingReducer(defaultState, DataWranglingRoutines.fetchList.success(dataWranglings));
+      const resultState = dataWranglingReducer(
+        defaultState,
+        DataWranglingScriptsRoutines.fetchList.success(dataWranglings)
+      );
 
       expect(resultState.dataWranglings).to.deep.equal(dataWranglings);
     });

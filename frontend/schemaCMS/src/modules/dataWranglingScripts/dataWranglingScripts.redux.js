@@ -4,7 +4,7 @@ import { createRoutine } from 'redux-saga-routines';
 
 const prefix = 'DATA_WRANGLING_SCRIPTS/';
 
-export const DataWranglingRoutines = {
+export const DataWranglingScriptsRoutines = {
   fetchOne: createRoutine(`${prefix}FETCH_ONE`),
   unmountOne: createRoutine(`${prefix}UNMOUNT_ONE`),
   fetchList: createRoutine(`${prefix}FETCH_LIST`),
@@ -22,7 +22,7 @@ const updateDataWranglings = (state = INITIAL_STATE, { payload }) => state.set('
 const unmountDataWrangling = (state = INITIAL_STATE) => state.set('dataWrangling', INITIAL_STATE.dataWrangling);
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [DataWranglingRoutines.fetchOne.SUCCESS]: updateDataWrangling,
-  [DataWranglingRoutines.unmountOne.TRIGGER]: unmountDataWrangling,
-  [DataWranglingRoutines.fetchList.SUCCESS]: updateDataWranglings,
+  [DataWranglingScriptsRoutines.fetchOne.SUCCESS]: updateDataWrangling,
+  [DataWranglingScriptsRoutines.unmountOne.TRIGGER]: unmountDataWrangling,
+  [DataWranglingScriptsRoutines.fetchList.SUCCESS]: updateDataWranglings,
 });

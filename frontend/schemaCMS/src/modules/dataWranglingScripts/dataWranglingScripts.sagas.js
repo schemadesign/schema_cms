@@ -1,6 +1,6 @@
 import { all, put, takeLatest, select } from 'redux-saga/effects';
 
-import { DataWranglingRoutines } from './dataWranglingScripts.redux';
+import { DataWranglingScriptsRoutines } from './dataWranglingScripts.redux';
 import api from '../../shared/services/api';
 import { DATA_SOURCE_PATH, DATA_WRANGLING_JOB_PATH, DATA_WRANGLING_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
@@ -10,36 +10,36 @@ import { selectDataWranglings } from './dataWranglingScripts.selectors';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
-    yield put(DataWranglingRoutines.fetchList.request());
+    yield put(DataWranglingScriptsRoutines.fetchList.request());
 
     const { data } = yield api.get(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_PATH}`);
 
-    yield put(DataWranglingRoutines.fetchList.success(data));
+    yield put(DataWranglingScriptsRoutines.fetchList.success(data));
   } catch (e) {
-    yield put(DataWranglingRoutines.fetchList.failure());
+    yield put(DataWranglingScriptsRoutines.fetchList.failure());
   } finally {
-    yield put(DataWranglingRoutines.fetchList.fulfill());
+    yield put(DataWranglingScriptsRoutines.fetchList.fulfill());
   }
 }
 
 function* sendList({ payload: { steps, dataSourceId, projectId } }) {
   try {
-    yield put(DataWranglingRoutines.sendList.request());
+    yield put(DataWranglingScriptsRoutines.sendList.request());
 
     yield api.put(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
 
     browserHistory.push(`/project/view/${projectId}/datasource/list`);
-    yield put(DataWranglingRoutines.sendList.success());
+    yield put(DataWranglingScriptsRoutines.sendList.success());
   } catch (e) {
-    yield put(DataWranglingRoutines.sendList.failure());
+    yield put(DataWranglingScriptsRoutines.sendList.failure());
   } finally {
-    yield put(DataWranglingRoutines.sendList.fulfill());
+    yield put(DataWranglingScriptsRoutines.sendList.fulfill());
   }
 }
 
 function* uploadScript({ payload: { script, dataSourceId } }) {
   try {
-    yield put(DataWranglingRoutines.uploadScript.request());
+    yield put(DataWranglingScriptsRoutines.uploadScript.request());
     const formData = new FormData();
     const headers = { 'Content-Type': 'multipart/form-data' };
 
@@ -47,18 +47,18 @@ function* uploadScript({ payload: { script, dataSourceId } }) {
 
     yield api.post(`${DATA_SOURCE_PATH}/${dataSourceId}/script-upload`, formData, { headers });
 
-    yield put(DataWranglingRoutines.fetchList({ dataSourceId }));
-    yield put(DataWranglingRoutines.uploadScript.success());
+    yield put(DataWranglingScriptsRoutines.fetchList({ dataSourceId }));
+    yield put(DataWranglingScriptsRoutines.uploadScript.success());
   } catch (e) {
-    yield put(DataWranglingRoutines.uploadScript.failure());
+    yield put(DataWranglingScriptsRoutines.uploadScript.failure());
   } finally {
-    yield put(DataWranglingRoutines.uploadScript.fulfill());
+    yield put(DataWranglingScriptsRoutines.uploadScript.fulfill());
   }
 }
 
 function* fetchOne({ payload }) {
   try {
-    yield put(DataWranglingRoutines.fetchOne.request());
+    yield put(DataWranglingScriptsRoutines.fetchOne.request());
 
     // const { data } = yield api.get(`/script/view/${scriptId}`);
     const scripts = yield select(selectDataWranglings);
@@ -66,19 +66,19 @@ function* fetchOne({ payload }) {
 
     const data = mockScriptsData[scriptToProcess.key];
 
-    yield put(DataWranglingRoutines.fetchOne.success(data));
+    yield put(DataWranglingScriptsRoutines.fetchOne.success(data));
   } catch (error) {
-    yield put(DataWranglingRoutines.fetchOne.failure(error));
+    yield put(DataWranglingScriptsRoutines.fetchOne.failure(error));
   } finally {
-    yield put(DataWranglingRoutines.fetchOne.fulfill());
+    yield put(DataWranglingScriptsRoutines.fetchOne.fulfill());
   }
 }
 
 export function* watchDataWranglingScripts() {
   yield all([
-    takeLatest(DataWranglingRoutines.fetchList.TRIGGER, fetchList),
-    takeLatest(DataWranglingRoutines.sendList.TRIGGER, sendList),
-    takeLatest(DataWranglingRoutines.uploadScript.TRIGGER, uploadScript),
-    takeLatest(DataWranglingRoutines.fetchOne.TRIGGER, fetchOne),
+    takeLatest(DataWranglingScriptsRoutines.fetchList.TRIGGER, fetchList),
+    takeLatest(DataWranglingScriptsRoutines.sendList.TRIGGER, sendList),
+    takeLatest(DataWranglingScriptsRoutines.uploadScript.TRIGGER, uploadScript),
+    takeLatest(DataWranglingScriptsRoutines.fetchOne.TRIGGER, fetchOne),
   ]);
 }
