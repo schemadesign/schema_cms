@@ -13,13 +13,16 @@ const colors = {
   label: '#a6a7aa',
   border: '#1d1d20',
   text: '#1d1d20',
-  error: '#f21e29',
   active: '#1d1d20',
-  iconBright: '#FFF',
 };
 
 const light = {
+  name: 'light',
   button: {
+    background: colors.veryLightPink,
+    text: colors.black,
+  },
+  inverseButton: {
     background: colors.black,
     text: colors.white,
   },
@@ -27,10 +30,10 @@ const light = {
     label: colors.lightGrey,
     text: colors.white,
     border: colors.black,
-    background: colors.background,
+    background: colors.veryLightPink,
   },
   providerContainer: {
-    backgroundColor: colors.body,
+    backgroundColor: colors.white,
     minHeight: '100vh',
   },
   dataGrid: {
@@ -87,13 +90,19 @@ const light = {
   background: '#f0efef',
   border: '#1d1d20',
   text: '#1d1d20',
+  error: '#f21e29',
   colors,
 };
 
 const dark = {
+  name: 'dark',
   button: {
     background: colors.darkGrey,
     text: colors.white,
+  },
+  inverseButton: {
+    background: colors.white,
+    text: colors.black,
   },
   card: {
     label: colors.label,

@@ -6,11 +6,11 @@ import { buttonStyles, containerStyles, getLabelStyles, inputStyles } from './fi
 import { getStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
 import { TextField } from '../textField';
-import { dark } from '../../../utils/theme';
+import { withStyles } from '../../styles/withStyles';
 
 const DEFAULT_TEXT_VALUE = 'Select a file';
 
-export class FileUpload extends PureComponent {
+export class FileUploadComponent extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     fileName: PropTypes.string,
@@ -28,8 +28,11 @@ export class FileUpload extends PureComponent {
     customStyles: {},
     customInputStyles: {},
     customLabelStyles: {},
-    iconComponent: (
-      <div style={{ ...getStyles(dark).containerStyles, ...buttonStyles }}>
+  };
+
+  state = {
+    iconComponent: this.props.iconComponent || (
+      <div style={{ ...getStyles(this.props.theme).containerStyles, ...buttonStyles }}>
         <UploadIcon />
       </div>
     ),
@@ -37,7 +40,7 @@ export class FileUpload extends PureComponent {
 
   iconComponent = ({ id, label }) => (
     <label style={getLabelStyles(label)} htmlFor={id}>
-      {this.props.iconComponent}
+      {this.state.iconComponent}
     </label>
   );
 
@@ -80,3 +83,5 @@ export class FileUpload extends PureComponent {
     );
   }
 }
+
+export const FileUpload = withStyles(FileUploadComponent);

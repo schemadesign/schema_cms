@@ -9,15 +9,18 @@ class ButtonComponent extends PureComponent {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     customStyles: PropTypes.object,
     theme: PropTypes.object,
+    inverse: PropTypes.bool,
   };
 
   static defaultProps = {
     customStyles: {},
+    inverse: false,
   };
 
   render() {
-    const { children, customStyles, theme, ...restProps } = this.props;
-    const { containerStyles } = getStyles(theme);
+    const { children, customStyles, theme, inverse, ...restProps } = this.props;
+    const buttonType = inverse ? 'inverseButton' : 'button';
+    const { containerStyles } = getStyles(theme, buttonType);
 
     const style = { ...containerStyles, ...this.props.customStyles };
     return (
