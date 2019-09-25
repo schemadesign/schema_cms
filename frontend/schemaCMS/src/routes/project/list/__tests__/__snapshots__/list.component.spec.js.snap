@@ -35,12 +35,12 @@ exports[`List: Component should render correctly 1`] = `
             <ForwardRef(styled.li)
               id="headerItem-1"
             >
-              Status
+              In Progress
             </ForwardRef(styled.li)>
             <ForwardRef(styled.li)
               id="headerItem-2"
             >
-              Firstname Lastname
+              Sed sed risus a nibh Maecenas nec pulvinar ex
             </ForwardRef(styled.li)>
           </ForwardRef(styled.ul)>
         }

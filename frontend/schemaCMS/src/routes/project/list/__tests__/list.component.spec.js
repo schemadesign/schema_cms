@@ -20,8 +20,6 @@ describe('List: Component', () => {
     const fetchProjectsList = spy();
     const props = {
       fetchProjectsList,
-      list: [],
-      history: {},
       intl: { formatMessage: ({ id }) => id },
     };
 

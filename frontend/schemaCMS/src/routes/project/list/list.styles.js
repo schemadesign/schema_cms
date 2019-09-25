@@ -22,20 +22,19 @@ export const HeaderList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 `;
 
 export const HeaderItem = styled.li`
   display: inline-block;
   line-height: 1.25;
+  margin-right: 1.5em;
 
   &::before {
     content: '•';
+    margin-left: -1.5em;
     display: inline-block;
     padding: 0 7px;
-  }
-
-  &:first-child::before {
-    display: none;
   }
 `;
 

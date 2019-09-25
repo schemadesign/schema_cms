@@ -244,15 +244,15 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-ckVGcZ dOnArN"
           >
             <ul
-              className="sc-eHgmQL gyoCRu"
+              className="sc-eHgmQL fTTBAN"
             >
               <li
-                className="sc-cvbbAY cdVCef"
+                className="sc-cvbbAY gkyBMo"
               >
                 3 months ago
               </li>
               <li
-                className="sc-cvbbAY cdVCef"
+                className="sc-cvbbAY gkyBMo"
               >
                 firstName lastName
               </li>
