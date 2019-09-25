@@ -76,7 +76,7 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
         return self.name or str(self.id)
 
     def update_meta(self):
-        data_frame = read_csv(self.file.path, sep=None, engine="python")
+        data_frame = read_csv(self.file.url, sep=None, engine="python")
         items, fields = data_frame.shape
         preview, fields_info = self.get_preview_data(data_frame)
         preview_json = io.StringIO()
