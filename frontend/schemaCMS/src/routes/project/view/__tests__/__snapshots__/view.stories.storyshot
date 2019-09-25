@@ -2,11 +2,11 @@
 
 exports[`Storyshots Project/View default 1`] = `
 <div
-  className="sc-bwzfXH sc-gGBfsJ krFBMO"
+  className="sc-dNLxif sc-gGBfsJ krFBMO"
 >
   <div>
     <div
-      className="sc-htpNat KtFsv"
+      className="sc-bdVaJa bDWFJH"
     >
       <div
         style={
@@ -23,7 +23,7 @@ exports[`Storyshots Project/View default 1`] = `
       >
         <div>
           <div
-            className="sc-bxivhb bUZGRr"
+            className="sc-bwzfXH uTxCW"
           >
             <h2
               id="headerTitle"
@@ -115,10 +115,10 @@ exports[`Storyshots Project/View default 1`] = `
         }
       >
         <div
-          className="sc-ifAKCX cFlEyZ"
+          className="sc-htpNat KtFsv"
         >
           <div
-            className="sc-bxivhb bUZGRr"
+            className="sc-bwzfXH uTxCW"
           >
             <h2
               id="headerTitle"
@@ -151,13 +151,13 @@ exports[`Storyshots Project/View default 1`] = `
           </div>
         </div>
         <div
-          className="sc-EHOje qQtBf"
+          className="sc-bxivhb fxvYgT"
         >
           <ul
-            className="sc-bZQynM sc-gzVnrw JqJZP"
+            className="sc-ifAKCX sc-EHOje bVzUGK"
           >
             <li
-              className="sc-dnqmqq sc-iwsKbI fMmDkV"
+              className="sc-gzVnrw sc-htoDjs ZTdwq"
             >
               <a
                 href="/project/view/100/datasource"
@@ -169,10 +169,10 @@ exports[`Storyshots Project/View default 1`] = `
             </li>
           </ul>
           <ul
-            className="sc-bZQynM sc-htoDjs LPVfx"
+            className="sc-ifAKCX sc-bZQynM hRyDTQ"
           >
             <li
-              className="sc-dnqmqq sc-gZMcBi dhrkCt"
+              className="sc-gzVnrw sc-dnqmqq fqeVkK"
             >
               <a
                 href="/project/edit/100"
@@ -183,7 +183,7 @@ exports[`Storyshots Project/View default 1`] = `
               </a>
             </li>
             <li
-              className="sc-dnqmqq sc-gZMcBi dhrkCt"
+              className="sc-gzVnrw sc-dnqmqq fqeVkK"
             >
               <a
                 href="/project/delete/100"
@@ -194,7 +194,7 @@ exports[`Storyshots Project/View default 1`] = `
               </a>
             </li>
             <li
-              className="sc-dnqmqq sc-gZMcBi dhrkCt"
+              className="sc-gzVnrw sc-dnqmqq fqeVkK"
             >
               <a
                 href="/logout"
@@ -595,11 +595,11 @@ exports[`Storyshots Project/View default 1`] = `
 
 exports[`Storyshots Project/View empty 1`] = `
 <div
-  className="sc-bwzfXH sc-gGBfsJ krFBMO"
+  className="sc-dNLxif sc-gGBfsJ krFBMO"
 >
   <div>
     <div
-      className="sc-htpNat KtFsv"
+      className="sc-bdVaJa bDWFJH"
     >
       <div
         style={
@@ -616,7 +616,7 @@ exports[`Storyshots Project/View empty 1`] = `
       >
         <div>
           <div
-            className="sc-bxivhb bUZGRr"
+            className="sc-bwzfXH uTxCW"
           >
             <h2
               id="headerTitle"
@@ -706,10 +706,10 @@ exports[`Storyshots Project/View empty 1`] = `
         }
       >
         <div
-          className="sc-ifAKCX cFlEyZ"
+          className="sc-htpNat KtFsv"
         >
           <div
-            className="sc-bxivhb bUZGRr"
+            className="sc-bwzfXH uTxCW"
           >
             <h2
               id="headerTitle"
@@ -740,16 +740,16 @@ exports[`Storyshots Project/View empty 1`] = `
           </div>
         </div>
         <div
-          className="sc-EHOje qQtBf"
+          className="sc-bxivhb fxvYgT"
         >
           <ul
-            className="sc-bZQynM sc-gzVnrw JqJZP"
+            className="sc-ifAKCX sc-EHOje bVzUGK"
           />
           <ul
-            className="sc-bZQynM sc-htoDjs LPVfx"
+            className="sc-ifAKCX sc-bZQynM hRyDTQ"
           >
             <li
-              className="sc-dnqmqq sc-gZMcBi dhrkCt"
+              className="sc-gzVnrw sc-dnqmqq fqeVkK"
             >
               <a
                 href="/logout"

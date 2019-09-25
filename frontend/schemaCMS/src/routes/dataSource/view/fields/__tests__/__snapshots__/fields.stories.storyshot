@@ -61,7 +61,7 @@ exports[`Storyshots Project/DataSource/View/Fields Default 1`] = `
           </button>
         </div>
         <div
-          className="sc-fBuWsC fsUlaJ"
+          className="sc-fBuWsC fkgegx"
         >
           {countFields} {countFields, plural,one {Field} other {Fields}}
         </div>

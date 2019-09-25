@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { View } from './view.component';
 
+import { withTheme } from '../../../.storybook/decorators';
 import mockScripts, { BLANK_CELLS } from '../../../modules/dataWranglingScripts/scripts.mock';
 
 export const defaultProps = {
@@ -24,4 +25,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DataWranglingScripts/View', module).add('Default', () => <View {...defaultProps} />);
+storiesOf('DataWranglingScripts/View', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <View {...defaultProps} />);

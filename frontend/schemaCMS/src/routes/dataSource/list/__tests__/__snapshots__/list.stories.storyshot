@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/DataSource/List Default 1`] = `
+exports[`Storyshots DataSource/List Default 1`] = `
 <div
-  className="sc-jzJRlG djaKlO"
+  className="sc-iwsKbI bXausi"
 >
   <div
-    className="sc-htpNat KtFsv"
+    className="sc-bdVaJa bDWFJH"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     >
       <div>
         <div
-          className="sc-bxivhb bUZGRr"
+          className="sc-bwzfXH uTxCW"
         >
           <h2
             id="headerTitle"
@@ -114,10 +114,10 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
       }
     >
       <div
-        className="sc-ifAKCX cFlEyZ"
+        className="sc-htpNat KtFsv"
       >
         <div
-          className="sc-bxivhb bUZGRr"
+          className="sc-bwzfXH uTxCW"
         >
           <h2
             id="headerTitle"
@@ -150,16 +150,16 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-EHOje qQtBf"
+        className="sc-bxivhb fxvYgT"
       >
         <ul
-          className="sc-bZQynM sc-gzVnrw JqJZP"
+          className="sc-ifAKCX sc-EHOje bVzUGK"
         />
         <ul
-          className="sc-bZQynM sc-htoDjs LPVfx"
+          className="sc-ifAKCX sc-bZQynM hRyDTQ"
         >
           <li
-            className="sc-dnqmqq sc-gZMcBi dhrkCt"
+            className="sc-gzVnrw sc-dnqmqq fqeVkK"
           >
             <a
               href="/project/view/1"
@@ -213,10 +213,10 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-chPdSV bLdZVA"
+    className="sc-VigVT hCQrBU"
   >
     <li
-      className="sc-cSHVUG cmjBKw"
+      className="sc-gZMcBi cROwdS"
     >
       <div
         style={
@@ -241,24 +241,24 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           }
         >
           <div
-            className="sc-ckVGcZ dOnArN"
+            className="sc-kAzzGY hgAccu"
           >
             <ul
-              className="sc-eHgmQL gyoCRu"
+              className="sc-eNQAEJ kScmzq"
             >
               <li
-                className="sc-cvbbAY cdVCef"
+                className="sc-hMqMXs cykgnc"
               >
                 3 months ago
               </li>
               <li
-                className="sc-cvbbAY cdVCef"
+                className="sc-hMqMXs cykgnc"
               >
                 firstName lastName
               </li>
             </ul>
             <div
-              className="sc-jKJlTe euAxcs"
+              className="sc-chPdSV jwVupa"
             >
               <svg
                 style={
@@ -298,18 +298,18 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           name
         </h1>
         <div
-          className="sc-kgoBCf ikpBEj"
+          className="sc-jTzLTM hsNKrf"
         >
           <div
-            className="sc-kGXeez jkxADl"
+            className="sc-fjdhpX kEvzkS"
           >
             <span
-              className="sc-kpOJdX YSFHw"
+              className="sc-jzJRlG jAspuY"
             >
               Source
             </span>
             <span
-              className="sc-dxgOiQ gVVzkJ"
+              className="sc-cSHVUG fRgsza"
             >
               <svg
                 style={
@@ -329,57 +329,57 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             </span>
           </div>
           <div
-            className="sc-kGXeez jkxADl"
+            className="sc-fjdhpX kEvzkS"
           >
             <span
-              className="sc-kpOJdX YSFHw"
+              className="sc-jzJRlG jAspuY"
             >
               Items
             </span>
             <span
-              className="sc-dxgOiQ gVVzkJ"
+              className="sc-cSHVUG fRgsza"
             >
               246
             </span>
           </div>
           <div
-            className="sc-kGXeez jkxADl"
+            className="sc-fjdhpX kEvzkS"
           >
             <span
-              className="sc-kpOJdX YSFHw"
+              className="sc-jzJRlG jAspuY"
             >
               Fields
             </span>
             <span
-              className="sc-dxgOiQ gVVzkJ"
+              className="sc-cSHVUG fRgsza"
             >
               11
             </span>
           </div>
           <div
-            className="sc-kGXeez jkxADl"
+            className="sc-fjdhpX kEvzkS"
           >
             <span
-              className="sc-kpOJdX YSFHw"
+              className="sc-jzJRlG jAspuY"
             >
               Filters
             </span>
             <span
-              className="sc-dxgOiQ gVVzkJ"
+              className="sc-cSHVUG fRgsza"
             >
               —
             </span>
           </div>
           <div
-            className="sc-kGXeez jkxADl"
+            className="sc-fjdhpX kEvzkS"
           >
             <span
-              className="sc-kpOJdX YSFHw"
+              className="sc-jzJRlG jAspuY"
             >
               Views
             </span>
             <span
-              className="sc-dxgOiQ gVVzkJ"
+              className="sc-cSHVUG fRgsza"
             >
               —
             </span>
@@ -389,7 +389,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     </li>
   </div>
   <div
-    className="sc-kEYyzF eAocbx"
+    className="sc-kpOJdX heJlUh"
   >
     <button
       onClick={[Function]}
