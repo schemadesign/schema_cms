@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { FileUpload } from '../fileUpload.component';
+import { FileUploadComponent } from '../fileUpload.component';
 
 describe('FileUpload: Component', () => {
   const defaultProps = {
     id: 'id',
   };
-  const component = props => <FileUpload {...defaultProps} {...props} />;
+  const component = props => <FileUploadComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

@@ -157,7 +157,7 @@ exports[`Storyshots Project/View default 1`] = `
             className="sc-bZQynM sc-gzVnrw JqJZP"
           >
             <li
-              className="sc-dnqmqq sc-iwsKbI fMmDkV"
+              className="sc-dnqmqq sc-iwsKbI hQCJEI"
             >
               <a
                 href="/project/view/100/datasource"
@@ -172,7 +172,7 @@ exports[`Storyshots Project/View default 1`] = `
             className="sc-bZQynM sc-htoDjs LPVfx"
           >
             <li
-              className="sc-dnqmqq sc-gZMcBi dhrkCt"
+              className="sc-dnqmqq sc-gZMcBi iSOFEL"
             >
               <a
                 href="/project/edit/100"
@@ -183,7 +183,7 @@ exports[`Storyshots Project/View default 1`] = `
               </a>
             </li>
             <li
-              className="sc-dnqmqq sc-gZMcBi dhrkCt"
+              className="sc-dnqmqq sc-gZMcBi iSOFEL"
             >
               <a
                 href="/project/delete/100"
@@ -194,7 +194,7 @@ exports[`Storyshots Project/View default 1`] = `
               </a>
             </li>
             <li
-              className="sc-dnqmqq sc-gZMcBi dhrkCt"
+              className="sc-dnqmqq sc-gZMcBi iSOFEL"
             >
               <a
                 href="/logout"
@@ -262,7 +262,7 @@ exports[`Storyshots Project/View default 1`] = `
               Object {
                 "backgroundColor": "#1d1d20",
                 "borderTop": "2px solid #FFF",
-                "color": "#fff",
+                "color": "#FFF",
                 "cursor": "pointer",
                 "display": "flex",
                 "flexDirection": "column",
@@ -274,7 +274,7 @@ exports[`Storyshots Project/View default 1`] = `
             <div
               style={
                 Object {
-                  "color": "#a6a7aa",
+                  "color": undefined,
                   "fontSize": "12px",
                   "marginBottom": "14px",
                 }
@@ -298,7 +298,7 @@ exports[`Storyshots Project/View default 1`] = `
               Object {
                 "backgroundColor": "#1d1d20",
                 "borderTop": "2px solid #FFF",
-                "color": "#fff",
+                "color": "#FFF",
                 "cursor": "pointer",
                 "display": "flex",
                 "flexDirection": "column",
@@ -310,7 +310,7 @@ exports[`Storyshots Project/View default 1`] = `
             <div
               style={
                 Object {
-                  "color": "#a6a7aa",
+                  "color": undefined,
                   "fontSize": "12px",
                   "marginBottom": "14px",
                 }
@@ -330,18 +330,18 @@ exports[`Storyshots Project/View default 1`] = `
         className="sc-fYxtnH bMoNws"
       >
         <li
-          className="sc-tilXH wByzn"
+          className="sc-tilXH DwAdV"
         >
           <div
             className="sc-hEsumM kjJqII"
           >
             <span
-              className="sc-ktHwxA ibIuZF"
+              className="sc-ktHwxA cOlXox"
             >
               Last Update
             </span>
             <span
-              className="sc-kafWEX hWTcBQ"
+              className="sc-kafWEX jKsPrq"
             >
               3 months ago
             </span>
@@ -367,18 +367,18 @@ exports[`Storyshots Project/View default 1`] = `
           </div>
         </li>
         <li
-          className="sc-tilXH wByzn"
+          className="sc-tilXH DwAdV"
         >
           <div
             className="sc-hEsumM kjJqII"
           >
             <span
-              className="sc-ktHwxA ibIuZF"
+              className="sc-ktHwxA cOlXox"
             >
               Status
             </span>
             <span
-              className="sc-kafWEX hWTcBQ"
+              className="sc-kafWEX jKsPrq"
             >
               Status
             </span>
@@ -404,18 +404,18 @@ exports[`Storyshots Project/View default 1`] = `
           </div>
         </li>
         <li
-          className="sc-tilXH wByzn"
+          className="sc-tilXH DwAdV"
         >
           <div
             className="sc-hEsumM kjJqII"
           >
             <span
-              className="sc-ktHwxA ibIuZF"
+              className="sc-ktHwxA cOlXox"
             >
               Owner
             </span>
             <span
-              className="sc-kafWEX hWTcBQ"
+              className="sc-kafWEX jKsPrq"
             >
               Firstname Lastname
             </span>
@@ -441,18 +441,18 @@ exports[`Storyshots Project/View default 1`] = `
           </div>
         </li>
         <li
-          className="sc-tilXH wByzn"
+          className="sc-tilXH DwAdV"
         >
           <div
             className="sc-hEsumM kjJqII"
           >
             <span
-              className="sc-ktHwxA ibIuZF"
+              className="sc-ktHwxA cOlXox"
             >
               Title
             </span>
             <span
-              className="sc-kafWEX hWTcBQ"
+              className="sc-kafWEX jKsPrq"
             >
               Project Name
             </span>
@@ -478,18 +478,18 @@ exports[`Storyshots Project/View default 1`] = `
           </div>
         </li>
         <li
-          className="sc-tilXH wByzn"
+          className="sc-tilXH DwAdV"
         >
           <div
             className="sc-hEsumM kjJqII"
           >
             <span
-              className="sc-ktHwxA ibIuZF"
+              className="sc-ktHwxA cOlXox"
             >
               Description
             </span>
             <span
-              className="sc-kafWEX hWTcBQ"
+              className="sc-kafWEX jKsPrq"
             >
               Description
             </span>
@@ -515,18 +515,18 @@ exports[`Storyshots Project/View default 1`] = `
           </div>
         </li>
         <li
-          className="sc-tilXH wByzn"
+          className="sc-tilXH DwAdV"
         >
           <div
             className="sc-hEsumM kjJqII"
           >
             <span
-              className="sc-ktHwxA ibIuZF"
+              className="sc-ktHwxA cOlXox"
             >
               API
             </span>
             <span
-              className="sc-kafWEX hWTcBQ"
+              className="sc-kafWEX jKsPrq"
             >
               schemacms/api/project_title
             </span>
@@ -749,7 +749,7 @@ exports[`Storyshots Project/View empty 1`] = `
             className="sc-bZQynM sc-htoDjs LPVfx"
           >
             <li
-              className="sc-dnqmqq sc-gZMcBi dhrkCt"
+              className="sc-dnqmqq sc-gZMcBi iSOFEL"
             >
               <a
                 href="/logout"

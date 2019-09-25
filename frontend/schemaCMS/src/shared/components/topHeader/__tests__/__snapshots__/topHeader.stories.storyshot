@@ -153,7 +153,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         className="sc-bZQynM sc-gzVnrw JqJZP"
       >
         <li
-          className="sc-dnqmqq sc-iwsKbI fMmDkV"
+          className="sc-dnqmqq sc-iwsKbI hQCJEI"
         >
           <a
             href="/path"
@@ -164,7 +164,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-dnqmqq sc-iwsKbI fMmDkV"
+          className="sc-dnqmqq sc-iwsKbI hQCJEI"
         >
           <a
             href="/path"
@@ -179,7 +179,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         className="sc-bZQynM sc-htoDjs LPVfx"
       >
         <li
-          className="sc-dnqmqq sc-gZMcBi dhrkCt"
+          className="sc-dnqmqq sc-gZMcBi iSOFEL"
         >
           <a
             href="/logout"
@@ -190,7 +190,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-dnqmqq sc-gZMcBi dhrkCt"
+          className="sc-dnqmqq sc-gZMcBi iSOFEL"
           id="id"
           onClick={[Function]}
         >

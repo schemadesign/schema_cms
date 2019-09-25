@@ -29,10 +29,10 @@ exports[`Storyshots Shared Components/PillButtons Default 1`] = `
   <button
     style={
       Object {
-        "backgroundColor": "#1d1d20",
+        "backgroundColor": "#FFF",
         "border": "none",
         "borderRadius": "48px",
-        "color": "#FFF",
+        "color": "#000",
         "cursor": "pointer",
         "display": "inline-block",
         "fill": "#FFF",
