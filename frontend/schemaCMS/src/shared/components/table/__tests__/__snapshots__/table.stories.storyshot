@@ -1,0 +1,434 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Shared Components/Table Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-jAaTju daAYrj"
+  >
+    <table
+      className="sc-jDwBTQ lsgth"
+    >
+      <tbody
+        className="sc-iRbamj blSEcj"
+      >
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            US
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Washington, D.C.
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            USA
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            PL
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Warsaw
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Poland
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            DE
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Berlin
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Germany
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            FR
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Paris
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            France
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            ES
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Madird
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Spain
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components/Table with header 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-jAaTju daAYrj"
+  >
+    <table
+      className="sc-jDwBTQ lsgth"
+    >
+      <thead
+        className="sc-gPEVay eQYmiW"
+      >
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <th
+            className="sc-csuQGl kOveJF"
+          >
+            Code
+          </th>
+          <th
+            className="sc-csuQGl kOveJF"
+          >
+            Capital
+          </th>
+          <th
+            className="sc-csuQGl kOveJF"
+          >
+            Country
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className="sc-iRbamj blSEcj"
+      >
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            US
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Washington, D.C.
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            USA
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            PL
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Warsaw
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Poland
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            DE
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Berlin
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Germany
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            FR
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Paris
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            France
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            ES
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Madird
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Spain
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-jAaTju daAYrj"
+  >
+    <table
+      className="sc-jDwBTQ lsgth"
+    >
+      <thead
+        className="sc-gPEVay eQYmiW"
+      >
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <th
+            className="sc-csuQGl kOveJF"
+          >
+            #
+          </th>
+          <th
+            className="sc-csuQGl kOveJF"
+          >
+            Code
+          </th>
+          <th
+            className="sc-csuQGl kOveJF"
+          >
+            Capital
+          </th>
+          <th
+            className="sc-csuQGl kOveJF"
+          >
+            Country
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className="sc-iRbamj blSEcj"
+      >
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-Rmtcm gmfnVi"
+          >
+            1
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            US
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Washington, D.C.
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            USA
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-Rmtcm gmfnVi"
+          >
+            2
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            PL
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Warsaw
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Poland
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-Rmtcm gmfnVi"
+          >
+            3
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            DE
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Berlin
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Germany
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-Rmtcm gmfnVi"
+          >
+            4
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            FR
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Paris
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            France
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-Rmtcm gmfnVi"
+          >
+            5
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            ES
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Madird
+          </td>
+          <td
+            className="sc-gipzik tJPSi"
+          >
+            Spain
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

@@ -5,7 +5,7 @@ import { Button, Icons } from 'schemaUI';
 import { isEmpty } from 'ramda';
 
 import { Loader } from '../../../../shared/components/loader';
-import { PreviewTable } from './previewTable';
+import { Table } from '../../../../shared/components/table';
 import { Details } from './details';
 import messages from './fields.messages';
 import {
@@ -65,6 +65,27 @@ export class Fields extends PureComponent {
     this.props.unmountFields();
   }
 
+  prepareTableData() {
+    const columnsIds = Object.keys(this.props.fields);
+    const rows = [];
+
+    this.props.previewTable.forEach(data => {
+      const row = [];
+
+      columnsIds.forEach(name => {
+        row.push(data[name] || '');
+      });
+
+      rows.push(row);
+    });
+
+    return {
+      header: columnsIds,
+      rows,
+      numberedRows: true,
+    };
+  }
+
   handleNavigation = direction => {
     const { step, countFields } = this.state;
     const updatedStep = step + direction;
@@ -108,11 +129,7 @@ export class Fields extends PureComponent {
     );
   }
 
-  renderTable() {
-    const { fields, previewTable } = this.props;
-
-    return <PreviewTable fields={fields} data={previewTable} />;
-  }
+  renderTable = () => <Table {...this.prepareTableData()} />;
 
   renderFieldDetails() {
     const { step, fieldsIds } = this.state;

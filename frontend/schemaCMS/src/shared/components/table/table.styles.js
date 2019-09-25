@@ -7,7 +7,7 @@ export const TableWrapper = styled.div`
   padding-bottom: 10px;
 `;
 
-export const Table = styled.table`
+export const TableElement = styled.table`
   border-collapse: collapse;
 `;
 
