@@ -20,7 +20,7 @@ from aws_cdk import (
 )
 
 DB_NAME = "gistdb"
-S3_BUCKET_NAME = "schemacms"
+APP_S3_BUCKET_NAME = "schemacms"
 
 INSTALLATION_MODE_CONTEXT_KEY = "installation_mode"
 DOMAIN_NAME_CONTEXT_KEY = "domain_name"
@@ -82,6 +82,7 @@ class BaseResources(core.Stack):
             delete_automated_backups=True,
         )
         self.db_secret_rotation = self.db.add_rotation_single_user("db-rotation")
+        self.app_bucket = aws_s3.Bucket(self, APP_S3_BUCKET_NAME)
 
 
 class CertsStack(core.Stack):
@@ -178,8 +179,6 @@ class API(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        aws_s3.Bucket(self, S3_BUCKET_NAME)
-
         self.djangoSecret = aws_secretsmanager.Secret(self, "django-secret")
         django_secret_key = aws_ecs.Secret.from_secrets_manager(self.djangoSecret)
         connection_secret_key = aws_ecs.Secret.from_secrets_manager(scope.base.db.secret)
@@ -228,7 +227,7 @@ class API(core.Stack):
             environment={
                 "WORKER_STM_ARN": scope.workers.worker_state_machine.state_machine_arn,
                 "POSTGRES_DB": DB_NAME,
-                "AWS_STORAGE_BUCKET_NAME": S3_BUCKET_NAME,
+                "AWS_STORAGE_BUCKET_NAME": APP_S3_BUCKET_NAME,
             },
             secrets={"DJANGO_SECRET_KEY": django_secret_key, "DB_CONNECTION": connection_secret_key, **env},
             cpu=256,
@@ -237,6 +236,7 @@ class API(core.Stack):
 
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
         scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
+        scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
 
         for k, v in env.items():
             self.grant_secret_access(v)
