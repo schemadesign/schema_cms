@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { withTheme } from '../../../../../.storybook/decorators';
 import { Details } from './details.component';
 
 export const defaultProps = {
@@ -22,4 +23,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Project/DataSource/View/Fields/Details', module).add('Default', () => <Details {...defaultProps} />);
+storiesOf('DataSource/View/Fields/Details', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <Details {...defaultProps} />);

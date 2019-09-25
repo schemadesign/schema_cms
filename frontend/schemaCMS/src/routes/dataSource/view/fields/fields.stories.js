@@ -78,6 +78,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Project/DataSource/View/Fields', module)
+storiesOf('DataSource/View/Fields', module)
   .addDecorator(withTheme())
   .add('Default', () => <Fields {...defaultProps} />);
