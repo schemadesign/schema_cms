@@ -127,6 +127,7 @@ exports[`List: Component should render card with draft state 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -138,6 +139,7 @@ exports[`List: Component should render card with draft state 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -216,6 +218,7 @@ exports[`List: Component should render card with error state 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -227,6 +230,7 @@ exports[`List: Component should render card with error state 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -364,6 +368,7 @@ exports[`List: Component should render card with processing state 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -375,6 +380,7 @@ exports[`List: Component should render card with processing state 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -512,6 +518,7 @@ exports[`List: Component should render card with ready for processing state 1`] 
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -523,6 +530,7 @@ exports[`List: Component should render card with ready for processing state 1`] 
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -663,6 +671,7 @@ exports[`List: Component should render correctly 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -674,6 +683,7 @@ exports[`List: Component should render correctly 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -710,6 +720,7 @@ exports[`List: Component should render empty 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}
@@ -721,6 +732,7 @@ exports[`List: Component should render empty 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "height": "60px",
+          "width": "60px",
         }
       }
       onClick={[Function]}

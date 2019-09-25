@@ -24,7 +24,7 @@ export const NavigationLabel = styled.div`
   text-align: center;
   font-size: 18px;
   font-weight: 600;
-  color: ${Theme.light.label};
+  color: ${Theme.colors.white};
 `;
 
 export const Content = styled.div``;

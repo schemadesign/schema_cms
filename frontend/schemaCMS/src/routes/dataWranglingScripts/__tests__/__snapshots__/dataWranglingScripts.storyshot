@@ -128,7 +128,15 @@ exports[`Storyshots DataWrangling Default 1`] = `
         type="checkbox"
         value="name 1"
       />
-      <span>
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
         <a
           className="sc-jlyJG aYqMe"
           href="/project/view/2/datasource/view/14/script/view/0"
@@ -219,7 +227,15 @@ exports[`Storyshots DataWrangling Default 1`] = `
         type="checkbox"
         value="name 2"
       />
-      <span>
+      <span
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
         <a
           className="sc-jlyJG aYqMe"
           href="/project/view/2/datasource/view/14/script/view/1"

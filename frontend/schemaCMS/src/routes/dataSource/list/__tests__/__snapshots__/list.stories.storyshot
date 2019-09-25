@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DataSource/List Default 1`] = `
+exports[`Storyshots Project/DataSource/List Default 1`] = `
 <div
-  className="sc-iwsKbI bXausi"
+  className="sc-jzJRlG djaKlO"
 >
   <div
-    className="sc-bdVaJa bDWFJH"
+    className="sc-htpNat KtFsv"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots DataSource/List Default 1`] = `
     >
       <div>
         <div
-          className="sc-bwzfXH uTxCW"
+          className="sc-bxivhb bUZGRr"
         >
           <h2
             id="headerTitle"
@@ -114,10 +114,10 @@ exports[`Storyshots DataSource/List Default 1`] = `
       }
     >
       <div
-        className="sc-htpNat KtFsv"
+        className="sc-ifAKCX cFlEyZ"
       >
         <div
-          className="sc-bwzfXH uTxCW"
+          className="sc-bxivhb bUZGRr"
         >
           <h2
             id="headerTitle"
@@ -150,16 +150,16 @@ exports[`Storyshots DataSource/List Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bxivhb fxvYgT"
+        className="sc-EHOje qQtBf"
       >
         <ul
-          className="sc-ifAKCX sc-EHOje bVzUGK"
+          className="sc-bZQynM sc-gzVnrw JqJZP"
         />
         <ul
-          className="sc-ifAKCX sc-bZQynM hRyDTQ"
+          className="sc-bZQynM sc-htoDjs LPVfx"
         >
           <li
-            className="sc-gzVnrw sc-dnqmqq fqeVkK"
+            className="sc-dnqmqq sc-gZMcBi dhrkCt"
           >
             <a
               href="/project/view/1"
@@ -213,16 +213,16 @@ exports[`Storyshots DataSource/List Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-VigVT hCQrBU"
+    className="sc-chPdSV bLdZVA"
   >
     <li
-      className="sc-gZMcBi dFerLZ"
+      className="sc-cSHVUG cmjBKw"
     >
       <div
         style={
           Object {
             "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #1d1d20",
+            "borderTop": "2px solid #FFF",
             "color": "#fff",
             "display": "flex",
             "flexDirection": "column",
@@ -241,24 +241,24 @@ exports[`Storyshots DataSource/List Default 1`] = `
           }
         >
           <div
-            className="sc-kAzzGY hgAccu"
+            className="sc-ckVGcZ dOnArN"
           >
             <ul
-              className="sc-eNQAEJ kScmzq"
+              className="sc-eHgmQL gyoCRu"
             >
               <li
-                className="sc-hMqMXs cykgnc"
+                className="sc-cvbbAY cdVCef"
               >
                 3 months ago
               </li>
               <li
-                className="sc-hMqMXs cykgnc"
+                className="sc-cvbbAY cdVCef"
               >
                 firstName lastName
               </li>
             </ul>
             <div
-              className="sc-chPdSV jwVupa"
+              className="sc-jKJlTe euAxcs"
             >
               <svg
                 style={
@@ -298,18 +298,18 @@ exports[`Storyshots DataSource/List Default 1`] = `
           name
         </h1>
         <div
-          className="sc-jTzLTM hsNKrf"
+          className="sc-kgoBCf ikpBEj"
         >
           <div
-            className="sc-fjdhpX kEvzkS"
+            className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-jzJRlG jAspuY"
+              className="sc-kpOJdX YSFHw"
             >
               Source
             </span>
             <span
-              className="sc-cSHVUG fRgsza"
+              className="sc-dxgOiQ gVVzkJ"
             >
               <svg
                 style={
@@ -329,57 +329,57 @@ exports[`Storyshots DataSource/List Default 1`] = `
             </span>
           </div>
           <div
-            className="sc-fjdhpX kEvzkS"
+            className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-jzJRlG jAspuY"
+              className="sc-kpOJdX YSFHw"
             >
               Items
             </span>
             <span
-              className="sc-cSHVUG fRgsza"
+              className="sc-dxgOiQ gVVzkJ"
             >
               246
             </span>
           </div>
           <div
-            className="sc-fjdhpX kEvzkS"
+            className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-jzJRlG jAspuY"
+              className="sc-kpOJdX YSFHw"
             >
               Fields
             </span>
             <span
-              className="sc-cSHVUG fRgsza"
+              className="sc-dxgOiQ gVVzkJ"
             >
               11
             </span>
           </div>
           <div
-            className="sc-fjdhpX kEvzkS"
+            className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-jzJRlG jAspuY"
+              className="sc-kpOJdX YSFHw"
             >
               Filters
             </span>
             <span
-              className="sc-cSHVUG fRgsza"
+              className="sc-dxgOiQ gVVzkJ"
             >
               —
             </span>
           </div>
           <div
-            className="sc-fjdhpX kEvzkS"
+            className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-jzJRlG jAspuY"
+              className="sc-kpOJdX YSFHw"
             >
               Views
             </span>
             <span
-              className="sc-cSHVUG fRgsza"
+              className="sc-dxgOiQ gVVzkJ"
             >
               —
             </span>
@@ -389,7 +389,7 @@ exports[`Storyshots DataSource/List Default 1`] = `
     </li>
   </div>
   <div
-    className="sc-kpOJdX iEibGy"
+    className="sc-kEYyzF eAocbx"
   >
     <button
       onClick={[Function]}
@@ -408,6 +408,7 @@ exports[`Storyshots DataSource/List Default 1`] = `
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "width": "60px",
         }
       }
     >
@@ -443,6 +444,7 @@ exports[`Storyshots DataSource/List Default 1`] = `
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "width": "60px",
         }
       }
     >

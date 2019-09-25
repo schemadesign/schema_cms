@@ -14,7 +14,7 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
         },
         "card": Object {
           "background": "#f0efef",
-          "border": "#FFF",
+          "border": "#000",
           "label": "#71737e",
           "text": "#FFF",
         },

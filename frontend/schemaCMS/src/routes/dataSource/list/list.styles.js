@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const DataSourceItem = styled.li`
-  margin-top: 10px;
+  margin-top: 25px;
 
   &:first-child {
     margin-top: 0;
@@ -86,7 +86,7 @@ export const ButtonsContainer = styled.div`
   position: fixed;
   bottom: 0;
   padding: 50px 0 24px;
-  background: ${Theme.light.body};
+  background-image: linear-gradient(to top, ${Theme.colors.black}, rgba(0, 0, 0, 0));
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,6 +100,7 @@ export const lockTextStyles = {
 export const buttonStyles = {
   backgroundColor: Theme.dark.background,
   height: '60px',
+  width: '60px',
 };
 
 export const iconSourceStyles = {
