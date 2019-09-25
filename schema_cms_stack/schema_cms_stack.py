@@ -227,7 +227,7 @@ class API(core.Stack):
             environment={
                 "WORKER_STM_ARN": scope.workers.worker_state_machine.state_machine_arn,
                 "POSTGRES_DB": DB_NAME,
-                "AWS_STORAGE_BUCKET_NAME": APP_S3_BUCKET_NAME,
+                "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
             },
             secrets={"DJANGO_SECRET_KEY": django_secret_key, "DB_CONNECTION": connection_secret_key, **env},
             cpu=256,
