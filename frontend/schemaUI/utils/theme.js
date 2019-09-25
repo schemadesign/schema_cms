@@ -15,8 +15,6 @@ const colors = {
   text: '#1d1d20',
   error: '#f21e29',
   active: '#1d1d20',
-  divider: '#F0EFEF',
-  iconDark: '#1d1d20',
   iconBright: '#FFF',
 };
 
@@ -72,14 +70,24 @@ const light = {
     background: colors.veryLightPink,
     fill: colors.darkGrey,
   },
+  table: {
+    border: {
+      body: colors.veryLightPink,
+      header: colors.white,
+    },
+    background: {
+      body: colors.white,
+      header: colors.veryLightPink,
+    },
+    text: {
+      body: colors.black,
+      header: colors.coolGray,
+    },
+  },
   background: '#f0efef',
   border: '#1d1d20',
   text: '#1d1d20',
-  error: '#f21e29',
-  active: '#1d1d20',
-  divider: '#F0EFEF',
-  iconDark: '#1d1d20',
-  iconBright: '#FFF',
+  colors,
 };
 
 const dark = {
@@ -133,14 +141,24 @@ const dark = {
     background: colors.darkGrey,
     fill: colors.white,
   },
+  table: {
+    border: {
+      body: colors.darkGrey,
+      header: colors.black,
+    },
+    background: {
+      body: colors.black,
+      header: colors.darkGrey,
+    },
+    text: {
+      body: colors.white,
+      header: colors.lightGrey,
+    },
+  },
   background: '#1d1d20',
   border: '#1d1d20',
   text: '#fff',
-  error: '#f21e29',
-  active: '#1d1d20',
-  divider: '#F0EFEF',
-  iconDark: '#1d1d20',
-  iconBright: '#FFF',
+  colors,
 };
 
 const INTER_FONT = 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';
