@@ -68,7 +68,6 @@ exports[`List: Component should render correctly 1`] = `
         <Span
           customStyles={
             Object {
-              "color": "#fff",
               "display": "block",
               "fontSize": "12px",
               "overflow": "hidden",
@@ -130,7 +129,6 @@ exports[`List: Component should render correctly 1`] = `
         <Span
           customStyles={
             Object {
-              "color": "#fff",
               "display": "block",
               "fontSize": "12px",
               "overflow": "hidden",
@@ -149,7 +147,6 @@ exports[`List: Component should render correctly 1`] = `
   <Component
     customStyles={
       Object {
-        "backgroundColor": "#1d1d20",
         "bottom": "24px",
         "height": "60px",
         "position": "fixed",

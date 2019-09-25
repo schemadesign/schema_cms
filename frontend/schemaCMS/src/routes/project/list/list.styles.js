@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Theme } from 'schemaUI';
 
 export const Container = styled.div`
   margin: 0 20px 60px 20px;
@@ -45,7 +44,6 @@ export const Description = styled.div`
 `;
 
 export const urlStyles = {
-  color: Theme.dark.text,
   fontSize: '12px',
   whiteSpace: 'nowrap',
   display: 'block',
@@ -62,6 +60,5 @@ export const addProjectStyles = {
   position: 'fixed',
   right: '20px',
   bottom: '24px',
-  backgroundColor: Theme.dark.background,
   height: '60px',
 };

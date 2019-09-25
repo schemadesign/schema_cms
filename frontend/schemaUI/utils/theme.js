@@ -7,17 +7,9 @@ const colors = {
   coolGray: '#a6a7aa',
   mediumGray: '#2F2F36',
   red: '#f21e29',
-  body: '#FFF',
-  bodyDark: '#000',
-  background: '#f0efef',
-  label: '#a6a7aa',
-  border: '#1d1d20',
-  text: '#1d1d20',
-  active: '#1d1d20',
 };
 
 const light = {
-  name: 'light',
   button: {
     background: colors.veryLightPink,
     text: colors.black,
@@ -59,7 +51,7 @@ const light = {
     error: colors.red,
   },
   header: {
-    text: colors.white,
+    text: colors.darkGrey,
   },
   menu: {
     background: colors.white,
@@ -87,15 +79,15 @@ const light = {
       header: colors.coolGray,
     },
   },
-  background: '#f0efef',
-  border: '#1d1d20',
-  text: '#1d1d20',
-  error: '#f21e29',
+  background: colors.white,
+  border: colors.veryLightPink,
+  text: colors.darkGrey,
+  secondaryText: colors.coolGray,
+  error: colors.red,
   colors,
 };
 
 const dark = {
-  name: 'dark',
   button: {
     background: colors.darkGrey,
     text: colors.white,
@@ -110,7 +102,7 @@ const dark = {
     background: colors.darkGrey,
   },
   providerContainer: {
-    backgroundColor: colors.bodyDark,
+    backgroundColor: colors.black,
     minHeight: '100vh',
   },
   dataGrid: {
@@ -164,9 +156,10 @@ const dark = {
       header: colors.lightGrey,
     },
   },
-  background: '#1d1d20',
-  border: '#1d1d20',
-  text: '#fff',
+  background: colors.black,
+  border: colors.mediumGray,
+  text: colors.white,
+  secondaryText: colors.lightGrey,
   colors,
 };
 

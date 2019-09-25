@@ -8,7 +8,7 @@ exports[`Card: Component should render children when passed in 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "borderTop": "2px solid #FFF",
-          "color": "#fff",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "column",
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -82,7 +82,7 @@ exports[`Card: Component should render component  with custom style and with hea
       <div
         style={
           Object {
-            "color": "#a6a7aa",
+            "color": undefined,
             "fontSize": "12px",
             "marginBottom": "14px",
           }
@@ -116,7 +116,7 @@ exports[`Card: Component should render correctly 1`] = `
         Object {
           "backgroundColor": "#1d1d20",
           "borderTop": "2px solid #FFF",
-          "color": "#fff",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "column",
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",

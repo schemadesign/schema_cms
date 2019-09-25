@@ -159,7 +159,7 @@ exports[`Storyshots Project/List empty 1`] = `
           className="sc-bZQynM sc-htoDjs LPVfx"
         >
           <li
-            className="sc-dnqmqq sc-gZMcBi dhrkCt"
+            className="sc-dnqmqq sc-gZMcBi iSOFEL"
           >
             <a
               href="/logout"
@@ -432,7 +432,7 @@ exports[`Storyshots Project/List list 1`] = `
           className="sc-bZQynM sc-htoDjs LPVfx"
         >
           <li
-            className="sc-dnqmqq sc-gZMcBi dhrkCt"
+            className="sc-dnqmqq sc-gZMcBi iSOFEL"
           >
             <a
               href="/logout"
@@ -496,7 +496,7 @@ exports[`Storyshots Project/List list 1`] = `
           Object {
             "backgroundColor": "#1d1d20",
             "borderTop": "2px solid #FFF",
-            "color": "#fff",
+            "color": "#FFF",
             "display": "flex",
             "flexDirection": "column",
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -507,7 +507,7 @@ exports[`Storyshots Project/List list 1`] = `
         <div
           style={
             Object {
-              "color": "#a6a7aa",
+              "color": undefined,
               "fontSize": "12px",
               "marginBottom": "14px",
             }
@@ -576,7 +576,6 @@ exports[`Storyshots Project/List list 1`] = `
           id="apiPath-0"
           style={
             Object {
-              "color": "#fff",
               "display": "block",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "12px",
@@ -599,7 +598,7 @@ exports[`Storyshots Project/List list 1`] = `
           Object {
             "backgroundColor": "#1d1d20",
             "borderTop": "2px solid #FFF",
-            "color": "#fff",
+            "color": "#FFF",
             "display": "flex",
             "flexDirection": "column",
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -610,7 +609,7 @@ exports[`Storyshots Project/List list 1`] = `
         <div
           style={
             Object {
-              "color": "#a6a7aa",
+              "color": undefined,
               "fontSize": "12px",
               "marginBottom": "14px",
             }
@@ -679,7 +678,6 @@ exports[`Storyshots Project/List list 1`] = `
           id="apiPath-1"
           style={
             Object {
-              "color": "#fff",
               "display": "block",
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               "fontSize": "12px",
