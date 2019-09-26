@@ -1010,10 +1010,10 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#1d1d20",
+            "backgroundColor": "#FFF",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#fff",
+            "color": "#000",
             "cursor": "pointer",
             "display": "inline-block",
             "fill": "#FFF",
