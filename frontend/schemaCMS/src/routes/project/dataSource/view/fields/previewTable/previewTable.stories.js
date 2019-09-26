@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
 import { Theme } from 'schemaUI';
 
+import { withTheme } from '../../../../../../.storybook/decorators';
 import { PreviewTable } from './previewTable.component';
 
 export const tableProps = {
@@ -65,5 +65,5 @@ export const tableProps = {
 };
 
 storiesOf('Project/DataSource/View/Fields/PreviewTable', module)
-  .addDecorator(storyFn => <ThemeProvider theme={Theme.light}>{storyFn()}</ThemeProvider>)
+  .addDecorator(withTheme(Theme.light))
   .add('Default', () => <PreviewTable {...tableProps} />);
