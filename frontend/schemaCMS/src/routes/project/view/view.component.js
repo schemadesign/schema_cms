@@ -37,6 +37,7 @@ export class View extends PureComponent {
     project: PropTypes.object.isRequired,
     fetchProject: PropTypes.func.isRequired,
     unmountProject: PropTypes.func.isRequired,
+    removeProject: PropTypes.func.isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }),
@@ -49,7 +50,7 @@ export class View extends PureComponent {
   };
 
   componentDidMount() {
-    this.props.fetchProject(this.props.match.params.projectId);
+    this.props.fetchProject(this.props.match.params);
   }
 
   componentWillUnmount() {
@@ -69,7 +70,10 @@ export class View extends PureComponent {
       if (isAdmin(this.props.user)) {
         secondaryMenuItems.push(
           { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
-          { label: this.formatMessage(messages.deleteProject), to: `/project/delete/${projectId}` }
+          {
+            label: this.formatMessage(messages.deleteProject),
+            onClick: () => this.props.removeProject(this.props.match.params),
+          }
         );
       }
     }

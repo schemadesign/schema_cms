@@ -30,6 +30,6 @@ describe('View: Component', () => {
 
     await render(props);
 
-    expect(fetchProject).to.have.been.calledWith(projectId);
+    expect(fetchProject).to.have.been.calledWith({ projectId });
   });
 });

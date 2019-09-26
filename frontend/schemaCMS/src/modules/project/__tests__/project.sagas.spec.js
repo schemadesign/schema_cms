@@ -6,7 +6,7 @@ import { BAD_REQUEST, OK } from 'http-status-codes';
 import mockApi from '../../../shared/utils/mockApi';
 import { PROJECTS_PATH } from '../../../shared/utils/api.constants';
 import { watchProject } from '../project.sagas';
-import { ProjectActions, ProjectRoutines } from '../project.redux';
+import { ProjectRoutines } from '../project.redux';
 import { PROJECT_DESCRIPTION, PROJECT_OWNER, PROJECT_TITLE } from '../project.constants';
 import { selectUserData } from '../../userProfile';
 
@@ -52,8 +52,8 @@ describe('Project: sagas', () => {
     it('should put fetchListSuccess action', async () => {
       await expectSaga(watchProject)
         .withState(defaultState)
-        .put(ProjectActions.fetchListSuccess([item]))
-        .dispatch(ProjectActions.fetchList())
+        .put(ProjectRoutines.fetchList.success([item]))
+        .dispatch(ProjectRoutines.fetchList())
         .silentRun();
     });
   });
@@ -63,12 +63,12 @@ describe('Project: sagas', () => {
       await expectSaga(watchProject)
         .withState(defaultState)
         .put(
-          ProjectActions.fetchOneSuccess({
+          ProjectRoutines.fetchOne.success({
             ...item,
             ...extenedProjectData,
           })
         )
-        .dispatch(ProjectActions.fetchOne('1'))
+        .dispatch(ProjectRoutines.fetchOne({ projectId: '1' }))
         .silentRun();
     });
   });
@@ -92,7 +92,7 @@ describe('Project: sagas', () => {
       await expectSaga(watchProject)
         .withState(defaultState)
         .provide([[select(selectUserData), currentUser]])
-        .put(ProjectActions.createProjectSuccess(item))
+        .put(ProjectRoutines.createProject.success(item))
         .dispatch(ProjectRoutines.createProject({ payload }))
         .silentRun();
     });
