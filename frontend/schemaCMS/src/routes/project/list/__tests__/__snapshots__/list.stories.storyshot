@@ -167,7 +167,7 @@ exports[`Storyshots Project/List empty 1`] = `
             className="sc-bZQynM sc-htoDjs LPVfx"
           >
             <li
-              className="sc-dnqmqq sc-gZMcBi iSOFEL"
+              className="sc-dnqmqq sc-gZMcBi ivEbmY"
             >
               <a
                 href="/logout"
@@ -449,7 +449,7 @@ exports[`Storyshots Project/List list 1`] = `
             className="sc-bZQynM sc-htoDjs LPVfx"
           >
             <li
-              className="sc-dnqmqq sc-gZMcBi iSOFEL"
+              className="sc-dnqmqq sc-gZMcBi ivEbmY"
             >
               <a
                 href="/logout"
