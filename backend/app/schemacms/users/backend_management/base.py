@@ -8,9 +8,15 @@ class BaseUserManagement:
     def create_user(self, user: models.User):
         raise NotImplementedError
 
-    def password_change_url(self, user: models.User):
+    def password_change_url(self, user: models.User) -> str:
         raise NotImplementedError
 
     def get_user_source(self):
         """get_user_source should return one of constants.UserSource constants"""
+        raise NotImplementedError
+
+    def get_login_url(self) -> str:
+        raise NotImplementedError
+
+    def get_logout_url(self) -> str:
         raise NotImplementedError

@@ -1,8 +1,10 @@
+from django import shortcuts
 from django.utils import timezone
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from . import serializers
+from schemacms.users.backend_management import user_mgtm_backend
 
 
 class ObtainJSONWebToken(APIView):
@@ -25,4 +27,17 @@ class ObtainJSONWebToken(APIView):
         return response
 
 
+class Logout(APIView):
+    """
+    API View that redirect to auth0 logout page
+    """
+
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request, *args, **kwargs):
+        return shortcuts.redirect(user_mgtm_backend.get_logout_url())
+
+
 obtain_jwt_token = ObtainJSONWebToken.as_view()
+logout = Logout.as_view()

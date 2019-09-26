@@ -1,3 +1,5 @@
+from urllib import parse
+
 import auth0.v3
 from django import urls
 from auth0.v3 import authentication
@@ -71,6 +73,14 @@ class Auth0UserManagement(base.BaseUserManagement):
     def get_login_url(self):
         path = urls.reverse("social:begin", kwargs={"backend": "auth0"})
         return "{host}{path}".format(host=settings.DEFAULT_HOST, path=path)
+
+    def get_logout_url(self):
+        """Return logout url to auth0 logout page and then after logout redirect to
+        BE auth0 login endpoint.
+        """
+        login_url = self.get_login_url()
+        params = {'returnTo': login_url, 'client_id': settings.SOCIAL_AUTH_AUTH0_KEY}
+        return f'https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?' + parse.urlencode(params)
 
     @classmethod
     def _get_token(cls, domain):
