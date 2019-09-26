@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withRouter } from '../../.storybook/decorators';
+import { withRouter, withTheme } from '../../.storybook/decorators';
 
 import { DataWranglingScripts } from './dataWranglingScripts.component';
 
@@ -21,4 +21,5 @@ export const defaultProps = {
 
 storiesOf('DataWranglingScripts', module)
   .addDecorator(withRouter)
+  .addDecorator(withTheme())
   .add('Default', () => <DataWranglingScripts {...defaultProps} />);

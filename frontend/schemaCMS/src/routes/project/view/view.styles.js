@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Theme } from 'schemaUI';
 
 import { Container as DefaultContainer } from '../../../shared/components/styledComponents/container';
 
@@ -22,9 +21,9 @@ export const Details = styled.ul`
 `;
 
 export const DetailItem = styled.li`
-  color: ${Theme.light.text};
+  color: ${({ theme: { text } }) => text};
   margin-bottom: 4px;
-  border-top: 2px solid ${Theme.dark.background};
+  border-top: 2px solid ${({ theme: { border } }) => border};
   display: flex;
 `;
 
@@ -36,7 +35,7 @@ export const DetailWrapper = styled.div`
 `;
 
 export const DetailLabel = styled.span`
-  color: ${Theme.colors.lightGrey};
+  color: ${({ theme: { secondaryText } }) => secondaryText};
   margin-right: 5px;
 `;
 
@@ -45,7 +44,7 @@ export const IconEditWrapper = styled.div`
 `;
 
 export const DetailValue = styled.span`
-  color: ${Theme.dark.text};
+  color: ${({ theme: { text } }) => text};
   display: inline-block;
 `;
 
@@ -77,7 +76,6 @@ export const CardValue = styled.span`
 
 export const buttonStyles = {
   margin: '50px 0 0 0',
-  backgroundColor: Theme.dark.background,
   height: '60px',
   width: '60px',
 };

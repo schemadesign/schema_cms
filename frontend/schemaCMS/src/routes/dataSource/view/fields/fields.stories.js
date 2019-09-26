@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { Theme } from 'schemaUI';
 
 import { withTheme } from '../../../../.storybook/decorators';
 import { Fields } from './fields.component';
@@ -79,5 +80,5 @@ export const defaultProps = {
 };
 
 storiesOf('DataSource/View/Fields', module)
-  .addDecorator(withTheme())
+  .addDecorator(withTheme(Theme.light))
   .add('Default', () => <Fields {...defaultProps} />);

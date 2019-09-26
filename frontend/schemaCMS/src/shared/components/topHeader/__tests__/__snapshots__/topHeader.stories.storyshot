@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components/TopHeader Default 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-htpNat KtFsv"
 >
   <div
     style={
@@ -19,7 +19,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
   >
     <div>
       <div
-        className="sc-bwzfXH uTxCW"
+        className="sc-bxivhb bUZGRr"
       >
         <h2
           id="headerTitle"
@@ -111,10 +111,10 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
     }
   >
     <div
-      className="sc-htpNat KtFsv"
+      className="sc-ifAKCX cFlEyZ"
     >
       <div
-        className="sc-bwzfXH uTxCW"
+        className="sc-bxivhb bUZGRr"
       >
         <h2
           id="headerTitle"
@@ -147,13 +147,13 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-bxivhb fxvYgT"
+      className="sc-EHOje qQtBf"
     >
       <ul
-        className="sc-ifAKCX sc-EHOje bVzUGK"
+        className="sc-bZQynM sc-gzVnrw JqJZP"
       >
         <li
-          className="sc-gzVnrw sc-htoDjs ZTdwq"
+          className="sc-dnqmqq sc-iwsKbI hQCJEI"
         >
           <a
             href="/path"
@@ -164,7 +164,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-gzVnrw sc-htoDjs ZTdwq"
+          className="sc-dnqmqq sc-iwsKbI hQCJEI"
         >
           <a
             href="/path"
@@ -176,10 +176,10 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         </li>
       </ul>
       <ul
-        className="sc-ifAKCX sc-bZQynM hRyDTQ"
+        className="sc-bZQynM sc-htoDjs LPVfx"
       >
         <li
-          className="sc-gzVnrw sc-dnqmqq fqeVkK"
+          className="sc-dnqmqq sc-gZMcBi iSOFEL"
         >
           <a
             href="/logout"
@@ -190,7 +190,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-gzVnrw sc-dnqmqq fqeVkK"
+          className="sc-dnqmqq sc-gZMcBi iSOFEL"
           id="id"
           onClick={[Function]}
         >

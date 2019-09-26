@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Theme } from 'schemaUI';
 
 export const Container = styled.div``;
 
@@ -34,18 +33,18 @@ export const Item = styled.li`
 
   a {
     text-decoration: none;
-    color: ${Theme.dark.text};
+    color: ${({ theme }) => theme.text};
     display: block;
   }
 `;
 
 export const PrimaryItem = styled(Item)`
   font-size: 24px;
-  border-bottom: 2.4px solid ${Theme.colors.mediumGray};
+  border-bottom: 2.4px solid ${({ theme }) => theme.border};
   padding: 8px 0 13px;
 
   &:first-of-type {
-    border-top: 2.4px solid ${Theme.colors.mediumGray};
+    border-top: 2.4px solid ${({ theme }) => theme.border};
   }
 `;
 

@@ -16,34 +16,9 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       />
     </styled.div>
     <styled.div>
-      <FileUpload
+      <Component
         accept=".py"
-        customInputStyles={Object {}}
-        customLabelStyles={Object {}}
-        customStyles={Object {}}
         disabled={false}
-        iconComponent={
-          <div
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": 0,
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-              }
-            }
-          >
-            <Unknown />
-          </div>
-        }
         id="fileUpload"
         onChange={[Function]}
         type="file"

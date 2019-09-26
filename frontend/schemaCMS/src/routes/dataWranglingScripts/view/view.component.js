@@ -15,7 +15,7 @@ import { Loader } from '../../../shared/components/loader';
 import { PillButtons } from '../../../shared/components/pillButtons';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
-import { Container, Form, rightButtonStyles, customInputStyles } from './view.styles';
+import { Container, Form, customInputStyles } from './view.styles';
 import messages from './view.messages';
 
 export class View extends PureComponent {
@@ -94,7 +94,6 @@ export class View extends PureComponent {
           rightButtonProps={{
             title: intl.formatMessage(messages.ok),
             onClick: this.handleGoToDataWranglingList(match, history),
-            customStyles: rightButtonStyles,
           }}
         />
       </Fragment>

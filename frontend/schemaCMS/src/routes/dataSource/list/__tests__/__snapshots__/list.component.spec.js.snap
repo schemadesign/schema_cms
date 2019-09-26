@@ -35,10 +35,7 @@ exports[`List: Component should render card with draft state 1`] = `
         <H1
           customStyles={
             Object {
-              "color": Object {
-                "border": "#1d1d20",
-                "text": "#a6a7aa",
-              },
+              "color": "#a6a7aa",
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -61,7 +58,6 @@ exports[`List: Component should render card with draft state 1`] = `
                 customStyles={
                   Object {
                     "display": "none",
-                    "fill": "#FFF",
                     "height": 40,
                     "width": 40,
                   }
@@ -125,7 +121,6 @@ exports[`List: Component should render card with draft state 1`] = `
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -137,7 +132,6 @@ exports[`List: Component should render card with draft state 1`] = `
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -185,10 +179,7 @@ exports[`List: Component should render card with error state 1`] = `
         <H1
           customStyles={
             Object {
-              "color": Object {
-                "border": "#1d1d20",
-                "text": "#a6a7aa",
-              },
+              "color": "#a6a7aa",
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -216,7 +207,6 @@ exports[`List: Component should render card with error state 1`] = `
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -228,7 +218,6 @@ exports[`List: Component should render card with error state 1`] = `
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -276,10 +265,7 @@ exports[`List: Component should render card with processing state 1`] = `
         <H1
           customStyles={
             Object {
-              "color": Object {
-                "border": "#1d1d20",
-                "text": "#a6a7aa",
-              },
+              "color": "#a6a7aa",
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -302,7 +288,6 @@ exports[`List: Component should render card with processing state 1`] = `
                 customStyles={
                   Object {
                     "display": "none",
-                    "fill": "#FFF",
                     "height": 40,
                     "width": 40,
                   }
@@ -366,7 +351,6 @@ exports[`List: Component should render card with processing state 1`] = `
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -378,7 +362,6 @@ exports[`List: Component should render card with processing state 1`] = `
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -426,10 +409,7 @@ exports[`List: Component should render card with ready for processing state 1`] 
         <H1
           customStyles={
             Object {
-              "color": Object {
-                "border": "#1d1d20",
-                "text": "#a6a7aa",
-              },
+              "color": "#a6a7aa",
               "cursor": "pointer",
               "marginBottom": "20px",
             }
@@ -452,7 +432,6 @@ exports[`List: Component should render card with ready for processing state 1`] 
                 customStyles={
                   Object {
                     "display": "none",
-                    "fill": "#FFF",
                     "height": 40,
                     "width": 40,
                   }
@@ -516,7 +495,6 @@ exports[`List: Component should render card with ready for processing state 1`] 
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -528,7 +506,6 @@ exports[`List: Component should render card with ready for processing state 1`] 
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -605,7 +582,6 @@ exports[`List: Component should render correctly 1`] = `
               <Component
                 customStyles={
                   Object {
-                    "fill": "#FFF",
                     "height": 40,
                     "width": 40,
                   }
@@ -669,7 +645,6 @@ exports[`List: Component should render correctly 1`] = `
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -681,7 +656,6 @@ exports[`List: Component should render correctly 1`] = `
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -718,7 +692,6 @@ exports[`List: Component should render empty 1`] = `
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }
@@ -730,7 +703,6 @@ exports[`List: Component should render empty 1`] = `
     <Component
       customStyles={
         Object {
-          "backgroundColor": "#1d1d20",
           "height": "60px",
           "width": "60px",
         }

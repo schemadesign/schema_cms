@@ -24,7 +24,7 @@ export class PillButtons extends PureComponent {
         <Button {...leftProps} customStyles={leftStyles}>
           {leftTitle}
         </Button>
-        <Button {...rightProps} customStyles={rightStyles}>
+        <Button {...rightProps} inverse customStyles={rightStyles}>
           {rightTitle}
         </Button>
       </Container>

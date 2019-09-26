@@ -1,6 +1,5 @@
 import logging
 
-import django_fsm
 from django.db import transaction
 from rest_framework import decorators, exceptions, permissions, response, status, viewsets, generics, parsers
 
@@ -61,21 +60,18 @@ class DataSourceViewSet(viewsets.ModelViewSet):
 
     @decorators.action(detail=True, methods=["post"])
     def process(self, request, pk=None, **kwargs):
+        obj = self.get_object()
         try:
-            obj = self.get_object()
-            if not django_fsm.can_proceed(obj.ready_for_processing):
-                return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
             obj.ready_for_processing()
             obj.process()
             obj.done()
             obj.save()
             logging.info(f"DataSource {obj.id} processing DONE")
             return response.Response(obj.meta_data.data, status=status.HTTP_200_OK)
-
         except Exception as e:
             logging.error(f"DataSource {self.get_object().id} processing error - {e}")
-            self.get_object().status = constants.DataSourceStatus.ERROR
-            self.get_object().save()
+            obj.status = constants.DataSourceStatus.ERROR
+            obj.save()
             return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 

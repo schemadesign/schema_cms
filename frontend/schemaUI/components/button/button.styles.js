@@ -1,11 +1,11 @@
 import { defaultTheme } from '../../utils/theme';
 
-export const getStyles = (theme = defaultTheme) => ({
+export const getStyles = (theme = defaultTheme, buttonType = 'button') => ({
   containerStyles: {
     border: 'none',
-    backgroundColor: theme.button.background,
+    backgroundColor: theme[buttonType].background,
     fill: theme.icon.fill,
-    color: theme.button.text,
+    color: theme[buttonType].text,
     padding: '0',
     margin: '0',
     outline: 'none',

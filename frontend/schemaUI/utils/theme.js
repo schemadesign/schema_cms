@@ -7,21 +7,14 @@ const colors = {
   coolGray: '#a6a7aa',
   mediumGray: '#2F2F36',
   red: '#f21e29',
-  body: '#FFF',
-  bodyDark: '#000',
-  background: '#f0efef',
-  label: '#a6a7aa',
-  border: '#1d1d20',
-  text: '#1d1d20',
-  error: '#f21e29',
-  active: '#1d1d20',
-  divider: '#F0EFEF',
-  iconDark: '#1d1d20',
-  iconBright: '#FFF',
 };
 
 const light = {
   button: {
+    background: colors.veryLightPink,
+    text: colors.black,
+  },
+  inverseButton: {
     background: colors.black,
     text: colors.white,
   },
@@ -29,10 +22,10 @@ const light = {
     label: colors.lightGrey,
     text: colors.white,
     border: colors.black,
-    background: colors.background,
+    background: colors.veryLightPink,
   },
   providerContainer: {
-    backgroundColor: colors.body,
+    backgroundColor: colors.white,
     minHeight: '100vh',
   },
   dataGrid: {
@@ -58,7 +51,7 @@ const light = {
     error: colors.red,
   },
   header: {
-    text: colors.white,
+    text: colors.darkGrey,
   },
   menu: {
     background: colors.white,
@@ -72,14 +65,26 @@ const light = {
     background: colors.veryLightPink,
     fill: colors.darkGrey,
   },
-  background: '#f0efef',
-  border: '#1d1d20',
-  text: '#1d1d20',
-  error: '#f21e29',
-  active: '#1d1d20',
-  divider: '#F0EFEF',
-  iconDark: '#1d1d20',
-  iconBright: '#FFF',
+  table: {
+    border: {
+      body: colors.veryLightPink,
+      header: colors.white,
+    },
+    background: {
+      body: colors.white,
+      header: colors.veryLightPink,
+    },
+    text: {
+      body: colors.black,
+      header: colors.coolGray,
+    },
+  },
+  background: colors.white,
+  border: colors.veryLightPink,
+  text: colors.darkGrey,
+  secondaryText: colors.coolGray,
+  error: colors.red,
+  colors,
 };
 
 const dark = {
@@ -87,13 +92,17 @@ const dark = {
     background: colors.darkGrey,
     text: colors.white,
   },
+  inverseButton: {
+    background: colors.white,
+    text: colors.black,
+  },
   card: {
     label: colors.label,
     border: colors.white,
     background: colors.darkGrey,
   },
   providerContainer: {
-    backgroundColor: colors.bodyDark,
+    backgroundColor: colors.black,
     minHeight: '100vh',
   },
   dataGrid: {
@@ -133,14 +142,25 @@ const dark = {
     background: colors.darkGrey,
     fill: colors.white,
   },
-  background: '#1d1d20',
-  border: '#1d1d20',
-  text: '#fff',
-  error: '#f21e29',
-  active: '#1d1d20',
-  divider: '#F0EFEF',
-  iconDark: '#1d1d20',
-  iconBright: '#FFF',
+  table: {
+    border: {
+      body: colors.darkGrey,
+      header: colors.black,
+    },
+    background: {
+      body: colors.black,
+      header: colors.darkGrey,
+    },
+    text: {
+      body: colors.white,
+      header: colors.lightGrey,
+    },
+  },
+  background: colors.black,
+  border: colors.mediumGray,
+  text: colors.white,
+  secondaryText: colors.lightGrey,
+  colors,
 };
 
 const INTER_FONT = 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';

@@ -20,6 +20,7 @@ exports[`PillButtons: Component should render correctly 1`] = `
         "width": "100%",
       }
     }
+    inverse={true}
   >
     right title
   </Component>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withRouter } from '../../../.storybook/decorators';
+import { withRouter, withTheme } from '../../../.storybook/decorators';
 import { List } from './list.component';
 
 const defaultProps = {
@@ -36,4 +36,5 @@ const defaultProps = {
 
 storiesOf('DataSource/List', module)
   .addDecorator(withRouter)
+  .addDecorator(withTheme())
   .add('Default', () => <List {...defaultProps} />);
