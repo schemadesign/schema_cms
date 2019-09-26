@@ -38,7 +38,7 @@ describe('Project: sagas', () => {
       modified: '2019-08-21T10:12:52.030069Z',
     };
 
-    mockApi.get(`${PROJECTS_PATH}/?page_size=1000`).reply(OK, {
+    mockApi.get(`${PROJECTS_PATH}?page_size=1000`).reply(OK, {
       results: [item],
     });
 
