@@ -2,7 +2,7 @@ from urllib import parse
 from django import shortcuts
 from django.conf import settings
 
-from schemacms.users import constants, models
+from schemacms.users import constants, models, backend_management
 
 
 def social_user(backend, uid, user=None, *args, **kwargs):
@@ -73,4 +73,6 @@ def user_exist_in_db(backend, details, user=None, *args, **kwargs):
         uri = "{}/".format(uri)
 
     if not models.User.objects.filter(email=email).exists():
-        return shortcuts.redirect(parse.urljoin(uri, "auth/not-registered"), email=email)
+        params = dict(email=email)
+        return_to = parse.urljoin(uri, "auth/not-registered") + f"?{parse.urlencode(params)}"
+        return shortcuts.redirect(backend_management.user_mgtm_backend.get_logout_url(return_to=return_to))

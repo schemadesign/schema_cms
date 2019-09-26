@@ -74,13 +74,14 @@ class Auth0UserManagement(base.BaseUserManagement):
         path = urls.reverse("social:begin", kwargs={"backend": "auth0"})
         return "{host}{path}".format(host=settings.DEFAULT_HOST, path=path)
 
-    def get_logout_url(self):
+    def get_logout_url(self, return_to=None):
         """Return logout url to auth0 logout page and then after logout redirect to
         BE auth0 login endpoint.
         """
-        login_url = self.get_login_url()
-        params = {'returnTo': login_url, 'client_id': settings.SOCIAL_AUTH_AUTH0_KEY}
-        return f'https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?' + parse.urlencode(params)
+        if not return_to:
+            return_to = self.get_login_url()
+        params = {'returnTo': return_to, 'client_id': settings.SOCIAL_AUTH_AUTH0_KEY}
+        return f'https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?{parse.urlencode(params)}'
 
     @classmethod
     def _get_token(cls, domain):
