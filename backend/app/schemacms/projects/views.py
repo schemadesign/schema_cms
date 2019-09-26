@@ -4,6 +4,7 @@ from django.db import transaction
 from rest_framework import decorators, exceptions, permissions, response, status, viewsets, generics, parsers
 
 from schemacms.users import permissions as user_permissions
+from schemacms.utils import pagination
 from . import constants, models, serializers, permissions as projects_permissions, services
 
 
@@ -11,6 +12,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ProjectSerializer
     permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
     queryset = models.Project.objects.none()
+    pagination_class = pagination.StandardResultsSetPagination
 
     def get_queryset(self):
         return (
