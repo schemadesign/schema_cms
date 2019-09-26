@@ -93,6 +93,17 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "backgroundColor": "#FFF",
           "minHeight": "100vh",
         },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+          },
+          "text": "#1d1d20",
+          "unActive": Object {
+            "background": "#f0efef",
+            "fill": "#FFF",
+          },
+        },
         "secondaryText": "#a6a7aa",
         "stepper": Object {
           "active": "#1d1d20",
@@ -210,6 +221,17 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "providerContainer": Object {
             "backgroundColor": "#FFF",
             "minHeight": "100vh",
+          },
+          "radioButton": Object {
+            "active": Object {
+              "background": "#1d1d20",
+              "fill": "#FFF",
+            },
+            "text": "#1d1d20",
+            "unActive": Object {
+              "background": "#f0efef",
+              "fill": "#FFF",
+            },
           },
           "secondaryText": "#a6a7aa",
           "stepper": Object {
@@ -380,6 +402,17 @@ exports[`App: Component should render App when language is set 1`] = `
           "backgroundColor": "#FFF",
           "minHeight": "100vh",
         },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+          },
+          "text": "#1d1d20",
+          "unActive": Object {
+            "background": "#f0efef",
+            "fill": "#FFF",
+          },
+        },
         "secondaryText": "#a6a7aa",
         "stepper": Object {
           "active": "#1d1d20",
@@ -497,6 +530,17 @@ exports[`App: Component should render App when language is set 1`] = `
           "providerContainer": Object {
             "backgroundColor": "#FFF",
             "minHeight": "100vh",
+          },
+          "radioButton": Object {
+            "active": Object {
+              "background": "#1d1d20",
+              "fill": "#FFF",
+            },
+            "text": "#1d1d20",
+            "unActive": Object {
+              "background": "#f0efef",
+              "fill": "#FFF",
+            },
           },
           "secondaryText": "#a6a7aa",
           "stepper": Object {

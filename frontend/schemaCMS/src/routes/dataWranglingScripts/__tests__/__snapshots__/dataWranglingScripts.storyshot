@@ -147,6 +147,17 @@ exports[`Storyshots DataWrangling Default 1`] = `
                   "backgroundColor": "#000",
                   "minHeight": "100vh",
                 },
+                "radioButton": Object {
+                  "active": Object {
+                    "background": "#FFF",
+                    "fill": "#1d1d20",
+                  },
+                  "text": "#FFF",
+                  "unActive": Object {
+                    "background": "#1d1d20",
+                    "fill": "#FFF",
+                  },
+                },
                 "secondaryText": "#71737e",
                 "stepper": Object {
                   "active": "#FFF",

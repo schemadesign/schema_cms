@@ -62,6 +62,17 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "backgroundColor": "#FFF",
           "minHeight": "100vh",
         },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+          },
+          "text": "#1d1d20",
+          "unActive": Object {
+            "background": "#f0efef",
+            "fill": "#FFF",
+          },
+        },
         "secondaryText": "#a6a7aa",
         "stepper": Object {
           "active": "#1d1d20",

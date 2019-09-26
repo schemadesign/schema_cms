@@ -65,6 +65,17 @@ const light = {
     background: colors.veryLightPink,
     fill: colors.darkGrey,
   },
+  radioButton: {
+    text: colors.darkGrey,
+    active: {
+      background: colors.darkGrey,
+      fill: colors.white,
+    },
+    unActive: {
+      background: colors.veryLightPink,
+      fill: colors.white,
+    },
+  },
   table: {
     border: {
       body: colors.veryLightPink,
@@ -141,6 +152,17 @@ const dark = {
   icon: {
     background: colors.darkGrey,
     fill: colors.white,
+  },
+  radioButton: {
+    text: colors.white,
+    active: {
+      background: colors.white,
+      fill: colors.darkGrey,
+    },
+    unActive: {
+      background: colors.darkGrey,
+      fill: colors.white,
+    },
   },
   table: {
     border: {

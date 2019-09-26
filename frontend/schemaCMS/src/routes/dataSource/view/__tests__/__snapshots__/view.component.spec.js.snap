@@ -64,7 +64,7 @@ exports[`View: Component should render draft 1`] = `
       ]
     }
   />
-  <Source
+  <WithTheme(SourceComponent)
     bindSubmitForm={[Function]}
     dataSource={
       Object {
@@ -146,7 +146,7 @@ exports[`View: Component should render second step 1`] = `
       ]
     }
   />
-  <Source
+  <WithTheme(SourceComponent)
     bindSubmitForm={[Function]}
     dataSource={
       Object {
@@ -228,7 +228,7 @@ exports[`View: Component should render source step 1`] = `
       ]
     }
   />
-  <Source
+  <WithTheme(SourceComponent)
     bindSubmitForm={[Function]}
     dataSource={
       Object {

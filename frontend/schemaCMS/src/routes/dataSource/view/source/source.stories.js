@@ -1,10 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { Theme } from 'schemaUI';
 
-import { Source } from './source.component';
+import { SourceComponent } from './source.component';
 
 export const defaultProps = {
   dataSource: {},
+  theme: Theme.dark,
   bindSubmitForm: Function.prototype,
   updateDataSource: Function.prototype,
   intl: {
@@ -19,4 +21,4 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Project/DataSource/View/Source', module).add('Default', () => <Source {...defaultProps} />);
+storiesOf('Project/DataSource/View/Source', module).add('Default', () => <SourceComponent {...defaultProps} />);

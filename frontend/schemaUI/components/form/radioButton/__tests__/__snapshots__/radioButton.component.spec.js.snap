@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton: Component should render correctly 1`] = `
+exports[`RadioButtonComponent: Component should render correctly 1`] = `
 <div
   style={
     Object {
+      "color": "#FFF",
       "display": "flex",
       "flexDirection": "column",
       "textAlign": "center",
@@ -35,7 +36,6 @@ exports[`RadioButton: Component should render correctly 1`] = `
       Object {
         "background": "blue",
         "cursor": "pointer",
-        "opacity": 0.1,
       }
     }
   >
