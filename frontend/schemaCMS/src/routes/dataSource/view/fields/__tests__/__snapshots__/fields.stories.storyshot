@@ -2,382 +2,391 @@
 
 exports[`Storyshots Project/DataSource/View/Fields Default 1`] = `
 <div
-  className="sc-frDJqD gCEYuZ"
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
 >
   <div
-    className="sc-dNLxif KzmkZ"
+    className="sc-frDJqD gCEYuZ"
   >
     <div
-      className="sc-kvZOFW doHZJD"
+      className="sc-dNLxif KzmkZ"
     >
       <div
-        className="sc-hqyNC dRJtgH"
+        className="sc-kvZOFW doHZJD"
       >
-        <button
-          disabled={true}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": 60,
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": 60,
-            }
-          }
+        <div
+          className="sc-hqyNC dRJtgH"
         >
-          <svg
+          <button
+            disabled={true}
+            onClick={[Function]}
             style={
               Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
                 "fill": "#FFF",
-                "height": "60px",
-                "opacity": 0.3,
-                "width": "60px",
+                "fontSize": "18px",
+                "height": 60,
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": 60,
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        className="sc-jbKcbu cXKtIY"
-      >
-        {countFields} {countFields, plural,one {Field} other {Fields}}
-      </div>
-      <div
-        className="sc-hqyNC dRJtgH"
-      >
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": 60,
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": 60,
-            }
-          }
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "60px",
+                  "opacity": 0.3,
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="sc-jbKcbu erSVNB"
         >
-          <svg
+          {countFields} {countFields, plural,one {Field} other {Fields}}
+        </div>
+        <div
+          className="sc-hqyNC dRJtgH"
+        >
+          <button
+            disabled={false}
+            onClick={[Function]}
             style={
               Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
                 "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fontSize": "18px",
+                "height": 60,
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": 60,
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M34.143 17L32 19.083 41.172 28H15v3h26.172L32 39.917 34.143 42 47 29.5 34.143 17z"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M34.143 17L32 19.083 41.172 28H15v3h26.172L32 39.917 34.143 42 47 29.5 34.143 17z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-    <div
-      className="sc-gisBJw dIEKmw"
-    >
-      <table
-        className="sc-kjoXOD jIdoRh"
+      <div
+        className="sc-gisBJw dIEKmw"
       >
-        <thead
-          className="sc-cHGsZl bHiaRe"
+        <table
+          className="sc-kjoXOD jIdoRh"
         >
-          <tr
-            className="sc-kgAjT ixflTs"
+          <thead
+            className="sc-cHGsZl bHiaRe"
           >
-            <th
-              className="sc-ksYbfQ impeEN"
+            <tr
+              className="sc-kgAjT eAUzWj"
             >
-              #
-            </th>
-            <th
-              className="sc-ksYbfQ impeEN"
-            >
-              First Name
-            </th>
-            <th
-              className="sc-ksYbfQ impeEN"
-            >
-              Last Name
-            </th>
-            <th
-              className="sc-ksYbfQ impeEN"
-            >
-              Full Name
-            </th>
-            <th
-              className="sc-ksYbfQ impeEN"
-            >
-              Birthplace
-            </th>
-            <th
-              className="sc-ksYbfQ impeEN"
-            >
-              State of Birth
-            </th>
-            <th
-              className="sc-ksYbfQ impeEN"
-            >
-              Birthday
-            </th>
-            <th
-              className="sc-ksYbfQ impeEN"
-            >
-              Url
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          className="sc-TOsTZ kjYrri"
-        >
-          <tr
-            className="sc-kgAjT ixflTs"
+              <th
+                className="sc-ksYbfQ bOjUnm"
+              >
+                #
+              </th>
+              <th
+                className="sc-ksYbfQ bOjUnm"
+              >
+                First Name
+              </th>
+              <th
+                className="sc-ksYbfQ bOjUnm"
+              >
+                Last Name
+              </th>
+              <th
+                className="sc-ksYbfQ bOjUnm"
+              >
+                Full Name
+              </th>
+              <th
+                className="sc-ksYbfQ bOjUnm"
+              >
+                Birthplace
+              </th>
+              <th
+                className="sc-ksYbfQ bOjUnm"
+              >
+                State of Birth
+              </th>
+              <th
+                className="sc-ksYbfQ bOjUnm"
+              >
+                Birthday
+              </th>
+              <th
+                className="sc-ksYbfQ bOjUnm"
+              >
+                Url
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            className="sc-TOsTZ kjYrri"
           >
-            <td
-              className="sc-hmzhuo lcIMme"
+            <tr
+              className="sc-kgAjT eAUzWj"
             >
-              1
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
+              <td
+                className="sc-hmzhuo MNMeq"
+              >
+                1
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                George
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Washington
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                George Washington
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Westmoreland County
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                VA
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                02/22/1732
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                some.url.com
+              </td>
+            </tr>
+            <tr
+              className="sc-kgAjT eAUzWj"
             >
-              George
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
+              <td
+                className="sc-hmzhuo MNMeq"
+              >
+                2
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                John
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Adams
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                John Adams
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Braintree
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                MA
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                10/30/1735
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                some.url.com
+              </td>
+            </tr>
+            <tr
+              className="sc-kgAjT eAUzWj"
             >
-              Washington
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
+              <td
+                className="sc-hmzhuo MNMeq"
+              >
+                3
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Thomas
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Jefferson
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Thomas Jefferson
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Shadwell
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                VA
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                04/13/1743
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                some.url.com
+              </td>
+            </tr>
+            <tr
+              className="sc-kgAjT eAUzWj"
             >
-              George Washington
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
+              <td
+                className="sc-hmzhuo MNMeq"
+              >
+                4
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                James
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Madison
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                James Madison
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Port Conway
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                VA
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                03/16/1751
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                some.url.com
+              </td>
+            </tr>
+            <tr
+              className="sc-kgAjT eAUzWj"
             >
-              Westmoreland County
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              VA
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              02/22/1732
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              some.url.com
-            </td>
-          </tr>
-          <tr
-            className="sc-kgAjT ixflTs"
-          >
-            <td
-              className="sc-hmzhuo lcIMme"
-            >
-              2
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              John
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              Adams
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              John Adams
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              Braintree
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              MA
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              10/30/1735
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              some.url.com
-            </td>
-          </tr>
-          <tr
-            className="sc-kgAjT ixflTs"
-          >
-            <td
-              className="sc-hmzhuo lcIMme"
-            >
-              3
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              Thomas
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              Jefferson
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              Thomas Jefferson
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              Shadwell
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              VA
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              04/13/1743
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              some.url.com
-            </td>
-          </tr>
-          <tr
-            className="sc-kgAjT ixflTs"
-          >
-            <td
-              className="sc-hmzhuo lcIMme"
-            >
-              4
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              James
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              Madison
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              James Madison
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              Port Conway
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              VA
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              03/16/1751
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              some.url.com
-            </td>
-          </tr>
-          <tr
-            className="sc-kgAjT ixflTs"
-          >
-            <td
-              className="sc-hmzhuo lcIMme"
-            >
-              5
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              James
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              Monroe
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              James Monroe
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              Monroe Hall
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              VA
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              04/28/1758
-            </td>
-            <td
-              className="sc-cJSrbW gMseZO"
-            >
-              some.url.com
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              <td
+                className="sc-hmzhuo MNMeq"
+              >
+                5
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                James
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Monroe
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                James Monroe
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                Monroe Hall
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                VA
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                04/28/1758
+              </td>
+              <td
+                className="sc-cJSrbW jYLYIq"
+              >
+                some.url.com
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
