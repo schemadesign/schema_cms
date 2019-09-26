@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Create } from './create.component';
+import { withTheme } from '../../../.storybook/decorators';
 import { PROJECT_TITLE } from '../../../modules/project/project.constants';
+import { Create } from './create.component';
 
 const defaultProps = {
   values: {
@@ -16,4 +17,6 @@ const defaultProps = {
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
-storiesOf('Project/Create', module).add('Default', () => <Create {...defaultProps} />);
+storiesOf('Project/Create', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <Create {...defaultProps} />);
