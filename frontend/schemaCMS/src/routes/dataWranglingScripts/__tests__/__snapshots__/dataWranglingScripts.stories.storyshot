@@ -10,23 +10,23 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
   }
 >
   <div
-    className="sc-TOsTZ kjYrri"
+    className="sc-cHGsZl bHiaRe"
   >
     <div
-      className="sc-kgAjT girWJm"
+      className="sc-TOsTZ iCIMi"
     >
       <div
-        className="sc-ksYbfQ kEEzLI"
+        className="sc-cJSrbW glbNsh"
       />
       <div
-        className="sc-cJSrbW fvJOcK"
+        className="sc-kgAjT dXpJNj"
       >
         <span>
           2 Steps
         </span>
       </div>
       <div
-        className="sc-hmzhuo jpFJEj"
+        className="sc-ksYbfQ dvHxdy"
       >
         <div
           style={Object {}}
@@ -159,6 +159,10 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
                   },
                 },
                 "secondaryText": "#71737e",
+                "select": Object {
+                  "background": "#1d1d20",
+                  "border": "#000",
+                },
                 "stepper": Object {
                   "active": "#FFF",
                   "background": "#1d1d20",
@@ -196,7 +200,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
                   },
                   "h3": Object {
                     "color": Object {
-                      "border": "#1d1d20",
+                      "border": "#f0efef",
                       "text": "#a6a7aa",
                     },
                     "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -271,7 +275,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-kvZOFW irxtEc"
+            className="sc-frDJqD kNAuSq"
             href="/project/view/2/datasource/view/14/script/view/0"
             onClick={[Function]}
           >
@@ -370,7 +374,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-kvZOFW irxtEc"
+            className="sc-frDJqD kNAuSq"
             href="/project/view/2/datasource/view/14/script/view/1"
             onClick={[Function]}
           >

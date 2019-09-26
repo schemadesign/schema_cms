@@ -9,10 +9,14 @@ export const Container = styled.div`
 
 export const Navigation = styled.div`
   position: fixed;
-  padding-bottom: 36px;
+  padding: 40px 0 36px;
   bottom: 0;
   width: calc(100% - 40px);
-  background-image: linear-gradient(to top, ${({ theme: { background } }) => background}, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to top,
+    ${({ theme: { background } }) => `${background}, ${background} 30%`},
+    rgba(0, 0, 0, 0)
+  );
   display: flex;
   justify-content: ${ifElse(propEq('right', true), always('flex-end'), always('space-between'))};
   flex-wrap: wrap;

@@ -90,6 +90,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           },
         },
         "secondaryText": "#71737e",
+        "select": Object {
+          "background": "#1d1d20",
+          "border": "#000",
+        },
         "stepper": Object {
           "active": "#FFF",
           "background": "#1d1d20",
@@ -127,7 +131,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           },
           "h3": Object {
             "color": Object {
-              "border": "#1d1d20",
+              "border": "#f0efef",
               "text": "#a6a7aa",
             },
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -418,6 +422,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                     },
                   },
                   "secondaryText": "#71737e",
+                  "select": Object {
+                    "background": "#1d1d20",
+                    "border": "#000",
+                  },
                   "stepper": Object {
                     "active": "#FFF",
                     "background": "#1d1d20",
@@ -455,7 +463,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                     },
                     "h3": Object {
                       "color": Object {
-                        "border": "#1d1d20",
+                        "border": "#f0efef",
                         "text": "#a6a7aa",
                       },
                       "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -931,6 +939,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           },
         },
         "secondaryText": "#71737e",
+        "select": Object {
+          "background": "#1d1d20",
+          "border": "#000",
+        },
         "stepper": Object {
           "active": "#FFF",
           "background": "#1d1d20",
@@ -968,7 +980,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           },
           "h3": Object {
             "color": Object {
-              "border": "#1d1d20",
+              "border": "#f0efef",
               "text": "#a6a7aa",
             },
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -1263,6 +1275,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                     },
                   },
                   "secondaryText": "#71737e",
+                  "select": Object {
+                    "background": "#1d1d20",
+                    "border": "#000",
+                  },
                   "stepper": Object {
                     "active": "#FFF",
                     "background": "#1d1d20",
@@ -1300,7 +1316,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                     },
                     "h3": Object {
                       "color": Object {
-                        "border": "#1d1d20",
+                        "border": "#f0efef",
                         "text": "#a6a7aa",
                       },
                       "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",

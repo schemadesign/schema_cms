@@ -10,7 +10,7 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-dxgOiQ gSjVdI"
+    className="sc-kpOJdX gNZxvE"
   >
     <div
       className="sc-bdVaJa bDWFJH"
@@ -221,7 +221,7 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-gGBfsJ fVMbOB"
+      className="sc-bbmXgH iLznUT"
     >
       <p
         style={
@@ -239,10 +239,10 @@ exports[`Storyshots Project/List empty 1`] = `
       </p>
     </div>
     <div
-      className="sc-kkGfuU cbFdcv"
+      className="sc-kEYyzF jgwRnZ"
     >
       <div
-        className="sc-iAyFgw bnNvDc"
+        className="sc-kkGfuU hsduMD"
       >
         <button
           id="addProjectBtn"
@@ -298,7 +298,7 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-dxgOiQ gSjVdI"
+    className="sc-kpOJdX gNZxvE"
   >
     <div
       className="sc-bdVaJa bDWFJH"
@@ -509,10 +509,10 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <ul
-      className="sc-ckVGcZ gorPlt"
+      className="sc-dxgOiQ iDfuoB"
     >
       <li
-        className="sc-jKJlTe jvwQJf"
+        className="sc-ckVGcZ kGoON"
       >
         <div
           style={
@@ -537,22 +537,22 @@ exports[`Storyshots Project/List list 1`] = `
             }
           >
             <ul
-              className="sc-eNQAEJ fcrZPl"
+              className="sc-jKJlTe duBIEC"
             >
               <li
-                className="sc-hMqMXs fBcHbR"
+                className="sc-eNQAEJ edkeSN"
                 id="headerItem-0"
               >
                 3 months ago
               </li>
               <li
-                className="sc-hMqMXs fBcHbR"
+                className="sc-eNQAEJ edkeSN"
                 id="headerItem-1"
               >
                 In Progress
               </li>
               <li
-                className="sc-hMqMXs fBcHbR"
+                className="sc-eNQAEJ edkeSN"
                 id="headerItem-2"
               >
                 Sed sed risus a nibh Maecenas nec pulvinar ex
@@ -577,7 +577,7 @@ exports[`Storyshots Project/List list 1`] = `
             Project Name
           </h1>
           <div
-            className="sc-kEYyzF eNREOT"
+            className="sc-hMqMXs fVbjNX"
             onClick={[Function]}
           >
             <p
@@ -614,7 +614,7 @@ exports[`Storyshots Project/List list 1`] = `
         </div>
       </li>
       <li
-        className="sc-jKJlTe jvwQJf"
+        className="sc-ckVGcZ kGoON"
       >
         <div
           style={
@@ -639,22 +639,22 @@ exports[`Storyshots Project/List list 1`] = `
             }
           >
             <ul
-              className="sc-eNQAEJ fcrZPl"
+              className="sc-jKJlTe duBIEC"
             >
               <li
-                className="sc-hMqMXs fBcHbR"
+                className="sc-eNQAEJ edkeSN"
                 id="headerItem-0"
               >
                 3 months ago
               </li>
               <li
-                className="sc-hMqMXs fBcHbR"
+                className="sc-eNQAEJ edkeSN"
                 id="headerItem-1"
               >
                 Published
               </li>
               <li
-                className="sc-hMqMXs fBcHbR"
+                className="sc-eNQAEJ edkeSN"
                 id="headerItem-2"
               >
                 Tadeusz Kosciuszko
@@ -679,7 +679,7 @@ exports[`Storyshots Project/List list 1`] = `
             Honec sodales libero non fermentum aliquam
           </h1>
           <div
-            className="sc-kEYyzF eNREOT"
+            className="sc-hMqMXs fVbjNX"
             onClick={[Function]}
           >
             <p
@@ -717,10 +717,10 @@ exports[`Storyshots Project/List list 1`] = `
       </li>
     </ul>
     <div
-      className="sc-kkGfuU cbFdcv"
+      className="sc-kEYyzF jgwRnZ"
     >
       <div
-        className="sc-iAyFgw bnNvDc"
+        className="sc-kkGfuU hsduMD"
       >
         <button
           id="addProjectBtn"

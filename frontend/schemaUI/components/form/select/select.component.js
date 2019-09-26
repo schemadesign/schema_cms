@@ -1,17 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  containerStyles,
-  selectWrapperStyles,
-  getSelectStyle,
-  customOptionStyle,
-  selectedOptionsStyles,
-  optionListStyles,
-  selectedOptionStyles,
-} from './select.styles';
+import { getStyles } from './select.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class Select extends PureComponent {
+export class SelectComponent extends PureComponent {
   static propTypes = {
     native: PropTypes.bool,
     defaultOption: PropTypes.object,
@@ -38,13 +31,13 @@ export class Select extends PureComponent {
 
   toggleMenu = () => this.setState({ isMenuOpen: !this.state.isMenuOpen });
 
-  renderSelectedOption = () => {
+  renderSelectedOption = ({ selectedOptionStyles }) => {
     const selectedOption = this.props.options.find(option => option.selected) || this.props.options[0];
 
     return <div style={selectedOptionStyles}>{selectedOption.label}</div>;
   };
 
-  renderOptions = ({ value, label, selected }, index) => {
+  renderOptions = ({ value, label, selected }, index, { customOptionStyle }) => {
     const eventObj = {
       target: {
         value: value,
@@ -69,7 +62,7 @@ export class Select extends PureComponent {
     </option>
   );
 
-  renderNativeSelect = (hidden = false) => {
+  renderNativeSelect = ({ hidden = false, restStyles: { getSelectStyle } }) => {
     const { options } = this.props;
     const onChange = !!hidden ? Function.prototype : this.handleOptionClick;
 
@@ -80,21 +73,26 @@ export class Select extends PureComponent {
     );
   };
 
-  renderSelect = isNative =>
+  renderSelect = (isNative, { selectWrapperStyles, selectedOptionsStyles, optionListStyles, ...restStyles }) =>
     isNative ? (
-      this.renderNativeSelect()
+      this.renderNativeSelect({ restStyles })
     ) : (
       <div style={selectWrapperStyles}>
         <div style={selectedOptionsStyles} onClick={this.toggleMenu}>
-          {this.renderSelectedOption()}
+          {this.renderSelectedOption(restStyles)}
         </div>
-        <div style={optionListStyles(this.state.isMenuOpen)}>{this.props.options.map(this.renderOptions)}</div>
+        <div style={optionListStyles(this.state.isMenuOpen)}>
+          {this.props.options.map((item, index) => this.renderOptions(item, index, restStyles))}
+        </div>
       </div>
     );
 
   render() {
-    const { native } = this.props;
+    const { native, theme } = this.props;
+    const { containerStyles, ...restStyles } = getStyles(theme);
 
-    return <div style={containerStyles}>{this.renderSelect(native)}</div>;
+    return <div style={containerStyles}>{this.renderSelect(native, restStyles)}</div>;
   }
 }
+
+export const Select = withStyles(SelectComponent);

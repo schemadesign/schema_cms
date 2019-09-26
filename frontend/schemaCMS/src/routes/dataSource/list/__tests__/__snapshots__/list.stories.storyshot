@@ -252,15 +252,15 @@ exports[`Storyshots DataSource/List Default 1`] = `
               className="sc-kAzzGY hgAccu"
             >
               <ul
-                className="sc-eNQAEJ fcrZPl"
+                className="sc-jKJlTe duBIEC"
               >
                 <li
-                  className="sc-hMqMXs fBcHbR"
+                  className="sc-eNQAEJ edkeSN"
                 >
                   3 months ago
                 </li>
                 <li
-                  className="sc-hMqMXs fBcHbR"
+                  className="sc-eNQAEJ edkeSN"
                 >
                   firstName lastName
                 </li>
@@ -397,10 +397,10 @@ exports[`Storyshots DataSource/List Default 1`] = `
       </li>
     </div>
     <div
-      className="sc-kkGfuU cbFdcv"
+      className="sc-kEYyzF jgwRnZ"
     >
       <div
-        className="sc-iAyFgw bpxobA"
+        className="sc-kkGfuU cylxbN"
       >
         <button
           onClick={[Function]}

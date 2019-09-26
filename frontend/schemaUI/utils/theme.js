@@ -41,7 +41,7 @@ const light = {
   },
   label: {
     text: colors.coolGray,
-    border: colors.darkGrey,
+    border: colors.veryLightPink,
   },
   textArea: {
     text: colors.black,
@@ -89,6 +89,10 @@ const light = {
       body: colors.black,
       header: colors.coolGray,
     },
+  },
+  select: {
+    background: colors.veryLightPink,
+    border: colors.white,
   },
   background: colors.white,
   border: colors.veryLightPink,
@@ -177,6 +181,10 @@ const dark = {
       body: colors.white,
       header: colors.lightGrey,
     },
+  },
+  select: {
+    background: colors.darkGrey,
+    border: colors.black,
   },
   background: colors.black,
   border: colors.mediumGray,
