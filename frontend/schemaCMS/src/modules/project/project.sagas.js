@@ -36,23 +36,45 @@ function* createProject({ payload }) {
   }
 }
 
-function* fetchOne({ id }) {
+function* fetchOne({ payload }) {
   try {
-    const { data } = yield api.get(`${PROJECTS_PATH}/${id}`);
+    yield put(ProjectRoutines.fetchOne.request());
 
-    yield put(ProjectActions.fetchOneSuccess(data));
+    const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}`);
+    debugger;
+    yield put(ProjectRoutines.fetchOne.success(data));
+    debugger;
   } catch (error) {
     const detail = path(['response', 'data', 'detail'], error);
     const status = path(['response', 'status'], error);
 
-    yield put(ProjectActions.fetchOneError({ id, error: { detail, status } }));
+    yield put(ProjectRoutines.fetchOne.failure({ id, error: { detail, status } }));
+  } finally {
+    yield put(ProjectRoutines.fetchOne.fulfill());
+  }
+}
+
+function* removeOne({ payload }) {
+  try {
+    yield put(ProjectRoutines.removeOne.request());
+    yield api.delete(`${PROJECTS_PATH}/${payload.projectId}`);
+
+    browserHistory.push('/project/list');
+    yield put(ProjectRoutines.removeOne.success());
+  } catch (error) {
+    debugger;
+    yield put(ProjectRoutines.removeOne.failure(error));
+  } finally {
+    debugger;
+    yield put(ProjectRoutines.removeOne.fulfill());
   }
 }
 
 export function* watchProject() {
   yield all([
     takeLatest(ProjectTypes.FETCH_LIST, fetchProjectsList),
-    takeLatest(ProjectTypes.FETCH_ONE, fetchOne),
+    takeLatest(ProjectRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(ProjectRoutines.createProject.TRIGGER, createProject),
+    takeLatest(ProjectRoutines.removeOne.TRIGGER, removeOne),
   ]);
 }

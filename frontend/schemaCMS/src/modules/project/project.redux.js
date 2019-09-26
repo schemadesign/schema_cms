@@ -10,17 +10,16 @@ export const { Types: ProjectTypes, Creators: ProjectActions } = createActions(
     fetchListSuccess: ['data'],
     fetchListError: null,
     createProjectSuccess: ['project'],
-    fetchOne: ['id'],
-    fetchOneSuccess: ['data'],
-    fetchOneError: ['error'],
     unmountOne: null,
   },
   { prefix }
 );
 
 export const ProjectRoutines = {
-  fetchList: createRoutine(`${prefix}FETCH_LIST`),
   createProject: createRoutine(`${prefix}CREATE_PROJECT`),
+  removeOne: createRoutine(`${prefix}REMOVE`),
+  fetchOne: createRoutine(`${prefix}FETCH_ONE`),
+  fetchList: createRoutine(`${prefix}FETCH_LIST`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -28,7 +27,10 @@ export const INITIAL_STATE = new Immutable({
   project: {},
 });
 
-const fetchListSuccess = (state = INITIAL_STATE, { data }) => state.set('projects', data);
+const fetchListSuccess = (state = INITIAL_STATE, { data }) => {
+  debugger;
+  return state.set('projects', data);
+};
 
 const createProjectSuccess = (state = INITIAL_STATE, { project }) => {
   return state.merge({ projects: state.projects.concat(project) });
@@ -43,7 +45,7 @@ const unmountOne = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE
 export const reducer = createReducer(INITIAL_STATE, {
   [ProjectTypes.FETCH_LIST_SUCCESS]: fetchListSuccess,
   [ProjectTypes.CREATE_PROJECT_SUCCESS]: createProjectSuccess,
-  [ProjectTypes.FETCH_ONE_SUCCESS]: fetchOneSuccess,
-  [ProjectTypes.FETCH_ONE_ERROR]: fetchOneError,
+  [ProjectRoutines.fetchOne.SUCCESS]: fetchOneSuccess,
+  [ProjectRoutines.fetchOne.FAILURE]: fetchOneError,
   [ProjectTypes.UNMOUNT_ONE]: unmountOne,
 });
