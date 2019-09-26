@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeProvider: Component should render correctly 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "theme": Object {
+        "background": "#FFF",
+        "border": "#f0efef",
+        "button": Object {
+          "background": "#f0efef",
+          "text": "#000",
+        },
+        "card": Object {
+          "background": "#f0efef",
+          "border": "#000",
+          "label": "#71737e",
+          "text": "#FFF",
+        },
+        "checkbox": Object {
+          "border": "#2F2F36",
+          "text": "#000",
+        },
+        "colors": Object {
+          "black": "#000",
+          "coolGray": "#a6a7aa",
+          "darkGrey": "#1d1d20",
+          "lightGrey": "#71737e",
+          "mediumGray": "#2F2F36",
+          "red": "#f21e29",
+          "veryLightPink": "#f0efef",
+          "white": "#FFF",
+        },
+        "dataGrid": Object {
+          "background": "#f0efef",
+          "text": "#a6a7aa",
+        },
+        "error": "#f21e29",
+        "header": Object {
+          "text": "#1d1d20",
+        },
+        "icon": Object {
+          "background": "#f0efef",
+          "fill": "#1d1d20",
+        },
+        "input": Object {
+          "text": "#000",
+        },
+        "inverseButton": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "label": Object {
+          "border": "#1d1d20",
+          "text": "#a6a7aa",
+        },
+        "menu": Object {
+          "background": "#FFF",
+          "text": "#000",
+        },
+        "providerContainer": Object {
+          "backgroundColor": "#FFF",
+          "minHeight": "100vh",
+        },
+        "secondaryText": "#a6a7aa",
+        "stepper": Object {
+          "active": "#1d1d20",
+          "background": "#f0efef",
+        },
+        "table": Object {
+          "background": Object {
+            "body": "#FFF",
+            "header": "#f0efef",
+          },
+          "border": Object {
+            "body": "#f0efef",
+            "header": "#FFF",
+          },
+          "text": Object {
+            "body": "#000",
+            "header": "#a6a7aa",
+          },
+        },
+        "text": "#1d1d20",
+        "textArea": Object {
+          "text": "#000",
+        },
+        "textField": Object {
+          "error": "#f21e29",
+          "label": "#a6a7aa",
+        },
+        "typography": Object {
+          "h1": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "h2": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 100,
+          },
+          "h3": Object {
+            "color": Object {
+              "border": "#1d1d20",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "p": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 200,
+          },
+          "pre": Object {
+            "fontFamily": "Hack, monospace",
+          },
+          "span": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          },
+        },
+      },
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "minHeight": "100vh",
+      }
+    }
+  >
+    children
+  </div>
+</ContextProvider>
+`;

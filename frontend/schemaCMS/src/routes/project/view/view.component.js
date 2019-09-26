@@ -6,7 +6,7 @@ import { has, isEmpty, isNil, path } from 'ramda';
 
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl, isAdmin } from '../../../shared/utils/helpers';
-import extendedDayjs from '../../../shared/utils/extendedDayjs';
+import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { Empty } from '../project.styles';
@@ -126,7 +126,11 @@ export class View extends PureComponent {
 
     const statusValue = messages[status] ? this.formatMessage(messages[status]) : status;
     const data = [
-      { label: this.formatMessage(messages.lastUpdate), field: 'created', value: extendedDayjs(created).fromNow() },
+      {
+        label: this.formatMessage(messages.lastUpdate),
+        field: 'created',
+        value: extendedDayjs(created, BASE_DATE_FORMAT).fromNow(),
+      },
       { label: this.formatMessage(messages.status), field: 'status', value: statusValue },
       { label: this.formatMessage(messages.owner), field: 'owner', value: `${firstName} ${lastName}` },
       { label: this.formatMessage(messages.titleField), field: 'title' },
@@ -164,9 +168,11 @@ export class View extends PureComponent {
 
     return (
       <Container>
-        <Helmet title={title} />
-        <TopHeader {...topHeaderConfig} />
-        {content}
+        <div>
+          <Helmet title={title} />
+          <TopHeader {...topHeaderConfig} />
+          {content}
+        </div>
         <Button onClick={this.handleGoTo('/project/list')} customStyles={buttonStyles}>
           <Icons.ArrowLeftIcon />
         </Button>

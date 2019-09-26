@@ -1,10 +1,13 @@
 import styled from 'styled-components';
-import { Theme } from 'schemaUI';
 
 import { Container as DefaultContainer } from '../../../shared/components/styledComponents/container';
 
 export const Container = styled(DefaultContainer)`
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
 `;
 
 export const ProjectView = styled.div`
@@ -18,9 +21,9 @@ export const Details = styled.ul`
 `;
 
 export const DetailItem = styled.li`
-  color: ${Theme.primary.text};
+  color: ${({ theme: { text } }) => text};
   margin-bottom: 4px;
-  border-top: 2px solid ${Theme.primary.background};
+  border-top: 2px solid ${({ theme: { border } }) => border};
   display: flex;
 `;
 
@@ -32,7 +35,7 @@ export const DetailWrapper = styled.div`
 `;
 
 export const DetailLabel = styled.span`
-  color: ${Theme.primary.label};
+  color: ${({ theme: { secondaryText } }) => secondaryText};
   margin-right: 5px;
 `;
 
@@ -41,6 +44,7 @@ export const IconEditWrapper = styled.div`
 `;
 
 export const DetailValue = styled.span`
+  color: ${({ theme: { text } }) => text};
   display: inline-block;
 `;
 
@@ -71,9 +75,9 @@ export const CardValue = styled.span`
 `;
 
 export const buttonStyles = {
-  margin: '50px 0 20px 0',
-  backgroundColor: Theme.primary.background,
+  margin: '50px 0 0 0',
   height: '60px',
+  width: '60px',
 };
 
 export const statisticsCardStyles = {

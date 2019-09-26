@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
-import { Theme } from 'schemaUI';
 
 export const Container = styled.div``;
 
@@ -14,6 +13,7 @@ export const Header = styled.div`
 export const StepCounter = styled.div`
   width: 34%;
   text-align: center;
+  color: ${({ theme: { text } }) => text};
 `;
 
 export const Empty = styled.div`
@@ -26,10 +26,10 @@ export const UploadContainer = styled.div`
 `;
 
 export const Error = styled.div`
-  color: ${Theme.primary.error};
+  color: ${({ theme: { error } }) => error};
 `;
 
 export const Link = styled(RouterLink)`
-  color: ${Theme.primary.text};
+  color: inherit;
   text-decoration: none;
 `;

@@ -5,11 +5,11 @@ import { styleWhenTrue } from '../../../../shared/utils/rendering';
 const horizontalMargin = 20;
 
 export const Container = styled.div`
-  margin: 0 ${horizontalMargin}px 118px;
+  padding: 0 ${horizontalMargin}px 118px;
 `;
 
 export const DataSourceItem = styled.li`
-  margin-top: 10px;
+  margin-top: 25px;
 
   &:first-child {
     margin-top: 0;
@@ -44,7 +44,6 @@ export const MetaData = styled.div`
 `;
 
 export const MetaDataName = styled.span`
-  color: ${Theme.primary.label};
   font-weight: 600;
   font-size: 12px;
   margin-bottom: 10px;
@@ -53,7 +52,7 @@ export const MetaDataName = styled.span`
 const lockStyles = styleWhenTrue(
   ({ isLock }) => isLock,
   css`
-    color: ${Theme.primary.label};
+    color: ${Theme.colors.coolGray};
   `
 );
 
@@ -86,7 +85,7 @@ export const ButtonsContainer = styled.div`
   position: fixed;
   bottom: 0;
   padding: 50px 0 24px;
-  background: ${Theme.primary.body};
+  background-image: linear-gradient(to top, ${({ theme: { background } }) => background}, rgba(0, 0, 0, 0));
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,20 +93,19 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const lockTextStyles = {
-  color: Theme.primary.label,
+  color: Theme.colors.coolGray,
 };
 
 export const buttonStyles = {
-  backgroundColor: Theme.primary.background,
   height: '60px',
+  width: '60px',
 };
 
 export const iconSourceStyles = {
   width: 40,
   height: 40,
-  fill: Theme.primary.iconDark,
 };
 
 export const lockIconStyles = {
-  fill: Theme.primary.label,
+  display: 'none',
 };

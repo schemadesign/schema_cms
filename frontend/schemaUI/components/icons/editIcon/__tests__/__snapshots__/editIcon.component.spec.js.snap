@@ -4,7 +4,7 @@ exports[`EditIcon: Component should render correctly 1`] = `
 <edit.svg
   style={
     Object {
-      "fill": "#1d1d20",
+      "fill": "#FFF",
       "height": "30px",
       "width": "30px",
     }

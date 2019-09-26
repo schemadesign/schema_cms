@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { equals, ifElse } from 'ramda';
 
 import { buttonStyles, containerStyles, getLabelStyles, inputStyles } from './fileUpload.styles';
-import { containerStyles as defaultButtonStyles } from '../../button/button.styles';
+import { getStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
 import { TextField } from '../textField';
+import { withStyles } from '../../styles/withStyles';
 
 const DEFAULT_TEXT_VALUE = 'Select a file';
 
-export class FileUpload extends PureComponent {
+export class FileUploadComponent extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     fileName: PropTypes.string,
@@ -27,8 +28,11 @@ export class FileUpload extends PureComponent {
     customStyles: {},
     customInputStyles: {},
     customLabelStyles: {},
-    iconComponent: (
-      <div style={{ ...defaultButtonStyles, ...buttonStyles }}>
+  };
+
+  state = {
+    iconComponent: this.props.iconComponent || (
+      <div style={{ ...getStyles(this.props.theme).containerStyles, ...buttonStyles }}>
         <UploadIcon />
       </div>
     ),
@@ -36,7 +40,7 @@ export class FileUpload extends PureComponent {
 
   iconComponent = ({ id, label }) => (
     <label style={getLabelStyles(label)} htmlFor={id}>
-      {this.props.iconComponent}
+      {this.state.iconComponent}
     </label>
   );
 
@@ -79,3 +83,5 @@ export class FileUpload extends PureComponent {
     );
   }
 }
+
+export const FileUpload = withStyles(FileUploadComponent);

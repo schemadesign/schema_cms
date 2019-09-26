@@ -2,180 +2,182 @@
 
 exports[`View: Component should render correctly 1`] = `
 <Styled(styled.div)>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="Project Name"
-  />
-  <TopHeader
-    headerSubtitle="Project Name"
-    headerTitle="Project"
-    primaryMenuItems={
-      Array [
-        Object {
-          "label": "Data Sources",
-          "to": "/project/view/100/datasource",
-        },
-      ]
-    }
-    secondaryMenuItems={
-      Array [
-        Object {
-          "label": "Edit Project Settings",
-          "to": "/project/edit/100",
-        },
-        Object {
-          "label": "Delete Project",
-          "to": "/project/delete/100",
-        },
-        Object {
-          "label": "Log Out",
-          "to": "/logout",
-        },
-      ]
-    }
-  />
-  <styled.div>
-    <styled.ul>
-      <styled.li
-        key="0"
-      >
-        <Card
-          customStyles={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-          headerComponent="Data Sources"
-          onClick={[Function]}
+  <div>
+    <HelmetWrapper
+      defer={true}
+      encodeSpecialCharacters={true}
+      title="Project Name"
+    />
+    <TopHeader
+      headerSubtitle="Project Name"
+      headerTitle="Project"
+      primaryMenuItems={
+        Array [
+          Object {
+            "label": "Data Sources",
+            "to": "/project/view/100/datasource",
+          },
+        ]
+      }
+      secondaryMenuItems={
+        Array [
+          Object {
+            "label": "Edit Project Settings",
+            "to": "/project/edit/100",
+          },
+          Object {
+            "label": "Delete Project",
+            "to": "/project/delete/100",
+          },
+          Object {
+            "label": "Log Out",
+            "to": "/logout",
+          },
+        ]
+      }
+    />
+    <styled.div>
+      <styled.ul>
+        <styled.li
+          key="0"
         >
-          <styled.span>
-            3
-          </styled.span>
-        </Card>
-      </styled.li>
-      <styled.li
-        key="1"
-      >
-        <Card
-          customStyles={
-            Object {
-              "cursor": "pointer",
+          <Component
+            customStyles={
+              Object {
+                "cursor": "pointer",
+              }
             }
-          }
-          headerComponent="Users"
-          onClick={[Function]}
+            headerComponent="Data Sources"
+            onClick={[Function]}
+          >
+            <styled.span>
+              3
+            </styled.span>
+          </Component>
+        </styled.li>
+        <styled.li
+          key="1"
         >
-          <styled.span>
-            2
-          </styled.span>
-        </Card>
-      </styled.li>
-    </styled.ul>
-    <styled.ul>
-      <styled.li
-        key="0"
-      >
-        <styled.div>
-          <styled.span>
-            Last Update
-          </styled.span>
-          <styled.span>
-            3 months ago
-          </styled.span>
-        </styled.div>
-        <styled.div>
-          <EditIcon />
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="1"
-      >
-        <styled.div>
-          <styled.span>
-            Status
-          </styled.span>
-          <styled.span>
-            Status
-          </styled.span>
-        </styled.div>
-        <styled.div>
-          <EditIcon />
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="2"
-      >
-        <styled.div>
-          <styled.span>
-            Owner
-          </styled.span>
-          <styled.span>
-            Firstname Lastname
-          </styled.span>
-        </styled.div>
-        <styled.div>
-          <EditIcon />
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="3"
-      >
-        <styled.div>
-          <styled.span>
-            Title
-          </styled.span>
-          <styled.span>
-            Project Name
-          </styled.span>
-        </styled.div>
-        <styled.div>
-          <EditIcon />
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="4"
-      >
-        <styled.div>
-          <styled.span>
-            Description
-          </styled.span>
-          <styled.span>
-            Description
-          </styled.span>
-        </styled.div>
-        <styled.div>
-          <EditIcon />
-        </styled.div>
-      </styled.li>
-      <styled.li
-        key="5"
-      >
-        <styled.div>
-          <styled.span>
-            API
-          </styled.span>
-          <styled.span>
-            schemacms/api/project_title
-          </styled.span>
-        </styled.div>
-        <styled.div>
-          <EditIcon />
-        </styled.div>
-      </styled.li>
-    </styled.ul>
-  </styled.div>
-  <Button
+          <Component
+            customStyles={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+            headerComponent="Users"
+            onClick={[Function]}
+          >
+            <styled.span>
+              2
+            </styled.span>
+          </Component>
+        </styled.li>
+      </styled.ul>
+      <styled.ul>
+        <styled.li
+          key="0"
+        >
+          <styled.div>
+            <styled.span>
+              Last Update
+            </styled.span>
+            <styled.span>
+              3 months ago
+            </styled.span>
+          </styled.div>
+          <styled.div>
+            <Component />
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="1"
+        >
+          <styled.div>
+            <styled.span>
+              Status
+            </styled.span>
+            <styled.span>
+              Status
+            </styled.span>
+          </styled.div>
+          <styled.div>
+            <Component />
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="2"
+        >
+          <styled.div>
+            <styled.span>
+              Owner
+            </styled.span>
+            <styled.span>
+              Firstname Lastname
+            </styled.span>
+          </styled.div>
+          <styled.div>
+            <Component />
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="3"
+        >
+          <styled.div>
+            <styled.span>
+              Title
+            </styled.span>
+            <styled.span>
+              Project Name
+            </styled.span>
+          </styled.div>
+          <styled.div>
+            <Component />
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="4"
+        >
+          <styled.div>
+            <styled.span>
+              Description
+            </styled.span>
+            <styled.span>
+              Description
+            </styled.span>
+          </styled.div>
+          <styled.div>
+            <Component />
+          </styled.div>
+        </styled.li>
+        <styled.li
+          key="5"
+        >
+          <styled.div>
+            <styled.span>
+              API
+            </styled.span>
+            <styled.span>
+              schemacms/api/project_title
+            </styled.span>
+          </styled.div>
+          <styled.div>
+            <Component />
+          </styled.div>
+        </styled.li>
+      </styled.ul>
+    </styled.div>
+  </div>
+  <Component
     customStyles={
       Object {
-        "backgroundColor": "#f0efef",
         "height": "60px",
-        "margin": "50px 0 20px 0",
+        "margin": "50px 0 0 0",
+        "width": "60px",
       }
     }
     onClick={[Function]}
   >
-    <ArrowLeftIcon />
-  </Button>
+    <Component />
+  </Component>
 </Styled(styled.div)>
 `;

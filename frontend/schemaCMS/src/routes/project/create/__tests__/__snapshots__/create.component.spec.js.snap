@@ -99,7 +99,7 @@ exports[`Create: Component should render correctly 1`] = `
         ]
       }
     />
-    <Button
+    <Component
       customStyles={
         Object {
           "marginRight": "20px",
@@ -109,8 +109,8 @@ exports[`Create: Component should render correctly 1`] = `
       onClick={[Function]}
     >
       Cancel
-    </Button>
-    <Button
+    </Component>
+    <Component
       customStyles={
         Object {
           "marginRight": "20px",
@@ -119,7 +119,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     >
       Submit
-    </Button>
+    </Component>
   </styled.form>
 </styled.div>
 `;

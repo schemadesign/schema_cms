@@ -2,7 +2,7 @@
 
 exports[`PillButtons: Component should render correctly 1`] = `
 <styled.div>
-  <Button
+  <Component
     customProperty="custom property"
     customStyles={
       Object {
@@ -12,16 +12,17 @@ exports[`PillButtons: Component should render correctly 1`] = `
     }
   >
     left title
-  </Button>
-  <Button
+  </Component>
+  <Component
     customProperty="custom property"
     customStyles={
       Object {
         "width": "100%",
       }
     }
+    inverse={true}
   >
     right title
-  </Button>
+  </Component>
 </styled.div>
 `;

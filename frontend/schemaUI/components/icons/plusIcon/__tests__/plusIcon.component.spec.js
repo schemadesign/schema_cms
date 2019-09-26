@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { PlusIcon } from '../plusIcon.component';
+import { PlusIconComponent } from '../plusIcon.component';
 
 describe('PlusIcon: Component', () => {
   const defaultProps = {};
 
-  const component = props => <PlusIcon {...defaultProps} {...props} />;
+  const component = props => <PlusIconComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

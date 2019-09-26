@@ -39,7 +39,7 @@ export class List extends PureComponent {
   getHeaderAndMenuConfig = () => ({
     headerTitle: this.formatMessage(messages.title),
     headerSubtitle: this.formatMessage(messages.overview),
-    secondaryMenuItems: [{ label: this.formatMessage(messages.logOut), to: '/logout' }],
+    secondaryMenuItems: [{ label: this.formatMessage(messages.logOut), to: '/logout', id: 'logoutBtn' }],
   });
 
   formatMessage = value => this.props.intl.formatMessage(value);

@@ -11,7 +11,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -25,7 +25,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
-            id="projectsPageTitle"
+            id="headerTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -38,7 +38,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             Data Wrangling
           </h2>
           <h1
-            id="projectsPageSubtitle"
+            id="headerSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -61,9 +61,10 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -78,7 +79,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -95,8 +96,8 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#000",
+          "color": "#FFF",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -119,7 +120,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
-            id="projectsPageTitle"
+            id="headerTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -132,7 +133,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             Data Wrangling
           </h2>
           <h1
-            id="projectsPageSubtitle"
+            id="headerSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -163,12 +164,13 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -183,7 +185,7 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -221,8 +223,8 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #F0EFEF",
-              "color": "#a6a7aa",
+              "borderTop": "1px solid #2F2F36",
+              "color": "#71737e",
               "display": "block",
               "fontSize": "14px",
               "outline": "none",
@@ -243,14 +245,17 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
             Object {
               "backgroundColor": "transparent",
               "border": "none",
-              "color": "#1d1d20",
+              "color": "#FFF",
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
             }
           }
           type="text"
-          value="Change to lowercase"
+          value="local:blank_cells.py"
         />
         <div
           style={
@@ -266,12 +271,704 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
     <pre
       style={
         Object {
-          "backgroundColor": "#fff",
+          "background": "#F0F0F0",
+          "color": "#444",
+          "display": "block",
+          "overflowX": "auto",
+          "padding": "0.5em",
         }
       }
     >
       <code>
-        df.columns = map(str.lower, df.columns)
+        
+      
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          import
+        </span>
+         pandas 
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          as
+        </span>
+         pd
+      
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          import
+        </span>
+         numpy 
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          as
+        </span>
+         np
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          """
+      Here are some ways to handle blank cells
+          1. Fill Blank cells with any value you want
+          2. Forward or backward fill the values
+          3. Remove rows with Blank cells
+      """
+        </span>
+        
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Sample dataset
+        </span>
+        
+      df = pd.DataFrame(
+          [[np.nan, 
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          2
+        </span>
+        , np.nan, 
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          0
+        </span>
+        ], [
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          3
+        </span>
+        , 
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          4
+        </span>
+        , np.nan, 
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          1
+        </span>
+        ], [np.nan, np.nan, np.nan, 
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          5
+        </span>
+        ], [np.nan, 
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          3
+        </span>
+        , np.nan, 
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          4
+        </span>
+        ]],
+          columns=list(
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'ABCD'
+        </span>
+        ),
+      )
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          """
+      1. Fill
+      """
+        </span>
+        
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Simple fill for entire dataset
+        </span>
+        
+      fill_value = 
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          10
+        </span>
+        
+      df = df.fillna(fill_value)
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Simple fill for specific field
+        </span>
+        
+      column_fill_value = 
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          5
+        </span>
+        
+      df = df[
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          "A"
+        </span>
+        ].fillna(fill_value, inplace=
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          True
+        </span>
+        )
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          """
+      2. Forward and Backward fill
+      """
+        </span>
+        
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # forward fill for entire dataset (Fills with previous non-empty value)
+        </span>
+        
+      df = df.fillna(method=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          "ffill"
+        </span>
+        )
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # forward fill column specific
+        </span>
+        
+      df = df[
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          "A"
+        </span>
+        ].fillna(method=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'ffill'
+        </span>
+        , inplace=
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          True
+        </span>
+        )
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # backward fill (Fills with next non-empty value)
+        </span>
+        
+      df = df.fillna(method=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          "bfill"
+        </span>
+        )
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # backward fill column specific
+        </span>
+        
+      df = df[
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          "A"
+        </span>
+        ].fillna(method=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'bfill'
+        </span>
+        , inplace=
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          True
+        </span>
+        )
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          """
+      3. Drop rows
+      It is not possible to just drop one blank cell. we would need to drop the whole row or column to
+      clean our dataset so there can be two cases of blank cells in rows and columns.
+      1. All cells are blank (empty row or column)
+      2. One or more cells are blank (partially empty row or column)
+      """
+        </span>
+        
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Empty Rows
+        </span>
+        
+      df = df.dropna(how=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'all'
+        </span>
+        , axis=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          0
+        </span>
+        )
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Empty Columns
+        </span>
+        
+      df = df.dropna(how=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'all'
+        </span>
+        , axis=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          1
+        </span>
+        )
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Empty Rows (specific column)
+        </span>
+        
+      df = df[
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'A'
+        </span>
+        ].dropna(how=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'all'
+        </span>
+        , axis=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          0
+        </span>
+        )
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Empty Columns (specific column)
+        </span>
+        
+      df = df[
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'A'
+        </span>
+        ].dropna(how=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'all'
+        </span>
+        , axis=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          1
+        </span>
+        )
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Partially empty Rows
+        </span>
+        
+      df = df.dropna(how=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'any'
+        </span>
+        , axis=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          0
+        </span>
+        )
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Partially empty Columns
+        </span>
+        
+      df = df.dropna(how=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'any'
+        </span>
+        , axis=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          1
+        </span>
+        )
+      
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Partially empty Rows (specific column)
+        </span>
+        
+      df = df.dropna(how=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'any'
+        </span>
+        , axis=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          0
+        </span>
+        )
+      
+        <span
+          style={
+            Object {
+              "color": "#888888",
+            }
+          }
+        >
+          # Partially empty Columns (specific column)
+        </span>
+        
+      df = df.dropna(how=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          'any'
+        </span>
+        , axis=
+        <span
+          style={
+            Object {
+              "color": "#880000",
+            }
+          }
+        >
+          1
+        </span>
+        )
+    
       </code>
     </pre>
   </form>
@@ -282,12 +979,13 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#1d1d20",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "margin": "0",
           "marginRight": 10,
@@ -304,12 +1002,13 @@ exports[`Storyshots Project/DataSource/View/DataWrangling/View Default 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#1d1d20",
+          "backgroundColor": "#FFF",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#fff",
+          "color": "#000",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "margin": "0",
           "minHeight": "48px",

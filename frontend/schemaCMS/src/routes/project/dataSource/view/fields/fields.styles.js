@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Theme } from 'schemaUI';
 import { identity } from 'ramda';
 import { styleWhenTrue } from '../../../../../shared/utils/rendering';
 
@@ -24,7 +23,7 @@ export const NavigationLabel = styled.div`
   text-align: center;
   font-size: 18px;
   font-weight: 600;
-  color: ${Theme.primary.label};
+  color: ${({ theme }) => theme.text};
 `;
 
 export const Content = styled.div``;

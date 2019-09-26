@@ -2,7 +2,7 @@
 
 exports[`Storyshots Project/DataSource/List Default 1`] = `
 <div
-  className="sc-jzJRlG kQDpPo"
+  className="sc-jzJRlG djaKlO"
 >
   <div
     className="sc-htpNat KtFsv"
@@ -11,7 +11,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
       style={
         Object {
           "alignItems": "flex-start",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -25,7 +25,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
-            id="projectsPageTitle"
+            id="headerTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -38,7 +38,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             Data Sources
           </h2>
           <h1
-            id="projectsPageSubtitle"
+            id="headerSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -61,9 +61,10 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -78,7 +79,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -95,8 +96,8 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     <div
       style={
         Object {
-          "backgroundColor": "#fff",
-          "color": "#1d1d20",
+          "backgroundColor": "#000",
+          "color": "#FFF",
           "maxWidth": null,
           "minHeight": "100vh",
           "padding": "18px 20px 27px",
@@ -119,7 +120,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           className="sc-bxivhb bUZGRr"
         >
           <h2
-            id="projectsPageTitle"
+            id="headerTitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -132,7 +133,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             Data Sources
           </h2>
           <h1
-            id="projectsPageSubtitle"
+            id="headerSubtitle"
             style={
               Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -158,7 +159,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
           className="sc-bZQynM sc-htoDjs LPVfx"
         >
           <li
-            className="sc-dnqmqq sc-gZMcBi bYVXEs"
+            className="sc-dnqmqq sc-gZMcBi iSOFEL"
           >
             <a
               href="/project/view/1"
@@ -175,12 +176,13 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "transparent",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#FFF",
             "cursor": "pointer",
             "display": "inline-block",
+            "fill": "#FFF",
             "fontSize": "18px",
             "margin": "0",
             "minHeight": "48px",
@@ -195,7 +197,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         <svg
           style={
             Object {
-              "fill": "#1d1d20",
+              "fill": "#FFF",
               "height": "60px",
               "width": "60px",
             }
@@ -214,14 +216,14 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     className="sc-chPdSV bLdZVA"
   >
     <li
-      className="sc-cSHVUG hlUlrZ"
+      className="sc-cSHVUG cmjBKw"
     >
       <div
         style={
           Object {
-            "backgroundColor": "#f0efef",
-            "borderTop": "2px solid #1d1d20",
-            "color": "#1d1d20",
+            "backgroundColor": "#1d1d20",
+            "borderTop": "2px solid #FFF",
+            "color": "#FFF",
             "display": "flex",
             "flexDirection": "column",
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -232,7 +234,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
         <div
           style={
             Object {
-              "color": "#a6a7aa",
+              "color": undefined,
               "fontSize": "12px",
               "marginBottom": "14px",
             }
@@ -261,7 +263,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
               <svg
                 style={
                   Object {
-                    "fill": "#1d1d20",
+                    "fill": "#FFF",
                     "height": "30px",
                     "width": "30px",
                   }
@@ -302,7 +304,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX iHeTyK"
             >
               Source
             </span>
@@ -312,7 +314,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
               <svg
                 style={
                   Object {
-                    "fill": "#1d1d20",
+                    "fill": "#FFF",
                     "height": 40,
                     "width": 40,
                   }
@@ -330,7 +332,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX iHeTyK"
             >
               Items
             </span>
@@ -344,7 +346,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX iHeTyK"
             >
               Fields
             </span>
@@ -358,7 +360,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX iHeTyK"
             >
               Filters
             </span>
@@ -372,7 +374,7 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
             className="sc-kGXeez jkxADl"
           >
             <span
-              className="sc-kpOJdX cMjxsD"
+              className="sc-kpOJdX iHeTyK"
             >
               Views
             </span>
@@ -387,31 +389,33 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
     </li>
   </div>
   <div
-    className="sc-kEYyzF kuHvLF"
+    className="sc-kEYyzF jFKkhA"
   >
     <button
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#1d1d20",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "height": "60px",
           "margin": "0",
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "width": "60px",
         }
       }
     >
       <svg
         style={
           Object {
-            "fill": "#1d1d20",
+            "fill": "#FFF",
             "height": "60px",
             "width": "60px",
           }
@@ -427,18 +431,20 @@ exports[`Storyshots Project/DataSource/List Default 1`] = `
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#f0efef",
+          "backgroundColor": "#1d1d20",
           "border": "none",
           "borderRadius": "48px",
-          "color": "#1d1d20",
+          "color": "#FFF",
           "cursor": "pointer",
           "display": "inline-block",
+          "fill": "#FFF",
           "fontSize": "18px",
           "height": "60px",
           "margin": "0",
           "minHeight": "48px",
           "outline": "none",
           "padding": "0",
+          "width": "60px",
         }
       }
     >

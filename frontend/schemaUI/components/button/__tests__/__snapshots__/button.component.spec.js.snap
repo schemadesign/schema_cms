@@ -1,45 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button: Component should render correctly 1`] = `
-<button
-  style={
-    Object {
-      "backgroundColor": "#f0efef",
-      "border": "none",
-      "borderRadius": "48px",
-      "color": "#1d1d20",
-      "cursor": "pointer",
-      "display": "inline-block",
-      "fontSize": "18px",
-      "margin": "0",
-      "minHeight": "48px",
-      "outline": "none",
-      "padding": "0",
-    }
-  }
->
-  button
-</button>
+<Component>
+  <ButtonComponent
+    customStyles={Object {}}
+    inverse={false}
+  >
+    <button
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#FFF",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fill": "#FFF",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+    >
+      button
+    </button>
+  </ButtonComponent>
+</Component>
 `;
 
 exports[`Button: Component should render with custom styles 1`] = `
-<button
-  style={
+<Component
+  customStyles={
     Object {
       "backgroundColor": "red",
-      "border": "none",
-      "borderRadius": "48px",
-      "color": "#1d1d20",
-      "cursor": "pointer",
-      "display": "inline-block",
-      "fontSize": "18px",
-      "margin": "0",
-      "minHeight": "48px",
-      "outline": "none",
-      "padding": "0",
     }
   }
 >
-  button
-</button>
+  <ButtonComponent
+    customStyles={
+      Object {
+        "backgroundColor": "red",
+      }
+    }
+    inverse={false}
+  >
+    <button
+      style={
+        Object {
+          "backgroundColor": "red",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#FFF",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fill": "#FFF",
+          "fontSize": "18px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+        }
+      }
+    >
+      button
+    </button>
+  </ButtonComponent>
+</Component>
 `;

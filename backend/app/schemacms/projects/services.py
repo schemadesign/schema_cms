@@ -56,7 +56,7 @@ class S3ScriptResource(ScriptResource):
 
     def list(self, obj):
         return [
-            {'key': self.ref_name(obj.key)}
+            {'key': self.ref_name(obj.key), 'resource': self, 'ref_key': obj.key}
             for obj in self.bucket.objects.filter(Prefix=self.get_upload_path(obj))
         ]
 
@@ -66,7 +66,7 @@ class S3ScriptResource(ScriptResource):
         )
 
     def getvalue(self, ref_key):
-        response = self.bucket.get_object(Key=ref_key)
+        response = self.bucket.meta.client.get_object(Bucket=self.bucket.name, Key=ref_key)
         return response['Body'].read()
 
 
@@ -78,7 +78,7 @@ class LocalScriptResource(ScriptResource):
 
     def list(self, datasource):
         for file in os.listdir(self.path):
-            yield {'key': self.ref_name(file)}
+            yield {'key': self.ref_name(file), 'resource': self, 'ref_key': file}
 
     def getvalue(self, ref_key):
         file_path = os.path.join(self.path, ref_key)
@@ -104,10 +104,14 @@ class Scripts:
         return next(filter(lambda r: r.PROTOCOL == protocol, self.resources.values()), None), ref_key
 
 
-scripts = Scripts()
+def setup_scripts():
+    scripts_ = Scripts()
+    S3ScriptResource(settings.AWS_STORAGE_BUCKET_NAME, settings.DS_SCRIPTS_UPLOAD_PATH).register(scripts_)
+    LocalScriptResource('./step-scripts/').register(scripts_)
+    return scripts_
 
-S3ScriptResource(settings.DATASOURCE_S3_BUCKET, settings.DS_SCRIPTS_UPLOAD_PATH).register(scripts)
-LocalScriptResource('./step-scripts/').register(scripts)
+
+scripts = functional.SimpleLazyObject(setup_scripts)
 
 
 def schedule_worker_with(datasource_job):

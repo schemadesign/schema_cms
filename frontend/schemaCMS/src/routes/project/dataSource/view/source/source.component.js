@@ -90,8 +90,8 @@ export class Source extends PureComponent {
           validationSchema={DATA_SOURCE_SCHEMA}
           onSubmit={this.handleSubmit}
         >
-          {({ handleChange, values: { name, type, fileName }, setFieldValue, submitForm, dirty, isValid }) => {
-            if (dirty && isValid) {
+          {({ handleChange, values: { name, type, fileName }, setFieldValue, submitForm, isValid }) => {
+            if (isValid) {
               bindSubmitForm(submitForm);
             }
 

@@ -1,20 +1,166 @@
-const primary = {
-  body: '#FFF',
-  background: '#f0efef',
-  label: '#a6a7aa',
-  border: '#1d1d20',
-  text: '#1d1d20',
-  error: '#f21e29',
-  active: '#1d1d20',
-  divider: '#F0EFEF',
-  iconDark: '#1d1d20',
-  iconBright: '#FFF',
+const colors = {
+  white: '#FFF',
+  black: '#000',
+  darkGrey: '#1d1d20',
+  lightGrey: '#71737e',
+  veryLightPink: '#f0efef',
+  coolGray: '#a6a7aa',
+  mediumGray: '#2F2F36',
+  red: '#f21e29',
 };
 
-const secondary = {
-  background: '#1d1d20',
-  text: '#fff',
-  label: '#71737e',
+const light = {
+  button: {
+    background: colors.veryLightPink,
+    text: colors.black,
+  },
+  inverseButton: {
+    background: colors.black,
+    text: colors.white,
+  },
+  card: {
+    label: colors.lightGrey,
+    text: colors.white,
+    border: colors.black,
+    background: colors.veryLightPink,
+  },
+  providerContainer: {
+    backgroundColor: colors.white,
+    minHeight: '100vh',
+  },
+  dataGrid: {
+    background: colors.veryLightPink,
+    text: colors.coolGray,
+  },
+  checkbox: {
+    border: colors.mediumGray,
+    text: colors.black,
+  },
+  input: {
+    text: colors.black,
+  },
+  label: {
+    text: colors.coolGray,
+    border: colors.darkGrey,
+  },
+  textArea: {
+    text: colors.black,
+  },
+  textField: {
+    label: colors.coolGray,
+    error: colors.red,
+  },
+  header: {
+    text: colors.darkGrey,
+  },
+  menu: {
+    background: colors.white,
+    text: colors.black,
+  },
+  stepper: {
+    background: colors.veryLightPink,
+    active: colors.darkGrey,
+  },
+  icon: {
+    background: colors.veryLightPink,
+    fill: colors.darkGrey,
+  },
+  table: {
+    border: {
+      body: colors.veryLightPink,
+      header: colors.white,
+    },
+    background: {
+      body: colors.white,
+      header: colors.veryLightPink,
+    },
+    text: {
+      body: colors.black,
+      header: colors.coolGray,
+    },
+  },
+  background: colors.white,
+  border: colors.veryLightPink,
+  text: colors.darkGrey,
+  secondaryText: colors.coolGray,
+  error: colors.red,
+  colors,
+};
+
+const dark = {
+  button: {
+    background: colors.darkGrey,
+    text: colors.white,
+  },
+  inverseButton: {
+    background: colors.white,
+    text: colors.black,
+  },
+  card: {
+    label: colors.label,
+    border: colors.white,
+    background: colors.darkGrey,
+  },
+  providerContainer: {
+    backgroundColor: colors.black,
+    minHeight: '100vh',
+  },
+  dataGrid: {
+    background: colors.black,
+    text: colors.lightGrey,
+  },
+  checkbox: {
+    border: colors.mediumGray,
+    text: colors.white,
+  },
+  input: {
+    text: colors.white,
+  },
+  label: {
+    text: colors.lightGrey,
+    border: colors.mediumGray,
+  },
+  textArea: {
+    text: colors.white,
+  },
+  textField: {
+    label: colors.lightGrey,
+    error: colors.red,
+  },
+  header: {
+    text: colors.white,
+  },
+  menu: {
+    background: colors.black,
+    text: colors.white,
+  },
+  stepper: {
+    background: colors.darkGrey,
+    active: colors.white,
+  },
+  icon: {
+    background: colors.darkGrey,
+    fill: colors.white,
+  },
+  table: {
+    border: {
+      body: colors.darkGrey,
+      header: colors.black,
+    },
+    background: {
+      body: colors.black,
+      header: colors.darkGrey,
+    },
+    text: {
+      body: colors.white,
+      header: colors.lightGrey,
+    },
+  },
+  background: colors.black,
+  border: colors.mediumGray,
+  text: colors.white,
+  secondaryText: colors.lightGrey,
+  colors,
 };
 
 const INTER_FONT = 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';
@@ -32,7 +178,7 @@ const primaryTypography = {
   h3: {
     fontFamily: INTER_FONT,
     fontWeight: 600,
-    color: primary.label,
+    color: light.label,
   },
   p: {
     fontFamily: INTER_FONT,
@@ -46,7 +192,9 @@ const primaryTypography = {
   },
 };
 
-primary.typography = primaryTypography;
+light.typography = primaryTypography;
+dark.typography = primaryTypography;
+const defaultTheme = dark;
 
-export { primary, secondary };
-export const Theme = { primary, secondary };
+export { light, dark, colors, defaultTheme };
+export const Theme = { light, dark, colors };

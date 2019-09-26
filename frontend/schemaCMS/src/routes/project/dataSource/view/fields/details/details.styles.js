@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Theme, Icons } from 'schemaUI';
+import { Icons } from 'schemaUI';
 
 export const Container = styled.div``;
 
@@ -14,13 +14,13 @@ export const List = styled.ul`
 `;
 
 export const FieldInformation = styled.li`
-  border-bottom: 2px solid ${Theme.primary.background};
+  border-bottom: 2px solid ${({ theme }) => theme.border};
   padding: 12px 0;
   display: flex;
   width: 100%;
 
   &:first-of-type {
-    border-top: 2px solid ${Theme.primary.background};
+    border-top: 2px solid ${({ theme }) => theme.border};
   }
 `;
 
@@ -30,13 +30,14 @@ export const FieldSummary = styled(FieldInformation)`
 `;
 
 export const Label = styled.span`
-  color: ${Theme.primary.label};
+  color: ${({ theme }) => theme.secondaryText};
   display: inline-block;
   margin-right: 10px;
   flex: 0 0 auto;
 `;
 
 export const Value = styled.span`
+  color: ${({ theme }) => theme.text};
   flex: 1 1 auto;
 `;
 

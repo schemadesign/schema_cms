@@ -1,551 +1,1637 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataGrid: Component should render correctly 1`] = `
-<div
-  style={
+<Component
+  data={
     Object {
-      "display": "flex",
-      "flexDirection": "column",
-      "width": "100%",
+      "columns": Array [
+        Object {
+          "displayName": "#",
+          "name": "id",
+        },
+        Object {
+          "displayName": "Name",
+          "name": "name",
+        },
+        Object {
+          "displayName": "Surname",
+          "name": "surname",
+        },
+        Object {
+          "displayName": "Date of Birth",
+          "name": "dateOfBirth",
+        },
+      ],
+      "rows": Array [
+        Object {
+          "dateOfBirth": "06/01/1915",
+          "id": "342",
+          "name": "Alan",
+          "surname": "Watts",
+        },
+        Object {
+          "dateOfBirth": "08/01/1947",
+          "id": "355",
+          "name": "David",
+          "surname": "Bowie",
+        },
+        Object {
+          "dateOfBirth": "20/09/1941",
+          "id": "123",
+          "name": "Dale",
+          "surname": "Chihuly",
+        },
+        Object {
+          "dateOfBirth": "08/02/1944",
+          "id": "556",
+          "name": "Sebastião",
+          "surname": "Salgado",
+        },
+      ],
     }
   }
 >
-  <div
-    style={
+  <DataGridComponent
+    data={
       Object {
-        "display": "flex",
+        "columns": Array [
+          Object {
+            "displayName": "#",
+            "name": "id",
+          },
+          Object {
+            "displayName": "Name",
+            "name": "name",
+          },
+          Object {
+            "displayName": "Surname",
+            "name": "surname",
+          },
+          Object {
+            "displayName": "Date of Birth",
+            "name": "dateOfBirth",
+          },
+        ],
+        "rows": Array [
+          Object {
+            "dateOfBirth": "06/01/1915",
+            "id": "342",
+            "name": "Alan",
+            "surname": "Watts",
+          },
+          Object {
+            "dateOfBirth": "08/01/1947",
+            "id": "355",
+            "name": "David",
+            "surname": "Bowie",
+          },
+          Object {
+            "dateOfBirth": "20/09/1941",
+            "id": "123",
+            "name": "Dale",
+            "surname": "Chihuly",
+          },
+          Object {
+            "dateOfBirth": "08/02/1944",
+            "id": "556",
+            "name": "Sebastião",
+            "surname": "Salgado",
+          },
+        ],
       }
     }
   >
-    <Grid
-      customStyles={
+    <div
+      style={
         Object {
-          "backgroundColor": "#1D1D20",
-          "border": "1px solid #fff",
-          "color": "#71737e",
-          "padding": "10px 15px",
+          "display": "flex",
+          "flexDirection": "column",
+          "width": "100%",
         }
       }
-      key="0"
-      size={25}
     >
-      #
-    </Grid>
-    <Grid
-      customStyles={
-        Object {
-          "backgroundColor": "#1D1D20",
-          "border": "1px solid #fff",
-          "color": "#71737e",
-          "padding": "10px 15px",
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
         }
-      }
-      key="1"
-      size={25}
-    >
-      Name
-    </Grid>
-    <Grid
-      customStyles={
-        Object {
-          "backgroundColor": "#1D1D20",
-          "border": "1px solid #fff",
-          "color": "#71737e",
-          "padding": "10px 15px",
+      >
+        <Grid
+          customStyles={
+            Object {
+              "backgroundColor": "#000",
+              "border": "1px solid #fff",
+              "color": "#71737e",
+              "padding": "10px 15px",
+            }
+          }
+          key="0"
+          size={25}
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#000",
+                "border": "1px solid #fff",
+                "color": "#71737e",
+                "display": "flex",
+                "flexBasis": "25%",
+                "flexGrow": 0,
+                "maxWidth": "25%",
+                "padding": "10px 15px",
+              }
+            }
+          >
+            #
+          </div>
+        </Grid>
+        <Grid
+          customStyles={
+            Object {
+              "backgroundColor": "#000",
+              "border": "1px solid #fff",
+              "color": "#71737e",
+              "padding": "10px 15px",
+            }
+          }
+          key="1"
+          size={25}
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#000",
+                "border": "1px solid #fff",
+                "color": "#71737e",
+                "display": "flex",
+                "flexBasis": "25%",
+                "flexGrow": 0,
+                "maxWidth": "25%",
+                "padding": "10px 15px",
+              }
+            }
+          >
+            Name
+          </div>
+        </Grid>
+        <Grid
+          customStyles={
+            Object {
+              "backgroundColor": "#000",
+              "border": "1px solid #fff",
+              "color": "#71737e",
+              "padding": "10px 15px",
+            }
+          }
+          key="2"
+          size={25}
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#000",
+                "border": "1px solid #fff",
+                "color": "#71737e",
+                "display": "flex",
+                "flexBasis": "25%",
+                "flexGrow": 0,
+                "maxWidth": "25%",
+                "padding": "10px 15px",
+              }
+            }
+          >
+            Surname
+          </div>
+        </Grid>
+        <Grid
+          customStyles={
+            Object {
+              "backgroundColor": "#000",
+              "border": "1px solid #fff",
+              "color": "#71737e",
+              "padding": "10px 15px",
+            }
+          }
+          key="3"
+          size={25}
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#000",
+                "border": "1px solid #fff",
+                "color": "#71737e",
+                "display": "flex",
+                "flexBasis": "25%",
+                "flexGrow": 0,
+                "maxWidth": "25%",
+                "padding": "10px 15px",
+              }
+            }
+          >
+            Date of Birth
+          </div>
+        </Grid>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexWrap": "wrap",
+            "width": "100%",
+          }
         }
-      }
-      key="2"
-      size={25}
-    >
-      Surname
-    </Grid>
-    <Grid
-      customStyles={
-        Object {
-          "backgroundColor": "#1D1D20",
-          "border": "1px solid #fff",
-          "color": "#71737e",
-          "padding": "10px 15px",
-        }
-      }
-      key="3"
-      size={25}
-    >
-      Date of Birth
-    </Grid>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "flex",
-        "flexWrap": "wrap",
-        "width": "100%",
-      }
-    }
-  >
-    <Grid
-      key="0"
-      size={100}
-    >
-      <Grid
-        customStyles={Object {}}
-        key="0"
-        size={25}
       >
-        342
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="1"
-        size={25}
-      >
-        Alan
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="2"
-        size={25}
-      >
-        Watts
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="3"
-        size={25}
-      >
-        06/01/1915
-      </Grid>
-    </Grid>
-    <Grid
-      key="1"
-      size={100}
-    >
-      <Grid
-        customStyles={Object {}}
-        key="0"
-        size={25}
-      >
-        355
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="1"
-        size={25}
-      >
-        David
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="2"
-        size={25}
-      >
-        Bowie
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="3"
-        size={25}
-      >
-        08/01/1947
-      </Grid>
-    </Grid>
-    <Grid
-      key="2"
-      size={100}
-    >
-      <Grid
-        customStyles={Object {}}
-        key="0"
-        size={25}
-      >
-        123
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="1"
-        size={25}
-      >
-        Dale
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="2"
-        size={25}
-      >
-        Chihuly
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="3"
-        size={25}
-      >
-        20/09/1941
-      </Grid>
-    </Grid>
-    <Grid
-      key="3"
-      size={100}
-    >
-      <Grid
-        customStyles={Object {}}
-        key="0"
-        size={25}
-      >
-        556
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="1"
-        size={25}
-      >
-        Sebastião
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="2"
-        size={25}
-      >
-        Salgado
-      </Grid>
-      <Grid
-        customStyles={Object {}}
-        key="3"
-        size={25}
-      >
-        08/02/1944
-      </Grid>
-    </Grid>
-  </div>
-</div>
+        <Grid
+          key="0"
+          size={100}
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexBasis": "100%",
+                "flexGrow": 0,
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <Grid
+              customStyles={Object {}}
+              key="0"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                342
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="1"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                Alan
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="2"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                Watts
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="3"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                06/01/1915
+              </div>
+            </Grid>
+          </div>
+        </Grid>
+        <Grid
+          key="1"
+          size={100}
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexBasis": "100%",
+                "flexGrow": 0,
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <Grid
+              customStyles={Object {}}
+              key="0"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                355
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="1"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                David
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="2"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                Bowie
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="3"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                08/01/1947
+              </div>
+            </Grid>
+          </div>
+        </Grid>
+        <Grid
+          key="2"
+          size={100}
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexBasis": "100%",
+                "flexGrow": 0,
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <Grid
+              customStyles={Object {}}
+              key="0"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                123
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="1"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                Dale
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="2"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                Chihuly
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="3"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                20/09/1941
+              </div>
+            </Grid>
+          </div>
+        </Grid>
+        <Grid
+          key="3"
+          size={100}
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexBasis": "100%",
+                "flexGrow": 0,
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <Grid
+              customStyles={Object {}}
+              key="0"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                556
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="1"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                Sebastião
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="2"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                Salgado
+              </div>
+            </Grid>
+            <Grid
+              customStyles={Object {}}
+              key="3"
+              size={25}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "25%",
+                    "flexGrow": 0,
+                    "maxWidth": "25%",
+                  }
+                }
+              >
+                08/02/1944
+              </div>
+            </Grid>
+          </div>
+        </Grid>
+      </div>
+    </div>
+  </DataGridComponent>
+</Component>
 `;
 
 exports[`DataGrid: Component should render with custom styles and size 1`] = `
-<div
-  style={
+<Component
+  data={
     Object {
-      "display": "flex",
-      "flexDirection": "column",
-      "width": "100%",
+      "columns": Array [
+        Object {
+          "displayName": "# - Sized",
+          "name": "id",
+          "size": 10,
+          "styles": Object {
+            "backgroundColor": "#778DA9",
+            "border": "0.3px solid #fff",
+            "color": "#fff",
+            "padding": "10px 5px",
+          },
+        },
+        Object {
+          "displayName": "Name",
+          "name": "name",
+          "styles": Object {
+            "backgroundColor": "#778DA9",
+            "border": "0.3px solid #fff",
+            "color": "#fff",
+            "padding": "10px 5px",
+          },
+        },
+        Object {
+          "displayName": "Surname",
+          "name": "surname",
+          "styles": Object {
+            "backgroundColor": "#778DA9",
+            "border": "0.3px solid #fff",
+            "color": "#fff",
+            "padding": "10px 5px",
+          },
+        },
+        Object {
+          "displayName": "Date of Birth",
+          "name": "dateOfBirth",
+          "styles": Object {
+            "backgroundColor": "#778DA9",
+            "border": "0.3px solid #fff",
+            "color": "#fff",
+            "padding": "10px 5px",
+          },
+        },
+      ],
+      "rows": Array [
+        Object {
+          "dateOfBirth": "06/01/1915",
+          "id": "342",
+          "name": "Alan",
+          "styles": Object {
+            "dateOfBirth": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+            "id": Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            },
+            "name": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+            "surname": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+          },
+          "surname": "Watts",
+        },
+        Object {
+          "dateOfBirth": "08/01/1947",
+          "id": "355",
+          "name": "David",
+          "styles": Object {
+            "dateOfBirth": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+            "id": Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            },
+            "name": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+            "surname": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+          },
+          "surname": "Bowie",
+        },
+        Object {
+          "dateOfBirth": "20/09/1941",
+          "id": "123",
+          "name": "Dale",
+          "styles": Object {
+            "dateOfBirth": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+            "id": Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            },
+            "name": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+            "surname": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+          },
+          "surname": "Chihuly",
+        },
+        Object {
+          "dateOfBirth": "08/02/1944",
+          "id": "556",
+          "name": "Sebastião",
+          "styles": Object {
+            "dateOfBirth": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+            "id": Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            },
+            "name": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+            "surname": Object {
+              "backgroundColor": "#3C474B",
+              "border": "0.3px solid #fff",
+              "color": "#E0E1DD",
+              "padding": "10px 5px",
+            },
+          },
+          "surname": "Salgado",
+        },
+      ],
     }
   }
 >
-  <div
-    style={
+  <DataGridComponent
+    data={
       Object {
-        "display": "flex",
+        "columns": Array [
+          Object {
+            "displayName": "# - Sized",
+            "name": "id",
+            "size": 10,
+            "styles": Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            },
+          },
+          Object {
+            "displayName": "Name",
+            "name": "name",
+            "styles": Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            },
+          },
+          Object {
+            "displayName": "Surname",
+            "name": "surname",
+            "styles": Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            },
+          },
+          Object {
+            "displayName": "Date of Birth",
+            "name": "dateOfBirth",
+            "styles": Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            },
+          },
+        ],
+        "rows": Array [
+          Object {
+            "dateOfBirth": "06/01/1915",
+            "id": "342",
+            "name": "Alan",
+            "styles": Object {
+              "dateOfBirth": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+              "id": Object {
+                "backgroundColor": "#778DA9",
+                "border": "0.3px solid #fff",
+                "color": "#fff",
+                "padding": "10px 5px",
+              },
+              "name": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+              "surname": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+            },
+            "surname": "Watts",
+          },
+          Object {
+            "dateOfBirth": "08/01/1947",
+            "id": "355",
+            "name": "David",
+            "styles": Object {
+              "dateOfBirth": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+              "id": Object {
+                "backgroundColor": "#778DA9",
+                "border": "0.3px solid #fff",
+                "color": "#fff",
+                "padding": "10px 5px",
+              },
+              "name": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+              "surname": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+            },
+            "surname": "Bowie",
+          },
+          Object {
+            "dateOfBirth": "20/09/1941",
+            "id": "123",
+            "name": "Dale",
+            "styles": Object {
+              "dateOfBirth": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+              "id": Object {
+                "backgroundColor": "#778DA9",
+                "border": "0.3px solid #fff",
+                "color": "#fff",
+                "padding": "10px 5px",
+              },
+              "name": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+              "surname": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+            },
+            "surname": "Chihuly",
+          },
+          Object {
+            "dateOfBirth": "08/02/1944",
+            "id": "556",
+            "name": "Sebastião",
+            "styles": Object {
+              "dateOfBirth": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+              "id": Object {
+                "backgroundColor": "#778DA9",
+                "border": "0.3px solid #fff",
+                "color": "#fff",
+                "padding": "10px 5px",
+              },
+              "name": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+              "surname": Object {
+                "backgroundColor": "#3C474B",
+                "border": "0.3px solid #fff",
+                "color": "#E0E1DD",
+                "padding": "10px 5px",
+              },
+            },
+            "surname": "Salgado",
+          },
+        ],
       }
     }
   >
-    <Grid
-      customStyles={
+    <div
+      style={
         Object {
-          "backgroundColor": "#778DA9",
-          "border": "0.3px solid #fff",
-          "color": "#fff",
-          "padding": "10px 5px",
+          "display": "flex",
+          "flexDirection": "column",
+          "width": "100%",
         }
       }
-      key="0"
-      size={10}
     >
-      # - Sized
-    </Grid>
-    <Grid
-      customStyles={
-        Object {
-          "backgroundColor": "#778DA9",
-          "border": "0.3px solid #fff",
-          "color": "#fff",
-          "padding": "10px 5px",
-        }
-      }
-      key="1"
-      size={30}
-    >
-      Name
-    </Grid>
-    <Grid
-      customStyles={
-        Object {
-          "backgroundColor": "#778DA9",
-          "border": "0.3px solid #fff",
-          "color": "#fff",
-          "padding": "10px 5px",
-        }
-      }
-      key="2"
-      size={30}
-    >
-      Surname
-    </Grid>
-    <Grid
-      customStyles={
-        Object {
-          "backgroundColor": "#778DA9",
-          "border": "0.3px solid #fff",
-          "color": "#fff",
-          "padding": "10px 5px",
-        }
-      }
-      key="3"
-      size={30}
-    >
-      Date of Birth
-    </Grid>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "flex",
-        "flexWrap": "wrap",
-        "width": "100%",
-      }
-    }
-  >
-    <Grid
-      key="0"
-      size={100}
-    >
-      <Grid
-        customStyles={
+      <div
+        style={
           Object {
-            "backgroundColor": "#778DA9",
-            "border": "0.3px solid #fff",
-            "color": "#fff",
-            "padding": "10px 5px",
+            "display": "flex",
           }
         }
-        key="0"
-        size={10}
       >
-        342
-      </Grid>
-      <Grid
-        customStyles={
+        <Grid
+          customStyles={
+            Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            }
+          }
+          key="0"
+          size={10}
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#778DA9",
+                "border": "0.3px solid #fff",
+                "color": "#fff",
+                "display": "flex",
+                "flexBasis": "10%",
+                "flexGrow": 0,
+                "maxWidth": "10%",
+                "padding": "10px 5px",
+              }
+            }
+          >
+            # - Sized
+          </div>
+        </Grid>
+        <Grid
+          customStyles={
+            Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            }
+          }
+          key="1"
+          size={30}
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#778DA9",
+                "border": "0.3px solid #fff",
+                "color": "#fff",
+                "display": "flex",
+                "flexBasis": "30%",
+                "flexGrow": 0,
+                "maxWidth": "30%",
+                "padding": "10px 5px",
+              }
+            }
+          >
+            Name
+          </div>
+        </Grid>
+        <Grid
+          customStyles={
+            Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            }
+          }
+          key="2"
+          size={30}
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#778DA9",
+                "border": "0.3px solid #fff",
+                "color": "#fff",
+                "display": "flex",
+                "flexBasis": "30%",
+                "flexGrow": 0,
+                "maxWidth": "30%",
+                "padding": "10px 5px",
+              }
+            }
+          >
+            Surname
+          </div>
+        </Grid>
+        <Grid
+          customStyles={
+            Object {
+              "backgroundColor": "#778DA9",
+              "border": "0.3px solid #fff",
+              "color": "#fff",
+              "padding": "10px 5px",
+            }
+          }
+          key="3"
+          size={30}
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#778DA9",
+                "border": "0.3px solid #fff",
+                "color": "#fff",
+                "display": "flex",
+                "flexBasis": "30%",
+                "flexGrow": 0,
+                "maxWidth": "30%",
+                "padding": "10px 5px",
+              }
+            }
+          >
+            Date of Birth
+          </div>
+        </Grid>
+      </div>
+      <div
+        style={
           Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
+            "display": "flex",
+            "flexWrap": "wrap",
+            "width": "100%",
           }
         }
-        key="1"
-        size={30}
       >
-        Alan
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="2"
-        size={30}
-      >
-        Watts
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="3"
-        size={30}
-      >
-        06/01/1915
-      </Grid>
-    </Grid>
-    <Grid
-      key="1"
-      size={100}
-    >
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#778DA9",
-            "border": "0.3px solid #fff",
-            "color": "#fff",
-            "padding": "10px 5px",
-          }
-        }
-        key="0"
-        size={10}
-      >
-        355
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="1"
-        size={30}
-      >
-        David
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="2"
-        size={30}
-      >
-        Bowie
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="3"
-        size={30}
-      >
-        08/01/1947
-      </Grid>
-    </Grid>
-    <Grid
-      key="2"
-      size={100}
-    >
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#778DA9",
-            "border": "0.3px solid #fff",
-            "color": "#fff",
-            "padding": "10px 5px",
-          }
-        }
-        key="0"
-        size={10}
-      >
-        123
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="1"
-        size={30}
-      >
-        Dale
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="2"
-        size={30}
-      >
-        Chihuly
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="3"
-        size={30}
-      >
-        20/09/1941
-      </Grid>
-    </Grid>
-    <Grid
-      key="3"
-      size={100}
-    >
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#778DA9",
-            "border": "0.3px solid #fff",
-            "color": "#fff",
-            "padding": "10px 5px",
-          }
-        }
-        key="0"
-        size={10}
-      >
-        556
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="1"
-        size={30}
-      >
-        Sebastião
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="2"
-        size={30}
-      >
-        Salgado
-      </Grid>
-      <Grid
-        customStyles={
-          Object {
-            "backgroundColor": "#3C474B",
-            "border": "0.3px solid #fff",
-            "color": "#E0E1DD",
-            "padding": "10px 5px",
-          }
-        }
-        key="3"
-        size={30}
-      >
-        08/02/1944
-      </Grid>
-    </Grid>
-  </div>
-</div>
+        <Grid
+          key="0"
+          size={100}
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexBasis": "100%",
+                "flexGrow": 0,
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#778DA9",
+                  "border": "0.3px solid #fff",
+                  "color": "#fff",
+                  "padding": "10px 5px",
+                }
+              }
+              key="0"
+              size={10}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#778DA9",
+                    "border": "0.3px solid #fff",
+                    "color": "#fff",
+                    "display": "flex",
+                    "flexBasis": "10%",
+                    "flexGrow": 0,
+                    "maxWidth": "10%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                342
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="1"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                Alan
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="2"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                Watts
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="3"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                06/01/1915
+              </div>
+            </Grid>
+          </div>
+        </Grid>
+        <Grid
+          key="1"
+          size={100}
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexBasis": "100%",
+                "flexGrow": 0,
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#778DA9",
+                  "border": "0.3px solid #fff",
+                  "color": "#fff",
+                  "padding": "10px 5px",
+                }
+              }
+              key="0"
+              size={10}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#778DA9",
+                    "border": "0.3px solid #fff",
+                    "color": "#fff",
+                    "display": "flex",
+                    "flexBasis": "10%",
+                    "flexGrow": 0,
+                    "maxWidth": "10%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                355
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="1"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                David
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="2"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                Bowie
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="3"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                08/01/1947
+              </div>
+            </Grid>
+          </div>
+        </Grid>
+        <Grid
+          key="2"
+          size={100}
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexBasis": "100%",
+                "flexGrow": 0,
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#778DA9",
+                  "border": "0.3px solid #fff",
+                  "color": "#fff",
+                  "padding": "10px 5px",
+                }
+              }
+              key="0"
+              size={10}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#778DA9",
+                    "border": "0.3px solid #fff",
+                    "color": "#fff",
+                    "display": "flex",
+                    "flexBasis": "10%",
+                    "flexGrow": 0,
+                    "maxWidth": "10%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                123
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="1"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                Dale
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="2"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                Chihuly
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="3"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                20/09/1941
+              </div>
+            </Grid>
+          </div>
+        </Grid>
+        <Grid
+          key="3"
+          size={100}
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexBasis": "100%",
+                "flexGrow": 0,
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#778DA9",
+                  "border": "0.3px solid #fff",
+                  "color": "#fff",
+                  "padding": "10px 5px",
+                }
+              }
+              key="0"
+              size={10}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#778DA9",
+                    "border": "0.3px solid #fff",
+                    "color": "#fff",
+                    "display": "flex",
+                    "flexBasis": "10%",
+                    "flexGrow": 0,
+                    "maxWidth": "10%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                556
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="1"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                Sebastião
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="2"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                Salgado
+              </div>
+            </Grid>
+            <Grid
+              customStyles={
+                Object {
+                  "backgroundColor": "#3C474B",
+                  "border": "0.3px solid #fff",
+                  "color": "#E0E1DD",
+                  "padding": "10px 5px",
+                }
+              }
+              key="3"
+              size={30}
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#3C474B",
+                    "border": "0.3px solid #fff",
+                    "color": "#E0E1DD",
+                    "display": "flex",
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "maxWidth": "30%",
+                    "padding": "10px 5px",
+                  }
+                }
+              >
+                08/02/1944
+              </div>
+            </Grid>
+          </div>
+        </Grid>
+      </div>
+    </div>
+  </DataGridComponent>
+</Component>
 `;

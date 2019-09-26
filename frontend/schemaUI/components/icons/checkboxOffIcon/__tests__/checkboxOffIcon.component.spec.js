@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { CheckboxOffIcon } from '../checkboxOffIcon.component';
+import { CheckboxOffIconComponent } from '../checkboxOffIcon.component';
 
 describe('CheckboxOffIcon: Component', () => {
   const defaultProps = {};
 
-  const component = props => <CheckboxOffIcon {...defaultProps} {...props} />;
+  const component = props => <CheckboxOffIconComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Theme } from 'schemaUI';
 
 export const Container = styled.div`
   margin: 0 20px 60px 20px;
@@ -11,7 +10,7 @@ export const ProjectsList = styled.ul`
 `;
 
 export const ProjectItem = styled.li`
-  margin-top: 10px;
+  margin-top: 25px;
 
   &:first-child {
     margin-top: 0;
@@ -45,7 +44,6 @@ export const Description = styled.div`
 `;
 
 export const urlStyles = {
-  color: Theme.primary.label,
   fontSize: '12px',
   whiteSpace: 'nowrap',
   display: 'block',
@@ -60,8 +58,7 @@ export const titleStyles = {
 
 export const addProjectStyles = {
   position: 'fixed',
-  right: '10px',
-  bottom: '10px',
-  backgroundColor: Theme.primary.label,
+  right: '20px',
+  bottom: '24px',
   height: '60px',
 };

@@ -5,7 +5,6 @@ import api from '../../shared/services/api';
 import { DATA_SOURCE_PATH, DATA_WRANGLING_JOB_PATH, DATA_WRANGLING_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 
-import mockScriptsData from './scripts.mock';
 import { selectDataWranglings } from './dataWrangling.selectors';
 
 function* fetchList({ payload: { dataSourceId } }) {
@@ -60,11 +59,14 @@ function* fetchOne({ payload }) {
   try {
     yield put(DataWranglingRoutines.fetchOne.request());
 
-    // const { data } = yield api.get(`/script/view/${scriptId}`);
-    const scripts = yield select(selectDataWranglings);
-    const scriptToProcess = scripts[payload.scriptId];
+    let scripts = yield select(selectDataWranglings);
 
-    const data = mockScriptsData[scriptToProcess.key];
+    //TODO: fetch a single script by script ID only
+    if (!scripts.length) {
+      yield fetchList({ payload });
+      scripts = yield select(selectDataWranglings);
+    }
+    const data = scripts[payload.scriptId];
 
     yield put(DataWranglingRoutines.fetchOne.success(data));
   } catch (error) {

@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { Theme } from 'schemaUI';
+import styled, { css } from 'styled-components';
 
 export const TableWrapper = styled.div`
   width: 100%;
@@ -17,26 +16,26 @@ export const TableBody = styled.tbody``;
 
 export const Row = styled.tr`
   &:last-of-type td:first-of-type {
-    border-bottom-color: ${Theme.primary.background};
+    border-bottom-color: ${({ theme: { table } }) => table.border.body};
     padding-bottom: 10px;
   }
 `;
 
-const cellStyles = `
-  padding: 12px;
+const cellStyles = css`
   font-size: 14px;
   padding: 7px 12px;
-  border-bottom: 2px solid ${Theme.primary.background};
-  border-right: 2px solid ${Theme.primary.background};
+  border-bottom: 2px solid ${({ theme: { table } }) => table.border.body};
+  border-right: 2px solid ${({ theme: { table } }) => table.border.body};
+  color: ${({ theme: { table } }) => table.text.body};
 `;
 
-const headerCellStyles = `
-  background-color: ${Theme.primary.background};
-  color: ${Theme.primary.label};
+const headerCellStyles = css`
+  background-color: ${({ theme: { table } }) => table.background.header};
+  color: ${({ theme: { table } }) => table.text.header};
   font-weight: 600;
   padding: 12px;
-  border-right-color: ${Theme.secondary.text};
-  border-bottom-color: ${Theme.secondary.text};
+  border-right-color: ${({ theme: { table } }) => table.border.header};
+  border-bottom-color: ${({ theme: { table } }) => table.border.header};
 `;
 
 export const Cell = styled.td`
@@ -53,7 +52,7 @@ export const HeaderCell = styled.th`
   }
 
   &:last-of-type {
-    border-right-color: ${Theme.primary.background};
+    border-right-color: ${({ theme: { table } }) => table.border.header};
   }
 `;
 

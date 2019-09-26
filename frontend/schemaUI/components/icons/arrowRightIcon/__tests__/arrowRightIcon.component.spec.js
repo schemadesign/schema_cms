@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { ArrowRightIcon } from '../arrowRightIcon.component';
+import { ArrowRightIconComponent } from '../arrowRightIcon.component';
 
 describe('ArrowRightIcon: Component', () => {
   const defaultProps = {};
 
-  const component = props => <ArrowRightIcon {...defaultProps} {...props} />;
+  const component = props => <ArrowRightIconComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

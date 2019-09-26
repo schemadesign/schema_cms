@@ -46,7 +46,7 @@ export class Details extends PureComponent {
         <List>
           <FieldInformation>
             <Label>{this.props.intl.formatMessage(messages.field)}</Label>
-            {this.props.id}
+            <Value>{this.props.id}</Value>
           </FieldInformation>
           {labelsIds.map(this.renderItem)}
         </List>

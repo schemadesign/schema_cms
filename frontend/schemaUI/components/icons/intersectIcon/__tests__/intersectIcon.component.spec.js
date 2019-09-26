@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { IntersectIcon } from '../intersectIcon.component';
+import { IntersectIconComponent } from '../intersectIcon.component';
 
 describe('IntersectIcon: Component', () => {
   const defaultProps = {};
 
-  const component = props => <IntersectIcon {...defaultProps} {...props} />;
+  const component = props => <IntersectIconComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

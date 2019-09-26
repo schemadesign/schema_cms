@@ -1,29 +1,34 @@
-import { primary } from '../../../utils/theme';
+import { defaultTheme } from '../../../utils/theme';
 
-export const containerStyles = {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  height: 48,
-  borderBottom: `1px solid ${primary.divider}`,
-};
-
-export const iconContainerStyles = {
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-};
-
-export const inputStyles = {
-  visibility: 'hidden',
-  position: 'absolute',
-  overflow: 'hidden',
-  height: 0,
-  top: 0,
-  left: 0,
-};
-
-export const labelStyles = {
-  cursor: 'pointer',
-};
+export const getStyles = (theme = defaultTheme) => ({
+  containerStyles: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    height: 48,
+    color: theme.checkbox.text,
+    borderBottom: `1px solid ${theme.checkbox.border}`,
+  },
+  iconContainerStyles: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  inputStyles: {
+    visibility: 'hidden',
+    position: 'absolute',
+    overflow: 'hidden',
+    height: 0,
+    top: 0,
+    left: 0,
+  },
+  labelStyles: {
+    cursor: 'pointer',
+  },
+  elementStyles: {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
+});

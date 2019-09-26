@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import { Label } from '../label.component';
 
@@ -8,7 +8,7 @@ describe('Label: Component', () => {
 
   const component = props => <Label {...defaultProps} {...props} />;
 
-  const render = (props = {}) => shallow(component(props));
+  const render = (props = {}) => mount(component(props));
 
   it('should render correctly', () => {
     const wrapper = render();
