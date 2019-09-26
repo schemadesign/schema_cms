@@ -68,7 +68,7 @@ describe('Project: sagas', () => {
             ...extenedProjectData,
           })
         )
-        .dispatch(ProjectRoutines.fetchOne('1'))
+        .dispatch(ProjectRoutines.fetchOne({projectId: '1'}))
         .silentRun();
     });
   });

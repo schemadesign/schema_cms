@@ -27,7 +27,7 @@ exports[`View: Component should render correctly 1`] = `
           },
           Object {
             "label": "Delete Project",
-            "to": "/project/delete/100",
+            "onClick": [Function],
           },
           Object {
             "label": "Log Out",
