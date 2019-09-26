@@ -27,6 +27,10 @@ Auth0 authentication using oauth2 flow
 
 `GET` `/api/v1/auth/login/auth0`
 
+*Note:*
+
+- If user is not registered by admin then user is redirected to auth0 logout page and then redirected to `http://localhost:3000/auth/not-registered`
+
 Parameters:
 
 Name       | Type   | Required | Description
