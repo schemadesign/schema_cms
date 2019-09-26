@@ -36,7 +36,7 @@ import {
   STATUS_READY_FOR_PROCESSING,
 } from '../../../modules/dataSource/dataSource.constants';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
-import { NavigationContainer, BackArrowButton, PlusButton } from '../../../../shared/components/navigation';
+import { NavigationContainer, BackArrowButton, PlusButton } from '../../../shared/components/navigation';
 
 const { H1 } = Typography;
 const { CsvIcon, IntersectIcon } = Icons;

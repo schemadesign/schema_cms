@@ -17,7 +17,7 @@ import {
   MAX_STEPS,
   STATUS_DRAFT,
 } from '../../../modules/dataSource/dataSource.constants';
-import { NavigationContainer, BackButton, NextButton } from '../../../../shared/components/navigation';
+import { NavigationContainer, BackButton, NextButton } from '../../../shared/components/navigation';
 
 export class View extends PureComponent {
   static propTypes = {

@@ -117,7 +117,7 @@ exports[`View: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="OK"
-        id="dataSource.view.dataWrangling.view.ok"
+        id="dataWranglingscripts.view.ok"
         values={Object {}}
       />
     </NextButton>

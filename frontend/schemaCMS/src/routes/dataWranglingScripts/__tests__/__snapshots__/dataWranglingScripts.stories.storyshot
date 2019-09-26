@@ -10,23 +10,23 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
   }
 >
   <div
-    className="sc-kjoXOD hpTAeq"
+    className="sc-TOsTZ kjYrri"
   >
     <div
-      className="sc-cHGsZl fcNuGd"
+      className="sc-kgAjT girWJm"
     >
       <div
-        className="sc-kgAjT brsDbA"
+        className="sc-ksYbfQ kEEzLI"
       />
       <div
-        className="sc-TOsTZ dQgaXp"
+        className="sc-cJSrbW fvJOcK"
       >
         <span>
           2 Steps
         </span>
       </div>
       <div
-        className="sc-cJSrbW yCuDX"
+        className="sc-hmzhuo jpFJEj"
       >
         <div
           style={Object {}}
@@ -147,6 +147,17 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
                   "backgroundColor": "#000",
                   "minHeight": "100vh",
                 },
+                "radioButton": Object {
+                  "active": Object {
+                    "background": "#FFF",
+                    "fill": "#1d1d20",
+                  },
+                  "text": "#FFF",
+                  "unActive": Object {
+                    "background": "#1d1d20",
+                    "fill": "#FFF",
+                  },
+                },
                 "secondaryText": "#71737e",
                 "stepper": Object {
                   "active": "#FFF",
@@ -260,7 +271,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-hmzhuo ldBZst"
+            className="sc-kvZOFW irxtEc"
             href="/project/view/2/datasource/view/14/script/view/0"
             onClick={[Function]}
           >
@@ -359,7 +370,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-hmzhuo ldBZst"
+            className="sc-kvZOFW irxtEc"
             href="/project/view/2/datasource/view/14/script/view/1"
             onClick={[Function]}
           >

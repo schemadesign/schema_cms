@@ -17,7 +17,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { Container, Form, customInputStyles } from './view.styles';
 import messages from './view.messages';
-import { BackButton, NavigationContainer, NextButton } from '../../../../../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 export class View extends PureComponent {
   static propTypes = {
