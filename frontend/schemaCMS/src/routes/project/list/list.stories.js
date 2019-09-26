@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withRouter } from '../../../.storybook/decorators';
+import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { PROJECT_STATUSES } from '../../../modules/project/project.constants';
 import { List } from './list.component';
 
 export const defaultProps = {
@@ -11,11 +12,11 @@ export const defaultProps = {
       description: 'Description',
       slug: 'project_title',
       created: '2019-08-26T11:05:12+0000',
-      status: 'Status',
+      status: PROJECT_STATUSES.IN_PROGRESS,
       owner: {
         id: '1',
-        firstName: 'Firstname',
-        lastName: 'Lastname',
+        firstName: 'Sed sed risus a nibh',
+        lastName: 'Maecenas nec pulvinar ex',
       },
     },
     {
@@ -24,7 +25,7 @@ export const defaultProps = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.',
       slug: 'wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam',
       created: '2019-08-26T11:05:12+0000',
-      status: 'Published',
+      status: PROJECT_STATUSES.PUBLISHED,
       owner: {
         id: '2',
         firstName: 'Tadeusz',
@@ -46,5 +47,6 @@ export const emptyListProps = {
 
 storiesOf('Project/List', module)
   .addDecorator(withRouter)
+  .addDecorator(withTheme())
   .add('list', () => <List {...defaultProps} />)
   .add('empty', () => <List {...emptyListProps} />);

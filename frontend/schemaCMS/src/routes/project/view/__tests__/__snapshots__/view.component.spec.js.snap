@@ -170,7 +170,6 @@ exports[`View: Component should render correctly 1`] = `
   <Component
     customStyles={
       Object {
-        "backgroundColor": "#1d1d20",
         "height": "60px",
         "margin": "50px 0 0 0",
         "width": "60px",

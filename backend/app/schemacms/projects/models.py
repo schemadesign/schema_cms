@@ -1,7 +1,7 @@
-import io
 import json
 import os
 
+import django.core.files.base
 import django_fsm
 from django.conf import settings
 from django.core.validators import FileExtensionValidator
@@ -76,11 +76,10 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
         return self.name or str(self.id)
 
     def update_meta(self):
-        data_frame = read_csv(self.file.path, sep=None, engine="python")
+        data_frame = read_csv(self.file.url, sep=None, engine="python", encoding='ISO-8859-1')
         items, fields = data_frame.shape
         preview, fields_info = self.get_preview_data(data_frame)
-        preview_json = io.StringIO()
-        json.dump({"data": preview, "fields": fields_info}, preview_json, indent=4)
+        preview_json = json.dumps({"data": preview, "fields": fields_info}, indent=4).encode()
 
         with transaction.atomic():
             meta, _ = DataSourceMeta.objects.update_or_create(
@@ -88,7 +87,9 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
             )
 
             filename, _ = self.get_original_file_name()
-            meta.preview.save(f"preview_{filename}.json", preview_json)
+            meta.preview.save(
+                f"preview_{filename}.json", django.core.files.base.ContentFile(content=preview_json)
+            )
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location

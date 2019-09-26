@@ -27,14 +27,14 @@ LAMBDA_ARN=$(get_public_api_lambda_arn)
 }
 
 {
-    create_s3_bucket "datasources" &&
+    create_s3_bucket "schemacms" &&
     echo "Scripts S3 bucket created"
 } || {
     echo "Scripts S3 bucket NOT created"
 }
 
 {
-    create_sqs_queue "worker" &&
+    create_sqs_queue "schemacms-queue" &&
     echo "SQS Queue worker created"
 } || {
     echo "SQS Queue worker NOT created"

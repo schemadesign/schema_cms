@@ -5,6 +5,17 @@ from django.conf import settings
 from schemacms.users import constants, models
 
 
+def social_user(backend, uid, user=None, *args, **kwargs):
+    provider = backend.name
+    social = backend.strategy.storage.user.get_social_auth(provider, uid)
+    if social:
+        user = social.user
+    return {'social': social,
+            'user': user,
+            'is_new': user is None,
+            'new_association': social is None}
+
+
 def associate_by_external_id(backend, details, user=None, *args, **kwargs):
     """
     Associate current auth with a user with the same ID in the DB.
