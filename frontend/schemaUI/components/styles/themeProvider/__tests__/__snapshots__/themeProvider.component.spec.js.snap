@@ -5,12 +5,11 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
   value={
     Object {
       "theme": Object {
-        "active": "#1d1d20",
-        "background": "#f0efef",
-        "border": "#1d1d20",
+        "background": "#FFF",
+        "border": "#f0efef",
         "button": Object {
-          "background": "#000",
-          "text": "#FFF",
+          "background": "#f0efef",
+          "text": "#000",
         },
         "card": Object {
           "background": "#f0efef",
@@ -22,23 +21,34 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "border": "#2F2F36",
           "text": "#000",
         },
+        "colors": Object {
+          "black": "#000",
+          "coolGray": "#a6a7aa",
+          "darkGrey": "#1d1d20",
+          "lightGrey": "#71737e",
+          "mediumGray": "#2F2F36",
+          "red": "#f21e29",
+          "veryLightPink": "#f0efef",
+          "white": "#FFF",
+        },
         "dataGrid": Object {
           "background": "#f0efef",
           "text": "#a6a7aa",
         },
-        "divider": "#F0EFEF",
         "error": "#f21e29",
         "header": Object {
-          "text": "#FFF",
+          "text": "#1d1d20",
         },
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
         },
-        "iconBright": "#FFF",
-        "iconDark": "#1d1d20",
         "input": Object {
           "text": "#000",
+        },
+        "inverseButton": Object {
+          "background": "#000",
+          "text": "#FFF",
         },
         "label": Object {
           "border": "#1d1d20",
@@ -52,9 +62,24 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "backgroundColor": "#FFF",
           "minHeight": "100vh",
         },
+        "secondaryText": "#a6a7aa",
         "stepper": Object {
           "active": "#1d1d20",
           "background": "#f0efef",
+        },
+        "table": Object {
+          "background": Object {
+            "body": "#FFF",
+            "header": "#f0efef",
+          },
+          "border": Object {
+            "body": "#f0efef",
+            "header": "#FFF",
+          },
+          "text": Object {
+            "body": "#000",
+            "header": "#a6a7aa",
+          },
         },
         "text": "#1d1d20",
         "textArea": Object {

@@ -113,7 +113,7 @@ class Common(Configuration):
     STORAGE_DIR = os.getenv("DJANGO_STORAGE_DIR", "/storage")
 
     DEFAULT_FILE_STORAGE = os.getenv(
-        "DJANGO_DEFAULT_FILE_STORAGE", "schemacms.utils.storages.OverwriteStorage"
+        "DJANGO_DEFAULT_FILE_STORAGE", "storages.backends.s3boto3.S3Boto3Storage"
     )
 
     # Media files
@@ -225,7 +225,7 @@ class Common(Configuration):
         # defined).
         "social_core.pipeline.social_auth.auth_allowed",
         # Checks if the current social-account is already associated in the site.
-        "social_core.pipeline.social_auth.social_user",
+        "schemacms.authorization.pipeline.social_user",
         # Make up a username for this person, appends a random string at the end if
         # there's any collision.
         "social_core.pipeline.user.get_username",
@@ -274,8 +274,8 @@ class Common(Configuration):
     AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
+    AWS_DEFAULT_ACL = None
 
-    DATASOURCE_S3_BUCKET = 'datasources'
     DS_SCRIPTS_UPLOAD_PATH = '/datasource/{}/scripts/'
     DS_JOB_UPLOAD_PATH = '/datasource/{}/jobs/'
 

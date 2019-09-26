@@ -106,7 +106,7 @@ class Scripts:
 
 def setup_scripts():
     scripts_ = Scripts()
-    S3ScriptResource(settings.DATASOURCE_S3_BUCKET, settings.DS_SCRIPTS_UPLOAD_PATH).register(scripts_)
+    S3ScriptResource(settings.AWS_STORAGE_BUCKET_NAME, settings.DS_SCRIPTS_UPLOAD_PATH).register(scripts_)
     LocalScriptResource('./step-scripts/').register(scripts_)
     return scripts_
 

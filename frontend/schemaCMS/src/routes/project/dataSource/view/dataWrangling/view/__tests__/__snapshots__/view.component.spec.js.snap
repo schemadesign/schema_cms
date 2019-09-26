@@ -115,10 +115,6 @@ exports[`View: Component should render correctly 1`] = `
     }
     rightButtonProps={
       Object {
-        "customStyles": Object {
-          "backgroundColor": "#1d1d20",
-          "color": "#fff",
-        },
         "onClick": [Function],
         "title": "OK",
       }

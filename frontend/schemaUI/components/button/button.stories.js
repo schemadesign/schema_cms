@@ -17,6 +17,7 @@ const customStylesForIcon = {
 
 storiesOf('Button', module)
   .add('Default', () => <Button>Next</Button>)
+  .add('Inverse', () => <Button inverse>Next</Button>)
   .add('with custom styles', () => <Button customStyles={customStyles}>Next</Button>)
   .add('with icon', () => (
     <Button customStyles={customStylesForIcon}>
