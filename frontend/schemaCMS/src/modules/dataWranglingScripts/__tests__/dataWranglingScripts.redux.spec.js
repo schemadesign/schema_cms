@@ -25,10 +25,7 @@ describe('DataWranglingScripts: redux', () => {
         description: 'file description',
         code: 'df.columns = map(str.lower, df.columns)',
       };
-      const resultState = dataWranglingReducer(
-        defaultState,
-        DataWranglingScriptsRoutines.fetchOne.success(script)
-      );
+      const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchOne.success(script));
 
       expect(resultState.script).to.deep.equal(script);
     });
@@ -45,10 +42,7 @@ describe('DataWranglingScripts: redux', () => {
   describe('when FETCH_LIST/SUCCESS action is received', () => {
     it('should set dataWranglings', () => {
       const scripts = ['data 1', 'data 2'];
-      const resultState = dataWranglingReducer(
-        defaultState,
-        DataWranglingScriptsRoutines.fetchList.success(scripts)
-      );
+      const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchList.success(scripts));
 
       expect(resultState.scripts).to.deep.equal(scripts);
     });

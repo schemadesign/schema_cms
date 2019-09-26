@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Button, Icons } from 'schemaUI';
-import { isEmpty } from 'ramda';
+import { isEmpty, keys, map } from 'ramda';
 
 import { Loader } from '../../../../shared/components/loader';
 import { Table } from '../../../../shared/components/table';
@@ -65,25 +65,19 @@ export class Fields extends PureComponent {
     this.props.unmountFields();
   }
 
-  prepareTableData() {
-    const columnsIds = Object.keys(this.props.fields);
-    const rows = [];
+  getTableData() {
+    const columnsIds = keys(this.props.fields);
+    const rows = map(data => map(name => data[name] || '', columnsIds), this.props.previewTable);
 
-    this.props.previewTable.forEach(data => {
-      const row = [];
+    return { header: columnsIds, rows };
+  }
 
-      columnsIds.forEach(name => {
-        row.push(data[name] || '');
-      });
+  getFieldDetailsData() {
+    const { step, fieldsIds } = this.state;
+    const id = fieldsIds[step];
+    const data = this.props.fields[id];
 
-      rows.push(row);
-    });
-
-    return {
-      header: columnsIds,
-      rows,
-      numberedRows: true,
-    };
+    return { id, data, intl: this.props.intl };
   }
 
   handleNavigation = direction => {
@@ -129,25 +123,17 @@ export class Fields extends PureComponent {
     );
   }
 
-  renderTable = () => <Table {...this.prepareTableData()} />;
+  renderTable = props => <Table {...props} numberedRows />;
 
-  renderFieldDetails() {
-    const { step, fieldsIds } = this.state;
-    const id = fieldsIds[step];
-    const fieldData = this.props.fields[id];
-
-    return <Details id={id} data={fieldData} intl={this.props.intl} />;
-  }
+  renderFieldDetails = props => <Details {...props} />;
 
   renderContent() {
     const { step } = this.state;
-
-    const navigation = this.renderNavigation();
-    const content = step ? this.renderFieldDetails() : this.renderTable();
+    const content = step ? this.renderFieldDetails(this.getFieldDetailsData()) : this.renderTable(this.getTableData());
 
     return (
       <Content>
-        {navigation}
+        {this.renderNavigation()}
         {content}
       </Content>
     );
