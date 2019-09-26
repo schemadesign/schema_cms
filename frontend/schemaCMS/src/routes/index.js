@@ -37,7 +37,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
 
-            <AuthRoute path={ROUTES.LOGOUT} component={Logout} />
+            <Route path={ROUTES.LOGOUT} component={Logout} />
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
