@@ -66,3 +66,20 @@ class TestRetrieveAuthToken:
 
     def test_url(self):
         assert "/api/v1/auth/token" == urls.reverse("authorization:token")
+
+
+class TestLogout:
+    def test_response(self, api_client, mocker):
+        get_logout_url_mock = mocker.patch(
+            "schemacms.users.backend_management.user_mgtm_backend.get_logout_url",
+            return_value="http://auth0.localhost/logout",
+        )
+        url = urls.reverse("authorization:logout")
+
+        response = api_client.get(url)
+
+        assert response.status_code == status.HTTP_302_FOUND
+        assert response['Location'] == get_logout_url_mock.return_value
+
+    def test_url(self):
+        assert "/api/v1/auth/logout" == urls.reverse("authorization:logout")

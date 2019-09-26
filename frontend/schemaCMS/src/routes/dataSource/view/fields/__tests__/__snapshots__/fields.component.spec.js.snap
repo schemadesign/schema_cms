@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fields: Component should render correctly 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Fields"
+  />
+  <styled.div>
+    <styled.div>
+      <styled.div>
+        <Component
+          customStyles={
+            Object {
+              "height": 60,
+              "width": 60,
+            }
+          }
+          disabled={true}
+          onClick={[Function]}
+        >
+          <Component
+            customStyles={
+              Object {
+                "opacity": 0.3,
+              }
+            }
+          />
+        </Component>
+      </styled.div>
+      <styled.div>
+        {countFields} {countFields, plural,one {Field} other {Fields}}
+      </styled.div>
+      <styled.div>
+        <Component
+          customStyles={
+            Object {
+              "height": 60,
+              "width": 60,
+            }
+          }
+          disabled={false}
+          onClick={[Function]}
+        >
+          <Component
+            customStyles={Object {}}
+          />
+        </Component>
+      </styled.div>
+    </styled.div>
+    <Table
+      header={
+        Array [
+          "First Name",
+          "Last Name",
+          "Full Name",
+          "Birthplace",
+          "State of Birth",
+          "Birthday",
+          "Url",
+        ]
+      }
+      numberedRows={true}
+      rows={
+        Array [
+          Array [
+            "George",
+            "Washington",
+            "George Washington",
+            "Westmoreland County",
+            "VA",
+            "02/22/1732",
+            "some.url.com",
+          ],
+          Array [
+            "John",
+            "Adams",
+            "John Adams",
+            "Braintree",
+            "MA",
+            "10/30/1735",
+            "some.url.com",
+          ],
+          Array [
+            "Thomas",
+            "Jefferson",
+            "Thomas Jefferson",
+            "Shadwell",
+            "VA",
+            "04/13/1743",
+            "some.url.com",
+          ],
+          Array [
+            "James",
+            "Madison",
+            "James Madison",
+            "Port Conway",
+            "VA",
+            "03/16/1751",
+            "some.url.com",
+          ],
+          Array [
+            "James",
+            "Monroe",
+            "James Monroe",
+            "Monroe Hall",
+            "VA",
+            "04/28/1758",
+            "some.url.com",
+          ],
+        ]
+      }
+    />
+  </styled.div>
+</styled.div>
+`;

@@ -81,3 +81,19 @@ Content-Type application/json
     "token": ["This field is required."],
 }
 ```
+
+
+## Logout
+Redirect user to auth0 logout page.
+
+**Request**:
+
+`GET` `/api/v1/auth/logout`
+
+**Response**:
+
+Success:
+```
+301 Created
+Location: https://schemacms.auth0.com/v2/logout?returnTo=https://schemacms.auth0.com/v2/login&client_id=XXX
+```
