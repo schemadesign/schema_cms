@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Navigation BackArrowButton 1`] = `
+<button
+  style={
+    Object {
+      "backgroundColor": "#1d1d20",
+      "border": "none",
+      "borderRadius": "48px",
+      "color": "#FFF",
+      "cursor": "pointer",
+      "display": "inline-block",
+      "fill": "#FFF",
+      "fontSize": "18px",
+      "height": "60px",
+      "margin": "0",
+      "minHeight": "48px",
+      "outline": "none",
+      "padding": "0",
+      "width": "60px",
+    }
+  }
+>
+  <svg
+    style={
+      Object {
+        "fill": "#FFF",
+        "height": "60px",
+        "width": "60px",
+      }
+    }
+    viewBox="0 0 60 60"
+  >
+    <path
+      d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Storyshots Navigation BackButton 1`] = `
+<button
+  style={
+    Object {
+      "backgroundColor": "#1d1d20",
+      "border": "none",
+      "borderRadius": "48px",
+      "color": "#FFF",
+      "cursor": "pointer",
+      "display": "inline-block",
+      "fill": "#FFF",
+      "fontSize": "18px",
+      "margin": "0",
+      "marginRight": 5,
+      "minHeight": "48px",
+      "outline": "none",
+      "padding": "0",
+      "width": "calc(50% - 5px)",
+    }
+  }
+>
+  <span>
+    Back
+  </span>
+</button>
+`;
+
+exports[`Storyshots Navigation Default 1`] = `
+<div
+  className="sc-jzJRlG cqxriJ"
+>
+  <div
+    className="sc-cSHVUG fOgjEB"
+  />
+</div>
+`;
+
+exports[`Storyshots Navigation NavigationContainer 1`] = `
+<div
+  className="sc-jzJRlG cqxriJ"
+>
+  <div
+    className="sc-cSHVUG fOgjEB"
+  />
+</div>
+`;
+
+exports[`Storyshots Navigation NextButton 1`] = `
+<button
+  style={
+    Object {
+      "backgroundColor": "#FFF",
+      "border": "none",
+      "borderRadius": "48px",
+      "color": "#000",
+      "cursor": "pointer",
+      "display": "inline-block",
+      "fill": "#FFF",
+      "fontSize": "18px",
+      "margin": "0",
+      "marginLeft": 5,
+      "minHeight": "48px",
+      "outline": "none",
+      "padding": "0",
+      "width": "calc(50% - 5px)",
+    }
+  }
+>
+  <span>
+    Next
+  </span>
+</button>
+`;
+
+exports[`Storyshots Navigation PlusButton 1`] = `
+<button
+  style={
+    Object {
+      "backgroundColor": "#1d1d20",
+      "border": "none",
+      "borderRadius": "48px",
+      "color": "#FFF",
+      "cursor": "pointer",
+      "display": "inline-block",
+      "fill": "#FFF",
+      "fontSize": "18px",
+      "height": "60px",
+      "margin": "0",
+      "minHeight": "48px",
+      "outline": "none",
+      "padding": "0",
+      "width": "60px",
+    }
+  }
+>
+  <svg
+    style={
+      Object {
+        "fill": "#FFF",
+        "height": "60px",
+        "width": "60px",
+      }
+    }
+    viewBox="0 0 60 60"
+  >
+    <path
+      d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+      fillRule="evenodd"
+    />
+  </svg>
+</button>
+`;

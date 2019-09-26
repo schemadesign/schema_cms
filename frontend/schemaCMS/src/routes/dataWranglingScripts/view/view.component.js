@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { always, isEmpty } from 'ramda';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { FormattedMessage } from 'react-intl';
 
 import { DATA_WRANGLING_STEP } from '../../../modules/dataSource/dataSource.constants';
 import {
@@ -12,11 +13,11 @@ import {
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Loader } from '../../../shared/components/loader';
-import { PillButtons } from '../../../shared/components/pillButtons';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { Container, Form, customInputStyles } from './view.styles';
 import messages from './view.messages';
+import { BackButton, NavigationContainer, NextButton } from '../../../../../../shared/components/navigation';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -86,16 +87,12 @@ export class View extends PureComponent {
             {dataWranglingScript.body}
           </SyntaxHighlighter>
         </Form>
-        <PillButtons
-          leftButtonProps={{
-            title: intl.formatMessage(messages.back),
-            onClick: this.handleGoToDataWranglingList(match, history),
-          }}
-          rightButtonProps={{
-            title: intl.formatMessage(messages.ok),
-            onClick: this.handleGoToDataWranglingList(match, history),
-          }}
-        />
+        <NavigationContainer>
+          <BackButton onClick={this.handleGoToDataWranglingList(match, history)} />
+          <NextButton onClick={this.handleGoToDataWranglingList(match, history)}>
+            <FormattedMessage {...messages.ok} />
+          </NextButton>
+        </NavigationContainer>
       </Fragment>
     );
   }

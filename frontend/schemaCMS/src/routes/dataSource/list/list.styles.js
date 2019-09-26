@@ -96,11 +96,6 @@ export const lockTextStyles = {
   color: Theme.colors.coolGray,
 };
 
-export const buttonStyles = {
-  height: '60px',
-  width: '60px',
-};
-
 export const iconSourceStyles = {
   width: 40,
   height: 40,

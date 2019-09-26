@@ -8,7 +8,6 @@ import messages from './view.messages';
 import { Source } from './source';
 import { Fields } from './fields';
 import { DataWranglingScripts } from '../../dataWranglingScripts';
-import { PillButtons } from '../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
 import {
@@ -18,6 +17,7 @@ import {
   MAX_STEPS,
   STATUS_DRAFT,
 } from '../../../modules/dataSource/dataSource.constants';
+import { NavigationContainer, BackButton, NextButton } from '../../../../shared/components/navigation';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -157,21 +157,19 @@ export class View extends PureComponent {
           dataSource,
           ...this.props,
         })}
-        <PillButtons
-          leftButtonProps={leftButtonProps}
-          rightButtonProps={{
-            title: intl.formatMessage(messages.next),
-            onClick: this.handleNextClick,
-          }}
-        />
-        <StepperContainer>
-          <Stepper
-            activeStep={activeStep}
-            steps={MAX_STEPS}
-            customStyles={customStepperStyles}
-            onStepChange={this.handleStepChange}
-          />
-        </StepperContainer>
+
+        <NavigationContainer>
+          <BackButton {...leftButtonProps} />
+          <NextButton onClick={this.handleNextClick} />
+          <StepperContainer>
+            <Stepper
+              activeStep={activeStep}
+              steps={MAX_STEPS}
+              customStyles={customStepperStyles}
+              onStepChange={this.handleStepChange}
+            />
+          </StepperContainer>
+        </NavigationContainer>
       </Fragment>
     );
   });

@@ -144,19 +144,13 @@ exports[`List: Component should render correctly 1`] = `
       </Component>
     </styled.li>
   </styled.ul>
-  <Component
-    customStyles={
-      Object {
-        "bottom": "24px",
-        "height": "60px",
-        "position": "fixed",
-        "right": "20px",
-      }
-    }
-    id="addProjectBtn"
-    onClick={[Function]}
+  <NavigationContainer
+    right={true}
   >
-    <Component />
-  </Component>
+    <PlusButton
+      id="addProjectBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
 </styled.div>
 `;

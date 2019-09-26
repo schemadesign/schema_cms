@@ -1,14 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Button, Card, Icons, Typography } from 'schemaUI';
+import { Card, Icons, Typography } from 'schemaUI';
 import { always, anyPass, cond, equals, ifElse } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../shared/components/topHeader';
 import {
-  buttonStyles,
-  ButtonsContainer,
   Container,
   DataSourceItem,
   DataSourceList,
@@ -38,9 +36,10 @@ import {
   STATUS_READY_FOR_PROCESSING,
 } from '../../../modules/dataSource/dataSource.constants';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import { NavigationContainer, BackArrowButton, PlusButton } from '../../../../shared/components/navigation';
 
 const { H1 } = Typography;
-const { PlusIcon, CsvIcon, IntersectIcon, ArrowLeftIcon } = Icons;
+const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
 
 export class List extends PureComponent {
@@ -186,14 +185,10 @@ export class List extends PureComponent {
         <TopHeader {...topHeaderConfig} />
         {this.renderList(dataSources)}
 
-        <ButtonsContainer>
-          <Button onClick={this.handleShowProject} customStyles={buttonStyles}>
-            <ArrowLeftIcon />
-          </Button>
-          <Button customStyles={buttonStyles} onClick={this.handleCreateDataSource}>
-            <PlusIcon />
-          </Button>
-        </ButtonsContainer>
+        <NavigationContainer>
+          <BackArrowButton onClick={this.handleShowProject} />
+          <PlusButton onClick={this.handleCreateDataSource} />
+        </NavigationContainer>
       </Container>
     );
   }

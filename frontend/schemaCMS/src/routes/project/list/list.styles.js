@@ -54,10 +54,3 @@ export const urlStyles = {
 export const titleStyles = {
   cursor: 'pointer',
 };
-
-export const addProjectStyles = {
-  position: 'fixed',
-  right: '20px',
-  bottom: '24px',
-  height: '60px',
-};
