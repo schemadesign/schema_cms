@@ -7,7 +7,7 @@ import { injectIntl } from 'react-intl';
 import { compose } from 'ramda';
 
 import { List } from './list.component';
-import { ProjectActions } from '../../../modules/project';
+import { ProjectRoutines } from '../../../modules/project';
 import { selectProjectsList } from '../../../modules/project/project.selectors';
 
 const mapStateToProps = createStructuredSelector({
@@ -17,7 +17,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      fetchProjectsList: ProjectActions.fetchList,
+      fetchProjectsList: ProjectRoutines.fetchList,
     },
     dispatch
   );

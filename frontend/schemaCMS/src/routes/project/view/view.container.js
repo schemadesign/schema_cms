@@ -7,7 +7,7 @@ import { injectIntl } from 'react-intl';
 import { compose } from 'ramda';
 
 import { View } from './view.component';
-import { ProjectActions, ProjectRoutines } from '../../../modules/project';
+import { ProjectRoutines } from '../../../modules/project';
 import { selectProject } from '../../../modules/project/project.selectors';
 import { selectUserData } from '../../../modules/userProfile/userProfile.selectors';
 
@@ -20,7 +20,7 @@ export const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       fetchProject: ProjectRoutines.fetchOne,
-      unmountProject: ProjectActions.unmountOne,
+      unmountProject: ProjectRoutines.unmountOne,
       removeProject: ProjectRoutines.removeOne,
     },
     dispatch
