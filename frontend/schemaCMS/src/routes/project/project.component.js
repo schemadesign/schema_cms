@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { List } from './list';
 import { View } from './view';
 import { Create } from './create';
-import { DataSource } from './dataSource';
+import { DataSource } from '../dataSource';
 
 export class Project extends PureComponent {
   static propTypes = {
