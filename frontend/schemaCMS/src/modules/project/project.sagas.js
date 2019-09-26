@@ -8,9 +8,11 @@ import { PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { PROJECT_OWNER } from './project.constants';
 import { selectUserData } from '../userProfile';
 
+const PAGE_SIZE = 1000;
+
 function* fetchProjectsList() {
   try {
-    const { data } = yield api.get(PROJECTS_PATH);
+    const { data } = yield api.get(`${PROJECTS_PATH}?page_size=${PAGE_SIZE}`);
     const { results = [] } = data;
 
     yield put(ProjectActions.fetchListSuccess(results));
