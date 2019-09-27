@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components/Table Default 1`] = `
+exports[`Storyshots Shared Components|Table Default 1`] = `
 <div
   style={
     Object {
@@ -119,7 +119,7 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Shared Components/Table with header 1`] = `
+exports[`Storyshots Shared Components|Table with header 1`] = `
 <div
   style={
     Object {
@@ -261,7 +261,7 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
 </div>
 `;
 
-exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
+exports[`Storyshots Shared Components|Table with numbered rows 1`] = `
 <div
   style={
     Object {

@@ -27,7 +27,7 @@ const tableWithHeader = { header, rows };
 
 export const tableWithNumberedRows = { header, rows, numberedRows: true };
 
-storiesOf('Shared Components/Table', module)
+storiesOf('Shared Components|Table', module)
   .addDecorator(withTheme())
   .add('Default', () => <Table {...table} />)
   .add('with header', () => <Table {...tableWithHeader} />)
