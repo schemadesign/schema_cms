@@ -4,6 +4,15 @@ import { storiesOf } from '@storybook/react';
 import { withTheme } from '../../../.storybook/decorators';
 import { Table } from './table.component';
 
+const longValue = `Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+`;
 const header = ['Code', 'Capital', 'Country'];
 const rows = [
   ['US', 'Washington, D.C.', 'USA'],
@@ -11,6 +20,7 @@ const rows = [
   ['DE', 'Berlin', 'Germany'],
   ['FR', 'Paris', 'France'],
   ['ES', 'Madird', 'Spain'],
+  ['—', longValue, longValue],
 ];
 const table = { rows };
 const tableWithHeader = { header, rows };

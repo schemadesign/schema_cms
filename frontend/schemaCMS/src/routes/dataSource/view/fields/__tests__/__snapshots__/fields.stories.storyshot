@@ -111,7 +111,7 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
         className="sc-jAaTju daAYrj"
       >
         <table
-          className="sc-jDwBTQ lsgth"
+          className="sc-jDwBTQ eKJvCH"
         >
           <thead
             className="sc-gPEVay eQYmiW"
@@ -120,42 +120,42 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
               className="sc-jlyJG cYZshU"
             >
               <th
-                className="sc-csuQGl dmFKNJ"
+                className="sc-csuQGl iMbzmF"
               >
                 #
               </th>
               <th
-                className="sc-csuQGl dmFKNJ"
+                className="sc-csuQGl iMbzmF"
               >
                 First Name
               </th>
               <th
-                className="sc-csuQGl dmFKNJ"
+                className="sc-csuQGl iMbzmF"
               >
                 Last Name
               </th>
               <th
-                className="sc-csuQGl dmFKNJ"
+                className="sc-csuQGl iMbzmF"
               >
                 Full Name
               </th>
               <th
-                className="sc-csuQGl dmFKNJ"
+                className="sc-csuQGl iMbzmF"
               >
                 Birthplace
               </th>
               <th
-                className="sc-csuQGl dmFKNJ"
+                className="sc-csuQGl iMbzmF"
               >
                 State of Birth
               </th>
               <th
-                className="sc-csuQGl dmFKNJ"
+                className="sc-csuQGl iMbzmF"
               >
                 Birthday
               </th>
               <th
-                className="sc-csuQGl dmFKNJ"
+                className="sc-csuQGl iMbzmF"
               >
                 Url
               </th>
@@ -168,42 +168,42 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
               className="sc-jlyJG cYZshU"
             >
               <td
-                className="sc-Rmtcm ijQJIK"
+                className="sc-Rmtcm jsuXxG"
               >
                 1
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 George
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Washington
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 George Washington
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Westmoreland County
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 VA
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 02/22/1732
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 some.url.com
               </td>
@@ -212,42 +212,42 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
               className="sc-jlyJG cYZshU"
             >
               <td
-                className="sc-Rmtcm ijQJIK"
+                className="sc-Rmtcm jsuXxG"
               >
                 2
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 John
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Adams
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 John Adams
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Braintree
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 MA
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 10/30/1735
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 some.url.com
               </td>
@@ -256,42 +256,42 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
               className="sc-jlyJG cYZshU"
             >
               <td
-                className="sc-Rmtcm ijQJIK"
+                className="sc-Rmtcm jsuXxG"
               >
                 3
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Thomas
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Jefferson
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Thomas Jefferson
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Shadwell
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 VA
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 04/13/1743
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 some.url.com
               </td>
@@ -300,42 +300,42 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
               className="sc-jlyJG cYZshU"
             >
               <td
-                className="sc-Rmtcm ijQJIK"
+                className="sc-Rmtcm jsuXxG"
               >
                 4
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 James
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Madison
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 James Madison
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Port Conway
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 VA
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 03/16/1751
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 some.url.com
               </td>
@@ -344,42 +344,42 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
               className="sc-jlyJG cYZshU"
             >
               <td
-                className="sc-Rmtcm ijQJIK"
+                className="sc-Rmtcm jsuXxG"
               >
                 5
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 James
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Monroe
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 James Monroe
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 Monroe Hall
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 VA
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 04/28/1758
               </td>
               <td
-                className="sc-gipzik frgvIU"
+                className="sc-gipzik jmJvNr"
               >
                 some.url.com
               </td>

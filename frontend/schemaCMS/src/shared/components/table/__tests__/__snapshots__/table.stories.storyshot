@@ -13,7 +13,7 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
     className="sc-jAaTju daAYrj"
   >
     <table
-      className="sc-jDwBTQ lsgth"
+      className="sc-jDwBTQ eKJvCH"
     >
       <tbody
         className="sc-iRbamj blSEcj"
@@ -22,17 +22,17 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             US
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             USA
           </td>
@@ -41,17 +41,17 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             PL
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Warsaw
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Poland
           </td>
@@ -60,17 +60,17 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             DE
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Berlin
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Germany
           </td>
@@ -79,17 +79,17 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             FR
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Paris
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             France
           </td>
@@ -98,19 +98,54 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             ES
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Madird
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Spain
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik fbopXj"
+          >
+            —
+          </td>
+          <td
+            className="sc-gipzik fbopXj"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
+          </td>
+          <td
+            className="sc-gipzik fbopXj"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
           </td>
         </tr>
       </tbody>
@@ -132,7 +167,7 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
     className="sc-jAaTju daAYrj"
   >
     <table
-      className="sc-jDwBTQ lsgth"
+      className="sc-jDwBTQ eKJvCH"
     >
       <thead
         className="sc-gPEVay eQYmiW"
@@ -141,17 +176,17 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <th
-            className="sc-csuQGl cfrWfQ"
+            className="sc-csuQGl eUUoJn"
           >
             Code
           </th>
           <th
-            className="sc-csuQGl cfrWfQ"
+            className="sc-csuQGl eUUoJn"
           >
             Capital
           </th>
           <th
-            className="sc-csuQGl cfrWfQ"
+            className="sc-csuQGl eUUoJn"
           >
             Country
           </th>
@@ -164,17 +199,17 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             US
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             USA
           </td>
@@ -183,17 +218,17 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             PL
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Warsaw
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Poland
           </td>
@@ -202,17 +237,17 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             DE
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Berlin
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Germany
           </td>
@@ -221,17 +256,17 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             FR
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Paris
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             France
           </td>
@@ -240,19 +275,54 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             ES
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Madird
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Spain
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-gipzik fbopXj"
+          >
+            —
+          </td>
+          <td
+            className="sc-gipzik fbopXj"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
+          </td>
+          <td
+            className="sc-gipzik fbopXj"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
           </td>
         </tr>
       </tbody>
@@ -274,7 +344,7 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
     className="sc-jAaTju daAYrj"
   >
     <table
-      className="sc-jDwBTQ lsgth"
+      className="sc-jDwBTQ eKJvCH"
     >
       <thead
         className="sc-gPEVay eQYmiW"
@@ -283,22 +353,22 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <th
-            className="sc-csuQGl cfrWfQ"
+            className="sc-csuQGl eUUoJn"
           >
             #
           </th>
           <th
-            className="sc-csuQGl cfrWfQ"
+            className="sc-csuQGl eUUoJn"
           >
             Code
           </th>
           <th
-            className="sc-csuQGl cfrWfQ"
+            className="sc-csuQGl eUUoJn"
           >
             Capital
           </th>
           <th
-            className="sc-csuQGl cfrWfQ"
+            className="sc-csuQGl eUUoJn"
           >
             Country
           </th>
@@ -311,22 +381,22 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-Rmtcm gsWhXA"
+            className="sc-Rmtcm UgJWe"
           >
             1
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             US
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             USA
           </td>
@@ -335,22 +405,22 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-Rmtcm gsWhXA"
+            className="sc-Rmtcm UgJWe"
           >
             2
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             PL
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Warsaw
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Poland
           </td>
@@ -359,22 +429,22 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-Rmtcm gsWhXA"
+            className="sc-Rmtcm UgJWe"
           >
             3
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             DE
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Berlin
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Germany
           </td>
@@ -383,22 +453,22 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-Rmtcm gsWhXA"
+            className="sc-Rmtcm UgJWe"
           >
             4
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             FR
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Paris
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             France
           </td>
@@ -407,24 +477,64 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-jlyJG iaCqlf"
         >
           <td
-            className="sc-Rmtcm gsWhXA"
+            className="sc-Rmtcm UgJWe"
           >
             5
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             ES
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Madird
           </td>
           <td
-            className="sc-gipzik cibghR"
+            className="sc-gipzik fbopXj"
           >
             Spain
+          </td>
+        </tr>
+        <tr
+          className="sc-jlyJG iaCqlf"
+        >
+          <td
+            className="sc-Rmtcm UgJWe"
+          >
+            6
+          </td>
+          <td
+            className="sc-gipzik fbopXj"
+          >
+            —
+          </td>
+          <td
+            className="sc-gipzik fbopXj"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
+          </td>
+          <td
+            className="sc-gipzik fbopXj"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
           </td>
         </tr>
       </tbody>

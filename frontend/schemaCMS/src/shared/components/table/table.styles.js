@@ -8,6 +8,7 @@ export const TableWrapper = styled.div`
 
 export const TableElement = styled.table`
   border-collapse: collapse;
+  min-width: 100%;
 `;
 
 export const TableHeader = styled.thead``;
@@ -27,6 +28,10 @@ const cellStyles = css`
   border-bottom: 2px solid ${({ theme: { table } }) => table.border.body};
   border-right: 2px solid ${({ theme: { table } }) => table.border.body};
   color: ${({ theme: { table } }) => table.text.body};
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const headerCellStyles = css`
@@ -60,5 +65,5 @@ export const LeftHeaderCell = styled.td`
   ${cellStyles}
   ${headerCellStyles}
   text-align: center;
-  min-width: 40px;
+  width: 40px;
 `;
