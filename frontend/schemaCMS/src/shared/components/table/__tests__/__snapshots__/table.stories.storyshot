@@ -10,142 +10,107 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
   }
 >
   <div
-    className="sc-jAaTju daAYrj"
+    className="sc-gPEVay hhLjDi"
   >
     <table
-      className="sc-jDwBTQ eKJvCH"
+      className="sc-iRbamj hEgTrs"
     >
       <tbody
-        className="sc-iRbamj blSEcj"
+        className="sc-gipzik iyhjGb"
       >
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             US
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             USA
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             PL
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Warsaw
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Poland
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             DE
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Berlin
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Germany
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             FR
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Paris
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             France
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             ES
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Madird
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Spain
-          </td>
-        </tr>
-        <tr
-          className="sc-jlyJG iaCqlf"
-        >
-          <td
-            className="sc-gipzik fbopXj"
-          >
-            —
-          </td>
-          <td
-            className="sc-gipzik fbopXj"
-          >
-            Sed eu dictum orci. In hac habitasse platea dictumst.
-  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
-  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
-  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
-  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
-  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
-  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
-  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
-
-          </td>
-          <td
-            className="sc-gipzik fbopXj"
-          >
-            Sed eu dictum orci. In hac habitasse platea dictumst.
-  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
-  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
-  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
-  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
-  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
-  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
-  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
-
           </td>
         </tr>
       </tbody>
@@ -164,165 +129,130 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
   }
 >
   <div
-    className="sc-jAaTju daAYrj"
+    className="sc-gPEVay hhLjDi"
   >
     <table
-      className="sc-jDwBTQ eKJvCH"
+      className="sc-iRbamj hEgTrs"
     >
       <thead
-        className="sc-gPEVay eQYmiW"
+        className="sc-jlyJG bbyJzT"
       >
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <th
-            className="sc-csuQGl eUUoJn"
+            className="sc-bRBYWo fDhgeY"
           >
             Code
           </th>
           <th
-            className="sc-csuQGl eUUoJn"
+            className="sc-bRBYWo fDhgeY"
           >
             Capital
           </th>
           <th
-            className="sc-csuQGl eUUoJn"
+            className="sc-bRBYWo fDhgeY"
           >
             Country
           </th>
         </tr>
       </thead>
       <tbody
-        className="sc-iRbamj blSEcj"
+        className="sc-gipzik iyhjGb"
       >
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             US
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             USA
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             PL
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Warsaw
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Poland
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             DE
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Berlin
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Germany
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             FR
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Paris
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             France
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             ES
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Madird
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Spain
-          </td>
-        </tr>
-        <tr
-          className="sc-jlyJG iaCqlf"
-        >
-          <td
-            className="sc-gipzik fbopXj"
-          >
-            —
-          </td>
-          <td
-            className="sc-gipzik fbopXj"
-          >
-            Sed eu dictum orci. In hac habitasse platea dictumst.
-  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
-  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
-  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
-  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
-  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
-  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
-  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
-
-          </td>
-          <td
-            className="sc-gipzik fbopXj"
-          >
-            Sed eu dictum orci. In hac habitasse platea dictumst.
-  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
-  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
-  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
-  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
-  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
-  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
-  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
-
           </td>
         </tr>
       </tbody>
@@ -341,200 +271,160 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
   }
 >
   <div
-    className="sc-jAaTju daAYrj"
+    className="sc-gPEVay hhLjDi"
   >
     <table
-      className="sc-jDwBTQ eKJvCH"
+      className="sc-iRbamj hEgTrs"
     >
       <thead
-        className="sc-gPEVay eQYmiW"
+        className="sc-jlyJG bbyJzT"
       >
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <th
-            className="sc-csuQGl eUUoJn"
+            className="sc-bRBYWo fDhgeY"
           >
             #
           </th>
           <th
-            className="sc-csuQGl eUUoJn"
+            className="sc-bRBYWo fDhgeY"
           >
             Code
           </th>
           <th
-            className="sc-csuQGl eUUoJn"
+            className="sc-bRBYWo fDhgeY"
           >
             Capital
           </th>
           <th
-            className="sc-csuQGl eUUoJn"
+            className="sc-bRBYWo fDhgeY"
           >
             Country
           </th>
         </tr>
       </thead>
       <tbody
-        className="sc-iRbamj blSEcj"
+        className="sc-gipzik iyhjGb"
       >
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-Rmtcm UgJWe"
+            className="sc-hzDkRC kNIsNa"
           >
             1
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             US
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             USA
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-Rmtcm UgJWe"
+            className="sc-hzDkRC kNIsNa"
           >
             2
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             PL
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Warsaw
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Poland
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-Rmtcm UgJWe"
+            className="sc-hzDkRC kNIsNa"
           >
             3
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             DE
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Berlin
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Germany
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-Rmtcm UgJWe"
+            className="sc-hzDkRC kNIsNa"
           >
             4
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             FR
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Paris
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             France
           </td>
         </tr>
         <tr
-          className="sc-jlyJG iaCqlf"
+          className="sc-csuQGl bwHzTh"
         >
           <td
-            className="sc-Rmtcm UgJWe"
+            className="sc-hzDkRC kNIsNa"
           >
             5
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             ES
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Madird
           </td>
           <td
-            className="sc-gipzik fbopXj"
+            className="sc-Rmtcm cctNHT"
           >
             Spain
-          </td>
-        </tr>
-        <tr
-          className="sc-jlyJG iaCqlf"
-        >
-          <td
-            className="sc-Rmtcm UgJWe"
-          >
-            6
-          </td>
-          <td
-            className="sc-gipzik fbopXj"
-          >
-            —
-          </td>
-          <td
-            className="sc-gipzik fbopXj"
-          >
-            Sed eu dictum orci. In hac habitasse platea dictumst.
-  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
-  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
-  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
-  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
-  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
-  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
-  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
-
-          </td>
-          <td
-            className="sc-gipzik fbopXj"
-          >
-            Sed eu dictum orci. In hac habitasse platea dictumst.
-  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
-  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
-  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
-  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
-  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
-  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
-  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
-
           </td>
         </tr>
       </tbody>

@@ -8,13 +8,15 @@ import { PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { PROJECT_OWNER } from './project.constants';
 import { selectUserData } from '../userProfile';
 
+const PAGE_SIZE = 1000;
+
 function* fetchList() {
   try {
     yield put(ProjectRoutines.fetchList.request());
 
     const {
       data: { results = [] },
-    } = yield api.get(PROJECTS_PATH);
+    } = yield api.get(`${PROJECTS_PATH}?page_size=${PAGE_SIZE}`);
 
     yield put(ProjectRoutines.fetchList.success(results));
   } catch (error) {

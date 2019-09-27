@@ -4,7 +4,7 @@ import api from '../../shared/services/api';
 
 import { UserAuthTypes, UserAuthActions } from './userAuth.redux';
 import { StartupTypes } from '../startup/startup.redux';
-import { RESET_PASSWORD_PATH, TOKEN_PATH } from '../../shared/utils/api.constants';
+import { LOGOUT_URL, RESET_PASSWORD_PATH, TOKEN_PATH } from '../../shared/utils/api.constants';
 import { selectAuthToken } from './userAuth.selectors';
 import { UserProfileRoutines, UserProfileActions } from '../userProfile/userProfile.redux';
 
@@ -38,7 +38,7 @@ function* logout() {
 
   yield put(UserAuthActions.logoutSuccess());
 
-  browserHistory.push('/');
+  window.location.href = LOGOUT_URL;
 }
 
 function* resetPassword() {

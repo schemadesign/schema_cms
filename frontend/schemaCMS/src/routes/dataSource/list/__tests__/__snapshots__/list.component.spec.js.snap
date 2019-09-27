@@ -117,30 +117,16 @@ exports[`List: Component should render card with draft state 1`] = `
       </Component>
     </styled.li>
   </styled.div>
-  <styled.div>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+  <NavigationContainer
+    right={false}
+  >
+    <BackArrowButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+    />
+    <PlusButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-  </styled.div>
+    />
+  </NavigationContainer>
 </styled.div>
 `;
 
@@ -203,30 +189,16 @@ exports[`List: Component should render card with error state 1`] = `
       </Component>
     </styled.li>
   </styled.div>
-  <styled.div>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+  <NavigationContainer
+    right={false}
+  >
+    <BackArrowButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+    />
+    <PlusButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-  </styled.div>
+    />
+  </NavigationContainer>
 </styled.div>
 `;
 
@@ -347,30 +319,16 @@ exports[`List: Component should render card with processing state 1`] = `
       </Component>
     </styled.li>
   </styled.div>
-  <styled.div>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+  <NavigationContainer
+    right={false}
+  >
+    <BackArrowButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+    />
+    <PlusButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-  </styled.div>
+    />
+  </NavigationContainer>
 </styled.div>
 `;
 
@@ -491,30 +449,16 @@ exports[`List: Component should render card with ready for processing state 1`] 
       </Component>
     </styled.li>
   </styled.div>
-  <styled.div>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+  <NavigationContainer
+    right={false}
+  >
+    <BackArrowButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+    />
+    <PlusButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-  </styled.div>
+    />
+  </NavigationContainer>
 </styled.div>
 `;
 
@@ -641,30 +585,16 @@ exports[`List: Component should render correctly 1`] = `
       </Component>
     </styled.li>
   </styled.div>
-  <styled.div>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+  <NavigationContainer
+    right={false}
+  >
+    <BackArrowButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+    />
+    <PlusButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-  </styled.div>
+    />
+  </NavigationContainer>
 </styled.div>
 `;
 
@@ -688,29 +618,15 @@ exports[`List: Component should render empty 1`] = `
     }
   />
   <styled.div />
-  <styled.div>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+  <NavigationContainer
+    right={false}
+  >
+    <BackArrowButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-    <Component
-      customStyles={
-        Object {
-          "height": "60px",
-          "width": "60px",
-        }
-      }
+    />
+    <PlusButton
       onClick={[Function]}
-    >
-      <Component />
-    </Component>
-  </styled.div>
+    />
+  </NavigationContainer>
 </styled.div>
 `;

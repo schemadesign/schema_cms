@@ -397,81 +397,85 @@ exports[`Storyshots DataSource/List Default 1`] = `
       </li>
     </div>
     <div
-      className="sc-kpOJdX heJlUh"
+      className="sc-kkGfuU cbFdcv"
     >
-      <button
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": "60px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "width": "60px",
-          }
-        }
+      <div
+        className="sc-iAyFgw fPviBc"
       >
-        <svg
+        <button
+          onClick={[Function]}
           style={
             Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
               "fill": "#FFF",
+              "fontSize": "18px",
               "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-          />
-        </svg>
-      </button>
-      <button
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": "60px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "width": "60px",
-          }
-        }
-      >
-        <svg
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+            />
+          </svg>
+        </button>
+        <button
+          onClick={[Function]}
           style={
             Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
               "fill": "#FFF",
+              "fontSize": "18px",
               "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>

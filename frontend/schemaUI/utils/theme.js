@@ -41,7 +41,7 @@ const light = {
   },
   label: {
     text: colors.coolGray,
-    border: colors.darkGrey,
+    border: colors.veryLightPink,
   },
   textArea: {
     text: colors.black,
@@ -65,6 +65,17 @@ const light = {
     background: colors.veryLightPink,
     fill: colors.darkGrey,
   },
+  radioButton: {
+    text: colors.darkGrey,
+    active: {
+      background: colors.darkGrey,
+      fill: colors.white,
+    },
+    unActive: {
+      background: colors.veryLightPink,
+      fill: colors.white,
+    },
+  },
   table: {
     border: {
       body: colors.veryLightPink,
@@ -78,6 +89,10 @@ const light = {
       body: colors.black,
       header: colors.coolGray,
     },
+  },
+  select: {
+    background: colors.veryLightPink,
+    border: colors.white,
   },
   background: colors.white,
   border: colors.veryLightPink,
@@ -142,6 +157,17 @@ const dark = {
     background: colors.darkGrey,
     fill: colors.white,
   },
+  radioButton: {
+    text: colors.white,
+    active: {
+      background: colors.white,
+      fill: colors.darkGrey,
+    },
+    unActive: {
+      background: colors.darkGrey,
+      fill: colors.white,
+    },
+  },
   table: {
     border: {
       body: colors.darkGrey,
@@ -155,6 +181,10 @@ const dark = {
       body: colors.white,
       header: colors.lightGrey,
     },
+  },
+  select: {
+    background: colors.darkGrey,
+    border: colors.black,
   },
   background: colors.black,
   border: colors.mediumGray,

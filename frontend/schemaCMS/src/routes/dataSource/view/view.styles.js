@@ -6,7 +6,8 @@ export const Container = styled.div`
 
 export const StepperContainer = styled.div`
   display: flex;
-  margin-bottom: 36px;
+  width: 100%;
+  margin-top: 23px;
 `;
 
 export const stepperStyles = {

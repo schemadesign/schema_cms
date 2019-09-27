@@ -61,7 +61,7 @@ function* uploadScript({ payload: { script, dataSourceId } }) {
 
 function* fetchOne({ payload }) {
   try {
-    yield put(DataWranglingScriptsroutines.fetchOne.request());
+    yield put(DataWranglingScriptsRoutines.fetchOne.request());
 
     let scripts = yield select(selectDataWranglingScripts);
 
@@ -72,11 +72,11 @@ function* fetchOne({ payload }) {
     }
     const data = scripts[payload.scriptId];
 
-    yield put(DataWranglingScriptsroutines.fetchOne.success(data));
+    yield put(DataWranglingScriptsRoutines.fetchOne.success(data));
   } catch (error) {
-    yield put(DataWranglingScriptsroutines.fetchOne.failure(error));
+    yield put(DataWranglingScriptsRoutines.fetchOne.failure(error));
   } finally {
-    yield put(DataWranglingScriptsroutines.fetchOne.fulfill());
+    yield put(DataWranglingScriptsRoutines.fetchOne.fulfill());
   }
 }
 

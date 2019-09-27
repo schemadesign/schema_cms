@@ -1,10 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { Theme } from 'schemaUI';
 
-import { Source } from './source.component';
+import { withTheme } from '../../../../.storybook/decorators';
+import { SourceComponent } from './source.component';
 
 export const defaultProps = {
   dataSource: {},
+  theme: Theme.dark,
   bindSubmitForm: Function.prototype,
   updateDataSource: Function.prototype,
   intl: {
@@ -19,4 +22,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DataSource/View/Source', module).add('Default', () => <Source {...defaultProps} />);
+storiesOf('DataSource/View/Source', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <SourceComponent {...defaultProps} />);

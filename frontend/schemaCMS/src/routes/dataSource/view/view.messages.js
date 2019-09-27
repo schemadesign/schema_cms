@@ -12,11 +12,7 @@ export default defineMessages({
   },
   back: {
     id: 'dataSource.view.back',
-    defaultMessage: 'Back',
-  },
-  cancel: {
-    id: 'dataSource.view.cancel',
-    defaultMessage: 'Cancel',
+    defaultMessage: '{cancel, select, true {Cancel} other {Back}}',
   },
   source: {
     id: 'dataSource.view.source',

@@ -74,12 +74,6 @@ export const CardValue = styled.span`
   letter-spacing: -3px;
 `;
 
-export const buttonStyles = {
-  margin: '50px 0 0 0',
-  height: '60px',
-  width: '60px',
-};
-
 export const statisticsCardStyles = {
   cursor: 'pointer',
 };

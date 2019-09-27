@@ -52,7 +52,7 @@ api.interceptors.request.use(
         return parsedUrl.url;
       }
 
-      return `${parsedUrl.url}/?${queryString.stringify(parsedUrl.query)}`;
+      return `${parsedUrl.url}?${queryString.stringify(parsedUrl.query)}`;
     }),
     data: when(
       pipe(

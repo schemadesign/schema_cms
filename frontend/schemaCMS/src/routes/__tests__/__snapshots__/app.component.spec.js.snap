@@ -82,7 +82,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "text": "#FFF",
         },
         "label": Object {
-          "border": "#1d1d20",
+          "border": "#f0efef",
           "text": "#a6a7aa",
         },
         "menu": Object {
@@ -93,7 +93,22 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "backgroundColor": "#FFF",
           "minHeight": "100vh",
         },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+          },
+          "text": "#1d1d20",
+          "unActive": Object {
+            "background": "#f0efef",
+            "fill": "#FFF",
+          },
+        },
         "secondaryText": "#a6a7aa",
+        "select": Object {
+          "background": "#f0efef",
+          "border": "#FFF",
+        },
         "stepper": Object {
           "active": "#1d1d20",
           "background": "#f0efef",
@@ -131,7 +146,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
           },
           "h3": Object {
             "color": Object {
-              "border": "#1d1d20",
+              "border": "#f0efef",
               "text": "#a6a7aa",
             },
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -200,7 +215,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
             "text": "#FFF",
           },
           "label": Object {
-            "border": "#1d1d20",
+            "border": "#f0efef",
             "text": "#a6a7aa",
           },
           "menu": Object {
@@ -211,7 +226,22 @@ exports[`App: Component should not render App when language is not set 1`] = `
             "backgroundColor": "#FFF",
             "minHeight": "100vh",
           },
+          "radioButton": Object {
+            "active": Object {
+              "background": "#1d1d20",
+              "fill": "#FFF",
+            },
+            "text": "#1d1d20",
+            "unActive": Object {
+              "background": "#f0efef",
+              "fill": "#FFF",
+            },
+          },
           "secondaryText": "#a6a7aa",
+          "select": Object {
+            "background": "#f0efef",
+            "border": "#FFF",
+          },
           "stepper": Object {
             "active": "#1d1d20",
             "background": "#f0efef",
@@ -249,7 +279,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
             },
             "h3": Object {
               "color": Object {
-                "border": "#1d1d20",
+                "border": "#f0efef",
                 "text": "#a6a7aa",
               },
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -369,7 +399,7 @@ exports[`App: Component should render App when language is set 1`] = `
           "text": "#FFF",
         },
         "label": Object {
-          "border": "#1d1d20",
+          "border": "#f0efef",
           "text": "#a6a7aa",
         },
         "menu": Object {
@@ -380,7 +410,22 @@ exports[`App: Component should render App when language is set 1`] = `
           "backgroundColor": "#FFF",
           "minHeight": "100vh",
         },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+          },
+          "text": "#1d1d20",
+          "unActive": Object {
+            "background": "#f0efef",
+            "fill": "#FFF",
+          },
+        },
         "secondaryText": "#a6a7aa",
+        "select": Object {
+          "background": "#f0efef",
+          "border": "#FFF",
+        },
         "stepper": Object {
           "active": "#1d1d20",
           "background": "#f0efef",
@@ -418,7 +463,7 @@ exports[`App: Component should render App when language is set 1`] = `
           },
           "h3": Object {
             "color": Object {
-              "border": "#1d1d20",
+              "border": "#f0efef",
               "text": "#a6a7aa",
             },
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -487,7 +532,7 @@ exports[`App: Component should render App when language is set 1`] = `
             "text": "#FFF",
           },
           "label": Object {
-            "border": "#1d1d20",
+            "border": "#f0efef",
             "text": "#a6a7aa",
           },
           "menu": Object {
@@ -498,7 +543,22 @@ exports[`App: Component should render App when language is set 1`] = `
             "backgroundColor": "#FFF",
             "minHeight": "100vh",
           },
+          "radioButton": Object {
+            "active": Object {
+              "background": "#1d1d20",
+              "fill": "#FFF",
+            },
+            "text": "#1d1d20",
+            "unActive": Object {
+              "background": "#f0efef",
+              "fill": "#FFF",
+            },
+          },
           "secondaryText": "#a6a7aa",
+          "select": Object {
+            "background": "#f0efef",
+            "border": "#FFF",
+          },
           "stepper": Object {
             "active": "#1d1d20",
             "background": "#f0efef",
@@ -536,7 +596,7 @@ exports[`App: Component should render App when language is set 1`] = `
             },
             "h3": Object {
               "color": Object {
-                "border": "#1d1d20",
+                "border": "#f0efef",
                 "text": "#a6a7aa",
               },
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",

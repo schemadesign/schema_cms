@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withTheme } from '../../../.storybook/decorators';
-import { PROJECT_TITLE } from '../../../modules/project/project.constants';
 import { Create } from './create.component';
+import { PROJECT_TITLE } from '../../../modules/project/project.constants';
+import { withTheme } from '../../../.storybook/decorators';
 
 const defaultProps = {
   values: {

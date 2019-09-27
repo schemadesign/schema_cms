@@ -18,32 +18,38 @@ exports[`View: Component should not render any step 1`] = `
       ]
     }
   />
-  <PillButtons
-    leftButtonProps={
-      Object {
-        "onClick": [Function],
-        "title": "Back",
-      }
-    }
-    rightButtonProps={
-      Object {
-        "onClick": [Function],
-        "title": "Next",
-      }
-    }
-  />
-  <styled.div>
-    <Component
-      activeStep={0}
-      customStyles={
-        Object {
-          "margin": "0 auto",
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": false,
+          }
         }
-      }
-      onStepChange={[Function]}
-      steps={6}
+      />
+    </BackButton>
+    <NextButton
+      onClick={[Function]}
     />
-  </styled.div>
+    <styled.div>
+      <Component
+        activeStep={0}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+          }
+        }
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </NavigationContainer>
 </styled.div>
 `;
 
@@ -67,7 +73,7 @@ exports[`View: Component should render draft 1`] = `
       ]
     }
   />
-  <Source
+  <WithTheme(SourceComponent)
     bindSubmitForm={[Function]}
     dataSource={
       Object {
@@ -104,33 +110,39 @@ exports[`View: Component should render draft 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <PillButtons
-    leftButtonProps={
-      Object {
-        "onClick": [Function],
-        "title": "Cancel",
-      }
-    }
-    rightButtonProps={
-      Object {
-        "onClick": [Function],
-        "title": "Next",
-      }
-    }
-  />
-  <styled.div>
-    <Component
-      activeStep={1}
-      customStyles={
-        Object {
-          "margin": "0 auto",
-          "pointerEvents": "none",
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": true,
+          }
         }
-      }
-      onStepChange={[Function]}
-      steps={6}
+      />
+    </BackButton>
+    <NextButton
+      onClick={[Function]}
     />
-  </styled.div>
+    <styled.div>
+      <Component
+        activeStep={1}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+            "pointerEvents": "none",
+          }
+        }
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </NavigationContainer>
 </styled.div>
 `;
 
@@ -152,7 +164,7 @@ exports[`View: Component should render second step 1`] = `
       ]
     }
   />
-  <Source
+  <WithTheme(SourceComponent)
     bindSubmitForm={[Function]}
     dataSource={
       Object {
@@ -190,32 +202,38 @@ exports[`View: Component should render second step 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <PillButtons
-    leftButtonProps={
-      Object {
-        "onClick": [Function],
-        "title": "Cancel",
-      }
-    }
-    rightButtonProps={
-      Object {
-        "onClick": [Function],
-        "title": "Next",
-      }
-    }
-  />
-  <styled.div>
-    <Component
-      activeStep={1}
-      customStyles={
-        Object {
-          "margin": "0 auto",
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": true,
+          }
         }
-      }
-      onStepChange={[Function]}
-      steps={6}
+      />
+    </BackButton>
+    <NextButton
+      onClick={[Function]}
     />
-  </styled.div>
+    <styled.div>
+      <Component
+        activeStep={1}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+          }
+        }
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </NavigationContainer>
 </styled.div>
 `;
 
@@ -237,7 +255,7 @@ exports[`View: Component should render source step 1`] = `
       ]
     }
   />
-  <Source
+  <WithTheme(SourceComponent)
     bindSubmitForm={[Function]}
     dataSource={
       Object {
@@ -274,31 +292,37 @@ exports[`View: Component should render source step 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <PillButtons
-    leftButtonProps={
-      Object {
-        "onClick": [Function],
-        "title": "Cancel",
-      }
-    }
-    rightButtonProps={
-      Object {
-        "onClick": [Function],
-        "title": "Next",
-      }
-    }
-  />
-  <styled.div>
-    <Component
-      activeStep={1}
-      customStyles={
-        Object {
-          "margin": "0 auto",
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": true,
+          }
         }
-      }
-      onStepChange={[Function]}
-      steps={6}
+      />
+    </BackButton>
+    <NextButton
+      onClick={[Function]}
     />
-  </styled.div>
+    <styled.div>
+      <Component
+        activeStep={1}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+          }
+        }
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </NavigationContainer>
 </styled.div>
 `;

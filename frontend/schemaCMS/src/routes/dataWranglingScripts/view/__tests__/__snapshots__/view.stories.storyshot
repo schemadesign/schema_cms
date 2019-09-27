@@ -213,7 +213,7 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       name="dataWranglingForm"
     >
       <div
-        className="sc-eqIVtm kRufpp"
+        className="sc-caSCKo jjNSwx"
       >
         <div
           style={
@@ -981,53 +981,62 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       </pre>
     </form>
     <div
-      className="sc-frDJqD cNUyiv"
+      className="sc-kkGfuU cbFdcv"
     >
-      <button
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "margin": "0",
-            "marginRight": 10,
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "width": "100%",
-          }
-        }
+      <div
+        className="sc-iAyFgw fPviBc"
       >
-        Back
-      </button>
-      <button
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#FFF",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#000",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "width": "100%",
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginRight": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
           }
-        }
-      >
-        OK
-      </button>
+        >
+          <span>
+            Back
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginLeft": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
+        >
+          <span>
+            OK
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
