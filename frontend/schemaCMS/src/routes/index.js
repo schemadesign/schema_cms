@@ -58,6 +58,7 @@ export default class RootContainer extends Component {
                 return <Redirect to={location} />;
               }}
             />
+            <Route path="*" component={NotFound} anonymous />
           </Switch>
         </App>
       </Switch>
