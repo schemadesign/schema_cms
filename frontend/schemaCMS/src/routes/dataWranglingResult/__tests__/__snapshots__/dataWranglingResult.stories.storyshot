@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DataWranglingResult Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-kvZOFW eiPhbT"
+  >
+    <div
+      className="sc-jAaTju daAYrj"
+    >
+      <table
+        className="sc-jDwBTQ eKJvCH"
+      >
+        <thead
+          className="sc-gPEVay eQYmiW"
+        >
+          <tr
+            className="sc-jlyJG iaCqlf"
+          >
+            <th
+              className="sc-csuQGl eUUoJn"
+            >
+              #
+            </th>
+            <th
+              className="sc-csuQGl eUUoJn"
+            >
+              First Name
+            </th>
+            <th
+              className="sc-csuQGl eUUoJn"
+            >
+              Last Name
+            </th>
+            <th
+              className="sc-csuQGl eUUoJn"
+            >
+              Full Name
+            </th>
+            <th
+              className="sc-csuQGl eUUoJn"
+            >
+              Birthplace
+            </th>
+            <th
+              className="sc-csuQGl eUUoJn"
+            >
+              State of Birth
+            </th>
+            <th
+              className="sc-csuQGl eUUoJn"
+            >
+              Birthday
+            </th>
+            <th
+              className="sc-csuQGl eUUoJn"
+            >
+              Url
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className="sc-iRbamj blSEcj"
+        >
+          <tr
+            className="sc-jlyJG iaCqlf"
+          >
+            <td
+              className="sc-Rmtcm UgJWe"
+            >
+              1
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              George
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Washington
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              George Washington
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Westmoreland County
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              VA
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              02/22/1732
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-jlyJG iaCqlf"
+          >
+            <td
+              className="sc-Rmtcm UgJWe"
+            >
+              2
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              John
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Adams
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              John Adams
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Braintree
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              MA
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              10/30/1735
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-jlyJG iaCqlf"
+          >
+            <td
+              className="sc-Rmtcm UgJWe"
+            >
+              3
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Thomas
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Jefferson
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Thomas Jefferson
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Shadwell
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              VA
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              04/13/1743
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-jlyJG iaCqlf"
+          >
+            <td
+              className="sc-Rmtcm UgJWe"
+            >
+              4
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              James
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Madison
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              James Madison
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Port Conway
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              VA
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              03/16/1751
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-jlyJG iaCqlf"
+          >
+            <td
+              className="sc-Rmtcm UgJWe"
+            >
+              5
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              James
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Monroe
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              James Monroe
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              Monroe Hall
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              VA
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              04/28/1758
+            </td>
+            <td
+              className="sc-gipzik fbopXj"
+            >
+              some.url.com
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;

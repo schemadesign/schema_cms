@@ -99,7 +99,7 @@ describe('DataSource: redux', () => {
 
   describe('when UNMOUNT_FIEDLS/SUCCESS action is received', () => {
     it('should unmount fields and previewTable ', () => {
-      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.unmountFields.success());
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.unmountFields.trigger());
 
       expect(resultState.fields).to.deep.equal(defaultState.fields);
       expect(resultState.previewTable).to.deep.equal(defaultState.previewTable);
