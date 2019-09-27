@@ -23,8 +23,17 @@ exports[`View: Component should not render any step 1`] = `
   >
     <BackButton
       onClick={[Function]}
-      title="Back"
-    />
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": false,
+          }
+        }
+      />
+    </BackButton>
     <NextButton
       onClick={[Function]}
     />
@@ -106,8 +115,17 @@ exports[`View: Component should render draft 1`] = `
   >
     <BackButton
       onClick={[Function]}
-      title="Cancel"
-    />
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": true,
+          }
+        }
+      />
+    </BackButton>
     <NextButton
       onClick={[Function]}
     />
@@ -189,8 +207,17 @@ exports[`View: Component should render second step 1`] = `
   >
     <BackButton
       onClick={[Function]}
-      title="Cancel"
-    />
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": true,
+          }
+        }
+      />
+    </BackButton>
     <NextButton
       onClick={[Function]}
     />
@@ -270,8 +297,17 @@ exports[`View: Component should render source step 1`] = `
   >
     <BackButton
       onClick={[Function]}
-      title="Cancel"
-    />
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": true,
+          }
+        }
+      />
+    </BackButton>
     <NextButton
       onClick={[Function]}
     />

@@ -10,7 +10,7 @@ exports[`Storyshots Project/View default 1`] = `
   }
 >
   <div
-    className="sc-dNLxif sc-gGBfsJ krFBMO"
+    className="sc-kpOJdX sc-gGBfsJ krFBMO"
   >
     <div>
       <div
@@ -559,10 +559,10 @@ exports[`Storyshots Project/View default 1`] = `
       </div>
     </div>
     <div
-      className="sc-kEYyzF jgwRnZ"
+      className="sc-kkGfuU cbFdcv"
     >
       <div
-        className="sc-kkGfuU cylxbN"
+        className="sc-iAyFgw fPviBc"
       >
         <button
           id="addProjectBtn"
@@ -617,7 +617,7 @@ exports[`Storyshots Project/View empty 1`] = `
   }
 >
   <div
-    className="sc-dNLxif sc-gGBfsJ krFBMO"
+    className="sc-kpOJdX sc-gGBfsJ krFBMO"
   >
     <div>
       <div
@@ -843,10 +843,10 @@ exports[`Storyshots Project/View empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-kEYyzF jgwRnZ"
+      className="sc-kkGfuU cbFdcv"
     >
       <div
-        className="sc-kkGfuU cylxbN"
+        className="sc-iAyFgw fPviBc"
       >
         <button
           id="addProjectBtn"

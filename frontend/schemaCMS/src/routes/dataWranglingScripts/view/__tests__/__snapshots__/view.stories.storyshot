@@ -10,7 +10,7 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
   }
 >
   <div
-    className="sc-kvZOFW hxJcVs"
+    className="sc-hqyNC iriswb"
   >
     <div
       className="sc-bdVaJa bDWFJH"
@@ -209,11 +209,11 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-hqyNC keRCOE"
+      className="sc-jbKcbu cWSlbe"
       name="dataWranglingForm"
     >
       <div
-        className="sc-fAjcbJ byigni"
+        className="sc-caSCKo jjNSwx"
       >
         <div
           style={
@@ -981,10 +981,10 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       </pre>
     </form>
     <div
-      className="sc-kEYyzF jgwRnZ"
+      className="sc-kkGfuU cbFdcv"
     >
       <div
-        className="sc-kkGfuU cylxbN"
+        className="sc-iAyFgw fPviBc"
       >
         <button
           onClick={[Function]}

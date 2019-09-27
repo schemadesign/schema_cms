@@ -2,6 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Stepper } from 'schemaUI';
 import { always, cond, equals, T } from 'ramda';
+import { FormattedMessage } from 'react-intl';
 
 import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
@@ -17,7 +18,7 @@ import {
   MAX_STEPS,
   STATUS_DRAFT,
 } from '../../../modules/dataSource/dataSource.constants';
-import { NavigationContainer, BackButton, NextButton } from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -106,7 +107,11 @@ export class View extends PureComponent {
       },
     } = this.props;
 
-    history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
+    if (step < 1) {
+      return this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
+    }
+
+    return history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
   };
 
   handleBackClick = () => this.handleStepChange(parseInt(this.props.match.params.step, 10) - 1);
@@ -137,15 +142,6 @@ export class View extends PureComponent {
     const topHeaderConfig = this.getHeaderAndMenuConfig(intl, activeStep);
     const customStepperStyles =
       dataSource.status === STATUS_DRAFT ? { ...stepperStyles, ...stepperBlockStyles } : stepperStyles;
-    const cancelProps = {
-      title: intl.formatMessage(messages.cancel),
-      onClick: this.handleCancelClick,
-    };
-    const backProps = {
-      title: intl.formatMessage(messages.back),
-      onClick: this.handleBackClick,
-    };
-    const leftButtonProps = activeStep === INITIAL_STEP ? cancelProps : backProps;
     this.submitForm = null;
 
     return (
@@ -159,7 +155,9 @@ export class View extends PureComponent {
         })}
 
         <NavigationContainer>
-          <BackButton {...leftButtonProps} />
+          <BackButton onClick={this.handleBackClick}>
+            <FormattedMessage {...messages.back} values={{ cancel: activeStep === INITIAL_STEP }} />
+          </BackButton>
           <NextButton onClick={this.handleNextClick} />
           <StepperContainer>
             <Stepper

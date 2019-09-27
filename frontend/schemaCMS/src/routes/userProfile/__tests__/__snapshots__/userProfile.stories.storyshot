@@ -205,7 +205,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-fAjcbJ byigni"
+      className="sc-caSCKo jjNSwx"
     >
       <div
         style={
@@ -264,7 +264,7 @@ exports[`Storyshots UserProfile Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-fAjcbJ byigni"
+      className="sc-caSCKo jjNSwx"
     >
       <div
         style={
@@ -323,7 +323,7 @@ exports[`Storyshots UserProfile Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-fAjcbJ byigni"
+      className="sc-caSCKo jjNSwx"
     >
       <div
         style={
