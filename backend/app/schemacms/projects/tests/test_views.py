@@ -251,9 +251,7 @@ class TestProjectDataSourcesView:
         response = api_client.get(self.get_url(0))
 
         assert response.status_code == status.HTTP_404_NOT_FOUND
-        assert response.data == {
-            "detail": exceptions.ErrorDetail(string="Not found.", code="not_found")
-        }
+        assert response.data == {"detail": exceptions.ErrorDetail(string="Not found.", code="not_found")}
 
     def test_url(self, project):
         assert f"/api/v1/projects/{project.id}/datasources" == self.get_url(project.id)
@@ -322,7 +320,9 @@ class TestUpdateDraftDataSourceView:
     def test_response(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory(draft=True)
         url = self.get_url(pk=data_source.pk)
-        payload = dict(name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file())
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
 
         api_client.force_authenticate(admin)
         response = api_client.put(url, payload, format="multipart")
@@ -334,7 +334,9 @@ class TestUpdateDraftDataSourceView:
     def test_object_in_db(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory(draft=True)
         url = self.get_url(pk=data_source.pk)
-        payload = dict(name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file())
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
         api_client.force_authenticate(admin)
 
         api_client.put(url, payload, format="multipart")
@@ -342,11 +344,15 @@ class TestUpdateDraftDataSourceView:
         data_source.refresh_from_db()
         assert data_source.status == projects_constants.DataSourceStatus.READY_FOR_PROCESSING
 
-    def test_update_by_editor_assigned_to_project(self, api_client, faker, editor, project, data_source_factory):
+    def test_update_by_editor_assigned_to_project(
+        self, api_client, faker, editor, project, data_source_factory
+    ):
         project.editors.add(editor)
         data_source = data_source_factory(project=project, draft=True)
         url = self.get_url(pk=data_source.pk)
-        payload = dict(name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file())
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
 
         api_client.force_authenticate(editor)
         response = api_client.put(url, payload, format="multipart")
@@ -356,7 +362,9 @@ class TestUpdateDraftDataSourceView:
     def test_update_by_editor_not_assigned_to_project(self, api_client, faker, editor, data_source_factory):
         data_source = data_source_factory(draft=True)
         url = self.get_url(pk=data_source.pk)
-        payload = dict(name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file())
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
 
         api_client.force_authenticate(editor)
         response = api_client.put(url, payload, format="multipart")
@@ -374,6 +382,28 @@ class TestUpdateDraftDataSourceView:
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data.keys() == {"name", "type", "file"}
 
+    def test_unique_name(self, api_client, faker, admin, data_source_factory):
+        other_datasource = data_source_factory(draft=True, name="test")
+        data_source = data_source_factory(draft=True, project=other_datasource.project)
+        url = self.get_url(pk=data_source.pk)
+        payload = dict(
+            name=other_datasource.name,
+            type=projects_constants.DataSourceType.FILE,
+            file=faker.csv_upload_file(),
+        )
+        api_client.force_authenticate(admin)
+
+        response = api_client.put(url, payload, format="multipart")
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST, response.content
+        assert response.data == {
+            'non_field_errors': [
+                exceptions.ErrorDetail(
+                    string='The fields name, project must make a unique set.', code='unique'
+                )
+            ]
+        }
+
     def test_url(self, data_source):
         assert f"/api/v1/datasources/{data_source.pk}" == self.get_url(pk=data_source.pk)
 
@@ -381,7 +411,9 @@ class TestUpdateDraftDataSourceView:
         data_source = data_source_factory(draft=True)
         _, file_name_before_update = data_source.get_original_file_name()
         url = self.get_url(pk=data_source.pk)
-        payload = dict(name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file())
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
 
         api_client.force_authenticate(admin)
         response = api_client.put(url, payload, format="multipart")
@@ -402,7 +434,9 @@ class TestDataSourceProcess:
 
         response = api_client.post(url)
 
-        data_source_refreshed = projects_models.DataSource.objects.select_related('meta_data').get(pk=data_source.pk)
+        data_source_refreshed = projects_models.DataSource.objects.select_related('meta_data').get(
+            pk=data_source.pk
+        )
         assert response.data == data_source_refreshed.meta_data.data
         assert data_source_refreshed.status == projects_constants.DataSourceStatus.DONE
 

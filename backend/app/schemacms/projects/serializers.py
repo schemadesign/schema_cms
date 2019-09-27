@@ -1,6 +1,6 @@
 import django_fsm
 from django.db import transaction
-from rest_framework import serializers, exceptions
+from rest_framework import serializers, exceptions, validators
 
 from schemacms.projects import models
 from schemacms.projects import services
@@ -50,6 +50,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "type": {"required": True, "allow_null": False},
             "file": {"required": True, "allow_null": False},
         }
+        validators = [
+            validators.UniqueTogetherValidator(queryset=DataSource.objects.all(), fields=('name', 'project'))
+        ]
 
     def get_file_name(self, obj):
         if obj.file:

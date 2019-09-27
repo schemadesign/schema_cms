@@ -32,4 +32,3 @@ class DataSourceQuerySet(models.QuerySet):
         if user.is_admin:
             return self
         return self.filter(project__editors=user)
-
