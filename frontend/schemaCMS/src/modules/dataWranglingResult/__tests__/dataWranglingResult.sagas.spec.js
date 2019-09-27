@@ -5,7 +5,7 @@ import nock from 'nock';
 
 import mockApi from '../../../shared/utils/mockApi';
 import { watchDataWranglingResult } from '../dataWranglingResult.sagas';
-import { DataWrangligResultRoutines } from '../dataWranglingResult.redux';
+import { DataWranglingResultRoutines } from '../dataWranglingResult.redux';
 
 describe('DataWranglingResult: sagas', () => {
   const defaultState = Immutable({});
@@ -29,8 +29,8 @@ describe('DataWranglingResult: sagas', () => {
 
       await expectSaga(watchDataWranglingResult)
         .withState(defaultState)
-        .put(DataWrangligResultRoutines.fetch.success(responseData))
-        .dispatch(DataWrangligResultRoutines.fetch(payload))
+        .put(DataWranglingResultRoutines.fetch.success(responseData))
+        .dispatch(DataWranglingResultRoutines.fetch(payload))
         .silentRun();
     });
   });

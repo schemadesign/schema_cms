@@ -4,7 +4,7 @@ import { createRoutine } from 'redux-saga-routines';
 
 const prefix = 'DATA_WRANGLING_RESULT/';
 
-export const DataWrangligResultRoutines = {
+export const DataWranglingResultRoutines = {
   fetch: createRoutine(`${prefix}FETCH`),
   unmount: createRoutine(`${prefix}UNMOUNT`),
 };
@@ -20,7 +20,7 @@ const fetchFailure = (state = INITIAL_STATE) => state.set('fields', {});
 const unmountResult = (state = INITIAL_STATE) => state.merge(INITIAL_STATE);
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [DataWrangligResultRoutines.fetch.SUCCESS]: fetchSuccess,
-  [DataWrangligResultRoutines.fetch.FAILURE]: fetchFailure,
-  [DataWrangligResultRoutines.unmount.TRIGGER]: unmountResult,
+  [DataWranglingResultRoutines.fetch.SUCCESS]: fetchSuccess,
+  [DataWranglingResultRoutines.fetch.FAILURE]: fetchFailure,
+  [DataWranglingResultRoutines.unmount.TRIGGER]: unmountResult,
 });
