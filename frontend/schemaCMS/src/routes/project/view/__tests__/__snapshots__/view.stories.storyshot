@@ -14,7 +14,7 @@ exports[`Storyshots Project/View default 1`] = `
   >
     <div>
       <div
-        className="sc-bdVaJa bDWFJH"
+        className="sc-bdVaJa bBsPgs"
       >
         <div
           style={
@@ -621,7 +621,7 @@ exports[`Storyshots Project/View empty 1`] = `
   >
     <div>
       <div
-        className="sc-bdVaJa bDWFJH"
+        className="sc-bdVaJa bBsPgs"
       >
         <div
           style={
