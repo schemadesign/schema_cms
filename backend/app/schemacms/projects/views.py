@@ -1,10 +1,10 @@
 import logging
 
 from django.db import transaction
-from rest_framework import decorators, exceptions, permissions, response, status, viewsets, generics, parsers
+from rest_framework import decorators, exceptions, mixins, permissions, response, status, viewsets
 
 from schemacms.users import permissions as user_permissions
-from . import constants, models, serializers, permissions as projects_permissions, services
+from . import constants, models, serializers, permissions as projects_permissions
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -75,38 +75,21 @@ class DataSourceViewSet(viewsets.ModelViewSet):
             return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 
-class DataSourceScriptView(generics.GenericAPIView):
-    queryset = models.DataSource.objects.all()
+class WranglingScriptViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.WranglingScriptSerializer
+    queryset = models.WranglingScript.objects.all()
+    permission_classes = (permissions.IsAuthenticated, )
 
-    def get(self, request, *args, **kwargs):
-        serializer = serializers.DataSourceScriptSerializer(
-            instance=self.get_object().available_scripts, many=True
+
+class DataSourceJobView(mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
+    queryset = models.DataSourceJob.objects.none()
+    serializer_class = serializers.DataSourceJobSerializer
+    permission_classes = (permissions.IsAuthenticated, )
+
+    def get_queryset(self):
+        return (
+            models.DataSourceJob.objects.all()
+            .select_related("datasource")
+            .prefetch_related("steps")
+            .order_by("-created")
         )
-        return response.Response(data=serializer.data)
-
-
-class DataSourceScriptUploadView(generics.GenericAPIView):
-    parser_classes = (parsers.FormParser, parsers.MultiPartParser)
-    queryset = models.DataSource.objects.all()
-    serializer_class = serializers.DataSourceScriptUploadSerializer
-
-    def post(self, request, **kwargs):
-        serializer = self.get_serializer(self.get_object(), data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return response.Response(status=status.HTTP_201_CREATED)
-
-
-class DataSourceJobView(generics.CreateAPIView):
-    queryset = models.DataSource.objects.all()
-    serializer_class = serializers.DataSourceJobSerializer
-
-    @transaction.atomic
-    def perform_create(self, serializer):
-        job = serializer.save(datasource=self.get_object())
-        services.schedule_worker_with(job)
-
-
-class DataSourceJobDetailView(generics.RetrieveAPIView):
-    queryset = models.DataSourceJob.objects.all()
-    serializer_class = serializers.DataSourceJobSerializer

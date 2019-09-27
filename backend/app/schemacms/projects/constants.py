@@ -60,3 +60,5 @@ DATA_SOURCE_JOB_STATE_CHOICES = (
     (DataSourceJobState.FAILED, 'Failed'),
     (DataSourceJobState.SUCCESS, 'Success'),
 )
+
+SCRIPT_NAME_MAX_LENGTH = 30

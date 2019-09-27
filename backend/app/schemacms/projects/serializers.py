@@ -3,8 +3,8 @@ from django.db import transaction
 from rest_framework import serializers, exceptions
 
 from schemacms.projects import models
+from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from schemacms.projects import services
-from .models import DataSource, DataSourceMeta, Project
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
 
@@ -131,40 +131,53 @@ class ProjectSerializer(serializers.ModelSerializer):
         return {"data_sources": {"count": project.data_source_count}}
 
 
-class DataSourceScriptSerializer(serializers.Serializer):
-    key = serializers.CharField()
-    body = serializers.SerializerMethodField()
+class WranglingScriptSerializer(serializers.ModelSerializer):
+    body = serializers.CharField(read_only=True)
+    created_by = NestedRelatedModelSerializer(
+        serializer=ProjectOwnerSerializer(),
+        read_only=True,
+        pk_field=serializers.UUIDField(format="hex_verbose"),
+    )
 
-    def get_body(self, attr):
-        return attr['resource'].getvalue(attr['ref_key'])
+    class Meta:
+        model = WranglingScript
+        fields = (
+            "id",
+            "datasource",
+            "name",
+            "is_predefined",
+            "created_by",
+            "file",
+            "body",
+        )
+
+    def create(self, validated_data):
+        script = WranglingScript(created_by=self.context["request"].user, **validated_data)
+        script.save()
+
+        return script
 
 
-class DataSourceScriptUploadSerializer(serializers.Serializer):
-    script = serializers.FileField()
-
-    def update(self, instance, validated_data):
-        script_file = validated_data.get('script')
-        services.scripts.resources.get('s3').upload(instance, script_file)
-        return instance
-
-
-class StepSerializer(serializers.Serializer):
-    key = serializers.CharField(max_length=255)
+class StepSerializer(serializers.ModelSerializer):
     exec_order = serializers.IntegerField(default=0)
 
-    def validate_key(self, attr):
-        spliced = attr.split(':')
-        if len(spliced) != 2:
-            raise exceptions.ValidationError('Invalid key format')
-        return attr
+    class Meta:
+        model = models.DataSourceJobStep
+        fields = (
+            "script",
+            "exec_order"
+        )
 
 
 class DataSourceJobSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True)
+    result = serializers.FileField(read_only=True)
+    error = serializers.CharField(read_only=True)
+    job_state = serializers.CharField(read_only=True)
 
     class Meta:
         model = models.DataSourceJob
-        fields = ('pk', 'steps', 'job_state')
+        fields = ("pk", "datasource", "steps", "job_state", "result", "error")
 
     def validate_steps(self, attr):
         if not attr:
@@ -174,13 +187,18 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         steps = validated_data.pop('steps')
         job = models.DataSourceJob.objects.create(**validated_data)
-        for step in steps:
-            step_key = step['key']
-            step_resource, ref_key = services.scripts.responsible(key=step_key)
-            models.DataSourceJobStep.objects.create(
-                datasource_job=job,
-                key=step_key,
-                exec_order=step['exec_order'],
-                body=step_resource.getvalue(ref_key),
-            )
+        models.DataSourceJobStep.objects.bulk_create(
+            self.create_steps(steps, job)
+        )
+        # services.schedule_worker_with(job)
+
         return job
+
+    @staticmethod
+    def create_steps(steps, job):
+        for step in steps:
+            step_instance = models.DataSourceJobStep()
+            step_instance.script = step["script"]
+            step_instance.datasource_job = job
+            step_instance.exec_order = step["exec_order"]
+            yield step_instance
