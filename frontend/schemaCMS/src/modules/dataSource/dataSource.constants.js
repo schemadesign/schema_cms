@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-export const FETCH_LIST_DELAY = 15 * 1000;
+export const FETCH_LIST_DELAY = 5 * 1000;
 
 export const DATA_SOURCE_NAME = 'name';
 export const DATA_SOURCE_FILE = 'file';

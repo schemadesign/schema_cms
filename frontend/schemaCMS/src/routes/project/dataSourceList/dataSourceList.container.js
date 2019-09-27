@@ -6,7 +6,7 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { injectIntl } from 'react-intl';
 
 import { compose } from 'ramda';
-import { List } from './list.component';
+import { DataSourceList } from './dataSourceList.component';
 import { DataSourceRoutines, selectDataSources } from '../../../modules/dataSource';
 
 const mapStateToProps = createStructuredSelector({
@@ -32,4 +32,4 @@ export default compose(
   ),
   injectIntl,
   withRouter
-)(List);
+)(DataSourceList);

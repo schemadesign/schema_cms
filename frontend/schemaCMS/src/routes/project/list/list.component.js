@@ -44,7 +44,7 @@ export class List extends PureComponent {
 
   formatMessage = value => this.props.intl.formatMessage(value);
 
-  handleShowProject = id => () => this.props.history.push(`/project/view/${id}`);
+  handleShowProject = id => () => this.props.history.push(`/project/${id}`);
 
   handleNewProject = () => this.props.history.push('/project/create/');
 

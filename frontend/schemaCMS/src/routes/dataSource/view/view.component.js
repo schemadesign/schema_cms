@@ -6,7 +6,7 @@ import { always, cond, equals, T } from 'ramda';
 import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
-import { Fields } from './fields';
+import { DataPreview } from '../../../shared/components/dataPreview';
 import { DataWranglingScripts } from '../../dataWranglingScripts';
 import { PillButtons } from '../../../shared/components/pillButtons';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -117,7 +117,7 @@ export class View extends PureComponent {
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
       [equals(INITIAL_STEP), always(<Source bindSubmitForm={this.bindSubmitForm} {...props} />)],
-      [equals(FIELDS_STEP), always(<Fields {...props} />)],
+      [equals(FIELDS_STEP), always(<DataPreview {...props} />)],
       [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts bindSubmitForm={this.bindSubmitForm} {...props} />)],
       [equals(4), always(null)],
       [equals(5), always(null)],

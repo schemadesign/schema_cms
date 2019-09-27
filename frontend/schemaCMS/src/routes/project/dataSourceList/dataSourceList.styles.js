@@ -21,7 +21,7 @@ export const Description = styled.div`
   cursor: pointer;
 `;
 
-export const DataSourceList = styled.div`
+export const DataSourceListWrapper = styled.div`
   list-style: none;
   padding: 0;
   margin-top: 24px;

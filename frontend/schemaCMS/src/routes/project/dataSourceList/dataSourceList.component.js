@@ -11,7 +11,7 @@ import {
   ButtonsContainer,
   Container,
   DataSourceItem,
-  DataSourceList,
+  DataSourceListWrapper,
   Error,
   ErrorsWrapper,
   Header,
@@ -24,10 +24,10 @@ import {
   MetaDataValue,
   MetaDataWrapper,
   titleStyles,
-} from './list.styles';
-import messages from './list.messages';
+} from './dataSourceList.styles';
+import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { HeaderItem, HeaderList } from '../../project/list/list.styles';
+import { HeaderItem, HeaderList } from '../list/list.styles';
 import {
   FIELDS_STEP,
   INITIAL_STEP,
@@ -43,7 +43,7 @@ const { H1 } = Typography;
 const { PlusIcon, CsvIcon, IntersectIcon, ArrowLeftIcon } = Icons;
 const DEFAULT_VALUE = '—';
 
-export class List extends PureComponent {
+export class DataSourceList extends PureComponent {
   static propTypes = {
     createDataSource: PropTypes.func.isRequired,
     fetchDataSources: PropTypes.func.isRequired,
@@ -174,7 +174,7 @@ export class List extends PureComponent {
     );
   };
 
-  renderList = dataSources => <DataSourceList>{dataSources.map(this.renderItem)}</DataSourceList>;
+  renderList = dataSources => <DataSourceListWrapper>{dataSources.map(this.renderItem)}</DataSourceListWrapper>;
 
   render() {
     const { dataSources = [] } = this.props;

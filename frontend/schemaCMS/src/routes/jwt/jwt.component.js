@@ -11,7 +11,8 @@ export class Jwt extends PureComponent {
     const { location, getJwtToken } = this.props;
 
     if (location.state && location.state.token && location.state.user) {
-      getJwtToken(location.state.user, location.state.token);
+      // getJwtToken(location.state.user, location.state.token);
+      debugger;
     }
   }
 

@@ -11,6 +11,7 @@ import { Project } from './project';
 import { UserProfile } from './userProfile';
 import { ResetPassword } from './resetPassword';
 import { Logout } from './logout';
+import { DataSource } from './dataSource';
 
 export const ROUTES = {
   HOME: '/',
@@ -19,6 +20,7 @@ export const ROUTES = {
   PROJECT: '/project',
   RESET_PASSWORD: '/reset-password',
   LOGOUT: '/logout',
+  DATA_SOURCE: '/datasource',
 };
 
 export default class RootContainer extends Component {
@@ -32,6 +34,8 @@ export default class RootContainer extends Component {
             <AuthRoute exact path={ROUTES.HOME} render={() => <Redirect to={ROUTES.PROJECT} />} />
 
             <AuthRoute path={ROUTES.PROJECT} component={Project} />
+
+            <AuthRoute path={ROUTES.DATA_SOURCE} component={DataSource} />
 
             <AuthRoute path={ROUTES.USER_PROFILE} component={UserProfile} />
 

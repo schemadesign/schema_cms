@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { identity } from 'ramda';
-import { styleWhenTrue } from '../../../../shared/utils/rendering';
+import { styleWhenTrue } from '../../utils/rendering';
 
 export const Container = styled.div``;
 

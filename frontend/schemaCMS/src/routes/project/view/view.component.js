@@ -64,7 +64,7 @@ export class View extends PureComponent {
     if (!hasNoData) {
       primaryMenuItems.push({
         label: this.formatMessage(messages.dataSources),
-        to: `/project/view/${projectId}/datasource`,
+        to: `/project/${projectId}/datasource`,
       });
 
       if (isAdmin(this.props.user)) {

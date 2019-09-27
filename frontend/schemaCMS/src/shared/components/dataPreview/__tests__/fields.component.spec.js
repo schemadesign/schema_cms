@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Fields } from '../fields.component';
-import { defaultProps } from '../fields.stories';
+import { DataPreview } from '../dataPreview.component';
+import { defaultProps } from '../dataPreview.stories';
 
 describe('Fields: Component', () => {
-  const component = props => <Fields {...defaultProps} {...props} />;
+  const component = props => <DataPreview {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

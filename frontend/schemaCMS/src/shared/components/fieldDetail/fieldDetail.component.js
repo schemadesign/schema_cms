@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { defaultTo, innerJoin, isNil } from 'ramda';
 
-import { renderWhenTrue } from '../../../../../shared/utils/rendering';
-import messages from './details.messages';
-import { EDITABLE_FIELDS, EMPTY, DEFAULT_STRUCTURE, INFORMATION_FIELDS } from './details.constants';
-import { Container, List, FieldInformation, FieldSummary, Label, Value, EditIcon } from './details.styles';
+import { renderWhenTrue } from '../../utils/rendering';
+import messages from './fieldDetail.messages';
+import { EDITABLE_FIELDS, EMPTY, DEFAULT_STRUCTURE, INFORMATION_FIELDS } from './fieldDetail.constants';
+import { Container, List, FieldInformation, FieldSummary, Label, Value, EditIcon } from './fieldDetail.styles';
 
-export class Details extends PureComponent {
+export class FieldDetail extends PureComponent {
   static propTypes = {
     id: PropTypes.string.isRequired,
     data: PropTypes.object.isRequired,

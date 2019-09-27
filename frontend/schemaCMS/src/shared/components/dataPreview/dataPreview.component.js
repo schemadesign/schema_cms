@@ -4,10 +4,10 @@ import Helmet from 'react-helmet';
 import { Button, Icons } from 'schemaUI';
 import { isEmpty, keys, map } from 'ramda';
 
-import { Loader } from '../../../../shared/components/loader';
-import { Table } from '../../../../shared/components/table';
-import { Details } from './details';
-import messages from './fields.messages';
+import { Loader } from '../loader';
+import { Table } from '../table';
+import { FieldDetail } from '../fieldDetail';
+import messages from './dataPreview.messages';
 import {
   Container,
   Navigation,
@@ -16,11 +16,11 @@ import {
   Content,
   buttonStyles,
   arrowStyles,
-} from './fields.styles';
+} from './dataPreview.styles';
 
 const INITIAL_STEP = 0;
 
-export class Fields extends PureComponent {
+export default class DataPreview extends PureComponent {
   static propTypes = {
     fields: PropTypes.object,
     previewTable: PropTypes.array,
@@ -125,7 +125,7 @@ export class Fields extends PureComponent {
 
   renderTable = props => <Table {...props} numberedRows />;
 
-  renderFieldDetails = props => <Details {...props} />;
+  renderFieldDetails = props => <FieldDetail {...props} />;
 
   renderContent() {
     const { step } = this.state;
