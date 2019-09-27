@@ -74,12 +74,19 @@ class DraftDataSourceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DataSource
-        fields = ("id", "name", "type", "file", "meta_data")
+        fields = ("id", "name", "type", "file", "meta_data", "project")
         extra_kwargs = {
             "name": {"required": False, "allow_null": True},
             "type": {"required": False, "allow_null": True},
             "file": {"required": False, "allow_null": True},
         }
+        validators = []  # do not validate tuple of (name, project)
+
+    def validate_project(self, project):
+        user = self.context["request"].user
+        if not project.user_has_access(user):
+            raise exceptions.PermissionDenied
+        return project
 
 
 class ProjectOwnerSerializer(serializers.ModelSerializer):

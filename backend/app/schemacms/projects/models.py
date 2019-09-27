@@ -39,7 +39,7 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel)
         return self.title
 
     def user_has_access(self, user):
-        return self.get_projects_for_user(user).filter(pk=self.id).exists()
+        return user.is_admin or self.editors.filter(pk=user.id).exists()
 
     @classmethod
     def get_projects_for_user(cls, user):
@@ -67,7 +67,7 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
     )
 
-    objects = managers.DataSourceManager()
+    objects = managers.DataSourceQuerySet.as_manager()
 
     class Meta:
         unique_together = ("name", "project")
