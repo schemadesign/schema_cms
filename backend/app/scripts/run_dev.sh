@@ -89,8 +89,6 @@ WORKER_SUCCESS_ARN=$(get_worker_success_lambda_arn)
 
 echo "LocalStack fixtures installed"
 
-export DB_CONNECTION="{\"host\": \"db\", \"username\": \"${POSTGRES_USER}\", \"password\": \"${POSTGRES_PASSWORD}\", \"port\": ${POSTGRES_PORT}}"
-
 python wait_for_postgres.py &&
                ./manage.py migrate &&
                ./manage.py initialuser &&
