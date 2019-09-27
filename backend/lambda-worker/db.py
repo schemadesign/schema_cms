@@ -30,9 +30,17 @@ class DataSource(BaseModel):
         table_name = "projects_datasource"
 
 
+class Script(BaseModel):
+    body = TextField()
+
+    class Meta:
+        table_name = "projects_wranglingscript"
+
+
 class Job(BaseModel):
     datasource = ForeignKeyField(DataSource, backref="jobs")
-    outcome = TextField()
+    result = CharField()
+    error = TextField()
     job_state = CharField()
 
     class Meta:
@@ -41,8 +49,7 @@ class Job(BaseModel):
 
 class JobStep(BaseModel):
     datasource_job = ForeignKeyField(Job, backref="steps")
-    key = CharField()
-    body = TextField()
+    script = ForeignKeyField(Script, backref="steps")
     exec_order = IntegerField()
 
     class Meta:
