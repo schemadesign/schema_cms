@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Source: Component should render correctly 1`] = `
+exports[`SourceComponent: Component should render correctly 1`] = `
 <IntlProvider
   locale="en"
 >
-  <Source
+  <SourceComponent
     bindSubmitForm={[Function]}
     dataSource={Object {}}
     intl={
@@ -18,6 +18,135 @@ exports[`Source: Component should render correctly 1`] = `
           "dataSourceId": "1",
           "projectId": "1",
           "step": "1",
+        },
+      }
+    }
+    theme={
+      Object {
+        "background": "#000",
+        "border": "#2F2F36",
+        "button": Object {
+          "background": "#1d1d20",
+          "text": "#FFF",
+        },
+        "card": Object {
+          "background": "#1d1d20",
+          "border": "#FFF",
+          "label": undefined,
+        },
+        "checkbox": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
+        },
+        "colors": Object {
+          "black": "#000",
+          "coolGray": "#a6a7aa",
+          "darkGrey": "#1d1d20",
+          "lightGrey": "#71737e",
+          "mediumGray": "#2F2F36",
+          "red": "#f21e29",
+          "veryLightPink": "#f0efef",
+          "white": "#FFF",
+        },
+        "dataGrid": Object {
+          "background": "#000",
+          "text": "#71737e",
+        },
+        "header": Object {
+          "text": "#FFF",
+        },
+        "icon": Object {
+          "background": "#1d1d20",
+          "fill": "#FFF",
+        },
+        "input": Object {
+          "text": "#FFF",
+        },
+        "inverseButton": Object {
+          "background": "#FFF",
+          "text": "#000",
+        },
+        "label": Object {
+          "border": "#2F2F36",
+          "text": "#71737e",
+        },
+        "menu": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "providerContainer": Object {
+          "backgroundColor": "#000",
+          "minHeight": "100vh",
+        },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#FFF",
+            "fill": "#1d1d20",
+          },
+          "text": "#FFF",
+          "unActive": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+          },
+        },
+        "secondaryText": "#71737e",
+        "select": Object {
+          "background": "#1d1d20",
+          "border": "#000",
+        },
+        "stepper": Object {
+          "active": "#FFF",
+          "background": "#1d1d20",
+        },
+        "table": Object {
+          "background": Object {
+            "body": "#000",
+            "header": "#1d1d20",
+          },
+          "border": Object {
+            "body": "#1d1d20",
+            "header": "#000",
+          },
+          "text": Object {
+            "body": "#FFF",
+            "header": "#71737e",
+          },
+        },
+        "text": "#FFF",
+        "textArea": Object {
+          "text": "#FFF",
+        },
+        "textField": Object {
+          "error": "#f21e29",
+          "label": "#71737e",
+        },
+        "typography": Object {
+          "h1": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "h2": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 100,
+          },
+          "h3": Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "p": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 200,
+          },
+          "pre": Object {
+            "fontFamily": "Hack, monospace",
+          },
+          "span": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          },
         },
       }
     }
@@ -224,6 +353,135 @@ exports[`Source: Component should render correctly 1`] = `
               }
               name="name"
               onChange={[Function]}
+              theme={
+                Object {
+                  "background": "#000",
+                  "border": "#2F2F36",
+                  "button": Object {
+                    "background": "#1d1d20",
+                    "text": "#FFF",
+                  },
+                  "card": Object {
+                    "background": "#1d1d20",
+                    "border": "#FFF",
+                    "label": undefined,
+                  },
+                  "checkbox": Object {
+                    "border": "#2F2F36",
+                    "text": "#FFF",
+                  },
+                  "colors": Object {
+                    "black": "#000",
+                    "coolGray": "#a6a7aa",
+                    "darkGrey": "#1d1d20",
+                    "lightGrey": "#71737e",
+                    "mediumGray": "#2F2F36",
+                    "red": "#f21e29",
+                    "veryLightPink": "#f0efef",
+                    "white": "#FFF",
+                  },
+                  "dataGrid": Object {
+                    "background": "#000",
+                    "text": "#71737e",
+                  },
+                  "header": Object {
+                    "text": "#FFF",
+                  },
+                  "icon": Object {
+                    "background": "#1d1d20",
+                    "fill": "#FFF",
+                  },
+                  "input": Object {
+                    "text": "#FFF",
+                  },
+                  "inverseButton": Object {
+                    "background": "#FFF",
+                    "text": "#000",
+                  },
+                  "label": Object {
+                    "border": "#2F2F36",
+                    "text": "#71737e",
+                  },
+                  "menu": Object {
+                    "background": "#000",
+                    "text": "#FFF",
+                  },
+                  "providerContainer": Object {
+                    "backgroundColor": "#000",
+                    "minHeight": "100vh",
+                  },
+                  "radioButton": Object {
+                    "active": Object {
+                      "background": "#FFF",
+                      "fill": "#1d1d20",
+                    },
+                    "text": "#FFF",
+                    "unActive": Object {
+                      "background": "#1d1d20",
+                      "fill": "#FFF",
+                    },
+                  },
+                  "secondaryText": "#71737e",
+                  "select": Object {
+                    "background": "#1d1d20",
+                    "border": "#000",
+                  },
+                  "stepper": Object {
+                    "active": "#FFF",
+                    "background": "#1d1d20",
+                  },
+                  "table": Object {
+                    "background": Object {
+                      "body": "#000",
+                      "header": "#1d1d20",
+                    },
+                    "border": Object {
+                      "body": "#1d1d20",
+                      "header": "#000",
+                    },
+                    "text": Object {
+                      "body": "#FFF",
+                      "header": "#71737e",
+                    },
+                  },
+                  "text": "#FFF",
+                  "textArea": Object {
+                    "text": "#FFF",
+                  },
+                  "textField": Object {
+                    "error": "#f21e29",
+                    "label": "#71737e",
+                  },
+                  "typography": Object {
+                    "h1": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 600,
+                    },
+                    "h2": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 100,
+                    },
+                    "h3": Object {
+                      "color": Object {
+                        "border": "#f0efef",
+                        "text": "#a6a7aa",
+                      },
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 600,
+                    },
+                    "p": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 200,
+                    },
+                    "pre": Object {
+                      "fontFamily": "Hack, monospace",
+                    },
+                    "span": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    },
+                  },
+                }
+              }
               touched={Object {}}
               updateDataSource={[Function]}
               value=""
@@ -428,110 +686,121 @@ exports[`Source: Component should render correctly 1`] = `
                   }
                 }
               >
-                <RadioButton
+                <Component
                   id="file"
                   label="Spreadsheet"
                   value="file"
                 >
-                  <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "flexDirection": "column",
-                        "textAlign": "center",
-                      }
-                    }
+                  <RadioButtonComponent
+                    id="file"
+                    label="Spreadsheet"
+                    value="file"
                   >
-                    <input
-                      aria-hidden={true}
-                      defaultChecked={false}
-                      id="file"
-                      name="type"
-                      onChange={[Function]}
+                    <div
                       style={
                         Object {
-                          "height": 0,
-                          "left": 0,
-                          "overflow": "hidden",
-                          "position": "absolute",
-                          "top": 0,
-                          "visibility": "hidden",
-                        }
-                      }
-                      type="radio"
-                      value="file"
-                    />
-                    <label
-                      htmlFor="file"
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "cursor": "pointer",
+                          "color": "#FFF",
                           "display": "flex",
                           "flexDirection": "column",
-                          "opacity": 0.1,
-                          "width": 96,
+                          "textAlign": "center",
                         }
                       }
                     >
-                      <Component
-                        customStyles={
+                      <input
+                        aria-hidden={true}
+                        defaultChecked={false}
+                        id="file"
+                        name="type"
+                        onChange={[Function]}
+                        style={
                           Object {
-                            "height": 96,
-                            "marginBottom": 10,
-                            "pointerEvents": "none",
+                            "height": 0,
+                            "left": 0,
+                            "overflow": "hidden",
+                            "position": "absolute",
+                            "top": 0,
+                            "visibility": "hidden",
+                          }
+                        }
+                        type="radio"
+                        value="file"
+                      />
+                      <label
+                        htmlFor="file"
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "flexDirection": "column",
                             "width": 96,
                           }
                         }
-                        type="button"
                       >
-                        <ButtonComponent
+                        <Component
                           customStyles={
                             Object {
+                              "background": "#1d1d20",
                               "height": 96,
                               "marginBottom": 10,
                               "pointerEvents": "none",
                               "width": 96,
                             }
                           }
-                          inverse={false}
                           type="button"
                         >
-                          <button
-                            style={
+                          <ButtonComponent
+                            customStyles={
                               Object {
-                                "backgroundColor": "#1d1d20",
-                                "border": "none",
-                                "borderRadius": "48px",
-                                "color": "#FFF",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                                "fill": "#FFF",
-                                "fontSize": "18px",
+                                "background": "#1d1d20",
                                 "height": 96,
-                                "margin": "0",
                                 "marginBottom": 10,
-                                "minHeight": "48px",
-                                "outline": "none",
-                                "padding": "0",
                                 "pointerEvents": "none",
                                 "width": 96,
                               }
                             }
+                            inverse={false}
                             type="button"
                           >
-                            <Component>
-                              <CsvIconComponent>
-                                <SvgSpreadsheet
-                                  style={
+                            <button
+                              style={
+                                Object {
+                                  "background": "#1d1d20",
+                                  "backgroundColor": "#1d1d20",
+                                  "border": "none",
+                                  "borderRadius": "48px",
+                                  "color": "#FFF",
+                                  "cursor": "pointer",
+                                  "display": "inline-block",
+                                  "fill": "#FFF",
+                                  "fontSize": "18px",
+                                  "height": 96,
+                                  "margin": "0",
+                                  "marginBottom": 10,
+                                  "minHeight": "48px",
+                                  "outline": "none",
+                                  "padding": "0",
+                                  "pointerEvents": "none",
+                                  "width": 96,
+                                }
+                              }
+                              type="button"
+                            >
+                              <Component
+                                customStyles={
+                                  Object {
+                                    "fill": "#FFF",
+                                  }
+                                }
+                              >
+                                <CsvIconComponent
+                                  customStyles={
                                     Object {
                                       "fill": "#FFF",
-                                      "height": "60px",
-                                      "width": "60px",
                                     }
                                   }
                                 >
-                                  <svg
+                                  <SvgSpreadsheet
                                     style={
                                       Object {
                                         "fill": "#FFF",
@@ -539,38 +808,48 @@ exports[`Source: Component should render correctly 1`] = `
                                         "width": "60px",
                                       }
                                     }
-                                    viewBox="0 0 60 60"
                                   >
-                                    <path
-                                      d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                                      fillRule="evenodd"
-                                    />
-                                  </svg>
-                                </SvgSpreadsheet>
-                              </CsvIconComponent>
-                            </Component>
-                          </button>
-                        </ButtonComponent>
-                      </Component>
-                    </label>
-                    Spreadsheet
-                  </div>
-                </RadioButton>
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#FFF",
+                                          "height": "60px",
+                                          "width": "60px",
+                                        }
+                                      }
+                                      viewBox="0 0 60 60"
+                                    >
+                                      <path
+                                        d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </SvgSpreadsheet>
+                                </CsvIconComponent>
+                              </Component>
+                            </button>
+                          </ButtonComponent>
+                        </Component>
+                      </label>
+                      Spreadsheet
+                    </div>
+                  </RadioButtonComponent>
+                </Component>
               </div>
             </RadioGroup>
           </Formik>
         </div>
       </StyledComponent>
     </styled.div>
-  </Source>
+  </SourceComponent>
 </IntlProvider>
 `;
 
-exports[`Source: Component should render file uploader 1`] = `
+exports[`SourceComponent: Component should render file uploader 1`] = `
 <IntlProvider
   locale="en"
 >
-  <Source
+  <SourceComponent
     bindSubmitForm={[Function]}
     dataSource={
       Object {
@@ -588,6 +867,135 @@ exports[`Source: Component should render file uploader 1`] = `
           "dataSourceId": "1",
           "projectId": "1",
           "step": "1",
+        },
+      }
+    }
+    theme={
+      Object {
+        "background": "#000",
+        "border": "#2F2F36",
+        "button": Object {
+          "background": "#1d1d20",
+          "text": "#FFF",
+        },
+        "card": Object {
+          "background": "#1d1d20",
+          "border": "#FFF",
+          "label": undefined,
+        },
+        "checkbox": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
+        },
+        "colors": Object {
+          "black": "#000",
+          "coolGray": "#a6a7aa",
+          "darkGrey": "#1d1d20",
+          "lightGrey": "#71737e",
+          "mediumGray": "#2F2F36",
+          "red": "#f21e29",
+          "veryLightPink": "#f0efef",
+          "white": "#FFF",
+        },
+        "dataGrid": Object {
+          "background": "#000",
+          "text": "#71737e",
+        },
+        "header": Object {
+          "text": "#FFF",
+        },
+        "icon": Object {
+          "background": "#1d1d20",
+          "fill": "#FFF",
+        },
+        "input": Object {
+          "text": "#FFF",
+        },
+        "inverseButton": Object {
+          "background": "#FFF",
+          "text": "#000",
+        },
+        "label": Object {
+          "border": "#2F2F36",
+          "text": "#71737e",
+        },
+        "menu": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "providerContainer": Object {
+          "backgroundColor": "#000",
+          "minHeight": "100vh",
+        },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#FFF",
+            "fill": "#1d1d20",
+          },
+          "text": "#FFF",
+          "unActive": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+          },
+        },
+        "secondaryText": "#71737e",
+        "select": Object {
+          "background": "#1d1d20",
+          "border": "#000",
+        },
+        "stepper": Object {
+          "active": "#FFF",
+          "background": "#1d1d20",
+        },
+        "table": Object {
+          "background": Object {
+            "body": "#000",
+            "header": "#1d1d20",
+          },
+          "border": Object {
+            "body": "#1d1d20",
+            "header": "#000",
+          },
+          "text": Object {
+            "body": "#FFF",
+            "header": "#71737e",
+          },
+        },
+        "text": "#FFF",
+        "textArea": Object {
+          "text": "#FFF",
+        },
+        "textField": Object {
+          "error": "#f21e29",
+          "label": "#71737e",
+        },
+        "typography": Object {
+          "h1": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "h2": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 100,
+          },
+          "h3": Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "p": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 200,
+          },
+          "pre": Object {
+            "fontFamily": "Hack, monospace",
+          },
+          "span": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          },
         },
       }
     }
@@ -798,6 +1206,135 @@ exports[`Source: Component should render file uploader 1`] = `
               }
               name="name"
               onChange={[Function]}
+              theme={
+                Object {
+                  "background": "#000",
+                  "border": "#2F2F36",
+                  "button": Object {
+                    "background": "#1d1d20",
+                    "text": "#FFF",
+                  },
+                  "card": Object {
+                    "background": "#1d1d20",
+                    "border": "#FFF",
+                    "label": undefined,
+                  },
+                  "checkbox": Object {
+                    "border": "#2F2F36",
+                    "text": "#FFF",
+                  },
+                  "colors": Object {
+                    "black": "#000",
+                    "coolGray": "#a6a7aa",
+                    "darkGrey": "#1d1d20",
+                    "lightGrey": "#71737e",
+                    "mediumGray": "#2F2F36",
+                    "red": "#f21e29",
+                    "veryLightPink": "#f0efef",
+                    "white": "#FFF",
+                  },
+                  "dataGrid": Object {
+                    "background": "#000",
+                    "text": "#71737e",
+                  },
+                  "header": Object {
+                    "text": "#FFF",
+                  },
+                  "icon": Object {
+                    "background": "#1d1d20",
+                    "fill": "#FFF",
+                  },
+                  "input": Object {
+                    "text": "#FFF",
+                  },
+                  "inverseButton": Object {
+                    "background": "#FFF",
+                    "text": "#000",
+                  },
+                  "label": Object {
+                    "border": "#2F2F36",
+                    "text": "#71737e",
+                  },
+                  "menu": Object {
+                    "background": "#000",
+                    "text": "#FFF",
+                  },
+                  "providerContainer": Object {
+                    "backgroundColor": "#000",
+                    "minHeight": "100vh",
+                  },
+                  "radioButton": Object {
+                    "active": Object {
+                      "background": "#FFF",
+                      "fill": "#1d1d20",
+                    },
+                    "text": "#FFF",
+                    "unActive": Object {
+                      "background": "#1d1d20",
+                      "fill": "#FFF",
+                    },
+                  },
+                  "secondaryText": "#71737e",
+                  "select": Object {
+                    "background": "#1d1d20",
+                    "border": "#000",
+                  },
+                  "stepper": Object {
+                    "active": "#FFF",
+                    "background": "#1d1d20",
+                  },
+                  "table": Object {
+                    "background": Object {
+                      "body": "#000",
+                      "header": "#1d1d20",
+                    },
+                    "border": Object {
+                      "body": "#1d1d20",
+                      "header": "#000",
+                    },
+                    "text": Object {
+                      "body": "#FFF",
+                      "header": "#71737e",
+                    },
+                  },
+                  "text": "#FFF",
+                  "textArea": Object {
+                    "text": "#FFF",
+                  },
+                  "textField": Object {
+                    "error": "#f21e29",
+                    "label": "#71737e",
+                  },
+                  "typography": Object {
+                    "h1": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 600,
+                    },
+                    "h2": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 100,
+                    },
+                    "h3": Object {
+                      "color": Object {
+                        "border": "#f0efef",
+                        "text": "#a6a7aa",
+                      },
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 600,
+                    },
+                    "p": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 200,
+                    },
+                    "pre": Object {
+                      "fontFamily": "Hack, monospace",
+                    },
+                    "span": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    },
+                  },
+                }
+              }
               touched={Object {}}
               updateDataSource={[Function]}
               value=""
@@ -1003,134 +1540,155 @@ exports[`Source: Component should render file uploader 1`] = `
                   }
                 }
               >
-                <RadioButton
+                <Component
                   id="file"
                   label="Spreadsheet"
                   value="file"
                 >
-                  <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "flexDirection": "column",
-                        "textAlign": "center",
-                      }
-                    }
+                  <RadioButtonComponent
+                    id="file"
+                    label="Spreadsheet"
+                    value="file"
                   >
-                    <input
-                      aria-hidden={true}
-                      defaultChecked={true}
-                      id="file"
-                      name="type"
-                      onChange={[Function]}
+                    <div
                       style={
                         Object {
-                          "height": 0,
-                          "left": 0,
-                          "overflow": "hidden",
-                          "position": "absolute",
-                          "top": 0,
-                          "visibility": "hidden",
-                        }
-                      }
-                      type="radio"
-                      value="file"
-                    />
-                    <label
-                      htmlFor="file"
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "cursor": "pointer",
+                          "color": "#FFF",
                           "display": "flex",
                           "flexDirection": "column",
-                          "opacity": 1,
-                          "width": 96,
+                          "textAlign": "center",
                         }
                       }
                     >
-                      <Component
-                        customStyles={
+                      <input
+                        aria-hidden={true}
+                        defaultChecked={true}
+                        id="file"
+                        name="type"
+                        onChange={[Function]}
+                        style={
                           Object {
-                            "height": 96,
-                            "marginBottom": 10,
-                            "pointerEvents": "none",
+                            "height": 0,
+                            "left": 0,
+                            "overflow": "hidden",
+                            "position": "absolute",
+                            "top": 0,
+                            "visibility": "hidden",
+                          }
+                        }
+                        type="radio"
+                        value="file"
+                      />
+                      <label
+                        htmlFor="file"
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "flexDirection": "column",
                             "width": 96,
                           }
                         }
-                        type="button"
                       >
-                        <ButtonComponent
+                        <Component
                           customStyles={
                             Object {
+                              "background": "#FFF",
                               "height": 96,
                               "marginBottom": 10,
                               "pointerEvents": "none",
                               "width": 96,
                             }
                           }
-                          inverse={false}
                           type="button"
                         >
-                          <button
-                            style={
+                          <ButtonComponent
+                            customStyles={
                               Object {
-                                "backgroundColor": "#1d1d20",
-                                "border": "none",
-                                "borderRadius": "48px",
-                                "color": "#FFF",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                                "fill": "#FFF",
-                                "fontSize": "18px",
+                                "background": "#FFF",
                                 "height": 96,
-                                "margin": "0",
                                 "marginBottom": 10,
-                                "minHeight": "48px",
-                                "outline": "none",
-                                "padding": "0",
                                 "pointerEvents": "none",
                                 "width": 96,
                               }
                             }
+                            inverse={false}
                             type="button"
                           >
-                            <Component>
-                              <CsvIconComponent>
-                                <SvgSpreadsheet
-                                  style={
+                            <button
+                              style={
+                                Object {
+                                  "background": "#FFF",
+                                  "backgroundColor": "#1d1d20",
+                                  "border": "none",
+                                  "borderRadius": "48px",
+                                  "color": "#FFF",
+                                  "cursor": "pointer",
+                                  "display": "inline-block",
+                                  "fill": "#FFF",
+                                  "fontSize": "18px",
+                                  "height": 96,
+                                  "margin": "0",
+                                  "marginBottom": 10,
+                                  "minHeight": "48px",
+                                  "outline": "none",
+                                  "padding": "0",
+                                  "pointerEvents": "none",
+                                  "width": 96,
+                                }
+                              }
+                              type="button"
+                            >
+                              <Component
+                                customStyles={
+                                  Object {
+                                    "fill": "#1d1d20",
+                                  }
+                                }
+                              >
+                                <CsvIconComponent
+                                  customStyles={
                                     Object {
-                                      "fill": "#FFF",
-                                      "height": "60px",
-                                      "width": "60px",
+                                      "fill": "#1d1d20",
                                     }
                                   }
                                 >
-                                  <svg
+                                  <SvgSpreadsheet
                                     style={
                                       Object {
-                                        "fill": "#FFF",
+                                        "fill": "#1d1d20",
                                         "height": "60px",
                                         "width": "60px",
                                       }
                                     }
-                                    viewBox="0 0 60 60"
                                   >
-                                    <path
-                                      d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                                      fillRule="evenodd"
-                                    />
-                                  </svg>
-                                </SvgSpreadsheet>
-                              </CsvIconComponent>
-                            </Component>
-                          </button>
-                        </ButtonComponent>
-                      </Component>
-                    </label>
-                    Spreadsheet
-                  </div>
-                </RadioButton>
+                                    <svg
+                                      style={
+                                        Object {
+                                          "fill": "#1d1d20",
+                                          "height": "60px",
+                                          "width": "60px",
+                                        }
+                                      }
+                                      viewBox="0 0 60 60"
+                                    >
+                                      <path
+                                        d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </SvgSpreadsheet>
+                                </CsvIconComponent>
+                              </Component>
+                            </button>
+                          </ButtonComponent>
+                        </Component>
+                      </label>
+                      Spreadsheet
+                    </div>
+                  </RadioButtonComponent>
+                </Component>
               </div>
             </RadioGroup>
             <Component
@@ -1407,6 +1965,6 @@ exports[`Source: Component should render file uploader 1`] = `
         </div>
       </StyledComponent>
     </styled.div>
-  </Source>
+  </SourceComponent>
 </IntlProvider>
 `;

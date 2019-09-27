@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'schemaUI';
+import { FormattedMessage } from 'react-intl';
 
 import { Container } from '../../../shared/components/styledComponents/container';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Select } from '../../../shared/components/form/select';
-import { Form, buttonStyles } from './create.styles';
+import { Form } from './create.styles';
 import {
   PROJECT_DESCRIPTION,
   PROJECT_TITLE,
@@ -16,6 +16,7 @@ import {
 } from '../../../modules/project/project.constants';
 
 import messages from './create.messages';
+import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 export class Create extends PureComponent {
   static propTypes = {
@@ -58,6 +59,7 @@ export class Create extends PureComponent {
             name={PROJECT_TITLE}
             label={intl.formatMessage(messages.projectTitleLabel)}
             placeholder="Project title"
+            fullWidth
             {...this.props}
           />
           <TextInput
@@ -66,6 +68,7 @@ export class Create extends PureComponent {
             name={PROJECT_DESCRIPTION}
             placeholder="Project description"
             label={intl.formatMessage(messages.projectDescriptionLabel)}
+            fullWidth
             {...this.props}
           />
           <TextInput
@@ -75,6 +78,7 @@ export class Create extends PureComponent {
             disabled
             readOnly
             label={intl.formatMessage(messages.projectOwnerLabel)}
+            fullWidth
             {...this.props}
           />
           <Select
@@ -84,10 +88,14 @@ export class Create extends PureComponent {
             options={this.getStatusOptions(intl)}
             onSelect={this.handleSelectStatus(setFieldValue)}
           />
-          <Button customStyles={buttonStyles} onClick={this.handleCancelClick}>
-            {intl.formatMessage(messages.cancel)}
-          </Button>
-          <Button customStyles={buttonStyles}>{intl.formatMessage(messages.submit)}</Button>
+          <NavigationContainer>
+            <BackButton onClick={this.handleCancelClick}>
+              <FormattedMessage {...messages.cancel} />
+            </BackButton>
+            <NextButton>
+              <FormattedMessage {...messages.submit} />
+            </NextButton>
+          </NavigationContainer>
         </Form>
       </Container>
     );

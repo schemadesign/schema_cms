@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation: Component should render BackArrowButton 1`] = `
+<Component
+  customStyles={
+    Object {
+      "height": "60px",
+      "width": "60px",
+    }
+  }
+  onClick={[Function]}
+>
+  <Component />
+</Component>
+`;
+
+exports[`Navigation: Component should render BackButton 1`] = `
+<Component
+  customStyles={
+    Object {
+      "marginRight": 5,
+      "width": "calc(50% - 5px)",
+    }
+  }
+  onClick={[Function]}
+>
+  <FormattedMessage
+    defaultMessage="Back"
+    id="navigation.back"
+    values={Object {}}
+  />
+</Component>
+`;
+
+exports[`Navigation: Component should render BackButton with custom children 1`] = `
+<Component
+  customStyles={
+    Object {
+      "marginRight": 5,
+      "width": "calc(50% - 5px)",
+    }
+  }
+  onClick={[Function]}
+>
+  <FormattedMessage
+    defaultMessage="Next"
+    id="navigation.next"
+    values={Object {}}
+  />
+</Component>
+`;
+
+exports[`Navigation: Component should render NavigationContainer 1`] = `
+<styled.div>
+  <styled.div
+    right={false}
+  >
+    <NextButton />
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Navigation: Component should render NextButton 1`] = `
+<Component
+  customStyles={
+    Object {
+      "marginLeft": 5,
+      "width": "calc(50% - 5px)",
+    }
+  }
+  inverse={true}
+  onClick={[Function]}
+>
+  <FormattedMessage
+    defaultMessage="Next"
+    id="navigation.next"
+    values={Object {}}
+  />
+</Component>
+`;
+
+exports[`Navigation: Component should render NextButton with custom children 1`] = `
+<Component
+  customStyles={
+    Object {
+      "marginLeft": 5,
+      "width": "calc(50% - 5px)",
+    }
+  }
+  inverse={true}
+  onClick={[Function]}
+>
+  <FormattedMessage
+    defaultMessage="Back"
+    id="navigation.back"
+    values={Object {}}
+  />
+</Component>
+`;
+
+exports[`Navigation: Component should render PlusButton 1`] = `
+<Component
+  customStyles={
+    Object {
+      "height": "60px",
+      "width": "60px",
+    }
+  }
+  onClick={[Function]}
+>
+  <Component />
+</Component>
+`;

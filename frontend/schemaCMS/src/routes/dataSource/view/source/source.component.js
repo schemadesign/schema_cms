@@ -1,13 +1,14 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
 import { always, cond, equals, omit, pathOr, T } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Formik } from 'formik';
+import { withTheme } from 'styled-components';
 
 import {
+  buttonStyles,
   Container,
-  customButtonStyles,
   customLabelStyles,
   customRadioButtonStyles,
   customRadioGroupStyles,
@@ -28,12 +29,13 @@ import {
 const { RadioGroup, RadioButton, Label, FileUpload } = Form;
 const { CsvIcon } = Icons;
 
-export class Source extends PureComponent {
+export class SourceComponent extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
     bindSubmitForm: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     updateDataSource: PropTypes.func.isRequired,
+    theme: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         projectId: PropTypes.string.isRequired,
@@ -78,6 +80,23 @@ export class Source extends PureComponent {
       [T, always(null)],
     ])(type);
 
+  renderRadioButton = type => {
+    const { active, unActive } = this.props.theme.radioButton;
+    const { fill, background } = type === DATA_SOURCE_FILE ? active : unActive;
+
+    return (
+      <RadioButton
+        label={this.props.intl.formatMessage(messages.spreadsheet)}
+        value={DATA_SOURCE_FILE}
+        id={DATA_SOURCE_FILE}
+      >
+        <Button customStyles={{ background, ...buttonStyles }} type="button">
+          <CsvIcon customStyles={{ fill }} />
+        </Button>
+      </RadioButton>
+    );
+  };
+
   render() {
     const { dataSource, bindSubmitForm, ...restProps } = this.props;
 
@@ -116,11 +135,7 @@ export class Source extends PureComponent {
                   value={type}
                   onChange={handleChange}
                 >
-                  <RadioButton label={this.props.intl.formatMessage(messages.spreadsheet)} value="file" id="file">
-                    <Button customStyles={customButtonStyles} type="button">
-                      <CsvIcon />
-                    </Button>
-                  </RadioButton>
+                  {this.renderRadioButton(type)}
                 </RadioGroup>
                 {this.renderSourceUpload({ type, setFieldValue, fileName })}
               </Fragment>
@@ -131,3 +146,5 @@ export class Source extends PureComponent {
     );
   }
 }
+
+export const Source = withTheme(SourceComponent);

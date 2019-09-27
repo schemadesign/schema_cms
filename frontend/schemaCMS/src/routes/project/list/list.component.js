@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { isEmpty } from 'ramda';
-import { Button, Card, Icons, Typography } from 'schemaUI';
+import { Card, Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
@@ -19,8 +19,8 @@ import {
   ProjectsList,
   urlStyles,
   titleStyles,
-  addProjectStyles,
 } from './list.styles';
+import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
 const { H1, P, Span } = Typography;
 
@@ -104,9 +104,10 @@ export class List extends PureComponent {
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...topHeaderConfig} />
         {content}
-        <Button id="addProjectBtn" customStyles={addProjectStyles} onClick={this.handleNewProject}>
-          <Icons.PlusIcon />
-        </Button>
+
+        <NavigationContainer right>
+          <PlusButton id="addProjectBtn" onClick={this.handleNewProject} />
+        </NavigationContainer>
       </Container>
     );
   }

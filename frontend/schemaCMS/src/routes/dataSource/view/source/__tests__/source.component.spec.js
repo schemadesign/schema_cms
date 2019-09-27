@@ -2,14 +2,14 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 
-import { Source } from '../source.component';
+import { SourceComponent } from '../source.component';
 import { defaultProps } from '../source.stories';
 import { DEFAULT_LOCALE } from '../../../../../i18n';
 
-describe('Source: Component', () => {
+describe('SourceComponent: Component', () => {
   const component = props => (
     <IntlProvider locale={DEFAULT_LOCALE}>
-      <Source {...defaultProps} {...props} />
+      <SourceComponent {...defaultProps} {...props} />
     </IntlProvider>
   );
 

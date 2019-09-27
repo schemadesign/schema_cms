@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-export const customButtonStyles = {
+export const buttonStyles = {
   width: 96,
   height: 96,
   marginBottom: 10,

@@ -11,8 +11,7 @@ exports[`Select: Component should render correctly 1`] = `
     type="hidden"
     value="one"
   />
-  <Select
-    native={false}
+  <Component
     onSelect={[Function]}
     options={
       Array [

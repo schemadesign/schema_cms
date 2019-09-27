@@ -1,8 +1,7 @@
 import styled from 'styled-components';
+import { Container as DefaultContainer } from '../../../shared/components/styledComponents/container';
 
-export const Container = styled.div`
-  margin: 0 20px 60px 20px;
-`;
+export const Container = styled(DefaultContainer)``;
 
 export const ProjectsList = styled.ul`
   list-style: none;
@@ -53,11 +52,4 @@ export const urlStyles = {
 
 export const titleStyles = {
   cursor: 'pointer',
-};
-
-export const addProjectStyles = {
-  position: 'fixed',
-  right: '20px',
-  bottom: '24px',
-  height: '60px',
 };

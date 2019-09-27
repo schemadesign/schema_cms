@@ -11,6 +11,7 @@ exports[`Create: Component should render correctly 1`] = `
   >
     <TextInput
       errors={Object {}}
+      fullWidth={true}
       handleChange={[Function]}
       handleSubmit={[Function]}
       intl={
@@ -33,6 +34,7 @@ exports[`Create: Component should render correctly 1`] = `
     />
     <TextInput
       errors={Object {}}
+      fullWidth={true}
       handleChange={[Function]}
       handleSubmit={[Function]}
       intl={
@@ -55,6 +57,7 @@ exports[`Create: Component should render correctly 1`] = `
     <TextInput
       disabled={true}
       errors={Object {}}
+      fullWidth={true}
       handleChange={[Function]}
       handleSubmit={[Function]}
       intl={
@@ -99,27 +102,26 @@ exports[`Create: Component should render correctly 1`] = `
         ]
       }
     />
-    <Component
-      customStyles={
-        Object {
-          "marginRight": "20px",
-          "padding": "0 30px",
-        }
-      }
-      onClick={[Function]}
+    <NavigationContainer
+      right={false}
     >
-      Cancel
-    </Component>
-    <Component
-      customStyles={
-        Object {
-          "marginRight": "20px",
-          "padding": "0 30px",
-        }
-      }
-    >
-      Submit
-    </Component>
+      <BackButton
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.create.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton>
+        <FormattedMessage
+          defaultMessage="Submit"
+          id="project.create.submit"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
   </styled.form>
 </styled.div>
 `;
