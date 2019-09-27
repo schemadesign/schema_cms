@@ -30,7 +30,7 @@ export class NavigationContainer extends PureComponent {
 export class PlusButton extends PureComponent {
   render() {
     return (
-      <Button customStyles={buttonIconStyles} onClick={this.handleCreateDataSource} {...this.props}>
+      <Button customStyles={buttonIconStyles} {...this.props}>
         <PlusIcon />
       </Button>
     );
