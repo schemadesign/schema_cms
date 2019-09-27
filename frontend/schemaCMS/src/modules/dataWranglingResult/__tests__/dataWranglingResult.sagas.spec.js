@@ -14,7 +14,7 @@ describe('DataWranglingResult: sagas', () => {
     nock.cleanAll();
   });
 
-  describe('fetchFields', () => {
+  describe('fetch', () => {
     it('should dispatch a success action', async () => {
       const payload = { dataSourceId: '1' };
       const responseData = {
@@ -25,7 +25,7 @@ describe('DataWranglingResult: sagas', () => {
         previewTable: [{ id: '1', name: 'test' }],
       };
 
-      mockApi.get(`data-wrangling-result/${payload.dataSourceId}`).reply(OK, responseData);
+      mockApi.persist().get(`/data-wrangling-result/${payload.dataSourceId}`).reply(OK, responseData);
 
       await expectSaga(watchDataWranglingResult)
         .withState(defaultState)
