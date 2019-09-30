@@ -1,4 +1,9 @@
-import { BUTTON, INVERSE_BUTTON, BUTTON_DISABLED, INVERSE_BUTTON_DISABLED } from '../components/button/button.constants';
+import {
+  BUTTON,
+  INVERSE_BUTTON,
+  BUTTON_DISABLED,
+  INVERSE_BUTTON_DISABLED,
+} from '../components/button/button.constants';
 
 const colors = {
   white: '#FFF',

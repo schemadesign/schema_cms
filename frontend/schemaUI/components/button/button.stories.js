@@ -29,8 +29,12 @@ storiesOf('Button/Dark theme', module)
   .add('Inverse', () => <Button inverse>Inverse</Button>)
   .add('Disabled', () => (
     <div>
-      <Button disabled customStyles={baseCustomStyles}>Previous</Button>
-      <Button inverse disabled customStyles={baseCustomStyles}>Next</Button>
+      <Button disabled customStyles={baseCustomStyles}>
+        Previous
+      </Button>
+      <Button inverse disabled customStyles={baseCustomStyles}>
+        Next
+      </Button>
     </div>
   ));
 
@@ -40,8 +44,12 @@ storiesOf('Button/Light theme', module)
   .add('Inverse', () => <Button inverse>Inverse</Button>)
   .add('Disabled', () => (
     <div>
-      <Button disabled customStyles={baseCustomStyles}>Previous</Button>
-      <Button inverse disabled customStyles={baseCustomStyles}>Next</Button>
+      <Button disabled customStyles={baseCustomStyles}>
+        Previous
+      </Button>
+      <Button inverse disabled customStyles={baseCustomStyles}>
+        Next
+      </Button>
     </div>
   ));
 
@@ -52,6 +60,3 @@ storiesOf('Button', module)
       <MenuIcon />
     </Button>
   ));
-
-
-

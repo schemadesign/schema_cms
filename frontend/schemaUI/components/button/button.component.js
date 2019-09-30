@@ -27,7 +27,7 @@ class ButtonComponent extends PureComponent {
     const { containerStyles } = getStyles(theme, `${buttonType}${disabledType}`, disabled);
 
     const style = { ...containerStyles, ...this.props.customStyles };
-    const buttonProps = {disabled, ...restProps};
+    const buttonProps = { disabled, ...restProps };
 
     return (
       <button {...buttonProps} style={style}>
