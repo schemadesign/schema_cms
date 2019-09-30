@@ -4,7 +4,6 @@ import { ThemeProvider } from '../components/styles/themeProvider';
 import { Theme } from '../utils/theme';
 import { fontFormats, interFontFaces } from './fonts';
 
-
 export const withTheme = (theme = Theme.dark) => (story) => (
   <ThemeProvider theme={theme}>{story()}</ThemeProvider>
 );
