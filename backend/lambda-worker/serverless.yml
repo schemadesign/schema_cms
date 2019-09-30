@@ -30,4 +30,4 @@ functions:
       DB_NAME: gistdb
       DB_USER: gistuser
       DB_PASS: gistsecret
-      DATASOURCE_S3_BUCKET: datasources
+      AWS_STORAGE_BUCKET_NAME: schemacms
