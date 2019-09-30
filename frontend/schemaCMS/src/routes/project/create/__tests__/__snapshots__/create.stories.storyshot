@@ -63,7 +63,6 @@ exports[`Storyshots Project/Create Default 1`] = `
           </div>
         </div>
         <button
-          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -169,7 +168,6 @@ exports[`Storyshots Project/Create Default 1`] = `
           />
         </div>
         <button
-          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -543,7 +541,6 @@ exports[`Storyshots Project/Create Default 1`] = `
           className="sc-iAyFgw fPviBc"
         >
           <button
-            disabled={false}
             onClick={[Function]}
             style={
               Object {
@@ -569,7 +566,6 @@ exports[`Storyshots Project/Create Default 1`] = `
             </span>
           </button>
           <button
-            disabled={false}
             style={
               Object {
                 "backgroundColor": "#FFF",

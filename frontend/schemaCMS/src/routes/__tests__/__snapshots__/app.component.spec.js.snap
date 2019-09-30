@@ -42,10 +42,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "background": "#f0efef",
           "text": "#000",
         },
-        "buttonDisabled": Object {
-          "background": "#f0efef",
-          "text": "#a6a7aa",
-        },
         "card": Object {
           "background": "#f0efef",
           "border": "#000",
@@ -84,10 +80,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
         "inverseButton": Object {
           "background": "#000",
           "text": "#FFF",
-        },
-        "inverseButtonDisabled": Object {
-          "background": "#71737e",
-          "text": "#a6a7aa",
         },
         "label": Object {
           "border": "#f0efef",
@@ -183,10 +175,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
             "background": "#f0efef",
             "text": "#000",
           },
-          "buttonDisabled": Object {
-            "background": "#f0efef",
-            "text": "#a6a7aa",
-          },
           "card": Object {
             "background": "#f0efef",
             "border": "#000",
@@ -225,10 +213,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "inverseButton": Object {
             "background": "#000",
             "text": "#FFF",
-          },
-          "inverseButtonDisabled": Object {
-            "background": "#71737e",
-            "text": "#a6a7aa",
           },
           "label": Object {
             "border": "#f0efef",
@@ -375,10 +359,6 @@ exports[`App: Component should render App when language is set 1`] = `
           "background": "#f0efef",
           "text": "#000",
         },
-        "buttonDisabled": Object {
-          "background": "#f0efef",
-          "text": "#a6a7aa",
-        },
         "card": Object {
           "background": "#f0efef",
           "border": "#000",
@@ -417,10 +397,6 @@ exports[`App: Component should render App when language is set 1`] = `
         "inverseButton": Object {
           "background": "#000",
           "text": "#FFF",
-        },
-        "inverseButtonDisabled": Object {
-          "background": "#71737e",
-          "text": "#a6a7aa",
         },
         "label": Object {
           "border": "#f0efef",
@@ -516,10 +492,6 @@ exports[`App: Component should render App when language is set 1`] = `
             "background": "#f0efef",
             "text": "#000",
           },
-          "buttonDisabled": Object {
-            "background": "#f0efef",
-            "text": "#a6a7aa",
-          },
           "card": Object {
             "background": "#f0efef",
             "border": "#000",
@@ -558,10 +530,6 @@ exports[`App: Component should render App when language is set 1`] = `
           "inverseButton": Object {
             "background": "#000",
             "text": "#FFF",
-          },
-          "inverseButtonDisabled": Object {
-            "background": "#71737e",
-            "text": "#a6a7aa",
           },
           "label": Object {
             "border": "#f0efef",

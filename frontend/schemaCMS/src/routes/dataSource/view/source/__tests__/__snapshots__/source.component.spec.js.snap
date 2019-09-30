@@ -29,10 +29,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "background": "#1d1d20",
           "text": "#FFF",
         },
-        "buttonDisabled": Object {
-          "background": "#1d1d20",
-          "text": "#71737e",
-        },
         "card": Object {
           "background": "#1d1d20",
           "border": "#FFF",
@@ -69,10 +65,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "inverseButton": Object {
           "background": "#FFF",
           "text": "#000",
-        },
-        "inverseButtonDisabled": Object {
-          "background": "#71737e",
-          "text": "#1d1d20",
         },
         "label": Object {
           "border": "#2F2F36",
@@ -369,10 +361,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                     "background": "#1d1d20",
                     "text": "#FFF",
                   },
-                  "buttonDisabled": Object {
-                    "background": "#1d1d20",
-                    "text": "#71737e",
-                  },
                   "card": Object {
                     "background": "#1d1d20",
                     "border": "#FFF",
@@ -409,10 +397,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                   "inverseButton": Object {
                     "background": "#FFF",
                     "text": "#000",
-                  },
-                  "inverseButtonDisabled": Object {
-                    "background": "#71737e",
-                    "text": "#1d1d20",
                   },
                   "label": Object {
                     "border": "#2F2F36",
@@ -775,12 +759,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                 "width": 96,
                               }
                             }
-                            disabled={false}
                             inverse={false}
                             type="button"
                           >
                             <button
-                              disabled={false}
                               style={
                                 Object {
                                   "background": "#1d1d20",
@@ -896,10 +878,6 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "background": "#1d1d20",
           "text": "#FFF",
         },
-        "buttonDisabled": Object {
-          "background": "#1d1d20",
-          "text": "#71737e",
-        },
         "card": Object {
           "background": "#1d1d20",
           "border": "#FFF",
@@ -936,10 +914,6 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "inverseButton": Object {
           "background": "#FFF",
           "text": "#000",
-        },
-        "inverseButtonDisabled": Object {
-          "background": "#71737e",
-          "text": "#1d1d20",
         },
         "label": Object {
           "border": "#2F2F36",
@@ -1240,10 +1214,6 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                     "background": "#1d1d20",
                     "text": "#FFF",
                   },
-                  "buttonDisabled": Object {
-                    "background": "#1d1d20",
-                    "text": "#71737e",
-                  },
                   "card": Object {
                     "background": "#1d1d20",
                     "border": "#FFF",
@@ -1280,10 +1250,6 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   "inverseButton": Object {
                     "background": "#FFF",
                     "text": "#000",
-                  },
-                  "inverseButtonDisabled": Object {
-                    "background": "#71737e",
-                    "text": "#1d1d20",
                   },
                   "label": Object {
                     "border": "#2F2F36",
@@ -1647,12 +1613,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                 "width": 96,
                               }
                             }
-                            disabled={false}
                             inverse={false}
                             type="button"
                           >
                             <button
-                              disabled={false}
                               style={
                                 Object {
                                   "background": "#FFF",

@@ -98,10 +98,6 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
                   "background": "#1d1d20",
                   "text": "#FFF",
                 },
-                "buttonDisabled": Object {
-                  "background": "#1d1d20",
-                  "text": "#71737e",
-                },
                 "card": Object {
                   "background": "#1d1d20",
                   "border": "#FFF",
@@ -138,10 +134,6 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
                 "inverseButton": Object {
                   "background": "#FFF",
                   "text": "#000",
-                },
-                "inverseButtonDisabled": Object {
-                  "background": "#71737e",
-                  "text": "#1d1d20",
                 },
                 "label": Object {
                   "border": "#2F2F36",

@@ -55,7 +55,6 @@ exports[`Storyshots UserProfile Default 1`] = `
         </div>
       </div>
       <button
-        disabled={false}
         onClick={[Function]}
         style={
           Object {
@@ -161,7 +160,6 @@ exports[`Storyshots UserProfile Default 1`] = `
         />
       </div>
       <button
-        disabled={false}
         id="topHeaderCloseMenuButton"
         onClick={[Function]}
         style={
@@ -385,7 +383,6 @@ exports[`Storyshots UserProfile Default 1`] = `
       </div>
     </div>
     <button
-      disabled={false}
       style={
         Object {
           "backgroundColor": "#1d1d20",
