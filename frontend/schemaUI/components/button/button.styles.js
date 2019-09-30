@@ -1,6 +1,6 @@
 import { defaultTheme } from '../../utils/theme';
 
-export const getStyles = (theme = defaultTheme, buttonType = 'button') => ({
+export const getStyles = (theme = defaultTheme, buttonType = 'button', disabled) => ({
   containerStyles: {
     border: 'none',
     backgroundColor: theme[buttonType].background,
@@ -14,5 +14,6 @@ export const getStyles = (theme = defaultTheme, buttonType = 'button') => ({
     minHeight: '48px',
     fontSize: '18px',
     display: 'inline-block',
+    opacity: 0.4,
   },
 });
