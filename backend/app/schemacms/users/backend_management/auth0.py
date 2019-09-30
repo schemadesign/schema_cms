@@ -23,8 +23,16 @@ class Auth0UserManagement(base.BaseUserManagement):
             raise exceptions.ImproperlyConfigured(
                 "Missing or invalid USER_MGMT_AUTH0_DOMAIN setting, got: {}".format(repr(self.domain))
             )
-        self.token = self._get_token(self.domain)
-        self.proxy = management.Auth0(self.domain, self.token)
+
+    @property
+    def token(self):
+        """Retrieve a new token from auth0"""
+        return self._get_token(self.domain)
+
+    @property
+    def proxy(self):
+        """Returns initialized management.Auth0 object with token"""
+        return management.Auth0(self.domain, self.token)
 
     def create_user(self, user: models.User):
         # We need at least 1 big letter and 1 digit
