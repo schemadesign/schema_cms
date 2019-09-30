@@ -96,7 +96,7 @@ export class DataSourceList extends PureComponent {
 
     const step = this.getStep(status);
 
-    this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/view/${id}/${step}`);
+    this.props.history.push(`/datasource/${id}/${step}`);
   };
 
   renderCreatedInformation = list => (
@@ -174,8 +174,6 @@ export class DataSourceList extends PureComponent {
     );
   };
 
-  renderList = dataSources => <DataSourceListWrapper>{dataSources.map(this.renderItem)}</DataSourceListWrapper>;
-
   render() {
     const { dataSources = [] } = this.props;
     const topHeaderConfig = this.getHeaderAndMenuConfig();
@@ -184,7 +182,7 @@ export class DataSourceList extends PureComponent {
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
         <TopHeader {...topHeaderConfig} />
-        {this.renderList(dataSources)}
+        <DataSourceListWrapper>{dataSources.map(this.renderItem)}</DataSourceListWrapper>
 
         <ButtonsContainer>
           <Button onClick={this.handleShowProject} customStyles={buttonStyles}>

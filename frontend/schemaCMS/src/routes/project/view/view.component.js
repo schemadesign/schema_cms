@@ -119,7 +119,7 @@ export class View extends PureComponent {
       {
         header: this.formatMessage(messages.dataSources),
         value: path(['dataSources', 'count'], meta),
-        to: `/project/view/${projectId}/datasource`,
+        to: `/project/${projectId}/datasource`,
       },
       { header: this.formatMessage(messages.charts), value: this.countItems(charts) },
       { header: this.formatMessage(messages.pages), value: this.countItems(pages) },

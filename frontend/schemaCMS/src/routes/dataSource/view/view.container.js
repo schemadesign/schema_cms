@@ -21,7 +21,7 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       removeDataSource: promisifyRoutine(DataSourceRoutines.removeOne),
-      fetchDataSource: promisifyRoutine(DataSourceRoutines.fetchOne),
+      fetchDataSource: DataSourceRoutines.fetchOne,
       updateDataSource: promisifyRoutine(DataSourceRoutines.updateOne),
       unmountDataSource: promisifyRoutine(DataSourceRoutines.unmountOne),
       fetchDataWranglingScripts: promisifyRoutine(DataWranglingScriptsRoutines.fetchList),

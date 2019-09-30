@@ -35,7 +35,7 @@ export class View extends PureComponent {
     }),
     match: PropTypes.shape({
       params: PropTypes.shape({
-        projectId: PropTypes.string.isRequired,
+        projectId: PropTypes.string,
         dataSourceId: PropTypes.string.isRequired,
         step: PropTypes.string.isRequired,
       }).isRequired,
@@ -44,9 +44,9 @@ export class View extends PureComponent {
 
   componentDidMount() {
     if (!this.props.dataSource.id) {
-      const { projectId, dataSourceId } = this.props.match.params;
+      const { dataSourceId } = this.props.match.params;
 
-      this.props.fetchDataSource({ projectId, dataSourceId });
+      this.props.fetchDataSource({ dataSourceId });
     }
   }
 
@@ -66,10 +66,12 @@ export class View extends PureComponent {
 
   getHeaderAndMenuConfig = (intl, activeStep) => {
     const headerTitle = this.getTitle(intl);
+    const projectId = this.props.dataSource.projectId;
+
     const secondaryMenuItems = [
       {
         label: this.props.intl.formatMessage(messages.dataSourceList),
-        to: `/project/view/${this.props.match.params.projectId}/datasource/list`,
+        to: `/project/view/${projectId}/datasource/list`,
       },
       {
         label: this.props.intl.formatMessage(messages.removeDataSource),
