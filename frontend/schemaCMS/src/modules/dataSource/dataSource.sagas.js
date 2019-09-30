@@ -104,10 +104,10 @@ function* updateOne({ payload: { dataSourceId, requestData, step } }) {
       ? `/project/${data.project}/datasource`
       : `/datasource/${dataSourceId}/${parseInt(step, 10) + 1}`;
 
-    browserHistory.push(redirectUri);
-
     yield put(DataSourceRoutines.updateOne.success(data));
-    yield put(DataSourceRoutines.processOne({ projectId, dataSourceId }));
+    yield put(DataSourceRoutines.processOne({ dataSourceId }));
+
+    browserHistory.push(redirectUri);
   } catch (error) {
     yield put(DataSourceRoutines.updateOne.failure(error));
   } finally {
@@ -115,7 +115,7 @@ function* updateOne({ payload: { dataSourceId, requestData, step } }) {
   }
 }
 
-function* processOne({ payload: { projectId, dataSourceId } }) {
+function* processOne({ payload: { dataSourceId } }) {
   try {
     yield put(DataSourceRoutines.processOne.request());
     yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/process`);
