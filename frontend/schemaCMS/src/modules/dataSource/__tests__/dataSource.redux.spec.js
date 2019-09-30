@@ -97,9 +97,13 @@ describe('DataSource: redux', () => {
     });
   });
 
-  describe('when UNMOUNT_FIEDLS/SUCCESS action is received', () => {
+  describe('when UNMOUNT_FIELDS/SUCCESS action is received', () => {
     it('should unmount fields and previewTable ', () => {
-      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.unmountFields.trigger());
+      const state = Immutable({
+        fields: { field: 'field' },
+        previewTable: [{ field: 'field' }],
+      });
+      const resultState = dataSourceReducer(state, DataSourceRoutines.unmountFields.trigger());
 
       expect(resultState.fields).to.deep.equal(defaultState.fields);
       expect(resultState.previewTable).to.deep.equal(defaultState.previewTable);

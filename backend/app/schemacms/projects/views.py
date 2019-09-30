@@ -1,16 +1,20 @@
 import logging
 
 from django.db import transaction
-from rest_framework import decorators, exceptions, permissions, response, status, viewsets, generics, parsers
+from rest_framework import decorators, permissions, response, status, viewsets, generics, parsers
 
 from schemacms.users import permissions as user_permissions
-from . import constants, models, serializers, permissions as projects_permissions, services
+from schemacms.utils import serializers as utils_serializers
+from . import constants, models, serializers, services
 
 
-class ProjectViewSet(viewsets.ModelViewSet):
+class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.ProjectSerializer
     permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
     queryset = models.Project.objects.none()
+    serializer_class_mapping = {
+        "datasources": serializers.DataSourceSerializer,
+    }
 
     def get_queryset(self):
         return (
@@ -21,35 +25,36 @@ class ProjectViewSet(viewsets.ModelViewSet):
             .order_by("-created")
         )
 
+    @decorators.action(detail=True, methods=["get"])
+    def datasources(self, request, **kwargs):
+        project = self.get_object()
+        queryset = project.data_sources.all().available_for_user(user=self.request.user)
 
-class DataSourceViewSet(viewsets.ModelViewSet):
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return response.Response(serializer.data)
+
+
+class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
     queryset = models.DataSource.objects.order_by("-created")
-    permission_classes = (permissions.IsAuthenticated, projects_permissions.HasProjectPermission)
-
-    def initial(self, request, *args, **kwargs):
-        self.project = self.get_project(url_kwargs=kwargs)
-        super().initial(request, *args, **kwargs)
-
-    def get_serializer_class(self):
-        if self.action == "create":
-            return serializers.DraftDataSourceSerializer
-        return super().get_serializer_class()
-
-    def perform_create(self, serializer):
-        serializer.save(project=self.project, created_by=self.request.user)
+    permission_classes = (permissions.IsAuthenticated,)
+    serializer_class_mapping = {
+        "create": serializers.DraftDataSourceSerializer,
+        "script": serializers.DataSourceScriptSerializer,
+        "script_upload": serializers.DataSourceScriptUploadSerializer,
+        "job": serializers.DataSourceJobSerializer,
+    }
 
     def get_queryset(self):
-        return super().get_queryset().filter(project=self.project)
+        return super().get_queryset().available_for_user(user=self.request.user)
 
-    @classmethod
-    def get_project(cls, url_kwargs):
-        try:
-            return models.Project.objects.get(pk=url_kwargs["project_pk"])
-        except models.Project.DoesNotExist:
-            raise exceptions.NotFound("The project does not exist")
-        except KeyError:
-            raise exceptions.NotFound("Invalid project ID")
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
 
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
@@ -74,37 +79,29 @@ class DataSourceViewSet(viewsets.ModelViewSet):
             obj.save()
             return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
-
-class DataSourceScriptView(generics.GenericAPIView):
-    queryset = models.DataSource.objects.all()
-
-    def get(self, request, *args, **kwargs):
-        serializer = serializers.DataSourceScriptSerializer(
-            instance=self.get_object().available_scripts, many=True
-        )
+    @decorators.action(detail=True)
+    def script(self, request, pk=None, **kwargs):
+        serializer = self.get_serializer(instance=self.get_object().available_scripts, many=True)
         return response.Response(data=serializer.data)
 
-
-class DataSourceScriptUploadView(generics.GenericAPIView):
-    parser_classes = (parsers.FormParser, parsers.MultiPartParser)
-    queryset = models.DataSource.objects.all()
-    serializer_class = serializers.DataSourceScriptUploadSerializer
-
-    def post(self, request, **kwargs):
+    @decorators.action(
+        detail=True, url_path="script-upload", parser_classes=(parsers.FormParser, parsers.MultiPartParser)
+    )
+    def script_upload(self, request, pk=None, **kwargs):
         serializer = self.get_serializer(self.get_object(), data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return response.Response(status=status.HTTP_201_CREATED)
 
-
-class DataSourceJobView(generics.CreateAPIView):
-    queryset = models.DataSource.objects.all()
-    serializer_class = serializers.DataSourceJobSerializer
-
-    @transaction.atomic
-    def perform_create(self, serializer):
-        job = serializer.save(datasource=self.get_object())
-        services.schedule_worker_with(job)
+    @decorators.action(detail=True, url_path="job", methods=["post"])
+    def job(self, request, pk=None, **kwargs):
+        datasource = self.get_object()
+        serializer = self.get_serializer(instance=datasource, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        with transaction.atomic():
+            job = serializer.save(datasource=datasource)
+            transaction.on_commit(lambda: services.schedule_worker_with(job))
+        return response.Response(status=status.HTTP_201_CREATED)
 
 
 class DataSourceJobDetailView(generics.RetrieveAPIView):
