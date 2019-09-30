@@ -83,9 +83,13 @@ class TestDataSource:
         expected_fields_info = json.loads(
             source_file.describe(include="all", percentiles=[]).to_json(orient="columns")
         )
+        expected_samples = json.loads(source_file.sample(n=1).to_json(orient="records"))
 
         for key, value in dict(source_file.dtypes).items():
-            expected_fields_info[key]["dtype"] = value.name
+            expected_fields_info[key]["dtype"] = "string" if value.name == "object" else value.name
+
+        for key, value in expected_samples[0].items():
+            expected_fields_info[key]["sample"] = value
 
         assert expected_preview == preview
         assert expected_fields_info == fields_info
