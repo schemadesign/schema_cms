@@ -4,9 +4,11 @@ exports[`Button: Component should render correctly 1`] = `
 <Component>
   <ButtonComponent
     customStyles={Object {}}
+    disabled={false}
     inverse={false}
   >
     <button
+      disabled={true}
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -44,9 +46,11 @@ exports[`Button: Component should render with custom styles 1`] = `
         "backgroundColor": "red",
       }
     }
+    disabled={false}
     inverse={false}
   >
     <button
+      disabled={true}
       style={
         Object {
           "backgroundColor": "red",

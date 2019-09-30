@@ -11,6 +11,10 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "background": "#f0efef",
           "text": "#000",
         },
+        "buttonDisabled": Object {
+          "background": "#f0efef",
+          "text": "#a6a7aa",
+        },
         "card": Object {
           "background": "#f0efef",
           "border": "#000",
@@ -49,6 +53,10 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
         "inverseButton": Object {
           "background": "#000",
           "text": "#FFF",
+        },
+        "inverseButtonDisabled": Object {
+          "background": "#71737e",
+          "text": "#a6a7aa",
         },
         "label": Object {
           "border": "#f0efef",

@@ -1,3 +1,5 @@
+import { BUTTON, INVERSE_BUTTON, BUTTON_DISABLED, INVERSE_BUTTON_DISABLED } from '../components/button/button.constants';
+
 const colors = {
   white: '#FFF',
   black: '#000',
@@ -10,13 +12,21 @@ const colors = {
 };
 
 const light = {
-  button: {
+  [BUTTON]: {
     background: colors.veryLightPink,
     text: colors.black,
   },
-  inverseButton: {
+  [INVERSE_BUTTON]: {
     background: colors.black,
     text: colors.white,
+  },
+  [BUTTON_DISABLED]: {
+    background: colors.veryLightPink,
+    text: colors.coolGray,
+  },
+  [INVERSE_BUTTON_DISABLED]: {
+    background: colors.lightGrey,
+    text: colors.coolGray,
   },
   card: {
     label: colors.lightGrey,
@@ -103,13 +113,21 @@ const light = {
 };
 
 const dark = {
-  button: {
+  [BUTTON]: {
     background: colors.darkGrey,
     text: colors.white,
   },
-  inverseButton: {
+  [INVERSE_BUTTON]: {
     background: colors.white,
     text: colors.black,
+  },
+  [BUTTON_DISABLED]: {
+    background: colors.darkGrey,
+    text: colors.lightGrey,
+  },
+  [INVERSE_BUTTON_DISABLED]: {
+    background: colors.lightGrey,
+    text: colors.darkGrey,
   },
   card: {
     label: colors.label,
