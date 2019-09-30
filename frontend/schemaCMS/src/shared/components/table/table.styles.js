@@ -8,6 +8,7 @@ export const TableWrapper = styled.div`
 
 export const TableElement = styled.table`
   border-collapse: collapse;
+  min-width: 100%;
 `;
 
 export const TableHeader = styled.thead``;

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`List: Component should render correctly 1`] = `
-<styled.div>
+<Styled(styled.div)>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
@@ -144,19 +144,13 @@ exports[`List: Component should render correctly 1`] = `
       </Component>
     </styled.li>
   </styled.ul>
-  <Component
-    customStyles={
-      Object {
-        "bottom": "24px",
-        "height": "60px",
-        "position": "fixed",
-        "right": "20px",
-      }
-    }
-    id="addProjectBtn"
-    onClick={[Function]}
+  <NavigationContainer
+    right={true}
   >
-    <Component />
-  </Component>
-</styled.div>
+    <PlusButton
+      id="addProjectBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</Styled(styled.div)>
 `;

@@ -2,10 +2,10 @@
 
 exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
 <div
-  className="sc-dVhcbM fghLuF"
+  className="sc-fAjcbJ byigni"
 >
   <div
-    className="sc-eqIVtm kRufpp"
+    className="sc-caSCKo jjNSwx"
   >
     <div
       style={
@@ -94,6 +94,7 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
     <div
       style={
         Object {
+          "color": "#FFF",
           "display": "flex",
           "flexDirection": "column",
           "textAlign": "center",
@@ -127,7 +128,6 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
             "cursor": "pointer",
             "display": "flex",
             "flexDirection": "column",
-            "opacity": 0.1,
             "width": 96,
           }
         }
@@ -135,6 +135,7 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
         <button
           style={
             Object {
+              "background": "#1d1d20",
               "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",

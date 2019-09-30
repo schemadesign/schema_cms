@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Button, Card, Icons, Typography } from 'schemaUI';
+import { Card, Icons, Typography } from 'schemaUI';
 import { has, isEmpty, isNil, path } from 'ramda';
 
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
@@ -23,9 +23,9 @@ import {
   DetailValue,
   IconEditWrapper,
   Statistics,
-  buttonStyles,
   statisticsCardStyles,
 } from './view.styles';
+import { BackArrowButton, NavigationContainer } from '../../../shared/components/navigation';
 
 const { P } = Typography;
 
@@ -177,9 +177,9 @@ export class View extends PureComponent {
           <TopHeader {...topHeaderConfig} />
           {content}
         </div>
-        <Button onClick={this.handleGoTo('/project/list')} customStyles={buttonStyles}>
-          <Icons.ArrowLeftIcon />
-        </Button>
+        <NavigationContainer>
+          <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project/list')} />
+        </NavigationContainer>
       </Container>
     );
   }

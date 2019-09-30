@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { spy } from 'sinon';
 import { expect } from 'chai';
 
-import { Select } from '../select.component';
+import { SelectComponent } from '../select.component';
 
 const DEFAULT_OPTION = { value: 'default', label: 'Select your favorite from the list', selected: true };
 
@@ -24,7 +24,7 @@ describe('Select: Component', () => {
     onSelect: Function.prototype,
   };
 
-  const component = props => <Select {...defaultProps} {...props} />;
+  const component = props => <SelectComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

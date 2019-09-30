@@ -50,6 +50,7 @@ services:
     command: ./scripts/run_dev.sh
     tty: true
     stdin_open: true
+    entrypoint: ./scripts/entrypoint.sh
 
   mailcatcher:
     image: schickling/mailcatcher

@@ -18,5 +18,5 @@ class BaseUserManagement:
     def get_login_url(self) -> str:
         raise NotImplementedError
 
-    def get_logout_url(self) -> str:
+    def get_logout_url(self, return_to=None) -> str:
         raise NotImplementedError

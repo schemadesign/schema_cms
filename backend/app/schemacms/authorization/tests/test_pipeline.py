@@ -1,7 +1,9 @@
+from urllib import parse
+
 import pytest
 
 from schemacms.authorization import pipeline
-from schemacms.users import constants as users_constants
+from schemacms.users import constants as users_constants, backend_management
 
 
 pytestmark = [pytest.mark.django_db]
@@ -138,10 +140,13 @@ class TestForbidLogInWhenNotRegistered:
     )
     def test_redirect(self, settings, backend, strategy, session_dict, expected_location_template):
         strategy._session = session_dict
-        ret = pipeline.user_exist_in_db(backend, details={"email": "123@123.com"})
+        mgmt = backend_management.user_mgtm_backend
+        email = "123@123.com"
         expected_location = expected_location_template.format(
             host=settings.DEFAULT_WEBAPP_HOST,
             path="auth/not-registered"
-        )
+        ) + f"?{parse.urlencode(dict(email=email))}"
 
-        assert ret["Location"] == expected_location
+        ret = pipeline.user_exist_in_db(backend, details={"email": email})
+
+        assert ret["Location"] == mgmt.get_logout_url(return_to=expected_location)

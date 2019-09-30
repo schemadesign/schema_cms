@@ -81,24 +81,8 @@ export const ErrorsWrapper = styled.div`
 
 export const Error = styled.div``;
 
-export const ButtonsContainer = styled.div`
-  position: fixed;
-  bottom: 0;
-  padding: 50px 0 24px;
-  background-image: linear-gradient(to top, ${({ theme: { background } }) => background}, rgba(0, 0, 0, 0));
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: calc(100% - ${2 * horizontalMargin}px);
-`;
-
 export const lockTextStyles = {
   color: Theme.colors.coolGray,
-};
-
-export const buttonStyles = {
-  height: '60px',
-  width: '60px',
 };
 
 export const iconSourceStyles = {

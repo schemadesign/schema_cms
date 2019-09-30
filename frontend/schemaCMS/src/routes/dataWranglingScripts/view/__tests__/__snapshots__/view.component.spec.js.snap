@@ -106,19 +106,21 @@ exports[`View: Component should render correctly 1`] = `
     
     </SyntaxHighlighter>
   </styled.form>
-  <PillButtons
-    leftButtonProps={
-      Object {
-        "onClick": [Function],
-        "title": "Back",
-      }
-    }
-    rightButtonProps={
-      Object {
-        "onClick": [Function],
-        "title": "OK",
-      }
-    }
-  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      onClick={[Function]}
+    />
+    <NextButton
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="OK"
+        id="dataWranglingscripts.view.ok"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
 </styled.div>
 `;

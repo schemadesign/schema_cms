@@ -10,7 +10,7 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-dxgOiQ gSjVdI"
+    className="sc-kpOJdX sc-dxgOiQ kpppjQ"
   >
     <div
       className="sc-bdVaJa bDWFJH"
@@ -238,46 +238,52 @@ exports[`Storyshots Project/List empty 1`] = `
          
       </p>
     </div>
-    <button
-      id="addProjectBtn"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#1d1d20",
-          "border": "none",
-          "borderRadius": "48px",
-          "bottom": "24px",
-          "color": "#FFF",
-          "cursor": "pointer",
-          "display": "inline-block",
-          "fill": "#FFF",
-          "fontSize": "18px",
-          "height": "60px",
-          "margin": "0",
-          "minHeight": "48px",
-          "outline": "none",
-          "padding": "0",
-          "position": "fixed",
-          "right": "20px",
-        }
-      }
+    <div
+      className="sc-kkGfuU cbFdcv"
     >
-      <svg
-        style={
-          Object {
-            "fill": "#FFF",
-            "height": "60px",
-            "width": "60px",
-          }
-        }
-        viewBox="0 0 60 60"
+      <div
+        className="sc-iAyFgw dIxqGD"
       >
-        <path
-          d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </button>
+        <button
+          id="addProjectBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "60px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -292,7 +298,7 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-dxgOiQ gSjVdI"
+    className="sc-kpOJdX sc-dxgOiQ kpppjQ"
   >
     <div
       className="sc-bdVaJa bDWFJH"
@@ -710,46 +716,52 @@ exports[`Storyshots Project/List list 1`] = `
         </div>
       </li>
     </ul>
-    <button
-      id="addProjectBtn"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#1d1d20",
-          "border": "none",
-          "borderRadius": "48px",
-          "bottom": "24px",
-          "color": "#FFF",
-          "cursor": "pointer",
-          "display": "inline-block",
-          "fill": "#FFF",
-          "fontSize": "18px",
-          "height": "60px",
-          "margin": "0",
-          "minHeight": "48px",
-          "outline": "none",
-          "padding": "0",
-          "position": "fixed",
-          "right": "20px",
-        }
-      }
+    <div
+      className="sc-kkGfuU cbFdcv"
     >
-      <svg
-        style={
-          Object {
-            "fill": "#FFF",
-            "height": "60px",
-            "width": "60px",
-          }
-        }
-        viewBox="0 0 60 60"
+      <div
+        className="sc-iAyFgw dIxqGD"
       >
-        <path
-          d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </button>
+        <button
+          id="addProjectBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "60px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;

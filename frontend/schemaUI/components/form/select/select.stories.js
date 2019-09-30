@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 
-import { Select } from './select.component';
+import { SelectComponent } from './select.component';
 
 const DEFAULT_OPTION = { value: 'default', label: 'Select your favorite from the list', selected: true };
 
@@ -34,7 +34,7 @@ class TestComponent extends PureComponent {
 
     return (
       <div>
-        <Select options={parsedOptions} onSelect={this.onSelect} native={native} />
+        <SelectComponent options={parsedOptions} onSelect={this.onSelect} native={native} />
         <br />
         <br />
         Selected: {selectedOption.label}
@@ -56,7 +56,7 @@ class TestComponentWithDefaultOption extends PureComponent {
 
     return (
       <div>
-        <Select options={parsedOptions} onSelect={this.onSelect} />
+        <SelectComponent options={parsedOptions} onSelect={this.onSelect} />
         <br />
         <br />
         Selected: {selectedOption.label}
