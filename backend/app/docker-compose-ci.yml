@@ -35,6 +35,7 @@ services:
     restart: on-failure
     env_file: test.env
     command: ./scripts/run_tests.sh
+    entrypoint: ./scripts/entrypoint.sh
 
   mailcatcher:
     image: schickling/mailcatcher

@@ -27,7 +27,7 @@ exports[`View: Component should render correctly 1`] = `
           },
           Object {
             "label": "Delete Project",
-            "to": "/project/delete/100",
+            "onClick": [Function],
           },
           Object {
             "label": "Log Out",
@@ -167,17 +167,13 @@ exports[`View: Component should render correctly 1`] = `
       </styled.ul>
     </styled.div>
   </div>
-  <Component
-    customStyles={
-      Object {
-        "height": "60px",
-        "margin": "50px 0 0 0",
-        "width": "60px",
-      }
-    }
-    onClick={[Function]}
+  <NavigationContainer
+    right={false}
   >
-    <Component />
-  </Component>
+    <BackArrowButton
+      id="addProjectBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
 </Styled(styled.div)>
 `;

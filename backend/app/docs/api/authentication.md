@@ -27,6 +27,10 @@ Auth0 authentication using oauth2 flow
 
 `GET` `/api/v1/auth/login/auth0`
 
+*Note:*
+
+- If user is not registered by admin then user is redirected to auth0 logout page and then redirected to `http://localhost:3000/auth/not-registered`
+
 Parameters:
 
 Name       | Type   | Required | Description
@@ -80,4 +84,20 @@ Content-Type application/json
     "uid": ["This field is required."],
     "token": ["This field is required."],
 }
+```
+
+
+## Logout
+Redirect user to auth0 logout page.
+
+**Request**:
+
+`GET` `/api/v1/auth/logout`
+
+**Response**:
+
+Success:
+```
+301 Created
+Location: https://schemacms.auth0.com/v2/logout?returnTo=https://schemacms.auth0.com/v2/login&client_id=XXX
 ```

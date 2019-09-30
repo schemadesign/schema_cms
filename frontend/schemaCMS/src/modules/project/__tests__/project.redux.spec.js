@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { reducer as projectReducer, ProjectActions } from '../project.redux';
+import { reducer as projectReducer, ProjectRoutines } from '../project.redux';
 
 describe('Project: redux', () => {
   const defaultState = Immutable({
@@ -36,7 +36,7 @@ describe('Project: redux', () => {
         },
       ];
 
-      const resultState = projectReducer(defaultState, ProjectActions.fetchListSuccess(projects));
+      const resultState = projectReducer(defaultState, ProjectRoutines.fetchList.success(projects));
       expect(resultState.projects).to.deep.equal(projects);
     });
   });
@@ -58,7 +58,7 @@ describe('Project: redux', () => {
         modified: '2019-08-21T10:12:52.030069Z',
       };
 
-      const resultState = projectReducer(defaultState, ProjectActions.fetchOneSuccess(project));
+      const resultState = projectReducer(defaultState, ProjectRoutines.fetchOne.success(project));
       expect(resultState.project).to.deep.equal(project);
     });
   });
@@ -82,14 +82,14 @@ describe('Project: redux', () => {
 
       const expectedProjects = [project];
 
-      const resultState = projectReducer(defaultState, ProjectActions.createProjectSuccess(project));
+      const resultState = projectReducer(defaultState, ProjectRoutines.createProject.success(project));
       expect(resultState.projects).to.deep.equal(expectedProjects);
     });
   });
 
   describe('when PROJECTS/UNMOUNT_ONE action is received', () => {
     it('should merge project to list of projects', () => {
-      const resultState = projectReducer(defaultState, ProjectActions.unmountOne());
+      const resultState = projectReducer(defaultState, ProjectRoutines.unmountOne());
       expect(resultState.project).to.deep.equal(defaultState.project);
     });
   });

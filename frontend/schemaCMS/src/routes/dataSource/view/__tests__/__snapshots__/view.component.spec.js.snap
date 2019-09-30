@@ -1,0 +1,328 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View: Component should not render any step 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={null}
+    headerTitle="name"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Data source list",
+          "to": "/project/view/1/datasource/list",
+        },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
+      ]
+    }
+  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": false,
+          }
+        }
+      />
+    </BackButton>
+    <NextButton
+      onClick={[Function]}
+    />
+    <styled.div>
+      <Component
+        activeStep={0}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+          }
+        }
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`View: Component should not render content 1`] = `<styled.div />`;
+
+exports[`View: Component should render draft 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle="Source"
+    headerTitle="Create Data Source"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Data source list",
+          "to": "/project/view/1/datasource/list",
+        },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
+      ]
+    }
+  />
+  <WithTheme(SourceComponent)
+    bindSubmitForm={[Function]}
+    dataSource={
+      Object {
+        "id": "id",
+        "status": "draft",
+      }
+    }
+    dataWranglingScripts={Array []}
+    fetchDataSource={[Function]}
+    fetchDataWranglingScripts={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "1",
+        },
+        "url": "/project/view/1/datasource/view/1/1",
+      }
+    }
+    removeDataSource={[Function]}
+    sendUpdatedDataWranglingScript={[Function]}
+    unmountDataSource={[Function]}
+    updateDataSource={[Function]}
+    uploadScript={[Function]}
+  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": true,
+          }
+        }
+      />
+    </BackButton>
+    <NextButton
+      onClick={[Function]}
+    />
+    <styled.div>
+      <Component
+        activeStep={1}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+            "pointerEvents": "none",
+          }
+        }
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`View: Component should render second step 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle="Source"
+    headerTitle="name"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Data source list",
+          "to": "/project/view/1/datasource/list",
+        },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
+      ]
+    }
+  />
+  <WithTheme(SourceComponent)
+    bindSubmitForm={[Function]}
+    dataSource={
+      Object {
+        "id": "id",
+        "name": "name",
+        "step": "2",
+      }
+    }
+    dataWranglingScripts={Array []}
+    fetchDataSource={[Function]}
+    fetchDataWranglingScripts={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "1",
+        },
+        "url": "/project/view/1/datasource/view/1/1",
+      }
+    }
+    removeDataSource={[Function]}
+    sendUpdatedDataWranglingScript={[Function]}
+    unmountDataSource={[Function]}
+    updateDataSource={[Function]}
+    uploadScript={[Function]}
+  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": true,
+          }
+        }
+      />
+    </BackButton>
+    <NextButton
+      onClick={[Function]}
+    />
+    <styled.div>
+      <Component
+        activeStep={1}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+          }
+        }
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`View: Component should render source step 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle="Source"
+    headerTitle="name"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Data source list",
+          "to": "/project/view/1/datasource/list",
+        },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
+      ]
+    }
+  />
+  <WithTheme(SourceComponent)
+    bindSubmitForm={[Function]}
+    dataSource={
+      Object {
+        "id": "id",
+        "name": "name",
+      }
+    }
+    dataWranglingScripts={Array []}
+    fetchDataSource={[Function]}
+    fetchDataWranglingScripts={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "1",
+        },
+        "url": "/project/view/1/datasource/view/1/1",
+      }
+    }
+    removeDataSource={[Function]}
+    sendUpdatedDataWranglingScript={[Function]}
+    unmountDataSource={[Function]}
+    updateDataSource={[Function]}
+    uploadScript={[Function]}
+  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+        id="dataSource.view.back"
+        values={
+          Object {
+            "cancel": true,
+          }
+        }
+      />
+    </BackButton>
+    <NextButton
+      onClick={[Function]}
+    />
+    <styled.div>
+      <Component
+        activeStep={1}
+        customStyles={
+          Object {
+            "margin": "0 auto",
+          }
+        }
+        onStepChange={[Function]}
+        steps={6}
+      />
+    </styled.div>
+  </NavigationContainer>
+</styled.div>
+`;

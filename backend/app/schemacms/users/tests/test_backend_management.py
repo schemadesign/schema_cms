@@ -1,4 +1,7 @@
+from urllib import parse
+
 import auth0.v3
+import django.urls
 import pytest
 
 from schemacms.users import constants
@@ -8,11 +11,16 @@ pytestmark = [pytest.mark.django_db]
 
 
 class TestBaseUserManagement:
-    @pytest.mark.parametrize("method_name, method_kwargs", [
-        ("create_user", dict(user=None)),
-        ("password_change_url", dict(user=None)),
-        ("get_user_source", dict()),
-    ])
+    @pytest.mark.parametrize(
+        "method_name, method_kwargs",
+        [
+            ("create_user", dict(user=None)),
+            ("password_change_url", dict(user=None)),
+            ("get_user_source", dict()),
+            ("get_login_url", dict()),
+            ("get_logout_url", dict()),
+        ],
+    )
     def test_interface(self, method_name, method_kwargs):
         mgmt = base.BaseUserManagement()
         method = getattr(mgmt, method_name)
@@ -72,6 +80,21 @@ class TestAuth0UserManagement:
         ret = mgmt.password_change_url(user)
 
         assert ret == mgmt.get_login_url()
+
+    def test_get_login_url(self, settings):
+        mgmt = auth0_.Auth0UserManagement()
+        path = django.urls.reverse("social:begin", kwargs={"backend": "auth0"})
+
+        url = mgmt.get_login_url()
+
+        assert url == f"{settings.DEFAULT_HOST}{path}"
+
+    def test_get_logout_url(self, mocker, settings):
+        mgmt = auth0_.Auth0UserManagement()
+        get_login_url_mock = mocker.patch.object(mgmt, "get_login_url", return_value="http://localhost/login")
+
+        params = {'returnTo': get_login_url_mock.return_value, 'client_id': settings.SOCIAL_AUTH_AUTH0_KEY}
+        assert f'https://{settings.SOCIAL_AUTH_AUTH0_DOMAIN}/v2/logout?' + parse.urlencode(params)
 
     @pytest.fixture(autouse=True)
     def setup(self, settings):

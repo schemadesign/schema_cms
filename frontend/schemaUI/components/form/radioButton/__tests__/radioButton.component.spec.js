@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { RadioButton } from '../radioButton.component';
+import { RadioButtonComponent } from '../radioButton.component';
 import RadioGroupContext from '../../radioGroup/radioGroup.context';
 
-describe('RadioButton: Component', () => {
+describe('RadioButtonComponent: Component', () => {
   const defaultProps = {
     value: 'value',
     label: 'name',
@@ -25,9 +25,9 @@ describe('RadioButton: Component', () => {
 
   const component = props => (
     <RadioGroupContext.Provider value={context}>
-      <RadioButton {...defaultProps} {...props}>
+      <RadioButtonComponent {...defaultProps} {...props}>
         radio
-      </RadioButton>
+      </RadioButtonComponent>
     </RadioGroupContext.Provider>
   );
 

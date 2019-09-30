@@ -1,8 +1,7 @@
 import styled from 'styled-components';
+import { Container as DefaultContainer } from '../../../shared/components/styledComponents/container';
 
-export const Container = styled.div`
-  margin: 0 20px 60px 20px;
-`;
+export const Container = styled(DefaultContainer)``;
 
 export const ProjectsList = styled.ul`
   list-style: none;
@@ -21,20 +20,19 @@ export const HeaderList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 `;
 
 export const HeaderItem = styled.li`
   display: inline-block;
   line-height: 1.25;
+  margin-right: 1.5em;
 
   &::before {
     content: '•';
+    margin-left: -1.5em;
     display: inline-block;
     padding: 0 7px;
-  }
-
-  &:first-child::before {
-    display: none;
   }
 `;
 
@@ -54,11 +52,4 @@ export const urlStyles = {
 
 export const titleStyles = {
   cursor: 'pointer',
-};
-
-export const addProjectStyles = {
-  position: 'fixed',
-  right: '20px',
-  bottom: '24px',
-  height: '60px',
 };

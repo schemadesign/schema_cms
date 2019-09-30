@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-
-import { checkedStyles, containerStyles, inputStyles, labelStyles } from './radioButton.styles';
 import RadioGroupContext from '../radioGroup/radioGroup.context';
+import { getStyles } from './radioButton.styles';
+import { withStyles } from '../../styles/withStyles';
 
-export class RadioButton extends PureComponent {
+export class RadioButtonComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     id: PropTypes.string.isRequired,
@@ -15,13 +15,14 @@ export class RadioButton extends PureComponent {
   renderAdditionalText = label => label || null;
 
   render() {
-    const { children, id, label, ...restProps } = this.props;
+    const { children, id, label, theme, ...restProps } = this.props;
+    const { containerStyles, inputStyles, labelStyles } = getStyles(theme);
 
     return (
       <RadioGroupContext.Consumer>
         {({ name, onChange, value, customLabelStyles = {}, customCheckedStyles = {} }) => {
           const checked = value === restProps.value;
-          const labelCheckedStyles = checked ? { ...checkedStyles, ...customCheckedStyles } : {};
+          const labelCheckedStyles = checked ? customCheckedStyles : {};
           const styles = { ...labelStyles, ...customLabelStyles, ...labelCheckedStyles };
 
           return (
@@ -48,3 +49,5 @@ export class RadioButton extends PureComponent {
     );
   }
 }
+
+export const RadioButton = withStyles(RadioButtonComponent);

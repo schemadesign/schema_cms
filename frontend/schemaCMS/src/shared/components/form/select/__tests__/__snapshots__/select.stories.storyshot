@@ -3,7 +3,7 @@
 exports[`Storyshots Shared Components/Form/Select Default 1`] = `
 <div>
   <div
-    className="sc-jTzLTM bQNCHF"
+    className="sc-jqCOkK brHQCA"
   >
     <label
       style={
@@ -30,10 +30,10 @@ exports[`Storyshots Shared Components/Form/Select Default 1`] = `
     <div
       style={
         Object {
-          "border": "1px solid #D2D2D2",
+          "border": "1px solid #000",
           "color": "#FFF",
           "display": "flex",
-          "maxWidth": "300px",
+          "width": "100%",
         }
       }
     >
@@ -106,7 +106,7 @@ exports[`Storyshots Shared Components/Form/Select Default 1`] = `
             onClick={[Function]}
             style={
               Object {
-                "borderTop": "1px solid #D2D2D2",
+                "borderTop": "1px solid  #000",
                 "cursor": "pointer",
                 "display": "flex",
                 "padding": "7px",
@@ -120,7 +120,7 @@ exports[`Storyshots Shared Components/Form/Select Default 1`] = `
             onClick={[Function]}
             style={
               Object {
-                "borderTop": "1px solid #D2D2D2",
+                "borderTop": "1px solid  #000",
                 "cursor": "pointer",
                 "display": "flex",
                 "padding": "7px",
