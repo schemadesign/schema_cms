@@ -63,6 +63,7 @@ exports[`Storyshots Project/List empty 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -180,6 +181,7 @@ exports[`Storyshots Project/List empty 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -245,6 +247,7 @@ exports[`Storyshots Project/List empty 1`] = `
         className="sc-iAyFgw dIxqGD"
       >
         <button
+          disabled={false}
           id="addProjectBtn"
           onClick={[Function]}
           style={
@@ -351,6 +354,7 @@ exports[`Storyshots Project/List list 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -468,6 +472,7 @@ exports[`Storyshots Project/List list 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -723,6 +728,7 @@ exports[`Storyshots Project/List list 1`] = `
         className="sc-iAyFgw dIxqGD"
       >
         <button
+          disabled={false}
           id="addProjectBtn"
           onClick={[Function]}
           style={

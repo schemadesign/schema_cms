@@ -52,6 +52,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       </div>
     </div>
     <button
+      disabled={false}
       onClick={[Function]}
       style={
         Object {
@@ -199,6 +200,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       </ul>
     </div>
     <button
+      disabled={false}
       id="topHeaderCloseMenuButton"
       onClick={[Function]}
       style={

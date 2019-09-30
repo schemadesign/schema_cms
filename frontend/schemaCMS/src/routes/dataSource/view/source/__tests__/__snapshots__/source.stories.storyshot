@@ -133,6 +133,7 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
         }
       >
         <button
+          disabled={false}
           style={
             Object {
               "background": "#1d1d20",
