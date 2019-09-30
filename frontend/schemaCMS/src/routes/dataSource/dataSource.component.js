@@ -3,7 +3,6 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { View } from './view';
-import { View as ScriptView } from '../dataWranglingScripts/view';
 
 const INITIAL_STEP = 1;
 
@@ -21,14 +20,11 @@ export default class DataSource extends PureComponent {
 
     const viewPath = `${path}/:dataSourceId`;
     const viewPathWithStep = `${viewPath}/:step`;
-    const scriptPath = `${viewPath}/script/view/:scriptId`;
 
     return (
       <Switch>
         <Redirect exact path={viewPath} to={`${viewPath}/${INITIAL_STEP}`} />
         <Route exact path={viewPathWithStep} component={View} />
-
-        <Route exact path={scriptPath} component={ScriptView} />
       </Switch>
     );
   }

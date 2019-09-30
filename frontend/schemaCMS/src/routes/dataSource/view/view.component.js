@@ -8,7 +8,7 @@ import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from '
 import messages from './view.messages';
 import { Source } from './source';
 import { DataPreview } from '../../../shared/components/dataPreview';
-import { DataWranglingScripts } from '../../dataWranglingScripts';
+import { DataWranglingScripts } from './dataWranglingScripts';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
 import {

@@ -4,7 +4,7 @@ import { OK } from 'http-status-codes';
 import nock from 'nock';
 
 import mockApi from '../../../shared/utils/mockApi';
-import { DATA_SOURCE_PATH } from '../../../shared/utils/api.constants';
+import { DATA_SOURCE_PATH, DATA_WRANGLING_SCRIPTS_PATH } from '../../../shared/utils/api.constants';
 import { watchDataWranglingScripts } from '../dataWranglingScripts.sagas';
 import { DataWranglingScriptsRoutines } from '../dataWranglingScripts.redux';
 
@@ -17,15 +17,14 @@ describe('DataWranglingScripts: sagas', () => {
 
   describe('fetchList', () => {
     it('should dispatch a success action', async () => {
-      const payload = { dataSourceId: '1' };
       const responseData = ['data 1', 'data 2'];
 
-      mockApi.get(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script`).reply(OK, responseData);
+      mockApi.get(DATA_WRANGLING_SCRIPTS_PATH).reply(OK, responseData);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
         .put(DataWranglingScriptsRoutines.fetchList.success(responseData))
-        .dispatch(DataWranglingScriptsRoutines.fetchList(payload))
+        .dispatch(DataWranglingScriptsRoutines.fetchList())
         .silentRun();
     });
   });

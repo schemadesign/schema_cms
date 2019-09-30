@@ -6,20 +6,20 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FormattedMessage } from 'react-intl';
 
-import { DATA_WRANGLING_STEP } from '../../../modules/dataSource/dataSource.constants';
+import { DATA_WRANGLING_STEP } from '../../modules/dataSource/dataSource.constants';
 import {
   DATA_WRANGLING_FORM_NAME,
   DESCRIPTION,
-} from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
-import { TextInput } from '../../../shared/components/form/inputs/textInput';
-import { Loader } from '../../../shared/components/loader';
-import { TopHeader } from '../../../shared/components/topHeader';
-import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
-import { Container, Form, customInputStyles } from './view.styles';
-import messages from './view.messages';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+} from '../../modules/dataWranglingScripts/dataWranglingScripts.constants';
+import { TextInput } from '../../shared/components/form/inputs/textInput';
+import { Loader } from '../../shared/components/loader';
+import { TopHeader } from '../../shared/components/topHeader';
+import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
+import { Container, Form, customInputStyles } from './dataWranglingScript.styles';
+import messages from './dataWranglingScript.messages';
+import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 
-export class View extends PureComponent {
+export class DataWranglingScript extends PureComponent {
   static propTypes = {
     dataWranglingScript: PropTypes.object,
     fetchDataWranglingScript: PropTypes.func.isRequired,
