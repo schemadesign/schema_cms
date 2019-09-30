@@ -1,73 +1,92 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
+import {
+  FIELD,
+  SAMPLE,
+  NAME,
+  TYPE,
+  COUNT,
+  BLANK,
+  UNIQUE,
+  SUM,
+  MEAN,
+  MEDIAN,
+  MIN,
+  MAX,
+  STD,
+  PERCENTILE_10,
+  PERCENTILE_25,
+  PERCENTILE_75,
+  PERCENTILE_90,
+} from './details.constants';
 
 export default defineMessages({
-  field: {
-    id: 'project.dataSource.fields.details.field',
+  [FIELD]: {
+    id: `project.dataSource.fields.details.${FIELD}`,
     defaultMessage: 'Field',
   },
-  sample: {
-    id: 'project.dataSource.fields.details.top',
+  [SAMPLE]: {
+    id: `project.dataSource.fields.details.${SAMPLE}`,
     defaultMessage: 'Sample',
   },
-  name: {
-    id: 'project.dataSource.fields.details.name',
+  [NAME]: {
+    id: `project.dataSource.fields.details.${NAME}`,
     defaultMessage: 'Field Name',
   },
-  dtype: {
-    id: 'project.dataSource.fields.details.dtype',
+  [TYPE]: {
+    id: `project.dataSource.fields.details.${TYPE}`,
     defaultMessage: 'Type',
   },
-  count: {
-    id: 'project.dataSource.fields.details.count',
+  [COUNT]: {
+    id: `project.dataSource.fields.details.${COUNT}`,
     defaultMessage: 'Total Count (N)',
   },
-  blank: {
-    id: 'project.dataSource.fields.details.blank',
+  [BLANK]: {
+    id: `project.dataSource.fields.details.${BLANK}`,
     defaultMessage: 'Blank + NaN',
   },
-  unique: {
-    id: 'project.dataSource.fields.details.unique',
+  [UNIQUE]: {
+    id: `project.dataSource.fields.details.${UNIQUE}`,
     defaultMessage: 'Unique',
   },
-  sum: {
-    id: 'project.dataSource.fields.details.sum',
+  [SUM]: {
+    id: `project.dataSource.fields.details.${SUM}`,
     defaultMessage: 'Total Sum',
   },
-  mean: {
-    id: 'project.dataSource.fields.details.mean',
+  [MEAN]: {
+    id: `project.dataSource.fields.details.${MEAN}`,
     defaultMessage: 'Mean',
   },
-  min: {
-    id: 'project.dataSource.fields.details.min',
+  [MIN]: {
+    id: `project.dataSource.fields.details.${MIN}`,
     defaultMessage: 'Min',
   },
-  max: {
-    id: 'project.dataSource.fields.details.max',
+  [MAX]: {
+    id: `project.dataSource.fields.details.${MAX}`,
     defaultMessage: 'Max',
   },
-  std: {
-    id: 'project.dataSource.fields.details.std',
+  [STD]: {
+    id: `project.dataSource.fields.details.${STD}`,
     defaultMessage: 'Std. Dev.',
   },
-  median: {
-    id: 'project.dataSource.fields.details.median',
+  [MEDIAN]: {
+    id: `project.dataSource.fields.details.${MEDIAN}`,
     defaultMessage: 'Median',
   },
-  percentile10: {
-    id: 'project.dataSource.fields.details.percentile10',
+  [PERCENTILE_10]: {
+    id: `project.dataSource.fields.details.${PERCENTILE_10}`,
     defaultMessage: '10th Percentile',
   },
-  percentile25: {
-    id: 'project.dataSource.fields.details.percentile25',
+  [PERCENTILE_25]: {
+    id: `project.dataSource.fields.details.${PERCENTILE_25}`,
     defaultMessage: '25th Percentile',
   },
-  percentile75: {
-    id: 'project.dataSource.fields.details.percentile75',
+  [PERCENTILE_75]: {
+    id: `project.dataSource.fields.details.${PERCENTILE_75}`,
     defaultMessage: '75th Percentile',
   },
-  percentile90: {
-    id: 'project.dataSource.fields.details.percentile90',
+  [PERCENTILE_90]: {
+    id: `project.dataSource.fields.details.${PERCENTILE_90}`,
     defaultMessage: '90th Percentile',
   },
 });
