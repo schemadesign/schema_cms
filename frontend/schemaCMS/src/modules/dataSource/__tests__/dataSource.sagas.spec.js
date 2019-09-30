@@ -27,7 +27,7 @@ describe('DataSource: sagas', () => {
         status: STATUS_DRAFT,
       };
 
-      mockApi.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`, requestData).reply(OK, responseData);
+      mockApi.post(`${DATA_SOURCES_PATH}`, requestData).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -45,9 +45,7 @@ describe('DataSource: sagas', () => {
         status: STATUS_DONE,
       };
 
-      mockApi
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`)
-        .reply(OK, responseData);
+      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -105,7 +103,7 @@ describe('DataSource: sagas', () => {
     });
 
     it('should dispatch once fulfill actions after cancel', async () => {
-      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`).reply(OK, responseData);
+      mockApi.get(`${DATA_SOURCES_PATH}`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -120,7 +118,7 @@ describe('DataSource: sagas', () => {
     it('should dispatch a success action', async () => {
       const payload = { projectId: '1', dataSourceId: '1' };
 
-      mockApi.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(OK);
+      mockApi.delete(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(OK);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -141,6 +139,7 @@ describe('DataSource: sagas', () => {
     };
     const responseData = {
       id: 1,
+      project: 1,
       status: STATUS_DRAFT,
     };
 
@@ -150,16 +149,10 @@ describe('DataSource: sagas', () => {
       };
 
       mockApi
-        .patch(
-          `${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`,
-          /form-data; name="data"[^]*data/m,
-          options
-        )
+        .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, /form-data; name="data"[^]*data/m, options)
         .reply(OK, responseData);
 
-      mockApi
-        .post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`)
-        .reply(OK);
+      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`).reply(OK);
     });
 
     it('should dispatch a success action', async () => {
@@ -178,7 +171,7 @@ describe('DataSource: sagas', () => {
         .dispatch(DataSourceRoutines.updateOne(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/view/1/datasource/view/1/2');
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
     });
 
     it('should redirect to list', async () => {
@@ -190,7 +183,7 @@ describe('DataSource: sagas', () => {
         .dispatch(DataSourceRoutines.updateOne(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/view/1/datasource/list');
+      expect(browserHistory.push).toBeCalledWith('/project/1/datasource');
     });
   });
 
@@ -202,7 +195,7 @@ describe('DataSource: sagas', () => {
       };
 
       mockApi
-        .post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`)
+        .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`)
         .reply(OK);
 
       await expectSaga(watchDataSource)
@@ -225,7 +218,7 @@ describe('DataSource: sagas', () => {
       };
 
       mockApi
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}/preview`)
+        .get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/preview`)
         .reply(OK, responseData);
 
       await expectSaga(watchDataSource)

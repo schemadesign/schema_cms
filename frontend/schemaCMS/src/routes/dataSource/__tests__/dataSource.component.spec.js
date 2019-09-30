@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { DataSource } from '../dataSource.component';
+import DataSource from '../dataSource.component';
 
 describe('DataSource: Component', () => {
   const defaultProps = {

@@ -9,7 +9,7 @@ import {
   STATUS_READY_FOR_PROCESSING,
 } from '../../../../modules/dataSource/dataSource.constants';
 
-describe('List: Component', () => {
+describe('DataSourceList: Component', () => {
   const defaultProps = {
     createDataSource: Function.prototype,
     fetchDataSources: Function.prototype,
@@ -40,7 +40,7 @@ describe('List: Component', () => {
     status: 'done',
   };
 
-  const component = props => <List {...defaultProps} {...props} />;
+  const component = props => <DataSourceList {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

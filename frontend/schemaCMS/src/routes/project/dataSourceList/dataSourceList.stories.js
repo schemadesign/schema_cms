@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withRouter, withTheme } from '../../../.storybook/decorators';
-import { List } from './list.component';
+import { DataSourceList } from './dataSourceList.component';
 
 const defaultProps = {
   createDataSource: Function.prototype,
@@ -34,7 +34,7 @@ const defaultProps = {
   },
 };
 
-storiesOf('DataSource/List', module)
+storiesOf('DataSourceList', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('Default', () => <List {...defaultProps} />);
+  .add('Default', () => <DataSourceList {...defaultProps} />);

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Details: Component should render correctly 1`] = `
+exports[`FieldDetail: Component should render correctly 1`] = `
 <styled.div>
   <styled.ul>
     <styled.li>

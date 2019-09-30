@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List: Component should render card with draft state 1`] = `
+exports[`DataSourceList: Component should render card with draft state 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
@@ -130,7 +130,7 @@ exports[`List: Component should render card with draft state 1`] = `
 </styled.div>
 `;
 
-exports[`List: Component should render card with error state 1`] = `
+exports[`DataSourceList: Component should render card with error state 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
@@ -202,7 +202,7 @@ exports[`List: Component should render card with error state 1`] = `
 </styled.div>
 `;
 
-exports[`List: Component should render card with processing state 1`] = `
+exports[`DataSourceList: Component should render card with processing state 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
@@ -332,7 +332,7 @@ exports[`List: Component should render card with processing state 1`] = `
 </styled.div>
 `;
 
-exports[`List: Component should render card with ready for processing state 1`] = `
+exports[`DataSourceList: Component should render card with ready for processing state 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
@@ -462,7 +462,7 @@ exports[`List: Component should render card with ready for processing state 1`] 
 </styled.div>
 `;
 
-exports[`List: Component should render correctly 1`] = `
+exports[`DataSourceList: Component should render correctly 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
@@ -598,7 +598,7 @@ exports[`List: Component should render correctly 1`] = `
 </styled.div>
 `;
 
-exports[`List: Component should render empty 1`] = `
+exports[`DataSourceList: Component should render empty 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
