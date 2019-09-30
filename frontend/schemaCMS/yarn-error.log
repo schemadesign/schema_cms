@@ -1,30 +1,17 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.16.0/libexec/bin/yarn.js add transform-es2015-modules-commonjs
+  /usr/local/Cellar/node/12.4.0/bin/node /usr/local/bin/yarn husky-run pre-push origin git@github.com:schemadesign/schema_cms.git
 
 PATH: 
-  /usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin
+  /usr/local/Cellar/git/2.22.0_1/libexec/git-core:/usr/local/opt/ruby/bin:/Users/khanek/.pyenv/bin:/Users/khanek/.pyenv/plugins/pyenv-virtualenv/shims:/Users/khanek/.pyenv/shims:/Users/khanek/google-cloud-sdk/bin:/usr/local/anaconda3/bin:/usr/local/bin:/Users/khanek/go/bin:/Users/khanek/.autojump/bin:/Users/khanek/.zplug/repos/zplug/zplug/bin:/Users/khanek/.zplug/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
-  1.16.0
+  1.5.1
 
 Node version: 
-  10.16.3
+  12.4.0
 
 Platform: 
   darwin x64
-
-Trace: 
-  Error: https://registry.yarnpkg.com/transform-es2015-modules-commonjs: Not found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:66091:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:129590:22)
-      at Request.emit (events.js:198:13)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:130562:10)
-      at Request.emit (events.js:198:13)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:130484:12)
-      at Object.onceWrapper (events.js:286:20)
-      at IncomingMessage.emit (events.js:203:15)
-      at endReadableNT (_stream_readable.js:1145:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {
@@ -206,8 +193,7 @@ npm manifest:
       },
       "transformIgnorePatterns": [
         "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
-        "^.+\\.module\\.(css|sass|scss)$",
-        "[/\\\\]node_modules[/\\\\].+\\.(!react-syntax-highlighter/dist/esm/styles/hljs)$"
+        "^.+\\.module\\.(css|sass|scss)$"
       ],
       "moduleNameMapper": {
         "^react-native$": "react-native-web",
@@ -1077,6 +1063,16 @@ Lockfile:
       "@babel/helper-module-transforms" "^7.4.4"
       "@babel/helper-plugin-utils" "^7.0.0"
       "@babel/helper-simple-access" "^7.1.0"
+  
+  "@babel/plugin-transform-modules-commonjs@^7.6.0":
+    version "7.6.0"
+    resolved "https://registry.yarnpkg.com/@babel/plugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.6.0.tgz#39dfe957de4420445f1fcf88b68a2e4aa4515486"
+    integrity sha512-Ma93Ix95PNSEngqomy5LSBMAQvYKVe3dy+JlVJSHEXZR5ASL9lQBedMiCyVtmTLraIDVRE3ZjTZvmXXD2Ozw3g==
+    dependencies:
+      "@babel/helper-module-transforms" "^7.4.4"
+      "@babel/helper-plugin-utils" "^7.0.0"
+      "@babel/helper-simple-access" "^7.1.0"
+      babel-plugin-dynamic-import-node "^2.3.0"
   
   "@babel/plugin-transform-modules-systemjs@^7.2.0", "@babel/plugin-transform-modules-systemjs@^7.4.0", "@babel/plugin-transform-modules-systemjs@^7.5.0":
     version "7.5.0"
@@ -16177,3 +16173,18 @@ Lockfile:
       property-expr "^1.5.0"
       synchronous-promise "^2.0.6"
       toposort "^2.0.2"
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c /Users/khanek/Workspace/schema_cms/frontend/schemaCMS/node_modules/.bin/husky-run pre-push 'origin git@github.com:schemadesign/schema_cms.git'
+  Directory: /Users/khanek/Workspace/schema_cms/frontend/schemaCMS
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:200:13)
+      at maybeClose (internal/child_process.js:1021:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:283:5)
