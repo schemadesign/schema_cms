@@ -178,7 +178,7 @@ export class View extends PureComponent {
           {content}
         </div>
         <NavigationContainer>
-          <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project/list')} />
+          <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
       </Container>
     );

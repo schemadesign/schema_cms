@@ -15,7 +15,7 @@ function* fetchList({ payload: { dataSourceId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.fetchList.request());
 
-    const { data } = yield api.get(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
+    const { data } = yield api.get(`${DATA_WRANGLING_SCRIPTS_PATH}`);
 
     yield put(DataWranglingScriptsRoutines.fetchList.success(data));
   } catch (e) {
@@ -25,11 +25,11 @@ function* fetchList({ payload: { dataSourceId } }) {
   }
 }
 
-function* sendList({ payload: { steps, dataSourceId, projectId } }) {
+function* sendList({ payload: { steps, projectId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.sendList.request());
 
-    yield api.put(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
+    yield api.put(`${DATA_WRANGLING_JOB_PATH}`, { steps });
 
     browserHistory.push(`/project/view/${projectId}/datasource/list`);
     yield put(DataWranglingScriptsRoutines.sendList.success());

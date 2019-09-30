@@ -36,7 +36,6 @@ export class View extends PureComponent {
     }),
     match: PropTypes.shape({
       params: PropTypes.shape({
-        projectId: PropTypes.string,
         dataSourceId: PropTypes.string.isRequired,
         step: PropTypes.string.isRequired,
       }).isRequired,
@@ -67,7 +66,7 @@ export class View extends PureComponent {
 
   getHeaderAndMenuConfig = (intl, activeStep) => {
     const headerTitle = this.getTitle(intl);
-    const projectId = this.props.dataSource.projectId;
+    const projectId = this.props.dataSource.project;
 
     const secondaryMenuItems = [
       {
@@ -105,21 +104,20 @@ export class View extends PureComponent {
     const {
       history,
       match: {
-        params: { projectId, dataSourceId },
+        params: { dataSourceId },
       },
     } = this.props;
 
     if (step < 1) {
-      return this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
+      return this.props.history.push(`${this.props.dataSource.project}/datasource/`);
     }
 
-    return history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
+    return history.push(`/datasource/${dataSourceId}/${step}`);
   };
 
   handleBackClick = () => this.handleStepChange(parseInt(this.props.match.params.step, 10) - 1);
 
-  handleCancelClick = () =>
-    this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
+  handleCancelClick = () => this.props.history.push(`/project/${this.props.dataSource.project}/datasource/`);
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([

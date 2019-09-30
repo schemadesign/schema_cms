@@ -22,7 +22,6 @@ export class DataWranglingScripts extends PureComponent {
       url: PropTypes.string.isRequired,
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
-        projectId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   };
@@ -67,10 +66,10 @@ export class DataWranglingScripts extends PureComponent {
   };
 
   handleSubmit = ({ steps }) => {
-    const { dataSourceId, projectId } = this.props.match.params;
+    const { dataSourceId } = this.props.match.params;
     steps = steps.map(step => ({ key: step }));
 
-    this.props.sendUpdatedDataWranglingScript({ steps, projectId, dataSourceId });
+    this.props.sendUpdatedDataWranglingScript({ steps, dataSourceId });
   };
 
   renderCheckboxes = (values, data) =>

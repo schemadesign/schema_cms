@@ -44,11 +44,14 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "created",
             "meta_data",
             "error_log",
+            "project",
         )
+
         extra_kwargs = {
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},
             "file": {"required": True, "allow_null": False},
+            "project": { "read_only": True },
         }
         validators = [
             validators.UniqueTogetherValidator(queryset=DataSource.objects.all(), fields=('name', 'project'))

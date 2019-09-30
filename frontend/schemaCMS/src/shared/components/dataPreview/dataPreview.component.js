@@ -27,12 +27,7 @@ export default class DataPreview extends PureComponent {
     fetchFields: PropTypes.func.isRequired,
     unmountFields: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
-    match: PropTypes.shape({
-      params: PropTypes.shape({
-        projectId: PropTypes.string.isRequired,
-        dataSourceId: PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
+    dataSource: PropTypes.object.isRequired,
   };
 
   static getDerivedStateFromProps({ fields }, { isLoading, step }) {
@@ -56,9 +51,9 @@ export default class DataPreview extends PureComponent {
   };
 
   componentDidMount() {
-    const { projectId, dataSourceId } = this.props.match.params;
+    const { id: dataSourceId } = this.props.dataSource;
 
-    this.props.fetchFields({ projectId, dataSourceId });
+    this.props.fetchFields({ dataSourceId });
   }
 
   componentWillUnmount() {

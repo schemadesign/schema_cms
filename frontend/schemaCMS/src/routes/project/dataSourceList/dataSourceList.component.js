@@ -80,7 +80,7 @@ export class DataSourceList extends PureComponent {
 
   getStep = ifElse(equals(STATUS_DRAFT), always(INITIAL_STEP), always(FIELDS_STEP));
 
-  handleShowProject = () => this.props.history.push(`/project/view/${this.props.match.params.projectId}`);
+  handleShowProject = () => this.props.history.push(`/project/${this.props.match.params.projectId}`);
 
   handleCreateDataSource = () => {
     const projectId = this.props.match.params.projectId;
