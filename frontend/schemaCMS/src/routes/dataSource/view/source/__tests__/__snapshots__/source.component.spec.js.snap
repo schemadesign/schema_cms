@@ -5,6 +5,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   locale="en"
 >
   <SourceComponent
+    bindSetNextDisabling={[Function]}
     bindSubmitForm={[Function]}
     dataSource={Object {}}
     intl={
@@ -868,6 +869,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
   locale="en"
 >
   <SourceComponent
+    bindSetNextDisabling={[Function]}
     bindSubmitForm={[Function]}
     dataSource={
       Object {

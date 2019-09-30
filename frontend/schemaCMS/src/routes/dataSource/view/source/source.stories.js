@@ -8,6 +8,7 @@ export const defaultProps = {
   dataSource: {},
   theme: Theme.dark,
   bindSubmitForm: Function.prototype,
+  bindSetNextDisabling: Function.prototype,
   updateDataSource: Function.prototype,
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
