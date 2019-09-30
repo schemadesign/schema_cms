@@ -6,7 +6,7 @@ export default defineMessages({
     id: 'project.dataSource.fields.details.field',
     defaultMessage: 'Field',
   },
-  top: {
+  sample: {
     id: 'project.dataSource.fields.details.top',
     defaultMessage: 'Sample',
   },

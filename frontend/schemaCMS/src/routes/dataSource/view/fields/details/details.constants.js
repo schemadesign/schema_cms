@@ -1,6 +1,6 @@
 export const EMPTY = '–';
 
-const SAMPLE = 'top';
+const SAMPLE = 'sample';
 const NAME = 'name';
 const TYPE = 'dtype';
 
