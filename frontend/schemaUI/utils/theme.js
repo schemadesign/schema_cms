@@ -214,7 +214,7 @@ const dark = {
 const INTER_FONT = 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';
 const MONOSPACE_FONT = 'Hack, monospace';
 
-const primaryTypography = {
+const typography = {
   h1: {
     fontFamily: INTER_FONT,
     fontWeight: 600,
@@ -240,8 +240,9 @@ const primaryTypography = {
   },
 };
 
-light.typography = primaryTypography;
-dark.typography = primaryTypography;
+light.typography = typography;
+dark.typography = typography;
+
 const defaultTheme = dark;
 
 export { light, dark, colors, defaultTheme };
