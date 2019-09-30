@@ -33,6 +33,7 @@ export class SourceComponent extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
     bindSubmitForm: PropTypes.func.isRequired,
+    bindSetNextDisabling: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     updateDataSource: PropTypes.func.isRequired,
     theme: PropTypes.object.isRequired,
@@ -98,7 +99,7 @@ export class SourceComponent extends PureComponent {
   };
 
   render() {
-    const { dataSource, bindSubmitForm, ...restProps } = this.props;
+    const { dataSource, bindSubmitForm, bindSetNextDisabling, ...restProps } = this.props;
 
     return (
       <Container>
@@ -112,6 +113,10 @@ export class SourceComponent extends PureComponent {
           {({ handleChange, values: { name, type, fileName }, setFieldValue, submitForm, isValid }) => {
             if (isValid) {
               bindSubmitForm(submitForm);
+            }
+
+            if (fileName) {
+              bindSetNextDisabling(false);
             }
 
             return (

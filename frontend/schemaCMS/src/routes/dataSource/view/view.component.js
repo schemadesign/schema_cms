@@ -43,6 +43,10 @@ export class View extends PureComponent {
     }).isRequired,
   };
 
+  state = {
+    isNextDisabled: true,
+  };
+
   componentDidMount() {
     if (!this.props.dataSource.id) {
       const { projectId, dataSourceId } = this.props.match.params;
@@ -91,6 +95,10 @@ export class View extends PureComponent {
     this.submitForm = submitForm;
   };
 
+  bindSetNextDisabling = value => {
+    this.setState({ isNextDisabled: value });
+  };
+
   handleNextClick = () => {
     if (this.submitForm) {
       return this.submitForm();
@@ -121,7 +129,12 @@ export class View extends PureComponent {
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
-      [equals(INITIAL_STEP), always(<Source bindSubmitForm={this.bindSubmitForm} {...props} />)],
+      [
+        equals(INITIAL_STEP),
+        always(
+          <Source bindSubmitForm={this.bindSubmitForm} bindSetNextDisabling={this.bindSetNextDisabling} {...props} />
+        ),
+      ],
       [equals(FIELDS_STEP), always(<Fields {...props} />)],
       [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts bindSubmitForm={this.bindSubmitForm} {...props} />)],
       [equals(4), always(null)],
@@ -158,7 +171,7 @@ export class View extends PureComponent {
           <BackButton onClick={this.handleBackClick}>
             <FormattedMessage {...messages.back} values={{ cancel: activeStep === INITIAL_STEP }} />
           </BackButton>
-          <NextButton onClick={this.handleNextClick} />
+          <NextButton disabled={this.state.isNextDisabled} onClick={this.handleNextClick} />
           <StepperContainer>
             <Stepper
               activeStep={activeStep}
