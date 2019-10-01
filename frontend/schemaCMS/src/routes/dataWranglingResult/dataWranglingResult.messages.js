@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   pageTitle: {
-    id: 'dataWranglingScripts.results.pageTitle',
+    id: 'dataWranglingResult.pageTitle',
     defaultMessage: 'Data Wrangling Result',
   },
 });
