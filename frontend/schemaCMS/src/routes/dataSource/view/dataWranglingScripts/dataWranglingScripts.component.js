@@ -19,7 +19,6 @@ export class DataWranglingScripts extends PureComponent {
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     match: PropTypes.shape({
-      url: PropTypes.string.isRequired,
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
       }).isRequired,

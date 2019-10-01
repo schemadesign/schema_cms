@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components/Table Default 1`] = `
+exports[`Storyshots Shared Components|Table Default 1`] = `
 <div
   style={
     Object {
@@ -22,17 +22,17 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             US
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             USA
           </td>
@@ -41,17 +41,17 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             PL
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Warsaw
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Poland
           </td>
@@ -60,17 +60,17 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             DE
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Berlin
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Germany
           </td>
@@ -79,17 +79,17 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             FR
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Paris
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             France
           </td>
@@ -98,19 +98,54 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             ES
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Madird
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Spain
+          </td>
+        </tr>
+        <tr
+          className="sc-cSHVUG iDabFA"
+        >
+          <td
+            className="sc-kAzzGY hMfDjf"
+          >
+            —
+          </td>
+          <td
+            className="sc-kAzzGY hMfDjf"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
+          </td>
+          <td
+            className="sc-kAzzGY hMfDjf"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
           </td>
         </tr>
       </tbody>
@@ -119,7 +154,7 @@ exports[`Storyshots Shared Components/Table Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Shared Components/Table with header 1`] = `
+exports[`Storyshots Shared Components|Table with header 1`] = `
 <div
   style={
     Object {
@@ -141,17 +176,17 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <th
-            className="sc-chPdSV cOTTIR"
+            className="sc-chPdSV bHedkg"
           >
             Code
           </th>
           <th
-            className="sc-chPdSV cOTTIR"
+            className="sc-chPdSV bHedkg"
           >
             Capital
           </th>
           <th
-            className="sc-chPdSV cOTTIR"
+            className="sc-chPdSV bHedkg"
           >
             Country
           </th>
@@ -164,17 +199,17 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             US
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             USA
           </td>
@@ -183,17 +218,17 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             PL
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Warsaw
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Poland
           </td>
@@ -202,17 +237,17 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             DE
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Berlin
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Germany
           </td>
@@ -221,17 +256,17 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             FR
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Paris
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             France
           </td>
@@ -240,19 +275,54 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             ES
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Madird
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Spain
+          </td>
+        </tr>
+        <tr
+          className="sc-cSHVUG iDabFA"
+        >
+          <td
+            className="sc-kAzzGY hMfDjf"
+          >
+            —
+          </td>
+          <td
+            className="sc-kAzzGY hMfDjf"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
+          </td>
+          <td
+            className="sc-kAzzGY hMfDjf"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
           </td>
         </tr>
       </tbody>
@@ -261,7 +331,7 @@ exports[`Storyshots Shared Components/Table with header 1`] = `
 </div>
 `;
 
-exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
+exports[`Storyshots Shared Components|Table with numbered rows 1`] = `
 <div
   style={
     Object {
@@ -283,22 +353,22 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <th
-            className="sc-chPdSV cOTTIR"
+            className="sc-chPdSV bHedkg"
           >
             #
           </th>
           <th
-            className="sc-chPdSV cOTTIR"
+            className="sc-chPdSV bHedkg"
           >
             Code
           </th>
           <th
-            className="sc-chPdSV cOTTIR"
+            className="sc-chPdSV bHedkg"
           >
             Capital
           </th>
           <th
-            className="sc-chPdSV cOTTIR"
+            className="sc-chPdSV bHedkg"
           >
             Country
           </th>
@@ -311,22 +381,22 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kgoBCf iJhCFb"
+            className="sc-kgoBCf bvDsC"
           >
             1
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             US
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             USA
           </td>
@@ -335,22 +405,22 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kgoBCf iJhCFb"
+            className="sc-kgoBCf bvDsC"
           >
             2
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             PL
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Warsaw
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Poland
           </td>
@@ -359,22 +429,22 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kgoBCf iJhCFb"
+            className="sc-kgoBCf bvDsC"
           >
             3
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             DE
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Berlin
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Germany
           </td>
@@ -383,22 +453,22 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kgoBCf iJhCFb"
+            className="sc-kgoBCf bvDsC"
           >
             4
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             FR
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Paris
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             France
           </td>
@@ -407,24 +477,64 @@ exports[`Storyshots Shared Components/Table with numbered rows 1`] = `
           className="sc-cSHVUG iDabFA"
         >
           <td
-            className="sc-kgoBCf iJhCFb"
+            className="sc-kgoBCf bvDsC"
           >
             5
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             ES
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Madird
           </td>
           <td
-            className="sc-kAzzGY ddrLpH"
+            className="sc-kAzzGY hMfDjf"
           >
             Spain
+          </td>
+        </tr>
+        <tr
+          className="sc-cSHVUG iDabFA"
+        >
+          <td
+            className="sc-kgoBCf bvDsC"
+          >
+            6
+          </td>
+          <td
+            className="sc-kAzzGY hMfDjf"
+          >
+            —
+          </td>
+          <td
+            className="sc-kAzzGY hMfDjf"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
+          </td>
+          <td
+            className="sc-kAzzGY hMfDjf"
+          >
+            Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
           </td>
         </tr>
       </tbody>

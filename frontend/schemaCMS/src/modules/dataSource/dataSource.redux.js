@@ -40,5 +40,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.unmountOne.TRIGGER]: unmountDataSource,
   [DataSourceRoutines.fetchList.SUCCESS]: updateDataSources,
   [DataSourceRoutines.fetchFields.SUCCESS]: updateFields,
-  [DataSourceRoutines.unmountFields.SUCCESS]: unmountFields,
+  [DataSourceRoutines.unmountFields.TRIGGER]: unmountFields,
 });

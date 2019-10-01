@@ -2,10 +2,10 @@
 
 exports[`Storyshots UserProfile Default 1`] = `
 <div
-  className="sc-btzYZH dcBPpq"
+  className="sc-lhVmIH iBkPsG"
 >
   <div
-    className="sc-cvbbAY dbHDoR"
+    className="sc-jWBwVP fDrbnp"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     >
       <div>
         <div
-          className="sc-jWBwVP fDrbnp"
+          className="sc-brqgnP SqPLV"
         >
           <h2
             id="headerTitle"
@@ -114,10 +114,10 @@ exports[`Storyshots UserProfile Default 1`] = `
       }
     >
       <div
-        className="sc-brqgnP SqPLV"
+        className="sc-cMljjf eTbdzc"
       >
         <div
-          className="sc-jWBwVP fDrbnp"
+          className="sc-brqgnP SqPLV"
         >
           <h2
             id="headerTitle"
@@ -150,13 +150,13 @@ exports[`Storyshots UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-cMljjf bcGKoa"
+        className="sc-jAaTju hWtuUE"
       >
         <ul
-          className="sc-jAaTju sc-jDwBTQ iHkALz"
+          className="sc-jDwBTQ sc-gPEVay jbCcVY"
         />
         <ul
-          className="sc-jAaTju sc-gPEVay eFVGDs"
+          className="sc-jDwBTQ sc-iRbamj dmLCIf"
         />
       </div>
       <button
@@ -201,7 +201,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-lhVmIH iBkPsG"
+    className="sc-bYSBpT dTBkYG"
     onSubmit={[Function]}
   >
     <div
@@ -405,17 +405,17 @@ exports[`Storyshots UserProfile Default 1`] = `
     </button>
   </form>
   <div
-    className="sc-elJkPf gqFUnK"
+    className="sc-jtRfpW cqcnzQ"
   >
     <a
-      className="sc-bYSBpT jdQBVs"
+      className="sc-elJkPf dCdcCK"
       href="/reset-password"
       onClick={[Function]}
     >
       Reset Password
     </a>
     <a
-      className="sc-bYSBpT jdQBVs"
+      className="sc-elJkPf dCdcCK"
       href="/logout"
       onClick={[Function]}
     >

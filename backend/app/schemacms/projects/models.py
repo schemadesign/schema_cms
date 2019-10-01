@@ -22,6 +22,13 @@ def file_upload_path(instance, filename):
     return instance.relative_path_to_save(filename)
 
 
+def map_dataframe_dtypes(dtype):
+    if dtype == "object":
+        return "string"
+    else:
+        return dtype
+
+
 class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
     status = django_fsm.FSMField(
         choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
@@ -76,7 +83,7 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
         return self.name or str(self.id)
 
     def update_meta(self):
-        data_frame = read_csv(self.file.url, sep=None, engine="python", encoding='ISO-8859-1')
+        data_frame = read_csv(self.file.url, sep=None, engine="python", encoding='utf-8')
         items, fields = data_frame.shape
         preview, fields_info = self.get_preview_data(data_frame)
         preview_json = json.dumps({"data": preview, "fields": fields_info}, indent=4).encode()
@@ -109,9 +116,13 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
     def get_preview_data(data_frame):
         table_preview = json.loads(data_frame.head(5).to_json(orient="records"))
         fields_info = json.loads(data_frame.describe(include="all", percentiles=[]).to_json(orient="columns"))
+        samples = json.loads(data_frame.sample(n=1).to_json(orient="records"))
 
         for key, value in dict(data_frame.dtypes).items():
-            fields_info[key]["dtype"] = value.name
+            fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
+
+        for key, value in samples[0].items():
+            fields_info[key]["sample"] = value
 
         return table_preview, fields_info
 

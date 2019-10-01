@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Navigation BackArrowButton 1`] = `
+exports[`Storyshots Shared Components|Navigation BackArrowButton 1`] = `
 <div
   style={
     Object {
@@ -47,7 +47,7 @@ exports[`Storyshots Navigation BackArrowButton 1`] = `
 </div>
 `;
 
-exports[`Storyshots Navigation BackButton 1`] = `
+exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
 <div
   style={
     Object {
@@ -83,7 +83,7 @@ exports[`Storyshots Navigation BackButton 1`] = `
 </div>
 `;
 
-exports[`Storyshots Navigation NavigationContainer 1`] = `
+exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
 <div
   style={
     Object {
@@ -93,10 +93,10 @@ exports[`Storyshots Navigation NavigationContainer 1`] = `
   }
 >
   <div
-    className="sc-csuQGl kYidWB"
+    className="sc-Rmtcm kSjUhM"
   >
     <div
-      className="sc-Rmtcm jDsRyA"
+      className="sc-bRBYWo fXOjiZ"
     >
       <button
         style={
@@ -138,7 +138,7 @@ exports[`Storyshots Navigation NavigationContainer 1`] = `
 </div>
 `;
 
-exports[`Storyshots Navigation NextButton 1`] = `
+exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
 <div
   style={
     Object {
@@ -174,7 +174,7 @@ exports[`Storyshots Navigation NextButton 1`] = `
 </div>
 `;
 
-exports[`Storyshots Navigation PlusButton 1`] = `
+exports[`Storyshots Shared Components|Navigation PlusButton 1`] = `
 <div
   style={
     Object {

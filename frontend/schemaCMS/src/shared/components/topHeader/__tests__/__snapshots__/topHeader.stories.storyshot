@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components/TopHeader Default 1`] = `
+exports[`Storyshots Shared Components|TopHeader Default 1`] = `
 <div
-  className="sc-cvbbAY dbHDoR"
+  className="sc-jWBwVP fDrbnp"
 >
   <div
     style={
@@ -19,7 +19,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
   >
     <div>
       <div
-        className="sc-jWBwVP fDrbnp"
+        className="sc-brqgnP SqPLV"
       >
         <h2
           id="headerTitle"
@@ -111,10 +111,10 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
     }
   >
     <div
-      className="sc-brqgnP SqPLV"
+      className="sc-cMljjf eTbdzc"
     >
       <div
-        className="sc-jWBwVP fDrbnp"
+        className="sc-brqgnP SqPLV"
       >
         <h2
           id="headerTitle"
@@ -147,13 +147,13 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-cMljjf bcGKoa"
+      className="sc-jAaTju hWtuUE"
     >
       <ul
-        className="sc-jAaTju sc-jDwBTQ iHkALz"
+        className="sc-jDwBTQ sc-gPEVay jbCcVY"
       >
         <li
-          className="sc-iRbamj sc-jlyJG jkeBDK"
+          className="sc-jlyJG sc-gipzik dBJzkv"
         >
           <a
             href="/path"
@@ -164,7 +164,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-iRbamj sc-jlyJG jkeBDK"
+          className="sc-jlyJG sc-gipzik dBJzkv"
         >
           <a
             href="/path"
@@ -176,10 +176,10 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
         </li>
       </ul>
       <ul
-        className="sc-jAaTju sc-gPEVay eFVGDs"
+        className="sc-jDwBTQ sc-iRbamj dmLCIf"
       >
         <li
-          className="sc-iRbamj sc-gipzik jPUQSy"
+          className="sc-jlyJG sc-csuQGl cQHIjm"
         >
           <a
             href="/logout"
@@ -190,7 +190,7 @@ exports[`Storyshots Shared Components/TopHeader Default 1`] = `
           </a>
         </li>
         <li
-          className="sc-iRbamj sc-gipzik jPUQSy"
+          className="sc-jlyJG sc-csuQGl cQHIjm"
           id="id"
           onClick={[Function]}
         >

@@ -10,7 +10,11 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
   }
 >
   <div
+<<<<<<< HEAD:frontend/schemaCMS/src/routes/dataWranglingScript/__tests__/__snapshots__/view.stories.storyshot
     className="sc-bRBYWo jrgVqN"
+=======
+    className="sc-jbKcbu btKMgb"
+>>>>>>> master:frontend/schemaCMS/src/routes/dataWranglingScripts/view/__tests__/__snapshots__/view.stories.storyshot
   >
     <div
       className="sc-cvbbAY dbHDoR"
@@ -209,7 +213,11 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       </div>
     </div>
     <form
+<<<<<<< HEAD:frontend/schemaCMS/src/routes/dataWranglingScript/__tests__/__snapshots__/view.stories.storyshot
       className="sc-hzDkRC kpsoyz"
+=======
+      className="sc-dNLxif KzmkZ"
+>>>>>>> master:frontend/schemaCMS/src/routes/dataWranglingScripts/view/__tests__/__snapshots__/view.stories.storyshot
       name="dataWranglingForm"
     >
       <div

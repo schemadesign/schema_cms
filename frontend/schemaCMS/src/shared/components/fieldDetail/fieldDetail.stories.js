@@ -15,7 +15,7 @@ export const defaultProps = {
     mean: 4,
     min: 1,
     std: 23.0332,
-    top: 'Sample',
+    sample: 'Sample',
     unique: 99,
   },
   intl: {
