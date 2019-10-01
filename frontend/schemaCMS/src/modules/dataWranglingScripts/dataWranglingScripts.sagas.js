@@ -4,18 +4,20 @@ import { DataWranglingScriptsRoutines } from './dataWranglingScripts.redux';
 import api from '../../shared/services/api';
 import {
   DATA_SOURCE_PATH,
+  DATA_SOURCES_PATH,
   DATA_WRANGLING_JOB_PATH,
   DATA_WRANGLING_SCRIPTS_PATH,
 } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 
 import { selectDataWranglingScripts } from './dataWranglingScripts.selectors';
+import { selectDataSource } from '../dataSource';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.fetchList.request());
 
-    const { data } = yield api.get(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
+    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
 
     yield put(DataWranglingScriptsRoutines.fetchList.success(data));
   } catch (e) {
@@ -25,13 +27,15 @@ function* fetchList({ payload: { dataSourceId } }) {
   }
 }
 
-function* sendList({ payload: { steps, dataSourceId, projectId } }) {
+function* sendList({ payload: { steps, dataSourceId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.sendList.request());
 
     yield api.put(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
 
-    browserHistory.push(`/project/view/${projectId}/datasource/list`);
+    const dataSource = yield select(selectDataSource);
+
+    browserHistory.push(`/project/${dataSource.project}/datasource/`);
     yield put(DataWranglingScriptsRoutines.sendList.success());
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.sendList.failure());
@@ -50,7 +54,7 @@ function* uploadScript({ payload: { script, dataSourceId } }) {
 
     yield api.post(`${DATA_SOURCE_PATH}/${dataSourceId}/script-upload`, formData, { headers });
 
-    yield put(DataWranglingScriptsRoutines.fetchList({ dataSourceId }));
+    yield fetchList({ payload: { dataSourceId } });
     yield put(DataWranglingScriptsRoutines.uploadScript.success());
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.uploadScript.failure());

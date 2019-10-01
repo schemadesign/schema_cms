@@ -10,11 +10,11 @@ exports[`Storyshots Project/View default 1`] = `
   }
 >
   <div
-    className="sc-kpOJdX sc-jnlKLf dwfpe"
+    className="sc-fMiknA sc-jnlKLf dwfpe"
   >
     <div>
       <div
-        className="sc-bdVaJa bDWFJH"
+        className="sc-jWBwVP fDrbnp"
       >
         <div
           style={
@@ -31,7 +31,7 @@ exports[`Storyshots Project/View default 1`] = `
         >
           <div>
             <div
-              className="sc-bwzfXH uTxCW"
+              className="sc-brqgnP SqPLV"
             >
               <h2
                 id="headerTitle"
@@ -123,10 +123,10 @@ exports[`Storyshots Project/View default 1`] = `
           }
         >
           <div
-            className="sc-htpNat KtFsv"
+            className="sc-cMljjf eTbdzc"
           >
             <div
-              className="sc-bwzfXH uTxCW"
+              className="sc-brqgnP SqPLV"
             >
               <h2
                 id="headerTitle"
@@ -159,16 +159,16 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </div>
           <div
-            className="sc-bxivhb fxvYgT"
+            className="sc-jAaTju hWtuUE"
           >
             <ul
-              className="sc-ifAKCX sc-EHOje bVzUGK"
+              className="sc-jDwBTQ sc-gPEVay jbCcVY"
             >
               <li
-                className="sc-gzVnrw sc-htoDjs eSLDrk"
+                className="sc-jlyJG sc-gipzik fENLll"
               >
                 <a
-                  href="/project/view/100/datasource"
+                  href="/project/100/datasource"
                   id={null}
                   onClick={[Function]}
                 >
@@ -177,10 +177,10 @@ exports[`Storyshots Project/View default 1`] = `
               </li>
             </ul>
             <ul
-              className="sc-ifAKCX sc-bZQynM hRyDTQ"
+              className="sc-jDwBTQ sc-iRbamj dmLCIf"
             >
               <li
-                className="sc-gzVnrw sc-dnqmqq fqtgUv"
+                className="sc-jlyJG sc-csuQGl fMumOU"
               >
                 <a
                   href="/project/edit/100"
@@ -191,14 +191,14 @@ exports[`Storyshots Project/View default 1`] = `
                 </a>
               </li>
               <li
-                className="sc-gzVnrw sc-dnqmqq fqtgUv"
+                className="sc-jlyJG sc-csuQGl fMumOU"
                 id={null}
                 onClick={[Function]}
               >
                 Delete Project
               </li>
               <li
-                className="sc-gzVnrw sc-dnqmqq fqtgUv"
+                className="sc-jlyJG sc-csuQGl fMumOU"
               >
                 <a
                   href="/logout"
@@ -559,10 +559,10 @@ exports[`Storyshots Project/View default 1`] = `
       </div>
     </div>
     <div
-      className="sc-kkGfuU cbFdcv"
+      className="sc-Rmtcm kSjUhM"
     >
       <div
-        className="sc-iAyFgw fPviBc"
+        className="sc-bRBYWo kLWJkv"
       >
         <button
           id="addProjectBtn"
@@ -617,11 +617,11 @@ exports[`Storyshots Project/View empty 1`] = `
   }
 >
   <div
-    className="sc-kpOJdX sc-jnlKLf dwfpe"
+    className="sc-fMiknA sc-jnlKLf dwfpe"
   >
     <div>
       <div
-        className="sc-bdVaJa bDWFJH"
+        className="sc-jWBwVP fDrbnp"
       >
         <div
           style={
@@ -638,7 +638,7 @@ exports[`Storyshots Project/View empty 1`] = `
         >
           <div>
             <div
-              className="sc-bwzfXH uTxCW"
+              className="sc-brqgnP SqPLV"
             >
               <h2
                 id="headerTitle"
@@ -728,10 +728,10 @@ exports[`Storyshots Project/View empty 1`] = `
           }
         >
           <div
-            className="sc-htpNat KtFsv"
+            className="sc-cMljjf eTbdzc"
           >
             <div
-              className="sc-bwzfXH uTxCW"
+              className="sc-brqgnP SqPLV"
             >
               <h2
                 id="headerTitle"
@@ -762,16 +762,16 @@ exports[`Storyshots Project/View empty 1`] = `
             </div>
           </div>
           <div
-            className="sc-bxivhb fxvYgT"
+            className="sc-jAaTju hWtuUE"
           >
             <ul
-              className="sc-ifAKCX sc-EHOje bVzUGK"
+              className="sc-jDwBTQ sc-gPEVay jbCcVY"
             />
             <ul
-              className="sc-ifAKCX sc-bZQynM hRyDTQ"
+              className="sc-jDwBTQ sc-iRbamj dmLCIf"
             >
               <li
-                className="sc-gzVnrw sc-dnqmqq fqtgUv"
+                className="sc-jlyJG sc-csuQGl fMumOU"
               >
                 <a
                   href="/logout"
@@ -843,10 +843,10 @@ exports[`Storyshots Project/View empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-kkGfuU cbFdcv"
+      className="sc-Rmtcm kSjUhM"
     >
       <div
-        className="sc-iAyFgw fPviBc"
+        className="sc-bRBYWo kLWJkv"
       >
         <button
           id="addProjectBtn"

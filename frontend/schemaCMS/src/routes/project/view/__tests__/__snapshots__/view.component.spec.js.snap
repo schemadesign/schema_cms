@@ -15,7 +15,7 @@ exports[`View: Component should render correctly 1`] = `
         Array [
           Object {
             "label": "Data Sources",
-            "to": "/project/view/100/datasource",
+            "to": "/project/100/datasource",
           },
         ]
       }
