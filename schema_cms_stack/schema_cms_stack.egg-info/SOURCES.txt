@@ -1,5 +1,4 @@
 README.md
-setup.py
 schema_cms_stack/schema_cms_stack.egg-info/PKG-INFO
 schema_cms_stack/schema_cms_stack.egg-info/SOURCES.txt
 schema_cms_stack/schema_cms_stack.egg-info/dependency_links.txt
