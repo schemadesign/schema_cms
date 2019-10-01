@@ -6,7 +6,6 @@ from aws_cdk import (
     aws_apigateway,
     aws_lambda,
     aws_ecs,
-    aws_iam,
     aws_ecs_patterns,
     aws_rds,
     aws_secretsmanager,
