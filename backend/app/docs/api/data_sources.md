@@ -193,6 +193,94 @@ Content-Type: application/json
 }
 ```
 
+## Get list of available data source scripts
+
+**Request**:
+
+`GET` `/api/v1/datasources/:id/script`
+
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+
+[
+    {
+        "key": "string",
+        "body": "string",
+    },
+]
+```
+
+## Upload data source's script
+
+**Request**:
+
+`POST` `/api/v1/datasources/:id/script-upload`
+
+Parameters:
+
+Name       | Type | Description
+-----------|------|-------------
+script     | file | Python file
+
+
+*Note:*
+
+- Request's content type: `multipart/form-data`
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+201 Created
+```
+
+## Create new data source's job
+
+**Request**:
+
+`POST` `/api/v1/datasources/:id/job`
+
+Parameters:
+
+Name       | Type                   | Description
+-----------|------------------------|------
+steps      | array[[step](#step)]   | List of steps to execute
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+201 Created
+```
+
 
 ## Enums
 Data source statuses: `file`, `database`, `api`
+
+## Structures
+
+#### Step
+
+Name       | Type   | Description
+-----------|--------|---
+key        | string | Path to script
+exec_order | int    | Order of step
