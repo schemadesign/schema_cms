@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DataWranglingResult Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-brqgnP SqPLV"
+  >
+    <div
+      className="sc-fjdhpX jDWzMA"
+    >
+      <table
+        className="sc-jzJRlG dINcDo"
+      >
+        <thead
+          className="sc-cSHVUG CAuLq"
+        >
+          <tr
+            className="sc-chPdSV diRsub"
+          >
+            <th
+              className="sc-kGXeez fKDAzJ"
+            >
+              #
+            </th>
+            <th
+              className="sc-kGXeez fKDAzJ"
+            >
+              First Name
+            </th>
+            <th
+              className="sc-kGXeez fKDAzJ"
+            >
+              Last Name
+            </th>
+            <th
+              className="sc-kGXeez fKDAzJ"
+            >
+              Full Name
+            </th>
+            <th
+              className="sc-kGXeez fKDAzJ"
+            >
+              Birthplace
+            </th>
+            <th
+              className="sc-kGXeez fKDAzJ"
+            >
+              State of Birth
+            </th>
+            <th
+              className="sc-kGXeez fKDAzJ"
+            >
+              Birthday
+            </th>
+            <th
+              className="sc-kGXeez fKDAzJ"
+            >
+              Url
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className="sc-kAzzGY jHprQs"
+        >
+          <tr
+            className="sc-chPdSV diRsub"
+          >
+            <td
+              className="sc-kpOJdX dRxKnY"
+            >
+              1
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              George
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Washington
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              George Washington
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Westmoreland County
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              VA
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              02/22/1732
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-chPdSV diRsub"
+          >
+            <td
+              className="sc-kpOJdX dRxKnY"
+            >
+              2
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              John
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Adams
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              John Adams
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Braintree
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              MA
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              10/30/1735
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-chPdSV diRsub"
+          >
+            <td
+              className="sc-kpOJdX dRxKnY"
+            >
+              3
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Thomas
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Jefferson
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Thomas Jefferson
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Shadwell
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              VA
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              04/13/1743
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-chPdSV diRsub"
+          >
+            <td
+              className="sc-kpOJdX dRxKnY"
+            >
+              4
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              James
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Madison
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              James Madison
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Port Conway
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              VA
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              03/16/1751
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-chPdSV diRsub"
+          >
+            <td
+              className="sc-kpOJdX dRxKnY"
+            >
+              5
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              James
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Monroe
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              James Monroe
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              Monroe Hall
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              VA
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              04/28/1758
+            </td>
+            <td
+              className="sc-kgoBCf fLnRdo"
+            >
+              some.url.com
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;

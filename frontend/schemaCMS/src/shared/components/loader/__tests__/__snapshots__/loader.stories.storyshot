@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components/Loader Default 1`] = `
+exports[`Storyshots Shared Components|Loader Default 1`] = `
 <div
-  className="sc-jDwBTQ fBuYTX"
+  className="sc-jTzLTM gQzRmK"
 >
   <span>
     Loading...

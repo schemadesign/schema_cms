@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: calc(100% - 50px);
+`;
 
 export const HeaderWrapper = styled.div``;
 

@@ -93,7 +93,7 @@ export class Create extends PureComponent {
               <FormattedMessage {...messages.cancel} />
             </BackButton>
             <NextButton>
-              <FormattedMessage {...messages.submit} />
+              <FormattedMessage {...messages.finish} />
             </NextButton>
           </NavigationContainer>
         </Form>

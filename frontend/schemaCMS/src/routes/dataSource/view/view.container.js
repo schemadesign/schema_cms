@@ -7,12 +7,14 @@ import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 
 import { View } from './view.component';
-import { DataSourceRoutines, selectDataSource } from '../../../modules/dataSource';
+import { DataSourceRoutines, selectDataSource, selectFields, selectPreviewTable } from '../../../modules/dataSource';
 import { DataWranglingScriptsRoutines, selectDataWranglingScripts } from '../../../modules/dataWranglingScripts';
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
   dataWranglingScripts: selectDataWranglingScripts,
+  fields: selectFields,
+  previewTable: selectPreviewTable,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -25,6 +27,8 @@ export const mapDispatchToProps = dispatch => ({
       fetchDataWranglingScripts: promisifyRoutine(DataWranglingScriptsRoutines.fetchList),
       uploadScript: promisifyRoutine(DataWranglingScriptsRoutines.uploadScript),
       sendUpdatedDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.sendList),
+      fetchFields: promisifyRoutine(DataSourceRoutines.fetchFields),
+      unmountFields: promisifyRoutine(DataSourceRoutines.unmountFields),
     },
     dispatch
   ),

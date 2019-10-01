@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots FieldDetail Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-dxgOiQ hTjMfW"
+  >
+    <ul
+      className="sc-ckVGcZ hWcWGF"
+    >
+      <li
+        className="sc-jKJlTe dmtBaa"
+      >
+        <span
+          className="sc-hMqMXs gxpjxh"
+        >
+          Field
+        </span>
+        <span
+          className="sc-kEYyzF bmIYsM"
+        >
+          firstName
+        </span>
+      </li>
+      <li
+        className="sc-jKJlTe dmtBaa"
+      >
+        <span
+          className="sc-hMqMXs gxpjxh"
+        >
+          Sample
+        </span>
+        <span
+          className="sc-kEYyzF bmIYsM"
+        >
+          Sample
+        </span>
+      </li>
+      <li
+        className="sc-jKJlTe dmtBaa"
+      >
+        <span
+          className="sc-hMqMXs gxpjxh"
+        >
+          Type
+        </span>
+        <span
+          className="sc-kEYyzF bmIYsM"
+        >
+          Text
+        </span>
+      </li>
+      <li
+        className="sc-jKJlTe sc-eNQAEJ frguPL"
+      >
+        <span
+          className="sc-hMqMXs gxpjxh"
+        >
+          Total Count (N)
+        </span>
+        <span
+          className="sc-kEYyzF bmIYsM"
+        >
+          127
+        </span>
+      </li>
+      <li
+        className="sc-jKJlTe sc-eNQAEJ frguPL"
+      >
+        <span
+          className="sc-hMqMXs gxpjxh"
+        >
+          Unique
+        </span>
+        <span
+          className="sc-kEYyzF bmIYsM"
+        >
+          99
+        </span>
+      </li>
+      <li
+        className="sc-jKJlTe sc-eNQAEJ frguPL"
+      >
+        <span
+          className="sc-hMqMXs gxpjxh"
+        >
+          Mean
+        </span>
+        <span
+          className="sc-kEYyzF bmIYsM"
+        >
+          4
+        </span>
+      </li>
+      <li
+        className="sc-jKJlTe sc-eNQAEJ frguPL"
+      >
+        <span
+          className="sc-hMqMXs gxpjxh"
+        >
+          Min
+        </span>
+        <span
+          className="sc-kEYyzF bmIYsM"
+        >
+          1
+        </span>
+      </li>
+      <li
+        className="sc-jKJlTe sc-eNQAEJ frguPL"
+      >
+        <span
+          className="sc-hMqMXs gxpjxh"
+        >
+          Max
+        </span>
+        <span
+          className="sc-kEYyzF bmIYsM"
+        >
+          100
+        </span>
+      </li>
+      <li
+        className="sc-jKJlTe sc-eNQAEJ frguPL"
+      >
+        <span
+          className="sc-hMqMXs gxpjxh"
+        >
+          Std. Dev.
+        </span>
+        <span
+          className="sc-kEYyzF bmIYsM"
+        >
+          23.0332
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

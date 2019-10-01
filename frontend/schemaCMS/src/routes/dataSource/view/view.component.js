@@ -1,24 +1,22 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Stepper } from 'schemaUI';
 import { always, cond, equals, T } from 'ramda';
-import { FormattedMessage } from 'react-intl';
 
-import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from './view.styles';
+import { Container } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
-import { Fields } from './fields';
-import { DataWranglingScripts } from '../../dataWranglingScripts';
+import { DataPreview } from '../../../shared/components/dataPreview';
+import { DataWranglingScripts } from './dataWranglingScripts';
+import { DataWranglingResult } from '../../dataWranglingResult';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
 import {
   DATA_WRANGLING_STEP,
+  DATA_WRANGLING_RESULT_STEP,
   FIELDS_STEP,
   INITIAL_STEP,
-  MAX_STEPS,
   STATUS_DRAFT,
 } from '../../../modules/dataSource/dataSource.constants';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -36,7 +34,6 @@ export class View extends PureComponent {
     }),
     match: PropTypes.shape({
       params: PropTypes.shape({
-        projectId: PropTypes.string.isRequired,
         dataSourceId: PropTypes.string.isRequired,
         step: PropTypes.string.isRequired,
       }).isRequired,
@@ -45,9 +42,9 @@ export class View extends PureComponent {
 
   componentDidMount() {
     if (!this.props.dataSource.id) {
-      const { projectId, dataSourceId } = this.props.match.params;
+      const { dataSourceId } = this.props.match.params;
 
-      this.props.fetchDataSource({ projectId, dataSourceId });
+      this.props.fetchDataSource({ dataSourceId });
     }
   }
 
@@ -59,6 +56,7 @@ export class View extends PureComponent {
     [equals(INITIAL_STEP), always(this.props.intl.formatMessage(messages.source))],
     [equals(FIELDS_STEP), always(this.props.intl.formatMessage(messages.fields))],
     [equals(DATA_WRANGLING_STEP), always(this.props.intl.formatMessage(messages.dataWrangling))],
+    [equals(DATA_WRANGLING_RESULT_STEP), always(this.props.intl.formatMessage(messages.dataWranglingResult))],
     [T, always(null)],
   ]);
 
@@ -67,10 +65,12 @@ export class View extends PureComponent {
 
   getHeaderAndMenuConfig = (intl, activeStep) => {
     const headerTitle = this.getTitle(intl);
+    const projectId = this.props.dataSource.project;
+
     const secondaryMenuItems = [
       {
         label: this.props.intl.formatMessage(messages.dataSourceList),
-        to: `/project/view/${this.props.match.params.projectId}/datasource/list`,
+        to: `/project/${projectId}/datasource/`,
       },
       {
         label: this.props.intl.formatMessage(messages.removeDataSource),
@@ -85,46 +85,12 @@ export class View extends PureComponent {
     };
   };
 
-  submitForm = null;
-
-  bindSubmitForm = submitForm => {
-    this.submitForm = submitForm;
-  };
-
-  handleNextClick = () => {
-    if (this.submitForm) {
-      return this.submitForm();
-    }
-
-    return this.handleStepChange(parseInt(this.props.match.params.step, 10) + 1);
-  };
-
-  handleStepChange = step => {
-    const {
-      history,
-      match: {
-        params: { projectId, dataSourceId },
-      },
-    } = this.props;
-
-    if (step < 1) {
-      return this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
-    }
-
-    return history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
-  };
-
-  handleBackClick = () => this.handleStepChange(parseInt(this.props.match.params.step, 10) - 1);
-
-  handleCancelClick = () =>
-    this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
-
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
-      [equals(INITIAL_STEP), always(<Source bindSubmitForm={this.bindSubmitForm} {...props} />)],
-      [equals(FIELDS_STEP), always(<Fields {...props} />)],
-      [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts bindSubmitForm={this.bindSubmitForm} {...props} />)],
-      [equals(4), always(null)],
+      [equals(INITIAL_STEP), always(<Source {...props} />)],
+      [equals(FIELDS_STEP), always(<DataPreview {...props} />)],
+      [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts {...props} />)],
+      [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],
       [equals(5), always(null)],
       [equals(6), always(null)],
       [T, always(null)],
@@ -140,9 +106,6 @@ export class View extends PureComponent {
     } = this.props;
     const activeStep = parseInt(step, 10);
     const topHeaderConfig = this.getHeaderAndMenuConfig(intl, activeStep);
-    const customStepperStyles =
-      dataSource.status === STATUS_DRAFT ? { ...stepperStyles, ...stepperBlockStyles } : stepperStyles;
-    this.submitForm = null;
 
     return (
       <Fragment>
@@ -153,21 +116,6 @@ export class View extends PureComponent {
           dataSource,
           ...this.props,
         })}
-
-        <NavigationContainer>
-          <BackButton onClick={this.handleBackClick}>
-            <FormattedMessage {...messages.back} values={{ cancel: activeStep === INITIAL_STEP }} />
-          </BackButton>
-          <NextButton onClick={this.handleNextClick} />
-          <StepperContainer>
-            <Stepper
-              activeStep={activeStep}
-              steps={MAX_STEPS}
-              customStyles={customStepperStyles}
-              onStepChange={this.handleStepChange}
-            />
-          </StepperContainer>
-        </NavigationContainer>
       </Fragment>
     );
   });

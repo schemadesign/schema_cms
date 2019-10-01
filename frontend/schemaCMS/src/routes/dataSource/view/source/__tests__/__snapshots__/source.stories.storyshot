@@ -1,141 +1,200 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
+exports[`Storyshots DataSource/View/Source Default 1`] = `
 <div
-  className="sc-fAjcbJ byigni"
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
 >
   <div
-    className="sc-caSCKo jjNSwx"
+    className="sc-iwsKbI jQhHGA"
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
+      className="sc-gZMcBi giNnHm"
     >
-      <label
-        htmlFor="name"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "1px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Name
-      </label>
-      <input
-        id="name"
-        name="name"
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontSize": "18px",
-            "lineHeight": "24px",
-            "outline": "none",
-          }
-        }
-        type="text"
-        value=""
-      />
       <div
         style={
           Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          }
-        }
-      />
-    </div>
-  </div>
-  <label
-    style={
-      Object {
-        "border": "none",
-        "borderTop": "1px solid #2F2F36",
-        "color": "#71737e",
-        "display": "block",
-        "fontSize": "14px",
-        "marginBottom": 20,
-        "outline": "none",
-        "paddingTop": "8px",
-        "width": "100%",
-      }
-    }
-  >
-    <span>
-      Source
-    </span>
-  </label>
-  <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "row",
-        "marginBottom": "40px",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "color": "#FFF",
-          "display": "flex",
-          "flexDirection": "column",
-          "textAlign": "center",
-        }
-      }
-    >
-      <input
-        aria-hidden={true}
-        defaultChecked={false}
-        id="file"
-        name="type"
-        onChange={[Function]}
-        style={
-          Object {
-            "height": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "top": 0,
-            "visibility": "hidden",
-          }
-        }
-        type="radio"
-        value="file"
-      />
-      <label
-        htmlFor="file"
-        style={
-          Object {
-            "alignItems": "center",
-            "cursor": "pointer",
             "display": "flex",
             "flexDirection": "column",
-            "width": 96,
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
           }
         }
       >
-        <button
+        <label
+          htmlFor="name"
           style={
             Object {
-              "background": "#1d1d20",
+              "border": "none",
+              "borderTop": "1px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+            }
+          }
+          type="text"
+          value=""
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "1px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "marginBottom": 20,
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      <span>
+        Source
+      </span>
+    </label>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "marginBottom": "40px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "column",
+            "textAlign": "center",
+          }
+        }
+      >
+        <input
+          aria-hidden={true}
+          defaultChecked={false}
+          id="file"
+          name="type"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="radio"
+          value="file"
+        />
+        <label
+          htmlFor="file"
+          style={
+            Object {
+              "alignItems": "center",
+              "cursor": "pointer",
+              "display": "flex",
+              "flexDirection": "column",
+              "width": 96,
+            }
+          }
+        >
+          <button
+            style={
+              Object {
+                "background": "#1d1d20",
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": 96,
+                "margin": "0",
+                "marginBottom": 10,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "pointerEvents": "none",
+                "width": 96,
+              }
+            }
+            type="button"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </label>
+        Spreadsheet
+      </div>
+    </div>
+    <div
+      className="sc-htoDjs iUYJOx"
+    >
+      <div
+        className="sc-dnqmqq jpGIQI"
+      >
+        <button
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
               "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
@@ -144,36 +203,145 @@ exports[`Storyshots Project/DataSource/View/Source Default 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "height": 96,
               "margin": "0",
-              "marginBottom": 10,
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "pointerEvents": "none",
-              "width": 96,
+              "width": "calc(50% - 5px)",
             }
           }
-          type="button"
         >
-          <svg
+          <span>
+            Cancel
+          </span>
+        </button>
+        <button
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginLeft": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
+        >
+          <span>
+            Next
+          </span>
+        </button>
+        <div
+          className="sc-gzVnrw bMUaYY"
+        >
+          <div
             style={
               Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "display": "flex",
+                "flexDirection": "row",
+                "margin": "0 auto",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-              fillRule="evenodd"
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "borderRadius": "50%",
+                  "cursor": "default",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "pointerEvents": "none",
+                  "width": "12px",
+                }
+              }
             />
-          </svg>
-        </button>
-      </label>
-      Spreadsheet
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

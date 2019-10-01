@@ -29,6 +29,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
     error_log = serializers.SerializerMethodField()
+    project = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = DataSource
@@ -43,7 +44,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "created",
             "meta_data",
             "error_log",
+            "project",
         )
+
         extra_kwargs = {
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},

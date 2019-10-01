@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Navigation BackArrowButton 1`] = `
+exports[`Storyshots Shared Components|Navigation BackArrowButton 1`] = `
 <div
   style={
     Object {
@@ -47,7 +47,7 @@ exports[`Storyshots Navigation BackArrowButton 1`] = `
 </div>
 `;
 
-exports[`Storyshots Navigation BackButton 1`] = `
+exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
 <div
   style={
     Object {
@@ -57,6 +57,7 @@ exports[`Storyshots Navigation BackButton 1`] = `
   }
 >
   <button
+    disabled={false}
     style={
       Object {
         "backgroundColor": "#1d1d20",
@@ -83,7 +84,7 @@ exports[`Storyshots Navigation BackButton 1`] = `
 </div>
 `;
 
-exports[`Storyshots Navigation NavigationContainer 1`] = `
+exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
 <div
   style={
     Object {
@@ -93,10 +94,10 @@ exports[`Storyshots Navigation NavigationContainer 1`] = `
   }
 >
   <div
-    className="sc-kkGfuU cbFdcv"
+    className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-iAyFgw dIxqGD"
+      className="sc-dnqmqq BDAcl"
     >
       <button
         style={
@@ -138,7 +139,7 @@ exports[`Storyshots Navigation NavigationContainer 1`] = `
 </div>
 `;
 
-exports[`Storyshots Navigation NextButton 1`] = `
+exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
 <div
   style={
     Object {
@@ -174,7 +175,7 @@ exports[`Storyshots Navigation NextButton 1`] = `
 </div>
 `;
 
-exports[`Storyshots Navigation PlusButton 1`] = `
+exports[`Storyshots Shared Components|Navigation PlusButton 1`] = `
 <div
   style={
     Object {
@@ -186,10 +187,10 @@ exports[`Storyshots Navigation PlusButton 1`] = `
   <button
     style={
       Object {
-        "backgroundColor": "#1d1d20",
+        "backgroundColor": "#FFF",
         "border": "none",
         "borderRadius": "48px",
-        "color": "#FFF",
+        "color": "#000",
         "cursor": "pointer",
         "display": "inline-block",
         "fill": "#FFF",
@@ -206,7 +207,7 @@ exports[`Storyshots Navigation PlusButton 1`] = `
     <svg
       style={
         Object {
-          "fill": "#FFF",
+          "fill": "#000",
           "height": "60px",
           "width": "60px",
         }

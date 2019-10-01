@@ -4,30 +4,14 @@ exports[`DataSource: Component should render correctly 1`] = `
 <Switch>
   <Redirect
     exact={true}
-    path="path"
+    path="path/:dataSourceId"
     push={false}
-    to="path/list"
-  />
-  <Redirect
-    exact={true}
-    path="path/view/:dataSourceId"
-    push={false}
-    to="path/view/:dataSourceId/1"
+    to="path/:dataSourceId/1"
   />
   <Route
     component={[Function]}
     exact={true}
-    path="path/list"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="path/view/:dataSourceId/:step"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="path/view/:dataSourceId/script/view/:scriptId"
+    path="path/:dataSourceId/:step"
   />
 </Switch>
 `;
