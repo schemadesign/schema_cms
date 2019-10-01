@@ -3,15 +3,15 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   pageTitle: {
-    id: 'project.dataSource.fields.pageTitle',
+    id: 'shared.components.dataPreview.pageTitle',
     defaultMessage: 'Fields',
   },
   fields: {
-    id: 'project.dataSource.fields.navigation.fields',
+    id: 'shared.components.dataPreview.fields',
     defaultMessage: '{countFields} {countFields, plural,one {Field} other {Fields}}',
   },
   ofFields: {
-    id: 'project.dataSource.fields.navigation.ofFields',
+    id: 'shared.components.dataPreview.ofFields',
     defaultMessage: '{step} of {countFields} {countFields, plural, one {Field} other {Fields}}',
   },
 });

@@ -117,5 +117,41 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       </Styled(Link)>
     </Component>
   </Component>
+  <StepNavigation
+    bindSubmitForm={[Function]}
+    dataSource={
+      Object {
+        "status": "done",
+      }
+    }
+    dataWranglingScripts={
+      Array [
+        Object {
+          "key": "name 1",
+        },
+        Object {
+          "key": "name 2",
+        },
+      ]
+    }
+    fetchDataWranglingScripts={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+        },
+        "url": "/datasource/14/3",
+      }
+    }
+    sendUpdatedDataWranglingScript={[Function]}
+    submitForm={[Function]}
+    uploadScript={[Function]}
+  />
 </ContextProvider>
 `;

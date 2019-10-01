@@ -442,10 +442,10 @@ exports[`Storyshots DataSource/List Default 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#1d1d20",
+              "backgroundColor": "#FFF",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#FFF",
+              "color": "#000",
               "cursor": "pointer",
               "display": "inline-block",
               "fill": "#FFF",
@@ -462,7 +462,7 @@ exports[`Storyshots DataSource/List Default 1`] = `
           <svg
             style={
               Object {
-                "fill": "#FFF",
+                "fill": "#000",
                 "height": "60px",
                 "width": "60px",
               }

@@ -22,71 +22,71 @@ import {
 
 export default defineMessages({
   [FIELD]: {
-    id: `project.dataSource.fields.details.${FIELD}`,
+    id: `shared.components.fieldDetail.details.${FIELD}`,
     defaultMessage: 'Field',
   },
   [SAMPLE]: {
-    id: `project.dataSource.fields.details.${SAMPLE}`,
+    id: `shared.components.fieldDetail.${SAMPLE}`,
     defaultMessage: 'Sample',
   },
   [NAME]: {
-    id: `project.dataSource.fields.details.${NAME}`,
+    id: `shared.components.fieldDetail.${NAME}`,
     defaultMessage: 'Field Name',
   },
   [TYPE]: {
-    id: `project.dataSource.fields.details.${TYPE}`,
+    id: `shared.components.fieldDetail.${TYPE}`,
     defaultMessage: 'Type',
   },
   [COUNT]: {
-    id: `project.dataSource.fields.details.${COUNT}`,
+    id: `shared.components.fieldDetail.${COUNT}`,
     defaultMessage: 'Total Count (N)',
   },
   [BLANK]: {
-    id: `project.dataSource.fields.details.${BLANK}`,
+    id: `shared.components.fieldDetail.${BLANK}`,
     defaultMessage: 'Blank + NaN',
   },
   [UNIQUE]: {
-    id: `project.dataSource.fields.details.${UNIQUE}`,
+    id: `shared.components.fieldDetail.${UNIQUE}`,
     defaultMessage: 'Unique',
   },
   [SUM]: {
-    id: `project.dataSource.fields.details.${SUM}`,
+    id: `shared.components.fieldDetail.${SUM}`,
     defaultMessage: 'Total Sum',
   },
   [MEAN]: {
-    id: `project.dataSource.fields.details.${MEAN}`,
+    id: `shared.components.fieldDetail.${MEAN}`,
     defaultMessage: 'Mean',
   },
   [MIN]: {
-    id: `project.dataSource.fields.details.${MIN}`,
+    id: `shared.components.fieldDetail.${MIN}`,
     defaultMessage: 'Min',
   },
   [MAX]: {
-    id: `project.dataSource.fields.details.${MAX}`,
+    id: `shared.components.fieldDetail.${MAX}`,
     defaultMessage: 'Max',
   },
   [STD]: {
-    id: `project.dataSource.fields.details.${STD}`,
+    id: `shared.components.fieldDetail.${STD}`,
     defaultMessage: 'Std. Dev.',
   },
   [MEDIAN]: {
-    id: `project.dataSource.fields.details.${MEDIAN}`,
+    id: `shared.components.fieldDetail.${MEDIAN}`,
     defaultMessage: 'Median',
   },
   [PERCENTILE_10]: {
-    id: `project.dataSource.fields.details.${PERCENTILE_10}`,
+    id: `shared.components.fieldDetail.${PERCENTILE_10}`,
     defaultMessage: '10th Percentile',
   },
   [PERCENTILE_25]: {
-    id: `project.dataSource.fields.details.${PERCENTILE_25}`,
+    id: `shared.components.fieldDetail.${PERCENTILE_25}`,
     defaultMessage: '25th Percentile',
   },
   [PERCENTILE_75]: {
-    id: `project.dataSource.fields.details.${PERCENTILE_75}`,
+    id: `shared.components.fieldDetail.${PERCENTILE_75}`,
     defaultMessage: '75th Percentile',
   },
   [PERCENTILE_90]: {
-    id: `project.dataSource.fields.details.${PERCENTILE_90}`,
+    id: `shared.components.fieldDetail.${PERCENTILE_90}`,
     defaultMessage: '90th Percentile',
   },
 });

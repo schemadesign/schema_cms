@@ -42,6 +42,7 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
+          "fillInverse": "#FFF",
         },
         "input": Object {
           "text": "#000",

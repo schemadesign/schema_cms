@@ -73,6 +73,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
+          "fillInverse": "#FFF",
         },
         "input": Object {
           "text": "#000",
@@ -206,6 +207,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "icon": Object {
             "background": "#f0efef",
             "fill": "#1d1d20",
+            "fillInverse": "#FFF",
           },
           "input": Object {
             "text": "#000",
@@ -390,6 +392,7 @@ exports[`App: Component should render App when language is set 1`] = `
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
+          "fillInverse": "#FFF",
         },
         "input": Object {
           "text": "#000",
@@ -523,6 +526,7 @@ exports[`App: Component should render App when language is set 1`] = `
           "icon": Object {
             "background": "#f0efef",
             "fill": "#1d1d20",
+            "fillInverse": "#FFF",
           },
           "input": Object {
             "text": "#000",

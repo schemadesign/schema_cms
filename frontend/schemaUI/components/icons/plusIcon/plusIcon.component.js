@@ -8,11 +8,16 @@ import { withStyles } from '../../styles/withStyles';
 export class PlusIconComponent extends PureComponent {
   static propTypes = {
     customStyles: PropTypes.object,
+    inverse: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    inverse: false,
   };
 
   render() {
-    const { customStyles, theme, ...restProps } = this.props;
-    const containerStyles = getStyles(theme);
+    const { customStyles, theme, inverse, ...restProps } = this.props;
+    const containerStyles = getStyles(theme, inverse);
     const styles = { ...containerStyles, ...customStyles };
 
     return <PlusSVG {...restProps} style={styles} />;

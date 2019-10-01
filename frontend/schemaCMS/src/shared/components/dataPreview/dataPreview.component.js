@@ -17,6 +17,7 @@ import {
   buttonStyles,
   arrowStyles,
 } from './dataPreview.styles';
+import { StepNavigation } from '../stepNavigation';
 
 const INITIAL_STEP = 0;
 
@@ -141,6 +142,7 @@ export default class DataPreview extends PureComponent {
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         {content}
+        <StepNavigation {...this.props} />
       </Container>
     );
   }

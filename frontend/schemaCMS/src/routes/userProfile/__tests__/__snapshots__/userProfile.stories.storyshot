@@ -5,7 +5,7 @@ exports[`Storyshots UserProfile Default 1`] = `
   className="sc-lhVmIH iBkPsG"
 >
   <div
-    className="sc-jWBwVP vnAxw"
+    className="sc-cMljjf cduCgM"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     >
       <div>
         <div
-          className="sc-brqgnP SqPLV"
+          className="sc-jAaTju fNCBho"
         >
           <h2
             id="headerTitle"
@@ -114,10 +114,10 @@ exports[`Storyshots UserProfile Default 1`] = `
       }
     >
       <div
-        className="sc-cMljjf eTbdzc"
+        className="sc-jDwBTQ dWtMUn"
       >
         <div
-          className="sc-brqgnP SqPLV"
+          className="sc-jAaTju fNCBho"
         >
           <h2
             id="headerTitle"
@@ -150,13 +150,13 @@ exports[`Storyshots UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-jAaTju hWtuUE"
+        className="sc-gPEVay hRSMsP"
       >
         <ul
-          className="sc-jDwBTQ sc-gPEVay jbCcVY"
+          className="sc-iRbamj sc-jlyJG ejGYJz"
         />
         <ul
-          className="sc-jDwBTQ sc-iRbamj dmLCIf"
+          className="sc-iRbamj sc-gipzik HrPVR"
         />
       </div>
       <button
@@ -205,7 +205,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="sc-htoDjs bZzhDu"
+      className="sc-gZMcBi giNnHm"
     >
       <div
         style={
@@ -264,7 +264,7 @@ exports[`Storyshots UserProfile Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-htoDjs bZzhDu"
+      className="sc-gZMcBi giNnHm"
     >
       <div
         style={
@@ -323,7 +323,7 @@ exports[`Storyshots UserProfile Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-htoDjs bZzhDu"
+      className="sc-gZMcBi giNnHm"
     >
       <div
         style={

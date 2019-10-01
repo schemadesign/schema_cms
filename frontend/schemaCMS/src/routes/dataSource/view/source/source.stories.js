@@ -10,6 +10,9 @@ export const defaultProps = {
   theme: Theme.dark,
   bindSubmitForm: Function.prototype,
   updateDataSource: Function.prototype,
+  history: {
+    push: Function.prototype,
+  },
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
