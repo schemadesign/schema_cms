@@ -103,7 +103,7 @@ describe('DataSource: sagas', () => {
     });
 
     it('should dispatch once fulfill actions after cancel', async () => {
-      mockApi.get(`${DATA_SOURCES_PATH}`).reply(OK, responseData);
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)

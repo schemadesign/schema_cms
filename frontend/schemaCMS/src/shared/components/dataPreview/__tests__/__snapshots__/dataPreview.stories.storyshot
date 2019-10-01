@@ -1,0 +1,393 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DataSource/View/Fields Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#FFF",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-kEYyzF gfWKdx"
+  >
+    <div
+      className="sc-eHgmQL gmKbQu"
+    >
+      <div
+        className="sc-kkGfuU jdyJOb"
+      >
+        <div
+          className="sc-iAyFgw jsohfA"
+        >
+          <button
+            disabled={true}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#f0efef",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#1d1d20",
+                "fontSize": "18px",
+                "height": 60,
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": 60,
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#1d1d20",
+                  "height": "60px",
+                  "opacity": 0.3,
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="sc-hSdWYo hJTCBl"
+        >
+          {countFields} {countFields, plural,one {Field} other {Fields}}
+        </div>
+        <div
+          className="sc-iAyFgw jsohfA"
+        >
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#f0efef",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#1d1d20",
+                "fontSize": "18px",
+                "height": 60,
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": 60,
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#1d1d20",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M34.143 17L32 19.083 41.172 28H15v3h26.172L32 39.917 34.143 42 47 29.5 34.143 17z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className="sc-VigVT imEBlk"
+      >
+        <table
+          className="sc-jTzLTM UCMMg"
+        >
+          <thead
+            className="sc-fjdhpX nsimD"
+          >
+            <tr
+              className="sc-cSHVUG fDSmHs"
+            >
+              <th
+                className="sc-chPdSV djqaRD"
+              >
+                #
+              </th>
+              <th
+                className="sc-chPdSV djqaRD"
+              >
+                First Name
+              </th>
+              <th
+                className="sc-chPdSV djqaRD"
+              >
+                Last Name
+              </th>
+              <th
+                className="sc-chPdSV djqaRD"
+              >
+                Full Name
+              </th>
+              <th
+                className="sc-chPdSV djqaRD"
+              >
+                Birthplace
+              </th>
+              <th
+                className="sc-chPdSV djqaRD"
+              >
+                State of Birth
+              </th>
+              <th
+                className="sc-chPdSV djqaRD"
+              >
+                Birthday
+              </th>
+              <th
+                className="sc-chPdSV djqaRD"
+              >
+                Url
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            className="sc-jzJRlG enxKql"
+          >
+            <tr
+              className="sc-cSHVUG fDSmHs"
+            >
+              <td
+                className="sc-kgoBCf hGYZJh"
+              >
+                1
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                George
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Washington
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                George Washington
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Westmoreland County
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                VA
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                02/22/1732
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                some.url.com
+              </td>
+            </tr>
+            <tr
+              className="sc-cSHVUG fDSmHs"
+            >
+              <td
+                className="sc-kgoBCf hGYZJh"
+              >
+                2
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                John
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Adams
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                John Adams
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Braintree
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                MA
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                10/30/1735
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                some.url.com
+              </td>
+            </tr>
+            <tr
+              className="sc-cSHVUG fDSmHs"
+            >
+              <td
+                className="sc-kgoBCf hGYZJh"
+              >
+                3
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Thomas
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Jefferson
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Thomas Jefferson
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Shadwell
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                VA
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                04/13/1743
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                some.url.com
+              </td>
+            </tr>
+            <tr
+              className="sc-cSHVUG fDSmHs"
+            >
+              <td
+                className="sc-kgoBCf hGYZJh"
+              >
+                4
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                James
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Madison
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                James Madison
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Port Conway
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                VA
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                03/16/1751
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                some.url.com
+              </td>
+            </tr>
+            <tr
+              className="sc-cSHVUG fDSmHs"
+            >
+              <td
+                className="sc-kgoBCf hGYZJh"
+              >
+                5
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                James
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Monroe
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                James Monroe
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                Monroe Hall
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                VA
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                04/28/1758
+              </td>
+              <td
+                className="sc-kAzzGY hzLOmB"
+              >
+                some.url.com
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
