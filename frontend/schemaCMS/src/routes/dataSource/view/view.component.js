@@ -71,7 +71,7 @@ export class View extends PureComponent {
     const secondaryMenuItems = [
       {
         label: this.props.intl.formatMessage(messages.dataSourceList),
-        to: `/project/view/${projectId}/datasource/list`,
+        to: `/project/${projectId}/datasource/`,
       },
       {
         label: this.props.intl.formatMessage(messages.removeDataSource),
@@ -109,7 +109,7 @@ export class View extends PureComponent {
     } = this.props;
 
     if (step < 1) {
-      return this.props.history.push(`${this.props.dataSource.project}/datasource/`);
+      return this.props.history.push(`/project/${this.props.dataSource.project}/datasource/`);
     }
 
     return history.push(`/datasource/${dataSourceId}/${step}`);

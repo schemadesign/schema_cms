@@ -9,7 +9,7 @@ exports[`View: Component should not render any step 1`] = `
       Array [
         Object {
           "label": "Data source list",
-          "to": "/project/view/undefined/datasource/list",
+          "to": "/project/1/datasource/",
         },
         Object {
           "label": "Remove Data Source",
@@ -64,7 +64,7 @@ exports[`View: Component should render draft 1`] = `
       Array [
         Object {
           "label": "Data source list",
-          "to": "/project/view/undefined/datasource/list",
+          "to": "/project/1/datasource/",
         },
         Object {
           "label": "Remove Data Source",
@@ -78,6 +78,7 @@ exports[`View: Component should render draft 1`] = `
     dataSource={
       Object {
         "id": "id",
+        "project": "1",
         "status": "draft",
       }
     }
@@ -99,10 +100,8 @@ exports[`View: Component should render draft 1`] = `
       Object {
         "params": Object {
           "dataSourceId": "1",
-          "projectId": "1",
           "step": "1",
         },
-        "url": "/project/view/1/datasource/view/1/1",
       }
     }
     removeDataSource={[Function]}
@@ -157,7 +156,7 @@ exports[`View: Component should render second step 1`] = `
       Array [
         Object {
           "label": "Data source list",
-          "to": "/project/view/undefined/datasource/list",
+          "to": "/project/1/datasource/",
         },
         Object {
           "label": "Remove Data Source",
@@ -172,6 +171,7 @@ exports[`View: Component should render second step 1`] = `
       Object {
         "id": "id",
         "name": "name",
+        "project": "1",
         "step": "2",
       }
     }
@@ -193,10 +193,8 @@ exports[`View: Component should render second step 1`] = `
       Object {
         "params": Object {
           "dataSourceId": "1",
-          "projectId": "1",
           "step": "1",
         },
-        "url": "/project/view/1/datasource/view/1/1",
       }
     }
     removeDataSource={[Function]}
@@ -250,7 +248,7 @@ exports[`View: Component should render source step 1`] = `
       Array [
         Object {
           "label": "Data source list",
-          "to": "/project/view/undefined/datasource/list",
+          "to": "/project/1/datasource/",
         },
         Object {
           "label": "Remove Data Source",
@@ -265,6 +263,7 @@ exports[`View: Component should render source step 1`] = `
       Object {
         "id": "id",
         "name": "name",
+        "project": "1",
       }
     }
     dataWranglingScripts={Array []}
@@ -285,10 +284,8 @@ exports[`View: Component should render source step 1`] = `
       Object {
         "params": Object {
           "dataSourceId": "1",
-          "projectId": "1",
           "step": "1",
         },
-        "url": "/project/view/1/datasource/view/1/1",
       }
     }
     removeDataSource={[Function]}

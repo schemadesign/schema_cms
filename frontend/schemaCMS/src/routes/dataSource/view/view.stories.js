@@ -4,7 +4,9 @@ import { storiesOf } from '@storybook/react';
 import { View } from './view.component';
 
 export const defaultProps = {
-  dataSource: {},
+  dataSource: {
+    project: '1',
+  },
   dataWranglingScripts: [],
   fetchFields: Function.prototype,
   unmountFields: Function.prototype,
@@ -23,11 +25,9 @@ export const defaultProps = {
   },
   match: {
     params: {
-      projectId: '1',
       dataSourceId: '1',
       step: '1',
     },
-    url: '/project/view/1/datasource/view/1/1',
   },
 };
 
