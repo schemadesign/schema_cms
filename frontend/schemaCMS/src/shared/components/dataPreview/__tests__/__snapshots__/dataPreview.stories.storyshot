@@ -421,6 +421,7 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
           </span>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {

@@ -134,12 +134,19 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         },
       ]
     }
+    disabled={
+      Object {
+        "back": false,
+        "next": false,
+      }
+    }
     fetchDataWranglingScripts={[Function]}
     history={
       Object {
         "push": [Function],
       }
     }
+    loading={false}
     match={
       Object {
         "params": Object {

@@ -5,6 +5,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   locale="en"
 >
   <SourceComponent
+    bindSetNextDisabling={[Function]}
     bindSubmitForm={[Function]}
     dataSource={Object {}}
     history={
@@ -33,6 +34,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "button": Object {
           "background": "#1d1d20",
           "text": "#FFF",
+        },
+        "buttonDisabled": Object {
+          "background": "#1d1d20",
+          "text": "#71737e",
         },
         "card": Object {
           "background": "#1d1d20",
@@ -71,6 +76,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "inverseButton": Object {
           "background": "#FFF",
           "text": "#000",
+        },
+        "inverseButtonDisabled": Object {
+          "background": "#71737e",
+          "text": "#1d1d20",
         },
         "label": Object {
           "border": "#2F2F36",
@@ -644,10 +653,12 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                 "width": 96,
                               }
                             }
+                            disabled={false}
                             inverse={false}
                             type="button"
                           >
                             <button
+                              disabled={false}
                               style={
                                 Object {
                                   "background": "#1d1d20",
@@ -723,8 +734,14 @@ exports[`SourceComponent: Component should render correctly 1`] = `
               </div>
             </RadioGroup>
             <StepNavigation
+              bindSetNextDisabling={[Function]}
               bindSubmitForm={[Function]}
               dataSource={Object {}}
+              disabled={
+                Object {
+                  "next": true,
+                }
+              }
               history={
                 Object {
                   "push": [Function],
@@ -753,6 +770,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                   "button": Object {
                     "background": "#1d1d20",
                     "text": "#FFF",
+                  },
+                  "buttonDisabled": Object {
+                    "background": "#1d1d20",
+                    "text": "#71737e",
                   },
                   "card": Object {
                     "background": "#1d1d20",
@@ -791,6 +812,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                   "inverseButton": Object {
                     "background": "#FFF",
                     "text": "#000",
+                  },
+                  "inverseButtonDisabled": Object {
+                    "background": "#71737e",
+                    "text": "#1d1d20",
                   },
                   "label": Object {
                     "border": "#2F2F36",
@@ -1026,7 +1051,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                               </Component>
                             </BackButton>
                             <NextButton
-                              disabled={false}
+                              disabled={true}
                               loading={false}
                               onClick={[Function]}
                             >
@@ -1037,7 +1062,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                     "width": "calc(50% - 5px)",
                                   }
                                 }
-                                disabled={false}
+                                disabled={true}
                                 inverse={true}
                                 onClick={[Function]}
                               >
@@ -1048,20 +1073,20 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                       "width": "calc(50% - 5px)",
                                     }
                                   }
-                                  disabled={false}
+                                  disabled={true}
                                   inverse={true}
                                   onClick={[Function]}
                                 >
                                   <button
-                                    disabled={false}
+                                    disabled={true}
                                     onClick={[Function]}
                                     style={
                                       Object {
-                                        "backgroundColor": "#FFF",
+                                        "backgroundColor": "#71737e",
                                         "border": "none",
                                         "borderRadius": "48px",
-                                        "color": "#000",
-                                        "cursor": "pointer",
+                                        "color": "#1d1d20",
+                                        "cursor": "default",
                                         "display": "inline-block",
                                         "fill": "#FFF",
                                         "fontSize": "18px",
@@ -1273,6 +1298,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
   locale="en"
 >
   <SourceComponent
+    bindSetNextDisabling={[Function]}
     bindSubmitForm={[Function]}
     dataSource={
       Object {
@@ -1305,6 +1331,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "button": Object {
           "background": "#1d1d20",
           "text": "#FFF",
+        },
+        "buttonDisabled": Object {
+          "background": "#1d1d20",
+          "text": "#71737e",
         },
         "card": Object {
           "background": "#1d1d20",
@@ -1343,6 +1373,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "inverseButton": Object {
           "background": "#FFF",
           "text": "#000",
+        },
+        "inverseButtonDisabled": Object {
+          "background": "#71737e",
+          "text": "#1d1d20",
         },
         "label": Object {
           "border": "#2F2F36",
@@ -1925,10 +1959,12 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                 "width": 96,
                               }
                             }
+                            disabled={false}
                             inverse={false}
                             type="button"
                           >
                             <button
+                              disabled={false}
                               style={
                                 Object {
                                   "background": "#FFF",
@@ -2274,10 +2310,16 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
               </FileUploadComponent>
             </Component>
             <StepNavigation
+              bindSetNextDisabling={[Function]}
               bindSubmitForm={[Function]}
               dataSource={
                 Object {
                   "type": "file",
+                }
+              }
+              disabled={
+                Object {
+                  "next": true,
                 }
               }
               history={
@@ -2308,6 +2350,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   "button": Object {
                     "background": "#1d1d20",
                     "text": "#FFF",
+                  },
+                  "buttonDisabled": Object {
+                    "background": "#1d1d20",
+                    "text": "#71737e",
                   },
                   "card": Object {
                     "background": "#1d1d20",
@@ -2346,6 +2392,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   "inverseButton": Object {
                     "background": "#FFF",
                     "text": "#000",
+                  },
+                  "inverseButtonDisabled": Object {
+                    "background": "#71737e",
+                    "text": "#1d1d20",
                   },
                   "label": Object {
                     "border": "#2F2F36",
@@ -2581,7 +2631,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                               </Component>
                             </BackButton>
                             <NextButton
-                              disabled={false}
+                              disabled={true}
                               loading={false}
                               onClick={[Function]}
                             >
@@ -2592,7 +2642,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                     "width": "calc(50% - 5px)",
                                   }
                                 }
-                                disabled={false}
+                                disabled={true}
                                 inverse={true}
                                 onClick={[Function]}
                               >
@@ -2603,20 +2653,20 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                       "width": "calc(50% - 5px)",
                                     }
                                   }
-                                  disabled={false}
+                                  disabled={true}
                                   inverse={true}
                                   onClick={[Function]}
                                 >
                                   <button
-                                    disabled={false}
+                                    disabled={true}
                                     onClick={[Function]}
                                     style={
                                       Object {
-                                        "backgroundColor": "#FFF",
+                                        "backgroundColor": "#71737e",
                                         "border": "none",
                                         "borderRadius": "48px",
-                                        "color": "#000",
-                                        "cursor": "pointer",
+                                        "color": "#1d1d20",
+                                        "cursor": "default",
                                         "display": "inline-block",
                                         "fill": "#FFF",
                                         "fontSize": "18px",

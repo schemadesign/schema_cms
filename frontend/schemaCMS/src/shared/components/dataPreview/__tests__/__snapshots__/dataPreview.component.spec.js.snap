@@ -121,6 +121,12 @@ exports[`DataPreview: Component should render correctly 1`] = `
         "status": "done",
       }
     }
+    disabled={
+      Object {
+        "back": false,
+        "next": false,
+      }
+    }
     fetchFields={[Function]}
     fields={
       Object {
@@ -143,6 +149,7 @@ exports[`DataPreview: Component should render correctly 1`] = `
         "formatMessage": [Function],
       }
     }
+    loading={false}
     match={
       Object {
         "params": Object {

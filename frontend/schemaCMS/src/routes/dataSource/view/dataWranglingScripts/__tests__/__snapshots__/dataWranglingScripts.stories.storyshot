@@ -474,6 +474,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
           </span>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
