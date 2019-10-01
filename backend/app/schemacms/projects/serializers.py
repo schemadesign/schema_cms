@@ -206,6 +206,7 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
         for step in steps:
             step_instance = models.DataSourceJobStep()
             step_instance.script = step["script"]
+            step_instance.body = step["script"].body
             step_instance.datasource_job = job
             step_instance.exec_order = step["exec_order"]
             yield step_instance

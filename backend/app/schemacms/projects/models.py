@@ -13,7 +13,6 @@ from django_fsm import signals as fsm_signals
 from pandas import read_csv
 
 from schemacms.projects import handlers
-from schemacms.projects import services
 from schemacms.users import constants as users_constants
 from . import constants, managers, fsm
 
@@ -128,7 +127,9 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
 
     @property
     def available_scripts(self):
-        return self.scripts.all() | WranglingScript.objects.filter(is_predefined=True)
+        return WranglingScript.objects.filter(
+            models.Q(is_predefined=True) | models.Q(datasource=self)
+        ).order_by("-is_predefined")
 
 
 fsm_signals.post_transition.connect(handlers.handle_datasource_fsm_post_transition, sender=DataSource)
@@ -204,4 +205,5 @@ class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
 class DataSourceJobStep(models.Model):
     datasource_job = models.ForeignKey(DataSourceJob, on_delete=models.CASCADE, related_name='steps')
     script = models.ForeignKey(WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True)
+    body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)

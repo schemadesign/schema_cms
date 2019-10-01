@@ -15,6 +15,12 @@ def make_csv(cols_num=3, rows_num=1):
     return csv_file
 
 
+def make_script(code=b"test = 123"):
+    script = io.BytesIO()
+    script.write(code)
+    return script
+
+
 class CSVProvider(faker.providers.BaseProvider):
     def csv_data(self, cols_num=3, rows_num=1):
         return make_csv(cols_num=cols_num, rows_num=rows_num).getvalue()
@@ -26,3 +32,11 @@ class CSVProvider(faker.providers.BaseProvider):
 
     def make_csv(self, *args, **kwargs):
         return make_csv(*args, **kwargs)
+
+
+class PythonScriptProvider(faker.providers.BaseProvider):
+    def make_script(self, code, *args, **kwargs):
+        return make_script(code, *args, **kwargs)
+
+    def python_upload_file(self, code, filename="test.py"):
+        return base.ContentFile(content=make_script(code).getvalue(), name=filename)

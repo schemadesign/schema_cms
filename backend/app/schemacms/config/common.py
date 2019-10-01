@@ -276,8 +276,5 @@ class Common(Configuration):
     AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
     AWS_DEFAULT_ACL = None
 
-    DS_SCRIPTS_UPLOAD_PATH = '/datasource/{}/scripts/'
-    DS_JOB_UPLOAD_PATH = '/datasource/{}/jobs/'
-
     AWS_SQS_ENDPOINT_URL = os.getenv('SQS_ENDPOINT_URL')
     SQS_WORKER_QUEUE_URL = os.getenv('SQS_WORKER_QUEUE_URL')
