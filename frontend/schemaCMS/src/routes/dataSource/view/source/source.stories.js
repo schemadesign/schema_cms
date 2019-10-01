@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
+import { withTheme } from '../../../../.storybook/decorators';
 import { SourceComponent } from './source.component';
 
 export const defaultProps = {
@@ -22,4 +23,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Project/DataSource/View/Source', module).add('Default', () => <SourceComponent {...defaultProps} />);
+storiesOf('DataSource/View/Source', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <SourceComponent {...defaultProps} />);

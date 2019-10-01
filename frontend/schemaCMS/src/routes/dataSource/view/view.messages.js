@@ -26,6 +26,10 @@ export default defineMessages({
     id: 'dataSource.view.dataWrangling',
     defaultMessage: 'Data Wrangling',
   },
+  dataWranglingResult: {
+    id: 'dataSource.view.dataWranglingResult',
+    defaultMessage: 'Data Wrangling Result',
+  },
   removeDataSource: {
     id: 'dataSource.view.removeDataSource',
     defaultMessage: 'Remove Data Source',

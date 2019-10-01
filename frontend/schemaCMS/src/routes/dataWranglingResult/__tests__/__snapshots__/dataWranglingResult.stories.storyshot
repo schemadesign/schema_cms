@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DataWranglingResult Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-hqyNC keRCOE"
+  >
+    <div
+      className="sc-gPEVay hhLjDi"
+    >
+      <table
+        className="sc-iRbamj hEgTrs"
+      >
+        <thead
+          className="sc-jlyJG bbyJzT"
+        >
+          <tr
+            className="sc-csuQGl bwHzTh"
+          >
+            <th
+              className="sc-bRBYWo cgzDBp"
+            >
+              #
+            </th>
+            <th
+              className="sc-bRBYWo cgzDBp"
+            >
+              First Name
+            </th>
+            <th
+              className="sc-bRBYWo cgzDBp"
+            >
+              Last Name
+            </th>
+            <th
+              className="sc-bRBYWo cgzDBp"
+            >
+              Full Name
+            </th>
+            <th
+              className="sc-bRBYWo cgzDBp"
+            >
+              Birthplace
+            </th>
+            <th
+              className="sc-bRBYWo cgzDBp"
+            >
+              State of Birth
+            </th>
+            <th
+              className="sc-bRBYWo cgzDBp"
+            >
+              Birthday
+            </th>
+            <th
+              className="sc-bRBYWo cgzDBp"
+            >
+              Url
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className="sc-gipzik iyhjGb"
+        >
+          <tr
+            className="sc-csuQGl bwHzTh"
+          >
+            <td
+              className="sc-hzDkRC brgccI"
+            >
+              1
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              George
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Washington
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              George Washington
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Westmoreland County
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              VA
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              02/22/1732
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-csuQGl bwHzTh"
+          >
+            <td
+              className="sc-hzDkRC brgccI"
+            >
+              2
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              John
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Adams
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              John Adams
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Braintree
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              MA
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              10/30/1735
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-csuQGl bwHzTh"
+          >
+            <td
+              className="sc-hzDkRC brgccI"
+            >
+              3
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Thomas
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Jefferson
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Thomas Jefferson
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Shadwell
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              VA
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              04/13/1743
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-csuQGl bwHzTh"
+          >
+            <td
+              className="sc-hzDkRC brgccI"
+            >
+              4
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              James
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Madison
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              James Madison
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Port Conway
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              VA
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              03/16/1751
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-csuQGl bwHzTh"
+          >
+            <td
+              className="sc-hzDkRC brgccI"
+            >
+              5
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              James
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Monroe
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              James Monroe
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              Monroe Hall
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              VA
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              04/28/1758
+            </td>
+            <td
+              className="sc-Rmtcm kMKOGJ"
+            >
+              some.url.com
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;

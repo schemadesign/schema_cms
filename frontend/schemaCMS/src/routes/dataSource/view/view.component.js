@@ -9,10 +9,12 @@ import messages from './view.messages';
 import { Source } from './source';
 import { Fields } from './fields';
 import { DataWranglingScripts } from '../../dataWranglingScripts';
+import { DataWranglingResult } from '../../dataWranglingResult';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
 import {
   DATA_WRANGLING_STEP,
+  DATA_WRANGLING_RESULT_STEP,
   FIELDS_STEP,
   INITIAL_STEP,
   MAX_STEPS,
@@ -63,6 +65,7 @@ export class View extends PureComponent {
     [equals(INITIAL_STEP), always(this.props.intl.formatMessage(messages.source))],
     [equals(FIELDS_STEP), always(this.props.intl.formatMessage(messages.fields))],
     [equals(DATA_WRANGLING_STEP), always(this.props.intl.formatMessage(messages.dataWrangling))],
+    [equals(DATA_WRANGLING_RESULT_STEP), always(this.props.intl.formatMessage(messages.dataWranglingResult))],
     [T, always(null)],
   ]);
 
@@ -137,7 +140,7 @@ export class View extends PureComponent {
       ],
       [equals(FIELDS_STEP), always(<Fields {...props} />)],
       [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts bindSubmitForm={this.bindSubmitForm} {...props} />)],
-      [equals(4), always(null)],
+      [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],
       [equals(5), always(null)],
       [equals(6), always(null)],
       [T, always(null)],
