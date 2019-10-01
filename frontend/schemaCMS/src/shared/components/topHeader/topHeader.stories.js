@@ -11,7 +11,20 @@ export const defaultProps = {
   secondaryMenuItems: [{ label: 'Log Out', to: '/logout' }, { label: 'Click action', onClick: () => {}, id: 'id' }],
 };
 
+const long = `
+  Mauris egestas arcu nec diam consectetur vulputate.
+  Mauris rhoncus a massa in ultricies. In vel accumsan tortor.
+  Donec suscipit commodo enim. Suspendisse nibh odio
+`;
+
+const longProps = {
+  ...defaultProps,
+  headerTitle: long,
+  headerSubtitle: long
+}
+
 storiesOf('Shared Components|TopHeader', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('Default', () => <TopHeader {...defaultProps} />);
+  .add('Default', () => <TopHeader {...defaultProps} />)
+  .add('Long tiltle and subtitle', () => <TopHeader {...longProps} />);
