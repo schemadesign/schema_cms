@@ -4,8 +4,6 @@ import { storiesOf } from '@storybook/react';
 import { withRouter, withTheme } from '../../../.storybook/decorators';
 import { TopHeader } from './topHeader.component';
 
-const long = 'jhdskjud jsd asd ksjd kjsdkjasdjksahd ljksdjhakjd hsdh uhdjnsdljad jsuias hj dnjakd nuas dndyasldij andjnadsaidads adiomasi dnasj ndoasdn asi';
-
 export const defaultProps = {
   headerTitle: 'Projects',
   headerSubtitle: 'Overview',
