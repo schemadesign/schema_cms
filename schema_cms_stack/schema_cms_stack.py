@@ -16,7 +16,7 @@ from aws_cdk import (
     aws_stepfunctions,
     aws_stepfunctions_tasks,
     aws_certificatemanager,
-)
+    aws_route53)
 
 DB_NAME = "gistdb"
 APP_S3_BUCKET_NAME = "schemacms"
@@ -61,6 +61,7 @@ class BaseResources(core.Stack):
         )
 
         self.vpc = aws_ec2.Vpc(self, "vpc", nat_gateways=1)
+        self.zone = aws_route53.PrivateHostedZone(self, "zone", vpc=self.vpc, zone_name="schema-test.appt5n.com")
         self.cluster = aws_ecs.Cluster(
             self, "worker-cluster", cluster_name="schema-ecs-cluster", vpc=self.vpc
         )
@@ -217,6 +218,8 @@ class API(core.Stack):
             enable_logging=True,
             container_port=80,
             certificate=scope.certs.cert,
+            domain_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
+            domain_zone=scope.base.zone,
         )
 
         self.api.task_definition.add_container(
