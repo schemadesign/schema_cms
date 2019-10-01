@@ -8,8 +8,6 @@ import { SourceComponent } from './source.component';
 export const defaultProps = {
   dataSource: {},
   theme: Theme.dark,
-  bindSubmitForm: Function.prototype,
-  bindSetNextDisabling: Function.prototype,
   updateDataSource: Function.prototype,
   history: {
     push: Function.prototype,
