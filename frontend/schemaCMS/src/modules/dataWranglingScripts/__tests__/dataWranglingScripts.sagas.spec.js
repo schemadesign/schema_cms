@@ -59,10 +59,11 @@ describe('DataWranglingScripts: sagas', () => {
       mockApi
         .post(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script-upload`, /form-data; name="script"[^]*file/m, options)
         .reply(OK);
-      mockApi.get(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script`).reply(OK, responseData);
+      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/script`).reply(OK, responseData);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
+        .put(DataWranglingScriptsRoutines.fetchList.success(responseData))
         .put(DataWranglingScriptsRoutines.uploadScript.success())
         .dispatch(DataWranglingScriptsRoutines.uploadScript(payload))
         .silentRun();

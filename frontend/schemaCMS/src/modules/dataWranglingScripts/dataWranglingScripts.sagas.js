@@ -54,7 +54,7 @@ function* uploadScript({ payload: { script, dataSourceId } }) {
 
     yield api.post(`${DATA_SOURCE_PATH}/${dataSourceId}/script-upload`, formData, { headers });
 
-    yield put(DataWranglingScriptsRoutines.fetchList({ dataSourceId }));
+    yield fetchList({ payload: { dataSourceId } });
     yield put(DataWranglingScriptsRoutines.uploadScript.success());
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.uploadScript.failure());
