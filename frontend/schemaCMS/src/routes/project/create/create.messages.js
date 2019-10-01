@@ -33,9 +33,9 @@ export default defineMessages({
     id: 'project.create.statusLabel',
     defaultMessage: 'Status',
   },
-  submit: {
-    id: 'project.create.submit',
-    defaultMessage: 'Submit',
+  finish: {
+    id: 'project.create.finish',
+    defaultMessage: 'Finish',
   },
   cancel: {
     id: 'project.create.cancel',
