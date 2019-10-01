@@ -11,6 +11,6 @@ export const defaultProps = {
   secondaryMenuItems: [{ label: 'Log Out', to: '/logout' }, { label: 'Click action', onClick: () => {}, id: 'id' }],
 };
 
-storiesOf('Shared Components/TopHeader', module)
+storiesOf('Shared Components|TopHeader', module)
   .addDecorator(withRouter)
   .add('Default', () => <TopHeader {...defaultProps} />);

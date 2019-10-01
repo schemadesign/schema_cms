@@ -7,6 +7,7 @@ import { watchUserProfile } from './userProfile/userProfile.sagas';
 import { watchProject } from './project/project.sagas';
 import { watchDataSource } from './dataSource/dataSource.sagas';
 import { watchDataWranglingScripts } from './dataWranglingScripts/dataWranglingScripts.sagas';
+import { watchDataWranglingResult } from './dataWranglingResult/dataWranglingResult.sagas';
 //<-- IMPORT MODULE SAGA -->
 
 export default function* rootSaga() {
@@ -18,6 +19,7 @@ export default function* rootSaga() {
       fork(watchProject),
       fork(watchDataSource),
       fork(watchDataWranglingScripts),
+      fork(watchDataWranglingResult),
       //<-- INJECT MODULE SAGA -->
     ]);
   } catch (e) {
