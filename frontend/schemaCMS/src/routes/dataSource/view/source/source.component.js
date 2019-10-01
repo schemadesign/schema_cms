@@ -114,6 +114,7 @@ export class SourceComponent extends PureComponent {
       <Container>
         <Formik
           enableReinitialize
+          isInitialValid={!!dataSource.fileName}
           initialValues={omit(IGNORED_FIELDS, dataSource)}
           validationSchema={DATA_SOURCE_SCHEMA}
           onSubmit={this.handleSubmit}
