@@ -1010,7 +1010,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                   >
                                     <FormattedMessage
                                       defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-                                      id="stepNavigation.back"
+                                      id="shared.components.stepNavigation.back"
                                       values={
                                         Object {
                                           "cancel": true,
@@ -1076,7 +1076,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                   >
                                     <FormattedMessage
                                       defaultMessage="{loading, select, true {Loading...} other {Next}}"
-                                      id="navigation.next"
+                                      id="shared.components.navigation.next"
                                       values={
                                         Object {
                                           "loading": false,
@@ -2565,7 +2565,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                   >
                                     <FormattedMessage
                                       defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-                                      id="stepNavigation.back"
+                                      id="shared.components.stepNavigation.back"
                                       values={
                                         Object {
                                           "cancel": true,
@@ -2631,7 +2631,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                   >
                                     <FormattedMessage
                                       defaultMessage="{loading, select, true {Loading...} other {Next}}"
-                                      id="navigation.next"
+                                      id="shared.components.navigation.next"
                                       values={
                                         Object {
                                           "loading": false,

@@ -10,7 +10,7 @@ exports[`StepNavigation: Component should render correctly 1`] = `
   >
     <FormattedMessage
       defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-      id="stepNavigation.back"
+      id="shared.components.stepNavigation.back"
       values={
         Object {
           "cancel": true,
@@ -49,7 +49,7 @@ exports[`StepNavigation: Component should render with next step 1`] = `
   >
     <FormattedMessage
       defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-      id="stepNavigation.back"
+      id="shared.components.stepNavigation.back"
       values={
         Object {
           "cancel": false,
@@ -88,7 +88,7 @@ exports[`StepNavigation: Component should show loading 1`] = `
   >
     <FormattedMessage
       defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-      id="stepNavigation.back"
+      id="shared.components.stepNavigation.back"
       values={
         Object {
           "cancel": false,

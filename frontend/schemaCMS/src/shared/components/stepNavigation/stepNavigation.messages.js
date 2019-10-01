@@ -3,11 +3,11 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   next: {
-    id: 'stepNavigation.next',
+    id: 'shared.components.stepNavigation.next',
     defaultMessage: 'Next',
   },
   back: {
-    id: 'stepNavigation.back',
+    id: 'shared.components.stepNavigation.back',
     defaultMessage: '{cancel, select, true {Cancel} other {Back}}',
   },
 });

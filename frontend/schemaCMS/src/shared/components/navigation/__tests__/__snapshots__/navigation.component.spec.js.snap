@@ -27,7 +27,7 @@ exports[`Navigation: Component should render BackButton 1`] = `
 >
   <FormattedMessage
     defaultMessage="Back"
-    id="navigation.back"
+    id="shared.components.navigation.back"
     values={Object {}}
   />
 </Component>
@@ -46,7 +46,7 @@ exports[`Navigation: Component should render BackButton with custom children 1`]
 >
   <FormattedMessage
     defaultMessage="{loading, select, true {Loading...} other {Next}}"
-    id="navigation.next"
+    id="shared.components.navigation.next"
     values={Object {}}
   />
 </Component>
@@ -77,7 +77,7 @@ exports[`Navigation: Component should render NextButton 1`] = `
 >
   <FormattedMessage
     defaultMessage="{loading, select, true {Loading...} other {Next}}"
-    id="navigation.next"
+    id="shared.components.navigation.next"
     values={
       Object {
         "loading": false,
@@ -100,7 +100,7 @@ exports[`Navigation: Component should render NextButton with custom children 1`]
 >
   <FormattedMessage
     defaultMessage="Back"
-    id="navigation.back"
+    id="shared.components.navigation.back"
     values={Object {}}
   />
 </Component>
