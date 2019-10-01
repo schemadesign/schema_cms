@@ -10,5 +10,3 @@ pytest_factoryboy.register(project_factories.DataSourceMetaFactory)
 pytest_factoryboy.register(project_factories.ScriptFactory, "script")
 pytest_factoryboy.register(project_factories.JobFactory, "job")
 pytest_factoryboy.register(project_factories.JobStepFactory, "step")
-
-

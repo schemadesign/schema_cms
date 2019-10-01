@@ -1,7 +1,7 @@
 import logging
 
 from django.db import transaction
-from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
+from rest_framework import decorators, permissions, response, status, viewsets, generics, parsers
 
 from schemacms.users import permissions as user_permissions
 from schemacms.utils import serializers as utils_serializers

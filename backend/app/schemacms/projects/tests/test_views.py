@@ -486,9 +486,9 @@ class TestDataSourceScriptsView:
     def test_response(self, api_client, rf, admin, data_source_factory, script_factory):
         data_source_1 = data_source_factory()
         data_source_2 = data_source_factory()
-        scripts_1 = script_factory.create_batch(3, is_predefined=False, created_by=admin, datasource=data_source_1)
-        scripts_2 = script_factory.create_batch(2, is_predefined=True, created_by=admin, datasource=None)
-        script_factory.create_batch(2, is_predefined=False, created_by=admin, datasource=data_source_2)
+        scripts_1 = script_factory.create_batch(3, is_predefined=False, datasource=data_source_1)
+        scripts_2 = script_factory.create_batch(2, is_predefined=True, datasource=None)
+        script_factory.create_batch(2, is_predefined=False, datasource=data_source_2)
         test_scripts = scripts_1 + scripts_2
 
         request = rf.get(self.get_url(data_source_1.id))
