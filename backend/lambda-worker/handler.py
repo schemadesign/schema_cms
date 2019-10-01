@@ -65,7 +65,8 @@ def main(event, context):
 
         for step in job.steps.order_by(db.JobStep.exec_order.desc()):
             try:
-                exec(step.script.body, globals())
+                logging.info(f'Script **{step.script.name}** is running.')
+                exec(step.body, globals())
             except Exception as e:
                 logging.critical(f'Error while executing {step.key}')
                 job.job_state = db.JobState.FAILED

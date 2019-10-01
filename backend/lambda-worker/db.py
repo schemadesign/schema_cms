@@ -31,7 +31,7 @@ class DataSource(BaseModel):
 
 
 class Script(BaseModel):
-    body = TextField()
+    name = CharField()
 
     class Meta:
         table_name = "projects_wranglingscript"
@@ -50,6 +50,7 @@ class Job(BaseModel):
 class JobStep(BaseModel):
     datasource_job = ForeignKeyField(Job, backref="steps")
     script = ForeignKeyField(Script, backref="steps")
+    body = TextField()
     exec_order = IntegerField()
 
     class Meta:
