@@ -87,8 +87,8 @@ export class View extends PureComponent {
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
-      [equals(INITIAL_STEP), () => <Source {...props} />],
-      [equals(FIELDS_STEP), always(<Fields {...props} />)],
+      [equals(INITIAL_STEP), always(<Source {...props} />)],
+      [equals(FIELDS_STEP), always(<DataPreview {...props} />)],
       [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts {...props} />)],
       [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],
       [equals(5), always(null)],

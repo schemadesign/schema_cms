@@ -32,7 +32,7 @@ export const nextStepProps = {
   },
 };
 
-storiesOf('Shared Components/StepNavigation', module)
+storiesOf('Shared Components|StepNavigation', module)
   .addDecorator(withTheme())
   .add('Default', () => <StepNavigation {...defaultProps} />)
   .add('Next step', () => <StepNavigation {...nextStepProps} />);

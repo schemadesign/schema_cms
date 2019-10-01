@@ -10,16 +10,16 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
   }
 >
   <div
-    className="sc-kEYyzF gfWKdx"
+    className="sc-iAyFgw gPlgsX"
   >
     <div
-      className="sc-eHgmQL gmKbQu"
+      className="sc-jWBwVP fDrbnp"
     >
       <div
-        className="sc-kkGfuU jdyJOb"
+        className="sc-hSdWYo jLDYQD"
       >
         <div
-          className="sc-iAyFgw jsohfA"
+          className="sc-eHgmQL bOxEIU"
         >
           <button
             disabled={true}
@@ -61,12 +61,12 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
           </button>
         </div>
         <div
-          className="sc-hSdWYo hJTCBl"
+          className="sc-cvbbAY lolRkL"
         >
           {countFields} {countFields, plural,one {Field} other {Fields}}
         </div>
         <div
-          className="sc-iAyFgw jsohfA"
+          className="sc-eHgmQL bOxEIU"
         >
           <button
             disabled={false}
@@ -108,284 +108,442 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-VigVT imEBlk"
+        className="sc-fjdhpX jDWzMA"
       >
         <table
-          className="sc-jTzLTM UCMMg"
+          className="sc-jzJRlG dINcDo"
         >
           <thead
-            className="sc-fjdhpX nsimD"
+            className="sc-cSHVUG CAuLq"
           >
             <tr
-              className="sc-cSHVUG fDSmHs"
+              className="sc-chPdSV HuuDZ"
             >
               <th
-                className="sc-chPdSV bPREDX"
+                className="sc-kGXeez fUkOQq"
               >
                 #
               </th>
               <th
-                className="sc-chPdSV bPREDX"
+                className="sc-kGXeez fUkOQq"
               >
                 First Name
               </th>
               <th
-                className="sc-chPdSV bPREDX"
+                className="sc-kGXeez fUkOQq"
               >
                 Last Name
               </th>
               <th
-                className="sc-chPdSV bPREDX"
+                className="sc-kGXeez fUkOQq"
               >
                 Full Name
               </th>
               <th
-                className="sc-chPdSV bPREDX"
+                className="sc-kGXeez fUkOQq"
               >
                 Birthplace
               </th>
               <th
-                className="sc-chPdSV bPREDX"
+                className="sc-kGXeez fUkOQq"
               >
                 State of Birth
               </th>
               <th
-                className="sc-chPdSV bPREDX"
+                className="sc-kGXeez fUkOQq"
               >
                 Birthday
               </th>
               <th
-                className="sc-chPdSV bPREDX"
+                className="sc-kGXeez fUkOQq"
               >
                 Url
               </th>
             </tr>
           </thead>
           <tbody
-            className="sc-jzJRlG enxKql"
+            className="sc-kAzzGY jHprQs"
           >
             <tr
-              className="sc-cSHVUG fDSmHs"
+              className="sc-chPdSV HuuDZ"
             >
               <td
-                className="sc-kgoBCf fzwHVb"
+                className="sc-kpOJdX kJVopB"
               >
                 1
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 George
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Washington
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 George Washington
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Westmoreland County
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 VA
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 02/22/1732
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 some.url.com
               </td>
             </tr>
             <tr
-              className="sc-cSHVUG fDSmHs"
+              className="sc-chPdSV HuuDZ"
             >
               <td
-                className="sc-kgoBCf fzwHVb"
+                className="sc-kpOJdX kJVopB"
               >
                 2
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 John
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Adams
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 John Adams
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Braintree
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 MA
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 10/30/1735
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 some.url.com
               </td>
             </tr>
             <tr
-              className="sc-cSHVUG fDSmHs"
+              className="sc-chPdSV HuuDZ"
             >
               <td
-                className="sc-kgoBCf fzwHVb"
+                className="sc-kpOJdX kJVopB"
               >
                 3
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Thomas
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Jefferson
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Thomas Jefferson
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Shadwell
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 VA
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 04/13/1743
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 some.url.com
               </td>
             </tr>
             <tr
-              className="sc-cSHVUG fDSmHs"
+              className="sc-chPdSV HuuDZ"
             >
               <td
-                className="sc-kgoBCf fzwHVb"
+                className="sc-kpOJdX kJVopB"
               >
                 4
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 James
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Madison
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 James Madison
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Port Conway
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 VA
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 03/16/1751
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 some.url.com
               </td>
             </tr>
             <tr
-              className="sc-cSHVUG fDSmHs"
+              className="sc-chPdSV HuuDZ"
             >
               <td
-                className="sc-kgoBCf fzwHVb"
+                className="sc-kpOJdX kJVopB"
               >
                 5
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 James
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Monroe
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 James Monroe
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 Monroe Hall
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 VA
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 04/28/1758
               </td>
               <td
-                className="sc-kAzzGY gaMbAZ"
+                className="sc-kgoBCf iDCzvT"
               >
                 some.url.com
               </td>
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+    <div
+      className="sc-htoDjs iUYJOx"
+    >
+      <div
+        className="sc-dnqmqq fJajJC"
+      >
+        <button
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#f0efef",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#1d1d20",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginRight": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
+        >
+          <span>
+            Back
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#000",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#1d1d20",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginLeft": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
+        >
+          <span>
+            Next
+          </span>
+        </button>
+        <div
+          className="sc-gzVnrw bMUaYY"
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "row",
+                "margin": "0 auto",
+              }
+            }
+          >
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#f0efef",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "default",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "pointerEvents": "none",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#f0efef",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#f0efef",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#f0efef",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#f0efef",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withRouter, withTheme } from '../../../../.storybook/decorators';
 
 import { DataWranglingScripts } from './dataWranglingScripts.component';
-import { STATUS_DONE } from '../../modules/dataSource/dataSource.constants';
+import { STATUS_DONE } from '../../../../modules/dataSource/dataSource.constants';
 
 export const defaultProps = {
   dataWranglingScripts: [{ key: 'name 1' }, { key: 'name 2' }],

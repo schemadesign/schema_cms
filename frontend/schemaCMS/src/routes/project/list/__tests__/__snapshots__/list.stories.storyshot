@@ -13,7 +13,7 @@ exports[`Storyshots Project/List empty 1`] = `
     className="sc-fMiknA sc-hqyNC jCLvEs"
   >
     <div
-      className="sc-jWBwVP vnAxw"
+      className="sc-cMljjf cduCgM"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Project/List empty 1`] = `
       >
         <div>
           <div
-            className="sc-brqgnP SqPLV"
+            className="sc-jAaTju fNCBho"
           >
             <h2
               id="headerTitle"
@@ -122,10 +122,10 @@ exports[`Storyshots Project/List empty 1`] = `
         }
       >
         <div
-          className="sc-cMljjf eTbdzc"
+          className="sc-jDwBTQ dWtMUn"
         >
           <div
-            className="sc-brqgnP SqPLV"
+            className="sc-jAaTju fNCBho"
           >
             <h2
               id="headerTitle"
@@ -158,16 +158,16 @@ exports[`Storyshots Project/List empty 1`] = `
           </div>
         </div>
         <div
-          className="sc-jAaTju hWtuUE"
+          className="sc-gPEVay hRSMsP"
         >
           <ul
-            className="sc-jDwBTQ sc-gPEVay jbCcVY"
+            className="sc-iRbamj sc-jlyJG ejGYJz"
           />
           <ul
-            className="sc-jDwBTQ sc-iRbamj dmLCIf"
+            className="sc-iRbamj sc-gipzik HrPVR"
           >
             <li
-              className="sc-jlyJG sc-csuQGl fMumOU"
+              className="sc-csuQGl sc-bRBYWo uJJht"
             >
               <a
                 href="/logout"
@@ -239,10 +239,10 @@ exports[`Storyshots Project/List empty 1`] = `
       </p>
     </div>
     <div
-      className="sc-Rmtcm kSjUhM"
+      className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-bRBYWo fXOjiZ"
+        className="sc-dnqmqq BDAcl"
       >
         <button
           id="addProjectBtn"
@@ -301,7 +301,7 @@ exports[`Storyshots Project/List list 1`] = `
     className="sc-fMiknA sc-hqyNC jCLvEs"
   >
     <div
-      className="sc-jWBwVP vnAxw"
+      className="sc-cMljjf cduCgM"
     >
       <div
         style={
@@ -318,7 +318,7 @@ exports[`Storyshots Project/List list 1`] = `
       >
         <div>
           <div
-            className="sc-brqgnP SqPLV"
+            className="sc-jAaTju fNCBho"
           >
             <h2
               id="headerTitle"
@@ -410,10 +410,10 @@ exports[`Storyshots Project/List list 1`] = `
         }
       >
         <div
-          className="sc-cMljjf eTbdzc"
+          className="sc-jDwBTQ dWtMUn"
         >
           <div
-            className="sc-brqgnP SqPLV"
+            className="sc-jAaTju fNCBho"
           >
             <h2
               id="headerTitle"
@@ -446,16 +446,16 @@ exports[`Storyshots Project/List list 1`] = `
           </div>
         </div>
         <div
-          className="sc-jAaTju hWtuUE"
+          className="sc-gPEVay hRSMsP"
         >
           <ul
-            className="sc-jDwBTQ sc-gPEVay jbCcVY"
+            className="sc-iRbamj sc-jlyJG ejGYJz"
           />
           <ul
-            className="sc-jDwBTQ sc-iRbamj dmLCIf"
+            className="sc-iRbamj sc-gipzik HrPVR"
           >
             <li
-              className="sc-jlyJG sc-csuQGl fMumOU"
+              className="sc-csuQGl sc-bRBYWo uJJht"
             >
               <a
                 href="/logout"
@@ -717,10 +717,10 @@ exports[`Storyshots Project/List list 1`] = `
       </li>
     </ul>
     <div
-      className="sc-Rmtcm kSjUhM"
+      className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-bRBYWo fXOjiZ"
+        className="sc-dnqmqq BDAcl"
       >
         <button
           id="addProjectBtn"

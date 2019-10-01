@@ -10,10 +10,10 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
   }
 >
   <div
-    className="sc-jbKcbu btKMgb"
+    className="sc-hzDkRC eGsIKK"
   >
     <div
-      className="sc-bdVaJa bDWFJH"
+      className="sc-cMljjf cduCgM"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       >
         <div>
           <div
-            className="sc-bwzfXH uTxCW"
+            className="sc-jAaTju fNCBho"
           >
             <h2
               id="headerTitle"
@@ -122,10 +122,10 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
         }
       >
         <div
-          className="sc-htpNat KtFsv"
+          className="sc-jDwBTQ dWtMUn"
         >
           <div
-            className="sc-bwzfXH uTxCW"
+            className="sc-jAaTju fNCBho"
           >
             <h2
               id="headerTitle"
@@ -158,13 +158,13 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-bxivhb fxvYgT"
+          className="sc-gPEVay hRSMsP"
         >
           <ul
-            className="sc-ifAKCX sc-EHOje bVzUGK"
+            className="sc-iRbamj sc-jlyJG ejGYJz"
           />
           <ul
-            className="sc-ifAKCX sc-bZQynM hRyDTQ"
+            className="sc-iRbamj sc-gipzik HrPVR"
           />
         </div>
         <button
@@ -209,11 +209,11 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-dNLxif KzmkZ"
+      className="sc-jhAzac hmXDXQ"
       name="dataWranglingForm"
     >
       <div
-        className="sc-gisBJw kDlVKO"
+        className="sc-gZMcBi giNnHm"
       >
         <div
           style={
@@ -981,10 +981,10 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       </pre>
     </form>
     <div
-      className="sc-kkGfuU cbFdcv"
+      className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-iAyFgw fPviBc"
+        className="sc-dnqmqq jpGIQI"
       >
         <button
           disabled={false}

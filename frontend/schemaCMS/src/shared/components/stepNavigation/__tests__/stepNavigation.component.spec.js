@@ -31,7 +31,7 @@ describe('StepNavigation: Component', () => {
     const wrapper = render();
     wrapper.find(NextButton).simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/project/view/1/datasource/view/1/2');
+    expect(defaultProps.history.push).toBeCalledWith('/datasource/1/2');
   });
 
   it('should change to third step', () => {
@@ -39,7 +39,7 @@ describe('StepNavigation: Component', () => {
     const wrapper = render(nextStepProps);
     wrapper.find(BackButton).simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/project/view/1/datasource/view/1/3');
+    expect(defaultProps.history.push).toBeCalledWith('/datasource/1/3');
   });
 
   it('should submit form', () => {

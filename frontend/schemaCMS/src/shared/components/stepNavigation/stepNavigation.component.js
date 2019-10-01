@@ -28,15 +28,16 @@ export class StepNavigation extends PureComponent {
   handleStepChange = step => {
     const {
       history,
+      dataSource,
       match: {
-        params: { projectId, dataSourceId },
+        params: { dataSourceId },
       },
     } = this.props;
     if (step < 1) {
-      return this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
+      return this.props.history.push(`/project/${dataSource.project}/datasource`);
     }
 
-    return history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
+    return history.push(`/datasource/${dataSourceId}/${step}`);
   };
 
   handleBackClick = () => this.handleStepChange(parseInt(this.props.match.params.step, 10) - 1);

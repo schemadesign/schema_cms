@@ -17,7 +17,7 @@ import {
   buttonStyles,
   arrowStyles,
 } from './dataPreview.styles';
-import { StepNavigation } from '../../../../shared/components/stepNavigation';
+import { StepNavigation } from '../stepNavigation';
 
 const INITIAL_STEP = 0;
 

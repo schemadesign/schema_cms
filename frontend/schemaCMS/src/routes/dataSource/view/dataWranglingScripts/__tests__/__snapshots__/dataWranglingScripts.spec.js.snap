@@ -146,7 +146,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
           "dataSourceId": "1",
           "projectId": "1",
         },
-        "url": "/project/view/2/datasource/view/14/3",
+        "url": "/datasource/14/3",
       }
     }
     sendUpdatedDataWranglingScript={[Function]}

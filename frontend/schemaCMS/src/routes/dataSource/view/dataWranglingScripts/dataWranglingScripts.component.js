@@ -8,7 +8,7 @@ import { always, append, ifElse, equals, reject } from 'ramda';
 import { Container, Header, StepCounter, Empty, UploadContainer, Error, Link } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
-import { StepNavigation } from '../../shared/components/stepNavigation';
+import { StepNavigation } from '../../../../shared/components/stepNavigation';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 

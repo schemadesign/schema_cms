@@ -434,10 +434,10 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-kkGfuU cbFdcv"
+      className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-iAyFgw fPviBc"
+        className="sc-dnqmqq jpGIQI"
       >
         <button
           disabled={false}
@@ -491,7 +491,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
           </span>
         </button>
         <div
-          className="sc-fAjcbJ ibJgvf"
+          className="sc-gzVnrw bMUaYY"
         >
           <div
             style={

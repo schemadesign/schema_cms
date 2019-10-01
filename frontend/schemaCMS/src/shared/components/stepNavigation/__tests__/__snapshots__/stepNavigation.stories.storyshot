@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components/StepNavigation Default 1`] = `
+exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
 <div
   style={
     Object {
@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components/StepNavigation Default 1`] = `
   }
 >
   <div
-    className="sc-kkGfuU cbFdcv"
+    className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-iAyFgw fPviBc"
+      className="sc-dnqmqq jpGIQI"
     >
       <button
         disabled={false}
@@ -68,7 +68,7 @@ exports[`Storyshots Shared Components/StepNavigation Default 1`] = `
         </span>
       </button>
       <div
-        className="sc-fAjcbJ ibJgvf"
+        className="sc-gzVnrw bMUaYY"
       >
         <div
           style={
@@ -172,7 +172,7 @@ exports[`Storyshots Shared Components/StepNavigation Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Shared Components/StepNavigation Next step 1`] = `
+exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
 <div
   style={
     Object {
@@ -182,10 +182,10 @@ exports[`Storyshots Shared Components/StepNavigation Next step 1`] = `
   }
 >
   <div
-    className="sc-kkGfuU cbFdcv"
+    className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-iAyFgw fPviBc"
+      className="sc-dnqmqq jpGIQI"
     >
       <button
         disabled={false}
@@ -240,7 +240,7 @@ exports[`Storyshots Shared Components/StepNavigation Next step 1`] = `
         </span>
       </button>
       <div
-        className="sc-fAjcbJ ibJgvf"
+        className="sc-gzVnrw bMUaYY"
       >
         <div
           style={

@@ -116,6 +116,8 @@ exports[`DataPreview: Component should render correctly 1`] = `
   <StepNavigation
     dataSource={
       Object {
+        "id": 1,
+        "project": 1,
         "status": "done",
       }
     }
@@ -144,8 +146,7 @@ exports[`DataPreview: Component should render correctly 1`] = `
     match={
       Object {
         "params": Object {
-          "dataSourceId": "1",
-          "projectId": "1",
+          "step": "2",
         },
       }
     }
