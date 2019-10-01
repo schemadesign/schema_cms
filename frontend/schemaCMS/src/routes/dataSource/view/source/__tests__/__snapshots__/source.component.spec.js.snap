@@ -58,6 +58,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "icon": Object {
           "background": "#1d1d20",
           "fill": "#FFF",
+          "fillInverse": "#000",
         },
         "input": Object {
           "text": "#FFF",
@@ -182,7 +183,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           <Formik
             enableReinitialize={true}
             initialValues={Object {}}
-            isInitialValid={true}
+            isInitialValid={false}
             onSubmit={[Function]}
             validateOnBlur={true}
             validateOnChange={true}
@@ -336,154 +337,33 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             <TextInput
               errors={Object {}}
               fullWidth={true}
-              intl={
-                Object {
-                  "formatMessage": [Function],
-                }
-              }
+              handleBlur={[Function]}
+              handleReset={[Function]}
+              handleSubmit={[Function]}
+              initialValues={Object {}}
+              isSubmitting={false}
+              isValidating={false}
               label="Name"
-              match={
-                Object {
-                  "params": Object {
-                    "dataSourceId": "1",
-                    "projectId": "1",
-                    "step": "1",
-                  },
-                }
-              }
               name="name"
               onChange={[Function]}
-              theme={
-                Object {
-                  "background": "#000",
-                  "border": "#2F2F36",
-                  "button": Object {
-                    "background": "#1d1d20",
-                    "text": "#FFF",
-                  },
-                  "card": Object {
-                    "background": "#1d1d20",
-                    "border": "#FFF",
-                    "label": undefined,
-                  },
-                  "checkbox": Object {
-                    "border": "#2F2F36",
-                    "text": "#FFF",
-                  },
-                  "colors": Object {
-                    "black": "#000",
-                    "coolGray": "#a6a7aa",
-                    "darkGrey": "#1d1d20",
-                    "lightGrey": "#71737e",
-                    "mediumGray": "#2F2F36",
-                    "red": "#f21e29",
-                    "veryLightPink": "#f0efef",
-                    "white": "#FFF",
-                  },
-                  "dataGrid": Object {
-                    "background": "#000",
-                    "text": "#71737e",
-                  },
-                  "header": Object {
-                    "text": "#FFF",
-                  },
-                  "icon": Object {
-                    "background": "#1d1d20",
-                    "fill": "#FFF",
-                  },
-                  "input": Object {
-                    "text": "#FFF",
-                  },
-                  "inverseButton": Object {
-                    "background": "#FFF",
-                    "text": "#000",
-                  },
-                  "label": Object {
-                    "border": "#2F2F36",
-                    "text": "#71737e",
-                  },
-                  "menu": Object {
-                    "background": "#000",
-                    "text": "#FFF",
-                  },
-                  "providerContainer": Object {
-                    "backgroundColor": "#000",
-                    "minHeight": "100vh",
-                  },
-                  "radioButton": Object {
-                    "active": Object {
-                      "background": "#FFF",
-                      "fill": "#1d1d20",
-                    },
-                    "text": "#FFF",
-                    "unActive": Object {
-                      "background": "#1d1d20",
-                      "fill": "#FFF",
-                    },
-                  },
-                  "secondaryText": "#71737e",
-                  "select": Object {
-                    "background": "#1d1d20",
-                    "border": "#000",
-                  },
-                  "stepper": Object {
-                    "active": "#FFF",
-                    "background": "#1d1d20",
-                  },
-                  "table": Object {
-                    "background": Object {
-                      "body": "#000",
-                      "header": "#1d1d20",
-                    },
-                    "border": Object {
-                      "body": "#1d1d20",
-                      "header": "#000",
-                    },
-                    "text": Object {
-                      "body": "#FFF",
-                      "header": "#71737e",
-                    },
-                  },
-                  "text": "#FFF",
-                  "textArea": Object {
-                    "text": "#FFF",
-                  },
-                  "textField": Object {
-                    "error": "#f21e29",
-                    "label": "#71737e",
-                  },
-                  "typography": Object {
-                    "h1": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 600,
-                    },
-                    "h2": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 100,
-                    },
-                    "h3": Object {
-                      "color": Object {
-                        "border": "#f0efef",
-                        "text": "#a6a7aa",
-                      },
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 600,
-                    },
-                    "p": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 200,
-                    },
-                    "pre": Object {
-                      "fontFamily": "Hack, monospace",
-                    },
-                    "span": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    },
-                  },
-                }
-              }
+              registerField={[Function]}
+              resetForm={[Function]}
+              setError={[Function]}
+              setErrors={[Function]}
+              setFieldError={[Function]}
+              setFieldTouched={[Function]}
+              setFormikState={[Function]}
+              setStatus={[Function]}
+              setSubmitting={[Function]}
+              setTouched={[Function]}
+              setValues={[Function]}
+              submitCount={0}
               touched={Object {}}
-              updateDataSource={[Function]}
+              unregisterField={[Function]}
+              validateField={[Function]}
+              validateForm={[Function]}
+              validateOnBlur={true}
+              validateOnChange={true}
               value=""
             >
               <styled.div>
@@ -837,6 +717,539 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                 </Component>
               </div>
             </RadioGroup>
+            <StepNavigation
+              bindSubmitForm={[Function]}
+              dataSource={Object {}}
+              intl={
+                Object {
+                  "formatMessage": [Function],
+                }
+              }
+              loading={false}
+              match={
+                Object {
+                  "params": Object {
+                    "dataSourceId": "1",
+                    "projectId": "1",
+                    "step": "1",
+                  },
+                }
+              }
+              submitForm={[Function]}
+              theme={
+                Object {
+                  "background": "#000",
+                  "border": "#2F2F36",
+                  "button": Object {
+                    "background": "#1d1d20",
+                    "text": "#FFF",
+                  },
+                  "card": Object {
+                    "background": "#1d1d20",
+                    "border": "#FFF",
+                    "label": undefined,
+                  },
+                  "checkbox": Object {
+                    "border": "#2F2F36",
+                    "text": "#FFF",
+                  },
+                  "colors": Object {
+                    "black": "#000",
+                    "coolGray": "#a6a7aa",
+                    "darkGrey": "#1d1d20",
+                    "lightGrey": "#71737e",
+                    "mediumGray": "#2F2F36",
+                    "red": "#f21e29",
+                    "veryLightPink": "#f0efef",
+                    "white": "#FFF",
+                  },
+                  "dataGrid": Object {
+                    "background": "#000",
+                    "text": "#71737e",
+                  },
+                  "header": Object {
+                    "text": "#FFF",
+                  },
+                  "icon": Object {
+                    "background": "#1d1d20",
+                    "fill": "#FFF",
+                    "fillInverse": "#000",
+                  },
+                  "input": Object {
+                    "text": "#FFF",
+                  },
+                  "inverseButton": Object {
+                    "background": "#FFF",
+                    "text": "#000",
+                  },
+                  "label": Object {
+                    "border": "#2F2F36",
+                    "text": "#71737e",
+                  },
+                  "menu": Object {
+                    "background": "#000",
+                    "text": "#FFF",
+                  },
+                  "providerContainer": Object {
+                    "backgroundColor": "#000",
+                    "minHeight": "100vh",
+                  },
+                  "radioButton": Object {
+                    "active": Object {
+                      "background": "#FFF",
+                      "fill": "#1d1d20",
+                    },
+                    "text": "#FFF",
+                    "unActive": Object {
+                      "background": "#1d1d20",
+                      "fill": "#FFF",
+                    },
+                  },
+                  "secondaryText": "#71737e",
+                  "select": Object {
+                    "background": "#1d1d20",
+                    "border": "#000",
+                  },
+                  "stepper": Object {
+                    "active": "#FFF",
+                    "background": "#1d1d20",
+                  },
+                  "table": Object {
+                    "background": Object {
+                      "body": "#000",
+                      "header": "#1d1d20",
+                    },
+                    "border": Object {
+                      "body": "#1d1d20",
+                      "header": "#000",
+                    },
+                    "text": Object {
+                      "body": "#FFF",
+                      "header": "#71737e",
+                    },
+                  },
+                  "text": "#FFF",
+                  "textArea": Object {
+                    "text": "#FFF",
+                  },
+                  "textField": Object {
+                    "error": "#f21e29",
+                    "label": "#71737e",
+                  },
+                  "typography": Object {
+                    "h1": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 600,
+                    },
+                    "h2": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 100,
+                    },
+                    "h3": Object {
+                      "color": Object {
+                        "border": "#f0efef",
+                        "text": "#a6a7aa",
+                      },
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 600,
+                    },
+                    "p": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 200,
+                    },
+                    "pre": Object {
+                      "fontFamily": "Hack, monospace",
+                    },
+                    "span": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    },
+                  },
+                }
+              }
+              updateDataSource={[Function]}
+            >
+              <NavigationContainer
+                right={false}
+              >
+                <styled.div>
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-ifAKCX",
+                          "isStatic": true,
+                          "lastClassName": "lyHqP",
+                          "rules": Array [
+                            "
+  height: 155px;
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-ifAKCX",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <div
+                      className="sc-ifAKCX lyHqP"
+                    >
+                      <styled.div
+                        right={false}
+                      >
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-EHOje",
+                                "isStatic": false,
+                                "lastClassName": "dYnOqw",
+                                "rules": Array [
+                                  "
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient(
+    to top,
+    ",
+                                  [Function],
+                                  ",
+    rgba(0, 0, 0, 0)
+  );
+  display: flex;
+  justify-content: ",
+                                  [Function],
+                                  ";
+  flex-wrap: wrap;
+",
+                                ],
+                              },
+                              "displayName": "styled.div",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-EHOje",
+                              "target": "div",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          right={false}
+                        >
+                          <div
+                            className="sc-EHOje dYnOqw"
+                          >
+                            <BackButton
+                              disabled={false}
+                              onClick={[Function]}
+                            >
+                              <Component
+                                customStyles={
+                                  Object {
+                                    "marginRight": 5,
+                                    "width": "calc(50% - 5px)",
+                                  }
+                                }
+                                disabled={false}
+                                onClick={[Function]}
+                              >
+                                <ButtonComponent
+                                  customStyles={
+                                    Object {
+                                      "marginRight": 5,
+                                      "width": "calc(50% - 5px)",
+                                    }
+                                  }
+                                  disabled={false}
+                                  inverse={false}
+                                  onClick={[Function]}
+                                >
+                                  <button
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    style={
+                                      Object {
+                                        "backgroundColor": "#1d1d20",
+                                        "border": "none",
+                                        "borderRadius": "48px",
+                                        "color": "#FFF",
+                                        "cursor": "pointer",
+                                        "display": "inline-block",
+                                        "fill": "#FFF",
+                                        "fontSize": "18px",
+                                        "margin": "0",
+                                        "marginRight": 5,
+                                        "minHeight": "48px",
+                                        "outline": "none",
+                                        "padding": "0",
+                                        "width": "calc(50% - 5px)",
+                                      }
+                                    }
+                                  >
+                                    <FormattedMessage
+                                      defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+                                      id="stepNavigation.back"
+                                      values={
+                                        Object {
+                                          "cancel": true,
+                                        }
+                                      }
+                                    >
+                                      <span>
+                                        Cancel
+                                      </span>
+                                    </FormattedMessage>
+                                  </button>
+                                </ButtonComponent>
+                              </Component>
+                            </BackButton>
+                            <NextButton
+                              disabled={false}
+                              loading={false}
+                              onClick={[Function]}
+                            >
+                              <Component
+                                customStyles={
+                                  Object {
+                                    "marginLeft": 5,
+                                    "width": "calc(50% - 5px)",
+                                  }
+                                }
+                                disabled={false}
+                                inverse={true}
+                                onClick={[Function]}
+                              >
+                                <ButtonComponent
+                                  customStyles={
+                                    Object {
+                                      "marginLeft": 5,
+                                      "width": "calc(50% - 5px)",
+                                    }
+                                  }
+                                  disabled={false}
+                                  inverse={true}
+                                  onClick={[Function]}
+                                >
+                                  <button
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    style={
+                                      Object {
+                                        "backgroundColor": "#FFF",
+                                        "border": "none",
+                                        "borderRadius": "48px",
+                                        "color": "#000",
+                                        "cursor": "pointer",
+                                        "display": "inline-block",
+                                        "fill": "#FFF",
+                                        "fontSize": "18px",
+                                        "margin": "0",
+                                        "marginLeft": 5,
+                                        "minHeight": "48px",
+                                        "outline": "none",
+                                        "padding": "0",
+                                        "width": "calc(50% - 5px)",
+                                      }
+                                    }
+                                  >
+                                    <FormattedMessage
+                                      defaultMessage="{loading, select, true {Loading...} other {Next}}"
+                                      id="navigation.next"
+                                      values={
+                                        Object {
+                                          "loading": false,
+                                        }
+                                      }
+                                    >
+                                      <span>
+                                        Next
+                                      </span>
+                                    </FormattedMessage>
+                                  </button>
+                                </ButtonComponent>
+                              </Component>
+                            </NextButton>
+                            <styled.div>
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "sc-bxivhb",
+                                      "isStatic": true,
+                                      "lastClassName": "kxjDmw",
+                                      "rules": Array [
+                                        "
+  display: flex;
+  width: 100%;
+  margin-top: 23px;
+",
+                                      ],
+                                    },
+                                    "displayName": "styled.div",
+                                    "foldedComponentIds": Array [],
+                                    "render": [Function],
+                                    "styledComponentId": "sc-bxivhb",
+                                    "target": "div",
+                                    "toString": [Function],
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                              >
+                                <div
+                                  className="sc-bxivhb kxjDmw"
+                                >
+                                  <Component
+                                    activeStep={1}
+                                    customStyles={
+                                      Object {
+                                        "margin": "0 auto",
+                                      }
+                                    }
+                                    onStepChange={[Function]}
+                                    steps={6}
+                                  >
+                                    <StepperComponent
+                                      activeStep={1}
+                                      customDotStyles={Object {}}
+                                      customStyles={
+                                        Object {
+                                          "margin": "0 auto",
+                                        }
+                                      }
+                                      handleStep={[Function]}
+                                      onStepChange={[Function]}
+                                      steps={6}
+                                    >
+                                      <div
+                                        style={
+                                          Object {
+                                            "display": "flex",
+                                            "flexDirection": "row",
+                                            "margin": "0 auto",
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          key="0"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#FFF",
+                                              "borderRadius": "50%",
+                                              "cursor": "default",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "pointerEvents": "none",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                        <span
+                                          key="1"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#1d1d20",
+                                              "borderRadius": "50%",
+                                              "cursor": "pointer",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                        <span
+                                          key="2"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#1d1d20",
+                                              "borderRadius": "50%",
+                                              "cursor": "pointer",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                        <span
+                                          key="3"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#1d1d20",
+                                              "borderRadius": "50%",
+                                              "cursor": "pointer",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                        <span
+                                          key="4"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#1d1d20",
+                                              "borderRadius": "50%",
+                                              "cursor": "pointer",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                        <span
+                                          key="5"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#1d1d20",
+                                              "borderRadius": "50%",
+                                              "cursor": "pointer",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                      </div>
+                                    </StepperComponent>
+                                  </Component>
+                                </div>
+                              </StyledComponent>
+                            </styled.div>
+                          </div>
+                        </StyledComponent>
+                      </styled.div>
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </NavigationContainer>
+            </StepNavigation>
           </Formik>
         </div>
       </StyledComponent>
@@ -907,6 +1320,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "icon": Object {
           "background": "#1d1d20",
           "fill": "#FFF",
+          "fillInverse": "#000",
         },
         "input": Object {
           "text": "#FFF",
@@ -1035,7 +1449,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                 "type": "file",
               }
             }
-            isInitialValid={true}
+            isInitialValid={false}
             onSubmit={[Function]}
             validateOnBlur={true}
             validateOnChange={true}
@@ -1189,154 +1603,37 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             <TextInput
               errors={Object {}}
               fullWidth={true}
-              intl={
+              handleBlur={[Function]}
+              handleReset={[Function]}
+              handleSubmit={[Function]}
+              initialValues={
                 Object {
-                  "formatMessage": [Function],
+                  "type": "file",
                 }
               }
+              isSubmitting={false}
+              isValidating={false}
               label="Name"
-              match={
-                Object {
-                  "params": Object {
-                    "dataSourceId": "1",
-                    "projectId": "1",
-                    "step": "1",
-                  },
-                }
-              }
               name="name"
               onChange={[Function]}
-              theme={
-                Object {
-                  "background": "#000",
-                  "border": "#2F2F36",
-                  "button": Object {
-                    "background": "#1d1d20",
-                    "text": "#FFF",
-                  },
-                  "card": Object {
-                    "background": "#1d1d20",
-                    "border": "#FFF",
-                    "label": undefined,
-                  },
-                  "checkbox": Object {
-                    "border": "#2F2F36",
-                    "text": "#FFF",
-                  },
-                  "colors": Object {
-                    "black": "#000",
-                    "coolGray": "#a6a7aa",
-                    "darkGrey": "#1d1d20",
-                    "lightGrey": "#71737e",
-                    "mediumGray": "#2F2F36",
-                    "red": "#f21e29",
-                    "veryLightPink": "#f0efef",
-                    "white": "#FFF",
-                  },
-                  "dataGrid": Object {
-                    "background": "#000",
-                    "text": "#71737e",
-                  },
-                  "header": Object {
-                    "text": "#FFF",
-                  },
-                  "icon": Object {
-                    "background": "#1d1d20",
-                    "fill": "#FFF",
-                  },
-                  "input": Object {
-                    "text": "#FFF",
-                  },
-                  "inverseButton": Object {
-                    "background": "#FFF",
-                    "text": "#000",
-                  },
-                  "label": Object {
-                    "border": "#2F2F36",
-                    "text": "#71737e",
-                  },
-                  "menu": Object {
-                    "background": "#000",
-                    "text": "#FFF",
-                  },
-                  "providerContainer": Object {
-                    "backgroundColor": "#000",
-                    "minHeight": "100vh",
-                  },
-                  "radioButton": Object {
-                    "active": Object {
-                      "background": "#FFF",
-                      "fill": "#1d1d20",
-                    },
-                    "text": "#FFF",
-                    "unActive": Object {
-                      "background": "#1d1d20",
-                      "fill": "#FFF",
-                    },
-                  },
-                  "secondaryText": "#71737e",
-                  "select": Object {
-                    "background": "#1d1d20",
-                    "border": "#000",
-                  },
-                  "stepper": Object {
-                    "active": "#FFF",
-                    "background": "#1d1d20",
-                  },
-                  "table": Object {
-                    "background": Object {
-                      "body": "#000",
-                      "header": "#1d1d20",
-                    },
-                    "border": Object {
-                      "body": "#1d1d20",
-                      "header": "#000",
-                    },
-                    "text": Object {
-                      "body": "#FFF",
-                      "header": "#71737e",
-                    },
-                  },
-                  "text": "#FFF",
-                  "textArea": Object {
-                    "text": "#FFF",
-                  },
-                  "textField": Object {
-                    "error": "#f21e29",
-                    "label": "#71737e",
-                  },
-                  "typography": Object {
-                    "h1": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 600,
-                    },
-                    "h2": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 100,
-                    },
-                    "h3": Object {
-                      "color": Object {
-                        "border": "#f0efef",
-                        "text": "#a6a7aa",
-                      },
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 600,
-                    },
-                    "p": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 200,
-                    },
-                    "pre": Object {
-                      "fontFamily": "Hack, monospace",
-                    },
-                    "span": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    },
-                  },
-                }
-              }
+              registerField={[Function]}
+              resetForm={[Function]}
+              setError={[Function]}
+              setErrors={[Function]}
+              setFieldError={[Function]}
+              setFieldTouched={[Function]}
+              setFormikState={[Function]}
+              setStatus={[Function]}
+              setSubmitting={[Function]}
+              setTouched={[Function]}
+              setValues={[Function]}
+              submitCount={0}
               touched={Object {}}
-              updateDataSource={[Function]}
+              unregisterField={[Function]}
+              validateField={[Function]}
+              validateForm={[Function]}
+              validateOnBlur={true}
+              validateOnChange={true}
               value=""
             >
               <styled.div>
@@ -1961,6 +2258,543 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                 </div>
               </FileUploadComponent>
             </Component>
+            <StepNavigation
+              bindSubmitForm={[Function]}
+              dataSource={
+                Object {
+                  "type": "file",
+                }
+              }
+              intl={
+                Object {
+                  "formatMessage": [Function],
+                }
+              }
+              loading={false}
+              match={
+                Object {
+                  "params": Object {
+                    "dataSourceId": "1",
+                    "projectId": "1",
+                    "step": "1",
+                  },
+                }
+              }
+              submitForm={[Function]}
+              theme={
+                Object {
+                  "background": "#000",
+                  "border": "#2F2F36",
+                  "button": Object {
+                    "background": "#1d1d20",
+                    "text": "#FFF",
+                  },
+                  "card": Object {
+                    "background": "#1d1d20",
+                    "border": "#FFF",
+                    "label": undefined,
+                  },
+                  "checkbox": Object {
+                    "border": "#2F2F36",
+                    "text": "#FFF",
+                  },
+                  "colors": Object {
+                    "black": "#000",
+                    "coolGray": "#a6a7aa",
+                    "darkGrey": "#1d1d20",
+                    "lightGrey": "#71737e",
+                    "mediumGray": "#2F2F36",
+                    "red": "#f21e29",
+                    "veryLightPink": "#f0efef",
+                    "white": "#FFF",
+                  },
+                  "dataGrid": Object {
+                    "background": "#000",
+                    "text": "#71737e",
+                  },
+                  "header": Object {
+                    "text": "#FFF",
+                  },
+                  "icon": Object {
+                    "background": "#1d1d20",
+                    "fill": "#FFF",
+                    "fillInverse": "#000",
+                  },
+                  "input": Object {
+                    "text": "#FFF",
+                  },
+                  "inverseButton": Object {
+                    "background": "#FFF",
+                    "text": "#000",
+                  },
+                  "label": Object {
+                    "border": "#2F2F36",
+                    "text": "#71737e",
+                  },
+                  "menu": Object {
+                    "background": "#000",
+                    "text": "#FFF",
+                  },
+                  "providerContainer": Object {
+                    "backgroundColor": "#000",
+                    "minHeight": "100vh",
+                  },
+                  "radioButton": Object {
+                    "active": Object {
+                      "background": "#FFF",
+                      "fill": "#1d1d20",
+                    },
+                    "text": "#FFF",
+                    "unActive": Object {
+                      "background": "#1d1d20",
+                      "fill": "#FFF",
+                    },
+                  },
+                  "secondaryText": "#71737e",
+                  "select": Object {
+                    "background": "#1d1d20",
+                    "border": "#000",
+                  },
+                  "stepper": Object {
+                    "active": "#FFF",
+                    "background": "#1d1d20",
+                  },
+                  "table": Object {
+                    "background": Object {
+                      "body": "#000",
+                      "header": "#1d1d20",
+                    },
+                    "border": Object {
+                      "body": "#1d1d20",
+                      "header": "#000",
+                    },
+                    "text": Object {
+                      "body": "#FFF",
+                      "header": "#71737e",
+                    },
+                  },
+                  "text": "#FFF",
+                  "textArea": Object {
+                    "text": "#FFF",
+                  },
+                  "textField": Object {
+                    "error": "#f21e29",
+                    "label": "#71737e",
+                  },
+                  "typography": Object {
+                    "h1": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 600,
+                    },
+                    "h2": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 100,
+                    },
+                    "h3": Object {
+                      "color": Object {
+                        "border": "#f0efef",
+                        "text": "#a6a7aa",
+                      },
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 600,
+                    },
+                    "p": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                      "fontWeight": 200,
+                    },
+                    "pre": Object {
+                      "fontFamily": "Hack, monospace",
+                    },
+                    "span": Object {
+                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    },
+                  },
+                }
+              }
+              updateDataSource={[Function]}
+            >
+              <NavigationContainer
+                right={false}
+              >
+                <styled.div>
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-ifAKCX",
+                          "isStatic": true,
+                          "lastClassName": "lyHqP",
+                          "rules": Array [
+                            "
+  height: 155px;
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-ifAKCX",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <div
+                      className="sc-ifAKCX lyHqP"
+                    >
+                      <styled.div
+                        right={false}
+                      >
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-EHOje",
+                                "isStatic": false,
+                                "lastClassName": "dYnOqw",
+                                "rules": Array [
+                                  "
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient(
+    to top,
+    ",
+                                  [Function],
+                                  ",
+    rgba(0, 0, 0, 0)
+  );
+  display: flex;
+  justify-content: ",
+                                  [Function],
+                                  ";
+  flex-wrap: wrap;
+",
+                                ],
+                              },
+                              "displayName": "styled.div",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-EHOje",
+                              "target": "div",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          right={false}
+                        >
+                          <div
+                            className="sc-EHOje dYnOqw"
+                          >
+                            <BackButton
+                              disabled={false}
+                              onClick={[Function]}
+                            >
+                              <Component
+                                customStyles={
+                                  Object {
+                                    "marginRight": 5,
+                                    "width": "calc(50% - 5px)",
+                                  }
+                                }
+                                disabled={false}
+                                onClick={[Function]}
+                              >
+                                <ButtonComponent
+                                  customStyles={
+                                    Object {
+                                      "marginRight": 5,
+                                      "width": "calc(50% - 5px)",
+                                    }
+                                  }
+                                  disabled={false}
+                                  inverse={false}
+                                  onClick={[Function]}
+                                >
+                                  <button
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    style={
+                                      Object {
+                                        "backgroundColor": "#1d1d20",
+                                        "border": "none",
+                                        "borderRadius": "48px",
+                                        "color": "#FFF",
+                                        "cursor": "pointer",
+                                        "display": "inline-block",
+                                        "fill": "#FFF",
+                                        "fontSize": "18px",
+                                        "margin": "0",
+                                        "marginRight": 5,
+                                        "minHeight": "48px",
+                                        "outline": "none",
+                                        "padding": "0",
+                                        "width": "calc(50% - 5px)",
+                                      }
+                                    }
+                                  >
+                                    <FormattedMessage
+                                      defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+                                      id="stepNavigation.back"
+                                      values={
+                                        Object {
+                                          "cancel": true,
+                                        }
+                                      }
+                                    >
+                                      <span>
+                                        Cancel
+                                      </span>
+                                    </FormattedMessage>
+                                  </button>
+                                </ButtonComponent>
+                              </Component>
+                            </BackButton>
+                            <NextButton
+                              disabled={false}
+                              loading={false}
+                              onClick={[Function]}
+                            >
+                              <Component
+                                customStyles={
+                                  Object {
+                                    "marginLeft": 5,
+                                    "width": "calc(50% - 5px)",
+                                  }
+                                }
+                                disabled={false}
+                                inverse={true}
+                                onClick={[Function]}
+                              >
+                                <ButtonComponent
+                                  customStyles={
+                                    Object {
+                                      "marginLeft": 5,
+                                      "width": "calc(50% - 5px)",
+                                    }
+                                  }
+                                  disabled={false}
+                                  inverse={true}
+                                  onClick={[Function]}
+                                >
+                                  <button
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    style={
+                                      Object {
+                                        "backgroundColor": "#FFF",
+                                        "border": "none",
+                                        "borderRadius": "48px",
+                                        "color": "#000",
+                                        "cursor": "pointer",
+                                        "display": "inline-block",
+                                        "fill": "#FFF",
+                                        "fontSize": "18px",
+                                        "margin": "0",
+                                        "marginLeft": 5,
+                                        "minHeight": "48px",
+                                        "outline": "none",
+                                        "padding": "0",
+                                        "width": "calc(50% - 5px)",
+                                      }
+                                    }
+                                  >
+                                    <FormattedMessage
+                                      defaultMessage="{loading, select, true {Loading...} other {Next}}"
+                                      id="navigation.next"
+                                      values={
+                                        Object {
+                                          "loading": false,
+                                        }
+                                      }
+                                    >
+                                      <span>
+                                        Next
+                                      </span>
+                                    </FormattedMessage>
+                                  </button>
+                                </ButtonComponent>
+                              </Component>
+                            </NextButton>
+                            <styled.div>
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "sc-bxivhb",
+                                      "isStatic": true,
+                                      "lastClassName": "kxjDmw",
+                                      "rules": Array [
+                                        "
+  display: flex;
+  width: 100%;
+  margin-top: 23px;
+",
+                                      ],
+                                    },
+                                    "displayName": "styled.div",
+                                    "foldedComponentIds": Array [],
+                                    "render": [Function],
+                                    "styledComponentId": "sc-bxivhb",
+                                    "target": "div",
+                                    "toString": [Function],
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                              >
+                                <div
+                                  className="sc-bxivhb kxjDmw"
+                                >
+                                  <Component
+                                    activeStep={1}
+                                    customStyles={
+                                      Object {
+                                        "margin": "0 auto",
+                                      }
+                                    }
+                                    onStepChange={[Function]}
+                                    steps={6}
+                                  >
+                                    <StepperComponent
+                                      activeStep={1}
+                                      customDotStyles={Object {}}
+                                      customStyles={
+                                        Object {
+                                          "margin": "0 auto",
+                                        }
+                                      }
+                                      handleStep={[Function]}
+                                      onStepChange={[Function]}
+                                      steps={6}
+                                    >
+                                      <div
+                                        style={
+                                          Object {
+                                            "display": "flex",
+                                            "flexDirection": "row",
+                                            "margin": "0 auto",
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          key="0"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#FFF",
+                                              "borderRadius": "50%",
+                                              "cursor": "default",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "pointerEvents": "none",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                        <span
+                                          key="1"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#1d1d20",
+                                              "borderRadius": "50%",
+                                              "cursor": "pointer",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                        <span
+                                          key="2"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#1d1d20",
+                                              "borderRadius": "50%",
+                                              "cursor": "pointer",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                        <span
+                                          key="3"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#1d1d20",
+                                              "borderRadius": "50%",
+                                              "cursor": "pointer",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                        <span
+                                          key="4"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#1d1d20",
+                                              "borderRadius": "50%",
+                                              "cursor": "pointer",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                        <span
+                                          key="5"
+                                          onClick={[Function]}
+                                          style={
+                                            Object {
+                                              "backgroundColor": "#1d1d20",
+                                              "borderRadius": "50%",
+                                              "cursor": "pointer",
+                                              "display": "block",
+                                              "height": "12px",
+                                              "margin": "0 4px",
+                                              "width": "12px",
+                                            }
+                                          }
+                                        />
+                                      </div>
+                                    </StepperComponent>
+                                  </Component>
+                                </div>
+                              </StyledComponent>
+                            </styled.div>
+                          </div>
+                        </StyledComponent>
+                      </styled.div>
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </NavigationContainer>
+            </StepNavigation>
           </Formik>
         </div>
       </StyledComponent>

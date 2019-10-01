@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   next: {
     id: 'navigation.next',
-    defaultMessage: 'Next',
+    defaultMessage: '{loading, select, true {Loading...} other {Next}}',
   },
   back: {
     id: 'navigation.back',

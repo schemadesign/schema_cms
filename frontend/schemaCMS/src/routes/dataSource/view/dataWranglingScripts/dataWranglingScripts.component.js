@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
@@ -8,13 +8,13 @@ import { always, append, ifElse, equals, reject } from 'ramda';
 import { Container, Header, StepCounter, Empty, UploadContainer, Error, Link } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
+import { StepNavigation } from '../../shared/components/stepNavigation';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
 export class DataWranglingScripts extends PureComponent {
   static propTypes = {
     dataWranglingScripts: PropTypes.array.isRequired,
-    bindSubmitForm: PropTypes.func.isRequired,
     fetchDataWranglingScripts: PropTypes.func.isRequired,
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
@@ -81,7 +81,7 @@ export class DataWranglingScripts extends PureComponent {
   );
 
   render() {
-    const { bindSubmitForm, dataWranglingScripts } = this.props;
+    const { dataWranglingScripts } = this.props;
     const { uploading, errorOnUploading } = this.state;
     const data = dataWranglingScripts.map(({ key }) => key);
 
@@ -104,14 +104,18 @@ export class DataWranglingScripts extends PureComponent {
           </UploadContainer>
         </Header>
         <Formik initialValues={{ steps: [] }} onSubmit={this.handleSubmit}>
-          {({ values: { steps }, submitForm, dirty, isValid, setFieldValue }) => {
-            if (dirty && isValid && !uploading) {
-              bindSubmitForm(submitForm);
-            }
+          {({ values: { steps }, setFieldValue, submitForm }) => {
             return (
-              <CheckboxGroup onChange={e => this.handleChange({ e, setFieldValue, steps })} value={steps} name="steps">
-                {this.renderCheckboxes(dataWranglingScripts, data)}
-              </CheckboxGroup>
+              <Fragment>
+                <CheckboxGroup
+                  onChange={e => this.handleChange({ e, setFieldValue, steps })}
+                  value={steps}
+                  name="steps"
+                >
+                  {this.renderCheckboxes(dataWranglingScripts, data)}
+                </CheckboxGroup>
+                <StepNavigation submitForm={submitForm} {...this.props} />
+              </Fragment>
             );
           }}
         </Formik>

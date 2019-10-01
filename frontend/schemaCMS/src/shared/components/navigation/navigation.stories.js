@@ -6,7 +6,7 @@ import { withTheme } from '../../../.storybook/decorators';
 
 const defaultProps = {};
 
-storiesOf('Shared Components|Navigation', module)
+storiesOf('Shared Components/Navigation', module)
   .addDecorator(withTheme())
   .add('NavigationContainer', () => (
     <NavigationContainer right>

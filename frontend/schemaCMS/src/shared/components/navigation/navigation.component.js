@@ -30,8 +30,8 @@ export class NavigationContainer extends PureComponent {
 export class PlusButton extends PureComponent {
   render() {
     return (
-      <Button customStyles={buttonIconStyles} {...this.props}>
-        <PlusIcon />
+      <Button inverse customStyles={buttonIconStyles} {...this.props}>
+        <PlusIcon inverse />
       </Button>
     );
   }
@@ -50,6 +50,11 @@ export class BackArrowButton extends PureComponent {
 export class BackButton extends PureComponent {
   static propTypes = {
     children: PropTypes.element,
+    disabled: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    disabled: false,
   };
 
   render() {
@@ -64,12 +69,19 @@ export class BackButton extends PureComponent {
 export class NextButton extends PureComponent {
   static propTypes = {
     children: PropTypes.element,
+    loading: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    loading: false,
   };
 
   render() {
+    const { loading, ...restProps } = this.props;
+
     return (
-      <Button inverse customStyles={nextButtonStyles} {...this.props}>
-        {this.props.children || <FormattedMessage {...messages.next} />}
+      <Button inverse customStyles={nextButtonStyles} {...restProps}>
+        {this.props.children || <FormattedMessage {...messages.next} values={{ loading }} />}
       </Button>
     );
   }

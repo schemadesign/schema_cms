@@ -64,6 +64,7 @@ const light = {
   icon: {
     background: colors.veryLightPink,
     fill: colors.darkGrey,
+    fillInverse: colors.white,
   },
   radioButton: {
     text: colors.darkGrey,
@@ -156,6 +157,7 @@ const dark = {
   icon: {
     background: colors.darkGrey,
     fill: colors.white,
+    fillInverse: colors.black,
   },
   radioButton: {
     text: colors.white,
