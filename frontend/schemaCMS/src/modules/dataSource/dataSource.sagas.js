@@ -12,9 +12,9 @@ function* create({ payload }) {
     yield put(DataSourceRoutines.create.request());
 
     const requestData = { project: payload.projectId };
-    const { data } = yield api.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`, requestData);
+    const { data } = yield api.post(`${DATA_SOURCES_PATH}`, requestData);
 
-    browserHistory.push(`/project/view/${payload.projectId}/datasource/view/${data.id}`);
+    browserHistory.push(`/datasource/${data.id}`);
     yield put(DataSourceRoutines.create.success(data));
   } catch (error) {
     yield put(DataSourceRoutines.create.failure(error));
@@ -26,7 +26,7 @@ function* create({ payload }) {
 function* removeOne({ payload }) {
   try {
     yield put(DataSourceRoutines.removeOne.request());
-    yield api.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`);
+    yield api.delete(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`);
 
     browserHistory.push(`/project/view/${payload.projectId}/datasource/list`);
     yield put(DataSourceRoutines.removeOne.success());
@@ -37,11 +37,11 @@ function* removeOne({ payload }) {
   }
 }
 
-function* fetchOne({ payload }) {
+function* fetchOne({ payload: { dataSourceId } }) {
   try {
     yield put(DataSourceRoutines.fetchOne.request());
 
-    const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`);
+    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}`);
 
     yield put(DataSourceRoutines.fetchOne.success(data));
   } catch (error) {
@@ -86,7 +86,7 @@ function* fetchList({ payload }) {
   yield cancel(bgSyncTask);
 }
 
-function* updateOne({ payload: { projectId, dataSourceId, requestData, step } }) {
+function* updateOne({ payload: { dataSourceId, requestData, step } }) {
   try {
     yield put(DataSourceRoutines.updateOne.request());
     const formData = new FormData();
@@ -96,16 +96,18 @@ function* updateOne({ payload: { projectId, dataSourceId, requestData, step } })
       forEach(name => formData.append(name, requestData[name]))
     )(requestData);
 
-    const { data } = yield api.patch(`${PROJECTS_PATH}/${projectId}${DATA_SOURCES_PATH}/${dataSourceId}`, formData, {
+    const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
-    const redirectUri = requestData.file ? 'list' : `view/${dataSourceId}/${parseInt(step, 10) + 1}`;
-
-    browserHistory.push(`/project/view/${projectId}/datasource/${redirectUri}`);
+    const redirectUri = requestData.file
+      ? `/project/${data.project}/datasource`
+      : `/datasource/${dataSourceId}/${parseInt(step, 10) + 1}`;
 
     yield put(DataSourceRoutines.updateOne.success(data));
-    yield put(DataSourceRoutines.processOne({ projectId, dataSourceId }));
+    yield put(DataSourceRoutines.processOne({ dataSourceId }));
+
+    browserHistory.push(redirectUri);
   } catch (error) {
     yield put(DataSourceRoutines.updateOne.failure(error));
   } finally {
@@ -113,10 +115,10 @@ function* updateOne({ payload: { projectId, dataSourceId, requestData, step } })
   }
 }
 
-function* processOne({ payload: { projectId, dataSourceId } }) {
+function* processOne({ payload: { dataSourceId } }) {
   try {
     yield put(DataSourceRoutines.processOne.request());
-    yield api.post(`${PROJECTS_PATH}/${projectId}${DATA_SOURCES_PATH}/${dataSourceId}/process`);
+    yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/process`);
     yield put(DataSourceRoutines.processOne.success());
   } catch (error) {
     yield put(DataSourceRoutines.processOne.failure());
@@ -129,8 +131,8 @@ function* fetchFields({ payload }) {
   try {
     yield put(DataSourceRoutines.fetchOne.request());
 
-    const { projectId, dataSourceId } = payload;
-    const { data } = yield api.get(`${PROJECTS_PATH}/${projectId}${DATA_SOURCES_PATH}/${dataSourceId}${PREVIEW_PATH}`);
+    const { dataSourceId } = payload;
+    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${PREVIEW_PATH}`);
 
     yield put(DataSourceRoutines.fetchFields.success(data));
   } catch (error) {

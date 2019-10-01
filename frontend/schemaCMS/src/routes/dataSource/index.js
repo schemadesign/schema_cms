@@ -1,1 +1,1 @@
-export { default as DataSource } from './dataSource.container';
+export { default as DataSource } from './dataSource.component';

@@ -64,7 +64,7 @@ export class View extends PureComponent {
     if (!hasNoData) {
       primaryMenuItems.push({
         label: this.formatMessage(messages.dataSources),
-        to: `/project/view/${projectId}/datasource`,
+        to: `/project/${projectId}/datasource`,
       });
 
       if (isAdmin(this.props.user)) {
@@ -119,7 +119,7 @@ export class View extends PureComponent {
       {
         header: this.formatMessage(messages.dataSources),
         value: path(['dataSources', 'count'], meta),
-        to: `/project/view/${projectId}/datasource`,
+        to: `/project/${projectId}/datasource`,
       },
       { header: this.formatMessage(messages.charts), value: this.countItems(charts) },
       { header: this.formatMessage(messages.pages), value: this.countItems(pages) },
@@ -178,7 +178,7 @@ export class View extends PureComponent {
           {content}
         </div>
         <NavigationContainer>
-          <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project/list')} />
+          <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
       </Container>
     );

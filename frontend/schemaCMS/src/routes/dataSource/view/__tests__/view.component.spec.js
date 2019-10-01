@@ -20,6 +20,7 @@ describe('View: Component', () => {
       dataSource: {
         id: 'id',
         name: 'name',
+        project: '1',
       },
     };
     const wrapper = render(props);
@@ -32,6 +33,7 @@ describe('View: Component', () => {
         id: 'id',
         name: 'name',
         step: '2',
+        project: '1',
       },
     };
     const wrapper = render(props);
@@ -43,6 +45,7 @@ describe('View: Component', () => {
       dataSource: {
         id: 'id',
         name: 'name',
+        project: '1',
       },
       match: {
         params: {
@@ -63,6 +66,7 @@ describe('View: Component', () => {
       dataSource: {
         id: 'id',
         status: STATUS_DRAFT,
+        project: '1',
       },
     };
 
