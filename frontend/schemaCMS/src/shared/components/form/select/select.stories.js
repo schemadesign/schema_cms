@@ -28,4 +28,4 @@ class TestComponent extends PureComponent {
   }
 }
 
-storiesOf('Shared Components/Form/Select', module).add('Default', () => <TestComponent />);
+storiesOf('Shared Components|Form/Select', module).add('Default', () => <TestComponent />);

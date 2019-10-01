@@ -11,7 +11,7 @@ export const defaultProps = {
   secondaryMenuItems: [{ label: 'Log Out', to: '/logout' }, { label: 'Click action', onClick: () => {}, id: 'id' }],
 };
 
-const long = `
+const longText = `
   Mauris egestas arcu nec diam consectetur vulputate.
   Mauris rhoncus a massa in ultricies. In vel accumsan tortor.
   Donec suscipit commodo enim. Suspendisse nibh odio
@@ -19,9 +19,9 @@ const long = `
 
 const longProps = {
   ...defaultProps,
-  headerTitle: long,
-  headerSubtitle: long
-}
+  headerTitle: longText,
+  headerSubtitle: longText,
+};
 
 storiesOf('Shared Components|TopHeader', module)
   .addDecorator(withRouter)
