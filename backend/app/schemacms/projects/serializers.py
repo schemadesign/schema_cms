@@ -1,6 +1,6 @@
 import django_fsm
 from django.db import transaction
-from rest_framework import serializers, exceptions
+from rest_framework import serializers, exceptions, validators
 
 from schemacms.projects import models
 from schemacms.projects import services
@@ -50,6 +50,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "type": {"required": True, "allow_null": False},
             "file": {"required": True, "allow_null": False},
         }
+        validators = [
+            validators.UniqueTogetherValidator(queryset=DataSource.objects.all(), fields=('name', 'project'))
+        ]
 
     def get_file_name(self, obj):
         if obj.file:
@@ -74,12 +77,19 @@ class DraftDataSourceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DataSource
-        fields = ("id", "name", "type", "file", "meta_data")
+        fields = ("id", "name", "type", "file", "meta_data", "project")
         extra_kwargs = {
             "name": {"required": False, "allow_null": True},
             "type": {"required": False, "allow_null": True},
             "file": {"required": False, "allow_null": True},
         }
+        validators = []  # do not validate tuple of (name, project)
+
+    def validate_project(self, project):
+        user = self.context["request"].user
+        if not project.user_has_access(user):
+            raise exceptions.PermissionDenied
+        return project
 
 
 class ProjectOwnerSerializer(serializers.ModelSerializer):
