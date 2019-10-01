@@ -7,8 +7,8 @@ import { FormattedMessage } from 'react-intl';
 import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
-import { Fields } from './fields';
-import { DataWranglingScripts } from '../../dataWranglingScripts';
+import { DataPreview } from '../../../shared/components/dataPreview';
+import { DataWranglingScripts } from './dataWranglingScripts';
 import { DataWranglingResult } from '../../dataWranglingResult';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -38,7 +38,6 @@ export class View extends PureComponent {
     }),
     match: PropTypes.shape({
       params: PropTypes.shape({
-        projectId: PropTypes.string.isRequired,
         dataSourceId: PropTypes.string.isRequired,
         step: PropTypes.string.isRequired,
       }).isRequired,
@@ -47,9 +46,9 @@ export class View extends PureComponent {
 
   componentDidMount() {
     if (!this.props.dataSource.id) {
-      const { projectId, dataSourceId } = this.props.match.params;
+      const { dataSourceId } = this.props.match.params;
 
-      this.props.fetchDataSource({ projectId, dataSourceId });
+      this.props.fetchDataSource({ dataSourceId });
     }
   }
 
@@ -70,10 +69,12 @@ export class View extends PureComponent {
 
   getHeaderAndMenuConfig = (intl, activeStep) => {
     const headerTitle = this.getTitle(intl);
+    const projectId = this.props.dataSource.project;
+
     const secondaryMenuItems = [
       {
         label: this.props.intl.formatMessage(messages.dataSourceList),
-        to: `/project/view/${this.props.match.params.projectId}/datasource/list`,
+        to: `/project/${projectId}/datasource/`,
       },
       {
         label: this.props.intl.formatMessage(messages.removeDataSource),
@@ -106,26 +107,25 @@ export class View extends PureComponent {
     const {
       history,
       match: {
-        params: { projectId, dataSourceId },
+        params: { dataSourceId },
       },
     } = this.props;
 
     if (step < 1) {
-      return this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
+      return this.props.history.push(`/project/${this.props.dataSource.project}/datasource/`);
     }
 
-    return history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
+    return history.push(`/datasource/${dataSourceId}/${step}`);
   };
 
   handleBackClick = () => this.handleStepChange(parseInt(this.props.match.params.step, 10) - 1);
 
-  handleCancelClick = () =>
-    this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
+  handleCancelClick = () => this.props.history.push(`/project/${this.props.dataSource.project}/datasource/`);
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
       [equals(INITIAL_STEP), always(<Source bindSubmitForm={this.bindSubmitForm} {...props} />)],
-      [equals(FIELDS_STEP), always(<Fields {...props} />)],
+      [equals(FIELDS_STEP), always(<DataPreview {...props} />)],
       [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts bindSubmitForm={this.bindSubmitForm} {...props} />)],
       [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],
       [equals(5), always(null)],

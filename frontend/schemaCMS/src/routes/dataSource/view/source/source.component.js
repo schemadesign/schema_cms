@@ -38,7 +38,6 @@ export class SourceComponent extends PureComponent {
     theme: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
-        projectId: PropTypes.string.isRequired,
         dataSourceId: PropTypes.string.isRequired,
         step: PropTypes.string.isRequired,
       }).isRequired,
@@ -56,8 +55,8 @@ export class SourceComponent extends PureComponent {
   };
 
   handleSubmit = requestData => {
-    const { projectId, dataSourceId, step } = this.props.match.params;
-    this.props.updateDataSource({ requestData, projectId, dataSourceId, step });
+    const { dataSourceId, step } = this.props.match.params;
+    this.props.updateDataSource({ requestData, dataSourceId, step });
   };
 
   renderCsvUploader = ({ setFieldValue, fileName }) => (
@@ -109,8 +108,8 @@ export class SourceComponent extends PureComponent {
           validationSchema={DATA_SOURCE_SCHEMA}
           onSubmit={this.handleSubmit}
         >
-          {({ handleChange, values: { name, type, fileName }, setFieldValue, submitForm, isValid }) => {
-            if (isValid) {
+          {({ handleChange, values: { name, type, fileName }, setFieldValue, submitForm, isValid, dirty }) => {
+            if (isValid && dirty) {
               bindSubmitForm(submitForm);
             }
 
