@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withRouter, withTheme } from '../../.storybook/decorators';
+import { withRouter, withTheme } from '../../../../.storybook/decorators';
 
 import { DataWranglingScripts } from './dataWranglingScripts.component';
 
@@ -11,7 +11,7 @@ export const defaultProps = {
   uploadScript: Function.prototype,
   sendUpdatedDataWranglingScript: Function.prototype,
   match: {
-    url: '/project/view/2/datasource/view/14/3',
+    url: '/datasource/14/3',
     params: {
       dataSourceId: '1',
       projectId: '1',

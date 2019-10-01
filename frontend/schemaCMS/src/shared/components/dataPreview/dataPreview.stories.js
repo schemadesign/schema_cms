@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
 import { withTheme } from '../../../.storybook/decorators';
-import { DataPreview } from './dataPreview.component';
+import DataPreview from './dataPreview.component';
 
 const previewTable = [
   {
@@ -63,6 +63,11 @@ const fields = {
   Url: {},
 };
 
+const dataSource = {
+  id: 1,
+  project: 1,
+};
+
 export const defaultProps = {
   fields,
   previewTable,
@@ -71,12 +76,7 @@ export const defaultProps = {
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
-  match: {
-    params: {
-      projectId: '1',
-      dataSourceId: '1',
-    },
-  },
+  dataSource,
 };
 
 storiesOf('DataSource/View/Fields', module)

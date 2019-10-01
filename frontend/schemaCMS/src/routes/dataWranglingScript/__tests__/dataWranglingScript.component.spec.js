@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { View } from '../view.component';
-import { defaultProps } from '../view.stories';
+import { DataWranglingScript } from '../dataWranglingScript.component';
+import { defaultProps } from '../dataWranglingScript.stories';
 
 describe('View: Component', () => {
-  const component = props => <View {...defaultProps} {...props} />;
+  const component = props => <DataWranglingScript {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

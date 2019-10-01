@@ -99,7 +99,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       value="name 1"
     >
       <Styled(Link)
-        to="/project/view/2/datasource/view/14/script/view/0"
+        to="/script/0"
       >
         name 1
       </Styled(Link)>
@@ -111,7 +111,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       value="name 2"
     >
       <Styled(Link)
-        to="/project/view/2/datasource/view/14/script/view/1"
+        to="/script/1"
       >
         name 2
       </Styled(Link)>

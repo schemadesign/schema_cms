@@ -13,10 +13,5 @@ exports[`DataSource: Component should render correctly 1`] = `
     exact={true}
     path="path/:dataSourceId/:step"
   />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="path/:dataSourceId/script/view/:scriptId"
-  />
 </Switch>
 `;

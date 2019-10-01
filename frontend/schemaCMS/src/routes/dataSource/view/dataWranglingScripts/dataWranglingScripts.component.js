@@ -36,12 +36,6 @@ export class DataWranglingScripts extends PureComponent {
     this.props.fetchDataWranglingScripts({ dataSourceId });
   }
 
-  getScrtiptUrl = index => {
-    const baseUrl = this.props.match.url.replace(/\d+\/?$/, 'script/view/');
-
-    return `${baseUrl}${index}`;
-  };
-
   handleUploadScript = async ({ target }) => {
     const [file] = target.files;
     if (!file) {
@@ -75,7 +69,7 @@ export class DataWranglingScripts extends PureComponent {
   renderCheckboxes = (values, data) =>
     values.map(({ key }, index) => (
       <Checkbox id={`checkbox-${index}`} value={data[index]} key={index} isEdit>
-        <Link to={this.getScrtiptUrl(index)}>{key}</Link>
+        <Link to={`/script/${index}`}>{key}</Link>
       </Checkbox>
     ));
 
