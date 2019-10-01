@@ -249,10 +249,10 @@ exports[`Storyshots Project/List empty 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#1d1d20",
+              "backgroundColor": "#FFF",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#FFF",
+              "color": "#000",
               "cursor": "pointer",
               "display": "inline-block",
               "fill": "#FFF",
@@ -269,7 +269,7 @@ exports[`Storyshots Project/List empty 1`] = `
           <svg
             style={
               Object {
-                "fill": "#FFF",
+                "fill": "#000",
                 "height": "60px",
                 "width": "60px",
               }
@@ -727,10 +727,10 @@ exports[`Storyshots Project/List list 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#1d1d20",
+              "backgroundColor": "#FFF",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#FFF",
+              "color": "#000",
               "cursor": "pointer",
               "display": "inline-block",
               "fill": "#FFF",
@@ -747,7 +747,7 @@ exports[`Storyshots Project/List list 1`] = `
           <svg
             style={
               Object {
-                "fill": "#FFF",
+                "fill": "#000",
                 "height": "60px",
                 "width": "60px",
               }

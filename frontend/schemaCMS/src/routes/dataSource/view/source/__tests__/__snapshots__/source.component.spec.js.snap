@@ -7,6 +7,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   <SourceComponent
     bindSubmitForm={[Function]}
     dataSource={Object {}}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
     intl={
       Object {
         "formatMessage": [Function],
@@ -720,6 +725,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             <StepNavigation
               bindSubmitForm={[Function]}
               dataSource={Object {}}
+              history={
+                Object {
+                  "push": [Function],
+                }
+              }
               intl={
                 Object {
                   "formatMessage": [Function],
@@ -1267,6 +1277,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
     dataSource={
       Object {
         "type": "file",
+      }
+    }
+    history={
+      Object {
+        "push": [Function],
       }
     }
     intl={
@@ -2263,6 +2278,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
               dataSource={
                 Object {
                   "type": "file",
+                }
+              }
+              history={
+                Object {
+                  "push": [Function],
                 }
               }
               intl={

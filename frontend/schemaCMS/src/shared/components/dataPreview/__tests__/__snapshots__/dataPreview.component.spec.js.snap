@@ -114,6 +114,11 @@ exports[`DataPreview: Component should render correctly 1`] = `
     />
   </styled.div>
   <StepNavigation
+    dataSource={
+      Object {
+        "status": "done",
+      }
+    }
     fetchFields={[Function]}
     fields={
       Object {
@@ -124,6 +129,11 @@ exports[`DataPreview: Component should render correctly 1`] = `
         "Last Name": Object {},
         "State of Birth": Object {},
         "Url": Object {},
+      }
+    }
+    history={
+      Object {
+        "push": [Function],
       }
     }
     intl={

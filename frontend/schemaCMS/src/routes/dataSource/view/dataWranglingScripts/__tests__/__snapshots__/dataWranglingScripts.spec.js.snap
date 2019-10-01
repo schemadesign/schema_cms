@@ -119,6 +119,11 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
   </Component>
   <StepNavigation
     bindSubmitForm={[Function]}
+    dataSource={
+      Object {
+        "status": "done",
+      }
+    }
     dataWranglingScripts={
       Array [
         Object {
@@ -130,6 +135,11 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       ]
     }
     fetchDataWranglingScripts={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
     match={
       Object {
         "params": Object {

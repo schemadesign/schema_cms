@@ -4,6 +4,7 @@ import { Theme } from 'schemaUI';
 
 import { withTheme } from '../../../.storybook/decorators';
 import DataPreview from './dataPreview.component';
+import { STATUS_DONE } from '../../../../modules/dataSource/dataSource.constants';
 
 const previewTable = [
   {
@@ -73,6 +74,10 @@ export const defaultProps = {
   previewTable,
   fetchFields: Function.prototype,
   unmountFields: Function.prototype,
+  dataSource: { status: STATUS_DONE },
+  history: {
+    push: Function.prototype,
+  },
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
