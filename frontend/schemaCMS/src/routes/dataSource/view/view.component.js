@@ -1,10 +1,8 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Stepper } from 'schemaUI';
 import { always, cond, equals, T } from 'ramda';
-import { FormattedMessage } from 'react-intl';
 
-import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from './view.styles';
+import { Container } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
 import { DataPreview } from '../../../shared/components/dataPreview';
@@ -17,10 +15,8 @@ import {
   DATA_WRANGLING_RESULT_STEP,
   FIELDS_STEP,
   INITIAL_STEP,
-  MAX_STEPS,
   STATUS_DRAFT,
 } from '../../../modules/dataSource/dataSource.constants';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -42,10 +38,6 @@ export class View extends PureComponent {
         step: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
-  };
-
-  state = {
-    isNextDisabled: true,
   };
 
   componentDidMount() {
@@ -93,53 +85,11 @@ export class View extends PureComponent {
     };
   };
 
-  submitForm = null;
-
-  bindSubmitForm = submitForm => {
-    this.submitForm = submitForm;
-  };
-
-  bindSetNextDisabling = value => {
-    this.setState({ isNextDisabled: value });
-  };
-
-  handleNextClick = () => {
-    if (this.submitForm) {
-      return this.submitForm();
-    }
-
-    return this.handleStepChange(parseInt(this.props.match.params.step, 10) + 1);
-  };
-
-  handleStepChange = step => {
-    const {
-      history,
-      match: {
-        params: { dataSourceId },
-      },
-    } = this.props;
-
-    if (step < 1) {
-      return this.props.history.push(`/project/${this.props.dataSource.project}/datasource/`);
-    }
-
-    return history.push(`/datasource/${dataSourceId}/${step}`);
-  };
-
-  handleBackClick = () => this.handleStepChange(parseInt(this.props.match.params.step, 10) - 1);
-
-  handleCancelClick = () => this.props.history.push(`/project/${this.props.dataSource.project}/datasource/`);
-
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
-      [
-        equals(INITIAL_STEP),
-        always(
-          <Source bindSubmitForm={this.bindSubmitForm} bindSetNextDisabling={this.bindSetNextDisabling} {...props} />
-        ),
-      ],
+      [equals(INITIAL_STEP), always(<Source {...props} />)],
       [equals(FIELDS_STEP), always(<DataPreview {...props} />)],
-      [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts bindSubmitForm={this.bindSubmitForm} {...props} />)],
+      [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts {...props} />)],
       [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],
       [equals(5), always(null)],
       [equals(6), always(null)],
@@ -156,9 +106,6 @@ export class View extends PureComponent {
     } = this.props;
     const activeStep = parseInt(step, 10);
     const topHeaderConfig = this.getHeaderAndMenuConfig(intl, activeStep);
-    const customStepperStyles =
-      dataSource.status === STATUS_DRAFT ? { ...stepperStyles, ...stepperBlockStyles } : stepperStyles;
-    this.submitForm = null;
 
     return (
       <Fragment>
@@ -169,21 +116,6 @@ export class View extends PureComponent {
           dataSource,
           ...this.props,
         })}
-
-        <NavigationContainer>
-          <BackButton onClick={this.handleBackClick}>
-            <FormattedMessage {...messages.back} values={{ cancel: activeStep === INITIAL_STEP }} />
-          </BackButton>
-          <NextButton disabled={this.state.isNextDisabled} onClick={this.handleNextClick} />
-          <StepperContainer>
-            <Stepper
-              activeStep={activeStep}
-              steps={MAX_STEPS}
-              customStyles={customStepperStyles}
-              onStepChange={this.handleStepChange}
-            />
-          </StepperContainer>
-        </NavigationContainer>
       </Fragment>
     );
   });

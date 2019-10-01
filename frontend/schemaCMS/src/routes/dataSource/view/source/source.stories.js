@@ -11,6 +11,9 @@ export const defaultProps = {
   bindSubmitForm: Function.prototype,
   bindSetNextDisabling: Function.prototype,
   updateDataSource: Function.prototype,
+  history: {
+    push: Function.prototype,
+  },
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },

@@ -110,9 +110,11 @@ exports[`View: Component should render correctly 1`] = `
     right={false}
   >
     <BackButton
+      disabled={false}
       onClick={[Function]}
     />
     <NextButton
+      loading={false}
       onClick={[Function]}
     >
       <FormattedMessage

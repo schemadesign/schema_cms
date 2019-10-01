@@ -13,7 +13,7 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
     className="sc-hzDkRC eGsIKK"
   >
     <div
-      className="sc-jWBwVP vnAxw"
+      className="sc-cMljjf cduCgM"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       >
         <div>
           <div
-            className="sc-brqgnP SqPLV"
+            className="sc-jAaTju fNCBho"
           >
             <h2
               id="headerTitle"
@@ -123,10 +123,10 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
         }
       >
         <div
-          className="sc-cMljjf eTbdzc"
+          className="sc-jDwBTQ dWtMUn"
         >
           <div
-            className="sc-brqgnP SqPLV"
+            className="sc-jAaTju fNCBho"
           >
             <h2
               id="headerTitle"
@@ -159,13 +159,13 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-jAaTju hWtuUE"
+          className="sc-gPEVay hRSMsP"
         >
           <ul
-            className="sc-jDwBTQ sc-gPEVay jbCcVY"
+            className="sc-iRbamj sc-jlyJG ejGYJz"
           />
           <ul
-            className="sc-jDwBTQ sc-iRbamj dmLCIf"
+            className="sc-iRbamj sc-gipzik HrPVR"
           />
         </div>
         <button
@@ -215,7 +215,7 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       name="dataWranglingForm"
     >
       <div
-        className="sc-htoDjs bZzhDu"
+        className="sc-gZMcBi giNnHm"
       >
         <div
           style={
@@ -983,10 +983,10 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
       </pre>
     </form>
     <div
-      className="sc-Rmtcm kSjUhM"
+      className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-bRBYWo kLWJkv"
+        className="sc-dnqmqq jpGIQI"
       >
         <button
           disabled={false}

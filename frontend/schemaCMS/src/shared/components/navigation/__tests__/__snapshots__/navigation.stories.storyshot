@@ -95,10 +95,10 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
   }
 >
   <div
-    className="sc-Rmtcm kSjUhM"
+    className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-bRBYWo fXOjiZ"
+      className="sc-dnqmqq BDAcl"
     >
       <button
         disabled={false}
@@ -191,10 +191,10 @@ exports[`Storyshots Shared Components|Navigation PlusButton 1`] = `
     disabled={false}
     style={
       Object {
-        "backgroundColor": "#1d1d20",
+        "backgroundColor": "#FFF",
         "border": "none",
         "borderRadius": "48px",
-        "color": "#FFF",
+        "color": "#000",
         "cursor": "pointer",
         "display": "inline-block",
         "fill": "#FFF",
@@ -211,7 +211,7 @@ exports[`Storyshots Shared Components|Navigation PlusButton 1`] = `
     <svg
       style={
         Object {
-          "fill": "#FFF",
+          "fill": "#000",
           "height": "60px",
           "width": "60px",
         }
