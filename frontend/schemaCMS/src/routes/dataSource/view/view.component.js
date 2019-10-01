@@ -132,7 +132,12 @@ export class View extends PureComponent {
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
-      [equals(INITIAL_STEP), always(<Source bindSubmitForm={this.bindSubmitForm} bindSetNextDisabling={this.bindSetNextDisabling} {...props} />)],
+      [
+        equals(INITIAL_STEP),
+        always(
+          <Source bindSubmitForm={this.bindSubmitForm} bindSetNextDisabling={this.bindSetNextDisabling} {...props} />
+        ),
+      ],
       [equals(FIELDS_STEP), always(<DataPreview {...props} />)],
       [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts bindSubmitForm={this.bindSubmitForm} {...props} />)],
       [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],

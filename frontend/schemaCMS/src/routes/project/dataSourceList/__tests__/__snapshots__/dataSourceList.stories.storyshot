@@ -63,6 +63,7 @@ exports[`Storyshots DataSourceList Default 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -180,6 +181,7 @@ exports[`Storyshots DataSourceList Default 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -403,6 +405,7 @@ exports[`Storyshots DataSourceList Default 1`] = `
         className="sc-bRBYWo kLWJkv"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -439,6 +442,7 @@ exports[`Storyshots DataSourceList Default 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
