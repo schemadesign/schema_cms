@@ -1,7 +1,7 @@
 import Page from './page.js';
-import { waitForElement } from './../utils/utils.js';
+import { waitForElement, waitForText } from './../utils/utils.js';
 import { TIMEOUT } from './../constants/config.constants.js';
-import { LINK_SENT, LINK_NOT_SENT, GMAIL, RESET_MAIL_TITLE } from './../constants/gmail.constants.js';
+import { LINK_SENT, LINK_NOT_SENT, GMAIL, RESET_MAIL_TITLE, INVITATION_MAIL_TITLE } from './../constants/gmail.constants.js';
 const fs = require('fs');
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
 
@@ -16,14 +16,31 @@ class GmailPage extends Page {
     get firstEmail() { return $('div > table:nth-child(1) > tbody:nth-child(2) > tr > td:nth-child(6) > div > div > div > span'); }
     get firstUnreadEmail() { return $('.bqe:nth-child(1)'); }
     get resetUrl() { return $("td:last-child [href*='reset']"); }
+    get invitationUrl() { return $(''); } //TODO: add selector when Mandrillo is configured
     get deleteEmailBtn() { return $("[act='10']"); }
     get selectFirstEmail() { return $('tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2) > div'); }
+    get searchInput() { return $('table:first-child td > div > input'); }
+
 
     open() {
         browser.url(GMAIL);
     }
 
     waitForResetLinkEmail() {     
+        while(!this.firstUnreadEmail.isDisplayed()) {
+            browser.refresh();
+        };
+
+    }
+    searchForInvitationEmail() {
+        this.waitForNewEmail();
+        waitForElement(this, 'searchInput');
+        this.searchInput.setValue(creds.inviteUser.email);
+        browser.keys('\uE007');
+        waitForText(this, 'firstUnreadEmail', `${INVITATION_MAIL_TITLE}`.getText());
+    }
+
+    waitForNewEmail() {
         while(!this.firstUnreadEmail.isDisplayed()) {
             browser.refresh();
         };
@@ -62,6 +79,10 @@ class GmailPage extends Page {
         this.firstUnreadEmail.click();
         waitForElement(this, 'resetUrl');
         this.resetUrl.click();
+    }
+
+    useInvitationLink() {
+
     }
 
     deleteResetEmail() {
