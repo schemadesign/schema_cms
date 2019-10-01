@@ -25,7 +25,10 @@ describe('DataWranglingResult: sagas', () => {
         previewTable: [{ id: '1', name: 'test' }],
       };
 
-      mockApi.persist().get(`/data-wrangling-result/${payload.dataSourceId}`).reply(OK, responseData);
+      mockApi
+        .persist()
+        .get(`/data-wrangling-result/${payload.dataSourceId}`)
+        .reply(OK, responseData);
 
       await expectSaga(watchDataWranglingResult)
         .withState(defaultState)

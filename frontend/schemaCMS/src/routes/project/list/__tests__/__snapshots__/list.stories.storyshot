@@ -13,7 +13,7 @@ exports[`Storyshots Project/List empty 1`] = `
     className="sc-fMiknA sc-hqyNC jCLvEs"
   >
     <div
-      className="sc-jWBwVP fDrbnp"
+      className="sc-jWBwVP vnAxw"
     >
       <div
         style={
@@ -301,7 +301,7 @@ exports[`Storyshots Project/List list 1`] = `
     className="sc-fMiknA sc-hqyNC jCLvEs"
   >
     <div
-      className="sc-jWBwVP fDrbnp"
+      className="sc-jWBwVP vnAxw"
     >
       <div
         style={
