@@ -124,6 +124,8 @@ export class SourceComponent extends PureComponent {
               submitForm = null;
             }
 
+            const disabled = fileName ? {} : { next: true };
+
             return (
               <Fragment>
                 <TextInput
@@ -148,7 +150,13 @@ export class SourceComponent extends PureComponent {
                   {this.renderRadioButton(type)}
                 </RadioGroup>
                 {this.renderSourceUpload({ type, setFieldValue, fileName })}
-                <StepNavigation loading={loading} dataSource={dataSource} submitForm={submitForm} {...restProps} />
+                <StepNavigation
+                  loading={loading}
+                  disabled={disabled}
+                  dataSource={dataSource}
+                  submitForm={submitForm}
+                  {...restProps}
+                />
               </Fragment>
             );
           }}
