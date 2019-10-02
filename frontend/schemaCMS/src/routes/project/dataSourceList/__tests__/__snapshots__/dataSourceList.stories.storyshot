@@ -2718,6 +2718,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -2835,6 +2836,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -3024,6 +3026,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -3060,6 +3063,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {

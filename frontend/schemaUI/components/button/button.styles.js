@@ -1,6 +1,7 @@
 import { defaultTheme } from '../../utils/theme';
+import { BUTTON } from './button.constants';
 
-export const getStyles = (theme = defaultTheme, buttonType = 'button') => ({
+export const getStyles = (theme = defaultTheme, buttonType = BUTTON, disabled) => ({
   containerStyles: {
     border: 'none',
     backgroundColor: theme[buttonType].background,
@@ -9,7 +10,7 @@ export const getStyles = (theme = defaultTheme, buttonType = 'button') => ({
     padding: '0',
     margin: '0',
     outline: 'none',
-    cursor: 'pointer',
+    cursor: disabled ? 'default' : 'pointer',
     borderRadius: '48px',
     minHeight: '48px',
     fontSize: '18px',

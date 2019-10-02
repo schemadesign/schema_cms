@@ -10,6 +10,7 @@ exports[`Storyshots Shared Components|Navigation BackArrowButton 1`] = `
   }
 >
   <button
+    disabled={false}
     style={
       Object {
         "backgroundColor": "#1d1d20",
@@ -100,6 +101,7 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
       className="sc-dnqmqq BDAcl"
     >
       <button
+        disabled={false}
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -149,6 +151,7 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
   }
 >
   <button
+    disabled={false}
     style={
       Object {
         "backgroundColor": "#FFF",
@@ -185,6 +188,7 @@ exports[`Storyshots Shared Components|Navigation PlusButton 1`] = `
   }
 >
   <button
+    disabled={false}
     style={
       Object {
         "backgroundColor": "#FFF",

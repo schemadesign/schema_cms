@@ -32,7 +32,29 @@ export const nextStepProps = {
   },
 };
 
+const loadingProps = {
+  ...defaultProps,
+  loading: true,
+};
+
+const disabledBackProps = {
+  ...defaultProps,
+  disabled: {
+    back: true,
+  },
+};
+
+const disabledNextProps = {
+  ...defaultProps,
+  disabled: {
+    next: true,
+  },
+};
+
 storiesOf('Shared Components|StepNavigation', module)
   .addDecorator(withTheme())
   .add('Default', () => <StepNavigation {...defaultProps} />)
-  .add('Next step', () => <StepNavigation {...nextStepProps} />);
+  .add('Next step', () => <StepNavigation {...nextStepProps} />)
+  .add('Loading', () => <StepNavigation {...loadingProps} />)
+  .add('Disabled back', () => <StepNavigation {...disabledBackProps} />)
+  .add('Disabled next', () => <StepNavigation {...disabledNextProps} />);

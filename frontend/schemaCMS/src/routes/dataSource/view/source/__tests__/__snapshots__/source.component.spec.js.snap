@@ -5,7 +5,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   locale="en"
 >
   <SourceComponent
-    bindSubmitForm={[Function]}
     dataSource={Object {}}
     history={
       Object {
@@ -32,6 +31,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "button": Object {
           "background": "#1d1d20",
           "text": "#FFF",
+        },
+        "buttonDisabled": Object {
+          "background": "#1d1d20",
+          "text": "#71737e",
         },
         "card": Object {
           "background": "#1d1d20",
@@ -644,10 +647,12 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                 "width": 96,
                               }
                             }
+                            disabled={false}
                             inverse={false}
                             type="button"
                           >
                             <button
+                              disabled={false}
                               style={
                                 Object {
                                   "background": "#1d1d20",
@@ -723,8 +728,12 @@ exports[`SourceComponent: Component should render correctly 1`] = `
               </div>
             </RadioGroup>
             <StepNavigation
-              bindSubmitForm={[Function]}
               dataSource={Object {}}
+              disabled={
+                Object {
+                  "next": true,
+                }
+              }
               history={
                 Object {
                   "push": [Function],
@@ -752,6 +761,10 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                   "button": Object {
                     "background": "#1d1d20",
                     "text": "#FFF",
+                  },
+                  "buttonDisabled": Object {
+                    "background": "#1d1d20",
+                    "text": "#71737e",
                   },
                   "card": Object {
                     "background": "#1d1d20",
@@ -1026,7 +1039,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                               </Component>
                             </BackButton>
                             <NextButton
-                              disabled={false}
+                              disabled={true}
                               loading={false}
                               onClick={[Function]}
                             >
@@ -1037,7 +1050,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                     "width": "calc(50% - 5px)",
                                   }
                                 }
-                                disabled={false}
+                                disabled={true}
                                 inverse={true}
                                 onClick={[Function]}
                               >
@@ -1048,20 +1061,20 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                       "width": "calc(50% - 5px)",
                                     }
                                   }
-                                  disabled={false}
+                                  disabled={true}
                                   inverse={true}
                                   onClick={[Function]}
                                 >
                                   <button
-                                    disabled={false}
+                                    disabled={true}
                                     onClick={[Function]}
                                     style={
                                       Object {
-                                        "backgroundColor": "#FFF",
+                                        "backgroundColor": "#1d1d20",
                                         "border": "none",
                                         "borderRadius": "48px",
-                                        "color": "#000",
-                                        "cursor": "pointer",
+                                        "color": "#71737e",
+                                        "cursor": "default",
                                         "display": "inline-block",
                                         "fill": "#FFF",
                                         "fontSize": "18px",
@@ -1273,7 +1286,6 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
   locale="en"
 >
   <SourceComponent
-    bindSubmitForm={[Function]}
     dataSource={
       Object {
         "type": "file",
@@ -1304,6 +1316,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "button": Object {
           "background": "#1d1d20",
           "text": "#FFF",
+        },
+        "buttonDisabled": Object {
+          "background": "#1d1d20",
+          "text": "#71737e",
         },
         "card": Object {
           "background": "#1d1d20",
@@ -1925,10 +1941,12 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                 "width": 96,
                               }
                             }
+                            disabled={false}
                             inverse={false}
                             type="button"
                           >
                             <button
+                              disabled={false}
                               style={
                                 Object {
                                   "background": "#FFF",
@@ -2274,10 +2292,14 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
               </FileUploadComponent>
             </Component>
             <StepNavigation
-              bindSubmitForm={[Function]}
               dataSource={
                 Object {
                   "type": "file",
+                }
+              }
+              disabled={
+                Object {
+                  "next": true,
                 }
               }
               history={
@@ -2307,6 +2329,10 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   "button": Object {
                     "background": "#1d1d20",
                     "text": "#FFF",
+                  },
+                  "buttonDisabled": Object {
+                    "background": "#1d1d20",
+                    "text": "#71737e",
                   },
                   "card": Object {
                     "background": "#1d1d20",
@@ -2581,7 +2607,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                               </Component>
                             </BackButton>
                             <NextButton
-                              disabled={false}
+                              disabled={true}
                               loading={false}
                               onClick={[Function]}
                             >
@@ -2592,7 +2618,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                     "width": "calc(50% - 5px)",
                                   }
                                 }
-                                disabled={false}
+                                disabled={true}
                                 inverse={true}
                                 onClick={[Function]}
                               >
@@ -2603,20 +2629,20 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                       "width": "calc(50% - 5px)",
                                     }
                                   }
-                                  disabled={false}
+                                  disabled={true}
                                   inverse={true}
                                   onClick={[Function]}
                                 >
                                   <button
-                                    disabled={false}
+                                    disabled={true}
                                     onClick={[Function]}
                                     style={
                                       Object {
-                                        "backgroundColor": "#FFF",
+                                        "backgroundColor": "#1d1d20",
                                         "border": "none",
                                         "borderRadius": "48px",
-                                        "color": "#000",
-                                        "cursor": "pointer",
+                                        "color": "#71737e",
+                                        "cursor": "default",
                                         "display": "inline-block",
                                         "fill": "#FFF",
                                         "fontSize": "18px",

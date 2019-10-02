@@ -1,3 +1,5 @@
+import { BUTTON, INVERSE_BUTTON, BUTTON_DISABLED } from '../components/button/button.constants';
+
 const colors = {
   white: '#FFF',
   black: '#000',
@@ -10,13 +12,17 @@ const colors = {
 };
 
 const light = {
-  button: {
+  [BUTTON]: {
     background: colors.veryLightPink,
     text: colors.black,
   },
-  inverseButton: {
+  [INVERSE_BUTTON]: {
     background: colors.black,
     text: colors.white,
+  },
+  [BUTTON_DISABLED]: {
+    background: colors.veryLightPink,
+    text: colors.coolGray,
   },
   card: {
     label: colors.lightGrey,
@@ -105,13 +111,17 @@ const light = {
 };
 
 const dark = {
-  button: {
+  [BUTTON]: {
     background: colors.darkGrey,
     text: colors.white,
   },
-  inverseButton: {
+  [INVERSE_BUTTON]: {
     background: colors.white,
     text: colors.black,
+  },
+  [BUTTON_DISABLED]: {
+    background: colors.darkGrey,
+    text: colors.lightGrey,
   },
   card: {
     label: colors.label,
@@ -199,7 +209,7 @@ const dark = {
 const INTER_FONT = 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';
 const MONOSPACE_FONT = 'Hack, monospace';
 
-const primaryTypography = {
+const typography = {
   h1: {
     fontFamily: INTER_FONT,
     fontWeight: 600,
@@ -225,8 +235,9 @@ const primaryTypography = {
   },
 };
 
-light.typography = primaryTypography;
-dark.typography = primaryTypography;
+light.typography = typography;
+dark.typography = typography;
+
 const defaultTheme = dark;
 
 export { light, dark, colors, defaultTheme };

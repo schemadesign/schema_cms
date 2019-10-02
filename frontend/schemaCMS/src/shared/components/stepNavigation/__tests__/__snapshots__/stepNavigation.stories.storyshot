@@ -172,6 +172,522 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-htoDjs iUYJOx"
+  >
+    <div
+      className="sc-dnqmqq jpGIQI"
+    >
+      <button
+        disabled={true}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#71737e",
+            "cursor": "default",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "marginRight": 5,
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "calc(50% - 5px)",
+          }
+        }
+      >
+        <span>
+          Cancel
+        </span>
+      </button>
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#000",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "marginLeft": 5,
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "calc(50% - 5px)",
+          }
+        }
+      >
+        <span>
+          Next
+        </span>
+      </button>
+      <div
+        className="sc-gzVnrw bMUaYY"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+              "margin": "0 auto",
+              "pointerEvents": "none",
+            }
+          }
+        >
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "borderRadius": "50%",
+                "cursor": "default",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "pointerEvents": "none",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-htoDjs iUYJOx"
+  >
+    <div
+      className="sc-dnqmqq jpGIQI"
+    >
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "marginRight": 5,
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "calc(50% - 5px)",
+          }
+        }
+      >
+        <span>
+          Cancel
+        </span>
+      </button>
+      <button
+        disabled={true}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#71737e",
+            "cursor": "default",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "marginLeft": 5,
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "calc(50% - 5px)",
+          }
+        }
+      >
+        <span>
+          Next
+        </span>
+      </button>
+      <div
+        className="sc-gzVnrw bMUaYY"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+              "margin": "0 auto",
+              "pointerEvents": "none",
+            }
+          }
+        >
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "borderRadius": "50%",
+                "cursor": "default",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "pointerEvents": "none",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-htoDjs iUYJOx"
+  >
+    <div
+      className="sc-dnqmqq jpGIQI"
+    >
+      <button
+        disabled={true}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#71737e",
+            "cursor": "default",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "marginRight": 5,
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "calc(50% - 5px)",
+          }
+        }
+      >
+        <span>
+          Cancel
+        </span>
+      </button>
+      <button
+        disabled={true}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#71737e",
+            "cursor": "default",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "marginLeft": 5,
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "calc(50% - 5px)",
+          }
+        }
+      >
+        <span>
+          Loading...
+        </span>
+      </button>
+      <div
+        className="sc-gzVnrw bMUaYY"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+              "margin": "0 auto",
+              "pointerEvents": "none",
+            }
+          }
+        >
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "borderRadius": "50%",
+                "cursor": "default",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "pointerEvents": "none",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "borderRadius": "50%",
+                "cursor": "pointer",
+                "display": "block",
+                "height": "12px",
+                "margin": "0 4px",
+                "width": "12px",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
 <div
   style={

@@ -14,8 +14,8 @@ export class MenuComponent extends PureComponent {
     onClose: PropTypes.func.isRequired,
     closeButtonProps: PropTypes.shape({
       customStyles: PropTypes.object,
-      iconStyles: PropTypes.object
-    })
+      iconStyles: PropTypes.object,
+    }),
   };
 
   static defaultProps = {
@@ -24,16 +24,16 @@ export class MenuComponent extends PureComponent {
     onClose: () => {},
     closeButtonProps: {
       customStyles: {},
-      iconStyles: {}
+      iconStyles: {},
     },
   };
 
   renderCloseButton = closeButtonStyles => {
-    const {customStyles, iconStyles, ...restProps} = this.props.closeButtonProps;
+    const { customStyles, iconStyles, ...restProps } = this.props.closeButtonProps;
     const buttonStyles = { ...closeButtonStyles, ...customStyles };
 
     return (
-      <Button{...restProps} onClick={this.props.onClose} customStyles={buttonStyles}>
+      <Button {...restProps} onClick={this.props.onClose} customStyles={buttonStyles}>
         <CloseIcon customStyles={iconStyles} />
       </Button>
     );

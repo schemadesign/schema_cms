@@ -21,10 +21,10 @@ const customMenu = {
       right: 20,
     },
     iconStyles: {
-      fill: 'green'
+      fill: 'green',
     },
-    id: 'special-close-button'
-  }
+    id: 'special-close-button',
+  },
 };
 
 storiesOf('Menu', module)

@@ -141,6 +141,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
           }
         >
           <button
+            disabled={false}
             style={
               Object {
                 "background": "#1d1d20",
@@ -217,15 +218,15 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
           </span>
         </button>
         <button
-          disabled={false}
+          disabled={true}
           onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "#FFF",
+              "backgroundColor": "#1d1d20",
               "border": "none",
               "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
+              "color": "#71737e",
+              "cursor": "default",
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",

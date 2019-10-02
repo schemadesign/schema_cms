@@ -29,8 +29,8 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
                 "backgroundColor": "#f0efef",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
+                "color": "#a6a7aa",
+                "cursor": "default",
                 "display": "inline-block",
                 "fill": "#1d1d20",
                 "fontSize": "18px",
@@ -421,6 +421,7 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
           </span>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {

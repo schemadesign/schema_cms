@@ -97,6 +97,10 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
                   "background": "#1d1d20",
                   "text": "#FFF",
                 },
+                "buttonDisabled": Object {
+                  "background": "#1d1d20",
+                  "text": "#71737e",
+                },
                 "card": Object {
                   "background": "#1d1d20",
                   "border": "#FFF",
@@ -466,6 +470,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
           </span>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {

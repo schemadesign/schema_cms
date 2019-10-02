@@ -11,6 +11,10 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "background": "#f0efef",
           "text": "#000",
         },
+        "buttonDisabled": Object {
+          "background": "#f0efef",
+          "text": "#a6a7aa",
+        },
         "card": Object {
           "background": "#f0efef",
           "border": "#000",

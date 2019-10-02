@@ -194,9 +194,7 @@ describe('DataSource: sagas', () => {
         dataSourceId: '1',
       };
 
-      mockApi
-        .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`)
-        .reply(OK);
+      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`).reply(OK);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -217,9 +215,7 @@ describe('DataSource: sagas', () => {
         data: [{ id: '1', name: 'test' }],
       };
 
-      mockApi
-        .get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/preview`)
-        .reply(OK, responseData);
+      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/preview`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)

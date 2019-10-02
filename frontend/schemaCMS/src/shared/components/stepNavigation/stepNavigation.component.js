@@ -11,10 +11,22 @@ import { INITIAL_STEP, MAX_STEPS, STATUS_DRAFT } from '../../../modules/dataSour
 export class StepNavigation extends PureComponent {
   static propTypes = {
     loading: PropTypes.bool,
+    disabled: PropTypes.shape({
+      back: PropTypes.bool,
+      next: PropTypes.bool,
+    }),
     submitForm: PropTypes.func,
     dataSource: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     match: PropTypes.object.isRequired,
+  };
+
+  static defaultProps = {
+    loading: false,
+    disabled: {
+      next: false,
+      back: false,
+    },
   };
 
   handleNextClick = submitForm => () => {
@@ -45,11 +57,12 @@ export class StepNavigation extends PureComponent {
   render() {
     const {
       loading,
+      disabled: { next: nextDisabled, back: backDisabled },
       submitForm,
+      dataSource,
       match: {
         params: { step },
       },
-      dataSource,
     } = this.props;
     const activeStep = parseInt(step, 10);
     const customStepperStyles =
@@ -57,10 +70,10 @@ export class StepNavigation extends PureComponent {
 
     return (
       <NavigationContainer>
-        <BackButton onClick={this.handleBackClick} disabled={loading}>
+        <BackButton onClick={this.handleBackClick} disabled={backDisabled || loading}>
           <FormattedMessage {...messages.back} values={{ cancel: activeStep === INITIAL_STEP }} />
         </BackButton>
-        <NextButton onClick={this.handleNextClick(submitForm)} disabled={loading} loading={loading} />
+        <NextButton onClick={this.handleNextClick(submitForm)} disabled={nextDisabled || loading} loading={loading} />
         <StepperContainer>
           <Stepper
             activeStep={activeStep}
