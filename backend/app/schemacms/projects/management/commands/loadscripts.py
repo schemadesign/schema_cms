@@ -22,15 +22,15 @@ class Command(BaseCommand):
             modified = self.modification_date(file)
             if not existing_scripts.filter(name=name).exists():
                 self.create_script(name, file, modified)
-                self.stdout.write(self.style.INFO(f'Script {name} was created!'))
+                self.stdout.write(self.style.SUCCESS(f'Script {name} was created!'))
             else:
                 script = existing_scripts.get(name=name)
                 last_file_modification = script.last_file_modification
                 if last_file_modification.strftime('%Y-%m-%d %H:%M:%S') == modified:
-                    self.stdout.write(self.style.WARNING(f'Script {name} is up-to-date!'))
+                    self.stdout.write(self.style.SUCCESS(f'Script {name} is up-to-date!'))
                 else:
                     self.update_script(script, file, modified)
-                    self.stdout.write(self.style.WARNING(f'Script {name} updated!'))
+                    self.stdout.write(self.style.SUCCESS(f'Script {name} updated!'))
 
     @staticmethod
     def modification_date(file):
