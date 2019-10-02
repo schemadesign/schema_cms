@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 import { Theme } from 'schemaUI';
+import { always, cond, equals } from 'ramda';
 import { styleWhenTrue } from '../../../shared/utils/rendering';
+import { media } from '../../../theme/media';
 
 const horizontalMargin = 20;
 
@@ -93,3 +95,58 @@ export const iconSourceStyles = {
 export const lockIconStyles = {
   display: 'none',
 };
+
+export const JobsContainer = styled.div``;
+
+export const Job = styled.div`
+  background-color: ${({ theme }) => theme.background};
+  border-top: 3px solid ${({ theme }) => theme.card.background};
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &:first-child {
+    border: none;
+  }
+`;
+
+export const JobDetails = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  ${media.tablet`
+    width: auto;
+    justify-content: normal;
+  `}
+`;
+
+const getStatusColor = cond([
+  [equals('error'), always('#a8241b')],
+  [equals('idle'), always('#91880d')],
+  [equals('process'), always('#1616ff')],
+  [equals('done'), always('#1a7113')],
+]);
+
+export const JobStatus = styled.div`
+  color: ${({ status }) => getStatusColor(status)};
+  min-width: 80px;
+  padding: 10px;
+`;
+
+export const JobName = styled.div`
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+export const JobDate = styled.div`
+  padding: 10px;
+`;
+
+export const JobsTitle = styled.div`
+  margin: 10px 0;
+`;

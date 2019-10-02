@@ -46,4 +46,12 @@ export default defineMessages({
     id: 'dataSource.list.views',
     defaultMessage: 'Views',
   },
+  updatedAt: {
+    id: 'dataSource.list.updatedAt',
+    defaultMessage: 'Updated at',
+  },
+  jobTitle: {
+    id: 'dataSource.list.jobTitle',
+    defaultMessage: 'Data Process History',
+  },
 });

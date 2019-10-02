@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { Card, Icons, Typography } from 'schemaUI';
 import { always, anyPass, cond, equals, ifElse } from 'ramda';
 import { FormattedMessage } from 'react-intl';
+import dayjs from 'dayjs';
 
 import { TopHeader } from '../../../shared/components/topHeader';
 import {
@@ -21,6 +22,13 @@ import {
   MetaDataName,
   MetaDataValue,
   MetaDataWrapper,
+  JobsContainer,
+  Job,
+  JobStatus,
+  JobDetails,
+  JobName,
+  JobDate,
+  JobsTitle,
   titleStyles,
 } from './dataSourceList.styles';
 import messages from './dataSourceList.messages';
@@ -35,8 +43,8 @@ import {
   STATUS_PROCESSING,
   STATUS_READY_FOR_PROCESSING,
 } from '../../../modules/dataSource/dataSource.constants';
-import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
-import { NavigationContainer, BackArrowButton, PlusButton } from '../../../shared/components/navigation';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
 const { H1 } = Typography;
 const { CsvIcon, IntersectIcon } = Icons;
@@ -154,7 +162,31 @@ export class DataSourceList extends PureComponent {
       always(this.renderMetaData(metaData || {}, isLock))
     )(isError);
 
-  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status, errorLog }, index) => {
+  renderJob = ({ status, script, updatedAt }, index) => {
+    return (
+      <Job key={index}>
+        <JobDetails>
+          <JobStatus status={status}>{status}</JobStatus>
+          <JobName>{script}</JobName>
+        </JobDetails>
+        <JobDate>
+          <FormattedMessage {...messages.updatedAt} /> {dayjs(updatedAt).format('DD/MM/YYYY HH:mm')}
+        </JobDate>
+      </Job>
+    );
+  };
+
+  renderJobs = jobs =>
+    renderWhenTrue(() => (
+      <JobsContainer>
+        <JobsTitle>
+          <FormattedMessage {...messages.jobTitle} />
+        </JobsTitle>
+        {jobs.map(this.renderJob)}
+      </JobsContainer>
+    ))(!!jobs);
+
+  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status, errorLog, jobs }, index) => {
     const isLock = status !== STATUS_DONE;
     const isError = status === STATUS_ERROR;
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
@@ -168,6 +200,7 @@ export class DataSourceList extends PureComponent {
             {name}
           </H1>
           {this.renderCardContent({ metaData, isLock, isError, errorLog })}
+          {this.renderJobs(jobs)}
         </Card>
       </DataSourceItem>
     );

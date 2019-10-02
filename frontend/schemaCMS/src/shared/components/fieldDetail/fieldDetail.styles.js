@@ -14,13 +14,13 @@ export const List = styled.ul`
 `;
 
 export const FieldInformation = styled.li`
-  border-bottom: 2px solid ${({ theme }) => theme.border};
+  border-bottom: 2px solid ${({ theme }) => theme.label.border};
   padding: 12px 0;
   display: flex;
   width: 100%;
 
   &:first-of-type {
-    border-top: 2px solid ${({ theme }) => theme.border};
+    border-top: 2px solid ${({ theme }) => theme.label.border};
   }
 `;
 

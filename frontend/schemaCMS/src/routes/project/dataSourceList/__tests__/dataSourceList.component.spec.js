@@ -3,43 +3,16 @@ import { shallow } from 'enzyme';
 
 import { DataSourceList } from '../dataSourceList.component';
 import {
-  STATUS_DRAFT,
-  STATUS_ERROR,
-  STATUS_PROCESSING,
-  STATUS_READY_FOR_PROCESSING,
-} from '../../../../modules/dataSource/dataSource.constants';
+  defaultProps,
+  propsWithDraft,
+  propsWithReadyForProcessing,
+  propsWithProcessing,
+  propsWithError,
+  propsWithDataSource,
+  propsWithJob,
+} from '../dataSourceList.stories';
 
 describe('DataSourceList: Component', () => {
-  const defaultProps = {
-    createDataSource: Function.prototype,
-    fetchDataSources: Function.prototype,
-    cancelFetchListLoop: Function.prototype,
-    dataSources: [],
-    history: {
-      push: Function.prototype,
-    },
-    match: {
-      params: {
-        projectId: '1',
-      },
-    },
-    intl: {
-      formatMessage: ({ defaultMessage }) => defaultMessage,
-    },
-  };
-
-  const dataSource = {
-    created: '2019-09-09T11:23:40+0000',
-    createdBy: { firstName: 'firstName', lastName: 'lastName' },
-    id: 17,
-    metaData: {
-      fields: 11,
-      items: 246,
-    },
-    name: 'name',
-    status: 'done',
-  };
-
   const component = props => <DataSourceList {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
@@ -50,52 +23,32 @@ describe('DataSourceList: Component', () => {
   });
 
   it('should render correctly', () => {
-    const props = {
-      dataSources: [dataSource],
-    };
+    const wrapper = render(propsWithDataSource);
+    global.expect(wrapper).toMatchSnapshot();
+  });
 
-    const wrapper = render(props);
+  it('should render card with job', () => {
+    const wrapper = render(propsWithJob);
     global.expect(wrapper).toMatchSnapshot();
   });
 
   it('should render card with error state', () => {
-    dataSource.status = STATUS_ERROR;
-    dataSource.errorLog = ['error 1', 'error2'];
-    const props = {
-      dataSources: [dataSource],
-    };
-
-    const wrapper = render(props);
+    const wrapper = render(propsWithError);
     global.expect(wrapper).toMatchSnapshot();
   });
 
   it('should render card with draft state', () => {
-    dataSource.status = STATUS_DRAFT;
-    const props = {
-      dataSources: [dataSource],
-    };
-
-    const wrapper = render(props);
+    const wrapper = render(propsWithDraft);
     global.expect(wrapper).toMatchSnapshot();
   });
 
   it('should render card with processing state', () => {
-    dataSource.status = STATUS_PROCESSING;
-    const props = {
-      dataSources: [dataSource],
-    };
-
-    const wrapper = render(props);
+    const wrapper = render(propsWithProcessing);
     global.expect(wrapper).toMatchSnapshot();
   });
 
   it('should render card with ready for processing state', () => {
-    dataSource.status = STATUS_READY_FOR_PROCESSING;
-    const props = {
-      dataSources: [dataSource],
-    };
-
-    const wrapper = render(props);
+    const wrapper = render(propsWithReadyForProcessing);
     global.expect(wrapper).toMatchSnapshot();
   });
 });

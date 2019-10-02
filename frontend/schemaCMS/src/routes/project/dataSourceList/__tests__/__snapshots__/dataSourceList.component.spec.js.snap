@@ -202,6 +202,243 @@ exports[`DataSourceList: Component should render card with error state 1`] = `
 </styled.div>
 `;
 
+exports[`DataSourceList: Component should render card with job 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Data Sources"
+  />
+  <TopHeader
+    headerSubtitle="Overview"
+    headerTitle="Data Sources"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Project details",
+          "to": "/project/view/1",
+        },
+      ]
+    }
+  />
+  <styled.div>
+    <styled.li
+      key="0"
+    >
+      <Component
+        headerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.ul)>
+              <ForwardRef(styled.li)>
+                3 months ago
+              </ForwardRef(styled.li)>
+              <ForwardRef(styled.li)>
+                firstName lastName
+              </ForwardRef(styled.li)>
+            </ForwardRef(styled.ul)>
+            <ForwardRef(styled.div)>
+              <Unknown />
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
+      >
+        <H1
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "marginBottom": "20px",
+            }
+          }
+          onClick={[Function]}
+        >
+          name
+        </H1>
+        <styled.div>
+          <styled.div
+            key="0"
+          >
+            <styled.span>
+              Source
+            </styled.span>
+            <styled.span
+              isLock={false}
+            >
+              <Component
+                customStyles={
+                  Object {
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+              />
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="1"
+          >
+            <styled.span>
+              Items
+            </styled.span>
+            <styled.span
+              isLock={false}
+            >
+              246
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="2"
+          >
+            <styled.span>
+              Fields
+            </styled.span>
+            <styled.span
+              isLock={false}
+            >
+              11
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="3"
+          >
+            <styled.span>
+              Filters
+            </styled.span>
+            <styled.span
+              isLock={false}
+            >
+              —
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="4"
+          >
+            <styled.span>
+              Views
+            </styled.span>
+            <styled.span
+              isLock={false}
+            >
+              —
+            </styled.span>
+          </styled.div>
+        </styled.div>
+        <styled.div>
+          <styled.div>
+            <FormattedMessage
+              defaultMessage="Data Process History"
+              id="dataSource.list.jobTitle"
+              values={Object {}}
+            />
+          </styled.div>
+          <styled.div
+            key="0"
+          >
+            <styled.div>
+              <styled.div
+                status="done"
+              >
+                done
+              </styled.div>
+              <styled.div>
+                white_spaces
+              </styled.div>
+            </styled.div>
+            <styled.div>
+              <FormattedMessage
+                defaultMessage="Updated at"
+                id="dataSource.list.updatedAt"
+                values={Object {}}
+              />
+               
+              08/09/2019 11:23
+            </styled.div>
+          </styled.div>
+          <styled.div
+            key="1"
+          >
+            <styled.div>
+              <styled.div
+                status="process"
+              >
+                process
+              </styled.div>
+              <styled.div>
+                blank_cells
+              </styled.div>
+            </styled.div>
+            <styled.div>
+              <FormattedMessage
+                defaultMessage="Updated at"
+                id="dataSource.list.updatedAt"
+                values={Object {}}
+              />
+               
+              07/09/2019 11:23
+            </styled.div>
+          </styled.div>
+          <styled.div
+            key="2"
+          >
+            <styled.div>
+              <styled.div
+                status="idle"
+              >
+                idle
+              </styled.div>
+              <styled.div>
+                case_conversion
+              </styled.div>
+            </styled.div>
+            <styled.div>
+              <FormattedMessage
+                defaultMessage="Updated at"
+                id="dataSource.list.updatedAt"
+                values={Object {}}
+              />
+               
+              06/09/2019 11:23
+            </styled.div>
+          </styled.div>
+          <styled.div
+            key="3"
+          >
+            <styled.div>
+              <styled.div
+                status="error"
+              >
+                error
+              </styled.div>
+              <styled.div>
+                handling_duplicates
+              </styled.div>
+            </styled.div>
+            <styled.div>
+              <FormattedMessage
+                defaultMessage="Updated at"
+                id="dataSource.list.updatedAt"
+                values={Object {}}
+              />
+               
+              05/09/2019 11:23
+            </styled.div>
+          </styled.div>
+        </styled.div>
+      </Component>
+    </styled.li>
+  </styled.div>
+  <NavigationContainer
+    right={false}
+  >
+    <BackArrowButton
+      onClick={[Function]}
+    />
+    <PlusButton
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;
+
 exports[`DataSourceList: Component should render card with processing state 1`] = `
 <styled.div>
   <HelmetWrapper
