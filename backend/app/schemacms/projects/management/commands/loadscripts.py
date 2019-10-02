@@ -39,19 +39,18 @@ class Command(BaseCommand):
 
     @staticmethod
     def create_script(name, filepath, modified):
-        f = open(filepath, "rb")
-        script = models.WranglingScript()
-        script.name = name
-        script.file = File(f)
-        script.is_predefined = True
-        script.last_file_modification = modified
-        script.save()
-        f.close()
+        with open(filepath, "rb") as f:
+            script = models.WranglingScript()
+            script.name = name
+            script.file = File(f)
+            script.is_predefined = True
+            script.last_file_modification = modified
+            script.save()
+
 
     @staticmethod
     def update_script(script, filepath, modified):
-        f = open(filepath, "rb")
-        script.file = File(f)
-        script.last_file_modification = modified
-        script.save()
-        f.close()
+        with open(filepath, "rb") as f:
+            script.file = File(f)
+            script.last_file_modification = modified
+            script.save()
