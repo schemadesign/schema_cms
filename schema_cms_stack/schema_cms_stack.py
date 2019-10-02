@@ -16,7 +16,7 @@ from aws_cdk import (
     aws_stepfunctions,
     aws_stepfunctions_tasks,
     aws_certificatemanager,
-)
+    aws_route53)
 
 DB_NAME = "gistdb"
 APP_S3_BUCKET_NAME = "schemacms"
@@ -217,6 +217,13 @@ class API(core.Stack):
             enable_logging=True,
             container_port=80,
             certificate=scope.certs.cert,
+            domain_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
+            domain_zone=aws_route53.PrivateHostedZone(
+                self,
+                "zone",
+                vpc=scope.base.vpc,
+                zone_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+            ),
         )
 
         self.api.task_definition.add_container(
