@@ -86,10 +86,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "background": "#000",
           "text": "#FFF",
         },
-        "inverseButtonDisabled": Object {
-          "background": "#71737e",
-          "text": "#a6a7aa",
-        },
         "label": Object {
           "border": "#f0efef",
           "text": "#a6a7aa",
@@ -227,10 +223,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "inverseButton": Object {
             "background": "#000",
             "text": "#FFF",
-          },
-          "inverseButtonDisabled": Object {
-            "background": "#71737e",
-            "text": "#a6a7aa",
           },
           "label": Object {
             "border": "#f0efef",
@@ -421,10 +413,6 @@ exports[`App: Component should render App when language is set 1`] = `
           "background": "#000",
           "text": "#FFF",
         },
-        "inverseButtonDisabled": Object {
-          "background": "#71737e",
-          "text": "#a6a7aa",
-        },
         "label": Object {
           "border": "#f0efef",
           "text": "#a6a7aa",
@@ -562,10 +550,6 @@ exports[`App: Component should render App when language is set 1`] = `
           "inverseButton": Object {
             "background": "#000",
             "text": "#FFF",
-          },
-          "inverseButtonDisabled": Object {
-            "background": "#71737e",
-            "text": "#a6a7aa",
           },
           "label": Object {
             "border": "#f0efef",

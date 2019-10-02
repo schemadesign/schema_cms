@@ -55,10 +55,6 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "background": "#000",
           "text": "#FFF",
         },
-        "inverseButtonDisabled": Object {
-          "background": "#71737e",
-          "text": "#a6a7aa",
-        },
         "label": Object {
           "border": "#f0efef",
           "text": "#a6a7aa",

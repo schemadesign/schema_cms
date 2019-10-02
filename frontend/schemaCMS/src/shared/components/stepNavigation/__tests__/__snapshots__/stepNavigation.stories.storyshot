@@ -390,10 +390,10 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#71737e",
+            "backgroundColor": "#1d1d20",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#71737e",
             "cursor": "default",
             "display": "inline-block",
             "fill": "#FFF",
@@ -562,10 +562,10 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "backgroundColor": "#71737e",
+            "backgroundColor": "#1d1d20",
             "border": "none",
             "borderRadius": "48px",
-            "color": "#1d1d20",
+            "color": "#71737e",
             "cursor": "default",
             "display": "inline-block",
             "fill": "#FFF",
