@@ -81,7 +81,7 @@ export class DataSourceList extends PureComponent {
     secondaryMenuItems: [
       {
         label: this.props.intl.formatMessage(messages.projectDetails),
-        to: `/project/view/${this.props.match.params.projectId}`,
+        to: `/project/${this.props.match.params.projectId}`,
       },
     ],
   });
