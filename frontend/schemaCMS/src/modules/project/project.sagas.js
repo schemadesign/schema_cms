@@ -34,7 +34,7 @@ function* createProject({ payload }) {
     const { data } = yield api.post(PROJECTS_PATH, parsedPayload);
 
     yield put(ProjectRoutines.createProject.success(data));
-    browserHistory.push('/project/list');
+    browserHistory.push('/project/');
   } catch (e) {
     yield put(ProjectRoutines.createProject.failure());
   } finally {
