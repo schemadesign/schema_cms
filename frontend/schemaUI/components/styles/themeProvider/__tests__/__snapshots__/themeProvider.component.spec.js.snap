@@ -37,6 +37,7 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
         },
         "error": "#f21e29",
         "header": Object {
+          "border": "#f0efef",
           "text": "#1d1d20",
         },
         "icon": Object {

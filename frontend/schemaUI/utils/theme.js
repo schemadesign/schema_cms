@@ -52,6 +52,7 @@ const light = {
   },
   header: {
     text: colors.darkGrey,
+    border: colors.veryLightPink,
   },
   menu: {
     background: colors.white,
@@ -145,6 +146,7 @@ const dark = {
   },
   header: {
     text: colors.white,
+    border: colors.mediumGray,
   },
   menu: {
     background: colors.black,
@@ -189,7 +191,6 @@ const dark = {
     border: colors.black,
   },
   background: colors.black,
-  border: colors.mediumGray,
   text: colors.white,
   secondaryText: colors.lightGrey,
   colors,
