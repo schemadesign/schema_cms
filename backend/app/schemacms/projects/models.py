@@ -174,6 +174,7 @@ class WranglingScript(ext_models.TimeStampedModel):
         validators=[FileExtensionValidator(allowed_extensions=["py"])],
     )
     body = models.TextField(blank=True)
+    last_file_modification = models.DateTimeField(null=True)
 
     def __str__(self):
         return self.name

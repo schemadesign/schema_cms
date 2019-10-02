@@ -120,6 +120,8 @@ class Common(Configuration):
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), "/")
     MEDIA_URL = "/"
 
+    SCRIPTS_DIRECTORY = os.getenv("DJANGO_SCRIPTS_DIRECTORY", "step-scripts")
+
     TEMPLATES = [
         {
             "BACKEND": "django.template.backends.django.DjangoTemplates",
