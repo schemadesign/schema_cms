@@ -821,6 +821,108 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         </styled.div>
       </Component>
     </styled.li>
+    <styled.li
+      key="1"
+    >
+      <Component
+        headerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.ul)>
+              <ForwardRef(styled.li)>
+                3 months ago
+              </ForwardRef(styled.li)>
+              <ForwardRef(styled.li)>
+                firstName lastName
+              </ForwardRef(styled.li)>
+            </ForwardRef(styled.ul)>
+            <ForwardRef(styled.div)>
+              <Unknown />
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
+      >
+        <H1
+          customStyles={
+            Object {
+              "cursor": "pointer",
+              "marginBottom": "20px",
+            }
+          }
+          onClick={[Function]}
+        >
+          name
+        </H1>
+        <styled.div>
+          <styled.div
+            key="0"
+          >
+            <styled.span>
+              Source
+            </styled.span>
+            <styled.span
+              isLock={false}
+            >
+              <Component
+                customStyles={
+                  Object {
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+              />
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="1"
+          >
+            <styled.span>
+              Items
+            </styled.span>
+            <styled.span
+              isLock={false}
+            >
+              246
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="2"
+          >
+            <styled.span>
+              Fields
+            </styled.span>
+            <styled.span
+              isLock={false}
+            >
+              11
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="3"
+          >
+            <styled.span>
+              Filters
+            </styled.span>
+            <styled.span
+              isLock={false}
+            >
+              —
+            </styled.span>
+          </styled.div>
+          <styled.div
+            key="4"
+          >
+            <styled.span>
+              Views
+            </styled.span>
+            <styled.span
+              isLock={false}
+            >
+              —
+            </styled.span>
+          </styled.div>
+        </styled.div>
+      </Component>
+    </styled.li>
   </styled.div>
   <NavigationContainer
     right={false}
