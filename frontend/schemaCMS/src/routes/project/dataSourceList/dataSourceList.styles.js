@@ -3,6 +3,7 @@ import { Theme } from 'schemaUI';
 import { always, cond, equals } from 'ramda';
 import { styleWhenTrue } from '../../../shared/utils/rendering';
 import { media } from '../../../theme/media';
+import { colors } from '../../../theme/styled';
 
 const horizontalMargin = 20;
 
@@ -124,10 +125,10 @@ export const JobDetails = styled.div`
 `;
 
 const getStatusColor = cond([
-  [equals('error'), always('#a8241b')],
-  [equals('idle'), always('#91880d')],
-  [equals('process'), always('#1616ff')],
-  [equals('done'), always('#1a7113')],
+  [equals('error'), always(colors.red)],
+  [equals('idle'), always(colors.yellow)],
+  [equals('process'), always(colors.blue)],
+  [equals('done'), always(colors.green)],
 ]);
 
 export const JobStatus = styled.div`
