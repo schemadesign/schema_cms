@@ -47,7 +47,6 @@ class Command(BaseCommand):
             script.last_file_modification = modified
             script.save()
 
-
     @staticmethod
     def update_script(script, filepath, modified):
         with open(filepath, "rb") as f:
