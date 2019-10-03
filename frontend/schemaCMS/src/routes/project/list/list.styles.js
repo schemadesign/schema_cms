@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { Container as DefaultContainer } from '../../../shared/components/styledComponents/container';
 
-export const Container = styled(DefaultContainer)``;
+export const Container = styled.div``;
 
 export const ProjectsList = styled.ul`
   list-style: none;

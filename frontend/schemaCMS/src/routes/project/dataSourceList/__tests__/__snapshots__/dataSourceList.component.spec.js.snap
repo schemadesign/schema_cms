@@ -14,7 +14,7 @@ exports[`DataSourceList: Component should render card with draft state 1`] = `
       Array [
         Object {
           "label": "Project details",
-          "to": "/project/view/1",
+          "to": "/project/1",
         },
       ]
     }
@@ -144,7 +144,7 @@ exports[`DataSourceList: Component should render card with error state 1`] = `
       Array [
         Object {
           "label": "Project details",
-          "to": "/project/view/1",
+          "to": "/project/1",
         },
       ]
     }
@@ -216,7 +216,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
       Array [
         Object {
           "label": "Project details",
-          "to": "/project/view/1",
+          "to": "/project/1",
         },
       ]
     }
@@ -453,7 +453,7 @@ exports[`DataSourceList: Component should render card with processing state 1`] 
       Array [
         Object {
           "label": "Project details",
-          "to": "/project/view/1",
+          "to": "/project/1",
         },
       ]
     }
@@ -583,7 +583,7 @@ exports[`DataSourceList: Component should render card with ready for processing 
       Array [
         Object {
           "label": "Project details",
-          "to": "/project/view/1",
+          "to": "/project/1",
         },
       ]
     }
@@ -713,7 +713,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       Array [
         Object {
           "label": "Project details",
-          "to": "/project/view/1",
+          "to": "/project/1",
         },
       ]
     }
@@ -951,7 +951,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
       Array [
         Object {
           "label": "Project details",
-          "to": "/project/view/1",
+          "to": "/project/1",
         },
       ]
     }

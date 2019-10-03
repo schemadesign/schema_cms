@@ -10,7 +10,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
   }
 >
   <div
-    className="sc-fAjcbJ kwTAwd"
+    className="sc-fAjcbJ byigni"
   >
     <div
       className="sc-cMljjf cduCgM"
@@ -23,7 +23,6 @@ exports[`Storyshots DataSourceList Empty 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }
@@ -63,6 +62,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -170,7 +170,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
               className="sc-csuQGl sc-bRBYWo uJJht"
             >
               <a
-                href="/project/view/1"
+                href="/project/1"
                 id={null}
                 onClick={[Function]}
               >
@@ -180,6 +180,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -230,6 +231,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -266,6 +268,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -318,7 +321,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
   }
 >
   <div
-    className="sc-fAjcbJ kwTAwd"
+    className="sc-fAjcbJ byigni"
   >
     <div
       className="sc-cMljjf cduCgM"
@@ -331,7 +334,6 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }
@@ -371,6 +373,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -478,7 +481,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
               className="sc-csuQGl sc-bRBYWo uJJht"
             >
               <a
-                href="/project/view/1"
+                href="/project/1"
                 id={null}
                 onClick={[Function]}
               >
@@ -488,6 +491,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -883,6 +887,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -919,6 +924,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -971,7 +977,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
   }
 >
   <div
-    className="sc-fAjcbJ kwTAwd"
+    className="sc-fAjcbJ byigni"
   >
     <div
       className="sc-cMljjf cduCgM"
@@ -984,7 +990,6 @@ exports[`Storyshots DataSourceList With draft 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }
@@ -1024,6 +1029,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1131,7 +1137,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
               className="sc-csuQGl sc-bRBYWo uJJht"
             >
               <a
-                href="/project/view/1"
+                href="/project/1"
                 id={null}
                 onClick={[Function]}
               >
@@ -1141,6 +1147,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -1330,6 +1337,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1366,6 +1374,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1418,7 +1427,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
   }
 >
   <div
-    className="sc-fAjcbJ kwTAwd"
+    className="sc-fAjcbJ byigni"
   >
     <div
       className="sc-cMljjf cduCgM"
@@ -1431,7 +1440,6 @@ exports[`Storyshots DataSourceList With error 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }
@@ -1471,6 +1479,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1578,7 +1587,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
               className="sc-csuQGl sc-bRBYWo uJJht"
             >
               <a
-                href="/project/view/1"
+                href="/project/1"
                 id={null}
                 onClick={[Function]}
               >
@@ -1588,6 +1597,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -1702,6 +1712,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1738,6 +1749,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1790,7 +1802,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
   }
 >
   <div
-    className="sc-fAjcbJ kwTAwd"
+    className="sc-fAjcbJ byigni"
   >
     <div
       className="sc-cMljjf cduCgM"
@@ -1803,7 +1815,6 @@ exports[`Storyshots DataSourceList With job 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }
@@ -1843,6 +1854,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1950,7 +1962,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
               className="sc-csuQGl sc-bRBYWo uJJht"
             >
               <a
-                href="/project/view/1"
+                href="/project/1"
                 id={null}
                 onClick={[Function]}
               >
@@ -1960,6 +1972,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -2302,6 +2315,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -2338,6 +2352,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -2390,7 +2405,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
   }
 >
   <div
-    className="sc-fAjcbJ kwTAwd"
+    className="sc-fAjcbJ byigni"
   >
     <div
       className="sc-cMljjf cduCgM"
@@ -2403,7 +2418,6 @@ exports[`Storyshots DataSourceList With processing 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }
@@ -2443,6 +2457,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -2550,7 +2565,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
               className="sc-csuQGl sc-bRBYWo uJJht"
             >
               <a
-                href="/project/view/1"
+                href="/project/1"
                 id={null}
                 onClick={[Function]}
               >
@@ -2560,6 +2575,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -2749,6 +2765,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -2785,6 +2802,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -2837,7 +2855,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
   }
 >
   <div
-    className="sc-fAjcbJ kwTAwd"
+    className="sc-fAjcbJ byigni"
   >
     <div
       className="sc-cMljjf cduCgM"
@@ -2850,7 +2868,6 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }
@@ -2998,7 +3015,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
               className="sc-csuQGl sc-bRBYWo uJJht"
             >
               <a
-                href="/project/view/1"
+                href="/project/1"
                 id={null}
                 onClick={[Function]}
               >

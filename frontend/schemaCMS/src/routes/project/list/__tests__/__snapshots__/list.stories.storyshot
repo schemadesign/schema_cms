@@ -10,7 +10,7 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-fMiknA sc-jnlKLf dktEiP"
+    className="sc-jnlKLf jKMWma"
   >
     <div
       className="sc-cMljjf cduCgM"
@@ -23,7 +23,6 @@ exports[`Storyshots Project/List empty 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }
@@ -301,7 +300,7 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-fMiknA sc-jnlKLf dktEiP"
+    className="sc-jnlKLf jKMWma"
   >
     <div
       className="sc-cMljjf cduCgM"
@@ -314,7 +313,6 @@ exports[`Storyshots Project/List list 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }

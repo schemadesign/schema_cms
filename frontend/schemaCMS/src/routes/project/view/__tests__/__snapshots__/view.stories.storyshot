@@ -10,7 +10,7 @@ exports[`Storyshots Project/View default 1`] = `
   }
 >
   <div
-    className="sc-fMiknA sc-feJyhm fTeaGG"
+    className="sc-feJyhm dWHQrJ"
   >
     <div>
       <div
@@ -24,7 +24,6 @@ exports[`Storyshots Project/View default 1`] = `
               "display": "flex",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "padding": "18px 0",
               "width": "100%",
             }
           }
@@ -620,7 +619,7 @@ exports[`Storyshots Project/View empty 1`] = `
   }
 >
   <div
-    className="sc-fMiknA sc-feJyhm fTeaGG"
+    className="sc-feJyhm dWHQrJ"
   >
     <div>
       <div
@@ -634,7 +633,6 @@ exports[`Storyshots Project/View empty 1`] = `
               "display": "flex",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "padding": "18px 0",
               "width": "100%",
             }
           }

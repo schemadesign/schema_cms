@@ -23,7 +23,6 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }
