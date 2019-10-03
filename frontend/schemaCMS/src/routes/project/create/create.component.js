@@ -2,11 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { Container } from '../../../shared/components/styledComponents/container';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Select } from '../../../shared/components/form/select';
-import { Form } from './create.styles';
+import { Form, Container } from './create.styles';
 import {
   PROJECT_DESCRIPTION,
   PROJECT_TITLE,

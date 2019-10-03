@@ -10,7 +10,7 @@ exports[`Storyshots Project/Create Default 1`] = `
   }
 >
   <div
-    className="sc-fMiknA fDLvLp"
+    className="sc-dVhcbM fghLuF"
   >
     <div
       className="sc-cMljjf cduCgM"
@@ -23,7 +23,6 @@ exports[`Storyshots Project/Create Default 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
             "width": "100%",
           }
         }
@@ -393,7 +392,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-dVhcbM bdkuSf"
+        className="sc-fMiknA kwKhXY"
       >
         <label
           style={

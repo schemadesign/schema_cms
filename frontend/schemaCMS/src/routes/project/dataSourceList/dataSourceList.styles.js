@@ -5,11 +5,7 @@ import { styleWhenTrue } from '../../../shared/utils/rendering';
 import { media } from '../../../theme/media';
 import { colors } from '../../../theme/styled';
 
-const horizontalMargin = 20;
-
-export const Container = styled.div`
-  padding: 0 ${horizontalMargin}px 118px;
-`;
+export const Container = styled.div``;
 
 export const DataSourceItem = styled.li`
   margin-top: 25px;
