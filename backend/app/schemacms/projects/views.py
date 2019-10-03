@@ -28,7 +28,8 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     @decorators.action(detail=True, methods=["get"])
     def datasources(self, request, **kwargs):
         project = self.get_object()
-        queryset = project.data_sources.all().available_for_user(user=self.request.user)
+        queryset = project.data_sources.all(
+        ).prefetch_related("jobs").available_for_user(user=self.request.user)
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -48,6 +49,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "script": serializers.DataSourceScriptSerializer,
         "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.DataSourceJobSerializer,
+        "jobs_history": serializers.DataSourceJobSerializer,
     }
 
     def get_queryset(self):
@@ -110,6 +112,19 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             job = serializer.save()
             transaction.on_commit(lambda: services.schedule_worker_with(job))
         return response.Response(status=status.HTTP_201_CREATED)
+
+    @decorators.action(detail=True, url_path="jobs-history", methods=["get"])
+    def jobs_history(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+        queryset = data_source.jobs.all()
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(instance=data_source.jobs_history, many=True)
+        return response.Response(data=serializer.data)
 
 
 class DataSourceJobDetailView(generics.RetrieveAPIView):

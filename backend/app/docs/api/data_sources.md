@@ -33,6 +33,12 @@ Content-Type: application/json
         "items": 2419,
         "fields": 3,
         "preview": "http://localhost:8000/static/preview_file.json"
+      },
+      "job": {
+        "id": 2,
+        "job_state": "pending",
+        "created": "2019-10-03T09:22:24+0000",
+        "modified": "2019-10-03T09:22:24+0000"
       }
     },
     {
@@ -45,6 +51,12 @@ Content-Type: application/json
         "items": 3179,
         "fields": 9,
         "preview": "http://localhost:8000/static/preview_file.json"
+      },
+      "job": {
+        "id": 3,
+        "job_state": "pending",
+        "created": "2019-10-03T09:22:24+0000",
+        "modified": "2019-10-03T09:22:24+0000"
       }
     }
   ]
@@ -84,6 +96,12 @@ Content-Type: application/json
         "items": 2419,
         "fields": 3,
         "preview": "http://localhost:8000/static/preview_file.json"
+       },
+      "job": {
+        "id": 2,
+        "job_state": "pending",
+        "created": "2019-10-03T09:22:24+0000",
+        "modified": "2019-10-03T09:22:24+0000"
       }
     },
     {
@@ -96,6 +114,12 @@ Content-Type: application/json
         "items": 3179,
         "fields": 9,
         "preview": "http://localhost:8000/static/preview_file.json"
+      },
+      "job": {
+        "id": 3,
+        "job_state": "pending",
+        "created": "2019-10-03T09:22:24+0000",
+        "modified": "2019-10-03T09:22:24+0000"
       }
     }
   ]
@@ -285,5 +309,57 @@ Data source statuses: `file`, `database`, `api`
 
 Name       | Type   | Description
 -----------|--------|---
-key        | string | Path to script
+script     | int    | Script ID
 exec_order | int    | Order of step
+
+## Get data source jobs history
+
+**Request**:
+
+`GET` `/api/v1/datasources/:id/jobs-history`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+        {
+            "pk": 2,
+            "datasource": 1,
+            "steps": [
+                {
+                    "script": 1,
+                    "exec_order": 0
+                }
+            ],
+            "job_state": "pending",
+            "result": null,
+            "error": ""
+        },
+        {
+            "pk": 1,
+            "datasource": 1,
+            "steps": [
+                {
+                    "script": 1,
+                    "exec_order": 0
+                }
+            ],
+            "job_state": "success",
+            "result": "http://localhost:8000/schemacms/storage/projects/1/datasources/1/test_data_Job#1_result.csv",
+            "error": ""
+        }
+    ]
+}
+```

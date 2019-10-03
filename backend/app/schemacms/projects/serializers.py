@@ -22,6 +22,12 @@ class DataSourceCreatorSerializer(serializers.ModelSerializer):
         fields = ("id", "first_name", "last_name")
 
 
+class DataSourceLastJobSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.DataSourceJob
+        fields = ("id", "job_state", "created", "modified")
+
+
 class DataSourceSerializer(serializers.ModelSerializer):
     meta_data = DataSourceMetaSerializer(read_only=True)
     file_name = serializers.SerializerMethodField(read_only=True)
@@ -32,6 +38,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
     )
     error_log = serializers.SerializerMethodField()
     project = serializers.PrimaryKeyRelatedField(read_only=True)
+    job = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = DataSource
@@ -47,6 +54,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "meta_data",
             "error_log",
             "project",
+            "job"
         )
 
         extra_kwargs = {
@@ -65,6 +73,12 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
     def get_error_log(self, obj):
         return []
+
+    def get_job(self, obj):
+        if obj.jobs.exists():
+            return DataSourceLastJobSerializer(obj.jobs.latest("created")).data
+        else:
+            return {}
 
     @transaction.atomic()
     def update(self, instance, validated_data):

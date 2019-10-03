@@ -77,6 +77,7 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
 
     class Meta:
         unique_together = ("name", "project")
+        ordering = ('-created',)
 
     def __str__(self):
         return self.name or str(self.id)
@@ -130,6 +131,10 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
         return WranglingScript.objects.filter(
             models.Q(is_predefined=True) | models.Q(datasource=self)
         ).order_by("-is_predefined")
+
+    @property
+    def jobs_history(self):
+        return self.jobs.all().order_by("-created")
 
 
 fsm_signals.post_transition.connect(handlers.handle_datasource_fsm_post_transition, sender=DataSource)
