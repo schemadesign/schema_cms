@@ -11,5 +11,5 @@ router.register(r"datasources", views.DataSourceViewSet)
 
 urlpatterns = router.urls + [
     path("jobs/<int:pk>", views.DataSourceJobDetailView.as_view(), name="job_detail"),
-    path("scripts/<int:pk>", views.DataSourceScriptDetailView.as_view(), name="script_detail"),
+    path("script/<int:pk>", views.DataSourceScriptDetailView.as_view(), name="script_detail"),
 ]

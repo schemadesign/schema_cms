@@ -22,7 +22,7 @@ export const ROUTES = {
   RESET_PASSWORD: '/reset-password',
   LOGOUT: '/logout',
   DATA_SOURCE: '/datasource',
-  DATA_WRANGLING_SCRIPTS: 'scripts',
+  DATA_WRANGLING_SCRIPTS: '/script',
 };
 
 export default class RootContainer extends Component {
@@ -39,7 +39,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute path={ROUTES.DATA_SOURCE} component={DataSource} />
 
-            <AuthRoute path={ROUTES.DATA_WRANGLING_SCRIPTS} component={DataWranglingScript} />
+            <AuthRoute exact path={`${ROUTES.DATA_WRANGLING_SCRIPTS}/:scriptId`} component={DataWranglingScript} />
 
             <AuthRoute path={ROUTES.USER_PROFILE} component={UserProfile} />
 

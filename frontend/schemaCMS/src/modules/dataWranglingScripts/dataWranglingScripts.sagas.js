@@ -63,18 +63,11 @@ function* uploadScript({ payload: { script, dataSourceId } }) {
   }
 }
 
-function* fetchOne({ payload }) {
+function* fetchOne({ payload: { scriptId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.fetchOne.request());
 
-    let scripts = yield select(selectDataWranglingScripts);
-
-    //TODO: fetch a single script by script ID only
-    if (!scripts.length) {
-      yield fetchList({ payload });
-      scripts = yield select(selectDataWranglingScripts);
-    }
-    const data = scripts[payload.scriptId];
+    const { data } = yield api.get(`${DATA_WRANGLING_SCRIPTS_PATH}/${scriptId}`);
 
     yield put(DataWranglingScriptsRoutines.fetchOne.success(data));
   } catch (error) {
