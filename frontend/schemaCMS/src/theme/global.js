@@ -10,6 +10,5 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: ${({ theme }) => theme.typography.p.fontFamily};
-    padding: 18px 20px 24px 20px;
   }
 `;

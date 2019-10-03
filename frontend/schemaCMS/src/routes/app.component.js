@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { FormattedMessage, IntlProvider } from 'react-intl';
@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { DEFAULT_LOCALE, translationMessages } from '../i18n';
 import { GlobalStyle } from '../theme/global';
 import messages from './app.messages';
+import { Container } from './app.styles';
 import { ROLES } from '../modules/userProfile/userProfile.constants';
 
 export class App extends PureComponent {
@@ -33,14 +34,14 @@ export class App extends PureComponent {
       <IntlProvider key={DEFAULT_LOCALE} locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
         <ThemeUIProvider theme={theme}>
           <ThemeProvider theme={theme}>
-            <Fragment>
+            <Container>
               <FormattedMessage {...messages.pageTitle}>
                 {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle} />}
               </FormattedMessage>
 
               <GlobalStyle />
               {React.Children.only(this.props.children)}
-            </Fragment>
+            </Container>
           </ThemeProvider>
         </ThemeUIProvider>
       </IntlProvider>
