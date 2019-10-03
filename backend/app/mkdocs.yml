@@ -12,3 +12,4 @@ nav:
     - Users: 'api/users.md'
     - Projects: 'api/projects.md'
     - Data sources: 'api/data_sources.md'
+    - Scripts: 'api/scripts.md'
