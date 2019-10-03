@@ -1,3 +1,5 @@
+import os
+
 import django_fsm
 from django.db import transaction
 from rest_framework import serializers, exceptions, validators
@@ -150,6 +152,8 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
         read_only=True,
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
+    is_predefined = serializers.BooleanField(read_only=True)
+    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = WranglingScript
@@ -162,12 +166,38 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
             "file",
             "body",
         )
+        extra_kwargs = {
+            "name": {"required": False, "allow_null": True}
+        }
 
     def create(self, validated_data):
-        script = WranglingScript(created_by=self.context["request"].user, **validated_data)
+        datasource = self.initial_data["datasource"]
+        name = validated_data.pop('name', None)
+
+        if not name:
+            name = os.path.splitext(validated_data["file"].name)[0]
+
+        script = WranglingScript(
+            created_by=self.context["request"].user,
+            name=name,
+            datasource=datasource,
+            **validated_data
+        )
+        script.is_predefined = False
         script.save()
 
         return script
+
+
+class DataSourceScriptSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WranglingScript
+        fields = (
+            "name",
+            "is_predefined",
+            "file",
+            "body",
+        )
 
 
 class StepSerializer(serializers.ModelSerializer):
@@ -186,6 +216,7 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
     result = serializers.FileField(read_only=True)
     error = serializers.CharField(read_only=True)
     job_state = serializers.CharField(read_only=True)
+    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = models.DataSourceJob
@@ -197,8 +228,9 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
         return attr
 
     def create(self, validated_data):
+        datasource = self.initial_data["datasource"]
         steps = validated_data.pop('steps')
-        job = models.DataSourceJob.objects.create(**validated_data)
+        job = models.DataSourceJob.objects.create(datasource=datasource, **validated_data)
         models.DataSourceJobStep.objects.bulk_create(
             self.create_steps(steps, job)
         )

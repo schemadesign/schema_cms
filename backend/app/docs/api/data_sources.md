@@ -214,8 +214,10 @@ Content-Type: application/json
 
 [
     {
-        "key": "string",
-        "body": "string",
+        "name": "use first 10 rows",
+        "body": "df = df.head(10)\n",
+        "is_predefined": False
+        "file": "http://localhost:8000/scripts/use_first_10_rows.py"
     },
 ]
 ```
@@ -228,9 +230,10 @@ Content-Type: application/json
 
 Parameters:
 
-Name       | Type | Description
------------|------|-------------
-script     | file | Python file
+Name       | Type   | Description
+-----------|--------|-------------
+name       | string | Script name
+script     | file   | Python file
 
 
 *Note:*

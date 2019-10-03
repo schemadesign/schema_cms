@@ -466,7 +466,6 @@ class TestDataSourceJobCreate:
         data_source = data_source_factory(created_by=admin)
         script_1 = script_factory(is_predefined=True, created_by=admin, datasource=None)
         job_data = {
-            "datasource": data_source.id,
             "steps": [{"script": script_1.id, "exec_order": 0}]
         }
 
@@ -497,7 +496,7 @@ class TestDataSourceScriptsView:
 
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data) == 5
-        assert response.data == projects_serializers.WranglingScriptSerializer(
+        assert response.data == projects_serializers.DataSourceScriptSerializer(
             self.sort_scripts(test_scripts),
             many=True,
             context={"request": request}
@@ -518,16 +517,15 @@ class TestDataSourceScriptUploadView:
         code = b"df = df.head(5)"
         payload = dict(
             file=faker.python_upload_file(filename="test.py", code=code),
-            name="test script",
-            datasource=data_source.id
         )
+        script_name = os.path.splitext(payload["file"].name)[0]
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), payload, format="multipart")
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert data_source.scripts.filter(name=payload["name"]).exists()
-        assert data_source.scripts.get(name=payload["name"]).body == code.decode()
+        assert data_source.scripts.filter(name=script_name).exists()
+        assert data_source.scripts.get(name=script_name).body == code.decode()
 
     @staticmethod
     def get_url(pk):
