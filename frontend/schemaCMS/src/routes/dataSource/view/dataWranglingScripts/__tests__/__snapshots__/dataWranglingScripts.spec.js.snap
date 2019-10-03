@@ -96,7 +96,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       id="checkbox-0"
       isEdit={true}
       key="0"
-      value={1}
+      value="1"
     >
       <Styled(Link)
         to="/script/1"
@@ -108,7 +108,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       id="checkbox-1"
       isEdit={true}
       key="1"
-      value={2}
+      value="2"
     >
       <Styled(Link)
         to="/script/2"

@@ -268,7 +268,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
             }
           }
           type="checkbox"
-          value={1}
+          value="1"
         />
         <span
           style={
@@ -367,7 +367,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
             }
           }
           type="checkbox"
-          value={2}
+          value="2"
         />
         <span
           style={

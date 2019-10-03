@@ -33,6 +33,7 @@ const dataSource2 = {
     items: 246,
   },
   name: 'name',
+  job: {},
   status: STATUS_DONE,
 };
 

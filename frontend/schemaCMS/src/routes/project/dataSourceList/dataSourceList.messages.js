@@ -54,4 +54,8 @@ export default defineMessages({
     id: 'dataSource.list.jobTitle',
     defaultMessage: 'Data Process History',
   },
+  jobId: {
+    id: 'dataSource.list.jobId',
+    defaultMessage: 'Job id:',
+  },
 });

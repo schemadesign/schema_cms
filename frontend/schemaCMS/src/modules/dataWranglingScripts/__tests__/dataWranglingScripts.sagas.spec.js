@@ -5,7 +5,7 @@ import { OK } from 'http-status-codes';
 import nock from 'nock';
 
 import mockApi from '../../../shared/utils/mockApi';
-import { DATA_SOURCE_PATH, DATA_SOURCES_PATH, DATA_WRANGLING_SCRIPTS_PATH } from '../../../shared/utils/api.constants';
+import { DATA_SOURCES_PATH, DATA_WRANGLING_SCRIPTS_PATH } from '../../../shared/utils/api.constants';
 import { watchDataWranglingScripts } from '../dataWranglingScripts.sagas';
 import { DataWranglingScriptsRoutines } from '../dataWranglingScripts.redux';
 import { selectDataSource } from '../../dataSource';
