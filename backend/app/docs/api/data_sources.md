@@ -216,7 +216,7 @@ Content-Type: application/json
     {
         "name": "use first 10 rows",
         "body": "df = df.head(10)\n",
-        "is_predefined": False
+        "is_predefined": false,
         "file": "http://localhost:8000/scripts/use_first_10_rows.py"
     },
 ]
