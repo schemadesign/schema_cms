@@ -24,6 +24,18 @@ const dataSource = {
   status: STATUS_DONE,
 };
 
+const dataSource2 = {
+  created: '2019-09-10T11:23:40+0000',
+  createdBy: { firstName: 'firstName', lastName: 'lastName' },
+  id: 17,
+  metaData: {
+    fields: 11,
+    items: 246,
+  },
+  name: 'name',
+  status: STATUS_DONE,
+};
+
 const withJob = {
   ...dataSource,
   jobs,
@@ -70,7 +82,7 @@ export const defaultProps = {
 
 export const propsWithDataSource = {
   ...defaultProps,
-  dataSources: [dataSource],
+  dataSources: [dataSource, dataSource2],
 };
 
 export const propsWithJob = {
