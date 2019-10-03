@@ -46,7 +46,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     serializer_class_mapping = {
         "create": serializers.DraftDataSourceSerializer,
         "script": serializers.DataSourceScriptSerializer,
-        "script_upload": serializers.DataSourceScriptUploadSerializer,
+        "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.DataSourceJobSerializer,
     }
 
@@ -85,10 +85,16 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         return response.Response(data=serializer.data)
 
     @decorators.action(
-        detail=True, url_path="script-upload", parser_classes=(parsers.FormParser, parsers.MultiPartParser)
+        detail=True,
+        url_path="script-upload",
+        parser_classes=(parsers.FormParser, parsers.MultiPartParser),
+        methods=["post"]
     )
     def script_upload(self, request, pk=None, **kwargs):
-        serializer = self.get_serializer(self.get_object(), data=request.data)
+        datasource = self.get_object()
+        if not request.data.get("datasource"):
+            request.data["datasource"] = datasource
+        serializer = self.get_serializer(data=request.data, context=datasource)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return response.Response(status=status.HTTP_201_CREATED)
@@ -96,14 +102,36 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="job", methods=["post"])
     def job(self, request, pk=None, **kwargs):
         datasource = self.get_object()
-        serializer = self.get_serializer(instance=datasource, data=request.data)
+        if not request.data.get("datasource"):
+            request.data["datasource"] = datasource
+        serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         with transaction.atomic():
-            job = serializer.save(datasource=datasource)
+            job = serializer.save()
             transaction.on_commit(lambda: services.schedule_worker_with(job))
         return response.Response(status=status.HTTP_201_CREATED)
 
 
 class DataSourceJobDetailView(generics.RetrieveAPIView):
-    queryset = models.DataSourceJob.objects.all()
+    queryset = models.DataSourceJob.objects.none()
     serializer_class = serializers.DataSourceJobSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        return (
+            models.DataSourceJob.objects.all()
+            .select_related("datasource")
+            .prefetch_related("steps")
+        )
+
+
+class DataSourceScriptDetailView(generics.RetrieveAPIView):
+    queryset = models.WranglingScript.objects.none()
+    serializer_class = serializers.WranglingScriptSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        return (
+            models.WranglingScript.objects.all()
+            .select_related("datasource", "created_by")
+        )

@@ -1,0 +1,33 @@
+service: lambda-worker
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: ${opt:stage, 'dev'}
+
+
+plugins:
+  - serverless-python-requirements
+
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+    slim: true
+
+
+package:
+  exclude:
+    - .git/**
+    - node_modules/**
+
+functions:
+  main:
+    handler: handler.main
+    events:
+      - sqs: arn:aws:sqs:us-east-1:000000000000:worker
+    environment:
+      DB_NAME: gistdb
+      DB_USER: gistuser
+      DB_PASS: gistsecret
+      AWS_STORAGE_BUCKET_NAME: schemacms

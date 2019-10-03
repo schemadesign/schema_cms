@@ -459,3 +459,114 @@ class TestDataSourcePreview:
     @staticmethod
     def get_url(pk):
         return reverse("projects:datasource-preview", kwargs=dict(pk=pk))
+
+
+class TestDataSourceJobCreate:
+    def test_response(self, api_client, admin, data_source_factory, script_factory):
+        data_source = data_source_factory(created_by=admin)
+        script_1 = script_factory(is_predefined=True, created_by=admin, datasource=None)
+        job_data = {
+            "steps": [{"script": script_1.id, "exec_order": 0}]
+        }
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=job_data, format="json")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert len(data_source.jobs.all()) == 1
+        assert data_source.jobs.last().steps.filter(script=script_1).exists()
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-job", kwargs=dict(pk=pk))
+
+
+class TestDataSourceScriptsView:
+    def test_response(self, api_client, rf, admin, data_source_factory, script_factory):
+        data_source_1 = data_source_factory()
+        data_source_2 = data_source_factory()
+        scripts_1 = script_factory.create_batch(3, is_predefined=False, datasource=data_source_1)
+        scripts_2 = script_factory.create_batch(2, is_predefined=True, datasource=None)
+        script_factory.create_batch(2, is_predefined=False, datasource=data_source_2)
+        test_scripts = scripts_1 + scripts_2
+
+        request = rf.get(self.get_url(data_source_1.id))
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(data_source_1.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(response.data) == 5
+        assert response.data == projects_serializers.DataSourceScriptSerializer(
+            self.sort_scripts(test_scripts),
+            many=True,
+            context={"request": request}
+        ).data
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-script", kwargs=dict(pk=pk))
+
+    @staticmethod
+    def sort_scripts(scripts):
+        return sorted(scripts, key=operator.attrgetter("is_predefined"), reverse=True)
+
+
+class TestDataSourceScriptUploadView:
+    def test_response(self, api_client, admin, data_source_factory, faker):
+        data_source = data_source_factory()
+        code = b"df = df.head(5)"
+        payload = dict(
+            file=faker.python_upload_file(filename="test.py", code=code),
+        )
+        script_name = os.path.splitext(payload["file"].name)[0]
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), payload, format="multipart")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert data_source.scripts.filter(name=script_name).exists()
+        assert data_source.scripts.get(name=script_name).body == code.decode()
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-script-upload", kwargs=dict(pk=pk))
+
+
+class TestScriptDetailView:
+    def test_response(self, api_client, rf, admin, script_factory):
+        script = script_factory()
+
+        request = rf.get(self.get_url(script.id))
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(script.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == projects_serializers.WranglingScriptSerializer(
+            script,
+            context={"request": request}
+        ).data
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:script_detail", kwargs=dict(pk=pk))
+
+
+class TestJobDetailView:
+    def test_response(self, api_client, rf, admin, job_factory, job_step_factory):
+        job = job_factory()
+        job_step_factory.create_batch(2, datasource_job=job)
+
+        request = rf.get(self.get_url(job.id))
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(job.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(response.data["steps"]) == 2
+        assert response.data == projects_serializers.DataSourceJobSerializer(
+            job,
+            context={"request": request}
+        ).data
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:job_detail", kwargs=dict(pk=pk))

@@ -13,7 +13,6 @@ from django_fsm import signals as fsm_signals
 from pandas import read_csv
 
 from schemacms.projects import handlers
-from schemacms.projects import services
 from schemacms.users import constants as users_constants
 from . import constants, managers, fsm
 
@@ -128,7 +127,9 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
 
     @property
     def available_scripts(self):
-        return services.scripts.list(self)
+        return WranglingScript.objects.filter(
+            models.Q(is_predefined=True) | models.Q(datasource=self)
+        ).order_by("-is_predefined")
 
 
 fsm_signals.post_transition.connect(handlers.handle_datasource_fsm_post_transition, sender=DataSource)
@@ -160,16 +161,50 @@ class DataSourceMeta(models.Model):
         return json.loads(self.preview.read())
 
 
+class WranglingScript(ext_models.TimeStampedModel):
+    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='scripts', null=True)
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="scripts", null=True
+    )
+    name = models.CharField(max_length=constants.SCRIPT_NAME_MAX_LENGTH, blank=True)
+    is_predefined = models.BooleanField(default=True)
+    file = models.FileField(
+        upload_to="scripts/",
+        null=True,
+        validators=[FileExtensionValidator(allowed_extensions=["py"])],
+    )
+    body = models.TextField(blank=True)
+    last_file_modification = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.body:
+            self.body = self.file.read().decode()
+        super(WranglingScript, self).save(*args, **kwargs)
+
+
 class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
-    outcome = models.TextField(blank=True)
+    result = models.FileField(upload_to=file_upload_path, null=True)
+    error = models.TextField(blank=True, default="")
 
     def __str__(self):
         return f'DataSource Job #{self.pk}'
 
+    def relative_path_to_save(self, filename):
+        base_path = self.result.storage.location
+
+        return os.path.join(
+            base_path,
+            f"{settings.STORAGE_DIR}/projects",
+            f"{self.datasource.project_id}/datasources/{self.datasource.id}/results_{filename}",
+        )
+
 
 class DataSourceJobStep(models.Model):
     datasource_job = models.ForeignKey(DataSourceJob, on_delete=models.CASCADE, related_name='steps')
-    key = models.CharField(max_length=255)
-    body = models.TextField()
+    script = models.ForeignKey(WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True)
+    body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)

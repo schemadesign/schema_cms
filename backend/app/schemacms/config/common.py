@@ -120,6 +120,8 @@ class Common(Configuration):
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), "/")
     MEDIA_URL = "/"
 
+    SCRIPTS_DIRECTORY = os.getenv("DJANGO_SCRIPTS_DIRECTORY", "step-scripts")
+
     TEMPLATES = [
         {
             "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -275,9 +277,6 @@ class Common(Configuration):
     AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
     AWS_DEFAULT_ACL = None
-
-    DS_SCRIPTS_UPLOAD_PATH = '/datasource/{}/scripts/'
-    DS_JOB_UPLOAD_PATH = '/datasource/{}/jobs/'
 
     AWS_SQS_ENDPOINT_URL = os.getenv('SQS_ENDPOINT_URL')
     SQS_WORKER_QUEUE_URL = os.getenv('SQS_WORKER_QUEUE_URL')

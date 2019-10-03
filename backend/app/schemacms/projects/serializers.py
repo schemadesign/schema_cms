@@ -1,10 +1,11 @@
+import os
+
 import django_fsm
 from django.db import transaction
 from rest_framework import serializers, exceptions, validators
 
 from schemacms.projects import models
-from schemacms.projects import services
-from .models import DataSource, DataSourceMeta, Project
+from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
 
@@ -144,40 +145,82 @@ class ProjectSerializer(serializers.ModelSerializer):
         return {"data_sources": {"count": project.data_source_count}}
 
 
-class DataSourceScriptSerializer(serializers.Serializer):
-    key = serializers.CharField()
-    body = serializers.SerializerMethodField()
+class WranglingScriptSerializer(serializers.ModelSerializer):
+    body = serializers.CharField(read_only=True)
+    created_by = NestedRelatedModelSerializer(
+        serializer=ProjectOwnerSerializer(),
+        read_only=True,
+        pk_field=serializers.UUIDField(format="hex_verbose"),
+    )
+    is_predefined = serializers.BooleanField(read_only=True)
+    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
-    def get_body(self, attr):
-        return attr['resource'].getvalue(attr['ref_key'])
+    class Meta:
+        model = WranglingScript
+        fields = (
+            "id",
+            "datasource",
+            "name",
+            "is_predefined",
+            "created_by",
+            "file",
+            "body",
+        )
+        extra_kwargs = {
+            "name": {"required": False, "allow_null": True}
+        }
+
+    def create(self, validated_data):
+        datasource = self.initial_data["datasource"]
+        name = validated_data.pop('name', None)
+
+        if not name:
+            name = os.path.splitext(validated_data["file"].name)[0]
+
+        script = WranglingScript(
+            created_by=self.context["request"].user,
+            name=name,
+            datasource=datasource,
+            **validated_data
+        )
+        script.is_predefined = False
+        script.save()
+
+        return script
 
 
-class DataSourceScriptUploadSerializer(serializers.Serializer):
-    script = serializers.FileField()
+class DataSourceScriptSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WranglingScript
+        fields = (
+            "name",
+            "is_predefined",
+            "file",
+            "body",
+        )
 
-    def update(self, instance, validated_data):
-        script_file = validated_data.get('script')
-        services.scripts.resources.get('s3').upload(instance, script_file)
-        return instance
 
-
-class StepSerializer(serializers.Serializer):
-    key = serializers.CharField(max_length=255)
+class StepSerializer(serializers.ModelSerializer):
     exec_order = serializers.IntegerField(default=0)
 
-    def validate_key(self, attr):
-        spliced = attr.split(':')
-        if len(spliced) != 2:
-            raise exceptions.ValidationError('Invalid key format')
-        return attr
+    class Meta:
+        model = models.DataSourceJobStep
+        fields = (
+            "script",
+            "exec_order"
+        )
 
 
 class DataSourceJobSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True)
+    result = serializers.FileField(read_only=True)
+    error = serializers.CharField(read_only=True)
+    job_state = serializers.CharField(read_only=True)
+    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = models.DataSourceJob
-        fields = ('pk', 'steps', 'job_state')
+        fields = ("pk", "datasource", "steps", "job_state", "result", "error")
 
     def validate_steps(self, attr):
         if not attr:
@@ -185,15 +228,20 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
         return attr
 
     def create(self, validated_data):
+        datasource = self.initial_data["datasource"]
         steps = validated_data.pop('steps')
-        job = models.DataSourceJob.objects.create(**validated_data)
-        for step in steps:
-            step_key = step['key']
-            step_resource, ref_key = services.scripts.responsible(key=step_key)
-            models.DataSourceJobStep.objects.create(
-                datasource_job=job,
-                key=step_key,
-                exec_order=step['exec_order'],
-                body=step_resource.getvalue(ref_key),
-            )
+        job = models.DataSourceJob.objects.create(datasource=datasource, **validated_data)
+        models.DataSourceJobStep.objects.bulk_create(
+            self.create_steps(steps, job)
+        )
         return job
+
+    @staticmethod
+    def create_steps(steps, job):
+        for step in steps:
+            step_instance = models.DataSourceJobStep()
+            step_instance.script = step["script"]
+            step_instance.body = step["script"].body
+            step_instance.datasource_job = job
+            step_instance.exec_order = step["exec_order"]
+            yield step_instance

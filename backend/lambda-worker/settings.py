@@ -1,0 +1,13 @@
+import os
+
+
+DB_HOST = os.getenv('POSTGRES_HOST', 'localhost')
+DB_PORT = os.getenv('POSTGRES_PORT')
+DB_NAME = os.getenv('POSTGRES_DB')
+DB_USER = os.getenv('POSTGRES_USER')
+DB_PASS = os.getenv('POSTGRES_PASSWORD')
+
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
