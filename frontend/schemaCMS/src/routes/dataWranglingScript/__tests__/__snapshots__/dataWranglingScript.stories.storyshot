@@ -265,6 +265,7 @@ exports[`Storyshots DataWranglingScripts/View Default 1`] = `
               }
             }
             type="text"
+            value="local:blank_cells.py"
           />
           <div
             style={

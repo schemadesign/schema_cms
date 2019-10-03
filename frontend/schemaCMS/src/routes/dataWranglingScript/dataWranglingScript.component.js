@@ -58,9 +58,13 @@ export class DataWranglingScript extends PureComponent {
   getContentOrLoader = renderWhenTrueOtherwise(always(<Loader />), this.renderContent);
 
   handleGoToDataWranglingList = (match, history) => () => {
-    const { projectId, dataSourceId } = match.params;
+    const { dataWranglingScript } = this.props;
 
-    history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${DATA_WRANGLING_STEP}`);
+    if (dataWranglingScript.isPredefined) {
+      return history.goBack();
+    }
+
+    return history.push(`/datasource/${dataWranglingScript.datasource}/${DATA_WRANGLING_STEP}`);
   };
 
   renderContent() {
