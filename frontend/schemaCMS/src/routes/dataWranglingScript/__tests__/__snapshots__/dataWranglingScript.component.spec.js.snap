@@ -30,7 +30,6 @@ exports[`View: Component should render correctly 1`] = `
       onChange={[Function]}
       placeholder="Description"
       touched={Object {}}
-      value="local:blank_cells.py"
     />
     <SyntaxHighlighter
       language="python"

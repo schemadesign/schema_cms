@@ -63,6 +63,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -180,6 +181,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -230,6 +232,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -266,6 +269,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -371,6 +375,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -488,6 +493,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -883,6 +889,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -919,6 +926,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1024,6 +1032,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1141,6 +1150,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -1330,6 +1340,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1366,6 +1377,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1471,6 +1483,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1588,6 +1601,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -1702,6 +1716,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1738,6 +1753,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1843,6 +1859,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -1960,6 +1977,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -2302,6 +2320,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -2338,6 +2357,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -2443,6 +2463,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -2560,6 +2581,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
           </ul>
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -2749,6 +2771,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
         className="sc-dnqmqq jpGIQI"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -2785,6 +2808,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
           </svg>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {

@@ -7,6 +7,8 @@ import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { FETCH_LIST_DELAY, STATUS_PROCESSING, STATUS_READY_FOR_PROCESSING } from './dataSource.constants';
 
+const PAGE_SIZE = 1000;
+
 function* create({ payload }) {
   try {
     yield put(DataSourceRoutines.create.request());
@@ -60,7 +62,9 @@ function* fetchListLoop(payload) {
     while (true) {
       yield put(DataSourceRoutines.fetchList.request());
 
-      const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`);
+      const { data } = yield api.get(
+        `${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=${PAGE_SIZE}`
+      );
 
       yield put(DataSourceRoutines.fetchList.success(data.results));
 

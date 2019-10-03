@@ -96,25 +96,19 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       id="checkbox-0"
       isEdit={true}
       key="0"
-      value="name 1"
     >
       <Styled(Link)
-        to="/script/0"
-      >
-        name 1
-      </Styled(Link)>
+        to="/script/undefined"
+      />
     </Component>
     <Component
       id="checkbox-1"
       isEdit={true}
       key="1"
-      value="name 2"
     >
       <Styled(Link)
-        to="/script/1"
-      >
-        name 2
-      </Styled(Link)>
+        to="/script/undefined"
+      />
     </Component>
   </Component>
   <StepNavigation
