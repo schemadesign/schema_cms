@@ -60,7 +60,7 @@ function* fetchListLoop(payload) {
     while (true) {
       yield put(DataSourceRoutines.fetchList.request());
 
-      const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`);
+      const { data } = yield api.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`);
 
       yield put(DataSourceRoutines.fetchList.success(data.results));
 

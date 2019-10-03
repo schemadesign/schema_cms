@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Card, Icons, Typography } from 'schemaUI';
-import { always, anyPass, pipe, cond, equals, ifElse, sort, prop, descend } from 'ramda';
+import { always, anyPass, cond, equals, ifElse } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import dayjs from 'dayjs';
 
@@ -206,11 +206,6 @@ export class DataSourceList extends PureComponent {
     );
   };
 
-  renderList = pipe(
-    sort(descend(prop('created'))),
-    data => data.map(this.renderItem)
-  );
-
   render() {
     const { dataSources = [] } = this.props;
     const topHeaderConfig = this.getHeaderAndMenuConfig();
@@ -219,7 +214,7 @@ export class DataSourceList extends PureComponent {
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
         <TopHeader {...topHeaderConfig} />
-        <DataSourceListWrapper>{this.renderList(dataSources)}</DataSourceListWrapper>
+        <DataSourceListWrapper>{dataSources.map(this.renderItem)}</DataSourceListWrapper>
 
         <NavigationContainer>
           <BackArrowButton onClick={this.handleShowProject} />
