@@ -231,7 +231,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                     },
                     "_conditions": Array [],
                     "_deps": Array [],
-                    "_exclusive": Object {},
+                    "_exclusive": Object {
+                      "fileSize": false,
+                    },
                     "_mutate": undefined,
                     "_options": Object {
                       "abortEarly": true,
@@ -243,7 +245,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                       "list": Set {},
                       "refs": Map {},
                     },
-                    "tests": Array [],
+                    "tests": Array [
+                      [Function],
+                    ],
                     "transforms": Array [],
                   },
                   "fileName": StringSchema {
@@ -343,6 +347,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             }
           >
             <TextInput
+              checkOnlyErrors={true}
               errors={Object {}}
               fullWidth={true}
               handleBlur={[Function]}
@@ -360,6 +365,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
               setErrors={[Function]}
               setFieldError={[Function]}
               setFieldTouched={[Function]}
+              setFieldValue={[Function]}
               setFormikState={[Function]}
               setStatus={[Function]}
               setSubmitting={[Function]}
@@ -402,6 +408,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                     className="sc-bwzfXH uTxCW"
                   >
                     <Component
+                      error={false}
                       fullWidth={true}
                       label="Name"
                       name="name"
@@ -1520,7 +1527,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                     },
                     "_conditions": Array [],
                     "_deps": Array [],
-                    "_exclusive": Object {},
+                    "_exclusive": Object {
+                      "fileSize": false,
+                    },
                     "_mutate": undefined,
                     "_options": Object {
                       "abortEarly": true,
@@ -1532,7 +1541,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                       "list": Set {},
                       "refs": Map {},
                     },
-                    "tests": Array [],
+                    "tests": Array [
+                      [Function],
+                    ],
                     "transforms": Array [],
                   },
                   "fileName": StringSchema {
@@ -1632,6 +1643,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             }
           >
             <TextInput
+              checkOnlyErrors={true}
               errors={Object {}}
               fullWidth={true}
               handleBlur={[Function]}
@@ -1653,6 +1665,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
               setErrors={[Function]}
               setFieldError={[Function]}
               setFieldTouched={[Function]}
+              setFieldValue={[Function]}
               setFormikState={[Function]}
               setStatus={[Function]}
               setSubmitting={[Function]}
@@ -1695,6 +1708,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                     className="sc-bwzfXH uTxCW"
                   >
                     <Component
+                      error={false}
                       fullWidth={true}
                       label="Name"
                       name="name"
@@ -2021,276 +2035,344 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                 </Component>
               </div>
             </RadioGroup>
-            <Component
+            <Uploader
               accept=".csv,.tsv"
+              errors={Object {}}
+              handleBlur={[Function]}
+              handleReset={[Function]}
+              handleSubmit={[Function]}
               id="fileUpload"
+              initialValues={
+                Object {
+                  "type": "file",
+                }
+              }
+              isSubmitting={false}
+              isValidating={false}
               label="File Name"
               name="file"
               onChange={[Function]}
+              registerField={[Function]}
+              resetForm={[Function]}
+              setError={[Function]}
+              setErrors={[Function]}
+              setFieldError={[Function]}
+              setFieldTouched={[Function]}
+              setFormikState={[Function]}
+              setStatus={[Function]}
+              setSubmitting={[Function]}
+              setTouched={[Function]}
+              setValues={[Function]}
+              submitCount={0}
+              touched={Object {}}
               type="file"
+              unregisterField={[Function]}
+              validateField={[Function]}
+              validateForm={[Function]}
+              validateOnBlur={true}
+              validateOnChange={true}
             >
-              <FileUploadComponent
-                accept=".csv,.tsv"
-                customInputStyles={Object {}}
-                customLabelStyles={Object {}}
-                customStyles={Object {}}
-                id="fileUpload"
-                label="File Name"
-                name="file"
-                onChange={[Function]}
-                type="file"
-              >
-                <div
-                  style={Object {}}
+              <styled.div>
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-bZQynM",
+                        "isStatic": true,
+                        "lastClassName": "bOrPFB",
+                        "rules": Array [],
+                      },
+                      "displayName": "styled.div",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-bZQynM",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
                 >
-                  <Component
-                    customInputStyles={Object {}}
-                    customLabelStyles={Object {}}
-                    customStyles={Object {}}
-                    disabled={true}
-                    fullWidth={true}
-                    iconComponent={
-                      <label
-                        htmlFor="fileUpload"
-                        style={
-                          Object {
-                            "position": "relative",
-                            "top": 10,
-                          }
-                        }
+                  <div
+                    className="sc-bZQynM bOrPFB"
+                  >
+                    <Component
+                      accept=".csv,.tsv"
+                      id="fileUpload"
+                      label="File Name"
+                      name="file"
+                      onChange={[Function]}
+                      type="file"
+                    >
+                      <FileUploadComponent
+                        accept=".csv,.tsv"
+                        customInputStyles={Object {}}
+                        customLabelStyles={Object {}}
+                        customStyles={Object {}}
+                        id="fileUpload"
+                        label="File Name"
+                        name="file"
+                        onChange={[Function]}
+                        type="file"
                       >
                         <div
-                          style={
-                            Object {
-                              "backgroundColor": "#1d1d20",
-                              "border": "none",
-                              "borderRadius": "48px",
-                              "color": "#FFF",
-                              "cursor": "pointer",
-                              "display": "inline-block",
-                              "fill": "#FFF",
-                              "fontSize": 0,
-                              "margin": "0",
-                              "minHeight": "48px",
-                              "outline": "none",
-                              "padding": "0",
-                            }
-                          }
+                          style={Object {}}
                         >
-                          <Unknown />
-                        </div>
-                      </label>
-                    }
-                    label="File Name"
-                    name="fileName"
-                    value="Select a file"
-                  >
-                    <TextFieldComponent
-                      customInputStyles={Object {}}
-                      customLabelStyles={Object {}}
-                      customStyles={Object {}}
-                      disabled={true}
-                      error={false}
-                      fullWidth={true}
-                      iconComponent={
-                        <label
-                          htmlFor="fileUpload"
-                          style={
-                            Object {
-                              "position": "relative",
-                              "top": 10,
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundColor": "#1d1d20",
-                                "border": "none",
-                                "borderRadius": "48px",
-                                "color": "#FFF",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                                "fill": "#FFF",
-                                "fontSize": 0,
-                                "margin": "0",
-                                "minHeight": "48px",
-                                "outline": "none",
-                                "padding": "0",
-                              }
-                            }
-                          >
-                            <Unknown />
-                          </div>
-                        </label>
-                      }
-                      label="File Name"
-                      name="fileName"
-                      type="text"
-                      value="Select a file"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "display": "flex",
-                            "flexDirection": "column",
-                            "maxWidth": "100%",
-                            "paddingBottom": "30px",
-                            "position": "relative",
-                          }
-                        }
-                      >
-                        <Component
-                          customStyles={Object {}}
-                          name="fileName"
-                        >
-                          <LabelComponent
-                            customStyles={Object {}}
-                            name="fileName"
-                          >
-                            <label
-                              htmlFor="fileName"
-                              style={
-                                Object {
-                                  "border": "none",
-                                  "borderTop": "1px solid #2F2F36",
-                                  "color": "#71737e",
-                                  "display": "block",
-                                  "fontSize": "14px",
-                                  "outline": "none",
-                                  "paddingTop": "8px",
-                                  "width": "100%",
-                                }
-                              }
-                            >
-                              File Name
-                            </label>
-                          </LabelComponent>
-                        </Component>
-                        <Component
-                          customStyles={Object {}}
-                          disabled={true}
-                          name="fileName"
-                          type="text"
-                          value="Select a file"
-                        >
-                          <InputComponent
+                          <Component
+                            customInputStyles={Object {}}
+                            customLabelStyles={Object {}}
                             customStyles={Object {}}
                             disabled={true}
+                            fullWidth={true}
+                            iconComponent={
+                              <label
+                                htmlFor="fileUpload"
+                                style={
+                                  Object {
+                                    "position": "relative",
+                                    "top": 10,
+                                  }
+                                }
+                              >
+                                <div
+                                  style={
+                                    Object {
+                                      "backgroundColor": "#1d1d20",
+                                      "border": "none",
+                                      "borderRadius": "48px",
+                                      "color": "#FFF",
+                                      "cursor": "pointer",
+                                      "display": "inline-block",
+                                      "fill": "#FFF",
+                                      "fontSize": 0,
+                                      "margin": "0",
+                                      "minHeight": "48px",
+                                      "outline": "none",
+                                      "padding": "0",
+                                    }
+                                  }
+                                >
+                                  <Unknown />
+                                </div>
+                              </label>
+                            }
+                            label="File Name"
                             name="fileName"
-                            type="text"
                             value="Select a file"
                           >
-                            <input
+                            <TextFieldComponent
+                              customInputStyles={Object {}}
+                              customLabelStyles={Object {}}
+                              customStyles={Object {}}
                               disabled={true}
-                              id="fileName"
-                              name="fileName"
-                              style={
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "border": "none",
-                                  "color": "#FFF",
-                                  "fontSize": "18px",
-                                  "lineHeight": "24px",
-                                  "outline": "none",
-                                }
-                              }
-                              type="text"
-                              value="Select a file"
-                            />
-                          </InputComponent>
-                        </Component>
-                        <div
-                          style={
-                            Object {
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            }
-                          }
-                        >
-                          <label
-                            htmlFor="fileUpload"
-                            style={
-                              Object {
-                                "position": "relative",
-                                "top": 10,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": "#1d1d20",
-                                  "border": "none",
-                                  "borderRadius": "48px",
-                                  "color": "#FFF",
-                                  "cursor": "pointer",
-                                  "display": "inline-block",
-                                  "fill": "#FFF",
-                                  "fontSize": 0,
-                                  "margin": "0",
-                                  "minHeight": "48px",
-                                  "outline": "none",
-                                  "padding": "0",
-                                }
-                              }
-                            >
-                              <Component>
-                                <UploadIconComponent>
-                                  <SvgUpload
+                              error={false}
+                              fullWidth={true}
+                              iconComponent={
+                                <label
+                                  htmlFor="fileUpload"
+                                  style={
+                                    Object {
+                                      "position": "relative",
+                                      "top": 10,
+                                    }
+                                  }
+                                >
+                                  <div
                                     style={
                                       Object {
+                                        "backgroundColor": "#1d1d20",
+                                        "border": "none",
+                                        "borderRadius": "48px",
+                                        "color": "#FFF",
+                                        "cursor": "pointer",
+                                        "display": "inline-block",
                                         "fill": "#FFF",
-                                        "height": "60px",
-                                        "width": "60px",
+                                        "fontSize": 0,
+                                        "margin": "0",
+                                        "minHeight": "48px",
+                                        "outline": "none",
+                                        "padding": "0",
                                       }
                                     }
                                   >
-                                    <svg
+                                    <Unknown />
+                                  </div>
+                                </label>
+                              }
+                              label="File Name"
+                              name="fileName"
+                              type="text"
+                              value="Select a file"
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "display": "flex",
+                                    "flexDirection": "column",
+                                    "maxWidth": "100%",
+                                    "paddingBottom": "30px",
+                                    "position": "relative",
+                                  }
+                                }
+                              >
+                                <Component
+                                  customStyles={Object {}}
+                                  name="fileName"
+                                >
+                                  <LabelComponent
+                                    customStyles={Object {}}
+                                    name="fileName"
+                                  >
+                                    <label
+                                      htmlFor="fileName"
                                       style={
                                         Object {
-                                          "fill": "#FFF",
-                                          "height": "60px",
-                                          "width": "60px",
+                                          "border": "none",
+                                          "borderTop": "1px solid #2F2F36",
+                                          "color": "#71737e",
+                                          "display": "block",
+                                          "fontSize": "14px",
+                                          "outline": "none",
+                                          "paddingTop": "8px",
+                                          "width": "100%",
                                         }
                                       }
-                                      viewBox="0 0 60 60"
                                     >
-                                      <path
-                                        d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
-                                      />
-                                    </svg>
-                                  </SvgUpload>
-                                </UploadIconComponent>
-                              </Component>
-                            </div>
-                          </label>
+                                      File Name
+                                    </label>
+                                  </LabelComponent>
+                                </Component>
+                                <Component
+                                  customStyles={Object {}}
+                                  disabled={true}
+                                  name="fileName"
+                                  type="text"
+                                  value="Select a file"
+                                >
+                                  <InputComponent
+                                    customStyles={Object {}}
+                                    disabled={true}
+                                    name="fileName"
+                                    type="text"
+                                    value="Select a file"
+                                  >
+                                    <input
+                                      disabled={true}
+                                      id="fileName"
+                                      name="fileName"
+                                      style={
+                                        Object {
+                                          "backgroundColor": "transparent",
+                                          "border": "none",
+                                          "color": "#FFF",
+                                          "fontSize": "18px",
+                                          "lineHeight": "24px",
+                                          "outline": "none",
+                                        }
+                                      }
+                                      type="text"
+                                      value="Select a file"
+                                    />
+                                  </InputComponent>
+                                </Component>
+                                <div
+                                  style={
+                                    Object {
+                                      "position": "absolute",
+                                      "right": 0,
+                                      "top": 0,
+                                    }
+                                  }
+                                >
+                                  <label
+                                    htmlFor="fileUpload"
+                                    style={
+                                      Object {
+                                        "position": "relative",
+                                        "top": 10,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      style={
+                                        Object {
+                                          "backgroundColor": "#1d1d20",
+                                          "border": "none",
+                                          "borderRadius": "48px",
+                                          "color": "#FFF",
+                                          "cursor": "pointer",
+                                          "display": "inline-block",
+                                          "fill": "#FFF",
+                                          "fontSize": 0,
+                                          "margin": "0",
+                                          "minHeight": "48px",
+                                          "outline": "none",
+                                          "padding": "0",
+                                        }
+                                      }
+                                    >
+                                      <Component>
+                                        <UploadIconComponent>
+                                          <SvgUpload
+                                            style={
+                                              Object {
+                                                "fill": "#FFF",
+                                                "height": "60px",
+                                                "width": "60px",
+                                              }
+                                            }
+                                          >
+                                            <svg
+                                              style={
+                                                Object {
+                                                  "fill": "#FFF",
+                                                  "height": "60px",
+                                                  "width": "60px",
+                                                }
+                                              }
+                                              viewBox="0 0 60 60"
+                                            >
+                                              <path
+                                                d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                                              />
+                                            </svg>
+                                          </SvgUpload>
+                                        </UploadIconComponent>
+                                      </Component>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+                            </TextFieldComponent>
+                          </Component>
+                          <input
+                            accept=".csv,.tsv"
+                            aria-hidden={true}
+                            id="fileUpload"
+                            name="file"
+                            onChange={[Function]}
+                            style={
+                              Object {
+                                "height": 0,
+                                "left": 0,
+                                "overflow": "hidden",
+                                "position": "absolute",
+                                "top": 0,
+                                "visibility": "hidden",
+                              }
+                            }
+                            type="file"
+                          />
                         </div>
-                      </div>
-                    </TextFieldComponent>
-                  </Component>
-                  <input
-                    accept=".csv,.tsv"
-                    aria-hidden={true}
-                    id="fileUpload"
-                    name="file"
-                    onChange={[Function]}
-                    style={
-                      Object {
-                        "height": 0,
-                        "left": 0,
-                        "overflow": "hidden",
-                        "position": "absolute",
-                        "top": 0,
-                        "visibility": "hidden",
-                      }
-                    }
-                    type="file"
-                  />
-                </div>
-              </FileUploadComponent>
-            </Component>
+                      </FileUploadComponent>
+                    </Component>
+                  </div>
+                </StyledComponent>
+              </styled.div>
+            </Uploader>
             <StepNavigation
               dataSource={
                 Object {

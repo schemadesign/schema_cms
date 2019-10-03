@@ -10,16 +10,16 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
   }
 >
   <div
-    className="sc-iAyFgw gPlgsX"
+    className="sc-eHgmQL gmKbQu"
   >
     <div
-      className="sc-jWBwVP fDrbnp"
+      className="sc-cMljjf eTbdzc"
     >
       <div
-        className="sc-hSdWYo jLDYQD"
+        className="sc-cvbbAY qtojZ"
       >
         <div
-          className="sc-eHgmQL bOxEIU"
+          className="sc-jWBwVP gXccqf"
         >
           <button
             disabled={true}
@@ -61,12 +61,12 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
           </button>
         </div>
         <div
-          className="sc-cvbbAY lolRkL"
+          className="sc-brqgnP htoUld"
         >
           {countFields} {countFields, plural,one {Field} other {Fields}}
         </div>
         <div
-          className="sc-eHgmQL bOxEIU"
+          className="sc-jWBwVP gXccqf"
         >
           <button
             disabled={false}
@@ -108,278 +108,278 @@ exports[`Storyshots DataSource/View/Fields Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-fjdhpX jDWzMA"
+        className="sc-cSHVUG faiXXV"
       >
         <table
-          className="sc-jzJRlG dINcDo"
+          className="sc-kAzzGY eXTiCm"
         >
           <thead
-            className="sc-cSHVUG CAuLq"
+            className="sc-chPdSV byfFmt"
           >
             <tr
-              className="sc-chPdSV HuuDZ"
+              className="sc-kGXeez KPjEu"
             >
               <th
-                className="sc-kGXeez fUkOQq"
+                className="sc-dxgOiQ hAlLkJ"
               >
                 #
               </th>
               <th
-                className="sc-kGXeez fUkOQq"
+                className="sc-dxgOiQ hAlLkJ"
               >
                 First Name
               </th>
               <th
-                className="sc-kGXeez fUkOQq"
+                className="sc-dxgOiQ hAlLkJ"
               >
                 Last Name
               </th>
               <th
-                className="sc-kGXeez fUkOQq"
+                className="sc-dxgOiQ hAlLkJ"
               >
                 Full Name
               </th>
               <th
-                className="sc-kGXeez fUkOQq"
+                className="sc-dxgOiQ hAlLkJ"
               >
                 Birthplace
               </th>
               <th
-                className="sc-kGXeez fUkOQq"
+                className="sc-dxgOiQ hAlLkJ"
               >
                 State of Birth
               </th>
               <th
-                className="sc-kGXeez fUkOQq"
+                className="sc-dxgOiQ hAlLkJ"
               >
                 Birthday
               </th>
               <th
-                className="sc-kGXeez fUkOQq"
+                className="sc-dxgOiQ hAlLkJ"
               >
                 Url
               </th>
             </tr>
           </thead>
           <tbody
-            className="sc-kAzzGY jHprQs"
+            className="sc-kgoBCf kVSTZj"
           >
             <tr
-              className="sc-chPdSV HuuDZ"
+              className="sc-kGXeez KPjEu"
             >
               <td
-                className="sc-kpOJdX kJVopB"
+                className="sc-ckVGcZ epffuA"
               >
                 1
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 George
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Washington
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 George Washington
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Westmoreland County
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 VA
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 02/22/1732
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 some.url.com
               </td>
             </tr>
             <tr
-              className="sc-chPdSV HuuDZ"
+              className="sc-kGXeez KPjEu"
             >
               <td
-                className="sc-kpOJdX kJVopB"
+                className="sc-ckVGcZ epffuA"
               >
                 2
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 John
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Adams
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 John Adams
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Braintree
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 MA
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 10/30/1735
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 some.url.com
               </td>
             </tr>
             <tr
-              className="sc-chPdSV HuuDZ"
+              className="sc-kGXeez KPjEu"
             >
               <td
-                className="sc-kpOJdX kJVopB"
+                className="sc-ckVGcZ epffuA"
               >
                 3
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Thomas
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Jefferson
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Thomas Jefferson
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Shadwell
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 VA
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 04/13/1743
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 some.url.com
               </td>
             </tr>
             <tr
-              className="sc-chPdSV HuuDZ"
+              className="sc-kGXeez KPjEu"
             >
               <td
-                className="sc-kpOJdX kJVopB"
+                className="sc-ckVGcZ epffuA"
               >
                 4
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 James
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Madison
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 James Madison
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Port Conway
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 VA
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 03/16/1751
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 some.url.com
               </td>
             </tr>
             <tr
-              className="sc-chPdSV HuuDZ"
+              className="sc-kGXeez KPjEu"
             >
               <td
-                className="sc-kpOJdX kJVopB"
+                className="sc-ckVGcZ epffuA"
               >
                 5
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 James
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Monroe
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 James Monroe
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 Monroe Hall
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 VA
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 04/28/1758
               </td>
               <td
-                className="sc-kgoBCf iDCzvT"
+                className="sc-kpOJdX cjlFLA"
               >
                 some.url.com
               </td>

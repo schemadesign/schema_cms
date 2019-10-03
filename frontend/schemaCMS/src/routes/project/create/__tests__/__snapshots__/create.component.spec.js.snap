@@ -10,6 +10,7 @@ exports[`Create: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <TextInput
+      checkOnlyErrors={false}
       errors={Object {}}
       fullWidth={true}
       handleChange={[Function]}
@@ -33,6 +34,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <TextInput
+      checkOnlyErrors={false}
       errors={Object {}}
       fullWidth={true}
       handleChange={[Function]}
@@ -55,6 +57,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <TextInput
+      checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}
       fullWidth={true}
