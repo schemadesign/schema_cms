@@ -96,10 +96,10 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       id="checkbox-0"
       isEdit={true}
       key="0"
-      value="name 1"
+      value={1}
     >
       <Styled(Link)
-        to="/script/0"
+        to="/script/1"
       >
         name 1
       </Styled(Link)>
@@ -108,10 +108,10 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       id="checkbox-1"
       isEdit={true}
       key="1"
-      value="name 2"
+      value={2}
     >
       <Styled(Link)
-        to="/script/1"
+        to="/script/2"
       >
         name 2
       </Styled(Link)>
@@ -127,10 +127,12 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
     dataWranglingScripts={
       Array [
         Object {
-          "key": "name 1",
+          "id": 1,
+          "name": "name 1",
         },
         Object {
-          "key": "name 2",
+          "id": 2,
+          "name": "name 2",
         },
       ]
     }

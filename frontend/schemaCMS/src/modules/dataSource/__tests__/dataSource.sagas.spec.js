@@ -77,7 +77,9 @@ describe('DataSource: sagas', () => {
     });
 
     it('should dispatch a success action', async () => {
-      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`).reply(OK, responseDoneData);
+      mockApi
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
+        .reply(OK, responseDoneData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -86,11 +88,11 @@ describe('DataSource: sagas', () => {
         .silentRun();
     });
 
-    it('should dispatch a success actions until processing of some elements finish', async () => {
+    it('should dispatch a success action until processing of some elements finish', async () => {
       mockApi
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`)
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
         .reply(OK, responseData)
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`)
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
         .reply(OK, responseDoneData);
 
       await expectSaga(watchDataSource)
@@ -103,7 +105,7 @@ describe('DataSource: sagas', () => {
     });
 
     it('should dispatch once fulfill actions after cancel', async () => {
-      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`).reply(OK, responseData);
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)

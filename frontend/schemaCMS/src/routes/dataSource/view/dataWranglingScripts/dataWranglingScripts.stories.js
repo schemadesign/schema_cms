@@ -6,7 +6,7 @@ import { DataWranglingScripts } from './dataWranglingScripts.component';
 import { STATUS_DONE } from '../../../../modules/dataSource/dataSource.constants';
 
 export const defaultProps = {
-  dataWranglingScripts: [{ key: 'name 1' }, { key: 'name 2' }],
+  dataWranglingScripts: [{ id: 1, name: 'name 1' }, { id: 2, name: 'name 2' }],
   dataSource: { status: STATUS_DONE },
   bindSubmitForm: Function.prototype,
   fetchDataWranglingScripts: Function.prototype,

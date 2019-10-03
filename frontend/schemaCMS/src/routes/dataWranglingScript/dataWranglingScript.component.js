@@ -28,8 +28,6 @@ export class DataWranglingScript extends PureComponent {
     history: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
-        projectId: PropTypes.string.isRequired,
-        dataSourceId: PropTypes.string.isRequired,
         scriptId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
@@ -38,10 +36,10 @@ export class DataWranglingScript extends PureComponent {
   componentDidMount() {
     const {
       match: {
-        params: { scriptId, dataSourceId },
+        params: { scriptId },
       },
     } = this.props;
-    this.props.fetchDataWranglingScript({ scriptId, dataSourceId });
+    this.props.fetchDataWranglingScript({ scriptId });
   }
 
   componentWillUnmount() {
@@ -60,9 +58,13 @@ export class DataWranglingScript extends PureComponent {
   getContentOrLoader = renderWhenTrueOtherwise(always(<Loader />), this.renderContent);
 
   handleGoToDataWranglingList = (match, history) => () => {
-    const { projectId, dataSourceId } = match.params;
+    const { dataWranglingScript } = this.props;
 
-    history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${DATA_WRANGLING_STEP}`);
+    if (dataWranglingScript.isPredefined) {
+      return history.goBack();
+    }
+
+    return history.push(`/datasource/${dataWranglingScript.datasource}/${DATA_WRANGLING_STEP}`);
   };
 
   renderContent() {
@@ -70,7 +72,7 @@ export class DataWranglingScript extends PureComponent {
 
     const descriptionFieldProps = {
       name: DESCRIPTION,
-      value: dataWranglingScript.key,
+      value: dataWranglingScript.name,
       label: intl.formatMessage(messages.description),
       placeholder: intl.formatMessage(messages.descriptionPlaceholder),
       fullWidth: true,
