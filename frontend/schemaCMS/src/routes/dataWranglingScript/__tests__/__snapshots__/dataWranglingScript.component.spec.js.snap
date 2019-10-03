@@ -143,6 +143,7 @@ exports[`DataWranglingScript: Component should render correctly with link to dat
     name="dataWranglingForm"
   >
     <TextInput
+      checkOnlyErrors={false}
       customInputStyles={
         Object {
           "overflow": "hidden",
