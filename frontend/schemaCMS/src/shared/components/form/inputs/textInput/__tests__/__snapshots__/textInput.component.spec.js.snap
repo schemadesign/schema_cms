@@ -3,6 +3,7 @@
 exports[`TextInput: Component should render correctly 1`] = `
 <styled.div>
   <Component
+    error={false}
     name="A_FIELD_NAME"
     onChange={[Function]}
     value=""

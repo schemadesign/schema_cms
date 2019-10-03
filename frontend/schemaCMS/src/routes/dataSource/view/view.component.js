@@ -63,18 +63,19 @@ export class View extends PureComponent {
   getTitle = intl =>
     this.props.dataSource.status === STATUS_DRAFT ? intl.formatMessage(messages.title) : this.props.dataSource.name;
 
-  getHeaderAndMenuConfig = (intl, activeStep) => {
+  getHeaderAndMenuConfig = activeStep => {
+    const { dataSource, removeDataSource, intl } = this.props;
     const headerTitle = this.getTitle(intl);
-    const projectId = this.props.dataSource.project;
+    const { project: projectId, id: dataSourceId } = dataSource;
 
     const secondaryMenuItems = [
       {
-        label: this.props.intl.formatMessage(messages.dataSourceList),
+        label: intl.formatMessage(messages.dataSourceList),
         to: `/project/${projectId}/datasource/`,
       },
       {
-        label: this.props.intl.formatMessage(messages.removeDataSource),
-        onClick: () => this.props.removeDataSource(this.props.match.params),
+        label: intl.formatMessage(messages.removeDataSource),
+        onClick: () => removeDataSource({ projectId, dataSourceId }),
       },
     ];
 
@@ -98,14 +99,14 @@ export class View extends PureComponent {
 
   renderContent = renderWhenTrue(() => {
     const {
-      intl,
       dataSource,
+      intl,
       match: {
         params: { step },
       },
     } = this.props;
     const activeStep = parseInt(step, 10);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(intl, activeStep);
+    const topHeaderConfig = this.getHeaderAndMenuConfig(activeStep);
 
     return (
       <Fragment>

@@ -26,8 +26,9 @@ import {
   SOURCE_TYPE_FILE,
 } from '../../../../modules/dataSource/dataSource.constants';
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
+import { Uploader } from '../../../../shared/components/form/uploader';
 
-const { RadioGroup, RadioButton, Label, FileUpload } = Form;
+const { RadioGroup, RadioButton, Label } = Form;
 const { CsvIcon } = Icons;
 
 export class SourceComponent extends PureComponent {
@@ -69,8 +70,8 @@ export class SourceComponent extends PureComponent {
     }
   };
 
-  renderCsvUploader = ({ setFieldValue, fileName }) => (
-    <FileUpload
+  renderCsvUploader = ({ setFieldValue, fileName, ...restProps }) => (
+    <Uploader
       fileName={fileName}
       name={DATA_SOURCE_FILE}
       label={this.props.intl.formatMessage(messages.fileName)}
@@ -78,12 +79,13 @@ export class SourceComponent extends PureComponent {
       id="fileUpload"
       onChange={({ currentTarget }) => this.handleUploadChange({ currentTarget, setFieldValue })}
       accept=".csv,.tsv"
+      {...restProps}
     />
   );
 
-  renderSourceUpload = ({ setFieldValue, type, fileName }) =>
+  renderSourceUpload = ({ type, ...restProps }) =>
     cond([
-      [equals(SOURCE_TYPE_FILE), () => this.renderCsvUploader({ setFieldValue, fileName })],
+      [equals(SOURCE_TYPE_FILE), () => this.renderCsvUploader(restProps)],
       [equals(SOURCE_TYPE_API), () => {}],
       [equals(SOURCE_TYPE_DATABASE), () => {}],
       [T, always(null)],
@@ -119,12 +121,11 @@ export class SourceComponent extends PureComponent {
           validationSchema={DATA_SOURCE_SCHEMA}
           onSubmit={this.handleSubmit}
         >
-          {({ handleChange, values: { name, type, fileName }, setFieldValue, submitForm, dirty, isValid, ...rest }) => {
+          {({ handleChange, values: { name, type, fileName }, submitForm, dirty, isValid, ...rest }) => {
             if (!dirty && isValid) {
               submitForm = null;
             }
-
-            const disabled = fileName ? {} : { next: true };
+            const disabled = { next: !fileName || !isValid };
 
             return (
               <Fragment>
@@ -133,6 +134,7 @@ export class SourceComponent extends PureComponent {
                   onChange={handleChange}
                   name={DATA_SOURCE_NAME}
                   fullWidth
+                  checkOnlyErrors
                   label={this.props.intl.formatMessage(messages.name)}
                   {...rest}
                 />
@@ -149,7 +151,7 @@ export class SourceComponent extends PureComponent {
                 >
                   {this.renderRadioButton(type)}
                 </RadioGroup>
-                {this.renderSourceUpload({ type, setFieldValue, fileName })}
+                {this.renderSourceUpload({ type, fileName, ...rest })}
                 <StepNavigation
                   loading={loading}
                   disabled={disabled}

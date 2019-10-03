@@ -9,6 +9,7 @@ exports[`Header: Component should render correctly 1`] = `
       "display": "flex",
       "flexDirection": "row",
       "justifyContent": "space-between",
+      "paddingBottom": "18px",
       "width": "100%",
     }
   }
@@ -39,6 +40,7 @@ exports[`Header: Component should render with children and custom styles 1`] = `
       "display": "flex",
       "flexDirection": "row",
       "justifyContent": "space-between",
+      "paddingBottom": "18px",
       "width": "100%",
     }
   }
