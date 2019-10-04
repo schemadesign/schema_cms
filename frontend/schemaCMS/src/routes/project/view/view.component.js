@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Card, Icons, Typography } from 'schemaUI';
 import { has, isEmpty, isNil, path } from 'ramda';
+import { FormattedMessage } from 'react-intl';
+import Modal from 'react-modal';
 
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl, isAdmin } from '../../../shared/utils/helpers';
@@ -27,7 +29,11 @@ import {
 } from './view.styles';
 import { BackArrowButton, NavigationContainer } from '../../../shared/components/navigation';
 
+import { modalStyles, ModalTitle, ModalButton, ModalActions } from '../../../shared/components/modal/modal.styles';
+
 const { P } = Typography;
+
+Modal.setAppElement('#app');
 
 export class View extends PureComponent {
   static propTypes = {
@@ -47,6 +53,10 @@ export class View extends PureComponent {
       }).isRequired,
     }).isRequired,
     intl: PropTypes.object.isRequired,
+  };
+
+  state = {
+    confirmationModalOpen: false,
   };
 
   componentDidMount() {
@@ -72,7 +82,7 @@ export class View extends PureComponent {
           { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
           {
             label: this.formatMessage(messages.deleteProject),
-            onClick: () => this.props.removeProject(this.props.match.params),
+            onClick: () => this.setState({ confirmationModalOpen: true }),
           }
         );
       }
@@ -93,6 +103,10 @@ export class View extends PureComponent {
   formatMessage = value => this.props.intl.formatMessage(value);
 
   handleGoTo = to => () => (to ? this.props.history.push(to) : null);
+
+  handleConfirmRemove = () => this.props.removeProject({ projectId: this.props.project.id });
+
+  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
   renderStatistic = ({ header, value, to }, index) => (
     <CardWrapper key={index}>
@@ -158,6 +172,7 @@ export class View extends PureComponent {
 
   render() {
     const { project } = this.props;
+    const { confirmationModalOpen } = this.state;
     const { projectId } = this.props.match.params;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
@@ -180,6 +195,19 @@ export class View extends PureComponent {
         <NavigationContainer>
           <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <ModalButton onClick={this.handleCancelRemove}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </ModalButton>
+            <ModalButton onClick={this.handleConfirmRemove}>
+              <FormattedMessage {...messages.confirmRemoval} />
+            </ModalButton>
+          </ModalActions>
+        </Modal>
       </Container>
     );
   }
