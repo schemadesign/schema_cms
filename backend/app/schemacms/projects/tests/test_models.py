@@ -7,7 +7,7 @@ from factory.django import FileField
 from pandas import read_csv
 
 from schemacms.utils.test import make_csv
-from schemacms.projects.models import get_preview_data, read_csv_with_encoding
+from schemacms.projects.models import get_preview_data
 from schemacms.projects.tests.factories import DataSourceFactory
 
 
