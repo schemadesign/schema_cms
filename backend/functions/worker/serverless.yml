@@ -19,7 +19,7 @@ custom:
       - local
     # optional - LocalStack host to connect to
     host: http://localstack
-    # host: http://localhost
+#    host: http://localhost
     lambda:
       mountCode: False
 
