@@ -8,12 +8,20 @@ provider:
 
 plugins:
   - serverless-python-requirements
-
-
+  - serverless-localstack
 custom:
   pythonRequirements:
     dockerizePip: non-linux
     slim: true
+  localstack:
+    stages:
+      # list of stages for which the plugin should be enabled
+      - local
+    # optional - LocalStack host to connect to
+    host: http://localstack
+    # host: http://localhost
+    lambda:
+      mountCode: False
 
 
 package:
@@ -27,7 +35,5 @@ functions:
     events:
       - sqs: arn:aws:sqs:us-east-1:000000000000:worker
     environment:
-      DB_NAME: gistdb
-      DB_USER: gistuser
-      DB_PASS: gistsecret
+      DB_SECRET_ARN: arn:aws:secretsmanager:us-east-1:1234567890:secret:dbSecret
       AWS_STORAGE_BUCKET_NAME: schemacms

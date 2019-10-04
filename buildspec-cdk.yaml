@@ -12,12 +12,17 @@ phases:
       - cdk --version
       - pip install -r requirements.txt
       - pip freeze
+      - npm install -g serverless@1.53.0
+      - serverless --version
+      - serverless plugin install -n serverless-python-requirements
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"
   build:
     commands:
       - echo Build started on `date`
+      - echo Build lambda function package
+      - cd backend/functions/worker && sls package && cd ../..
       - echo Synchesize CDK stack...
       - cdk synth -c app_image_tag=$VERSION
 artifacts:
