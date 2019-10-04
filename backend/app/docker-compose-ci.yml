@@ -12,7 +12,7 @@ services:
     ports:
       - "4567-4584:4567-4584"
     environment:
-      - SERVICES=sqs,secretsmanager,lambda,apigateway,cloudformation
+      - SERVICES=sqs,secretsmanager,lambda,apigateway,cloudformation,stepfunctions,s3,sts
       - DEBUG=${DEBUG- }
       - DATA_DIR=${DATA_DIR- }
       - PORT_WEB_UI=${PORT_WEB_UI- }

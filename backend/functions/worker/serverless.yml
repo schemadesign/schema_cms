@@ -8,12 +8,18 @@ provider:
 
 plugins:
   - serverless-python-requirements
-
-
+  - serverless-localstack
 custom:
   pythonRequirements:
     dockerizePip: non-linux
     slim: true
+  localstack:
+    stages:
+      # list of stages for which the plugin should be enabled
+      - local
+    host: http://localstack  # optional - LocalStack host to connect to
+    lambda:
+      mountCode: False
 
 
 package:

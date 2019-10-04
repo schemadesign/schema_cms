@@ -250,6 +250,17 @@ class API(core.Stack):
 
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
+        self.api_lambda = aws_lambda.Function(
+            self,
+            "lambda-worker",
+            code=aws_lambda.Code.from_asset("backend/functions/lambda-worker/.serverless/lambda-worker.zip"),
+            runtime=aws_lambda.Runtime.PYTHON_3_7,
+            handler="handler.main",
+            environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
+            memory_size=768,
+            vpc=scope.base.vpc,
+        )
+
     def map_secret(self, secret_arn):
         secret = aws_secretsmanager.Secret.from_secret_arn(
             self, secret_arn + "-secret", self.node.try_get_context(secret_arn)
