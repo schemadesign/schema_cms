@@ -39,9 +39,11 @@ def read_csv_with_encoding(file_field):
 def get_preview_data(file_field):
     data_frame = read_csv_with_encoding(file_field)
     items, fields = data_frame.shape
-    table_preview = json.loads(data_frame.head(5).to_json(orient="records"))
+    sample_size = 5 if items >= 5 else items
+    sample_of_5 = data_frame.sample(n=sample_size)
+    table_preview = json.loads(sample_of_5.to_json(orient="records"))
     fields_info = json.loads(data_frame.describe(include="all", percentiles=[]).to_json(orient="columns"))
-    samples = json.loads(data_frame.sample(n=1).to_json(orient="records"))
+    samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
 
     for key, value in dict(data_frame.dtypes).items():
         fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
