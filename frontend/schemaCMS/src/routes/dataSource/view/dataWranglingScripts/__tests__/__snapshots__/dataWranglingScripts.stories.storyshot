@@ -268,7 +268,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
             }
           }
           type="checkbox"
-          value="name 1"
+          value={1}
         />
         <span
           style={
@@ -281,7 +281,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
         >
           <a
             className="sc-bZQynM gaHjbY"
-            href="/script/0"
+            href="/script/1"
             onClick={[Function]}
           >
             name 1
@@ -367,7 +367,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
             }
           }
           type="checkbox"
-          value="name 2"
+          value={2}
         />
         <span
           style={
@@ -380,7 +380,7 @@ exports[`Storyshots DataWranglingScripts Default 1`] = `
         >
           <a
             className="sc-bZQynM gaHjbY"
-            href="/script/1"
+            href="/script/2"
             onClick={[Function]}
           >
             name 2

@@ -8,6 +8,7 @@ export const getStyles = (theme = defaultTheme) => ({
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     width: '100%',
+    paddingBottom: '18px',
   },
   buttonStyles: {
     backgroundColor: 'transparent',

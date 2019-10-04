@@ -37,7 +37,7 @@ describe('DataWranglingScripts: sagas', () => {
       const payload = { dataSourceId: '1', steps: ['data 1', 'data 2'] };
       const selectedProject = { id: 1, project: 1 };
 
-      mockApi.put(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK);
+      mockApi.put(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
@@ -57,7 +57,7 @@ describe('DataWranglingScripts: sagas', () => {
       const responseData = ['data 1', 'data 2', 'data 3'];
 
       mockApi
-        .post(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script-upload`, /form-data; name="script"[^]*file/m, options)
+        .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/script-upload`, /form-data; name="file"[^]*file/m, options)
         .reply(OK);
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/script`).reply(OK, responseData);
 
@@ -70,21 +70,21 @@ describe('DataWranglingScripts: sagas', () => {
     });
   });
 
-  // describe('fetchOne', () => {
-  //   it('should dispatch a success action', async () => {
-  //     const payload = { scriptId: '1' };
-  //     const responseData = {
-  //       description: 'file description',
-  //       code: 'df.columns = map(str.lower, df.columns)',
-  //     };
-  //
-  //     // mockApi.get(`/script/view/${payload.scriptId}`).reply(OK, responseData);
-  //
-  //     await expectSaga(watchDataWranglingScripts)
-  //       .withState(defaultState)
-  //       .put(DataWranglingScriptsRoutines.fetchOne.success(responseData))
-  //       .dispatch(DataWranglingScriptsRoutines.fetchOne(payload))
-  //       .silentRun();
-  //   });
-  // });
+  describe('fetchOne', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { scriptId: '1' };
+      const responseData = {
+        description: 'file description',
+        code: 'df.columns = map(str.lower, df.columns)',
+      };
+
+      mockApi.get(`/script/${payload.scriptId}`).reply(OK, responseData);
+
+      await expectSaga(watchDataWranglingScripts)
+        .withState(defaultState)
+        .put(DataWranglingScriptsRoutines.fetchOne.success(responseData))
+        .dispatch(DataWranglingScriptsRoutines.fetchOne(payload))
+        .silentRun();
+    });
+  });
 });

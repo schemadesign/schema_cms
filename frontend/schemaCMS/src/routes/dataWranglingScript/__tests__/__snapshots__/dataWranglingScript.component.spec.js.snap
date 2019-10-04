@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`View: Component should render correctly 1`] = `
+exports[`DataWranglingScript: Component should render correctly 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
@@ -15,6 +15,7 @@ exports[`View: Component should render correctly 1`] = `
     name="dataWranglingForm"
   >
     <TextInput
+      checkOnlyErrors={false}
       customInputStyles={
         Object {
           "overflow": "hidden",
@@ -103,6 +104,79 @@ exports[`View: Component should render correctly 1`] = `
       df = df.dropna(how='any', axis=0)
       # Partially empty Columns (specific column)
       df = df.dropna(how='any', axis=1)
+    
+    </SyntaxHighlighter>
+  </styled.form>
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    />
+    <NextButton
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="OK"
+        id="dataWranglingscripts.view.ok"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`DataWranglingScript: Component should render correctly with link to datasources 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="View step"
+  />
+  <TopHeader
+    headerSubtitle="View step"
+    headerTitle="Data Wrangling"
+  />
+  <styled.form
+    name="dataWranglingForm"
+  >
+    <TextInput
+      checkOnlyErrors={false}
+      customInputStyles={
+        Object {
+          "overflow": "hidden",
+          "textOverflow": "ellipsis",
+          "whiteSpace": "nowrap",
+        }
+      }
+      disabled={true}
+      errors={Object {}}
+      fullWidth={true}
+      label="Description"
+      name="description"
+      onChange={[Function]}
+      placeholder="Description"
+      touched={Object {}}
+      value="local:case_conversion.py"
+    />
+    <SyntaxHighlighter
+      language="python"
+    >
+      
+      import pandas as pd
+  
+      df = pd.DataFrame({'Place': ['newyork', 'Washington', 'Newyork', 'WASHIngton'],
+                         'var1': ['XSD', 'wer', 'xyz', 'zyx']})
+      # Uppercase
+      df = df['var1'].str.upper()
+      # lowercase
+      df = df['var1'].str.lower()
+      # Title case
+      df = df['var1'].str.title()
+      # Sentence Case
+      df = df['var1'].str.capitalize()
     
     </SyntaxHighlighter>
   </styled.form>

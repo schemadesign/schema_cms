@@ -65,12 +65,11 @@ export class DataWranglingScripts extends PureComponent {
     this.props.sendUpdatedDataWranglingScript({ steps, dataSourceId });
   };
 
-  renderCheckboxes = (values, data) =>
-    values.map(({ key }, index) => (
-      <Checkbox id={`checkbox-${index}`} value={data[index]} key={index} isEdit>
-        <Link to={`/script/${index}`}>{key}</Link>
-      </Checkbox>
-    ));
+  renderCheckboxes = ({ id, name }, index) => (
+    <Checkbox id={`checkbox-${index}`} value={id} key={index} isEdit>
+      <Link to={`/script/${id}`}>{name}</Link>
+    </Checkbox>
+  );
 
   renderErrorOnUploading = renderWhenTrue(
     always(
@@ -83,7 +82,6 @@ export class DataWranglingScripts extends PureComponent {
   render() {
     const { dataWranglingScripts } = this.props;
     const { uploading, errorOnUploading } = this.state;
-    const data = dataWranglingScripts.map(({ key }) => key);
 
     return (
       <Container>
@@ -112,7 +110,7 @@ export class DataWranglingScripts extends PureComponent {
                   value={steps}
                   name="steps"
                 >
-                  {this.renderCheckboxes(dataWranglingScripts, data)}
+                  {dataWranglingScripts.map(this.renderCheckboxes)}
                 </CheckboxGroup>
                 <StepNavigation submitForm={submitForm} {...this.props} />
               </Fragment>

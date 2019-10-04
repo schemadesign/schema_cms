@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Uploader: Component should render correctly 1`] = `
+<styled.div>
+  <Component
+    fileName="file name"
+    id="id"
+    label="label"
+    name="name"
+    onChange={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`Uploader: Component should render with error 1`] = `
+<styled.div>
+  <Component
+    fileName="file name"
+    id="id"
+    label="label"
+    name="name"
+    onChange={[Function]}
+  />
+  <styled.div>
+    error
+  </styled.div>
+</styled.div>
+`;

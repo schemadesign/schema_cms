@@ -31,7 +31,7 @@ function* sendList({ payload: { steps, dataSourceId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.sendList.request());
 
-    yield api.put(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
+    yield api.put(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
 
     const dataSource = yield select(selectDataSource);
 
@@ -50,9 +50,9 @@ function* uploadScript({ payload: { script, dataSourceId } }) {
     const formData = new FormData();
     const headers = { 'Content-Type': 'multipart/form-data' };
 
-    formData.append('script', script);
+    formData.append('file', script);
 
-    yield api.post(`${DATA_SOURCE_PATH}/${dataSourceId}/script-upload`, formData, { headers });
+    yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/script-upload`, formData, { headers });
 
     yield fetchList({ payload: { dataSourceId } });
     yield put(DataWranglingScriptsRoutines.uploadScript.success());
@@ -63,18 +63,11 @@ function* uploadScript({ payload: { script, dataSourceId } }) {
   }
 }
 
-function* fetchOne({ payload }) {
+function* fetchOne({ payload: { scriptId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.fetchOne.request());
 
-    let scripts = yield select(selectDataWranglingScripts);
-
-    //TODO: fetch a single script by script ID only
-    if (!scripts.length) {
-      yield fetchList({ payload });
-      scripts = yield select(selectDataWranglingScripts);
-    }
-    const data = scripts[payload.scriptId];
+    const { data } = yield api.get(`${DATA_WRANGLING_SCRIPTS_PATH}/${scriptId}`);
 
     yield put(DataWranglingScriptsRoutines.fetchOne.success(data));
   } catch (error) {

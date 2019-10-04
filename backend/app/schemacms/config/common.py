@@ -72,6 +72,8 @@ class Common(Configuration):
     # Email
     EMAIL_BACKEND = "anymail.backends.mandrill.EmailBackend"
     ANYMAIL = {"MANDRILL_API_KEY": os.getenv("MANDRILL_KEY")}
+    DEFAULT_FROM_EMAIL = os.getenv("DJANGO_DEFAULT_FROM_EMAIL", "webmaster@localhost")
+    SERVER_EMAIL = os.getenv("DJANGO_SERVER_EMAIL", "root@localhost")
 
     ADMINS = (("Author", "khanek@apptension.com"),)
 

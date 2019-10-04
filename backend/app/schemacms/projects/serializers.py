@@ -207,6 +207,7 @@ class DataSourceScriptSerializer(serializers.ModelSerializer):
     class Meta:
         model = WranglingScript
         fields = (
+            "id",
             "name",
             "is_predefined",
             "file",
