@@ -254,7 +254,7 @@ class API(core.Stack):
         self.api_lambda = aws_lambda.Function(
             self,
             "lambda-worker",
-            code=aws_lambda.Code.from_asset("backend/functions/lambda-worker/.serverless/lambda-worker.zip"),
+            code=aws_lambda.Code.from_asset("backend/functions/worker/.serverless/lambda-worker.zip"),
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             handler="handler.main",
             environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
