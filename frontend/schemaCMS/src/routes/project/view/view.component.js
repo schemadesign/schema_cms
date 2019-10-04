@@ -33,8 +33,6 @@ import { modalStyles, ModalTitle, ModalButton, ModalActions } from '../../../sha
 
 const { P } = Typography;
 
-Modal.setAppElement('#app');
-
 export class View extends PureComponent {
   static propTypes = {
     user: PropTypes.shape({

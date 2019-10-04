@@ -4,12 +4,15 @@ import Helmet from 'react-helmet';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 import { Theme, ThemeProvider as ThemeUIProvider } from 'schemaUI';
 import { ThemeProvider } from 'styled-components';
+import Modal from 'react-modal';
 
 import { DEFAULT_LOCALE, translationMessages } from '../i18n';
 import { GlobalStyle } from '../theme/global';
 import messages from './app.messages';
 import { Container } from './app.styles';
 import { ROLES } from '../modules/userProfile/userProfile.constants';
+
+Modal.setAppElement('#app');
 
 export class App extends PureComponent {
   static propTypes = {
