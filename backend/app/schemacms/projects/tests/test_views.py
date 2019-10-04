@@ -569,4 +569,23 @@ class TestJobDetailView:
 
     @staticmethod
     def get_url(pk):
-        return reverse("projects:job_detail", kwargs=dict(pk=pk))
+        return reverse("projects:datasourcejob-detail", kwargs=dict(pk=pk))
+
+
+class TestJobResultPreviewView:
+    def test_response(self, api_client, admin, job_factory, job_step_factory, faker):
+        job = job_factory(job_state=projects_constants.DataSourceJobState.SUCCESS)
+        job_step_factory.create_batch(2, datasource_job=job)
+        job.result = faker.csv_upload_file(filename="test_result.csv")
+        job.save()
+        job.update_meta()
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(job.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == job.meta_data.data
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasourcejob-result-preview", kwargs=dict(pk=pk))
