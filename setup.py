@@ -37,6 +37,7 @@ setuptools.setup(
         "aws-cdk.aws-ssm=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-ec2=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-lambda=={version}".format(version=AWS_CDK_VERSION),
+        "aws-cdk.aws-lambda-event-sources=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-route53=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-sns=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-cloudformation=={version}".format(version=AWS_CDK_VERSION),

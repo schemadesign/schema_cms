@@ -5,6 +5,7 @@ from aws_cdk import (
     aws_sqs,
     aws_apigateway,
     aws_lambda,
+    aws_lambda_event_sources,
     aws_ecs,
     aws_ecs_patterns,
     aws_rds,
@@ -259,6 +260,10 @@ class API(core.Stack):
             environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
             memory_size=768,
             vpc=scope.base.vpc,
+        )
+        self.api_sqs = aws_sqs.Queue(self, 'sqs-worker')
+        self.api_lambda.add_event_source(
+            aws_lambda_event_sources.SqsEventSource(self.api_sqs, batch_size=1)
         )
 
     def map_secret(self, secret_arn):

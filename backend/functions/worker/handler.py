@@ -4,7 +4,7 @@ from io import StringIO
 
 import boto3
 import db
-# import pandas as pd
+import pandas as pd
 import settings
 
 logger = logging.getLogger()

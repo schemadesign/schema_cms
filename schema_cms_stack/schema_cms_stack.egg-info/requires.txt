@@ -13,6 +13,7 @@ aws-cdk.aws-sqs==1.10.0
 aws-cdk.aws-ssm==1.10.0
 aws-cdk.aws-ec2==1.10.0
 aws-cdk.aws-lambda==1.10.0
+aws-cdk.aws-lambda-event-sources==1.10.0
 aws-cdk.aws-route53==1.10.0
 aws-cdk.aws-sns==1.10.0
 aws-cdk.aws-cloudformation==1.10.0
