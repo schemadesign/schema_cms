@@ -202,6 +202,7 @@ class API(core.Stack):
             "DJANGO_WEBAPP_HOST": "django_webapp_host_arn",
             "SENTRY_DNS": "sentry_dns_arn",
             "DJANGO_DEFAULT_FROM_EMAIL": "django_default_from_email_arn",
+            "DJANGO_HOST": "django_host_arn",
         }
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
