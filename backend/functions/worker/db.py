@@ -1,14 +1,9 @@
 from peewee import *
 
 import settings
+import services
 
-db = PostgresqlDatabase(
-    database=settings.DB_NAME,
-    user=settings.DB_USER,
-    password=settings.DB_PASS,
-    host=settings.DB_HOST,
-    port=settings.DB_PORT,
-)
+db = Proxy()
 
 
 class JobState:
@@ -55,3 +50,19 @@ class JobStep(BaseModel):
 
     class Meta:
         table_name = "projects_datasourcejobstep"
+
+
+def get_db_settings():
+    db_data = services.secrets_manager.get_secret_value(SecretId=settings.DB_SECRET_ARN)
+    return dict(
+        database=db_data["dbname"],
+        user=db_data["username"],
+        password=db_data["password"],
+        host=db_data["host"],
+        port=db_data["port"],
+    )
+
+
+def initialize():
+    runtime_db = PostgresqlDatabase(**get_db_settings())
+    db.initialize(runtime_db)

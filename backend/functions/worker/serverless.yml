@@ -17,7 +17,9 @@ custom:
     stages:
       # list of stages for which the plugin should be enabled
       - local
-    host: http://localstack  # optional - LocalStack host to connect to
+    # optional - LocalStack host to connect to
+    host: http://localstack
+    # host: http://localhost
     lambda:
       mountCode: False
 
@@ -33,7 +35,5 @@ functions:
     events:
       - sqs: arn:aws:sqs:us-east-1:000000000000:worker
     environment:
-      DB_NAME: gistdb
-      DB_USER: gistuser
-      DB_PASS: gistsecret
+      DB_SECRET_ARN: arn:aws:secretsmanager:us-east-1:1234567890:secret:dbSecret
       AWS_STORAGE_BUCKET_NAME: schemacms

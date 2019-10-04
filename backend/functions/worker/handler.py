@@ -1,30 +1,20 @@
 import json
 import logging
+import sys
 from io import StringIO
 
-import boto3
 import db
 import pandas as pd
 import settings
+import services
+import mocks
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-s3 = boto3.client(
-    's3',
-    endpoint_url=settings.AWS_S3_ENDPOINT_URL,
-    aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-    aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
-)
-
-s3_resource = boto3.resource(
-    "s3",
-    endpoint_url=settings.AWS_S3_ENDPOINT_URL,
-    aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-    aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
-)
 
 df = None
+db.initialize()
 
 
 def write_dataframe_to_csv_on_s3(dataframe, filename):
@@ -32,7 +22,9 @@ def write_dataframe_to_csv_on_s3(dataframe, filename):
 
     dataframe.to_csv(csv_buffer, sep="|", index=False)
 
-    return s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(Body=csv_buffer.getvalue())
+    return services.s3_resource.Object(
+        settings.AWS_STORAGE_BUCKET_NAME, filename
+    ).put(Body=csv_buffer.getvalue())
 
 
 def main(event, context):
@@ -59,7 +51,9 @@ def main(event, context):
         job.job_state = db.JobState.IN_PROGRESS
         job.save()
 
-        source_file = s3.get_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=job.datasource.file.lstrip("/"))
+        source_file = services.s3.get_object(
+            Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=job.datasource.file.lstrip("/")
+        )
         df = pd.read_csv(source_file["Body"])
 
         for step in job.steps.order_by(db.JobStep.exec_order.desc()):
@@ -85,3 +79,7 @@ def main(event, context):
     return {
         "message": "Your function executed successfully!",
     }
+
+
+if __name__ == "__main__":
+    main(mocks.get_simple_mock_event(sys.argv[1]), {})
