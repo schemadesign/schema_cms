@@ -1,7 +1,7 @@
 import logging
 
 from django.db import transaction
-from rest_framework import decorators, permissions, response, status, viewsets, generics, parsers
+from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
 from schemacms.users import permissions as user_permissions
 from schemacms.utils import serializers as utils_serializers
@@ -61,9 +61,14 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
+
+        if not hasattr(data_source, 'meta_data'):
+            return response.Response({}, status=status.HTTP_200_OK)
+
         data = data_source.meta_data.data
         data["data_source"] = {"name": data_source.name}
-        return response.Response(data)
+
+        return response.Response(data, status=status.HTTP_200_OK)
 
     @decorators.action(detail=True, methods=["post"])
     def process(self, request, pk=None, **kwargs):
@@ -127,7 +132,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         return response.Response(data=serializer.data)
 
 
-class DataSourceJobDetailView(generics.RetrieveAPIView):
+class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     queryset = models.DataSourceJob.objects.none()
     serializer_class = serializers.DataSourceJobSerializer
     permission_classes = (permissions.IsAuthenticated,)
@@ -138,6 +143,25 @@ class DataSourceJobDetailView(generics.RetrieveAPIView):
             .select_related("datasource")
             .prefetch_related("steps")
         )
+
+    @decorators.action(detail=True, url_path="result-preview", methods=["get"])
+    def result_preview(self, request, pk=None, **kwarg):
+        obj = self.get_object()
+        if obj.job_state in [constants.DataSourceJobState.PENDING, constants.DataSourceJobState.IN_PROGRESS]:
+            return response.Response("Job is still running", status=status.HTTP_200_OK)
+        elif obj.job_state == constants.DataSourceJobState.FAILED:
+            data = {"error": obj.error}
+            return response.Response(data, status=status.HTTP_200_OK)
+        else:
+            try:
+                if not hasattr(obj, 'meta_data') and obj.result:
+                    obj.update_meta()
+                result = obj.meta_data.data
+            except Exception as e:
+                logging.error(f"Not able to showJob {obj.id} results - {e}")
+                return response.Response(status=status.HTTP_404_NOT_FOUND)
+
+            return response.Response(result, status=status.HTTP_200_OK)
 
 
 class DataSourceScriptDetailView(generics.RetrieveAPIView):

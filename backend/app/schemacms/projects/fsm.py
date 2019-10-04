@@ -29,7 +29,10 @@ class DataSourceProcessingFSM(models.Model):
 
     @django_fsm.transition(
         field=status,
-        source=constants.DataSourceStatus.READY_FOR_PROCESSING,
+        source=[
+            constants.DataSourceStatus.READY_FOR_PROCESSING,
+            constants.DataSourceStatus.ERROR,
+        ],
         target=constants.DataSourceStatus.PROCESSING,
         on_error=constants.DataSourceStatus.ERROR,
     )

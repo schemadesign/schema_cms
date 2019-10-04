@@ -1,3 +1,4 @@
+import chardet
 import json
 import os
 
@@ -26,6 +27,47 @@ def map_dataframe_dtypes(dtype):
         return "string"
     else:
         return dtype
+
+
+def read_csv_with_encoding(file_field):
+    encoding = chardet.detect(file_field.read())["encoding"]
+    data_frame = read_csv(file_field.url, encoding=encoding)
+
+    return data_frame
+
+
+def get_preview_data(file_field):
+    data_frame = read_csv_with_encoding(file_field)
+    items, fields = data_frame.shape
+    table_preview = json.loads(data_frame.head(5).to_json(orient="records"))
+    fields_info = json.loads(data_frame.describe(include="all", percentiles=[]).to_json(orient="columns"))
+    samples = json.loads(data_frame.sample(n=1).to_json(orient="records"))
+
+    for key, value in dict(data_frame.dtypes).items():
+        fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
+
+    for key, value in samples[0].items():
+        fields_info[key]["sample"] = value
+
+    preview_json = json.dumps({"data": table_preview, "fields": fields_info}, indent=4).encode()
+
+    return preview_json, items, fields
+
+
+class MetaDataModel(models.Model):
+    items = models.PositiveIntegerField()
+    fields = models.PositiveSmallIntegerField()
+    preview = models.FileField(null=True, upload_to=file_upload_path)
+
+    class Meta:
+        abstract = True
+
+    @property
+    def data(self):
+        if not self.preview:
+            return {}
+        self.preview.seek(0)
+        return json.loads(self.preview.read())
 
 
 class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
@@ -83,10 +125,7 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
         return self.name or str(self.id)
 
     def update_meta(self):
-        data_frame = read_csv(self.file.url, sep=None, engine="python", encoding='utf-8')
-        items, fields = data_frame.shape
-        preview, fields_info = self.get_preview_data(data_frame)
-        preview_json = json.dumps({"data": preview, "fields": fields_info}, indent=4).encode()
+        preview_json, items, fields = get_preview_data(self.file)
 
         with transaction.atomic():
             meta, _ = DataSourceMeta.objects.update_or_create(
@@ -112,20 +151,6 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
         name, ext = os.path.splitext(os.path.basename(self.file.name))
         return name, os.path.basename(self.file.name)
 
-    @staticmethod
-    def get_preview_data(data_frame):
-        table_preview = json.loads(data_frame.head(5).to_json(orient="records"))
-        fields_info = json.loads(data_frame.describe(include="all", percentiles=[]).to_json(orient="columns"))
-        samples = json.loads(data_frame.sample(n=1).to_json(orient="records"))
-
-        for key, value in dict(data_frame.dtypes).items():
-            fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
-
-        for key, value in samples[0].items():
-            fields_info[key]["sample"] = value
-
-        return table_preview, fields_info
-
     @property
     def available_scripts(self):
         return WranglingScript.objects.filter(
@@ -140,11 +165,8 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
 fsm_signals.post_transition.connect(handlers.handle_datasource_fsm_post_transition, sender=DataSource)
 
 
-class DataSourceMeta(models.Model):
+class DataSourceMeta(MetaDataModel):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
-    items = models.PositiveIntegerField()
-    fields = models.PositiveSmallIntegerField()
-    preview = models.FileField(null=True, upload_to=file_upload_path)
 
     def __str__(self):
         return f"DataSource {self.datasource} meta"
@@ -157,13 +179,6 @@ class DataSourceMeta(models.Model):
             f"{settings.STORAGE_DIR}/projects",
             f"{self.datasource.project_id}/datasources/{self.datasource.id}/{filename}",
         )
-
-    @property
-    def data(self):
-        if not self.preview:
-            return {}
-        self.preview.seek(0)
-        return json.loads(self.preview.read())
 
 
 class WranglingScript(ext_models.TimeStampedModel):
@@ -205,6 +220,34 @@ class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
             base_path,
             f"{settings.STORAGE_DIR}/projects",
             f"{self.datasource.project_id}/datasources/{self.datasource.id}/results_{filename}",
+        )
+
+    def update_meta(self):
+        preview_json, items, fields = get_preview_data(self.result)
+
+        with transaction.atomic():
+            meta, _ = DataSourceJobMetaData.objects.update_or_create(
+                job=self, defaults={"fields": fields, "items": items}
+            )
+
+            meta.preview.save(
+                f"job_{self.id}_preview.json", django.core.files.base.ContentFile(content=preview_json)
+            )
+
+
+class DataSourceJobMetaData(MetaDataModel):
+    job = models.OneToOneField(DataSourceJob, on_delete=models.CASCADE, related_name="meta_data")
+
+    def __str__(self):
+        return f"Job {self.job} meta"
+
+    def relative_path_to_save(self, filename):
+        base_path = self.preview.storage.location
+
+        return os.path.join(
+            base_path,
+            f"{settings.STORAGE_DIR}/jobs_results",
+            f"{self.job.id}/{filename}",
         )
 
 
