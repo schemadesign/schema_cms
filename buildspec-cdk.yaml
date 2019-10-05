@@ -21,7 +21,8 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Build lambda function package
-      - cd backend/functions/worker && npm install && sls package && cd ../..
+      - OLDPATH=$(pwd)
+      - cd backend/functions/worker && npm install && sls package && cd ${OLDPATH}
       - echo Synchesize CDK stack...
       - cdk synth -c app_image_tag=$VERSION
 artifacts:
