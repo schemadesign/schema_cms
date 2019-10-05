@@ -20,8 +20,12 @@ phases:
       - echo Build started on `date`
       - echo Build lambda function package
       - OLDPATH=$(pwd)
-      - cd backend/functions/worker && npm install && sls package && rm -rf node_modules/
+      # Build lambda worker .zip package
+      - cd backend/functions/worker
+      - npm install && node_modules/serverless/bin/serverless package
+      - rm -rf node_modules/
       - cd ${OLDPATH}
+      # End of lambda worker build
       - echo Synchesize CDK stack...
       - cdk synth -c app_image_tag=$VERSION
 artifacts:
