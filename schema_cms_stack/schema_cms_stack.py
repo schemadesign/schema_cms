@@ -266,6 +266,8 @@ class API(core.Stack):
         self.api_lambda.add_event_source(
             aws_lambda_event_sources.SqsEventSource(self.api_sqs, batch_size=1)
         )
+        scope.base.db.secret.grant_read(self.api_lambda.role)
+        self.api_sqs.grant_send_messages(self.api.service.task_definition.task_role)
 
     def map_secret(self, secret_arn):
         secret = aws_secretsmanager.Secret.from_secret_arn(
