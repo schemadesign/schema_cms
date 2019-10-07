@@ -31,7 +31,7 @@ def map_dataframe_dtypes(dtype):
 
 def read_csv_with_encoding(file_field):
     encoding = chardet.detect(file_field.read())["encoding"]
-    data_frame = read_csv(file_field.url, encoding=encoding)
+    data_frame = read_csv(file_field.url, chunksize=10000, encoding=encoding)
 
     return data_frame
 
