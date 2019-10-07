@@ -53,14 +53,15 @@ class JobStep(BaseModel):
 
 
 def get_db_settings():
-    db_data = services.secrets_manager.get_secret_value(SecretId=settings.DB_SECRET_ARN)
+    print(settings.DB_SECRET_ARN)
+    db_connection = services.secrets_manager.get_secret_value(SecretId=settings.DB_SECRET_ARN)
     return dict(
-        database=db_data["dbname"],
-        user=db_data["username"],
-        password=db_data["password"],
-        host=db_data["host"],
-        port=db_data["port"],
-        connect_timeout=db_data.get("connect_timeout", 5)
+        database=db_connection["dbname"],
+        user=db_connection["username"],
+        password=db_connection["password"],
+        host=db_connection["host"],
+        port=db_connection["port"],
+        connect_timeout=db_connection.get("connect_timeout", 5)
     )
 
 
