@@ -3,15 +3,14 @@ import { all, put, takeLatest, select } from 'redux-saga/effects';
 import { DataWranglingScriptsRoutines } from './dataWranglingScripts.redux';
 import api from '../../shared/services/api';
 import {
-  DATA_SOURCE_PATH,
   DATA_SOURCES_PATH,
   DATA_WRANGLING_JOB_PATH,
   DATA_WRANGLING_SCRIPTS_PATH,
 } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 
-import { selectDataWranglingScripts } from './dataWranglingScripts.selectors';
 import { selectDataSource } from '../dataSource';
+import { SCRIPT_CHECKBOX_PREFIX } from './dataWranglingScripts.constants';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -30,8 +29,9 @@ function* fetchList({ payload: { dataSourceId } }) {
 function* sendList({ payload: { steps, dataSourceId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.sendList.request());
+    const parsedSteps = steps.map(step => step.replace(SCRIPT_CHECKBOX_PREFIX, ''));
 
-    yield api.put(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
+    yield api.put(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps: parsedSteps });
 
     const dataSource = yield select(selectDataSource);
 

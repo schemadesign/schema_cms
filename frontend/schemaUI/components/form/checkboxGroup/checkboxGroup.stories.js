@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { CheckboxGroup } from './checkboxGroup.component';
 import { Checkbox } from '../checkbox/checkbox.component';
+import { dark } from '../../../utils/theme';
+import { ThemeProvider } from '../../styles/themeProvider';
 
 export const defaultProps = {
   name: 'name',
@@ -29,5 +31,7 @@ export const children = [
 ];
 
 storiesOf('Form/CheckboxGroup', module).add('Default', () => (
-  <CheckboxGroup {...defaultProps}>{children}</CheckboxGroup>
+  <ThemeProvider theme={dark}>
+    <CheckboxGroup {...defaultProps}>{children}</CheckboxGroup>
+  </ThemeProvider>
 ));

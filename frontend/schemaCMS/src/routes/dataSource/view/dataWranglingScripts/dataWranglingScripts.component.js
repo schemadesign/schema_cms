@@ -9,6 +9,7 @@ import { Container, Header, StepCounter, Empty, UploadContainer, Error, Link } f
 import messages from './dataWranglingScripts.messages';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
+import { SCRIPT_CHECKBOX_PREFIX } from '../../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
@@ -60,13 +61,12 @@ export class DataWranglingScripts extends PureComponent {
 
   handleSubmit = ({ steps }) => {
     const { dataSourceId } = this.props.match.params;
-    steps = steps.map(step => ({ key: step }));
 
     this.props.sendUpdatedDataWranglingScript({ steps, dataSourceId });
   };
 
   renderCheckboxes = ({ id, name }, index) => (
-    <Checkbox id={`checkbox-${index}`} value={id} key={index} isEdit>
+    <Checkbox id={`checkbox-${index}`} value={`${SCRIPT_CHECKBOX_PREFIX}${id}`} key={index} isEdit>
       <Link to={`/script/${id}`}>{name}</Link>
     </Checkbox>
   );
