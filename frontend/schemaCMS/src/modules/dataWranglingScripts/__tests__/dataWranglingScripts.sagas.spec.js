@@ -5,7 +5,7 @@ import { OK } from 'http-status-codes';
 import nock from 'nock';
 
 import mockApi from '../../../shared/utils/mockApi';
-import { DATA_SOURCE_PATH, DATA_SOURCES_PATH, DATA_WRANGLING_SCRIPTS_PATH } from '../../../shared/utils/api.constants';
+import { DATA_SOURCES_PATH, DATA_WRANGLING_SCRIPTS_PATH } from '../../../shared/utils/api.constants';
 import { watchDataWranglingScripts } from '../dataWranglingScripts.sagas';
 import { DataWranglingScriptsRoutines } from '../dataWranglingScripts.redux';
 import { selectDataSource } from '../../dataSource';
@@ -34,11 +34,10 @@ describe('DataWranglingScripts: sagas', () => {
 
   describe('sendList', () => {
     it('should dispatch a success action', async () => {
-      const sentSteps = ['data 1', 'data 2'];
-      const payload = { dataSourceId: '1', steps: ['script-data 1', 'script-data 2'] };
+      const payload = { dataSourceId: '1', steps: ['data 1', 'data 2'] };
       const selectedProject = { id: 1, project: 1 };
 
-      mockApi.put(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/job`, { steps: sentSteps }).reply(OK);
+      mockApi.put(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)

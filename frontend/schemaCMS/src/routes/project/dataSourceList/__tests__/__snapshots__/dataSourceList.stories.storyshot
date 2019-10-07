@@ -1796,7 +1796,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
 </div>
 `;
 
-exports[`Storyshots DataSourceList With job 1`] = `
+exports[`Storyshots DataSourceList With jobs 1`] = `
 <div
   style={
     Object {
@@ -2208,14 +2208,16 @@ exports[`Storyshots DataSourceList With job 1`] = `
                 className="sc-jnlKLf gomCbv"
               >
                 <div
-                  className="sc-fYxtnH fsLiLS"
-                >
-                  done
-                </div>
+                  className="sc-fYxtnH hGSoHq"
+                />
                 <div
                   className="sc-tilXH eHtETJ"
                 >
-                  white_spaces
+                  <span>
+                    Job id:
+                  </span>
+                   
+                  1
                 </div>
               </div>
               <div
@@ -2225,8 +2227,19 @@ exports[`Storyshots DataSourceList With job 1`] = `
                   Updated at
                 </span>
                  
-                08/09/2019 11:23
+                01/12/2019 01:00
               </div>
+            </div>
+          </div>
+          <div
+            className="sc-bbmXgH fNYDXK"
+          >
+            <div
+              className="sc-ktHwxA iGgLcY"
+            >
+              <span>
+                Data Process History
+              </span>
             </div>
             <div
               className="sc-gGBfsJ fKNBVo"
@@ -2235,14 +2248,16 @@ exports[`Storyshots DataSourceList With job 1`] = `
                 className="sc-jnlKLf gomCbv"
               >
                 <div
-                  className="sc-fYxtnH grccdS"
-                >
-                  process
-                </div>
+                  className="sc-fYxtnH hGSoHq"
+                />
                 <div
                   className="sc-tilXH eHtETJ"
                 >
-                  blank_cells
+                  <span>
+                    Job id:
+                  </span>
+                   
+                  2
                 </div>
               </div>
               <div
@@ -2252,8 +2267,19 @@ exports[`Storyshots DataSourceList With job 1`] = `
                   Updated at
                 </span>
                  
-                07/09/2019 11:23
+                01/12/2019 01:00
               </div>
+            </div>
+          </div>
+          <div
+            className="sc-bbmXgH fNYDXK"
+          >
+            <div
+              className="sc-ktHwxA iGgLcY"
+            >
+              <span>
+                Data Process History
+              </span>
             </div>
             <div
               className="sc-gGBfsJ fKNBVo"
@@ -2262,14 +2288,16 @@ exports[`Storyshots DataSourceList With job 1`] = `
                 className="sc-jnlKLf gomCbv"
               >
                 <div
-                  className="sc-fYxtnH dznJuA"
-                >
-                  idle
-                </div>
+                  className="sc-fYxtnH hGSoHq"
+                />
                 <div
                   className="sc-tilXH eHtETJ"
                 >
-                  case_conversion
+                  <span>
+                    Job id:
+                  </span>
+                   
+                  3
                 </div>
               </div>
               <div
@@ -2279,8 +2307,19 @@ exports[`Storyshots DataSourceList With job 1`] = `
                   Updated at
                 </span>
                  
-                06/09/2019 11:23
+                01/12/2019 01:00
               </div>
+            </div>
+          </div>
+          <div
+            className="sc-bbmXgH fNYDXK"
+          >
+            <div
+              className="sc-ktHwxA iGgLcY"
+            >
+              <span>
+                Data Process History
+              </span>
             </div>
             <div
               className="sc-gGBfsJ fKNBVo"
@@ -2289,14 +2328,16 @@ exports[`Storyshots DataSourceList With job 1`] = `
                 className="sc-jnlKLf gomCbv"
               >
                 <div
-                  className="sc-fYxtnH dXEWUr"
-                >
-                  error
-                </div>
+                  className="sc-fYxtnH hGSoHq"
+                />
                 <div
                   className="sc-tilXH eHtETJ"
                 >
-                  handling_duplicates
+                  <span>
+                    Job id:
+                  </span>
+                   
+                  4
                 </div>
               </div>
               <div
@@ -2306,7 +2347,7 @@ exports[`Storyshots DataSourceList With job 1`] = `
                   Updated at
                 </span>
                  
-                05/09/2019 11:23
+                01/12/2019 01:00
               </div>
             </div>
           </div>

@@ -1,15 +1,14 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import { always, append, ifElse, equals, reject } from 'ramda';
+import { always, append, equals, ifElse, reject } from 'ramda';
 
-import { Container, Header, StepCounter, Empty, UploadContainer, Error, Link } from './dataWranglingScripts.styles';
+import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
-import { SCRIPT_CHECKBOX_PREFIX } from '../../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
@@ -61,12 +60,13 @@ export class DataWranglingScripts extends PureComponent {
 
   handleSubmit = ({ steps }) => {
     const { dataSourceId } = this.props.match.params;
+    steps = steps.map((script, index) => ({ script: parseInt(script, 10), execOrder: index }));
 
     this.props.sendUpdatedDataWranglingScript({ steps, dataSourceId });
   };
 
   renderCheckboxes = ({ id, name }, index) => (
-    <Checkbox id={`checkbox-${index}`} value={`${SCRIPT_CHECKBOX_PREFIX}${id}`} key={index} isEdit>
+    <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index} isEdit>
       <Link to={`/script/${id}`}>{name}</Link>
     </Checkbox>
   );

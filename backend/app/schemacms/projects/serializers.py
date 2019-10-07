@@ -38,7 +38,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
     )
     error_log = serializers.SerializerMethodField()
     project = serializers.PrimaryKeyRelatedField(read_only=True)
-    job = serializers.SerializerMethodField(read_only=True)
+    jobs = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = DataSource
@@ -54,7 +54,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "meta_data",
             "error_log",
             "project",
-            "job"
+            "jobs"
         )
 
         extra_kwargs = {
@@ -74,11 +74,11 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def get_error_log(self, obj):
         return []
 
-    def get_job(self, obj):
+    def get_jobs(self, obj):
         if obj.jobs.exists():
-            return DataSourceLastJobSerializer(obj.jobs.latest("created")).data
+            return DataSourceLastJobSerializer(obj.jobs.order_by("-created")[:5], many=True).data
         else:
-            return {}
+            return []
 
     @transaction.atomic()
     def update(self, instance, validated_data):

@@ -162,29 +162,30 @@ export class DataSourceList extends PureComponent {
       always(this.renderMetaData(metaData || {}, isLock))
     )(isError);
 
-  renderJob = ({ status, script, updatedAt }, index) => {
+  renderJob = ({ jobState, id, modified }) => {
     return (
-      <Job key={index}>
+      <Job>
         <JobDetails>
-          <JobStatus status={status}>{status}</JobStatus>
-          <JobName>{script}</JobName>
+          <JobStatus status={jobState}>{jobState}</JobStatus>
+          <JobName>
+            <FormattedMessage {...messages.jobId} /> {id}
+          </JobName>
         </JobDetails>
         <JobDate>
-          <FormattedMessage {...messages.updatedAt} /> {dayjs(updatedAt).format('DD/MM/YYYY HH:mm')}
+          <FormattedMessage {...messages.updatedAt} /> {dayjs(modified).format('DD/MM/YYYY HH:mm')}
         </JobDate>
       </Job>
     );
   };
 
-  renderJobs = jobs =>
-    renderWhenTrue(() => (
-      <JobsContainer>
-        <JobsTitle>
-          <FormattedMessage {...messages.jobTitle} />
-        </JobsTitle>
-        {jobs.map(this.renderJob)}
-      </JobsContainer>
-    ))(!!jobs);
+  renderJobs = (job, index) => (
+    <JobsContainer key={index}>
+      <JobsTitle>
+        <FormattedMessage {...messages.jobTitle} />
+      </JobsTitle>
+      {this.renderJob(job)}
+    </JobsContainer>
+  );
 
   renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status, errorLog, jobs }, index) => {
     const isLock = status !== STATUS_DONE;
@@ -200,7 +201,7 @@ export class DataSourceList extends PureComponent {
             {name}
           </H1>
           {this.renderCardContent({ metaData, isLock, isError, errorLog })}
-          {this.renderJobs(jobs)}
+          {jobs.map(this.renderJobs)}
         </Card>
       </DataSourceItem>
     );
