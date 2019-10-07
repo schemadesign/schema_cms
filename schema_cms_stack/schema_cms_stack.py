@@ -439,23 +439,23 @@ class CIPipeline(core.Stack):
             outputs=[public_api_lambda_build_output],
         )
 
-        build_worker_lambda_project = aws_codebuild.PipelineProject(
+        build_lambda_worker_project = aws_codebuild.PipelineProject(
             self,
-            "build_worker_lambda_project",
-            project_name="schema_cms_build_worker",
+            "build_lambda_worker_project",
+            project_name="schema_cms_build_lambda_worker",
             environment=aws_codebuild.BuildEnvironment(
                 build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
             ),
             build_spec=aws_codebuild.BuildSpec.from_source_filename(
-                "backend/functions/buildspec-worker.yaml"
+                "backend/functions/buildspec-lambda-worker.yaml"
             ),
         )
-        worker_lambda_build_output = aws_codepipeline.Artifact()
+        lambda_worker_build_output = aws_codepipeline.Artifact()
         build_worker_lambda_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_workers_success_lambda",
+            action_name="build_worker_lambda",
             input=source_output,
-            project=build_worker_lambda_project,
-            outputs=[worker_lambda_build_output],
+            project=build_lambda_worker_project,
+            outputs=[lambda_worker_build_output],
         )
 
         build_workers_success_lambda_project = aws_codebuild.PipelineProject(
