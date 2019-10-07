@@ -552,6 +552,15 @@ class CIPipeline(core.Stack):
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_public_api_changes",
                     stack_name=scope.public_api.stack_name,
+                    change_set_name="lambdaWorkerStagedChangeSet",
+                    admin_permissions=True,
+                    template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
+                    run_order=1,
+                    extra_inputs=[lambda_worker_build_output],
+                ),
+                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
+                    action_name="prepare_public_api_changes",
+                    stack_name=scope.public_api.stack_name,
                     change_set_name="publicAPIStagedChangeSet",
                     admin_permissions=True,
                     template_path=cdk_artifact.at_path("cdk.out/public-api.template.json"),
@@ -598,13 +607,11 @@ class CIPipeline(core.Stack):
                     run_order=1,
                 ),
                 aws_codepipeline_actions.ManualApprovalAction(action_name="approve_changes", run_order=2),
-                aws_codepipeline_actions.CloudFormationCreateUpdateStackAction(
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_lambda_worker_changes",
-                    stack_name=scope.lambda_worker.stack_name,
-                    admin_permissions=True,
-                    template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
+                    stack_name=scope.public_api.stack_name,
+                    change_set_name="lambdaWorkerStagedChangeSet",
                     run_order=3,
-                    extra_inputs=[lambda_worker_build_output],
                 ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_workers_changes",
