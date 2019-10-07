@@ -7,8 +7,10 @@ phases:
   build:
     commands:
       - echo Build lambda worker function package
+      - OLDPATH=$(pwd)
       - cd backend/functions/worker
       - npm install && node_modules/serverless/bin/serverless package
+      - cd ${OLDPATH}
 artifacts:
   files:
-    - 'backend/functions/worker/**/*'
+    - 'backend/functions/worker/.serverless/lambda-worker.zip'
