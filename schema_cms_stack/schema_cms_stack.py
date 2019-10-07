@@ -278,7 +278,8 @@ class LambdaWorker(core.Stack):
             environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
             memory_size=768,
             vpc=scope.base.vpc,
-            timeout=60,
+            timeout=core.Duration.seconds(60),
+
         )
         self.job_processing_sqs = aws_sqs.Queue(self, 'job_processing_sqs')
         self.lambda_worker.add_event_source(
