@@ -173,18 +173,18 @@ class Workers(core.Stack):
             self, "WorkerStateMachine", definition=stm_definition
         )
 
-        # self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
-        self.lambda_worker_code = aws_lambda.Code.from_asset(
+        self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
+        lambda_worker_code = aws_lambda.Code.from_asset(
             "backend/functions/worker/.serverless/lambda-worker.zip"
         )
         lambda_worker_handler = "handler.main"
-        # if installation_mode == INSTALLATION_MODE_FULL:
-        #     lambda_worker_code = self.lambda_worker_code
+        if installation_mode == INSTALLATION_MODE_FULL:
+            lambda_worker_code = self.lambda_worker_code
 
         self.api_lambda = aws_lambda.Function(
             self,
             "lambda-worker",
-            code=self.lambda_worker_code,
+            code=lambda_worker_code,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             handler=lambda_worker_handler,
             environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
