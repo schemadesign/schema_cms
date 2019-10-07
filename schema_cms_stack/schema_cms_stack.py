@@ -519,7 +519,7 @@ class CIPipeline(core.Stack):
         cdk_artifact = aws_codepipeline.Artifact()
         build_cdk_action = aws_codepipeline_actions.CodeBuildAction(
             action_name="build_stack", input=source_output, project=build_cdk_project, outputs=[cdk_artifact],
-            run_order=2,
+            run_order=2, extra_inputs=[lambda_worker_build_output]
         )
 
         self.pipeline.add_stage(
