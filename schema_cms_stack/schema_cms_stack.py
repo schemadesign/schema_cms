@@ -458,7 +458,7 @@ class CIPipeline(core.Stack):
             ),
         )
         lambda_worker_build_output = aws_codepipeline.Artifact()
-        build_worker_lambda_action = aws_codepipeline_actions.CodeBuildAction(
+        build_lambda_worker_action = aws_codepipeline_actions.CodeBuildAction(
             action_name="build_worker_lambda",
             input=source_output,
             project=build_lambda_worker_project,
@@ -518,7 +518,8 @@ class CIPipeline(core.Stack):
 
         cdk_artifact = aws_codepipeline.Artifact()
         build_cdk_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_stack", input=source_output, project=build_cdk_project, outputs=[cdk_artifact]
+            action_name="build_stack", input=source_output, project=build_cdk_project, outputs=[cdk_artifact],
+            run_order=2,
         )
 
         self.pipeline.add_stage(
@@ -527,7 +528,7 @@ class CIPipeline(core.Stack):
                 build_fe_action,
                 build_app_action,
                 build_workers_action,
-                build_worker_lambda_action,
+                build_lambda_worker_action,
                 build_public_api_lambda_action,
                 build_workers_success_lambda_action,
                 build_workers_failure_lambda_action,
