@@ -60,6 +60,7 @@ def get_db_settings():
         password=db_data["password"],
         host=db_data["host"],
         port=db_data["port"],
+        connect_timeout=db_data.get("connect_timeout", 5)
     )
 
 
