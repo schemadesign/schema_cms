@@ -279,6 +279,7 @@ class LambdaWorker(core.Stack):
             memory_size=768,
             vpc=scope.base.vpc,
             timeout=core.Duration.seconds(60),
+            tracing=aws_lambda.Tracing.ACTIVE,
 
         )
         self.job_processing_sqs = aws_sqs.Queue(self, 'job_processing_sqs')
