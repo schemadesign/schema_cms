@@ -174,6 +174,23 @@ class Workers(core.Stack):
             self, "WorkerStateMachine", definition=stm_definition
         )
 
+        self.api_lambda = aws_lambda.Function(
+            self,
+            "lambda-worker",
+            code=aws_lambda.Code.from_asset("backend/functions/worker/.serverless/lambda-worker.zip"),
+            runtime=aws_lambda.Runtime.PYTHON_3_7,
+            handler="handler.main",
+            environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
+            memory_size=768,
+            vpc=scope.base.vpc,
+        )
+        self.api_sqs = aws_sqs.Queue(self, 'sqs-worker')
+        self.api_lambda.add_event_source(
+            aws_lambda_event_sources.SqsEventSource(self.api_sqs, batch_size=1)
+        )
+        scope.base.db.secret.grant_read(self.api_lambda.role)
+        scope.base.app_bucket.grant_read_write(self.api_lambda.role)
+
 
 class API(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
@@ -245,29 +262,13 @@ class API(core.Stack):
 
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
         scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
+        scope.workers.api_sqs.grant_send_messages(self.api.service.task_definition.task_role)
         scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
 
         for k, v in env.items():
             self.grant_secret_access(v)
 
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
-
-        self.api_lambda = aws_lambda.Function(
-            self,
-            "lambda-worker",
-            code=aws_lambda.Code.from_asset("backend/functions/worker/.serverless/lambda-worker.zip"),
-            runtime=aws_lambda.Runtime.PYTHON_3_7,
-            handler="handler.main",
-            environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
-            memory_size=768,
-            vpc=scope.base.vpc,
-        )
-        self.api_sqs = aws_sqs.Queue(self, 'sqs-worker')
-        self.api_lambda.add_event_source(
-            aws_lambda_event_sources.SqsEventSource(self.api_sqs, batch_size=1)
-        )
-        scope.base.db.secret.grant_read(self.api_lambda.role)
-        self.api_sqs.grant_send_messages(self.api.service.task_definition.task_role)
 
     def map_secret(self, secret_arn):
         secret = aws_secretsmanager.Secret.from_secret_arn(
