@@ -175,7 +175,7 @@ class Workers(core.Stack):
 
         # self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
         self.lambda_worker_code = aws_lambda.Code.from_asset(
-            "backend/functions/worker/.serverless/lambda-worker.zip"
+            "lambda-worker/lambda-worker.zip"
         )
         lambda_worker_handler = "handler.main"
         # if installation_mode == INSTALLATION_MODE_FULL:

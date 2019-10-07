@@ -16,7 +16,7 @@ phases:
     commands:
       - cd ${OLDPATH}
 artifacts:
-#  name: lambda-worker
+  name: lambda-worker
   files:
     - 'backend/functions/worker/.serverless/lambda-worker.zip'
-#  discard-paths: yes
+  discard-paths: yes
