@@ -7,6 +7,7 @@ from factory.django import FileField
 from pandas import read_csv
 
 from schemacms.utils.test import make_csv
+from schemacms.projects.models import get_preview_data
 from schemacms.projects.tests.factories import DataSourceFactory
 
 
@@ -75,24 +76,14 @@ class TestDataSource:
         assert data_source.meta_data.preview != old_preview
 
     def test_get_preview(self, data_source):
-        source_file = read_csv(data_source.file.path)
+        source_file = data_source.file
 
-        preview, fields_info = data_source.get_preview_data(source_file)
+        data_source.update_meta()
+        expected_preview, _, _ = get_preview_data(source_file)
+        result_json = json.loads(data_source.meta_data.preview.read())
 
-        expected_preview = json.loads(source_file.head(5).to_json(orient="records"))
-        expected_fields_info = json.loads(
-            source_file.describe(include="all", percentiles=[]).to_json(orient="columns")
-        )
-        expected_samples = json.loads(source_file.sample(n=1).to_json(orient="records"))
-
-        for key, value in dict(source_file.dtypes).items():
-            expected_fields_info[key]["dtype"] = "string" if value.name == "object" else value.name
-
-        for key, value in expected_samples[0].items():
-            expected_fields_info[key]["sample"] = value
-
-        assert expected_preview == preview
-        assert expected_fields_info == fields_info
+        assert json.loads(expected_preview)["data"] == result_json["data"]
+        assert json.loads(expected_preview)["fields"] == result_json["fields"]
 
 
 class TestDataSourceMeta:

@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+  build:
+    commands:
+      - echo Build lambda worker function package
+      - cd backend/functions/worker
+      - npm install && node_modules/serverless/bin/serverless package
+artifacts:
+  files:
+    - 'backend/functions/worker/**/*'

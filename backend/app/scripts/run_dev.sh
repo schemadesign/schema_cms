@@ -10,6 +10,8 @@ echo "Secrets manager is up"
 
 # install all localstack fixtures
 
+install_db_secret
+
 {
     create_public_api_lambda &&
     echo "Public API lambda function created"

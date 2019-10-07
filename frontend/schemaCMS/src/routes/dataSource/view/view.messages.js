@@ -38,4 +38,16 @@ export default defineMessages({
     id: 'dataSource.view.dataSourceList',
     defaultMessage: 'Data source list',
   },
+  cancelRemoval: {
+    id: 'dataSource.view.cancelRemoval',
+    defaultMessage: 'Cancel',
+  },
+  confirmRemoval: {
+    id: 'dataSource.view.confirmRemoval',
+    defaultMessage: 'Confirm',
+  },
+  removeTitle: {
+    id: 'dataSource.view.removeTitle',
+    defaultMessage: 'Are you sure you want to remove the data source?',
+  },
 });

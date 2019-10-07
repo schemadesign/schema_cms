@@ -4,7 +4,7 @@
 
 **Request**:
 
-`GET` `/api/v1/scripts/:id`
+`GET` `/api/v1/script/:id`
 
 *Note:*
 
