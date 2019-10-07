@@ -5,8 +5,7 @@ import { Checkbox } from './checkbox.component';
 import CheckboxGroupContext from '../checkboxGroup/checkboxGroup.context';
 import { CheckboxOnIcon } from '../../icons/checkboxOnIcon';
 import { CheckboxOffIcon } from '../../icons/checkboxOffIcon';
-import { dark } from '../../../utils/theme';
-import { ThemeProvider } from '../../styles/themeProvider';
+import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   value: 'value 2',
@@ -31,13 +30,6 @@ const decorator = story => <CheckboxGroupContext.Provider value={context}>{story
 
 storiesOf('Form/Checkbox', module)
   .addDecorator(decorator)
-  .add('Default', () => (
-    <ThemeProvider theme={dark}>
-      <Checkbox {...defaultProps}>checkbox</Checkbox>
-    </ThemeProvider>
-  ))
-  .add('Checked', () => (
-    <ThemeProvider theme={dark}>
-      <Checkbox {...checkedProps}>checkbox</Checkbox>
-    </ThemeProvider>
-  ));
+  .addDecorator(withTheme())
+  .add('Default', () => <Checkbox {...defaultProps}>checkbox</Checkbox>)
+  .add('Checked', () => <Checkbox {...checkedProps}>checkbox</Checkbox>);
