@@ -111,11 +111,17 @@ section:
     ```bash
    $ cp -R ./frontend/schemaCMS/build/* ./nginx/dist
     ```
-4. Deploy `base`, `workers`, `public-api`, `api` stacks using command:
+4. Build lambda worker zip package:
+    ```bash
+    $ cd ./backend/functions/worker
+    $ npm install
+    $ serverless package
+    ```
+5. Deploy `base`, `workers`, `public-api`, `api` stacks using command:
     ```bash
     $ cdk -c installation_mode=app_only deploy base workers public-api api
     ```
-5. Set domain DNS (A record) to point the newly created ELB
+6. Set domain DNS (A record) to point the newly created ELB
 
 ### Deploy stack with app and CI/CD pipeline
 
