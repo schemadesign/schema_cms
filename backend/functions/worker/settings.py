@@ -1,7 +1,7 @@
 import os
 
 
-DB_SECRET_ARN = os.getenv('DB_SECRET_ARN')
+DB_CONNECTION = os.getenv('DB_CONNECTION', '{}').json()
 
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')

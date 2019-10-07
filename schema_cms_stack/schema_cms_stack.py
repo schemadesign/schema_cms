@@ -207,6 +207,12 @@ class API(core.Stack):
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
 
+        self.job_processing_sqs = aws_sqs.Queue(
+            self,
+            'job_processing_sqs',
+            visibility_timeout=core.Duration.seconds(60),
+        )
+
         self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
             self,
             "api-service",
@@ -236,6 +242,7 @@ class API(core.Stack):
                 "WORKER_STM_ARN": scope.workers.worker_state_machine.state_machine_arn,
                 "POSTGRES_DB": DB_NAME,
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "SQS_WORKER_QUEUE_URL": self.job_processing_sqs.queue_url,
             },
             secrets={"DJANGO_SECRET_KEY": django_secret_key, "DB_CONNECTION": connection_secret_key, **env},
             cpu=256,
@@ -245,6 +252,7 @@ class API(core.Stack):
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
         scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
         scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
+        self.job_processing_sqs.grant_send_messages(self.api.service.task_definition.task_role)
 
         for k, v in env.items():
             self.grant_secret_access(v)
@@ -265,18 +273,19 @@ class LambdaWorker(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        lambda_worker_code = aws_lambda.Code.from_asset(
+        self.lambda_worker_code = aws_lambda.Code.from_asset(
             "backend/functions/worker/.serverless/lambda-worker.zip"
         )
         lambda_worker_handler = "handler.main"
         self.lambda_worker = aws_lambda.Function(
             self,
             "lambda-worker",
-            code=lambda_worker_code,
+            code=self.lambda_worker_code,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             handler=lambda_worker_handler,
             environment={
-                "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
+                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
+                "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
             },
             memory_size=768,
             vpc=scope.base.vpc,
@@ -284,13 +293,10 @@ class LambdaWorker(core.Stack):
             tracing=aws_lambda.Tracing.ACTIVE,
 
         )
-        self.job_processing_sqs = aws_sqs.Queue(self, 'job_processing_sqs')
         self.lambda_worker.add_event_source(
-            aws_lambda_event_sources.SqsEventSource(self.job_processing_sqs, batch_size=1)
+            aws_lambda_event_sources.SqsEventSource(scope.api.job_processing_sqs, batch_size=1)
         )
-        scope.base.db.secret.grant_read(self.lambda_worker.role)
         scope.base.app_bucket.grant_read_write(self.lambda_worker.role)
-        self.job_processing_sqs.grant_send_messages(scope.api.api.service.task_definition.task_role)
 
 
 class PublicAPI(core.Stack):
@@ -550,6 +556,16 @@ class CIPipeline(core.Stack):
             stage_name="deploy_public_api",
             actions=[
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
+                    action_name="prepare_lambda_worker_changes",
+                    stack_name=scope.lambda_worker.stack_name,
+                    change_set_name="lambdaWorkerStagedChangeSet",
+                    admin_permissions=True,
+                    template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
+                    run_order=1,
+                    parameter_overrides=scope.lambda_worker.lambda_worker_code,
+                    extra_inputs=[lambda_worker_build_output],
+                ),
+                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_public_api_changes",
                     stack_name=scope.public_api.stack_name,
                     change_set_name="publicAPIStagedChangeSet",
@@ -598,13 +614,11 @@ class CIPipeline(core.Stack):
                     run_order=1,
                 ),
                 aws_codepipeline_actions.ManualApprovalAction(action_name="approve_changes", run_order=2),
-                aws_codepipeline_actions.CloudFormationCreateUpdateStackAction(
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_lambda_worker_changes",
                     stack_name=scope.lambda_worker.stack_name,
-                    admin_permissions=True,
-                    template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
+                    change_set_name="lambdaWorkerStagedChangeSet",
                     run_order=3,
-                    extra_inputs=[lambda_worker_build_output],
                 ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_workers_changes",
