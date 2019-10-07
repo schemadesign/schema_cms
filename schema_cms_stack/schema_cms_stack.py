@@ -577,11 +577,11 @@ class CIPipeline(core.Stack):
                             object_key=workers_failure_lambda_build_output.s3_location.object_key,
                             object_version=workers_failure_lambda_build_output.s3_location.object_version,
                         ),
-                        # **scope.workers.lambda_worker_code.assign(
-                        #     bucket_name=lambda_worker_build_output.s3_location.bucket_name,
-                        #     object_key=lambda_worker_build_output.s3_location.object_key,
-                        #     object_version=lambda_worker_build_output.s3_location.object_version,
-                        # ),
+                        **scope.workers.lambda_worker_code.assign(
+                            bucket_name=lambda_worker_build_output.s3_location.bucket_name,
+                            object_key=lambda_worker_build_output.s3_location.object_key,
+                            object_version=lambda_worker_build_output.s3_location.object_version,
+                        ),
                     },
                     extra_inputs=[
                         workers_success_lambda_build_output,
