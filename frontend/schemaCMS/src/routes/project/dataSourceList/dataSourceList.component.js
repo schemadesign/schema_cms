@@ -178,17 +178,16 @@ export class DataSourceList extends PureComponent {
     );
   };
 
-  renderJobs = job =>
-    renderWhenTrue(() => (
-      <JobsContainer>
-        <JobsTitle>
-          <FormattedMessage {...messages.jobTitle} />
-        </JobsTitle>
-        {this.renderJob(job)}
-      </JobsContainer>
-    ))(!!job.id);
+  renderJobs = (job, index) => (
+    <JobsContainer key={index}>
+      <JobsTitle>
+        <FormattedMessage {...messages.jobTitle} />
+      </JobsTitle>
+      {this.renderJob(job)}
+    </JobsContainer>
+  );
 
-  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status, errorLog, job }, index) => {
+  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status, errorLog, jobs }, index) => {
     const isLock = status !== STATUS_DONE;
     const isError = status === STATUS_ERROR;
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
@@ -202,7 +201,7 @@ export class DataSourceList extends PureComponent {
             {name}
           </H1>
           {this.renderCardContent({ metaData, isLock, isError, errorLog })}
-          {this.renderJobs(job)}
+          {jobs.map(this.renderJobs)}
         </Card>
       </DataSourceItem>
     );

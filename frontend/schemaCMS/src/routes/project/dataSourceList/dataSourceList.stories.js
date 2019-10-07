@@ -20,6 +20,7 @@ const dataSource = {
     fields: 11,
     items: 246,
   },
+  jobs: [],
   name: 'name',
   status: STATUS_DONE,
 };
@@ -33,7 +34,7 @@ const dataSource2 = {
     items: 246,
   },
   name: 'name',
-  job: {},
+  jobs: [],
   status: STATUS_DONE,
 };
 
@@ -116,7 +117,7 @@ storiesOf('DataSourceList', module)
   .addDecorator(withTheme())
   .add('Empty', () => <DataSourceList {...defaultProps} />)
   .add('With data source', () => <DataSourceList {...propsWithDataSource} />)
-  .add('With job', () => <DataSourceList {...propsWithJob} />)
+  .add('With jobs', () => <DataSourceList {...propsWithJob} />)
   .add('With error', () => <DataSourceList {...propsWithError} />)
   .add('With processing', () => <DataSourceList {...propsWithProcessing} />)
   .add('With ready for processing', () => <DataSourceList {...propsWithReadyForProcessing} />)

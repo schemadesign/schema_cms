@@ -322,7 +322,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             </styled.span>
           </styled.div>
         </styled.div>
-        <styled.div>
+        <styled.div
+          key="0"
+        >
           <styled.div>
             <FormattedMessage
               defaultMessage="Data Process History"
@@ -330,17 +332,17 @@ exports[`DataSourceList: Component should render card with job 1`] = `
               values={Object {}}
             />
           </styled.div>
-          <styled.div
-            key="0"
-          >
+          <styled.div>
             <styled.div>
-              <styled.div
-                status="done"
-              >
-                done
-              </styled.div>
+              <styled.div />
               <styled.div>
-                white_spaces
+                <FormattedMessage
+                  defaultMessage="Job id:"
+                  id="dataSource.list.jobId"
+                  values={Object {}}
+                />
+                 
+                1
               </styled.div>
             </styled.div>
             <styled.div>
@@ -350,20 +352,31 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 values={Object {}}
               />
                
-              08/09/2019 11:23
+              01/12/2019 01:00
             </styled.div>
           </styled.div>
-          <styled.div
-            key="1"
-          >
+        </styled.div>
+        <styled.div
+          key="1"
+        >
+          <styled.div>
+            <FormattedMessage
+              defaultMessage="Data Process History"
+              id="dataSource.list.jobTitle"
+              values={Object {}}
+            />
+          </styled.div>
+          <styled.div>
             <styled.div>
-              <styled.div
-                status="process"
-              >
-                process
-              </styled.div>
+              <styled.div />
               <styled.div>
-                blank_cells
+                <FormattedMessage
+                  defaultMessage="Job id:"
+                  id="dataSource.list.jobId"
+                  values={Object {}}
+                />
+                 
+                2
               </styled.div>
             </styled.div>
             <styled.div>
@@ -373,20 +386,31 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 values={Object {}}
               />
                
-              07/09/2019 11:23
+              01/12/2019 01:00
             </styled.div>
           </styled.div>
-          <styled.div
-            key="2"
-          >
+        </styled.div>
+        <styled.div
+          key="2"
+        >
+          <styled.div>
+            <FormattedMessage
+              defaultMessage="Data Process History"
+              id="dataSource.list.jobTitle"
+              values={Object {}}
+            />
+          </styled.div>
+          <styled.div>
             <styled.div>
-              <styled.div
-                status="idle"
-              >
-                idle
-              </styled.div>
+              <styled.div />
               <styled.div>
-                case_conversion
+                <FormattedMessage
+                  defaultMessage="Job id:"
+                  id="dataSource.list.jobId"
+                  values={Object {}}
+                />
+                 
+                3
               </styled.div>
             </styled.div>
             <styled.div>
@@ -396,20 +420,31 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 values={Object {}}
               />
                
-              06/09/2019 11:23
+              01/12/2019 01:00
             </styled.div>
           </styled.div>
-          <styled.div
-            key="3"
-          >
+        </styled.div>
+        <styled.div
+          key="3"
+        >
+          <styled.div>
+            <FormattedMessage
+              defaultMessage="Data Process History"
+              id="dataSource.list.jobTitle"
+              values={Object {}}
+            />
+          </styled.div>
+          <styled.div>
             <styled.div>
-              <styled.div
-                status="error"
-              >
-                error
-              </styled.div>
+              <styled.div />
               <styled.div>
-                handling_duplicates
+                <FormattedMessage
+                  defaultMessage="Job id:"
+                  id="dataSource.list.jobId"
+                  values={Object {}}
+                />
+                 
+                4
               </styled.div>
             </styled.div>
             <styled.div>
@@ -419,7 +454,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 values={Object {}}
               />
                
-              05/09/2019 11:23
+              01/12/2019 01:00
             </styled.div>
           </styled.div>
         </styled.div>
