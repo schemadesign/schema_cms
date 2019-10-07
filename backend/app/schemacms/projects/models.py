@@ -46,7 +46,9 @@ def get_preview_data(file_field):
     sample_of_5 = data_frame.head(5)
 
     table_preview = json.loads(sample_of_5.to_json(orient="records"))
-    fields_info = json.loads(data_frame.describe(include="all", percentiles=[]).compute().to_json(orient="columns"))
+    fields_info = json.loads(
+        data_frame.describe(include="all", percentiles=[]).compute().to_json(orient="columns")
+    )
     samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
 
     for key, value in dict(data_frame.dtypes).items():
