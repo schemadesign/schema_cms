@@ -275,7 +275,9 @@ class LambdaWorker(core.Stack):
             code=lambda_worker_code,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             handler=lambda_worker_handler,
-            environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
+            environment={
+                "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
+            },
             memory_size=768,
             vpc=scope.base.vpc,
             timeout=core.Duration.seconds(60),
