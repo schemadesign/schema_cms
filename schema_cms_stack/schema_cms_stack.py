@@ -83,7 +83,6 @@ class BaseResources(core.Stack):
         )
         self.db_secret_rotation = self.db.add_rotation_single_user("db-rotation")
         self.app_bucket = aws_s3.Bucket(self, APP_S3_BUCKET_NAME)
-        self.job_processing_sqs = aws_sqs.Queue(self, 'job_processing_sqs')
 
 
 class CertsStack(core.Stack):
@@ -208,6 +207,12 @@ class API(core.Stack):
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
 
+        self.job_processing_sqs = aws_sqs.Queue(
+            self,
+            'job_processing_sqs',
+            visibility_timeout=core.Duration.seconds(60),
+        )
+
         self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
             self,
             "api-service",
@@ -237,7 +242,7 @@ class API(core.Stack):
                 "WORKER_STM_ARN": scope.workers.worker_state_machine.state_machine_arn,
                 "POSTGRES_DB": DB_NAME,
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
-                "SQS_WORKER_QUEUE_URL": scope.base.job_processing_sqs.queue_url,
+                "SQS_WORKER_QUEUE_URL": self.job_processing_sqs.queue_url,
             },
             secrets={"DJANGO_SECRET_KEY": django_secret_key, "DB_CONNECTION": connection_secret_key, **env},
             cpu=256,
@@ -247,7 +252,7 @@ class API(core.Stack):
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
         scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
         scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
-        scope.base.job_processing_sqs.grant_send_messages(self.api.service.task_definition.task_role)
+        self.job_processing_sqs.grant_send_messages(self.api.service.task_definition.task_role)
 
         for k, v in env.items():
             self.grant_secret_access(v)
@@ -289,7 +294,7 @@ class LambdaWorker(core.Stack):
 
         )
         self.lambda_worker.add_event_source(
-            aws_lambda_event_sources.SqsEventSource(scope.base.job_processing_sqs, batch_size=1)
+            aws_lambda_event_sources.SqsEventSource(scope.api.job_processing_sqs, batch_size=1)
         )
         scope.base.app_bucket.grant_read_write(self.lambda_worker.role)
 
