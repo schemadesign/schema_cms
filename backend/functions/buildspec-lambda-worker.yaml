@@ -4,13 +4,19 @@ phases:
   install:
     runtime-versions:
       python: 3.7
+  pre_build:
+    commands:
+      - OLDPATH=$(pwd)
   build:
     commands:
       - echo Build lambda worker function package
-      - OLDPATH=$(pwd)
       - cd backend/functions/worker
       - npm install && node_modules/serverless/bin/serverless package
+  post_build:
+    commands:
       - cd ${OLDPATH}
 artifacts:
+#  name: lambda-worker
   files:
     - 'backend/functions/worker/.serverless/lambda-worker.zip'
+#  discard-paths: yes
