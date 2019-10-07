@@ -117,7 +117,7 @@ section:
     $ npm install
     $ serverless package
     ```
-5. Deploy `base`, `workers`, `public-api`, `api` stacks using command:
+5. Deploy `base`, `workers`, `lambda-worker`, `public-api`, `api` stacks using command:
     ```bash
     $ cdk -c installation_mode=app_only deploy base workers public-api api
     ```
@@ -159,7 +159,7 @@ deployment. Save ARN of the secret and pass it to CDK using `-c github_token_arn
     $ cdk deploy base ci-pipeline
     ```
     This might take some time. It will create base application resources along with CI pipeline using CDK/Cloudformation.
-    After successful deployment pipeline will automatically start and build `api`, `public-api` and `workers` stacks.
+    After successful deployment pipeline will automatically start and build `api`, `public-api`, `lambda-worker` and `workers` stacks.
 4. Log into AWS console and approve waiting stacks deployment on `schema-cms-pipeline` in AWS Code Pipeline service 
 section.
 5. Set domain DNS (A record) to point the newly created ELB

@@ -173,31 +173,6 @@ class Workers(core.Stack):
             self, "WorkerStateMachine", definition=stm_definition
         )
 
-        self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
-        lambda_worker_code = aws_lambda.Code.from_asset(
-            "backend/functions/worker/.serverless/lambda-worker.zip"
-        )
-        lambda_worker_handler = "handler.main"
-        if installation_mode == INSTALLATION_MODE_FULL:
-            lambda_worker_code = self.lambda_worker_code
-
-        self.api_lambda = aws_lambda.Function(
-            self,
-            "lambda-worker",
-            code=lambda_worker_code,
-            runtime=aws_lambda.Runtime.PYTHON_3_7,
-            handler=lambda_worker_handler,
-            environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
-            memory_size=768,
-            vpc=scope.base.vpc,
-        )
-        self.api_sqs = aws_sqs.Queue(self, 'sqs-worker')
-        self.api_lambda.add_event_source(
-            aws_lambda_event_sources.SqsEventSource(self.api_sqs, batch_size=1)
-        )
-        scope.base.db.secret.grant_read(self.api_lambda.role)
-        scope.base.app_bucket.grant_read_write(self.api_lambda.role)
-
 
 class API(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
@@ -269,7 +244,6 @@ class API(core.Stack):
 
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
         scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
-        scope.workers.api_sqs.grant_send_messages(self.api.service.task_definition.task_role)
         scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
 
         for k, v in env.items():
@@ -285,6 +259,34 @@ class API(core.Stack):
 
     def grant_secret_access(self, secret):
         secret.grant_read(self.api.service.task_definition.task_role)
+
+
+class LambdaWorker(core.Stack):
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+        lambda_worker_code = aws_lambda.Code.from_asset(
+            "backend/functions/worker/.serverless/lambda-worker.zip"
+        )
+        lambda_worker_handler = "handler.main"
+        self.lambda_worker = aws_lambda.Function(
+            self,
+            "lambda-worker",
+            code=lambda_worker_code,
+            runtime=aws_lambda.Runtime.PYTHON_3_7,
+            handler=lambda_worker_handler,
+            environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
+            memory_size=768,
+            vpc=scope.base.vpc,
+            timeout=60,
+        )
+        self.job_processing_sqs = aws_sqs.Queue(self, 'job_processing_sqs')
+        self.lambda_worker.add_event_source(
+            aws_lambda_event_sources.SqsEventSource(self.job_processing_sqs, batch_size=1)
+        )
+        scope.base.db.secret.grant_read(self.lambda_worker.role)
+        scope.base.app_bucket.grant_read_write(self.lambda_worker.role)
+        self.job_processing_sqs.grant_send_messages(scope.api.api.service.task_definition.task_role)
 
 
 class PublicAPI(core.Stack):
@@ -577,16 +579,11 @@ class CIPipeline(core.Stack):
                             object_key=workers_failure_lambda_build_output.s3_location.object_key,
                             object_version=workers_failure_lambda_build_output.s3_location.object_version,
                         ),
-                        **scope.workers.lambda_worker_code.assign(
-                            bucket_name=lambda_worker_build_output.s3_location.bucket_name,
-                            object_key=lambda_worker_build_output.s3_location.object_key,
-                            object_version=lambda_worker_build_output.s3_location.object_version,
-                        ),
                     },
                     extra_inputs=[
+                        lambda_worker_build_output,
                         workers_success_lambda_build_output,
                         workers_failure_lambda_build_output,
-                        lambda_worker_build_output
                     ],
                 ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
@@ -598,6 +595,12 @@ class CIPipeline(core.Stack):
                     run_order=1,
                 ),
                 aws_codepipeline_actions.ManualApprovalAction(action_name="approve_changes", run_order=2),
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                    action_name="execute_lambda_worker_changes",
+                    stack_name=scope.lambda_worker.stack_name,
+                    change_set_name="lambdaWorkerStagedChangeSet",
+                    run_order=3,
+                ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_workers_changes",
                     stack_name=scope.workers.stack_name,
