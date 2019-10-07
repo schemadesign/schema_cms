@@ -175,8 +175,9 @@ class Workers(core.Stack):
         )
 
         lambda_worker_handler = "handler.main"
+        self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
         if installation_mode == INSTALLATION_MODE_FULL:
-            lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
+            lambda_worker_code = self.lambda_worker_code
         else:
             lambda_worker_code = aws_lambda.Code.from_asset(
                 "backend/functions/worker/.serverless/lambda-worker.zip"
@@ -573,8 +574,17 @@ class CIPipeline(core.Stack):
                             object_key=workers_failure_lambda_build_output.s3_location.object_key,
                             object_version=workers_failure_lambda_build_output.s3_location.object_version,
                         ),
+                        **scope.workers.lambda_worker_code.assign(
+                            bucket_name=lambda_worker_build_output.s3_location.bucket_name,
+                            object_key=lambda_worker_build_output.s3_location.object_key,
+                            object_version=lambda_worker_build_output.s3_location.object_version,
+                        ),
                     },
-                    extra_inputs=[workers_success_lambda_build_output, workers_failure_lambda_build_output],
+                    extra_inputs=[
+                        workers_success_lambda_build_output,
+                        workers_failure_lambda_build_output,
+                        lambda_worker_build_output
+                    ],
                 ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_api_changes",
