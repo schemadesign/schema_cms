@@ -117,7 +117,6 @@ class Workers(core.Stack):
         )
 
         worker_success_lambda_code = aws_lambda.AssetCode("backend/functions/worker_success")
-
         self.success_function_code = aws_lambda.Code.from_cfn_parameters()
         handler = "handlers.handle"
         if installation_mode == INSTALLATION_MODE_FULL:
@@ -174,19 +173,18 @@ class Workers(core.Stack):
             self, "WorkerStateMachine", definition=stm_definition
         )
 
+        # self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
+        self.lambda_worker_code = aws_lambda.Code.from_asset(
+            "backend/functions/worker/.serverless/lambda-worker.zip"
+        )
         lambda_worker_handler = "handler.main"
-        self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
-        if installation_mode == INSTALLATION_MODE_FULL:
-            lambda_worker_code = self.lambda_worker_code
-        else:
-            lambda_worker_code = aws_lambda.Code.from_asset(
-                "backend/functions/worker/.serverless/lambda-worker.zip"
-            )
+        # if installation_mode == INSTALLATION_MODE_FULL:
+        #     lambda_worker_code = self.lambda_worker_code
 
         self.api_lambda = aws_lambda.Function(
             self,
             "lambda-worker",
-            code=lambda_worker_code,
+            code=self.lambda_worker_code,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             handler=lambda_worker_handler,
             environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
@@ -574,11 +572,11 @@ class CIPipeline(core.Stack):
                             object_key=workers_failure_lambda_build_output.s3_location.object_key,
                             object_version=workers_failure_lambda_build_output.s3_location.object_version,
                         ),
-                        **scope.workers.lambda_worker_code.assign(
-                            bucket_name=lambda_worker_build_output.s3_location.bucket_name,
-                            object_key=lambda_worker_build_output.s3_location.object_key,
-                            object_version=lambda_worker_build_output.s3_location.object_version,
-                        ),
+                        # **scope.workers.lambda_worker_code.assign(
+                        #     bucket_name=lambda_worker_build_output.s3_location.bucket_name,
+                        #     object_key=lambda_worker_build_output.s3_location.object_key,
+                        #     object_version=lambda_worker_build_output.s3_location.object_version,
+                        # ),
                     },
                     extra_inputs=[
                         workers_success_lambda_build_output,
