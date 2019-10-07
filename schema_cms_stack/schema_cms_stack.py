@@ -583,7 +583,6 @@ class CIPipeline(core.Stack):
                         ),
                     },
                     extra_inputs=[
-                        lambda_worker_build_output,
                         workers_success_lambda_build_output,
                         workers_failure_lambda_build_output,
                     ],
@@ -597,11 +596,13 @@ class CIPipeline(core.Stack):
                     run_order=1,
                 ),
                 aws_codepipeline_actions.ManualApprovalAction(action_name="approve_changes", run_order=2),
-                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                aws_codepipeline_actions.CloudFormationCreateUpdateStackAction(
                     action_name="execute_lambda_worker_changes",
                     stack_name=scope.lambda_worker.stack_name,
-                    change_set_name="lambdaWorkerStagedChangeSet",
+                    admin_permissions=True,
+                    template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
                     run_order=3,
+                    extra_inputs=[lambda_worker_build_output],
                 ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_workers_changes",
