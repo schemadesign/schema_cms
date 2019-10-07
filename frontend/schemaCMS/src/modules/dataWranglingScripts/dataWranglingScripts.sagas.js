@@ -10,7 +10,6 @@ import {
 import browserHistory from '../../shared/utils/history';
 
 import { selectDataSource } from '../dataSource';
-import { SCRIPT_CHECKBOX_PREFIX } from './dataWranglingScripts.constants';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -29,9 +28,8 @@ function* fetchList({ payload: { dataSourceId } }) {
 function* sendList({ payload: { steps, dataSourceId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.sendList.request());
-    const parsedSteps = steps.map(step => step.replace(SCRIPT_CHECKBOX_PREFIX, ''));
 
-    yield api.put(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps: parsedSteps });
+    yield api.put(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
 
     const dataSource = yield select(selectDataSource);
 
