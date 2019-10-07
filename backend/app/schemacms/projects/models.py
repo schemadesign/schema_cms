@@ -2,6 +2,8 @@ import chardet
 import json
 import os
 
+import dask.dataframe as dd
+
 import django.core.files.base
 import django_fsm
 from django.conf import settings
@@ -11,7 +13,6 @@ from django.utils import functional
 from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
 from django_fsm import signals as fsm_signals
-from pandas import read_csv
 
 from schemacms.projects import handlers
 from schemacms.users import constants as users_constants
@@ -31,18 +32,23 @@ def map_dataframe_dtypes(dtype):
 
 def read_csv_with_encoding(file_field):
     encoding = chardet.detect(file_field.read())["encoding"]
-    data_frame = read_csv(file_field.url, encoding=encoding)
+    data_frame = dd.read_csv(file_field.url, blocksize=25e6, encoding=encoding)
 
     return data_frame
 
 
 def get_preview_data(file_field):
     data_frame = read_csv_with_encoding(file_field)
-    items, fields = data_frame.shape
-    sample_size = 5 if items >= 5 else items
-    sample_of_5 = data_frame.sample(n=sample_size)
+
+    shape = data_frame.shape
+    fields = shape[1]
+    items = shape[0].compute()
+    sample_of_5 = data_frame.head(5)
+
     table_preview = json.loads(sample_of_5.to_json(orient="records"))
-    fields_info = json.loads(data_frame.describe(include="all", percentiles=[]).to_json(orient="columns"))
+    fields_info = json.loads(
+        data_frame.describe(include="all", percentiles=[]).compute().to_json(orient="columns")
+    )
     samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
 
     for key, value in dict(data_frame.dtypes).items():
