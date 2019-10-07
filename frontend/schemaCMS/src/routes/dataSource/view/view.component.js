@@ -1,6 +1,8 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { always, cond, equals, T } from 'ramda';
+import { FormattedMessage } from 'react-intl';
+import Modal from 'react-modal';
 
 import { Container } from './view.styles';
 import messages from './view.messages';
@@ -17,6 +19,7 @@ import {
   INITIAL_STEP,
   STATUS_DRAFT,
 } from '../../../modules/dataSource/dataSource.constants';
+import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -38,6 +41,10 @@ export class View extends PureComponent {
         step: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
+  };
+
+  state = {
+    confirmationModalOpen: false,
   };
 
   componentDidMount() {
@@ -64,9 +71,9 @@ export class View extends PureComponent {
     this.props.dataSource.status === STATUS_DRAFT ? intl.formatMessage(messages.title) : this.props.dataSource.name;
 
   getHeaderAndMenuConfig = activeStep => {
-    const { dataSource, removeDataSource, intl } = this.props;
+    const { dataSource, intl } = this.props;
     const headerTitle = this.getTitle(intl);
-    const { project: projectId, id: dataSourceId } = dataSource;
+    const { project: projectId } = dataSource;
 
     const secondaryMenuItems = [
       {
@@ -75,7 +82,7 @@ export class View extends PureComponent {
       },
       {
         label: intl.formatMessage(messages.removeDataSource),
-        onClick: () => removeDataSource({ projectId, dataSourceId }),
+        onClick: () => this.setState({ confirmationModalOpen: true }),
       },
     ];
 
@@ -84,6 +91,16 @@ export class View extends PureComponent {
       headerSubtitle: this.getHeaderSubtitle(activeStep),
       secondaryMenuItems,
     };
+  };
+
+  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
+
+  handleConfirmRemove = () => {
+    const {
+      dataSource: { project: projectId, id: dataSourceId },
+    } = this.props;
+
+    this.props.removeDataSource({ projectId, dataSourceId });
   };
 
   renderContentForm = ({ activeStep, ...props }) =>
@@ -105,6 +122,7 @@ export class View extends PureComponent {
         params: { step },
       },
     } = this.props;
+    const { confirmationModalOpen } = this.state;
     const activeStep = parseInt(step, 10);
     const topHeaderConfig = this.getHeaderAndMenuConfig(activeStep);
 
@@ -117,6 +135,19 @@ export class View extends PureComponent {
           dataSource,
           ...this.props,
         })}
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <ModalButton onClick={this.handleCancelRemove}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </ModalButton>
+            <ModalButton onClick={this.handleConfirmRemove}>
+              <FormattedMessage {...messages.confirmRemoval} />
+            </ModalButton>
+          </ModalActions>
+        </Modal>
       </Fragment>
     );
   });

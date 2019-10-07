@@ -81,8 +81,16 @@ export default defineMessages({
     id: `project.view.${HOLD}`,
     defaultMessage: 'Hold',
   },
-  [PUBLISHED]: {
-    id: `project.view.${PUBLISHED}`,
-    defaultMessage: 'Published',
+  removeTitle: {
+    id: 'project.view.removeTitle',
+    defaultMessage: 'Are you sure you want to delete the project?',
+  },
+  cancelRemoval: {
+    id: 'project.view.cancelRemoval',
+    defaultMessage: 'Cancel',
+  },
+  confirmRemoval: {
+    id: 'project.view.confirmRemoval',
+    defaultMessage: 'Confirm',
   },
 });
