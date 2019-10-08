@@ -12,6 +12,7 @@ import { Container } from './dataWranglingResult.styles';
 export class DataWranglingResult extends PureComponent {
   static propTypes = {
     fields: PropTypes.object,
+    dataSource: PropTypes.object,
     previewTable: PropTypes.array,
     fetchResult: PropTypes.func.isRequired,
     unmountResult: PropTypes.func.isRequired,
@@ -22,7 +23,7 @@ export class DataWranglingResult extends PureComponent {
   };
 
   componentDidMount() {
-    this.props.fetchResult(this.props.match.params);
+    this.props.fetchResult({ jobId: this.props.dataSource.jobs[0].id });
   }
 
   componentWillUnmount() {

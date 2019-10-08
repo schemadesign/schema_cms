@@ -7,7 +7,7 @@ function* fetch({ payload }) {
   try {
     yield put(DataWranglingResultRoutines.fetch.request());
 
-    const { data } = yield api.get(`/data-wrangling-result/${payload.dataSourceId}`);
+    const { data } = yield api.get(`/jobs/${payload.jobId}/result-preview`);
 
     yield put(DataWranglingResultRoutines.fetch.success(data));
   } catch (error) {

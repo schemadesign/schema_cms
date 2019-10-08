@@ -16,7 +16,7 @@ describe('DataWranglingResult: sagas', () => {
 
   describe('fetch', () => {
     it('should dispatch a success action', async () => {
-      const payload = { dataSourceId: '1' };
+      const payload = { jobId: '1' };
       const responseData = {
         fields: {
           id: {},
@@ -27,7 +27,7 @@ describe('DataWranglingResult: sagas', () => {
 
       mockApi
         .persist()
-        .get(`/data-wrangling-result/${payload.dataSourceId}`)
+        .get(`/jobs/${payload.jobId}/result-preview`)
         .reply(OK, responseData);
 
       await expectSaga(watchDataWranglingResult)
