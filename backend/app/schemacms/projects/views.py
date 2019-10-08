@@ -154,8 +154,7 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, viewsets.GenericView
             return response.Response(data, status=status.HTTP_200_OK)
         else:
             try:
-                if not hasattr(obj, 'meta_data') and obj.result:
-                    obj.update_meta()
+                obj.update_meta()
                 result = obj.meta_data.data
             except Exception as e:
                 logging.error(f"Not able to showJob {obj.id} results - {e}")
