@@ -295,6 +295,7 @@ class LambdaWorker(core.Stack):
             aws_lambda_event_sources.SqsEventSource(scope.api.job_processing_sqs, batch_size=1)
         )
         scope.base.app_bucket.grant_read_write(self.lambda_worker.role)
+        self.lambda_worker.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
 
 class PublicAPI(core.Stack):
