@@ -61,7 +61,7 @@ def main(event, context):
                 logging.info(f'Script **{step.script.name}** is running.')
                 exec(step.body, globals())
             except Exception as e:
-                logging.critical(f'Error while executing {step.key}')
+                logging.critical(f'Error while executing {step.script.name}')
                 job.job_state = db.JobState.FAILED
                 job.error = f'{e} @ {step.id}'
                 job.save()
