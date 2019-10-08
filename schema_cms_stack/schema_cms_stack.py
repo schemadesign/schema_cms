@@ -273,9 +273,7 @@ class LambdaWorker(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        self.lambda_worker_code = aws_lambda.Code.from_asset(
-            "backend/functions/worker/.serverless/lambda-worker.zip"
-        )
+        self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
         lambda_worker_handler = "handler.main"
         self.lambda_worker = aws_lambda.Function(
             self,
@@ -555,20 +553,22 @@ class CIPipeline(core.Stack):
         self.pipeline.add_stage(
             stage_name="deploy_public_api",
             actions=[
-                # aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
-                #     action_name="prepare_lambda_worker_changes",
-                #     stack_name=scope.lambda_worker.stack_name,
-                #     change_set_name="lambdaWorkerStagedChangeSet",
-                #     admin_permissions=True,
-                #     template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
-                #     run_order=1,
-                #     **scope.public_api.function_code.assign(
-                #         bucket_name=lambda_worker_build_output.s3_location.bucket_name,
-                #         object_key=lambda_worker_build_output.s3_location.object_key,
-                #         object_version=lambda_worker_build_output.s3_location.object_version,
-                #     ),
-                #     extra_inputs=[lambda_worker_build_output],
-                # ),
+                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
+                    action_name="prepare_lambda_worker_changes",
+                    stack_name=scope.lambda_worker.stack_name,
+                    change_set_name="lambdaWorkerStagedChangeSet",
+                    admin_permissions=True,
+                    template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
+                    run_order=1,
+                    parameter_overrides={
+                        **scope.lambda_worker.lambda_worker_code.assign(
+                            bucket_name=lambda_worker_build_output.s3_location.bucket_name,
+                            object_key=lambda_worker_build_output.s3_location.object_key,
+                            object_version=lambda_worker_build_output.s3_location.object_version,
+                        )
+                    },
+                    extra_inputs=[lambda_worker_build_output],
+                ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_public_api_changes",
                     stack_name=scope.public_api.stack_name,
