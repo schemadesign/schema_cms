@@ -1,7 +1,6 @@
 from peewee import *
 
 import settings
-import services
 
 db = Proxy()
 
