@@ -37,7 +37,7 @@ describe('DataWranglingScripts: sagas', () => {
       const payload = { dataSourceId: '1', steps: ['data 1', 'data 2'] };
       const selectedProject = { id: 1, project: 1 };
 
-      mockApi.put(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK);
+      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
