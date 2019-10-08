@@ -10,13 +10,16 @@ phases:
   build:
     commands:
       - echo Build lambda worker function package
+      - mkdir -p backend/functions/build
       - cd backend/functions/worker
       - npm install && node_modules/serverless/bin/serverless package
+      - unzip .serverless/lambda-worker.zip -d ${OLDPATH}/backend/functions/build
   post_build:
     commands:
       - cd ${OLDPATH}
+      - backend/functions/build/lambda-worker.zip
 artifacts:
   name: lambda-worker
   files:
-    - 'backend/functions/worker/.serverless/lambda-worker.zip'
+    - 'backend/functions/build/**/*'
   discard-paths: yes
