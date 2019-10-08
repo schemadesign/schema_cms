@@ -21,4 +21,3 @@ artifacts:
   name: lambda-worker
   files:
     - 'backend/functions/build/**/*'
-  discard-paths: yes
