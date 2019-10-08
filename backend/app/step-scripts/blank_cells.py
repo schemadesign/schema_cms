@@ -1,18 +1,3 @@
-import pandas as pd
-import numpy as np
-
-"""
-Here are some ways to handle blank cells
-    1. Fill Blank cells with any value you want
-    2. Forward or backward fill the values
-    3. Remove rows with Blank cells
-"""
-# Sample dataset
-df = pd.DataFrame(
-    [[np.nan, 2, np.nan, 0], [3, 4, np.nan, 1], [np.nan, np.nan, np.nan, 5], [np.nan, 3, np.nan, 4]],
-    columns=list('ABCD'),
-)
-
 """
 1. Fill
 """
