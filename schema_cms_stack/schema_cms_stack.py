@@ -274,7 +274,7 @@ class LambdaWorker(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
-        lambda_worker_handler = "backend/functions/build/handler.main"
+        lambda_worker_handler = "handler.main"
         self.lambda_worker = aws_lambda.Function(
             self,
             "lambda-worker",
