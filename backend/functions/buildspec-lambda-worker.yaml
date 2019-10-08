@@ -20,4 +20,5 @@ phases:
 artifacts:
   name: lambda-worker
   files:
-    - 'backend/functions/build/**/*'
+    - '**/*'
+  base-directory: backend/functions/build
