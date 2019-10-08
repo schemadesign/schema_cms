@@ -32,7 +32,14 @@ def map_dataframe_dtypes(dtype):
 
 def read_csv_with_encoding(file_field):
     encoding = chardet.detect(file_field.read())["encoding"]
-    data_frame = dd.read_csv(file_field.url, blocksize=25e6, encoding=encoding)
+    data_frame = dd.read_csv(
+        file_field.url,
+        engine="python",
+        sep=None,
+        assume_missing=True,
+        blocksize=25e6,
+        encoding=encoding,
+    )
 
     return data_frame
 
