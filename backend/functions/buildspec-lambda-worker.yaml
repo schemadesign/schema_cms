@@ -17,7 +17,6 @@ phases:
   post_build:
     commands:
       - cd ${OLDPATH}
-      - backend/functions/build/lambda-worker.zip
 artifacts:
   name: lambda-worker
   files:
