@@ -12,8 +12,6 @@ phases:
       - cdk --version
       - pip install -r requirements.txt
       - pip freeze
-      - mkdir -p backend/functions/worker/.serverless
-      - cp ${CODEBUILD_SRC_DIR_Artifact_build_app_build_worker_lambda}/lambda-worker.zip backend/functions/worker/.serverless/lambda-worker.zip
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"
