@@ -37,8 +37,7 @@ def read_csv_with_encoding(file_field):
         engine="python",
         sep=None,
         assume_missing=True,
-        blocksize=25e6,
-        encoding=encoding,
+        encoding=encoding
     )
 
     return data_frame
