@@ -246,7 +246,7 @@ class API(core.Stack):
             },
             secrets={"DJANGO_SECRET_KEY": django_secret_key, "DB_CONNECTION": connection_secret_key, **env},
             cpu=256,
-            memory_limit_mib=512,
+            memory_limit_mib=1024,
         )
 
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
