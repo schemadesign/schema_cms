@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UserCreate Default 1`] = `
+<div
+  className="sc-ibxdXY clQDsv"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    UserCreate component
+  </form>
+</div>
+`;
