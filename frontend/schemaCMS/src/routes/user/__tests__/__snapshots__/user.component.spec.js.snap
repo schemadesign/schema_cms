@@ -1,7 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`User: Component should render correctly 1`] = `
-<styled.div>
-  User component
-</styled.div>
+<Switch>
+  <Redirect
+    exact={true}
+    path="/user"
+    push={false}
+    to="/user/add"
+  />
+  <Route
+    eaxt={true}
+    path="/user/:projectId/add"
+    render={[Function]}
+  />
+  <Route
+    eaxt={true}
+    path="/user/add"
+    render={[Function]}
+  />
+</Switch>
+`;
+
+exports[`User: Component should render correctly with project id 1`] = `
+<Switch>
+  <Redirect
+    exact={true}
+    path="/user/1/add"
+    push={false}
+    to="/user/1/add/add"
+  />
+  <Route
+    eaxt={true}
+    path="/user/1/add/:projectId/add"
+    render={[Function]}
+  />
+  <Route
+    eaxt={true}
+    path="/user/1/add/add"
+    render={[Function]}
+  />
+</Switch>
 `;

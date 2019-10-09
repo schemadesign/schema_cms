@@ -2,8 +2,12 @@
 
 exports[`Storyshots UserCreate Default 1`] = `
 <div
-  className="sc-RefOD kzCQXs"
+  className="sc-ibxdXY clQDsv"
 >
-  UserCreate component
+  <form
+    onSubmit={[Function]}
+  >
+    UserCreate component
+  </form>
 </div>
 `;

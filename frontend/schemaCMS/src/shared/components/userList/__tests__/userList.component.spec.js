@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { UserListComponent as UserList } from '../userList.component';
+import { UserList } from '../userList.component';
 
 describe('UserList: Component', () => {
   const defaultProps = {};
