@@ -220,7 +220,7 @@ class API(core.Stack):
             image=nginx_image,
             desired_count=1,
             cpu=256,
-            memory_limit_mib=512,
+            memory_limit_mib=1024,
             container_name="nginx",
             enable_logging=True,
             container_port=80,
