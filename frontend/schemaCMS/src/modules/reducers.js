@@ -5,6 +5,7 @@ import { reducer as projectReducer } from './project/project.redux';
 import { reducer as dataSourceReducer } from './dataSource/dataSource.redux';
 import { reducer as dataWranglingScriptsReducer } from './dataWranglingScripts/dataWranglingScripts.redux';
 import { reducer as dataWranglingResultReducer } from './dataWranglingResult/dataWranglingResult.redux';
+import { reducer as userReducer } from './user/user.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -16,6 +17,7 @@ export default function createReducer() {
     dataSource: dataSourceReducer,
     dataWranglingScripts: dataWranglingScriptsReducer,
     dataWranglingResult: dataWranglingResultReducer,
+    user: userReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }

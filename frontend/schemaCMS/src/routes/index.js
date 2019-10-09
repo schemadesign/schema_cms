@@ -13,6 +13,7 @@ import { ResetPassword } from './resetPassword';
 import { Logout } from './logout';
 import { DataSource } from './dataSource';
 import { DataWranglingScript } from './dataWranglingScript';
+import { User } from './user';
 
 export const ROUTES = {
   HOME: '/',
@@ -23,6 +24,7 @@ export const ROUTES = {
   LOGOUT: '/logout',
   DATA_SOURCE: '/datasource',
   DATA_WRANGLING_SCRIPTS: '/script',
+  USER: '/user',
 };
 
 export default class RootContainer extends Component {
@@ -44,6 +46,8 @@ export default class RootContainer extends Component {
             <AuthRoute path={ROUTES.USER_PROFILE} component={UserProfile} />
 
             <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
+
+            <AuthRoute path={ROUTES.USER} component={User} />
 
             <Route path={ROUTES.LOGOUT} component={Logout} />
 
