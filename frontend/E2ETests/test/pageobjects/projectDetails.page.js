@@ -1,9 +1,13 @@
 import Page from './page.js';
+import { waitForElement } from '../utils/utils';
+import HeaderComponent from './../pageobjects/components/header.component.js';
+import MenuComponent from './../pageobjects/components/menu.component.js';
 
 class ProjectDetailsPage extends Page {
 
-    get menuBtn() { return $(''); }
-    get headerTitle() { return $(''); }
+    get Header() { return HeaderComponent; }
+    get Menu() { return MenuComponent; }
+
     get datasources() { return $(''); }
     get chart() { return $(''); }
     get pages() { return $(''); }
@@ -16,10 +20,14 @@ class ProjectDetailsPage extends Page {
     get apiPath() { return $(''); }
 
 
-    waitForCreateProjectPageToLoad() {
-        if(!this.finishBtn.isDisplayed()) {
-            this.finishBtn.waitForDisplayed(5000);
-        }
+    openMenu() {
+        waitForElement(this.Header, 'menuBtn');
+        this.Header.menuBtn.click();
+    }
+
+    deleteProject() {
+        waitForElement(this.Menu, 'deleteProjectBtn');
+        this.Menu.deleteProjectBtn.click();
     }
 }
 export default new ProjectDetailsPage();

@@ -14,6 +14,12 @@ Given('I have opened menu', () => {
     ProjectsPage.Header.menuBtn.click();
 });
 
+Given('I am on Projects page', () => {
+    waitForElement(ProjectsPage, 'addProjectBtn');
+
+    expect(browser.getUrl()).to.equal(PROJECTS_PAGE); 
+});
+
 
 When('I click on Menu button', () => {
     waitForElement(ProjectsPage.Header, 'menuBtn');
@@ -24,6 +30,12 @@ When('I close menu', () => {
     waitForElement(ProjectsPage.Menu, 'closeBtn');
     ProjectsPage.Menu.closeBtn.click();
 });
+
+When('I choose to create a project', () => {
+    waitForElement(ProjectsPage, 'addProjectBtn');
+    ProjectsPage.addProjectBtn.click();
+});
+
 
 Then('I am on Projects page', () => {
     waitForElement(ProjectsPage, 'addProjectBtn');
