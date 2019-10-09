@@ -98,7 +98,7 @@ class Workers(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         self.worker_task_definition = aws_ecs.FargateTaskDefinition(
-            self, "worker-task-definition", cpu=256, memory_limit_mib=512
+            self, "worker-task-definition", cpu=256, memory_limit_mib=1024
         )
         scope.base.db.secret.grant_read(self.worker_task_definition.task_role)
 
