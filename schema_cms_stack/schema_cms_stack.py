@@ -98,7 +98,7 @@ class Workers(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         self.worker_task_definition = aws_ecs.FargateTaskDefinition(
-            self, "worker-task-definition", cpu=256, memory_limit_mib=1024
+            self, "worker-task-definition", cpu=256, memory_limit_mib=512
         )
         scope.base.db.secret.grant_read(self.worker_task_definition.task_role)
 
@@ -220,7 +220,7 @@ class API(core.Stack):
             image=nginx_image,
             desired_count=1,
             cpu=256,
-            memory_limit_mib=1024,
+            memory_limit_mib=512,
             container_name="nginx",
             enable_logging=True,
             container_port=80,
@@ -246,7 +246,7 @@ class API(core.Stack):
             },
             secrets={"DJANGO_SECRET_KEY": django_secret_key, "DB_CONNECTION": connection_secret_key, **env},
             cpu=256,
-            memory_limit_mib=1024,
+            memory_limit_mib=512,
         )
 
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
