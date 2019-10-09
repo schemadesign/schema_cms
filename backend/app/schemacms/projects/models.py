@@ -1,8 +1,7 @@
-import chardet
 import json
 import os
 
-import dask.dataframe as dd
+import datatable as dt
 
 import django.core.files.base
 import django_fsm
@@ -30,40 +29,42 @@ def map_dataframe_dtypes(dtype):
         return dtype
 
 
-def read_csv_with_encoding(file_field):
-    encoding = chardet.detect(file_field.read())["encoding"]
-    data_frame = dd.read_csv(
-        file_field.url,
-        engine="python",
-        sep=None,
-        assume_missing=True,
-        encoding=encoding
-    )
-
-    return data_frame
-
-
 def get_preview_data(file_field):
-    data_frame = read_csv_with_encoding(file_field)
+    data_frame = dt.fread(file_field.url)
 
-    shape = data_frame.shape
-    fields = shape[1]
-    items = shape[0].compute()
-    sample_of_5 = data_frame.head(5)
+    items, fields = data_frame.shape
+    sample_of_5 = data_frame.head(5).to_pandas()
 
     table_preview = json.loads(sample_of_5.to_json(orient="records"))
-    fields_info = json.loads(
-        data_frame.describe(include="all", percentiles=[]).compute().to_json(orient="columns")
-    )
     samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
 
-    for key, value in dict(data_frame.dtypes).items():
+    fields_info = {}
+    mean = data_frame.mean().to_dict()
+    min = data_frame.min().to_dict()
+    max = data_frame.max().to_dict()
+    std = data_frame.sd().to_dict()
+    unique = data_frame.nunique().to_dict()
+    columns = data_frame.names
+
+    for i in columns:
+        fields_info[i] = {}
+        fields_info[i]["mean"] = mean[i][0]
+        fields_info[i]["min"] = min[i][0]
+        fields_info[i]["max"] = max[i][0]
+        fields_info[i]["std"] = std[i][0]
+        fields_info[i]["unique"] = unique[i][0]
+        fields_info[i]["count"] = items
+
+    dtypes = {i: k for i, k in zip(columns, data_frame.stypes)}
+    for key, value in dtypes.items():
         fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
 
     for key, value in samples[0].items():
         fields_info[key]["sample"] = value
 
     preview_json = json.dumps({"data": table_preview, "fields": fields_info}, indent=4).encode()
+
+    del data_frame, sample_of_5
 
     return preview_json, items, fields
 
