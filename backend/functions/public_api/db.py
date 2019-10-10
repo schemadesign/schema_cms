@@ -24,13 +24,6 @@ class DataSource(BaseModel):
         table_name = "projects_datasource"
 
 
-class Script(BaseModel):
-    name = CharField()
-
-    class Meta:
-        table_name = "projects_wranglingscript"
-
-
 class Job(BaseModel):
     datasource = ForeignKeyField(DataSource, backref="jobs")
     result = CharField()
@@ -39,16 +32,6 @@ class Job(BaseModel):
 
     class Meta:
         table_name = "projects_datasourcejob"
-
-
-class JobStep(BaseModel):
-    datasource_job = ForeignKeyField(Job, backref="steps")
-    script = ForeignKeyField(Script, backref="steps")
-    body = TextField()
-    exec_order = IntegerField()
-
-    class Meta:
-        table_name = "projects_datasourcejobstep"
 
 
 def get_db_settings():
