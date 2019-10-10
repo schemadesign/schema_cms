@@ -53,7 +53,7 @@ def get_paginated_list(df, url, page, page_size):
         start_copy = max(1, page - 1)
         obj['previous'] = url + '?page=%d&page_size=%d' % (start_copy, page_size)
 
-    if page + page_size > count:
+    if page * page_size > count:
         obj['next'] = None
     else:
         start_copy = page + 1
