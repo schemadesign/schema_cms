@@ -302,25 +302,27 @@ class PublicAPI(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
         self.function_code = aws_lambda.Code.from_cfn_parameters()
-        public_api_lambda_code = aws_lambda.AssetCode("backend/functions/public_api")
-        handler = "handlers.handle"
-        if installation_mode == INSTALLATION_MODE_FULL:
-            public_api_lambda_code = self.function_code
-            handler = "backend/functions/public_api/handlers.handle"
-
+        handler = "handler.main"
         self.public_api_lambda = aws_lambda.Function(
             self,
             "public-api-lambda",
-            code=public_api_lambda_code,
+            code=self.function_code,
             handler=handler,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             vpc=scope.base.vpc,
-            environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
+            environment={
+                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
+                "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+            },
+            memory_size=512,
+            timeout=core.Duration.seconds(30),
+            tracing=aws_lambda.Tracing.ACTIVE,
         )
 
         scope.base.db.secret.grant_read(self.public_api_lambda.role)
+        scope.base.app_bucket.grant_read(self.public_api_lambda.role)
+        self.public_api_lambda.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
         self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
         self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.public_api_lambda)
