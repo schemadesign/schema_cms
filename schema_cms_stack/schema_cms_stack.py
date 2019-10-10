@@ -303,7 +303,7 @@ class PublicAPI(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         self.function_code = aws_lambda.Code.from_cfn_parameters()
-        handler = "handler.main"
+        handler = "wsgi_handler.handler"
         self.public_api_lambda = aws_lambda.Function(
             self,
             "public-api-lambda",
