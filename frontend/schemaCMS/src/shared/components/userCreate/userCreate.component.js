@@ -8,6 +8,7 @@ import { Container, Form } from './userCreate.styles';
 import {
   USER_CREATE_CMS_FORM,
   USER_CREATE_CMS_SCHEME,
+  USER_CREATE_PROJECT_SCHEME,
   NEW_USER_ROLES_OPTIONS,
   USER_ROLE,
 } from '../../../modules/user/user.constants';
@@ -67,14 +68,20 @@ export class UserCreate extends PureComponent {
     );
   };
 
+  renderEmailField = renderWhenTrueOtherwise(
+    () => <TextInput label="Email" onChange={this.props.handleChange} name={EMAIL} {...this.props} checkOnlyErrors />,
+    () => <TextInput label="Email" value={this.props.values[EMAIL]} name={EMAIL} readOnly />
+  );
+
   render() {
-    const { isInvitation, values, handleChange } = this.props;
+    const { isInvitation } = this.props;
+    console.log(this.props);
 
     return (
       <Container>
         <Form onSubmit={this.props.handleSubmit}>
-          {this.renderNameField(isInvitation)}
-          <TextInput label="Email" value={values[EMAIL]} onChange={handleChange} name={EMAIL} />
+          {this.renderNameField(!isInvitation)}
+          {this.renderEmailField(isInvitation)}
           {this.renderSelectOrText(isInvitation)}
           {this.renderNavigation(isInvitation)}
         </Form>
@@ -85,7 +92,6 @@ export class UserCreate extends PureComponent {
 
 export class UserCreateCMS extends PureComponent {
   static propTypes = {
-    user: PropTypes.object.isRequired,
     createUserCMS: PropTypes.func.isRequired,
   };
 
@@ -97,16 +103,17 @@ export class UserCreateCMS extends PureComponent {
         displayName={USER_CREATE_CMS_FORM}
         validationSchema={USER_CREATE_CMS_SCHEME}
         onSubmit={this.handleSubmit}
-        initialValues={{ ...this.props.user }}
-      >
-        {({ handleSubmit, ...restProps }) => <UserCreate handleSubmit={handleSubmit} {...restProps} isInvitation />}
-      </Formik>
+        render={({ handleSubmit, ...restProps }) => (
+          <UserCreate handleSubmit={handleSubmit} {...restProps} isInvitation />
+        )}
+      />
     );
   }
 }
 
 export class UserCreateProject extends PureComponent {
   static propTypes = {
+    user: PropTypes.object.isRequired,
     createUserProject: PropTypes.func.isRequired,
   };
 
@@ -115,15 +122,17 @@ export class UserCreateProject extends PureComponent {
   render() {
     return (
       <Formik
+        isInitialValid
+        enableReinitialize={false}
         displayName={USER_CREATE_CMS_FORM}
-        validationSchema={USER_CREATE_CMS_SCHEME}
+        validationSchema={USER_CREATE_PROJECT_SCHEME}
         onSubmit={this.handleSubmit}
         initialValues={{
+          ...this.props.user,
           [USER_ROLE]: prop('label')(find(propEq('value', ROLES.EDITOR), NEW_USER_ROLES_OPTIONS)),
         }}
-      >
-        {({ handleSubmit, ...restProps }) => <UserCreate handleSubmit={handleSubmit} {...restProps} />}
-      </Formik>
+        render={({ handleSubmit, ...restProps }) => <UserCreate handleSubmit={handleSubmit} {...restProps} />}
+      />
     );
   }
 }

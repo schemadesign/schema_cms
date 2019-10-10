@@ -19,3 +19,12 @@ export const USER_CREATE_CMS_SCHEME = Yup.object().shape({
     .email('Invalid email')
     .notRequired(),
 });
+
+export const USER_CREATE_PROJECT_SCHEME = Yup.object().shape({
+  [USER_ROLE]: Yup.string()
+    .ensure()
+    .required('Required'),
+  [EMAIL]: Yup.string()
+    .email('Invalid email')
+    .notRequired(),
+});

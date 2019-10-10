@@ -53,7 +53,6 @@ Content-Type application/json
             "mean": 1.0,
             "std": null,
             "min": 1.0,
-            "50%": 1.0,
             "max": 1.0,
             "dtype": "int64",
             "sample": 1
@@ -63,7 +62,6 @@ Content-Type application/json
             "mean": 10.0,
             "std": null,
             "min": 10.0,
-            "50%": 10.0,
             "max": 10.0,
             "dtype": "int64",
             "sample": 10
