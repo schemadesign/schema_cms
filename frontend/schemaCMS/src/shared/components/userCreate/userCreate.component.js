@@ -75,7 +75,6 @@ export class UserCreate extends PureComponent {
 
   render() {
     const { isInvitation } = this.props;
-    console.log(this.props);
 
     return (
       <Container>
