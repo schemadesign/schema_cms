@@ -16,7 +16,7 @@ app = Flask(__name__)
 db.initialize()
 
 
-@app.route("/datasources/<int:data_source_id>")
+@app.route("/datasources/<int:data_source_id>", methods=['GET'])
 def data_source_results(data_source_id):
     try:
         last_result = db.Job.select().where(
