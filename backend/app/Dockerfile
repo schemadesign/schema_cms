@@ -17,4 +17,4 @@ EXPOSE 8000
 CMD ./manage.py migrate && \
     ./manage.py initialuser && \
     ./manage.py loadscripts && \
-    gunicorn --bind 0.0.0.0:8000 --access-logfile --timeout 60 - schemacms.wsgi:application
+    gunicorn --bind 0.0.0.0:8000 --timeout 60 --access-logfile  - schemacms.wsgi:application
