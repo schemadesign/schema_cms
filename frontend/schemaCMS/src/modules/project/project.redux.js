@@ -15,21 +15,24 @@ export const ProjectRoutines = {
 export const INITIAL_STATE = new Immutable({
   projects: [],
   project: {},
+  isFetched: false,
 });
 
-const updateList = (state = INITIAL_STATE, { payload }) => state.set('projects', payload);
+const updateList = (state = INITIAL_STATE, { payload }) => state.set('projects', payload).set('isFetched', true);
 
 const createProjectSuccess = (state = INITIAL_STATE, { payload }) =>
-  state.merge({ projects: state.projects.concat(payload) });
+  state.merge({ projects: state.projects.concat(payload) }).set('isFetched', true);
 
-const updateOne = (state = INITIAL_STATE, { payload }) => state.set('project', payload);
+const updateOne = (state = INITIAL_STATE, { payload }) => state.set('project', payload).set('isFetched', true);
 
-const unmountOne = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project);
+const unmountOne = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project).set('isFetched', false);
+
+const onFailure = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project).set('isFetched', true);
 
 export const reducer = createReducer(INITIAL_STATE, {
   [ProjectRoutines.fetchList.SUCCESS]: updateList,
   [ProjectRoutines.fetchOne.SUCCESS]: updateOne,
-  [ProjectRoutines.fetchOne.FAILURE]: updateOne,
+  [ProjectRoutines.fetchOne.FAILURE]: onFailure,
   [ProjectRoutines.unmountOne.TRIGGER]: unmountOne,
   [ProjectRoutines.createProject.SUCCESS]: createProjectSuccess,
 });

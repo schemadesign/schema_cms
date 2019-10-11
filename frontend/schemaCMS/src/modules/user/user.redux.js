@@ -1,14 +1,8 @@
-import { createActions, createReducer } from 'reduxsauce';
+import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
 
 const PREFIX = 'USER/';
-export const { Types: UserTypes, Creators: UserActions } = createActions(
-  {
-    noop: null, // TODO: remove this action
-  },
-  { PREFIX }
-);
 
 export const UserRoutines = {
   createUserProject: createRoutine(`${PREFIX}CREATE_USER_PROJECT`),

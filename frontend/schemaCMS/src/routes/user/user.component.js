@@ -5,6 +5,8 @@ import { UserCreateProject, UserCreateCMS } from '../../shared/components/userCr
 
 export class User extends PureComponent {
   static propTypes = {
+    createUserProject: PropTypes.func.isRequired,
+    createUserCMS: PropTypes.func.isRequired,
     match: PropTypes.shape({
       path: PropTypes.string.isRequired,
     }).isRequired,
@@ -21,8 +23,8 @@ export class User extends PureComponent {
     return (
       <Switch>
         <Redirect exact path={path} to={add} />
-        <Route eaxt path={withProjectId} render={() => <UserCreateProject {...this.props} />} />
-        <Route eaxt path={add} render={() => <UserCreateCMS {...this.props} />} />
+        <Route exact path={withProjectId} render={({ match }) => <UserCreateProject {...this.props} match={match} />} />
+        <Route exact path={add} render={() => <UserCreateCMS {...this.props} />} />
       </Switch>
     );
   }
