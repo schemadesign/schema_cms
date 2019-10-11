@@ -360,6 +360,7 @@ exports[`Storyshots UserProfile Default 1`] = `
           id="email"
           name="email"
           onChange={[Function]}
+          readOnly={true}
           style={
             Object {
               "backgroundColor": "transparent",

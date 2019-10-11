@@ -139,7 +139,7 @@ export class UserCreateProject extends PureComponent {
     fetchProject: PropTypes.func.isRequired,
     clearProject: PropTypes.func.isRequired,
     match: PropTypes.shape({
-      path: PropTypes.string.isRequired,
+      params: PropTypes.object.isRequired,
     }).isRequired,
   };
 

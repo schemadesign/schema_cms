@@ -2,11 +2,82 @@
 
 exports[`UserCreate: Component should render correctly 1`] = `
 <styled.div>
-  <form
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="You are adding {user} to {project}"
+        id="userList.addUser"
+        values={
+          Object {
+            "project": "",
+            "user": "",
+          }
+        }
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userList.pageTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.form
     onSubmit={[Function]}
   >
-    UserCreate component
-  </form>
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      label="Name"
+      name="firstName"
+      onChange={[Function]}
+      readOnly={true}
+      touched={Object {}}
+      value="undefined undefined"
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      label="Email"
+      name="email"
+      onChange={[Function]}
+      readOnly={true}
+      touched={Object {}}
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      label="Role"
+      name="role"
+      onChange={[Function]}
+      readOnly={true}
+      touched={Object {}}
+    />
+    <NavigationContainer
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="userList.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Add"
+          id="userList.add"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
 </styled.div>
 `;
 
@@ -16,6 +87,7 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
   enableReinitialize={false}
   isInitialValid={false}
   onSubmit={[Function]}
+  render={[Function]}
   validateOnBlur={true}
   validateOnChange={true}
   validationSchema={
@@ -110,17 +182,21 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
       ],
     }
   }
->
-  <Component />
-</Formik>
+/>
 `;
 
 exports[`UserCreateProject: Component should render correctly 1`] = `
 <Formik
   displayName="user_create_cms_form"
   enableReinitialize={false}
-  isInitialValid={false}
+  initialValues={
+    Object {
+      "role": "Editor",
+    }
+  }
+  isInitialValid={true}
   onSubmit={[Function]}
+  render={[Function]}
   validateOnBlur={true}
   validateOnChange={true}
   validationSchema={
@@ -215,7 +291,5 @@ exports[`UserCreateProject: Component should render correctly 1`] = `
       ],
     }
   }
->
-  <Component />
-</Formik>
+/>
 `;

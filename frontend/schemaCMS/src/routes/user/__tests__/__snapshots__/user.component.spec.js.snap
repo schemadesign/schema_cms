@@ -9,12 +9,12 @@ exports[`User: Component should render correctly 1`] = `
     to="/user/add"
   />
   <Route
-    eaxt={true}
+    exact={true}
     path="/user/add/:projectId"
     render={[Function]}
   />
   <Route
-    eaxt={true}
+    exact={true}
     path="/user/add"
     render={[Function]}
   />
@@ -30,12 +30,12 @@ exports[`User: Component should render correctly with project id 1`] = `
     to="/user/1/add/add"
   />
   <Route
-    eaxt={true}
+    exact={true}
     path="/user/1/add/add/:projectId"
     render={[Function]}
   />
   <Route
-    eaxt={true}
+    exact={true}
     path="/user/1/add/add"
     render={[Function]}
   />

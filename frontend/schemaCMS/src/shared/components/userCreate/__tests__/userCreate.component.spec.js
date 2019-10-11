@@ -2,12 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { UserCreate, UserCreateCMS, UserCreateProject } from '../userCreate.component';
+import { defaultProps, userCreateCMSProps, userCreateProjectProps } from '../userCreate.stories';
 
 describe('UserCreate: Component', () => {
-  const defaultProps = {
-    handleSubmit: Function.prototype,
-  };
-
   const component = props => <UserCreate {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
@@ -19,11 +16,7 @@ describe('UserCreate: Component', () => {
 });
 
 describe('UserCreateCMS: Component', () => {
-  const defaultProps = {
-    createUserCMS: Function.prototype,
-  };
-
-  const component = props => <UserCreateCMS {...defaultProps} {...props} />;
+  const component = props => <UserCreateCMS {...userCreateCMSProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
@@ -34,11 +27,7 @@ describe('UserCreateCMS: Component', () => {
 });
 
 describe('UserCreateProject: Component', () => {
-  const defaultProps = {
-    createUserProject: Function.prototype,
-  };
-
-  const component = props => <UserCreateProject {...defaultProps} {...props} />;
+  const component = props => <UserCreateProject {...userCreateProjectProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
