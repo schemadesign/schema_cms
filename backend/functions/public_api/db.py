@@ -36,9 +36,9 @@ class Job(BaseModel):
 
 def get_db_settings():
     return dict(
-        database=settings.DB_NAME,
+        database=settings.DB_CONNECTION["dbname"],
         user=settings.DB_CONNECTION["username"],
-        password=settings.DB_CONNECTION["password"],
+        password=settings.DB_PASSWORD,
         host=settings.DB_CONNECTION["host"],
         port=settings.DB_CONNECTION["port"],
         connect_timeout=settings.DB_CONNECTION.get("connect_timeout", 5)

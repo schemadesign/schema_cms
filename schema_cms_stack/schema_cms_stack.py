@@ -283,7 +283,7 @@ class LambdaWorker(core.Stack):
             handler=lambda_worker_handler,
             environment={
                 "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
-                "DB_NAME": DB_NAME,
+                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
             },
             memory_size=768,
@@ -315,7 +315,7 @@ class PublicAPI(core.Stack):
             vpc=scope.base.vpc,
             environment={
                 "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
-                "DB_NAME": DB_NAME,
+                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
             },
             memory_size=512,
