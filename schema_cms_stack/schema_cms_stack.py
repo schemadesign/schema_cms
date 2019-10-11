@@ -326,7 +326,9 @@ class PublicAPI(core.Stack):
 
         self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
         self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.public_api_lambda)
-        self.publicApiGateway.root.add_resource("datasources").add_method("GET", self.publicApiLambdaIntegration)
+        self.publicApiGateway.root.add_resource(
+            "datasources"
+        ).add_resource("{data_source_id}").add_method("GET", self.publicApiLambdaIntegration)
 
 
 class CIPipeline(core.Stack):
