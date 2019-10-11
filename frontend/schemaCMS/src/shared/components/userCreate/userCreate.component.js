@@ -20,19 +20,34 @@ import { Select } from '../form/select';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
 
 import messages from './userCreate.messages';
+import { TopHeader } from '../topHeader';
 
 export class UserCreate extends PureComponent {
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
+    headerValues: PropTypes.object,
     isInvitation: PropTypes.bool,
     values: PropTypes.object.isRequired,
   };
 
   static defaultProps = {
     isInvitation: false,
+    headerValues: {},
   };
+
+  getHeaderAndMenuConfig = ({ project, user }) =>
+    renderWhenTrueOtherwise(
+      () => ({
+        headerTitle: <FormattedMessage {...messages.pageTitle} />,
+        headerSubtitle: <FormattedMessage {...messages.pageSubTitle} />,
+      }),
+      () => ({
+        headerTitle: <FormattedMessage {...messages.pageTitle} />,
+        headerSubtitle: <FormattedMessage {...messages.addUser} values={{ project, user }} />,
+      })
+    );
 
   handleSelectStatus = ({ value }) => this.props.setFieldValue(USER_ROLE, value);
 
@@ -75,10 +90,11 @@ export class UserCreate extends PureComponent {
   );
 
   render() {
-    const { isInvitation } = this.props;
+    const { isInvitation, headerValues } = this.props;
 
     return (
       <Container>
+        <TopHeader {...this.getHeaderAndMenuConfig(headerValues)(isInvitation)} />
         <Form onSubmit={this.props.handleSubmit}>
           {this.renderNameField(!isInvitation)}
           {this.renderEmailField(isInvitation)}
@@ -144,6 +160,12 @@ export class UserCreateProject extends PureComponent {
   handleSubmit = values => this.props.createUserProject(values);
 
   render() {
+    const { project, user } = this.props;
+    const headerValues = {
+      project: project.title,
+      user: `${user.firstName} ${user.lastName}`,
+    };
+
     return (
       <Formik
         isInitialValid
@@ -155,7 +177,9 @@ export class UserCreateProject extends PureComponent {
           ...this.props.user,
           [USER_ROLE]: prop('label')(find(propEq('value', ROLES.EDITOR), NEW_USER_ROLES_OPTIONS)),
         }}
-        render={({ handleSubmit, ...restProps }) => <UserCreate handleSubmit={handleSubmit} {...restProps} />}
+        render={({ handleSubmit, ...restProps }) => (
+          <UserCreate handleSubmit={handleSubmit} headerValues={headerValues} {...restProps} />
+        )}
       />
     );
   }

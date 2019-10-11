@@ -14,4 +14,16 @@ export default defineMessages({
     id: 'userList.cancel',
     defaultMessage: 'Cancel',
   },
+  pageTitle: {
+    id: 'userList.pageTitle',
+    defaultMessage: 'Users',
+  },
+  pageSubTitle: {
+    id: 'userList.pageSubTitle',
+    defaultMessage: 'Invite a User to SchemaCMS',
+  },
+  addUser: {
+    id: 'userList.addUser',
+    defaultMessage: 'You are adding {user} to {project}',
+  },
 });
