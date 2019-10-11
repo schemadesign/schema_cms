@@ -282,6 +282,7 @@ class LambdaWorker(core.Stack):
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             handler=lambda_worker_handler,
             environment={
+                "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
                 "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
             },
@@ -294,6 +295,7 @@ class LambdaWorker(core.Stack):
         self.lambda_worker.add_event_source(
             aws_lambda_event_sources.SqsEventSource(scope.api.job_processing_sqs, batch_size=1)
         )
+        scope.base.db.secret.grant_read(self.lambda_worker.role)
         scope.base.app_bucket.grant_read_write(self.lambda_worker.role)
         self.lambda_worker.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
@@ -313,7 +315,7 @@ class PublicAPI(core.Stack):
             vpc=scope.base.vpc,
             environment={
                 "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
-                "DB_NAME": DB_NAME,
+                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
             },
             memory_size=512,
