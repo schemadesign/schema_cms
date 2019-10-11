@@ -1,9 +1,8 @@
 import json
 import os
-from services import secret_manager
 
 
-DB_PASSWORD = secret_manager.get_secret_value(os.getenv('DB_SECRET_ARN'))["SecretString"]
+DB_SECRET_ARN = os.getenv('DB_SECRET_ARN')
 
 DB_CONNECTION = json.loads(os.getenv('DB_CONNECTION', '{}'))
 
