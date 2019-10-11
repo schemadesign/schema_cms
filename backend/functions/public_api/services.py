@@ -12,3 +12,5 @@ s3_resource = boto3.resource(
     "s3",
     endpoint_url=settings.AWS_S3_ENDPOINT_URL,
 )
+
+secret_manager = boto3.client('secretsmanager')
