@@ -1,8 +1,8 @@
-import json
 import os
 
 
-DB_CONNECTION = json.loads(os.getenv('DB_CONNECTION', '{}'))
+DB_CONNECTION = os.getenv('DB_CONNECTION')
+DB_NAME = os.getenv('DB_NAME')
 
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')

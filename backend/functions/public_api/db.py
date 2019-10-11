@@ -36,7 +36,7 @@ class Job(BaseModel):
 
 def get_db_settings():
     return dict(
-        database=settings.DB_CONNECTION["dbname"],
+        database=settings.DB_NAME,
         user=settings.DB_CONNECTION["username"],
         password=settings.DB_CONNECTION["password"],
         host=settings.DB_CONNECTION["host"],
