@@ -1,3 +1,5 @@
+import json
+
 from peewee import *
 
 import settings
@@ -37,7 +39,7 @@ class Job(BaseModel):
 
 def get_db_settings():
     arn = secret_manager.get_secret_value(SecretId=settings.DB_SECRET_ARN)
-    secret_data = arn['SecretString']
+    secret_data = json.loads(arn['SecretString'])
 
     return dict(
         database=settings.DB_CONNECTION["dbname"],
