@@ -311,6 +311,11 @@ class PublicAPI(core.Stack):
             handler=handler,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             vpc=scope.base.vpc,
+            environment={
+                "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
+                "DB_NAME": DB_NAME,
+                "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+            },
             memory_size=512,
             timeout=core.Duration.seconds(30),
             tracing=aws_lambda.Tracing.ACTIVE,
@@ -319,11 +324,6 @@ class PublicAPI(core.Stack):
         scope.base.db.secret.grant_read(self.public_api_lambda.role)
         scope.base.app_bucket.grant_read(self.public_api_lambda.role)
 
-        self.public_api_lambda.add_environment(**{
-                "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
-                "DB_NAME": DB_NAME,
-                "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
-            })
         self.public_api_lambda.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
         self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
