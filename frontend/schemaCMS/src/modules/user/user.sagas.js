@@ -1,33 +1,34 @@
-import { all, takeLatest } from 'redux-saga/effects';
+import { all, takeLatest, put } from 'redux-saga/effects';
+import api from '../../shared/services/api';
 
 import { UserRoutines } from './user.redux';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
 
 function* createUserCMS({ payload }) {
   try {
-    yield UserRoutines.createUserCMS.request();
+    yield put(UserRoutines.createUserCMS.request());
 
     yield api.post('/users', payload);
 
-    yield UserRoutines.createUserCMS.success();
+    yield put(UserRoutines.createUserCMS.success());
   } catch (error) {
-    yield UserRoutines.createUserCMS.failure(error);
+    yield put(UserRoutines.createUserCMS.failure());
   } finally {
-    yield UserRoutines.createUserCMS.fulfill();
+    yield put(UserRoutines.createUserCMS.fulfill());
   }
 }
 
 function* createUserProject({ payload: { projectId, userId } }) {
   try {
-    yield UserRoutines.createUserProject.request();
+    yield put(UserRoutines.createUserProject.request());
 
     yield api.post(`${PROJECTS_PATH}/${projectId}`, { userId });
 
-    yield UserRoutines.createUserProject.success();
+    yield put(UserRoutines.createUserProject.success());
   } catch (error) {
-    yield UserRoutines.createUserProject.failure(error);
+    yield put(UserRoutines.createUserProject.failure());
   } finally {
-    yield UserRoutines.createUserProject.fulfill();
+    yield put(UserRoutines.createUserProject.fulfill());
   }
 }
 
