@@ -34,7 +34,10 @@ export class UserCreate extends PureComponent {
 
   static defaultProps = {
     isInvitation: false,
-    headerValues: {},
+    headerValues: {
+      project: '',
+      user: '',
+    },
   };
 
   getHeaderAndMenuConfig = ({ project, user }) =>
