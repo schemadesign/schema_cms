@@ -2,7 +2,8 @@ import json
 import os
 
 
-DB_PASSWORD = os.getenv('DB_SECRET_ARN')
+DB_SECRET_ARN = os.getenv('DB_SECRET_ARN')
+
 DB_CONNECTION = json.loads(os.getenv('DB_CONNECTION', '{}'))
 
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
