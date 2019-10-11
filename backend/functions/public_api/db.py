@@ -1,6 +1,7 @@
 from peewee import *
 
 import settings
+from services import secret_manager
 
 db = Proxy()
 
@@ -35,10 +36,13 @@ class Job(BaseModel):
 
 
 def get_db_settings():
+    arn = secret_manager.get_secret_value(SecretId=settings.DB_SECRET_ARN)
+    secret_data = arn['SecretString']
+
     return dict(
         database=settings.DB_CONNECTION["dbname"],
         user=settings.DB_CONNECTION["username"],
-        password=settings.DB_PASSWORD["password"],
+        password=secret_data["password"],
         host=settings.DB_CONNECTION["host"],
         port=settings.DB_CONNECTION["port"],
         connect_timeout=settings.DB_CONNECTION.get("connect_timeout", 5)
