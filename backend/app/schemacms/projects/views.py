@@ -57,6 +57,24 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
                 status.HTTP_400_BAD_REQUEST
             )
 
+    @decorators.action(detail=True, url_path="add-editor", methods=["post"])
+    def add_editor(self, request, pk=None, **kwargs):
+        project = self.get_object()
+        editor_to_add = request.data.get("id", None)
+
+        if editor_to_add:
+            project.editors.add(editor_to_add)
+
+            return response.Response(
+                f"Editor {editor_to_add} has been added to project {project.id}",
+                status=status.HTTP_200_OK
+            )
+        else:
+            return response.Response(
+                "Please enter the user 'id' you want to add.",
+                status.HTTP_400_BAD_REQUEST
+            )
+
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
