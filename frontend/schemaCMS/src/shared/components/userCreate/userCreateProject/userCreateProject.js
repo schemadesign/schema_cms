@@ -6,7 +6,7 @@ import { Formik } from 'formik';
 import browserHistory from '../../../utils/history';
 import {
   NEW_USER_ROLES_OPTIONS,
-  USER_CREATE_CMS_FORM,
+  USER_CREATE_PROJECT_FORM,
   USER_CREATE_PROJECT_SCHEME,
   USER_ROLE,
 } from '../../../../modules/user/user.constants';
@@ -56,7 +56,7 @@ export class UserCreateProject extends PureComponent {
       <Formik
         isInitialValid
         enableReinitialize={false}
-        displayName={USER_CREATE_CMS_FORM}
+        displayName={USER_CREATE_PROJECT_FORM}
         validationSchema={USER_CREATE_PROJECT_SCHEME}
         onSubmit={this.handleSubmit}
         initialValues={{

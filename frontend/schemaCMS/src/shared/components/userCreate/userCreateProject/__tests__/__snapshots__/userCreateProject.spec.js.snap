@@ -2,7 +2,7 @@
 
 exports[`UserCreateProject: Component should render correctly 1`] = `
 <Formik
-  displayName="user_create_cms_form"
+  displayName="user_create_project_form"
   enableReinitialize={false}
   initialValues={
     Object {
