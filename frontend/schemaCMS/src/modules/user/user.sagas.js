@@ -32,9 +32,24 @@ function* createUserProject({ payload: { projectId, userId } }) {
   }
 }
 
+function* fetchUser({ payload: { userId } }) {
+  try {
+    yield put(UserRoutines.fetchUser.request());
+
+    const { data } = yield api.get(`users/${userId}`);
+
+    yield put(UserRoutines.fetchUser.success(data));
+  } catch (error) {
+    yield put(UserRoutines.fetchUser.failure());
+  } finally {
+    yield put(UserRoutines.fetchUser.fulfill());
+  }
+}
+
 export function* watchUser() {
   yield all([
     takeLatest(UserRoutines.createUserCMS.TRIGGER, createUserCMS),
     takeLatest(UserRoutines.createUserProject.TRIGGER, createUserProject),
+    takeLatest(UserRoutines.fetchUser.TRIGGER, fetchUser),
   ]);
 }

@@ -1,110 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UserCreateProject: Component should render correctly 1`] = `
-<Formik
-  displayName="user_create_project_form"
-  enableReinitialize={false}
-  initialValues={
-    Object {
-      "role": "Editor",
-    }
-  }
-  isInitialValid={true}
-  onSubmit={[Function]}
-  render={[Function]}
-  validateOnBlur={true}
-  validateOnChange={true}
-  validationSchema={
-    ObjectSchema {
-      "_blacklist": RefSet {
-        "list": Set {},
-        "refs": Map {},
-      },
-      "_conditions": Array [],
-      "_defaultDefault": [Function],
-      "_deps": Array [],
-      "_excludedEdges": Array [],
-      "_exclusive": Object {},
-      "_mutate": undefined,
-      "_nodes": Array [
-        "email",
-        "role",
-      ],
-      "_options": Object {
-        "abortEarly": true,
-        "recursive": true,
-      },
-      "_type": "object",
-      "_typeError": [Function],
-      "_whitelist": RefSet {
-        "list": Set {},
-        "refs": Map {},
-      },
-      "fields": Object {
-        "email": StringSchema {
-          "_blacklist": RefSet {
-            "list": Set {},
-            "refs": Map {},
-          },
-          "_conditions": Array [],
-          "_deps": Array [],
-          "_exclusive": Object {
-            "undefined": false,
-          },
-          "_mutate": undefined,
-          "_options": Object {
-            "abortEarly": true,
-            "recursive": true,
-          },
-          "_type": "string",
-          "_typeError": [Function],
-          "_whitelist": RefSet {
-            "list": Set {},
-            "refs": Map {},
-          },
-          "tests": Array [
-            [Function],
-          ],
-          "transforms": Array [
-            [Function],
-          ],
-        },
-        "role": StringSchema {
-          "_blacklist": RefSet {
-            "list": Set {},
-            "refs": Map {},
-          },
-          "_conditions": Array [],
-          "_default": "",
-          "_deps": Array [],
-          "_exclusive": Object {
-            "required": true,
-          },
-          "_mutate": undefined,
-          "_options": Object {
-            "abortEarly": true,
-            "recursive": true,
-          },
-          "_type": "string",
-          "_typeError": [Function],
-          "_whitelist": RefSet {
-            "list": Set {},
-            "refs": Map {},
-          },
-          "tests": Array [
-            [Function],
-          ],
-          "transforms": Array [
-            [Function],
-            [Function],
-          ],
-        },
-      },
-      "tests": Array [],
-      "transforms": Array [
-        [Function],
-      ],
-    }
-  }
-/>
+<styled.div>
+  <FormattedMessage
+    defaultMessage="Loading..."
+    id="userCreateProject.loading"
+    values={Object {}}
+  />
+</styled.div>
 `;

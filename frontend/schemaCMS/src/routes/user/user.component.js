@@ -17,7 +17,7 @@ export class User extends PureComponent {
       match: { path },
     } = this.props;
 
-    const withProjectId = `${path}/add/:projectId`;
+    const withProjectId = `${path}/:userId/add/:projectId`;
     const add = `${path}/add`;
 
     return (

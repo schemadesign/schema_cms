@@ -10,7 +10,7 @@ exports[`User: Component should render correctly 1`] = `
   />
   <Route
     exact={true}
-    path="/user/add/:projectId"
+    path="/user/:userId/add/:projectId"
     render={[Function]}
   />
   <Route
@@ -31,7 +31,7 @@ exports[`User: Component should render correctly with project id 1`] = `
   />
   <Route
     exact={true}
-    path="/user/1/add/add/:projectId"
+    path="/user/1/add/:userId/add/:projectId"
     render={[Function]}
   />
   <Route

@@ -1,10 +1,12 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { reducer as userReducer, UserActions, UserTypes } from '../user.redux';
+import { reducer as userReducer } from '../user.redux';
 
 describe('User: redux', () => {
-  const state = Immutable({});
+  const state = Immutable({
+    user: {},
+  });
 
   describe('reducer', () => {
     it('should return initial state', () => {

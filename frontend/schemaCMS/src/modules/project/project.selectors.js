@@ -12,8 +12,3 @@ export const selectProject = createSelector(
   selectProjectDomain,
   prop('project')
 );
-
-export const selectProjectFetched = createSelector(
-  selectProjectDomain,
-  prop('isFetched')
-);

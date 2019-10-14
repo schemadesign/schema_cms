@@ -6,14 +6,12 @@ import { compose } from 'ramda';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { User } from './user.component';
-import { UserRoutines } from '../../modules/user';
-import { selectUserData } from '../../modules/userProfile';
-import { ProjectRoutines, selectProject, selectProjectFetched } from '../../modules/project';
+import { UserRoutines, selectUser } from '../../modules/user';
+import { ProjectRoutines, selectProject } from '../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
-  user: selectUserData,
+  user: selectUser,
   project: selectProject,
-  isFetched: selectProjectFetched,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -22,7 +20,9 @@ export const mapDispatchToProps = dispatch => ({
       createUserProject: promisifyRoutine(UserRoutines.createUserProject),
       createUserCMS: promisifyRoutine(UserRoutines.createUserCMS),
       fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
+      fetchUser: promisifyRoutine(UserRoutines.fetchUser),
       clearProject: promisifyRoutine(ProjectRoutines.unmountOne),
+      clearUser: promisifyRoutine(UserRoutines.unmountUser),
     },
     dispatch
   ),
