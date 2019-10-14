@@ -162,7 +162,7 @@ id    | string  | Yes      | User ID.
 
 ```json
 Content-Type application/json
-202 Accepted
+200 OK
 ```
 
 ## Enums
