@@ -43,24 +43,27 @@ class TestUserDetailView:
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
-    @pytest.mark.parametrize(
-        "old_role, new_role",
-        [
-            (user_constants.UserRole.ADMIN, user_constants.UserRole.EDITOR),
-            (user_constants.UserRole.EDITOR, user_constants.UserRole.ADMIN),
-        ],
-    )
-    def test_update_user_role_by_admin(self, api_client, faker, user_factory, old_role, new_role):
+    def test_update_editor_role_to_admin_by_admin(self, api_client, faker, user_factory):
         user = user_factory(admin=True)
-        other_user = user_factory(role=old_role)
-        payload = {"role": new_role}
+        other_user = user_factory(editor=True)
+        payload = {"role": user_constants.UserRole.ADMIN}
         api_client.force_authenticate(user)
 
         response = api_client.patch(self.get_url(other_user.pk), payload)
-
         assert response.status_code == status.HTTP_200_OK
         other_user.refresh_from_db()
-        assert other_user.role == new_role
+        assert other_user.role == user_constants.UserRole.ADMIN
+
+    def test_downgrade_admin_role_to_editor_by_admin(self, api_client, faker, user_factory):
+        user = user_factory(admin=True)
+        other_user = user_factory(admin=True)
+        payload = {"role": user_constants.UserRole.EDITOR}
+        api_client.force_authenticate(user)
+
+        response = api_client.patch(self.get_url(other_user.pk), payload)
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+        other_user.refresh_from_db()
+        assert other_user.role == user_constants.UserRole.ADMIN
 
     def test_url(self, user):
         assert "/api/v1/users/{}".format(user.pk) == self.get_url(pk=user.pk)
