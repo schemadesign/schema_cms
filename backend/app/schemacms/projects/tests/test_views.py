@@ -296,6 +296,37 @@ class TestRemoveEditorFromProject:
         return reverse("projects:project-remove-editor", kwargs=dict(pk=pk))
 
 
+class TestAddEditorToProject:
+    def test_admin_can_add_editor(self, api_client, user, user_factory, project_factory):
+        user1 = user_factory(editor=True)
+        user2 = user_factory(editor=True)
+        project = project_factory(editors=[user1])
+        pyload = {"id": user2.id}
+
+        api_client.force_authenticate(user)
+        response = api_client.post(self.get_url(project.id), pyload)
+        project.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert project.editors.count() == 2
+
+    def test_editor_cant_add_editor(self, api_client, user_factory, project_factory):
+        user1 = user_factory(editor=True)
+        user2 = user_factory(editor=True)
+        project = project_factory(editors=[user1])
+        pyload = {"id": user2.id}
+
+        api_client.force_authenticate(user1)
+        response = api_client.post(self.get_url(project.id), pyload)
+        project.refresh_from_db()
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:project-add-editor", kwargs=dict(pk=pk))
+
+
 class TestCreateDraftDataSourceView:
     def test_empty_payload(self, api_client, admin, project):
         api_client.force_authenticate(admin)
