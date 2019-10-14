@@ -1,26 +1,17 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
-import { find, isEmpty, prop, propEq } from 'ramda';
 
-import browserHistory from '../../utils/history';
 import { Container, Form } from './userCreate.styles';
-import {
-  USER_CREATE_CMS_FORM,
-  USER_CREATE_CMS_SCHEME,
-  USER_CREATE_PROJECT_SCHEME,
-  NEW_USER_ROLES_OPTIONS,
-  USER_ROLE,
-} from '../../../modules/user/user.constants';
-import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
-import { TextInput } from '../form/inputs/textInput';
-import { EMAIL, FIRST_NAME, LAST_NAME, ROLES } from '../../../modules/userProfile/userProfile.constants';
-import { Select } from '../form/select';
-import { BackButton, NavigationContainer, NextButton } from '../navigation';
+import { NEW_USER_ROLES_OPTIONS, USER_ROLE } from '../../../../modules/user/user.constants';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../utils/rendering';
+import { TextInput } from '../../form/inputs/textInput';
+import { EMAIL, FIRST_NAME, LAST_NAME } from '../../../../modules/userProfile/userProfile.constants';
+import { Select } from '../../form/select';
+import { BackButton, NavigationContainer, NextButton } from '../../navigation';
 
 import messages from './userCreate.messages';
-import { TopHeader } from '../topHeader';
+import { TopHeader } from '../../topHeader';
 
 export class UserCreate extends PureComponent {
   static propTypes = {
@@ -105,85 +96,6 @@ export class UserCreate extends PureComponent {
           {this.renderNavigation(isInvitation)}
         </Form>
       </Container>
-    );
-  }
-}
-
-export class UserCreateCMS extends PureComponent {
-  static propTypes = {
-    createUserCMS: PropTypes.func.isRequired,
-  };
-
-  handleSubmit = values => this.props.createUserCMS(values);
-
-  render() {
-    return (
-      <Formik
-        displayName={USER_CREATE_CMS_FORM}
-        validationSchema={USER_CREATE_CMS_SCHEME}
-        onSubmit={this.handleSubmit}
-        render={({ handleSubmit, ...restProps }) => (
-          <UserCreate handleSubmit={handleSubmit} {...restProps} isInvitation />
-        )}
-      />
-    );
-  }
-}
-
-export class UserCreateProject extends PureComponent {
-  static propTypes = {
-    user: PropTypes.object.isRequired,
-    project: PropTypes.object.isRequired,
-    isFetched: PropTypes.bool.isRequired,
-    createUserProject: PropTypes.func.isRequired,
-    fetchProject: PropTypes.func.isRequired,
-    clearProject: PropTypes.func.isRequired,
-    match: PropTypes.shape({
-      params: PropTypes.object.isRequired,
-    }).isRequired,
-  };
-
-  componentDidMount() {
-    const { match } = this.props;
-    this.props.clearProject();
-
-    if (match && match.params && match.params.projectId) {
-      this.props.fetchProject({ projectId: match.params.projectId });
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    const { isFetched, project } = this.props;
-
-    if (prevProps.isFetched !== isFetched && isFetched && isEmpty(project)) {
-      browserHistory.push('/');
-    }
-  }
-
-  handleSubmit = values => this.props.createUserProject(values);
-
-  render() {
-    const { project, user } = this.props;
-    const headerValues = {
-      project: project.title,
-      user: `${user.firstName} ${user.lastName}`,
-    };
-
-    return (
-      <Formik
-        isInitialValid
-        enableReinitialize={false}
-        displayName={USER_CREATE_CMS_FORM}
-        validationSchema={USER_CREATE_PROJECT_SCHEME}
-        onSubmit={this.handleSubmit}
-        initialValues={{
-          ...this.props.user,
-          [USER_ROLE]: prop('label')(find(propEq('value', ROLES.EDITOR), NEW_USER_ROLES_OPTIONS)),
-        }}
-        render={({ handleSubmit, ...restProps }) => (
-          <UserCreate handleSubmit={handleSubmit} headerValues={headerValues} {...restProps} />
-        )}
-      />
     );
   }
 }
