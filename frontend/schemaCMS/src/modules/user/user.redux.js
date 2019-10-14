@@ -1,13 +1,25 @@
-import { createActions, createReducer } from 'reduxsauce';
+import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
+import { createRoutine } from 'redux-saga-routines';
 
-export const { Types: UserTypes, Creators: UserActions } = createActions(
-  {
-    noop: null, // TODO: remove this action
-  },
-  { prefix: 'USER/' }
-);
+const PREFIX = 'USER/';
 
-export const INITIAL_STATE = new Immutable({});
+export const UserRoutines = {
+  createUserProject: createRoutine(`${PREFIX}CREATE_USER_PROJECT`),
+  createUserCMS: createRoutine(`${PREFIX}CREATE_USER_CMS`),
+  unmountUser: createRoutine(`${PREFIX}UNMOUNT_USER`),
+  fetchUser: createRoutine(`${PREFIX}FETCH_USER`),
+};
 
-export const reducer = createReducer(INITIAL_STATE, {});
+export const INITIAL_STATE = new Immutable({
+  user: {},
+});
+
+const unmountUser = (state = INITIAL_STATE) => state.set('user', {});
+
+const fetchUser = (state = INITIAL_STATE, { payload }) => state.set('user', payload);
+
+export const reducer = createReducer(INITIAL_STATE, {
+  [UserRoutines.unmountUser.TRIGGER]: unmountUser,
+  [UserRoutines.fetchUser.SUCCESS]: fetchUser,
+});

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UserProfile Default 1`] = `
+exports[`Storyshots UserCreate Default 1`] = `
 <div
-  className="sc-kfGgVZ eravuG"
+  className="sc-ibxdXY clQDsv"
 >
   <div
     className="sc-jDwBTQ fRXXnG"
@@ -35,7 +35,9 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Admin Settings
+            <span>
+              Users
+            </span>
           </h2>
           <h1
             id="headerSubtitle"
@@ -50,7 +52,9 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Profile
+            <span>
+              You are adding  to 
+            </span>
           </h1>
         </div>
       </div>
@@ -131,7 +135,9 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Admin Settings
+            <span>
+              Users
+            </span>
           </h2>
           <h1
             id="headerSubtitle"
@@ -146,7 +152,9 @@ exports[`Storyshots UserProfile Default 1`] = `
               }
             }
           >
-            Profile
+            <span>
+              You are adding  to 
+            </span>
           </h1>
         </div>
       </div>
@@ -203,7 +211,7 @@ exports[`Storyshots UserProfile Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-esjQYD ikJPMC"
+    className="sc-RefOD hoyLbU"
     onSubmit={[Function]}
   >
     <div
@@ -235,12 +243,13 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
         >
-          First Name
+          Name
         </label>
         <input
           id="firstName"
           name="firstName"
           onChange={[Function]}
+          readOnly={true}
           style={
             Object {
               "backgroundColor": "transparent",
@@ -252,66 +261,7 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
           type="text"
-          value=""
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="sc-gZMcBi giNnHm"
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "320px",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
-      >
-        <label
-          htmlFor="lastName"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "1px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          Last Name
-        </label>
-        <input
-          id="lastName"
-          name="lastName"
-          onChange={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#FFF",
-              "fontSize": "18px",
-              "lineHeight": "24px",
-              "outline": "none",
-            }
-          }
-          type="text"
-          value=""
+          value="undefined undefined"
         />
         <div
           style={
@@ -356,7 +306,6 @@ exports[`Storyshots UserProfile Default 1`] = `
           Email
         </label>
         <input
-          disabled={true}
           id="email"
           name="email"
           onChange={[Function]}
@@ -372,7 +321,6 @@ exports[`Storyshots UserProfile Default 1`] = `
             }
           }
           type="text"
-          value=""
         />
         <div
           style={
@@ -385,46 +333,124 @@ exports[`Storyshots UserProfile Default 1`] = `
         />
       </div>
     </div>
-    <button
-      disabled={false}
-      style={
-        Object {
-          "backgroundColor": "#1d1d20",
-          "border": "none",
-          "borderRadius": "48px",
-          "color": "#FFF",
-          "cursor": "pointer",
-          "display": "inline-block",
-          "fill": "#FFF",
-          "fontSize": "18px",
-          "margin": "0",
-          "marginRight": "20px",
-          "minHeight": "48px",
-          "outline": "none",
-          "padding": "0 30px",
+    <div
+      className="sc-gZMcBi giNnHm"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "320px",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
         }
-      }
+      >
+        <label
+          htmlFor="role"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "1px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Role
+        </label>
+        <input
+          id="role"
+          name="role"
+          onChange={[Function]}
+          readOnly={true}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+            }
+          }
+          type="text"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="sc-htoDjs iUYJOx"
     >
-      Save
-    </button>
+      <div
+        className="sc-dnqmqq loLLvy"
+      >
+        <button
+          disabled={false}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginRight": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
+        >
+          <span>
+            Cancel
+          </span>
+        </button>
+        <button
+          disabled={false}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginLeft": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
+          type="submit"
+        >
+          <span>
+            Add
+          </span>
+        </button>
+      </div>
+    </div>
   </form>
-  <div
-    className="sc-eXEjpC gLXYZH"
-  >
-    <a
-      className="sc-kIPQKe eOjJUS"
-      href="/reset-password"
-      onClick={[Function]}
-    >
-      Reset Password
-    </a>
-    <a
-      className="sc-kIPQKe eOjJUS"
-      href="/logout"
-      onClick={[Function]}
-    >
-      Log out
-    </a>
-  </div>
 </div>
 `;

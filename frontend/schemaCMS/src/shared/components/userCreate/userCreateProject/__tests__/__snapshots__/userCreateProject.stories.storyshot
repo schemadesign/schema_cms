@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UserCreateProject Default 1`] = `
+<div
+  className="sc-iQKALj ewZhPO"
+>
+  <span>
+    Loading...
+  </span>
+</div>
+`;

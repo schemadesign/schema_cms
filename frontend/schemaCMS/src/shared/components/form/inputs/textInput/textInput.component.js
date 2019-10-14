@@ -21,13 +21,15 @@ export class TextInput extends PureComponent {
     name: PropTypes.string.isRequired,
     touched: PropTypes.object,
     value: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
+    readOnly: PropTypes.bool,
+    onChange: PropTypes.func,
   };
 
   static defaultProps = {
     errors: {},
     touched: {},
     checkOnlyErrors: false,
+    onChange: Function.prototype,
   };
 
   renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
@@ -43,6 +45,7 @@ export class TextInput extends PureComponent {
       customInputStyles,
       fullWidth,
       checkOnlyErrors,
+      readOnly,
       ...restProps
     } = this.props;
     const filteredProps = pick(elementAttributes.input, restProps);
@@ -60,6 +63,7 @@ export class TextInput extends PureComponent {
           customStyles={customStyles}
           customInputStyles={customInputStyles}
           fullWidth={fullWidth}
+          readOnly={readOnly}
           {...filteredProps}
         />
         {this.renderError(error)}

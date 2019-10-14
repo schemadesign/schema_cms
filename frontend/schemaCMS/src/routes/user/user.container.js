@@ -1,15 +1,32 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { User } from './user.component';
+import { UserRoutines, selectUser } from '../../modules/user';
+import { ProjectRoutines, selectProject } from '../../modules/project';
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  user: selectUser,
+  project: selectProject,
+});
 
-export const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+export const mapDispatchToProps = dispatch => ({
+  ...bindPromiseCreators(
+    {
+      createUserProject: promisifyRoutine(UserRoutines.createUserProject),
+      createUserCMS: promisifyRoutine(UserRoutines.createUserCMS),
+      fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
+      fetchUser: promisifyRoutine(UserRoutines.fetchUser),
+      clearProject: promisifyRoutine(ProjectRoutines.unmountOne),
+      clearUser: promisifyRoutine(UserRoutines.unmountUser),
+    },
+    dispatch
+  ),
+});
 
 export default compose(
   hot(module),
