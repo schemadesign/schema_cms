@@ -142,6 +142,28 @@ Content-Type application/json
 204 No Content
 ```
 
+## Remove editors from project
+
+**Request**:
+
+`POST` `/api/v1/projects/:id/remove-editor`
+
+Parameters:
+
+Name  | Type    | Required | Description
+------|---------|----------|------------
+id    | string  | Yes      | User ID.
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+**Response**:
+
+```json
+Content-Type application/json
+200 OK
+```
 
 ## Enums
 Project statuses: `initial`, `processing`

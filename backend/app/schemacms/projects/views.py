@@ -39,6 +39,24 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         serializer = self.get_serializer(queryset, many=True)
         return response.Response(serializer.data)
 
+    @decorators.action(detail=True, url_path="remove-editor", methods=["post"])
+    def remove_editor(self, request, pk=None, **kwargs):
+        project = self.get_object()
+        editor_to_remove = request.data.get("id", None)
+
+        if editor_to_remove:
+            project.editors.remove(editor_to_remove)
+
+            return response.Response(
+                f"Editor {editor_to_remove} has been removed from project {project.id}",
+                status=status.HTTP_200_OK
+            )
+        else:
+            return response.Response(
+                "Please enter the user 'id' you want to remove from project.",
+                status.HTTP_400_BAD_REQUEST
+            )
+
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
