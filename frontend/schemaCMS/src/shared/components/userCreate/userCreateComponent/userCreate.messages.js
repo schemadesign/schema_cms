@@ -3,27 +3,27 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   invite: {
-    id: 'userList.invite',
+    id: 'userCreate.invite',
     defaultMessage: 'Invite',
   },
   add: {
-    id: 'userList.add',
+    id: 'userCreate.add',
     defaultMessage: 'Add',
   },
   cancel: {
-    id: 'userList.cancel',
+    id: 'userCreate.cancel',
     defaultMessage: 'Cancel',
   },
   pageTitle: {
-    id: 'userList.pageTitle',
+    id: 'userCreate.pageTitle',
     defaultMessage: 'Users',
   },
   pageSubTitle: {
-    id: 'userList.pageSubTitle',
+    id: 'userCreate.pageSubTitle',
     defaultMessage: 'Invite a User to SchemaCMS',
   },
   addUser: {
-    id: 'userList.addUser',
+    id: 'userCreate.addUser',
     defaultMessage: 'You are adding {user} to {project}',
   },
 });
