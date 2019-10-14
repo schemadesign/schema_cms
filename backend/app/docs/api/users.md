@@ -1,6 +1,42 @@
 # Users
 Manage user accounts.
 
+## Fetch users' profile informations
+
+**Request**:
+
+`GET` `/api/v1/users`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+**Response**:
+
+```json
+Content-Type application/json
+200 OK
+
+{
+  "count": 0,
+  "next": null,
+  "previous": null,
+  "result": [
+    {
+      "id": "6d5f9bae-a31b-4b7b-82c4-3853eda2b011",
+      "username": "richard",
+      "first_name": "Richard",
+      "last_name": "Hendriks",
+      "email": "richard@piedpiper.com",
+      "role": "admin"
+    },
+    ...
+  ]
+}
+
+```
+
+
 ## Get a user's profile information
 
 **Request**:

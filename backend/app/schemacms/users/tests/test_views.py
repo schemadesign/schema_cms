@@ -1,3 +1,5 @@
+import operator
+
 from django import urls
 import pytest
 from rest_framework import status
@@ -7,15 +9,78 @@ from schemacms.users import constants as user_constants, serializers as user_ser
 pytestmark = [pytest.mark.django_db]
 
 
+class TestUserListView:
+    """
+    Tests /api/v1/users list operations.
+    """
+
+    def test_response(self, api_client, user_factory):
+        user = user_factory()
+        expected_users = user_factory.create_batch(2)
+        api_client.force_authenticate(user)
+
+        response = api_client.get(self.get_url())
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["count"] == len(expected_users)
+        assert {r["id"] for r in response.data["results"]} == {str(user.id) for user in expected_users}
+
+    def test_response_ordering(self, api_client, user_factory):
+        user = user_factory()
+        expected_users = sorted(
+            user_factory.create_batch(2), key=operator.attrgetter("first_name", "last_name")
+        )
+        api_client.force_authenticate(user)
+
+        response = api_client.get(self.get_url())
+
+        assert response.status_code == status.HTTP_200_OK
+        assert [r["id"] for r in response.data["results"]] == [
+            str(user.id) for user in expected_users
+        ]
+
+    def test_response_without_disable_accounts(self, api_client, user_factory):
+        user = user_factory()
+        user_factory(is_active=False)
+        api_client.force_authenticate(user)
+
+        response = api_client.get(self.get_url())
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["count"] == 0
+        assert response.data["results"] == []
+
+    def test_unauthorized(self, api_client):
+        response = api_client.get(self.get_url())
+
+        assert response.status_code == status.HTTP_401_UNAUTHORIZED
+
+    def test_num_queries(self, api_client, django_assert_num_queries, faker, admin, user_factory):
+        user = user_factory()
+        user_factory.create_batch(3)
+        api_client.force_authenticate(user)
+
+        # +1 count
+        # +1 user's query
+        with django_assert_num_queries(2):
+            response = api_client.get(self.get_url())
+
+        assert response.status_code == status.HTTP_200_OK
+
+    def test_url(self):
+        assert "/api/v1/users" == self.get_url()
+
+    def get_url(self):
+        return urls.reverse("user-list")
+
+
 class TestUserDetailView:
     """
     Tests /api/v1/users/<pk> detail operations.
     """
 
-    @pytest.mark.parametrize("authorize", [True, False])
-    def test_response(self, api_client, user, authorize):
-        if authorize:
-            api_client.force_authenticate(user)
+    def test_response(self, api_client, user):
+        api_client.force_authenticate(user)
         response = api_client.get(self.get_url(user.pk))
 
         assert response.status_code == status.HTTP_200_OK
@@ -82,6 +147,12 @@ class TestUserDetailView:
         assert response.status_code == status.HTTP_403_FORBIDDEN
         other_user.refresh_from_db()
         assert other_user.role == user_constants.UserRole.ADMIN
+
+    def test_unauthorized(self, api_client, user_factory):
+        other_user = user_factory()
+        response = api_client.get(self.get_url(other_user.pk))
+
+        assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
     def test_url(self, user):
         assert "/api/v1/users/{}".format(user.pk) == self.get_url(pk=user.pk)
