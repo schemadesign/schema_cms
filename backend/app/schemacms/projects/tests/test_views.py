@@ -276,7 +276,7 @@ class TestRemoveEditorFromProject:
         response = api_client.post(self.get_url(project.id), pyload)
         project.refresh_from_db()
 
-        assert response.status_code == status.HTTP_202_ACCEPTED
+        assert response.status_code == status.HTTP_200_OK
         assert project.editors.count() == 1
 
     def test_editor_cant_remove_editor(self, api_client, user, user_factory, project_factory):

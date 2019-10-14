@@ -49,7 +49,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
             return response.Response(
                 f"Editor {editor_to_remove} has been removed from project {project.id}",
-                status=status.HTTP_202_ACCEPTED
+                status=status.HTTP_200_OK
             )
         else:
             return response.Response(
