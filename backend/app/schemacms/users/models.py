@@ -1,13 +1,14 @@
 import uuid
 
-from django.db import models
+from django.utils.translation import ugettext_lazy as _
+from django.db import models, transaction
 from django.contrib.auth.models import AbstractUser
 from django.utils.encoding import python_2_unicode_compatible
 from rest_framework_jwt.settings import api_settings
 
 from schemacms import mail
 from schemacms.authorization import tokens
-from . import backend_management, constants
+from . import backend_management, constants, signals, managers
 
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
@@ -20,10 +21,20 @@ class User(AbstractUser):
         choices=constants.USER_SOURCE_CHOICES, max_length=16, default=constants.UserSource.UNDEFINED
     )
     external_id = models.CharField(max_length=64, blank=True)
+    is_active = models.BooleanField(
+        _('active'),
+        default=True,
+        help_text=_(
+            'Designates whether this user should be treated as active. '
+            'Select an action from admin panel to change this instead of deleting accounts.'
+        ),
+    )
 
     role = models.CharField(
         max_length=25, choices=constants.USER_ROLE_CHOICES, default=constants.UserRole.UNDEFINED
     )
+
+    objects = managers.UserManager()
 
     @property
     def is_admin(self):
@@ -47,3 +58,12 @@ class User(AbstractUser):
             subject="Invitation",
             merge_data_dict={"url": url},
         )
+
+    @transaction.atomic()
+    def deactivate(self, requester=None) -> bool:
+        if not self.is_active:
+            return False
+        self.is_active = False
+        self.save(update_fields=["is_active"])
+        signals.user_deactivated.send(sender=self.__class__, user=self, requester=requester)
+        return True
