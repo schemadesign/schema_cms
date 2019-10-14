@@ -21,6 +21,24 @@ class TestUserDetailView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data == user_serializers.UserSerializer(instance=user).data
 
+    def test_retrieve(self, api_client, user_factory):
+        user = user_factory()
+        other_user = user_factory(is_active=True)
+        api_client.force_authenticate(user)
+
+        response = api_client.get(self.get_url(other_user.pk))
+
+        assert response.status_code == status.HTTP_200_OK
+
+    def test_retrieve_not_active_user(self, api_client, user_factory):
+        user = user_factory()
+        other_user = user_factory(is_active=False)
+        api_client.force_authenticate(user)
+
+        response = api_client.get(self.get_url(other_user.pk))
+
+        assert response.status_code == status.HTTP_404_NOT_FOUND
+
     def test_update_user_details_by_admin(self, api_client, faker, user_factory, user_with_role):
         user = user_factory(admin=True)
         other_user = user_with_role
@@ -72,6 +90,40 @@ class TestUserDetailView:
         return urls.reverse("user-detail", kwargs=dict(pk=pk))
 
 
+class TestDeactivateUser:
+    """
+    Tests /api/v1/users/<pk>/deactivate operation.
+    """
+
+    def test_by_admin(self, mocker, api_client, user_factory):
+        deactivate_mock = mocker.patch("schemacms.users.models.User.deactivate")
+        user = user_factory(admin=True)
+        other_user = user_factory()
+        api_client.force_authenticate(user)
+
+        response = api_client.post(self.get_url(other_user.pk))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        deactivate_mock.assert_called_with(requester=user)
+
+    def test_by_editor(self, mocker, api_client, user_factory):
+        deactivate_mock = mocker.patch("schemacms.users.models.User.deactivate")
+        user = user_factory(editor=True)
+        other_user = user_factory()
+        api_client.force_authenticate(user)
+
+        response = api_client.post(self.get_url(other_user.pk))
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+        assert not deactivate_mock.called
+
+    def test_url(self, user):
+        assert "/api/v1/users/{}/deactivate".format(user.pk) == self.get_url(pk=user.pk)
+
+    def get_url(self, pk):
+        return urls.reverse("user-deactivate", kwargs=dict(pk=pk))
+
+
 class TestMeView:
     """
     Tests /api/v1/users/me operations.
@@ -101,9 +153,6 @@ class TestMeView:
 
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
-    def test_url(self):
-        assert "/api/v1/users/me" == self._url
-
     def test_authorize(self, api_client, user):
         token = user.get_jwt_token()
 
@@ -111,6 +160,18 @@ class TestMeView:
         response = api_client.get(self._url)
 
         assert response.status_code == status.HTTP_200_OK
+
+    def test_user_not_active(self, api_client, user_factory):
+        user = user_factory(is_active=False)
+        token = user.get_jwt_token()
+        api_client.credentials(HTTP_AUTHORIZATION="JWT {}".format(token))
+
+        response = api_client.get(self._url)
+
+        assert response.status_code == status.HTTP_401_UNAUTHORIZED
+
+    def test_url(self):
+        assert "/api/v1/users/me" == self._url
 
     @property
     def _url(self):

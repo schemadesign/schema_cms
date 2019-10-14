@@ -4,12 +4,16 @@ from . import models as user_models, permissions as user_permissions, serializer
 from .backend_management import user_mgtm_backend
 
 
-class UserViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
+class UserViewSet(
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    viewsets.GenericViewSet
+):
     """
-    Retrieves and updates user account details
+    Retrieves, updates and deactivates user account details
     """
 
-    queryset = user_models.User.objects.all()
+    queryset = user_models.User.objects.all().activated()
     serializer_class = user_serializers.UserSerializer
     permission_classes = (user_permissions.IsAdminOrReadOnly,)
 
@@ -29,6 +33,12 @@ class UserViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.G
             )
         else:
             return super().update(request, args, kwargs)
+
+    @decorators.action(detail=True, methods=["post"])
+    def deactivate(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.deactivate(requester=self.request.user)
+        return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class CurrentUserViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):

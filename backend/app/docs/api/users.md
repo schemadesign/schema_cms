@@ -90,5 +90,23 @@ Content-Type application/json
 }
 ```
 
+## Deactivate a user's account
+
+**Request**:
+
+`POST` `/api/v1/users/:id/deactivate`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+- Only user with `admin` role can deactivate a user's account
+
+**Response**:
+
+```json
+Content-Type application/json
+204 NO CONTENT
+```
+
 ## Enums
 User's role: `editor`, `admin`

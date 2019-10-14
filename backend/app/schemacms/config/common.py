@@ -254,6 +254,7 @@ class Common(Configuration):
         "schemacms.authorization.pipeline.update_user_full_name",
         # Update user source and external ID from external authorization service
         "schemacms.authorization.pipeline.update_external_id",
+        "schemacms.authorization.pipeline.user_is_active",
         # Redirect user and add exchange token to query string
         "schemacms.authorization.pipeline.redirect_with_token",
     )

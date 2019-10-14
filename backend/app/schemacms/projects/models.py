@@ -90,7 +90,7 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel)
         choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
     )
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
-    editors = models.ManyToManyField(settings.AUTH_USER_MODEL)
+    editors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="assigned_projects")
 
     objects = managers.ProjectQuerySet.as_manager()
 
