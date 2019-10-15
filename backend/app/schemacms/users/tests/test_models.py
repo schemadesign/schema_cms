@@ -69,3 +69,10 @@ class TestUser:
 
         assert ret is False
         assert user.is_active is False
+
+    def test_delete_user_from_auth_backend(self, faker, user_factory, auth0_management):
+        user = user_factory(external_id=faker.word())
+
+        user.delete()
+
+        auth0_management.return_value.users.delete.assert_called_with(user.external_id)

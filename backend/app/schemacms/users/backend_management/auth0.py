@@ -60,6 +60,11 @@ class Auth0UserManagement(base.BaseUserManagement):
 
         return self.proxy.users.create(body)
 
+    def delete_user(self, user) -> bool:
+        if not user.external_id:
+            return False
+        return self.proxy.users.delete(user.external_id)
+
     def password_change_url(self, user: models.User):
         login_url = self.get_login_url()
         body = {
