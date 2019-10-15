@@ -60,7 +60,7 @@ def main(event, context):
         except Exception as e:
             logging.critical(f'Error while loading source file - {e}')
             job.job_state = db.JobState.FAILED
-            job.error = f'{e} @ loading sorurce file'
+            job.error = f'{e} @ loading source file'
             job.save()
             raise
 
