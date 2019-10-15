@@ -5,6 +5,7 @@ from .backend_management import user_mgtm_backend
 
 
 class UserViewSet(
+    mixins.ListModelMixin,
     mixins.RetrieveModelMixin,
     mixins.UpdateModelMixin,
     viewsets.GenericViewSet
@@ -15,7 +16,13 @@ class UserViewSet(
 
     queryset = user_models.User.objects.all().activated()
     serializer_class = user_serializers.UserSerializer
-    permission_classes = (user_permissions.IsAdminOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        if self.action == 'list':
+            qs = qs.exclude(pk=self.request.user.pk).order_by("first_name", "last_name")
+        return qs
 
     def get_serializer_class(self):
         if self.request.user.is_authenticated and self.request.user.is_admin:
