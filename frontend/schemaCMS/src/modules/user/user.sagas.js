@@ -46,10 +46,27 @@ function* fetchUser({ payload: { userId } }) {
   }
 }
 
+function* fetchUsers() {
+  try {
+    yield put(UserRoutines.fetchUsers.request());
+
+    const {
+      data: { results },
+    } = yield api.get('users?page_size=1000');
+
+    yield put(UserRoutines.fetchUsers.success(results));
+  } catch (error) {
+    yield put(UserRoutines.fetchUsers.failure());
+  } finally {
+    yield put(UserRoutines.fetchUsers.fulfill());
+  }
+}
+
 export function* watchUser() {
   yield all([
     takeLatest(UserRoutines.createUserCMS.TRIGGER, createUserCMS),
     takeLatest(UserRoutines.createUserProject.TRIGGER, createUserProject),
     takeLatest(UserRoutines.fetchUser.TRIGGER, fetchUser),
+    takeLatest(UserRoutines.fetchUsers.TRIGGER, fetchUsers),
   ]);
 }

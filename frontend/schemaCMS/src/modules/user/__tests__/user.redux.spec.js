@@ -6,6 +6,7 @@ import { reducer as userReducer } from '../user.redux';
 describe('User: redux', () => {
   const state = Immutable({
     user: {},
+    users: [],
   });
 
   describe('reducer', () => {

@@ -171,6 +171,17 @@ exports[`Storyshots Project/List empty 1`] = `
               className="sc-bRBYWo sc-jhAzac cIUGfV"
             >
               <a
+                href="/user"
+                id="userBtn"
+                onClick={[Function]}
+              >
+                Users
+              </a>
+            </li>
+            <li
+              className="sc-bRBYWo sc-jhAzac cIUGfV"
+            >
+              <a
                 href="/logout"
                 id="logoutBtn"
                 onClick={[Function]}
@@ -458,6 +469,17 @@ exports[`Storyshots Project/List list 1`] = `
           <ul
             className="sc-gipzik sc-Rmtcm iXyibh"
           >
+            <li
+              className="sc-bRBYWo sc-jhAzac cIUGfV"
+            >
+              <a
+                href="/user"
+                id="userBtn"
+                onClick={[Function]}
+              >
+                Users
+              </a>
+            </li>
             <li
               className="sc-bRBYWo sc-jhAzac cIUGfV"
             >

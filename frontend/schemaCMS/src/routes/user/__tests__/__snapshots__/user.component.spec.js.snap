@@ -2,11 +2,10 @@
 
 exports[`User: Component should render correctly 1`] = `
 <Switch>
-  <Redirect
+  <Route
+    component={[Function]}
     exact={true}
     path="/user"
-    push={false}
-    to="/user/add"
   />
   <Route
     exact={true}
@@ -23,11 +22,10 @@ exports[`User: Component should render correctly 1`] = `
 
 exports[`User: Component should render correctly with project id 1`] = `
 <Switch>
-  <Redirect
+  <Route
+    component={[Function]}
     exact={true}
     path="/user/1/add"
-    push={false}
-    to="/user/1/add/add"
   />
   <Route
     exact={true}

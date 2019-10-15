@@ -25,6 +25,10 @@ export default defineMessages({
     id: 'project.list.logOut',
     defaultMessage: 'Log Out',
   },
+  users: {
+    id: 'project.list.users',
+    defaultMessage: 'Users',
+  },
   [IN_PROGRESS]: {
     id: `project.list.${IN_PROGRESS}`,
     defaultMessage: 'In Progress',
