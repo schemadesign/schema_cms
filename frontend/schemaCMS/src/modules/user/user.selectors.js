@@ -7,3 +7,8 @@ export const selectUser = createSelector(
   selectUserDomain,
   prop('user')
 );
+
+export const selectUsers = createSelector(
+  selectUserDomain,
+  prop('users')
+);

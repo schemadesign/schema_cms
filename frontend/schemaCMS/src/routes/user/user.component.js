@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { UserCreateProject, UserCreateCMS } from '../../shared/components/userCreate';
+import List from './list/list.container';
 
 export class User extends PureComponent {
   static propTypes = {
@@ -22,7 +23,7 @@ export class User extends PureComponent {
 
     return (
       <Switch>
-        <Redirect exact path={path} to={add} />
+        <Route exact path={path} component={List} />
         <Route exact path={withProjectId} render={({ match }) => <UserCreateProject {...this.props} match={match} />} />
         <Route exact path={add} render={() => <UserCreateCMS {...this.props} />} />
       </Switch>
