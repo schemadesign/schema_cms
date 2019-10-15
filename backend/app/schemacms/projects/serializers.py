@@ -116,18 +116,25 @@ class ProjectOwnerSerializer(serializers.ModelSerializer):
         fields = ("id", "first_name", "last_name")
 
 
+class ProjectEditorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "first_name", "last_name")
+
+
 class ProjectSerializer(serializers.ModelSerializer):
     owner = NestedRelatedModelSerializer(
         serializer=ProjectOwnerSerializer(),
         read_only=True,
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
-    editors = serializers.PrimaryKeyRelatedField(
+    editors = NestedRelatedModelSerializer(
         many=True,
         queryset=User.objects.all(),
         pk_field=serializers.UUIDField(format="hex_verbose"),
         allow_empty=True,
         required=False,
+        serializer=ProjectEditorSerializer(),
     )
     meta = serializers.SerializerMethodField()
 

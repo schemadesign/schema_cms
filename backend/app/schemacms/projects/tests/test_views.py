@@ -90,9 +90,11 @@ class TestListCreateProjectView:
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
     def test_num_queries(
-        self, api_client, django_assert_num_queries, faker, admin, project_factory, data_source_factory
+        self, api_client, django_assert_num_queries, faker, admin, user_factory, project_factory, data_source_factory
     ):
-        projects = project_factory.create_batch(3)
+        projects = [
+            project_factory(editors=[user_factory(editor=True), user_factory(editor=True)]) for _ in range(3)
+        ]
         for project in projects:
             data_source_factory.create_batch(2, project=project)
         api_client.force_authenticate(admin)
