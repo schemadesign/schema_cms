@@ -28,9 +28,12 @@ def deactivate_users(modeladmin, request, queryset):
     if fail_to_deactivate_users:
         modeladmin.message_user(
             request=request,
-            message=_("The system could not deactivate the following users: {}".format(
-                ", ".join(fail_to_deactivate_users))),
-            level=messages.ERROR
+            message=_(
+                "The system could not deactivate the following users: {}".format(
+                    ", ".join(fail_to_deactivate_users)
+                )
+            ),
+            level=messages.ERROR,
         )
 
 

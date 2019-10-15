@@ -54,7 +54,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "meta_data",
             "error_log",
             "project",
-            "jobs"
+            "jobs",
         )
 
         extra_kwargs = {
@@ -178,18 +178,8 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = WranglingScript
-        fields = (
-            "id",
-            "datasource",
-            "name",
-            "is_predefined",
-            "created_by",
-            "file",
-            "body",
-        )
-        extra_kwargs = {
-            "name": {"required": False, "allow_null": True}
-        }
+        fields = ("id", "datasource", "name", "is_predefined", "created_by", "file", "body")
+        extra_kwargs = {"name": {"required": False, "allow_null": True}}
 
     def create(self, validated_data):
         datasource = self.initial_data["datasource"]
@@ -199,10 +189,7 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
             name = os.path.splitext(validated_data["file"].name)[0]
 
         script = WranglingScript(
-            created_by=self.context["request"].user,
-            name=name,
-            datasource=datasource,
-            **validated_data
+            created_by=self.context["request"].user, name=name, datasource=datasource, **validated_data
         )
         script.is_predefined = False
         script.save()
@@ -213,13 +200,7 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
 class DataSourceScriptSerializer(serializers.ModelSerializer):
     class Meta:
         model = WranglingScript
-        fields = (
-            "id",
-            "name",
-            "is_predefined",
-            "file",
-            "body",
-        )
+        fields = ("id", "name", "is_predefined", "file", "body")
 
 
 class StepSerializer(serializers.ModelSerializer):
@@ -227,10 +208,7 @@ class StepSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.DataSourceJobStep
-        fields = (
-            "script",
-            "exec_order"
-        )
+        fields = ("script", "exec_order")
 
 
 class DataSourceJobSerializer(serializers.ModelSerializer):
@@ -253,9 +231,7 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
         datasource = self.initial_data["datasource"]
         steps = validated_data.pop('steps')
         job = models.DataSourceJob.objects.create(datasource=datasource, **validated_data)
-        models.DataSourceJobStep.objects.bulk_create(
-            self.create_steps(steps, job)
-        )
+        models.DataSourceJobStep.objects.bulk_create(self.create_steps(steps, job))
         return job
 
     @staticmethod

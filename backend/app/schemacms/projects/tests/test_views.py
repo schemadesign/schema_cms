@@ -90,7 +90,14 @@ class TestListCreateProjectView:
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
     def test_num_queries(
-        self, api_client, django_assert_num_queries, faker, admin, user_factory, project_factory, data_source_factory
+        self,
+        api_client,
+        django_assert_num_queries,
+        faker,
+        admin,
+        user_factory,
+        project_factory,
+        data_source_factory,
     ):
         projects = [
             project_factory(editors=[user_factory(editor=True), user_factory(editor=True)]) for _ in range(3)
@@ -528,9 +535,7 @@ class TestDataSourceJobCreate:
     def test_response(self, api_client, admin, data_source_factory, script_factory):
         data_source = data_source_factory(created_by=admin)
         script_1 = script_factory(is_predefined=True, created_by=admin, datasource=None)
-        job_data = {
-            "steps": [{"script": script_1.id, "exec_order": 0}]
-        }
+        job_data = {"steps": [{"script": script_1.id, "exec_order": 0}]}
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=job_data, format="json")
@@ -559,11 +564,12 @@ class TestDataSourceScriptsView:
 
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data) == 5
-        assert response.data == projects_serializers.DataSourceScriptSerializer(
-            self.sort_scripts(test_scripts),
-            many=True,
-            context={"request": request}
-        ).data
+        assert (
+            response.data
+            == projects_serializers.DataSourceScriptSerializer(
+                self.sort_scripts(test_scripts), many=True, context={"request": request}
+            ).data
+        )
 
     @staticmethod
     def get_url(pk):
@@ -578,9 +584,7 @@ class TestDataSourceScriptUploadView:
     def test_response(self, api_client, admin, data_source_factory, faker):
         data_source = data_source_factory()
         code = b"df = df.head(5)"
-        payload = dict(
-            file=faker.python_upload_file(filename="test.py", code=code),
-        )
+        payload = dict(file=faker.python_upload_file(filename="test.py", code=code))
         script_name = os.path.splitext(payload["file"].name)[0]
 
         api_client.force_authenticate(admin)
@@ -604,10 +608,10 @@ class TestScriptDetailView:
         response = api_client.get(self.get_url(script.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == projects_serializers.WranglingScriptSerializer(
-            script,
-            context={"request": request}
-        ).data
+        assert (
+            response.data
+            == projects_serializers.WranglingScriptSerializer(script, context={"request": request}).data
+        )
 
     @staticmethod
     def get_url(pk):
@@ -625,10 +629,10 @@ class TestJobDetailView:
 
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data["steps"]) == 2
-        assert response.data == projects_serializers.DataSourceJobSerializer(
-            job,
-            context={"request": request}
-        ).data
+        assert (
+            response.data
+            == projects_serializers.DataSourceJobSerializer(job, context={"request": request}).data
+        )
 
     @staticmethod
     def get_url(pk):

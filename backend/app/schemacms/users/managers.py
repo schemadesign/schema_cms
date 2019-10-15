@@ -9,7 +9,9 @@ class UserQuerySet(models.QuerySet):
         return self.filter(is_active=True)
 
     def app_users(self):
-        return self.filter(role__in=(constants.UserRole.ADMIN, constants.UserRole.EDITOR)).exclude(is_staff=True)
+        return self.filter(role__in=(constants.UserRole.ADMIN, constants.UserRole.EDITOR)).exclude(
+            is_staff=True
+        )
 
 
 class UserManager(user_models.UserManager):

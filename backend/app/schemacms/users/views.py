@@ -6,10 +6,7 @@ from .backend_management import user_mgtm_backend
 
 
 class UserViewSet(
-    mixins.ListModelMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    viewsets.GenericViewSet
+    mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
     """
     Retrieves, updates and deactivates user account details
@@ -38,8 +35,7 @@ class UserViewSet(
 
         if new_role == UserRole.EDITOR and instance.role == UserRole.ADMIN:
             return response.Response(
-                "Only superadmin can change admin role",
-                status=status.HTTP_403_FORBIDDEN
+                "Only superadmin can change admin role", status=status.HTTP_403_FORBIDDEN
             )
         else:
             return super().update(request, args, kwargs)

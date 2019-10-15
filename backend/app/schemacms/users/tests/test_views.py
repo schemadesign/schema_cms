@@ -66,9 +66,7 @@ class TestUserListView:
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["count"] == 1
-        assert {r["id"] for r in response.data["results"]} == {
-            str(u.id) for u in user_mapping[role]
-        }
+        assert {r["id"] for r in response.data["results"]} == {str(u.id) for u in user_mapping[role]}
 
     def test_unauthorized(self, api_client):
         response = api_client.get(self.get_url())

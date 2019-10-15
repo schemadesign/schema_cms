@@ -12,9 +12,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     serializer_class = serializers.ProjectSerializer
     permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
     queryset = models.Project.objects.none()
-    serializer_class_mapping = {
-        "datasources": serializers.DataSourceSerializer,
-    }
+    serializer_class_mapping = {"datasources": serializers.DataSourceSerializer}
 
     def get_queryset(self):
         return (
@@ -28,8 +26,9 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     @decorators.action(detail=True, methods=["get"])
     def datasources(self, request, **kwargs):
         project = self.get_object()
-        queryset = project.data_sources.all(
-        ).prefetch_related("jobs").available_for_user(user=self.request.user)
+        queryset = (
+            project.data_sources.all().prefetch_related("jobs").available_for_user(user=self.request.user)
+        )
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -49,12 +48,11 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
             return response.Response(
                 f"Editor {editor_to_remove} has been removed from project {project.id}",
-                status=status.HTTP_200_OK
+                status=status.HTTP_200_OK,
             )
         else:
             return response.Response(
-                "Please enter the user 'id' you want to remove from project.",
-                status.HTTP_400_BAD_REQUEST
+                "Please enter the user 'id' you want to remove from project.", status.HTTP_400_BAD_REQUEST
             )
 
     @decorators.action(detail=True, url_path="add-editor", methods=["post"])
@@ -66,13 +64,11 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             project.editors.add(editor_to_add)
 
             return response.Response(
-                f"Editor {editor_to_add} has been added to project {project.id}",
-                status=status.HTTP_200_OK
+                f"Editor {editor_to_add} has been added to project {project.id}", status=status.HTTP_200_OK
             )
         else:
             return response.Response(
-                "Please enter the user 'id' you want to add.",
-                status.HTTP_400_BAD_REQUEST
+                "Please enter the user 'id' you want to add.", status.HTTP_400_BAD_REQUEST
             )
 
 
@@ -131,7 +127,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         detail=True,
         url_path="script-upload",
         parser_classes=(parsers.FormParser, parsers.MultiPartParser),
-        methods=["post"]
+        methods=["post"],
     )
     def script_upload(self, request, pk=None, **kwargs):
         datasource = self.get_object()
@@ -174,11 +170,7 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, viewsets.GenericView
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
-        return (
-            models.DataSourceJob.objects.all()
-            .select_related("datasource")
-            .prefetch_related("steps")
-        )
+        return models.DataSourceJob.objects.all().select_related("datasource").prefetch_related("steps")
 
     @decorators.action(detail=True, url_path="result-preview", methods=["get"])
     def result_preview(self, request, pk=None, **kwarg):
@@ -206,7 +198,4 @@ class DataSourceScriptDetailView(generics.RetrieveAPIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
-        return (
-            models.WranglingScript.objects.all()
-            .select_related("datasource", "created_by")
-        )
+        return models.WranglingScript.objects.all().select_related("datasource", "created_by")
