@@ -204,9 +204,7 @@ class WranglingScript(ext_models.TimeStampedModel):
     name = models.CharField(max_length=constants.SCRIPT_NAME_MAX_LENGTH, blank=True)
     is_predefined = models.BooleanField(default=True)
     file = models.FileField(
-        upload_to="scripts/",
-        null=True,
-        validators=[FileExtensionValidator(allowed_extensions=["py"])],
+        upload_to="scripts/", null=True, validators=[FileExtensionValidator(allowed_extensions=["py"])]
     )
     body = models.TextField(blank=True)
     last_file_modification = models.DateTimeField(null=True)
@@ -259,11 +257,7 @@ class DataSourceJobMetaData(MetaDataModel):
     def relative_path_to_save(self, filename):
         base_path = self.preview.storage.location
 
-        return os.path.join(
-            base_path,
-            f"{settings.STORAGE_DIR}/jobs_results",
-            f"{self.job.id}/{filename}",
-        )
+        return os.path.join(base_path, f"{settings.STORAGE_DIR}/jobs_results", f"{self.job.id}/{filename}")
 
 
 class DataSourceJobStep(models.Model):

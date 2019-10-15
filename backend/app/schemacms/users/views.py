@@ -1,3 +1,4 @@
+from django_filters import rest_framework as django_filters
 from rest_framework import decorators, mixins, permissions, response, status, viewsets
 from .constants import UserRole
 from . import models as user_models, permissions as user_permissions, serializers as user_serializers
@@ -5,18 +6,17 @@ from .backend_management import user_mgtm_backend
 
 
 class UserViewSet(
-    mixins.ListModelMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    viewsets.GenericViewSet
+    mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
 ):
     """
     Retrieves, updates and deactivates user account details
     """
 
-    queryset = user_models.User.objects.all().activated()
+    queryset = user_models.User.objects.all().app_users().activated()
     serializer_class = user_serializers.UserSerializer
     permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
+    filter_backends = (django_filters.DjangoFilterBackend,)
+    filterset_fields = ("role",)
 
     def get_queryset(self):
         qs = super().get_queryset()
@@ -35,8 +35,7 @@ class UserViewSet(
 
         if new_role == UserRole.EDITOR and instance.role == UserRole.ADMIN:
             return response.Response(
-                "Only superadmin can change admin role",
-                status=status.HTTP_403_FORBIDDEN
+                "Only superadmin can change admin role", status=status.HTTP_403_FORBIDDEN
             )
         else:
             return super().update(request, args, kwargs)
