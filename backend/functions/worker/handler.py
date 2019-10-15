@@ -4,7 +4,7 @@ import sys
 from io import StringIO
 
 import db
-import pandas as pd
+import datatable as dt
 import settings
 import services
 import mocks
@@ -20,7 +20,7 @@ db.initialize()
 def write_dataframe_to_csv_on_s3(dataframe, filename):
     csv_buffer = StringIO()
 
-    dataframe.to_csv(csv_buffer, sep="|", index=False)
+    dataframe.to_csv(csv_buffer, index=False)
 
     return services.s3_resource.Object(
         settings.AWS_STORAGE_BUCKET_NAME, filename
@@ -54,7 +54,15 @@ def main(event, context):
         source_file = services.s3.get_object(
             Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=job.datasource.file.lstrip("/")
         )
-        df = pd.read_csv(source_file["Body"])
+
+        try:
+            df = dt.fread(source_file["Body"], fill=True).to_pandas()
+        except Exception as e:
+            logging.critical(f'Error while loading source file - {e}')
+            job.job_state = db.JobState.FAILED
+            job.error = f'{e} @ loading sorurce file'
+            job.save()
+            raise
 
         for step in job.steps.order_by(db.JobStep.exec_order.desc()):
             try:
