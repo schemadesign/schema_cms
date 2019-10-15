@@ -42,7 +42,7 @@ def main(event, context):
 
         try:
             job = db.Job.select().join(db.JobStep).switch(db.Job).join(db.DataSource).where(
-                (db.Job.id == job_pk) & (db.Job.job_state == 'pending')
+                (db.Job.id == job_pk)
             ).get()
         except Exception as e:
             logging.critical(f"Unable to get job from db - {e}")
