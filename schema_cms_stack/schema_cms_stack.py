@@ -21,6 +21,7 @@ from aws_cdk import (
 
 DB_NAME = "gistdb"
 APP_S3_BUCKET_NAME = "schemacms"
+JOB_PROCESSING_MAX_RETRIES = 3
 
 INSTALLATION_MODE_CONTEXT_KEY = "installation_mode"
 DOMAIN_NAME_CONTEXT_KEY = "domain_name"
@@ -211,6 +212,10 @@ class API(core.Stack):
             self,
             'job_processing_sqs',
             visibility_timeout=core.Duration.seconds(60),
+        )
+        aws_sqs.DeadLetterQueue(
+            queue=self.job_processing_sqs,
+            max_receive_count=JOB_PROCESSING_MAX_RETRIES
         )
 
         self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
