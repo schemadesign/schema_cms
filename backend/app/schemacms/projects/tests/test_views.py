@@ -161,6 +161,20 @@ class TestRetrieveUpdateDeleteProjectView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
+    def test_update_project_name_already_occupied(self, api_client, user, project_factory):
+        project = project_factory()
+        other_project = project_factory()
+        api_client.force_authenticate(user)
+
+        new_title = {"title": other_project.title}
+
+        response = api_client.patch(self.get_url(pk=project.pk), data=new_title)
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data == {
+            'title': [exceptions.ErrorDetail(string='This field must be unique.', code='unique')]
+        }
+
     def test_update_project_by_not_projects_editor(self, api_client, user_factory, project):
         editor1, editor2 = user_factory.create_batch(2, editor=True)
         project.editors.add(editor2)

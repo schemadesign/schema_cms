@@ -152,6 +152,7 @@ class ProjectSerializer(serializers.ModelSerializer):
             "modified",
             "meta",
         )
+        extra_kwargs = {"title": {"validators": [validators.UniqueValidator(queryset=Project.objects.all())]}}
 
     def create(self, validated_data):
         editors = validated_data.pop("editors", [])
