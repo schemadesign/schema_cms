@@ -18,7 +18,7 @@ Content-Type application/json
 200 OK
 
 {
-  "count": 0,
+  "count": 2,
   "next": null,
   "previous": null,
   "result": [
@@ -30,7 +30,14 @@ Content-Type application/json
       "email": "richard@piedpiper.com",
       "role": "admin"
     },
-    ...
+    {
+      "id": "6d5f9bae-a31b-4b7b-82c4-3853eda2b011",
+      "username": "richard",
+      "first_name": "Richard",
+      "last_name": "Hendriks",
+      "email": "richard@piedpiper.com",
+      "role": "admin"
+    }
   ]
 }
 
