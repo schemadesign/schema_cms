@@ -35,13 +35,16 @@ class TestUserListView:
         response = api_client.get(self.get_url())
 
         assert response.status_code == status.HTTP_200_OK
-        assert [r["id"] for r in response.data["results"]] == [
-            str(user.id) for user in expected_users
-        ]
+        assert [r["id"] for r in response.data["results"]] == [str(user.id) for user in expected_users]
 
-    def test_response_without_disable_accounts(self, api_client, user_factory):
+    def test_hide_users(self, api_client, user_factory):
         user = user_factory()
-        user_factory(is_active=False)
+        for user_factory_kwargs in [
+            dict(is_active=False),
+            dict(is_staff=True),
+            dict(role=user_constants.UserRole.UNDEFINED),
+        ]:
+            user_factory(**user_factory_kwargs)
         api_client.force_authenticate(user)
 
         response = api_client.get(self.get_url())
@@ -49,6 +52,23 @@ class TestUserListView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data["count"] == 0
         assert response.data["results"] == []
+
+    @pytest.mark.parametrize("role", [user_constants.UserRole.ADMIN, user_constants.UserRole.EDITOR])
+    def test_filter_by_role(self, api_client, user_factory, role):
+        user = user_factory()
+        user_mapping = {
+            user_constants.UserRole.ADMIN: [user_factory(admin=True)],
+            user_constants.UserRole.EDITOR: [user_factory(editor=True)],
+        }
+        api_client.force_authenticate(user)
+
+        response = api_client.get(self.get_url(), dict(role=role))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["count"] == 1
+        assert {r["id"] for r in response.data["results"]} == {
+            str(u.id) for u in user_mapping[role]
+        }
 
     def test_unauthorized(self, api_client):
         response = api_client.get(self.get_url())

@@ -1,3 +1,4 @@
+from django_filters import rest_framework as django_filters
 from rest_framework import decorators, mixins, permissions, response, status, viewsets
 from .constants import UserRole
 from . import models as user_models, permissions as user_permissions, serializers as user_serializers
@@ -14,9 +15,11 @@ class UserViewSet(
     Retrieves, updates and deactivates user account details
     """
 
-    queryset = user_models.User.objects.all().activated()
+    queryset = user_models.User.objects.all().app_users().activated()
     serializer_class = user_serializers.UserSerializer
     permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
+    filter_backends = (django_filters.DjangoFilterBackend,)
+    filterset_fields = ("role",)
 
     def get_queryset(self):
         qs = super().get_queryset()

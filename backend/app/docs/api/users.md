@@ -7,6 +7,13 @@ Manage user accounts.
 
 `GET` `/api/v1/users`
 
+Parameters:
+
+Name       | Type   | Required | Description
+-----------|--------|----------|------------
+role       | string | No       | Filter by user's role ([available roles](#enums)).
+
+
 *Note:*
 
 - **[Authorization Protected](authentication.md)**

@@ -31,7 +31,10 @@ class User(AbstractUser):
     )
 
     role = models.CharField(
-        max_length=25, choices=constants.USER_ROLE_CHOICES, default=constants.UserRole.UNDEFINED
+        max_length=25,
+        choices=constants.USER_ROLE_CHOICES,
+        default=constants.UserRole.UNDEFINED,
+        db_index=True,
     )
 
     objects = managers.UserManager()
