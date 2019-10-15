@@ -142,10 +142,10 @@ class TestForbidLogInWhenNotRegistered:
         strategy._session = session_dict
         mgmt = backend_management.user_mgtm_backend
         email = "123@123.com"
-        expected_location = expected_location_template.format(
-            host=settings.DEFAULT_WEBAPP_HOST,
-            path="auth/not-registered"
-        ) + f"?{parse.urlencode(dict(email=email))}"
+        expected_location = (
+            expected_location_template.format(host=settings.DEFAULT_WEBAPP_HOST, path="auth/not-registered")
+            + f"?{parse.urlencode(dict(email=email))}"
+        )
 
         ret = pipeline.user_exist_in_db(backend, details={"email": email})
 
@@ -171,14 +171,15 @@ class TestUserIsActive:
         ],
     )
     def test_user_is_not_active(
-            self, backend, user_factory, settings, session_dict, expected_location_template):
+        self, backend, user_factory, settings, session_dict, expected_location_template
+    ):
         user = user_factory(is_active=False)
         backend.strategy._session = session_dict
         mgmt = backend_management.user_mgtm_backend
-        expected_location = expected_location_template.format(
-            host=settings.DEFAULT_WEBAPP_HOST,
-            path="auth/not-registered"
-        ) + f"?{parse.urlencode(dict(email=user.email))}"
+        expected_location = (
+            expected_location_template.format(host=settings.DEFAULT_WEBAPP_HOST, path="auth/not-registered")
+            + f"?{parse.urlencode(dict(email=user.email))}"
+        )
 
         ret = pipeline.user_is_active(backend=backend, user=user)
 
