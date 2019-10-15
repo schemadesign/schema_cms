@@ -42,11 +42,10 @@ def main(event, context):
 
         try:
             job = db.Job.select().join(db.JobStep).switch(db.Job).join(db.DataSource).where(
-                (db.Job.id == job_pk) & (db.Job.job_state == 'pending')
+                (db.Job.id == job_pk)
             ).get()
         except Exception as e:
-            logging.critical(f"Unable to get job from db - {e}")
-            raise
+            return logging.critical(f"Unable to get job from db - {e}")
 
         job.job_state = db.JobState.IN_PROGRESS
         job.save()
@@ -58,22 +57,21 @@ def main(event, context):
         try:
             df = dt.fread(source_file["Body"], fill=True).to_pandas()
         except Exception as e:
-            logging.critical(f'Error while loading source file - {e}')
             job.job_state = db.JobState.FAILED
             job.error = f'{e} @ loading source file'
             job.save()
-            raise
+            return logging.critical(f'Error while loading source file - {e}')
 
         for step in job.steps.order_by(db.JobStep.exec_order.desc()):
             try:
                 logging.info(f'Script **{step.script.name}** is running.')
                 exec(step.body, globals())
             except Exception as e:
-                logging.critical(f'Error while executing {step.script.name}')
                 job.job_state = db.JobState.FAILED
                 job.error = f'{e} @ {step.id}'
                 job.save()
-                raise
+                return logging.critical(f'Error while executing {step.script.name}')
+
             logger.info(f'Step {step.id} done')
 
         result_file_name = f"{job.datasource.file.rstrip('.csv')}_Job#{job.id}_result.csv"
