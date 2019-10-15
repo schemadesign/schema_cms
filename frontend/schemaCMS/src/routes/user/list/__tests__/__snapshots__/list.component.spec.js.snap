@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User List: Component should render correctly 1`] = `null`;
+
+exports[`User List: Component should render correctly with users data 1`] = `
+Array [
+  <Component
+    key="0"
+  >
+    <H1>
+      John
+       
+      Doe
+    </H1>
+  </Component>,
+  <Component
+    key="1"
+  >
+    <H1>
+      Alan
+       
+      Watts
+    </H1>
+  </Component>,
+]
+`;
