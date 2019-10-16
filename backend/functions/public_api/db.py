@@ -27,6 +27,14 @@ class DataSource(BaseModel):
         table_name = "projects_datasource"
 
 
+class DataSourceMeta(BaseModel):
+    datasource = ForeignKeyField(DataSource, backref="meta_data")
+    items = IntegerField()
+
+    class Meta:
+        table_name = "projects_datasourcemeta"
+
+
 class Job(BaseModel):
     datasource = ForeignKeyField(DataSource, backref="jobs")
     result = CharField()
