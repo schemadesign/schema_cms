@@ -153,12 +153,9 @@ class ProjectSerializer(serializers.ModelSerializer):
         extra_kwargs = {"title": {"validators": [validators.UniqueValidator(queryset=Project.objects.all())]}}
 
     def create(self, validated_data):
-        editors = validated_data.pop("editors", [])
         project = Project(owner=self.context["request"].user, **validated_data)
+        project.save()
 
-        with transaction.atomic():
-            project.save()
-            project.editors.add(*editors)
         return project
 
     def get_meta(self, project):
