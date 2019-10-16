@@ -208,14 +208,18 @@ class API(core.Stack):
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
 
+        self.job_processing_dead_letter_sqs = aws_sqs.Queue(
+            self,
+            'job_processing_dead_letter_sqs',
+        )
         self.job_processing_sqs = aws_sqs.Queue(
             self,
             'job_processing_sqs',
             visibility_timeout=core.Duration.seconds(60),
-        )
-        aws_sqs.DeadLetterQueue(
-            queue=self.job_processing_sqs,
-            max_receive_count=JOB_PROCESSING_MAX_RETRIES
+            dead_letter_queue=aws_sqs.DeadLetterQueue(
+                queue=self.job_processing_dead_letter_sqs,
+                max_receive_count=JOB_PROCESSING_MAX_RETRIES
+            )
         )
 
         self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
