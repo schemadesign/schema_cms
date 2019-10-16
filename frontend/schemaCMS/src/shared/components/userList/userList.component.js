@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Card, Typography } from 'schemaUI';
 
-import { Container } from './userList.styles';
-
 const { H1 } = Typography;
 
 export class UserList extends PureComponent {
