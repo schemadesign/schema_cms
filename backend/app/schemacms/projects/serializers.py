@@ -129,11 +129,9 @@ class ProjectSerializer(serializers.ModelSerializer):
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
     editors = NestedRelatedModelSerializer(
+        read_only=True,
         many=True,
-        queryset=User.objects.all(),
         pk_field=serializers.UUIDField(format="hex_verbose"),
-        allow_empty=True,
-        required=False,
         serializer=ProjectEditorSerializer(),
     )
     meta = serializers.SerializerMethodField()
