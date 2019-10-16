@@ -9,10 +9,15 @@ class UsersConfig(AppConfig):
 
     def ready(self):
         from . import receivers  # noqa
+        from . import models  # noqa
 
         signals.user_deactivated.connect(
-            receivers.remove_from_projects, dispatch_uid="users.receivers.remove_from_projects"
+            receivers.remove_from_projects,
+            sender=models.User,
+            dispatch_uid="users.receivers.remove_from_projects",
         )
         db_signals.post_delete.connect(
-            receivers.remove_from_auth_backend, dispatch_uid="users.receivers.remove_from_auth_backend"
+            receivers.remove_from_auth_backend,
+            sender=models.User,
+            dispatch_uid="users.receivers.remove_from_auth_backend",
         )
