@@ -20,7 +20,7 @@ db.initialize()
 def write_dataframe_to_csv_on_s3(dataframe, filename):
     csv_buffer = StringIO()
 
-    dataframe.to_csv(csv_buffer, index=False)
+    dataframe.to_csv(csv_buffer, encoding="utf-8", index=False)
 
     return services.s3_resource.Object(
         settings.AWS_STORAGE_BUCKET_NAME, filename
