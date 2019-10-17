@@ -4,7 +4,7 @@ import { path } from 'ramda';
 import { Typography, Card } from 'schemaUI';
 
 import browserHistory from '../../../shared/utils/history';
-import { Container, UserItem } from './addUser.styles';
+import { Container } from './addUser.styles';
 import { PlusButton } from '../../../shared/components/navigation';
 
 const { H1 } = Typography;
@@ -16,12 +16,18 @@ export class AddUser extends PureComponent {
         projectId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
-    fetchNotInProjectUsers: PropTypes.func.isRequired,
+    fetchUsers: PropTypes.func.isRequired,
+    fetchProject: PropTypes.func.isRequired,
     users: PropTypes.array.isRequired,
   };
 
-  componentDidMount() {
-    this.props.fetchNotInProjectUsers(path(['match', 'params', 'projectId'], this.props));
+  async componentDidMount() {
+    try {
+      await this.props.fetchProject({ projectId: path(['match', 'params', 'projectId'], this.props) });
+      await this.props.fetchUsers();
+    } catch (e) {
+      browserHistory.push('/');
+    }
   }
 
   handleAddUser = userId =>

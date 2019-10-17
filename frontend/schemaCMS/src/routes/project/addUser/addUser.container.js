@@ -1,23 +1,26 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { injectIntl } from 'react-intl';
 import { compose } from 'ramda';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { AddUser } from './addUser.component';
-import { selectNotInProjectUsers } from '../../../modules/project/project.selectors';
-import { ProjectRoutines } from '../../../modules/project';
+
+import { ProjectRoutines, selectProjectUsers } from '../../../modules/project';
+import { selectUsers, UserRoutines } from '../../../modules/user';
 
 const mapStateToProps = createStructuredSelector({
-  users: selectNotInProjectUsers,
+  users: selectUsers,
+  usersInProject: selectProjectUsers,
 });
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators(
+  bindPromiseCreators(
     {
-      fetchNotInProjectUsers: ProjectRoutines.fetchNotInProjectUsers,
+      fetchUsers: promisifyRoutine(UserRoutines.fetchUsers),
+      fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
     },
     dispatch
   );

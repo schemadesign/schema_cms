@@ -33,13 +33,10 @@ const unmountOne = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE
 
 const onFailure = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project).set('isFetched', true);
 
-const fetchNotInProjectUsersSuccess = (state = INITIAL_STATE, { payload }) => state.set('notInProjectUsers', payload);
-
 export const reducer = createReducer(INITIAL_STATE, {
   [ProjectRoutines.fetchList.SUCCESS]: updateList,
   [ProjectRoutines.fetchOne.SUCCESS]: updateOne,
   [ProjectRoutines.fetchOne.FAILURE]: onFailure,
   [ProjectRoutines.unmountOne.TRIGGER]: unmountOne,
   [ProjectRoutines.createProject.SUCCESS]: createProjectSuccess,
-  [ProjectRoutines.fetchNotInProjectUsers.SUCCESS]: fetchNotInProjectUsersSuccess,
 });

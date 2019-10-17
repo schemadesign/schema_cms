@@ -73,27 +73,11 @@ function* removeOne({ payload }) {
   }
 }
 
-function* fetchNotInProjectUsers({ payload: { projectId } }) {
-  try {
-    yield put(ProjectRoutines.fetchNotInProjectUsers.request());
-    const {
-      data: { results },
-    } = yield api.get(`/users?except_from=${projectId}`);
-
-    yield put(ProjectRoutines.fetchNotInProjectUsers.success(results));
-  } catch (error) {
-    yield put(ProjectRoutines.fetchNotInProjectUsers.failure(error));
-  } finally {
-    yield put(ProjectRoutines.fetchNotInProjectUsers.fulfill());
-  }
-}
-
 export function* watchProject() {
   yield all([
     takeLatest(ProjectRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(ProjectRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(ProjectRoutines.createProject.TRIGGER, createProject),
     takeLatest(ProjectRoutines.removeOne.TRIGGER, removeOne),
-    takeLatest(ProjectRoutines.fetchNotInProjectUsers.TRIGGER, fetchNotInProjectUsers),
   ]);
 }
