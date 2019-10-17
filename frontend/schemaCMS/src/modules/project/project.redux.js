@@ -10,6 +10,7 @@ export const ProjectRoutines = {
   unmountOne: createRoutine(`${prefix}UNMOUNT_ONE`),
   removeOne: createRoutine(`${prefix}REMOVE`),
   createProject: createRoutine(`${prefix}CREATE_PROJECT`),
+  fetchNotInProjectUsers: createRoutine(`${prefix}FETCH_NOT_IN_PROJECT_USERS`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -18,6 +19,7 @@ export const INITIAL_STATE = new Immutable({
     editors: [],
   },
   isFetched: false,
+  notInProjectUsers: [],
 });
 
 const updateList = (state = INITIAL_STATE, { payload }) => state.set('projects', payload).set('isFetched', true);
@@ -31,10 +33,13 @@ const unmountOne = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE
 
 const onFailure = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project).set('isFetched', true);
 
+const fetchNotInProjectUsersSuccess = (state = INITIAL_STATE, { payload }) => state.set('notInProjectUsers', payload);
+
 export const reducer = createReducer(INITIAL_STATE, {
   [ProjectRoutines.fetchList.SUCCESS]: updateList,
   [ProjectRoutines.fetchOne.SUCCESS]: updateOne,
   [ProjectRoutines.fetchOne.FAILURE]: onFailure,
   [ProjectRoutines.unmountOne.TRIGGER]: unmountOne,
   [ProjectRoutines.createProject.SUCCESS]: createProjectSuccess,
+  [ProjectRoutines.fetchNotInProjectUsers.SUCCESS]: fetchNotInProjectUsersSuccess,
 });

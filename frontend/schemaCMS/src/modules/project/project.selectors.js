@@ -22,3 +22,8 @@ export const selectIsFetched = createSelector(
   selectProjectDomain,
   prop('isFetched')
 );
+
+export const selectNotInProjectUsers = createSelector(
+  selectProjectDomain,
+  prop('notInProjectUsers')
+);

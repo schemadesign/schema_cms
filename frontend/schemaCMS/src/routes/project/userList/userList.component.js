@@ -34,7 +34,10 @@ export class UserList extends PureComponent {
     }
   }
 
-  handleAddUser = () => browserHistory.push(`/project/${prop(['match', 'params', 'projectId'], this.props)}/user`);
+  handleAddUser = () => {
+    const projectId = path(['match', 'params', 'projectId'], this.props);
+    return browserHistory.push(`/project/${projectId}/user/add`);
+  };
 
   render() {
     const { users } = this.props;
