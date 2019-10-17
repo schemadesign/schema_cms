@@ -184,7 +184,7 @@ export class View extends PureComponent {
     const { projectId } = this.props.match.params;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, !project || has('error', project));
+    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, !projectId || has('error', project));
 
     return (
       <Container>

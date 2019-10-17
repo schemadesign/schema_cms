@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { path } from 'ramda';
+import { Typography, Card } from 'schemaUI';
 
+import browserHistory from '../../../shared/utils/history';
 import { Container, UserItem } from './addUser.styles';
 import { PlusButton } from '../../../shared/components/navigation';
+
+const { H1 } = Typography;
 
 export class AddUser extends PureComponent {
   static propTypes = {
@@ -20,11 +24,14 @@ export class AddUser extends PureComponent {
     this.props.fetchNotInProjectUsers(path(['match', 'params', 'projectId'], this.props));
   }
 
+  handleAddUser = userId =>
+    browserHistory.push(`/user/${userId}/add/${path(['match', 'params', 'projectId'], this.props)}`);
+
   renderUser = (user, index) => (
-    <UserItem key={index}>
-      {`${user.firstName} ${user.lastName}`}
-      <PlusButton id={`addUserPlusButton${index}`} onClick={this.handleAddUser} />
-    </UserItem>
+    <Card key={index}>
+      <H1>{`${user.firstName} ${user.lastName}`}</H1>
+      <PlusButton id={`addUserPlusButton${index}`} onClick={() => this.handleAddUser(user.id)} />
+    </Card>
   );
 
   render() {

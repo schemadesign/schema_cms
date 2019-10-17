@@ -76,9 +76,11 @@ function* removeOne({ payload }) {
 function* fetchNotInProjectUsers({ payload: { projectId } }) {
   try {
     yield put(ProjectRoutines.fetchNotInProjectUsers.request());
-    const { data } = yield api.get(`/users?except_from=${projectId}`);
+    const {
+      data: { results },
+    } = yield api.get(`/users?except_from=${projectId}`);
 
-    yield put(ProjectRoutines.fetchNotInProjectUsers.success(data));
+    yield put(ProjectRoutines.fetchNotInProjectUsers.success(results));
   } catch (error) {
     yield put(ProjectRoutines.fetchNotInProjectUsers.failure(error));
   } finally {
