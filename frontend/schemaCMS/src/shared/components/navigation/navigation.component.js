@@ -10,7 +10,7 @@ const { PlusIcon, ArrowLeftIcon } = Icons;
 
 export class NavigationContainer extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
     right: PropTypes.bool,
   };
 
@@ -49,7 +49,7 @@ export class BackArrowButton extends PureComponent {
 
 export class BackButton extends PureComponent {
   static propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     disabled: PropTypes.bool,
   };
 
@@ -68,7 +68,7 @@ export class BackButton extends PureComponent {
 
 export class NextButton extends PureComponent {
   static propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     loading: PropTypes.bool,
   };
 

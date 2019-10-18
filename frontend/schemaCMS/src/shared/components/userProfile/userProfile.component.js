@@ -1,9 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'schemaUI';
 import { Formik } from 'formik';
 
-import { buttonStyles, Container } from './userProfile.styles';
+import { Container } from './userProfile.styles';
 import { TextInput } from '../form/inputs/textInput';
 import {
   EMAIL,
@@ -18,6 +17,7 @@ import {
 
 import messages from './userProfile.messages';
 import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
+import { BackButton, NavigationContainer, NextButton } from '../navigation';
 
 export class UserProfile extends PureComponent {
   static propTypes = {
@@ -27,11 +27,14 @@ export class UserProfile extends PureComponent {
     intl: PropTypes.object.isRequired,
     isSettings: PropTypes.bool,
     match: PropTypes.object,
+    history: PropTypes.object,
   };
 
   static defaultProps = {
     isSettings: false,
   };
+
+  handleGoToList = () => this.props.history.push('/user');
 
   handleSubmit = values => {
     if (this.props.isSettings) {
@@ -42,31 +45,34 @@ export class UserProfile extends PureComponent {
   };
 
   renderMakeAdmin = renderWhenTrue(() => (
-    <Button customStyles={buttonStyles} type="submit">
-      {this.props.intl.formatMessage(messages.makeAdmin)}
-    </Button>
+    <NextButton type="submit">{this.props.intl.formatMessage(messages.makeAdmin)}</NextButton>
   ));
 
-  renderSubmitButton = renderWhenTrueOtherwise(
-    () => (
-      <Button customStyles={buttonStyles} type="submit">
-        {this.props.intl.formatMessage(messages.save)}
-      </Button>
-    ),
-    () => this.renderMakeAdmin(this.props.userData.role === ROLES.EDITOR)
-  );
+  renderSubmitButton = ({ dirty, isEditor }) =>
+    renderWhenTrueOtherwise(
+      () => (
+        <NextButton type="submit" disabled={!dirty}>
+          {this.props.intl.formatMessage(messages.save)}
+        </NextButton>
+      ),
+      () => (
+        <Fragment>
+          <BackButton type="button" onClick={this.handleGoToList} />
+          {this.renderMakeAdmin(isEditor)}
+        </Fragment>
+      )
+    );
 
   renderRole = ({ values, roleLabel, restProps }) =>
-    renderWhenTrue(() => (
-      <TextInput disabled fullWidth value={values[ROLE]} name={EMAIL} label={roleLabel} {...restProps} />
-    ));
+    renderWhenTrue(() => <TextInput fullWidth value={values[ROLE]} name={ROLE} label={roleLabel} {...restProps} />);
 
-  renderContent = ({ values, handleChange, handleSubmit, ...restProps }) => {
+  renderContent = ({ values, handleChange, handleSubmit, dirty, ...restProps }) => {
     const { intl, isSettings } = this.props;
     const firstNameLabel = intl.formatMessage(messages.firstNameLabel);
     const lastNameLabel = intl.formatMessage(messages.lastNameLabel);
     const emailLabel = intl.formatMessage(messages.emailLabel);
     const roleLabel = intl.formatMessage(messages.roleLabel);
+    const isEditor = this.props.userData.role === ROLES.EDITOR;
 
     return (
       <Container>
@@ -89,9 +95,11 @@ export class UserProfile extends PureComponent {
             label={lastNameLabel}
             {...restProps}
           />
-          <TextInput disabled fullWidth value={values[EMAIL]} name={EMAIL} label={emailLabel} {...restProps} />
+          <TextInput disabled fullWidth readOnly value={values[EMAIL]} name={EMAIL} label={emailLabel} />
           {this.renderRole({ values, roleLabel, restProps })(!isSettings)}
-          {this.renderSubmitButton(isSettings)}
+          <NavigationContainer right={isSettings || isEditor}>
+            {this.renderSubmitButton({ dirty, isEditor })(isSettings)}
+          </NavigationContainer>
         </form>
       </Container>
     );

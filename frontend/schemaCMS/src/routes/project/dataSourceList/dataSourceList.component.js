@@ -43,7 +43,7 @@ import {
   STATUS_PROCESSING,
   STATUS_READY_FOR_PROCESSING,
 } from '../../../modules/dataSource/dataSource.constants';
-import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
 const { H1 } = Typography;

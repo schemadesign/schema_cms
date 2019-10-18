@@ -2,7 +2,7 @@
 import { defineMessages } from 'react-intl';
 import { PROJECT_STATUSES } from '../../../modules/project/project.constants';
 
-const { IN_PROGRESS, DONE, HOLD, PUBLISHED } = PROJECT_STATUSES;
+const { IN_PROGRESS, DONE, HOLD } = PROJECT_STATUSES;
 
 export default defineMessages({
   pageTitle: {
