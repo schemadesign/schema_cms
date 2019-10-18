@@ -9,6 +9,7 @@ export const UserRoutines = {
   createUserCMS: createRoutine(`${PREFIX}CREATE_USER_CMS`),
   unmountUser: createRoutine(`${PREFIX}UNMOUNT_USER`),
   fetchUser: createRoutine(`${PREFIX}FETCH_USER`),
+  makeAdmin: createRoutine(`${PREFIX}MAKE_ADMIN`),
   fetchUsers: createRoutine(`${PREFIX}FETCH_USERS`),
 };
 
@@ -19,12 +20,13 @@ export const INITIAL_STATE = new Immutable({
 
 const unmountUser = (state = INITIAL_STATE) => state.set('user', {});
 
-const fetchUser = (state = INITIAL_STATE, { payload }) => state.set('user', payload);
+const updateUser = (state = INITIAL_STATE, { payload }) => state.set('user', payload);
 
-const fetchUsers = (state = INITIAL_STATE, { payload }) => state.set('users', payload);
+const updateUsers = (state = INITIAL_STATE, { payload }) => state.set('users', payload);
 
 export const reducer = createReducer(INITIAL_STATE, {
   [UserRoutines.unmountUser.TRIGGER]: unmountUser,
-  [UserRoutines.fetchUser.SUCCESS]: fetchUser,
-  [UserRoutines.fetchUsers.SUCCESS]: fetchUsers,
+  [UserRoutines.fetchUser.SUCCESS]: updateUser,
+  [UserRoutines.makeAdmin.SUCCESS]: updateUser,
+  [UserRoutines.fetchUsers.SUCCESS]: updateUsers,
 });

@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import UserProfile from '../../shared/components/userProfile';
+import { Container } from './settings.styles';
+import { TopHeader } from '../../shared/components/topHeader';
+import messages from './settings.messages';
 
 export class Settings extends PureComponent {
   static propTypes = {
@@ -10,7 +13,29 @@ export class Settings extends PureComponent {
     match: PropTypes.object.isRequired,
   };
 
+  getHeaderAndMenuConfig = intl => ({
+    headerTitle: intl.formatMessage(messages.title),
+    headerSubtitle: intl.formatMessage(messages.subTitle),
+    secondaryMenuItems: [
+      {
+        label: intl.formatMessage(messages.resetPassword),
+        to: '/reset-password',
+      },
+      {
+        label: intl.formatMessage(messages.logout),
+        to: '/logout',
+      },
+    ],
+  });
+
   render() {
-    return <UserProfile {...this.props} />;
+    const topHeaderConfig = this.getHeaderAndMenuConfig(this.props.intl);
+
+    return (
+      <Container>
+        <TopHeader {...topHeaderConfig} />
+        <UserProfile {...this.props} isSettings />
+      </Container>
+    );
   }
 }
