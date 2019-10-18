@@ -2,6 +2,9 @@
 
 exports[`View: Component should render correctly 1`] = `
 <styled.div>
-  View component
+  <TopHeader
+    headerSubtitle="Profile"
+    headerTitle="Users"
+  />
 </styled.div>
 `;

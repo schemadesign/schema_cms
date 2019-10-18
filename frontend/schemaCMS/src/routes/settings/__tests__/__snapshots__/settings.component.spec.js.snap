@@ -2,6 +2,32 @@
 
 exports[`Settings: Component should render correctly 1`] = `
 <styled.div>
-  Settings component
+  <TopHeader
+    headerSubtitle="Profile"
+    headerTitle="Admin Settings"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "label": "Reset Password",
+          "to": "/reset-password",
+        },
+        Object {
+          "label": "Log out",
+          "to": "/logout",
+        },
+      ]
+    }
+  />
+  <UserProfile
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isSettings={true}
+    match={Object {}}
+    updateMe={[Function]}
+    userData={Object {}}
+  />
 </styled.div>
 `;

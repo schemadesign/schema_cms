@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 
-import { Container } from './userProfile.styles';
+import { Container, Form } from './userProfile.styles';
 import { TextInput } from '../form/inputs/textInput';
 import {
   EMAIL,
@@ -76,7 +76,7 @@ export class UserProfile extends PureComponent {
 
     return (
       <Container>
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <TextInput
             disabled={!isSettings}
             fullWidth
@@ -100,7 +100,7 @@ export class UserProfile extends PureComponent {
           <NavigationContainer right={isSettings || isEditor}>
             {this.renderSubmitButton({ dirty, isEditor })(isSettings)}
           </NavigationContainer>
-        </form>
+        </Form>
       </Container>
     );
   };

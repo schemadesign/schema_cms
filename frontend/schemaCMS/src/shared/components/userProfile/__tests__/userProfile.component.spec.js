@@ -1,23 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
-import { expect } from 'chai';
+import { Formik } from 'formik';
 
 import { UserProfile } from '../userProfile.component';
-import { INITIAL_VALUES } from '../../../../modules/userProfile/userProfile.constants';
-import { TextInput } from '../../form/inputs/textInput';
-import { Form } from '../userProfile.styles';
+import { defaultProps } from '../userProfile.stories';
+import { BackButton, NextButton } from '../../navigation';
 
 describe('UserProfile: Component', () => {
-  const defaultProps = {
-    values: INITIAL_VALUES,
-    handleChange: Function.prototype,
-    handleSubmit: Function.prototype,
-    intl: {
-      formatMessage: ({ defaultMessage }) => defaultMessage,
-    },
-  };
-
   const component = props => <UserProfile {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
@@ -27,22 +16,56 @@ describe('UserProfile: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call handleSubmit on form submit', () => {
-    const handleSubmit = spy();
+  it('should render correctly form', () => {
+    const wrapper = render()
+      .find(Formik)
+      .dive();
+    global.expect(wrapper).toMatchSnapshot();
+  });
 
-    const wrapper = render({ handleSubmit });
-    wrapper.find(Form).simulate('submit');
-    expect(handleSubmit).to.have.been.calledOnce;
+  it('should render correctly form for user settings', () => {
+    const wrapper = render({ isSettings: true })
+      .find(Formik)
+      .dive();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call updateMe on form submit', () => {
+    jest.spyOn(defaultProps, 'updateMe');
+
+    const wrapper = render();
+
+    wrapper
+      .find(Formik)
+      .dive()
+      .find(NextButton)
+      .simulate('click');
+    expect(defaultProps.updateMe).toBeCalled();
+  });
+
+  it('should call makeAdmin on form submit', () => {
+    jest.spyOn(defaultProps, 'makeAdmin');
+
+    const wrapper = render();
+
+    wrapper
+      .find(Formik)
+      .dive()
+      .find(NextButton)
+      .simulate('click');
+    expect(defaultProps.makeAdmin).toBeCalled();
   });
 
   it('should call handleChange on change of TextInput value', () => {
-    const handleChange = spy();
+    jest.spyOn(defaultProps.history, 'push');
 
-    const wrapper = render({ handleChange });
+    const wrapper = render({ isSettings: false });
     wrapper
-      .find(TextInput)
-      .first()
-      .prop('onChange')();
-    expect(handleChange).to.have.been.calledOnce;
+      .find(Formik)
+      .dive()
+      .find(BackButton)
+      .simulate('click');
+
+    expect(defaultProps.history.push).toBeCalled();
   });
 });

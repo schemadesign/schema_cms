@@ -1,107 +1,1341 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UserProfile: Component should render correctly 1`] = `
-<styled.div>
-  <TopHeader
-    headerSubtitle="Profile"
-    headerTitle="Admin Settings"
-  />
-  <styled.form
-    onSubmit={[Function]}
-  >
-    <TextInput
-      checkOnlyErrors={false}
-      errors={Object {}}
-      handleChange={[Function]}
-      handleSubmit={[Function]}
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      label="First Name"
-      name="firstName"
-      onChange={[Function]}
-      touched={Object {}}
-      value=""
-      values={
-        Object {
-          "email": "",
-          "firstName": "",
-          "lastName": "",
-        }
-      }
-    />
-    <TextInput
-      checkOnlyErrors={false}
-      errors={Object {}}
-      handleChange={[Function]}
-      handleSubmit={[Function]}
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      label="Last Name"
-      name="lastName"
-      onChange={[Function]}
-      touched={Object {}}
-      value=""
-      values={
-        Object {
-          "email": "",
-          "firstName": "",
-          "lastName": "",
-        }
-      }
-    />
-    <TextInput
-      checkOnlyErrors={false}
-      disabled={true}
-      errors={Object {}}
-      handleChange={[Function]}
-      handleSubmit={[Function]}
-      intl={
-        Object {
-          "formatMessage": [Function],
-        }
-      }
-      label="Email"
-      name="email"
-      onChange={[Function]}
-      readOnly={true}
-      touched={Object {}}
-      value=""
-      values={
-        Object {
-          "email": "",
-          "firstName": "",
-          "lastName": "",
-        }
-      }
-    />
-    <Component
-      customStyles={
-        Object {
-          "marginRight": "20px",
-          "padding": "0 30px",
-        }
-      }
-    >
-      Save
-    </Component>
-  </styled.form>
+<Formik
+  displayName="user_profile_form"
+  enableReinitialize={true}
+  initialValues={
+    Object {
+      "email": "",
+      "firstName": "",
+      "lastName": "",
+    }
+  }
+  isInitialValid={true}
+  onSubmit={[Function]}
+  render={[Function]}
+  validateOnBlur={true}
+  validateOnChange={true}
+  validationSchema={
+    ObjectSchema {
+      "_blacklist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "_conditions": Array [],
+      "_defaultDefault": [Function],
+      "_deps": Array [],
+      "_excludedEdges": Array [],
+      "_exclusive": Object {},
+      "_mutate": undefined,
+      "_nodes": Array [
+        "email",
+        "lastName",
+        "firstName",
+      ],
+      "_options": Object {
+        "abortEarly": true,
+        "recursive": true,
+      },
+      "_type": "object",
+      "_typeError": [Function],
+      "_whitelist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "fields": Object {
+        "email": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+            "undefined": false,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "firstName": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "max": true,
+            "min": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "lastName": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "max": true,
+            "min": true,
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+      },
+      "tests": Array [],
+      "transforms": Array [
+        [Function],
+      ],
+    }
+  }
+/>
+`;
+
+exports[`UserProfile: Component should render correctly form 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "email": "",
+        "firstName": "",
+        "lastName": "",
+      },
+      "isSubmitting": false,
+      "isValid": true,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "email",
+          "lastName",
+          "firstName",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "email": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+              "undefined": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "firstName": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "lastName": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "values": Object {
+        "email": "",
+        "firstName": "",
+        "lastName": "",
+      },
+    }
+  }
+>
   <styled.div>
-    <Styled(Link)
-      to="/reset-password"
+    <styled.form
+      onSubmit={[Function]}
     >
-      Reset Password
-    </Styled(Link)>
-    <Styled(Link)
-      to="/logout"
-    >
-      Log out
-    </Styled(Link)>
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={false}
+        errors={Object {}}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleReset={[Function]}
+        initialValues={
+          Object {
+            "email": "",
+            "firstName": "",
+            "lastName": "",
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        isValidating={false}
+        label="First Name"
+        name="firstName"
+        onChange={[Function]}
+        registerField={[Function]}
+        resetForm={[Function]}
+        setError={[Function]}
+        setErrors={[Function]}
+        setFieldError={[Function]}
+        setFieldTouched={[Function]}
+        setFieldValue={[Function]}
+        setFormikState={[Function]}
+        setStatus={[Function]}
+        setSubmitting={[Function]}
+        setTouched={[Function]}
+        setValues={[Function]}
+        submitCount={0}
+        submitForm={[Function]}
+        touched={Object {}}
+        unregisterField={[Function]}
+        validateField={[Function]}
+        validateForm={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+        value=""
+      />
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={false}
+        errors={Object {}}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleReset={[Function]}
+        initialValues={
+          Object {
+            "email": "",
+            "firstName": "",
+            "lastName": "",
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        isValidating={false}
+        label="Last Name"
+        name="lastName"
+        onChange={[Function]}
+        registerField={[Function]}
+        resetForm={[Function]}
+        setError={[Function]}
+        setErrors={[Function]}
+        setFieldError={[Function]}
+        setFieldTouched={[Function]}
+        setFieldValue={[Function]}
+        setFormikState={[Function]}
+        setStatus={[Function]}
+        setSubmitting={[Function]}
+        setTouched={[Function]}
+        setValues={[Function]}
+        submitCount={0}
+        submitForm={[Function]}
+        touched={Object {}}
+        unregisterField={[Function]}
+        validateField={[Function]}
+        validateForm={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+        value=""
+      />
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={true}
+        errors={Object {}}
+        fullWidth={true}
+        label="Email"
+        name="email"
+        onChange={[Function]}
+        readOnly={true}
+        touched={Object {}}
+        value=""
+      />
+      <NavigationContainer
+        right={true}
+      >
+        <NextButton
+          disabled={true}
+          loading={false}
+          type="submit"
+        >
+          Save
+        </NextButton>
+      </NavigationContainer>
+    </styled.form>
   </styled.div>
-</styled.div>
+</ContextProvider>
+`;
+
+exports[`UserProfile: Component should render correctly form 2`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "email": "",
+        "firstName": "",
+        "lastName": "",
+      },
+      "isSubmitting": false,
+      "isValid": true,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "email",
+          "lastName",
+          "firstName",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "email": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+              "undefined": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "firstName": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "lastName": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "values": Object {
+        "email": "",
+        "firstName": "",
+        "lastName": "",
+      },
+    }
+  }
+>
+  <styled.div>
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={true}
+        errors={Object {}}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleReset={[Function]}
+        initialValues={
+          Object {
+            "email": "",
+            "firstName": "",
+            "lastName": "",
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        isValidating={false}
+        label="First Name"
+        name="firstName"
+        onChange={[Function]}
+        registerField={[Function]}
+        resetForm={[Function]}
+        setError={[Function]}
+        setErrors={[Function]}
+        setFieldError={[Function]}
+        setFieldTouched={[Function]}
+        setFieldValue={[Function]}
+        setFormikState={[Function]}
+        setStatus={[Function]}
+        setSubmitting={[Function]}
+        setTouched={[Function]}
+        setValues={[Function]}
+        submitCount={0}
+        submitForm={[Function]}
+        touched={Object {}}
+        unregisterField={[Function]}
+        validateField={[Function]}
+        validateForm={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+        value=""
+      />
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={true}
+        errors={Object {}}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleReset={[Function]}
+        initialValues={
+          Object {
+            "email": "",
+            "firstName": "",
+            "lastName": "",
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        isValidating={false}
+        label="Last Name"
+        name="lastName"
+        onChange={[Function]}
+        registerField={[Function]}
+        resetForm={[Function]}
+        setError={[Function]}
+        setErrors={[Function]}
+        setFieldError={[Function]}
+        setFieldTouched={[Function]}
+        setFieldValue={[Function]}
+        setFormikState={[Function]}
+        setStatus={[Function]}
+        setSubmitting={[Function]}
+        setTouched={[Function]}
+        setValues={[Function]}
+        submitCount={0}
+        submitForm={[Function]}
+        touched={Object {}}
+        unregisterField={[Function]}
+        validateField={[Function]}
+        validateForm={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+        value=""
+      />
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={true}
+        errors={Object {}}
+        fullWidth={true}
+        label="Email"
+        name="email"
+        onChange={[Function]}
+        readOnly={true}
+        touched={Object {}}
+        value=""
+      />
+      <TextInput
+        checkOnlyErrors={false}
+        errors={Object {}}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleReset={[Function]}
+        initialValues={
+          Object {
+            "email": "",
+            "firstName": "",
+            "lastName": "",
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        isValidating={false}
+        label="Role"
+        name="role"
+        onChange={[Function]}
+        registerField={[Function]}
+        resetForm={[Function]}
+        setError={[Function]}
+        setErrors={[Function]}
+        setFieldError={[Function]}
+        setFieldTouched={[Function]}
+        setFieldValue={[Function]}
+        setFormikState={[Function]}
+        setStatus={[Function]}
+        setSubmitting={[Function]}
+        setTouched={[Function]}
+        setValues={[Function]}
+        submitCount={0}
+        submitForm={[Function]}
+        touched={Object {}}
+        unregisterField={[Function]}
+        validateField={[Function]}
+        validateForm={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+      />
+      <NavigationContainer
+        right={false}
+      >
+        <BackButton
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        />
+      </NavigationContainer>
+    </styled.form>
+  </styled.div>
+</ContextProvider>
+`;
+
+exports[`UserProfile: Component should render correctly form for single user 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "email": "",
+        "firstName": "",
+        "lastName": "",
+      },
+      "isSubmitting": false,
+      "isValid": true,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "email",
+          "lastName",
+          "firstName",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "email": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+              "undefined": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "firstName": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "lastName": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "values": Object {
+        "email": "",
+        "firstName": "",
+        "lastName": "",
+      },
+    }
+  }
+>
+  <styled.div>
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={false}
+        errors={Object {}}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleReset={[Function]}
+        initialValues={
+          Object {
+            "email": "",
+            "firstName": "",
+            "lastName": "",
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        isValidating={false}
+        label="First Name"
+        name="firstName"
+        onChange={[Function]}
+        registerField={[Function]}
+        resetForm={[Function]}
+        setError={[Function]}
+        setErrors={[Function]}
+        setFieldError={[Function]}
+        setFieldTouched={[Function]}
+        setFieldValue={[Function]}
+        setFormikState={[Function]}
+        setStatus={[Function]}
+        setSubmitting={[Function]}
+        setTouched={[Function]}
+        setValues={[Function]}
+        submitCount={0}
+        submitForm={[Function]}
+        touched={Object {}}
+        unregisterField={[Function]}
+        validateField={[Function]}
+        validateForm={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+        value=""
+      />
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={false}
+        errors={Object {}}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleReset={[Function]}
+        initialValues={
+          Object {
+            "email": "",
+            "firstName": "",
+            "lastName": "",
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        isValidating={false}
+        label="Last Name"
+        name="lastName"
+        onChange={[Function]}
+        registerField={[Function]}
+        resetForm={[Function]}
+        setError={[Function]}
+        setErrors={[Function]}
+        setFieldError={[Function]}
+        setFieldTouched={[Function]}
+        setFieldValue={[Function]}
+        setFormikState={[Function]}
+        setStatus={[Function]}
+        setSubmitting={[Function]}
+        setTouched={[Function]}
+        setValues={[Function]}
+        submitCount={0}
+        submitForm={[Function]}
+        touched={Object {}}
+        unregisterField={[Function]}
+        validateField={[Function]}
+        validateForm={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+        value=""
+      />
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={true}
+        errors={Object {}}
+        fullWidth={true}
+        label="Email"
+        name="email"
+        onChange={[Function]}
+        readOnly={true}
+        touched={Object {}}
+        value=""
+      />
+      <NavigationContainer
+        right={true}
+      >
+        <NextButton
+          disabled={true}
+          loading={false}
+          type="submit"
+        >
+          Save
+        </NextButton>
+      </NavigationContainer>
+    </styled.form>
+  </styled.div>
+</ContextProvider>
+`;
+
+exports[`UserProfile: Component should render correctly form for user settings 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "email": "",
+        "firstName": "",
+        "lastName": "",
+      },
+      "isSubmitting": false,
+      "isValid": true,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "email",
+          "lastName",
+          "firstName",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "email": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+              "undefined": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "firstName": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+          "lastName": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "values": Object {
+        "email": "",
+        "firstName": "",
+        "lastName": "",
+      },
+    }
+  }
+>
+  <styled.div>
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={false}
+        errors={Object {}}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleReset={[Function]}
+        initialValues={
+          Object {
+            "email": "",
+            "firstName": "",
+            "lastName": "",
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        isValidating={false}
+        label="First Name"
+        name="firstName"
+        onChange={[Function]}
+        registerField={[Function]}
+        resetForm={[Function]}
+        setError={[Function]}
+        setErrors={[Function]}
+        setFieldError={[Function]}
+        setFieldTouched={[Function]}
+        setFieldValue={[Function]}
+        setFormikState={[Function]}
+        setStatus={[Function]}
+        setSubmitting={[Function]}
+        setTouched={[Function]}
+        setValues={[Function]}
+        submitCount={0}
+        submitForm={[Function]}
+        touched={Object {}}
+        unregisterField={[Function]}
+        validateField={[Function]}
+        validateForm={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+        value=""
+      />
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={false}
+        errors={Object {}}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleReset={[Function]}
+        initialValues={
+          Object {
+            "email": "",
+            "firstName": "",
+            "lastName": "",
+          }
+        }
+        isSubmitting={false}
+        isValid={true}
+        isValidating={false}
+        label="Last Name"
+        name="lastName"
+        onChange={[Function]}
+        registerField={[Function]}
+        resetForm={[Function]}
+        setError={[Function]}
+        setErrors={[Function]}
+        setFieldError={[Function]}
+        setFieldTouched={[Function]}
+        setFieldValue={[Function]}
+        setFormikState={[Function]}
+        setStatus={[Function]}
+        setSubmitting={[Function]}
+        setTouched={[Function]}
+        setValues={[Function]}
+        submitCount={0}
+        submitForm={[Function]}
+        touched={Object {}}
+        unregisterField={[Function]}
+        validateField={[Function]}
+        validateForm={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+        value=""
+      />
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={true}
+        errors={Object {}}
+        fullWidth={true}
+        label="Email"
+        name="email"
+        onChange={[Function]}
+        readOnly={true}
+        touched={Object {}}
+        value=""
+      />
+      <NavigationContainer
+        right={true}
+      >
+        <NextButton
+          disabled={true}
+          loading={false}
+          type="submit"
+        >
+          Save
+        </NextButton>
+      </NavigationContainer>
+    </styled.form>
+  </styled.div>
+</ContextProvider>
 `;
