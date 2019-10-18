@@ -12,7 +12,7 @@ def make_csv(cols_num=3, rows_num=1):
     for i in range(rows_num):
         csv_writer.writerow([i for i in range(cols_num)])
 
-    return csv_file
+    return io.BytesIO(csv_file.getvalue().encode())
 
 
 def make_script(code=b"test = 123"):

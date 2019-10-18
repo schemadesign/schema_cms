@@ -1,6 +1,6 @@
 import os
+import io
 
-import django_fsm
 from django.db import transaction
 from rest_framework import serializers, exceptions, validators
 
@@ -82,11 +82,13 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
     @transaction.atomic()
     def update(self, instance, validated_data):
+        file = validated_data.get("file", None)
         obj = super().update(instance=instance, validated_data=validated_data)
-        user = self.context["request"].user
-        if django_fsm.has_transition_perm(obj.ready_for_processing, user):
-            obj.ready_for_processing()
-            obj.save()
+        if file:
+            file.seek(0)
+            file_in_bytes = io.BytesIO(file.read())
+            obj.update_meta(file_in_bytes)
+
         return obj
 
 
