@@ -106,17 +106,10 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     def process(self, request, pk=None, **kwargs):
         obj = self.get_object()
         try:
-            obj.ready_for_processing()
-            obj.process()
-            obj.done()
-            obj.save()
-            logging.info(f"DataSource {obj.id} processing DONE")
             return response.Response(obj.meta_data.data, status=status.HTTP_200_OK)
         except Exception as e:
             logging.error(f"DataSource {self.get_object().id} processing error - {e}")
-            obj.status = constants.DataSourceStatus.ERROR
-            obj.save()
-            return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            return response.Response(status=status.HTTP_404_NOT_FOUND)
 
     @decorators.action(detail=True)
     def script(self, request, pk=None, **kwargs):

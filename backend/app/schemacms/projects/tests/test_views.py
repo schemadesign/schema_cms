@@ -509,7 +509,7 @@ class TestDataSourceProcess:
             pk=data_source.pk
         )
         assert response.data == data_source_refreshed.meta_data.data
-        assert data_source_refreshed.status == projects_constants.DataSourceStatus.DONE
+        assert data_source_refreshed.status == projects_constants.DataSourceStatus.READY_FOR_PROCESSING
 
     @staticmethod
     def get_url(pk):

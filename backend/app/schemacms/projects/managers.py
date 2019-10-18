@@ -1,3 +1,5 @@
+import io
+
 from django.db import models, transaction
 from hashids import Hashids
 
@@ -22,7 +24,9 @@ class DataSourceQuerySet(models.QuerySet):
                 dsource.save()
 
             if file:
+                file_in_bytes = io.BytesIO(file.read())
                 dsource.file.save(file.name, file)
+                dsource.update_meta(file_in_bytes)
 
         return dsource
 
