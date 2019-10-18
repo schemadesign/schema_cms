@@ -1,19 +1,26 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'schemaUI';
+import { Formik } from 'formik';
 
-import { Container, Form, Link, buttonStyles, LinksWrapper } from './userProfile.styles';
-import { TopHeader } from '../../shared/components/topHeader';
-import { TextInput } from '../../shared/components/form/inputs/textInput';
-import { EMAIL, FIRST_NAME, LAST_NAME } from '../../modules/userProfile/userProfile.constants';
+import { buttonStyles, Container, Link, LinksWrapper } from './userProfile.styles';
+import { TopHeader } from '../topHeader';
+import { TextInput } from '../form/inputs/textInput';
+import {
+  EMAIL,
+  FIRST_NAME,
+  INITIAL_VALUES,
+  LAST_NAME,
+  USER_PROFILE_FORM,
+  USER_PROFILE_SCHEMA,
+} from '../../../modules/userProfile/userProfile.constants';
 
 import messages from './userProfile.messages';
 
 export class UserProfile extends PureComponent {
   static propTypes = {
-    values: PropTypes.object.isRequired,
-    handleChange: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
+    userData: PropTypes.object.isRequired,
+    updateMe: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
   };
 
@@ -22,8 +29,12 @@ export class UserProfile extends PureComponent {
     headerSubtitle: intl.formatMessage(messages.subTitle),
   });
 
-  render() {
-    const { values, handleChange, handleSubmit, intl } = this.props;
+  handleSubmit = values => {
+    this.props.updateMe(values);
+  };
+
+  renderContent = ({ values, handleChange, handleSubmit, ...restProps }) => {
+    const { intl } = this.props;
     const firstNameLabel = intl.formatMessage(messages.firstNameLabel);
     const lastNameLabel = intl.formatMessage(messages.lastNameLabel);
     const emailLabel = intl.formatMessage(messages.emailLabel);
@@ -31,39 +42,48 @@ export class UserProfile extends PureComponent {
 
     return (
       <Container>
-        <TopHeader {...topHeaderConfig} />
-        <Form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+          <TopHeader {...topHeaderConfig} />
           <TextInput
             value={values[FIRST_NAME]}
             onChange={handleChange}
             name={FIRST_NAME}
             label={firstNameLabel}
-            {...this.props}
+            {...restProps}
           />
           <TextInput
             value={values[LAST_NAME]}
             onChange={handleChange}
             name={LAST_NAME}
             label={lastNameLabel}
-            {...this.props}
+            {...restProps}
           />
-          <TextInput
-            disabled
-            readOnly
-            value={values[EMAIL]}
-            onChange={handleChange}
-            name={EMAIL}
-            label={emailLabel}
-            {...this.props}
-          />
+          <TextInput disabled value={values[EMAIL]} name={EMAIL} label={emailLabel} {...restProps} />
 
           <Button customStyles={buttonStyles}>{intl.formatMessage(messages.save)}</Button>
-        </Form>
+        </form>
         <LinksWrapper>
           <Link to="/reset-password">{intl.formatMessage(messages.resetPassword)}</Link>
           <Link to="/logout">{intl.formatMessage(messages.logout)}</Link>
         </LinksWrapper>
       </Container>
+    );
+  };
+
+  render() {
+    return (
+      <Formik
+        isInitialValid
+        enableReinitialize
+        displayName={USER_PROFILE_FORM}
+        validationSchema={USER_PROFILE_SCHEMA}
+        onSubmit={this.handleSubmit}
+        initialValues={{
+          ...INITIAL_VALUES,
+          ...this.props.userData,
+        }}
+        render={this.renderContent}
+      />
     );
   }
 }

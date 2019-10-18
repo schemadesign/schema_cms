@@ -4,8 +4,8 @@ import { spy } from 'sinon';
 import { expect } from 'chai';
 
 import { UserProfile } from '../userProfile.component';
-import { INITIAL_VALUES } from '../../../modules/userProfile/userProfile.constants';
-import { TextInput } from '../../../shared/components/form/inputs/textInput';
+import { INITIAL_VALUES } from '../../../../modules/userProfile/userProfile.constants';
+import { TextInput } from '../../form/inputs/textInput';
 import { Form } from '../userProfile.styles';
 
 describe('UserProfile: Component', () => {

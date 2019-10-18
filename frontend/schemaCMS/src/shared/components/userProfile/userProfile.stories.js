@@ -4,7 +4,7 @@ import { Router } from 'react-router';
 import { createMemoryHistory } from 'history';
 
 import { UserProfile } from './userProfile.component';
-import { INITIAL_VALUES } from '../../modules/userProfile/userProfile.constants';
+import { INITIAL_VALUES } from '../../../modules/userProfile/userProfile.constants';
 
 const history = createMemoryHistory();
 
