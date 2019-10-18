@@ -21,4 +21,8 @@ export default defineMessages({
     id: 'project.addUser.confirmRemoval',
     defaultMessage: 'Confirm',
   },
+  back: {
+    id: 'project.addUser.back',
+    defaultMessage: 'Back',
+  },
 });

@@ -17,9 +17,7 @@ export const ProjectRoutines = {
 
 export const INITIAL_STATE = new Immutable({
   projects: [],
-  project: {
-    editors: [],
-  },
+  project: {},
   isFetched: false,
   notInProjectUsers: [],
 });

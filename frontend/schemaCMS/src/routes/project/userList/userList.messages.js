@@ -8,6 +8,10 @@ export default defineMessages({
   },
   headerSubtitle: {
     id: 'userList.headerSubtitle',
-    defaultMessage: 'Add User',
+    defaultMessage: 'Project users list',
+  },
+  back: {
+    id: 'project.list.back',
+    defaultMessage: 'Back',
   },
 });

@@ -10,6 +10,7 @@ import { Container, AddIcon, RemoveIcon, UserItem, Button } from './addUser.styl
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './addUser.messages';
 import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 
 const { H2 } = Typography;
 
@@ -72,6 +73,8 @@ export class AddUser extends PureComponent {
     });
   };
 
+  handleBackClick = () => browserHistory.push(`/project/${this.props.match.params.projectId}/user`);
+
   renderAction = ({ id }, index) => {
     const { usersInProject } = this.props;
     return ifElse(
@@ -104,6 +107,11 @@ export class AddUser extends PureComponent {
       <Container>
         <TopHeader {...this.getHeaderConfig()} />
         {users.map(this.renderUser)}
+        <NavigationContainer>
+          <BackButton onClick={this.handleBackClick}>
+            <FormattedMessage {...messages.back} />
+          </BackButton>
+        </NavigationContainer>
         <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />

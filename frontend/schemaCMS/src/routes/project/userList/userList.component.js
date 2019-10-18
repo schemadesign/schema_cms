@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { path } from 'ramda';
 
 import { UserList as UserListComponent } from '../../../shared/components/userList';
-import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './userList.messages';
 import browserHistory from '../../../shared/utils/history';
@@ -39,6 +39,8 @@ export class UserList extends PureComponent {
     return browserHistory.push(`/project/${projectId}/user/add`);
   };
 
+  handleBackClick = () => browserHistory.push(`/project/${this.props.match.params.projectId}`);
+
   render() {
     const { users } = this.props;
     const topHeaderConfig = {
@@ -50,7 +52,10 @@ export class UserList extends PureComponent {
       <Fragment>
         <TopHeader {...topHeaderConfig} />
         <UserListComponent users={users} />
-        <NavigationContainer right>
+        <NavigationContainer>
+          <BackButton onClick={this.handleBackClick}>
+            <FormattedMessage {...messages.back} />
+          </BackButton>
           <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
         </NavigationContainer>
       </Fragment>

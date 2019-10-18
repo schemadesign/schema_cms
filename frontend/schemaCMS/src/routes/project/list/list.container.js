@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
@@ -15,9 +15,10 @@ const mapStateToProps = createStructuredSelector({
 });
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators(
+  bindPromiseCreators(
     {
-      fetchProjectsList: ProjectRoutines.fetchList,
+      fetchProjectsList: promisifyRoutine(ProjectRoutines.fetchList),
+      unmountProject: promisifyRoutine(ProjectRoutines.unmountOne),
     },
     dispatch
   );

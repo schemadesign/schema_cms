@@ -28,6 +28,7 @@ export class List extends PureComponent {
   static propTypes = {
     list: PropTypes.array.isRequired,
     fetchProjectsList: PropTypes.func.isRequired,
+    unmountProject: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
   };
@@ -107,7 +108,6 @@ export class List extends PureComponent {
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...topHeaderConfig} />
         {content}
-
         <NavigationContainer right>
           <PlusButton id="addProjectBtn" onClick={this.handleNewProject} />
         </NavigationContainer>

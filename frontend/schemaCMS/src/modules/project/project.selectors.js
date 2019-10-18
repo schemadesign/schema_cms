@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { prop, path } from 'ramda';
+import { prop, path, defaultTo } from 'ramda';
 
 export const selectProjectDomain = prop('project');
 
@@ -15,7 +15,7 @@ export const selectProject = createSelector(
 
 export const selectProjectUsers = createSelector(
   selectProjectDomain,
-  path(['project', 'editors'])
+  state => defaultTo([])(path(['project', 'editors'], state))
 );
 
 export const selectIsFetched = createSelector(
