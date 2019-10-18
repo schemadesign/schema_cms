@@ -17,7 +17,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      createUserProject: promisifyRoutine(UserRoutines.createUserProject),
+      createUserProject: promisifyRoutine(ProjectRoutines.addEditor),
       createUserCMS: promisifyRoutine(UserRoutines.createUserCMS),
       fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
       fetchUser: promisifyRoutine(UserRoutines.fetchUser),

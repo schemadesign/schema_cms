@@ -11,6 +11,8 @@ export const ProjectRoutines = {
   removeOne: createRoutine(`${prefix}REMOVE`),
   createProject: createRoutine(`${prefix}CREATE_PROJECT`),
   fetchNotInProjectUsers: createRoutine(`${prefix}FETCH_NOT_IN_PROJECT_USERS`),
+  removeEditor: createRoutine(`${prefix}REMOVE_EDITOR`),
+  addEditor: createRoutine(`${prefix}ADD_EDITOR`),
 };
 
 export const INITIAL_STATE = new Immutable({

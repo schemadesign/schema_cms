@@ -50,7 +50,10 @@ export class UserCreateProject extends PureComponent {
     }
   }
 
-  handleSubmit = values => this.props.createUserProject(values);
+  handleSubmit = ({ id: userId }) => {
+    const projectId = this.props.project.id;
+    this.props.createUserProject({ projectId, userId });
+  };
 
   renderLoading = renderWhenTrueOtherwise(
     () => (
