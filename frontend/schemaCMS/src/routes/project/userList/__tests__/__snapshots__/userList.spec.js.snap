@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserList: Component should render correctly 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Project users list"
+        id="userList.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userList.headerTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <UserList
+    users={Array []}
+  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Back"
+        id="project.list.back"
+        values={Object {}}
+      />
+    </BackButton>
+    <PlusButton
+      id="addUserBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</Fragment>
+`;
+
+exports[`UserList: Component should render correctly with users 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Project users list"
+        id="userList.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userList.headerTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <UserList
+    users={
+      Array [
+        Object {
+          "firstName": "Alan",
+          "id": 1,
+          "lastName": "Watts",
+        },
+        Object {
+          "firstName": "Dale",
+          "id": 2,
+          "lastName": "Chihuly",
+        },
+        Object {
+          "firstName": "Dave",
+          "id": 3,
+          "lastName": "Bowie",
+        },
+      ]
+    }
+  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Back"
+        id="project.list.back"
+        values={Object {}}
+      />
+    </BackButton>
+    <PlusButton
+      id="addUserBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</Fragment>
+`;
