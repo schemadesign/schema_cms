@@ -22,5 +22,15 @@ exports[`Project: Component should render correctly 1`] = `
     exact={true}
     path="/project/:projectId"
   />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/project/:projectId/user"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/project/:projectId/user/add"
+  />
 </Switch>
 `;

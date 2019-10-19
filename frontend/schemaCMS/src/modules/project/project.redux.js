@@ -19,7 +19,6 @@ export const INITIAL_STATE = new Immutable({
   projects: [],
   project: {},
   isFetched: false,
-  notInProjectUsers: [],
 });
 
 const updateList = (state = INITIAL_STATE, { payload }) => state.set('projects', payload).set('isFetched', true);

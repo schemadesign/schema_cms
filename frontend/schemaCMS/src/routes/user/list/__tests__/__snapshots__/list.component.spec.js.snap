@@ -1,26 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`User List: Component should render correctly 1`] = `null`;
+exports[`User List: Component should render correctly 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Add User"
+        id="userList.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userList.headerTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <UserList
+    users={Array []}
+  />
+  <NavigationContainer
+    right={true}
+  >
+    <PlusButton
+      id="addUserBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;
 
 exports[`User List: Component should render correctly with users data 1`] = `
-Array [
-  <Component
-    key="0"
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Add User"
+        id="userList.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userList.headerTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <UserList
+    users={
+      Array [
+        Object {
+          "firstName": "John",
+          "lastName": "Doe",
+        },
+        Object {
+          "firstName": "Alan",
+          "lastName": "Watts",
+        },
+      ]
+    }
+  />
+  <NavigationContainer
+    right={true}
   >
-    <H1>
-      John
-       
-      Doe
-    </H1>
-  </Component>,
-  <Component
-    key="1"
-  >
-    <H1>
-      Alan
-       
-      Watts
-    </H1>
-  </Component>,
-]
+    <PlusButton
+      id="addUserBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
 `;
