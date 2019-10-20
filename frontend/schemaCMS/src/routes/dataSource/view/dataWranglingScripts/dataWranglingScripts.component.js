@@ -109,6 +109,7 @@ export class DataWranglingScripts extends PureComponent {
                   onChange={e => this.handleChange({ e, setFieldValue, steps })}
                   value={steps}
                   name="steps"
+                  id="fieldStepsCheckboxGroup"
                 >
                   {dataWranglingScripts.map(this.renderCheckboxes)}
                 </CheckboxGroup>

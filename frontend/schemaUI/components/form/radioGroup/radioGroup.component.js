@@ -22,12 +22,21 @@ export class RadioGroup extends PureComponent {
   };
 
   render() {
-    const { name, children, onChange, value, customLabelStyles, customCheckedStyles, customStyles } = this.props;
+    const {
+      name,
+      children,
+      onChange,
+      value,
+      customLabelStyles,
+      customCheckedStyles,
+      customStyles,
+      ...restProps
+    } = this.props;
     const context = { name, onChange, value, customLabelStyles, customCheckedStyles };
     const styles = { ...containerStyles, ...customStyles };
 
     return (
-      <div style={styles}>
+      <div style={styles} {...restProps}>
         <RadioGroupContext.Provider value={context}>{children}</RadioGroupContext.Provider>
       </div>
     );
