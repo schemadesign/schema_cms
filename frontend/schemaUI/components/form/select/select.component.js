@@ -37,7 +37,7 @@ export class SelectComponent extends PureComponent {
     return <div style={selectedOptionStyles}>{selectedOption.label}</div>;
   };
 
-  renderOptions = ({ value, label, selected }, index, { customOptionStyle }, id) => {
+  renderOptions = ({ value, label, selected }, index, { customOptionStyle }, id = '') => {
     const eventObj = {
       target: {
         value: value,
@@ -47,7 +47,7 @@ export class SelectComponent extends PureComponent {
     return (
       <div
         key={index}
-        id={`${id}-select-item-${index}`}
+        id={`${id}select-item-${index}`}
         style={customOptionStyle(index)}
         onClick={() => this.handleOptionClick(eventObj)}
       >
@@ -94,7 +94,7 @@ export class SelectComponent extends PureComponent {
 
     return (
       <div style={containerStyles}>
-        {native ? this.renderNativeSelect(restStyles, restProps) : this.renderCustomSelect(restStyles, restProps)}
+        {native ? this.renderNativeSelect({ restStyles }, restProps) : this.renderCustomSelect(restStyles, restProps)}
       </div>
     );
   }
