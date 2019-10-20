@@ -86,6 +86,7 @@ export class Create extends PureComponent {
             value={values[PROJECT_STATUS]}
             options={this.getStatusOptions(intl)}
             onSelect={this.handleSelectStatus(setFieldValue)}
+            id="fieldProjectStatus"
           />
           <NavigationContainer>
             <BackButton onClick={this.handleCancelClick}>
