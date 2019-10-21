@@ -229,6 +229,7 @@ exports[`Storyshots Settings Default 1`] = `
     className="sc-kfGgVZ eravuG"
   >
     <form
+      className="sc-esjQYD ikJPMC"
       onSubmit={[Function]}
     >
       <div
