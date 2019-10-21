@@ -2,7 +2,7 @@
 
 exports[`Storyshots UserCreate Default 1`] = `
 <div
-  className="sc-eTuwsz jtSbhi"
+  className="sc-gwVKww eWCHnX"
 >
   <div
     className="sc-jDwBTQ fRXXnG"
@@ -211,7 +211,7 @@ exports[`Storyshots UserCreate Default 1`] = `
     </div>
   </div>
   <form
-    className="sc-gwVKww dAOEta"
+    className="sc-hXRMBi fbtcBt"
     onSubmit={[Function]}
   >
     <div
@@ -400,7 +400,6 @@ exports[`Storyshots UserCreate Default 1`] = `
       >
         <button
           disabled={false}
-          onClick={[Function]}
           style={
             Object {
               "backgroundColor": "#1d1d20",

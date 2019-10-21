@@ -10,7 +10,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
   }
 >
   <div
-    className="sc-frDJqD gCEYuZ"
+    className="sc-kvZOFW eiPhbT"
   >
     <div
       className="sc-jDwBTQ fRXXnG"
@@ -223,7 +223,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu fQaCXC"
+      className="sc-dNLxif fubLcw"
     />
     <div
       className="sc-htoDjs iUYJOx"
@@ -322,7 +322,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
   }
 >
   <div
-    className="sc-frDJqD gCEYuZ"
+    className="sc-kvZOFW eiPhbT"
   >
     <div
       className="sc-jDwBTQ fRXXnG"
@@ -535,10 +535,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu fQaCXC"
+      className="sc-dNLxif fubLcw"
     >
       <li
-        className="sc-kvZOFW clAaxF"
+        className="sc-hqyNC bAMGwl"
       >
         <div
           style={
@@ -563,24 +563,24 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             }
           >
             <div
-              className="sc-gGBfsJ gziFvt"
+              className="sc-jnlKLf dhrxfT"
             >
               <ul
-                className="sc-bYSBpT jYQase"
+                className="sc-elJkPf jMtxdb"
               >
                 <li
-                  className="sc-elJkPf hhGonJ"
+                  className="sc-jtRfpW dwHXtk"
                 >
                   3 months ago
                 </li>
                 <li
-                  className="sc-elJkPf hhGonJ"
+                  className="sc-jtRfpW dwHXtk"
                 >
                   firstName lastName
                 </li>
               </ul>
               <div
-                className="sc-jnlKLf juHbUF"
+                className="sc-fYxtnH eHDLlj"
               >
                 <svg
                   style={
@@ -620,18 +620,18 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             name
           </h1>
           <div
-            className="sc-dNLxif iBnmwS"
+            className="sc-jqCOkK fuBqdp"
           >
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Source
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 <svg
                   style={
@@ -651,57 +651,57 @@ exports[`Storyshots DataSourceList With data source 1`] = `
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Items
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 246
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Fields
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 11
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Filters
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Views
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 —
               </span>
@@ -710,7 +710,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </div>
       </li>
       <li
-        className="sc-kvZOFW clAaxF"
+        className="sc-hqyNC bAMGwl"
       >
         <div
           style={
@@ -735,24 +735,24 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             }
           >
             <div
-              className="sc-gGBfsJ gziFvt"
+              className="sc-jnlKLf dhrxfT"
             >
               <ul
-                className="sc-bYSBpT jYQase"
+                className="sc-elJkPf jMtxdb"
               >
                 <li
-                  className="sc-elJkPf hhGonJ"
+                  className="sc-jtRfpW dwHXtk"
                 >
                   3 months ago
                 </li>
                 <li
-                  className="sc-elJkPf hhGonJ"
+                  className="sc-jtRfpW dwHXtk"
                 >
                   firstName lastName
                 </li>
               </ul>
               <div
-                className="sc-jnlKLf juHbUF"
+                className="sc-fYxtnH eHDLlj"
               >
                 <svg
                   style={
@@ -792,18 +792,18 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             name
           </h1>
           <div
-            className="sc-dNLxif iBnmwS"
+            className="sc-jqCOkK fuBqdp"
           >
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Source
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 <svg
                   style={
@@ -823,57 +823,57 @@ exports[`Storyshots DataSourceList With data source 1`] = `
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Items
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 246
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Fields
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 11
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Filters
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Views
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 —
               </span>
@@ -979,7 +979,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
   }
 >
   <div
-    className="sc-frDJqD gCEYuZ"
+    className="sc-kvZOFW eiPhbT"
   >
     <div
       className="sc-jDwBTQ fRXXnG"
@@ -1192,10 +1192,10 @@ exports[`Storyshots DataSourceList With draft 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu fQaCXC"
+      className="sc-dNLxif fubLcw"
     >
       <li
-        className="sc-kvZOFW clAaxF"
+        className="sc-hqyNC bAMGwl"
       >
         <div
           style={
@@ -1242,18 +1242,18 @@ exports[`Storyshots DataSourceList With draft 1`] = `
             name
           </h1>
           <div
-            className="sc-dNLxif iBnmwS"
+            className="sc-jqCOkK fuBqdp"
           >
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Source
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 <svg
                   style={
@@ -1274,57 +1274,57 @@ exports[`Storyshots DataSourceList With draft 1`] = `
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Items
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 246
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Fields
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 11
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Filters
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Views
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 —
               </span>
@@ -1430,7 +1430,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
   }
 >
   <div
-    className="sc-frDJqD gCEYuZ"
+    className="sc-kvZOFW eiPhbT"
   >
     <div
       className="sc-jDwBTQ fRXXnG"
@@ -1643,10 +1643,10 @@ exports[`Storyshots DataSourceList With error 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu fQaCXC"
+      className="sc-dNLxif fubLcw"
     >
       <li
-        className="sc-kvZOFW clAaxF"
+        className="sc-hqyNC bAMGwl"
       >
         <div
           style={
@@ -1693,15 +1693,15 @@ exports[`Storyshots DataSourceList With error 1`] = `
             name
           </h1>
           <div
-            className="sc-fYxtnH zgFOc"
+            className="sc-tilXH jmdJNz"
           >
             <div
-              className="sc-tilXH jMVAVb"
+              className="sc-hEsumM epeevU"
             >
               error 1
             </div>
             <div
-              className="sc-tilXH jMVAVb"
+              className="sc-hEsumM epeevU"
             >
               error2
             </div>
@@ -1806,7 +1806,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
   }
 >
   <div
-    className="sc-frDJqD gCEYuZ"
+    className="sc-kvZOFW eiPhbT"
   >
     <div
       className="sc-jDwBTQ fRXXnG"
@@ -2019,10 +2019,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu fQaCXC"
+      className="sc-dNLxif fubLcw"
     >
       <li
-        className="sc-kvZOFW clAaxF"
+        className="sc-hqyNC bAMGwl"
       >
         <div
           style={
@@ -2047,24 +2047,24 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             }
           >
             <div
-              className="sc-gGBfsJ gziFvt"
+              className="sc-jnlKLf dhrxfT"
             >
               <ul
-                className="sc-bYSBpT jYQase"
+                className="sc-elJkPf jMtxdb"
               >
                 <li
-                  className="sc-elJkPf hhGonJ"
+                  className="sc-jtRfpW dwHXtk"
                 >
                   3 months ago
                 </li>
                 <li
-                  className="sc-elJkPf hhGonJ"
+                  className="sc-jtRfpW dwHXtk"
                 >
                   firstName lastName
                 </li>
               </ul>
               <div
-                className="sc-jnlKLf juHbUF"
+                className="sc-fYxtnH eHDLlj"
               >
                 <svg
                   style={
@@ -2104,18 +2104,18 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             name
           </h1>
           <div
-            className="sc-dNLxif iBnmwS"
+            className="sc-jqCOkK fuBqdp"
           >
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Source
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 <svg
                   style={
@@ -2135,83 +2135,83 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Items
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 246
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Fields
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 11
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Filters
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Views
               </span>
               <span
-                className="sc-bbmXgH ePcaNU"
+                className="sc-gGBfsJ fkDXBB"
               >
                 —
               </span>
             </div>
           </div>
           <div
-            className="sc-hEsumM epeevU"
+            className="sc-ktHwxA bwPBzM"
           >
             <div
-              className="sc-cmTdod hvSWKp"
+              className="sc-jwKygS fbNeSa"
             >
               <span>
                 Data Process History
               </span>
             </div>
             <div
-              className="sc-ktHwxA gkmBbB"
+              className="sc-cIShpX dfcAzt"
             >
               <div
-                className="sc-cIShpX hBVuGk"
+                className="sc-kafWEX fvFAKb"
               >
                 <div
-                  className="sc-kafWEX kkVcyW"
+                  className="sc-feJyhm hSweGN"
                 />
                 <div
-                  className="sc-feJyhm cCCFXX"
+                  className="sc-iELTvK fXAHkz"
                 >
                   <span>
                     Job id:
@@ -2221,7 +2221,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                 </div>
               </div>
               <div
-                className="sc-iELTvK eSoBaC"
+                className="sc-cmTdod kCysJg"
               >
                 <span>
                   Updated at
@@ -2232,26 +2232,26 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             </div>
           </div>
           <div
-            className="sc-hEsumM epeevU"
+            className="sc-ktHwxA bwPBzM"
           >
             <div
-              className="sc-cmTdod hvSWKp"
+              className="sc-jwKygS fbNeSa"
             >
               <span>
                 Data Process History
               </span>
             </div>
             <div
-              className="sc-ktHwxA gkmBbB"
+              className="sc-cIShpX dfcAzt"
             >
               <div
-                className="sc-cIShpX hBVuGk"
+                className="sc-kafWEX fvFAKb"
               >
                 <div
-                  className="sc-kafWEX kkVcyW"
+                  className="sc-feJyhm hSweGN"
                 />
                 <div
-                  className="sc-feJyhm cCCFXX"
+                  className="sc-iELTvK fXAHkz"
                 >
                   <span>
                     Job id:
@@ -2261,7 +2261,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                 </div>
               </div>
               <div
-                className="sc-iELTvK eSoBaC"
+                className="sc-cmTdod kCysJg"
               >
                 <span>
                   Updated at
@@ -2272,26 +2272,26 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             </div>
           </div>
           <div
-            className="sc-hEsumM epeevU"
+            className="sc-ktHwxA bwPBzM"
           >
             <div
-              className="sc-cmTdod hvSWKp"
+              className="sc-jwKygS fbNeSa"
             >
               <span>
                 Data Process History
               </span>
             </div>
             <div
-              className="sc-ktHwxA gkmBbB"
+              className="sc-cIShpX dfcAzt"
             >
               <div
-                className="sc-cIShpX hBVuGk"
+                className="sc-kafWEX fvFAKb"
               >
                 <div
-                  className="sc-kafWEX kkVcyW"
+                  className="sc-feJyhm hSweGN"
                 />
                 <div
-                  className="sc-feJyhm cCCFXX"
+                  className="sc-iELTvK fXAHkz"
                 >
                   <span>
                     Job id:
@@ -2301,7 +2301,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                 </div>
               </div>
               <div
-                className="sc-iELTvK eSoBaC"
+                className="sc-cmTdod kCysJg"
               >
                 <span>
                   Updated at
@@ -2312,26 +2312,26 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             </div>
           </div>
           <div
-            className="sc-hEsumM epeevU"
+            className="sc-ktHwxA bwPBzM"
           >
             <div
-              className="sc-cmTdod hvSWKp"
+              className="sc-jwKygS fbNeSa"
             >
               <span>
                 Data Process History
               </span>
             </div>
             <div
-              className="sc-ktHwxA gkmBbB"
+              className="sc-cIShpX dfcAzt"
             >
               <div
-                className="sc-cIShpX hBVuGk"
+                className="sc-kafWEX fvFAKb"
               >
                 <div
-                  className="sc-kafWEX kkVcyW"
+                  className="sc-feJyhm hSweGN"
                 />
                 <div
-                  className="sc-feJyhm cCCFXX"
+                  className="sc-iELTvK fXAHkz"
                 >
                   <span>
                     Job id:
@@ -2341,7 +2341,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                 </div>
               </div>
               <div
-                className="sc-iELTvK eSoBaC"
+                className="sc-cmTdod kCysJg"
               >
                 <span>
                   Updated at
@@ -2451,7 +2451,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
   }
 >
   <div
-    className="sc-frDJqD gCEYuZ"
+    className="sc-kvZOFW eiPhbT"
   >
     <div
       className="sc-jDwBTQ fRXXnG"
@@ -2664,10 +2664,10 @@ exports[`Storyshots DataSourceList With processing 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu fQaCXC"
+      className="sc-dNLxif fubLcw"
     >
       <li
-        className="sc-kvZOFW clAaxF"
+        className="sc-hqyNC bAMGwl"
       >
         <div
           style={
@@ -2714,18 +2714,18 @@ exports[`Storyshots DataSourceList With processing 1`] = `
             name
           </h1>
           <div
-            className="sc-dNLxif iBnmwS"
+            className="sc-jqCOkK fuBqdp"
           >
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Source
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 <svg
                   style={
@@ -2746,57 +2746,57 @@ exports[`Storyshots DataSourceList With processing 1`] = `
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Items
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 246
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Fields
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 11
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Filters
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Views
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 —
               </span>
@@ -2902,7 +2902,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
   }
 >
   <div
-    className="sc-frDJqD gCEYuZ"
+    className="sc-kvZOFW eiPhbT"
   >
     <div
       className="sc-jDwBTQ fRXXnG"
@@ -3115,10 +3115,10 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu fQaCXC"
+      className="sc-dNLxif fubLcw"
     >
       <li
-        className="sc-kvZOFW clAaxF"
+        className="sc-hqyNC bAMGwl"
       >
         <div
           style={
@@ -3165,18 +3165,18 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
             name
           </h1>
           <div
-            className="sc-dNLxif iBnmwS"
+            className="sc-jqCOkK fuBqdp"
           >
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Source
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 <svg
                   style={
@@ -3197,57 +3197,57 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Items
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 246
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Fields
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 11
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Filters
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-jqCOkK iWcKla"
+              className="sc-uJMKN koSzpN"
             >
               <span
-                className="sc-uJMKN gxHpdv"
+                className="sc-bbmXgH jCQOZP"
               >
                 Views
               </span>
               <span
-                className="sc-bbmXgH kRJShu"
+                className="sc-gGBfsJ doazEo"
               >
                 —
               </span>

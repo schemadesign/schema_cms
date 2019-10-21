@@ -1,4 +1,3 @@
-//eslint-disable react/jsx-handler-names
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { find, path, prop, propEq } from 'ramda';

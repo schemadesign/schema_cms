@@ -460,20 +460,38 @@ exports[`Storyshots AddUser With users 1`] = `
   <div
     className="sc-kjoXOD hXnezr"
   >
-    <h2
-      style={
-        Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 100,
-          "margin": 0,
-        }
-      }
+    <div
+      className="sc-cHGsZl gYtLGn"
     >
-      Alan Watts
-    </h2>
+      <h2
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Alan Watts
+      </h2>
+      <h3
+        style={
+          Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+            "margin": 0,
+          }
+        }
+      />
+    </div>
     <button
-      className="sc-kgAjT bzhqiZ"
+      className="sc-cJSrbW hhLFGO"
       disabled={false}
       id="removeUserPlusButton0"
       onClick={[Function]}
@@ -495,27 +513,45 @@ exports[`Storyshots AddUser With users 1`] = `
       }
     >
       <div
-        className="sc-TOsTZ cgpxKE"
+        className="sc-kgAjT CfUzX"
       />
     </button>
   </div>
   <div
     className="sc-kjoXOD hXnezr"
   >
-    <h2
-      style={
-        Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 100,
-          "margin": 0,
-        }
-      }
+    <div
+      className="sc-cHGsZl gYtLGn"
     >
-      Dale Chihuly
-    </h2>
+      <h2
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Dale Chihuly
+      </h2>
+      <h3
+        style={
+          Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+            "margin": 0,
+          }
+        }
+      />
+    </div>
     <button
-      className="sc-kgAjT bzhqiZ"
+      className="sc-cJSrbW hhLFGO"
       disabled={false}
       id="addUserPlusButton1"
       onClick={[Function]}
@@ -537,27 +573,45 @@ exports[`Storyshots AddUser With users 1`] = `
       }
     >
       <div
-        className="sc-cHGsZl jlMWkE"
+        className="sc-TOsTZ chJFpY"
       />
     </button>
   </div>
   <div
     className="sc-kjoXOD hXnezr"
   >
-    <h2
-      style={
-        Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 100,
-          "margin": 0,
-        }
-      }
+    <div
+      className="sc-cHGsZl gYtLGn"
     >
-      Dave Bowie
-    </h2>
+      <h2
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Dave Bowie
+      </h2>
+      <h3
+        style={
+          Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+            "margin": 0,
+          }
+        }
+      />
+    </div>
     <button
-      className="sc-kgAjT bzhqiZ"
+      className="sc-cJSrbW hhLFGO"
       disabled={false}
       id="addUserPlusButton2"
       onClick={[Function]}
@@ -579,7 +633,7 @@ exports[`Storyshots AddUser With users 1`] = `
       }
     >
       <div
-        className="sc-cHGsZl jlMWkE"
+        className="sc-TOsTZ chJFpY"
       />
     </button>
   </div>
