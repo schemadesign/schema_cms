@@ -5,6 +5,8 @@ from django import urls
 from rest_framework import status
 import pytest
 
+from schemacms.utils import error
+
 
 class TestRetrieveAuthToken:
     """
@@ -12,7 +14,7 @@ class TestRetrieveAuthToken:
     """
 
     pytestmark = [pytest.mark.django_db]
-    invalid_token_error = exceptions.ErrorDetail(string="Invalid Token", code="invalid")
+    invalid_token_error = error.Error(message="Invalid Token", code="invalid").data
 
     def test_get_token(self, api_client, user):
         url = urls.reverse("authorization:token")
@@ -25,7 +27,7 @@ class TestRetrieveAuthToken:
     @pytest.mark.parametrize(
         "token, expected_errors",
         [
-            ("", [exceptions.ErrorDetail(string="This field may not be blank.", code="blank")]),
+            ("", [error.Error(message="This field may not be blank.", code="blank").data]),
             (None, [invalid_token_error]),
             ("12345", [invalid_token_error]),
         ],
@@ -48,9 +50,9 @@ class TestRetrieveAuthToken:
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert "uid" in response.data
         assert response.data["uid"] == [
-            exceptions.ErrorDetail(
-                string='Invalid pk "{uid}" - object does not exist.'.format(uid=uid), code="does_not_exist"
-            )
+            error.Error(
+                message='Invalid pk "{uid}" - object does not exist.'.format(uid=uid), code="does_not_exist"
+            ).data
         ]
 
     def test_reuse_token(self, api_client, user):

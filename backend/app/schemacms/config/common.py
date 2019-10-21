@@ -201,6 +201,7 @@ class Common(Configuration):
             "rest_framework.authentication.SessionAuthentication",
             "rest_framework.authentication.TokenAuthentication",
         ),
+        "EXCEPTION_HANDLER": "schemacms.utils.error.custom_exception_handler",
     }
 
     # Authentication
