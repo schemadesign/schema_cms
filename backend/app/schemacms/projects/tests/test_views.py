@@ -161,6 +161,20 @@ class TestRetrieveUpdateDeleteProjectView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
 
+    def test_update_project_name_already_occupied(self, api_client, user, project_factory):
+        project = project_factory()
+        other_project = project_factory()
+        api_client.force_authenticate(user)
+
+        new_title = {"title": other_project.title}
+
+        response = api_client.patch(self.get_url(pk=project.pk), data=new_title)
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data == {
+            'title': [exceptions.ErrorDetail(string='This field must be unique.', code='unique')]
+        }
+
     def test_update_project_by_not_projects_editor(self, api_client, user_factory, project):
         editor1, editor2 = user_factory.create_batch(2, editor=True)
         project.editors.add(editor2)
@@ -179,19 +193,6 @@ class TestRetrieveUpdateDeleteProjectView:
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
         assert not projects_models.Project.objects.filter(pk=project.pk).exists()
-
-    def test_adding_editor(self, api_client, user_factory, user, project):
-        editor1, editor2 = user_factory.create_batch(2, editor=True)
-        api_client.force_authenticate(user)
-
-        new_title = {"editors": [editor1.id, editor2.id]}
-
-        response = api_client.patch(self.get_url(pk=project.pk), data=new_title)
-
-        project.refresh_from_db()
-        assert response.status_code == status.HTTP_200_OK
-        assert response.data == projects_serializers.ProjectSerializer(instance=project).data
-        assert len(response.data["editors"]) == 2
 
     def test_url(self, project):
         assert f"/api/v1/projects/{project.pk}" == self.get_url(pk=project.pk)
@@ -508,7 +509,7 @@ class TestDataSourceProcess:
             pk=data_source.pk
         )
         assert response.data == data_source_refreshed.meta_data.data
-        assert data_source_refreshed.status == projects_constants.DataSourceStatus.DONE
+        assert data_source_refreshed.status == projects_constants.DataSourceStatus.READY_FOR_PROCESSING
 
     @staticmethod
     def get_url(pk):

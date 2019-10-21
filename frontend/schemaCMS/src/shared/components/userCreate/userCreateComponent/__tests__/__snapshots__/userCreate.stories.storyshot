@@ -400,6 +400,7 @@ exports[`Storyshots UserCreate Default 1`] = `
       >
         <button
           disabled={false}
+          onClick={[Function]}
           style={
             Object {
               "backgroundColor": "#1d1d20",

@@ -10,7 +10,6 @@ export const ProjectRoutines = {
   unmountOne: createRoutine(`${prefix}UNMOUNT_ONE`),
   removeOne: createRoutine(`${prefix}REMOVE`),
   createProject: createRoutine(`${prefix}CREATE_PROJECT`),
-  fetchNotInProjectUsers: createRoutine(`${prefix}FETCH_NOT_IN_PROJECT_USERS`),
   removeEditor: createRoutine(`${prefix}REMOVE_EDITOR`),
   addEditor: createRoutine(`${prefix}ADD_EDITOR`),
 };
@@ -18,19 +17,18 @@ export const ProjectRoutines = {
 export const INITIAL_STATE = new Immutable({
   projects: [],
   project: {},
-  isFetched: false,
 });
 
-const updateList = (state = INITIAL_STATE, { payload }) => state.set('projects', payload).set('isFetched', true);
+const updateList = (state = INITIAL_STATE, { payload }) => state.set('projects', payload);
 
 const createProjectSuccess = (state = INITIAL_STATE, { payload }) =>
-  state.merge({ projects: state.projects.concat(payload) }).set('isFetched', true);
+  state.merge({ projects: state.projects.concat(payload) });
 
-const updateOne = (state = INITIAL_STATE, { payload }) => state.set('project', payload).set('isFetched', true);
+const updateOne = (state = INITIAL_STATE, { payload }) => state.set('project', payload);
 
-const unmountOne = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project).set('isFetched', false);
+const unmountOne = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project);
 
-const onFailure = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project).set('isFetched', true);
+const onFailure = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project);
 
 export const reducer = createReducer(INITIAL_STATE, {
   [ProjectRoutines.fetchList.SUCCESS]: updateList,

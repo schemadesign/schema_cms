@@ -18,7 +18,6 @@ export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
       fetchProjectsList: promisifyRoutine(ProjectRoutines.fetchList),
-      unmountProject: promisifyRoutine(ProjectRoutines.unmountOne),
     },
     dispatch
   );

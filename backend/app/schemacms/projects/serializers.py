@@ -1,6 +1,6 @@
 import os
+import io
 
-import django_fsm
 from django.db import transaction
 from rest_framework import serializers, exceptions, validators
 
@@ -82,11 +82,13 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
     @transaction.atomic()
     def update(self, instance, validated_data):
+        file = validated_data.get("file", None)
         obj = super().update(instance=instance, validated_data=validated_data)
-        user = self.context["request"].user
-        if django_fsm.has_transition_perm(obj.ready_for_processing, user):
-            obj.ready_for_processing()
-            obj.save()
+        if file:
+            file.seek(0)
+            file_in_bytes = io.BytesIO(file.read())
+            obj.update_meta(file_in_bytes)
+
         return obj
 
 
@@ -129,11 +131,9 @@ class ProjectSerializer(serializers.ModelSerializer):
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
     editors = NestedRelatedModelSerializer(
+        read_only=True,
         many=True,
-        queryset=User.objects.all(),
         pk_field=serializers.UUIDField(format="hex_verbose"),
-        allow_empty=True,
-        required=False,
         serializer=ProjectEditorSerializer(),
     )
     meta = serializers.SerializerMethodField()
@@ -152,14 +152,12 @@ class ProjectSerializer(serializers.ModelSerializer):
             "modified",
             "meta",
         )
+        extra_kwargs = {"title": {"validators": [validators.UniqueValidator(queryset=Project.objects.all())]}}
 
     def create(self, validated_data):
-        editors = validated_data.pop("editors", [])
         project = Project(owner=self.context["request"].user, **validated_data)
+        project.save()
 
-        with transaction.atomic():
-            project.save()
-            project.editors.add(*editors)
         return project
 
     def get_meta(self, project):

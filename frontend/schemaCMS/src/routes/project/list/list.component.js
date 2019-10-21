@@ -28,7 +28,6 @@ export class List extends PureComponent {
   static propTypes = {
     list: PropTypes.array.isRequired,
     fetchProjectsList: PropTypes.func.isRequired,
-    unmountProject: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
   };

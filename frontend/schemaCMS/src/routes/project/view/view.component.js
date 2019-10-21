@@ -36,7 +36,6 @@ export class View extends PureComponent {
       role: PropTypes.string.isRequired,
     }),
     project: PropTypes.object.isRequired,
-    isFetched: PropTypes.bool.isRequired,
     fetchProject: PropTypes.func.isRequired,
     unmountProject: PropTypes.func.isRequired,
     removeProject: PropTypes.func.isRequired,

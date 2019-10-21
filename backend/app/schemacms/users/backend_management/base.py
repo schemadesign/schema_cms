@@ -8,6 +8,9 @@ class BaseUserManagement:
     def create_user(self, user: models.User):
         raise NotImplementedError
 
+    def delete_user(self, user) -> bool:
+        raise NotImplementedError
+
     def password_change_url(self, user: models.User) -> str:
         raise NotImplementedError
 

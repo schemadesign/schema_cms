@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 
 import datatable as dt
@@ -29,8 +30,8 @@ def map_dataframe_dtypes(dtype):
         return dtype
 
 
-def get_preview_data(file_field):
-    data_frame = dt.fread(file_field.url, fill=True)
+def get_preview_data(file):
+    data_frame = dt.fread(file, na_strings=["''", '""'], fill=True)
 
     items, fields = data_frame.shape
     sample_of_5 = data_frame.head(5).to_pandas()
@@ -90,7 +91,7 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel)
         choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
     )
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
-    editors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="assigned_projects")
+    editors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="assigned_projects", blank=True)
 
     objects = managers.ProjectQuerySet.as_manager()
 
@@ -139,18 +140,26 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
     def __str__(self):
         return self.name or str(self.id)
 
-    def update_meta(self):
-        preview_json, items, fields = get_preview_data(self.file)
+    def update_meta(self, file=None):
+        if not file:
+            file = self.file.url
 
-        with transaction.atomic():
-            meta, _ = DataSourceMeta.objects.update_or_create(
-                datasource=self, defaults={"fields": fields, "items": items}
-            )
+        try:
+            preview_json, items, fields = get_preview_data(file)
 
-            filename, _ = self.get_original_file_name()
-            meta.preview.save(
-                f"preview_{filename}.json", django.core.files.base.ContentFile(content=preview_json)
-            )
+            with transaction.atomic():
+                meta, _ = DataSourceMeta.objects.update_or_create(
+                    datasource=self, defaults={"fields": fields, "items": items}
+                )
+
+                filename, _ = self.get_original_file_name()
+                meta.preview.save(
+                    f"preview_{filename}.json", django.core.files.base.ContentFile(content=preview_json)
+                )
+                self.status = constants.DataSourceStatus.READY_FOR_PROCESSING
+                self.save()
+        except Exception as e:
+            return logging.error(f"Data Source {self.id} fail to create meta data - {e}")
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
@@ -236,7 +245,7 @@ class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
         )
 
     def update_meta(self):
-        preview_json, items, fields = get_preview_data(self.result)
+        preview_json, items, fields = get_preview_data(self.result.url)
 
         with transaction.atomic():
             meta, _ = DataSourceJobMetaData.objects.update_or_create(
