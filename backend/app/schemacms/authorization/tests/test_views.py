@@ -1,6 +1,5 @@
 import uuid
 
-from rest_framework import exceptions
 from django import urls
 from rest_framework import status
 import pytest

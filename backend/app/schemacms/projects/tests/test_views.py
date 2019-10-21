@@ -3,7 +3,6 @@ import operator
 import os
 
 from django.conf import settings
-from rest_framework import exceptions
 from django.urls import reverse
 from rest_framework import status
 
@@ -470,9 +469,7 @@ class TestUpdateDraftDataSourceView:
         assert response.status_code == status.HTTP_400_BAD_REQUEST, response.content
         assert response.data == {
             'non_field_errors': [
-                error.Error(
-                    message='The fields name, project must make a unique set.', code='unique'
-                ).data
+                error.Error(message='The fields name, project must make a unique set.', code='unique').data
             ]
         }
 

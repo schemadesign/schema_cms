@@ -19,10 +19,7 @@ class Error:
 
 
 def transform_error_detail_list(l):
-    return [
-        Error.fromErrorDetail(e).data if isinstance(e, exceptions.ErrorDetail) else e
-        for e in l
-    ]
+    return [Error.fromErrorDetail(e).data if isinstance(e, exceptions.ErrorDetail) else e for e in l]
 
 
 def transform_error_detail_dict(d):
