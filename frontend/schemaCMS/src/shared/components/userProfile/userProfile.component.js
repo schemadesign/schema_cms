@@ -25,6 +25,7 @@ export class UserProfile extends PureComponent {
     userData: PropTypes.object.isRequired,
     updateMe: PropTypes.func,
     makeAdmin: PropTypes.func,
+    isAdmin: PropTypes.bool,
     intl: PropTypes.object.isRequired,
     isSettings: PropTypes.bool,
     match: PropTypes.object,
@@ -33,6 +34,7 @@ export class UserProfile extends PureComponent {
 
   static defaultProps = {
     isSettings: false,
+    isAdmin: false,
   };
 
   handleGoToList = () => this.props.history.push('/user');
@@ -49,7 +51,7 @@ export class UserProfile extends PureComponent {
     <NextButton type="submit">{this.props.intl.formatMessage(messages.makeAdmin)}</NextButton>
   ));
 
-  renderSubmitButton = ({ dirty, isEditor }) =>
+  renderSubmitButton = ({ dirty, isEditor, isAdmin }) =>
     renderWhenTrueOtherwise(
       () => (
         <NextButton type="submit" disabled={!dirty}>
@@ -59,7 +61,7 @@ export class UserProfile extends PureComponent {
       () => (
         <Fragment>
           <BackButton type="button" onClick={this.handleGoToList} />
-          {this.renderMakeAdmin(isEditor)}
+          {this.renderMakeAdmin(isEditor && isAdmin)}
         </Fragment>
       )
     );
@@ -68,7 +70,7 @@ export class UserProfile extends PureComponent {
     renderWhenTrue(() => <TextInput fullWidth value={values[ROLE]} name={ROLE} label={roleLabel} {...restProps} />);
 
   renderContent = ({ values, handleChange, handleSubmit, dirty, ...restProps }) => {
-    const { intl, isSettings } = this.props;
+    const { intl, isSettings, isAdmin } = this.props;
     const firstNameLabel = intl.formatMessage(messages.firstNameLabel);
     const lastNameLabel = intl.formatMessage(messages.lastNameLabel);
     const emailLabel = intl.formatMessage(messages.emailLabel);
@@ -99,7 +101,7 @@ export class UserProfile extends PureComponent {
           <TextInput disabled fullWidth readOnly value={values[EMAIL]} name={EMAIL} label={emailLabel} />
           {this.renderRole({ values, roleLabel, restProps })(!isSettings)}
           <NavigationContainer right={isSettings || isEditor}>
-            {this.renderSubmitButton({ dirty, isEditor })(isSettings)}
+            {this.renderSubmitButton({ dirty, isEditor, isAdmin })(isSettings)}
           </NavigationContainer>
         </Form>
       </Container>

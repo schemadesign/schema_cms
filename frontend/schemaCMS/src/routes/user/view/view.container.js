@@ -8,9 +8,11 @@ import { injectIntl } from 'react-intl';
 
 import { View } from './view.component';
 import { selectUser, UserRoutines } from '../../../modules/user';
+import { selectIsAdmin } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
   userData: selectUser,
+  isAdmin: selectIsAdmin,
 });
 
 export const mapDispatchToProps = dispatch => ({

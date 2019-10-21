@@ -1,10 +1,3 @@
-import { equals, isEmpty, pipe, prop } from 'ramda';
-
-import { ROLES } from '../../modules/userProfile/userProfile.constants';
+import { isEmpty } from 'ramda';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
-
-export const isAdmin = pipe(
-  prop('role'),
-  equals(ROLES.ADMIN)
-);

@@ -44,6 +44,7 @@ exports[`Settings: Component should render correctly 1`] = `
         "formatMessage": [Function],
       }
     }
+    isAdmin={false}
     isSettings={true}
     match={Object {}}
     updateMe={[Function]}

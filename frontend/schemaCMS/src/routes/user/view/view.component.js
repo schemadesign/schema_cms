@@ -17,6 +17,7 @@ export class View extends PureComponent {
     removeUser: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     userData: PropTypes.object.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         userId: PropTypes.string.isRequired,
@@ -32,16 +33,19 @@ export class View extends PureComponent {
     this.props.fetchUser({ userId: path(['match', 'params', 'userId'], this.props) });
   }
 
-  getHeaderAndMenuConfig = () => ({
-    headerTitle: <FormattedMessage {...messages.title} />,
-    headerSubtitle: <FormattedMessage {...messages.subTitle} />,
-    secondaryMenuItems: [
-      {
-        label: <FormattedMessage {...messages.removeUser} />,
-        onClick: () => this.setState({ userRemoveModalOpen: true }),
-      },
-    ],
-  });
+  getHeaderAndMenuConfig = () => {
+    const userRemoveButton = {
+      label: <FormattedMessage {...messages.removeUser} />,
+      onClick: () => this.setState({ userRemoveModalOpen: true }),
+    };
+    const secondaryMenuItems = this.props.isAdmin ? [userRemoveButton] : [];
+
+    return {
+      headerTitle: <FormattedMessage {...messages.title} />,
+      headerSubtitle: <FormattedMessage {...messages.subTitle} />,
+      secondaryMenuItems,
+    };
+  };
 
   handleCancelRemove = () => this.setState({ userRemoveModalOpen: false });
 

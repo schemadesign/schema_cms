@@ -10,7 +10,6 @@ import { DEFAULT_LOCALE, translationMessages } from '../i18n';
 import { GlobalStyle } from '../theme/global';
 import messages from './app.messages';
 import { Container } from './app.styles';
-import { ROLES } from '../modules/userProfile/userProfile.constants';
 
 Modal.setAppElement('#app');
 
@@ -19,11 +18,11 @@ export class App extends PureComponent {
     children: PropTypes.node,
     match: PropTypes.object.isRequired,
     startup: PropTypes.func.isRequired,
-    userData: PropTypes.object,
+    isAdmin: PropTypes.bool,
   };
 
   static defaultProps = {
-    userData: {},
+    isAdmin: false,
   };
 
   componentDidMount() {
@@ -31,7 +30,7 @@ export class App extends PureComponent {
   }
 
   render() {
-    const theme = this.props.userData.role !== ROLES.ADMIN ? Theme.light : Theme.dark;
+    const theme = this.props.isAdmin ? Theme.dark : Theme.light;
 
     return (
       <IntlProvider key={DEFAULT_LOCALE} locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>

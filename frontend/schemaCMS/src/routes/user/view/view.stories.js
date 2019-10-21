@@ -10,6 +10,7 @@ export const defaultProps = {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
   userData: {},
+  isAdmin: true,
   match: { params: { userId: '1' } },
 };
 
