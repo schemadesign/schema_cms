@@ -11,6 +11,7 @@ export const UserRoutines = {
   fetchUser: createRoutine(`${PREFIX}FETCH_USER`),
   makeAdmin: createRoutine(`${PREFIX}MAKE_ADMIN`),
   fetchUsers: createRoutine(`${PREFIX}FETCH_USERS`),
+  removeUser: createRoutine(`${PREFIX}REMOVE_USERS`),
 };
 
 export const INITIAL_STATE = new Immutable({

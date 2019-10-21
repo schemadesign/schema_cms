@@ -18,6 +18,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       fetchUser: promisifyRoutine(UserRoutines.fetchUser),
       makeAdmin: promisifyRoutine(UserRoutines.makeAdmin),
+      removeUser: promisifyRoutine(UserRoutines.removeUser),
     },
     dispatch
   ),
