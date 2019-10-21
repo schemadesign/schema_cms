@@ -9,7 +9,6 @@ from django.utils.translation import gettext_lazy as _
 
 from schemacms.users import signals
 from . import models as user_models
-from . import backend_management
 from . import admin_forms
 
 
