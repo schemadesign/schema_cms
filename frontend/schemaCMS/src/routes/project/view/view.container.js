@@ -8,13 +8,12 @@ import { compose } from 'ramda';
 
 import { View } from './view.component';
 import { ProjectRoutines } from '../../../modules/project';
-import { selectProject, selectIsFetched } from '../../../modules/project/project.selectors';
+import { selectProject } from '../../../modules/project/project.selectors';
 import { selectUserData } from '../../../modules/userProfile/userProfile.selectors';
 
 const mapStateToProps = createStructuredSelector({
   user: selectUserData,
   project: selectProject,
-  isFetched: selectIsFetched,
 });
 
 export const mapDispatchToProps = dispatch =>
