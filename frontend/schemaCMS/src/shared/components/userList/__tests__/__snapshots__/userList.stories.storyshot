@@ -33,6 +33,13 @@ Array [
        
       Watts
     </h1>
+    <h3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
   </div>,
   <div
     style={
@@ -63,6 +70,13 @@ Array [
        
       Chihuly
     </h1>
+    <h3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
   </div>,
   <div
     style={
@@ -93,6 +107,13 @@ Array [
        
       Bowie
     </h1>
+    <h3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
   </div>,
 ]
 `;
