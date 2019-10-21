@@ -88,7 +88,7 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
           }
         >
           <div
-            id="undefined-select-item-0"
+            id="select-item-0"
             onClick={[Function]}
             style={
               Object {
@@ -102,7 +102,7 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
             One
           </div>
           <div
-            id="undefined-select-item-1"
+            id="select-item-1"
             onClick={[Function]}
             style={
               Object {
@@ -116,7 +116,7 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
             Two
           </div>
           <div
-            id="undefined-select-item-2"
+            id="select-item-2"
             onClick={[Function]}
             style={
               Object {
