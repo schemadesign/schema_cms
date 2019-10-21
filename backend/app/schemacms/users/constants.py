@@ -17,3 +17,7 @@ USER_ROLE_CHOICES = (
     (UserRole.ADMIN, "admin"),
     (UserRole.EDITOR, "editor"),
 )
+
+
+class ErrorCode:
+    AUTH0_USER_ALREADY_EXIST = "auth0UserAlreadyExist"

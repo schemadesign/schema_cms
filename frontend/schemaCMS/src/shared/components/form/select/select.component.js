@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'schemaUI';
+import { pick } from 'ramda';
+import elementAttributes from 'html-element-attributes/index.json';
 
 import { Container } from './select.styles';
 
@@ -17,14 +19,17 @@ export class Select extends PureComponent {
   };
 
   render() {
-    const { defaultOption, label, name, options, onSelect, value } = this.props;
+    const { defaultOption, label, name, options, onSelect, value, ...restProps } = this.props;
     const updatedOptions = options.map(option => ({ ...option, selected: option.value === value }));
+    const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.select];
+
+    const filteredProps = pick(allowedAttributes, restProps);
 
     return (
       <Container>
         <Label>{label}</Label>
         <input type="hidden" id={name} name={name} value={value} />
-        <SelectElement defaultOption={defaultOption} options={updatedOptions} onSelect={onSelect} />
+        <SelectElement defaultOption={defaultOption} options={updatedOptions} onSelect={onSelect} {...filteredProps} />
       </Container>
     );
   }

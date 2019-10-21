@@ -34,10 +34,14 @@ export class StepperComponent extends PureComponent {
   );
 
   render = () => {
-    const { customStyles, theme } = this.props;
+    const { customStyles, theme, ...restProps } = this.props;
     const { containerStyles, dotActiveStyles, dotStyles } = getStyles(theme);
 
-    return <div style={{ ...containerStyles, ...customStyles }}>{this.renderDots(dotActiveStyles, dotStyles)}</div>;
+    return (
+      <div style={{ ...containerStyles, ...customStyles }} {...restProps}>
+        {this.renderDots(dotActiveStyles, dotStyles)}
+      </div>
+    );
   };
 }
 
