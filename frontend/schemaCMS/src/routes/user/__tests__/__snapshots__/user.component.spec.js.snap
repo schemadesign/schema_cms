@@ -5,11 +5,12 @@ exports[`User: Component should render correctly 1`] = `
   <Route
     component={[Function]}
     exact={true}
-    path="/user"
+    path="/user/:userId"
   />
   <Route
     component={[Function]}
-    path="/user/:userId"
+    exact={true}
+    path="/user"
   />
   <Route
     exact={true}
@@ -29,11 +30,12 @@ exports[`User: Component should render correctly with project id 1`] = `
   <Route
     component={[Function]}
     exact={true}
-    path="/user/1/add"
+    path="/user/1/add/:userId"
   />
   <Route
     component={[Function]}
-    path="/user/1/add/:userId"
+    exact={true}
+    path="/user/1/add"
   />
   <Route
     exact={true}

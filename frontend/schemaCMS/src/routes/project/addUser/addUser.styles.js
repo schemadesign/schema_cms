@@ -13,6 +13,12 @@ export const UserItem = styled.div`
   border-top: 1px solid ${colors.grey};
 `;
 
+export const UserItemDescription = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+`;
+
 export const AddIcon = styled.div`
   position: relative;
   height: 15px;

@@ -1,3 +1,4 @@
+//eslint-disable react/jsx-handler-names
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { find, path, prop, propEq } from 'ramda';
@@ -55,6 +56,11 @@ export class UserCreateProject extends PureComponent {
     this.props.createUserProject({ projectId, userId });
   };
 
+  handleCancelClick = evt => {
+    evt.preventDefault();
+    browserHistory.push(`/project/${this.props.project.id}/user/add`);
+  };
+
   renderLoading = renderWhenTrueOtherwise(
     () => (
       <Loading>
@@ -81,7 +87,12 @@ export class UserCreateProject extends PureComponent {
             [USER_ROLE]: prop('label')(find(propEq('value', ROLES.EDITOR), NEW_USER_ROLES_OPTIONS)),
           }}
           render={({ handleSubmit, ...restProps }) => (
-            <UserCreate handleSubmit={handleSubmit} headerValues={headerValues} {...restProps} />
+            <UserCreate
+              handleSubmit={handleSubmit}
+              headerValues={headerValues}
+              onCancelClick={this.handleCancelClick}
+              {...restProps}
+            />
           )}
         />
       );

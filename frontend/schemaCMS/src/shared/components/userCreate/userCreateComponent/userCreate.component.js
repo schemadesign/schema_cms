@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import browserHistory from '../../../utils/history';
 
 import { Container, Form } from './userCreate.styles';
 import { NEW_USER_ROLES_OPTIONS, USER_ROLE } from '../../../../modules/user/user.constants';
@@ -22,6 +21,7 @@ export class UserCreate extends PureComponent {
     headerValues: PropTypes.object,
     isInvitation: PropTypes.bool,
     values: PropTypes.object.isRequired,
+    onCancelClick: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -46,11 +46,6 @@ export class UserCreate extends PureComponent {
 
   handleSelectStatus = ({ value }) => this.props.setFieldValue(USER_ROLE, value);
 
-  handleCancelClick = evt => {
-    evt.preventDefault();
-    browserHistory.push('/user');
-  };
-
   renderNameField = renderWhenTrue(() => {
     const fullName = `${this.props.values[FIRST_NAME]} ${this.props.values[LAST_NAME]}`;
     return <TextInput label="Name" value={fullName} readOnly name={FIRST_NAME} />;
@@ -74,7 +69,7 @@ export class UserCreate extends PureComponent {
 
     return (
       <NavigationContainer>
-        <BackButton onClick={this.handleCancelClick}>
+        <BackButton onClick={this.props.onCancelClick}>
           <FormattedMessage {...messages.cancel} />
         </BackButton>
         <NextButton type="submit">
