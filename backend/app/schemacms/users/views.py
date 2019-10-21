@@ -1,8 +1,10 @@
+import auth0.v3
+from django.db import transaction
 from django_filters import rest_framework as django_filters
-from rest_framework import decorators, mixins, permissions, response, status, viewsets
+from rest_framework import decorators, mixins, permissions, response, status, serializers, viewsets
 
 from schemacms.users import signals
-from .constants import UserRole
+from .constants import UserRole, ErrorCode
 from . import models as user_models, permissions as user_permissions, serializers as user_serializers
 from .backend_management import user_mgtm_backend
 
@@ -46,9 +48,21 @@ class UserViewSet(
         else:
             return super().update(request, args, kwargs)
 
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        try:
+            self.perform_create(serializer)
+        except auth0.v3.Auth0Error as e:
+            raise serializers.ValidationError(e.message, code=ErrorCode.AUTH0_USER_ALREADY_EXIST)
+        headers = self.get_success_headers(serializer.data)
+        return response.Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    @transaction.atomic()
     def perform_create(self, serializer):
         user = serializer.save(username=user_models.User.generate_random_username())
         signals.user_invited.send(sender=user_models.User, user=user, requester=self.request.user)
+        return user
 
     @decorators.action(detail=True, methods=["post"])
     def deactivate(self, request, *args, **kwargs):

@@ -3,7 +3,6 @@ import operator
 import os
 
 from django.conf import settings
-from rest_framework import exceptions
 from django.urls import reverse
 from rest_framework import status
 
@@ -15,6 +14,7 @@ from schemacms.projects import (
     serializers as projects_serializers,
     models as projects_models,
 )
+from schemacms.utils import error
 
 
 pytestmark = [pytest.mark.django_db]
@@ -172,7 +172,7 @@ class TestRetrieveUpdateDeleteProjectView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data == {
-            'title': [exceptions.ErrorDetail(string='This field must be unique.', code='unique')]
+            'title': [error.Error(message='This field must be unique.', code='unique').data]
         }
 
     def test_update_project_by_not_projects_editor(self, api_client, user_factory, project):
@@ -260,7 +260,7 @@ class TestProjectDataSourcesView:
         response = api_client.get(self.get_url(0))
 
         assert response.status_code == status.HTTP_404_NOT_FOUND
-        assert response.data == {"detail": exceptions.ErrorDetail(string="Not found.", code="not_found")}
+        assert response.data == {"detail": error.Error(message="Not found.", code="not_found").data}
 
     def test_url(self, project):
         assert f"/api/v1/projects/{project.id}/datasources" == self.get_url(project.id)
@@ -469,9 +469,7 @@ class TestUpdateDraftDataSourceView:
         assert response.status_code == status.HTTP_400_BAD_REQUEST, response.content
         assert response.data == {
             'non_field_errors': [
-                exceptions.ErrorDetail(
-                    string='The fields name, project must make a unique set.', code='unique'
-                )
+                error.Error(message='The fields name, project must make a unique set.', code='unique').data
             ]
         }
 
