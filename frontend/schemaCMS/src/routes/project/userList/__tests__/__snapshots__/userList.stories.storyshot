@@ -540,6 +540,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         Watts
       </a>
     </h1>
+    <h3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
   </div>
   <div
     style={
@@ -575,6 +582,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         Chihuly
       </a>
     </h1>
+    <h3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
   </div>
   <div
     style={
@@ -610,6 +624,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         Bowie
       </a>
     </h1>
+    <h3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
   </div>
   <div
     className="sc-htoDjs iUYJOx"
