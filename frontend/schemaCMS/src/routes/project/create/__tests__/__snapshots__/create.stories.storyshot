@@ -428,6 +428,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           }
         >
           <div
+            id="fieldProjectStatus"
             style={
               Object {
                 "cursor": "pointer",
@@ -478,7 +479,7 @@ exports[`Storyshots Project/Create Default 1`] = `
               }
             >
               <div
-                id="select-item-0"
+                id="fieldProjectStatusselect-item-0"
                 onClick={[Function]}
                 style={
                   Object {
@@ -492,7 +493,7 @@ exports[`Storyshots Project/Create Default 1`] = `
                 In Progress
               </div>
               <div
-                id="select-item-1"
+                id="fieldProjectStatusselect-item-1"
                 onClick={[Function]}
                 style={
                   Object {
@@ -506,7 +507,7 @@ exports[`Storyshots Project/Create Default 1`] = `
                 Done
               </div>
               <div
-                id="select-item-2"
+                id="fieldProjectStatusselect-item-2"
                 onClick={[Function]}
                 style={
                   Object {
@@ -520,7 +521,7 @@ exports[`Storyshots Project/Create Default 1`] = `
                 Hold
               </div>
               <div
-                id="select-item-3"
+                id="fieldProjectStatusselect-item-3"
                 onClick={[Function]}
                 style={
                   Object {
