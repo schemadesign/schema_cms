@@ -17,8 +17,3 @@ export const selectProjectUsers = createSelector(
   selectProjectDomain,
   pathOr([], ['project', 'editors'])
 );
-
-export const selectIsFetched = createSelector(
-  selectProjectDomain,
-  prop('isFetched')
-);
