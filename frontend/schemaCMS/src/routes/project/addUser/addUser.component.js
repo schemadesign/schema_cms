@@ -35,7 +35,7 @@ export class AddUser extends PureComponent {
 
   async componentDidMount() {
     try {
-      await this.props.fetchProject({ projectId: path(['match', 'params', 'projectId'], this.props) });
+      await this.props.fetchProject(path(['match', 'params'], this.props));
       await this.props.fetchUsers();
     } catch (e) {
       browserHistory.push('/');
