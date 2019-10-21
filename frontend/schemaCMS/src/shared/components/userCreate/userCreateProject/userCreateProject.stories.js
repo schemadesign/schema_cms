@@ -9,6 +9,8 @@ export const userCreateProjectProps = {
   project: {},
   isFetched: false,
   fetchProject: Function.prototype,
+  fetchUser: Function.prototype,
+  clearUser: Function.prototype,
   clearProject: Function.prototype,
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,

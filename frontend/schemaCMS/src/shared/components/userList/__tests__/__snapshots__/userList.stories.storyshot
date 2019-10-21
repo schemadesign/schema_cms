@@ -29,9 +29,14 @@ Array [
         }
       }
     >
-      Alan
-       
-      Watts
+      <a
+        href="/user/1"
+        onClick={[Function]}
+      >
+        Alan
+         
+        Watts
+      </a>
     </h1>
   </div>,
   <div
@@ -59,9 +64,14 @@ Array [
         }
       }
     >
-      Dale
-       
-      Chihuly
+      <a
+        href="/user/2"
+        onClick={[Function]}
+      >
+        Dale
+         
+        Chihuly
+      </a>
     </h1>
   </div>,
   <div
@@ -89,9 +99,14 @@ Array [
         }
       }
     >
-      Dave
-       
-      Bowie
+      <a
+        href="/user/3"
+        onClick={[Function]}
+      >
+        Dave
+         
+        Bowie
+      </a>
     </h1>
   </div>,
 ]

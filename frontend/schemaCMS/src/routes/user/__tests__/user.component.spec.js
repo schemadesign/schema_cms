@@ -4,6 +4,8 @@ import { shallow } from 'enzyme';
 import { User } from '../user.component';
 
 const defaultProps = {
+  createUserProject: Function.prototype,
+  createUserCMS: Function.prototype,
   match: {
     path: '/user',
   },

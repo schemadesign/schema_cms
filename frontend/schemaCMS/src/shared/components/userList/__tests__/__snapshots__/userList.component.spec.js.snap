@@ -8,27 +8,42 @@ Array [
     key="0"
   >
     <H1>
-      Alan
-       
-      Watts
+      <Link
+        replace={false}
+        to="user/1"
+      >
+        Alan
+         
+        Watts
+      </Link>
     </H1>
   </Component>,
   <Component
     key="1"
   >
     <H1>
-      Dale
-       
-      Chihuly
+      <Link
+        replace={false}
+        to="user/2"
+      >
+        Dale
+         
+        Chihuly
+      </Link>
     </H1>
   </Component>,
   <Component
     key="2"
   >
     <H1>
-      Dave
-       
-      Bowie
+      <Link
+        replace={false}
+        to="user/3"
+      >
+        Dave
+         
+        Bowie
+      </Link>
     </H1>
   </Component>,
 ]

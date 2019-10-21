@@ -6,7 +6,7 @@ import { AddUser } from './addUser.component';
 export const defaultProps = {
   match: {
     params: {
-      projectId: 1,
+      projectId: '1',
     },
   },
   fetchUsers: Function.prototype,

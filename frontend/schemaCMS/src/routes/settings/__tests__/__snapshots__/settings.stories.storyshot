@@ -2,7 +2,7 @@
 
 exports[`Storyshots Settings Default 1`] = `
 <div
-  className="sc-kIPQKe jgMiIX"
+  className="sc-bwCtUz kLbHbK"
 >
   <div
     className="sc-jDwBTQ fRXXnG"
@@ -226,10 +226,10 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-kfGgVZ eravuG"
+    className="sc-RefOD kzCQXs"
   >
     <form
-      className="sc-esjQYD ikJPMC"
+      className="sc-iQKALj ftJWrM"
       onSubmit={[Function]}
     >
       <div
