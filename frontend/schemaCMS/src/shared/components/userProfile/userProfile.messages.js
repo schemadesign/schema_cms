@@ -2,14 +2,6 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  title: {
-    id: 'dataSource.view.title',
-    defaultMessage: 'Admin Settings',
-  },
-  subTitle: {
-    id: 'dataSource.view.subTitle',
-    defaultMessage: 'Profile',
-  },
   firstNameLabel: {
     id: 'userProfile.firstNameLabel',
     defaultMessage: 'First Name',
@@ -22,16 +14,16 @@ export default defineMessages({
     id: 'userProfile.emailLabel',
     defaultMessage: 'Email',
   },
+  roleLabel: {
+    id: 'userProfile.roleLabel',
+    defaultMessage: 'Role',
+  },
   save: {
     id: 'userProfile.save',
     defaultMessage: 'Save',
   },
-  logout: {
-    id: 'userProfile.logout',
-    defaultMessage: 'Log out',
-  },
-  resetPassword: {
-    id: 'userProfile.resetPassword',
-    defaultMessage: 'Reset Password',
+  makeAdmin: {
+    id: 'userProfile.makeAdmin',
+    defaultMessage: 'Make admin',
   },
 });

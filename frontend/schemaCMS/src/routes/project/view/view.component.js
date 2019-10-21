@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Card, Icons, Typography } from 'schemaUI';
-import { has, isEmpty, isNil, path, either, always, cond, T, not, both } from 'ramda';
+import { Card, Icons } from 'schemaUI';
+import { has, isEmpty, isNil, path, always, cond, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
 
@@ -11,7 +11,6 @@ import browserHistory from '../../../shared/utils/history';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
 import { TopHeader } from '../../../shared/components/topHeader';
-import { Empty } from '../project.styles';
 import messages from './view.messages';
 import {
   Container,
@@ -30,8 +29,6 @@ import {
 import { BackArrowButton, NavigationContainer } from '../../../shared/components/navigation';
 
 import { modalStyles, ModalTitle, ModalButton, ModalActions } from '../../../shared/components/modal/modal.styles';
-
-const { P } = Typography;
 
 export class View extends PureComponent {
   static propTypes = {

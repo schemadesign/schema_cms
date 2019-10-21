@@ -8,7 +8,7 @@ import JWT from './jwt/jwt.container';
 import { NotFound } from './notFound';
 import { AUTH_PATH } from '../shared/utils/api.constants';
 import { Project } from './project';
-import { UserProfile } from './userProfile';
+import { Settings } from './settings';
 import { ResetPassword } from './resetPassword';
 import { Logout } from './logout';
 import { DataSource } from './dataSource';
@@ -18,7 +18,7 @@ import { User } from './user';
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
-  USER_PROFILE: '/settings',
+  SETTINGS: '/settings',
   PROJECT: '/project',
   RESET_PASSWORD: '/reset-password',
   LOGOUT: '/logout',
@@ -43,7 +43,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute exact path={`${ROUTES.DATA_WRANGLING_SCRIPTS}/:scriptId`} component={DataWranglingScript} />
 
-            <AuthRoute path={ROUTES.USER_PROFILE} component={UserProfile} />
+            <AuthRoute path={ROUTES.SETTINGS} component={Settings} />
 
             <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
 

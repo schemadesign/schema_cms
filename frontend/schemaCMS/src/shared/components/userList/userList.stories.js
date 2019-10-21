@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { UserList } from './userList.component';
+import { withRouter } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   users: [],
@@ -15,5 +16,7 @@ export const propsWithUsers = {
   ],
 };
 
-storiesOf('UserList', module).add('Default', () => <UserList {...defaultProps} />);
-storiesOf('UserList', module).add('With users', () => <UserList {...propsWithUsers} />);
+storiesOf('UserList', module)
+  .addDecorator(withRouter)
+  .add('Default', () => <UserList {...defaultProps} />)
+  .add('With users', () => <UserList {...propsWithUsers} />);

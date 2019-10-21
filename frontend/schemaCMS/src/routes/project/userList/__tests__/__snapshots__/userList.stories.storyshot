@@ -531,9 +531,14 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         }
       }
     >
-      Alan
-       
-      Watts
+      <a
+        href="/user/1"
+        onClick={[Function]}
+      >
+        Alan
+         
+        Watts
+      </a>
     </h1>
   </div>
   <div
@@ -561,9 +566,14 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         }
       }
     >
-      Dale
-       
-      Chihuly
+      <a
+        href="/user/2"
+        onClick={[Function]}
+      >
+        Dale
+         
+        Chihuly
+      </a>
     </h1>
   </div>
   <div
@@ -591,9 +601,14 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         }
       }
     >
-      Dave
-       
-      Bowie
+      <a
+        href="/user/3"
+        onClick={[Function]}
+      >
+        Dave
+         
+        Bowie
+      </a>
     </h1>
   </div>
   <div

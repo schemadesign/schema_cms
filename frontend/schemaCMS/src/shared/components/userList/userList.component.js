@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Card, Typography } from 'schemaUI';
+import { Link } from 'react-router-dom';
 
 const { H1 } = Typography;
 
@@ -12,7 +13,9 @@ export class UserList extends PureComponent {
   renderList = (user, index) => (
     <Card key={index}>
       <H1>
-        {user.firstName} {user.lastName}
+        <Link to={`user/${user.id}`}>
+          {user.firstName} {user.lastName}
+        </Link>
       </H1>
     </Card>
   );

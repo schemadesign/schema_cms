@@ -3,6 +3,7 @@ import api from '../../shared/services/api';
 
 import { UserRoutines } from './user.redux';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
+import { ROLES } from '../userProfile/userProfile.constants';
 
 function* createUserCMS({ payload }) {
   try {
@@ -46,6 +47,20 @@ function* fetchUser({ payload: { userId } }) {
   }
 }
 
+function* makeAdmin({ payload: { userId } }) {
+  try {
+    yield put(UserRoutines.makeAdmin.request());
+
+    const { data } = yield api.put(`users/${userId}`, { role: ROLES.ADMIN });
+
+    yield put(UserRoutines.makeAdmin.success(data));
+  } catch (error) {
+    yield put(UserRoutines.makeAdmin.failure());
+  } finally {
+    yield put(UserRoutines.makeAdmin.fulfill());
+  }
+}
+
 function* fetchUsers() {
   try {
     yield put(UserRoutines.fetchUsers.request());
@@ -67,6 +82,7 @@ export function* watchUser() {
     takeLatest(UserRoutines.createUserCMS.TRIGGER, createUserCMS),
     takeLatest(UserRoutines.createUserProject.TRIGGER, createUserProject),
     takeLatest(UserRoutines.fetchUser.TRIGGER, fetchUser),
+    takeLatest(UserRoutines.makeAdmin.TRIGGER, makeAdmin),
     takeLatest(UserRoutines.fetchUsers.TRIGGER, fetchUsers),
   ]);
 }
