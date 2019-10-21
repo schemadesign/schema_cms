@@ -6,13 +6,13 @@ import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
 
 import browserHistory from '../../../shared/utils/history';
-import { Container, AddIcon, RemoveIcon, UserItem, Button } from './addUser.styles';
+import { Container, AddIcon, RemoveIcon, UserItem, Button, UserItemDescription } from './addUser.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './addUser.messages';
 import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 
-const { H2 } = Typography;
+const { H2, H3 } = Typography;
 
 export class AddUser extends PureComponent {
   static propTypes = {
@@ -94,7 +94,10 @@ export class AddUser extends PureComponent {
 
   renderUser = (user, index) => (
     <UserItem key={index}>
-      <H2>{`${user.firstName} ${user.lastName}`}</H2>
+      <UserItemDescription>
+        <H2>{`${user.firstName} ${user.lastName}`}</H2>
+        <H3>{user.email}</H3>
+      </UserItemDescription>
       {this.renderAction(user, index)}
     </UserItem>
   );

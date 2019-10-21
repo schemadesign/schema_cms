@@ -128,9 +128,12 @@ exports[`AddUser: Component should render correctly with users 1`] = `
   <styled.div
     key="0"
   >
-    <H2>
-      Alan Watts
-    </H2>
+    <styled.div>
+      <H2>
+        Alan Watts
+      </H2>
+      <H3 />
+    </styled.div>
     <Styled(Component)
       id="removeUserPlusButton0"
       onClick={[Function]}
@@ -141,9 +144,12 @@ exports[`AddUser: Component should render correctly with users 1`] = `
   <styled.div
     key="1"
   >
-    <H2>
-      Dale Chihuly
-    </H2>
+    <styled.div>
+      <H2>
+        Dale Chihuly
+      </H2>
+      <H3 />
+    </styled.div>
     <Styled(Component)
       id="addUserPlusButton1"
       onClick={[Function]}
@@ -154,9 +160,12 @@ exports[`AddUser: Component should render correctly with users 1`] = `
   <styled.div
     key="2"
   >
-    <H2>
-      Dave Bowie
-    </H2>
+    <styled.div>
+      <H2>
+        Dave Bowie
+      </H2>
+      <H3 />
+    </styled.div>
     <Styled(Component)
       id="addUserPlusButton2"
       onClick={[Function]}

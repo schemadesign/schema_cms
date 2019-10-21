@@ -13,7 +13,7 @@ export class UserList extends PureComponent {
   renderList = (user, index) => (
     <Card key={index}>
       <H1>
-        <Link to={`user/${user.id}`}>
+        <Link to={`/user/${user.id}`}>
           {user.firstName} {user.lastName}
         </Link>
       </H1>

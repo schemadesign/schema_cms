@@ -10,7 +10,7 @@ Array [
     <H1>
       <Link
         replace={false}
-        to="user/1"
+        to="/user/1"
       >
         Alan
          
@@ -31,7 +31,7 @@ Array [
     <H1>
       <Link
         replace={false}
-        to="user/2"
+        to="/user/2"
       >
         Dale
          
@@ -52,7 +52,7 @@ Array [
     <H1>
       <Link
         replace={false}
-        to="user/3"
+        to="/user/3"
       >
         Dave
          
