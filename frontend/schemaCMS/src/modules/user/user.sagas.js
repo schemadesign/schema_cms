@@ -1,6 +1,5 @@
 import { all, takeLatest, put } from 'redux-saga/effects';
 import api from '../../shared/services/api';
-import browserHistory from '../../shared/utils/history';
 
 import { UserRoutines } from './user.redux';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
@@ -85,9 +84,9 @@ function* removeUser({ payload: { userId } }) {
     yield put(UserRoutines.removeUser.request());
 
     yield api.post(`users/${userId}/deactivate`);
-    browserHistory.push('/user');
 
     yield put(UserRoutines.removeUser.success());
+    browserHistory.push('/user');
   } catch (error) {
     yield put(UserRoutines.removeUser.failure());
   } finally {
