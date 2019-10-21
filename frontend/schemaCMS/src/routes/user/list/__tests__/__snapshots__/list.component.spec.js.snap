@@ -22,8 +22,18 @@ exports[`User List: Component should render correctly 1`] = `
     users={Array []}
   />
   <NavigationContainer
-    right={true}
+    right={false}
   >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="userList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
     <PlusButton
       id="addUserBtn"
       onClick={[Function]}
@@ -65,8 +75,18 @@ exports[`User List: Component should render correctly with users data 1`] = `
     }
   />
   <NavigationContainer
-    right={true}
+    right={false}
   >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="userList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
     <PlusButton
       id="addUserBtn"
       onClick={[Function]}

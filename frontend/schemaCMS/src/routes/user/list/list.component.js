@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 import { UserList } from '../../../shared/components/userList';
-import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { Container } from '../../project/list/list.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './list.messages';
@@ -21,6 +21,8 @@ export class List extends PureComponent {
 
   handleAddUser = () => browserHistory.push('/user/add');
 
+  handleCancelClick = () => browserHistory.push('/');
+
   render() {
     const { users } = this.props;
     const topHeaderConfig = {
@@ -32,7 +34,10 @@ export class List extends PureComponent {
       <Container>
         <TopHeader {...topHeaderConfig} />
         <UserList users={users} />
-        <NavigationContainer right>
+        <NavigationContainer>
+          <BackButton onClick={this.handleCancelClick}>
+            <FormattedMessage {...messages.cancel} />
+          </BackButton>
           <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
         </NavigationContainer>
       </Container>
