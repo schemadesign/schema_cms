@@ -1,5 +1,6 @@
 import { all, takeLatest, put } from 'redux-saga/effects';
 import api from '../../shared/services/api';
+import browserHistory from '../../shared/utils/history';
 
 import { UserRoutines } from './user.redux';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
@@ -11,6 +12,7 @@ function* createUserCMS({ payload }) {
     yield api.post('/users', payload);
 
     yield put(UserRoutines.createUserCMS.success());
+    browserHistory.push('/user');
   } catch (error) {
     yield put(UserRoutines.createUserCMS.failure());
   } finally {

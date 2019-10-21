@@ -12,6 +12,13 @@ Array [
        
       Watts
     </H1>
+    <H3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
   </Component>,
   <Component
     key="1"
@@ -21,6 +28,13 @@ Array [
        
       Chihuly
     </H1>
+    <H3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
   </Component>,
   <Component
     key="2"
@@ -30,6 +44,13 @@ Array [
        
       Bowie
     </H1>
+    <H3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
   </Component>,
 ]
 `;
