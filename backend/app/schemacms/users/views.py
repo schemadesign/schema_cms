@@ -1,12 +1,18 @@
 from django_filters import rest_framework as django_filters
 from rest_framework import decorators, mixins, permissions, response, status, viewsets
+
+from schemacms.users import signals
 from .constants import UserRole
 from . import models as user_models, permissions as user_permissions, serializers as user_serializers
 from .backend_management import user_mgtm_backend
 
 
 class UserViewSet(
-    mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.CreateModelMixin,
+    mixins.UpdateModelMixin,
+    viewsets.GenericViewSet,
 ):
     """
     Retrieves, updates and deactivates user account details
@@ -39,6 +45,10 @@ class UserViewSet(
             )
         else:
             return super().update(request, args, kwargs)
+
+    def perform_create(self, serializer):
+        user = serializer.save()
+        signals.user_invited.send(sender=user_models.User, user=user, requester=self.request.user)
 
     @decorators.action(detail=True, methods=["post"])
     def deactivate(self, request, *args, **kwargs):

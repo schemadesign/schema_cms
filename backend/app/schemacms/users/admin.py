@@ -7,6 +7,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.db import transaction
 from django.utils.translation import gettext_lazy as _
 
+from schemacms.users import signals
 from . import models as user_models
 from . import backend_management
 from . import admin_forms
@@ -70,7 +71,7 @@ class UserAdmin(UserAdmin):
         super().save_model(request, obj, form, change)
         if not change and obj.email:
             try:
-                ret = backend_management.user_mgtm_backend.create_user(obj)
+                signals.user_invited.send(sender=user_models.User, user=obj, requester=request.user)
             except auth0.v3.Auth0Error as e:
                 transaction.savepoint_rollback(sid)
                 if e.status_code == 409:
@@ -81,10 +82,6 @@ class UserAdmin(UserAdmin):
                     request, 'Error from auth0: "{}"'.format(e.message), django.contrib.messages.ERROR
                 )
                 raise
-            obj.source = backend_management.user_mgtm_backend.get_user_source()
-            obj.external_id = ret["user_id"]
-            obj.save(update_fields=["source", "external_id"])
-            transaction.on_commit(obj.send_invitation_email)
         transaction.savepoint_commit(sid)
         return obj
 

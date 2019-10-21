@@ -62,6 +62,12 @@ class User(AbstractUser):
             merge_data_dict={"url": url},
         )
 
+    def assign_external_account(self):
+        ret = backend_management.user_mgtm_backend.create_user(self)
+        self.source = backend_management.user_mgtm_backend.get_user_source()
+        self.external_id = ret["user_id"]
+        self.save(update_fields=["source", "external_id"])
+
     @transaction.atomic()
     def deactivate(self, requester=None) -> bool:
         if not self.is_active:
