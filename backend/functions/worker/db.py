@@ -21,7 +21,7 @@ class BaseModel(Model):
 
 
 class DataSource(BaseModel):
-    file = CharField()
+    file = CharField(max_length=255)
 
     class Meta:
         table_name = "projects_datasource"
@@ -43,6 +43,12 @@ class Job(BaseModel):
     class Meta:
         table_name = "projects_datasourcejob"
 
+    @classmethod
+    def get_by_id(cls, id):
+        return cls.select().join(JobStep, join_type=JOIN.LEFT_OUTER).switch(cls).join(DataSource).where(
+            (cls.id == id)
+        ).get()
+
 
 class JobStep(BaseModel):
     datasource_job = ForeignKeyField(Job, backref="steps")
@@ -59,12 +65,12 @@ def get_db_settings():
     secret_data = json.loads(arn['SecretString'])
 
     return dict(
-        database=settings.DB_CONNECTION["dbname"],
-        user=settings.DB_CONNECTION["username"],
+        database=secret_data["dbname"],
+        user=secret_data["username"],
         password=secret_data["password"],
-        host=settings.DB_CONNECTION["host"],
-        port=settings.DB_CONNECTION["port"],
-        connect_timeout=settings.DB_CONNECTION.get("connect_timeout", 5)
+        host=secret_data["host"],
+        port=secret_data["port"],
+        connect_timeout=secret_data.get("connect_timeout", 5)
     )
 
 
