@@ -19,7 +19,7 @@ class InviteUserForm(forms.ModelForm):
             self.fields[required].required = True
 
     def save(self, commit=True):
-        self.instance.username = uuid.uuid4().hex
+        self.instance.username = USER_MODEL.generate_random_username()
         self.instance.is_active = False
         return super().save(commit=commit)
 

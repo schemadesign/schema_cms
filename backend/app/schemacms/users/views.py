@@ -47,7 +47,7 @@ class UserViewSet(
             return super().update(request, args, kwargs)
 
     def perform_create(self, serializer):
-        user = serializer.save()
+        user = serializer.save(username=user_models.User.generate_random_username())
         signals.user_invited.send(sender=user_models.User, user=user, requester=self.request.user)
 
     @decorators.action(detail=True, methods=["post"])

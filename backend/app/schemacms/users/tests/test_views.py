@@ -150,6 +150,15 @@ class TestUserCreateView:
         assert response.status_code == status.HTTP_201_CREATED
         assert send_invitation_email_mock.called
 
+    def test_create_by_admin_username_duplicated(self, api_client, faker, user_factory):
+        user = user_factory(username='')
+        payload = dict(email=faker.email())
+        api_client.force_authenticate(user)
+
+        response = api_client.post(self.get_url(), payload)
+
+        assert response.status_code == status.HTTP_201_CREATED
+
     def test_create_by_editor(self, api_client, faker, user_factory):
         user = user_factory(editor=True)
         payload = dict(email=faker.email())

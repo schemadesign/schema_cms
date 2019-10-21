@@ -46,6 +46,10 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
+    @classmethod
+    def generate_random_username(cls):
+        return uuid.uuid4().hex
+
     def get_exchange_token(self):
         return tokens.exchange_token.make_token(self)
 
