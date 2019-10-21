@@ -3,16 +3,36 @@
 exports[`Settings: Component should render correctly 1`] = `
 <styled.div>
   <TopHeader
-    headerSubtitle="Profile"
-    headerTitle="Admin Settings"
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Profile"
+        id="settings.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Admin Settings"
+        id="settings.title"
+        values={Object {}}
+      />
+    }
     secondaryMenuItems={
       Array [
         Object {
-          "label": "Reset Password",
+          "label": <FormattedMessage
+            defaultMessage="Reset Password"
+            id="settings.resetPassword"
+            values={Object {}}
+          />,
           "to": "/reset-password",
         },
         Object {
-          "label": "Log out",
+          "label": <FormattedMessage
+            defaultMessage="Log out"
+            id="settings.logout"
+            values={Object {}}
+          />,
           "to": "/logout",
         },
       ]

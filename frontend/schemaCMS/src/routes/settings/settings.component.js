@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+
 import UserProfile from '../../shared/components/userProfile';
 import { Container } from './settings.styles';
 import { TopHeader } from '../../shared/components/topHeader';
@@ -13,23 +15,23 @@ export class Settings extends PureComponent {
     match: PropTypes.object.isRequired,
   };
 
-  getHeaderAndMenuConfig = intl => ({
-    headerTitle: intl.formatMessage(messages.title),
-    headerSubtitle: intl.formatMessage(messages.subTitle),
+  getHeaderAndMenuConfig = () => ({
+    headerTitle: <FormattedMessage {...messages.title} />,
+    headerSubtitle: <FormattedMessage {...messages.subTitle} />,
     secondaryMenuItems: [
       {
-        label: intl.formatMessage(messages.resetPassword),
+        label: <FormattedMessage {...messages.resetPassword} />,
         to: '/reset-password',
       },
       {
-        label: intl.formatMessage(messages.logout),
+        label: <FormattedMessage {...messages.logout} />,
         to: '/logout',
       },
     ],
   });
 
   render() {
-    const topHeaderConfig = this.getHeaderAndMenuConfig(this.props.intl);
+    const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>

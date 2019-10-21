@@ -35,7 +35,9 @@ exports[`Storyshots View Default 1`] = `
               }
             }
           >
-            Users
+            <span>
+              Users
+            </span>
           </h2>
           <h1
             id="headerSubtitle"
@@ -50,7 +52,9 @@ exports[`Storyshots View Default 1`] = `
               }
             }
           >
-            Profile
+            <span>
+              Profile
+            </span>
           </h1>
         </div>
       </div>
@@ -131,7 +135,9 @@ exports[`Storyshots View Default 1`] = `
               }
             }
           >
-            Users
+            <span>
+              Users
+            </span>
           </h2>
           <h1
             id="headerSubtitle"
@@ -146,7 +152,9 @@ exports[`Storyshots View Default 1`] = `
               }
             }
           >
-            Profile
+            <span>
+              Profile
+            </span>
           </h1>
         </div>
       </div>

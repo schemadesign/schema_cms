@@ -3,8 +3,20 @@
 exports[`View: Component should render correctly 1`] = `
 <styled.div>
   <TopHeader
-    headerSubtitle="Profile"
-    headerTitle="Users"
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Profile"
+        id="user.view.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="user.view.title"
+        values={Object {}}
+      />
+    }
   />
 </styled.div>
 `;

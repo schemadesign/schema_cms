@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import { Container } from './view.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -23,15 +24,15 @@ export class View extends PureComponent {
     this.props.fetchUser({ userId: this.props.match.params.userId });
   }
 
-  getHeaderAndMenuConfig = intl => ({
-    headerTitle: intl.formatMessage(messages.title),
-    headerSubtitle: intl.formatMessage(messages.subTitle),
+  getHeaderAndMenuConfig = () => ({
+    headerTitle: <FormattedMessage {...messages.title} />,
+    headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
   renderContent = renderWhenTrue(() => <UserProfile {...this.props} />);
 
   render() {
-    const topHeaderConfig = this.getHeaderAndMenuConfig(this.props.intl);
+    const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>

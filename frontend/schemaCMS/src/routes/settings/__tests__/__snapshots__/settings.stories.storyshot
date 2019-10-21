@@ -35,7 +35,9 @@ exports[`Storyshots Settings Default 1`] = `
               }
             }
           >
-            Admin Settings
+            <span>
+              Admin Settings
+            </span>
           </h2>
           <h1
             id="headerSubtitle"
@@ -50,7 +52,9 @@ exports[`Storyshots Settings Default 1`] = `
               }
             }
           >
-            Profile
+            <span>
+              Profile
+            </span>
           </h1>
         </div>
       </div>
@@ -131,7 +135,9 @@ exports[`Storyshots Settings Default 1`] = `
               }
             }
           >
-            Admin Settings
+            <span>
+              Admin Settings
+            </span>
           </h2>
           <h1
             id="headerSubtitle"
@@ -146,7 +152,9 @@ exports[`Storyshots Settings Default 1`] = `
               }
             }
           >
-            Profile
+            <span>
+              Profile
+            </span>
           </h1>
         </div>
       </div>
@@ -167,7 +175,9 @@ exports[`Storyshots Settings Default 1`] = `
               id={null}
               onClick={[Function]}
             >
-              Reset Password
+              <span>
+                Reset Password
+              </span>
             </a>
           </li>
           <li
@@ -178,7 +188,9 @@ exports[`Storyshots Settings Default 1`] = `
               id={null}
               onClick={[Function]}
             >
-              Log out
+              <span>
+                Log out
+              </span>
             </a>
           </li>
         </ul>

@@ -1,6 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
+import { path } from 'ramda';
 
 import { Container, Form } from './userProfile.styles';
 import { TextInput } from '../form/inputs/textInput';
@@ -41,7 +42,7 @@ export class UserProfile extends PureComponent {
       return this.props.updateMe(values);
     }
 
-    return this.props.makeAdmin({ userId: this.props.match.params.userId });
+    return this.props.makeAdmin({ userId: path(['match', 'params', 'userId'], this.props) });
   };
 
   renderMakeAdmin = renderWhenTrue(() => (
