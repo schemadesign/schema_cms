@@ -55,7 +55,7 @@ def main(event, context):
         )
 
         try:
-            df = dt.fread(source_file["Body"], fill=True).to_pandas()
+            df = dt.fread(source_file["Body"], na_strings=["''", '""'], fill=True).to_pandas()
         except Exception as e:
             job.job_state = db.JobState.FAILED
             job.error = f'{e} @ loading source file'
