@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { prop } from 'ramda';
+import { prop, pathOr } from 'ramda';
 
 export const selectProjectDomain = prop('project');
 
@@ -11,4 +11,9 @@ export const selectProjectsList = createSelector(
 export const selectProject = createSelector(
   selectProjectDomain,
   prop('project')
+);
+
+export const selectProjectUsers = createSelector(
+  selectProjectDomain,
+  pathOr([], ['project', 'editors'])
 );

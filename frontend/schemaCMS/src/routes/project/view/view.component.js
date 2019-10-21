@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Card, Icons, Typography } from 'schemaUI';
-import { has, isEmpty, isNil, path } from 'ramda';
+import { has, isEmpty, isNil, path, either, always, cond, T, not, both } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
 
-import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl, isAdmin } from '../../../shared/utils/helpers';
+import browserHistory from '../../../shared/utils/history';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -57,8 +57,12 @@ export class View extends PureComponent {
     confirmationModalOpen: false,
   };
 
-  componentDidMount() {
-    this.props.fetchProject(this.props.match.params);
+  async componentDidMount() {
+    try {
+      await this.props.fetchProject(this.props.match.params);
+    } catch (e) {
+      browserHistory.push('/');
+    }
   }
 
   componentWillUnmount() {
@@ -126,7 +130,7 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = (_, { id: projectId, editors, owner, slug, created, charts, pages, meta, status } = {}) => {
+  renderProject = ({ id: projectId, editors, owner, slug, created, charts, pages, meta, status } = {}) => {
     const statistics = [
       {
         header: this.formatMessage(messages.dataSources),
@@ -135,7 +139,11 @@ export class View extends PureComponent {
       },
       { header: this.formatMessage(messages.charts), value: this.countItems(charts) },
       { header: this.formatMessage(messages.pages), value: this.countItems(pages) },
-      { header: this.formatMessage(messages.users), value: this.countItems(editors) },
+      {
+        header: this.formatMessage(messages.users),
+        value: this.countItems(editors),
+        to: `/project/${projectId}/user`,
+      },
     ].filter(({ value }) => !isNil(value));
 
     const { firstName = '', lastName = '' } = owner;
@@ -162,11 +170,7 @@ export class View extends PureComponent {
     );
   };
 
-  renderNoData = () => (
-    <Empty>
-      <P>{this.formatMessage(messages.noProject)}</P>
-    </Empty>
-  );
+  renderContent = cond([[isEmpty, always(<Loader />)], [T, () => this.renderProject(this.props.project)]]);
 
   render() {
     const { project } = this.props;
@@ -174,21 +178,14 @@ export class View extends PureComponent {
     const { projectId } = this.props.match.params;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
-    const hasNoData = !project || has('error', project);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, hasNoData);
-
-    const content = isEmpty(project) ? (
-      <Loader />
-    ) : (
-      renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(hasNoData, project)
-    );
+    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, !projectId || has('error', project));
 
     return (
       <Container>
         <div>
           <Helmet title={title} />
           <TopHeader {...topHeaderConfig} />
-          {content}
+          {this.renderContent(project)}
         </div>
         <NavigationContainer>
           <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />

@@ -1,23 +1,25 @@
 import { connect } from 'react-redux';
-import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { injectIntl } from 'react-intl';
 import { compose } from 'ramda';
+import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
 
-import { List } from './list.component';
+import { UserList } from './userList.component';
 import { ProjectRoutines } from '../../../modules/project';
-import { selectProjectsList } from '../../../modules/project/project.selectors';
+import { selectProject, selectProjectUsers } from '../../../modules/project/project.selectors';
 
 const mapStateToProps = createStructuredSelector({
-  list: selectProjectsList,
+  users: selectProjectUsers,
+  project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      fetchProjectsList: promisifyRoutine(ProjectRoutines.fetchList),
+      fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
+      clearProject: promisifyRoutine(ProjectRoutines.unmountOne),
     },
     dispatch
   );
@@ -30,4 +32,4 @@ export default compose(
   ),
   injectIntl,
   withRouter
-)(List);
+)(UserList);

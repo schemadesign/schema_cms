@@ -107,7 +107,6 @@ export class List extends PureComponent {
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...topHeaderConfig} />
         {content}
-
         <NavigationContainer right>
           <PlusButton id="addProjectBtn" onClick={this.handleNewProject} />
         </NavigationContainer>

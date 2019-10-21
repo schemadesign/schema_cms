@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`User List: Component should render correctly 1`] = `
-<styled.div>
+exports[`UserList: Component should render correctly 1`] = `
+<Fragment>
   <TopHeader
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Add User"
+        defaultMessage="Project users list"
         id="userList.headerSubtitle"
         values={Object {}}
       />
@@ -29,8 +29,8 @@ exports[`User List: Component should render correctly 1`] = `
       onClick={[Function]}
     >
       <FormattedMessage
-        defaultMessage="Cancel"
-        id="userList.cancel"
+        defaultMessage="Back"
+        id="project.list.back"
         values={Object {}}
       />
     </BackButton>
@@ -39,15 +39,15 @@ exports[`User List: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
-</styled.div>
+</Fragment>
 `;
 
-exports[`User List: Component should render correctly with users data 1`] = `
-<styled.div>
+exports[`UserList: Component should render correctly with users 1`] = `
+<Fragment>
   <TopHeader
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Add User"
+        defaultMessage="Project users list"
         id="userList.headerSubtitle"
         values={Object {}}
       />
@@ -64,12 +64,19 @@ exports[`User List: Component should render correctly with users data 1`] = `
     users={
       Array [
         Object {
-          "firstName": "John",
-          "lastName": "Doe",
+          "firstName": "Alan",
+          "id": 1,
+          "lastName": "Watts",
         },
         Object {
-          "firstName": "Alan",
-          "lastName": "Watts",
+          "firstName": "Dale",
+          "id": 2,
+          "lastName": "Chihuly",
+        },
+        Object {
+          "firstName": "Dave",
+          "id": 3,
+          "lastName": "Bowie",
         },
       ]
     }
@@ -82,8 +89,8 @@ exports[`User List: Component should render correctly with users data 1`] = `
       onClick={[Function]}
     >
       <FormattedMessage
-        defaultMessage="Cancel"
-        id="userList.cancel"
+        defaultMessage="Back"
+        id="project.list.back"
         values={Object {}}
       />
     </BackButton>
@@ -92,5 +99,5 @@ exports[`User List: Component should render correctly with users data 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
-</styled.div>
+</Fragment>
 `;

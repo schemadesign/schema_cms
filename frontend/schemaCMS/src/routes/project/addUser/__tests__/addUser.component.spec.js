@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { UserList } from '../userList.component';
-import { defaultProps, propsWithUsers } from '../userList.stories';
+import { AddUser } from '../addUser.component';
+import { defaultProps, propsWithUsers } from '../addUser.stories';
 
-describe('UserList: Component', () => {
-  const component = props => <UserList {...defaultProps} {...props} />;
+describe('AddUser: Component', () => {
+  const component = props => <AddUser {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

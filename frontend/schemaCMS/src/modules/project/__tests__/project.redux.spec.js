@@ -7,7 +7,6 @@ describe('Project: redux', () => {
   const defaultState = Immutable({
     projects: [],
     project: {},
-    isFetched: false,
   });
 
   describe('reducer', () => {

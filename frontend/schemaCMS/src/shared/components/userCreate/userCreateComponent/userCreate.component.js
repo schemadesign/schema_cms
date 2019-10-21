@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import browserHistory from '../../../utils/history';
 
 import { Container, Form } from './userCreate.styles';
 import { NEW_USER_ROLES_OPTIONS, USER_ROLE } from '../../../../modules/user/user.constants';
@@ -44,6 +45,11 @@ export class UserCreate extends PureComponent {
     );
 
   handleSelectStatus = ({ value }) => this.props.setFieldValue(USER_ROLE, value);
+
+  handleCancelClick = evt => {
+    evt.preventDefault();
+    browserHistory.push('/user');
+  };
 
   renderNameField = renderWhenTrue(() => {
     const fullName = `${this.props.values[FIRST_NAME]} ${this.props.values[LAST_NAME]}`;

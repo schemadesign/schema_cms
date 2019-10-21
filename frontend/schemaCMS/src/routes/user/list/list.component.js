@@ -1,8 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Typography } from 'schemaUI';
+import { FormattedMessage } from 'react-intl';
 
-const { H1 } = Typography;
+import { UserList } from '../../../shared/components/userList';
+import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { Container } from '../../project/list/list.styles';
+import { TopHeader } from '../../../shared/components/topHeader';
+import messages from './list.messages';
+import browserHistory from '../../../shared/utils/history';
 
 export class List extends PureComponent {
   static propTypes = {
@@ -14,16 +19,28 @@ export class List extends PureComponent {
     this.props.fetchUsers();
   }
 
-  renderUsers = (user, index) => (
-    <Card key={index}>
-      <H1>
-        {user.firstName} {user.lastName}
-      </H1>
-    </Card>
-  );
+  handleAddUser = () => browserHistory.push('/user/add');
+
+  handleCancelClick = () => browserHistory.push('/');
 
   render() {
     const { users } = this.props;
-    return users.map(this.renderUsers);
+    const topHeaderConfig = {
+      headerTitle: <FormattedMessage {...messages.headerTitle} />,
+      headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
+    };
+
+    return (
+      <Container>
+        <TopHeader {...topHeaderConfig} />
+        <UserList users={users} />
+        <NavigationContainer>
+          <BackButton onClick={this.handleCancelClick}>
+            <FormattedMessage {...messages.cancel} />
+          </BackButton>
+          <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
+        </NavigationContainer>
+      </Container>
+    );
   }
 }
