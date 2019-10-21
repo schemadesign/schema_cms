@@ -30,4 +30,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [UserRoutines.fetchUser.SUCCESS]: updateUser,
   [UserRoutines.makeAdmin.SUCCESS]: updateUser,
   [UserRoutines.fetchUsers.SUCCESS]: updateUsers,
+  [UserRoutines.removeUser.SUCCESS]: unmountUser,
 });
