@@ -92,6 +92,89 @@ class TestUserListView:
         return urls.reverse("user-list")
 
 
+class TestUserCreateView:
+    """
+    Tests /api/v1/users create operations.
+    """
+
+    @pytest.mark.parametrize(
+        "payload_factory",
+        [
+            lambda faker: dict(email=faker.email()),
+            lambda faker: dict(
+                email=faker.email(), first_name=faker.first_name(), last_name=faker.last_name()
+            ),
+            lambda faker: dict(
+                email=faker.email(),
+                first_name=faker.first_name(),
+                last_name=faker.last_name(),
+                role=user_constants.UserRole.EDITOR,
+            ),
+            lambda faker: dict(
+                email=faker.email(),
+                first_name=faker.first_name(),
+                last_name=faker.last_name(),
+                role=user_constants.UserRole.ADMIN,
+            ),
+        ],
+    )
+    def test_create_by_admin(self, api_client, faker, user_factory, payload_factory):
+        user = user_factory(admin=True)
+        payload = payload_factory(faker=faker)
+        api_client.force_authenticate(user)
+
+        response = api_client.post(self.get_url(), payload)
+
+        assert response.status_code == status.HTTP_201_CREATED
+
+    def test_create_by_admin_assign_external_account(self, api_client, faker, mocker, user_factory):
+        user = user_factory(admin=True)
+        payload = dict(email=faker.email())
+        assign_external_account_mock = mocker.patch("schemacms.users.models.User.assign_external_account")
+        api_client.force_authenticate(user)
+
+        response = api_client.post(self.get_url(), payload)
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert assign_external_account_mock.called
+
+    @pytest.mark.usefixtures("transaction_on_commit")
+    def test_create_by_admin_send_invitation_email(self, api_client, faker, mocker, user_factory):
+        user = user_factory(admin=True)
+        payload = dict(email=faker.email())
+        send_invitation_email_mock = mocker.patch("schemacms.users.models.User.send_invitation_email")
+        api_client.force_authenticate(user)
+
+        response = api_client.post(self.get_url(), payload)
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert send_invitation_email_mock.called
+
+    def test_create_by_admin_username_duplicated(self, api_client, faker, user_factory):
+        user = user_factory(username='')
+        payload = dict(email=faker.email())
+        api_client.force_authenticate(user)
+
+        response = api_client.post(self.get_url(), payload)
+
+        assert response.status_code == status.HTTP_201_CREATED
+
+    def test_create_by_editor(self, api_client, faker, user_factory):
+        user = user_factory(editor=True)
+        payload = dict(email=faker.email())
+        api_client.force_authenticate(user)
+
+        response = api_client.post(self.get_url(), payload)
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+
+    def test_url(self):
+        assert "/api/v1/users" == self.get_url()
+
+    def get_url(self):
+        return urls.reverse("user-list")
+
+
 class TestUserDetailView:
     """
     Tests /api/v1/users/<pk> detail operations.

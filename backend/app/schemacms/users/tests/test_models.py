@@ -76,3 +76,12 @@ class TestUser:
         user.delete()
 
         auth0_management.return_value.users.delete.assert_called_with(user.external_id)
+
+    def test_assign_external_account(self, user_factory, auth0_management):
+        user = user_factory(external_id="", source=user_constants.UserSource.UNDEFINED)
+
+        user.assign_external_account()
+        user.refresh_from_db()
+
+        assert user.source == user_constants.UserSource.AUTH0
+        assert user.external_id == auth0_management().users.create()["user_id"]

@@ -16,3 +16,9 @@ def faker():
     fake.add_provider(utils_test.CSVProvider)
     fake.add_provider(utils_test.PythonScriptProvider)
     return fake
+
+
+@pytest.fixture()
+def transaction_on_commit(mocker):
+    """Call function without db commit"""
+    mocker.patch("django.db.transaction.on_commit", lambda fn: fn())

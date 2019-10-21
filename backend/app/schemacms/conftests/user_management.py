@@ -1,3 +1,5 @@
+import uuid
+
 import pytest
 
 
@@ -9,4 +11,6 @@ def auth0_auth_token(mocker):
 
 @pytest.fixture(autouse=True)
 def auth0_management(mocker):
-    yield mocker.patch("auth0.v3.management.Auth0")
+    auth0_mock = mocker.patch("auth0.v3.management.Auth0")
+    auth0_mock.return_value.users.create.return_value = dict(user_id=uuid.uuid4().hex)
+    yield auth0_mock

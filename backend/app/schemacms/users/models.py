@@ -46,6 +46,10 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
+    @classmethod
+    def generate_random_username(cls):
+        return uuid.uuid4().hex
+
     def get_exchange_token(self):
         return tokens.exchange_token.make_token(self)
 
@@ -61,6 +65,12 @@ class User(AbstractUser):
             subject="Invitation",
             merge_data_dict={"url": url},
         )
+
+    def assign_external_account(self):
+        ret = backend_management.user_mgtm_backend.create_user(self)
+        self.source = backend_management.user_mgtm_backend.get_user_source()
+        self.external_id = ret["user_id"]
+        self.save(update_fields=["source", "external_id"])
 
     @transaction.atomic()
     def deactivate(self, requester=None) -> bool:
