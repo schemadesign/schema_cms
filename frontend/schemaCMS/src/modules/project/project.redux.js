@@ -10,7 +10,6 @@ export const ProjectRoutines = {
   unmountOne: createRoutine(`${prefix}UNMOUNT_ONE`),
   removeOne: createRoutine(`${prefix}REMOVE`),
   createProject: createRoutine(`${prefix}CREATE_PROJECT`),
-  fetchNotInProjectUsers: createRoutine(`${prefix}FETCH_NOT_IN_PROJECT_USERS`),
   removeEditor: createRoutine(`${prefix}REMOVE_EDITOR`),
   addEditor: createRoutine(`${prefix}ADD_EDITOR`),
 };
