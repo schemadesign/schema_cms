@@ -83,12 +83,13 @@ class DataSourceSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def update(self, instance, validated_data):
         file = validated_data.get("file", None)
-        obj = super().update(instance=instance, validated_data=validated_data)
+        file_in_bytes = None  # file is being closed after save
         if file:
-            file.seek(0)
             file_in_bytes = io.BytesIO(file.read())
+            file.seek(0)
+        obj = super().update(instance=instance, validated_data=validated_data)
+        if file_in_bytes:
             obj.update_meta(file_in_bytes)
-
         return obj
 
 
