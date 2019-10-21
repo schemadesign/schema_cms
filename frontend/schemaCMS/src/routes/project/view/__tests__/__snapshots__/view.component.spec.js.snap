@@ -48,9 +48,12 @@ exports[`View: Component should render correctly 1`] = `
               }
             }
             headerComponent="Data Sources"
+            id="projectDataSources"
             onClick={[Function]}
           >
-            <styled.span>
+            <styled.span
+              id="projectDataSourcesValue"
+            >
               3
             </styled.span>
           </Component>
@@ -65,9 +68,12 @@ exports[`View: Component should render correctly 1`] = `
               }
             }
             headerComponent="Users"
+            id="projectUsers"
             onClick={[Function]}
           >
-            <styled.span>
+            <styled.span
+              id="projectUsersValue"
+            >
               2
             </styled.span>
           </Component>
@@ -77,90 +83,138 @@ exports[`View: Component should render correctly 1`] = `
         <styled.li
           key="0"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldLastUpdated"
+          >
+            <styled.span
+              id="fieldLastUpdatedLabel"
+            >
               Last Update
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldLastUpdatedValue"
+            >
               3 months ago
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldLastUpdatedEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
         <styled.li
           key="1"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldStatus"
+          >
+            <styled.span
+              id="fieldStatusLabel"
+            >
               Status
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldStatusValue"
+            >
               Status
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldStatusEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
         <styled.li
           key="2"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldOwner"
+          >
+            <styled.span
+              id="fieldOwnerLabel"
+            >
               Owner
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldOwnerValue"
+            >
               Firstname Lastname
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldOwnerEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
         <styled.li
           key="3"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldTitle"
+          >
+            <styled.span
+              id="fieldTitleLabel"
+            >
               Title
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldTitleValue"
+            >
               Project Name
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldTitleEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
         <styled.li
           key="4"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldDescription"
+          >
+            <styled.span
+              id="fieldDescriptionLabel"
+            >
               Description
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldDescriptionValue"
+            >
               Description
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldDescriptionEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
         <styled.li
           key="5"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldSlug"
+          >
+            <styled.span
+              id="fieldSlugLabel"
+            >
               API
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldSlugValue"
+            >
               schemacms/api/project_title
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldSlugEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>

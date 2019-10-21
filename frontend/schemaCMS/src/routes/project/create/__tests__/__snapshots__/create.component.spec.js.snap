@@ -81,6 +81,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <Select
+      id="fieldProjectStatus"
       label="Status"
       name="status"
       onSelect={[Function]}

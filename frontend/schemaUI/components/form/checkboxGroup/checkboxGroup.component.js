@@ -38,13 +38,14 @@ class CheckboxGroupComponent extends PureComponent {
       uncCheckedIcon,
       customCheckboxStyles,
       theme,
+      ...restProps
     } = this.props;
     const context = { name, onChange, value, isEdit, checkedIcon, uncCheckedIcon, customCheckboxStyles };
     const containerStyles = getStyles(theme);
     const styles = { ...containerStyles, ...customStyles };
 
     return (
-      <div style={styles}>
+      <div style={styles} {...restProps}>
         <CheckboxGroupContext.Provider value={context}>{children}</CheckboxGroupContext.Provider>
       </div>
     );

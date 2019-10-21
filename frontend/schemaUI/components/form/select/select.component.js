@@ -37,7 +37,7 @@ export class SelectComponent extends PureComponent {
     return <div style={selectedOptionStyles}>{selectedOption.label}</div>;
   };
 
-  renderOptions = ({ value, label, selected }, index, { customOptionStyle }) => {
+  renderOptions = ({ value, label, selected }, index, { customOptionStyle }, id = '') => {
     const eventObj = {
       target: {
         value: value,
@@ -47,7 +47,7 @@ export class SelectComponent extends PureComponent {
     return (
       <div
         key={index}
-        id={`select-item-${index}`}
+        id={`${id}select-item-${index}`}
         style={customOptionStyle(index)}
         onClick={() => this.handleOptionClick(eventObj)}
       >
@@ -62,36 +62,41 @@ export class SelectComponent extends PureComponent {
     </option>
   );
 
-  renderNativeSelect = ({ hidden = false, restStyles: { getSelectStyle } }) => {
+  renderNativeSelect = ({ hidden = false, restStyles: { getSelectStyle } }, restProps) => {
     const { options } = this.props;
     const onChange = !!hidden ? Function.prototype : this.handleOptionClick;
 
     return (
-      <select style={getSelectStyle(hidden)} onChange={onChange}>
+      <select style={getSelectStyle(hidden)} onChange={onChange} {...restProps}>
         {options.map(this.renderNativeOptions)}
       </select>
     );
   };
 
-  renderSelect = (isNative, { selectWrapperStyles, selectedOptionsStyles, optionListStyles, ...restStyles }) =>
-    isNative ? (
-      this.renderNativeSelect({ restStyles })
-    ) : (
-      <div style={selectWrapperStyles}>
+  renderCustomSelect = ({ selectWrapperStyles, selectedOptionsStyles, optionListStyles, ...restStyles }, props) => {
+    const { id } = props;
+
+    return (
+      <div id={id} style={selectWrapperStyles}>
         <div style={selectedOptionsStyles} onClick={this.toggleMenu}>
           {this.renderSelectedOption(restStyles)}
         </div>
         <div style={optionListStyles(this.state.isMenuOpen)}>
-          {this.props.options.map((item, index) => this.renderOptions(item, index, restStyles))}
+          {this.props.options.map((item, index) => this.renderOptions(item, index, restStyles, id))}
         </div>
       </div>
     );
+  };
 
   render() {
-    const { native, theme } = this.props;
+    const { native, theme, ...restProps } = this.props;
     const { containerStyles, ...restStyles } = getStyles(theme);
 
-    return <div style={containerStyles}>{this.renderSelect(native, restStyles)}</div>;
+    return (
+      <div style={containerStyles}>
+        {native ? this.renderNativeSelect({ restStyles }, restProps) : this.renderCustomSelect(restStyles, restProps)}
+      </div>
+    );
   }
 }
 

@@ -107,21 +107,21 @@ export class View extends PureComponent {
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
-  renderStatistic = ({ header, value, to }, index) => (
+  renderStatistic = ({ header, value, to, id }, index) => (
     <CardWrapper key={index}>
-      <Card headerComponent={header} onClick={this.handleGoTo(to)} customStyles={statisticsCardStyles}>
-        <CardValue>{value}</CardValue>
+      <Card id={id} headerComponent={header} onClick={this.handleGoTo(to)} customStyles={statisticsCardStyles}>
+        <CardValue id={`${id}Value`}>{value}</CardValue>
       </Card>
     </CardWrapper>
   );
 
-  renderDetail = ({ label, field, value }, index) => (
+  renderDetail = ({ label, field, value, id }, index) => (
     <DetailItem key={index}>
-      <DetailWrapper>
-        <DetailLabel>{label}</DetailLabel>
-        <DetailValue>{value || this.props.project[field] || ''}</DetailValue>
+      <DetailWrapper id={id}>
+        <DetailLabel id={`${id}Label`}>{label}</DetailLabel>
+        <DetailValue id={`${id}Value`}>{value || this.props.project[field] || ''}</DetailValue>
       </DetailWrapper>
-      <IconEditWrapper>
+      <IconEditWrapper id={`${id}EditButton`}>
         <Icons.EditIcon />
       </IconEditWrapper>
     </DetailItem>
@@ -133,6 +133,7 @@ export class View extends PureComponent {
         header: this.formatMessage(messages.dataSources),
         value: path(['dataSources', 'count'], meta),
         to: `/project/${projectId}/datasource`,
+        id: 'projectDataSources',
       },
       { header: this.formatMessage(messages.charts), value: this.countItems(charts) },
       { header: this.formatMessage(messages.pages), value: this.countItems(pages) },
@@ -140,6 +141,7 @@ export class View extends PureComponent {
         header: this.formatMessage(messages.users),
         value: this.countItems(editors),
         to: `/project/${projectId}/user`,
+        id: 'projectUsers',
       },
     ].filter(({ value }) => !isNil(value));
 
@@ -151,12 +153,18 @@ export class View extends PureComponent {
         label: this.formatMessage(messages.lastUpdate),
         field: 'created',
         value: extendedDayjs(created, BASE_DATE_FORMAT).fromNow(),
+        id: 'fieldLastUpdated',
       },
-      { label: this.formatMessage(messages.status), field: 'status', value: statusValue },
-      { label: this.formatMessage(messages.owner), field: 'owner', value: `${firstName} ${lastName}` },
-      { label: this.formatMessage(messages.titleField), field: 'title' },
-      { label: this.formatMessage(messages.description), field: 'description' },
-      { label: this.formatMessage(messages.api), field: 'slug', value: generateApiUrl(slug) },
+      { label: this.formatMessage(messages.status), field: 'status', value: statusValue, id: 'fieldStatus' },
+      {
+        label: this.formatMessage(messages.owner),
+        field: 'owner',
+        value: `${firstName} ${lastName}`,
+        id: 'fieldOwner',
+      },
+      { label: this.formatMessage(messages.titleField), field: 'title', id: 'fieldTitle' },
+      { label: this.formatMessage(messages.description), field: 'description', id: 'fieldDescription' },
+      { label: this.formatMessage(messages.api), field: 'slug', value: generateApiUrl(slug), id: 'fieldSlug' },
     ];
 
     return (

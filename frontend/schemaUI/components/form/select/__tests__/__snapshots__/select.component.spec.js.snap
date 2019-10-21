@@ -340,6 +340,35 @@ exports[`Select: Component should render correctly with native 1`] = `
 >
   <select
     onChange={[Function]}
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "Dolphin",
+          "value": "dolphin",
+        },
+        Object {
+          "label": "Dog",
+          "value": "dog",
+        },
+        Object {
+          "label": "Parrot",
+          "value": "parrot",
+        },
+        Object {
+          "label": "Cat",
+          "value": "cat",
+        },
+        Object {
+          "label": "Alligator",
+          "value": "alligator",
+        },
+        Object {
+          "label": "Spider",
+          "value": "spider",
+        },
+      ]
+    }
     style={
       Object {
         "display": "flex",

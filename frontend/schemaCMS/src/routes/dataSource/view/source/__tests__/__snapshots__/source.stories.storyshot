@@ -247,6 +247,11 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
           className="sc-gzVnrw bMUaYY"
         >
           <div
+            activeStep={1}
+            customDotStyles={Object {}}
+            handleStep={[Function]}
+            onStepChange={[Function]}
+            steps={6}
             style={
               Object {
                 "display": "flex",

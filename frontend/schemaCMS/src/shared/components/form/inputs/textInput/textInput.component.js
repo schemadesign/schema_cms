@@ -48,7 +48,8 @@ export class TextInput extends PureComponent {
       readOnly,
       ...restProps
     } = this.props;
-    const filteredProps = pick(elementAttributes.input, restProps);
+    const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.input];
+    const filteredProps = pick(allowedAttributes, restProps);
     const isError = !!errors[filteredProps.name];
     const isTouched = touched[filteredProps.name];
     const error = checkOnlyErrors ? isError : isError && isTouched;

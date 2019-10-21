@@ -88,6 +88,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
   }
 >
   <Component
+    id="fieldStepsCheckboxGroup"
     name="steps"
     onChange={[Function]}
     value={Array []}
