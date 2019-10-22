@@ -20,14 +20,14 @@ def data_source_results(data_source_id):
     try:
         last_result = db.Job.select().where(
                     (db.Job.datasource == data_source_id) & (db.Job.job_state == 'success')
-                ).order_by(-db.Job.id).get().result
-        meta_data = db.DataSourceMeta.select().where(db.DataSourceMeta.datasource == data_source_id).get()
+                ).order_by(-db.Job.id).get()
+        meta_data = db.DataSourceJobMetaData.select().where(db.DataSourceJobMetaData.job == last_result.id).get()
     except Exception as e:
         logging.critical(f"Unable to get job results from db - {e}")
         return jsonify({"message": "There is no available results"}), 404
 
     result_file = services.s3.get_object(
-        Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=last_result.lstrip("/")
+        Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=last_result.result.lstrip("/")
     )
 
     return jsonify(
@@ -35,7 +35,7 @@ def data_source_results(data_source_id):
             result_file,
             meta_data,
             page=int(request.args.get('page', 1)),
-            page_size=int(request.args.get('page_size', 1000))
+            page_size=int(request.args.get('page_size', 10000))
         )
     ), 200
 
