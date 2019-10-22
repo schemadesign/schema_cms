@@ -74,16 +74,17 @@ export class UserList extends PureComponent {
 
   render() {
     const { showConfirmationModal } = this.state;
-    const { users } = this.props;
+    const { users, match } = this.props;
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.headerTitle} />,
       headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
     };
+    const projectId = path(['params', 'projectId'], match);
 
     return (
       <Fragment>
         <TopHeader {...topHeaderConfig} />
-        <UserListComponent users={users} onRemoveUser={this.handleRemoveUser} />
+        <UserListComponent users={users} projectId={projectId} onRemoveUser={this.handleRemoveUser} />
         <NavigationContainer>
           <BackButton onClick={this.handleBackClick}>
             <FormattedMessage {...messages.back} />

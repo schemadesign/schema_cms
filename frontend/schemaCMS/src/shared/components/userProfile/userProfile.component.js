@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
-import { path } from 'ramda';
+import { ifElse, is, path } from 'ramda';
 
 import { Container, Form } from './userProfile.styles';
 import { TextInput } from '../form/inputs/textInput';
@@ -37,7 +37,9 @@ export class UserProfile extends PureComponent {
     isAdmin: false,
   };
 
-  handleGoToList = () => this.props.history.push('/user');
+  getBackUrl = ifElse(is(String), projectId => `/project/${projectId}/user`, () => '/user');
+
+  handleGoToList = () => this.props.history.push(this.getBackUrl(path(['match', 'params', 'projectId'])(this.props)));
 
   handleSubmit = values => {
     if (this.props.isSettings) {

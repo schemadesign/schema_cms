@@ -30,7 +30,12 @@ exports[`Project: Component should render correctly 1`] = `
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/user/add"
+    path="/project/:projectId/user/:userId"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/project/:projectId/user/:userId/add"
   />
 </Switch>
 `;
