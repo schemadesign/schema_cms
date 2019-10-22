@@ -2,7 +2,6 @@ import os
 import json
 
 import pytest
-from django.conf import settings
 from factory.django import FileField
 from pandas import read_csv
 
@@ -42,8 +41,7 @@ class TestDataSource:
         base_path = dsource.file.storage.location
         correct_path = os.path.join(
             base_path,
-            f"{settings.STORAGE_DIR}/projects",
-            f"{dsource.project_id}/datasources/{dsource.id}/{filename}",
+            f"{dsource.id}/uploads/{filename}",
         )
 
         assert correct_path == dsource.file.path

@@ -2,7 +2,6 @@ import json
 import operator
 import os
 
-from django.conf import settings
 from django.urls import reverse
 from rest_framework import status
 
@@ -367,8 +366,7 @@ class TestCreateDraftDataSourceView:
         dsource = projects_models.DataSource.objects.get(id=response.data["id"])
         correct_path = os.path.join(
             dsource.file.storage.location,
-            f"{settings.STORAGE_DIR}/projects",
-            f"{dsource.project_id}/datasources/{dsource.id}/test.csv",
+            f"{dsource.id}/uploads/test.csv",
         )
 
         assert response.status_code == status.HTTP_201_CREATED

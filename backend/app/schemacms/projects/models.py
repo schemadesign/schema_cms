@@ -152,7 +152,7 @@ class DataSource(ext_models.TimeStampedModel):
 
                 filename, _ = self.get_original_file_name()
                 meta.preview.save(
-                    f"preview_{filename}.json", django.core.files.base.ContentFile(content=preview_json)
+                    f"{filename}_preview.json", django.core.files.base.ContentFile(content=preview_json)
                 )
 
         except Exception as e:
@@ -161,11 +161,10 @@ class DataSource(ext_models.TimeStampedModel):
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
         if not (self.id and self.project_id):
-            raise ValueError("Project or DataSource id is not set")
+            raise ValueError("Project or DataSource ID is not set")
         return os.path.join(
             base_path,
-            f"{settings.STORAGE_DIR}/projects",
-            f"{self.project_id}/datasources/{self.id}/{filename}",
+            f"{self.id}/uploads/{filename}",
         )
 
     def get_original_file_name(self):
@@ -194,8 +193,7 @@ class DataSourceMeta(MetaDataModel):
 
         return os.path.join(
             base_path,
-            f"{settings.STORAGE_DIR}/projects",
-            f"{self.datasource.project_id}/datasources/{self.datasource.id}/{filename}",
+            f"{self.datasource.id}/previews/{filename}",
         )
 
 
@@ -207,7 +205,7 @@ class WranglingScript(ext_models.TimeStampedModel):
     name = models.CharField(max_length=constants.SCRIPT_NAME_MAX_LENGTH, blank=True)
     is_predefined = models.BooleanField(default=True)
     file = models.FileField(
-        upload_to="scripts/", null=True, validators=[FileExtensionValidator(allowed_extensions=["py"])]
+        upload_to=file_upload_path, null=True, validators=[FileExtensionValidator(allowed_extensions=["py"])]
     )
     body = models.TextField(blank=True)
     last_file_modification = models.DateTimeField(null=True)
@@ -219,6 +217,20 @@ class WranglingScript(ext_models.TimeStampedModel):
         if not self.body:
             self.body = self.file.read().decode()
         super(WranglingScript, self).save(*args, **kwargs)
+
+    def relative_path_to_save(self, filename):
+        base_path = self.file.storage.location
+
+        if self.is_predefined:
+            return os.path.join(
+                base_path,
+                f"scripts/{filename}",
+            )
+        else:
+            return os.path.join(
+                base_path,
+                f"{self.datasource.id}/scripts/{filename}",
+            )
 
 
 class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
@@ -234,8 +246,7 @@ class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
 
         return os.path.join(
             base_path,
-            f"{settings.STORAGE_DIR}/projects",
-            f"{self.datasource.project_id}/datasources/{self.datasource.id}/results_{filename}",
+            f"{self.datasource.id}/outputs/{filename}",
         )
 
     def update_meta(self):
@@ -260,7 +271,7 @@ class DataSourceJobMetaData(MetaDataModel):
     def relative_path_to_save(self, filename):
         base_path = self.preview.storage.location
 
-        return os.path.join(base_path, f"{settings.STORAGE_DIR}/jobs_results", f"{self.job.id}/{filename}")
+        return os.path.join(base_path, f"{self.job.datasource.id}/previews/{filename}")
 
 
 class DataSourceJobStep(models.Model):

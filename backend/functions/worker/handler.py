@@ -29,6 +29,8 @@ def write_dataframe_to_csv_on_s3(dataframe, filename):
 
 
 def process_job(job):
+    global df
+
     job.job_state = db.JobState.IN_PROGRESS
     job.save()
 
@@ -50,7 +52,7 @@ def process_job(job):
 
         logger.info(f'Step {step.id} done')
 
-    result_file_name = f"{job.datasource.file.rstrip('.csv')}_Job#{job.id}_result.csv"
+    result_file_name = f"{job.datasource.id}/outputs/job_{job.id}_result.csv"
     write_dataframe_to_csv_on_s3(df, result_file_name.lstrip("/"))
 
     job.result = result_file_name
@@ -65,8 +67,6 @@ def main(event, context):
     """
 
     logger.info(f'Incoming event: {event}')
-
-    global df
 
     for record in event['Records']:
         body = json.loads(record['body'])
