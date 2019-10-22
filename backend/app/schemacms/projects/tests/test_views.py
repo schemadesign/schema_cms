@@ -389,7 +389,7 @@ class TestCreateDraftDataSourceView:
 
 class TestUpdateDraftDataSourceView:
     def test_response(self, api_client, faker, admin, data_source_factory):
-        data_source = data_source_factory(draft=True)
+        data_source = data_source_factory()
         url = self.get_url(pk=data_source.pk)
         payload = dict(
             name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
@@ -399,27 +399,27 @@ class TestUpdateDraftDataSourceView:
         response = api_client.put(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_200_OK
-        assert 'status' in response.data, response.data
-        assert response.data["status"] == projects_constants.DataSourceStatus.READY_FOR_PROCESSING
 
     def test_object_in_db(self, api_client, faker, admin, data_source_factory):
-        data_source = data_source_factory(draft=True)
+        data_source = data_source_factory()
         url = self.get_url(pk=data_source.pk)
         payload = dict(
-            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+            name=faker.word(),
+            type=projects_constants.DataSourceType.FILE,
+            file=faker.csv_upload_file(filename='filename.csv')
         )
         api_client.force_authenticate(admin)
 
         api_client.put(url, payload, format="multipart")
 
         data_source.refresh_from_db()
-        assert data_source.status == projects_constants.DataSourceStatus.READY_FOR_PROCESSING
+        assert data_source.get_original_file_name()[1] == payload["file"].name
 
     def test_update_by_editor_assigned_to_project(
         self, api_client, faker, editor, project, data_source_factory
     ):
         project.editors.add(editor)
-        data_source = data_source_factory(project=project, draft=True)
+        data_source = data_source_factory(project=project)
         url = self.get_url(pk=data_source.pk)
         payload = dict(
             name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
@@ -431,7 +431,7 @@ class TestUpdateDraftDataSourceView:
         assert response.status_code == status.HTTP_200_OK
 
     def test_update_by_editor_not_assigned_to_project(self, api_client, faker, editor, data_source_factory):
-        data_source = data_source_factory(draft=True)
+        data_source = data_source_factory()
         url = self.get_url(pk=data_source.pk)
         payload = dict(
             name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
@@ -443,7 +443,7 @@ class TestUpdateDraftDataSourceView:
         assert response.status_code == status.HTTP_404_NOT_FOUND
 
     def test_error_response(self, api_client, faker, admin, data_source_factory):
-        data_source = data_source_factory(draft=True)
+        data_source = data_source_factory()
         url = self.get_url(pk=data_source.pk)
         payload = dict()
 
@@ -454,8 +454,8 @@ class TestUpdateDraftDataSourceView:
         assert response.data.keys() == {"name", "type", "file"}
 
     def test_unique_name(self, api_client, faker, admin, data_source_factory):
-        other_datasource = data_source_factory(draft=True, name="test")
-        data_source = data_source_factory(draft=True, project=other_datasource.project)
+        other_datasource = data_source_factory(name="test")
+        data_source = data_source_factory(project=other_datasource.project)
         url = self.get_url(pk=data_source.pk)
         payload = dict(
             name=other_datasource.name,
@@ -477,7 +477,7 @@ class TestUpdateDraftDataSourceView:
         assert f"/api/v1/datasources/{data_source.pk}" == self.get_url(pk=data_source.pk)
 
     def test_file_overwrite(self, api_client, faker, admin, data_source_factory):
-        data_source = data_source_factory(draft=True)
+        data_source = data_source_factory()
         _, file_name_before_update = data_source.get_original_file_name()
         url = self.get_url(pk=data_source.pk)
         payload = dict(
@@ -497,7 +497,7 @@ class TestUpdateDraftDataSourceView:
 
 class TestDataSourceProcess:
     def test_process_file(self, api_client, admin, data_source_factory, faker):
-        data_source = data_source_factory(ready_for_processing=True)
+        data_source = data_source_factory()
         url = self.get_url(pk=data_source.pk)
         api_client.force_authenticate(admin)
 
@@ -507,7 +507,6 @@ class TestDataSourceProcess:
             pk=data_source.pk
         )
         assert response.data == data_source_refreshed.meta_data.data
-        assert data_source_refreshed.status == projects_constants.DataSourceStatus.READY_FOR_PROCESSING
 
     @staticmethod
     def get_url(pk):

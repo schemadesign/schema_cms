@@ -29,6 +29,7 @@ class DataSourceLastJobSerializer(serializers.ModelSerializer):
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
+    status = serializers.CharField(read_only=True, default="done")
     meta_data = DataSourceMetaSerializer(read_only=True)
     file_name = serializers.SerializerMethodField(read_only=True)
     created_by = NestedRelatedModelSerializer(
@@ -47,7 +48,6 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "name",
             "created_by",
             "type",
-            "status",
             "file",
             "file_name",
             "created",
@@ -55,6 +55,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "error_log",
             "project",
             "jobs",
+            "status"
         )
 
         extra_kwargs = {

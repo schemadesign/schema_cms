@@ -12,9 +12,7 @@ from django.db import models, transaction
 from django.utils import functional
 from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
-from django_fsm import signals as fsm_signals
 
-from schemacms.projects import handlers
 from schemacms.users import constants as users_constants
 from . import constants, managers, fsm
 
@@ -120,7 +118,7 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel)
         return self.data_sources.count()
 
 
-class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
+class DataSource(ext_models.TimeStampedModel):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="data_sources")
@@ -156,8 +154,7 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
                 meta.preview.save(
                     f"preview_{filename}.json", django.core.files.base.ContentFile(content=preview_json)
                 )
-                self.status = constants.DataSourceStatus.READY_FOR_PROCESSING
-                self.save()
+
         except Exception as e:
             return logging.error(f"Data Source {self.id} fail to create meta data - {e}")
 
@@ -184,9 +181,6 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
     @property
     def jobs_history(self):
         return self.jobs.all().order_by("-created")
-
-
-fsm_signals.post_transition.connect(handlers.handle_datasource_fsm_post_transition, sender=DataSource)
 
 
 class DataSourceMeta(MetaDataModel):
