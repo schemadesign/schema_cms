@@ -7,6 +7,7 @@ import { UserList } from './userList.component';
 export const defaultProps = {
   clearProject: Function.prototype,
   fetchProject: Function.prototype,
+  removeUser: Function.prototype,
   users: [],
   match: {
     params: {

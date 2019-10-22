@@ -6,19 +6,20 @@ exports[`UserList: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Project users list"
-        id="userList.headerSubtitle"
+        id="project.userList.headerSubtitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Users"
-        id="userList.headerTitle"
+        id="project.userList.headerTitle"
         values={Object {}}
       />
     }
   />
   <UserList
+    onRemoveUser={[Function]}
     users={Array []}
   />
   <NavigationContainer
@@ -30,7 +31,7 @@ exports[`UserList: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Back"
-        id="project.list.back"
+        id="project.userList.back"
         values={Object {}}
       />
     </BackButton>
@@ -39,6 +40,78 @@ exports[`UserList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": "1px solid #ccc",
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the user from the project?"
+        id="project.userList.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.userList.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.userList.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
 </Fragment>
 `;
 
@@ -48,19 +121,20 @@ exports[`UserList: Component should render correctly with users 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Project users list"
-        id="userList.headerSubtitle"
+        id="project.userList.headerSubtitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Users"
-        id="userList.headerTitle"
+        id="project.userList.headerTitle"
         values={Object {}}
       />
     }
   />
   <UserList
+    onRemoveUser={[Function]}
     users={
       Array [
         Object {
@@ -90,7 +164,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
     >
       <FormattedMessage
         defaultMessage="Back"
-        id="project.list.back"
+        id="project.userList.back"
         values={Object {}}
       />
     </BackButton>
@@ -99,5 +173,77 @@ exports[`UserList: Component should render correctly with users 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": "1px solid #ccc",
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the user from the project?"
+        id="project.userList.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.userList.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.userList.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
 </Fragment>
 `;
