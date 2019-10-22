@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Card, Icons, Typography } from 'schemaUI';
-import { always, anyPass, cond, equals, ifElse } from 'ramda';
+import { always, anyPass, cond, equals, propEq, propIs, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import dayjs from 'dayjs';
 
@@ -16,25 +16,26 @@ import {
   Header,
   HeaderIcon,
   iconSourceStyles,
+  Job,
+  JobDate,
+  JobDetails,
+  JobName,
+  JobsContainer,
+  JobStatus,
+  JobsTitle,
   lockIconStyles,
   lockTextStyles,
   MetaData,
   MetaDataName,
   MetaDataValue,
   MetaDataWrapper,
-  JobsContainer,
-  Job,
-  JobStatus,
-  JobDetails,
-  JobName,
-  JobDate,
-  JobsTitle,
   titleStyles,
 } from './dataSourceList.styles';
 import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../list/list.styles';
 import {
+  DATA_WRANGLING_RESULT_STEP,
   FIELDS_STEP,
   INITIAL_STEP,
   STATUS_DONE,
@@ -86,7 +87,11 @@ export class DataSourceList extends PureComponent {
     ],
   });
 
-  getStep = ifElse(equals(true), always(INITIAL_STEP), always(FIELDS_STEP));
+  getStep = cond([
+    [propEq('isJobSuccess', true), always(DATA_WRANGLING_RESULT_STEP)],
+    [propIs(Object, 'metaData'), always(FIELDS_STEP)],
+    [T, always(INITIAL_STEP)],
+  ]);
 
   handleShowProject = () => this.props.history.push(`/project/${this.props.match.params.projectId}`);
 
@@ -96,12 +101,9 @@ export class DataSourceList extends PureComponent {
     this.props.createDataSource({ projectId });
   };
 
-  handleShowDataSource = ({ id, status, metaData }) => {
-    if ([STATUS_PROCESSING, STATUS_READY_FOR_PROCESSING].includes(status)) {
-      return;
-    }
-
-    const step = this.getStep(!metaData);
+  handleShowDataSource = ({ id, metaData, jobs = [] }) => {
+    const isJobSuccess = jobs.some(({ jobState }) => jobState === 'success');
+    const step = this.getStep({ metaData, isJobSuccess });
 
     this.props.history.push(`/datasource/${id}/${step}`);
   };
@@ -198,7 +200,7 @@ export class DataSourceList extends PureComponent {
     return (
       <DataSourceItem key={index}>
         <Card headerComponent={header}>
-          <H1 customStyles={customTitleStyles} onClick={() => this.handleShowDataSource({ id, status, metaData })}>
+          <H1 customStyles={customTitleStyles} onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
             {name}
           </H1>
           {this.renderCardContent({ metaData, isLock, isError, errorLog })}
