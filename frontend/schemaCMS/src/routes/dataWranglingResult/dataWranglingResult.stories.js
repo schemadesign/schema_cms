@@ -66,6 +66,9 @@ export const defaultProps = {
   dataSource: {
     jobs: [{ id: 1 }],
   },
+  history: {
+    push: Function.prototype,
+  },
   fields,
   previewTable,
   fetchResult: Function.prototype,

@@ -21,6 +21,9 @@ export class DataWranglingResult extends PureComponent {
       params: PropTypes.object.isRequired,
     }).isRequired,
     intl: PropTypes.object.isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }),
   };
 
   componentDidMount() {
