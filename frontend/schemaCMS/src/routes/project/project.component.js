@@ -26,7 +26,7 @@ export class Project extends PureComponent {
     const dataSourceListPath = `${path}/:projectId/datasource/`;
     const usersPath = `${path}/:projectId/user`;
     const userPath = `${path}/:projectId/user/:userId`;
-    const addUserList = `${userPath}/add`;
+    const addUserList = `${usersPath}/add`;
 
     return (
       <Switch>
@@ -35,8 +35,8 @@ export class Project extends PureComponent {
         <Route exact path={dataSourceListPath} component={DataSourceList} />
         <Route exact path={viewPath} component={View} />
         <Route exact path={usersPath} component={UserList} />
-        <Route exact path={userPath} component={User} />
         <Route exact path={addUserList} component={AddUser} />
+        <Route exact path={userPath} component={User} />
       </Switch>
     );
   }
