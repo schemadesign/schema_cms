@@ -98,6 +98,11 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
         "Url": Object {},
       }
     }
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
     intl={
       Object {
         "formatMessage": [Function],
