@@ -137,6 +137,7 @@ describe('DataSource: sagas', () => {
       step: '1',
       requestData: {
         data: 'data',
+        name: 'name',
       },
     };
     const responseData = {
@@ -154,7 +155,19 @@ describe('DataSource: sagas', () => {
         .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, /form-data; name="data"[^]*data/m, options)
         .reply(OK, responseData);
 
+      mockApi
+        .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, { name: payload.requestData.name }, options)
+        .reply(OK, responseData);
+
       mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`).reply(OK);
+    });
+
+    it('should dispatch a success action', async () => {
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.updateOne.success(responseData))
+        .dispatch(DataSourceRoutines.updateOne(payload))
+        .silentRun();
     });
 
     it('should dispatch a success action', async () => {

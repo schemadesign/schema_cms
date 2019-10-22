@@ -121,10 +121,10 @@ export const JobDetails = styled.div`
 `;
 
 const getStatusColor = cond([
-  [equals('error'), always(colors.red)],
+  [equals('failed'), always(colors.red)],
   [equals('pending'), always(colors.yellow)],
-  [equals('process'), always(colors.blue)],
-  [equals('done'), always(colors.green)],
+  [equals('processing'), always(colors.blue)],
+  [equals('success'), always(colors.green)],
 ]);
 
 export const JobStatus = styled.div`
