@@ -6,7 +6,7 @@ import { has, isEmpty, isNil, path, always, cond, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
 
-import { generateApiUrl, isAdmin } from '../../../shared/utils/helpers';
+import { generateApiUrl } from '../../../shared/utils/helpers';
 import browserHistory from '../../../shared/utils/history';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
@@ -32,9 +32,7 @@ import { modalStyles, ModalTitle, ModalButton, ModalActions } from '../../../sha
 
 export class View extends PureComponent {
   static propTypes = {
-    user: PropTypes.shape({
-      role: PropTypes.string.isRequired,
-    }),
+    isAdmin: PropTypes.bool.isRequired,
     project: PropTypes.object.isRequired,
     fetchProject: PropTypes.func.isRequired,
     unmountProject: PropTypes.func.isRequired,
@@ -76,7 +74,7 @@ export class View extends PureComponent {
         to: `/project/${projectId}/datasource`,
       });
 
-      if (isAdmin(this.props.user)) {
+      if (this.props.isAdmin) {
         secondaryMenuItems.push(
           { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
           {

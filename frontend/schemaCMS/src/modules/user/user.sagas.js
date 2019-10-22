@@ -1,10 +1,10 @@
 import { all, takeLatest, put } from 'redux-saga/effects';
 import api from '../../shared/services/api';
-import browserHistory from '../../shared/utils/history';
 
 import { UserRoutines } from './user.redux';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { ROLES } from '../userProfile/userProfile.constants';
+import browserHistory from '../../shared/utils/history';
 
 function* createUserCMS({ payload }) {
   try {
@@ -79,6 +79,21 @@ function* fetchUsers() {
   }
 }
 
+function* removeUser({ payload: { userId } }) {
+  try {
+    yield put(UserRoutines.removeUser.request());
+
+    yield api.post(`users/${userId}/deactivate`);
+
+    yield put(UserRoutines.removeUser.success());
+    browserHistory.push('/user');
+  } catch (error) {
+    yield put(UserRoutines.removeUser.failure());
+  } finally {
+    yield put(UserRoutines.removeUser.fulfill());
+  }
+}
+
 export function* watchUser() {
   yield all([
     takeLatest(UserRoutines.createUserCMS.TRIGGER, createUserCMS),
@@ -86,5 +101,6 @@ export function* watchUser() {
     takeLatest(UserRoutines.fetchUser.TRIGGER, fetchUser),
     takeLatest(UserRoutines.makeAdmin.TRIGGER, makeAdmin),
     takeLatest(UserRoutines.fetchUsers.TRIGGER, fetchUsers),
+    takeLatest(UserRoutines.removeUser.TRIGGER, removeUser),
   ]);
 }

@@ -13,6 +13,7 @@ export const defaultProps = {
   updateMe: Function.prototype,
   makeAdmin: Function.prototype,
   isSettings: false,
+  isAdmin: true,
   match: { params: { userId: '1' } },
   history: {
     push: Function.prototype,

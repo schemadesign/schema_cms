@@ -70,4 +70,61 @@ describe('User: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('when /REMOVE_USER action is fired', () => {
+    it('should put removeUser success action', async () => {
+      const payload = {
+        userId: 2,
+      };
+      mockApi.post(`/users/${payload.userId}/deactivate`).reply(OK);
+
+      await expectSaga(watchUser)
+        .withState(defaultState)
+        .put(UserRoutines.removeUser.success())
+        .dispatch(UserRoutines.removeUser(payload))
+        .silentRun();
+    });
+
+    it('should put removeUser failure action', async () => {
+      const payload = {
+        userId: 2,
+      };
+      mockApi.post(`/users/${payload.userId}/deactivate`).reply(BAD_REQUEST);
+
+      await expectSaga(watchUser)
+        .withState(defaultState)
+        .put(UserRoutines.removeUser.failure())
+        .dispatch(UserRoutines.removeUser(payload))
+        .silentRun();
+    });
+  });
+
+  describe('when /MAKE_ADMIN action is fired', () => {
+    it('should put makeAdmin success action', async () => {
+      const payload = {
+        userId: 2,
+      };
+      const responseData = { id: 'id' };
+      mockApi.put(`/users/${payload.userId}`, { role: ROLES.ADMIN }).reply(OK, responseData);
+
+      await expectSaga(watchUser)
+        .withState(defaultState)
+        .put(UserRoutines.makeAdmin.success(responseData))
+        .dispatch(UserRoutines.makeAdmin(payload))
+        .silentRun();
+    });
+
+    it('should put makeAdmin failure action', async () => {
+      const payload = {
+        userId: 2,
+      };
+      mockApi.put(`/users/${payload.userId}`, { role: ROLES.ADMIN }).reply(BAD_REQUEST);
+
+      await expectSaga(watchUser)
+        .withState(defaultState)
+        .put(UserRoutines.makeAdmin.failure())
+        .dispatch(UserRoutines.makeAdmin(payload))
+        .silentRun();
+    });
+  });
 });

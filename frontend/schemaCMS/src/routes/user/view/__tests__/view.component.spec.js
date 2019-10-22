@@ -13,4 +13,9 @@ describe('View: Component', () => {
     const wrapper = render();
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render without remove user button', () => {
+    const wrapper = render({ isAdmin: false });
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

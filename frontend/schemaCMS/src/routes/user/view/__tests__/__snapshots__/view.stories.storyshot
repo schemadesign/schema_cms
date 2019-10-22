@@ -166,7 +166,17 @@ exports[`Storyshots View Default 1`] = `
         />
         <ul
           className="sc-gipzik sc-Rmtcm iXyibh"
-        />
+        >
+          <li
+            className="sc-bRBYWo sc-jhAzac gXOFfT"
+            id={null}
+            onClick={[Function]}
+          >
+            <span>
+              Remove user
+            </span>
+          </li>
+        </ul>
       </div>
       <button
         disabled={false}

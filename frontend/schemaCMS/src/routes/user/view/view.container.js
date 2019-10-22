@@ -8,9 +8,11 @@ import { injectIntl } from 'react-intl';
 
 import { View } from './view.component';
 import { selectUser, UserRoutines } from '../../../modules/user';
+import { selectIsAdmin } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
   userData: selectUser,
+  isAdmin: selectIsAdmin,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -18,6 +20,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       fetchUser: promisifyRoutine(UserRoutines.fetchUser),
       makeAdmin: promisifyRoutine(UserRoutines.makeAdmin),
+      removeUser: promisifyRoutine(UserRoutines.removeUser),
     },
     dispatch
   ),

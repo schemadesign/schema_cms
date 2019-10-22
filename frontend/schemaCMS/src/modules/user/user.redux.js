@@ -11,6 +11,7 @@ export const UserRoutines = {
   fetchUser: createRoutine(`${PREFIX}FETCH_USER`),
   makeAdmin: createRoutine(`${PREFIX}MAKE_ADMIN`),
   fetchUsers: createRoutine(`${PREFIX}FETCH_USERS`),
+  removeUser: createRoutine(`${PREFIX}REMOVE_USERS`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -29,4 +30,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [UserRoutines.fetchUser.SUCCESS]: updateUser,
   [UserRoutines.makeAdmin.SUCCESS]: updateUser,
   [UserRoutines.fetchUsers.SUCCESS]: updateUsers,
+  [UserRoutines.removeUser.SUCCESS]: unmountUser,
 });

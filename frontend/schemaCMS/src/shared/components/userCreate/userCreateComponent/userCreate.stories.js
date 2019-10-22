@@ -7,6 +7,7 @@ export const defaultProps = {
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
+  onCancelClick: Function.prototype,
   values: {},
 };
 

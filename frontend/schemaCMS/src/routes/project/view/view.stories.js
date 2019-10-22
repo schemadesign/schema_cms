@@ -22,6 +22,7 @@ const emptyProps = {
     },
   },
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+  isAdmin: true,
 };
 
 export const defaultProps = {

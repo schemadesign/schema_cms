@@ -27,6 +27,7 @@ export class User extends PureComponent {
       <Switch>
         <Route exact path={withUserId} component={View} />
         <Route exact path={path} component={List} />
+        <Route exact path={withUserId} component={View} />
         <Route exact path={withProjectId} render={({ match }) => <UserCreateProject {...this.props} match={match} />} />
         <Route exact path={add} render={() => <UserCreateCMS {...this.props} />} />
       </Switch>
