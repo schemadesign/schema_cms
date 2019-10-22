@@ -29,7 +29,7 @@ def map_dataframe_dtypes(dtype):
 
 
 def get_preview_data(file):
-    data_frame = dt.fread(file, na_strings=["''", '""'], fill=True)
+    data_frame = dt.fread(file, na_strings=["", ''], fill=True)
 
     items, fields = data_frame.shape
     sample_of_5 = data_frame.head(5).to_pandas()
