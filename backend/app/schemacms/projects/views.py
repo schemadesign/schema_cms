@@ -168,7 +168,7 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, viewsets.GenericView
     @decorators.action(detail=True, url_path="result-preview", methods=["get"])
     def result_preview(self, request, pk=None, **kwarg):
         obj = self.get_object()
-        if obj.job_state in [constants.DataSourceJobState.PENDING, constants.DataSourceJobState.IN_PROGRESS]:
+        if obj.job_state in [constants.DataSourceJobState.PENDING, constants.DataSourceJobState.PROCESSING]:
             return response.Response("Job is still running", status=status.HTTP_200_OK)
         elif obj.job_state == constants.DataSourceJobState.FAILED:
             data = {"error": obj.error}

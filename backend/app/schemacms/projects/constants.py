@@ -32,14 +32,14 @@ DATA_SOURCE_TYPE_CHOICES = (
 
 class DataSourceJobState:
     PENDING = 'pending'
-    IN_PROGRESS = 'in_progress'
+    PROCESSING = 'processing'
     FAILED = 'failed'
     SUCCESS = 'success'
 
 
 DATA_SOURCE_JOB_STATE_CHOICES = (
     (DataSourceJobState.PENDING, 'Pending'),
-    (DataSourceJobState.IN_PROGRESS, 'In progress'),
+    (DataSourceJobState.PROCESSING, 'Processing'),
     (DataSourceJobState.FAILED, 'Failed'),
     (DataSourceJobState.SUCCESS, 'Success'),
 )
