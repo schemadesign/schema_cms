@@ -1,5 +1,5 @@
 import { all, put, takeLatest, take, delay, fork, cancel, cancelled } from 'redux-saga/effects';
-import { pipe, forEach, keys, any, anyPass, propEq, path } from 'ramda';
+import { pipe, forEach, keys, any, anyPass, propEq, path, omit } from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
@@ -95,7 +95,10 @@ function* updateOne({ payload: { dataSourceId, requestData, step } }) {
     yield put(DataSourceRoutines.updateOne.request());
     const formData = new FormData();
 
+    yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, { name: requestData.name });
+
     pipe(
+      omit(['name']),
       keys,
       forEach(name => formData.append(name, requestData[name]))
     )(requestData);
