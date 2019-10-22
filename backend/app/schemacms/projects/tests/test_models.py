@@ -2,7 +2,6 @@ import os
 import json
 
 import pytest
-from django.conf import settings
 from factory.django import FileField
 from pandas import read_csv
 

@@ -2,7 +2,6 @@ import json
 import operator
 import os
 
-from django.conf import settings
 from django.urls import reverse
 from rest_framework import status
 
