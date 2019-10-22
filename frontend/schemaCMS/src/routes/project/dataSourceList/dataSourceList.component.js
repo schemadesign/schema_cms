@@ -43,7 +43,7 @@ import {
   STATUS_PROCESSING,
   STATUS_READY_FOR_PROCESSING,
 } from '../../../modules/dataSource/dataSource.constants';
-import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
 const { H1 } = Typography;
@@ -86,7 +86,7 @@ export class DataSourceList extends PureComponent {
     ],
   });
 
-  getStep = ifElse(equals(STATUS_DRAFT), always(INITIAL_STEP), always(FIELDS_STEP));
+  getStep = ifElse(equals(true), always(INITIAL_STEP), always(FIELDS_STEP));
 
   handleShowProject = () => this.props.history.push(`/project/${this.props.match.params.projectId}`);
 
@@ -96,12 +96,12 @@ export class DataSourceList extends PureComponent {
     this.props.createDataSource({ projectId });
   };
 
-  handleShowDataSource = ({ id, status }) => {
+  handleShowDataSource = ({ id, status, metaData }) => {
     if ([STATUS_PROCESSING, STATUS_READY_FOR_PROCESSING].includes(status)) {
       return;
     }
 
-    const step = this.getStep(status);
+    const step = this.getStep(!metaData);
 
     this.props.history.push(`/datasource/${id}/${step}`);
   };
@@ -162,9 +162,9 @@ export class DataSourceList extends PureComponent {
       always(this.renderMetaData(metaData || {}, isLock))
     )(isError);
 
-  renderJob = ({ jobState, id, modified }) => {
+  renderJob = ({ jobState, id, modified }, index) => {
     return (
-      <Job>
+      <Job key={index}>
         <JobDetails>
           <JobStatus status={jobState}>{jobState}</JobStatus>
           <JobName>
@@ -178,14 +178,15 @@ export class DataSourceList extends PureComponent {
     );
   };
 
-  renderJobs = (job, index) => (
-    <JobsContainer key={index}>
-      <JobsTitle>
-        <FormattedMessage {...messages.jobTitle} />
-      </JobsTitle>
-      {this.renderJob(job)}
-    </JobsContainer>
-  );
+  renderJobs = jobs =>
+    renderWhenTrue(() => (
+      <JobsContainer>
+        <JobsTitle>
+          <FormattedMessage {...messages.jobTitle} />
+        </JobsTitle>
+        {jobs.map(this.renderJob)}
+      </JobsContainer>
+    ));
 
   renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status, errorLog, jobs }, index) => {
     const isLock = status !== STATUS_DONE;
@@ -197,11 +198,11 @@ export class DataSourceList extends PureComponent {
     return (
       <DataSourceItem key={index}>
         <Card headerComponent={header}>
-          <H1 customStyles={customTitleStyles} onClick={() => this.handleShowDataSource({ id, status })}>
+          <H1 customStyles={customTitleStyles} onClick={() => this.handleShowDataSource({ id, status, metaData })}>
             {name}
           </H1>
           {this.renderCardContent({ metaData, isLock, isError, errorLog })}
-          {jobs.map(this.renderJobs)}
+          {this.renderJobs(jobs)(!!jobs.length)}
         </Card>
       </DataSourceItem>
     );

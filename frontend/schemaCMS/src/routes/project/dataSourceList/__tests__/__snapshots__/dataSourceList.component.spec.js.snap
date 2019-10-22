@@ -322,9 +322,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             </styled.span>
           </styled.div>
         </styled.div>
-        <styled.div
-          key="0"
-        >
+        <styled.div>
           <styled.div>
             <FormattedMessage
               defaultMessage="Data Process History"
@@ -332,7 +330,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
               values={Object {}}
             />
           </styled.div>
-          <styled.div>
+          <styled.div
+            key="0"
+          >
             <styled.div>
               <styled.div />
               <styled.div>
@@ -355,18 +355,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
               01/12/2019 01:00
             </styled.div>
           </styled.div>
-        </styled.div>
-        <styled.div
-          key="1"
-        >
-          <styled.div>
-            <FormattedMessage
-              defaultMessage="Data Process History"
-              id="dataSource.list.jobTitle"
-              values={Object {}}
-            />
-          </styled.div>
-          <styled.div>
+          <styled.div
+            key="1"
+          >
             <styled.div>
               <styled.div />
               <styled.div>
@@ -389,18 +380,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
               01/12/2019 01:00
             </styled.div>
           </styled.div>
-        </styled.div>
-        <styled.div
-          key="2"
-        >
-          <styled.div>
-            <FormattedMessage
-              defaultMessage="Data Process History"
-              id="dataSource.list.jobTitle"
-              values={Object {}}
-            />
-          </styled.div>
-          <styled.div>
+          <styled.div
+            key="2"
+          >
             <styled.div>
               <styled.div />
               <styled.div>
@@ -423,18 +405,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
               01/12/2019 01:00
             </styled.div>
           </styled.div>
-        </styled.div>
-        <styled.div
-          key="3"
-        >
-          <styled.div>
-            <FormattedMessage
-              defaultMessage="Data Process History"
-              id="dataSource.list.jobTitle"
-              values={Object {}}
-            />
-          </styled.div>
-          <styled.div>
+          <styled.div
+            key="3"
+          >
             <styled.div>
               <styled.div />
               <styled.div>

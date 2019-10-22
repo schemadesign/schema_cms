@@ -2230,17 +2230,6 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                 01/12/2019 01:00
               </div>
             </div>
-          </div>
-          <div
-            className="sc-ktHwxA bwPBzM"
-          >
-            <div
-              className="sc-jwKygS fbNeSa"
-            >
-              <span>
-                Data Process History
-              </span>
-            </div>
             <div
               className="sc-cIShpX dfcAzt"
             >
@@ -2270,17 +2259,6 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                 01/12/2019 01:00
               </div>
             </div>
-          </div>
-          <div
-            className="sc-ktHwxA bwPBzM"
-          >
-            <div
-              className="sc-jwKygS fbNeSa"
-            >
-              <span>
-                Data Process History
-              </span>
-            </div>
             <div
               className="sc-cIShpX dfcAzt"
             >
@@ -2309,17 +2287,6 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                  
                 01/12/2019 01:00
               </div>
-            </div>
-          </div>
-          <div
-            className="sc-ktHwxA bwPBzM"
-          >
-            <div
-              className="sc-jwKygS fbNeSa"
-            >
-              <span>
-                Data Process History
-              </span>
             </div>
             <div
               className="sc-cIShpX dfcAzt"
