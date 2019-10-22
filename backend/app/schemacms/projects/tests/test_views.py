@@ -367,8 +367,7 @@ class TestCreateDraftDataSourceView:
         dsource = projects_models.DataSource.objects.get(id=response.data["id"])
         correct_path = os.path.join(
             dsource.file.storage.location,
-            f"{settings.STORAGE_DIR}/projects",
-            f"{dsource.project_id}/datasources/{dsource.id}/test.csv",
+            f"{dsource.id}/uploads/test.csv",
         )
 
         assert response.status_code == status.HTTP_201_CREATED
