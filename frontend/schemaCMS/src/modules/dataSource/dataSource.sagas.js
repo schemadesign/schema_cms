@@ -136,7 +136,7 @@ function* fetchFields({ payload }) {
     yield put(DataSourceRoutines.fetchOne.request());
 
     const { dataSourceId } = payload;
-    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${PREVIEW_PATH}`);
+    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${PREVIEW_PATH}`, { camelize: false });
 
     yield put(DataSourceRoutines.fetchFields.success(data));
   } catch (error) {

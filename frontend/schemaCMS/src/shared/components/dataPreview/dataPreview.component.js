@@ -63,7 +63,7 @@ export default class DataPreview extends PureComponent {
 
   getTableData() {
     const columnsIds = keys(this.props.fields);
-    const rows = map(data => map(name => data[name] || '', columnsIds), this.props.previewTable);
+    const rows = map(data => map(name => data[name], columnsIds), this.props.previewTable);
 
     return { header: columnsIds, rows };
   }

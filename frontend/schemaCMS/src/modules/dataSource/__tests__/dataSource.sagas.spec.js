@@ -214,7 +214,8 @@ describe('DataSource: sagas', () => {
           id: {},
           name: {},
         },
-        data: [{ id: '1', name: 'test' }],
+        // eslint-disable-next-line camelcase
+        data: [{ id: '1', name: 'test', snake_case_data: 'data' }],
       };
 
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/preview`).reply(OK, responseData);

@@ -8,6 +8,7 @@ import { Loader } from '../../shared/components/loader';
 import { Table } from '../../shared/components/table';
 import messages from './dataWranglingResult.messages';
 import { Container } from './dataWranglingResult.styles';
+import { StepNavigation } from '../../shared/components/stepNavigation';
 
 export class DataWranglingResult extends PureComponent {
   static propTypes = {
@@ -32,7 +33,7 @@ export class DataWranglingResult extends PureComponent {
 
   getTableData() {
     const columnsIds = keys(this.props.fields);
-    const rows = map(data => map(name => data[name] || '', columnsIds), this.props.previewTable);
+    const rows = map(data => map(name => data[name], columnsIds), this.props.previewTable);
 
     return { header: columnsIds, rows };
   }
@@ -52,6 +53,7 @@ export class DataWranglingResult extends PureComponent {
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         {this.renderContent(isLoading)}
+        <StepNavigation {...this.props} />
       </Container>
     );
   }

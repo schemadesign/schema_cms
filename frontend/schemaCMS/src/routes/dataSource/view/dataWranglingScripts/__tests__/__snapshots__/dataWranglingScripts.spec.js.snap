@@ -160,7 +160,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       }
     }
     sendUpdatedDataWranglingScript={[Function]}
-    submitForm={[Function]}
+    submitForm={null}
     uploadScript={[Function]}
   />
 </ContextProvider>
