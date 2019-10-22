@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Card, Typography, Button, Icons } from 'schemaUI';
 import { Link } from 'react-router-dom';
+import { ifElse, is } from 'ramda';
 
 import { renderWhenTrue } from '../../utils/rendering';
 
@@ -13,8 +14,11 @@ const { CloseIcon } = Icons;
 export class UserList extends PureComponent {
   static propTypes = {
     users: PropTypes.array.isRequired,
+    projectId: PropTypes.string,
     onRemoveUser: PropTypes.func,
   };
+
+  getUrl = ifElse(is(String), projectId => `/project/${projectId}/user/`, () => '/user/');
 
   renderRemove = renderWhenTrue((_, user) => (
     <Button customStyles={buttonIconStyles} onClick={this.props.onRemoveUser(user)}>
@@ -25,7 +29,7 @@ export class UserList extends PureComponent {
   renderListItem = (user, hasRemoving, index) => (
     <Card key={index}>
       <H1>
-        <Link to={`/user/${user.id}`}>
+        <Link to={`${this.getUrl(this.props.projectId)}${user.id}`}>
           {user.firstName} {user.lastName}
         </Link>
       </H1>

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { List } from './list';
 import { View } from './view';
+import User from '../user/view/view.container';
 import { Create } from './create';
 import { DataSourceList } from './dataSourceList';
 import UserList from './userList/userList.container';
@@ -23,7 +24,8 @@ export class Project extends PureComponent {
     const viewPath = `${path}/:projectId`;
     const createPath = `${path}/create/`;
     const dataSourceListPath = `${path}/:projectId/datasource/`;
-    const userPath = `${path}/:projectId/user`;
+    const usersPath = `${path}/:projectId/user`;
+    const userPath = `${path}/:projectId/user/:userId`;
     const addUserList = `${userPath}/add`;
 
     return (
@@ -32,7 +34,8 @@ export class Project extends PureComponent {
         <Route exact path={path} component={List} />
         <Route exact path={dataSourceListPath} component={DataSourceList} />
         <Route exact path={viewPath} component={View} />
-        <Route exact path={userPath} component={UserList} />
+        <Route exact path={usersPath} component={UserList} />
+        <Route exact path={userPath} component={User} />
         <Route exact path={addUserList} component={AddUser} />
       </Switch>
     );
