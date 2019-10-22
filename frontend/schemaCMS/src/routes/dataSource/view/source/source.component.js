@@ -59,13 +59,14 @@ export class SourceComponent extends PureComponent {
     setFieldValue('fileName', pathOr('', ['name'], uploadFile));
   };
 
-  handleSubmit = async requestData => {
+  handleSubmit = async (requestData, { setErrors }) => {
     const { dataSourceId, step } = this.props.match.params;
 
     try {
       this.setState({ loading: true });
       await this.props.updateDataSource({ requestData, dataSourceId, step });
-    } catch (e) {
+    } catch (errors) {
+      setErrors(errors);
       this.setState({ loading: false });
     }
   };

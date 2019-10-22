@@ -1,5 +1,5 @@
 import { all, put, takeLatest, take, delay, fork, cancel, cancelled } from 'redux-saga/effects';
-import { pipe, forEach, keys, any, anyPass, propEq } from 'ramda';
+import { pipe, forEach, keys, any, anyPass, propEq, path } from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
@@ -113,7 +113,7 @@ function* updateOne({ payload: { dataSourceId, requestData, step } }) {
 
     browserHistory.push(redirectUri);
   } catch (error) {
-    yield put(DataSourceRoutines.updateOne.failure(error));
+    yield put(DataSourceRoutines.updateOne.failure(path(['response', 'data'], error)));
   } finally {
     yield put(DataSourceRoutines.updateOne.fulfill());
   }
