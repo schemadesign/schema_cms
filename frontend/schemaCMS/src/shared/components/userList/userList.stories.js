@@ -16,7 +16,14 @@ export const propsWithUsers = {
   ],
 };
 
-storiesOf('UserList', module)
+export const propsWithUsersAndActions = {
+  ...propsWithUsers,
+  handleRemoveUser: Function.prototype,
+};
+
+
+storiesOf('Shared Components|UserList', module)
   .addDecorator(withRouter)
   .add('Default', () => <UserList {...defaultProps} />)
-  .add('With users', () => <UserList {...propsWithUsers} />);
+  .add('with users', () => <UserList {...propsWithUsers} />)
+  .add('with users and actions', () => <UserList {...propsWithUsersAndActions} />);
