@@ -37,7 +37,7 @@ def process_job(job):
     )
 
     try:
-        df = dt.fread(source_file["Body"], na_strings=["''", '""'], fill=True).to_pandas()
+        df = dt.fread(source_file["Body"], na_strings=["", ''], fill=True).to_pandas()
     except Exception as e:
         raise errors.JobLoadingSourceFileError(f'{e} @ loading source file')
 
