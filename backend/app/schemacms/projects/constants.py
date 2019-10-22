@@ -30,28 +30,11 @@ DATA_SOURCE_TYPE_CHOICES = (
 )
 
 
-class DataSourceStatus:
-    DRAFT = "draft"
-    READY_FOR_PROCESSING = "ready_for_processing"
-    PROCESSING = "processing"
-    DONE = "done"
-    ERROR = "error"
-
-
 class DataSourceJobState:
     PENDING = 'pending'
     IN_PROGRESS = 'in_progress'
     FAILED = 'failed'
     SUCCESS = 'success'
-
-
-DATA_SOURCE_STATUS_CHOICES = (
-    (DataSourceStatus.DRAFT, "draft"),
-    (DataSourceStatus.READY_FOR_PROCESSING, "ready for processing"),
-    (DataSourceStatus.PROCESSING, "processing"),
-    (DataSourceStatus.DONE, "done"),
-    (DataSourceStatus.ERROR, "error"),
-)
 
 
 DATA_SOURCE_JOB_STATE_CHOICES = (
