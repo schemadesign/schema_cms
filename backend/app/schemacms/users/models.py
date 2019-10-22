@@ -1,5 +1,7 @@
 import uuid
 
+import anymail.exceptions
+import sentry_sdk
 from django.utils.translation import ugettext_lazy as _
 from django.db import models, transaction
 from django.contrib.auth.models import AbstractUser
@@ -57,14 +59,19 @@ class User(AbstractUser):
         token = jwt_payload_handler(self)
         return jwt_encode_handler(token)
 
-    def send_invitation_email(self):
+    def send_invitation_email(self) -> bool:
         url = backend_management.user_mgtm_backend.password_change_url(self)
-        mail.send_message(
-            email=self.email,
-            template=mail.MandrillTemplate.INVITATION,
-            subject="Invitation",
-            merge_data_dict={"url": url},
-        )
+        try:
+            mail.send_message(
+                email=self.email,
+                template=mail.MandrillTemplate.INVITATION,
+                subject="Invitation",
+                merge_data_dict={"url": url},
+            )
+            return True
+        except anymail.exceptions.AnymailRequestsAPIError as e:
+            sentry_sdk.capture_exception(e)
+            return False
 
     def assign_external_account(self):
         ret = backend_management.user_mgtm_backend.create_user(self)
