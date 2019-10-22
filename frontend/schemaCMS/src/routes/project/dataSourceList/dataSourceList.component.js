@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import { Card, Icons, Typography } from 'schemaUI';
 import { always, anyPass, cond, equals, propEq, propIs, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
-import dayjs from 'dayjs';
 
 import { TopHeader } from '../../../shared/components/topHeader';
 import {
@@ -165,6 +164,8 @@ export class DataSourceList extends PureComponent {
     )(isError);
 
   renderJob = ({ jobState, id, modified }, index) => {
+    const modifiedDate = extendedDayjs(modified, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm');
+
     return (
       <Job key={index}>
         <JobDetails>
@@ -174,7 +175,7 @@ export class DataSourceList extends PureComponent {
           </JobName>
         </JobDetails>
         <JobDate>
-          <FormattedMessage {...messages.updatedAt} /> {dayjs(modified).format('DD/MM/YYYY HH:mm')}
+          <FormattedMessage {...messages.updatedAt} /> {modifiedDate}
         </JobDate>
       </Job>
     );
