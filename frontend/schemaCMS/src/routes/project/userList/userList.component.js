@@ -1,10 +1,12 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import Modal from 'react-modal';
 import { path } from 'ramda';
 
 import { UserList as UserListComponent } from '../../../shared/components/userList';
 import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './userList.messages';
 import browserHistory from '../../../shared/utils/history';
@@ -47,7 +49,7 @@ export class UserList extends PureComponent {
 
   handleBackClick = () => browserHistory.push(`/project/${this.props.match.params.projectId}`);
 
-  handleRemoveUser = ({id: userId}) =>
+  handleRemoveUser = ({ id: userId }) => () =>
     this.setState({
       userToBeRemoved: userId,
       showConfirmationModal: true,
@@ -71,6 +73,7 @@ export class UserList extends PureComponent {
   };
 
   render() {
+    const { showConfirmationModal } = this.state;
     const { users } = this.props;
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.headerTitle} />,
@@ -80,7 +83,7 @@ export class UserList extends PureComponent {
     return (
       <Fragment>
         <TopHeader {...topHeaderConfig} />
-        <UserListComponent users={users} handleRemoveUser={this.handleRemoveUser}/>
+        <UserListComponent users={users} onRemoveUser={this.handleRemoveUser} />
         <NavigationContainer>
           <BackButton onClick={this.handleBackClick}>
             <FormattedMessage {...messages.back} />

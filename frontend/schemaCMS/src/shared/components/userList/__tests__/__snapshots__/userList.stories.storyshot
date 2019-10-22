@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UserList Default 1`] = `null`;
+exports[`Storyshots Shared Components|UserList Default 1`] = `null`;
 
-exports[`Storyshots UserList With users 1`] = `
+exports[`Storyshots Shared Components|UserList with users 1`] = `
 Array [
   <div
     style={
@@ -44,6 +44,9 @@ Array [
           "marginTop": "10px",
         }
       }
+    />
+    <div
+      className="sc-dfVpRl bcLtSb"
     />
   </div>,
   <div
@@ -87,6 +90,9 @@ Array [
         }
       }
     />
+    <div
+      className="sc-dfVpRl bcLtSb"
+    />
   </div>,
   <div
     style={
@@ -128,6 +134,149 @@ Array [
           "marginTop": "10px",
         }
       }
+    />
+    <div
+      className="sc-dfVpRl bcLtSb"
+    />
+  </div>,
+]
+`;
+
+exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "backgroundColor": "#1d1d20",
+        "borderTop": "2px solid #FFF",
+        "color": "#FFF",
+        "display": "flex",
+        "flexDirection": "column",
+        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+        "padding": "12px 14px 14px",
+      }
+    }
+  >
+    <h1
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "24px",
+          "fontWeight": 600,
+          "letterSpacing": "-0.12px",
+          "lineHight": 1.25,
+          "margin": 0,
+        }
+      }
+    >
+      <a
+        href="/user/1"
+        onClick={[Function]}
+      >
+        Alan
+         
+        Watts
+      </a>
+    </h1>
+    <h3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
+    <div
+      className="sc-dfVpRl bcLtSb"
+    />
+  </div>,
+  <div
+    style={
+      Object {
+        "backgroundColor": "#1d1d20",
+        "borderTop": "2px solid #FFF",
+        "color": "#FFF",
+        "display": "flex",
+        "flexDirection": "column",
+        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+        "padding": "12px 14px 14px",
+      }
+    }
+  >
+    <h1
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "24px",
+          "fontWeight": 600,
+          "letterSpacing": "-0.12px",
+          "lineHight": 1.25,
+          "margin": 0,
+        }
+      }
+    >
+      <a
+        href="/user/2"
+        onClick={[Function]}
+      >
+        Dale
+         
+        Chihuly
+      </a>
+    </h1>
+    <h3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
+    <div
+      className="sc-dfVpRl bcLtSb"
+    />
+  </div>,
+  <div
+    style={
+      Object {
+        "backgroundColor": "#1d1d20",
+        "borderTop": "2px solid #FFF",
+        "color": "#FFF",
+        "display": "flex",
+        "flexDirection": "column",
+        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+        "padding": "12px 14px 14px",
+      }
+    }
+  >
+    <h1
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "24px",
+          "fontWeight": 600,
+          "letterSpacing": "-0.12px",
+          "lineHight": 1.25,
+          "margin": 0,
+        }
+      }
+    >
+      <a
+        href="/user/3"
+        onClick={[Function]}
+      >
+        Dave
+         
+        Bowie
+      </a>
+    </h1>
+    <h3
+      style={
+        Object {
+          "marginTop": "10px",
+        }
+      }
+    />
+    <div
+      className="sc-dfVpRl bcLtSb"
     />
   </div>,
 ]

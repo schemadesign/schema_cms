@@ -547,6 +547,48 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         }
       }
     />
+    <div
+      className="sc-dfVpRl bcLtSb"
+    >
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "height": 40,
+            "margin": "0",
+            "minHeight": 40,
+            "outline": "none",
+            "padding": "0",
+            "width": 40,
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 40,
+              "width": 40,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
   <div
     style={
@@ -589,6 +631,48 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         }
       }
     />
+    <div
+      className="sc-dfVpRl bcLtSb"
+    >
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "height": 40,
+            "margin": "0",
+            "minHeight": 40,
+            "outline": "none",
+            "padding": "0",
+            "width": 40,
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 40,
+              "width": 40,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
   <div
     style={
@@ -631,6 +715,48 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         }
       }
     />
+    <div
+      className="sc-dfVpRl bcLtSb"
+    >
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "height": 40,
+            "margin": "0",
+            "minHeight": 40,
+            "outline": "none",
+            "padding": "0",
+            "width": 40,
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 40,
+              "width": 40,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
   <div
     className="sc-htoDjs iUYJOx"

@@ -21,7 +21,6 @@ export const propsWithUsersAndActions = {
   handleRemoveUser: Function.prototype,
 };
 
-
 storiesOf('Shared Components|UserList', module)
   .addDecorator(withRouter)
   .add('Default', () => <UserList {...defaultProps} />)

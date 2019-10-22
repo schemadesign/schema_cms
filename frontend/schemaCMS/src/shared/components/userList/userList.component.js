@@ -13,11 +13,11 @@ const { CloseIcon } = Icons;
 export class UserList extends PureComponent {
   static propTypes = {
     users: PropTypes.array.isRequired,
-    handleRemoveUser: PropTypes.func,
+    onRemoveUser: PropTypes.func,
   };
 
   renderRemove = renderWhenTrue((_, user) => (
-    <Button customStyles={buttonIconStyles} onClick={this.props.handleRemoveUser(user)}>
+    <Button customStyles={buttonIconStyles} onClick={this.props.onRemoveUser(user)}>
       <CloseIcon customStyles={iconStyles} />
     </Button>
   ));
@@ -30,13 +30,13 @@ export class UserList extends PureComponent {
         </Link>
       </H1>
       <H3 style={{ marginTop: '10px' }}>{user.email}</H3>
-      <Actions>{this.renderRemove(!!this.props.handleRemoveUser, user)}</Actions>
+      <Actions>{this.renderRemove(!!this.props.onRemoveUser, user)}</Actions>
     </Card>
   );
 
   render() {
-    const { users, handleRemoveUser } = this.props;
-    const hasRemoving = !!handleRemoveUser;
+    const { users, onRemoveUser } = this.props;
+    const hasRemoving = !!onRemoveUser;
 
     return users.map((user, index) => this.renderListItem(user, hasRemoving, index));
   }

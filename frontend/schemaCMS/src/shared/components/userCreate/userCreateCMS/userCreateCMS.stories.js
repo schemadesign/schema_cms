@@ -1,3 +1,4 @@
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { UserCreateCMS } from './userCreateCMS.component';
 
