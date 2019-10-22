@@ -45,6 +45,14 @@ class Job(BaseModel):
         table_name = "projects_datasourcejob"
 
 
+class DataSourceJobMetaData(BaseModel):
+    job = ForeignKeyField(Job, backref="meta_data")
+    items = IntegerField()
+
+    class Meta:
+        table_name = "projects_datasourcejobmetadata"
+
+
 def get_db_settings():
     arn = secret_manager.get_secret_value(SecretId=settings.DB_SECRET_ARN)
     secret_data = json.loads(arn['SecretString'])
