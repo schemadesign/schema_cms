@@ -19,11 +19,11 @@ import {
   isEmpty,
 } from 'ramda';
 import queryString from 'query-string';
-
 import { AUTH_PATH } from '../utils/api.constants';
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_BASE_API_URL,
+  camelize: true,
 });
 
 const camelizeErrorCode = fieldName =>
@@ -66,9 +66,14 @@ api.interceptors.request.use(
 );
 
 api.interceptors.response.use(
-  evolve({
-    data: camelizeKeys,
-  }),
+  response => {
+    if (response.config.camelize) {
+      return evolve({
+        data: camelizeKeys,
+      })(response);
+    }
+    return response;
+  },
   error => {
     if (error.response.status === 401) {
       return window.location.replace(AUTH_PATH);

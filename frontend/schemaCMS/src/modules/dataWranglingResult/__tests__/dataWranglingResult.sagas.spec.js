@@ -22,7 +22,8 @@ describe('DataWranglingResult: sagas', () => {
           id: {},
           name: {},
         },
-        previewTable: [{ id: '1', name: 'test' }],
+        // eslint-disable-next-line camelcase
+        preview_table: [{ id: '1', name: 'test' }],
       };
 
       mockApi
