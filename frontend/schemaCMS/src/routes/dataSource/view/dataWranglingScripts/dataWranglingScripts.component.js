@@ -103,6 +103,10 @@ export class DataWranglingScripts extends PureComponent {
         </Header>
         <Formik initialValues={{ steps: [] }} onSubmit={this.handleSubmit}>
           {({ values: { steps }, setFieldValue, submitForm }) => {
+            if (!steps.length) {
+              submitForm = null;
+            }
+
             return (
               <Fragment>
                 <CheckboxGroup
