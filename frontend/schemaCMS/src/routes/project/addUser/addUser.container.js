@@ -9,10 +9,10 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { AddUser } from './addUser.component';
 
 import { ProjectRoutines, selectProjectUsers } from '../../../modules/project';
-import { selectUsers, UserRoutines } from '../../../modules/user';
+import { selectEditorUsers, UserRoutines } from '../../../modules/user';
 
 const mapStateToProps = createStructuredSelector({
-  users: selectUsers,
+  users: selectEditorUsers,
   usersInProject: selectProjectUsers,
 });
 
