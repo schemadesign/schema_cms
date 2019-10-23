@@ -214,7 +214,7 @@ class StepSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.DataSourceJobStep
-        fields = ("script", "exec_order")
+        fields = ("script", "body", "exec_order")
 
 
 class DataSourceJobSerializer(serializers.ModelSerializer):
@@ -226,7 +226,7 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.DataSourceJob
-        fields = ("pk", "datasource", "steps", "job_state", "result", "error")
+        fields = ("pk", "datasource", "description", "steps", "job_state", "result", "error")
 
     def validate_steps(self, attr):
         if not attr:
