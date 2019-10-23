@@ -1,18 +1,25 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { path, ifElse, always, propEq, find } from 'ramda';
-import { Typography } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
 
 import browserHistory from '../../../shared/utils/history';
-import { Container, AddIcon, RemoveIcon, UserItem, Button, UserItemDescription } from './addUser.styles';
+import {
+  Container,
+  AddIcon,
+  RemoveIcon,
+  UserItem,
+  Button,
+  UserItemDescription,
+  Action,
+  Email,
+  UserFullName,
+} from './addUser.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './addUser.messages';
 import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
-
-const { H2, H3 } = Typography;
 
 export class AddUser extends PureComponent {
   static propTypes = {
@@ -95,10 +102,10 @@ export class AddUser extends PureComponent {
   renderUser = (user, index) => (
     <UserItem key={index}>
       <UserItemDescription>
-        <H2>{`${user.firstName} ${user.lastName}`}</H2>
-        <H3>{user.email}</H3>
+        <UserFullName>{`${user.firstName} ${user.lastName}`}</UserFullName>
+        <Email>{user.email}</Email>
       </UserItemDescription>
-      {this.renderAction(user, index)}
+      <Action>{this.renderAction(user, index)}</Action>
     </UserItem>
   );
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button as ButtonUI } from 'schemaUI';
+import { Button as ButtonUI, Typography } from 'schemaUI';
 import { colors } from '../../../theme/styled';
 
 export const Container = styled.div``;
@@ -17,6 +17,13 @@ export const UserItemDescription = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  flex: 1 1 auto;
+`;
+
+export const Action = styled.div`
+  display: flex;
+  flex: 0 0 auto;
+  margin-left: 10px;
 `;
 
 export const AddIcon = styled.div`
@@ -66,4 +73,10 @@ export const RemoveIcon = styled.div`
 
 export const Button = styled(ButtonUI)`
   background-color: transparent !important;
+`;
+
+export const UserFullName = styled(Typography.H2)``;
+
+export const Email = styled(Typography.H3)`
+  word-break: break-all;
 `;

@@ -35,6 +35,7 @@ export const DetailWrapper = styled.div`
 export const DetailLabel = styled.span`
   color: ${({ theme: { secondaryText } }) => secondaryText};
   margin-right: 5px;
+  flex: 0 0 auto;
 `;
 
 export const IconEditWrapper = styled.div`
@@ -43,7 +44,7 @@ export const IconEditWrapper = styled.div`
 
 export const DetailValue = styled.span`
   color: ${({ theme: { text } }) => text};
-  display: inline-block;
+  flex: 1 1 auto;
 `;
 
 export const Statistics = styled.ul`

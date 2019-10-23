@@ -1,9 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components|UserList Default 1`] = `null`;
+exports[`Storyshots Shared Components|UserList Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+/>
+`;
 
 exports[`Storyshots Shared Components|UserList with users 1`] = `
-Array [
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
   <div
     style={
       Object {
@@ -11,44 +27,55 @@ Array [
         "borderTop": "2px solid #FFF",
         "color": "#FFF",
         "display": "flex",
-        "flexDirection": "column",
+        "flexDirection": null,
         "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
         "padding": "12px 14px 14px",
       }
     }
   >
-    <h1
-      style={
-        Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 600,
-          "letterSpacing": "-0.12px",
-          "lineHight": 1.25,
-          "margin": 0,
-        }
-      }
-    >
-      <a
-        href="/user/1"
-        onClick={[Function]}
-      >
-        Alan
-         
-        Watts
-      </a>
-    </h1>
-    <h3
-      style={
-        Object {
-          "marginTop": "10px",
-        }
-      }
-    />
     <div
-      className="sc-dfVpRl bcLtSb"
+      className="sc-kPVwWT kVCiuj"
+    >
+      <h2
+        className="sc-kfGgVZ eravuG"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <a
+          href="/user/1"
+          onClick={[Function]}
+        >
+          Alan
+           
+          Watts
+        </a>
+      </h2>
+      <h3
+        className="sc-esjQYD gnsIoh"
+        style={
+          Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+            "margin": 0,
+          }
+        }
+      />
+    </div>
+    <div
+      className="sc-hwwEjo hxlKMR"
     />
-  </div>,
+  </div>
   <div
     style={
       Object {
@@ -56,44 +83,55 @@ Array [
         "borderTop": "2px solid #FFF",
         "color": "#FFF",
         "display": "flex",
-        "flexDirection": "column",
+        "flexDirection": null,
         "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
         "padding": "12px 14px 14px",
       }
     }
   >
-    <h1
-      style={
-        Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 600,
-          "letterSpacing": "-0.12px",
-          "lineHight": 1.25,
-          "margin": 0,
-        }
-      }
-    >
-      <a
-        href="/user/2"
-        onClick={[Function]}
-      >
-        Dale
-         
-        Chihuly
-      </a>
-    </h1>
-    <h3
-      style={
-        Object {
-          "marginTop": "10px",
-        }
-      }
-    />
     <div
-      className="sc-dfVpRl bcLtSb"
+      className="sc-kPVwWT kVCiuj"
+    >
+      <h2
+        className="sc-kfGgVZ eravuG"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <a
+          href="/user/2"
+          onClick={[Function]}
+        >
+          Dale
+           
+          Chihuly
+        </a>
+      </h2>
+      <h3
+        className="sc-esjQYD gnsIoh"
+        style={
+          Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+            "margin": 0,
+          }
+        }
+      />
+    </div>
+    <div
+      className="sc-hwwEjo hxlKMR"
     />
-  </div>,
+  </div>
   <div
     style={
       Object {
@@ -101,49 +139,69 @@ Array [
         "borderTop": "2px solid #FFF",
         "color": "#FFF",
         "display": "flex",
-        "flexDirection": "column",
+        "flexDirection": null,
         "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
         "padding": "12px 14px 14px",
       }
     }
   >
-    <h1
-      style={
-        Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 600,
-          "letterSpacing": "-0.12px",
-          "lineHight": 1.25,
-          "margin": 0,
-        }
-      }
-    >
-      <a
-        href="/user/3"
-        onClick={[Function]}
-      >
-        Dave
-         
-        Bowie
-      </a>
-    </h1>
-    <h3
-      style={
-        Object {
-          "marginTop": "10px",
-        }
-      }
-    />
     <div
-      className="sc-dfVpRl bcLtSb"
+      className="sc-kPVwWT kVCiuj"
+    >
+      <h2
+        className="sc-kfGgVZ eravuG"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <a
+          href="/user/3"
+          onClick={[Function]}
+        >
+          Dave
+           
+          Bowie
+        </a>
+      </h2>
+      <h3
+        className="sc-esjQYD gnsIoh"
+        style={
+          Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+            "margin": 0,
+          }
+        }
+      >
+        loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+      </h3>
+    </div>
+    <div
+      className="sc-hwwEjo hxlKMR"
     />
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
-Array [
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
   <div
     style={
       Object {
@@ -151,44 +209,94 @@ Array [
         "borderTop": "2px solid #FFF",
         "color": "#FFF",
         "display": "flex",
-        "flexDirection": "column",
+        "flexDirection": null,
         "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
         "padding": "12px 14px 14px",
       }
     }
   >
-    <h1
-      style={
-        Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 600,
-          "letterSpacing": "-0.12px",
-          "lineHight": 1.25,
-          "margin": 0,
-        }
-      }
-    >
-      <a
-        href="/user/1"
-        onClick={[Function]}
-      >
-        Alan
-         
-        Watts
-      </a>
-    </h1>
-    <h3
-      style={
-        Object {
-          "marginTop": "10px",
-        }
-      }
-    />
     <div
-      className="sc-dfVpRl bcLtSb"
-    />
-  </div>,
+      className="sc-kPVwWT kVCiuj"
+    >
+      <h2
+        className="sc-kfGgVZ eravuG"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <a
+          href="/user/1"
+          onClick={[Function]}
+        >
+          Alan
+           
+          Watts
+        </a>
+      </h2>
+      <h3
+        className="sc-esjQYD gnsIoh"
+        style={
+          Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+            "margin": 0,
+          }
+        }
+      />
+    </div>
+    <div
+      className="sc-hwwEjo hxlKMR"
+    >
+      <button
+        disabled={false}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "height": 40,
+            "margin": "0",
+            "marginTop": -5,
+            "minHeight": 40,
+            "outline": "none",
+            "padding": "0",
+            "width": 40,
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 40,
+              "width": 40,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
   <div
     style={
       Object {
@@ -196,44 +304,94 @@ Array [
         "borderTop": "2px solid #FFF",
         "color": "#FFF",
         "display": "flex",
-        "flexDirection": "column",
+        "flexDirection": null,
         "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
         "padding": "12px 14px 14px",
       }
     }
   >
-    <h1
-      style={
-        Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 600,
-          "letterSpacing": "-0.12px",
-          "lineHight": 1.25,
-          "margin": 0,
-        }
-      }
-    >
-      <a
-        href="/user/2"
-        onClick={[Function]}
-      >
-        Dale
-         
-        Chihuly
-      </a>
-    </h1>
-    <h3
-      style={
-        Object {
-          "marginTop": "10px",
-        }
-      }
-    />
     <div
-      className="sc-dfVpRl bcLtSb"
-    />
-  </div>,
+      className="sc-kPVwWT kVCiuj"
+    >
+      <h2
+        className="sc-kfGgVZ eravuG"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <a
+          href="/user/2"
+          onClick={[Function]}
+        >
+          Dale
+           
+          Chihuly
+        </a>
+      </h2>
+      <h3
+        className="sc-esjQYD gnsIoh"
+        style={
+          Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+            "margin": 0,
+          }
+        }
+      />
+    </div>
+    <div
+      className="sc-hwwEjo hxlKMR"
+    >
+      <button
+        disabled={false}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "height": 40,
+            "margin": "0",
+            "marginTop": -5,
+            "minHeight": 40,
+            "outline": "none",
+            "padding": "0",
+            "width": 40,
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 40,
+              "width": 40,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
   <div
     style={
       Object {
@@ -241,43 +399,95 @@ Array [
         "borderTop": "2px solid #FFF",
         "color": "#FFF",
         "display": "flex",
-        "flexDirection": "column",
+        "flexDirection": null,
         "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
         "padding": "12px 14px 14px",
       }
     }
   >
-    <h1
-      style={
-        Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "24px",
-          "fontWeight": 600,
-          "letterSpacing": "-0.12px",
-          "lineHight": 1.25,
-          "margin": 0,
-        }
-      }
-    >
-      <a
-        href="/user/3"
-        onClick={[Function]}
-      >
-        Dave
-         
-        Bowie
-      </a>
-    </h1>
-    <h3
-      style={
-        Object {
-          "marginTop": "10px",
-        }
-      }
-    />
     <div
-      className="sc-dfVpRl bcLtSb"
-    />
-  </div>,
-]
+      className="sc-kPVwWT kVCiuj"
+    >
+      <h2
+        className="sc-kfGgVZ eravuG"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <a
+          href="/user/3"
+          onClick={[Function]}
+        >
+          Dave
+           
+          Bowie
+        </a>
+      </h2>
+      <h3
+        className="sc-esjQYD gnsIoh"
+        style={
+          Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "18px",
+            "fontWeight": 600,
+            "margin": 0,
+          }
+        }
+      >
+        loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+      </h3>
+    </div>
+    <div
+      className="sc-hwwEjo hxlKMR"
+    >
+      <button
+        disabled={false}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "height": 40,
+            "margin": "0",
+            "marginTop": -5,
+            "minHeight": 40,
+            "outline": "none",
+            "padding": "0",
+            "width": 40,
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": 40,
+              "width": 40,
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
 `;
