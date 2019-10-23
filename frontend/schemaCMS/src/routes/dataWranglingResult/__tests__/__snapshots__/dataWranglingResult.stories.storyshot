@@ -354,7 +354,7 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
           className="sc-gzVnrw bMUaYY"
         >
           <div
-            activeStep={NaN}
+            activeStep={4}
             customDotStyles={Object {}}
             handleStep={[Function]}
             onStepChange={[Function]}
@@ -413,12 +413,13 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
               onClick={[Function]}
               style={
                 Object {
-                  "backgroundColor": "#1d1d20",
+                  "backgroundColor": "#FFF",
                   "borderRadius": "50%",
-                  "cursor": "pointer",
+                  "cursor": "default",
                   "display": "block",
                   "height": "12px",
                   "margin": "0 4px",
+                  "pointerEvents": "none",
                   "width": "12px",
                 }
               }

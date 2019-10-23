@@ -11,7 +11,7 @@ export const defaultProps = {
   users: [],
   match: {
     params: {
-      projectId: 1,
+      projectId: '1',
     },
   },
 };
@@ -19,9 +19,9 @@ export const defaultProps = {
 export const propsWithUsers = {
   ...defaultProps,
   users: [
-    { id: 1, firstName: 'Alan', lastName: 'Watts' },
-    { id: 2, firstName: 'Dale', lastName: 'Chihuly' },
-    { id: 3, firstName: 'Dave', lastName: 'Bowie' },
+    { id: '1', firstName: 'Alan', lastName: 'Watts' },
+    { id: '2', firstName: 'Dale', lastName: 'Chihuly' },
+    { id: '3', firstName: 'Dave', lastName: 'Bowie' },
   ],
 };
 

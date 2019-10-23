@@ -2,10 +2,10 @@
 
 exports[`Storyshots UserProfile Default 1`] = `
 <div
-  className="sc-hrWEMg fOsrtz"
+  className="sc-bsbRJL kfmymT"
 >
   <form
-    className="sc-eTuwsz jtSbhi"
+    className="sc-hZSUBg VKktY"
     onSubmit={[Function]}
   >
     <div

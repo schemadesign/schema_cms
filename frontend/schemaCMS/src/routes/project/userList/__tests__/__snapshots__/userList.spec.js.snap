@@ -20,7 +20,7 @@ exports[`UserList: Component should render correctly 1`] = `
   />
   <UserList
     onRemoveUser={[Function]}
-    projectId={1}
+    projectId="1"
     users={Array []}
   />
   <NavigationContainer
@@ -136,22 +136,22 @@ exports[`UserList: Component should render correctly with users 1`] = `
   />
   <UserList
     onRemoveUser={[Function]}
-    projectId={1}
+    projectId="1"
     users={
       Array [
         Object {
           "firstName": "Alan",
-          "id": 1,
+          "id": "1",
           "lastName": "Watts",
         },
         Object {
           "firstName": "Dale",
-          "id": 2,
+          "id": "2",
           "lastName": "Chihuly",
         },
         Object {
           "firstName": "Dave",
-          "id": 3,
+          "id": "3",
           "lastName": "Bowie",
         },
       ]
