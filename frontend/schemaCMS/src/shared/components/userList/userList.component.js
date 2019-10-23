@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Typography, Button, Icons } from 'schemaUI';
+import { Card, Button, Icons } from 'schemaUI';
 import { Link } from 'react-router-dom';
 import { ifElse, is } from 'ramda';
 
@@ -28,12 +28,12 @@ export class UserList extends PureComponent {
   renderListItem = (user, hasRemoving, index) => (
     <Card key={index} customStyles={cardStyles}>
       <UserDetails>
-      <UserFullName>
-        <Link to={`${this.getUrl(this.props.projectId)}${user.id}`}>
-          {user.firstName} {user.lastName}
-        </Link>
-      </UserFullName>
-      <Email>{user.email}</Email>
+        <UserFullName>
+          <Link to={`${this.getUrl(this.props.projectId)}${user.id}`}>
+            {user.firstName} {user.lastName}
+          </Link>
+        </UserFullName>
+        <Email>{user.email}</Email>
       </UserDetails>
       <Actions>{this.renderRemove(!!this.props.onRemoveUser, user)}</Actions>
     </Card>

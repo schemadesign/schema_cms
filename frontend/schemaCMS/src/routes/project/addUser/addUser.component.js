@@ -5,7 +5,17 @@ import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
 
 import browserHistory from '../../../shared/utils/history';
-import { Container, AddIcon, RemoveIcon, UserItem, Button, UserItemDescription, Action, Email, UserFullName } from './addUser.styles';
+import {
+  Container,
+  AddIcon,
+  RemoveIcon,
+  UserItem,
+  Button,
+  UserItemDescription,
+  Action,
+  Email,
+  UserFullName,
+} from './addUser.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './addUser.messages';
 import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
@@ -95,9 +105,7 @@ export class AddUser extends PureComponent {
         <UserFullName>{`${user.firstName} ${user.lastName}`}</UserFullName>
         <Email>{user.email}</Email>
       </UserItemDescription>
-      <Action>
-        {this.renderAction(user, index)}
-      </Action>
+      <Action>{this.renderAction(user, index)}</Action>
     </UserItem>
   );
 
