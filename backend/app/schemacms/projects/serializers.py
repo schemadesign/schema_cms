@@ -8,6 +8,7 @@ from schemacms.projects import models
 from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
+from .validators import CustomUniqueTogetherValidator
 
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
@@ -64,7 +65,12 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "file": {"required": True, "allow_null": False},
         }
         validators = [
-            validators.UniqueTogetherValidator(queryset=DataSource.objects.all(), fields=('name', 'project'))
+            CustomUniqueTogetherValidator(
+                queryset=DataSource.objects.all(),
+                fields=('name', 'project'),
+                key_field_name="name",
+                message="DataSource with this name already exist in project."
+            )
         ]
 
     def get_file_name(self, obj):
