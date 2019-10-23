@@ -528,7 +528,7 @@ class TestDataSourcePreview:
 
 
 class TestDataSourceJobCreate:
-    @pytest.mark.parametrize("description",  ['', "test_desc"])
+    @pytest.mark.parametrize("description", ['', "test_desc"])
     def test_response(self, api_client, admin, data_source_factory, script_factory, description):
         data_source = data_source_factory(created_by=admin)
         script_1 = script_factory(is_predefined=True, created_by=admin, datasource=None)
