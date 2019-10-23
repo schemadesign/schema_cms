@@ -48,6 +48,8 @@ export class DataWranglingScripts extends PureComponent {
       await this.props.uploadScript({ script: file, dataSourceId });
     } catch (e) {
       this.setState({ uploading: false, errorOnUploading: true });
+    } finally {
+      this.setState({ uploading: false, errorOnUploading: false });
     }
   };
 
