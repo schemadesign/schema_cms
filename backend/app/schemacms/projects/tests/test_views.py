@@ -528,10 +528,11 @@ class TestDataSourcePreview:
 
 
 class TestDataSourceJobCreate:
-    def test_response(self, api_client, admin, data_source_factory, script_factory):
+    @pytest.mark.parametrize("description", ['', "test_desc"])
+    def test_response(self, api_client, admin, data_source_factory, script_factory, description):
         data_source = data_source_factory(created_by=admin)
         script_1 = script_factory(is_predefined=True, created_by=admin, datasource=None)
-        job_data = {"steps": [{"script": script_1.id, "exec_order": 0}]}
+        job_data = dict(steps=[{"script": script_1.id, "exec_order": 0}], description=description)
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=job_data, format="json")

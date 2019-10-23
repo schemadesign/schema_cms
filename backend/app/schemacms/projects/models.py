@@ -235,6 +235,7 @@ class WranglingScript(ext_models.TimeStampedModel):
 
 class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
+    description = models.TextField(blank=True)
     result = models.FileField(upload_to=file_upload_path, null=True)
     error = models.TextField(blank=True, default="")
 
