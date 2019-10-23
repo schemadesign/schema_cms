@@ -466,8 +466,8 @@ class TestUpdateDraftDataSourceView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST, response.content
         assert response.data == {
-            'non_field_errors': [
-                error.Error(message='The fields name, project must make a unique set.', code='unique').data
+            'name': [
+                error.Error(message='DataSource with this name already exist in project.', code='unique').data
             ]
         }
 
