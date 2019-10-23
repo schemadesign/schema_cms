@@ -107,9 +107,7 @@ function* updateOne({ payload: { dataSourceId, requestData, step } }) {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
-    const redirectUri = requestData.file
-      ? `/project/${data.project}/datasource`
-      : `/datasource/${dataSourceId}/${parseInt(step, 10) + 1}`;
+    const redirectUri = `/datasource/${dataSourceId}/${parseInt(step, 10) + 1}`;
 
     yield put(DataSourceRoutines.updateOne.success(data));
     yield put(DataSourceRoutines.processOne({ dataSourceId }));

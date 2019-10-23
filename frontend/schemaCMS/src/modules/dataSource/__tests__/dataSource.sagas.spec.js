@@ -198,7 +198,7 @@ describe('DataSource: sagas', () => {
         .dispatch(DataSourceRoutines.updateOne(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/project/1/datasource');
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
     });
   });
 
