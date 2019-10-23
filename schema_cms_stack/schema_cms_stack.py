@@ -83,7 +83,7 @@ class BaseResources(core.Stack):
             delete_automated_backups=True,
         )
         self.db_secret_rotation = self.db.add_rotation_single_user("db-rotation")
-        self.app_bucket = aws_s3.Bucket(self, APP_S3_BUCKET_NAME)
+        self.app_bucket = aws_s3.Bucket(self, APP_S3_BUCKET_NAME, versioned=True)
 
 
 class CertsStack(core.Stack):
