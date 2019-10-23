@@ -65,7 +65,12 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "file": {"required": True, "allow_null": False},
         }
         validators = [
-            CustomUniqueTogetherValidator(queryset=DataSource.objects.all(), fields=('name', 'project'))
+            CustomUniqueTogetherValidator(
+                queryset=DataSource.objects.all(),
+                fields=('name', 'project'),
+                key_field_name="name",
+                message="DataSource with this name already exist in project."
+            )
         ]
 
     def get_file_name(self, obj):
