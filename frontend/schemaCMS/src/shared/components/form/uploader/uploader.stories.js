@@ -20,7 +20,7 @@ export const withError = {
   },
 };
 
-storiesOf('Uploader', module)
+storiesOf('Shared Components|Form/Uploader', module)
   .addDecorator(withTheme())
   .add('Default', () => <Uploader {...defaultProps} />)
   .add('With error', () => <Uploader {...withError} />);

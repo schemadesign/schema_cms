@@ -26,6 +26,6 @@ export const propsWithUsersAndActions = {
 storiesOf('Shared Components|UserList', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('Default', () => <UserList {...defaultProps} />)
+  .add('default (empty)', () => <UserList {...defaultProps} />)
   .add('with users', () => <UserList {...propsWithUsers} />)
   .add('with users and actions', () => <UserList {...propsWithUsersAndActions} />);
