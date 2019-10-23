@@ -89,6 +89,6 @@ export const defaultProps = {
   dataSource,
 };
 
-storiesOf('DataSource/View/Fields', module)
+storiesOf('Shared Components|Fields', module)
   .addDecorator(withTheme(Theme.light))
   .add('Default', () => <DataPreview {...defaultProps} />);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { withTheme } from '../../../../.storybook/decorators';
 import { UserCreate } from './userCreate.component';
 
 export const defaultProps = {
@@ -11,4 +12,6 @@ export const defaultProps = {
   values: {},
 };
 
-storiesOf('UserCreate', module).add('Default', () => <UserCreate {...defaultProps} />);
+storiesOf('Shared Components|UserCreate/UserCreate', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <UserCreate {...defaultProps} />);

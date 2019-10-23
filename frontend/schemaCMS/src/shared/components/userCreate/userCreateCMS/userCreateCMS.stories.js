@@ -1,5 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+
+import { withTheme } from '../../../../.storybook/decorators';
 import { UserCreateCMS } from './userCreateCMS.component';
 
 export const userCreateCMSProps = {
@@ -9,4 +11,6 @@ export const userCreateCMSProps = {
   values: {},
 };
 
-storiesOf('UserCreate', module).add('Default', () => <UserCreateCMS {...userCreateCMSProps} />);
+storiesOf('Shared Components|UserCreate/UserCreateCMS', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <UserCreateCMS {...userCreateCMSProps} />);

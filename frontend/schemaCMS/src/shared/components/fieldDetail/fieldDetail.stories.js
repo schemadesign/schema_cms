@@ -23,6 +23,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('FieldDetail', module)
+storiesOf('Shared Components|FieldDetail', module)
   .addDecorator(withTheme())
   .add('Default', () => <FieldDetail {...defaultProps} />);

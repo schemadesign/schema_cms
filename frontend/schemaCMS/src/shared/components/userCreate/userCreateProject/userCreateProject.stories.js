@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { withTheme } from '../../../../.storybook/decorators';
 import { UserCreateProject } from './userCreateProject';
 
 export const userCreateProjectProps = {
@@ -22,4 +23,6 @@ export const userCreateProjectProps = {
   },
 };
 
-storiesOf('UserCreateProject', module).add('Default', () => <UserCreateProject {...userCreateProjectProps} />);
+storiesOf('Shared Components|UserCreate/UserCreateProject', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <UserCreateProject {...userCreateProjectProps} />);
