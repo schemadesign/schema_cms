@@ -18,6 +18,8 @@ describe('UserAuth: sagas', () => {
     });
 
     mockApi.post('/auth/logout/').reply(OK);
+
+    jest.spyOn(window.location, 'assign').mockImplementation(n => n);
   });
 
   describe('when USER_AUTH/GET_JWT_TOKEN action is fired', () => {

@@ -16,15 +16,15 @@ export class FieldDetail extends PureComponent {
 
   getTextValue = defaultTo('');
 
-  getRounded = (value) => `${Math.round(value * 100) / 100}`;
+  getRounded = value => `${Math.round(value * 100) / 100}`;
 
-  getFormatted = (value) => is(Number, value) ? this.getRounded(value) : this.getTextValue(value);
+  getFormatted = value => (is(Number, value) ? this.getRounded(value) : this.getTextValue(value));
 
   getValueTitle = (rawValue, updatedValue) => {
     const textValue = `${rawValue}`;
 
     return is(Number, rawValue) && textValue !== updatedValue ? textValue : null;
-  }
+  };
 
   renderEditIcon = renderWhenTrue(() => <EditIcon />);
 

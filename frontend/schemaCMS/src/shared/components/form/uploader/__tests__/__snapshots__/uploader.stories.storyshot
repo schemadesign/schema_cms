@@ -227,7 +227,6 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
             },
             "text": "#FFF",
             "textArea": Object {
-              "background": "#000",
               "text": "#FFF",
             },
             "textField": Object {
@@ -498,7 +497,6 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
             },
             "text": "#FFF",
             "textArea": Object {
-              "background": "#000",
               "text": "#FFF",
             },
             "textField": Object {

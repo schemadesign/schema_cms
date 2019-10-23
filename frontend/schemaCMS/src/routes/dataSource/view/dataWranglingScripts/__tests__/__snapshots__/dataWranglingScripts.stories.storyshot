@@ -188,7 +188,6 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                 },
                 "text": "#FFF",
                 "textArea": Object {
-                  "background": "#000",
                   "text": "#FFF",
                 },
                 "textField": Object {

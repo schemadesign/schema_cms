@@ -38,7 +38,7 @@ function* logout() {
 
   yield put(UserAuthActions.logoutSuccess());
 
-  window.location.href = LOGOUT_URL;
+  window.location.assign(LOGOUT_URL);
 }
 
 function* resetPassword() {
