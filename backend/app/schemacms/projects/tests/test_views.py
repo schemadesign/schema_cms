@@ -488,7 +488,6 @@ class TestUpdateDraftDataSourceView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
-
     def test_url(self, data_source):
         assert f"/api/v1/datasources/{data_source.pk}" == self.get_url(pk=data_source.pk)
 
