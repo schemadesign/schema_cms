@@ -8,7 +8,7 @@ export const defaultProps = {
   fetchOne: Function.prototype,
   match: {
     params: {
-      jobId: 1,
+      jobId: '1',
     },
   },
 };
