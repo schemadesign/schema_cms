@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { reducer as jobReducer, JobActions, JobTypes } from '../job.redux';
+import { reducer as jobReducer } from '../job.redux';
 
 describe('Job: redux', () => {
   const state = Immutable({});

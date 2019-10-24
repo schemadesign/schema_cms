@@ -5,7 +5,7 @@ import { createRoutine } from 'redux-saga-routines';
 const PREFIX = 'JOB/';
 
 export const JobRoutines = {
-  fetchOne: createRoutine(`${PREFIX}FETCH_ONE_JOB`),
+  fetchOne: createRoutine(`${PREFIX}FETCH_ONE`),
 };
 
 export const INITIAL_STATE = new Immutable({

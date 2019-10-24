@@ -1,19 +1,30 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import Immutable from 'seamless-immutable';
+import { OK } from 'http-status-codes';
 
+import { JobRoutines } from '../job.redux';
 import { watchJob } from '../job.sagas';
-import { JobActions, JobTypes } from '../job.redux';
+import mockApi from '../../../shared/utils/mockApi';
 
 describe('Job: sagas', () => {
   const defaultState = Immutable({});
 
-  it('should implement a test', async () => {
-    await expectSaga(watchStartup)
-      .withState(defaultState)
-      .put(JobActions.noop())
-      .dispatch(StartupActions.startup())
-      .silentRun();
+  describe('when fetchOne action is called', () => {
+    const response = {
+      id: 1,
+    };
 
-    expect(sagaTester.getCalledActions()).to.deep.equal([JobActions.noop()]);
+    mockApi.get('/jobs/1').reply(OK, response);
+    const payload = {
+      jobId: 1,
+    };
+
+    it('should put fetchOne.success action', async () => {
+      await expectSaga(watchJob)
+        .withState(defaultState)
+        .put(JobRoutines.fetchOne.success(response))
+        .dispatch(JobRoutines.fetchOne(payload))
+        .silentRun();
+    });
   });
 });
