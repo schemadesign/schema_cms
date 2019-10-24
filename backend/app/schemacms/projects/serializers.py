@@ -56,7 +56,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "error_log",
             "project",
             "jobs",
-            "status"
+            "status",
         )
 
         extra_kwargs = {
@@ -69,7 +69,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
                 queryset=DataSource.objects.all(),
                 fields=('name', 'project'),
                 key_field_name="name",
-                message="DataSource with this name already exist in project."
+                message="DataSource with this name already exist in project.",
             )
         ]
 
@@ -229,10 +229,11 @@ class CreateJobSerializer(serializers.ModelSerializer):
             raise exceptions.ValidationError('At least single step is required', code="missingSteps")
         return attr
 
+    @transaction.atomic()
     def create(self, validated_data):
         datasource = self.initial_data["datasource"]
         steps = validated_data.pop('steps')
-        job = models.DataSourceJob.objects.create(datasource=datasource, **validated_data)
+        job = datasource.create_job(**validated_data)
         models.DataSourceJobStep.objects.bulk_create(self.create_steps(steps, job))
         return job
 

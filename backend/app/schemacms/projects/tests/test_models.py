@@ -1,5 +1,6 @@
 import os
 import json
+import uuid
 
 import pytest
 from factory.django import FileField
@@ -39,10 +40,7 @@ class TestDataSource:
         dsource = self.create_dsource(filename)
 
         base_path = dsource.file.storage.location
-        correct_path = os.path.join(
-            base_path,
-            f"{dsource.id}/uploads/{filename}",
-        )
+        correct_path = os.path.join(base_path, f"{dsource.id}/uploads/{filename}")
 
         assert correct_path == dsource.file.path
 
@@ -78,6 +76,29 @@ class TestDataSource:
 
         assert json.loads(expected_preview)["data"] == result_json["data"]
         assert json.loads(expected_preview)["fields"] == result_json["fields"]
+
+    def test_source_file_latest_version(self, mocker, data_source_factory, s3_object_version_factory):
+        ds = data_source_factory()
+        file_versions = (
+            s3_object_version_factory(ds.file.name),
+            s3_object_version_factory(ds.file.name),
+            s3_object_version_factory(ds.file.name, is_latest=True),
+        )
+        storage_mock = mocker.patch("schemacms.utils.storages.OverwriteStorage")
+        storage_mock.bucket.object_versions.filter.return_value = file_versions
+        ds.file.storage = storage_mock
+
+        assert ds.source_file_latest_version == file_versions[-1].id
+
+    @pytest.mark.usefixtures("ds_source_file_latest_version_mock")
+    def test_create_job(self, faker, data_source_factory):
+        ds = data_source_factory()
+
+        job = ds.create_job()
+
+        assert job.datasource == ds
+        assert job.source_file_path == ds.file.name
+        assert job.version == ds.source_file_latest_version
 
 
 class TestDataSourceMeta:
