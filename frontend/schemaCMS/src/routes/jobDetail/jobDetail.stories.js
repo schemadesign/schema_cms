@@ -3,6 +3,14 @@ import { storiesOf } from '@storybook/react';
 
 import { JobDetail } from './jobDetail.component';
 
-const defaultProps = {};
+export const defaultProps = {
+  job: {},
+  fetchOne: Function.prototype,
+  match: {
+    params: {
+      jobId: 1,
+    },
+  },
+};
 
 storiesOf('JobDetail', module).add('Default', () => <JobDetail {...defaultProps} />);
