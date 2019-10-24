@@ -4,7 +4,9 @@ import Immutable from 'seamless-immutable';
 import { reducer as jobReducer } from '../job.redux';
 
 describe('Job: redux', () => {
-  const state = Immutable({});
+  const state = Immutable({
+    job: {},
+  });
 
   describe('reducer', () => {
     it('should return initial state', () => {
