@@ -641,7 +641,7 @@ class TestJobDetailView:
 
         assert valid_response.status_code == status.HTTP_200_OK
 
-    def test_user_cant_edit_non_description_fields(self, api_client, admin, job_factory, job_step_factory, faker):
+    def test_cant_edit_non_description_fields(self, api_client, admin, job_factory, job_step_factory, faker):
         job = job_factory()
         job_step_factory.create_batch(2, datasource_job=job)
         valid_payload = dict(
