@@ -60,14 +60,14 @@ describe('DataSource: sagas', () => {
     const responseData = {
       results: [
         {
-          status: STATUS_READY_FOR_PROCESSING,
+          jobs: [{ id: 1, jobState: 'processing' }],
         },
       ],
     };
     const responseDoneData = {
       results: [
         {
-          status: STATUS_DONE,
+          jobs: [{ id: 1, jobState: 'succeed' }],
         },
       ],
     };
@@ -199,23 +199,6 @@ describe('DataSource: sagas', () => {
         .silentRun();
 
       expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
-    });
-  });
-
-  describe('processOne', () => {
-    it('should dispatch a success action', async () => {
-      const payload = {
-        projectId: '1',
-        dataSourceId: '1',
-      };
-
-      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`).reply(OK);
-
-      await expectSaga(watchDataSource)
-        .withState(defaultState)
-        .put(DataSourceRoutines.processOne.success())
-        .dispatch(DataSourceRoutines.processOne(payload))
-        .silentRun();
     });
   });
 

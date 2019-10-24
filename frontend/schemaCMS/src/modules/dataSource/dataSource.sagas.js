@@ -1,11 +1,11 @@
 import { all, put, takeLatest, take, delay, fork, cancel, cancelled } from 'redux-saga/effects';
-import { pipe, forEach, keys, any, anyPass, propEq, path, omit } from 'ramda';
+import { pipe, forEach, keys, any, propEq, path, omit, isEmpty, filter, not, propOr, either } from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
-import { FETCH_LIST_DELAY, STATUS_PROCESSING, STATUS_READY_FOR_PROCESSING } from './dataSource.constants';
+import { FETCH_LIST_DELAY } from './dataSource.constants';
 
 const PAGE_SIZE = 1000;
 
@@ -54,7 +54,12 @@ function* fetchOne({ payload: { dataSourceId } }) {
 }
 
 const getIfAnyResultProcessing = any(
-  anyPass([propEq('status', STATUS_READY_FOR_PROCESSING), propEq('status', STATUS_PROCESSING)])
+  pipe(
+    propOr([], 'jobs'),
+    filter(either(propEq('jobState', 'pending'), propEq('jobState', 'processing'))),
+    isEmpty,
+    not
+  )
 );
 
 function* fetchListLoop(payload) {
@@ -110,25 +115,12 @@ function* updateOne({ payload: { dataSourceId, requestData, step } }) {
     const redirectUri = `/datasource/${dataSourceId}/${parseInt(step, 10) + 1}`;
 
     yield put(DataSourceRoutines.updateOne.success(data));
-    yield put(DataSourceRoutines.processOne({ dataSourceId }));
 
     browserHistory.push(redirectUri);
   } catch (error) {
     yield put(DataSourceRoutines.updateOne.failure(path(['response', 'data'], error)));
   } finally {
     yield put(DataSourceRoutines.updateOne.fulfill());
-  }
-}
-
-function* processOne({ payload: { dataSourceId } }) {
-  try {
-    yield put(DataSourceRoutines.processOne.request());
-    yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/process`);
-    yield put(DataSourceRoutines.processOne.success());
-  } catch (error) {
-    yield put(DataSourceRoutines.processOne.failure());
-  } finally {
-    yield put(DataSourceRoutines.processOne.fulfill());
   }
 }
 
@@ -153,7 +145,6 @@ export function* watchDataSource() {
     takeLatest(DataSourceRoutines.removeOne.TRIGGER, removeOne),
     takeLatest(DataSourceRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(DataSourceRoutines.updateOne.TRIGGER, updateOne),
-    takeLatest(DataSourceRoutines.processOne.TRIGGER, processOne),
     takeLatest(DataSourceRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(DataSourceRoutines.fetchFields.TRIGGER, fetchFields),
   ]);
