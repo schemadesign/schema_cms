@@ -14,6 +14,7 @@ import { Logout } from './logout';
 import { DataSource } from './dataSource';
 import { DataWranglingScript } from './dataWranglingScript';
 import { User } from './user';
+import { JobDetail } from './jobDetail';
 
 export const ROUTES = {
   HOME: '/',
@@ -25,6 +26,7 @@ export const ROUTES = {
   DATA_SOURCE: '/datasource',
   DATA_WRANGLING_SCRIPTS: '/script',
   USER: '/user',
+  JOB_DETAIL: '/job',
 };
 
 export default class RootContainer extends Component {
@@ -48,6 +50,8 @@ export default class RootContainer extends Component {
             <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
 
             <AuthRoute path={ROUTES.USER} component={User} />
+
+            <AuthRoute path={`${ROUTES.JOB_DETAIL}/:jobId`} component={JobDetail} />
 
             <Route path={ROUTES.LOGOUT} component={Logout} />
 
