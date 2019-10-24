@@ -468,6 +468,23 @@ class TestUpdateDraftDataSourceView:
             ]
         }
 
+    @pytest.mark.parametrize(
+        "job_status",
+        [projects_constants.DataSourceJobState.PENDING, projects_constants.DataSourceJobState.PROCESSING])
+    def test_error_file_reupload_when_job_is_processing(
+            self, api_client, faker, admin, data_source_factory, job_factory, job_status
+    ):
+        data_source = data_source_factory()
+        job_factory(datasource=data_source, job_state=job_status)
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
+
+        api_client.force_authenticate(admin)
+        response = api_client.put(self.get_url(pk=data_source.pk), payload, format="multipart")
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+
     def test_url(self, data_source):
         assert f"/api/v1/datasources/{data_source.pk}" == self.get_url(pk=data_source.pk)
 
