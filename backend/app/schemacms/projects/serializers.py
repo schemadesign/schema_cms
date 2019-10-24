@@ -5,6 +5,7 @@ from django.db import transaction
 from rest_framework import serializers, exceptions, validators
 
 from schemacms.projects import models
+from .constants import DataSourceJobState
 from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
@@ -72,6 +73,15 @@ class DataSourceSerializer(serializers.ModelSerializer):
                 message="DataSource with this name already exist in project."
             )
         ]
+
+    def validate(self, attrs):
+        states = [DataSourceJobState.PROCESSING, DataSourceJobState.PENDING]
+
+        if attrs.get("file", None) and self.instance.jobs.filter(job_state__in=states).exists():
+            message = "You can't re-upload file when job is processing"
+            raise serializers.ValidationError({"file": message}, code="fileInProcessing")
+
+        return super().validate(attrs)
 
     def get_file_name(self, obj):
         if obj.file:
