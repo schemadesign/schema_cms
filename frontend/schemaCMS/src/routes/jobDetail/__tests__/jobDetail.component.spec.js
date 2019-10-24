@@ -19,6 +19,6 @@ describe('JobDetail: Component', () => {
   it('should call fetchOne on componentDidMount', () => {
     const fetchOne = spy();
     render({ fetchOne });
-    expect(fetchOne).to.have.been.calledWith({ jobId: 1 });
+    expect(fetchOne).to.have.been.calledWith({ jobId: '1' });
   });
 });
