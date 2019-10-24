@@ -631,6 +631,36 @@ class TestJobDetailView:
             == projects_serializers.DataSourceJobSerializer(job, context={"request": request}).data
         )
 
+    def test_description_is_allowed_to_edit(self, api_client, admin, job_factory, job_step_factory):
+        job = job_factory()
+        job_step_factory.create_batch(2, datasource_job=job)
+        valid_payload = dict(descriprion="new desc")
+
+        api_client.force_authenticate(admin)
+        valid_response = api_client.patch(self.get_url(job.id), data=valid_payload)
+
+        assert valid_response.status_code == status.HTTP_200_OK
+
+    def test_cant_edit_non_description_fields(self, api_client, admin, job_factory, job_step_factory, faker):
+        job = job_factory()
+        job_step_factory.create_batch(2, datasource_job=job)
+        valid_payload = dict(
+            error="new desc",
+            steps=[{"script": 10, "exec_order": 0}],
+            result=faker.csv_upload_file(filename="test_result.csv")
+        )
+        old_error = job.error
+        old_steps = job.steps
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(job.id), data=valid_payload)
+        job.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert job.error == old_error
+        assert job.result.name == ''
+        assert job.steps == old_steps
+
     @staticmethod
     def get_url(pk):
         return reverse("projects:datasourcejob-detail", kwargs=dict(pk=pk))

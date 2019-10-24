@@ -217,20 +217,16 @@ class StepSerializer(serializers.ModelSerializer):
         fields = ("script", "body", "exec_order")
 
 
-class DataSourceJobSerializer(serializers.ModelSerializer):
+class CreateJobSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True)
-    result = serializers.FileField(read_only=True)
-    error = serializers.CharField(read_only=True)
-    job_state = serializers.CharField(read_only=True)
-    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = models.DataSourceJob
-        fields = ("pk", "datasource", "description", "steps", "job_state", "result", "error")
+        fields = ("pk", "description", "steps")
 
     def validate_steps(self, attr):
         if not attr:
-            raise exceptions.ValidationError('At least single step is required')
+            raise exceptions.ValidationError('At least single step is required', code="missingSteps")
         return attr
 
     def create(self, validated_data):
@@ -249,3 +245,15 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
             step_instance.datasource_job = job
             step_instance.exec_order = step["exec_order"]
             yield step_instance
+
+
+class DataSourceJobSerializer(serializers.ModelSerializer):
+    steps = StepSerializer(many=True, read_only=True)
+    result = serializers.FileField(read_only=True)
+    error = serializers.CharField(read_only=True)
+    job_state = serializers.CharField(read_only=True)
+    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
+
+    class Meta:
+        model = models.DataSourceJob
+        fields = ("pk", "datasource", "description", "steps", "job_state", "result", "error")

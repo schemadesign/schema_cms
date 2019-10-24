@@ -80,7 +80,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "create": serializers.DraftDataSourceSerializer,
         "script": serializers.DataSourceScriptSerializer,
         "script_upload": serializers.WranglingScriptSerializer,
-        "job": serializers.DataSourceJobSerializer,
+        "job": serializers.CreateJobSerializer,
         "jobs_history": serializers.DataSourceJobSerializer,
     }
 
@@ -157,7 +157,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         return response.Response(data=serializer.data)
 
 
-class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
     queryset = models.DataSourceJob.objects.none()
     serializer_class = serializers.DataSourceJobSerializer
     permission_classes = (permissions.IsAuthenticated,)
