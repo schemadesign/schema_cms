@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='datasourcejob',
-            name='version',
+            name='source_file_version',
             field=models.CharField(default='', editable=False, max_length=36),
             preserve_default=False,
         ),

@@ -7,6 +7,7 @@ import datatable as dt
 import django.core.files.base
 import django_fsm
 from django.conf import settings
+from django.core.files.storage import default_storage
 from django.core.validators import FileExtensionValidator
 from django.db import models, transaction
 from django.utils import functional
@@ -14,6 +15,7 @@ from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
 
 from schemacms.users import constants as users_constants
+from schemacms.utils import url as url_utils
 from . import constants, managers, fsm
 
 
@@ -181,9 +183,12 @@ class DataSource(ext_models.TimeStampedModel):
     @property
     def source_file_latest_version(self) -> str:
         return next(
-            v.id
-            for v in self.file.storage.bucket.object_versions.filter(Prefix=self.file.name)
-            if v.is_latest
+            (
+                v.id
+                for v in self.file.storage.bucket.object_versions.filter(Prefix=self.file.name)
+                if v.is_latest and v.id != "null"
+            ),
+            "",
         )
 
     def create_job(self, **job_kwargs):
@@ -191,7 +196,7 @@ class DataSource(ext_models.TimeStampedModel):
         return DataSourceJob.objects.create(
             datasource=self,
             source_file_path=self.file.name,
-            version=self.source_file_latest_version,
+            source_file_version=self.source_file_latest_version,
             **job_kwargs,
         )
 
@@ -242,12 +247,21 @@ class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
     description = models.TextField(blank=True)
     source_file_path = models.CharField(max_length=255, editable=False)
-    version = models.CharField(max_length=36, editable=False)
+    source_file_version = models.CharField(max_length=36, editable=False)
     result = models.FileField(upload_to=file_upload_path, null=True)
     error = models.TextField(blank=True, default="")
 
     def __str__(self):
         return f'DataSource Job #{self.pk}'
+
+    @property
+    def source_file_url(self):
+        if not self.source_file_path:
+            return ""
+        url = default_storage.url(self.source_file_path)
+        if self.source_file_version:
+            url = url_utils.append_query_string_params(url, {"versionId": self.source_file_version})
+        return url
 
     def relative_path_to_save(self, filename):
         base_path = self.result.storage.location

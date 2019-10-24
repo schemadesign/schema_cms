@@ -1,6 +1,5 @@
 import os
 import json
-import uuid
 
 import pytest
 from factory.django import FileField
@@ -98,7 +97,7 @@ class TestDataSource:
 
         assert job.datasource == ds
         assert job.source_file_path == ds.file.name
-        assert job.version == ds.source_file_latest_version
+        assert job.source_file_version == ds.source_file_latest_version
 
 
 class TestDataSourceMeta:
@@ -108,3 +107,24 @@ class TestDataSourceMeta:
         data_source_meta.preview.seek(offset, whence)
 
         assert data_source_meta.data == expected
+
+
+class TestDataSourceJob:
+    def test_source_file_url(self, job_factory, default_storage, mocker):
+        job = job_factory()
+        url = f"http://localhost/files/{job.source_file_path}?key=123&secret=456"
+        mocker.patch.object(default_storage, "url", return_value=url)
+
+        assert job.source_file_url == f"{url}&versionId={job.source_file_version}"
+
+    def test_source_file_url_without_file_path(self, job_factory, default_storage):
+        job = job_factory(source_file_path="")
+
+        assert job.source_file_url == ""
+
+    def test_source_file_url_without_file_version(self, job_factory, default_storage, mocker):
+        job = job_factory(source_file_version="")
+        url = f"http://localhost/files/{job.source_file_path}?key=123&secret=456"
+        mocker.patch.object(default_storage, "url", return_value=url)
+
+        assert job.source_file_url == url

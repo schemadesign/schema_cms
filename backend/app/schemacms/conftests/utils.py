@@ -1,5 +1,6 @@
 import faker as faker_
 import pytest
+from django.core.files import storage
 from rest_framework import test
 
 from schemacms.utils import test as utils_test
@@ -22,3 +23,8 @@ def faker():
 def transaction_on_commit(mocker):
     """Call function without db commit"""
     mocker.patch("django.db.transaction.on_commit", lambda fn: fn())
+
+
+@pytest.fixture()
+def default_storage():
+    return storage.default_storage

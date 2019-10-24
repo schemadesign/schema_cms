@@ -257,4 +257,13 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.DataSourceJob
-        fields = ("pk", "datasource", "description", "steps", "job_state", "result", "error")
+        fields = (
+            "pk",
+            "datasource",
+            "description",
+            "steps",
+            "job_state",
+            "result",
+            "error",
+            "source_file_url",
+        )
