@@ -1,5 +1,20 @@
 import { all, put, takeLatest, take, delay, fork, cancel, cancelled } from 'redux-saga/effects';
-import { pipe, forEach, keys, any, anyPass, propEq, path, omit } from 'ramda';
+import {
+  pipe,
+  forEach,
+  keys,
+  any,
+  anyPass,
+  propEq,
+  path,
+  omit,
+  isEmpty,
+  filter,
+  not,
+  propOr,
+  prop,
+  either,
+} from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
@@ -54,7 +69,16 @@ function* fetchOne({ payload: { dataSourceId } }) {
 }
 
 const getIfAnyResultProcessing = any(
-  anyPass([propEq('status', STATUS_READY_FOR_PROCESSING), propEq('status', STATUS_PROCESSING)])
+  anyPass([
+    propEq('status', STATUS_READY_FOR_PROCESSING),
+    propEq('status', STATUS_PROCESSING),
+    pipe(
+      propOr([], 'jobs'),
+      filter(either(propEq('jobState', 'pending'), propEq('jobState', 'processing'))),
+      isEmpty,
+      not
+    ),
+  ])
 );
 
 function* fetchListLoop(payload) {
