@@ -7,6 +7,7 @@ import datatable as dt
 import django.core.files.base
 import django_fsm
 from django.conf import settings
+from django.core.files.storage import default_storage
 from django.core.validators import FileExtensionValidator
 from django.db import models, transaction
 from django.utils import functional
@@ -14,6 +15,7 @@ from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
 
 from schemacms.users import constants as users_constants
+from schemacms.utils import url as url_utils
 from . import constants, managers, fsm
 
 
@@ -162,10 +164,7 @@ class DataSource(ext_models.TimeStampedModel):
         base_path = self.file.storage.location
         if not (self.id and self.project_id):
             raise ValueError("Project or DataSource ID is not set")
-        return os.path.join(
-            base_path,
-            f"{self.id}/uploads/{filename}",
-        )
+        return os.path.join(base_path, f"{self.id}/uploads/{filename}")
 
     def get_original_file_name(self):
         name, ext = os.path.splitext(os.path.basename(self.file.name))
@@ -181,6 +180,26 @@ class DataSource(ext_models.TimeStampedModel):
     def jobs_history(self):
         return self.jobs.all().order_by("-created")
 
+    @property
+    def source_file_latest_version(self) -> str:
+        return next(
+            (
+                v.id
+                for v in self.file.storage.bucket.object_versions.filter(Prefix=self.file.name)
+                if v.is_latest and v.id != "null"
+            ),
+            "",
+        )
+
+    def create_job(self, **job_kwargs):
+        """Create new job for data source, copy source file and version"""
+        return DataSourceJob.objects.create(
+            datasource=self,
+            source_file_path=self.file.name,
+            source_file_version=self.source_file_latest_version,
+            **job_kwargs,
+        )
+
 
 class DataSourceMeta(MetaDataModel):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
@@ -191,10 +210,7 @@ class DataSourceMeta(MetaDataModel):
     def relative_path_to_save(self, filename):
         base_path = self.preview.storage.location
 
-        return os.path.join(
-            base_path,
-            f"{self.datasource.id}/previews/{filename}",
-        )
+        return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
 
 
 class WranglingScript(ext_models.TimeStampedModel):
@@ -222,33 +238,35 @@ class WranglingScript(ext_models.TimeStampedModel):
         base_path = self.file.storage.location
 
         if self.is_predefined:
-            return os.path.join(
-                base_path,
-                f"scripts/{filename}",
-            )
+            return os.path.join(base_path, f"scripts/{filename}")
         else:
-            return os.path.join(
-                base_path,
-                f"{self.datasource.id}/scripts/{filename}",
-            )
+            return os.path.join(base_path, f"{self.datasource.id}/scripts/{filename}")
 
 
 class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
     description = models.TextField(blank=True)
+    source_file_path = models.CharField(max_length=255, editable=False)
+    source_file_version = models.CharField(max_length=36, editable=False)
     result = models.FileField(upload_to=file_upload_path, null=True)
     error = models.TextField(blank=True, default="")
 
     def __str__(self):
         return f'DataSource Job #{self.pk}'
 
+    @property
+    def source_file_url(self):
+        if not self.source_file_path:
+            return ""
+        url = default_storage.url(self.source_file_path)
+        if self.source_file_version:
+            url = url_utils.append_query_string_params(url, {"versionId": self.source_file_version})
+        return url
+
     def relative_path_to_save(self, filename):
         base_path = self.result.storage.location
 
-        return os.path.join(
-            base_path,
-            f"{self.datasource.id}/outputs/{filename}",
-        )
+        return os.path.join(base_path, f"{self.datasource.id}/outputs/{filename}")
 
     def update_meta(self):
         preview_json, items, fields = get_preview_data(self.result.url)

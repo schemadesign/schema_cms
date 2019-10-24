@@ -36,6 +36,13 @@ LAMBDA_ARN=$(get_public_api_lambda_arn)
 }
 
 {
+    put_bucket_versioning "schemacms" &&
+    echo "Scripts S3 put bucket versioning done"
+} || {
+    echo "Scripts S3 put bucket versioning failed"
+}
+
+{
     create_sqs_queue "schemacms-queue" &&
     echo "SQS Queue worker created"
 } || {
