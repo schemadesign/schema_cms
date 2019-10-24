@@ -68,11 +68,13 @@ function* fetchOne({ payload: { dataSourceId } }) {
   }
 }
 
-const getIfAnyResultProcessing = pipe(
-  propOr([], 'jobs'),
-  filter(either(propEq('jobState', 'pending'), propEq('jobState', 'processing'))),
-  isEmpty,
-  not
+const getIfAnyResultProcessing = any(
+  pipe(
+    propOr([], 'jobs'),
+    filter(either(propEq('jobState', 'pending'), propEq('jobState', 'processing'))),
+    isEmpty,
+    not
+  )
 );
 
 function* fetchListLoop(payload) {
