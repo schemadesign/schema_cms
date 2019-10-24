@@ -11,7 +11,6 @@ export const DataSourceRoutines = {
   fetchOne: createRoutine(`${prefix}FETCH_ONE`),
   fetchList: createRoutine(`${prefix}FETCH_LIST`),
   updateOne: createRoutine(`${prefix}UPDATE_ONE`),
-  processOne: createRoutine(`${prefix}PROCESS_ONE`),
   unmountOne: createRoutine(`${prefix}UNMOUNT_ONE`),
   fetchFields: createRoutine(`${prefix}FETCH_FIELDS`),
   unmountFields: createRoutine(`${prefix}UNMOUNT_FIELDS`),

@@ -202,23 +202,6 @@ describe('DataSource: sagas', () => {
     });
   });
 
-  describe('processOne', () => {
-    it('should dispatch a success action', async () => {
-      const payload = {
-        projectId: '1',
-        dataSourceId: '1',
-      };
-
-      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`).reply(OK);
-
-      await expectSaga(watchDataSource)
-        .withState(defaultState)
-        .put(DataSourceRoutines.processOne.success())
-        .dispatch(DataSourceRoutines.processOne(payload))
-        .silentRun();
-    });
-  });
-
   describe('fetchFields', () => {
     it('should dispatch a success action', async () => {
       const payload = { projectId: '1', dataSourceId: '1' };
