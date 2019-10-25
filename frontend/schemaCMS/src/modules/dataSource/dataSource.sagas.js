@@ -118,7 +118,7 @@ function* updateOne({ payload: { dataSourceId, requestData, step } }) {
 
     browserHistory.push(redirectUri);
   } catch (error) {
-    yield put(DataSourceRoutines.updateOne.failure(path(['response', 'data'], error)));
+    yield put(DataSourceRoutines.updateOne.failure(error));
   } finally {
     yield put(DataSourceRoutines.updateOne.fulfill());
   }

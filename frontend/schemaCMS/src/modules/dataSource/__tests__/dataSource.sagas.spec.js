@@ -1,7 +1,7 @@
 import Immutable from 'seamless-immutable';
 import { expectSaga } from 'redux-saga-test-plan';
 import * as effects from 'redux-saga/effects';
-import { OK } from 'http-status-codes';
+import { BAD_REQUEST, OK } from 'http-status-codes';
 import nock from 'nock';
 
 import { watchDataSource } from '../dataSource.sagas';
@@ -146,59 +146,63 @@ describe('DataSource: sagas', () => {
       status: STATUS_DRAFT,
     };
 
-    beforeEach(() => {
-      const options = {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      };
+    describe('on success', () => {
+      beforeEach(() => {
+        const options = {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        };
 
-      mockApi
-        .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, /form-data; name="data"[^]*data/m, options)
-        .reply(OK, responseData);
+        mockApi
+          .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, /form-data; name="data"[^]*data/m, options)
+          .reply(OK, responseData);
 
-      mockApi
-        .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, { name: payload.requestData.name }, options)
-        .reply(OK, responseData);
+        mockApi
+          .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, { name: payload.requestData.name }, options)
+          .reply(OK, responseData);
+      });
 
-      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`).reply(OK);
+      it('should dispatch a success action', async () => {
+        await expectSaga(watchDataSource)
+          .withState(defaultState)
+          .put(DataSourceRoutines.updateOne.success(responseData))
+          .dispatch(DataSourceRoutines.updateOne(payload))
+          .silentRun();
+      });
+
+      it('should should redirect to next step', async () => {
+        jest.spyOn(browserHistory, 'push');
+
+        await expectSaga(watchDataSource)
+          .withState(defaultState)
+          .dispatch(DataSourceRoutines.updateOne(payload))
+          .silentRun();
+
+        expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
+      });
+
+      it('should redirect to next step after send file', async () => {
+        jest.spyOn(browserHistory, 'push');
+        payload.requestData.file = 'file';
+
+        await expectSaga(watchDataSource)
+          .withState(defaultState)
+          .dispatch(DataSourceRoutines.updateOne(payload))
+          .silentRun();
+
+        expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
+      });
     });
 
-    it('should dispatch a success action', async () => {
-      await expectSaga(watchDataSource)
-        .withState(defaultState)
-        .put(DataSourceRoutines.updateOne.success(responseData))
-        .dispatch(DataSourceRoutines.updateOne(payload))
-        .silentRun();
-    });
-
-    it('should dispatch a success action', async () => {
-      await expectSaga(watchDataSource)
-        .withState(defaultState)
-        .put(DataSourceRoutines.updateOne.success(responseData))
-        .dispatch(DataSourceRoutines.updateOne(payload))
-        .silentRun();
-    });
-
-    it('should should redirect to next step', async () => {
-      jest.spyOn(browserHistory, 'push');
+    it('should dispatch a failure action', async () => {
+      const errorResponseData = { name: [{ code: 'code', message: 'message' }] };
+      const errorResult = [{ code: 'code', name: 'name' }];
+      mockApi.patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(BAD_REQUEST, errorResponseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
+        .put(DataSourceRoutines.updateOne.failure(errorResult))
         .dispatch(DataSourceRoutines.updateOne(payload))
         .silentRun();
-
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
-    });
-
-    it('should redirect to list', async () => {
-      jest.spyOn(browserHistory, 'push');
-      payload.requestData.file = 'file';
-
-      await expectSaga(watchDataSource)
-        .withState(defaultState)
-        .dispatch(DataSourceRoutines.updateOne(payload))
-        .silentRun();
-
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
     });
   });
 
