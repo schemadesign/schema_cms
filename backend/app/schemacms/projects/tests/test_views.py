@@ -171,7 +171,7 @@ class TestRetrieveUpdateDeleteProjectView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data == {
-            'title': [error.Error(message='This field must be unique.', code='unique').data]
+            'title': [error.Error(message='This field must be unique.', code='projectTitleUnique').data]
         }
 
     def test_update_project_by_not_projects_editor(self, api_client, user_factory, project):
@@ -464,15 +464,19 @@ class TestUpdateDraftDataSourceView:
         assert response.status_code == status.HTTP_400_BAD_REQUEST, response.content
         assert response.data == {
             'name': [
-                error.Error(message='DataSource with this name already exist in project.', code='unique').data
+                error.Error(
+                    message='DataSource with this name already exist in project.',
+                    code='dataSourceProjectNameUnique',
+                ).data
             ]
         }
 
     @pytest.mark.parametrize(
         "job_status",
-        [projects_constants.DataSourceJobState.PENDING, projects_constants.DataSourceJobState.PROCESSING])
+        [projects_constants.DataSourceJobState.PENDING, projects_constants.DataSourceJobState.PROCESSING],
+    )
     def test_error_file_reupload_when_job_is_processing(
-            self, api_client, faker, admin, data_source_factory, job_factory, job_status
+        self, api_client, faker, admin, data_source_factory, job_factory, job_status
     ):
         data_source = data_source_factory()
         job_factory(datasource=data_source, job_state=job_status)
