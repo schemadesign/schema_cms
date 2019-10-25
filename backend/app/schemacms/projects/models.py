@@ -31,7 +31,11 @@ def map_dataframe_dtypes(dtype):
 
 
 def get_preview_data(file):
-    data_frame = dt.fread(file, na_strings=["", ''], fill=True)
+
+    if hasattr(file, "temporary_file_path"):
+        data_frame = dt.fread(file.read(), na_strings=["", ''], fill=True)
+    else:
+        data_frame = dt.fread(file, na_strings=["", ''], fill=True)
 
     items, fields = data_frame.shape
     sample_of_5 = data_frame.head(5).to_pandas()
@@ -151,7 +155,7 @@ class DataSource(ext_models.TimeStampedModel):
                 meta, _ = DataSourceMeta.objects.update_or_create(
                     datasource=self, defaults={"fields": fields, "items": items}
                 )
-                file_name, _ = self.get_original_file_name(file_name=file_name)
+                file_name, _ = self.get_original_file_name(file_name)
                 meta.preview.save(
                     f"{file_name}_preview.json", django.core.files.base.ContentFile(content=preview_json)
                 )
