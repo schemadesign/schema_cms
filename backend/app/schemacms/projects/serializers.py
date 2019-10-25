@@ -1,5 +1,4 @@
 import os
-import io
 
 from django.db import transaction
 from rest_framework import serializers, exceptions, validators

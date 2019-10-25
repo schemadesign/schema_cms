@@ -1,5 +1,3 @@
-import io
-
 from django.db import models, transaction
 from hashids import Hashids
 
