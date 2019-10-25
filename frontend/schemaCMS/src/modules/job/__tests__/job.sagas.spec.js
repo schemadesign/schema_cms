@@ -27,4 +27,23 @@ describe('Job: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('when updateOne action is called', () => {
+    const updateOne = {
+      id: 1,
+    };
+
+    mockApi.patch('/jobs/1').reply(OK);
+    const payload = {
+      jobId: 1,
+    };
+
+    it('should put updateOne.success action', async () => {
+      await expectSaga(watchJob)
+        .withState(defaultState)
+        .put(JobRoutines.updateOne.success(updateOne))
+        .dispatch(JobRoutines.fetchOne(payload))
+        .silentRun();
+    });
+  });
 });

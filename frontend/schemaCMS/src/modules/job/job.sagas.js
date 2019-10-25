@@ -17,6 +17,25 @@ function* fetchOne({ payload: { jobId } }) {
   }
 }
 
+function* updateOne({ payload: { jobId } }) {
+  try {
+    yield put(JobRoutines.updateOne.request());
+
+    yield api.patch(`/jobs/${jobId}`);
+    const { data } = yield fetchOne({
+      payload: {
+        jobId,
+      },
+    });
+
+    yield put(JobRoutines.updateOne.success(data));
+  } catch (e) {
+    yield put(JobRoutines.updateOne.failure(e));
+  } finally {
+    yield put(JobRoutines.updateOne.fulfill());
+  }
+}
+
 export function* watchJob() {
-  yield all([takeLatest(JobRoutines.fetchOne.TRIGGER, fetchOne)]);
+  yield all([takeLatest(JobRoutines.fetchOne.TRIGGER, fetchOne), takeLatest(JobRoutines.updateOne.TRIGGER, updateOne)]);
 }
