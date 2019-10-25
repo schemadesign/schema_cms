@@ -8,9 +8,10 @@ phases:
   pre_build:
     commands:
       - echo install AWS CDK...
-      - npm install -g aws-cdk
+      - npm install -g aws-cdk@1.10.0
       - cdk --version
       - pip install -r requirements.txt
+      - pip freeze
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - VERSION=${COMMIT_HASH:=latest}
       - echo "Build version:$VERSION"

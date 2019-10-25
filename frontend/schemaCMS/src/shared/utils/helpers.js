@@ -1,10 +1,14 @@
-import { equals, isEmpty, pipe, prop } from 'ramda';
-
-import { ROLES } from '../../modules/userProfile/userProfile.constants';
+import { isEmpty } from 'ramda';
+import { camelize } from 'humps';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 
-export const isAdmin = pipe(
-  prop('role'),
-  equals(ROLES.ADMIN)
-);
+export const errorMessageParser = ({ errors, messages, formatMessage }) =>
+  errors.reduce((previousValue, { code, name }) => {
+    const error = camelize(`${name}_${code}_error`);
+    const messageError = messages[error];
+    const defaultErrorMessage = 'Something went wrong.';
+    const formattedMessageError = messageError ? formatMessage(messageError) : defaultErrorMessage;
+
+    return { [name]: formattedMessageError, ...previousValue };
+  }, {});

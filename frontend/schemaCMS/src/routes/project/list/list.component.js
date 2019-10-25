@@ -39,12 +39,15 @@ export class List extends PureComponent {
   getHeaderAndMenuConfig = () => ({
     headerTitle: this.formatMessage(messages.title),
     headerSubtitle: this.formatMessage(messages.overview),
-    secondaryMenuItems: [{ label: this.formatMessage(messages.logOut), to: '/logout', id: 'logoutBtn' }],
+    secondaryMenuItems: [
+      { label: this.formatMessage(messages.users), to: '/user', id: 'userBtn' },
+      { label: this.formatMessage(messages.logOut), to: '/logout', id: 'logoutBtn' },
+    ],
   });
 
   formatMessage = value => this.props.intl.formatMessage(value);
 
-  handleShowProject = id => () => this.props.history.push(`/project/view/${id}`);
+  handleShowProject = id => () => this.props.history.push(`/project/${id}`);
 
   handleNewProject = () => this.props.history.push('/project/create/');
 
@@ -104,7 +107,6 @@ export class List extends PureComponent {
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...topHeaderConfig} />
         {content}
-
         <NavigationContainer right>
           <PlusButton id="addProjectBtn" onClick={this.handleNewProject} />
         </NavigationContainer>

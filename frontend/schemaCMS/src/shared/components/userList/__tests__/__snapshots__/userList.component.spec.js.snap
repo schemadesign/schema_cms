@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserList: Component should render correctly 1`] = `null`;
+
+exports[`UserList: Component should render correctly with users 1`] = `
+Array [
+  <Component
+    customStyles={
+      Object {
+        "flexDirection": null,
+      }
+    }
+    key="0"
+  >
+    <styled.div>
+      <Styled(H2)>
+        <Link
+          replace={false}
+          to="/user/1"
+        >
+          Alan
+           
+          Watts
+        </Link>
+      </Styled(H2)>
+      <Styled(H3) />
+    </styled.div>
+    <styled.div />
+  </Component>,
+  <Component
+    customStyles={
+      Object {
+        "flexDirection": null,
+      }
+    }
+    key="1"
+  >
+    <styled.div>
+      <Styled(H2)>
+        <Link
+          replace={false}
+          to="/user/2"
+        >
+          Dale
+           
+          Chihuly
+        </Link>
+      </Styled(H2)>
+      <Styled(H3) />
+    </styled.div>
+    <styled.div />
+  </Component>,
+  <Component
+    customStyles={
+      Object {
+        "flexDirection": null,
+      }
+    }
+    key="2"
+  >
+    <styled.div>
+      <Styled(H2)>
+        <Link
+          replace={false}
+          to="/user/3"
+        >
+          Dave
+           
+          Bowie
+        </Link>
+      </Styled(H2)>
+      <Styled(H3)>
+        loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+      </Styled(H3)>
+    </styled.div>
+    <styled.div />
+  </Component>,
+]
+`;

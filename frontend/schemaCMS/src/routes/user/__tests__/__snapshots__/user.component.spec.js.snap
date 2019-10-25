@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User: Component should render correctly 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/user"
+  />
+  <Route
+    exact={true}
+    path="/user/:userId/add/:projectId"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/user/add"
+    render={[Function]}
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/user/:userId"
+  />
+</Switch>
+`;
+
+exports[`User: Component should render correctly with project id 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/user/1/add"
+  />
+  <Route
+    exact={true}
+    path="/user/1/add/:userId/add/:projectId"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/user/1/add/add"
+    render={[Function]}
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/user/1/add/:userId"
+  />
+</Switch>
+`;

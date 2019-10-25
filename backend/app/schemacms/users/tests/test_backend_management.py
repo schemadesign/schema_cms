@@ -45,7 +45,7 @@ class TestAuth0UserManagement:
                 "email_verified": False,
                 "verify_email": False,
                 "given_name": user.first_name,
-                "family_name": user.first_name,
+                "family_name": user.last_name,
             }
         )
 
@@ -63,6 +63,8 @@ class TestAuth0UserManagement:
                 "connection": mgmt.connection,
                 "email_verified": False,
                 "verify_email": False,
+                "given_name": "-",
+                "family_name": "-",
             }
         )
 

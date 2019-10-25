@@ -2,11 +2,11 @@ import os
 import json
 
 import pytest
-from django.conf import settings
 from factory.django import FileField
 from pandas import read_csv
 
 from schemacms.utils.test import make_csv
+from schemacms.projects.models import get_preview_data
 from schemacms.projects.tests.factories import DataSourceFactory
 
 
@@ -39,20 +39,13 @@ class TestDataSource:
         dsource = self.create_dsource(filename)
 
         base_path = dsource.file.storage.location
-        correct_path = os.path.join(
-            base_path,
-            f"{settings.STORAGE_DIR}/projects",
-            f"{dsource.project_id}/datasources/{dsource.id}/{filename}",
-        )
+        correct_path = os.path.join(base_path, f"{dsource.id}/uploads/{filename}")
 
         assert correct_path == dsource.file.path
 
     def test_creating_meta(self):
         filename = "file_path_test.csv"
         dsource = self.create_dsource(filename)
-
-        dsource.ready_for_processing()
-        dsource.process()
 
         items, fields = read_csv(dsource.file.path).shape
         assert dsource.meta_data.fields == fields
@@ -66,29 +59,45 @@ class TestDataSource:
         old_preview = data_source.meta_data.preview
 
         data_source.file.save("new_file.csv", new_file)
+        data_source.update_meta()
         data_source.refresh_from_db()
-        data_source.ready_for_processing()
-        data_source.process()
 
         assert data_source.meta_data.fields == cols_number
         assert data_source.meta_data.items == rows_number
         assert data_source.meta_data.preview != old_preview
 
     def test_get_preview(self, data_source):
-        source_file = read_csv(data_source.file.path)
+        source_file = data_source.file
 
-        preview, fields_info = data_source.get_preview_data(source_file)
+        data_source.update_meta()
+        expected_preview, _, _ = get_preview_data(source_file)
+        result_json = json.loads(data_source.meta_data.preview.read())
 
-        expected_preview = json.loads(source_file.head(5).to_json(orient="records"))
-        expected_fields_info = json.loads(
-            source_file.describe(include="all", percentiles=[]).to_json(orient="columns")
+        assert json.loads(expected_preview)["data"] == result_json["data"]
+        assert json.loads(expected_preview)["fields"] == result_json["fields"]
+
+    def test_source_file_latest_version(self, mocker, data_source_factory, s3_object_version_factory):
+        ds = data_source_factory()
+        file_versions = (
+            s3_object_version_factory(ds.file.name),
+            s3_object_version_factory(ds.file.name),
+            s3_object_version_factory(ds.file.name, is_latest=True),
         )
+        storage_mock = mocker.patch("schemacms.utils.storages.OverwriteStorage")
+        storage_mock.bucket.object_versions.filter.return_value = file_versions
+        ds.file.storage = storage_mock
 
-        for key, value in dict(source_file.dtypes).items():
-            expected_fields_info[key]["dtype"] = value.name
+        assert ds.source_file_latest_version == file_versions[-1].id
 
-        assert expected_preview == preview
-        assert expected_fields_info == fields_info
+    @pytest.mark.usefixtures("ds_source_file_latest_version_mock")
+    def test_create_job(self, faker, data_source_factory):
+        ds = data_source_factory()
+
+        job = ds.create_job()
+
+        assert job.datasource == ds
+        assert job.source_file_path == ds.file.name
+        assert job.source_file_version == ds.source_file_latest_version
 
 
 class TestDataSourceMeta:
@@ -98,3 +107,24 @@ class TestDataSourceMeta:
         data_source_meta.preview.seek(offset, whence)
 
         assert data_source_meta.data == expected
+
+
+class TestDataSourceJob:
+    def test_source_file_url(self, job_factory, default_storage, mocker):
+        job = job_factory()
+        url = f"http://localhost/files/{job.source_file_path}?key=123&secret=456"
+        mocker.patch.object(default_storage, "url", return_value=url)
+
+        assert job.source_file_url == f"{url}&versionId={job.source_file_version}"
+
+    def test_source_file_url_without_file_path(self, job_factory, default_storage):
+        job = job_factory(source_file_path="")
+
+        assert job.source_file_url == ""
+
+    def test_source_file_url_without_file_version(self, job_factory, default_storage, mocker):
+        job = job_factory(source_file_version="")
+        url = f"http://localhost/files/{job.source_file_path}?key=123&secret=456"
+        mocker.patch.object(default_storage, "url", return_value=url)
+
+        assert job.source_file_url == url

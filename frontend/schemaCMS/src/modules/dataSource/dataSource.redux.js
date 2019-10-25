@@ -1,6 +1,7 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
+import { sort, descend, prop } from 'ramda';
 
 const prefix = 'DATA_SOURCE/';
 
@@ -10,7 +11,6 @@ export const DataSourceRoutines = {
   fetchOne: createRoutine(`${prefix}FETCH_ONE`),
   fetchList: createRoutine(`${prefix}FETCH_LIST`),
   updateOne: createRoutine(`${prefix}UPDATE_ONE`),
-  processOne: createRoutine(`${prefix}PROCESS_ONE`),
   unmountOne: createRoutine(`${prefix}UNMOUNT_ONE`),
   fetchFields: createRoutine(`${prefix}FETCH_FIELDS`),
   unmountFields: createRoutine(`${prefix}UNMOUNT_FIELDS`),
@@ -24,8 +24,10 @@ export const INITIAL_STATE = new Immutable({
   previewTable: [],
 });
 
+const sortByDate = sort(descend(prop('created')));
+
 const updateDataSource = (state = INITIAL_STATE, { payload }) => state.set('dataSource', payload);
-const updateDataSources = (state = INITIAL_STATE, { payload }) => state.set('dataSources', payload);
+const updateDataSources = (state = INITIAL_STATE, { payload }) => state.set('dataSources', sortByDate(payload));
 const unmountDataSource = (state = INITIAL_STATE) => state.set('dataSource', {});
 
 const updateFields = (state = INITIAL_STATE, { payload }) =>
@@ -40,5 +42,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.unmountOne.TRIGGER]: unmountDataSource,
   [DataSourceRoutines.fetchList.SUCCESS]: updateDataSources,
   [DataSourceRoutines.fetchFields.SUCCESS]: updateFields,
-  [DataSourceRoutines.unmountFields.SUCCESS]: unmountFields,
+  [DataSourceRoutines.unmountFields.TRIGGER]: unmountFields,
 });

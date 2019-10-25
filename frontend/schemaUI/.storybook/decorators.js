@@ -1,6 +1,12 @@
 import React, { Fragment } from 'react';
 
+import { ThemeProvider } from '../components/styles/themeProvider';
+import { Theme } from '../utils/theme';
 import { fontFormats, interFontFaces } from './fonts';
+
+export const withTheme = (theme = Theme.dark) => (story) => (
+  <ThemeProvider theme={theme}>{story()}</ThemeProvider>
+);
 
 const prepareFontFace = ({ style, weight, files }) => {
   const srcs = fontFormats.map((format, index) => `url(${files[index]}) format('${format}')`);

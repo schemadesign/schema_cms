@@ -32,10 +32,6 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
     type = project_constants.DataSourceType.FILE
     file = factory.django.FileField(filename="test.csv", from_func=utils_test.make_csv)
 
-    class Params:
-        draft = factory.Trait(status=project_constants.DataSourceStatus.DRAFT)
-        ready_for_processing = factory.Trait(status=project_constants.DataSourceStatus.READY_FOR_PROCESSING)
-
     @factory.post_generation
     def meta_data_update(self, create, extracted, **kwargs):
         if self.file:
@@ -50,3 +46,30 @@ class DataSourceMetaFactory(factory.django.DjangoModelFactory):
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
     items = factory.Faker("pyint", min_value=0, max_value=9999)
     fields = factory.Faker("pyint", min_value=0, max_value=20)
+
+
+class ScriptFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.WranglingScript"
+
+    datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
+    name = factory.Faker("text", max_nb_chars=project_constants.SCRIPT_NAME_MAX_LENGTH)
+    created_by = factory.SubFactory(UserFactory)
+    file = factory.django.FileField(filename="test.py", from_func=utils_test.make_script)
+
+
+class JobFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.DataSourceJob"
+
+    datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
+    source_file_path = factory.SelfAttribute(".datasource.file.name")
+    source_file_version = factory.Faker("uuid4")
+
+
+class JobStepFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.DataSourceJobStep"
+
+    datasource_job = factory.SubFactory(JobFactory)
+    script = factory.SubFactory(ScriptFactory)

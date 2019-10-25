@@ -4,7 +4,7 @@
 
 **Request**:
 
-`GET` `/api/v1/projects/<project id>/datasources`
+`GET` `/api/v1/projects/:id/datasources`
 
 *Note:*
 
@@ -33,6 +33,12 @@ Content-Type: application/json
         "items": 2419,
         "fields": 3,
         "preview": "http://localhost:8000/static/preview_file.json"
+      },
+      "job": {
+        "id": 2,
+        "job_state": "pending",
+        "created": "2019-10-03T09:22:24+0000",
+        "modified": "2019-10-03T09:22:24+0000"
       }
     },
     {
@@ -45,6 +51,75 @@ Content-Type: application/json
         "items": 3179,
         "fields": 9,
         "preview": "http://localhost:8000/static/preview_file.json"
+      },
+      "job": {
+        "id": 3,
+        "job_state": "pending",
+        "created": "2019-10-03T09:22:24+0000",
+        "modified": "2019-10-03T09:22:24+0000"
+      }
+    }
+  ]
+}
+```
+
+## Get list of user's data sources
+
+**Request**:
+
+`GET` `/api/v1/datasources`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 Created
+   
+
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 99,
+      "name": "Decade appear world.",
+      "project": 285,
+      "type": "file",
+      "file": "http://localhost:8000/static/file.csv",
+      "meta_data": {
+        "items": 2419,
+        "fields": 3,
+        "preview": "http://localhost:8000/static/preview_file.json"
+       },
+      "job": {
+        "id": 2,
+        "job_state": "pending",
+        "created": "2019-10-03T09:22:24+0000",
+        "modified": "2019-10-03T09:22:24+0000"
+      }
+    },
+    {
+      "id": 98,
+      "name": "Also entire machine lay.",
+      "project": 285,
+      "type": "file",
+      "file": "http://localhost:8000/static/file.csv",
+      "meta_data": {
+        "items": 3179,
+        "fields": 9,
+        "preview": "http://localhost:8000/static/preview_file.json"
+      },
+      "job": {
+        "id": 3,
+        "job_state": "pending",
+        "created": "2019-10-03T09:22:24+0000",
+        "modified": "2019-10-03T09:22:24+0000"
       }
     }
   ]
@@ -56,13 +131,14 @@ Content-Type: application/json
 
 **Request**:
 
-`POST` `/api/v1/projects/<project id>/datasources`
+`POST` `/api/v1/datasources`
 
 Parameters:
 
 Name       | Type   | Description
 -----------|--------|---
 name       | string | The title of the project object.
+project    | int    | Project's ID
 type       | enum   | Type of source. [One of Data source statuses](#enums).
 file       | file   | The CSV file.
 
@@ -101,7 +177,7 @@ Content-Type: application/json
 
 **Request**:
 
-`PUT` `/api/v1/projects/<project id>/datasources/<data source id>`
+`PUT` `/api/v1/datasources/:id`
 
 Parameters:
 
@@ -141,6 +217,149 @@ Content-Type: application/json
 }
 ```
 
+## Get list of available data source scripts
+
+**Request**:
+
+`GET` `/api/v1/datasources/:id/script`
+
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+
+[
+    {
+        "name": "use first 10 rows",
+        "body": "df = df.head(10)\n",
+        "is_predefined": false,
+        "file": "http://localhost:8000/scripts/use_first_10_rows.py"
+    },
+]
+```
+
+## Upload data source's script
+
+**Request**:
+
+`POST` `/api/v1/datasources/:id/script-upload`
+
+Parameters:
+
+Name       | Type   | Description
+-----------|--------|-------------
+name       | string | Script name
+script     | file   | Python file
+
+
+*Note:*
+
+- Request's content type: `multipart/form-data`
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+201 Created
+```
+
+## Create new data source's job
+
+**Request**:
+
+`POST` `/api/v1/datasources/:id/job`
+
+Parameters:
+
+Name       | Type                   | Description
+-----------|------------------------|------
+steps      | array[[step](#step)]   | List of steps to execute
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+201 Created
+```
+
 
 ## Enums
 Data source statuses: `file`, `database`, `api`
+
+## Structures
+
+#### Step
+
+Name       | Type   | Description
+-----------|--------|---
+script     | int    | Script ID
+exec_order | int    | Order of step
+
+## Get data source jobs history
+
+**Request**:
+
+`GET` `/api/v1/datasources/:id/jobs-history`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+        {
+            "pk": 2,
+            "datasource": 1,
+            "steps": [
+                {
+                    "script": 1,
+                    "exec_order": 0
+                }
+            ],
+            "job_state": "pending",
+            "result": null,
+            "error": ""
+        },
+        {
+            "pk": 1,
+            "datasource": 1,
+            "steps": [
+                {
+                    "script": 1,
+                    "exec_order": 0
+                }
+            ],
+            "job_state": "success",
+            "result": "http://localhost:8000/schemacms/storage/projects/1/datasources/1/test_data_Job#1_result.csv",
+            "error": ""
+        }
+    ]
+}
+```

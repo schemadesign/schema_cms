@@ -1,7 +1,3 @@
-import pandas as pd
-
-df = pd.read_csv()
-
 # Drop Duplicate Rows
 df = df.drop_duplicates()
 

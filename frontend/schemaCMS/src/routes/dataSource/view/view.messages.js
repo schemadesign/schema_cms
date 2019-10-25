@@ -26,6 +26,10 @@ export default defineMessages({
     id: 'dataSource.view.dataWrangling',
     defaultMessage: 'Data Wrangling',
   },
+  dataWranglingResult: {
+    id: 'dataSource.view.dataWranglingResult',
+    defaultMessage: 'Data Wrangling Result',
+  },
   removeDataSource: {
     id: 'dataSource.view.removeDataSource',
     defaultMessage: 'Remove Data Source',
@@ -33,5 +37,17 @@ export default defineMessages({
   dataSourceList: {
     id: 'dataSource.view.dataSourceList',
     defaultMessage: 'Data source list',
+  },
+  cancelRemoval: {
+    id: 'dataSource.view.cancelRemoval',
+    defaultMessage: 'Cancel',
+  },
+  confirmRemoval: {
+    id: 'dataSource.view.confirmRemoval',
+    defaultMessage: 'Confirm',
+  },
+  removeTitle: {
+    id: 'dataSource.view.removeTitle',
+    defaultMessage: 'Are you sure you want to remove the data source?',
   },
 });

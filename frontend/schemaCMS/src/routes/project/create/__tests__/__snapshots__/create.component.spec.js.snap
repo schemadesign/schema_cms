@@ -10,6 +10,7 @@ exports[`Create: Component should render correctly 1`] = `
     onSubmit={[Function]}
   >
     <TextInput
+      checkOnlyErrors={false}
       errors={Object {}}
       fullWidth={true}
       handleChange={[Function]}
@@ -33,6 +34,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <TextInput
+      checkOnlyErrors={false}
       errors={Object {}}
       fullWidth={true}
       handleChange={[Function]}
@@ -55,6 +57,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <TextInput
+      checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}
       fullWidth={true}
@@ -78,6 +81,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <Select
+      id="fieldProjectStatus"
       label="Status"
       name="status"
       onSelect={[Function]}
@@ -106,6 +110,7 @@ exports[`Create: Component should render correctly 1`] = `
       right={false}
     >
       <BackButton
+        disabled={false}
         onClick={[Function]}
       >
         <FormattedMessage
@@ -114,10 +119,12 @@ exports[`Create: Component should render correctly 1`] = `
           values={Object {}}
         />
       </BackButton>
-      <NextButton>
+      <NextButton
+        loading={false}
+      >
         <FormattedMessage
-          defaultMessage="Submit"
-          id="project.create.submit"
+          defaultMessage="Finish"
+          id="project.create.finish"
           values={Object {}}
         />
       </NextButton>

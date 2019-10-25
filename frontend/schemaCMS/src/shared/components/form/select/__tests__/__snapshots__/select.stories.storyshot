@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components/Form/Select Default 1`] = `
+exports[`Storyshots Shared Components|Form/Select Default 1`] = `
 <div>
   <div
-    className="sc-jqCOkK brHQCA"
+    className="sc-hqyNC jtgwqa"
   >
     <label
       style={

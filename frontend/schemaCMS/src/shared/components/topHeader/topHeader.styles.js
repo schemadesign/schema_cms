@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: calc(100% - 50px);
+`;
 
 export const HeaderWrapper = styled.div``;
 
@@ -40,11 +42,11 @@ export const Item = styled.li`
 
 export const PrimaryItem = styled(Item)`
   font-size: 24px;
-  border-bottom: 2.4px solid ${({ theme }) => theme.border};
+  border-bottom: 2.4px solid ${({ theme }) => theme.header.border};
   padding: 8px 0 13px;
 
   &:first-of-type {
-    border-top: 2.4px solid ${({ theme }) => theme.border};
+    border-top: 2.4px solid ${({ theme }) => theme.header.border};
   }
 `;
 

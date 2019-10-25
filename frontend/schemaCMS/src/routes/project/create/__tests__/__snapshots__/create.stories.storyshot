@@ -10,10 +10,10 @@ exports[`Storyshots Project/Create Default 1`] = `
   }
 >
   <div
-    className="sc-kpOJdX jngVMi"
+    className="sc-jbKcbu cWSlbe"
   >
     <div
-      className="sc-bdVaJa bDWFJH"
+      className="sc-jDwBTQ fRXXnG"
     >
       <div
         style={
@@ -23,14 +23,14 @@ exports[`Storyshots Project/Create Default 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": "18px 0",
+            "paddingBottom": "18px",
             "width": "100%",
           }
         }
       >
         <div>
           <div
-            className="sc-bwzfXH uTxCW"
+            className="sc-gPEVay eQYmiW"
           >
             <h2
               id="headerTitle"
@@ -63,6 +63,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           </div>
         </div>
         <button
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -122,10 +123,10 @@ exports[`Storyshots Project/Create Default 1`] = `
         }
       >
         <div
-          className="sc-htpNat KtFsv"
+          className="sc-iRbamj blSEcj"
         >
           <div
-            className="sc-bwzfXH uTxCW"
+            className="sc-gPEVay eQYmiW"
           >
             <h2
               id="headerTitle"
@@ -158,16 +159,17 @@ exports[`Storyshots Project/Create Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-bxivhb fxvYgT"
+          className="sc-jlyJG ivDHoW"
         >
           <ul
-            className="sc-ifAKCX sc-EHOje bVzUGK"
+            className="sc-gipzik sc-csuQGl kTeIRg"
           />
           <ul
-            className="sc-ifAKCX sc-bZQynM hRyDTQ"
+            className="sc-gipzik sc-Rmtcm iXyibh"
           />
         </div>
         <button
+          disabled={false}
           id="topHeaderCloseMenuButton"
           onClick={[Function]}
           style={
@@ -209,11 +211,11 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-uJMKN epzktB"
+      className="sc-dNLxif hnPUCb"
       onSubmit={[Function]}
     >
       <div
-        className="sc-caSCKo jjNSwx"
+        className="sc-gZMcBi giNnHm"
       >
         <div
           style={
@@ -273,7 +275,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-caSCKo jjNSwx"
+        className="sc-gZMcBi giNnHm"
       >
         <div
           style={
@@ -332,7 +334,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-caSCKo jjNSwx"
+        className="sc-gZMcBi giNnHm"
       >
         <div
           style={
@@ -367,6 +369,7 @@ exports[`Storyshots Project/Create Default 1`] = `
             id="owner"
             name="owner"
             onChange={[Function]}
+            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -391,7 +394,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-jqCOkK brHQCA"
+        className="sc-hqyNC jtgwqa"
       >
         <label
           style={
@@ -425,6 +428,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           }
         >
           <div
+            id="fieldProjectStatus"
             style={
               Object {
                 "cursor": "pointer",
@@ -475,7 +479,7 @@ exports[`Storyshots Project/Create Default 1`] = `
               }
             >
               <div
-                id="select-item-0"
+                id="fieldProjectStatusselect-item-0"
                 onClick={[Function]}
                 style={
                   Object {
@@ -489,7 +493,7 @@ exports[`Storyshots Project/Create Default 1`] = `
                 In Progress
               </div>
               <div
-                id="select-item-1"
+                id="fieldProjectStatusselect-item-1"
                 onClick={[Function]}
                 style={
                   Object {
@@ -503,7 +507,7 @@ exports[`Storyshots Project/Create Default 1`] = `
                 Done
               </div>
               <div
-                id="select-item-2"
+                id="fieldProjectStatusselect-item-2"
                 onClick={[Function]}
                 style={
                   Object {
@@ -517,7 +521,7 @@ exports[`Storyshots Project/Create Default 1`] = `
                 Hold
               </div>
               <div
-                id="select-item-3"
+                id="fieldProjectStatusselect-item-3"
                 onClick={[Function]}
                 style={
                   Object {
@@ -535,12 +539,13 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-kkGfuU cbFdcv"
+        className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-iAyFgw fPviBc"
+          className="sc-dnqmqq jpGIQI"
         >
           <button
+            disabled={false}
             onClick={[Function]}
             style={
               Object {
@@ -566,6 +571,7 @@ exports[`Storyshots Project/Create Default 1`] = `
             </span>
           </button>
           <button
+            disabled={false}
             style={
               Object {
                 "backgroundColor": "#FFF",
@@ -586,7 +592,7 @@ exports[`Storyshots Project/Create Default 1`] = `
             }
           >
             <span>
-              Submit
+              Finish
             </span>
           </button>
         </div>

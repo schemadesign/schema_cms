@@ -10,6 +10,7 @@ import sinonChai from 'sinon-chai';
 import chaiJestDiff from 'chai-jest-diff';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
+import ReactModal from 'react-modal';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -21,6 +22,9 @@ chai.config.includeStack = true;
 nock.disableNetConnect();
 
 MockDate.set('2019-12-01T01:00:00Z');
+
+ReactModal.setAppElement = Function.prototype;
+jest.doMock('react-modal', () => ReactModal);
 jest.doMock('dayjs', () => dayjs);
 jest.doMock('react-syntax-highlighter/dist/esm/styles/hljs', () => ({
   docco: {},

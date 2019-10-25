@@ -2,6 +2,7 @@
 
 set -e
 
+SECRET_MANAGER_ENDPOINT_URL=http://localstack:4584
 LAMBDA_EP=http://localstack:4574
 API_GTW_EP=http://localstack:4567
 S3_ENDPOINT_URL=http://localstack:4572
@@ -13,6 +14,7 @@ WORKER_FAILURE_FUNCTION_NAME=worker-failure
 PUBLIC_API_GTW_NAME=rest-api
 API_STAGE="test"
 WORKER_STATE_MACHINE_NAME="workers-stm"
+DB_SECRET_ARN="dbSecret"
 
 function wait_for_secretsmanager {
   until aws --no-sign-request --endpoint-url="$SECRET_MANAGER_ENDPOINT_URL" secretsmanager list-secrets; do
@@ -151,6 +153,13 @@ function create_s3_bucket {
   aws --no-sign-request --endpoint-url=$S3_ENDPOINT_URL \
       --region $AWS_DEFAULT_REGION \
       s3 mb "s3://$1"
+}
+
+
+function put_bucket_versioning {
+    aws --no-sign-request --endpoint-url=$S3_ENDPOINT_URL \
+        --region $AWS_DEFAULT_REGION
+        s3api put-bucket-versioning --bucket $1 --versioning-configuration Status=Enabled
 }
 
 function create_sqs_queue {

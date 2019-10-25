@@ -1,7 +1,7 @@
 FROM python:3.7.4-slim-buster
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install awscli
+RUN pip install awscli gevent
 
 # Allows docker to cache installed dependencies between builds
 COPY ./requirements.txt /app/
@@ -16,4 +16,5 @@ EXPOSE 8000
 # Migrates the database, uploads staticfiles, and runs the production server
 CMD ./manage.py migrate && \
     ./manage.py initialuser && \
-    gunicorn --bind 0.0.0.0:8000 --access-logfile - schemacms.wsgi:application
+    ./manage.py loadscripts && \
+    gunicorn --worker-class=gevent --log-level=DEBUG --bind 0.0.0.0:8000 --timeout 60 --graceful-timeout 30  --access-logfile - schemacms.wsgi:application

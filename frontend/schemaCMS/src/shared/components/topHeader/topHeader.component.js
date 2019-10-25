@@ -22,8 +22,8 @@ const { H1, H2 } = Typography;
 
 export class TopHeader extends PureComponent {
   static propTypes = {
-    headerTitle: PropTypes.string,
-    headerSubtitle: PropTypes.string,
+    headerTitle: PropTypes.node,
+    headerSubtitle: PropTypes.node,
     primaryMenuItems: PropTypes.array,
     secondaryMenuItems: PropTypes.array,
   };

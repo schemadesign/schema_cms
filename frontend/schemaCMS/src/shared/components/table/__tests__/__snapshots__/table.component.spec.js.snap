@@ -138,6 +138,44 @@ exports[`Table: Component should render correctly 1`] = `
           Spain
         </styled.td>
       </styled.tr>
+      <styled.tr
+        key="5"
+      >
+        <styled.td>
+          6
+        </styled.td>
+        <styled.td
+          key="0"
+        >
+          —
+        </styled.td>
+        <styled.td
+          key="1"
+        >
+          Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
+        </styled.td>
+        <styled.td
+          key="2"
+        >
+          Sed eu dictum orci. In hac habitasse platea dictumst.
+  Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
+  elementum felis semper dapibus nec id ligula. Nullam vehicula urna
+  ac arcu scelerisque tincidunt. Vestibulum ante ipsum primis in
+  faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+  aliquet, nulla et tincidunt porttitor, eros risus pellentesque lorem,
+  in elementum dui magna ac sem. Nulla facilisi. In hac habitasse platea
+  dictumst. Sed eu dictum orci. In hac habitasse platea dictumst.
+
+        </styled.td>
+      </styled.tr>
     </styled.tbody>
   </styled.table>
 </styled.div>

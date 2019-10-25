@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User List: Component should render correctly 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Add User"
+        id="userList.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userList.headerTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <UserList
+    users={Array []}
+  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="userList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <PlusButton
+      id="addUserBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`User List: Component should render correctly with users data 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Add User"
+        id="userList.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userList.headerTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <UserList
+    users={
+      Array [
+        Object {
+          "firstName": "John",
+          "lastName": "Doe",
+        },
+        Object {
+          "firstName": "Alan",
+          "lastName": "Watts",
+        },
+      ]
+    }
+  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="userList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <PlusButton
+      id="addUserBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;

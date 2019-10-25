@@ -9,7 +9,7 @@ class ProjectQuerySet(models.QuerySet):
         return self.annotate(data_source_count=models.Count("data_sources"))
 
 
-class DataSourceManager(models.Manager):
+class DataSourceQuerySet(models.QuerySet):
     def create(self, *args, **kwargs):
         file = kwargs.pop("file", None)
 
@@ -22,6 +22,15 @@ class DataSourceManager(models.Manager):
                 dsource.save()
 
             if file:
+                dsource.update_meta(file=file, file_name=file.name)
+                file.seek(0)
                 dsource.file.save(file.name, file)
 
         return dsource
+
+    def available_for_user(self, user):
+        """Return Datasouces available for user. If user is admin then return all datasources
+        else returns datasources where user is assigned as project's editor"""
+        if user.is_admin:
+            return self
+        return self.filter(project__editors=user)

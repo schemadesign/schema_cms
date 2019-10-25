@@ -6,6 +6,7 @@ from auth0.v3 import authentication
 from auth0.v3 import management
 from django.conf import settings
 from django.core import exceptions
+from django.utils import crypto
 
 from . import base
 from .. import constants
@@ -23,34 +24,34 @@ class Auth0UserManagement(base.BaseUserManagement):
             raise exceptions.ImproperlyConfigured(
                 "Missing or invalid USER_MGMT_AUTH0_DOMAIN setting, got: {}".format(repr(self.domain))
             )
-        self.token = self._get_token(self.domain)
-        self.proxy = management.Auth0(self.domain, self.token)
+
+    @property
+    def token(self):
+        """Retrieve a new token from auth0"""
+        return self._get_token(self.domain)
+
+    @property
+    def proxy(self):
+        """Returns initialized management.Auth0 object with token"""
+        return management.Auth0(self.domain, self.token)
 
     def create_user(self, user: models.User):
-        # We need at least 1 big letter and 1 digit
-        password = "".join(
-            [
-                type(user).objects.make_random_password(length=4, allowed_chars="ABCDEFGHJKLMNPQRSTUVWXYZ"),
-                type(user).objects.make_random_password(length=4, allowed_chars="23456789"),
-                type(user).objects.make_random_password(length=4, allowed_chars="!@#$%^&*"),
-                type(user).objects.make_random_password(length=4),
-            ]
-        )
-
         body = {
             "user_id": str(user.id),
             "email": user.email,
-            "password": password,
+            "password": self._generate_password(),
             "connection": self.connection,
             "email_verified": False,
             "verify_email": False,
+            "given_name": user.first_name or "-",
+            "family_name": user.last_name or "-",
         }
-        if user.first_name:
-            body["given_name"] = user.first_name
-        if user.last_name:
-            body["family_name"] = user.first_name
-
         return self.proxy.users.create(body)
+
+    def delete_user(self, user) -> bool:
+        if not user.external_id:
+            return False
+        return self.proxy.users.delete(user.external_id)
 
     def password_change_url(self, user: models.User):
         login_url = self.get_login_url()
@@ -90,3 +91,14 @@ class Auth0UserManagement(base.BaseUserManagement):
             settings.USER_MGMT_AUTH0_KEY, settings.USER_MGMT_AUTH0_SECRET, "https://{}/api/v2/".format(domain)
         )
         return token["access_token"]
+
+    @classmethod
+    def _generate_password(cls):
+        return "".join(
+            [
+                crypto.get_random_string(length=4, allowed_chars="ABCDEFGHJKLMNPQRSTUVWXYZ"),
+                crypto.get_random_string(length=4, allowed_chars="23456789"),
+                crypto.get_random_string(length=4, allowed_chars="!@#$%^&*"),
+                crypto.get_random_string(length=4),
+            ]
+        )

@@ -1,7 +1,7 @@
 import Immutable from 'seamless-immutable';
 import { expectSaga } from 'redux-saga-test-plan';
 import * as effects from 'redux-saga/effects';
-import { OK } from 'http-status-codes';
+import { BAD_REQUEST, OK } from 'http-status-codes';
 import nock from 'nock';
 
 import { watchDataSource } from '../dataSource.sagas';
@@ -27,7 +27,7 @@ describe('DataSource: sagas', () => {
         status: STATUS_DRAFT,
       };
 
-      mockApi.post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`, requestData).reply(OK, responseData);
+      mockApi.post(`${DATA_SOURCES_PATH}`, requestData).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -45,9 +45,7 @@ describe('DataSource: sagas', () => {
         status: STATUS_DONE,
       };
 
-      mockApi
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`)
-        .reply(OK, responseData);
+      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -62,14 +60,14 @@ describe('DataSource: sagas', () => {
     const responseData = {
       results: [
         {
-          status: STATUS_READY_FOR_PROCESSING,
+          jobs: [{ id: 1, jobState: 'processing' }],
         },
       ],
     };
     const responseDoneData = {
       results: [
         {
-          status: STATUS_DONE,
+          jobs: [{ id: 1, jobState: 'succeed' }],
         },
       ],
     };
@@ -79,7 +77,9 @@ describe('DataSource: sagas', () => {
     });
 
     it('should dispatch a success action', async () => {
-      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`).reply(OK, responseDoneData);
+      mockApi
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
+        .reply(OK, responseDoneData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -88,11 +88,11 @@ describe('DataSource: sagas', () => {
         .silentRun();
     });
 
-    it('should dispatch a success actions until processing of some elements finish', async () => {
+    it('should dispatch a success action until processing of some elements finish', async () => {
       mockApi
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`)
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
         .reply(OK, responseData)
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`)
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
         .reply(OK, responseDoneData);
 
       await expectSaga(watchDataSource)
@@ -105,7 +105,7 @@ describe('DataSource: sagas', () => {
     });
 
     it('should dispatch once fulfill actions after cancel', async () => {
-      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}`).reply(OK, responseData);
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -120,7 +120,7 @@ describe('DataSource: sagas', () => {
     it('should dispatch a success action', async () => {
       const payload = { projectId: '1', dataSourceId: '1' };
 
-      mockApi.delete(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(OK);
+      mockApi.delete(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(OK);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
@@ -137,78 +137,71 @@ describe('DataSource: sagas', () => {
       step: '1',
       requestData: {
         data: 'data',
+        name: 'name',
       },
     };
     const responseData = {
       id: 1,
+      project: 1,
       status: STATUS_DRAFT,
     };
 
-    beforeEach(() => {
-      const options = {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      };
+    describe('on success', () => {
+      beforeEach(() => {
+        const options = {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        };
 
-      mockApi
-        .patch(
-          `${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}`,
-          /form-data; name="data"[^]*data/m,
-          options
-        )
-        .reply(OK, responseData);
+        mockApi
+          .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, /form-data; name="data"[^]*data/m, options)
+          .reply(OK, responseData);
 
-      mockApi
-        .post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`)
-        .reply(OK);
+        mockApi
+          .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, { name: payload.requestData.name }, options)
+          .reply(OK, responseData);
+      });
+
+      it('should dispatch a success action', async () => {
+        await expectSaga(watchDataSource)
+          .withState(defaultState)
+          .put(DataSourceRoutines.updateOne.success(responseData))
+          .dispatch(DataSourceRoutines.updateOne(payload))
+          .silentRun();
+      });
+
+      it('should should redirect to next step', async () => {
+        jest.spyOn(browserHistory, 'push');
+
+        await expectSaga(watchDataSource)
+          .withState(defaultState)
+          .dispatch(DataSourceRoutines.updateOne(payload))
+          .silentRun();
+
+        expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
+      });
+
+      it('should redirect to next step after send file', async () => {
+        jest.spyOn(browserHistory, 'push');
+        payload.requestData.file = 'file';
+
+        await expectSaga(watchDataSource)
+          .withState(defaultState)
+          .dispatch(DataSourceRoutines.updateOne(payload))
+          .silentRun();
+
+        expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
+      });
     });
 
-    it('should dispatch a success action', async () => {
+    it('should dispatch a failure action', async () => {
+      const errorResponseData = { name: [{ code: 'code', message: 'message' }] };
+      const errorResult = [{ code: 'code', name: 'name' }];
+      mockApi.patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(BAD_REQUEST, errorResponseData);
+
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(DataSourceRoutines.updateOne.success(responseData))
+        .put(DataSourceRoutines.updateOne.failure(errorResult))
         .dispatch(DataSourceRoutines.updateOne(payload))
-        .silentRun();
-    });
-
-    it('should should redirect to next step', async () => {
-      jest.spyOn(browserHistory, 'push');
-
-      await expectSaga(watchDataSource)
-        .withState(defaultState)
-        .dispatch(DataSourceRoutines.updateOne(payload))
-        .silentRun();
-
-      expect(browserHistory.push).toBeCalledWith('/project/view/1/datasource/view/1/2');
-    });
-
-    it('should redirect to list', async () => {
-      jest.spyOn(browserHistory, 'push');
-      payload.requestData.file = 'file';
-
-      await expectSaga(watchDataSource)
-        .withState(defaultState)
-        .dispatch(DataSourceRoutines.updateOne(payload))
-        .silentRun();
-
-      expect(browserHistory.push).toBeCalledWith('/project/view/1/datasource/list');
-    });
-  });
-
-  describe('processOne', () => {
-    it('should dispatch a success action', async () => {
-      const payload = {
-        projectId: '1',
-        dataSourceId: '1',
-      };
-
-      mockApi
-        .post(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}/process`)
-        .reply(OK);
-
-      await expectSaga(watchDataSource)
-        .withState(defaultState)
-        .put(DataSourceRoutines.processOne.success())
-        .dispatch(DataSourceRoutines.processOne(payload))
         .silentRun();
     });
   });
@@ -221,12 +214,11 @@ describe('DataSource: sagas', () => {
           id: {},
           name: {},
         },
-        data: [{ id: '1', name: 'test' }],
+        // eslint-disable-next-line camelcase
+        data: [{ id: '1', name: 'test', snake_case_data: 'data' }],
       };
 
-      mockApi
-        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}/${payload.dataSourceId}/preview`)
-        .reply(OK, responseData);
+      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/preview`).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)

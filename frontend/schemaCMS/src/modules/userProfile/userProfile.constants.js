@@ -9,6 +9,7 @@ export const USER_PROFILE_FORM = 'user_profile_form';
 export const FIRST_NAME = 'firstName';
 export const LAST_NAME = 'lastName';
 export const EMAIL = 'email';
+export const ROLE = 'role';
 
 export const INITIAL_VALUES = {
   [FIRST_NAME]: '',

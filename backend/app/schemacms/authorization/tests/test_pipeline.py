@@ -142,11 +142,45 @@ class TestForbidLogInWhenNotRegistered:
         strategy._session = session_dict
         mgmt = backend_management.user_mgtm_backend
         email = "123@123.com"
-        expected_location = expected_location_template.format(
-            host=settings.DEFAULT_WEBAPP_HOST,
-            path="auth/not-registered"
-        ) + f"?{parse.urlencode(dict(email=email))}"
+        expected_location = (
+            expected_location_template.format(host=settings.DEFAULT_WEBAPP_HOST, path="auth/not-registered")
+            + f"?{parse.urlencode(dict(email=email))}"
+        )
 
         ret = pipeline.user_exist_in_db(backend, details={"email": email})
+
+        assert ret["Location"] == mgmt.get_logout_url(return_to=expected_location)
+
+
+class TestUserIsActive:
+    def test_user_is_active(self, backend, user_factory):
+        user = user_factory(is_active=True)
+
+        ret = pipeline.user_is_active(backend=backend, user=user)
+
+        assert ret is None
+
+    @pytest.mark.parametrize(
+        "session_dict, expected_location_template",
+        [
+            (dict(), "{host}/{path}"),
+            (dict(next="http://localhost.com"), "http://localhost.com/{path}"),
+            (dict(next="http://localhost.com/"), "http://localhost.com/{path}"),
+            (dict(next="http://localhost.com/abc"), "http://localhost.com/abc/{path}"),
+            (dict(next="http://localhost.com/def/"), "http://localhost.com/def/{path}"),
+        ],
+    )
+    def test_user_is_not_active(
+        self, backend, user_factory, settings, session_dict, expected_location_template
+    ):
+        user = user_factory(is_active=False)
+        backend.strategy._session = session_dict
+        mgmt = backend_management.user_mgtm_backend
+        expected_location = (
+            expected_location_template.format(host=settings.DEFAULT_WEBAPP_HOST, path="auth/not-registered")
+            + f"?{parse.urlencode(dict(email=user.email))}"
+        )
+
+        ret = pipeline.user_is_active(backend=backend, user=user)
 
         assert ret["Location"] == mgmt.get_logout_url(return_to=expected_location)

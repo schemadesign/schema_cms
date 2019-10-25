@@ -1,0 +1,12 @@
+{
+  "name": "lambda-worker",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless": "1.53.0",
+    "serverless-localstack": "^0.4.19",
+    "serverless-python-requirements": "^5.0.0",
+    "serverless-wsgi": "1.7.3"
+  }
+}

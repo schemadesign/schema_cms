@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { CheckboxGroup } from './checkboxGroup.component';
 import { Checkbox } from '../checkbox/checkbox.component';
+import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   name: 'name',
@@ -28,6 +29,6 @@ export const children = [
   </Checkbox>,
 ];
 
-storiesOf('Form/CheckboxGroup', module).add('Default', () => (
-  <CheckboxGroup {...defaultProps}>{children}</CheckboxGroup>
-));
+storiesOf('Form/CheckboxGroup', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <CheckboxGroup {...defaultProps}>{children}</CheckboxGroup>);

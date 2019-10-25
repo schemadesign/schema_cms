@@ -25,24 +25,29 @@ import {
   SOURCE_TYPE_DATABASE,
   SOURCE_TYPE_FILE,
 } from '../../../../modules/dataSource/dataSource.constants';
+import { StepNavigation } from '../../../../shared/components/stepNavigation';
+import { Uploader } from '../../../../shared/components/form/uploader';
+import { errorMessageParser } from '../../../../shared/utils/helpers';
 
-const { RadioGroup, RadioButton, Label, FileUpload } = Form;
+const { RadioGroup, RadioButton, Label } = Form;
 const { CsvIcon } = Icons;
 
 export class SourceComponent extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
-    bindSubmitForm: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     updateDataSource: PropTypes.func.isRequired,
     theme: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
-        projectId: PropTypes.string.isRequired,
         dataSourceId: PropTypes.string.isRequired,
         step: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
+  };
+
+  state = {
+    loading: false,
   };
 
   handleUploadChange = ({
@@ -55,13 +60,23 @@ export class SourceComponent extends PureComponent {
     setFieldValue('fileName', pathOr('', ['name'], uploadFile));
   };
 
-  handleSubmit = requestData => {
-    const { projectId, dataSourceId, step } = this.props.match.params;
-    this.props.updateDataSource({ requestData, projectId, dataSourceId, step });
+  handleSubmit = async (requestData, { setErrors }) => {
+    const { dataSourceId, step } = this.props.match.params;
+
+    try {
+      this.setState({ loading: true });
+      await this.props.updateDataSource({ requestData, dataSourceId, step });
+    } catch (errors) {
+      const { formatMessage } = this.props.intl;
+      const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+      setErrors(errorMessages);
+      this.setState({ loading: false });
+    }
   };
 
-  renderCsvUploader = ({ setFieldValue, fileName }) => (
-    <FileUpload
+  renderCsvUploader = ({ setFieldValue, fileName, ...restProps }) => (
+    <Uploader
       fileName={fileName}
       name={DATA_SOURCE_FILE}
       label={this.props.intl.formatMessage(messages.fileName)}
@@ -69,12 +84,13 @@ export class SourceComponent extends PureComponent {
       id="fileUpload"
       onChange={({ currentTarget }) => this.handleUploadChange({ currentTarget, setFieldValue })}
       accept=".csv,.tsv"
+      {...restProps}
     />
   );
 
-  renderSourceUpload = ({ setFieldValue, type, fileName }) =>
+  renderSourceUpload = ({ type, ...restProps }) =>
     cond([
-      [equals(SOURCE_TYPE_FILE), () => this.renderCsvUploader({ setFieldValue, fileName })],
+      [equals(SOURCE_TYPE_FILE), () => this.renderCsvUploader(restProps)],
       [equals(SOURCE_TYPE_API), () => {}],
       [equals(SOURCE_TYPE_DATABASE), () => {}],
       [T, always(null)],
@@ -98,21 +114,23 @@ export class SourceComponent extends PureComponent {
   };
 
   render() {
-    const { dataSource, bindSubmitForm, ...restProps } = this.props;
+    const { dataSource, ...restProps } = this.props;
+    const { loading } = this.state;
 
     return (
       <Container>
         <Formik
           enableReinitialize
-          isInitialValid
+          isInitialValid={!!dataSource.fileName}
           initialValues={omit(IGNORED_FIELDS, dataSource)}
           validationSchema={DATA_SOURCE_SCHEMA}
           onSubmit={this.handleSubmit}
         >
-          {({ handleChange, values: { name, type, fileName }, setFieldValue, submitForm, isValid }) => {
-            if (isValid) {
-              bindSubmitForm(submitForm);
+          {({ handleChange, values: { name, type, fileName }, submitForm, dirty, isValid, ...rest }) => {
+            if (!dirty && isValid) {
+              submitForm = null;
             }
+            const disabled = { next: !fileName || !isValid };
 
             return (
               <Fragment>
@@ -121,8 +139,9 @@ export class SourceComponent extends PureComponent {
                   onChange={handleChange}
                   name={DATA_SOURCE_NAME}
                   fullWidth
+                  checkOnlyErrors
                   label={this.props.intl.formatMessage(messages.name)}
-                  {...restProps}
+                  {...rest}
                 />
 
                 <Label customStyles={customLabelStyles}>
@@ -137,7 +156,14 @@ export class SourceComponent extends PureComponent {
                 >
                   {this.renderRadioButton(type)}
                 </RadioGroup>
-                {this.renderSourceUpload({ type, setFieldValue, fileName })}
+                {this.renderSourceUpload({ type, fileName, ...rest })}
+                <StepNavigation
+                  loading={loading}
+                  disabled={disabled}
+                  dataSource={dataSource}
+                  submitForm={submitForm}
+                  {...restProps}
+                />
               </Fragment>
             );
           }}

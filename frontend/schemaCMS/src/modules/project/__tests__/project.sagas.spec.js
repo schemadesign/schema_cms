@@ -9,6 +9,7 @@ import { watchProject } from '../project.sagas';
 import { ProjectRoutines } from '../project.redux';
 import { PROJECT_DESCRIPTION, PROJECT_OWNER, PROJECT_TITLE } from '../project.constants';
 import { selectUserData } from '../../userProfile';
+import browserHistory from '../../../shared/utils/history';
 
 describe('Project: sagas', () => {
   const defaultState = Immutable({
@@ -95,6 +96,33 @@ describe('Project: sagas', () => {
         .put(ProjectRoutines.createProject.success(item))
         .dispatch(ProjectRoutines.createProject({ payload }))
         .silentRun();
+    });
+
+    it('should redirect the user to project list', async () => {
+      jest.spyOn(browserHistory, 'push');
+
+      const currentUser = {
+        id: 1,
+        firstName: 'Joe',
+        lastName: 'Doe',
+      };
+
+      const payload = {
+        [PROJECT_TITLE]: 'Project Title',
+        [PROJECT_DESCRIPTION]: 'A Project Description',
+        [PROJECT_OWNER]: 'Joe Doe',
+      };
+
+      mockApi.post(PROJECTS_PATH).reply(OK, item);
+
+      await expectSaga(watchProject)
+        .withState(defaultState)
+        .provide([[select(selectUserData), currentUser]])
+        .put(ProjectRoutines.createProject.success(item))
+        .dispatch(ProjectRoutines.createProject({ payload }))
+        .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith('/project/');
     });
 
     it('should put ProjectRoutines.createProject.failure action', async () => {

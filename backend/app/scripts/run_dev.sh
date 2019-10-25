@@ -10,6 +10,8 @@ echo "Secrets manager is up"
 
 # install all localstack fixtures
 
+install_db_secret
+
 {
     create_public_api_lambda &&
     echo "Public API lambda function created"
@@ -31,6 +33,13 @@ LAMBDA_ARN=$(get_public_api_lambda_arn)
     echo "Scripts S3 bucket created"
 } || {
     echo "Scripts S3 bucket NOT created"
+}
+
+{
+    put_bucket_versioning "schemacms" &&
+    echo "Scripts S3 put bucket versioning done"
+} || {
+    echo "Scripts S3 put bucket versioning failed"
 }
 
 {
@@ -89,9 +98,8 @@ WORKER_SUCCESS_ARN=$(get_worker_success_lambda_arn)
 
 echo "LocalStack fixtures installed"
 
-export DB_CONNECTION="{\"host\": \"db\", \"username\": \"${POSTGRES_USER}\", \"password\": \"${POSTGRES_PASSWORD}\", \"port\": ${POSTGRES_PORT}}"
-
 python wait_for_postgres.py &&
                ./manage.py migrate &&
-               ./manage.py initialuser &&
+               ./manage.py initialuser
+               ./manage.py loadscripts &&
                ./manage.py runserver 0.0.0.0:8000

@@ -1,12 +1,21 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectUserProfileDomain, selectIsFetched } from '../userProfile.selectors';
+import {
+  selectUserProfileDomain,
+  selectIsFetched,
+  selectIsAdmin,
+  selectDataWranglingDetail,
+  selectUserData,
+} from '../userProfile.selectors';
+import { ROLES } from '../userProfile.constants';
 
 describe('UserProfile: selectors', () => {
   const state = Immutable({
     userProfile: {
       isFetched: false,
+      user: { role: ROLES.ADMIN },
+      dataWranglingDetail: { data: 'data' },
     },
   });
 
@@ -15,8 +24,28 @@ describe('UserProfile: selectors', () => {
       expect(selectUserProfileDomain(state)).to.equal(state.userProfile);
     });
 
-    it('should select if user is fetched', () => {
-      expect(selectIsFetched(state)).to.equal(state.userProfile.isFetched);
+    describe('selectIsFetched', () => {
+      it('should select if user is fetched', () => {
+        expect(selectIsFetched(state)).to.equal(state.userProfile.isFetched);
+      });
+    });
+
+    describe('selectUserData', () => {
+      it('should select user', () => {
+        expect(selectUserData(state)).to.equal(state.userProfile.user);
+      });
+    });
+
+    describe('selectDataWranglingDetail', () => {
+      it('should select dataWranglingDetail', () => {
+        expect(selectDataWranglingDetail(state)).to.equal(state.userProfile.dataWranglingDetail);
+      });
+    });
+
+    describe('selectIsAdmin', () => {
+      it('should select if user is admin', () => {
+        expect(selectIsAdmin(state)).to.equal(state.userProfile.user.role === ROLES.ADMIN);
+      });
     });
   });
 });

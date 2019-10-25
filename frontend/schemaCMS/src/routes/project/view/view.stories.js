@@ -12,10 +12,7 @@ const emptyProps = {
   user: {
     role: ROLES.ADMIN,
   },
-  project: {
-    id: '1',
-    error: {},
-  },
+  project: {},
   history: {
     push: Function.prototype,
   },
@@ -25,6 +22,7 @@ const emptyProps = {
     },
   },
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+  isAdmin: true,
 };
 
 export const defaultProps = {
@@ -54,4 +52,4 @@ storiesOf('Project/View', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('default', () => <View {...defaultProps} />)
-  .add('empty', () => <View {...emptyProps} />);
+  .add('loading', () => <View {...emptyProps} />);

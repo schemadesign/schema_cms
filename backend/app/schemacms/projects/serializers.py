@@ -1,12 +1,14 @@
-import django_fsm
+import os
+
 from django.db import transaction
-from rest_framework import serializers, exceptions
+from rest_framework import serializers, exceptions, validators
 
 from schemacms.projects import models
-from schemacms.projects import services
-from .models import DataSource, DataSourceMeta, Project
+from .constants import DataSourceJobState
+from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
+from .validators import CustomUniqueTogetherValidator
 
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
@@ -21,7 +23,14 @@ class DataSourceCreatorSerializer(serializers.ModelSerializer):
         fields = ("id", "first_name", "last_name")
 
 
+class DataSourceLastJobSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.DataSourceJob
+        fields = ("id", "job_state", "created", "modified")
+
+
 class DataSourceSerializer(serializers.ModelSerializer):
+    status = serializers.CharField(read_only=True, default="done")
     meta_data = DataSourceMetaSerializer(read_only=True)
     file_name = serializers.SerializerMethodField(read_only=True)
     created_by = NestedRelatedModelSerializer(
@@ -30,6 +39,8 @@ class DataSourceSerializer(serializers.ModelSerializer):
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
     error_log = serializers.SerializerMethodField()
+    project = serializers.PrimaryKeyRelatedField(read_only=True)
+    jobs = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = DataSource
@@ -38,18 +49,38 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "name",
             "created_by",
             "type",
-            "status",
             "file",
             "file_name",
             "created",
             "meta_data",
             "error_log",
+            "project",
+            "jobs",
+            "status",
         )
+
         extra_kwargs = {
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},
             "file": {"required": True, "allow_null": False},
         }
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=DataSource.objects.all(),
+                fields=('name', 'project'),
+                key_field_name="name",
+                message="DataSource with this name already exist in project.",
+            )
+        ]
+
+    def validate(self, attrs):
+        states = [DataSourceJobState.PROCESSING, DataSourceJobState.PENDING]
+
+        if attrs.get("file", None) and self.instance.jobs.filter(job_state__in=states).exists():
+            message = "You can't re-upload file when job is processing"
+            raise serializers.ValidationError({"file": message}, code="fileInProcessing")
+
+        return super().validate(attrs)
 
     def get_file_name(self, obj):
         if obj.file:
@@ -59,13 +90,19 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def get_error_log(self, obj):
         return []
 
+    def get_jobs(self, obj):
+        if obj.jobs.exists():
+            return DataSourceLastJobSerializer(obj.jobs.order_by("-created")[:5], many=True).data
+        else:
+            return []
+
     @transaction.atomic()
     def update(self, instance, validated_data):
+        file = validated_data.get("file", None)
+        if file:
+            instance.update_meta(file=file, file_name=file.name)
+            file.seek(0)
         obj = super().update(instance=instance, validated_data=validated_data)
-        user = self.context["request"].user
-        if django_fsm.has_transition_perm(obj.ready_for_processing, user):
-            obj.ready_for_processing()
-            obj.save()
         return obj
 
 
@@ -74,15 +111,28 @@ class DraftDataSourceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DataSource
-        fields = ("id", "name", "type", "file", "meta_data")
+        fields = ("id", "name", "type", "file", "meta_data", "project")
         extra_kwargs = {
             "name": {"required": False, "allow_null": True},
             "type": {"required": False, "allow_null": True},
             "file": {"required": False, "allow_null": True},
         }
+        validators = []  # do not validate tuple of (name, project)
+
+    def validate_project(self, project):
+        user = self.context["request"].user
+        if not project.user_has_access(user):
+            raise exceptions.PermissionDenied
+        return project
 
 
 class ProjectOwnerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "first_name", "last_name")
+
+
+class ProjectEditorSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ("id", "first_name", "last_name")
@@ -94,12 +144,11 @@ class ProjectSerializer(serializers.ModelSerializer):
         read_only=True,
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
-    editors = serializers.PrimaryKeyRelatedField(
+    editors = NestedRelatedModelSerializer(
+        read_only=True,
         many=True,
-        queryset=User.objects.all(),
         pk_field=serializers.UUIDField(format="hex_verbose"),
-        allow_empty=True,
-        required=False,
+        serializer=ProjectEditorSerializer(),
     )
     meta = serializers.SerializerMethodField()
 
@@ -117,70 +166,110 @@ class ProjectSerializer(serializers.ModelSerializer):
             "modified",
             "meta",
         )
+        extra_kwargs = {"title": {"validators": [validators.UniqueValidator(queryset=Project.objects.all())]}}
 
     def create(self, validated_data):
-        editors = validated_data.pop("editors", [])
         project = Project(owner=self.context["request"].user, **validated_data)
+        project.save()
 
-        with transaction.atomic():
-            project.save()
-            project.editors.add(*editors)
         return project
 
     def get_meta(self, project):
         return {"data_sources": {"count": project.data_source_count}}
 
 
-class DataSourceScriptSerializer(serializers.Serializer):
-    key = serializers.CharField()
-    body = serializers.SerializerMethodField()
+class WranglingScriptSerializer(serializers.ModelSerializer):
+    body = serializers.CharField(read_only=True)
+    created_by = NestedRelatedModelSerializer(
+        serializer=ProjectOwnerSerializer(),
+        read_only=True,
+        pk_field=serializers.UUIDField(format="hex_verbose"),
+    )
+    is_predefined = serializers.BooleanField(read_only=True)
+    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
-    def get_body(self, attr):
-        return attr['resource'].getvalue(attr['ref_key'])
+    class Meta:
+        model = WranglingScript
+        fields = ("id", "datasource", "name", "is_predefined", "created_by", "file", "body")
+        extra_kwargs = {"name": {"required": False, "allow_null": True}}
+
+    def create(self, validated_data):
+        datasource = self.initial_data["datasource"]
+        name = validated_data.pop('name', None)
+
+        if not name:
+            name = os.path.splitext(validated_data["file"].name)[0]
+
+        script = WranglingScript(
+            created_by=self.context["request"].user, name=name, datasource=datasource, **validated_data
+        )
+        script.is_predefined = False
+        script.save()
+
+        return script
 
 
-class DataSourceScriptUploadSerializer(serializers.Serializer):
-    script = serializers.FileField()
-
-    def update(self, instance, validated_data):
-        script_file = validated_data.get('script')
-        services.scripts.resources.get('s3').upload(instance, script_file)
-        return instance
+class DataSourceScriptSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WranglingScript
+        fields = ("id", "name", "is_predefined", "file", "body")
 
 
-class StepSerializer(serializers.Serializer):
-    key = serializers.CharField(max_length=255)
+class StepSerializer(serializers.ModelSerializer):
     exec_order = serializers.IntegerField(default=0)
 
-    def validate_key(self, attr):
-        spliced = attr.split(':')
-        if len(spliced) != 2:
-            raise exceptions.ValidationError('Invalid key format')
-        return attr
+    class Meta:
+        model = models.DataSourceJobStep
+        fields = ("script", "body", "exec_order")
 
 
-class DataSourceJobSerializer(serializers.ModelSerializer):
+class CreateJobSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True)
 
     class Meta:
         model = models.DataSourceJob
-        fields = ('pk', 'steps', 'job_state')
+        fields = ("pk", "description", "steps")
 
     def validate_steps(self, attr):
         if not attr:
-            raise exceptions.ValidationError('At least single step is required')
+            raise exceptions.ValidationError('At least single step is required', code="missingSteps")
         return attr
 
+    @transaction.atomic()
     def create(self, validated_data):
+        datasource = self.initial_data["datasource"]
         steps = validated_data.pop('steps')
-        job = models.DataSourceJob.objects.create(**validated_data)
-        for step in steps:
-            step_key = step['key']
-            step_resource, ref_key = services.scripts.responsible(key=step_key)
-            models.DataSourceJobStep.objects.create(
-                datasource_job=job,
-                key=step_key,
-                exec_order=step['exec_order'],
-                body=step_resource.getvalue(ref_key),
-            )
+        job = datasource.create_job(**validated_data)
+        models.DataSourceJobStep.objects.bulk_create(self.create_steps(steps, job))
         return job
+
+    @staticmethod
+    def create_steps(steps, job):
+        for step in steps:
+            step_instance = models.DataSourceJobStep()
+            step_instance.script = step["script"]
+            step_instance.body = step["script"].body
+            step_instance.datasource_job = job
+            step_instance.exec_order = step["exec_order"]
+            yield step_instance
+
+
+class DataSourceJobSerializer(serializers.ModelSerializer):
+    steps = StepSerializer(many=True, read_only=True)
+    result = serializers.FileField(read_only=True)
+    error = serializers.CharField(read_only=True)
+    job_state = serializers.CharField(read_only=True)
+    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
+
+    class Meta:
+        model = models.DataSourceJob
+        fields = (
+            "pk",
+            "datasource",
+            "description",
+            "steps",
+            "job_state",
+            "result",
+            "error",
+            "source_file_url",
+        )

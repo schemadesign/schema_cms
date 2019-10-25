@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
@@ -9,19 +9,19 @@ import { compose } from 'ramda';
 import { View } from './view.component';
 import { ProjectRoutines } from '../../../modules/project';
 import { selectProject } from '../../../modules/project/project.selectors';
-import { selectUserData } from '../../../modules/userProfile/userProfile.selectors';
+import { selectIsAdmin } from '../../../modules/userProfile/userProfile.selectors';
 
 const mapStateToProps = createStructuredSelector({
-  user: selectUserData,
+  isAdmin: selectIsAdmin,
   project: selectProject,
 });
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators(
+  bindPromiseCreators(
     {
-      fetchProject: ProjectRoutines.fetchOne,
-      unmountProject: ProjectRoutines.unmountOne,
-      removeProject: ProjectRoutines.removeOne,
+      fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
+      unmountProject: promisifyRoutine(ProjectRoutines.unmountOne),
+      removeProject: promisifyRoutine(ProjectRoutines.removeOne),
     },
     dispatch
   );

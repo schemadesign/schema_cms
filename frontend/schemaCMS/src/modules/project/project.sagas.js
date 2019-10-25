@@ -34,7 +34,7 @@ function* createProject({ payload }) {
     const { data } = yield api.post(PROJECTS_PATH, parsedPayload);
 
     yield put(ProjectRoutines.createProject.success(data));
-    browserHistory.push('/project/list');
+    browserHistory.push('/project/');
   } catch (e) {
     yield put(ProjectRoutines.createProject.failure());
   } finally {
@@ -64,12 +64,39 @@ function* removeOne({ payload }) {
     yield put(ProjectRoutines.removeOne.request());
     yield api.delete(`${PROJECTS_PATH}/${payload.projectId}`);
 
-    browserHistory.push('/project/list');
+    browserHistory.push('/project/');
     yield put(ProjectRoutines.removeOne.success());
   } catch (error) {
     yield put(ProjectRoutines.removeOne.failure(error));
   } finally {
     yield put(ProjectRoutines.removeOne.fulfill());
+  }
+}
+
+function* removeEditor({ payload: { projectId, userId: id } }) {
+  try {
+    yield put(ProjectRoutines.removeEditor.request());
+    yield api.post(`${PROJECTS_PATH}/${projectId}/remove-editor`, { id });
+    yield fetchOne({ payload: { projectId } });
+    yield put(ProjectRoutines.removeEditor.success());
+  } catch (error) {
+    yield put(ProjectRoutines.removeEditor.failure(error));
+  } finally {
+    yield put(ProjectRoutines.removeEditor.fulfill());
+  }
+}
+
+function* addEditor({ payload: { projectId, userId: id } }) {
+  try {
+    yield put(ProjectRoutines.addEditor.request());
+    yield api.post(`${PROJECTS_PATH}/${projectId}/add-editor`, { id });
+
+    browserHistory.push(`/project/${projectId}/user/add`);
+    yield put(ProjectRoutines.addEditor.success());
+  } catch (error) {
+    yield put(ProjectRoutines.addEditor.failure(error));
+  } finally {
+    yield put(ProjectRoutines.addEditor.fulfill());
   }
 }
 
@@ -79,5 +106,7 @@ export function* watchProject() {
     takeLatest(ProjectRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(ProjectRoutines.createProject.TRIGGER, createProject),
     takeLatest(ProjectRoutines.removeOne.TRIGGER, removeOne),
+    takeLatest(ProjectRoutines.removeEditor.TRIGGER, removeEditor),
+    takeLatest(ProjectRoutines.addEditor.TRIGGER, addEditor),
   ]);
 }

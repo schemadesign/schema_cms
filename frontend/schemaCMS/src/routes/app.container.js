@@ -7,10 +7,10 @@ import { compose } from 'ramda';
 
 import { App } from './app.component';
 import { StartupActions } from '../modules/startup';
-import { selectUserData } from '../modules/userProfile';
+import { selectIsAdmin } from '../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
-  userData: selectUserData,
+  isAdmin: selectIsAdmin,
 });
 
 export const mapDispatchToProps = dispatch =>

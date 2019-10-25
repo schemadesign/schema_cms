@@ -1,0 +1,291 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddUser: Component should render correctly 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Invite Users"
+        id="project.addUser.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Project"
+        id="project.addUser.headerTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Back"
+        id="project.addUser.back"
+        values={Object {}}
+      />
+    </BackButton>
+  </NavigationContainer>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": "1px solid #ccc",
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the user from the project?"
+        id="project.addUser.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.addUser.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.addUser.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
+</styled.div>
+`;
+
+exports[`AddUser: Component should render correctly with users 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Invite Users"
+        id="project.addUser.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Project"
+        id="project.addUser.headerTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.div
+    key="0"
+  >
+    <styled.div>
+      <Styled(H2)>
+        Alan Watts
+      </Styled(H2)>
+      <Styled(H3) />
+    </styled.div>
+    <styled.div>
+      <Styled(Component)
+        id="removeUserPlusButton0"
+        onClick={[Function]}
+      >
+        <styled.div />
+      </Styled(Component)>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="1"
+  >
+    <styled.div>
+      <Styled(H2)>
+        Dale Chihuly
+      </Styled(H2)>
+      <Styled(H3)>
+        loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+      </Styled(H3)>
+    </styled.div>
+    <styled.div>
+      <Styled(Component)
+        id="addUserPlusButton1"
+        onClick={[Function]}
+      >
+        <styled.div />
+      </Styled(Component)>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="2"
+  >
+    <styled.div>
+      <Styled(H2)>
+        Dave Bowie
+      </Styled(H2)>
+      <Styled(H3) />
+    </styled.div>
+    <styled.div>
+      <Styled(Component)
+        id="addUserPlusButton2"
+        onClick={[Function]}
+      >
+        <styled.div />
+      </Styled(Component)>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="3"
+  >
+    <styled.div>
+      <Styled(H2)>
+        Pellentesque a massa at purus cursus egestas. Aliquam ut vehicula. Praesent est erat, laoreet et ornare ullamcorper, finibus id nisl. Etiam tempor, ligula a sagittis
+      </Styled(H2)>
+      <Styled(H3)>
+        loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+      </Styled(H3)>
+    </styled.div>
+    <styled.div>
+      <Styled(Component)
+        id="addUserPlusButton3"
+        onClick={[Function]}
+      >
+        <styled.div />
+      </Styled(Component)>
+    </styled.div>
+  </styled.div>
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Back"
+        id="project.addUser.back"
+        values={Object {}}
+      />
+    </BackButton>
+  </NavigationContainer>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": "1px solid #ccc",
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the user from the project?"
+        id="project.addUser.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.addUser.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.addUser.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
+</styled.div>
+`;

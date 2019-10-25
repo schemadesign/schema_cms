@@ -15,17 +15,21 @@ export class TextInput extends PureComponent {
     customInputStyles: PropTypes.object,
     errors: PropTypes.object,
     label: PropTypes.string,
+    checkOnlyErrors: PropTypes.bool,
     multiline: PropTypes.bool,
     fullWidth: PropTypes.bool,
     name: PropTypes.string.isRequired,
     touched: PropTypes.object,
     value: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
+    readOnly: PropTypes.bool,
+    onChange: PropTypes.func,
   };
 
   static defaultProps = {
     errors: {},
     touched: {},
+    checkOnlyErrors: false,
+    onChange: Function.prototype,
   };
 
   renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
@@ -40,25 +44,30 @@ export class TextInput extends PureComponent {
       customStyles,
       customInputStyles,
       fullWidth,
+      checkOnlyErrors,
+      readOnly,
       ...restProps
     } = this.props;
-    const filteredProps = pick(elementAttributes.input, restProps);
-
-    const isError = errors[filteredProps.name] && touched[filteredProps.name];
+    const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.input];
+    const filteredProps = pick(allowedAttributes, restProps);
+    const isError = !!errors[filteredProps.name];
+    const isTouched = touched[filteredProps.name];
+    const error = checkOnlyErrors ? isError : isError && isTouched;
 
     return (
       <Container>
         <TextField
           label={label}
           onChange={onChange}
-          error={isError}
+          error={error}
           multiline={multiline}
           customStyles={customStyles}
           customInputStyles={customInputStyles}
           fullWidth={fullWidth}
+          readOnly={readOnly}
           {...filteredProps}
         />
-        {this.renderError(isError)}
+        {this.renderError(error)}
       </Container>
     );
   }

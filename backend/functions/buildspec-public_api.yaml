@@ -4,9 +4,21 @@ phases:
   install:
     runtime-versions:
       python: 3.7
+  pre_build:
+    commands:
+      - OLDPATH=$(pwd)
   build:
     commands:
-      - echo Install deps here...
+      - echo Build lambda public_api function package
+      - mkdir -p backend/functions/build
+      - cd backend/functions/public_api
+      - npm install && node_modules/serverless/bin/serverless package
+      - unzip .serverless/public-api.zip -d ${OLDPATH}/backend/functions/build
+  post_build:
+    commands:
+      - cd ${OLDPATH}
 artifacts:
+  name: lambda-public-api
   files:
-    - 'backend/functions/public_api/**/*'
+    - '**/*'
+  base-directory: backend/functions/build

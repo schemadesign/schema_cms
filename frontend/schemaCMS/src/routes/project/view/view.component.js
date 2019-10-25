@@ -1,15 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Card, Icons, Typography } from 'schemaUI';
-import { has, isEmpty, isNil, path } from 'ramda';
+import { Card, Icons } from 'schemaUI';
+import { has, isEmpty, isNil, path, always, cond, T } from 'ramda';
+import { FormattedMessage } from 'react-intl';
+import Modal from 'react-modal';
 
-import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
-import { generateApiUrl, isAdmin } from '../../../shared/utils/helpers';
+import { generateApiUrl } from '../../../shared/utils/helpers';
+import browserHistory from '../../../shared/utils/history';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
 import { TopHeader } from '../../../shared/components/topHeader';
-import { Empty } from '../project.styles';
 import messages from './view.messages';
 import {
   Container,
@@ -27,13 +28,11 @@ import {
 } from './view.styles';
 import { BackArrowButton, NavigationContainer } from '../../../shared/components/navigation';
 
-const { P } = Typography;
+import { modalStyles, ModalTitle, ModalButton, ModalActions } from '../../../shared/components/modal/modal.styles';
 
 export class View extends PureComponent {
   static propTypes = {
-    user: PropTypes.shape({
-      role: PropTypes.string.isRequired,
-    }),
+    isAdmin: PropTypes.bool.isRequired,
     project: PropTypes.object.isRequired,
     fetchProject: PropTypes.func.isRequired,
     unmountProject: PropTypes.func.isRequired,
@@ -49,8 +48,16 @@ export class View extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
-  componentDidMount() {
-    this.props.fetchProject(this.props.match.params);
+  state = {
+    confirmationModalOpen: false,
+  };
+
+  async componentDidMount() {
+    try {
+      await this.props.fetchProject(this.props.match.params);
+    } catch (e) {
+      browserHistory.push('/');
+    }
   }
 
   componentWillUnmount() {
@@ -64,15 +71,15 @@ export class View extends PureComponent {
     if (!hasNoData) {
       primaryMenuItems.push({
         label: this.formatMessage(messages.dataSources),
-        to: `/project/view/${projectId}/datasource`,
+        to: `/project/${projectId}/datasource`,
       });
 
-      if (isAdmin(this.props.user)) {
+      if (this.props.isAdmin) {
         secondaryMenuItems.push(
           { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
           {
             label: this.formatMessage(messages.deleteProject),
-            onClick: () => this.props.removeProject(this.props.match.params),
+            onClick: () => this.setState({ confirmationModalOpen: true }),
           }
         );
       }
@@ -94,36 +101,46 @@ export class View extends PureComponent {
 
   handleGoTo = to => () => (to ? this.props.history.push(to) : null);
 
-  renderStatistic = ({ header, value, to }, index) => (
+  handleConfirmRemove = () => this.props.removeProject({ projectId: this.props.project.id });
+
+  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
+
+  renderStatistic = ({ header, value, to, id }, index) => (
     <CardWrapper key={index}>
-      <Card headerComponent={header} onClick={this.handleGoTo(to)} customStyles={statisticsCardStyles}>
-        <CardValue>{value}</CardValue>
+      <Card id={id} headerComponent={header} onClick={this.handleGoTo(to)} customStyles={statisticsCardStyles}>
+        <CardValue id={`${id}Value`}>{value}</CardValue>
       </Card>
     </CardWrapper>
   );
 
-  renderDetail = ({ label, field, value }, index) => (
+  renderDetail = ({ label, field, value, id }, index) => (
     <DetailItem key={index}>
-      <DetailWrapper>
-        <DetailLabel>{label}</DetailLabel>
-        <DetailValue>{value || this.props.project[field] || ''}</DetailValue>
+      <DetailWrapper id={id}>
+        <DetailLabel id={`${id}Label`}>{label}</DetailLabel>
+        <DetailValue id={`${id}Value`}>{value || this.props.project[field] || ''}</DetailValue>
       </DetailWrapper>
-      <IconEditWrapper>
+      <IconEditWrapper id={`${id}EditButton`}>
         <Icons.EditIcon />
       </IconEditWrapper>
     </DetailItem>
   );
 
-  renderProject = (_, { id: projectId, editors, owner, slug, created, charts, pages, meta, status } = {}) => {
+  renderProject = ({ id: projectId, editors, owner, slug, created, charts, pages, meta, status } = {}) => {
     const statistics = [
       {
         header: this.formatMessage(messages.dataSources),
         value: path(['dataSources', 'count'], meta),
-        to: `/project/view/${projectId}/datasource`,
+        to: `/project/${projectId}/datasource`,
+        id: 'projectDataSources',
       },
       { header: this.formatMessage(messages.charts), value: this.countItems(charts) },
       { header: this.formatMessage(messages.pages), value: this.countItems(pages) },
-      { header: this.formatMessage(messages.users), value: this.countItems(editors) },
+      {
+        header: this.formatMessage(messages.users),
+        value: this.countItems(editors),
+        to: `/project/${projectId}/user`,
+        id: 'projectUsers',
+      },
     ].filter(({ value }) => !isNil(value));
 
     const { firstName = '', lastName = '' } = owner;
@@ -134,12 +151,18 @@ export class View extends PureComponent {
         label: this.formatMessage(messages.lastUpdate),
         field: 'created',
         value: extendedDayjs(created, BASE_DATE_FORMAT).fromNow(),
+        id: 'fieldLastUpdated',
       },
-      { label: this.formatMessage(messages.status), field: 'status', value: statusValue },
-      { label: this.formatMessage(messages.owner), field: 'owner', value: `${firstName} ${lastName}` },
-      { label: this.formatMessage(messages.titleField), field: 'title' },
-      { label: this.formatMessage(messages.description), field: 'description' },
-      { label: this.formatMessage(messages.api), field: 'slug', value: generateApiUrl(slug) },
+      { label: this.formatMessage(messages.status), field: 'status', value: statusValue, id: 'fieldStatus' },
+      {
+        label: this.formatMessage(messages.owner),
+        field: 'owner',
+        value: `${firstName} ${lastName}`,
+        id: 'fieldOwner',
+      },
+      { label: this.formatMessage(messages.titleField), field: 'title', id: 'fieldTitle' },
+      { label: this.formatMessage(messages.description), field: 'description', id: 'fieldDescription' },
+      { label: this.formatMessage(messages.api), field: 'slug', value: generateApiUrl(slug), id: 'fieldSlug' },
     ];
 
     return (
@@ -150,36 +173,39 @@ export class View extends PureComponent {
     );
   };
 
-  renderNoData = () => (
-    <Empty>
-      <P>{this.formatMessage(messages.noProject)}</P>
-    </Empty>
-  );
+  renderContent = cond([[isEmpty, always(<Loader />)], [T, () => this.renderProject(this.props.project)]]);
 
   render() {
     const { project } = this.props;
+    const { confirmationModalOpen } = this.state;
     const { projectId } = this.props.match.params;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
-    const hasNoData = !project || has('error', project);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, hasNoData);
-
-    const content = isEmpty(project) ? (
-      <Loader />
-    ) : (
-      renderWhenTrueOtherwise(this.renderNoData, this.renderProject)(hasNoData, project)
-    );
+    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, !projectId || has('error', project));
 
     return (
       <Container>
         <div>
           <Helmet title={title} />
           <TopHeader {...topHeaderConfig} />
-          {content}
+          {this.renderContent(project)}
         </div>
         <NavigationContainer>
-          <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project/list')} />
+          <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <ModalButton onClick={this.handleCancelRemove}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </ModalButton>
+            <ModalButton onClick={this.handleConfirmRemove}>
+              <FormattedMessage {...messages.confirmRemoval} />
+            </ModalButton>
+          </ModalActions>
+        </Modal>
       </Container>
     );
   }

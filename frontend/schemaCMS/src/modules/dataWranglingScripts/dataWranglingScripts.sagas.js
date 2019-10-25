@@ -3,19 +3,19 @@ import { all, put, takeLatest, select } from 'redux-saga/effects';
 import { DataWranglingScriptsRoutines } from './dataWranglingScripts.redux';
 import api from '../../shared/services/api';
 import {
-  DATA_SOURCE_PATH,
+  DATA_SOURCES_PATH,
   DATA_WRANGLING_JOB_PATH,
   DATA_WRANGLING_SCRIPTS_PATH,
 } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 
-import { selectDataWranglingScripts } from './dataWranglingScripts.selectors';
+import { selectDataSource } from '../dataSource';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.fetchList.request());
 
-    const { data } = yield api.get(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
+    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
 
     yield put(DataWranglingScriptsRoutines.fetchList.success(data));
   } catch (e) {
@@ -25,13 +25,15 @@ function* fetchList({ payload: { dataSourceId } }) {
   }
 }
 
-function* sendList({ payload: { steps, dataSourceId, projectId } }) {
+function* sendList({ payload: { steps, dataSourceId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.sendList.request());
 
-    yield api.put(`${DATA_SOURCE_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
+    yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_JOB_PATH}`, { steps });
 
-    browserHistory.push(`/project/view/${projectId}/datasource/list`);
+    const dataSource = yield select(selectDataSource);
+
+    browserHistory.push(`/project/${dataSource.project}/datasource/`);
     yield put(DataWranglingScriptsRoutines.sendList.success());
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.sendList.failure());
@@ -46,11 +48,11 @@ function* uploadScript({ payload: { script, dataSourceId } }) {
     const formData = new FormData();
     const headers = { 'Content-Type': 'multipart/form-data' };
 
-    formData.append('script', script);
+    formData.append('file', script);
 
-    yield api.post(`${DATA_SOURCE_PATH}/${dataSourceId}/script-upload`, formData, { headers });
+    yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/script-upload`, formData, { headers });
 
-    yield put(DataWranglingScriptsRoutines.fetchList({ dataSourceId }));
+    yield fetchList({ payload: { dataSourceId } });
     yield put(DataWranglingScriptsRoutines.uploadScript.success());
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.uploadScript.failure());
@@ -59,18 +61,11 @@ function* uploadScript({ payload: { script, dataSourceId } }) {
   }
 }
 
-function* fetchOne({ payload }) {
+function* fetchOne({ payload: { scriptId } }) {
   try {
     yield put(DataWranglingScriptsRoutines.fetchOne.request());
 
-    let scripts = yield select(selectDataWranglingScripts);
-
-    //TODO: fetch a single script by script ID only
-    if (!scripts.length) {
-      yield fetchList({ payload });
-      scripts = yield select(selectDataWranglingScripts);
-    }
-    const data = scripts[payload.scriptId];
+    const { data } = yield api.get(`${DATA_WRANGLING_SCRIPTS_PATH}/${scriptId}`);
 
     yield put(DataWranglingScriptsRoutines.fetchOne.success(data));
   } catch (error) {

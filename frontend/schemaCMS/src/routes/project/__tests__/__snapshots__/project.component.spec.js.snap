@@ -2,22 +2,6 @@
 
 exports[`Project: Component should render correctly 1`] = `
 <Switch>
-  <Redirect
-    exact={true}
-    path="/project"
-    push={false}
-    to="/project/list"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/project/list"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/project/view/:projectId"
-  />
   <Route
     component={[Function]}
     exact={true}
@@ -25,7 +9,33 @@ exports[`Project: Component should render correctly 1`] = `
   />
   <Route
     component={[Function]}
-    path="/project/view/:projectId/datasource"
+    exact={true}
+    path="/project"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/project/:projectId/datasource/"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/project/:projectId"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/project/:projectId/user"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/project/:projectId/user/add"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/project/:projectId/user/:userId"
   />
 </Switch>
 `;

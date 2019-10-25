@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withRouter } from '../../../.storybook/decorators';
+import { withRouter, withTheme } from '../../../.storybook/decorators';
 import { TopHeader } from './topHeader.component';
 
 export const defaultProps = {
@@ -11,6 +11,20 @@ export const defaultProps = {
   secondaryMenuItems: [{ label: 'Log Out', to: '/logout' }, { label: 'Click action', onClick: () => {}, id: 'id' }],
 };
 
-storiesOf('Shared Components/TopHeader', module)
+const longText = `
+  Mauris egestas arcu nec diam consectetur vulputate.
+  Mauris rhoncus a massa in ultricies. In vel accumsan tortor.
+  Donec suscipit commodo enim. Suspendisse nibh odio
+`;
+
+const longProps = {
+  ...defaultProps,
+  headerTitle: longText,
+  headerSubtitle: longText,
+};
+
+storiesOf('Shared Components|TopHeader', module)
   .addDecorator(withRouter)
-  .add('Default', () => <TopHeader {...defaultProps} />);
+  .addDecorator(withTheme())
+  .add('Default', () => <TopHeader {...defaultProps} />)
+  .add('Long tiltle and subtitle', () => <TopHeader {...longProps} />);

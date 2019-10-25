@@ -18,8 +18,7 @@ class SocialAuthExceptionMiddleware:
             strategy = getattr(request, 'social_strategy', None)
             if strategy:
                 url = strategy.session_get('next', settings.DEFAULT_WEBAPP_HOST)
-                query_params = urllib.parse.urlencode({
-                    'error': exception.__class__.__name__.lower(),
-                    'msg': str(exception),
-                })
+                query_params = urllib.parse.urlencode(
+                    {'error': exception.__class__.__name__.lower(), 'msg': str(exception)}
+                )
                 return shortcuts.redirect(f'{url}?{query_params}')

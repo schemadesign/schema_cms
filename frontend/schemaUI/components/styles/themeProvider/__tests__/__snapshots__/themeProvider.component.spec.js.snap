@@ -11,6 +11,10 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "background": "#f0efef",
           "text": "#000",
         },
+        "buttonDisabled": Object {
+          "background": "#f0efef",
+          "text": "#a6a7aa",
+        },
         "card": Object {
           "background": "#f0efef",
           "border": "#000",
@@ -37,11 +41,13 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
         },
         "error": "#f21e29",
         "header": Object {
+          "border": "#f0efef",
           "text": "#1d1d20",
         },
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
+          "fillInverse": "#FFF",
         },
         "input": Object {
           "text": "#000",

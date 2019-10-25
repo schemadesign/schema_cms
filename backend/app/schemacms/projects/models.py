@@ -1,20 +1,21 @@
 import json
+import logging
 import os
+
+import datatable as dt
 
 import django.core.files.base
 import django_fsm
 from django.conf import settings
+from django.core.files.storage import default_storage
 from django.core.validators import FileExtensionValidator
 from django.db import models, transaction
 from django.utils import functional
 from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
-from django_fsm import signals as fsm_signals
-from pandas import read_csv
 
-from schemacms.projects import handlers
-from schemacms.projects import services
 from schemacms.users import constants as users_constants
+from schemacms.utils import url as url_utils
 from . import constants, managers, fsm
 
 
@@ -22,12 +23,79 @@ def file_upload_path(instance, filename):
     return instance.relative_path_to_save(filename)
 
 
+def map_dataframe_dtypes(dtype):
+    if dtype == "object":
+        return "string"
+    else:
+        return dtype
+
+
+def get_preview_data(file):
+
+    if hasattr(file, "temporary_file_path"):
+        data_frame = dt.fread(file.read(), na_strings=["", ''], fill=True)
+    else:
+        data_frame = dt.fread(file, na_strings=["", ''], fill=True)
+
+    items, fields = data_frame.shape
+    sample_of_5 = data_frame.head(5).to_pandas()
+
+    table_preview = json.loads(sample_of_5.to_json(orient="records"))
+    samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
+
+    fields_info = {}
+    mean = data_frame.mean().to_dict()
+    min = data_frame.min().to_dict()
+    max = data_frame.max().to_dict()
+    std = data_frame.sd().to_dict()
+    unique = data_frame.nunique().to_dict()
+    columns = data_frame.names
+
+    for i in columns:
+        fields_info[i] = {}
+        fields_info[i]["mean"] = mean[i][0]
+        fields_info[i]["min"] = min[i][0]
+        fields_info[i]["max"] = max[i][0]
+        fields_info[i]["std"] = std[i][0]
+        fields_info[i]["unique"] = unique[i][0]
+        fields_info[i]["count"] = items
+
+    dtypes = {i: k for i, k in zip(columns, data_frame.stypes)}
+    for key, value in dtypes.items():
+        fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
+
+    for key, value in samples[0].items():
+        fields_info[key]["sample"] = value
+
+    preview_json = json.dumps({"data": table_preview, "fields": fields_info}, indent=4).encode()
+
+    del data_frame, sample_of_5
+
+    return preview_json, items, fields
+
+
+class MetaDataModel(models.Model):
+    items = models.PositiveIntegerField()
+    fields = models.PositiveSmallIntegerField()
+    preview = models.FileField(null=True, upload_to=file_upload_path)
+
+    class Meta:
+        abstract = True
+
+    @property
+    def data(self):
+        if not self.preview:
+            return {}
+        self.preview.seek(0)
+        return json.loads(self.preview.read())
+
+
 class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
     status = django_fsm.FSMField(
         choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
     )
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
-    editors = models.ManyToManyField(settings.AUTH_USER_MODEL)
+    editors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="assigned_projects", blank=True)
 
     objects = managers.ProjectQuerySet.as_manager()
 
@@ -39,7 +107,7 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel)
         return self.title
 
     def user_has_access(self, user):
-        return self.get_projects_for_user(user).filter(pk=self.id).exists()
+        return user.is_admin or self.editors.filter(pk=user.id).exists()
 
     @classmethod
     def get_projects_for_user(cls, user):
@@ -56,7 +124,7 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel)
         return self.data_sources.count()
 
 
-class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
+class DataSource(ext_models.TimeStampedModel):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="data_sources")
@@ -67,67 +135,79 @@ class DataSource(ext_models.TimeStampedModel, fsm.DataSourceProcessingFSM):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
     )
 
-    objects = managers.DataSourceManager()
+    objects = managers.DataSourceQuerySet.as_manager()
 
     class Meta:
         unique_together = ("name", "project")
+        ordering = ('-created',)
 
     def __str__(self):
         return self.name or str(self.id)
 
-    def update_meta(self):
-        data_frame = read_csv(self.file.url, sep=None, engine="python", encoding='ISO-8859-1')
-        items, fields = data_frame.shape
-        preview, fields_info = self.get_preview_data(data_frame)
-        preview_json = json.dumps({"data": preview, "fields": fields_info}, indent=4).encode()
+    def update_meta(self, file=None, file_name=None,):
+        if not file:
+            file = self.file.url
 
-        with transaction.atomic():
-            meta, _ = DataSourceMeta.objects.update_or_create(
-                datasource=self, defaults={"fields": fields, "items": items}
-            )
+        try:
+            preview_json, items, fields = get_preview_data(file)
 
-            filename, _ = self.get_original_file_name()
-            meta.preview.save(
-                f"preview_{filename}.json", django.core.files.base.ContentFile(content=preview_json)
-            )
+            with transaction.atomic():
+                meta, _ = DataSourceMeta.objects.update_or_create(
+                    datasource=self, defaults={"fields": fields, "items": items}
+                )
+                file_name, _ = self.get_original_file_name(file_name)
+                meta.preview.save(
+                    f"{file_name}_preview.json", django.core.files.base.ContentFile(content=preview_json)
+                )
+
+        except Exception as e:
+            return logging.error(f"Data Source {self.id} fail to create meta data - {e}")
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
         if not (self.id and self.project_id):
-            raise ValueError("Project or DataSource id is not set")
-        return os.path.join(
-            base_path,
-            f"{settings.STORAGE_DIR}/projects",
-            f"{self.project_id}/datasources/{self.id}/{filename}",
-        )
+            raise ValueError("Project or DataSource ID is not set")
+        return os.path.join(base_path, f"{self.id}/uploads/{filename}")
 
-    def get_original_file_name(self):
-        name, ext = os.path.splitext(os.path.basename(self.file.name))
-        return name, os.path.basename(self.file.name)
-
-    @staticmethod
-    def get_preview_data(data_frame):
-        table_preview = json.loads(data_frame.head(5).to_json(orient="records"))
-        fields_info = json.loads(data_frame.describe(include="all", percentiles=[]).to_json(orient="columns"))
-
-        for key, value in dict(data_frame.dtypes).items():
-            fields_info[key]["dtype"] = value.name
-
-        return table_preview, fields_info
+    def get_original_file_name(self, file_name=None):
+        if not file_name:
+            file_name = self.file.name
+        name, ext = os.path.splitext(os.path.basename(file_name))
+        return name, os.path.basename(file_name)
 
     @property
     def available_scripts(self):
-        return services.scripts.list(self)
+        return WranglingScript.objects.filter(
+            models.Q(is_predefined=True) | models.Q(datasource=self)
+        ).order_by("-is_predefined")
+
+    @property
+    def jobs_history(self):
+        return self.jobs.all().order_by("-created")
+
+    @property
+    def source_file_latest_version(self) -> str:
+        return next(
+            (
+                v.id
+                for v in self.file.storage.bucket.object_versions.filter(Prefix=self.file.name)
+                if v.is_latest and v.id != "null"
+            ),
+            "",
+        )
+
+    def create_job(self, **job_kwargs):
+        """Create new job for data source, copy source file and version"""
+        return DataSourceJob.objects.create(
+            datasource=self,
+            source_file_path=self.file.name,
+            source_file_version=self.source_file_latest_version,
+            **job_kwargs,
+        )
 
 
-fsm_signals.post_transition.connect(handlers.handle_datasource_fsm_post_transition, sender=DataSource)
-
-
-class DataSourceMeta(models.Model):
+class DataSourceMeta(MetaDataModel):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
-    items = models.PositiveIntegerField()
-    fields = models.PositiveSmallIntegerField()
-    preview = models.FileField(null=True, upload_to=file_upload_path)
 
     def __str__(self):
         return f"DataSource {self.datasource} meta"
@@ -135,30 +215,91 @@ class DataSourceMeta(models.Model):
     def relative_path_to_save(self, filename):
         base_path = self.preview.storage.location
 
-        return os.path.join(
-            base_path,
-            f"{settings.STORAGE_DIR}/projects",
-            f"{self.datasource.project_id}/datasources/{self.datasource.id}/{filename}",
-        )
+        return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
 
-    @property
-    def data(self):
-        if not self.preview:
-            return {}
-        self.preview.seek(0)
-        return json.loads(self.preview.read())
+
+class WranglingScript(ext_models.TimeStampedModel):
+    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='scripts', null=True)
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="scripts", null=True
+    )
+    name = models.CharField(max_length=constants.SCRIPT_NAME_MAX_LENGTH, blank=True)
+    is_predefined = models.BooleanField(default=True)
+    file = models.FileField(
+        upload_to=file_upload_path, null=True, validators=[FileExtensionValidator(allowed_extensions=["py"])]
+    )
+    body = models.TextField(blank=True)
+    last_file_modification = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.body:
+            self.body = self.file.read().decode()
+        super(WranglingScript, self).save(*args, **kwargs)
+
+    def relative_path_to_save(self, filename):
+        base_path = self.file.storage.location
+
+        if self.is_predefined:
+            return os.path.join(base_path, f"scripts/{filename}")
+        else:
+            return os.path.join(base_path, f"{self.datasource.id}/scripts/{filename}")
 
 
 class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
-    outcome = models.TextField(blank=True)
+    description = models.TextField(blank=True)
+    source_file_path = models.CharField(max_length=255, editable=False)
+    source_file_version = models.CharField(max_length=36, editable=False)
+    result = models.FileField(upload_to=file_upload_path, null=True)
+    error = models.TextField(blank=True, default="")
 
     def __str__(self):
         return f'DataSource Job #{self.pk}'
 
+    @property
+    def source_file_url(self):
+        if not self.source_file_path:
+            return ""
+        url = default_storage.url(self.source_file_path)
+        if self.source_file_version:
+            url = url_utils.append_query_string_params(url, {"versionId": self.source_file_version})
+        return url
+
+    def relative_path_to_save(self, filename):
+        base_path = self.result.storage.location
+
+        return os.path.join(base_path, f"{self.datasource.id}/outputs/{filename}")
+
+    def update_meta(self):
+        preview_json, items, fields = get_preview_data(self.result.url)
+
+        with transaction.atomic():
+            meta, _ = DataSourceJobMetaData.objects.update_or_create(
+                job=self, defaults={"fields": fields, "items": items}
+            )
+
+            meta.preview.save(
+                f"job_{self.id}_preview.json", django.core.files.base.ContentFile(content=preview_json)
+            )
+
+
+class DataSourceJobMetaData(MetaDataModel):
+    job = models.OneToOneField(DataSourceJob, on_delete=models.CASCADE, related_name="meta_data")
+
+    def __str__(self):
+        return f"Job {self.job} meta"
+
+    def relative_path_to_save(self, filename):
+        base_path = self.preview.storage.location
+
+        return os.path.join(base_path, f"{self.job.datasource.id}/previews/{filename}")
+
 
 class DataSourceJobStep(models.Model):
     datasource_job = models.ForeignKey(DataSourceJob, on_delete=models.CASCADE, related_name='steps')
-    key = models.CharField(max_length=255)
-    body = models.TextField()
+    script = models.ForeignKey(WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True)
+    body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)

@@ -1,24 +1,25 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Stepper } from 'schemaUI';
 import { always, cond, equals, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
+import Modal from 'react-modal';
 
-import { Container, stepperBlockStyles, StepperContainer, stepperStyles } from './view.styles';
+import { Container } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
-import { Fields } from './fields';
-import { DataWranglingScripts } from '../../dataWranglingScripts';
+import { DataPreview } from '../../../shared/components/dataPreview';
+import { DataWranglingScripts } from './dataWranglingScripts';
+import { DataWranglingResult } from '../../dataWranglingResult';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
 import {
   DATA_WRANGLING_STEP,
+  DATA_WRANGLING_RESULT_STEP,
   FIELDS_STEP,
   INITIAL_STEP,
-  MAX_STEPS,
   STATUS_DRAFT,
 } from '../../../modules/dataSource/dataSource.constants';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -36,18 +37,21 @@ export class View extends PureComponent {
     }),
     match: PropTypes.shape({
       params: PropTypes.shape({
-        projectId: PropTypes.string.isRequired,
         dataSourceId: PropTypes.string.isRequired,
         step: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   };
 
+  state = {
+    confirmationModalOpen: false,
+  };
+
   componentDidMount() {
     if (!this.props.dataSource.id) {
-      const { projectId, dataSourceId } = this.props.match.params;
+      const { dataSourceId } = this.props.match.params;
 
-      this.props.fetchDataSource({ projectId, dataSourceId });
+      this.props.fetchDataSource({ dataSourceId });
     }
   }
 
@@ -59,22 +63,26 @@ export class View extends PureComponent {
     [equals(INITIAL_STEP), always(this.props.intl.formatMessage(messages.source))],
     [equals(FIELDS_STEP), always(this.props.intl.formatMessage(messages.fields))],
     [equals(DATA_WRANGLING_STEP), always(this.props.intl.formatMessage(messages.dataWrangling))],
+    [equals(DATA_WRANGLING_RESULT_STEP), always(this.props.intl.formatMessage(messages.dataWranglingResult))],
     [T, always(null)],
   ]);
 
   getTitle = intl =>
     this.props.dataSource.status === STATUS_DRAFT ? intl.formatMessage(messages.title) : this.props.dataSource.name;
 
-  getHeaderAndMenuConfig = (intl, activeStep) => {
+  getHeaderAndMenuConfig = activeStep => {
+    const { dataSource, intl } = this.props;
     const headerTitle = this.getTitle(intl);
+    const { project: projectId } = dataSource;
+
     const secondaryMenuItems = [
       {
-        label: this.props.intl.formatMessage(messages.dataSourceList),
-        to: `/project/view/${this.props.match.params.projectId}/datasource/list`,
+        label: intl.formatMessage(messages.dataSourceList),
+        to: `/project/${projectId}/datasource/`,
       },
       {
-        label: this.props.intl.formatMessage(messages.removeDataSource),
-        onClick: () => this.props.removeDataSource(this.props.match.params),
+        label: intl.formatMessage(messages.removeDataSource),
+        onClick: () => this.setState({ confirmationModalOpen: true }),
       },
     ];
 
@@ -85,46 +93,22 @@ export class View extends PureComponent {
     };
   };
 
-  submitForm = null;
+  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
-  bindSubmitForm = submitForm => {
-    this.submitForm = submitForm;
-  };
-
-  handleNextClick = () => {
-    if (this.submitForm) {
-      return this.submitForm();
-    }
-
-    return this.handleStepChange(parseInt(this.props.match.params.step, 10) + 1);
-  };
-
-  handleStepChange = step => {
+  handleConfirmRemove = () => {
     const {
-      history,
-      match: {
-        params: { projectId, dataSourceId },
-      },
+      dataSource: { project: projectId, id: dataSourceId },
     } = this.props;
 
-    if (step < 1) {
-      return this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
-    }
-
-    return history.push(`/project/view/${projectId}/datasource/view/${dataSourceId}/${step}`);
+    this.props.removeDataSource({ projectId, dataSourceId });
   };
-
-  handleBackClick = () => this.handleStepChange(parseInt(this.props.match.params.step, 10) - 1);
-
-  handleCancelClick = () =>
-    this.props.history.push(`/project/view/${this.props.match.params.projectId}/datasource/list`);
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
-      [equals(INITIAL_STEP), always(<Source bindSubmitForm={this.bindSubmitForm} {...props} />)],
-      [equals(FIELDS_STEP), always(<Fields {...props} />)],
-      [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts bindSubmitForm={this.bindSubmitForm} {...props} />)],
-      [equals(4), always(null)],
+      [equals(INITIAL_STEP), always(<Source {...props} />)],
+      [equals(FIELDS_STEP), always(<DataPreview {...props} />)],
+      [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts {...props} />)],
+      [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],
       [equals(5), always(null)],
       [equals(6), always(null)],
       [T, always(null)],
@@ -132,17 +116,15 @@ export class View extends PureComponent {
 
   renderContent = renderWhenTrue(() => {
     const {
-      intl,
       dataSource,
+      intl,
       match: {
         params: { step },
       },
     } = this.props;
+    const { confirmationModalOpen } = this.state;
     const activeStep = parseInt(step, 10);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(intl, activeStep);
-    const customStepperStyles =
-      dataSource.status === STATUS_DRAFT ? { ...stepperStyles, ...stepperBlockStyles } : stepperStyles;
-    this.submitForm = null;
+    const topHeaderConfig = this.getHeaderAndMenuConfig(activeStep);
 
     return (
       <Fragment>
@@ -153,21 +135,19 @@ export class View extends PureComponent {
           dataSource,
           ...this.props,
         })}
-
-        <NavigationContainer>
-          <BackButton onClick={this.handleBackClick}>
-            <FormattedMessage {...messages.back} values={{ cancel: activeStep === INITIAL_STEP }} />
-          </BackButton>
-          <NextButton onClick={this.handleNextClick} />
-          <StepperContainer>
-            <Stepper
-              activeStep={activeStep}
-              steps={MAX_STEPS}
-              customStyles={customStepperStyles}
-              onStepChange={this.handleStepChange}
-            />
-          </StepperContainer>
-        </NavigationContainer>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <ModalButton onClick={this.handleCancelRemove}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </ModalButton>
+            <ModalButton onClick={this.handleConfirmRemove}>
+              <FormattedMessage {...messages.confirmRemoval} />
+            </ModalButton>
+          </ModalActions>
+        </Modal>
       </Fragment>
     );
   });

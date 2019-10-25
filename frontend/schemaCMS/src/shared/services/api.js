@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { BAD_REQUEST, UNAUTHORIZED } from 'http-status-codes';
 import { camelizeKeys, decamelizeKeys, pascalize } from 'humps';
 import {
   __,
@@ -9,21 +10,23 @@ import {
   evolve,
   ifElse,
   is,
+  isEmpty,
+  keys,
   map,
   mapObjIndexed,
   not,
+  path,
   pipe,
   startsWith,
   toLower,
   when,
-  isEmpty,
 } from 'ramda';
 import queryString from 'query-string';
-
 import { AUTH_PATH } from '../utils/api.constants';
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_BASE_API_URL,
+  camelize: true,
 });
 
 const camelizeErrorCode = fieldName =>
@@ -65,14 +68,39 @@ api.interceptors.request.use(
   error => Promise.reject(error)
 );
 
+const getData = path(['response', 'data']);
+
+const getCode = name =>
+  pipe(
+    getData,
+    path([name, 0, 'code'])
+  );
+
+const convertResponseErrors = error =>
+  pipe(
+    getData,
+    keys,
+    map(name => ({ code: getCode(name)(error), name }))
+  )(error);
+
 api.interceptors.response.use(
-  evolve({
-    data: camelizeKeys,
-  }),
+  response => {
+    if (response.config.camelize) {
+      return evolve({
+        data: camelizeKeys,
+      })(response);
+    }
+    return response;
+  },
   error => {
-    if (error.response.status === 401) {
+    if (error.response.status === UNAUTHORIZED) {
       return window.location.replace(AUTH_PATH);
     }
+
+    if (error.response.status === BAD_REQUEST) {
+      return Promise.reject(convertResponseErrors(error));
+    }
+
     return Promise.reject(error);
   }
 );

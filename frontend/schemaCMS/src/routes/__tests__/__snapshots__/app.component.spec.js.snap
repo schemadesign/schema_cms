@@ -42,6 +42,10 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "background": "#f0efef",
           "text": "#000",
         },
+        "buttonDisabled": Object {
+          "background": "#f0efef",
+          "text": "#a6a7aa",
+        },
         "card": Object {
           "background": "#f0efef",
           "border": "#000",
@@ -68,11 +72,13 @@ exports[`App: Component should not render App when language is not set 1`] = `
         },
         "error": "#f21e29",
         "header": Object {
+          "border": "#f0efef",
           "text": "#1d1d20",
         },
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
+          "fillInverse": "#FFF",
         },
         "input": Object {
           "text": "#000",
@@ -175,6 +181,10 @@ exports[`App: Component should not render App when language is not set 1`] = `
             "background": "#f0efef",
             "text": "#000",
           },
+          "buttonDisabled": Object {
+            "background": "#f0efef",
+            "text": "#a6a7aa",
+          },
           "card": Object {
             "background": "#f0efef",
             "border": "#000",
@@ -201,11 +211,13 @@ exports[`App: Component should not render App when language is not set 1`] = `
           },
           "error": "#f21e29",
           "header": Object {
+            "border": "#f0efef",
             "text": "#1d1d20",
           },
           "icon": Object {
             "background": "#f0efef",
             "fill": "#1d1d20",
+            "fillInverse": "#FFF",
           },
           "input": Object {
             "text": "#000",
@@ -299,19 +311,21 @@ exports[`App: Component should not render App when language is not set 1`] = `
         }
       }
     >
-      <FormattedMessage
-        defaultMessage="SchemaCMS"
-        id="app.pageTitle"
-        values={Object {}}
-      >
-        <Component />
-      </FormattedMessage>
-      <GlobalStyleComponent />
-      <div
-        className="app__children"
-      >
-        Children
-      </div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="SchemaCMS"
+          id="app.pageTitle"
+          values={Object {}}
+        >
+          <Component />
+        </FormattedMessage>
+        <GlobalStyleComponent />
+        <div
+          className="app__children"
+        >
+          Children
+        </div>
+      </styled.div>
     </ThemeProvider>
   </ThemeProvider>
 </IntlProvider>
@@ -359,6 +373,10 @@ exports[`App: Component should render App when language is set 1`] = `
           "background": "#f0efef",
           "text": "#000",
         },
+        "buttonDisabled": Object {
+          "background": "#f0efef",
+          "text": "#a6a7aa",
+        },
         "card": Object {
           "background": "#f0efef",
           "border": "#000",
@@ -385,11 +403,13 @@ exports[`App: Component should render App when language is set 1`] = `
         },
         "error": "#f21e29",
         "header": Object {
+          "border": "#f0efef",
           "text": "#1d1d20",
         },
         "icon": Object {
           "background": "#f0efef",
           "fill": "#1d1d20",
+          "fillInverse": "#FFF",
         },
         "input": Object {
           "text": "#000",
@@ -492,6 +512,10 @@ exports[`App: Component should render App when language is set 1`] = `
             "background": "#f0efef",
             "text": "#000",
           },
+          "buttonDisabled": Object {
+            "background": "#f0efef",
+            "text": "#a6a7aa",
+          },
           "card": Object {
             "background": "#f0efef",
             "border": "#000",
@@ -518,11 +542,13 @@ exports[`App: Component should render App when language is set 1`] = `
           },
           "error": "#f21e29",
           "header": Object {
+            "border": "#f0efef",
             "text": "#1d1d20",
           },
           "icon": Object {
             "background": "#f0efef",
             "fill": "#1d1d20",
+            "fillInverse": "#FFF",
           },
           "input": Object {
             "text": "#000",
@@ -616,19 +642,21 @@ exports[`App: Component should render App when language is set 1`] = `
         }
       }
     >
-      <FormattedMessage
-        defaultMessage="SchemaCMS"
-        id="app.pageTitle"
-        values={Object {}}
-      >
-        <Component />
-      </FormattedMessage>
-      <GlobalStyleComponent />
-      <div
-        className="app__children"
-      >
-        Children
-      </div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="SchemaCMS"
+          id="app.pageTitle"
+          values={Object {}}
+        >
+          <Component />
+        </FormattedMessage>
+        <GlobalStyleComponent />
+        <div
+          className="app__children"
+        >
+          Children
+        </div>
+      </styled.div>
     </ThemeProvider>
   </ThemeProvider>
 </IntlProvider>

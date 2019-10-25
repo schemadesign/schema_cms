@@ -1,0 +1,461 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DataWranglingResult Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-jAaTju fNCBho"
+  >
+    <div
+      className="sc-cSHVUG faiXXV"
+    >
+      <table
+        className="sc-kAzzGY eXTiCm"
+      >
+        <thead
+          className="sc-chPdSV byfFmt"
+        >
+          <tr
+            className="sc-kGXeez bsAJYA"
+          >
+            <th
+              className="sc-dxgOiQ kzLhIU"
+            >
+              #
+            </th>
+            <th
+              className="sc-dxgOiQ kzLhIU"
+            >
+              First Name
+            </th>
+            <th
+              className="sc-dxgOiQ kzLhIU"
+            >
+              Last Name
+            </th>
+            <th
+              className="sc-dxgOiQ kzLhIU"
+            >
+              Full Name
+            </th>
+            <th
+              className="sc-dxgOiQ kzLhIU"
+            >
+              Birthplace
+            </th>
+            <th
+              className="sc-dxgOiQ kzLhIU"
+            >
+              State of Birth
+            </th>
+            <th
+              className="sc-dxgOiQ kzLhIU"
+            >
+              Birthday
+            </th>
+            <th
+              className="sc-dxgOiQ kzLhIU"
+            >
+              Url
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className="sc-kgoBCf kVSTZj"
+        >
+          <tr
+            className="sc-kGXeez bsAJYA"
+          >
+            <td
+              className="sc-ckVGcZ dGzHbe"
+            >
+              1
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              George
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Washington
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              George Washington
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Westmoreland County
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              VA
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              02/22/1732
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-kGXeez bsAJYA"
+          >
+            <td
+              className="sc-ckVGcZ dGzHbe"
+            >
+              2
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              John
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Adams
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              John Adams
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Braintree
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              MA
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              10/30/1735
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-kGXeez bsAJYA"
+          >
+            <td
+              className="sc-ckVGcZ dGzHbe"
+            >
+              3
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Thomas
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Jefferson
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Thomas Jefferson
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Shadwell
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              VA
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              04/13/1743
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-kGXeez bsAJYA"
+          >
+            <td
+              className="sc-ckVGcZ dGzHbe"
+            >
+              4
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              James
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Madison
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              James Madison
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Port Conway
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              VA
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              03/16/1751
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              some.url.com
+            </td>
+          </tr>
+          <tr
+            className="sc-kGXeez bsAJYA"
+          >
+            <td
+              className="sc-ckVGcZ dGzHbe"
+            >
+              5
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              James
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Monroe
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              James Monroe
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              Monroe Hall
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              VA
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              04/28/1758
+            </td>
+            <td
+              className="sc-kpOJdX kzxgLS"
+            >
+              some.url.com
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      className="sc-htoDjs iUYJOx"
+    >
+      <div
+        className="sc-dnqmqq jpGIQI"
+      >
+        <button
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginRight": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
+        >
+          <span>
+            Back
+          </span>
+        </button>
+        <button
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginLeft": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
+        >
+          <span>
+            Next
+          </span>
+        </button>
+        <div
+          className="sc-gzVnrw bMUaYY"
+        >
+          <div
+            activeStep={4}
+            customDotStyles={Object {}}
+            handleStep={[Function]}
+            onStepChange={[Function]}
+            steps={6}
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "row",
+                "margin": "0 auto",
+              }
+            }
+          >
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "borderRadius": "50%",
+                  "cursor": "default",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "pointerEvents": "none",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

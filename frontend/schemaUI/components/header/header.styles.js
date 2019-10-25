@@ -6,9 +6,9 @@ export const getStyles = (theme = defaultTheme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: '18px 0',
     alignItems: 'flex-start',
     width: '100%',
+    paddingBottom: '18px',
   },
   buttonStyles: {
     backgroundColor: 'transparent',

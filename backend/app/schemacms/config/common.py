@@ -72,6 +72,8 @@ class Common(Configuration):
     # Email
     EMAIL_BACKEND = "anymail.backends.mandrill.EmailBackend"
     ANYMAIL = {"MANDRILL_API_KEY": os.getenv("MANDRILL_KEY")}
+    DEFAULT_FROM_EMAIL = os.getenv("DJANGO_DEFAULT_FROM_EMAIL", "webmaster@localhost")
+    SERVER_EMAIL = os.getenv("DJANGO_SERVER_EMAIL", "root@localhost")
 
     ADMINS = (("Author", "khanek@apptension.com"),)
 
@@ -119,6 +121,8 @@ class Common(Configuration):
     # Media files
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), "/")
     MEDIA_URL = "/"
+
+    SCRIPTS_DIRECTORY = os.getenv("DJANGO_SCRIPTS_DIRECTORY", "step-scripts")
 
     TEMPLATES = [
         {
@@ -197,6 +201,7 @@ class Common(Configuration):
             "rest_framework.authentication.SessionAuthentication",
             "rest_framework.authentication.TokenAuthentication",
         ),
+        "EXCEPTION_HANDLER": "schemacms.utils.error.custom_exception_handler",
     }
 
     # Authentication
@@ -250,6 +255,7 @@ class Common(Configuration):
         "schemacms.authorization.pipeline.update_user_full_name",
         # Update user source and external ID from external authorization service
         "schemacms.authorization.pipeline.update_external_id",
+        "schemacms.authorization.pipeline.user_is_active",
         # Redirect user and add exchange token to query string
         "schemacms.authorization.pipeline.redirect_with_token",
     )
@@ -275,9 +281,6 @@ class Common(Configuration):
     AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
     AWS_DEFAULT_ACL = None
-
-    DS_SCRIPTS_UPLOAD_PATH = '/datasource/{}/scripts/'
-    DS_JOB_UPLOAD_PATH = '/datasource/{}/jobs/'
 
     AWS_SQS_ENDPOINT_URL = os.getenv('SQS_ENDPOINT_URL')
     SQS_WORKER_QUEUE_URL = os.getenv('SQS_WORKER_QUEUE_URL')

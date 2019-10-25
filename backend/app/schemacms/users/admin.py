@@ -1,19 +1,46 @@
 import auth0.v3
+import django.core.exceptions
 import django.contrib.messages
 from django import urls
-from django.contrib import admin
+from django.contrib import admin, messages
 from django.contrib.auth.admin import UserAdmin
 from django.db import transaction
 from django.utils.translation import gettext_lazy as _
 
+from schemacms.users import signals
 from . import models as user_models
-from . import backend_management
 from . import admin_forms
+
+
+def activate_users(modeladmin, request, queryset):
+    with transaction.atomic():
+        queryset.update(is_active=True)
+
+
+def deactivate_users(modeladmin, request, queryset):
+    fail_to_deactivate_users = []
+    for user in queryset:
+        try:
+            with transaction.atomic():
+                user.deactivate(requester=request.user)
+        except Exception:  # noqa
+            fail_to_deactivate_users.append(user)
+    if fail_to_deactivate_users:
+        modeladmin.message_user(
+            request=request,
+            message=_(
+                "The system could not deactivate the following users: {}".format(
+                    ", ".join(fail_to_deactivate_users)
+                )
+            ),
+            level=messages.ERROR,
+        )
 
 
 @admin.register(user_models.User)
 class UserAdmin(UserAdmin):
-    list_display = ("username", "email", "first_name", "last_name", "is_staff", "source", "role")
+    actions = (activate_users, deactivate_users)
+    list_display = ("username", "email", "first_name", "last_name", "is_active", "is_staff", "source", "role")
     fieldsets = (
         (None, {"fields": ("username", "password")}),
         (_("Personal info"), {"fields": ("first_name", "last_name", "email")}),
@@ -24,6 +51,7 @@ class UserAdmin(UserAdmin):
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
         (_("Auth"), {"fields": ("source", "external_id")}),
     )
+    readonly_fields = ("is_active",)
     add_form_template = "users/admin/add_form.html"
     change_list_template = "users/admin/change_list.html"
     invite_user_form = admin_forms.InviteUserForm
@@ -42,7 +70,7 @@ class UserAdmin(UserAdmin):
         super().save_model(request, obj, form, change)
         if not change and obj.email:
             try:
-                ret = backend_management.user_mgtm_backend.create_user(obj)
+                signals.user_invited.send(sender=user_models.User, user=obj, requester=request.user)
             except auth0.v3.Auth0Error as e:
                 transaction.savepoint_rollback(sid)
                 if e.status_code == 409:
@@ -53,10 +81,6 @@ class UserAdmin(UserAdmin):
                     request, 'Error from auth0: "{}"'.format(e.message), django.contrib.messages.ERROR
                 )
                 raise
-            obj.source = backend_management.user_mgtm_backend.get_user_source()
-            obj.external_id = ret["user_id"]
-            obj.save(update_fields=["source", "external_id"])
-            transaction.on_commit(obj.send_invitation_email)
         transaction.savepoint_commit(sid)
         return obj
 

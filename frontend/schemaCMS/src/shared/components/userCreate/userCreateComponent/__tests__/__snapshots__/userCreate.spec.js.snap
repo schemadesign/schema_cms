@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserCreate: Component should render correctly 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="You are adding {user} to {project}"
+        id="userCreate.addUser"
+        values={
+          Object {
+            "project": "",
+            "user": "",
+          }
+        }
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userCreate.pageTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      label="Name"
+      name="firstName"
+      onChange={[Function]}
+      readOnly={true}
+      touched={Object {}}
+      value="undefined undefined"
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      label="Email"
+      name="email"
+      onChange={[Function]}
+      readOnly={true}
+      touched={Object {}}
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      label="Role"
+      name="role"
+      onChange={[Function]}
+      readOnly={true}
+      touched={Object {}}
+    />
+    <NavigationContainer
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="userCreate.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Add"
+          id="userCreate.add"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
+</styled.div>
+`;

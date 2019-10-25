@@ -5,8 +5,8 @@ from aws_cdk import (
     aws_sqs,
     aws_apigateway,
     aws_lambda,
+    aws_lambda_event_sources,
     aws_ecs,
-    aws_iam,
     aws_ecs_patterns,
     aws_rds,
     aws_secretsmanager,
@@ -17,10 +17,11 @@ from aws_cdk import (
     aws_stepfunctions,
     aws_stepfunctions_tasks,
     aws_certificatemanager,
-)
+    aws_route53)
 
 DB_NAME = "gistdb"
 APP_S3_BUCKET_NAME = "schemacms"
+JOB_PROCESSING_MAX_RETRIES = 3
 
 INSTALLATION_MODE_CONTEXT_KEY = "installation_mode"
 DOMAIN_NAME_CONTEXT_KEY = "domain_name"
@@ -82,7 +83,7 @@ class BaseResources(core.Stack):
             delete_automated_backups=True,
         )
         self.db_secret_rotation = self.db.add_rotation_single_user("db-rotation")
-        self.app_bucket = aws_s3.Bucket(self, APP_S3_BUCKET_NAME)
+        self.app_bucket = aws_s3.Bucket(self, APP_S3_BUCKET_NAME, versioned=True)
 
 
 class CertsStack(core.Stack):
@@ -117,7 +118,6 @@ class Workers(core.Stack):
         )
 
         worker_success_lambda_code = aws_lambda.AssetCode("backend/functions/worker_success")
-
         self.success_function_code = aws_lambda.Code.from_cfn_parameters()
         handler = "handlers.handle"
         if installation_mode == INSTALLATION_MODE_FULL:
@@ -202,9 +202,25 @@ class API(core.Stack):
             "DJANGO_USER_MGMT_AUTH0_SECRET": "django_user_mgmt_auth0_secret_arn",
             "DJANGO_WEBAPP_HOST": "django_webapp_host_arn",
             "SENTRY_DNS": "sentry_dns_arn",
+            "DJANGO_DEFAULT_FROM_EMAIL": "django_default_from_email_arn",
+            "DJANGO_HOST": "django_host_arn",
         }
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
+
+        self.job_processing_dead_letter_sqs = aws_sqs.Queue(
+            self,
+            'job_processing_dead_letter_sqs',
+        )
+        self.job_processing_sqs = aws_sqs.Queue(
+            self,
+            'job_processing_sqs',
+            visibility_timeout=core.Duration.seconds(60),
+            dead_letter_queue=aws_sqs.DeadLetterQueue(
+                queue=self.job_processing_dead_letter_sqs,
+                max_receive_count=JOB_PROCESSING_MAX_RETRIES
+            )
+        )
 
         self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
             self,
@@ -218,6 +234,13 @@ class API(core.Stack):
             enable_logging=True,
             container_port=80,
             certificate=scope.certs.cert,
+            domain_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
+            domain_zone=aws_route53.PrivateHostedZone(
+                self,
+                "zone",
+                vpc=scope.base.vpc,
+                zone_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+            ),
         )
 
         self.api.task_definition.add_container(
@@ -228,6 +251,7 @@ class API(core.Stack):
                 "WORKER_STM_ARN": scope.workers.worker_state_machine.state_machine_arn,
                 "POSTGRES_DB": DB_NAME,
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "SQS_WORKER_QUEUE_URL": self.job_processing_sqs.queue_url,
             },
             secrets={"DJANGO_SECRET_KEY": django_secret_key, "DB_CONNECTION": connection_secret_key, **env},
             cpu=256,
@@ -237,6 +261,7 @@ class API(core.Stack):
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
         scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
         scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
+        self.job_processing_sqs.grant_send_messages(self.api.service.task_definition.task_role)
 
         for k, v in env.items():
             self.grant_secret_access(v)
@@ -253,33 +278,70 @@ class API(core.Stack):
         secret.grant_read(self.api.service.task_definition.task_role)
 
 
+class LambdaWorker(core.Stack):
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+        self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
+        lambda_worker_handler = "handler.main"
+        self.lambda_worker = aws_lambda.Function(
+            self,
+            "lambda-worker",
+            code=self.lambda_worker_code,
+            runtime=aws_lambda.Runtime.PYTHON_3_7,
+            handler=lambda_worker_handler,
+            environment={
+                "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
+                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
+                "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+            },
+            memory_size=768,
+            vpc=scope.base.vpc,
+            timeout=core.Duration.seconds(60),
+            tracing=aws_lambda.Tracing.ACTIVE,
+
+        )
+        self.lambda_worker.add_event_source(
+            aws_lambda_event_sources.SqsEventSource(scope.api.job_processing_sqs, batch_size=1)
+        )
+        scope.base.db.secret.grant_read(self.lambda_worker.role)
+        scope.base.app_bucket.grant_read_write(self.lambda_worker.role)
+        self.lambda_worker.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
+
+
 class PublicAPI(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
         self.function_code = aws_lambda.Code.from_cfn_parameters()
-        public_api_lambda_code = aws_lambda.AssetCode("backend/functions/public_api")
-        handler = "handlers.handle"
-        if installation_mode == INSTALLATION_MODE_FULL:
-            public_api_lambda_code = self.function_code
-            handler = "backend/functions/public_api/handlers.handle"
-
+        handler = "wsgi_handler.handler"
         self.public_api_lambda = aws_lambda.Function(
             self,
             "public-api-lambda",
-            code=public_api_lambda_code,
+            code=self.function_code,
             handler=handler,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             vpc=scope.base.vpc,
-            environment={"DB_SECRET_ARN": scope.base.db.secret.secret_arn},
+            environment={
+                "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
+                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
+                "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+            },
+            memory_size=512,
+            timeout=core.Duration.seconds(30),
+            tracing=aws_lambda.Tracing.ACTIVE,
         )
 
         scope.base.db.secret.grant_read(self.public_api_lambda.role)
+        scope.base.app_bucket.grant_read(self.public_api_lambda.role)
+
+        self.public_api_lambda.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
         self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
         self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.public_api_lambda)
-        self.publicApiGateway.root.add_method("GET", self.publicApiLambdaIntegration)
+        self.publicApiGateway.root.add_resource(
+            "datasources"
+        ).add_resource("{data_source_id}").add_method("GET", self.publicApiLambdaIntegration)
 
 
 class CIPipeline(core.Stack):
@@ -412,6 +474,25 @@ class CIPipeline(core.Stack):
             outputs=[public_api_lambda_build_output],
         )
 
+        build_lambda_worker_project = aws_codebuild.PipelineProject(
+            self,
+            "build_lambda_worker_project",
+            project_name="schema_cms_build_lambda_worker",
+            environment=aws_codebuild.BuildEnvironment(
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
+            ),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename(
+                "backend/functions/buildspec-lambda-worker.yaml"
+            ),
+        )
+        lambda_worker_build_output = aws_codepipeline.Artifact()
+        build_lambda_worker_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name="build_worker_lambda",
+            input=source_output,
+            project=build_lambda_worker_project,
+            outputs=[lambda_worker_build_output],
+        )
+
         build_workers_success_lambda_project = aws_codebuild.PipelineProject(
             self,
             "build_workers_success_lambda_project",
@@ -465,7 +546,12 @@ class CIPipeline(core.Stack):
 
         cdk_artifact = aws_codepipeline.Artifact()
         build_cdk_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_stack", input=source_output, project=build_cdk_project, outputs=[cdk_artifact]
+            action_name="build_stack",
+            input=source_output,
+            project=build_cdk_project,
+            outputs=[cdk_artifact],
+            run_order=2,
+            extra_inputs=[lambda_worker_build_output],
         )
 
         self.pipeline.add_stage(
@@ -474,6 +560,7 @@ class CIPipeline(core.Stack):
                 build_fe_action,
                 build_app_action,
                 build_workers_action,
+                build_lambda_worker_action,
                 build_public_api_lambda_action,
                 build_workers_success_lambda_action,
                 build_workers_failure_lambda_action,
@@ -484,6 +571,22 @@ class CIPipeline(core.Stack):
         self.pipeline.add_stage(
             stage_name="deploy_public_api",
             actions=[
+                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
+                    action_name="prepare_lambda_worker_changes",
+                    stack_name=scope.lambda_worker.stack_name,
+                    change_set_name="lambdaWorkerStagedChangeSet",
+                    admin_permissions=True,
+                    template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
+                    run_order=1,
+                    parameter_overrides={
+                        **scope.lambda_worker.lambda_worker_code.assign(
+                            bucket_name=lambda_worker_build_output.s3_location.bucket_name,
+                            object_key=lambda_worker_build_output.s3_location.object_key,
+                            object_version=lambda_worker_build_output.s3_location.object_version,
+                        )
+                    },
+                    extra_inputs=[lambda_worker_build_output],
+                ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_public_api_changes",
                     stack_name=scope.public_api.stack_name,
@@ -519,7 +622,10 @@ class CIPipeline(core.Stack):
                             object_version=workers_failure_lambda_build_output.s3_location.object_version,
                         ),
                     },
-                    extra_inputs=[workers_success_lambda_build_output, workers_failure_lambda_build_output],
+                    extra_inputs=[
+                        workers_success_lambda_build_output,
+                        workers_failure_lambda_build_output,
+                    ],
                 ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_api_changes",
@@ -530,6 +636,12 @@ class CIPipeline(core.Stack):
                     run_order=1,
                 ),
                 aws_codepipeline_actions.ManualApprovalAction(action_name="approve_changes", run_order=2),
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                    action_name="execute_lambda_worker_changes",
+                    stack_name=scope.lambda_worker.stack_name,
+                    change_set_name="lambdaWorkerStagedChangeSet",
+                    run_order=3,
+                ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_workers_changes",
                     stack_name=scope.workers.stack_name,

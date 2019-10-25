@@ -1,7 +1,57 @@
 # Users
 Manage user accounts.
 
-## Get a user's profile information
+## Fetch users' profile informations
+
+**Request**:
+
+`GET` `/api/v1/users`
+
+Parameters:
+
+Name       | Type   | Required | Description
+-----------|--------|----------|------------
+role       | string | No       | Filter by user's role ([available roles](#enums)).
+
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+**Response**:
+
+```json
+Content-Type application/json
+200 OK
+
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "result": [
+    {
+      "id": "6d5f9bae-a31b-4b7b-82c4-3853eda2b011",
+      "username": "richard",
+      "first_name": "Richard",
+      "last_name": "Hendriks",
+      "email": "richard@piedpiper.com",
+      "role": "admin"
+    },
+    {
+      "id": "6d5f9bae-a31b-4b7b-82c4-3853eda2b011",
+      "username": "richard",
+      "first_name": "Richard",
+      "last_name": "Hendriks",
+      "email": "richard@piedpiper.com",
+      "role": "admin"
+    }
+  ]
+}
+
+```
+
+
+## Fetch a user's profile information
 
 **Request**:
 
@@ -51,6 +101,44 @@ Content-Type application/json
 ```
 
 
+## Create user
+
+**Request**:
+
+`POST` `/api/v1/users/`
+
+Parameters:
+
+Name       | Type   | Required | Description
+-----------|--------|----------|------------
+first_name | string | No       | User's first name.
+last_name  | string | No       | User's last name.
+email      | string | Yes      | User's email.
+role       | string | No       | User's role ([available roles](#enums)). Default: `editor`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+- Only user with `admin` role can create user's profile information
+- After creating the user account, an email will be sent for verification
+
+**Response**:
+
+```json
+Content-Type application/json
+200 OK
+
+{
+  "id": "6d5f9bae-a31b-4b7b-82c4-3853eda2b011",
+  "username": "richard",
+  "first_name": "Richard",
+  "last_name": "Hendriks",
+  "email": "richard@piedpiper.com",
+  "role": "admin"
+}
+```
+
+
 ## Update a user's profile information
 
 **Request**:
@@ -88,6 +176,24 @@ Content-Type application/json
   "email": "richard@piedpiper.com",
   "role": "admin"
 }
+```
+
+## Deactivate a user's account
+
+**Request**:
+
+`POST` `/api/v1/users/:id/deactivate`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+- Only user with `admin` role can deactivate a user's account
+
+**Response**:
+
+```json
+Content-Type application/json
+204 NO CONTENT
 ```
 
 ## Enums

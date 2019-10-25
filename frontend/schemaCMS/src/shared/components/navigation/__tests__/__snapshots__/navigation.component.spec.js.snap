@@ -22,11 +22,12 @@ exports[`Navigation: Component should render BackButton 1`] = `
       "width": "calc(50% - 5px)",
     }
   }
+  disabled={false}
   onClick={[Function]}
 >
   <FormattedMessage
     defaultMessage="Back"
-    id="navigation.back"
+    id="shared.components.navigation.back"
     values={Object {}}
   />
 </Component>
@@ -40,11 +41,12 @@ exports[`Navigation: Component should render BackButton with custom children 1`]
       "width": "calc(50% - 5px)",
     }
   }
+  disabled={false}
   onClick={[Function]}
 >
   <FormattedMessage
-    defaultMessage="Next"
-    id="navigation.next"
+    defaultMessage="{loading, select, true {Loading...} other {Next}}"
+    id="shared.components.navigation.next"
     values={Object {}}
   />
 </Component>
@@ -55,7 +57,9 @@ exports[`Navigation: Component should render NavigationContainer 1`] = `
   <styled.div
     right={false}
   >
-    <NextButton />
+    <NextButton
+      loading={false}
+    />
   </styled.div>
 </styled.div>
 `;
@@ -72,9 +76,13 @@ exports[`Navigation: Component should render NextButton 1`] = `
   onClick={[Function]}
 >
   <FormattedMessage
-    defaultMessage="Next"
-    id="navigation.next"
-    values={Object {}}
+    defaultMessage="{loading, select, true {Loading...} other {Next}}"
+    id="shared.components.navigation.next"
+    values={
+      Object {
+        "loading": false,
+      }
+    }
   />
 </Component>
 `;
@@ -92,7 +100,7 @@ exports[`Navigation: Component should render NextButton with custom children 1`]
 >
   <FormattedMessage
     defaultMessage="Back"
-    id="navigation.back"
+    id="shared.components.navigation.back"
     values={Object {}}
   />
 </Component>
@@ -106,8 +114,11 @@ exports[`Navigation: Component should render PlusButton 1`] = `
       "width": "60px",
     }
   }
+  inverse={true}
   onClick={[Function]}
 >
-  <Component />
+  <Component
+    inverse={true}
+  />
 </Component>
 `;

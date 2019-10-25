@@ -4,6 +4,9 @@ import { reducer as userProfileReducer } from './userProfile/userProfile.redux';
 import { reducer as projectReducer } from './project/project.redux';
 import { reducer as dataSourceReducer } from './dataSource/dataSource.redux';
 import { reducer as dataWranglingScriptsReducer } from './dataWranglingScripts/dataWranglingScripts.redux';
+import { reducer as dataWranglingResultReducer } from './dataWranglingResult/dataWranglingResult.redux';
+import { reducer as userReducer } from './user/user.redux';
+import { reducer as jobReducer } from './job/job.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -14,6 +17,9 @@ export default function createReducer() {
     project: projectReducer,
     dataSource: dataSourceReducer,
     dataWranglingScripts: dataWranglingScriptsReducer,
+    dataWranglingResult: dataWranglingResultReducer,
+    user: userReducer,
+    job: jobReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`View: Component should render correctly 1`] = `
-<Styled(styled.div)>
+<styled.div>
   <div>
     <HelmetWrapper
       defer={true}
@@ -15,7 +15,7 @@ exports[`View: Component should render correctly 1`] = `
         Array [
           Object {
             "label": "Data Sources",
-            "to": "/project/view/100/datasource",
+            "to": "/project/100/datasource",
           },
         ]
       }
@@ -48,9 +48,12 @@ exports[`View: Component should render correctly 1`] = `
               }
             }
             headerComponent="Data Sources"
+            id="projectDataSources"
             onClick={[Function]}
           >
-            <styled.span>
+            <styled.span
+              id="projectDataSourcesValue"
+            >
               3
             </styled.span>
           </Component>
@@ -65,9 +68,12 @@ exports[`View: Component should render correctly 1`] = `
               }
             }
             headerComponent="Users"
+            id="projectUsers"
             onClick={[Function]}
           >
-            <styled.span>
+            <styled.span
+              id="projectUsersValue"
+            >
               2
             </styled.span>
           </Component>
@@ -77,90 +83,138 @@ exports[`View: Component should render correctly 1`] = `
         <styled.li
           key="0"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldLastUpdated"
+          >
+            <styled.span
+              id="fieldLastUpdatedLabel"
+            >
               Last Update
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldLastUpdatedValue"
+            >
               3 months ago
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldLastUpdatedEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
         <styled.li
           key="1"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldStatus"
+          >
+            <styled.span
+              id="fieldStatusLabel"
+            >
               Status
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldStatusValue"
+            >
               Status
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldStatusEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
         <styled.li
           key="2"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldOwner"
+          >
+            <styled.span
+              id="fieldOwnerLabel"
+            >
               Owner
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldOwnerValue"
+            >
               Firstname Lastname
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldOwnerEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
         <styled.li
           key="3"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldTitle"
+          >
+            <styled.span
+              id="fieldTitleLabel"
+            >
               Title
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldTitleValue"
+            >
               Project Name
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldTitleEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
         <styled.li
           key="4"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldDescription"
+          >
+            <styled.span
+              id="fieldDescriptionLabel"
+            >
               Description
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldDescriptionValue"
+            >
               Description
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldDescriptionEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
         <styled.li
           key="5"
         >
-          <styled.div>
-            <styled.span>
+          <styled.div
+            id="fieldSlug"
+          >
+            <styled.span
+              id="fieldSlugLabel"
+            >
               API
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="fieldSlugValue"
+            >
               schemacms/api/project_title
             </styled.span>
           </styled.div>
-          <styled.div>
+          <styled.div
+            id="fieldSlugEditButton"
+          >
             <Component />
           </styled.div>
         </styled.li>
@@ -175,5 +229,77 @@ exports[`View: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
-</Styled(styled.div)>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": "1px solid #ccc",
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to delete the project?"
+        id="project.view.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="project.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
+</styled.div>
 `;

@@ -1,16 +1,18 @@
 import logging
 
 from django.db import transaction
-from rest_framework import decorators, exceptions, permissions, response, status, viewsets, generics, parsers
+from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
 from schemacms.users import permissions as user_permissions
-from . import constants, models, serializers, permissions as projects_permissions, services
+from schemacms.utils import serializers as utils_serializers
+from . import constants, models, serializers, services
 
 
-class ProjectViewSet(viewsets.ModelViewSet):
+class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.ProjectSerializer
     permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
     queryset = models.Project.objects.none()
+    serializer_class_mapping = {"datasources": serializers.DataSourceSerializer}
 
     def get_queryset(self):
         return (
@@ -21,92 +23,172 @@ class ProjectViewSet(viewsets.ModelViewSet):
             .order_by("-created")
         )
 
+    @decorators.action(detail=True, methods=["get"])
+    def datasources(self, request, **kwargs):
+        project = self.get_object()
+        queryset = (
+            project.data_sources.all().prefetch_related("jobs").available_for_user(user=self.request.user)
+        )
 
-class DataSourceViewSet(viewsets.ModelViewSet):
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return response.Response(serializer.data)
+
+    @decorators.action(detail=True, url_path="remove-editor", methods=["post"])
+    def remove_editor(self, request, pk=None, **kwargs):
+        project = self.get_object()
+        editor_to_remove = request.data.get("id", None)
+
+        if editor_to_remove:
+            project.editors.remove(editor_to_remove)
+
+            return response.Response(
+                f"Editor {editor_to_remove} has been removed from project {project.id}",
+                status=status.HTTP_200_OK,
+            )
+        else:
+            return response.Response(
+                "Please enter the user 'id' you want to remove from project.", status.HTTP_400_BAD_REQUEST
+            )
+
+    @decorators.action(detail=True, url_path="add-editor", methods=["post"])
+    def add_editor(self, request, pk=None, **kwargs):
+        project = self.get_object()
+        editor_to_add = request.data.get("id", None)
+
+        if editor_to_add:
+            project.editors.add(editor_to_add)
+
+            return response.Response(
+                f"Editor {editor_to_add} has been added to project {project.id}", status=status.HTTP_200_OK
+            )
+        else:
+            return response.Response(
+                "Please enter the user 'id' you want to add.", status.HTTP_400_BAD_REQUEST
+            )
+
+
+class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
     queryset = models.DataSource.objects.order_by("-created")
-    permission_classes = (permissions.IsAuthenticated, projects_permissions.HasProjectPermission)
-
-    def initial(self, request, *args, **kwargs):
-        self.project = self.get_project(url_kwargs=kwargs)
-        super().initial(request, *args, **kwargs)
-
-    def get_serializer_class(self):
-        if self.action == "create":
-            return serializers.DraftDataSourceSerializer
-        return super().get_serializer_class()
-
-    def perform_create(self, serializer):
-        serializer.save(project=self.project, created_by=self.request.user)
+    permission_classes = (permissions.IsAuthenticated,)
+    serializer_class_mapping = {
+        "create": serializers.DraftDataSourceSerializer,
+        "script": serializers.DataSourceScriptSerializer,
+        "script_upload": serializers.WranglingScriptSerializer,
+        "job": serializers.CreateJobSerializer,
+        "jobs_history": serializers.DataSourceJobSerializer,
+    }
 
     def get_queryset(self):
-        return super().get_queryset().filter(project=self.project)
+        return super().get_queryset().available_for_user(user=self.request.user)
 
-    @classmethod
-    def get_project(cls, url_kwargs):
-        try:
-            return models.Project.objects.get(pk=url_kwargs["project_pk"])
-        except models.Project.DoesNotExist:
-            raise exceptions.NotFound("The project does not exist")
-        except KeyError:
-            raise exceptions.NotFound("Invalid project ID")
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
 
     @decorators.action(detail=True, methods=["get"])
     def preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
+
+        if not hasattr(data_source, 'meta_data'):
+            return response.Response({}, status=status.HTTP_200_OK)
+
         data = data_source.meta_data.data
         data["data_source"] = {"name": data_source.name}
-        return response.Response(data)
+
+        return response.Response(data, status=status.HTTP_200_OK)
 
     @decorators.action(detail=True, methods=["post"])
     def process(self, request, pk=None, **kwargs):
         obj = self.get_object()
         try:
-            obj.ready_for_processing()
-            obj.process()
-            obj.done()
-            obj.save()
-            logging.info(f"DataSource {obj.id} processing DONE")
             return response.Response(obj.meta_data.data, status=status.HTTP_200_OK)
         except Exception as e:
             logging.error(f"DataSource {self.get_object().id} processing error - {e}")
-            obj.status = constants.DataSourceStatus.ERROR
-            obj.save()
-            return response.Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            return response.Response(status=status.HTTP_404_NOT_FOUND)
 
-
-class DataSourceScriptView(generics.GenericAPIView):
-    queryset = models.DataSource.objects.all()
-
-    def get(self, request, *args, **kwargs):
-        serializer = serializers.DataSourceScriptSerializer(
-            instance=self.get_object().available_scripts, many=True
-        )
+    @decorators.action(detail=True)
+    def script(self, request, pk=None, **kwargs):
+        serializer = self.get_serializer(instance=self.get_object().available_scripts, many=True)
         return response.Response(data=serializer.data)
 
-
-class DataSourceScriptUploadView(generics.GenericAPIView):
-    parser_classes = (parsers.FormParser, parsers.MultiPartParser)
-    queryset = models.DataSource.objects.all()
-    serializer_class = serializers.DataSourceScriptUploadSerializer
-
-    def post(self, request, **kwargs):
-        serializer = self.get_serializer(self.get_object(), data=request.data)
+    @decorators.action(
+        detail=True,
+        url_path="script-upload",
+        parser_classes=(parsers.FormParser, parsers.MultiPartParser),
+        methods=["post"],
+    )
+    def script_upload(self, request, pk=None, **kwargs):
+        datasource = self.get_object()
+        if not request.data.get("datasource"):
+            request.data["datasource"] = datasource
+        serializer = self.get_serializer(data=request.data, context=datasource)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return response.Response(status=status.HTTP_201_CREATED)
 
+    @decorators.action(detail=True, url_path="job", methods=["post"])
+    def job(self, request, pk=None, **kwargs):
+        datasource = self.get_object()
+        if not request.data.get("datasource"):
+            request.data["datasource"] = datasource
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        with transaction.atomic():
+            job = serializer.save()
+            transaction.on_commit(lambda: services.schedule_worker_with(job))
+        return response.Response(status=status.HTTP_201_CREATED)
 
-class DataSourceJobView(generics.CreateAPIView):
-    queryset = models.DataSource.objects.all()
+    @decorators.action(detail=True, url_path="jobs-history", methods=["get"])
+    def jobs_history(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+        queryset = data_source.jobs.all()
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(instance=data_source.jobs_history, many=True)
+        return response.Response(data=serializer.data)
+
+
+class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
+    queryset = models.DataSourceJob.objects.none()
     serializer_class = serializers.DataSourceJobSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
-    @transaction.atomic
-    def perform_create(self, serializer):
-        job = serializer.save(datasource=self.get_object())
-        services.schedule_worker_with(job)
+    def get_queryset(self):
+        return models.DataSourceJob.objects.all().select_related("datasource").prefetch_related("steps")
+
+    @decorators.action(detail=True, url_path="preview", methods=["get"])
+    def result_preview(self, request, pk=None, **kwarg):
+        obj = self.get_object()
+        if obj.job_state in [constants.DataSourceJobState.PENDING, constants.DataSourceJobState.PROCESSING]:
+            return response.Response("Job is still running", status=status.HTTP_200_OK)
+        elif obj.job_state == constants.DataSourceJobState.FAILED:
+            data = {"error": obj.error}
+            return response.Response(data, status=status.HTTP_200_OK)
+        else:
+            try:
+                if not hasattr(obj, 'meta_data') and obj.result:
+                    obj.update_meta()
+                result = obj.meta_data.data
+            except Exception as e:
+                logging.error(f"Not able to showJob {obj.id} results - {e}")
+                return response.Response(status=status.HTTP_404_NOT_FOUND)
+
+            return response.Response(result, status=status.HTTP_200_OK)
 
 
-class DataSourceJobDetailView(generics.RetrieveAPIView):
-    queryset = models.DataSourceJob.objects.all()
-    serializer_class = serializers.DataSourceJobSerializer
+class DataSourceScriptDetailView(generics.RetrieveAPIView):
+    queryset = models.WranglingScript.objects.none()
+    serializer_class = serializers.WranglingScriptSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        return models.WranglingScript.objects.all().select_related("datasource", "created_by")

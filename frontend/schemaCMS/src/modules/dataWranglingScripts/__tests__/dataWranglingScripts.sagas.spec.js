@@ -1,12 +1,14 @@
 import { expectSaga } from 'redux-saga-test-plan';
+import { select } from 'redux-saga/effects';
 import Immutable from 'seamless-immutable';
 import { OK } from 'http-status-codes';
 import nock from 'nock';
 
 import mockApi from '../../../shared/utils/mockApi';
-import { DATA_SOURCE_PATH } from '../../../shared/utils/api.constants';
+import { DATA_SOURCES_PATH, DATA_WRANGLING_SCRIPTS_PATH } from '../../../shared/utils/api.constants';
 import { watchDataWranglingScripts } from '../dataWranglingScripts.sagas';
 import { DataWranglingScriptsRoutines } from '../dataWranglingScripts.redux';
+import { selectDataSource } from '../../dataSource';
 
 describe('DataWranglingScripts: sagas', () => {
   const defaultState = Immutable({});
@@ -17,10 +19,10 @@ describe('DataWranglingScripts: sagas', () => {
 
   describe('fetchList', () => {
     it('should dispatch a success action', async () => {
-      const payload = { dataSourceId: '1' };
       const responseData = ['data 1', 'data 2'];
+      const payload = { dataSourceId: 1 };
 
-      mockApi.get(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script`).reply(OK, responseData);
+      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`).reply(OK, responseData);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
@@ -32,12 +34,14 @@ describe('DataWranglingScripts: sagas', () => {
 
   describe('sendList', () => {
     it('should dispatch a success action', async () => {
-      const payload = { dataSourceId: '1', steps: ['data 1', 'data 2'], projectId: '1' };
+      const payload = { dataSourceId: '1', steps: ['data 1', 'data 2'] };
+      const selectedProject = { id: 1, project: 1 };
 
-      mockApi.put(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK);
+      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/job`, { steps: payload.steps }).reply(OK);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
+        .provide([[select(selectDataSource), selectedProject]])
         .put(DataWranglingScriptsRoutines.sendList.success())
         .dispatch(DataWranglingScriptsRoutines.sendList(payload))
         .silentRun();
@@ -53,33 +57,34 @@ describe('DataWranglingScripts: sagas', () => {
       const responseData = ['data 1', 'data 2', 'data 3'];
 
       mockApi
-        .post(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script-upload`, /form-data; name="script"[^]*file/m, options)
+        .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/script-upload`, /form-data; name="file"[^]*file/m, options)
         .reply(OK);
-      mockApi.get(`${DATA_SOURCE_PATH}/${payload.dataSourceId}/script`).reply(OK, responseData);
+      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/script`).reply(OK, responseData);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
+        .put(DataWranglingScriptsRoutines.fetchList.success(responseData))
         .put(DataWranglingScriptsRoutines.uploadScript.success())
         .dispatch(DataWranglingScriptsRoutines.uploadScript(payload))
         .silentRun();
     });
   });
 
-  // describe('fetchOne', () => {
-  //   it('should dispatch a success action', async () => {
-  //     const payload = { scriptId: '1' };
-  //     const responseData = {
-  //       description: 'file description',
-  //       code: 'df.columns = map(str.lower, df.columns)',
-  //     };
-  //
-  //     // mockApi.get(`/script/view/${payload.scriptId}`).reply(OK, responseData);
-  //
-  //     await expectSaga(watchDataWranglingScripts)
-  //       .withState(defaultState)
-  //       .put(DataWranglingScriptsRoutines.fetchOne.success(responseData))
-  //       .dispatch(DataWranglingScriptsRoutines.fetchOne(payload))
-  //       .silentRun();
-  //   });
-  // });
+  describe('fetchOne', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { scriptId: '1' };
+      const responseData = {
+        description: 'file description',
+        code: 'df.columns = map(str.lower, df.columns)',
+      };
+
+      mockApi.get(`/script/${payload.scriptId}`).reply(OK, responseData);
+
+      await expectSaga(watchDataWranglingScripts)
+        .withState(defaultState)
+        .put(DataWranglingScriptsRoutines.fetchOne.success(responseData))
+        .dispatch(DataWranglingScriptsRoutines.fetchOne(payload))
+        .silentRun();
+    });
+  });
 });

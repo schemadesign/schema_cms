@@ -12,4 +12,4 @@ const defaultProps = {
   onChange: Function.prototype,
 };
 
-storiesOf('Shared Components/Form/TextInput', module).add('Default', () => <TextInput {...defaultProps} />);
+storiesOf('Shared Components|Form/TextInput', module).add('Default', () => <TextInput {...defaultProps} />);

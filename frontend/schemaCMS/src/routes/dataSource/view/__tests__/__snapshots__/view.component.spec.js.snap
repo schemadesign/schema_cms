@@ -9,7 +9,7 @@ exports[`View: Component should not render any step 1`] = `
       Array [
         Object {
           "label": "Data source list",
-          "to": "/project/view/1/datasource/list",
+          "to": "/project/1/datasource/",
         },
         Object {
           "label": "Remove Data Source",
@@ -18,38 +18,78 @@ exports[`View: Component should not render any step 1`] = `
       ]
     }
   />
-  <NavigationContainer
-    right={false}
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": "1px solid #ccc",
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
   >
-    <BackButton
-      onClick={[Function]}
-    >
+    <Styled(H1)>
       <FormattedMessage
-        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-        id="dataSource.view.back"
-        values={
-          Object {
-            "cancel": false,
-          }
-        }
+        defaultMessage="Are you sure you want to remove the data source?"
+        id="dataSource.view.removeTitle"
+        values={Object {}}
       />
-    </BackButton>
-    <NextButton
-      onClick={[Function]}
-    />
+    </Styled(H1)>
     <styled.div>
-      <Component
-        activeStep={0}
-        customStyles={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-        onStepChange={[Function]}
-        steps={6}
-      />
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="dataSource.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
     </styled.div>
-  </NavigationContainer>
+  </Modal>
 </styled.div>
 `;
 
@@ -64,7 +104,7 @@ exports[`View: Component should render draft 1`] = `
       Array [
         Object {
           "label": "Data source list",
-          "to": "/project/view/1/datasource/list",
+          "to": "/project/1/datasource/",
         },
         Object {
           "label": "Remove Data Source",
@@ -74,16 +114,17 @@ exports[`View: Component should render draft 1`] = `
     }
   />
   <WithTheme(SourceComponent)
-    bindSubmitForm={[Function]}
     dataSource={
       Object {
         "id": "id",
+        "project": "1",
         "status": "draft",
       }
     }
     dataWranglingScripts={Array []}
     fetchDataSource={[Function]}
     fetchDataWranglingScripts={[Function]}
+    fetchFields={[Function]}
     history={
       Object {
         "push": [Function],
@@ -98,51 +139,89 @@ exports[`View: Component should render draft 1`] = `
       Object {
         "params": Object {
           "dataSourceId": "1",
-          "projectId": "1",
           "step": "1",
         },
-        "url": "/project/view/1/datasource/view/1/1",
       }
     }
     removeDataSource={[Function]}
     sendUpdatedDataWranglingScript={[Function]}
     unmountDataSource={[Function]}
+    unmountFields={[Function]}
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <NavigationContainer
-    right={false}
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": "1px solid #ccc",
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
   >
-    <BackButton
-      onClick={[Function]}
-    >
+    <Styled(H1)>
       <FormattedMessage
-        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-        id="dataSource.view.back"
-        values={
-          Object {
-            "cancel": true,
-          }
-        }
+        defaultMessage="Are you sure you want to remove the data source?"
+        id="dataSource.view.removeTitle"
+        values={Object {}}
       />
-    </BackButton>
-    <NextButton
-      onClick={[Function]}
-    />
+    </Styled(H1)>
     <styled.div>
-      <Component
-        activeStep={1}
-        customStyles={
-          Object {
-            "margin": "0 auto",
-            "pointerEvents": "none",
-          }
-        }
-        onStepChange={[Function]}
-        steps={6}
-      />
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="dataSource.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
     </styled.div>
-  </NavigationContainer>
+  </Modal>
 </styled.div>
 `;
 
@@ -155,7 +234,7 @@ exports[`View: Component should render second step 1`] = `
       Array [
         Object {
           "label": "Data source list",
-          "to": "/project/view/1/datasource/list",
+          "to": "/project/1/datasource/",
         },
         Object {
           "label": "Remove Data Source",
@@ -165,17 +244,18 @@ exports[`View: Component should render second step 1`] = `
     }
   />
   <WithTheme(SourceComponent)
-    bindSubmitForm={[Function]}
     dataSource={
       Object {
         "id": "id",
         "name": "name",
+        "project": "1",
         "step": "2",
       }
     }
     dataWranglingScripts={Array []}
     fetchDataSource={[Function]}
     fetchDataWranglingScripts={[Function]}
+    fetchFields={[Function]}
     history={
       Object {
         "push": [Function],
@@ -190,50 +270,89 @@ exports[`View: Component should render second step 1`] = `
       Object {
         "params": Object {
           "dataSourceId": "1",
-          "projectId": "1",
           "step": "1",
         },
-        "url": "/project/view/1/datasource/view/1/1",
       }
     }
     removeDataSource={[Function]}
     sendUpdatedDataWranglingScript={[Function]}
     unmountDataSource={[Function]}
+    unmountFields={[Function]}
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <NavigationContainer
-    right={false}
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": "1px solid #ccc",
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
   >
-    <BackButton
-      onClick={[Function]}
-    >
+    <Styled(H1)>
       <FormattedMessage
-        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-        id="dataSource.view.back"
-        values={
-          Object {
-            "cancel": true,
-          }
-        }
+        defaultMessage="Are you sure you want to remove the data source?"
+        id="dataSource.view.removeTitle"
+        values={Object {}}
       />
-    </BackButton>
-    <NextButton
-      onClick={[Function]}
-    />
+    </Styled(H1)>
     <styled.div>
-      <Component
-        activeStep={1}
-        customStyles={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-        onStepChange={[Function]}
-        steps={6}
-      />
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="dataSource.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
     </styled.div>
-  </NavigationContainer>
+  </Modal>
 </styled.div>
 `;
 
@@ -246,7 +365,7 @@ exports[`View: Component should render source step 1`] = `
       Array [
         Object {
           "label": "Data source list",
-          "to": "/project/view/1/datasource/list",
+          "to": "/project/1/datasource/",
         },
         Object {
           "label": "Remove Data Source",
@@ -256,16 +375,17 @@ exports[`View: Component should render source step 1`] = `
     }
   />
   <WithTheme(SourceComponent)
-    bindSubmitForm={[Function]}
     dataSource={
       Object {
         "id": "id",
         "name": "name",
+        "project": "1",
       }
     }
     dataWranglingScripts={Array []}
     fetchDataSource={[Function]}
     fetchDataWranglingScripts={[Function]}
+    fetchFields={[Function]}
     history={
       Object {
         "push": [Function],
@@ -280,49 +400,88 @@ exports[`View: Component should render source step 1`] = `
       Object {
         "params": Object {
           "dataSourceId": "1",
-          "projectId": "1",
           "step": "1",
         },
-        "url": "/project/view/1/datasource/view/1/1",
       }
     }
     removeDataSource={[Function]}
     sendUpdatedDataWranglingScript={[Function]}
     unmountDataSource={[Function]}
+    unmountFields={[Function]}
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <NavigationContainer
-    right={false}
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": "1px solid #ccc",
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
   >
-    <BackButton
-      onClick={[Function]}
-    >
+    <Styled(H1)>
       <FormattedMessage
-        defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-        id="dataSource.view.back"
-        values={
-          Object {
-            "cancel": true,
-          }
-        }
+        defaultMessage="Are you sure you want to remove the data source?"
+        id="dataSource.view.removeTitle"
+        values={Object {}}
       />
-    </BackButton>
-    <NextButton
-      onClick={[Function]}
-    />
+    </Styled(H1)>
     <styled.div>
-      <Component
-        activeStep={1}
-        customStyles={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-        onStepChange={[Function]}
-        steps={6}
-      />
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="dataSource.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
     </styled.div>
-  </NavigationContainer>
+  </Modal>
 </styled.div>
 `;
