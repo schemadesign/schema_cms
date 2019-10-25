@@ -3,11 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { withRouter, withTheme } from '../../../../.storybook/decorators';
 
 import { DataWranglingScripts } from './dataWranglingScripts.component';
-import { STATUS_DONE } from '../../../../modules/dataSource/dataSource.constants';
 
 export const defaultProps = {
   dataWranglingScripts: [{ id: 1, name: 'name 1' }, { id: 2, name: 'name 2' }],
-  dataSource: { status: STATUS_DONE },
+  dataSource: { metaData: {} },
   bindSubmitForm: Function.prototype,
   fetchDataWranglingScripts: Function.prototype,
   uploadScript: Function.prototype,

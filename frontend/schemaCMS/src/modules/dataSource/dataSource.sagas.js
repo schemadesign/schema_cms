@@ -1,5 +1,5 @@
 import { all, put, takeLatest, take, delay, fork, cancel, cancelled } from 'redux-saga/effects';
-import { pipe, forEach, keys, any, propEq, path, omit, isEmpty, filter, not, propOr, either } from 'ramda';
+import { pipe, forEach, keys, any, propEq, omit, isEmpty, filter, not, propOr, either } from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
