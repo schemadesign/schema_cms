@@ -520,10 +520,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-      className="sc-kfGgVZ eiVPZR"
+      className="sc-eXEjpC iqsxXl"
     >
       <h2
-        className="sc-esjQYD ikJPMC"
+        className="sc-ibxdXY clQDsv"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -543,7 +543,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-kIPQKe cZVJnN"
+        className="sc-RefOD oHmhX"
         style={
           Object {
             "color": Object {
@@ -559,7 +559,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-      className="sc-kPVwWT dXQctL"
+      className="sc-kIPQKe mhcxI"
     >
       <button
         disabled={false}
@@ -616,10 +616,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-      className="sc-kfGgVZ eiVPZR"
+      className="sc-eXEjpC iqsxXl"
     >
       <h2
-        className="sc-esjQYD ikJPMC"
+        className="sc-ibxdXY clQDsv"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -639,7 +639,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-kIPQKe cZVJnN"
+        className="sc-RefOD oHmhX"
         style={
           Object {
             "color": Object {
@@ -655,7 +655,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-      className="sc-kPVwWT dXQctL"
+      className="sc-kIPQKe mhcxI"
     >
       <button
         disabled={false}
@@ -712,10 +712,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-      className="sc-kfGgVZ eiVPZR"
+      className="sc-eXEjpC iqsxXl"
     >
       <h2
-        className="sc-esjQYD ikJPMC"
+        className="sc-ibxdXY clQDsv"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -735,7 +735,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-kIPQKe cZVJnN"
+        className="sc-RefOD oHmhX"
         style={
           Object {
             "color": Object {
@@ -751,7 +751,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-      className="sc-kPVwWT dXQctL"
+      className="sc-kIPQKe mhcxI"
     >
       <button
         disabled={false}

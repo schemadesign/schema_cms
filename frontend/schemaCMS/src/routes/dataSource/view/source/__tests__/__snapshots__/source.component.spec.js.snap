@@ -123,6 +123,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         },
         "text": "#FFF",
         "textArea": Object {
+          "background": "#000",
           "text": "#FFF",
         },
         "textField": Object {
@@ -860,6 +861,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                   },
                   "text": "#FFF",
                   "textArea": Object {
+                    "background": "#000",
                     "text": "#FFF",
                   },
                   "textField": Object {
@@ -1420,6 +1422,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         },
         "text": "#FFF",
         "textArea": Object {
+          "background": "#000",
           "text": "#FFF",
         },
         "textField": Object {
@@ -2508,6 +2511,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   },
                   "text": "#FFF",
                   "textArea": Object {
+                    "background": "#000",
                     "text": "#FFF",
                   },
                   "textField": Object {

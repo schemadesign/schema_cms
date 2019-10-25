@@ -17,5 +17,4 @@ const setJob = (state = INITIAL_STATE, { payload }) => state.set('job', payload)
 
 export const reducer = createReducer(INITIAL_STATE, {
   [JobRoutines.fetchOne.SUCCESS]: setJob,
-  [JobRoutines.updateOne.SUCCESS]: setJob,
 });

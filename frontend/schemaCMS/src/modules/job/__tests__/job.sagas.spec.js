@@ -8,18 +8,17 @@ import mockApi from '../../../shared/utils/mockApi';
 
 describe('Job: sagas', () => {
   const defaultState = Immutable({});
+  const response = {
+    id: 1,
+  };
 
   describe('when fetchOne action is called', () => {
-    const response = {
-      id: 1,
-    };
-
-    mockApi.get('/jobs/1').reply(OK, response);
     const payload = {
       jobId: 1,
     };
 
     it('should put fetchOne.success action', async () => {
+      mockApi.get('/jobs/1').reply(OK, response);
       await expectSaga(watchJob)
         .withState(defaultState)
         .put(JobRoutines.fetchOne.success(response))
@@ -29,20 +28,17 @@ describe('Job: sagas', () => {
   });
 
   describe('when updateOne action is called', () => {
-    const updateOne = {
-      id: 1,
-    };
-
-    mockApi.patch('/jobs/1').reply(OK);
     const payload = {
       jobId: 1,
     };
 
     it('should put updateOne.success action', async () => {
+      mockApi.patch('/jobs/1').reply(OK);
+      mockApi.get('/jobs/1').reply(OK, response);
       await expectSaga(watchJob)
         .withState(defaultState)
-        .put(JobRoutines.updateOne.success(updateOne))
-        .dispatch(JobRoutines.fetchOne(payload))
+        .put(JobRoutines.updateOne.success())
+        .dispatch(JobRoutines.updateOne(payload))
         .silentRun();
     });
   });

@@ -28,15 +28,4 @@ describe('Job: redux', () => {
       expect(resultState.job).to.deep.equal(job);
     });
   });
-
-  describe('when JOB/UPDATE_ONE action is received', () => {
-    it('should set job value', () => {
-      const job = {
-        pk: 1,
-      };
-
-      const resultState = jobReducer(state, JobRoutines.updateOne.success({ pk: 1 }));
-      expect(resultState.job).to.deep.equal(job);
-    });
-  });
 });
