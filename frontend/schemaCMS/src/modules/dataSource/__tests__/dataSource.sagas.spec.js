@@ -8,7 +8,6 @@ import { watchDataSource } from '../dataSource.sagas';
 import { DataSourceRoutines } from '../dataSource.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCES_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
-import { STATUS_DONE, STATUS_DRAFT, STATUS_READY_FOR_PROCESSING } from '../dataSource.constants';
 import browserHistory from '../../../shared/utils/history';
 
 describe('DataSource: sagas', () => {
@@ -24,7 +23,7 @@ describe('DataSource: sagas', () => {
       const requestData = { project: payload.projectId };
       const responseData = {
         id: 1,
-        status: STATUS_DRAFT,
+        metaData: null,
       };
 
       mockApi.post(`${DATA_SOURCES_PATH}`, requestData).reply(OK, responseData);
@@ -42,7 +41,7 @@ describe('DataSource: sagas', () => {
       const payload = { projectId: '1', dataSourceId: '1' };
       const responseData = {
         id: 1,
-        status: STATUS_DONE,
+        metaData: {},
       };
 
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`).reply(OK, responseData);
@@ -143,7 +142,7 @@ describe('DataSource: sagas', () => {
     const responseData = {
       id: 1,
       project: 1,
-      status: STATUS_DRAFT,
+      metaData: null,
     };
 
     describe('on success', () => {

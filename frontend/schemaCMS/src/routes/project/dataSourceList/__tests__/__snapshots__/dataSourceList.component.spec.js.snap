@@ -1,207 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataSourceList: Component should render card with draft state 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="Data Sources"
-  />
-  <TopHeader
-    headerSubtitle="Overview"
-    headerTitle="Data Sources"
-    secondaryMenuItems={
-      Array [
-        Object {
-          "label": "Project details",
-          "to": "/project/1",
-        },
-      ]
-    }
-  />
-  <styled.div>
-    <styled.li
-      key="0"
-    >
-      <Component
-        headerComponent={
-          <FormattedMessage
-            defaultMessage="Draft"
-            id="dataSource.list.draft"
-            values={Object {}}
-          />
-        }
-      >
-        <H1
-          customStyles={
-            Object {
-              "color": "#a6a7aa",
-              "cursor": "pointer",
-              "marginBottom": "20px",
-            }
-          }
-          onClick={[Function]}
-        >
-          name
-        </H1>
-        <styled.div>
-          <styled.div
-            key="0"
-          >
-            <styled.span>
-              Source
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              <Component
-                customStyles={
-                  Object {
-                    "display": "none",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-              />
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="1"
-          >
-            <styled.span>
-              Items
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              246
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="2"
-          >
-            <styled.span>
-              Fields
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              11
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="3"
-          >
-            <styled.span>
-              Filters
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              —
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="4"
-          >
-            <styled.span>
-              Views
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              —
-            </styled.span>
-          </styled.div>
-        </styled.div>
-      </Component>
-    </styled.li>
-  </styled.div>
-  <NavigationContainer
-    right={false}
-  >
-    <BackArrowButton
-      onClick={[Function]}
-    />
-    <PlusButton
-      onClick={[Function]}
-    />
-  </NavigationContainer>
-</styled.div>
-`;
-
-exports[`DataSourceList: Component should render card with error state 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="Data Sources"
-  />
-  <TopHeader
-    headerSubtitle="Overview"
-    headerTitle="Data Sources"
-    secondaryMenuItems={
-      Array [
-        Object {
-          "label": "Project details",
-          "to": "/project/1",
-        },
-      ]
-    }
-  />
-  <styled.div>
-    <styled.li
-      key="0"
-    >
-      <Component
-        headerComponent={
-          <FormattedMessage
-            defaultMessage="Error"
-            id="dataSource.list.error"
-            values={Object {}}
-          />
-        }
-      >
-        <H1
-          customStyles={
-            Object {
-              "color": "#a6a7aa",
-              "cursor": "pointer",
-              "marginBottom": "20px",
-            }
-          }
-          onClick={[Function]}
-        >
-          name
-        </H1>
-        <styled.div>
-          <styled.div
-            key="0"
-          >
-            error 1
-          </styled.div>
-          <styled.div
-            key="1"
-          >
-            error2
-          </styled.div>
-        </styled.div>
-      </Component>
-    </styled.li>
-  </styled.div>
-  <NavigationContainer
-    right={false}
-  >
-    <BackArrowButton
-      onClick={[Function]}
-    />
-    <PlusButton
-      onClick={[Function]}
-    />
-  </NavigationContainer>
-</styled.div>
-`;
-
 exports[`DataSourceList: Component should render card with job 1`] = `
 <styled.div>
   <HelmetWrapper
@@ -260,9 +58,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             <styled.span>
               Source
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               <Component
                 customStyles={
                   Object {
@@ -279,10 +75,8 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             <styled.span>
               Items
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
-              246
+            <styled.span>
+              —
             </styled.span>
           </styled.div>
           <styled.div
@@ -291,10 +85,8 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             <styled.span>
               Fields
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
-              11
+            <styled.span>
+              —
             </styled.span>
           </styled.div>
           <styled.div
@@ -303,9 +95,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             <styled.span>
               Filters
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               —
             </styled.span>
           </styled.div>
@@ -315,9 +105,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             <styled.span>
               Views
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               —
             </styled.span>
           </styled.div>
@@ -447,266 +235,6 @@ exports[`DataSourceList: Component should render card with job 1`] = `
 </styled.div>
 `;
 
-exports[`DataSourceList: Component should render card with processing state 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="Data Sources"
-  />
-  <TopHeader
-    headerSubtitle="Overview"
-    headerTitle="Data Sources"
-    secondaryMenuItems={
-      Array [
-        Object {
-          "label": "Project details",
-          "to": "/project/1",
-        },
-      ]
-    }
-  />
-  <styled.div>
-    <styled.li
-      key="0"
-    >
-      <Component
-        headerComponent={
-          <FormattedMessage
-            defaultMessage="Loading..."
-            id="dataSource.list.processing"
-            values={Object {}}
-          />
-        }
-      >
-        <H1
-          customStyles={
-            Object {
-              "color": "#a6a7aa",
-              "cursor": "pointer",
-              "marginBottom": "20px",
-            }
-          }
-          onClick={[Function]}
-        >
-          name
-        </H1>
-        <styled.div>
-          <styled.div
-            key="0"
-          >
-            <styled.span>
-              Source
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              <Component
-                customStyles={
-                  Object {
-                    "display": "none",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-              />
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="1"
-          >
-            <styled.span>
-              Items
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              246
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="2"
-          >
-            <styled.span>
-              Fields
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              11
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="3"
-          >
-            <styled.span>
-              Filters
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              —
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="4"
-          >
-            <styled.span>
-              Views
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              —
-            </styled.span>
-          </styled.div>
-        </styled.div>
-      </Component>
-    </styled.li>
-  </styled.div>
-  <NavigationContainer
-    right={false}
-  >
-    <BackArrowButton
-      onClick={[Function]}
-    />
-    <PlusButton
-      onClick={[Function]}
-    />
-  </NavigationContainer>
-</styled.div>
-`;
-
-exports[`DataSourceList: Component should render card with ready for processing state 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="Data Sources"
-  />
-  <TopHeader
-    headerSubtitle="Overview"
-    headerTitle="Data Sources"
-    secondaryMenuItems={
-      Array [
-        Object {
-          "label": "Project details",
-          "to": "/project/1",
-        },
-      ]
-    }
-  />
-  <styled.div>
-    <styled.li
-      key="0"
-    >
-      <Component
-        headerComponent={
-          <FormattedMessage
-            defaultMessage="Loading..."
-            id="dataSource.list.processing"
-            values={Object {}}
-          />
-        }
-      >
-        <H1
-          customStyles={
-            Object {
-              "color": "#a6a7aa",
-              "cursor": "pointer",
-              "marginBottom": "20px",
-            }
-          }
-          onClick={[Function]}
-        >
-          name
-        </H1>
-        <styled.div>
-          <styled.div
-            key="0"
-          >
-            <styled.span>
-              Source
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              <Component
-                customStyles={
-                  Object {
-                    "display": "none",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-              />
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="1"
-          >
-            <styled.span>
-              Items
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              246
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="2"
-          >
-            <styled.span>
-              Fields
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              11
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="3"
-          >
-            <styled.span>
-              Filters
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              —
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="4"
-          >
-            <styled.span>
-              Views
-            </styled.span>
-            <styled.span
-              isLock={true}
-            >
-              —
-            </styled.span>
-          </styled.div>
-        </styled.div>
-      </Component>
-    </styled.li>
-  </styled.div>
-  <NavigationContainer
-    right={false}
-  >
-    <BackArrowButton
-      onClick={[Function]}
-    />
-    <PlusButton
-      onClick={[Function]}
-    />
-  </NavigationContainer>
-</styled.div>
-`;
-
 exports[`DataSourceList: Component should render correctly 1`] = `
 <styled.div>
   <HelmetWrapper
@@ -765,9 +293,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             <styled.span>
               Source
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               <Component
                 customStyles={
                   Object {
@@ -784,10 +310,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             <styled.span>
               Items
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
-              246
+            <styled.span>
+              —
             </styled.span>
           </styled.div>
           <styled.div
@@ -796,10 +320,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             <styled.span>
               Fields
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
-              11
+            <styled.span>
+              —
             </styled.span>
           </styled.div>
           <styled.div
@@ -808,9 +330,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             <styled.span>
               Filters
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               —
             </styled.span>
           </styled.div>
@@ -820,9 +340,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             <styled.span>
               Views
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               —
             </styled.span>
           </styled.div>
@@ -867,9 +385,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             <styled.span>
               Source
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               <Component
                 customStyles={
                   Object {
@@ -886,9 +402,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             <styled.span>
               Items
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               246
             </styled.span>
           </styled.div>
@@ -898,9 +412,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             <styled.span>
               Fields
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               11
             </styled.span>
           </styled.div>
@@ -910,9 +422,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             <styled.span>
               Filters
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               —
             </styled.span>
           </styled.div>
@@ -922,9 +432,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             <styled.span>
               Views
             </styled.span>
-            <styled.span
-              isLock={false}
-            >
+            <styled.span>
               —
             </styled.span>
           </styled.div>

@@ -5,7 +5,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   locale="en"
 >
   <SourceComponent
-    dataSource={Object {}}
+    dataSource={
+      Object {
+        "metaData": Object {},
+      }
+    }
     history={
       Object {
         "push": [Function],
@@ -735,7 +739,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
               </div>
             </RadioGroup>
             <StepNavigation
-              dataSource={Object {}}
+              dataSource={
+                Object {
+                  "metaData": Object {},
+                }
+              }
               disabled={
                 Object {
                   "next": true,
@@ -2797,6 +2805,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                     customStyles={
                                       Object {
                                         "margin": "0 auto",
+                                        "pointerEvents": "none",
                                       }
                                     }
                                     onStepChange={[Function]}
@@ -2808,6 +2817,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                       customStyles={
                                         Object {
                                           "margin": "0 auto",
+                                          "pointerEvents": "none",
                                         }
                                       }
                                       handleStep={[Function]}
@@ -2825,6 +2835,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                             "display": "flex",
                                             "flexDirection": "row",
                                             "margin": "0 auto",
+                                            "pointerEvents": "none",
                                           }
                                         }
                                       >
