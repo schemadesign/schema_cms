@@ -75,9 +75,9 @@ export class TextAreaComponent extends PureComponent {
     return (
       <Fragment>
         <textarea
-          {...restProps}
           id={name}
           style={{ height, ...styles }}
+          {...restProps}
           onChange={this.handleChange}
           ref={this.textAreaRef}
         />
