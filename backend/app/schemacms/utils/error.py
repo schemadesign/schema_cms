@@ -18,15 +18,15 @@ class Error:
         return {"message": self.message, "code": self.code}
 
 
-def transform_error_detail_list(l):
-    return [Error.fromErrorDetail(e).data if isinstance(e, exceptions.ErrorDetail) else e for e in l]
-
-
-def transform_error_detail_dict(d):
-    return {
-        k: transform_error_detail_list(v) if isinstance(v, list) else Error.fromErrorDetail(v).data
-        for k, v in d.items()
-    }
+def transform_error_data(data):
+    if isinstance(data, exceptions.ErrorDetail):
+        return Error.fromErrorDetail(data).data
+    elif isinstance(data, (tuple, list)):
+        data = [transform_error_data(v) for v in data]
+    elif isinstance(data, dict):
+        for k, v in data.items():
+            data[k] = transform_error_data(v)
+    return data
 
 
 def custom_exception_handler(exc, context):
@@ -36,10 +36,5 @@ def custom_exception_handler(exc, context):
 
     # Now add the HTTP status code to the response.
     if response is not None:
-        if isinstance(response.data, list):
-            response.data = transform_error_detail_list(response.data)
-        elif isinstance(response.data, dict):
-            response.data = transform_error_detail_dict(response.data)
-        elif isinstance(response.data, exceptions.ErrorDetail):
-            response.data = Error.fromErrorDetail(response.data).data
+        response.data = transform_error_data(response.data)
     return response

@@ -1,14 +1,14 @@
 import os
 
 from django.db import transaction
-from rest_framework import serializers, exceptions, validators
+from rest_framework import serializers, exceptions
 
 from schemacms.projects import models
 from .constants import DataSourceJobState
 from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
-from .validators import CustomUniqueTogetherValidator
+from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
 
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
@@ -67,8 +67,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=DataSource.objects.all(),
-                fields=('name', 'project'),
+                fields=("project", "name"),
                 key_field_name="name",
+                code="dataSourceProjectNameUnique",
                 message="DataSource with this name already exist in project.",
             )
         ]
@@ -166,7 +167,9 @@ class ProjectSerializer(serializers.ModelSerializer):
             "modified",
             "meta",
         )
-        extra_kwargs = {"title": {"validators": [validators.UniqueValidator(queryset=Project.objects.all())]}}
+        extra_kwargs = {
+            "title": {"validators": [CustomUniqueValidator(queryset=Project.objects.all(), prefix="project")]}
+        }
 
     def create(self, validated_data):
         project = Project(owner=self.context["request"].user, **validated_data)

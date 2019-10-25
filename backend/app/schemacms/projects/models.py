@@ -140,7 +140,7 @@ class DataSource(ext_models.TimeStampedModel):
     def __str__(self):
         return self.name or str(self.id)
 
-    def update_meta(self, file=None, file_name=None,):
+    def update_meta(self, file=None, file_name=None):
         if not file:
             file = self.file.url
 
