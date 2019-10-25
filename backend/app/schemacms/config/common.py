@@ -40,6 +40,7 @@ class Common(Configuration):
         "social_django",  # authorization by auth0
         "django_extensions",  # Django extensions
         "corsheaders",  # cors
+        "softdelete",
         # Your apps
         "schemacms.users",
         "schemacms.authorization",
