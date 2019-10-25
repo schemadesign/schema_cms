@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preview: Component should render correctly 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Preview"
+        id="job.preview.subTitile"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Job"
+        id="job.preview.pageTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <Table
+    header={
+      Array [
+        "First Name",
+        "Last Name",
+        "Full Name",
+        "Birthplace",
+        "State of Birth",
+        "Birthday",
+        "Url",
+      ]
+    }
+    numberedRows={true}
+    rows={
+      Array [
+        Array [
+          "George",
+          "Washington",
+          "George Washington",
+          "Westmoreland County",
+          "VA",
+          "02/22/1732",
+          "some.url.com",
+        ],
+        Array [
+          "John",
+          "Adams",
+          "John Adams",
+          "Braintree",
+          "MA",
+          "10/30/1735",
+          "some.url.com",
+        ],
+        Array [
+          "Thomas",
+          "Jefferson",
+          "Thomas Jefferson",
+          "Shadwell",
+          "VA",
+          "04/13/1743",
+          "some.url.com",
+        ],
+        Array [
+          "James",
+          "Madison",
+          "James Madison",
+          "Port Conway",
+          "VA",
+          "03/16/1751",
+          "some.url.com",
+        ],
+        Array [
+          "James",
+          "Monroe",
+          "James Monroe",
+          "Monroe Hall",
+          "VA",
+          "04/28/1758",
+          "some.url.com",
+        ],
+      ]
+    }
+  />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`Preview: Component should render loader 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Preview"
+        id="job.preview.subTitile"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Job"
+        id="job.preview.pageTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <Loader />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;
