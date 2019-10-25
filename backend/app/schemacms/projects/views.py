@@ -165,7 +165,7 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
     def get_queryset(self):
         return models.DataSourceJob.objects.all().select_related("datasource").prefetch_related("steps")
 
-    @decorators.action(detail=True, url_path="result-preview", methods=["get"])
+    @decorators.action(detail=True, url_path="preview", methods=["get"])
     def result_preview(self, request, pk=None, **kwarg):
         obj = self.get_object()
         if obj.job_state in [constants.DataSourceJobState.PENDING, constants.DataSourceJobState.PROCESSING]:

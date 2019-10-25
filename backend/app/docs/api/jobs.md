@@ -57,7 +57,7 @@ Content-Type application/json
 
 **Request**:
 
-`GET` `/api/v1/jobs/:id/result-preview`
+`GET` `/api/v1/jobs/:id/preview`
 
 *Note:*
 
