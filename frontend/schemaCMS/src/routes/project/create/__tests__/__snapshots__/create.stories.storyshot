@@ -10,7 +10,7 @@ exports[`Storyshots Project/Create Default 1`] = `
   }
 >
   <div
-    className="sc-jbKcbu cWSlbe"
+    className="sc-uJMKN jsQhVl"
   >
     <div
       className="sc-jDwBTQ fRXXnG"
@@ -211,7 +211,7 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-dNLxif hnPUCb"
+      className="sc-bbmXgH kvRyYY"
       onSubmit={[Function]}
     >
       <div
@@ -394,7 +394,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-hqyNC jtgwqa"
+        className="sc-jqCOkK brHQCA"
       >
         <label
           style={
