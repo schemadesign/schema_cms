@@ -24,11 +24,6 @@ export const FieldInformation = styled.li`
   }
 `;
 
-export const FieldSummary = styled(FieldInformation)`
-  display: inline-block;
-  width: calc(50% - 10px);
-`;
-
 export const Label = styled.span`
   color: ${({ theme }) => theme.secondaryText};
   display: inline-block;
@@ -39,6 +34,18 @@ export const Label = styled.span`
 export const Value = styled.span`
   color: ${({ theme }) => theme.text};
   flex: 1 1 auto;
+`;
+
+export const FieldSummary = styled(FieldInformation)`
+  display: flex;
+  width: calc(50% - 10px);
+
+  ${Value} {
+    overflow: hidden;
+    min-width: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 `;
 
 export const EditIcon = styled(Icons.EditIcon)`

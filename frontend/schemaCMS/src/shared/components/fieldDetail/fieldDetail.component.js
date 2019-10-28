@@ -16,22 +16,11 @@ export class FieldDetail extends PureComponent {
 
   getTextValue = defaultTo('');
 
-  getRounded = value => `${Math.round(value * 100) / 100}`;
-
-  getFormatted = value => (is(Number, value) ? this.getRounded(value) : this.getTextValue(value));
-
-  getValueTitle = (rawValue, updatedValue) => {
-    const textValue = `${rawValue}`;
-
-    return is(Number, rawValue) && textValue !== updatedValue ? textValue : null;
-  };
-
   renderEditIcon = renderWhenTrue(() => <EditIcon />);
 
   renderItem = (id, index) => {
     const value = this.props.data[id];
-    const textValue = isNil(value) ? EMPTY : this.getFormatted(value);
-    const titleValue = this.getValueTitle(value, textValue);
+    const textValue = isNil(value) ? EMPTY : this.getTextValue(value);
     const isInformationField = INFORMATION_FIELDS.includes(id);
     const isEditable = EDITABLE_FIELDS.includes(id);
     const Item = isInformationField ? FieldInformation : FieldSummary;
@@ -39,7 +28,7 @@ export class FieldDetail extends PureComponent {
     return (
       <Item key={index}>
         <Label>{this.props.intl.formatMessage(messages[id])}</Label>
-        <Value title={titleValue}>{textValue}</Value>
+        <Value title={textValue}>{textValue}</Value>
         {this.renderEditIcon(isEditable)}
       </Item>
     );
