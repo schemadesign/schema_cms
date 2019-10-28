@@ -12,11 +12,9 @@ import { StepNavigation } from '../../shared/components/stepNavigation';
 
 export class DataWranglingResult extends PureComponent {
   static propTypes = {
-    fields: PropTypes.object,
+    previewData: PropTypes.object.isRequired,
     dataSource: PropTypes.object,
-    previewTable: PropTypes.array,
     fetchResult: PropTypes.func.isRequired,
-    unmountResult: PropTypes.func.isRequired,
     match: PropTypes.shape({
       params: PropTypes.object.isRequired,
     }).isRequired,
@@ -30,13 +28,9 @@ export class DataWranglingResult extends PureComponent {
     this.props.fetchResult({ jobId: this.props.dataSource.jobs[0].id });
   }
 
-  componentWillUnmount() {
-    return this.props.unmountResult();
-  }
-
   getTableData() {
-    const columnsIds = keys(this.props.fields);
-    const rows = map(data => map(name => data[name], columnsIds), this.props.previewTable);
+    const columnsIds = keys(this.props.previewData.fields);
+    const rows = map(data => map(name => data[name], columnsIds), this.props.previewData.data);
 
     return { header: columnsIds, rows };
   }
@@ -50,7 +44,7 @@ export class DataWranglingResult extends PureComponent {
   });
 
   render() {
-    const isLoading = isNil(this.props.fields);
+    const isLoading = isNil(this.props.previewData.data);
 
     return (
       <Container>

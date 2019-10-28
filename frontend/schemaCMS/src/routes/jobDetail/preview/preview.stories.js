@@ -8,6 +8,9 @@ import { withTheme } from '../../../.storybook/decorators';
 export const defaultProps = {
   previewData: { data, fields },
   fetchPreview: Function.prototype,
+  history: {
+    push: Function.prototype,
+  },
   match: {
     params: {
       jobId: '1',

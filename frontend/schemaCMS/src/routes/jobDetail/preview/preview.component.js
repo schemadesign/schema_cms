@@ -16,6 +16,7 @@ export class Preview extends PureComponent {
   static propTypes = {
     fetchPreview: PropTypes.func.isRequired,
     previewData: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         jobId: PropTypes.string.isRequired,
@@ -23,9 +24,18 @@ export class Preview extends PureComponent {
     }).isRequired,
   };
 
-  componentDidMount() {
-    const jobId = path(['match', 'params', 'jobId'], this.props);
-    this.props.fetchPreview({ jobId });
+  state = {
+    loading: true,
+  };
+
+  async componentDidMount() {
+    try {
+      const jobId = path(['match', 'params', 'jobId'], this.props);
+      await this.props.fetchPreview({ jobId });
+      this.setState({ loading: false });
+    } catch (e) {
+      this.props.history.push('/');
+    }
   }
 
   getTableData() {
@@ -56,7 +66,7 @@ export class Preview extends PureComponent {
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
-        {this.renderContent(!this.props.previewData.data)}
+        {this.renderContent(this.state.loading)}
         <NavigationContainer>
           <BackButton onClick={this.handleBackClick} />
         </NavigationContainer>

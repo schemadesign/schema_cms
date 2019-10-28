@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { withTheme } from '../../.storybook/decorators';
 import { DataWranglingResult } from './dataWranglingResult.component';
-import { tableFields as fields, tableData as previewTable } from '../../shared/utils/dataMock';
+import { tableFields as fields, tableData as data } from '../../shared/utils/dataMock';
 
 export const defaultProps = {
   dataSource: {
@@ -13,8 +13,10 @@ export const defaultProps = {
   history: {
     push: Function.prototype,
   },
-  fields,
-  previewTable,
+  previewData: {
+    fields,
+    data,
+  },
   fetchResult: Function.prototype,
   unmountResult: Function.prototype,
   intl: {
