@@ -1,6 +1,6 @@
 import Page from './page.js';
 import GmailPage from './gmail.page.js';
-import { AUTH0LOGINPAGE, AUTH0USERS } from './../constants/auth0.constants.js';
+import { AUTH0_LOGIN_PAGE, AUTH0_USERS } from './../constants/auth0.constants.js';
 import { waitForElement, waitForText } from './../utils/utils.js';
 import fs from 'fs';
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
@@ -16,7 +16,7 @@ class Auth0Page extends Page {
 
     
     open() {
-        browser.url(AUTH0LOGINPAGE);
+        browser.url(AUTH0_LOGIN_PAGE);
     }
 
     login() {
@@ -34,7 +34,7 @@ class Auth0Page extends Page {
     }
 
     goToUsers() {
-        browser.url(AUTH0USERS);
+        browser.url(AUTH0_USERS);
     }
 
     searchForInvitedUser() {
