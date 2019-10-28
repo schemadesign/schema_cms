@@ -17,8 +17,9 @@ Content-Type application/json
 200 OK
 {
     "pk": 8,
-    "datasource": {"id":  8, "project":  1},
-    "steps": [{"script":  1, "exec_order":  0, "body":  "df = df.head(3)"}],
+    "datasource": 8,
+    "project": 1,
+    "steps": [{"script_name": "duplicates", "script":  1, "exec_order":  0, "body":  "df = df.head(3)"}],
     "job_state": "success",
     "result": "http://localhost:8000/schemacms/8/results_test.csv",
     "source_file_url": "http://localhost:8000/schemacms/8/source_file.csv?versionID=1123",

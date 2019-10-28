@@ -23,10 +23,24 @@ class DataSourceCreatorSerializer(serializers.ModelSerializer):
         fields = ("id", "first_name", "last_name")
 
 
+class StepSerializer(serializers.ModelSerializer):
+    exec_order = serializers.IntegerField(default=0)
+    script_name = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = models.DataSourceJobStep
+        fields = ("script_name", "script", "body", "exec_order")
+
+    def get_script_name(self, obj):
+        return obj.script.name
+
+
 class DataSourceLastJobSerializer(serializers.ModelSerializer):
+    steps = StepSerializer(many=True)
+
     class Meta:
         model = models.DataSourceJob
-        fields = ("id", "job_state", "created", "modified")
+        fields = ("id", "job_state", "created", "modified", "steps")
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
@@ -218,20 +232,12 @@ class DataSourceScriptSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "is_predefined", "file", "body")
 
 
-class StepSerializer(serializers.ModelSerializer):
-    exec_order = serializers.IntegerField(default=0)
-
-    class Meta:
-        model = models.DataSourceJobStep
-        fields = ("script", "body", "exec_order")
-
-
 class CreateJobSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True)
 
     class Meta:
         model = models.DataSourceJob
-        fields = ("pk", "description", "steps")
+        fields = ("id", "description", "steps")
 
     def validate_steps(self, attr):
         if not attr:
@@ -268,13 +274,14 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
     result = serializers.FileField(read_only=True)
     error = serializers.CharField(read_only=True)
     job_state = serializers.CharField(read_only=True)
-    datasource = NestedRelatedModelSerializer(serializer=JobDataSourceSerializer(), read_only=True)
+    project = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = models.DataSourceJob
         fields = (
-            "pk",
+            "id",
             "datasource",
+            "project",
             "description",
             "steps",
             "job_state",
@@ -282,3 +289,6 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
             "error",
             "source_file_url",
         )
+
+    def get_project(self, obj):
+        return obj.datasource.project_id

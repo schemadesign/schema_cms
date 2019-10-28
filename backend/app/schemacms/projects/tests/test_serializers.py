@@ -13,7 +13,12 @@ class TestStepSerializer:
         step = job_step_factory()
         serializer = self.serializer_class(instance=step)
 
-        assert serializer.data == {"script": step.script_id, "body": step.body, "exec_order": step.exec_order}
+        assert serializer.data == {
+            "script_name": step.script.name,
+            "script": step.script_id,
+            "body": step.body,
+            "exec_order": step.exec_order,
+        }
 
 
 class TestDataSourceJobSerializer:
@@ -22,10 +27,10 @@ class TestDataSourceJobSerializer:
     def test_instance_data(self, job, job_step_factory):
         job_steps = job_step_factory.create_batch(2, datasource_job=job)
         serializer = self.serializer_class(instance=job)
-
         assert serializer.data == {
-            'pk': job.id,
-            'datasource': {"id": job.datasource_id, "project": job.datasource.project_id},
+            'id': job.id,
+            'datasource': job.datasource_id,
+            'project': job.datasource.project_id,
             'description': job.description,
             'steps': serializers.StepSerializer(instance=job_steps, many=True).data,
             'job_state': job.job_state,
