@@ -89,10 +89,10 @@ export class Create extends PureComponent {
             id="fieldProjectStatus"
           />
           <NavigationContainer>
-            <BackButton onClick={this.handleCancelClick}>
+            <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
-            <NextButton>
+            <NextButton id="finishBtn">
               <FormattedMessage {...messages.finish} />
             </NextButton>
           </NavigationContainer>
