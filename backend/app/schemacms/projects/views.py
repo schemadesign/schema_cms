@@ -74,7 +74,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.order_by("-created")
+    queryset = models.DataSource.objects.prefetch_related("jobs").order_by("-created")
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "create": serializers.DraftDataSourceSerializer,
