@@ -34,7 +34,6 @@ describe('Job: sagas', () => {
 
     it('should put updateOne.success action', async () => {
       mockApi.patch('/jobs/1').reply(OK, response);
-      mockApi.get('/jobs/1').reply(OK, response);
       await expectSaga(watchJob)
         .withState(defaultState)
         .put(JobRoutines.updateOne.success(response))

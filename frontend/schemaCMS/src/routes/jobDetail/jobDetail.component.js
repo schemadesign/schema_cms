@@ -72,43 +72,6 @@ export class JobDetail extends PureComponent {
     )(!!job.pk);
 
   render() {
-    const { handleChange, handleSubmit, job, values } = this.props;
-
-    if (!job.pk) {
-      return null;
-    }
-
-    return (
-      <Form onSubmit={handleSubmit}>
-        <FieldWrapper>
-          <Label>
-            <FormattedMessage {...messages[JOB_ID]} />
-          </Label>
-          <Value>{job.pk}</Value>
-        </FieldWrapper>
-        <FieldWrapper>
-          <Label>
-            <FormattedMessage {...messages[JOB_STATE]} />
-          </Label>
-          <Value>
-            <FormattedMessage {...messages[job.jobState]} />
-          </Value>
-        </FieldWrapper>
-        <FieldWrapper>
-          <TextInput
-            label={<FormattedMessage {...messages.descriptionLabel} />}
-            value={values[DESCRIPTION]}
-            onChange={handleChange}
-            name={DESCRIPTION}
-            fullWidth
-            {...this.props}
-            multiline
-          />
-        </FieldWrapper>
-        <Button>
-          <FormattedMessage {...messages.submit} />
-        </Button>
-      </Form>
-    );
+    return this.renderContent(this.props.job);
   }
 }
