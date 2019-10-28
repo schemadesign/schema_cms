@@ -1,26 +1,24 @@
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
+import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
-import { JobRoutines, selectJobPreview } from '../../modules/job';
-import { DataWranglingResult } from './dataWranglingResult.component';
+import { Preview } from './preview.component';
+import { JobRoutines, selectJobPreview } from '../../../modules/job';
 
 const mapStateToProps = createStructuredSelector({
   previewData: selectJobPreview,
 });
 
-export const mapDispatchToProps = dispatch => ({
-  ...bindPromiseCreators(
+export const mapDispatchToProps = dispatch =>
+  bindPromiseCreators(
     {
-      fetchResult: promisifyRoutine(JobRoutines.fetchPreview),
+      fetchPreview: promisifyRoutine(JobRoutines.fetchPreview),
     },
     dispatch
-  ),
-});
-
+  );
 export default compose(
   hot(module),
   connect(
@@ -28,4 +26,4 @@ export default compose(
     mapDispatchToProps
   ),
   withRouter
-)(DataWranglingResult);
+)(Preview);

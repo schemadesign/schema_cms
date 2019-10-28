@@ -7,3 +7,8 @@ export const selectJob = createSelector(
   selectJobDomain,
   prop('job')
 );
+
+export const selectJobPreview = createSelector(
+  selectJobDomain,
+  prop('jobPreview')
+);

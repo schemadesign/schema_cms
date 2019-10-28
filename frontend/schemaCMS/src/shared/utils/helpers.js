@@ -1,4 +1,4 @@
-import { isEmpty } from 'ramda';
+import { isEmpty, keys, map } from 'ramda';
 import { camelize } from 'humps';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
@@ -12,3 +12,11 @@ export const errorMessageParser = ({ errors, messages, formatMessage }) =>
 
     return { [name]: formattedMessageError, ...previousValue };
   }, {});
+
+export const getTableData = (data = []) => {
+  const header = keys(data[0]);
+  const createArrayValues = data => map(name => data[name], header);
+  const rows = map(createArrayValues, data);
+
+  return { header, rows };
+};

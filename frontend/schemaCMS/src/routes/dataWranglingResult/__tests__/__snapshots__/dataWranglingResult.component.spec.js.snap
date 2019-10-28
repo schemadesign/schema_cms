@@ -87,16 +87,21 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
         "next": false,
       }
     }
-    fetchResult={[Function]}
-    fields={
-      Object {
-        "Birthday": Object {},
-        "Birthplace": Object {},
-        "First Name": Object {},
-        "Full Name": Object {},
-        "Last Name": Object {},
-        "State of Birth": Object {},
-        "Url": Object {},
+    fetchResult={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "jobId": 1,
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
       }
     }
     history={
@@ -119,54 +124,176 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
         },
       }
     }
-    previewTable={
-      Array [
-        Object {
-          "Birthday": "02/22/1732",
-          "Birthplace": "Westmoreland County",
-          "First Name": "George",
-          "Full Name": "George Washington",
-          "Last Name": "Washington",
-          "State of Birth": "VA",
-          "Url": "some.url.com",
+    previewData={
+      Object {
+        "data": Array [
+          Object {
+            "Birthday": "02/22/1732",
+            "Birthplace": "Westmoreland County",
+            "First Name": "George",
+            "Full Name": "George Washington",
+            "Last Name": "Washington",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "10/30/1735",
+            "Birthplace": "Braintree",
+            "First Name": "John",
+            "Full Name": "John Adams",
+            "Last Name": "Adams",
+            "State of Birth": "MA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "04/13/1743",
+            "Birthplace": "Shadwell",
+            "First Name": "Thomas",
+            "Full Name": "Thomas Jefferson",
+            "Last Name": "Jefferson",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "03/16/1751",
+            "Birthplace": "Port Conway",
+            "First Name": "James",
+            "Full Name": "James Madison",
+            "Last Name": "Madison",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "04/28/1758",
+            "Birthplace": "Monroe Hall",
+            "First Name": "James",
+            "Full Name": "James Monroe",
+            "Last Name": "Monroe",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+        ],
+        "fields": Object {
+          "Birthday": Object {},
+          "Birthplace": Object {},
+          "First Name": Object {},
+          "Full Name": Object {},
+          "Last Name": Object {},
+          "State of Birth": Object {},
+          "Url": Object {},
         },
-        Object {
-          "Birthday": "10/30/1735",
-          "Birthplace": "Braintree",
-          "First Name": "John",
-          "Full Name": "John Adams",
-          "Last Name": "Adams",
-          "State of Birth": "MA",
-          "Url": "some.url.com",
+      }
+    }
+    unmountResult={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`DataWranglingResult: Component should render correctly with loading 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Data Wrangling Result"
+  />
+  <Loader />
+  <StepNavigation
+    dataSource={
+      Object {
+        "jobs": Array [
+          Object {
+            "id": 1,
+          },
+        ],
+        "metaData": Object {},
+      }
+    }
+    disabled={
+      Object {
+        "back": false,
+        "next": false,
+      }
+    }
+    fetchResult={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    loading={false}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "4",
         },
-        Object {
-          "Birthday": "04/13/1743",
-          "Birthplace": "Shadwell",
-          "First Name": "Thomas",
-          "Full Name": "Thomas Jefferson",
-          "Last Name": "Jefferson",
-          "State of Birth": "VA",
-          "Url": "some.url.com",
+      }
+    }
+    previewData={
+      Object {
+        "data": Array [
+          Object {
+            "Birthday": "02/22/1732",
+            "Birthplace": "Westmoreland County",
+            "First Name": "George",
+            "Full Name": "George Washington",
+            "Last Name": "Washington",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "10/30/1735",
+            "Birthplace": "Braintree",
+            "First Name": "John",
+            "Full Name": "John Adams",
+            "Last Name": "Adams",
+            "State of Birth": "MA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "04/13/1743",
+            "Birthplace": "Shadwell",
+            "First Name": "Thomas",
+            "Full Name": "Thomas Jefferson",
+            "Last Name": "Jefferson",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "03/16/1751",
+            "Birthplace": "Port Conway",
+            "First Name": "James",
+            "Full Name": "James Madison",
+            "Last Name": "Madison",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "04/28/1758",
+            "Birthplace": "Monroe Hall",
+            "First Name": "James",
+            "Full Name": "James Monroe",
+            "Last Name": "Monroe",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+        ],
+        "fields": Object {
+          "Birthday": Object {},
+          "Birthplace": Object {},
+          "First Name": Object {},
+          "Full Name": Object {},
+          "Last Name": Object {},
+          "State of Birth": Object {},
+          "Url": Object {},
         },
-        Object {
-          "Birthday": "03/16/1751",
-          "Birthplace": "Port Conway",
-          "First Name": "James",
-          "Full Name": "James Madison",
-          "Last Name": "Madison",
-          "State of Birth": "VA",
-          "Url": "some.url.com",
-        },
-        Object {
-          "Birthday": "04/28/1758",
-          "Birthplace": "Monroe Hall",
-          "First Name": "James",
-          "Full Name": "James Monroe",
-          "Last Name": "Monroe",
-          "State of Birth": "VA",
-          "Url": "some.url.com",
-        },
-      ]
+      }
     }
     unmountResult={[Function]}
   />
