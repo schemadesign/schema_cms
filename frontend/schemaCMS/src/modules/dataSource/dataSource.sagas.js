@@ -6,6 +6,7 @@ import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { FETCH_LIST_DELAY } from './dataSource.constants';
+import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../job/job.constants';
 
 const PAGE_SIZE = 1000;
 
@@ -56,7 +57,7 @@ function* fetchOne({ payload: { dataSourceId } }) {
 const getIfAnyResultProcessing = any(
   pipe(
     propOr([], 'jobs'),
-    filter(either(propEq('jobState', 'pending'), propEq('jobState', 'processing'))),
+    filter(either(propEq('jobState', JOB_STATE_PENDING), propEq('jobState', JOB_STATE_PROCESSING))),
     isEmpty,
     not
   )

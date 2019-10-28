@@ -26,8 +26,9 @@ export class Uploader extends PureComponent {
   renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
 
   render() {
+    const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.input];
     const { errors, fileName, label, id, onChange, ...restProps } = this.props;
-    const filteredProps = pick(elementAttributes.input, restProps);
+    const filteredProps = pick(allowedAttributes, restProps);
     const isError = !!errors[filteredProps.name];
 
     return (

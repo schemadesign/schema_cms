@@ -34,10 +34,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
     }
   >
     <div
-      className="sc-kIPQKe epThYc"
+      className="sc-eXEjpC iqsxXl"
     >
       <h2
-        className="sc-eXEjpC fuVqJC"
+        className="sc-ibxdXY clQDsv"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -57,7 +57,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-ibxdXY kCUyMp"
+        className="sc-RefOD oHmhX"
         style={
           Object {
             "color": Object {
@@ -73,7 +73,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       />
     </div>
     <div
-      className="sc-esjQYD foEtV"
+      className="sc-kIPQKe mhcxI"
     />
   </div>
   <div
@@ -90,10 +90,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
     }
   >
     <div
-      className="sc-kIPQKe epThYc"
+      className="sc-eXEjpC iqsxXl"
     >
       <h2
-        className="sc-eXEjpC fuVqJC"
+        className="sc-ibxdXY clQDsv"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -113,7 +113,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-ibxdXY kCUyMp"
+        className="sc-RefOD oHmhX"
         style={
           Object {
             "color": Object {
@@ -129,7 +129,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       />
     </div>
     <div
-      className="sc-esjQYD foEtV"
+      className="sc-kIPQKe mhcxI"
     />
   </div>
   <div
@@ -146,10 +146,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
     }
   >
     <div
-      className="sc-kIPQKe epThYc"
+      className="sc-eXEjpC iqsxXl"
     >
       <h2
-        className="sc-eXEjpC fuVqJC"
+        className="sc-ibxdXY clQDsv"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -169,7 +169,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-ibxdXY kCUyMp"
+        className="sc-RefOD oHmhX"
         style={
           Object {
             "color": Object {
@@ -187,7 +187,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       </h3>
     </div>
     <div
-      className="sc-esjQYD foEtV"
+      className="sc-kIPQKe mhcxI"
     />
   </div>
 </div>
@@ -216,10 +216,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
     }
   >
     <div
-      className="sc-kIPQKe epThYc"
+      className="sc-eXEjpC iqsxXl"
     >
       <h2
-        className="sc-eXEjpC fuVqJC"
+        className="sc-ibxdXY clQDsv"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -239,7 +239,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-ibxdXY kCUyMp"
+        className="sc-RefOD oHmhX"
         style={
           Object {
             "color": Object {
@@ -255,7 +255,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       />
     </div>
     <div
-      className="sc-esjQYD foEtV"
+      className="sc-kIPQKe mhcxI"
     >
       <button
         disabled={false}
@@ -311,10 +311,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
     }
   >
     <div
-      className="sc-kIPQKe epThYc"
+      className="sc-eXEjpC iqsxXl"
     >
       <h2
-        className="sc-eXEjpC fuVqJC"
+        className="sc-ibxdXY clQDsv"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -334,7 +334,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-ibxdXY kCUyMp"
+        className="sc-RefOD oHmhX"
         style={
           Object {
             "color": Object {
@@ -350,7 +350,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       />
     </div>
     <div
-      className="sc-esjQYD foEtV"
+      className="sc-kIPQKe mhcxI"
     >
       <button
         disabled={false}
@@ -406,10 +406,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
     }
   >
     <div
-      className="sc-kIPQKe epThYc"
+      className="sc-eXEjpC iqsxXl"
     >
       <h2
-        className="sc-eXEjpC fuVqJC"
+        className="sc-ibxdXY clQDsv"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -429,7 +429,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-ibxdXY kCUyMp"
+        className="sc-RefOD oHmhX"
         style={
           Object {
             "color": Object {
@@ -447,7 +447,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       </h3>
     </div>
     <div
-      className="sc-esjQYD foEtV"
+      className="sc-kIPQKe mhcxI"
     >
       <button
         disabled={false}

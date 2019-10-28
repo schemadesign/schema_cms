@@ -22,4 +22,8 @@ export default defineMessages({
     id: 'dataSource.view.source.nameError',
     defaultMessage: 'DataSource with this name already exist in project.',
   },
+  processing: {
+    id: 'dataSource.view.source.processing',
+    defaultMessage: 'There is a script processing ongoing. Please wait until it finishes to try and upload a new file.',
+  },
 });

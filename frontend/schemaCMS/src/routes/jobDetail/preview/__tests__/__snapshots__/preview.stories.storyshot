@@ -10,10 +10,10 @@ exports[`Storyshots Job/Preview Default 1`] = `
   }
 >
   <div
-    className="sc-TOsTZ kjYrri"
+    className="sc-kgAjT cuzzPp"
   >
     <div
-      className="sc-jDwBTQ fRXXnG"
+      className="sc-gPEVay bMUXdd"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
       >
         <div>
           <div
-            className="sc-gPEVay eQYmiW"
+            className="sc-iRbamj blSEcj"
           >
             <h2
               id="headerTitle"
@@ -127,10 +127,10 @@ exports[`Storyshots Job/Preview Default 1`] = `
         }
       >
         <div
-          className="sc-iRbamj blSEcj"
+          className="sc-jlyJG bbyJzT"
         >
           <div
-            className="sc-gPEVay eQYmiW"
+            className="sc-iRbamj blSEcj"
           >
             <h2
               id="headerTitle"
@@ -167,13 +167,13 @@ exports[`Storyshots Job/Preview Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-jlyJG ivDHoW"
+          className="sc-gipzik NStlt"
         >
           <ul
-            className="sc-gipzik sc-csuQGl kTeIRg"
+            className="sc-csuQGl sc-Rmtcm cgBoJF"
           />
           <ul
-            className="sc-gipzik sc-Rmtcm iXyibh"
+            className="sc-csuQGl sc-bRBYWo ggyrgy"
           />
         </div>
         <button
@@ -219,7 +219,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-jzJRlG egdPJh"
+      className="sc-cSHVUG cObjZp"
     >
       <span>
         Loading...

@@ -12,6 +12,7 @@ import {
   customLabelStyles,
   customRadioButtonStyles,
   customRadioGroupStyles,
+  WarningWrapper,
 } from './source.styles';
 import messages from './source.messages';
 import { TextInput } from '../../../../shared/components/form/inputs/textInput';
@@ -28,6 +29,7 @@ import {
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
 import { Uploader } from '../../../../shared/components/form/uploader';
 import { errorMessageParser } from '../../../../shared/utils/helpers';
+import { renderWhenTrue } from '../../../../shared/utils/rendering';
 
 const { RadioGroup, RadioButton, Label } = Form;
 const { CsvIcon } = Icons;
@@ -36,6 +38,7 @@ export class SourceComponent extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
+    isAnyJobProcessing: PropTypes.bool.isRequired,
     updateDataSource: PropTypes.func.isRequired,
     theme: PropTypes.object.isRequired,
     match: PropTypes.shape({
@@ -75,7 +78,15 @@ export class SourceComponent extends PureComponent {
     }
   };
 
-  renderCsvUploader = ({ setFieldValue, fileName, ...restProps }) => (
+  renderProcessingMessage = renderWhenTrue(
+    always(
+      <WarningWrapper>
+        <FormattedMessage {...messages.processing} />
+      </WarningWrapper>
+    )
+  );
+
+  renderCsvUploader = ({ setFieldValue, fileName, isAnyJobProcessing, ...restProps }) => (
     <Uploader
       fileName={fileName}
       name={DATA_SOURCE_FILE}
@@ -84,13 +95,22 @@ export class SourceComponent extends PureComponent {
       id="fileUpload"
       onChange={({ currentTarget }) => this.handleUploadChange({ currentTarget, setFieldValue })}
       accept=".csv,.tsv"
+      disabled={isAnyJobProcessing}
       {...restProps}
     />
   );
 
   renderSourceUpload = ({ type, ...restProps }) =>
     cond([
-      [equals(SOURCE_TYPE_FILE), () => this.renderCsvUploader(restProps)],
+      [
+        equals(SOURCE_TYPE_FILE),
+        () => (
+          <Fragment>
+            {this.renderCsvUploader({ ...restProps, isAnyJobProcessing: this.props.isAnyJobProcessing })}
+            {this.renderProcessingMessage(this.props.isAnyJobProcessing)}
+          </Fragment>
+        ),
+      ],
       [equals(SOURCE_TYPE_API), () => {}],
       [equals(SOURCE_TYPE_DATABASE), () => {}],
       [T, always(null)],
