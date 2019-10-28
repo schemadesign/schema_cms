@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'dataSource.view.source.fileName',
     defaultMessage: 'File Name',
   },
+  nameUniqueError: {
+    id: 'dataSource.view.source.nameError',
+    defaultMessage: 'DataSource with this name already exist in project.',
+  },
 });

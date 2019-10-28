@@ -31,7 +31,11 @@ def map_dataframe_dtypes(dtype):
 
 
 def get_preview_data(file):
-    data_frame = dt.fread(file, na_strings=["", ''], fill=True)
+
+    if hasattr(file, "temporary_file_path"):
+        data_frame = dt.fread(file.read(), na_strings=["", ''], fill=True)
+    else:
+        data_frame = dt.fread(file, na_strings=["", ''], fill=True)
 
     items, fields = data_frame.shape
     sample_of_5 = data_frame.head(5).to_pandas()
@@ -140,7 +144,7 @@ class DataSource(ext_models.TimeStampedModel):
     def __str__(self):
         return self.name or str(self.id)
 
-    def update_meta(self, file=None):
+    def update_meta(self, file=None, file_name=None):
         if not file:
             file = self.file.url
 
@@ -151,10 +155,9 @@ class DataSource(ext_models.TimeStampedModel):
                 meta, _ = DataSourceMeta.objects.update_or_create(
                     datasource=self, defaults={"fields": fields, "items": items}
                 )
-
-                filename, _ = self.get_original_file_name()
+                file_name, _ = self.get_original_file_name(file_name)
                 meta.preview.save(
-                    f"{filename}_preview.json", django.core.files.base.ContentFile(content=preview_json)
+                    f"{file_name}_preview.json", django.core.files.base.ContentFile(content=preview_json)
                 )
 
         except Exception as e:
@@ -166,9 +169,11 @@ class DataSource(ext_models.TimeStampedModel):
             raise ValueError("Project or DataSource ID is not set")
         return os.path.join(base_path, f"{self.id}/uploads/{filename}")
 
-    def get_original_file_name(self):
-        name, ext = os.path.splitext(os.path.basename(self.file.name))
-        return name, os.path.basename(self.file.name)
+    def get_original_file_name(self, file_name=None):
+        if not file_name:
+            file_name = self.file.name
+        name, ext = os.path.splitext(os.path.basename(file_name))
+        return name, os.path.basename(file_name)
 
     @property
     def available_scripts(self):

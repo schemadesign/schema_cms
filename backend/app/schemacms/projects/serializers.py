@@ -1,15 +1,14 @@
 import os
-import io
 
 from django.db import transaction
-from rest_framework import serializers, exceptions, validators
+from rest_framework import serializers, exceptions
 
 from schemacms.projects import models
 from .constants import DataSourceJobState
 from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
-from .validators import CustomUniqueTogetherValidator
+from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
 
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
@@ -68,8 +67,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=DataSource.objects.all(),
-                fields=('name', 'project'),
+                fields=("project", "name"),
                 key_field_name="name",
+                code="dataSourceProjectNameUnique",
                 message="DataSource with this name already exist in project.",
             )
         ]
@@ -100,13 +100,10 @@ class DataSourceSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def update(self, instance, validated_data):
         file = validated_data.get("file", None)
-        file_in_bytes = None  # file is being closed after save
         if file:
-            file_in_bytes = io.BytesIO(file.read())
+            instance.update_meta(file=file, file_name=file.name)
             file.seek(0)
         obj = super().update(instance=instance, validated_data=validated_data)
-        if file_in_bytes:
-            obj.update_meta(file_in_bytes)
         return obj
 
 
@@ -170,7 +167,9 @@ class ProjectSerializer(serializers.ModelSerializer):
             "modified",
             "meta",
         )
-        extra_kwargs = {"title": {"validators": [validators.UniqueValidator(queryset=Project.objects.all())]}}
+        extra_kwargs = {
+            "title": {"validators": [CustomUniqueValidator(queryset=Project.objects.all(), prefix="project")]}
+        }
 
     def create(self, validated_data):
         project = Project(owner=self.context["request"].user, **validated_data)

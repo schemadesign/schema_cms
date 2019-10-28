@@ -65,6 +65,7 @@ const fields = {
 export const defaultProps = {
   dataSource: {
     jobs: [{ id: 1 }],
+    metaData: {},
   },
   history: {
     push: Function.prototype,

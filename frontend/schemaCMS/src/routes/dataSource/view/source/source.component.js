@@ -27,6 +27,7 @@ import {
 } from '../../../../modules/dataSource/dataSource.constants';
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
 import { Uploader } from '../../../../shared/components/form/uploader';
+import { errorMessageParser } from '../../../../shared/utils/helpers';
 
 const { RadioGroup, RadioButton, Label } = Form;
 const { CsvIcon } = Icons;
@@ -66,7 +67,10 @@ export class SourceComponent extends PureComponent {
       this.setState({ loading: true });
       await this.props.updateDataSource({ requestData, dataSourceId, step });
     } catch (errors) {
-      setErrors(errors);
+      const { formatMessage } = this.props.intl;
+      const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+      setErrors(errorMessages);
       this.setState({ loading: false });
     }
   };
