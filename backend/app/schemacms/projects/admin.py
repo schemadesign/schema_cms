@@ -1,5 +1,8 @@
+import softdelete.admin
 from django.contrib import admin
 from django.db import transaction
+from django.utils import safestring
+from django.template.loader import render_to_string
 
 from . import models
 
@@ -8,8 +11,20 @@ admin.site.register(models.WranglingScript)
 
 
 @admin.register(models.Project)
-class Project(admin.ModelAdmin):
+class Project(softdelete.admin.SoftDeleteObjectAdmin):
+    list_display = ("title", "owner", "status", "get_editors", "deleted_at")
     filter_horizontal = ("editors",)
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).select_related("owner").prefetch_related("editors")
+
+    def get_editors(self, obj):
+        html = render_to_string(
+            "common/unordered_list.html", context=dict(objects=obj.editors.values_list("email", flat=True))
+        )
+        return safestring.mark_safe(html)
+
+    get_editors.short_description = "Editors"
 
 
 @admin.register(models.DataSource)
