@@ -20,6 +20,7 @@ export const Navigation = styled.div`
   display: flex;
   justify-content: ${ifElse(propEq('right', true), always('flex-end'), always('space-between'))};
   flex-wrap: wrap;
+  align-items: center;
 `;
 
 export const buttonIconStyles = {
