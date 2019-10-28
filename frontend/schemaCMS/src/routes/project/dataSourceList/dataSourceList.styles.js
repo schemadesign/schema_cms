@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Theme } from 'schemaUI';
+import { Link } from 'react-router-dom';
 import { always, cond, equals } from 'ramda';
 import { styleWhenTrue } from '../../../shared/utils/rendering';
 import { media } from '../../../theme/media';
@@ -80,9 +81,11 @@ export const iconSourceStyles = {
 
 export const JobsContainer = styled.div``;
 
-export const Job = styled.div`
+export const Job = styled(Link)`
   background-color: ${({ theme }) => theme.background};
   border-top: 3px solid ${({ theme }) => theme.card.background};
+  color: inherit;
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

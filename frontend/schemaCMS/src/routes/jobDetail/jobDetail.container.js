@@ -32,7 +32,6 @@ export default compose(
   withRouter,
   withFormik({
     displayName: JOB_DETAIL_FORM,
-    isInitialValid: true,
     enableReinitialize: true,
     mapPropsToValues: ({ job: { description, pk } }) => ({
       ...INITIAL_VALUES,
