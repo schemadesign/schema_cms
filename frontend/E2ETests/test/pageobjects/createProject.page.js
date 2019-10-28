@@ -6,25 +6,25 @@ import { CREATE_PROJECT_VALID_TITLE, CREATE_PROJECT_VALID_DESCRIPTION } from './
 
 class CreateProjectPage extends Page {
 
-    get Header() { return $(HeaderComponent); }
+    get Header() { return HeaderComponent; }
 
     get titleInput() { return $('#title'); }
     get titleLabel() { return $('[for="title"]'); }
     get descriptionInput() { return $('#description'); }
     get descriptionLabel() { return $('[for="description"]'); }
-    get statusDropdown() { return $('#app > div > div > div > form > div.sc-jlyJG.jsmwSn > div > div > div:nth-child(1)'); }
-    get statusLabel() { return $('#app > div > div > div > form > div.sc-jlyJG.jsmwSn > label'); }
+    get statusDropdown() { return $('#fieldProjectStatus'); }
+    get statusLabel() { return $('#fieldProjectStatusLabel'); }
     get ownerInput() { return $('#owner'); }
     get ownerLabel() { return $('[for="owner"]'); }
-    get cancelBtn() { return $('#app > div > div > div > form > div.sc-kpOJdX.kzMrFZ > div > button:nth-child(1)'); }
-    get finishBtn() { return $('#app > div > div > div > form > div.sc-kpOJdX.kzMrFZ > div > button:nth-child(2)'); }
-    get listOfStatus() { return $('#app > div > div > div > form > div.sc-jlyJG.jsmwSn > div > div > div:nth-child(2)'); }
+    get cancelBtn() { return $('#cancelBtn'); }
+    get finishBtn() { return $('#finishBtn'); }
+    get listOfStatus() { return $('#fieldProjectStatus > div:nth-child(2)'); }
     get inProgress() { return $('#select-item-0'); }
     get done() { return $('#select-item-1'); }
     get hold() { return $('#select-item-2'); }
     get published() { return $('#select-item-3'); }
-    get titleErrorMsg() { return $(''); }
-    get descriptionErrorMsg() { return $(''); }
+    get titleErrorMsg() { return $('form > div:nth-child(1) > div:nth-child(2)'); }
+    get descriptionErrorMsg() { return $('form > div:nth-child(2) > div:nth-child(2)'); }
 
 
 

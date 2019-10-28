@@ -1,4 +1,4 @@
-import { Given, When, Then, After } from 'cucumber';
+import { Given, When, Then } from 'cucumber';
 import { waitForElement } from './../utils/utils.js';
 import CreateProjectPage from './../pageobjects/createProject.page.js';
 import ProjectsPage from './../pageobjects/projects.page.js';
@@ -21,17 +21,16 @@ import {
     CREATE_PROJECT_EMPTY_FIELD_ERROR,
     CREATE_PROJECT_TITLE_TOO_SHORT_ERROR,
     CREATE_PROJECT_TITLE_TOO_LONG_ERROR,
-    CREATE_PROJECT_DESCRIPTION_TOO_LONG
+    CREATE_PROJECT_DESCRIPTION_TOO_LONG,
+    CREATE_PROJECT_DEFAULT_STATUS,
+    CREATE_PROJECT_TITLE_TOO_SHORT,
+    CREATE_PROJECT_TITLE_TOO_LONG,
+    CREATE_PROJECT_DESCRIPTION_TOO_LONG_ERROR
 } from './../constants/createProject.constants.js';
 
 
 
-After(() => {
-    browser.reloadSession();
-});
-
-
-Given('I am on Create New Project page', () => {
+Given('I chose to create new project', () => {
     waitForElement(ProjectsPage, 'addProjectBtn');
     ProjectsPage.addProjectBtn.click();
     waitForElement(CreateProjectPage, 'finishBtn');
@@ -41,6 +40,14 @@ Given('I am on Create New Project page', () => {
 
 Given('I filled out all required fields', () => {
     CreateProjectPage.completeRequiredFields();
+});
+
+Given('required fields are empty', () => {
+    waitForElement(CreateProjectPage, 'titleInput');
+    waitForElement(CreateProjectPage, 'descriptionInput');
+
+    expect(CreateProjectPage.titleInput.getValue()).to.equal('');
+    expect(CreateProjectPage.descriptionInput.getValue()).to.equal('');
 });
 
 Given('title is too short', () => {
@@ -94,12 +101,6 @@ Then('subtitle of header is Project Info', () => {
     expect(CreateProjectPage.Header.subtitle.getText()).to.equal(CREATE_PROJECT_HEADER_SUBTITLE);
 });
 
-Then('Menu button is displayed', () => {
-    waitForElement(CreateProjectPage.Header, 'menuBtn');
-
-    assert(CreateProjectPage.Header.menuBtn.isDisplayed(), 'Menu button is not displayed');
-});
-
 Then('Title field is displayed', () => {
     waitForElement(CreateProjectPage, 'titleInput');
 
@@ -109,37 +110,37 @@ Then('Title field is displayed', () => {
 Then('title placeholder is displayed', () => {
     waitForElement(CreateProjectPage, 'titleInput');
 
-    expect(CreateProjectPage.titleInput.getText()).to.equal(CREATE_PROJECT_TITLE_PLACEHOLDER);
+    expect(CreateProjectPage.titleInput.getAttribute('placeholder')).to.equal(CREATE_PROJECT_TITLE_PLACEHOLDER);
 });
 
 Then('Description field is displayed', () => {
     waitForElement(CreateProjectPage, 'descriptionInput');
 
-    expect(CreateProjectPage.descriptionInput.getText()).to.equal(CREATE_PROJECT_DESCRIPTION_LABEL);
+    expect(CreateProjectPage.descriptionLabel.getText()).to.equal(CREATE_PROJECT_DESCRIPTION_LABEL);
 });
 
 Then('Description placeholder is displayed', () => {
     waitForElement(CreateProjectPage, 'descriptionInput');
 
-    expect(CreateProjectPage.descriptionInput.getText()).to.equal(CREATE_PROJECT_DESCRIPTION_PLACEHOLDER);
+    expect(CreateProjectPage.descriptionInput.getAttribute('placeholder')).to.equal(CREATE_PROJECT_DESCRIPTION_PLACEHOLDER);
 });
 
 Then('Owner field is displayed', () => {
     waitForElement(CreateProjectPage, 'ownerInput');
 
-    expect(CreateProjectPage.ownerInput.getText()).to.equal(CREATE_PROJECT_OWNER_LABEL);
+    expect(CreateProjectPage.ownerLabel.getText()).to.equal(CREATE_PROJECT_OWNER_LABEL);
 });
 
 Then('Status dropdown is displayed', () => {
-    waitForElement(CreateProjectPage, 'statusInput');
+    waitForElement(CreateProjectPage, 'statusDropdown');
 
     expect(CreateProjectPage.statusLabel.getText()).to.equal(CREATE_PROJECT_STATUS_LABEL);
 });
 
 Then('default status is displayed', () => {
-    waitForElement(CreateProjectPage, 'statusInput');
+    waitForElement(CreateProjectPage, 'statusDropdown');
 
-    expect(CreateProjectPage.statusInput.getText()).to.equal(CREATE_PROJECT_DEFAULT_STATUS);
+    expect(CreateProjectPage.statusDropdown.getText()).to.equal(CREATE_PROJECT_DEFAULT_STATUS);
 });
 
 Then('Cancel button is displayed', () => {
@@ -170,10 +171,10 @@ Then('created project is at the top of the list', () => {
 
 Then('new data in fields is displayed', () => {
     waitForElement(CreateProjectPage, 'titleInput');
-    expect(CreateProjectPage.titleInput.getText()).to.equal(CREATE_PROJECT_EDITED_TITLE);
+    expect(CreateProjectPage.titleInput.getValue()).to.equal(CREATE_PROJECT_EDITED_TITLE);
 
     waitForElement(CreateProjectPage, 'descriptionInput');
-    expect(CreateProjectPage.descriptionInput.getText()).to.equal(CREATE_PROJECT_EDITED_DESCRIPTION);
+    expect(CreateProjectPage.descriptionInput.getValue()).to.equal(CREATE_PROJECT_EDITED_DESCRIPTION);
 });
 
 Then('validation message about empty fields is displayed', () => {

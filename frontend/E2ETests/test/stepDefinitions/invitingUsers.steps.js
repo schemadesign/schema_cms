@@ -1,4 +1,4 @@
-import { Given, When, Then, After } from 'cucumber';
+import { Given, When, Then } from 'cucumber';
 import { djangoHomeTitle } from './../constants/django.constants.js';
 import { waitForElement } from './../utils/utils.js';
 import { LINK_SENT, INVITATION_URL } from './../constants/gmail.constants.js';
@@ -8,10 +8,6 @@ import GmailPage from './../pageobjects//gmail.page.js';
 import fs from 'fs';
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
 
-
-After(() => {
-    browser.reloadSession();
-});
 
 
 Given('I am logged in admin panel', () => {

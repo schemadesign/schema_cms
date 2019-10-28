@@ -1,23 +1,18 @@
-import { Given, When, Then, After } from 'cucumber';
-import { HEADER_TITLE, HEADER_SUBTITLE, PROJECTS_PAGE } from './../constants/homepage.constants.js';
+import { Given, When, Then } from 'cucumber';
+import { HEADER_TITLE, HEADER_SUBTITLE, PROJECTS_PAGE, HOMEPAGE } from './../constants/homepage.constants.js';
 import ProjectsPage from './../pageobjects/projects.page.js';
 import { waitForElement } from './../utils/utils.js';
 
-
-
-After(() => {
-    browser.reloadSession();
-});
 
 
 Given('I have opened menu', () => {
     ProjectsPage.Header.menuBtn.click();
 });
 
-Given('I am on Projects page', () => {
+Given('I am on homepage', () => {
     waitForElement(ProjectsPage, 'addProjectBtn');
 
-    expect(browser.getUrl()).to.equal(PROJECTS_PAGE); 
+    expect(browser.getUrl()).to.equal(HOMEPAGE); 
 });
 
 

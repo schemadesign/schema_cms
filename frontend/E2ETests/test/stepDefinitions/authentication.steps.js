@@ -1,4 +1,4 @@
-import { Given, When, Then, After } from 'cucumber';
+import { Given, When, Then } from 'cucumber';
 import { RESET_PAGE, CHANGE_PASSWORD_TITLE, CHANGE_PASSWORD_SUCCESS_MSG, PASSWORDS_NOT_MATCH_MSG } from './../constants/resetPassword.constants.js';
 import { PROJECTS_PAGE } from './../constants/homepage.constants.js';
 import { LINK_SENT, LINK_NOT_SENT, RESET_URL } from './../constants/gmail.constants.js';
@@ -13,10 +13,6 @@ import DjangoPage from './../pageobjects/django.page.js';
 import fs from 'fs';
 const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
 
-
-After(() => {
-    browser.reloadSession();
-});
 
 Given('I am on Login page', () => {
     LoginPage.open();
