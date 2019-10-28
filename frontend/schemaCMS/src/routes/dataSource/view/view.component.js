@@ -17,7 +17,6 @@ import {
   DATA_WRANGLING_RESULT_STEP,
   FIELDS_STEP,
   INITIAL_STEP,
-  STATUS_DRAFT,
 } from '../../../modules/dataSource/dataSource.constants';
 import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 
@@ -67,8 +66,7 @@ export class View extends PureComponent {
     [T, always(null)],
   ]);
 
-  getTitle = intl =>
-    this.props.dataSource.status === STATUS_DRAFT ? intl.formatMessage(messages.title) : this.props.dataSource.name;
+  getTitle = intl => (this.props.dataSource.metaData ? this.props.dataSource.name : intl.formatMessage(messages.title));
 
   getHeaderAndMenuConfig = activeStep => {
     const { dataSource, intl } = this.props;

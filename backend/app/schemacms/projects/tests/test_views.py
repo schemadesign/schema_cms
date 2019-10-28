@@ -171,7 +171,7 @@ class TestRetrieveUpdateDeleteProjectView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data == {
-            'title': [error.Error(message='This field must be unique.', code='unique').data]
+            'title': [error.Error(message='This field must be unique.', code='projectTitleUnique').data]
         }
 
     def test_update_project_by_not_projects_editor(self, api_client, user_factory, project):
@@ -364,10 +364,7 @@ class TestCreateDraftDataSourceView:
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(), payload, format="multipart")
         dsource = projects_models.DataSource.objects.get(id=response.data["id"])
-        correct_path = os.path.join(
-            dsource.file.storage.location,
-            f"{dsource.id}/uploads/test.csv",
-        )
+        correct_path = os.path.join(dsource.file.storage.location, f"{dsource.id}/uploads/test.csv")
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data["file"] == f"http://testserver/{correct_path.lstrip('/')}"
@@ -404,7 +401,7 @@ class TestUpdateDraftDataSourceView:
         payload = dict(
             name=faker.word(),
             type=projects_constants.DataSourceType.FILE,
-            file=faker.csv_upload_file(filename='filename.csv')
+            file=faker.csv_upload_file(filename='filename.csv'),
         )
         api_client.force_authenticate(admin)
 
@@ -467,9 +464,30 @@ class TestUpdateDraftDataSourceView:
         assert response.status_code == status.HTTP_400_BAD_REQUEST, response.content
         assert response.data == {
             'name': [
-                error.Error(message='DataSource with this name already exist in project.', code='unique').data
+                error.Error(
+                    message='DataSource with this name already exist in project.',
+                    code='dataSourceProjectNameUnique',
+                ).data
             ]
         }
+
+    @pytest.mark.parametrize(
+        "job_status",
+        [projects_constants.DataSourceJobState.PENDING, projects_constants.DataSourceJobState.PROCESSING],
+    )
+    def test_error_file_reupload_when_job_is_processing(
+        self, api_client, faker, admin, data_source_factory, job_factory, job_status
+    ):
+        data_source = data_source_factory()
+        job_factory(datasource=data_source, job_state=job_status)
+        payload = dict(
+            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
+        )
+
+        api_client.force_authenticate(admin)
+        response = api_client.put(self.get_url(pk=data_source.pk), payload, format="multipart")
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
 
     def test_url(self, data_source):
         assert f"/api/v1/datasources/{data_source.pk}" == self.get_url(pk=data_source.pk)
@@ -528,6 +546,7 @@ class TestDataSourcePreview:
 
 
 class TestDataSourceJobCreate:
+    @pytest.mark.usefixtures("ds_source_file_latest_version_mock")
     @pytest.mark.parametrize("description", ['', "test_desc"])
     def test_response(self, api_client, admin, data_source_factory, script_factory, description):
         data_source = data_source_factory(created_by=admin)
@@ -647,7 +666,7 @@ class TestJobDetailView:
         valid_payload = dict(
             error="new desc",
             steps=[{"script": 10, "exec_order": 0}],
-            result=faker.csv_upload_file(filename="test_result.csv")
+            result=faker.csv_upload_file(filename="test_result.csv"),
         )
         old_error = job.error
         old_steps = job.steps

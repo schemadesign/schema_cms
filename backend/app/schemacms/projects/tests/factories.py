@@ -63,6 +63,8 @@ class JobFactory(factory.django.DjangoModelFactory):
         model = "projects.DataSourceJob"
 
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
+    source_file_path = factory.SelfAttribute(".datasource.file.name")
+    source_file_version = factory.Faker("uuid4")
 
 
 class JobStepFactory(factory.django.DjangoModelFactory):

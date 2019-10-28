@@ -1,13 +1,14 @@
 import os
 
 from django.db import transaction
-from rest_framework import serializers, exceptions, validators
+from rest_framework import serializers, exceptions
 
 from schemacms.projects import models
+from .constants import DataSourceJobState
 from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
-from .validators import CustomUniqueTogetherValidator
+from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
 
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
@@ -55,7 +56,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "error_log",
             "project",
             "jobs",
-            "status"
+            "status",
         )
 
         extra_kwargs = {
@@ -66,11 +67,21 @@ class DataSourceSerializer(serializers.ModelSerializer):
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=DataSource.objects.all(),
-                fields=('name', 'project'),
+                fields=("project", "name"),
                 key_field_name="name",
-                message="DataSource with this name already exist in project."
+                code="dataSourceProjectNameUnique",
+                message="DataSource with this name already exist in project.",
             )
         ]
+
+    def validate(self, attrs):
+        states = [DataSourceJobState.PROCESSING, DataSourceJobState.PENDING]
+
+        if attrs.get("file", None) and self.instance.jobs.filter(job_state__in=states).exists():
+            message = "You can't re-upload file when job is processing"
+            raise serializers.ValidationError({"file": message}, code="fileInProcessing")
+
+        return super().validate(attrs)
 
     def get_file_name(self, obj):
         if obj.file:
@@ -156,7 +167,9 @@ class ProjectSerializer(serializers.ModelSerializer):
             "modified",
             "meta",
         )
-        extra_kwargs = {"title": {"validators": [validators.UniqueValidator(queryset=Project.objects.all())]}}
+        extra_kwargs = {
+            "title": {"validators": [CustomUniqueValidator(queryset=Project.objects.all(), prefix="project")]}
+        }
 
     def create(self, validated_data):
         project = Project(owner=self.context["request"].user, **validated_data)
@@ -225,10 +238,11 @@ class CreateJobSerializer(serializers.ModelSerializer):
             raise exceptions.ValidationError('At least single step is required', code="missingSteps")
         return attr
 
+    @transaction.atomic()
     def create(self, validated_data):
         datasource = self.initial_data["datasource"]
         steps = validated_data.pop('steps')
-        job = models.DataSourceJob.objects.create(datasource=datasource, **validated_data)
+        job = datasource.create_job(**validated_data)
         models.DataSourceJobStep.objects.bulk_create(self.create_steps(steps, job))
         return job
 
@@ -252,4 +266,13 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.DataSourceJob
-        fields = ("pk", "datasource", "description", "steps", "job_state", "result", "error")
+        fields = (
+            "pk",
+            "datasource",
+            "description",
+            "steps",
+            "job_state",
+            "result",
+            "error",
+            "source_file_url",
+        )

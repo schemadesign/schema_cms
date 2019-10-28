@@ -1,16 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components|UserList Default 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#000",
-      "minHeight": "100vh",
-    }
-  }
-/>
-`;
-
 exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
 <div
   style={
@@ -45,10 +34,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
     }
   >
     <div
-      className="sc-kPVwWT kVCiuj"
+      className="sc-hwwEjo gPiASL"
     >
       <h2
-        className="sc-kfGgVZ eravuG"
+        className="sc-kPVwWT bqsfkj"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -68,7 +57,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-esjQYD gnsIoh"
+        className="sc-kfGgVZ hyKfmi"
         style={
           Object {
             "color": Object {
@@ -84,7 +73,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       />
     </div>
     <div
-      className="sc-hwwEjo hxlKMR"
+      className="sc-iyvyFf eekyUr"
     />
   </div>
   <div
@@ -101,10 +90,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
     }
   >
     <div
-      className="sc-kPVwWT kVCiuj"
+      className="sc-hwwEjo gPiASL"
     >
       <h2
-        className="sc-kfGgVZ eravuG"
+        className="sc-kPVwWT bqsfkj"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -124,7 +113,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-esjQYD gnsIoh"
+        className="sc-kfGgVZ hyKfmi"
         style={
           Object {
             "color": Object {
@@ -140,7 +129,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       />
     </div>
     <div
-      className="sc-hwwEjo hxlKMR"
+      className="sc-iyvyFf eekyUr"
     />
   </div>
   <div
@@ -157,10 +146,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
     }
   >
     <div
-      className="sc-kPVwWT kVCiuj"
+      className="sc-hwwEjo gPiASL"
     >
       <h2
-        className="sc-kfGgVZ eravuG"
+        className="sc-kPVwWT bqsfkj"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -180,7 +169,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-esjQYD gnsIoh"
+        className="sc-kfGgVZ hyKfmi"
         style={
           Object {
             "color": Object {
@@ -198,7 +187,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       </h3>
     </div>
     <div
-      className="sc-hwwEjo hxlKMR"
+      className="sc-iyvyFf eekyUr"
     />
   </div>
 </div>
@@ -227,10 +216,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
     }
   >
     <div
-      className="sc-kPVwWT kVCiuj"
+      className="sc-hwwEjo gPiASL"
     >
       <h2
-        className="sc-kfGgVZ eravuG"
+        className="sc-kPVwWT bqsfkj"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -250,7 +239,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-esjQYD gnsIoh"
+        className="sc-kfGgVZ hyKfmi"
         style={
           Object {
             "color": Object {
@@ -266,7 +255,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       />
     </div>
     <div
-      className="sc-hwwEjo hxlKMR"
+      className="sc-iyvyFf eekyUr"
     >
       <button
         disabled={false}
@@ -322,10 +311,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
     }
   >
     <div
-      className="sc-kPVwWT kVCiuj"
+      className="sc-hwwEjo gPiASL"
     >
       <h2
-        className="sc-kfGgVZ eravuG"
+        className="sc-kPVwWT bqsfkj"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -345,7 +334,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-esjQYD gnsIoh"
+        className="sc-kfGgVZ hyKfmi"
         style={
           Object {
             "color": Object {
@@ -361,7 +350,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       />
     </div>
     <div
-      className="sc-hwwEjo hxlKMR"
+      className="sc-iyvyFf eekyUr"
     >
       <button
         disabled={false}
@@ -417,10 +406,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
     }
   >
     <div
-      className="sc-kPVwWT kVCiuj"
+      className="sc-hwwEjo gPiASL"
     >
       <h2
-        className="sc-kfGgVZ eravuG"
+        className="sc-kPVwWT bqsfkj"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -440,7 +429,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-esjQYD gnsIoh"
+        className="sc-kfGgVZ hyKfmi"
         style={
           Object {
             "color": Object {
@@ -458,7 +447,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       </h3>
     </div>
     <div
-      className="sc-hwwEjo hxlKMR"
+      className="sc-iyvyFf eekyUr"
     >
       <button
         disabled={false}

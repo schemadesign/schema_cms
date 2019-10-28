@@ -10,21 +10,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
   }
 >
   <div
-    className="sc-hMFtBS hkJjEF"
+    className="sc-cmthru knAJwY"
   >
     <span>
       Loading...
     </span>
   </div>
-</div>
-`;
-
-exports[`Storyshots UserCreateProject Default 1`] = `
-<div
-  className="sc-hMFtBS hkJjEF"
->
-  <span>
-    Loading...
-  </span>
 </div>
 `;
