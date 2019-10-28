@@ -2,6 +2,7 @@ import softdelete.admin
 from django.contrib import admin
 from django.db import transaction
 from django.utils import safestring
+from django.template.loader import render_to_string
 
 from . import models
 
@@ -18,8 +19,10 @@ class Project(softdelete.admin.SoftDeleteObjectAdmin):
         return super().get_queryset(request).select_related("owner").prefetch_related("editors")
 
     def get_editors(self, obj):
-        html_parts = ["<ul>", "".join(f"<li>{u.email}</li>" for u in obj.editors.all()), "</ul>"]
-        return safestring.mark_safe("".join(html_parts))
+        html = render_to_string(
+            "common/unordered_list.html", context=dict(objects=obj.editors.values_list("email", flat=True))
+        )
+        return safestring.mark_safe(html)
 
     get_editors.short_description = "Editors"
 
