@@ -257,12 +257,18 @@ class CreateJobSerializer(serializers.ModelSerializer):
             yield step_instance
 
 
+class JobDataSourceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.DataSource
+        fields = ("id", "project")
+
+
 class DataSourceJobSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True, read_only=True)
     result = serializers.FileField(read_only=True)
     error = serializers.CharField(read_only=True)
     job_state = serializers.CharField(read_only=True)
-    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
+    datasource = NestedRelatedModelSerializer(serializer=JobDataSourceSerializer(), read_only=True)
 
     class Meta:
         model = models.DataSourceJob

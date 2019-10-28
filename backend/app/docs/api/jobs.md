@@ -17,7 +17,7 @@ Content-Type application/json
 200 OK
 {
     "pk": 8,
-    "datasource": 8,
+    "datasource": {"id":  8, "project":  1},
     "steps": [{"script":  1, "exec_order":  0, "body":  "df = df.head(3)"}],
     "job_state": "success",
     "result": "http://localhost:8000/schemacms/8/results_test.csv",

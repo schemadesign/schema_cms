@@ -25,7 +25,7 @@ class TestDataSourceJobSerializer:
 
         assert serializer.data == {
             'pk': job.id,
-            'datasource': job.datasource_id,
+            'datasource': {"id": job.datasource_id, "project": job.datasource.project_id},
             'description': job.description,
             'steps': serializers.StepSerializer(instance=job_steps, many=True).data,
             'job_state': job.job_state,
