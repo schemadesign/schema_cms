@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always, isNil, keys, map } from 'ramda';
+import { always, path } from 'ramda';
 
 import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { Loader } from '../../shared/components/loader';
@@ -9,6 +9,7 @@ import { Table } from '../../shared/components/table';
 import messages from './dataWranglingResult.messages';
 import { Container } from './dataWranglingResult.styles';
 import { StepNavigation } from '../../shared/components/stepNavigation';
+import { getTableData } from '../../shared/utils/helpers';
 
 export class DataWranglingResult extends PureComponent {
   static propTypes = {
@@ -24,32 +25,30 @@ export class DataWranglingResult extends PureComponent {
     }),
   };
 
-  componentDidMount() {
-    this.props.fetchResult({ jobId: this.props.dataSource.jobs[0].id });
-  }
+  state = {
+    loading: true,
+  };
 
-  getTableData() {
-    const columnsIds = keys(this.props.previewData.fields);
-    const rows = map(data => map(name => data[name], columnsIds), this.props.previewData.data);
-
-    return { header: columnsIds, rows };
+  async componentDidMount() {
+    const jobId = path(['dataSource', 'jobs', 0, 'id'], this.props);
+    await this.props.fetchResult({ jobId });
+    this.setState({ loading: false });
   }
 
   renderTable = props => <Table {...props} numberedRows />;
 
   renderContent = renderWhenTrueOtherwise(always(<Loader />), () => {
-    const tableData = this.getTableData();
+    const data = path(['previewData', 'data'], this.props);
+    const tableData = getTableData(data);
 
     return this.renderTable(tableData);
   });
 
   render() {
-    const isLoading = isNil(this.props.previewData.data);
-
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        {this.renderContent(isLoading)}
+        {this.renderContent(this.state.loading)}
         <StepNavigation {...this.props} />
       </Container>
     );

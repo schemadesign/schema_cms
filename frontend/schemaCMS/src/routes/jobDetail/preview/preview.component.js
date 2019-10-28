@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { always, keys, map, path } from 'ramda';
+import { always, path } from 'ramda';
 
 import { Container } from './preview.styles';
 import { Table } from '../../../shared/components/table';
@@ -11,6 +11,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './preview.messages';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 import browserHistory from '../../../shared/utils/history';
+import { getTableData } from '../../../shared/utils/helpers';
 
 export class Preview extends PureComponent {
   static propTypes = {
@@ -38,13 +39,6 @@ export class Preview extends PureComponent {
     }
   }
 
-  getTableData() {
-    const columnsIds = keys(this.props.previewData.fields);
-    const rows = map(data => map(name => data[name], columnsIds), this.props.previewData.data);
-
-    return { header: columnsIds, rows };
-  }
-
   getHeaderAndMenuConfig = () => ({
     headerTitle: <FormattedMessage {...messages.title} />,
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
@@ -55,7 +49,8 @@ export class Preview extends PureComponent {
   renderTable = props => <Table {...props} numberedRows />;
 
   renderContent = renderWhenTrueOtherwise(always(<Loader />), () => {
-    const tableData = this.getTableData();
+    const data = path(['previewData', 'data'], this.props);
+    const tableData = getTableData(data);
 
     return this.renderTable(tableData);
   });
