@@ -953,7 +953,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                               "componentStyle": ComponentStyle {
                                 "componentId": "sc-EHOje",
                                 "isStatic": false,
-                                "lastClassName": "dYnOqw",
+                                "lastClassName": "iboGLX",
                                 "rules": Array [
                                   "
   position: fixed;
@@ -972,6 +972,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                   [Function],
                                   ";
   flex-wrap: wrap;
+  align-items: center;
 ",
                                 ],
                               },
@@ -989,7 +990,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                           right={false}
                         >
                           <div
-                            className="sc-EHOje dYnOqw"
+                            className="sc-EHOje iboGLX"
                           >
                             <BackButton
                               disabled={false}
@@ -2603,7 +2604,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                               "componentStyle": ComponentStyle {
                                 "componentId": "sc-EHOje",
                                 "isStatic": false,
-                                "lastClassName": "dYnOqw",
+                                "lastClassName": "iboGLX",
                                 "rules": Array [
                                   "
   position: fixed;
@@ -2622,6 +2623,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                   [Function],
                                   ";
   flex-wrap: wrap;
+  align-items: center;
 ",
                                 ],
                               },
@@ -2639,7 +2641,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                           right={false}
                         >
                           <div
-                            className="sc-EHOje dYnOqw"
+                            className="sc-EHOje iboGLX"
                           >
                             <BackButton
                               disabled={false}
