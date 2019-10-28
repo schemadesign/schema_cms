@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { defaultTo, innerJoin, is, isNil } from 'ramda';
+import { defaultTo, innerJoin, isNil } from 'ramda';
 
 import { renderWhenTrue } from '../../utils/rendering';
 import messages from './fieldDetail.messages';
