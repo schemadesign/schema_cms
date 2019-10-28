@@ -21,15 +21,9 @@ function* updateOne({ payload: { pk: jobId, description } }) {
   try {
     yield put(JobRoutines.updateOne.request());
 
-    yield api.patch(`/jobs/${jobId}`, { description });
+    const { data } = yield api.patch(`/jobs/${jobId}`, { description });
 
-    yield fetchOne({
-      payload: {
-        jobId,
-      },
-    });
-
-    yield put(JobRoutines.updateOne.success());
+    yield put(JobRoutines.updateOne.success(data));
   } catch (e) {
     yield put(JobRoutines.updateOne.failure(e));
   } finally {

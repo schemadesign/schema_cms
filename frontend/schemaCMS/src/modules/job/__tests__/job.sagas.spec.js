@@ -9,7 +9,7 @@ import mockApi from '../../../shared/utils/mockApi';
 describe('Job: sagas', () => {
   const defaultState = Immutable({});
   const response = {
-    id: 1,
+    pk: 1,
   };
 
   describe('when fetchOne action is called', () => {
@@ -33,11 +33,11 @@ describe('Job: sagas', () => {
     };
 
     it('should put updateOne.success action', async () => {
-      mockApi.patch('/jobs/1').reply(OK);
+      mockApi.patch('/jobs/1').reply(OK, response);
       mockApi.get('/jobs/1').reply(OK, response);
       await expectSaga(watchJob)
         .withState(defaultState)
-        .put(JobRoutines.updateOne.success())
+        .put(JobRoutines.updateOne.success(response))
         .dispatch(JobRoutines.updateOne(payload))
         .silentRun();
     });
