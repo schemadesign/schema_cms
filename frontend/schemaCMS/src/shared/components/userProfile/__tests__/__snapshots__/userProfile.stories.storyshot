@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
   }
 >
   <div
-    className="sc-esOvli bMqLzo"
+    className="sc-cMhqgX dwYjBs"
   >
     <form
-      className="sc-cmthru hjHKVg"
+      className="sc-iuJeZd guOzZL"
       onSubmit={[Function]}
     >
       <div

@@ -29,7 +29,7 @@ describe('Job: sagas', () => {
 
   describe('when updateOne action is called', () => {
     const payload = {
-      jobId: 1,
+      pk: 1,
     };
 
     it('should put updateOne.success action', async () => {

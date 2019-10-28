@@ -14,6 +14,10 @@ export default defineMessages({
     id: 'jobDetail.descriptionLabel',
     defaultMessage: 'Job description',
   },
+  submit: {
+    id: 'jobDetail.submit',
+    defaultMessage: 'Submit',
+  },
   [JOB_ID]: {
     id: 'jobDetail.jobId',
     defaultMessage: 'Job Id',

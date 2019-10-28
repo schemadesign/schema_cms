@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { path, always } from 'ramda';
 import { FormattedMessage } from 'react-intl';
+import { Button } from 'schemaUI';
 
 import { Form, Value, FieldWrapper, Label } from './jobDetail.styles';
 import browserHistory from '../../shared/utils/history';
@@ -63,11 +64,51 @@ export class JobDetail extends PureComponent {
               multiline
             />
           </FieldWrapper>
+          <Button>
+            <FormattedMessage {...messages.submit} />
+          </Button>
         </Form>
       )
     )(!!job.pk);
 
   render() {
-    return this.renderContent(this.props.job);
+    const { handleChange, handleSubmit, job, values } = this.props;
+
+    if (!job.pk) {
+      return null;
+    }
+
+    return (
+      <Form onSubmit={handleSubmit}>
+        <FieldWrapper>
+          <Label>
+            <FormattedMessage {...messages[JOB_ID]} />
+          </Label>
+          <Value>{job.pk}</Value>
+        </FieldWrapper>
+        <FieldWrapper>
+          <Label>
+            <FormattedMessage {...messages[JOB_STATE]} />
+          </Label>
+          <Value>
+            <FormattedMessage {...messages[job.jobState]} />
+          </Value>
+        </FieldWrapper>
+        <FieldWrapper>
+          <TextInput
+            label={<FormattedMessage {...messages.descriptionLabel} />}
+            value={values[DESCRIPTION]}
+            onChange={handleChange}
+            name={DESCRIPTION}
+            fullWidth
+            {...this.props}
+            multiline
+          />
+        </FieldWrapper>
+        <Button>
+          <FormattedMessage {...messages.submit} />
+        </Button>
+      </Form>
+    );
   }
 }

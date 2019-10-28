@@ -34,15 +34,15 @@ export default compose(
     displayName: JOB_DETAIL_FORM,
     isInitialValid: true,
     enableReinitialize: true,
-    mapPropsToValues: values => ({
+    mapPropsToValues: ({ job: { description, pk } }) => ({
       ...INITIAL_VALUES,
-      ...values,
+      description,
+      pk,
     }),
     validationSchema: () => JOB_DETAIL_SCHEMA,
     handleSubmit: async (data, { props, ...formik }) => {
       try {
         formik.setSubmitting(true);
-
         await props.updateJobDetail(data);
       } catch ({ errors }) {
         formik.setErrors(errors);
