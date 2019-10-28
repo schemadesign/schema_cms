@@ -275,6 +275,7 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
     error = serializers.CharField(read_only=True)
     job_state = serializers.CharField(read_only=True)
     project = serializers.SerializerMethodField(read_only=True)
+    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = models.DataSourceJob
