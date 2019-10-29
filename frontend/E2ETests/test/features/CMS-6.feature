@@ -17,9 +17,6 @@ Feature: CMS-6
         Then I can see message that user with this email already exists
 
     Scenario: After accepting invitation and changing password, user status is set to active
-        #Given Admin invited John Doe
-        #And John Doe received an invitation email 
-        #When John Doe uses an invitation email
         Then John Doe status is set to active in admin panel
 
         
