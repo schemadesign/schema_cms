@@ -18,12 +18,16 @@ export default defineMessages({
     id: 'dataSource.view.source.fileName',
     defaultMessage: 'File Name',
   },
+  processing: {
+    id: 'dataSource.view.source.processing',
+    defaultMessage: 'There is a script processing ongoing. Please wait until it finishes to try and upload a new file.',
+  },
   nameDataSourceProjectNameUniqueError: {
     id: 'dataSource.view.source.nameDataSourceProjectNameUniqueError',
     defaultMessage: 'DataSource with this name already exist in project.',
   },
-  processing: {
-    id: 'dataSource.view.source.processing',
-    defaultMessage: 'There is a script processing ongoing. Please wait until it finishes to try and upload a new file.',
+  fileMaxLengthError: {
+    id: 'dataSource.view.source.fileMaxLengthError',
+    defaultMessage: 'Ensure this filename has at most 100 characters (it has 244).',
   },
 });
