@@ -10,13 +10,37 @@ import {
 } from '../../modules/job/job.constants';
 
 export default defineMessages({
+  title: {
+    id: 'jobDetail.title',
+    defaultMessage: 'Job',
+  },
+  subTitle: {
+    id: 'jobDetail.subTitle',
+    defaultMessage: 'Details',
+  },
   descriptionLabel: {
     id: 'jobDetail.descriptionLabel',
     defaultMessage: 'Job description',
   },
-  submit: {
-    id: 'jobDetail.submit',
-    defaultMessage: 'Submit',
+  preview: {
+    id: 'jobDetail.preview',
+    defaultMessage: 'Preview',
+  },
+  save: {
+    id: 'jobDetail.save',
+    defaultMessage: 'Save',
+  },
+  back: {
+    id: 'jobDetail.back',
+    defaultMessage: 'Back',
+  },
+  originalFile: {
+    id: 'jobDetail.originalFile',
+    defaultMessage: 'Download Original File',
+  },
+  resultFile: {
+    id: 'jobDetail.resultFile',
+    defaultMessage: 'Download Result File',
   },
   [JOB_ID]: {
     id: 'jobDetail.jobId',

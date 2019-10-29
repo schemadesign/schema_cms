@@ -32,12 +32,11 @@ export default compose(
   withRouter,
   withFormik({
     displayName: JOB_DETAIL_FORM,
-    isInitialValid: true,
     enableReinitialize: true,
-    mapPropsToValues: ({ job: { description, pk } }) => ({
+    mapPropsToValues: ({ job: { description, id } }) => ({
       ...INITIAL_VALUES,
       description,
-      pk,
+      id,
     }),
     validationSchema: () => JOB_DETAIL_SCHEMA,
     handleSubmit: async (data, { props, ...formik }) => {

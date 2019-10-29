@@ -135,7 +135,7 @@ export class DataSourceList extends PureComponent {
     const modifiedDate = extendedDayjs(modified, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm');
 
     return (
-      <Job key={index}>
+      <Job to={`/job/${id}`} key={index}>
         <JobDetails>
           <JobStatus status={jobState}>{jobState}</JobStatus>
           <JobName>
