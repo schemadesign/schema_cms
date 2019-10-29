@@ -19,7 +19,7 @@ app = Flask(__name__)
 def data_source_results(data_source_id):
     try:
 
-        url = os.urljoin(settings.BACKEND_URL, data_source_id, "public-results")
+        url = os.path.join(settings.BACKEND_URL, str(data_source_id), "public-results")
         data = requests.get(url)
         items = data.json().get('items')
         result = data.json().get('result')
