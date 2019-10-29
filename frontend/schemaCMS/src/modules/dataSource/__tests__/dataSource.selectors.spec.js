@@ -7,7 +7,9 @@ import {
   selectDataSources,
   selectFields,
   selectPreviewTable,
+  selectIsAnyJobProcessing,
 } from '../dataSource.selectors';
+import { JOB_STATE_PROCESSING } from '../../job/job.constants';
 
 describe('DataSource: selectors', () => {
   const state = Immutable({
@@ -47,6 +49,24 @@ describe('DataSource: selectors', () => {
 
     it('should select a previewTable', () => {
       expect(selectPreviewTable(state)).to.equal(state.dataSource.previewTable);
+    });
+
+    it('should select false if job is not processing or there is no job', () => {
+      expect(selectIsAnyJobProcessing(state)).to.equal(false);
+    });
+
+    it('should select true if job is processing', () => {
+      const newState = Immutable({
+        dataSource: {
+          ...state.dataSource,
+          dataSource: {
+            id: 1,
+            jobs: [{ id: 1, jobState: JOB_STATE_PROCESSING }],
+          },
+        },
+      });
+
+      expect(selectIsAnyJobProcessing(newState)).to.equal(true);
     });
   });
 });

@@ -28,6 +28,7 @@ export class View extends PureComponent {
     unmountDataSource: PropTypes.func.isRequired,
     removeDataSource: PropTypes.func.isRequired,
     fetchDataWranglingScripts: PropTypes.func.isRequired,
+    isAnyJobProcessing: PropTypes.bool.isRequired,
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
