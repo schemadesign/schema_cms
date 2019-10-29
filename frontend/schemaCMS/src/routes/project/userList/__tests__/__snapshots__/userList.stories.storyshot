@@ -65,6 +65,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </div>
       <button
         disabled={false}
+        id="topHeaderOpenMenuBtn"
         onClick={[Function]}
         style={
           Object {
@@ -356,6 +357,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </div>
       <button
         disabled={false}
+        id="topHeaderOpenMenuBtn"
         onClick={[Function]}
         style={
           Object {

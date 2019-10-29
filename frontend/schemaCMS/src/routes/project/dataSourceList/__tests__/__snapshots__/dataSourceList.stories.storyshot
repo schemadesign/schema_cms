@@ -64,6 +64,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -233,6 +234,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       >
         <button
           disabled={false}
+          id="backBtn"
           onClick={[Function]}
           style={
             Object {
@@ -270,6 +272,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         </button>
         <button
           disabled={false}
+          id="createDataSourceBtn"
           onClick={[Function]}
           style={
             Object {
@@ -376,6 +379,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -570,11 +574,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
               >
                 <li
                   className="sc-dfVpRl jyjJlk"
+                  id="headerItem-0"
                 >
                   3 months ago
                 </li>
                 <li
                   className="sc-dfVpRl jyjJlk"
+                  id="headerItem-1"
                 >
                   firstName lastName
                 </li>
@@ -603,6 +609,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             </div>
           </div>
           <h1
+            id="dataSourceTitle"
             onClick={[Function]}
             style={
               Object {
@@ -627,11 +634,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-0"
               >
                 Source
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-0"
               >
                 <svg
                   style={
@@ -655,11 +664,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-1"
               >
                 Items
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-1"
               >
                 246
               </span>
@@ -669,11 +680,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-2"
               >
                 Fields
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-2"
               >
                 11
               </span>
@@ -683,11 +696,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-3"
               >
                 Filters
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-3"
               >
                 —
               </span>
@@ -697,11 +712,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-4"
               >
                 Views
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-4"
               >
                 —
               </span>
@@ -742,11 +759,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
               >
                 <li
                   className="sc-dfVpRl jyjJlk"
+                  id="headerItem-0"
                 >
                   3 months ago
                 </li>
                 <li
                   className="sc-dfVpRl jyjJlk"
+                  id="headerItem-1"
                 >
                   firstName lastName
                 </li>
@@ -775,6 +794,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             </div>
           </div>
           <h1
+            id="dataSourceTitle"
             onClick={[Function]}
             style={
               Object {
@@ -799,11 +819,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-0"
               >
                 Source
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-0"
               >
                 <svg
                   style={
@@ -827,11 +849,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-1"
               >
                 Items
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-1"
               >
                 246
               </span>
@@ -841,11 +865,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-2"
               >
                 Fields
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-2"
               >
                 11
               </span>
@@ -855,11 +881,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-3"
               >
                 Filters
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-3"
               >
                 —
               </span>
@@ -869,11 +897,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-4"
               >
                 Views
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-4"
               >
                 —
               </span>
@@ -890,6 +920,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       >
         <button
           disabled={false}
+          id="backBtn"
           onClick={[Function]}
           style={
             Object {
@@ -927,6 +958,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </button>
         <button
           disabled={false}
+          id="createDataSourceBtn"
           onClick={[Function]}
           style={
             Object {
@@ -1033,6 +1065,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -1224,6 +1257,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
             </span>
           </div>
           <h1
+            id="dataSourceTitle"
             onClick={[Function]}
             style={
               Object {
@@ -1249,11 +1283,13 @@ exports[`Storyshots DataSourceList With draft 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-0"
               >
                 Source
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-0"
               >
                 <svg
                   style={
@@ -1278,11 +1314,13 @@ exports[`Storyshots DataSourceList With draft 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-1"
               >
                 Items
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-1"
               >
                 246
               </span>
@@ -1292,11 +1330,13 @@ exports[`Storyshots DataSourceList With draft 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-2"
               >
                 Fields
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-2"
               >
                 11
               </span>
@@ -1306,11 +1346,13 @@ exports[`Storyshots DataSourceList With draft 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-3"
               >
                 Filters
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-3"
               >
                 —
               </span>
@@ -1320,11 +1362,13 @@ exports[`Storyshots DataSourceList With draft 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-4"
               >
                 Views
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-4"
               >
                 —
               </span>
@@ -1341,6 +1385,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
       >
         <button
           disabled={false}
+          id="backBtn"
           onClick={[Function]}
           style={
             Object {
@@ -1378,6 +1423,7 @@ exports[`Storyshots DataSourceList With draft 1`] = `
         </button>
         <button
           disabled={false}
+          id="createDataSourceBtn"
           onClick={[Function]}
           style={
             Object {
@@ -1484,6 +1530,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -1675,6 +1722,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
             </span>
           </div>
           <h1
+            id="dataSourceTitle"
             onClick={[Function]}
             style={
               Object {
@@ -1717,6 +1765,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
       >
         <button
           disabled={false}
+          id="backBtn"
           onClick={[Function]}
           style={
             Object {
@@ -1754,6 +1803,7 @@ exports[`Storyshots DataSourceList With error 1`] = `
         </button>
         <button
           disabled={false}
+          id="createDataSourceBtn"
           onClick={[Function]}
           style={
             Object {
@@ -1860,6 +1910,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -2054,11 +2105,13 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
               >
                 <li
                   className="sc-dfVpRl jyjJlk"
+                  id="headerItem-0"
                 >
                   3 months ago
                 </li>
                 <li
                   className="sc-dfVpRl jyjJlk"
+                  id="headerItem-1"
                 >
                   firstName lastName
                 </li>
@@ -2087,6 +2140,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             </div>
           </div>
           <h1
+            id="dataSourceTitle"
             onClick={[Function]}
             style={
               Object {
@@ -2111,11 +2165,13 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-0"
               >
                 Source
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-0"
               >
                 <svg
                   style={
@@ -2139,11 +2195,13 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-1"
               >
                 Items
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-1"
               >
                 246
               </span>
@@ -2153,11 +2211,13 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-2"
               >
                 Fields
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-2"
               >
                 11
               </span>
@@ -2167,11 +2227,13 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-3"
               >
                 Filters
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-3"
               >
                 —
               </span>
@@ -2181,11 +2243,13 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-4"
               >
                 Views
               </span>
               <span
                 className="sc-hEsumM boGKbG"
+                id="metaItemValue-4"
               >
                 —
               </span>
@@ -2196,6 +2260,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           >
             <div
               className="sc-elJkPf gdkxIF"
+              id="jobListHeader"
             >
               <span>
                 Data Process History
@@ -2209,25 +2274,36 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
               >
                 <div
                   className="sc-btzYZH kEmfIk"
+                  id="jobStateValue"
                 />
                 <div
                   className="sc-lhVmIH ceZGPf"
+                  id="jobIdLabel"
                 >
                   <span>
                     Job id:
                   </span>
                    
-                  1
+                  <span
+                    id="jobIdValue"
+                  >
+                    1
+                  </span>
                 </div>
               </div>
               <div
                 className="sc-bYSBpT gaQXzH"
+                id="jobUpdatedAtLabel"
               >
                 <span>
                   Updated at
                 </span>
                  
-                08/09/2019 10:20
+                <span
+                  id="jobUpdatedAtValue"
+                >
+                  08/09/2019 10:20
+                </span>
               </div>
             </div>
             <div
@@ -2238,25 +2314,36 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
               >
                 <div
                   className="sc-btzYZH kEmfIk"
+                  id="jobStateValue"
                 />
                 <div
                   className="sc-lhVmIH ceZGPf"
+                  id="jobIdLabel"
                 >
                   <span>
                     Job id:
                   </span>
                    
-                  2
+                  <span
+                    id="jobIdValue"
+                  >
+                    2
+                  </span>
                 </div>
               </div>
               <div
                 className="sc-bYSBpT gaQXzH"
+                id="jobUpdatedAtLabel"
               >
                 <span>
                   Updated at
                 </span>
                  
-                07/09/2019 11:30
+                <span
+                  id="jobUpdatedAtValue"
+                >
+                  07/09/2019 11:30
+                </span>
               </div>
             </div>
             <div
@@ -2267,25 +2354,36 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
               >
                 <div
                   className="sc-btzYZH kEmfIk"
+                  id="jobStateValue"
                 />
                 <div
                   className="sc-lhVmIH ceZGPf"
+                  id="jobIdLabel"
                 >
                   <span>
                     Job id:
                   </span>
                    
-                  3
+                  <span
+                    id="jobIdValue"
+                  >
+                    3
+                  </span>
                 </div>
               </div>
               <div
                 className="sc-bYSBpT gaQXzH"
+                id="jobUpdatedAtLabel"
               >
                 <span>
                   Updated at
                 </span>
                  
-                06/09/2019 12:40
+                <span
+                  id="jobUpdatedAtValue"
+                >
+                  06/09/2019 12:40
+                </span>
               </div>
             </div>
             <div
@@ -2296,25 +2394,36 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
               >
                 <div
                   className="sc-btzYZH kEmfIk"
+                  id="jobStateValue"
                 />
                 <div
                   className="sc-lhVmIH ceZGPf"
+                  id="jobIdLabel"
                 >
                   <span>
                     Job id:
                   </span>
                    
-                  4
+                  <span
+                    id="jobIdValue"
+                  >
+                    4
+                  </span>
                 </div>
               </div>
               <div
                 className="sc-bYSBpT gaQXzH"
+                id="jobUpdatedAtLabel"
               >
                 <span>
                   Updated at
                 </span>
                  
-                05/09/2019 13:50
+                <span
+                  id="jobUpdatedAtValue"
+                >
+                  05/09/2019 13:50
+                </span>
               </div>
             </div>
           </div>
@@ -2329,6 +2438,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       >
         <button
           disabled={false}
+          id="backBtn"
           onClick={[Function]}
           style={
             Object {
@@ -2366,6 +2476,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         </button>
         <button
           disabled={false}
+          id="createDataSourceBtn"
           onClick={[Function]}
           style={
             Object {
@@ -2472,6 +2583,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -2663,6 +2775,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
             </span>
           </div>
           <h1
+            id="dataSourceTitle"
             onClick={[Function]}
             style={
               Object {
@@ -2688,11 +2801,13 @@ exports[`Storyshots DataSourceList With processing 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-0"
               >
                 Source
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-0"
               >
                 <svg
                   style={
@@ -2717,11 +2832,13 @@ exports[`Storyshots DataSourceList With processing 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-1"
               >
                 Items
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-1"
               >
                 246
               </span>
@@ -2731,11 +2848,13 @@ exports[`Storyshots DataSourceList With processing 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-2"
               >
                 Fields
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-2"
               >
                 11
               </span>
@@ -2745,11 +2864,13 @@ exports[`Storyshots DataSourceList With processing 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-3"
               >
                 Filters
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-3"
               >
                 —
               </span>
@@ -2759,11 +2880,13 @@ exports[`Storyshots DataSourceList With processing 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-4"
               >
                 Views
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-4"
               >
                 —
               </span>
@@ -2780,6 +2903,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
       >
         <button
           disabled={false}
+          id="backBtn"
           onClick={[Function]}
           style={
             Object {
@@ -2817,6 +2941,7 @@ exports[`Storyshots DataSourceList With processing 1`] = `
         </button>
         <button
           disabled={false}
+          id="createDataSourceBtn"
           onClick={[Function]}
           style={
             Object {
@@ -2923,6 +3048,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -3114,6 +3240,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
             </span>
           </div>
           <h1
+            id="dataSourceTitle"
             onClick={[Function]}
             style={
               Object {
@@ -3139,11 +3266,13 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-0"
               >
                 Source
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-0"
               >
                 <svg
                   style={
@@ -3168,11 +3297,13 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-1"
               >
                 Items
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-1"
               >
                 246
               </span>
@@ -3182,11 +3313,13 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-2"
               >
                 Fields
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-2"
               >
                 11
               </span>
@@ -3196,11 +3329,13 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-3"
               >
                 Filters
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-3"
               >
                 —
               </span>
@@ -3210,11 +3345,13 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
             >
               <span
                 className="sc-tilXH fTFYNy"
+                id="metaItem-4"
               >
                 Views
               </span>
               <span
                 className="sc-hEsumM hQptFt"
+                id="metaItemValue-4"
               >
                 —
               </span>
@@ -3231,6 +3368,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
       >
         <button
           disabled={false}
+          id="backBtn"
           onClick={[Function]}
           style={
             Object {
@@ -3268,6 +3406,7 @@ exports[`Storyshots DataSourceList With ready for processing 1`] = `
         </button>
         <button
           disabled={false}
+          id="createDataSourceBtn"
           onClick={[Function]}
           style={
             Object {

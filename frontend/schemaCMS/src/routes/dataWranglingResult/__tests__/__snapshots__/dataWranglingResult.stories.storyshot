@@ -354,11 +354,6 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
           className="sc-gzVnrw bMUaYY"
         >
           <div
-            activeStep={4}
-            customDotStyles={Object {}}
-            handleStep={[Function]}
-            onStepChange={[Function]}
-            steps={6}
             style={
               Object {
                 "display": "flex",
