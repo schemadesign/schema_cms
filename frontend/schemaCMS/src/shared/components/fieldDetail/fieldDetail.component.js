@@ -28,7 +28,7 @@ export class FieldDetail extends PureComponent {
     return (
       <Item key={index}>
         <Label>{this.props.intl.formatMessage(messages[id])}</Label>
-        <Value>{textValue}</Value>
+        <Value title={textValue}>{textValue}</Value>
         {this.renderEditIcon(isEditable)}
       </Item>
     );
