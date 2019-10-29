@@ -230,7 +230,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             Object {
               "display": "flex",
               "flexDirection": "column",
-              "maxWidth": "320px",
+              "maxWidth": "100%",
               "paddingBottom": "30px",
               "position": "relative",
             }
