@@ -3,7 +3,7 @@
 exports[`Storyshots JobDetail Default 1`] = `
 Array [
   <div
-    className="sc-gPEVay bMUXdd"
+    className="sc-iRbamj jXEQsc"
   >
     <div
       style={
@@ -20,7 +20,7 @@ Array [
     >
       <div>
         <div
-          className="sc-iRbamj blSEcj"
+          className="sc-jlyJG bbyJzT"
         >
           <h2
             id="headerTitle"
@@ -117,10 +117,10 @@ Array [
       }
     >
       <div
-        className="sc-jlyJG bbyJzT"
+        className="sc-gipzik iyhjGb"
       >
         <div
-          className="sc-iRbamj blSEcj"
+          className="sc-jlyJG bbyJzT"
         >
           <h2
             id="headerTitle"
@@ -157,13 +157,13 @@ Array [
         </div>
       </div>
       <div
-        className="sc-gipzik NStlt"
+        className="sc-csuQGl cZqJAV"
       >
         <ul
-          className="sc-csuQGl sc-Rmtcm cgBoJF"
+          className="sc-Rmtcm sc-bRBYWo cpfpDV"
         />
         <ul
-          className="sc-csuQGl sc-bRBYWo ggyrgy"
+          className="sc-Rmtcm sc-hzDkRC fZQkew"
         />
       </div>
       <button
@@ -208,166 +208,294 @@ Array [
       </button>
     </div>
   </div>,
-  <form
-    className="sc-TOsTZ kjYrri"
-    onSubmit={[Function]}
+  <div
+    className="sc-gqjmRU hnZXkc"
   >
     <div
-      className="sc-cHGsZl fVWrlt"
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
     >
-      <div
-        className="sc-gisBJw gYvZxp"
+      <label
+        htmlFor="pk"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "1px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
       >
         <span>
           Job Id
         </span>
-      </div>
+      </label>
+      <input
+        disabled={true}
+        id="pk"
+        name="pk"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+          }
+        }
+        type="text"
+        value="1"
+      />
       <div
-        className="sc-kjoXOD hpTAeq"
-      >
-        1
-      </div>
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
     </div>
+  </div>,
+  <div
+    className="sc-gqjmRU hnZXkc"
+  >
     <div
-      className="sc-cHGsZl fVWrlt"
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
     >
-      <div
-        className="sc-gisBJw gYvZxp"
+      <label
+        htmlFor="jobState"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "1px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
       >
         <span>
           Job status
         </span>
-      </div>
+      </label>
+      <input
+        disabled={true}
+        id="jobState"
+        name="jobState"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+          }
+        }
+        type="text"
+        value="Success"
+      />
       <div
-        className="sc-kjoXOD hpTAeq"
-      >
-        <span>
-          Success
-        </span>
-      </div>
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
     </div>
+  </div>,
+  <form
+    className="sc-kjoXOD hpTAeq"
+    onSubmit={[Function]}
+  >
     <div
-      className="sc-cHGsZl fVWrlt"
+      className="sc-gqjmRU hnZXkc"
     >
       <div
-        className="sc-gqjmRU hnZXkc"
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
       >
-        <div
+        <label
+          htmlFor="description"
           style={
             Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
+              "border": "none",
+              "borderTop": "1px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
             }
           }
         >
-          <label
-            htmlFor="description"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "1px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
+          <span>
+            Job description
+          </span>
+        </label>
+        <textarea
+          id="description"
+          onChange={[Function]}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": "0",
+              "resize": "none",
             }
-          >
-            <span>
-              Job description
-            </span>
-          </label>
-          <textarea
-            id="description"
-            onChange={[Function]}
-            style={
-              Object {
-                "background": "#000",
-                "border": "none",
-                "color": "#FFF",
-                "fontSize": "18px",
-                "height": 0,
-                "lineHeight": "24px",
-                "outline": "none",
-                "padding": "0",
-                "resize": "none",
-              }
+          }
+          type="text"
+          value=""
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
             }
-            type="text"
-            value=""
-          />
-          <textarea
-            aria-hidden={true}
-            readOnly={true}
-            style={
-              Object {
-                "background": "#000",
-                "border": "none",
-                "color": "#FFF",
-                "fontSize": "18px",
-                "height": 0,
-                "left": 0,
-                "lineHeight": "24px",
-                "outline": "none",
-                "overflow": "hidden",
-                "padding": "0",
-                "position": "absolute",
-                "resize": "none",
-                "top": 0,
-                "visibility": "hidden",
-              }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
-            tabIndex={-1}
-          />
+          }
+        >
           <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+            className="sc-VigVT iLHdFH"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
               }
-            }
-          />
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
-    <div
-      className="sc-kgAjT lcCOGt"
-    >
-      <a
-        className="sc-ksYbfQ iwsrIo"
-        href="/job/1/preview"
-        onClick={[Function]}
-      >
-        <span>
-          Preview
-        </span>
-      </a>
-      <a
-        className="sc-cJSrbW fNaexa"
-        download={true}
-        href="http://result"
-      >
-        <span>
-          Download Result File
-        </span>
-      </a>
-      <a
-        className="sc-cJSrbW fNaexa"
-        download={true}
-        href="http://sourceFileUrl"
-      >
-        <span>
-          Download Original File
-        </span>
-      </a>
-    </div>
   </form>,
+  <label
+    className="sc-ksYbfQ dQtAOP"
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "1px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    <span>
+      Steps:
+    </span>
+  </label>,
+  <ul
+    className="sc-hmzhuo fVUUuI"
+  />,
+  <div
+    className="sc-cHGsZl eAbGBZ"
+  >
+    <a
+      className="sc-kgAjT eoMOS"
+      href="/job/1/preview"
+      onClick={[Function]}
+    >
+      <span>
+        Preview
+      </span>
+    </a>
+    <a
+      className="sc-TOsTZ cqCQms"
+      download={true}
+      href="http://result"
+    >
+      <span>
+        Download Result File
+      </span>
+    </a>
+    <a
+      className="sc-TOsTZ cqCQms"
+      download={true}
+      href="http://sourceFileUrl"
+    >
+      <span>
+        Download Original File
+      </span>
+    </a>
+  </div>,
   <div
     className="sc-htoDjs iUYJOx"
   >

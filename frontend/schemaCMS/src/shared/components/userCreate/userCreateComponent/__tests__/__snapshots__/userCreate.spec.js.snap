@@ -29,6 +29,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
     <TextInput
       checkOnlyErrors={false}
       errors={Object {}}
+      isEdit={false}
       label="Name"
       name="firstName"
       onChange={[Function]}
@@ -39,6 +40,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
     <TextInput
       checkOnlyErrors={false}
       errors={Object {}}
+      isEdit={false}
       label="Email"
       name="email"
       onChange={[Function]}
@@ -48,6 +50,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
     <TextInput
       checkOnlyErrors={false}
       errors={Object {}}
+      isEdit={false}
       label="Role"
       name="role"
       onChange={[Function]}

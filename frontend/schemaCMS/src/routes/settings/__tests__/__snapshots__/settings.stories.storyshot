@@ -2,10 +2,10 @@
 
 exports[`Storyshots Settings Default 1`] = `
 <div
-  className="sc-hORach jBrJiT"
+  className="sc-bMVAic bLqoya"
 >
   <div
-    className="sc-gPEVay bMUXdd"
+    className="sc-iRbamj jXEQsc"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots Settings Default 1`] = `
     >
       <div>
         <div
-          className="sc-iRbamj blSEcj"
+          className="sc-jlyJG bbyJzT"
         >
           <h2
             id="headerTitle"
@@ -119,10 +119,10 @@ exports[`Storyshots Settings Default 1`] = `
       }
     >
       <div
-        className="sc-jlyJG bbyJzT"
+        className="sc-gipzik iyhjGb"
       >
         <div
-          className="sc-iRbamj blSEcj"
+          className="sc-jlyJG bbyJzT"
         >
           <h2
             id="headerTitle"
@@ -159,16 +159,16 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gipzik NStlt"
+        className="sc-csuQGl cZqJAV"
       >
         <ul
-          className="sc-csuQGl sc-Rmtcm cgBoJF"
+          className="sc-Rmtcm sc-bRBYWo cpfpDV"
         />
         <ul
-          className="sc-csuQGl sc-bRBYWo ggyrgy"
+          className="sc-Rmtcm sc-hzDkRC fZQkew"
         >
           <li
-            className="sc-hzDkRC sc-fBuWsC bwTXIe"
+            className="sc-jhAzac sc-fMiknA iuJeXm"
           >
             <a
               href="/reset-password"
@@ -181,7 +181,7 @@ exports[`Storyshots Settings Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-hzDkRC sc-fBuWsC bwTXIe"
+            className="sc-jhAzac sc-fMiknA iuJeXm"
           >
             <a
               href="/logout"
@@ -238,10 +238,10 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-cLQEGU laMIkr"
+    className="sc-gqPbQI lnbsjh"
   >
     <form
-      className="sc-gqPbQI lnbsjh"
+      className="sc-hORach jBrJiT"
       onSubmit={[Function]}
     >
       <div

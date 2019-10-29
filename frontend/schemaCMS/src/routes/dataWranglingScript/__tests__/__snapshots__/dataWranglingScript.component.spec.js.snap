@@ -26,6 +26,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       disabled={true}
       errors={Object {}}
       fullWidth={true}
+      isEdit={false}
       label="Description"
       name="description"
       onChange={[Function]}
@@ -154,6 +155,7 @@ exports[`DataWranglingScript: Component should render correctly with link to dat
       disabled={true}
       errors={Object {}}
       fullWidth={true}
+      isEdit={false}
       label="Description"
       name="description"
       onChange={[Function]}

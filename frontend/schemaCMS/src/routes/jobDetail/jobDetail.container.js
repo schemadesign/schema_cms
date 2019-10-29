@@ -5,6 +5,7 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { withFormik } from 'formik';
+import { injectIntl } from 'react-intl';
 
 import { JobDetail } from './jobDetail.component';
 import { JobRoutines, selectJob } from '../../modules/job';
@@ -30,6 +31,7 @@ export default compose(
     mapDispatchToProps
   ),
   withRouter,
+  injectIntl,
   withFormik({
     displayName: JOB_DETAIL_FORM,
     enableReinitialize: true,
