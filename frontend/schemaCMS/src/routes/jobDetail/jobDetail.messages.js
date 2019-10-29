@@ -42,6 +42,10 @@ export default defineMessages({
     id: 'jobDetail.resultFile',
     defaultMessage: 'Download Result File',
   },
+  stepsTitle: {
+    id: 'jobDetail.stepsTitle',
+    defaultMessage: 'Steps:',
+  },
   [JOB_ID]: {
     id: 'jobDetail.jobId',
     defaultMessage: 'Job Id',

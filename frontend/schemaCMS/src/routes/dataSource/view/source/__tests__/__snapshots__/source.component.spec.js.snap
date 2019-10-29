@@ -359,6 +359,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
               handleReset={[Function]}
               handleSubmit={[Function]}
               initialValues={Object {}}
+              isEdit={false}
               isSubmitting={false}
               isValidating={false}
               label="Name"
@@ -415,6 +416,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                     <Component
                       error={false}
                       fullWidth={true}
+                      iconComponent={null}
                       label="Name"
                       name="name"
                       onChange={[Function]}
@@ -425,6 +427,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                         customLabelStyles={Object {}}
                         error={false}
                         fullWidth={true}
+                        iconComponent={null}
                         label="Name"
                         name="name"
                         onChange={[Function]}
@@ -1671,6 +1674,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   "type": "file",
                 }
               }
+              isEdit={false}
               isSubmitting={false}
               isValidating={false}
               label="Name"
@@ -1727,6 +1731,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                     <Component
                       error={false}
                       fullWidth={true}
+                      iconComponent={null}
                       label="Name"
                       name="name"
                       onChange={[Function]}
@@ -1737,6 +1742,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                         customLabelStyles={Object {}}
                         error={false}
                         fullWidth={true}
+                        iconComponent={null}
                         label="Name"
                         name="name"
                         onChange={[Function]}
