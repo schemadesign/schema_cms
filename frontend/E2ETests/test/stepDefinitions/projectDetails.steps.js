@@ -11,7 +11,16 @@ import {
     TITLE_LABEL,
     DESCRIPTION_LABEL,
     API_PATH_LABEL
-} from '../constants/general.constants.js';
+} from '../constants/projectDetails.constants.js';
+
+
+Given('I have entered project details page', () => {
+    waitForElement(ProjectsPage, 'projectTitle');
+    ProjectsPage.projectTitle.click();
+    waitForElement(ProjectDetailsPage.Header, 'subtitle');
+
+    expect(browser.getTitle()).to.equal(`${ProjectDetailsPage.Header.subtitle.getText()} - SchemaCMS`);
+});
 
 
 When('I choose to see project details', () => {

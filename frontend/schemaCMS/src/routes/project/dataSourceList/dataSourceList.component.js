@@ -111,7 +111,9 @@ export class DataSourceList extends PureComponent {
     <Header>
       <HeaderList>
         {list.map((item, index) => (
-          <HeaderItem key={index}>{item}</HeaderItem>
+          <HeaderItem id={`headerItem-${index}`} key={index}>
+            {item}
+          </HeaderItem>
         ))}
       </HeaderList>
       <HeaderIcon>
@@ -145,8 +147,10 @@ export class DataSourceList extends PureComponent {
 
     const elements = list.map(({ name, value }, index) => (
       <MetaData key={index}>
-        <MetaDataName>{name}</MetaDataName>
-        <MetaDataValue isLock={isLock}>{value || DEFAULT_VALUE}</MetaDataValue>
+        <MetaDataName id={`metaItem-${index}`}>{name}</MetaDataName>
+        <MetaDataValue id={`metaItemValue-${index}`} isLock={isLock}>
+          {value || DEFAULT_VALUE}
+        </MetaDataValue>
       </MetaData>
     ));
 
@@ -169,13 +173,15 @@ export class DataSourceList extends PureComponent {
     return (
       <Job key={index}>
         <JobDetails>
-          <JobStatus status={jobState}>{jobState}</JobStatus>
-          <JobName>
-            <FormattedMessage {...messages.jobId} /> {id}
+          <JobStatus id="jobStateValue" status={jobState}>
+            {jobState}
+          </JobStatus>
+          <JobName id="jobIdLabel">
+            <FormattedMessage {...messages.jobId} /> <span id="jobIdValue">{id}</span>
           </JobName>
         </JobDetails>
-        <JobDate>
-          <FormattedMessage {...messages.updatedAt} /> {modifiedDate}
+        <JobDate id="jobUpdatedAtLabel">
+          <FormattedMessage {...messages.updatedAt} /> <span id="jobUpdatedAtValue">{modifiedDate}</span>
         </JobDate>
       </Job>
     );
@@ -184,7 +190,7 @@ export class DataSourceList extends PureComponent {
   renderJobs = jobs =>
     renderWhenTrue(() => (
       <JobsContainer>
-        <JobsTitle>
+        <JobsTitle id="jobListHeader">
           <FormattedMessage {...messages.jobTitle} />
         </JobsTitle>
         {jobs.map(this.renderJob)}
@@ -201,7 +207,11 @@ export class DataSourceList extends PureComponent {
     return (
       <DataSourceItem key={index}>
         <Card headerComponent={header}>
-          <H1 customStyles={customTitleStyles} onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
+          <H1
+            id="dataSourceTitle"
+            customStyles={customTitleStyles}
+            onClick={() => this.handleShowDataSource({ id, metaData, jobs })}
+          >
             {name}
           </H1>
           {this.renderCardContent({ metaData, isLock, isError, errorLog })}
@@ -222,8 +232,8 @@ export class DataSourceList extends PureComponent {
         <DataSourceListWrapper>{dataSources.map(this.renderItem)}</DataSourceListWrapper>
 
         <NavigationContainer>
-          <BackArrowButton onClick={this.handleShowProject} />
-          <PlusButton onClick={this.handleCreateDataSource} />
+          <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
+          <PlusButton id="createDataSourceBtn" onClick={this.handleCreateDataSource} />
         </NavigationContainer>
       </Container>
     );
