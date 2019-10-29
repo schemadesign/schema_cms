@@ -35,8 +35,8 @@ function* createProject({ payload }) {
 
     yield put(ProjectRoutines.createProject.success(data));
     browserHistory.push('/project/');
-  } catch (e) {
-    yield put(ProjectRoutines.createProject.failure());
+  } catch (error) {
+    yield put(ProjectRoutines.createProject.failure(error));
   } finally {
     yield put(ProjectRoutines.createProject.fulfill());
   }

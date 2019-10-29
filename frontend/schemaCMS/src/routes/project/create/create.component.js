@@ -57,7 +57,7 @@ export class Create extends PureComponent {
             onChange={handleChange}
             name={PROJECT_TITLE}
             label={intl.formatMessage(messages.projectTitleLabel)}
-            placeholder="Project title"
+            placeholder={intl.formatMessage(messages.projectTitlePlaceholder)}
             fullWidth
             {...this.props}
           />
@@ -65,7 +65,7 @@ export class Create extends PureComponent {
             value={values[PROJECT_DESCRIPTION]}
             onChange={handleChange}
             name={PROJECT_DESCRIPTION}
-            placeholder="Project description"
+            placeholder={intl.formatMessage(messages.projectDescriptionPlaceholder)}
             label={intl.formatMessage(messages.projectDescriptionLabel)}
             fullWidth
             {...this.props}
