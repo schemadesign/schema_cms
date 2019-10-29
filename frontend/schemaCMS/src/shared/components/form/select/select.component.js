@@ -11,7 +11,7 @@ const { Label, Select: SelectElement } = Form;
 export class Select extends PureComponent {
   static propTypes = {
     defaultOption: PropTypes.object,
-    label: PropTypes.any,
+    label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     name: PropTypes.string.isRequired,
     value: PropTypes.string,
     options: PropTypes.array.isRequired,

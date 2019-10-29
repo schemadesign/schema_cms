@@ -81,10 +81,6 @@ class GmailPage extends Page {
         this.resetUrl.click();
     }
 
-    useInvitationLink() {
-
-    }
-
     deleteResetEmail() {
         browser.reloadSession();
         this.open();
