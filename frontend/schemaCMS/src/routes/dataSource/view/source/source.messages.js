@@ -28,6 +28,6 @@ export default defineMessages({
   },
   fileMaxLengthError: {
     id: 'dataSource.view.source.fileMaxLengthError',
-    defaultMessage: 'Ensure this filename has at most 100 characters (it has 244).',
+    defaultMessage: 'Ensure this filename has at most 100 characters.',
   },
 });
