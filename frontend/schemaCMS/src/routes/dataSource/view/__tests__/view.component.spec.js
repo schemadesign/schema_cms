@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 
 import { View } from '../view.component';
 import { defaultProps } from '../view.stories';
-import { STATUS_DRAFT } from '../../../../modules/dataSource/dataSource.constants';
 
 describe('View: Component', () => {
   const component = props => <View {...defaultProps} {...props} />;
@@ -21,6 +20,7 @@ describe('View: Component', () => {
         id: 'id',
         name: 'name',
         project: '1',
+        metaData: {},
       },
     };
     const wrapper = render(props);
@@ -34,6 +34,7 @@ describe('View: Component', () => {
         name: 'name',
         step: '2',
         project: '1',
+        metaData: {},
       },
     };
     const wrapper = render(props);
@@ -46,6 +47,7 @@ describe('View: Component', () => {
         id: 'id',
         name: 'name',
         project: '1',
+        metaData: {},
       },
       match: {
         params: {
@@ -65,7 +67,7 @@ describe('View: Component', () => {
     const props = {
       dataSource: {
         id: 'id',
-        status: STATUS_DRAFT,
+        metaData: null,
         project: '1',
       },
     };

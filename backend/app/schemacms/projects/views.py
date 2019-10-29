@@ -74,7 +74,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.order_by("-created")
+    queryset = models.DataSource.objects.prefetch_related("jobs").order_by("-created")
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "create": serializers.DraftDataSourceSerializer,
@@ -82,9 +82,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.CreateJobSerializer,
         "jobs_history": serializers.DataSourceJobSerializer,
+        "public_results": serializers.PublicApiJobSerializer,
     }
 
     def get_queryset(self):
+        if self.action == "public_results":
+            return super().get_queryset()
+
         return super().get_queryset().available_for_user(user=self.request.user)
 
     def perform_create(self, serializer):
@@ -154,6 +158,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(instance=data_source.jobs_history, many=True)
+        return response.Response(data=serializer.data)
+
+    @decorators.action(detail=True, permission_classes=[], url_path="public-results", methods=["get"])
+    def public_results(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+        serializer = self.get_serializer(instance=data_source.get_last_success_job())
+
         return response.Response(data=serializer.data)
 
 

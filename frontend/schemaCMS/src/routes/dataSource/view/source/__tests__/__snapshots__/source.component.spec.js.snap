@@ -5,7 +5,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   locale="en"
 >
   <SourceComponent
-    dataSource={Object {}}
+    dataSource={
+      Object {
+        "metaData": Object {},
+      }
+    }
     history={
       Object {
         "push": [Function],
@@ -16,6 +20,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "formatMessage": [Function],
       }
     }
+    isAnyJobProcessing={false}
     match={
       Object {
         "params": Object {
@@ -355,6 +360,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
               handleReset={[Function]}
               handleSubmit={[Function]}
               initialValues={Object {}}
+              isEdit={false}
               isSubmitting={false}
               isValidating={false}
               label="Name"
@@ -388,15 +394,15 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-bwzfXH",
+                        "componentId": "sc-htpNat",
                         "isStatic": true,
-                        "lastClassName": "uTxCW",
+                        "lastClassName": "KtFsv",
                         "rules": Array [],
                       },
                       "displayName": "styled.div",
                       "foldedComponentIds": Array [],
                       "render": [Function],
-                      "styledComponentId": "sc-bwzfXH",
+                      "styledComponentId": "sc-htpNat",
                       "target": "div",
                       "toString": [Function],
                       "warnTooManyClasses": [Function],
@@ -406,11 +412,12 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="sc-bwzfXH uTxCW"
+                    className="sc-htpNat KtFsv"
                   >
                     <Component
                       error={false}
                       fullWidth={true}
+                      iconComponent={null}
                       label="Name"
                       name="name"
                       onChange={[Function]}
@@ -421,6 +428,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                         customLabelStyles={Object {}}
                         error={false}
                         fullWidth={true}
+                        iconComponent={null}
                         label="Name"
                         name="name"
                         onChange={[Function]}
@@ -736,7 +744,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
               </div>
             </RadioGroup>
             <StepNavigation
-              dataSource={Object {}}
+              dataSource={
+                Object {
+                  "metaData": Object {},
+                }
+              }
               disabled={
                 Object {
                   "next": true,
@@ -752,6 +764,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                   "formatMessage": [Function],
                 }
               }
+              isAnyJobProcessing={false}
               loading={false}
               match={
                 Object {
@@ -910,9 +923,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "attrs": Array [],
                         "componentStyle": ComponentStyle {
-                          "componentId": "sc-ifAKCX",
+                          "componentId": "sc-bZQynM",
                           "isStatic": true,
-                          "lastClassName": "lyHqP",
+                          "lastClassName": "ceQpbG",
                           "rules": Array [
                             "
   height: 155px;
@@ -922,7 +935,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                         "displayName": "styled.div",
                         "foldedComponentIds": Array [],
                         "render": [Function],
-                        "styledComponentId": "sc-ifAKCX",
+                        "styledComponentId": "sc-bZQynM",
                         "target": "div",
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
@@ -932,7 +945,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                     forwardedRef={null}
                   >
                     <div
-                      className="sc-ifAKCX lyHqP"
+                      className="sc-bZQynM ceQpbG"
                     >
                       <styled.div
                         right={false}
@@ -943,9 +956,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                               "$$typeof": Symbol(react.forward_ref),
                               "attrs": Array [],
                               "componentStyle": ComponentStyle {
-                                "componentId": "sc-EHOje",
+                                "componentId": "sc-gzVnrw",
                                 "isStatic": false,
-                                "lastClassName": "dYnOqw",
+                                "lastClassName": "fqUTwt",
                                 "rules": Array [
                                   "
   position: fixed;
@@ -964,13 +977,14 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                   [Function],
                                   ";
   flex-wrap: wrap;
+  align-items: center;
 ",
                                 ],
                               },
                               "displayName": "styled.div",
                               "foldedComponentIds": Array [],
                               "render": [Function],
-                              "styledComponentId": "sc-EHOje",
+                              "styledComponentId": "sc-gzVnrw",
                               "target": "div",
                               "toString": [Function],
                               "warnTooManyClasses": [Function],
@@ -981,7 +995,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                           right={false}
                         >
                           <div
-                            className="sc-EHOje dYnOqw"
+                            className="sc-gzVnrw fqUTwt"
                           >
                             <BackButton
                               disabled={false}
@@ -1120,9 +1134,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
-                                      "componentId": "sc-bxivhb",
+                                      "componentId": "sc-EHOje",
                                       "isStatic": true,
-                                      "lastClassName": "kxjDmw",
+                                      "lastClassName": "bnfrhu",
                                       "rules": Array [
                                         "
   display: flex;
@@ -1134,7 +1148,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                     "displayName": "styled.div",
                                     "foldedComponentIds": Array [],
                                     "render": [Function],
-                                    "styledComponentId": "sc-bxivhb",
+                                    "styledComponentId": "sc-EHOje",
                                     "target": "div",
                                     "toString": [Function],
                                     "warnTooManyClasses": [Function],
@@ -1144,7 +1158,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                 forwardedRef={null}
                               >
                                 <div
-                                  className="sc-bxivhb kxjDmw"
+                                  className="sc-EHOje bnfrhu"
                                 >
                                   <Component
                                     activeStep={1}
@@ -1310,6 +1324,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "formatMessage": [Function],
       }
     }
+    isAnyJobProcessing={false}
     match={
       Object {
         "params": Object {
@@ -1657,6 +1672,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   "type": "file",
                 }
               }
+              isEdit={false}
               isSubmitting={false}
               isValidating={false}
               label="Name"
@@ -1690,15 +1706,15 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-bwzfXH",
+                        "componentId": "sc-htpNat",
                         "isStatic": true,
-                        "lastClassName": "uTxCW",
+                        "lastClassName": "KtFsv",
                         "rules": Array [],
                       },
                       "displayName": "styled.div",
                       "foldedComponentIds": Array [],
                       "render": [Function],
-                      "styledComponentId": "sc-bwzfXH",
+                      "styledComponentId": "sc-htpNat",
                       "target": "div",
                       "toString": [Function],
                       "warnTooManyClasses": [Function],
@@ -1708,11 +1724,12 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="sc-bwzfXH uTxCW"
+                    className="sc-htpNat KtFsv"
                   >
                     <Component
                       error={false}
                       fullWidth={true}
+                      iconComponent={null}
                       label="Name"
                       name="name"
                       onChange={[Function]}
@@ -1723,6 +1740,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                         customLabelStyles={Object {}}
                         error={false}
                         fullWidth={true}
+                        iconComponent={null}
                         label="Name"
                         name="name"
                         onChange={[Function]}
@@ -2040,6 +2058,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             </RadioGroup>
             <Uploader
               accept=".csv,.tsv"
+              disabled={false}
               errors={Object {}}
               handleBlur={[Function]}
               handleReset={[Function]}
@@ -2082,15 +2101,15 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-bZQynM",
+                        "componentId": "sc-htoDjs",
                         "isStatic": true,
-                        "lastClassName": "bOrPFB",
+                        "lastClassName": "bZzhDu",
                         "rules": Array [],
                       },
                       "displayName": "styled.div",
                       "foldedComponentIds": Array [],
                       "render": [Function],
-                      "styledComponentId": "sc-bZQynM",
+                      "styledComponentId": "sc-htoDjs",
                       "target": "div",
                       "toString": [Function],
                       "warnTooManyClasses": [Function],
@@ -2100,10 +2119,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="sc-bZQynM bOrPFB"
+                    className="sc-htoDjs bZzhDu"
                   >
                     <Component
                       accept=".csv,.tsv"
+                      disabled={false}
                       id="fileUpload"
                       label="File Name"
                       name="file"
@@ -2115,6 +2135,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                         customInputStyles={Object {}}
                         customLabelStyles={Object {}}
                         customStyles={Object {}}
+                        disabled={false}
                         id="fileUpload"
                         label="File Name"
                         name="file"
@@ -2354,6 +2375,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                           <input
                             accept=".csv,.tsv"
                             aria-hidden={true}
+                            disabled={false}
                             id="fileUpload"
                             name="file"
                             onChange={[Function]}
@@ -2397,6 +2419,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   "formatMessage": [Function],
                 }
               }
+              isAnyJobProcessing={false}
               loading={false}
               match={
                 Object {
@@ -2555,9 +2578,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "attrs": Array [],
                         "componentStyle": ComponentStyle {
-                          "componentId": "sc-ifAKCX",
+                          "componentId": "sc-bZQynM",
                           "isStatic": true,
-                          "lastClassName": "lyHqP",
+                          "lastClassName": "ceQpbG",
                           "rules": Array [
                             "
   height: 155px;
@@ -2567,7 +2590,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                         "displayName": "styled.div",
                         "foldedComponentIds": Array [],
                         "render": [Function],
-                        "styledComponentId": "sc-ifAKCX",
+                        "styledComponentId": "sc-bZQynM",
                         "target": "div",
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
@@ -2577,7 +2600,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                     forwardedRef={null}
                   >
                     <div
-                      className="sc-ifAKCX lyHqP"
+                      className="sc-bZQynM ceQpbG"
                     >
                       <styled.div
                         right={false}
@@ -2588,9 +2611,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                               "$$typeof": Symbol(react.forward_ref),
                               "attrs": Array [],
                               "componentStyle": ComponentStyle {
-                                "componentId": "sc-EHOje",
+                                "componentId": "sc-gzVnrw",
                                 "isStatic": false,
-                                "lastClassName": "dYnOqw",
+                                "lastClassName": "fqUTwt",
                                 "rules": Array [
                                   "
   position: fixed;
@@ -2609,13 +2632,14 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                   [Function],
                                   ";
   flex-wrap: wrap;
+  align-items: center;
 ",
                                 ],
                               },
                               "displayName": "styled.div",
                               "foldedComponentIds": Array [],
                               "render": [Function],
-                              "styledComponentId": "sc-EHOje",
+                              "styledComponentId": "sc-gzVnrw",
                               "target": "div",
                               "toString": [Function],
                               "warnTooManyClasses": [Function],
@@ -2626,7 +2650,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                           right={false}
                         >
                           <div
-                            className="sc-EHOje dYnOqw"
+                            className="sc-gzVnrw fqUTwt"
                           >
                             <BackButton
                               disabled={false}
@@ -2765,9 +2789,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
-                                      "componentId": "sc-bxivhb",
+                                      "componentId": "sc-EHOje",
                                       "isStatic": true,
-                                      "lastClassName": "kxjDmw",
+                                      "lastClassName": "bnfrhu",
                                       "rules": Array [
                                         "
   display: flex;
@@ -2779,7 +2803,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                     "displayName": "styled.div",
                                     "foldedComponentIds": Array [],
                                     "render": [Function],
-                                    "styledComponentId": "sc-bxivhb",
+                                    "styledComponentId": "sc-EHOje",
                                     "target": "div",
                                     "toString": [Function],
                                     "warnTooManyClasses": [Function],
@@ -2789,13 +2813,14 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                 forwardedRef={null}
                               >
                                 <div
-                                  className="sc-bxivhb kxjDmw"
+                                  className="sc-EHOje bnfrhu"
                                 >
                                   <Component
                                     activeStep={1}
                                     customStyles={
                                       Object {
                                         "margin": "0 auto",
+                                        "pointerEvents": "none",
                                       }
                                     }
                                     onStepChange={[Function]}
@@ -2807,6 +2832,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                       customStyles={
                                         Object {
                                           "margin": "0 auto",
+                                          "pointerEvents": "none",
                                         }
                                       }
                                       handleStep={[Function]}
@@ -2819,6 +2845,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                             "display": "flex",
                                             "flexDirection": "row",
                                             "margin": "0 auto",
+                                            "pointerEvents": "none",
                                           }
                                         }
                                       >

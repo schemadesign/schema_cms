@@ -1,3 +1,197 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`JobDetail: Component should render correctly 1`] = `""`;
+exports[`JobDetail: Component should render correctly 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Details"
+        id="jobDetail.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Job"
+        id="jobDetail.title"
+        values={Object {}}
+      />
+    }
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    disabled={true}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={false}
+    label={
+      <FormattedMessage
+        defaultMessage="Job Id"
+        id="jobDetail.jobId"
+        values={Object {}}
+      />
+    }
+    name="pk"
+    onChange={[Function]}
+    touched={Object {}}
+    value="1"
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    disabled={true}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={false}
+    label={
+      <FormattedMessage
+        defaultMessage="Job status"
+        id="jobDetail.jobState"
+        values={Object {}}
+      />
+    }
+    name="jobState"
+    onChange={[Function]}
+    touched={Object {}}
+    value="Success"
+  />
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <TextInput
+      checkOnlyErrors={false}
+      dirty={true}
+      errors={Object {}}
+      fetchOne={[Function]}
+      fullWidth={true}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isEdit={true}
+      isValid={true}
+      job={
+        Object {
+          "id": "1",
+          "jobState": "success",
+          "result": "http://result",
+          "sourceFileUrl": "http://sourceFileUrl",
+        }
+      }
+      label={
+        <FormattedMessage
+          defaultMessage="Job description"
+          id="jobDetail.descriptionLabel"
+          values={Object {}}
+        />
+      }
+      match={
+        Object {
+          "params": Object {
+            "jobId": "1",
+          },
+        }
+      }
+      multiline={true}
+      name="description"
+      onChange={[Function]}
+      steps={
+        Array [
+          Object {
+            "scriptName": "scriptName 1",
+          },
+          Object {
+            "scriptName": "scriptName 2",
+          },
+          Object {
+            "scriptName": "scriptName 3",
+          },
+        ]
+      }
+      touched={Object {}}
+      value=""
+      values={
+        Object {
+          "datasource": null,
+          "description": "",
+          "jobState": null,
+          "pk": null,
+          "result": "",
+          "steps": Array [],
+        }
+      }
+    />
+  </styled.form>
+  <Styled(Component)>
+    <FormattedMessage
+      defaultMessage="Steps:"
+      id="jobDetail.stepsTitle"
+      values={Object {}}
+    />
+  </Styled(Component)>
+  <styled.ul />
+  <styled.div>
+    <Styled(Link)
+      to="/job/1/preview"
+    >
+      <FormattedMessage
+        defaultMessage="Preview"
+        id="jobDetail.preview"
+        values={Object {}}
+      />
+    </Styled(Link)>
+    <styled.a
+      download={true}
+      href="http://result"
+    >
+      <FormattedMessage
+        defaultMessage="Download Result File"
+        id="jobDetail.resultFile"
+        values={Object {}}
+      />
+    </styled.a>
+    <styled.a
+      download={true}
+      href="http://sourceFileUrl"
+    >
+      <FormattedMessage
+        defaultMessage="Download Original File"
+        id="jobDetail.originalFile"
+        values={Object {}}
+      />
+    </styled.a>
+  </styled.div>
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Back"
+        id="jobDetail.back"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={false}
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="jobDetail.save"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</Fragment>
+`;

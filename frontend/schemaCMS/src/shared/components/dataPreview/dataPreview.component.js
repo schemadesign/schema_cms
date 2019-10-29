@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Button, Icons } from 'schemaUI';
-import { isEmpty, keys, map } from 'ramda';
+import { isEmpty } from 'ramda';
 
 import { Loader } from '../loader';
 import { Table } from '../table';
@@ -18,6 +18,7 @@ import {
   arrowStyles,
 } from './dataPreview.styles';
 import { StepNavigation } from '../stepNavigation';
+import { getTableData } from '../../utils/helpers';
 
 const INITIAL_STEP = 0;
 
@@ -59,13 +60,6 @@ export default class DataPreview extends PureComponent {
 
   componentWillUnmount() {
     this.props.unmountFields();
-  }
-
-  getTableData() {
-    const columnsIds = keys(this.props.fields);
-    const rows = map(data => map(name => data[name], columnsIds), this.props.previewTable);
-
-    return { header: columnsIds, rows };
   }
 
   getFieldDetailsData() {
@@ -125,7 +119,8 @@ export default class DataPreview extends PureComponent {
 
   renderContent() {
     const { step } = this.state;
-    const content = step ? this.renderFieldDetails(this.getFieldDetailsData()) : this.renderTable(this.getTableData());
+    const tableData = getTableData(this.props.previewTable);
+    const content = step ? this.renderFieldDetails(this.getFieldDetailsData()) : this.renderTable(tableData);
 
     return (
       <Content>

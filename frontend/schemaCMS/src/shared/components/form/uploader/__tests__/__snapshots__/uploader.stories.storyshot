@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
   }
 >
   <div
-    className="sc-VigVT fIhGog"
+    className="sc-fjdhpX nsimD"
   >
     <div
       style={Object {}}
@@ -281,7 +281,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
   }
 >
   <div
-    className="sc-VigVT fIhGog"
+    className="sc-fjdhpX nsimD"
   >
     <div
       style={Object {}}
@@ -539,7 +539,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
       />
     </div>
     <div
-      className="sc-jTzLTM bsRRAS"
+      className="sc-jzJRlG fmzuES"
     >
       error
     </div>

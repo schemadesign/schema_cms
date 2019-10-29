@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../theme/styled';
 
 export const Container = styled.div``;
 
@@ -23,3 +24,7 @@ export const customLabelStyles = {
 export const customRadioGroupStyles = {
   marginBottom: '40px',
 };
+
+export const WarningWrapper = styled.div`
+  color: ${colors.yellow};
+`;

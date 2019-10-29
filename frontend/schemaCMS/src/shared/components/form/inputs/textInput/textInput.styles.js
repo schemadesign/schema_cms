@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div``;
+
+export const IconWrapper = styled.div`
+  padding-top: 7px;
+`;
+
 export const ErrorWrapper = styled.div`
   display: flex;
   color: ${({ theme: { textField } }) => textField.error};

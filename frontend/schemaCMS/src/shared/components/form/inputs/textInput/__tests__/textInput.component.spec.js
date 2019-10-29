@@ -34,6 +34,11 @@ describe('TextInput: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render edit icon', () => {
+    const wrapper = render({ isEdit: true });
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
   it('should call onChange on TextField change', () => {
     const onChange = spy();
     const wrapper = render({ onChange });

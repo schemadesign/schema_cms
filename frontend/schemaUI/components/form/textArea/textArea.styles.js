@@ -5,6 +5,7 @@ export const getStyles = (theme = defaultTheme) => ({
     border: 'none',
     outline: 'none',
     color: theme.textArea.text,
+    background: theme.textArea.background,
     fontSize: '18px',
     lineHeight: '24px',
     resize: 'none',

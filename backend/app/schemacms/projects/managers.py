@@ -1,12 +1,42 @@
+import softdelete.models
 from django.db import models, transaction
 from hashids import Hashids
 
 from . import constants
 
 
-class ProjectQuerySet(models.QuerySet):
+class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
     def annotate_data_source_count(self):
         return self.annotate(data_source_count=models.Count("data_sources"))
+
+
+class ProjectManager(softdelete.models.SoftDeleteManager):
+    queryset_class = ProjectQuerySet
+
+    def get_query_set(self):
+        qs = super().get_query_set()
+        qs.__class__ = self.queryset_class
+        return qs
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs.__class__ = self.queryset_class
+        return qs
+
+    def all_with_deleted(self, prt=False):
+        qs = super().all_with_deleted(prt)
+        qs.__class__ = self.queryset_class
+        return qs
+
+    def deleted_set(self):
+        qs = super().deleted_set()
+        qs.__class__ = self.queryset_class
+        return qs
+
+    def filter(self, *args, **kwargs):
+        qs = super().filter(*args, **kwargs)
+        qs.__class__ = self.queryset_class
+        return qs
 
 
 class DataSourceQuerySet(models.QuerySet):

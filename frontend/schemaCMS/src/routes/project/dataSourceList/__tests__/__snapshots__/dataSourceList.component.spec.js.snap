@@ -288,10 +288,14 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             >
               Source
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-0"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               <Component
                 customStyles={
                   Object {
@@ -310,11 +314,16 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             >
               Items
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-1"
               isLock={false}
             >
               246
+=======
+            <styled.span>
+              —
+>>>>>>> master
             </styled.span>
           </styled.div>
           <styled.div
@@ -325,11 +334,16 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             >
               Fields
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-2"
               isLock={false}
             >
               11
+=======
+            <styled.span>
+              —
+>>>>>>> master
             </styled.span>
           </styled.div>
           <styled.div
@@ -340,10 +354,14 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             >
               Filters
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-3"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               —
             </styled.span>
           </styled.div>
@@ -355,10 +373,14 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             >
               Views
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-4"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               —
             </styled.span>
           </styled.div>
@@ -373,8 +395,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
               values={Object {}}
             />
           </styled.div>
-          <styled.div
+          <Styled(Link)
             key="0"
+            to="/job/1"
           >
             <styled.div>
               <styled.div
@@ -411,9 +434,10 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 08/09/2019 10:20
               </span>
             </styled.div>
-          </styled.div>
-          <styled.div
+          </Styled(Link)>
+          <Styled(Link)
             key="1"
+            to="/job/2"
           >
             <styled.div>
               <styled.div
@@ -450,9 +474,10 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 07/09/2019 11:30
               </span>
             </styled.div>
-          </styled.div>
-          <styled.div
+          </Styled(Link)>
+          <Styled(Link)
             key="2"
+            to="/job/3"
           >
             <styled.div>
               <styled.div
@@ -489,9 +514,10 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 06/09/2019 12:40
               </span>
             </styled.div>
-          </styled.div>
-          <styled.div
+          </Styled(Link)>
+          <Styled(Link)
             key="3"
+            to="/job/4"
           >
             <styled.div>
               <styled.div
@@ -528,6 +554,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 05/09/2019 13:50
               </span>
             </styled.div>
+<<<<<<< HEAD
           </styled.div>
         </styled.div>
       </Component>
@@ -825,6 +852,9 @@ exports[`DataSourceList: Component should render card with ready for processing 
               —
             </styled.span>
           </styled.div>
+=======
+          </Styled(Link)>
+>>>>>>> master
         </styled.div>
       </Component>
     </styled.li>
@@ -909,10 +939,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Source
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-0"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               <Component
                 customStyles={
                   Object {
@@ -931,11 +965,16 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Items
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-1"
               isLock={false}
             >
               246
+=======
+            <styled.span>
+              —
+>>>>>>> master
             </styled.span>
           </styled.div>
           <styled.div
@@ -946,11 +985,16 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Fields
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-2"
               isLock={false}
             >
               11
+=======
+            <styled.span>
+              —
+>>>>>>> master
             </styled.span>
           </styled.div>
           <styled.div
@@ -961,10 +1005,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Filters
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-3"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               —
             </styled.span>
           </styled.div>
@@ -976,10 +1024,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Views
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-4"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               —
             </styled.span>
           </styled.div>
@@ -1031,10 +1083,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Source
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-0"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               <Component
                 customStyles={
                   Object {
@@ -1053,10 +1109,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Items
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-1"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               246
             </styled.span>
           </styled.div>
@@ -1068,10 +1128,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Fields
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-2"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               11
             </styled.span>
           </styled.div>
@@ -1083,10 +1147,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Filters
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-3"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               —
             </styled.span>
           </styled.div>
@@ -1098,10 +1166,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Views
             </styled.span>
+<<<<<<< HEAD
             <styled.span
               id="metaItemValue-4"
               isLock={false}
             >
+=======
+            <styled.span>
+>>>>>>> master
               —
             </styled.span>
           </styled.div>

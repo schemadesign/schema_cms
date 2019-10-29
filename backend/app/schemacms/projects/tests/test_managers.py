@@ -10,7 +10,7 @@ class TestProjectQuerySet:
         expected = faker.pyint(min_value=0, max_value=3)
         data_source_factory.create_batch(expected, project=project)
 
-        project_refreshed = models.Project.objects.annotate_data_source_count().get(pk=project.pk)
+        project_refreshed = models.Project.objects.all().annotate_data_source_count().get(pk=project.pk)
 
         with django_assert_num_queries(0):
             assert project_refreshed.data_source_count == expected

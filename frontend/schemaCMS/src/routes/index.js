@@ -15,6 +15,7 @@ import { DataSource } from './dataSource';
 import { DataWranglingScript } from './dataWranglingScript';
 import { User } from './user';
 import { JobDetail } from './jobDetail';
+import { Preview as JobPreview } from './jobDetail/preview';
 
 export const ROUTES = {
   HOME: '/',
@@ -51,7 +52,9 @@ export default class RootContainer extends Component {
 
             <AuthRoute path={ROUTES.USER} component={User} />
 
-            <AuthRoute path={`${ROUTES.JOB_DETAIL}/:jobId`} component={JobDetail} />
+            <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId`} component={JobDetail} />
+
+            <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId/preview`} component={JobPreview} />
 
             <Route path={ROUTES.LOGOUT} component={Logout} />
 
