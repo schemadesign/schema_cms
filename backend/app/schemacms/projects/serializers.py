@@ -5,7 +5,7 @@ from rest_framework import serializers, exceptions
 
 from schemacms.projects import models
 from .constants import DataSourceJobState
-from .models import DataSource, DataSourceMeta, DataSourceJobMetaData, Project, WranglingScript
+from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
 from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
