@@ -11,16 +11,25 @@ class ProjectDetailsPage extends Page {
     get Header() { return HeaderComponent; }
     get Menu() { return MenuComponent; }
 
-    get datasources() { return $(''); }
-    get chart() { return $(''); }
-    get pages() { return $(''); }
-    get users() { return $(''); }
-    get lastUpdate() { return $(''); }
-    get status() { return $(''); }
-    get owner() { return $(''); }
-    get title() { return $(''); }
-    get description() { return $(''); }
-    get apiPath() { return $(''); }
+    get dataSourcesTile() { return $('#projectDataSources'); }
+    get dataSourcesLabel() { return $('div=Data Sources'); }
+    get dataSourcesAmount() { return $('#projectDataSourcesValue'); }
+    get usersTile() { return $('#projectUsers'); }
+    get usersLabel() { return $('div=Users'); }
+    get usersAmount() { return $('#projectUsersValue'); }
+    get lastUpdateLabel() { return $('#fieldLastUpdatedLabel'); }
+    get lastUpdateValue() { return $('#fieldLastUpdatedValue'); }
+    get statusLabel() { return $('#fieldStatusLabel'); }
+    get statusValue() { return $('#fieldStatusValue'); }
+    get ownerLabel() { return $('#fieldOwnerLabel'); }
+    get ownerValue() { return $('#fieldOwnerValue'); }
+    get titleLabel() { return $('#fieldTitleLabel'); }
+    get titleValue() { return $('#fieldTitleValue'); }
+    get descriptionLabel() { return $('#fieldDescriptionLabel'); }
+    get descriptionValue() { return $('#fieldDescriptionValue'); }
+    get apiPathLabel() { return $('#fieldSlugLabel'); }
+    get apiPathValue() { return $('#fieldSlugValue'); }
+    get backBtn() { return $('#addProjectBtn'); }
 
 
     openMenu() {
