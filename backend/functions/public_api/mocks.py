@@ -1,8 +1,7 @@
-import json
 import sys
 
 
-def get_simple_mock_event(job_pk):
+def get_simple_mock_event():
     return {
         'requestContext': {
             'elb': {
@@ -26,4 +25,4 @@ def get_simple_mock_event(job_pk):
 
 
 if __name__ == "__main__":
-    print(get_simple_mock_event(sys.argv[1]))
+    print(get_simple_mock_event())
