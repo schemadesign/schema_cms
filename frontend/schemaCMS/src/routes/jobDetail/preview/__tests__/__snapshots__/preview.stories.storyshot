@@ -68,6 +68,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {

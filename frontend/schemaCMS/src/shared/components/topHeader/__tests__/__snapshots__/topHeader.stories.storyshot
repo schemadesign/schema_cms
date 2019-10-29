@@ -61,6 +61,7 @@ exports[`Storyshots Shared Components|TopHeader Default 1`] = `
       </div>
       <button
         disabled={false}
+        id="topHeaderOpenMenuBtn"
         onClick={[Function]}
         style={
           Object {
@@ -321,6 +322,7 @@ exports[`Storyshots Shared Components|TopHeader Long tiltle and subtitle 1`] = `
       </div>
       <button
         disabled={false}
+        id="topHeaderOpenMenuBtn"
         onClick={[Function]}
         style={
           Object {

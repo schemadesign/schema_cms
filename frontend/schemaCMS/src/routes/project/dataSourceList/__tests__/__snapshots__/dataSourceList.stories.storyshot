@@ -64,6 +64,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -376,6 +377,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -1033,6 +1035,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {

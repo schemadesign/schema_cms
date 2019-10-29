@@ -68,6 +68,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -284,6 +285,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         className="sc-fYxtnH iluGdo"
       >
         <label
+          id="fieldProjectStatusLabel"
           style={
             Object {
               "border": "none",

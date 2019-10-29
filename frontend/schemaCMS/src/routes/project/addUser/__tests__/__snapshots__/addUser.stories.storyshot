@@ -68,6 +68,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -324,6 +325,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {

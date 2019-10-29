@@ -58,6 +58,7 @@ Array [
       </div>
       <button
         disabled={false}
+        id="topHeaderOpenMenuBtn"
         onClick={[Function]}
         style={
           Object {
