@@ -4,6 +4,12 @@ import { storiesOf } from '@storybook/react';
 import { withTheme } from '../../../.storybook/decorators';
 import { FieldDetail } from './fieldDetail.component';
 
+const long = `
+  Donec at erat dictum, congue lorem at, gravida magna.
+  Phasellus nulla turpis, hendrerit vulputate velit ut,
+  semper condimentum libero. Maecenas sodales at nisl non pellentesque.
+`;
+
 export const defaultProps = {
   id: 'firstName',
   data: {
@@ -14,9 +20,11 @@ export const defaultProps = {
     max: 100,
     mean: 4,
     min: 1,
-    std: 23.0332,
+    std: 23.033282731964,
     sample: 'Sample',
     unique: 99,
+    percentile10: long,
+    percentile25: 100283.30095,
   },
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,

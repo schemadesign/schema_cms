@@ -14,7 +14,7 @@ export class TextInput extends PureComponent {
     customStyles: PropTypes.object,
     customInputStyles: PropTypes.object,
     errors: PropTypes.object,
-    label: PropTypes.string,
+    label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     checkOnlyErrors: PropTypes.bool,
     multiline: PropTypes.bool,
     fullWidth: PropTypes.bool,

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Card, Icons, Typography } from 'schemaUI';
-import { always, anyPass, cond, equals, propEq, propIs, T } from 'ramda';
+import { always, cond, propEq, propIs, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -10,8 +10,6 @@ import {
   Container,
   DataSourceItem,
   DataSourceListWrapper,
-  Error,
-  ErrorsWrapper,
   Header,
   HeaderIcon,
   iconSourceStyles,
@@ -22,8 +20,6 @@ import {
   JobsContainer,
   JobStatus,
   JobsTitle,
-  lockIconStyles,
-  lockTextStyles,
   MetaData,
   MetaDataName,
   MetaDataValue,
@@ -37,13 +33,8 @@ import {
   DATA_WRANGLING_RESULT_STEP,
   FIELDS_STEP,
   INITIAL_STEP,
-  STATUS_DONE,
-  STATUS_DRAFT,
-  STATUS_ERROR,
-  STATUS_PROCESSING,
-  STATUS_READY_FOR_PROCESSING,
 } from '../../../modules/dataSource/dataSource.constants';
-import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
 const { H1 } = Typography;
@@ -120,23 +111,10 @@ export class DataSourceList extends PureComponent {
     </Header>
   );
 
-  renderErrorMessage = () => <FormattedMessage {...messages.error} />;
-  renderProcessingMessage = () => <FormattedMessage {...messages.processing} />;
-  renderDraftMessage = () => <FormattedMessage {...messages.draft} />;
-
-  renderHeader = (status, list) =>
-    cond([
-      [equals(STATUS_DONE), () => this.renderCreatedInformation(list)],
-      [equals(STATUS_ERROR), this.renderErrorMessage],
-      [anyPass([equals(STATUS_PROCESSING), equals(STATUS_READY_FOR_PROCESSING)]), this.renderProcessingMessage],
-      [equals(STATUS_DRAFT), this.renderDraftMessage],
-    ])(status);
-
-  renderMetaData = ({ items, fields, filters, views }, isLock) => {
-    const customIconStyles = isLock ? { ...iconSourceStyles, ...lockIconStyles } : iconSourceStyles;
+  renderMetaData = ({ items, fields, filters, views }) => {
     const { formatMessage } = this.props.intl;
     const list = [
-      { name: formatMessage(messages.source), value: <CsvIcon customStyles={customIconStyles} /> },
+      { name: formatMessage(messages.source), value: <CsvIcon customStyles={iconSourceStyles} /> },
       { name: formatMessage(messages.items), value: items },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
@@ -146,28 +124,18 @@ export class DataSourceList extends PureComponent {
     const elements = list.map(({ name, value }, index) => (
       <MetaData key={index}>
         <MetaDataName>{name}</MetaDataName>
-        <MetaDataValue isLock={isLock}>{value || DEFAULT_VALUE}</MetaDataValue>
+        <MetaDataValue>{value || DEFAULT_VALUE}</MetaDataValue>
       </MetaData>
     ));
 
     return <MetaDataWrapper>{elements}</MetaDataWrapper>;
   };
 
-  renderErrors = errorLog => errorLog.map((error, index) => <Error key={index}>{error}</Error>);
-
-  renderCardErrors = errorLog => <ErrorsWrapper>{this.renderErrors(errorLog)}</ErrorsWrapper>;
-
-  renderCardContent = ({ metaData, isLock, isError, errorLog = [] }) =>
-    renderWhenTrueOtherwise(
-      always(this.renderCardErrors(errorLog)),
-      always(this.renderMetaData(metaData || {}, isLock))
-    )(isError);
-
   renderJob = ({ jobState, id, modified }, index) => {
     const modifiedDate = extendedDayjs(modified, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm');
 
     return (
-      <Job key={index}>
+      <Job to={`/job/${id}`} key={index}>
         <JobDetails>
           <JobStatus status={jobState}>{jobState}</JobStatus>
           <JobName>
@@ -191,20 +159,17 @@ export class DataSourceList extends PureComponent {
       </JobsContainer>
     ));
 
-  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, status, errorLog, jobs }, index) => {
-    const isLock = status !== STATUS_DONE;
-    const isError = status === STATUS_ERROR;
+  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, jobs }, index) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
-    const header = this.renderHeader(status, [whenCreated, `${firstName} ${lastName}`]);
-    const customTitleStyles = isLock ? { ...titleStyles, ...lockTextStyles } : titleStyles;
+    const header = this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]);
 
     return (
       <DataSourceItem key={index}>
         <Card headerComponent={header}>
-          <H1 customStyles={customTitleStyles} onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
+          <H1 customStyles={titleStyles} onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
             {name}
           </H1>
-          {this.renderCardContent({ metaData, isLock, isError, errorLog })}
+          {this.renderMetaData(metaData || {})}
           {this.renderJobs(jobs)(!!jobs.length)}
         </Card>
       </DataSourceItem>

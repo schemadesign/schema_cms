@@ -117,8 +117,8 @@ exports[`DataPreview: Component should render correctly 1`] = `
     dataSource={
       Object {
         "id": 1,
+        "metaData": Object {},
         "project": 1,
-        "status": "done",
       }
     }
     disabled={

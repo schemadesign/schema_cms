@@ -10,6 +10,7 @@ plugins:
   - serverless-python-requirements
   - serverless-wsgi
   - serverless-localstack
+  - serverless-package-external
 
 custom:
   wsgi:
@@ -27,6 +28,9 @@ custom:
 #    host: http://localhost
     lambda:
       mountCode: False
+  packageExternal:
+    external:
+      - '../common'
 
 
 package:

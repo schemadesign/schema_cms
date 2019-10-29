@@ -1,3 +1,164 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`JobDetail: Component should render correctly 1`] = `""`;
+exports[`JobDetail: Component should render correctly 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Details"
+        id="jobDetail.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Job"
+        id="jobDetail.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <styled.div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="Job Id"
+          id="jobDetail.jobId"
+          values={Object {}}
+        />
+      </styled.div>
+      <styled.div>
+        1
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="Job status"
+          id="jobDetail.jobState"
+          values={Object {}}
+        />
+      </styled.div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="Success"
+          id="jobDetail.jobStateSuccess"
+          values={Object {}}
+        />
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <TextInput
+        checkOnlyErrors={false}
+        dirty={true}
+        errors={Object {}}
+        fetchOne={[Function]}
+        fullWidth={true}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "push": [Function],
+          }
+        }
+        isValid={true}
+        job={
+          Object {
+            "id": "1",
+            "jobState": "success",
+            "result": "http://result",
+            "sourceFileUrl": "http://sourceFileUrl",
+          }
+        }
+        label={
+          <FormattedMessage
+            defaultMessage="Job description"
+            id="jobDetail.descriptionLabel"
+            values={Object {}}
+          />
+        }
+        match={
+          Object {
+            "params": Object {
+              "jobId": "1",
+            },
+          }
+        }
+        multiline={true}
+        name="description"
+        onChange={[Function]}
+        touched={Object {}}
+        value=""
+        values={
+          Object {
+            "datasource": null,
+            "description": "",
+            "jobState": null,
+            "pk": null,
+            "result": "",
+            "steps": Array [],
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <Styled(Link)
+        to="/job/1/preview"
+      >
+        <FormattedMessage
+          defaultMessage="Preview"
+          id="jobDetail.preview"
+          values={Object {}}
+        />
+      </Styled(Link)>
+      <styled.a
+        download={true}
+        href="http://result"
+      >
+        <FormattedMessage
+          defaultMessage="Download Result File"
+          id="jobDetail.resultFile"
+          values={Object {}}
+        />
+      </styled.a>
+      <styled.a
+        download={true}
+        href="http://sourceFileUrl"
+      >
+        <FormattedMessage
+          defaultMessage="Download Original File"
+          id="jobDetail.originalFile"
+          values={Object {}}
+        />
+      </styled.a>
+    </styled.div>
+  </styled.form>
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Back"
+        id="jobDetail.back"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={false}
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="jobDetail.save"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</Fragment>
+`;

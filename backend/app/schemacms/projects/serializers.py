@@ -1,14 +1,14 @@
 import os
 
 from django.db import transaction
-from rest_framework import serializers, exceptions, validators
+from rest_framework import serializers, exceptions
 
 from schemacms.projects import models
 from .constants import DataSourceJobState
 from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
-from .validators import CustomUniqueTogetherValidator
+from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
 
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
@@ -23,10 +23,24 @@ class DataSourceCreatorSerializer(serializers.ModelSerializer):
         fields = ("id", "first_name", "last_name")
 
 
+class StepSerializer(serializers.ModelSerializer):
+    exec_order = serializers.IntegerField(default=0)
+    script_name = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = models.DataSourceJobStep
+        fields = ("script_name", "script", "body", "exec_order")
+
+    def get_script_name(self, obj):
+        return obj.script.name
+
+
 class DataSourceLastJobSerializer(serializers.ModelSerializer):
+    steps = StepSerializer(many=True)
+
     class Meta:
         model = models.DataSourceJob
-        fields = ("id", "job_state", "created", "modified")
+        fields = ("id", "job_state", "created", "modified", "steps")
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
@@ -67,8 +81,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=DataSource.objects.all(),
-                fields=('name', 'project'),
+                fields=("project", "name"),
                 key_field_name="name",
+                code="dataSourceProjectNameUnique",
                 message="DataSource with this name already exist in project.",
             )
         ]
@@ -166,7 +181,9 @@ class ProjectSerializer(serializers.ModelSerializer):
             "modified",
             "meta",
         )
-        extra_kwargs = {"title": {"validators": [validators.UniqueValidator(queryset=Project.objects.all())]}}
+        extra_kwargs = {
+            "title": {"validators": [CustomUniqueValidator(queryset=Project.objects.all(), prefix="project")]}
+        }
 
     def create(self, validated_data):
         project = Project(owner=self.context["request"].user, **validated_data)
@@ -215,20 +232,12 @@ class DataSourceScriptSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "is_predefined", "file", "body")
 
 
-class StepSerializer(serializers.ModelSerializer):
-    exec_order = serializers.IntegerField(default=0)
-
-    class Meta:
-        model = models.DataSourceJobStep
-        fields = ("script", "body", "exec_order")
-
-
 class CreateJobSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True)
 
     class Meta:
         model = models.DataSourceJob
-        fields = ("pk", "description", "steps")
+        fields = ("id", "description", "steps")
 
     def validate_steps(self, attr):
         if not attr:
@@ -254,18 +263,26 @@ class CreateJobSerializer(serializers.ModelSerializer):
             yield step_instance
 
 
+class JobDataSourceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.DataSource
+        fields = ("id", "project")
+
+
 class DataSourceJobSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True, read_only=True)
     result = serializers.FileField(read_only=True)
     error = serializers.CharField(read_only=True)
     job_state = serializers.CharField(read_only=True)
+    project = serializers.SerializerMethodField(read_only=True)
     datasource = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = models.DataSourceJob
         fields = (
-            "pk",
+            "id",
             "datasource",
+            "project",
             "description",
             "steps",
             "job_state",
@@ -273,3 +290,6 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
             "error",
             "source_file_url",
         )
+
+    def get_project(self, obj):
+        return obj.datasource.project_id

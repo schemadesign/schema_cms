@@ -149,6 +149,7 @@ const dark = {
   },
   textArea: {
     text: colors.white,
+    background: colors.black,
   },
   textField: {
     label: colors.lightGrey,

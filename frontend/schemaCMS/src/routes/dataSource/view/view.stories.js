@@ -6,6 +6,7 @@ import { View } from './view.component';
 export const defaultProps = {
   dataSource: {
     project: '1',
+    metaData: {},
   },
   dataWranglingScripts: [],
   fetchFields: Function.prototype,

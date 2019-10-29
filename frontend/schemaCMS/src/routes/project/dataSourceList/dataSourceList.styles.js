@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Theme } from 'schemaUI';
+import { Link } from 'react-router-dom';
 import { always, cond, equals } from 'ramda';
 import { styleWhenTrue } from '../../../shared/utils/rendering';
 import { media } from '../../../theme/media';
@@ -73,31 +74,18 @@ export const HeaderIcon = styled.div`
   margin-top: -8px;
 `;
 
-export const ErrorsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Error = styled.div``;
-
-export const lockTextStyles = {
-  color: Theme.colors.coolGray,
-};
-
 export const iconSourceStyles = {
   width: 40,
   height: 40,
 };
 
-export const lockIconStyles = {
-  display: 'none',
-};
-
 export const JobsContainer = styled.div``;
 
-export const Job = styled.div`
+export const Job = styled(Link)`
   background-color: ${({ theme }) => theme.background};
   border-top: 3px solid ${({ theme }) => theme.card.background};
+  color: inherit;
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

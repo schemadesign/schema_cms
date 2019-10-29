@@ -2,13 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { StepNavigation } from './stepNavigation.component';
-import { STATUS_DRAFT } from '../../../modules/dataSource/dataSource.constants';
 import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   loading: false,
   submitForm: null,
-  dataSource: { status: STATUS_DRAFT },
+  dataSource: { metaData: null },
   history: {
     push: Function.prototype,
   },

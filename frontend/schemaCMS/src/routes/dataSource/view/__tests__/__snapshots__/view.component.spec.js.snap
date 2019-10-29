@@ -117,8 +117,8 @@ exports[`View: Component should render draft 1`] = `
     dataSource={
       Object {
         "id": "id",
+        "metaData": null,
         "project": "1",
-        "status": "draft",
       }
     }
     dataWranglingScripts={Array []}
@@ -247,6 +247,7 @@ exports[`View: Component should render second step 1`] = `
     dataSource={
       Object {
         "id": "id",
+        "metaData": Object {},
         "name": "name",
         "project": "1",
         "step": "2",
@@ -378,6 +379,7 @@ exports[`View: Component should render source step 1`] = `
     dataSource={
       Object {
         "id": "id",
+        "metaData": Object {},
         "name": "name",
         "project": "1",
       }

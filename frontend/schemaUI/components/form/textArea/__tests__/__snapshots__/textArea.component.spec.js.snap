@@ -9,6 +9,7 @@ exports[`TextArea: Component should render correctly 1`] = `
       onChange={[Function]}
       style={
         Object {
+          "background": "#000",
           "border": "none",
           "color": "#FFF",
           "fontSize": "18px",
@@ -25,6 +26,7 @@ exports[`TextArea: Component should render correctly 1`] = `
       readOnly={true}
       style={
         Object {
+          "background": "#000",
           "border": "none",
           "color": "#FFF",
           "fontSize": "18px",
@@ -65,6 +67,7 @@ exports[`TextArea: Component should render with custom styles 1`] = `
       onChange={[Function]}
       style={
         Object {
+          "background": "#000",
           "border": "none",
           "color": "#FFF",
           "fontSize": "18px",
@@ -81,6 +84,7 @@ exports[`TextArea: Component should render with custom styles 1`] = `
       readOnly={true}
       style={
         Object {
+          "background": "#000",
           "border": "none",
           "color": "#FFF",
           "fontSize": "18px",

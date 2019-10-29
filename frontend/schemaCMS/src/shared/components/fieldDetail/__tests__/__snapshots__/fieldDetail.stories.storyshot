@@ -10,13 +10,13 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
   }
 >
   <div
-    className="sc-jKJlTe loXQau"
+    className="sc-eNQAEJ fAbPPh"
   >
     <ul
-      className="sc-eNQAEJ kXPaUJ"
+      className="sc-hMqMXs jabOVL"
     >
       <li
-        className="sc-hMqMXs jeFnfI"
+        className="sc-kEYyzF cuAysj"
       >
         <span
           className="sc-kkGfuU deFLsW"
@@ -30,7 +30,7 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
       </li>
       <li
-        className="sc-hMqMXs jeFnfI"
+        className="sc-kEYyzF cuAysj"
       >
         <span
           className="sc-kkGfuU deFLsW"
@@ -39,12 +39,13 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="sc-iAyFgw gwRHIF"
+          title="Sample"
         >
           Sample
         </span>
       </li>
       <li
-        className="sc-hMqMXs jeFnfI"
+        className="sc-kEYyzF cuAysj"
       >
         <span
           className="sc-kkGfuU deFLsW"
@@ -53,12 +54,13 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="sc-iAyFgw gwRHIF"
+          title="Text"
         >
           Text
         </span>
       </li>
       <li
-        className="sc-hMqMXs sc-kEYyzF jLOIyC"
+        className="sc-kEYyzF sc-hSdWYo hLjzkm"
       >
         <span
           className="sc-kkGfuU deFLsW"
@@ -67,12 +69,13 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="sc-iAyFgw gwRHIF"
+          title={127}
         >
           127
         </span>
       </li>
       <li
-        className="sc-hMqMXs sc-kEYyzF jLOIyC"
+        className="sc-kEYyzF sc-hSdWYo hLjzkm"
       >
         <span
           className="sc-kkGfuU deFLsW"
@@ -81,12 +84,13 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="sc-iAyFgw gwRHIF"
+          title={99}
         >
           99
         </span>
       </li>
       <li
-        className="sc-hMqMXs sc-kEYyzF jLOIyC"
+        className="sc-kEYyzF sc-hSdWYo hLjzkm"
       >
         <span
           className="sc-kkGfuU deFLsW"
@@ -95,12 +99,13 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="sc-iAyFgw gwRHIF"
+          title={4}
         >
           4
         </span>
       </li>
       <li
-        className="sc-hMqMXs sc-kEYyzF jLOIyC"
+        className="sc-kEYyzF sc-hSdWYo hLjzkm"
       >
         <span
           className="sc-kkGfuU deFLsW"
@@ -109,12 +114,13 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="sc-iAyFgw gwRHIF"
+          title={1}
         >
           1
         </span>
       </li>
       <li
-        className="sc-hMqMXs sc-kEYyzF jLOIyC"
+        className="sc-kEYyzF sc-hSdWYo hLjzkm"
       >
         <span
           className="sc-kkGfuU deFLsW"
@@ -123,12 +129,13 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="sc-iAyFgw gwRHIF"
+          title={100}
         >
           100
         </span>
       </li>
       <li
-        className="sc-hMqMXs sc-kEYyzF jLOIyC"
+        className="sc-kEYyzF sc-hSdWYo hLjzkm"
       >
         <span
           className="sc-kkGfuU deFLsW"
@@ -137,8 +144,47 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="sc-iAyFgw gwRHIF"
+          title={23.033282731964}
         >
-          23.0332
+          23.033282731964
+        </span>
+      </li>
+      <li
+        className="sc-kEYyzF sc-hSdWYo hLjzkm"
+      >
+        <span
+          className="sc-kkGfuU deFLsW"
+        >
+          10th Percentile
+        </span>
+        <span
+          className="sc-iAyFgw gwRHIF"
+          title="
+  Donec at erat dictum, congue lorem at, gravida magna.
+  Phasellus nulla turpis, hendrerit vulputate velit ut,
+  semper condimentum libero. Maecenas sodales at nisl non pellentesque.
+"
+        >
+          
+  Donec at erat dictum, congue lorem at, gravida magna.
+  Phasellus nulla turpis, hendrerit vulputate velit ut,
+  semper condimentum libero. Maecenas sodales at nisl non pellentesque.
+
+        </span>
+      </li>
+      <li
+        className="sc-kEYyzF sc-hSdWYo hLjzkm"
+      >
+        <span
+          className="sc-kkGfuU deFLsW"
+        >
+          25th Percentile
+        </span>
+        <span
+          className="sc-iAyFgw gwRHIF"
+          title={100283.30095}
+        >
+          100283.30095
         </span>
       </li>
     </ul>
