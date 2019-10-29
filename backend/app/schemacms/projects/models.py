@@ -208,6 +208,9 @@ class DataSource(ext_models.TimeStampedModel):
             **job_kwargs,
         )
 
+    def get_last_success_job(self):
+        return self.jobs.filter(job_state=constants.DataSourceJobState.SUCCESS).latest("created")
+
 
 class DataSourceMeta(MetaDataModel):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
