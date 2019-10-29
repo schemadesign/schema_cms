@@ -2,8 +2,8 @@ import json
 
 from peewee import *
 
-import settings
-from services import secret_manager
+from . import settings
+from .services import secret_manager
 
 db = Proxy()
 

@@ -2,10 +2,11 @@ import logging
 from flask import Flask, jsonify, abort, request
 import pandas as pd
 
-import db
-import settings
-import services
-
+from common import (
+    db,
+    services,
+    settings,
+)
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
