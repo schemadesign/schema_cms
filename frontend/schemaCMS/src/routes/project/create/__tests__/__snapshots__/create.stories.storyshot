@@ -10,10 +10,10 @@ exports[`Storyshots Project/Create Default 1`] = `
   }
 >
   <div
-    className="sc-tilXH jMVAVb"
+    className="sc-hEsumM epeevU"
   >
     <div
-      className="sc-gPEVay bMUXdd"
+      className="sc-iRbamj jXEQsc"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Project/Create Default 1`] = `
       >
         <div>
           <div
-            className="sc-iRbamj blSEcj"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -123,10 +123,10 @@ exports[`Storyshots Project/Create Default 1`] = `
         }
       >
         <div
-          className="sc-jlyJG bbyJzT"
+          className="sc-gipzik iyhjGb"
         >
           <div
-            className="sc-iRbamj blSEcj"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -159,13 +159,13 @@ exports[`Storyshots Project/Create Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-gipzik NStlt"
+          className="sc-csuQGl cZqJAV"
         >
           <ul
-            className="sc-csuQGl sc-Rmtcm cgBoJF"
+            className="sc-Rmtcm sc-bRBYWo cpfpDV"
           />
           <ul
-            className="sc-csuQGl sc-bRBYWo ggyrgy"
+            className="sc-Rmtcm sc-hzDkRC fZQkew"
           />
         </div>
         <button
@@ -211,7 +211,7 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-hEsumM gTKYRS"
+      className="sc-ktHwxA cVevTH"
       onSubmit={[Function]}
     >
       <div
@@ -394,7 +394,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-fYxtnH iluGdo"
+        className="sc-tilXH iPWPWu"
       >
         <label
           style={

@@ -2,62 +2,162 @@
 
 exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
 <div
-  className="sc-gqjmRU hnZXkc"
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
 >
   <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "maxWidth": "320px",
-        "paddingBottom": "30px",
-        "position": "relative",
-      }
-    }
+    className="sc-gqjmRU hnZXkc"
   >
-    <label
-      htmlFor="A_FIELD_NAME"
-      style={
-        Object {
-          "border": "none",
-          "borderTop": "1px solid #2F2F36",
-          "color": "#71737e",
-          "display": "block",
-          "fontSize": "14px",
-          "outline": "none",
-          "paddingTop": "8px",
-          "width": "100%",
-        }
-      }
-    >
-      Field
-    </label>
-    <input
-      id="A_FIELD_NAME"
-      name="A_FIELD_NAME"
-      onChange={[Function]}
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "border": "none",
-          "color": "#FFF",
-          "fontSize": "18px",
-          "lineHeight": "24px",
-          "outline": "none",
-        }
-      }
-      type="text"
-      value="Value"
-    />
     <div
       style={
         Object {
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "320px",
+          "paddingBottom": "30px",
+          "position": "relative",
         }
       }
-    />
+    >
+      <label
+        htmlFor="A_FIELD_NAME"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "1px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Field
+      </label>
+      <input
+        id="A_FIELD_NAME"
+        name="A_FIELD_NAME"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+          }
+        }
+        type="text"
+        value="Value"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-gqjmRU hnZXkc"
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "320px",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="A_FIELD_NAME"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "1px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Field
+      </label>
+      <input
+        id="A_FIELD_NAME"
+        name="A_FIELD_NAME"
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+          }
+        }
+        type="text"
+        value="Value"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <div
+          className="sc-VigVT iLHdFH"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

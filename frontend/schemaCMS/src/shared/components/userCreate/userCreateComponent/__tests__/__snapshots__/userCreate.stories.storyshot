@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   }
 >
   <div
-    className="sc-bAeIUo hyslBV"
+    className="sc-iujRgT jeaRWG"
   >
     <div
-      className="sc-gPEVay bMUXdd"
+      className="sc-iRbamj jXEQsc"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       >
         <div>
           <div
-            className="sc-iRbamj blSEcj"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -127,10 +127,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         }
       >
         <div
-          className="sc-jlyJG bbyJzT"
+          className="sc-gipzik iyhjGb"
         >
           <div
-            className="sc-iRbamj blSEcj"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -167,13 +167,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-gipzik NStlt"
+          className="sc-csuQGl cZqJAV"
         >
           <ul
-            className="sc-csuQGl sc-Rmtcm cgBoJF"
+            className="sc-Rmtcm sc-bRBYWo cpfpDV"
           />
           <ul
-            className="sc-csuQGl sc-bRBYWo ggyrgy"
+            className="sc-Rmtcm sc-hzDkRC fZQkew"
           />
         </div>
         <button
@@ -219,7 +219,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-iujRgT cvhGwy"
+      className="sc-GMQeP hnfwnh"
       onSubmit={[Function]}
     >
       <div

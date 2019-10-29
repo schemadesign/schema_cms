@@ -9,6 +9,7 @@ export const defaultProps = {
     metaData: {},
   },
   dataWranglingScripts: [],
+  isAnyJobProcessing: false,
   fetchFields: Function.prototype,
   unmountFields: Function.prototype,
   fetchDataSource: Function.prototype,

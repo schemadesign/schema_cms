@@ -20,6 +20,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "formatMessage": [Function],
       }
     }
+    isAnyJobProcessing={false}
     match={
       Object {
         "params": Object {
@@ -763,6 +764,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                   "formatMessage": [Function],
                 }
               }
+              isAnyJobProcessing={false}
               loading={false}
               match={
                 Object {
@@ -921,9 +923,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "attrs": Array [],
                         "componentStyle": ComponentStyle {
-                          "componentId": "sc-EHOje",
+                          "componentId": "sc-bZQynM",
                           "isStatic": true,
-                          "lastClassName": "cKhzWM",
+                          "lastClassName": "ceQpbG",
                           "rules": Array [
                             "
   height: 155px;
@@ -933,7 +935,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                         "displayName": "styled.div",
                         "foldedComponentIds": Array [],
                         "render": [Function],
-                        "styledComponentId": "sc-EHOje",
+                        "styledComponentId": "sc-bZQynM",
                         "target": "div",
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
@@ -943,7 +945,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                     forwardedRef={null}
                   >
                     <div
-                      className="sc-EHOje cKhzWM"
+                      className="sc-bZQynM ceQpbG"
                     >
                       <styled.div
                         right={false}
@@ -954,9 +956,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                               "$$typeof": Symbol(react.forward_ref),
                               "attrs": Array [],
                               "componentStyle": ComponentStyle {
-                                "componentId": "sc-bZQynM",
+                                "componentId": "sc-gzVnrw",
                                 "isStatic": false,
-                                "lastClassName": "fVLLmZ",
+                                "lastClassName": "fqUTwt",
                                 "rules": Array [
                                   "
   position: fixed;
@@ -982,7 +984,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                               "displayName": "styled.div",
                               "foldedComponentIds": Array [],
                               "render": [Function],
-                              "styledComponentId": "sc-bZQynM",
+                              "styledComponentId": "sc-gzVnrw",
                               "target": "div",
                               "toString": [Function],
                               "warnTooManyClasses": [Function],
@@ -993,7 +995,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                           right={false}
                         >
                           <div
-                            className="sc-bZQynM fVLLmZ"
+                            className="sc-gzVnrw fqUTwt"
                           >
                             <BackButton
                               disabled={false}
@@ -1132,9 +1134,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
-                                      "componentId": "sc-ifAKCX",
+                                      "componentId": "sc-EHOje",
                                       "isStatic": true,
-                                      "lastClassName": "euiflV",
+                                      "lastClassName": "bnfrhu",
                                       "rules": Array [
                                         "
   display: flex;
@@ -1146,7 +1148,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                     "displayName": "styled.div",
                                     "foldedComponentIds": Array [],
                                     "render": [Function],
-                                    "styledComponentId": "sc-ifAKCX",
+                                    "styledComponentId": "sc-EHOje",
                                     "target": "div",
                                     "toString": [Function],
                                     "warnTooManyClasses": [Function],
@@ -1156,7 +1158,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                 forwardedRef={null}
                               >
                                 <div
-                                  className="sc-ifAKCX euiflV"
+                                  className="sc-EHOje bnfrhu"
                                 >
                                   <Component
                                     activeStep={1}
@@ -1322,6 +1324,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "formatMessage": [Function],
       }
     }
+    isAnyJobProcessing={false}
     match={
       Object {
         "params": Object {
@@ -2055,6 +2058,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             </RadioGroup>
             <Uploader
               accept=".csv,.tsv"
+              disabled={false}
               errors={Object {}}
               handleBlur={[Function]}
               handleReset={[Function]}
@@ -2097,15 +2101,15 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-gzVnrw",
+                        "componentId": "sc-htoDjs",
                         "isStatic": true,
-                        "lastClassName": "ibZhkv",
+                        "lastClassName": "bZzhDu",
                         "rules": Array [],
                       },
                       "displayName": "styled.div",
                       "foldedComponentIds": Array [],
                       "render": [Function],
-                      "styledComponentId": "sc-gzVnrw",
+                      "styledComponentId": "sc-htoDjs",
                       "target": "div",
                       "toString": [Function],
                       "warnTooManyClasses": [Function],
@@ -2115,10 +2119,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="sc-gzVnrw ibZhkv"
+                    className="sc-htoDjs bZzhDu"
                   >
                     <Component
                       accept=".csv,.tsv"
+                      disabled={false}
                       id="fileUpload"
                       label="File Name"
                       name="file"
@@ -2130,6 +2135,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                         customInputStyles={Object {}}
                         customLabelStyles={Object {}}
                         customStyles={Object {}}
+                        disabled={false}
                         id="fileUpload"
                         label="File Name"
                         name="file"
@@ -2369,6 +2375,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                           <input
                             accept=".csv,.tsv"
                             aria-hidden={true}
+                            disabled={false}
                             id="fileUpload"
                             name="file"
                             onChange={[Function]}
@@ -2412,6 +2419,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   "formatMessage": [Function],
                 }
               }
+              isAnyJobProcessing={false}
               loading={false}
               match={
                 Object {
@@ -2570,9 +2578,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "attrs": Array [],
                         "componentStyle": ComponentStyle {
-                          "componentId": "sc-EHOje",
+                          "componentId": "sc-bZQynM",
                           "isStatic": true,
-                          "lastClassName": "cKhzWM",
+                          "lastClassName": "ceQpbG",
                           "rules": Array [
                             "
   height: 155px;
@@ -2582,7 +2590,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                         "displayName": "styled.div",
                         "foldedComponentIds": Array [],
                         "render": [Function],
-                        "styledComponentId": "sc-EHOje",
+                        "styledComponentId": "sc-bZQynM",
                         "target": "div",
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
@@ -2592,7 +2600,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                     forwardedRef={null}
                   >
                     <div
-                      className="sc-EHOje cKhzWM"
+                      className="sc-bZQynM ceQpbG"
                     >
                       <styled.div
                         right={false}
@@ -2603,9 +2611,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                               "$$typeof": Symbol(react.forward_ref),
                               "attrs": Array [],
                               "componentStyle": ComponentStyle {
-                                "componentId": "sc-bZQynM",
+                                "componentId": "sc-gzVnrw",
                                 "isStatic": false,
-                                "lastClassName": "fVLLmZ",
+                                "lastClassName": "fqUTwt",
                                 "rules": Array [
                                   "
   position: fixed;
@@ -2631,7 +2639,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                               "displayName": "styled.div",
                               "foldedComponentIds": Array [],
                               "render": [Function],
-                              "styledComponentId": "sc-bZQynM",
+                              "styledComponentId": "sc-gzVnrw",
                               "target": "div",
                               "toString": [Function],
                               "warnTooManyClasses": [Function],
@@ -2642,7 +2650,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                           right={false}
                         >
                           <div
-                            className="sc-bZQynM fVLLmZ"
+                            className="sc-gzVnrw fqUTwt"
                           >
                             <BackButton
                               disabled={false}
@@ -2781,9 +2789,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
-                                      "componentId": "sc-ifAKCX",
+                                      "componentId": "sc-EHOje",
                                       "isStatic": true,
-                                      "lastClassName": "euiflV",
+                                      "lastClassName": "bnfrhu",
                                       "rules": Array [
                                         "
   display: flex;
@@ -2795,7 +2803,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                     "displayName": "styled.div",
                                     "foldedComponentIds": Array [],
                                     "render": [Function],
-                                    "styledComponentId": "sc-ifAKCX",
+                                    "styledComponentId": "sc-EHOje",
                                     "target": "div",
                                     "toString": [Function],
                                     "warnTooManyClasses": [Function],
@@ -2805,7 +2813,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                 forwardedRef={null}
                               >
                                 <div
-                                  className="sc-ifAKCX euiflV"
+                                  className="sc-EHOje bnfrhu"
                                 >
                                   <Component
                                     activeStep={1}
