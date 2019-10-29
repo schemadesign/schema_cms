@@ -546,8 +546,8 @@ class TestDataSourcePreview:
         return reverse("projects:datasource-preview", kwargs=dict(pk=pk))
 
 
+@pytest.mark.usefixtures("ds_source_file_latest_version_mock")
 class TestDataSourceJobCreate:
-    @pytest.mark.usefixtures("ds_source_file_latest_version_mock")
     @pytest.mark.parametrize("description", ['', "test_desc"])
     def test_response(self, api_client, admin, data_source_factory, script_factory, description):
         data_source = data_source_factory(created_by=admin)
@@ -560,6 +560,20 @@ class TestDataSourceJobCreate:
         assert response.status_code == status.HTTP_201_CREATED
         assert len(data_source.jobs.all()) == 1
         assert data_source.jobs.last().steps.filter(script=script_1).exists()
+
+    @pytest.mark.usefixtures("transaction_on_commit")
+    def test_schedule_worker_with(self, api_client, admin, data_source_factory, script_factory, mocker):
+        data_source = data_source_factory(created_by=admin)
+        script_1 = script_factory(is_predefined=True, created_by=admin, datasource=None)
+        job_data = dict(steps=[{"script": script_1.id, "exec_order": 0}])
+        schedule_worker_with_mock = mocker.patch("schemacms.projects.services.schedule_worker_with")
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=job_data, format="json")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        job = projects_models.DataSourceJob.objects.all().get(pk=response.data["id"])
+        schedule_worker_with_mock.assert_called_with(job, data_source.file.size)
 
     @staticmethod
     def get_url(pk):
