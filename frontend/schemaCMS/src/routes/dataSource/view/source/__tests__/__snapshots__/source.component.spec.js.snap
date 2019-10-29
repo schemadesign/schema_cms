@@ -1181,11 +1181,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                       steps={6}
                                     >
                                       <div
-                                        activeStep={1}
-                                        customDotStyles={Object {}}
-                                        handleStep={[Function]}
-                                        onStepChange={[Function]}
-                                        steps={6}
                                         style={
                                           Object {
                                             "display": "flex",
@@ -2837,11 +2832,6 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                       steps={6}
                                     >
                                       <div
-                                        activeStep={1}
-                                        customDotStyles={Object {}}
-                                        handleStep={[Function]}
-                                        onStepChange={[Function]}
-                                        steps={6}
                                         style={
                                           Object {
                                             "display": "flex",

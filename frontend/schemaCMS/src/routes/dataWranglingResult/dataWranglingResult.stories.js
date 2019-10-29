@@ -31,6 +31,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DataWranglingResult', module)
+storiesOf('DataWranglingResult - skip', module)
   .addDecorator(withTheme())
   .add('Default', () => <DataWranglingResult {...defaultProps} />);

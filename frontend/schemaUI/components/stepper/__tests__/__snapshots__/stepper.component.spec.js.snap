@@ -9,11 +9,6 @@ exports[`Stepper: Component should render correctly 1`] = `
   steps={6}
 >
   <div
-    activeStep={1}
-    customDotStyles={Object {}}
-    handleStep={[Function]}
-    onStepChange={[Function]}
-    steps={6}
     style={
       Object {
         "display": "flex",
@@ -140,21 +135,6 @@ exports[`Stepper: Component should render with custom styles 1`] = `
   steps={6}
 >
   <div
-    activeStep={1}
-    customActiveDotStyles={
-      Object {
-        "backgroundColor": "red",
-      }
-    }
-    customDotStyles={
-      Object {
-        "backgroundColor": "blue",
-        "margin": "4px",
-      }
-    }
-    handleStep={[Function]}
-    onStepChange={[Function]}
-    steps={6}
     style={
       Object {
         "display": "flex",
