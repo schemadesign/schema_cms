@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
   }
 >
   <div
-    className="sc-esOvli bMqLzo"
+    className="sc-cLQEGU laMIkr"
   >
     <form
-      className="sc-cmthru hjHKVg"
+      className="sc-gqPbQI lnbsjh"
       onSubmit={[Function]}
     >
       <div
@@ -260,7 +260,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
         className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-dnqmqq BDAcl"
+          className="sc-dnqmqq jWbJEw"
         >
           <button
             disabled={false}

@@ -10,7 +10,7 @@ exports[`Storyshots Project/Create Default 1`] = `
   }
 >
   <div
-    className="sc-gGBfsJ eaQlFN"
+    className="sc-tilXH jMVAVb"
   >
     <div
       className="sc-gPEVay bMUXdd"
@@ -211,7 +211,7 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-jnlKLf adGQN"
+      className="sc-hEsumM gTKYRS"
       onSubmit={[Function]}
     >
       <div
@@ -394,7 +394,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bbmXgH hfdwjq"
+        className="sc-fYxtnH iluGdo"
       >
         <label
           style={
@@ -542,7 +542,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-dnqmqq jpGIQI"
+          className="sc-dnqmqq emCgxc"
         >
           <button
             disabled={false}

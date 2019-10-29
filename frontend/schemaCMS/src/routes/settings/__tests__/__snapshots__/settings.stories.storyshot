@@ -2,7 +2,7 @@
 
 exports[`Storyshots Settings Default 1`] = `
 <div
-  className="sc-hMFtBS ibPiQm"
+  className="sc-hORach jBrJiT"
 >
   <div
     className="sc-gPEVay bMUXdd"
@@ -238,10 +238,10 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-esOvli bMqLzo"
+    className="sc-cLQEGU laMIkr"
   >
     <form
-      className="sc-cmthru hjHKVg"
+      className="sc-gqPbQI lnbsjh"
       onSubmit={[Function]}
     >
       <div
@@ -429,7 +429,7 @@ exports[`Storyshots Settings Default 1`] = `
         className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-dnqmqq dmiTgi"
+          className="sc-dnqmqq drsqyC"
         >
           <button
             disabled={true}

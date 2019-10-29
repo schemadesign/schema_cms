@@ -3,7 +3,7 @@
 exports[`Storyshots JobDetail Default 1`] = `
 Array [
   <div
-    className="sc-jDwBTQ fRXXnG"
+    className="sc-gPEVay bMUXdd"
   >
     <div
       style={
@@ -20,7 +20,7 @@ Array [
     >
       <div>
         <div
-          className="sc-gPEVay eQYmiW"
+          className="sc-iRbamj blSEcj"
         >
           <h2
             id="headerTitle"
@@ -117,10 +117,10 @@ Array [
       }
     >
       <div
-        className="sc-iRbamj blSEcj"
+        className="sc-jlyJG bbyJzT"
       >
         <div
-          className="sc-gPEVay eQYmiW"
+          className="sc-iRbamj blSEcj"
         >
           <h2
             id="headerTitle"
@@ -157,13 +157,13 @@ Array [
         </div>
       </div>
       <div
-        className="sc-jlyJG ivDHoW"
+        className="sc-gipzik NStlt"
       >
         <ul
-          className="sc-gipzik sc-csuQGl kTeIRg"
+          className="sc-csuQGl sc-Rmtcm cgBoJF"
         />
         <ul
-          className="sc-gipzik sc-Rmtcm iXyibh"
+          className="sc-csuQGl sc-bRBYWo ggyrgy"
         />
       </div>
       <button
@@ -209,37 +209,37 @@ Array [
     </div>
   </div>,
   <form
-    className="sc-cHGsZl bHiaRe"
+    className="sc-TOsTZ kjYrri"
     onSubmit={[Function]}
   >
     <div
-      className="sc-kjoXOD jABulz"
+      className="sc-cHGsZl fVWrlt"
     >
       <div
-        className="sc-caSCKo dRFTCc"
+        className="sc-gisBJw gYvZxp"
       >
         <span>
           Job Id
         </span>
       </div>
       <div
-        className="sc-gisBJw kDlVKO"
+        className="sc-kjoXOD hpTAeq"
       >
         1
       </div>
     </div>
     <div
-      className="sc-kjoXOD jABulz"
+      className="sc-cHGsZl fVWrlt"
     >
       <div
-        className="sc-caSCKo dRFTCc"
+        className="sc-gisBJw gYvZxp"
       >
         <span>
           Job status
         </span>
       </div>
       <div
-        className="sc-gisBJw kDlVKO"
+        className="sc-kjoXOD hpTAeq"
       >
         <span>
           Success
@@ -247,10 +247,10 @@ Array [
       </div>
     </div>
     <div
-      className="sc-kjoXOD jABulz"
+      className="sc-cHGsZl fVWrlt"
     >
       <div
-        className="sc-gZMcBi giNnHm"
+        className="sc-gqjmRU hnZXkc"
       >
         <div
           style={
@@ -337,10 +337,10 @@ Array [
       </div>
     </div>
     <div
-      className="sc-TOsTZ csbsUT"
+      className="sc-kgAjT lcCOGt"
     >
       <a
-        className="sc-cJSrbW fNaexa"
+        className="sc-ksYbfQ iwsrIo"
         href="/job/1/preview"
         onClick={[Function]}
       >
@@ -349,7 +349,7 @@ Array [
         </span>
       </a>
       <a
-        className="sc-kgAjT eoMOS"
+        className="sc-cJSrbW fNaexa"
         download={true}
         href="http://result"
       >
@@ -358,7 +358,7 @@ Array [
         </span>
       </a>
       <a
-        className="sc-kgAjT eoMOS"
+        className="sc-cJSrbW fNaexa"
         download={true}
         href="http://sourceFileUrl"
       >
