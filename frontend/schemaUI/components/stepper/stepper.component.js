@@ -19,27 +19,49 @@ export class StepperComponent extends PureComponent {
     handleStep: () => {},
   };
 
-  getActiveStyles = (step, dotActiveStyles) =>
-    this.props.activeStep === step ? { ...dotActiveStyles, ...this.props.customActiveDotStyles } : {};
+  getActiveStyles = ({ step, activeStep, dotActiveStyles, customActiveDotStyles }) =>
+    activeStep === step ? { ...dotActiveStyles, ...customActiveDotStyles } : {};
 
-  renderDots = (dotActiveStyles, dotStyles) =>
-    [...Array(this.props.steps)].map((value, key) => this.renderDot(key, dotActiveStyles, dotStyles));
+  renderDots = ({ steps, ...restProps }) =>
+    [...Array(steps)].map((value, key) => this.renderDot({ key, ...restProps }));
 
-  renderDot = (key, dotActiveStyles, dotStyles) => (
+  renderDot = ({ key, onStepChange, dotStyles, customDotStyles, ...restProps }) => (
     <span
-      style={{ ...dotStyles, ...this.props.customDotStyles, ...this.getActiveStyles(key + 1, dotActiveStyles) }}
-      onClick={() => this.props.onStepChange(key + 1)}
+      style={{ ...dotStyles, ...customDotStyles, ...this.getActiveStyles({ step: key + 1, ...restProps }) }}
+      onClick={() => onStepChange(key + 1)}
       key={key}
     />
   );
 
   render = () => {
-    const { customStyles, theme, ...restProps } = this.props;
+    const {
+      customStyles,
+      theme,
+      activeStep,
+      onStepChange,
+      handleStep,
+      customActiveDotStyles,
+      customDotStyles,
+      steps,
+      ...restProps
+    } = this.props;
     const { containerStyles, dotActiveStyles, dotStyles } = getStyles(theme);
+    const customProps = {
+      customStyles,
+      theme,
+      activeStep,
+      onStepChange,
+      handleStep,
+      customActiveDotStyles,
+      customDotStyles,
+      steps,
+      dotActiveStyles,
+      dotStyles,
+    };
 
     return (
       <div style={{ ...containerStyles, ...customStyles }} {...restProps}>
-        {this.renderDots(dotActiveStyles, dotStyles)}
+        {this.renderDots(customProps)}
       </div>
     );
   };

@@ -2,10 +2,10 @@
 
 exports[`Storyshots Settings Default 1`] = `
 <div
-  className="sc-iuJeZd guOzZL"
+  className="sc-bMVAic bLqoya"
 >
   <div
-    className="sc-jDwBTQ fRXXnG"
+    className="sc-iRbamj jXEQsc"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots Settings Default 1`] = `
     >
       <div>
         <div
-          className="sc-gPEVay eQYmiW"
+          className="sc-jlyJG bbyJzT"
         >
           <h2
             id="headerTitle"
@@ -60,6 +60,7 @@ exports[`Storyshots Settings Default 1`] = `
       </div>
       <button
         disabled={false}
+        id="topHeaderOpenMenuBtn"
         onClick={[Function]}
         style={
           Object {
@@ -119,10 +120,10 @@ exports[`Storyshots Settings Default 1`] = `
       }
     >
       <div
-        className="sc-iRbamj blSEcj"
+        className="sc-gipzik iyhjGb"
       >
         <div
-          className="sc-gPEVay eQYmiW"
+          className="sc-jlyJG bbyJzT"
         >
           <h2
             id="headerTitle"
@@ -159,16 +160,16 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-jlyJG ivDHoW"
+        className="sc-csuQGl cZqJAV"
       >
         <ul
-          className="sc-gipzik sc-csuQGl kTeIRg"
+          className="sc-Rmtcm sc-bRBYWo cpfpDV"
         />
         <ul
-          className="sc-gipzik sc-Rmtcm iXyibh"
+          className="sc-Rmtcm sc-hzDkRC fZQkew"
         >
           <li
-            className="sc-bRBYWo sc-jhAzac gXOFfT"
+            className="sc-jhAzac sc-fMiknA iuJeXm"
           >
             <a
               href="/reset-password"
@@ -181,7 +182,7 @@ exports[`Storyshots Settings Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-bRBYWo sc-jhAzac gXOFfT"
+            className="sc-jhAzac sc-fMiknA iuJeXm"
           >
             <a
               href="/logout"
@@ -238,14 +239,14 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-hZSUBg VKktY"
+    className="sc-gqPbQI lnbsjh"
   >
     <form
-      className="sc-cMhqgX dwYjBs"
+      className="sc-hORach jBrJiT"
       onSubmit={[Function]}
     >
       <div
-        className="sc-gZMcBi giNnHm"
+        className="sc-gqjmRU hnZXkc"
       >
         <div
           style={
@@ -305,7 +306,7 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gZMcBi giNnHm"
+        className="sc-gqjmRU hnZXkc"
       >
         <div
           style={
@@ -365,7 +366,7 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gZMcBi giNnHm"
+        className="sc-gqjmRU hnZXkc"
       >
         <div
           style={
@@ -429,7 +430,7 @@ exports[`Storyshots Settings Default 1`] = `
         className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-dnqmqq dmiTgi"
+          className="sc-dnqmqq drsqyC"
         >
           <button
             disabled={true}

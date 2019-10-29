@@ -9,6 +9,7 @@ provider:
 plugins:
   - serverless-python-requirements
   - serverless-localstack
+  - serverless-package-external
 custom:
   pythonRequirements:
     dockerizePip: non-linux
@@ -22,6 +23,9 @@ custom:
 #    host: http://localhost
     lambda:
       mountCode: False
+  packageExternal:
+    external:
+      - '../common'
 
 
 package:

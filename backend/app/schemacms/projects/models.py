@@ -6,6 +6,7 @@ import datatable as dt
 
 import django.core.files.base
 import django_fsm
+import softdelete.models
 from django.conf import settings
 from django.core.files.storage import default_storage
 from django.core.validators import FileExtensionValidator
@@ -90,14 +91,16 @@ class MetaDataModel(models.Model):
         return json.loads(self.preview.read())
 
 
-class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
+class Project(
+    softdelete.models.SoftDeleteObject, ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel
+):
     status = django_fsm.FSMField(
         choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
     )
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects")
     editors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="assigned_projects", blank=True)
 
-    objects = managers.ProjectQuerySet.as_manager()
+    objects = managers.ProjectManager()
 
     class Meta:
         verbose_name = _("Project")
@@ -115,7 +118,7 @@ class Project(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel)
         if role == users_constants.UserRole.ADMIN:
             return cls.objects.all()
         elif role == users_constants.UserRole.EDITOR:
-            return cls.objects.filter(editors=user)
+            return cls.objects.all().filter(editors=user)
         else:
             return cls.objects.none()
 
@@ -144,7 +147,7 @@ class DataSource(ext_models.TimeStampedModel):
     def __str__(self):
         return self.name or str(self.id)
 
-    def update_meta(self, file=None, file_name=None,):
+    def update_meta(self, file=None, file_name=None):
         if not file:
             file = self.file.url
 
@@ -204,6 +207,9 @@ class DataSource(ext_models.TimeStampedModel):
             source_file_version=self.source_file_latest_version,
             **job_kwargs,
         )
+
+    def get_last_success_job(self):
+        return self.jobs.filter(job_state=constants.DataSourceJobState.SUCCESS).latest("created")
 
 
 class DataSourceMeta(MetaDataModel):

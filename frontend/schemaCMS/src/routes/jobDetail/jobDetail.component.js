@@ -1,10 +1,17 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { path, always } from 'ramda';
+import { always, path } from 'ramda';
+import { FormattedMessage } from 'react-intl';
 
-import { Container } from './jobDetail.styles';
+import { Form, Download, LinkWrapper, PreviewLink, StepsWrapper, Step, StepsTitle } from './jobDetail.styles';
 import browserHistory from '../../shared/utils/history';
 import { renderWhenTrue } from '../../shared/utils/rendering';
+
+import messages from './jobDetail.messages';
+import { DESCRIPTION, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
+import { TextInput } from '../../shared/components/form/inputs/textInput';
+import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
+import { TopHeader } from '../../shared/components/topHeader';
 
 export class JobDetail extends PureComponent {
   static propTypes = {
@@ -15,6 +22,13 @@ export class JobDetail extends PureComponent {
         jobId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
+    history: PropTypes.object.isRequired,
+    values: PropTypes.object.isRequired,
+    dirty: PropTypes.bool.isRequired,
+    isValid: PropTypes.bool.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    intl: PropTypes.object.isRequired,
   };
 
   async componentDidMount() {
@@ -26,9 +40,92 @@ export class JobDetail extends PureComponent {
     }
   }
 
-  renderContent = job => renderWhenTrue(always(<Container>{job.pk}</Container>))(!!job.pk);
+  getHeaderAndMenuConfig = () => ({
+    headerTitle: <FormattedMessage {...messages.title} />,
+    headerSubtitle: <FormattedMessage {...messages.subTitle} />,
+  });
+
+  handleGoBack = () => this.props.history.push(`/project/${this.props.job.project}/datasource`);
+
+  renderStep = ({ scriptName }, index) => <Step key={index}>{scriptName}</Step>;
+
+  renderSteps = (steps = []) => steps.map(this.renderStep);
+
+  renderSuccessLinks = renderWhenTrue(
+    always(
+      <Fragment>
+        <PreviewLink to={`/job/${this.props.job.id}/preview`}>
+          <FormattedMessage {...messages.preview} />
+        </PreviewLink>
+        <Download href={this.props.job.result} download>
+          <FormattedMessage {...messages.resultFile} />
+        </Download>
+      </Fragment>
+    )
+  );
+
+  renderForm = job =>
+    renderWhenTrue(() => (
+      <Fragment>
+        <TextInput
+          label={<FormattedMessage {...messages[JOB_ID]} />}
+          value={job.id.toString()}
+          name={JOB_ID}
+          fullWidth
+          disabled
+        />
+        <TextInput
+          label={<FormattedMessage {...messages[JOB_STATE]} />}
+          value={this.props.intl.formatMessage(messages[job.jobState])}
+          name={JOB_STATE}
+          fullWidth
+          disabled
+        />
+        <Form onSubmit={this.props.handleSubmit}>
+          <TextInput
+            label={<FormattedMessage {...messages.descriptionLabel} />}
+            value={this.props.values[DESCRIPTION]}
+            onChange={this.props.handleChange}
+            name={DESCRIPTION}
+            fullWidth
+            isEdit
+            {...this.props}
+            multiline
+          />
+        </Form>
+        <StepsTitle>
+          <FormattedMessage {...messages.stepsTitle} />
+        </StepsTitle>
+        <StepsWrapper>{this.renderSteps(this.props.job.steps)}</StepsWrapper>
+        <LinkWrapper>
+          {this.renderSuccessLinks(job.jobState === JOB_STATE_SUCCESS)}
+          <Download href={job.sourceFileUrl} download>
+            <FormattedMessage {...messages.originalFile} />
+          </Download>
+        </LinkWrapper>
+      </Fragment>
+    ))(!!job.id);
+
+  renderSaveButton = renderWhenTrue(() => (
+    <NextButton onClick={this.props.handleSubmit} disabled={!this.props.dirty || !this.props.isValid}>
+      <FormattedMessage {...messages.save} />
+    </NextButton>
+  ));
 
   render() {
-    return this.renderContent(this.props.job);
+    const topHeaderConfig = this.getHeaderAndMenuConfig();
+
+    return (
+      <Fragment>
+        <TopHeader {...topHeaderConfig} />
+        {this.renderForm(this.props.job)}
+        <NavigationContainer>
+          <BackButton onClick={this.handleGoBack}>
+            <FormattedMessage {...messages.back} />
+          </BackButton>
+          {this.renderSaveButton(!!this.props.job.id)}
+        </NavigationContainer>
+      </Fragment>
+    );
   }
 }

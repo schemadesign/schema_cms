@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   }
 >
   <div
-    className="sc-cmthru hjHKVg"
+    className="sc-iujRgT jeaRWG"
   >
     <div
-      className="sc-jDwBTQ fRXXnG"
+      className="sc-iRbamj jXEQsc"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       >
         <div>
           <div
-            className="sc-gPEVay eQYmiW"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -68,6 +68,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -127,10 +128,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         }
       >
         <div
-          className="sc-iRbamj blSEcj"
+          className="sc-gipzik iyhjGb"
         >
           <div
-            className="sc-gPEVay eQYmiW"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -167,13 +168,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-jlyJG ivDHoW"
+          className="sc-csuQGl cZqJAV"
         >
           <ul
-            className="sc-gipzik sc-csuQGl kTeIRg"
+            className="sc-Rmtcm sc-bRBYWo cpfpDV"
           />
           <ul
-            className="sc-gipzik sc-Rmtcm iXyibh"
+            className="sc-Rmtcm sc-hzDkRC fZQkew"
           />
         </div>
         <button
@@ -219,11 +220,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-hMFtBS bipXQF"
+      className="sc-GMQeP hnfwnh"
       onSubmit={[Function]}
     >
       <div
-        className="sc-gZMcBi giNnHm"
+        className="sc-gqjmRU hnZXkc"
       >
         <div
           style={
@@ -283,7 +284,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gZMcBi giNnHm"
+        className="sc-gqjmRU hnZXkc"
       >
         <div
           style={
@@ -342,7 +343,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gZMcBi giNnHm"
+        className="sc-gqjmRU hnZXkc"
       >
         <div
           style={
@@ -404,7 +405,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-dnqmqq jpGIQI"
+          className="sc-dnqmqq emCgxc"
         >
           <button
             disabled={false}

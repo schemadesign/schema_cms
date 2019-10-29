@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Form } from 'schemaUI';
-import { pick } from 'ramda';
+import { Form, Icons } from 'schemaUI';
+import { always, pick } from 'ramda';
 import elementAttributes from 'html-element-attributes/index.json';
 
-import { Container, ErrorWrapper } from './textInput.styles';
+import { Container, ErrorWrapper, IconWrapper } from './textInput.styles';
 import { renderWhenTrue } from '../../../../utils/rendering';
 
 const { TextField } = Form;
@@ -14,7 +14,7 @@ export class TextInput extends PureComponent {
     customStyles: PropTypes.object,
     customInputStyles: PropTypes.object,
     errors: PropTypes.object,
-    label: PropTypes.string,
+    label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     checkOnlyErrors: PropTypes.bool,
     multiline: PropTypes.bool,
     fullWidth: PropTypes.bool,
@@ -22,6 +22,7 @@ export class TextInput extends PureComponent {
     touched: PropTypes.object,
     value: PropTypes.string,
     readOnly: PropTypes.bool,
+    isEdit: PropTypes.bool,
     onChange: PropTypes.func,
   };
 
@@ -29,10 +30,19 @@ export class TextInput extends PureComponent {
     errors: {},
     touched: {},
     checkOnlyErrors: false,
+    isEdit: false,
     onChange: Function.prototype,
   };
 
   renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
+
+  renderEditIcon = renderWhenTrue(
+    always(
+      <IconWrapper>
+        <Icons.EditIcon />
+      </IconWrapper>
+    )
+  );
 
   render() {
     const {
@@ -46,6 +56,7 @@ export class TextInput extends PureComponent {
       fullWidth,
       checkOnlyErrors,
       readOnly,
+      isEdit,
       ...restProps
     } = this.props;
     const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.input];
@@ -65,6 +76,7 @@ export class TextInput extends PureComponent {
           customInputStyles={customInputStyles}
           fullWidth={fullWidth}
           readOnly={readOnly}
+          iconComponent={this.renderEditIcon(isEdit)}
           {...filteredProps}
         />
         {this.renderError(error)}

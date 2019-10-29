@@ -10,10 +10,10 @@ exports[`Storyshots DataSourceList Empty 1`] = `
   }
 >
   <div
-    className="sc-jqCOkK heXNii"
+    className="sc-cIShpX krSiat"
   >
     <div
-      className="sc-jDwBTQ fRXXnG"
+      className="sc-iRbamj jXEQsc"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       >
         <div>
           <div
-            className="sc-gPEVay eQYmiW"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -64,6 +64,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -123,10 +124,10 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         }
       >
         <div
-          className="sc-iRbamj blSEcj"
+          className="sc-gipzik iyhjGb"
         >
           <div
-            className="sc-gPEVay eQYmiW"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -159,16 +160,16 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </div>
         </div>
         <div
-          className="sc-jlyJG ivDHoW"
+          className="sc-csuQGl cZqJAV"
         >
           <ul
-            className="sc-gipzik sc-csuQGl kTeIRg"
+            className="sc-Rmtcm sc-bRBYWo cpfpDV"
           />
           <ul
-            className="sc-gipzik sc-Rmtcm iXyibh"
+            className="sc-Rmtcm sc-hzDkRC fZQkew"
           >
             <li
-              className="sc-bRBYWo sc-jhAzac cIUGfV"
+              className="sc-jhAzac sc-fMiknA kWxuHF"
             >
               <a
                 href="/project/1"
@@ -223,13 +224,13 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-gGBfsJ gptgEl"
+      className="sc-iELTvK jibQvK"
     />
     <div
       className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-dnqmqq jpGIQI"
+        className="sc-dnqmqq emCgxc"
       >
         <button
           disabled={false}
@@ -322,10 +323,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
   }
 >
   <div
-    className="sc-jqCOkK heXNii"
+    className="sc-cIShpX krSiat"
   >
     <div
-      className="sc-jDwBTQ fRXXnG"
+      className="sc-iRbamj jXEQsc"
     >
       <div
         style={
@@ -342,7 +343,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       >
         <div>
           <div
-            className="sc-gPEVay eQYmiW"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -376,6 +377,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -435,10 +437,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         }
       >
         <div
-          className="sc-iRbamj blSEcj"
+          className="sc-gipzik iyhjGb"
         >
           <div
-            className="sc-gPEVay eQYmiW"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -471,16 +473,16 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </div>
         </div>
         <div
-          className="sc-jlyJG ivDHoW"
+          className="sc-csuQGl cZqJAV"
         >
           <ul
-            className="sc-gipzik sc-csuQGl kTeIRg"
+            className="sc-Rmtcm sc-bRBYWo cpfpDV"
           />
           <ul
-            className="sc-gipzik sc-Rmtcm iXyibh"
+            className="sc-Rmtcm sc-hzDkRC fZQkew"
           >
             <li
-              className="sc-bRBYWo sc-jhAzac cIUGfV"
+              className="sc-jhAzac sc-fMiknA kWxuHF"
             >
               <a
                 href="/project/1"
@@ -535,10 +537,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="sc-gGBfsJ gptgEl"
+      className="sc-iELTvK jibQvK"
     >
       <li
-        className="sc-uJMKN eFsQTX"
+        className="sc-kafWEX ebyXFL"
       >
         <div
           style={
@@ -563,24 +565,24 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             }
           >
             <div
-              className="sc-ktHwxA gDaZRo"
+              className="sc-bYSBpT kjAvqi"
             >
               <ul
-                className="sc-gxMtzJ fusJVj"
+                className="sc-esjQYD kZyfyz"
               >
                 <li
-                  className="sc-dfVpRl jyjJlk"
+                  className="sc-kIPQKe emdtQf"
                 >
                   3 months ago
                 </li>
                 <li
-                  className="sc-dfVpRl jyjJlk"
+                  className="sc-kIPQKe emdtQf"
                 >
                   firstName lastName
                 </li>
               </ul>
               <div
-                className="sc-cIShpX faRSvn"
+                className="sc-elJkPf ihjosh"
               >
                 <svg
                   style={
@@ -620,18 +622,18 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             name
           </h1>
           <div
-            className="sc-jnlKLf dhrxfT"
+            className="sc-cmTdod cnnHJR"
           >
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
               >
                 Source
               </span>
               <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 <svg
                   style={
@@ -651,57 +653,57 @@ exports[`Storyshots DataSourceList With data source 1`] = `
               </span>
             </div>
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
               >
                 Items
               </span>
               <span
-                className="sc-hEsumM boGKbG"
-              >
-                246
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Fields
-              </span>
-              <span
-                className="sc-hEsumM boGKbG"
-              >
-                11
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Filters
-              </span>
-              <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
+              >
+                Fields
+              </span>
+              <span
+                className="sc-lhVmIH cwbBOx"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-jwKygS iJUiKc"
+            >
+              <span
+                className="sc-btzYZH iGpwuL"
+              >
+                Filters
+              </span>
+              <span
+                className="sc-lhVmIH cwbBOx"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-jwKygS iJUiKc"
+            >
+              <span
+                className="sc-btzYZH iGpwuL"
               >
                 Views
               </span>
               <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 —
               </span>
@@ -710,7 +712,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </div>
       </li>
       <li
-        className="sc-uJMKN eFsQTX"
+        className="sc-kafWEX ebyXFL"
       >
         <div
           style={
@@ -735,24 +737,24 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             }
           >
             <div
-              className="sc-ktHwxA gDaZRo"
+              className="sc-bYSBpT kjAvqi"
             >
               <ul
-                className="sc-gxMtzJ fusJVj"
+                className="sc-esjQYD kZyfyz"
               >
                 <li
-                  className="sc-dfVpRl jyjJlk"
+                  className="sc-kIPQKe emdtQf"
                 >
                   3 months ago
                 </li>
                 <li
-                  className="sc-dfVpRl jyjJlk"
+                  className="sc-kIPQKe emdtQf"
                 >
                   firstName lastName
                 </li>
               </ul>
               <div
-                className="sc-cIShpX faRSvn"
+                className="sc-elJkPf ihjosh"
               >
                 <svg
                   style={
@@ -792,18 +794,18 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             name
           </h1>
           <div
-            className="sc-jnlKLf dhrxfT"
+            className="sc-cmTdod cnnHJR"
           >
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
               >
                 Source
               </span>
               <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 <svg
                   style={
@@ -823,57 +825,57 @@ exports[`Storyshots DataSourceList With data source 1`] = `
               </span>
             </div>
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
               >
                 Items
               </span>
               <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 246
               </span>
             </div>
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
               >
                 Fields
               </span>
               <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 11
               </span>
             </div>
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
               >
                 Filters
               </span>
               <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
               >
                 Views
               </span>
               <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 —
               </span>
@@ -886,834 +888,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-dnqmqq jpGIQI"
-      >
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "60px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-            />
-          </svg>
-        </button>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "60px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#000",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots DataSourceList With draft 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#000",
-      "minHeight": "100vh",
-    }
-  }
->
-  <div
-    className="sc-jqCOkK heXNii"
-  >
-    <div
-      className="sc-jDwBTQ fRXXnG"
-    >
-      <div
-        style={
-          Object {
-            "alignItems": "flex-start",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "paddingBottom": "18px",
-            "width": "100%",
-          }
-        }
-      >
-        <div>
-          <div
-            className="sc-gPEVay eQYmiW"
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              Data Sources
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              Overview
-            </h1>
-          </div>
-        </div>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": 6,
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": null,
-            "minHeight": "100vh",
-            "padding": "18px 20px 27px",
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
-      >
-        <div
-          className="sc-iRbamj blSEcj"
-        >
-          <div
-            className="sc-gPEVay eQYmiW"
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              Data Sources
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              Overview
-            </h1>
-          </div>
-        </div>
-        <div
-          className="sc-jlyJG ivDHoW"
-        >
-          <ul
-            className="sc-gipzik sc-csuQGl kTeIRg"
-          />
-          <ul
-            className="sc-gipzik sc-Rmtcm iXyibh"
-          >
-            <li
-              className="sc-bRBYWo sc-jhAzac cIUGfV"
-            >
-              <a
-                href="/project/1"
-                id={null}
-                onClick={[Function]}
-              >
-                Project details
-              </a>
-            </li>
-          </ul>
-        </div>
-        <button
-          disabled={false}
-          id="topHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": "6px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div
-      className="sc-gGBfsJ gptgEl"
-    >
-      <li
-        className="sc-uJMKN eFsQTX"
-      >
-        <div
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "borderTop": "2px solid #FFF",
-              "color": "#FFF",
-              "display": "flex",
-              "flexDirection": "column",
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "padding": "12px 14px 14px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": undefined,
-                "fontSize": "12px",
-                "marginBottom": "14px",
-              }
-            }
-          >
-            <span>
-              Draft
-            </span>
-          </div>
-          <h1
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#a6a7aa",
-                "cursor": "pointer",
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-                "marginBottom": "20px",
-              }
-            }
-          >
-            name
-          </h1>
-          <div
-            className="sc-jnlKLf dhrxfT"
-          >
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Source
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                <svg
-                  style={
-                    Object {
-                      "display": "none",
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Items
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                246
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Fields
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                11
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Filters
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Views
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                —
-              </span>
-            </div>
-          </div>
-        </div>
-      </li>
-    </div>
-    <div
-      className="sc-htoDjs iUYJOx"
-    >
-      <div
-        className="sc-dnqmqq jpGIQI"
-      >
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "60px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-            />
-          </svg>
-        </button>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "60px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#000",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots DataSourceList With error 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#000",
-      "minHeight": "100vh",
-    }
-  }
->
-  <div
-    className="sc-jqCOkK heXNii"
-  >
-    <div
-      className="sc-jDwBTQ fRXXnG"
-    >
-      <div
-        style={
-          Object {
-            "alignItems": "flex-start",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "paddingBottom": "18px",
-            "width": "100%",
-          }
-        }
-      >
-        <div>
-          <div
-            className="sc-gPEVay eQYmiW"
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              Data Sources
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              Overview
-            </h1>
-          </div>
-        </div>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": 6,
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": null,
-            "minHeight": "100vh",
-            "padding": "18px 20px 27px",
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
-      >
-        <div
-          className="sc-iRbamj blSEcj"
-        >
-          <div
-            className="sc-gPEVay eQYmiW"
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              Data Sources
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              Overview
-            </h1>
-          </div>
-        </div>
-        <div
-          className="sc-jlyJG ivDHoW"
-        >
-          <ul
-            className="sc-gipzik sc-csuQGl kTeIRg"
-          />
-          <ul
-            className="sc-gipzik sc-Rmtcm iXyibh"
-          >
-            <li
-              className="sc-bRBYWo sc-jhAzac cIUGfV"
-            >
-              <a
-                href="/project/1"
-                id={null}
-                onClick={[Function]}
-              >
-                Project details
-              </a>
-            </li>
-          </ul>
-        </div>
-        <button
-          disabled={false}
-          id="topHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": "6px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div
-      className="sc-gGBfsJ gptgEl"
-    >
-      <li
-        className="sc-uJMKN eFsQTX"
-      >
-        <div
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "borderTop": "2px solid #FFF",
-              "color": "#FFF",
-              "display": "flex",
-              "flexDirection": "column",
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "padding": "12px 14px 14px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": undefined,
-                "fontSize": "12px",
-                "marginBottom": "14px",
-              }
-            }
-          >
-            <span>
-              Error
-            </span>
-          </div>
-          <h1
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#a6a7aa",
-                "cursor": "pointer",
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-                "marginBottom": "20px",
-              }
-            }
-          >
-            name
-          </h1>
-          <div
-            className="sc-kafWEX jaIhry"
-          >
-            <div
-              className="sc-feJyhm fRrBax"
-            >
-              error 1
-            </div>
-            <div
-              className="sc-feJyhm fRrBax"
-            >
-              error2
-            </div>
-          </div>
-        </div>
-      </li>
-    </div>
-    <div
-      className="sc-htoDjs iUYJOx"
-    >
-      <div
-        className="sc-dnqmqq jpGIQI"
+        className="sc-dnqmqq emCgxc"
       >
         <button
           disabled={false}
@@ -1806,10 +981,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
   }
 >
   <div
-    className="sc-jqCOkK heXNii"
+    className="sc-cIShpX krSiat"
   >
     <div
-      className="sc-jDwBTQ fRXXnG"
+      className="sc-iRbamj jXEQsc"
     >
       <div
         style={
@@ -1826,7 +1001,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       >
         <div>
           <div
-            className="sc-gPEVay eQYmiW"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -1860,6 +1035,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -1919,10 +1095,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         }
       >
         <div
-          className="sc-iRbamj blSEcj"
+          className="sc-gipzik iyhjGb"
         >
           <div
-            className="sc-gPEVay eQYmiW"
+            className="sc-jlyJG bbyJzT"
           >
             <h2
               id="headerTitle"
@@ -1955,16 +1131,16 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           </div>
         </div>
         <div
-          className="sc-jlyJG ivDHoW"
+          className="sc-csuQGl cZqJAV"
         >
           <ul
-            className="sc-gipzik sc-csuQGl kTeIRg"
+            className="sc-Rmtcm sc-bRBYWo cpfpDV"
           />
           <ul
-            className="sc-gipzik sc-Rmtcm iXyibh"
+            className="sc-Rmtcm sc-hzDkRC fZQkew"
           >
             <li
-              className="sc-bRBYWo sc-jhAzac cIUGfV"
+              className="sc-jhAzac sc-fMiknA kWxuHF"
             >
               <a
                 href="/project/1"
@@ -2019,10 +1195,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="sc-gGBfsJ gptgEl"
+      className="sc-iELTvK jibQvK"
     >
       <li
-        className="sc-uJMKN eFsQTX"
+        className="sc-kafWEX ebyXFL"
       >
         <div
           style={
@@ -2047,24 +1223,24 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             }
           >
             <div
-              className="sc-ktHwxA gDaZRo"
+              className="sc-bYSBpT kjAvqi"
             >
               <ul
-                className="sc-gxMtzJ fusJVj"
+                className="sc-esjQYD kZyfyz"
               >
                 <li
-                  className="sc-dfVpRl jyjJlk"
+                  className="sc-kIPQKe emdtQf"
                 >
                   3 months ago
                 </li>
                 <li
-                  className="sc-dfVpRl jyjJlk"
+                  className="sc-kIPQKe emdtQf"
                 >
                   firstName lastName
                 </li>
               </ul>
               <div
-                className="sc-cIShpX faRSvn"
+                className="sc-elJkPf ihjosh"
               >
                 <svg
                   style={
@@ -2104,18 +1280,18 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             name
           </h1>
           <div
-            className="sc-jnlKLf dhrxfT"
+            className="sc-cmTdod cnnHJR"
           >
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
               >
                 Source
               </span>
               <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 <svg
                   style={
@@ -2135,83 +1311,85 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
               </span>
             </div>
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
               >
                 Items
               </span>
               <span
-                className="sc-hEsumM boGKbG"
-              >
-                246
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Fields
-              </span>
-              <span
-                className="sc-hEsumM boGKbG"
-              >
-                11
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Filters
-              </span>
-              <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-fYxtnH zgFOc"
+              className="sc-jwKygS iJUiKc"
             >
               <span
-                className="sc-tilXH fTFYNy"
+                className="sc-btzYZH iGpwuL"
+              >
+                Fields
+              </span>
+              <span
+                className="sc-lhVmIH cwbBOx"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-jwKygS iJUiKc"
+            >
+              <span
+                className="sc-btzYZH iGpwuL"
+              >
+                Filters
+              </span>
+              <span
+                className="sc-lhVmIH cwbBOx"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-jwKygS iJUiKc"
+            >
+              <span
+                className="sc-btzYZH iGpwuL"
               >
                 Views
               </span>
               <span
-                className="sc-hEsumM boGKbG"
+                className="sc-lhVmIH cwbBOx"
               >
                 —
               </span>
             </div>
           </div>
           <div
-            className="sc-iELTvK fyBIax"
+            className="sc-jtRfpW erOyyR"
           >
             <div
-              className="sc-elJkPf gdkxIF"
+              className="sc-iyvyFf cDDDwp"
             >
               <span>
                 Data Process History
               </span>
             </div>
-            <div
-              className="sc-cmTdod duGjZR"
+            <a
+              className="sc-kTUwUJ dUdEbM"
+              href="/job/1"
+              onClick={[Function]}
             >
               <div
-                className="sc-jwKygS bvYQIx"
+                className="sc-dqBHgY fLZvdB"
               >
                 <div
-                  className="sc-btzYZH kEmfIk"
+                  className="sc-gxMtzJ bDGYRb"
                 />
                 <div
-                  className="sc-lhVmIH ceZGPf"
+                  className="sc-dfVpRl lkYZAE"
                 >
                   <span>
                     Job id:
@@ -2221,7 +1399,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                 </div>
               </div>
               <div
-                className="sc-bYSBpT gaQXzH"
+                className="sc-gzOgki hTekUD"
               >
                 <span>
                   Updated at
@@ -2229,18 +1407,20 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                  
                 08/09/2019 10:20
               </div>
-            </div>
-            <div
-              className="sc-cmTdod duGjZR"
+            </a>
+            <a
+              className="sc-kTUwUJ dUdEbM"
+              href="/job/2"
+              onClick={[Function]}
             >
               <div
-                className="sc-jwKygS bvYQIx"
+                className="sc-dqBHgY fLZvdB"
               >
                 <div
-                  className="sc-btzYZH kEmfIk"
+                  className="sc-gxMtzJ bDGYRb"
                 />
                 <div
-                  className="sc-lhVmIH ceZGPf"
+                  className="sc-dfVpRl lkYZAE"
                 >
                   <span>
                     Job id:
@@ -2250,7 +1430,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                 </div>
               </div>
               <div
-                className="sc-bYSBpT gaQXzH"
+                className="sc-gzOgki hTekUD"
               >
                 <span>
                   Updated at
@@ -2258,18 +1438,20 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                  
                 07/09/2019 11:30
               </div>
-            </div>
-            <div
-              className="sc-cmTdod duGjZR"
+            </a>
+            <a
+              className="sc-kTUwUJ dUdEbM"
+              href="/job/3"
+              onClick={[Function]}
             >
               <div
-                className="sc-jwKygS bvYQIx"
+                className="sc-dqBHgY fLZvdB"
               >
                 <div
-                  className="sc-btzYZH kEmfIk"
+                  className="sc-gxMtzJ bDGYRb"
                 />
                 <div
-                  className="sc-lhVmIH ceZGPf"
+                  className="sc-dfVpRl lkYZAE"
                 >
                   <span>
                     Job id:
@@ -2279,7 +1461,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                 </div>
               </div>
               <div
-                className="sc-bYSBpT gaQXzH"
+                className="sc-gzOgki hTekUD"
               >
                 <span>
                   Updated at
@@ -2287,18 +1469,20 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                  
                 06/09/2019 12:40
               </div>
-            </div>
-            <div
-              className="sc-cmTdod duGjZR"
+            </a>
+            <a
+              className="sc-kTUwUJ dUdEbM"
+              href="/job/4"
+              onClick={[Function]}
             >
               <div
-                className="sc-jwKygS bvYQIx"
+                className="sc-dqBHgY fLZvdB"
               >
                 <div
-                  className="sc-btzYZH kEmfIk"
+                  className="sc-gxMtzJ bDGYRb"
                 />
                 <div
-                  className="sc-lhVmIH ceZGPf"
+                  className="sc-dfVpRl lkYZAE"
                 >
                   <span>
                     Job id:
@@ -2308,7 +1492,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                 </div>
               </div>
               <div
-                className="sc-bYSBpT gaQXzH"
+                className="sc-gzOgki hTekUD"
               >
                 <span>
                   Updated at
@@ -2316,7 +1500,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
                  
                 05/09/2019 13:50
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </li>
@@ -2325,909 +1509,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-dnqmqq jpGIQI"
-      >
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "60px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-            />
-          </svg>
-        </button>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "60px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#000",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots DataSourceList With processing 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#000",
-      "minHeight": "100vh",
-    }
-  }
->
-  <div
-    className="sc-jqCOkK heXNii"
-  >
-    <div
-      className="sc-jDwBTQ fRXXnG"
-    >
-      <div
-        style={
-          Object {
-            "alignItems": "flex-start",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "paddingBottom": "18px",
-            "width": "100%",
-          }
-        }
-      >
-        <div>
-          <div
-            className="sc-gPEVay eQYmiW"
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              Data Sources
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              Overview
-            </h1>
-          </div>
-        </div>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": 6,
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": null,
-            "minHeight": "100vh",
-            "padding": "18px 20px 27px",
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
-      >
-        <div
-          className="sc-iRbamj blSEcj"
-        >
-          <div
-            className="sc-gPEVay eQYmiW"
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              Data Sources
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              Overview
-            </h1>
-          </div>
-        </div>
-        <div
-          className="sc-jlyJG ivDHoW"
-        >
-          <ul
-            className="sc-gipzik sc-csuQGl kTeIRg"
-          />
-          <ul
-            className="sc-gipzik sc-Rmtcm iXyibh"
-          >
-            <li
-              className="sc-bRBYWo sc-jhAzac cIUGfV"
-            >
-              <a
-                href="/project/1"
-                id={null}
-                onClick={[Function]}
-              >
-                Project details
-              </a>
-            </li>
-          </ul>
-        </div>
-        <button
-          disabled={false}
-          id="topHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": "6px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div
-      className="sc-gGBfsJ gptgEl"
-    >
-      <li
-        className="sc-uJMKN eFsQTX"
-      >
-        <div
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "borderTop": "2px solid #FFF",
-              "color": "#FFF",
-              "display": "flex",
-              "flexDirection": "column",
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "padding": "12px 14px 14px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": undefined,
-                "fontSize": "12px",
-                "marginBottom": "14px",
-              }
-            }
-          >
-            <span>
-              Loading...
-            </span>
-          </div>
-          <h1
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#a6a7aa",
-                "cursor": "pointer",
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-                "marginBottom": "20px",
-              }
-            }
-          >
-            name
-          </h1>
-          <div
-            className="sc-jnlKLf dhrxfT"
-          >
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Source
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                <svg
-                  style={
-                    Object {
-                      "display": "none",
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Items
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                246
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Fields
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                11
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Filters
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Views
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                —
-              </span>
-            </div>
-          </div>
-        </div>
-      </li>
-    </div>
-    <div
-      className="sc-htoDjs iUYJOx"
-    >
-      <div
-        className="sc-dnqmqq jpGIQI"
-      >
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "60px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-            />
-          </svg>
-        </button>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "60px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#000",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots DataSourceList With ready for processing 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#000",
-      "minHeight": "100vh",
-    }
-  }
->
-  <div
-    className="sc-jqCOkK heXNii"
-  >
-    <div
-      className="sc-jDwBTQ fRXXnG"
-    >
-      <div
-        style={
-          Object {
-            "alignItems": "flex-start",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "paddingBottom": "18px",
-            "width": "100%",
-          }
-        }
-      >
-        <div>
-          <div
-            className="sc-gPEVay eQYmiW"
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              Data Sources
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              Overview
-            </h1>
-          </div>
-        </div>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": 6,
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": null,
-            "minHeight": "100vh",
-            "padding": "18px 20px 27px",
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
-      >
-        <div
-          className="sc-iRbamj blSEcj"
-        >
-          <div
-            className="sc-gPEVay eQYmiW"
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              Data Sources
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              Overview
-            </h1>
-          </div>
-        </div>
-        <div
-          className="sc-jlyJG ivDHoW"
-        >
-          <ul
-            className="sc-gipzik sc-csuQGl kTeIRg"
-          />
-          <ul
-            className="sc-gipzik sc-Rmtcm iXyibh"
-          >
-            <li
-              className="sc-bRBYWo sc-jhAzac cIUGfV"
-            >
-              <a
-                href="/project/1"
-                id={null}
-                onClick={[Function]}
-              >
-                Project details
-              </a>
-            </li>
-          </ul>
-        </div>
-        <button
-          disabled={false}
-          id="topHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": "6px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div
-      className="sc-gGBfsJ gptgEl"
-    >
-      <li
-        className="sc-uJMKN eFsQTX"
-      >
-        <div
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "borderTop": "2px solid #FFF",
-              "color": "#FFF",
-              "display": "flex",
-              "flexDirection": "column",
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "padding": "12px 14px 14px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": undefined,
-                "fontSize": "12px",
-                "marginBottom": "14px",
-              }
-            }
-          >
-            <span>
-              Loading...
-            </span>
-          </div>
-          <h1
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#a6a7aa",
-                "cursor": "pointer",
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-                "marginBottom": "20px",
-              }
-            }
-          >
-            name
-          </h1>
-          <div
-            className="sc-jnlKLf dhrxfT"
-          >
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Source
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                <svg
-                  style={
-                    Object {
-                      "display": "none",
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Items
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                246
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Fields
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                11
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Filters
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="sc-fYxtnH zgFOc"
-            >
-              <span
-                className="sc-tilXH fTFYNy"
-              >
-                Views
-              </span>
-              <span
-                className="sc-hEsumM hQptFt"
-              >
-                —
-              </span>
-            </div>
-          </div>
-        </div>
-      </li>
-    </div>
-    <div
-      className="sc-htoDjs iUYJOx"
-    >
-      <div
-        className="sc-dnqmqq jpGIQI"
+        className="sc-dnqmqq emCgxc"
       >
         <button
           disabled={false}

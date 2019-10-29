@@ -17,7 +17,8 @@ from aws_cdk import (
     aws_stepfunctions,
     aws_stepfunctions_tasks,
     aws_certificatemanager,
-    aws_route53)
+    aws_route53,
+)
 
 DB_NAME = "gistdb"
 APP_S3_BUCKET_NAME = "schemacms"
@@ -208,18 +209,14 @@ class API(core.Stack):
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
 
-        self.job_processing_dead_letter_sqs = aws_sqs.Queue(
-            self,
-            'job_processing_dead_letter_sqs',
-        )
+        self.job_processing_dead_letter_sqs = aws_sqs.Queue(self, 'job_processing_dead_letter_sqs')
         self.job_processing_sqs = aws_sqs.Queue(
             self,
             'job_processing_sqs',
             visibility_timeout=core.Duration.seconds(60),
             dead_letter_queue=aws_sqs.DeadLetterQueue(
-                queue=self.job_processing_dead_letter_sqs,
-                max_receive_count=JOB_PROCESSING_MAX_RETRIES
-            )
+                queue=self.job_processing_dead_letter_sqs, max_receive_count=JOB_PROCESSING_MAX_RETRIES
+            ),
         )
 
         self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
@@ -236,10 +233,7 @@ class API(core.Stack):
             certificate=scope.certs.cert,
             domain_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
             domain_zone=aws_route53.PrivateHostedZone(
-                self,
-                "zone",
-                vpc=scope.base.vpc,
-                zone_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+                self, "zone", vpc=scope.base.vpc, zone_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
             ),
         )
 
@@ -299,7 +293,6 @@ class LambdaWorker(core.Stack):
             vpc=scope.base.vpc,
             timeout=core.Duration.seconds(60),
             tracing=aws_lambda.Tracing.ACTIVE,
-
         )
         self.lambda_worker.add_event_source(
             aws_lambda_event_sources.SqsEventSource(scope.api.job_processing_sqs, batch_size=1)
@@ -326,6 +319,7 @@ class PublicAPI(core.Stack):
                 "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
                 "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "BACKEND_URL": scope.base.db.secret.secret_value.to_string(),
             },
             memory_size=512,
             timeout=core.Duration.seconds(30),
@@ -339,9 +333,9 @@ class PublicAPI(core.Stack):
 
         self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
         self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.public_api_lambda)
-        self.publicApiGateway.root.add_resource(
-            "datasources"
-        ).add_resource("{data_source_id}").add_method("GET", self.publicApiLambdaIntegration)
+        self.publicApiGateway.root.add_resource("datasources").add_resource("{data_source_id}").add_method(
+            "GET", self.publicApiLambdaIntegration
+        )
 
 
 class CIPipeline(core.Stack):
@@ -622,10 +616,7 @@ class CIPipeline(core.Stack):
                             object_version=workers_failure_lambda_build_output.s3_location.object_version,
                         ),
                     },
-                    extra_inputs=[
-                        workers_success_lambda_build_output,
-                        workers_failure_lambda_build_output,
-                    ],
+                    extra_inputs=[workers_success_lambda_build_output, workers_failure_lambda_build_output],
                 ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_api_changes",

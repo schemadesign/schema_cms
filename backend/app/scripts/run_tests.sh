@@ -14,5 +14,8 @@ echo "Run migrations"
 echo "Run flake8"
 flake8
 
+echo "Run black"
+black --config=pyproject.toml --check --quiet . || { echo "ERROR: code is unformatted"; exit 1; }
+
 echo "Run pytest"
 pytest --maxfail=1  --junitxml=/test-results/report.xml

@@ -6,9 +6,12 @@ import { withTheme } from '../../../../.storybook/decorators';
 import { SourceComponent } from './source.component';
 
 export const defaultProps = {
-  dataSource: {},
+  dataSource: {
+    metaData: {},
+  },
   theme: Theme.dark,
   updateDataSource: Function.prototype,
+  isAnyJobProcessing: false,
   history: {
     push: Function.prototype,
   },

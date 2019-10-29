@@ -4,6 +4,7 @@ Django==2.1.9
 django-configurations==2.1
 django-cors-headers==3.1.0
 django-fsm==2.6.1
+django-softdelete==0.9.0
 gunicorn==19.9.0
 
 # For the persistence stores
@@ -33,6 +34,7 @@ ipdb==0.11
 ipython==7.2.0
 mkdocs==1.0.4
 flake8==3.7.5
+black==19.3b0
 django-extensions==2.2.1
 
 # Testing

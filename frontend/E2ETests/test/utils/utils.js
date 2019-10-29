@@ -12,4 +12,4 @@ export const camelCase = str =>
   str
     .replace(/\s(.)/g, a => a.toUpperCase())
     .replace(/\s/g, '')
-    .replace(/^(.)/, b => b.toLowerCase());
+    .replace(/^(.)/, b => b.toLowerCase()); 

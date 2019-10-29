@@ -13,7 +13,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
     className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-dnqmqq jpGIQI"
+      className="sc-dnqmqq emCgxc"
     >
       <button
         disabled={false}
@@ -71,11 +71,6 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
         className="sc-gzVnrw bMUaYY"
       >
         <div
-          activeStep={1}
-          customDotStyles={Object {}}
-          handleStep={[Function]}
-          onStepChange={[Function]}
-          steps={6}
           style={
             Object {
               "display": "flex",
@@ -190,7 +185,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
     className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-dnqmqq jpGIQI"
+      className="sc-dnqmqq emCgxc"
     >
       <button
         disabled={true}
@@ -248,11 +243,6 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
         className="sc-gzVnrw bMUaYY"
       >
         <div
-          activeStep={1}
-          customDotStyles={Object {}}
-          handleStep={[Function]}
-          onStepChange={[Function]}
-          steps={6}
           style={
             Object {
               "display": "flex",
@@ -367,7 +357,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
     className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-dnqmqq jpGIQI"
+      className="sc-dnqmqq emCgxc"
     >
       <button
         disabled={false}
@@ -425,11 +415,6 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
         className="sc-gzVnrw bMUaYY"
       >
         <div
-          activeStep={1}
-          customDotStyles={Object {}}
-          handleStep={[Function]}
-          onStepChange={[Function]}
-          steps={6}
           style={
             Object {
               "display": "flex",
@@ -544,7 +529,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
     className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-dnqmqq jpGIQI"
+      className="sc-dnqmqq emCgxc"
     >
       <button
         disabled={true}
@@ -602,11 +587,6 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
         className="sc-gzVnrw bMUaYY"
       >
         <div
-          activeStep={1}
-          customDotStyles={Object {}}
-          handleStep={[Function]}
-          onStepChange={[Function]}
-          steps={6}
           style={
             Object {
               "display": "flex",
@@ -721,7 +701,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
     className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-dnqmqq jpGIQI"
+      className="sc-dnqmqq emCgxc"
     >
       <button
         disabled={false}
@@ -779,11 +759,6 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
         className="sc-gzVnrw bMUaYY"
       >
         <div
-          activeStep={4}
-          customDotStyles={Object {}}
-          handleStep={[Function]}
-          onStepChange={[Function]}
-          steps={6}
           style={
             Object {
               "display": "flex",

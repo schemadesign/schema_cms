@@ -2,15 +2,15 @@ import json
 
 from peewee import *
 
-import settings
-from services import secret_manager
+from . import settings
+from .services import secret_manager
 
 db = Proxy()
 
 
 class JobState:
     PENDING = "pending"
-    IN_PROGRESS = "in_progress"
+    PROCESSING = "processing"
     FAILED = "failed"
     SUCCESS = "success"
 
@@ -45,9 +45,14 @@ class Job(BaseModel):
 
     @classmethod
     def get_by_id(cls, id):
-        return cls.select().join(JobStep, join_type=JOIN.LEFT_OUTER).switch(cls).join(DataSource).where(
-            (cls.id == id)
-        ).get()
+        return (
+            cls.select()
+            .join(JobStep, join_type=JOIN.LEFT_OUTER)
+            .switch(cls)
+            .join(DataSource)
+            .where((cls.id == id))
+            .get()
+        )
 
 
 class JobStep(BaseModel):
@@ -62,7 +67,7 @@ class JobStep(BaseModel):
 
 def get_db_settings():
     arn = secret_manager.get_secret_value(SecretId=settings.DB_SECRET_ARN)
-    secret_data = json.loads(arn['SecretString'])
+    secret_data = json.loads(arn["SecretString"])
 
     return dict(
         database=secret_data["dbname"],
@@ -70,7 +75,7 @@ def get_db_settings():
         password=secret_data["password"],
         host=secret_data["host"],
         port=secret_data["port"],
-        connect_timeout=secret_data.get("connect_timeout", 5)
+        connect_timeout=secret_data.get("connect_timeout", 5),
     )
 
 

@@ -1,6 +1,6 @@
 import boto3
 
-import settings
+from . import settings
 
 
 s3 = boto3.client(

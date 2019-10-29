@@ -7,6 +7,7 @@ initStoryshots({
   shallowSnapshot: true,
   serializer: toJSON,
   test: multiSnapshotWithOptions(),
+  storyKindRegex:/^((?!.*?skip).)*$/,
   stories2snapsConverter: new Stories2SnapsConverter({
     snapshotsDirName: './__tests__/__snapshots__',
   }),

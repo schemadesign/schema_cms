@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import { stepperStyles, stepperBlockStyles, StepperContainer } from './stepNavigation.styles';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
 import messages from './stepNavigation.messages';
-import { INITIAL_STEP, MAX_STEPS, STATUS_DRAFT } from '../../../modules/dataSource/dataSource.constants';
+import { INITIAL_STEP, MAX_STEPS } from '../../../modules/dataSource/dataSource.constants';
 
 export class StepNavigation extends PureComponent {
   static propTypes = {
@@ -65,8 +65,7 @@ export class StepNavigation extends PureComponent {
       },
     } = this.props;
     const activeStep = parseInt(step, 10);
-    const customStepperStyles =
-      dataSource.status === STATUS_DRAFT ? { ...stepperStyles, ...stepperBlockStyles } : stepperStyles;
+    const customStepperStyles = dataSource.metaData ? stepperStyles : { ...stepperStyles, ...stepperBlockStyles };
 
     return (
       <NavigationContainer>
