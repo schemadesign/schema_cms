@@ -17,11 +17,11 @@ function* fetchOne({ payload: { jobId } }) {
   }
 }
 
-function* updateOne({ payload: { pk: jobId, description } }) {
+function* updateOne({ payload: { id, description } }) {
   try {
     yield put(JobRoutines.updateOne.request());
 
-    const { data } = yield api.patch(`/jobs/${jobId}`, { description });
+    const { data } = yield api.patch(`/jobs/${id}`, { description });
 
     yield put(JobRoutines.updateOne.success(data));
   } catch (e) {

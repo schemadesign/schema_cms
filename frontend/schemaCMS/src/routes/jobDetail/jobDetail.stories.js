@@ -26,6 +26,8 @@ export const defaultProps = {
   isValid: true,
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
+  steps: [{ scriptName: 'scriptName 1' }, { scriptName: 'scriptName 2' }, { scriptName: 'scriptName 3' }],
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
 storiesOf('JobDetail', module)

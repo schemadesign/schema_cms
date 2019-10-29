@@ -1,14 +1,14 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { path } from 'ramda';
+import { always, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
-import { Form, Value, FieldWrapper, Label, Download, LinkWrapper, PreviewLink } from './jobDetail.styles';
+import { Form, Download, LinkWrapper, PreviewLink, StepsWrapper, Step, StepsTitle } from './jobDetail.styles';
 import browserHistory from '../../shared/utils/history';
 import { renderWhenTrue } from '../../shared/utils/rendering';
 
 import messages from './jobDetail.messages';
-import { DESCRIPTION, JOB_ID, JOB_STATE } from '../../modules/job/job.constants';
+import { DESCRIPTION, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { TopHeader } from '../../shared/components/topHeader';
@@ -28,6 +28,7 @@ export class JobDetail extends PureComponent {
     isValid: PropTypes.bool.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
+    intl: PropTypes.object.isRequired,
   };
 
   async componentDidMount() {
@@ -46,47 +47,63 @@ export class JobDetail extends PureComponent {
 
   handleGoBack = () => this.props.history.push(`/project/${this.props.job.project}/datasource`);
 
+  renderStep = ({ scriptName }, index) => <Step key={index}>{scriptName}</Step>;
+
+  renderSteps = (steps = []) => steps.map(this.renderStep);
+
+  renderSuccessLinks = renderWhenTrue(
+    always(
+      <Fragment>
+        <PreviewLink to={`/job/${this.props.job.id}/preview`}>
+          <FormattedMessage {...messages.preview} />
+        </PreviewLink>
+        <Download href={this.props.job.result} download>
+          <FormattedMessage {...messages.resultFile} />
+        </Download>
+      </Fragment>
+    )
+  );
+
   renderForm = job =>
     renderWhenTrue(() => (
-      <Form onSubmit={this.props.handleSubmit}>
-        <FieldWrapper>
-          <Label>
-            <FormattedMessage {...messages[JOB_ID]} />
-          </Label>
-          <Value>{job.id}</Value>
-        </FieldWrapper>
-        <FieldWrapper>
-          <Label>
-            <FormattedMessage {...messages[JOB_STATE]} />
-          </Label>
-          <Value>
-            <FormattedMessage {...messages[job.jobState]} />
-          </Value>
-        </FieldWrapper>
-        <FieldWrapper>
+      <Fragment>
+        <TextInput
+          label={<FormattedMessage {...messages[JOB_ID]} />}
+          value={job.id.toString()}
+          name={JOB_ID}
+          fullWidth
+          disabled
+        />
+        <TextInput
+          label={<FormattedMessage {...messages[JOB_STATE]} />}
+          value={this.props.intl.formatMessage(messages[job.jobState])}
+          name={JOB_STATE}
+          fullWidth
+          disabled
+        />
+        <Form onSubmit={this.props.handleSubmit}>
           <TextInput
             label={<FormattedMessage {...messages.descriptionLabel} />}
             value={this.props.values[DESCRIPTION]}
             onChange={this.props.handleChange}
             name={DESCRIPTION}
             fullWidth
+            isEdit
             {...this.props}
             multiline
           />
-        </FieldWrapper>
-
+        </Form>
+        <StepsTitle>
+          <FormattedMessage {...messages.stepsTitle} />
+        </StepsTitle>
+        <StepsWrapper>{this.renderSteps(this.props.job.steps)}</StepsWrapper>
         <LinkWrapper>
-          <PreviewLink to={`/job/${job.id}/preview`}>
-            <FormattedMessage {...messages.preview} />
-          </PreviewLink>
-          <Download href={job.result} download>
-            <FormattedMessage {...messages.resultFile} />
-          </Download>
+          {this.renderSuccessLinks(job.jobState === JOB_STATE_SUCCESS)}
           <Download href={job.sourceFileUrl} download>
             <FormattedMessage {...messages.originalFile} />
           </Download>
         </LinkWrapper>
-      </Form>
+      </Fragment>
     ))(!!job.id);
 
   renderSaveButton = renderWhenTrue(() => (

@@ -293,3 +293,18 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
 
     def get_project(self, obj):
         return obj.datasource.project_id
+
+
+class PublicApiJobSerializer(serializers.ModelSerializer):
+    items = serializers.SerializerMethodField(read_only=True)
+    result = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = models.DataSourceJob
+        fields = ("result", "items")
+
+    def get_result(self, obj):
+        return obj.result.name
+
+    def get_items(self, obj):
+        return obj.meta_data.items

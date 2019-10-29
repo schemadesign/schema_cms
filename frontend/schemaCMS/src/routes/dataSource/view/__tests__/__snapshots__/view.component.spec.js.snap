@@ -135,6 +135,7 @@ exports[`View: Component should render draft 1`] = `
         "formatMessage": [Function],
       }
     }
+    isAnyJobProcessing={false}
     match={
       Object {
         "params": Object {
@@ -267,6 +268,7 @@ exports[`View: Component should render second step 1`] = `
         "formatMessage": [Function],
       }
     }
+    isAnyJobProcessing={false}
     match={
       Object {
         "params": Object {
@@ -398,6 +400,7 @@ exports[`View: Component should render source step 1`] = `
         "formatMessage": [Function],
       }
     }
+    isAnyJobProcessing={false}
     match={
       Object {
         "params": Object {

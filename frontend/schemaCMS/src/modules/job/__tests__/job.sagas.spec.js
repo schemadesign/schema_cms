@@ -38,11 +38,11 @@ describe('Job: sagas', () => {
       id: 1,
     };
     const payload = {
-      pk: 1,
+      id: 1,
     };
 
     it('should put updateOne.success action', async () => {
-      mockApi.patch('/jobs/1').reply(OK, response);
+      mockApi.patch(`/jobs/${payload.id}`).reply(OK, response);
       await expectSaga(watchJob)
         .withState(defaultState)
         .put(JobRoutines.updateOne.success(response))

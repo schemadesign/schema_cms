@@ -20,6 +20,7 @@ exports[`Create: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      isEdit={false}
       label="Title"
       name="title"
       onChange={[Function]}
@@ -44,6 +45,7 @@ exports[`Create: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      isEdit={false}
       label="Description"
       name="description"
       onChange={[Function]}
@@ -68,6 +70,7 @@ exports[`Create: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      isEdit={false}
       label="Owner"
       name="owner"
       onChange={[Function]}
