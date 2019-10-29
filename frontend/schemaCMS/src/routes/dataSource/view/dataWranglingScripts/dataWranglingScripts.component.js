@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import { always, append, equals, ifElse, reject } from 'ramda';
+import { always, append, equals, ifElse, pathOr, reject, map, pipe, prop, toString } from 'ramda';
 
 import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
@@ -18,6 +18,7 @@ export class DataWranglingScripts extends PureComponent {
     fetchDataWranglingScripts: PropTypes.func.isRequired,
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
+    dataSource: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
@@ -82,8 +83,13 @@ export class DataWranglingScripts extends PureComponent {
   );
 
   render() {
-    const { dataWranglingScripts } = this.props;
+    const { dataWranglingScripts, dataSource } = this.props;
     const { uploading, errorOnUploading } = this.state;
+    const steps = pipe(
+      pathOr([], ['jobs', 0, 'steps']),
+      map(prop('script')),
+      map(toString)
+    )(dataSource);
 
     return (
       <Container>
@@ -103,7 +109,7 @@ export class DataWranglingScripts extends PureComponent {
             />
           </UploadContainer>
         </Header>
-        <Formik initialValues={{ steps: [] }} onSubmit={this.handleSubmit}>
+        <Formik initialValues={{ steps }} onSubmit={this.handleSubmit}>
           {({ values: { steps }, setFieldValue, submitForm }) => {
             if (!steps.length) {
               submitForm = null;
