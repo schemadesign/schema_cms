@@ -3,11 +3,14 @@ import logging
 import sys
 from io import StringIO
 
-import db
 import datatable as dt
+
+from common import (
+    db,
+    services,
+    settings,
+)
 import errors
-import settings
-import services
 import mocks
 
 logger = logging.getLogger()

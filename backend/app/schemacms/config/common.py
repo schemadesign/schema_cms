@@ -40,6 +40,7 @@ class Common(Configuration):
         "social_django",  # authorization by auth0
         "django_extensions",  # Django extensions
         "corsheaders",  # cors
+        "softdelete",
         # Your apps
         "schemacms.users",
         "schemacms.authorization",
@@ -127,7 +128,7 @@ class Common(Configuration):
     TEMPLATES = [
         {
             "BACKEND": "django.template.backends.django.DjangoTemplates",
-            "DIRS": STATICFILES_DIRS,
+            "DIRS": STATICFILES_DIRS + [os.path.join(BASE_DIR, "templates")],
             "APP_DIRS": True,
             "OPTIONS": {
                 "context_processors": [

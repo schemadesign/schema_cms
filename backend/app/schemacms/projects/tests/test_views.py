@@ -61,7 +61,7 @@ class TestListCreateProjectView:
 
         response = api_client.post(self.get_url(), data=self.example_project)
         project_id = response.data["id"]
-        project = projects_models.Project.objects.get(pk=project_id)
+        project = projects_models.Project.objects.all().get(pk=project_id)
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
@@ -83,7 +83,7 @@ class TestListCreateProjectView:
         response = api_client.post(self.get_url(), data=self.example_project)
 
         project_id = response.data["id"]
-        project = projects_models.Project.objects.get(pk=project_id)
+        project = projects_models.Project.objects.all().get(pk=project_id)
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data == projects_serializers.ProjectSerializer(instance=project).data
@@ -191,7 +191,8 @@ class TestRetrieveUpdateDeleteProjectView:
         response = api_client.delete(self.get_url(pk=project.pk))
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
-        assert not projects_models.Project.objects.filter(pk=project.pk).exists()
+        assert not projects_models.Project.objects.all().filter(pk=project.pk).exists()
+        assert projects_models.Project.objects.all_with_deleted().filter(pk=project.pk).exists()
 
     def test_url(self, project):
         assert f"/api/v1/projects/{project.pk}" == self.get_url(pk=project.pk)
