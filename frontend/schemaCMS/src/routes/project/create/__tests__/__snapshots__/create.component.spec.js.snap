@@ -114,6 +114,7 @@ exports[`Create: Component should render correctly 1`] = `
     >
       <BackButton
         disabled={false}
+        id="cancelBtn"
         onClick={[Function]}
       >
         <FormattedMessage
@@ -123,6 +124,7 @@ exports[`Create: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        id="finishBtn"
         loading={false}
       >
         <FormattedMessage

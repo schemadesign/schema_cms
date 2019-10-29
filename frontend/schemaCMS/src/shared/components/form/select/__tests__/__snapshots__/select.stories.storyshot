@@ -6,6 +6,7 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
     className="sc-tilXH iPWPWu"
   >
     <label
+      id="fieldProjectStatusLabel"
       style={
         Object {
           "border": "none",

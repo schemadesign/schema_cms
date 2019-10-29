@@ -2,7 +2,9 @@
 
 exports[`Select: Component should render correctly 1`] = `
 <styled.div>
-  <Component>
+  <Component
+    id="fieldProjectStatusLabel"
+  >
     Selector
   </Component>
   <input

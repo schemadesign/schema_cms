@@ -72,7 +72,10 @@ export class TopHeader extends PureComponent {
 
     const primaryMenu = this.renderMenu(primaryMenuItems, PrimaryList, PrimaryItem);
     const secondaryMenu = this.renderMenu(secondaryMenuItems, SecondaryList, SecondaryItem);
-    const buttonProps = { onClick: this.handleToggleMenu };
+    const buttonProps = {
+      onClick: this.handleToggleMenu,
+      id: 'topHeaderOpenMenuBtn',
+    };
     const closeButtonProps = {
       customStyles: closeButtonStyles,
       id: 'topHeaderCloseMenuButton',

@@ -176,7 +176,7 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
     before: function () {
-        const chai    = require('chai');
+        const chai = require('chai');
         global.expect = chai.expect;
         global.assert = chai.assert;
         global.should = chai.should;
@@ -196,8 +196,9 @@ exports.config = {
     /**
      * Runs before a Cucumber scenario
      */
-    // beforeScenario: function (uri, feature, scenario) {
-    // },
+     beforeScenario: function () {
+         browser.setWindowSize(1440, 900);
+     },
     /**
      * Runs before a Cucumber step
      */
@@ -211,8 +212,9 @@ exports.config = {
     /**
      * Runs after a Cucumber scenario
      */
-    // afterScenario: function (uri, feature, scenario, result, sourceLocation) {
-    // },
+     afterScenario: function () {
+         browser.reloadSession();
+     },
     /**
      * Runs after a Cucumber feature
      */

@@ -1,18 +1,18 @@
-import { Given, When, Then, After } from 'cucumber';
+import { Given, When, Then } from 'cucumber';
 import { RESET_PAGE, CHANGE_PASSWORD_TITLE, CHANGE_PASSWORD_SUCCESS_MSG, PASSWORDS_NOT_MATCH_MSG } from './../constants/resetPassword.constants.js';
 import { PROJECTS_PAGE } from './../constants/homepage.constants.js';
 import { LINK_SENT, LINK_NOT_SENT, RESET_URL } from './../constants/gmail.constants.js';
 import { LOGIN_PAGE_TITLE, AUTH0_WRONG_CREDS_ERROR, AUTH0_EMPTY_INPUT_ERROR, RESET_LINK_SENT_MSG } from './../constants/login.constants.js';
 import { ASSERT_EMPTY_VALIDATION_MESSAGE } from './../constants/config.constants.js';
+import { djangoHomeTitle } from './../constants/django.constants.js';
+import { waitForElement, waitForText } from './../utils/utils.js';
 import LoginPage from './../pageobjects/login.page.js';
 import ProjectsPage from './../pageobjects/projects.page.js';
 import GmailPage from './../pageobjects/gmail.page.js';
-import { waitForElement, waitForText } from './../utils/utils.js';
+import DjangoPage from './../pageobjects/django.page.js';
+import fs from 'fs';
+const creds = JSON.parse(fs.readFileSync('creds.json', 'utf-8'));
 
-
-After(() => {
-    browser.reloadSession();
-});
 
 Given('I am on Login page', () => {
     LoginPage.open();
@@ -67,8 +67,10 @@ When('I provide passwords that don\'t match', () => {
 });
 
 
+
+
 Then('I am informed about invalid login or password', () => {
-   waitForElement(LoginPage, 'wrongCredsError');
+    waitForElement(LoginPage, 'wrongCredsError');
     
     assert(LoginPage.wrongCredsError.isDisplayed(), ASSERT_EMPTY_VALIDATION_MESSAGE);
     expect(LoginPage.wrongCredsError.getText()).to.equal(AUTH0_WRONG_CREDS_ERROR);
@@ -152,3 +154,4 @@ Then('I am not able to log in using old password', () => {
     assert(LoginPage.wrongCredsError.isDisplayed(), ASSERT_EMPTY_VALIDATION_MESSAGE);
     expect(LoginPage.wrongCredsError.getText()).to.equal(AUTH0_WRONG_CREDS_ERROR);
 });
+

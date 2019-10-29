@@ -11,7 +11,7 @@ const { Label, Select: SelectElement } = Form;
 export class Select extends PureComponent {
   static propTypes = {
     defaultOption: PropTypes.object,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     name: PropTypes.string.isRequired,
     value: PropTypes.string,
     options: PropTypes.array.isRequired,
@@ -27,7 +27,7 @@ export class Select extends PureComponent {
 
     return (
       <Container>
-        <Label>{label}</Label>
+        <Label id="fieldProjectStatusLabel">{label}</Label>
         <input type="hidden" id={name} name={name} value={value} />
         <SelectElement defaultOption={defaultOption} options={updatedOptions} onSelect={onSelect} {...filteredProps} />
       </Container>

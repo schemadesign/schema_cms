@@ -64,6 +64,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {
@@ -397,6 +398,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         className="sc-tilXH iPWPWu"
       >
         <label
+          id="fieldProjectStatusLabel"
           style={
             Object {
               "border": "none",
@@ -479,7 +481,7 @@ exports[`Storyshots Project/Create Default 1`] = `
               }
             >
               <div
-                id="fieldProjectStatusselect-item-0"
+                id="select-item-0"
                 onClick={[Function]}
                 style={
                   Object {
@@ -493,7 +495,7 @@ exports[`Storyshots Project/Create Default 1`] = `
                 In Progress
               </div>
               <div
-                id="fieldProjectStatusselect-item-1"
+                id="select-item-1"
                 onClick={[Function]}
                 style={
                   Object {
@@ -507,7 +509,7 @@ exports[`Storyshots Project/Create Default 1`] = `
                 Done
               </div>
               <div
-                id="fieldProjectStatusselect-item-2"
+                id="select-item-2"
                 onClick={[Function]}
                 style={
                   Object {
@@ -521,7 +523,7 @@ exports[`Storyshots Project/Create Default 1`] = `
                 Hold
               </div>
               <div
-                id="fieldProjectStatusselect-item-3"
+                id="select-item-3"
                 onClick={[Function]}
                 style={
                   Object {
@@ -546,6 +548,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         >
           <button
             disabled={false}
+            id="cancelBtn"
             onClick={[Function]}
             style={
               Object {
@@ -572,6 +575,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           </button>
           <button
             disabled={false}
+            id="finishBtn"
             style={
               Object {
                 "backgroundColor": "#FFF",

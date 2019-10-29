@@ -64,6 +64,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
         </div>
         <button
           disabled={false}
+          id="topHeaderOpenMenuBtn"
           onClick={[Function]}
           style={
             Object {

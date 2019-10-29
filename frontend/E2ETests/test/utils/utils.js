@@ -7,3 +7,9 @@ export const waitForElement = (that, elemName, timeout = TIMEOUT) => {
 export const waitForText = (that, elemName, text, timeout = TIMEOUT) => {
     browser.waitUntil(() => that[elemName].getText() === text, timeout, `Text of ${elemName} doesn't equal ${text}`);
 }
+
+export const camelCase = str =>
+  str
+    .replace(/\s(.)/g, a => a.toUpperCase())
+    .replace(/\s/g, '')
+    .replace(/^(.)/, b => b.toLowerCase()); 

@@ -65,6 +65,7 @@ exports[`Storyshots Project/View default 1`] = `
           </div>
           <button
             disabled={false}
+            id="topHeaderOpenMenuBtn"
             onClick={[Function]}
             style={
               Object {
@@ -701,6 +702,7 @@ exports[`Storyshots Project/View loading 1`] = `
           </div>
           <button
             disabled={false}
+            id="topHeaderOpenMenuBtn"
             onClick={[Function]}
             style={
               Object {

@@ -47,7 +47,7 @@ export class SelectComponent extends PureComponent {
     return (
       <div
         key={index}
-        id={`${id}select-item-${index}`}
+        id={`select-item-${index}`}
         style={customOptionStyle(index)}
         onClick={() => this.handleOptionClick(eventObj)}
       >
