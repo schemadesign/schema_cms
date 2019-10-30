@@ -31,7 +31,7 @@ const cellStyles = css`
   max-width: 250px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: pre;
 `;
 
 const headerCellStyles = css`

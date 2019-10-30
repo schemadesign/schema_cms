@@ -120,42 +120,42 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
               className="sc-dxgOiQ huXMKo"
             >
               <th
-                className="sc-jKJlTe hesuON"
+                className="sc-jKJlTe fzDZrY"
               >
                 #
               </th>
               <th
-                className="sc-jKJlTe hesuON"
+                className="sc-jKJlTe fzDZrY"
               >
                 First Name
               </th>
               <th
-                className="sc-jKJlTe hesuON"
+                className="sc-jKJlTe fzDZrY"
               >
                 Last Name
               </th>
               <th
-                className="sc-jKJlTe hesuON"
+                className="sc-jKJlTe fzDZrY"
               >
                 Full Name
               </th>
               <th
-                className="sc-jKJlTe hesuON"
+                className="sc-jKJlTe fzDZrY"
               >
                 Birthplace
               </th>
               <th
-                className="sc-jKJlTe hesuON"
+                className="sc-jKJlTe fzDZrY"
               >
                 State of Birth
               </th>
               <th
-                className="sc-jKJlTe hesuON"
+                className="sc-jKJlTe fzDZrY"
               >
                 Birthday
               </th>
               <th
-                className="sc-jKJlTe hesuON"
+                className="sc-jKJlTe fzDZrY"
               >
                 Url
               </th>
@@ -168,42 +168,42 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
               className="sc-dxgOiQ huXMKo"
             >
               <td
-                className="sc-eNQAEJ koFZfx"
+                className="sc-eNQAEJ ivcbGx"
               >
                 1
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 George
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Washington
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 George Washington
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Westmoreland County
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 VA
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 02/22/1732
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 some.url.com
               </td>
@@ -212,42 +212,42 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
               className="sc-dxgOiQ huXMKo"
             >
               <td
-                className="sc-eNQAEJ koFZfx"
+                className="sc-eNQAEJ ivcbGx"
               >
                 2
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 John
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Adams
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 John Adams
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Braintree
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 MA
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 10/30/1735
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 some.url.com
               </td>
@@ -256,42 +256,42 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
               className="sc-dxgOiQ huXMKo"
             >
               <td
-                className="sc-eNQAEJ koFZfx"
+                className="sc-eNQAEJ ivcbGx"
               >
                 3
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Thomas
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Jefferson
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Thomas Jefferson
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Shadwell
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 VA
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 04/13/1743
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 some.url.com
               </td>
@@ -300,42 +300,42 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
               className="sc-dxgOiQ huXMKo"
             >
               <td
-                className="sc-eNQAEJ koFZfx"
+                className="sc-eNQAEJ ivcbGx"
               >
                 4
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 James
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Madison
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 James Madison
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Port Conway
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 VA
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 03/16/1751
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 some.url.com
               </td>
@@ -344,42 +344,42 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
               className="sc-dxgOiQ huXMKo"
             >
               <td
-                className="sc-eNQAEJ koFZfx"
+                className="sc-eNQAEJ ivcbGx"
               >
                 5
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 James
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Monroe
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 James Monroe
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 Monroe Hall
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 VA
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 04/28/1758
               </td>
               <td
-                className="sc-ckVGcZ deSELa"
+                className="sc-ckVGcZ YLCKP"
               >
                 some.url.com
               </td>
