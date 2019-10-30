@@ -313,7 +313,6 @@ class LambdaWorker(core.Stack):
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
             },
             memory_size=memory_size,
-            vpc=scope.base.vpc,
             timeout=core.Duration.seconds(60),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
