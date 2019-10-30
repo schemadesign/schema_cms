@@ -309,3 +309,24 @@ class DataSourceJobStep(models.Model):
     script = models.ForeignKey(WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True)
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
+
+
+# Filters
+
+
+class Filter(models.Model):
+    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='filters')
+    name = models.CharField(max_length=255)
+    type = models.CharField(max_length=25, choices=constants.FILTER_TYPE_CHOICES)
+    field = models.CharField(max_length=25)
+    field_type = models.CharField(max_length=25, choices=constants.FIELD_TYPE_CHOICES)
+
+    def __str__(self):
+        return self.id
+
+    class Meta:
+        unique_together = ("name", "datasource")
+
+    def get_fields_info(self):
+        last_job = self.datasource.get_last_success_job()
+        return json.loads(last_job.meta_data.preview.read())

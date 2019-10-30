@@ -1,3 +1,4 @@
+import json
 import logging
 
 from django.db import transaction
@@ -74,7 +75,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.prefetch_related("jobs").order_by("-created")
+    queryset = models.DataSource.objects.prefetch_related("jobs", "filters").order_by("-created")
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "create": serializers.DraftDataSourceSerializer,
@@ -83,6 +84,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "job": serializers.CreateJobSerializer,
         "jobs_history": serializers.DataSourceJobSerializer,
         "public_results": serializers.PublicApiJobSerializer,
+        "filters": serializers.FilterSerializer,
     }
 
     def get_queryset(self):
@@ -166,6 +168,41 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         serializer = self.get_serializer(instance=data_source.get_last_success_job())
 
         return response.Response(data=serializer.data)
+
+    @decorators.action(detail=True, url_path="fields-info", methods=["get"])
+    def fileds_info(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+        preview = data_source.get_last_success_job().meta_data.preview
+        fields_info = dict(fields_info=json.loads(preview.read())["fields"])
+
+        data = dict(names=[])
+        for key, value in fields_info["fields_info"].items():
+            data["names"].append(key)
+            data[key] = dict(type=value["dtype"], unique=value["unique"])
+
+        return response.Response(data=data)
+
+    @decorators.action(detail=True, url_path="filters", methods=["get", "post"])
+    def filters(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+
+        if request.method == 'GET':
+            if not data_source.filters.exists():
+                return response.Response(data={})
+
+            serializer = self.get_serializer(instance=data_source.filters, many=True)
+
+            return response.Response(data=serializer.data)
+
+        else:
+            if not request.data.get("datasource"):
+                filter_ = request.data.copy()
+                filter_["datasource"] = data_source
+            serializer = self.get_serializer(data=filter_, context=data_source)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
