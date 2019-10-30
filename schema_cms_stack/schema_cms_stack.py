@@ -308,8 +308,6 @@ class LambdaWorker(core.Stack):
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             handler="handler.main",
             environment={
-                "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
-                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
             },
             memory_size=memory_size,
@@ -321,7 +319,6 @@ class LambdaWorker(core.Stack):
         )
         scope.base.db.secret.grant_read(lambda_fn.role)
         scope.base.app_bucket.grant_read_write(lambda_fn.role)
-        lambda_fn.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
         return lambda_fn, lambda_code
 
 
