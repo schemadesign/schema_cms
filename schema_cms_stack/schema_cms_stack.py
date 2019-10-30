@@ -349,8 +349,6 @@ class PublicAPI(core.Stack):
         scope.base.db.secret.grant_read(self.public_api_lambda.role)
         scope.base.app_bucket.grant_read(self.public_api_lambda.role)
 
-        self.public_api_lambda.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
-
         self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
         self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.public_api_lambda)
         self.publicApiGateway.root.add_resource("datasources").add_resource("{data_source_id}").add_method(
