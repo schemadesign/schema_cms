@@ -1,20 +1,20 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { path, ifElse, always, propEq, find } from 'ramda';
+import { always, find, ifElse, path, propEq } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
 
 import browserHistory from '../../../shared/utils/history';
 import {
-  Container,
-  AddIcon,
-  RemoveIcon,
-  UserItem,
-  Button,
-  UserItemDescription,
   Action,
+  AddIcon,
+  Button,
+  Container,
   Email,
+  RemoveIcon,
   UserFullName,
+  UserItem,
+  UserItemDescription,
 } from './addUser.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './addUser.messages';

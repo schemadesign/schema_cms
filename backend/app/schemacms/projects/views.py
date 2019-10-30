@@ -144,8 +144,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         serializer.is_valid(raise_exception=True)
         with transaction.atomic():
             job = serializer.save()
-            transaction.on_commit(lambda: services.schedule_worker_with(job))
-        return response.Response(status=status.HTTP_201_CREATED)
+            transaction.on_commit(lambda: services.schedule_worker_with(job, datasource.file.size))
+        return response.Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
     @decorators.action(detail=True, url_path="jobs-history", methods=["get"])
     def jobs_history(self, request, pk=None, **kwargs):
