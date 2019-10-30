@@ -159,3 +159,82 @@ exports[`List: Component should render correctly 1`] = `
   </NavigationContainer>
 </styled.div>
 `;
+
+exports[`List: Component should render correctly with loading 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Projects Overview"
+  />
+  <TopHeader
+    headerSubtitle="Overview"
+    headerTitle="Projects"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "id": "userBtn",
+          "label": "Users",
+          "to": "/user",
+        },
+        Object {
+          "id": "logoutBtn",
+          "label": "Log Out",
+          "to": "/logout",
+        },
+      ]
+    }
+  />
+  <Loader />
+  <NavigationContainer
+    right={true}
+  >
+    <PlusButton
+      id="addProjectBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`List: Component should render without data 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Projects Overview"
+  />
+  <TopHeader
+    headerSubtitle="Overview"
+    headerTitle="Projects"
+    secondaryMenuItems={
+      Array [
+        Object {
+          "id": "userBtn",
+          "label": "Users",
+          "to": "/user",
+        },
+        Object {
+          "id": "logoutBtn",
+          "label": "Log Out",
+          "to": "/logout",
+        },
+      ]
+    }
+  />
+  <styled.div>
+    <P>
+      No Projects
+       
+    </P>
+  </styled.div>
+  <NavigationContainer
+    right={true}
+  >
+    <PlusButton
+      id="addProjectBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;

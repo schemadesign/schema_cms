@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { isEmpty } from 'ramda';
+import { always, cond, isEmpty, propEq, T } from 'ramda';
 import { Card, Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { Empty } from '../project.styles';
@@ -21,6 +20,7 @@ import {
   titleStyles,
 } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { Loader } from '../../../shared/components/loader';
 
 const { H1, P, Span } = Typography;
 
@@ -32,8 +32,13 @@ export class List extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
-  componentDidMount() {
-    this.props.fetchProjectsList();
+  state = {
+    loading: true,
+  };
+
+  async componentDidMount() {
+    await this.props.fetchProjectsList();
+    this.setState({ loading: false });
   }
 
   getHeaderAndMenuConfig = () => ({
@@ -88,7 +93,7 @@ export class List extends PureComponent {
     );
   }
 
-  renderList = (_, list) => <ProjectsList>{list.map((item, index) => this.renderItem(item, index))}</ProjectsList>;
+  renderList = ({ list }) => <ProjectsList>{list.map((item, index) => this.renderItem(item, index))}</ProjectsList>;
 
   renderNoData = () => (
     <Empty>
@@ -96,17 +101,22 @@ export class List extends PureComponent {
     </Empty>
   );
 
+  renderContent = cond([
+    [propEq('loading', true), always(<Loader />)],
+    [propEq('list', []), this.renderNoData],
+    [T, this.renderList],
+  ]);
+
   render() {
     const { list = [] } = this.props;
-
+    const { loading } = this.state;
     const topHeaderConfig = this.getHeaderAndMenuConfig();
-    const content = renderWhenTrueOtherwise(this.renderList, this.renderNoData)(Boolean(list.length), list);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...topHeaderConfig} />
-        {content}
+        {this.renderContent({ list, loading })}
         <NavigationContainer right>
           <PlusButton id="addProjectBtn" onClick={this.handleNewProject} />
         </NavigationContainer>

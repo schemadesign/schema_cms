@@ -15,7 +15,6 @@ Array [
     <styled.div>
       <Styled(H2)>
         <Link
-          replace={false}
           to="/user/1"
         >
           Alan
@@ -38,7 +37,6 @@ Array [
     <styled.div>
       <Styled(H2)>
         <Link
-          replace={false}
           to="/user/2"
         >
           Dale
@@ -61,7 +59,6 @@ Array [
     <styled.div>
       <Styled(H2)>
         <Link
-          replace={false}
           to="/user/3"
         >
           Dave

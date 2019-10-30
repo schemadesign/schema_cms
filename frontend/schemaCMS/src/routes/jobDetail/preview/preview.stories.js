@@ -18,6 +18,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Job/Preview - skip', module)
+storiesOf('Job/Preview', module)
   .addDecorator(withTheme())
   .add('Default', () => <Preview {...defaultProps} />);
