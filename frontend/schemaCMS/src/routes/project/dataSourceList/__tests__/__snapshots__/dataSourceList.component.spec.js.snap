@@ -45,12 +45,6 @@ exports[`DataSourceList: Component should render card with job 1`] = `
         }
       >
         <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "marginBottom": "20px",
-            }
-          }
           id="dataSourceTitle"
           onClick={[Function]}
         >
@@ -65,14 +59,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             >
               Source
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-0"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               <Component
                 customStyles={
                   Object {
@@ -91,16 +80,10 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             >
               Items
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-1"
-              isLock={false}
             >
-              246
-=======
-            <styled.span>
               —
->>>>>>> master
             </styled.span>
           </styled.div>
           <styled.div
@@ -111,16 +94,10 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             >
               Fields
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-2"
-              isLock={false}
             >
-              11
-=======
-            <styled.span>
               —
->>>>>>> master
             </styled.span>
           </styled.div>
           <styled.div
@@ -131,14 +108,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             >
               Filters
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-3"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               —
             </styled.span>
           </styled.div>
@@ -150,14 +122,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             >
               Views
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-4"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               —
             </styled.span>
           </styled.div>
@@ -331,8 +298,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 05/09/2019 13:50
               </span>
             </styled.div>
-<<<<<<< HEAD
-          </styled.div>
+          </Styled(Link)>
         </styled.div>
       </Component>
     </styled.li>
@@ -397,12 +363,6 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
       >
         <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "marginBottom": "20px",
-            }
-          }
           id="dataSourceTitle"
           onClick={[Function]}
         >
@@ -417,14 +377,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Source
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-0"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               <Component
                 customStyles={
                   Object {
@@ -443,16 +398,10 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Items
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-1"
-              isLock={false}
             >
-              246
-=======
-            <styled.span>
               —
->>>>>>> master
             </styled.span>
           </styled.div>
           <styled.div
@@ -463,16 +412,10 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Fields
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-2"
-              isLock={false}
             >
-              11
-=======
-            <styled.span>
               —
->>>>>>> master
             </styled.span>
           </styled.div>
           <styled.div
@@ -483,14 +426,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Filters
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-3"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               —
             </styled.span>
           </styled.div>
@@ -502,14 +440,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Views
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-4"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               —
             </styled.span>
           </styled.div>
@@ -541,12 +474,6 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
       >
         <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "marginBottom": "20px",
-            }
-          }
           id="dataSourceTitle"
           onClick={[Function]}
         >
@@ -561,14 +488,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Source
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-0"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               <Component
                 customStyles={
                   Object {
@@ -587,14 +509,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Items
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-1"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               246
             </styled.span>
           </styled.div>
@@ -606,14 +523,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Fields
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-2"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               11
             </styled.span>
           </styled.div>
@@ -625,14 +537,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Filters
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-3"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               —
             </styled.span>
           </styled.div>
@@ -644,14 +551,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             >
               Views
             </styled.span>
-<<<<<<< HEAD
             <styled.span
               id="metaItemValue-4"
-              isLock={false}
             >
-=======
-            <styled.span>
->>>>>>> master
               —
             </styled.span>
           </styled.div>

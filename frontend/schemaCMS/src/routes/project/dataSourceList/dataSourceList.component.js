@@ -126,9 +126,7 @@ export class DataSourceList extends PureComponent {
     const elements = list.map(({ name, value }, index) => (
       <MetaData key={index}>
         <MetaDataName id={`metaItem-${index}`}>{name}</MetaDataName>
-        <MetaDataValue id={`metaItemValue-${index}`} isLock={isLock}>
-          {value || DEFAULT_VALUE}
-        </MetaDataValue>
+        <MetaDataValue id={`metaItemValue-${index}`}>{value || DEFAULT_VALUE}</MetaDataValue>
       </MetaData>
     ));
 
@@ -172,11 +170,7 @@ export class DataSourceList extends PureComponent {
     return (
       <DataSourceItem key={index}>
         <Card headerComponent={header}>
-          <H1
-            id="dataSourceTitle"
-            customStyles={customTitleStyles}
-            onClick={() => this.handleShowDataSource({ id, metaData, jobs })}
-          >
+          <H1 id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
             {name}
           </H1>
           {this.renderMetaData(metaData || {})}
