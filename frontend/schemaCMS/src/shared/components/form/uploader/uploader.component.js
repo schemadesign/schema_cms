@@ -23,18 +23,24 @@ export class Uploader extends PureComponent {
     errors: {},
   };
 
-  renderError = renderWhenTrue(() => <ErrorWrapper>{this.props.errors[this.props.name]}</ErrorWrapper>);
+  renderError = renderWhenTrue((_, name) => <ErrorWrapper>{this.props.errors[name]}</ErrorWrapper>);
 
   render() {
     const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.input];
     const { errors, fileName, label, id, onChange, ...restProps } = this.props;
     const filteredProps = pick(allowedAttributes, restProps);
-    const isError = !!errors[filteredProps.name];
+
+    const fileProp = filteredProps.name;
+    const isFileError = !!errors[fileProp];
+
+    const fileNameProp = `${fileProp}Name`;
+    const isFielNameError = fileName && !!errors[fileNameProp];
 
     return (
       <Container>
         <FileUpload fileName={fileName} label={label} id={id} onChange={onChange} {...filteredProps} />
-        {this.renderError(isError)}
+        {this.renderError(isFielNameError, fileNameProp)}
+        {this.renderError(isFileError, fileProp)}
       </Container>
     );
   }

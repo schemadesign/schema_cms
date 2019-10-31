@@ -33,5 +33,7 @@ export const DATA_SOURCE_SCHEMA = Yup.object().shape({
     'File Size is too large (max 300MB)',
     (value = {}) => defaultTo(0, value.size) <= FILE_SIZE
   ),
-  [DATA_SOURCE_FILE_NAME]: Yup.string().required('Required'),
+  [DATA_SOURCE_FILE_NAME]: Yup.string()
+    .max(100, "File Name shouldn't be longer than 100 characters.")
+    .required('Required'),
 });
