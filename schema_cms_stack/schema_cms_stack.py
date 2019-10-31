@@ -559,7 +559,7 @@ class CIPipeline(core.Stack):
                 build_fe_action,
                 build_app_action,
                 build_workers_action,
-                *lambda_workers_build_actions,
+                *[action for (action, _) in lambda_workers_build_actions],
                 build_public_api_lambda_action,
                 build_workers_success_lambda_action,
                 build_workers_failure_lambda_action,
@@ -579,14 +579,14 @@ class CIPipeline(core.Stack):
                         template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
                         run_order=1,
                         parameter_overrides={
-                            *lambda_code.assign(
-                                bucket_name=action.outputs[0].s3_location.bucket_name,
-                                object_key=action.outputs[0].s3_location.object_key,
-                                object_version=action.outputs[0].s3_location.object_version,
+                            **lambda_code.assign(
+                                bucket_name=output.s3_location.bucket_name,
+                                object_key=output.s3_location.object_key,
+                                object_version=output.s3_location.object_version,
                             )
                         },
-                        extra_inputs=[action.outputs[0]],
-                    ) for i, ((_, lambda_code), action) in enumerate(
+                        extra_inputs=[output],
+                    ) for i, ((_, lambda_code), (_, output)) in enumerate(
                         zip(scope.lambda_worker.functions, lambda_workers_build_actions),
                         1
                     )
@@ -729,22 +729,25 @@ class CIPipeline(core.Stack):
         build_lambda_worker_projects = [
             aws_codebuild.PipelineProject(
                 self,
-                f"build_lambda_worker_project_{i}",
-                project_name=f"schema_cms_build_lambda_worker_{i}",
+                f"build_lambda_worker_project_{i+1}",
+                project_name=f"schema_cms_build_lambda_worker_{i+1}",
                 environment=aws_codebuild.BuildEnvironment(
                     build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
                 ),
                 build_spec=aws_codebuild.BuildSpec.from_source_filename(
                     "backend/functions/buildspec-lambda-worker.yaml"
                 ),
-            ) for i in range(len(scope.lambda_worker.functions), 1)
+            ) for i in range(len(scope.lambda_worker.functions))
         ]
 
-        return [
-            aws_codepipeline_actions.CodeBuildAction(
+        actions_with_outputs = []
+        for i, project in enumerate(build_lambda_worker_projects, 1):
+            output = aws_codepipeline.Artifact()
+            action = aws_codepipeline_actions.CodeBuildAction(
                 action_name=f"build_worker_lambda_{i}",
                 input=action_input,
                 project=project,
-                outputs=[aws_codepipeline.Artifact()],
-            ) for i, project in enumerate(build_lambda_worker_projects, 1)
-        ]
+                outputs=[output],
+            )
+            actions_with_outputs.append((action, output))
+        return actions_with_outputs
