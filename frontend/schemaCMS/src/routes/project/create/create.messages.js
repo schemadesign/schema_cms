@@ -17,9 +17,17 @@ export default defineMessages({
     id: 'project.create.projectTitleLabel',
     defaultMessage: 'Title',
   },
+  projectTitlePlaceholder: {
+    id: 'project.create.projectTitlePlaceholder',
+    defaultMessage: 'Project title',
+  },
   projectDescriptionLabel: {
     id: 'project.create.projectDescriptionLabel',
     defaultMessage: 'Description',
+  },
+  projectDescriptionPlaceholder: {
+    id: 'project.create.projectDescriptionPlaceholder',
+    defaultMessage: 'Project description',
   },
   apiNameLabel: {
     id: 'project.create.apiNameLabel',
@@ -56,5 +64,9 @@ export default defineMessages({
   [PUBLISHED]: {
     id: `project.create.${PUBLISHED}`,
     defaultMessage: 'Published',
+  },
+  titleProjectTitleUniqueError: {
+    id: 'project.create.titleProjectTitleUniqueError',
+    defaultMessage: 'Project with this title already exist.',
   },
 });

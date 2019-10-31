@@ -96,6 +96,7 @@ export class SourceComponent extends PureComponent {
       onChange={({ currentTarget }) => this.handleUploadChange({ currentTarget, setFieldValue })}
       accept=".csv,.tsv"
       disabled={isAnyJobProcessing}
+      checkOnlyErrors
       {...restProps}
     />
   );

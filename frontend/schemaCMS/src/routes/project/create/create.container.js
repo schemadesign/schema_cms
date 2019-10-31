@@ -1,25 +1,27 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { withFormik } from 'formik';
 import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { Create } from './create.component';
+import messages from './create.messages';
 import { INITIAL_VALUES, PROJECT_SCHEMA, CREATE_PROJECT_FORM } from '../../../modules/project/project.constants';
 import { ProjectRoutines } from '../../../modules/project/project.redux';
 import { selectUserData } from '../../../modules/userProfile';
+import { errorMessageParser } from '../../../shared/utils/helpers';
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectUserData,
 });
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators(
+  bindPromiseCreators(
     {
-      createProject: ProjectRoutines.createProject,
+      createProject: promisifyRoutine(ProjectRoutines.createProject),
     },
     dispatch
   );
@@ -41,15 +43,18 @@ export default compose(
       owner: `${firstName} ${lastName}`,
     }),
     validationSchema: () => PROJECT_SCHEMA,
-    handleSubmit: async (data, { props, ...formik }) => {
+    handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
-        formik.setSubmitting(true);
+        setSubmitting(true);
 
         await props.createProject(data);
-      } catch ({ errors }) {
-        formik.setErrors(errors);
+      } catch (errors) {
+        const { formatMessage } = props.intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+        setErrors(errorMessages);
       } finally {
-        formik.setSubmitting(false);
+        setSubmitting(false);
       }
     },
   })

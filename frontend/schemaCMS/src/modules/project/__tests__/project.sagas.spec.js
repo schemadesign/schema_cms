@@ -138,12 +138,15 @@ describe('Project: sagas', () => {
         [PROJECT_OWNER]: 'Joe Doe',
       };
 
-      mockApi.post(PROJECTS_PATH).reply(BAD_REQUEST, item);
+      const errorResponseData = { name: [{ code: 'code', message: 'message' }] };
+      const errorResult = [{ code: 'code', name: 'name' }];
+
+      mockApi.post(PROJECTS_PATH).reply(BAD_REQUEST, errorResponseData);
 
       await expectSaga(watchProject)
         .withState(defaultState)
         .provide([[select(selectUserData), currentUser]])
-        .put(ProjectRoutines.createProject.failure())
+        .put(ProjectRoutines.createProject.failure(errorResult))
         .dispatch(ProjectRoutines.createProject({ payload }))
         .silentRun();
     });
