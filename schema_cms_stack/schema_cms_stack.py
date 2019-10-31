@@ -35,6 +35,10 @@ GITHUB_REPO_OWNER = "schemadesign"
 GITHUB_REPOSITORY = "schema_cms"
 
 
+def get_function_base_name(fn):
+    return fn.to_string().split("/")[-1]
+
+
 class BaseResources(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
@@ -559,7 +563,7 @@ class CIPipeline(core.Stack):
                 build_fe_action,
                 build_app_action,
                 build_workers_action,
-                *[action for (action, _) in lambda_workers_build_actions],
+                *[action for (action, *_) in lambda_workers_build_actions],
                 build_public_api_lambda_action,
                 build_workers_success_lambda_action,
                 build_workers_failure_lambda_action,
@@ -572,24 +576,15 @@ class CIPipeline(core.Stack):
             actions=[
                 *[
                     aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
-                        action_name=f"prepare_lambda_worker_changes_{i}",
+                        action_name=f"prepare_lambda_worker_changes_{get_function_base_name(function)}",
                         stack_name=scope.lambda_worker.stack_name,
-                        change_set_name=f"lambdaWorker{i}StagedChangeSet",
+                        change_set_name=f"lambdaWorker{get_function_base_name(function)}StagedChangeSet",
                         admin_permissions=True,
                         template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
                         run_order=1,
-                        parameter_overrides={
-                            **lambda_code.assign(
-                                bucket_name=output.s3_location.bucket_name,
-                                object_key=output.s3_location.object_key,
-                                object_version=output.s3_location.object_version,
-                            )
-                        },
+                        parameter_overrides=parameter_overrides,
                         extra_inputs=[output],
-                    ) for i, ((_, lambda_code), (_, output)) in enumerate(
-                        zip(scope.lambda_worker.functions, lambda_workers_build_actions),
-                        1
-                    )
+                    ) for (action, output, function, parameter_overrides) in lambda_workers_build_actions
                 ],
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_public_api_changes",
@@ -726,28 +721,33 @@ class CIPipeline(core.Stack):
         scope.base.webapp_registry.grant_pull(self.fe_ci_project)
 
     def get_lambda_worker_build_actions(self, scope, action_input):
-        build_lambda_worker_projects = [
-            aws_codebuild.PipelineProject(
+        actions_with_outputs = []
+        for (function, code) in scope.lambda_worker.functions:
+            function_name = get_function_base_name(function)
+            project = aws_codebuild.PipelineProject(
                 self,
-                f"build_lambda_worker_project_{i+1}",
-                project_name=f"schema_cms_build_lambda_worker_{i+1}",
+                f"project_build_{function_name}",
+                project_name=f"project_build_{function_name}",
                 environment=aws_codebuild.BuildEnvironment(
                     build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
                 ),
                 build_spec=aws_codebuild.BuildSpec.from_source_filename(
                     "backend/functions/buildspec-lambda-worker.yaml"
                 ),
-            ) for i in range(len(scope.lambda_worker.functions))
-        ]
-
-        actions_with_outputs = []
-        for i, project in enumerate(build_lambda_worker_projects, 1):
+            )
             output = aws_codepipeline.Artifact()
             action = aws_codepipeline_actions.CodeBuildAction(
-                action_name=f"build_worker_lambda_{i}",
+                action_name=f"build_{function_name}",
                 input=action_input,
                 project=project,
                 outputs=[output],
             )
-            actions_with_outputs.append((action, output))
+            parameter_overrides = {
+                **code.assign(
+                    bucket_name=output.s3_location.bucket_name,
+                    object_key=output.s3_location.object_key,
+                    object_version=output.s3_location.object_version,
+                )
+            }
+            actions_with_outputs.append((action, output, function, parameter_overrides))
         return actions_with_outputs
