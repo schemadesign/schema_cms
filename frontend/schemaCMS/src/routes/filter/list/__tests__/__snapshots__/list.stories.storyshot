@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots List Default 1`] = `
+<div
+  className="sc-kjoXOD hpTAeq"
+>
+  <div
+    className="sc-cHGsZl lgoOmF"
+  >
+    <span>
+      No fields found.
+    </span>
+  </div>
+</div>
+`;
