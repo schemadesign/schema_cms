@@ -223,10 +223,14 @@ class API(core.Stack):
         self.job_processing_queues = [
             self._create_job_processing_queue(
                 scope=scope,
-                name=f"job_processing_sqs_{memory_size}",
+                name=f"job_processing_sqs",
+                dead_letter_queue=self.job_processing_dead_letter_sqs,
+            ),
+            self._create_job_processing_queue(
+                scope=scope,
+                name=f"job_processing_sqs_ext",
                 dead_letter_queue=self.job_processing_dead_letter_sqs,
             )
-            for memory_size in JOB_PROCESSING_MEMORY_SIZES
         ]
 
         self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
