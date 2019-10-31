@@ -450,6 +450,11 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
           className="sc-gzVnrw bMUaYY"
         >
           <div
+            activeStep={2}
+            customDotStyles={Object {}}
+            handleStep={[Function]}
+            onStepChange={[Function]}
+            steps={6}
             style={
               Object {
                 "display": "flex",
