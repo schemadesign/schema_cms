@@ -23,8 +23,13 @@ def data_source_results(data_source_id):
             settings.BACKEND_URL, "datasources", str(data_source_id), "public-results"
         )
         data = requests.get(url)
+
+        if data.status_code == 404:
+            return jsonify({"message": f"Datasource {data_source_id} does not exist"}), 404
+
         items = data.json().get("items")
         result = data.json().get("result")
+
     except Exception as e:
         logging.critical(f"Unable to get job results - {e}")
         return jsonify({"message": "There is no available results"}), 404
