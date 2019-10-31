@@ -58,7 +58,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId/preview`} component={JobPreview} />
 
-            <AuthRoute exact path={`${ROUTES.FILTER}/:datasourceId`} component={Filter} />
+            <AuthRoute exact path={`${ROUTES.FILTER}/:dataSourceId`} component={Filter} />
 
             <Route path={ROUTES.LOGOUT} component={Logout} />
 
