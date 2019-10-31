@@ -6,7 +6,7 @@ Feature: CMS-49-Admin
 
     Background: User is logged in
         Given I am on Login page
-        Given I have logged in as an 'admin' 
+        And I have logged in as an 'admin' 
         And I am on homepage
 
     Scenario: User can see Project Details page after clicking project tile

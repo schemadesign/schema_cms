@@ -17,8 +17,9 @@ def get_sqs():
 sqs = functional.SimpleLazyObject(get_sqs)
 
 
-def schedule_worker_with(datasource_job):
-    sqs_response = sqs.send_message(
-        QueueUrl=settings.SQS_WORKER_QUEUE_URL, MessageBody=json.dumps({'job_pk': datasource_job.pk})
-    )
+def schedule_worker_with(datasource_job, source_file_size):
+    queue_url = settings.SQS_WORKER_QUEUE_URL
+    if source_file_size > settings.SQS_WORKER_QUEUE_FILE_SIZE:
+        queue_url = settings.SQS_WORKER_EXT_QUEUE_URL
+    sqs_response = sqs.send_message(QueueUrl=queue_url, MessageBody=json.dumps({'job_pk': datasource_job.pk}))
     return sqs_response['MessageId']

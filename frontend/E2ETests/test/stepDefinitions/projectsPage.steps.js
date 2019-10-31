@@ -1,7 +1,7 @@
 import { Given, When, Then } from 'cucumber';
-import { HEADER_TITLE, HEADER_SUBTITLE, PROJECTS_PAGE, HOMEPAGE } from './../constants/homepage.constants.js';
+import { HEADER_TITLE, HEADER_SUBTITLE, HOMEPAGE } from './../constants/homepage.constants.js';
 import ProjectsPage from './../pageobjects/projects.page.js';
-import { waitForElement } from './../utils/utils.js';
+import { waitForElement, waitForUrl } from './../utils/utils.js';
 
 
 
@@ -33,9 +33,9 @@ When('I choose to create a project', () => {
 
 
 Then('I am on Projects page', () => {
-    waitForElement(ProjectsPage, 'addProjectBtn');
+    waitForUrl(HOMEPAGE);
 
-    expect(browser.getUrl()).to.equal(PROJECTS_PAGE); 
+    expect(browser.getUrl()).to.equal(HOMEPAGE); 
 });
 
 Then('title of header is Projects', () => {

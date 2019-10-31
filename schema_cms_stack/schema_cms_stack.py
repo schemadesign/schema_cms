@@ -23,6 +23,7 @@ from aws_cdk import (
 DB_NAME = "gistdb"
 APP_S3_BUCKET_NAME = "schemacms"
 JOB_PROCESSING_MAX_RETRIES = 3
+JOB_PROCESSING_MEMORY_SIZES = [512, 1280]
 
 INSTALLATION_MODE_CONTEXT_KEY = "installation_mode"
 DOMAIN_NAME_CONTEXT_KEY = "domain_name"
@@ -32,6 +33,12 @@ INSTALLATION_MODEL_APP_ONLY = "app_only"
 
 GITHUB_REPO_OWNER = "schemadesign"
 GITHUB_REPOSITORY = "schema_cms"
+
+BACKEND_URL = "https://{domain}/api/v1/"
+
+
+def get_function_base_name(fn):
+    return fn.to_string().split("/")[-1]
 
 
 class BaseResources(core.Stack):
@@ -209,15 +216,18 @@ class API(core.Stack):
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
 
-        self.job_processing_dead_letter_sqs = aws_sqs.Queue(self, 'job_processing_dead_letter_sqs')
-        self.job_processing_sqs = aws_sqs.Queue(
+        self.job_processing_dead_letter_sqs = aws_sqs.Queue(
             self,
-            'job_processing_sqs',
-            visibility_timeout=core.Duration.seconds(60),
-            dead_letter_queue=aws_sqs.DeadLetterQueue(
-                queue=self.job_processing_dead_letter_sqs, max_receive_count=JOB_PROCESSING_MAX_RETRIES
-            ),
+            'job_processing_dead_letter_sqs',
         )
+        self.job_processing_queues = [
+            self._create_job_processing_queue(
+                scope=scope,
+                name=f"job_processing_sqs_{memory_size}",
+                dead_letter_queue=self.job_processing_dead_letter_sqs,
+            )
+            for memory_size in JOB_PROCESSING_MEMORY_SIZES
+        ]
 
         self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
             self,
@@ -245,7 +255,8 @@ class API(core.Stack):
                 "WORKER_STM_ARN": scope.workers.worker_state_machine.state_machine_arn,
                 "POSTGRES_DB": DB_NAME,
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
-                "SQS_WORKER_QUEUE_URL": self.job_processing_sqs.queue_url,
+                "SQS_WORKER_QUEUE_URL": self.job_processing_queues[0].queue_url,
+                "SQS_WORKER_EXT_QUEUE_URL": self.job_processing_queues[1].queue_url,
             },
             secrets={"DJANGO_SECRET_KEY": django_secret_key, "DB_CONNECTION": connection_secret_key, **env},
             cpu=256,
@@ -255,7 +266,9 @@ class API(core.Stack):
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
         scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
         scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
-        self.job_processing_sqs.grant_send_messages(self.api.service.task_definition.task_role)
+
+        for queue in self.job_processing_queues:
+            queue.grant_send_messages(self.api.service.task_definition.task_role)
 
         for k, v in env.items():
             self.grant_secret_access(v)
@@ -271,35 +284,55 @@ class API(core.Stack):
     def grant_secret_access(self, secret):
         secret.grant_read(self.api.service.task_definition.task_role)
 
+    def _create_job_processing_queue(self, scope, name, dead_letter_queue):
+        return aws_sqs.Queue(
+            self,
+            name,
+            visibility_timeout=core.Duration.seconds(60),
+            dead_letter_queue=aws_sqs.DeadLetterQueue(
+                queue=dead_letter_queue,
+                max_receive_count=JOB_PROCESSING_MAX_RETRIES
+            )
+        )
+
 
 class LambdaWorker(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        self.lambda_worker_code = aws_lambda.Code.from_cfn_parameters()
-        lambda_worker_handler = "handler.main"
-        self.lambda_worker = aws_lambda.Function(
+        self.functions = [
+            self._create_lambda_fn(scope=scope, memory_size=memory_size, queue=queue)
+            for memory_size, queue in zip(JOB_PROCESSING_MEMORY_SIZES, scope.api.job_processing_queues)
+        ]
+
+    def _create_lambda_fn(self, scope, memory_size, queue):
+        lambda_code = aws_lambda.Code.from_cfn_parameters()
+        lambda_fn = aws_lambda.Function(
             self,
-            "lambda-worker",
-            code=self.lambda_worker_code,
+            f"lambda-worker-{memory_size}",
+            code=lambda_code,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
-            handler=lambda_worker_handler,
+            handler="handler.main",
             environment={
                 "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
                 "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "BACKEND_URL": BACKEND_URL.format(
+                    domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+                ),
             },
-            memory_size=768,
+            memory_size=memory_size,
             vpc=scope.base.vpc,
             timeout=core.Duration.seconds(60),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
-        self.lambda_worker.add_event_source(
-            aws_lambda_event_sources.SqsEventSource(scope.api.job_processing_sqs, batch_size=1)
+        lambda_fn.add_event_source(
+            aws_lambda_event_sources.SqsEventSource(queue, batch_size=1)
         )
-        scope.base.db.secret.grant_read(self.lambda_worker.role)
-        scope.base.app_bucket.grant_read_write(self.lambda_worker.role)
-        self.lambda_worker.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
+        scope.base.db.secret.grant_read(lambda_fn.role)
+        scope.base.app_bucket.grant_read_write(lambda_fn.role)
+        lambda_fn.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
+        return lambda_fn, lambda_code
 
 
 class PublicAPI(core.Stack):
@@ -314,12 +347,11 @@ class PublicAPI(core.Stack):
             code=self.function_code,
             handler=handler,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
-            vpc=scope.base.vpc,
             environment={
-                "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
-                "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
-                "BACKEND_URL": scope.base.db.secret.secret_value.to_string(),
+                "BACKEND_URL": BACKEND_URL.format(
+                    domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+                ),
             },
             memory_size=512,
             timeout=core.Duration.seconds(30),
@@ -328,8 +360,6 @@ class PublicAPI(core.Stack):
 
         scope.base.db.secret.grant_read(self.public_api_lambda.role)
         scope.base.app_bucket.grant_read(self.public_api_lambda.role)
-
-        self.public_api_lambda.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
 
         self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
         self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.public_api_lambda)
@@ -468,25 +498,6 @@ class CIPipeline(core.Stack):
             outputs=[public_api_lambda_build_output],
         )
 
-        build_lambda_worker_project = aws_codebuild.PipelineProject(
-            self,
-            "build_lambda_worker_project",
-            project_name="schema_cms_build_lambda_worker",
-            environment=aws_codebuild.BuildEnvironment(
-                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
-            ),
-            build_spec=aws_codebuild.BuildSpec.from_source_filename(
-                "backend/functions/buildspec-lambda-worker.yaml"
-            ),
-        )
-        lambda_worker_build_output = aws_codepipeline.Artifact()
-        build_lambda_worker_action = aws_codepipeline_actions.CodeBuildAction(
-            action_name="build_worker_lambda",
-            input=source_output,
-            project=build_lambda_worker_project,
-            outputs=[lambda_worker_build_output],
-        )
-
         build_workers_success_lambda_project = aws_codebuild.PipelineProject(
             self,
             "build_workers_success_lambda_project",
@@ -545,7 +556,12 @@ class CIPipeline(core.Stack):
             project=build_cdk_project,
             outputs=[cdk_artifact],
             run_order=2,
-            extra_inputs=[lambda_worker_build_output],
+            extra_inputs=[],
+        )
+
+        lambda_workers_build_actions = self.get_lambda_worker_build_actions(
+            scope=scope,
+            action_input=source_output
         )
 
         self.pipeline.add_stage(
@@ -554,7 +570,7 @@ class CIPipeline(core.Stack):
                 build_fe_action,
                 build_app_action,
                 build_workers_action,
-                build_lambda_worker_action,
+                *[action for (action, *_) in lambda_workers_build_actions],
                 build_public_api_lambda_action,
                 build_workers_success_lambda_action,
                 build_workers_failure_lambda_action,
@@ -565,21 +581,12 @@ class CIPipeline(core.Stack):
         self.pipeline.add_stage(
             stage_name="deploy_public_api",
             actions=[
-                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
-                    action_name="prepare_lambda_worker_changes",
-                    stack_name=scope.lambda_worker.stack_name,
-                    change_set_name="lambdaWorkerStagedChangeSet",
+                self.prepare_lambda_worker_changes(
+                    scope=scope,
+                    cdk_artifact=cdk_artifact,
+                    build_actions=lambda_workers_build_actions,
                     admin_permissions=True,
-                    template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
                     run_order=1,
-                    parameter_overrides={
-                        **scope.lambda_worker.lambda_worker_code.assign(
-                            bucket_name=lambda_worker_build_output.s3_location.bucket_name,
-                            object_key=lambda_worker_build_output.s3_location.object_key,
-                            object_version=lambda_worker_build_output.s3_location.object_version,
-                        )
-                    },
-                    extra_inputs=[lambda_worker_build_output],
                 ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_public_api_changes",
@@ -628,12 +635,6 @@ class CIPipeline(core.Stack):
                 ),
                 aws_codepipeline_actions.ManualApprovalAction(action_name="approve_changes", run_order=2),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
-                    action_name="execute_lambda_worker_changes",
-                    stack_name=scope.lambda_worker.stack_name,
-                    change_set_name="lambdaWorkerStagedChangeSet",
-                    run_order=3,
-                ),
-                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_workers_changes",
                     stack_name=scope.workers.stack_name,
                     change_set_name="workersStagedChangeSet",
@@ -650,6 +651,12 @@ class CIPipeline(core.Stack):
                     stack_name=scope.api.stack_name,
                     change_set_name="APIStagedChangeSet",
                     run_order=4,
+                ),
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                    action_name="execute_lambda_worker_changes",
+                    stack_name=scope.lambda_worker.stack_name,
+                    change_set_name="lambdaWorkerStagedChangeSet",
+                    run_order=5,
                 ),
             ],
         )
@@ -714,3 +721,48 @@ class CIPipeline(core.Stack):
         scope.base.nginx_registry.grant_pull(self.fe_ci_project)
         scope.base.app_registry.grant_pull(self.fe_ci_project)
         scope.base.webapp_registry.grant_pull(self.fe_ci_project)
+
+    def get_lambda_worker_build_actions(self, scope, action_input):
+        actions_with_outputs = []
+        for (function, code) in scope.lambda_worker.functions:
+            function_name = get_function_base_name(function)
+            project = aws_codebuild.PipelineProject(
+                self,
+                f"project_build_{function_name}",
+                project_name=f"project_build_{function_name}",
+                environment=aws_codebuild.BuildEnvironment(
+                    build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
+                ),
+                build_spec=aws_codebuild.BuildSpec.from_source_filename(
+                    "backend/functions/buildspec-lambda-worker.yaml"
+                ),
+            )
+            output = aws_codepipeline.Artifact()
+            action = aws_codepipeline_actions.CodeBuildAction(
+                action_name=f"build_{function_name}",
+                input=action_input,
+                project=project,
+                outputs=[output],
+            )
+            actions_with_outputs.append((action, output, function, code))
+        return actions_with_outputs
+
+    def prepare_lambda_worker_changes(self, scope, cdk_artifact, build_actions, **change_set_kwargs):
+        parameter_overrides = dict()
+        extra_inputs = []
+        for (_, output, _, code) in build_actions:
+            parameter_overrides.update(**code.assign(
+                bucket_name=output.s3_location.bucket_name,
+                object_key=output.s3_location.object_key,
+                object_version=output.s3_location.object_version,
+            ))
+            extra_inputs.append(output)
+        return aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
+            action_name=f"prepare_lambda_worker_changes",
+            stack_name=scope.lambda_worker.stack_name,
+            change_set_name=f"lambdaWorkerStagedChangeSet",
+            template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
+            parameter_overrides=parameter_overrides,
+            extra_inputs=extra_inputs,
+            **change_set_kwargs,
+        )

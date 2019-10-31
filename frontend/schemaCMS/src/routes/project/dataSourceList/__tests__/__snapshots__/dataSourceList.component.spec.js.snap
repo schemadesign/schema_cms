@@ -27,10 +27,14 @@ exports[`DataSourceList: Component should render card with job 1`] = `
         headerComponent={
           <ForwardRef(styled.div)>
             <ForwardRef(styled.ul)>
-              <ForwardRef(styled.li)>
+              <ForwardRef(styled.li)
+                id="headerItem-0"
+              >
                 3 months ago
               </ForwardRef(styled.li)>
-              <ForwardRef(styled.li)>
+              <ForwardRef(styled.li)
+                id="headerItem-1"
+              >
                 firstName lastName
               </ForwardRef(styled.li)>
             </ForwardRef(styled.ul)>
@@ -41,12 +45,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
         }
       >
         <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "marginBottom": "20px",
-            }
-          }
+          id="dataSourceTitle"
           onClick={[Function]}
         >
           name
@@ -55,10 +54,14 @@ exports[`DataSourceList: Component should render card with job 1`] = `
           <styled.div
             key="0"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-0"
+            >
               Source
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-0"
+            >
               <Component
                 customStyles={
                   Object {
@@ -72,46 +75,64 @@ exports[`DataSourceList: Component should render card with job 1`] = `
           <styled.div
             key="1"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-1"
+            >
               Items
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-1"
+            >
               —
             </styled.span>
           </styled.div>
           <styled.div
             key="2"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-2"
+            >
               Fields
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-2"
+            >
               —
             </styled.span>
           </styled.div>
           <styled.div
             key="3"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-3"
+            >
               Filters
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-3"
+            >
               —
             </styled.span>
           </styled.div>
           <styled.div
             key="4"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-4"
+            >
               Views
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-4"
+            >
               —
             </styled.span>
           </styled.div>
         </styled.div>
         <styled.div>
-          <styled.div>
+          <styled.div
+            id="jobListHeader"
+          >
             <FormattedMessage
               defaultMessage="Data Process History"
               id="dataSource.list.jobTitle"
@@ -123,25 +144,39 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             to="/job/1"
           >
             <styled.div>
-              <styled.div />
-              <styled.div>
+              <styled.div
+                id="jobStateValue"
+              />
+              <styled.div
+                id="jobIdLabel"
+              >
                 <FormattedMessage
                   defaultMessage="Job id:"
                   id="dataSource.list.jobId"
                   values={Object {}}
                 />
                  
-                1
+                <span
+                  id="jobIdValue"
+                >
+                  1
+                </span>
               </styled.div>
             </styled.div>
-            <styled.div>
+            <styled.div
+              id="jobUpdatedAtLabel"
+            >
               <FormattedMessage
                 defaultMessage="Updated at"
                 id="dataSource.list.updatedAt"
                 values={Object {}}
               />
                
-              08/09/2019 10:20
+              <span
+                id="jobUpdatedAtValue"
+              >
+                08/09/2019 10:20
+              </span>
             </styled.div>
           </Styled(Link)>
           <Styled(Link)
@@ -149,25 +184,39 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             to="/job/2"
           >
             <styled.div>
-              <styled.div />
-              <styled.div>
+              <styled.div
+                id="jobStateValue"
+              />
+              <styled.div
+                id="jobIdLabel"
+              >
                 <FormattedMessage
                   defaultMessage="Job id:"
                   id="dataSource.list.jobId"
                   values={Object {}}
                 />
                  
-                2
+                <span
+                  id="jobIdValue"
+                >
+                  2
+                </span>
               </styled.div>
             </styled.div>
-            <styled.div>
+            <styled.div
+              id="jobUpdatedAtLabel"
+            >
               <FormattedMessage
                 defaultMessage="Updated at"
                 id="dataSource.list.updatedAt"
                 values={Object {}}
               />
                
-              07/09/2019 11:30
+              <span
+                id="jobUpdatedAtValue"
+              >
+                07/09/2019 11:30
+              </span>
             </styled.div>
           </Styled(Link)>
           <Styled(Link)
@@ -175,25 +224,39 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             to="/job/3"
           >
             <styled.div>
-              <styled.div />
-              <styled.div>
+              <styled.div
+                id="jobStateValue"
+              />
+              <styled.div
+                id="jobIdLabel"
+              >
                 <FormattedMessage
                   defaultMessage="Job id:"
                   id="dataSource.list.jobId"
                   values={Object {}}
                 />
                  
-                3
+                <span
+                  id="jobIdValue"
+                >
+                  3
+                </span>
               </styled.div>
             </styled.div>
-            <styled.div>
+            <styled.div
+              id="jobUpdatedAtLabel"
+            >
               <FormattedMessage
                 defaultMessage="Updated at"
                 id="dataSource.list.updatedAt"
                 values={Object {}}
               />
                
-              06/09/2019 12:40
+              <span
+                id="jobUpdatedAtValue"
+              >
+                06/09/2019 12:40
+              </span>
             </styled.div>
           </Styled(Link)>
           <Styled(Link)
@@ -201,25 +264,39 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             to="/job/4"
           >
             <styled.div>
-              <styled.div />
-              <styled.div>
+              <styled.div
+                id="jobStateValue"
+              />
+              <styled.div
+                id="jobIdLabel"
+              >
                 <FormattedMessage
                   defaultMessage="Job id:"
                   id="dataSource.list.jobId"
                   values={Object {}}
                 />
                  
-                4
+                <span
+                  id="jobIdValue"
+                >
+                  4
+                </span>
               </styled.div>
             </styled.div>
-            <styled.div>
+            <styled.div
+              id="jobUpdatedAtLabel"
+            >
               <FormattedMessage
                 defaultMessage="Updated at"
                 id="dataSource.list.updatedAt"
                 values={Object {}}
               />
                
-              05/09/2019 13:50
+              <span
+                id="jobUpdatedAtValue"
+              >
+                05/09/2019 13:50
+              </span>
             </styled.div>
           </Styled(Link)>
         </styled.div>
@@ -230,9 +307,11 @@ exports[`DataSourceList: Component should render card with job 1`] = `
     right={false}
   >
     <BackArrowButton
+      id="backBtn"
       onClick={[Function]}
     />
     <PlusButton
+      id="createDataSourceBtn"
       onClick={[Function]}
     />
   </NavigationContainer>
@@ -266,10 +345,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         headerComponent={
           <ForwardRef(styled.div)>
             <ForwardRef(styled.ul)>
-              <ForwardRef(styled.li)>
+              <ForwardRef(styled.li)
+                id="headerItem-0"
+              >
                 3 months ago
               </ForwardRef(styled.li)>
-              <ForwardRef(styled.li)>
+              <ForwardRef(styled.li)
+                id="headerItem-1"
+              >
                 firstName lastName
               </ForwardRef(styled.li)>
             </ForwardRef(styled.ul)>
@@ -280,12 +363,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
       >
         <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "marginBottom": "20px",
-            }
-          }
+          id="dataSourceTitle"
           onClick={[Function]}
         >
           name
@@ -294,10 +372,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           <styled.div
             key="0"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-0"
+            >
               Source
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-0"
+            >
               <Component
                 customStyles={
                   Object {
@@ -311,40 +393,56 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           <styled.div
             key="1"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-1"
+            >
               Items
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-1"
+            >
               —
             </styled.span>
           </styled.div>
           <styled.div
             key="2"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-2"
+            >
               Fields
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-2"
+            >
               —
             </styled.span>
           </styled.div>
           <styled.div
             key="3"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-3"
+            >
               Filters
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-3"
+            >
               —
             </styled.span>
           </styled.div>
           <styled.div
             key="4"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-4"
+            >
               Views
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-4"
+            >
               —
             </styled.span>
           </styled.div>
@@ -358,10 +456,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         headerComponent={
           <ForwardRef(styled.div)>
             <ForwardRef(styled.ul)>
-              <ForwardRef(styled.li)>
+              <ForwardRef(styled.li)
+                id="headerItem-0"
+              >
                 3 months ago
               </ForwardRef(styled.li)>
-              <ForwardRef(styled.li)>
+              <ForwardRef(styled.li)
+                id="headerItem-1"
+              >
                 firstName lastName
               </ForwardRef(styled.li)>
             </ForwardRef(styled.ul)>
@@ -372,12 +474,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         }
       >
         <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-              "marginBottom": "20px",
-            }
-          }
+          id="dataSourceTitle"
           onClick={[Function]}
         >
           name
@@ -386,10 +483,14 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           <styled.div
             key="0"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-0"
+            >
               Source
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-0"
+            >
               <Component
                 customStyles={
                   Object {
@@ -403,40 +504,56 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           <styled.div
             key="1"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-1"
+            >
               Items
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-1"
+            >
               246
             </styled.span>
           </styled.div>
           <styled.div
             key="2"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-2"
+            >
               Fields
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-2"
+            >
               11
             </styled.span>
           </styled.div>
           <styled.div
             key="3"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-3"
+            >
               Filters
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-3"
+            >
               —
             </styled.span>
           </styled.div>
           <styled.div
             key="4"
           >
-            <styled.span>
+            <styled.span
+              id="metaItem-4"
+            >
               Views
             </styled.span>
-            <styled.span>
+            <styled.span
+              id="metaItemValue-4"
+            >
               —
             </styled.span>
           </styled.div>
@@ -448,9 +565,11 @@ exports[`DataSourceList: Component should render correctly 1`] = `
     right={false}
   >
     <BackArrowButton
+      id="backBtn"
       onClick={[Function]}
     />
     <PlusButton
+      id="createDataSourceBtn"
       onClick={[Function]}
     />
   </NavigationContainer>
@@ -481,9 +600,11 @@ exports[`DataSourceList: Component should render empty 1`] = `
     right={false}
   >
     <BackArrowButton
+      id="backBtn"
       onClick={[Function]}
     />
     <PlusButton
+      id="createDataSourceBtn"
       onClick={[Function]}
     />
   </NavigationContainer>

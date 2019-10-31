@@ -1,0 +1,14 @@
+export const DATA_SOURCES_PAGE_TITLE = 'Data Sources - SchemaCMS';
+export const HEADER_TITLE = 'Data Sources';
+export const HEADER_SUBTITLE = 'Overview';
+export const SOURCE_LABEL = 'Source';
+export const ITEMS_LABEL = 'Items';
+export const FIELDS_LABEL = 'Fields';
+export const FILTERS_LABEL = 'Filters';
+export const VIEWS_LABEL = 'Views';
+export const JOB_HISTORY_HEADER = 'Data Process History';
+export const JOB_SUCCESS_STATE = 'success';
+export const JOB_PENDING_STATE = 'pending';
+export const JOB_FAILED_STATE = 'failed';
+export const JOB_ID_LABEL = 'Job id:';
+export const JOB_UPDATED_AT_LABEL = 'Updated at';
