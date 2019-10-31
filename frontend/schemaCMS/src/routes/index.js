@@ -16,6 +16,7 @@ import { DataWranglingScript } from './dataWranglingScript';
 import { User } from './user';
 import { JobDetail } from './jobDetail';
 import { Preview as JobPreview } from './jobDetail/preview';
+import { Filter } from './filter';
 
 export const ROUTES = {
   HOME: '/',
@@ -28,6 +29,7 @@ export const ROUTES = {
   DATA_WRANGLING_SCRIPTS: '/script',
   USER: '/user',
   JOB_DETAIL: '/job',
+  FILTER: '/filter',
 };
 
 export default class RootContainer extends Component {
@@ -55,6 +57,8 @@ export default class RootContainer extends Component {
             <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId`} component={JobDetail} />
 
             <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId/preview`} component={JobPreview} />
+
+            <AuthRoute exact path={`${ROUTES.FILTER}/:datasourceId`} component={Filter} />
 
             <Route path={ROUTES.LOGOUT} component={Logout} />
 
