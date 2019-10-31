@@ -24,10 +24,10 @@ export default defineMessages({
   },
   nameDataSourceProjectNameUniqueError: {
     id: 'dataSource.view.source.nameDataSourceProjectNameUniqueError',
-    defaultMessage: 'DataSource with this name already exist in project.',
+    defaultMessage: 'A data source with this name already exists in the project',
   },
   fileMaxLengthError: {
     id: 'dataSource.view.source.fileMaxLengthError',
-    defaultMessage: "File Name shouldn't be longer than 100 characters.",
+    defaultMessage: "File Name shouldn't be longer than 100 characters",
   },
 });
