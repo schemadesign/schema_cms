@@ -581,12 +581,13 @@ class CIPipeline(core.Stack):
         self.pipeline.add_stage(
             stage_name="deploy_public_api",
             actions=[
+                aws_codepipeline_actions.ManualApprovalAction(action_name="approve_changes", run_order=1),
                 self.prepare_lambda_worker_changes(
                     scope=scope,
                     cdk_artifact=cdk_artifact,
                     build_actions=lambda_workers_build_actions,
                     admin_permissions=True,
-                    run_order=1,
+                    run_order=2,
                 ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_public_api_changes",
@@ -594,7 +595,7 @@ class CIPipeline(core.Stack):
                     change_set_name="publicAPIStagedChangeSet",
                     admin_permissions=True,
                     template_path=cdk_artifact.at_path("cdk.out/public-api.template.json"),
-                    run_order=1,
+                    run_order=2,
                     parameter_overrides={
                         **scope.public_api.function_code.assign(
                             bucket_name=public_api_lambda_build_output.s3_location.bucket_name,
@@ -610,7 +611,7 @@ class CIPipeline(core.Stack):
                     change_set_name="workersStagedChangeSet",
                     admin_permissions=True,
                     template_path=cdk_artifact.at_path("cdk.out/workers.template.json"),
-                    run_order=1,
+                    run_order=2,
                     parameter_overrides={
                         **scope.workers.success_function_code.assign(
                             bucket_name=workers_success_lambda_build_output.s3_location.bucket_name,
@@ -631,9 +632,8 @@ class CIPipeline(core.Stack):
                     change_set_name="APIStagedChangeSet",
                     admin_permissions=True,
                     template_path=cdk_artifact.at_path("cdk.out/api.template.json"),
-                    run_order=1,
+                    run_order=2,
                 ),
-                aws_codepipeline_actions.ManualApprovalAction(action_name="approve_changes", run_order=2),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_workers_changes",
                     stack_name=scope.workers.stack_name,
