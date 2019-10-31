@@ -33,13 +33,9 @@ export class Uploader extends PureComponent {
     const fileProp = filteredProps.name;
     const isFileError = !!errors[fileProp];
 
-    const fileNameProp = `${fileProp}Name`;
-    const isFielNameError = fileName && !!errors[fileNameProp];
-
     return (
       <Container>
         <FileUpload fileName={fileName} label={label} id={id} onChange={onChange} {...filteredProps} />
-        {this.renderError(isFielNameError, fileNameProp)}
         {this.renderError(isFileError, fileProp)}
       </Container>
     );

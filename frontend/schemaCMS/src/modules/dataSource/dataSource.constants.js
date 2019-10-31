@@ -6,7 +6,6 @@ export const FETCH_LIST_DELAY = 5 * 1000;
 export const DATA_SOURCE_NAME = 'name';
 export const DATA_SOURCE_FILE = 'file';
 export const DATA_SOURCE_TYPE = 'type';
-export const DATA_SOURCE_FILE_NAME = 'fileName';
 
 export const SOURCE_TYPE_FILE = 'file';
 export const SOURCE_TYPE_API = 'api';
@@ -28,12 +27,7 @@ export const DATA_SOURCE_SCHEMA = Yup.object().shape({
     .max(25, 'Data source Name should have maximum 25 characters')
     .required('Required'),
   [DATA_SOURCE_TYPE]: Yup.string().required('Required'),
-  [DATA_SOURCE_FILE]: Yup.mixed().test(
-    'fileSize',
-    'File Size is too large (max 300MB)',
-    (value = {}) => defaultTo(0, value.size) <= FILE_SIZE
-  ),
-  [DATA_SOURCE_FILE_NAME]: Yup.string()
-    .max(100, "File Name shouldn't be longer than 100 characters.")
-    .required('Required'),
+  [DATA_SOURCE_FILE]: Yup.mixed()
+    .test('fileSize', 'File Size is too large (max 300MB)', (value = {}) => defaultTo(0, value.size) <= FILE_SIZE)
+    .test('fileName', "File Name shouldn't be longer than 100 characters.", (fileName = '') => fileName.length > 100),
 });
