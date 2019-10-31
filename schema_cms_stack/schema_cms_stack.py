@@ -34,6 +34,8 @@ INSTALLATION_MODEL_APP_ONLY = "app_only"
 GITHUB_REPO_OWNER = "schemadesign"
 GITHUB_REPOSITORY = "schema_cms"
 
+BACKEND_URL = "https://{domain}/api/v1/"
+
 
 def get_function_base_name(fn):
     return fn.to_string().split("/")[-1]
@@ -315,6 +317,9 @@ class LambdaWorker(core.Stack):
                 "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
                 "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "BACKEND_URL": BACKEND_URL.format(
+                    domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+                ),
             },
             memory_size=memory_size,
             vpc=scope.base.vpc,
@@ -344,7 +349,9 @@ class PublicAPI(core.Stack):
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             environment={
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
-                "BACKEND_URL": scope.base.db.secret.secret_value.to_string(),
+                "BACKEND_URL": BACKEND_URL.format(
+                    domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+                ),
             },
             memory_size=512,
             timeout=core.Duration.seconds(30),

@@ -195,6 +195,18 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
 
             return response.Response(result, status=status.HTTP_200_OK)
 
+    @decorators.action(detail=True, url_path="update-meta", methods=["post"])
+    def update_meta(self, request, pk=None, **kwarg):
+        job = self.get_object()
+        try:
+            job.update_meta()
+        except Exception as e:
+            return response.Response(
+                f"Unable to generate meta - {e}", status=status.HTTP_422_UNPROCESSABLE_ENTITY
+            )
+
+        return response.Response(status=status.HTTP_201_CREATED)
+
 
 class DataSourceScriptDetailView(generics.RetrieveAPIView):
     queryset = models.WranglingScript.objects.none()
