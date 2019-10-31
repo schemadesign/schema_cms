@@ -34,6 +34,8 @@ INSTALLATION_MODEL_APP_ONLY = "app_only"
 GITHUB_REPO_OWNER = "schemadesign"
 GITHUB_REPOSITORY = "schema_cms"
 
+JOB_UPDATE_META_URL = "https://schema-test.appt5n.com/api/v1/jobs"
+
 
 class BaseResources(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
@@ -210,10 +212,7 @@ class API(core.Stack):
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
 
-        self.job_processing_dead_letter_sqs = aws_sqs.Queue(
-            self,
-            'job_processing_dead_letter_sqs',
-        )
+        self.job_processing_dead_letter_sqs = aws_sqs.Queue(self, 'job_processing_dead_letter_sqs',)
         self.job_processing_queues = [
             self._create_job_processing_queue(
                 scope=scope,
@@ -284,9 +283,8 @@ class API(core.Stack):
             name,
             visibility_timeout=core.Duration.seconds(60),
             dead_letter_queue=aws_sqs.DeadLetterQueue(
-                queue=dead_letter_queue,
-                max_receive_count=JOB_PROCESSING_MAX_RETRIES
-            )
+                queue=dead_letter_queue, max_receive_count=JOB_PROCESSING_MAX_RETRIES
+            ),
         )
 
 
@@ -311,15 +309,14 @@ class LambdaWorker(core.Stack):
                 "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
                 "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "BACKEND_URL": JOB_UPDATE_META_URL,
             },
             memory_size=memory_size,
             vpc=scope.base.vpc,
             timeout=core.Duration.seconds(60),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
-        lambda_fn.add_event_source(
-            aws_lambda_event_sources.SqsEventSource(queue, batch_size=1)
-        )
+        lambda_fn.add_event_source(aws_lambda_event_sources.SqsEventSource(queue, batch_size=1))
         scope.base.db.secret.grant_read(lambda_fn.role)
         scope.base.app_bucket.grant_read_write(lambda_fn.role)
         lambda_fn.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
@@ -549,8 +546,7 @@ class CIPipeline(core.Stack):
         )
 
         lambda_workers_build_actions = self.get_lambda_worker_build_actions(
-            scope=scope,
-            action_input=source_output
+            scope=scope, action_input=source_output
         )
 
         self.pipeline.add_stage(
@@ -586,9 +582,9 @@ class CIPipeline(core.Stack):
                             )
                         },
                         extra_inputs=[action.outputs[0]],
-                    ) for i, ((_, lambda_code), action) in enumerate(
-                        zip(scope.lambda_worker.functions, lambda_workers_build_actions),
-                        1
+                    )
+                    for i, ((_, lambda_code), action) in enumerate(
+                        zip(scope.lambda_worker.functions, lambda_workers_build_actions), 1
                     )
                 ],
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
@@ -737,7 +733,8 @@ class CIPipeline(core.Stack):
                 build_spec=aws_codebuild.BuildSpec.from_source_filename(
                     "backend/functions/buildspec-lambda-worker.yaml"
                 ),
-            ) for i in range(len(scope.lambda_worker.functions), 1)
+            )
+            for i in range(len(scope.lambda_worker.functions), 1)
         ]
 
         return [
@@ -746,5 +743,6 @@ class CIPipeline(core.Stack):
                 input=action_input,
                 project=project,
                 outputs=[aws_codepipeline.Artifact()],
-            ) for i, project in enumerate(build_lambda_worker_projects, 1)
+            )
+            for i, project in enumerate(build_lambda_worker_projects, 1)
         ]
