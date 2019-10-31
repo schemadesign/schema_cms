@@ -581,11 +581,6 @@ class CIPipeline(core.Stack):
         self.pipeline.add_stage(
             stage_name="deploy_public_api",
             actions=[
-                self.prepare_lambda_worker_changes(
-                    scope=scope,
-                    cdk_artifact=cdk_artifact,
-                    build_actions=lambda_workers_build_actions
-                ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_public_api_changes",
                     stack_name=scope.public_api.stack_name,
@@ -655,6 +650,13 @@ class CIPipeline(core.Stack):
                     stack_name=scope.api.stack_name,
                     change_set_name="APIStagedChangeSet",
                     run_order=4,
+                ),
+                self.prepare_lambda_worker_changes(
+                    scope=scope,
+                    cdk_artifact=cdk_artifact,
+                    build_actions=lambda_workers_build_actions,
+                    admin_permissions=True,
+                    run_order=5,
                 ),
             ],
         )
@@ -745,7 +747,7 @@ class CIPipeline(core.Stack):
             actions_with_outputs.append((action, output, function, code))
         return actions_with_outputs
 
-    def prepare_lambda_worker_changes(self, scope, cdk_artifact, build_actions):
+    def prepare_lambda_worker_changes(self, scope, cdk_artifact, build_actions, **change_set_kwargs):
         parameter_overrides = dict()
         extra_inputs = []
         for (_, output, _, code) in build_actions:
@@ -759,9 +761,8 @@ class CIPipeline(core.Stack):
             action_name=f"prepare_lambda_worker_changes",
             stack_name=scope.lambda_worker.stack_name,
             change_set_name=f"lambdaWorkerStagedChangeSet",
-            admin_permissions=True,
             template_path=cdk_artifact.at_path("cdk.out/lambda-worker.template.json"),
-            run_order=1,
             parameter_overrides=parameter_overrides,
             extra_inputs=extra_inputs,
+            **change_set_kwargs,
         )
