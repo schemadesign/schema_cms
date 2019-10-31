@@ -581,6 +581,13 @@ class CIPipeline(core.Stack):
         self.pipeline.add_stage(
             stage_name="deploy_public_api",
             actions=[
+                self.prepare_lambda_worker_changes(
+                    scope=scope,
+                    cdk_artifact=cdk_artifact,
+                    build_actions=lambda_workers_build_actions,
+                    admin_permissions=True,
+                    run_order=1,
+                ),
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_public_api_changes",
                     stack_name=scope.public_api.stack_name,
@@ -628,12 +635,6 @@ class CIPipeline(core.Stack):
                 ),
                 aws_codepipeline_actions.ManualApprovalAction(action_name="approve_changes", run_order=2),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
-                    action_name="execute_lambda_worker_changes",
-                    stack_name=scope.lambda_worker.stack_name,
-                    change_set_name="lambdaWorkerStagedChangeSet",
-                    run_order=3,
-                ),
-                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_workers_changes",
                     stack_name=scope.workers.stack_name,
                     change_set_name="workersStagedChangeSet",
@@ -651,11 +652,10 @@ class CIPipeline(core.Stack):
                     change_set_name="APIStagedChangeSet",
                     run_order=4,
                 ),
-                self.prepare_lambda_worker_changes(
-                    scope=scope,
-                    cdk_artifact=cdk_artifact,
-                    build_actions=lambda_workers_build_actions,
-                    admin_permissions=True,
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                    action_name="execute_lambda_worker_changes",
+                    stack_name=scope.lambda_worker.stack_name,
+                    change_set_name="lambdaWorkerStagedChangeSet",
                     run_order=5,
                 ),
             ],
