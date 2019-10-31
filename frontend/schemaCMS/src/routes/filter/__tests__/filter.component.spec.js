@@ -4,7 +4,11 @@ import { shallow } from 'enzyme';
 import { Filter } from '../filter.component';
 
 describe('Filter: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    match: {
+      path: 'some/path',
+    },
+  };
 
   const component = props => <Filter {...defaultProps} {...props} />;
 

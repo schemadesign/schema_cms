@@ -3,6 +3,14 @@ import { storiesOf } from '@storybook/react';
 
 import { List } from './list.component';
 
-const defaultProps = {};
+export const defaultProps = {
+  fetchFields: Function.prototype,
+  fields: {},
+  match: {
+    params: {
+      dataSourceId: '1',
+    },
+  },
+};
 
 storiesOf('List', module).add('Default', () => <List {...defaultProps} />);

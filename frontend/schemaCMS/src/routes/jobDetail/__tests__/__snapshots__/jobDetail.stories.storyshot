@@ -334,7 +334,7 @@ Array [
     </div>
   </div>,
   <form
-    className="sc-kjoXOD hpTAeq"
+    className="sc-cJSrbW dLwzxs"
     onSubmit={[Function]}
   >
     <div
@@ -445,7 +445,7 @@ Array [
     </div>
   </form>,
   <label
-    className="sc-ksYbfQ dQtAOP"
+    className="sc-hqyNC fTVxsD"
     style={
       Object {
         "border": "none",
@@ -464,13 +464,13 @@ Array [
     </span>
   </label>,
   <ul
-    className="sc-hmzhuo fVUUuI"
+    className="sc-jbKcbu gqEyar"
   />,
   <div
-    className="sc-cHGsZl eAbGBZ"
+    className="sc-ksYbfQ hyhDpg"
   >
     <a
-      className="sc-kgAjT eoMOS"
+      className="sc-frDJqD dqqGQQ"
       href="/job/1/preview"
       onClick={[Function]}
     >
@@ -479,7 +479,7 @@ Array [
       </span>
     </a>
     <a
-      className="sc-TOsTZ cqCQms"
+      className="sc-hmzhuo ejmLlc"
       download={true}
       href="http://result"
     >
@@ -488,7 +488,7 @@ Array [
       </span>
     </a>
     <a
-      className="sc-TOsTZ cqCQms"
+      className="sc-hmzhuo ejmLlc"
       download={true}
       href="http://sourceFileUrl"
     >

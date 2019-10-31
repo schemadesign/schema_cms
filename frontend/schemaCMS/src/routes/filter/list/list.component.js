@@ -13,6 +13,11 @@ export class List extends PureComponent {
   static propTypes = {
     fetchFields: PropTypes.func.isRequired,
     fields: PropTypes.object.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        dataSourceId: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
   };
 
   async componentDidMount() {
