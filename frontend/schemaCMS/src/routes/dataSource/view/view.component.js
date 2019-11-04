@@ -9,6 +9,7 @@ import messages from './view.messages';
 import { Source } from './source';
 import { DataPreview } from '../../../shared/components/dataPreview';
 import { DataWranglingScripts } from './dataWranglingScripts';
+import { Filters } from './filters';
 import { DataWranglingResult } from '../../dataWranglingResult';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -17,6 +18,7 @@ import {
   DATA_WRANGLING_RESULT_STEP,
   FIELDS_STEP,
   INITIAL_STEP,
+  FILTERS_STEP,
 } from '../../../modules/dataSource/dataSource.constants';
 import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 
@@ -64,6 +66,7 @@ export class View extends PureComponent {
     [equals(FIELDS_STEP), always(this.props.intl.formatMessage(messages.fields))],
     [equals(DATA_WRANGLING_STEP), always(this.props.intl.formatMessage(messages.dataWrangling))],
     [equals(DATA_WRANGLING_RESULT_STEP), always(this.props.intl.formatMessage(messages.dataWranglingResult))],
+    [equals(FILTERS_STEP), always(this.props.intl.formatMessage(messages.filters))],
     [T, always(null)],
   ]);
 
@@ -108,8 +111,7 @@ export class View extends PureComponent {
       [equals(FIELDS_STEP), always(<DataPreview {...props} />)],
       [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts {...props} />)],
       [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],
-      [equals(5), always(null)],
-      [equals(6), always(null)],
+      [equals(FILTERS_STEP), always(<Filters {...props} />)],
       [T, always(null)],
     ])(activeStep);
 
