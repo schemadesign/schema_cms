@@ -31,6 +31,17 @@ def map_dataframe_dtypes(dtype):
         return dtype
 
 
+def map_general_dtypes(dtype):
+    if dtype.startswith("float") or dtype.startswith("int"):
+        return constants.FieldType.NUMBER
+    elif dtype.startswith("str"):
+        return constants.FieldType.STRING
+    elif dtype.startswith("bool"):
+        return constants.FieldType.BOOLEAN
+    else:
+        return constants.FieldType.DATE
+
+
 def get_preview_data(file):
 
     if hasattr(file, "temporary_file_path"):

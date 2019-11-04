@@ -73,3 +73,11 @@ class JobStepFactory(factory.django.DjangoModelFactory):
 
     datasource_job = factory.SubFactory(JobFactory)
     script = factory.SubFactory(ScriptFactory)
+
+
+class FilterFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.Filter"
+
+    datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
+    name = factory.Faker("text", max_nb_chars=255)

@@ -170,15 +170,19 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         return response.Response(data=serializer.data)
 
     @decorators.action(detail=True, url_path="fields-info", methods=["get"])
-    def fileds_info(self, request, pk=None, **kwargs):
+    def fields_info(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-        preview = data_source.get_last_success_job().meta_data.preview
+
+        try:
+            preview = data_source.get_last_success_job().meta_data.preview
+        except Exception as e:
+            return response.Response(f"No successful job found - {e}", status=status.HTTP_404_NOT_FOUND)
+
         fields_info = dict(fields_info=json.loads(preview.read())["fields"])
 
-        data = dict(names=[])
+        data = dict()
         for key, value in fields_info["fields_info"].items():
-            data["names"].append(key)
-            data[key] = dict(type=value["dtype"], unique=value["unique"])
+            data[key] = dict(type=models.map_general_dtypes(value["dtype"]), unique=value["unique"])
 
         return response.Response(data=data)
 
@@ -198,6 +202,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             if not request.data.get("datasource"):
                 filter_ = request.data.copy()
                 filter_["datasource"] = data_source
+
             serializer = self.get_serializer(data=filter_, context=data_source)
             serializer.is_valid(raise_exception=True)
             serializer.save()
@@ -252,3 +257,12 @@ class DataSourceScriptDetailView(generics.RetrieveAPIView):
 
     def get_queryset(self):
         return models.WranglingScript.objects.all().select_related("datasource", "created_by")
+
+
+class FilterDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
+    queryset = models.Filter.objects.none()
+    serializer_class = serializers.FilterSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        return models.Filter.objects.all().select_related("datasource")

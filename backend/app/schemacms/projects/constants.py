@@ -61,15 +61,15 @@ FILTER_TYPE_CHOICES = (
 
 
 class FieldType:
-    TEXT = "text"
+    STRING = "string"
     DATE = "date"
     BOOLEAN = "boolean"
     NUMBER = "number"
 
 
 FIELD_TYPE_CHOICES = (
-    (FieldType.TEXT, 'Text'),
+    (FieldType.STRING, 'String'),
     (FieldType.DATE, 'Date'),
     (FieldType.BOOLEAN, 'Boolean'),
-    (FieldType.NUMBER, 'Bumber'),
+    (FieldType.NUMBER, 'Number'),
 )
