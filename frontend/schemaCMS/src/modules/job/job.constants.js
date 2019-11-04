@@ -5,7 +5,7 @@ export const JOB_DETAIL_FORM = 'job_detail_form';
 export const JOB_STATE_PENDING = 'pending';
 export const JOB_STATE_PROCESSING = 'processing';
 export const JOB_STATE_SUCCESS = 'success';
-export const JOB_STATE_FAILURE = 'failure';
+export const JOB_STATE_FAILURE = 'failed';
 
 export const JOB_ID = 'pk';
 export const DATASOURCE_ID = 'datasource';

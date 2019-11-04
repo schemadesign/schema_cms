@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import { always, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
-import { Form, Download, LinkWrapper, PreviewLink, StepsWrapper, Step, StepsTitle } from './jobDetail.styles';
+import { Download, Form, LinkWrapper, PreviewLink, Step, StepsTitle, StepsWrapper } from './jobDetail.styles';
 import browserHistory from '../../shared/utils/history';
-import { renderWhenTrue } from '../../shared/utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 
 import messages from './jobDetail.messages';
 import { DESCRIPTION, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { TopHeader } from '../../shared/components/topHeader';
+import { Loader } from '../../shared/components/loader';
 
 export class JobDetail extends PureComponent {
   static propTypes = {
@@ -31,10 +32,15 @@ export class JobDetail extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
+  state = {
+    loading: true,
+  };
+
   async componentDidMount() {
     try {
       const payload = path(['match', 'params'], this.props);
       await this.props.fetchOne(payload);
+      this.setState({ loading: false });
     } catch (e) {
       browserHistory.push('/');
     }
@@ -65,7 +71,7 @@ export class JobDetail extends PureComponent {
   );
 
   renderForm = job =>
-    renderWhenTrue(() => (
+    renderWhenTrueOtherwise(always(<Loader />), () => (
       <Fragment>
         <TextInput
           label={<FormattedMessage {...messages[JOB_ID]} />}
@@ -76,7 +82,7 @@ export class JobDetail extends PureComponent {
         />
         <TextInput
           label={<FormattedMessage {...messages[JOB_STATE]} />}
-          value={this.props.intl.formatMessage(messages[job.jobState])}
+          value={messages[job.jobState] ? this.props.intl.formatMessage(messages[job.jobState]) : ''}
           name={JOB_STATE}
           fullWidth
           disabled
@@ -104,7 +110,7 @@ export class JobDetail extends PureComponent {
           </Download>
         </LinkWrapper>
       </Fragment>
-    ))(!!job.id);
+    ))(this.state.loading);
 
   renderSaveButton = renderWhenTrue(() => (
     <NextButton onClick={this.props.handleSubmit} disabled={!this.props.dirty || !this.props.isValid}>
