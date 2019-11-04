@@ -14,29 +14,14 @@ const { CheckboxGroup, Checkbox } = Form;
 
 export class Filters extends PureComponent {
   static propTypes = {
-    filters: PropTypes.array,
-    fetchFilters: PropTypes.func,
-    setActiveFilters: PropTypes.func,
+    filters: PropTypes.array.isRequired,
+    fetchFilters: PropTypes.func.isRequired,
+    setFilters: PropTypes.func.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
-  };
-
-  static defaultProps = {
-    filters: [
-      {
-        id: 1,
-        name: 'name',
-        isActive: false,
-      },
-      {
-        id: 2,
-        name: 'name',
-        isActive: true,
-      },
-    ],
   };
 
   async componentDidMount() {
@@ -53,7 +38,7 @@ export class Filters extends PureComponent {
   };
 
   handleSubmit = filters => {
-    this.props.setActiveFilters({ filters });
+    this.props.setFilters({ filters });
   };
 
   renderCheckboxes = ({ id, name }, index) => (

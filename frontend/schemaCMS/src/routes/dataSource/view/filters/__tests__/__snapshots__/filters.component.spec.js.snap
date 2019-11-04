@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filters: Component should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <Styled(Component)>
+        <Component />
+      </Styled(Component)>
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="{length} {length, plural,one {Filter} other {Filters}}"
+        id="filters.filters"
+        values={
+          Object {
+            "length": 2,
+          }
+        }
+      />
+    </styled.div>
+  </styled.div>
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Array [
+        "2",
+      ]
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Component />
+  </Formik>
+</styled.div>
+`;

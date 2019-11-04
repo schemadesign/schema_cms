@@ -33,6 +33,9 @@ export class View extends PureComponent {
     isAnyJobProcessing: PropTypes.bool.isRequired,
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
+    fetchFilters: PropTypes.func.isRequired,
+    setFilters: PropTypes.func.isRequired,
+    filters: PropTypes.array.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,

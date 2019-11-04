@@ -15,11 +15,14 @@ import {
   selectIsAnyJobProcessing,
 } from '../../../modules/dataSource';
 import { DataWranglingScriptsRoutines, selectDataWranglingScripts } from '../../../modules/dataWranglingScripts';
+import { selectFilters } from '../../../modules/filter';
+import { FilterRoutines } from '../../../modules/filter/filter.redux';
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
   dataWranglingScripts: selectDataWranglingScripts,
   fields: selectFields,
+  filters: selectFilters,
   previewTable: selectPreviewTable,
   isAnyJobProcessing: selectIsAnyJobProcessing,
 });
@@ -36,6 +39,8 @@ export const mapDispatchToProps = dispatch => ({
       sendUpdatedDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.sendList),
       fetchFields: promisifyRoutine(DataSourceRoutines.fetchFields),
       unmountFields: promisifyRoutine(DataSourceRoutines.unmountFields),
+      fetchFilters: promisifyRoutine(FilterRoutines.fetchList),
+      setFilters: promisifyRoutine(FilterRoutines.setFilters),
     },
     dispatch
   ),
