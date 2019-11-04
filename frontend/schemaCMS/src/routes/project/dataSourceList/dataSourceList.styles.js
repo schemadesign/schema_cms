@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Theme } from 'schemaUI';
+import { Theme, Typography } from 'schemaUI';
 import { Link } from 'react-router-dom';
 import { always, cond, equals } from 'ramda';
 import { styleWhenTrue } from '../../../shared/utils/rendering';
@@ -27,15 +27,15 @@ export const DataSourceListWrapper = styled.div`
   margin-top: 24px;
 `;
 
-export const titleStyles = {
-  cursor: 'pointer',
-  marginBottom: '20px',
-};
+export const DataSourceTitle = styled(Typography.H1)`
+  cursor: pointer;
+`;
 
 export const MetaDataWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 27px;
 `;
 
 export const MetaData = styled.div`

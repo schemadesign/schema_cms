@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Card, Icons, Typography } from 'schemaUI';
+import { Card, Icons } from 'schemaUI';
 import { always, cond, propEq, propIs, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
@@ -10,6 +10,7 @@ import {
   Container,
   DataSourceItem,
   DataSourceListWrapper,
+  DataSourceTitle,
   Header,
   HeaderIcon,
   iconSourceStyles,
@@ -24,7 +25,6 @@ import {
   MetaDataName,
   MetaDataValue,
   MetaDataWrapper,
-  titleStyles,
 } from './dataSourceList.styles';
 import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -37,7 +37,6 @@ import {
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
-const { H1 } = Typography;
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
 
@@ -170,9 +169,9 @@ export class DataSourceList extends PureComponent {
     return (
       <DataSourceItem key={index}>
         <Card headerComponent={header}>
-          <H1 id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
+          <DataSourceTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
             {name}
-          </H1>
+          </DataSourceTitle>
           {this.renderMetaData(metaData || {})}
           {this.renderJobs(jobs)(!!jobs.length)}
         </Card>
