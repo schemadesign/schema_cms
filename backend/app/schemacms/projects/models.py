@@ -32,13 +32,16 @@ def map_dataframe_dtypes(dtype):
 
 
 def get_preview_data(file):
-
     if hasattr(file, "temporary_file_path"):
         data_frame = dt.fread(file.read(), na_strings=["", ''], fill=True)
     else:
         data_frame = dt.fread(file, na_strings=["", ''], fill=True)
 
     items, fields = data_frame.shape
+
+    if items == 0:
+        return json.dumps({"data": [], "fields": {}}, indent=4).encode(), items, fields
+
     sample_of_5 = data_frame.head(5).to_pandas()
 
     table_preview = json.loads(sample_of_5.to_json(orient="records"))
