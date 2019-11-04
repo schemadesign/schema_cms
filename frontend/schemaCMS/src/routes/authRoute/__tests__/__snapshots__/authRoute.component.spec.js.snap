@@ -26,6 +26,7 @@ exports[`AuthRoute: Component should render <Route> if user is logged and all cr
 
 exports[`AuthRoute: Component should render a <Redirect /> to home page when user is authenticated, fetched and require anonymous 1`] = `
 <Redirect
+  push={false}
   to="/"
 />
 `;

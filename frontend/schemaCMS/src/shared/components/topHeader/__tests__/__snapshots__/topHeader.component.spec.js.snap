@@ -62,6 +62,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
         >
           <Link
             id={null}
+            replace={false}
             to="/path"
           >
             Data Sources
@@ -72,6 +73,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
         >
           <Link
             id={null}
+            replace={false}
             to="/path"
           >
             Charts
@@ -84,6 +86,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
         >
           <Link
             id={null}
+            replace={false}
             to="/logout"
           >
             Log Out
