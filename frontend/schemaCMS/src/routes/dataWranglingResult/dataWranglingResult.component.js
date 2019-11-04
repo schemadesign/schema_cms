@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always, path } from 'ramda';
+import { always, path, pipe, find, propEq } from 'ramda';
 
 import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { Loader } from '../../shared/components/loader';
@@ -10,6 +10,8 @@ import messages from './dataWranglingResult.messages';
 import { Container } from './dataWranglingResult.styles';
 import { StepNavigation } from '../../shared/components/stepNavigation';
 import { getTableData } from '../../shared/utils/helpers';
+import { JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
+import { DATA_WRANGLING_STEP } from '../../modules/dataSource/dataSource.constants';
 
 export class DataWranglingResult extends PureComponent {
   static propTypes = {
@@ -30,7 +32,17 @@ export class DataWranglingResult extends PureComponent {
   };
 
   async componentDidMount() {
-    const jobId = path(['dataSource', 'jobs', 0, 'id'], this.props);
+    const jobId = pipe(
+      path(['dataSource', 'jobs']),
+      find(propEq('jobState', JOB_STATE_SUCCESS)),
+      path(['id'])
+    )(this.props);
+
+    if (!jobId) {
+      const dataSourceId = path(['match', 'params', 'dataSourceId'], this.props);
+      this.props.history.push(`/datasource/${dataSourceId}/${DATA_WRANGLING_STEP}`);
+    }
+
     await this.props.fetchResult({ jobId });
     this.setState({ loading: false });
   }
