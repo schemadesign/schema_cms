@@ -1,9 +1,11 @@
 import json
 import logging
+import os
 import sys
 from io import StringIO
 
 import datatable as dt
+import requests
 
 from common import (
     db,
@@ -57,6 +59,8 @@ def process_job(job):
 
     result_file_name = f"{job.datasource.id}/outputs/job_{job.id}_result.csv"
     write_dataframe_to_csv_on_s3(df, result_file_name.lstrip("/"))
+    url = os.path.join(settings.BACKEND_URL, "jobs", str(job), "update-meta")
+    requests.post(url)
 
     job.result = result_file_name
     job.error = ""

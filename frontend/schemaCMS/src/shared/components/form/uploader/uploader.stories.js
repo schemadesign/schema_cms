@@ -10,11 +10,15 @@ export const defaultProps = {
   id: 'id',
   name: 'name',
   errors: {},
+  touched: {},
   onChange: Function.prototype,
 };
 
 export const withError = {
   ...defaultProps,
+  touched: {
+    [defaultProps.name]: true,
+  },
   errors: {
     [defaultProps.name]: 'error',
   },

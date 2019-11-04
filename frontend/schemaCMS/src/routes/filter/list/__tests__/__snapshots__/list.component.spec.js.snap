@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List: Component should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <FormattedMessage
+      defaultMessage="No fields found."
+      id="filter.list.noFields"
+      values={Object {}}
+    />
+  </styled.div>
+</styled.div>
+`;

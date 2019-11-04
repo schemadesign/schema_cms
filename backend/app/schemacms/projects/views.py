@@ -146,8 +146,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         serializer.is_valid(raise_exception=True)
         with transaction.atomic():
             job = serializer.save()
-            transaction.on_commit(lambda: services.schedule_worker_with(job))
-        return response.Response(status=status.HTTP_201_CREATED)
+            transaction.on_commit(lambda: services.schedule_worker_with(job, datasource.file.size))
+        return response.Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
     @decorators.action(detail=True, url_path="jobs-history", methods=["get"])
     def jobs_history(self, request, pk=None, **kwargs):
@@ -231,6 +231,18 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
                 return response.Response(status=status.HTTP_404_NOT_FOUND)
 
             return response.Response(result, status=status.HTTP_200_OK)
+
+    @decorators.action(detail=True, url_path="update-meta", methods=["post"])
+    def update_meta(self, request, pk=None, **kwarg):
+        job = self.get_object()
+        try:
+            job.update_meta()
+        except Exception as e:
+            return response.Response(
+                f"Unable to generate meta - {e}", status=status.HTTP_422_UNPROCESSABLE_ENTITY
+            )
+
+        return response.Response(status=status.HTTP_201_CREATED)
 
 
 class DataSourceScriptDetailView(generics.RetrieveAPIView):

@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { TextInput } from './textInput.component';
 import { withTheme } from '../../../../../.storybook/decorators';
+import { TextInput } from './textInput.component';
 
 const defaultProps = {
   touched: {},
@@ -13,6 +13,16 @@ const defaultProps = {
   onChange: Function.prototype,
 };
 
+const withError = {
+  ...defaultProps,
+  touched: {
+    [defaultProps.name]: true,
+  },
+  errors: {
+    [defaultProps.name]: 'error',
+  },
+};
+
 const withEditIcon = {
   ...defaultProps,
   isEdit: true,
@@ -21,4 +31,5 @@ const withEditIcon = {
 storiesOf('Shared Components|Form/TextInput', module)
   .addDecorator(withTheme())
   .add('Default', () => <TextInput {...defaultProps} />)
+  .add('With error', () => <TextInput {...withError} />)
   .add('With edit icon', () => <TextInput {...withEditIcon} />);
