@@ -235,22 +235,11 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-hrWEMg dJVAHh"
+      className="sc-kAzzGY dJFTJ"
     >
-      <p
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": 200,
-            "lineHeight": "1.33em",
-            "margin": 0,
-          }
-        }
-      >
-        No Projects
-         
-      </p>
+      <span>
+        Loading...
+      </span>
     </div>
     <div
       className="sc-htoDjs iUYJOx"
@@ -537,214 +526,13 @@ exports[`Storyshots Project/List list 1`] = `
         </button>
       </div>
     </div>
-    <ul
-      className="sc-eXEjpC kyqRxT"
+    <div
+      className="sc-kAzzGY dJFTJ"
     >
-      <li
-        className="sc-ibxdXY bTXOTH"
-      >
-        <div
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "borderTop": "2px solid #FFF",
-              "color": "#FFF",
-              "display": "flex",
-              "flexDirection": "column",
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "padding": "12px 14px 14px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": undefined,
-                "fontSize": "12px",
-                "marginBottom": "14px",
-              }
-            }
-          >
-            <ul
-              className="sc-RefOD gAeWjK"
-            >
-              <li
-                className="sc-iQKALj cWgsSr"
-                id="headerItem-0"
-              >
-                3 months ago
-              </li>
-              <li
-                className="sc-iQKALj cWgsSr"
-                id="headerItem-1"
-              >
-                In Progress
-              </li>
-              <li
-                className="sc-iQKALj cWgsSr"
-                id="headerItem-2"
-              >
-                Sed sed risus a nibh Maecenas nec pulvinar ex
-              </li>
-            </ul>
-          </div>
-          <h1
-            id="projectName-0"
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-              }
-            }
-          >
-            Project Name
-          </h1>
-          <div
-            className="sc-bwCtUz dGnkYU"
-            onClick={[Function]}
-          >
-            <p
-              id="projectDescription-0"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "18px",
-                  "fontWeight": 200,
-                  "lineHeight": "1.33em",
-                  "margin": 0,
-                }
-              }
-            >
-              Description
-            </p>
-          </div>
-          <span
-            id="apiPath-0"
-            style={
-              Object {
-                "display": "block",
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "12px",
-                "overflow": "hidden",
-                "textOverflow": "ellipsis",
-                "whiteSpace": "nowrap",
-                "width": "100%",
-              }
-            }
-          >
-            schemacms/api/project_title
-          </span>
-        </div>
-      </li>
-      <li
-        className="sc-ibxdXY bTXOTH"
-      >
-        <div
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "borderTop": "2px solid #FFF",
-              "color": "#FFF",
-              "display": "flex",
-              "flexDirection": "column",
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "padding": "12px 14px 14px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": undefined,
-                "fontSize": "12px",
-                "marginBottom": "14px",
-              }
-            }
-          >
-            <ul
-              className="sc-RefOD gAeWjK"
-            >
-              <li
-                className="sc-iQKALj cWgsSr"
-                id="headerItem-0"
-              >
-                3 months ago
-              </li>
-              <li
-                className="sc-iQKALj cWgsSr"
-                id="headerItem-1"
-              >
-                Published
-              </li>
-              <li
-                className="sc-iQKALj cWgsSr"
-                id="headerItem-2"
-              >
-                Tadeusz Kosciuszko
-              </li>
-            </ul>
-          </div>
-          <h1
-            id="projectName-1"
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-              }
-            }
-          >
-            Honec sodales libero non fermentum aliquam
-          </h1>
-          <div
-            className="sc-bwCtUz dGnkYU"
-            onClick={[Function]}
-          >
-            <p
-              id="projectDescription-1"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "18px",
-                  "fontWeight": 200,
-                  "lineHeight": "1.33em",
-                  "margin": 0,
-                }
-              }
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
-            </p>
-          </div>
-          <span
-            id="apiPath-1"
-            style={
-              Object {
-                "display": "block",
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "12px",
-                "overflow": "hidden",
-                "textOverflow": "ellipsis",
-                "whiteSpace": "nowrap",
-                "width": "100%",
-              }
-            }
-          >
-            schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
-          </span>
-        </div>
-      </li>
-    </ul>
+      <span>
+        Loading...
+      </span>
+    </div>
     <div
       className="sc-htoDjs iUYJOx"
     >
