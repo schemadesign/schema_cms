@@ -389,7 +389,11 @@ Content-Type: application/json
         "name": "asdasdas",
         "type": "radio_button",
         "field": "asdasd",
-        "field_type": "text"
+        "field_type": "text",
+        "unique_items": 123123,
+        "is_active": true,
+        "created": "2019-11-04T13:28:56+0000",
+        "modified": "2019-11-04T13:28:56+0000"
     }
 ]
 ```
@@ -401,12 +405,14 @@ Content-Type: application/json
 
 Parameters:
 
-Name       | Type     | Description
------------|----------|----------------------------------------------
-name       | string   | Filter name.
-type       | enum     | Type of filter. [One of Filter types](#enums)
-field      | string   | Field name.
-filed_type | enum     | Type of filed. [One of Field types](#enums)
+Name         | Type     | Description
+-------------|----------|----------------------------------------------
+name         | string   | Filter name.
+type         | enum     | Type of filter. [One of Filter types](#enums)
+field        | string   | Field name.
+filed_type   | enum     | Type of filed. [One of Field types](#enums)
+unique_items | integer  | Number of unique value sin column.
+is_active    | bool     | Is filter active?
 
 
 *Note:*
@@ -428,7 +434,11 @@ Content-Type: application/json
         "name": "TestFilter",
         "type": "radio_button",
         "field": "Country Name",
-        "field_type": "text"
+        "field_type": "text",
+        "unique_items": 123123,
+        "is_active": true,
+        "created": "2019-11-04T13:28:56+0000",
+        "modified": "2019-11-04T13:28:56+0000"
     }
 ]
 ```

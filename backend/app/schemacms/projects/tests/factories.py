@@ -80,4 +80,4 @@ class FilterFactory(factory.django.DjangoModelFactory):
         model = "projects.Filter"
 
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
-    name = factory.Faker("text", max_nb_chars=255)
+    name = factory.Faker("text", max_nb_chars=25)

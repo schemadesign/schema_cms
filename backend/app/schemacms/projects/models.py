@@ -325,12 +325,14 @@ class DataSourceJobStep(models.Model):
 # Filters
 
 
-class Filter(models.Model):
+class Filter(ext_models.TimeStampedModel):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='filters')
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=25)
     type = models.CharField(max_length=25, choices=constants.FILTER_TYPE_CHOICES)
     field = models.CharField(max_length=25)
     field_type = models.CharField(max_length=25, choices=constants.FIELD_TYPE_CHOICES)
+    unique_items = models.IntegerField(null=True)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.id

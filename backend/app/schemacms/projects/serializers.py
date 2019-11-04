@@ -318,7 +318,18 @@ class FilterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Filter
-        fields = ("id", "datasource", "name", "type", "field", "field_type")
+        fields = (
+            "id",
+            "datasource",
+            "name",
+            "type",
+            "field",
+            "field_type",
+            "unique_items",
+            "is_active",
+            "created",
+            "modified",
+        )
 
     def create(self, validated_data):
         datasource = self.initial_data["datasource"]
