@@ -67,6 +67,6 @@ export default defineMessages({
   },
   titleProjectTitleUniqueError: {
     id: 'project.create.titleProjectTitleUniqueError',
-    defaultMessage: 'Project with this title already exist.',
+    defaultMessage: 'Project with this title already exists.',
   },
 });
