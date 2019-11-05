@@ -29,7 +29,7 @@ Content-Type: application/json
       "project": 285,
       "type": "file",
       "file": "http://localhost:8000/static/file.csv",
-      "active_job",
+      "active_job": 2,
       "meta_data": {
         "items": 2419,
         "fields": 3,
@@ -48,7 +48,7 @@ Content-Type: application/json
       "project": 285,
       "type": "file",
       "file": "http://localhost:8000/static/file.csv",
-      "active_job",
+      "active_job": 3,
       "meta_data": {
         "items": 3179,
         "fields": 9,
@@ -94,7 +94,7 @@ Content-Type: application/json
       "project": 285,
       "type": "file",
       "file": "http://localhost:8000/static/file.csv",
-      "active_job",
+      "active_job": 2,
       "meta_data": {
         "items": 2419,
         "fields": 3,
@@ -113,7 +113,7 @@ Content-Type: application/json
       "project": 285,
       "type": "file",
       "file": "http://localhost:8000/static/file.csv",
-      "active_job",
+      "active_job": 3,
       "meta_data": {
         "items": 3179,
         "fields": 9,
