@@ -154,7 +154,11 @@ class DataSource(ext_models.TimeStampedModel):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
     )
     active_job = models.ForeignKey(
-        "projects.DataSourceJob", on_delete=models.SET_NULL, related_name="data_sources", null=True
+        "projects.DataSourceJob",
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="data_sources",
+        null=True,
     )
 
     objects = managers.DataSourceQuerySet.as_manager()
@@ -229,7 +233,7 @@ class DataSource(ext_models.TimeStampedModel):
 
     def set_active_job(self, job):
         self.active_job = job
-        self.save()
+        self.save(update_fields=["active_job"])
 
     def get_last_success_job(self):
         return self.jobs.filter(job_state=constants.DataSourceJobState.SUCCESS).latest("created")
