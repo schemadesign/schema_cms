@@ -45,10 +45,27 @@ function* fetchPreview({ payload: { jobId } }) {
   }
 }
 
+function* fetchJobList({ payload: { dataSourceId } }) {
+  try {
+    yield put(JobRoutines.fetchJobList.request());
+
+    const {
+      data: { results },
+    } = yield api.get(`/datasources/${dataSourceId}/jobs-history`);
+
+    yield put(JobRoutines.fetchJobList.success(results));
+  } catch (e) {
+    yield put(JobRoutines.fetchJobList.failure(e));
+  } finally {
+    yield put(JobRoutines.fetchJobList.fulfill());
+  }
+}
+
 export function* watchJob() {
   yield all([
     takeLatest(JobRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(JobRoutines.updateOne.TRIGGER, updateOne),
     takeLatest(JobRoutines.fetchPreview.TRIGGER, fetchPreview),
+    takeLatest(JobRoutines.fetchJobList.TRIGGER, fetchJobList),
   ]);
 }

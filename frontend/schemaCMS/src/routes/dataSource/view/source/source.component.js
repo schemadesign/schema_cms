@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { Button, Form, Icons } from 'schemaUI';
-import { always, cond, equals, omit, pathOr, T } from 'ramda';
+import { always, cond, equals, omit, pathOr, T, path } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Formik } from 'formik';
@@ -13,6 +13,7 @@ import {
   customRadioButtonStyles,
   customRadioGroupStyles,
   WarningWrapper,
+  Span,
 } from './source.styles';
 import messages from './source.messages';
 import { TextInput } from '../../../../shared/components/form/inputs/textInput';
@@ -30,6 +31,7 @@ import { StepNavigation } from '../../../../shared/components/stepNavigation';
 import { Uploader } from '../../../../shared/components/form/uploader';
 import { errorMessageParser } from '../../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
+import browserHistory from '../../../../shared/utils/history';
 
 const { RadioGroup, RadioButton, Label } = Form;
 const { CsvIcon } = Icons;
@@ -77,6 +79,9 @@ export class SourceComponent extends PureComponent {
       this.setState({ loading: false });
     }
   };
+
+  handlePastVersionsClick = () =>
+    browserHistory.push(`/datasource/${path(['match', 'params', 'dataSourceId'], this.props)}/job`);
 
   renderProcessingMessage = renderWhenTrue(
     always(
@@ -178,6 +183,9 @@ export class SourceComponent extends PureComponent {
                   {this.renderRadioButton(type)}
                 </RadioGroup>
                 {this.renderSourceUpload({ type, fileName, ...rest })}
+                <Span onClick={this.handlePastVersionsClick}>
+                  <FormattedMessage {...messages.pastVersions} />
+                </Span>
                 <StepNavigation
                   loading={loading}
                   disabled={disabled}

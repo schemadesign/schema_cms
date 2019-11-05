@@ -9,6 +9,7 @@ import { UploadIcon } from './uploadIcon';
 import { IntersectIcon } from './intersectIcon';
 import { CheckboxOffIcon } from './checkboxOffIcon';
 import { CheckboxOnIcon } from './checkboxOnIcon';
+import { EyeIcon } from './eyeIcon';
 
 const Icons = {
   ArrowLeftIcon,
@@ -22,6 +23,7 @@ const Icons = {
   IntersectIcon,
   CheckboxOnIcon,
   CheckboxOffIcon,
+  EyeIcon,
 };
 
 export {
@@ -36,5 +38,6 @@ export {
   IntersectIcon,
   CheckboxOnIcon,
   CheckboxOffIcon,
+  EyeIcon,
 };
 export default Icons;

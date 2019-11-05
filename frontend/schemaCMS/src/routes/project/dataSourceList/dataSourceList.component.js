@@ -174,7 +174,6 @@ export class DataSourceList extends PureComponent {
             {name}
           </H1>
           {this.renderMetaData(metaData || {})}
-          {this.renderJobs(jobs)(!!jobs.length)}
         </Card>
       </DataSourceItem>
     );
