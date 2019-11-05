@@ -308,3 +308,33 @@ class PublicApiJobSerializer(serializers.ModelSerializer):
 
     def get_items(self, obj):
         return obj.meta_data.items
+
+
+# Filters
+
+
+class FilterSerializer(serializers.ModelSerializer):
+    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
+
+    class Meta:
+        model = models.Filter
+        fields = (
+            "id",
+            "datasource",
+            "name",
+            "type",
+            "field",
+            "field_type",
+            "unique_items",
+            "is_active",
+            "created",
+            "modified",
+        )
+
+    def create(self, validated_data):
+        datasource = self.initial_data["datasource"]
+
+        filter_ = models.Filter(datasource=datasource, **validated_data)
+        filter_.save()
+
+        return filter_

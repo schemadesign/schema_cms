@@ -45,3 +45,31 @@ DATA_SOURCE_JOB_STATE_CHOICES = (
 )
 
 SCRIPT_NAME_MAX_LENGTH = 30
+
+
+class FilterType:
+    RADIO_BUTTON = "radio_button"
+    CHECKBOX = "checkbox"
+    CALENDAR = "calendar"
+
+
+FILTER_TYPE_CHOICES = (
+    (FilterType.RADIO_BUTTON, 'Radio Button'),
+    (FilterType.CHECKBOX, 'Checkbox'),
+    (FilterType.CALENDAR, 'Calendar'),
+)
+
+
+class FieldType:
+    STRING = "string"
+    DATE = "date"
+    BOOLEAN = "boolean"
+    NUMBER = "number"
+
+
+FIELD_TYPE_CHOICES = (
+    (FieldType.STRING, 'String'),
+    (FieldType.DATE, 'Date'),
+    (FieldType.BOOLEAN, 'Boolean'),
+    (FieldType.NUMBER, 'Number'),
+)

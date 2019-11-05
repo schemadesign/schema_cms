@@ -31,6 +31,19 @@ def map_dataframe_dtypes(dtype):
         return dtype
 
 
+def map_general_dtypes(dtype):
+    if dtype.startswith("float") or dtype.startswith("int"):
+        return constants.FieldType.NUMBER
+    elif dtype.startswith("str"):
+        return constants.FieldType.STRING
+    elif dtype.startswith("bool"):
+        return constants.FieldType.BOOLEAN
+    elif dtype.startswith("date") or dtype.startswith("time"):
+        return constants.FieldType.DATE
+    else:
+        return dtype
+
+
 def get_preview_data(file):
     if hasattr(file, "temporary_file_path"):
         data_frame = dt.fread(file.read(), na_strings=["", ''], fill=True)
@@ -312,3 +325,26 @@ class DataSourceJobStep(models.Model):
     script = models.ForeignKey(WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True)
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
+
+
+# Filters
+
+
+class Filter(ext_models.TimeStampedModel):
+    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='filters')
+    name = models.CharField(max_length=25)
+    type = models.CharField(max_length=25, choices=constants.FILTER_TYPE_CHOICES)
+    field = models.CharField(max_length=25)
+    field_type = models.CharField(max_length=25, choices=constants.FIELD_TYPE_CHOICES)
+    unique_items = models.IntegerField(null=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.id
+
+    class Meta:
+        unique_together = ("name", "datasource")
+
+    def get_fields_info(self):
+        last_job = self.datasource.get_last_success_job()
+        return json.loads(last_job.meta_data.preview.read())
