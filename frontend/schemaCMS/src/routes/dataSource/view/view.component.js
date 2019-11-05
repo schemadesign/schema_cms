@@ -26,8 +26,6 @@ export class View extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
     dataWranglingScripts: PropTypes.array.isRequired,
-    fetchDataSource: PropTypes.func.isRequired,
-    unmountDataSource: PropTypes.func.isRequired,
     removeDataSource: PropTypes.func.isRequired,
     fetchDataWranglingScripts: PropTypes.func.isRequired,
     isAnyJobProcessing: PropTypes.bool.isRequired,
@@ -51,18 +49,6 @@ export class View extends PureComponent {
   state = {
     confirmationModalOpen: false,
   };
-
-  componentDidMount() {
-    if (!this.props.dataSource.id) {
-      const { dataSourceId } = this.props.match.params;
-
-      this.props.fetchDataSource({ dataSourceId });
-    }
-  }
-
-  componentWillUnmount() {
-    this.props.unmountDataSource();
-  }
 
   getHeaderSubtitle = cond([
     [equals(INITIAL_STEP), always(this.props.intl.formatMessage(messages.source))],

@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { View } from '../view.component';
+import { FilterForm } from '../filterForm.component';
 
-describe('View: Component', () => {
+describe('FilterForm: Component', () => {
   const defaultProps = {};
 
-  const component = props => <View {...defaultProps} {...props} />;
+  const component = props => <FilterForm {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

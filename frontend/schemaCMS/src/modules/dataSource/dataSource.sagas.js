@@ -133,6 +133,21 @@ function* fetchFields({ payload }) {
   }
 }
 
+function* fetchFieldsInfo({ payload }) {
+  try {
+    yield put(DataSourceRoutines.fetchOne.request());
+
+    const { dataSourceId } = payload;
+    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/fields-info`);
+
+    yield put(DataSourceRoutines.fetchFields.success(data));
+  } catch (error) {
+    yield put(DataSourceRoutines.fetchFields.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.fetchFields.fulfill());
+  }
+}
+
 function* revertToJob({ payload: { dataSourceId, jobId } }) {
   try {
     yield put(DataSourceRoutines.revertToJob.request());
@@ -156,6 +171,7 @@ export function* watchDataSource() {
     takeLatest(DataSourceRoutines.updateOne.TRIGGER, updateOne),
     takeLatest(DataSourceRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(DataSourceRoutines.fetchFields.TRIGGER, fetchFields),
+    takeLatest(DataSourceRoutines.fetchFieldsInfo.TRIGGER, fetchFieldsInfo),
     takeLatest(DataSourceRoutines.revertToJob.TRIGGER, revertToJob),
   ]);
 }

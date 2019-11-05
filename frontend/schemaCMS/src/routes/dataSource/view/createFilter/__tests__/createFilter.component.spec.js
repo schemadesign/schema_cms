@@ -1,16 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Filter } from '../filter.component';
+import { CreateFilter } from '../createFilter.component';
 
-describe('Filter: Component', () => {
-  const defaultProps = {
-    match: {
-      path: 'some/path',
-    },
-  };
+describe('CreateFilter: Component', () => {
+  const defaultProps = {};
 
-  const component = props => <Filter {...defaultProps} {...props} />;
+  const component = props => <CreateFilter {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
