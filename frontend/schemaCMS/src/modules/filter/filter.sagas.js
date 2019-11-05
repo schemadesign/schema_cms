@@ -19,15 +19,15 @@ function* fetchList({ payload: { dataSourceId } }) {
 
 function* setFilters({ payload: { dataSourceId, active, inactive } }) {
   try {
-    yield put(FilterRoutines.fetchList.request());
+    yield put(FilterRoutines.setFilters.request());
 
-    const { data } = yield api.patch(`datasources/${dataSourceId}/filters/set-filters`, { active, inactive });
+    const { data } = yield api.post(`datasources/${dataSourceId}/set-filters`, { active, inactive });
 
-    yield put(FilterRoutines.fetchList.success(data));
+    yield put(FilterRoutines.setFilters.success(data));
   } catch (e) {
-    yield put(FilterRoutines.fetchList.failure(e));
+    yield put(FilterRoutines.setFilters.failure(e));
   } finally {
-    yield put(FilterRoutines.fetchList.fulfill());
+    yield put(FilterRoutines.setFilters.fulfill());
   }
 }
 

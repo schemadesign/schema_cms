@@ -33,7 +33,7 @@ exports[`StepNavigation: Component should render correctly 1`] = `
         }
       }
       onStepChange={[Function]}
-      steps={6}
+      steps={5}
     />
   </styled.div>
 </NavigationContainer>
@@ -72,7 +72,7 @@ exports[`StepNavigation: Component should render with next step 1`] = `
         }
       }
       onStepChange={[Function]}
-      steps={6}
+      steps={5}
     />
   </styled.div>
 </NavigationContainer>
@@ -111,7 +111,7 @@ exports[`StepNavigation: Component should show loading 1`] = `
         }
       }
       onStepChange={[Function]}
-      steps={6}
+      steps={5}
     />
   </styled.div>
 </NavigationContainer>

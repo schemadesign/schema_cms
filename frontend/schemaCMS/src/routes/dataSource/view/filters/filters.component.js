@@ -8,6 +8,8 @@ import { always, append, equals, ifElse, path, reject } from 'ramda';
 import { ButtonContainer, Container, FilterCounter, Header, Link, PlusButton } from './filters.styles';
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
 import messages from './filters.messages';
+import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
+import { Loader } from '../../../../shared/components/loader';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
@@ -24,10 +26,19 @@ export class Filters extends PureComponent {
     }).isRequired,
   };
 
-  async componentDidMount() {
-    const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
+  state = {
+    loading: true,
+  };
 
-    await this.props.fetchFilters({ dataSourceId });
+  async componentDidMount() {
+    try {
+      const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
+
+      await this.props.fetchFilters({ dataSourceId });
+      this.setState({ loading: false });
+    } catch (e) {
+      this.setState({ loading: false });
+    }
   }
 
   handleChange = ({ e, setValues, values }) => {
@@ -37,22 +48,25 @@ export class Filters extends PureComponent {
     setValues(setFilters(checked));
   };
 
-  handleSubmit = filters => {
-    this.props.setFilters({ filters });
+  handleSubmit = active => {
+    const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
+    const inactive = this.props.filters.filter(({ id }) => !active.includes(id)).map(({ id }) => id);
+
+    this.props.setFilters({ dataSourceId, active, inactive });
   };
 
   renderCheckboxes = ({ id, name }, index) => (
     <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index} isEdit>
-      <Link to={`/script/${id}`}>{name}</Link>
+      <Link to={`/filter/${id}`}>{name}</Link>
     </Checkbox>
   );
 
-  render() {
+  renderContent = renderWhenTrueOtherwise(always(<Loader />), () => {
     const { filters } = this.props;
     const initialValues = filters.filter(({ isActive }) => isActive).map(({ id }) => id.toString());
 
     return (
-      <Container>
+      <Fragment>
         <Header>
           <ButtonContainer>
             <PlusButton>
@@ -84,7 +98,11 @@ export class Filters extends PureComponent {
             );
           }}
         </Formik>
-      </Container>
+      </Fragment>
     );
+  });
+
+  render() {
+    return <Container>{this.renderContent(this.state.loading)}</Container>;
   }
 }

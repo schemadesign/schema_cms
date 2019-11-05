@@ -24,7 +24,7 @@ exports[`Filters: Component should render correctly 1`] = `
     enableReinitialize={false}
     initialValues={
       Array [
-        "2",
+        "1",
       ]
     }
     isInitialValid={false}
@@ -34,5 +34,11 @@ exports[`Filters: Component should render correctly 1`] = `
   >
     <Component />
   </Formik>
+</styled.div>
+`;
+
+exports[`Filters: Component should render correctly with loader 1`] = `
+<styled.div>
+  <Loader />
 </styled.div>
 `;

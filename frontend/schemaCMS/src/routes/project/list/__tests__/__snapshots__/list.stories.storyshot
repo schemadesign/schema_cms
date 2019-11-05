@@ -10,10 +10,10 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-eXEjpC fuVqJC"
+    className="sc-eTuwsz jtSbhi"
   >
     <div
-      className="sc-iRbamj jXEQsc"
+      className="sc-hzDkRC khzxcx"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Project/List empty 1`] = `
       >
         <div>
           <div
-            className="sc-jlyJG bbyJzT"
+            className="sc-jhAzac hmXDXQ"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots Project/List empty 1`] = `
         }
       >
         <div
-          className="sc-gipzik iyhjGb"
+          className="sc-fBuWsC eeihxG"
         >
           <div
-            className="sc-jlyJG bbyJzT"
+            className="sc-jhAzac hmXDXQ"
           >
             <h2
               id="headerTitle"
@@ -160,16 +160,16 @@ exports[`Storyshots Project/List empty 1`] = `
           </div>
         </div>
         <div
-          className="sc-csuQGl cZqJAV"
+          className="sc-fMiknA dDuaDM"
         >
           <ul
-            className="sc-Rmtcm sc-bRBYWo cpfpDV"
+            className="sc-dVhcbM sc-eqIVtm dnkudp"
           />
           <ul
-            className="sc-Rmtcm sc-hzDkRC fZQkew"
+            className="sc-dVhcbM sc-fAjcbJ ggeeow"
           >
             <li
-              className="sc-jhAzac sc-fMiknA kWxuHF"
+              className="sc-caSCKo sc-kjoXOD bxzQyw"
             >
               <a
                 href="/user"
@@ -180,7 +180,7 @@ exports[`Storyshots Project/List empty 1`] = `
               </a>
             </li>
             <li
-              className="sc-jhAzac sc-fMiknA kWxuHF"
+              className="sc-caSCKo sc-kjoXOD bxzQyw"
             >
               <a
                 href="/logout"
@@ -235,7 +235,7 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-kAzzGY dJFTJ"
+      className="sc-jzJRlG egdPJh"
     >
       <span>
         Loading...
@@ -302,10 +302,10 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-eXEjpC fuVqJC"
+    className="sc-eTuwsz jtSbhi"
   >
     <div
-      className="sc-iRbamj jXEQsc"
+      className="sc-hzDkRC khzxcx"
     >
       <div
         style={
@@ -322,7 +322,7 @@ exports[`Storyshots Project/List list 1`] = `
       >
         <div>
           <div
-            className="sc-jlyJG bbyJzT"
+            className="sc-jhAzac hmXDXQ"
           >
             <h2
               id="headerTitle"
@@ -416,10 +416,10 @@ exports[`Storyshots Project/List list 1`] = `
         }
       >
         <div
-          className="sc-gipzik iyhjGb"
+          className="sc-fBuWsC eeihxG"
         >
           <div
-            className="sc-jlyJG bbyJzT"
+            className="sc-jhAzac hmXDXQ"
           >
             <h2
               id="headerTitle"
@@ -452,16 +452,16 @@ exports[`Storyshots Project/List list 1`] = `
           </div>
         </div>
         <div
-          className="sc-csuQGl cZqJAV"
+          className="sc-fMiknA dDuaDM"
         >
           <ul
-            className="sc-Rmtcm sc-bRBYWo cpfpDV"
+            className="sc-dVhcbM sc-eqIVtm dnkudp"
           />
           <ul
-            className="sc-Rmtcm sc-hzDkRC fZQkew"
+            className="sc-dVhcbM sc-fAjcbJ ggeeow"
           >
             <li
-              className="sc-jhAzac sc-fMiknA kWxuHF"
+              className="sc-caSCKo sc-kjoXOD bxzQyw"
             >
               <a
                 href="/user"
@@ -472,7 +472,7 @@ exports[`Storyshots Project/List list 1`] = `
               </a>
             </li>
             <li
-              className="sc-jhAzac sc-fMiknA kWxuHF"
+              className="sc-caSCKo sc-kjoXOD bxzQyw"
             >
               <a
                 href="/logout"
@@ -527,7 +527,7 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-kAzzGY dJFTJ"
+      className="sc-jzJRlG egdPJh"
     >
       <span>
         Loading...

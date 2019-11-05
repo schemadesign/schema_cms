@@ -1143,7 +1143,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                       }
                                     }
                                     onStepChange={[Function]}
-                                    steps={6}
+                                    steps={5}
                                   >
                                     <StepperComponent
                                       activeStep={1}
@@ -1155,7 +1155,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                       }
                                       handleStep={[Function]}
                                       onStepChange={[Function]}
-                                      steps={6}
+                                      steps={5}
                                     >
                                       <div
                                         style={
@@ -1229,21 +1229,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                         />
                                         <span
                                           key="4"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#1d1d20",
-                                              "borderRadius": "50%",
-                                              "cursor": "pointer",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                        <span
-                                          key="5"
                                           onClick={[Function]}
                                           style={
                                             Object {
@@ -2775,7 +2760,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                       }
                                     }
                                     onStepChange={[Function]}
-                                    steps={6}
+                                    steps={5}
                                   >
                                     <StepperComponent
                                       activeStep={1}
@@ -2788,7 +2773,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                       }
                                       handleStep={[Function]}
                                       onStepChange={[Function]}
-                                      steps={6}
+                                      steps={5}
                                     >
                                       <div
                                         style={
@@ -2863,21 +2848,6 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                         />
                                         <span
                                           key="4"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#1d1d20",
-                                              "borderRadius": "50%",
-                                              "cursor": "pointer",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                        <span
-                                          key="5"
                                           onClick={[Function]}
                                           style={
                                             Object {

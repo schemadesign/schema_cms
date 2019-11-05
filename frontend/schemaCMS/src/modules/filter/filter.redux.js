@@ -17,4 +17,5 @@ const setFilters = (state = INITIAL_STATE, { payload }) => state.set('filters', 
 
 export const reducer = createReducer(INITIAL_STATE, {
   [FilterRoutines.fetchList.success]: setFilters,
+  [FilterRoutines.setFilters.success]: setFilters,
 });
