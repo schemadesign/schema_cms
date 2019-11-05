@@ -255,6 +255,7 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
         job = self.get_object()
         try:
             job.update_meta()
+            job.datasource.set_active_job(job)
         except Exception as e:
             return response.Response(
                 f"Unable to generate meta - {e}", status=status.HTTP_422_UNPROCESSABLE_ENTITY
