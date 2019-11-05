@@ -2,6 +2,7 @@ import json
 import logging
 import os
 
+import boto3
 import datatable as dt
 
 import django.core.files.base
@@ -15,7 +16,6 @@ from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
 
 from schemacms.users import constants as users_constants
-from schemacms.utils import services
 from . import constants, managers, fsm
 
 
@@ -305,7 +305,8 @@ class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
         params = {'Bucket': settings.AWS_STORAGE_BUCKET_NAME, 'Key': self.source_file_path}
         if self.source_file_version:
             params['VersionId'] = self.source_file_version
-        return services.s3.generate_presigned_url(ClientMethod='get_object', Params=params)
+        s3 = boto3.client('s3')
+        return s3.generate_presigned_url(ClientMethod='get_object', Params=params)
 
     def relative_path_to_save(self, filename):
         base_path = self.result.storage.location
