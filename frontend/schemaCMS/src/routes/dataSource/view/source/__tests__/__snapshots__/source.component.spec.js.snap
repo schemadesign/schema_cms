@@ -176,8 +176,14 @@ exports[`SourceComponent: Component should render correctly 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "sc-bdVaJa",
               "isStatic": true,
-              "lastClassName": "bDWFJH",
-              "rules": Array [],
+              "lastClassName": "eYFGsU",
+              "rules": Array [
+                "
+  color: ",
+                "#ffffff",
+                ";
+",
+              ],
             },
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
@@ -192,7 +198,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         forwardedRef={null}
       >
         <div
-          className="sc-bdVaJa bDWFJH"
+          className="sc-bdVaJa eYFGsU"
         >
           <Formik
             enableReinitialize={true}
@@ -369,15 +375,15 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-htpNat",
+                        "componentId": "sc-bxivhb",
                         "isStatic": true,
-                        "lastClassName": "KtFsv",
+                        "lastClassName": "bUZGRr",
                         "rules": Array [],
                       },
                       "displayName": "styled.div",
                       "foldedComponentIds": Array [],
                       "render": [Function],
-                      "styledComponentId": "sc-htpNat",
+                      "styledComponentId": "sc-bxivhb",
                       "target": "div",
                       "toString": [Function],
                       "warnTooManyClasses": [Function],
@@ -387,7 +393,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="sc-htpNat KtFsv"
+                    className="sc-bxivhb bUZGRr"
                   >
                     <Component
                       error={false}
@@ -718,6 +724,66 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                 </Component>
               </div>
             </RadioGroup>
+            <Styled(Span)
+              onClick={[Function]}
+            >
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-htpNat",
+                      "isStatic": true,
+                      "lastClassName": "hJqzRO",
+                      "rules": Array [
+                        "
+  color: ",
+                        "#ffffff",
+                        ";
+",
+                      ],
+                    },
+                    "displayName": "Styled(Span)",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-htpNat",
+                    "target": [Function],
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                onClick={[Function]}
+              >
+                <Span
+                  className="sc-htpNat hJqzRO"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="sc-htpNat hJqzRO"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                        "fontSize": "14px",
+                      }
+                    }
+                  >
+                    <FormattedMessage
+                      defaultMessage="View Past Versions"
+                      id="dataSource.view.source.pastVersions"
+                      values={Object {}}
+                    >
+                      <span>
+                        View Past Versions
+                      </span>
+                    </FormattedMessage>
+                  </span>
+                </Span>
+              </StyledComponent>
+            </Styled(Span)>
             <StepNavigation
               dataSource={
                 Object {
@@ -898,9 +964,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "attrs": Array [],
                         "componentStyle": ComponentStyle {
-                          "componentId": "sc-bZQynM",
+                          "componentId": "sc-gzVnrw",
                           "isStatic": true,
-                          "lastClassName": "ceQpbG",
+                          "lastClassName": "bvWFXB",
                           "rules": Array [
                             "
   height: 155px;
@@ -910,7 +976,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                         "displayName": "styled.div",
                         "foldedComponentIds": Array [],
                         "render": [Function],
-                        "styledComponentId": "sc-bZQynM",
+                        "styledComponentId": "sc-gzVnrw",
                         "target": "div",
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
@@ -920,7 +986,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                     forwardedRef={null}
                   >
                     <div
-                      className="sc-bZQynM ceQpbG"
+                      className="sc-gzVnrw bvWFXB"
                     >
                       <styled.div
                         right={false}
@@ -931,9 +997,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                               "$$typeof": Symbol(react.forward_ref),
                               "attrs": Array [],
                               "componentStyle": ComponentStyle {
-                                "componentId": "sc-gzVnrw",
+                                "componentId": "sc-htoDjs",
                                 "isStatic": false,
-                                "lastClassName": "fqUTwt",
+                                "lastClassName": "kxXsOw",
                                 "rules": Array [
                                   "
   position: fixed;
@@ -959,7 +1025,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                               "displayName": "styled.div",
                               "foldedComponentIds": Array [],
                               "render": [Function],
-                              "styledComponentId": "sc-gzVnrw",
+                              "styledComponentId": "sc-htoDjs",
                               "target": "div",
                               "toString": [Function],
                               "warnTooManyClasses": [Function],
@@ -970,7 +1036,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                           right={false}
                         >
                           <div
-                            className="sc-gzVnrw fqUTwt"
+                            className="sc-htoDjs kxXsOw"
                           >
                             <BackButton
                               disabled={false}
@@ -1109,9 +1175,9 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
-                                      "componentId": "sc-EHOje",
+                                      "componentId": "sc-bZQynM",
                                       "isStatic": true,
-                                      "lastClassName": "bnfrhu",
+                                      "lastClassName": "jfrcON",
                                       "rules": Array [
                                         "
   display: flex;
@@ -1123,7 +1189,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                     "displayName": "styled.div",
                                     "foldedComponentIds": Array [],
                                     "render": [Function],
-                                    "styledComponentId": "sc-EHOje",
+                                    "styledComponentId": "sc-bZQynM",
                                     "target": "div",
                                     "toString": [Function],
                                     "warnTooManyClasses": [Function],
@@ -1133,7 +1199,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                 forwardedRef={null}
                               >
                                 <div
-                                  className="sc-EHOje bnfrhu"
+                                  className="sc-bZQynM jfrcON"
                                 >
                                   <Component
                                     activeStep={1}
@@ -1455,8 +1521,14 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "sc-bdVaJa",
               "isStatic": true,
-              "lastClassName": "bDWFJH",
-              "rules": Array [],
+              "lastClassName": "eYFGsU",
+              "rules": Array [
+                "
+  color: ",
+                "#ffffff",
+                ";
+",
+              ],
             },
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
@@ -1471,7 +1543,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         forwardedRef={null}
       >
         <div
-          className="sc-bdVaJa bDWFJH"
+          className="sc-bdVaJa eYFGsU"
         >
           <Formik
             enableReinitialize={true}
@@ -1656,15 +1728,15 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-htpNat",
+                        "componentId": "sc-bxivhb",
                         "isStatic": true,
-                        "lastClassName": "KtFsv",
+                        "lastClassName": "bUZGRr",
                         "rules": Array [],
                       },
                       "displayName": "styled.div",
                       "foldedComponentIds": Array [],
                       "render": [Function],
-                      "styledComponentId": "sc-htpNat",
+                      "styledComponentId": "sc-bxivhb",
                       "target": "div",
                       "toString": [Function],
                       "warnTooManyClasses": [Function],
@@ -1674,7 +1746,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="sc-htpNat KtFsv"
+                    className="sc-bxivhb bUZGRr"
                   >
                     <Component
                       error={false}
@@ -2052,15 +2124,15 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-htoDjs",
+                        "componentId": "sc-dnqmqq",
                         "isStatic": true,
-                        "lastClassName": "bZzhDu",
+                        "lastClassName": "bDsesi",
                         "rules": Array [],
                       },
                       "displayName": "styled.div",
                       "foldedComponentIds": Array [],
                       "render": [Function],
-                      "styledComponentId": "sc-htoDjs",
+                      "styledComponentId": "sc-dnqmqq",
                       "target": "div",
                       "toString": [Function],
                       "warnTooManyClasses": [Function],
@@ -2070,7 +2142,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="sc-htoDjs bZzhDu"
+                    className="sc-dnqmqq bDsesi"
                   >
                     <Component
                       accept=".csv,.tsv"
@@ -2349,6 +2421,66 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                 </StyledComponent>
               </styled.div>
             </Uploader>
+            <Styled(Span)
+              onClick={[Function]}
+            >
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-htpNat",
+                      "isStatic": true,
+                      "lastClassName": "hJqzRO",
+                      "rules": Array [
+                        "
+  color: ",
+                        "#ffffff",
+                        ";
+",
+                      ],
+                    },
+                    "displayName": "Styled(Span)",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-htpNat",
+                    "target": [Function],
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                onClick={[Function]}
+              >
+                <Span
+                  className="sc-htpNat hJqzRO"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="sc-htpNat hJqzRO"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                        "fontSize": "14px",
+                      }
+                    }
+                  >
+                    <FormattedMessage
+                      defaultMessage="View Past Versions"
+                      id="dataSource.view.source.pastVersions"
+                      values={Object {}}
+                    >
+                      <span>
+                        View Past Versions
+                      </span>
+                    </FormattedMessage>
+                  </span>
+                </Span>
+              </StyledComponent>
+            </Styled(Span)>
             <StepNavigation
               dataSource={
                 Object {
@@ -2529,9 +2661,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "attrs": Array [],
                         "componentStyle": ComponentStyle {
-                          "componentId": "sc-bZQynM",
+                          "componentId": "sc-gzVnrw",
                           "isStatic": true,
-                          "lastClassName": "ceQpbG",
+                          "lastClassName": "bvWFXB",
                           "rules": Array [
                             "
   height: 155px;
@@ -2541,7 +2673,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                         "displayName": "styled.div",
                         "foldedComponentIds": Array [],
                         "render": [Function],
-                        "styledComponentId": "sc-bZQynM",
+                        "styledComponentId": "sc-gzVnrw",
                         "target": "div",
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
@@ -2551,7 +2683,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                     forwardedRef={null}
                   >
                     <div
-                      className="sc-bZQynM ceQpbG"
+                      className="sc-gzVnrw bvWFXB"
                     >
                       <styled.div
                         right={false}
@@ -2562,9 +2694,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                               "$$typeof": Symbol(react.forward_ref),
                               "attrs": Array [],
                               "componentStyle": ComponentStyle {
-                                "componentId": "sc-gzVnrw",
+                                "componentId": "sc-htoDjs",
                                 "isStatic": false,
-                                "lastClassName": "fqUTwt",
+                                "lastClassName": "kxXsOw",
                                 "rules": Array [
                                   "
   position: fixed;
@@ -2590,7 +2722,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                               "displayName": "styled.div",
                               "foldedComponentIds": Array [],
                               "render": [Function],
-                              "styledComponentId": "sc-gzVnrw",
+                              "styledComponentId": "sc-htoDjs",
                               "target": "div",
                               "toString": [Function],
                               "warnTooManyClasses": [Function],
@@ -2601,7 +2733,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                           right={false}
                         >
                           <div
-                            className="sc-gzVnrw fqUTwt"
+                            className="sc-htoDjs kxXsOw"
                           >
                             <BackButton
                               disabled={false}
@@ -2740,9 +2872,9 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
-                                      "componentId": "sc-EHOje",
+                                      "componentId": "sc-bZQynM",
                                       "isStatic": true,
-                                      "lastClassName": "bnfrhu",
+                                      "lastClassName": "jfrcON",
                                       "rules": Array [
                                         "
   display: flex;
@@ -2754,7 +2886,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                     "displayName": "styled.div",
                                     "foldedComponentIds": Array [],
                                     "render": [Function],
-                                    "styledComponentId": "sc-EHOje",
+                                    "styledComponentId": "sc-bZQynM",
                                     "target": "div",
                                     "toString": [Function],
                                     "warnTooManyClasses": [Function],
@@ -2764,7 +2896,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                 forwardedRef={null}
                               >
                                 <div
-                                  className="sc-EHOje bnfrhu"
+                                  className="sc-bZQynM jfrcON"
                                 >
                                   <Component
                                     activeStep={1}

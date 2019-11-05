@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EyeIcon: Component should render correctly 1`] = `
+<eye.svg
+  style={
+    Object {
+      "height": "30px",
+      "stroke": "#FFF",
+      "width": "30px",
+    }
+  }
+/>
+`;
+
+exports[`EyeIcon: Component should render with custom styles 1`] = `
+<eye.svg
+  style={
+    Object {
+      "fill": "blue",
+      "height": "30px",
+      "stroke": "#FFF",
+      "width": "30px",
+    }
+  }
+/>
+`;

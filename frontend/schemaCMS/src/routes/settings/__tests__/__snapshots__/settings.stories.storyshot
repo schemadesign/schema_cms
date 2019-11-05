@@ -2,10 +2,10 @@
 
 exports[`Storyshots Settings Default 1`] = `
 <div
-  className="sc-exAgwC kvVgIg"
+  className="sc-cbkKFq bIUkjW"
 >
   <div
-    className="sc-iRbamj jXEQsc"
+    className="sc-jhAzac cqYdcH"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots Settings Default 1`] = `
     >
       <div>
         <div
-          className="sc-jlyJG bbyJzT"
+          className="sc-fBuWsC eeihxG"
         >
           <h2
             id="headerTitle"
@@ -120,10 +120,10 @@ exports[`Storyshots Settings Default 1`] = `
       }
     >
       <div
-        className="sc-gipzik iyhjGb"
+        className="sc-fMiknA bxZCMx"
       >
         <div
-          className="sc-jlyJG bbyJzT"
+          className="sc-fBuWsC eeihxG"
         >
           <h2
             id="headerTitle"
@@ -160,16 +160,16 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-csuQGl cZqJAV"
+        className="sc-dVhcbM eUEmRN"
       >
         <ul
-          className="sc-Rmtcm sc-bRBYWo cpfpDV"
+          className="sc-eqIVtm sc-fAjcbJ kwtAvC"
         />
         <ul
-          className="sc-Rmtcm sc-hzDkRC fZQkew"
+          className="sc-eqIVtm sc-caSCKo eLOffc"
         >
           <li
-            className="sc-jhAzac sc-fMiknA iuJeXm"
+            className="sc-gisBJw sc-cHGsZl frsNME"
           >
             <a
               href="/reset-password"
@@ -182,7 +182,7 @@ exports[`Storyshots Settings Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-jhAzac sc-fMiknA iuJeXm"
+            className="sc-gisBJw sc-cHGsZl frsNME"
           >
             <a
               href="/logout"
@@ -239,14 +239,14 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-iujRgT jeaRWG"
+    className="sc-lkqHmb fgSdED"
   >
     <form
-      className="sc-GMQeP jXMCGy"
+      className="sc-eLExRp lfgpeQ"
       onSubmit={[Function]}
     >
       <div
-        className="sc-gqjmRU hnZXkc"
+        className="sc-chPdSV byfFmt"
       >
         <div
           style={
@@ -306,7 +306,7 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gqjmRU hnZXkc"
+        className="sc-chPdSV byfFmt"
       >
         <div
           style={
@@ -366,7 +366,7 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gqjmRU hnZXkc"
+        className="sc-chPdSV byfFmt"
       >
         <div
           style={
@@ -427,10 +427,10 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-htoDjs iUYJOx"
+        className="sc-bZQynM ceQpbG"
       >
         <div
-          className="sc-dnqmqq drsqyC"
+          className="sc-gzVnrw jZsaFH"
         >
           <button
             disabled={true}

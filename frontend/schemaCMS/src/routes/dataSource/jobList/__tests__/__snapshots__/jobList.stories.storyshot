@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots JobList Default 1`] = `
+<div
+  className="sc-bdVaJa ixPHMV"
+>
+  <div
+    className="sc-bwzfXH cOTazc"
+  />
+  <div
+    className="sc-bZQynM ceQpbG"
+  >
+    <div
+      className="sc-gzVnrw fqUTwt"
+    >
+      <button
+        disabled={false}
+        id="cancelBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "marginRight": 5,
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "calc(50% - 5px)",
+          }
+        }
+      >
+        <span>
+          Cancel
+        </span>
+      </button>
+      <button
+        disabled={false}
+        id="revertBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#000",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "marginLeft": 5,
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "calc(50% - 5px)",
+          }
+        }
+      >
+        <span>
+          Revert
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

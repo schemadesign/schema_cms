@@ -10,10 +10,10 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
   }
 >
   <div
-    className="sc-iwsKbI jQhHGA"
+    className="sc-jzJRlG dlFiNo"
   >
     <div
-      className="sc-gqjmRU hnZXkc"
+      className="sc-chPdSV byfFmt"
     >
       <div
         style={
@@ -185,11 +185,25 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
         Spreadsheet
       </div>
     </div>
+    <span
+      className="sc-kAzzGY buWbQD"
+      onClick={[Function]}
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+        }
+      }
+    >
+      <span>
+        View Past Versions
+      </span>
+    </span>
     <div
-      className="sc-htoDjs iUYJOx"
+      className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-dnqmqq emCgxc"
+        className="sc-gzVnrw kYnfZG"
       >
         <button
           disabled={false}
@@ -244,7 +258,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
           </span>
         </button>
         <div
-          className="sc-gzVnrw bMUaYY"
+          className="sc-fjdhpX hhLAkE"
         >
           <div
             style={

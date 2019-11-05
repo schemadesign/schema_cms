@@ -2,9 +2,15 @@
 
 exports[`DataSource: Component should render correctly 1`] = `
 <Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="path/:dataSourceId/job"
+  />
   <Redirect
     exact={true}
     path="path/:dataSourceId"
+    push={false}
     to="path/:dataSourceId/1"
   />
   <Route

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JobList: Component should render correctly 1`] = `
+<styled.div>
+  <styled.div />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      id="cancelBtn"
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="jobList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      id="revertBtn"
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Revert"
+        id="jobList.revert"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</styled.div>
+`;

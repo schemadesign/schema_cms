@@ -3,7 +3,7 @@
 exports[`Storyshots JobDetail Default 1`] = `
 Array [
   <div
-    className="sc-iRbamj jXEQsc"
+    className="sc-jhAzac cqYdcH"
   >
     <div
       style={
@@ -20,7 +20,7 @@ Array [
     >
       <div>
         <div
-          className="sc-jlyJG bbyJzT"
+          className="sc-fBuWsC eeihxG"
         >
           <h2
             id="headerTitle"
@@ -118,10 +118,10 @@ Array [
       }
     >
       <div
-        className="sc-gipzik iyhjGb"
+        className="sc-fMiknA bxZCMx"
       >
         <div
-          className="sc-jlyJG bbyJzT"
+          className="sc-fBuWsC eeihxG"
         >
           <h2
             id="headerTitle"
@@ -158,13 +158,13 @@ Array [
         </div>
       </div>
       <div
-        className="sc-csuQGl cZqJAV"
+        className="sc-dVhcbM eUEmRN"
       >
         <ul
-          className="sc-Rmtcm sc-bRBYWo cpfpDV"
+          className="sc-eqIVtm sc-fAjcbJ kwtAvC"
         />
         <ul
-          className="sc-Rmtcm sc-hzDkRC fZQkew"
+          className="sc-eqIVtm sc-caSCKo eLOffc"
         />
       </div>
       <button
@@ -210,7 +210,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-gqjmRU hnZXkc"
+    className="sc-chPdSV byfFmt"
   >
     <div
       style={
@@ -272,7 +272,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-gqjmRU hnZXkc"
+    className="sc-chPdSV byfFmt"
   >
     <div
       style={
@@ -334,11 +334,11 @@ Array [
     </div>
   </div>,
   <form
-    className="sc-cJSrbW dLwzxs"
+    className="sc-dNLxif KzmkZ"
     onSubmit={[Function]}
   >
     <div
-      className="sc-gqjmRU hnZXkc"
+      className="sc-chPdSV byfFmt"
     >
       <div
         style={
@@ -422,7 +422,7 @@ Array [
           }
         >
           <div
-            className="sc-VigVT iLHdFH"
+            className="sc-kgoBCf jTMMYb"
           >
             <svg
               style={
@@ -445,7 +445,7 @@ Array [
     </div>
   </form>,
   <label
-    className="sc-hqyNC fTVxsD"
+    className="sc-jnlKLf kqqXyP"
     style={
       Object {
         "border": "none",
@@ -464,13 +464,13 @@ Array [
     </span>
   </label>,
   <ul
-    className="sc-jbKcbu gqEyar"
+    className="sc-fYxtnH bRNZaB"
   />,
   <div
-    className="sc-ksYbfQ hyhDpg"
+    className="sc-jqCOkK dJilzs"
   >
     <a
-      className="sc-frDJqD dqqGQQ"
+      className="sc-bbmXgH eyqorc"
       href="/job/1/preview"
       onClick={[Function]}
     >
@@ -479,7 +479,7 @@ Array [
       </span>
     </a>
     <a
-      className="sc-hmzhuo ejmLlc"
+      className="sc-uJMKN dkVMfJ"
       download={true}
       href="http://result"
     >
@@ -488,7 +488,7 @@ Array [
       </span>
     </a>
     <a
-      className="sc-hmzhuo ejmLlc"
+      className="sc-uJMKN dkVMfJ"
       download={true}
       href="http://sourceFileUrl"
     >
@@ -498,10 +498,10 @@ Array [
     </a>
   </div>,
   <div
-    className="sc-htoDjs iUYJOx"
+    className="sc-bZQynM ceQpbG"
   >
     <div
-      className="sc-dnqmqq cIDerW"
+      className="sc-gzVnrw fqUTwt"
     >
       <button
         disabled={false}
