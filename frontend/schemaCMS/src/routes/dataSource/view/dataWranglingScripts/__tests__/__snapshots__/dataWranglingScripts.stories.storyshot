@@ -19,7 +19,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
         className="sc-bxivhb klRcOv"
       />
       <div
-        className="sc-htpNat hgamOF"
+        className="sc-htpNat bSyNia"
       >
         <span>
           2 Steps
@@ -509,20 +509,6 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
               }
             }
           >
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
-                  "width": "12px",
-                }
-              }
-            />
             <span
               onClick={[Function]}
               style={

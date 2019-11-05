@@ -10,10 +10,10 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
   }
 >
   <div
-    className="sc-iwsKbI jQhHGA"
+    className="sc-cSHVUG CAuLq"
   >
     <div
-      className="sc-gqjmRU hnZXkc"
+      className="sc-chPdSV byfFmt"
     >
       <div
         style={
@@ -266,20 +266,6 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                   "height": "12px",
                   "margin": "0 4px",
                   "pointerEvents": "none",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
                   "width": "12px",
                 }
               }

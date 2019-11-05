@@ -2,10 +2,10 @@
 
 exports[`Storyshots View Default 1`] = `
 <div
-  className="sc-gojNiO jknDzv"
+  className="sc-krvtoX fMwaVV"
 >
   <div
-    className="sc-iRbamj jXEQsc"
+    className="sc-hzDkRC khzxcx"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots View Default 1`] = `
     >
       <div>
         <div
-          className="sc-jlyJG bbyJzT"
+          className="sc-jhAzac hmXDXQ"
         >
           <h2
             id="headerTitle"
@@ -120,10 +120,10 @@ exports[`Storyshots View Default 1`] = `
       }
     >
       <div
-        className="sc-gipzik iyhjGb"
+        className="sc-fBuWsC eeihxG"
       >
         <div
-          className="sc-jlyJG bbyJzT"
+          className="sc-jhAzac hmXDXQ"
         >
           <h2
             id="headerTitle"
@@ -160,16 +160,16 @@ exports[`Storyshots View Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-csuQGl cZqJAV"
+        className="sc-fMiknA dDuaDM"
       >
         <ul
-          className="sc-Rmtcm sc-bRBYWo cpfpDV"
+          className="sc-dVhcbM sc-eqIVtm dnkudp"
         />
         <ul
-          className="sc-Rmtcm sc-hzDkRC fZQkew"
+          className="sc-dVhcbM sc-fAjcbJ ggeeow"
         >
           <li
-            className="sc-jhAzac sc-fMiknA iuJeXm"
+            className="sc-caSCKo sc-kjoXOD cCOkwg"
             id={null}
             onClick={[Function]}
           >

@@ -10,10 +10,10 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
   }
 >
   <div
-    className="sc-gPEVay eQYmiW"
+    className="sc-bRBYWo ccSRck"
   >
     <div
-      className="sc-kAzzGY dJFTJ"
+      className="sc-jzJRlG egdPJh"
     >
       <span>
         Loading...
@@ -142,20 +142,6 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
                   "height": "12px",
                   "margin": "0 4px",
                   "pointerEvents": "none",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
                   "width": "12px",
                 }
               }

@@ -9,6 +9,7 @@ import { watchDataSource } from './dataSource/dataSource.sagas';
 import { watchDataWranglingScripts } from './dataWranglingScripts/dataWranglingScripts.sagas';
 import { watchUser } from './user/user.sagas';
 import { watchJob } from './job/job.sagas';
+import { watchFilter } from './filter/filter.sagas';
 //<-- IMPORT MODULE SAGA -->
 
 export default function* rootSaga() {
@@ -22,6 +23,7 @@ export default function* rootSaga() {
       fork(watchDataWranglingScripts),
       fork(watchUser),
       fork(watchJob),
+      fork(watchFilter),
       //<-- INJECT MODULE SAGA -->
     ]);
   } catch (e) {

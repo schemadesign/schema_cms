@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from 'schemaUI';
 import { Link as RouterLink } from 'react-router-dom';
 
 export const Container = styled.div``;
@@ -10,23 +11,18 @@ export const Header = styled.div`
   margin-bottom: 24px;
 `;
 
-export const StepCounter = styled.div`
+export const FilterCounter = styled.div`
   width: 34%;
   text-align: center;
   color: ${({ theme: { secondaryText } }) => secondaryText};
 `;
 
-export const Empty = styled.div`
-  width: 33%;
+export const PlusButton = styled(Button)`
+  height: 60px;
 `;
 
-export const UploadContainer = styled.div`
+export const ButtonContainer = styled.div`
   width: 33%;
-  text-align: right;
-`;
-
-export const Error = styled.div`
-  color: ${({ theme: { error } }) => error};
 `;
 
 export const Link = styled(RouterLink)`

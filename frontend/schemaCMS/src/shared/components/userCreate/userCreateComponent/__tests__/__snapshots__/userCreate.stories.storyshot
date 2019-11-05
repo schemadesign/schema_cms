@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   }
 >
   <div
-    className="sc-daURTG cmTGTe"
+    className="sc-fYiAbW isVHhR"
   >
     <div
-      className="sc-iRbamj jXEQsc"
+      className="sc-hzDkRC khzxcx"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       >
         <div>
           <div
-            className="sc-jlyJG bbyJzT"
+            className="sc-jhAzac hmXDXQ"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         }
       >
         <div
-          className="sc-gipzik iyhjGb"
+          className="sc-fBuWsC eeihxG"
         >
           <div
-            className="sc-jlyJG bbyJzT"
+            className="sc-jhAzac hmXDXQ"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-csuQGl cZqJAV"
+          className="sc-fMiknA dDuaDM"
         >
           <ul
-            className="sc-Rmtcm sc-bRBYWo cpfpDV"
+            className="sc-dVhcbM sc-eqIVtm dnkudp"
           />
           <ul
-            className="sc-Rmtcm sc-hzDkRC fZQkew"
+            className="sc-dVhcbM sc-fAjcbJ ggeeow"
           />
         </div>
         <button
@@ -220,11 +220,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-bXGyLb eZUjfX"
+      className="sc-fOKMvo clxUjt"
       onSubmit={[Function]}
     >
       <div
-        className="sc-gqjmRU hnZXkc"
+        className="sc-chPdSV byfFmt"
       >
         <div
           style={
@@ -284,7 +284,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gqjmRU hnZXkc"
+        className="sc-chPdSV byfFmt"
       >
         <div
           style={
@@ -343,7 +343,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gqjmRU hnZXkc"
+        className="sc-chPdSV byfFmt"
       >
         <div
           style={

@@ -22,6 +22,10 @@ export default defineMessages({
     id: 'dataSource.view.fields',
     defaultMessage: 'Fields',
   },
+  filters: {
+    id: 'dataSource.view.filters',
+    defaultMessage: 'Filters',
+  },
   dataWrangling: {
     id: 'dataSource.view.dataWrangling',
     defaultMessage: 'Data Wrangling',

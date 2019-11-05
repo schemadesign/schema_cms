@@ -6,6 +6,7 @@ import { reducer as dataSourceReducer } from './dataSource/dataSource.redux';
 import { reducer as dataWranglingScriptsReducer } from './dataWranglingScripts/dataWranglingScripts.redux';
 import { reducer as userReducer } from './user/user.redux';
 import { reducer as jobReducer } from './job/job.redux';
+import { reducer as filterReducer } from './filter/filter.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -18,6 +19,7 @@ export default function createReducer() {
     dataWranglingScripts: dataWranglingScriptsReducer,
     user: userReducer,
     job: jobReducer,
+    filter: filterReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }
