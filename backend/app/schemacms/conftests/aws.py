@@ -15,3 +15,8 @@ class ObjectVersion:
 @pytest.fixture()
 def s3_object_version_factory():
     return ObjectVersion
+
+
+@pytest.fixture()
+def s3(mocker):
+    return mocker.patch("schemacms.utils.services.s3")
