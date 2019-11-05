@@ -192,7 +192,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         if request.method == 'GET':
             if not data_source.filters.exists():
-                return response.Response(data={})
+                return response.Response(data=[])
 
             serializer = self.get_serializer(instance=data_source.filters, many=True)
 
