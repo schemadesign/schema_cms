@@ -71,6 +71,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "project",
             "jobs",
             "status",
+            "active_job",
         )
 
         extra_kwargs = {

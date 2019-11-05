@@ -152,6 +152,13 @@ class DataSource(ext_models.TimeStampedModel):
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
     )
+    active_job = models.ForeignKey(
+        "projects.DataSourceJob",
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="data_sources",
+        null=True,
+    )
 
     objects = managers.DataSourceQuerySet.as_manager()
 
@@ -214,6 +221,13 @@ class DataSource(ext_models.TimeStampedModel):
             "",
         )
 
+    @property
+    def current_job(self):
+        if self.active_job:
+            return self.active_job
+
+        return self.get_last_success_job()
+
     def create_job(self, **job_kwargs):
         """Create new job for data source, copy source file and version"""
         return DataSourceJob.objects.create(
@@ -222,6 +236,10 @@ class DataSource(ext_models.TimeStampedModel):
             source_file_version=self.source_file_latest_version,
             **job_kwargs,
         )
+
+    def set_active_job(self, job):
+        self.active_job = job
+        self.save(update_fields=["active_job"])
 
     def get_last_success_job(self):
         return self.jobs.filter(job_state=constants.DataSourceJobState.SUCCESS).latest("created")

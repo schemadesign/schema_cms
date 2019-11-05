@@ -781,3 +781,66 @@ class TestFilterDetailView:
     @staticmethod
     def get_url(pk):
         return reverse("projects:filter-detail", kwargs=dict(pk=pk))
+
+
+class TestRevertJobView:
+    def test_response(self, api_client, data_source, admin, job_factory):
+        jobs = job_factory.create_batch(
+            3, datasource=data_source, job_state=projects_constants.DataSourceJobState.SUCCESS
+        )
+        pyaload = dict(id=jobs[1].id)
+        old_active_job = data_source.active_job
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=pyaload)
+        data_source.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert data_source.active_job != old_active_job
+        assert data_source.active_job == jobs[1]
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-revert-job", kwargs=dict(pk=pk))
+
+
+class TestPublicResultsView:
+    @staticmethod
+    def create_jobs(data_source, job_factory, faker):
+        job1 = job_factory(
+            datasource=data_source,
+            job_state=projects_constants.DataSourceJobState.SUCCESS,
+            result=faker.csv_upload_file(filename="test_result.csv"),
+        )
+        job2 = job_factory(
+            datasource=data_source,
+            job_state=projects_constants.DataSourceJobState.SUCCESS,
+            result=faker.csv_upload_file(filename="test_result.csv"),
+        )
+        job1.update_meta()
+        job2.update_meta()
+
+        return job1, job2
+
+    def test_response(self, api_client, data_source, job_factory, faker):
+        job1, job2 = self.create_jobs(data_source, job_factory, faker)
+        expected_response = {"result": job2.result.name, "items": job2.meta_data.items}
+
+        response = api_client.get(self.get_url(data_source.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == expected_response
+
+    def test_response_with_active_job(self, api_client, data_source, job_factory, faker):
+        job1, job2 = self.create_jobs(data_source, job_factory, faker)
+        data_source.set_active_job(job1)
+        expected_response = {"result": job1.result.name, "items": job1.meta_data.items}
+
+        response = api_client.get(self.get_url(data_source.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == expected_response
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-public-results", kwargs=dict(pk=pk))
