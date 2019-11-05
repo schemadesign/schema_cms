@@ -44,12 +44,12 @@ exports[`DataSourceList: Component should render card with job 1`] = `
           </ForwardRef(styled.div)>
         }
       >
-        <H1
+        <Styled(H1)
           id="dataSourceTitle"
           onClick={[Function]}
         >
           name
-        </H1>
+        </Styled(H1)>
         <styled.div>
           <styled.div
             key="0"
@@ -362,12 +362,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
       >
-        <H1
+        <Styled(H1)
           id="dataSourceTitle"
           onClick={[Function]}
         >
           name
-        </H1>
+        </Styled(H1)>
         <styled.div>
           <styled.div
             key="0"
@@ -473,12 +473,12 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
       >
-        <H1
+        <Styled(H1)
           id="dataSourceTitle"
           onClick={[Function]}
         >
           name
-        </H1>
+        </Styled(H1)>
         <styled.div>
           <styled.div
             key="0"
