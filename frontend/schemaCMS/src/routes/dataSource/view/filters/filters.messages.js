@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   filters: {
-    id: 'filters.filters',
+    id: 'dataSource.view.filters.filters',
     defaultMessage: '{length} {length, plural,one {Filter} other {Filters}}',
   },
 });

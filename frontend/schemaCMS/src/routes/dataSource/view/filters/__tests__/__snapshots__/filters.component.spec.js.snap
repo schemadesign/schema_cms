@@ -11,7 +11,7 @@ exports[`Filters: Component should render correctly 1`] = `
     <styled.div>
       <FormattedMessage
         defaultMessage="{length} {length, plural,one {Filter} other {Filters}}"
-        id="filters.filters"
+        id="dataSource.view.filters.filters"
         values={
           Object {
             "length": 2,

@@ -2,6 +2,7 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { FilterRoutines } from './filter.redux';
 import api from '../../shared/services/api';
+import { DATA_SOURCES_PATH } from '../../shared/utils/api.constants';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -21,7 +22,7 @@ function* setFilters({ payload: { dataSourceId, active, inactive } }) {
   try {
     yield put(FilterRoutines.setFilters.request());
 
-    const { data } = yield api.post(`datasources/${dataSourceId}/set-filters`, { active, inactive });
+    const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/set-filters`, { active, inactive });
 
     yield put(FilterRoutines.setFilters.success(data));
   } catch (e) {
