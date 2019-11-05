@@ -158,7 +158,7 @@ function create_s3_bucket {
 
 function put_bucket_versioning {
     aws --no-sign-request --endpoint-url=$S3_ENDPOINT_URL \
-        --region $AWS_DEFAULT_REGION
+        --region $AWS_DEFAULT_REGION \
         s3api put-bucket-versioning --bucket $1 --versioning-configuration Status=Enabled
 }
 

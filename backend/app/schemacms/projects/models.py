@@ -8,7 +8,6 @@ import django.core.files.base
 import django_fsm
 import softdelete.models
 from django.conf import settings
-from django.core.files.storage import default_storage
 from django.core.validators import FileExtensionValidator
 from django.db import models, transaction
 from django.utils import functional
@@ -16,7 +15,7 @@ from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
 
 from schemacms.users import constants as users_constants
-from schemacms.utils import url as url_utils
+from schemacms.utils import services
 from . import constants, managers, fsm
 
 
@@ -269,10 +268,10 @@ class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     def source_file_url(self):
         if not self.source_file_path:
             return ""
-        url = default_storage.url(self.source_file_path)
+        params = {'Bucket': settings.AWS_STORAGE_BUCKET_NAME, 'Key': self.source_file_path}
         if self.source_file_version:
-            url = url_utils.append_query_string_params(url, {"versionId": self.source_file_version})
-        return url
+            params['VersionId'] = self.source_file_version
+        return services.s3.generate_presigned_url(ClientMethod='get_object', Params=params)
 
     def relative_path_to_save(self, filename):
         base_path = self.result.storage.location

@@ -110,21 +110,38 @@ class TestDataSourceMeta:
 
 
 class TestDataSourceJob:
-    def test_source_file_url(self, job_factory, default_storage, mocker):
-        job = job_factory()
-        url = f"http://localhost/files/{job.source_file_path}?key=123&secret=456"
-        mocker.patch.object(default_storage, "url", return_value=url)
+    def test_source_file_url(self, job_factory, default_storage, settings, s3, faker):
+        job = job_factory(source_file_path="path/to/file", source_file_version="123")
+        expected_url = faker.url()
+        s3.generate_presigned_url.return_value = expected_url
+        settings.AWS_STORAGE_BUCKET_NAME = "schemacms"
 
-        assert job.source_file_url == f"{url}&versionId={job.source_file_version}"
+        url = job.source_file_url
+
+        assert url == expected_url
+        s3.generate_presigned_url.assert_called_with(
+            ClientMethod='get_object',
+            Params={
+                'Bucket': settings.AWS_STORAGE_BUCKET_NAME,
+                'Key': job.source_file_path,
+                'VersionId': job.source_file_version,
+            },
+        )
 
     def test_source_file_url_without_file_path(self, job_factory, default_storage):
         job = job_factory(source_file_path="")
 
         assert job.source_file_url == ""
 
-    def test_source_file_url_without_file_version(self, job_factory, default_storage, mocker):
+    def test_source_file_url_without_file_version(self, job_factory, settings, s3, faker):
         job = job_factory(source_file_version="")
-        url = f"http://localhost/files/{job.source_file_path}?key=123&secret=456"
-        mocker.patch.object(default_storage, "url", return_value=url)
+        expected_url = faker.url()
+        s3.generate_presigned_url.return_value = expected_url
 
-        assert job.source_file_url == url
+        url = job.source_file_url
+
+        assert url == expected_url
+        s3.generate_presigned_url.assert_called_with(
+            ClientMethod='get_object',
+            Params={'Bucket': settings.AWS_STORAGE_BUCKET_NAME, 'Key': job.source_file_path},
+        )
