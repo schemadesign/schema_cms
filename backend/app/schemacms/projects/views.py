@@ -167,10 +167,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     def public_results(self, request, pk=None, **kwargs):
         data_source = self.get_object()
 
-        if data_source.active_job:
-            serializer = self.get_serializer(instance=data_source.active_job)
-        else:
-            serializer = self.get_serializer(instance=data_source.get_last_success_job())
+        job = data_source.current_job
+        serializer = self.get_serializer(instance=job)
 
         return response.Response(data=serializer.data)
 

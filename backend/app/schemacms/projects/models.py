@@ -222,6 +222,13 @@ class DataSource(ext_models.TimeStampedModel):
             "",
         )
 
+    @property
+    def current_job(self):
+        if self.active_job:
+            return self.active_job
+
+        return self.get_last_success_job()
+
     def create_job(self, **job_kwargs):
         """Create new job for data source, copy source file and version"""
         return DataSourceJob.objects.create(
