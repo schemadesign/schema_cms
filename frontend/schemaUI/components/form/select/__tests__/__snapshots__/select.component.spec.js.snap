@@ -4,7 +4,6 @@ exports[`Select: Component should render correctly 1`] = `
 <div
   style={
     Object {
-      "border": "1px solid #000",
       "color": "#FFF",
       "display": "flex",
       "width": "100%",
@@ -16,7 +15,6 @@ exports[`Select: Component should render correctly 1`] = `
       Object {
         "cursor": "pointer",
         "display": "flex",
-        "padding": "7px",
         "position": "relative",
         "width": "100%",
       }
@@ -160,7 +158,6 @@ exports[`Select: Component should render correctly with default options 1`] = `
 <div
   style={
     Object {
-      "border": "1px solid #000",
       "color": "#FFF",
       "display": "flex",
       "width": "100%",
@@ -172,7 +169,6 @@ exports[`Select: Component should render correctly with default options 1`] = `
       Object {
         "cursor": "pointer",
         "display": "flex",
-        "padding": "7px",
         "position": "relative",
         "width": "100%",
       }
@@ -331,7 +327,6 @@ exports[`Select: Component should render correctly with native 1`] = `
 <div
   style={
     Object {
-      "border": "1px solid #000",
       "color": "#FFF",
       "display": "flex",
       "width": "100%",

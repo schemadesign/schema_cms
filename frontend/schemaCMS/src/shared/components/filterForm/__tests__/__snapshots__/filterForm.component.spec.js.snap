@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterForm: Component should render correctly 1`] = `
+<Formik
+  enableReinitialize={false}
+  initialValues={Object {}}
+  isInitialValid={false}
+  validateOnBlur={true}
+  validateOnChange={true}
+>
+  <Component />
+</Formik>
+`;

@@ -6,6 +6,6 @@ export const Container = styled.div`
   padding-bottom: 30px;
 
   label {
-    margin-bottom: 4px;
+    margin-bottom: 1px;
   }
 `;

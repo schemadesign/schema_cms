@@ -135,16 +135,16 @@ function* fetchFields({ payload }) {
 
 function* fetchFieldsInfo({ payload }) {
   try {
-    yield put(DataSourceRoutines.fetchOne.request());
+    yield put(DataSourceRoutines.fetchFieldsInfo.request());
 
     const { dataSourceId } = payload;
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/fields-info`);
 
-    yield put(DataSourceRoutines.fetchFields.success(data));
+    yield put(DataSourceRoutines.fetchFieldsInfo.success(data));
   } catch (error) {
-    yield put(DataSourceRoutines.fetchFields.failure(error));
+    yield put(DataSourceRoutines.fetchFieldsInfo.failure(error));
   } finally {
-    yield put(DataSourceRoutines.fetchFields.fulfill());
+    yield put(DataSourceRoutines.fetchFieldsInfo.fulfill());
   }
 }
 
