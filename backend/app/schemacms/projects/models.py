@@ -38,8 +38,10 @@ def map_general_dtypes(dtype):
         return constants.FieldType.STRING
     elif dtype.startswith("bool"):
         return constants.FieldType.BOOLEAN
-    else:
+    elif dtype.startswith("date") or dtype.startswith("time"):
         return constants.FieldType.DATE
+    else:
+        return dtype
 
 
 def get_preview_data(file):
