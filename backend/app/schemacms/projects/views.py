@@ -2,7 +2,8 @@ import json
 import logging
 
 from django.db import transaction
-from django.shortcuts import get_object_or_404
+from django.urls import reverse
+from django.shortcuts import get_object_or_404, redirect
 from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
 from schemacms.users import permissions as user_permissions
@@ -221,6 +222,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         data_source.set_active_job(job)
 
         return response.Response(status=status.HTTP_200_OK)
+
+    @decorators.action(detail=True, url_path="job-preview", methods=["get"])
+    def job_preview(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+        job = data_source.current_job
+
+        return redirect(reverse("projects:datasourcejob-result-preview", kwargs=dict(pk=job.id)))
 
 
 class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
