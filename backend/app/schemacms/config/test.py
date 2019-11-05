@@ -25,3 +25,5 @@ class Test(Common):
     PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]
 
     USER_MGMT_AUTH0_DOMAIN = "http://localhost"
+
+    AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME", "schemacms")
