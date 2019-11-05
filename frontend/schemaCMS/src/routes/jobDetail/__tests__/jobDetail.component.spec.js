@@ -11,8 +11,15 @@ describe('JobDetail: Component', () => {
 
   const render = (props = {}) => shallow(component(props));
 
-  it('should render correctly', () => {
+  it('should render correctly with loader', () => {
     const wrapper = render();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly', async () => {
+    defaultProps.fetchOne = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = render(defaultProps);
+    await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
   });
 
