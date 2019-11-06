@@ -13,7 +13,7 @@ export const Header = styled.div`
 export const StepCounter = styled.div`
   width: 34%;
   text-align: center;
-  color: ${({ theme: { text } }) => text};
+  color: ${({ theme: { secondaryText } }) => secondaryText};
 `;
 
 export const Empty = styled.div`

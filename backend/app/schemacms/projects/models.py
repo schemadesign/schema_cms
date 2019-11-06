@@ -2,13 +2,13 @@ import json
 import logging
 import os
 
+import boto3
 import datatable as dt
 
 import django.core.files.base
 import django_fsm
 import softdelete.models
 from django.conf import settings
-from django.core.files.storage import default_storage
 from django.core.validators import FileExtensionValidator
 from django.db import models, transaction
 from django.utils import functional
@@ -16,7 +16,6 @@ from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
 
 from schemacms.users import constants as users_constants
-from schemacms.utils import url as url_utils
 from . import constants, managers, fsm
 
 
@@ -27,6 +26,19 @@ def file_upload_path(instance, filename):
 def map_dataframe_dtypes(dtype):
     if dtype == "object":
         return "string"
+    else:
+        return dtype
+
+
+def map_general_dtypes(dtype):
+    if dtype.startswith("float") or dtype.startswith("int"):
+        return constants.FieldType.NUMBER
+    elif dtype.startswith("str"):
+        return constants.FieldType.STRING
+    elif dtype.startswith("bool"):
+        return constants.FieldType.BOOLEAN
+    elif dtype.startswith("date") or dtype.startswith("time"):
+        return constants.FieldType.DATE
     else:
         return dtype
 
@@ -140,6 +152,13 @@ class DataSource(ext_models.TimeStampedModel):
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="data_sources", null=True
     )
+    active_job = models.ForeignKey(
+        "projects.DataSourceJob",
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="data_sources",
+        null=True,
+    )
 
     objects = managers.DataSourceQuerySet.as_manager()
 
@@ -202,6 +221,13 @@ class DataSource(ext_models.TimeStampedModel):
             "",
         )
 
+    @property
+    def current_job(self):
+        if self.active_job:
+            return self.active_job
+
+        return self.get_last_success_job()
+
     def create_job(self, **job_kwargs):
         """Create new job for data source, copy source file and version"""
         return DataSourceJob.objects.create(
@@ -210,6 +236,10 @@ class DataSource(ext_models.TimeStampedModel):
             source_file_version=self.source_file_latest_version,
             **job_kwargs,
         )
+
+    def set_active_job(self, job):
+        self.active_job = job
+        self.save(update_fields=["active_job"])
 
     def get_last_success_job(self):
         return self.jobs.filter(job_state=constants.DataSourceJobState.SUCCESS).latest("created")
@@ -272,10 +302,11 @@ class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     def source_file_url(self):
         if not self.source_file_path:
             return ""
-        url = default_storage.url(self.source_file_path)
+        params = {'Bucket': settings.AWS_STORAGE_BUCKET_NAME, 'Key': self.source_file_path}
         if self.source_file_version:
-            url = url_utils.append_query_string_params(url, {"versionId": self.source_file_version})
-        return url
+            params['VersionId'] = self.source_file_version
+        s3 = boto3.client('s3')
+        return s3.generate_presigned_url(ClientMethod='get_object', Params=params)
 
     def relative_path_to_save(self, filename):
         base_path = self.result.storage.location
@@ -312,3 +343,26 @@ class DataSourceJobStep(models.Model):
     script = models.ForeignKey(WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True)
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
+
+
+# Filters
+
+
+class Filter(ext_models.TimeStampedModel):
+    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='filters')
+    name = models.CharField(max_length=25)
+    type = models.CharField(max_length=25, choices=constants.FILTER_TYPE_CHOICES)
+    field = models.CharField(max_length=25)
+    field_type = models.CharField(max_length=25, choices=constants.FIELD_TYPE_CHOICES)
+    unique_items = models.IntegerField(null=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.id
+
+    class Meta:
+        unique_together = ("name", "datasource")
+
+    def get_fields_info(self):
+        last_job = self.datasource.get_last_success_job()
+        return json.loads(last_job.meta_data.preview.read())

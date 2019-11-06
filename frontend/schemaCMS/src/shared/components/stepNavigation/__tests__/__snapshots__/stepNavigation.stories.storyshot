@@ -151,20 +151,6 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
               }
             }
           />
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "borderRadius": "50%",
-                "cursor": "pointer",
-                "display": "block",
-                "height": "12px",
-                "margin": "0 4px",
-                "width": "12px",
-              }
-            }
-          />
         </div>
       </div>
     </div>
@@ -263,20 +249,6 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
                 "height": "12px",
                 "margin": "0 4px",
                 "pointerEvents": "none",
-                "width": "12px",
-              }
-            }
-          />
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "borderRadius": "50%",
-                "cursor": "pointer",
-                "display": "block",
-                "height": "12px",
-                "margin": "0 4px",
                 "width": "12px",
               }
             }
@@ -495,20 +467,6 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
               }
             }
           />
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "borderRadius": "50%",
-                "cursor": "pointer",
-                "display": "block",
-                "height": "12px",
-                "margin": "0 4px",
-                "width": "12px",
-              }
-            }
-          />
         </div>
       </div>
     </div>
@@ -607,20 +565,6 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
                 "height": "12px",
                 "margin": "0 4px",
                 "pointerEvents": "none",
-                "width": "12px",
-              }
-            }
-          />
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "borderRadius": "50%",
-                "cursor": "pointer",
-                "display": "block",
-                "height": "12px",
-                "margin": "0 4px",
                 "width": "12px",
               }
             }
@@ -821,20 +765,6 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
                 "height": "12px",
                 "margin": "0 4px",
                 "pointerEvents": "none",
-                "width": "12px",
-              }
-            }
-          />
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "borderRadius": "50%",
-                "cursor": "pointer",
-                "display": "block",
-                "height": "12px",
-                "margin": "0 4px",
                 "width": "12px",
               }
             }

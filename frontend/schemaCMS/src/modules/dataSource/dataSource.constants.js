@@ -15,7 +15,8 @@ export const INITIAL_STEP = 1;
 export const FIELDS_STEP = 2;
 export const DATA_WRANGLING_STEP = 3;
 export const DATA_WRANGLING_RESULT_STEP = 4;
-export const MAX_STEPS = 6;
+export const FILTERS_STEP = 5;
+export const MAX_STEPS = 5;
 
 export const IGNORED_FIELDS = ['file', 'metaData', 'errorLog', 'createdBy', 'status', 'created', 'id'];
 
