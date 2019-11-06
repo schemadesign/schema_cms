@@ -1,24 +1,25 @@
 import { connect } from 'react-redux';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { compose } from 'ramda';
 
-import { CreateFilter } from './createFilter.component';
-import { DataSourceRoutines, selectFieldsInfo, selectDataSource } from '../../../../modules/dataSource';
-import { FilterRoutines } from '../../../../modules/filter';
+import { Filter } from './filter.component';
+import { DataSourceRoutines, selectFieldsInfo } from '../../modules/dataSource';
+import { FilterRoutines, selectFilter } from '../../modules/filter';
 
 const mapStateToProps = createStructuredSelector({
   fieldsInfo: selectFieldsInfo,
-  dataSource: selectDataSource,
+  filter: selectFilter,
 });
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
       fetchFieldsInfo: promisifyRoutine(DataSourceRoutines.fetchFieldsInfo),
-      createFilter: promisifyRoutine(FilterRoutines.createFilter),
+      fetchFilter: promisifyRoutine(FilterRoutines.fetchFilter),
+      updateFilter: promisifyRoutine(FilterRoutines.updateFilter),
       removeFilter: promisifyRoutine(FilterRoutines.removeFilter),
     },
     dispatch
@@ -31,4 +32,4 @@ export default compose(
     mapDispatchToProps
   ),
   withRouter
-)(CreateFilter);
+)(Filter);

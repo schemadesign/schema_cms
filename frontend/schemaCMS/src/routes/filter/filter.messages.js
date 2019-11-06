@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   subTitle: {
-    id: 'dataSource.filter.subTitle',
-    defaultMessage: 'Create Filter',
+    id: 'filter.subTitle',
+    defaultMessage: 'Edit Filter',
   },
 });

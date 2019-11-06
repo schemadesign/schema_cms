@@ -15,6 +15,7 @@ import { DataSource } from './dataSource';
 import { DataWranglingScript } from './dataWranglingScript';
 import { User } from './user';
 import { JobDetail } from './jobDetail';
+import { Filter } from './filter';
 import { Preview as JobPreview } from './jobDetail/preview';
 
 export const ROUTES = {
@@ -27,6 +28,7 @@ export const ROUTES = {
   DATA_SOURCE: '/datasource',
   DATA_WRANGLING_SCRIPTS: '/script',
   USER: '/user',
+  FILTER: '/filter',
   JOB_DETAIL: '/job',
 };
 
@@ -51,6 +53,8 @@ export default class RootContainer extends Component {
             <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
 
             <AuthRoute path={ROUTES.USER} component={User} />
+
+            <AuthRoute exact path={`${ROUTES.FILTER}/:filterId`} component={Filter} />
 
             <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId`} component={JobDetail} />
 

@@ -37,4 +37,16 @@ export default defineMessages({
     id: 'shared.components.filter.deleteFilter',
     defaultMessage: 'Delete',
   },
+  cancelRemoval: {
+    id: 'shared.components.filter.cancelRemoval',
+    defaultMessage: 'Cancel',
+  },
+  confirmRemoval: {
+    id: 'shared.components.filter.confirmRemoval',
+    defaultMessage: 'Confirm',
+  },
+  removeTitle: {
+    id: 'shared.components.filter.removeTitle',
+    defaultMessage: 'Are you sure you want to remove the filter?',
+  },
 });
