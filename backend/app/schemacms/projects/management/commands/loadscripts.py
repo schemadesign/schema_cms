@@ -19,6 +19,8 @@ class Command(BaseCommand):
         existing_scripts = models.WranglingScript.objects.filter(is_predefined=True)
         for file in files:
             name = os.path.splitext(os.path.basename(file))[0]
+            replaces = str.maketrans({".": " ", "_": " ", "-": " "})
+            name = name.translate(replaces).title()
             modified = self.modification_date(file)
             if not existing_scripts.filter(name=name).exists():
                 self.create_script(name, file, modified)

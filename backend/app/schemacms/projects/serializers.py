@@ -1,5 +1,3 @@
-import os
-
 from django.db import transaction
 from rest_framework import serializers, exceptions
 
@@ -213,13 +211,9 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         datasource = self.initial_data["datasource"]
-        name = validated_data.pop('name', None)
-
-        if not name:
-            name = os.path.splitext(validated_data["file"].name)[0]
 
         script = WranglingScript(
-            created_by=self.context["request"].user, name=name, datasource=datasource, **validated_data
+            created_by=self.context["request"].user, datasource=datasource, **validated_data
         )
         script.is_predefined = False
         script.save()
