@@ -13,7 +13,7 @@ exports[`Storyshots Project/List empty 1`] = `
     className="sc-eTuwsz jtSbhi"
   >
     <div
-      className="sc-hzDkRC khzxcx"
+      className="sc-hzDkRC eJLEZA"
     >
       <div
         style={
@@ -245,7 +245,7 @@ exports[`Storyshots Project/List empty 1`] = `
       className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-dnqmqq jWbJEw"
+        className="sc-dnqmqq rcVIn"
       >
         <button
           disabled={false}
@@ -305,7 +305,7 @@ exports[`Storyshots Project/List list 1`] = `
     className="sc-eTuwsz jtSbhi"
   >
     <div
-      className="sc-hzDkRC khzxcx"
+      className="sc-hzDkRC eJLEZA"
     >
       <div
         style={
@@ -537,7 +537,7 @@ exports[`Storyshots Project/List list 1`] = `
       className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-dnqmqq jWbJEw"
+        className="sc-dnqmqq rcVIn"
       >
         <button
           disabled={false}

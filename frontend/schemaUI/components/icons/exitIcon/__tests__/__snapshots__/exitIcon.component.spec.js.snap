@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExitIcon: Component should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "border": "solid 1px #FFF",
+      "height": "20px",
+      "width": "15px",
+    }
+  }
+/>
+`;

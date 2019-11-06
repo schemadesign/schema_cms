@@ -8,8 +8,9 @@ import Modal from 'react-modal';
 
 import { DEFAULT_LOCALE, translationMessages } from '../i18n';
 import { GlobalStyle } from '../theme/global';
+import { DesktopTopHeader } from '../shared/components/desktopTopHeader';
 import messages from './app.messages';
-import { Container } from './app.styles';
+import { Container, Content } from './app.styles';
 
 Modal.setAppElement('#app');
 
@@ -42,7 +43,8 @@ export class App extends PureComponent {
               </FormattedMessage>
 
               <GlobalStyle />
-              {React.Children.only(this.props.children)}
+              <DesktopTopHeader />
+              <Content>{React.Children.only(this.props.children)}</Content>
             </Container>
           </ThemeProvider>
         </ThemeUIProvider>
