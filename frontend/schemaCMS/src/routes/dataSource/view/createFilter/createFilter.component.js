@@ -21,6 +21,9 @@ export class CreateFilter extends PureComponent {
         dataSourceId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   state = {
@@ -44,6 +47,7 @@ export class CreateFilter extends PureComponent {
     <FilterForm
       fieldsInfo={this.props.fieldsInfo}
       createFilter={this.props.createFilter}
+      history={this.props.history}
       dataSourceId={this.getDataSourceId(this.props)}
     />
   ));

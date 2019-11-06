@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { always, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
@@ -16,6 +16,7 @@ export class Filter extends PureComponent {
     fetchFieldsInfo: PropTypes.func.isRequired,
     fieldsInfo: PropTypes.object.isRequired,
     fetchFilter: PropTypes.func.isRequired,
+    removeFilter: PropTypes.func.isRequired,
     filter: PropTypes.object.isRequired,
   };
 
@@ -25,28 +26,29 @@ export class Filter extends PureComponent {
 
   async componentDidMount() {
     const filterId = path(['match', 'params', 'filterId'], this.props);
-    const { datasource: dataSourceId } = await this.props.fetchFilter({ filterId });
-    await this.props.fetchFieldsInfo({ dataSourceId });
+    const { datasource } = await this.props.fetchFilter({ filterId });
+    await this.props.fetchFieldsInfo({ dataSourceId: datasource.id });
     this.setState({ loading: false });
   }
 
   getHeaderAndMenuConfig = () => ({
-    headerTitle: this.props.filter.datasourceName,
+    headerTitle: this.props.filter.datasource.name,
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
-  renderFilterForm = renderWhenTrueOtherwise(always(<Loader />), () => (
-    <FilterForm fieldsInfo={this.props.fieldsInfo} updateFilter={this.props.updateFilter} filter={this.props.filter} />
+  renderContent = renderWhenTrueOtherwise(always(<Loader />), () => (
+    <Fragment>
+      <TopHeader {...this.getHeaderAndMenuConfig()} />
+      <FilterForm
+        fieldsInfo={this.props.fieldsInfo}
+        updateFilter={this.props.updateFilter}
+        filter={this.props.filter}
+        removeFilter={this.props.removeFilter}
+      />
+    </Fragment>
   ));
 
   render() {
-    const topHeaderConfig = this.getHeaderAndMenuConfig();
-
-    return (
-      <Container>
-        <TopHeader {...topHeaderConfig} />
-        {this.renderFilterForm(this.state.loading)}
-      </Container>
-    );
+    return <Container>{this.renderContent(this.state.loading)}</Container>;
   }
 }

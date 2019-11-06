@@ -1,8 +1,8 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
-import { keys, map, path, pipe, toString } from 'ramda';
+import { always, keys, map, path, pipe, toString } from 'ramda';
 import Modal from 'react-modal';
 
 import { TextInput } from '../form/inputs/textInput';
@@ -20,6 +20,8 @@ import { Select } from '../form/select';
 import { Form, Row } from './filterForm.styles';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
 import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../modal/modal.styles';
+import { renderWhenTrueOtherwise } from '../../utils/rendering';
+import { FILTERS_STEP } from '../../../modules/dataSource/dataSource.constants';
 
 export class FilterForm extends PureComponent {
   static propTypes = {
@@ -29,6 +31,9 @@ export class FilterForm extends PureComponent {
     removeFilter: PropTypes.func,
     filter: PropTypes.object,
     dataSourceId: PropTypes.string,
+    history: PropTypes.shape({
+      push: PropTypes.func,
+    }),
   };
 
   static defaultProps = {
@@ -40,11 +45,11 @@ export class FilterForm extends PureComponent {
   };
 
   getDependencyValues = value => ({
-    uniqueItems: path(['fieldsInfo', value, 'unique'], this.props),
-    fieldType: path(['fieldsInfo', value, 'type'], this.props),
+    uniqueItems: path(['fieldsInfo', value, FILTER_UNIQUE_ITEMS], this.props),
+    fieldType: path(['fieldsInfo', value, FILTER_FIELD_TYPE], this.props),
   });
 
-  handleSelectStatus = ({ value, setFieldValue }) => {
+  handleSelectField = ({ value, setFieldValue }) => {
     const { uniqueItems, fieldType } = this.getDependencyValues(value);
 
     setFieldValue(FILTER_UNIQUE_ITEMS, toString(uniqueItems));
@@ -52,13 +57,17 @@ export class FilterForm extends PureComponent {
     setFieldValue(FILTER_FIELD, value);
   };
 
+  handleSelectType = ({ value, setFieldValue }) => setFieldValue(FILTER_TYPE, value);
+
   handleRemoveFilter = () => this.setState({ confirmationModalOpen: true });
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
+  handleBack = () => this.props.history.push(`/datasource/${this.props.dataSourceId}/${FILTERS_STEP}`);
+
   handleConfirmRemove = () => {
-    const { dataSource, id: filterId } = this.props.filter.datasource;
-    this.props.removeFilter({ dataSourceId: dataSource.id, filterId });
+    const { datasource, id: filterId } = this.props.filter;
+    this.props.removeFilter({ dataSourceId: datasource.id, filterId });
   };
 
   handleSubmit = formData => {
@@ -66,6 +75,19 @@ export class FilterForm extends PureComponent {
     const dataSourceId = this.props.dataSourceId || this.props.filter.datasource.id;
     submitFunc({ dataSourceId, filterId: this.props.filter.id, formData });
   };
+
+  renderLeftButton = renderWhenTrueOtherwise(
+    always(
+      <BackButton onClick={this.handleRemoveFilter} type="button">
+        <FormattedMessage {...messages.deleteFilter} />
+      </BackButton>
+    ),
+    always(
+      <BackButton onClick={this.handleBack} type="button">
+        <FormattedMessage {...messages.cancel} />
+      </BackButton>
+    )
+  );
 
   render() {
     const fieldOptions = pipe(
@@ -86,6 +108,11 @@ export class FilterForm extends PureComponent {
       <Fragment>
         <Formik initialValues={initialValues} onSubmit={this.handleSubmit} validationSchema={FILTERS_SCHEMA}>
           {({ values, handleChange, setFieldValue, dirty, isValid, ...rest }) => {
+            const filterTypeOptions = this.props.fieldsInfo[values[FILTER_FIELD]][FILTER_TYPE].map(key => ({
+              value: key,
+              label: key,
+            }));
+
             return (
               <Form>
                 <TextInput
@@ -93,15 +120,8 @@ export class FilterForm extends PureComponent {
                   onChange={handleChange}
                   name={FILTER_NAME}
                   fullWidth
+                  isEdit
                   label={<FormattedMessage {...messages[FILTER_NAME]} />}
-                  {...rest}
-                />
-                <TextInput
-                  value={values[FILTER_TYPE]}
-                  onChange={handleChange}
-                  name={FILTER_TYPE}
-                  fullWidth
-                  label={<FormattedMessage {...messages[FILTER_TYPE]} />}
                   {...rest}
                 />
                 <Select
@@ -109,8 +129,14 @@ export class FilterForm extends PureComponent {
                   name={FILTER_FIELD}
                   value={values[FILTER_FIELD]}
                   options={fieldOptions}
-                  defaultOption={{ value: '', label: '' }}
-                  onSelect={({ value }) => this.handleSelectStatus({ value, setFieldValue })}
+                  onSelect={({ value }) => this.handleSelectField({ value, setFieldValue })}
+                />
+                <Select
+                  label={<FormattedMessage {...messages[FILTER_TYPE]} />}
+                  name={FILTER_TYPE}
+                  value={values[FILTER_TYPE]}
+                  options={filterTypeOptions}
+                  onSelect={({ value }) => this.handleSelectType({ value, setFieldValue })}
                 />
                 <Row>
                   <TextInput
@@ -131,9 +157,7 @@ export class FilterForm extends PureComponent {
                   />
                 </Row>
                 <NavigationContainer>
-                  <BackButton onClick={this.handleRemoveFilter} type="button">
-                    <FormattedMessage {...messages.deleteFilter} />
-                  </BackButton>
+                  {this.renderLeftButton(!this.props.dataSourceId)}
                   <NextButton disabled={!dirty || !isValid} type="submit">
                     <FormattedMessage {...messages.saveFilter} />
                   </NextButton>

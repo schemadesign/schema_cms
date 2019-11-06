@@ -37,6 +37,10 @@ export default defineMessages({
     id: 'shared.components.filter.deleteFilter',
     defaultMessage: 'Delete',
   },
+  cancel: {
+    id: 'shared.components.filter.cancel',
+    defaultMessage: 'Cancel',
+  },
   cancelRemoval: {
     id: 'shared.components.filter.cancelRemoval',
     defaultMessage: 'Cancel',
