@@ -13,7 +13,13 @@ import pytz
 import requests
 import scipy as sp
 
-from common import db, services, settings
+from common import (
+    api,
+    db,
+    services,
+    settings,
+    types,
+)
 import errors
 import mocks
 
@@ -38,8 +44,10 @@ def write_dataframe_to_csv_on_s3(dataframe, filename):
 def process_job(job):
     global df
 
-    job.job_state = db.JobState.PROCESSING
-    job.save()
+    api.schemacms_api.update_job_state(
+        job_pk=job.id,
+        state=db.JobState.PROCESSING,
+    )
 
     source_file = services.s3.get_object(
         Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=job.datasource.file.lstrip("/")
@@ -50,7 +58,7 @@ def process_job(job):
     except Exception as e:
         raise errors.JobLoadingSourceFileError(f"{e} @ loading source file")
 
-    for step in job.steps.order_by(db.JobStep.exec_order.desc()):
+    for step in job.steps:
         try:
             logging.info(f"Script **{step.script.name}** is running.")
             exec(step.body, globals())
@@ -59,16 +67,14 @@ def process_job(job):
 
         logger.info(f"Step {step.id} done")
 
-    result_file_name = f"{job.datasource.id}/outputs/job_{job.id}_result.csv"
+    result_file_name = job.result_file_name
     write_dataframe_to_csv_on_s3(df, result_file_name.lstrip("/"))
-
-    job.result = result_file_name
-    job.error = ""
-    job.job_state = db.JobState.SUCCESS
-    job.save()
-
-    url = os.path.join(settings.BACKEND_URL, "jobs", str(job), "update-meta")
-    requests.post(url)
+    api.schemacms_api.update_job_state(
+        job_pk=job.id,
+        state=db.JobState.SUCCESS,
+        result=result_file_name,
+        error="",
+    )
 
 
 def main(event, context):
@@ -82,21 +88,25 @@ def main(event, context):
         body = json.loads(record["body"])
         job_pk = body["job_pk"]
         try:
-            job = db.Job.get_by_id(job_pk)
+            job = types.Job.get_by_id(job_pk)
         except Exception as e:
             return logging.critical(f"Unable to get job from db - {e}")
 
         try:
             process_job(job=job)
         except errors.JobLoadingSourceFileError as e:
-            job.job_state = db.JobState.FAILED
-            job.error = f"{e} @ loading source file"
-            job.save()
+            api.schemacms_api.update_job_state(
+                job_pk=job_pk,
+                state=db.JobState.FAILED,
+                error=f"{e} @ loading source file"
+            )
             return logging.critical(f"Error while loading source file - {e}")
         except errors.JobSetExecutionError as e:
-            job.job_state = db.JobState.FAILED
-            job.error = f"{e.msg} @ {e.step.id}"
-            job.save()
+            api.schemacms_api.update_job_state(
+                job_pk=job_pk,
+                state=db.JobState.FAILED,
+                error=f"{e.msg} @ {e.step.id}"
+            )
             return logging.critical(f"Error while executing {e.step.script.name}")
         except Exception as e:
             return logging.critical(str(e))

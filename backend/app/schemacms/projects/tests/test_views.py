@@ -580,6 +580,83 @@ class TestDataSourceJobCreate:
         return reverse("projects:datasource-job", kwargs=dict(pk=pk))
 
 
+@pytest.mark.usefixtures("ds_source_file_latest_version_mock")
+class TestDataSourceJobUpdateState:
+    def test_job_state_from_pending_to_success(self, api_client, job_factory, mocker):
+        job = job_factory(job_state=projects_constants.DataSourceJobState.PENDING, result=None, error="")
+        payload = dict(
+            job_state=projects_constants.DataSourceJobState.SUCCESS, result="path/to/result.csv", error="test"
+        )
+        update_meta_mock = mocker.patch("schemacms.projects.models.DataSourceJob.update_meta")
+        set_active_job_mock = mocker.patch("schemacms.projects.models.DataSource.set_active_job")
+
+        response = api_client.post(self.get_url(job.pk), payload)
+        job.refresh_from_db()
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT, response.content
+        assert job.job_state == payload["job_state"]
+        assert job.result == payload["result"]
+        assert job.error == ""
+        update_meta_mock.assert_called_with()
+        set_active_job_mock.assert_called_with(job)
+
+    def test_job_state_from_pending_to_failed(self, api_client, job_factory):
+        job = job_factory(job_state=projects_constants.DataSourceJobState.PENDING, result=None)
+        payload = dict(
+            job_state=projects_constants.DataSourceJobState.FAILED,
+            result="path/to/result.csv",
+            error="Something goes wrong",
+        )
+
+        response = api_client.post(self.get_url(job.pk), payload)
+        job.refresh_from_db()
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT, response.content
+        assert job.job_state == payload["job_state"]
+        assert job.error == payload["error"]
+        assert not job.result
+
+    @pytest.mark.parametrize("job_state", [
+        projects_constants.DataSourceJobState.SUCCESS,
+        projects_constants.DataSourceJobState.FAILED,
+    ])
+    def test_job_state_to_pending(self, api_client, job_factory, job_state):
+        job = job_factory(job_state=job_state)
+        payload = dict(
+            job_state=projects_constants.DataSourceJobState.PENDING,
+        )
+
+        response = api_client.post(self.get_url(job.pk), payload)
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data == {
+            'job_state': [{'code': 'invalid_choice', 'message': '"pending" is not a valid choice.'}]
+        }
+
+    @pytest.mark.parametrize("initial_job_state, new_job_state", [
+        (projects_constants.DataSourceJobState.SUCCESS, projects_constants.DataSourceJobState.SUCCESS),
+        (projects_constants.DataSourceJobState.FAILED, projects_constants.DataSourceJobState.FAILED),
+        (projects_constants.DataSourceJobState.SUCCESS, projects_constants.DataSourceJobState.FAILED),
+        (projects_constants.DataSourceJobState.FAILED, projects_constants.DataSourceJobState.SUCCESS),
+    ])
+    def test_changing_data_with_same_job_state(self, api_client, job_factory, initial_job_state, new_job_state):
+        initial = dict(result="path/to/result.csv", error="Error")
+        job = job_factory(job_state=initial_job_state, **initial)
+        payload = dict(job_state=new_job_state, result="path/to/other-result.csv", error='Other error')
+
+        api_client.post(self.get_url(job.pk), payload)
+        job.refresh_from_db()
+
+        # Data should stay the same
+        assert job.result == initial["result"]
+        assert job.error == initial["error"]
+
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasourcejob-update-state", kwargs=dict(pk=pk))
+
+
 class TestDataSourceScriptsView:
     def test_response(self, api_client, rf, admin, data_source_factory, script_factory):
         data_source_1 = data_source_factory()

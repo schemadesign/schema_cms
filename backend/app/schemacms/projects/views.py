@@ -258,10 +258,16 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         return response.Response(job.meta_data.data, status=status.HTTP_200_OK)
 
 
-class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
+class DataSourceJobDetailViewSet(
+    utils_serializers.ActionSerializerViewSetMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    viewsets.GenericViewSet,
+):
     queryset = models.DataSourceJob.objects.none()
     serializer_class = serializers.DataSourceJobSerializer
     permission_classes = (permissions.IsAuthenticated,)
+    serializer_class_mapping = {"update_state": serializers.PublicApiDataSourceJobStateSerializer}
 
     def get_queryset(self):
         return models.DataSourceJob.objects.all().select_related("datasource").prefetch_related("steps")
@@ -290,6 +296,14 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
             )
 
         return response.Response(status=status.HTTP_201_CREATED)
+
+    @decorators.action(detail=True, url_path="update-state", methods=["post"], permission_classes=[])
+    def update_state(self, request, *args, **kwargs):
+        job = self.get_object()
+        serializer = self.get_serializer(instance=job, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class DataSourceScriptDetailView(generics.RetrieveAPIView, generics.UpdateAPIView):

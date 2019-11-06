@@ -311,6 +311,48 @@ class PublicApiJobSerializer(serializers.ModelSerializer):
         return obj.meta_data.items
 
 
+class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
+    job_state = serializers.ChoiceField(choices=[
+        DataSourceJobState.SUCCESS,
+        DataSourceJobState.FAILED,
+    ])
+    result = serializers.CharField()
+
+    class Meta:
+        model = models.DataSourceJob
+        fields = ("job_state", "result", "error")
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        job_state = self.initial_data.get("job_state")
+        job_state_available_fields = {
+            DataSourceJobState.PENDING: [],
+            DataSourceJobState.SUCCESS: ["result"],
+            DataSourceJobState.FAILED: ["error"],
+        }
+        available_fields = job_state_available_fields.get(job_state, []) + ["job_state"]
+        exclude_fields = self.fields.keys() - available_fields
+        for field_name in exclude_fields:
+            del self.fields[field_name]
+
+    def validate_job_state(self, new_job_state):
+        job = self.instance
+        available_states = (tr.target for tr in job.get_available_job_state_transitions())
+        if new_job_state not in available_states:
+            raise serializers.ValidationError("Invalid job state transition")
+        return new_job_state
+
+    @transaction.atomic()
+    def save(self, **kwargs):
+        job_state = self.validated_data.pop("job_state")
+        job_state_action = {
+            DataSourceJobState.SUCCESS: self.instance.success,
+            DataSourceJobState.FAILED: self.instance.fail,
+        }
+        job_state_action[job_state]()
+        return super().save(**kwargs)
+
+
 # Filters
 
 
