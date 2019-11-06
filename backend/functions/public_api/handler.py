@@ -3,6 +3,7 @@ import math
 import os
 
 from flask import Flask, jsonify, abort, request
+from flask_cors import CORS
 import requests
 import pandas as pd
 
@@ -13,6 +14,7 @@ logger.setLevel(logging.INFO)
 
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/datasources/<int:data_source_id>", methods=["GET"])
