@@ -5,7 +5,7 @@ exports[`Storyshots Settings Default 1`] = `
   className="sc-fOKMvo cxpccT"
 >
   <div
-    className="sc-htoDjs cFUVeu"
+    className="sc-htoDjs cMdrZw"
   >
     <div
       style={
@@ -430,7 +430,7 @@ exports[`Storyshots Settings Default 1`] = `
         className="sc-bZQynM ceQpbG"
       >
         <div
-          className="sc-gzVnrw jZsaFH"
+          className="sc-gzVnrw jHwnna"
         >
           <button
             disabled={true}

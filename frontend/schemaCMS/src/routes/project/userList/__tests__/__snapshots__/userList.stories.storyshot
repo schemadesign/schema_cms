@@ -10,7 +10,7 @@ exports[`Storyshots Project/UserList list 1`] = `
   }
 >
   <div
-    className="sc-htoDjs cFUVeu"
+    className="sc-htoDjs cMdrZw"
   >
     <div
       style={
@@ -220,7 +220,7 @@ exports[`Storyshots Project/UserList list 1`] = `
     className="sc-bZQynM ceQpbG"
   >
     <div
-      className="sc-gzVnrw kYnfZG"
+      className="sc-gzVnrw gSWkmB"
     >
       <button
         disabled={false}
@@ -302,7 +302,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   }
 >
   <div
-    className="sc-htoDjs cFUVeu"
+    className="sc-htoDjs cMdrZw"
   >
     <div
       style={
@@ -800,7 +800,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     className="sc-bZQynM ceQpbG"
   >
     <div
-      className="sc-gzVnrw kYnfZG"
+      className="sc-gzVnrw gSWkmB"
     >
       <button
         disabled={false}

@@ -3,7 +3,7 @@
 exports[`Storyshots JobDetail Default 1`] = `
 Array [
   <div
-    className="sc-htoDjs cFUVeu"
+    className="sc-htoDjs cMdrZw"
   >
     <div
       style={
@@ -220,7 +220,7 @@ Array [
     className="sc-bZQynM ceQpbG"
   >
     <div
-      className="sc-gzVnrw fqUTwt"
+      className="sc-gzVnrw lhlEqD"
     >
       <button
         disabled={false}

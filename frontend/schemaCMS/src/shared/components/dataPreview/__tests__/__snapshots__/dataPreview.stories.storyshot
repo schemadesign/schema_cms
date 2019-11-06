@@ -392,7 +392,7 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
       className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-gzVnrw bfZNDx"
+        className="sc-gzVnrw glRsuo"
       >
         <button
           disabled={false}

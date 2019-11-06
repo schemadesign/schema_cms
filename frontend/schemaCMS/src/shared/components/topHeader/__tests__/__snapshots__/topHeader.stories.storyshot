@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|TopHeader Default 1`] = `
   }
 >
   <div
-    className="sc-htoDjs cFUVeu"
+    className="sc-htoDjs cMdrZw"
   >
     <div
       style={
@@ -263,7 +263,7 @@ exports[`Storyshots Shared Components|TopHeader Long tiltle and subtitle 1`] = `
   }
 >
   <div
-    className="sc-htoDjs cFUVeu"
+    className="sc-htoDjs cMdrZw"
   >
     <div
       style={

@@ -13,7 +13,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
     className="sc-btzYZH dcBPpq"
   >
     <div
-      className="sc-htoDjs cFUVeu"
+      className="sc-htoDjs cMdrZw"
     >
       <div
         style={
@@ -223,7 +223,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
       className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-gzVnrw kYnfZG"
+        className="sc-gzVnrw gSWkmB"
       >
         <button
           disabled={false}
@@ -270,7 +270,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
     className="sc-btzYZH dcBPpq"
   >
     <div
-      className="sc-htoDjs cFUVeu"
+      className="sc-htoDjs cMdrZw"
     >
       <div
         style={
@@ -748,7 +748,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
       className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-gzVnrw kYnfZG"
+        className="sc-gzVnrw gSWkmB"
       >
         <button
           disabled={false}

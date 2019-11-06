@@ -5,7 +5,7 @@ exports[`Storyshots JobList Default 1`] = `
   className="sc-bdVaJa ixPHMV"
 >
   <div
-    className="sc-htoDjs cFUVeu"
+    className="sc-htoDjs cMdrZw"
   >
     <div
       style={
@@ -222,7 +222,7 @@ exports[`Storyshots JobList Default 1`] = `
     className="sc-bZQynM ceQpbG"
   >
     <div
-      className="sc-gzVnrw fqUTwt"
+      className="sc-gzVnrw lhlEqD"
     >
       <button
         disabled={false}

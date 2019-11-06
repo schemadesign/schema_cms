@@ -14,7 +14,7 @@ exports[`Storyshots Project/View default 1`] = `
   >
     <div>
       <div
-        className="sc-htoDjs cFUVeu"
+        className="sc-htoDjs cMdrZw"
       >
         <div
           style={
@@ -593,7 +593,7 @@ exports[`Storyshots Project/View default 1`] = `
       className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-gzVnrw kYnfZG"
+        className="sc-gzVnrw gSWkmB"
       >
         <button
           disabled={false}
@@ -653,7 +653,7 @@ exports[`Storyshots Project/View loading 1`] = `
   >
     <div>
       <div
-        className="sc-htoDjs cFUVeu"
+        className="sc-htoDjs cMdrZw"
       >
         <div
           style={
@@ -901,7 +901,7 @@ exports[`Storyshots Project/View loading 1`] = `
       className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-gzVnrw kYnfZG"
+        className="sc-gzVnrw gSWkmB"
       >
         <button
           disabled={false}
