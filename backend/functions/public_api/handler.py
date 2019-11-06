@@ -1,3 +1,4 @@
+import json
 import logging
 import math
 import os
@@ -27,7 +28,10 @@ def data_source_results(data_source_id):
         data = requests.get(url)
 
         if data.status_code == 404:
-            return jsonify({"message": f"Datasource {data_source_id} does not exist"}), 404
+            return (
+                jsonify({"message": f"Datasource {data_source_id} does not exist"}),
+                404,
+            )
 
         items = data.json().get("items")
         result = data.json().get("result")
@@ -70,6 +74,6 @@ def get_paginated_list(df, items, page, page_size):
             df["Body"], skiprows=range(1, rows_to_skip + 1), iterator=True
         )
         pan = pan.get_chunk(page_size)
-        obj["results"] = pan.to_json(orient="records")
+        obj["results"] = json.loads(pan.to_json(orient="records"))
 
     return obj
