@@ -261,7 +261,7 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-cbkKFq dViEUy"
         >
           <li
-            className="sc-krvtoX cAcRzw"
+            className="sc-krvtoX jwfKDh"
           >
             <div
               id="projectDataSources"
@@ -288,10 +288,14 @@ exports[`Storyshots Project/View default 1`] = `
                   }
                 }
               >
-                Data Sources
+                <span
+                  className="sc-fYiAbW hwwLwZ"
+                >
+                  Data Sources
+                </span>
               </div>
               <span
-                className="sc-fYiAbW htXbtc"
+                className="sc-fOKMvo jGoPUQ"
                 id="projectDataSourcesValue"
               >
                 3
@@ -299,7 +303,7 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-krvtoX cAcRzw"
+            className="sc-krvtoX jwfKDh"
           >
             <div
               id="projectUsers"
@@ -326,10 +330,14 @@ exports[`Storyshots Project/View default 1`] = `
                   }
                 }
               >
-                Users
+                <span
+                  className="sc-fYiAbW hwwLwZ"
+                >
+                  Users
+                </span>
               </div>
               <span
-                className="sc-fYiAbW htXbtc"
+                className="sc-fOKMvo jGoPUQ"
                 id="projectUsersValue"
               >
                 2

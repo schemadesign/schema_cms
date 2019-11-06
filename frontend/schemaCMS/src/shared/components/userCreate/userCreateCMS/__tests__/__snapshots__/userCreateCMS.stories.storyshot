@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 >
   <div
-    className="sc-laTMn fJphvA"
+    className="sc-hGoxap irFVct"
   >
     <div
       className="sc-jhAzac bdqCwL"
@@ -220,7 +220,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-hGoxap kORVzM"
+      className="sc-fjmCvl halEvf"
       onSubmit={[Function]}
     >
       <div
