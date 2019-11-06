@@ -933,7 +933,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                               "componentStyle": ComponentStyle {
                                 "componentId": "sc-gzVnrw",
                                 "isStatic": false,
-                                "lastClassName": "fqUTwt",
+                                "lastClassName": "lhlEqD",
                                 "rules": Array [
                                   "
   position: fixed;
@@ -953,6 +953,22 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                                   ";
   flex-wrap: wrap;
   align-items: center;
+
+  ",
+                                  "
+    @media (min-width: ",
+                                  "1040",
+                                  "px) {
+      ",
+                                  "
+    width: ",
+                                  "1000",
+                                  "px;
+  ",
+                                  "
+    }
+  ",
+                                  "
 ",
                                 ],
                               },
@@ -970,7 +986,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
                           right={false}
                         >
                           <div
-                            className="sc-gzVnrw fqUTwt"
+                            className="sc-gzVnrw lhlEqD"
                           >
                             <BackButton
                               disabled={false}
@@ -2549,7 +2565,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                               "componentStyle": ComponentStyle {
                                 "componentId": "sc-gzVnrw",
                                 "isStatic": false,
-                                "lastClassName": "fqUTwt",
+                                "lastClassName": "lhlEqD",
                                 "rules": Array [
                                   "
   position: fixed;
@@ -2569,6 +2585,22 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                                   ";
   flex-wrap: wrap;
   align-items: center;
+
+  ",
+                                  "
+    @media (min-width: ",
+                                  "1040",
+                                  "px) {
+      ",
+                                  "
+    width: ",
+                                  "1000",
+                                  "px;
+  ",
+                                  "
+    }
+  ",
+                                  "
 ",
                                 ],
                               },
@@ -2586,7 +2618,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
                           right={false}
                         >
                           <div
-                            className="sc-gzVnrw fqUTwt"
+                            className="sc-gzVnrw lhlEqD"
                           >
                             <BackButton
                               disabled={false}

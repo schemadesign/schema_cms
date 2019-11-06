@@ -13,7 +13,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
     className="sc-cJSrbW dLwzxs"
   >
     <div
-      className="sc-hzDkRC khzxcx"
+      className="sc-hzDkRC eJLEZA"
     >
       <div
         style={
@@ -987,7 +987,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-dnqmqq emCgxc"
+        className="sc-dnqmqq kiwmCb"
       >
         <button
           disabled={false}

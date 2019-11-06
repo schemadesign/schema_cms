@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 >
   <div
-    className="sc-fYiAbW isVHhR"
+    className="sc-bnXvFD iypPKo"
   >
     <div
-      className="sc-hzDkRC khzxcx"
+      className="sc-hzDkRC eJLEZA"
     >
       <div
         style={
@@ -220,7 +220,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-fOKMvo clxUjt"
+      className="sc-gFaPwZ kvQvUd"
       onSubmit={[Function]}
     >
       <div
@@ -403,7 +403,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-dnqmqq emCgxc"
+          className="sc-dnqmqq kiwmCb"
         >
           <button
             disabled={false}

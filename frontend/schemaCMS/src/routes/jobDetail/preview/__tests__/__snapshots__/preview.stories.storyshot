@@ -13,7 +13,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
     className="sc-fYxtnH hSLfWw"
   >
     <div
-      className="sc-hzDkRC khzxcx"
+      className="sc-hzDkRC eJLEZA"
     >
       <div
         style={
@@ -230,7 +230,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
       className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-dnqmqq emCgxc"
+        className="sc-dnqmqq kiwmCb"
       >
         <button
           disabled={false}

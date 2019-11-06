@@ -13,7 +13,7 @@ exports[`Storyshots Project/Create Default 1`] = `
     className="sc-bYSBpT dTBkYG"
   >
     <div
-      className="sc-hzDkRC khzxcx"
+      className="sc-hzDkRC eJLEZA"
     >
       <div
         style={
@@ -544,7 +544,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-dnqmqq emCgxc"
+          className="sc-dnqmqq kiwmCb"
         >
           <button
             disabled={false}
