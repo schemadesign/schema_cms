@@ -1,13 +1,14 @@
 import json
 import logging
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
 from django.shortcuts import get_object_or_404
 from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
 from schemacms.users import permissions as user_permissions
 from schemacms.utils import serializers as utils_serializers
-from . import constants, models, serializers, services
+from . import models, serializers, services
 
 
 class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
@@ -222,6 +223,17 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         return response.Response(status=status.HTTP_200_OK)
 
+    @decorators.action(detail=True, url_path="job-preview", methods=["get"])
+    def job_preview(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+
+        try:
+            job = data_source.current_job
+        except ObjectDoesNotExist as e:
+            return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
+
+        return response.Response(job.meta_data.data, status=status.HTTP_200_OK)
+
 
 class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
     queryset = models.DataSourceJob.objects.none()
@@ -234,21 +246,12 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
     @decorators.action(detail=True, url_path="preview", methods=["get"])
     def result_preview(self, request, pk=None, **kwarg):
         obj = self.get_object()
-        if obj.job_state in [constants.DataSourceJobState.PENDING, constants.DataSourceJobState.PROCESSING]:
-            return response.Response("Job is still running", status=status.HTTP_200_OK)
-        elif obj.job_state == constants.DataSourceJobState.FAILED:
-            data = {"error": obj.error}
-            return response.Response(data, status=status.HTTP_200_OK)
-        else:
-            try:
-                if not hasattr(obj, 'meta_data') and obj.result:
-                    obj.update_meta()
-                result = obj.meta_data.data
-            except Exception as e:
-                logging.error(f"Not able to showJob {obj.id} results - {e}")
-                return response.Response(status=status.HTTP_404_NOT_FOUND)
+        try:
+            result = obj.meta_data.data
+        except ObjectDoesNotExist as e:
+            return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
 
-            return response.Response(result, status=status.HTTP_200_OK)
+        return response.Response(result, status=status.HTTP_200_OK)
 
     @decorators.action(detail=True, url_path="update-meta", methods=["post"])
     def update_meta(self, request, pk=None, **kwarg):
