@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SchemaLogoIcon: Component should render correctly 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<schemaLogo.svg
+  style={
+    Object {
+      "fill": "#FFF",
+      "height": "16px",
+      "width": "96px",
+    }
+  }
+/>
 `;

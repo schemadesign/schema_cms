@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { SchemaLogoIcon } from '../schemaLogoIcon.component';
+import { SchemaLogoIconComponent } from '../schemaLogoIcon.component';
 
 describe('SchemaLogoIcon: Component', () => {
   const defaultProps = {};
 
-  const component = props => <SchemaLogoIcon {...defaultProps} {...props} />;
+  const component = props => <SchemaLogoIconComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

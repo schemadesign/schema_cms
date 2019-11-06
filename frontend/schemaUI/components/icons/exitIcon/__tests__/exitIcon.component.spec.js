@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { ExitIcon } from '../exitIcon.component';
+import { ExitIconComponent } from '../exitIcon.component';
 
 describe('ExitIcon: Component', () => {
   const defaultProps = {};
 
-  const component = props => <ExitIcon {...defaultProps} {...props} />;
+  const component = props => <ExitIconComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
