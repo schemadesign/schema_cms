@@ -1,16 +1,17 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { path } from 'ramda';
+import { always, path, both, isEmpty, cond, equals } from 'ramda';
 import { Typography, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
 import { Container, JobItem, ListWrapper, Dot, JobItemWrapper, RadioInput } from './jobList.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import browserHistory from '../../../shared/utils/history';
 
 import messages from './jobList.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
+import { Loader } from '../../../shared/components/loader';
+import { NoData } from '../../../shared/components/noData';
 
 const JOB_LIST_NAME = 'job_list';
 const { Span } = Typography;
@@ -21,6 +22,7 @@ export class JobList extends PureComponent {
     revertToJob: PropTypes.func.isRequired,
     jobList: PropTypes.array.isRequired,
     isAnyJobSuccessful: PropTypes.bool.isRequired,
+    history: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
@@ -30,17 +32,27 @@ export class JobList extends PureComponent {
 
   state = {
     selectedJob: null,
+    loading: true,
   };
 
-  componentDidMount() {
-    this.props.fetchJobList(path(['match', 'params'], this.props));
+  async componentDidMount() {
+    try {
+      await this.props.fetchJobList(path(['match', 'params'], this.props));
+      this.setState({
+        loading: false,
+      });
+    } catch (e) {
+      console.log(e);
+      // this.props.history.push('/');
+    }
   }
 
   handleChange = ({ target: { value } }) => this.setState({ selectedJob: value });
 
-  handleCancelClick = () => browserHistory.push(`/datasource/${path(['match', 'params', 'dataSourceId'], this.props)}`);
+  handleCancelClick = () =>
+    this.props.history.push(`/datasource/${path(['match', 'params', 'dataSourceId'], this.props)}`);
 
-  handleIconClick = jobId => browserHistory.push(`/job/${jobId}`);
+  handleIconClick = jobId => this.props.history.push(`/job/${jobId}`);
 
   handleRevertClick = () => this.props.revertToJob({ jobId: this.state.selectedJob });
 
@@ -58,8 +70,18 @@ export class JobList extends PureComponent {
     </JobItemWrapper>
   );
 
+  renderContent = cond([
+    [equals(true), always(<Loader />)],
+    [both(equals(false), () => isEmpty(this.props.jobList)), always(<NoData />)],
+    [
+      both(equals(false), () => !isEmpty(this.props.jobList)),
+      () => <ListWrapper>{this.props.jobList.map(this.renderList)}</ListWrapper>,
+    ],
+  ]);
+
   render() {
-    const { jobList, isAnyJobSuccessful } = this.props;
+    const { isAnyJobSuccessful } = this.props;
+    const { loading } = this.state;
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.title} />,
       headerSubtitle: <FormattedMessage {...messages.subTitle} />,
@@ -68,7 +90,7 @@ export class JobList extends PureComponent {
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
-        <ListWrapper>{jobList.map(this.renderList)}</ListWrapper>
+        {this.renderContent(loading)}
         <NavigationContainer>
           <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
             <FormattedMessage {...messages.cancel} />
