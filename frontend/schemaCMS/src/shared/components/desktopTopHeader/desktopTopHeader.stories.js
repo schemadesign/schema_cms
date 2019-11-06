@@ -25,7 +25,7 @@ const longProps = {
   title: longText,
 };
 
-storiesOf('Shared Components|DesktopTopHeader', module)
+storiesOf('Shared Components|Header/DesktopTopHeader', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <DesktopTopHeader {...defaultProps} />)
