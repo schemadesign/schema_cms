@@ -20,6 +20,18 @@ export const Container = styled.div`
   width: ${contentSizes.desktop}px;
 `;
 
+export const Overlayer = styled.div`
+  display: ${({ visible }) => (visible ? 'block' : 'none')};
+  background: ${({ theme: { card } }) => card.background};
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+`;
+
 export const HeaderWrapper = styled.div`
   display: flex;
   width: ${contentSizes.desktop - 50}px;
@@ -74,4 +86,12 @@ export const headerCustomStyles = {
 export const customButtonStyles = {
   position: null,
   flex: '0 0 auto',
+};
+
+export const menuStyles = {
+  zIndex: 9999,
+  maxWidth: 595,
+  padding: 50,
+  minHeight: null,
+  transform: `translateX(calc((100vw - ${contentSizes.desktop}px) / -2 + 8px))`,
 };

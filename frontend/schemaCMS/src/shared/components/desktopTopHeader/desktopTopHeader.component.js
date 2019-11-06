@@ -11,11 +11,11 @@ import {
   PrimaryItem,
   SecondaryItem,
   MenuHeader,
-  menuStyles,
   closeButtonStyles,
 } from '../topHeader/topHeader.styles';
 import {
   Container,
+  Overlayer,
   TopContainer,
   HeaderWrapper,
   Title,
@@ -23,6 +23,7 @@ import {
   Actions,
   LogoLink,
   IconLink,
+  menuStyles,
   headerCustomStyles,
   customButtonStyles,
 } from './desktopTopHeader.styles';
@@ -80,6 +81,7 @@ export class DesktopTopHeader extends TopHeader {
           <Header buttonProps={buttonProps} customStyles={headerCustomStyles} customButtonStyles={customButtonStyles}>
             {this.renderHeaderBar(title)}
           </Header>
+          <Overlayer visible={this.state.isMenuOpen} />
           <Menu
             open={this.state.isMenuOpen}
             onClose={this.handleToggleMenu}
