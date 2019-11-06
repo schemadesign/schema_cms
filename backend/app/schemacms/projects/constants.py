@@ -44,7 +44,7 @@ DATA_SOURCE_JOB_STATE_CHOICES = (
     (DataSourceJobState.SUCCESS, 'Success'),
 )
 
-SCRIPT_NAME_MAX_LENGTH = 30
+SCRIPT_NAME_MAX_LENGTH = 50
 
 
 class FilterType:

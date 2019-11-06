@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
@@ -134,9 +135,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         datasource = self.get_object()
         if not request.data.get("datasource"):
             request.data["datasource"] = datasource
+        if not request.data.get("name"):
+            request.data["name"] = os.path.splitext(request.data["file"].name)[0]
+
         serializer = self.get_serializer(data=request.data, context=datasource)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+
         return response.Response(status=status.HTTP_201_CREATED)
 
     @decorators.action(detail=True, url_path="job", methods=["post"])
