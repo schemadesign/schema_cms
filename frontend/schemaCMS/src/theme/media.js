@@ -3,9 +3,13 @@ import { css } from 'styled-components';
 export const sizes = {
   desktopFull: 1920,
   desktopWide: 1440,
-  desktop: 1280,
+  desktop: 1040,
   tablet: 768,
   mobile: 320,
+};
+
+export const contentSizes = {
+  desktop: 1000,
 };
 
 const getWindowWidth = () => window.innerWidth;

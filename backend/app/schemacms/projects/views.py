@@ -1,6 +1,8 @@
 import json
 import logging
+import os
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
 from django.shortcuts import get_object_or_404
 from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
@@ -133,9 +135,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         datasource = self.get_object()
         if not request.data.get("datasource"):
             request.data["datasource"] = datasource
+        if not request.data.get("name"):
+            request.data["name"] = os.path.splitext(request.data["file"].name)[0]
+
         serializer = self.get_serializer(data=request.data, context=datasource)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+
         return response.Response(status=status.HTTP_201_CREATED)
 
     @decorators.action(detail=True, url_path="job", methods=["post"])
@@ -177,15 +183,16 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         data_source = self.get_object()
 
         try:
-            preview = data_source.get_last_success_job().meta_data.preview
+            preview = data_source.current_job.meta_data.preview
         except Exception as e:
             return response.Response(f"No successful job found - {e}", status=status.HTTP_404_NOT_FOUND)
 
-        fields_info = dict(fields_info=json.loads(preview.read())["fields"])
+        fields = json.loads(preview.read())["fields"]
 
         data = dict()
-        for key, value in fields_info["fields_info"].items():
-            data[key] = dict(type=models.map_general_dtypes(value["dtype"]), unique=value["unique"])
+        for key, value in fields.items():
+            data[key] = dict(field_type=models.map_general_dtypes(value["dtype"]), unique=value["unique"])
+            data[key]["filter_type"] = getattr(constants.FilterTypesGroups, data[key]["field_type"])
 
         return response.Response(data=data)
 
@@ -222,6 +229,17 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         return response.Response(status=status.HTTP_200_OK)
 
+    @decorators.action(detail=True, url_path="job-preview", methods=["get"])
+    def job_preview(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+
+        try:
+            job = data_source.current_job
+        except ObjectDoesNotExist as e:
+            return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
+
+        return response.Response(job.meta_data.data, status=status.HTTP_200_OK)
+
 
 class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
     queryset = models.DataSourceJob.objects.none()
@@ -234,21 +252,12 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
     @decorators.action(detail=True, url_path="preview", methods=["get"])
     def result_preview(self, request, pk=None, **kwarg):
         obj = self.get_object()
-        if obj.job_state in [constants.DataSourceJobState.PENDING, constants.DataSourceJobState.PROCESSING]:
-            return response.Response("Job is still running", status=status.HTTP_200_OK)
-        elif obj.job_state == constants.DataSourceJobState.FAILED:
-            data = {"error": obj.error}
-            return response.Response(data, status=status.HTTP_200_OK)
-        else:
-            try:
-                if not hasattr(obj, 'meta_data') and obj.result:
-                    obj.update_meta()
-                result = obj.meta_data.data
-            except Exception as e:
-                logging.error(f"Not able to showJob {obj.id} results - {e}")
-                return response.Response(status=status.HTTP_404_NOT_FOUND)
+        try:
+            result = obj.meta_data.data
+        except ObjectDoesNotExist as e:
+            return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
 
-            return response.Response(result, status=status.HTTP_200_OK)
+        return response.Response(result, status=status.HTTP_200_OK)
 
     @decorators.action(detail=True, url_path="update-meta", methods=["post"])
     def update_meta(self, request, pk=None, **kwarg):
@@ -273,7 +282,9 @@ class DataSourceScriptDetailView(generics.RetrieveAPIView):
         return models.WranglingScript.objects.all().select_related("datasource", "created_by")
 
 
-class FilterDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
+class FilterDetailViewSet(
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
+):
     queryset = models.Filter.objects.none()
     serializer_class = serializers.FilterSerializer
     permission_classes = (permissions.IsAuthenticated,)

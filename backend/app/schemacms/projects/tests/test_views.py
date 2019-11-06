@@ -739,7 +739,7 @@ class TestFilterCreateView:
     def test_response(self, api_client, admin, data_source):
         payload = dict(
             name="Test",
-            type=projects_constants.FilterType.RADIO_BUTTON,
+            filter_type=projects_constants.FilterType.RADIO_BUTTON.value,
             field="Date of Birth",
             field_type=projects_constants.FieldType.DATE,
         )

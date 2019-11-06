@@ -1,3 +1,6 @@
+from enum import Enum
+
+
 class ProjectStatus:
     IN_PROGRESS = "in_progress"
     DONE = "done"
@@ -44,20 +47,54 @@ DATA_SOURCE_JOB_STATE_CHOICES = (
     (DataSourceJobState.SUCCESS, 'Success'),
 )
 
-SCRIPT_NAME_MAX_LENGTH = 30
+SCRIPT_NAME_MAX_LENGTH = 50
 
 
-class FilterType:
-    RADIO_BUTTON = "radio_button"
-    CHECKBOX = "checkbox"
-    CALENDAR = "calendar"
+class FilterType(Enum):
+    # Date
+    CALENDAR = "Calendar"
+    TIME_INPUT = "Time Input"
+    TIME_SCRUBBER = "Time Scrubber"
+    # Bool
+    SWITCH = "Switch"
+    # Geographic
+    CARTOGRAM = "Cartogram"
+    ZIPCODE_INPUT = "Zipcode Input"
+    # String
+    RADIO_BUTTON = "Radio Button"
+    CHECKBOX = "Checkbox"
+    SEARCH_INPUT = "Search Input"
+    TAGS = "Tags"
+    # Number
+    INTERVAL_SLIDER = "Interval Slider"
+    SINGLE_POINT_SLIDER = "Single Point Slider"
+
+    @classmethod
+    def choices(cls):
+        return [(key.value, key.name) for key in cls]
 
 
-FILTER_TYPE_CHOICES = (
-    (FilterType.RADIO_BUTTON, 'Radio Button'),
-    (FilterType.CHECKBOX, 'Checkbox'),
-    (FilterType.CALENDAR, 'Calendar'),
-)
+STRING_FILTER_TYPES = [
+    FilterType.TAGS.value,
+    FilterType.SEARCH_INPUT.value,
+    FilterType.RADIO_BUTTON.value,
+    FilterType.CHECKBOX.value,
+]
+
+DATE_FILTER_TYPES = [FilterType.TIME_SCRUBBER.value, FilterType.TIME_INPUT.value, FilterType.CALENDAR.value]
+
+BOOL_FILTER_TYPES = [FilterType.SWITCH.value]
+
+NUMBER_FILTER_TYPES = [FilterType.INTERVAL_SLIDER.value, FilterType.SINGLE_POINT_SLIDER.value]
+
+GEO_FILTER_TYPES = [FilterType.CARTOGRAM.value, FilterType.ZIPCODE_INPUT.value]
+
+
+class FilterTypesGroups:
+    string = STRING_FILTER_TYPES
+    number = NUMBER_FILTER_TYPES
+    bool = BOOL_FILTER_TYPES
+    date = DATE_FILTER_TYPES
 
 
 class FieldType:

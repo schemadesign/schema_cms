@@ -320,11 +320,14 @@ exports[`App: Component should not render App when language is not set 1`] = `
           <Component />
         </FormattedMessage>
         <GlobalStyleComponent />
-        <div
-          className="app__children"
-        >
-          Children
-        </div>
+        <DesktopTopHeader />
+        <styled.div>
+          <div
+            className="app__children"
+          >
+            Children
+          </div>
+        </styled.div>
       </styled.div>
     </ThemeProvider>
   </ThemeProvider>
@@ -651,11 +654,14 @@ exports[`App: Component should render App when language is set 1`] = `
           <Component />
         </FormattedMessage>
         <GlobalStyleComponent />
-        <div
-          className="app__children"
-        >
-          Children
-        </div>
+        <DesktopTopHeader />
+        <styled.div>
+          <div
+            className="app__children"
+          >
+            Children
+          </div>
+        </styled.div>
       </styled.div>
     </ThemeProvider>
   </ThemeProvider>

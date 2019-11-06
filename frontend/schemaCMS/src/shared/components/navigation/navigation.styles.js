@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { always, ifElse, propEq } from 'ramda';
 
+import { media, contentSizes } from '../../../theme/media';
+
 const buttonMargin = 5;
 
 export const Container = styled.div`
@@ -21,6 +23,10 @@ export const Navigation = styled.div`
   justify-content: ${ifElse(propEq('right', true), always('flex-end'), always('space-between'))};
   flex-wrap: wrap;
   align-items: center;
+
+  ${media.desktop`
+    width: ${contentSizes.desktop}px;
+  `}
 `;
 
 export const buttonIconStyles = {

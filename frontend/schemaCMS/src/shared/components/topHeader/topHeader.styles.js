@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
+import { media } from '../../../theme/media';
+
 export const Container = styled.div`
   width: calc(100% - 50px);
+
+  ${media.desktop`
+    display: none;
+  `}
 `;
 
 export const HeaderWrapper = styled.div``;

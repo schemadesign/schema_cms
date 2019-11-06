@@ -1,0 +1,955 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Shared Components|DesktopTopHeader Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-fYiAbW jqszxS"
+  >
+    <div
+      className="sc-fOKMvo kbvlaU"
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": null,
+            "paddingBottom": "18px",
+            "width": "100%",
+          }
+        }
+      >
+        <div>
+          <div
+            className="sc-gHboQg eBvWcg"
+          >
+            <a
+              className="sc-eerKOB sc-emmjRN gnGwxO"
+              href="/"
+              onClick={[Function]}
+            >
+              <svg
+                className="sc-dymIpo ezHZYa"
+              >
+                schemaLogo.svg
+              </svg>
+            </a>
+            <div
+              className="sc-eilVRo hGjbaj"
+            >
+              <a
+                className="sc-eerKOB sc-cpmLhU IaBCq"
+                href="/logout"
+                onClick={[Function]}
+              >
+                <div
+                  style={
+                    Object {
+                      "border": "solid 1px #FFF",
+                      "height": "20px",
+                      "width": "15px",
+                    }
+                  }
+                />
+              </a>
+              <a
+                className="sc-eerKOB sc-cpmLhU IaBCq"
+                href="/user/me"
+                onClick={[Function]}
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "28px",
+                      "width": "28px",
+                    }
+                  }
+                  viewBox="0 0 28 28"
+                >
+                  <defs>
+                    <path
+                      d="M0 0h24.034v24.034H0z"
+                      id="user_svg__a"
+                    />
+                  </defs>
+                  <g
+                    fillRule="evenodd"
+                    transform="translate(1.867 1.867)"
+                  >
+                    <mask
+                      fill="#fff"
+                      id="user_svg__b"
+                    >
+                      <use
+                        xlinkHref="#user_svg__a"
+                      />
+                    </mask>
+                    <path
+                      d="M4.138 19.57c1.38-.552 2.677-1.04 3.948-1.588 1.495-.646 1.735-1.708.889-3.134-.632-1.065-1.361-2.162-1.616-3.34-.284-1.311-.117-2.73-.081-4.1.068-2.682 1.755-4.263 4.561-4.268 2.074-.004 5.335 1.606 5.025 4.192-.274 2.283.356 4.774-1.347 6.785-.193.229-.308.523-.474.777-.886 1.37-.568 2.463.95 3.104 1.273.537 2.566 1.029 3.863 1.545 4.067-3.565 4.198-10.59.257-14.93C15.993.079 8.887-.158 4.432 4.09.044 8.275-.1 15.32 4.138 19.57M0 11.9C.053 5.289 5.524-.063 12.165 0c6.606.064 11.94 5.543 11.868 12.195-.07 6.542-5.517 11.874-12.098 11.84C5.326 24-.052 18.531 0 11.9"
+                      mask="url(#user_svg__b)"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          disabled={false}
+          id="desktopTopHeaderOpenMenuButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "flex": "0 0 auto",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": null,
+              "right": 0,
+              "top": 6,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="sc-dUjcNx fuyGvh"
+      />
+      <div
+        style={
+          Object {
+            "backgroundColor": "#000",
+            "color": "#FFF",
+            "maxWidth": 595,
+            "minHeight": null,
+            "padding": 50,
+            "position": "fixed",
+            "right": 0,
+            "textAlign": "left",
+            "top": 0,
+            "transform": "translateX(100%)",
+            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+            "visibility": 0,
+            "width": "100%",
+            "zIndex": 9999,
+          }
+        }
+      >
+        <div
+          className="sc-fBuWsC eeihxG"
+        >
+          <div
+            className="sc-jhAzac hmXDXQ"
+          >
+            <h2
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            >
+              SchemaCMS
+            </h2>
+            <h1
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Menu
+            </h1>
+          </div>
+        </div>
+        <div
+          className="sc-fMiknA dDuaDM"
+        >
+          <ul
+            className="sc-dVhcbM sc-eqIVtm dnkudp"
+          >
+            <li
+              className="sc-caSCKo sc-gisBJw fjmWZk"
+            >
+              <a
+                href="/path"
+                id={null}
+                onClick={[Function]}
+              >
+                Data Sources
+              </a>
+            </li>
+            <li
+              className="sc-caSCKo sc-gisBJw fjmWZk"
+            >
+              <a
+                href="/path"
+                id={null}
+                onClick={[Function]}
+              >
+                Charts
+              </a>
+            </li>
+          </ul>
+          <ul
+            className="sc-dVhcbM sc-fAjcbJ ggeeow"
+          >
+            <li
+              className="sc-caSCKo sc-kjoXOD bxzQyw"
+            >
+              <a
+                href="/logout"
+                id={null}
+                onClick={[Function]}
+              >
+                Log Out
+              </a>
+            </li>
+            <li
+              className="sc-caSCKo sc-kjoXOD bxzQyw"
+              id="id"
+              onClick={[Function]}
+            >
+              Click action
+            </li>
+          </ul>
+        </div>
+        <button
+          disabled={false}
+          id="desktopTopHeaderCloseMenuButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": "absolute",
+              "right": 0,
+              "top": "6px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|DesktopTopHeader With long title 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-fYiAbW jqszxS"
+  >
+    <div
+      className="sc-fOKMvo kbvlaU"
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": null,
+            "paddingBottom": "18px",
+            "width": "100%",
+          }
+        }
+      >
+        <div>
+          <div
+            className="sc-gHboQg eBvWcg"
+          >
+            <a
+              className="sc-eerKOB sc-emmjRN gnGwxO"
+              href="/"
+              onClick={[Function]}
+            >
+              <svg
+                className="sc-dymIpo ezHZYa"
+              >
+                schemaLogo.svg
+              </svg>
+            </a>
+            <div
+              className="sc-bnXvFD kLLHPo"
+            >
+              <h1
+                className="sc-gFaPwZ gxnMjz"
+                style={
+                  Object {
+                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": 600,
+                    "letterSpacing": "-0.12px",
+                    "lineHight": 1.25,
+                    "margin": 0,
+                  }
+                }
+              >
+                
+  Mauris egestas arcu nec diam consectetur vulputate.
+  Mauris rhoncus a massa in ultricies. In vel accumsan tortor.
+  Donec suscipit commodo enim. Suspendisse nibh odio
+
+              </h1>
+            </div>
+            <div
+              className="sc-eilVRo hGjbaj"
+            >
+              <a
+                className="sc-eerKOB sc-cpmLhU IaBCq"
+                href="/logout"
+                onClick={[Function]}
+              >
+                <div
+                  style={
+                    Object {
+                      "border": "solid 1px #FFF",
+                      "height": "20px",
+                      "width": "15px",
+                    }
+                  }
+                />
+              </a>
+              <a
+                className="sc-eerKOB sc-cpmLhU IaBCq"
+                href="/user/me"
+                onClick={[Function]}
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "28px",
+                      "width": "28px",
+                    }
+                  }
+                  viewBox="0 0 28 28"
+                >
+                  <defs>
+                    <path
+                      d="M0 0h24.034v24.034H0z"
+                      id="user_svg__a"
+                    />
+                  </defs>
+                  <g
+                    fillRule="evenodd"
+                    transform="translate(1.867 1.867)"
+                  >
+                    <mask
+                      fill="#fff"
+                      id="user_svg__b"
+                    >
+                      <use
+                        xlinkHref="#user_svg__a"
+                      />
+                    </mask>
+                    <path
+                      d="M4.138 19.57c1.38-.552 2.677-1.04 3.948-1.588 1.495-.646 1.735-1.708.889-3.134-.632-1.065-1.361-2.162-1.616-3.34-.284-1.311-.117-2.73-.081-4.1.068-2.682 1.755-4.263 4.561-4.268 2.074-.004 5.335 1.606 5.025 4.192-.274 2.283.356 4.774-1.347 6.785-.193.229-.308.523-.474.777-.886 1.37-.568 2.463.95 3.104 1.273.537 2.566 1.029 3.863 1.545 4.067-3.565 4.198-10.59.257-14.93C15.993.079 8.887-.158 4.432 4.09.044 8.275-.1 15.32 4.138 19.57M0 11.9C.053 5.289 5.524-.063 12.165 0c6.606.064 11.94 5.543 11.868 12.195-.07 6.542-5.517 11.874-12.098 11.84C5.326 24-.052 18.531 0 11.9"
+                      mask="url(#user_svg__b)"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          disabled={false}
+          id="desktopTopHeaderOpenMenuButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "flex": "0 0 auto",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": null,
+              "right": 0,
+              "top": 6,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="sc-dUjcNx fuyGvh"
+      />
+      <div
+        style={
+          Object {
+            "backgroundColor": "#000",
+            "color": "#FFF",
+            "maxWidth": 595,
+            "minHeight": null,
+            "padding": 50,
+            "position": "fixed",
+            "right": 0,
+            "textAlign": "left",
+            "top": 0,
+            "transform": "translateX(100%)",
+            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+            "visibility": 0,
+            "width": "100%",
+            "zIndex": 9999,
+          }
+        }
+      >
+        <div
+          className="sc-fBuWsC eeihxG"
+        >
+          <div
+            className="sc-jhAzac hmXDXQ"
+          >
+            <h2
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            >
+              SchemaCMS
+            </h2>
+            <h1
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Menu
+            </h1>
+          </div>
+        </div>
+        <div
+          className="sc-fMiknA dDuaDM"
+        >
+          <ul
+            className="sc-dVhcbM sc-eqIVtm dnkudp"
+          >
+            <li
+              className="sc-caSCKo sc-gisBJw fjmWZk"
+            >
+              <a
+                href="/path"
+                id={null}
+                onClick={[Function]}
+              >
+                Data Sources
+              </a>
+            </li>
+            <li
+              className="sc-caSCKo sc-gisBJw fjmWZk"
+            >
+              <a
+                href="/path"
+                id={null}
+                onClick={[Function]}
+              >
+                Charts
+              </a>
+            </li>
+          </ul>
+          <ul
+            className="sc-dVhcbM sc-fAjcbJ ggeeow"
+          >
+            <li
+              className="sc-caSCKo sc-kjoXOD bxzQyw"
+            >
+              <a
+                href="/logout"
+                id={null}
+                onClick={[Function]}
+              >
+                Log Out
+              </a>
+            </li>
+            <li
+              className="sc-caSCKo sc-kjoXOD bxzQyw"
+              id="id"
+              onClick={[Function]}
+            >
+              Click action
+            </li>
+          </ul>
+        </div>
+        <button
+          disabled={false}
+          id="desktopTopHeaderCloseMenuButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": "absolute",
+              "right": 0,
+              "top": "6px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|DesktopTopHeader With title 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-fYiAbW jqszxS"
+  >
+    <div
+      className="sc-fOKMvo kbvlaU"
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": null,
+            "paddingBottom": "18px",
+            "width": "100%",
+          }
+        }
+      >
+        <div>
+          <div
+            className="sc-gHboQg eBvWcg"
+          >
+            <a
+              className="sc-eerKOB sc-emmjRN gnGwxO"
+              href="/"
+              onClick={[Function]}
+            >
+              <svg
+                className="sc-dymIpo ezHZYa"
+              >
+                schemaLogo.svg
+              </svg>
+            </a>
+            <div
+              className="sc-bnXvFD kLLHPo"
+            >
+              <h1
+                className="sc-gFaPwZ gxnMjz"
+                style={
+                  Object {
+                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": 600,
+                    "letterSpacing": "-0.12px",
+                    "lineHight": 1.25,
+                    "margin": 0,
+                  }
+                }
+              >
+                Projects
+              </h1>
+            </div>
+            <div
+              className="sc-eilVRo hGjbaj"
+            >
+              <a
+                className="sc-eerKOB sc-cpmLhU IaBCq"
+                href="/logout"
+                onClick={[Function]}
+              >
+                <div
+                  style={
+                    Object {
+                      "border": "solid 1px #FFF",
+                      "height": "20px",
+                      "width": "15px",
+                    }
+                  }
+                />
+              </a>
+              <a
+                className="sc-eerKOB sc-cpmLhU IaBCq"
+                href="/user/me"
+                onClick={[Function]}
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "28px",
+                      "width": "28px",
+                    }
+                  }
+                  viewBox="0 0 28 28"
+                >
+                  <defs>
+                    <path
+                      d="M0 0h24.034v24.034H0z"
+                      id="user_svg__a"
+                    />
+                  </defs>
+                  <g
+                    fillRule="evenodd"
+                    transform="translate(1.867 1.867)"
+                  >
+                    <mask
+                      fill="#fff"
+                      id="user_svg__b"
+                    >
+                      <use
+                        xlinkHref="#user_svg__a"
+                      />
+                    </mask>
+                    <path
+                      d="M4.138 19.57c1.38-.552 2.677-1.04 3.948-1.588 1.495-.646 1.735-1.708.889-3.134-.632-1.065-1.361-2.162-1.616-3.34-.284-1.311-.117-2.73-.081-4.1.068-2.682 1.755-4.263 4.561-4.268 2.074-.004 5.335 1.606 5.025 4.192-.274 2.283.356 4.774-1.347 6.785-.193.229-.308.523-.474.777-.886 1.37-.568 2.463.95 3.104 1.273.537 2.566 1.029 3.863 1.545 4.067-3.565 4.198-10.59.257-14.93C15.993.079 8.887-.158 4.432 4.09.044 8.275-.1 15.32 4.138 19.57M0 11.9C.053 5.289 5.524-.063 12.165 0c6.606.064 11.94 5.543 11.868 12.195-.07 6.542-5.517 11.874-12.098 11.84C5.326 24-.052 18.531 0 11.9"
+                      mask="url(#user_svg__b)"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          disabled={false}
+          id="desktopTopHeaderOpenMenuButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "flex": "0 0 auto",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": null,
+              "right": 0,
+              "top": 6,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="sc-dUjcNx fuyGvh"
+      />
+      <div
+        style={
+          Object {
+            "backgroundColor": "#000",
+            "color": "#FFF",
+            "maxWidth": 595,
+            "minHeight": null,
+            "padding": 50,
+            "position": "fixed",
+            "right": 0,
+            "textAlign": "left",
+            "top": 0,
+            "transform": "translateX(100%)",
+            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+            "visibility": 0,
+            "width": "100%",
+            "zIndex": 9999,
+          }
+        }
+      >
+        <div
+          className="sc-fBuWsC eeihxG"
+        >
+          <div
+            className="sc-jhAzac hmXDXQ"
+          >
+            <h2
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            >
+              SchemaCMS
+            </h2>
+            <h1
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Menu
+            </h1>
+          </div>
+        </div>
+        <div
+          className="sc-fMiknA dDuaDM"
+        >
+          <ul
+            className="sc-dVhcbM sc-eqIVtm dnkudp"
+          >
+            <li
+              className="sc-caSCKo sc-gisBJw fjmWZk"
+            >
+              <a
+                href="/path"
+                id={null}
+                onClick={[Function]}
+              >
+                Data Sources
+              </a>
+            </li>
+            <li
+              className="sc-caSCKo sc-gisBJw fjmWZk"
+            >
+              <a
+                href="/path"
+                id={null}
+                onClick={[Function]}
+              >
+                Charts
+              </a>
+            </li>
+          </ul>
+          <ul
+            className="sc-dVhcbM sc-fAjcbJ ggeeow"
+          >
+            <li
+              className="sc-caSCKo sc-kjoXOD bxzQyw"
+            >
+              <a
+                href="/logout"
+                id={null}
+                onClick={[Function]}
+              >
+                Log Out
+              </a>
+            </li>
+            <li
+              className="sc-caSCKo sc-kjoXOD bxzQyw"
+              id="id"
+              onClick={[Function]}
+            >
+              Click action
+            </li>
+          </ul>
+        </div>
+        <button
+          disabled={false}
+          id="desktopTopHeaderCloseMenuButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": "absolute",
+              "right": 0,
+              "top": "6px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
