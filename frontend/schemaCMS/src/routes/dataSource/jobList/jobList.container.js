@@ -7,6 +7,7 @@ import { compose } from 'ramda';
 
 import { JobList } from './jobList.component';
 import { JobRoutines, selectJobList, selectIsAnyJobSuccessful } from '../../../modules/job';
+import { DataSourceRoutines } from '../../../modules/dataSource';
 
 const mapStateToProps = createStructuredSelector({
   jobList: selectJobList,
@@ -17,7 +18,7 @@ export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
       fetchJobList: promisifyRoutine(JobRoutines.fetchJobList),
-      revertToJob: promisifyRoutine(JobRoutines.revertToJob),
+      revertToJob: promisifyRoutine(DataSourceRoutines.revertToJob),
     },
     dispatch
   );

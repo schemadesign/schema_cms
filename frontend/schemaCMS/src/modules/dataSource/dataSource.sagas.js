@@ -133,6 +133,21 @@ function* fetchFields({ payload }) {
   }
 }
 
+function* revertToJob({ payload: { dataSourceId, jobId } }) {
+  try {
+    yield put(DataSourceRoutines.revertToJob.request());
+
+    yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/revert-job`, { id: jobId });
+
+    yield put(DataSourceRoutines.revertToJob.success());
+    browserHistory.push(`/datasource/${dataSourceId}`);
+  } catch (error) {
+    yield put(DataSourceRoutines.revertToJob.failure(error));
+  } finally {
+    yield put(DataSourceRoutines.revertToJob.fulfill());
+  }
+}
+
 export function* watchDataSource() {
   yield all([
     takeLatest(DataSourceRoutines.create.TRIGGER, create),
@@ -141,5 +156,6 @@ export function* watchDataSource() {
     takeLatest(DataSourceRoutines.updateOne.TRIGGER, updateOne),
     takeLatest(DataSourceRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(DataSourceRoutines.fetchFields.TRIGGER, fetchFields),
+    takeLatest(DataSourceRoutines.revertToJob.TRIGGER, revertToJob),
   ]);
 }

@@ -9,7 +9,6 @@ export const JobRoutines = {
   updateOne: createRoutine(`${PREFIX}UPDATE_ONE`),
   fetchPreview: createRoutine(`${PREFIX}FETCH_PREVIEW`),
   fetchJobList: createRoutine(`${PREFIX}FETCH_LIST`),
-  revertToJob: createRoutine(`${PREFIX}REVERT_JOB`),
 };
 
 export const INITIAL_STATE = new Immutable({
