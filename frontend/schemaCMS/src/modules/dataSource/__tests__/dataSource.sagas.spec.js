@@ -226,4 +226,18 @@ describe('DataSource: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('revertToJob', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { jobId: '1', dataSourceId: '1' };
+
+      mockApi.post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/revert-job`, { id: payload.jobId }).reply(OK);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.revertToJob.success())
+        .dispatch(DataSourceRoutines.revertToJob(payload))
+        .silentRun();
+    });
+  });
 });
