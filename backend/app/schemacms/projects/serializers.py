@@ -308,8 +308,14 @@ class PublicApiJobSerializer(serializers.ModelSerializer):
 # Filters
 
 
+class DataSourceFilterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.DataSource
+        fields = ("id", "name")
+
+
 class FilterSerializer(serializers.ModelSerializer):
-    datasource = serializers.PrimaryKeyRelatedField(read_only=True)
+    datasource = NestedRelatedModelSerializer(serializer=DataSourceFilterSerializer(), read_only=True)
 
     class Meta:
         model = models.Filter
@@ -317,7 +323,7 @@ class FilterSerializer(serializers.ModelSerializer):
             "id",
             "datasource",
             "name",
-            "type",
+            "filter_type",
             "field",
             "field_type",
             "unique_items",

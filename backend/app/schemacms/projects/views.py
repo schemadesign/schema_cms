@@ -183,15 +183,16 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         data_source = self.get_object()
 
         try:
-            preview = data_source.get_last_success_job().meta_data.preview
+            preview = data_source.current_job.meta_data.preview
         except Exception as e:
             return response.Response(f"No successful job found - {e}", status=status.HTTP_404_NOT_FOUND)
 
-        fields_info = dict(fields_info=json.loads(preview.read())["fields"])
+        fields = json.loads(preview.read())["fields"]
 
         data = dict()
-        for key, value in fields_info["fields_info"].items():
-            data[key] = dict(type=models.map_general_dtypes(value["dtype"]), unique=value["unique"])
+        for key, value in fields.items():
+            data[key] = dict(field_type=models.map_general_dtypes(value["dtype"]), unique=value["unique"])
+            data[key]["filter_type"] = getattr(constants.FilterTypesGroups, data[key]["field_type"])
 
         return response.Response(data=data)
 
@@ -281,7 +282,9 @@ class DataSourceScriptDetailView(generics.RetrieveAPIView):
         return models.WranglingScript.objects.all().select_related("datasource", "created_by")
 
 
-class FilterDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
+class FilterDetailViewSet(
+    mixins.DestroyModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet
+):
     queryset = models.Filter.objects.none()
     serializer_class = serializers.FilterSerializer
     permission_classes = (permissions.IsAuthenticated,)
