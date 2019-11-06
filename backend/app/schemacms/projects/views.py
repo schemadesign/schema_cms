@@ -9,7 +9,7 @@ from rest_framework import decorators, mixins, permissions, response, status, vi
 
 from schemacms.users import permissions as user_permissions
 from schemacms.utils import serializers as utils_serializers
-from . import models, serializers, services
+from . import constants, models, serializers, services
 
 
 class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
