@@ -11,7 +11,6 @@ import { MenuIcon } from './menuIcon';
 import { PlusIcon } from './plusIcon';
 import { UserIcon } from './userIcon';
 import { UploadIcon } from './uploadIcon';
-import { SchemaLogoIcon } from './schemaLogoIcon';
 
 const Icons = {
   ArrowLeftIcon,
@@ -27,7 +26,6 @@ const Icons = {
   PlusIcon,
   UserIcon,
   UploadIcon,
-  SchemaLogoIcon,
 };
 
 export {
@@ -44,7 +42,6 @@ export {
   PlusIcon,
   UserIcon,
   UploadIcon,
-  SchemaLogoIcon,
 };
 
 export default Icons;

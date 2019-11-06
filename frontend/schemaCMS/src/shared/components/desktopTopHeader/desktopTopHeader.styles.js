@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Typography } from 'schemaUI';
 
+import { ReactComponent as SchemaLogoSVG } from '../../../images/icons/schemaLogo.svg';
 import { media, contentSizes } from '../../../theme/media';
 
 export const TopContainer = styled.div`
@@ -61,6 +62,12 @@ export const LogoLink = styled(BaseLink)`
 export const IconLink = styled(BaseLink)`
   margin-right: 0;
   padding: 0 7px;
+`;
+
+export const Logo = styled(SchemaLogoSVG)`
+  fill: ${({ theme: { text } }) => text};
+  width: 96px;
+  height: 16px;
 `;
 
 export const TitleWrapper = styled.div`

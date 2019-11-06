@@ -21,6 +21,7 @@ import {
   Title,
   TitleWrapper,
   Actions,
+  Logo,
   LogoLink,
   IconLink,
   menuStyles,
@@ -28,7 +29,7 @@ import {
   customButtonStyles,
 } from './desktopTopHeader.styles';
 
-const { ExitIcon, SchemaLogoIcon, UserIcon } = Icons;
+const { ExitIcon, UserIcon } = Icons;
 
 export class DesktopTopHeader extends TopHeader {
   static propTypes = {
@@ -46,7 +47,7 @@ export class DesktopTopHeader extends TopHeader {
   renderHeaderBar = title => (
     <HeaderWrapper>
       <LogoLink to="/">
-        <SchemaLogoIcon />
+        <Logo />
       </LogoLink>
       {this.renderTitle(!!title, title)}
       <Actions>

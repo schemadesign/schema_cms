@@ -26,7 +26,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         <Styled(Styled(Link))
           to="/"
         >
-          <Component />
+          <Styled(Component) />
         </Styled(Styled(Link))>
         <styled.div>
           <Styled(Styled(Link))
@@ -42,6 +42,9 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         </styled.div>
       </styled.div>
     </Component>
+    <styled.div
+      visible={false}
+    />
     <Component
       closeButtonProps={
         Object {
@@ -53,7 +56,10 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
       }
       customStyles={
         Object {
-          "maxWidth": null,
+          "maxWidth": 595,
+          "minHeight": null,
+          "padding": 50,
+          "transform": "translateX(calc((100vw - 1000px) / -2 + 8px))",
           "zIndex": 9999,
         }
       }
