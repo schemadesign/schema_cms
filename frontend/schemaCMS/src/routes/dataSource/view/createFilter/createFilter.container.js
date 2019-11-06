@@ -7,6 +7,7 @@ import { compose } from 'ramda';
 
 import { CreateFilter } from './createFilter.component';
 import { DataSourceRoutines, selectFieldsInfo, selectDataSource } from '../../../../modules/dataSource';
+import { FilterRoutines } from '../../../../modules/filter';
 
 const mapStateToProps = createStructuredSelector({
   fieldsInfo: selectFieldsInfo,
@@ -17,6 +18,7 @@ export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
       fetchFieldsInfo: promisifyRoutine(DataSourceRoutines.fetchFieldsInfo),
+      createFilter: promisifyRoutine(FilterRoutines.createFilter),
     },
     dispatch
   );

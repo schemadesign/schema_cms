@@ -13,6 +13,7 @@ import { Loader } from '../../../../shared/components/loader';
 export class CreateFilter extends PureComponent {
   static propTypes = {
     fetchFieldsInfo: PropTypes.func.isRequired,
+    createFilter: PropTypes.func.isRequired,
     fieldsInfo: PropTypes.object.isRequired,
     dataSource: PropTypes.object.isRequired,
     match: PropTypes.shape({
@@ -27,10 +28,12 @@ export class CreateFilter extends PureComponent {
   };
 
   async componentDidMount() {
-    const dataSourceId = path(['match', 'params', 'dataSourceId'], this.props);
+    const dataSourceId = this.getDataSourceId(this.props);
     await this.props.fetchFieldsInfo({ dataSourceId });
     this.setState({ loading: false });
   }
+
+  getDataSourceId = path(['match', 'params', 'dataSourceId']);
 
   getHeaderAndMenuConfig = () => ({
     headerTitle: this.props.dataSource.name,
@@ -38,7 +41,11 @@ export class CreateFilter extends PureComponent {
   });
 
   renderFilterForm = renderWhenTrueOtherwise(always(<Loader />), () => (
-    <FilterForm fieldsInfo={this.props.fieldsInfo} />
+    <FilterForm
+      fieldsInfo={this.props.fieldsInfo}
+      createFilter={this.props.createFilter}
+      dataSourceId={this.getDataSourceId(this.props)}
+    />
   ));
 
   render() {

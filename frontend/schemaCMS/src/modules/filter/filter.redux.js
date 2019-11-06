@@ -6,11 +6,13 @@ const PREFIX = 'FILTER/';
 
 export const FilterRoutines = {
   fetchList: createRoutine(`${PREFIX}FETCH_LIST`),
+  createFilter: createRoutine(`${PREFIX}CREATE_FILTER`),
   setFilters: createRoutine(`${PREFIX}SET_FILTERS`),
 };
 
 export const INITIAL_STATE = new Immutable({
   filters: [],
+  filter: {},
 });
 
 const setFilters = (state = INITIAL_STATE, { payload }) => state.set('filters', payload);

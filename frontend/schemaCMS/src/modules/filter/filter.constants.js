@@ -1,15 +1,17 @@
 import * as Yup from 'yup';
 
-export const FILTER_NAME = 'filter_name';
-export const FILTER_TYPE = 'filter_type';
-export const FILTER_FIELD = 'filter_field';
-export const FILTER_FIELD_TYPE = 'type';
-export const FILTER_UNIQUE_ITEMS = 'filter_unique_items';
+export const FILTER_NAME = 'name';
+export const FILTER_TYPE = 'type';
+export const FILTER_FIELD = 'field';
+export const FILTER_FIELD_TYPE = 'fieldType';
+export const FILTER_UNIQUE_ITEMS = 'uniqueItems';
 
 export const INITIAL_VALUES = {
   [FILTER_NAME]: '',
   [FILTER_TYPE]: '',
   [FILTER_FIELD]: '',
+  [FILTER_FIELD_TYPE]: '',
+  [FILTER_UNIQUE_ITEMS]: '',
 };
 
 export const FILTERS_SCHEMA = Yup.object().shape({

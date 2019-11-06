@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
-import { keys, map, pathOr, pipe, toString } from 'ramda';
+import { keys, map, path, pipe, toString } from 'ramda';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './filterForm.messages';
@@ -22,26 +22,44 @@ import { BackButton, NavigationContainer, NextButton } from '../navigation';
 export class FilterForm extends PureComponent {
   static propTypes = {
     fieldsInfo: PropTypes.object.isRequired,
+    createFilter: PropTypes.func.isRequired,
+    dataSourceId: PropTypes.string.isRequired,
   };
 
-  handleSelectStatus = ({ value, setFieldValue }) => setFieldValue(FILTER_FIELD, value);
+  getDependencyValues = value => ({
+    uniqueItems: path(['fieldsInfo', value, 'unique'], this.props),
+    fieldType: path(['fieldsInfo', value, 'type'], this.props),
+  });
 
-  handleSubmit = () => {};
+  handleSelectStatus = ({ value, setFieldValue }) => {
+    const { uniqueItems, fieldType } = this.getDependencyValues(value);
+
+    setFieldValue(FILTER_UNIQUE_ITEMS, toString(uniqueItems));
+    setFieldValue(FILTER_FIELD_TYPE, fieldType);
+    setFieldValue(FILTER_FIELD, value);
+  };
+
+  handleSubmit = formData => {
+    this.props.createFilter({ dataSourceId: this.props.dataSourceId, formData });
+  };
 
   render() {
     const fieldOptions = pipe(
       keys,
       map(key => ({ value: key, label: key }))
     )(this.props.fieldsInfo);
-    INITIAL_VALUES[FILTER_FIELD] = fieldOptions[0].value;
+    const firstValue = fieldOptions[0].value;
+    const { uniqueItems, fieldType } = this.getDependencyValues(firstValue);
+    const initialValues = {
+      ...INITIAL_VALUES,
+      [FILTER_FIELD]: fieldOptions[0].value,
+      [FILTER_UNIQUE_ITEMS]: toString(uniqueItems),
+      [FILTER_FIELD_TYPE]: fieldType,
+    };
 
     return (
-      <Formik initialValues={INITIAL_VALUES} onSubmit={this.handleSubmit} validationSchema={FILTERS_SCHEMA}>
+      <Formik initialValues={initialValues} onSubmit={this.handleSubmit} validationSchema={FILTERS_SCHEMA}>
         {({ values, handleChange, setFieldValue, dirty, isValid, ...rest }) => {
-          const filterField = values[FILTER_FIELD];
-          const uniqueItems = pathOr(values[FILTER_UNIQUE_ITEMS], ['fieldsInfo', filterField, 'unique'], this.props);
-          const fieldType = pathOr(values[FILTER_FIELD_TYPE], ['fieldsInfo', filterField, 'type'], this.props);
-
           return (
             <Form>
               <TextInput
@@ -70,7 +88,7 @@ export class FilterForm extends PureComponent {
               />
               <Row>
                 <TextInput
-                  value={fieldType}
+                  value={values[FILTER_FIELD_TYPE]}
                   name={FILTER_FIELD_TYPE}
                   fullWidth
                   label={<FormattedMessage {...messages[FILTER_FIELD_TYPE]} />}
@@ -78,7 +96,7 @@ export class FilterForm extends PureComponent {
                   {...rest}
                 />
                 <TextInput
-                  value={toString(uniqueItems)}
+                  value={values[FILTER_UNIQUE_ITEMS]}
                   name={FILTER_UNIQUE_ITEMS}
                   fullWidth
                   label={<FormattedMessage {...messages[FILTER_UNIQUE_ITEMS]} />}
