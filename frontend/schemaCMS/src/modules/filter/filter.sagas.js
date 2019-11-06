@@ -39,7 +39,9 @@ function* createFilter({ payload: { dataSourceId, formData } }) {
     yield put(FilterRoutines.createFilter.request());
 
     const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/filters`, { ...formData, isActive: true });
+
     browserHistory.push(`${DATA_SOURCE_PATH}/${dataSourceId}/${FILTERS_STEP}`);
+
     yield put(FilterRoutines.createFilter.success(data));
   } catch (e) {
     yield put(FilterRoutines.createFilter.failure(e));
