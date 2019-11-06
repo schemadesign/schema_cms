@@ -48,3 +48,52 @@ exports[`JobList: Component should render correctly 1`] = `
   </NavigationContainer>
 </styled.div>
 `;
+
+exports[`JobList: Component should render correctly with job list 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.jobList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Past Versions"
+        id="dataSource.jobList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <Loader />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      id="cancelBtn"
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="dataSource.jobList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={true}
+      id="revertBtn"
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Revert"
+        id="dataSource.jobList.revert"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</styled.div>
+`;
