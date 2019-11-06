@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContextHeader: Component should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <Styled(H1)
+      id="desktopHeaderTitle"
+    />
+    <Styled(H2)
+      id="desktopHeaderSubtitle"
+    />
+  </styled.div>
+  <styled.div />
+</styled.div>
+`;

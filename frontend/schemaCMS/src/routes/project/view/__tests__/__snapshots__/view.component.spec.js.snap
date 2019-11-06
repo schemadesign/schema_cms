@@ -222,6 +222,7 @@ exports[`View: Component should render correctly 1`] = `
     </styled.div>
   </div>
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackArrowButton

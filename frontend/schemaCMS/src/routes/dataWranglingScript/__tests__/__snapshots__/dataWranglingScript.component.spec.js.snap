@@ -109,6 +109,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
     </SyntaxHighlighter>
   </styled.form>
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton
@@ -183,6 +184,7 @@ exports[`DataWranglingScript: Component should render correctly with link to dat
     </SyntaxHighlighter>
   </styled.form>
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton

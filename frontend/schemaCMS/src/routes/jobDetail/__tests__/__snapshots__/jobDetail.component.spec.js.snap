@@ -185,6 +185,7 @@ exports[`JobDetail: Component should render correctly 1`] = `
     </styled.a>
   </styled.div>
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton
@@ -232,6 +233,7 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
   />
   <Loader />
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton

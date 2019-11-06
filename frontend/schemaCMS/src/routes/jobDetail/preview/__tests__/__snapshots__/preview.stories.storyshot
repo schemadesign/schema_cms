@@ -10,10 +10,10 @@ exports[`Storyshots Job/Preview Default 1`] = `
   }
 >
   <div
-    className="sc-cmTdod kHxQNt"
+    className="sc-tilXH jMVAVb"
   >
     <div
-      className="sc-htoDjs cMdrZw"
+      className="sc-jhAzac bdqCwL"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
       >
         <div>
           <div
-            className="sc-dnqmqq bDsesi"
+            className="sc-fBuWsC eeihxG"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots Job/Preview Default 1`] = `
         }
       >
         <div
-          className="sc-iwsKbI jQhHGA"
+          className="sc-fMiknA bxZCMx"
         >
           <div
-            className="sc-dnqmqq bDsesi"
+            className="sc-fBuWsC eeihxG"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots Job/Preview Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-gZMcBi jZtVvP"
+          className="sc-dVhcbM eUEmRN"
         >
           <ul
-            className="sc-gqjmRU sc-VigVT gpssju"
+            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
           />
           <ul
-            className="sc-gqjmRU sc-jTzLTM eurXdS"
+            className="sc-eqIVtm sc-caSCKo eLOffc"
           />
         </div>
         <button
@@ -220,44 +220,48 @@ exports[`Storyshots Job/Preview Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-kAzzGY dJFTJ"
+      className="sc-cSHVUG cObjZp"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="sc-bZQynM ceQpbG"
+      className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-gzVnrw gSWkmB"
+        className="sc-iwsKbI iKbLSk"
       >
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "calc(50% - 5px)",
-            }
-          }
+        <div
+          className="sc-dnqmqq XuhPC"
         >
-          <span>
-            Back
-          </span>
-        </button>
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginRight": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
+              }
+            }
+          >
+            <span>
+              Back
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

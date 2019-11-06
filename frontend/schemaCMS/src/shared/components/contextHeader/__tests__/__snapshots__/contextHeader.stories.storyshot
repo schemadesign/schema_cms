@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-cMhqgX fIwHpG"
+  >
+    <div
+      className="sc-iuJeZd khxwzs"
+    >
+      <h1
+        className="sc-esOvli jActmk"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Projects
+      </h1>
+      <h2
+        className="sc-cmthru ixQCuN"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Overviews
+      </h2>
+    </div>
+    <div
+      className="sc-hMFtBS ibPiQm"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-cMhqgX fIwHpG"
+  >
+    <div
+      className="sc-iuJeZd khxwzs"
+    >
+      <h1
+        className="sc-esOvli jActmk"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        Projects
+      </h1>
+      <h2
+        className="sc-cmthru ixQCuN"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Overviews
+      </h2>
+    </div>
+    <div
+      className="sc-hMFtBS ibPiQm"
+    >
+      <button
+        disabled={false}
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#000",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "height": "60px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "60px",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#000",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-cMhqgX fIwHpG"
+  >
+    <div
+      className="sc-iuJeZd khxwzs"
+    >
+      <h1
+        className="sc-esOvli jActmk"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        
+  Mauris egestas arcu nec diam consectetur vulputate.
+  Mauris rhoncus a massa in ultricies. In vel accumsan tortor.
+  Donec suscipit commodo enim. Suspendisse nibh odio
+
+      </h1>
+      <h2
+        className="sc-cmthru ixQCuN"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        
+  Mauris egestas arcu nec diam consectetur vulputate.
+  Mauris rhoncus a massa in ultricies. In vel accumsan tortor.
+  Donec suscipit commodo enim. Suspendisse nibh odio
+
+      </h2>
+    </div>
+    <div
+      className="sc-hMFtBS ibPiQm"
+    >
+      <button
+        disabled={false}
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#000",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "height": "60px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "60px",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#000",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -95,47 +95,51 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
   }
 >
   <div
-    className="sc-bZQynM ceQpbG"
+    className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-gzVnrw fFzjaZ"
+      className="sc-iwsKbI iKbLSk"
     >
-      <button
-        disabled={false}
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": "60px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "width": "60px",
-          }
-        }
+      <div
+        className="sc-dnqmqq icIvSa"
       >
-        <svg
+        <button
+          disabled={false}
           style={
             Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
               "fill": "#FFF",
+              "fontSize": "18px",
               "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-          />
-        </svg>
-      </button>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>

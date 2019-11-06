@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { ContextHeaderComponent as ContextHeader } from '../contextHeader.component';
+import { ContextHeader } from '../contextHeader.component';
 
 describe('ContextHeader: Component', () => {
   const defaultProps = {};

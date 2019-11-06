@@ -133,6 +133,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
     </styled.li>
   </styled.div>
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackArrowButton
@@ -391,6 +392,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
     </styled.li>
   </styled.div>
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackArrowButton
@@ -426,6 +428,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
   />
   <styled.div />
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackArrowButton
