@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { media } from '../../../theme/media';
+
 export const Container = styled.div`
   font-weight: 600;
   display: flex;
@@ -53,6 +55,7 @@ export const Statistics = styled.ul`
 `;
 
 export const CardWrapper = styled.li`
+  font-size: 12px;
   display: inline-block;
   width: calc(50% - 7px);
   margin-bottom: 14px;
@@ -64,6 +67,28 @@ export const CardWrapper = styled.li`
   &:nth-child(2n) {
     margin-left: 7px;
   }
+
+  ${media.desktop`
+    font-size: 18px;
+    width: calc(25% - 10px);
+    margin-bottom: 0;
+
+    &:nth-child(2n + 1) {
+      margin-right: 10px;
+    }
+
+    &:nth-child(2n) {
+      margin-left: 10px;
+    }
+  `}
+`;
+
+export const CardHeader = styled.span`
+  font-size: 12px;
+
+  ${media.desktop`
+    font-size: 18px;
+  `}
 `;
 
 export const CardValue = styled.span`
@@ -71,6 +96,13 @@ export const CardValue = styled.span`
   font-size: 66px;
   line-height: 1.09;
   letter-spacing: -3px;
+
+  ${media.desktop`
+    padding-top: 40px;
+    font-size: 108px;
+    line-height: 1em;
+    letter-spacing: -4.91px;
+  `}
 `;
 
 export const statisticsCardStyles = {
