@@ -1,6 +1,6 @@
 import { either, filter, isEmpty, keys, map, not, pipe, propEq, propOr } from 'ramda';
 import { camelize } from 'humps';
-import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
+import { JOB_STATE_PENDING, JOB_STATE_PROCESSING, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 
@@ -25,6 +25,12 @@ export const getTableData = (data = []) => {
 export const getIsAnyResultProcessing = pipe(
   propOr([], 'jobs'),
   filter(either(propEq('jobState', JOB_STATE_PENDING), propEq('jobState', JOB_STATE_PROCESSING))),
+  isEmpty,
+  not
+);
+
+export const getIsAnyResultSuccess = pipe(
+  filter(propEq('jobState', JOB_STATE_SUCCESS)),
   isEmpty,
   not
 );

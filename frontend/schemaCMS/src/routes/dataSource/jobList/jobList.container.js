@@ -6,10 +6,11 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
 import { JobList } from './jobList.component';
-import { JobRoutines, selectJobList } from '../../../modules/job';
+import { JobRoutines, selectJobList, selectIsAnyJobSuccessful } from '../../../modules/job';
 
 const mapStateToProps = createStructuredSelector({
   jobList: selectJobList,
+  isAnyJobSuccessful: selectIsAnyJobSuccessful,
 });
 
 export const mapDispatchToProps = dispatch =>

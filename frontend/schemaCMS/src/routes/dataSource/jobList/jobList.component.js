@@ -20,6 +20,7 @@ export class JobList extends PureComponent {
     fetchJobList: PropTypes.func.isRequired,
     revertToJob: PropTypes.func.isRequired,
     jobList: PropTypes.array.isRequired,
+    isAnyJobSuccessful: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
@@ -58,7 +59,7 @@ export class JobList extends PureComponent {
   );
 
   render() {
-    const { jobList } = this.props;
+    const { jobList, isAnyJobSuccessful } = this.props;
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.title} />,
       headerSubtitle: <FormattedMessage {...messages.subTitle} />,
@@ -72,11 +73,11 @@ export class JobList extends PureComponent {
           <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
             <FormattedMessage {...messages.cancel} />
           </BackButton>
-          <NextButton id="revertBtn" onClick={this.handleRevertClick}>
+          <NextButton id="revertBtn" onClick={this.handleRevertClick} disabled={!isAnyJobSuccessful}>
             <FormattedMessage {...messages.revert} />
           </NextButton>
         </NavigationContainer>
       </Container>
     );
-  } 
+  }
 }
