@@ -10,10 +10,10 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
   }
 >
   <div
-    className="sc-jzJRlG dlFiNo"
+    className="sc-jWBwVP dEJSdT"
   >
     <div
-      className="sc-chPdSV byfFmt"
+      className="sc-jAaTju fNCBho"
     >
       <div
         style={
@@ -185,20 +185,6 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
         Spreadsheet
       </div>
     </div>
-    <span
-      className="sc-kAzzGY buWbQD"
-      onClick={[Function]}
-      style={
-        Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "14px",
-        }
-      }
-    >
-      <span>
-        View Past Versions
-      </span>
-    </span>
     <div
       className="sc-bZQynM ceQpbG"
     >
@@ -258,7 +244,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
           </span>
         </button>
         <div
-          className="sc-fjdhpX hhLAkE"
+          className="sc-hMqMXs bKYksQ"
         >
           <div
             style={
@@ -280,20 +266,6 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                   "height": "12px",
                   "margin": "0 4px",
                   "pointerEvents": "none",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
                   "width": "12px",
                 }
               }

@@ -10,10 +10,10 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
   }
 >
   <div
-    className="sc-ksYbfQ jHwjmi"
+    className="sc-jqCOkK heXNii"
   >
     <div
-      className="sc-jhAzac cqYdcH"
+      className="sc-htoDjs cFUVeu"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       >
         <div>
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-dnqmqq bDsesi"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
         }
       >
         <div
-          className="sc-fMiknA bxZCMx"
+          className="sc-iwsKbI jQhHGA"
         >
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-dnqmqq bDsesi"
           >
             <h2
               id="headerTitle"
@@ -160,13 +160,13 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-dVhcbM eUEmRN"
+          className="sc-gZMcBi jZtVvP"
         >
           <ul
-            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
+            className="sc-gqjmRU sc-VigVT gpssju"
           />
           <ul
-            className="sc-eqIVtm sc-caSCKo eLOffc"
+            className="sc-gqjmRU sc-jTzLTM eurXdS"
           />
         </div>
         <button
@@ -212,11 +212,11 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-hmzhuo eRtqMp"
+      className="sc-uJMKN jsQhVl"
       name="dataWranglingForm"
     >
       <div
-        className="sc-chPdSV byfFmt"
+        className="sc-jAaTju fNCBho"
       >
         <div
           style={

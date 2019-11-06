@@ -1,3016 +1,334 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SourceComponent: Component should render correctly 1`] = `
-<IntlProvider
-  locale="en"
->
-  <SourceComponent
-    dataSource={
-      Object {
-        "metaData": Object {},
-      }
+<SourceComponent
+  dataSource={
+    Object {
+      "jobs": Array [],
+      "metaData": Object {},
     }
-    history={
-      Object {
-        "push": [Function],
-      }
+  }
+  history={
+    Object {
+      "push": [Function],
     }
-    intl={
-      Object {
-        "formatMessage": [Function],
-      }
+  }
+  intl={
+    Object {
+      "formatMessage": [Function],
     }
-    isAnyJobProcessing={false}
-    match={
-      Object {
-        "params": Object {
-          "dataSourceId": "1",
-          "projectId": "1",
-          "step": "1",
-        },
-      }
+  }
+  isAnyJobProcessing={false}
+  match={
+    Object {
+      "params": Object {
+        "dataSourceId": "1",
+        "projectId": "1",
+        "step": "1",
+      },
     }
-    theme={
-      Object {
+  }
+  theme={
+    Object {
+      "background": "#000",
+      "button": Object {
+        "background": "#1d1d20",
+        "text": "#FFF",
+      },
+      "buttonDisabled": Object {
+        "background": "#1d1d20",
+        "text": "#71737e",
+      },
+      "card": Object {
+        "background": "#1d1d20",
+        "border": "#FFF",
+        "label": undefined,
+      },
+      "checkbox": Object {
+        "border": "#2F2F36",
+        "text": "#FFF",
+      },
+      "colors": Object {
+        "black": "#000",
+        "coolGray": "#a6a7aa",
+        "darkGrey": "#1d1d20",
+        "lightGrey": "#71737e",
+        "mediumGray": "#2F2F36",
+        "red": "#f21e29",
+        "veryLightPink": "#f0efef",
+        "white": "#FFF",
+      },
+      "dataGrid": Object {
         "background": "#000",
-        "button": Object {
-          "background": "#1d1d20",
-          "text": "#FFF",
-        },
-        "buttonDisabled": Object {
-          "background": "#1d1d20",
-          "text": "#71737e",
-        },
-        "card": Object {
-          "background": "#1d1d20",
-          "border": "#FFF",
-          "label": undefined,
-        },
-        "checkbox": Object {
-          "border": "#2F2F36",
-          "text": "#FFF",
-        },
-        "colors": Object {
-          "black": "#000",
-          "coolGray": "#a6a7aa",
-          "darkGrey": "#1d1d20",
-          "lightGrey": "#71737e",
-          "mediumGray": "#2F2F36",
-          "red": "#f21e29",
-          "veryLightPink": "#f0efef",
-          "white": "#FFF",
-        },
-        "dataGrid": Object {
-          "background": "#000",
-          "text": "#71737e",
-        },
-        "header": Object {
-          "border": "#2F2F36",
-          "text": "#FFF",
-        },
-        "icon": Object {
-          "background": "#1d1d20",
-          "fill": "#FFF",
-          "fillInverse": "#000",
-        },
-        "input": Object {
-          "text": "#FFF",
-        },
-        "inverseButton": Object {
+        "text": "#71737e",
+      },
+      "header": Object {
+        "border": "#2F2F36",
+        "text": "#FFF",
+      },
+      "icon": Object {
+        "background": "#1d1d20",
+        "fill": "#FFF",
+        "fillInverse": "#000",
+      },
+      "input": Object {
+        "text": "#FFF",
+      },
+      "inverseButton": Object {
+        "background": "#FFF",
+        "text": "#000",
+      },
+      "label": Object {
+        "border": "#2F2F36",
+        "text": "#71737e",
+      },
+      "menu": Object {
+        "background": "#000",
+        "text": "#FFF",
+      },
+      "providerContainer": Object {
+        "backgroundColor": "#000",
+        "minHeight": "100vh",
+      },
+      "radioButton": Object {
+        "active": Object {
           "background": "#FFF",
-          "text": "#000",
-        },
-        "label": Object {
-          "border": "#2F2F36",
-          "text": "#71737e",
-        },
-        "menu": Object {
-          "background": "#000",
-          "text": "#FFF",
-        },
-        "providerContainer": Object {
-          "backgroundColor": "#000",
-          "minHeight": "100vh",
-        },
-        "radioButton": Object {
-          "active": Object {
-            "background": "#FFF",
-            "fill": "#1d1d20",
-          },
-          "text": "#FFF",
-          "unActive": Object {
-            "background": "#1d1d20",
-            "fill": "#FFF",
-          },
-        },
-        "secondaryText": "#71737e",
-        "select": Object {
-          "background": "#1d1d20",
-          "border": "#000",
-        },
-        "stepper": Object {
-          "active": "#FFF",
-          "background": "#1d1d20",
-        },
-        "table": Object {
-          "background": Object {
-            "body": "#000",
-            "header": "#1d1d20",
-          },
-          "border": Object {
-            "body": "#1d1d20",
-            "header": "#000",
-          },
-          "text": Object {
-            "body": "#FFF",
-            "header": "#71737e",
-          },
+          "fill": "#1d1d20",
         },
         "text": "#FFF",
-        "textArea": Object {
-          "background": "#000",
-          "text": "#FFF",
+        "unActive": Object {
+          "background": "#1d1d20",
+          "fill": "#FFF",
         },
-        "textField": Object {
-          "error": "#f21e29",
-          "label": "#71737e",
+      },
+      "secondaryText": "#71737e",
+      "select": Object {
+        "background": "#1d1d20",
+        "border": "#000",
+      },
+      "stepper": Object {
+        "active": "#FFF",
+        "background": "#1d1d20",
+      },
+      "table": Object {
+        "background": Object {
+          "body": "#000",
+          "header": "#1d1d20",
         },
-        "typography": Object {
-          "h1": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontWeight": 600,
-          },
-          "h2": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontWeight": 100,
-          },
-          "h3": Object {
-            "color": Object {
-              "border": "#f0efef",
-              "text": "#a6a7aa",
-            },
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontWeight": 600,
-          },
-          "p": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontWeight": 200,
-          },
-          "pre": Object {
-            "fontFamily": "Hack, monospace",
-          },
-          "span": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          },
+        "border": Object {
+          "body": "#1d1d20",
+          "header": "#000",
         },
-      }
+        "text": Object {
+          "body": "#FFF",
+          "header": "#71737e",
+        },
+      },
+      "text": "#FFF",
+      "textArea": Object {
+        "background": "#000",
+        "text": "#FFF",
+      },
+      "textField": Object {
+        "error": "#f21e29",
+        "label": "#71737e",
+      },
+      "typography": Object {
+        "h1": Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontWeight": 600,
+        },
+        "h2": Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontWeight": 100,
+        },
+        "h3": Object {
+          "color": Object {
+            "border": "#f0efef",
+            "text": "#a6a7aa",
+          },
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontWeight": 600,
+        },
+        "p": Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontWeight": 200,
+        },
+        "pre": Object {
+          "fontFamily": "Hack, monospace",
+        },
+        "span": Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+        },
+      },
     }
-    updateDataSource={[Function]}
-  >
-    <styled.div>
-      <StyledComponent
-        forwardedComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "sc-bdVaJa",
-              "isStatic": true,
-              "lastClassName": "eYFGsU",
-              "rules": Array [
-                "
-  color: ",
-                "#ffffff",
-                ";
-",
-              ],
-            },
-            "displayName": "styled.div",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-bdVaJa",
-            "target": "div",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        forwardedRef={null}
-      >
-        <div
-          className="sc-bdVaJa eYFGsU"
-        >
-          <Formik
-            enableReinitialize={true}
-            initialValues={Object {}}
-            isInitialValid={false}
-            onSubmit={[Function]}
-            validateOnBlur={true}
-            validateOnChange={true}
-            validationSchema={
-              ObjectSchema {
-                "_blacklist": RefSet {
-                  "list": Set {},
-                  "refs": Map {},
-                },
-                "_conditions": Array [],
-                "_defaultDefault": [Function],
-                "_deps": Array [],
-                "_excludedEdges": Array [],
-                "_exclusive": Object {},
-                "_mutate": undefined,
-                "_nodes": Array [
-                  "file",
-                  "type",
-                  "name",
-                ],
-                "_options": Object {
-                  "abortEarly": true,
-                  "recursive": true,
-                },
-                "_type": "object",
-                "_typeError": [Function],
-                "_whitelist": RefSet {
-                  "list": Set {},
-                  "refs": Map {},
-                },
-                "fields": Object {
-                  "file": SchemaType {
-                    "_blacklist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "_conditions": Array [],
-                    "_deps": Array [],
-                    "_exclusive": Object {
-                      "fileName": false,
-                      "fileSize": false,
-                      "required": true,
-                    },
-                    "_mutate": undefined,
-                    "_options": Object {
-                      "abortEarly": true,
-                      "recursive": true,
-                    },
-                    "_type": "mixed",
-                    "_typeError": [Function],
-                    "_whitelist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "tests": Array [
-                      [Function],
-                      [Function],
-                      [Function],
-                    ],
-                    "transforms": Array [],
-                  },
-                  "name": StringSchema {
-                    "_blacklist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "_conditions": Array [],
-                    "_deps": Array [],
-                    "_exclusive": Object {
-                      "max": true,
-                      "min": true,
-                      "required": true,
-                    },
-                    "_mutate": undefined,
-                    "_options": Object {
-                      "abortEarly": true,
-                      "recursive": true,
-                    },
-                    "_type": "string",
-                    "_typeError": [Function],
-                    "_whitelist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "tests": Array [
-                      [Function],
-                      [Function],
-                      [Function],
-                    ],
-                    "transforms": Array [
-                      [Function],
-                    ],
-                  },
-                  "type": StringSchema {
-                    "_blacklist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "_conditions": Array [],
-                    "_deps": Array [],
-                    "_exclusive": Object {
-                      "required": true,
-                    },
-                    "_mutate": undefined,
-                    "_options": Object {
-                      "abortEarly": true,
-                      "recursive": true,
-                    },
-                    "_type": "string",
-                    "_typeError": [Function],
-                    "_whitelist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "tests": Array [
-                      [Function],
-                    ],
-                    "transforms": Array [
-                      [Function],
-                    ],
-                  },
-                },
-                "tests": Array [],
-                "transforms": Array [
-                  [Function],
-                ],
-              }
-            }
-          >
-            <TextInput
-              checkOnlyErrors={true}
-              errors={Object {}}
-              fullWidth={true}
-              handleBlur={[Function]}
-              handleReset={[Function]}
-              handleSubmit={[Function]}
-              initialValues={Object {}}
-              isEdit={false}
-              isSubmitting={false}
-              isValidating={false}
-              label="Name"
-              name="name"
-              onChange={[Function]}
-              registerField={[Function]}
-              resetForm={[Function]}
-              setError={[Function]}
-              setErrors={[Function]}
-              setFieldError={[Function]}
-              setFieldTouched={[Function]}
-              setFieldValue={[Function]}
-              setFormikState={[Function]}
-              setStatus={[Function]}
-              setSubmitting={[Function]}
-              setTouched={[Function]}
-              setValues={[Function]}
-              submitCount={0}
-              touched={Object {}}
-              unregisterField={[Function]}
-              validateField={[Function]}
-              validateForm={[Function]}
-              validateOnBlur={true}
-              validateOnChange={true}
-              value=""
-            >
-              <styled.div>
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "sc-bxivhb",
-                        "isStatic": true,
-                        "lastClassName": "bUZGRr",
-                        "rules": Array [],
-                      },
-                      "displayName": "styled.div",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "sc-bxivhb",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
-                >
-                  <div
-                    className="sc-bxivhb bUZGRr"
-                  >
-                    <Component
-                      error={false}
-                      fullWidth={true}
-                      iconComponent={null}
-                      label="Name"
-                      name="name"
-                      onChange={[Function]}
-                      value=""
-                    >
-                      <TextFieldComponent
-                        customInputStyles={Object {}}
-                        customLabelStyles={Object {}}
-                        error={false}
-                        fullWidth={true}
-                        iconComponent={null}
-                        label="Name"
-                        name="name"
-                        onChange={[Function]}
-                        type="text"
-                        value=""
-                      >
-                        <div
-                          style={
-                            Object {
-                              "display": "flex",
-                              "flexDirection": "column",
-                              "maxWidth": "100%",
-                              "paddingBottom": "30px",
-                              "position": "relative",
-                            }
-                          }
-                        >
-                          <Component
-                            customStyles={Object {}}
-                            name="name"
-                          >
-                            <LabelComponent
-                              customStyles={Object {}}
-                              name="name"
-                            >
-                              <label
-                                htmlFor="name"
-                                style={
-                                  Object {
-                                    "border": "none",
-                                    "borderTop": "1px solid #2F2F36",
-                                    "color": "#71737e",
-                                    "display": "block",
-                                    "fontSize": "14px",
-                                    "outline": "none",
-                                    "paddingTop": "8px",
-                                    "width": "100%",
-                                  }
-                                }
-                              >
-                                Name
-                              </label>
-                            </LabelComponent>
-                          </Component>
-                          <Component
-                            customStyles={Object {}}
-                            name="name"
-                            onChange={[Function]}
-                            type="text"
-                            value=""
-                          >
-                            <InputComponent
-                              customStyles={Object {}}
-                              name="name"
-                              onChange={[Function]}
-                              type="text"
-                              value=""
-                            >
-                              <input
-                                id="name"
-                                name="name"
-                                onChange={[Function]}
-                                style={
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "border": "none",
-                                    "color": "#FFF",
-                                    "fontSize": "18px",
-                                    "lineHeight": "24px",
-                                    "outline": "none",
-                                  }
-                                }
-                                type="text"
-                                value=""
-                              />
-                            </InputComponent>
-                          </Component>
-                          <div
-                            style={
-                              Object {
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          />
-                        </div>
-                      </TextFieldComponent>
-                    </Component>
-                  </div>
-                </StyledComponent>
-              </styled.div>
-            </TextInput>
-            <Component
-              customStyles={
-                Object {
-                  "marginBottom": 20,
-                }
-              }
-            >
-              <LabelComponent
-                customStyles={
-                  Object {
-                    "marginBottom": 20,
-                  }
-                }
-              >
-                <label
-                  style={
-                    Object {
-                      "border": "none",
-                      "borderTop": "1px solid #2F2F36",
-                      "color": "#71737e",
-                      "display": "block",
-                      "fontSize": "14px",
-                      "marginBottom": 20,
-                      "outline": "none",
-                      "paddingTop": "8px",
-                      "width": "100%",
-                    }
-                  }
-                >
-                  <FormattedMessage
-                    defaultMessage="Source"
-                    id="dataSource.view.source.source"
-                    values={Object {}}
-                  >
-                    <span>
-                      Source
-                    </span>
-                  </FormattedMessage>
-                </label>
-              </LabelComponent>
-            </Component>
-            <RadioGroup
-              customCheckedStyles={Object {}}
-              customLabelStyles={
-                Object {
-                  "alignItems": "center",
-                  "display": "flex",
-                  "flexDirection": "column",
-                  "width": 96,
-                }
-              }
-              customStyles={
-                Object {
-                  "marginBottom": "40px",
-                }
-              }
-              name="type"
-              onChange={[Function]}
-            >
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "row",
-                    "marginBottom": "40px",
-                  }
-                }
-              >
-                <Component
-                  id="file"
-                  label="Spreadsheet"
-                  value="file"
-                >
-                  <RadioButtonComponent
-                    id="file"
-                    label="Spreadsheet"
-                    value="file"
-                  >
-                    <div
-                      style={
-                        Object {
-                          "color": "#FFF",
-                          "display": "flex",
-                          "flexDirection": "column",
-                          "textAlign": "center",
-                        }
-                      }
-                    >
-                      <input
-                        aria-hidden={true}
-                        defaultChecked={false}
-                        id="file"
-                        name="type"
-                        onChange={[Function]}
-                        style={
-                          Object {
-                            "height": 0,
-                            "left": 0,
-                            "overflow": "hidden",
-                            "position": "absolute",
-                            "top": 0,
-                            "visibility": "hidden",
-                          }
-                        }
-                        type="radio"
-                        value="file"
-                      />
-                      <label
-                        htmlFor="file"
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "cursor": "pointer",
-                            "display": "flex",
-                            "flexDirection": "column",
-                            "width": 96,
-                          }
-                        }
-                      >
-                        <Component
-                          customStyles={
-                            Object {
-                              "background": "#1d1d20",
-                              "height": 96,
-                              "marginBottom": 10,
-                              "pointerEvents": "none",
-                              "width": 96,
-                            }
-                          }
-                          type="button"
-                        >
-                          <ButtonComponent
-                            customStyles={
-                              Object {
-                                "background": "#1d1d20",
-                                "height": 96,
-                                "marginBottom": 10,
-                                "pointerEvents": "none",
-                                "width": 96,
-                              }
-                            }
-                            disabled={false}
-                            inverse={false}
-                            type="button"
-                          >
-                            <button
-                              disabled={false}
-                              style={
-                                Object {
-                                  "background": "#1d1d20",
-                                  "backgroundColor": "#1d1d20",
-                                  "border": "none",
-                                  "borderRadius": "48px",
-                                  "color": "#FFF",
-                                  "cursor": "pointer",
-                                  "display": "inline-block",
-                                  "fill": "#FFF",
-                                  "fontSize": "18px",
-                                  "height": 96,
-                                  "margin": "0",
-                                  "marginBottom": 10,
-                                  "minHeight": "48px",
-                                  "outline": "none",
-                                  "padding": "0",
-                                  "pointerEvents": "none",
-                                  "width": 96,
-                                }
-                              }
-                              type="button"
-                            >
-                              <Component
-                                customStyles={
-                                  Object {
-                                    "fill": "#FFF",
-                                  }
-                                }
-                              >
-                                <CsvIconComponent
-                                  customStyles={
-                                    Object {
-                                      "fill": "#FFF",
-                                    }
-                                  }
-                                >
-                                  <SvgSpreadsheet
-                                    style={
-                                      Object {
-                                        "fill": "#FFF",
-                                        "height": "60px",
-                                        "width": "60px",
-                                      }
-                                    }
-                                  >
-                                    <svg
-                                      style={
-                                        Object {
-                                          "fill": "#FFF",
-                                          "height": "60px",
-                                          "width": "60px",
-                                        }
-                                      }
-                                      viewBox="0 0 60 60"
-                                    >
-                                      <path
-                                        d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                                        fillRule="evenodd"
-                                      />
-                                    </svg>
-                                  </SvgSpreadsheet>
-                                </CsvIconComponent>
-                              </Component>
-                            </button>
-                          </ButtonComponent>
-                        </Component>
-                      </label>
-                      Spreadsheet
-                    </div>
-                  </RadioButtonComponent>
-                </Component>
-              </div>
-            </RadioGroup>
-            <Styled(Span)
-              onClick={[Function]}
-            >
-              <StyledComponent
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "sc-htpNat",
-                      "isStatic": true,
-                      "lastClassName": "hJqzRO",
-                      "rules": Array [
-                        "
-  color: ",
-                        "#ffffff",
-                        ";
-",
-                      ],
-                    },
-                    "displayName": "Styled(Span)",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "sc-htpNat",
-                    "target": [Function],
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
-                onClick={[Function]}
-              >
-                <Span
-                  className="sc-htpNat hJqzRO"
-                  onClick={[Function]}
-                >
-                  <span
-                    className="sc-htpNat hJqzRO"
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                        "fontSize": "14px",
-                      }
-                    }
-                  >
-                    <FormattedMessage
-                      defaultMessage="View Past Versions"
-                      id="dataSource.view.source.pastVersions"
-                      values={Object {}}
-                    >
-                      <span>
-                        View Past Versions
-                      </span>
-                    </FormattedMessage>
-                  </span>
-                </Span>
-              </StyledComponent>
-            </Styled(Span)>
-            <StepNavigation
-              dataSource={
-                Object {
-                  "metaData": Object {},
-                }
-              }
-              disabled={
-                Object {
-                  "next": true,
-                }
-              }
-              history={
-                Object {
-                  "push": [Function],
-                }
-              }
-              intl={
-                Object {
-                  "formatMessage": [Function],
-                }
-              }
-              isAnyJobProcessing={false}
-              loading={false}
-              match={
-                Object {
-                  "params": Object {
-                    "dataSourceId": "1",
-                    "projectId": "1",
-                    "step": "1",
-                  },
-                }
-              }
-              submitForm={[Function]}
-              theme={
-                Object {
-                  "background": "#000",
-                  "button": Object {
-                    "background": "#1d1d20",
-                    "text": "#FFF",
-                  },
-                  "buttonDisabled": Object {
-                    "background": "#1d1d20",
-                    "text": "#71737e",
-                  },
-                  "card": Object {
-                    "background": "#1d1d20",
-                    "border": "#FFF",
-                    "label": undefined,
-                  },
-                  "checkbox": Object {
-                    "border": "#2F2F36",
-                    "text": "#FFF",
-                  },
-                  "colors": Object {
-                    "black": "#000",
-                    "coolGray": "#a6a7aa",
-                    "darkGrey": "#1d1d20",
-                    "lightGrey": "#71737e",
-                    "mediumGray": "#2F2F36",
-                    "red": "#f21e29",
-                    "veryLightPink": "#f0efef",
-                    "white": "#FFF",
-                  },
-                  "dataGrid": Object {
-                    "background": "#000",
-                    "text": "#71737e",
-                  },
-                  "header": Object {
-                    "border": "#2F2F36",
-                    "text": "#FFF",
-                  },
-                  "icon": Object {
-                    "background": "#1d1d20",
-                    "fill": "#FFF",
-                    "fillInverse": "#000",
-                  },
-                  "input": Object {
-                    "text": "#FFF",
-                  },
-                  "inverseButton": Object {
-                    "background": "#FFF",
-                    "text": "#000",
-                  },
-                  "label": Object {
-                    "border": "#2F2F36",
-                    "text": "#71737e",
-                  },
-                  "menu": Object {
-                    "background": "#000",
-                    "text": "#FFF",
-                  },
-                  "providerContainer": Object {
-                    "backgroundColor": "#000",
-                    "minHeight": "100vh",
-                  },
-                  "radioButton": Object {
-                    "active": Object {
-                      "background": "#FFF",
-                      "fill": "#1d1d20",
-                    },
-                    "text": "#FFF",
-                    "unActive": Object {
-                      "background": "#1d1d20",
-                      "fill": "#FFF",
-                    },
-                  },
-                  "secondaryText": "#71737e",
-                  "select": Object {
-                    "background": "#1d1d20",
-                    "border": "#000",
-                  },
-                  "stepper": Object {
-                    "active": "#FFF",
-                    "background": "#1d1d20",
-                  },
-                  "table": Object {
-                    "background": Object {
-                      "body": "#000",
-                      "header": "#1d1d20",
-                    },
-                    "border": Object {
-                      "body": "#1d1d20",
-                      "header": "#000",
-                    },
-                    "text": Object {
-                      "body": "#FFF",
-                      "header": "#71737e",
-                    },
-                  },
-                  "text": "#FFF",
-                  "textArea": Object {
-                    "background": "#000",
-                    "text": "#FFF",
-                  },
-                  "textField": Object {
-                    "error": "#f21e29",
-                    "label": "#71737e",
-                  },
-                  "typography": Object {
-                    "h1": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 600,
-                    },
-                    "h2": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 100,
-                    },
-                    "h3": Object {
-                      "color": Object {
-                        "border": "#f0efef",
-                        "text": "#a6a7aa",
-                      },
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 600,
-                    },
-                    "p": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 200,
-                    },
-                    "pre": Object {
-                      "fontFamily": "Hack, monospace",
-                    },
-                    "span": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    },
-                  },
-                }
-              }
-              updateDataSource={[Function]}
-            >
-              <NavigationContainer
-                right={false}
-              >
-                <styled.div>
-                  <StyledComponent
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "sc-gzVnrw",
-                          "isStatic": true,
-                          "lastClassName": "bvWFXB",
-                          "rules": Array [
-                            "
-  height: 155px;
-",
-                          ],
-                        },
-                        "displayName": "styled.div",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "sc-gzVnrw",
-                        "target": "div",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <div
-                      className="sc-gzVnrw bvWFXB"
-                    >
-                      <styled.div
-                        right={false}
-                      >
-                        <StyledComponent
-                          forwardedComponent={
-                            Object {
-                              "$$typeof": Symbol(react.forward_ref),
-                              "attrs": Array [],
-                              "componentStyle": ComponentStyle {
-                                "componentId": "sc-htoDjs",
-                                "isStatic": false,
-                                "lastClassName": "kxXsOw",
-                                "rules": Array [
-                                  "
-  position: fixed;
-  padding: 40px 0 36px;
-  bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient(
-    to top,
-    ",
-                                  [Function],
-                                  ",
-    rgba(0, 0, 0, 0)
-  );
-  display: flex;
-  justify-content: ",
-                                  [Function],
-                                  ";
-  flex-wrap: wrap;
-  align-items: center;
-",
-                                ],
-                              },
-                              "displayName": "styled.div",
-                              "foldedComponentIds": Array [],
-                              "render": [Function],
-                              "styledComponentId": "sc-htoDjs",
-                              "target": "div",
-                              "toString": [Function],
-                              "warnTooManyClasses": [Function],
-                              "withComponent": [Function],
-                            }
-                          }
-                          forwardedRef={null}
-                          right={false}
-                        >
-                          <div
-                            className="sc-htoDjs kxXsOw"
-                          >
-                            <BackButton
-                              disabled={false}
-                              onClick={[Function]}
-                            >
-                              <Component
-                                customStyles={
-                                  Object {
-                                    "marginRight": 5,
-                                    "width": "calc(50% - 5px)",
-                                  }
-                                }
-                                disabled={false}
-                                onClick={[Function]}
-                              >
-                                <ButtonComponent
-                                  customStyles={
-                                    Object {
-                                      "marginRight": 5,
-                                      "width": "calc(50% - 5px)",
-                                    }
-                                  }
-                                  disabled={false}
-                                  inverse={false}
-                                  onClick={[Function]}
-                                >
-                                  <button
-                                    disabled={false}
-                                    onClick={[Function]}
-                                    style={
-                                      Object {
-                                        "backgroundColor": "#1d1d20",
-                                        "border": "none",
-                                        "borderRadius": "48px",
-                                        "color": "#FFF",
-                                        "cursor": "pointer",
-                                        "display": "inline-block",
-                                        "fill": "#FFF",
-                                        "fontSize": "18px",
-                                        "margin": "0",
-                                        "marginRight": 5,
-                                        "minHeight": "48px",
-                                        "outline": "none",
-                                        "padding": "0",
-                                        "width": "calc(50% - 5px)",
-                                      }
-                                    }
-                                  >
-                                    <FormattedMessage
-                                      defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-                                      id="shared.components.stepNavigation.back"
-                                      values={
-                                        Object {
-                                          "cancel": true,
-                                        }
-                                      }
-                                    >
-                                      <span>
-                                        Cancel
-                                      </span>
-                                    </FormattedMessage>
-                                  </button>
-                                </ButtonComponent>
-                              </Component>
-                            </BackButton>
-                            <NextButton
-                              disabled={true}
-                              loading={false}
-                              onClick={[Function]}
-                            >
-                              <Component
-                                customStyles={
-                                  Object {
-                                    "marginLeft": 5,
-                                    "width": "calc(50% - 5px)",
-                                  }
-                                }
-                                disabled={true}
-                                inverse={true}
-                                onClick={[Function]}
-                              >
-                                <ButtonComponent
-                                  customStyles={
-                                    Object {
-                                      "marginLeft": 5,
-                                      "width": "calc(50% - 5px)",
-                                    }
-                                  }
-                                  disabled={true}
-                                  inverse={true}
-                                  onClick={[Function]}
-                                >
-                                  <button
-                                    disabled={true}
-                                    onClick={[Function]}
-                                    style={
-                                      Object {
-                                        "backgroundColor": "#1d1d20",
-                                        "border": "none",
-                                        "borderRadius": "48px",
-                                        "color": "#71737e",
-                                        "cursor": "default",
-                                        "display": "inline-block",
-                                        "fill": "#FFF",
-                                        "fontSize": "18px",
-                                        "margin": "0",
-                                        "marginLeft": 5,
-                                        "minHeight": "48px",
-                                        "outline": "none",
-                                        "padding": "0",
-                                        "width": "calc(50% - 5px)",
-                                      }
-                                    }
-                                  >
-                                    <FormattedMessage
-                                      defaultMessage="{loading, select, true {Loading...} other {Next}}"
-                                      id="shared.components.navigation.next"
-                                      values={
-                                        Object {
-                                          "loading": false,
-                                        }
-                                      }
-                                    >
-                                      <span>
-                                        Next
-                                      </span>
-                                    </FormattedMessage>
-                                  </button>
-                                </ButtonComponent>
-                              </Component>
-                            </NextButton>
-                            <styled.div>
-                              <StyledComponent
-                                forwardedComponent={
-                                  Object {
-                                    "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": Array [],
-                                    "componentStyle": ComponentStyle {
-                                      "componentId": "sc-bZQynM",
-                                      "isStatic": true,
-                                      "lastClassName": "jfrcON",
-                                      "rules": Array [
-                                        "
-  display: flex;
-  width: 100%;
-  margin-top: 23px;
-",
-                                      ],
-                                    },
-                                    "displayName": "styled.div",
-                                    "foldedComponentIds": Array [],
-                                    "render": [Function],
-                                    "styledComponentId": "sc-bZQynM",
-                                    "target": "div",
-                                    "toString": [Function],
-                                    "warnTooManyClasses": [Function],
-                                    "withComponent": [Function],
-                                  }
-                                }
-                                forwardedRef={null}
-                              >
-                                <div
-                                  className="sc-bZQynM jfrcON"
-                                >
-                                  <Component
-                                    activeStep={1}
-                                    customStyles={
-                                      Object {
-                                        "margin": "0 auto",
-                                      }
-                                    }
-                                    onStepChange={[Function]}
-                                    steps={5}
-                                  >
-                                    <StepperComponent
-                                      activeStep={1}
-                                      customDotStyles={Object {}}
-                                      customStyles={
-                                        Object {
-                                          "margin": "0 auto",
-                                        }
-                                      }
-                                      handleStep={[Function]}
-                                      onStepChange={[Function]}
-                                      steps={5}
-                                    >
-                                      <div
-                                        style={
-                                          Object {
-                                            "display": "flex",
-                                            "flexDirection": "row",
-                                            "margin": "0 auto",
-                                          }
-                                        }
-                                      >
-                                        <span
-                                          key="0"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#FFF",
-                                              "borderRadius": "50%",
-                                              "cursor": "default",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "pointerEvents": "none",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                        <span
-                                          key="1"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#1d1d20",
-                                              "borderRadius": "50%",
-                                              "cursor": "pointer",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                        <span
-                                          key="2"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#1d1d20",
-                                              "borderRadius": "50%",
-                                              "cursor": "pointer",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                        <span
-                                          key="3"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#1d1d20",
-                                              "borderRadius": "50%",
-                                              "cursor": "pointer",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                        <span
-                                          key="4"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#1d1d20",
-                                              "borderRadius": "50%",
-                                              "cursor": "pointer",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                      </div>
-                                    </StepperComponent>
-                                  </Component>
-                                </div>
-                              </StyledComponent>
-                            </styled.div>
-                          </div>
-                        </StyledComponent>
-                      </styled.div>
-                    </div>
-                  </StyledComponent>
-                </styled.div>
-              </NavigationContainer>
-            </StepNavigation>
-          </Formik>
-        </div>
-      </StyledComponent>
-    </styled.div>
-  </SourceComponent>
-</IntlProvider>
+  }
+  updateDataSource={[Function]}
+/>
 `;
 
 exports[`SourceComponent: Component should render file uploader 1`] = `
-<IntlProvider
-  locale="en"
->
-  <SourceComponent
-    dataSource={
-      Object {
-        "type": "file",
-      }
+<SourceComponent
+  dataSource={
+    Object {
+      "type": "file",
     }
-    history={
-      Object {
-        "push": [Function],
-      }
+  }
+  history={
+    Object {
+      "push": [Function],
     }
-    intl={
-      Object {
-        "formatMessage": [Function],
-      }
+  }
+  intl={
+    Object {
+      "formatMessage": [Function],
     }
-    isAnyJobProcessing={false}
-    match={
-      Object {
-        "params": Object {
-          "dataSourceId": "1",
-          "projectId": "1",
-          "step": "1",
-        },
-      }
+  }
+  isAnyJobProcessing={false}
+  match={
+    Object {
+      "params": Object {
+        "dataSourceId": "1",
+        "projectId": "1",
+        "step": "1",
+      },
     }
-    theme={
-      Object {
+  }
+  theme={
+    Object {
+      "background": "#000",
+      "button": Object {
+        "background": "#1d1d20",
+        "text": "#FFF",
+      },
+      "buttonDisabled": Object {
+        "background": "#1d1d20",
+        "text": "#71737e",
+      },
+      "card": Object {
+        "background": "#1d1d20",
+        "border": "#FFF",
+        "label": undefined,
+      },
+      "checkbox": Object {
+        "border": "#2F2F36",
+        "text": "#FFF",
+      },
+      "colors": Object {
+        "black": "#000",
+        "coolGray": "#a6a7aa",
+        "darkGrey": "#1d1d20",
+        "lightGrey": "#71737e",
+        "mediumGray": "#2F2F36",
+        "red": "#f21e29",
+        "veryLightPink": "#f0efef",
+        "white": "#FFF",
+      },
+      "dataGrid": Object {
         "background": "#000",
-        "button": Object {
-          "background": "#1d1d20",
-          "text": "#FFF",
-        },
-        "buttonDisabled": Object {
-          "background": "#1d1d20",
-          "text": "#71737e",
-        },
-        "card": Object {
-          "background": "#1d1d20",
-          "border": "#FFF",
-          "label": undefined,
-        },
-        "checkbox": Object {
-          "border": "#2F2F36",
-          "text": "#FFF",
-        },
-        "colors": Object {
-          "black": "#000",
-          "coolGray": "#a6a7aa",
-          "darkGrey": "#1d1d20",
-          "lightGrey": "#71737e",
-          "mediumGray": "#2F2F36",
-          "red": "#f21e29",
-          "veryLightPink": "#f0efef",
-          "white": "#FFF",
-        },
-        "dataGrid": Object {
-          "background": "#000",
-          "text": "#71737e",
-        },
-        "header": Object {
-          "border": "#2F2F36",
-          "text": "#FFF",
-        },
-        "icon": Object {
-          "background": "#1d1d20",
-          "fill": "#FFF",
-          "fillInverse": "#000",
-        },
-        "input": Object {
-          "text": "#FFF",
-        },
-        "inverseButton": Object {
+        "text": "#71737e",
+      },
+      "header": Object {
+        "border": "#2F2F36",
+        "text": "#FFF",
+      },
+      "icon": Object {
+        "background": "#1d1d20",
+        "fill": "#FFF",
+        "fillInverse": "#000",
+      },
+      "input": Object {
+        "text": "#FFF",
+      },
+      "inverseButton": Object {
+        "background": "#FFF",
+        "text": "#000",
+      },
+      "label": Object {
+        "border": "#2F2F36",
+        "text": "#71737e",
+      },
+      "menu": Object {
+        "background": "#000",
+        "text": "#FFF",
+      },
+      "providerContainer": Object {
+        "backgroundColor": "#000",
+        "minHeight": "100vh",
+      },
+      "radioButton": Object {
+        "active": Object {
           "background": "#FFF",
-          "text": "#000",
-        },
-        "label": Object {
-          "border": "#2F2F36",
-          "text": "#71737e",
-        },
-        "menu": Object {
-          "background": "#000",
-          "text": "#FFF",
-        },
-        "providerContainer": Object {
-          "backgroundColor": "#000",
-          "minHeight": "100vh",
-        },
-        "radioButton": Object {
-          "active": Object {
-            "background": "#FFF",
-            "fill": "#1d1d20",
-          },
-          "text": "#FFF",
-          "unActive": Object {
-            "background": "#1d1d20",
-            "fill": "#FFF",
-          },
-        },
-        "secondaryText": "#71737e",
-        "select": Object {
-          "background": "#1d1d20",
-          "border": "#000",
-        },
-        "stepper": Object {
-          "active": "#FFF",
-          "background": "#1d1d20",
-        },
-        "table": Object {
-          "background": Object {
-            "body": "#000",
-            "header": "#1d1d20",
-          },
-          "border": Object {
-            "body": "#1d1d20",
-            "header": "#000",
-          },
-          "text": Object {
-            "body": "#FFF",
-            "header": "#71737e",
-          },
+          "fill": "#1d1d20",
         },
         "text": "#FFF",
-        "textArea": Object {
-          "background": "#000",
-          "text": "#FFF",
+        "unActive": Object {
+          "background": "#1d1d20",
+          "fill": "#FFF",
         },
-        "textField": Object {
-          "error": "#f21e29",
-          "label": "#71737e",
+      },
+      "secondaryText": "#71737e",
+      "select": Object {
+        "background": "#1d1d20",
+        "border": "#000",
+      },
+      "stepper": Object {
+        "active": "#FFF",
+        "background": "#1d1d20",
+      },
+      "table": Object {
+        "background": Object {
+          "body": "#000",
+          "header": "#1d1d20",
         },
-        "typography": Object {
-          "h1": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontWeight": 600,
-          },
-          "h2": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontWeight": 100,
-          },
-          "h3": Object {
-            "color": Object {
-              "border": "#f0efef",
-              "text": "#a6a7aa",
-            },
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontWeight": 600,
-          },
-          "p": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontWeight": 200,
-          },
-          "pre": Object {
-            "fontFamily": "Hack, monospace",
-          },
-          "span": Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          },
+        "border": Object {
+          "body": "#1d1d20",
+          "header": "#000",
         },
-      }
+        "text": Object {
+          "body": "#FFF",
+          "header": "#71737e",
+        },
+      },
+      "text": "#FFF",
+      "textArea": Object {
+        "background": "#000",
+        "text": "#FFF",
+      },
+      "textField": Object {
+        "error": "#f21e29",
+        "label": "#71737e",
+      },
+      "typography": Object {
+        "h1": Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontWeight": 600,
+        },
+        "h2": Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontWeight": 100,
+        },
+        "h3": Object {
+          "color": Object {
+            "border": "#f0efef",
+            "text": "#a6a7aa",
+          },
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontWeight": 600,
+        },
+        "p": Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontWeight": 200,
+        },
+        "pre": Object {
+          "fontFamily": "Hack, monospace",
+        },
+        "span": Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+        },
+      },
     }
-    updateDataSource={[Function]}
-  >
-    <styled.div>
-      <StyledComponent
-        forwardedComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "sc-bdVaJa",
-              "isStatic": true,
-              "lastClassName": "eYFGsU",
-              "rules": Array [
-                "
-  color: ",
-                "#ffffff",
-                ";
-",
-              ],
-            },
-            "displayName": "styled.div",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-bdVaJa",
-            "target": "div",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        forwardedRef={null}
-      >
-        <div
-          className="sc-bdVaJa eYFGsU"
-        >
-          <Formik
-            enableReinitialize={true}
-            initialValues={
-              Object {
-                "type": "file",
-              }
-            }
-            isInitialValid={false}
-            onSubmit={[Function]}
-            validateOnBlur={true}
-            validateOnChange={true}
-            validationSchema={
-              ObjectSchema {
-                "_blacklist": RefSet {
-                  "list": Set {},
-                  "refs": Map {},
-                },
-                "_conditions": Array [],
-                "_defaultDefault": [Function],
-                "_deps": Array [],
-                "_excludedEdges": Array [],
-                "_exclusive": Object {},
-                "_mutate": undefined,
-                "_nodes": Array [
-                  "file",
-                  "type",
-                  "name",
-                ],
-                "_options": Object {
-                  "abortEarly": true,
-                  "recursive": true,
-                },
-                "_type": "object",
-                "_typeError": [Function],
-                "_whitelist": RefSet {
-                  "list": Set {},
-                  "refs": Map {},
-                },
-                "fields": Object {
-                  "file": SchemaType {
-                    "_blacklist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "_conditions": Array [],
-                    "_deps": Array [],
-                    "_exclusive": Object {
-                      "fileName": false,
-                      "fileSize": false,
-                      "required": true,
-                    },
-                    "_mutate": undefined,
-                    "_options": Object {
-                      "abortEarly": true,
-                      "recursive": true,
-                    },
-                    "_type": "mixed",
-                    "_typeError": [Function],
-                    "_whitelist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "tests": Array [
-                      [Function],
-                      [Function],
-                      [Function],
-                    ],
-                    "transforms": Array [],
-                  },
-                  "name": StringSchema {
-                    "_blacklist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "_conditions": Array [],
-                    "_deps": Array [],
-                    "_exclusive": Object {
-                      "max": true,
-                      "min": true,
-                      "required": true,
-                    },
-                    "_mutate": undefined,
-                    "_options": Object {
-                      "abortEarly": true,
-                      "recursive": true,
-                    },
-                    "_type": "string",
-                    "_typeError": [Function],
-                    "_whitelist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "tests": Array [
-                      [Function],
-                      [Function],
-                      [Function],
-                    ],
-                    "transforms": Array [
-                      [Function],
-                    ],
-                  },
-                  "type": StringSchema {
-                    "_blacklist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "_conditions": Array [],
-                    "_deps": Array [],
-                    "_exclusive": Object {
-                      "required": true,
-                    },
-                    "_mutate": undefined,
-                    "_options": Object {
-                      "abortEarly": true,
-                      "recursive": true,
-                    },
-                    "_type": "string",
-                    "_typeError": [Function],
-                    "_whitelist": RefSet {
-                      "list": Set {},
-                      "refs": Map {},
-                    },
-                    "tests": Array [
-                      [Function],
-                    ],
-                    "transforms": Array [
-                      [Function],
-                    ],
-                  },
-                },
-                "tests": Array [],
-                "transforms": Array [
-                  [Function],
-                ],
-              }
-            }
-          >
-            <TextInput
-              checkOnlyErrors={true}
-              errors={Object {}}
-              fullWidth={true}
-              handleBlur={[Function]}
-              handleReset={[Function]}
-              handleSubmit={[Function]}
-              initialValues={
-                Object {
-                  "type": "file",
-                }
-              }
-              isEdit={false}
-              isSubmitting={false}
-              isValidating={false}
-              label="Name"
-              name="name"
-              onChange={[Function]}
-              registerField={[Function]}
-              resetForm={[Function]}
-              setError={[Function]}
-              setErrors={[Function]}
-              setFieldError={[Function]}
-              setFieldTouched={[Function]}
-              setFieldValue={[Function]}
-              setFormikState={[Function]}
-              setStatus={[Function]}
-              setSubmitting={[Function]}
-              setTouched={[Function]}
-              setValues={[Function]}
-              submitCount={0}
-              touched={Object {}}
-              unregisterField={[Function]}
-              validateField={[Function]}
-              validateForm={[Function]}
-              validateOnBlur={true}
-              validateOnChange={true}
-              value=""
-            >
-              <styled.div>
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "sc-bxivhb",
-                        "isStatic": true,
-                        "lastClassName": "bUZGRr",
-                        "rules": Array [],
-                      },
-                      "displayName": "styled.div",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "sc-bxivhb",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
-                >
-                  <div
-                    className="sc-bxivhb bUZGRr"
-                  >
-                    <Component
-                      error={false}
-                      fullWidth={true}
-                      iconComponent={null}
-                      label="Name"
-                      name="name"
-                      onChange={[Function]}
-                      value=""
-                    >
-                      <TextFieldComponent
-                        customInputStyles={Object {}}
-                        customLabelStyles={Object {}}
-                        error={false}
-                        fullWidth={true}
-                        iconComponent={null}
-                        label="Name"
-                        name="name"
-                        onChange={[Function]}
-                        type="text"
-                        value=""
-                      >
-                        <div
-                          style={
-                            Object {
-                              "display": "flex",
-                              "flexDirection": "column",
-                              "maxWidth": "100%",
-                              "paddingBottom": "30px",
-                              "position": "relative",
-                            }
-                          }
-                        >
-                          <Component
-                            customStyles={Object {}}
-                            name="name"
-                          >
-                            <LabelComponent
-                              customStyles={Object {}}
-                              name="name"
-                            >
-                              <label
-                                htmlFor="name"
-                                style={
-                                  Object {
-                                    "border": "none",
-                                    "borderTop": "1px solid #2F2F36",
-                                    "color": "#71737e",
-                                    "display": "block",
-                                    "fontSize": "14px",
-                                    "outline": "none",
-                                    "paddingTop": "8px",
-                                    "width": "100%",
-                                  }
-                                }
-                              >
-                                Name
-                              </label>
-                            </LabelComponent>
-                          </Component>
-                          <Component
-                            customStyles={Object {}}
-                            name="name"
-                            onChange={[Function]}
-                            type="text"
-                            value=""
-                          >
-                            <InputComponent
-                              customStyles={Object {}}
-                              name="name"
-                              onChange={[Function]}
-                              type="text"
-                              value=""
-                            >
-                              <input
-                                id="name"
-                                name="name"
-                                onChange={[Function]}
-                                style={
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "border": "none",
-                                    "color": "#FFF",
-                                    "fontSize": "18px",
-                                    "lineHeight": "24px",
-                                    "outline": "none",
-                                  }
-                                }
-                                type="text"
-                                value=""
-                              />
-                            </InputComponent>
-                          </Component>
-                          <div
-                            style={
-                              Object {
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          />
-                        </div>
-                      </TextFieldComponent>
-                    </Component>
-                  </div>
-                </StyledComponent>
-              </styled.div>
-            </TextInput>
-            <Component
-              customStyles={
-                Object {
-                  "marginBottom": 20,
-                }
-              }
-            >
-              <LabelComponent
-                customStyles={
-                  Object {
-                    "marginBottom": 20,
-                  }
-                }
-              >
-                <label
-                  style={
-                    Object {
-                      "border": "none",
-                      "borderTop": "1px solid #2F2F36",
-                      "color": "#71737e",
-                      "display": "block",
-                      "fontSize": "14px",
-                      "marginBottom": 20,
-                      "outline": "none",
-                      "paddingTop": "8px",
-                      "width": "100%",
-                    }
-                  }
-                >
-                  <FormattedMessage
-                    defaultMessage="Source"
-                    id="dataSource.view.source.source"
-                    values={Object {}}
-                  >
-                    <span>
-                      Source
-                    </span>
-                  </FormattedMessage>
-                </label>
-              </LabelComponent>
-            </Component>
-            <RadioGroup
-              customCheckedStyles={Object {}}
-              customLabelStyles={
-                Object {
-                  "alignItems": "center",
-                  "display": "flex",
-                  "flexDirection": "column",
-                  "width": 96,
-                }
-              }
-              customStyles={
-                Object {
-                  "marginBottom": "40px",
-                }
-              }
-              name="type"
-              onChange={[Function]}
-              value="file"
-            >
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "row",
-                    "marginBottom": "40px",
-                  }
-                }
-              >
-                <Component
-                  id="file"
-                  label="Spreadsheet"
-                  value="file"
-                >
-                  <RadioButtonComponent
-                    id="file"
-                    label="Spreadsheet"
-                    value="file"
-                  >
-                    <div
-                      style={
-                        Object {
-                          "color": "#FFF",
-                          "display": "flex",
-                          "flexDirection": "column",
-                          "textAlign": "center",
-                        }
-                      }
-                    >
-                      <input
-                        aria-hidden={true}
-                        defaultChecked={true}
-                        id="file"
-                        name="type"
-                        onChange={[Function]}
-                        style={
-                          Object {
-                            "height": 0,
-                            "left": 0,
-                            "overflow": "hidden",
-                            "position": "absolute",
-                            "top": 0,
-                            "visibility": "hidden",
-                          }
-                        }
-                        type="radio"
-                        value="file"
-                      />
-                      <label
-                        htmlFor="file"
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "cursor": "pointer",
-                            "display": "flex",
-                            "flexDirection": "column",
-                            "width": 96,
-                          }
-                        }
-                      >
-                        <Component
-                          customStyles={
-                            Object {
-                              "background": "#FFF",
-                              "height": 96,
-                              "marginBottom": 10,
-                              "pointerEvents": "none",
-                              "width": 96,
-                            }
-                          }
-                          type="button"
-                        >
-                          <ButtonComponent
-                            customStyles={
-                              Object {
-                                "background": "#FFF",
-                                "height": 96,
-                                "marginBottom": 10,
-                                "pointerEvents": "none",
-                                "width": 96,
-                              }
-                            }
-                            disabled={false}
-                            inverse={false}
-                            type="button"
-                          >
-                            <button
-                              disabled={false}
-                              style={
-                                Object {
-                                  "background": "#FFF",
-                                  "backgroundColor": "#1d1d20",
-                                  "border": "none",
-                                  "borderRadius": "48px",
-                                  "color": "#FFF",
-                                  "cursor": "pointer",
-                                  "display": "inline-block",
-                                  "fill": "#FFF",
-                                  "fontSize": "18px",
-                                  "height": 96,
-                                  "margin": "0",
-                                  "marginBottom": 10,
-                                  "minHeight": "48px",
-                                  "outline": "none",
-                                  "padding": "0",
-                                  "pointerEvents": "none",
-                                  "width": 96,
-                                }
-                              }
-                              type="button"
-                            >
-                              <Component
-                                customStyles={
-                                  Object {
-                                    "fill": "#1d1d20",
-                                  }
-                                }
-                              >
-                                <CsvIconComponent
-                                  customStyles={
-                                    Object {
-                                      "fill": "#1d1d20",
-                                    }
-                                  }
-                                >
-                                  <SvgSpreadsheet
-                                    style={
-                                      Object {
-                                        "fill": "#1d1d20",
-                                        "height": "60px",
-                                        "width": "60px",
-                                      }
-                                    }
-                                  >
-                                    <svg
-                                      style={
-                                        Object {
-                                          "fill": "#1d1d20",
-                                          "height": "60px",
-                                          "width": "60px",
-                                        }
-                                      }
-                                      viewBox="0 0 60 60"
-                                    >
-                                      <path
-                                        d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                                        fillRule="evenodd"
-                                      />
-                                    </svg>
-                                  </SvgSpreadsheet>
-                                </CsvIconComponent>
-                              </Component>
-                            </button>
-                          </ButtonComponent>
-                        </Component>
-                      </label>
-                      Spreadsheet
-                    </div>
-                  </RadioButtonComponent>
-                </Component>
-              </div>
-            </RadioGroup>
-            <Uploader
-              accept=".csv,.tsv"
-              checkOnlyErrors={true}
-              disabled={false}
-              errors={Object {}}
-              handleBlur={[Function]}
-              handleReset={[Function]}
-              handleSubmit={[Function]}
-              id="fileUpload"
-              initialValues={
-                Object {
-                  "type": "file",
-                }
-              }
-              isSubmitting={false}
-              isValidating={false}
-              label="File Name"
-              name="file"
-              onChange={[Function]}
-              registerField={[Function]}
-              resetForm={[Function]}
-              setError={[Function]}
-              setErrors={[Function]}
-              setFieldError={[Function]}
-              setFieldTouched={[Function]}
-              setFormikState={[Function]}
-              setStatus={[Function]}
-              setSubmitting={[Function]}
-              setTouched={[Function]}
-              setValues={[Function]}
-              submitCount={0}
-              touched={Object {}}
-              type="file"
-              unregisterField={[Function]}
-              validateField={[Function]}
-              validateForm={[Function]}
-              validateOnBlur={true}
-              validateOnChange={true}
-            >
-              <styled.div>
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "sc-dnqmqq",
-                        "isStatic": true,
-                        "lastClassName": "bDsesi",
-                        "rules": Array [],
-                      },
-                      "displayName": "styled.div",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "sc-dnqmqq",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
-                >
-                  <div
-                    className="sc-dnqmqq bDsesi"
-                  >
-                    <Component
-                      accept=".csv,.tsv"
-                      disabled={false}
-                      id="fileUpload"
-                      label="File Name"
-                      name="file"
-                      onChange={[Function]}
-                      type="file"
-                    >
-                      <FileUploadComponent
-                        accept=".csv,.tsv"
-                        customInputStyles={Object {}}
-                        customLabelStyles={Object {}}
-                        customStyles={Object {}}
-                        disabled={false}
-                        id="fileUpload"
-                        label="File Name"
-                        name="file"
-                        onChange={[Function]}
-                        type="file"
-                      >
-                        <div
-                          style={Object {}}
-                        >
-                          <Component
-                            customInputStyles={Object {}}
-                            customLabelStyles={Object {}}
-                            customStyles={Object {}}
-                            disabled={true}
-                            fullWidth={true}
-                            iconComponent={
-                              <label
-                                htmlFor="fileUpload"
-                                style={
-                                  Object {
-                                    "position": "relative",
-                                    "top": 10,
-                                  }
-                                }
-                              >
-                                <div
-                                  style={
-                                    Object {
-                                      "backgroundColor": "#1d1d20",
-                                      "border": "none",
-                                      "borderRadius": "48px",
-                                      "color": "#FFF",
-                                      "cursor": "pointer",
-                                      "display": "inline-block",
-                                      "fill": "#FFF",
-                                      "fontSize": 0,
-                                      "margin": "0",
-                                      "minHeight": "48px",
-                                      "outline": "none",
-                                      "padding": "0",
-                                    }
-                                  }
-                                >
-                                  <Unknown />
-                                </div>
-                              </label>
-                            }
-                            label="File Name"
-                            name="fileName"
-                            value="Select a file"
-                          >
-                            <TextFieldComponent
-                              customInputStyles={Object {}}
-                              customLabelStyles={Object {}}
-                              customStyles={Object {}}
-                              disabled={true}
-                              error={false}
-                              fullWidth={true}
-                              iconComponent={
-                                <label
-                                  htmlFor="fileUpload"
-                                  style={
-                                    Object {
-                                      "position": "relative",
-                                      "top": 10,
-                                    }
-                                  }
-                                >
-                                  <div
-                                    style={
-                                      Object {
-                                        "backgroundColor": "#1d1d20",
-                                        "border": "none",
-                                        "borderRadius": "48px",
-                                        "color": "#FFF",
-                                        "cursor": "pointer",
-                                        "display": "inline-block",
-                                        "fill": "#FFF",
-                                        "fontSize": 0,
-                                        "margin": "0",
-                                        "minHeight": "48px",
-                                        "outline": "none",
-                                        "padding": "0",
-                                      }
-                                    }
-                                  >
-                                    <Unknown />
-                                  </div>
-                                </label>
-                              }
-                              label="File Name"
-                              name="fileName"
-                              type="text"
-                              value="Select a file"
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "display": "flex",
-                                    "flexDirection": "column",
-                                    "maxWidth": "100%",
-                                    "paddingBottom": "30px",
-                                    "position": "relative",
-                                  }
-                                }
-                              >
-                                <Component
-                                  customStyles={Object {}}
-                                  name="fileName"
-                                >
-                                  <LabelComponent
-                                    customStyles={Object {}}
-                                    name="fileName"
-                                  >
-                                    <label
-                                      htmlFor="fileName"
-                                      style={
-                                        Object {
-                                          "border": "none",
-                                          "borderTop": "1px solid #2F2F36",
-                                          "color": "#71737e",
-                                          "display": "block",
-                                          "fontSize": "14px",
-                                          "outline": "none",
-                                          "paddingTop": "8px",
-                                          "width": "100%",
-                                        }
-                                      }
-                                    >
-                                      File Name
-                                    </label>
-                                  </LabelComponent>
-                                </Component>
-                                <Component
-                                  customStyles={Object {}}
-                                  disabled={true}
-                                  name="fileName"
-                                  type="text"
-                                  value="Select a file"
-                                >
-                                  <InputComponent
-                                    customStyles={Object {}}
-                                    disabled={true}
-                                    name="fileName"
-                                    type="text"
-                                    value="Select a file"
-                                  >
-                                    <input
-                                      disabled={true}
-                                      id="fileName"
-                                      name="fileName"
-                                      style={
-                                        Object {
-                                          "backgroundColor": "transparent",
-                                          "border": "none",
-                                          "color": "#FFF",
-                                          "fontSize": "18px",
-                                          "lineHeight": "24px",
-                                          "outline": "none",
-                                        }
-                                      }
-                                      type="text"
-                                      value="Select a file"
-                                    />
-                                  </InputComponent>
-                                </Component>
-                                <div
-                                  style={
-                                    Object {
-                                      "position": "absolute",
-                                      "right": 0,
-                                      "top": 0,
-                                    }
-                                  }
-                                >
-                                  <label
-                                    htmlFor="fileUpload"
-                                    style={
-                                      Object {
-                                        "position": "relative",
-                                        "top": 10,
-                                      }
-                                    }
-                                  >
-                                    <div
-                                      style={
-                                        Object {
-                                          "backgroundColor": "#1d1d20",
-                                          "border": "none",
-                                          "borderRadius": "48px",
-                                          "color": "#FFF",
-                                          "cursor": "pointer",
-                                          "display": "inline-block",
-                                          "fill": "#FFF",
-                                          "fontSize": 0,
-                                          "margin": "0",
-                                          "minHeight": "48px",
-                                          "outline": "none",
-                                          "padding": "0",
-                                        }
-                                      }
-                                    >
-                                      <Component>
-                                        <UploadIconComponent>
-                                          <SvgUpload
-                                            style={
-                                              Object {
-                                                "fill": "#FFF",
-                                                "height": "60px",
-                                                "width": "60px",
-                                              }
-                                            }
-                                          >
-                                            <svg
-                                              style={
-                                                Object {
-                                                  "fill": "#FFF",
-                                                  "height": "60px",
-                                                  "width": "60px",
-                                                }
-                                              }
-                                              viewBox="0 0 60 60"
-                                            >
-                                              <path
-                                                d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
-                                              />
-                                            </svg>
-                                          </SvgUpload>
-                                        </UploadIconComponent>
-                                      </Component>
-                                    </div>
-                                  </label>
-                                </div>
-                              </div>
-                            </TextFieldComponent>
-                          </Component>
-                          <input
-                            accept=".csv,.tsv"
-                            aria-hidden={true}
-                            disabled={false}
-                            id="fileUpload"
-                            name="file"
-                            onChange={[Function]}
-                            style={
-                              Object {
-                                "height": 0,
-                                "left": 0,
-                                "overflow": "hidden",
-                                "position": "absolute",
-                                "top": 0,
-                                "visibility": "hidden",
-                              }
-                            }
-                            type="file"
-                          />
-                        </div>
-                      </FileUploadComponent>
-                    </Component>
-                  </div>
-                </StyledComponent>
-              </styled.div>
-            </Uploader>
-            <Styled(Span)
-              onClick={[Function]}
-            >
-              <StyledComponent
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "sc-htpNat",
-                      "isStatic": true,
-                      "lastClassName": "hJqzRO",
-                      "rules": Array [
-                        "
-  color: ",
-                        "#ffffff",
-                        ";
-",
-                      ],
-                    },
-                    "displayName": "Styled(Span)",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "sc-htpNat",
-                    "target": [Function],
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
-                onClick={[Function]}
-              >
-                <Span
-                  className="sc-htpNat hJqzRO"
-                  onClick={[Function]}
-                >
-                  <span
-                    className="sc-htpNat hJqzRO"
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                        "fontSize": "14px",
-                      }
-                    }
-                  >
-                    <FormattedMessage
-                      defaultMessage="View Past Versions"
-                      id="dataSource.view.source.pastVersions"
-                      values={Object {}}
-                    >
-                      <span>
-                        View Past Versions
-                      </span>
-                    </FormattedMessage>
-                  </span>
-                </Span>
-              </StyledComponent>
-            </Styled(Span)>
-            <StepNavigation
-              dataSource={
-                Object {
-                  "type": "file",
-                }
-              }
-              disabled={
-                Object {
-                  "next": true,
-                }
-              }
-              history={
-                Object {
-                  "push": [Function],
-                }
-              }
-              intl={
-                Object {
-                  "formatMessage": [Function],
-                }
-              }
-              isAnyJobProcessing={false}
-              loading={false}
-              match={
-                Object {
-                  "params": Object {
-                    "dataSourceId": "1",
-                    "projectId": "1",
-                    "step": "1",
-                  },
-                }
-              }
-              submitForm={[Function]}
-              theme={
-                Object {
-                  "background": "#000",
-                  "button": Object {
-                    "background": "#1d1d20",
-                    "text": "#FFF",
-                  },
-                  "buttonDisabled": Object {
-                    "background": "#1d1d20",
-                    "text": "#71737e",
-                  },
-                  "card": Object {
-                    "background": "#1d1d20",
-                    "border": "#FFF",
-                    "label": undefined,
-                  },
-                  "checkbox": Object {
-                    "border": "#2F2F36",
-                    "text": "#FFF",
-                  },
-                  "colors": Object {
-                    "black": "#000",
-                    "coolGray": "#a6a7aa",
-                    "darkGrey": "#1d1d20",
-                    "lightGrey": "#71737e",
-                    "mediumGray": "#2F2F36",
-                    "red": "#f21e29",
-                    "veryLightPink": "#f0efef",
-                    "white": "#FFF",
-                  },
-                  "dataGrid": Object {
-                    "background": "#000",
-                    "text": "#71737e",
-                  },
-                  "header": Object {
-                    "border": "#2F2F36",
-                    "text": "#FFF",
-                  },
-                  "icon": Object {
-                    "background": "#1d1d20",
-                    "fill": "#FFF",
-                    "fillInverse": "#000",
-                  },
-                  "input": Object {
-                    "text": "#FFF",
-                  },
-                  "inverseButton": Object {
-                    "background": "#FFF",
-                    "text": "#000",
-                  },
-                  "label": Object {
-                    "border": "#2F2F36",
-                    "text": "#71737e",
-                  },
-                  "menu": Object {
-                    "background": "#000",
-                    "text": "#FFF",
-                  },
-                  "providerContainer": Object {
-                    "backgroundColor": "#000",
-                    "minHeight": "100vh",
-                  },
-                  "radioButton": Object {
-                    "active": Object {
-                      "background": "#FFF",
-                      "fill": "#1d1d20",
-                    },
-                    "text": "#FFF",
-                    "unActive": Object {
-                      "background": "#1d1d20",
-                      "fill": "#FFF",
-                    },
-                  },
-                  "secondaryText": "#71737e",
-                  "select": Object {
-                    "background": "#1d1d20",
-                    "border": "#000",
-                  },
-                  "stepper": Object {
-                    "active": "#FFF",
-                    "background": "#1d1d20",
-                  },
-                  "table": Object {
-                    "background": Object {
-                      "body": "#000",
-                      "header": "#1d1d20",
-                    },
-                    "border": Object {
-                      "body": "#1d1d20",
-                      "header": "#000",
-                    },
-                    "text": Object {
-                      "body": "#FFF",
-                      "header": "#71737e",
-                    },
-                  },
-                  "text": "#FFF",
-                  "textArea": Object {
-                    "background": "#000",
-                    "text": "#FFF",
-                  },
-                  "textField": Object {
-                    "error": "#f21e29",
-                    "label": "#71737e",
-                  },
-                  "typography": Object {
-                    "h1": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 600,
-                    },
-                    "h2": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 100,
-                    },
-                    "h3": Object {
-                      "color": Object {
-                        "border": "#f0efef",
-                        "text": "#a6a7aa",
-                      },
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 600,
-                    },
-                    "p": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                      "fontWeight": 200,
-                    },
-                    "pre": Object {
-                      "fontFamily": "Hack, monospace",
-                    },
-                    "span": Object {
-                      "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    },
-                  },
-                }
-              }
-              updateDataSource={[Function]}
-            >
-              <NavigationContainer
-                right={false}
-              >
-                <styled.div>
-                  <StyledComponent
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "sc-gzVnrw",
-                          "isStatic": true,
-                          "lastClassName": "bvWFXB",
-                          "rules": Array [
-                            "
-  height: 155px;
-",
-                          ],
-                        },
-                        "displayName": "styled.div",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "sc-gzVnrw",
-                        "target": "div",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <div
-                      className="sc-gzVnrw bvWFXB"
-                    >
-                      <styled.div
-                        right={false}
-                      >
-                        <StyledComponent
-                          forwardedComponent={
-                            Object {
-                              "$$typeof": Symbol(react.forward_ref),
-                              "attrs": Array [],
-                              "componentStyle": ComponentStyle {
-                                "componentId": "sc-htoDjs",
-                                "isStatic": false,
-                                "lastClassName": "kxXsOw",
-                                "rules": Array [
-                                  "
-  position: fixed;
-  padding: 40px 0 36px;
-  bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient(
-    to top,
-    ",
-                                  [Function],
-                                  ",
-    rgba(0, 0, 0, 0)
-  );
-  display: flex;
-  justify-content: ",
-                                  [Function],
-                                  ";
-  flex-wrap: wrap;
-  align-items: center;
-",
-                                ],
-                              },
-                              "displayName": "styled.div",
-                              "foldedComponentIds": Array [],
-                              "render": [Function],
-                              "styledComponentId": "sc-htoDjs",
-                              "target": "div",
-                              "toString": [Function],
-                              "warnTooManyClasses": [Function],
-                              "withComponent": [Function],
-                            }
-                          }
-                          forwardedRef={null}
-                          right={false}
-                        >
-                          <div
-                            className="sc-htoDjs kxXsOw"
-                          >
-                            <BackButton
-                              disabled={false}
-                              onClick={[Function]}
-                            >
-                              <Component
-                                customStyles={
-                                  Object {
-                                    "marginRight": 5,
-                                    "width": "calc(50% - 5px)",
-                                  }
-                                }
-                                disabled={false}
-                                onClick={[Function]}
-                              >
-                                <ButtonComponent
-                                  customStyles={
-                                    Object {
-                                      "marginRight": 5,
-                                      "width": "calc(50% - 5px)",
-                                    }
-                                  }
-                                  disabled={false}
-                                  inverse={false}
-                                  onClick={[Function]}
-                                >
-                                  <button
-                                    disabled={false}
-                                    onClick={[Function]}
-                                    style={
-                                      Object {
-                                        "backgroundColor": "#1d1d20",
-                                        "border": "none",
-                                        "borderRadius": "48px",
-                                        "color": "#FFF",
-                                        "cursor": "pointer",
-                                        "display": "inline-block",
-                                        "fill": "#FFF",
-                                        "fontSize": "18px",
-                                        "margin": "0",
-                                        "marginRight": 5,
-                                        "minHeight": "48px",
-                                        "outline": "none",
-                                        "padding": "0",
-                                        "width": "calc(50% - 5px)",
-                                      }
-                                    }
-                                  >
-                                    <FormattedMessage
-                                      defaultMessage="{cancel, select, true {Cancel} other {Back}}"
-                                      id="shared.components.stepNavigation.back"
-                                      values={
-                                        Object {
-                                          "cancel": true,
-                                        }
-                                      }
-                                    >
-                                      <span>
-                                        Cancel
-                                      </span>
-                                    </FormattedMessage>
-                                  </button>
-                                </ButtonComponent>
-                              </Component>
-                            </BackButton>
-                            <NextButton
-                              disabled={true}
-                              loading={false}
-                              onClick={[Function]}
-                            >
-                              <Component
-                                customStyles={
-                                  Object {
-                                    "marginLeft": 5,
-                                    "width": "calc(50% - 5px)",
-                                  }
-                                }
-                                disabled={true}
-                                inverse={true}
-                                onClick={[Function]}
-                              >
-                                <ButtonComponent
-                                  customStyles={
-                                    Object {
-                                      "marginLeft": 5,
-                                      "width": "calc(50% - 5px)",
-                                    }
-                                  }
-                                  disabled={true}
-                                  inverse={true}
-                                  onClick={[Function]}
-                                >
-                                  <button
-                                    disabled={true}
-                                    onClick={[Function]}
-                                    style={
-                                      Object {
-                                        "backgroundColor": "#1d1d20",
-                                        "border": "none",
-                                        "borderRadius": "48px",
-                                        "color": "#71737e",
-                                        "cursor": "default",
-                                        "display": "inline-block",
-                                        "fill": "#FFF",
-                                        "fontSize": "18px",
-                                        "margin": "0",
-                                        "marginLeft": 5,
-                                        "minHeight": "48px",
-                                        "outline": "none",
-                                        "padding": "0",
-                                        "width": "calc(50% - 5px)",
-                                      }
-                                    }
-                                  >
-                                    <FormattedMessage
-                                      defaultMessage="{loading, select, true {Loading...} other {Next}}"
-                                      id="shared.components.navigation.next"
-                                      values={
-                                        Object {
-                                          "loading": false,
-                                        }
-                                      }
-                                    >
-                                      <span>
-                                        Next
-                                      </span>
-                                    </FormattedMessage>
-                                  </button>
-                                </ButtonComponent>
-                              </Component>
-                            </NextButton>
-                            <styled.div>
-                              <StyledComponent
-                                forwardedComponent={
-                                  Object {
-                                    "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": Array [],
-                                    "componentStyle": ComponentStyle {
-                                      "componentId": "sc-bZQynM",
-                                      "isStatic": true,
-                                      "lastClassName": "jfrcON",
-                                      "rules": Array [
-                                        "
-  display: flex;
-  width: 100%;
-  margin-top: 23px;
-",
-                                      ],
-                                    },
-                                    "displayName": "styled.div",
-                                    "foldedComponentIds": Array [],
-                                    "render": [Function],
-                                    "styledComponentId": "sc-bZQynM",
-                                    "target": "div",
-                                    "toString": [Function],
-                                    "warnTooManyClasses": [Function],
-                                    "withComponent": [Function],
-                                  }
-                                }
-                                forwardedRef={null}
-                              >
-                                <div
-                                  className="sc-bZQynM jfrcON"
-                                >
-                                  <Component
-                                    activeStep={1}
-                                    customStyles={
-                                      Object {
-                                        "margin": "0 auto",
-                                        "pointerEvents": "none",
-                                      }
-                                    }
-                                    onStepChange={[Function]}
-                                    steps={5}
-                                  >
-                                    <StepperComponent
-                                      activeStep={1}
-                                      customDotStyles={Object {}}
-                                      customStyles={
-                                        Object {
-                                          "margin": "0 auto",
-                                          "pointerEvents": "none",
-                                        }
-                                      }
-                                      handleStep={[Function]}
-                                      onStepChange={[Function]}
-                                      steps={5}
-                                    >
-                                      <div
-                                        style={
-                                          Object {
-                                            "display": "flex",
-                                            "flexDirection": "row",
-                                            "margin": "0 auto",
-                                            "pointerEvents": "none",
-                                          }
-                                        }
-                                      >
-                                        <span
-                                          key="0"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#FFF",
-                                              "borderRadius": "50%",
-                                              "cursor": "default",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "pointerEvents": "none",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                        <span
-                                          key="1"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#1d1d20",
-                                              "borderRadius": "50%",
-                                              "cursor": "pointer",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                        <span
-                                          key="2"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#1d1d20",
-                                              "borderRadius": "50%",
-                                              "cursor": "pointer",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                        <span
-                                          key="3"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#1d1d20",
-                                              "borderRadius": "50%",
-                                              "cursor": "pointer",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                        <span
-                                          key="4"
-                                          onClick={[Function]}
-                                          style={
-                                            Object {
-                                              "backgroundColor": "#1d1d20",
-                                              "borderRadius": "50%",
-                                              "cursor": "pointer",
-                                              "display": "block",
-                                              "height": "12px",
-                                              "margin": "0 4px",
-                                              "width": "12px",
-                                            }
-                                          }
-                                        />
-                                      </div>
-                                    </StepperComponent>
-                                  </Component>
-                                </div>
-                              </StyledComponent>
-                            </styled.div>
-                          </div>
-                        </StyledComponent>
-                      </styled.div>
-                    </div>
-                  </StyledComponent>
-                </styled.div>
-              </NavigationContainer>
-            </StepNavigation>
-          </Formik>
-        </div>
-      </StyledComponent>
-    </styled.div>
-  </SourceComponent>
-</IntlProvider>
+  }
+  updateDataSource={[Function]}
+/>
 `;

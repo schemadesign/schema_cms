@@ -2,7 +2,23 @@
 
 exports[`JobList: Component should render correctly 1`] = `
 <styled.div>
-  <styled.div />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.jobList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Past Versions"
+        id="dataSource.jobList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <Loader />
   <NavigationContainer
     right={false}
   >
@@ -13,18 +29,19 @@ exports[`JobList: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="Cancel"
-        id="jobList.cancel"
+        id="dataSource.jobList.cancel"
         values={Object {}}
       />
     </BackButton>
     <NextButton
+      disabled={true}
       id="revertBtn"
       loading={false}
       onClick={[Function]}
     >
       <FormattedMessage
         defaultMessage="Revert"
-        id="jobList.revert"
+        id="dataSource.jobList.revert"
         values={Object {}}
       />
     </NextButton>

@@ -8,6 +8,7 @@ import { SourceComponent } from './source.component';
 export const defaultProps = {
   dataSource: {
     metaData: {},
+    jobs: [],
   },
   theme: Theme.dark,
   updateDataSource: Function.prototype,

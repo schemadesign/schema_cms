@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 
 import { SourceComponent } from '../source.component';
@@ -13,7 +13,7 @@ describe('SourceComponent: Component', () => {
     </IntlProvider>
   );
 
-  const render = (props = {}) => mount(component(props));
+  const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', () => {
     const wrapper = render();

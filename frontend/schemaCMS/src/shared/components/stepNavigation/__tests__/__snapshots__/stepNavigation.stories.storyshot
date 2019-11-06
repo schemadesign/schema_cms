@@ -68,7 +68,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
         </span>
       </button>
       <div
-        className="sc-fjdhpX hhLAkE"
+        className="sc-hMqMXs bKYksQ"
       >
         <div
           style={
@@ -226,7 +226,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
         </span>
       </button>
       <div
-        className="sc-fjdhpX hhLAkE"
+        className="sc-hMqMXs bKYksQ"
       >
         <div
           style={
@@ -384,7 +384,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
         </span>
       </button>
       <div
-        className="sc-fjdhpX hhLAkE"
+        className="sc-hMqMXs bKYksQ"
       >
         <div
           style={
@@ -542,7 +542,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
         </span>
       </button>
       <div
-        className="sc-fjdhpX hhLAkE"
+        className="sc-hMqMXs bKYksQ"
       >
         <div
           style={
@@ -700,7 +700,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
         </span>
       </button>
       <div
-        className="sc-fjdhpX hhLAkE"
+        className="sc-hMqMXs bKYksQ"
       >
         <div
           style={

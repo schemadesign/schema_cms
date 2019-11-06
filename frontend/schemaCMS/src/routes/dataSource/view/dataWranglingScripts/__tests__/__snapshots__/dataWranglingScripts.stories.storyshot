@@ -10,23 +10,23 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
   }
 >
   <div
-    className="sc-htoDjs bZzhDu"
+    className="sc-kgoBCf kVSTZj"
   >
     <div
-      className="sc-dnqmqq fbYiWe"
+      className="sc-kGXeez kwtmDC"
     >
       <div
-        className="sc-gZMcBi cyIaoJ"
+        className="sc-dxgOiQ bKPZZs"
       />
       <div
-        className="sc-iwsKbI eZdwLq"
+        className="sc-kpOJdX kOxvob"
       >
         <span>
           2 Steps
         </span>
       </div>
       <div
-        className="sc-gqjmRU leFSAp"
+        className="sc-ckVGcZ damYIK"
       >
         <div
           style={Object {}}
@@ -282,7 +282,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-jTzLTM kEFCjJ"
+            className="sc-eNQAEJ iNAKrx"
             href="/script/1"
             onClick={[Function]}
           >
@@ -381,7 +381,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-jTzLTM kEFCjJ"
+            className="sc-eNQAEJ iNAKrx"
             href="/script/2"
             onClick={[Function]}
           >
@@ -498,7 +498,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           </span>
         </button>
         <div
-          className="sc-fjdhpX hhLAkE"
+          className="sc-hMqMXs bKYksQ"
         >
           <div
             style={
@@ -509,20 +509,6 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
               }
             }
           >
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
-                  "width": "12px",
-                }
-              }
-            />
             <span
               onClick={[Function]}
               style={

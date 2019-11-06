@@ -42,8 +42,7 @@ export class JobList extends PureComponent {
         loading: false,
       });
     } catch (e) {
-      console.log(e);
-      // this.props.history.push('/');
+      this.props.history.push('/');
     }
   }
 

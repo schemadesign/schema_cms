@@ -10,7 +10,6 @@ exports[`DataSource: Component should render correctly 1`] = `
   <Redirect
     exact={true}
     path="path/:dataSourceId"
-    push={false}
     to="path/:dataSourceId/1"
   />
   <Route
