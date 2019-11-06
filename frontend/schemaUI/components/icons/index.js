@@ -9,7 +9,7 @@ import { ExitIcon } from './exitIcon';
 import { IntersectIcon } from './intersectIcon';
 import { MenuIcon } from './menuIcon';
 import { PlusIcon } from './plusIcon';
-import { UserIcon } from './UserIcon';
+import { UserIcon } from './userIcon';
 import { UploadIcon } from './uploadIcon';
 import { SchemaLogoIcon } from './SchemaLogoIcon';
 
