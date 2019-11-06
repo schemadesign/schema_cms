@@ -8,10 +8,12 @@ export const Container = styled.div``;
 
 export const DataSourceItem = styled.li`
   margin-top: 25px;
+  width: 100%;
 
-  &:first-child {
-    margin-top: 0;
-  }
+  ${media.desktop`
+    width: 295px;
+    height: 300px;
+  `};
 `;
 
 export const Description = styled.div`
@@ -19,10 +21,13 @@ export const Description = styled.div`
   cursor: pointer;
 `;
 
-export const DataSourceListWrapper = styled.div`
+export const DataSourceListWrapper = styled.ul`
   list-style: none;
   padding: 0;
   margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const DataSourceTitle = styled(Typography.H1)`

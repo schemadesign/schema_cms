@@ -1,18 +1,23 @@
 import styled from 'styled-components';
+import { media } from '../../../theme/media';
 
 export const Container = styled.div``;
 
 export const ProjectsList = styled.ul`
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const ProjectItem = styled.li`
   margin-top: 25px;
+  width: 100%;
 
-  &:first-child {
-    margin-top: 0;
-  }
+  ${media.desktop`
+    width: 295px;
+  `};
 `;
 
 export const HeaderList = styled.ul`
