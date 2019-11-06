@@ -1,39 +1,54 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
+import { keys, map, pathOr, pipe, toString } from 'ramda';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './filterForm.messages';
 import {
-  FILTER_NAME,
-  INITIAL_VALUES,
-  FILTER_UNIQUE_ITEMS,
-  FILTER_TYPE,
-  FILTER_FIELD_TYPE,
   FILTER_FIELD,
+  FILTER_FIELD_TYPE,
+  FILTER_NAME,
+  FILTER_TYPE,
+  FILTER_UNIQUE_ITEMS,
+  FILTERS_SCHEMA,
+  INITIAL_VALUES,
 } from '../../../modules/filter/filter.constants';
 import { Select } from '../form/select';
+import { Form, Row } from './filterForm.styles';
+import { BackButton, NavigationContainer, NextButton } from '../navigation';
 
 export class FilterForm extends PureComponent {
   static propTypes = {
     fieldsInfo: PropTypes.object.isRequired,
   };
 
+  handleSelectStatus = ({ value, setFieldValue }) => setFieldValue(FILTER_FIELD, value);
+
+  handleSubmit = () => {};
+
   render() {
-    const fieldOptions = this.props.fieldsInfo.keys();
+    const fieldOptions = pipe(
+      keys,
+      map(key => ({ value: key, label: key }))
+    )(this.props.fieldsInfo);
+    INITIAL_VALUES[FILTER_FIELD] = fieldOptions[0].value;
 
     return (
-      <Formik initialValues={INITIAL_VALUES} onSubmit={this.handleSubmit}>
-        {({ values, handleChange, ...rest }) => {
+      <Formik initialValues={INITIAL_VALUES} onSubmit={this.handleSubmit} validationSchema={FILTERS_SCHEMA}>
+        {({ values, handleChange, setFieldValue, dirty, isValid, ...rest }) => {
+          const filterField = values[FILTER_FIELD];
+          const uniqueItems = pathOr(values[FILTER_UNIQUE_ITEMS], ['fieldsInfo', filterField, 'unique'], this.props);
+          const fieldType = pathOr(values[FILTER_FIELD_TYPE], ['fieldsInfo', filterField, 'type'], this.props);
+
           return (
-            <Fragment>
+            <Form>
               <TextInput
                 value={values[FILTER_NAME]}
                 onChange={handleChange}
                 name={FILTER_NAME}
                 fullWidth
-                checkOnlyErrors
                 label={<FormattedMessage {...messages[FILTER_NAME]} />}
                 {...rest}
               />
@@ -42,7 +57,6 @@ export class FilterForm extends PureComponent {
                 onChange={handleChange}
                 name={FILTER_TYPE}
                 fullWidth
-                checkOnlyErrors
                 label={<FormattedMessage {...messages[FILTER_TYPE]} />}
                 {...rest}
               />
@@ -51,27 +65,36 @@ export class FilterForm extends PureComponent {
                 name={FILTER_FIELD}
                 value={values[FILTER_FIELD]}
                 options={fieldOptions}
-                onSelect={handleChange}
+                defaultOption={{ value: '', label: '' }}
+                onSelect={({ value }) => this.handleSelectStatus({ value, setFieldValue })}
               />
-              <TextInput
-                value={values[FILTER_FIELD_TYPE]}
-                onChange={handleChange}
-                name={FILTER_FIELD_TYPE}
-                fullWidth
-                checkOnlyErrors
-                label={<FormattedMessage {...messages[FILTER_FIELD_TYPE]} />}
-                {...rest}
-              />
-              <TextInput
-                value={values[FILTER_UNIQUE_ITEMS]}
-                onChange={handleChange}
-                name={FILTER_UNIQUE_ITEMS}
-                fullWidth
-                checkOnlyErrors
-                label={<FormattedMessage {...messages[FILTER_UNIQUE_ITEMS]} />}
-                {...rest}
-              />
-            </Fragment>
+              <Row>
+                <TextInput
+                  value={fieldType}
+                  name={FILTER_FIELD_TYPE}
+                  fullWidth
+                  label={<FormattedMessage {...messages[FILTER_FIELD_TYPE]} />}
+                  disabled
+                  {...rest}
+                />
+                <TextInput
+                  value={toString(uniqueItems)}
+                  name={FILTER_UNIQUE_ITEMS}
+                  fullWidth
+                  label={<FormattedMessage {...messages[FILTER_UNIQUE_ITEMS]} />}
+                  disabled
+                  {...rest}
+                />
+              </Row>
+              <NavigationContainer>
+                <BackButton>
+                  <FormattedMessage {...messages.deleteFilter} type="button" />
+                </BackButton>
+                <NextButton disabled={!dirty || !isValid} type="submit">
+                  <FormattedMessage {...messages.saveFilter} />
+                </NextButton>
+              </NavigationContainer>
+            </Form>
           );
         }}
       </Formik>

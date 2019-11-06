@@ -1,12 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { path } from 'ramda';
+import { always, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Container } from './createFilter.styles';
 import { FilterForm } from '../../../../shared/components/filterForm';
 import messages from './createFilter.messages';
 import { TopHeader } from '../../../../shared/components/topHeader';
+import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
+import { Loader } from '../../../../shared/components/loader';
 
 export class CreateFilter extends PureComponent {
   static propTypes = {
@@ -20,9 +22,14 @@ export class CreateFilter extends PureComponent {
     }).isRequired,
   };
 
+  state = {
+    loading: true,
+  };
+
   async componentDidMount() {
     const dataSourceId = path(['match', 'params', 'dataSourceId'], this.props);
     await this.props.fetchFieldsInfo({ dataSourceId });
+    this.setState({ loading: false });
   }
 
   getHeaderAndMenuConfig = () => ({
@@ -30,13 +37,17 @@ export class CreateFilter extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
+  renderFilterForm = renderWhenTrueOtherwise(always(<Loader />), () => (
+    <FilterForm fieldsInfo={this.props.fieldsInfo} />
+  ));
+
   render() {
     const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
-        <FilterForm fieldsInfo={this.props.fieldsInfo} />
+        {this.renderFilterForm(this.state.loading)}
       </Container>
     );
   }

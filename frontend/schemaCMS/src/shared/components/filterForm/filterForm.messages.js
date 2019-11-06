@@ -29,4 +29,12 @@ export default defineMessages({
     id: `shared.components.filter.${FILTER_UNIQUE_ITEMS}`,
     defaultMessage: 'Unique items',
   },
+  saveFilter: {
+    id: 'shared.components.filter.saveFilter',
+    defaultMessage: 'Save',
+  },
+  deleteFilter: {
+    id: 'shared.components.filter.deleteFilter',
+    defaultMessage: 'Delete',
+  },
 });

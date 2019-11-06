@@ -45,6 +45,7 @@ export const getStyles = (theme = defaultTheme) => ({
     width: '100%',
     top: `${ITEM_HEIGHT + PADDING * 2 + 2}px`,
     left: '0',
+    zIndex: 2,
     backgroundColor: theme.select.background,
   }),
 });
