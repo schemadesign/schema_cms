@@ -235,6 +235,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         try:
             job = data_source.current_job
+            if not hasattr(job, 'meta_data') and job.result:
+                job.update_meta()
         except ObjectDoesNotExist as e:
             return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
 
@@ -253,8 +255,10 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
     def result_preview(self, request, pk=None, **kwarg):
         obj = self.get_object()
         try:
+            if not hasattr(obj, 'meta_data') and obj.result:
+                obj.update_meta()
             result = obj.meta_data.data
-        except ObjectDoesNotExist as e:
+        except Exception as e:
             return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
 
         return response.Response(result, status=status.HTTP_200_OK)
