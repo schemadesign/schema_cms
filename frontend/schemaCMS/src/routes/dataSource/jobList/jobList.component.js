@@ -10,6 +10,7 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 import browserHistory from '../../../shared/utils/history';
 
 import messages from './jobList.messages';
+import { TopHeader } from '../../../shared/components/topHeader';
 
 const JOB_LIST_NAME = 'job_list';
 const { Span } = Typography;
@@ -58,9 +59,14 @@ export class JobList extends PureComponent {
 
   render() {
     const { jobList } = this.props;
+    const topHeaderConfig = {
+      headerTitle: <FormattedMessage {...messages.title} />,
+      headerSubtitle: <FormattedMessage {...messages.subTitle} />,
+    };
 
     return (
       <Container>
+        <TopHeader {...topHeaderConfig} />
         <ListWrapper>{jobList.map(this.renderList)}</ListWrapper>
         <NavigationContainer>
           <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
@@ -72,5 +78,5 @@ export class JobList extends PureComponent {
         </NavigationContainer>
       </Container>
     );
-  }
+  } 
 }

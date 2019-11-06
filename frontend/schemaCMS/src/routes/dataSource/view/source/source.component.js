@@ -139,8 +139,17 @@ export class SourceComponent extends PureComponent {
     );
   };
 
+  renderJobListLink = renderWhenTrue(
+    always(
+      <Span onClick={this.handlePastVersionsClick}>
+        <FormattedMessage {...messages.pastVersions} />
+      </Span>
+    )
+  );
+
   render() {
     const { dataSource, ...restProps } = this.props;
+    const { jobs } = dataSource;
     const { loading } = this.state;
 
     return (
@@ -183,9 +192,7 @@ export class SourceComponent extends PureComponent {
                   {this.renderRadioButton(type)}
                 </RadioGroup>
                 {this.renderSourceUpload({ type, fileName, ...rest })}
-                <Span onClick={this.handlePastVersionsClick}>
-                  <FormattedMessage {...messages.pastVersions} />
-                </Span>
+                {this.renderJobListLink(!!jobs.length)}
                 <StepNavigation
                   loading={loading}
                   disabled={disabled}

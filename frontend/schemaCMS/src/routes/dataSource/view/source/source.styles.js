@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import { Typography } from 'schemaUI';
-
 import { colors } from '../../../../theme/styled';
 
 const { Span: SpanUI } = Typography;
 
 export const Container = styled.div`
-  color: ${colors.white};
+  ${({ theme }) => theme.colors.white}
 `;
 
 export const buttonStyles = {
@@ -37,5 +36,5 @@ export const WarningWrapper = styled.div`
 `;
 
 export const Span = styled(SpanUI)`
-  color: ${colors.white};
+  color: ${({ theme }) => theme.colors.white};
 `;

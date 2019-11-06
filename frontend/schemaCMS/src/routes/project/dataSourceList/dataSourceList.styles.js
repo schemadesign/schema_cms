@@ -1,10 +1,8 @@
 import styled, { css } from 'styled-components';
 import { Theme, Typography } from 'schemaUI';
 import { Link } from 'react-router-dom';
-import { always, cond, equals } from 'ramda';
 import { styleWhenTrue } from '../../../shared/utils/rendering';
 import { media } from '../../../theme/media';
-import { colors } from '../../../theme/styled';
 
 export const Container = styled.div``;
 
@@ -79,8 +77,6 @@ export const iconSourceStyles = {
   height: 40,
 };
 
-export const JobsContainer = styled.div``;
-
 export const Job = styled(Link)`
   background-color: ${({ theme }) => theme.background};
   border-top: 3px solid ${({ theme }) => theme.card.background};
@@ -105,33 +101,5 @@ export const JobDetails = styled.div`
   ${media.tablet`
     width: auto;
     justify-content: normal;
-  `}
-`;
-
-const getStatusColor = cond([
-  [equals('failed'), always(colors.red)],
-  [equals('pending'), always(colors.yellow)],
-  [equals('processing'), always(colors.blue)],
-  [equals('success'), always(colors.green)],
-]);
-
-export const JobStatus = styled.div`
-  color: ${({ status }) => getStatusColor(status)};
-  min-width: 80px;
-  padding: 10px;
-`;
-
-export const JobName = styled.div`
-  padding: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
-
-export const JobDate = styled.div`
-  padding: 10px;
-`;
-
-export const JobsTitle = styled.div`
-  margin: 10px 0;
+  `};
 `;
