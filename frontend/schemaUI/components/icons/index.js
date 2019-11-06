@@ -11,7 +11,7 @@ import { MenuIcon } from './menuIcon';
 import { PlusIcon } from './plusIcon';
 import { UserIcon } from './userIcon';
 import { UploadIcon } from './uploadIcon';
-import { SchemaLogoIcon } from './SchemaLogoIcon';
+import { SchemaLogoIcon } from './schemaLogoIcon';
 
 const Icons = {
   ArrowLeftIcon,
