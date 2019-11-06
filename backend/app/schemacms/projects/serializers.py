@@ -316,14 +316,16 @@ class PublicApiJobSerializer(serializers.ModelSerializer):
 
 class FilterSerializer(serializers.ModelSerializer):
     datasource = serializers.PrimaryKeyRelatedField(read_only=True)
+    datasource_name = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = models.Filter
         fields = (
             "id",
             "datasource",
+            "datasource_name",
             "name",
-            "type",
+            "filter_type",
             "field",
             "field_type",
             "unique_items",
@@ -339,3 +341,6 @@ class FilterSerializer(serializers.ModelSerializer):
         filter_.save()
 
         return filter_
+
+    def get_datasource_name(self, obj):
+        return obj.datasource.name
