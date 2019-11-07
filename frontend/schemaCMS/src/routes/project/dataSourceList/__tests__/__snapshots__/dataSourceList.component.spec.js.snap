@@ -32,7 +32,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <styled.ul>
+  <styled.div>
     <styled.li
       key="0"
     >
@@ -144,7 +144,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
         </styled.div>
       </Component>
     </styled.li>
-  </styled.ul>
+  </styled.div>
   <NavigationContainer
     hideOnDesktop={true}
     right={false}
@@ -193,7 +193,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <styled.ul>
+  <styled.div>
     <styled.li
       key="0"
     >
@@ -416,7 +416,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         </styled.div>
       </Component>
     </styled.li>
-  </styled.ul>
+  </styled.div>
   <NavigationContainer
     hideOnDesktop={true}
     right={false}
@@ -465,7 +465,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <styled.ul />
+  <styled.div />
   <NavigationContainer
     hideOnDesktop={true}
     right={false}
