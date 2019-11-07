@@ -2,9 +2,10 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { FilterRoutines } from './filter.redux';
 import api from '../../shared/services/api';
-import { DATA_SOURCE_PATH, DATA_SOURCES_PATH, FILTERS_PATH } from '../../shared/utils/api.constants';
+import { DATA_SOURCES_PATH, FILTERS_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { FILTERS_STEP } from '../dataSource/dataSource.constants';
+import { ROUTES } from '../../routes';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -40,7 +41,7 @@ function* createFilter({ payload: { dataSourceId, formData } }) {
 
     const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/filters`, { ...formData, isActive: true });
 
-    browserHistory.push(`${DATA_SOURCE_PATH}/${dataSourceId}/${FILTERS_STEP}`);
+    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${FILTERS_STEP}`);
 
     yield put(FilterRoutines.createFilter.success(data));
   } catch (e) {
@@ -69,7 +70,7 @@ function* updateFilter({ payload: { filterId, dataSourceId, formData } }) {
     yield put(FilterRoutines.updateFilter.request());
 
     const { data } = yield api.put(`${FILTERS_PATH}/${filterId}`, { ...formData });
-    browserHistory.push(`${DATA_SOURCE_PATH}/${dataSourceId}/${FILTERS_STEP}`);
+    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${FILTERS_STEP}`);
 
     yield put(FilterRoutines.updateFilter.success(data));
   } catch (e) {
@@ -84,7 +85,7 @@ function* removeFilter({ payload: { filterId, dataSourceId } }) {
     yield put(FilterRoutines.removeFilter.request());
 
     const { data } = yield api.delete(`${FILTERS_PATH}/${filterId}`);
-    browserHistory.push(`${DATA_SOURCE_PATH}/${dataSourceId}/${FILTERS_STEP}`);
+    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${FILTERS_STEP}`);
 
     yield put(FilterRoutines.removeFilter.success(data));
   } catch (e) {
