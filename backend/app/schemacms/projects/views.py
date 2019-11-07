@@ -277,7 +277,7 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
         return response.Response(status=status.HTTP_201_CREATED)
 
 
-class DataSourceScriptDetailView(generics.RetrieveAPIView):
+class DataSourceScriptDetailView(generics.RetrieveAPIView, generics.UpdateAPIView):
     queryset = models.WranglingScript.objects.none()
     serializer_class = serializers.WranglingScriptSerializer
     permission_classes = (permissions.IsAuthenticated,)
