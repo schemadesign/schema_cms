@@ -227,6 +227,23 @@ describe('DataSource: sagas', () => {
     });
   });
 
+  describe('fetchFieldsInfo', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { dataSourceId: '1' };
+      const responseData = {
+        field: { data: 'data' },
+      };
+
+      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/fields-info`).reply(OK, responseData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchFieldsInfo.success(responseData))
+        .dispatch(DataSourceRoutines.fetchFieldsInfo(payload))
+        .silentRun();
+    });
+  });
+
   describe('revertToJob', () => {
     it('should dispatch a success action', async () => {
       const payload = { jobId: '1', dataSourceId: '1' };

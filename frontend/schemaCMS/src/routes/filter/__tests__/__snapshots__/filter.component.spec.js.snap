@@ -2,6 +2,43 @@
 
 exports[`Filter: Component should render correctly 1`] = `
 <styled.div>
-  Filter component
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit Filter"
+        id="filter.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle="name"
+  />
+  <FilterForm
+    fieldsInfo={
+      Object {
+        "field": Object {
+          "fieldType": "fieldType",
+          "filterType": Array [
+            "filterType",
+          ],
+          "unique": "unique",
+        },
+      }
+    }
+    filter={
+      Object {
+        "datasource": Object {
+          "name": "name",
+        },
+      }
+    }
+    removeFilter={[Function]}
+    updateFilter={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`Filter: Component should render correctly with loader 1`] = `
+<styled.div>
+  <Loader />
 </styled.div>
 `;

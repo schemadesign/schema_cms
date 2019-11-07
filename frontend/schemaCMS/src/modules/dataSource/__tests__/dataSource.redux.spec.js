@@ -9,6 +9,7 @@ describe('DataSource: redux', () => {
     dataSources: [],
     fields: {},
     previewTable: [],
+    fieldsInfo: {},
   });
 
   describe('reducer', () => {
@@ -107,6 +108,15 @@ describe('DataSource: redux', () => {
 
       expect(resultState.fields).to.deep.equal(defaultState.fields);
       expect(resultState.previewTable).to.deep.equal(defaultState.previewTable);
+    });
+  });
+
+  describe('when FETCH_FIELDS_INFO/SUCCESS action is received', () => {
+    it('should set fields info ', () => {
+      const data = { data: 'data' };
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchFieldsInfo.success(data));
+
+      expect(resultState.fieldsInfo).to.deep.equal(data);
     });
   });
 });

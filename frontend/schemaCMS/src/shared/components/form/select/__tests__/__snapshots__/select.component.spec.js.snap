@@ -13,6 +13,9 @@ exports[`Select: Component should render correctly 1`] = `
     type="hidden"
     value="one"
   />
+  <styled.div>
+    <Component />
+  </styled.div>
   <Component
     onSelect={[Function]}
     options={

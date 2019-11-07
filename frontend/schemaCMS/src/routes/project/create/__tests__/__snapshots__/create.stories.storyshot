@@ -10,10 +10,10 @@ exports[`Storyshots Project/Create Default 1`] = `
   }
 >
   <div
-    className="sc-hwwEjo kIFSBP"
+    className="sc-elJkPf jRsZyA"
   >
     <div
-      className="sc-dnqmqq jTyMZw"
+      className="sc-hzDkRC eJLEZA"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Project/Create Default 1`] = `
       >
         <div>
           <div
-            className="sc-iwsKbI jQhHGA"
+            className="sc-jhAzac hmXDXQ"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots Project/Create Default 1`] = `
         }
       >
         <div
-          className="sc-gZMcBi giNnHm"
+          className="sc-fBuWsC eeihxG"
         >
           <div
-            className="sc-iwsKbI jQhHGA"
+            className="sc-jhAzac hmXDXQ"
           >
             <h2
               id="headerTitle"
@@ -160,13 +160,13 @@ exports[`Storyshots Project/Create Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-gqjmRU kteaYt"
+          className="sc-fMiknA dDuaDM"
         >
           <ul
-            className="sc-VigVT sc-jTzLTM jjONle"
+            className="sc-dVhcbM sc-eqIVtm dnkudp"
           />
           <ul
-            className="sc-VigVT sc-fjdhpX dhPcNY"
+            className="sc-dVhcbM sc-fAjcbJ ggeeow"
           />
         </div>
         <button
@@ -212,11 +212,11 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-kPVwWT duNpUs"
+      className="sc-jtRfpW gsXFow"
       onSubmit={[Function]}
     >
       <div
-        className="sc-jDwBTQ dWtMUn"
+        className="sc-bxivhb bUZGRr"
       >
         <div
           style={
@@ -272,11 +272,31 @@ exports[`Storyshots Project/Create Default 1`] = `
                 "top": 0,
               }
             }
-          />
+          >
+            <div
+              className="sc-ifAKCX fiLnVp"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
       <div
-        className="sc-jDwBTQ dWtMUn"
+        className="sc-bxivhb bUZGRr"
       >
         <div
           style={
@@ -331,11 +351,31 @@ exports[`Storyshots Project/Create Default 1`] = `
                 "top": 0,
               }
             }
-          />
+          >
+            <div
+              className="sc-ifAKCX fiLnVp"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
       <div
-        className="sc-jDwBTQ dWtMUn"
+        className="sc-bxivhb bUZGRr"
       >
         <div
           style={
@@ -395,7 +435,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-iyvyFf bcombI"
+        className="sc-ksYbfQ cEjTho"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -420,9 +460,27 @@ exports[`Storyshots Project/Create Default 1`] = `
           type="hidden"
         />
         <div
+          className="sc-hmzhuo hkesKq"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
           style={
             Object {
-              "border": "1px solid #000",
               "color": "#FFF",
               "display": "flex",
               "width": "100%",
@@ -435,7 +493,6 @@ exports[`Storyshots Project/Create Default 1`] = `
               Object {
                 "cursor": "pointer",
                 "display": "flex",
-                "padding": "7px",
                 "position": "relative",
                 "width": "100%",
               }
@@ -477,6 +534,7 @@ exports[`Storyshots Project/Create Default 1`] = `
                   "position": "absolute",
                   "top": "46px",
                   "width": "100%",
+                  "zIndex": 2,
                 }
               }
             >
@@ -541,68 +599,64 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM ceQpbG"
+        className="sc-gzVnrw bvWFXB"
       >
         <div
-          className="sc-htoDjs gGzkjf"
+          className="sc-htoDjs jntWXs"
         >
-          <div
-            className="sc-gzVnrw dUJElp"
+          <button
+            disabled={false}
+            id="cancelBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginRight": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
+              }
+            }
           >
-            <button
-              disabled={false}
-              id="cancelBtn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "margin": "0",
-                  "marginRight": 5,
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "width": "calc(50% - 5px)",
-                }
+            <span>
+              Cancel
+            </span>
+          </button>
+          <button
+            disabled={false}
+            id="finishBtn"
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginLeft": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
               }
-            >
-              <span>
-                Cancel
-              </span>
-            </button>
-            <button
-              disabled={false}
-              id="finishBtn"
-              style={
-                Object {
-                  "backgroundColor": "#FFF",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#000",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "margin": "0",
-                  "marginLeft": 5,
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "width": "calc(50% - 5px)",
-                }
-              }
-            >
-              <span>
-                Finish
-              </span>
-            </button>
-          </div>
+            }
+          >
+            <span>
+              Finish
+            </span>
+          </button>
         </div>
       </div>
     </form>

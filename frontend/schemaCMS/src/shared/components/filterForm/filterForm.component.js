@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
-import { always, keys, map, path, pipe, toString } from 'ramda';
+import { always, keys, map, path, pathOr, pipe, toString } from 'ramda';
 import Modal from 'react-modal';
 
 import { TextInput } from '../form/inputs/textInput';
@@ -108,7 +108,8 @@ export class FilterForm extends PureComponent {
       <Fragment>
         <Formik initialValues={initialValues} onSubmit={this.handleSubmit} validationSchema={FILTERS_SCHEMA}>
           {({ values, handleChange, setFieldValue, dirty, isValid, ...rest }) => {
-            const filterTypeOptions = this.props.fieldsInfo[values[FILTER_FIELD]][FILTER_TYPE].map(key => ({
+            const filterTypes = pathOr([], ['fieldsInfo', values[FILTER_FIELD], FILTER_TYPE], this.props);
+            const filterTypeOptions = filterTypes.map(key => ({
               value: key,
               label: key,
             }));

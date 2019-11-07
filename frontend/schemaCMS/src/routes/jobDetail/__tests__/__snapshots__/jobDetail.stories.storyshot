@@ -3,7 +3,7 @@
 exports[`Storyshots JobDetail Default 1`] = `
 Array [
   <div
-    className="sc-dnqmqq jTyMZw"
+    className="sc-hzDkRC eJLEZA"
   >
     <div
       style={
@@ -20,7 +20,7 @@ Array [
     >
       <div>
         <div
-          className="sc-iwsKbI jQhHGA"
+          className="sc-jhAzac hmXDXQ"
         >
           <h2
             id="headerTitle"
@@ -118,10 +118,10 @@ Array [
       }
     >
       <div
-        className="sc-gZMcBi giNnHm"
+        className="sc-fBuWsC eeihxG"
       >
         <div
-          className="sc-iwsKbI jQhHGA"
+          className="sc-jhAzac hmXDXQ"
         >
           <h2
             id="headerTitle"
@@ -158,13 +158,13 @@ Array [
         </div>
       </div>
       <div
-        className="sc-gqjmRU kteaYt"
+        className="sc-fMiknA dDuaDM"
       >
         <ul
-          className="sc-VigVT sc-jTzLTM jjONle"
+          className="sc-dVhcbM sc-eqIVtm dnkudp"
         />
         <ul
-          className="sc-VigVT sc-fjdhpX dhPcNY"
+          className="sc-dVhcbM sc-fAjcbJ ggeeow"
         />
       </div>
       <button
@@ -210,74 +210,70 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-chPdSV ggxxKy"
+    className="sc-gZMcBi iOxXPb"
   >
     <span>
       Loading...
     </span>
   </div>,
   <div
-    className="sc-bZQynM ceQpbG"
+    className="sc-gzVnrw bvWFXB"
   >
     <div
-      className="sc-htoDjs dtmwjU"
+      className="sc-htoDjs eZUylk"
     >
-      <div
-        className="sc-gzVnrw dUJElp"
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "marginRight": 5,
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "calc(50% - 5px)",
+          }
+        }
       >
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "calc(50% - 5px)",
-            }
+        <span>
+          Back
+        </span>
+      </button>
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#000",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "marginLeft": 5,
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "width": "calc(50% - 5px)",
           }
-        >
-          <span>
-            Back
-          </span>
-        </button>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "marginLeft": 5,
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "calc(50% - 5px)",
-            }
-          }
-        >
-          <span>
-            Save
-          </span>
-        </button>
-      </div>
+        }
+      >
+        <span>
+          Save
+        </span>
+      </button>
     </div>
   </div>,
 ]

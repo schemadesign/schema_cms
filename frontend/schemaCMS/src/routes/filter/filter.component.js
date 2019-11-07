@@ -18,6 +18,11 @@ export class Filter extends PureComponent {
     fetchFilter: PropTypes.func.isRequired,
     removeFilter: PropTypes.func.isRequired,
     filter: PropTypes.object.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        filterId: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
   };
 
   state = {
@@ -26,8 +31,9 @@ export class Filter extends PureComponent {
 
   async componentDidMount() {
     const filterId = path(['match', 'params', 'filterId'], this.props);
-    const { datasource } = await this.props.fetchFilter({ filterId });
-    await this.props.fetchFieldsInfo({ dataSourceId: datasource.id });
+    const data = await this.props.fetchFilter({ filterId });
+    await this.props.fetchFieldsInfo({ dataSourceId: data.datasource.id });
+
     this.setState({ loading: false });
   }
 

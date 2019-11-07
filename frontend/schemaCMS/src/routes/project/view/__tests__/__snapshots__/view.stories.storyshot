@@ -10,11 +10,11 @@ exports[`Storyshots Project/View default 1`] = `
   }
 >
   <div
-    className="sc-gojNiO hkiBkP"
+    className="sc-gqPbQI gPCCuf"
   >
     <div>
       <div
-        className="sc-dnqmqq jTyMZw"
+        className="sc-hzDkRC eJLEZA"
       >
         <div
           style={
@@ -31,7 +31,7 @@ exports[`Storyshots Project/View default 1`] = `
         >
           <div>
             <div
-              className="sc-iwsKbI jQhHGA"
+              className="sc-jhAzac hmXDXQ"
             >
               <h2
                 id="headerTitle"
@@ -125,10 +125,10 @@ exports[`Storyshots Project/View default 1`] = `
           }
         >
           <div
-            className="sc-gZMcBi giNnHm"
+            className="sc-fBuWsC eeihxG"
           >
             <div
-              className="sc-iwsKbI jQhHGA"
+              className="sc-jhAzac hmXDXQ"
             >
               <h2
                 id="headerTitle"
@@ -161,13 +161,13 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </div>
           <div
-            className="sc-gqjmRU kteaYt"
+            className="sc-fMiknA dDuaDM"
           >
             <ul
-              className="sc-VigVT sc-jTzLTM jjONle"
+              className="sc-dVhcbM sc-eqIVtm dnkudp"
             >
               <li
-                className="sc-jzJRlG sc-cSHVUG skFeT"
+                className="sc-caSCKo sc-gisBJw fjmWZk"
               >
                 <a
                   href="/project/100/datasource"
@@ -179,10 +179,10 @@ exports[`Storyshots Project/View default 1`] = `
               </li>
             </ul>
             <ul
-              className="sc-VigVT sc-fjdhpX dhPcNY"
+              className="sc-dVhcbM sc-fAjcbJ ggeeow"
             >
               <li
-                className="sc-jzJRlG sc-kAzzGY kVJbvT"
+                className="sc-caSCKo sc-kjoXOD bxzQyw"
               >
                 <a
                   href="/project/edit/100"
@@ -193,14 +193,14 @@ exports[`Storyshots Project/View default 1`] = `
                 </a>
               </li>
               <li
-                className="sc-jzJRlG sc-kAzzGY kVJbvT"
+                className="sc-caSCKo sc-kjoXOD bxzQyw"
                 id={null}
                 onClick={[Function]}
               >
                 Delete Project
               </li>
               <li
-                className="sc-jzJRlG sc-kAzzGY kVJbvT"
+                className="sc-caSCKo sc-kjoXOD bxzQyw"
               >
                 <a
                   href="/logout"
@@ -255,13 +255,13 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </div>
       <div
-        className="sc-daURTG gWNkFl"
+        className="sc-hORach ceDlcK"
       >
         <ul
-          className="sc-fOKMvo hkpuBL"
+          className="sc-gojNiO iVKCPp"
         >
           <li
-            className="sc-dUjcNx cWlbbO"
+            className="sc-daURTG iTEslt"
           >
             <div
               id="projectDataSources"
@@ -288,14 +288,10 @@ exports[`Storyshots Project/View default 1`] = `
                   }
                 }
               >
-                <span
-                  className="sc-gHboQg jsBiwe"
-                >
-                  Data Sources
-                </span>
+                Data Sources
               </div>
               <span
-                className="sc-eilVRo hUaufT"
+                className="sc-bXGyLb gmbQcw"
                 id="projectDataSourcesValue"
               >
                 3
@@ -303,7 +299,7 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-dUjcNx cWlbbO"
+            className="sc-daURTG iTEslt"
           >
             <div
               id="projectUsers"
@@ -330,14 +326,10 @@ exports[`Storyshots Project/View default 1`] = `
                   }
                 }
               >
-                <span
-                  className="sc-gHboQg jsBiwe"
-                >
-                  Users
-                </span>
+                Users
               </div>
               <span
-                className="sc-eilVRo hUaufT"
+                className="sc-bXGyLb gmbQcw"
                 id="projectUsersValue"
               >
                 2
@@ -346,30 +338,30 @@ exports[`Storyshots Project/View default 1`] = `
           </li>
         </ul>
         <ul
-          className="sc-bXGyLb bMqtka"
+          className="sc-bMVAic ctgLsu"
         >
           <li
-            className="sc-lkqHmb cbnuAA"
+            className="sc-bAeIUo dovKRa"
           >
             <div
-              className="sc-eLExRp kBRwQu"
+              className="sc-iujRgT dIPKpv"
               id="fieldLastUpdated"
             >
               <span
-                className="sc-cbkKFq eDmYfI"
+                className="sc-GMQeP dEAAvN"
                 id="fieldLastUpdatedLabel"
               >
                 Last Update
               </span>
               <span
-                className="sc-fYiAbW kqGkqh"
+                className="sc-cQFLBn bNUnXH"
                 id="fieldLastUpdatedValue"
               >
                 3 months ago
               </span>
             </div>
             <div
-              className="sc-krvtoX OySDo"
+              className="sc-exAgwC cBdgTU"
               id="fieldLastUpdatedEditButton"
             >
               <svg
@@ -390,27 +382,27 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-lkqHmb cbnuAA"
+            className="sc-bAeIUo dovKRa"
           >
             <div
-              className="sc-eLExRp kBRwQu"
+              className="sc-iujRgT dIPKpv"
               id="fieldStatus"
             >
               <span
-                className="sc-cbkKFq eDmYfI"
+                className="sc-GMQeP dEAAvN"
                 id="fieldStatusLabel"
               >
                 Status
               </span>
               <span
-                className="sc-fYiAbW kqGkqh"
+                className="sc-cQFLBn bNUnXH"
                 id="fieldStatusValue"
               >
                 Status
               </span>
             </div>
             <div
-              className="sc-krvtoX OySDo"
+              className="sc-exAgwC cBdgTU"
               id="fieldStatusEditButton"
             >
               <svg
@@ -431,27 +423,27 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-lkqHmb cbnuAA"
+            className="sc-bAeIUo dovKRa"
           >
             <div
-              className="sc-eLExRp kBRwQu"
+              className="sc-iujRgT dIPKpv"
               id="fieldOwner"
             >
               <span
-                className="sc-cbkKFq eDmYfI"
+                className="sc-GMQeP dEAAvN"
                 id="fieldOwnerLabel"
               >
                 Owner
               </span>
               <span
-                className="sc-fYiAbW kqGkqh"
+                className="sc-cQFLBn bNUnXH"
                 id="fieldOwnerValue"
               >
                 Firstname Lastname
               </span>
             </div>
             <div
-              className="sc-krvtoX OySDo"
+              className="sc-exAgwC cBdgTU"
               id="fieldOwnerEditButton"
             >
               <svg
@@ -472,27 +464,27 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-lkqHmb cbnuAA"
+            className="sc-bAeIUo dovKRa"
           >
             <div
-              className="sc-eLExRp kBRwQu"
+              className="sc-iujRgT dIPKpv"
               id="fieldTitle"
             >
               <span
-                className="sc-cbkKFq eDmYfI"
+                className="sc-GMQeP dEAAvN"
                 id="fieldTitleLabel"
               >
                 Title
               </span>
               <span
-                className="sc-fYiAbW kqGkqh"
+                className="sc-cQFLBn bNUnXH"
                 id="fieldTitleValue"
               >
                 Project Name
               </span>
             </div>
             <div
-              className="sc-krvtoX OySDo"
+              className="sc-exAgwC cBdgTU"
               id="fieldTitleEditButton"
             >
               <svg
@@ -513,27 +505,27 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-lkqHmb cbnuAA"
+            className="sc-bAeIUo dovKRa"
           >
             <div
-              className="sc-eLExRp kBRwQu"
+              className="sc-iujRgT dIPKpv"
               id="fieldDescription"
             >
               <span
-                className="sc-cbkKFq eDmYfI"
+                className="sc-GMQeP dEAAvN"
                 id="fieldDescriptionLabel"
               >
                 Description
               </span>
               <span
-                className="sc-fYiAbW kqGkqh"
+                className="sc-cQFLBn bNUnXH"
                 id="fieldDescriptionValue"
               >
                 Description
               </span>
             </div>
             <div
-              className="sc-krvtoX OySDo"
+              className="sc-exAgwC cBdgTU"
               id="fieldDescriptionEditButton"
             >
               <svg
@@ -554,27 +546,27 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-lkqHmb cbnuAA"
+            className="sc-bAeIUo dovKRa"
           >
             <div
-              className="sc-eLExRp kBRwQu"
+              className="sc-iujRgT dIPKpv"
               id="fieldSlug"
             >
               <span
-                className="sc-cbkKFq eDmYfI"
+                className="sc-GMQeP dEAAvN"
                 id="fieldSlugLabel"
               >
                 API
               </span>
               <span
-                className="sc-fYiAbW kqGkqh"
+                className="sc-cQFLBn bNUnXH"
                 id="fieldSlugValue"
               >
                 schemacms/api/project_title
               </span>
             </div>
             <div
-              className="sc-krvtoX OySDo"
+              className="sc-exAgwC cBdgTU"
               id="fieldSlugEditButton"
             >
               <svg
@@ -598,53 +590,49 @@ exports[`Storyshots Project/View default 1`] = `
       </div>
     </div>
     <div
-      className="sc-bZQynM ceQpbG"
+      className="sc-gzVnrw bvWFXB"
     >
       <div
-        className="sc-htoDjs gGzkjf"
+        className="sc-htoDjs jntWXs"
       >
-        <div
-          className="sc-gzVnrw dUJElp"
+        <button
+          disabled={false}
+          id="addProjectBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "60px",
+            }
+          }
         >
-          <button
-            disabled={false}
-            id="addProjectBtn"
-            onClick={[Function]}
+          <svg
             style={
               Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
                 "fill": "#FFF",
-                "fontSize": "18px",
                 "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
                 "width": "60px",
               }
             }
+            viewBox="0 0 60 60"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "60px",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-              />
-            </svg>
-          </button>
-        </div>
+            <path
+              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -661,11 +649,11 @@ exports[`Storyshots Project/View loading 1`] = `
   }
 >
   <div
-    className="sc-gojNiO hkiBkP"
+    className="sc-gqPbQI gPCCuf"
   >
     <div>
       <div
-        className="sc-dnqmqq jTyMZw"
+        className="sc-hzDkRC eJLEZA"
       >
         <div
           style={
@@ -682,7 +670,7 @@ exports[`Storyshots Project/View loading 1`] = `
         >
           <div>
             <div
-              className="sc-iwsKbI jQhHGA"
+              className="sc-jhAzac hmXDXQ"
             >
               <h2
                 id="headerTitle"
@@ -774,10 +762,10 @@ exports[`Storyshots Project/View loading 1`] = `
           }
         >
           <div
-            className="sc-gZMcBi giNnHm"
+            className="sc-fBuWsC eeihxG"
           >
             <div
-              className="sc-iwsKbI jQhHGA"
+              className="sc-jhAzac hmXDXQ"
             >
               <h2
                 id="headerTitle"
@@ -808,13 +796,13 @@ exports[`Storyshots Project/View loading 1`] = `
             </div>
           </div>
           <div
-            className="sc-gqjmRU kteaYt"
+            className="sc-fMiknA dDuaDM"
           >
             <ul
-              className="sc-VigVT sc-jTzLTM jjONle"
+              className="sc-dVhcbM sc-eqIVtm dnkudp"
             >
               <li
-                className="sc-jzJRlG sc-cSHVUG skFeT"
+                className="sc-caSCKo sc-gisBJw fjmWZk"
               >
                 <a
                   href="/project/100/datasource"
@@ -826,10 +814,10 @@ exports[`Storyshots Project/View loading 1`] = `
               </li>
             </ul>
             <ul
-              className="sc-VigVT sc-fjdhpX dhPcNY"
+              className="sc-dVhcbM sc-fAjcbJ ggeeow"
             >
               <li
-                className="sc-jzJRlG sc-kAzzGY kVJbvT"
+                className="sc-caSCKo sc-kjoXOD bxzQyw"
               >
                 <a
                   href="/project/edit/100"
@@ -840,14 +828,14 @@ exports[`Storyshots Project/View loading 1`] = `
                 </a>
               </li>
               <li
-                className="sc-jzJRlG sc-kAzzGY kVJbvT"
+                className="sc-caSCKo sc-kjoXOD bxzQyw"
                 id={null}
                 onClick={[Function]}
               >
                 Delete Project
               </li>
               <li
-                className="sc-jzJRlG sc-kAzzGY kVJbvT"
+                className="sc-caSCKo sc-kjoXOD bxzQyw"
               >
                 <a
                   href="/logout"
@@ -902,7 +890,7 @@ exports[`Storyshots Project/View loading 1`] = `
         </div>
       </div>
       <div
-        className="sc-chPdSV hBnWHV"
+        className="sc-gZMcBi PmzMK"
       >
         <span>
           Loading...
@@ -910,53 +898,49 @@ exports[`Storyshots Project/View loading 1`] = `
       </div>
     </div>
     <div
-      className="sc-bZQynM ceQpbG"
+      className="sc-gzVnrw bvWFXB"
     >
       <div
-        className="sc-htoDjs gGzkjf"
+        className="sc-htoDjs jntWXs"
       >
-        <div
-          className="sc-gzVnrw dUJElp"
+        <button
+          disabled={false}
+          id="addProjectBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "60px",
+            }
+          }
         >
-          <button
-            disabled={false}
-            id="addProjectBtn"
-            onClick={[Function]}
+          <svg
             style={
               Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
                 "fill": "#FFF",
-                "fontSize": "18px",
                 "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
                 "width": "60px",
               }
             }
+            viewBox="0 0 60 60"
           >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "60px",
-                  "width": "60px",
-                }
-              }
-              viewBox="0 0 60 60"
-            >
-              <path
-                d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
-              />
-            </svg>
-          </button>
-        </div>
+            <path
+              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>

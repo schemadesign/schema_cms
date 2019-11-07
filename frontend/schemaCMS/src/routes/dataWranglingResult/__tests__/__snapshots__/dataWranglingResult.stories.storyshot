@@ -10,160 +10,156 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
   }
 >
   <div
-    className="sc-hqyNC keRCOE"
+    className="sc-bRBYWo ccSRck"
   >
     <div
-      className="sc-chPdSV hBnWHV"
+      className="sc-gZMcBi PmzMK"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="sc-bZQynM ceQpbG"
+      className="sc-gzVnrw bvWFXB"
     >
       <div
-        className="sc-htoDjs gGzkjf"
+        className="sc-htoDjs jntWXs"
       >
-        <div
-          className="sc-gzVnrw dUJElp"
+        <button
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginRight": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
         >
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
-              }
+          <span>
+            Back
+          </span>
+        </button>
+        <button
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginLeft": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
             }
-          >
-            <span>
-              Back
-            </span>
-          </button>
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginLeft": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
-              }
-            }
-          >
-            <span>
-              Next
-            </span>
-          </button>
+          }
+        >
+          <span>
+            Next
+          </span>
+        </button>
+        <div
+          className="sc-bZQynM jfrcON"
+        >
           <div
-            className="sc-kEYyzF gUgRxW"
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "row",
+                "margin": "0 auto",
+              }
+            }
           >
-            <div
+            <span
+              onClick={[Function]}
               style={
                 Object {
-                  "display": "flex",
-                  "flexDirection": "row",
-                  "margin": "0 auto",
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
                 }
               }
-            >
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "width": "12px",
-                  }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
                 }
-              />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "width": "12px",
-                  }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
                 }
-              />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "width": "12px",
-                  }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "borderRadius": "50%",
+                  "cursor": "default",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "pointerEvents": "none",
+                  "width": "12px",
                 }
-              />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#FFF",
-                    "borderRadius": "50%",
-                    "cursor": "default",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "pointerEvents": "none",
-                    "width": "12px",
-                  }
+              }
+            />
+            <span
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "height": "12px",
+                  "margin": "0 4px",
+                  "width": "12px",
                 }
-              />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "width": "12px",
-                  }
-                }
-              />
-            </div>
+              }
+            />
           </div>
         </div>
       </div>

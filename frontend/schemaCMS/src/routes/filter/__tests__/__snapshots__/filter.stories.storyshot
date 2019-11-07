@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Filters Default 1`] = `
+exports[`Storyshots Filter Default 1`] = `
 <div
   style={
     Object {
@@ -10,7 +10,7 @@ exports[`Storyshots Filters Default 1`] = `
   }
 >
   <div
-    className="sc-gPEVay eQYmiW"
+    className="sc-dNLxif KzmkZ"
   >
     <div
       className="sc-gZMcBi PmzMK"

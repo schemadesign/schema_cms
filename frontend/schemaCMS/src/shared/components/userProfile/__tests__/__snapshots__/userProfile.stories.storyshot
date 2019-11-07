@@ -10,14 +10,14 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
   }
 >
   <div
-    className="sc-emmjRN bTNvq"
+    className="sc-eLExRp lfgpeQ"
   >
     <form
-      className="sc-cpmLhU dpVsHD"
+      className="sc-cbkKFq bIUkjW"
       onSubmit={[Function]}
     >
       <div
-        className="sc-jDwBTQ dWtMUn"
+        className="sc-bxivhb bUZGRr"
       >
         <div
           style={
@@ -77,7 +77,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-jDwBTQ dWtMUn"
+        className="sc-bxivhb bUZGRr"
       >
         <div
           style={
@@ -137,7 +137,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-jDwBTQ dWtMUn"
+        className="sc-bxivhb bUZGRr"
       >
         <div
           style={
@@ -198,7 +198,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-jDwBTQ dWtMUn"
+        className="sc-bxivhb bUZGRr"
       >
         <div
           style={
@@ -257,66 +257,62 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM ceQpbG"
+        className="sc-gzVnrw bvWFXB"
       >
         <div
-          className="sc-htoDjs gGzkjf"
+          className="sc-htoDjs fBoXhE"
         >
-          <div
-            className="sc-gzVnrw NJhNt"
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginRight": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
+              }
+            }
+            type="button"
           >
-            <button
-              disabled={false}
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "margin": "0",
-                  "marginRight": 5,
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "width": "calc(50% - 5px)",
-                }
+            <span>
+              Back
+            </span>
+          </button>
+          <button
+            disabled={false}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginLeft": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
               }
-              type="button"
-            >
-              <span>
-                Back
-              </span>
-            </button>
-            <button
-              disabled={false}
-              style={
-                Object {
-                  "backgroundColor": "#FFF",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#000",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "margin": "0",
-                  "marginLeft": 5,
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "width": "calc(50% - 5px)",
-                }
-              }
-              type="submit"
-            >
-              Make admin
-            </button>
-          </div>
+            }
+            type="submit"
+          >
+            Make admin
+          </button>
         </div>
       </div>
     </form>

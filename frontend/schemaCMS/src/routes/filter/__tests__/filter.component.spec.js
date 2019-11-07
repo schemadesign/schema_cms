@@ -2,16 +2,24 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { Filter } from '../filter.component';
+import { defaultProps } from '../filter.stories';
 
 describe('Filter: Component', () => {
-  const defaultProps = {};
-
   const component = props => <Filter {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
-  it('should render correctly', () => {
+  it('should render correctly with loader', () => {
     const wrapper = render();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly', async () => {
+    defaultProps.fetchFilter = jest.fn().mockReturnValue(Promise.resolve({ datasource: '1' }));
+    defaultProps.fetchFieldsInfo = jest.fn().mockReturnValue(Promise.resolve({}));
+    const wrapper = render(defaultProps);
+    await Promise.resolve();
+    await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
   });
 });

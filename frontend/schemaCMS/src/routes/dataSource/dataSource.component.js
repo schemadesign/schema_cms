@@ -16,9 +16,9 @@ export default class DataSource extends PureComponent {
     unmountDataSource: PropTypes.func.isRequired,
     match: PropTypes.shape({
       path: PropTypes.string.isRequired,
-      params: {
-        dataSourceId: PropTypes.string,
-      },
+      params: PropTypes.shape({
+        dataSourceId: PropTypes.string.isRequired,
+      }).isRequired,
     }).isRequired,
   };
 

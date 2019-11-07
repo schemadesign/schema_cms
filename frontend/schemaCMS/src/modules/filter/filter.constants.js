@@ -17,13 +17,6 @@ export const INITIAL_VALUES = {
 export const FILTERS_SCHEMA = Yup.object().shape({
   [FILTER_NAME]: Yup.string()
     .min(3, 'Filter name should have at least 3 characters')
-    .max(50, 'Project Name should have maximum 50 characters')
-    .required('Required'),
-  [FILTER_TYPE]: Yup.string()
-    .min(3, 'Filter type should have at least 3 characters')
-    .max(50, 'Filter type should have maximum 50 characters')
-    .required('Required'),
-  [FILTER_FIELD]: Yup.string()
-    .min(1, 'Select field')
+    .max(50, 'Filter Name should have maximum 50 characters')
     .required('Required'),
 });

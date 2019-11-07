@@ -8,6 +8,7 @@ import {
   selectFields,
   selectPreviewTable,
   selectIsAnyJobProcessing,
+  selectFieldsInfo,
 } from '../dataSource.selectors';
 import { JOB_STATE_PROCESSING } from '../../job/job.constants';
 
@@ -28,6 +29,7 @@ describe('DataSource: selectors', () => {
       },
       previewTable: [{ id: '1', name: 'test' }],
     },
+    fieldsInfo: {},
   });
 
   describe('selectDataSourceDomain', () => {
@@ -53,6 +55,10 @@ describe('DataSource: selectors', () => {
 
     it('should select false if job is not processing or there is no job', () => {
       expect(selectIsAnyJobProcessing(state)).to.equal(false);
+    });
+
+    it('should select fields info', () => {
+      expect(selectFieldsInfo(state)).to.equal(state.dataSource.fieldsInfo);
     });
 
     it('should select true if job is processing', () => {

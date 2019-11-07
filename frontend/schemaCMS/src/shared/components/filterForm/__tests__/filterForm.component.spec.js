@@ -1,17 +1,28 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import { IntlProvider } from 'react-intl';
 
 import { FilterForm } from '../filterForm.component';
+import { createProps, editProps } from '../filterForm.stories';
+import { DEFAULT_LOCALE } from '../../../../i18n';
 
 describe('FilterForm: Component', () => {
   const defaultProps = {};
+  const component = props => (
+    <IntlProvider locale={DEFAULT_LOCALE}>
+      <FilterForm {...defaultProps} {...props} />
+    </IntlProvider>
+  );
 
-  const component = props => <FilterForm {...defaultProps} {...props} />;
+  const render = (props = {}) => mount(component(props));
 
-  const render = (props = {}) => shallow(component(props));
+  it('should render create form', () => {
+    const wrapper = render(createProps);
+    global.expect(wrapper).toMatchSnapshot();
+  });
 
-  it('should render correctly', () => {
-    const wrapper = render();
+  it('should render edit form', () => {
+    const wrapper = render(editProps);
     global.expect(wrapper).toMatchSnapshot();
   });
 });
