@@ -10,10 +10,10 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-iQNlJl jxLqkS"
+    className="sc-bsbRJL kfmymT"
   >
     <div
-      className="sc-jhAzac bdqCwL"
+      className="sc-fBuWsC jtIdEp"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Project/List empty 1`] = `
       >
         <div>
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-fMiknA bxZCMx"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots Project/List empty 1`] = `
         }
       >
         <div
-          className="sc-fMiknA bxZCMx"
+          className="sc-dVhcbM fghLuF"
         >
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-fMiknA bxZCMx"
           >
             <h2
               id="headerTitle"
@@ -160,16 +160,16 @@ exports[`Storyshots Project/List empty 1`] = `
           </div>
         </div>
         <div
-          className="sc-dVhcbM eUEmRN"
+          className="sc-eqIVtm jwtJAm"
         >
           <ul
-            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
+            className="sc-fAjcbJ sc-caSCKo jdlBiQ"
           />
           <ul
-            className="sc-eqIVtm sc-caSCKo eLOffc"
+            className="sc-fAjcbJ sc-gisBJw TKJlq"
           >
             <li
-              className="sc-gisBJw sc-cHGsZl dIlsr"
+              className="sc-kjoXOD sc-TOsTZ ilJnaW"
             >
               <a
                 href="/user"
@@ -180,7 +180,7 @@ exports[`Storyshots Project/List empty 1`] = `
               </a>
             </li>
             <li
-              className="sc-gisBJw sc-cHGsZl dIlsr"
+              className="sc-kjoXOD sc-TOsTZ ilJnaW"
             >
               <a
                 href="/logout"
@@ -235,21 +235,48 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-gqjmRU hembyQ"
-    >
-      <span>
-        Loading...
-      </span>
-    </div>
-    <div
-      className="sc-htoDjs iUYJOx"
+      className="sc-hMFtBS iICkjs"
     >
       <div
-        className="sc-dnqmqq rcVIn"
+        className="sc-cLQEGU fPccgy"
+      >
+        <h1
+          className="sc-gqPbQI bOHCmr"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          Projects
+        </h1>
+        <h2
+          className="sc-hORach gEsxNp"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Overview
+        </h2>
+      </div>
+      <div
+        className="sc-bMVAic bLqoya"
       >
         <button
           disabled={false}
-          id="addProjectBtn"
+          id="addProjectBtnDesktop"
           onClick={[Function]}
           style={
             Object {
@@ -286,6 +313,64 @@ exports[`Storyshots Project/List empty 1`] = `
             />
           </svg>
         </button>
+      </div>
+    </div>
+    <div
+      className="sc-VigVT igYVnG"
+    >
+      <span>
+        Loading...
+      </span>
+    </div>
+    <div
+      className="sc-htoDjs iUYJOx"
+    >
+      <div
+        className="sc-iwsKbI iKbLSk"
+      >
+        <div
+          className="sc-dnqmqq hPEIbt"
+        >
+          <button
+            disabled={false}
+            id="addProjectBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "60px",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -302,10 +387,10 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-iQNlJl jxLqkS"
+    className="sc-bsbRJL kfmymT"
   >
     <div
-      className="sc-jhAzac bdqCwL"
+      className="sc-fBuWsC jtIdEp"
     >
       <div
         style={
@@ -322,7 +407,7 @@ exports[`Storyshots Project/List list 1`] = `
       >
         <div>
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-fMiknA bxZCMx"
           >
             <h2
               id="headerTitle"
@@ -416,10 +501,10 @@ exports[`Storyshots Project/List list 1`] = `
         }
       >
         <div
-          className="sc-fMiknA bxZCMx"
+          className="sc-dVhcbM fghLuF"
         >
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-fMiknA bxZCMx"
           >
             <h2
               id="headerTitle"
@@ -452,16 +537,16 @@ exports[`Storyshots Project/List list 1`] = `
           </div>
         </div>
         <div
-          className="sc-dVhcbM eUEmRN"
+          className="sc-eqIVtm jwtJAm"
         >
           <ul
-            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
+            className="sc-fAjcbJ sc-caSCKo jdlBiQ"
           />
           <ul
-            className="sc-eqIVtm sc-caSCKo eLOffc"
+            className="sc-fAjcbJ sc-gisBJw TKJlq"
           >
             <li
-              className="sc-gisBJw sc-cHGsZl dIlsr"
+              className="sc-kjoXOD sc-TOsTZ ilJnaW"
             >
               <a
                 href="/user"
@@ -472,7 +557,7 @@ exports[`Storyshots Project/List list 1`] = `
               </a>
             </li>
             <li
-              className="sc-gisBJw sc-cHGsZl dIlsr"
+              className="sc-kjoXOD sc-TOsTZ ilJnaW"
             >
               <a
                 href="/logout"
@@ -527,21 +612,48 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-gqjmRU hembyQ"
-    >
-      <span>
-        Loading...
-      </span>
-    </div>
-    <div
-      className="sc-htoDjs iUYJOx"
+      className="sc-hMFtBS iICkjs"
     >
       <div
-        className="sc-dnqmqq rcVIn"
+        className="sc-cLQEGU fPccgy"
+      >
+        <h1
+          className="sc-gqPbQI bOHCmr"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          Projects
+        </h1>
+        <h2
+          className="sc-hORach gEsxNp"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Overview
+        </h2>
+      </div>
+      <div
+        className="sc-bMVAic bLqoya"
       >
         <button
           disabled={false}
-          id="addProjectBtn"
+          id="addProjectBtnDesktop"
           onClick={[Function]}
           style={
             Object {
@@ -578,6 +690,64 @@ exports[`Storyshots Project/List list 1`] = `
             />
           </svg>
         </button>
+      </div>
+    </div>
+    <div
+      className="sc-VigVT igYVnG"
+    >
+      <span>
+        Loading...
+      </span>
+    </div>
+    <div
+      className="sc-htoDjs iUYJOx"
+    >
+      <div
+        className="sc-iwsKbI iKbLSk"
+      >
+        <div
+          className="sc-dnqmqq hPEIbt"
+        >
+          <button
+            disabled={false}
+            id="addProjectBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "60px",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>

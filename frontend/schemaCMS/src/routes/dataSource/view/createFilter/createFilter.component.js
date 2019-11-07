@@ -9,6 +9,7 @@ import messages from './createFilter.messages';
 import { TopHeader } from '../../../../shared/components/topHeader';
 import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
 import { Loader } from '../../../../shared/components/loader';
+import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
 
 export class CreateFilter extends PureComponent {
   static propTypes = {
@@ -32,8 +33,13 @@ export class CreateFilter extends PureComponent {
 
   async componentDidMount() {
     const dataSourceId = this.getDataSourceId(this.props);
-    await this.props.fetchFieldsInfo({ dataSourceId });
-    this.setState({ loading: false });
+
+    try {
+      await this.props.fetchFieldsInfo({ dataSourceId });
+      this.setState({ loading: false });
+    } catch (e) {
+      this.props.history.push(`datasource/${dataSourceId}/${FILTERS_STEP}`);
+    }
   }
 
   getDataSourceId = path(['match', 'params', 'dataSourceId']);

@@ -31,7 +31,7 @@ exports[`FilterForm: Component should render create form 1`] = `
         Object {
           "field": "field",
           "fieldType": "string",
-          "filterType": "",
+          "filterType": "checkbox",
           "name": "",
           "unique": "1",
         }
@@ -151,7 +151,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                   "initialValues": Object {
                     "field": "field",
                     "fieldType": "string",
-                    "filterType": "",
+                    "filterType": "checkbox",
                     "name": "",
                     "unique": "1",
                   },
@@ -246,7 +246,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                   "values": Object {
                     "field": "field",
                     "fieldType": "string",
-                    "filterType": "",
+                    "filterType": "checkbox",
                     "name": "",
                     "unique": "1",
                   },
@@ -269,7 +269,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                     Object {
                       "field": "field",
                       "fieldType": "string",
-                      "filterType": "",
+                      "filterType": "checkbox",
                       "name": "",
                       "unique": "1",
                     }
@@ -823,7 +823,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                       },
                     ]
                   }
-                  value=""
+                  value="checkbox"
                 >
                   <styled.div>
                     <StyledComponent
@@ -901,7 +901,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                           id="filterType"
                           name="filterType"
                           type="hidden"
-                          value=""
+                          value="checkbox"
                         />
                         <styled.div>
                           <StyledComponent
@@ -974,7 +974,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                             Array [
                               Object {
                                 "label": "checkbox",
-                                "selected": false,
+                                "selected": true,
                                 "value": "checkbox",
                               },
                             ]
@@ -987,7 +987,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                               Array [
                                 Object {
                                   "label": "checkbox",
-                                  "selected": false,
+                                  "selected": true,
                                   "value": "checkbox",
                                 },
                               ]
@@ -1121,7 +1121,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                           Object {
                             "field": "field",
                             "fieldType": "string",
-                            "filterType": "",
+                            "filterType": "checkbox",
                             "name": "",
                             "unique": "1",
                           }
@@ -1331,7 +1331,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                           Object {
                             "field": "field",
                             "fieldType": "string",
-                            "filterType": "",
+                            "filterType": "checkbox",
                             "name": "",
                             "unique": "1",
                           }
@@ -1533,6 +1533,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                   </StyledComponent>
                 </styled.div>
                 <NavigationContainer
+                  hideOnDesktop={false}
                   right={false}
                 >
                   <styled.div>
@@ -1566,18 +1567,16 @@ exports[`FilterForm: Component should render create form 1`] = `
                       <div
                         className="sc-gzVnrw bvWFXB"
                       >
-                        <styled.div
-                          right={false}
-                        >
+                        <styled.div>
                           <StyledComponent
                             forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
                                 "attrs": Array [],
                                 "componentStyle": ComponentStyle {
-                                  "componentId": "sc-htoDjs",
+                                  "componentId": "sc-dnqmqq",
                                   "isStatic": false,
-                                  "lastClassName": "eZUylk",
+                                  "lastClassName": "laoKZF",
                                   "rules": Array [
                                     "
   position: fixed;
@@ -1591,12 +1590,6 @@ exports[`FilterForm: Component should render create form 1`] = `
                                     ",
     rgba(0, 0, 0, 0)
   );
-  display: flex;
-  justify-content: ",
-                                    [Function],
-                                    ";
-  flex-wrap: wrap;
-  align-items: center;
 
   ",
                                     "
@@ -1619,7 +1612,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                 "displayName": "styled.div",
                                 "foldedComponentIds": Array [],
                                 "render": [Function],
-                                "styledComponentId": "sc-htoDjs",
+                                "styledComponentId": "sc-dnqmqq",
                                 "target": "div",
                                 "toString": [Function],
                                 "warnTooManyClasses": [Function],
@@ -1627,137 +1620,197 @@ exports[`FilterForm: Component should render create form 1`] = `
                               }
                             }
                             forwardedRef={null}
-                            right={false}
                           >
                             <div
-                              className="sc-htoDjs eZUylk"
+                              className="sc-dnqmqq laoKZF"
                             >
-                              <BackButton
-                                disabled={false}
-                                onClick={[Function]}
-                                type="button"
+                              <styled.div
+                                hideOnDesktop={false}
+                                right={false}
                               >
-                                <Component
-                                  customStyles={
+                                <StyledComponent
+                                  forwardedComponent={
                                     Object {
-                                      "marginRight": 5,
-                                      "width": "calc(50% - 5px)",
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": Array [],
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "sc-htoDjs",
+                                        "isStatic": false,
+                                        "lastClassName": "bOcMaT",
+                                        "rules": Array [
+                                          "
+  display: flex;
+  justify-content: ",
+                                          [Function],
+                                          ";
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+
+  ",
+                                          "
+    @media (min-width: ",
+                                          "1040",
+                                          "px) {
+      ",
+                                          "
+    display: ",
+                                          [Function],
+                                          ";
+  ",
+                                          "
+    }
+  ",
+                                          "
+",
+                                        ],
+                                      },
+                                      "displayName": "styled.div",
+                                      "foldedComponentIds": Array [],
+                                      "render": [Function],
+                                      "styledComponentId": "sc-htoDjs",
+                                      "target": "div",
+                                      "toString": [Function],
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
                                     }
                                   }
-                                  disabled={false}
-                                  onClick={[Function]}
-                                  type="button"
+                                  forwardedRef={null}
+                                  hideOnDesktop={false}
+                                  right={false}
                                 >
-                                  <ButtonComponent
-                                    customStyles={
-                                      Object {
-                                        "marginRight": 5,
-                                        "width": "calc(50% - 5px)",
-                                      }
-                                    }
-                                    disabled={false}
-                                    inverse={false}
-                                    onClick={[Function]}
-                                    type="button"
+                                  <div
+                                    className="sc-htoDjs bOcMaT"
                                   >
-                                    <button
+                                    <BackButton
                                       disabled={false}
                                       onClick={[Function]}
-                                      style={
-                                        Object {
-                                          "backgroundColor": "#1d1d20",
-                                          "border": "none",
-                                          "borderRadius": "48px",
-                                          "color": "#FFF",
-                                          "cursor": "pointer",
-                                          "display": "inline-block",
-                                          "fill": "#FFF",
-                                          "fontSize": "18px",
-                                          "margin": "0",
-                                          "marginRight": 5,
-                                          "minHeight": "48px",
-                                          "outline": "none",
-                                          "padding": "0",
-                                          "width": "calc(50% - 5px)",
-                                        }
-                                      }
                                       type="button"
                                     >
-                                      <FormattedMessage
-                                        defaultMessage="Cancel"
-                                        id="shared.components.filter.cancel"
-                                        values={Object {}}
-                                      >
-                                        <span>
-                                          Cancel
-                                        </span>
-                                      </FormattedMessage>
-                                    </button>
-                                  </ButtonComponent>
-                                </Component>
-                              </BackButton>
-                              <NextButton
-                                disabled={true}
-                                loading={false}
-                                type="submit"
-                              >
-                                <Component
-                                  customStyles={
-                                    Object {
-                                      "marginLeft": 5,
-                                      "width": "calc(50% - 5px)",
-                                    }
-                                  }
-                                  disabled={true}
-                                  inverse={true}
-                                  type="submit"
-                                >
-                                  <ButtonComponent
-                                    customStyles={
-                                      Object {
-                                        "marginLeft": 5,
-                                        "width": "calc(50% - 5px)",
-                                      }
-                                    }
-                                    disabled={true}
-                                    inverse={true}
-                                    type="submit"
-                                  >
-                                    <button
-                                      disabled={true}
-                                      style={
-                                        Object {
-                                          "backgroundColor": "#1d1d20",
-                                          "border": "none",
-                                          "borderRadius": "48px",
-                                          "color": "#71737e",
-                                          "cursor": "default",
-                                          "display": "inline-block",
-                                          "fill": "#FFF",
-                                          "fontSize": "18px",
-                                          "margin": "0",
-                                          "marginLeft": 5,
-                                          "minHeight": "48px",
-                                          "outline": "none",
-                                          "padding": "0",
-                                          "width": "calc(50% - 5px)",
+                                      <Component
+                                        customStyles={
+                                          Object {
+                                            "marginRight": 5,
+                                            "width": "calc(50% - 5px)",
+                                          }
                                         }
-                                      }
+                                        disabled={false}
+                                        onClick={[Function]}
+                                        type="button"
+                                      >
+                                        <ButtonComponent
+                                          customStyles={
+                                            Object {
+                                              "marginRight": 5,
+                                              "width": "calc(50% - 5px)",
+                                            }
+                                          }
+                                          disabled={false}
+                                          inverse={false}
+                                          onClick={[Function]}
+                                          type="button"
+                                        >
+                                          <button
+                                            disabled={false}
+                                            onClick={[Function]}
+                                            style={
+                                              Object {
+                                                "backgroundColor": "#1d1d20",
+                                                "border": "none",
+                                                "borderRadius": "48px",
+                                                "color": "#FFF",
+                                                "cursor": "pointer",
+                                                "display": "inline-block",
+                                                "fill": "#FFF",
+                                                "fontSize": "18px",
+                                                "margin": "0",
+                                                "marginRight": 5,
+                                                "minHeight": "48px",
+                                                "outline": "none",
+                                                "padding": "0",
+                                                "width": "calc(50% - 5px)",
+                                              }
+                                            }
+                                            type="button"
+                                          >
+                                            <FormattedMessage
+                                              defaultMessage="Cancel"
+                                              id="shared.components.filter.cancel"
+                                              values={Object {}}
+                                            >
+                                              <span>
+                                                Cancel
+                                              </span>
+                                            </FormattedMessage>
+                                          </button>
+                                        </ButtonComponent>
+                                      </Component>
+                                    </BackButton>
+                                    <NextButton
+                                      disabled={true}
+                                      loading={false}
                                       type="submit"
                                     >
-                                      <FormattedMessage
-                                        defaultMessage="Save"
-                                        id="shared.components.filter.saveFilter"
-                                        values={Object {}}
+                                      <Component
+                                        customStyles={
+                                          Object {
+                                            "marginLeft": 5,
+                                            "width": "calc(50% - 5px)",
+                                          }
+                                        }
+                                        disabled={true}
+                                        inverse={true}
+                                        type="submit"
                                       >
-                                        <span>
-                                          Save
-                                        </span>
-                                      </FormattedMessage>
-                                    </button>
-                                  </ButtonComponent>
-                                </Component>
-                              </NextButton>
+                                        <ButtonComponent
+                                          customStyles={
+                                            Object {
+                                              "marginLeft": 5,
+                                              "width": "calc(50% - 5px)",
+                                            }
+                                          }
+                                          disabled={true}
+                                          inverse={true}
+                                          type="submit"
+                                        >
+                                          <button
+                                            disabled={true}
+                                            style={
+                                              Object {
+                                                "backgroundColor": "#1d1d20",
+                                                "border": "none",
+                                                "borderRadius": "48px",
+                                                "color": "#71737e",
+                                                "cursor": "default",
+                                                "display": "inline-block",
+                                                "fill": "#FFF",
+                                                "fontSize": "18px",
+                                                "margin": "0",
+                                                "marginLeft": 5,
+                                                "minHeight": "48px",
+                                                "outline": "none",
+                                                "padding": "0",
+                                                "width": "calc(50% - 5px)",
+                                              }
+                                            }
+                                            type="submit"
+                                          >
+                                            <FormattedMessage
+                                              defaultMessage="Save"
+                                              id="shared.components.filter.saveFilter"
+                                              values={Object {}}
+                                            >
+                                              <span>
+                                                Save
+                                              </span>
+                                            </FormattedMessage>
+                                          </button>
+                                        </ButtonComponent>
+                                      </Component>
+                                    </NextButton>
+                                  </div>
+                                </StyledComponent>
+                              </styled.div>
                             </div>
                           </StyledComponent>
                         </styled.div>
@@ -3434,6 +3487,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                   </StyledComponent>
                 </styled.div>
                 <NavigationContainer
+                  hideOnDesktop={false}
                   right={false}
                 >
                   <styled.div>
@@ -3467,18 +3521,16 @@ exports[`FilterForm: Component should render edit form 1`] = `
                       <div
                         className="sc-gzVnrw bvWFXB"
                       >
-                        <styled.div
-                          right={false}
-                        >
+                        <styled.div>
                           <StyledComponent
                             forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
                                 "attrs": Array [],
                                 "componentStyle": ComponentStyle {
-                                  "componentId": "sc-htoDjs",
+                                  "componentId": "sc-dnqmqq",
                                   "isStatic": false,
-                                  "lastClassName": "eZUylk",
+                                  "lastClassName": "laoKZF",
                                   "rules": Array [
                                     "
   position: fixed;
@@ -3492,12 +3544,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                     ",
     rgba(0, 0, 0, 0)
   );
-  display: flex;
-  justify-content: ",
-                                    [Function],
-                                    ";
-  flex-wrap: wrap;
-  align-items: center;
 
   ",
                                     "
@@ -3520,7 +3566,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                 "displayName": "styled.div",
                                 "foldedComponentIds": Array [],
                                 "render": [Function],
-                                "styledComponentId": "sc-htoDjs",
+                                "styledComponentId": "sc-dnqmqq",
                                 "target": "div",
                                 "toString": [Function],
                                 "warnTooManyClasses": [Function],
@@ -3528,137 +3574,197 @@ exports[`FilterForm: Component should render edit form 1`] = `
                               }
                             }
                             forwardedRef={null}
-                            right={false}
                           >
                             <div
-                              className="sc-htoDjs eZUylk"
+                              className="sc-dnqmqq laoKZF"
                             >
-                              <BackButton
-                                disabled={false}
-                                onClick={[Function]}
-                                type="button"
+                              <styled.div
+                                hideOnDesktop={false}
+                                right={false}
                               >
-                                <Component
-                                  customStyles={
+                                <StyledComponent
+                                  forwardedComponent={
                                     Object {
-                                      "marginRight": 5,
-                                      "width": "calc(50% - 5px)",
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": Array [],
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "sc-htoDjs",
+                                        "isStatic": false,
+                                        "lastClassName": "bOcMaT",
+                                        "rules": Array [
+                                          "
+  display: flex;
+  justify-content: ",
+                                          [Function],
+                                          ";
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+
+  ",
+                                          "
+    @media (min-width: ",
+                                          "1040",
+                                          "px) {
+      ",
+                                          "
+    display: ",
+                                          [Function],
+                                          ";
+  ",
+                                          "
+    }
+  ",
+                                          "
+",
+                                        ],
+                                      },
+                                      "displayName": "styled.div",
+                                      "foldedComponentIds": Array [],
+                                      "render": [Function],
+                                      "styledComponentId": "sc-htoDjs",
+                                      "target": "div",
+                                      "toString": [Function],
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
                                     }
                                   }
-                                  disabled={false}
-                                  onClick={[Function]}
-                                  type="button"
+                                  forwardedRef={null}
+                                  hideOnDesktop={false}
+                                  right={false}
                                 >
-                                  <ButtonComponent
-                                    customStyles={
-                                      Object {
-                                        "marginRight": 5,
-                                        "width": "calc(50% - 5px)",
-                                      }
-                                    }
-                                    disabled={false}
-                                    inverse={false}
-                                    onClick={[Function]}
-                                    type="button"
+                                  <div
+                                    className="sc-htoDjs bOcMaT"
                                   >
-                                    <button
+                                    <BackButton
                                       disabled={false}
                                       onClick={[Function]}
-                                      style={
-                                        Object {
-                                          "backgroundColor": "#1d1d20",
-                                          "border": "none",
-                                          "borderRadius": "48px",
-                                          "color": "#FFF",
-                                          "cursor": "pointer",
-                                          "display": "inline-block",
-                                          "fill": "#FFF",
-                                          "fontSize": "18px",
-                                          "margin": "0",
-                                          "marginRight": 5,
-                                          "minHeight": "48px",
-                                          "outline": "none",
-                                          "padding": "0",
-                                          "width": "calc(50% - 5px)",
-                                        }
-                                      }
                                       type="button"
                                     >
-                                      <FormattedMessage
-                                        defaultMessage="Delete"
-                                        id="shared.components.filter.deleteFilter"
-                                        values={Object {}}
-                                      >
-                                        <span>
-                                          Delete
-                                        </span>
-                                      </FormattedMessage>
-                                    </button>
-                                  </ButtonComponent>
-                                </Component>
-                              </BackButton>
-                              <NextButton
-                                disabled={true}
-                                loading={false}
-                                type="submit"
-                              >
-                                <Component
-                                  customStyles={
-                                    Object {
-                                      "marginLeft": 5,
-                                      "width": "calc(50% - 5px)",
-                                    }
-                                  }
-                                  disabled={true}
-                                  inverse={true}
-                                  type="submit"
-                                >
-                                  <ButtonComponent
-                                    customStyles={
-                                      Object {
-                                        "marginLeft": 5,
-                                        "width": "calc(50% - 5px)",
-                                      }
-                                    }
-                                    disabled={true}
-                                    inverse={true}
-                                    type="submit"
-                                  >
-                                    <button
-                                      disabled={true}
-                                      style={
-                                        Object {
-                                          "backgroundColor": "#1d1d20",
-                                          "border": "none",
-                                          "borderRadius": "48px",
-                                          "color": "#71737e",
-                                          "cursor": "default",
-                                          "display": "inline-block",
-                                          "fill": "#FFF",
-                                          "fontSize": "18px",
-                                          "margin": "0",
-                                          "marginLeft": 5,
-                                          "minHeight": "48px",
-                                          "outline": "none",
-                                          "padding": "0",
-                                          "width": "calc(50% - 5px)",
+                                      <Component
+                                        customStyles={
+                                          Object {
+                                            "marginRight": 5,
+                                            "width": "calc(50% - 5px)",
+                                          }
                                         }
-                                      }
+                                        disabled={false}
+                                        onClick={[Function]}
+                                        type="button"
+                                      >
+                                        <ButtonComponent
+                                          customStyles={
+                                            Object {
+                                              "marginRight": 5,
+                                              "width": "calc(50% - 5px)",
+                                            }
+                                          }
+                                          disabled={false}
+                                          inverse={false}
+                                          onClick={[Function]}
+                                          type="button"
+                                        >
+                                          <button
+                                            disabled={false}
+                                            onClick={[Function]}
+                                            style={
+                                              Object {
+                                                "backgroundColor": "#1d1d20",
+                                                "border": "none",
+                                                "borderRadius": "48px",
+                                                "color": "#FFF",
+                                                "cursor": "pointer",
+                                                "display": "inline-block",
+                                                "fill": "#FFF",
+                                                "fontSize": "18px",
+                                                "margin": "0",
+                                                "marginRight": 5,
+                                                "minHeight": "48px",
+                                                "outline": "none",
+                                                "padding": "0",
+                                                "width": "calc(50% - 5px)",
+                                              }
+                                            }
+                                            type="button"
+                                          >
+                                            <FormattedMessage
+                                              defaultMessage="Delete"
+                                              id="shared.components.filter.deleteFilter"
+                                              values={Object {}}
+                                            >
+                                              <span>
+                                                Delete
+                                              </span>
+                                            </FormattedMessage>
+                                          </button>
+                                        </ButtonComponent>
+                                      </Component>
+                                    </BackButton>
+                                    <NextButton
+                                      disabled={true}
+                                      loading={false}
                                       type="submit"
                                     >
-                                      <FormattedMessage
-                                        defaultMessage="Save"
-                                        id="shared.components.filter.saveFilter"
-                                        values={Object {}}
+                                      <Component
+                                        customStyles={
+                                          Object {
+                                            "marginLeft": 5,
+                                            "width": "calc(50% - 5px)",
+                                          }
+                                        }
+                                        disabled={true}
+                                        inverse={true}
+                                        type="submit"
                                       >
-                                        <span>
-                                          Save
-                                        </span>
-                                      </FormattedMessage>
-                                    </button>
-                                  </ButtonComponent>
-                                </Component>
-                              </NextButton>
+                                        <ButtonComponent
+                                          customStyles={
+                                            Object {
+                                              "marginLeft": 5,
+                                              "width": "calc(50% - 5px)",
+                                            }
+                                          }
+                                          disabled={true}
+                                          inverse={true}
+                                          type="submit"
+                                        >
+                                          <button
+                                            disabled={true}
+                                            style={
+                                              Object {
+                                                "backgroundColor": "#1d1d20",
+                                                "border": "none",
+                                                "borderRadius": "48px",
+                                                "color": "#71737e",
+                                                "cursor": "default",
+                                                "display": "inline-block",
+                                                "fill": "#FFF",
+                                                "fontSize": "18px",
+                                                "margin": "0",
+                                                "marginLeft": 5,
+                                                "minHeight": "48px",
+                                                "outline": "none",
+                                                "padding": "0",
+                                                "width": "calc(50% - 5px)",
+                                              }
+                                            }
+                                            type="submit"
+                                          >
+                                            <FormattedMessage
+                                              defaultMessage="Save"
+                                              id="shared.components.filter.saveFilter"
+                                              values={Object {}}
+                                            >
+                                              <span>
+                                                Save
+                                              </span>
+                                            </FormattedMessage>
+                                          </button>
+                                        </ButtonComponent>
+                                      </Component>
+                                    </NextButton>
+                                  </div>
+                                </StyledComponent>
+                              </styled.div>
                             </div>
                           </StyledComponent>
                         </styled.div>

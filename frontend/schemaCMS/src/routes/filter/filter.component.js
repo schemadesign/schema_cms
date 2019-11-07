@@ -23,6 +23,9 @@ export class Filter extends PureComponent {
         filterId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   state = {
@@ -30,11 +33,15 @@ export class Filter extends PureComponent {
   };
 
   async componentDidMount() {
-    const filterId = path(['match', 'params', 'filterId'], this.props);
-    const data = await this.props.fetchFilter({ filterId });
-    await this.props.fetchFieldsInfo({ dataSourceId: data.datasource.id });
+    try {
+      const filterId = path(['match', 'params', 'filterId'], this.props);
+      const data = await this.props.fetchFilter({ filterId });
+      await this.props.fetchFieldsInfo({ dataSourceId: data.datasource.id });
 
-    this.setState({ loading: false });
+      this.setState({ loading: false });
+    } catch (e) {
+      this.props.history.push('/');
+    }
   }
 
   getHeaderAndMenuConfig = () => ({

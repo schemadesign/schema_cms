@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
   }
 >
   <div
-    className="sc-fYiAbW isVHhR"
+    className="sc-cpmLhU dpVsHD"
   >
     <form
-      className="sc-fOKMvo cxpccT"
+      className="sc-dymIpo kdtjOQ"
       onSubmit={[Function]}
     >
       <div
@@ -260,59 +260,63 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
         className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-dnqmqq rcVIn"
+          className="sc-iwsKbI iKbLSk"
         >
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
-              }
-            }
-            type="button"
+          <div
+            className="sc-dnqmqq icIvSa"
           >
-            <span>
-              Back
-            </span>
-          </button>
-          <button
-            disabled={false}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginLeft": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
+            <button
+              disabled={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "marginRight": 5,
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "width": "calc(50% - 5px)",
+                }
               }
-            }
-            type="submit"
-          >
-            Make admin
-          </button>
+              type="button"
+            >
+              <span>
+                Back
+              </span>
+            </button>
+            <button
+              disabled={false}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "marginLeft": 5,
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "width": "calc(50% - 5px)",
+                }
+              }
+              type="submit"
+            >
+              Make admin
+            </button>
+          </div>
         </div>
       </div>
     </form>

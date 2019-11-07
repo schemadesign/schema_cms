@@ -26,6 +26,9 @@ export const defaultProps = {
       filterId: '1',
     },
   },
+  history: {
+    push: Function.prototype,
+  },
 };
 
 storiesOf('Filter', module)

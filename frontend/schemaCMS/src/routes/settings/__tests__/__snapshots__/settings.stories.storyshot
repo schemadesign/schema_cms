@@ -2,10 +2,10 @@
 
 exports[`Storyshots Settings Default 1`] = `
 <div
-  className="sc-dUjcNx cmeQJL"
+  className="sc-bnXvFD iypPKo"
 >
   <div
-    className="sc-jhAzac bdqCwL"
+    className="sc-fBuWsC jtIdEp"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots Settings Default 1`] = `
     >
       <div>
         <div
-          className="sc-fBuWsC eeihxG"
+          className="sc-fMiknA bxZCMx"
         >
           <h2
             id="headerTitle"
@@ -120,10 +120,10 @@ exports[`Storyshots Settings Default 1`] = `
       }
     >
       <div
-        className="sc-fMiknA bxZCMx"
+        className="sc-dVhcbM fghLuF"
       >
         <div
-          className="sc-fBuWsC eeihxG"
+          className="sc-fMiknA bxZCMx"
         >
           <h2
             id="headerTitle"
@@ -160,16 +160,16 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-dVhcbM eUEmRN"
+        className="sc-eqIVtm jwtJAm"
       >
         <ul
-          className="sc-eqIVtm sc-fAjcbJ kwtAvC"
+          className="sc-fAjcbJ sc-caSCKo jdlBiQ"
         />
         <ul
-          className="sc-eqIVtm sc-caSCKo eLOffc"
+          className="sc-fAjcbJ sc-gisBJw TKJlq"
         >
           <li
-            className="sc-gisBJw sc-cHGsZl frsNME"
+            className="sc-kjoXOD sc-TOsTZ fdGsRI"
           >
             <a
               href="/reset-password"
@@ -182,7 +182,7 @@ exports[`Storyshots Settings Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-gisBJw sc-cHGsZl frsNME"
+            className="sc-kjoXOD sc-TOsTZ fdGsRI"
           >
             <a
               href="/logout"
@@ -239,10 +239,10 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-fYiAbW isVHhR"
+    className="sc-cpmLhU dpVsHD"
   >
     <form
-      className="sc-fOKMvo cxpccT"
+      className="sc-dymIpo kdtjOQ"
       onSubmit={[Function]}
     >
       <div
@@ -430,32 +430,36 @@ exports[`Storyshots Settings Default 1`] = `
         className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-dnqmqq jNQsyK"
+          className="sc-iwsKbI gsTTNi"
         >
-          <button
-            disabled={true}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginLeft": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
-              }
-            }
-            type="submit"
+          <div
+            className="sc-dnqmqq icIvSa"
           >
-            Save
-          </button>
+            <button
+              disabled={true}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#71737e",
+                  "cursor": "default",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "marginLeft": 5,
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "width": "calc(50% - 5px)",
+                }
+              }
+              type="submit"
+            >
+              Save
+            </button>
+          </div>
         </div>
       </div>
     </form>

@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 >
   <div
-    className="sc-bMvGRv jKmwkI"
+    className="sc-krDsej kKJBHx"
   >
     <div
-      className="sc-jhAzac bdqCwL"
+      className="sc-fBuWsC jtIdEp"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       >
         <div>
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-fMiknA bxZCMx"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         }
       >
         <div
-          className="sc-fMiknA bxZCMx"
+          className="sc-dVhcbM fghLuF"
         >
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-fMiknA bxZCMx"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-dVhcbM eUEmRN"
+          className="sc-eqIVtm jwtJAm"
         >
           <ul
-            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
+            className="sc-fAjcbJ sc-caSCKo jdlBiQ"
           />
           <ul
-            className="sc-eqIVtm sc-caSCKo eLOffc"
+            className="sc-fAjcbJ sc-gisBJw TKJlq"
           />
         </div>
         <button
@@ -220,7 +220,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-CtfFt cPrCUw"
+      className="sc-dTdPqK cyXKJy"
       onSubmit={[Function]}
     >
       <div
@@ -282,7 +282,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-hmzhuo jeoFOs"
+        className="sc-frDJqD dhjqgV"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -308,7 +308,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           value="admin"
         />
         <div
-          className="sc-frDJqD kXJKhm"
+          className="sc-kvZOFW fvJaym"
         >
           <svg
             style={
@@ -421,60 +421,64 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-dnqmqq kiwmCb"
+          className="sc-iwsKbI iKbLSk"
         >
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
-              }
-            }
+          <div
+            className="sc-dnqmqq XuhPC"
           >
-            <span>
-              Cancel
-            </span>
-          </button>
-          <button
-            disabled={false}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginLeft": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
+            <button
+              disabled={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "marginRight": 5,
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "width": "calc(50% - 5px)",
+                }
               }
-            }
-            type="submit"
-          >
-            <span>
-              Invite
-            </span>
-          </button>
+            >
+              <span>
+                Cancel
+              </span>
+            </button>
+            <button
+              disabled={false}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "marginLeft": 5,
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "width": "calc(50% - 5px)",
+                }
+              }
+              type="submit"
+            >
+              <span>
+                Invite
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </form>

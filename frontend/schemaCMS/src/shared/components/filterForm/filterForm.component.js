@@ -47,6 +47,7 @@ export class FilterForm extends PureComponent {
   getDependencyValues = value => ({
     uniqueItems: path(['fieldsInfo', value, FILTER_UNIQUE_ITEMS], this.props),
     fieldType: path(['fieldsInfo', value, FILTER_FIELD_TYPE], this.props),
+    filterType: path(['fieldsInfo', value, FILTER_TYPE, 0], this.props),
   });
 
   handleSelectField = ({ value, setFieldValue }) => {
@@ -95,9 +96,10 @@ export class FilterForm extends PureComponent {
       map(key => ({ value: key, label: key }))
     )(this.props.fieldsInfo);
     const fieldValue = this.props.filter[FILTER_FIELD] || fieldOptions[0].value;
-    const { uniqueItems, fieldType } = this.getDependencyValues(fieldValue);
+    const { uniqueItems, fieldType, filterType } = this.getDependencyValues(fieldValue);
     const initialValues = {
       ...INITIAL_VALUES,
+      [FILTER_TYPE]: filterType,
       ...this.props.filter,
       [FILTER_FIELD]: fieldValue,
       [FILTER_UNIQUE_ITEMS]: toString(uniqueItems),

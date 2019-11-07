@@ -10,7 +10,7 @@ exports[`Storyshots Project/UserList list 1`] = `
   }
 >
   <div
-    className="sc-jhAzac bdqCwL"
+    className="sc-fBuWsC jtIdEp"
   >
     <div
       style={
@@ -27,7 +27,7 @@ exports[`Storyshots Project/UserList list 1`] = `
     >
       <div>
         <div
-          className="sc-fBuWsC eeihxG"
+          className="sc-fMiknA bxZCMx"
         >
           <h2
             id="headerTitle"
@@ -125,10 +125,10 @@ exports[`Storyshots Project/UserList list 1`] = `
       }
     >
       <div
-        className="sc-fMiknA bxZCMx"
+        className="sc-dVhcbM fghLuF"
       >
         <div
-          className="sc-fBuWsC eeihxG"
+          className="sc-fMiknA bxZCMx"
         >
           <h2
             id="headerTitle"
@@ -165,13 +165,13 @@ exports[`Storyshots Project/UserList list 1`] = `
         </div>
       </div>
       <div
-        className="sc-dVhcbM eUEmRN"
+        className="sc-eqIVtm jwtJAm"
       >
         <ul
-          className="sc-eqIVtm sc-fAjcbJ kwtAvC"
+          className="sc-fAjcbJ sc-caSCKo jdlBiQ"
         />
         <ul
-          className="sc-eqIVtm sc-caSCKo eLOffc"
+          className="sc-fAjcbJ sc-gisBJw TKJlq"
         />
       </div>
       <button
@@ -220,73 +220,77 @@ exports[`Storyshots Project/UserList list 1`] = `
     className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-dnqmqq kiwmCb"
+      className="sc-iwsKbI iKbLSk"
     >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "margin": "0",
-            "marginRight": 5,
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "width": "calc(50% - 5px)",
-          }
-        }
+      <div
+        className="sc-dnqmqq XuhPC"
       >
-        <span>
-          Back
-        </span>
-      </button>
-      <button
-        disabled={false}
-        id="addUserBtn"
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#FFF",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#000",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": "60px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "width": "60px",
-          }
-        }
-      >
-        <svg
+        <button
+          disabled={false}
+          onClick={[Function]}
           style={
             Object {
-              "fill": "#000",
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginRight": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
+        >
+          <span>
+            Back
+          </span>
+        </button>
+        <button
+          disabled={false}
+          id="addUserBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
               "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
+          <svg
+            style={
+              Object {
+                "fill": "#000",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -302,7 +306,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   }
 >
   <div
-    className="sc-jhAzac bdqCwL"
+    className="sc-fBuWsC jtIdEp"
   >
     <div
       style={
@@ -319,7 +323,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     >
       <div>
         <div
-          className="sc-fBuWsC eeihxG"
+          className="sc-fMiknA bxZCMx"
         >
           <h2
             id="headerTitle"
@@ -417,10 +421,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       }
     >
       <div
-        className="sc-fMiknA bxZCMx"
+        className="sc-dVhcbM fghLuF"
       >
         <div
-          className="sc-fBuWsC eeihxG"
+          className="sc-fMiknA bxZCMx"
         >
           <h2
             id="headerTitle"
@@ -457,13 +461,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </div>
       </div>
       <div
-        className="sc-dVhcbM eUEmRN"
+        className="sc-eqIVtm jwtJAm"
       >
         <ul
-          className="sc-eqIVtm sc-fAjcbJ kwtAvC"
+          className="sc-fAjcbJ sc-caSCKo jdlBiQ"
         />
         <ul
-          className="sc-eqIVtm sc-caSCKo eLOffc"
+          className="sc-fAjcbJ sc-gisBJw TKJlq"
         />
       </div>
       <button
@@ -522,10 +526,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-      className="sc-gqPbQI bMgRLg"
+      className="sc-exAgwC dnARIF"
     >
       <h2
-        className="sc-hORach jBrJiT"
+        className="sc-cQFLBn jkOaFm"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -545,7 +549,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-bMVAic cUTlCl"
+        className="sc-gojNiO QHcAS"
         style={
           Object {
             "color": Object {
@@ -561,7 +565,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-      className="sc-cLQEGU dtmXFF"
+      className="sc-GMQeP bIAzvE"
     >
       <button
         disabled={false}
@@ -618,10 +622,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-      className="sc-gqPbQI bMgRLg"
+      className="sc-exAgwC dnARIF"
     >
       <h2
-        className="sc-hORach jBrJiT"
+        className="sc-cQFLBn jkOaFm"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -641,7 +645,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-bMVAic cUTlCl"
+        className="sc-gojNiO QHcAS"
         style={
           Object {
             "color": Object {
@@ -657,7 +661,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-      className="sc-cLQEGU dtmXFF"
+      className="sc-GMQeP bIAzvE"
     >
       <button
         disabled={false}
@@ -714,10 +718,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-      className="sc-gqPbQI bMgRLg"
+      className="sc-exAgwC dnARIF"
     >
       <h2
-        className="sc-hORach jBrJiT"
+        className="sc-cQFLBn jkOaFm"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -737,7 +741,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-        className="sc-bMVAic cUTlCl"
+        className="sc-gojNiO QHcAS"
         style={
           Object {
             "color": Object {
@@ -753,7 +757,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-      className="sc-cLQEGU dtmXFF"
+      className="sc-GMQeP bIAzvE"
     >
       <button
         disabled={false}
@@ -800,73 +804,77 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-dnqmqq kiwmCb"
+      className="sc-iwsKbI iKbLSk"
     >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "margin": "0",
-            "marginRight": 5,
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "width": "calc(50% - 5px)",
-          }
-        }
+      <div
+        className="sc-dnqmqq XuhPC"
       >
-        <span>
-          Back
-        </span>
-      </button>
-      <button
-        disabled={false}
-        id="addUserBtn"
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#FFF",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#000",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": "60px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "width": "60px",
-          }
-        }
-      >
-        <svg
+        <button
+          disabled={false}
+          onClick={[Function]}
           style={
             Object {
-              "fill": "#000",
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginRight": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
+        >
+          <span>
+            Back
+          </span>
+        </button>
+        <button
+          disabled={false}
+          id="addUserBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
               "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
+          <svg
+            style={
+              Object {
+                "fill": "#000",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>

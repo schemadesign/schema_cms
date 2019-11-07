@@ -10,10 +10,10 @@ exports[`Storyshots CreateFilter Default 1`] = `
   }
 >
   <div
-    className="sc-ksYbfQ jHwjmi"
+    className="sc-hmzhuo eRtqMp"
   >
     <div
-      className="sc-jhAzac bdqCwL"
+      className="sc-fBuWsC jtIdEp"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots CreateFilter Default 1`] = `
       >
         <div>
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-fMiknA bxZCMx"
           >
             <h2
               id="headerTitle"
@@ -126,10 +126,10 @@ exports[`Storyshots CreateFilter Default 1`] = `
         }
       >
         <div
-          className="sc-fMiknA bxZCMx"
+          className="sc-dVhcbM fghLuF"
         >
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-fMiknA bxZCMx"
           >
             <h2
               id="headerTitle"
@@ -164,13 +164,13 @@ exports[`Storyshots CreateFilter Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-dVhcbM eUEmRN"
+          className="sc-eqIVtm jwtJAm"
         >
           <ul
-            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
+            className="sc-fAjcbJ sc-caSCKo jdlBiQ"
           />
           <ul
-            className="sc-eqIVtm sc-caSCKo eLOffc"
+            className="sc-fAjcbJ sc-gisBJw TKJlq"
           />
         </div>
         <button
@@ -216,7 +216,7 @@ exports[`Storyshots CreateFilter Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-gqjmRU hembyQ"
+      className="sc-VigVT igYVnG"
     >
       <span>
         Loading...

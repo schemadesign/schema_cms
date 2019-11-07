@@ -10,7 +10,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
   }
 >
   <form
-    className="sc-hqyNC CQLGl"
+    className="sc-jbKcbu clavtY"
     onReset={[Function]}
     onSubmit={[Function]}
   >
@@ -96,7 +96,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-hmzhuo jeoFOs"
+      className="sc-frDJqD dhjqgV"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -124,7 +124,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         value="field"
       />
       <div
-        className="sc-frDJqD kXJKhm"
+        className="sc-kvZOFW fvJaym"
       >
         <svg
           style={
@@ -220,7 +220,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-hmzhuo jeoFOs"
+      className="sc-frDJqD dhjqgV"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -245,10 +245,10 @@ exports[`Storyshots FilterForm Create form 1`] = `
         id="filterType"
         name="filterType"
         type="hidden"
-        value=""
+        value="checkbox"
       />
       <div
-        className="sc-frDJqD kXJKhm"
+        className="sc-kvZOFW fvJaym"
       >
         <svg
           style={
@@ -344,7 +344,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-kvZOFW daeYhe"
+      className="sc-hqyNC iKJYbI"
     >
       <div
         className="sc-ifAKCX cFlEyZ"
@@ -475,61 +475,65 @@ exports[`Storyshots FilterForm Create form 1`] = `
       className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-dnqmqq kiwmCb"
+        className="sc-iwsKbI iKbLSk"
       >
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "calc(50% - 5px)",
-            }
-          }
-          type="button"
+        <div
+          className="sc-dnqmqq XuhPC"
         >
-          <span>
-            Cancel
-          </span>
-        </button>
-        <button
-          disabled={true}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#71737e",
-              "cursor": "default",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "marginLeft": 5,
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "calc(50% - 5px)",
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginRight": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
+              }
             }
-          }
-          type="submit"
-        >
-          <span>
-            Save
-          </span>
-        </button>
+            type="button"
+          >
+            <span>
+              Cancel
+            </span>
+          </button>
+          <button
+            disabled={true}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#71737e",
+                "cursor": "default",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginLeft": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
+              }
+            }
+            type="submit"
+          >
+            <span>
+              Save
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </form>
@@ -546,7 +550,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
   }
 >
   <form
-    className="sc-hqyNC CQLGl"
+    className="sc-jbKcbu clavtY"
     onReset={[Function]}
     onSubmit={[Function]}
   >
@@ -632,7 +636,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-hmzhuo jeoFOs"
+      className="sc-frDJqD dhjqgV"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -660,7 +664,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         value="field"
       />
       <div
-        className="sc-frDJqD kXJKhm"
+        className="sc-kvZOFW fvJaym"
       >
         <svg
           style={
@@ -756,7 +760,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-hmzhuo jeoFOs"
+      className="sc-frDJqD dhjqgV"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -784,7 +788,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         value="filterType"
       />
       <div
-        className="sc-frDJqD kXJKhm"
+        className="sc-kvZOFW fvJaym"
       >
         <svg
           style={
@@ -880,7 +884,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-kvZOFW daeYhe"
+      className="sc-hqyNC iKJYbI"
     >
       <div
         className="sc-ifAKCX cFlEyZ"
@@ -1011,61 +1015,65 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-dnqmqq kiwmCb"
+        className="sc-iwsKbI iKbLSk"
       >
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "calc(50% - 5px)",
-            }
-          }
-          type="button"
+        <div
+          className="sc-dnqmqq XuhPC"
         >
-          <span>
-            Delete
-          </span>
-        </button>
-        <button
-          disabled={true}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#71737e",
-              "cursor": "default",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "marginLeft": 5,
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "calc(50% - 5px)",
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginRight": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
+              }
             }
-          }
-          type="submit"
-        >
-          <span>
-            Save
-          </span>
-        </button>
+            type="button"
+          >
+            <span>
+              Delete
+            </span>
+          </button>
+          <button
+            disabled={true}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#71737e",
+                "cursor": "default",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginLeft": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
+              }
+            }
+            type="submit"
+          >
+            <span>
+              Save
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </form>

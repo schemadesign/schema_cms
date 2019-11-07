@@ -10,10 +10,10 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
   }
 >
   <div
-    className="sc-fYxtnH hSLfWw"
+    className="sc-tilXH jMVAVb"
   >
     <div
-      className="sc-jhAzac bdqCwL"
+      className="sc-fBuWsC jtIdEp"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       >
         <div>
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-fMiknA bxZCMx"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
         }
       >
         <div
-          className="sc-fMiknA bxZCMx"
+          className="sc-dVhcbM fghLuF"
         >
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-fMiknA bxZCMx"
           >
             <h2
               id="headerTitle"
@@ -160,13 +160,13 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-dVhcbM eUEmRN"
+          className="sc-eqIVtm jwtJAm"
         >
           <ul
-            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
+            className="sc-fAjcbJ sc-caSCKo jdlBiQ"
           />
           <ul
-            className="sc-eqIVtm sc-caSCKo eLOffc"
+            className="sc-fAjcbJ sc-gisBJw TKJlq"
           />
         </div>
         <button
@@ -212,7 +212,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-tilXH jMVAVb"
+      className="sc-hEsumM epeevU"
       name="dataWranglingForm"
     >
       <div
@@ -987,60 +987,64 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-dnqmqq kiwmCb"
+        className="sc-iwsKbI iKbLSk"
       >
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "calc(50% - 5px)",
-            }
-          }
+        <div
+          className="sc-dnqmqq XuhPC"
         >
-          <span>
-            Back
-          </span>
-        </button>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "marginLeft": 5,
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "width": "calc(50% - 5px)",
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginRight": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
+              }
             }
-          }
-        >
-          <span>
-            OK
-          </span>
-        </button>
+          >
+            <span>
+              Back
+            </span>
+          </button>
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "marginLeft": 5,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "width": "calc(50% - 5px)",
+              }
+            }
+          >
+            <span>
+              OK
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
