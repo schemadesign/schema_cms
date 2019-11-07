@@ -43,6 +43,7 @@ export const HeaderItem = styled.li`
   display: inline-block;
   line-height: 1.25;
   margin-right: 1.5em;
+  color: ${({ theme: { label } }) => label.text};
 
   &::before {
     content: '•';
