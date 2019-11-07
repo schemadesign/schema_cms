@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Card, Icons } from 'schemaUI';
 import { always, cond, propEq, propIs, T } from 'ramda';
-import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../shared/components/topHeader';
 import {
@@ -14,13 +13,6 @@ import {
   Header,
   HeaderIcon,
   iconSourceStyles,
-  Job,
-  JobDate,
-  JobDetails,
-  JobName,
-  JobsContainer,
-  JobStatus,
-  JobsTitle,
   MetaData,
   MetaDataName,
   MetaDataValue,
@@ -34,7 +26,7 @@ import {
   FIELDS_STEP,
   INITIAL_STEP,
 } from '../../../modules/dataSource/dataSource.constants';
-import { renderWhenTrue } from '../../../shared/utils/rendering';
+
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
 const { CsvIcon, IntersectIcon } = Icons;
@@ -132,36 +124,6 @@ export class DataSourceList extends PureComponent {
     return <MetaDataWrapper>{elements}</MetaDataWrapper>;
   };
 
-  renderJob = ({ jobState, id, modified }, index) => {
-    const modifiedDate = extendedDayjs(modified, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm');
-
-    return (
-      <Job to={`/job/${id}`} key={index}>
-        <JobDetails>
-          <JobStatus id="jobStateValue" status={jobState}>
-            {jobState}
-          </JobStatus>
-          <JobName id="jobIdLabel">
-            <FormattedMessage {...messages.jobId} /> <span id="jobIdValue">{id}</span>
-          </JobName>
-        </JobDetails>
-        <JobDate id="jobUpdatedAtLabel">
-          <FormattedMessage {...messages.updatedAt} /> <span id="jobUpdatedAtValue">{modifiedDate}</span>
-        </JobDate>
-      </Job>
-    );
-  };
-
-  renderJobs = jobs =>
-    renderWhenTrue(() => (
-      <JobsContainer>
-        <JobsTitle id="jobListHeader">
-          <FormattedMessage {...messages.jobTitle} />
-        </JobsTitle>
-        {jobs.map(this.renderJob)}
-      </JobsContainer>
-    ));
-
   renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, jobs }, index) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]);
@@ -173,7 +135,6 @@ export class DataSourceList extends PureComponent {
             {name}
           </DataSourceTitle>
           {this.renderMetaData(metaData || {})}
-          {this.renderJobs(jobs)(!!jobs.length)}
         </Card>
       </DataSourceItem>
     );

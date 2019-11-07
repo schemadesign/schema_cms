@@ -10,23 +10,23 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
   }
 >
   <div
-    className="sc-bdVaJa bDWFJH"
+    className="sc-kgoBCf kVSTZj"
   >
     <div
-      className="sc-bwzfXH hjUkUg"
+      className="sc-kGXeez kwtmDC"
     >
       <div
-        className="sc-bxivhb klRcOv"
+        className="sc-dxgOiQ bKPZZs"
       />
       <div
-        className="sc-htpNat bSyNia"
+        className="sc-kpOJdX kOxvob"
       >
         <span>
           2 Steps
         </span>
       </div>
       <div
-        className="sc-ifAKCX kaxgzj"
+        className="sc-ckVGcZ damYIK"
       >
         <div
           style={Object {}}
@@ -282,7 +282,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-bZQynM gaHjbY"
+            className="sc-eNQAEJ iNAKrx"
             href="/script/1"
             onClick={[Function]}
           >
@@ -381,7 +381,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-bZQynM gaHjbY"
+            className="sc-eNQAEJ iNAKrx"
             href="/script/2"
             onClick={[Function]}
           >
@@ -440,10 +440,10 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-htoDjs iUYJOx"
+      className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-dnqmqq kiwmCb"
+        className="sc-gzVnrw gSWkmB"
       >
         <button
           disabled={false}
@@ -498,7 +498,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           </span>
         </button>
         <div
-          className="sc-gzVnrw bMUaYY"
+          className="sc-hMqMXs bKYksQ"
         >
           <div
             style={

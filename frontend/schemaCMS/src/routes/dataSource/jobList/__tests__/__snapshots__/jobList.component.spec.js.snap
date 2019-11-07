@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JobList: Component should render correctly 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.jobList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Past Versions"
+        id="dataSource.jobList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <Loader />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      id="cancelBtn"
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="dataSource.jobList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={true}
+      id="revertBtn"
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Revert"
+        id="dataSource.jobList.revert"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`JobList: Component should render correctly with list of jobs 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.jobList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Past Versions"
+        id="dataSource.jobList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.div>
+    <styled.div
+      key="0"
+    >
+      <styled.div>
+        <styled.input
+          name="job_list"
+          onChange={[Function]}
+          type="radio"
+          value="1"
+        />
+        <Span>
+          Invalid Date
+        </Span>
+        <styled.div />
+        <Span>
+          <FormattedMessage
+            defaultMessage="Success"
+            id="dataSource.jobList.success"
+            values={Object {}}
+          />
+        </Span>
+      </styled.div>
+      <Component
+        onClick={[Function]}
+      />
+    </styled.div>
+    <styled.div
+      key="1"
+    >
+      <styled.div>
+        <styled.input
+          name="job_list"
+          onChange={[Function]}
+          type="radio"
+          value="2"
+        />
+        <Span>
+          Invalid Date
+        </Span>
+        <styled.div />
+        <Span>
+          <FormattedMessage
+            defaultMessage="Success"
+            id="dataSource.jobList.success"
+            values={Object {}}
+          />
+        </Span>
+      </styled.div>
+      <Component
+        onClick={[Function]}
+      />
+    </styled.div>
+  </styled.div>
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      id="cancelBtn"
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="dataSource.jobList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={true}
+      id="revertBtn"
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Revert"
+        id="dataSource.jobList.revert"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`JobList: Component should render correctly with no data 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.jobList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Past Versions"
+        id="dataSource.jobList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <NoData />
+  <NavigationContainer
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      id="cancelBtn"
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="dataSource.jobList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={true}
+      id="revertBtn"
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Revert"
+        id="dataSource.jobList.revert"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</styled.div>
+`;

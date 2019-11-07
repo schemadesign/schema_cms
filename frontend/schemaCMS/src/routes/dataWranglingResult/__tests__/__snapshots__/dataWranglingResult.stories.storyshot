@@ -10,20 +10,20 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
   }
 >
   <div
-    className="sc-bRBYWo ccSRck"
+    className="sc-kvZOFW eiPhbT"
   >
     <div
-      className="sc-jzJRlG egdPJh"
+      className="sc-kAzzGY dJFTJ"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="sc-htoDjs iUYJOx"
+      className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-dnqmqq kiwmCb"
+        className="sc-gzVnrw gSWkmB"
       >
         <button
           disabled={false}
@@ -78,7 +78,7 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
           </span>
         </button>
         <div
-          className="sc-gzVnrw bMUaYY"
+          className="sc-hMqMXs bKYksQ"
         >
           <div
             style={

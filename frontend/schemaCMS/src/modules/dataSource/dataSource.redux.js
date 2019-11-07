@@ -15,6 +15,7 @@ export const DataSourceRoutines = {
   fetchFields: createRoutine(`${prefix}FETCH_FIELDS`),
   unmountFields: createRoutine(`${prefix}UNMOUNT_FIELDS`),
   cancelFetchListLoop: createRoutine(`${prefix}CANCEL_FETCH_LIST_LOOP`),
+  revertToJob: createRoutine(`${prefix}REVER_TO_JOB`),
 };
 
 export const INITIAL_STATE = new Immutable({

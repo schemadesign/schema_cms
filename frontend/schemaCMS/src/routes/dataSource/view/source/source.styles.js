@@ -1,7 +1,12 @@
 import styled from 'styled-components';
+import { Typography } from 'schemaUI';
 import { colors } from '../../../../theme/styled';
 
-export const Container = styled.div``;
+const { Span: SpanUI } = Typography;
+
+export const Container = styled.div`
+  ${({ theme }) => theme.colors.white}
+`;
 
 export const buttonStyles = {
   width: 96,
@@ -27,4 +32,9 @@ export const customRadioGroupStyles = {
 
 export const WarningWrapper = styled.div`
   color: ${colors.yellow};
+  margin-bottom: 40px;
+`;
+
+export const Span = styled(SpanUI)`
+  color: ${({ theme }) => theme.colors.white};
 `;

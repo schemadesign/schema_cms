@@ -10,10 +10,10 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
   }
 >
   <div
-    className="sc-cSHVUG CAuLq"
+    className="sc-jWBwVP dEJSdT"
   >
     <div
-      className="sc-chPdSV byfFmt"
+      className="sc-jAaTju fNCBho"
     >
       <div
         style={
@@ -186,10 +186,10 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-htoDjs iUYJOx"
+      className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-dnqmqq kiwmCb"
+        className="sc-gzVnrw gSWkmB"
       >
         <button
           disabled={false}
@@ -244,7 +244,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
           </span>
         </button>
         <div
-          className="sc-gzVnrw bMUaYY"
+          className="sc-hMqMXs bKYksQ"
         >
           <div
             style={

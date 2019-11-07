@@ -7,6 +7,7 @@ describe('Job: redux', () => {
   const state = Immutable({
     job: {},
     jobPreview: {},
+    jobList: [],
   });
 
   describe('reducer', () => {
@@ -47,6 +48,15 @@ describe('Job: redux', () => {
 
       const resultState = jobReducer(state, JobRoutines.fetchPreview.success(jobPreview));
       expect(resultState.jobPreview).to.deep.equal(jobPreview);
+    });
+  });
+
+  describe('when JOB/FETCH_JOB_LIST_SUCCESS action is received', () => {
+    it('should set job list value', () => {
+      const jobList = [{ id: '1' }];
+
+      const resultState = jobReducer(state, JobRoutines.fetchJobList.success(jobList));
+      expect(resultState.jobList).to.deep.equal(jobList);
     });
   });
 });

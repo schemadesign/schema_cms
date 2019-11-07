@@ -51,7 +51,7 @@ export class JobDetail extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
-  handleGoBack = () => this.props.history.push(`/project/${this.props.job.project}/datasource`);
+  handleGoBack = () => this.props.history.push(`/datasource/${this.props.job.datasource}/job`);
 
   renderStep = ({ scriptName }, index) => <Step key={index}>{scriptName}</Step>;
 

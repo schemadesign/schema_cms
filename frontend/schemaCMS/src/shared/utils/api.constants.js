@@ -5,7 +5,6 @@ export const TOKEN_PATH = '/auth/token';
 export const LOGOUT_URL = `${API_PREFIX}/auth/logout`;
 export const ME_PATH = '/users/me';
 export const PROJECTS_PATH = '/projects';
-export const DATA_SOURCE_PATH = '/datasource';
 export const DATA_SOURCES_PATH = '/datasources';
 export const DATA_WRANGLING_SCRIPTS_PATH = '/script';
 export const DATA_WRANGLING_JOB_PATH = '/job';

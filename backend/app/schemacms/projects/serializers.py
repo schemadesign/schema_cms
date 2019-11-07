@@ -284,6 +284,7 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
             "result",
             "error",
             "source_file_url",
+            "created",
         )
 
     def get_project(self, obj):

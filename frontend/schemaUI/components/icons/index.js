@@ -1,7 +1,5 @@
 import { ArrowLeftIcon } from './arrowLeftIcon';
 import { ArrowRightIcon } from './arrowRightIcon';
-import { CheckboxOffIcon } from './checkboxOffIcon';
-import { CheckboxOnIcon } from './checkboxOnIcon';
 import { CloseIcon } from './closeIcon';
 import { CsvIcon } from './csvIcon';
 import { EditIcon } from './editIcon';
@@ -11,6 +9,9 @@ import { MenuIcon } from './menuIcon';
 import { PlusIcon } from './plusIcon';
 import { UserIcon } from './userIcon';
 import { UploadIcon } from './uploadIcon';
+import { CheckboxOffIcon } from './checkboxOffIcon';
+import { CheckboxOnIcon } from './checkboxOnIcon';
+import { EyeIcon } from './eyeIcon';
 
 const Icons = {
   ArrowLeftIcon,
@@ -26,6 +27,7 @@ const Icons = {
   PlusIcon,
   UserIcon,
   UploadIcon,
+  EyeIcon,
 };
 
 export {
@@ -42,6 +44,7 @@ export {
   PlusIcon,
   UserIcon,
   UploadIcon,
+  EyeIcon,
 };
 
 export default Icons;
