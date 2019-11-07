@@ -15,6 +15,7 @@ export const DataSourceRoutines = {
   fetchFields: createRoutine(`${prefix}FETCH_FIELDS`),
   unmountFields: createRoutine(`${prefix}UNMOUNT_FIELDS`),
   cancelFetchListLoop: createRoutine(`${prefix}CANCEL_FETCH_LIST_LOOP`),
+  fetchFieldsInfo: createRoutine(`${prefix}FETCH_FIELDS_INFO`),
   revertToJob: createRoutine(`${prefix}REVER_TO_JOB`),
 };
 
@@ -23,6 +24,7 @@ export const INITIAL_STATE = new Immutable({
   dataSources: [],
   fields: {},
   previewTable: [],
+  fieldsInfo: {},
 });
 
 const sortByDate = sort(descend(prop('created')));
@@ -30,6 +32,7 @@ const sortByDate = sort(descend(prop('created')));
 const updateDataSource = (state = INITIAL_STATE, { payload }) => state.set('dataSource', payload);
 const updateDataSources = (state = INITIAL_STATE, { payload }) => state.set('dataSources', sortByDate(payload));
 const unmountDataSource = (state = INITIAL_STATE) => state.set('dataSource', {});
+const setFieldsInfo = (state = INITIAL_STATE, { payload }) => state.set('fieldsInfo', payload);
 
 const updateFields = (state = INITIAL_STATE, { payload }) =>
   state.set('fields', payload.fields).set('previewTable', payload.data);
@@ -44,4 +47,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.fetchList.SUCCESS]: updateDataSources,
   [DataSourceRoutines.fetchFields.SUCCESS]: updateFields,
   [DataSourceRoutines.unmountFields.TRIGGER]: unmountFields,
+  [DataSourceRoutines.fetchFieldsInfo.SUCCESS]: setFieldsInfo,
 });

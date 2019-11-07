@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Form } from 'schemaUI';
+import { Form, Icons } from 'schemaUI';
 import { pick } from 'ramda';
 import elementAttributes from 'html-element-attributes/index.json';
 
-import { Container } from './select.styles';
+import { Container, IconContainer } from './select.styles';
 
 const { Label, Select: SelectElement } = Form;
+const { EditIcon } = Icons;
 
 export class Select extends PureComponent {
   static propTypes = {
@@ -29,6 +30,9 @@ export class Select extends PureComponent {
       <Container>
         <Label id="fieldProjectStatusLabel">{label}</Label>
         <input type="hidden" id={name} name={name} value={value} />
+        <IconContainer>
+          <EditIcon />
+        </IconContainer>
         <SelectElement defaultOption={defaultOption} options={updatedOptions} onSelect={onSelect} {...filteredProps} />
       </Container>
     );

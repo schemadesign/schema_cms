@@ -6,6 +6,7 @@ import { reducer as filterReducer, FilterRoutines } from '../filter.redux';
 describe('Filter: redux', () => {
   const state = Immutable({
     filters: [],
+    filter: {},
   });
 
   describe('reducer', () => {
@@ -33,6 +34,15 @@ describe('Filter: redux', () => {
 
       const resultState = filterReducer(state, FilterRoutines.setFilters.success(filters));
       expect(resultState.filters).to.deep.equal(filters);
+    });
+  });
+
+  describe('when FILTERS/FETCH_FILTER action is received', () => {
+    it('should set filters', () => {
+      const filter = [{ data: 'data' }];
+
+      const resultState = filterReducer(state, FilterRoutines.fetchFilter.success(filter));
+      expect(resultState.filter).to.deep.equal(filter);
     });
   });
 });

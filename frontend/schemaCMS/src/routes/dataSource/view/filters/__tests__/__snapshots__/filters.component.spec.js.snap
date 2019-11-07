@@ -4,7 +4,9 @@ exports[`Filters: Component should render correctly 1`] = `
 <styled.div>
   <styled.div>
     <styled.div>
-      <Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
         <Component />
       </Styled(Component)>
     </styled.div>
