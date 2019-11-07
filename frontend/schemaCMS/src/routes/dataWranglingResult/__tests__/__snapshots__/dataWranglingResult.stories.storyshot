@@ -10,23 +10,23 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
   }
 >
   <div
-    className="sc-fBuWsC eeihxG"
+    className="sc-hqyNC keRCOE"
   >
     <div
-      className="sc-jTzLTM etyENb"
+      className="sc-chPdSV hBnWHV"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="sc-dnqmqq kmmOzl"
+      className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-gZMcBi kaVsZU"
+        className="sc-htoDjs gGzkjf"
       >
         <div
-          className="sc-iwsKbI hPSGKY"
+          className="sc-gzVnrw dUJElp"
         >
           <button
             disabled={false}
@@ -81,7 +81,7 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
             </span>
           </button>
           <div
-            className="sc-htoDjs cesZpB"
+            className="sc-kEYyzF gUgRxW"
           >
             <div
               style={
@@ -145,34 +145,6 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
                     "height": "12px",
                     "margin": "0 4px",
                     "pointerEvents": "none",
-                    "width": "12px",
-                  }
-                }
-              />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "width": "12px",
-                  }
-                }
-              />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
                     "width": "12px",
                   }
                 }

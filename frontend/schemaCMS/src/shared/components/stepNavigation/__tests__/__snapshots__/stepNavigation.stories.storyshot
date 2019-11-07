@@ -10,13 +10,13 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
   }
 >
   <div
-    className="sc-dnqmqq kmmOzl"
+    className="sc-bZQynM ceQpbG"
   >
     <div
-      className="sc-gZMcBi kaVsZU"
+      className="sc-htoDjs gGzkjf"
     >
       <div
-        className="sc-iwsKbI hPSGKY"
+        className="sc-gzVnrw dUJElp"
       >
         <button
           disabled={false}
@@ -71,7 +71,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
           </span>
         </button>
         <div
-          className="sc-htoDjs cesZpB"
+          className="sc-kEYyzF gUgRxW"
         >
           <div
             style={
@@ -94,34 +94,6 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
                   "height": "12px",
                   "margin": "0 4px",
                   "pointerEvents": "none",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
                   "width": "12px",
                 }
               }
@@ -200,13 +172,13 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
   }
 >
   <div
-    className="sc-dnqmqq kmmOzl"
+    className="sc-bZQynM ceQpbG"
   >
     <div
-      className="sc-gZMcBi kaVsZU"
+      className="sc-htoDjs gGzkjf"
     >
       <div
-        className="sc-iwsKbI hPSGKY"
+        className="sc-gzVnrw dUJElp"
       >
         <button
           disabled={true}
@@ -261,7 +233,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
           </span>
         </button>
         <div
-          className="sc-htoDjs cesZpB"
+          className="sc-kEYyzF gUgRxW"
         >
           <div
             style={
@@ -284,34 +256,6 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
                   "height": "12px",
                   "margin": "0 4px",
                   "pointerEvents": "none",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
                   "width": "12px",
                 }
               }
@@ -390,13 +334,13 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
   }
 >
   <div
-    className="sc-dnqmqq kmmOzl"
+    className="sc-bZQynM ceQpbG"
   >
     <div
-      className="sc-gZMcBi kaVsZU"
+      className="sc-htoDjs gGzkjf"
     >
       <div
-        className="sc-iwsKbI hPSGKY"
+        className="sc-gzVnrw dUJElp"
       >
         <button
           disabled={false}
@@ -451,7 +395,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
           </span>
         </button>
         <div
-          className="sc-htoDjs cesZpB"
+          className="sc-kEYyzF gUgRxW"
         >
           <div
             style={
@@ -474,34 +418,6 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
                   "height": "12px",
                   "margin": "0 4px",
                   "pointerEvents": "none",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
                   "width": "12px",
                 }
               }
@@ -580,13 +496,13 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
   }
 >
   <div
-    className="sc-dnqmqq kmmOzl"
+    className="sc-bZQynM ceQpbG"
   >
     <div
-      className="sc-gZMcBi kaVsZU"
+      className="sc-htoDjs gGzkjf"
     >
       <div
-        className="sc-iwsKbI hPSGKY"
+        className="sc-gzVnrw dUJElp"
       >
         <button
           disabled={true}
@@ -641,7 +557,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
           </span>
         </button>
         <div
-          className="sc-htoDjs cesZpB"
+          className="sc-kEYyzF gUgRxW"
         >
           <div
             style={
@@ -664,34 +580,6 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
                   "height": "12px",
                   "margin": "0 4px",
                   "pointerEvents": "none",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
                   "width": "12px",
                 }
               }
@@ -770,13 +658,13 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
   }
 >
   <div
-    className="sc-dnqmqq kmmOzl"
+    className="sc-bZQynM ceQpbG"
   >
     <div
-      className="sc-gZMcBi kaVsZU"
+      className="sc-htoDjs gGzkjf"
     >
       <div
-        className="sc-iwsKbI hPSGKY"
+        className="sc-gzVnrw dUJElp"
       >
         <button
           disabled={false}
@@ -831,7 +719,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
           </span>
         </button>
         <div
-          className="sc-htoDjs cesZpB"
+          className="sc-kEYyzF gUgRxW"
         >
           <div
             style={
@@ -896,34 +784,6 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
                   "height": "12px",
                   "margin": "0 4px",
                   "pointerEvents": "none",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
-                  "width": "12px",
-                }
-              }
-            />
-            <span
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "borderRadius": "50%",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "height": "12px",
-                  "margin": "0 4px",
                   "width": "12px",
                 }
               }

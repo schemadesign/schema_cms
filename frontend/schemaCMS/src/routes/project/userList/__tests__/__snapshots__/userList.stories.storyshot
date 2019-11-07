@@ -10,11 +10,7 @@ exports[`Storyshots Project/UserList list 1`] = `
   }
 >
   <div
-<<<<<<< HEAD
-    className="sc-fBuWsC jtIdEp"
-=======
     className="sc-dnqmqq jTyMZw"
->>>>>>> updated tests
   >
     <div
       style={
@@ -31,11 +27,7 @@ exports[`Storyshots Project/UserList list 1`] = `
     >
       <div>
         <div
-<<<<<<< HEAD
-          className="sc-fMiknA bxZCMx"
-=======
           className="sc-iwsKbI jQhHGA"
->>>>>>> updated tests
         >
           <h2
             id="headerTitle"
@@ -133,17 +125,10 @@ exports[`Storyshots Project/UserList list 1`] = `
       }
     >
       <div
-<<<<<<< HEAD
-        className="sc-dVhcbM fghLuF"
-      >
-        <div
-          className="sc-fMiknA bxZCMx"
-=======
         className="sc-gZMcBi giNnHm"
       >
         <div
           className="sc-iwsKbI jQhHGA"
->>>>>>> updated tests
         >
           <h2
             id="headerTitle"
@@ -180,15 +165,6 @@ exports[`Storyshots Project/UserList list 1`] = `
         </div>
       </div>
       <div
-<<<<<<< HEAD
-        className="sc-eqIVtm jwtJAm"
-      >
-        <ul
-          className="sc-fAjcbJ sc-caSCKo jdlBiQ"
-        />
-        <ul
-          className="sc-fAjcbJ sc-gisBJw TKJlq"
-=======
         className="sc-gqjmRU kteaYt"
       >
         <ul
@@ -196,7 +172,6 @@ exports[`Storyshots Project/UserList list 1`] = `
         />
         <ul
           className="sc-VigVT sc-fjdhpX dhPcNY"
->>>>>>> updated tests
         />
       </div>
       <button
@@ -453,11 +428,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   }
 >
   <div
-<<<<<<< HEAD
-    className="sc-fBuWsC jtIdEp"
-=======
     className="sc-dnqmqq jTyMZw"
->>>>>>> updated tests
   >
     <div
       style={
@@ -474,11 +445,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     >
       <div>
         <div
-<<<<<<< HEAD
-          className="sc-fMiknA bxZCMx"
-=======
           className="sc-iwsKbI jQhHGA"
->>>>>>> updated tests
         >
           <h2
             id="headerTitle"
@@ -576,17 +543,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       }
     >
       <div
-<<<<<<< HEAD
-        className="sc-dVhcbM fghLuF"
-      >
-        <div
-          className="sc-fMiknA bxZCMx"
-=======
         className="sc-gZMcBi giNnHm"
       >
         <div
           className="sc-iwsKbI jQhHGA"
->>>>>>> updated tests
         >
           <h2
             id="headerTitle"
@@ -623,15 +583,6 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </div>
       </div>
       <div
-<<<<<<< HEAD
-        className="sc-eqIVtm jwtJAm"
-      >
-        <ul
-          className="sc-fAjcbJ sc-caSCKo jdlBiQ"
-        />
-        <ul
-          className="sc-fAjcbJ sc-gisBJw TKJlq"
-=======
         className="sc-gqjmRU kteaYt"
       >
         <ul
@@ -639,7 +590,6 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         />
         <ul
           className="sc-VigVT sc-fjdhpX dhPcNY"
->>>>>>> updated tests
         />
       </div>
       <button
@@ -820,17 +770,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-<<<<<<< HEAD
-      className="sc-exAgwC dnARIF"
-    >
-      <h2
-        className="sc-cQFLBn jkOaFm"
-=======
       className="sc-gojNiO bdgdfg"
     >
       <h2
         className="sc-daURTG cmTGTe"
->>>>>>> updated tests
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -850,11 +793,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-<<<<<<< HEAD
-        className="sc-gojNiO QHcAS"
-=======
         className="sc-bXGyLb jJJTW"
->>>>>>> updated tests
         style={
           Object {
             "color": Object {
@@ -870,11 +809,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-<<<<<<< HEAD
-      className="sc-GMQeP bIAzvE"
-=======
       className="sc-cQFLBn AYzwE"
->>>>>>> updated tests
     >
       <button
         disabled={false}
@@ -931,17 +866,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-<<<<<<< HEAD
-      className="sc-exAgwC dnARIF"
-    >
-      <h2
-        className="sc-cQFLBn jkOaFm"
-=======
       className="sc-gojNiO bdgdfg"
     >
       <h2
         className="sc-daURTG cmTGTe"
->>>>>>> updated tests
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -961,11 +889,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-<<<<<<< HEAD
-        className="sc-gojNiO QHcAS"
-=======
         className="sc-bXGyLb jJJTW"
->>>>>>> updated tests
         style={
           Object {
             "color": Object {
@@ -981,11 +905,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-<<<<<<< HEAD
-      className="sc-GMQeP bIAzvE"
-=======
       className="sc-cQFLBn AYzwE"
->>>>>>> updated tests
     >
       <button
         disabled={false}
@@ -1042,17 +962,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-<<<<<<< HEAD
-      className="sc-exAgwC dnARIF"
-    >
-      <h2
-        className="sc-cQFLBn jkOaFm"
-=======
       className="sc-gojNiO bdgdfg"
     >
       <h2
         className="sc-daURTG cmTGTe"
->>>>>>> updated tests
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -1072,11 +985,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-<<<<<<< HEAD
-        className="sc-gojNiO QHcAS"
-=======
         className="sc-bXGyLb jJJTW"
->>>>>>> updated tests
         style={
           Object {
             "color": Object {
@@ -1092,11 +1001,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-<<<<<<< HEAD
-      className="sc-GMQeP bIAzvE"
-=======
       className="sc-cQFLBn AYzwE"
->>>>>>> updated tests
     >
       <button
         disabled={false}

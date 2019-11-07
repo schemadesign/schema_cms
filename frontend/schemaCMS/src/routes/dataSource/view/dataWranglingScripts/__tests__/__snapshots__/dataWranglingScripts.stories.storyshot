@@ -10,23 +10,23 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
   }
 >
   <div
-    className="sc-brqgnP SqPLV"
+    className="sc-kGXeez eIIwaK"
   >
     <div
-      className="sc-cMljjf bDVItY"
+      className="sc-kpOJdX eegNFs"
     >
       <div
-        className="sc-jDwBTQ SyYYJ"
+        className="sc-ckVGcZ tWmOD"
       />
       <div
-        className="sc-jAaTju hMEUcd"
+        className="sc-dxgOiQ gCjaVU"
       >
         <span>
           2 Steps
         </span>
       </div>
       <div
-        className="sc-gPEVay bUpbss"
+        className="sc-jKJlTe dmTceE"
       >
         <div
           style={Object {}}
@@ -287,7 +287,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-jlyJG aYqMe"
+            className="sc-hMqMXs hckUoy"
             href="/script/1"
             onClick={[Function]}
           >
@@ -386,7 +386,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-jlyJG aYqMe"
+            className="sc-hMqMXs hckUoy"
             href="/script/2"
             onClick={[Function]}
           >
@@ -445,13 +445,13 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-dnqmqq kmmOzl"
+      className="sc-bZQynM ceQpbG"
     >
       <div
-        className="sc-gZMcBi kaVsZU"
+        className="sc-htoDjs gGzkjf"
       >
         <div
-          className="sc-iwsKbI hPSGKY"
+          className="sc-gzVnrw dUJElp"
         >
           <button
             disabled={false}
@@ -506,7 +506,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
             </span>
           </button>
           <div
-            className="sc-htoDjs cesZpB"
+            className="sc-kEYyzF gUgRxW"
           >
             <div
               style={
@@ -517,34 +517,6 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                 }
               }
             >
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "width": "12px",
-                  }
-                }
-              />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "width": "12px",
-                  }
-                }
-              />
               <span
                 onClick={[Function]}
                 style={
