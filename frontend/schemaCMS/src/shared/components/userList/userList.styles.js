@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Typography } from 'schemaUI';
 
 export const Container = styled.div``;
@@ -12,11 +13,18 @@ export const UserDetails = styled.div`
   flex: 1 1 auto;
 `;
 
-export const UserFullName = styled(Typography.H2)``;
+export const UserFullName = styled(Link)`
+  color: ${({ theme: { text } }) => text};
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+`;
 
-export const Email = styled(Typography.H3)`
+export const Email = styled.span`
+  display: block;
   padding-top: 10px;
   word-break: break-all;
+  font-weight: 200;
 `;
 
 export const cardStyles = {

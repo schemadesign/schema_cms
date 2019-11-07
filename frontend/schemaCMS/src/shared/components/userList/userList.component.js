@@ -28,10 +28,8 @@ export class UserList extends PureComponent {
   renderListItem = (user, hasRemoving, index) => (
     <Card key={index} customStyles={cardStyles}>
       <UserDetails>
-        <UserFullName>
-          <Link to={`${this.getUrl(this.props.projectId)}${user.id}`}>
-            {user.firstName} {user.lastName}
-          </Link>
+        <UserFullName to={`${this.getUrl(this.props.projectId)}${user.id}`}>
+          {user.firstName} {user.lastName}
         </UserFullName>
         <Email>{user.email}</Email>
       </UserDetails>
