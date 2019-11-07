@@ -10,10 +10,10 @@ exports[`Storyshots Project/Create Default 1`] = `
   }
 >
   <div
-    className="sc-elJkPf jRsZyA"
+    className="sc-hwwEjo kIFSBP"
   >
     <div
-      className="sc-jhAzac bdqCwL"
+      className="sc-dnqmqq jTyMZw"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Project/Create Default 1`] = `
       >
         <div>
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-iwsKbI jQhHGA"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots Project/Create Default 1`] = `
         }
       >
         <div
-          className="sc-fMiknA bxZCMx"
+          className="sc-gZMcBi giNnHm"
         >
           <div
-            className="sc-fBuWsC eeihxG"
+            className="sc-iwsKbI jQhHGA"
           >
             <h2
               id="headerTitle"
@@ -160,13 +160,13 @@ exports[`Storyshots Project/Create Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-dVhcbM eUEmRN"
+          className="sc-gqjmRU kteaYt"
         >
           <ul
-            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
+            className="sc-VigVT sc-jTzLTM jjONle"
           />
           <ul
-            className="sc-eqIVtm sc-caSCKo eLOffc"
+            className="sc-VigVT sc-fjdhpX dhPcNY"
           />
         </div>
         <button
@@ -212,11 +212,11 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-jtRfpW gsXFow"
+      className="sc-kPVwWT duNpUs"
       onSubmit={[Function]}
     >
       <div
-        className="sc-kgoBCf kVSTZj"
+        className="sc-jDwBTQ dWtMUn"
       >
         <div
           style={
@@ -276,7 +276,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-kgoBCf kVSTZj"
+        className="sc-jDwBTQ dWtMUn"
       >
         <div
           style={
@@ -335,7 +335,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-kgoBCf kVSTZj"
+        className="sc-jDwBTQ dWtMUn"
       >
         <div
           style={
@@ -395,7 +395,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bYSBpT cHKoOn"
+        className="sc-iyvyFf bcombI"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -541,13 +541,13 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-htoDjs iUYJOx"
+        className="sc-bZQynM ceQpbG"
       >
         <div
-          className="sc-iwsKbI iKbLSk"
+          className="sc-htoDjs gGzkjf"
         >
           <div
-            className="sc-dnqmqq XuhPC"
+            className="sc-gzVnrw dUJElp"
           >
             <button
               disabled={false}

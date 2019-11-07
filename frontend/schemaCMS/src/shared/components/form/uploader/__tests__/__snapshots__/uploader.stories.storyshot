@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
   }
 >
   <div
-    className="sc-dxgOiQ hTjMfW"
+    className="sc-jlyJG bbyJzT"
   >
     <div
       style={Object {}}
@@ -210,6 +210,11 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
             "stepper": Object {
               "active": "#FFF",
               "background": "#1d1d20",
+            },
+            "tab": Object {
+              "active": "#FFF",
+              "hover": "#FFF",
+              "normal": "#2F2F36",
             },
             "table": Object {
               "background": Object {
@@ -281,7 +286,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
   }
 >
   <div
-    className="sc-dxgOiQ hTjMfW"
+    className="sc-jlyJG bbyJzT"
   >
     <div
       style={Object {}}
@@ -482,6 +487,11 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
               "active": "#FFF",
               "background": "#1d1d20",
             },
+            "tab": Object {
+              "active": "#FFF",
+              "hover": "#FFF",
+              "normal": "#2F2F36",
+            },
             "table": Object {
               "background": Object {
                 "body": "#000",
@@ -539,7 +549,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
       />
     </div>
     <div
-      className="sc-ckVGcZ bYnhkM"
+      className="sc-gipzik dNbbzZ"
     >
       error
     </div>
