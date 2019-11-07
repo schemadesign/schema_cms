@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const ProjectView = styled.div`
-  margin-top: 7px;
+  margin-top: 70px;
 `;
 
 export const Details = styled.ul`

@@ -25,9 +25,9 @@ const longProps = {
   title: longText,
 };
 
-storiesOf('Shared Components|Header/DesktopTopHeader', module)
-  .addDecorator(withRouter)
-  .addDecorator(withTheme())
-  .add('Default', () => <DesktopTopHeader {...defaultProps} />)
-  .add('With title', () => <DesktopTopHeader {...titleProps} />)
-  .add('With long title', () => <DesktopTopHeader {...longProps} />);
+// storiesOf('Shared Components|Header/DesktopTopHeader', module)
+//   .addDecorator(withRouter)
+//   .addDecorator(withTheme())
+//   .add('Default', () => <DesktopTopHeader {...defaultProps} />)
+//   .add('With title', () => <DesktopTopHeader {...titleProps} />)
+//   .add('With long title', () => <DesktopTopHeader {...longProps} />);

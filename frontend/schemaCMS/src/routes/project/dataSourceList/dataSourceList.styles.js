@@ -108,3 +108,7 @@ export const JobDetails = styled.div`
     justify-content: normal;
   `};
 `;
+
+export const backButtonStyles = {
+  margin: '0 20px',
+};
