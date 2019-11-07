@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
   }
 >
   <div
-    className="sc-kfGgVZ gAmGXc"
+    className="sc-esjQYD cNBMAh"
   >
     <a
-      className="sc-esjQYD kjsANz"
+      className="sc-kIPQKe jbWkZw"
       href="/"
       onClick={[Function]}
     >
@@ -21,21 +21,21 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
     </a>
     <a
       active={true}
-      className="sc-esjQYD dkvrVo"
+      className="sc-kIPQKe eHwaeb"
       href="/"
       onClick={[Function]}
     >
       Tab 2
     </a>
     <a
-      className="sc-esjQYD kjsANz"
+      className="sc-kIPQKe jbWkZw"
       href="/"
       onClick={[Function]}
     >
       Tab 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit
     </a>
     <a
-      className="sc-esjQYD kjsANz"
+      className="sc-kIPQKe jbWkZw"
       href="/"
       onClick={[Function]}
     >

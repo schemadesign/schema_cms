@@ -10,7 +10,7 @@ exports[`Storyshots Project/UserList list 1`] = `
   }
 >
   <div
-    className="sc-dnqmqq jTyMZw"
+    className="sc-fBuWsC jtIdEp"
   >
     <div
       style={
@@ -27,7 +27,7 @@ exports[`Storyshots Project/UserList list 1`] = `
     >
       <div>
         <div
-          className="sc-iwsKbI jQhHGA"
+          className="sc-fMiknA bxZCMx"
         >
           <h2
             id="headerTitle"
@@ -125,10 +125,10 @@ exports[`Storyshots Project/UserList list 1`] = `
       }
     >
       <div
-        className="sc-gZMcBi giNnHm"
+        className="sc-dVhcbM fghLuF"
       >
         <div
-          className="sc-iwsKbI jQhHGA"
+          className="sc-fMiknA bxZCMx"
         >
           <h2
             id="headerTitle"
@@ -165,13 +165,13 @@ exports[`Storyshots Project/UserList list 1`] = `
         </div>
       </div>
       <div
-        className="sc-gqjmRU kteaYt"
+        className="sc-eqIVtm jwtJAm"
       >
         <ul
-          className="sc-VigVT sc-jTzLTM jjONle"
+          className="sc-fAjcbJ sc-caSCKo jdlBiQ"
         />
         <ul
-          className="sc-VigVT sc-fjdhpX dhPcNY"
+          className="sc-fAjcbJ sc-gisBJw TKJlq"
         />
       </div>
       <button
@@ -217,14 +217,14 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-kIPQKe jgMiIX"
+    className="sc-eXEjpC fuVqJC"
   >
     <div
-      className="sc-kfGgVZ gAmGXc"
+      className="sc-esjQYD cNBMAh"
     >
       <a
         active={false}
-        className="sc-esjQYD kjsANz"
+        className="sc-kIPQKe jbWkZw"
         href="/project/1"
         onClick={[Function]}
       >
@@ -234,7 +234,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </a>
       <a
         active={false}
-        className="sc-esjQYD kjsANz"
+        className="sc-kIPQKe jbWkZw"
         href="/project/1/datasource"
         onClick={[Function]}
       >
@@ -244,7 +244,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </a>
       <a
         active={true}
-        className="sc-esjQYD dkvrVo"
+        className="sc-kIPQKe eHwaeb"
         href="/project/1/user"
         onClick={[Function]}
       >
@@ -255,13 +255,13 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-eXEjpC hHXaGX"
+    className="sc-ibxdXY btgiXA"
   >
     <div
-      className="sc-ibxdXY dYHqRv"
+      className="sc-RefOD cnGLMF"
     >
       <h1
-        className="sc-RefOD hLXDGN"
+        className="sc-iQKALj ihRZon"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -279,7 +279,7 @@ exports[`Storyshots Project/UserList list 1`] = `
         </span>
       </h1>
       <h2
-        className="sc-iQKALj ihRZon"
+        className="sc-bwCtUz ThhIA"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -296,7 +296,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </h2>
     </div>
     <div
-      className="sc-bwCtUz kLbHbK"
+      className="sc-hrWEMg fOsrtz"
     >
       <button
         disabled={false}
@@ -339,13 +339,16 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-bZQynM ceQpbG"
+    className="sc-cQFLBn hhVxkt"
+  />
+  <div
+    className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-htoDjs gGzkjf"
+      className="sc-iwsKbI iKbLSk"
     >
       <div
-        className="sc-gzVnrw bDymmI"
+        className="sc-dnqmqq jWxwDQ"
       >
         <button
           disabled={false}
@@ -428,7 +431,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   }
 >
   <div
-    className="sc-dnqmqq jTyMZw"
+    className="sc-fBuWsC jtIdEp"
   >
     <div
       style={
@@ -445,7 +448,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     >
       <div>
         <div
-          className="sc-iwsKbI jQhHGA"
+          className="sc-fMiknA bxZCMx"
         >
           <h2
             id="headerTitle"
@@ -543,10 +546,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       }
     >
       <div
-        className="sc-gZMcBi giNnHm"
+        className="sc-dVhcbM fghLuF"
       >
         <div
-          className="sc-iwsKbI jQhHGA"
+          className="sc-fMiknA bxZCMx"
         >
           <h2
             id="headerTitle"
@@ -583,13 +586,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </div>
       </div>
       <div
-        className="sc-gqjmRU kteaYt"
+        className="sc-eqIVtm jwtJAm"
       >
         <ul
-          className="sc-VigVT sc-jTzLTM jjONle"
+          className="sc-fAjcbJ sc-caSCKo jdlBiQ"
         />
         <ul
-          className="sc-VigVT sc-fjdhpX dhPcNY"
+          className="sc-fAjcbJ sc-gisBJw TKJlq"
         />
       </div>
       <button
@@ -635,14 +638,14 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-kIPQKe jgMiIX"
+    className="sc-eXEjpC fuVqJC"
   >
     <div
-      className="sc-kfGgVZ gAmGXc"
+      className="sc-esjQYD cNBMAh"
     >
       <a
         active={false}
-        className="sc-esjQYD kjsANz"
+        className="sc-kIPQKe jbWkZw"
         href="/project/1"
         onClick={[Function]}
       >
@@ -652,7 +655,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </a>
       <a
         active={false}
-        className="sc-esjQYD kjsANz"
+        className="sc-kIPQKe jbWkZw"
         href="/project/1/datasource"
         onClick={[Function]}
       >
@@ -662,7 +665,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </a>
       <a
         active={true}
-        className="sc-esjQYD dkvrVo"
+        className="sc-kIPQKe eHwaeb"
         href="/project/1/user"
         onClick={[Function]}
       >
@@ -673,13 +676,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-eXEjpC hHXaGX"
+    className="sc-ibxdXY btgiXA"
   >
     <div
-      className="sc-ibxdXY dYHqRv"
+      className="sc-RefOD cnGLMF"
     >
       <h1
-        className="sc-RefOD hLXDGN"
+        className="sc-iQKALj ihRZon"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -697,7 +700,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </span>
       </h1>
       <h2
-        className="sc-iQKALj ihRZon"
+        className="sc-bwCtUz ThhIA"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -714,7 +717,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </h2>
     </div>
     <div
-      className="sc-bwCtUz kLbHbK"
+      className="sc-hrWEMg fOsrtz"
     >
       <button
         disabled={false}
@@ -757,33 +760,27 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    style={
-      Object {
-        "backgroundColor": "#1d1d20",
-        "borderTop": "2px solid #FFF",
-        "color": "#FFF",
-        "display": "flex",
-        "flexDirection": null,
-        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-        "padding": "12px 14px 14px",
-      }
-    }
+    className="sc-cQFLBn hhVxkt"
   >
     <div
-      className="sc-gojNiO bdgdfg"
-    >
-      <h2
-        className="sc-daURTG cmTGTe"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
+      className="sc-gojNiO kqdyJz"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": null,
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "padding": "12px 14px 14px",
         }
+      }
+    >
+      <div
+        className="sc-bXGyLb kWZDBo"
       >
         <a
+          className="sc-lkqHmb cEOBXD"
           href="/project/1/user/1"
           onClick={[Function]}
         >
@@ -791,95 +788,73 @@ exports[`Storyshots Project/UserList list with users 1`] = `
            
           Watts
         </a>
-      </h2>
-      <h3
-        className="sc-bXGyLb jJJTW"
-        style={
-          Object {
-            "color": Object {
-              "border": "#f0efef",
-              "text": "#a6a7aa",
-            },
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": 600,
-            "margin": 0,
-          }
-        }
-      />
-    </div>
-    <div
-      className="sc-cQFLBn AYzwE"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": 40,
-            "margin": "0",
-            "marginTop": -5,
-            "minHeight": 40,
-            "outline": "none",
-            "padding": "0",
-            "width": 40,
-          }
-        }
+        <span
+          className="sc-eLExRp jTLZrS"
+        />
+      </div>
+      <div
+        className="sc-daURTG ftvUIs"
       >
-        <svg
+        <button
+          disabled={false}
+          onClick={[Function]}
           style={
             Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
               "fill": "#FFF",
+              "fontSize": "18px",
               "height": 40,
+              "margin": "0",
+              "marginTop": -5,
+              "minHeight": 40,
+              "outline": "none",
+              "padding": "0",
               "width": 40,
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "width": 40,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
-  </div>
-  <div
-    style={
-      Object {
-        "backgroundColor": "#1d1d20",
-        "borderTop": "2px solid #FFF",
-        "color": "#FFF",
-        "display": "flex",
-        "flexDirection": null,
-        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-        "padding": "12px 14px 14px",
-      }
-    }
-  >
     <div
-      className="sc-gojNiO bdgdfg"
-    >
-      <h2
-        className="sc-daURTG cmTGTe"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
+      className="sc-gojNiO kqdyJz"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": null,
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "padding": "12px 14px 14px",
         }
+      }
+    >
+      <div
+        className="sc-bXGyLb kWZDBo"
       >
         <a
+          className="sc-lkqHmb cEOBXD"
           href="/project/1/user/2"
           onClick={[Function]}
         >
@@ -887,95 +862,73 @@ exports[`Storyshots Project/UserList list with users 1`] = `
            
           Chihuly
         </a>
-      </h2>
-      <h3
-        className="sc-bXGyLb jJJTW"
-        style={
-          Object {
-            "color": Object {
-              "border": "#f0efef",
-              "text": "#a6a7aa",
-            },
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": 600,
-            "margin": 0,
-          }
-        }
-      />
-    </div>
-    <div
-      className="sc-cQFLBn AYzwE"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": 40,
-            "margin": "0",
-            "marginTop": -5,
-            "minHeight": 40,
-            "outline": "none",
-            "padding": "0",
-            "width": 40,
-          }
-        }
+        <span
+          className="sc-eLExRp jTLZrS"
+        />
+      </div>
+      <div
+        className="sc-daURTG ftvUIs"
       >
-        <svg
+        <button
+          disabled={false}
+          onClick={[Function]}
           style={
             Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
               "fill": "#FFF",
+              "fontSize": "18px",
               "height": 40,
+              "margin": "0",
+              "marginTop": -5,
+              "minHeight": 40,
+              "outline": "none",
+              "padding": "0",
               "width": 40,
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "width": 40,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
-  </div>
-  <div
-    style={
-      Object {
-        "backgroundColor": "#1d1d20",
-        "borderTop": "2px solid #FFF",
-        "color": "#FFF",
-        "display": "flex",
-        "flexDirection": null,
-        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-        "padding": "12px 14px 14px",
-      }
-    }
-  >
     <div
-      className="sc-gojNiO bdgdfg"
-    >
-      <h2
-        className="sc-daURTG cmTGTe"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
+      className="sc-gojNiO kqdyJz"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": null,
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "padding": "12px 14px 14px",
         }
+      }
+    >
+      <div
+        className="sc-bXGyLb kWZDBo"
       >
         <a
+          className="sc-lkqHmb cEOBXD"
           href="/project/1/user/3"
           onClick={[Function]}
         >
@@ -983,75 +936,63 @@ exports[`Storyshots Project/UserList list with users 1`] = `
            
           Bowie
         </a>
-      </h2>
-      <h3
-        className="sc-bXGyLb jJJTW"
-        style={
-          Object {
-            "color": Object {
-              "border": "#f0efef",
-              "text": "#a6a7aa",
-            },
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "18px",
-            "fontWeight": 600,
-            "margin": 0,
-          }
-        }
-      />
-    </div>
-    <div
-      className="sc-cQFLBn AYzwE"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#FFF",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": 40,
-            "margin": "0",
-            "marginTop": -5,
-            "minHeight": 40,
-            "outline": "none",
-            "padding": "0",
-            "width": 40,
-          }
-        }
+        <span
+          className="sc-eLExRp jTLZrS"
+        />
+      </div>
+      <div
+        className="sc-daURTG ftvUIs"
       >
-        <svg
+        <button
+          disabled={false}
+          onClick={[Function]}
           style={
             Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
               "fill": "#FFF",
+              "fontSize": "18px",
               "height": 40,
+              "margin": "0",
+              "marginTop": -5,
+              "minHeight": 40,
+              "outline": "none",
+              "padding": "0",
               "width": 40,
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "width": 40,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
   <div
-    className="sc-bZQynM ceQpbG"
+    className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-htoDjs gGzkjf"
+      className="sc-iwsKbI iKbLSk"
     >
       <div
-        className="sc-gzVnrw bDymmI"
+        className="sc-dnqmqq jWxwDQ"
       >
         <button
           disabled={false}

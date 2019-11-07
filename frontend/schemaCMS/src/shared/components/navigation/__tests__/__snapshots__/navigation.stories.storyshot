@@ -95,13 +95,13 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
   }
 >
   <div
-    className="sc-bZQynM ceQpbG"
+    className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-htoDjs gGzkjf"
+      className="sc-iwsKbI iKbLSk"
     >
       <div
-        className="sc-gzVnrw NJhNt"
+        className="sc-dnqmqq icIvSa"
       >
         <button
           disabled={false}

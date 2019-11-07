@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserList: Component should render correctly 1`] = `null`;
+exports[`UserList: Component should render correctly 1`] = `<styled.div />`;
 
 exports[`UserList: Component should render correctly with users 1`] = `
-Array [
-  <Component
+<styled.div>
+  <Styled(Component)
     customStyles={
       Object {
         "flexDirection": null,
@@ -13,20 +13,18 @@ Array [
     key="0"
   >
     <styled.div>
-      <Styled(H2)>
-        <Link
-          to="/user/1"
-        >
-          Alan
-           
-          Watts
-        </Link>
-      </Styled(H2)>
-      <Styled(H3) />
+      <Styled(Link)
+        to="/user/1"
+      >
+        Alan
+         
+        Watts
+      </Styled(Link)>
+      <styled.span />
     </styled.div>
     <styled.div />
-  </Component>,
-  <Component
+  </Styled(Component)>
+  <Styled(Component)
     customStyles={
       Object {
         "flexDirection": null,
@@ -35,20 +33,18 @@ Array [
     key="1"
   >
     <styled.div>
-      <Styled(H2)>
-        <Link
-          to="/user/2"
-        >
-          Dale
-           
-          Chihuly
-        </Link>
-      </Styled(H2)>
-      <Styled(H3) />
+      <Styled(Link)
+        to="/user/2"
+      >
+        Dale
+         
+        Chihuly
+      </Styled(Link)>
+      <styled.span />
     </styled.div>
     <styled.div />
-  </Component>,
-  <Component
+  </Styled(Component)>
+  <Styled(Component)
     customStyles={
       Object {
         "flexDirection": null,
@@ -57,20 +53,18 @@ Array [
     key="2"
   >
     <styled.div>
-      <Styled(H2)>
-        <Link
-          to="/user/3"
-        >
-          Dave
-           
-          Bowie
-        </Link>
-      </Styled(H2)>
-      <Styled(H3)>
+      <Styled(Link)
+        to="/user/3"
+      >
+        Dave
+         
+        Bowie
+      </Styled(Link)>
+      <styled.span>
         loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
-      </Styled(H3)>
+      </styled.span>
     </styled.div>
     <styled.div />
-  </Component>,
-]
+  </Styled(Component)>
+</styled.div>
 `;
