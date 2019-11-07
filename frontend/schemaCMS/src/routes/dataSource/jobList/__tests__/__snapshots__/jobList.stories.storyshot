@@ -10,10 +10,10 @@ exports[`Storyshots JobList Default 1`] = `
   }
 >
   <div
-    className="sc-bdVaJa ixPHMV"
+    className="sc-jbKcbu dMjgEP"
   >
     <div
-      className="sc-dnqmqq jTyMZw"
+      className="sc-jhAzac bdqCwL"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots JobList Default 1`] = `
       >
         <div>
           <div
-            className="sc-iwsKbI jQhHGA"
+            className="sc-fBuWsC eeihxG"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots JobList Default 1`] = `
         }
       >
         <div
-          className="sc-gZMcBi giNnHm"
+          className="sc-fMiknA bxZCMx"
         >
           <div
-            className="sc-iwsKbI jQhHGA"
+            className="sc-fBuWsC eeihxG"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots JobList Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-gqjmRU kteaYt"
+          className="sc-dVhcbM eUEmRN"
         >
           <ul
-            className="sc-VigVT sc-jTzLTM jjONle"
+            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
           />
           <ul
-            className="sc-VigVT sc-fjdhpX dhPcNY"
+            className="sc-eqIVtm sc-caSCKo eLOffc"
           />
         </div>
         <button
@@ -220,76 +220,72 @@ exports[`Storyshots JobList Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-chPdSV hBnWHV"
+      className="sc-gqjmRU hembyQ"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="sc-bZQynM ceQpbG"
+      className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-htoDjs gGzkjf"
+        className="sc-dnqmqq kiwmCb"
       >
-        <div
-          className="sc-gzVnrw dUJElp"
+        <button
+          disabled={false}
+          id="cancelBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginRight": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
+            }
+          }
         >
-          <button
-            disabled={false}
-            id="cancelBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
-              }
+          <span>
+            Cancel
+          </span>
+        </button>
+        <button
+          disabled={true}
+          id="revertBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#71737e",
+              "cursor": "default",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "marginLeft": 5,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "width": "calc(50% - 5px)",
             }
-          >
-            <span>
-              Cancel
-            </span>
-          </button>
-          <button
-            disabled={true}
-            id="revertBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginLeft": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
-              }
-            }
-          >
-            <span>
-              Revert
-            </span>
-          </button>
-        </div>
+          }
+        >
+          <span>
+            Revert
+          </span>
+        </button>
       </div>
     </div>
   </div>

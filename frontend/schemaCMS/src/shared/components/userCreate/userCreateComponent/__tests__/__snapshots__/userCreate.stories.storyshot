@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   }
 >
   <div
-    className="sc-jzgbtB gtmFkE"
+    className="sc-bMvGRv jKmwkI"
   >
     <div
-      className="sc-hzDkRC eJLEZA"
+      className="sc-jhAzac bdqCwL"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       >
         <div>
           <div
-            className="sc-jhAzac hmXDXQ"
+            className="sc-fBuWsC eeihxG"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         }
       >
         <div
-          className="sc-fBuWsC eeihxG"
+          className="sc-fMiknA bxZCMx"
         >
           <div
-            className="sc-jhAzac hmXDXQ"
+            className="sc-fBuWsC eeihxG"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-fMiknA dDuaDM"
+          className="sc-dVhcbM eUEmRN"
         >
           <ul
-            className="sc-dVhcbM sc-eqIVtm dnkudp"
+            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
           />
           <ul
-            className="sc-dVhcbM sc-fAjcbJ ggeeow"
+            className="sc-eqIVtm sc-caSCKo eLOffc"
           />
         </div>
         <button
@@ -220,11 +220,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-gJWqzi ufsaM"
+      className="sc-CtfFt cPrCUw"
       onSubmit={[Function]}
     >
       <div
-        className="sc-bxivhb bUZGRr"
+        className="sc-ifAKCX cFlEyZ"
       >
         <div
           style={
@@ -284,7 +284,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bxivhb bUZGRr"
+        className="sc-ifAKCX cFlEyZ"
       >
         <div
           style={
@@ -343,7 +343,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bxivhb bUZGRr"
+        className="sc-ifAKCX cFlEyZ"
       >
         <div
           style={
@@ -402,10 +402,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gzVnrw bvWFXB"
+        className="sc-htoDjs iUYJOx"
       >
         <div
-          className="sc-htoDjs jntWXs"
+          className="sc-dnqmqq kiwmCb"
         >
           <button
             disabled={false}

@@ -10,10 +10,10 @@ exports[`Storyshots Project/AddUser Default 1`] = `
   }
 >
   <div
-    className="sc-cIShpX krSiat"
+    className="sc-bYSBpT dTBkYG"
   >
     <div
-      className="sc-hzDkRC eJLEZA"
+      className="sc-jhAzac bdqCwL"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
       >
         <div>
           <div
-            className="sc-jhAzac hmXDXQ"
+            className="sc-fBuWsC eeihxG"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots Project/AddUser Default 1`] = `
         }
       >
         <div
-          className="sc-fBuWsC eeihxG"
+          className="sc-fMiknA bxZCMx"
         >
           <div
-            className="sc-jhAzac hmXDXQ"
+            className="sc-fBuWsC eeihxG"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots Project/AddUser Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-fMiknA dDuaDM"
+          className="sc-dVhcbM eUEmRN"
         >
           <ul
-            className="sc-dVhcbM sc-eqIVtm dnkudp"
+            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
           />
           <ul
-            className="sc-dVhcbM sc-fAjcbJ ggeeow"
+            className="sc-eqIVtm sc-caSCKo eLOffc"
           />
         </div>
         <button
@@ -220,10 +220,10 @@ exports[`Storyshots Project/AddUser Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-gzVnrw bvWFXB"
+      className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-htoDjs jntWXs"
+        className="sc-dnqmqq kiwmCb"
       >
         <button
           disabled={false}
@@ -267,10 +267,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
   }
 >
   <div
-    className="sc-cIShpX krSiat"
+    className="sc-bYSBpT dTBkYG"
   >
     <div
-      className="sc-hzDkRC eJLEZA"
+      className="sc-jhAzac bdqCwL"
     >
       <div
         style={
@@ -287,7 +287,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
       >
         <div>
           <div
-            className="sc-jhAzac hmXDXQ"
+            className="sc-fBuWsC eeihxG"
           >
             <h2
               id="headerTitle"
@@ -385,10 +385,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         }
       >
         <div
-          className="sc-fBuWsC eeihxG"
+          className="sc-fMiknA bxZCMx"
         >
           <div
-            className="sc-jhAzac hmXDXQ"
+            className="sc-fBuWsC eeihxG"
           >
             <h2
               id="headerTitle"
@@ -425,13 +425,13 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           </div>
         </div>
         <div
-          className="sc-fMiknA dDuaDM"
+          className="sc-dVhcbM eUEmRN"
         >
           <ul
-            className="sc-dVhcbM sc-eqIVtm dnkudp"
+            className="sc-eqIVtm sc-fAjcbJ kwtAvC"
           />
           <ul
-            className="sc-dVhcbM sc-fAjcbJ ggeeow"
+            className="sc-eqIVtm sc-caSCKo eLOffc"
           />
         </div>
         <button
@@ -477,13 +477,13 @@ exports[`Storyshots Project/AddUser with users 1`] = `
       </div>
     </div>
     <div
-      className="sc-kafWEX gltPLt"
+      className="sc-elJkPf fxifSp"
     >
       <div
-        className="sc-feJyhm ztnQX"
+        className="sc-jtRfpW dqLTLR"
       >
         <h2
-          className="sc-lhVmIH iBkPsG"
+          className="sc-gzOgki ehNPHd"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -496,7 +496,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           Alan Watts
         </h2>
         <h3
-          className="sc-bYSBpT cNwryF"
+          className="sc-iyvyFf irQiRQ"
           style={
             Object {
               "color": Object {
@@ -512,10 +512,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         />
       </div>
       <div
-        className="sc-iELTvK cvyDkt"
+        className="sc-kTUwUJ AzLKQ"
       >
         <button
-          className="sc-btzYZH ipjehu"
+          className="sc-dfVpRl ioythG"
           disabled={false}
           id="removeUserPlusButton0"
           onClick={[Function]}
@@ -537,19 +537,19 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           }
         >
           <div
-            className="sc-jwKygS jQlLlJ"
+            className="sc-gxMtzJ dncQKu"
           />
         </button>
       </div>
     </div>
     <div
-      className="sc-kafWEX gltPLt"
+      className="sc-elJkPf fxifSp"
     >
       <div
-        className="sc-feJyhm ztnQX"
+        className="sc-jtRfpW dqLTLR"
       >
         <h2
-          className="sc-lhVmIH iBkPsG"
+          className="sc-gzOgki ehNPHd"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -562,7 +562,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           Dale Chihuly
         </h2>
         <h3
-          className="sc-bYSBpT cNwryF"
+          className="sc-iyvyFf irQiRQ"
           style={
             Object {
               "color": Object {
@@ -580,10 +580,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         </h3>
       </div>
       <div
-        className="sc-iELTvK cvyDkt"
+        className="sc-kTUwUJ AzLKQ"
       >
         <button
-          className="sc-btzYZH ipjehu"
+          className="sc-dfVpRl ioythG"
           disabled={false}
           id="addUserPlusButton1"
           onClick={[Function]}
@@ -605,19 +605,19 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           }
         >
           <div
-            className="sc-cmTdod kpcHlk"
+            className="sc-dqBHgY hpRekP"
           />
         </button>
       </div>
     </div>
     <div
-      className="sc-kafWEX gltPLt"
+      className="sc-elJkPf fxifSp"
     >
       <div
-        className="sc-feJyhm ztnQX"
+        className="sc-jtRfpW dqLTLR"
       >
         <h2
-          className="sc-lhVmIH iBkPsG"
+          className="sc-gzOgki ehNPHd"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -630,7 +630,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           Dave Bowie
         </h2>
         <h3
-          className="sc-bYSBpT cNwryF"
+          className="sc-iyvyFf irQiRQ"
           style={
             Object {
               "color": Object {
@@ -646,10 +646,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         />
       </div>
       <div
-        className="sc-iELTvK cvyDkt"
+        className="sc-kTUwUJ AzLKQ"
       >
         <button
-          className="sc-btzYZH ipjehu"
+          className="sc-dfVpRl ioythG"
           disabled={false}
           id="addUserPlusButton2"
           onClick={[Function]}
@@ -671,19 +671,19 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           }
         >
           <div
-            className="sc-cmTdod kpcHlk"
+            className="sc-dqBHgY hpRekP"
           />
         </button>
       </div>
     </div>
     <div
-      className="sc-kafWEX gltPLt"
+      className="sc-elJkPf fxifSp"
     >
       <div
-        className="sc-feJyhm ztnQX"
+        className="sc-jtRfpW dqLTLR"
       >
         <h2
-          className="sc-lhVmIH iBkPsG"
+          className="sc-gzOgki ehNPHd"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -696,7 +696,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           Pellentesque a massa at purus cursus egestas. Aliquam ut vehicula. Praesent est erat, laoreet et ornare ullamcorper, finibus id nisl. Etiam tempor, ligula a sagittis
         </h2>
         <h3
-          className="sc-bYSBpT cNwryF"
+          className="sc-iyvyFf irQiRQ"
           style={
             Object {
               "color": Object {
@@ -714,10 +714,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         </h3>
       </div>
       <div
-        className="sc-iELTvK cvyDkt"
+        className="sc-kTUwUJ AzLKQ"
       >
         <button
-          className="sc-btzYZH ipjehu"
+          className="sc-dfVpRl ioythG"
           disabled={false}
           id="addUserPlusButton3"
           onClick={[Function]}
@@ -739,16 +739,16 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           }
         >
           <div
-            className="sc-cmTdod kpcHlk"
+            className="sc-dqBHgY hpRekP"
           />
         </button>
       </div>
     </div>
     <div
-      className="sc-gzVnrw bvWFXB"
+      className="sc-htoDjs iUYJOx"
     >
       <div
-        className="sc-htoDjs jntWXs"
+        className="sc-dnqmqq kiwmCb"
       >
         <button
           disabled={false}
