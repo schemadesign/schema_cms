@@ -5,7 +5,7 @@ import { withTheme } from '../../../.storybook/decorators';
 import { PlusButton } from '../navigation';
 import { ContextHeader } from './contextHeader.component';
 
-const defaultProps = {
+export const defaultProps = {
   title: 'Projects',
   subtitle: 'Overviews',
 };
