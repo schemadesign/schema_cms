@@ -223,8 +223,8 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         </button>
       </div>
     </div>
-    <div
-      className="sc-ibxdXY eNVwwZ"
+    <ul
+      className="sc-ibxdXY gBwRjo"
     />
     <div
       className="sc-htoDjs iUYJOx"
@@ -542,11 +542,11 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </button>
       </div>
     </div>
-    <div
-      className="sc-ibxdXY eNVwwZ"
+    <ul
+      className="sc-ibxdXY gBwRjo"
     >
       <li
-        className="sc-kIPQKe kBWy"
+        className="sc-kIPQKe elLhqK"
       >
         <div
           style={
@@ -730,7 +730,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </div>
       </li>
       <li
-        className="sc-kIPQKe kBWy"
+        className="sc-kIPQKe elLhqK"
       >
         <div
           style={
@@ -913,7 +913,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </div>
         </div>
       </li>
-    </div>
+    </ul>
     <div
       className="sc-htoDjs iUYJOx"
     >
@@ -1230,11 +1230,11 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         </button>
       </div>
     </div>
-    <div
-      className="sc-ibxdXY eNVwwZ"
+    <ul
+      className="sc-ibxdXY gBwRjo"
     >
       <li
-        className="sc-kIPQKe kBWy"
+        className="sc-kIPQKe elLhqK"
       >
         <div
           style={
@@ -1417,7 +1417,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           </div>
         </div>
       </li>
-    </div>
+    </ul>
     <div
       className="sc-htoDjs iUYJOx"
     >
