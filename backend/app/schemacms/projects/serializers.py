@@ -122,15 +122,17 @@ class DataSourceSerializer(serializers.ModelSerializer):
 
 class DraftDataSourceSerializer(serializers.ModelSerializer):
     meta_data = DataSourceMetaSerializer(read_only=True)
+    jobs = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = DataSource
-        fields = ("id", "name", "type", "file", "meta_data", "project")
+        fields = ("id", "name", "type", "file", "meta_data", "project", "jobs")
         extra_kwargs = {
             "name": {"required": False, "allow_null": True},
             "type": {"required": False, "allow_null": True},
             "file": {"required": False, "allow_null": True},
         }
+
         validators = []  # do not validate tuple of (name, project)
 
     def validate_project(self, project):
@@ -138,6 +140,9 @@ class DraftDataSourceSerializer(serializers.ModelSerializer):
         if not project.user_has_access(user):
             raise exceptions.PermissionDenied
         return project
+
+    def get_jobs(self, obj):
+        return []
 
 
 class ProjectOwnerSerializer(serializers.ModelSerializer):
