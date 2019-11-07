@@ -1,5 +1,6 @@
 import pytest
 
+from schemacms.config.common import Common
 from schemacms.projects import serializers
 
 
@@ -38,4 +39,5 @@ class TestDataSourceJobSerializer:
             'result': job.result,
             'error': job.error,
             'source_file_url': job.source_file_url,
+            'created': job.created.strftime(Common.REST_FRAMEWORK["DATETIME_FORMAT"]),
         }
