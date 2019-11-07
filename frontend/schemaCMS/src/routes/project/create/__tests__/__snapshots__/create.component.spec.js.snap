@@ -20,7 +20,7 @@ exports[`Create: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
-      isEdit={false}
+      isEdit={true}
       label="Title"
       name="title"
       onChange={[Function]}
@@ -45,7 +45,7 @@ exports[`Create: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
-      isEdit={false}
+      isEdit={true}
       label="Description"
       name="description"
       onChange={[Function]}
@@ -110,6 +110,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <NavigationContainer
+      hideOnDesktop={false}
       right={false}
     >
       <BackButton

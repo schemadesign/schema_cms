@@ -59,6 +59,7 @@ export class Create extends PureComponent {
             label={intl.formatMessage(messages.projectTitleLabel)}
             placeholder={intl.formatMessage(messages.projectTitlePlaceholder)}
             fullWidth
+            isEdit
             {...this.props}
           />
           <TextInput
@@ -68,6 +69,7 @@ export class Create extends PureComponent {
             placeholder={intl.formatMessage(messages.projectDescriptionPlaceholder)}
             label={intl.formatMessage(messages.projectDescriptionLabel)}
             fullWidth
+            isEdit
             {...this.props}
           />
           <TextInput

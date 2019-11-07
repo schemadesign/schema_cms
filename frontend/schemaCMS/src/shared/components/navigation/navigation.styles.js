@@ -9,6 +9,18 @@ export const Container = styled.div`
   height: 155px;
 `;
 
+export const NavigationContent = styled.div`
+  display: flex;
+  justify-content: ${ifElse(propEq('right', true), always('flex-end'), always('space-between'))};
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+
+  ${media.desktop`
+    display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'flex')};
+  `}
+`;
+
 export const Navigation = styled.div`
   position: fixed;
   padding: 40px 0 36px;
@@ -19,10 +31,6 @@ export const Navigation = styled.div`
     ${({ theme: { background } }) => `${background}, ${background} 30%`},
     rgba(0, 0, 0, 0)
   );
-  display: flex;
-  justify-content: ${ifElse(propEq('right', true), always('flex-end'), always('space-between'))};
-  flex-wrap: wrap;
-  align-items: center;
 
   ${media.desktop`
     width: ${contentSizes.desktop}px;

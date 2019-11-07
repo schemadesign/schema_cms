@@ -2,6 +2,7 @@
 
 exports[`StepNavigation: Component should render correctly 1`] = `
 <NavigationContainer
+  hideOnDesktop={false}
   right={false}
 >
   <BackButton
@@ -41,6 +42,7 @@ exports[`StepNavigation: Component should render correctly 1`] = `
 
 exports[`StepNavigation: Component should render with next step 1`] = `
 <NavigationContainer
+  hideOnDesktop={false}
   right={false}
 >
   <BackButton
@@ -80,6 +82,7 @@ exports[`StepNavigation: Component should render with next step 1`] = `
 
 exports[`StepNavigation: Component should show loading 1`] = `
 <NavigationContainer
+  hideOnDesktop={false}
   right={false}
 >
   <BackButton

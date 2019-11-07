@@ -5,17 +5,22 @@ import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
-import { List } from './list.component';
-import { DataSourceRoutines, selectFields } from '../../../modules/dataSource';
+import { Filter } from './filter.component';
+import { DataSourceRoutines, selectFieldsInfo } from '../../modules/dataSource';
+import { FilterRoutines, selectFilter } from '../../modules/filter';
 
 const mapStateToProps = createStructuredSelector({
-  fields: selectFields,
+  fieldsInfo: selectFieldsInfo,
+  filter: selectFilter,
 });
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      fetchFields: promisifyRoutine(DataSourceRoutines.fetchFields),
+      fetchFieldsInfo: promisifyRoutine(DataSourceRoutines.fetchFieldsInfo),
+      fetchFilter: promisifyRoutine(FilterRoutines.fetchFilter),
+      updateFilter: promisifyRoutine(FilterRoutines.updateFilter),
+      removeFilter: promisifyRoutine(FilterRoutines.removeFilter),
     },
     dispatch
   );
@@ -27,4 +32,4 @@ export default compose(
     mapDispatchToProps
   ),
   withRouter
-)(List);
+)(Filter);

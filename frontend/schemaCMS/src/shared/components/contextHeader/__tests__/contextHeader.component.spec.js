@@ -1,12 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { View } from '../view.component';
+import { ContextHeader } from '../contextHeader.component';
+import { defaultProps } from '../contextHeader.stories';
 
-describe('View: Component', () => {
-  const defaultProps = {};
-
-  const component = props => <View {...defaultProps} {...props} />;
+describe('ContextHeader: Component', () => {
+  const component = props => <ContextHeader {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

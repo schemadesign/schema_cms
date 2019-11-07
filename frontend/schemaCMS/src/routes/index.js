@@ -15,8 +15,8 @@ import { DataSource } from './dataSource';
 import { DataWranglingScript } from './dataWranglingScript';
 import { User } from './user';
 import { JobDetail } from './jobDetail';
-import { Preview as JobPreview } from './jobDetail/preview';
 import { Filter } from './filter';
+import { Preview as JobPreview } from './jobDetail/preview';
 
 export const ROUTES = {
   HOME: '/',
@@ -28,8 +28,8 @@ export const ROUTES = {
   DATA_SOURCE: '/datasource',
   DATA_WRANGLING_SCRIPTS: '/script',
   USER: '/user',
-  JOB_DETAIL: '/job',
   FILTER: '/filter',
+  JOB_DETAIL: '/job',
 };
 
 export default class RootContainer extends Component {
@@ -44,7 +44,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute path={ROUTES.PROJECT} component={Project} />
 
-            <AuthRoute path={ROUTES.DATA_SOURCE} component={DataSource} />
+            <AuthRoute path={`${ROUTES.DATA_SOURCE}/:dataSourceId`} component={DataSource} />
 
             <AuthRoute exact path={`${ROUTES.DATA_WRANGLING_SCRIPTS}/:scriptId`} component={DataWranglingScript} />
 
@@ -54,11 +54,11 @@ export default class RootContainer extends Component {
 
             <AuthRoute path={ROUTES.USER} component={User} />
 
+            <AuthRoute exact path={`${ROUTES.FILTER}/:filterId`} component={Filter} />
+
             <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId`} component={JobDetail} />
 
             <AuthRoute exact path={`${ROUTES.JOB_DETAIL}/:jobId/preview`} component={JobPreview} />
-
-            <AuthRoute exact path={`${ROUTES.FILTER}/:dataSourceId`} component={Filter} />
 
             <Route path={ROUTES.LOGOUT} component={Logout} />
 

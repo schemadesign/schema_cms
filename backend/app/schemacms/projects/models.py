@@ -258,9 +258,11 @@ class DataSourceMeta(MetaDataModel):
 
 
 class WranglingScript(ext_models.TimeStampedModel):
-    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='scripts', null=True)
+    datasource = models.ForeignKey(
+        DataSource, on_delete=models.CASCADE, related_name='scripts', blank=True, null=True
+    )
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="scripts", null=True
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="scripts", blank=True, null=True
     )
     name = models.CharField(max_length=constants.SCRIPT_NAME_MAX_LENGTH, blank=True)
     is_predefined = models.BooleanField(default=True)

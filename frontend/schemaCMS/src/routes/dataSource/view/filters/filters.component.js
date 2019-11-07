@@ -10,6 +10,7 @@ import { StepNavigation } from '../../../../shared/components/stepNavigation';
 import messages from './filters.messages';
 import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
 import { Loader } from '../../../../shared/components/loader';
+import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
@@ -23,6 +24,9 @@ export class Filters extends PureComponent {
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
       }).isRequired,
+    }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
     }).isRequired,
   };
 
@@ -55,6 +59,11 @@ export class Filters extends PureComponent {
     this.props.setFilters({ dataSourceId, active, inactive });
   };
 
+  handleCreateFilter = () => {
+    const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
+    this.props.history.push(`/datasource/${dataSourceId}/${FILTERS_STEP}/add`);
+  };
+
   renderCheckboxes = ({ id, name }, index) => (
     <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index} isEdit>
       <Link to={`/filter/${id}`}>{name}</Link>
@@ -69,7 +78,7 @@ export class Filters extends PureComponent {
       <Fragment>
         <Header>
           <ButtonContainer>
-            <PlusButton>
+            <PlusButton onClick={this.handleCreateFilter}>
               <PlusIcon />
             </PlusButton>
           </ButtonContainer>

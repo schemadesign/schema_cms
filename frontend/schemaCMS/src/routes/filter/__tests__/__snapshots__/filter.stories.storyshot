@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Filter Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-ktHwxA bwPBzM"
+  >
+    <div
+      className="sc-VigVT igYVnG"
+    >
+      <span>
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;

@@ -19,6 +19,7 @@ exports[`AddUser: Component should render correctly 1`] = `
     }
   />
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton
@@ -202,6 +203,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
     </styled.div>
   </styled.div>
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton

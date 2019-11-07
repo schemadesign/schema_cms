@@ -7,3 +7,8 @@ export const selectFilters = createSelector(
   selectFilterDomain,
   prop('filters')
 );
+
+export const selectFilter = createSelector(
+  selectFilterDomain,
+  prop('filter')
+);

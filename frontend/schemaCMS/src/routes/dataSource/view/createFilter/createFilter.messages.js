@@ -2,8 +2,8 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  noFields: {
-    id: 'filter.list.noFields',
-    defaultMessage: 'No fields found.',
+  subTitle: {
+    id: 'dataSource.view.filter.subTitle',
+    defaultMessage: 'Create Filter',
   },
 });

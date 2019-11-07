@@ -23,7 +23,7 @@ const longProps = {
   headerSubtitle: longText,
 };
 
-storiesOf('Shared Components|TopHeader', module)
+storiesOf('Shared Components|Header/TopHeader', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <TopHeader {...defaultProps} />)

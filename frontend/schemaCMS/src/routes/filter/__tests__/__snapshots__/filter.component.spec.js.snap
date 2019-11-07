@@ -1,16 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Filter: Component should render correctly 1`] = `
-<Switch>
-  <Route
-    component={[Function]}
-    exact={true}
-    path="some/path"
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit Filter"
+        id="filter.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle="name"
   />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="some/path/:fieldName"
+  <FilterForm
+    fieldsInfo={
+      Object {
+        "field": Object {
+          "fieldType": "fieldType",
+          "filterType": Array [
+            "filterType",
+          ],
+          "unique": "unique",
+        },
+      }
+    }
+    filter={
+      Object {
+        "datasource": Object {
+          "name": "name",
+        },
+      }
+    }
+    removeFilter={[Function]}
+    updateFilter={[Function]}
   />
-</Switch>
+</styled.div>
+`;
+
+exports[`Filter: Component should render correctly with loader 1`] = `
+<styled.div>
+  <Loader />
+</styled.div>
 `;

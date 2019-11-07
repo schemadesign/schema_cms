@@ -1,7 +1,13 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectJobDomain, selectJob, selectJobPreview, selectJobList, selectIsAnyJobSuccessful } from '../job.selectors';
+import {
+  selectJobDomain,
+  selectJob,
+  selectJobPreview,
+  selectJobList,
+  selectIsAnyJobSuccessful,
+} from '../job.selectors';
 import { JOB_STATE_FAILURE, JOB_STATE_SUCCESS } from '../job.constants';
 
 describe('Job: selectors', () => {
@@ -12,7 +18,6 @@ describe('Job: selectors', () => {
       },
       jobPreview: {},
       jobList: [],
-
     },
   });
 

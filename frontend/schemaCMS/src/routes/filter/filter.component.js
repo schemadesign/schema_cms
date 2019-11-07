@@ -1,28 +1,67 @@
-import React, { PureComponent } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { always, path } from 'ramda';
+import { FormattedMessage } from 'react-intl';
 
-import { List } from './list';
-import { View } from './view';
+import { Container } from './filter.styles';
+import messages from './filter.messages';
+import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
+import { Loader } from '../../shared/components/loader';
+import { FilterForm } from '../../shared/components/filterForm';
+import { TopHeader } from '../../shared/components/topHeader';
 
 export class Filter extends PureComponent {
   static propTypes = {
+    updateFilter: PropTypes.func.isRequired,
+    fetchFieldsInfo: PropTypes.func.isRequired,
+    fieldsInfo: PropTypes.object.isRequired,
+    fetchFilter: PropTypes.func.isRequired,
+    removeFilter: PropTypes.func.isRequired,
+    filter: PropTypes.object.isRequired,
     match: PropTypes.shape({
-      path: PropTypes.string.isRequired,
+      params: PropTypes.shape({
+        filterId: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
     }).isRequired,
   };
 
-  render() {
-    const {
-      match: { path },
-    } = this.props;
+  state = {
+    loading: true,
+  };
 
-    const viewOnePath = `${path}/:fieldName`;
-    return (
-      <Switch>
-        <Route exact path={path} component={List} />
-        <Route exact path={viewOnePath} component={View} />
-      </Switch>
-    );
+  async componentDidMount() {
+    try {
+      const filterId = path(['match', 'params', 'filterId'], this.props);
+      const data = await this.props.fetchFilter({ filterId });
+      await this.props.fetchFieldsInfo({ dataSourceId: data.datasource.id });
+
+      this.setState({ loading: false });
+    } catch (e) {
+      this.props.history.push('/');
+    }
+  }
+
+  getHeaderAndMenuConfig = () => ({
+    headerTitle: this.props.filter.datasource.name,
+    headerSubtitle: <FormattedMessage {...messages.subTitle} />,
+  });
+
+  renderContent = renderWhenTrueOtherwise(always(<Loader />), () => (
+    <Fragment>
+      <TopHeader {...this.getHeaderAndMenuConfig()} />
+      <FilterForm
+        fieldsInfo={this.props.fieldsInfo}
+        updateFilter={this.props.updateFilter}
+        filter={this.props.filter}
+        removeFilter={this.props.removeFilter}
+      />
+    </Fragment>
+  ));
+
+  render() {
+    return <Container>{this.renderContent(this.state.loading)}</Container>;
   }
 }

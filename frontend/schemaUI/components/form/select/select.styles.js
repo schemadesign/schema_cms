@@ -7,7 +7,6 @@ export const getStyles = (theme = defaultTheme) => ({
   containerStyles: {
     display: 'flex',
     width: '100%',
-    border: `1px solid ${theme.select.border}`,
     color: theme.text,
   },
   getSelectStyle: (hidden = false) => ({
@@ -16,7 +15,6 @@ export const getStyles = (theme = defaultTheme) => ({
   selectWrapperStyles: {
     display: 'flex',
     position: 'relative',
-    padding: `${PADDING}px`,
     width: '100%',
     cursor: 'pointer',
   },
@@ -47,6 +45,7 @@ export const getStyles = (theme = defaultTheme) => ({
     width: '100%',
     top: `${ITEM_HEIGHT + PADDING * 2 + 2}px`,
     left: '0',
+    zIndex: 2,
     backgroundColor: theme.select.background,
   }),
 });
