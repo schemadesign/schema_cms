@@ -47,7 +47,11 @@ exports[`View: Component should render correctly 1`] = `
                 "cursor": "pointer",
               }
             }
-            headerComponent="Data Sources"
+            headerComponent={
+              <ForwardRef(styled.span)>
+                Data Sources
+              </ForwardRef(styled.span)>
+            }
             id="projectDataSources"
             onClick={[Function]}
           >
@@ -67,7 +71,11 @@ exports[`View: Component should render correctly 1`] = `
                 "cursor": "pointer",
               }
             }
-            headerComponent="Users"
+            headerComponent={
+              <ForwardRef(styled.span)>
+                Users
+              </ForwardRef(styled.span)>
+            }
             id="projectUsers"
             onClick={[Function]}
           >
@@ -222,6 +230,7 @@ exports[`View: Component should render correctly 1`] = `
     </styled.div>
   </div>
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackArrowButton

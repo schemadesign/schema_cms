@@ -110,6 +110,7 @@ exports[`Create: Component should render correctly 1`] = `
       }
     />
     <NavigationContainer
+      hideOnDesktop={false}
       right={false}
     >
       <BackButton

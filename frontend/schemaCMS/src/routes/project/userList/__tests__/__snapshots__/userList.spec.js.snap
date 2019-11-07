@@ -24,6 +24,7 @@ exports[`UserList: Component should render correctly 1`] = `
     users={Array []}
   />
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton
@@ -158,6 +159,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
     }
   />
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton

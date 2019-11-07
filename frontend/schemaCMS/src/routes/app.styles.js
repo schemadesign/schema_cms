@@ -10,6 +10,6 @@ export const Content = styled.div`
   ${media.desktop`
     width: ${contentSizes.desktop}px;
     margin: 0 auto;
-    padding: 30px 0 24px 0;
+    padding: 0 0 24px 0;
   `}
 `;

@@ -20,6 +20,7 @@ exports[`JobList: Component should render correctly 1`] = `
   />
   <Loader />
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton
@@ -122,6 +123,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
     </styled.div>
   </styled.div>
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton
@@ -171,6 +173,7 @@ exports[`JobList: Component should render correctly with no data 1`] = `
   />
   <NoData />
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton

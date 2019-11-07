@@ -2,10 +2,10 @@
 
 exports[`Storyshots Settings Default 1`] = `
 <div
-  className="sc-fOKMvo cxpccT"
+  className="sc-dymIpo kdtjOQ"
 >
   <div
-    className="sc-htoDjs cMdrZw"
+    className="sc-dnqmqq jTyMZw"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots Settings Default 1`] = `
     >
       <div>
         <div
-          className="sc-dnqmqq bDsesi"
+          className="sc-iwsKbI jQhHGA"
         >
           <h2
             id="headerTitle"
@@ -120,10 +120,10 @@ exports[`Storyshots Settings Default 1`] = `
       }
     >
       <div
-        className="sc-iwsKbI jQhHGA"
+        className="sc-gZMcBi giNnHm"
       >
         <div
-          className="sc-dnqmqq bDsesi"
+          className="sc-iwsKbI jQhHGA"
         >
           <h2
             id="headerTitle"
@@ -160,16 +160,16 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-gZMcBi jZtVvP"
+        className="sc-gqjmRU kteaYt"
       >
         <ul
-          className="sc-gqjmRU sc-VigVT gpssju"
+          className="sc-VigVT sc-jTzLTM jjONle"
         />
         <ul
-          className="sc-gqjmRU sc-jTzLTM eurXdS"
+          className="sc-VigVT sc-fjdhpX dhPcNY"
         >
           <li
-            className="sc-fjdhpX sc-cSHVUG dUoQlZ"
+            className="sc-jzJRlG sc-kAzzGY gPKpBA"
           >
             <a
               href="/reset-password"
@@ -182,7 +182,7 @@ exports[`Storyshots Settings Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-fjdhpX sc-cSHVUG dUoQlZ"
+            className="sc-jzJRlG sc-kAzzGY gPKpBA"
           >
             <a
               href="/logout"
@@ -239,14 +239,14 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-krvtoX fMwaVV"
+    className="sc-emmjRN bTNvq"
   >
     <form
-      className="sc-fYiAbW isVHhR"
+      className="sc-cpmLhU dpVsHD"
       onSubmit={[Function]}
     >
       <div
-        className="sc-jAaTju fNCBho"
+        className="sc-jDwBTQ dWtMUn"
       >
         <div
           style={
@@ -306,7 +306,7 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-jAaTju fNCBho"
+        className="sc-jDwBTQ dWtMUn"
       >
         <div
           style={
@@ -366,7 +366,7 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-jAaTju fNCBho"
+        className="sc-jDwBTQ dWtMUn"
       >
         <div
           style={
@@ -430,32 +430,36 @@ exports[`Storyshots Settings Default 1`] = `
         className="sc-bZQynM ceQpbG"
       >
         <div
-          className="sc-gzVnrw jHwnna"
+          className="sc-htoDjs dtmwjU"
         >
-          <button
-            disabled={true}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginLeft": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
-              }
-            }
-            type="submit"
+          <div
+            className="sc-gzVnrw NJhNt"
           >
-            Save
-          </button>
+            <button
+              disabled={true}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#71737e",
+                  "cursor": "default",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "marginLeft": 5,
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "width": "calc(50% - 5px)",
+                }
+              }
+              type="submit"
+            >
+              Save
+            </button>
+          </div>
         </div>
       </div>
     </form>

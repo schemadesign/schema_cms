@@ -7,6 +7,7 @@ import { Card, Typography } from 'schemaUI';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import { TopHeader } from '../../../shared/components/topHeader';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 import { Empty } from '../project.styles';
 import messages from './list.messages';
 import {
@@ -41,9 +42,9 @@ export class List extends PureComponent {
     this.setState({ loading: false });
   }
 
-  getHeaderAndMenuConfig = () => ({
-    headerTitle: this.formatMessage(messages.title),
-    headerSubtitle: this.formatMessage(messages.overview),
+  getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => ({
+    headerTitle,
+    headerSubtitle,
     secondaryMenuItems: [
       { label: this.formatMessage(messages.users), to: '/user', id: 'userBtn' },
       { label: this.formatMessage(messages.logOut), to: '/logout', id: 'logoutBtn' },
@@ -110,14 +111,21 @@ export class List extends PureComponent {
   render() {
     const { list = [] } = this.props;
     const { loading } = this.state;
-    const topHeaderConfig = this.getHeaderAndMenuConfig();
+
+    const title = this.formatMessage(messages.title);
+    const subtitle = this.formatMessage(messages.overview);
+
+    const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...topHeaderConfig} />
+        <ContextHeader title={title} subtitle={subtitle}>
+          <PlusButton id="addProjectBtnDesktop" onClick={this.handleNewProject} />
+        </ContextHeader>
         {this.renderContent({ list, loading })}
-        <NavigationContainer right>
+        <NavigationContainer right hideOnDesktop>
           <PlusButton id="addProjectBtn" onClick={this.handleNewProject} />
         </NavigationContainer>
       </Container>

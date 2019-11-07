@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import { Button, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
-import { backButtonStyles, buttonIconStyles, Container, Navigation, nextButtonStyles } from './navigation.styles';
+import {
+  backButtonStyles,
+  buttonIconStyles,
+  Container,
+  Navigation,
+  NavigationContent,
+  nextButtonStyles,
+} from './navigation.styles';
 import messages from './navigation.messages';
 
 const { PlusIcon, ArrowLeftIcon } = Icons;
@@ -12,16 +19,22 @@ export class NavigationContainer extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
     right: PropTypes.bool,
+    hideOnDesktop: PropTypes.bool,
   };
 
   static defaultProps = {
     right: false,
+    hideOnDesktop: false,
   };
 
   render() {
     return (
       <Container>
-        <Navigation right={this.props.right}>{this.props.children}</Navigation>
+        <Navigation>
+          <NavigationContent right={this.props.right} hideOnDesktop={this.props.hideOnDesktop}>
+            {this.props.children}
+          </NavigationContent>
+        </Navigation>
       </Container>
     );
   }

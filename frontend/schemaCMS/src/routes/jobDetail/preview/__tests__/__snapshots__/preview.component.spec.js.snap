@@ -82,6 +82,7 @@ exports[`Preview: Component should render correctly 1`] = `
     }
   />
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton
@@ -112,6 +113,7 @@ exports[`Preview: Component should render correctly with loader 1`] = `
   />
   <Loader />
   <NavigationContainer
+    hideOnDesktop={false}
     right={false}
   >
     <BackButton

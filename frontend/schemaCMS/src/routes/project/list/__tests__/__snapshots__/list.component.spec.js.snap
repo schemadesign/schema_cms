@@ -25,6 +25,15 @@ exports[`List: Component should render correctly 1`] = `
       ]
     }
   />
+  <ContextHeader
+    subtitle="Overview"
+    title="Projects"
+  >
+    <PlusButton
+      id="addProjectBtnDesktop"
+      onClick={[Function]}
+    />
+  </ContextHeader>
   <styled.ul>
     <styled.li
       key="0"
@@ -150,6 +159,7 @@ exports[`List: Component should render correctly 1`] = `
     </styled.li>
   </styled.ul>
   <NavigationContainer
+    hideOnDesktop={true}
     right={true}
   >
     <PlusButton
@@ -185,8 +195,18 @@ exports[`List: Component should render correctly with loading 1`] = `
       ]
     }
   />
+  <ContextHeader
+    subtitle="Overview"
+    title="Projects"
+  >
+    <PlusButton
+      id="addProjectBtnDesktop"
+      onClick={[Function]}
+    />
+  </ContextHeader>
   <Loader />
   <NavigationContainer
+    hideOnDesktop={true}
     right={true}
   >
     <PlusButton
@@ -222,6 +242,15 @@ exports[`List: Component should render without data 1`] = `
       ]
     }
   />
+  <ContextHeader
+    subtitle="Overview"
+    title="Projects"
+  >
+    <PlusButton
+      id="addProjectBtnDesktop"
+      onClick={[Function]}
+    />
+  </ContextHeader>
   <styled.div>
     <P>
       No Projects
@@ -229,6 +258,7 @@ exports[`List: Component should render without data 1`] = `
     </P>
   </styled.div>
   <NavigationContainer
+    hideOnDesktop={true}
     right={true}
   >
     <PlusButton

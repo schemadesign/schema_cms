@@ -471,6 +471,7 @@ exports[`UserProfile: Component should render correctly form 1`] = `
         value="editor"
       />
       <NavigationContainer
+        hideOnDesktop={false}
         right={true}
       >
         <BackButton
@@ -771,6 +772,7 @@ exports[`UserProfile: Component should render correctly form for user settings 1
         value=""
       />
       <NavigationContainer
+        hideOnDesktop={false}
         right={true}
       >
         <NextButton

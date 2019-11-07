@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
   }
 >
   <div
-    className="sc-jAaTju fNCBho"
+    className="sc-jDwBTQ dWtMUn"
   >
     <div
       style={
@@ -81,7 +81,7 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
   }
 >
   <div
-    className="sc-jAaTju fNCBho"
+    className="sc-jDwBTQ dWtMUn"
   >
     <div
       style={
@@ -138,7 +138,7 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
         }
       >
         <div
-          className="sc-jDwBTQ bPsHfM"
+          className="sc-gPEVay etuHgd"
         >
           <svg
             style={
@@ -172,7 +172,7 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
   }
 >
   <div
-    className="sc-jAaTju fNCBho"
+    className="sc-jDwBTQ dWtMUn"
   >
     <div
       style={
@@ -230,7 +230,7 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
       />
     </div>
     <div
-      className="sc-gPEVay hyGzbS"
+      className="sc-iRbamj euEfKY"
     >
       error
     </div>

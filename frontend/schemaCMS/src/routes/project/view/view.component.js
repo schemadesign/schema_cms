@@ -15,6 +15,7 @@ import messages from './view.messages';
 import {
   Container,
   CardWrapper,
+  CardHeader,
   CardValue,
   ProjectView,
   Details,
@@ -105,6 +106,8 @@ export class View extends PureComponent {
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
+  renderStatisticHeader = text => <CardHeader>{this.formatMessage(text)}</CardHeader>;
+
   renderStatistic = ({ header, value, to, id }, index) => (
     <CardWrapper key={index}>
       <Card id={id} headerComponent={header} onClick={this.handleGoTo(to)} customStyles={statisticsCardStyles}>
@@ -128,15 +131,15 @@ export class View extends PureComponent {
   renderProject = ({ id: projectId, editors, owner, slug, created, charts, pages, meta, status } = {}) => {
     const statistics = [
       {
-        header: this.formatMessage(messages.dataSources),
+        header: this.renderStatisticHeader(messages.dataSources),
         value: path(['dataSources', 'count'], meta),
         to: `/project/${projectId}/datasource`,
         id: 'projectDataSources',
       },
-      { header: this.formatMessage(messages.charts), value: this.countItems(charts) },
-      { header: this.formatMessage(messages.pages), value: this.countItems(pages) },
+      { header: this.renderStatisticHeader(messages.charts), value: this.countItems(charts) },
+      { header: this.renderStatisticHeader(messages.pages), value: this.countItems(pages) },
       {
-        header: this.formatMessage(messages.users),
+        header: this.renderStatisticHeader(messages.users),
         value: this.countItems(editors),
         to: `/project/${projectId}/user`,
         id: 'projectUsers',
