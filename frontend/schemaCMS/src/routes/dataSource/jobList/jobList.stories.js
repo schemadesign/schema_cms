@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { JobList } from './jobList.component';
 import { JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
+import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   fetchJobList: Function.prototype,
@@ -27,4 +28,6 @@ export const propsWithJobs = {
   ],
 };
 
-storiesOf('JobList', module).add('Default', () => <JobList {...defaultProps} />);
+storiesOf('JobList', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <JobList {...defaultProps} />);

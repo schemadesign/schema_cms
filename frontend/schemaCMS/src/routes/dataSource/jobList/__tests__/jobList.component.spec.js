@@ -16,6 +16,18 @@ describe('JobList: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render correctly with no data', async () => {
+    const fetchJobList = () => Promise.resolve();
+    const wrapper = await render({ fetchJobList });
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly with list of jobs', async () => {
+    const fetchJobList = () => Promise.resolve();
+    const wrapper = await render({ ...propsWithJobs, fetchJobList });
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
   it('should call fetchJobList on componentDidMount', () => {
     const fetchJobList = spy();
     render({ fetchJobList });

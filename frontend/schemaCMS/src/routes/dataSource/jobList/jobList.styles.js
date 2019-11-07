@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from '../../../theme/styled';
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -16,9 +15,9 @@ export const JobItemWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${colors.white};
+  color: ${({ theme }) => theme.colors.white};
   width: 100%;
-  border-top: 1px solid ${colors.grey};
+  border-top: 1px solid ${({ theme }) => theme.colors.grey};
   padding: 10px 0;
 `;
 
@@ -33,7 +32,7 @@ export const Dot = styled.div`
   height: 7px;
   border-radius: 50%;
   margin: 10px;
-  background-color: ${colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 export const RadioInput = styled.input`
