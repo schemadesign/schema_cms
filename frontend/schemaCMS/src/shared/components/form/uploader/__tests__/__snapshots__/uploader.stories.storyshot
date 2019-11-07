@@ -211,11 +211,6 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
               "active": "#FFF",
               "background": "#1d1d20",
             },
-            "tab": Object {
-              "active": "#FFF",
-              "hover": "#FFF",
-              "normal": "#2F2F36",
-            },
             "table": Object {
               "background": Object {
                 "body": "#000",
@@ -486,11 +481,6 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
             "stepper": Object {
               "active": "#FFF",
               "background": "#1d1d20",
-            },
-            "tab": Object {
-              "active": "#FFF",
-              "hover": "#FFF",
-              "normal": "#2F2F36",
             },
             "table": Object {
               "background": Object {
