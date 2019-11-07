@@ -19,7 +19,20 @@ exports[`DataSourceList: Component should render card with job 1`] = `
       ]
     }
   />
-  <styled.ul>
+  <ProjectTabs
+    active="sources"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle="Overview"
+    title="Data Sources"
+  >
+    <PlusButton
+      id="createDataSourceDesktopBtn"
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <styled.div>
     <styled.li
       key="0"
     >
@@ -131,9 +144,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
         </styled.div>
       </Component>
     </styled.li>
-  </styled.ul>
+  </styled.div>
   <NavigationContainer
-    hideOnDesktop={false}
+    hideOnDesktop={true}
     right={false}
   >
     <BackArrowButton
@@ -167,7 +180,20 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       ]
     }
   />
-  <styled.ul>
+  <ProjectTabs
+    active="sources"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle="Overview"
+    title="Data Sources"
+  >
+    <PlusButton
+      id="createDataSourceDesktopBtn"
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <styled.div>
     <styled.li
       key="0"
     >
@@ -390,9 +416,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         </styled.div>
       </Component>
     </styled.li>
-  </styled.ul>
+  </styled.div>
   <NavigationContainer
-    hideOnDesktop={false}
+    hideOnDesktop={true}
     right={false}
   >
     <BackArrowButton
@@ -426,9 +452,22 @@ exports[`DataSourceList: Component should render empty 1`] = `
       ]
     }
   />
-  <styled.ul />
+  <ProjectTabs
+    active="sources"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle="Overview"
+    title="Data Sources"
+  >
+    <PlusButton
+      id="createDataSourceDesktopBtn"
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <styled.div />
   <NavigationContainer
-    hideOnDesktop={false}
+    hideOnDesktop={true}
     right={false}
   >
     <BackArrowButton

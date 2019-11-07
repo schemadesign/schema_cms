@@ -102,6 +102,11 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
             "header": "#a6a7aa",
           },
         },
+        "tabs": Object {
+          "active": "#000",
+          "hover": "#000",
+          "normal": "#f0efef",
+        },
         "text": "#1d1d20",
         "textArea": Object {
           "text": "#000",
