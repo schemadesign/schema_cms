@@ -263,7 +263,7 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
 
         return response.Response(result, status=status.HTTP_200_OK)
 
-    @decorators.action(detail=True, url_path="update-meta", methods=["post"])
+    @decorators.action(detail=True, permission_classes=[], url_path="update-meta", methods=["post"])
     def update_meta(self, request, pk=None, **kwarg):
         job = self.get_object()
         try:
