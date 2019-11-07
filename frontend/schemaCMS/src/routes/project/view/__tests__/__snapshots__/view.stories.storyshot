@@ -258,10 +258,10 @@ exports[`Storyshots Project/View default 1`] = `
         className="sc-exAgwC efVISg"
       >
         <ul
-          className="sc-cbkKFq dViEUy"
+          className="sc-cbkKFq chSIso"
         >
           <li
-            className="sc-krvtoX jwfKDh"
+            className="sc-krvtoX bwQqbI"
           >
             <div
               id="projectDataSources"
@@ -303,7 +303,7 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-krvtoX jwfKDh"
+            className="sc-krvtoX bwQqbI"
           >
             <div
               id="projectUsers"
@@ -346,10 +346,10 @@ exports[`Storyshots Project/View default 1`] = `
           </li>
         </ul>
         <ul
-          className="sc-cQFLBn gJCoIT"
+          className="sc-cQFLBn kHCUZA"
         >
           <li
-            className="sc-gojNiO dNcxKS"
+            className="sc-gojNiO jaammy"
           >
             <div
               className="sc-daURTG driTSU"
@@ -390,7 +390,7 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-gojNiO dNcxKS"
+            className="sc-gojNiO jaammy"
           >
             <div
               className="sc-daURTG driTSU"
@@ -431,7 +431,7 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-gojNiO dNcxKS"
+            className="sc-gojNiO jaammy"
           >
             <div
               className="sc-daURTG driTSU"
@@ -472,7 +472,7 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-gojNiO dNcxKS"
+            className="sc-gojNiO jaammy"
           >
             <div
               className="sc-daURTG driTSU"
@@ -513,7 +513,7 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-gojNiO dNcxKS"
+            className="sc-gojNiO jaammy"
           >
             <div
               className="sc-daURTG driTSU"
@@ -554,7 +554,7 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-gojNiO dNcxKS"
+            className="sc-gojNiO jaammy"
           >
             <div
               className="sc-daURTG driTSU"
