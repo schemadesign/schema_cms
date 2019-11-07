@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withRouter, withTheme } from '../../../.storybook/decorators';
 import { Tabs } from './tabs.component';
 
-const defaultProps = {
+export const defaultProps = {
   tabs: [
     { to: '/', content: 'Tab 1' },
     { to: '/', content: 'Tab 2', active: true },

@@ -5,7 +5,7 @@ import { withRouter, withTheme } from '../../../.storybook/decorators';
 import { ProjectTabs } from './projectTabs.component';
 import { SETTINGS } from './projectTabs.constants';
 
-const defaultProps = {
+export const defaultProps = {
   active: SETTINGS,
   url: '/project/1',
 };

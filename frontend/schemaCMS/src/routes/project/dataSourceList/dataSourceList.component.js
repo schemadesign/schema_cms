@@ -20,7 +20,6 @@ import {
   MetaDataName,
   MetaDataValue,
   MetaDataWrapper,
-  backButtonStyles,
 } from './dataSourceList.styles';
 import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -145,7 +144,7 @@ export class DataSourceList extends PureComponent {
   };
 
   render() {
-    const { dataSources = [] } = this.props;
+    const { dataSources = [], match } = this.props;
     const title = this.props.intl.formatMessage(messages.title);
     const subtitle = this.props.intl.formatMessage(messages.subTitle);
     const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
@@ -154,10 +153,9 @@ export class DataSourceList extends PureComponent {
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
         <TopHeader {...topHeaderConfig} />
-        <ProjectTabs active={SOURCES} url={`/project`} />
+        <ProjectTabs active={SOURCES} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={title} subtitle={subtitle}>
-          <BackArrowButton id="backBtn" onClick={this.handleShowProject} customStyles={backButtonStyles} />
-          <PlusButton id="createDataSourceBtn" onClick={this.handleCreateDataSource} />
+          <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />
         </ContextHeader>
         <DataSourceListWrapper>{dataSources.map(this.renderItem)}</DataSourceListWrapper>
 
