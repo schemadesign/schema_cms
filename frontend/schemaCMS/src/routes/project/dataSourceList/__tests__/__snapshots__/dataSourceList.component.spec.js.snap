@@ -19,7 +19,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
       ]
     }
   />
-  <styled.div>
+  <styled.ul>
     <styled.li
       key="0"
     >
@@ -131,7 +131,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
         </styled.div>
       </Component>
     </styled.li>
-  </styled.div>
+  </styled.ul>
   <NavigationContainer
     right={false}
   >
@@ -166,7 +166,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       ]
     }
   />
-  <styled.div>
+  <styled.ul>
     <styled.li
       key="0"
     >
@@ -389,7 +389,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         </styled.div>
       </Component>
     </styled.li>
-  </styled.div>
+  </styled.ul>
   <NavigationContainer
     right={false}
   >
@@ -424,7 +424,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
       ]
     }
   />
-  <styled.div />
+  <styled.ul />
   <NavigationContainer
     right={false}
   >
