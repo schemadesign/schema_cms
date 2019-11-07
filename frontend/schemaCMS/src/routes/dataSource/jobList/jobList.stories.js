@@ -9,7 +9,7 @@ export const defaultProps = {
   fetchJobList: Function.prototype,
   revertToJob: Function.prototype,
   jobList: [],
-  isAnyJobSuccessful: false,
+  dataSource: { jobActive: 1 },
   history: {
     push: Function.prototype,
   },

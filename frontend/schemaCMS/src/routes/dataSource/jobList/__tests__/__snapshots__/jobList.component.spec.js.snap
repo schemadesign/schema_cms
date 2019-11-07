@@ -74,6 +74,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
     >
       <styled.div>
         <styled.input
+          defaultChecked={false}
           name="job_list"
           onChange={[Function]}
           type="radio"
@@ -100,6 +101,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
     >
       <styled.div>
         <styled.input
+          defaultChecked={false}
           name="job_list"
           onChange={[Function]}
           type="radio"

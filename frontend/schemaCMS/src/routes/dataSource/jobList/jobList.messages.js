@@ -24,6 +24,10 @@ export default defineMessages({
     id: 'dataSource.jobList.revert',
     defaultMessage: 'Revert',
   },
+  active: {
+    id: 'dataSource.jobList.active',
+    defaultMessage: ' (Active)',
+  },
   [JOB_STATE_SUCCESS]: {
     id: 'dataSource.jobList.success',
     defaultMessage: 'Success',

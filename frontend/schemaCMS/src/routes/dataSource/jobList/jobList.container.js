@@ -7,12 +7,12 @@ import { compose } from 'ramda';
 import { withTheme } from 'styled-components';
 
 import { JobList } from './jobList.component';
-import { JobRoutines, selectJobList, selectIsAnyJobSuccessful } from '../../../modules/job';
-import { DataSourceRoutines } from '../../../modules/dataSource';
+import { JobRoutines, selectJobList } from '../../../modules/job';
+import { DataSourceRoutines, selectDataSource } from '../../../modules/dataSource';
 
 const mapStateToProps = createStructuredSelector({
   jobList: selectJobList,
-  isAnyJobSuccessful: selectIsAnyJobSuccessful,
+  dataSource: selectDataSource,
 });
 
 export const mapDispatchToProps = dispatch =>
