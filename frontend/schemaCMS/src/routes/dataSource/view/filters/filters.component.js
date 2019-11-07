@@ -54,7 +54,9 @@ export class Filters extends PureComponent {
 
   handleSubmit = active => {
     const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
-    const inactive = this.props.filters.filter(({ id }) => !active.includes(id)).map(({ id }) => id);
+    const inactive = this.props.filters
+      .filter(({ id }) => !active.includes(id.toString()))
+      .map(({ id }) => id.toString());
 
     this.props.setFilters({ dataSourceId, active, inactive });
   };
@@ -87,11 +89,7 @@ export class Filters extends PureComponent {
           </FilterCounter>
         </Header>
         <Formik initialValues={initialValues} onSubmit={this.handleSubmit}>
-          {({ values, setValues, submitForm }) => {
-            if (!values.length) {
-              submitForm = null;
-            }
-
+          {({ values, setValues }) => {
             return (
               <Fragment>
                 <CheckboxGroup
@@ -102,7 +100,7 @@ export class Filters extends PureComponent {
                 >
                   {filters.map(this.renderCheckboxes)}
                 </CheckboxGroup>
-                <StepNavigation submitForm={submitForm} {...this.props} />
+                <StepNavigation {...this.props} />
               </Fragment>
             );
           }}
