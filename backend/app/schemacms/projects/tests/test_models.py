@@ -99,6 +99,14 @@ class TestDataSource:
         assert job.source_file_path == ds.file.name
         assert job.source_file_version == ds.source_file_latest_version
 
+    def test_meta_file_serialization(self, data_source_factory, job_factory, job_step_factory):
+        ds = data_source_factory()
+        job = job_factory(datasource=ds)
+        steps = job_step_factory.create_batch(2, datasource_job=job)
+
+        breakpoint()
+        ret = ds.meta_file_serialization()
+
 
 class TestDataSourceMeta:
     @pytest.mark.parametrize("offset, whence", [(0, 0), (0, 2)])  # test different file cursor positions

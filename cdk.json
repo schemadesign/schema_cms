@@ -14,6 +14,7 @@
         "django_webapp_host_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_WEBAPP_HOST-7quemN",
         "sentry_dns_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:SENTRY_DNS-uk9pQw",
         "django_default_from_email_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_DEFAULT_FROM_EMAIL-SpZkTz",
-        "django_host_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_HOST-DDD8rn"
+        "django_host_arn": "arn:aws:secretsmanager:us-west-2:022528540894:secret:DJANGO_HOST-DDD8rn",
+        "lambda_auth_token": "arn:aws:secretsmanager:us-west-2:022528540894:secret:LAMBDA_AUTH_TOKEN-32yZOF"
     }
 }

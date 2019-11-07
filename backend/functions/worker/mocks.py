@@ -1,14 +1,16 @@
-import json
 import sys
 
 
-def get_simple_mock_event(job_pk):
+def get_simple_mock_event():
+    filename = sys.argv[1]
+    with open(filename, "r") as f:
+        body = f.read()
     return {
         "Records": [
             {
                 "messageId": "059f36b4-87a3-44ab-83d2-661975830a7d",
                 "receiptHandle": "AQEBwJnKyrHigUMZj6rYigCgxlaS3SLy0a...",
-                "body": json.dumps({'job_pk': sys.argv[1]}),
+                "body": body,
                 "attributes": {
                     "ApproximateReceiveCount": "1",
                     "SentTimestamp": "1545082649183",
@@ -26,4 +28,4 @@ def get_simple_mock_event(job_pk):
 
 
 if __name__ == "__main__":
-    print(get_simple_mock_event(sys.argv[1]))
+    print(get_simple_mock_event())

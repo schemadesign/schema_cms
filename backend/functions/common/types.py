@@ -58,11 +58,13 @@ class Step(LoaderMixin):
 
 
 @dataclasses.dataclass()
-class Job(LoaderMixin, FetchMetaFileMixin):
+class Job(LoaderMixin):
     id: int
     datasource: DataSource
-    result: str
-    steps: typing.List[Step]
+    source_file_path = ""
+    source_file_version = None
+    result: str = ""
+    steps: typing.List[Step] = dataclasses.field(default_factory=list)
 
     @classmethod
     def from_json(cls, data: dict):
@@ -72,7 +74,3 @@ class Job(LoaderMixin, FetchMetaFileMixin):
             key=operator.itemgetter("exec_order")
         )
         return super().from_json(data)
-
-    @classmethod
-    def get_meta_file_path(cls, id):
-        return f"{id}/meta.json"

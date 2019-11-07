@@ -10,6 +10,11 @@ from schemacms.utils import admin as utils_admin
 admin.site.register(models.WranglingScript)
 
 
+def update_meta_file(modeladmin, request, queryset):
+    for obj in queryset.iterator():
+        obj.create_meta_file()
+
+
 @admin.register(models.Project)
 class Project(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("title", "owner", "status", "get_editors", "deleted_at")
@@ -34,6 +39,7 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
 
 @admin.register(models.DataSource)
 class DataSource(utils_admin.SoftDeleteObjectAdmin):
+    actions = (update_meta_file,)
     list_display = ("name", "deleted_at")
 
     @transaction.atomic()

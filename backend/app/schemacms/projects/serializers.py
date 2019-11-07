@@ -296,23 +296,9 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
         return obj.datasource.project_id
 
 
-class PublicApiJobSerializer(serializers.ModelSerializer):
-    items = serializers.SerializerMethodField(read_only=True)
-    result = serializers.SerializerMethodField(read_only=True)
-
-    class Meta:
-        model = models.DataSourceJob
-        fields = ("result", "items")
-
-    def get_result(self, obj):
-        return obj.result.name
-
-    def get_items(self, obj):
-        return obj.meta_data.items
-
-
 class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
     job_state = serializers.ChoiceField(choices=[
+        DataSourceJobState.PROCESSING,
         DataSourceJobState.SUCCESS,
         DataSourceJobState.FAILED,
     ])
@@ -326,7 +312,7 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
         super().__init__(*args, **kwargs)
         job_state = self.initial_data.get("job_state")
         job_state_available_fields = {
-            DataSourceJobState.PENDING: [],
+            DataSourceJobState.PROCESSING: [],
             DataSourceJobState.SUCCESS: ["result"],
             DataSourceJobState.FAILED: ["error"],
         }
@@ -346,6 +332,7 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
     def save(self, **kwargs):
         job_state = self.validated_data.pop("job_state")
         job_state_action = {
+            DataSourceJobState.PROCESSING: self.instance.success,
             DataSourceJobState.SUCCESS: self.instance.success,
             DataSourceJobState.FAILED: self.instance.fail,
         }

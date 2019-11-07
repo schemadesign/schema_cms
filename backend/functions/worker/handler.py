@@ -28,7 +28,6 @@ logger.setLevel(logging.INFO)
 
 
 df = None
-db.initialize()
 
 
 def write_dataframe_to_csv_on_s3(dataframe, filename):
@@ -49,10 +48,7 @@ def process_job(job):
         state=db.JobState.PROCESSING,
     )
 
-    source_file = services.s3.get_object(
-        Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=job.datasource.file.lstrip("/")
-    )
-
+    source_file = services.get_s3_object(job.source_file_path, version=job.source_file_version)
     try:
         df = dt.fread(source_file["Body"], na_strings=["", ""], fill=True).to_pandas()
     except Exception as e:
@@ -79,31 +75,31 @@ def process_job(job):
 
 def main(event, context):
     """Invoke with
-    python mocks.py <JobID> | sls invoke local --function main --docker --docker-arg="--network host"
+    python mocks.py sqs_message_mock.json.example | sls invoke local --function main --docker --docker-arg="--network host"
     """
 
     logger.info(f"Incoming event: {event}")
+    logger.info("Records", event["Records"])
 
     for record in event["Records"]:
         body = json.loads(record["body"])
-        job_pk = body["job_pk"]
         try:
-            job = types.Job.get_by_id(job_pk)
+            job = types.Job.from_json(**body)
         except Exception as e:
-            return logging.critical(f"Unable to get job from db - {e}")
+            return logging.critical(f"Invalid message body - {e}")
 
         try:
             process_job(job=job)
         except errors.JobLoadingSourceFileError as e:
             api.schemacms_api.update_job_state(
-                job_pk=job_pk,
+                job_pk=job.id,
                 state=db.JobState.FAILED,
                 error=f"{e} @ loading source file"
             )
             return logging.critical(f"Error while loading source file - {e}")
         except errors.JobSetExecutionError as e:
             api.schemacms_api.update_job_state(
-                job_pk=job_pk,
+                job_pk=job.id,
                 state=db.JobState.FAILED,
                 error=f"{e.msg} @ {e.step.id}"
             )
@@ -115,4 +111,4 @@ def main(event, context):
 
 
 if __name__ == "__main__":
-    main(mocks.get_simple_mock_event(sys.argv[1]), {})
+    main(mocks.get_simple_mock_event(), {})

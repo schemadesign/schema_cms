@@ -86,15 +86,11 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.CreateJobSerializer,
         "jobs_history": serializers.DataSourceJobSerializer,
-        "public_results": serializers.PublicApiJobSerializer,
         "filters": serializers.FilterSerializer,
         "set_filters": serializers.FilterSerializer,
     }
 
     def get_queryset(self):
-        if self.action == "public_results":
-            return super().get_queryset()
-
         return super().get_queryset().available_for_user(user=self.request.user)
 
     def perform_create(self, serializer):
@@ -168,15 +164,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(instance=data_source.jobs_history, many=True)
-        return response.Response(data=serializer.data)
-
-    @decorators.action(detail=True, permission_classes=[], url_path="public-results", methods=["get"])
-    def public_results(self, request, pk=None, **kwargs):
-        data_source = self.get_object()
-
-        job = data_source.current_job
-        serializer = self.get_serializer(instance=job)
-
         return response.Response(data=serializer.data)
 
     @decorators.action(detail=True, url_path="fields-info", methods=["get"])

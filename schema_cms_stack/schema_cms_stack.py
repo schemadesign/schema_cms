@@ -22,6 +22,7 @@ from aws_cdk import (
 
 DB_NAME = "gistdb"
 APP_S3_BUCKET_NAME = "schemacms"
+LAMBDA_AUTH_TOKEN_ENV_NAME = "LAMBDA_AUTH_TOKEN"
 JOB_PROCESSING_MAX_RETRIES = 3
 JOB_PROCESSING_MEMORY_SIZES = [512, 1280]
 
@@ -212,6 +213,7 @@ class API(core.Stack):
             "SENTRY_DNS": "sentry_dns_arn",
             "DJANGO_DEFAULT_FROM_EMAIL": "django_default_from_email_arn",
             "DJANGO_HOST": "django_host_arn",
+            LAMBDA_AUTH_TOKEN_ENV_NAME: "lambda_auth_token",
         }
 
         env = {k: self.map_secret(v) for k, v in env_map.items()}
@@ -324,6 +326,7 @@ class LambdaWorker(core.Stack):
                 "BACKEND_URL": BACKEND_URL.format(
                     domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
                 ),
+                LAMBDA_AUTH_TOKEN_ENV_NAME: "", # add missing token from secret manager
             },
             memory_size=memory_size,
             # vpc=scope.base.vpc,
