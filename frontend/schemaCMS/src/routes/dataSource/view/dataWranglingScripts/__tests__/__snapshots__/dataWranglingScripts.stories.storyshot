@@ -172,6 +172,11 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                   "active": "#FFF",
                   "background": "#1d1d20",
                 },
+                "tab": Object {
+                  "active": "#FFF",
+                  "hover": "#FFF",
+                  "normal": "#2F2F36",
+                },
                 "table": Object {
                   "background": Object {
                     "body": "#000",

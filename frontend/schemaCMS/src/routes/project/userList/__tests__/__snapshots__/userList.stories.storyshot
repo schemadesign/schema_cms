@@ -10,11 +10,7 @@ exports[`Storyshots Project/UserList list 1`] = `
   }
 >
   <div
-<<<<<<< HEAD
     className="sc-fBuWsC jtIdEp"
-=======
-    className="sc-dnqmqq jTyMZw"
->>>>>>> updated tests
   >
     <div
       style={
@@ -31,11 +27,7 @@ exports[`Storyshots Project/UserList list 1`] = `
     >
       <div>
         <div
-<<<<<<< HEAD
           className="sc-fMiknA bxZCMx"
-=======
-          className="sc-iwsKbI jQhHGA"
->>>>>>> updated tests
         >
           <h2
             id="headerTitle"
@@ -133,17 +125,10 @@ exports[`Storyshots Project/UserList list 1`] = `
       }
     >
       <div
-<<<<<<< HEAD
         className="sc-dVhcbM fghLuF"
       >
         <div
           className="sc-fMiknA bxZCMx"
-=======
-        className="sc-gZMcBi giNnHm"
-      >
-        <div
-          className="sc-iwsKbI jQhHGA"
->>>>>>> updated tests
         >
           <h2
             id="headerTitle"
@@ -180,7 +165,6 @@ exports[`Storyshots Project/UserList list 1`] = `
         </div>
       </div>
       <div
-<<<<<<< HEAD
         className="sc-eqIVtm jwtJAm"
       >
         <ul
@@ -188,15 +172,6 @@ exports[`Storyshots Project/UserList list 1`] = `
         />
         <ul
           className="sc-fAjcbJ sc-gisBJw TKJlq"
-=======
-        className="sc-gqjmRU kteaYt"
-      >
-        <ul
-          className="sc-VigVT sc-jTzLTM jjONle"
-        />
-        <ul
-          className="sc-VigVT sc-fjdhpX dhPcNY"
->>>>>>> updated tests
         />
       </div>
       <button
@@ -242,14 +217,14 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-kIPQKe jgMiIX"
+    className="sc-eXEjpC fuVqJC"
   >
     <div
-      className="sc-kfGgVZ gAmGXc"
+      className="sc-esjQYD cNBMAh"
     >
       <a
         active={false}
-        className="sc-esjQYD kjsANz"
+        className="sc-kIPQKe jbWkZw"
         href="/project/1"
         onClick={[Function]}
       >
@@ -259,7 +234,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </a>
       <a
         active={false}
-        className="sc-esjQYD kjsANz"
+        className="sc-kIPQKe jbWkZw"
         href="/project/1/datasource"
         onClick={[Function]}
       >
@@ -269,7 +244,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </a>
       <a
         active={true}
-        className="sc-esjQYD dkvrVo"
+        className="sc-kIPQKe eHwaeb"
         href="/project/1/user"
         onClick={[Function]}
       >
@@ -280,13 +255,13 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-eXEjpC hHXaGX"
+    className="sc-ibxdXY btgiXA"
   >
     <div
-      className="sc-ibxdXY dYHqRv"
+      className="sc-RefOD cnGLMF"
     >
       <h1
-        className="sc-RefOD hLXDGN"
+        className="sc-iQKALj ihRZon"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -304,7 +279,7 @@ exports[`Storyshots Project/UserList list 1`] = `
         </span>
       </h1>
       <h2
-        className="sc-iQKALj ihRZon"
+        className="sc-bwCtUz ThhIA"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -321,7 +296,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </h2>
     </div>
     <div
-      className="sc-bwCtUz kLbHbK"
+      className="sc-hrWEMg fOsrtz"
     >
       <button
         disabled={false}
@@ -364,13 +339,13 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-bZQynM ceQpbG"
+    className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-htoDjs gGzkjf"
+      className="sc-iwsKbI iKbLSk"
     >
       <div
-        className="sc-gzVnrw bDymmI"
+        className="sc-dnqmqq jWxwDQ"
       >
         <button
           disabled={false}
@@ -453,11 +428,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   }
 >
   <div
-<<<<<<< HEAD
     className="sc-fBuWsC jtIdEp"
-=======
-    className="sc-dnqmqq jTyMZw"
->>>>>>> updated tests
   >
     <div
       style={
@@ -474,11 +445,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     >
       <div>
         <div
-<<<<<<< HEAD
           className="sc-fMiknA bxZCMx"
-=======
-          className="sc-iwsKbI jQhHGA"
->>>>>>> updated tests
         >
           <h2
             id="headerTitle"
@@ -576,17 +543,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       }
     >
       <div
-<<<<<<< HEAD
         className="sc-dVhcbM fghLuF"
       >
         <div
           className="sc-fMiknA bxZCMx"
-=======
-        className="sc-gZMcBi giNnHm"
-      >
-        <div
-          className="sc-iwsKbI jQhHGA"
->>>>>>> updated tests
         >
           <h2
             id="headerTitle"
@@ -623,7 +583,6 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </div>
       </div>
       <div
-<<<<<<< HEAD
         className="sc-eqIVtm jwtJAm"
       >
         <ul
@@ -631,15 +590,6 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         />
         <ul
           className="sc-fAjcbJ sc-gisBJw TKJlq"
-=======
-        className="sc-gqjmRU kteaYt"
-      >
-        <ul
-          className="sc-VigVT sc-jTzLTM jjONle"
-        />
-        <ul
-          className="sc-VigVT sc-fjdhpX dhPcNY"
->>>>>>> updated tests
         />
       </div>
       <button
@@ -685,14 +635,14 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-kIPQKe jgMiIX"
+    className="sc-eXEjpC fuVqJC"
   >
     <div
-      className="sc-kfGgVZ gAmGXc"
+      className="sc-esjQYD cNBMAh"
     >
       <a
         active={false}
-        className="sc-esjQYD kjsANz"
+        className="sc-kIPQKe jbWkZw"
         href="/project/1"
         onClick={[Function]}
       >
@@ -702,7 +652,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </a>
       <a
         active={false}
-        className="sc-esjQYD kjsANz"
+        className="sc-kIPQKe jbWkZw"
         href="/project/1/datasource"
         onClick={[Function]}
       >
@@ -712,7 +662,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </a>
       <a
         active={true}
-        className="sc-esjQYD dkvrVo"
+        className="sc-kIPQKe eHwaeb"
         href="/project/1/user"
         onClick={[Function]}
       >
@@ -723,13 +673,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-eXEjpC hHXaGX"
+    className="sc-ibxdXY btgiXA"
   >
     <div
-      className="sc-ibxdXY dYHqRv"
+      className="sc-RefOD cnGLMF"
     >
       <h1
-        className="sc-RefOD hLXDGN"
+        className="sc-iQKALj ihRZon"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -747,7 +697,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </span>
       </h1>
       <h2
-        className="sc-iQKALj ihRZon"
+        className="sc-bwCtUz ThhIA"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -764,7 +714,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </h2>
     </div>
     <div
-      className="sc-bwCtUz kLbHbK"
+      className="sc-hrWEMg fOsrtz"
     >
       <button
         disabled={false}
@@ -820,17 +770,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-<<<<<<< HEAD
-      className="sc-exAgwC dnARIF"
+      className="sc-daURTG eXfDNv"
     >
       <h2
-        className="sc-cQFLBn jkOaFm"
-=======
-      className="sc-gojNiO bdgdfg"
-    >
-      <h2
-        className="sc-daURTG cmTGTe"
->>>>>>> updated tests
+        className="sc-bXGyLb eATyCf"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -850,11 +793,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-<<<<<<< HEAD
-        className="sc-gojNiO QHcAS"
-=======
-        className="sc-bXGyLb jJJTW"
->>>>>>> updated tests
+        className="sc-lkqHmb fFRnvh"
         style={
           Object {
             "color": Object {
@@ -870,11 +809,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-<<<<<<< HEAD
-      className="sc-GMQeP bIAzvE"
-=======
-      className="sc-cQFLBn AYzwE"
->>>>>>> updated tests
+      className="sc-gojNiO iDvSs"
     >
       <button
         disabled={false}
@@ -931,17 +866,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-<<<<<<< HEAD
-      className="sc-exAgwC dnARIF"
+      className="sc-daURTG eXfDNv"
     >
       <h2
-        className="sc-cQFLBn jkOaFm"
-=======
-      className="sc-gojNiO bdgdfg"
-    >
-      <h2
-        className="sc-daURTG cmTGTe"
->>>>>>> updated tests
+        className="sc-bXGyLb eATyCf"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -961,11 +889,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-<<<<<<< HEAD
-        className="sc-gojNiO QHcAS"
-=======
-        className="sc-bXGyLb jJJTW"
->>>>>>> updated tests
+        className="sc-lkqHmb fFRnvh"
         style={
           Object {
             "color": Object {
@@ -981,11 +905,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-<<<<<<< HEAD
-      className="sc-GMQeP bIAzvE"
-=======
-      className="sc-cQFLBn AYzwE"
->>>>>>> updated tests
+      className="sc-gojNiO iDvSs"
     >
       <button
         disabled={false}
@@ -1042,17 +962,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     }
   >
     <div
-<<<<<<< HEAD
-      className="sc-exAgwC dnARIF"
+      className="sc-daURTG eXfDNv"
     >
       <h2
-        className="sc-cQFLBn jkOaFm"
-=======
-      className="sc-gojNiO bdgdfg"
-    >
-      <h2
-        className="sc-daURTG cmTGTe"
->>>>>>> updated tests
+        className="sc-bXGyLb eATyCf"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -1072,11 +985,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </h2>
       <h3
-<<<<<<< HEAD
-        className="sc-gojNiO QHcAS"
-=======
-        className="sc-bXGyLb jJJTW"
->>>>>>> updated tests
+        className="sc-lkqHmb fFRnvh"
         style={
           Object {
             "color": Object {
@@ -1092,11 +1001,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       />
     </div>
     <div
-<<<<<<< HEAD
-      className="sc-GMQeP bIAzvE"
-=======
-      className="sc-cQFLBn AYzwE"
->>>>>>> updated tests
+      className="sc-gojNiO iDvSs"
     >
       <button
         disabled={false}
@@ -1140,13 +1045,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-bZQynM ceQpbG"
+    className="sc-htoDjs iUYJOx"
   >
     <div
-      className="sc-htoDjs gGzkjf"
+      className="sc-iwsKbI iKbLSk"
     >
       <div
-        className="sc-gzVnrw bDymmI"
+        className="sc-dnqmqq jWxwDQ"
       >
         <button
           disabled={false}

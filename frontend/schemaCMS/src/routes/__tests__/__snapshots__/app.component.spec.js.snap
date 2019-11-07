@@ -133,6 +133,11 @@ exports[`App: Component should not render App when language is not set 1`] = `
             "header": "#a6a7aa",
           },
         },
+        "tabs": Object {
+          "active": "#000",
+          "hover": "#000",
+          "normal": "#f0efef",
+        },
         "text": "#1d1d20",
         "textArea": Object {
           "text": "#000",
@@ -271,6 +276,11 @@ exports[`App: Component should not render App when language is not set 1`] = `
               "body": "#000",
               "header": "#a6a7aa",
             },
+          },
+          "tabs": Object {
+            "active": "#000",
+            "hover": "#000",
+            "normal": "#f0efef",
           },
           "text": "#1d1d20",
           "textArea": Object {
@@ -467,6 +477,11 @@ exports[`App: Component should render App when language is set 1`] = `
             "header": "#a6a7aa",
           },
         },
+        "tabs": Object {
+          "active": "#000",
+          "hover": "#000",
+          "normal": "#f0efef",
+        },
         "text": "#1d1d20",
         "textArea": Object {
           "text": "#000",
@@ -605,6 +620,11 @@ exports[`App: Component should render App when language is set 1`] = `
               "body": "#000",
               "header": "#a6a7aa",
             },
+          },
+          "tabs": Object {
+            "active": "#000",
+            "hover": "#000",
+            "normal": "#f0efef",
           },
           "text": "#1d1d20",
           "textArea": Object {
