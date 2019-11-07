@@ -20,7 +20,7 @@ export const Tab = styled(Link)`
   align-self: flex-end;
   text-align: center;
   text-decoration: none;
-  color: ${({ active, theme: { text } }) => text};
+  color: ${({ theme: { text } }) => text};
   border-bottom: 2px solid ${({ active, theme: { tab } }) => (active ? tab.active : tab.normal)};
   cursor: pointer;
 
