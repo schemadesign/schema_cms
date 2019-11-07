@@ -1,12 +1,21 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Button, Icons } from 'schemaUI';
+import { Button, Icons } from 'schemaUI';
 import { Link } from 'react-router-dom';
 import { ifElse, is } from 'ramda';
 
 import { renderWhenTrue } from '../../utils/rendering';
-
-import { Actions, UserDetails, UserFullName, Email, buttonIconStyles, iconStyles, cardStyles } from './userList.styles';
+import {
+  Container,
+  Item,
+  Actions,
+  UserDetails,
+  UserFullName,
+  Email,
+  buttonIconStyles,
+  iconStyles,
+  cardStyles,
+} from './userList.styles';
 
 const { CloseIcon } = Icons;
 
@@ -26,7 +35,7 @@ export class UserList extends PureComponent {
   ));
 
   renderListItem = (user, hasRemoving, index) => (
-    <Card key={index} customStyles={cardStyles}>
+    <Item key={index} customStyles={cardStyles}>
       <UserDetails>
         <UserFullName to={`${this.getUrl(this.props.projectId)}${user.id}`}>
           {user.firstName} {user.lastName}
@@ -34,13 +43,13 @@ export class UserList extends PureComponent {
         <Email>{user.email}</Email>
       </UserDetails>
       <Actions>{this.renderRemove(!!this.props.onRemoveUser, user)}</Actions>
-    </Card>
+    </Item>
   );
 
   render() {
     const { users, onRemoveUser } = this.props;
     const hasRemoving = !!onRemoveUser;
 
-    return users.map((user, index) => this.renderListItem(user, hasRemoving, index));
+    return <Container>{users.map((user, index) => this.renderListItem(user, hasRemoving, index))}</Container>;
   }
 }
