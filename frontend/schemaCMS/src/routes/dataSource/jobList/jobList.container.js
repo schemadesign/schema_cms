@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
+import { withTheme } from 'styled-components';
 
 import { JobList } from './jobList.component';
 import { JobRoutines, selectJobList, selectIsAnyJobSuccessful } from '../../../modules/job';
@@ -29,5 +30,6 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
-  withRouter
+  withRouter,
+  withTheme
 )(JobList);
