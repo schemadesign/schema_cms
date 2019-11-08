@@ -10,10 +10,10 @@ exports[`Storyshots Job/Preview Default 1`] = `
   }
 >
   <div
-    className="sc-jtRfpW erOyyR"
+    className="sc-kTUwUJ ljwnSF"
   >
     <div
-      className="sc-dVhcbM elEMJK"
+      className="sc-eqIVtm jYTlNG"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
       >
         <div>
           <div
-            className="sc-eqIVtm kRufpp"
+            className="sc-fAjcbJ byigni"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots Job/Preview Default 1`] = `
         }
       >
         <div
-          className="sc-fAjcbJ byigni"
+          className="sc-caSCKo jjNSwx"
         >
           <div
-            className="sc-eqIVtm kRufpp"
+            className="sc-fAjcbJ byigni"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots Job/Preview Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-caSCKo kAAcMA"
+          className="sc-gisBJw eCZBLA"
         >
           <ul
-            className="sc-gisBJw sc-kjoXOD kXESwD"
+            className="sc-kjoXOD sc-cHGsZl cULqXW"
           />
           <ul
-            className="sc-gisBJw sc-cHGsZl jLfepw"
+            className="sc-kjoXOD sc-TOsTZ eELfaW"
           />
         </div>
         <button
@@ -220,20 +220,20 @@ exports[`Storyshots Job/Preview Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-jTzLTM etyENb"
+      className="sc-fjdhpX hqQsLf"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="sc-dnqmqq kmmOzl"
+      className="sc-iwsKbI eQdjUy"
     >
       <div
-        className="sc-gZMcBi kaVsZU"
+        className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-iwsKbI hPSGKY"
+          className="sc-gZMcBi jSdIIC"
         >
           <button
             disabled={false}
