@@ -118,8 +118,8 @@ export class View extends PureComponent {
     </CardWrapper>
   );
 
-  renderDetail = ({ label, field, value, id }, index) => (
-    <DetailItem key={index}>
+  renderDetail = ({ label, field, value, id, order }, index) => (
+    <DetailItem order={order} key={index}>
       <DetailWrapper id={id}>
         <DetailLabel id={`${id}Label`}>{label}</DetailLabel>
         <DetailValue id={`${id}Value`}>{value || this.props.project[field] || ''}</DetailValue>
@@ -157,17 +157,25 @@ export class View extends PureComponent {
         field: 'created',
         value: extendedDayjs(created, BASE_DATE_FORMAT).fromNow(),
         id: 'fieldLastUpdated',
+        order: 1,
       },
-      { label: this.formatMessage(messages.status), field: 'status', value: statusValue, id: 'fieldStatus' },
+      { label: this.formatMessage(messages.status), field: 'status', value: statusValue, id: 'fieldStatus', order: 3 },
       {
         label: this.formatMessage(messages.owner),
         field: 'owner',
         value: `${firstName} ${lastName}`,
         id: 'fieldOwner',
+        order: 5,
       },
-      { label: this.formatMessage(messages.titleField), field: 'title', id: 'fieldTitle' },
-      { label: this.formatMessage(messages.description), field: 'description', id: 'fieldDescription' },
-      { label: this.formatMessage(messages.api), field: 'slug', value: generateApiUrl(slug), id: 'fieldSlug' },
+      { label: this.formatMessage(messages.titleField), field: 'title', id: 'fieldTitle', order: 2 },
+      { label: this.formatMessage(messages.description), field: 'description', id: 'fieldDescription', order: 4 },
+      {
+        label: this.formatMessage(messages.api),
+        field: 'slug',
+        value: generateApiUrl(slug),
+        id: 'fieldSlug',
+        order: 6,
+      },
     ];
 
     return (

@@ -25,7 +25,9 @@ export const Details = styled.ul`
   padding: 0;
 
   ${media.desktop`
-    column-count: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   `}
 `;
 
@@ -37,6 +39,9 @@ export const DetailItem = styled.li`
 
   ${media.desktop`
     border-top-color: ${({ theme: { card } }) => card.background};
+    width: calc(50% - 10px);
+    flex: 0 0 auto;
+    order: ${({ order }) => order};
   `}
 `;
 
