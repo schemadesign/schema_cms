@@ -16,6 +16,7 @@ import {
 
 import messages from './create.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 
 export class Create extends PureComponent {
   static propTypes = {
@@ -51,6 +52,7 @@ export class Create extends PureComponent {
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
+        <ContextHeader title={topHeaderConfig.headerTitle} subtitle={topHeaderConfig.headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <TextInput
             value={values[PROJECT_TITLE]}

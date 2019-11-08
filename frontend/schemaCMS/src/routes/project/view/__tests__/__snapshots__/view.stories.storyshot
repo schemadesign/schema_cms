@@ -255,14 +255,14 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bwCtUz kLbHbK"
+        className="sc-epnACN hsXqzQ"
       >
         <div
-          className="sc-RefOD fxQHUp"
+          className="sc-gwVKww cKVNpf"
         >
           <a
             active={true}
-            className="sc-iQKALj ecVPtc"
+            className="sc-hXRMBi bvSUaz"
             href="/project/100"
             onClick={[Function]}
           >
@@ -272,7 +272,7 @@ exports[`Storyshots Project/View default 1`] = `
           </a>
           <a
             active={false}
-            className="sc-iQKALj jbBehI"
+            className="sc-hXRMBi kwmjTk"
             href="/project/100/datasource"
             onClick={[Function]}
           >
@@ -282,7 +282,7 @@ exports[`Storyshots Project/View default 1`] = `
           </a>
           <a
             active={false}
-            className="sc-iQKALj jbBehI"
+            className="sc-hXRMBi kwmjTk"
             href="/project/100/user"
             onClick={[Function]}
           >
@@ -391,17 +391,17 @@ exports[`Storyshots Project/View default 1`] = `
             order={1}
           >
             <div
-              className="sc-cpmLhU lmYKyO"
+              className="sc-cpmLhU hKTQAI"
               id="fieldLastUpdated"
             >
               <span
-                className="sc-dymIpo dBpQTF"
+                className="sc-dymIpo jWZpmb"
                 id="fieldLastUpdatedLabel"
               >
                 Last Update
               </span>
               <span
-                className="sc-gFaPwZ fgbNEt"
+                className="sc-gFaPwZ dDUCau"
                 id="fieldLastUpdatedValue"
               >
                 3 months ago
@@ -433,17 +433,17 @@ exports[`Storyshots Project/View default 1`] = `
             order={3}
           >
             <div
-              className="sc-cpmLhU lmYKyO"
+              className="sc-cpmLhU hKTQAI"
               id="fieldStatus"
             >
               <span
-                className="sc-dymIpo dBpQTF"
+                className="sc-dymIpo jWZpmb"
                 id="fieldStatusLabel"
               >
                 Status
               </span>
               <span
-                className="sc-gFaPwZ fgbNEt"
+                className="sc-gFaPwZ dDUCau"
                 id="fieldStatusValue"
               >
                 Status
@@ -475,17 +475,17 @@ exports[`Storyshots Project/View default 1`] = `
             order={5}
           >
             <div
-              className="sc-cpmLhU lmYKyO"
+              className="sc-cpmLhU hKTQAI"
               id="fieldOwner"
             >
               <span
-                className="sc-dymIpo dBpQTF"
+                className="sc-dymIpo jWZpmb"
                 id="fieldOwnerLabel"
               >
                 Owner
               </span>
               <span
-                className="sc-gFaPwZ fgbNEt"
+                className="sc-gFaPwZ dDUCau"
                 id="fieldOwnerValue"
               >
                 Firstname Lastname
@@ -517,17 +517,17 @@ exports[`Storyshots Project/View default 1`] = `
             order={2}
           >
             <div
-              className="sc-cpmLhU lmYKyO"
+              className="sc-cpmLhU hKTQAI"
               id="fieldTitle"
             >
               <span
-                className="sc-dymIpo dBpQTF"
+                className="sc-dymIpo jWZpmb"
                 id="fieldTitleLabel"
               >
                 Title
               </span>
               <span
-                className="sc-gFaPwZ fgbNEt"
+                className="sc-gFaPwZ dDUCau"
                 id="fieldTitleValue"
               >
                 Project Name
@@ -559,17 +559,17 @@ exports[`Storyshots Project/View default 1`] = `
             order={4}
           >
             <div
-              className="sc-cpmLhU lmYKyO"
+              className="sc-cpmLhU hKTQAI"
               id="fieldDescription"
             >
               <span
-                className="sc-dymIpo dBpQTF"
+                className="sc-dymIpo jWZpmb"
                 id="fieldDescriptionLabel"
               >
                 Description
               </span>
               <span
-                className="sc-gFaPwZ fgbNEt"
+                className="sc-gFaPwZ dDUCau"
                 id="fieldDescriptionValue"
               >
                 Description
@@ -601,17 +601,17 @@ exports[`Storyshots Project/View default 1`] = `
             order={6}
           >
             <div
-              className="sc-cpmLhU lmYKyO"
+              className="sc-cpmLhU hKTQAI"
               id="fieldSlug"
             >
               <span
-                className="sc-dymIpo dBpQTF"
+                className="sc-dymIpo jWZpmb"
                 id="fieldSlugLabel"
               >
                 API
               </span>
               <span
-                className="sc-gFaPwZ fgbNEt"
+                className="sc-gFaPwZ dDUCau"
                 id="fieldSlugValue"
               >
                 schemacms/api/project_title
@@ -973,14 +973,14 @@ exports[`Storyshots Project/View loading 1`] = `
         </div>
       </div>
       <div
-        className="sc-bwCtUz kLbHbK"
+        className="sc-epnACN hsXqzQ"
       >
         <div
-          className="sc-RefOD fxQHUp"
+          className="sc-gwVKww cKVNpf"
         >
           <a
             active={true}
-            className="sc-iQKALj ecVPtc"
+            className="sc-hXRMBi bvSUaz"
             href="/project/100"
             onClick={[Function]}
           >
@@ -990,7 +990,7 @@ exports[`Storyshots Project/View loading 1`] = `
           </a>
           <a
             active={false}
-            className="sc-iQKALj jbBehI"
+            className="sc-hXRMBi kwmjTk"
             href="/project/100/datasource"
             onClick={[Function]}
           >
@@ -1000,7 +1000,7 @@ exports[`Storyshots Project/View loading 1`] = `
           </a>
           <a
             active={false}
-            className="sc-iQKALj jbBehI"
+            className="sc-hXRMBi kwmjTk"
             href="/project/100/user"
             onClick={[Function]}
           >

@@ -17,11 +17,12 @@ export const DesktopActions = styled.div`
   display: none;
 
   ${media.desktop`
-    display: block;
-    margin: 70px 0 20px 0;
+    display: ${({ visibile }) => (visibile ? 'block' : 'none')};
+    margin: -10px 0 170px;
   `}
 `;
 
 export const desktopButtonStyles = {
-  padding: '0 40px',
+  padding: 0,
+  backgroundColor: 'transparent',
 };

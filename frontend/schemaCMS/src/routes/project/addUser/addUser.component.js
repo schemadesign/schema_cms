@@ -18,7 +18,7 @@ import {
 } from './addUser.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './addUser.messages';
-import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 
 export class AddUser extends PureComponent {
@@ -122,7 +122,7 @@ export class AddUser extends PureComponent {
             <FormattedMessage {...messages.back} />
           </BackButton>
         </NavigationContainer>
-        <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={modalStyles}>
+        <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={getModalStyles()}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>

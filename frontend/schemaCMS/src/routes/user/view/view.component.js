@@ -8,8 +8,9 @@ import { Container } from './view.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { UserProfile } from '../../../shared/components/userProfile/userProfile.component';
 import { TopHeader } from '../../../shared/components/topHeader';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './view.messages';
-import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -33,7 +34,7 @@ export class View extends PureComponent {
     this.props.fetchUser({ userId: path(['match', 'params', 'userId'], this.props) });
   }
 
-  getHeaderAndMenuConfig = () => {
+  getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => {
     const userRemoveButton = {
       label: <FormattedMessage {...messages.removeUser} />,
       onClick: () => this.setState({ userRemoveModalOpen: true }),
@@ -41,8 +42,8 @@ export class View extends PureComponent {
     const secondaryMenuItems = this.props.isAdmin ? [userRemoveButton] : [];
 
     return {
-      headerTitle: <FormattedMessage {...messages.title} />,
-      headerSubtitle: <FormattedMessage {...messages.subTitle} />,
+      headerTitle,
+      headerSubtitle,
       secondaryMenuItems,
     };
   };
@@ -57,13 +58,17 @@ export class View extends PureComponent {
   renderContent = renderWhenTrue(() => <UserProfile {...this.props} />);
 
   render() {
-    const topHeaderConfig = this.getHeaderAndMenuConfig();
+    const title = <FormattedMessage {...messages.title} />;
+    const subtitle = <FormattedMessage {...messages.subTitle} />;
+
+    const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
 
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
+        <ContextHeader title={title} subtitle={subtitle} />
         {this.renderContent(!!this.props.userData.id)}
-        <Modal isOpen={this.state.userRemoveModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+        <Modal isOpen={this.state.userRemoveModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>

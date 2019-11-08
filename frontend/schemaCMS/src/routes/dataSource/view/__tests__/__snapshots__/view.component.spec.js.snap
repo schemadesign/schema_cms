@@ -18,11 +18,14 @@ exports[`View: Component should not render any step 1`] = `
       ]
     }
   />
-  <styled.div>
+  <styled.div
+    visibile={false}
+  >
     <Component
       customStyles={
         Object {
-          "padding": "0 40px",
+          "backgroundColor": "transparent",
+          "padding": 0,
         }
       }
       id="removeDataSourceDesktopBtn"
@@ -50,9 +53,10 @@ exports[`View: Component should not render any step 1`] = `
           "WebkitOverflowScrolling": "touch",
           "alignItems": "center",
           "backgroundColor": "rgba(0, 0, 0, 0.9)",
-          "border": "1px solid #ccc",
+          "border": null,
           "borderRadius": "4px",
           "bottom": "40px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
           "color": "FFFFFF",
           "display": "flex",
           "left": "40px",
@@ -64,7 +68,7 @@ exports[`View: Component should not render any step 1`] = `
           "top": "40px",
         },
         "overlay": Object {
-          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
           "bottom": 0,
           "left": 0,
           "position": "fixed",
@@ -167,11 +171,14 @@ exports[`View: Component should render draft 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <styled.div>
+  <styled.div
+    visibile={true}
+  >
     <Component
       customStyles={
         Object {
-          "padding": "0 40px",
+          "backgroundColor": "transparent",
+          "padding": 0,
         }
       }
       id="removeDataSourceDesktopBtn"
@@ -199,9 +206,10 @@ exports[`View: Component should render draft 1`] = `
           "WebkitOverflowScrolling": "touch",
           "alignItems": "center",
           "backgroundColor": "rgba(0, 0, 0, 0.9)",
-          "border": "1px solid #ccc",
+          "border": null,
           "borderRadius": "4px",
           "bottom": "40px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
           "color": "FFFFFF",
           "display": "flex",
           "left": "40px",
@@ -213,7 +221,7 @@ exports[`View: Component should render draft 1`] = `
           "top": "40px",
         },
         "overlay": Object {
-          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
           "bottom": 0,
           "left": 0,
           "position": "fixed",
@@ -316,11 +324,14 @@ exports[`View: Component should render second step 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <styled.div>
+  <styled.div
+    visibile={true}
+  >
     <Component
       customStyles={
         Object {
-          "padding": "0 40px",
+          "backgroundColor": "transparent",
+          "padding": 0,
         }
       }
       id="removeDataSourceDesktopBtn"
@@ -348,9 +359,10 @@ exports[`View: Component should render second step 1`] = `
           "WebkitOverflowScrolling": "touch",
           "alignItems": "center",
           "backgroundColor": "rgba(0, 0, 0, 0.9)",
-          "border": "1px solid #ccc",
+          "border": null,
           "borderRadius": "4px",
           "bottom": "40px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
           "color": "FFFFFF",
           "display": "flex",
           "left": "40px",
@@ -362,7 +374,7 @@ exports[`View: Component should render second step 1`] = `
           "top": "40px",
         },
         "overlay": Object {
-          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
           "bottom": 0,
           "left": 0,
           "position": "fixed",
@@ -464,11 +476,14 @@ exports[`View: Component should render source step 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <styled.div>
+  <styled.div
+    visibile={true}
+  >
     <Component
       customStyles={
         Object {
-          "padding": "0 40px",
+          "backgroundColor": "transparent",
+          "padding": 0,
         }
       }
       id="removeDataSourceDesktopBtn"
@@ -496,9 +511,10 @@ exports[`View: Component should render source step 1`] = `
           "WebkitOverflowScrolling": "touch",
           "alignItems": "center",
           "backgroundColor": "rgba(0, 0, 0, 0.9)",
-          "border": "1px solid #ccc",
+          "border": null,
           "borderRadius": "4px",
           "bottom": "40px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
           "color": "FFFFFF",
           "display": "flex",
           "left": "40px",
@@ -510,7 +526,7 @@ exports[`View: Component should render source step 1`] = `
           "top": "40px",
         },
         "overlay": Object {
-          "backgroundColor": "rgba(0, 0, 0, 0.5)",
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
           "bottom": 0,
           "left": 0,
           "position": "fixed",

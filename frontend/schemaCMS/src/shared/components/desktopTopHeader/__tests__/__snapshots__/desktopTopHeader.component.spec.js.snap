@@ -50,6 +50,8 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         Object {
           "customStyles": Object {
             "backgroundColor": "transparent",
+            "right": 44,
+            "top": 44,
           },
           "id": "desktopTopHeaderCloseMenuButton",
         }

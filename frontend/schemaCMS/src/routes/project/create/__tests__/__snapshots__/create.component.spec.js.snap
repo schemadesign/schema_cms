@@ -6,6 +6,10 @@ exports[`Create: Component should render correctly 1`] = `
     headerSubtitle="Project Info"
     headerTitle="Create New Project"
   />
+  <ContextHeader
+    subtitle="Project Info"
+    title="Create New Project"
+  />
   <styled.form
     onSubmit={[Function]}
   >

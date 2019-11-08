@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import { getStyles } from './exitIcon.styles';
+import ExitSVG from '../../../images/icons/exit.svg';
 import { withStyles } from '../../styles/withStyles';
 
 export class ExitIconComponent extends PureComponent {
@@ -14,7 +15,7 @@ export class ExitIconComponent extends PureComponent {
     const containerStyles = getStyles(theme);
     const styles = { ...containerStyles, ...customStyles };
 
-    return <div {...restProps} style={styles} />;
+    return <ExitSVG {...restProps} style={styles} />;
   }
 }
 

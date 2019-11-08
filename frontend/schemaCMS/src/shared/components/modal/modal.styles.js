@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Typography, Button } from 'schemaUI';
+import { media, isDesktop as isDesktopFn } from '../../../theme/media';
 
 const { H1 } = Typography;
 
@@ -14,7 +15,7 @@ export const modalStyles = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(29, 29, 32, 0.75)',
     zIndex: 10000,
   },
   content: {
@@ -23,7 +24,8 @@ export const modalStyles = {
     left: '40px',
     right: '40px',
     bottom: '40px',
-    border: '1px solid #ccc',
+    border: null,
+    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.5)',
     backgroundColor: 'rgba(0, 0, 0, 0.9)',
     color: 'FFFFFF',
     overflow: 'auto',
@@ -48,4 +50,33 @@ export const ModalActions = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px;
+
+  ${media.desktop`
+    margin-top: 30px;
+    position: static;
+  `}
 `;
+
+export const getModalStyles = () => {
+  const isDesktop = isDesktopFn();
+
+  if (!isDesktop) {
+    return modalStyles;
+  }
+
+  return {
+    overlay: {
+      ...modalStyles.overlay,
+    },
+    content: {
+      ...modalStyles.content,
+      top: '80px',
+      left: '50%',
+      right: null,
+      bottom: null,
+      transform: 'translateX(-50%)',
+      padding: '50px',
+      flexDirection: 'column',
+    },
+  };
+};
