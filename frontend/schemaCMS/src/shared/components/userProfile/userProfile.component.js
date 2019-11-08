@@ -19,6 +19,7 @@ import {
 import messages from './userProfile.messages';
 import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
+import { isDesktop } from '../../../theme/media';
 
 export class UserProfile extends PureComponent {
   static propTypes = {
@@ -39,7 +40,15 @@ export class UserProfile extends PureComponent {
 
   getBackUrl = ifElse(is(String), projectId => `/project/${projectId}/user`, () => '/user');
 
-  handleGoToList = () => this.props.history.push(this.getBackUrl(path(['match', 'params', 'projectId'])(this.props)));
+  handleGoToList = () => {
+    const id = path(['match', 'params', 'userId'], this.props);
+
+    if (id === 'me' && isDesktop()) {
+      this.props.history.goBack();
+    } else {
+      this.props.history.push(this.getBackUrl(path(['match', 'params', 'projectId'])(this.props)));
+    }
+  };
 
   handleSubmit = values => {
     if (this.props.isSettings) {

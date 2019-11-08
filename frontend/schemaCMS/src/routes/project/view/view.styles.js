@@ -59,12 +59,22 @@ export const DetailWrapper = styled.div`
   flex-direction: row;
   width: calc(100% - 37px);
   padding: 12px 0 8px 0;
+
+  ${media.desktop`
+    flex-direction: column;
+    font-weight: normal;
+  `}
 `;
 
 export const DetailLabel = styled.span`
   color: ${({ theme: { secondaryText } }) => secondaryText};
   margin-right: 5px;
   flex: 0 0 auto;
+
+  ${media.desktop`
+    font-size: 14px;
+    margin-bottom: 6px;
+  `}
 `;
 
 export const IconEditWrapper = styled.div`
@@ -76,6 +86,10 @@ export const DetailValue = styled.span`
   flex: 1 1 auto;
   white-space: pre-wrap;
   word-break: break-word;
+
+  ${media.desktop`
+    font-size: 18px;
+  `}
 `;
 
 export const Statistics = styled.ul`

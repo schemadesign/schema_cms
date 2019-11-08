@@ -84,7 +84,7 @@ export class View extends PureComponent {
           { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
           {
             label: this.formatMessage(messages.deleteProject),
-            onClick: this.handleDeleteButton,
+            onClick: this.handleDeleteClick,
           }
         );
       }
@@ -106,7 +106,7 @@ export class View extends PureComponent {
 
   handleGoTo = to => () => (to ? this.props.history.push(to) : null);
 
-  handleDeleteButton = () => this.setState({ confirmationModalOpen: true });
+  handleDeleteClick = () => this.setState({ confirmationModalOpen: true });
 
   handleConfirmRemove = () => this.props.removeProject({ projectId: this.props.project.id });
 
@@ -208,7 +208,7 @@ export class View extends PureComponent {
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           {this.renderContent(project)}
           <DesktopActions>
-            <Button id="deleteProjectDesktopBtn" onClick={this.handleDeleteButton} customStyles={desktopButtonStyles}>
+            <Button id="deleteProjectDesktopBtn" onClick={this.handleDeleteClick} customStyles={desktopButtonStyles}>
               {this.formatMessage(messages.deleteProject)}
             </Button>
           </DesktopActions>
