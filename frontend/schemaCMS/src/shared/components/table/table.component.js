@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { always } from 'ramda';
 
-import { renderWhenTrue } from '../../utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 import {
   TableWrapper,
   TableElement,
@@ -12,6 +13,7 @@ import {
   HeaderCell,
   LeftHeaderCell,
 } from './table.styles';
+import { NoData } from '../noData';
 
 const NUMBERED_COLUMN_NAME = '#';
 
@@ -55,14 +57,17 @@ export class Table extends PureComponent {
     ));
   };
 
+  renderTableContent = renderWhenTrueOtherwise(
+    () => (
+      <TableElement>
+        {this.renderHeader(!!this.props.header.length)}
+        <TableBody>{this.renderRows()}</TableBody>
+      </TableElement>
+    ),
+    always(<NoData />)
+  );
+
   render() {
-    return (
-      <TableWrapper>
-        <TableElement>
-          {this.renderHeader(!!this.props.header.length)}
-          <TableBody>{this.renderRows()}</TableBody>
-        </TableElement>
-      </TableWrapper>
-    );
+    return <TableWrapper>{this.renderTableContent(!!this.props.rows.length)}</TableWrapper>;
   }
 }
