@@ -451,6 +451,33 @@ Content-Type: application/json
 
 **Request**:
 
+`POST` `/api/v1/datasources/:id/set-filters`
+
+Parameters:
+
+Name         | Type      | Description
+-------------|-----------|----------------------------------------------
+active       | list[int] | List of filters to activate.
+inactive     | list[int] | List od filters to deactivate.
+
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+
+**Response**:
+
+
+```json
+Content-Type: application/json
+200 OK
+```
+
+## Revert to data source job
+
+**Request**:
+
 `POST` `/api/v1/datasources/:id/revert-job`
 
 Parameters:
