@@ -13,6 +13,15 @@ export const Container = styled.div`
   justify-content: space-between;
 `;
 
+export const DesktopActions = styled.div`
+  display: none;
+
+  ${media.desktop`
+    display: block;
+    margin: 70px 0 20px 0;
+  `}
+`;
+
 export const ProjectView = styled.div`
   ${media.desktop`
     margin-top: 70px;
@@ -130,4 +139,8 @@ export const CardValue = styled.span`
 
 export const statisticsCardStyles = {
   cursor: 'pointer',
+};
+
+export const desktopButtonStyles = {
+  padding: '0 40px',
 };

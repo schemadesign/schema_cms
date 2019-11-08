@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Card, Icons } from 'schemaUI';
+import { Card, Icons, Button } from 'schemaUI';
 import { has, isEmpty, isNil, path, always, cond, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
@@ -20,6 +20,7 @@ import {
   CardHeader,
   CardValue,
   ProjectView,
+  DesktopActions,
   Details,
   DetailItem,
   DetailWrapper,
@@ -28,6 +29,7 @@ import {
   IconEditWrapper,
   Statistics,
   statisticsCardStyles,
+  desktopButtonStyles,
 } from './view.styles';
 import { BackArrowButton, NavigationContainer } from '../../../shared/components/navigation';
 
@@ -82,7 +84,7 @@ export class View extends PureComponent {
           { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
           {
             label: this.formatMessage(messages.deleteProject),
-            onClick: () => this.setState({ confirmationModalOpen: true }),
+            onClick: this.handleDeleteButton,
           }
         );
       }
@@ -103,6 +105,8 @@ export class View extends PureComponent {
   formatMessage = value => this.props.intl.formatMessage(value);
 
   handleGoTo = to => () => (to ? this.props.history.push(to) : null);
+
+  handleDeleteButton = () => this.setState({ confirmationModalOpen: true });
 
   handleConfirmRemove = () => this.props.removeProject({ projectId: this.props.project.id });
 
@@ -203,6 +207,11 @@ export class View extends PureComponent {
           <TopHeader {...topHeaderConfig} />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           {this.renderContent(project)}
+          <DesktopActions>
+            <Button id="deleteProjectDesktopBtn" onClick={this.handleDeleteButton} customStyles={desktopButtonStyles}>
+              {this.formatMessage(messages.deleteProject)}
+            </Button>
+          </DesktopActions>
         </div>
         <NavigationContainer>
           <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />
