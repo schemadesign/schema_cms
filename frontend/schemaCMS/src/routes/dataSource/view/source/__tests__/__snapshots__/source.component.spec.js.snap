@@ -62,6 +62,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "background": "#000",
         "text": "#71737e",
       },
+      "error": "#f21e29",
       "header": Object {
         "border": "#2F2F36",
         "text": "#FFF",
@@ -233,6 +234,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "background": "#000",
         "text": "#71737e",
       },
+      "error": "#f21e29",
       "header": Object {
         "border": "#2F2F36",
         "text": "#FFF",

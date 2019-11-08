@@ -16,17 +16,17 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
       className="sc-jAaTju iffVWD"
     >
       <div
-        className="sc-gPEVay jIrDGg"
+        className="sc-gPEVay bIpBar"
       />
       <div
-        className="sc-jDwBTQ hxhYSZ"
+        className="sc-jDwBTQ jRyzTS"
       >
         <span>
           2 Steps
         </span>
       </div>
       <div
-        className="sc-iRbamj ddKfWI"
+        className="sc-iRbamj ESqZv"
       >
         <div
           style={Object {}}
@@ -124,6 +124,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                   "background": "#000",
                   "text": "#71737e",
                 },
+                "error": "#f21e29",
                 "header": Object {
                   "border": "#2F2F36",
                   "text": "#FFF",

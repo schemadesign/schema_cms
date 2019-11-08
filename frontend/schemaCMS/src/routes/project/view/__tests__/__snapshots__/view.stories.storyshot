@@ -401,7 +401,7 @@ exports[`Storyshots Project/View default 1`] = `
                 Last Update
               </span>
               <span
-                className="sc-dymIpo fLSHhD"
+                className="sc-dymIpo bgcZkU"
                 id="fieldLastUpdatedValue"
               >
                 3 months ago
@@ -443,7 +443,7 @@ exports[`Storyshots Project/View default 1`] = `
                 Status
               </span>
               <span
-                className="sc-dymIpo fLSHhD"
+                className="sc-dymIpo bgcZkU"
                 id="fieldStatusValue"
               >
                 Status
@@ -485,7 +485,7 @@ exports[`Storyshots Project/View default 1`] = `
                 Owner
               </span>
               <span
-                className="sc-dymIpo fLSHhD"
+                className="sc-dymIpo bgcZkU"
                 id="fieldOwnerValue"
               >
                 Firstname Lastname
@@ -527,7 +527,7 @@ exports[`Storyshots Project/View default 1`] = `
                 Title
               </span>
               <span
-                className="sc-dymIpo fLSHhD"
+                className="sc-dymIpo bgcZkU"
                 id="fieldTitleValue"
               >
                 Project Name
@@ -569,7 +569,7 @@ exports[`Storyshots Project/View default 1`] = `
                 Description
               </span>
               <span
-                className="sc-dymIpo fLSHhD"
+                className="sc-dymIpo bgcZkU"
                 id="fieldDescriptionValue"
               >
                 Description
@@ -611,7 +611,7 @@ exports[`Storyshots Project/View default 1`] = `
                 API
               </span>
               <span
-                className="sc-dymIpo fLSHhD"
+                className="sc-dymIpo bgcZkU"
                 id="fieldSlugValue"
               >
                 schemacms/api/project_title

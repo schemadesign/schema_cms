@@ -54,6 +54,8 @@ export const HeaderItem = styled.li`
 export const Description = styled.div`
   margin: 7px 0 14px;
   cursor: pointer;
+  white-space: pre-wrap;
+  word-break: break-word;
 `;
 
 export const urlStyles = {

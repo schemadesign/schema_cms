@@ -214,6 +214,7 @@ const dark = {
   background: colors.black,
   text: colors.white,
   secondaryText: colors.lightGrey,
+  error: colors.red,
   colors,
 };
 

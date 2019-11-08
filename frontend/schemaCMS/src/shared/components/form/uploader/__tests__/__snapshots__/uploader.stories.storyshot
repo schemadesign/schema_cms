@@ -163,6 +163,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
               "background": "#000",
               "text": "#71737e",
             },
+            "error": "#f21e29",
             "header": Object {
               "border": "#2F2F36",
               "text": "#FFF",
@@ -439,6 +440,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
               "background": "#000",
               "text": "#71737e",
             },
+            "error": "#f21e29",
             "header": Object {
               "border": "#2F2F36",
               "text": "#FFF",
