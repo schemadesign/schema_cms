@@ -98,6 +98,11 @@ const light = {
       header: colors.coolGray,
     },
   },
+  tabs: {
+    normal: colors.veryLightPink,
+    active: colors.black,
+    hover: colors.black,
+  },
   select: {
     background: colors.veryLightPink,
     border: colors.white,
@@ -196,6 +201,11 @@ const dark = {
       body: colors.white,
       header: colors.lightGrey,
     },
+  },
+  tab: {
+    normal: colors.mediumGray,
+    active: colors.white,
+    hover: colors.white,
   },
   select: {
     background: colors.darkGrey,

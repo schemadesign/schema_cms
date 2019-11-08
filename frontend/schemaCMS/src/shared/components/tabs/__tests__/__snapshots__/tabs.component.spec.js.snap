@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs: Component should render correctly 1`] = `
+<styled.div>
+  <Styled(Link)
+    to="/"
+  >
+    Tab 1
+  </Styled(Link)>
+  <Styled(Link)
+    active={true}
+    to="/"
+  >
+    Tab 2
+  </Styled(Link)>
+  <Styled(Link)
+    to="/"
+  >
+    Tab 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </Styled(Link)>
+  <Styled(Link)
+    to="/"
+  >
+    Tab 4
+  </Styled(Link)>
+</styled.div>
+`;

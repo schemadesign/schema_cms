@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ProjectTabs Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-eXEjpC fuVqJC"
+  >
+    <div
+      className="sc-esjQYD cNBMAh"
+    >
+      <a
+        active={true}
+        className="sc-kIPQKe eHwaeb"
+        href="/project/1"
+        onClick={[Function]}
+      >
+        <span>
+          Settings
+        </span>
+      </a>
+      <a
+        active={false}
+        className="sc-kIPQKe jbWkZw"
+        href="/project/1/datasource"
+        onClick={[Function]}
+      >
+        <span>
+          Sources
+        </span>
+      </a>
+      <a
+        active={false}
+        className="sc-kIPQKe jbWkZw"
+        href="/project/1/user"
+        onClick={[Function]}
+      >
+        <span>
+          Users
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+`;

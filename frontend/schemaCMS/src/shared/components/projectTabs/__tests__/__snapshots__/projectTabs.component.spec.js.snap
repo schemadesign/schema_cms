@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectTabs: Component should render correctly 1`] = `
+<styled.div>
+  <Tabs
+    tabs={
+      Array [
+        Object {
+          "active": true,
+          "content": <FormattedMessage
+            defaultMessage="Settings"
+            id="shared.components.projectTabs.settings"
+            values={Object {}}
+          />,
+          "id": "settings",
+          "to": "/project/1",
+        },
+        Object {
+          "active": false,
+          "content": <FormattedMessage
+            defaultMessage="Sources"
+            id="shared.components.projectTabs.sources"
+            values={Object {}}
+          />,
+          "id": "sources",
+          "to": "/project/1/datasource",
+        },
+        Object {
+          "active": false,
+          "content": <FormattedMessage
+            defaultMessage="Users"
+            id="shared.components.projectTabs.users"
+            values={Object {}}
+          />,
+          "id": "users",
+          "to": "/project/1/user",
+        },
+      ]
+    }
+  />
+</styled.div>
+`;

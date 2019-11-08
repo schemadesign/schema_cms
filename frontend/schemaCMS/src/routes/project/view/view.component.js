@@ -11,6 +11,8 @@ import browserHistory from '../../../shared/utils/history';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { Loader } from '../../../shared/components/loader';
 import { TopHeader } from '../../../shared/components/topHeader';
+import { ProjectTabs } from '../../../shared/components/projectTabs';
+import { SETTINGS } from '../../../shared/components/projectTabs/projectTabs.constants';
 import messages from './view.messages';
 import {
   Container,
@@ -191,6 +193,7 @@ export class View extends PureComponent {
         <div>
           <Helmet title={title} />
           <TopHeader {...topHeaderConfig} />
+          <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           {this.renderContent(project)}
         </div>
         <NavigationContainer>

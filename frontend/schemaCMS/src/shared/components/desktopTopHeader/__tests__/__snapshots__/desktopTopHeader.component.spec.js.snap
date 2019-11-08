@@ -81,8 +81,47 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         </styled.div>
       </styled.div>
       <styled.div>
-        <Styled(styled.ul) />
-        <Styled(styled.ul) />
+        <Styled(styled.ul)>
+          <Styled(styled.li)
+            key="0"
+          >
+            <Link
+              id={null}
+              to="/path"
+            >
+              Data Sources
+            </Link>
+          </Styled(styled.li)>
+          <Styled(styled.li)
+            key="1"
+          >
+            <Link
+              id={null}
+              to="/path"
+            >
+              Charts
+            </Link>
+          </Styled(styled.li)>
+        </Styled(styled.ul)>
+        <Styled(styled.ul)>
+          <Styled(styled.li)
+            key="0"
+          >
+            <Link
+              id={null}
+              to="/logout"
+            >
+              Log Out
+            </Link>
+          </Styled(styled.li)>
+          <Styled(styled.li)
+            id="id"
+            key="1"
+            onClick={[Function]}
+          >
+            Click action
+          </Styled(styled.li)>
+        </Styled(styled.ul)>
       </styled.div>
     </Component>
   </styled.div>

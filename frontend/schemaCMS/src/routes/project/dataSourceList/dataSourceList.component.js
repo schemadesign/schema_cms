@@ -5,6 +5,9 @@ import { Card, Icons } from 'schemaUI';
 import { always, cond, propEq, propIs, T } from 'ramda';
 
 import { TopHeader } from '../../../shared/components/topHeader';
+import { ProjectTabs } from '../../../shared/components/projectTabs';
+import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 import {
   Container,
   DataSourceItem,
@@ -57,9 +60,9 @@ export class DataSourceList extends PureComponent {
     this.props.cancelFetchListLoop();
   }
 
-  getHeaderAndMenuConfig = () => ({
-    headerTitle: this.props.intl.formatMessage(messages.title),
-    headerSubtitle: this.props.intl.formatMessage(messages.subTitle),
+  getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => ({
+    headerTitle,
+    headerSubtitle,
     secondaryMenuItems: [
       {
         label: this.props.intl.formatMessage(messages.projectDetails),
@@ -141,16 +144,22 @@ export class DataSourceList extends PureComponent {
   };
 
   render() {
-    const { dataSources = [] } = this.props;
-    const topHeaderConfig = this.getHeaderAndMenuConfig();
+    const { dataSources = [], match } = this.props;
+    const title = this.props.intl.formatMessage(messages.title);
+    const subtitle = this.props.intl.formatMessage(messages.subTitle);
+    const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
         <TopHeader {...topHeaderConfig} />
+        <ProjectTabs active={SOURCES} url={`/project/${match.params.projectId}`} />
+        <ContextHeader title={title} subtitle={subtitle}>
+          <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />
+        </ContextHeader>
         <DataSourceListWrapper>{dataSources.map(this.renderItem)}</DataSourceListWrapper>
 
-        <NavigationContainer>
+        <NavigationContainer hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
           <PlusButton id="createDataSourceBtn" onClick={this.handleCreateDataSource} />
         </NavigationContainer>

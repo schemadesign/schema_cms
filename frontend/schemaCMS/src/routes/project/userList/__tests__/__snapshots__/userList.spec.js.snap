@@ -18,13 +18,37 @@ exports[`UserList: Component should render correctly 1`] = `
       />
     }
   />
+  <ProjectTabs
+    active="users"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Project users list"
+        id="project.userList.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="project.userList.headerTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      id="addUserDesktopBtn"
+    />
+  </ContextHeader>
   <UserList
     onRemoveUser={[Function]}
     projectId="1"
     users={Array []}
   />
   <NavigationContainer
-    hideOnDesktop={false}
+    hideOnDesktop={true}
     right={false}
   >
     <BackButton
@@ -135,6 +159,30 @@ exports[`UserList: Component should render correctly with users 1`] = `
       />
     }
   />
+  <ProjectTabs
+    active="users"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Project users list"
+        id="project.userList.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="project.userList.headerTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      id="addUserDesktopBtn"
+    />
+  </ContextHeader>
   <UserList
     onRemoveUser={[Function]}
     projectId="1"
@@ -159,7 +207,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
     }
   />
   <NavigationContainer
-    hideOnDesktop={false}
+    hideOnDesktop={true}
     right={false}
   >
     <BackButton

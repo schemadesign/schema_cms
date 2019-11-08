@@ -36,6 +36,10 @@ exports[`View: Component should render correctly 1`] = `
         ]
       }
     />
+    <ProjectTabs
+      active="settings"
+      url="/project/100"
+    />
     <styled.div>
       <styled.ul>
         <styled.li

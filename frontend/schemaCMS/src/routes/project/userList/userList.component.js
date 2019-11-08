@@ -8,6 +8,9 @@ import { UserList as UserListComponent } from '../../../shared/components/userLi
 import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
+import { ProjectTabs } from '../../../shared/components/projectTabs';
+import { USERS } from '../../../shared/components/projectTabs/projectTabs.constants';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './userList.messages';
 import browserHistory from '../../../shared/utils/history';
 
@@ -84,8 +87,12 @@ export class UserList extends PureComponent {
     return (
       <Fragment>
         <TopHeader {...topHeaderConfig} />
+        <ProjectTabs active={USERS} url={`/project/${match.params.projectId}`} />
+        <ContextHeader title={topHeaderConfig.headerTitle} subtitle={topHeaderConfig.headerSubtitle}>
+          <PlusButton id="addUserDesktopBtn" onClick={this.handleCreateDataSource} />
+        </ContextHeader>
         <UserListComponent users={users} projectId={projectId} onRemoveUser={this.handleRemoveUser} />
-        <NavigationContainer>
+        <NavigationContainer hideOnDesktop>
           <BackButton onClick={this.handleBackClick}>
             <FormattedMessage {...messages.back} />
           </BackButton>
