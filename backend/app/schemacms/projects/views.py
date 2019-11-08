@@ -7,6 +7,7 @@ from django.db import transaction
 from django.shortcuts import get_object_or_404
 from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
+from schemacms.authorization import authentication
 from schemacms.users import permissions as user_permissions
 from schemacms.utils import serializers as utils_serializers
 from . import constants, models, serializers, services
@@ -284,7 +285,13 @@ class DataSourceJobDetailViewSet(
 
         return response.Response(status=status.HTTP_201_CREATED)
 
-    @decorators.action(detail=True, url_path="update-state", methods=["post"], permission_classes=[])
+    @decorators.action(
+        detail=True,
+        url_path="update-state",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
     def update_state(self, request, *args, **kwargs):
         job = self.get_object()
         serializer = self.get_serializer(instance=job, data=request.data)

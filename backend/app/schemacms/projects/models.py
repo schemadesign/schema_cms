@@ -247,19 +247,10 @@ class DataSource(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteOb
             return None
 
     def meta_file_serialization(self):
-        data = {
-            "id": self.id,
-            "name": self.name,
-            "file": self.file.name,
-            "items": 0,
-            "result": "",
-        }
+        data = {"id": self.id, "name": self.name, "file": self.file.name, "items": 0, "result": ""}
         current_job = self.current_job
         if current_job:
-            data.update({
-                "items": current_job.meta_data.items,
-                "result": current_job.result.name,
-            })
+            data.update({"items": current_job.meta_data.items, "result": current_job.result.name or ""})
         return data
 
 
@@ -307,10 +298,7 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
             return os.path.join(base_path, f"{self.datasource.id}/scripts/{filename}")
 
     def meta_file_serialization(self):
-        data = {
-            "id": self.id,
-            "name": self.name,
-        }
+        data = {"id": self.id, "name": self.name}
         return data
 
 class DataSourceJob(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
@@ -362,15 +350,16 @@ class DataSourceJob(utils_models.MetaGeneratorMixin, softdelete.models.SoftDelet
             "source_file_path": self.source_file_path,
             "source_file_version": self.source_file_version,
             "steps": [
-                step.meta_file_serialization()
-                for step in self.steps.order_by("exec_order").iterator()
+                step.meta_file_serialization() for step in self.steps.order_by("exec_order").iterator()
             ],
         }
         return data
 
 
 class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
-    job: DataSourceJob = models.OneToOneField(DataSourceJob, on_delete=models.CASCADE, related_name="meta_data")
+    job: DataSourceJob = models.OneToOneField(
+        DataSourceJob, on_delete=models.CASCADE, related_name="meta_data"
+    )
 
     def __str__(self):
         return f"Job {self.job} meta"
@@ -382,8 +371,12 @@ class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
 
 
 class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
-    datasource_job: DataSourceJob = models.ForeignKey(DataSourceJob, on_delete=models.CASCADE, related_name='steps')
-    script: WranglingScript = models.ForeignKey(WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True)
+    datasource_job: DataSourceJob = models.ForeignKey(
+        DataSourceJob, on_delete=models.CASCADE, related_name='steps'
+    )
+    script: WranglingScript = models.ForeignKey(
+        WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True
+    )
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
 

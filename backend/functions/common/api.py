@@ -10,7 +10,11 @@ class SchemaCMSAPI:
 
     def update_job_state(self, job_pk, state, result=None, error=None):
         url = os.path.join(self._job_url(job_pk), "update-state")
-        response = requests.post(url, json={"state": state, "result": result, "error": error})
+        response = requests.post(
+            url,
+            json={"state": state, "result": result, "error": error},
+            headers={'Authorization': f'Token {settings.LAMBDA_AUTH_TOKEN}'}
+        )
         response.raise_for_status()
         return response
 

@@ -5,6 +5,14 @@ from schemacms.users.tests.factories import UserFactory
 from schemacms.utils import test as utils_test
 
 
+class BaseMetaDataFactory(factory.django.DjangoModelFactory):
+    items = factory.Faker("pyint", min_value=0, max_value=9999)
+    fields = factory.Faker("pyint", min_value=0, max_value=20)
+
+    class Meta:
+        abstract = True
+
+
 class ProjectFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = "projects.Project"
@@ -38,14 +46,12 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
             self.update_meta()
 
 
-class DataSourceMetaFactory(factory.django.DjangoModelFactory):
+class DataSourceMetaFactory(BaseMetaDataFactory):
     class Meta:
         model = "projects.DataSourceMeta"
         django_get_or_create = ("datasource",)
 
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
-    items = factory.Faker("pyint", min_value=0, max_value=9999)
-    fields = factory.Faker("pyint", min_value=0, max_value=20)
 
 
 class ScriptFactory(factory.django.DjangoModelFactory):
@@ -65,6 +71,13 @@ class JobFactory(factory.django.DjangoModelFactory):
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
     source_file_path = factory.SelfAttribute(".datasource.file.name")
     source_file_version = factory.Faker("uuid4")
+
+
+class JobMetaFactory(BaseMetaDataFactory):
+    job = factory.SubFactory(JobFactory)
+
+    class Meta:
+        model = "projects.DataSourceJobMetaData"
 
 
 class JobStepFactory(factory.django.DjangoModelFactory):

@@ -297,11 +297,9 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
 
 
 class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
-    job_state = serializers.ChoiceField(choices=[
-        DataSourceJobState.PROCESSING,
-        DataSourceJobState.SUCCESS,
-        DataSourceJobState.FAILED,
-    ])
+    job_state = serializers.ChoiceField(
+        choices=[DataSourceJobState.PROCESSING, DataSourceJobState.SUCCESS, DataSourceJobState.FAILED]
+    )
     result = serializers.CharField()
 
     class Meta:

@@ -191,6 +191,10 @@ class API(core.Stack):
         self.djangoSecret = aws_secretsmanager.Secret(self, "django-secret")
         django_secret_key = aws_ecs.Secret.from_secrets_manager(self.djangoSecret)
         connection_secret_key = aws_ecs.Secret.from_secrets_manager(scope.base.db.secret)
+        api_lambda_token_secret = aws_secretsmanager.Secret.from_secret_arn(
+            self, LAMBDA_AUTH_TOKEN_ENV_NAME, self.node.try_get_context("lambda_auth_token")
+        )
+        self.api_lambda_token = api_lambda_token_secret.secret_value.to_string()
 
         installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
         api_image = aws_ecs.ContainerImage.from_asset("backend/app")
@@ -213,10 +217,9 @@ class API(core.Stack):
             "SENTRY_DNS": "sentry_dns_arn",
             "DJANGO_DEFAULT_FROM_EMAIL": "django_default_from_email_arn",
             "DJANGO_HOST": "django_host_arn",
-            LAMBDA_AUTH_TOKEN_ENV_NAME: "lambda_auth_token",
         }
 
-        env = {k: self.map_secret(v) for k, v in env_map.items()}
+        self.env = {k: self.map_secret(v) for k, v in env_map.items()}
 
         self.job_processing_dead_letter_sqs = aws_sqs.Queue(
             self,
@@ -263,8 +266,13 @@ class API(core.Stack):
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
                 "SQS_WORKER_QUEUE_URL": self.job_processing_queues[0].queue_url,
                 "SQS_WORKER_EXT_QUEUE_URL": self.job_processing_queues[1].queue_url,
+                LAMBDA_AUTH_TOKEN_ENV_NAME: self.api_lambda_token,
             },
-            secrets={"DJANGO_SECRET_KEY": django_secret_key, "DB_CONNECTION": connection_secret_key, **env},
+            secrets={
+                "DJANGO_SECRET_KEY": django_secret_key,
+                "DB_CONNECTION": connection_secret_key,
+                **self.env
+            },
             cpu=256,
             memory_limit_mib=512,
         )
@@ -276,7 +284,7 @@ class API(core.Stack):
         for queue in self.job_processing_queues:
             queue.grant_send_messages(self.api.service.task_definition.task_role)
 
-        for k, v in env.items():
+        for v in self.env.values():
             self.grant_secret_access(v)
 
         self.api.service.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
@@ -320,16 +328,13 @@ class LambdaWorker(core.Stack):
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             handler="handler.main",
             environment={
-                # "DB_SECRET_ARN": scope.base.db.secret.secret_arn,
-                # "DB_CONNECTION": scope.base.db.secret.secret_value.to_string(),
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
                 "BACKEND_URL": BACKEND_URL.format(
                     domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
                 ),
-                LAMBDA_AUTH_TOKEN_ENV_NAME: "", # add missing token from secret manager
+                LAMBDA_AUTH_TOKEN_ENV_NAME: scope.api.api_lambda_token,
             },
             memory_size=memory_size,
-            # vpc=scope.base.vpc,
             timeout=core.Duration.seconds(60),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
@@ -337,8 +342,6 @@ class LambdaWorker(core.Stack):
             aws_lambda_event_sources.SqsEventSource(queue, batch_size=1)
         )
         scope.base.app_bucket.grant_read_write(lambda_fn.role)
-        # scope.base.db.secret.grant_read(lambda_fn.role)
-        # lambda_fn.connections.allow_to(scope.base.db.connections, aws_ec2.Port.tcp(5432))
         return lambda_fn, lambda_code
 
 

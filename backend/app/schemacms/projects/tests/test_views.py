@@ -1,6 +1,7 @@
 import json
 import operator
 import os
+import uuid
 
 from django.urls import reverse
 from rest_framework import status
@@ -582,15 +583,40 @@ class TestDataSourceJobCreate:
 
 @pytest.mark.usefixtures("ds_source_file_latest_version_mock")
 class TestDataSourceJobUpdateState:
-    def test_job_state_from_pending_to_success(self, api_client, job_factory, mocker):
+    @pytest.fixture()
+    def lambda_auth_token(self, settings):
+        settings.LAMBDA_AUTH_TOKEN = uuid.uuid4().hex
+        return settings.LAMBDA_AUTH_TOKEN
+
+    def test_job_state_from_pending_to_processing(self, api_client, job_factory, lambda_auth_token):
         job = job_factory(job_state=projects_constants.DataSourceJobState.PENDING, result=None, error="")
+        payload = dict(
+            job_state=projects_constants.DataSourceJobState.PROCESSING,
+            result="path/to/result.csv",
+            error="test",
+        )
+
+        response = api_client.post(
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
+        )
+        job.refresh_from_db()
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT, response.content
+        assert job.job_state == payload["job_state"]
+        assert not job.result
+        assert job.error == ""
+
+    def test_job_state_from_processing_to_success(self, api_client, job_factory, mocker, lambda_auth_token):
+        job = job_factory(job_state=projects_constants.DataSourceJobState.PROCESSING, result=None, error="")
         payload = dict(
             job_state=projects_constants.DataSourceJobState.SUCCESS, result="path/to/result.csv", error="test"
         )
         update_meta_mock = mocker.patch("schemacms.projects.models.DataSourceJob.update_meta")
         set_active_job_mock = mocker.patch("schemacms.projects.models.DataSource.set_active_job")
 
-        response = api_client.post(self.get_url(job.pk), payload)
+        response = api_client.post(
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
+        )
         job.refresh_from_db()
 
         assert response.status_code == status.HTTP_204_NO_CONTENT, response.content
@@ -600,15 +626,17 @@ class TestDataSourceJobUpdateState:
         update_meta_mock.assert_called_with()
         set_active_job_mock.assert_called_with(job)
 
-    def test_job_state_from_pending_to_failed(self, api_client, job_factory):
-        job = job_factory(job_state=projects_constants.DataSourceJobState.PENDING, result=None)
+    def test_job_state_from_processing_to_failed(self, api_client, job_factory, lambda_auth_token):
+        job = job_factory(job_state=projects_constants.DataSourceJobState.PROCESSING, result=None)
         payload = dict(
             job_state=projects_constants.DataSourceJobState.FAILED,
             result="path/to/result.csv",
             error="Something goes wrong",
         )
 
-        response = api_client.post(self.get_url(job.pk), payload)
+        response = api_client.post(
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
+        )
         job.refresh_from_db()
 
         assert response.status_code == status.HTTP_204_NO_CONTENT, response.content
@@ -616,41 +644,75 @@ class TestDataSourceJobUpdateState:
         assert job.error == payload["error"]
         assert not job.result
 
-    @pytest.mark.parametrize("job_state", [
-        projects_constants.DataSourceJobState.SUCCESS,
-        projects_constants.DataSourceJobState.FAILED,
-    ])
-    def test_job_state_to_pending(self, api_client, job_factory, job_state):
+    @pytest.mark.parametrize(
+        "job_state",
+        [projects_constants.DataSourceJobState.SUCCESS, projects_constants.DataSourceJobState.FAILED],
+    )
+    def test_job_state_to_pending(self, api_client, job_factory, job_state, lambda_auth_token):
         job = job_factory(job_state=job_state)
-        payload = dict(
-            job_state=projects_constants.DataSourceJobState.PENDING,
-        )
+        payload = dict(job_state=projects_constants.DataSourceJobState.PENDING)
 
-        response = api_client.post(self.get_url(job.pk), payload)
+        response = api_client.post(
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
+        )
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.data == {
             'job_state': [{'code': 'invalid_choice', 'message': '"pending" is not a valid choice.'}]
         }
 
-    @pytest.mark.parametrize("initial_job_state, new_job_state", [
-        (projects_constants.DataSourceJobState.SUCCESS, projects_constants.DataSourceJobState.SUCCESS),
-        (projects_constants.DataSourceJobState.FAILED, projects_constants.DataSourceJobState.FAILED),
-        (projects_constants.DataSourceJobState.SUCCESS, projects_constants.DataSourceJobState.FAILED),
-        (projects_constants.DataSourceJobState.FAILED, projects_constants.DataSourceJobState.SUCCESS),
-    ])
-    def test_changing_data_with_same_job_state(self, api_client, job_factory, initial_job_state, new_job_state):
+    @pytest.mark.parametrize(
+        "initial_job_state, new_job_state",
+        [
+            (projects_constants.DataSourceJobState.SUCCESS, projects_constants.DataSourceJobState.SUCCESS),
+            (projects_constants.DataSourceJobState.FAILED, projects_constants.DataSourceJobState.FAILED),
+            (projects_constants.DataSourceJobState.SUCCESS, projects_constants.DataSourceJobState.FAILED),
+            (projects_constants.DataSourceJobState.FAILED, projects_constants.DataSourceJobState.SUCCESS),
+        ],
+    )
+    def test_changing_data_with_same_job_state(
+        self, api_client, job_factory, initial_job_state, new_job_state, lambda_auth_token
+    ):
         initial = dict(result="path/to/result.csv", error="Error")
         job = job_factory(job_state=initial_job_state, **initial)
         payload = dict(job_state=new_job_state, result="path/to/other-result.csv", error='Other error')
 
-        api_client.post(self.get_url(job.pk), payload)
+        api_client.post(
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
+        )
         job.refresh_from_db()
 
         # Data should stay the same
         assert job.result == initial["result"]
         assert job.error == initial["error"]
 
+    def test_job_state_not_authenticated(self, api_client, job_factory):
+        job = job_factory(job_state=projects_constants.DataSourceJobState.PENDING, result=None, error="")
+        payload = dict(
+            job_state=projects_constants.DataSourceJobState.PROCESSING,
+            result="path/to/result.csv",
+            error="test",
+        )
+
+        response = api_client.post(self.get_url(job.pk), payload)
+        job.refresh_from_db()
+
+        assert response.status_code == status.HTTP_401_UNAUTHORIZED
+
+    def test_job_state_not_authenticated_by_jwt_token(self, api_client, job_factory, admin):
+        job = job_factory(job_state=projects_constants.DataSourceJobState.PENDING, result=None, error="")
+        payload = dict(
+            job_state=projects_constants.DataSourceJobState.PROCESSING,
+            result="path/to/result.csv",
+            error="test",
+        )
+
+        response = api_client.post(
+            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="JWT {}".format(admin.get_jwt_token())
+        )
+        job.refresh_from_db()
+
+        assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
     @staticmethod
     def get_url(pk):
@@ -861,20 +923,22 @@ class TestFilterDetailView:
 
 
 class TestRevertJobView:
-    def test_response(self, api_client, data_source, admin, job_factory):
+    def test_response(self, api_client, data_source, admin, job_factory, mocker):
         jobs = job_factory.create_batch(
             3, datasource=data_source, job_state=projects_constants.DataSourceJobState.SUCCESS
         )
-        pyaload = dict(id=jobs[1].id)
+        payload = dict(id=jobs[1].id)
         old_active_job = data_source.active_job
+        create_meta_file_mock = mocker.patch("schemacms.projects.models.DataSource.create_meta_file")
 
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(data_source.id), data=pyaload)
+        response = api_client.post(self.get_url(data_source.id), data=payload)
         data_source.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
         assert data_source.active_job != old_active_job
         assert data_source.active_job == jobs[1]
+        create_meta_file_mock.assert_called_with()
 
     @staticmethod
     def get_url(pk):
