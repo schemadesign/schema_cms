@@ -8,8 +8,8 @@ export class Tabs extends PureComponent {
     tabs: PropTypes.array,
   };
 
-  renderTab = ({ to, active, content }) => (
-    <Tab to={to} active={active}>
+  renderTab = ({ to, active, content }, index) => (
+    <Tab to={to} active={active} key={index}>
       {content}
     </Tab>
   );
