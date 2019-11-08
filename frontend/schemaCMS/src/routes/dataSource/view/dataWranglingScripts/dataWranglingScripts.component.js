@@ -7,8 +7,8 @@ import { always, append, equals, ifElse, pathOr, reject, map, pipe, prop, toStri
 
 import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
-import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
+import { SCRIPT_NAME_MAX_LENGTH } from '../../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
@@ -19,6 +19,7 @@ export class DataWranglingScripts extends PureComponent {
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     dataSource: PropTypes.object.isRequired,
+    intl: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
@@ -28,7 +29,7 @@ export class DataWranglingScripts extends PureComponent {
 
   state = {
     uploading: false,
-    errorOnUploading: false,
+    errorMessageOnUploading: '',
   };
 
   componentDidMount() {
@@ -38,19 +39,28 @@ export class DataWranglingScripts extends PureComponent {
 
   handleUploadScript = async ({ target }) => {
     const [file] = target.files;
+    const {
+      intl: { formatMessage },
+      match: { params },
+    } = this.props;
+
     if (!file) {
       return;
     }
 
+    if (file.name.length > SCRIPT_NAME_MAX_LENGTH) {
+      this.setState({ errorMessageOnUploading: formatMessage(messages.errorTooLongName) });
+      return;
+    }
+
     try {
-      const { dataSourceId } = this.props.match.params;
-      this.setState({ uploading: true, errorOnUploading: false });
+      const { dataSourceId } = params;
+      this.setState({ uploading: true, errorMessageOnUploading: '' });
 
       await this.props.uploadScript({ script: file, dataSourceId });
+      this.setState({ uploading: false });
     } catch (e) {
-      this.setState({ uploading: false, errorOnUploading: true });
-    } finally {
-      this.setState({ uploading: false, errorOnUploading: false });
+      this.setState({ uploading: false, errorMessageOnUploading: formatMessage(messages.errorOnUploading) });
     }
   };
 
@@ -74,17 +84,9 @@ export class DataWranglingScripts extends PureComponent {
     </Checkbox>
   );
 
-  renderErrorOnUploading = renderWhenTrue(
-    always(
-      <Error>
-        <FormattedMessage {...messages.errorOnUploading} />
-      </Error>
-    )
-  );
-
   render() {
     const { dataWranglingScripts, dataSource } = this.props;
-    const { uploading, errorOnUploading } = this.state;
+    const { uploading, errorMessageOnUploading } = this.state;
     const steps = pipe(
       pathOr([], ['jobs', 0, 'steps']),
       map(prop('script')),
@@ -97,7 +99,7 @@ export class DataWranglingScripts extends PureComponent {
           <Empty />
           <StepCounter>
             <FormattedMessage values={{ length: dataWranglingScripts.length }} {...messages.steps} />
-            {this.renderErrorOnUploading(errorOnUploading)}
+            <Error>{errorMessageOnUploading}</Error>
           </StepCounter>
           <UploadContainer>
             <FileUpload

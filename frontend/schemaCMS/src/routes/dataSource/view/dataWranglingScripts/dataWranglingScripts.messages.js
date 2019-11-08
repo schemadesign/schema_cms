@@ -10,4 +10,8 @@ export default defineMessages({
     id: 'dataWranglingScripts.errorOnUploading',
     defaultMessage: 'Error on uploading a file.',
   },
+  errorTooLongName: {
+    id: 'dataWranglingScripts.errorOnUploading',
+    defaultMessage: 'Script name should have maximum 50 characters',
+  },
 });

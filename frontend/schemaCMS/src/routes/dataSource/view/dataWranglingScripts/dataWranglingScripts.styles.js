@@ -11,17 +11,17 @@ export const Header = styled.div`
 `;
 
 export const StepCounter = styled.div`
-  width: 34%;
+  width: 60%;
   text-align: center;
   color: ${({ theme: { secondaryText } }) => secondaryText};
 `;
 
 export const Empty = styled.div`
-  width: 33%;
+  width: 20%;
 `;
 
 export const UploadContainer = styled.div`
-  width: 33%;
+  width: 20%;
   text-align: right;
 `;
 
