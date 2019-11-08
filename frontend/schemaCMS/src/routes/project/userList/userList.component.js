@@ -6,7 +6,7 @@ import { path } from 'ramda';
 
 import { UserList as UserListComponent } from '../../../shared/components/userList';
 import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { USERS } from '../../../shared/components/projectTabs/projectTabs.constants';
@@ -98,7 +98,7 @@ export class UserList extends PureComponent {
           </BackButton>
           <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
         </NavigationContainer>
-        <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={modalStyles}>
+        <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={getModalStyles()}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>

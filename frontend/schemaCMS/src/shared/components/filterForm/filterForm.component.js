@@ -19,7 +19,7 @@ import {
 import { Select } from '../form/select';
 import { Form, Row } from './filterForm.styles';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
-import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../modal/modal.styles';
+import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../modal/modal.styles';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
 import { FILTERS_STEP } from '../../../modules/dataSource/dataSource.constants';
 
@@ -169,7 +169,7 @@ export class FilterForm extends PureComponent {
             );
           }}
         </Formik>
-        <Modal isOpen={this.state.confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+        <Modal isOpen={this.state.confirmationModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>

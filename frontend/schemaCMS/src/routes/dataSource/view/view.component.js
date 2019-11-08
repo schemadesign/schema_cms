@@ -23,7 +23,7 @@ import {
   VIEWS_STEP,
   META_DATA_STEP,
 } from '../../../modules/dataSource/dataSource.constants';
-import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { StepNavigation } from '../../../shared/components/stepNavigation';
 
 export class View extends PureComponent {
@@ -147,7 +147,7 @@ export class View extends PureComponent {
             {intl.formatMessage(messages.removeDataSource)}
           </Button>
         </DesktopActions>
-        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
