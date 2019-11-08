@@ -844,3 +844,25 @@ class TestPublicResultsView:
     @staticmethod
     def get_url(pk):
         return reverse("projects:datasource-public-results", kwargs=dict(pk=pk))
+
+
+class TestSetFiltersView:
+    def test_response(self, api_client, admin, data_source, filter_factory):
+        filter1 = filter_factory(datasource=data_source, is_active=False)
+        filter2 = filter_factory(datasource=data_source, is_active=True)
+        filter1_old_status = filter1.is_active
+        filter2_old_status = filter2.is_active
+        payload = {"active": [filter1.id], "inactive": [filter2.id]}
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=payload)
+        filter1.refresh_from_db()
+        filter2.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert filter1_old_status != filter1.is_active
+        assert filter2_old_status != filter2.is_active
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:datasource-set-filters", kwargs=dict(pk=pk))

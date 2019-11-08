@@ -360,7 +360,7 @@ class Filter(ext_models.TimeStampedModel):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
     class Meta:
         unique_together = ("name", "datasource")

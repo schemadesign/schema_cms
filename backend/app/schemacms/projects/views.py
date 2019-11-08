@@ -88,6 +88,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "jobs_history": serializers.DataSourceJobSerializer,
         "public_results": serializers.PublicApiJobSerializer,
         "filters": serializers.FilterSerializer,
+        "set_filters": serializers.FilterSerializer,
     }
 
     def get_queryset(self):
@@ -218,6 +219,20 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             serializer.save()
 
             return response.Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    @decorators.action(detail=True, url_path='set-filters', methods=["post"])
+    def set_filters(self, request, pk=None, **kwargs):
+        data_source = self.get_object()
+        active = request.data.get("active", [])
+        inactive = request.data.get("inactive", [])
+
+        data_source.filters.filter(id__in=active).update(is_active=True)
+        data_source.filters.filter(id__in=inactive).update(is_active=False)
+
+        data_source.refresh_from_db()
+        serializer = self.get_serializer(instance=data_source.filters, many=True)
+
+        return response.Response(serializer.data, status=status.HTTP_200_OK)
 
     @decorators.action(detail=True, url_path="revert-job", methods=["post"])
     def revert_job(self, request, pk=None, **kwargs):
