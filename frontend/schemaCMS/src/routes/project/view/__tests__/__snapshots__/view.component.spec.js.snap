@@ -94,6 +94,7 @@ exports[`View: Component should render correctly 1`] = `
       <styled.ul>
         <styled.li
           key="0"
+          order={1}
         >
           <styled.div
             id="fieldLastUpdated"
@@ -117,6 +118,7 @@ exports[`View: Component should render correctly 1`] = `
         </styled.li>
         <styled.li
           key="1"
+          order={3}
         >
           <styled.div
             id="fieldStatus"
@@ -140,6 +142,7 @@ exports[`View: Component should render correctly 1`] = `
         </styled.li>
         <styled.li
           key="2"
+          order={5}
         >
           <styled.div
             id="fieldOwner"
@@ -163,6 +166,7 @@ exports[`View: Component should render correctly 1`] = `
         </styled.li>
         <styled.li
           key="3"
+          order={2}
         >
           <styled.div
             id="fieldTitle"
@@ -186,6 +190,7 @@ exports[`View: Component should render correctly 1`] = `
         </styled.li>
         <styled.li
           key="4"
+          order={4}
         >
           <styled.div
             id="fieldDescription"
@@ -209,6 +214,7 @@ exports[`View: Component should render correctly 1`] = `
         </styled.li>
         <styled.li
           key="5"
+          order={6}
         >
           <styled.div
             id="fieldSlug"
@@ -231,6 +237,19 @@ exports[`View: Component should render correctly 1`] = `
           </styled.div>
         </styled.li>
       </styled.ul>
+    </styled.div>
+    <styled.div>
+      <Component
+        customStyles={
+          Object {
+            "padding": "0 40px",
+          }
+        }
+        id="deleteProjectDesktopBtn"
+        onClick={[Function]}
+      >
+        Delete Project
+      </Component>
     </styled.div>
   </div>
   <NavigationContainer

@@ -10,10 +10,10 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
   }
 >
   <div
-    className="sc-bwzfXH eHBWfM"
+    className="sc-htpNat hqKAHB"
   >
     <div
-      className="sc-ifAKCX cFlEyZ"
+      className="sc-EHOje jvzENE"
     >
       <div
         style={
@@ -186,13 +186,13 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-htoDjs iUYJOx"
+      className="sc-dnqmqq kmmOzl"
     >
       <div
-        className="sc-iwsKbI iKbLSk"
+        className="sc-gZMcBi kaVsZU"
       >
         <div
-          className="sc-dnqmqq XuhPC"
+          className="sc-iwsKbI hPSGKY"
         >
           <button
             disabled={false}
@@ -247,7 +247,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
             </span>
           </button>
           <div
-            className="sc-gzVnrw bMUaYY"
+            className="sc-htoDjs cesZpB"
           >
             <div
               style={
@@ -269,6 +269,34 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                     "height": "12px",
                     "margin": "0 4px",
                     "pointerEvents": "none",
+                    "width": "12px",
+                  }
+                }
+              />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#1d1d20",
+                    "borderRadius": "50%",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "height": "12px",
+                    "margin": "0 4px",
+                    "width": "12px",
+                  }
+                }
+              />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#1d1d20",
+                    "borderRadius": "50%",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "height": "12px",
+                    "margin": "0 4px",
                     "width": "12px",
                   }
                 }
