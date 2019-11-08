@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, both, cond, equals, isEmpty, path, propEq, pipe, findLast } from 'ramda';
-import { Icons, Typography } from 'schemaUI';
+import { always, both, cond, equals, findLast, isEmpty, path, pipe, propEq } from 'ramda';
+import { Typography } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
-import { Container, Dot, JobItem, JobItemWrapper, ListWrapper, RadioInput } from './jobList.styles';
+import { Container, Dot, Eye, JobItem, JobItemWrapper, ListWrapper, RadioInput, RadioLabel } from './jobList.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
@@ -72,6 +72,7 @@ export class JobList extends PureComponent {
 
   renderList = (job, index) => {
     const isActive = job.id === this.props.dataSource.activeJob;
+    const id = `${JOB_LIST_NAME}-${index}`;
 
     return (
       <JobItemWrapper key={index}>
@@ -80,17 +81,20 @@ export class JobList extends PureComponent {
             value={job.id}
             type="radio"
             name={JOB_LIST_NAME}
+            id={id}
             onChange={this.handleChange}
             defaultChecked={isActive}
           />
-          <Span>{extendedDayjs(job.created, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm')}</Span>
-          <Dot />
-          <Span>
-            <FormattedMessage {...messages[job.jobState]} />
-            {this.renderActiveInformation(isActive)}
-          </Span>
+          <RadioLabel htmlFor={id}>
+            <Span>{extendedDayjs(job.created, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm')}</Span>
+            <Dot />
+            <Span>
+              <FormattedMessage {...messages[job.jobState]} />
+              {this.renderActiveInformation(isActive)}
+            </Span>
+          </RadioLabel>
         </JobItem>
-        <Icons.EyeIcon onClick={() => this.handleIconClick(job.id)} />
+        <Eye onClick={() => this.handleIconClick(job.id)} />
       </JobItemWrapper>
     );
   };

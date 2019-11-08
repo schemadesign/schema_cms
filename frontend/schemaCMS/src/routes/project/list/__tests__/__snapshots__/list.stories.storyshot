@@ -10,7 +10,7 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-bMVAic bLqoya"
+    className="sc-bAeIUo hyslBV"
   >
     <div
       className="sc-dVhcbM elEMJK"
@@ -235,13 +235,13 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-iQKALj iQkCCX"
+      className="sc-bwCtUz eJVtof"
     >
       <div
-        className="sc-bwCtUz eJBWly"
+        className="sc-hrWEMg euAblY"
       >
         <h1
-          className="sc-hrWEMg hdZPci"
+          className="sc-eTuwsz bkNIDk"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -257,7 +257,7 @@ exports[`Storyshots Project/List empty 1`] = `
           Projects
         </h1>
         <h2
-          className="sc-eTuwsz bkNIDk"
+          className="sc-gwVKww htJtAT"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -272,7 +272,7 @@ exports[`Storyshots Project/List empty 1`] = `
         </h2>
       </div>
       <div
-        className="sc-gwVKww eWCHnX"
+        className="sc-hXRMBi kcwAsj"
       >
         <button
           disabled={false}
@@ -316,20 +316,20 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-fjdhpX hqQsLf"
+      className="sc-jTzLTM etyENb"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="sc-dnqmqq kmmOzl"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="sc-gZMcBi kaVsZU"
       >
         <div
-          className="sc-gZMcBi elFcsa"
+          className="sc-iwsKbI eqOzXw"
         >
           <button
             disabled={false}
@@ -387,7 +387,7 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-bMVAic bLqoya"
+    className="sc-bAeIUo hyslBV"
   >
     <div
       className="sc-dVhcbM elEMJK"
@@ -612,13 +612,13 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-iQKALj iQkCCX"
+      className="sc-bwCtUz eJVtof"
     >
       <div
-        className="sc-bwCtUz eJBWly"
+        className="sc-hrWEMg euAblY"
       >
         <h1
-          className="sc-hrWEMg hdZPci"
+          className="sc-eTuwsz bkNIDk"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -634,7 +634,7 @@ exports[`Storyshots Project/List list 1`] = `
           Projects
         </h1>
         <h2
-          className="sc-eTuwsz bkNIDk"
+          className="sc-gwVKww htJtAT"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -649,7 +649,7 @@ exports[`Storyshots Project/List list 1`] = `
         </h2>
       </div>
       <div
-        className="sc-gwVKww eWCHnX"
+        className="sc-hXRMBi kcwAsj"
       >
         <button
           disabled={false}
@@ -693,20 +693,20 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-fjdhpX hqQsLf"
+      className="sc-jTzLTM etyENb"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="sc-dnqmqq kmmOzl"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="sc-gZMcBi kaVsZU"
       >
         <div
-          className="sc-gZMcBi elFcsa"
+          className="sc-iwsKbI eqOzXw"
         >
           <button
             disabled={false}

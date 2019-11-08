@@ -10,14 +10,14 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
   }
 >
   <div
-    className="sc-rBLzX gcgxuO"
+    className="sc-gJWqzi jOJgYp"
   >
     <form
-      className="sc-bMvGRv jKmwkI"
+      className="sc-rBLzX gcgxuO"
       onSubmit={[Function]}
     >
       <div
-        className="sc-bZQynM bOrPFB"
+        className="sc-EHOje jvzENE"
       >
         <div
           style={
@@ -77,7 +77,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM bOrPFB"
+        className="sc-EHOje jvzENE"
       >
         <div
           style={
@@ -137,7 +137,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM bOrPFB"
+        className="sc-EHOje jvzENE"
       >
         <div
           style={
@@ -198,7 +198,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM bOrPFB"
+        className="sc-EHOje jvzENE"
       >
         <div
           style={
@@ -257,13 +257,13 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-iwsKbI eQdjUy"
+        className="sc-dnqmqq kmmOzl"
       >
         <div
-          className="sc-gqjmRU fIKSOC"
+          className="sc-gZMcBi kaVsZU"
         >
           <div
-            className="sc-gZMcBi brDpsb"
+            className="sc-iwsKbI YQdMt"
           >
             <button
               disabled={false}

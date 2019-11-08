@@ -10,7 +10,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
   }
 >
   <div
-    className="sc-ktHwxA bwPBzM"
+    className="sc-cIShpX krSiat"
   >
     <div
       className="sc-dVhcbM elEMJK"
@@ -212,11 +212,11 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-cIShpX krSiat"
+      className="sc-kafWEX dNChzQ"
       name="dataWranglingForm"
     >
       <div
-        className="sc-bZQynM bOrPFB"
+        className="sc-EHOje jvzENE"
       >
         <div
           style={
@@ -984,13 +984,13 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       </pre>
     </form>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="sc-dnqmqq kmmOzl"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="sc-gZMcBi kaVsZU"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="sc-iwsKbI hPSGKY"
         >
           <button
             disabled={false}
