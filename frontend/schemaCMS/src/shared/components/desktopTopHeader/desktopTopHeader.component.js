@@ -11,7 +11,6 @@ import {
   PrimaryItem,
   SecondaryItem,
   MenuHeader,
-  closeButtonStyles,
 } from '../topHeader/topHeader.styles';
 import {
   Container,
@@ -27,6 +26,7 @@ import {
   menuStyles,
   headerCustomStyles,
   customButtonStyles,
+  closeButtonStyles,
 } from './desktopTopHeader.styles';
 
 const { ExitIcon, UserIcon } = Icons;

@@ -95,6 +95,12 @@ export const customButtonStyles = {
   flex: '0 0 auto',
 };
 
+export const closeButtonStyles = {
+  backgroundColor: 'transparent',
+  top: 44,
+  right: 44,
+};
+
 export const menuStyles = {
   zIndex: 9999,
   maxWidth: 595,
