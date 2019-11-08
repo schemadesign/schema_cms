@@ -2,9 +2,10 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { always, cond, equals, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
+import { Button } from 'schemaUI';
 import Modal from 'react-modal';
 
-import { Container, ComingSoon } from './view.styles';
+import { Container, ComingSoon, DesktopActions, desktopButtonStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
 import { DataPreview } from '../../../shared/components/dataPreview';
@@ -78,7 +79,7 @@ export class View extends PureComponent {
       },
       {
         label: intl.formatMessage(messages.removeDataSource),
-        onClick: () => this.setState({ confirmationModalOpen: true }),
+        onClick: this.handleRemoveClick,
       },
     ];
 
@@ -88,6 +89,8 @@ export class View extends PureComponent {
       secondaryMenuItems,
     };
   };
+
+  handleRemoveClick = () => this.setState({ confirmationModalOpen: true });
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
@@ -139,6 +142,11 @@ export class View extends PureComponent {
           dataSource,
           ...this.props,
         })}
+        <DesktopActions>
+          <Button id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick} customStyles={desktopButtonStyles}>
+            {intl.formatMessage(messages.removeDataSource)}
+          </Button>
+        </DesktopActions>
         <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
