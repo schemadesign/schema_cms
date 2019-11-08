@@ -1,5 +1,7 @@
 import * as Yup from 'yup';
 
+export const ME = 'me';
+
 export const ROLES = {
   ADMIN: 'admin',
   EDITOR: 'editor',

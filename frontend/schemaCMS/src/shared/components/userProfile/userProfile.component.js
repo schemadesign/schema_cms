@@ -6,6 +6,7 @@ import { ifElse, is, path } from 'ramda';
 import { Container, Form } from './userProfile.styles';
 import { TextInput } from '../form/inputs/textInput';
 import {
+  ME,
   EMAIL,
   FIRST_NAME,
   INITIAL_VALUES,
@@ -43,7 +44,7 @@ export class UserProfile extends PureComponent {
   handleGoToList = () => {
     const id = path(['match', 'params', 'userId'], this.props);
 
-    if (id === 'me' && isDesktop()) {
+    if (id === ME && isDesktop()) {
       this.props.history.goBack();
     } else {
       this.props.history.push(this.getBackUrl(path(['match', 'params', 'projectId'])(this.props)));
