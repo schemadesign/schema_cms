@@ -1,6 +1,3 @@
-import numpy as np
-
-
 # Drop All Completely empty rows and columns
 df = df.dropna(how='all', axis=0)
 df = df.dropna(how='all', axis=1)
@@ -22,7 +19,7 @@ for column in text_columns:
 
 
 # Getting numberic field values previously detected as string
-df_subset = num_df.select_dtypes(include=[np.number])
+df_subset = num_df.select_dtypes(include=["bool", np.number])
 num_columns = df_subset.columns.tolist()
 
 

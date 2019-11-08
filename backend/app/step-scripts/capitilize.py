@@ -1,9 +1,4 @@
-import pandas as pd
-import numpy as np
-import re
-
 # # Only First word of first sentense is capatalised and everything else is converted to lowercase.
-
 
 df_subset = df.select_dtypes(exclude=["bool", np.number])
 text_columns = df_subset.columns.tolist()
