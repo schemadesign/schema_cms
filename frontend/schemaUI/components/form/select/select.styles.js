@@ -19,7 +19,7 @@ export const getStyles = (theme = defaultTheme) => ({
     cursor: 'pointer',
   },
   customOptionStyle: index => ({
-    display: 'flex',
+    display: 'block',
     cursor: 'pointer',
     padding: `${PADDING}px`,
     borderTop: index ? `1px solid  ${theme.select.border}` : 'none',

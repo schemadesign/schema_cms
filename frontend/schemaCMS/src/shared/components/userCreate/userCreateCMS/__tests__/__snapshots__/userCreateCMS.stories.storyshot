@@ -392,7 +392,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                   Object {
                     "borderTop": "none",
                     "cursor": "pointer",
-                    "display": "flex",
+                    "display": "block",
                     "padding": "7px",
                   }
                 }
@@ -406,7 +406,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                   Object {
                     "borderTop": "1px solid  #000",
                     "cursor": "pointer",
-                    "display": "flex",
+                    "display": "block",
                     "padding": "7px",
                   }
                 }

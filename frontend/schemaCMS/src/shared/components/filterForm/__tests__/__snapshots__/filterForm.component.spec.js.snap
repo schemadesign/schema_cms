@@ -789,7 +789,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       Object {
                                         "borderTop": "none",
                                         "cursor": "pointer",
-                                        "display": "flex",
+                                        "display": "block",
                                         "padding": "7px",
                                       }
                                     }
@@ -1060,7 +1060,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       Object {
                                         "borderTop": "none",
                                         "cursor": "pointer",
-                                        "display": "flex",
+                                        "display": "block",
                                         "padding": "7px",
                                       }
                                     }
@@ -2743,7 +2743,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       Object {
                                         "borderTop": "none",
                                         "cursor": "pointer",
-                                        "display": "flex",
+                                        "display": "block",
                                         "padding": "7px",
                                       }
                                     }
@@ -3014,7 +3014,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       Object {
                                         "borderTop": "none",
                                         "cursor": "pointer",
-                                        "display": "flex",
+                                        "display": "block",
                                         "padding": "7px",
                                       }
                                     }
