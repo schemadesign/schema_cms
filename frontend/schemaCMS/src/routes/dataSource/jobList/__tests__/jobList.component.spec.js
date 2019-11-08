@@ -39,6 +39,6 @@ describe('JobList: Component', () => {
     const wrapper = render({ ...propsWithJobs, revertToJob });
     wrapper.setState({ selectedJob: '1' });
     wrapper.find('#revertBtn').simulate('click');
-    expect(revertToJob).to.have.been.calledWith({ jobId: '1' });
+    expect(revertToJob).to.have.been.calledWith({ jobId: '1', dataSourceId: '1' });
   });
 });

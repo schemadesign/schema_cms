@@ -26,7 +26,7 @@ describe('DataWranglingResult: Component', () => {
     jest.spyOn(defaultProps, 'fetchResult');
     render();
 
-    expect(defaultProps.fetchResult).toBeCalledWith({ jobId: 2 });
+    expect(defaultProps.fetchResult).toBeCalledWith({ dataSourceId: '1' });
   });
 
   it("should redirect to step 3 if jobs doesn't exist", async () => {

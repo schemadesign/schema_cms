@@ -6,7 +6,6 @@ import { JobRoutines, reducer as jobReducer } from '../job.redux';
 describe('Job: redux', () => {
   const state = Immutable({
     job: {},
-    jobPreview: {},
     jobList: [],
   });
 
@@ -39,15 +38,6 @@ describe('Job: redux', () => {
 
       const resultState = jobReducer(state, JobRoutines.updateOne.success({ pk: 1 }));
       expect(resultState.job).to.deep.equal(job);
-    });
-  });
-
-  describe('when JOB/FETCH_ONE action is received', () => {
-    it('should set job preview value', () => {
-      const jobPreview = { fields: {}, data: [] };
-
-      const resultState = jobReducer(state, JobRoutines.fetchPreview.success(jobPreview));
-      expect(resultState.jobPreview).to.deep.equal(jobPreview);
     });
   });
 

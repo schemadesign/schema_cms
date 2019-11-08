@@ -7,6 +7,7 @@ import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { FETCH_LIST_DELAY } from './dataSource.constants';
 import { getIsAnyResultProcessing } from '../../shared/utils/helpers';
+import { JobRoutines } from '../job';
 
 const PAGE_SIZE = 1000;
 
@@ -155,11 +156,25 @@ function* revertToJob({ payload: { dataSourceId, jobId } }) {
     yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/revert-job`, { id: jobId });
 
     yield put(DataSourceRoutines.revertToJob.success());
-    browserHistory.push(`/datasource/${dataSourceId}`);
+    browserHistory.push(`/datasource/${dataSourceId}/4`);
   } catch (error) {
     yield put(DataSourceRoutines.revertToJob.failure(error));
   } finally {
     yield put(DataSourceRoutines.revertToJob.fulfill());
+  }
+}
+
+function* fetchPreview({ payload: { dataSourceId } }) {
+  try {
+    yield put(DataSourceRoutines.fetchPreview.request());
+
+    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/job-preview`);
+
+    yield put(DataSourceRoutines.fetchPreview.success(data));
+  } catch (e) {
+    yield put(DataSourceRoutines.fetchPreview.failure(e));
+  } finally {
+    yield put(DataSourceRoutines.fetchPreview.fulfill());
   }
 }
 
@@ -173,5 +188,6 @@ export function* watchDataSource() {
     takeLatest(DataSourceRoutines.fetchFields.TRIGGER, fetchFields),
     takeLatest(DataSourceRoutines.fetchFieldsInfo.TRIGGER, fetchFieldsInfo),
     takeLatest(DataSourceRoutines.revertToJob.TRIGGER, revertToJob),
+    takeLatest(DataSourceRoutines.fetchPreview.TRIGGER, fetchPreview),
   ]);
 }

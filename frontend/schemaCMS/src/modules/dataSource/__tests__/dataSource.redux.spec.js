@@ -10,6 +10,7 @@ describe('DataSource: redux', () => {
     fields: {},
     previewTable: [],
     fieldsInfo: {},
+    jobPreview: {},
   });
 
   describe('reducer', () => {
@@ -117,6 +118,15 @@ describe('DataSource: redux', () => {
       const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchFieldsInfo.success(data));
 
       expect(resultState.fieldsInfo).to.deep.equal(data);
+    });
+  });
+
+  describe('when FETCH_PREVIEW/SUCCESS action is received', () => {
+    it('should set job preview value', () => {
+      const jobPreview = { fields: {}, data: [] };
+
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchPreview.success(jobPreview));
+      expect(resultState.jobPreview).to.deep.equal(jobPreview);
     });
   });
 });

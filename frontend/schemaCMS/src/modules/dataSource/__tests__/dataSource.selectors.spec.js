@@ -9,6 +9,7 @@ import {
   selectPreviewTable,
   selectIsAnyJobProcessing,
   selectFieldsInfo,
+  selectJobPreview,
 } from '../dataSource.selectors';
 import { JOB_STATE_PROCESSING } from '../../job/job.constants';
 
@@ -30,6 +31,7 @@ describe('DataSource: selectors', () => {
       previewTable: [{ id: '1', name: 'test' }],
     },
     fieldsInfo: {},
+    jobPreview: {},
   });
 
   describe('selectDataSourceDomain', () => {
@@ -73,6 +75,12 @@ describe('DataSource: selectors', () => {
       });
 
       expect(selectIsAnyJobProcessing(newState)).to.equal(true);
+    });
+  });
+
+  describe('selectJobPreview', () => {
+    it('should select a job preview', () => {
+      expect(selectJobPreview(state)).to.equal(state.dataSource.jobPreview);
     });
   });
 });

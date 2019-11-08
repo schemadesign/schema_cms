@@ -8,11 +8,6 @@ export const selectJob = createSelector(
   prop('job')
 );
 
-export const selectJobPreview = createSelector(
-  selectJobDomain,
-  prop('jobPreview')
-);
-
 export const selectJobList = createSelector(
   selectJobDomain,
   prop('jobList')

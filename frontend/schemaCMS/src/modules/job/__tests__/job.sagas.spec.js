@@ -50,24 +50,4 @@ describe('Job: sagas', () => {
         .silentRun();
     });
   });
-
-  describe('when fetchPreview action is called', () => {
-    it('should put fetchPreview.success action', async () => {
-      const response = {
-        fields: {},
-        data: [],
-      };
-      const payload = {
-        jobId: 1,
-      };
-
-      mockApi.get(`/jobs/${payload.jobId}/preview`).reply(OK, response);
-
-      await expectSaga(watchJob)
-        .withState(defaultState)
-        .put(JobRoutines.fetchPreview.success(response))
-        .dispatch(JobRoutines.fetchPreview(payload))
-        .silentRun();
-    });
-  });
 });

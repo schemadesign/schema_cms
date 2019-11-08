@@ -208,7 +208,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
                 Object {
                   "borderTop": "none",
                   "cursor": "pointer",
-                  "display": "flex",
+                  "display": "block",
                   "padding": "7px",
                 }
               }
@@ -332,7 +332,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
                 Object {
                   "borderTop": "none",
                   "cursor": "pointer",
-                  "display": "flex",
+                  "display": "block",
                   "padding": "7px",
                 }
               }
@@ -748,7 +748,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
                 Object {
                   "borderTop": "none",
                   "cursor": "pointer",
-                  "display": "flex",
+                  "display": "block",
                   "padding": "7px",
                 }
               }
@@ -872,7 +872,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
                 Object {
                   "borderTop": "none",
                   "cursor": "pointer",
-                  "display": "flex",
+                  "display": "block",
                   "padding": "7px",
                 }
               }
