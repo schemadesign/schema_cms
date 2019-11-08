@@ -66,7 +66,11 @@ export class JobList extends PureComponent {
 
   handleIconClick = jobId => this.props.history.push(`/job/${jobId}`);
 
-  handleRevertClick = () => this.props.revertToJob({ jobId: this.state.selectedJob });
+  handleRevertClick = () =>
+    this.props.revertToJob({
+      dataSourceId: path(['match', 'params', 'dataSourceId'], this.props),
+      jobId: this.state.selectedJob,
+    });
 
   renderActiveInformation = isActive => renderWhenTrue(always(<FormattedMessage {...messages.active} />))(isActive);
 

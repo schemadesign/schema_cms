@@ -257,4 +257,24 @@ describe('DataSource: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('when fetchPreview action is called', () => {
+    it('should put fetchPreview.success action', async () => {
+      const response = {
+        fields: {},
+        data: [],
+      };
+      const payload = {
+        dataSourceId: 1,
+      };
+
+      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/job-preview`).reply(OK, response);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchPreview.success(response))
+        .dispatch(DataSourceRoutines.fetchPreview(payload))
+        .silentRun();
+    });
+  });
 });

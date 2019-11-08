@@ -31,20 +31,6 @@ function* updateOne({ payload: { id, description } }) {
   }
 }
 
-function* fetchPreview({ payload: { jobId } }) {
-  try {
-    yield put(JobRoutines.fetchPreview.request());
-
-    const { data } = yield api.get(`/jobs/${jobId}/preview`, { camelize: false });
-
-    yield put(JobRoutines.fetchPreview.success(data));
-  } catch (e) {
-    yield put(JobRoutines.fetchPreview.failure(e));
-  } finally {
-    yield put(JobRoutines.fetchPreview.fulfill());
-  }
-}
-
 function* fetchJobList({ payload: { dataSourceId } }) {
   try {
     yield put(JobRoutines.fetchJobList.request());
@@ -65,7 +51,6 @@ export function* watchJob() {
   yield all([
     takeLatest(JobRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(JobRoutines.updateOne.TRIGGER, updateOne),
-    takeLatest(JobRoutines.fetchPreview.TRIGGER, fetchPreview),
     takeLatest(JobRoutines.fetchJobList.TRIGGER, fetchJobList),
   ]);
 }

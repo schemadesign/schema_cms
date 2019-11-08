@@ -38,12 +38,13 @@ export class DataWranglingResult extends PureComponent {
       path(['id'])
     )(this.props);
 
+    const dataSourceId = path(['match', 'params', 'dataSourceId'], this.props);
+
     if (!jobId) {
-      const dataSourceId = path(['match', 'params', 'dataSourceId'], this.props);
       this.props.history.push(`/datasource/${dataSourceId}/${DATA_WRANGLING_STEP}`);
     }
 
-    await this.props.fetchResult({ jobId });
+    await this.props.fetchResult({ dataSourceId });
     this.setState({ loading: false });
   }
 

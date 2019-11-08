@@ -17,6 +17,7 @@ export const DataSourceRoutines = {
   cancelFetchListLoop: createRoutine(`${prefix}CANCEL_FETCH_LIST_LOOP`),
   fetchFieldsInfo: createRoutine(`${prefix}FETCH_FIELDS_INFO`),
   revertToJob: createRoutine(`${prefix}REVER_TO_JOB`),
+  fetchPreview: createRoutine(`${prefix}FETCH_PREVIEW`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -25,6 +26,7 @@ export const INITIAL_STATE = new Immutable({
   fields: {},
   previewTable: [],
   fieldsInfo: {},
+  jobPreview: {},
 });
 
 const sortByDate = sort(descend(prop('created')));
@@ -39,6 +41,8 @@ const updateFields = (state = INITIAL_STATE, { payload }) =>
 const unmountFields = (state = INITIAL_STATE) =>
   state.set('fields', INITIAL_STATE.fields).set('previewTable', INITIAL_STATE.previewTable);
 
+const setJobPreview = (state = INITIAL_STATE, { payload }) => state.set('jobPreview', payload);
+
 export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.create.SUCCESS]: updateDataSource,
   [DataSourceRoutines.fetchOne.SUCCESS]: updateDataSource,
@@ -48,4 +52,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.fetchFields.SUCCESS]: updateFields,
   [DataSourceRoutines.unmountFields.TRIGGER]: unmountFields,
   [DataSourceRoutines.fetchFieldsInfo.SUCCESS]: setFieldsInfo,
+  [DataSourceRoutines.fetchPreview.SUCCESS]: setJobPreview,
 });

@@ -33,3 +33,8 @@ export const selectIsAnyJobProcessing = createSelector(
   selectDataSource,
   getIsAnyResultProcessing
 );
+
+export const selectJobPreview = createSelector(
+  selectDataSourceDomain,
+  prop('jobPreview')
+);
