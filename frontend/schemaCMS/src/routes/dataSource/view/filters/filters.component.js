@@ -89,7 +89,11 @@ export class Filters extends PureComponent {
           </FilterCounter>
         </Header>
         <Formik initialValues={initialValues} onSubmit={this.handleSubmit}>
-          {({ values, setValues }) => {
+          {({ values, setValues, submitForm }) => {
+            if (!values.length) {
+              submitForm = null;
+            }
+
             return (
               <Fragment>
                 <CheckboxGroup
@@ -100,7 +104,7 @@ export class Filters extends PureComponent {
                 >
                   {filters.map(this.renderCheckboxes)}
                 </CheckboxGroup>
-                <StepNavigation {...this.props} />
+                <StepNavigation submitForm={submitForm} {...this.props} />
               </Fragment>
             );
           }}

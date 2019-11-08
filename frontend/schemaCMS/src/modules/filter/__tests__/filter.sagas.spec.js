@@ -47,6 +47,7 @@ describe('Filter: sagas', () => {
         active,
         inactive,
       };
+      jest.spyOn(browserHistory, 'push');
 
       mockApi
         .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/set-filters`, { active, inactive })
@@ -57,6 +58,8 @@ describe('Filter: sagas', () => {
         .put(FilterRoutines.setFilters.success(response))
         .dispatch(FilterRoutines.setFilters(payload))
         .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/6');
     });
   });
 

@@ -4,7 +4,7 @@ import { FilterRoutines } from './filter.redux';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, FILTERS_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
-import { FILTERS_STEP } from '../dataSource/dataSource.constants';
+import { FILTERS_STEP, VIEWS_STEP } from '../dataSource/dataSource.constants';
 import { ROUTES } from '../../routes';
 
 function* fetchList({ payload: { dataSourceId } }) {
@@ -26,6 +26,8 @@ function* setFilters({ payload: { dataSourceId, active, inactive } }) {
     yield put(FilterRoutines.setFilters.request());
 
     const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/set-filters`, { active, inactive });
+
+    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${VIEWS_STEP}`);
 
     yield put(FilterRoutines.setFilters.success(data));
   } catch (e) {
