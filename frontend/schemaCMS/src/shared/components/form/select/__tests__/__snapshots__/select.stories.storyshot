@@ -3,7 +3,7 @@
 exports[`Storyshots Shared Components|Form/Select Default 1`] = `
 <div>
   <div
-    className="sc-kvZOFW jASDTG"
+    className="sc-hqyNC goPTNL"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -29,7 +29,7 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
       value="one"
     />
     <div
-      className="sc-hqyNC hbDtUc"
+      className="sc-jbKcbu enYjhd"
     >
       <svg
         style={

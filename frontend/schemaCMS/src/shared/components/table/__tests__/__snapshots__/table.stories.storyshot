@@ -10,119 +10,119 @@ exports[`Storyshots Shared Components|Table Default 1`] = `
   }
 >
   <div
-    className="sc-fjdhpX jDWzMA"
+    className="sc-jzJRlG dYIEhZ"
   >
     <table
-      className="sc-jzJRlG dINcDo"
+      className="sc-cSHVUG jnMLcu"
     >
       <tbody
-        className="sc-kAzzGY jHprQs"
+        className="sc-chPdSV byfFmt"
       >
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             US
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             USA
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             PL
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Warsaw
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Poland
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             DE
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Berlin
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Germany
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             FR
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Paris
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             France
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             ES
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Madird
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Spain
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             —
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
@@ -135,7 +135,7 @@ exports[`Storyshots Shared Components|Table Default 1`] = `
 
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
@@ -164,142 +164,142 @@ exports[`Storyshots Shared Components|Table with header 1`] = `
   }
 >
   <div
-    className="sc-fjdhpX jDWzMA"
+    className="sc-jzJRlG dYIEhZ"
   >
     <table
-      className="sc-jzJRlG dINcDo"
+      className="sc-cSHVUG jnMLcu"
     >
       <thead
-        className="sc-cSHVUG CAuLq"
+        className="sc-kAzzGY jHprQs"
       >
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <th
-            className="sc-kGXeez fpUCkA"
+            className="sc-kpOJdX fjigKX"
           >
             Code
           </th>
           <th
-            className="sc-kGXeez fpUCkA"
+            className="sc-kpOJdX fjigKX"
           >
             Capital
           </th>
           <th
-            className="sc-kGXeez fpUCkA"
+            className="sc-kpOJdX fjigKX"
           >
             Country
           </th>
         </tr>
       </thead>
       <tbody
-        className="sc-kAzzGY jHprQs"
+        className="sc-chPdSV byfFmt"
       >
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             US
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             USA
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             PL
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Warsaw
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Poland
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             DE
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Berlin
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Germany
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             FR
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Paris
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             France
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             ES
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Madird
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Spain
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             —
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
@@ -312,7 +312,7 @@ exports[`Storyshots Shared Components|Table with header 1`] = `
 
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
@@ -341,177 +341,177 @@ exports[`Storyshots Shared Components|Table with numbered rows 1`] = `
   }
 >
   <div
-    className="sc-fjdhpX jDWzMA"
+    className="sc-jzJRlG dYIEhZ"
   >
     <table
-      className="sc-jzJRlG dINcDo"
+      className="sc-cSHVUG jnMLcu"
     >
       <thead
-        className="sc-cSHVUG CAuLq"
+        className="sc-kAzzGY jHprQs"
       >
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <th
-            className="sc-kGXeez fpUCkA"
+            className="sc-kpOJdX fjigKX"
           >
             #
           </th>
           <th
-            className="sc-kGXeez fpUCkA"
+            className="sc-kpOJdX fjigKX"
           >
             Code
           </th>
           <th
-            className="sc-kGXeez fpUCkA"
+            className="sc-kpOJdX fjigKX"
           >
             Capital
           </th>
           <th
-            className="sc-kGXeez fpUCkA"
+            className="sc-kpOJdX fjigKX"
           >
             Country
           </th>
         </tr>
       </thead>
       <tbody
-        className="sc-kAzzGY jHprQs"
+        className="sc-chPdSV byfFmt"
       >
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kpOJdX gwHCnA"
+            className="sc-dxgOiQ kGcGVZ"
           >
             1
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             US
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             USA
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kpOJdX gwHCnA"
+            className="sc-dxgOiQ kGcGVZ"
           >
             2
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             PL
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Warsaw
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Poland
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kpOJdX gwHCnA"
+            className="sc-dxgOiQ kGcGVZ"
           >
             3
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             DE
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Berlin
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Germany
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kpOJdX gwHCnA"
+            className="sc-dxgOiQ kGcGVZ"
           >
             4
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             FR
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Paris
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             France
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kpOJdX gwHCnA"
+            className="sc-dxgOiQ kGcGVZ"
           >
             5
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             ES
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Madird
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Spain
           </td>
         </tr>
         <tr
-          className="sc-chPdSV diRsub"
+          className="sc-kgoBCf DAmBN"
         >
           <td
-            className="sc-kpOJdX gwHCnA"
+            className="sc-dxgOiQ kGcGVZ"
           >
             6
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             —
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
@@ -524,7 +524,7 @@ exports[`Storyshots Shared Components|Table with numbered rows 1`] = `
 
           </td>
           <td
-            className="sc-kgoBCf deOErS"
+            className="sc-kGXeez inPSkz"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna

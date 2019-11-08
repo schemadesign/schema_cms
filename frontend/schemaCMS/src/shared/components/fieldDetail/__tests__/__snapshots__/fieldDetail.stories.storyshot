@@ -10,155 +10,155 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
   }
 >
   <div
-    className="sc-dxgOiQ hTjMfW"
+    className="sc-ckVGcZ foYhJp"
   >
     <ul
-      className="sc-ckVGcZ hWcWGF"
+      className="sc-jKJlTe lzVlp"
     >
       <li
-        className="sc-jKJlTe dmtBaa"
+        className="sc-eNQAEJ kkleKz"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           Field
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
         >
           firstName
         </span>
       </li>
       <li
-        className="sc-jKJlTe dmtBaa"
+        className="sc-eNQAEJ kkleKz"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           Sample
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
           title="Sample"
         >
           Sample
         </span>
       </li>
       <li
-        className="sc-jKJlTe dmtBaa"
+        className="sc-eNQAEJ kkleKz"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           Type
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
           title="Text"
         >
           Text
         </span>
       </li>
       <li
-        className="sc-jKJlTe sc-kEYyzF hbYnxU"
+        className="sc-eNQAEJ sc-kkGfuU ipDCTh"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           Total Count (N)
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
           title={127}
         >
           127
         </span>
       </li>
       <li
-        className="sc-jKJlTe sc-kEYyzF hbYnxU"
+        className="sc-eNQAEJ sc-kkGfuU ipDCTh"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           Unique
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
           title={99}
         >
           99
         </span>
       </li>
       <li
-        className="sc-jKJlTe sc-kEYyzF hbYnxU"
+        className="sc-eNQAEJ sc-kkGfuU ipDCTh"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           Mean
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
           title={4}
         >
           4
         </span>
       </li>
       <li
-        className="sc-jKJlTe sc-kEYyzF hbYnxU"
+        className="sc-eNQAEJ sc-kkGfuU ipDCTh"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           Min
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
           title={1}
         >
           1
         </span>
       </li>
       <li
-        className="sc-jKJlTe sc-kEYyzF hbYnxU"
+        className="sc-eNQAEJ sc-kkGfuU ipDCTh"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           Max
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
           title={100}
         >
           100
         </span>
       </li>
       <li
-        className="sc-jKJlTe sc-kEYyzF hbYnxU"
+        className="sc-eNQAEJ sc-kkGfuU ipDCTh"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           Std. Dev.
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
           title={23.033282731964}
         >
           23.033282731964
         </span>
       </li>
       <li
-        className="sc-jKJlTe sc-kEYyzF hbYnxU"
+        className="sc-eNQAEJ sc-kkGfuU ipDCTh"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           10th Percentile
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
           title="
   Donec at erat dictum, congue lorem at, gravida magna.
   Phasellus nulla turpis, hendrerit vulputate velit ut,
@@ -173,15 +173,15 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
       </li>
       <li
-        className="sc-jKJlTe sc-kEYyzF hbYnxU"
+        className="sc-eNQAEJ sc-kkGfuU ipDCTh"
       >
         <span
-          className="sc-eNQAEJ jyjCpZ"
+          className="sc-hMqMXs gxpjxh"
         >
           25th Percentile
         </span>
         <span
-          className="sc-hMqMXs eygtHS"
+          className="sc-kEYyzF bmIYsM"
           title={100283.30095}
         >
           100283.30095

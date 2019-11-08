@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Card, Icons } from 'schemaUI';
+import { Card, Icons, Button } from 'schemaUI';
 import { has, isEmpty, isNil, path, always, cond, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
@@ -20,6 +20,7 @@ import {
   CardHeader,
   CardValue,
   ProjectView,
+  DesktopActions,
   Details,
   DetailItem,
   DetailWrapper,
@@ -28,6 +29,7 @@ import {
   IconEditWrapper,
   Statistics,
   statisticsCardStyles,
+  desktopButtonStyles,
 } from './view.styles';
 import { BackArrowButton, NavigationContainer } from '../../../shared/components/navigation';
 
@@ -82,7 +84,7 @@ export class View extends PureComponent {
           { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
           {
             label: this.formatMessage(messages.deleteProject),
-            onClick: () => this.setState({ confirmationModalOpen: true }),
+            onClick: this.handleDeleteButton,
           }
         );
       }
@@ -104,6 +106,8 @@ export class View extends PureComponent {
 
   handleGoTo = to => () => (to ? this.props.history.push(to) : null);
 
+  handleDeleteButton = () => this.setState({ confirmationModalOpen: true });
+
   handleConfirmRemove = () => this.props.removeProject({ projectId: this.props.project.id });
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
@@ -118,8 +122,8 @@ export class View extends PureComponent {
     </CardWrapper>
   );
 
-  renderDetail = ({ label, field, value, id }, index) => (
-    <DetailItem key={index}>
+  renderDetail = ({ label, field, value, id, order }, index) => (
+    <DetailItem order={order} key={index}>
       <DetailWrapper id={id}>
         <DetailLabel id={`${id}Label`}>{label}</DetailLabel>
         <DetailValue id={`${id}Value`}>{value || this.props.project[field] || ''}</DetailValue>
@@ -157,17 +161,25 @@ export class View extends PureComponent {
         field: 'created',
         value: extendedDayjs(created, BASE_DATE_FORMAT).fromNow(),
         id: 'fieldLastUpdated',
+        order: 1,
       },
-      { label: this.formatMessage(messages.status), field: 'status', value: statusValue, id: 'fieldStatus' },
+      { label: this.formatMessage(messages.status), field: 'status', value: statusValue, id: 'fieldStatus', order: 3 },
       {
         label: this.formatMessage(messages.owner),
         field: 'owner',
         value: `${firstName} ${lastName}`,
         id: 'fieldOwner',
+        order: 5,
       },
-      { label: this.formatMessage(messages.titleField), field: 'title', id: 'fieldTitle' },
-      { label: this.formatMessage(messages.description), field: 'description', id: 'fieldDescription' },
-      { label: this.formatMessage(messages.api), field: 'slug', value: generateApiUrl(slug), id: 'fieldSlug' },
+      { label: this.formatMessage(messages.titleField), field: 'title', id: 'fieldTitle', order: 2 },
+      { label: this.formatMessage(messages.description), field: 'description', id: 'fieldDescription', order: 4 },
+      {
+        label: this.formatMessage(messages.api),
+        field: 'slug',
+        value: generateApiUrl(slug),
+        id: 'fieldSlug',
+        order: 6,
+      },
     ];
 
     return (
@@ -195,6 +207,11 @@ export class View extends PureComponent {
           <TopHeader {...topHeaderConfig} />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           {this.renderContent(project)}
+          <DesktopActions>
+            <Button id="deleteProjectDesktopBtn" onClick={this.handleDeleteButton} customStyles={desktopButtonStyles}>
+              {this.formatMessage(messages.deleteProject)}
+            </Button>
+          </DesktopActions>
         </div>
         <NavigationContainer>
           <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />

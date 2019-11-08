@@ -2,7 +2,13 @@ import styled from 'styled-components';
 import { Button as ButtonUI, Typography } from 'schemaUI';
 import { colors } from '../../../theme/styled';
 
-export const Container = styled.div``;
+import { media } from '../../../theme/media';
+
+export const Container = styled.div`
+  ${media.desktop`
+    margin-top: 70px;
+  `}
+`;
 
 export const UserItem = styled.div`
   display: flex;

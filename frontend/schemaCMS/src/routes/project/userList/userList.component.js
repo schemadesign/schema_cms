@@ -89,7 +89,7 @@ export class UserList extends PureComponent {
         <TopHeader {...topHeaderConfig} />
         <ProjectTabs active={USERS} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={topHeaderConfig.headerTitle} subtitle={topHeaderConfig.headerSubtitle}>
-          <PlusButton id="addUserDesktopBtn" onClick={this.handleCreateDataSource} />
+          <PlusButton id="addUserDesktopBtn" onClick={this.handleAddUser} />
         </ContextHeader>
         <UserListComponent users={users} projectId={projectId} onRemoveUser={this.handleRemoveUser} />
         <NavigationContainer hideOnDesktop>

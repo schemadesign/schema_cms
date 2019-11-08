@@ -13,8 +13,19 @@ export const Container = styled.div`
   justify-content: space-between;
 `;
 
+export const DesktopActions = styled.div`
+  display: none;
+
+  ${media.desktop`
+    display: block;
+    margin: 70px 0 20px 0;
+  `}
+`;
+
 export const ProjectView = styled.div`
-  margin-top: 70px;
+  ${media.desktop`
+    margin-top: 70px;
+  `}
 `;
 
 export const Details = styled.ul`
@@ -23,7 +34,9 @@ export const Details = styled.ul`
   padding: 0;
 
   ${media.desktop`
-    column-count: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   `}
 `;
 
@@ -35,6 +48,9 @@ export const DetailItem = styled.li`
 
   ${media.desktop`
     border-top-color: ${({ theme: { card } }) => card.background};
+    width: calc(50% - 10px);
+    flex: 0 0 auto;
+    order: ${({ order }) => order};
   `}
 `;
 
@@ -123,4 +139,8 @@ export const CardValue = styled.span`
 
 export const statisticsCardStyles = {
   cursor: 'pointer',
+};
+
+export const desktopButtonStyles = {
+  padding: '0 40px',
 };
