@@ -30,6 +30,22 @@ exports[`View: Component should render correctly 1`] = `
       ]
     }
   />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Profile"
+        id="user.view.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="user.view.title"
+        values={Object {}}
+      />
+    }
+  />
   <Modal
     ariaHideApp={true}
     bodyOpenClassName="ReactModal__Body--open"
@@ -124,6 +140,22 @@ exports[`View: Component should render without remove user button 1`] = `
       />
     }
     secondaryMenuItems={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Profile"
+        id="user.view.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="user.view.title"
+        values={Object {}}
+      />
+    }
   />
   <Modal
     ariaHideApp={true}
