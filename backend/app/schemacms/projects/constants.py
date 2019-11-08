@@ -93,7 +93,7 @@ GEO_FILTER_TYPES = [FilterType.CARTOGRAM.value, FilterType.ZIPCODE_INPUT.value]
 class FilterTypesGroups:
     string = STRING_FILTER_TYPES
     number = NUMBER_FILTER_TYPES
-    bool = BOOL_FILTER_TYPES
+    boolean = BOOL_FILTER_TYPES
     date = DATE_FILTER_TYPES
 
 
