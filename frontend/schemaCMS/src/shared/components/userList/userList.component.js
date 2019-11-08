@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Icons } from 'schemaUI';
-import { Link } from 'react-router-dom';
 import { ifElse, is } from 'ramda';
 
 import { renderWhenTrue } from '../../utils/rendering';
