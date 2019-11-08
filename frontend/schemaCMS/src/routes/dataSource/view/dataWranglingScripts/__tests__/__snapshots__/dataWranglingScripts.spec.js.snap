@@ -14,7 +14,6 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
           }
         }
       />
-      <styled.div />
     </styled.div>
     <styled.div>
       <Component
