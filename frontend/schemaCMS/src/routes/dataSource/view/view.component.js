@@ -132,6 +132,7 @@ export class View extends PureComponent {
     const { confirmationModalOpen } = this.state;
     const activeStep = parseInt(step, 10);
     const topHeaderConfig = this.getHeaderAndMenuConfig(activeStep);
+    const isInitalStep = activeStep === INITIAL_STEP;
 
     return (
       <Fragment>
@@ -142,7 +143,7 @@ export class View extends PureComponent {
           dataSource,
           ...this.props,
         })}
-        <DesktopActions>
+        <DesktopActions visibile={isInitalStep}>
           <Button id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick} customStyles={desktopButtonStyles}>
             {intl.formatMessage(messages.removeDataSource)}
           </Button>

@@ -42,8 +42,8 @@ export class View extends PureComponent {
     const secondaryMenuItems = this.props.isAdmin ? [userRemoveButton] : [];
 
     return {
-      headerTitle: <FormattedMessage {...messages.title} />,
-      headerSubtitle: <FormattedMessage {...messages.subTitle} />,
+      headerTitle,
+      headerSubtitle,
       secondaryMenuItems,
     };
   };
