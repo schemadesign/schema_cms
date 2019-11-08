@@ -35,6 +35,7 @@ export const WarningWrapper = styled.div`
   margin-bottom: 40px;
 `;
 
-export const Span = styled(SpanUI)`
+export const Link = styled(SpanUI)`
+  cursor: pointer;
   color: ${({ theme }) => theme.colors.white};
 `;

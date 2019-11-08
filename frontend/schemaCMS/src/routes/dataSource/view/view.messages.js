@@ -54,4 +54,16 @@ export default defineMessages({
     id: 'dataSource.view.removeTitle',
     defaultMessage: 'Are you sure you want to remove the data source?',
   },
+  views: {
+    id: 'dataSource.view.views',
+    defaultMessage: 'Views',
+  },
+  metaData: {
+    id: 'dataSource.view.metaData',
+    defaultMessage: 'Metadata',
+  },
+  coming: {
+    id: 'dataSource.view.coming',
+    defaultMessage: 'Coming soon...',
+  },
 });

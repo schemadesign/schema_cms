@@ -57,18 +57,19 @@ export class JobDetail extends PureComponent {
 
   renderSteps = (steps = []) => steps.map(this.renderStep);
 
-  renderSuccessLinks = renderWhenTrue(
-    always(
-      <Fragment>
-        <PreviewLink to={`/job/${this.props.job.id}/preview`}>
-          <FormattedMessage {...messages.preview} />
-        </PreviewLink>
-        <Download href={this.props.job.result} download>
-          <FormattedMessage {...messages.resultFile} />
-        </Download>
-      </Fragment>
-    )
-  );
+  renderSuccessLinks = isSuccess =>
+    renderWhenTrue(
+      always(
+        <Fragment>
+          <PreviewLink to={`/job/${this.props.job.id}/preview`}>
+            <FormattedMessage {...messages.preview} />
+          </PreviewLink>
+          <Download href={this.props.job.result} download>
+            <FormattedMessage {...messages.resultFile} />
+          </Download>
+        </Fragment>
+      )
+    )(isSuccess);
 
   renderForm = job =>
     renderWhenTrueOtherwise(always(<Loader />), () => (

@@ -40,7 +40,7 @@ export default class DataSource extends PureComponent {
     } = this.props;
     const viewPathWithStep = `${path}/:step`;
     const pathAddFilter = `${path}/${FILTERS_STEP}/add`;
-    const jobListPath = `${path}/:dataSourceId/job`;
+    const jobListPath = `${path}/job`;
 
     return (
       <Switch>

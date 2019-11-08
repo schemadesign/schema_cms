@@ -4,7 +4,7 @@ import { always, cond, equals, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
 
-import { Container } from './view.styles';
+import { Container, ComingSoon } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
 import { DataPreview } from '../../../shared/components/dataPreview';
@@ -19,8 +19,11 @@ import {
   FIELDS_STEP,
   INITIAL_STEP,
   FILTERS_STEP,
+  VIEWS_STEP,
+  META_DATA_STEP,
 } from '../../../modules/dataSource/dataSource.constants';
 import { ModalActions, ModalButton, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { StepNavigation } from '../../../shared/components/stepNavigation';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -56,6 +59,8 @@ export class View extends PureComponent {
     [equals(DATA_WRANGLING_STEP), always(this.props.intl.formatMessage(messages.dataWrangling))],
     [equals(DATA_WRANGLING_RESULT_STEP), always(this.props.intl.formatMessage(messages.dataWranglingResult))],
     [equals(FILTERS_STEP), always(this.props.intl.formatMessage(messages.filters))],
+    [equals(VIEWS_STEP), always(this.props.intl.formatMessage(messages.views))],
+    [equals(META_DATA_STEP), always(this.props.intl.formatMessage(messages.metaData))],
     [T, always(null)],
   ]);
 
@@ -94,6 +99,13 @@ export class View extends PureComponent {
     this.props.removeDataSource({ projectId, dataSourceId });
   };
 
+  renderComingSoon = () => (
+    <ComingSoon>
+      <FormattedMessage {...messages.coming} />
+      <StepNavigation {...this.props} />
+    </ComingSoon>
+  );
+
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
       [equals(INITIAL_STEP), always(<Source {...props} />)],
@@ -101,6 +113,8 @@ export class View extends PureComponent {
       [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts {...props} />)],
       [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],
       [equals(FILTERS_STEP), always(<Filters {...props} />)],
+      [equals(VIEWS_STEP), this.renderComingSoon],
+      [equals(META_DATA_STEP), this.renderComingSoon],
       [T, always(null)],
     ])(activeStep);
 

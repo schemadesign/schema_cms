@@ -13,7 +13,7 @@ import {
   customRadioButtonStyles,
   customRadioGroupStyles,
   WarningWrapper,
-  Span,
+  Link,
 } from './source.styles';
 import messages from './source.messages';
 import { TextInput } from '../../../../shared/components/form/inputs/textInput';
@@ -141,9 +141,9 @@ export class SourceComponent extends PureComponent {
 
   renderJobListLink = renderWhenTrue(
     always(
-      <Span onClick={this.handlePastVersionsClick}>
+      <Link onClick={this.handlePastVersionsClick}>
         <FormattedMessage {...messages.pastVersions} />
-      </Span>
+      </Link>
     )
   );
 

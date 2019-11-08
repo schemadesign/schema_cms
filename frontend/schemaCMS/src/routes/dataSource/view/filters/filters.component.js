@@ -54,7 +54,9 @@ export class Filters extends PureComponent {
 
   handleSubmit = active => {
     const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
-    const inactive = this.props.filters.filter(({ id }) => !active.includes(id)).map(({ id }) => id);
+    const inactive = this.props.filters
+      .filter(({ id }) => !active.includes(id.toString()))
+      .map(({ id }) => id.toString());
 
     this.props.setFilters({ dataSourceId, active, inactive });
   };

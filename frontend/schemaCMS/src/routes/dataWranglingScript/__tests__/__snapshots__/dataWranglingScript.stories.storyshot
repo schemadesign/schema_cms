@@ -10,10 +10,10 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
   }
 >
   <div
-    className="sc-tilXH jMVAVb"
+    className="sc-hEsumM epeevU"
   >
     <div
-      className="sc-fBuWsC jtIdEp"
+      className="sc-fMiknA eiGZgj"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       >
         <div>
           <div
-            className="sc-fMiknA bxZCMx"
+            className="sc-dVhcbM fghLuF"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
         }
       >
         <div
-          className="sc-dVhcbM fghLuF"
+          className="sc-eqIVtm kRufpp"
         >
           <div
-            className="sc-fMiknA bxZCMx"
+            className="sc-dVhcbM fghLuF"
           >
             <h2
               id="headerTitle"
@@ -160,13 +160,13 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-eqIVtm jwtJAm"
+          className="sc-fAjcbJ kukidx"
         >
           <ul
-            className="sc-fAjcbJ sc-caSCKo jdlBiQ"
+            className="sc-caSCKo sc-gisBJw iRmPNH"
           />
           <ul
-            className="sc-fAjcbJ sc-gisBJw TKJlq"
+            className="sc-caSCKo sc-kjoXOD ckukuH"
           />
         </div>
         <button
@@ -212,11 +212,11 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-hEsumM epeevU"
+      className="sc-ktHwxA bwPBzM"
       name="dataWranglingForm"
     >
       <div
-        className="sc-ifAKCX cFlEyZ"
+        className="sc-EHOje jvzENE"
       >
         <div
           style={
@@ -984,13 +984,13 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       </pre>
     </form>
     <div
-      className="sc-htoDjs iUYJOx"
+      className="sc-dnqmqq kmmOzl"
     >
       <div
-        className="sc-iwsKbI iKbLSk"
+        className="sc-gZMcBi kaVsZU"
       >
         <div
-          className="sc-dnqmqq XuhPC"
+          className="sc-iwsKbI hPSGKY"
         >
           <button
             disabled={false}

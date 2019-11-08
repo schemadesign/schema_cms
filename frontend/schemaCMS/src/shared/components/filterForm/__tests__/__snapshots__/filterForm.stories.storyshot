@@ -10,12 +10,12 @@ exports[`Storyshots FilterForm Create form 1`] = `
   }
 >
   <form
-    className="sc-jbKcbu clavtY"
+    className="sc-dNLxif dGcnZd"
     onReset={[Function]}
     onSubmit={[Function]}
   >
     <div
-      className="sc-ifAKCX cFlEyZ"
+      className="sc-EHOje jvzENE"
     >
       <div
         style={
@@ -74,7 +74,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
           }
         >
           <div
-            className="sc-EHOje exkOcO"
+            className="sc-bZQynM bbYVNM"
           >
             <svg
               style={
@@ -96,7 +96,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-frDJqD dhjqgV"
+      className="sc-kvZOFW jASDTG"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -124,7 +124,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         value="field"
       />
       <div
-        className="sc-kvZOFW fvJaym"
+        className="sc-hqyNC hbDtUc"
       >
         <svg
           style={
@@ -220,7 +220,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-frDJqD dhjqgV"
+      className="sc-kvZOFW jASDTG"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -248,7 +248,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         value="checkbox"
       />
       <div
-        className="sc-kvZOFW fvJaym"
+        className="sc-hqyNC hbDtUc"
       >
         <svg
           style={
@@ -344,10 +344,10 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-hqyNC iKJYbI"
+      className="sc-jbKcbu epPxkL"
     >
       <div
-        className="sc-ifAKCX cFlEyZ"
+        className="sc-EHOje jvzENE"
       >
         <div
           style={
@@ -409,7 +409,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         </div>
       </div>
       <div
-        className="sc-ifAKCX cFlEyZ"
+        className="sc-EHOje jvzENE"
       >
         <div
           style={
@@ -472,13 +472,13 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-htoDjs iUYJOx"
+      className="sc-dnqmqq kmmOzl"
     >
       <div
-        className="sc-iwsKbI iKbLSk"
+        className="sc-gZMcBi kaVsZU"
       >
         <div
-          className="sc-dnqmqq XuhPC"
+          className="sc-iwsKbI hPSGKY"
         >
           <button
             disabled={false}
@@ -550,12 +550,12 @@ exports[`Storyshots FilterForm Edit form 1`] = `
   }
 >
   <form
-    className="sc-jbKcbu clavtY"
+    className="sc-dNLxif dGcnZd"
     onReset={[Function]}
     onSubmit={[Function]}
   >
     <div
-      className="sc-ifAKCX cFlEyZ"
+      className="sc-EHOje jvzENE"
     >
       <div
         style={
@@ -614,7 +614,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
           }
         >
           <div
-            className="sc-EHOje exkOcO"
+            className="sc-bZQynM bbYVNM"
           >
             <svg
               style={
@@ -636,7 +636,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-frDJqD dhjqgV"
+      className="sc-kvZOFW jASDTG"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -664,7 +664,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         value="field"
       />
       <div
-        className="sc-kvZOFW fvJaym"
+        className="sc-hqyNC hbDtUc"
       >
         <svg
           style={
@@ -760,7 +760,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-frDJqD dhjqgV"
+      className="sc-kvZOFW jASDTG"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -788,7 +788,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         value="filterType"
       />
       <div
-        className="sc-kvZOFW fvJaym"
+        className="sc-hqyNC hbDtUc"
       >
         <svg
           style={
@@ -884,10 +884,10 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-hqyNC iKJYbI"
+      className="sc-jbKcbu epPxkL"
     >
       <div
-        className="sc-ifAKCX cFlEyZ"
+        className="sc-EHOje jvzENE"
       >
         <div
           style={
@@ -949,7 +949,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         </div>
       </div>
       <div
-        className="sc-ifAKCX cFlEyZ"
+        className="sc-EHOje jvzENE"
       >
         <div
           style={
@@ -1012,13 +1012,13 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-htoDjs iUYJOx"
+      className="sc-dnqmqq kmmOzl"
     >
       <div
-        className="sc-iwsKbI iKbLSk"
+        className="sc-gZMcBi kaVsZU"
       >
         <div
-          className="sc-dnqmqq XuhPC"
+          className="sc-iwsKbI hPSGKY"
         >
           <button
             disabled={false}
