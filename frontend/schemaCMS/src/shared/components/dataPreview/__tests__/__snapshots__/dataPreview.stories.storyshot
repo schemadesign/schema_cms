@@ -10,16 +10,16 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
   }
 >
   <div
-    className="sc-hSdWYo bIQQAp"
+    className="sc-eHgmQL gmKbQu"
   >
     <div
-      className="sc-brqgnP SqPLV"
+      className="sc-cMljjf eTbdzc"
     >
       <div
-        className="sc-eHgmQL gXmHXf"
+        className="sc-cvbbAY qtojZ"
       >
         <div
-          className="sc-cvbbAY buFYkK"
+          className="sc-jWBwVP gXccqf"
         >
           <button
             disabled={true}
@@ -61,12 +61,12 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
           </button>
         </div>
         <div
-          className="sc-jWBwVP fyWhHu"
+          className="sc-brqgnP htoUld"
         >
           {countFields} {countFields, plural,one {Field} other {Fields}}
         </div>
         <div
-          className="sc-cvbbAY buFYkK"
+          className="sc-jWBwVP gXccqf"
         >
           <button
             disabled={false}

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Icons } from 'schemaUI';
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -37,4 +38,14 @@ export const Dot = styled.div`
 
 export const RadioInput = styled.input`
   margin-right: 15px;
+`;
+
+export const Eye = styled(Icons.EyeIcon)`
+  cursor: pointer;
+`;
+
+export const RadioLabel = styled.label`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 `;

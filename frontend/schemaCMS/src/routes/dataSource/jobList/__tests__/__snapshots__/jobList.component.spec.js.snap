@@ -75,24 +75,29 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
       <styled.div>
         <styled.input
           defaultChecked={false}
+          id="job_list-0"
           name="job_list"
           onChange={[Function]}
           type="radio"
           value="1"
         />
-        <Span>
-          Invalid Date
-        </Span>
-        <styled.div />
-        <Span>
-          <FormattedMessage
-            defaultMessage="Success"
-            id="dataSource.jobList.success"
-            values={Object {}}
-          />
-        </Span>
+        <styled.label
+          htmlFor="job_list-0"
+        >
+          <Span>
+            Invalid Date
+          </Span>
+          <styled.div />
+          <Span>
+            <FormattedMessage
+              defaultMessage="Success"
+              id="dataSource.jobList.success"
+              values={Object {}}
+            />
+          </Span>
+        </styled.label>
       </styled.div>
-      <Component
+      <Styled(Component)
         onClick={[Function]}
       />
     </styled.div>
@@ -102,24 +107,29 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
       <styled.div>
         <styled.input
           defaultChecked={false}
+          id="job_list-1"
           name="job_list"
           onChange={[Function]}
           type="radio"
           value="2"
         />
-        <Span>
-          Invalid Date
-        </Span>
-        <styled.div />
-        <Span>
-          <FormattedMessage
-            defaultMessage="Success"
-            id="dataSource.jobList.success"
-            values={Object {}}
-          />
-        </Span>
+        <styled.label
+          htmlFor="job_list-1"
+        >
+          <Span>
+            Invalid Date
+          </Span>
+          <styled.div />
+          <Span>
+            <FormattedMessage
+              defaultMessage="Success"
+              id="dataSource.jobList.success"
+              values={Object {}}
+            />
+          </Span>
+        </styled.label>
       </styled.div>
-      <Component
+      <Styled(Component)
         onClick={[Function]}
       />
     </styled.div>

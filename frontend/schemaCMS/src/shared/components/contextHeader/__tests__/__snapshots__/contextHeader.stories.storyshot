@@ -10,13 +10,13 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
   }
 >
   <div
-    className="sc-iQKALj iQkCCX"
+    className="sc-hrWEMg gxndlb"
   >
     <div
-      className="sc-bwCtUz eJBWly"
+      className="sc-eTuwsz fCuGaP"
     >
       <h1
-        className="sc-hrWEMg hdZPci"
+        className="sc-gwVKww htJtAT"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -32,7 +32,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
         Projects
       </h1>
       <h2
-        className="sc-eTuwsz bkNIDk"
+        className="sc-hXRMBi eCsLvF"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -47,7 +47,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
       </h2>
     </div>
     <div
-      className="sc-gwVKww eWCHnX"
+      className="sc-epnACN hsXqzQ"
     />
   </div>
 </div>
@@ -63,13 +63,13 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
   }
 >
   <div
-    className="sc-iQKALj iQkCCX"
+    className="sc-hrWEMg gxndlb"
   >
     <div
-      className="sc-bwCtUz eJBWly"
+      className="sc-eTuwsz fCuGaP"
     >
       <h1
-        className="sc-hrWEMg hdZPci"
+        className="sc-gwVKww htJtAT"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -85,7 +85,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
         Projects
       </h1>
       <h2
-        className="sc-eTuwsz bkNIDk"
+        className="sc-hXRMBi eCsLvF"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -100,7 +100,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
       </h2>
     </div>
     <div
-      className="sc-gwVKww eWCHnX"
+      className="sc-epnACN hsXqzQ"
     >
       <button
         disabled={false}
@@ -154,13 +154,13 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
   }
 >
   <div
-    className="sc-iQKALj iQkCCX"
+    className="sc-hrWEMg gxndlb"
   >
     <div
-      className="sc-bwCtUz eJBWly"
+      className="sc-eTuwsz fCuGaP"
     >
       <h1
-        className="sc-hrWEMg hdZPci"
+        className="sc-gwVKww htJtAT"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -180,7 +180,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
 
       </h1>
       <h2
-        className="sc-eTuwsz bkNIDk"
+        className="sc-hXRMBi eCsLvF"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -199,7 +199,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
       </h2>
     </div>
     <div
-      className="sc-gwVKww eWCHnX"
+      className="sc-epnACN hsXqzQ"
     >
       <button
         disabled={false}

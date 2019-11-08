@@ -3,7 +3,7 @@
 exports[`Storyshots JobDetail Default 1`] = `
 Array [
   <div
-    className="sc-dVhcbM elEMJK"
+    className="sc-eqIVtm jYTlNG"
   >
     <div
       style={
@@ -20,7 +20,7 @@ Array [
     >
       <div>
         <div
-          className="sc-eqIVtm kRufpp"
+          className="sc-fAjcbJ byigni"
         >
           <h2
             id="headerTitle"
@@ -118,10 +118,10 @@ Array [
       }
     >
       <div
-        className="sc-fAjcbJ byigni"
+        className="sc-caSCKo jjNSwx"
       >
         <div
-          className="sc-eqIVtm kRufpp"
+          className="sc-fAjcbJ byigni"
         >
           <h2
             id="headerTitle"
@@ -158,13 +158,13 @@ Array [
         </div>
       </div>
       <div
-        className="sc-caSCKo kAAcMA"
+        className="sc-gisBJw eCZBLA"
       >
         <ul
-          className="sc-gisBJw sc-kjoXOD kXESwD"
+          className="sc-kjoXOD sc-cHGsZl cULqXW"
         />
         <ul
-          className="sc-gisBJw sc-cHGsZl jLfepw"
+          className="sc-kjoXOD sc-TOsTZ eELfaW"
         />
       </div>
       <button
