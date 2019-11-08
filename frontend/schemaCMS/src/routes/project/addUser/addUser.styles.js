@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { Button as ButtonUI, Typography } from 'schemaUI';
 import { colors } from '../../../theme/styled';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  margin-top: 70px;
+`;
 
 export const UserItem = styled.div`
   display: flex;
