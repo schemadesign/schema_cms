@@ -89,8 +89,8 @@ export class Filters extends PureComponent {
           </FilterCounter>
         </Header>
         <Formik initialValues={initialValues} onSubmit={this.handleSubmit}>
-          {({ values, setValues, submitForm }) => {
-            if (!values.length) {
+          {({ values, setValues, submitForm, dirty }) => {
+            if (!dirty) {
               submitForm = null;
             }
 
