@@ -14,6 +14,10 @@ export function* setAuthorizationToken(token) {
   }
 }
 
+function* redirectExternal(path) {
+  window.location.href = path;
+}
+
 function* getJwtToken({ uid, token }) {
   const { data } = yield api.post(TOKEN_PATH, {
     uid,
@@ -42,7 +46,9 @@ function* logout() {
 }
 
 function* resetPassword() {
-  const { ticket } = yield api.get(RESET_PASSWORD_PATH);
+  const {
+    data: { ticket },
+  } = yield api.get(RESET_PASSWORD_PATH);
 
   yield put(UserProfileActions.clearUserDetails());
   yield redirectExternal(ticket);
