@@ -18,6 +18,19 @@ exports[`View: Component should not render any step 1`] = `
       ]
     }
   />
+  <styled.div>
+    <Component
+      customStyles={
+        Object {
+          "padding": "0 40px",
+        }
+      }
+      id="removeDataSourceDesktopBtn"
+      onClick={[Function]}
+    >
+      Remove Data Source
+    </Component>
+  </styled.div>
   <Modal
     ariaHideApp={true}
     bodyOpenClassName="ReactModal__Body--open"
@@ -154,6 +167,19 @@ exports[`View: Component should render draft 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
+  <styled.div>
+    <Component
+      customStyles={
+        Object {
+          "padding": "0 40px",
+        }
+      }
+      id="removeDataSourceDesktopBtn"
+      onClick={[Function]}
+    >
+      Remove Data Source
+    </Component>
+  </styled.div>
   <Modal
     ariaHideApp={true}
     bodyOpenClassName="ReactModal__Body--open"
@@ -290,6 +316,19 @@ exports[`View: Component should render second step 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
+  <styled.div>
+    <Component
+      customStyles={
+        Object {
+          "padding": "0 40px",
+        }
+      }
+      id="removeDataSourceDesktopBtn"
+      onClick={[Function]}
+    >
+      Remove Data Source
+    </Component>
+  </styled.div>
   <Modal
     ariaHideApp={true}
     bodyOpenClassName="ReactModal__Body--open"
@@ -425,6 +464,19 @@ exports[`View: Component should render source step 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
+  <styled.div>
+    <Component
+      customStyles={
+        Object {
+          "padding": "0 40px",
+        }
+      }
+      id="removeDataSourceDesktopBtn"
+      onClick={[Function]}
+    >
+      Remove Data Source
+    </Component>
+  </styled.div>
   <Modal
     ariaHideApp={true}
     bodyOpenClassName="ReactModal__Body--open"

@@ -3,7 +3,7 @@
 exports[`Storyshots JobDetail Default 1`] = `
 Array [
   <div
-    className="sc-fMiknA eiGZgj"
+    className="sc-dVhcbM elEMJK"
   >
     <div
       style={
@@ -20,7 +20,7 @@ Array [
     >
       <div>
         <div
-          className="sc-dVhcbM fghLuF"
+          className="sc-eqIVtm kRufpp"
         >
           <h2
             id="headerTitle"
@@ -118,10 +118,10 @@ Array [
       }
     >
       <div
-        className="sc-eqIVtm kRufpp"
+        className="sc-fAjcbJ byigni"
       >
         <div
-          className="sc-dVhcbM fghLuF"
+          className="sc-eqIVtm kRufpp"
         >
           <h2
             id="headerTitle"
@@ -158,13 +158,13 @@ Array [
         </div>
       </div>
       <div
-        className="sc-fAjcbJ kukidx"
+        className="sc-caSCKo kAAcMA"
       >
         <ul
-          className="sc-caSCKo sc-gisBJw iRmPNH"
+          className="sc-gisBJw sc-kjoXOD kXESwD"
         />
         <ul
-          className="sc-caSCKo sc-kjoXOD ckukuH"
+          className="sc-gisBJw sc-cHGsZl jLfepw"
         />
       </div>
       <button
@@ -210,20 +210,20 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-jTzLTM gQzRmK"
+    className="sc-fjdhpX cZIGpE"
   >
     <span>
       Loading...
     </span>
   </div>,
   <div
-    className="sc-dnqmqq kmmOzl"
+    className="sc-iwsKbI eQdjUy"
   >
     <div
-      className="sc-gZMcBi eNLxyX"
+      className="sc-gqjmRU jrxYk"
     >
       <div
-        className="sc-iwsKbI hPSGKY"
+        className="sc-gZMcBi jSdIIC"
       >
         <button
           disabled={false}

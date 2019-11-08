@@ -10,10 +10,10 @@ exports[`Storyshots Project/Create Default 1`] = `
   }
 >
   <div
-    className="sc-kfGgVZ eravuG"
+    className="sc-esjQYD ikJPMC"
   >
     <div
-      className="sc-fMiknA eiGZgj"
+      className="sc-dVhcbM elEMJK"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Project/Create Default 1`] = `
       >
         <div>
           <div
-            className="sc-dVhcbM fghLuF"
+            className="sc-eqIVtm kRufpp"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots Project/Create Default 1`] = `
         }
       >
         <div
-          className="sc-eqIVtm kRufpp"
+          className="sc-fAjcbJ byigni"
         >
           <div
-            className="sc-dVhcbM fghLuF"
+            className="sc-eqIVtm kRufpp"
           >
             <h2
               id="headerTitle"
@@ -160,13 +160,13 @@ exports[`Storyshots Project/Create Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-fAjcbJ kukidx"
+          className="sc-caSCKo kAAcMA"
         >
           <ul
-            className="sc-caSCKo sc-gisBJw iRmPNH"
+            className="sc-gisBJw sc-kjoXOD kXESwD"
           />
           <ul
-            className="sc-caSCKo sc-kjoXOD ckukuH"
+            className="sc-gisBJw sc-cHGsZl jLfepw"
           />
         </div>
         <button
@@ -212,11 +212,11 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-esjQYD kgUNaH"
+      className="sc-kIPQKe bLxIqO"
       onSubmit={[Function]}
     >
       <div
-        className="sc-EHOje jvzENE"
+        className="sc-bZQynM bOrPFB"
       >
         <div
           style={
@@ -274,7 +274,7 @@ exports[`Storyshots Project/Create Default 1`] = `
             }
           >
             <div
-              className="sc-bZQynM bbYVNM"
+              className="sc-gzVnrw bHgYaJ"
             >
               <svg
                 style={
@@ -296,7 +296,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-EHOje jvzENE"
+        className="sc-bZQynM bOrPFB"
       >
         <div
           style={
@@ -353,7 +353,7 @@ exports[`Storyshots Project/Create Default 1`] = `
             }
           >
             <div
-              className="sc-bZQynM bbYVNM"
+              className="sc-gzVnrw bHgYaJ"
             >
               <svg
                 style={
@@ -375,7 +375,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-EHOje jvzENE"
+        className="sc-bZQynM bOrPFB"
       >
         <div
           style={
@@ -435,7 +435,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-kvZOFW jASDTG"
+        className="sc-hqyNC goPTNL"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -460,7 +460,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           type="hidden"
         />
         <div
-          className="sc-hqyNC hbDtUc"
+          className="sc-jbKcbu enYjhd"
         >
           <svg
             style={
@@ -599,13 +599,13 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-dnqmqq kmmOzl"
+        className="sc-iwsKbI eQdjUy"
       >
         <div
-          className="sc-gZMcBi kaVsZU"
+          className="sc-gqjmRU fIKSOC"
         >
           <div
-            className="sc-iwsKbI hPSGKY"
+            className="sc-gZMcBi jSdIIC"
           >
             <button
               disabled={false}

@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
   }
 >
   <div
-    className="sc-gojNiO isFYvK"
+    className="sc-daURTG iGEzeY"
   />
 </div>
 `;
@@ -25,10 +25,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
   }
 >
   <div
-    className="sc-gojNiO isFYvK"
+    className="sc-daURTG iGEzeY"
   >
     <div
-      className="sc-daURTG eBbayC"
+      className="sc-bXGyLb fcGYjH"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -42,10 +42,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       }
     >
       <div
-        className="sc-lkqHmb eLgWFW"
+        className="sc-eLExRp eojxJr"
       >
         <a
-          className="sc-eLExRp daSwhc"
+          className="sc-cbkKFq bYWppb"
           href="/user/1"
           onClick={[Function]}
         >
@@ -54,15 +54,15 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           Watts
         </a>
         <span
-          className="sc-cbkKFq CibKR"
+          className="sc-krvtoX fYIWwD"
         />
       </div>
       <div
-        className="sc-bXGyLb kkmYAt"
+        className="sc-lkqHmb geiYkM"
       />
     </div>
     <div
-      className="sc-daURTG eBbayC"
+      className="sc-bXGyLb fcGYjH"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -76,10 +76,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       }
     >
       <div
-        className="sc-lkqHmb eLgWFW"
+        className="sc-eLExRp eojxJr"
       >
         <a
-          className="sc-eLExRp daSwhc"
+          className="sc-cbkKFq bYWppb"
           href="/user/2"
           onClick={[Function]}
         >
@@ -88,15 +88,15 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           Chihuly
         </a>
         <span
-          className="sc-cbkKFq CibKR"
+          className="sc-krvtoX fYIWwD"
         />
       </div>
       <div
-        className="sc-bXGyLb kkmYAt"
+        className="sc-lkqHmb geiYkM"
       />
     </div>
     <div
-      className="sc-daURTG eBbayC"
+      className="sc-bXGyLb fcGYjH"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -110,10 +110,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       }
     >
       <div
-        className="sc-lkqHmb eLgWFW"
+        className="sc-eLExRp eojxJr"
       >
         <a
-          className="sc-eLExRp daSwhc"
+          className="sc-cbkKFq bYWppb"
           href="/user/3"
           onClick={[Function]}
         >
@@ -122,13 +122,13 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           Bowie
         </a>
         <span
-          className="sc-cbkKFq CibKR"
+          className="sc-krvtoX fYIWwD"
         >
           loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
         </span>
       </div>
       <div
-        className="sc-bXGyLb kkmYAt"
+        className="sc-lkqHmb geiYkM"
       />
     </div>
   </div>
@@ -145,10 +145,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
   }
 >
   <div
-    className="sc-gojNiO isFYvK"
+    className="sc-daURTG iGEzeY"
   >
     <div
-      className="sc-daURTG eBbayC"
+      className="sc-bXGyLb fcGYjH"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -162,10 +162,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       }
     >
       <div
-        className="sc-lkqHmb eLgWFW"
+        className="sc-eLExRp eojxJr"
       >
         <a
-          className="sc-eLExRp daSwhc"
+          className="sc-cbkKFq bYWppb"
           href="/user/1"
           onClick={[Function]}
         >
@@ -174,11 +174,11 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
           Watts
         </a>
         <span
-          className="sc-cbkKFq CibKR"
+          className="sc-krvtoX fYIWwD"
         />
       </div>
       <div
-        className="sc-bXGyLb kkmYAt"
+        className="sc-lkqHmb geiYkM"
       >
         <button
           disabled={false}
@@ -221,7 +221,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       </div>
     </div>
     <div
-      className="sc-daURTG eBbayC"
+      className="sc-bXGyLb fcGYjH"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -235,10 +235,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       }
     >
       <div
-        className="sc-lkqHmb eLgWFW"
+        className="sc-eLExRp eojxJr"
       >
         <a
-          className="sc-eLExRp daSwhc"
+          className="sc-cbkKFq bYWppb"
           href="/user/2"
           onClick={[Function]}
         >
@@ -247,11 +247,11 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
           Chihuly
         </a>
         <span
-          className="sc-cbkKFq CibKR"
+          className="sc-krvtoX fYIWwD"
         />
       </div>
       <div
-        className="sc-bXGyLb kkmYAt"
+        className="sc-lkqHmb geiYkM"
       >
         <button
           disabled={false}
@@ -294,7 +294,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       </div>
     </div>
     <div
-      className="sc-daURTG eBbayC"
+      className="sc-bXGyLb fcGYjH"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -308,10 +308,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       }
     >
       <div
-        className="sc-lkqHmb eLgWFW"
+        className="sc-eLExRp eojxJr"
       >
         <a
-          className="sc-eLExRp daSwhc"
+          className="sc-cbkKFq bYWppb"
           href="/user/3"
           onClick={[Function]}
         >
@@ -320,13 +320,13 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
           Bowie
         </a>
         <span
-          className="sc-cbkKFq CibKR"
+          className="sc-krvtoX fYIWwD"
         >
           loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
         </span>
       </div>
       <div
-        className="sc-bXGyLb kkmYAt"
+        className="sc-lkqHmb geiYkM"
       >
         <button
           disabled={false}
