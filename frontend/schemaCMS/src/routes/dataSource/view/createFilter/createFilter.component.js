@@ -38,7 +38,7 @@ export class CreateFilter extends PureComponent {
       await this.props.fetchFieldsInfo({ dataSourceId });
       this.setState({ loading: false });
     } catch (e) {
-      this.props.history.push(`datasource/${dataSourceId}/${FILTERS_STEP}`);
+      this.props.history.push(`/datasource/${dataSourceId}/${FILTERS_STEP}`);
     }
   }
 
