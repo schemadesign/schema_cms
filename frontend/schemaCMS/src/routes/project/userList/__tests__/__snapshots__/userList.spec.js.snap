@@ -40,6 +40,7 @@ exports[`UserList: Component should render correctly 1`] = `
   >
     <PlusButton
       id="addUserDesktopBtn"
+      onClick={[Function]}
     />
   </ContextHeader>
   <UserList
@@ -181,6 +182,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
   >
     <PlusButton
       id="addUserDesktopBtn"
+      onClick={[Function]}
     />
   </ContextHeader>
   <UserList

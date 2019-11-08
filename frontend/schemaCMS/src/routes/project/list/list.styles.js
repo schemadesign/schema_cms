@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { media } from '../../../theme/media';
 
-import { media } from '../../../theme/media';
-
 export const Container = styled.div``;
 
 export const ProjectsList = styled.ul`

@@ -301,6 +301,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       <button
         disabled={false}
         id="addUserDesktopBtn"
+        onClick={[Function]}
         style={
           Object {
             "backgroundColor": "#FFF",
@@ -722,6 +723,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       <button
         disabled={false}
         id="addUserDesktopBtn"
+        onClick={[Function]}
         style={
           Object {
             "backgroundColor": "#FFF",

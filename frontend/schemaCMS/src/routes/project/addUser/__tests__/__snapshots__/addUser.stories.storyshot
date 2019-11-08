@@ -10,7 +10,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
   }
 >
   <div
-    className="sc-elJkPf jRsZyA"
+    className="sc-elJkPf enrEtz"
   >
     <div
       className="sc-fBuWsC jtIdEp"
@@ -271,7 +271,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
   }
 >
   <div
-    className="sc-elJkPf jRsZyA"
+    className="sc-elJkPf enrEtz"
   >
     <div
       className="sc-fBuWsC jtIdEp"
