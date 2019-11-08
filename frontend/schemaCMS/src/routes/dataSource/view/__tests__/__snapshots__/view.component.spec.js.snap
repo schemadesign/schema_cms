@@ -18,11 +18,14 @@ exports[`View: Component should not render any step 1`] = `
       ]
     }
   />
-  <styled.div>
+  <styled.div
+    visibile={false}
+  >
     <Component
       customStyles={
         Object {
-          "padding": "0 40px",
+          "backgroundColor": "transparent",
+          "padding": 0,
         }
       }
       id="removeDataSourceDesktopBtn"
@@ -168,11 +171,14 @@ exports[`View: Component should render draft 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <styled.div>
+  <styled.div
+    visibile={true}
+  >
     <Component
       customStyles={
         Object {
-          "padding": "0 40px",
+          "backgroundColor": "transparent",
+          "padding": 0,
         }
       }
       id="removeDataSourceDesktopBtn"
@@ -318,11 +324,14 @@ exports[`View: Component should render second step 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <styled.div>
+  <styled.div
+    visibile={true}
+  >
     <Component
       customStyles={
         Object {
-          "padding": "0 40px",
+          "backgroundColor": "transparent",
+          "padding": 0,
         }
       }
       id="removeDataSourceDesktopBtn"
@@ -467,11 +476,14 @@ exports[`View: Component should render source step 1`] = `
     updateDataSource={[Function]}
     uploadScript={[Function]}
   />
-  <styled.div>
+  <styled.div
+    visibile={true}
+  >
     <Component
       customStyles={
         Object {
-          "padding": "0 40px",
+          "backgroundColor": "transparent",
+          "padding": 0,
         }
       }
       id="removeDataSourceDesktopBtn"
