@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, both, cond, equals, isEmpty, path, propEq, pipe, findLast, defaultTo } from 'ramda';
+import { always, both, cond, equals, isEmpty, path, propEq, pipe, findLast } from 'ramda';
 import { Icons, Typography } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
@@ -35,6 +35,7 @@ export class JobList extends PureComponent {
   state = {
     selectedJob: null,
     loading: true,
+    canRevert: false,
   };
 
   async componentDidMount() {
@@ -48,7 +49,17 @@ export class JobList extends PureComponent {
     }
   }
 
-  handleChange = ({ target: { value } }) => this.setState({ selectedJob: value });
+  handleChange = ({ target: { value: selectedJob } }) => {
+    selectedJob = parseInt(selectedJob, 10);
+    const { jobList, dataSource } = this.props;
+    const selectedJobSuccess = pipe(
+      findLast(propEq('id', selectedJob)),
+      propEq('jobState', JOB_STATE_SUCCESS)
+    )(jobList);
+    const canRevert = selectedJob !== dataSource.activeJob && selectedJobSuccess;
+
+    this.setState({ selectedJob, canRevert });
+  };
 
   handleCancelClick = () =>
     this.props.history.push(`/datasource/${path(['match', 'params', 'dataSourceId'], this.props)}`);
@@ -94,18 +105,11 @@ export class JobList extends PureComponent {
   ]);
 
   render() {
-    const { jobList, dataSource } = this.props;
-    const { loading, selectedJob } = this.state;
+    const { loading, canRevert } = this.state;
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.title} />,
       headerSubtitle: <FormattedMessage {...messages.subTitle} />,
     };
-    const selectedJobSuccess = pipe(
-      findLast(propEq('id', parseInt(selectedJob, 10))),
-      defaultTo({}),
-      propEq('jobState', JOB_STATE_SUCCESS)
-    )(jobList);
-    const canRevert = selectedJob && parseInt(selectedJob, 10) !== dataSource.activeJob && selectedJobSuccess;
 
     return (
       <Container>
