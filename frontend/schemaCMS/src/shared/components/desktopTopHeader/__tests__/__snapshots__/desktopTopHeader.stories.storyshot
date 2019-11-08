@@ -52,15 +52,20 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 href="/logout"
                 onClick={[Function]}
               >
-                <div
+                <svg
                   style={
                     Object {
-                      "border": "solid 1px #FFF",
-                      "height": "20px",
-                      "width": "15px",
+                      "fill": "#FFF",
+                      "height": "24px",
+                      "width": "24px",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5a2 2 0 00-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                  />
+                </svg>
               </a>
               <a
                 className="sc-eMigcr sc-gPWkxV bbkHgx"
@@ -277,8 +282,8 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               "outline": "none",
               "padding": "0",
               "position": "absolute",
-              "right": 0,
-              "top": "6px",
+              "right": 44,
+              "top": 44,
             }
           }
         >
@@ -379,15 +384,20 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 href="/logout"
                 onClick={[Function]}
               >
-                <div
+                <svg
                   style={
                     Object {
-                      "border": "solid 1px #FFF",
-                      "height": "20px",
-                      "width": "15px",
+                      "fill": "#FFF",
+                      "height": "24px",
+                      "width": "24px",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5a2 2 0 00-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                  />
+                </svg>
               </a>
               <a
                 className="sc-eMigcr sc-gPWkxV bbkHgx"
@@ -604,8 +614,8 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               "outline": "none",
               "padding": "0",
               "position": "absolute",
-              "right": 0,
-              "top": "6px",
+              "right": 44,
+              "top": 44,
             }
           }
         >
@@ -702,15 +712,20 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 href="/logout"
                 onClick={[Function]}
               >
-                <div
+                <svg
                   style={
                     Object {
-                      "border": "solid 1px #FFF",
-                      "height": "20px",
-                      "width": "15px",
+                      "fill": "#FFF",
+                      "height": "24px",
+                      "width": "24px",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5a2 2 0 00-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                  />
+                </svg>
               </a>
               <a
                 className="sc-eMigcr sc-gPWkxV bbkHgx"
@@ -927,8 +942,8 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               "outline": "none",
               "padding": "0",
               "position": "absolute",
-              "right": 0,
-              "top": "6px",
+              "right": 44,
+              "top": 44,
             }
           }
         >
