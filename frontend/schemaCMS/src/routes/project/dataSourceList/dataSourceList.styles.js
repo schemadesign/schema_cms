@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { styleWhenTrue } from '../../../shared/utils/rendering';
 import { media } from '../../../theme/media';
 
+const MARGIN = '16.66px';
+
 export const Container = styled.div``;
 
 export const DataSourceItem = styled.li`
@@ -16,7 +18,7 @@ export const DataSourceItem = styled.li`
 
   ${media.desktop`
     flex: 0 0 auto;
-    width: calc(33% - 16.66px);
+    width: calc(33% - ${MARGIN});
     margin: 0 0 20px 20px;
     background: ${({ theme: { card } }) => card.background};
   `}
