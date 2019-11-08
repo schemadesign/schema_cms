@@ -74,6 +74,8 @@ export const IconEditWrapper = styled.div`
 export const DetailValue = styled.span`
   color: ${({ theme: { text } }) => text};
   flex: 1 1 auto;
+  white-space: pre-wrap;
+  word-break: break-word;
 `;
 
 export const Statistics = styled.ul`
