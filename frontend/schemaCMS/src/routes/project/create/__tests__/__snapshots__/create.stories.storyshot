@@ -211,6 +211,47 @@ exports[`Storyshots Project/Create Default 1`] = `
         </button>
       </div>
     </div>
+    <div
+      className="sc-RefOD CxYba"
+    >
+      <div
+        className="sc-iQKALj gFjBbn"
+      >
+        <h1
+          className="sc-bwCtUz ThhIA"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          Create New Project
+        </h1>
+        <h2
+          className="sc-hrWEMg hdZPci"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Project Info
+        </h2>
+      </div>
+      <div
+        className="sc-eTuwsz jtSbhi"
+      />
+    </div>
     <form
       className="sc-ibxdXY cFqNVN"
       onSubmit={[Function]}

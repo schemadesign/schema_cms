@@ -217,14 +217,14 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwCtUz kLbHbK"
+    className="sc-epnACN hsXqzQ"
   >
     <div
-      className="sc-RefOD fxQHUp"
+      className="sc-gwVKww cKVNpf"
     >
       <a
         active={false}
-        className="sc-iQKALj jbBehI"
+        className="sc-hXRMBi kwmjTk"
         href="/project/1"
         onClick={[Function]}
       >
@@ -234,7 +234,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </a>
       <a
         active={false}
-        className="sc-iQKALj jbBehI"
+        className="sc-hXRMBi kwmjTk"
         href="/project/1/datasource"
         onClick={[Function]}
       >
@@ -244,7 +244,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </a>
       <a
         active={true}
-        className="sc-iQKALj ecVPtc"
+        className="sc-hXRMBi bvSUaz"
         href="/project/1/user"
         onClick={[Function]}
       >
@@ -255,13 +255,13 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-hrWEMg gxndlb"
+    className="sc-RefOD CxYba"
   >
     <div
-      className="sc-eTuwsz fCuGaP"
+      className="sc-iQKALj gFjBbn"
     >
       <h1
-        className="sc-gwVKww htJtAT"
+        className="sc-bwCtUz ThhIA"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -279,7 +279,7 @@ exports[`Storyshots Project/UserList list 1`] = `
         </span>
       </h1>
       <h2
-        className="sc-hXRMBi eCsLvF"
+        className="sc-hrWEMg hdZPci"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -296,7 +296,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </h2>
     </div>
     <div
-      className="sc-epnACN hsXqzQ"
+      className="sc-eTuwsz jtSbhi"
     >
       <button
         disabled={false}
@@ -639,14 +639,14 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwCtUz kLbHbK"
+    className="sc-epnACN hsXqzQ"
   >
     <div
-      className="sc-RefOD fxQHUp"
+      className="sc-gwVKww cKVNpf"
     >
       <a
         active={false}
-        className="sc-iQKALj jbBehI"
+        className="sc-hXRMBi kwmjTk"
         href="/project/1"
         onClick={[Function]}
       >
@@ -656,7 +656,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </a>
       <a
         active={false}
-        className="sc-iQKALj jbBehI"
+        className="sc-hXRMBi kwmjTk"
         href="/project/1/datasource"
         onClick={[Function]}
       >
@@ -666,7 +666,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </a>
       <a
         active={true}
-        className="sc-iQKALj ecVPtc"
+        className="sc-hXRMBi bvSUaz"
         href="/project/1/user"
         onClick={[Function]}
       >
@@ -677,13 +677,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-hrWEMg gxndlb"
+    className="sc-RefOD CxYba"
   >
     <div
-      className="sc-eTuwsz fCuGaP"
+      className="sc-iQKALj gFjBbn"
     >
       <h1
-        className="sc-gwVKww htJtAT"
+        className="sc-bwCtUz ThhIA"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -701,7 +701,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </span>
       </h1>
       <h2
-        className="sc-hXRMBi eCsLvF"
+        className="sc-hrWEMg hdZPci"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -718,7 +718,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </h2>
     </div>
     <div
-      className="sc-epnACN hsXqzQ"
+      className="sc-eTuwsz jtSbhi"
     >
       <button
         disabled={false}

@@ -222,13 +222,13 @@ exports[`Storyshots View Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-hrWEMg gxndlb"
+    className="sc-RefOD CxYba"
   >
     <div
-      className="sc-eTuwsz fCuGaP"
+      className="sc-iQKALj gFjBbn"
     >
       <h1
-        className="sc-gwVKww kvKsKH"
+        className="sc-bwCtUz bUpmgO"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -246,7 +246,7 @@ exports[`Storyshots View Default 1`] = `
         </span>
       </h1>
       <h2
-        className="sc-hXRMBi eRFuDO"
+        className="sc-hrWEMg aourc"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -263,7 +263,7 @@ exports[`Storyshots View Default 1`] = `
       </h2>
     </div>
     <div
-      className="sc-epnACN hsXqzQ"
+      className="sc-eTuwsz jtSbhi"
     />
   </div>
 </div>

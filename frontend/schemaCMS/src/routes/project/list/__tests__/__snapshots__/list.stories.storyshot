@@ -235,13 +235,13 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-hrWEMg gxndlb"
+      className="sc-RefOD CxYba"
     >
       <div
-        className="sc-eTuwsz fCuGaP"
+        className="sc-iQKALj gFjBbn"
       >
         <h1
-          className="sc-gwVKww htJtAT"
+          className="sc-bwCtUz ThhIA"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -257,7 +257,7 @@ exports[`Storyshots Project/List empty 1`] = `
           Projects
         </h1>
         <h2
-          className="sc-hXRMBi eCsLvF"
+          className="sc-hrWEMg hdZPci"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -272,7 +272,7 @@ exports[`Storyshots Project/List empty 1`] = `
         </h2>
       </div>
       <div
-        className="sc-epnACN hsXqzQ"
+        className="sc-eTuwsz jtSbhi"
       >
         <button
           disabled={false}
@@ -612,13 +612,13 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-hrWEMg gxndlb"
+      className="sc-RefOD CxYba"
     >
       <div
-        className="sc-eTuwsz fCuGaP"
+        className="sc-iQKALj gFjBbn"
       >
         <h1
-          className="sc-gwVKww htJtAT"
+          className="sc-bwCtUz ThhIA"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -634,7 +634,7 @@ exports[`Storyshots Project/List list 1`] = `
           Projects
         </h1>
         <h2
-          className="sc-hXRMBi eCsLvF"
+          className="sc-hrWEMg hdZPci"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -649,7 +649,7 @@ exports[`Storyshots Project/List list 1`] = `
         </h2>
       </div>
       <div
-        className="sc-epnACN hsXqzQ"
+        className="sc-eTuwsz jtSbhi"
       >
         <button
           disabled={false}

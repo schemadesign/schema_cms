@@ -255,14 +255,14 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bwCtUz kLbHbK"
+        className="sc-epnACN hsXqzQ"
       >
         <div
-          className="sc-RefOD fxQHUp"
+          className="sc-gwVKww cKVNpf"
         >
           <a
             active={true}
-            className="sc-iQKALj ecVPtc"
+            className="sc-hXRMBi bvSUaz"
             href="/project/100"
             onClick={[Function]}
           >
@@ -272,7 +272,7 @@ exports[`Storyshots Project/View default 1`] = `
           </a>
           <a
             active={false}
-            className="sc-iQKALj jbBehI"
+            className="sc-hXRMBi kwmjTk"
             href="/project/100/datasource"
             onClick={[Function]}
           >
@@ -282,7 +282,7 @@ exports[`Storyshots Project/View default 1`] = `
           </a>
           <a
             active={false}
-            className="sc-iQKALj jbBehI"
+            className="sc-hXRMBi kwmjTk"
             href="/project/100/user"
             onClick={[Function]}
           >
@@ -973,14 +973,14 @@ exports[`Storyshots Project/View loading 1`] = `
         </div>
       </div>
       <div
-        className="sc-bwCtUz kLbHbK"
+        className="sc-epnACN hsXqzQ"
       >
         <div
-          className="sc-RefOD fxQHUp"
+          className="sc-gwVKww cKVNpf"
         >
           <a
             active={true}
-            className="sc-iQKALj ecVPtc"
+            className="sc-hXRMBi bvSUaz"
             href="/project/100"
             onClick={[Function]}
           >
@@ -990,7 +990,7 @@ exports[`Storyshots Project/View loading 1`] = `
           </a>
           <a
             active={false}
-            className="sc-iQKALj jbBehI"
+            className="sc-hXRMBi kwmjTk"
             href="/project/100/datasource"
             onClick={[Function]}
           >
@@ -1000,7 +1000,7 @@ exports[`Storyshots Project/View loading 1`] = `
           </a>
           <a
             active={false}
-            className="sc-iQKALj jbBehI"
+            className="sc-hXRMBi kwmjTk"
             href="/project/100/user"
             onClick={[Function]}
           >
