@@ -7,7 +7,6 @@ import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { FETCH_LIST_DELAY } from './dataSource.constants';
 import { getIsAnyResultProcessing } from '../../shared/utils/helpers';
-import { JobRoutines } from '../job';
 
 const PAGE_SIZE = 1000;
 
