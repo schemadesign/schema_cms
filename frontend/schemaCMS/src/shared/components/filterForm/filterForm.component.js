@@ -50,12 +50,19 @@ export class FilterForm extends PureComponent {
     filterType: path(['fieldsInfo', value, FILTER_TYPE, 0], this.props),
   });
 
-  handleSelectField = ({ value, setFieldValue }) => {
-    const { uniqueItems, fieldType } = this.getDependencyValues(value);
+  getFilerTypes = value => pathOr([], ['fieldsInfo', value, FILTER_TYPE], this.props);
+
+  handleSelectField = ({ value, setFieldValue, filterTypes }) => {
+    const { uniqueItems, fieldType, filterType } = this.getDependencyValues(value);
 
     setFieldValue(FILTER_UNIQUE_ITEMS, toString(uniqueItems));
     setFieldValue(FILTER_FIELD_TYPE, fieldType);
     setFieldValue(FILTER_FIELD, value);
+
+    if (!filterTypes.includes(filterType)) {
+      filterTypes = this.getFilerTypes(value);
+      setFieldValue(FILTER_TYPE, filterTypes[0]);
+    }
   };
 
   handleSelectType = ({ value, setFieldValue }) => setFieldValue(FILTER_TYPE, value);
@@ -110,7 +117,7 @@ export class FilterForm extends PureComponent {
       <Fragment>
         <Formik initialValues={initialValues} onSubmit={this.handleSubmit} validationSchema={FILTERS_SCHEMA}>
           {({ values, handleChange, setFieldValue, dirty, isValid, ...rest }) => {
-            const filterTypes = pathOr([], ['fieldsInfo', values[FILTER_FIELD], FILTER_TYPE], this.props);
+            const filterTypes = this.getFilerTypes(values[FILTER_FIELD]);
             const filterTypeOptions = filterTypes.map(key => ({
               value: key,
               label: key,
@@ -132,7 +139,7 @@ export class FilterForm extends PureComponent {
                   name={FILTER_FIELD}
                   value={values[FILTER_FIELD]}
                   options={fieldOptions}
-                  onSelect={({ value }) => this.handleSelectField({ value, setFieldValue })}
+                  onSelect={({ value }) => this.handleSelectField({ value, setFieldValue, filterTypes })}
                 />
                 <Select
                   label={<FormattedMessage {...messages[FILTER_TYPE]} />}

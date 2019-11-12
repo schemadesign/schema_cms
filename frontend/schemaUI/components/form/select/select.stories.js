@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 
 import { SelectComponent } from './select.component';
+import { withTheme } from '../../../.storybook/decorators';
 
 const DEFAULT_OPTION = { value: 'default', label: 'Select your favorite from the list', selected: true };
 
@@ -68,6 +69,7 @@ class TestComponentWithDefaultOption extends PureComponent {
 }
 
 storiesOf('Form/Select', module)
+  .addDecorator(withTheme())
   .add('Default', () => <TestComponent />)
   .add('With Default Option', () => <TestComponentWithDefaultOption />)
   .add('Native Select', () => <TestComponent native />);

@@ -5,22 +5,10 @@ import { expect } from 'chai';
 
 import { Create } from '../create.component';
 import { TextInput } from '../../../../shared/components/form/inputs/textInput';
-import { PROJECT_TITLE } from '../../../../modules/project/project.constants';
+import { defaultProps } from '../create.stories';
 import { Form } from '../create.styles';
 
 describe('Create: Component', () => {
-  const defaultProps = {
-    values: {
-      [PROJECT_TITLE]: '',
-    },
-    handleChange: Function.prototype,
-    handleSubmit: Function.prototype,
-    setFieldValue: Function.prototype,
-    intl: {
-      formatMessage: ({ defaultMessage }) => defaultMessage,
-    },
-  };
-
   const component = props => <Create {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

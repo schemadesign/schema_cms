@@ -31,10 +31,11 @@ exports[`Create: Component should render correctly 1`] = `
       placeholder="Project title"
       setFieldValue={[Function]}
       touched={Object {}}
-      value=""
+      value="title"
       values={
         Object {
-          "title": "",
+          "status": "in_progress",
+          "title": "title",
         }
       }
     />
@@ -58,7 +59,8 @@ exports[`Create: Component should render correctly 1`] = `
       touched={Object {}}
       values={
         Object {
-          "title": "",
+          "status": "in_progress",
+          "title": "title",
         }
       }
     />
@@ -83,7 +85,8 @@ exports[`Create: Component should render correctly 1`] = `
       touched={Object {}}
       values={
         Object {
-          "title": "",
+          "status": "in_progress",
+          "title": "title",
         }
       }
     />
@@ -112,6 +115,7 @@ exports[`Create: Component should render correctly 1`] = `
           },
         ]
       }
+      value="in_progress"
     />
     <NavigationContainer
       hideOnDesktop={false}
