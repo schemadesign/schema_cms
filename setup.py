@@ -26,6 +26,7 @@ setuptools.setup(
         "aws-cdk.core=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.region-info=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-iam=={version}".format(version=AWS_CDK_VERSION),
+        "aws-cdk.aws-kinesis=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-cloudwatch=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-events=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-logs=={version}".format(version=AWS_CDK_VERSION),
@@ -33,6 +34,7 @@ setuptools.setup(
         "aws-cdk.aws-kms=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-s3=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-s3-assets=={version}".format(version=AWS_CDK_VERSION),
+        "aws-cdk.aws-s3-notifications=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-sqs=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-ssm=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-ec2=={version}".format(version=AWS_CDK_VERSION),
@@ -68,6 +70,7 @@ setuptools.setup(
         "aws-cdk-aws-codepipeline=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-codedeploy=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk-aws-codepipeline-actions=={version}".format(version=AWS_CDK_VERSION),
+        "aws-cdk.aws-dynamodb=={version}".format(version=AWS_CDK_VERSION),
         "aws-cdk.aws-stepfunctions-tasks=={version}".format(version=AWS_CDK_VERSION),
     ],
 
