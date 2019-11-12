@@ -304,7 +304,12 @@ class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     def source_file_url(self):
         if not self.source_file_path:
             return ""
-        params = {'Bucket': settings.AWS_STORAGE_BUCKET_NAME, 'Key': self.source_file_path}
+        filename = os.path.basename(self.source_file_path)
+        params = {
+            'Bucket': settings.AWS_STORAGE_BUCKET_NAME,
+            'Key': self.source_file_path,
+            'ResponseContentDisposition': f"attachment; filename={filename}",
+        }
         if self.source_file_version:
             params['VersionId'] = self.source_file_version
         s3 = boto3.client('s3')

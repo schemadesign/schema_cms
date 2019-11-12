@@ -122,8 +122,7 @@ class TestDataSourceJob:
         s3.generate_presigned_url.assert_called_with(
             ClientMethod='get_object',
             Params={
-                'Bucket': settings.AWS_STORAGE_BUCKET_NAME,
-                'Key': job.source_file_path,
+                **self._get_common_generate_presigned_url_params(settings, job),
                 'VersionId': job.source_file_version,
             },
         )
@@ -143,5 +142,13 @@ class TestDataSourceJob:
         assert url == expected_url
         s3.generate_presigned_url.assert_called_with(
             ClientMethod='get_object',
-            Params={'Bucket': settings.AWS_STORAGE_BUCKET_NAME, 'Key': job.source_file_path},
+            Params={**self._get_common_generate_presigned_url_params(settings, job)},
         )
+
+    def _get_common_generate_presigned_url_params(self, settings, job):
+        filename = os.path.basename(job.source_file_path)
+        return {
+            'Bucket': settings.AWS_STORAGE_BUCKET_NAME,
+            'Key': job.source_file_path,
+            'ResponseContentDisposition': f"attachment; filename={filename}",
+        }
