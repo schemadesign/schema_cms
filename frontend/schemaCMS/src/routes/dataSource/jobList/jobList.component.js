@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, both, cond, equals, findLast, isEmpty, path, pipe, propEq } from 'ramda';
+import { always, either, cond, findLast, path, pipe, propEq, T } from 'ramda';
 import { Typography } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
@@ -104,16 +104,14 @@ export class JobList extends PureComponent {
   };
 
   renderContent = cond([
-    [equals(true), always(<Loader />)],
-    [both(equals(false), () => isEmpty(this.props.jobList)), always(<NoData />)],
-    [
-      both(equals(false), () => !isEmpty(this.props.jobList)),
-      () => <ListWrapper>{this.props.jobList.map(this.renderList)}</ListWrapper>,
-    ],
+    [either(propEq('loading', true), propEq('dataSource', {})), always(<Loader />)],
+    [propEq('jobList', []), always(<NoData />)],
+    [T, () => <ListWrapper>{this.props.jobList.map(this.renderList)}</ListWrapper>],
   ]);
 
   render() {
     const { loading, canRevert } = this.state;
+    const { dataSource, jobList } = this.props;
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.title} />,
       headerSubtitle: <FormattedMessage {...messages.subTitle} />,
@@ -122,7 +120,7 @@ export class JobList extends PureComponent {
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
-        {this.renderContent(loading)}
+        {this.renderContent({ loading, dataSource, jobList })}
         <NavigationContainer>
           <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
             <FormattedMessage {...messages.cancel} />
