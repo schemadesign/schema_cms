@@ -108,7 +108,13 @@ class TestDataSource:
 
         ret = ds.meta_file_serialization()
 
-        assert ret == {'id': ds.id, 'name': ds.name, 'file': ds.file.name, 'items': job_meta.items, 'result': ""}
+        assert ret == {
+            'id': ds.id,
+            'name': ds.name,
+            'file': ds.file.name,
+            'items': job_meta.items,
+            'result': "",
+        }
 
 
 class TestDataSourceMeta:

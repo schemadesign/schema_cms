@@ -1,5 +1,3 @@
-import uuid
-
 import datetime
 import json
 import os

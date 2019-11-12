@@ -945,48 +945,6 @@ class TestRevertJobView:
         return reverse("projects:datasource-revert-job", kwargs=dict(pk=pk))
 
 
-class TestPublicResultsView:
-    @staticmethod
-    def create_jobs(data_source, job_factory, faker):
-        job1 = job_factory(
-            datasource=data_source,
-            job_state=projects_constants.DataSourceJobState.SUCCESS,
-            result=faker.csv_upload_file(filename="test_result.csv"),
-        )
-        job2 = job_factory(
-            datasource=data_source,
-            job_state=projects_constants.DataSourceJobState.SUCCESS,
-            result=faker.csv_upload_file(filename="test_result.csv"),
-        )
-        job1.update_meta()
-        job2.update_meta()
-
-        return job1, job2
-
-    def test_response(self, api_client, data_source, job_factory, faker):
-        job1, job2 = self.create_jobs(data_source, job_factory, faker)
-        expected_response = {"result": job2.result.name, "items": job2.meta_data.items}
-
-        response = api_client.get(self.get_url(data_source.id))
-
-        assert response.status_code == status.HTTP_200_OK
-        assert response.data == expected_response
-
-    def test_response_with_active_job(self, api_client, data_source, job_factory, faker):
-        job1, job2 = self.create_jobs(data_source, job_factory, faker)
-        data_source.set_active_job(job1)
-        expected_response = {"result": job1.result.name, "items": job1.meta_data.items}
-
-        response = api_client.get(self.get_url(data_source.id))
-
-        assert response.status_code == status.HTTP_200_OK
-        assert response.data == expected_response
-
-    @staticmethod
-    def get_url(pk):
-        return reverse("projects:datasource-public-results", kwargs=dict(pk=pk))
-
-
 class TestSetFiltersView:
     def test_response(self, api_client, admin, data_source, filter_factory):
         filter1 = filter_factory(datasource=data_source, is_active=False)

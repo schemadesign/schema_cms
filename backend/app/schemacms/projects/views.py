@@ -2,7 +2,6 @@ import json
 import logging
 import os
 
-from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect

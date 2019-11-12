@@ -330,7 +330,7 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
     def save(self, **kwargs):
         job_state = self.validated_data.pop("job_state")
         job_state_action = {
-            DataSourceJobState.PROCESSING: self.instance.success,
+            DataSourceJobState.PROCESSING: self.instance.processing,
             DataSourceJobState.SUCCESS: self.instance.success,
             DataSourceJobState.FAILED: self.instance.fail,
         }

@@ -1,6 +1,4 @@
 import dataclasses
-import functools
-
 import uuid
 
 import pytest
@@ -21,11 +19,4 @@ def s3_object_version_factory():
 
 @pytest.fixture()
 def s3(mocker):
-    s3_mock = _boto_client_mock_factory(mocker, "s3")
-    mocker.patch("boto3.client", return_value=s3_mock)
-    return s3_mock
-
-
-@functools.lru_cache()
-def _boto_client_mock_factory(mocker, service):
-    return mocker.Mock()
+    return mocker.patch("schemacms.projects.services.s3")
