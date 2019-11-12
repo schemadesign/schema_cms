@@ -785,7 +785,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         id="filterType"
         name="filterType"
         type="hidden"
-        value="filterType"
+        value="checkbox"
       />
       <div
         className="sc-dNLxif jUJXMt"

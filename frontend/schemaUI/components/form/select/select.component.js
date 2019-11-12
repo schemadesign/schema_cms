@@ -29,15 +29,27 @@ export class SelectComponent extends PureComponent {
     });
   };
 
-  toggleMenu = () => this.setState({ isMenuOpen: !this.state.isMenuOpen });
+  onClickDocument = () => {
+    this.setState({ isMenuOpen: false });
+    document.removeEventListener('click', this.onClickDocument);
+  };
+
+  toggleMenu = () => {
+    const isMenuOpen = !this.state.isMenuOpen;
+    if (isMenuOpen) {
+      document.addEventListener('click', this.onClickDocument);
+    }
+
+    this.setState({ isMenuOpen });
+  };
 
   renderSelectedOption = ({ selectedOptionStyles }) => {
-    const selectedOption = this.props.options.find(option => option.selected) || this.props.options[0];
+    const selectedOption = this.props.options.find(option => option.selected) || '';
 
     return <div style={selectedOptionStyles}>{selectedOption.label}</div>;
   };
 
-  renderOptions = ({ value, label, selected }, index, { customOptionStyle }, id = '') => {
+  renderOptions = ({ value, label, selected }, index, { customOptionStyle }) => {
     const eventObj = {
       target: {
         value: value,

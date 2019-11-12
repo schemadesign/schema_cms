@@ -29,7 +29,7 @@ export const editProps = {
   removeFilter: Function.prototype,
   filter: {
     name: 'name',
-    filterType: 'filterType',
+    filterType: 'checkbox',
     field: 'field',
     fieldType: 'fieldType',
     unique: 'unique',

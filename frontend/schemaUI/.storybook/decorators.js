@@ -4,8 +4,10 @@ import { ThemeProvider } from '../components/styles/themeProvider';
 import { Theme } from '../utils/theme';
 import { fontFormats, interFontFaces } from './fonts';
 
-export const withTheme = (theme = Theme.dark) => (story) => (
-  <ThemeProvider theme={theme}>{story()}</ThemeProvider>
+export const withTheme = (theme = Theme.dark) => story => (
+  <ThemeProvider theme={theme}>
+    <div style={{ color: theme.text }}>{story()}</div>
+  </ThemeProvider>
 );
 
 const prepareFontFace = ({ style, weight, files }) => {
