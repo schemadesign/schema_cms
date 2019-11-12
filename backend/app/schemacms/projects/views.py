@@ -3,8 +3,8 @@ import logging
 import os
 
 from django.db import transaction
-from django.urls import reverse
-from django.shortcuts import get_object_or_404, redirect
+from django.core import exceptions
+from django.shortcuts import get_object_or_404
 from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
 from schemacms.authorization import authentication
@@ -235,9 +235,14 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="job-preview", methods=["get"])
     def job_preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-        job = data_source.current_job
+        try:
+            job = data_source.current_job
+            if not hasattr(job, 'meta_data') and job.result:
+                job.update_meta()
+        except exceptions.ObjectDoesNotExist as e:
+            return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
 
-        return redirect(reverse("projects:datasourcejob-result-preview", kwargs=dict(pk=job.id)))
+        return response.Response(job.meta_data.data, status=status.HTTP_200_OK)
 
 
 class DataSourceJobDetailViewSet(

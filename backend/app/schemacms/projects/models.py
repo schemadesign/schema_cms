@@ -142,7 +142,9 @@ class Project(
         return self.data_sources.count()
 
 
-class DataSource(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+class DataSource(
+    utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
+):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="data_sources")
@@ -301,7 +303,13 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
         data = {"id": self.id, "name": self.name}
         return data
 
-class DataSourceJob(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
+
+class DataSourceJob(
+    utils_models.MetaGeneratorMixin,
+    softdelete.models.SoftDeleteObject,
+    ext_models.TimeStampedModel,
+    fsm.DataSourceJobFSM,
+):
     datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
     description = models.TextField(blank=True)
     source_file_path: str = models.CharField(max_length=255, editable=False)
