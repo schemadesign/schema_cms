@@ -8,7 +8,6 @@ import Modal from 'react-modal';
 import { Container, ComingSoon, DesktopActions, desktopButtonStyles } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
-import { DataPreview } from '../../../shared/components/dataPreview';
 import { DataWranglingScripts } from './dataWranglingScripts';
 import { Filters } from './filters';
 import { DataWranglingResult } from '../../dataWranglingResult';
@@ -25,12 +24,15 @@ import {
 } from '../../../modules/dataSource/dataSource.constants';
 import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { StepNavigation } from '../../../shared/components/stepNavigation';
+import { Fields } from './fields';
 
 export class View extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
+    previewData: PropTypes.object.isRequired,
     dataWranglingScripts: PropTypes.array.isRequired,
     removeDataSource: PropTypes.func.isRequired,
+    fetchPreview: PropTypes.func.isRequired,
     fetchDataWranglingScripts: PropTypes.func.isRequired,
     isAnyJobProcessing: PropTypes.bool.isRequired,
     uploadScript: PropTypes.func.isRequired,
@@ -112,7 +114,7 @@ export class View extends PureComponent {
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
       [equals(INITIAL_STEP), always(<Source {...props} />)],
-      [equals(FIELDS_STEP), always(<DataPreview {...props} />)],
+      [equals(FIELDS_STEP), always(<Fields {...props} />)],
       [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts {...props} />)],
       [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],
       [equals(FILTERS_STEP), always(<Filters {...props} />)],

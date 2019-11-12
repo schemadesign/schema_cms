@@ -10,7 +10,7 @@ exports[`Storyshots Project/Create Default 1`] = `
   }
 >
   <div
-    className="sc-eXEjpC fuVqJC"
+    className="sc-ibxdXY clQDsv"
   >
     <div
       className="sc-eqIVtm jYTlNG"
@@ -212,13 +212,13 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-RefOD CxYba"
+      className="sc-iQKALj iQkCCX"
     >
       <div
-        className="sc-iQKALj gFjBbn"
+        className="sc-bwCtUz eJBWly"
       >
         <h1
-          className="sc-bwCtUz ThhIA"
+          className="sc-hrWEMg hdZPci"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -234,7 +234,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           Create New Project
         </h1>
         <h2
-          className="sc-hrWEMg hdZPci"
+          className="sc-eTuwsz bkNIDk"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -249,11 +249,11 @@ exports[`Storyshots Project/Create Default 1`] = `
         </h2>
       </div>
       <div
-        className="sc-eTuwsz jtSbhi"
+        className="sc-gwVKww eWCHnX"
       />
     </div>
     <form
-      className="sc-ibxdXY cFqNVN"
+      className="sc-RefOD hoyLbU"
       onSubmit={[Function]}
     >
       <div
@@ -476,7 +476,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-jbKcbu VdRJR"
+        className="sc-dNLxif hQcsea"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -502,7 +502,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           value="in_progress"
         />
         <div
-          className="sc-dNLxif jUJXMt"
+          className="sc-jqCOkK erFQlv"
         >
           <svg
             style={

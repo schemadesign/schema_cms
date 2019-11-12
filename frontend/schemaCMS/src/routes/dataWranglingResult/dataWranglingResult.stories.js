@@ -18,8 +18,7 @@ export const defaultProps = {
     fields,
     data,
   },
-  fetchResult: Function.prototype,
-  unmountResult: Function.prototype,
+  fetchPreview: Function.prototype,
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },

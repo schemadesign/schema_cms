@@ -118,18 +118,18 @@ function* updateOne({ payload: { dataSourceId, requestData, step } }) {
   }
 }
 
-function* fetchFields({ payload }) {
+function* fetchPreview({ payload }) {
   try {
-    yield put(DataSourceRoutines.fetchOne.request());
+    yield put(DataSourceRoutines.fetchPreview.request());
 
     const { dataSourceId } = payload;
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${PREVIEW_PATH}`, { camelize: false });
 
-    yield put(DataSourceRoutines.fetchFields.success(data));
+    yield put(DataSourceRoutines.fetchPreview.success(data));
   } catch (error) {
-    yield put(DataSourceRoutines.fetchFields.failure(error));
+    yield put(DataSourceRoutines.fetchPreview.failure(error));
   } finally {
-    yield put(DataSourceRoutines.fetchFields.fulfill());
+    yield put(DataSourceRoutines.fetchPreview.fulfill());
   }
 }
 
@@ -163,20 +163,6 @@ function* revertToJob({ payload: { dataSourceId, jobId } }) {
   }
 }
 
-function* fetchPreview({ payload: { dataSourceId } }) {
-  try {
-    yield put(DataSourceRoutines.fetchPreview.request());
-
-    const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}/job-preview`);
-
-    yield put(DataSourceRoutines.fetchPreview.success(data));
-  } catch (e) {
-    yield put(DataSourceRoutines.fetchPreview.failure(e));
-  } finally {
-    yield put(DataSourceRoutines.fetchPreview.fulfill());
-  }
-}
-
 export function* watchDataSource() {
   yield all([
     takeLatest(DataSourceRoutines.create.TRIGGER, create),
@@ -184,7 +170,6 @@ export function* watchDataSource() {
     takeLatest(DataSourceRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(DataSourceRoutines.updateOne.TRIGGER, updateOne),
     takeLatest(DataSourceRoutines.fetchList.TRIGGER, fetchList),
-    takeLatest(DataSourceRoutines.fetchFields.TRIGGER, fetchFields),
     takeLatest(DataSourceRoutines.fetchFieldsInfo.TRIGGER, fetchFieldsInfo),
     takeLatest(DataSourceRoutines.revertToJob.TRIGGER, revertToJob),
     takeLatest(DataSourceRoutines.fetchPreview.TRIGGER, fetchPreview),

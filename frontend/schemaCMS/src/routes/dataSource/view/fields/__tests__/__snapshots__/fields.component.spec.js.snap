@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fields: Component should render correctly 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Fields"
+  />
+  <DataPreview
+    dataSource={Object {}}
+    fetchPreview={[Function]}
+    history={Object {}}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    jobId={null}
+    match={
+      Object {
+        "params": Object {
+          "step": "1",
+        },
+      }
+    }
+    previewData={Object {}}
+  />
+  <StepNavigation
+    dataSource={Object {}}
+    disabled={
+      Object {
+        "back": false,
+        "next": false,
+      }
+    }
+    fetchPreview={[Function]}
+    history={Object {}}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    loading={false}
+    match={
+      Object {
+        "params": Object {
+          "step": "1",
+        },
+      }
+    }
+    previewData={Object {}}
+  />
+</styled.div>
+`;

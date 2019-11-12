@@ -12,8 +12,6 @@ export const DataSourceRoutines = {
   fetchList: createRoutine(`${prefix}FETCH_LIST`),
   updateOne: createRoutine(`${prefix}UPDATE_ONE`),
   unmountOne: createRoutine(`${prefix}UNMOUNT_ONE`),
-  fetchFields: createRoutine(`${prefix}FETCH_FIELDS`),
-  unmountFields: createRoutine(`${prefix}UNMOUNT_FIELDS`),
   cancelFetchListLoop: createRoutine(`${prefix}CANCEL_FETCH_LIST_LOOP`),
   fetchFieldsInfo: createRoutine(`${prefix}FETCH_FIELDS_INFO`),
   revertToJob: createRoutine(`${prefix}REVER_TO_JOB`),
@@ -23,10 +21,8 @@ export const DataSourceRoutines = {
 export const INITIAL_STATE = new Immutable({
   dataSource: {},
   dataSources: [],
-  fields: {},
-  previewTable: [],
+  previewData: {},
   fieldsInfo: {},
-  jobPreview: {},
 });
 
 const sortByDate = sort(descend(prop('created')));
@@ -35,13 +31,7 @@ const updateDataSource = (state = INITIAL_STATE, { payload }) => state.set('data
 const updateDataSources = (state = INITIAL_STATE, { payload }) => state.set('dataSources', sortByDate(payload));
 const unmountDataSource = (state = INITIAL_STATE) => state.set('dataSource', {});
 const setFieldsInfo = (state = INITIAL_STATE, { payload }) => state.set('fieldsInfo', payload);
-
-const updateFields = (state = INITIAL_STATE, { payload }) =>
-  state.set('fields', payload.fields).set('previewTable', payload.data);
-const unmountFields = (state = INITIAL_STATE) =>
-  state.set('fields', INITIAL_STATE.fields).set('previewTable', INITIAL_STATE.previewTable);
-
-const setJobPreview = (state = INITIAL_STATE, { payload }) => state.set('jobPreview', payload);
+const setPreviewData = (state = INITIAL_STATE, { payload }) => state.set('previewData', payload);
 
 export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.create.SUCCESS]: updateDataSource,
@@ -49,8 +39,6 @@ export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.updateOne.SUCCESS]: updateDataSource,
   [DataSourceRoutines.unmountOne.TRIGGER]: unmountDataSource,
   [DataSourceRoutines.fetchList.SUCCESS]: updateDataSources,
-  [DataSourceRoutines.fetchFields.SUCCESS]: updateFields,
-  [DataSourceRoutines.unmountFields.TRIGGER]: unmountFields,
   [DataSourceRoutines.fetchFieldsInfo.SUCCESS]: setFieldsInfo,
-  [DataSourceRoutines.fetchPreview.SUCCESS]: setJobPreview,
+  [DataSourceRoutines.fetchPreview.SUCCESS]: setPreviewData,
 });

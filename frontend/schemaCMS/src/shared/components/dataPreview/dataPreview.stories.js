@@ -13,10 +13,8 @@ const dataSource = {
 };
 
 export const defaultProps = {
-  fields,
-  previewTable,
-  fetchFields: Function.prototype,
-  unmountFields: Function.prototype,
+  previewData: { previewTable, fields },
+  fetchPreview: Function.prototype,
   match: {
     params: {
       step: '2',

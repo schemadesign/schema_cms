@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { Icons } from 'schemaUI';
 
-export const Container = styled.div`
-  min-height: 100vh;
-`;
+export const Container = styled.div``;
 
 export const ListWrapper = styled.div`
   display: flex;

@@ -205,7 +205,7 @@ describe('DataSource: sagas', () => {
     });
   });
 
-  describe('fetchFields', () => {
+  describe('fetchPreview', () => {
     it('should dispatch a success action', async () => {
       const payload = { projectId: '1', dataSourceId: '1' };
       const responseData = {
@@ -221,8 +221,8 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(DataSourceRoutines.fetchFields.success(responseData))
-        .dispatch(DataSourceRoutines.fetchFields(payload))
+        .put(DataSourceRoutines.fetchPreview.success(responseData))
+        .dispatch(DataSourceRoutines.fetchPreview(payload))
         .silentRun();
     });
   });
@@ -254,26 +254,6 @@ describe('DataSource: sagas', () => {
         .withState(defaultState)
         .put(DataSourceRoutines.revertToJob.success())
         .dispatch(DataSourceRoutines.revertToJob(payload))
-        .silentRun();
-    });
-  });
-
-  describe('when fetchPreview action is called', () => {
-    it('should put fetchPreview.success action', async () => {
-      const response = {
-        fields: {},
-        data: [],
-      };
-      const payload = {
-        dataSourceId: 1,
-      };
-
-      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/job-preview`).reply(OK, response);
-
-      await expectSaga(watchDataSource)
-        .withState(defaultState)
-        .put(DataSourceRoutines.fetchPreview.success(response))
-        .dispatch(DataSourceRoutines.fetchPreview(payload))
         .silentRun();
     });
   });

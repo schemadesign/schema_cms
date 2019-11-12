@@ -10,7 +10,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
   }
 >
   <div
-    className="sc-kTUwUJ ljwnSF"
+    className="sc-dqBHgY fJPQKI"
   >
     <div
       className="sc-eqIVtm jYTlNG"
@@ -220,11 +220,15 @@ exports[`Storyshots Job/Preview Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-fjdhpX hqQsLf"
+      className="sc-hzDkRC kpsoyz"
     >
-      <span>
-        Loading...
-      </span>
+      <div
+        className="sc-kEYyzF cUBGkV"
+      >
+        <span>
+          Loading...
+        </span>
+      </div>
     </div>
     <div
       className="sc-iwsKbI eQdjUy"

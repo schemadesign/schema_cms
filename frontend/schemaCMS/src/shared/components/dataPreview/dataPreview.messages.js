@@ -2,10 +2,6 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  pageTitle: {
-    id: 'shared.components.dataPreview.pageTitle',
-    defaultMessage: 'Fields',
-  },
   fields: {
     id: 'shared.components.dataPreview.fields',
     defaultMessage: '{countFields} {countFields, plural,one {Field} other {Fields}}',

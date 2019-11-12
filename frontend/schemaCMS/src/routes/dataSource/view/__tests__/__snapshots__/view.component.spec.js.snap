@@ -143,6 +143,7 @@ exports[`View: Component should render draft 1`] = `
     fetchDataWranglingScripts={[Function]}
     fetchFields={[Function]}
     fetchFilters={[Function]}
+    fetchPreview={[Function]}
     filters={Array []}
     history={
       Object {
@@ -163,12 +164,11 @@ exports[`View: Component should render draft 1`] = `
         },
       }
     }
+    previewData={Object {}}
     removeDataSource={[Function]}
     sendUpdatedDataWranglingScript={[Function]}
     setFilters={[Function]}
-    unmountDataSource={[Function]}
     unmountFields={[Function]}
-    updateDataSource={[Function]}
     uploadScript={[Function]}
   />
   <styled.div
@@ -296,6 +296,7 @@ exports[`View: Component should render second step 1`] = `
     fetchDataWranglingScripts={[Function]}
     fetchFields={[Function]}
     fetchFilters={[Function]}
+    fetchPreview={[Function]}
     filters={Array []}
     history={
       Object {
@@ -316,12 +317,11 @@ exports[`View: Component should render second step 1`] = `
         },
       }
     }
+    previewData={Object {}}
     removeDataSource={[Function]}
     sendUpdatedDataWranglingScript={[Function]}
     setFilters={[Function]}
-    unmountDataSource={[Function]}
     unmountFields={[Function]}
-    updateDataSource={[Function]}
     uploadScript={[Function]}
   />
   <styled.div
@@ -448,6 +448,7 @@ exports[`View: Component should render source step 1`] = `
     fetchDataWranglingScripts={[Function]}
     fetchFields={[Function]}
     fetchFilters={[Function]}
+    fetchPreview={[Function]}
     filters={Array []}
     history={
       Object {
@@ -468,12 +469,11 @@ exports[`View: Component should render source step 1`] = `
         },
       }
     }
+    previewData={Object {}}
     removeDataSource={[Function]}
     sendUpdatedDataWranglingScript={[Function]}
     setFilters={[Function]}
-    unmountDataSource={[Function]}
     unmountFields={[Function]}
-    updateDataSource={[Function]}
     uploadScript={[Function]}
   />
   <styled.div

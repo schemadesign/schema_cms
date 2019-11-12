@@ -10,7 +10,7 @@ exports[`Storyshots CreateFilter Default 1`] = `
   }
 >
   <div
-    className="sc-hqyNC keRCOE"
+    className="sc-jbKcbu cWSlbe"
   >
     <div
       className="sc-eqIVtm jYTlNG"
@@ -216,7 +216,7 @@ exports[`Storyshots CreateFilter Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-fjdhpX hqQsLf"
+      className="sc-kEYyzF cUBGkV"
     >
       <span>
         Loading...
