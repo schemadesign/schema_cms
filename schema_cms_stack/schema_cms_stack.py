@@ -90,7 +90,7 @@ class BaseResources(core.Stack):
             deletion_protection=False,
             delete_automated_backups=True,
         )
-        self.db_secret_rotation = self.db.add_rotation_single_user("db-rotation")
+        # self.db_secret_rotation = self.db.add_rotation_single_user("db-rotation")
         self.app_bucket = aws_s3.Bucket(self, APP_S3_BUCKET_NAME, versioned=True)
 
 
