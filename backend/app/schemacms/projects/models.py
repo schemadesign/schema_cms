@@ -142,7 +142,7 @@ class Project(
         return self.data_sources.count()
 
 
-class DataSource(ext_models.TimeStampedModel):
+class DataSource(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="data_sources")
@@ -160,7 +160,7 @@ class DataSource(ext_models.TimeStampedModel):
         null=True,
     )
 
-    objects = managers.DataSourceQuerySet.as_manager()
+    objects = managers.DataSourceManager()
 
     class Meta:
         unique_together = ("name", "project")
@@ -245,7 +245,7 @@ class DataSource(ext_models.TimeStampedModel):
         return self.jobs.filter(job_state=constants.DataSourceJobState.SUCCESS).latest("created")
 
 
-class DataSourceMeta(MetaDataModel):
+class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
 
     def __str__(self):
@@ -257,7 +257,7 @@ class DataSourceMeta(MetaDataModel):
         return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
 
 
-class WranglingScript(ext_models.TimeStampedModel):
+class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     datasource = models.ForeignKey(
         DataSource, on_delete=models.CASCADE, related_name='scripts', blank=True, null=True
     )
@@ -289,7 +289,7 @@ class WranglingScript(ext_models.TimeStampedModel):
             return os.path.join(base_path, f"{self.datasource.id}/scripts/{filename}")
 
 
-class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
+class DataSourceJob(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
     description = models.TextField(blank=True)
     source_file_path = models.CharField(max_length=255, editable=False)
@@ -333,7 +333,7 @@ class DataSourceJob(ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
             )
 
 
-class DataSourceJobMetaData(MetaDataModel):
+class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
     job = models.OneToOneField(DataSourceJob, on_delete=models.CASCADE, related_name="meta_data")
 
     def __str__(self):
@@ -345,7 +345,7 @@ class DataSourceJobMetaData(MetaDataModel):
         return os.path.join(base_path, f"{self.job.datasource.id}/previews/{filename}")
 
 
-class DataSourceJobStep(models.Model):
+class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
     datasource_job = models.ForeignKey(DataSourceJob, on_delete=models.CASCADE, related_name='steps')
     script = models.ForeignKey(WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True)
     body = models.TextField(blank=True)
@@ -355,7 +355,7 @@ class DataSourceJobStep(models.Model):
 # Filters
 
 
-class Filter(ext_models.TimeStampedModel):
+class Filter(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='filters')
     name = models.CharField(max_length=25)
     filter_type = models.CharField(max_length=25, choices=constants.FilterType.choices())

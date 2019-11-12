@@ -1,19 +1,24 @@
-import softdelete.admin
 from django.contrib import admin
 from django.db import transaction
 from django.utils import safestring
 from django.template.loader import render_to_string
 
 from . import models
+from schemacms.utils import admin as utils_admin
 
 
 admin.site.register(models.WranglingScript)
 
 
 @admin.register(models.Project)
-class Project(softdelete.admin.SoftDeleteObjectAdmin):
+class Project(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("title", "owner", "status", "get_editors", "deleted_at")
     filter_horizontal = ("editors",)
+
+    def delete_selected(self, request, queryset):
+        return super().delete_queryset(request, queryset.exclude(deleted_at__isnull=0))
+
+    delete_selected.short_description = 'Soft delete selected objects'
 
     def get_queryset(self, request):
         return super().get_queryset(request).select_related("owner").prefetch_related("editors")
@@ -28,7 +33,9 @@ class Project(softdelete.admin.SoftDeleteObjectAdmin):
 
 
 @admin.register(models.DataSource)
-class DataSource(admin.ModelAdmin):
+class DataSource(utils_admin.SoftDeleteObjectAdmin):
+    list_display = ("name", "deleted_at")
+
     @transaction.atomic()
     def save_model(self, request, obj, form, change):
         if 'file' in form.changed_data and obj.file:
@@ -47,6 +54,6 @@ class DataSourceJobStepInline(admin.TabularInline):
 
 
 @admin.register(models.DataSourceJob)
-class DataSourceJobAdmin(admin.ModelAdmin):
+class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_display = ('pk', 'datasource', 'created')
     inlines = [DataSourceJobStepInline]
