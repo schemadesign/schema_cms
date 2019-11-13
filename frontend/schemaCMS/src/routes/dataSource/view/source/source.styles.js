@@ -37,5 +37,20 @@ export const WarningWrapper = styled.div`
 
 export const Link = styled(SpanUI)`
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.white};
+  margin-bottom: 30px;
+  color: ${({ theme }) => theme.text};
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom: 1px solid ${({ theme }) => theme.text};
+  }
+`;
+
+export const LinkContainer = styled.div`
+  border-top: 2px solid ${({ theme }) => theme.label.border};
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;

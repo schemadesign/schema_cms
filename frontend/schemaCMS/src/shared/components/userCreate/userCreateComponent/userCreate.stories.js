@@ -9,6 +9,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   onCancelClick: Function.prototype,
+  isValid: true,
   values: {},
 };
 

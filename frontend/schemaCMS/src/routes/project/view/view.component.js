@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Card, Icons, Button } from 'schemaUI';
+import { Card, Icons } from 'schemaUI';
 import { has, isEmpty, isNil, path, always, cond, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
@@ -20,7 +20,6 @@ import {
   CardHeader,
   CardValue,
   ProjectView,
-  DesktopActions,
   Details,
   DetailItem,
   DetailWrapper,
@@ -29,7 +28,8 @@ import {
   IconEditWrapper,
   Statistics,
   statisticsCardStyles,
-  desktopButtonStyles,
+  Link,
+  LinkContainer,
 } from './view.styles';
 import { BackArrowButton, NavigationContainer } from '../../../shared/components/navigation';
 
@@ -207,11 +207,11 @@ export class View extends PureComponent {
           <TopHeader {...topHeaderConfig} />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           {this.renderContent(project)}
-          <DesktopActions>
-            <Button id="deleteProjectDesktopBtn" onClick={this.handleDeleteClick} customStyles={desktopButtonStyles}>
-              {this.formatMessage(messages.deleteProject)}
-            </Button>
-          </DesktopActions>
+          <LinkContainer>
+            <Link id="deleteProjectDesktopBtn" onClick={this.handleDeleteClick}>
+              <FormattedMessage {...messages.deleteProject} />
+            </Link>
+          </LinkContainer>
         </div>
         <NavigationContainer>
           <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />

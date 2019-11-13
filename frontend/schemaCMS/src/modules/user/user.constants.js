@@ -17,7 +17,7 @@ export const USER_CREATE_CMS_SCHEME = Yup.object().shape({
     .required('Required'),
   [EMAIL]: Yup.string()
     .email('Invalid email')
-    .notRequired(),
+    .required('Required'),
 });
 
 export const USER_CREATE_PROJECT_SCHEME = Yup.object().shape({
@@ -26,5 +26,5 @@ export const USER_CREATE_PROJECT_SCHEME = Yup.object().shape({
     .required('Required'),
   [EMAIL]: Yup.string()
     .email('Invalid email')
-    .notRequired(),
+    .required('Required'),
 });

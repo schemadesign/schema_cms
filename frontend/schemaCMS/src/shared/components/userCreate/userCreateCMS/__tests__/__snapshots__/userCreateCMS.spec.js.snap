@@ -49,6 +49,7 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
           "_conditions": Array [],
           "_deps": Array [],
           "_exclusive": Object {
+            "required": true,
             "undefined": false,
           },
           "_mutate": undefined,
@@ -63,6 +64,7 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
             "refs": Map {},
           },
           "tests": Array [
+            [Function],
             [Function],
           ],
           "transforms": Array [

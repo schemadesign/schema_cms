@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 >
   <div
-    className="sc-VJcYb eHzyuQ"
+    className="sc-ipXKqB FyGUD"
   >
     <div
-      className="sc-eqIVtm jYTlNG"
+      className="sc-gisBJw kiKCgt"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       >
         <div>
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         }
       >
         <div
-          className="sc-caSCKo jjNSwx"
+          className="sc-cHGsZl bHiaRe"
         >
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-gisBJw eCZBLA"
+          className="sc-TOsTZ iUQrOT"
         >
           <ul
-            className="sc-kjoXOD sc-cHGsZl cULqXW"
+            className="sc-kgAjT sc-cJSrbW doKZeW"
           />
           <ul
-            className="sc-kjoXOD sc-TOsTZ eELfaW"
+            className="sc-kgAjT sc-ksYbfQ iFxI"
           />
         </div>
         <button
@@ -220,7 +220,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-ipXKqB bXVKyT"
+      className="sc-hmXxxW jjDAwG"
       onSubmit={[Function]}
     >
       <div
@@ -242,7 +242,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             style={
               Object {
                 "border": "none",
-                "borderTop": "1px solid #2F2F36",
+                "borderTop": "2px solid #2F2F36",
                 "color": "#71737e",
                 "display": "block",
                 "fontSize": "14px",
@@ -289,7 +289,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #2F2F36",
+              "borderTop": "2px solid #2F2F36",
               "color": "#71737e",
               "display": "block",
               "fontSize": "14px",
@@ -453,14 +453,14 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               </span>
             </button>
             <button
-              disabled={false}
+              disabled={true}
               style={
                 Object {
-                  "backgroundColor": "#FFF",
+                  "backgroundColor": "#1d1d20",
                   "border": "none",
                   "borderRadius": "48px",
-                  "color": "#000",
-                  "cursor": "pointer",
+                  "color": "#71737e",
+                  "cursor": "default",
                   "display": "inline-block",
                   "fill": "#FFF",
                   "fontSize": "18px",

@@ -13,7 +13,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
     className="sc-bsbRJL kfmymT"
   >
     <div
-      className="sc-eqIVtm jYTlNG"
+      className="sc-gisBJw kiKCgt"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       >
         <div>
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         }
       >
         <div
-          className="sc-caSCKo jjNSwx"
+          className="sc-cHGsZl bHiaRe"
         >
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -160,16 +160,16 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </div>
         </div>
         <div
-          className="sc-gisBJw eCZBLA"
+          className="sc-TOsTZ iUQrOT"
         >
           <ul
-            className="sc-kjoXOD sc-cHGsZl cULqXW"
+            className="sc-kgAjT sc-cJSrbW doKZeW"
           />
           <ul
-            className="sc-kjoXOD sc-TOsTZ eELfaW"
+            className="sc-kgAjT sc-ksYbfQ iFxI"
           >
             <li
-              className="sc-kgAjT sc-ksYbfQ gQWegr"
+              className="sc-hmzhuo sc-kvZOFW ixXwCE"
             >
               <a
                 href="/project/1"
@@ -451,7 +451,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
     className="sc-bsbRJL kfmymT"
   >
     <div
-      className="sc-eqIVtm jYTlNG"
+      className="sc-gisBJw kiKCgt"
     >
       <div
         style={
@@ -468,7 +468,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       >
         <div>
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -562,10 +562,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         }
       >
         <div
-          className="sc-caSCKo jjNSwx"
+          className="sc-cHGsZl bHiaRe"
         >
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -598,16 +598,16 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </div>
         </div>
         <div
-          className="sc-gisBJw eCZBLA"
+          className="sc-TOsTZ iUQrOT"
         >
           <ul
-            className="sc-kjoXOD sc-cHGsZl cULqXW"
+            className="sc-kgAjT sc-cJSrbW doKZeW"
           />
           <ul
-            className="sc-kjoXOD sc-TOsTZ eELfaW"
+            className="sc-kgAjT sc-ksYbfQ iFxI"
           >
             <li
-              className="sc-kgAjT sc-ksYbfQ gQWegr"
+              className="sc-hmzhuo sc-kvZOFW ixXwCE"
             >
               <a
                 href="/project/1"
@@ -1258,7 +1258,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
     className="sc-bsbRJL kfmymT"
   >
     <div
-      className="sc-eqIVtm jYTlNG"
+      className="sc-gisBJw kiKCgt"
     >
       <div
         style={
@@ -1275,7 +1275,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       >
         <div>
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -1369,10 +1369,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         }
       >
         <div
-          className="sc-caSCKo jjNSwx"
+          className="sc-cHGsZl bHiaRe"
         >
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -1405,16 +1405,16 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           </div>
         </div>
         <div
-          className="sc-gisBJw eCZBLA"
+          className="sc-TOsTZ iUQrOT"
         >
           <ul
-            className="sc-kjoXOD sc-cHGsZl cULqXW"
+            className="sc-kgAjT sc-cJSrbW doKZeW"
           />
           <ul
-            className="sc-kjoXOD sc-TOsTZ eELfaW"
+            className="sc-kgAjT sc-ksYbfQ iFxI"
           >
             <li
-              className="sc-kgAjT sc-ksYbfQ gQWegr"
+              className="sc-hmzhuo sc-kvZOFW ixXwCE"
             >
               <a
                 href="/project/1"
