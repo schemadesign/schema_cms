@@ -220,13 +220,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-hmzhuo kOWtqu"
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="sc-frDJqD bWAjYR"
+        className="sc-jbKcbu fynHmL"
       >
         <h2
-          className="sc-kvZOFW evrHHD"
+          className="sc-dNLxif dEgtYS"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -242,7 +242,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
           </span>
         </h2>
         <h1
-          className="sc-hqyNC jLxrsP"
+          className="sc-jqCOkK iblYWW"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -261,7 +261,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </h1>
       </div>
       <div
-        className="sc-jbKcbu cWSlbe"
+        className="sc-uJMKN jsQhVl"
       />
     </div>
     <form
@@ -287,7 +287,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             style={
               Object {
                 "border": "none",
-                "borderTop": "2px solid #2F2F36",
+                "borderTop": "1px solid #2F2F36",
                 "color": "#71737e",
                 "display": "block",
                 "fontSize": "14px",
@@ -347,7 +347,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             style={
               Object {
                 "border": "none",
-                "borderTop": "2px solid #2F2F36",
+                "borderTop": "1px solid #2F2F36",
                 "color": "#71737e",
                 "display": "block",
                 "fontSize": "14px",
@@ -406,7 +406,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             style={
               Object {
                 "border": "none",
-                "borderTop": "2px solid #2F2F36",
+                "borderTop": "1px solid #2F2F36",
                 "color": "#71737e",
                 "display": "block",
                 "fontSize": "14px",
