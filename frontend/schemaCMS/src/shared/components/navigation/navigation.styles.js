@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { always, ifElse, propEq } from 'ramda';
 
-import { media, contentSizes } from '../../../theme/media';
+import { media, contentSizes, isDesktop } from '../../../theme/media';
 
-const buttonMargin = 5;
+const buttonMargin = () => (isDesktop() ? 10 : 5);
 
 export const Container = styled.div`
   height: 155px;
@@ -18,7 +18,7 @@ export const NavigationContent = styled.div`
 
   ${media.desktop`
     display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'flex')};
-    width: 490px;
+    width: 49%;
     margin: 0 auto;
   `}
 `;
@@ -45,15 +45,15 @@ export const buttonIconStyles = {
 };
 
 const buttonStyles = {
-  width: `calc(50% - ${buttonMargin}px)`,
+  width: `calc(50% - ${buttonMargin()}px)`,
 };
 
 export const backButtonStyles = {
   ...buttonStyles,
-  marginRight: buttonMargin,
+  marginRight: buttonMargin(),
 };
 
 export const nextButtonStyles = {
   ...buttonStyles,
-  marginLeft: buttonMargin,
+  marginLeft: buttonMargin(),
 };
