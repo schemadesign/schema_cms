@@ -83,7 +83,7 @@ def main(event, context):
     for record in event["Records"]:
         body = json.loads(record["body"])
         try:
-            job = types.Job.from_json(**body)
+            job = types.Job.from_json(body)
         except Exception as e:
             return logging.critical(f"Invalid message body - {e}")
 
