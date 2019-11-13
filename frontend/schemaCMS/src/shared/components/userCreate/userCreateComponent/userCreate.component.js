@@ -9,6 +9,7 @@ import { TextInput } from '../../form/inputs/textInput';
 import { EMAIL, FIRST_NAME, LAST_NAME } from '../../../../modules/userProfile/userProfile.constants';
 import { Select } from '../../form/select';
 import { BackButton, NavigationContainer, NextButton } from '../../navigation';
+import { ContextHeader } from '../../contextHeader';
 
 import messages from './userCreate.messages';
 import { TopHeader } from '../../topHeader';
@@ -97,10 +98,12 @@ export class UserCreate extends PureComponent {
 
   render() {
     const { isInvitation, headerValues } = this.props;
+    const headerConfig = this.getHeaderAndMenuConfig(headerValues)(isInvitation);
 
     return (
       <Container>
-        <TopHeader {...this.getHeaderAndMenuConfig(headerValues)(isInvitation)} />
+        <TopHeader {...headerConfig} />
+        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <Form onSubmit={this.props.handleSubmit}>
           {this.renderNameField(!isInvitation)}
           {this.renderEmailField(isInvitation)}
