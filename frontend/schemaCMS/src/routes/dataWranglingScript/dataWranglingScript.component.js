@@ -18,6 +18,7 @@ import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { Container, Form, customInputStyles } from './dataWranglingScript.styles';
 import messages from './dataWranglingScript.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
+import { ContextHeader } from '../../shared/components/contextHeader';
 
 export class DataWranglingScript extends PureComponent {
   static propTypes = {
@@ -102,12 +103,13 @@ export class DataWranglingScript extends PureComponent {
   render() {
     const { loading } = this.state;
     const content = this.getContentOrLoader(loading);
-    const topHeaderConfig = this.getHeaderAndMenuConfig();
+    const headerConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader {...topHeaderConfig} />
+        <TopHeader {...headerConfig} />
+        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         {content}
       </Container>
     );
