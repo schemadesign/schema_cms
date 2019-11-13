@@ -8,6 +8,6 @@ export const ListContainer = styled.section`
   ${media.desktop`
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
   `};
 `;

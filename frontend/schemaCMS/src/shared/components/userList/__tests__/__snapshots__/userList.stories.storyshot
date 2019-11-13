@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
   }
 >
   <section
-    className="sc-bXGyLb eONhJC"
+    className="sc-bXGyLb ccCfQi"
   />
 </div>
 `;
@@ -25,7 +25,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
   }
 >
   <section
-    className="sc-bXGyLb eONhJC"
+    className="sc-bXGyLb ccCfQi"
   >
     <div
       className="sc-daURTG dyMKQa"
@@ -145,7 +145,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
   }
 >
   <section
-    className="sc-bXGyLb eONhJC"
+    className="sc-bXGyLb ccCfQi"
   >
     <div
       className="sc-daURTG dyMKQa"
