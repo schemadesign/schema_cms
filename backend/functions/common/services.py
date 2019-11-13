@@ -17,3 +17,9 @@ secret_manager = boto3.client(
     "secretsmanager",
     endpoint_url=settings.SECRET_MANAGER_ENDPOINT_URL
 )
+
+
+def get_s3_object(path, version=None):
+    return s3.get_object(
+        Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=path, VersionId=version
+    )

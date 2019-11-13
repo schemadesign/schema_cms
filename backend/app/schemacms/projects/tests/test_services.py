@@ -28,5 +28,5 @@ class TestScheduleWorkerWith:
         services.schedule_worker_with(job, file_size)
 
         send_message_mock.assert_called_with(
-            QueueUrl=expected_queue_url, MessageBody=json.dumps({'job_pk': job.pk})
+            QueueUrl=expected_queue_url, MessageBody=json.dumps(job.meta_file_serialization())
         )
