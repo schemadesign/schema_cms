@@ -18,7 +18,7 @@ exports[`Navigation: Component should render BackButton 1`] = `
 <Component
   customStyles={
     Object {
-      "marginRight": 5,
+      "margin": "5px)",
       "width": "calc(50% - 5px)",
     }
   }
@@ -37,7 +37,7 @@ exports[`Navigation: Component should render BackButton with custom children 1`]
 <Component
   customStyles={
     Object {
-      "marginRight": 5,
+      "margin": "5px)",
       "width": "calc(50% - 5px)",
     }
   }
@@ -71,7 +71,7 @@ exports[`Navigation: Component should render NextButton 1`] = `
 <Component
   customStyles={
     Object {
-      "marginLeft": 5,
+      "marginLeft": "5px)",
       "width": "calc(50% - 5px)",
     }
   }
@@ -94,7 +94,7 @@ exports[`Navigation: Component should render NextButton with custom children 1`]
 <Component
   customStyles={
     Object {
-      "marginLeft": 5,
+      "marginLeft": "5px)",
       "width": "calc(50% - 5px)",
     }
   }

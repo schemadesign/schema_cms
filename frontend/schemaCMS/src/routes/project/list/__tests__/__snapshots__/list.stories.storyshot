@@ -329,7 +329,7 @@ exports[`Storyshots Project/List empty 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi corlyt"
+          className="sc-gZMcBi fDpriO"
         >
           <button
             disabled={false}
@@ -706,7 +706,7 @@ exports[`Storyshots Project/List list 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi corlyt"
+          className="sc-gZMcBi fDpriO"
         >
           <button
             disabled={false}

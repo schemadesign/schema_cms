@@ -271,7 +271,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi dFKEqh"
+          className="sc-gZMcBi bNVCVH"
         >
           <button
             disabled={false}
@@ -286,8 +286,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
+                "margin": "5px)",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -845,7 +844,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi dFKEqh"
+          className="sc-gZMcBi bNVCVH"
         >
           <button
             disabled={false}
@@ -860,8 +859,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
+                "margin": "5px)",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",

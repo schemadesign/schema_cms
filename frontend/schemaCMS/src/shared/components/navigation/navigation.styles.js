@@ -3,7 +3,10 @@ import { always, ifElse, propEq } from 'ramda';
 
 import { media, contentSizes, isDesktop } from '../../../theme/media';
 
-const buttonMargin = () => (isDesktop() ? 10 : 5);
+const BUTTON_MARGIN = 5;
+const BUTTON_MARGIN_DEKSTOP = 10;
+const BUTTON_SIZE_DESKTOP = 235;
+const OUTTER_BUTTON_MARGIN_DEKSTOP = 500 - BUTTON_MARGIN_DEKSTOP - BUTTON_SIZE_DESKTOP;
 
 export const Container = styled.div`
   height: 155px;
@@ -18,8 +21,7 @@ export const NavigationContent = styled.div`
 
   ${media.desktop`
     display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'flex')};
-    width: 49%;
-    margin: 0 auto;
+    justify-content: ${ifElse(propEq('right', true), always('flex-end'), always('flex-start'))};
   `}
 `;
 
@@ -45,15 +47,15 @@ export const buttonIconStyles = {
 };
 
 const buttonStyles = {
-  width: `calc(50% - ${buttonMargin()}px)`,
+  width: isDesktop() ? `${BUTTON_SIZE_DESKTOP}px` : `calc(50% - ${BUTTON_MARGIN}px)`,
 };
 
 export const backButtonStyles = {
   ...buttonStyles,
-  marginRight: buttonMargin(),
+  margin: isDesktop() ? `0 ${BUTTON_MARGIN_DEKSTOP}px 0 ${OUTTER_BUTTON_MARGIN_DEKSTOP}px` : `${BUTTON_MARGIN}px)`,
 };
 
 export const nextButtonStyles = {
   ...buttonStyles,
-  marginLeft: buttonMargin(),
+  marginLeft: isDesktop() ? `0 ${OUTTER_BUTTON_MARGIN_DEKSTOP}px 0 ${BUTTON_MARGIN_DEKSTOP}px` : `${BUTTON_MARGIN}px)`,
 };

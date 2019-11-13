@@ -352,7 +352,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi liOoYa"
+          className="sc-gZMcBi KfaYC"
         >
           <button
             disabled={false}
@@ -1159,7 +1159,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi liOoYa"
+          className="sc-gZMcBi KfaYC"
         >
           <button
             disabled={false}
@@ -1782,7 +1782,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi liOoYa"
+          className="sc-gZMcBi KfaYC"
         >
           <button
             disabled={false}

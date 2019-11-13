@@ -478,7 +478,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi dFKEqh"
+          className="sc-gZMcBi bNVCVH"
         >
           <button
             disabled={false}
@@ -493,8 +493,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
+                "margin": "5px)",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -520,7 +519,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
                 "fill": "#FFF",
                 "fontSize": "18px",
                 "margin": "0",
-                "marginLeft": 5,
+                "marginLeft": "5px)",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -1018,7 +1017,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi dFKEqh"
+          className="sc-gZMcBi bNVCVH"
         >
           <button
             disabled={false}
@@ -1033,8 +1032,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
+                "margin": "5px)",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -1060,7 +1058,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
                 "fill": "#FFF",
                 "fontSize": "18px",
                 "margin": "0",
-                "marginLeft": 5,
+                "marginLeft": "5px)",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
