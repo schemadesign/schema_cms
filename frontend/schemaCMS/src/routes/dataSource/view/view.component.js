@@ -11,6 +11,7 @@ import { Filters } from './filters';
 import { DataWranglingResult } from '../../dataWranglingResult';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 import {
   DATA_WRANGLING_STEP,
   DATA_WRANGLING_RESULT_STEP,
@@ -109,11 +110,13 @@ export class View extends PureComponent {
       },
     } = this.props;
     const activeStep = parseInt(step, 10);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(activeStep);
+    const headerConfig = this.getHeaderAndMenuConfig(activeStep);
+    const isInitalStep = activeStep === INITIAL_STEP;
 
     return (
       <Fragment>
-        <TopHeader {...topHeaderConfig} />
+        <TopHeader {...headerConfig} />
+        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         {this.renderContentForm({
           activeStep,
           intl,
