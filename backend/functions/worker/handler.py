@@ -79,7 +79,6 @@ def main(event, context):
     """
 
     logger.info(f"Incoming event: {event}")
-    logger.info("Records", event["Records"])
 
     for record in event["Records"]:
         body = json.loads(record["body"])
