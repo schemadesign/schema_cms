@@ -10,14 +10,18 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
   }
 >
   <div
-    className="sc-caSCKo jjNSwx"
+    className="sc-eHgmQL gmKbQu"
   >
     <div
-      className="sc-kAzzGY dJFTJ"
+      className="sc-fMiknA bxZCMx"
     >
-      <span>
-        Loading...
-      </span>
+      <div
+        className="sc-hSdWYo bsJfYm"
+      >
+        <span>
+          Loading...
+        </span>
+      </div>
     </div>
     <div
       className="sc-iwsKbI eQdjUy"

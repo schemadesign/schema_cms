@@ -10,7 +10,7 @@ exports[`Storyshots JobList Default 1`] = `
   }
 >
   <div
-    className="sc-bbmXgH eYvUlh"
+    className="sc-gGBfsJ eaQlFN"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -220,7 +220,7 @@ exports[`Storyshots JobList Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-kAzzGY dJFTJ"
+      className="sc-hSdWYo bsJfYm"
     >
       <span>
         Loading...

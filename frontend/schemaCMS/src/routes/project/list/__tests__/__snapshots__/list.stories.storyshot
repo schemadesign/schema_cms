@@ -10,7 +10,7 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-iujRgT jeaRWG"
+    className="sc-GMQeP jXMCGy"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -235,13 +235,13 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-RefOD CxYba"
+      className="sc-iQKALj iQkCCX"
     >
       <div
-        className="sc-iQKALj gFjBbn"
+        className="sc-bwCtUz eJBWly"
       >
         <h1
-          className="sc-bwCtUz ThhIA"
+          className="sc-hrWEMg hdZPci"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -257,7 +257,7 @@ exports[`Storyshots Project/List empty 1`] = `
           Projects
         </h1>
         <h2
-          className="sc-hrWEMg hdZPci"
+          className="sc-eTuwsz bkNIDk"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -272,7 +272,7 @@ exports[`Storyshots Project/List empty 1`] = `
         </h2>
       </div>
       <div
-        className="sc-eTuwsz jtSbhi"
+        className="sc-gwVKww eWCHnX"
       >
         <button
           disabled={false}
@@ -316,7 +316,7 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-kAzzGY dJFTJ"
+      className="sc-hSdWYo bsJfYm"
     >
       <span>
         Loading...
@@ -387,7 +387,7 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-iujRgT jeaRWG"
+    className="sc-GMQeP jXMCGy"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -612,13 +612,13 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-RefOD CxYba"
+      className="sc-iQKALj iQkCCX"
     >
       <div
-        className="sc-iQKALj gFjBbn"
+        className="sc-bwCtUz eJBWly"
       >
         <h1
-          className="sc-bwCtUz ThhIA"
+          className="sc-hrWEMg hdZPci"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -634,7 +634,7 @@ exports[`Storyshots Project/List list 1`] = `
           Projects
         </h1>
         <h2
-          className="sc-hrWEMg hdZPci"
+          className="sc-eTuwsz bkNIDk"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -649,7 +649,7 @@ exports[`Storyshots Project/List list 1`] = `
         </h2>
       </div>
       <div
-        className="sc-eTuwsz jtSbhi"
+        className="sc-gwVKww eWCHnX"
       >
         <button
           disabled={false}
@@ -693,7 +693,7 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-kAzzGY dJFTJ"
+      className="sc-hSdWYo bsJfYm"
     >
       <span>
         Loading...
