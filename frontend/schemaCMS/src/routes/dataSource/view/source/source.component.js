@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Formik } from 'formik';
 import { withTheme } from 'styled-components';
-import Modal from 'react-modal';
 
 import {
   buttonStyles,
@@ -34,47 +33,33 @@ import { Uploader } from '../../../../shared/components/form/uploader';
 import { errorMessageParser } from '../../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import browserHistory from '../../../../shared/utils/history';
-import {
-  getModalStyles,
-  ModalActions,
-  ModalButton,
-  ModalTitle,
-} from '../../../../shared/components/modal/modal.styles';
 
 const { RadioGroup, RadioButton, Label } = Form;
 const { CsvIcon } = Icons;
 
 export class SourceComponent extends PureComponent {
   static propTypes = {
-    dataSource: PropTypes.object.isRequired,
+    dataSource: PropTypes.object,
     intl: PropTypes.object.isRequired,
-    isAnyJobProcessing: PropTypes.bool.isRequired,
-    updateDataSource: PropTypes.func.isRequired,
-    removeDataSource: PropTypes.func.isRequired,
+    isAnyJobProcessing: PropTypes.bool,
+    updateDataSource: PropTypes.func,
+    createDataSource: PropTypes.func,
     theme: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
-        dataSourceId: PropTypes.string.isRequired,
-        step: PropTypes.string.isRequired,
+        dataSourceId: PropTypes.string,
+        projectId: PropTypes.string,
+        step: PropTypes.string,
       }).isRequired,
     }).isRequired,
   };
 
-  state = {
-    loading: false,
-    confirmationModalOpen: false,
+  static defaultProps = {
+    dataSource: {},
   };
 
-  handleRemoveClick = () => this.setState({ confirmationModalOpen: true });
-
-  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
-
-  handleConfirmRemove = () => {
-    const {
-      dataSource: { project: projectId, id: dataSourceId },
-    } = this.props;
-
-    this.props.removeDataSource({ projectId, dataSourceId });
+  state = {
+    loading: false,
   };
 
   handleUploadChange = ({
@@ -88,11 +73,12 @@ export class SourceComponent extends PureComponent {
   };
 
   handleSubmit = async (requestData, { setErrors }) => {
-    const { dataSourceId, step } = this.props.match.params;
+    const { updateDataSource, createDataSource, match } = this.props;
+    const { dataSourceId, projectId, step } = match.params;
 
     try {
-      this.setState({ loading: true });
-      await this.props.updateDataSource({ requestData, dataSourceId, step });
+      const submitFunc = updateDataSource || createDataSource;
+      await submitFunc({ requestData, dataSourceId, step, projectId });
     } catch (errors) {
       const { formatMessage } = this.props.intl;
       const errorMessages = errorMessageParser({ errors, messages, formatMessage });
@@ -171,8 +157,8 @@ export class SourceComponent extends PureComponent {
 
   render() {
     const { dataSource, ...restProps } = this.props;
-    const { jobs } = dataSource;
-    const { loading, confirmationModalOpen } = this.state;
+    const { jobs = [] } = dataSource;
+    const { loading } = this.state;
 
     return (
       <Container>
@@ -231,19 +217,6 @@ export class SourceComponent extends PureComponent {
             );
           }}
         </Formik>
-        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
-          <ModalTitle>
-            <FormattedMessage {...messages.removeTitle} />
-          </ModalTitle>
-          <ModalActions>
-            <ModalButton onClick={this.handleCancelRemove}>
-              <FormattedMessage {...messages.cancelRemoval} />
-            </ModalButton>
-            <ModalButton onClick={this.handleConfirmRemove}>
-              <FormattedMessage {...messages.confirmRemoval} />
-            </ModalButton>
-          </ModalActions>
-        </Modal>
       </Container>
     );
   }
