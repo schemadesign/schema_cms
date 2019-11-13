@@ -8,7 +8,7 @@ export default defineMessages({
   },
   headerSubtitle: {
     id: 'userList.headerSubtitle',
-    defaultMessage: 'Add User',
+    defaultMessage: 'Overview',
   },
   cancel: {
     id: 'userList.cancel',
