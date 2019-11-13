@@ -50,9 +50,11 @@ class Step(LoaderMixin):
     id: int
     script: Script
     body: str
+    exec_order: int = 0
 
     @classmethod
     def from_json(cls, data: dict):
+        data = data.copy()
         data["script"] = Script.from_json(data["script"])
         return super().from_json(data)
 
@@ -68,9 +70,10 @@ class Job(LoaderMixin):
 
     @classmethod
     def from_json(cls, data: dict):
+        data = data.copy()
         data["datasource"] = DataSource.from_json(data["datasource"])
         data["steps"] = sorted(
             map(Step.from_json, data.get("steps", [])),
-            key=operator.itemgetter("exec_order")
+            key=operator.attrgetter("exec_order")
         )
         return super().from_json(data)
