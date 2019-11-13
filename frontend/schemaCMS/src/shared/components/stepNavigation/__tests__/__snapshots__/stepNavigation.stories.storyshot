@@ -16,7 +16,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="sc-gZMcBi dFKEqh"
       >
         <button
           disabled={false}
@@ -206,7 +206,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="sc-gZMcBi dFKEqh"
       >
         <button
           disabled={true}
@@ -396,7 +396,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="sc-gZMcBi dFKEqh"
       >
         <button
           disabled={false}
@@ -586,7 +586,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="sc-gZMcBi dFKEqh"
       >
         <button
           disabled={true}
@@ -776,7 +776,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="sc-gZMcBi dFKEqh"
       >
         <button
           disabled={false}

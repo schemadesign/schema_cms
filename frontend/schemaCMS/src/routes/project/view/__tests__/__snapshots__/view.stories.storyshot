@@ -667,7 +667,7 @@ exports[`Storyshots Project/View default 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="sc-gZMcBi dFKEqh"
         >
           <button
             disabled={false}
@@ -1036,7 +1036,7 @@ exports[`Storyshots Project/View loading 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="sc-gZMcBi dFKEqh"
         >
           <button
             disabled={false}

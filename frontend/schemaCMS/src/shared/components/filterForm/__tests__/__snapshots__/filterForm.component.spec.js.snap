@@ -1636,7 +1636,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-htoDjs",
                                         "isStatic": false,
-                                        "lastClassName": "bOcMaT",
+                                        "lastClassName": "hfVOeZ",
                                         "rules": Array [
                                           "
   display: flex;
@@ -1657,6 +1657,8 @@ exports[`FilterForm: Component should render create form 1`] = `
     display: ",
                                           [Function],
                                           ";
+    width: 49%;
+    margin: 0 auto;
   ",
                                           "
     }
@@ -1680,7 +1682,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                   right={false}
                                 >
                                   <div
-                                    className="sc-htoDjs bOcMaT"
+                                    className="sc-htoDjs hfVOeZ"
                                   >
                                     <BackButton
                                       disabled={false}
@@ -3592,7 +3594,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-htoDjs",
                                         "isStatic": false,
-                                        "lastClassName": "bOcMaT",
+                                        "lastClassName": "hfVOeZ",
                                         "rules": Array [
                                           "
   display: flex;
@@ -3613,6 +3615,8 @@ exports[`FilterForm: Component should render edit form 1`] = `
     display: ",
                                           [Function],
                                           ";
+    width: 49%;
+    margin: 0 auto;
   ",
                                           "
     }
@@ -3636,7 +3640,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                   right={false}
                                 >
                                   <div
-                                    className="sc-htoDjs bOcMaT"
+                                    className="sc-htoDjs hfVOeZ"
                                   >
                                     <BackButton
                                       disabled={false}

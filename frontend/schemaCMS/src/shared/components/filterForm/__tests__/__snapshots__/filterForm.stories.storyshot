@@ -478,7 +478,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="sc-gZMcBi dFKEqh"
         >
           <button
             disabled={false}
@@ -1018,7 +1018,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="sc-gZMcBi dFKEqh"
         >
           <button
             disabled={false}

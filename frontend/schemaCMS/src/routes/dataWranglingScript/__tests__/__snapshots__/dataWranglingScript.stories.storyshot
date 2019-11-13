@@ -211,6 +211,47 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
         </button>
       </div>
     </div>
+    <div
+      className="sc-hmzhuo kOWtqu"
+    >
+      <div
+        className="sc-frDJqD bWAjYR"
+      >
+        <h2
+          className="sc-kvZOFW evrHHD"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Data Wrangling
+        </h2>
+        <h1
+          className="sc-hqyNC jLxrsP"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          View step
+        </h1>
+      </div>
+      <div
+        className="sc-jbKcbu cWSlbe"
+      />
+    </div>
     <form
       className="sc-bYSBpT dTBkYG"
       name="dataWranglingForm"
@@ -990,7 +1031,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="sc-gZMcBi dFKEqh"
         >
           <button
             disabled={false}
