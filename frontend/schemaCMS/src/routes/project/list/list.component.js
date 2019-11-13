@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always, cond, isEmpty, propEq, T } from 'ramda';
-import { Card, Typography } from 'schemaUI';
+import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { generateApiUrl } from '../../../shared/utils/helpers';
@@ -10,18 +10,10 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { Empty } from '../project.styles';
 import messages from './list.messages';
-import {
-  Container,
-  Description,
-  HeaderItem,
-  HeaderList,
-  ProjectItem,
-  ProjectsList,
-  urlStyles,
-  titleStyles,
-} from './list.styles';
+import { Container, Description, HeaderItem, HeaderList, urlStyles, titleStyles } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { Loader } from '../../../shared/components/loader';
+import { ListItem, ListContainer } from '../../../shared/components/listComponents';
 
 const { H1, P, Span } = Typography;
 
@@ -78,23 +70,21 @@ export class List extends PureComponent {
     const handleShowProject = this.handleShowProject(id);
 
     return (
-      <ProjectItem key={index}>
-        <Card headerComponent={header}>
-          <H1 id={`projectName-${index}`} customStyles={titleStyles} onClick={handleShowProject}>
-            {title}
-          </H1>
-          <Description onClick={handleShowProject}>
-            <P id={`projectDescription-${index}`}>{description}</P>
-          </Description>
-          <Span id={`apiPath-${index}`} customStyles={urlStyles}>
-            {generateApiUrl(slug)}
-          </Span>
-        </Card>
-      </ProjectItem>
+      <ListItem key={index} headerComponent={header}>
+        <H1 id={`projectName-${index}`} customStyles={titleStyles} onClick={handleShowProject}>
+          {title}
+        </H1>
+        <Description onClick={handleShowProject}>
+          <P id={`projectDescription-${index}`}>{description}</P>
+        </Description>
+        <Span id={`apiPath-${index}`} customStyles={urlStyles}>
+          {generateApiUrl(slug)}
+        </Span>
+      </ListItem>
     );
   }
 
-  renderList = ({ list }) => <ProjectsList>{list.map((item, index) => this.renderItem(item, index))}</ProjectsList>;
+  renderList = ({ list }) => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
   renderNoData = () => (
     <Empty>
