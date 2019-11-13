@@ -349,7 +349,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi KfaYC"
+        className="sc-gZMcBi jZympT"
       >
         <button
           disabled={false}
@@ -364,7 +364,8 @@ exports[`Storyshots Project/UserList list 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "5px)",
+              "margin": "0",
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -993,7 +994,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi KfaYC"
+        className="sc-gZMcBi jZympT"
       >
         <button
           disabled={false}
@@ -1008,7 +1009,8 @@ exports[`Storyshots Project/UserList list with users 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "5px)",
+              "margin": "0",
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",

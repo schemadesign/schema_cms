@@ -69,7 +69,8 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
         "display": "inline-block",
         "fill": "#FFF",
         "fontSize": "18px",
-        "margin": "5px)",
+        "margin": "0",
+        "marginRight": 5,
         "minHeight": "48px",
         "outline": "none",
         "padding": "0",
@@ -100,7 +101,7 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi bjhQPK"
+        className="sc-gZMcBi brDpsb"
       >
         <button
           disabled={false}
@@ -166,7 +167,7 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
         "fill": "#FFF",
         "fontSize": "18px",
         "margin": "0",
-        "marginLeft": "5px)",
+        "marginLeft": 5,
         "minHeight": "48px",
         "outline": "none",
         "padding": "0",

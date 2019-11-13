@@ -223,7 +223,7 @@ Array [
       className="sc-gqjmRU jrxYk"
     >
       <div
-        className="sc-gZMcBi bNVCVH"
+        className="sc-gZMcBi jSdIIC"
       >
         <button
           disabled={false}
@@ -238,7 +238,8 @@ Array [
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "5px)",
+              "margin": "0",
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -264,7 +265,7 @@ Array [
               "fill": "#FFF",
               "fontSize": "18px",
               "margin": "0",
-              "marginLeft": "5px)",
+              "marginLeft": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",

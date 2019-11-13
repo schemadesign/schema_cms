@@ -433,7 +433,7 @@ exports[`Storyshots Settings Default 1`] = `
           className="sc-gqjmRU jrxYk"
         >
           <div
-            className="sc-gZMcBi bjhQPK"
+            className="sc-gZMcBi brDpsb"
           >
             <button
               disabled={true}
@@ -448,7 +448,7 @@ exports[`Storyshots Settings Default 1`] = `
                   "fill": "#FFF",
                   "fontSize": "18px",
                   "margin": "0",
-                  "marginLeft": "5px)",
+                  "marginLeft": 5,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",

@@ -1636,7 +1636,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-htoDjs",
                                         "isStatic": false,
-                                        "lastClassName": "lrYVY",
+                                        "lastClassName": "bOcMaT",
                                         "rules": Array [
                                           "
   display: flex;
@@ -1655,9 +1655,6 @@ exports[`FilterForm: Component should render create form 1`] = `
       ",
                                           "
     display: ",
-                                          [Function],
-                                          ";
-    justify-content: ",
                                           [Function],
                                           ";
   ",
@@ -1683,7 +1680,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                   right={false}
                                 >
                                   <div
-                                    className="sc-htoDjs lrYVY"
+                                    className="sc-htoDjs bOcMaT"
                                   >
                                     <BackButton
                                       disabled={false}
@@ -1693,7 +1690,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       <Component
                                         customStyles={
                                           Object {
-                                            "margin": "5px)",
+                                            "marginRight": 5,
                                             "width": "calc(50% - 5px)",
                                           }
                                         }
@@ -1704,7 +1701,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                         <ButtonComponent
                                           customStyles={
                                             Object {
-                                              "margin": "5px)",
+                                              "marginRight": 5,
                                               "width": "calc(50% - 5px)",
                                             }
                                           }
@@ -1726,7 +1723,8 @@ exports[`FilterForm: Component should render create form 1`] = `
                                                 "display": "inline-block",
                                                 "fill": "#FFF",
                                                 "fontSize": "18px",
-                                                "margin": "5px)",
+                                                "margin": "0",
+                                                "marginRight": 5,
                                                 "minHeight": "48px",
                                                 "outline": "none",
                                                 "padding": "0",
@@ -1756,7 +1754,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       <Component
                                         customStyles={
                                           Object {
-                                            "marginLeft": "5px)",
+                                            "marginLeft": 5,
                                             "width": "calc(50% - 5px)",
                                           }
                                         }
@@ -1767,7 +1765,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                         <ButtonComponent
                                           customStyles={
                                             Object {
-                                              "marginLeft": "5px)",
+                                              "marginLeft": 5,
                                               "width": "calc(50% - 5px)",
                                             }
                                           }
@@ -1788,7 +1786,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                                 "fill": "#FFF",
                                                 "fontSize": "18px",
                                                 "margin": "0",
-                                                "marginLeft": "5px)",
+                                                "marginLeft": 5,
                                                 "minHeight": "48px",
                                                 "outline": "none",
                                                 "padding": "0",
@@ -3594,7 +3592,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-htoDjs",
                                         "isStatic": false,
-                                        "lastClassName": "lrYVY",
+                                        "lastClassName": "bOcMaT",
                                         "rules": Array [
                                           "
   display: flex;
@@ -3613,9 +3611,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
       ",
                                           "
     display: ",
-                                          [Function],
-                                          ";
-    justify-content: ",
                                           [Function],
                                           ";
   ",
@@ -3641,7 +3636,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                   right={false}
                                 >
                                   <div
-                                    className="sc-htoDjs lrYVY"
+                                    className="sc-htoDjs bOcMaT"
                                   >
                                     <BackButton
                                       disabled={false}
@@ -3651,7 +3646,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       <Component
                                         customStyles={
                                           Object {
-                                            "margin": "5px)",
+                                            "marginRight": 5,
                                             "width": "calc(50% - 5px)",
                                           }
                                         }
@@ -3662,7 +3657,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                         <ButtonComponent
                                           customStyles={
                                             Object {
-                                              "margin": "5px)",
+                                              "marginRight": 5,
                                               "width": "calc(50% - 5px)",
                                             }
                                           }
@@ -3684,7 +3679,8 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                                 "display": "inline-block",
                                                 "fill": "#FFF",
                                                 "fontSize": "18px",
-                                                "margin": "5px)",
+                                                "margin": "0",
+                                                "marginRight": 5,
                                                 "minHeight": "48px",
                                                 "outline": "none",
                                                 "padding": "0",
@@ -3714,7 +3710,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       <Component
                                         customStyles={
                                           Object {
-                                            "marginLeft": "5px)",
+                                            "marginLeft": 5,
                                             "width": "calc(50% - 5px)",
                                           }
                                         }
@@ -3725,7 +3721,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                         <ButtonComponent
                                           customStyles={
                                             Object {
-                                              "marginLeft": "5px)",
+                                              "marginLeft": 5,
                                               "width": "calc(50% - 5px)",
                                             }
                                           }
@@ -3746,7 +3742,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                                 "fill": "#FFF",
                                                 "fontSize": "18px",
                                                 "margin": "0",
-                                                "marginLeft": "5px)",
+                                                "marginLeft": 5,
                                                 "minHeight": "48px",
                                                 "outline": "none",
                                                 "padding": "0",

@@ -16,7 +16,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi bNVCVH"
+        className="sc-gZMcBi jSdIIC"
       >
         <button
           disabled={false}
@@ -31,7 +31,8 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "5px)",
+              "margin": "0",
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -57,7 +58,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
               "fill": "#FFF",
               "fontSize": "18px",
               "margin": "0",
-              "marginLeft": "5px)",
+              "marginLeft": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -205,7 +206,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi bNVCVH"
+        className="sc-gZMcBi jSdIIC"
       >
         <button
           disabled={true}
@@ -220,7 +221,8 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "5px)",
+              "margin": "0",
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -246,7 +248,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
               "fill": "#FFF",
               "fontSize": "18px",
               "margin": "0",
-              "marginLeft": "5px)",
+              "marginLeft": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -394,7 +396,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi bNVCVH"
+        className="sc-gZMcBi jSdIIC"
       >
         <button
           disabled={false}
@@ -409,7 +411,8 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "5px)",
+              "margin": "0",
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -435,7 +438,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
               "fill": "#FFF",
               "fontSize": "18px",
               "margin": "0",
-              "marginLeft": "5px)",
+              "marginLeft": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -583,7 +586,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi bNVCVH"
+        className="sc-gZMcBi jSdIIC"
       >
         <button
           disabled={true}
@@ -598,7 +601,8 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "5px)",
+              "margin": "0",
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -624,7 +628,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
               "fill": "#FFF",
               "fontSize": "18px",
               "margin": "0",
-              "marginLeft": "5px)",
+              "marginLeft": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -772,7 +776,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi bNVCVH"
+        className="sc-gZMcBi jSdIIC"
       >
         <button
           disabled={false}
@@ -787,7 +791,8 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "5px)",
+              "margin": "0",
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
@@ -813,7 +818,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
               "fill": "#FFF",
               "fontSize": "18px",
               "margin": "0",
-              "marginLeft": "5px)",
+              "marginLeft": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
