@@ -20,6 +20,7 @@ secret_manager = boto3.client(
 
 
 def get_s3_object(path, version=None):
-    return s3.get_object(
-        Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=path, VersionId=version
-    )
+    params = dict(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=path)
+    if version:
+        params["VersionId"] = version
+    return s3.get_object(**params)
