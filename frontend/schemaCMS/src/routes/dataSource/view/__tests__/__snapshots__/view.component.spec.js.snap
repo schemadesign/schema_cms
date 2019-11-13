@@ -11,9 +11,106 @@ exports[`View: Component should not render any step 1`] = `
           "label": "Data source list",
           "to": "/project/1/datasource/",
         },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
       ]
     }
   />
+  <ContextHeader
+    subtitle={null}
+    title="name"
+  />
+  <styled.div
+    visibile={false}
+  >
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "transparent",
+          "padding": 0,
+        }
+      }
+      id="removeDataSourceDesktopBtn"
+      onClick={[Function]}
+    >
+      Remove Data Source
+    </Component>
+  </styled.div>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": null,
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the data source?"
+        id="dataSource.view.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="dataSource.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
 </styled.div>
 `;
 
@@ -30,8 +127,16 @@ exports[`View: Component should render draft 1`] = `
           "label": "Data source list",
           "to": "/project/1/datasource/",
         },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
       ]
     }
+  />
+  <ContextHeader
+    subtitle="Source"
+    title="Create Data Source"
   />
   <WithTheme(SourceComponent)
     dataSource={
@@ -74,6 +179,95 @@ exports[`View: Component should render draft 1`] = `
     unmountFields={[Function]}
     uploadScript={[Function]}
   />
+  <styled.div
+    visibile={true}
+  >
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "transparent",
+          "padding": 0,
+        }
+      }
+      id="removeDataSourceDesktopBtn"
+      onClick={[Function]}
+    >
+      Remove Data Source
+    </Component>
+  </styled.div>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": null,
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the data source?"
+        id="dataSource.view.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="dataSource.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
 </styled.div>
 `;
 
@@ -88,8 +282,16 @@ exports[`View: Component should render second step 1`] = `
           "label": "Data source list",
           "to": "/project/1/datasource/",
         },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
       ]
     }
+  />
+  <ContextHeader
+    subtitle="Source"
+    title="name"
   />
   <WithTheme(SourceComponent)
     dataSource={
@@ -134,6 +336,95 @@ exports[`View: Component should render second step 1`] = `
     unmountFields={[Function]}
     uploadScript={[Function]}
   />
+  <styled.div
+    visibile={true}
+  >
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "transparent",
+          "padding": 0,
+        }
+      }
+      id="removeDataSourceDesktopBtn"
+      onClick={[Function]}
+    >
+      Remove Data Source
+    </Component>
+  </styled.div>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": null,
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the data source?"
+        id="dataSource.view.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="dataSource.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
 </styled.div>
 `;
 
@@ -148,8 +439,16 @@ exports[`View: Component should render source step 1`] = `
           "label": "Data source list",
           "to": "/project/1/datasource/",
         },
+        Object {
+          "label": "Remove Data Source",
+          "onClick": [Function],
+        },
       ]
     }
+  />
+  <ContextHeader
+    subtitle="Source"
+    title="name"
   />
   <WithTheme(SourceComponent)
     dataSource={
@@ -193,5 +492,94 @@ exports[`View: Component should render source step 1`] = `
     unmountFields={[Function]}
     uploadScript={[Function]}
   />
+  <styled.div
+    visibile={true}
+  >
+    <Component
+      customStyles={
+        Object {
+          "backgroundColor": "transparent",
+          "padding": 0,
+        }
+      }
+      id="removeDataSourceDesktopBtn"
+      onClick={[Function]}
+    >
+      Remove Data Source
+    </Component>
+  </styled.div>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": null,
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the data source?"
+        id="dataSource.view.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="dataSource.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
 </styled.div>
 `;

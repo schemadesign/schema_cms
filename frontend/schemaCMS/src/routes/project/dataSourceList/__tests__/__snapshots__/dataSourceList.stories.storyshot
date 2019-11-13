@@ -262,13 +262,13 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-ibxdXY btgiXA"
+      className="sc-hmzhuo kOWtqu"
     >
       <div
-        className="sc-RefOD cnGLMF"
+        className="sc-frDJqD bWAjYR"
       >
         <h2
-          className="sc-iQKALj ihRZon"
+          className="sc-kvZOFW evrHHD"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -282,7 +282,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           Data Sources
         </h2>
         <h1
-          className="sc-bwCtUz ThhIA"
+          className="sc-hqyNC jLxrsP"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -299,7 +299,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         </h1>
       </div>
       <div
-        className="sc-hrWEMg fOsrtz"
+        className="sc-jbKcbu cWSlbe"
       >
         <button
           disabled={false}
@@ -700,13 +700,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="sc-ibxdXY btgiXA"
+      className="sc-hmzhuo kOWtqu"
     >
       <div
-        className="sc-RefOD cnGLMF"
+        className="sc-frDJqD bWAjYR"
       >
         <h2
-          className="sc-iQKALj ihRZon"
+          className="sc-kvZOFW evrHHD"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -720,7 +720,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           Data Sources
         </h2>
         <h1
-          className="sc-bwCtUz ThhIA"
+          className="sc-hqyNC jLxrsP"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -737,7 +737,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </h1>
       </div>
       <div
-        className="sc-hrWEMg fOsrtz"
+        className="sc-jbKcbu cWSlbe"
       >
         <button
           disabled={false}
@@ -1507,13 +1507,13 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="sc-ibxdXY btgiXA"
+      className="sc-hmzhuo kOWtqu"
     >
       <div
-        className="sc-RefOD cnGLMF"
+        className="sc-frDJqD bWAjYR"
       >
         <h2
-          className="sc-iQKALj ihRZon"
+          className="sc-kvZOFW evrHHD"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -1527,7 +1527,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           Data Sources
         </h2>
         <h1
-          className="sc-bwCtUz ThhIA"
+          className="sc-hqyNC jLxrsP"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -1544,7 +1544,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         </h1>
       </div>
       <div
-        className="sc-hrWEMg fOsrtz"
+        className="sc-jbKcbu cWSlbe"
       >
         <button
           disabled={false}

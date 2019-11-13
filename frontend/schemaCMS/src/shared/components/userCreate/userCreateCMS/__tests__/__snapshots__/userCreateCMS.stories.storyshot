@@ -220,13 +220,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-ibxdXY btgiXA"
+      className="sc-hmzhuo kOWtqu"
     >
       <div
-        className="sc-RefOD cnGLMF"
+        className="sc-frDJqD bWAjYR"
       >
         <h2
-          className="sc-iQKALj ihRZon"
+          className="sc-kvZOFW evrHHD"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -242,7 +242,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           </span>
         </h2>
         <h1
-          className="sc-bwCtUz ThhIA"
+          className="sc-hqyNC jLxrsP"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -261,7 +261,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </h1>
       </div>
       <div
-        className="sc-hrWEMg fOsrtz"
+        className="sc-jbKcbu cWSlbe"
       />
     </div>
     <form
@@ -327,7 +327,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-dNLxif hQcsea"
+        className="sc-jnlKLf kiHYWh"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -353,7 +353,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           value="admin"
         />
         <div
-          className="sc-jqCOkK erFQlv"
+          className="sc-fYxtnH hjJzgf"
         >
           <svg
             style={
