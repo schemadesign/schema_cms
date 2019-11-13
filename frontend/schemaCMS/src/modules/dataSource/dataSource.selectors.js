@@ -14,14 +14,9 @@ export const selectDataSources = createSelector(
   prop('dataSources')
 );
 
-export const selectFields = createSelector(
+export const selectPreviewData = createSelector(
   selectDataSourceDomain,
-  prop('fields')
-);
-
-export const selectPreviewTable = createSelector(
-  selectDataSourceDomain,
-  prop('previewTable')
+  prop('previewData')
 );
 
 export const selectFieldsInfo = createSelector(
@@ -32,9 +27,4 @@ export const selectFieldsInfo = createSelector(
 export const selectIsAnyJobProcessing = createSelector(
   selectDataSource,
   getIsAnyResultProcessing
-);
-
-export const selectJobPreview = createSelector(
-  selectDataSourceDomain,
-  prop('jobPreview')
 );

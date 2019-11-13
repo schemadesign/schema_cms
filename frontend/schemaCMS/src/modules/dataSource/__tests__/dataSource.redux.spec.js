@@ -7,10 +7,8 @@ describe('DataSource: redux', () => {
   const defaultState = Immutable({
     dataSource: {},
     dataSources: [],
-    fields: {},
-    previewTable: [],
+    previewData: {},
     fieldsInfo: {},
-    jobPreview: {},
   });
 
   describe('reducer', () => {
@@ -89,26 +87,18 @@ describe('DataSource: redux', () => {
     });
   });
 
-  describe('when FETCH_FIELDS/SUCCESS action is received', () => {
-    it('should set fields and previewTable ', () => {
-      const data = [{ fields: { id: {}, data: [{ id: '1' }] } }];
-      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchFields.success(data));
+  describe('when FETCH_PREVIEW/SUCCESS action is received', () => {
+    it('should set previewData ', () => {
+      const previewData = {
+        fields: {
+          id: {},
+          name: {},
+        },
+        previewTable: [{ id: '1', name: 'test' }],
+      };
+      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchPreview.success(previewData));
 
-      expect(resultState.fields).to.deep.equal(data.fields);
-      expect(resultState.previewTable).to.deep.equal(data.data);
-    });
-  });
-
-  describe('when UNMOUNT_FIELDS/SUCCESS action is received', () => {
-    it('should unmount fields and previewTable ', () => {
-      const state = Immutable({
-        fields: { field: 'field' },
-        previewTable: [{ field: 'field' }],
-      });
-      const resultState = dataSourceReducer(state, DataSourceRoutines.unmountFields.trigger());
-
-      expect(resultState.fields).to.deep.equal(defaultState.fields);
-      expect(resultState.previewTable).to.deep.equal(defaultState.previewTable);
+      expect(resultState.previewData).to.deep.equal(previewData);
     });
   });
 
@@ -118,15 +108,6 @@ describe('DataSource: redux', () => {
       const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchFieldsInfo.success(data));
 
       expect(resultState.fieldsInfo).to.deep.equal(data);
-    });
-  });
-
-  describe('when FETCH_PREVIEW/SUCCESS action is received', () => {
-    it('should set job preview value', () => {
-      const jobPreview = { fields: {}, data: [] };
-
-      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.fetchPreview.success(jobPreview));
-      expect(resultState.jobPreview).to.deep.equal(jobPreview);
     });
   });
 });

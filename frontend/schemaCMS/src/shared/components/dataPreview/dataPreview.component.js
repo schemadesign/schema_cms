@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 import { Button, Icons } from 'schemaUI';
 import { isEmpty } from 'ramda';
 
@@ -9,36 +8,41 @@ import { Table } from '../table';
 import { FieldDetail } from '../fieldDetail';
 import messages from './dataPreview.messages';
 import {
-  Container,
-  Navigation,
-  NavigationLabel,
-  NavigationButton,
-  Content,
-  buttonStyles,
   arrowStyles,
+  buttonStyles,
+  Container,
+  Content,
+  Navigation,
+  NavigationButton,
+  NavigationLabel,
 } from './dataPreview.styles';
-import { StepNavigation } from '../stepNavigation';
 import { getTableData } from '../../utils/helpers';
 
 const INITIAL_STEP = 0;
 
 export default class DataPreview extends PureComponent {
   static propTypes = {
-    fields: PropTypes.object,
-    previewTable: PropTypes.array,
-    fetchFields: PropTypes.func.isRequired,
-    unmountFields: PropTypes.func.isRequired,
+    previewData: PropTypes.object.isRequired,
+    fetchPreview: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
-    dataSource: PropTypes.object.isRequired,
+    dataSource: PropTypes.object,
+    history: PropTypes.object.isRequired,
+    jobId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   };
 
-  static getDerivedStateFromProps({ fields }, { isLoading, step }) {
-    if (isLoading && !isEmpty(fields)) {
+  static defaultProps = {
+    dataSource: {},
+    jobId: null,
+  };
+
+  static getDerivedStateFromProps({ previewData }, { step }) {
+    const { fields = {} } = previewData;
+
+    if (!isEmpty(fields)) {
       const fieldsIds = Object.keys(fields);
 
       return {
         step,
-        isLoading: false,
         countFields: fieldsIds.length,
         fieldsIds: [null, ...fieldsIds],
       };
@@ -48,24 +52,25 @@ export default class DataPreview extends PureComponent {
   }
 
   state = {
-    isLoading: true,
+    loading: true,
     step: INITIAL_STEP,
   };
 
-  componentDidMount() {
-    const { id: dataSourceId } = this.props.dataSource;
-
-    this.props.fetchFields({ dataSourceId });
-  }
-
-  componentWillUnmount() {
-    this.props.unmountFields();
+  async componentDidMount() {
+    const { dataSource, jobId } = this.props;
+    const { id: dataSourceId } = dataSource;
+    try {
+      await this.props.fetchPreview({ dataSourceId, jobId });
+      this.setState({ loading: false });
+    } catch (e) {
+      this.props.history.push('/');
+    }
   }
 
   getFieldDetailsData() {
     const { step, fieldsIds } = this.state;
     const id = fieldsIds[step];
-    const data = this.props.fields[id];
+    const data = this.props.previewData.fields[id];
 
     return { id, data, intl: this.props.intl };
   }
@@ -119,7 +124,7 @@ export default class DataPreview extends PureComponent {
 
   renderContent() {
     const { step } = this.state;
-    const tableData = getTableData(this.props.previewTable);
+    const tableData = getTableData(this.props.previewData.data);
     const content = step ? this.renderFieldDetails(this.getFieldDetailsData()) : this.renderTable(tableData);
 
     return (
@@ -131,14 +136,8 @@ export default class DataPreview extends PureComponent {
   }
 
   render() {
-    const content = this.state.isLoading ? <Loader /> : this.renderContent();
+    const content = this.state.loading ? <Loader /> : this.renderContent();
 
-    return (
-      <Container>
-        <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        {content}
-        <StepNavigation {...this.props} />
-      </Container>
-    );
+    return <Container>{content}</Container>;
   }
 }

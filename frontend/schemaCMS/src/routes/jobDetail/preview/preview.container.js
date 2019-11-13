@@ -4,9 +4,10 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
+import { injectIntl } from 'react-intl';
 
 import { Preview } from './preview.component';
-import { DataSourceRoutines, selectJobPreview } from '../../../modules/dataSource';
+import { JobRoutines, selectJobPreview } from '../../../modules/job';
 
 const mapStateToProps = createStructuredSelector({
   previewData: selectJobPreview,
@@ -15,7 +16,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      fetchPreview: promisifyRoutine(DataSourceRoutines.fetchPreview),
+      fetchPreview: promisifyRoutine(JobRoutines.fetchPreview),
     },
     dispatch
   );
@@ -25,5 +26,6 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
+  injectIntl,
   withRouter
 )(Preview);

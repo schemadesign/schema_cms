@@ -10,7 +10,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
   }
 >
   <div
-    className="sc-kafWEX dNChzQ"
+    className="sc-feJyhm fRrBax"
   >
     <div
       className="sc-eqIVtm jYTlNG"
@@ -212,7 +212,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       </div>
     </div>
     <form
-      className="sc-feJyhm fRrBax"
+      className="sc-iELTvK fyBIax"
       name="dataWranglingForm"
     >
       <div

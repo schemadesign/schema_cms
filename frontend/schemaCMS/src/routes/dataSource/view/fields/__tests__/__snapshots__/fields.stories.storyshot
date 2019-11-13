@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DataWranglingResult Default 1`] = `
+exports[`Storyshots Fields Default 1`] = `
 <div
   style={
     Object {
@@ -10,7 +10,7 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
   }
 >
   <div
-    className="sc-kkGfuU gqJIVH"
+    className="sc-hqyNC keRCOE"
   >
     <div
       className="sc-hzDkRC kpsoyz"
@@ -55,7 +55,7 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
             }
           >
             <span>
-              Back
+              Cancel
             </span>
           </button>
           <button
@@ -93,51 +93,10 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
                   "display": "flex",
                   "flexDirection": "row",
                   "margin": "0 auto",
+                  "pointerEvents": "none",
                 }
               }
             >
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "width": "12px",
-                  }
-                }
-              />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "width": "12px",
-                  }
-                }
-              />
-              <span
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "#1d1d20",
-                    "borderRadius": "50%",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "height": "12px",
-                    "margin": "0 4px",
-                    "width": "12px",
-                  }
-                }
-              />
               <span
                 onClick={[Function]}
                 style={
@@ -149,6 +108,48 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
                     "height": "12px",
                     "margin": "0 4px",
                     "pointerEvents": "none",
+                    "width": "12px",
+                  }
+                }
+              />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#1d1d20",
+                    "borderRadius": "50%",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "height": "12px",
+                    "margin": "0 4px",
+                    "width": "12px",
+                  }
+                }
+              />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#1d1d20",
+                    "borderRadius": "50%",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "height": "12px",
+                    "margin": "0 4px",
+                    "width": "12px",
+                  }
+                }
+              />
+              <span
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#1d1d20",
+                    "borderRadius": "50%",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "height": "12px",
+                    "margin": "0 4px",
                     "width": "12px",
                   }
                 }

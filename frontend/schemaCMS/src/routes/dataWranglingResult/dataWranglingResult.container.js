@@ -6,7 +6,7 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 
 import { DataWranglingResult } from './dataWranglingResult.component';
-import { DataSourceRoutines, selectJobPreview } from '../../modules/dataSource';
+import { JobRoutines, selectJobPreview } from '../../modules/job';
 
 const mapStateToProps = createStructuredSelector({
   previewData: selectJobPreview,
@@ -15,7 +15,7 @@ const mapStateToProps = createStructuredSelector({
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchResult: promisifyRoutine(DataSourceRoutines.fetchPreview),
+      fetchPreview: promisifyRoutine(JobRoutines.fetchPreview),
     },
     dispatch
   ),

@@ -12,3 +12,8 @@ export const selectJobList = createSelector(
   selectJobDomain,
   prop('jobList')
 );
+
+export const selectJobPreview = createSelector(
+  selectJobDomain,
+  prop('jobPreview')
+);

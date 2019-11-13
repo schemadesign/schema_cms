@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectJobDomain, selectJob, selectJobList } from '../job.selectors';
+import { selectJobDomain, selectJob, selectJobList, selectJobPreview } from '../job.selectors';
 
 describe('Job: selectors', () => {
   const state = Immutable({
@@ -29,6 +29,12 @@ describe('Job: selectors', () => {
   describe('selectJobList', () => {
     it('should select job list', () => {
       expect(selectJobList(state)).to.equal(state.job.jobList);
+    });
+  });
+
+  describe('selectJobPreview', () => {
+    it('should select a job preview', () => {
+      expect(selectJobPreview(state)).to.equal(state.job.jobPreview);
     });
   });
 });
