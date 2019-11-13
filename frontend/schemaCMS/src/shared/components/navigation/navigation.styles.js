@@ -3,7 +3,7 @@ import { always, ifElse, propEq } from 'ramda';
 
 import { media, contentSizes } from '../../../theme/media';
 
-const buttonMargin = 5;
+const BUTTON_MARGIN = 5;
 
 export const Container = styled.div`
   height: 155px;
@@ -16,8 +16,32 @@ export const NavigationContent = styled.div`
   align-items: center;
   width: 100%;
 
+  .nav-btn {
+    width: calc(50% - ${BUTTON_MARGIN}px);
+  }
+
+  .nav-btn--back {
+    margin-right: ${BUTTON_MARGIN}px;
+  }
+
+  .nav-btn--next {
+    margin-left: ${BUTTON_MARGIN}px;
+  }
+
   ${media.desktop`
     display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'flex')};
+
+      .nav-btn {
+        width: 235px;
+      }
+
+      .nav-btn--back {
+        margin-left: 255px;
+      }
+
+      .nav-btn--next {
+        margin-right: 255px;
+      }
   `}
 `;
 
@@ -42,16 +66,6 @@ export const buttonIconStyles = {
   width: '60px',
 };
 
-const buttonStyles = {
-  width: `calc(50% - ${buttonMargin}px)`,
-};
-
-export const backButtonStyles = {
-  ...buttonStyles,
-  marginRight: buttonMargin,
-};
-
-export const nextButtonStyles = {
-  ...buttonStyles,
-  marginLeft: buttonMargin,
+export const buttonStyles = {
+  margin: null,
 };
