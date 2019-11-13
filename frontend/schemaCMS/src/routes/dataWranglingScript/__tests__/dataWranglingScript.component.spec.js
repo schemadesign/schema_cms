@@ -22,10 +22,12 @@ describe('DataWranglingScript: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly with link to datasources', () => {
+  it('should render correctly with link to datasources', async () => {
+    defaultProps.fetchDataWranglingScript = jest.fn().mockReturnValue(Promise.resolve());
     // eslint-disable-next-line import/no-named-as-default-member
     const props = { ...defaultProps, dataWranglingScript: mockScripts[CASE_CONVERSION] };
     const wrapper = render(props);
+    await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
   });
 });
