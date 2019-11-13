@@ -28,6 +28,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       },
     }
   }
+  removeDataSource={[Function]}
   theme={
     Object {
       "background": "#000",
@@ -200,6 +201,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       },
     }
   }
+  removeDataSource={[Function]}
   theme={
     Object {
       "background": "#000",

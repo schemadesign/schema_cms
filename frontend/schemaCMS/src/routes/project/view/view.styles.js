@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { Typography } from 'schemaUI';
 
 import { media } from '../../../theme/media';
 
+const { Span } = Typography;
 const mobileMargin = 7;
 const desktopMargin = 15;
 
@@ -11,15 +13,6 @@ export const Container = styled.div`
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
-`;
-
-export const DesktopActions = styled.div`
-  display: none;
-
-  ${media.desktop`
-    display: block;
-    margin: 70px 0 20px 0;
-  `}
 `;
 
 export const ProjectView = styled.div`
@@ -43,7 +36,7 @@ export const Details = styled.ul`
 export const DetailItem = styled.li`
   color: ${({ theme: { text } }) => text};
   margin-bottom: 4px;
-  border-top: 2px solid ${({ theme: { border } }) => border};
+  border-top: 2px solid ${({ theme: { label } }) => label.border};
   display: flex;
 
   ${media.desktop`
@@ -157,6 +150,20 @@ export const statisticsCardStyles = {
   cursor: 'pointer',
 };
 
-export const desktopButtonStyles = {
-  padding: '0 40px',
-};
+export const LinkContainer = styled.div`
+  border-top: 2px solid ${({ theme }) => theme.label.border};
+  padding-top: 35px;
+  display: flex;
+  align-items: flex-start;
+`;
+
+export const Link = styled(Span)`
+  cursor: pointer;
+  color: ${({ theme }) => theme.text};
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom: 1px solid ${({ theme }) => theme.text};
+  }
+`;

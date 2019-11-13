@@ -12,6 +12,7 @@ export const defaultProps = {
   },
   theme: Theme.dark,
   updateDataSource: Function.prototype,
+  removeDataSource: Function.prototype,
   isAnyJobProcessing: false,
   history: {
     push: Function.prototype,

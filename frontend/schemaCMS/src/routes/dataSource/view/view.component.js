@@ -2,10 +2,8 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { always, cond, equals, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
-import { Button } from 'schemaUI';
-import Modal from 'react-modal';
 
-import { Container, ComingSoon, DesktopActions, desktopButtonStyles } from './view.styles';
+import { Container, ComingSoon } from './view.styles';
 import messages from './view.messages';
 import { Source } from './source';
 import { DataWranglingScripts } from './dataWranglingScripts';
@@ -22,7 +20,6 @@ import {
   VIEWS_STEP,
   META_DATA_STEP,
 } from '../../../modules/dataSource/dataSource.constants';
-import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { StepNavigation } from '../../../shared/components/stepNavigation';
 import { Fields } from './fields';
 
@@ -52,10 +49,6 @@ export class View extends PureComponent {
     }).isRequired,
   };
 
-  state = {
-    confirmationModalOpen: false,
-  };
-
   getHeaderSubtitle = cond([
     [equals(INITIAL_STEP), always(this.props.intl.formatMessage(messages.source))],
     [equals(FIELDS_STEP), always(this.props.intl.formatMessage(messages.fields))],
@@ -79,10 +72,6 @@ export class View extends PureComponent {
         label: intl.formatMessage(messages.dataSourceList),
         to: `/project/${projectId}/datasource/`,
       },
-      {
-        label: intl.formatMessage(messages.removeDataSource),
-        onClick: this.handleRemoveClick,
-      },
     ];
 
     return {
@@ -90,18 +79,6 @@ export class View extends PureComponent {
       headerSubtitle: this.getHeaderSubtitle(activeStep),
       secondaryMenuItems,
     };
-  };
-
-  handleRemoveClick = () => this.setState({ confirmationModalOpen: true });
-
-  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
-
-  handleConfirmRemove = () => {
-    const {
-      dataSource: { project: projectId, id: dataSourceId },
-    } = this.props;
-
-    this.props.removeDataSource({ projectId, dataSourceId });
   };
 
   renderComingSoon = () => (
@@ -131,10 +108,8 @@ export class View extends PureComponent {
         params: { step },
       },
     } = this.props;
-    const { confirmationModalOpen } = this.state;
     const activeStep = parseInt(step, 10);
     const topHeaderConfig = this.getHeaderAndMenuConfig(activeStep);
-    const isInitalStep = activeStep === INITIAL_STEP;
 
     return (
       <Fragment>
@@ -145,24 +120,6 @@ export class View extends PureComponent {
           dataSource,
           ...this.props,
         })}
-        <DesktopActions visibile={isInitalStep}>
-          <Button id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick} customStyles={desktopButtonStyles}>
-            {intl.formatMessage(messages.removeDataSource)}
-          </Button>
-        </DesktopActions>
-        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
-          <ModalTitle>
-            <FormattedMessage {...messages.removeTitle} />
-          </ModalTitle>
-          <ModalActions>
-            <ModalButton onClick={this.handleCancelRemove}>
-              <FormattedMessage {...messages.cancelRemoval} />
-            </ModalButton>
-            <ModalButton onClick={this.handleConfirmRemove}>
-              <FormattedMessage {...messages.confirmRemoval} />
-            </ModalButton>
-          </ModalActions>
-        </Modal>
       </Fragment>
     );
   });

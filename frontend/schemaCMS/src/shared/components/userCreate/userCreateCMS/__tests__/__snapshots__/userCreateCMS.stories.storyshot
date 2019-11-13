@@ -13,7 +13,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
     className="sc-VJcYb eHzyuQ"
   >
     <div
-      className="sc-eqIVtm jYTlNG"
+      className="sc-gisBJw kiKCgt"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       >
         <div>
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         }
       >
         <div
-          className="sc-caSCKo jjNSwx"
+          className="sc-cHGsZl bHiaRe"
         >
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-gisBJw eCZBLA"
+          className="sc-TOsTZ iUQrOT"
         >
           <ul
-            className="sc-kjoXOD sc-cHGsZl cULqXW"
+            className="sc-kgAjT sc-cJSrbW doKZeW"
           />
           <ul
-            className="sc-kjoXOD sc-TOsTZ eELfaW"
+            className="sc-kgAjT sc-ksYbfQ iFxI"
           />
         </div>
         <button
@@ -242,7 +242,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             style={
               Object {
                 "border": "none",
-                "borderTop": "1px solid #2F2F36",
+                "borderTop": "2px solid #2F2F36",
                 "color": "#71737e",
                 "display": "block",
                 "fontSize": "14px",
@@ -289,7 +289,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #2F2F36",
+              "borderTop": "2px solid #2F2F36",
               "color": "#71737e",
               "display": "block",
               "fontSize": "14px",

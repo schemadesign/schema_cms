@@ -239,17 +239,16 @@ exports[`View: Component should render correctly 1`] = `
       </styled.ul>
     </styled.div>
     <styled.div>
-      <Component
-        customStyles={
-          Object {
-            "padding": "0 40px",
-          }
-        }
+      <Styled(Span)
         id="deleteProjectDesktopBtn"
         onClick={[Function]}
       >
-        Delete Project
-      </Component>
+        <FormattedMessage
+          defaultMessage="Delete Project"
+          id="project.view.deleteProject"
+          values={Object {}}
+        />
+      </Styled(Span)>
     </styled.div>
   </div>
   <NavigationContainer

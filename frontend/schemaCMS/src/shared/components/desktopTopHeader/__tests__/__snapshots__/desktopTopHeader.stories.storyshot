@@ -176,10 +176,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
         }
       >
         <div
-          className="sc-caSCKo jjNSwx"
+          className="sc-cHGsZl bHiaRe"
         >
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -212,13 +212,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-gisBJw eCZBLA"
+          className="sc-TOsTZ iUQrOT"
         >
           <ul
-            className="sc-kjoXOD sc-cHGsZl cULqXW"
+            className="sc-kgAjT sc-cJSrbW doKZeW"
           >
             <li
-              className="sc-kgAjT sc-cJSrbW gNpIIg"
+              className="sc-hmzhuo sc-frDJqD TGbH"
             >
               <a
                 href="/path"
@@ -229,7 +229,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
             </li>
             <li
-              className="sc-kgAjT sc-cJSrbW gNpIIg"
+              className="sc-hmzhuo sc-frDJqD TGbH"
             >
               <a
                 href="/path"
@@ -241,10 +241,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
             </li>
           </ul>
           <ul
-            className="sc-kjoXOD sc-TOsTZ eELfaW"
+            className="sc-kgAjT sc-ksYbfQ iFxI"
           >
             <li
-              className="sc-kgAjT sc-ksYbfQ gQWegr"
+              className="sc-hmzhuo sc-kvZOFW ixXwCE"
             >
               <a
                 href="/logout"
@@ -255,7 +255,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
             </li>
             <li
-              className="sc-kgAjT sc-ksYbfQ gQWegr"
+              className="sc-hmzhuo sc-kvZOFW ixXwCE"
               id="id"
               onClick={[Function]}
             >
@@ -508,10 +508,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
         }
       >
         <div
-          className="sc-caSCKo jjNSwx"
+          className="sc-cHGsZl bHiaRe"
         >
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -544,13 +544,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
           </div>
         </div>
         <div
-          className="sc-gisBJw eCZBLA"
+          className="sc-TOsTZ iUQrOT"
         >
           <ul
-            className="sc-kjoXOD sc-cHGsZl cULqXW"
+            className="sc-kgAjT sc-cJSrbW doKZeW"
           >
             <li
-              className="sc-kgAjT sc-cJSrbW gNpIIg"
+              className="sc-hmzhuo sc-frDJqD TGbH"
             >
               <a
                 href="/path"
@@ -561,7 +561,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
             </li>
             <li
-              className="sc-kgAjT sc-cJSrbW gNpIIg"
+              className="sc-hmzhuo sc-frDJqD TGbH"
             >
               <a
                 href="/path"
@@ -573,10 +573,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
             </li>
           </ul>
           <ul
-            className="sc-kjoXOD sc-TOsTZ eELfaW"
+            className="sc-kgAjT sc-ksYbfQ iFxI"
           >
             <li
-              className="sc-kgAjT sc-ksYbfQ gQWegr"
+              className="sc-hmzhuo sc-kvZOFW ixXwCE"
             >
               <a
                 href="/logout"
@@ -587,7 +587,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
             </li>
             <li
-              className="sc-kgAjT sc-ksYbfQ gQWegr"
+              className="sc-hmzhuo sc-kvZOFW ixXwCE"
               id="id"
               onClick={[Function]}
             >
@@ -836,10 +836,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
         }
       >
         <div
-          className="sc-caSCKo jjNSwx"
+          className="sc-cHGsZl bHiaRe"
         >
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -872,13 +872,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
           </div>
         </div>
         <div
-          className="sc-gisBJw eCZBLA"
+          className="sc-TOsTZ iUQrOT"
         >
           <ul
-            className="sc-kjoXOD sc-cHGsZl cULqXW"
+            className="sc-kgAjT sc-cJSrbW doKZeW"
           >
             <li
-              className="sc-kgAjT sc-cJSrbW gNpIIg"
+              className="sc-hmzhuo sc-frDJqD TGbH"
             >
               <a
                 href="/path"
@@ -889,7 +889,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </a>
             </li>
             <li
-              className="sc-kgAjT sc-cJSrbW gNpIIg"
+              className="sc-hmzhuo sc-frDJqD TGbH"
             >
               <a
                 href="/path"
@@ -901,10 +901,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
             </li>
           </ul>
           <ul
-            className="sc-kjoXOD sc-TOsTZ eELfaW"
+            className="sc-kgAjT sc-ksYbfQ iFxI"
           >
             <li
-              className="sc-kgAjT sc-ksYbfQ gQWegr"
+              className="sc-hmzhuo sc-kvZOFW ixXwCE"
             >
               <a
                 href="/logout"
@@ -915,7 +915,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </a>
             </li>
             <li
-              className="sc-kgAjT sc-ksYbfQ gQWegr"
+              className="sc-hmzhuo sc-kvZOFW ixXwCE"
               id="id"
               onClick={[Function]}
             >
