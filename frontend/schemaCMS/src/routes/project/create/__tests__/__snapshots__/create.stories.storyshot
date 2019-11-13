@@ -212,13 +212,13 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-hqyNC hFkHhT"
+      className="sc-hmzhuo kOWtqu"
     >
       <div
-        className="sc-jbKcbu fynHmL"
+        className="sc-frDJqD bWAjYR"
       >
         <h2
-          className="sc-dNLxif dEgtYS"
+          className="sc-kvZOFW evrHHD"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -232,7 +232,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           Create New Project
         </h2>
         <h1
-          className="sc-jqCOkK iblYWW"
+          className="sc-hqyNC jLxrsP"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -249,7 +249,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </h1>
       </div>
       <div
-        className="sc-uJMKN jsQhVl"
+        className="sc-jbKcbu cWSlbe"
       />
     </div>
     <form

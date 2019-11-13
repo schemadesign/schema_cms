@@ -10,7 +10,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
   }
 >
   <div
-    className="sc-cMhqgX dwYjBs"
+    className="sc-bsbRJL kfmymT"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -224,60 +224,51 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-hZSUBg VKktY"
+      className="sc-iQNlJl jxLqkS"
     >
       <div
-        className="sc-epnACN eSYYqU"
+        className="sc-hXRMBi jSmKMK"
       >
-        <div
-          className="sc-iQNlJl fuSGWJ"
+        <a
+          active={false}
+          className="sc-epnACN fHVTqh"
+          href="/project/1"
+          onClick={[Function]}
         >
-          <a
-            className="sc-bsbRJL gzXytr"
-            href="/project/1"
-            onClick={[Function]}
-          >
-            <span>
-              Settings
-            </span>
-          </a>
-        </div>
-        <div
-          className="sc-iQNlJl kHKALF"
+          <span>
+            Settings
+          </span>
+        </a>
+        <a
+          active={true}
+          className="sc-epnACN fuwwZh"
+          href="/project/1/datasource"
+          onClick={[Function]}
         >
-          <a
-            className="sc-bsbRJL gzXytr"
-            href="/project/1/datasource"
-            onClick={[Function]}
-          >
-            <span>
-              Sources
-            </span>
-          </a>
-        </div>
-        <div
-          className="sc-iQNlJl fuSGWJ"
+          <span>
+            Sources
+          </span>
+        </a>
+        <a
+          active={false}
+          className="sc-epnACN fHVTqh"
+          href="/project/1/user"
+          onClick={[Function]}
         >
-          <a
-            className="sc-bsbRJL gzXytr"
-            href="/project/1/user"
-            onClick={[Function]}
-          >
-            <span>
-              Users
-            </span>
-          </a>
-        </div>
+          <span>
+            Users
+          </span>
+        </a>
       </div>
     </div>
     <div
-      className="sc-hqyNC hFkHhT"
+      className="sc-hmzhuo kOWtqu"
     >
       <div
-        className="sc-jbKcbu fynHmL"
+        className="sc-frDJqD bWAjYR"
       >
         <h2
-          className="sc-dNLxif dEgtYS"
+          className="sc-kvZOFW evrHHD"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -291,7 +282,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           Data Sources
         </h2>
         <h1
-          className="sc-jqCOkK iblYWW"
+          className="sc-hqyNC jLxrsP"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -308,7 +299,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         </h1>
       </div>
       <div
-        className="sc-uJMKN jsQhVl"
+        className="sc-jbKcbu cWSlbe"
       >
         <button
           disabled={false}
@@ -351,8 +342,8 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         </button>
       </div>
     </div>
-    <section
-      className="sc-eLExRp jJeQlq"
+    <ul
+      className="sc-iuJeZd izgbvF"
     />
     <div
       className="sc-iwsKbI eQdjUy"
@@ -457,7 +448,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
   }
 >
   <div
-    className="sc-cMhqgX dwYjBs"
+    className="sc-bsbRJL kfmymT"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -671,60 +662,51 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="sc-hZSUBg VKktY"
+      className="sc-iQNlJl jxLqkS"
     >
       <div
-        className="sc-epnACN eSYYqU"
+        className="sc-hXRMBi jSmKMK"
       >
-        <div
-          className="sc-iQNlJl fuSGWJ"
+        <a
+          active={false}
+          className="sc-epnACN fHVTqh"
+          href="/project/1"
+          onClick={[Function]}
         >
-          <a
-            className="sc-bsbRJL gzXytr"
-            href="/project/1"
-            onClick={[Function]}
-          >
-            <span>
-              Settings
-            </span>
-          </a>
-        </div>
-        <div
-          className="sc-iQNlJl kHKALF"
+          <span>
+            Settings
+          </span>
+        </a>
+        <a
+          active={true}
+          className="sc-epnACN fuwwZh"
+          href="/project/1/datasource"
+          onClick={[Function]}
         >
-          <a
-            className="sc-bsbRJL gzXytr"
-            href="/project/1/datasource"
-            onClick={[Function]}
-          >
-            <span>
-              Sources
-            </span>
-          </a>
-        </div>
-        <div
-          className="sc-iQNlJl fuSGWJ"
+          <span>
+            Sources
+          </span>
+        </a>
+        <a
+          active={false}
+          className="sc-epnACN fHVTqh"
+          href="/project/1/user"
+          onClick={[Function]}
         >
-          <a
-            className="sc-bsbRJL gzXytr"
-            href="/project/1/user"
-            onClick={[Function]}
-          >
-            <span>
-              Users
-            </span>
-          </a>
-        </div>
+          <span>
+            Users
+          </span>
+        </a>
       </div>
     </div>
     <div
-      className="sc-hqyNC hFkHhT"
+      className="sc-hmzhuo kOWtqu"
     >
       <div
-        className="sc-jbKcbu fynHmL"
+        className="sc-frDJqD bWAjYR"
       >
         <h2
-          className="sc-dNLxif dEgtYS"
+          className="sc-kvZOFW evrHHD"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -738,7 +720,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           Data Sources
         </h2>
         <h1
-          className="sc-jqCOkK iblYWW"
+          className="sc-hqyNC jLxrsP"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -755,7 +737,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </h1>
       </div>
       <div
-        className="sc-uJMKN jsQhVl"
+        className="sc-jbKcbu cWSlbe"
       >
         <button
           disabled={false}
@@ -798,372 +780,378 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </button>
       </div>
     </div>
-    <section
-      className="sc-eLExRp jJeQlq"
+    <ul
+      className="sc-iuJeZd izgbvF"
     >
-      <div
-        className="sc-lkqHmb kwfoNI"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "padding": "12px 14px 14px",
-          }
-        }
+      <li
+        className="sc-hZSUBg gZkvps"
       >
         <div
           style={
             Object {
-              "color": undefined,
-              "fontSize": "12px",
-              "marginBottom": "14px",
+              "backgroundColor": "#1d1d20",
+              "borderTop": "2px solid #FFF",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "column",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "padding": "12px 14px 14px",
             }
           }
         >
           <div
-            className="sc-hORach gFAZKV"
+            style={
+              Object {
+                "color": undefined,
+                "fontSize": "12px",
+                "marginBottom": "14px",
+              }
+            }
           >
-            <ul
-              className="sc-gojNiO gysEWP"
-            >
-              <li
-                className="sc-daURTG jfmWxT"
-                id="headerItem-0"
-              >
-                3 months ago
-              </li>
-              <li
-                className="sc-daURTG jfmWxT"
-                id="headerItem-1"
-              >
-                firstName lastName
-              </li>
-            </ul>
             <div
-              className="sc-bMVAic iitsUz"
+              className="sc-hORach gFAZKV"
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
+              <ul
+                className="sc-gojNiO gysEWP"
               >
-                <path
-                  d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-                <path
-                  d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-              </svg>
+                <li
+                  className="sc-daURTG jfmWxT"
+                  id="headerItem-0"
+                >
+                  3 months ago
+                </li>
+                <li
+                  className="sc-daURTG jfmWxT"
+                  id="headerItem-1"
+                >
+                  firstName lastName
+                </li>
+              </ul>
+              <div
+                className="sc-bMVAic iitsUz"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                  <path
+                    d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <h1
+            className="sc-esOvli guwJEH"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+          <div
+            className="sc-cmthru fekLzh"
+          >
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-4"
+              >
+                Views
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
             </div>
           </div>
         </div>
-        <h1
-          className="sc-esOvli guwJEH"
-          id="dataSourceTitle"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
-        >
-          name
-        </h1>
-        <div
-          className="sc-cmthru fekLzh"
-        >
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-0"
-            >
-              Source
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-0"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-1"
-            >
-              Items
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-1"
-            >
-              —
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-2"
-            >
-              Fields
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-2"
-            >
-              —
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-3"
-            >
-              Filters
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-3"
-            >
-              —
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-4"
-            >
-              Views
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-4"
-            >
-              —
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        className="sc-lkqHmb kwfoNI"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "padding": "12px 14px 14px",
-          }
-        }
+      </li>
+      <li
+        className="sc-hZSUBg gZkvps"
       >
         <div
           style={
             Object {
-              "color": undefined,
-              "fontSize": "12px",
-              "marginBottom": "14px",
+              "backgroundColor": "#1d1d20",
+              "borderTop": "2px solid #FFF",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "column",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "padding": "12px 14px 14px",
             }
           }
         >
           <div
-            className="sc-hORach gFAZKV"
+            style={
+              Object {
+                "color": undefined,
+                "fontSize": "12px",
+                "marginBottom": "14px",
+              }
+            }
           >
-            <ul
-              className="sc-gojNiO gysEWP"
-            >
-              <li
-                className="sc-daURTG jfmWxT"
-                id="headerItem-0"
-              >
-                3 months ago
-              </li>
-              <li
-                className="sc-daURTG jfmWxT"
-                id="headerItem-1"
-              >
-                firstName lastName
-              </li>
-            </ul>
             <div
-              className="sc-bMVAic iitsUz"
+              className="sc-hORach gFAZKV"
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
+              <ul
+                className="sc-gojNiO gysEWP"
               >
-                <path
-                  d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-                <path
-                  d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-              </svg>
+                <li
+                  className="sc-daURTG jfmWxT"
+                  id="headerItem-0"
+                >
+                  3 months ago
+                </li>
+                <li
+                  className="sc-daURTG jfmWxT"
+                  id="headerItem-1"
+                >
+                  firstName lastName
+                </li>
+              </ul>
+              <div
+                className="sc-bMVAic iitsUz"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                  <path
+                    d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <h1
+            className="sc-esOvli guwJEH"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+          <div
+            className="sc-cmthru fekLzh"
+          >
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-1"
+              >
+                246
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-2"
+              >
+                11
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-4"
+              >
+                Views
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
             </div>
           </div>
         </div>
-        <h1
-          className="sc-esOvli guwJEH"
-          id="dataSourceTitle"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
-        >
-          name
-        </h1>
-        <div
-          className="sc-cmthru fekLzh"
-        >
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-0"
-            >
-              Source
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-0"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-1"
-            >
-              Items
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-1"
-            >
-              246
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-2"
-            >
-              Fields
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-2"
-            >
-              11
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-3"
-            >
-              Filters
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-3"
-            >
-              —
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-4"
-            >
-              Views
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-4"
-            >
-              —
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
+      </li>
+    </ul>
     <div
       className="sc-iwsKbI eQdjUy"
     >
@@ -1267,7 +1255,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
   }
 >
   <div
-    className="sc-cMhqgX dwYjBs"
+    className="sc-bsbRJL kfmymT"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -1481,60 +1469,51 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="sc-hZSUBg VKktY"
+      className="sc-iQNlJl jxLqkS"
     >
       <div
-        className="sc-epnACN eSYYqU"
+        className="sc-hXRMBi jSmKMK"
       >
-        <div
-          className="sc-iQNlJl fuSGWJ"
+        <a
+          active={false}
+          className="sc-epnACN fHVTqh"
+          href="/project/1"
+          onClick={[Function]}
         >
-          <a
-            className="sc-bsbRJL gzXytr"
-            href="/project/1"
-            onClick={[Function]}
-          >
-            <span>
-              Settings
-            </span>
-          </a>
-        </div>
-        <div
-          className="sc-iQNlJl kHKALF"
+          <span>
+            Settings
+          </span>
+        </a>
+        <a
+          active={true}
+          className="sc-epnACN fuwwZh"
+          href="/project/1/datasource"
+          onClick={[Function]}
         >
-          <a
-            className="sc-bsbRJL gzXytr"
-            href="/project/1/datasource"
-            onClick={[Function]}
-          >
-            <span>
-              Sources
-            </span>
-          </a>
-        </div>
-        <div
-          className="sc-iQNlJl fuSGWJ"
+          <span>
+            Sources
+          </span>
+        </a>
+        <a
+          active={false}
+          className="sc-epnACN fHVTqh"
+          href="/project/1/user"
+          onClick={[Function]}
         >
-          <a
-            className="sc-bsbRJL gzXytr"
-            href="/project/1/user"
-            onClick={[Function]}
-          >
-            <span>
-              Users
-            </span>
-          </a>
-        </div>
+          <span>
+            Users
+          </span>
+        </a>
       </div>
     </div>
     <div
-      className="sc-hqyNC hFkHhT"
+      className="sc-hmzhuo kOWtqu"
     >
       <div
-        className="sc-jbKcbu fynHmL"
+        className="sc-frDJqD bWAjYR"
       >
         <h2
-          className="sc-dNLxif dEgtYS"
+          className="sc-kvZOFW evrHHD"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -1548,7 +1527,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           Data Sources
         </h2>
         <h1
-          className="sc-jqCOkK iblYWW"
+          className="sc-hqyNC jLxrsP"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -1565,7 +1544,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         </h1>
       </div>
       <div
-        className="sc-uJMKN jsQhVl"
+        className="sc-jbKcbu cWSlbe"
       >
         <button
           disabled={false}
@@ -1608,191 +1587,194 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         </button>
       </div>
     </div>
-    <section
-      className="sc-eLExRp jJeQlq"
+    <ul
+      className="sc-iuJeZd izgbvF"
     >
-      <div
-        className="sc-lkqHmb kwfoNI"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "padding": "12px 14px 14px",
-          }
-        }
+      <li
+        className="sc-hZSUBg gZkvps"
       >
         <div
           style={
             Object {
-              "color": undefined,
-              "fontSize": "12px",
-              "marginBottom": "14px",
+              "backgroundColor": "#1d1d20",
+              "borderTop": "2px solid #FFF",
+              "color": "#FFF",
+              "display": "flex",
+              "flexDirection": "column",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "padding": "12px 14px 14px",
             }
           }
         >
           <div
-            className="sc-hORach gFAZKV"
+            style={
+              Object {
+                "color": undefined,
+                "fontSize": "12px",
+                "marginBottom": "14px",
+              }
+            }
           >
-            <ul
-              className="sc-gojNiO gysEWP"
-            >
-              <li
-                className="sc-daURTG jfmWxT"
-                id="headerItem-0"
-              >
-                3 months ago
-              </li>
-              <li
-                className="sc-daURTG jfmWxT"
-                id="headerItem-1"
-              >
-                firstName lastName
-              </li>
-            </ul>
             <div
-              className="sc-bMVAic iitsUz"
+              className="sc-hORach gFAZKV"
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
+              <ul
+                className="sc-gojNiO gysEWP"
               >
-                <path
-                  d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-                <path
-                  d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-              </svg>
+                <li
+                  className="sc-daURTG jfmWxT"
+                  id="headerItem-0"
+                >
+                  3 months ago
+                </li>
+                <li
+                  className="sc-daURTG jfmWxT"
+                  id="headerItem-1"
+                >
+                  firstName lastName
+                </li>
+              </ul>
+              <div
+                className="sc-bMVAic iitsUz"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                  <path
+                    d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <h1
+            className="sc-esOvli guwJEH"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            name
+          </h1>
+          <div
+            className="sc-cmthru fekLzh"
+          >
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-0"
+              >
+                Source
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="sc-hMFtBS gvbKCU"
+            >
+              <span
+                className="sc-cLQEGU gaZDyR"
+                id="metaItem-4"
+              >
+                Views
+              </span>
+              <span
+                className="sc-gqPbQI YiSKA"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
             </div>
           </div>
         </div>
-        <h1
-          className="sc-esOvli guwJEH"
-          id="dataSourceTitle"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
-        >
-          name
-        </h1>
-        <div
-          className="sc-cmthru fekLzh"
-        >
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-0"
-            >
-              Source
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-0"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-1"
-            >
-              Items
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-1"
-            >
-              —
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-2"
-            >
-              Fields
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-2"
-            >
-              —
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-3"
-            >
-              Filters
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-3"
-            >
-              —
-            </span>
-          </div>
-          <div
-            className="sc-hMFtBS gvbKCU"
-          >
-            <span
-              className="sc-cLQEGU gaZDyR"
-              id="metaItem-4"
-            >
-              Views
-            </span>
-            <span
-              className="sc-gqPbQI YiSKA"
-              id="metaItemValue-4"
-            >
-              —
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
+      </li>
+    </ul>
     <div
       className="sc-iwsKbI eQdjUy"
     >

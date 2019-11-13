@@ -217,60 +217,51 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-hZSUBg VKktY"
+    className="sc-iQNlJl jxLqkS"
   >
     <div
-      className="sc-epnACN eSYYqU"
+      className="sc-hXRMBi jSmKMK"
     >
-      <div
-        className="sc-iQNlJl fuSGWJ"
+      <a
+        active={false}
+        className="sc-epnACN fHVTqh"
+        href="/project/1"
+        onClick={[Function]}
       >
-        <a
-          className="sc-bsbRJL gzXytr"
-          href="/project/1"
-          onClick={[Function]}
-        >
-          <span>
-            Settings
-          </span>
-        </a>
-      </div>
-      <div
-        className="sc-iQNlJl fuSGWJ"
+        <span>
+          Settings
+        </span>
+      </a>
+      <a
+        active={false}
+        className="sc-epnACN fHVTqh"
+        href="/project/1/datasource"
+        onClick={[Function]}
       >
-        <a
-          className="sc-bsbRJL gzXytr"
-          href="/project/1/datasource"
-          onClick={[Function]}
-        >
-          <span>
-            Sources
-          </span>
-        </a>
-      </div>
-      <div
-        className="sc-iQNlJl kHKALF"
+        <span>
+          Sources
+        </span>
+      </a>
+      <a
+        active={true}
+        className="sc-epnACN fuwwZh"
+        href="/project/1/user"
+        onClick={[Function]}
       >
-        <a
-          className="sc-bsbRJL gzXytr"
-          href="/project/1/user"
-          onClick={[Function]}
-        >
-          <span>
-            Users
-          </span>
-        </a>
-      </div>
+        <span>
+          Users
+        </span>
+      </a>
     </div>
   </div>
   <div
-    className="sc-hqyNC hFkHhT"
+    className="sc-hmzhuo kOWtqu"
   >
     <div
-      className="sc-jbKcbu fynHmL"
+      className="sc-frDJqD bWAjYR"
     >
       <h2
-        className="sc-dNLxif dEgtYS"
+        className="sc-kvZOFW evrHHD"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -286,7 +277,7 @@ exports[`Storyshots Project/UserList list 1`] = `
         </span>
       </h2>
       <h1
-        className="sc-jqCOkK iblYWW"
+        className="sc-hqyNC jLxrsP"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -305,7 +296,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </h1>
     </div>
     <div
-      className="sc-uJMKN jsQhVl"
+      className="sc-jbKcbu cWSlbe"
     >
       <button
         disabled={false}
@@ -348,8 +339,8 @@ exports[`Storyshots Project/UserList list 1`] = `
       </button>
     </div>
   </div>
-  <section
-    className="sc-eLExRp jJeQlq"
+  <div
+    className="sc-eLExRp glzeaQ"
   />
   <div
     className="sc-iwsKbI eQdjUy"
@@ -648,60 +639,51 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-hZSUBg VKktY"
+    className="sc-iQNlJl jxLqkS"
   >
     <div
-      className="sc-epnACN eSYYqU"
+      className="sc-hXRMBi jSmKMK"
     >
-      <div
-        className="sc-iQNlJl fuSGWJ"
+      <a
+        active={false}
+        className="sc-epnACN fHVTqh"
+        href="/project/1"
+        onClick={[Function]}
       >
-        <a
-          className="sc-bsbRJL gzXytr"
-          href="/project/1"
-          onClick={[Function]}
-        >
-          <span>
-            Settings
-          </span>
-        </a>
-      </div>
-      <div
-        className="sc-iQNlJl fuSGWJ"
+        <span>
+          Settings
+        </span>
+      </a>
+      <a
+        active={false}
+        className="sc-epnACN fHVTqh"
+        href="/project/1/datasource"
+        onClick={[Function]}
       >
-        <a
-          className="sc-bsbRJL gzXytr"
-          href="/project/1/datasource"
-          onClick={[Function]}
-        >
-          <span>
-            Sources
-          </span>
-        </a>
-      </div>
-      <div
-        className="sc-iQNlJl kHKALF"
+        <span>
+          Sources
+        </span>
+      </a>
+      <a
+        active={true}
+        className="sc-epnACN fuwwZh"
+        href="/project/1/user"
+        onClick={[Function]}
       >
-        <a
-          className="sc-bsbRJL gzXytr"
-          href="/project/1/user"
-          onClick={[Function]}
-        >
-          <span>
-            Users
-          </span>
-        </a>
-      </div>
+        <span>
+          Users
+        </span>
+      </a>
     </div>
   </div>
   <div
-    className="sc-hqyNC hFkHhT"
+    className="sc-hmzhuo kOWtqu"
   >
     <div
-      className="sc-jbKcbu fynHmL"
+      className="sc-frDJqD bWAjYR"
     >
       <h2
-        className="sc-dNLxif dEgtYS"
+        className="sc-kvZOFW evrHHD"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -717,7 +699,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </span>
       </h2>
       <h1
-        className="sc-jqCOkK iblYWW"
+        className="sc-hqyNC jLxrsP"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -736,7 +718,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </h1>
     </div>
     <div
-      className="sc-uJMKN jsQhVl"
+      className="sc-jbKcbu cWSlbe"
     >
       <button
         disabled={false}
@@ -779,11 +761,11 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </button>
     </div>
   </div>
-  <section
-    className="sc-eLExRp jJeQlq"
+  <div
+    className="sc-eLExRp glzeaQ"
   >
     <div
-      className="sc-lkqHmb kwfoNI"
+      className="sc-cbkKFq cfpGeN"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -857,7 +839,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </div>
     </div>
     <div
-      className="sc-lkqHmb kwfoNI"
+      className="sc-cbkKFq cfpGeN"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -931,7 +913,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </div>
     </div>
     <div
-      className="sc-lkqHmb kwfoNI"
+      className="sc-cbkKFq cfpGeN"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -1004,7 +986,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </button>
       </div>
     </div>
-  </section>
+  </div>
   <div
     className="sc-iwsKbI eQdjUy"
   >
