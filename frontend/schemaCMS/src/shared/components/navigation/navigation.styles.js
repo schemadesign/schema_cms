@@ -18,6 +18,8 @@ export const NavigationContent = styled.div`
 
   ${media.desktop`
     display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'flex')};
+    width: 490px;
+    margin: 0 auto;
   `}
 `;
 
