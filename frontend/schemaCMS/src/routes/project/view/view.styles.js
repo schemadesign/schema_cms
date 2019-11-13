@@ -136,13 +136,12 @@ export const CardValue = styled.span`
   display: block;
   font-size: 66px;
   line-height: 1.09;
-  letter-spacing: -3px;
+  font-weight: 500;
 
   ${media.desktop`
     padding-top: 40px;
     font-size: 108px;
     line-height: 1em;
-    letter-spacing: -4.91px;
   `}
 `;
 

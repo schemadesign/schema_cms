@@ -17,7 +17,6 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       fetchDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.fetchOne),
-      unmountDataWrangling: promisifyRoutine(DataWranglingScriptsRoutines.unmountOne),
     },
     dispatch
   ),

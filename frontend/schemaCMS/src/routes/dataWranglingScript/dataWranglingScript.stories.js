@@ -10,7 +10,6 @@ export const defaultProps = {
   // eslint-disable-next-line import/no-named-as-default-member
   dataWranglingScript: mockScripts[BLANK_CELLS],
   fetchDataWranglingScript: Function.prototype,
-  unmountDataWrangling: Function.prototype,
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },

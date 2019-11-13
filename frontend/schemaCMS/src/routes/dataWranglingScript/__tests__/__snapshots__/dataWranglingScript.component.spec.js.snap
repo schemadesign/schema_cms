@@ -141,66 +141,21 @@ exports[`DataWranglingScript: Component should render correctly with link to dat
     headerSubtitle="View step"
     headerTitle="Data Wrangling"
   />
-  <styled.form
-    name="dataWranglingForm"
-  >
-    <TextInput
-      checkOnlyErrors={false}
-      customInputStyles={
-        Object {
-          "overflow": "hidden",
-          "textOverflow": "ellipsis",
-          "whiteSpace": "nowrap",
-        }
-      }
-      disabled={true}
-      errors={Object {}}
-      fullWidth={true}
-      isEdit={false}
-      label="Description"
-      name="description"
-      onChange={[Function]}
-      placeholder="Description"
-      touched={Object {}}
-      value="local:case_conversion.py"
-    />
-    <SyntaxHighlighter
-      language="python"
-    >
-      
-      import pandas as pd
-  
-      df = pd.DataFrame({'Place': ['newyork', 'Washington', 'Newyork', 'WASHIngton'],
-                         'var1': ['XSD', 'wer', 'xyz', 'zyx']})
-      # Uppercase
-      df = df['var1'].str.upper()
-      # lowercase
-      df = df['var1'].str.lower()
-      # Title case
-      df = df['var1'].str.title()
-      # Sentence Case
-      df = df['var1'].str.capitalize()
-    
-    </SyntaxHighlighter>
-  </styled.form>
-  <NavigationContainer
-    hideOnDesktop={false}
-    right={false}
-  >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
-    />
-    <NextButton
-      loading={false}
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="OK"
-        id="dataWranglingscripts.view.ok"
-        values={Object {}}
-      />
-    </NextButton>
-  </NavigationContainer>
+  <Loader />
+</styled.div>
+`;
+
+exports[`DataWranglingScript: Component should render correctly with loader 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="View step"
+  />
+  <TopHeader
+    headerSubtitle="View step"
+    headerTitle="Data Wrangling"
+  />
+  <Loader />
 </styled.div>
 `;
