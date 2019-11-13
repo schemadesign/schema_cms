@@ -222,14 +222,30 @@ exports[`Storyshots View Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-iQKALj iQkCCX"
+    className="sc-ibxdXY btgiXA"
   >
     <div
-      className="sc-bwCtUz eJBWly"
+      className="sc-RefOD cnGLMF"
     >
-      <h1
-        className="sc-hrWEMg aourc"
+      <h2
+        className="sc-iQKALj ktCWvk"
         id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          Users
+        </span>
+      </h2>
+      <h1
+        className="sc-bwCtUz bUpmgO"
+        id="desktopHeaderSubtitle"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -242,28 +258,12 @@ exports[`Storyshots View Default 1`] = `
         }
       >
         <span>
-          Users
-        </span>
-      </h1>
-      <h2
-        className="sc-eTuwsz frYwhJ"
-        id="desktopHeaderSubtitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      >
-        <span>
           Profile
         </span>
-      </h2>
+      </h1>
     </div>
     <div
-      className="sc-gwVKww eWCHnX"
+      className="sc-hrWEMg fOsrtz"
     />
   </div>
 </div>

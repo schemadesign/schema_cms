@@ -5,7 +5,7 @@ exports[`User List: Component should render correctly 1`] = `
   <TopHeader
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Add User"
+        defaultMessage="Overview"
         id="userList.headerSubtitle"
         values={Object {}}
       />
@@ -18,11 +18,32 @@ exports[`User List: Component should render correctly 1`] = `
       />
     }
   />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="userList.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userList.headerTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      id="addUserBtn"
+      onClick={[Function]}
+    />
+  </ContextHeader>
   <UserList
     users={Array []}
   />
   <NavigationContainer
-    hideOnDesktop={false}
+    hideOnDesktop={true}
     right={false}
   >
     <BackButton
@@ -48,7 +69,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
   <TopHeader
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Add User"
+        defaultMessage="Overview"
         id="userList.headerSubtitle"
         values={Object {}}
       />
@@ -61,6 +82,27 @@ exports[`User List: Component should render correctly with users data 1`] = `
       />
     }
   />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="userList.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userList.headerTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      id="addUserBtn"
+      onClick={[Function]}
+    />
+  </ContextHeader>
   <UserList
     users={
       Array [
@@ -76,7 +118,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
     }
   />
   <NavigationContainer
-    hideOnDesktop={false}
+    hideOnDesktop={true}
     right={false}
   >
     <BackButton

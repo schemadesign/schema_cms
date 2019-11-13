@@ -44,7 +44,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
               }
             >
               <span>
-                Project
+                Users
               </span>
             </h2>
             <h1
@@ -145,7 +145,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
               }
             >
               <span>
-                Project
+                Users
               </span>
             </h2>
             <h1
@@ -218,6 +218,51 @@ exports[`Storyshots Project/AddUser Default 1`] = `
           </svg>
         </button>
       </div>
+    </div>
+    <div
+      className="sc-ibxdXY btgiXA"
+    >
+      <div
+        className="sc-RefOD cnGLMF"
+      >
+        <h2
+          className="sc-iQKALj ihRZon"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Users
+          </span>
+        </h2>
+        <h1
+          className="sc-bwCtUz ThhIA"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Invite Users
+          </span>
+        </h1>
+      </div>
+      <div
+        className="sc-hrWEMg fOsrtz"
+      />
     </div>
     <div
       className="sc-iwsKbI eQdjUy"
@@ -305,7 +350,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
               }
             >
               <span>
-                Project
+                Users
               </span>
             </h2>
             <h1
@@ -406,7 +451,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
               }
             >
               <span>
-                Project
+                Users
               </span>
             </h2>
             <h1
@@ -479,6 +524,51 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           </svg>
         </button>
       </div>
+    </div>
+    <div
+      className="sc-ibxdXY btgiXA"
+    >
+      <div
+        className="sc-RefOD cnGLMF"
+      >
+        <h2
+          className="sc-iQKALj ihRZon"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Users
+          </span>
+        </h2>
+        <h1
+          className="sc-bwCtUz ThhIA"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Invite Users
+          </span>
+        </h1>
+      </div>
+      <div
+        className="sc-hrWEMg fOsrtz"
+      />
     </div>
     <div
       className="sc-gzOgki cohkvO"

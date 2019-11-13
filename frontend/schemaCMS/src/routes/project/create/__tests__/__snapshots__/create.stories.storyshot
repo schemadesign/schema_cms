@@ -10,7 +10,7 @@ exports[`Storyshots Project/Create Default 1`] = `
   }
 >
   <div
-    className="sc-ibxdXY clQDsv"
+    className="sc-eTuwsz jtSbhi"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -212,14 +212,28 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-iQKALj iQkCCX"
+      className="sc-ibxdXY btgiXA"
     >
       <div
-        className="sc-bwCtUz eJBWly"
+        className="sc-RefOD cnGLMF"
       >
-        <h1
-          className="sc-hrWEMg hdZPci"
+        <h2
+          className="sc-iQKALj ihRZon"
           id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Create New Project
+        </h2>
+        <h1
+          className="sc-bwCtUz ThhIA"
+          id="desktopHeaderSubtitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -231,29 +245,15 @@ exports[`Storyshots Project/Create Default 1`] = `
             }
           }
         >
-          Create New Project
-        </h1>
-        <h2
-          className="sc-eTuwsz bkNIDk"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
           Project Info
-        </h2>
+        </h1>
       </div>
       <div
-        className="sc-gwVKww eWCHnX"
+        className="sc-hrWEMg fOsrtz"
       />
     </div>
     <form
-      className="sc-RefOD hoyLbU"
+      className="sc-gwVKww dAOEta"
       onSubmit={[Function]}
     >
       <div

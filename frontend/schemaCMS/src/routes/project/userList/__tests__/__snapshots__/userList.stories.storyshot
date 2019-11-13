@@ -255,14 +255,30 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-iQKALj iQkCCX"
+    className="sc-ibxdXY btgiXA"
   >
     <div
-      className="sc-bwCtUz eJBWly"
+      className="sc-RefOD cnGLMF"
     >
-      <h1
-        className="sc-hrWEMg hdZPci"
+      <h2
+        className="sc-iQKALj ihRZon"
         id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          Users
+        </span>
+      </h2>
+      <h1
+        className="sc-bwCtUz ThhIA"
+        id="desktopHeaderSubtitle"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -275,28 +291,12 @@ exports[`Storyshots Project/UserList list 1`] = `
         }
       >
         <span>
-          Users
-        </span>
-      </h1>
-      <h2
-        className="sc-eTuwsz bkNIDk"
-        id="desktopHeaderSubtitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      >
-        <span>
           Project users list
         </span>
-      </h2>
+      </h1>
     </div>
     <div
-      className="sc-gwVKww eWCHnX"
+      className="sc-hrWEMg fOsrtz"
     >
       <button
         disabled={false}
@@ -677,14 +677,30 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-iQKALj iQkCCX"
+    className="sc-ibxdXY btgiXA"
   >
     <div
-      className="sc-bwCtUz eJBWly"
+      className="sc-RefOD cnGLMF"
     >
-      <h1
-        className="sc-hrWEMg hdZPci"
+      <h2
+        className="sc-iQKALj ihRZon"
         id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          Users
+        </span>
+      </h2>
+      <h1
+        className="sc-bwCtUz ThhIA"
+        id="desktopHeaderSubtitle"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -697,28 +713,12 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         }
       >
         <span>
-          Users
-        </span>
-      </h1>
-      <h2
-        className="sc-eTuwsz bkNIDk"
-        id="desktopHeaderSubtitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      >
-        <span>
           Project users list
         </span>
-      </h2>
+      </h1>
     </div>
     <div
-      className="sc-gwVKww eWCHnX"
+      className="sc-hrWEMg fOsrtz"
     >
       <button
         disabled={false}
