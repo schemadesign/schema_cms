@@ -9,9 +9,7 @@ export const ListItem = styled(Card)`
     flex: 0 0 auto;
     width: calc(33% - 16.66px);
     max-width: 320px;
-    margin-right: 10px;
-    &:last-child {
-      margin-right: 0px;
-    }
+    min-height: 192px;
+    margin: 5px;
   `};
 `;

@@ -4,17 +4,9 @@ import { Button, Icons } from 'schemaUI';
 import { ifElse, is } from 'ramda';
 
 import { renderWhenTrue } from '../../utils/rendering';
-import {
-  Container,
-  Item,
-  Actions,
-  UserDetails,
-  UserFullName,
-  Email,
-  buttonIconStyles,
-  iconStyles,
-  cardStyles,
-} from './userList.styles';
+import { Actions, UserDetails, UserFullName, Email, buttonIconStyles, iconStyles, cardStyles } from './userList.styles';
+
+import { ListItem, ListContainer } from '../listComponents';
 
 const { CloseIcon } = Icons;
 
@@ -34,7 +26,7 @@ export class UserList extends PureComponent {
   ));
 
   renderListItem = (user, hasRemoving, index) => (
-    <Item key={index} customStyles={cardStyles}>
+    <ListItem key={index} customStyles={cardStyles}>
       <UserDetails>
         <UserFullName to={`${this.getUrl(this.props.projectId)}${user.id}`}>
           {user.firstName} {user.lastName}
@@ -42,13 +34,13 @@ export class UserList extends PureComponent {
         <Email>{user.email}</Email>
       </UserDetails>
       <Actions>{this.renderRemove(!!this.props.onRemoveUser, user)}</Actions>
-    </Item>
+    </ListItem>
   );
 
   render() {
     const { users, onRemoveUser } = this.props;
     const hasRemoving = !!onRemoveUser;
 
-    return <Container>{users.map((user, index) => this.renderListItem(user, hasRemoving, index))}</Container>;
+    return <ListContainer>{users.map((user, index) => this.renderListItem(user, hasRemoving, index))}</ListContainer>;
   }
 }
