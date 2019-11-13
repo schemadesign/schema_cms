@@ -111,7 +111,6 @@ export class View extends PureComponent {
     } = this.props;
     const activeStep = parseInt(step, 10);
     const headerConfig = this.getHeaderAndMenuConfig(activeStep);
-    const isInitalStep = activeStep === INITIAL_STEP;
 
     return (
       <Fragment>
