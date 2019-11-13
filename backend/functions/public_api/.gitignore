@@ -21,3 +21,6 @@ var/
 
 # Serverless directories
 .serverless
+
+# Shared packages injected by serverless-package-external plugin
+common/*
