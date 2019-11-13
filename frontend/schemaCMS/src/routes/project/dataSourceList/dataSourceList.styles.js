@@ -4,41 +4,11 @@ import { Link } from 'react-router-dom';
 import { styleWhenTrue } from '../../../shared/utils/rendering';
 import { media } from '../../../theme/media';
 
-const MARGIN = '16.66px';
-
 export const Container = styled.div``;
-
-export const DataSourceItem = styled.li`
-  margin-top: 25px;
-  width: 100%;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  ${media.desktop`
-    flex: 0 0 auto;
-    width: calc(33% - ${MARGIN});
-    margin: 0 0 20px 20px;
-    background: ${({ theme: { card } }) => card.background};
-  `}
-`;
 
 export const Description = styled.div`
   margin: 7px 0 14px;
   cursor: pointer;
-`;
-
-export const DataSourceListWrapper = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin-top: 24px;
-
-  ${media.desktop`
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -20px;
-  `}
 `;
 
 export const DataSourceTitle = styled(Typography.H1)`
