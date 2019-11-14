@@ -1,0 +1,28 @@
+{
+  "id": 9,
+  "datasource": {
+    "id": 29,
+    "name": "Test",
+    "file": "29/uploads/images.csv",
+    "items": 0,
+    "result": ""
+  },
+  "source_file_path": "29/uploads/images.csv",
+  "source_file_version": "",
+  "steps": [
+    {
+      "id": 5,
+      "body": "image_scrapping(df, current_step=current_step)",
+      "script": {
+        "id": 23,
+        "name": "Image Scrapping"
+      },
+      "exec_order": 0,
+      "options": {
+        "columns": [
+          "imageUrl"
+        ]
+      }
+    }
+  ]
+}

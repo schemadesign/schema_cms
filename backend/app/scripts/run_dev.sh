@@ -33,21 +33,31 @@ install_db_secret
     echo "SQS Queue worker NOT created"
 }
 
+# ECS task with lambdas worker callbacks was replaced by single lambda worker
 # Worker lambdas installation
+#{
+#    create_worker_success_lambda &&
+#    echo "Worker success lambda function created"
+#} || {
+#    echo "Worker success lambda function NOT created"
+#}
+#
+#{
+#    create_worker_failure_lambda &&
+#    echo "Worker failure lambda function created"
+#} || {
+#    echo "Worker failure lambda function NOT created"
+#}
 
-{
-    create_worker_success_lambda &&
-    echo "Worker success lambda function created"
-} || {
-    echo "Worker success lambda function NOT created"
-}
+#WORKER_SUCCESS_ARN=$(get_worker_success_lambda_arn)
 
-{
-    create_worker_failure_lambda &&
-    echo "Worker failure lambda function created"
-} || {
-    echo "Worker failure lambda function NOT created"
-}
+#{
+#  wait_for_stepfunctions &&
+#  create_state_machine "$WORKER_STATE_MACHINE_NAME" "$WORKER_SUCCESS_ARN" &&
+#  echo "Worker state machine created"
+#} || {
+#  echo "Worker state machine NOT created"
+#}
 
 {
     create_worker_lambda &&
@@ -62,16 +72,6 @@ install_db_secret
 #} || {
 #    echo "Public-API function NOT created"
 #}
-
-WORKER_SUCCESS_ARN=$(get_worker_success_lambda_arn)
-
-{
-  wait_for_stepfunctions &&
-  create_state_machine "$WORKER_STATE_MACHINE_NAME" "$WORKER_SUCCESS_ARN" &&
-  echo "Worker state machine created"
-} || {
-  echo "Worker state machine NOT created"
-}
 
 echo "LocalStack fixtures installed"
 

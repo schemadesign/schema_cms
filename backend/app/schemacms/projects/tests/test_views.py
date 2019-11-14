@@ -576,6 +576,18 @@ class TestDataSourceJobCreate:
         job = projects_models.DataSourceJob.objects.all().get(pk=response.data["id"])
         schedule_worker_with_mock.assert_called_with(job, data_source.file.size)
 
+    def test_step_with_options(self, api_client, admin, data_source_factory, script_factory):
+        data_source = data_source_factory(created_by=admin)
+        script_1 = script_factory(is_predefined=True, created_by=admin, datasource=None)
+        job_data = dict(steps=[{"script": script_1.id, "exec_order": 0, "options": {"columns": ["A", "B"]}}])
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(data_source.id), data=job_data, format="json")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        step = projects_models.DataSourceJobStep.objects.get(datasource_job_id=response.data["id"])
+        assert step.options == job_data["steps"][0]["options"]
+
     @staticmethod
     def get_url(pk):
         return reverse("projects:datasource-job", kwargs=dict(pk=pk))

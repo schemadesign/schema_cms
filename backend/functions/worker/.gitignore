@@ -24,3 +24,4 @@ var/
 # Serverless directories
 .serverless
 common/*
+sqs_message_mock.example.json
