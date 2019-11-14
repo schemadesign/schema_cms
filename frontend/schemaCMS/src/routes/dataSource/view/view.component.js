@@ -48,6 +48,7 @@ export class View extends PureComponent {
         step: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
+    onDataSourceChange: PropTypes.func.isRequired,
   };
 
   getHeaderSubtitle = cond([

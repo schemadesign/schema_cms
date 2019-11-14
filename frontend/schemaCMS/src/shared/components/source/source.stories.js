@@ -11,7 +11,7 @@ export const defaultProps = {
     jobs: [],
   },
   theme: Theme.dark,
-  updateDataSource: Function.prototype,
+  onDataSourceChange: Function.prototype,
   removeDataSource: Function.prototype,
   isAnyJobProcessing: false,
   history: {

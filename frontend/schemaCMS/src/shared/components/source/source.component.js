@@ -44,8 +44,6 @@ export class SourceComponent extends PureComponent {
     dataSource: PropTypes.object,
     intl: PropTypes.object.isRequired,
     isAnyJobProcessing: PropTypes.bool,
-    updateDataSource: PropTypes.func,
-    createDataSource: PropTypes.func,
     removeDataSource: PropTypes.func,
     theme: PropTypes.object.isRequired,
     match: PropTypes.shape({
@@ -55,6 +53,7 @@ export class SourceComponent extends PureComponent {
         step: PropTypes.string,
       }).isRequired,
     }).isRequired,
+    onDataSourceChange: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -89,12 +88,11 @@ export class SourceComponent extends PureComponent {
   };
 
   handleSubmit = async (requestData, { setErrors }) => {
-    const { updateDataSource, createDataSource, match } = this.props;
+    const { onDataSourceChange, match } = this.props;
     const { dataSourceId, projectId, step } = match.params;
 
     try {
-      const submitFunc = updateDataSource || createDataSource;
-      await submitFunc({ requestData, dataSourceId, step, projectId });
+      await onDataSourceChange({ requestData, dataSourceId, step, projectId });
     } catch (errors) {
       const { formatMessage } = this.props.intl;
       const errorMessages = errorMessageParser({ errors, messages, formatMessage });

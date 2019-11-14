@@ -75,6 +75,7 @@ exports[`View: Component should render draft 1`] = `
         },
       }
     }
+    onDataSourceChange={[Function]}
     previewData={Object {}}
     removeDataSource={[Function]}
     sendUpdatedDataWranglingScript={[Function]}
@@ -139,6 +140,7 @@ exports[`View: Component should render second step 1`] = `
         },
       }
     }
+    onDataSourceChange={[Function]}
     previewData={Object {}}
     removeDataSource={[Function]}
     sendUpdatedDataWranglingScript={[Function]}
@@ -202,6 +204,7 @@ exports[`View: Component should render source step 1`] = `
         },
       }
     }
+    onDataSourceChange={[Function]}
     previewData={Object {}}
     removeDataSource={[Function]}
     sendUpdatedDataWranglingScript={[Function]}

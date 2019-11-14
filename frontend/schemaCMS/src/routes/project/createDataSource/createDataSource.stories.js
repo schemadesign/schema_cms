@@ -6,7 +6,7 @@ import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
-  createDataSource: Function.prototype,
+  onDataSourceChange: Function.prototype,
   match: { params: {} },
   history: { push: Function.prototype },
 };

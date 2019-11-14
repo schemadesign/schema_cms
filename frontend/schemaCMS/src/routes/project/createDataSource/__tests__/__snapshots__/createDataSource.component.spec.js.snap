@@ -6,20 +6,19 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="dataSource.list.subTitle"
+        id="project.createDataSource.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Data Sources"
-        id="dataSource.list.title"
+        id="project.createDataSource.title"
         values={Object {}}
       />
     }
   />
   <WithTheme(SourceComponent)
-    createDataSource={[Function]}
     history={
       Object {
         "push": [Function],
@@ -35,6 +34,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
         "params": Object {},
       }
     }
+    onDataSourceChange={[Function]}
   />
 </styled.div>
 `;

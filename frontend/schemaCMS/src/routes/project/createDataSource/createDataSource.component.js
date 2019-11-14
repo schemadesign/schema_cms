@@ -9,7 +9,6 @@ import messages from './createDataSource.messages';
 
 export class CreateDataSource extends PureComponent {
   static propTypes = {
-    createDataSource: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.object.isRequired,
@@ -17,6 +16,7 @@ export class CreateDataSource extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }).isRequired,
+    onDataSourceChange: PropTypes.func.isRequired,
   };
 
   getHeaderAndMenuConfig = () => ({
