@@ -10,7 +10,7 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-cQFLBn jkOaFm"
+    className="sc-gojNiO jknDzv"
   >
     <div
       className="sc-kjoXOD kNHzWn"
@@ -387,7 +387,7 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-cQFLBn jkOaFm"
+    className="sc-gojNiO jknDzv"
   >
     <div
       className="sc-kjoXOD kNHzWn"

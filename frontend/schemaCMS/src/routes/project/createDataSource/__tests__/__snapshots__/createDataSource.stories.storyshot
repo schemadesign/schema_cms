@@ -10,10 +10,10 @@ exports[`Storyshots CreateDataSource Default 1`] = `
   }
 >
   <div
-    className="sc-hXRMBi kDnmWm"
+    className="sc-epnACN fliJkQ"
   >
     <div
-      className="sc-gisBJw kiKCgt"
+      className="sc-kjoXOD kNHzWn"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
       >
         <div>
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots CreateDataSource Default 1`] = `
         }
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className="sc-TOsTZ kjYrri"
         >
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots CreateDataSource Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-TOsTZ iUQrOT"
+          className="sc-kgAjT gYPKSC"
         >
           <ul
-            className="sc-kgAjT sc-cJSrbW doKZeW"
+            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
           />
           <ul
-            className="sc-kgAjT sc-ksYbfQ iFxI"
+            className="sc-cJSrbW sc-hmzhuo ieDQGb"
           />
         </div>
         <button
@@ -428,6 +428,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
             className="sc-gZMcBi jSdIIC"
           >
             <button
+              className="sc-VigVT dNFsjT"
               disabled={false}
               onClick={[Function]}
               style={
@@ -441,19 +442,19 @@ exports[`Storyshots CreateDataSource Default 1`] = `
                   "fill": "#FFF",
                   "fontSize": "18px",
                   "margin": "0",
-                  "marginRight": 5,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "width": "calc(50% - 5px)",
                 }
               }
+              type="back"
             >
               <span>
                 Cancel
               </span>
             </button>
             <button
+              className="sc-VigVT eTfsKS"
               disabled={true}
               onClick={[Function]}
               style={
@@ -467,13 +468,12 @@ exports[`Storyshots CreateDataSource Default 1`] = `
                   "fill": "#FFF",
                   "fontSize": "18px",
                   "margin": "0",
-                  "marginLeft": 5,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "width": "calc(50% - 5px)",
                 }
               }
+              type="next"
             >
               <span>
                 Next

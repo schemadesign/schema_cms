@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
   }
 >
   <div
-    className="sc-laTMn keRDxt"
+    className="sc-bHwgHz fxSuVY"
   >
     <form
-      className="sc-hGoxap irFVct"
+      className="sc-krDsej kKJBHx"
       onSubmit={[Function]}
     >
       <div
@@ -229,7 +229,6 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             Role
           </label>
           <input
-            disabled={true}
             id="role"
             name="role"
             onChange={[Function]}
