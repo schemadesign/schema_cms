@@ -433,9 +433,10 @@ exports[`Storyshots Settings Default 1`] = `
           className="sc-gqjmRU jrxYk"
         >
           <div
-            className="sc-gZMcBi brDpsb"
+            className="sc-gZMcBi feSOVY"
           >
             <button
+              class="nav-btn nav-btn--next"
               disabled={true}
               style={
                 Object {
@@ -447,12 +448,10 @@ exports[`Storyshots Settings Default 1`] = `
                   "display": "inline-block",
                   "fill": "#FFF",
                   "fontSize": "18px",
-                  "margin": "0",
-                  "marginLeft": 5,
+                  "margin": null,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "width": "calc(50% - 5px)",
                 }
               }
               type="submit"

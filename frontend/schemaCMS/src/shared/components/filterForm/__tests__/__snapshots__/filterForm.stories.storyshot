@@ -478,9 +478,10 @@ exports[`Storyshots FilterForm Create form 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="sc-gZMcBi kOsHco"
         >
           <button
+            class="nav-btn nav-btn--back"
             disabled={false}
             onClick={[Function]}
             style={
@@ -493,12 +494,10 @@ exports[`Storyshots FilterForm Create form 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
+                "margin": null,
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
-                "width": "calc(50% - 5px)",
               }
             }
             type="button"
@@ -508,6 +507,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
             </span>
           </button>
           <button
+            class="nav-btn nav-btn--next"
             disabled={true}
             style={
               Object {
@@ -519,12 +519,10 @@ exports[`Storyshots FilterForm Create form 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": "0",
-                "marginLeft": 5,
+                "margin": null,
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
-                "width": "calc(50% - 5px)",
               }
             }
             type="submit"
@@ -1018,9 +1016,10 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="sc-gZMcBi kOsHco"
         >
           <button
+            class="nav-btn nav-btn--back"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1033,12 +1032,10 @@ exports[`Storyshots FilterForm Edit form 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
+                "margin": null,
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
-                "width": "calc(50% - 5px)",
               }
             }
             type="button"
@@ -1048,6 +1045,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
             </span>
           </button>
           <button
+            class="nav-btn nav-btn--next"
             disabled={true}
             style={
               Object {
@@ -1059,12 +1057,10 @@ exports[`Storyshots FilterForm Edit form 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": "0",
-                "marginLeft": 5,
+                "margin": null,
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
-                "width": "calc(50% - 5px)",
               }
             }
             type="submit"

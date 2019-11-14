@@ -1636,7 +1636,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-htoDjs",
                                         "isStatic": false,
-                                        "lastClassName": "bOcMaT",
+                                        "lastClassName": "cjBZpz",
                                         "rules": Array [
                                           "
   display: flex;
@@ -1646,6 +1646,24 @@ exports[`FilterForm: Component should render create form 1`] = `
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
+
+  .nav-btn {
+    width: calc(50% - ",
+                                          "5",
+                                          "px);
+  }
+
+  .nav-btn--back {
+    margin-right: ",
+                                          "5",
+                                          "px;
+  }
+
+  .nav-btn--next {
+    margin-left: ",
+                                          "5",
+                                          "px;
+  }
 
   ",
                                           "
@@ -1657,6 +1675,18 @@ exports[`FilterForm: Component should render create form 1`] = `
     display: ",
                                           [Function],
                                           ";
+
+      .nav-btn {
+        width: 23.5%;
+      }
+
+      .nav-btn--back {
+        margin-left: 25.5%;
+      }
+
+      .nav-btn--next {
+        margin-right: 25.5%;
+      }
   ",
                                           "
     }
@@ -1680,7 +1710,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                   right={false}
                                 >
                                   <div
-                                    className="sc-htoDjs bOcMaT"
+                                    className="sc-htoDjs cjBZpz"
                                   >
                                     <BackButton
                                       disabled={false}
@@ -1688,10 +1718,10 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       type="button"
                                     >
                                       <Component
+                                        class="nav-btn nav-btn--back"
                                         customStyles={
                                           Object {
-                                            "marginRight": 5,
-                                            "width": "calc(50% - 5px)",
+                                            "margin": null,
                                           }
                                         }
                                         disabled={false}
@@ -1699,10 +1729,10 @@ exports[`FilterForm: Component should render create form 1`] = `
                                         type="button"
                                       >
                                         <ButtonComponent
+                                          class="nav-btn nav-btn--back"
                                           customStyles={
                                             Object {
-                                              "marginRight": 5,
-                                              "width": "calc(50% - 5px)",
+                                              "margin": null,
                                             }
                                           }
                                           disabled={false}
@@ -1711,6 +1741,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                           type="button"
                                         >
                                           <button
+                                            class="nav-btn nav-btn--back"
                                             disabled={false}
                                             onClick={[Function]}
                                             style={
@@ -1723,12 +1754,10 @@ exports[`FilterForm: Component should render create form 1`] = `
                                                 "display": "inline-block",
                                                 "fill": "#FFF",
                                                 "fontSize": "18px",
-                                                "margin": "0",
-                                                "marginRight": 5,
+                                                "margin": null,
                                                 "minHeight": "48px",
                                                 "outline": "none",
                                                 "padding": "0",
-                                                "width": "calc(50% - 5px)",
                                               }
                                             }
                                             type="button"
@@ -1752,10 +1781,10 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       type="submit"
                                     >
                                       <Component
+                                        class="nav-btn nav-btn--next"
                                         customStyles={
                                           Object {
-                                            "marginLeft": 5,
-                                            "width": "calc(50% - 5px)",
+                                            "margin": null,
                                           }
                                         }
                                         disabled={true}
@@ -1763,10 +1792,10 @@ exports[`FilterForm: Component should render create form 1`] = `
                                         type="submit"
                                       >
                                         <ButtonComponent
+                                          class="nav-btn nav-btn--next"
                                           customStyles={
                                             Object {
-                                              "marginLeft": 5,
-                                              "width": "calc(50% - 5px)",
+                                              "margin": null,
                                             }
                                           }
                                           disabled={true}
@@ -1774,6 +1803,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                           type="submit"
                                         >
                                           <button
+                                            class="nav-btn nav-btn--next"
                                             disabled={true}
                                             style={
                                               Object {
@@ -1785,12 +1815,10 @@ exports[`FilterForm: Component should render create form 1`] = `
                                                 "display": "inline-block",
                                                 "fill": "#FFF",
                                                 "fontSize": "18px",
-                                                "margin": "0",
-                                                "marginLeft": 5,
+                                                "margin": null,
                                                 "minHeight": "48px",
                                                 "outline": "none",
                                                 "padding": "0",
-                                                "width": "calc(50% - 5px)",
                                               }
                                             }
                                             type="submit"
@@ -3592,7 +3620,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-htoDjs",
                                         "isStatic": false,
-                                        "lastClassName": "bOcMaT",
+                                        "lastClassName": "cjBZpz",
                                         "rules": Array [
                                           "
   display: flex;
@@ -3602,6 +3630,24 @@ exports[`FilterForm: Component should render edit form 1`] = `
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
+
+  .nav-btn {
+    width: calc(50% - ",
+                                          "5",
+                                          "px);
+  }
+
+  .nav-btn--back {
+    margin-right: ",
+                                          "5",
+                                          "px;
+  }
+
+  .nav-btn--next {
+    margin-left: ",
+                                          "5",
+                                          "px;
+  }
 
   ",
                                           "
@@ -3613,6 +3659,18 @@ exports[`FilterForm: Component should render edit form 1`] = `
     display: ",
                                           [Function],
                                           ";
+
+      .nav-btn {
+        width: 23.5%;
+      }
+
+      .nav-btn--back {
+        margin-left: 25.5%;
+      }
+
+      .nav-btn--next {
+        margin-right: 25.5%;
+      }
   ",
                                           "
     }
@@ -3636,7 +3694,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                   right={false}
                                 >
                                   <div
-                                    className="sc-htoDjs bOcMaT"
+                                    className="sc-htoDjs cjBZpz"
                                   >
                                     <BackButton
                                       disabled={false}
@@ -3644,10 +3702,10 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       type="button"
                                     >
                                       <Component
+                                        class="nav-btn nav-btn--back"
                                         customStyles={
                                           Object {
-                                            "marginRight": 5,
-                                            "width": "calc(50% - 5px)",
+                                            "margin": null,
                                           }
                                         }
                                         disabled={false}
@@ -3655,10 +3713,10 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                         type="button"
                                       >
                                         <ButtonComponent
+                                          class="nav-btn nav-btn--back"
                                           customStyles={
                                             Object {
-                                              "marginRight": 5,
-                                              "width": "calc(50% - 5px)",
+                                              "margin": null,
                                             }
                                           }
                                           disabled={false}
@@ -3667,6 +3725,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                           type="button"
                                         >
                                           <button
+                                            class="nav-btn nav-btn--back"
                                             disabled={false}
                                             onClick={[Function]}
                                             style={
@@ -3679,12 +3738,10 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                                 "display": "inline-block",
                                                 "fill": "#FFF",
                                                 "fontSize": "18px",
-                                                "margin": "0",
-                                                "marginRight": 5,
+                                                "margin": null,
                                                 "minHeight": "48px",
                                                 "outline": "none",
                                                 "padding": "0",
-                                                "width": "calc(50% - 5px)",
                                               }
                                             }
                                             type="button"
@@ -3708,10 +3765,10 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       type="submit"
                                     >
                                       <Component
+                                        class="nav-btn nav-btn--next"
                                         customStyles={
                                           Object {
-                                            "marginLeft": 5,
-                                            "width": "calc(50% - 5px)",
+                                            "margin": null,
                                           }
                                         }
                                         disabled={true}
@@ -3719,10 +3776,10 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                         type="submit"
                                       >
                                         <ButtonComponent
+                                          class="nav-btn nav-btn--next"
                                           customStyles={
                                             Object {
-                                              "marginLeft": 5,
-                                              "width": "calc(50% - 5px)",
+                                              "margin": null,
                                             }
                                           }
                                           disabled={true}
@@ -3730,6 +3787,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                           type="submit"
                                         >
                                           <button
+                                            class="nav-btn nav-btn--next"
                                             disabled={true}
                                             style={
                                               Object {
@@ -3741,12 +3799,10 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                                 "display": "inline-block",
                                                 "fill": "#FFF",
                                                 "fontSize": "18px",
-                                                "margin": "0",
-                                                "marginLeft": 5,
+                                                "margin": null,
                                                 "minHeight": "48px",
                                                 "outline": "none",
                                                 "padding": "0",
-                                                "width": "calc(50% - 5px)",
                                               }
                                             }
                                             type="submit"

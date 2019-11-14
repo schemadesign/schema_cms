@@ -16,10 +16,10 @@ exports[`Navigation: Component should render BackArrowButton 1`] = `
 
 exports[`Navigation: Component should render BackButton 1`] = `
 <Component
+  class="nav-btn nav-btn--back"
   customStyles={
     Object {
-      "marginRight": 5,
-      "width": "calc(50% - 5px)",
+      "margin": null,
     }
   }
   disabled={false}
@@ -35,10 +35,10 @@ exports[`Navigation: Component should render BackButton 1`] = `
 
 exports[`Navigation: Component should render BackButton with custom children 1`] = `
 <Component
+  class="nav-btn nav-btn--back"
   customStyles={
     Object {
-      "marginRight": 5,
-      "width": "calc(50% - 5px)",
+      "margin": null,
     }
   }
   disabled={false}
@@ -69,10 +69,10 @@ exports[`Navigation: Component should render NavigationContainer 1`] = `
 
 exports[`Navigation: Component should render NextButton 1`] = `
 <Component
+  class="nav-btn nav-btn--next"
   customStyles={
     Object {
-      "marginLeft": 5,
-      "width": "calc(50% - 5px)",
+      "margin": null,
     }
   }
   inverse={true}
@@ -92,10 +92,10 @@ exports[`Navigation: Component should render NextButton 1`] = `
 
 exports[`Navigation: Component should render NextButton with custom children 1`] = `
 <Component
+  class="nav-btn nav-btn--next"
   customStyles={
     Object {
-      "marginLeft": 5,
-      "width": "calc(50% - 5px)",
+      "margin": null,
     }
   }
   inverse={true}

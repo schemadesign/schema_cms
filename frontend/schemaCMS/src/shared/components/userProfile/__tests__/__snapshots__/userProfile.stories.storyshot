@@ -264,9 +264,10 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
           className="sc-gqjmRU fIKSOC"
         >
           <div
-            className="sc-gZMcBi brDpsb"
+            className="sc-gZMcBi feSOVY"
           >
             <button
+              class="nav-btn nav-btn--back"
               disabled={false}
               onClick={[Function]}
               style={
@@ -279,12 +280,10 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
                   "display": "inline-block",
                   "fill": "#FFF",
                   "fontSize": "18px",
-                  "margin": "0",
-                  "marginRight": 5,
+                  "margin": null,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "width": "calc(50% - 5px)",
                 }
               }
               type="button"
@@ -294,6 +293,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
               </span>
             </button>
             <button
+              class="nav-btn nav-btn--next"
               disabled={false}
               style={
                 Object {
@@ -305,12 +305,10 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
                   "display": "inline-block",
                   "fill": "#FFF",
                   "fontSize": "18px",
-                  "margin": "0",
-                  "marginLeft": 5,
+                  "margin": null,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "width": "calc(50% - 5px)",
                 }
               }
               type="submit"

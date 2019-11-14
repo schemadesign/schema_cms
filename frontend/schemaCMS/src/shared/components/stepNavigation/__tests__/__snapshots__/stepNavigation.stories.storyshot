@@ -16,9 +16,10 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="sc-gZMcBi kOsHco"
       >
         <button
+          class="nav-btn nav-btn--back"
           disabled={false}
           onClick={[Function]}
           style={
@@ -31,12 +32,10 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -45,6 +44,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
           </span>
         </button>
         <button
+          class="nav-btn nav-btn--next"
           disabled={false}
           onClick={[Function]}
           style={
@@ -57,12 +57,10 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginLeft": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -206,9 +204,10 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="sc-gZMcBi kOsHco"
       >
         <button
+          class="nav-btn nav-btn--back"
           disabled={true}
           onClick={[Function]}
           style={
@@ -221,12 +220,10 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -235,6 +232,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
           </span>
         </button>
         <button
+          class="nav-btn nav-btn--next"
           disabled={false}
           onClick={[Function]}
           style={
@@ -247,12 +245,10 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginLeft": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -396,9 +392,10 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="sc-gZMcBi kOsHco"
       >
         <button
+          class="nav-btn nav-btn--back"
           disabled={false}
           onClick={[Function]}
           style={
@@ -411,12 +408,10 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -425,6 +420,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
           </span>
         </button>
         <button
+          class="nav-btn nav-btn--next"
           disabled={true}
           onClick={[Function]}
           style={
@@ -437,12 +433,10 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginLeft": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -586,9 +580,10 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="sc-gZMcBi kOsHco"
       >
         <button
+          class="nav-btn nav-btn--back"
           disabled={true}
           onClick={[Function]}
           style={
@@ -601,12 +596,10 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -615,6 +608,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
           </span>
         </button>
         <button
+          class="nav-btn nav-btn--next"
           disabled={true}
           onClick={[Function]}
           style={
@@ -627,12 +621,10 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginLeft": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -776,9 +768,10 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="sc-gZMcBi kOsHco"
       >
         <button
+          class="nav-btn nav-btn--back"
           disabled={false}
           onClick={[Function]}
           style={
@@ -791,12 +784,10 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -805,6 +796,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
           </span>
         </button>
         <button
+          class="nav-btn nav-btn--next"
           disabled={false}
           onClick={[Function]}
           style={
@@ -817,12 +809,10 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginLeft": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >

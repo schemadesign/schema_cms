@@ -349,9 +349,10 @@ exports[`Storyshots Project/UserList list 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jZympT"
+        className="sc-gZMcBi ehsPva"
       >
         <button
+          class="nav-btn nav-btn--back"
           disabled={false}
           onClick={[Function]}
           style={
@@ -364,12 +365,10 @@ exports[`Storyshots Project/UserList list 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -994,9 +993,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi jZympT"
+        className="sc-gZMcBi ehsPva"
       >
         <button
+          class="nav-btn nav-btn--back"
           disabled={false}
           onClick={[Function]}
           style={
@@ -1009,12 +1009,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
-              "margin": "0",
-              "marginRight": 5,
+              "margin": null,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
         >
