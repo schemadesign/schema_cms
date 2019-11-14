@@ -63,7 +63,7 @@ def process_job(job):
 
         logger.info(f"Step {step.id} done")
 
-    result_file_name = job.result_file_name
+    result_file_name = f"{job.datasource.id}/outputs/job_{job.id}_result.csv"
     write_dataframe_to_csv_on_s3(df, result_file_name.lstrip("/"))
     api.schemacms_api.update_job_state(
         job_pk=job.id,
