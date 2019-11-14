@@ -10,14 +10,28 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
   }
 >
   <div
-    className="sc-iQKALj iQkCCX"
+    className="sc-hqyNC hFkHhT"
   >
     <div
-      className="sc-bwCtUz eJBWly"
+      className="sc-jbKcbu fynHmL"
     >
-      <h1
-        className="sc-hrWEMg hdZPci"
+      <h2
+        className="sc-dNLxif dEgtYS"
         id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Projects
+      </h2>
+      <h1
+        className="sc-jqCOkK iblYWW"
+        id="desktopHeaderSubtitle"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -29,25 +43,11 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
           }
         }
       >
-        Projects
-      </h1>
-      <h2
-        className="sc-eTuwsz bkNIDk"
-        id="desktopHeaderSubtitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      >
         Overviews
-      </h2>
+      </h1>
     </div>
     <div
-      className="sc-gwVKww eWCHnX"
+      className="sc-uJMKN jsQhVl"
     />
   </div>
 </div>
@@ -63,14 +63,28 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
   }
 >
   <div
-    className="sc-iQKALj iQkCCX"
+    className="sc-hqyNC hFkHhT"
   >
     <div
-      className="sc-bwCtUz eJBWly"
+      className="sc-jbKcbu fynHmL"
     >
-      <h1
-        className="sc-hrWEMg hdZPci"
+      <h2
+        className="sc-dNLxif dEgtYS"
         id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        Projects
+      </h2>
+      <h1
+        className="sc-jqCOkK iblYWW"
+        id="desktopHeaderSubtitle"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -82,25 +96,11 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
           }
         }
       >
-        Projects
-      </h1>
-      <h2
-        className="sc-eTuwsz bkNIDk"
-        id="desktopHeaderSubtitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      >
         Overviews
-      </h2>
+      </h1>
     </div>
     <div
-      className="sc-gwVKww eWCHnX"
+      className="sc-uJMKN jsQhVl"
     >
       <button
         disabled={false}
@@ -154,14 +154,32 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
   }
 >
   <div
-    className="sc-iQKALj iQkCCX"
+    className="sc-hqyNC hFkHhT"
   >
     <div
-      className="sc-bwCtUz eJBWly"
+      className="sc-jbKcbu fynHmL"
     >
-      <h1
-        className="sc-hrWEMg hdZPci"
+      <h2
+        className="sc-dNLxif dEgtYS"
         id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        
+  Mauris egestas arcu nec diam consectetur vulputate.
+  Mauris rhoncus a massa in ultricies. In vel accumsan tortor.
+  Donec suscipit commodo enim. Suspendisse nibh odio
+
+      </h2>
+      <h1
+        className="sc-jqCOkK iblYWW"
+        id="desktopHeaderSubtitle"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -179,27 +197,9 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
   Donec suscipit commodo enim. Suspendisse nibh odio
 
       </h1>
-      <h2
-        className="sc-eTuwsz bkNIDk"
-        id="desktopHeaderSubtitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      >
-        
-  Mauris egestas arcu nec diam consectetur vulputate.
-  Mauris rhoncus a massa in ultricies. In vel accumsan tortor.
-  Donec suscipit commodo enim. Suspendisse nibh odio
-
-      </h2>
     </div>
     <div
-      className="sc-gwVKww eWCHnX"
+      className="sc-uJMKN jsQhVl"
     >
       <button
         disabled={false}

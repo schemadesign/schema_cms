@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, Tab } from './tabs.styles';
+import { Container, Tab, TabContent } from './tabs.styles';
 
 export class Tabs extends PureComponent {
   static propTypes = {
@@ -9,8 +9,8 @@ export class Tabs extends PureComponent {
   };
 
   renderTab = ({ to, active, content }, index) => (
-    <Tab to={to} active={active} key={index}>
-      {content}
+    <Tab active={active} key={index}>
+      <TabContent to={to}>{content}</TabContent>
     </Tab>
   );
 

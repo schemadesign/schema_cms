@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   headerTitle: {
     id: 'project.addUser.headerTitle',
-    defaultMessage: 'Project',
+    defaultMessage: 'Users',
   },
   headerSubtitle: {
     id: 'project.addUser.headerSubtitle',

@@ -10,41 +10,50 @@ exports[`Storyshots ProjectTabs Default 1`] = `
   }
 >
   <div
-    className="sc-iQNlJl jxLqkS"
+    className="sc-bsbRJL kfmymT"
   >
     <div
       className="sc-hXRMBi jSmKMK"
     >
-      <a
-        active={true}
-        className="sc-epnACN fuwwZh"
-        href="/project/1"
-        onClick={[Function]}
+      <div
+        className="sc-epnACN cAXADU"
       >
-        <span>
-          Settings
-        </span>
-      </a>
-      <a
-        active={false}
-        className="sc-epnACN fHVTqh"
-        href="/project/1/datasource"
-        onClick={[Function]}
+        <a
+          className="sc-iQNlJl dondii"
+          href="/project/1"
+          onClick={[Function]}
+        >
+          <span>
+            Settings
+          </span>
+        </a>
+      </div>
+      <div
+        className="sc-epnACN hciwnb"
       >
-        <span>
-          Sources
-        </span>
-      </a>
-      <a
-        active={false}
-        className="sc-epnACN fHVTqh"
-        href="/project/1/user"
-        onClick={[Function]}
+        <a
+          className="sc-iQNlJl dondii"
+          href="/project/1/datasource"
+          onClick={[Function]}
+        >
+          <span>
+            Sources
+          </span>
+        </a>
+      </div>
+      <div
+        className="sc-epnACN hciwnb"
       >
-        <span>
-          Users
-        </span>
-      </a>
+        <a
+          className="sc-iQNlJl dondii"
+          href="/project/1/user"
+          onClick={[Function]}
+        >
+          <span>
+            Users
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 </div>

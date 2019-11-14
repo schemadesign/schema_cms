@@ -14,6 +14,10 @@ exports[`View: Component should not render any step 1`] = `
       ]
     }
   />
+  <ContextHeader
+    subtitle={null}
+    title="name"
+  />
 </styled.div>
 `;
 
@@ -32,6 +36,10 @@ exports[`View: Component should render draft 1`] = `
         },
       ]
     }
+  />
+  <ContextHeader
+    subtitle="Source"
+    title="Create Data Source"
   />
   <WithTheme(SourceComponent)
     dataSource={
@@ -90,6 +98,10 @@ exports[`View: Component should render second step 1`] = `
         },
       ]
     }
+  />
+  <ContextHeader
+    subtitle="Source"
+    title="name"
   />
   <WithTheme(SourceComponent)
     dataSource={
@@ -150,6 +162,10 @@ exports[`View: Component should render source step 1`] = `
         },
       ]
     }
+  />
+  <ContextHeader
+    subtitle="Source"
+    title="name"
   />
   <WithTheme(SourceComponent)
     dataSource={

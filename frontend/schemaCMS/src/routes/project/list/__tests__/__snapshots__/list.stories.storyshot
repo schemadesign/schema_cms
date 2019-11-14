@@ -10,7 +10,7 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-GMQeP jXMCGy"
+    className="sc-exAgwC kvVgIg"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -235,14 +235,28 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-iQKALj iQkCCX"
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="sc-bwCtUz eJBWly"
+        className="sc-jbKcbu fynHmL"
       >
-        <h1
-          className="sc-hrWEMg hdZPci"
+        <h2
+          className="sc-dNLxif dEgtYS"
           id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Projects
+        </h2>
+        <h1
+          className="sc-jqCOkK iblYWW"
+          id="desktopHeaderSubtitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -254,25 +268,11 @@ exports[`Storyshots Project/List empty 1`] = `
             }
           }
         >
-          Projects
-        </h1>
-        <h2
-          className="sc-eTuwsz bkNIDk"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
           Overview
-        </h2>
+        </h1>
       </div>
       <div
-        className="sc-gwVKww eWCHnX"
+        className="sc-uJMKN jsQhVl"
       >
         <button
           disabled={false}
@@ -387,7 +387,7 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-GMQeP jXMCGy"
+    className="sc-exAgwC kvVgIg"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -612,14 +612,28 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-iQKALj iQkCCX"
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="sc-bwCtUz eJBWly"
+        className="sc-jbKcbu fynHmL"
       >
-        <h1
-          className="sc-hrWEMg hdZPci"
+        <h2
+          className="sc-dNLxif dEgtYS"
           id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Projects
+        </h2>
+        <h1
+          className="sc-jqCOkK iblYWW"
+          id="desktopHeaderSubtitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -631,25 +645,11 @@ exports[`Storyshots Project/List list 1`] = `
             }
           }
         >
-          Projects
-        </h1>
-        <h2
-          className="sc-eTuwsz bkNIDk"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
           Overview
-        </h2>
+        </h1>
       </div>
       <div
-        className="sc-gwVKww eWCHnX"
+        className="sc-uJMKN jsQhVl"
       >
         <button
           disabled={false}

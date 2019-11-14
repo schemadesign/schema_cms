@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 >
   <div
-    className="sc-ipXKqB FyGUD"
+    className="sc-hmXxxW jxsVKG"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -219,8 +219,53 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </button>
       </div>
     </div>
+    <div
+      className="sc-hqyNC hFkHhT"
+    >
+      <div
+        className="sc-jbKcbu fynHmL"
+      >
+        <h2
+          className="sc-dNLxif dEgtYS"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Users
+          </span>
+        </h2>
+        <h1
+          className="sc-jqCOkK iblYWW"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Invite a User to SchemaCMS
+          </span>
+        </h1>
+      </div>
+      <div
+        className="sc-uJMKN jsQhVl"
+      />
+    </div>
     <form
-      className="sc-hmXxxW jjDAwG"
+      className="sc-cqCuEk ggojPx"
       onSubmit={[Function]}
     >
       <div
@@ -282,7 +327,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-dNLxif hQcsea"
+        className="sc-jnlKLf kiHYWh"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -308,7 +353,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           value="admin"
         />
         <div
-          className="sc-jqCOkK erFQlv"
+          className="sc-fYxtnH hjJzgf"
         >
           <svg
             style={

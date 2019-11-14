@@ -10,7 +10,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
   }
 >
   <div
-    className="sc-bsbRJL kfmymT"
+    className="sc-hZSUBg VKktY"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -224,52 +224,75 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-iQNlJl jxLqkS"
+      className="sc-bsbRJL kfmymT"
     >
       <div
         className="sc-hXRMBi jSmKMK"
       >
-        <a
-          active={false}
-          className="sc-epnACN fHVTqh"
-          href="/project/1"
-          onClick={[Function]}
+        <div
+          className="sc-epnACN hciwnb"
         >
-          <span>
-            Settings
-          </span>
-        </a>
-        <a
-          active={true}
-          className="sc-epnACN fuwwZh"
-          href="/project/1/datasource"
-          onClick={[Function]}
+          <a
+            className="sc-iQNlJl dondii"
+            href="/project/1"
+            onClick={[Function]}
+          >
+            <span>
+              Settings
+            </span>
+          </a>
+        </div>
+        <div
+          className="sc-epnACN cAXADU"
         >
-          <span>
-            Sources
-          </span>
-        </a>
-        <a
-          active={false}
-          className="sc-epnACN fHVTqh"
-          href="/project/1/user"
-          onClick={[Function]}
+          <a
+            className="sc-iQNlJl dondii"
+            href="/project/1/datasource"
+            onClick={[Function]}
+          >
+            <span>
+              Sources
+            </span>
+          </a>
+        </div>
+        <div
+          className="sc-epnACN hciwnb"
         >
-          <span>
-            Users
-          </span>
-        </a>
+          <a
+            className="sc-iQNlJl dondii"
+            href="/project/1/user"
+            onClick={[Function]}
+          >
+            <span>
+              Users
+            </span>
+          </a>
+        </div>
       </div>
     </div>
     <div
-      className="sc-iQKALj iQkCCX"
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="sc-bwCtUz eJBWly"
+        className="sc-jbKcbu fynHmL"
       >
-        <h1
-          className="sc-hrWEMg hdZPci"
+        <h2
+          className="sc-dNLxif dEgtYS"
           id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Data Sources
+        </h2>
+        <h1
+          className="sc-jqCOkK iblYWW"
+          id="desktopHeaderSubtitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -281,25 +304,11 @@ exports[`Storyshots DataSourceList Empty 1`] = `
             }
           }
         >
-          Data Sources
-        </h1>
-        <h2
-          className="sc-eTuwsz bkNIDk"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
           Overview
-        </h2>
+        </h1>
       </div>
       <div
-        className="sc-gwVKww eWCHnX"
+        className="sc-uJMKN jsQhVl"
       >
         <button
           disabled={false}
@@ -343,7 +352,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       </div>
     </div>
     <ul
-      className="sc-iuJeZd izgbvF"
+      className="sc-esOvli hHXpvl"
     />
     <div
       className="sc-iwsKbI eQdjUy"
@@ -448,7 +457,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
   }
 >
   <div
-    className="sc-bsbRJL kfmymT"
+    className="sc-hZSUBg VKktY"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -662,52 +671,75 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="sc-iQNlJl jxLqkS"
+      className="sc-bsbRJL kfmymT"
     >
       <div
         className="sc-hXRMBi jSmKMK"
       >
-        <a
-          active={false}
-          className="sc-epnACN fHVTqh"
-          href="/project/1"
-          onClick={[Function]}
+        <div
+          className="sc-epnACN hciwnb"
         >
-          <span>
-            Settings
-          </span>
-        </a>
-        <a
-          active={true}
-          className="sc-epnACN fuwwZh"
-          href="/project/1/datasource"
-          onClick={[Function]}
+          <a
+            className="sc-iQNlJl dondii"
+            href="/project/1"
+            onClick={[Function]}
+          >
+            <span>
+              Settings
+            </span>
+          </a>
+        </div>
+        <div
+          className="sc-epnACN cAXADU"
         >
-          <span>
-            Sources
-          </span>
-        </a>
-        <a
-          active={false}
-          className="sc-epnACN fHVTqh"
-          href="/project/1/user"
-          onClick={[Function]}
+          <a
+            className="sc-iQNlJl dondii"
+            href="/project/1/datasource"
+            onClick={[Function]}
+          >
+            <span>
+              Sources
+            </span>
+          </a>
+        </div>
+        <div
+          className="sc-epnACN hciwnb"
         >
-          <span>
-            Users
-          </span>
-        </a>
+          <a
+            className="sc-iQNlJl dondii"
+            href="/project/1/user"
+            onClick={[Function]}
+          >
+            <span>
+              Users
+            </span>
+          </a>
+        </div>
       </div>
     </div>
     <div
-      className="sc-iQKALj iQkCCX"
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="sc-bwCtUz eJBWly"
+        className="sc-jbKcbu fynHmL"
       >
-        <h1
-          className="sc-hrWEMg hdZPci"
+        <h2
+          className="sc-dNLxif dEgtYS"
           id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Data Sources
+        </h2>
+        <h1
+          className="sc-jqCOkK iblYWW"
+          id="desktopHeaderSubtitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -719,25 +751,11 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             }
           }
         >
-          Data Sources
-        </h1>
-        <h2
-          className="sc-eTuwsz bkNIDk"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
           Overview
-        </h2>
+        </h1>
       </div>
       <div
-        className="sc-gwVKww eWCHnX"
+        className="sc-uJMKN jsQhVl"
       >
         <button
           disabled={false}
@@ -781,10 +799,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       </div>
     </div>
     <ul
-      className="sc-iuJeZd izgbvF"
+      className="sc-esOvli hHXpvl"
     >
       <li
-        className="sc-hZSUBg gZkvps"
+        className="sc-cMhqgX knaOkU"
       >
         <div
           style={
@@ -809,26 +827,26 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             }
           >
             <div
-              className="sc-hORach gFAZKV"
+              className="sc-bMVAic jDpWLW"
             >
               <ul
-                className="sc-gojNiO gysEWP"
+                className="sc-daURTG cjJqXw"
               >
                 <li
-                  className="sc-daURTG jfmWxT"
+                  className="sc-bXGyLb cAzlMI"
                   id="headerItem-0"
                 >
                   3 months ago
                 </li>
                 <li
-                  className="sc-daURTG jfmWxT"
+                  className="sc-bXGyLb cAzlMI"
                   id="headerItem-1"
                 >
                   firstName lastName
                 </li>
               </ul>
               <div
-                className="sc-bMVAic iitsUz"
+                className="sc-bAeIUo fhsuHf"
               >
                 <svg
                   style={
@@ -851,7 +869,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             </div>
           </div>
           <h1
-            className="sc-esOvli guwJEH"
+            className="sc-cmthru fTwIns"
             id="dataSourceTitle"
             onClick={[Function]}
             style={
@@ -868,19 +886,19 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             name
           </h1>
           <div
-            className="sc-cmthru fekLzh"
+            className="sc-hMFtBS kbcMkN"
           >
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-0"
               >
                 Source
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-0"
               >
                 <svg
@@ -901,64 +919,64 @@ exports[`Storyshots DataSourceList With data source 1`] = `
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-1"
               >
                 Items
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-1"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-2"
               >
                 Fields
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-2"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-3"
               >
                 Filters
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-3"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-4"
               >
                 Views
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-4"
               >
                 —
@@ -968,7 +986,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </div>
       </li>
       <li
-        className="sc-hZSUBg gZkvps"
+        className="sc-cMhqgX knaOkU"
       >
         <div
           style={
@@ -993,26 +1011,26 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             }
           >
             <div
-              className="sc-hORach gFAZKV"
+              className="sc-bMVAic jDpWLW"
             >
               <ul
-                className="sc-gojNiO gysEWP"
+                className="sc-daURTG cjJqXw"
               >
                 <li
-                  className="sc-daURTG jfmWxT"
+                  className="sc-bXGyLb cAzlMI"
                   id="headerItem-0"
                 >
                   3 months ago
                 </li>
                 <li
-                  className="sc-daURTG jfmWxT"
+                  className="sc-bXGyLb cAzlMI"
                   id="headerItem-1"
                 >
                   firstName lastName
                 </li>
               </ul>
               <div
-                className="sc-bMVAic iitsUz"
+                className="sc-bAeIUo fhsuHf"
               >
                 <svg
                   style={
@@ -1035,7 +1053,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             </div>
           </div>
           <h1
-            className="sc-esOvli guwJEH"
+            className="sc-cmthru fTwIns"
             id="dataSourceTitle"
             onClick={[Function]}
             style={
@@ -1052,19 +1070,19 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             name
           </h1>
           <div
-            className="sc-cmthru fekLzh"
+            className="sc-hMFtBS kbcMkN"
           >
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-0"
               >
                 Source
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-0"
               >
                 <svg
@@ -1085,64 +1103,64 @@ exports[`Storyshots DataSourceList With data source 1`] = `
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-1"
               >
                 Items
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-1"
               >
                 246
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-2"
               >
                 Fields
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-2"
               >
                 11
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-3"
               >
                 Filters
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-3"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-4"
               >
                 Views
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-4"
               >
                 —
@@ -1255,7 +1273,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
   }
 >
   <div
-    className="sc-bsbRJL kfmymT"
+    className="sc-hZSUBg VKktY"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -1469,52 +1487,75 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="sc-iQNlJl jxLqkS"
+      className="sc-bsbRJL kfmymT"
     >
       <div
         className="sc-hXRMBi jSmKMK"
       >
-        <a
-          active={false}
-          className="sc-epnACN fHVTqh"
-          href="/project/1"
-          onClick={[Function]}
+        <div
+          className="sc-epnACN hciwnb"
         >
-          <span>
-            Settings
-          </span>
-        </a>
-        <a
-          active={true}
-          className="sc-epnACN fuwwZh"
-          href="/project/1/datasource"
-          onClick={[Function]}
+          <a
+            className="sc-iQNlJl dondii"
+            href="/project/1"
+            onClick={[Function]}
+          >
+            <span>
+              Settings
+            </span>
+          </a>
+        </div>
+        <div
+          className="sc-epnACN cAXADU"
         >
-          <span>
-            Sources
-          </span>
-        </a>
-        <a
-          active={false}
-          className="sc-epnACN fHVTqh"
-          href="/project/1/user"
-          onClick={[Function]}
+          <a
+            className="sc-iQNlJl dondii"
+            href="/project/1/datasource"
+            onClick={[Function]}
+          >
+            <span>
+              Sources
+            </span>
+          </a>
+        </div>
+        <div
+          className="sc-epnACN hciwnb"
         >
-          <span>
-            Users
-          </span>
-        </a>
+          <a
+            className="sc-iQNlJl dondii"
+            href="/project/1/user"
+            onClick={[Function]}
+          >
+            <span>
+              Users
+            </span>
+          </a>
+        </div>
       </div>
     </div>
     <div
-      className="sc-iQKALj iQkCCX"
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="sc-bwCtUz eJBWly"
+        className="sc-jbKcbu fynHmL"
       >
-        <h1
-          className="sc-hrWEMg hdZPci"
+        <h2
+          className="sc-dNLxif dEgtYS"
           id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Data Sources
+        </h2>
+        <h1
+          className="sc-jqCOkK iblYWW"
+          id="desktopHeaderSubtitle"
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -1526,25 +1567,11 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             }
           }
         >
-          Data Sources
-        </h1>
-        <h2
-          className="sc-eTuwsz bkNIDk"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
           Overview
-        </h2>
+        </h1>
       </div>
       <div
-        className="sc-gwVKww eWCHnX"
+        className="sc-uJMKN jsQhVl"
       >
         <button
           disabled={false}
@@ -1588,10 +1615,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       </div>
     </div>
     <ul
-      className="sc-iuJeZd izgbvF"
+      className="sc-esOvli hHXpvl"
     >
       <li
-        className="sc-hZSUBg gZkvps"
+        className="sc-cMhqgX knaOkU"
       >
         <div
           style={
@@ -1616,26 +1643,26 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             }
           >
             <div
-              className="sc-hORach gFAZKV"
+              className="sc-bMVAic jDpWLW"
             >
               <ul
-                className="sc-gojNiO gysEWP"
+                className="sc-daURTG cjJqXw"
               >
                 <li
-                  className="sc-daURTG jfmWxT"
+                  className="sc-bXGyLb cAzlMI"
                   id="headerItem-0"
                 >
                   3 months ago
                 </li>
                 <li
-                  className="sc-daURTG jfmWxT"
+                  className="sc-bXGyLb cAzlMI"
                   id="headerItem-1"
                 >
                   firstName lastName
                 </li>
               </ul>
               <div
-                className="sc-bMVAic iitsUz"
+                className="sc-bAeIUo fhsuHf"
               >
                 <svg
                   style={
@@ -1658,7 +1685,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             </div>
           </div>
           <h1
-            className="sc-esOvli guwJEH"
+            className="sc-cmthru fTwIns"
             id="dataSourceTitle"
             onClick={[Function]}
             style={
@@ -1675,19 +1702,19 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             name
           </h1>
           <div
-            className="sc-cmthru fekLzh"
+            className="sc-hMFtBS kbcMkN"
           >
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-0"
               >
                 Source
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-0"
               >
                 <svg
@@ -1708,64 +1735,64 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-1"
               >
                 Items
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-1"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-2"
               >
                 Fields
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-2"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-3"
               >
                 Filters
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-3"
               >
                 —
               </span>
             </div>
             <div
-              className="sc-hMFtBS gvbKCU"
+              className="sc-cLQEGU cqadDc"
             >
               <span
-                className="sc-cLQEGU gaZDyR"
+                className="sc-gqPbQI fBDXTn"
                 id="metaItem-4"
               >
                 Views
               </span>
               <span
-                className="sc-gqPbQI YiSKA"
+                className="sc-hORach iXxwtk"
                 id="metaItemValue-4"
               >
                 —
