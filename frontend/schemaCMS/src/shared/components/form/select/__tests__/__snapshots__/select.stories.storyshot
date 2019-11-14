@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
       style={
         Object {
           "border": "none",
-          "borderTop": "2px solid #2F2F36",
+          "borderTop": "1px solid #2F2F36",
           "color": "#71737e",
           "display": "block",
           "fontSize": "14px",
