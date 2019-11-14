@@ -65,7 +65,7 @@ export class BackButton extends PureComponent {
 
   render() {
     return (
-      <Button class="nav-btn nav-btn--back" customStyles={buttonStyles} {...this.props}>
+      <Button className="nav-btn nav-btn--back" customStyles={buttonStyles} {...this.props}>
         {this.props.children || <FormattedMessage {...messages.back} />}
       </Button>
     );
@@ -86,7 +86,7 @@ export class NextButton extends PureComponent {
     const { loading, ...restProps } = this.props;
 
     return (
-      <Button inverse class="nav-btn nav-btn--next" customStyles={buttonStyles} {...restProps}>
+      <Button inverse className="nav-btn nav-btn--next" customStyles={buttonStyles} {...restProps}>
         {this.props.children || <FormattedMessage {...messages.next} values={{ loading }} />}
       </Button>
     );
