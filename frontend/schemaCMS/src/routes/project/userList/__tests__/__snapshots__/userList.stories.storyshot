@@ -361,8 +361,7 @@ exports[`Storyshots Project/UserList list 1`] = `
         className="sc-gZMcBi jZympT"
       >
         <button
-          back={true}
-          className="sc-VigVT gwOTsO"
+          className="sc-VigVT dNFsjT"
           disabled={false}
           onClick={[Function]}
           style={
@@ -381,6 +380,7 @@ exports[`Storyshots Project/UserList list 1`] = `
               "padding": "0",
             }
           }
+          type="back"
         >
           <span>
             Back
@@ -1015,8 +1015,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         className="sc-gZMcBi jZympT"
       >
         <button
-          back={true}
-          className="sc-VigVT gwOTsO"
+          className="sc-VigVT dNFsjT"
           disabled={false}
           onClick={[Function]}
           style={
@@ -1035,6 +1034,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
               "padding": "0",
             }
           }
+          type="back"
         >
           <span>
             Back

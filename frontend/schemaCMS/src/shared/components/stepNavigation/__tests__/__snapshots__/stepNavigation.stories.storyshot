@@ -19,8 +19,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
         className="sc-gZMcBi jSdIIC"
       >
         <button
-          back={true}
-          className="sc-VigVT gwOTsO"
+          className="sc-VigVT dNFsjT"
           disabled={false}
           onClick={[Function]}
           style={
@@ -39,15 +38,15 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
               "padding": "0",
             }
           }
+          type="back"
         >
           <span>
             Cancel
           </span>
         </button>
         <button
-          className="sc-VigVT hSKMac"
+          className="sc-VigVT eTfsKS"
           disabled={false}
-          next={true}
           onClick={[Function]}
           style={
             Object {
@@ -65,6 +64,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
               "padding": "0",
             }
           }
+          type="next"
         >
           <span>
             Next
@@ -209,8 +209,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
         className="sc-gZMcBi jSdIIC"
       >
         <button
-          back={true}
-          className="sc-VigVT gwOTsO"
+          className="sc-VigVT dNFsjT"
           disabled={true}
           onClick={[Function]}
           style={
@@ -229,15 +228,15 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
               "padding": "0",
             }
           }
+          type="back"
         >
           <span>
             Cancel
           </span>
         </button>
         <button
-          className="sc-VigVT hSKMac"
+          className="sc-VigVT eTfsKS"
           disabled={false}
-          next={true}
           onClick={[Function]}
           style={
             Object {
@@ -255,6 +254,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
               "padding": "0",
             }
           }
+          type="next"
         >
           <span>
             Next
@@ -399,8 +399,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
         className="sc-gZMcBi jSdIIC"
       >
         <button
-          back={true}
-          className="sc-VigVT gwOTsO"
+          className="sc-VigVT dNFsjT"
           disabled={false}
           onClick={[Function]}
           style={
@@ -419,15 +418,15 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
               "padding": "0",
             }
           }
+          type="back"
         >
           <span>
             Cancel
           </span>
         </button>
         <button
-          className="sc-VigVT hSKMac"
+          className="sc-VigVT eTfsKS"
           disabled={true}
-          next={true}
           onClick={[Function]}
           style={
             Object {
@@ -445,6 +444,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
               "padding": "0",
             }
           }
+          type="next"
         >
           <span>
             Next
@@ -589,8 +589,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
         className="sc-gZMcBi jSdIIC"
       >
         <button
-          back={true}
-          className="sc-VigVT gwOTsO"
+          className="sc-VigVT dNFsjT"
           disabled={true}
           onClick={[Function]}
           style={
@@ -609,15 +608,15 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
               "padding": "0",
             }
           }
+          type="back"
         >
           <span>
             Cancel
           </span>
         </button>
         <button
-          className="sc-VigVT hSKMac"
+          className="sc-VigVT eTfsKS"
           disabled={true}
-          next={true}
           onClick={[Function]}
           style={
             Object {
@@ -635,6 +634,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
               "padding": "0",
             }
           }
+          type="next"
         >
           <span>
             Loading...
@@ -779,8 +779,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
         className="sc-gZMcBi jSdIIC"
       >
         <button
-          back={true}
-          className="sc-VigVT gwOTsO"
+          className="sc-VigVT dNFsjT"
           disabled={false}
           onClick={[Function]}
           style={
@@ -799,15 +798,15 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
               "padding": "0",
             }
           }
+          type="back"
         >
           <span>
             Back
           </span>
         </button>
         <button
-          className="sc-VigVT hSKMac"
+          className="sc-VigVT eTfsKS"
           disabled={false}
-          next={true}
           onClick={[Function]}
           style={
             Object {
@@ -825,6 +824,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
               "padding": "0",
             }
           }
+          type="next"
         >
           <span>
             Next

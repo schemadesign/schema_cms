@@ -481,8 +481,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
           className="sc-gZMcBi jSdIIC"
         >
           <button
-            back={true}
-            className="sc-VigVT gwOTsO"
+            className="sc-VigVT iGqnRu"
             disabled={false}
             onClick={[Function]}
             style={
@@ -508,9 +507,8 @@ exports[`Storyshots FilterForm Create form 1`] = `
             </span>
           </button>
           <button
-            className="sc-VigVT hSKMac"
+            className="sc-VigVT iGqnRu"
             disabled={true}
-            next={true}
             style={
               Object {
                 "backgroundColor": "#1d1d20",
@@ -1021,8 +1019,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
           className="sc-gZMcBi jSdIIC"
         >
           <button
-            back={true}
-            className="sc-VigVT gwOTsO"
+            className="sc-VigVT iGqnRu"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1048,9 +1045,8 @@ exports[`Storyshots FilterForm Edit form 1`] = `
             </span>
           </button>
           <button
-            className="sc-VigVT hSKMac"
+            className="sc-VigVT iGqnRu"
             disabled={true}
-            next={true}
             style={
               Object {
                 "backgroundColor": "#1d1d20",

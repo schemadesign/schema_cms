@@ -1688,13 +1688,11 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       type="button"
                                     >
                                       <Styled(Component)
-                                        back={true}
                                         disabled={false}
                                         onClick={[Function]}
                                         type="button"
                                       >
                                         <StyledComponent
-                                          back={true}
                                           disabled={false}
                                           forwardedComponent={
                                             Object {
@@ -1703,15 +1701,12 @@ exports[`FilterForm: Component should render create form 1`] = `
                                               "componentStyle": ComponentStyle {
                                                 "componentId": "sc-iwsKbI",
                                                 "isStatic": false,
-                                                "lastClassName": "grnntF",
+                                                "lastClassName": "fnCiXM",
                                                 "rules": Array [
                                                   "
   width: calc(50% - ",
                                                   "5",
                                                   "px);
-  transform: translateX(",
-                                                  [Function],
-                                                  ");
 
   ",
                                                   "
@@ -1747,15 +1742,13 @@ exports[`FilterForm: Component should render create form 1`] = `
                                           type="button"
                                         >
                                           <Component
-                                            back={true}
-                                            className="sc-iwsKbI kyazcE"
+                                            className="sc-iwsKbI fnCiXM"
                                             disabled={false}
                                             onClick={[Function]}
                                             type="button"
                                           >
                                             <ButtonComponent
-                                              back={true}
-                                              className="sc-iwsKbI kyazcE"
+                                              className="sc-iwsKbI fnCiXM"
                                               customStyles={Object {}}
                                               disabled={false}
                                               inverse={false}
@@ -1763,8 +1756,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                               type="button"
                                             >
                                               <button
-                                                back={true}
-                                                className="sc-iwsKbI kyazcE"
+                                                className="sc-iwsKbI fnCiXM"
                                                 disabled={false}
                                                 onClick={[Function]}
                                                 style={
@@ -1808,7 +1800,6 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       <Styled(Component)
                                         disabled={true}
                                         inverse={true}
-                                        next={true}
                                         type="submit"
                                       >
                                         <StyledComponent
@@ -1820,15 +1811,12 @@ exports[`FilterForm: Component should render create form 1`] = `
                                               "componentStyle": ComponentStyle {
                                                 "componentId": "sc-iwsKbI",
                                                 "isStatic": false,
-                                                "lastClassName": "grnntF",
+                                                "lastClassName": "fnCiXM",
                                                 "rules": Array [
                                                   "
   width: calc(50% - ",
                                                   "5",
                                                   "px);
-  transform: translateX(",
-                                                  [Function],
-                                                  ");
 
   ",
                                                   "
@@ -1861,28 +1849,24 @@ exports[`FilterForm: Component should render create form 1`] = `
                                           }
                                           forwardedRef={null}
                                           inverse={true}
-                                          next={true}
                                           type="submit"
                                         >
                                           <Component
-                                            className="sc-iwsKbI grnntF"
+                                            className="sc-iwsKbI fnCiXM"
                                             disabled={true}
                                             inverse={true}
-                                            next={true}
                                             type="submit"
                                           >
                                             <ButtonComponent
-                                              className="sc-iwsKbI grnntF"
+                                              className="sc-iwsKbI fnCiXM"
                                               customStyles={Object {}}
                                               disabled={true}
                                               inverse={true}
-                                              next={true}
                                               type="submit"
                                             >
                                               <button
-                                                className="sc-iwsKbI grnntF"
+                                                className="sc-iwsKbI fnCiXM"
                                                 disabled={true}
-                                                next={true}
                                                 style={
                                                   Object {
                                                     "backgroundColor": "#1d1d20",
@@ -3752,13 +3736,11 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       type="button"
                                     >
                                       <Styled(Component)
-                                        back={true}
                                         disabled={false}
                                         onClick={[Function]}
                                         type="button"
                                       >
                                         <StyledComponent
-                                          back={true}
                                           disabled={false}
                                           forwardedComponent={
                                             Object {
@@ -3767,15 +3749,12 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                               "componentStyle": ComponentStyle {
                                                 "componentId": "sc-iwsKbI",
                                                 "isStatic": false,
-                                                "lastClassName": "grnntF",
+                                                "lastClassName": "fnCiXM",
                                                 "rules": Array [
                                                   "
   width: calc(50% - ",
                                                   "5",
                                                   "px);
-  transform: translateX(",
-                                                  [Function],
-                                                  ");
 
   ",
                                                   "
@@ -3811,15 +3790,13 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                           type="button"
                                         >
                                           <Component
-                                            back={true}
-                                            className="sc-iwsKbI kyazcE"
+                                            className="sc-iwsKbI fnCiXM"
                                             disabled={false}
                                             onClick={[Function]}
                                             type="button"
                                           >
                                             <ButtonComponent
-                                              back={true}
-                                              className="sc-iwsKbI kyazcE"
+                                              className="sc-iwsKbI fnCiXM"
                                               customStyles={Object {}}
                                               disabled={false}
                                               inverse={false}
@@ -3827,8 +3804,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                               type="button"
                                             >
                                               <button
-                                                back={true}
-                                                className="sc-iwsKbI kyazcE"
+                                                className="sc-iwsKbI fnCiXM"
                                                 disabled={false}
                                                 onClick={[Function]}
                                                 style={
@@ -3872,7 +3848,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       <Styled(Component)
                                         disabled={true}
                                         inverse={true}
-                                        next={true}
                                         type="submit"
                                       >
                                         <StyledComponent
@@ -3884,15 +3859,12 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                               "componentStyle": ComponentStyle {
                                                 "componentId": "sc-iwsKbI",
                                                 "isStatic": false,
-                                                "lastClassName": "grnntF",
+                                                "lastClassName": "fnCiXM",
                                                 "rules": Array [
                                                   "
   width: calc(50% - ",
                                                   "5",
                                                   "px);
-  transform: translateX(",
-                                                  [Function],
-                                                  ");
 
   ",
                                                   "
@@ -3925,28 +3897,24 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                           }
                                           forwardedRef={null}
                                           inverse={true}
-                                          next={true}
                                           type="submit"
                                         >
                                           <Component
-                                            className="sc-iwsKbI grnntF"
+                                            className="sc-iwsKbI fnCiXM"
                                             disabled={true}
                                             inverse={true}
-                                            next={true}
                                             type="submit"
                                           >
                                             <ButtonComponent
-                                              className="sc-iwsKbI grnntF"
+                                              className="sc-iwsKbI fnCiXM"
                                               customStyles={Object {}}
                                               disabled={true}
                                               inverse={true}
-                                              next={true}
                                               type="submit"
                                             >
                                               <button
-                                                className="sc-iwsKbI grnntF"
+                                                className="sc-iwsKbI fnCiXM"
                                                 disabled={true}
-                                                next={true}
                                                 style={
                                                   Object {
                                                     "backgroundColor": "#1d1d20",

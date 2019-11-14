@@ -436,9 +436,8 @@ exports[`Storyshots Settings Default 1`] = `
             className="sc-gZMcBi brDpsb"
           >
             <button
-              className="sc-VigVT hSKMac"
+              className="sc-VigVT iGqnRu"
               disabled={true}
-              next={true}
               style={
                 Object {
                   "backgroundColor": "#1d1d20",

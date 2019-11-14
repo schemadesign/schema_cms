@@ -226,8 +226,7 @@ Array [
         className="sc-gZMcBi jSdIIC"
       >
         <button
-          back={true}
-          className="sc-VigVT gwOTsO"
+          className="sc-VigVT dNFsjT"
           disabled={false}
           onClick={[Function]}
           style={
@@ -246,15 +245,15 @@ Array [
               "padding": "0",
             }
           }
+          type="back"
         >
           <span>
             Back
           </span>
         </button>
         <button
-          className="sc-VigVT hSKMac"
+          className="sc-VigVT eTfsKS"
           disabled={false}
-          next={true}
           onClick={[Function]}
           style={
             Object {
@@ -272,6 +271,7 @@ Array [
               "padding": "0",
             }
           }
+          type="next"
         >
           <span>
             Save

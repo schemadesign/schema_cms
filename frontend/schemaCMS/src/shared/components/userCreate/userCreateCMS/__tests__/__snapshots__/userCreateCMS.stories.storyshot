@@ -472,8 +472,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             className="sc-gZMcBi jSdIIC"
           >
             <button
-              back={true}
-              className="sc-VigVT gwOTsO"
+              className="sc-VigVT dNFsjT"
               disabled={false}
               onClick={[Function]}
               style={
@@ -492,15 +491,15 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                   "padding": "0",
                 }
               }
+              type="back"
             >
               <span>
                 Cancel
               </span>
             </button>
             <button
-              className="sc-VigVT hSKMac"
+              className="sc-VigVT iGqnRu"
               disabled={true}
-              next={true}
               style={
                 Object {
                   "backgroundColor": "#1d1d20",

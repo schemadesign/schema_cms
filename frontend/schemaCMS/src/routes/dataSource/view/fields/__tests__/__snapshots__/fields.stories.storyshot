@@ -33,8 +33,7 @@ exports[`Storyshots Fields Default 1`] = `
           className="sc-gZMcBi jSdIIC"
         >
           <button
-            back={true}
-            className="sc-VigVT gwOTsO"
+            className="sc-VigVT dNFsjT"
             disabled={false}
             onClick={[Function]}
             style={
@@ -53,15 +52,15 @@ exports[`Storyshots Fields Default 1`] = `
                 "padding": "0",
               }
             }
+            type="back"
           >
             <span>
               Back
             </span>
           </button>
           <button
-            className="sc-VigVT hSKMac"
+            className="sc-VigVT eTfsKS"
             disabled={false}
-            next={true}
             onClick={[Function]}
             style={
               Object {
@@ -79,6 +78,7 @@ exports[`Storyshots Fields Default 1`] = `
                 "padding": "0",
               }
             }
+            type="next"
           >
             <span>
               Next

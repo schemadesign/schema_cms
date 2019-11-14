@@ -274,8 +274,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
           className="sc-gZMcBi jSdIIC"
         >
           <button
-            back={true}
-            className="sc-VigVT gwOTsO"
+            className="sc-VigVT dNFsjT"
             disabled={false}
             onClick={[Function]}
             style={
@@ -294,6 +293,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
                 "padding": "0",
               }
             }
+            type="back"
           >
             <span>
               Back
@@ -848,8 +848,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           className="sc-gZMcBi jSdIIC"
         >
           <button
-            back={true}
-            className="sc-VigVT gwOTsO"
+            className="sc-VigVT dNFsjT"
             disabled={false}
             onClick={[Function]}
             style={
@@ -868,6 +867,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
                 "padding": "0",
               }
             }
+            type="back"
           >
             <span>
               Back

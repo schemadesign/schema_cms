@@ -236,8 +236,7 @@ exports[`Storyshots JobList Default 1`] = `
           className="sc-gZMcBi jSdIIC"
         >
           <button
-            back={true}
-            className="sc-VigVT gwOTsO"
+            className="sc-VigVT dNFsjT"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
@@ -257,16 +256,16 @@ exports[`Storyshots JobList Default 1`] = `
                 "padding": "0",
               }
             }
+            type="back"
           >
             <span>
               Cancel
             </span>
           </button>
           <button
-            className="sc-VigVT hSKMac"
+            className="sc-VigVT eTfsKS"
             disabled={true}
             id="revertBtn"
-            next={true}
             onClick={[Function]}
             style={
               Object {
@@ -284,6 +283,7 @@ exports[`Storyshots JobList Default 1`] = `
                 "padding": "0",
               }
             }
+            type="next"
           >
             <span>
               Revert
