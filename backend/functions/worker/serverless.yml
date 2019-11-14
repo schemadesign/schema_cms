@@ -3,8 +3,7 @@ service: lambda-worker
 provider:
   name: aws
   runtime: python3.7
-  region: us-east-1
-  stage: ${opt:stage, 'local'}
+  stage: ${opt:stage, 'dev'}
 
 
 plugins:
@@ -15,9 +14,6 @@ custom:
   pythonRequirements:
     dockerizePip: false
     zip: true
-#    useDownloadCache: true
-#    useStaticCache: true
-#    cacheLocation: ./.serverless/.requirements_cache
   localstack:
     stages:
       - local

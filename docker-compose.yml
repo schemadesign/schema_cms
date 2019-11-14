@@ -31,6 +31,7 @@ services:
     volumes:
       - "localstack_data:/tmp/localstack/data"
       - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./backend/functions:/app/functions"
 
   backend:
     image: schema_cms_backend

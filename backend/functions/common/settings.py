@@ -1,7 +1,7 @@
 import os
 
 
-HOST = os.getenv("LOCALSTACK_HOSTNAME")
+HOST = os.getenv("LOCALSTACK_HOSTNAME", '')
 
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_ENDPOINT_URL = os.getenv(
