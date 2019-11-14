@@ -32,15 +32,15 @@ export const NavigationContent = styled.div`
     display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'flex')};
 
       .nav-btn {
-        width: 235px;
+        width: 23.5%;
       }
 
       .nav-btn--back {
-        margin-left: 255px;
+        margin-left: 25.5%;
       }
 
       .nav-btn--next {
-        margin-right: 255px;
+        margin-right: 25.5%;
       }
   `}
 `;
