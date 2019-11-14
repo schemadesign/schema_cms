@@ -12,35 +12,50 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
   <div
     className="sc-hXRMBi jSmKMK"
   >
-    <a
-      className="sc-epnACN fHVTqh"
-      href="/"
-      onClick={[Function]}
+    <div
+      className="sc-epnACN hciwnb"
     >
-      Tab 1
-    </a>
-    <a
-      active={true}
-      className="sc-epnACN fuwwZh"
-      href="/"
-      onClick={[Function]}
+      <a
+        className="sc-iQNlJl dondii"
+        href="/"
+        onClick={[Function]}
+      >
+        Tab 1
+      </a>
+    </div>
+    <div
+      className="sc-epnACN cAXADU"
     >
-      Tab 2
-    </a>
-    <a
-      className="sc-epnACN fHVTqh"
-      href="/"
-      onClick={[Function]}
+      <a
+        className="sc-iQNlJl dondii"
+        href="/"
+        onClick={[Function]}
+      >
+        Tab 2
+      </a>
+    </div>
+    <div
+      className="sc-epnACN hciwnb"
     >
-      Tab 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    </a>
-    <a
-      className="sc-epnACN fHVTqh"
-      href="/"
-      onClick={[Function]}
+      <a
+        className="sc-iQNlJl dondii"
+        href="/"
+        onClick={[Function]}
+      >
+        Tab 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      </a>
+    </div>
+    <div
+      className="sc-epnACN hciwnb"
     >
-      Tab 4
-    </a>
+      <a
+        className="sc-iQNlJl dondii"
+        href="/"
+        onClick={[Function]}
+      >
+        Tab 4
+      </a>
+    </div>
   </div>
 </div>
 `;

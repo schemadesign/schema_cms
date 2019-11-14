@@ -2,30 +2,42 @@
 
 exports[`Tabs: Component should render correctly 1`] = `
 <styled.div>
-  <Styled(Link)
+  <styled.div
     key="0"
-    to="/"
   >
-    Tab 1
-  </Styled(Link)>
-  <Styled(Link)
+    <Styled(Link)
+      to="/"
+    >
+      Tab 1
+    </Styled(Link)>
+  </styled.div>
+  <styled.div
     active={true}
     key="1"
-    to="/"
   >
-    Tab 2
-  </Styled(Link)>
-  <Styled(Link)
+    <Styled(Link)
+      to="/"
+    >
+      Tab 2
+    </Styled(Link)>
+  </styled.div>
+  <styled.div
     key="2"
-    to="/"
   >
-    Tab 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  </Styled(Link)>
-  <Styled(Link)
+    <Styled(Link)
+      to="/"
+    >
+      Tab 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </Styled(Link)>
+  </styled.div>
+  <styled.div
     key="3"
-    to="/"
   >
-    Tab 4
-  </Styled(Link)>
+    <Styled(Link)
+      to="/"
+    >
+      Tab 4
+    </Styled(Link)>
+  </styled.div>
 </styled.div>
 `;
