@@ -63,8 +63,8 @@ class Step(LoaderMixin):
 class Job(LoaderMixin):
     id: int
     datasource: DataSource
-    source_file_path = ""
-    source_file_version = None
+    source_file_path: str = ""
+    source_file_version: typing.Union[str, None] = None
     result: str = ""
     steps: typing.List[Step] = dataclasses.field(default_factory=list)
 

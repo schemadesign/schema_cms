@@ -48,6 +48,7 @@ def process_job(job):
         state=db.JobState.PROCESSING,
     )
 
+    logger.info(f"Loading source file: {job.source_file_path} ver. {job.source_file_version}")
     source_file = services.get_s3_object(job.source_file_path, version=job.source_file_version)
     try:
         df = dt.fread(source_file["Body"], na_strings=["", ""], fill=True).to_pandas()

@@ -1,22 +1,23 @@
 {
-    "id": 5,
-    "datasource": {
-        "id": 22,
-        "name": "My New Data Source #dLwb",
-        "file": "22/uploads/usersSample.csv",
-        "items": 10,
-        "result": ""
-    },
-    "source_file_path": "22/uploads/usersSample.csv",
-    "source_file_version": "3354cca6-4291-4ebf-a703-10616e22baa6",
-    "steps": [
-        {
-            "id": 4,
-            "body": "",
-            "script": {
-                "name": "Test"
-            },
-            "exec_order": 0
-        }
-    ]
+  "id": 339,
+  "datasource": {
+    "id": 373,
+    "name": "My New Data Source #eVN9",
+    "file": "373/uploads/world_cities.csv",
+    "items": 0,
+    "result": ""
+  },
+  "source_file_path": "373/uploads/world_cities.csv",
+  "source_file_version": "KTMKYdesf1xzFaueY7RTMYgmzq5mE_Vw",
+  "steps": [
+    {
+      "id": 391,
+      "body": "df = df.tail(5)",
+      "script": {
+        "id": 110,
+        "name": "Last 5 Rows"
+      },
+      "exec_order": 0
+    }
+  ]
 }
