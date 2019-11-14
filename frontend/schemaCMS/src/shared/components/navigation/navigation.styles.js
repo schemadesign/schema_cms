@@ -1,9 +1,17 @@
 import styled from 'styled-components';
-import { always, ifElse, propEq } from 'ramda';
+import { always, cond, ifElse, propEq, T } from 'ramda';
+import { Button } from 'schemaUI';
 
 import { media, contentSizes } from '../../../theme/media';
 
 const BUTTON_MARGIN = 5;
+const BUTTON_MARGIN_DESKTOP = 255;
+
+const setTranslate = (value, inverse = false) => {
+  const x = inverse ? -1 * value : value;
+
+  return cond([[propEq('back', true), always(`${x}px`)], [propEq('next', true), always(`${-x}px`)], [T, always('0')]]);
+};
 
 export const Container = styled.div`
   height: 155px;
@@ -16,32 +24,8 @@ export const NavigationContent = styled.div`
   align-items: center;
   width: 100%;
 
-  .nav-btn {
-    width: calc(50% - ${BUTTON_MARGIN}px);
-  }
-
-  .nav-btn--back {
-    margin-right: ${BUTTON_MARGIN}px;
-  }
-
-  .nav-btn--next {
-    margin-left: ${BUTTON_MARGIN}px;
-  }
-
   ${media.desktop`
     display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'flex')};
-
-      .nav-btn {
-        width: 23.5%;
-      }
-
-      .nav-btn--back {
-        margin-left: 25.5%;
-      }
-
-      .nav-btn--next {
-        margin-right: 25.5%;
-      }
   `}
 `;
 
@@ -61,11 +45,17 @@ export const Navigation = styled.div`
   `}
 `;
 
+export const NavigationButton = styled(Button)`
+  width: calc(50% - ${BUTTON_MARGIN}px);
+  transform: translateX(${setTranslate(BUTTON_MARGIN, true)});
+
+  ${media.desktop`
+    width: 23.5%;
+    transform: translateX(${setTranslate(BUTTON_MARGIN_DESKTOP)});
+  `}
+`;
+
 export const buttonIconStyles = {
   height: '60px',
   width: '60px',
-};
-
-export const buttonStyles = {
-  margin: null,
 };
