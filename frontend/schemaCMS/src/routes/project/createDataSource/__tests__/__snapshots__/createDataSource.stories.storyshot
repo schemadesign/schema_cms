@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
+exports[`Storyshots CreateDataSource Default 1`] = `
 <div
   style={
     Object {
@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 >
   <div
-    className="sc-cqCuEk cqoivF"
+    className="sc-hXRMBi kDnmWm"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -44,7 +44,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             >
               <span>
-                Users
+                Data Sources
               </span>
             </h2>
             <h1
@@ -61,7 +61,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             >
               <span>
-                Invite a User to SchemaCMS
+                Create
               </span>
             </h1>
           </div>
@@ -145,7 +145,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             >
               <span>
-                Users
+                Data Sources
               </span>
             </h2>
             <h1
@@ -162,7 +162,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             >
               <span>
-                Invite a User to SchemaCMS
+                Create
               </span>
             </h1>
           </div>
@@ -220,53 +220,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-hqyNC hFkHhT"
-    >
-      <div
-        className="sc-jbKcbu fynHmL"
-      >
-        <h2
-          className="sc-dNLxif dEgtYS"
-          id="desktopHeaderTitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
-          <span>
-            Users
-          </span>
-        </h2>
-        <h1
-          className="sc-jqCOkK iblYWW"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
-        >
-          <span>
-            Invite a User to SchemaCMS
-          </span>
-        </h1>
-      </div>
-      <div
-        className="sc-uJMKN jsQhVl"
-      />
-    </div>
-    <form
-      className="sc-dliRfk AXbuP"
-      onSubmit={[Function]}
+      className="sc-htpNat hqKAHB"
     >
       <div
         className="sc-bZQynM bOrPFB"
@@ -283,7 +237,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           }
         >
           <label
-            htmlFor="email"
+            htmlFor="name"
             style={
               Object {
                 "border": "none",
@@ -297,11 +251,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             }
           >
-            Email
+            Name
           </label>
           <input
-            id="email"
-            name="email"
+            id="name"
+            name="name"
             onChange={[Function]}
             style={
               Object {
@@ -314,6 +268,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             }
             type="text"
+            value=""
           />
           <div
             style={
@@ -326,142 +281,123 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           />
         </div>
       </div>
-      <div
-        className="sc-jnlKLf kiHYWh"
-      >
-        <label
-          id="fieldProjectStatusLabel"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "2px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
+      <label
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "marginBottom": 20,
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
           }
-        >
-          Select Role
-        </label>
-        <input
-          id="role"
-          name="role"
-          type="hidden"
-          value="admin"
-        />
-        <div
-          className="sc-fYxtnH hjJzgf"
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "30px",
-                "width": "30px",
-              }
-            }
-            viewBox="0 0 30 30"
-          >
-            <path
-              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </div>
+        }
+      >
+        <span>
+          Source
+        </span>
+      </label>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "marginBottom": "40px",
+          }
+        }
+      >
         <div
           style={
             Object {
               "color": "#FFF",
               "display": "flex",
-              "width": "100%",
+              "flexDirection": "column",
+              "textAlign": "center",
             }
           }
         >
-          <div
+          <input
+            aria-hidden={true}
+            defaultChecked={false}
+            id="file"
+            name="type"
+            onChange={[Function]}
             style={
               Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "hidden",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+              }
+            }
+            type="radio"
+            value="file"
+          />
+          <label
+            htmlFor="file"
+            style={
+              Object {
+                "alignItems": "center",
                 "cursor": "pointer",
                 "display": "flex",
-                "position": "relative",
-                "width": "100%",
+                "flexDirection": "column",
+                "width": 96,
               }
             }
           >
-            <div
-              onClick={[Function]}
+            <button
+              disabled={false}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "height": "30px",
-                  "width": "100%",
-                }
-              }
-            >
-              <div
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "cursor": "pointer",
-                    "display": "flex",
-                    "height": "30px",
-                  }
-                }
-              >
-                Admin
-              </div>
-            </div>
-            <div
-              style={
-                Object {
+                  "background": "#1d1d20",
                   "backgroundColor": "#1d1d20",
-                  "display": "none",
-                  "flexDirection": "column",
-                  "left": "0",
-                  "maxHeight": "175px",
-                  "overflow": "hidden",
-                  "position": "absolute",
-                  "top": "46px",
-                  "width": "100%",
-                  "zIndex": 2,
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "height": 96,
+                  "margin": "0",
+                  "marginBottom": 10,
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "pointerEvents": "none",
+                  "width": 96,
                 }
               }
+              type="button"
             >
-              <div
-                id="select-item-0"
-                onClick={[Function]}
+              <svg
                 style={
                   Object {
-                    "borderTop": "none",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "padding": "7px",
+                    "fill": "#FFF",
+                    "height": "60px",
+                    "width": "60px",
                   }
                 }
+                viewBox="0 0 60 60"
               >
-                Admin
-              </div>
-              <div
-                id="select-item-1"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "borderTop": "1px solid  #000",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "padding": "7px",
-                  }
-                }
-              >
-                Editor
-              </div>
-            </div>
-          </div>
+                <path
+                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </label>
+          Spreadsheet
         </div>
       </div>
+      <div
+        className="sc-EHOje eiaHYL"
+      />
       <div
         className="sc-iwsKbI eQdjUy"
       >
@@ -499,6 +435,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             </button>
             <button
               disabled={true}
+              onClick={[Function]}
               style={
                 Object {
                   "backgroundColor": "#1d1d20",
@@ -517,16 +454,129 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                   "width": "calc(50% - 5px)",
                 }
               }
-              type="submit"
             >
               <span>
-                Invite
+                Next
               </span>
             </button>
+            <div
+              className="sc-dnqmqq iuexap"
+            >
+              <div
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexDirection": "row",
+                    "margin": "0 auto",
+                    "pointerEvents": "none",
+                  }
+                }
+              >
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#FFF",
+                      "borderRadius": "50%",
+                      "cursor": "default",
+                      "display": "block",
+                      "height": "12px",
+                      "margin": "0 4px",
+                      "pointerEvents": "none",
+                      "width": "12px",
+                    }
+                  }
+                />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#1d1d20",
+                      "borderRadius": "50%",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "height": "12px",
+                      "margin": "0 4px",
+                      "width": "12px",
+                    }
+                  }
+                />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#1d1d20",
+                      "borderRadius": "50%",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "height": "12px",
+                      "margin": "0 4px",
+                      "width": "12px",
+                    }
+                  }
+                />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#1d1d20",
+                      "borderRadius": "50%",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "height": "12px",
+                      "margin": "0 4px",
+                      "width": "12px",
+                    }
+                  }
+                />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#1d1d20",
+                      "borderRadius": "50%",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "height": "12px",
+                      "margin": "0 4px",
+                      "width": "12px",
+                    }
+                  }
+                />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#1d1d20",
+                      "borderRadius": "50%",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "height": "12px",
+                      "margin": "0 4px",
+                      "width": "12px",
+                    }
+                  }
+                />
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#1d1d20",
+                      "borderRadius": "50%",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "height": "12px",
+                      "margin": "0 4px",
+                      "width": "12px",
+                    }
+                  }
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </form>
+    </div>
   </div>
 </div>
 `;

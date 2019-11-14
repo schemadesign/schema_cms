@@ -13,6 +13,7 @@ export const defaultProps = {
   filters: [],
   isAnyJobProcessing: false,
   fetchFields: Function.prototype,
+  onDataSourceChange: Function.prototype,
   setFilters: Function.prototype,
   fetchFilters: Function.prototype,
   unmountFields: Function.prototype,

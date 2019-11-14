@@ -18,7 +18,7 @@ import {
   LinkContainer,
 } from './source.styles';
 import messages from './source.messages';
-import { TextInput } from '../../../../shared/components/form/inputs/textInput';
+import { TextInput } from '../form/inputs/textInput';
 import {
   DATA_SOURCE_FILE,
   DATA_SOURCE_NAME,
@@ -28,36 +28,36 @@ import {
   SOURCE_TYPE_API,
   SOURCE_TYPE_DATABASE,
   SOURCE_TYPE_FILE,
-} from '../../../../modules/dataSource/dataSource.constants';
-import { StepNavigation } from '../../../../shared/components/stepNavigation';
-import { Uploader } from '../../../../shared/components/form/uploader';
-import { errorMessageParser } from '../../../../shared/utils/helpers';
-import { renderWhenTrue } from '../../../../shared/utils/rendering';
-import browserHistory from '../../../../shared/utils/history';
-import {
-  getModalStyles,
-  ModalActions,
-  ModalButton,
-  ModalTitle,
-} from '../../../../shared/components/modal/modal.styles';
+} from '../../../modules/dataSource/dataSource.constants';
+import { StepNavigation } from '../stepNavigation';
+import { Uploader } from '../form/uploader';
+import { errorMessageParser } from '../../utils/helpers';
+import { renderWhenTrue } from '../../utils/rendering';
+import browserHistory from '../../utils/history';
+import { getModalStyles, ModalActions, ModalButton, ModalTitle } from '../modal/modal.styles';
 
 const { RadioGroup, RadioButton, Label } = Form;
 const { CsvIcon } = Icons;
 
 export class SourceComponent extends PureComponent {
   static propTypes = {
-    dataSource: PropTypes.object.isRequired,
+    dataSource: PropTypes.object,
     intl: PropTypes.object.isRequired,
-    isAnyJobProcessing: PropTypes.bool.isRequired,
-    updateDataSource: PropTypes.func.isRequired,
-    removeDataSource: PropTypes.func.isRequired,
+    isAnyJobProcessing: PropTypes.bool,
+    removeDataSource: PropTypes.func,
     theme: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
-        dataSourceId: PropTypes.string.isRequired,
-        step: PropTypes.string.isRequired,
+        dataSourceId: PropTypes.string,
+        projectId: PropTypes.string,
+        step: PropTypes.string,
       }).isRequired,
     }).isRequired,
+    onDataSourceChange: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    dataSource: {},
   };
 
   state = {
@@ -88,11 +88,11 @@ export class SourceComponent extends PureComponent {
   };
 
   handleSubmit = async (requestData, { setErrors }) => {
-    const { dataSourceId, step } = this.props.match.params;
+    const { onDataSourceChange, match } = this.props;
+    const { dataSourceId, projectId, step } = match.params;
 
     try {
-      this.setState({ loading: true });
-      await this.props.updateDataSource({ requestData, dataSourceId, step });
+      await onDataSourceChange({ requestData, dataSourceId, step, projectId });
     } catch (errors) {
       const { formatMessage } = this.props.intl;
       const errorMessages = errorMessageParser({ errors, messages, formatMessage });
@@ -169,9 +169,17 @@ export class SourceComponent extends PureComponent {
     )
   );
 
+  renderRemoveDataSourceLink = renderWhenTrue(
+    always(
+      <Link id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick}>
+        <FormattedMessage {...messages.removeDataSource} />
+      </Link>
+    )
+  );
+
   render() {
     const { dataSource, ...restProps } = this.props;
-    const { jobs } = dataSource;
+    const { jobs = [] } = dataSource;
     const { loading, confirmationModalOpen } = this.state;
 
     return (
@@ -215,9 +223,7 @@ export class SourceComponent extends PureComponent {
                 </RadioGroup>
                 {this.renderSourceUpload({ type, fileName, ...rest })}
                 <LinkContainer>
-                  <Link id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick}>
-                    <FormattedMessage {...messages.removeDataSource} />
-                  </Link>
+                  {this.renderRemoveDataSourceLink(!!dataSource.id)}
                   {this.renderJobListLink(!!jobs.length)}
                 </LinkContainer>
                 <StepNavigation

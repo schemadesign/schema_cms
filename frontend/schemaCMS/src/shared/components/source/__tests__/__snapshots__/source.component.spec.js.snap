@@ -28,6 +28,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       },
     }
   }
+  onDataSourceChange={[Function]}
   removeDataSource={[Function]}
   theme={
     Object {
@@ -170,7 +171,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       },
     }
   }
-  updateDataSource={[Function]}
 />
 `;
 
@@ -201,6 +201,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       },
     }
   }
+  onDataSourceChange={[Function]}
   removeDataSource={[Function]}
   theme={
     Object {
@@ -343,6 +344,5 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       },
     }
   }
-  updateDataSource={[Function]}
 />
 `;

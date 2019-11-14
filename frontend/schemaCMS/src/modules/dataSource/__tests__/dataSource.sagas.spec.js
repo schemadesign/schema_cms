@@ -19,14 +19,16 @@ describe('DataSource: sagas', () => {
 
   describe('create', () => {
     it('should dispatch a success action', async () => {
-      const payload = { projectId: '1' };
-      const requestData = { project: payload.projectId };
+      const payload = { project: '1', requestData: { file: 'file' } };
       const responseData = {
         id: 1,
         metaData: null,
       };
+      const options = {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      };
 
-      mockApi.post(`${DATA_SOURCES_PATH}`, requestData).reply(OK, responseData);
+      mockApi.post(DATA_SOURCES_PATH, /form-data; name="file"[^]*file/m, options).reply(OK, responseData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)

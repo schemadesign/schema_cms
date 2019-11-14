@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
-import { withTheme } from '../../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { SourceComponent } from './source.component';
 
 export const defaultProps = {
@@ -11,7 +11,7 @@ export const defaultProps = {
     jobs: [],
   },
   theme: Theme.dark,
-  updateDataSource: Function.prototype,
+  onDataSourceChange: Function.prototype,
   removeDataSource: Function.prototype,
   isAnyJobProcessing: false,
   history: {

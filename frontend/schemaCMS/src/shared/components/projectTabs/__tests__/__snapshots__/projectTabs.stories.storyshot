@@ -10,16 +10,16 @@ exports[`Storyshots ProjectTabs Default 1`] = `
   }
 >
   <div
-    className="sc-bsbRJL kfmymT"
+    className="sc-hZSUBg VKktY"
   >
     <div
-      className="sc-hXRMBi jSmKMK"
+      className="sc-epnACN eSYYqU"
     >
       <div
-        className="sc-epnACN cAXADU"
+        className="sc-iQNlJl kMNfjz"
       >
         <a
-          className="sc-iQNlJl dondii"
+          className="sc-bsbRJL dhNCLd"
           href="/project/1"
           onClick={[Function]}
         >
@@ -29,10 +29,10 @@ exports[`Storyshots ProjectTabs Default 1`] = `
         </a>
       </div>
       <div
-        className="sc-epnACN hciwnb"
+        className="sc-iQNlJl kXywOC"
       >
         <a
-          className="sc-iQNlJl dondii"
+          className="sc-bsbRJL dhNCLd"
           href="/project/1/datasource"
           onClick={[Function]}
         >
@@ -42,10 +42,10 @@ exports[`Storyshots ProjectTabs Default 1`] = `
         </a>
       </div>
       <div
-        className="sc-epnACN hciwnb"
+        className="sc-iQNlJl kXywOC"
       >
         <a
-          className="sc-iQNlJl dondii"
+          className="sc-bsbRJL dhNCLd"
           href="/project/1/user"
           onClick={[Function]}
         >

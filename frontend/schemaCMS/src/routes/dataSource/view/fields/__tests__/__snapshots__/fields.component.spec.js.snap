@@ -20,7 +20,7 @@ exports[`Fields: Component should render correctly 1`] = `
     match={
       Object {
         "params": Object {
-          "step": "1",
+          "step": "2",
         },
       }
     }
@@ -45,7 +45,7 @@ exports[`Fields: Component should render correctly 1`] = `
     match={
       Object {
         "params": Object {
-          "step": "1",
+          "step": "2",
         },
       }
     }
