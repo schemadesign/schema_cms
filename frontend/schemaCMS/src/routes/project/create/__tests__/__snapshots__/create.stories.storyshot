@@ -212,13 +212,13 @@ exports[`Storyshots Project/Create Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-hmzhuo kOWtqu"
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="sc-frDJqD bWAjYR"
+        className="sc-jbKcbu fynHmL"
       >
         <h2
-          className="sc-kvZOFW evrHHD"
+          className="sc-dNLxif dEgtYS"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -232,7 +232,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           Create New Project
         </h2>
         <h1
-          className="sc-hqyNC jLxrsP"
+          className="sc-jqCOkK iblYWW"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -249,7 +249,7 @@ exports[`Storyshots Project/Create Default 1`] = `
         </h1>
       </div>
       <div
-        className="sc-jbKcbu cWSlbe"
+        className="sc-uJMKN jsQhVl"
       />
     </div>
     <form
@@ -650,7 +650,7 @@ exports[`Storyshots Project/Create Default 1`] = `
             className="sc-gZMcBi kOsHco"
           >
             <button
-              class="nav-btn nav-btn--back"
+              className="nav-btn nav-btn--back"
               disabled={false}
               id="cancelBtn"
               onClick={[Function]}
@@ -676,7 +676,7 @@ exports[`Storyshots Project/Create Default 1`] = `
               </span>
             </button>
             <button
-              class="nav-btn nav-btn--next"
+              className="nav-btn nav-btn--next"
               disabled={false}
               id="finishBtn"
               style={

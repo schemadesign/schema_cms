@@ -19,7 +19,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
         className="sc-gZMcBi kOsHco"
       >
         <button
-          class="nav-btn nav-btn--back"
+          className="nav-btn nav-btn--back"
           disabled={false}
           onClick={[Function]}
           style={
@@ -44,7 +44,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
           </span>
         </button>
         <button
-          class="nav-btn nav-btn--next"
+          className="nav-btn nav-btn--next"
           disabled={false}
           onClick={[Function]}
           style={
@@ -207,7 +207,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
         className="sc-gZMcBi kOsHco"
       >
         <button
-          class="nav-btn nav-btn--back"
+          className="nav-btn nav-btn--back"
           disabled={true}
           onClick={[Function]}
           style={
@@ -232,7 +232,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
           </span>
         </button>
         <button
-          class="nav-btn nav-btn--next"
+          className="nav-btn nav-btn--next"
           disabled={false}
           onClick={[Function]}
           style={
@@ -395,7 +395,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
         className="sc-gZMcBi kOsHco"
       >
         <button
-          class="nav-btn nav-btn--back"
+          className="nav-btn nav-btn--back"
           disabled={false}
           onClick={[Function]}
           style={
@@ -420,7 +420,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
           </span>
         </button>
         <button
-          class="nav-btn nav-btn--next"
+          className="nav-btn nav-btn--next"
           disabled={true}
           onClick={[Function]}
           style={
@@ -583,7 +583,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
         className="sc-gZMcBi kOsHco"
       >
         <button
-          class="nav-btn nav-btn--back"
+          className="nav-btn nav-btn--back"
           disabled={true}
           onClick={[Function]}
           style={
@@ -608,7 +608,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
           </span>
         </button>
         <button
-          class="nav-btn nav-btn--next"
+          className="nav-btn nav-btn--next"
           disabled={true}
           onClick={[Function]}
           style={
@@ -771,7 +771,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
         className="sc-gZMcBi kOsHco"
       >
         <button
-          class="nav-btn nav-btn--back"
+          className="nav-btn nav-btn--back"
           disabled={false}
           onClick={[Function]}
           style={
@@ -796,7 +796,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
           </span>
         </button>
         <button
-          class="nav-btn nav-btn--next"
+          className="nav-btn nav-btn--next"
           disabled={false}
           onClick={[Function]}
           style={

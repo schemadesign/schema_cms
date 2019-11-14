@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   }
 >
   <div
-    className="sc-VJcYb eHzyuQ"
+    className="sc-cqCuEk cqoivF"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -220,13 +220,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-hmzhuo kOWtqu"
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="sc-frDJqD bWAjYR"
+        className="sc-jbKcbu fynHmL"
       >
         <h2
-          className="sc-kvZOFW evrHHD"
+          className="sc-dNLxif dEgtYS"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -242,7 +242,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
           </span>
         </h2>
         <h1
-          className="sc-hqyNC jLxrsP"
+          className="sc-jqCOkK iblYWW"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -261,11 +261,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </h1>
       </div>
       <div
-        className="sc-jbKcbu cWSlbe"
+        className="sc-uJMKN jsQhVl"
       />
     </div>
     <form
-      className="sc-ipXKqB bXVKyT"
+      className="sc-dliRfk AXbuP"
       onSubmit={[Function]}
     >
       <div
@@ -300,10 +300,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             Name
           </label>
           <input
-            disabled={true}
             id="firstName"
             name="firstName"
             onChange={[Function]}
+            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -360,10 +360,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             Email
           </label>
           <input
-            disabled={true}
             id="email"
             name="email"
             onChange={[Function]}
+            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -419,10 +419,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             Role
           </label>
           <input
-            disabled={true}
             id="role"
             name="role"
             onChange={[Function]}
+            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -456,7 +456,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             className="sc-gZMcBi kOsHco"
           >
             <button
-              class="nav-btn nav-btn--back"
+              className="nav-btn nav-btn--back"
               disabled={false}
               onClick={[Function]}
               style={
@@ -481,7 +481,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               </span>
             </button>
             <button
-              class="nav-btn nav-btn--next"
+              className="nav-btn nav-btn--next"
               disabled={false}
               style={
                 Object {

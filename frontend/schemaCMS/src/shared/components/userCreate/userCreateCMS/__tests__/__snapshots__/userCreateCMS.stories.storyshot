@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 >
   <div
-    className="sc-VJcYb eHzyuQ"
+    className="sc-cqCuEk cqoivF"
   >
     <div
       className="sc-gisBJw kiKCgt"
@@ -220,13 +220,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-hmzhuo kOWtqu"
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="sc-frDJqD bWAjYR"
+        className="sc-jbKcbu fynHmL"
       >
         <h2
-          className="sc-kvZOFW evrHHD"
+          className="sc-dNLxif dEgtYS"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -242,7 +242,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           </span>
         </h2>
         <h1
-          className="sc-hqyNC jLxrsP"
+          className="sc-jqCOkK iblYWW"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -261,11 +261,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </h1>
       </div>
       <div
-        className="sc-jbKcbu cWSlbe"
+        className="sc-uJMKN jsQhVl"
       />
     </div>
     <form
-      className="sc-ipXKqB bXVKyT"
+      className="sc-dliRfk AXbuP"
       onSubmit={[Function]}
     >
       <div
@@ -323,27 +323,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                 "top": 0,
               }
             }
-          >
-            <div
-              className="sc-gzVnrw bHgYaJ"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
+          />
         </div>
       </div>
       <div
@@ -492,7 +472,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             className="sc-gZMcBi kOsHco"
           >
             <button
-              class="nav-btn nav-btn--back"
+              className="nav-btn nav-btn--back"
               disabled={false}
               onClick={[Function]}
               style={
@@ -517,7 +497,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               </span>
             </button>
             <button
-              class="nav-btn nav-btn--next"
+              className="nav-btn nav-btn--next"
               disabled={true}
               style={
                 Object {

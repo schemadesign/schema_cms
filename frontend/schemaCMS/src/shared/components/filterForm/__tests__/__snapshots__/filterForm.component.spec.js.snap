@@ -1718,7 +1718,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       type="button"
                                     >
                                       <Component
-                                        class="nav-btn nav-btn--back"
+                                        className="nav-btn nav-btn--back"
                                         customStyles={
                                           Object {
                                             "margin": null,
@@ -1729,7 +1729,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                         type="button"
                                       >
                                         <ButtonComponent
-                                          class="nav-btn nav-btn--back"
+                                          className="nav-btn nav-btn--back"
                                           customStyles={
                                             Object {
                                               "margin": null,
@@ -1741,7 +1741,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                           type="button"
                                         >
                                           <button
-                                            class="nav-btn nav-btn--back"
+                                            className="nav-btn nav-btn--back"
                                             disabled={false}
                                             onClick={[Function]}
                                             style={
@@ -1781,7 +1781,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       type="submit"
                                     >
                                       <Component
-                                        class="nav-btn nav-btn--next"
+                                        className="nav-btn nav-btn--next"
                                         customStyles={
                                           Object {
                                             "margin": null,
@@ -1792,7 +1792,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                         type="submit"
                                       >
                                         <ButtonComponent
-                                          class="nav-btn nav-btn--next"
+                                          className="nav-btn nav-btn--next"
                                           customStyles={
                                             Object {
                                               "margin": null,
@@ -1803,7 +1803,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                           type="submit"
                                         >
                                           <button
-                                            class="nav-btn nav-btn--next"
+                                            className="nav-btn nav-btn--next"
                                             disabled={true}
                                             style={
                                               Object {
@@ -3702,7 +3702,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       type="button"
                                     >
                                       <Component
-                                        class="nav-btn nav-btn--back"
+                                        className="nav-btn nav-btn--back"
                                         customStyles={
                                           Object {
                                             "margin": null,
@@ -3713,7 +3713,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                         type="button"
                                       >
                                         <ButtonComponent
-                                          class="nav-btn nav-btn--back"
+                                          className="nav-btn nav-btn--back"
                                           customStyles={
                                             Object {
                                               "margin": null,
@@ -3725,7 +3725,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                           type="button"
                                         >
                                           <button
-                                            class="nav-btn nav-btn--back"
+                                            className="nav-btn nav-btn--back"
                                             disabled={false}
                                             onClick={[Function]}
                                             style={
@@ -3765,7 +3765,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       type="submit"
                                     >
                                       <Component
-                                        class="nav-btn nav-btn--next"
+                                        className="nav-btn nav-btn--next"
                                         customStyles={
                                           Object {
                                             "margin": null,
@@ -3776,7 +3776,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                         type="submit"
                                       >
                                         <ButtonComponent
-                                          class="nav-btn nav-btn--next"
+                                          className="nav-btn nav-btn--next"
                                           customStyles={
                                             Object {
                                               "margin": null,
@@ -3787,7 +3787,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                           type="submit"
                                         >
                                           <button
-                                            class="nav-btn nav-btn--next"
+                                            className="nav-btn nav-btn--next"
                                             disabled={true}
                                             style={
                                               Object {

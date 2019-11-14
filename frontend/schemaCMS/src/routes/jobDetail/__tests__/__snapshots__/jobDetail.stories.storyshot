@@ -226,7 +226,7 @@ Array [
         className="sc-gZMcBi kOsHco"
       >
         <button
-          class="nav-btn nav-btn--back"
+          className="nav-btn nav-btn--back"
           disabled={false}
           onClick={[Function]}
           style={
@@ -251,7 +251,7 @@ Array [
           </span>
         </button>
         <button
-          class="nav-btn nav-btn--next"
+          className="nav-btn nav-btn--next"
           disabled={false}
           onClick={[Function]}
           style={

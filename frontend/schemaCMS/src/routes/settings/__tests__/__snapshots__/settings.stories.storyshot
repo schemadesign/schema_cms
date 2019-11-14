@@ -436,7 +436,7 @@ exports[`Storyshots Settings Default 1`] = `
             className="sc-gZMcBi feSOVY"
           >
             <button
-              class="nav-btn nav-btn--next"
+              className="nav-btn nav-btn--next"
               disabled={true}
               style={
                 Object {

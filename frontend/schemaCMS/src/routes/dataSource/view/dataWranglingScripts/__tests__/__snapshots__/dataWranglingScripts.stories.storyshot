@@ -455,7 +455,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           className="sc-gZMcBi kOsHco"
         >
           <button
-            class="nav-btn nav-btn--back"
+            className="nav-btn nav-btn--back"
             disabled={false}
             onClick={[Function]}
             style={
@@ -480,7 +480,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
             </span>
           </button>
           <button
-            class="nav-btn nav-btn--next"
+            className="nav-btn nav-btn--next"
             disabled={false}
             onClick={[Function]}
             style={

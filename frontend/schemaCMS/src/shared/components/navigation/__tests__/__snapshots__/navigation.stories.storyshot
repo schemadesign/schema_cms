@@ -58,7 +58,7 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
   }
 >
   <button
-    class="nav-btn nav-btn--back"
+    className="nav-btn nav-btn--back"
     disabled={false}
     style={
       Object {
@@ -154,7 +154,7 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
   }
 >
   <button
-    class="nav-btn nav-btn--next"
+    className="nav-btn nav-btn--next"
     disabled={false}
     style={
       Object {
