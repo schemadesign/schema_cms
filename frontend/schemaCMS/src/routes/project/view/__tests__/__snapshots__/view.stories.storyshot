@@ -333,7 +333,7 @@ exports[`Storyshots Project/View default 1`] = `
                 </span>
               </div>
               <span
-                className="sc-rBLzX hiHhYT"
+                className="sc-rBLzX eToTiL"
                 id="projectDataSourcesValue"
               >
                 3
@@ -375,7 +375,7 @@ exports[`Storyshots Project/View default 1`] = `
                 </span>
               </div>
               <span
-                className="sc-rBLzX hiHhYT"
+                className="sc-rBLzX eToTiL"
                 id="projectUsersValue"
               >
                 2
