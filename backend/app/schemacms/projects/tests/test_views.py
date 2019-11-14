@@ -3,6 +3,7 @@ import operator
 import os
 import uuid
 
+from django.core.files import base
 from django.urls import reverse
 from rest_framework import status
 
@@ -606,16 +607,21 @@ class TestDataSourceJobUpdateState:
         assert not job.result
         assert job.error == ""
 
-    def test_job_state_from_processing_to_success(self, api_client, job_factory, mocker, lambda_auth_token):
+    def test_job_state_from_processing_to_success(
+        self, api_client, job_factory, mocker, lambda_auth_token, default_storage
+    ):
         job = job_factory(job_state=projects_constants.DataSourceJobState.PROCESSING, result=None, error="")
+        default_storage.save(name="path/to/result.csv", content=base.ContentFile("test,1,2".encode()))
         payload = dict(
             job_state=projects_constants.DataSourceJobState.SUCCESS, result="path/to/result.csv", error="test"
         )
-        update_meta_mock = mocker.patch("schemacms.projects.models.DataSourceJob.update_meta")
         set_active_job_mock = mocker.patch("schemacms.projects.models.DataSource.set_active_job")
 
         response = api_client.post(
-            self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
+            self.get_url(job.pk),
+            payload,
+            HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token),
+            format="json",
         )
         job.refresh_from_db()
 
@@ -623,7 +629,6 @@ class TestDataSourceJobUpdateState:
         assert job.job_state == payload["job_state"]
         assert job.result == payload["result"]
         assert job.error == ""
-        update_meta_mock.assert_called_with()
         set_active_job_mock.assert_called_with(job)
 
     def test_job_state_from_processing_to_failed(self, api_client, job_factory, lambda_auth_token):

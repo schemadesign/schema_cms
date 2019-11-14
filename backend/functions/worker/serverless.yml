@@ -41,3 +41,4 @@ functions:
     environment:
       DB_SECRET_ARN: arn:aws:secretsmanager:us-east-1:1234567890:secret:dbSecret
       AWS_STORAGE_BUCKET_NAME: schemacms
+      LAMBDA_AUTH_TOKEN: 97090e73a80c4692bbbf7dedc17c59e0
