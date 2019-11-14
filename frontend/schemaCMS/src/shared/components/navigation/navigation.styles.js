@@ -3,15 +3,13 @@ import { always, cond, ifElse, propEq, T } from 'ramda';
 import { Button } from 'schemaUI';
 
 import { media, contentSizes } from '../../../theme/media';
+import { BACK, NEXT } from './navigation.constants';
 
 const BUTTON_MARGIN = 5;
 const BUTTON_MARGIN_DESKTOP = 255;
 
-const setTranslate = (value, inverse = false) => {
-  const x = inverse ? -1 * value : value;
-
-  return cond([[propEq('back', true), always(`${x}px`)], [propEq('next', true), always(`${-x}px`)], [T, always('0')]]);
-};
+const setTranslate = x =>
+  cond([[propEq('type', BACK), always(`${x}px`)], [propEq('type', NEXT), always(`${-x}px`)], [T, always('0')]]);
 
 export const Container = styled.div`
   height: 155px;
@@ -47,7 +45,6 @@ export const Navigation = styled.div`
 
 export const NavigationButton = styled(Button)`
   width: calc(50% - ${BUTTON_MARGIN}px);
-  transform: translateX(${setTranslate(BUTTON_MARGIN, true)});
 
   ${media.desktop`
     width: 23.5%;

@@ -4,6 +4,7 @@ import { Button, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
 import { buttonIconStyles, Container, Navigation, NavigationContent, NavigationButton } from './navigation.styles';
+import { BACK, NEXT } from './navigation.constants';
 import messages from './navigation.messages';
 
 const { PlusIcon, ArrowLeftIcon } = Icons;
@@ -65,7 +66,7 @@ export class BackButton extends PureComponent {
 
   render() {
     return (
-      <NavigationButton back {...this.props}>
+      <NavigationButton type={BACK} {...this.props}>
         {this.props.children || <FormattedMessage {...messages.back} />}
       </NavigationButton>
     );
@@ -86,7 +87,7 @@ export class NextButton extends PureComponent {
     const { loading, ...restProps } = this.props;
 
     return (
-      <NavigationButton inverse next {...restProps}>
+      <NavigationButton inverse type={NEXT} {...restProps}>
         {this.props.children || <FormattedMessage {...messages.next} values={{ loading }} />}
       </NavigationButton>
     );
