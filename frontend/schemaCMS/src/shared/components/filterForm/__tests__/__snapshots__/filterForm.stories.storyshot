@@ -10,7 +10,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
   }
 >
   <form
-    className="sc-bbmXgH gOoCGN"
+    className="sc-hEsumM knjWjJ"
     onReset={[Function]}
     onSubmit={[Function]}
   >
@@ -33,7 +33,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #2F2F36",
+              "borderTop": "2px solid #2F2F36",
               "color": "#71737e",
               "display": "block",
               "fontSize": "14px",
@@ -96,14 +96,14 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-dNLxif hQcsea"
+      className="sc-jnlKLf kiHYWh"
     >
       <label
         id="fieldProjectStatusLabel"
         style={
           Object {
             "border": "none",
-            "borderTop": "1px solid #2F2F36",
+            "borderTop": "2px solid #2F2F36",
             "color": "#71737e",
             "display": "block",
             "fontSize": "14px",
@@ -124,7 +124,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         value="field"
       />
       <div
-        className="sc-jqCOkK erFQlv"
+        className="sc-fYxtnH hjJzgf"
       >
         <svg
           style={
@@ -220,14 +220,14 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-dNLxif hQcsea"
+      className="sc-jnlKLf kiHYWh"
     >
       <label
         id="fieldProjectStatusLabel"
         style={
           Object {
             "border": "none",
-            "borderTop": "1px solid #2F2F36",
+            "borderTop": "2px solid #2F2F36",
             "color": "#71737e",
             "display": "block",
             "fontSize": "14px",
@@ -248,7 +248,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         value="checkbox"
       />
       <div
-        className="sc-jqCOkK erFQlv"
+        className="sc-fYxtnH hjJzgf"
       >
         <svg
           style={
@@ -344,7 +344,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-uJMKN iRiNhi"
+      className="sc-tilXH gxfBtk"
     >
       <div
         className="sc-bZQynM bOrPFB"
@@ -365,7 +365,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
             style={
               Object {
                 "border": "none",
-                "borderTop": "1px solid #2F2F36",
+                "borderTop": "2px solid #2F2F36",
                 "color": "#71737e",
                 "display": "block",
                 "fontSize": "14px",
@@ -427,7 +427,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
             style={
               Object {
                 "border": "none",
-                "borderTop": "1px solid #2F2F36",
+                "borderTop": "2px solid #2F2F36",
                 "color": "#71737e",
                 "display": "block",
                 "fontSize": "14px",
@@ -550,7 +550,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
   }
 >
   <form
-    className="sc-bbmXgH gOoCGN"
+    className="sc-hEsumM knjWjJ"
     onReset={[Function]}
     onSubmit={[Function]}
   >
@@ -573,7 +573,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
           style={
             Object {
               "border": "none",
-              "borderTop": "1px solid #2F2F36",
+              "borderTop": "2px solid #2F2F36",
               "color": "#71737e",
               "display": "block",
               "fontSize": "14px",
@@ -636,14 +636,14 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-dNLxif hQcsea"
+      className="sc-jnlKLf kiHYWh"
     >
       <label
         id="fieldProjectStatusLabel"
         style={
           Object {
             "border": "none",
-            "borderTop": "1px solid #2F2F36",
+            "borderTop": "2px solid #2F2F36",
             "color": "#71737e",
             "display": "block",
             "fontSize": "14px",
@@ -664,7 +664,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         value="field"
       />
       <div
-        className="sc-jqCOkK erFQlv"
+        className="sc-fYxtnH hjJzgf"
       >
         <svg
           style={
@@ -760,14 +760,14 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-dNLxif hQcsea"
+      className="sc-jnlKLf kiHYWh"
     >
       <label
         id="fieldProjectStatusLabel"
         style={
           Object {
             "border": "none",
-            "borderTop": "1px solid #2F2F36",
+            "borderTop": "2px solid #2F2F36",
             "color": "#71737e",
             "display": "block",
             "fontSize": "14px",
@@ -788,7 +788,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         value="checkbox"
       />
       <div
-        className="sc-jqCOkK erFQlv"
+        className="sc-fYxtnH hjJzgf"
       >
         <svg
           style={
@@ -884,7 +884,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-uJMKN iRiNhi"
+      className="sc-tilXH gxfBtk"
     >
       <div
         className="sc-bZQynM bOrPFB"
@@ -905,7 +905,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
             style={
               Object {
                 "border": "none",
-                "borderTop": "1px solid #2F2F36",
+                "borderTop": "2px solid #2F2F36",
                 "color": "#71737e",
                 "display": "block",
                 "fontSize": "14px",
@@ -967,7 +967,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
             style={
               Object {
                 "border": "none",
-                "borderTop": "1px solid #2F2F36",
+                "borderTop": "2px solid #2F2F36",
                 "color": "#71737e",
                 "display": "block",
                 "fontSize": "14px",

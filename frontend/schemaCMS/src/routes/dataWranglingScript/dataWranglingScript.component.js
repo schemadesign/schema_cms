@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always, isEmpty } from 'ramda';
+import { always } from 'ramda';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FormattedMessage } from 'react-intl';
@@ -18,12 +18,12 @@ import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { Container, Form, customInputStyles } from './dataWranglingScript.styles';
 import messages from './dataWranglingScript.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
+import { ContextHeader } from '../../shared/components/contextHeader';
 
 export class DataWranglingScript extends PureComponent {
   static propTypes = {
     dataWranglingScript: PropTypes.object,
     fetchDataWranglingScript: PropTypes.func.isRequired,
-    unmountDataWrangling: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     match: PropTypes.shape({
@@ -33,17 +33,18 @@ export class DataWranglingScript extends PureComponent {
     }).isRequired,
   };
 
-  componentDidMount() {
+  state = {
+    loading: true,
+  };
+
+  async componentDidMount() {
     const {
       match: {
         params: { scriptId },
       },
     } = this.props;
-    this.props.fetchDataWranglingScript({ scriptId });
-  }
-
-  componentWillUnmount() {
-    this.props.unmountDataWrangling();
+    await this.props.fetchDataWranglingScript({ scriptId });
+    this.setState({ loading: false });
   }
 
   getHeaderAndMenuConfig = () => {
@@ -100,13 +101,15 @@ export class DataWranglingScript extends PureComponent {
   }
 
   render() {
-    const content = this.getContentOrLoader(isEmpty(this.props.dataWranglingScript));
-    const topHeaderConfig = this.getHeaderAndMenuConfig();
+    const { loading } = this.state;
+    const content = this.getContentOrLoader(loading);
+    const headerConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader {...topHeaderConfig} />
+        <TopHeader {...headerConfig} />
+        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         {content}
       </Container>
     );

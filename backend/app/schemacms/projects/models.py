@@ -2,7 +2,6 @@ import json
 import logging
 import os
 
-import boto3
 import datatable as dt
 
 import django.core.files.base
@@ -16,7 +15,8 @@ from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
 
 from schemacms.users import constants as users_constants
-from . import constants, managers, fsm
+from . import constants, managers, fsm, services
+from schemacms.utils import models as utils_models
 
 
 def file_upload_path(instance, filename):
@@ -142,7 +142,9 @@ class Project(
         return self.data_sources.count()
 
 
-class DataSource(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+class DataSource(
+    utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
+):
     name = models.CharField(max_length=constants.DATASOURCE_NAME_MAX_LENGTH, null=True)
     type = models.CharField(max_length=25, choices=constants.DATA_SOURCE_TYPE_CHOICES)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="data_sources")
@@ -223,9 +225,8 @@ class DataSource(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
 
     @property
     def current_job(self):
-        if self.active_job:
+        if self.active_job_id:
             return self.active_job
-
         return self.get_last_success_job()
 
     def create_job(self, **job_kwargs):
@@ -242,7 +243,17 @@ class DataSource(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
         self.save(update_fields=["active_job"])
 
     def get_last_success_job(self):
-        return self.jobs.filter(job_state=constants.DataSourceJobState.SUCCESS).latest("created")
+        try:
+            return self.jobs.filter(job_state=constants.DataSourceJobState.SUCCESS).latest("created")
+        except DataSourceJob.DoesNotExist:
+            return None
+
+    def meta_file_serialization(self):
+        data = {"id": self.id, "name": self.name, "file": self.file.name, "items": 0, "result": ""}
+        current_job = self.current_job
+        if current_job:
+            data.update({"items": current_job.meta_data.items, "result": current_job.result.name or ""})
+        return data
 
 
 class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
@@ -288,11 +299,20 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
         else:
             return os.path.join(base_path, f"{self.datasource.id}/scripts/{filename}")
 
+    def meta_file_serialization(self):
+        data = {"id": self.id, "name": self.name}
+        return data
 
-class DataSourceJob(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel, fsm.DataSourceJobFSM):
-    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
+
+class DataSourceJob(
+    utils_models.MetaGeneratorMixin,
+    softdelete.models.SoftDeleteObject,
+    ext_models.TimeStampedModel,
+    fsm.DataSourceJobFSM,
+):
+    datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='jobs')
     description = models.TextField(blank=True)
-    source_file_path = models.CharField(max_length=255, editable=False)
+    source_file_path: str = models.CharField(max_length=255, editable=False)
     source_file_version = models.CharField(max_length=36, editable=False)
     result = models.FileField(upload_to=file_upload_path, null=True)
     error = models.TextField(blank=True, default="")
@@ -312,8 +332,7 @@ class DataSourceJob(softdelete.models.SoftDeleteObject, ext_models.TimeStampedMo
         }
         if self.source_file_version:
             params['VersionId'] = self.source_file_version
-        s3 = boto3.client('s3')
-        return s3.generate_presigned_url(ClientMethod='get_object', Params=params)
+        return services.s3.generate_presigned_url(ClientMethod='get_object', Params=params)
 
     def relative_path_to_save(self, filename):
         base_path = self.result.storage.location
@@ -332,9 +351,23 @@ class DataSourceJob(softdelete.models.SoftDeleteObject, ext_models.TimeStampedMo
                 f"job_{self.id}_preview.json", django.core.files.base.ContentFile(content=preview_json)
             )
 
+    def meta_file_serialization(self):
+        data = {
+            "id": self.id,
+            "datasource": self.datasource.meta_file_serialization(),
+            "source_file_path": self.source_file_path,
+            "source_file_version": self.source_file_version,
+            "steps": [
+                step.meta_file_serialization() for step in self.steps.order_by("exec_order").iterator()
+            ],
+        }
+        return data
+
 
 class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
-    job = models.OneToOneField(DataSourceJob, on_delete=models.CASCADE, related_name="meta_data")
+    job: DataSourceJob = models.OneToOneField(
+        DataSourceJob, on_delete=models.CASCADE, related_name="meta_data"
+    )
 
     def __str__(self):
         return f"Job {self.job} meta"
@@ -346,17 +379,30 @@ class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
 
 
 class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
-    datasource_job = models.ForeignKey(DataSourceJob, on_delete=models.CASCADE, related_name='steps')
-    script = models.ForeignKey(WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True)
+    datasource_job: DataSourceJob = models.ForeignKey(
+        DataSourceJob, on_delete=models.CASCADE, related_name='steps'
+    )
+    script: WranglingScript = models.ForeignKey(
+        WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True
+    )
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
+
+    def meta_file_serialization(self):
+        data = {
+            "id": self.id,
+            "body": self.body,
+            "script": self.script.meta_file_serialization(),
+            "exec_order": self.exec_order,
+        }
+        return data
 
 
 # Filters
 
 
 class Filter(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
-    datasource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='filters')
+    datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='filters')
     name = models.CharField(max_length=25)
     filter_type = models.CharField(max_length=25, choices=constants.FilterType.choices())
     field = models.CharField(max_length=25)

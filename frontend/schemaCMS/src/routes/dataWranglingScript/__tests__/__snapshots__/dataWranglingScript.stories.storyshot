@@ -10,10 +10,10 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
   }
 >
   <div
-    className="sc-feJyhm fRrBax"
+    className="sc-lhVmIH iBkPsG"
   >
     <div
-      className="sc-eqIVtm jYTlNG"
+      className="sc-gisBJw kiKCgt"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
       >
         <div>
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
         }
       >
         <div
-          className="sc-caSCKo jjNSwx"
+          className="sc-cHGsZl bHiaRe"
         >
           <div
-            className="sc-fAjcbJ byigni"
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -160,13 +160,13 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-gisBJw eCZBLA"
+          className="sc-TOsTZ iUQrOT"
         >
           <ul
-            className="sc-kjoXOD sc-cHGsZl cULqXW"
+            className="sc-kgAjT sc-cJSrbW doKZeW"
           />
           <ul
-            className="sc-kjoXOD sc-TOsTZ eELfaW"
+            className="sc-kgAjT sc-ksYbfQ iFxI"
           />
         </div>
         <button
@@ -211,841 +211,53 @@ exports[`Storyshots DataWranglingScript Default 1`] = `
         </button>
       </div>
     </div>
-    <form
-      className="sc-iELTvK fyBIax"
-      name="dataWranglingForm"
+    <div
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="sc-bZQynM bOrPFB"
+        className="sc-jbKcbu fynHmL"
       >
-        <div
+        <h2
+          className="sc-dNLxif dEgtYS"
+          id="desktopHeaderTitle"
           style={
             Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
             }
           }
         >
-          <label
-            htmlFor="description"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "1px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
+          Data Wrangling
+        </h2>
+        <h1
+          className="sc-jqCOkK iblYWW"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
             }
-          >
-            Description
-          </label>
-          <input
-            disabled={true}
-            id="description"
-            name="description"
-            onChange={[Function]}
-            placeholder="Description"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontSize": "18px",
-                "lineHeight": "24px",
-                "outline": "none",
-                "overflow": "hidden",
-                "textOverflow": "ellipsis",
-                "whiteSpace": "nowrap",
-              }
-            }
-            type="text"
-            value="local:blank_cells.py"
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          />
-        </div>
-      </div>
-      <pre
-        style={
-          Object {
-            "background": "#F0F0F0",
-            "color": "#444",
-            "display": "block",
-            "overflowX": "auto",
-            "padding": "0.5em",
           }
-        }
-      >
-        <code>
-          
-      
-          <span
-            style={
-              Object {
-                "fontWeight": "bold",
-              }
-            }
-          >
-            import
-          </span>
-           pandas 
-          <span
-            style={
-              Object {
-                "fontWeight": "bold",
-              }
-            }
-          >
-            as
-          </span>
-           pd
-      
-          <span
-            style={
-              Object {
-                "fontWeight": "bold",
-              }
-            }
-          >
-            import
-          </span>
-           numpy 
-          <span
-            style={
-              Object {
-                "fontWeight": "bold",
-              }
-            }
-          >
-            as
-          </span>
-           np
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            """
-      Here are some ways to handle blank cells
-          1. Fill Blank cells with any value you want
-          2. Forward or backward fill the values
-          3. Remove rows with Blank cells
-      """
-          </span>
-          
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Sample dataset
-          </span>
-          
-      df = pd.DataFrame(
-          [[np.nan, 
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            2
-          </span>
-          , np.nan, 
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            0
-          </span>
-          ], [
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            3
-          </span>
-          , 
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            4
-          </span>
-          , np.nan, 
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            1
-          </span>
-          ], [np.nan, np.nan, np.nan, 
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            5
-          </span>
-          ], [np.nan, 
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            3
-          </span>
-          , np.nan, 
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            4
-          </span>
-          ]],
-          columns=list(
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'ABCD'
-          </span>
-          ),
-      )
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            """
-      1. Fill
-      """
-          </span>
-          
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Simple fill for entire dataset
-          </span>
-          
-      fill_value = 
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            10
-          </span>
-          
-      df = df.fillna(fill_value)
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Simple fill for specific field
-          </span>
-          
-      column_fill_value = 
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            5
-          </span>
-          
-      df = df[
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            "A"
-          </span>
-          ].fillna(fill_value, inplace=
-          <span
-            style={
-              Object {
-                "fontWeight": "bold",
-              }
-            }
-          >
-            True
-          </span>
-          )
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            """
-      2. Forward and Backward fill
-      """
-          </span>
-          
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # forward fill for entire dataset (Fills with previous non-empty value)
-          </span>
-          
-      df = df.fillna(method=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            "ffill"
-          </span>
-          )
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # forward fill column specific
-          </span>
-          
-      df = df[
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            "A"
-          </span>
-          ].fillna(method=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'ffill'
-          </span>
-          , inplace=
-          <span
-            style={
-              Object {
-                "fontWeight": "bold",
-              }
-            }
-          >
-            True
-          </span>
-          )
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # backward fill (Fills with next non-empty value)
-          </span>
-          
-      df = df.fillna(method=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            "bfill"
-          </span>
-          )
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # backward fill column specific
-          </span>
-          
-      df = df[
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            "A"
-          </span>
-          ].fillna(method=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'bfill'
-          </span>
-          , inplace=
-          <span
-            style={
-              Object {
-                "fontWeight": "bold",
-              }
-            }
-          >
-            True
-          </span>
-          )
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            """
-      3. Drop rows
-      It is not possible to just drop one blank cell. we would need to drop the whole row or column to
-      clean our dataset so there can be two cases of blank cells in rows and columns.
-      1. All cells are blank (empty row or column)
-      2. One or more cells are blank (partially empty row or column)
-      """
-          </span>
-          
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Empty Rows
-          </span>
-          
-      df = df.dropna(how=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'all'
-          </span>
-          , axis=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            0
-          </span>
-          )
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Empty Columns
-          </span>
-          
-      df = df.dropna(how=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'all'
-          </span>
-          , axis=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            1
-          </span>
-          )
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Empty Rows (specific column)
-          </span>
-          
-      df = df[
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'A'
-          </span>
-          ].dropna(how=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'all'
-          </span>
-          , axis=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            0
-          </span>
-          )
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Empty Columns (specific column)
-          </span>
-          
-      df = df[
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'A'
-          </span>
-          ].dropna(how=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'all'
-          </span>
-          , axis=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            1
-          </span>
-          )
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Partially empty Rows
-          </span>
-          
-      df = df.dropna(how=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'any'
-          </span>
-          , axis=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            0
-          </span>
-          )
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Partially empty Columns
-          </span>
-          
-      df = df.dropna(how=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'any'
-          </span>
-          , axis=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            1
-          </span>
-          )
-      
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Partially empty Rows (specific column)
-          </span>
-          
-      df = df.dropna(how=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'any'
-          </span>
-          , axis=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            0
-          </span>
-          )
-      
-          <span
-            style={
-              Object {
-                "color": "#888888",
-              }
-            }
-          >
-            # Partially empty Columns (specific column)
-          </span>
-          
-      df = df.dropna(how=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            'any'
-          </span>
-          , axis=
-          <span
-            style={
-              Object {
-                "color": "#880000",
-              }
-            }
-          >
-            1
-          </span>
-          )
-    
-        </code>
-      </pre>
-    </form>
-    <div
-      className="sc-iwsKbI eQdjUy"
-    >
+        >
+          View step
+        </h1>
+      </div>
       <div
-        className="sc-gqjmRU fIKSOC"
-      >
-        <div
-          className="sc-gZMcBi jSdIIC"
-        >
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginRight": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
-              }
-            }
-          >
-            <span>
-              Back
-            </span>
-          </button>
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "marginLeft": 5,
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "width": "calc(50% - 5px)",
-              }
-            }
-          >
-            <span>
-              OK
-            </span>
-          </button>
-        </div>
-      </div>
+        className="sc-uJMKN jsQhVl"
+      />
+    </div>
+    <div
+      className="sc-hSdWYo bsJfYm"
+    >
+      <span>
+        Loading...
+      </span>
     </div>
   </div>
 </div>

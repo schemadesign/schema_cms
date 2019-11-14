@@ -12,7 +12,23 @@ exports[`AddUser: Component should render correctly 1`] = `
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Project"
+        defaultMessage="Users"
+        id="project.addUser.headerTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Invite Users"
+        id="project.addUser.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Users"
         id="project.addUser.headerTitle"
         values={Object {}}
       />
@@ -121,7 +137,23 @@ exports[`AddUser: Component should render correctly with users 1`] = `
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Project"
+        defaultMessage="Users"
+        id="project.addUser.headerTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Invite Users"
+        id="project.addUser.headerSubtitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Users"
         id="project.addUser.headerTitle"
         values={Object {}}
       />

@@ -2,11 +2,12 @@ import json
 import logging
 import os
 
-from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
+from django.core import exceptions
 from django.shortcuts import get_object_or_404
 from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
+from schemacms.authorization import authentication
 from schemacms.users import permissions as user_permissions
 from schemacms.utils import serializers as utils_serializers
 from . import constants, models, serializers, services
@@ -86,15 +87,11 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.CreateJobSerializer,
         "jobs_history": serializers.DataSourceJobSerializer,
-        "public_results": serializers.PublicApiJobSerializer,
         "filters": serializers.FilterSerializer,
         "set_filters": serializers.FilterSerializer,
     }
 
     def get_queryset(self):
-        if self.action == "public_results":
-            return super().get_queryset()
-
         return super().get_queryset().available_for_user(user=self.request.user)
 
     def perform_create(self, serializer):
@@ -170,15 +167,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         serializer = self.get_serializer(instance=data_source.jobs_history, many=True)
         return response.Response(data=serializer.data)
 
-    @decorators.action(detail=True, permission_classes=[], url_path="public-results", methods=["get"])
-    def public_results(self, request, pk=None, **kwargs):
-        data_source = self.get_object()
-
-        job = data_source.current_job
-        serializer = self.get_serializer(instance=job)
-
-        return response.Response(data=serializer.data)
-
     @decorators.action(detail=True, url_path="fields-info", methods=["get"])
     def fields_info(self, request, pk=None, **kwargs):
         data_source = self.get_object()
@@ -247,21 +235,26 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="job-preview", methods=["get"])
     def job_preview(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-
         try:
             job = data_source.current_job
             if not hasattr(job, 'meta_data') and job.result:
                 job.update_meta()
-        except ObjectDoesNotExist as e:
+        except exceptions.ObjectDoesNotExist as e:
             return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
 
         return response.Response(job.meta_data.data, status=status.HTTP_200_OK)
 
 
-class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
+class DataSourceJobDetailViewSet(
+    utils_serializers.ActionSerializerViewSetMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    viewsets.GenericViewSet,
+):
     queryset = models.DataSourceJob.objects.none()
     serializer_class = serializers.DataSourceJobSerializer
     permission_classes = (permissions.IsAuthenticated,)
+    serializer_class_mapping = {"update_state": serializers.PublicApiDataSourceJobStateSerializer}
 
     def get_queryset(self):
         return models.DataSourceJob.objects.all().select_related("datasource").prefetch_related("steps")
@@ -290,6 +283,20 @@ class DataSourceJobDetailViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMi
             )
 
         return response.Response(status=status.HTTP_201_CREATED)
+
+    @decorators.action(
+        detail=True,
+        url_path="update-state",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
+    def update_state(self, request, *args, **kwargs):
+        job = self.get_object()
+        serializer = self.get_serializer(instance=job, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class DataSourceScriptDetailView(generics.RetrieveAPIView, generics.UpdateAPIView):

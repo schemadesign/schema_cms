@@ -31,14 +31,6 @@ describe('DataWranglingScripts: redux', () => {
     });
   });
 
-  describe('when UNMOUNT_ONE/SUCCESS action is received', () => {
-    it('should unmount dataWrangling ', () => {
-      const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.unmountOne.success());
-
-      expect(resultState.script).to.deep.equal({});
-    });
-  });
-
   describe('when FETCH_LIST/SUCCESS action is received', () => {
     it('should set dataWranglings', () => {
       const scripts = ['data 1', 'data 2'];

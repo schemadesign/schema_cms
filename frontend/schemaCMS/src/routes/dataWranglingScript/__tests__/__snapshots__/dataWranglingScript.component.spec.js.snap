@@ -11,6 +11,10 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
     headerSubtitle="View step"
     headerTitle="Data Wrangling"
   />
+  <ContextHeader
+    subtitle="View step"
+    title="Data Wrangling"
+  />
   <styled.form
     name="dataWranglingForm"
   >
@@ -141,6 +145,10 @@ exports[`DataWranglingScript: Component should render correctly with link to dat
     headerSubtitle="View step"
     headerTitle="Data Wrangling"
   />
+  <ContextHeader
+    subtitle="View step"
+    title="Data Wrangling"
+  />
   <styled.form
     name="dataWranglingForm"
   >
@@ -202,5 +210,24 @@ exports[`DataWranglingScript: Component should render correctly with link to dat
       />
     </NextButton>
   </NavigationContainer>
+</styled.div>
+`;
+
+exports[`DataWranglingScript: Component should render correctly with loader 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="View step"
+  />
+  <TopHeader
+    headerSubtitle="View step"
+    headerTitle="Data Wrangling"
+  />
+  <ContextHeader
+    subtitle="View step"
+    title="Data Wrangling"
+  />
+  <Loader />
 </styled.div>
 `;

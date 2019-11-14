@@ -23,6 +23,27 @@ exports[`UserCreate: Component should render correctly 1`] = `
       />
     }
   />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="You are adding {user} to {project}"
+        id="userCreate.addUser"
+        values={
+          Object {
+            "project": "",
+            "user": "",
+          }
+        }
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Users"
+        id="userCreate.pageTitle"
+        values={Object {}}
+      />
+    }
+  />
   <styled.form
     onSubmit={[Function]}
   >
@@ -75,6 +96,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         loading={false}
         type="submit"
       >

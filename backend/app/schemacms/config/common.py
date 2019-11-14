@@ -287,3 +287,6 @@ class Common(Configuration):
     SQS_WORKER_QUEUE_FILE_SIZE = 52428800  # bytes, 50MB
     SQS_WORKER_QUEUE_URL = os.getenv('SQS_WORKER_QUEUE_URL')
     SQS_WORKER_EXT_QUEUE_URL = os.getenv('SQS_WORKER_EXT_QUEUE_URL')
+
+    # Allow lambda function to call API endpoint
+    LAMBDA_AUTH_TOKEN = os.getenv('LAMBDA_AUTH_TOKEN')

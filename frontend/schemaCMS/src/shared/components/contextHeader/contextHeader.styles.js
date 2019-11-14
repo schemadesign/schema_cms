@@ -18,11 +18,11 @@ export const Header = styled.div`
   margin-right: 20px;
 `;
 
-export const Title = styled(Typography.H1)`
+export const Title = styled(Typography.H2)`
   color: ${({ theme: { text } }) => text};
 `;
 
-export const Subtitle = styled(Typography.H2)`
+export const Subtitle = styled(Typography.H1)`
   color: ${({ theme: { text } }) => text};
 `;
 

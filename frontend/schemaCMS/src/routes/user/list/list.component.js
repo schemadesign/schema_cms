@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
+import { ContextHeader } from '../../../shared/components/contextHeader';
 import { UserList } from '../../../shared/components/userList';
 import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { Container } from '../../project/list/list.styles';
@@ -25,16 +26,19 @@ export class List extends PureComponent {
 
   render() {
     const { users } = this.props;
-    const topHeaderConfig = {
+    const headerConfig = {
       headerTitle: <FormattedMessage {...messages.headerTitle} />,
       headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
     };
 
     return (
       <Container>
-        <TopHeader {...topHeaderConfig} />
+        <TopHeader {...headerConfig} />
+        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle}>
+          <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
+        </ContextHeader>
         <UserList users={users} />
-        <NavigationContainer>
+        <NavigationContainer hideOnDesktop>
           <BackButton onClick={this.handleCancelClick}>
             <FormattedMessage {...messages.cancel} />
           </BackButton>

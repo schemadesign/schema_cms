@@ -20,6 +20,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './addUser.messages';
 import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 
 export class AddUser extends PureComponent {
   static propTypes = {
@@ -112,10 +113,12 @@ export class AddUser extends PureComponent {
   render() {
     const { users } = this.props;
     const { showConfirmationModal } = this.state;
+    const headerConfig = this.getHeaderConfig();
 
     return (
       <Container>
-        <TopHeader {...this.getHeaderConfig()} />
+        <TopHeader {...headerConfig} />
+        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         {users.map(this.renderUser)}
         <NavigationContainer>
           <BackButton onClick={this.handleBackClick}>

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Formik } from 'formik';
 import { withTheme } from 'styled-components';
+import Modal from 'react-modal';
 
 import {
   buttonStyles,
@@ -14,6 +15,7 @@ import {
   customRadioGroupStyles,
   WarningWrapper,
   Link,
+  LinkContainer,
 } from './source.styles';
 import messages from './source.messages';
 import { TextInput } from '../../../../shared/components/form/inputs/textInput';
@@ -32,6 +34,12 @@ import { Uploader } from '../../../../shared/components/form/uploader';
 import { errorMessageParser } from '../../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import browserHistory from '../../../../shared/utils/history';
+import {
+  getModalStyles,
+  ModalActions,
+  ModalButton,
+  ModalTitle,
+} from '../../../../shared/components/modal/modal.styles';
 
 const { RadioGroup, RadioButton, Label } = Form;
 const { CsvIcon } = Icons;
@@ -42,6 +50,7 @@ export class SourceComponent extends PureComponent {
     intl: PropTypes.object.isRequired,
     isAnyJobProcessing: PropTypes.bool.isRequired,
     updateDataSource: PropTypes.func.isRequired,
+    removeDataSource: PropTypes.func.isRequired,
     theme: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
@@ -53,6 +62,19 @@ export class SourceComponent extends PureComponent {
 
   state = {
     loading: false,
+    confirmationModalOpen: false,
+  };
+
+  handleRemoveClick = () => this.setState({ confirmationModalOpen: true });
+
+  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
+
+  handleConfirmRemove = () => {
+    const {
+      dataSource: { project: projectId, id: dataSourceId },
+    } = this.props;
+
+    this.props.removeDataSource({ projectId, dataSourceId });
   };
 
   handleUploadChange = ({
@@ -99,7 +121,7 @@ export class SourceComponent extends PureComponent {
       type="file"
       id="fileUpload"
       onChange={({ currentTarget }) => this.handleUploadChange({ currentTarget, setFieldValue })}
-      accept=".csv,.tsv"
+      accept=".csv"
       disabled={isAnyJobProcessing}
       checkOnlyErrors
       {...restProps}
@@ -150,7 +172,7 @@ export class SourceComponent extends PureComponent {
   render() {
     const { dataSource, ...restProps } = this.props;
     const { jobs } = dataSource;
-    const { loading } = this.state;
+    const { loading, confirmationModalOpen } = this.state;
 
     return (
       <Container>
@@ -192,7 +214,12 @@ export class SourceComponent extends PureComponent {
                   {this.renderRadioButton(type)}
                 </RadioGroup>
                 {this.renderSourceUpload({ type, fileName, ...rest })}
-                {this.renderJobListLink(!!jobs.length)}
+                <LinkContainer>
+                  <Link id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick}>
+                    <FormattedMessage {...messages.removeDataSource} />
+                  </Link>
+                  {this.renderJobListLink(!!jobs.length)}
+                </LinkContainer>
                 <StepNavigation
                   loading={loading}
                   disabled={disabled}
@@ -204,6 +231,19 @@ export class SourceComponent extends PureComponent {
             );
           }}
         </Formik>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <ModalButton onClick={this.handleCancelRemove}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </ModalButton>
+            <ModalButton onClick={this.handleConfirmRemove}>
+              <FormattedMessage {...messages.confirmRemoval} />
+            </ModalButton>
+          </ModalActions>
+        </Modal>
       </Container>
     );
   }
