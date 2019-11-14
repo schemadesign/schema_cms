@@ -329,6 +329,8 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def save(self, **kwargs):
         job_state = self.validated_data.pop("job_state")
+        for field_name, val in self.validated_data.items():
+            setattr(self.instance, field_name, val)
         job_state_action = {
             DataSourceJobState.PROCESSING: self.instance.processing,
             DataSourceJobState.SUCCESS: self.instance.success,
