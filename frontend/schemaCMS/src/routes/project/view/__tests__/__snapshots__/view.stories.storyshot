@@ -10,7 +10,7 @@ exports[`Storyshots Project/View default 1`] = `
   }
 >
   <div
-    className="sc-gHboQg cDrXdc"
+    className="sc-eerKOB kCRaGL"
   >
     <div>
       <div
@@ -261,10 +261,10 @@ exports[`Storyshots Project/View default 1`] = `
           className="sc-epnACN eSYYqU"
         >
           <div
-            className="sc-iQNlJl kMNfjz"
+            className="sc-iQNlJl kHKALF"
           >
             <a
-              className="sc-bsbRJL dhNCLd"
+              className="sc-bsbRJL gzXytr"
               href="/project/100"
               onClick={[Function]}
             >
@@ -274,10 +274,10 @@ exports[`Storyshots Project/View default 1`] = `
             </a>
           </div>
           <div
-            className="sc-iQNlJl kXywOC"
+            className="sc-iQNlJl fuSGWJ"
           >
             <a
-              className="sc-bsbRJL dhNCLd"
+              className="sc-bsbRJL gzXytr"
               href="/project/100/datasource"
               onClick={[Function]}
             >
@@ -287,10 +287,10 @@ exports[`Storyshots Project/View default 1`] = `
             </a>
           </div>
           <div
-            className="sc-iQNlJl kXywOC"
+            className="sc-iQNlJl fuSGWJ"
           >
             <a
-              className="sc-bsbRJL dhNCLd"
+              className="sc-bsbRJL gzXytr"
               href="/project/100/user"
               onClick={[Function]}
             >
@@ -302,13 +302,13 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </div>
       <div
-        className="sc-eilVRo VRaSz"
+        className="sc-emmjRN bNfkaf"
       >
         <ul
-          className="sc-fhYwyz hwcaSQ"
+          className="sc-jzgbtB izoRtv"
         >
           <li
-            className="sc-jzgbtB epWMbM"
+            className="sc-gJWqzi iuUsDq"
           >
             <div
               id="projectDataSources"
@@ -336,13 +336,13 @@ exports[`Storyshots Project/View default 1`] = `
                 }
               >
                 <span
-                  className="sc-gJWqzi fTxQcv"
+                  className="sc-rBLzX kmjjvp"
                 >
                   Data Sources
                 </span>
               </div>
               <span
-                className="sc-rBLzX eToTiL"
+                className="sc-bMvGRv bAmQmG"
                 id="projectDataSourcesValue"
               >
                 3
@@ -350,7 +350,7 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-jzgbtB epWMbM"
+            className="sc-gJWqzi iuUsDq"
           >
             <div
               id="projectUsers"
@@ -378,13 +378,13 @@ exports[`Storyshots Project/View default 1`] = `
                 }
               >
                 <span
-                  className="sc-gJWqzi fTxQcv"
+                  className="sc-rBLzX kmjjvp"
                 >
                   Users
                 </span>
               </div>
               <span
-                className="sc-rBLzX eToTiL"
+                className="sc-bMvGRv bAmQmG"
                 id="projectUsersValue"
               >
                 2
@@ -393,267 +393,147 @@ exports[`Storyshots Project/View default 1`] = `
           </li>
         </ul>
         <ul
-          className="sc-eerKOB fWnrzf"
+          className="sc-cpmLhU kuLRsk"
         >
           <li
-            className="sc-emmjRN ikencD"
+            className="sc-dymIpo bKnZot"
             order={1}
           >
             <div
-              className="sc-cpmLhU hKTQAI"
+              className="sc-bnXvFD edggOR"
               id="fieldLastUpdated"
             >
               <span
-                className="sc-dymIpo jWZpmb"
+                className="sc-gFaPwZ fLHPWQ"
                 id="fieldLastUpdatedLabel"
               >
                 Last Update
               </span>
               <span
-                className="sc-gFaPwZ dDUCau"
+                className="sc-fhYwyz fnihDs"
                 id="fieldLastUpdatedValue"
               >
                 3 months ago
               </span>
             </div>
-            <div
-              className="sc-bnXvFD kRJcDc"
-              id="fieldLastUpdatedEditButton"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
           </li>
           <li
-            className="sc-emmjRN depMSg"
+            className="sc-dymIpo cXCYal"
             order={3}
           >
             <div
-              className="sc-cpmLhU hKTQAI"
+              className="sc-bnXvFD edggOR"
               id="fieldStatus"
             >
               <span
-                className="sc-dymIpo jWZpmb"
+                className="sc-gFaPwZ fLHPWQ"
                 id="fieldStatusLabel"
               >
                 Status
               </span>
               <span
-                className="sc-gFaPwZ dDUCau"
+                className="sc-fhYwyz fnihDs"
                 id="fieldStatusValue"
               >
                 Status
               </span>
             </div>
-            <div
-              className="sc-bnXvFD kRJcDc"
-              id="fieldStatusEditButton"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
           </li>
           <li
-            className="sc-emmjRN knEGJR"
+            className="sc-dymIpo gcaVFP"
             order={5}
           >
             <div
-              className="sc-cpmLhU hKTQAI"
+              className="sc-bnXvFD edggOR"
               id="fieldOwner"
             >
               <span
-                className="sc-dymIpo jWZpmb"
+                className="sc-gFaPwZ fLHPWQ"
                 id="fieldOwnerLabel"
               >
                 Owner
               </span>
               <span
-                className="sc-gFaPwZ dDUCau"
+                className="sc-fhYwyz fnihDs"
                 id="fieldOwnerValue"
               >
                 Firstname Lastname
               </span>
             </div>
-            <div
-              className="sc-bnXvFD kRJcDc"
-              id="fieldOwnerEditButton"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
           </li>
           <li
-            className="sc-emmjRN hNExxc"
+            className="sc-dymIpo hjEcTe"
             order={2}
           >
             <div
-              className="sc-cpmLhU hKTQAI"
+              className="sc-bnXvFD edggOR"
               id="fieldTitle"
             >
               <span
-                className="sc-dymIpo jWZpmb"
+                className="sc-gFaPwZ fLHPWQ"
                 id="fieldTitleLabel"
               >
                 Title
               </span>
               <span
-                className="sc-gFaPwZ dDUCau"
+                className="sc-fhYwyz fnihDs"
                 id="fieldTitleValue"
               >
                 Project Name
               </span>
             </div>
-            <div
-              className="sc-bnXvFD kRJcDc"
-              id="fieldTitleEditButton"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
           </li>
           <li
-            className="sc-emmjRN bipUEW"
+            className="sc-dymIpo fytqUD"
             order={4}
           >
             <div
-              className="sc-cpmLhU hKTQAI"
+              className="sc-bnXvFD edggOR"
               id="fieldDescription"
             >
               <span
-                className="sc-dymIpo jWZpmb"
+                className="sc-gFaPwZ fLHPWQ"
                 id="fieldDescriptionLabel"
               >
                 Description
               </span>
               <span
-                className="sc-gFaPwZ dDUCau"
+                className="sc-fhYwyz fnihDs"
                 id="fieldDescriptionValue"
               >
                 Description
               </span>
             </div>
-            <div
-              className="sc-bnXvFD kRJcDc"
-              id="fieldDescriptionEditButton"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
           </li>
           <li
-            className="sc-emmjRN gluXMU"
+            className="sc-dymIpo bplZNM"
             order={6}
           >
             <div
-              className="sc-cpmLhU hKTQAI"
+              className="sc-bnXvFD edggOR"
               id="fieldSlug"
             >
               <span
-                className="sc-dymIpo jWZpmb"
+                className="sc-gFaPwZ fLHPWQ"
                 id="fieldSlugLabel"
               >
                 API
               </span>
               <span
-                className="sc-gFaPwZ dDUCau"
+                className="sc-fhYwyz fnihDs"
                 id="fieldSlugValue"
               >
                 schemacms/api/project_title
               </span>
             </div>
-            <div
-              className="sc-bnXvFD kRJcDc"
-              id="fieldSlugEditButton"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
           </li>
         </ul>
       </div>
       <div
-        className="sc-bMvGRv cIMnuc"
+        className="sc-CtfFt grSJde"
       >
         <span
-          className="sc-CtfFt bFOgSc"
+          className="sc-laTMn hEJgkH"
           id="deleteProjectDesktopBtn"
           onClick={[Function]}
           style={
@@ -733,7 +613,7 @@ exports[`Storyshots Project/View loading 1`] = `
   }
 >
   <div
-    className="sc-gHboQg cDrXdc"
+    className="sc-eerKOB kCRaGL"
   >
     <div>
       <div
@@ -980,10 +860,10 @@ exports[`Storyshots Project/View loading 1`] = `
           className="sc-epnACN eSYYqU"
         >
           <div
-            className="sc-iQNlJl kMNfjz"
+            className="sc-iQNlJl kHKALF"
           >
             <a
-              className="sc-bsbRJL dhNCLd"
+              className="sc-bsbRJL gzXytr"
               href="/project/100"
               onClick={[Function]}
             >
@@ -993,10 +873,10 @@ exports[`Storyshots Project/View loading 1`] = `
             </a>
           </div>
           <div
-            className="sc-iQNlJl kXywOC"
+            className="sc-iQNlJl fuSGWJ"
           >
             <a
-              className="sc-bsbRJL dhNCLd"
+              className="sc-bsbRJL gzXytr"
               href="/project/100/datasource"
               onClick={[Function]}
             >
@@ -1006,10 +886,10 @@ exports[`Storyshots Project/View loading 1`] = `
             </a>
           </div>
           <div
-            className="sc-iQNlJl kXywOC"
+            className="sc-iQNlJl fuSGWJ"
           >
             <a
-              className="sc-bsbRJL dhNCLd"
+              className="sc-bsbRJL gzXytr"
               href="/project/100/user"
               onClick={[Function]}
             >
@@ -1028,10 +908,10 @@ exports[`Storyshots Project/View loading 1`] = `
         </span>
       </div>
       <div
-        className="sc-bMvGRv cIMnuc"
+        className="sc-CtfFt grSJde"
       >
         <span
-          className="sc-CtfFt bFOgSc"
+          className="sc-laTMn hEJgkH"
           id="deleteProjectDesktopBtn"
           onClick={[Function]}
           style={

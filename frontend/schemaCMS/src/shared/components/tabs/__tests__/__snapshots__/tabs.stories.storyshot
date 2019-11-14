@@ -13,10 +13,10 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
     className="sc-epnACN eSYYqU"
   >
     <div
-      className="sc-iQNlJl kXywOC"
+      className="sc-iQNlJl fuSGWJ"
     >
       <a
-        className="sc-bsbRJL dhNCLd"
+        className="sc-bsbRJL gzXytr"
         href="/"
         onClick={[Function]}
       >
@@ -24,10 +24,10 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
       </a>
     </div>
     <div
-      className="sc-iQNlJl kMNfjz"
+      className="sc-iQNlJl kHKALF"
     >
       <a
-        className="sc-bsbRJL dhNCLd"
+        className="sc-bsbRJL gzXytr"
         href="/"
         onClick={[Function]}
       >
@@ -35,10 +35,10 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
       </a>
     </div>
     <div
-      className="sc-iQNlJl kXywOC"
+      className="sc-iQNlJl fuSGWJ"
     >
       <a
-        className="sc-bsbRJL dhNCLd"
+        className="sc-bsbRJL gzXytr"
         href="/"
         onClick={[Function]}
       >
@@ -46,10 +46,10 @@ exports[`Storyshots Shared Components|Tabs Default 1`] = `
       </a>
     </div>
     <div
-      className="sc-iQNlJl kXywOC"
+      className="sc-iQNlJl fuSGWJ"
     >
       <a
-        className="sc-bsbRJL dhNCLd"
+        className="sc-bsbRJL gzXytr"
         href="/"
         onClick={[Function]}
       >

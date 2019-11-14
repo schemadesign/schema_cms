@@ -50,7 +50,7 @@ export class UserCreate extends PureComponent {
 
   renderNameField = renderWhenTrue(() => {
     const fullName = `${this.props.values[FIRST_NAME]} ${this.props.values[LAST_NAME]}`;
-    return <TextInput fullWidth label="Name" value={fullName} readOnly name={FIRST_NAME} />;
+    return <TextInput fullWidth label="Name" value={fullName} disabled name={FIRST_NAME} />;
   });
 
   renderSelectOrText = renderWhenTrueOtherwise(
@@ -64,7 +64,7 @@ export class UserCreate extends PureComponent {
         onSelect={this.handleSelectStatus}
       />
     ),
-    () => <TextInput fullWidth label="Role" value={this.props.values[USER_ROLE]} readOnly name={USER_ROLE} />
+    () => <TextInput fullWidth label="Role" value={this.props.values[USER_ROLE]} disabled name={USER_ROLE} />
   );
 
   renderNavigation = isInvitation => {
@@ -89,11 +89,12 @@ export class UserCreate extends PureComponent {
         label="Email"
         onChange={this.props.handleChange}
         name={EMAIL}
+        isEdit
         {...this.props}
         checkOnlyErrors
       />
     ),
-    () => <TextInput fullWidth label="Email" value={this.props.values[EMAIL]} name={EMAIL} readOnly />
+    () => <TextInput fullWidth label="Email" value={this.props.values[EMAIL]} name={EMAIL} disabled />
   );
 
   render() {
