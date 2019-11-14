@@ -9,6 +9,7 @@ import { Create } from './create';
 import { DataSourceList } from './dataSourceList';
 import UserList from './userList/userList.container';
 import { AddUser } from './addUser';
+import { CreateDataSource } from './createDataSource';
 
 export class Project extends PureComponent {
   static propTypes = {
@@ -23,13 +24,15 @@ export class Project extends PureComponent {
 
     const viewPath = `${path}/:projectId`;
     const createPath = `${path}/create/`;
-    const dataSourceListPath = `${path}/:projectId/datasource/`;
-    const usersPath = `${path}/:projectId/user`;
-    const userPath = `${path}/:projectId/user/:userId`;
+    const usersPath = `${viewPath}/user`;
+    const userPath = `${usersPath}/:userId`;
     const addUserList = `${usersPath}/add`;
+    const dataSourceListPath = `${viewPath}/datasource`;
+    const createDataSourcePath = `${dataSourceListPath}/add`;
 
     return (
       <Switch>
+        <Route exact path={createDataSourcePath} component={CreateDataSource} />
         <Route exact path={createPath} component={Create} />
         <Route exact path={path} component={List} />
         <Route exact path={dataSourceListPath} component={DataSourceList} />

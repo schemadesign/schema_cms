@@ -29,7 +29,7 @@ export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
       removeDataSource: promisifyRoutine(DataSourceRoutines.removeOne),
-      updateDataSource: promisifyRoutine(DataSourceRoutines.updateOne),
+      onDataSourceChange: promisifyRoutine(DataSourceRoutines.updateOne),
       fetchDataWranglingScripts: promisifyRoutine(DataWranglingScriptsRoutines.fetchList),
       uploadScript: promisifyRoutine(DataWranglingScriptsRoutines.uploadScript),
       sendUpdatedDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.sendList),

@@ -187,23 +187,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
     </div>
     <div
       className="sc-EHOje eiaHYL"
-    >
-      <span
-        className="sc-ifAKCX dUWKTv"
-        id="removeDataSourceDesktopBtn"
-        onClick={[Function]}
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          }
-        }
-      >
-        <span>
-          Delete Data Source
-        </span>
-      </span>
-    </div>
+    />
     <div
       className="sc-iwsKbI eQdjUy"
     >

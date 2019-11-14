@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateDataSource: Component should render correctly 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Create"
+        id="project.createDataSource.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Data Sources"
+        id="project.createDataSource.title"
+        values={Object {}}
+      />
+    }
+  />
+  <WithTheme(SourceComponent)
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {},
+      }
+    }
+    onDataSourceChange={[Function]}
+  />
+</styled.div>
+`;

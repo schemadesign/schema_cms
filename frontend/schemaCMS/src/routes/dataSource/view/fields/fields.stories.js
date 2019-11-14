@@ -14,7 +14,7 @@ export const defaultProps = {
   history: {},
   match: {
     params: {
-      step: '1',
+      step: '2',
     },
   },
 };

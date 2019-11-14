@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { Container, ComingSoon } from './view.styles';
 import messages from './view.messages';
-import { Source } from './source';
+import { Source } from '../../../shared/components/source';
 import { DataWranglingScripts } from './dataWranglingScripts';
 import { Filters } from './filters';
 import { DataWranglingResult } from '../../dataWranglingResult';
@@ -48,6 +48,7 @@ export class View extends PureComponent {
         step: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
+    onDataSourceChange: PropTypes.func.isRequired,
   };
 
   getHeaderSubtitle = cond([

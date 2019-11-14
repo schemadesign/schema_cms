@@ -78,11 +78,8 @@ export class DataSourceList extends PureComponent {
 
   handleShowProject = () => this.props.history.push(`/project/${this.props.match.params.projectId}`);
 
-  handleCreateDataSource = () => {
-    const projectId = this.props.match.params.projectId;
-
-    this.props.createDataSource({ projectId });
-  };
+  handleCreateDataSource = () =>
+    this.props.history.push(`/project/${this.props.match.params.projectId}/datasource/add`);
 
   handleShowDataSource = ({ id, metaData, jobs = [] }) => {
     const isJobSuccess = jobs.some(({ jobState }) => jobState === 'success');
