@@ -21,6 +21,7 @@ export const defaultProps = {
       projectId: '1',
       dataSourceId: '1',
       scriptId: '1',
+      step: '3',
     },
   },
 };

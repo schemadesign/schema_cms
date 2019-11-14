@@ -155,6 +155,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         "params": Object {
           "dataSourceId": "1",
           "projectId": "1",
+          "step": "3",
         },
         "url": "/datasource/14/3",
       }

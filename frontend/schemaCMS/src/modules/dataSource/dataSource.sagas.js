@@ -21,7 +21,7 @@ function* create({ payload }) {
       forEach(name => formData.append(name, requestData[name]))
     )(requestData);
 
-    const { data } = yield api.post(`${DATA_SOURCES_PATH}`, formData, {
+    const { data } = yield api.post(DATA_SOURCES_PATH, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 

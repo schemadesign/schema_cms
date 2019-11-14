@@ -42,17 +42,18 @@ export class StepNavigation extends PureComponent {
       history,
       dataSource,
       match: {
-        params: { dataSourceId },
+        params: { dataSourceId, projectId },
       },
     } = this.props;
+
     if (step < 1) {
-      return this.props.history.push(`/project/${dataSource.project}/datasource`);
+      return this.props.history.push(`/project/${dataSource.project || projectId}/datasource`);
     }
 
     return history.push(`/datasource/${dataSourceId}/${step}`);
   };
 
-  handleBackClick = () => this.handleStepChange(parseInt(this.props.match.params.step, 10) - 1);
+  handleBackClick = () => this.handleStepChange(parseInt(this.props.match.params.step || INITIAL_STEP, 10) - 1);
 
   render() {
     const {
@@ -61,9 +62,10 @@ export class StepNavigation extends PureComponent {
       submitForm,
       dataSource,
       match: {
-        params: { step },
+        params: { step = INITIAL_STEP },
       },
     } = this.props;
+
     const activeStep = parseInt(step, 10);
     const customStepperStyles = dataSource.metaData ? stepperStyles : { ...stepperStyles, ...stepperBlockStyles };
 

@@ -55,7 +55,7 @@ exports[`Storyshots Fields Default 1`] = `
             }
           >
             <span>
-              Cancel
+              Back
             </span>
           </button>
           <button
@@ -101,13 +101,12 @@ exports[`Storyshots Fields Default 1`] = `
                 onClick={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "#FFF",
+                    "backgroundColor": "#1d1d20",
                     "borderRadius": "50%",
-                    "cursor": "default",
+                    "cursor": "pointer",
                     "display": "block",
                     "height": "12px",
                     "margin": "0 4px",
-                    "pointerEvents": "none",
                     "width": "12px",
                   }
                 }
@@ -116,12 +115,13 @@ exports[`Storyshots Fields Default 1`] = `
                 onClick={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "#1d1d20",
+                    "backgroundColor": "#FFF",
                     "borderRadius": "50%",
-                    "cursor": "pointer",
+                    "cursor": "default",
                     "display": "block",
                     "height": "12px",
                     "margin": "0 4px",
+                    "pointerEvents": "none",
                     "width": "12px",
                   }
                 }

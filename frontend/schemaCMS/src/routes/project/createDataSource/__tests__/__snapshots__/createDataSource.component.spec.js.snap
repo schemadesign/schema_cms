@@ -2,6 +2,39 @@
 
 exports[`CreateDataSource: Component should render correctly 1`] = `
 <styled.div>
-  CreateDataSource component
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Create"
+        id="dataSource.list.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Data Sources"
+        id="dataSource.list.title"
+        values={Object {}}
+      />
+    }
+  />
+  <WithTheme(SourceComponent)
+    createDataSource={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {},
+      }
+    }
+  />
 </styled.div>
 `;

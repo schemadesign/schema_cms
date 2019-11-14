@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Typography } from 'schemaUI';
-import { colors } from '../../../../theme/styled';
+import { colors } from '../../../theme/styled';
 
 const { Span: SpanUI } = Typography;
 

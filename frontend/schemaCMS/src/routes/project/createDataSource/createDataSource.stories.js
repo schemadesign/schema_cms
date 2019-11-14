@@ -2,7 +2,15 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { CreateDataSource } from './createDataSource.component';
+import { withTheme } from '../../../.storybook/decorators';
 
-const defaultProps = {};
+export const defaultProps = {
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+  createDataSource: Function.prototype,
+  match: { params: {} },
+  history: { push: Function.prototype },
+};
 
-storiesOf('CreateDataSource', module).add('Default', () => <CreateDataSource {...defaultProps} />);
+storiesOf('CreateDataSource', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <CreateDataSource {...defaultProps} />);

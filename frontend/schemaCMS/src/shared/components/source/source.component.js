@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Formik } from 'formik';
 import { withTheme } from 'styled-components';
+import Modal from 'react-modal';
 
 import {
   buttonStyles,
@@ -17,7 +18,7 @@ import {
   LinkContainer,
 } from './source.styles';
 import messages from './source.messages';
-import { TextInput } from '../../../../shared/components/form/inputs/textInput';
+import { TextInput } from '../form/inputs/textInput';
 import {
   DATA_SOURCE_FILE,
   DATA_SOURCE_NAME,
@@ -27,12 +28,13 @@ import {
   SOURCE_TYPE_API,
   SOURCE_TYPE_DATABASE,
   SOURCE_TYPE_FILE,
-} from '../../../../modules/dataSource/dataSource.constants';
-import { StepNavigation } from '../../../../shared/components/stepNavigation';
-import { Uploader } from '../../../../shared/components/form/uploader';
-import { errorMessageParser } from '../../../../shared/utils/helpers';
-import { renderWhenTrue } from '../../../../shared/utils/rendering';
-import browserHistory from '../../../../shared/utils/history';
+} from '../../../modules/dataSource/dataSource.constants';
+import { StepNavigation } from '../stepNavigation';
+import { Uploader } from '../form/uploader';
+import { errorMessageParser } from '../../utils/helpers';
+import { renderWhenTrue } from '../../utils/rendering';
+import browserHistory from '../../utils/history';
+import { getModalStyles, ModalActions, ModalButton, ModalTitle } from '../modal/modal.styles';
 
 const { RadioGroup, RadioButton, Label } = Form;
 const { CsvIcon } = Icons;
@@ -44,6 +46,7 @@ export class SourceComponent extends PureComponent {
     isAnyJobProcessing: PropTypes.bool,
     updateDataSource: PropTypes.func,
     createDataSource: PropTypes.func,
+    removeDataSource: PropTypes.func,
     theme: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
@@ -60,6 +63,19 @@ export class SourceComponent extends PureComponent {
 
   state = {
     loading: false,
+    confirmationModalOpen: false,
+  };
+
+  handleRemoveClick = () => this.setState({ confirmationModalOpen: true });
+
+  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
+
+  handleConfirmRemove = () => {
+    const {
+      dataSource: { project: projectId, id: dataSourceId },
+    } = this.props;
+
+    this.props.removeDataSource({ projectId, dataSourceId });
   };
 
   handleUploadChange = ({
@@ -155,10 +171,18 @@ export class SourceComponent extends PureComponent {
     )
   );
 
+  renderRemoveDataSourceLink = renderWhenTrue(
+    always(
+      <Link id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick}>
+        <FormattedMessage {...messages.removeDataSource} />
+      </Link>
+    )
+  );
+
   render() {
     const { dataSource, ...restProps } = this.props;
     const { jobs = [] } = dataSource;
-    const { loading } = this.state;
+    const { loading, confirmationModalOpen } = this.state;
 
     return (
       <Container>
@@ -201,9 +225,7 @@ export class SourceComponent extends PureComponent {
                 </RadioGroup>
                 {this.renderSourceUpload({ type, fileName, ...rest })}
                 <LinkContainer>
-                  <Link id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick}>
-                    <FormattedMessage {...messages.removeDataSource} />
-                  </Link>
+                  {this.renderRemoveDataSourceLink(!!dataSource.id)}
                   {this.renderJobListLink(!!jobs.length)}
                 </LinkContainer>
                 <StepNavigation
@@ -217,6 +239,19 @@ export class SourceComponent extends PureComponent {
             );
           }}
         </Formik>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <ModalButton onClick={this.handleCancelRemove}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </ModalButton>
+            <ModalButton onClick={this.handleConfirmRemove}>
+              <FormattedMessage {...messages.confirmRemoval} />
+            </ModalButton>
+          </ModalActions>
+        </Modal>
       </Container>
     );
   }

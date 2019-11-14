@@ -2,10 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { CreateDataSource } from '../createDataSource.component';
+import { defaultProps } from '../createDataSource.stories';
 
 describe('CreateDataSource: Component', () => {
-  const defaultProps = {};
-
   const component = props => <CreateDataSource {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

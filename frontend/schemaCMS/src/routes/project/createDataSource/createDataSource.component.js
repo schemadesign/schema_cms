@@ -1,8 +1,9 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { Source } from '../../dataSource/view/source';
+import { Source } from '../../../shared/components/source';
+import { Container } from './createDataSource.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './createDataSource.messages';
 
@@ -10,6 +11,12 @@ export class CreateDataSource extends PureComponent {
   static propTypes = {
     createDataSource: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.object.isRequired,
+    }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   getHeaderAndMenuConfig = () => ({
@@ -19,10 +26,10 @@ export class CreateDataSource extends PureComponent {
 
   render() {
     return (
-      <Fragment>
+      <Container>
         <TopHeader {...this.getHeaderAndMenuConfig()} />
         <Source {...this.props} />
-      </Fragment>
+      </Container>
     );
   }
 }

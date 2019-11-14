@@ -5,6 +5,11 @@ exports[`Project: Component should render correctly 1`] = `
   <Route
     component={[Function]}
     exact={true}
+    path="/project/:projectId/datasource/add"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
     path="/project/create/"
   />
   <Route
@@ -15,7 +20,7 @@ exports[`Project: Component should render correctly 1`] = `
   <Route
     component={[Function]}
     exact={true}
-    path="/project/:projectId/datasource/"
+    path="/project/:projectId/datasource"
   />
   <Route
     component={[Function]}

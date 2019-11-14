@@ -24,6 +24,7 @@ export const defaultProps = {
   match: {
     params: {
       filterId: '1',
+      step: '5',
     },
   },
   history: {
