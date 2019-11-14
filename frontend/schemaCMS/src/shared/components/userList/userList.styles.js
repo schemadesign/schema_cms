@@ -1,26 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Card } from 'schemaUI';
-
-import { media } from '../../../theme/media';
-
-export const Container = styled.div`
-  ${media.desktop`
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -20px;
-  `}
-`;
-
-export const Item = styled(Card)`
-  margin-bottom: 20px;
-
-  ${media.desktop`
-    flex: 0 0 auto;
-    width: calc(33% - 16.66px);
-    margin-left: 20px;
-  `}
-`;
 
 export const Actions = styled.div`
   flex: 0 0 auto;

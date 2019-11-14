@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserList: Component should render correctly 1`] = `<styled.div />`;
+exports[`UserList: Component should render correctly 1`] = `<styled.section />`;
 
 exports[`UserList: Component should render correctly with users 1`] = `
-<styled.div>
+<styled.section>
   <Styled(Component)
     customStyles={
       Object {
@@ -66,5 +66,5 @@ exports[`UserList: Component should render correctly with users 1`] = `
     </styled.div>
     <styled.div />
   </Styled(Component)>
-</styled.div>
+</styled.section>
 `;

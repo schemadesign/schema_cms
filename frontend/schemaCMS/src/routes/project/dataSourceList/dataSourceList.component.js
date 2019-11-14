@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Card, Icons } from 'schemaUI';
+import { Icons } from 'schemaUI';
 import { always, cond, propEq, propIs, T } from 'ramda';
 
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -10,8 +10,6 @@ import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.cons
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import {
   Container,
-  DataSourceItem,
-  DataSourceListWrapper,
   DataSourceTitle,
   Header,
   HeaderIcon,
@@ -29,6 +27,7 @@ import {
   FIELDS_STEP,
   INITIAL_STEP,
 } from '../../../modules/dataSource/dataSource.constants';
+import { ListItem, ListContainer } from '../../../shared/components/listComponents';
 
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
@@ -129,14 +128,12 @@ export class DataSourceList extends PureComponent {
     const header = this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]);
 
     return (
-      <DataSourceItem key={index}>
-        <Card headerComponent={header}>
-          <DataSourceTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
-            {name}
-          </DataSourceTitle>
-          {this.renderMetaData(metaData || {})}
-        </Card>
-      </DataSourceItem>
+      <ListItem key={index} headerComponent={header}>
+        <DataSourceTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
+          {name}
+        </DataSourceTitle>
+        {this.renderMetaData(metaData || {})}
+      </ListItem>
     );
   };
 
@@ -154,7 +151,7 @@ export class DataSourceList extends PureComponent {
         <ContextHeader title={title} subtitle={subtitle}>
           <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />
         </ContextHeader>
-        <DataSourceListWrapper>{dataSources.map(this.renderItem)}</DataSourceListWrapper>
+        <ListContainer>{dataSources.map(this.renderItem)}</ListContainer>
 
         <NavigationContainer hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
