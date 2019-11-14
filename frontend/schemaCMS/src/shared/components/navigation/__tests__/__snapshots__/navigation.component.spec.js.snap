@@ -15,13 +15,8 @@ exports[`Navigation: Component should render BackArrowButton 1`] = `
 `;
 
 exports[`Navigation: Component should render BackButton 1`] = `
-<Component
-  className="nav-btn nav-btn--back"
-  customStyles={
-    Object {
-      "margin": null,
-    }
-  }
+<Styled(Component)
+  back={true}
   disabled={false}
   onClick={[Function]}
 >
@@ -30,17 +25,12 @@ exports[`Navigation: Component should render BackButton 1`] = `
     id="shared.components.navigation.back"
     values={Object {}}
   />
-</Component>
+</Styled(Component)>
 `;
 
 exports[`Navigation: Component should render BackButton with custom children 1`] = `
-<Component
-  className="nav-btn nav-btn--back"
-  customStyles={
-    Object {
-      "margin": null,
-    }
-  }
+<Styled(Component)
+  back={true}
   disabled={false}
   onClick={[Function]}
 >
@@ -49,7 +39,7 @@ exports[`Navigation: Component should render BackButton with custom children 1`]
     id="shared.components.navigation.next"
     values={Object {}}
   />
-</Component>
+</Styled(Component)>
 `;
 
 exports[`Navigation: Component should render NavigationContainer 1`] = `
@@ -68,14 +58,9 @@ exports[`Navigation: Component should render NavigationContainer 1`] = `
 `;
 
 exports[`Navigation: Component should render NextButton 1`] = `
-<Component
-  className="nav-btn nav-btn--next"
-  customStyles={
-    Object {
-      "margin": null,
-    }
-  }
+<Styled(Component)
   inverse={true}
+  next={true}
   onClick={[Function]}
 >
   <FormattedMessage
@@ -87,18 +72,13 @@ exports[`Navigation: Component should render NextButton 1`] = `
       }
     }
   />
-</Component>
+</Styled(Component)>
 `;
 
 exports[`Navigation: Component should render NextButton with custom children 1`] = `
-<Component
-  className="nav-btn nav-btn--next"
-  customStyles={
-    Object {
-      "margin": null,
-    }
-  }
+<Styled(Component)
   inverse={true}
+  next={true}
   onClick={[Function]}
 >
   <FormattedMessage
@@ -106,7 +86,7 @@ exports[`Navigation: Component should render NextButton with custom children 1`]
     id="shared.components.navigation.back"
     values={Object {}}
   />
-</Component>
+</Styled(Component)>
 `;
 
 exports[`Navigation: Component should render PlusButton 1`] = `

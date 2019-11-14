@@ -1636,7 +1636,7 @@ exports[`FilterForm: Component should render create form 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-htoDjs",
                                         "isStatic": false,
-                                        "lastClassName": "cjBZpz",
+                                        "lastClassName": "bOcMaT",
                                         "rules": Array [
                                           "
   display: flex;
@@ -1646,24 +1646,6 @@ exports[`FilterForm: Component should render create form 1`] = `
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-
-  .nav-btn {
-    width: calc(50% - ",
-                                          "5",
-                                          "px);
-  }
-
-  .nav-btn--back {
-    margin-right: ",
-                                          "5",
-                                          "px;
-  }
-
-  .nav-btn--next {
-    margin-left: ",
-                                          "5",
-                                          "px;
-  }
 
   ",
                                           "
@@ -1675,18 +1657,6 @@ exports[`FilterForm: Component should render create form 1`] = `
     display: ",
                                           [Function],
                                           ";
-
-      .nav-btn {
-        width: 23.5%;
-      }
-
-      .nav-btn--back {
-        margin-left: 25.5%;
-      }
-
-      .nav-btn--next {
-        margin-right: 25.5%;
-      }
   ",
                                           "
     }
@@ -1710,131 +1680,241 @@ exports[`FilterForm: Component should render create form 1`] = `
                                   right={false}
                                 >
                                   <div
-                                    className="sc-htoDjs cjBZpz"
+                                    className="sc-htoDjs bOcMaT"
                                   >
                                     <BackButton
                                       disabled={false}
                                       onClick={[Function]}
                                       type="button"
                                     >
-                                      <Component
-                                        className="nav-btn nav-btn--back"
-                                        customStyles={
-                                          Object {
-                                            "margin": null,
-                                          }
-                                        }
+                                      <Styled(Component)
+                                        back={true}
                                         disabled={false}
                                         onClick={[Function]}
                                         type="button"
                                       >
-                                        <ButtonComponent
-                                          className="nav-btn nav-btn--back"
-                                          customStyles={
+                                        <StyledComponent
+                                          back={true}
+                                          disabled={false}
+                                          forwardedComponent={
                                             Object {
-                                              "margin": null,
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": Array [],
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-iwsKbI",
+                                                "isStatic": false,
+                                                "lastClassName": "grnntF",
+                                                "rules": Array [
+                                                  "
+  width: calc(50% - ",
+                                                  "5",
+                                                  "px);
+  transform: translateX(",
+                                                  [Function],
+                                                  ");
+
+  ",
+                                                  "
+    @media (min-width: ",
+                                                  "1040",
+                                                  "px) {
+      ",
+                                                  "
+    width: 23.5%;
+    transform: translateX(",
+                                                  [Function],
+                                                  ");
+  ",
+                                                  "
+    }
+  ",
+                                                  "
+",
+                                                ],
+                                              },
+                                              "displayName": "Styled(Component)",
+                                              "foldedComponentIds": Array [],
+                                              "render": [Function],
+                                              "styledComponentId": "sc-iwsKbI",
+                                              "target": [Function],
+                                              "toString": [Function],
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
                                             }
                                           }
-                                          disabled={false}
-                                          inverse={false}
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                           type="button"
                                         >
-                                          <button
-                                            className="nav-btn nav-btn--back"
+                                          <Component
+                                            back={true}
+                                            className="sc-iwsKbI kyazcE"
                                             disabled={false}
                                             onClick={[Function]}
-                                            style={
-                                              Object {
-                                                "backgroundColor": "#1d1d20",
-                                                "border": "none",
-                                                "borderRadius": "48px",
-                                                "color": "#FFF",
-                                                "cursor": "pointer",
-                                                "display": "inline-block",
-                                                "fill": "#FFF",
-                                                "fontSize": "18px",
-                                                "margin": null,
-                                                "minHeight": "48px",
-                                                "outline": "none",
-                                                "padding": "0",
-                                              }
-                                            }
                                             type="button"
                                           >
-                                            <FormattedMessage
-                                              defaultMessage="Cancel"
-                                              id="shared.components.filter.cancel"
-                                              values={Object {}}
+                                            <ButtonComponent
+                                              back={true}
+                                              className="sc-iwsKbI kyazcE"
+                                              customStyles={Object {}}
+                                              disabled={false}
+                                              inverse={false}
+                                              onClick={[Function]}
+                                              type="button"
                                             >
-                                              <span>
-                                                Cancel
-                                              </span>
-                                            </FormattedMessage>
-                                          </button>
-                                        </ButtonComponent>
-                                      </Component>
+                                              <button
+                                                back={true}
+                                                className="sc-iwsKbI kyazcE"
+                                                disabled={false}
+                                                onClick={[Function]}
+                                                style={
+                                                  Object {
+                                                    "backgroundColor": "#1d1d20",
+                                                    "border": "none",
+                                                    "borderRadius": "48px",
+                                                    "color": "#FFF",
+                                                    "cursor": "pointer",
+                                                    "display": "inline-block",
+                                                    "fill": "#FFF",
+                                                    "fontSize": "18px",
+                                                    "margin": "0",
+                                                    "minHeight": "48px",
+                                                    "outline": "none",
+                                                    "padding": "0",
+                                                  }
+                                                }
+                                                type="button"
+                                              >
+                                                <FormattedMessage
+                                                  defaultMessage="Cancel"
+                                                  id="shared.components.filter.cancel"
+                                                  values={Object {}}
+                                                >
+                                                  <span>
+                                                    Cancel
+                                                  </span>
+                                                </FormattedMessage>
+                                              </button>
+                                            </ButtonComponent>
+                                          </Component>
+                                        </StyledComponent>
+                                      </Styled(Component)>
                                     </BackButton>
                                     <NextButton
                                       disabled={true}
                                       loading={false}
                                       type="submit"
                                     >
-                                      <Component
-                                        className="nav-btn nav-btn--next"
-                                        customStyles={
-                                          Object {
-                                            "margin": null,
-                                          }
-                                        }
+                                      <Styled(Component)
                                         disabled={true}
                                         inverse={true}
+                                        next={true}
                                         type="submit"
                                       >
-                                        <ButtonComponent
-                                          className="nav-btn nav-btn--next"
-                                          customStyles={
+                                        <StyledComponent
+                                          disabled={true}
+                                          forwardedComponent={
                                             Object {
-                                              "margin": null,
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": Array [],
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-iwsKbI",
+                                                "isStatic": false,
+                                                "lastClassName": "grnntF",
+                                                "rules": Array [
+                                                  "
+  width: calc(50% - ",
+                                                  "5",
+                                                  "px);
+  transform: translateX(",
+                                                  [Function],
+                                                  ");
+
+  ",
+                                                  "
+    @media (min-width: ",
+                                                  "1040",
+                                                  "px) {
+      ",
+                                                  "
+    width: 23.5%;
+    transform: translateX(",
+                                                  [Function],
+                                                  ");
+  ",
+                                                  "
+    }
+  ",
+                                                  "
+",
+                                                ],
+                                              },
+                                              "displayName": "Styled(Component)",
+                                              "foldedComponentIds": Array [],
+                                              "render": [Function],
+                                              "styledComponentId": "sc-iwsKbI",
+                                              "target": [Function],
+                                              "toString": [Function],
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
                                             }
                                           }
-                                          disabled={true}
+                                          forwardedRef={null}
                                           inverse={true}
+                                          next={true}
                                           type="submit"
                                         >
-                                          <button
-                                            className="nav-btn nav-btn--next"
+                                          <Component
+                                            className="sc-iwsKbI grnntF"
                                             disabled={true}
-                                            style={
-                                              Object {
-                                                "backgroundColor": "#1d1d20",
-                                                "border": "none",
-                                                "borderRadius": "48px",
-                                                "color": "#71737e",
-                                                "cursor": "default",
-                                                "display": "inline-block",
-                                                "fill": "#FFF",
-                                                "fontSize": "18px",
-                                                "margin": null,
-                                                "minHeight": "48px",
-                                                "outline": "none",
-                                                "padding": "0",
-                                              }
-                                            }
+                                            inverse={true}
+                                            next={true}
                                             type="submit"
                                           >
-                                            <FormattedMessage
-                                              defaultMessage="Save"
-                                              id="shared.components.filter.saveFilter"
-                                              values={Object {}}
+                                            <ButtonComponent
+                                              className="sc-iwsKbI grnntF"
+                                              customStyles={Object {}}
+                                              disabled={true}
+                                              inverse={true}
+                                              next={true}
+                                              type="submit"
                                             >
-                                              <span>
-                                                Save
-                                              </span>
-                                            </FormattedMessage>
-                                          </button>
-                                        </ButtonComponent>
-                                      </Component>
+                                              <button
+                                                className="sc-iwsKbI grnntF"
+                                                disabled={true}
+                                                next={true}
+                                                style={
+                                                  Object {
+                                                    "backgroundColor": "#1d1d20",
+                                                    "border": "none",
+                                                    "borderRadius": "48px",
+                                                    "color": "#71737e",
+                                                    "cursor": "default",
+                                                    "display": "inline-block",
+                                                    "fill": "#FFF",
+                                                    "fontSize": "18px",
+                                                    "margin": "0",
+                                                    "minHeight": "48px",
+                                                    "outline": "none",
+                                                    "padding": "0",
+                                                  }
+                                                }
+                                                type="submit"
+                                              >
+                                                <FormattedMessage
+                                                  defaultMessage="Save"
+                                                  id="shared.components.filter.saveFilter"
+                                                  values={Object {}}
+                                                >
+                                                  <span>
+                                                    Save
+                                                  </span>
+                                                </FormattedMessage>
+                                              </button>
+                                            </ButtonComponent>
+                                          </Component>
+                                        </StyledComponent>
+                                      </Styled(Component)>
                                     </NextButton>
                                   </div>
                                 </StyledComponent>
@@ -3620,7 +3700,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-htoDjs",
                                         "isStatic": false,
-                                        "lastClassName": "cjBZpz",
+                                        "lastClassName": "bOcMaT",
                                         "rules": Array [
                                           "
   display: flex;
@@ -3630,24 +3710,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-
-  .nav-btn {
-    width: calc(50% - ",
-                                          "5",
-                                          "px);
-  }
-
-  .nav-btn--back {
-    margin-right: ",
-                                          "5",
-                                          "px;
-  }
-
-  .nav-btn--next {
-    margin-left: ",
-                                          "5",
-                                          "px;
-  }
 
   ",
                                           "
@@ -3659,18 +3721,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
     display: ",
                                           [Function],
                                           ";
-
-      .nav-btn {
-        width: 23.5%;
-      }
-
-      .nav-btn--back {
-        margin-left: 25.5%;
-      }
-
-      .nav-btn--next {
-        margin-right: 25.5%;
-      }
   ",
                                           "
     }
@@ -3694,131 +3744,241 @@ exports[`FilterForm: Component should render edit form 1`] = `
                                   right={false}
                                 >
                                   <div
-                                    className="sc-htoDjs cjBZpz"
+                                    className="sc-htoDjs bOcMaT"
                                   >
                                     <BackButton
                                       disabled={false}
                                       onClick={[Function]}
                                       type="button"
                                     >
-                                      <Component
-                                        className="nav-btn nav-btn--back"
-                                        customStyles={
-                                          Object {
-                                            "margin": null,
-                                          }
-                                        }
+                                      <Styled(Component)
+                                        back={true}
                                         disabled={false}
                                         onClick={[Function]}
                                         type="button"
                                       >
-                                        <ButtonComponent
-                                          className="nav-btn nav-btn--back"
-                                          customStyles={
+                                        <StyledComponent
+                                          back={true}
+                                          disabled={false}
+                                          forwardedComponent={
                                             Object {
-                                              "margin": null,
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": Array [],
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-iwsKbI",
+                                                "isStatic": false,
+                                                "lastClassName": "grnntF",
+                                                "rules": Array [
+                                                  "
+  width: calc(50% - ",
+                                                  "5",
+                                                  "px);
+  transform: translateX(",
+                                                  [Function],
+                                                  ");
+
+  ",
+                                                  "
+    @media (min-width: ",
+                                                  "1040",
+                                                  "px) {
+      ",
+                                                  "
+    width: 23.5%;
+    transform: translateX(",
+                                                  [Function],
+                                                  ");
+  ",
+                                                  "
+    }
+  ",
+                                                  "
+",
+                                                ],
+                                              },
+                                              "displayName": "Styled(Component)",
+                                              "foldedComponentIds": Array [],
+                                              "render": [Function],
+                                              "styledComponentId": "sc-iwsKbI",
+                                              "target": [Function],
+                                              "toString": [Function],
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
                                             }
                                           }
-                                          disabled={false}
-                                          inverse={false}
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                           type="button"
                                         >
-                                          <button
-                                            className="nav-btn nav-btn--back"
+                                          <Component
+                                            back={true}
+                                            className="sc-iwsKbI kyazcE"
                                             disabled={false}
                                             onClick={[Function]}
-                                            style={
-                                              Object {
-                                                "backgroundColor": "#1d1d20",
-                                                "border": "none",
-                                                "borderRadius": "48px",
-                                                "color": "#FFF",
-                                                "cursor": "pointer",
-                                                "display": "inline-block",
-                                                "fill": "#FFF",
-                                                "fontSize": "18px",
-                                                "margin": null,
-                                                "minHeight": "48px",
-                                                "outline": "none",
-                                                "padding": "0",
-                                              }
-                                            }
                                             type="button"
                                           >
-                                            <FormattedMessage
-                                              defaultMessage="Delete"
-                                              id="shared.components.filter.deleteFilter"
-                                              values={Object {}}
+                                            <ButtonComponent
+                                              back={true}
+                                              className="sc-iwsKbI kyazcE"
+                                              customStyles={Object {}}
+                                              disabled={false}
+                                              inverse={false}
+                                              onClick={[Function]}
+                                              type="button"
                                             >
-                                              <span>
-                                                Delete
-                                              </span>
-                                            </FormattedMessage>
-                                          </button>
-                                        </ButtonComponent>
-                                      </Component>
+                                              <button
+                                                back={true}
+                                                className="sc-iwsKbI kyazcE"
+                                                disabled={false}
+                                                onClick={[Function]}
+                                                style={
+                                                  Object {
+                                                    "backgroundColor": "#1d1d20",
+                                                    "border": "none",
+                                                    "borderRadius": "48px",
+                                                    "color": "#FFF",
+                                                    "cursor": "pointer",
+                                                    "display": "inline-block",
+                                                    "fill": "#FFF",
+                                                    "fontSize": "18px",
+                                                    "margin": "0",
+                                                    "minHeight": "48px",
+                                                    "outline": "none",
+                                                    "padding": "0",
+                                                  }
+                                                }
+                                                type="button"
+                                              >
+                                                <FormattedMessage
+                                                  defaultMessage="Delete"
+                                                  id="shared.components.filter.deleteFilter"
+                                                  values={Object {}}
+                                                >
+                                                  <span>
+                                                    Delete
+                                                  </span>
+                                                </FormattedMessage>
+                                              </button>
+                                            </ButtonComponent>
+                                          </Component>
+                                        </StyledComponent>
+                                      </Styled(Component)>
                                     </BackButton>
                                     <NextButton
                                       disabled={true}
                                       loading={false}
                                       type="submit"
                                     >
-                                      <Component
-                                        className="nav-btn nav-btn--next"
-                                        customStyles={
-                                          Object {
-                                            "margin": null,
-                                          }
-                                        }
+                                      <Styled(Component)
                                         disabled={true}
                                         inverse={true}
+                                        next={true}
                                         type="submit"
                                       >
-                                        <ButtonComponent
-                                          className="nav-btn nav-btn--next"
-                                          customStyles={
+                                        <StyledComponent
+                                          disabled={true}
+                                          forwardedComponent={
                                             Object {
-                                              "margin": null,
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": Array [],
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-iwsKbI",
+                                                "isStatic": false,
+                                                "lastClassName": "grnntF",
+                                                "rules": Array [
+                                                  "
+  width: calc(50% - ",
+                                                  "5",
+                                                  "px);
+  transform: translateX(",
+                                                  [Function],
+                                                  ");
+
+  ",
+                                                  "
+    @media (min-width: ",
+                                                  "1040",
+                                                  "px) {
+      ",
+                                                  "
+    width: 23.5%;
+    transform: translateX(",
+                                                  [Function],
+                                                  ");
+  ",
+                                                  "
+    }
+  ",
+                                                  "
+",
+                                                ],
+                                              },
+                                              "displayName": "Styled(Component)",
+                                              "foldedComponentIds": Array [],
+                                              "render": [Function],
+                                              "styledComponentId": "sc-iwsKbI",
+                                              "target": [Function],
+                                              "toString": [Function],
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
                                             }
                                           }
-                                          disabled={true}
+                                          forwardedRef={null}
                                           inverse={true}
+                                          next={true}
                                           type="submit"
                                         >
-                                          <button
-                                            className="nav-btn nav-btn--next"
+                                          <Component
+                                            className="sc-iwsKbI grnntF"
                                             disabled={true}
-                                            style={
-                                              Object {
-                                                "backgroundColor": "#1d1d20",
-                                                "border": "none",
-                                                "borderRadius": "48px",
-                                                "color": "#71737e",
-                                                "cursor": "default",
-                                                "display": "inline-block",
-                                                "fill": "#FFF",
-                                                "fontSize": "18px",
-                                                "margin": null,
-                                                "minHeight": "48px",
-                                                "outline": "none",
-                                                "padding": "0",
-                                              }
-                                            }
+                                            inverse={true}
+                                            next={true}
                                             type="submit"
                                           >
-                                            <FormattedMessage
-                                              defaultMessage="Save"
-                                              id="shared.components.filter.saveFilter"
-                                              values={Object {}}
+                                            <ButtonComponent
+                                              className="sc-iwsKbI grnntF"
+                                              customStyles={Object {}}
+                                              disabled={true}
+                                              inverse={true}
+                                              next={true}
+                                              type="submit"
                                             >
-                                              <span>
-                                                Save
-                                              </span>
-                                            </FormattedMessage>
-                                          </button>
-                                        </ButtonComponent>
-                                      </Component>
+                                              <button
+                                                className="sc-iwsKbI grnntF"
+                                                disabled={true}
+                                                next={true}
+                                                style={
+                                                  Object {
+                                                    "backgroundColor": "#1d1d20",
+                                                    "border": "none",
+                                                    "borderRadius": "48px",
+                                                    "color": "#71737e",
+                                                    "cursor": "default",
+                                                    "display": "inline-block",
+                                                    "fill": "#FFF",
+                                                    "fontSize": "18px",
+                                                    "margin": "0",
+                                                    "minHeight": "48px",
+                                                    "outline": "none",
+                                                    "padding": "0",
+                                                  }
+                                                }
+                                                type="submit"
+                                              >
+                                                <FormattedMessage
+                                                  defaultMessage="Save"
+                                                  id="shared.components.filter.saveFilter"
+                                                  values={Object {}}
+                                                >
+                                                  <span>
+                                                    Save
+                                                  </span>
+                                                </FormattedMessage>
+                                              </button>
+                                            </ButtonComponent>
+                                          </Component>
+                                        </StyledComponent>
+                                      </Styled(Component)>
                                     </NextButton>
                                   </div>
                                 </StyledComponent>

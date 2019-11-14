@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 >
   <div
-    className="sc-hmXxxW jxsVKG"
+    className="sc-cqCuEk cqoivF"
   >
     <div
-      className="sc-gisBJw kiKCgt"
+      className="sc-kjoXOD kNHzWn"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       >
         <div>
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         }
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className="sc-TOsTZ kjYrri"
         >
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-TOsTZ iUQrOT"
+          className="sc-kgAjT gYPKSC"
         >
           <ul
-            className="sc-kgAjT sc-cJSrbW doKZeW"
+            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
           />
           <ul
-            className="sc-kgAjT sc-ksYbfQ iFxI"
+            className="sc-cJSrbW sc-hmzhuo ieDQGb"
           />
         </div>
         <button
@@ -220,13 +220,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-hqyNC hFkHhT"
+      className="sc-jbKcbu dLyPNV"
     >
       <div
-        className="sc-jbKcbu fynHmL"
+        className="sc-dNLxif hhzHuo"
       >
         <h2
-          className="sc-dNLxif dEgtYS"
+          className="sc-jqCOkK iblYWW"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -242,7 +242,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           </span>
         </h2>
         <h1
-          className="sc-jqCOkK iblYWW"
+          className="sc-uJMKN bZCpGz"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -261,11 +261,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </h1>
       </div>
       <div
-        className="sc-uJMKN jsQhVl"
+        className="sc-bbmXgH fNYDXK"
       />
     </div>
     <form
-      className="sc-cqCuEk ggojPx"
+      className="sc-dliRfk AXbuP"
       onSubmit={[Function]}
     >
       <div
@@ -327,7 +327,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-jnlKLf kiHYWh"
+        className="sc-fYxtnH bBxIKO"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -353,7 +353,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           value="admin"
         />
         <div
-          className="sc-fYxtnH hjJzgf"
+          className="sc-tilXH eucPMw"
         >
           <svg
             style={
@@ -469,10 +469,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           className="sc-gqjmRU fIKSOC"
         >
           <div
-            className="sc-gZMcBi kOsHco"
+            className="sc-gZMcBi jSdIIC"
           >
             <button
-              className="nav-btn nav-btn--back"
+              back={true}
+              className="sc-VigVT gwOTsO"
               disabled={false}
               onClick={[Function]}
               style={
@@ -485,7 +486,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                   "display": "inline-block",
                   "fill": "#FFF",
                   "fontSize": "18px",
-                  "margin": null,
+                  "margin": "0",
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
@@ -497,8 +498,9 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               </span>
             </button>
             <button
-              className="nav-btn nav-btn--next"
+              className="sc-VigVT hSKMac"
               disabled={true}
+              next={true}
               style={
                 Object {
                   "backgroundColor": "#1d1d20",
@@ -509,7 +511,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                   "display": "inline-block",
                   "fill": "#FFF",
                   "fontSize": "18px",
-                  "margin": null,
+                  "margin": "0",
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",

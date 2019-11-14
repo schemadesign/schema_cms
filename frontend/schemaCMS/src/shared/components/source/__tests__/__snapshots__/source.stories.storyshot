@@ -215,10 +215,11 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi kOsHco"
+          className="sc-gZMcBi jSdIIC"
         >
           <button
-            className="nav-btn nav-btn--back"
+            back={true}
+            className="sc-VigVT gwOTsO"
             disabled={false}
             onClick={[Function]}
             style={
@@ -231,7 +232,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -243,8 +244,9 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
             </span>
           </button>
           <button
-            className="nav-btn nav-btn--next"
+            className="sc-VigVT hSKMac"
             disabled={true}
+            next={true}
             onClick={[Function]}
             style={
               Object {
@@ -256,7 +258,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",

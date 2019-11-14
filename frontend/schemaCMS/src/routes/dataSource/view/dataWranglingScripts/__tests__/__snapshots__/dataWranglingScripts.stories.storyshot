@@ -10,23 +10,23 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
   }
 >
   <div
-    className="sc-kAzzGY jHprQs"
+    className="sc-chPdSV byfFmt"
   >
     <div
-      className="sc-chPdSV dBnMgr"
+      className="sc-kgoBCf ikDdQM"
     >
       <div
-        className="sc-kGXeez cHaPxn"
+        className="sc-kpOJdX eHABxz"
       />
       <div
-        className="sc-kgoBCf jpQlCH"
+        className="sc-kGXeez gLFdIb"
       >
         <span>
           2 Steps
         </span>
       </div>
       <div
-        className="sc-kpOJdX JvtOL"
+        className="sc-dxgOiQ iPWpcx"
       >
         <div
           style={Object {}}
@@ -288,7 +288,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-ckVGcZ jkrIWF"
+            className="sc-jKJlTe dcrPgd"
             href="/script/1"
             onClick={[Function]}
           >
@@ -387,7 +387,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
           }
         >
           <a
-            className="sc-ckVGcZ jkrIWF"
+            className="sc-jKJlTe dcrPgd"
             href="/script/2"
             onClick={[Function]}
           >
@@ -452,10 +452,11 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi kOsHco"
+          className="sc-gZMcBi jSdIIC"
         >
           <button
-            className="nav-btn nav-btn--back"
+            back={true}
+            className="sc-VigVT gwOTsO"
             disabled={false}
             onClick={[Function]}
             style={
@@ -468,7 +469,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -480,8 +481,9 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
             </span>
           </button>
           <button
-            className="nav-btn nav-btn--next"
+            className="sc-VigVT hSKMac"
             disabled={false}
+            next={true}
             onClick={[Function]}
             style={
               Object {
@@ -493,7 +495,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",

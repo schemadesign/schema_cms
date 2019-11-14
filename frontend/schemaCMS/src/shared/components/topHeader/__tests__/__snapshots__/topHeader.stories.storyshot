@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   }
 >
   <div
-    className="sc-gisBJw kiKCgt"
+    className="sc-kjoXOD kNHzWn"
   >
     <div
       style={
@@ -27,7 +27,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
     >
       <div>
         <div
-          className="sc-kjoXOD hpTAeq"
+          className="sc-cHGsZl bHiaRe"
         >
           <h2
             id="headerTitle"
@@ -121,10 +121,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
       }
     >
       <div
-        className="sc-cHGsZl bHiaRe"
+        className="sc-TOsTZ kjYrri"
       >
         <div
-          className="sc-kjoXOD hpTAeq"
+          className="sc-cHGsZl bHiaRe"
         >
           <h2
             id="headerTitle"
@@ -157,13 +157,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-TOsTZ iUQrOT"
+        className="sc-kgAjT gYPKSC"
       >
         <ul
-          className="sc-kgAjT sc-cJSrbW doKZeW"
+          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
         >
           <li
-            className="sc-hmzhuo sc-frDJqD TGbH"
+            className="sc-frDJqD sc-kvZOFW jeugWf"
           >
             <a
               href="/path"
@@ -174,7 +174,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-hmzhuo sc-frDJqD TGbH"
+            className="sc-frDJqD sc-kvZOFW jeugWf"
           >
             <a
               href="/path"
@@ -186,10 +186,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           </li>
         </ul>
         <ul
-          className="sc-kgAjT sc-ksYbfQ iFxI"
+          className="sc-cJSrbW sc-hmzhuo ieDQGb"
         >
           <li
-            className="sc-hmzhuo sc-kvZOFW ixXwCE"
+            className="sc-frDJqD sc-hqyNC kPGXtZ"
           >
             <a
               href="/logout"
@@ -200,7 +200,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-hmzhuo sc-kvZOFW ixXwCE"
+            className="sc-frDJqD sc-hqyNC kPGXtZ"
             id="id"
             onClick={[Function]}
           >
@@ -263,7 +263,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
   }
 >
   <div
-    className="sc-gisBJw kiKCgt"
+    className="sc-kjoXOD kNHzWn"
   >
     <div
       style={
@@ -280,7 +280,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
     >
       <div>
         <div
-          className="sc-kjoXOD hpTAeq"
+          className="sc-cHGsZl bHiaRe"
         >
           <h2
             id="headerTitle"
@@ -382,10 +382,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
       }
     >
       <div
-        className="sc-cHGsZl bHiaRe"
+        className="sc-TOsTZ kjYrri"
       >
         <div
-          className="sc-kjoXOD hpTAeq"
+          className="sc-cHGsZl bHiaRe"
         >
           <h2
             id="headerTitle"
@@ -426,13 +426,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
         </div>
       </div>
       <div
-        className="sc-TOsTZ iUQrOT"
+        className="sc-kgAjT gYPKSC"
       >
         <ul
-          className="sc-kgAjT sc-cJSrbW doKZeW"
+          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
         >
           <li
-            className="sc-hmzhuo sc-frDJqD TGbH"
+            className="sc-frDJqD sc-kvZOFW jeugWf"
           >
             <a
               href="/path"
@@ -443,7 +443,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
             </a>
           </li>
           <li
-            className="sc-hmzhuo sc-frDJqD TGbH"
+            className="sc-frDJqD sc-kvZOFW jeugWf"
           >
             <a
               href="/path"
@@ -455,10 +455,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
           </li>
         </ul>
         <ul
-          className="sc-kgAjT sc-ksYbfQ iFxI"
+          className="sc-cJSrbW sc-hmzhuo ieDQGb"
         >
           <li
-            className="sc-hmzhuo sc-kvZOFW ixXwCE"
+            className="sc-frDJqD sc-hqyNC kPGXtZ"
           >
             <a
               href="/logout"
@@ -469,7 +469,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
             </a>
           </li>
           <li
-            className="sc-hmzhuo sc-kvZOFW ixXwCE"
+            className="sc-frDJqD sc-hqyNC kPGXtZ"
             id="id"
             onClick={[Function]}
           >

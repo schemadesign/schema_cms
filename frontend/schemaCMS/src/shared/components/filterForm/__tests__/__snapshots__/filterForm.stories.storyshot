@@ -10,7 +10,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
   }
 >
   <form
-    className="sc-hEsumM knjWjJ"
+    className="sc-ktHwxA gBklOe"
     onReset={[Function]}
     onSubmit={[Function]}
   >
@@ -96,7 +96,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-jnlKLf kiHYWh"
+      className="sc-fYxtnH bBxIKO"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -124,7 +124,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         value="field"
       />
       <div
-        className="sc-fYxtnH hjJzgf"
+        className="sc-tilXH eucPMw"
       >
         <svg
           style={
@@ -220,7 +220,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-jnlKLf kiHYWh"
+      className="sc-fYxtnH bBxIKO"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -248,7 +248,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         value="checkbox"
       />
       <div
-        className="sc-fYxtnH hjJzgf"
+        className="sc-tilXH eucPMw"
       >
         <svg
           style={
@@ -344,7 +344,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-tilXH gxfBtk"
+      className="sc-hEsumM ijWfjS"
     >
       <div
         className="sc-bZQynM bOrPFB"
@@ -478,10 +478,11 @@ exports[`Storyshots FilterForm Create form 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi kOsHco"
+          className="sc-gZMcBi jSdIIC"
         >
           <button
-            className="nav-btn nav-btn--back"
+            back={true}
+            className="sc-VigVT gwOTsO"
             disabled={false}
             onClick={[Function]}
             style={
@@ -494,7 +495,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -507,8 +508,9 @@ exports[`Storyshots FilterForm Create form 1`] = `
             </span>
           </button>
           <button
-            className="nav-btn nav-btn--next"
+            className="sc-VigVT hSKMac"
             disabled={true}
+            next={true}
             style={
               Object {
                 "backgroundColor": "#1d1d20",
@@ -519,7 +521,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -548,7 +550,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
   }
 >
   <form
-    className="sc-hEsumM knjWjJ"
+    className="sc-ktHwxA gBklOe"
     onReset={[Function]}
     onSubmit={[Function]}
   >
@@ -634,7 +636,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-jnlKLf kiHYWh"
+      className="sc-fYxtnH bBxIKO"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -662,7 +664,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         value="field"
       />
       <div
-        className="sc-fYxtnH hjJzgf"
+        className="sc-tilXH eucPMw"
       >
         <svg
           style={
@@ -758,7 +760,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-jnlKLf kiHYWh"
+      className="sc-fYxtnH bBxIKO"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -786,7 +788,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         value="checkbox"
       />
       <div
-        className="sc-fYxtnH hjJzgf"
+        className="sc-tilXH eucPMw"
       >
         <svg
           style={
@@ -882,7 +884,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-tilXH gxfBtk"
+      className="sc-hEsumM ijWfjS"
     >
       <div
         className="sc-bZQynM bOrPFB"
@@ -1016,10 +1018,11 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi kOsHco"
+          className="sc-gZMcBi jSdIIC"
         >
           <button
-            className="nav-btn nav-btn--back"
+            back={true}
+            className="sc-VigVT gwOTsO"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1032,7 +1035,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -1045,8 +1048,9 @@ exports[`Storyshots FilterForm Edit form 1`] = `
             </span>
           </button>
           <button
-            className="nav-btn nav-btn--next"
+            className="sc-VigVT hSKMac"
             disabled={true}
+            next={true}
             style={
               Object {
                 "backgroundColor": "#1d1d20",
@@ -1057,7 +1061,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",

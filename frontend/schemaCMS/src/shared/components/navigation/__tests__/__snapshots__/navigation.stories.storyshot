@@ -58,7 +58,8 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
   }
 >
   <button
-    className="nav-btn nav-btn--back"
+    back={true}
+    className="sc-VigVT gwOTsO"
     disabled={false}
     style={
       Object {
@@ -70,7 +71,7 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
         "display": "inline-block",
         "fill": "#FFF",
         "fontSize": "18px",
-        "margin": null,
+        "margin": "0",
         "minHeight": "48px",
         "outline": "none",
         "padding": "0",
@@ -100,7 +101,7 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
       className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="sc-gZMcBi feSOVY"
+        className="sc-gZMcBi brDpsb"
       >
         <button
           disabled={false}
@@ -154,8 +155,9 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
   }
 >
   <button
-    className="nav-btn nav-btn--next"
+    className="sc-VigVT hSKMac"
     disabled={false}
+    next={true}
     style={
       Object {
         "backgroundColor": "#FFF",
@@ -166,7 +168,7 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
         "display": "inline-block",
         "fill": "#FFF",
         "fontSize": "18px",
-        "margin": null,
+        "margin": "0",
         "minHeight": "48px",
         "outline": "none",
         "padding": "0",

@@ -10,10 +10,10 @@ exports[`Storyshots JobList Default 1`] = `
   }
 >
   <div
-    className="sc-ktHwxA bwPBzM"
+    className="sc-cIShpX krSiat"
   >
     <div
-      className="sc-gisBJw kiKCgt"
+      className="sc-kjoXOD kNHzWn"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots JobList Default 1`] = `
       >
         <div>
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -128,10 +128,10 @@ exports[`Storyshots JobList Default 1`] = `
         }
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className="sc-TOsTZ kjYrri"
         >
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -168,13 +168,13 @@ exports[`Storyshots JobList Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-TOsTZ iUQrOT"
+          className="sc-kgAjT gYPKSC"
         >
           <ul
-            className="sc-kgAjT sc-cJSrbW doKZeW"
+            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
           />
           <ul
-            className="sc-kgAjT sc-ksYbfQ iFxI"
+            className="sc-cJSrbW sc-hmzhuo ieDQGb"
           />
         </div>
         <button
@@ -220,7 +220,7 @@ exports[`Storyshots JobList Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-hSdWYo bsJfYm"
+      className="sc-eHgmQL gCbwae"
     >
       <span>
         Loading...
@@ -233,10 +233,11 @@ exports[`Storyshots JobList Default 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi kOsHco"
+          className="sc-gZMcBi jSdIIC"
         >
           <button
-            className="nav-btn nav-btn--back"
+            back={true}
+            className="sc-VigVT gwOTsO"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
@@ -250,7 +251,7 @@ exports[`Storyshots JobList Default 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -262,9 +263,10 @@ exports[`Storyshots JobList Default 1`] = `
             </span>
           </button>
           <button
-            className="nav-btn nav-btn--next"
+            className="sc-VigVT hSKMac"
             disabled={true}
             id="revertBtn"
+            next={true}
             onClick={[Function]}
             style={
               Object {
@@ -276,7 +278,7 @@ exports[`Storyshots JobList Default 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",

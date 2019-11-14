@@ -10,13 +10,13 @@ exports[`Storyshots Fields Default 1`] = `
   }
 >
   <div
-    className="sc-bbmXgH fNYDXK"
+    className="sc-gGBfsJ eaQlFN"
   >
     <div
-      className="sc-fMiknA bxZCMx"
+      className="sc-dVhcbM fghLuF"
     >
       <div
-        className="sc-hSdWYo bsJfYm"
+        className="sc-eHgmQL gCbwae"
       >
         <span>
           Loading...
@@ -30,10 +30,11 @@ exports[`Storyshots Fields Default 1`] = `
         className="sc-gqjmRU fIKSOC"
       >
         <div
-          className="sc-gZMcBi kOsHco"
+          className="sc-gZMcBi jSdIIC"
         >
           <button
-            className="nav-btn nav-btn--back"
+            back={true}
+            className="sc-VigVT gwOTsO"
             disabled={false}
             onClick={[Function]}
             style={
@@ -46,7 +47,7 @@ exports[`Storyshots Fields Default 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
@@ -58,8 +59,9 @@ exports[`Storyshots Fields Default 1`] = `
             </span>
           </button>
           <button
-            className="nav-btn nav-btn--next"
+            className="sc-VigVT hSKMac"
             disabled={false}
+            next={true}
             onClick={[Function]}
             style={
               Object {
@@ -71,7 +73,7 @@ exports[`Storyshots Fields Default 1`] = `
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
-                "margin": null,
+                "margin": "0",
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
