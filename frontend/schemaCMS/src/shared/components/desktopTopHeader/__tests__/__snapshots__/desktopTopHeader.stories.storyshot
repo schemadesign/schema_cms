@@ -38,11 +38,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               href="/"
               onClick={[Function]}
             >
-              <svg
+              <schemaLogo.svg
                 className="sc-giadOv kQBvXw"
-              >
-                schemaLogo.svg
-              </svg>
+              />
             </a>
             <div
               className="sc-fzsDOv jBftDN"
@@ -347,11 +345,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               href="/"
               onClick={[Function]}
             >
-              <svg
+              <schemaLogo.svg
                 className="sc-giadOv kQBvXw"
-              >
-                schemaLogo.svg
-              </svg>
+              />
             </a>
             <div
               className="sc-fONwsr gAswXi"
@@ -679,11 +675,9 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               href="/"
               onClick={[Function]}
             >
-              <svg
+              <schemaLogo.svg
                 className="sc-giadOv kQBvXw"
-              >
-                schemaLogo.svg
-              </svg>
+              />
             </a>
             <div
               className="sc-fONwsr gAswXi"
