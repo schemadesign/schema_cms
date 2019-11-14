@@ -13,22 +13,6 @@ echo "Secrets manager is up"
 install_db_secret
 
 {
-    create_public_api_lambda &&
-    echo "Public API lambda function created"
-} || {
-    echo "Public API lambda function NOT created"
-}
-
-LAMBDA_ARN=$(get_public_api_lambda_arn)
-
-{
-    create_rest_api &&
-    echo "Public API rest api created"
-} || {
-    echo "Public API rest api NOT created"
-}
-
-{
     create_s3_bucket "schemacms" &&
     echo "Scripts S3 bucket created"
 } || {
@@ -49,27 +33,6 @@ LAMBDA_ARN=$(get_public_api_lambda_arn)
     echo "SQS Queue worker NOT created"
 }
 
-API_ID=$(get_rest_api_id)
-
-API_ID=${API_ID:0:10}
-
-PARENT_RESOURCE_ID=$(get_parent_resource_id "$API_ID")
-
-{
-  create_public_api_integration "$API_ID" "$PARENT_RESOURCE_ID" "$LAMBDA_ARN" &&
-     echo "Public API integration created"
-} || {
-    echo "Public API integration NOT created"
-}
-
-{
-  create_public_api_deployment "$API_ID" &&
-    echo "Public API deployment created"
-} || {
-    echo "Public API deployment NOT created"
-}
-
-
 # Worker lambdas installation
 
 {
@@ -84,6 +47,13 @@ PARENT_RESOURCE_ID=$(get_parent_resource_id "$API_ID")
     echo "Worker failure lambda function created"
 } || {
     echo "Worker failure lambda function NOT created"
+}
+
+{
+    create_worker_lambda &&
+    echo "Worker-Lambda function created"
+} || {
+    echo "Worker-Lambda function NOT created"
 }
 
 WORKER_SUCCESS_ARN=$(get_worker_success_lambda_arn)

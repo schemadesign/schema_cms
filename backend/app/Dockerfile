@@ -1,7 +1,22 @@
 FROM python:3.7.4-slim-buster
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install awscli gevent
+ARG STAGE=prod
+
+RUN if [ "$STAGE" = "prod" ] ; then pip install awscli gevent ; else  apt update && \
+    apt install -y apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg2 \
+    software-properties-common && \
+    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
+    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian \
+    $(lsb_release -cs) \
+    stable" && \
+    apt update && apt install -y docker-ce docker-ce-cli containerd.io npm && \
+    npm install -g serverless && npm install --save-dev serverless-localstack && \
+    npm install --save-dev serverless-package-external && \
+    pip install awscli gevent ; fi
 
 # Allows docker to cache installed dependencies between builds
 COPY ./requirements.txt /app/

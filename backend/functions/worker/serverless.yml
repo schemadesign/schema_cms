@@ -3,7 +3,8 @@ service: lambda-worker
 provider:
   name: aws
   runtime: python3.7
-  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+  stage: ${opt:stage, 'local'}
 
 
 plugins:
@@ -12,33 +13,37 @@ plugins:
   - serverless-package-external
 custom:
   pythonRequirements:
-    dockerizePip: non-linux
-    slim: true
+    dockerizePip: false
+    zip: true
+#    useDownloadCache: true
+#    useStaticCache: true
+#    cacheLocation: ./.serverless/.requirements_cache
   localstack:
     stages:
-      # list of stages for which the plugin should be enabled
       - local
-    # optional - LocalStack host to connect to
     host: http://localstack
 #    host: http://localhost
     lambda:
       mountCode: False
+  stages:
+    - local
+    - prod
   packageExternal:
     external:
       - '../common'
 
-
 package:
-  exclude:
-    - .git/**
-    - node_modules/**
+  individually: true
 
 functions:
   main:
     handler: handler.main
     events:
-      - sqs: arn:aws:sqs:us-east-1:000000000000:worker
+      - sqs: arn:aws:sqs:us-east-1:000000000000:schemacms-queue
     environment:
-      DB_SECRET_ARN: arn:aws:secretsmanager:us-east-1:1234567890:secret:dbSecret
       AWS_STORAGE_BUCKET_NAME: schemacms
+      AWS_ACCESS_KEY_ID: foo
+      AWS_SECRET_ACCESS_KEY: bar
+      AWS_DEFAULT_REGION: us-east-1
+      BACKEND_URL: http://host.docker.internal:8000/api/v1
       LAMBDA_AUTH_TOKEN: 97090e73a80c4692bbbf7dedc17c59e0
