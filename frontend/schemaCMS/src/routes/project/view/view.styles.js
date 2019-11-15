@@ -25,6 +25,7 @@ export const Details = styled.ul`
   list-style: none;
   font-size: 14px;
   padding: 0;
+  margin-bottom: 0;
 
   ${media.desktop`
     display: flex;
@@ -68,10 +69,6 @@ export const DetailLabel = styled.span`
     font-size: 14px;
     margin-bottom: 6px;
   `}
-`;
-
-export const IconEditWrapper = styled.div`
-  margin: 5px 0 0 7px;
 `;
 
 export const DetailValue = styled.span`

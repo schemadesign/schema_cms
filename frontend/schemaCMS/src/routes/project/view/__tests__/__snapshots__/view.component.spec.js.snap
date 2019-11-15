@@ -110,11 +110,6 @@ exports[`View: Component should render correctly 1`] = `
               3 months ago
             </styled.span>
           </styled.div>
-          <styled.div
-            id="fieldLastUpdatedEditButton"
-          >
-            <Component />
-          </styled.div>
         </styled.li>
         <styled.li
           key="1"
@@ -133,11 +128,6 @@ exports[`View: Component should render correctly 1`] = `
             >
               Status
             </styled.span>
-          </styled.div>
-          <styled.div
-            id="fieldStatusEditButton"
-          >
-            <Component />
           </styled.div>
         </styled.li>
         <styled.li
@@ -158,11 +148,6 @@ exports[`View: Component should render correctly 1`] = `
               Firstname Lastname
             </styled.span>
           </styled.div>
-          <styled.div
-            id="fieldOwnerEditButton"
-          >
-            <Component />
-          </styled.div>
         </styled.li>
         <styled.li
           key="3"
@@ -181,11 +166,6 @@ exports[`View: Component should render correctly 1`] = `
             >
               Project Name
             </styled.span>
-          </styled.div>
-          <styled.div
-            id="fieldTitleEditButton"
-          >
-            <Component />
           </styled.div>
         </styled.li>
         <styled.li
@@ -206,11 +186,6 @@ exports[`View: Component should render correctly 1`] = `
               Description
             </styled.span>
           </styled.div>
-          <styled.div
-            id="fieldDescriptionEditButton"
-          >
-            <Component />
-          </styled.div>
         </styled.li>
         <styled.li
           key="5"
@@ -229,11 +204,6 @@ exports[`View: Component should render correctly 1`] = `
             >
               schemacms/api/project_title
             </styled.span>
-          </styled.div>
-          <styled.div
-            id="fieldSlugEditButton"
-          >
-            <Component />
           </styled.div>
         </styled.li>
       </styled.ul>

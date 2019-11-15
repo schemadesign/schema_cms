@@ -79,7 +79,9 @@ export class UserProfile extends PureComponent {
     );
 
   renderRole = ({ values, roleLabel, restProps }) =>
-    renderWhenTrue(() => <TextInput fullWidth value={values[ROLE]} name={ROLE} label={roleLabel} {...restProps} />);
+    renderWhenTrue(() => (
+      <TextInput disabled fullWidth value={values[ROLE]} name={ROLE} label={roleLabel} {...restProps} />
+    ));
 
   renderContent = ({ values, handleChange, handleSubmit, dirty, ...restProps }) => {
     const { intl, isSettings, isAdmin } = this.props;

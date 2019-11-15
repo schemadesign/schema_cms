@@ -429,6 +429,7 @@ exports[`UserProfile: Component should render correctly form 1`] = `
       />
       <TextInput
         checkOnlyErrors={false}
+        disabled={true}
         errors={Object {}}
         fullWidth={true}
         handleBlur={[Function]}
