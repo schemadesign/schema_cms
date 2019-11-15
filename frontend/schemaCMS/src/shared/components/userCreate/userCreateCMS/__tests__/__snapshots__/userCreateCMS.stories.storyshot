@@ -300,6 +300,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             Name
           </label>
           <input
+            disabled={false}
             id="firstName"
             name="firstName"
             onChange={[Function]}
@@ -314,6 +315,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             }
             type="text"
+            value=""
           />
           <div
             style={
@@ -358,6 +360,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             Surname
           </label>
           <input
+            disabled={false}
             id="lastName"
             name="lastName"
             onChange={[Function]}
@@ -372,6 +375,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             }
             type="text"
+            value=""
           />
           <div
             style={
@@ -635,14 +639,14 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             </button>
             <button
               className="sc-VigVT iGqnRu"
-              disabled={true}
+              disabled={false}
               style={
                 Object {
-                  "backgroundColor": "#1d1d20",
+                  "backgroundColor": "#FFF",
                   "border": "none",
                   "borderRadius": "48px",
-                  "color": "#71737e",
-                  "cursor": "default",
+                  "color": "#000",
+                  "cursor": "pointer",
                   "display": "inline-block",
                   "fill": "#FFF",
                   "fontSize": "18px",

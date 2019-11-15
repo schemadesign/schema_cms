@@ -92,21 +92,6 @@ export class UserCreate extends PureComponent {
     () => <TextInput fullWidth label="Email" value={this.props.values[EMAIL]} name={EMAIL} disabled />
   );
 
-  renderEditableFieldsOrReadOnly = renderWhenTrueOtherwise(
-    () => (
-      <Fragment>
-        <TextInput fullWidth label="Name" name={FIRST_NAME} onChange={this.props.handleChange} />
-        <TextInput fullWidth label="Surname" name={LAST_NAME} onChange={this.props.handleChange} />
-      </Fragment>
-    ),
-    () => (
-      <Fragment>
-        <TextInput fullWidth label="Name" name={FIRST_NAME} value={this.props.values[FIRST_NAME]} disabled />
-        <TextInput fullWidth label="Surname" name={LAST_NAME} value={this.props.values[LAST_NAME]} disabled />
-      </Fragment>
-    )
-  );
-
   render() {
     const { isInvitation, headerValues } = this.props;
     const headerConfig = this.getHeaderAndMenuConfig(headerValues)(isInvitation);
@@ -116,7 +101,22 @@ export class UserCreate extends PureComponent {
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <Form onSubmit={this.props.handleSubmit}>
-          {this.renderEditableFieldsOrReadOnly(isInvitation)}
+          <TextInput
+            fullWidth
+            label="Name"
+            name={FIRST_NAME}
+            value={this.props.values[FIRST_NAME]}
+            onChange={this.props.handleChange}
+            disabled={!isInvitation}
+          />
+          <TextInput
+            fullWidth
+            label="Last name"
+            name={LAST_NAME}
+            value={this.props.values[LAST_NAME]}
+            onChange={this.props.handleChange}
+            disabled={!isInvitation}
+          />
           {this.renderEmailField(isInvitation)}
           {this.renderSelectOrText(isInvitation)}
           {this.renderNavigation(isInvitation)}

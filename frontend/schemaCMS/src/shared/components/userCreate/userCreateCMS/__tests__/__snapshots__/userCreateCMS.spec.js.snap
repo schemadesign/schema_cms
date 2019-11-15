@@ -3,13 +3,16 @@
 exports[`UserCreateCMS: Component should render correctly 1`] = `
 <Formik
   displayName="user_create_cms_form"
-  enableReinitialize={false}
+  enableReinitialize={true}
   initialValues={
     Object {
+      "email": "",
+      "firstName": "",
+      "lastName": "",
       "role": "admin",
     }
   }
-  isInitialValid={false}
+  isInitialValid={true}
   onSubmit={[Function]}
   render={[Function]}
   validateOnBlur={true}
