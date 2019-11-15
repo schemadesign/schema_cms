@@ -1,4 +1,5 @@
 .vscode
+.requirements.zip
 node_modules/**
 .requirements.zip
 
