@@ -3,7 +3,7 @@
 exports[`Storyshots JobDetail Default 1`] = `
 Array [
   <div
-    className="sc-gisBJw kiKCgt"
+    className="sc-kjoXOD kNHzWn"
   >
     <div
       style={
@@ -20,7 +20,7 @@ Array [
     >
       <div>
         <div
-          className="sc-kjoXOD hpTAeq"
+          className="sc-cHGsZl bHiaRe"
         >
           <h2
             id="headerTitle"
@@ -118,10 +118,10 @@ Array [
       }
     >
       <div
-        className="sc-cHGsZl bHiaRe"
+        className="sc-TOsTZ kjYrri"
       >
         <div
-          className="sc-kjoXOD hpTAeq"
+          className="sc-cHGsZl bHiaRe"
         >
           <h2
             id="headerTitle"
@@ -158,13 +158,13 @@ Array [
         </div>
       </div>
       <div
-        className="sc-TOsTZ iUQrOT"
+        className="sc-kgAjT gYPKSC"
       >
         <ul
-          className="sc-kgAjT sc-cJSrbW doKZeW"
+          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
         />
         <ul
-          className="sc-kgAjT sc-ksYbfQ iFxI"
+          className="sc-cJSrbW sc-hmzhuo ieDQGb"
         />
       </div>
       <button
@@ -210,7 +210,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-hSdWYo NFyzV"
+    className="sc-eHgmQL bVPvTv"
   >
     <span>
       Loading...
@@ -226,6 +226,7 @@ Array [
         className="sc-gZMcBi jSdIIC"
       >
         <button
+          className="sc-VigVT dNFsjT"
           disabled={false}
           onClick={[Function]}
           style={
@@ -239,19 +240,19 @@ Array [
               "fill": "#FFF",
               "fontSize": "18px",
               "margin": "0",
-              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
+          type="back"
         >
           <span>
             Back
           </span>
         </button>
         <button
+          className="sc-VigVT eTfsKS"
           disabled={false}
           onClick={[Function]}
           style={
@@ -265,13 +266,12 @@ Array [
               "fill": "#FFF",
               "fontSize": "18px",
               "margin": "0",
-              "marginLeft": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "width": "calc(50% - 5px)",
             }
           }
+          type="next"
         >
           <span>
             Save

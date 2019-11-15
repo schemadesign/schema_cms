@@ -58,6 +58,7 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
   }
 >
   <button
+    className="sc-VigVT dNFsjT"
     disabled={false}
     style={
       Object {
@@ -70,13 +71,12 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
         "fill": "#FFF",
         "fontSize": "18px",
         "margin": "0",
-        "marginRight": 5,
         "minHeight": "48px",
         "outline": "none",
         "padding": "0",
-        "width": "calc(50% - 5px)",
       }
     }
+    type="back"
   >
     <span>
       Back
@@ -155,6 +155,7 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
   }
 >
   <button
+    className="sc-VigVT eTfsKS"
     disabled={false}
     style={
       Object {
@@ -167,13 +168,12 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
         "fill": "#FFF",
         "fontSize": "18px",
         "margin": "0",
-        "marginLeft": 5,
         "minHeight": "48px",
         "outline": "none",
         "padding": "0",
-        "width": "calc(50% - 5px)",
       }
     }
+    type="next"
   >
     <span>
       Next

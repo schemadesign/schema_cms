@@ -218,6 +218,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
           className="sc-gZMcBi jSdIIC"
         >
           <button
+            className="sc-VigVT dNFsjT"
             disabled={false}
             onClick={[Function]}
             style={
@@ -231,19 +232,19 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                 "fill": "#FFF",
                 "fontSize": "18px",
                 "margin": "0",
-                "marginRight": 5,
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
-                "width": "calc(50% - 5px)",
               }
             }
+            type="back"
           >
             <span>
               Cancel
             </span>
           </button>
           <button
+            className="sc-VigVT eTfsKS"
             disabled={true}
             onClick={[Function]}
             style={
@@ -257,13 +258,12 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                 "fill": "#FFF",
                 "fontSize": "18px",
                 "margin": "0",
-                "marginLeft": 5,
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
-                "width": "calc(50% - 5px)",
               }
             }
+            type="next"
           >
             <span>
               Next

@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
   }
 >
   <div
-    className="sc-laTMn keRDxt"
+    className="sc-hGoxap kjdcOP"
   >
     <form
-      className="sc-hGoxap irFVct"
+      className="sc-fjmCvl jmdDbZ"
       onSubmit={[Function]}
     >
       <div
@@ -267,6 +267,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             className="sc-gZMcBi brDpsb"
           >
             <button
+              className="sc-VigVT iGqnRu"
               disabled={false}
               onClick={[Function]}
               style={
@@ -280,11 +281,9 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
                   "fill": "#FFF",
                   "fontSize": "18px",
                   "margin": "0",
-                  "marginRight": 5,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "width": "calc(50% - 5px)",
                 }
               }
               type="button"
@@ -294,6 +293,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
               </span>
             </button>
             <button
+              className="sc-VigVT iGqnRu"
               disabled={false}
               style={
                 Object {
@@ -306,11 +306,9 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
                   "fill": "#FFF",
                   "fontSize": "18px",
                   "margin": "0",
-                  "marginLeft": 5,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "width": "calc(50% - 5px)",
                 }
               }
               type="submit"

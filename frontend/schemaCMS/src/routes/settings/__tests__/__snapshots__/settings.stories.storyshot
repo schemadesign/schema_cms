@@ -2,10 +2,10 @@
 
 exports[`Storyshots Settings Default 1`] = `
 <div
-  className="sc-fjmCvl jmdDbZ"
+  className="sc-TFwJa gzYRmt"
 >
   <div
-    className="sc-gisBJw kiKCgt"
+    className="sc-kjoXOD kNHzWn"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots Settings Default 1`] = `
     >
       <div>
         <div
-          className="sc-kjoXOD hpTAeq"
+          className="sc-cHGsZl bHiaRe"
         >
           <h2
             id="headerTitle"
@@ -120,10 +120,10 @@ exports[`Storyshots Settings Default 1`] = `
       }
     >
       <div
-        className="sc-cHGsZl bHiaRe"
+        className="sc-TOsTZ kjYrri"
       >
         <div
-          className="sc-kjoXOD hpTAeq"
+          className="sc-cHGsZl bHiaRe"
         >
           <h2
             id="headerTitle"
@@ -160,16 +160,16 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-TOsTZ iUQrOT"
+        className="sc-kgAjT gYPKSC"
       >
         <ul
-          className="sc-kgAjT sc-cJSrbW doKZeW"
+          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
         />
         <ul
-          className="sc-kgAjT sc-ksYbfQ iFxI"
+          className="sc-cJSrbW sc-hmzhuo ieDQGb"
         >
           <li
-            className="sc-hmzhuo sc-kvZOFW dhNYmY"
+            className="sc-frDJqD sc-hqyNC ePUwpp"
           >
             <a
               href="/reset-password"
@@ -182,7 +182,7 @@ exports[`Storyshots Settings Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-hmzhuo sc-kvZOFW dhNYmY"
+            className="sc-frDJqD sc-hqyNC ePUwpp"
           >
             <a
               href="/logout"
@@ -239,10 +239,10 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-laTMn keRDxt"
+    className="sc-hGoxap kjdcOP"
   >
     <form
-      className="sc-hGoxap irFVct"
+      className="sc-fjmCvl jmdDbZ"
       onSubmit={[Function]}
     >
       <div
@@ -436,6 +436,7 @@ exports[`Storyshots Settings Default 1`] = `
             className="sc-gZMcBi brDpsb"
           >
             <button
+              className="sc-VigVT iGqnRu"
               disabled={true}
               style={
                 Object {
@@ -448,11 +449,9 @@ exports[`Storyshots Settings Default 1`] = `
                   "fill": "#FFF",
                   "fontSize": "18px",
                   "margin": "0",
-                  "marginLeft": 5,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "width": "calc(50% - 5px)",
                 }
               }
               type="submit"
