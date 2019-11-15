@@ -1,19 +1,19 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always, cond, isEmpty, propEq, T } from 'ramda';
+import { isEmpty } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { Empty } from '../project.styles';
 import messages from './list.messages';
 import { Container, Description, HeaderItem, HeaderList, urlStyles, titleStyles } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { Loader } from '../../../shared/components/loader';
 import { ListItem, ListContainer } from '../../../shared/components/listComponents';
 
 const { H1, P, Span } = Typography;
@@ -96,18 +96,6 @@ export class List extends PureComponent {
   renderAddButton = (isAdmin, id) =>
     renderWhenTrue(always(<PlusButton id={id} onClick={this.handleNewProject} />))(isAdmin);
 
-  renderNoData = () => (
-    <Empty>
-      <P>{this.props.intl.formatMessage(messages.noProjects)} </P>
-    </Empty>
-  );
-
-  renderContent = cond([
-    [propEq('loading', true), always(<Loader />)],
-    [propEq('list', []), this.renderNoData],
-    [T, this.renderList],
-  ]);
-
   render() {
     const { list = [], isAdmin } = this.props;
     const { loading } = this.state;
@@ -124,6 +112,9 @@ export class List extends PureComponent {
         <ContextHeader title={title} subtitle={subtitle}>
           {this.renderAddButton(isAdmin, 'addProjectDesktopBtn')}
         </ContextHeader>
+        <LoadingWrapper loading={loading} noData={isEmpty(list)} noDataContent={this.formatMessage(messages.noProjects)}>
+          {this.renderList(list)}
+        </LoadingWrapper>
         {this.renderContent({ list, loading })}
         <NavigationContainer right hideOnDesktop>
           {this.renderAddButton(isAdmin, 'addProjectBtn')}

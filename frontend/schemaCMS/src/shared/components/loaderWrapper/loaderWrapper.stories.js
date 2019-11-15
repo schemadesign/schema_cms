@@ -14,13 +14,24 @@ export const noDataProps = {
   noData: true,
 };
 
+const customNoData = {
+  ...noDataProps,
+  noDataContent: 'No projects',
+};
+
 export const contentProps = {
   loading: false,
-  noData: false
+  noData: false,
+};
+
+export const errorProps = {
+  loading: false,
+  noData: false,
+  error: 'Some error',
 };
 
 export const content = (
-  <div style={{color: 'white'}}>
+  <div style={{ color: 'white' }}>
     <h1>Test</h1>
     <h2>Ut elementum ex nulla</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec pulvinar est.</p>
@@ -29,6 +40,8 @@ export const content = (
 
 storiesOf('Shared Components|LoaderWrapper', module)
   .addDecorator(withTheme())
-  .add('Loading', () => <LoaderWrapper {...loadingProps}>{content}</LoaderWrapper>)
-  .add('No data', () => <LoaderWrapper {...noDataProps}>{content}</LoaderWrapper>)
-  .add('Loaded', () => <LoaderWrapper {...contentProps}>{content}</LoaderWrapper>);
+  .add('loading', () => <LoaderWrapper {...loadingProps}>{content}</LoaderWrapper>)
+  .add('no data', () => <LoaderWrapper {...noDataProps}>{content}</LoaderWrapper>)
+  .add('custom no data', () => <LoaderWrapper {...customNoData}>{content}</LoaderWrapper>)
+  .add('loaded', () => <LoaderWrapper {...contentProps}>{content}</LoaderWrapper>)
+  .add('with error', () => <LoaderWrapper {...errorProps}>{content}</LoaderWrapper>);
