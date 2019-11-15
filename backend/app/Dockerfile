@@ -1,7 +1,11 @@
 FROM python:3.7.4-slim-buster
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install awscli gevent
+ARG STAGE=prod
+
+COPY scripts/install_serverless.sh .
+
+RUN if [ "$STAGE" = "dev" ] ; then sh install_serverless.sh ; else pip install awscli gevent  ; fi
 
 # Allows docker to cache installed dependencies between builds
 COPY ./requirements.txt /app/

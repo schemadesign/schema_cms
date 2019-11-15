@@ -55,8 +55,12 @@ function get_lambda_arn() {
     --region "$AWS_DEFAULT_REGION"
 }
 
-function create_public_api_lambda {
-  create_lambda_function $PUBLIC_API_FUNCTION_NAME "/app/functions/public_api" "handlers.handle"
+
+function create_worker_lambda() {
+  cd ../functions/worker && \
+  serverless plugin install -n serverless-python-requirements && \
+  SLS_DEBUG=* serverless deploy --verbose --stage local && \
+  cd ../../app
 }
 
 function get_public_api_lambda_arn {

@@ -10,26 +10,26 @@ services:
     env_file: local.env
 
   localstack:
-    image: localstack/localstack:0.10.2
+    image: localstack/localstack:0.10.5
+    privileged: true
     ports:
       - "4567-4585:4567-4585"
+      - '4590-4593:4590-4593'
       - "${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}"
     environment:
-      - SERVICES=sqs,secretsmanager,lambda,apigateway,cloudformation,stepfunctions,s3,sts
+      - SERVICES=sqs,secretsmanager,stepfunctions,serverless
       - DEBUG=${DEBUG- }
-      - DATA_DIR=${DATA_DIR- }
+      - DATA_DIR=/tmp/localstack/data
       - PORT_WEB_UI=${PORT_WEB_UI- }
-      - LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR- }
-      - LAMBDA_REMOTE_DOCKER=false
-      - KINESIS_ERROR_PROBABILITY=${KINESIS_ERROR_PROBABILITY- }
+      - LAMBDA_EXECUTOR=docker
+      - LAMBDA_REMOTE_DOCKER=true
       - DOCKER_HOST=unix:///var/run/docker.sock
-      - AWS_EXECUTION_ENV=True
       - AWS_DEFAULT_REGION=us-east-1
       - AWS_ACCESS_KEY_ID=foo
       - AWS_SECRET_ACCESS_KEY=bar
-      - AWS_STORAGE_BUCKET_NAME=localbucket
+      - AWS_STORAGE_BUCKET_NAME=schemacms
     volumes:
-      - "/tmp/localstack:/tmp"
+      - "localstack_data:/tmp/localstack/data"
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./backend/functions:/app/functions"
 
@@ -37,7 +37,10 @@ services:
     image: schema_cms_backend
     build:
       context: backend/app
+      args:
+        STAGE: dev
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - ./backend/app:/app
       - ./backend/functions:/functions
     ports:
@@ -51,6 +54,7 @@ services:
     command: ./scripts/run_dev.sh
     tty: true
     stdin_open: true
+    privileged: true
     entrypoint: ./scripts/entrypoint.sh
 
   mailcatcher:
@@ -69,5 +73,7 @@ services:
     - "8001:8001"
 
 volumes:
+  localstack_data:
+    external: true
   schema_cms_db_data:
     external: true

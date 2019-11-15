@@ -3,7 +3,6 @@ import logging
 import os
 
 from django.db import transaction
-from django.core import exceptions
 from django.shortcuts import get_object_or_404
 from rest_framework import decorators, mixins, permissions, response, status, viewsets, generics, parsers
 
@@ -82,7 +81,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     queryset = models.DataSource.objects.prefetch_related("jobs", "filters").order_by("-created")
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
-        "create": serializers.DraftDataSourceSerializer,
         "script": serializers.DataSourceScriptSerializer,
         "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.CreateJobSerializer,
@@ -229,20 +227,9 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         job = get_object_or_404(models.DataSourceJob, pk=job_id)
 
         data_source.set_active_job(job)
+        serializer = self.get_serializer(instance=data_source, context=data_source)
 
-        return response.Response(status=status.HTTP_200_OK)
-
-    @decorators.action(detail=True, url_path="job-preview", methods=["get"])
-    def job_preview(self, request, pk=None, **kwargs):
-        data_source = self.get_object()
-        try:
-            job = data_source.current_job
-            if not hasattr(job, 'meta_data') and job.result:
-                job.update_meta()
-        except exceptions.ObjectDoesNotExist as e:
-            return response.Response(str(e), status=status.HTTP_404_NOT_FOUND)
-
-        return response.Response(job.meta_data.data, status=status.HTTP_200_OK)
+        return response.Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class DataSourceJobDetailViewSet(

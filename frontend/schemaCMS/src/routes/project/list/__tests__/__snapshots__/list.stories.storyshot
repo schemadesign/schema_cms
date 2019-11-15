@@ -10,10 +10,10 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-GMQeP jXMCGy"
+    className="sc-exAgwC kvVgIg"
   >
     <div
-      className="sc-gisBJw kiKCgt"
+      className="sc-kjoXOD kNHzWn"
     >
       <div
         style={
@@ -30,7 +30,7 @@ exports[`Storyshots Project/List empty 1`] = `
       >
         <div>
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -124,10 +124,10 @@ exports[`Storyshots Project/List empty 1`] = `
         }
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className="sc-TOsTZ kjYrri"
         >
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -160,16 +160,16 @@ exports[`Storyshots Project/List empty 1`] = `
           </div>
         </div>
         <div
-          className="sc-TOsTZ iUQrOT"
+          className="sc-kgAjT gYPKSC"
         >
           <ul
-            className="sc-kgAjT sc-cJSrbW doKZeW"
+            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
           />
           <ul
-            className="sc-kgAjT sc-ksYbfQ iFxI"
+            className="sc-cJSrbW sc-hmzhuo ieDQGb"
           >
             <li
-              className="sc-hmzhuo sc-kvZOFW ixXwCE"
+              className="sc-frDJqD sc-hqyNC kPGXtZ"
             >
               <a
                 href="/user"
@@ -180,7 +180,7 @@ exports[`Storyshots Project/List empty 1`] = `
               </a>
             </li>
             <li
-              className="sc-hmzhuo sc-kvZOFW ixXwCE"
+              className="sc-frDJqD sc-hqyNC kPGXtZ"
             >
               <a
                 href="/logout"
@@ -235,13 +235,13 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-hqyNC hFkHhT"
+      className="sc-jbKcbu dLyPNV"
     >
       <div
-        className="sc-jbKcbu fynHmL"
+        className="sc-dNLxif hhzHuo"
       >
         <h2
-          className="sc-dNLxif dEgtYS"
+          className="sc-jqCOkK iblYWW"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -255,7 +255,7 @@ exports[`Storyshots Project/List empty 1`] = `
           Projects
         </h2>
         <h1
-          className="sc-jqCOkK iblYWW"
+          className="sc-uJMKN bZCpGz"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -272,7 +272,7 @@ exports[`Storyshots Project/List empty 1`] = `
         </h1>
       </div>
       <div
-        className="sc-uJMKN jsQhVl"
+        className="sc-bbmXgH fNYDXK"
       >
         <button
           disabled={false}
@@ -316,7 +316,7 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-hSdWYo bsJfYm"
+      className="sc-eHgmQL gCbwae"
     >
       <span>
         Loading...
@@ -387,10 +387,10 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-GMQeP jXMCGy"
+    className="sc-exAgwC kvVgIg"
   >
     <div
-      className="sc-gisBJw kiKCgt"
+      className="sc-kjoXOD kNHzWn"
     >
       <div
         style={
@@ -407,7 +407,7 @@ exports[`Storyshots Project/List list 1`] = `
       >
         <div>
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -501,10 +501,10 @@ exports[`Storyshots Project/List list 1`] = `
         }
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className="sc-TOsTZ kjYrri"
         >
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -537,16 +537,16 @@ exports[`Storyshots Project/List list 1`] = `
           </div>
         </div>
         <div
-          className="sc-TOsTZ iUQrOT"
+          className="sc-kgAjT gYPKSC"
         >
           <ul
-            className="sc-kgAjT sc-cJSrbW doKZeW"
+            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
           />
           <ul
-            className="sc-kgAjT sc-ksYbfQ iFxI"
+            className="sc-cJSrbW sc-hmzhuo ieDQGb"
           >
             <li
-              className="sc-hmzhuo sc-kvZOFW ixXwCE"
+              className="sc-frDJqD sc-hqyNC kPGXtZ"
             >
               <a
                 href="/user"
@@ -557,7 +557,7 @@ exports[`Storyshots Project/List list 1`] = `
               </a>
             </li>
             <li
-              className="sc-hmzhuo sc-kvZOFW ixXwCE"
+              className="sc-frDJqD sc-hqyNC kPGXtZ"
             >
               <a
                 href="/logout"
@@ -612,13 +612,13 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-hqyNC hFkHhT"
+      className="sc-jbKcbu dLyPNV"
     >
       <div
-        className="sc-jbKcbu fynHmL"
+        className="sc-dNLxif hhzHuo"
       >
         <h2
-          className="sc-dNLxif dEgtYS"
+          className="sc-jqCOkK iblYWW"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -632,7 +632,7 @@ exports[`Storyshots Project/List list 1`] = `
           Projects
         </h2>
         <h1
-          className="sc-jqCOkK iblYWW"
+          className="sc-uJMKN bZCpGz"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -649,7 +649,7 @@ exports[`Storyshots Project/List list 1`] = `
         </h1>
       </div>
       <div
-        className="sc-uJMKN jsQhVl"
+        className="sc-bbmXgH fNYDXK"
       >
         <button
           disabled={false}
@@ -693,7 +693,7 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-hSdWYo bsJfYm"
+      className="sc-eHgmQL gCbwae"
     >
       <span>
         Loading...

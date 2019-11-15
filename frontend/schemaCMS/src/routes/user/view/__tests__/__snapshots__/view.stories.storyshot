@@ -5,7 +5,7 @@ exports[`Storyshots View Default 1`] = `
   className="sc-bHwgHz ePnYhO"
 >
   <div
-    className="sc-gisBJw kiKCgt"
+    className="sc-kjoXOD kNHzWn"
   >
     <div
       style={
@@ -22,7 +22,7 @@ exports[`Storyshots View Default 1`] = `
     >
       <div>
         <div
-          className="sc-kjoXOD hpTAeq"
+          className="sc-cHGsZl bHiaRe"
         >
           <h2
             id="headerTitle"
@@ -120,10 +120,10 @@ exports[`Storyshots View Default 1`] = `
       }
     >
       <div
-        className="sc-cHGsZl bHiaRe"
+        className="sc-TOsTZ kjYrri"
       >
         <div
-          className="sc-kjoXOD hpTAeq"
+          className="sc-cHGsZl bHiaRe"
         >
           <h2
             id="headerTitle"
@@ -160,16 +160,16 @@ exports[`Storyshots View Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-TOsTZ iUQrOT"
+        className="sc-kgAjT gYPKSC"
       >
         <ul
-          className="sc-kgAjT sc-cJSrbW doKZeW"
+          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
         />
         <ul
-          className="sc-kgAjT sc-ksYbfQ iFxI"
+          className="sc-cJSrbW sc-hmzhuo ieDQGb"
         >
           <li
-            className="sc-hmzhuo sc-kvZOFW dhNYmY"
+            className="sc-frDJqD sc-hqyNC ePUwpp"
             id={null}
             onClick={[Function]}
           >
@@ -222,13 +222,13 @@ exports[`Storyshots View Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-hqyNC hFkHhT"
+    className="sc-jbKcbu dLyPNV"
   >
     <div
-      className="sc-jbKcbu fynHmL"
+      className="sc-dNLxif hhzHuo"
     >
       <h2
-        className="sc-dNLxif godFNr"
+        className="sc-jqCOkK kaoYrU"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -244,7 +244,7 @@ exports[`Storyshots View Default 1`] = `
         </span>
       </h2>
       <h1
-        className="sc-jqCOkK kaoYrU"
+        className="sc-uJMKN bBEIYt"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -263,7 +263,7 @@ exports[`Storyshots View Default 1`] = `
       </h1>
     </div>
     <div
-      className="sc-uJMKN jsQhVl"
+      className="sc-bbmXgH fNYDXK"
     />
   </div>
 </div>

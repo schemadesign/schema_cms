@@ -206,6 +206,7 @@ export class SourceComponent extends PureComponent {
                   fullWidth
                   checkOnlyErrors
                   label={this.props.intl.formatMessage(messages.name)}
+                  isEdit
                   {...rest}
                 />
 

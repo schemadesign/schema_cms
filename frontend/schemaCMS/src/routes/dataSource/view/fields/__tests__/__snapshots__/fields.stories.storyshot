@@ -10,13 +10,13 @@ exports[`Storyshots Fields Default 1`] = `
   }
 >
   <div
-    className="sc-bbmXgH fNYDXK"
+    className="sc-gGBfsJ eaQlFN"
   >
     <div
-      className="sc-fMiknA bxZCMx"
+      className="sc-dVhcbM fghLuF"
     >
       <div
-        className="sc-hSdWYo bsJfYm"
+        className="sc-eHgmQL gCbwae"
       >
         <span>
           Loading...
@@ -33,6 +33,7 @@ exports[`Storyshots Fields Default 1`] = `
           className="sc-gZMcBi jSdIIC"
         >
           <button
+            className="sc-VigVT dNFsjT"
             disabled={false}
             onClick={[Function]}
             style={
@@ -46,19 +47,19 @@ exports[`Storyshots Fields Default 1`] = `
                 "fill": "#FFF",
                 "fontSize": "18px",
                 "margin": "0",
-                "marginRight": 5,
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
-                "width": "calc(50% - 5px)",
               }
             }
+            type="back"
           >
             <span>
               Back
             </span>
           </button>
           <button
+            className="sc-VigVT eTfsKS"
             disabled={false}
             onClick={[Function]}
             style={
@@ -72,13 +73,12 @@ exports[`Storyshots Fields Default 1`] = `
                 "fill": "#FFF",
                 "fontSize": "18px",
                 "margin": "0",
-                "marginLeft": 5,
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
-                "width": "calc(50% - 5px)",
               }
             }
+            type="next"
           >
             <span>
               Next

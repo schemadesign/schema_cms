@@ -16,7 +16,6 @@ export const Container = styled.div`
 export const Tab = styled.div`
   display: block;
   flex: 1;
-  padding: 16px;
   align-self: flex-end;
   text-align: center;
   border-bottom: 2px solid ${({ active, theme: { tab } }) => (active ? tab.active : tab.normal)};
@@ -29,5 +28,7 @@ export const Tab = styled.div`
 
 export const TabContent = styled(Link)`
   color: ${({ theme: { text } }) => text};
+  display: block;
+  padding: 16px;
   text-decoration: none;
 `;

@@ -49,13 +49,13 @@ exports[`UserCreate: Component should render correctly 1`] = `
   >
     <TextInput
       checkOnlyErrors={false}
+      disabled={true}
       errors={Object {}}
       fullWidth={true}
       isEdit={false}
       label="Name"
       name="firstName"
       onChange={[Function]}
-      readOnly={true}
       touched={Object {}}
     />
     <TextInput
@@ -71,24 +71,24 @@ exports[`UserCreate: Component should render correctly 1`] = `
     />
     <TextInput
       checkOnlyErrors={false}
+      disabled={true}
       errors={Object {}}
       fullWidth={true}
       isEdit={false}
       label="Email"
       name="email"
       onChange={[Function]}
-      readOnly={true}
       touched={Object {}}
     />
     <TextInput
       checkOnlyErrors={false}
+      disabled={true}
       errors={Object {}}
       fullWidth={true}
       isEdit={false}
       label="Role"
       name="role"
       onChange={[Function]}
-      readOnly={true}
       touched={Object {}}
     />
     <NavigationContainer

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Card, Icons } from 'schemaUI';
+import { Card } from 'schemaUI';
 import { has, isEmpty, isNil, path, always, cond, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
@@ -25,7 +25,6 @@ import {
   DetailWrapper,
   DetailLabel,
   DetailValue,
-  IconEditWrapper,
   Statistics,
   statisticsCardStyles,
   Link,
@@ -128,9 +127,6 @@ export class View extends PureComponent {
         <DetailLabel id={`${id}Label`}>{label}</DetailLabel>
         <DetailValue id={`${id}Value`}>{value || this.props.project[field] || ''}</DetailValue>
       </DetailWrapper>
-      <IconEditWrapper id={`${id}EditButton`}>
-        <Icons.EditIcon />
-      </IconEditWrapper>
     </DetailItem>
   );
 

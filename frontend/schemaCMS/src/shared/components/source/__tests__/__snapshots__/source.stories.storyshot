@@ -68,7 +68,27 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
               "top": 0,
             }
           }
-        />
+        >
+          <div
+            className="sc-gzVnrw bHgYaJ"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
     <label
@@ -198,6 +218,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
           className="sc-gZMcBi jSdIIC"
         >
           <button
+            className="sc-VigVT dNFsjT"
             disabled={false}
             onClick={[Function]}
             style={
@@ -211,19 +232,19 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                 "fill": "#FFF",
                 "fontSize": "18px",
                 "margin": "0",
-                "marginRight": 5,
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
-                "width": "calc(50% - 5px)",
               }
             }
+            type="back"
           >
             <span>
               Cancel
             </span>
           </button>
           <button
+            className="sc-VigVT eTfsKS"
             disabled={true}
             onClick={[Function]}
             style={
@@ -237,13 +258,12 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                 "fill": "#FFF",
                 "fontSize": "18px",
                 "margin": "0",
-                "marginLeft": 5,
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
-                "width": "calc(50% - 5px)",
               }
             }
+            type="next"
           >
             <span>
               Next
