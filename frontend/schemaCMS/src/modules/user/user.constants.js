@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { EMAIL, ROLES } from '../userProfile/userProfile.constants';
+import { EMAIL, FIRST_NAME, LAST_NAME, ROLES } from '../userProfile/userProfile.constants';
 
 export const USER_CREATE_CMS_FORM = 'user_create_cms_form';
 export const USER_CREATE_PROJECT_FORM = 'user_create_project_form';
@@ -12,6 +12,12 @@ export const NEW_USER_ROLES_OPTIONS = [
 ];
 
 export const USER_CREATE_CMS_SCHEME = Yup.object().shape({
+  [FIRST_NAME]: Yup.string()
+    .min(2, 'Name should have at least 2 characters')
+    .required('Required'),
+  [LAST_NAME]: Yup.string()
+    .min(2, 'Last name should have at least 2 characters')
+    .required('Required'),
   [USER_ROLE]: Yup.string()
     .ensure()
     .required('Required'),

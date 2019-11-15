@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
@@ -47,11 +47,6 @@ export class UserCreate extends PureComponent {
     );
 
   handleSelectStatus = ({ value }) => this.props.setFieldValue(USER_ROLE, value);
-
-  renderNameField = renderWhenTrue(() => {
-    const fullName = `${this.props.values[FIRST_NAME]} ${this.props.values[LAST_NAME]}`;
-    return <TextInput fullWidth label="Name" value={fullName} disabled name={FIRST_NAME} />;
-  });
 
   renderSelectOrText = renderWhenTrueOtherwise(
     () => (
@@ -106,7 +101,22 @@ export class UserCreate extends PureComponent {
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <Form onSubmit={this.props.handleSubmit}>
-          {this.renderNameField(!isInvitation)}
+          <TextInput
+            fullWidth
+            label="Name"
+            name={FIRST_NAME}
+            value={this.props.values[FIRST_NAME]}
+            onChange={this.props.handleChange}
+            disabled={!isInvitation}
+          />
+          <TextInput
+            fullWidth
+            label="Last name"
+            name={LAST_NAME}
+            value={this.props.values[LAST_NAME]}
+            onChange={this.props.handleChange}
+            disabled={!isInvitation}
+          />
           {this.renderEmailField(isInvitation)}
           {this.renderSelectOrText(isInvitation)}
           {this.renderNavigation(isInvitation)}

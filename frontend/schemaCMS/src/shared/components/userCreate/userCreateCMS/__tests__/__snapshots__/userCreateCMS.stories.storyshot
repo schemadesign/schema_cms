@@ -283,6 +283,126 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           }
         >
           <label
+            htmlFor="firstName"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            Name
+          </label>
+          <input
+            disabled={false}
+            id="firstName"
+            name="firstName"
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+              }
+            }
+            type="text"
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-bZQynM bOrPFB"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="lastName"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            Last name
+          </label>
+          <input
+            disabled={false}
+            id="lastName"
+            name="lastName"
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+              }
+            }
+            type="text"
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-bZQynM bOrPFB"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
             htmlFor="email"
             style={
               Object {
@@ -519,14 +639,14 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             </button>
             <button
               className="sc-VigVT iGqnRu"
-              disabled={true}
+              disabled={false}
               style={
                 Object {
-                  "backgroundColor": "#1d1d20",
+                  "backgroundColor": "#FFF",
                   "border": "none",
                   "borderRadius": "48px",
-                  "color": "#71737e",
-                  "cursor": "default",
+                  "color": "#000",
+                  "cursor": "pointer",
                   "display": "inline-block",
                   "fill": "#FFF",
                   "fontSize": "18px",

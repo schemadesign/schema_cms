@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { USER_CREATE_CMS_FORM, USER_CREATE_CMS_SCHEME, USER_ROLE } from '../../../../modules/user/user.constants';
 import { UserCreate } from '../userCreateComponent/userCreate.component';
-import { ROLES } from '../../../../modules/userProfile/userProfile.constants';
+import { EMAIL, FIRST_NAME, LAST_NAME, ROLES } from '../../../../modules/userProfile/userProfile.constants';
 import browserHistory from '../../../utils/history';
 
 export class UserCreateCMS extends PureComponent {
@@ -26,7 +26,12 @@ export class UserCreateCMS extends PureComponent {
         onSubmit={this.handleSubmit}
         initialValues={{
           [USER_ROLE]: ROLES.ADMIN,
+          [FIRST_NAME]: '',
+          [LAST_NAME]: '',
+          [EMAIL]: '',
         }}
+        isInitialValid
+        enableReinitialize
         render={({ handleSubmit, ...restProps }) => (
           <UserCreate handleSubmit={handleSubmit} onCancelClick={this.handleCancelClick} isInvitation {...restProps} />
         )}
