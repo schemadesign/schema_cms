@@ -29,6 +29,8 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
       "_nodes": Array [
         "email",
         "role",
+        "lastName",
+        "firstName",
       ],
       "_options": Object {
         "abortEarly": true,
@@ -51,6 +53,66 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
           "_exclusive": Object {
             "required": true,
             "undefined": false,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "firstName": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "min": true,
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "lastName": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "min": true,
+            "required": true,
           },
           "_mutate": undefined,
           "_options": Object {

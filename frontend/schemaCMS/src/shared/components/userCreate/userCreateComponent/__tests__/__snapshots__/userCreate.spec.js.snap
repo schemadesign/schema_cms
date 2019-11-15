@@ -57,7 +57,17 @@ exports[`UserCreate: Component should render correctly 1`] = `
       onChange={[Function]}
       readOnly={true}
       touched={Object {}}
-      value="undefined undefined"
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      isEdit={false}
+      label="Surname"
+      name="lastName"
+      onChange={[Function]}
+      readOnly={true}
+      touched={Object {}}
     />
     <TextInput
       checkOnlyErrors={false}
