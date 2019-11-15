@@ -1,6 +1,6 @@
 .vscode
 node_modules/**
-.
+.requirements.zip
 
 # Distribution / packaging
 .Python

@@ -222,7 +222,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
-    @decorators.action(detail=True, permission_classes=[], url_path="revert-job", methods=["post"])
+    @decorators.action(detail=True, url_path="revert-job", methods=["post"])
     def revert_job(self, request, pk=None, **kwargs):
         data_source = self.get_object()
         job_id = request.data.get("id", None)
