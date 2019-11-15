@@ -10,7 +10,6 @@ import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { Empty } from '../project.styles';
 import messages from './list.messages';
 import { Container, Description, HeaderItem, HeaderList, urlStyles, titleStyles } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
@@ -49,6 +48,12 @@ export class List extends PureComponent {
       secondaryMenuItems,
     };
   };
+
+  getLoaderConfig = (list, loading) => ({
+    loading,
+    noData: !list.length,
+    noDataContent: this.formatMessage(messages.noProjects),
+  });
 
   formatMessage = value => this.props.intl.formatMessage(value);
 
@@ -91,7 +96,7 @@ export class List extends PureComponent {
     );
   }
 
-  renderList = ({ list }) => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
+  renderList = list => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
   renderAddButton = (isAdmin, id) =>
     renderWhenTrue(always(<PlusButton id={id} onClick={this.handleNewProject} />))(isAdmin);
@@ -104,6 +109,7 @@ export class List extends PureComponent {
     const subtitle = this.formatMessage(messages.overview);
 
     const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
+    const loaderConfig = this.getLoaderConfig(list, loading);
 
     return (
       <Container>
@@ -112,10 +118,7 @@ export class List extends PureComponent {
         <ContextHeader title={title} subtitle={subtitle}>
           {this.renderAddButton(isAdmin, 'addProjectDesktopBtn')}
         </ContextHeader>
-        <LoadingWrapper loading={loading} noData={isEmpty(list)} noDataContent={this.formatMessage(messages.noProjects)}>
-          {this.renderList(list)}
-        </LoadingWrapper>
-        {this.renderContent({ list, loading })}
+        <LoaderWrapper {...loaderConfig}>{this.renderList(list)}</LoaderWrapper>
         <NavigationContainer right hideOnDesktop>
           {this.renderAddButton(isAdmin, 'addProjectBtn')}
         </NavigationContainer>
