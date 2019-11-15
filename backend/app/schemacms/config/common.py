@@ -212,7 +212,11 @@ class Common(Configuration):
     }
 
     # JWT
-    JWT_AUTH = {"JWT_AUTH_HEADER_PREFIX": "JWT", "JWT_EXPIRATION_DELTA": datetime.timedelta(days=30)}
+    JWT_AUTH = {
+        "JWT_AUTH_HEADER_PREFIX": "JWT",
+        "JWT_EXPIRATION_DELTA": datetime.timedelta(days=30),
+        "JWT_PAYLOAD_HANDLER": "schemacms.authorization.jwt.payload_handler",
+    }
 
     # social-django
 

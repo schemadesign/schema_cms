@@ -1,8 +1,20 @@
 from urllib import parse
 from django import shortcuts
 from django.conf import settings
+from django.core import signing
 
+from schemacms.authorization import constants as auth_constants
 from schemacms.users import constants, models, backend_management
+
+
+def generate_signed_exchange_token(user):
+    return signing.dumps(
+        {
+            "uid": user.id,
+            "auth_method": auth_constants.JWTAuthMethod.get_method_from_auth0(user.external_id),
+            "token": user.get_exchange_token(),
+        }
+    )
 
 
 def social_user(backend, uid, user=None, *args, **kwargs):
@@ -61,7 +73,7 @@ def redirect_with_token(strategy, user=None, *args, **kwargs):
     uri = strategy.session_get("next", settings.DEFAULT_WEBAPP_HOST)
     if not uri.endswith("/"):
         uri = "{}/".format(uri)
-    token = user.get_exchange_token()
+    token = generate_signed_exchange_token(user)
     return shortcuts.redirect(
         parse.urljoin(uri, "auth/confirm/{uid}/{token}".format(uid=user.id, token=token))
     )

@@ -4,6 +4,7 @@ from django import urls
 import pytest
 from rest_framework import status
 
+from schemacms.authorization import constants as auth_constants
 from schemacms.users import constants as user_constants, serializers as user_serializers
 
 pytestmark = [pytest.mark.django_db]
@@ -325,8 +326,16 @@ class TestMeView:
 
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
-    def test_authorize(self, api_client, user):
-        token = user.get_jwt_token()
+    @pytest.mark.parametrize(
+        "jwt_extra_data",
+        [
+            dict(),
+            dict(auth_method=auth_constants.JWTAuthMethod.EMAIL),
+            dict(auth_method=auth_constants.JWTAuthMethod.GMAIL),
+        ],
+    )
+    def test_authorize(self, api_client, user, jwt_extra_data):
+        token = user.get_jwt_token(**jwt_extra_data)
 
         api_client.credentials(HTTP_AUTHORIZATION="JWT {}".format(token))
         response = api_client.get(self._url)
@@ -355,17 +364,27 @@ class TestMeResetPasswordView:
         Tests /api/v1/users/me/reset-password operations.
         """
 
-    def test_response(self, api_client, user, mocker, faker):
+    @pytest.mark.parametrize("jwt_extra_data", [dict(), dict(auth_method=auth_constants.JWTAuthMethod.EMAIL)])
+    def test_response(self, api_client, user, mocker, faker, jwt_extra_data):
+        token = user.get_jwt_token(**jwt_extra_data)
         redirect_url = faker.url()
         mocker.patch(
             "schemacms.users.backend_management.user_mgtm_backend.password_change_url",
             return_value=redirect_url,
         )
-        api_client.force_authenticate(user)
-        response = api_client.get(self._url)
+
+        response = api_client.get(self._url, HTTP_AUTHORIZATION="JWT {}".format(token))
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data == {"ticket": redirect_url}
+
+    def test_gmail_user(self, api_client, user, faker):
+        token = user.get_jwt_token(auth_method=auth_constants.JWTAuthMethod.GMAIL)
+
+        response = api_client.get(self._url, HTTP_AUTHORIZATION="JWT {}".format(token))
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data[0]["code"] == 'invalidAuthMethod'
 
     def test_unauthorized(self, api_client):
         response = api_client.get(self._url)
