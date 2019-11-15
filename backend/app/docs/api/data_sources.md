@@ -499,22 +499,3 @@ id           | integer  | Job ID.
 Content-Type: application/json
 200 OK
 ```
-
-## Get current job preview
-
-**Request**:
-
-`GET` `/api/v1/datasources/:id/job-preview`
-
-
-*Note:*
-
-- **[Authorization Protected](authentication.md)**
-
-
-**Response**:
-
-
-```json
-Content-Type: application/json
-200 OK
