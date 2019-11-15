@@ -222,15 +222,16 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
-    @decorators.action(detail=True, url_path="revert-job", methods=["post"])
+    @decorators.action(detail=True, permission_classes=[], url_path="revert-job", methods=["post"])
     def revert_job(self, request, pk=None, **kwargs):
         data_source = self.get_object()
         job_id = request.data.get("id", None)
         job = get_object_or_404(models.DataSourceJob, pk=job_id)
 
         data_source.set_active_job(job)
+        serializer = self.get_serializer(instance=data_source)
 
-        return response.Response(status=status.HTTP_200_OK)
+        return response.Response(serializer.data, status=status.HTTP_200_OK)
 
     @decorators.action(detail=True, url_path="job-preview", methods=["get"])
     def job_preview(self, request, pk=None, **kwargs):
