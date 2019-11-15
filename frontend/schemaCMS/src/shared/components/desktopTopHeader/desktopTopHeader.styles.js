@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Typography } from 'schemaUI';
 
-import { ReactComponent as SchemaLogoSVG } from '../../../images/icons/schemaLogo.svg';
+import SchemaLogoSVG from '../../../images/icons/schemaLogo.svg';
 import { media, contentSizes } from '../../../theme/media';
 
 export const TopContainer = styled.div`
