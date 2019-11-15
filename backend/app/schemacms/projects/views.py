@@ -82,7 +82,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     queryset = models.DataSource.objects.prefetch_related("jobs", "filters").order_by("-created")
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
-        "create": serializers.DraftDataSourceSerializer,
         "script": serializers.DataSourceScriptSerializer,
         "script_upload": serializers.WranglingScriptSerializer,
         "job": serializers.CreateJobSerializer,

@@ -51,7 +51,6 @@ class DataSourceSerializer(serializers.ModelSerializer):
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
     error_log = serializers.SerializerMethodField()
-    project = serializers.PrimaryKeyRelatedField(read_only=True)
     jobs = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
@@ -90,11 +89,20 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         states = [DataSourceJobState.PROCESSING, DataSourceJobState.PENDING]
 
+        if not self.instance:
+            return super().validate(attrs)
+
         if attrs.get("file", None) and self.instance.jobs.filter(job_state__in=states).exists():
             message = "You can't re-upload file when job is processing"
             raise serializers.ValidationError({"file": message}, code="fileInProcessing")
 
         return super().validate(attrs)
+
+    def validate_project(self, project):
+        user = self.context["request"].user
+        if not project.user_has_access(user):
+            raise exceptions.PermissionDenied
+        return project
 
     def get_file_name(self, obj):
         if obj.file:
@@ -118,31 +126,6 @@ class DataSourceSerializer(serializers.ModelSerializer):
             file.seek(0)
         obj = super().update(instance=instance, validated_data=validated_data)
         return obj
-
-
-class DraftDataSourceSerializer(serializers.ModelSerializer):
-    meta_data = DataSourceMetaSerializer(read_only=True)
-    jobs = serializers.SerializerMethodField(read_only=True)
-
-    class Meta:
-        model = DataSource
-        fields = ("id", "name", "type", "file", "meta_data", "project", "jobs")
-        extra_kwargs = {
-            "name": {"required": False, "allow_null": True},
-            "type": {"required": False, "allow_null": True},
-            "file": {"required": False, "allow_null": True},
-        }
-
-        validators = []  # do not validate tuple of (name, project)
-
-    def validate_project(self, project):
-        user = self.context["request"].user
-        if not project.user_has_access(user):
-            raise exceptions.PermissionDenied
-        return project
-
-    def get_jobs(self, obj):
-        return []
 
 
 class ProjectOwnerSerializer(serializers.ModelSerializer):

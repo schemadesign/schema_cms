@@ -1,8 +1,5 @@
 import softdelete.models
 from django.db import models, transaction
-from hashids import Hashids
-
-from . import constants
 
 
 class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
@@ -49,11 +46,6 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         with transaction.atomic():
             dsource = super().create(*args, **kwargs)
-
-            if not kwargs.get("name", None):
-                data_source_number = Hashids(min_length=4).encode(dsource.id)
-                dsource.name = f"{constants.DATASOURCE_DRAFT_NAME} #{data_source_number}"
-                dsource.save()
 
             if file:
                 dsource.update_meta(file=file, file_name=file.name)
