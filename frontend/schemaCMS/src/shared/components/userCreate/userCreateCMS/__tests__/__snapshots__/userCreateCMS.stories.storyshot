@@ -357,7 +357,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               }
             }
           >
-            Surname
+            Last name
           </label>
           <input
             disabled={false}
