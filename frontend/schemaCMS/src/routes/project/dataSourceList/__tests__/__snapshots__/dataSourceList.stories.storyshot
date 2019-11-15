@@ -230,10 +230,10 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         className="sc-iQNlJl ckbacU"
       >
         <div
-          className="sc-bsbRJL jSJjjm"
+          className="sc-bsbRJL iEnqaB"
         >
           <a
-            className="sc-hZSUBg crHraW"
+            className="sc-hZSUBg dVYOgC"
             href="/project/1"
             onClick={[Function]}
           >
@@ -243,10 +243,10 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL godkNQ"
+          className="sc-bsbRJL jDDcYp"
         >
           <a
-            className="sc-hZSUBg crHraW"
+            className="sc-hZSUBg dVYOgC"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -256,10 +256,10 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL jSJjjm"
+          className="sc-bsbRJL iEnqaB"
         >
           <a
-            className="sc-hZSUBg crHraW"
+            className="sc-hZSUBg dVYOgC"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -677,10 +677,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         className="sc-iQNlJl ckbacU"
       >
         <div
-          className="sc-bsbRJL jSJjjm"
+          className="sc-bsbRJL iEnqaB"
         >
           <a
-            className="sc-hZSUBg crHraW"
+            className="sc-hZSUBg dVYOgC"
             href="/project/1"
             onClick={[Function]}
           >
@@ -690,10 +690,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL godkNQ"
+          className="sc-bsbRJL jDDcYp"
         >
           <a
-            className="sc-hZSUBg crHraW"
+            className="sc-hZSUBg dVYOgC"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -703,10 +703,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL jSJjjm"
+          className="sc-bsbRJL iEnqaB"
         >
           <a
-            className="sc-hZSUBg crHraW"
+            className="sc-hZSUBg dVYOgC"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -1487,10 +1487,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         className="sc-iQNlJl ckbacU"
       >
         <div
-          className="sc-bsbRJL jSJjjm"
+          className="sc-bsbRJL iEnqaB"
         >
           <a
-            className="sc-hZSUBg crHraW"
+            className="sc-hZSUBg dVYOgC"
             href="/project/1"
             onClick={[Function]}
           >
@@ -1500,10 +1500,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL godkNQ"
+          className="sc-bsbRJL jDDcYp"
         >
           <a
-            className="sc-hZSUBg crHraW"
+            className="sc-hZSUBg dVYOgC"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -1513,10 +1513,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL jSJjjm"
+          className="sc-bsbRJL iEnqaB"
         >
           <a
-            className="sc-hZSUBg crHraW"
+            className="sc-hZSUBg dVYOgC"
             href="/project/1/user"
             onClick={[Function]}
           >

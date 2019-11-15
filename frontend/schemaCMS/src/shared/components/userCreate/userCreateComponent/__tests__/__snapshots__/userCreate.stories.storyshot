@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   }
 >
   <div
-    className="sc-hmXxxW jxsVKG"
+    className="sc-ipXKqB FyGUD"
   >
     <div
       className="sc-kjoXOD kNHzWn"
@@ -265,7 +265,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       />
     </div>
     <form
-      className="sc-cqCuEk ggojPx"
+      className="sc-hmXxxW jjDAwG"
       onSubmit={[Function]}
     >
       <div
@@ -300,10 +300,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             Name
           </label>
           <input
+            disabled={true}
             id="firstName"
             name="firstName"
             onChange={[Function]}
-            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -360,10 +360,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             Email
           </label>
           <input
+            disabled={true}
             id="email"
             name="email"
             onChange={[Function]}
-            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -419,10 +419,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             Role
           </label>
           <input
+            disabled={true}
             id="role"
             name="role"
             onChange={[Function]}
-            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
