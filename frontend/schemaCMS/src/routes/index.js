@@ -8,7 +8,6 @@ import JWT from './jwt/jwt.container';
 import { NotFound } from './notFound';
 import { AUTH_PATH } from '../shared/utils/api.constants';
 import { Project } from './project';
-import { Settings } from './settings';
 import { ResetPassword } from './resetPassword';
 import { Logout } from './logout';
 import { DataSource } from './dataSource';
@@ -21,7 +20,6 @@ import { Preview as JobPreview } from './jobDetail/preview';
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
-  SETTINGS: '/settings',
   PROJECT: '/project',
   RESET_PASSWORD: '/reset-password',
   LOGOUT: '/logout',
@@ -47,8 +45,6 @@ export default class RootContainer extends Component {
             <AuthRoute path={`${ROUTES.DATA_SOURCE}/:dataSourceId`} component={DataSource} />
 
             <AuthRoute exact path={`${ROUTES.DATA_WRANGLING_SCRIPTS}/:scriptId`} component={DataWranglingScript} />
-
-            <AuthRoute path={ROUTES.SETTINGS} component={Settings} />
 
             <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
 

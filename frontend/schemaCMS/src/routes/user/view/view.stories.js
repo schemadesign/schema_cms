@@ -6,10 +6,14 @@ import { View } from './view.component';
 export const defaultProps = {
   fetchUser: Function.prototype,
   removeUser: Function.prototype,
+  updateMe: Function.prototype,
+  removeUserFromProject: Function.prototype,
+  currentUser: {},
+  history: {},
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
-  userData: {},
+  user: {},
   isAdmin: true,
   match: { params: { userId: '1' } },
 };

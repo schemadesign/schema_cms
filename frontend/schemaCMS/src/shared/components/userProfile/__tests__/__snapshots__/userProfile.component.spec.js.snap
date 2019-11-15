@@ -8,6 +8,7 @@ exports[`UserProfile: Component should render correctly 1`] = `
     Object {
       "email": "",
       "firstName": "",
+      "id": "1",
       "lastName": "",
       "role": "editor",
     }
@@ -160,6 +161,7 @@ exports[`UserProfile: Component should render correctly form 1`] = `
       "initialValues": Object {
         "email": "",
         "firstName": "",
+        "id": "1",
         "lastName": "",
         "role": "editor",
       },
@@ -316,6 +318,7 @@ exports[`UserProfile: Component should render correctly form 1`] = `
       "values": Object {
         "email": "",
         "firstName": "",
+        "id": "1",
         "lastName": "",
         "role": "editor",
       },
@@ -337,6 +340,7 @@ exports[`UserProfile: Component should render correctly form 1`] = `
           Object {
             "email": "",
             "firstName": "",
+            "id": "1",
             "lastName": "",
             "role": "editor",
           }
@@ -381,6 +385,7 @@ exports[`UserProfile: Component should render correctly form 1`] = `
           Object {
             "email": "",
             "firstName": "",
+            "id": "1",
             "lastName": "",
             "role": "editor",
           }
@@ -438,6 +443,7 @@ exports[`UserProfile: Component should render correctly form 1`] = `
           Object {
             "email": "",
             "firstName": "",
+            "id": "1",
             "lastName": "",
             "role": "editor",
           }
@@ -471,9 +477,93 @@ exports[`UserProfile: Component should render correctly form 1`] = `
         validateOnChange={true}
         value="editor"
       />
+      <styled.div>
+        <Styled(Span)
+          onClick={[Function]}
+        >
+          <FormattedMessage
+            defaultMessage="Remove user"
+            id="userProfile.removeUser"
+            values={Object {}}
+          />
+        </Styled(Span)>
+      </styled.div>
+      <Modal
+        ariaHideApp={true}
+        bodyOpenClassName="ReactModal__Body--open"
+        closeTimeoutMS={0}
+        contentLabel="Confirm Removal"
+        isOpen={false}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        role="dialog"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "WebkitOverflowScrolling": "touch",
+              "alignItems": "center",
+              "backgroundColor": "rgba(0, 0, 0, 0.9)",
+              "border": null,
+              "borderRadius": "4px",
+              "bottom": "40px",
+              "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+              "color": "FFFFFF",
+              "display": "flex",
+              "left": "40px",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "20px",
+              "position": "absolute",
+              "right": "40px",
+              "top": "40px",
+            },
+            "overlay": Object {
+              "backgroundColor": "rgba(29, 29, 32, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+              "zIndex": 10000,
+            },
+          }
+        }
+      >
+        <Styled(H1)>
+          <FormattedMessage
+            defaultMessage="Are you want to remove user?"
+            id="userProfile.removeTitle"
+            values={Object {}}
+          />
+        </Styled(H1)>
+        <styled.div>
+          <Styled(Component)
+            onClick={[Function]}
+          >
+            <FormattedMessage
+              defaultMessage="Cancel"
+              id="userProfile.cancelRemoval"
+              values={Object {}}
+            />
+          </Styled(Component)>
+          <Styled(Component)
+            onClick={[Function]}
+          >
+            <FormattedMessage
+              defaultMessage="Confirm"
+              id="userProfile.confirmRemoval"
+              values={Object {}}
+            />
+          </Styled(Component)>
+        </styled.div>
+      </Modal>
       <NavigationContainer
         hideOnDesktop={false}
-        right={true}
+        right={false}
       >
         <BackButton
           disabled={false}
@@ -505,6 +595,7 @@ exports[`UserProfile: Component should render correctly form for user settings 1
       "initialValues": Object {
         "email": "",
         "firstName": "",
+        "id": "1",
         "lastName": "",
         "role": "editor",
       },
@@ -661,6 +752,7 @@ exports[`UserProfile: Component should render correctly form for user settings 1
       "values": Object {
         "email": "",
         "firstName": "",
+        "id": "1",
         "lastName": "",
         "role": "editor",
       },
@@ -673,7 +765,7 @@ exports[`UserProfile: Component should render correctly form for user settings 1
     >
       <TextInput
         checkOnlyErrors={false}
-        disabled={false}
+        disabled={true}
         errors={Object {}}
         fullWidth={true}
         handleBlur={[Function]}
@@ -682,6 +774,7 @@ exports[`UserProfile: Component should render correctly form for user settings 1
           Object {
             "email": "",
             "firstName": "",
+            "id": "1",
             "lastName": "",
             "role": "editor",
           }
@@ -717,7 +810,7 @@ exports[`UserProfile: Component should render correctly form for user settings 1
       />
       <TextInput
         checkOnlyErrors={false}
-        disabled={false}
+        disabled={true}
         errors={Object {}}
         fullWidth={true}
         handleBlur={[Function]}
@@ -726,6 +819,7 @@ exports[`UserProfile: Component should render correctly form for user settings 1
           Object {
             "email": "",
             "firstName": "",
+            "id": "1",
             "lastName": "",
             "role": "editor",
           }
@@ -772,19 +866,448 @@ exports[`UserProfile: Component should render correctly form for user settings 1
         touched={Object {}}
         value=""
       />
+      <TextInput
+        checkOnlyErrors={false}
+        disabled={true}
+        errors={Object {}}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleReset={[Function]}
+        initialValues={
+          Object {
+            "email": "",
+            "firstName": "",
+            "id": "1",
+            "lastName": "",
+            "role": "editor",
+          }
+        }
+        isEdit={false}
+        isSubmitting={false}
+        isValid={true}
+        isValidating={false}
+        label="Role"
+        name="role"
+        onChange={[Function]}
+        registerField={[Function]}
+        resetForm={[Function]}
+        setError={[Function]}
+        setErrors={[Function]}
+        setFieldError={[Function]}
+        setFieldTouched={[Function]}
+        setFieldValue={[Function]}
+        setFormikState={[Function]}
+        setStatus={[Function]}
+        setSubmitting={[Function]}
+        setTouched={[Function]}
+        setValues={[Function]}
+        submitCount={0}
+        submitForm={[Function]}
+        touched={Object {}}
+        unregisterField={[Function]}
+        validateField={[Function]}
+        validateForm={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+        value="editor"
+      />
+      <styled.div>
+        <Styled(Span)
+          onClick={[Function]}
+        >
+          <FormattedMessage
+            defaultMessage="Remove user"
+            id="userProfile.removeUser"
+            values={Object {}}
+          />
+        </Styled(Span)>
+      </styled.div>
+      <Modal
+        ariaHideApp={true}
+        bodyOpenClassName="ReactModal__Body--open"
+        closeTimeoutMS={0}
+        contentLabel="Confirm Removal"
+        isOpen={false}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        role="dialog"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "WebkitOverflowScrolling": "touch",
+              "alignItems": "center",
+              "backgroundColor": "rgba(0, 0, 0, 0.9)",
+              "border": null,
+              "borderRadius": "4px",
+              "bottom": "40px",
+              "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+              "color": "FFFFFF",
+              "display": "flex",
+              "left": "40px",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "20px",
+              "position": "absolute",
+              "right": "40px",
+              "top": "40px",
+            },
+            "overlay": Object {
+              "backgroundColor": "rgba(29, 29, 32, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+              "zIndex": 10000,
+            },
+          }
+        }
+      >
+        <Styled(H1)>
+          <FormattedMessage
+            defaultMessage="Are you want to remove user?"
+            id="userProfile.removeTitle"
+            values={Object {}}
+          />
+        </Styled(H1)>
+        <styled.div>
+          <Styled(Component)
+            onClick={[Function]}
+          >
+            <FormattedMessage
+              defaultMessage="Cancel"
+              id="userProfile.cancelRemoval"
+              values={Object {}}
+            />
+          </Styled(Component)>
+          <Styled(Component)
+            onClick={[Function]}
+          >
+            <FormattedMessage
+              defaultMessage="Confirm"
+              id="userProfile.confirmRemoval"
+              values={Object {}}
+            />
+          </Styled(Component)>
+        </styled.div>
+      </Modal>
       <NavigationContainer
         hideOnDesktop={false}
-        right={true}
+        right={false}
       >
+        <BackButton
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        />
         <NextButton
-          disabled={true}
           loading={false}
           type="submit"
         >
-          Save
+          Make admin
         </NextButton>
       </NavigationContainer>
     </styled.form>
   </styled.div>
 </ContextProvider>
+`;
+
+exports[`UserProfile: Component should render correctly my profile 1`] = `
+<Formik
+  displayName="user_profile_form"
+  enableReinitialize={true}
+  initialValues={
+    Object {
+      "email": "",
+      "firstName": "",
+      "id": "1",
+      "lastName": "",
+      "role": "editor",
+    }
+  }
+  isInitialValid={true}
+  onSubmit={[Function]}
+  render={[Function]}
+  validateOnBlur={true}
+  validateOnChange={true}
+  validationSchema={
+    ObjectSchema {
+      "_blacklist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "_conditions": Array [],
+      "_defaultDefault": [Function],
+      "_deps": Array [],
+      "_excludedEdges": Array [],
+      "_exclusive": Object {},
+      "_mutate": undefined,
+      "_nodes": Array [
+        "email",
+        "lastName",
+        "firstName",
+      ],
+      "_options": Object {
+        "abortEarly": true,
+        "recursive": true,
+      },
+      "_type": "object",
+      "_typeError": [Function],
+      "_whitelist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "fields": Object {
+        "email": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+            "undefined": false,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "firstName": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "max": true,
+            "min": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "lastName": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "max": true,
+            "min": true,
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+      },
+      "tests": Array [],
+      "transforms": Array [
+        [Function],
+      ],
+    }
+  }
+/>
+`;
+
+exports[`UserProfile: Component should render correctly project user 1`] = `
+<Formik
+  displayName="user_profile_form"
+  enableReinitialize={true}
+  initialValues={
+    Object {
+      "email": "",
+      "firstName": "",
+      "id": "1",
+      "lastName": "",
+      "role": "editor",
+    }
+  }
+  isInitialValid={true}
+  onSubmit={[Function]}
+  render={[Function]}
+  validateOnBlur={true}
+  validateOnChange={true}
+  validationSchema={
+    ObjectSchema {
+      "_blacklist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "_conditions": Array [],
+      "_defaultDefault": [Function],
+      "_deps": Array [],
+      "_excludedEdges": Array [],
+      "_exclusive": Object {},
+      "_mutate": undefined,
+      "_nodes": Array [
+        "email",
+        "lastName",
+        "firstName",
+      ],
+      "_options": Object {
+        "abortEarly": true,
+        "recursive": true,
+      },
+      "_type": "object",
+      "_typeError": [Function],
+      "_whitelist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "fields": Object {
+        "email": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+            "undefined": false,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "firstName": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "max": true,
+            "min": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "lastName": StringSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "max": true,
+            "min": true,
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [
+            [Function],
+            [Function],
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+      },
+      "tests": Array [],
+      "transforms": Array [
+        [Function],
+      ],
+    }
+  }
+/>
 `;

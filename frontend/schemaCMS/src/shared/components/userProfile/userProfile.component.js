@@ -1,12 +1,13 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
-import { ifElse, is, path } from 'ramda';
+import { always, ifElse, is, path, equals } from 'ramda';
+import Modal from 'react-modal';
+import { FormattedMessage } from 'react-intl';
 
 import { Container, Form } from './userProfile.styles';
 import { TextInput } from '../form/inputs/textInput';
 import {
-  ME,
   EMAIL,
   FIRST_NAME,
   INITIAL_VALUES,
@@ -21,61 +22,77 @@ import messages from './userProfile.messages';
 import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
 import { isDesktop } from '../../../theme/media';
+import { getModalStyles, ModalActions, ModalButton, ModalTitle } from '../modal/modal.styles';
+import { Link, LinkContainer } from '../../../theme/typography';
 
 export class UserProfile extends PureComponent {
   static propTypes = {
     userData: PropTypes.object.isRequired,
     updateMe: PropTypes.func,
     makeAdmin: PropTypes.func,
+    removeUser: PropTypes.func,
+    removeUserFromProject: PropTypes.func,
     isAdmin: PropTypes.bool,
     intl: PropTypes.object.isRequired,
-    isSettings: PropTypes.bool,
+    isCurrentUser: PropTypes.bool.isRequired,
     match: PropTypes.object,
-    history: PropTypes.object,
+    history: PropTypes.object.isRequired,
   };
 
   static defaultProps = {
-    isSettings: false,
     isAdmin: false,
   };
 
+  state = {
+    userRemoveModalOpen: false,
+    projectId: path(['match', 'params', 'projectId'])(this.props),
+  };
+
   getBackUrl = ifElse(is(String), projectId => `/project/${projectId}/user`, () => '/user');
+  getRemoveModalMessage = ifElse(equals(true), always('removeTitleFromProject'), always('removeTitle'));
+  getRemoveCopyMessage = ifElse(equals(true), always('removeUserFromProject'), always('removeUser'));
 
   handleGoToList = () => {
-    const id = path(['match', 'params', 'userId'], this.props);
-
-    if (id === ME && isDesktop()) {
+    if (this.props.isCurrentUser && isDesktop()) {
       this.props.history.goBack();
     } else {
-      this.props.history.push(this.getBackUrl(path(['match', 'params', 'projectId'])(this.props)));
+      this.props.history.push(this.getBackUrl(this.state.projectId));
     }
   };
 
   handleSubmit = values => {
-    if (this.props.isSettings) {
+    if (this.props.isCurrentUser) {
       return this.props.updateMe(values);
     }
 
     return this.props.makeAdmin({ userId: path(['match', 'params', 'userId'], this.props) });
   };
 
+  handleCancelRemove = () => this.setState({ userRemoveModalOpen: false });
+
+  handleConfirmRemove = () => {
+    const userId = path(['userData', 'id'], this.props);
+    const { projectId } = this.state;
+
+    if (projectId) {
+      return this.props.removeUserFromProject({ projectId, userId });
+    }
+
+    return this.props.removeUser({ userId });
+  };
+
   renderMakeAdmin = renderWhenTrue(() => (
     <NextButton type="submit">{this.props.intl.formatMessage(messages.makeAdmin)}</NextButton>
   ));
 
-  renderSubmitButton = ({ dirty, isEditor, isAdmin }) =>
+  renderSubmitButton = ({ dirty, isEditor, isAdmin, projectId }) =>
     renderWhenTrueOtherwise(
       () => (
         <NextButton type="submit" disabled={!dirty}>
           {this.props.intl.formatMessage(messages.save)}
         </NextButton>
       ),
-      () => (
-        <Fragment>
-          <BackButton type="button" onClick={this.handleGoToList} />
-          {this.renderMakeAdmin(isEditor && isAdmin)}
-        </Fragment>
-      )
+      () => this.renderMakeAdmin(isEditor && isAdmin && !projectId)
     );
 
   renderRole = ({ values, roleLabel, restProps }) =>
@@ -83,8 +100,26 @@ export class UserProfile extends PureComponent {
       <TextInput disabled fullWidth value={values[ROLE]} name={ROLE} label={roleLabel} {...restProps} />
     ));
 
+  renderLink = renderWhenTrueOtherwise(
+    always(
+      <LinkContainer>
+        <Link onClick={() => this.props.history.push('/reset-password')}>
+          <FormattedMessage {...messages.resetPassword} />
+        </Link>
+      </LinkContainer>
+    ),
+    always(
+      <LinkContainer>
+        <Link onClick={() => this.setState({ userRemoveModalOpen: true })}>
+          <FormattedMessage {...messages[this.getRemoveCopyMessage(!!this.state.projectId)]} />
+        </Link>
+      </LinkContainer>
+    )
+  );
+
   renderContent = ({ values, handleChange, handleSubmit, dirty, ...restProps }) => {
-    const { intl, isSettings, isAdmin } = this.props;
+    const { intl, isCurrentUser, isAdmin } = this.props;
+    const { projectId } = this.state;
     const firstNameLabel = intl.formatMessage(messages.firstNameLabel);
     const lastNameLabel = intl.formatMessage(messages.lastNameLabel);
     const emailLabel = intl.formatMessage(messages.emailLabel);
@@ -95,7 +130,8 @@ export class UserProfile extends PureComponent {
       <Container>
         <Form onSubmit={handleSubmit}>
           <TextInput
-            disabled={!isSettings}
+            disabled={!isCurrentUser}
+            isEdit={isCurrentUser}
             fullWidth
             value={values[FIRST_NAME]}
             onChange={handleChange}
@@ -104,7 +140,8 @@ export class UserProfile extends PureComponent {
             {...restProps}
           />
           <TextInput
-            disabled={!isSettings}
+            disabled={!isCurrentUser}
+            isEdit={isCurrentUser}
             fullWidth
             value={values[LAST_NAME]}
             onChange={handleChange}
@@ -113,9 +150,24 @@ export class UserProfile extends PureComponent {
             {...restProps}
           />
           <TextInput disabled fullWidth readOnly value={values[EMAIL]} name={EMAIL} label={emailLabel} />
-          {this.renderRole({ values, roleLabel, restProps })(!isSettings)}
-          <NavigationContainer right={isSettings || isEditor}>
-            {this.renderSubmitButton({ dirty, isEditor, isAdmin })(isSettings)}
+          {this.renderRole({ values, roleLabel, restProps })(!isCurrentUser)}
+          {this.renderLink(isCurrentUser)}
+          <Modal isOpen={this.state.userRemoveModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
+            <ModalTitle>
+              <FormattedMessage {...messages[this.getRemoveModalMessage(!!projectId)]} />
+            </ModalTitle>
+            <ModalActions>
+              <ModalButton onClick={this.handleCancelRemove}>
+                <FormattedMessage {...messages.cancelRemoval} />
+              </ModalButton>
+              <ModalButton onClick={this.handleConfirmRemove}>
+                <FormattedMessage {...messages.confirmRemoval} />
+              </ModalButton>
+            </ModalActions>
+          </Modal>
+          <NavigationContainer>
+            <BackButton type="button" onClick={this.handleGoToList} />
+            {this.renderSubmitButton({ dirty, isEditor, isAdmin, projectId })(isCurrentUser)}
           </NavigationContainer>
         </Form>
       </Container>

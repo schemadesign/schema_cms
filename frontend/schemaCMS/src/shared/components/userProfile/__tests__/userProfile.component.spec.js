@@ -4,9 +4,11 @@ import { Formik } from 'formik';
 
 import { UserProfile } from '../userProfile.component';
 import { Form } from '../userProfile.styles';
-import { defaultProps } from '../userProfile.stories';
+import { defaultProps, projectUser, userMe } from '../userProfile.stories';
 import { BackButton } from '../../navigation';
 import { INITIAL_VALUES } from '../../../../modules/userProfile/userProfile.constants';
+import { Link } from '../../../../theme/typography';
+import { ModalButton } from '../../modal/modal.styles';
 
 describe('UserProfile: Component', () => {
   const component = props => <UserProfile {...defaultProps} {...props} />;
@@ -15,6 +17,16 @@ describe('UserProfile: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly my profile', () => {
+    const wrapper = render(userMe);
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly project user', () => {
+    const wrapper = render(projectUser);
     global.expect(wrapper).toMatchSnapshot();
   });
 
@@ -33,13 +45,13 @@ describe('UserProfile: Component', () => {
   });
 
   it('should call updateMe on Formik submit', () => {
-    jest.spyOn(defaultProps, 'updateMe');
+    jest.spyOn(userMe, 'updateMe');
 
     const values = { sample: 'test' };
-    const wrapper = render({ isSettings: true });
+    const wrapper = render(userMe);
 
     wrapper.find(Formik).prop('onSubmit')(values);
-    expect(defaultProps.updateMe).toBeCalledWith(values);
+    expect(userMe.updateMe).toBeCalledWith(values);
   });
 
   it('should call makeAdmin on Formik submit', () => {
@@ -81,5 +93,61 @@ describe('UserProfile: Component', () => {
       .simulate('click');
 
     expect(defaultProps.history.push).toBeCalled();
+  });
+
+  it('should reset password', () => {
+    jest.spyOn(defaultProps.history, 'push');
+
+    const wrapper = render(userMe);
+    wrapper
+      .find(Formik)
+      .dive()
+      .find(Link)
+      .simulate('click');
+
+    expect(defaultProps.history.push).toBeCalledWith('/reset-password');
+  });
+
+  it('should reset password', () => {
+    jest.spyOn(defaultProps.history, 'push');
+
+    const wrapper = render(userMe);
+    wrapper
+      .find(Formik)
+      .dive()
+      .find(Link)
+      .simulate('click');
+
+    expect(defaultProps.history.push).toBeCalledWith('/reset-password');
+  });
+
+  it('should remove user', () => {
+    jest.spyOn(defaultProps, 'removeUser');
+
+    const wrapper = render();
+
+    wrapper
+      .find(Formik)
+      .dive()
+      .find(ModalButton)
+      .at(1)
+      .simulate('click');
+
+    expect(defaultProps.removeUser).toBeCalledWith({ userId: '1' });
+  });
+
+  it('should remove user from project', () => {
+    jest.spyOn(projectUser, 'removeUserFromProject');
+
+    const wrapper = render(projectUser);
+
+    wrapper
+      .find(Formik)
+      .dive()
+      .find(ModalButton)
+      .at(1)
+      .simulate('click');
+
+    expect(projectUser.removeUserFromProject).toBeCalledWith({ userId: '1', projectId: '1' });
   });
 });

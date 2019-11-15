@@ -10,20 +10,12 @@ export default defineMessages({
     id: 'user.view.subTitle',
     defaultMessage: 'Profile',
   },
-  removeUser: {
-    id: 'user.view.removeUser',
-    defaultMessage: 'Remove user',
+  currentUserTitle: {
+    id: 'user.view.currentUserTitle',
+    defaultMessage: 'SchemaCMS',
   },
-  removeTitle: {
-    id: 'user.view.removeTitle',
-    defaultMessage: 'Are you want to remove user?',
-  },
-  cancelRemoval: {
-    id: 'user.view.cancelRemoval',
-    defaultMessage: 'Cancel',
-  },
-  confirmRemoval: {
-    id: 'user.view.confirmRemoval',
-    defaultMessage: 'Confirm',
+  currentUserSubTitle: {
+    id: 'user.view.currentUserSubTitle',
+    defaultMessage: 'My Profile',
   },
 });
