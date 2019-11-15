@@ -338,44 +338,46 @@ class TestAddEditorToProject:
         return reverse("projects:project-add-editor", kwargs=dict(pk=pk))
 
 
-class TestCreateDraftDataSourceView:
+class TestCreateDataSourceView:
+    @staticmethod
+    def generate_payload(project, faker):
+        payload = {
+            "project": project.id,
+            "name": faker.word(),
+            "type": projects_constants.DataSourceType.FILE,
+            "file": faker.csv_upload_file(),
+        }
+        return payload
+
     def test_empty_payload(self, api_client, admin, project):
         api_client.force_authenticate(admin)
 
         response = api_client.post(self.get_url(), dict(project=project.id), format="multipart")
 
-        assert response.status_code == status.HTTP_201_CREATED
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
 
-    def test_create_by_editor_assigned_to_project(self, api_client, editor, project):
+    def test_create_by_editor_assigned_to_project(self, api_client, editor, project, faker):
         project.editors.add(editor)
         api_client.force_authenticate(editor)
+        payload = self.generate_payload(project, faker)
 
-        response = api_client.post(self.get_url(), dict(project=project.id), format="multipart")
+        response = api_client.post(self.get_url(), payload, format="multipart")
 
         assert response.status_code == status.HTTP_201_CREATED
 
-    def test_create_by_editor_not_assigned_to_project(self, api_client, editor, project):
+    def test_create_by_editor_not_assigned_to_project(self, api_client, editor, project, faker):
         api_client.force_authenticate(editor)
+        payload = self.generate_payload(project, faker)
 
-        response = api_client.post(self.get_url(), dict(project=project.id), format="multipart")
+        response = api_client.post(self.get_url(), payload, format="multipart")
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
-    def test_upload_file(self, api_client, admin, project, faker):
-        payload = dict(file=faker.csv_upload_file(filename="test.csv"), project=project.id)
-
+    def test_request_user_as_created_by(self, api_client, admin, project, faker):
         api_client.force_authenticate(admin)
+        payload = self.generate_payload(project, faker)
+
         response = api_client.post(self.get_url(), payload, format="multipart")
-        dsource = projects_models.DataSource.objects.get(id=response.data["id"])
-        correct_path = os.path.join(dsource.file.storage.location, f"{dsource.id}/uploads/test.csv")
-
-        assert response.status_code == status.HTTP_201_CREATED
-        assert response.data["file"] == f"http://testserver/{correct_path.lstrip('/')}"
-
-    def test_request_user_as_created_by(self, api_client, admin, project):
-        api_client.force_authenticate(admin)
-
-        response = api_client.post(self.get_url(), dict(project=project.id), format="multipart")
 
         assert response.status_code == status.HTTP_201_CREATED, response.content
         assert project.data_sources.get(id=response.data["id"]).created_by == admin
@@ -385,7 +387,7 @@ class TestCreateDraftDataSourceView:
         return reverse("projects:datasource-list")
 
 
-class TestUpdateDraftDataSourceView:
+class TestUpdateDataSourceView:
     def test_response(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory()
         url = self.get_url(pk=data_source.pk)
@@ -394,7 +396,7 @@ class TestUpdateDraftDataSourceView:
         )
 
         api_client.force_authenticate(admin)
-        response = api_client.put(url, payload, format="multipart")
+        response = api_client.patch(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_200_OK
 
@@ -408,7 +410,7 @@ class TestUpdateDraftDataSourceView:
         )
         api_client.force_authenticate(admin)
 
-        api_client.put(url, payload, format="multipart")
+        api_client.patch(url, payload, format="multipart")
 
         data_source.refresh_from_db()
         assert data_source.get_original_file_name()[1] == payload["file"].name
@@ -424,7 +426,7 @@ class TestUpdateDraftDataSourceView:
         )
 
         api_client.force_authenticate(editor)
-        response = api_client.put(url, payload, format="multipart")
+        response = api_client.patch(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_200_OK
 
@@ -449,7 +451,7 @@ class TestUpdateDraftDataSourceView:
         response = api_client.put(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
-        assert response.data.keys() == {"name", "type", "file"}
+        assert response.data.keys() == {"name", "type", "file", "project"}
 
     def test_unique_name(self, api_client, faker, admin, data_source_factory):
         other_datasource = data_source_factory(name="test")
@@ -462,7 +464,7 @@ class TestUpdateDraftDataSourceView:
         )
         api_client.force_authenticate(admin)
 
-        response = api_client.put(url, payload, format="multipart")
+        response = api_client.patch(url, payload, format="multipart")
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST, response.content
         assert response.data == {
@@ -498,13 +500,10 @@ class TestUpdateDraftDataSourceView:
     def test_file_overwrite(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory()
         _, file_name_before_update = data_source.get_original_file_name()
-        url = self.get_url(pk=data_source.pk)
-        payload = dict(
-            name=faker.word(), type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file()
-        )
+        payload = dict(type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file())
 
         api_client.force_authenticate(admin)
-        response = api_client.put(url, payload, format="multipart")
+        response = api_client.patch(self.get_url(pk=data_source.pk), payload, format="multipart")
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["file_name"] == file_name_before_update
