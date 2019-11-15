@@ -88,6 +88,11 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "active": "#1d1d20",
           "background": "#f0efef",
         },
+        "tab": Object {
+          "active": "#000",
+          "hover": "#000",
+          "normal": "#f0efef",
+        },
         "table": Object {
           "background": Object {
             "body": "#FFF",
@@ -101,11 +106,6 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
             "body": "#000",
             "header": "#a6a7aa",
           },
-        },
-        "tabs": Object {
-          "active": "#000",
-          "hover": "#000",
-          "normal": "#f0efef",
         },
         "text": "#1d1d20",
         "textArea": Object {

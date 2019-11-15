@@ -98,7 +98,7 @@ const light = {
       header: colors.coolGray,
     },
   },
-  tabs: {
+  tab: {
     normal: colors.veryLightPink,
     active: colors.black,
     hover: colors.black,
