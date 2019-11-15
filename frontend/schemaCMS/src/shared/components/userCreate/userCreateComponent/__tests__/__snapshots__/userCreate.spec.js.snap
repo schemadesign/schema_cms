@@ -60,13 +60,13 @@ exports[`UserCreate: Component should render correctly 1`] = `
     />
     <TextInput
       checkOnlyErrors={false}
+      disabled={true}
       errors={Object {}}
       fullWidth={true}
       isEdit={false}
       label="Surname"
       name="lastName"
       onChange={[Function]}
-      readOnly={true}
       touched={Object {}}
     />
     <TextInput
