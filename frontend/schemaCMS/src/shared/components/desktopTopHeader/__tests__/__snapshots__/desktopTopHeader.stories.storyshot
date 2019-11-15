@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   }
 >
   <div
-    className="sc-dTdPqK coZwRo"
+    className="sc-bHwgHz kqDrhz"
   >
     <div
-      className="sc-itybZL WHeQL"
+      className="sc-krDsej hcXQHb"
     >
       <div
         style={
@@ -31,24 +31,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
       >
         <div>
           <div
-            className="sc-fzsDOv igfwvp"
+            className="sc-itybZL kEQiLE"
           >
             <a
-              className="sc-jVODtj sc-kUaPvJ bEWXtm"
+              className="sc-fzsDOv sc-gPWkxV buoxLU"
               href="/"
               onClick={[Function]}
             >
-              <svg
-                className="sc-fONwsr dCUrXn"
-              >
-                schemaLogo.svg
-              </svg>
+              <schemaLogo.svg
+                className="sc-kUaPvJ gWsEmW"
+              />
             </a>
             <div
-              className="sc-gPWkxV kadvqG"
+              className="sc-eMigcr ejhPBl"
             >
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="sc-fzsDOv sc-jVODtj fJOYMQ"
                 href="/logout"
                 onClick={[Function]}
               >
@@ -68,7 +66,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 </svg>
               </a>
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="sc-fzsDOv sc-jVODtj fJOYMQ"
                 href="/user/me"
                 onClick={[Function]}
               >
@@ -153,7 +151,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
         </button>
       </div>
       <div
-        className="sc-eMigcr eGxKvP"
+        className="sc-dTdPqK hzPGFk"
       />
       <div
         style={
@@ -319,10 +317,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   }
 >
   <div
-    className="sc-dTdPqK coZwRo"
+    className="sc-bHwgHz kqDrhz"
   >
     <div
-      className="sc-itybZL WHeQL"
+      className="sc-krDsej hcXQHb"
     >
       <div
         style={
@@ -340,24 +338,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
       >
         <div>
           <div
-            className="sc-fzsDOv igfwvp"
+            className="sc-itybZL kEQiLE"
           >
             <a
-              className="sc-jVODtj sc-kUaPvJ bEWXtm"
+              className="sc-fzsDOv sc-gPWkxV buoxLU"
               href="/"
               onClick={[Function]}
             >
-              <svg
-                className="sc-fONwsr dCUrXn"
-              >
-                schemaLogo.svg
-              </svg>
+              <schemaLogo.svg
+                className="sc-kUaPvJ gWsEmW"
+              />
             </a>
             <div
-              className="sc-VJcYb btoQmr"
+              className="sc-giadOv fnhztL"
             >
               <h1
-                className="sc-ipXKqB bgxuUB"
+                className="sc-fONwsr hxHEub"
                 style={
                   Object {
                     "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -377,10 +373,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </h1>
             </div>
             <div
-              className="sc-gPWkxV kadvqG"
+              className="sc-eMigcr ejhPBl"
             >
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="sc-fzsDOv sc-jVODtj fJOYMQ"
                 href="/logout"
                 onClick={[Function]}
               >
@@ -400,7 +396,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 </svg>
               </a>
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="sc-fzsDOv sc-jVODtj fJOYMQ"
                 href="/user/me"
                 onClick={[Function]}
               >
@@ -485,7 +481,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
         </button>
       </div>
       <div
-        className="sc-eMigcr eGxKvP"
+        className="sc-dTdPqK hzPGFk"
       />
       <div
         style={
@@ -651,10 +647,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   }
 >
   <div
-    className="sc-dTdPqK coZwRo"
+    className="sc-bHwgHz kqDrhz"
   >
     <div
-      className="sc-itybZL WHeQL"
+      className="sc-krDsej hcXQHb"
     >
       <div
         style={
@@ -672,24 +668,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
       >
         <div>
           <div
-            className="sc-fzsDOv igfwvp"
+            className="sc-itybZL kEQiLE"
           >
             <a
-              className="sc-jVODtj sc-kUaPvJ bEWXtm"
+              className="sc-fzsDOv sc-gPWkxV buoxLU"
               href="/"
               onClick={[Function]}
             >
-              <svg
-                className="sc-fONwsr dCUrXn"
-              >
-                schemaLogo.svg
-              </svg>
+              <schemaLogo.svg
+                className="sc-kUaPvJ gWsEmW"
+              />
             </a>
             <div
-              className="sc-VJcYb btoQmr"
+              className="sc-giadOv fnhztL"
             >
               <h1
-                className="sc-ipXKqB bgxuUB"
+                className="sc-fONwsr hxHEub"
                 style={
                   Object {
                     "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -705,10 +699,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </h1>
             </div>
             <div
-              className="sc-gPWkxV kadvqG"
+              className="sc-eMigcr ejhPBl"
             >
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="sc-fzsDOv sc-jVODtj fJOYMQ"
                 href="/logout"
                 onClick={[Function]}
               >
@@ -728,7 +722,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 </svg>
               </a>
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="sc-fzsDOv sc-jVODtj fJOYMQ"
                 href="/user/me"
                 onClick={[Function]}
               >
@@ -813,7 +807,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
         </button>
       </div>
       <div
-        className="sc-eMigcr eGxKvP"
+        className="sc-dTdPqK hzPGFk"
       />
       <div
         style={
