@@ -1,132 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
-.c9 {
-  height: 155px;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c10 {
-  position: fixed;
-  padding: 40px 0 36px;
-  bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c12 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
-.c0 {
-  width: calc(100% - 50px);
-}
-
-.c1 {
-  overflow: auto;
-  max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.c2 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.c3 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c4 {
-  display: none;
-}
-
-.c5 {
-  margin-right: 20px;
-}
-
-.c6 {
-  color: #FFF;
-}
-
-.c7 {
-  color: #FFF;
-}
-
-.c8 {
-  width: 100%;
-}
-
-@media (min-width:1040px) {
-  .c11 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c10 {
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c12 {
-    width: 240px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    margin: 60px 0 40px 0;
-  }
-}
-
 <div
   style={
     Object {
@@ -136,10 +10,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
   }
 >
   <div
-    className=""
+    className="sc-cqCuEk cqoivF"
   >
     <div
-      className="c0"
+      className="sc-gisBJw kiKCgt"
     >
       <div
         style={
@@ -156,7 +30,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       >
         <div>
           <div
-            className=""
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -213,7 +87,6 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               "position": "absolute",
               "right": 0,
               "top": 6,
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -255,10 +128,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         }
       >
         <div
-          className=""
+          className="sc-cHGsZl bHiaRe"
         >
           <div
-            className=""
+            className="sc-kjoXOD hpTAeq"
           >
             <h2
               id="headerTitle"
@@ -295,13 +168,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="sc-TOsTZ iUQrOT"
         >
           <ul
-            className="c2"
+            className="sc-kgAjT sc-cJSrbW doKZeW"
           />
           <ul
-            className="c3"
+            className="sc-kgAjT sc-ksYbfQ iFxI"
           />
         </div>
         <button
@@ -325,7 +198,6 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               "position": "absolute",
               "right": 0,
               "top": "6px",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -348,13 +220,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
       </div>
     </div>
     <div
-      className="c4"
+      className="sc-hqyNC hFkHhT"
     >
       <div
-        className="c5"
+        className="sc-jbKcbu fynHmL"
       >
         <h2
-          className="c6"
+          className="sc-dNLxif dEgtYS"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -370,7 +242,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
           </span>
         </h2>
         <h1
-          className="c7"
+          className="sc-jqCOkK iblYWW"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -389,15 +261,15 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </h1>
       </div>
       <div
-        className=""
+        className="sc-uJMKN jsQhVl"
       />
     </div>
     <form
-      className="c8"
+      className="sc-dliRfk AXbuP"
       onSubmit={[Function]}
     >
       <div
-        className=""
+        className="sc-bZQynM bOrPFB"
       >
         <div
           style={
@@ -428,11 +300,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             Name
           </label>
           <input
-            disabled={true}
             id="firstName"
             name="firstName"
-            onBlur={[Function]}
             onChange={[Function]}
+            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -444,6 +315,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               }
             }
             type="text"
+            value="undefined undefined"
           />
           <div
             style={
@@ -457,67 +329,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className=""
-      >
-        <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
-        >
-          <label
-            htmlFor="lastName"
-            style={
-              Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
-              }
-            }
-          >
-            Last name
-          </label>
-          <input
-            disabled={true}
-            id="lastName"
-            name="lastName"
-            onBlur={[Function]}
-            onChange={[Function]}
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontSize": "18px",
-                "lineHeight": "24px",
-                "outline": "none",
-              }
-            }
-            type="text"
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className=""
+        className="sc-bZQynM bOrPFB"
       >
         <div
           style={
@@ -548,10 +360,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             Email
           </label>
           <input
-            disabled={true}
             id="email"
             name="email"
             onChange={[Function]}
+            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -576,7 +388,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className=""
+        className="sc-bZQynM bOrPFB"
       >
         <div
           style={
@@ -607,10 +419,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             Role
           </label>
           <input
-            disabled={true}
             id="role"
             name="role"
             onChange={[Function]}
+            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -635,16 +447,15 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        className="sc-iwsKbI eQdjUy"
       >
         <div
-          className="c10"
+          className="sc-gqjmRU fIKSOC"
         >
           <div
-            className="c11"
+            className="sc-gZMcBi jSdIIC"
           >
             <button
-              className="c12"
               disabled={false}
               onClick={[Function]}
               style={
@@ -658,20 +469,19 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                   "fill": "#FFF",
                   "fontSize": "18px",
                   "margin": "0",
+                  "marginRight": 5,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                  "width": "calc(50% - 5px)",
                 }
               }
-              type="button"
             >
               <span>
                 Cancel
               </span>
             </button>
             <button
-              className="c12"
               disabled={false}
               style={
                 Object {
@@ -684,10 +494,11 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                   "fill": "#FFF",
                   "fontSize": "18px",
                   "margin": "0",
+                  "marginLeft": 5,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                  "width": "calc(50% - 5px)",
                 }
               }
               type="submit"

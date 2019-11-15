@@ -1,971 +1,270 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots View Admin 1`] = `
-.c10 {
-  height: 155px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c11 {
-  position: fixed;
-  padding: 40px 0 36px;
-  bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c13 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
-.c9 {
-  cursor: pointer;
-  margin-bottom: 30px;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c9:hover {
-  border-bottom: 1px solid #FFF;
-}
-
-.c8 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c0 {
-  width: calc(100% - 50px);
-}
-
-.c1 {
-  overflow: auto;
-  max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.c2 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.c3 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c4 {
-  display: none;
-}
-
-.c5 {
-  margin-right: 20px;
-}
-
-.c6 {
-  color: #FFF;
-}
-
-.c7 {
-  color: #FFF;
-}
-
-@media (min-width:1040px) {
-  .c12 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c11 {
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c13 {
-    width: 240px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    margin: 60px 0 40px 0;
-  }
-}
-
+exports[`Storyshots View Default 1`] = `
 <div
-  style={
-    Object {
-      "backgroundColor": "#000",
-      "minHeight": "100vh",
-    }
-  }
+  className="sc-dTdPqK cWIThu"
 >
   <div
-    className=""
+    className="sc-gisBJw kiKCgt"
   >
     <div
-      className="c0"
-    >
-      <div
-        style={
-          Object {
-            "alignItems": "flex-start",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "paddingBottom": "18px",
-            "width": "100%",
-          }
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
         }
-      >
-        <div>
-          <div
-            className=""
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Users
-              </span>
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Profile
-              </span>
-            </h1>
-          </div>
-        </div>
-        <button
-          disabled={false}
-          id="topHeaderOpenMenuBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": 6,
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
+      }
+    >
+      <div>
+        <div
+          className="sc-kjoXOD hpTAeq"
         >
-          <svg
+          <h2
+            id="headerTitle"
             style={
               Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
               }
             }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": null,
-            "minHeight": "100vh",
-            "padding": "18px 20px 27px",
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
-      >
-        <div
-          className=""
-        >
-          <div
-            className=""
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Users
-              </span>
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Profile
-              </span>
-            </h1>
-          </div>
-        </div>
-        <div
-          className="c1"
-        >
-          <ul
-            className="c2"
-          />
-          <ul
-            className="c3"
-          />
-        </div>
-        <button
-          disabled={false}
-          id="topHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": "6px",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div
-      className="c4"
-    >
-      <div
-        className="c5"
-      >
-        <h2
-          className="c6"
-          id="desktopHeaderTitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
-          <span>
-            Users
-          </span>
-        </h2>
-        <h1
-          className="c7"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
-        >
-          <span>
-            Profile
-          </span>
-        </h1>
-      </div>
-      <div
-        className=""
-      />
-    </div>
-    <div
-      className="c8"
-    >
-      <span
-        className="c9"
-        onClick={[Function]}
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          }
-        }
-      >
-        <span>
-          Remove user
-        </span>
-      </span>
-      <span
-        className="c9"
-        onClick={[Function]}
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          }
-        }
-      >
-        <span>
-          Make admin
-        </span>
-      </span>
-    </div>
-    <div
-      className="c10"
-    >
-      <div
-        className="c11"
-      >
-        <div
-          className="c12"
-        >
-          <button
-            className="c13"
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              }
-            }
-            type="button"
           >
             <span>
-              Back
+              Users
             </span>
-          </button>
+          </h2>
+          <h1
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            <span>
+              Profile
+            </span>
+          </h1>
         </div>
       </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": 6,
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "fixed",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 9999,
+        }
+      }
+    >
+      <div
+        className="sc-cHGsZl bHiaRe"
+      >
+        <div
+          className="sc-kjoXOD hpTAeq"
+        >
+          <h2
+            id="headerTitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
+              }
+            }
+          >
+            <span>
+              Users
+            </span>
+          </h2>
+          <h1
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            <span>
+              Profile
+            </span>
+          </h1>
+        </div>
+      </div>
+      <div
+        className="sc-TOsTZ iUQrOT"
+      >
+        <ul
+          className="sc-kgAjT sc-cJSrbW doKZeW"
+        />
+        <ul
+          className="sc-kgAjT sc-ksYbfQ iFxI"
+        >
+          <li
+            className="sc-hmzhuo sc-kvZOFW dhNYmY"
+            id={null}
+            onClick={[Function]}
+          >
+            <span>
+              Remove user
+            </span>
+          </li>
+        </ul>
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
     </div>
   </div>
-</div>
-`;
-
-exports[`Storyshots View Default 1`] = `
-.c10 {
-  height: 155px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c11 {
-  position: fixed;
-  padding: 40px 0 36px;
-  bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c13 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
-.c9 {
-  cursor: pointer;
-  margin-bottom: 30px;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c9:hover {
-  border-bottom: 1px solid #FFF;
-}
-
-.c8 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c0 {
-  width: calc(100% - 50px);
-}
-
-.c1 {
-  overflow: auto;
-  max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.c2 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.c3 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c4 {
-  display: none;
-}
-
-.c5 {
-  margin-right: 20px;
-}
-
-.c6 {
-  color: #FFF;
-}
-
-.c7 {
-  color: #FFF;
-}
-
-@media (min-width:1040px) {
-  .c12 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c11 {
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c13 {
-    width: 240px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    margin: 60px 0 40px 0;
-  }
-}
-
-<div
-  style={
-    Object {
-      "backgroundColor": "#000",
-      "minHeight": "100vh",
-    }
-  }
->
   <div
-    className=""
+    className="sc-hqyNC hFkHhT"
   >
     <div
-      className="c0"
+      className="sc-jbKcbu fynHmL"
     >
-      <div
-        style={
-          Object {
-            "alignItems": "flex-start",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "paddingBottom": "18px",
-            "width": "100%",
-          }
-        }
-      >
-        <div>
-          <div
-            className=""
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Users
-              </span>
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Profile
-              </span>
-            </h1>
-          </div>
-        </div>
-        <button
-          disabled={false}
-          id="topHeaderOpenMenuBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": 6,
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": null,
-            "minHeight": "100vh",
-            "padding": "18px 20px 27px",
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
-      >
-        <div
-          className=""
-        >
-          <div
-            className=""
-          >
-            <h2
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Users
-              </span>
-            </h2>
-            <h1
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Profile
-              </span>
-            </h1>
-          </div>
-        </div>
-        <div
-          className="c1"
-        >
-          <ul
-            className="c2"
-          />
-          <ul
-            className="c3"
-          />
-        </div>
-        <button
-          disabled={false}
-          id="topHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": "6px",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div
-      className="c4"
-    >
-      <div
-        className="c5"
-      >
-        <h2
-          className="c6"
-          id="desktopHeaderTitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 100,
-              "margin": 0,
-            }
-          }
-        >
-          <span>
-            Users
-          </span>
-        </h2>
-        <h1
-          className="c7"
-          id="desktopHeaderSubtitle"
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
-            }
-          }
-        >
-          <span>
-            Profile
-          </span>
-        </h1>
-      </div>
-      <div
-        className=""
-      />
-    </div>
-    <div
-      className="c8"
-    >
-      <span
-        className="c9"
-        onClick={[Function]}
+      <h2
+        className="sc-dNLxif godFNr"
+        id="desktopHeaderTitle"
         style={
           Object {
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
           }
         }
       >
         <span>
-          Remove user
+          Users
         </span>
-      </span>
+      </h2>
+      <h1
+        className="sc-jqCOkK kaoYrU"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          Profile
+        </span>
+      </h1>
     </div>
     <div
-      className="c10"
-    >
-      <div
-        className="c11"
-      >
-        <div
-          className="c12"
-        >
-          <button
-            className="c13"
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              }
-            }
-            type="button"
-          >
-            <span>
-              Back
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
+      className="sc-uJMKN jsQhVl"
+    />
   </div>
 </div>
 `;

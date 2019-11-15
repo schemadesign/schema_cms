@@ -1,32 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components|NoData Default 1`] = `
-.c0 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
-<div
-  style={
-    Object {
-      "backgroundColor": "#000",
-      "minHeight": "100vh",
-    }
-  }
->
-  <div
-    className="c0"
-  >
-    <span>
-      No Data Found.
-    </span>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Shared Components|NoData custom 1`] = `
 <div
   className="sc-jlyJG kVqVxi"

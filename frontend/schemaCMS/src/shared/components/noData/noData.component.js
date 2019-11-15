@@ -12,10 +12,7 @@ export class NoData extends PureComponent {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   };
 
-  renderContent = renderWhenTrueOtherwise(
-    (_, children) => children,
-    always(<FormattedMessage {...messages.noData} />)
-  );
+  renderContent = renderWhenTrueOtherwise((_, children) => children, always(<FormattedMessage {...messages.noData} />));
 
   render() {
     const { children } = this.props;

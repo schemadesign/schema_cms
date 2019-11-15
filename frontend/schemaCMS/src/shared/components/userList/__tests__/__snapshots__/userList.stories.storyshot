@@ -1,31 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}
-
 <div
   style={
     Object {
@@ -34,95 +9,13 @@ exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
     }
   }
 >
-  <section
-    className="c0"
+  <div
+    className="sc-krvtoX fcledC"
   />
 </div>
 `;
 
 exports[`Storyshots Shared Components|UserList with users 1`] = `
-.c1 {
-  margin-bottom: 20px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  margin: 0 -5px 0 5px;
-}
-
-.c3 {
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-}
-
-.c4 {
-  color: #FFF;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.c5 {
-  display: block;
-  padding-top: 10px;
-  word-break: break-all;
-  font-weight: 200;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
-  align-content: space-between;
-}
-
-@media (min-width:1040px) {
-  .c1 {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: calc(100%/3 - 20px);
-    max-width: 320px;
-    min-height: 192px;
-    margin: 10px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}
-
 <div
   style={
     Object {
@@ -131,11 +24,11 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
     }
   }
 >
-  <section
-    className="c0"
+  <div
+    className="sc-krvtoX fcledC"
   >
     <div
-      className="c1"
+      className="sc-fYiAbW iBLBRn"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -144,48 +37,32 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           "display": "flex",
           "flexDirection": null,
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "12px",
-          "justifyContent": "space-between",
           "padding": "12px 14px 14px",
-          "position": "relative",
         }
       }
     >
       <div
-        style={
-          Object {
-            "height": "100%",
-            "width": "100%",
-          }
-        }
+        className="sc-dUjcNx dGkCIc"
       >
-        <div
-          className="c2"
+        <a
+          className="sc-gHboQg fWUths"
+          href="/user/1"
+          onClick={[Function]}
         >
-          <div
-            className="c3"
-          >
-            <a
-              className="c4"
-              href="/user/1"
-              onClick={[Function]}
-            >
-              Alan
-               
-              Watts
-            </a>
-            <span
-              className="c5"
-            />
-          </div>
-          <div
-            className="c6"
-          />
-        </div>
+          Alan
+           
+          Watts
+        </a>
+        <span
+          className="sc-eilVRo eJPbIS"
+        />
       </div>
+      <div
+        className="sc-fOKMvo ihHVFz"
+      />
     </div>
     <div
-      className="c1"
+      className="sc-fYiAbW iBLBRn"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -194,48 +71,32 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           "display": "flex",
           "flexDirection": null,
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "12px",
-          "justifyContent": "space-between",
           "padding": "12px 14px 14px",
-          "position": "relative",
         }
       }
     >
       <div
-        style={
-          Object {
-            "height": "100%",
-            "width": "100%",
-          }
-        }
+        className="sc-dUjcNx dGkCIc"
       >
-        <div
-          className="c2"
+        <a
+          className="sc-gHboQg fWUths"
+          href="/user/2"
+          onClick={[Function]}
         >
-          <div
-            className="c3"
-          >
-            <a
-              className="c4"
-              href="/user/2"
-              onClick={[Function]}
-            >
-              Dale
-               
-              Chihuly
-            </a>
-            <span
-              className="c5"
-            />
-          </div>
-          <div
-            className="c6"
-          />
-        </div>
+          Dale
+           
+          Chihuly
+        </a>
+        <span
+          className="sc-eilVRo eJPbIS"
+        />
       </div>
+      <div
+        className="sc-fOKMvo ihHVFz"
+      />
     </div>
     <div
-      className="c1"
+      className="sc-fYiAbW iBLBRn"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -244,135 +105,37 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           "display": "flex",
           "flexDirection": null,
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "12px",
-          "justifyContent": "space-between",
           "padding": "12px 14px 14px",
-          "position": "relative",
         }
       }
     >
       <div
-        style={
-          Object {
-            "height": "100%",
-            "width": "100%",
-          }
-        }
+        className="sc-dUjcNx dGkCIc"
       >
-        <div
-          className="c2"
+        <a
+          className="sc-gHboQg fWUths"
+          href="/user/3"
+          onClick={[Function]}
         >
-          <div
-            className="c3"
-          >
-            <a
-              className="c4"
-              href="/user/3"
-              onClick={[Function]}
-            >
-              Dave
-               
-              Bowie
-            </a>
-            <span
-              className="c5"
-            >
-              loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
-            </span>
-          </div>
-          <div
-            className="c6"
-          />
-        </div>
+          Dave
+           
+          Bowie
+        </a>
+        <span
+          className="sc-eilVRo eJPbIS"
+        >
+          loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+        </span>
       </div>
+      <div
+        className="sc-fOKMvo ihHVFz"
+      />
     </div>
-  </section>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
-.c1 {
-  margin-bottom: 20px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  margin: 0 -5px 0 5px;
-}
-
-.c3 {
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-}
-
-.c4 {
-  color: #FFF;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.c5 {
-  display: block;
-  padding-top: 10px;
-  word-break: break-all;
-  font-weight: 200;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
-  align-content: space-between;
-}
-
-@media (min-width:1040px) {
-  .c1 {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: calc(100%/3 - 20px);
-    max-width: 320px;
-    min-height: 192px;
-    margin: 10px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}
-
 <div
   style={
     Object {
@@ -381,11 +144,11 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
     }
   }
 >
-  <section
-    className="c0"
+  <div
+    className="sc-krvtoX fcledC"
   >
     <div
-      className="c1"
+      className="sc-fYiAbW iBLBRn"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -394,88 +157,72 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
           "display": "flex",
           "flexDirection": null,
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "12px",
-          "justifyContent": "space-between",
           "padding": "12px 14px 14px",
-          "position": "relative",
         }
       }
     >
       <div
-        style={
-          Object {
-            "height": "100%",
-            "width": "100%",
-          }
-        }
+        className="sc-dUjcNx dGkCIc"
       >
-        <div
-          className="c2"
+        <a
+          className="sc-gHboQg fWUths"
+          href="/user/1"
+          onClick={[Function]}
         >
-          <div
-            className="c3"
-          >
-            <a
-              className="c4"
-              href="/user/1"
-              onClick={[Function]}
-            >
-              Alan
-               
-              Watts
-            </a>
-            <span
-              className="c5"
-            />
-          </div>
-          <div
-            className="c6"
-          >
-            <button
-              disabled={false}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "height": 40,
-                  "margin": "0",
-                  "marginTop": -5,
-                  "minHeight": 40,
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  "width": 40,
-                }
+          Alan
+           
+          Watts
+        </a>
+        <span
+          className="sc-eilVRo eJPbIS"
+        />
+      </div>
+      <div
+        className="sc-fOKMvo ihHVFz"
+      >
+        <button
+          disabled={false}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": 40,
+              "margin": "0",
+              "marginTop": -5,
+              "minHeight": 40,
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": 40,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "width": 40,
               }
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
       </div>
     </div>
     <div
-      className="c1"
+      className="sc-fYiAbW iBLBRn"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -484,88 +231,72 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
           "display": "flex",
           "flexDirection": null,
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "12px",
-          "justifyContent": "space-between",
           "padding": "12px 14px 14px",
-          "position": "relative",
         }
       }
     >
       <div
-        style={
-          Object {
-            "height": "100%",
-            "width": "100%",
-          }
-        }
+        className="sc-dUjcNx dGkCIc"
       >
-        <div
-          className="c2"
+        <a
+          className="sc-gHboQg fWUths"
+          href="/user/2"
+          onClick={[Function]}
         >
-          <div
-            className="c3"
-          >
-            <a
-              className="c4"
-              href="/user/2"
-              onClick={[Function]}
-            >
-              Dale
-               
-              Chihuly
-            </a>
-            <span
-              className="c5"
-            />
-          </div>
-          <div
-            className="c6"
-          >
-            <button
-              disabled={false}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "height": 40,
-                  "margin": "0",
-                  "marginTop": -5,
-                  "minHeight": 40,
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  "width": 40,
-                }
+          Dale
+           
+          Chihuly
+        </a>
+        <span
+          className="sc-eilVRo eJPbIS"
+        />
+      </div>
+      <div
+        className="sc-fOKMvo ihHVFz"
+      >
+        <button
+          disabled={false}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": 40,
+              "margin": "0",
+              "marginTop": -5,
+              "minHeight": 40,
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": 40,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "width": 40,
               }
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
       </div>
     </div>
     <div
-      className="c1"
+      className="sc-fYiAbW iBLBRn"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -574,88 +305,72 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
           "display": "flex",
           "flexDirection": null,
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "12px",
-          "justifyContent": "space-between",
           "padding": "12px 14px 14px",
-          "position": "relative",
         }
       }
     >
       <div
-        style={
-          Object {
-            "height": "100%",
-            "width": "100%",
-          }
-        }
+        className="sc-dUjcNx dGkCIc"
       >
-        <div
-          className="c2"
+        <a
+          className="sc-gHboQg fWUths"
+          href="/user/3"
+          onClick={[Function]}
         >
-          <div
-            className="c3"
-          >
-            <a
-              className="c4"
-              href="/user/3"
-              onClick={[Function]}
-            >
-              Dave
-               
-              Bowie
-            </a>
-            <span
-              className="c5"
-            >
-              loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
-            </span>
-          </div>
-          <div
-            className="c6"
-          >
-            <button
-              disabled={false}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "height": 40,
-                  "margin": "0",
-                  "marginTop": -5,
-                  "minHeight": 40,
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  "width": 40,
-                }
+          Dave
+           
+          Bowie
+        </a>
+        <span
+          className="sc-eilVRo eJPbIS"
+        >
+          loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+        </span>
+      </div>
+      <div
+        className="sc-fOKMvo ihHVFz"
+      >
+        <button
+          disabled={false}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": 40,
+              "margin": "0",
+              "marginTop": -5,
+              "minHeight": 40,
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": 40,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "width": 40,
               }
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
       </div>
     </div>
-  </section>
+  </div>
 </div>
 `;

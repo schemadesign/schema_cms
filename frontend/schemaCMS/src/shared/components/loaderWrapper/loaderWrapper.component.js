@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, either, cond, findLast, isNil, path, pipe, prop, propEq, T } from 'ramda';
+import { always, cond, isNil, prop, propEq, T } from 'ramda';
 
 import { Loader } from '../loader';
 import { NoData } from '../noData';

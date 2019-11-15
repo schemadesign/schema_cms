@@ -15,9 +15,7 @@ exports[`Storyshots Shared Components|LoaderWrapper custom no data 1`] = `
     <div
       className="sc-jlyJG gwKZiE"
     >
-      <span>
-        No Data Found.
-      </span>
+      No projects
     </div>
   </div>
 </div>

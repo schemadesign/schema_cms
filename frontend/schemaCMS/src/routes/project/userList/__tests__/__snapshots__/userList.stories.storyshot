@@ -1,207 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project/UserList list 1`] = `
-.c13 {
-  height: 155px;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c14 {
-  position: fixed;
-  padding: 40px 0 36px;
-  bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c16 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
-.c0 {
-  width: calc(100% - 50px);
-}
-
-.c1 {
-  overflow: auto;
-  max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.c2 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.c3 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c8 {
-  display: none;
-}
-
-.c9 {
-  margin-right: 20px;
-}
-
-.c10 {
-  color: #FFF;
-}
-
-.c11 {
-  color: #FFF;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c4 {
-  display: none;
-}
-
-.c5 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #2F2F36;
-  cursor: pointer;
-}
-
-.c5:hover {
-  border-bottom-color: #FFF;
-}
-
-.c7 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #FFF;
-  cursor: pointer;
-}
-
-.c7:hover {
-  border-bottom-color: #FFF;
-}
-
-.c6 {
-  color: #FFF;
-  display: block;
-  padding: 16px;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-@media (min-width:1040px) {
-  .c15 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c14 {
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c16 {
-    width: 240px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c8 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    margin: 60px 0 40px 0;
-  }
-}
-
-@media (min-width:1040px) {
-  .c12 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width:1040px) {
-  .c4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 29px 0 20px 0;
-    font-size: 15px;
-  }
-}
-
 <div
   style={
     Object {
@@ -211,7 +10,7 @@ exports[`Storyshots Project/UserList list 1`] = `
   }
 >
   <div
-    className="c0"
+    className="sc-gisBJw kiKCgt"
   >
     <div
       style={
@@ -228,7 +27,7 @@ exports[`Storyshots Project/UserList list 1`] = `
     >
       <div>
         <div
-          className=""
+          className="sc-kjoXOD hpTAeq"
         >
           <h2
             id="headerTitle"
@@ -285,7 +84,6 @@ exports[`Storyshots Project/UserList list 1`] = `
             "position": "absolute",
             "right": 0,
             "top": 6,
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
@@ -327,10 +125,10 @@ exports[`Storyshots Project/UserList list 1`] = `
       }
     >
       <div
-        className=""
+        className="sc-cHGsZl bHiaRe"
       >
         <div
-          className=""
+          className="sc-kjoXOD hpTAeq"
         >
           <h2
             id="headerTitle"
@@ -367,13 +165,13 @@ exports[`Storyshots Project/UserList list 1`] = `
         </div>
       </div>
       <div
-        className="c1"
+        className="sc-TOsTZ iUQrOT"
       >
         <ul
-          className="c2"
+          className="sc-kgAjT sc-cJSrbW doKZeW"
         />
         <ul
-          className="c3"
+          className="sc-kgAjT sc-ksYbfQ iFxI"
         />
       </div>
       <button
@@ -397,7 +195,6 @@ exports[`Storyshots Project/UserList list 1`] = `
             "position": "absolute",
             "right": 0,
             "top": "6px",
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
@@ -420,16 +217,16 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="sc-bsbRJL kfmymT"
   >
     <div
-      className="c4"
+      className="sc-hXRMBi jSmKMK"
     >
       <div
-        className="c5"
+        className="sc-epnACN hciwnb"
       >
         <a
-          className="c6"
+          className="sc-iQNlJl dondii"
           href="/project/1"
           onClick={[Function]}
         >
@@ -439,10 +236,10 @@ exports[`Storyshots Project/UserList list 1`] = `
         </a>
       </div>
       <div
-        className="c5"
+        className="sc-epnACN hciwnb"
       >
         <a
-          className="c6"
+          className="sc-iQNlJl dondii"
           href="/project/1/datasource"
           onClick={[Function]}
         >
@@ -452,10 +249,10 @@ exports[`Storyshots Project/UserList list 1`] = `
         </a>
       </div>
       <div
-        className="c7"
+        className="sc-epnACN cAXADU"
       >
         <a
-          className="c6"
+          className="sc-iQNlJl dondii"
           href="/project/1/user"
           onClick={[Function]}
         >
@@ -480,13 +277,13 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="c8"
+    className="sc-hqyNC hFkHhT"
   >
     <div
-      className="c9"
+      className="sc-jbKcbu fynHmL"
     >
       <h2
-        className="c10"
+        className="sc-dNLxif dEgtYS"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -502,7 +299,7 @@ exports[`Storyshots Project/UserList list 1`] = `
         </span>
       </h2>
       <h1
-        className="c11"
+        className="sc-jqCOkK iblYWW"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -521,7 +318,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </h1>
     </div>
     <div
-      className=""
+      className="sc-uJMKN jsQhVl"
     >
       <button
         disabled={false}
@@ -542,7 +339,6 @@ exports[`Storyshots Project/UserList list 1`] = `
             "minHeight": "48px",
             "outline": "none",
             "padding": "0",
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             "width": "60px",
           }
         }
@@ -565,20 +361,19 @@ exports[`Storyshots Project/UserList list 1`] = `
       </button>
     </div>
   </div>
-  <section
-    className="c12"
+  <div
+    className="sc-krvtoX fcledC"
   />
   <div
-    className="c13"
+    className="sc-iwsKbI eQdjUy"
   >
     <div
-      className="c14"
+      className="sc-gqjmRU fIKSOC"
     >
       <div
-        className="c15"
+        className="sc-gZMcBi jZympT"
       >
         <button
-          className="c16"
           disabled={false}
           onClick={[Function]}
           style={
@@ -592,10 +387,11 @@ exports[`Storyshots Project/UserList list 1`] = `
               "fill": "#FFF",
               "fontSize": "18px",
               "margin": "0",
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -622,7 +418,6 @@ exports[`Storyshots Project/UserList list 1`] = `
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               "width": "60px",
             }
           }
@@ -650,264 +445,6 @@ exports[`Storyshots Project/UserList list 1`] = `
 `;
 
 exports[`Storyshots Project/UserList list with users 1`] = `
-.c19 {
-  height: 155px;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c20 {
-  position: fixed;
-  padding: 40px 0 36px;
-  bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c22 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
-.c0 {
-  width: calc(100% - 50px);
-}
-
-.c1 {
-  overflow: auto;
-  max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.c2 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.c3 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c8 {
-  display: none;
-}
-
-.c9 {
-  margin-right: 20px;
-}
-
-.c10 {
-  color: #FFF;
-}
-
-.c11 {
-  color: #FFF;
-}
-
-.c13 {
-  margin-bottom: 20px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c4 {
-  display: none;
-}
-
-.c5 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #2F2F36;
-  cursor: pointer;
-}
-
-.c5:hover {
-  border-bottom-color: #FFF;
-}
-
-.c7 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #FFF;
-  cursor: pointer;
-}
-
-.c7:hover {
-  border-bottom-color: #FFF;
-}
-
-.c6 {
-  color: #FFF;
-  display: block;
-  padding: 16px;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c18 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  margin: 0 -5px 0 5px;
-}
-
-.c15 {
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-}
-
-.c16 {
-  color: #FFF;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.c17 {
-  display: block;
-  padding-top: 10px;
-  word-break: break-all;
-  font-weight: 200;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
-  align-content: space-between;
-}
-
-@media (min-width:1040px) {
-  .c21 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c20 {
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c22 {
-    width: 240px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c8 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    margin: 60px 0 40px 0;
-  }
-}
-
-@media (min-width:1040px) {
-  .c13 {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: calc(100%/3 - 20px);
-    max-width: 320px;
-    min-height: 192px;
-    margin: 10px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c12 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width:1040px) {
-  .c4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 29px 0 20px 0;
-    font-size: 15px;
-  }
-}
-
 <div
   style={
     Object {
@@ -917,7 +454,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   }
 >
   <div
-    className="c0"
+    className="sc-gisBJw kiKCgt"
   >
     <div
       style={
@@ -934,7 +471,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     >
       <div>
         <div
-          className=""
+          className="sc-kjoXOD hpTAeq"
         >
           <h2
             id="headerTitle"
@@ -991,7 +528,6 @@ exports[`Storyshots Project/UserList list with users 1`] = `
             "position": "absolute",
             "right": 0,
             "top": 6,
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
@@ -1033,10 +569,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       }
     >
       <div
-        className=""
+        className="sc-cHGsZl bHiaRe"
       >
         <div
-          className=""
+          className="sc-kjoXOD hpTAeq"
         >
           <h2
             id="headerTitle"
@@ -1073,13 +609,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </div>
       </div>
       <div
-        className="c1"
+        className="sc-TOsTZ iUQrOT"
       >
         <ul
-          className="c2"
+          className="sc-kgAjT sc-cJSrbW doKZeW"
         />
         <ul
-          className="c3"
+          className="sc-kgAjT sc-ksYbfQ iFxI"
         />
       </div>
       <button
@@ -1103,7 +639,6 @@ exports[`Storyshots Project/UserList list with users 1`] = `
             "position": "absolute",
             "right": 0,
             "top": "6px",
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
@@ -1126,16 +661,16 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="sc-bsbRJL kfmymT"
   >
     <div
-      className="c4"
+      className="sc-hXRMBi jSmKMK"
     >
       <div
-        className="c5"
+        className="sc-epnACN hciwnb"
       >
         <a
-          className="c6"
+          className="sc-iQNlJl dondii"
           href="/project/1"
           onClick={[Function]}
         >
@@ -1145,10 +680,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </div>
       <div
-        className="c5"
+        className="sc-epnACN hciwnb"
       >
         <a
-          className="c6"
+          className="sc-iQNlJl dondii"
           href="/project/1/datasource"
           onClick={[Function]}
         >
@@ -1158,10 +693,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </div>
       <div
-        className="c7"
+        className="sc-epnACN cAXADU"
       >
         <a
-          className="c6"
+          className="sc-iQNlJl dondii"
           href="/project/1/user"
           onClick={[Function]}
         >
@@ -1186,13 +721,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="c8"
+    className="sc-hqyNC hFkHhT"
   >
     <div
-      className="c9"
+      className="sc-jbKcbu fynHmL"
     >
       <h2
-        className="c10"
+        className="sc-dNLxif dEgtYS"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -1208,7 +743,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </span>
       </h2>
       <h1
-        className="c11"
+        className="sc-jqCOkK iblYWW"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -1227,7 +762,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </h1>
     </div>
     <div
-      className=""
+      className="sc-uJMKN jsQhVl"
     >
       <button
         disabled={false}
@@ -1248,7 +783,6 @@ exports[`Storyshots Project/UserList list with users 1`] = `
             "minHeight": "48px",
             "outline": "none",
             "padding": "0",
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             "width": "60px",
           }
         }
@@ -1271,294 +805,242 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </button>
     </div>
   </div>
-  <section
-    className="c12"
-  >
-    <div
-      className="c13"
-      style={
-        Object {
-          "backgroundColor": "#1d1d20",
-          "borderTop": "2px solid #FFF",
-          "color": "#FFF",
-          "display": "flex",
-          "flexDirection": null,
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "12px",
-          "justifyContent": "space-between",
-          "padding": "12px 14px 14px",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "height": "100%",
-            "width": "100%",
-          }
-        }
-      >
-        <div
-          className="c14"
-        >
-          <div
-            className="c15"
-          >
-            <a
-              className="c16"
-              href="/project/1/user/1"
-              onClick={[Function]}
-            >
-              Alan
-               
-              Watts
-            </a>
-            <span
-              className="c17"
-            />
-          </div>
-          <div
-            className="c18"
-          >
-            <button
-              disabled={false}
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "height": 40,
-                  "margin": "0",
-                  "marginTop": -5,
-                  "minHeight": 40,
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  "width": 40,
-                }
-              }
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c13"
-      style={
-        Object {
-          "backgroundColor": "#1d1d20",
-          "borderTop": "2px solid #FFF",
-          "color": "#FFF",
-          "display": "flex",
-          "flexDirection": null,
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "12px",
-          "justifyContent": "space-between",
-          "padding": "12px 14px 14px",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "height": "100%",
-            "width": "100%",
-          }
-        }
-      >
-        <div
-          className="c14"
-        >
-          <div
-            className="c15"
-          >
-            <a
-              className="c16"
-              href="/project/1/user/2"
-              onClick={[Function]}
-            >
-              Dale
-               
-              Chihuly
-            </a>
-            <span
-              className="c17"
-            />
-          </div>
-          <div
-            className="c18"
-          >
-            <button
-              disabled={false}
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "height": 40,
-                  "margin": "0",
-                  "marginTop": -5,
-                  "minHeight": 40,
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  "width": 40,
-                }
-              }
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c13"
-      style={
-        Object {
-          "backgroundColor": "#1d1d20",
-          "borderTop": "2px solid #FFF",
-          "color": "#FFF",
-          "display": "flex",
-          "flexDirection": null,
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontSize": "12px",
-          "justifyContent": "space-between",
-          "padding": "12px 14px 14px",
-          "position": "relative",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "height": "100%",
-            "width": "100%",
-          }
-        }
-      >
-        <div
-          className="c14"
-        >
-          <div
-            className="c15"
-          >
-            <a
-              className="c16"
-              href="/project/1/user/3"
-              onClick={[Function]}
-            >
-              Dave
-               
-              Bowie
-            </a>
-            <span
-              className="c17"
-            />
-          </div>
-          <div
-            className="c18"
-          >
-            <button
-              disabled={false}
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "height": 40,
-                  "margin": "0",
-                  "marginTop": -5,
-                  "minHeight": 40,
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  "width": 40,
-                }
-              }
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <div
-    className="c19"
+    className="sc-krvtoX fcledC"
   >
     <div
-      className="c20"
+      className="sc-fYiAbW iBLBRn"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": null,
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "padding": "12px 14px 14px",
+        }
+      }
     >
       <div
-        className="c21"
+        className="sc-dUjcNx dGkCIc"
+      >
+        <a
+          className="sc-gHboQg fWUths"
+          href="/project/1/user/1"
+          onClick={[Function]}
+        >
+          Alan
+           
+          Watts
+        </a>
+        <span
+          className="sc-eilVRo eJPbIS"
+        />
+      </div>
+      <div
+        className="sc-fOKMvo ihHVFz"
       >
         <button
-          className="c22"
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": 40,
+              "margin": "0",
+              "marginTop": -5,
+              "minHeight": 40,
+              "outline": "none",
+              "padding": "0",
+              "width": 40,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "width": 40,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      className="sc-fYiAbW iBLBRn"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": null,
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "padding": "12px 14px 14px",
+        }
+      }
+    >
+      <div
+        className="sc-dUjcNx dGkCIc"
+      >
+        <a
+          className="sc-gHboQg fWUths"
+          href="/project/1/user/2"
+          onClick={[Function]}
+        >
+          Dale
+           
+          Chihuly
+        </a>
+        <span
+          className="sc-eilVRo eJPbIS"
+        />
+      </div>
+      <div
+        className="sc-fOKMvo ihHVFz"
+      >
+        <button
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": 40,
+              "margin": "0",
+              "marginTop": -5,
+              "minHeight": 40,
+              "outline": "none",
+              "padding": "0",
+              "width": 40,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "width": 40,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      className="sc-fYiAbW iBLBRn"
+      style={
+        Object {
+          "backgroundColor": "#1d1d20",
+          "borderTop": "2px solid #FFF",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": null,
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "padding": "12px 14px 14px",
+        }
+      }
+    >
+      <div
+        className="sc-dUjcNx dGkCIc"
+      >
+        <a
+          className="sc-gHboQg fWUths"
+          href="/project/1/user/3"
+          onClick={[Function]}
+        >
+          Dave
+           
+          Bowie
+        </a>
+        <span
+          className="sc-eilVRo eJPbIS"
+        />
+      </div>
+      <div
+        className="sc-fOKMvo ihHVFz"
+      >
+        <button
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": 40,
+              "margin": "0",
+              "marginTop": -5,
+              "minHeight": 40,
+              "outline": "none",
+              "padding": "0",
+              "width": 40,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": 40,
+                "width": 40,
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-iwsKbI eQdjUy"
+  >
+    <div
+      className="sc-gqjmRU fIKSOC"
+    >
+      <div
+        className="sc-gZMcBi jZympT"
+      >
+        <button
           disabled={false}
           onClick={[Function]}
           style={
@@ -1572,10 +1054,11 @@ exports[`Storyshots Project/UserList list with users 1`] = `
               "fill": "#FFF",
               "fontSize": "18px",
               "margin": "0",
+              "marginRight": 5,
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "calc(50% - 5px)",
             }
           }
         >
@@ -1602,7 +1085,6 @@ exports[`Storyshots Project/UserList list with users 1`] = `
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               "width": "60px",
             }
           }

@@ -1,171 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Settings Default 1`] = `
-.c8 {
-  padding-top: 7px;
-}
-
-.c11 {
-  height: 155px;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c12 {
-  position: fixed;
-  padding: 40px 0 36px;
-  bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c14 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
-.c10 {
-  cursor: pointer;
-  margin-bottom: 30px;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c10:hover {
-  border-bottom: 1px solid #FFF;
-}
-
-.c9 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c0 {
-  width: calc(100% - 50px);
-}
-
-.c1 {
-  overflow: auto;
-  max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.c2 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.c3 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c4 {
-  display: none;
-}
-
-.c5 {
-  margin-right: 20px;
-}
-
-.c6 {
-  color: #FFF;
-}
-
-.c7 {
-  color: #FFF;
-}
-
-@media (min-width:1040px) {
-  .c13 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c12 {
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c14 {
-    width: 240px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    margin: 60px 0 40px 0;
-  }
-}
-
 <div
-  style={
-    Object {
-      "backgroundColor": "#000",
-      "minHeight": "100vh",
-    }
-  }
+  className="sc-krDsej kKJBHx"
 >
   <div
-    className="c0"
+    className="sc-gisBJw kiKCgt"
   >
     <div
       style={
@@ -182,7 +22,7 @@ exports[`Storyshots Settings Default 1`] = `
     >
       <div>
         <div
-          className=""
+          className="sc-kjoXOD hpTAeq"
         >
           <h2
             id="headerTitle"
@@ -196,7 +36,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           >
             <span>
-              SchemaCMS
+              Admin Settings
             </span>
           </h2>
           <h1
@@ -213,7 +53,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           >
             <span>
-              My Profile
+              Profile
             </span>
           </h1>
         </div>
@@ -239,7 +79,6 @@ exports[`Storyshots Settings Default 1`] = `
             "position": "absolute",
             "right": 0,
             "top": 6,
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
@@ -281,10 +120,10 @@ exports[`Storyshots Settings Default 1`] = `
       }
     >
       <div
-        className=""
+        className="sc-cHGsZl bHiaRe"
       >
         <div
-          className=""
+          className="sc-kjoXOD hpTAeq"
         >
           <h2
             id="headerTitle"
@@ -298,7 +137,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           >
             <span>
-              SchemaCMS
+              Admin Settings
             </span>
           </h2>
           <h1
@@ -315,20 +154,47 @@ exports[`Storyshots Settings Default 1`] = `
             }
           >
             <span>
-              My Profile
+              Profile
             </span>
           </h1>
         </div>
       </div>
       <div
-        className="c1"
+        className="sc-TOsTZ iUQrOT"
       >
         <ul
-          className="c2"
+          className="sc-kgAjT sc-cJSrbW doKZeW"
         />
         <ul
-          className="c3"
-        />
+          className="sc-kgAjT sc-ksYbfQ iFxI"
+        >
+          <li
+            className="sc-hmzhuo sc-kvZOFW dhNYmY"
+          >
+            <a
+              href="/reset-password"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Reset Password
+              </span>
+            </a>
+          </li>
+          <li
+            className="sc-hmzhuo sc-kvZOFW dhNYmY"
+          >
+            <a
+              href="/logout"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </a>
+          </li>
+        </ul>
       </div>
       <button
         disabled={false}
@@ -351,7 +217,6 @@ exports[`Storyshots Settings Default 1`] = `
             "position": "absolute",
             "right": 0,
             "top": "6px",
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
@@ -374,427 +239,230 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="c4"
+    className="sc-TFwJa elkDCw"
   >
-    <div
-      className="c5"
-    >
-      <h2
-        className="c6"
-        id="desktopHeaderTitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 100,
-            "margin": 0,
-          }
-        }
-      >
-        <span>
-          SchemaCMS
-        </span>
-      </h2>
-      <h1
-        className="c7"
-        id="desktopHeaderSubtitle"
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "24px",
-            "fontWeight": 600,
-            "letterSpacing": "-0.12px",
-            "lineHight": 1.25,
-            "margin": 0,
-          }
-        }
-      >
-        <span>
-          My Profile
-        </span>
-      </h1>
-    </div>
-    <div
-      className=""
-    />
-  </div>
-  <form
-    className=""
-    onSubmit={[Function]}
-  >
-    <div
-      className=""
+    <form
+      className="sc-bHwgHz ePnYhO"
+      onSubmit={[Function]}
     >
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "100%",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
+        className="sc-bZQynM bOrPFB"
       >
-        <label
-          htmlFor="firstName"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "2px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          <span>
-            First Name
-          </span>
-        </label>
-        <input
-          disabled={false}
-          id="firstName"
-          name="firstName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#FFF",
-              "fontSize": "18px",
-              "lineHeight": "24px",
-              "outline": "none",
-            }
-          }
-          type="text"
-          value=""
-        />
         <div
           style={
             Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
             }
           }
         >
-          <div
-            className="c8"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className=""
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "100%",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
-      >
-        <label
-          htmlFor="lastName"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "2px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          <span>
-            Last Name
-          </span>
-        </label>
-        <input
-          disabled={false}
-          id="lastName"
-          name="lastName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#FFF",
-              "fontSize": "18px",
-              "lineHeight": "24px",
-              "outline": "none",
-            }
-          }
-          type="text"
-          value=""
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        >
-          <div
-            className="c8"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className=""
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "100%",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
-      >
-        <label
-          htmlFor="email"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "2px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          <span>
-            Email
-          </span>
-        </label>
-        <input
-          disabled={true}
-          id="email"
-          name="email"
-          onChange={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#FFF",
-              "fontSize": "18px",
-              "lineHeight": "24px",
-              "outline": "none",
-            }
-          }
-          type="text"
-          value=""
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className=""
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "100%",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
-      >
-        <label
-          htmlFor="role"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "2px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          <span>
-            Role
-          </span>
-        </label>
-        <input
-          disabled={true}
-          id="role"
-          name="role"
-          onBlur={[Function]}
-          onChange={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#FFF",
-              "fontSize": "18px",
-              "lineHeight": "24px",
-              "outline": "none",
-            }
-          }
-          type="text"
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="c9"
-    >
-      <span
-        className="c10"
-        onClick={[Function]}
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          }
-        }
-      >
-        <span>
-          Reset password
-        </span>
-      </span>
-    </div>
-    <div
-      className="c11"
-    >
-      <div
-        className="c12"
-      >
-        <div
-          className="c13"
-        >
-          <button
-            className="c14"
-            disabled={false}
-            onClick={[Function]}
+          <label
+            htmlFor="firstName"
             style={
               Object {
-                "backgroundColor": "#1d1d20",
                 "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              }
-            }
-            type="button"
-          >
-            <span>
-              Back
-            </span>
-          </button>
-          <button
-            className="c14"
-            disabled={true}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
+                "borderTop": "2px solid #2F2F36",
                 "color": "#71737e",
-                "cursor": "default",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "minHeight": "48px",
+                "display": "block",
+                "fontSize": "14px",
                 "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "paddingTop": "8px",
+                "width": "100%",
               }
             }
-            type="submit"
           >
-            <span>
-              Save
-            </span>
-          </button>
+            First Name
+          </label>
+          <input
+            disabled={false}
+            id="firstName"
+            name="firstName"
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+              }
+            }
+            type="text"
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
         </div>
       </div>
-    </div>
-  </form>
+      <div
+        className="sc-bZQynM bOrPFB"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="lastName"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            Last Name
+          </label>
+          <input
+            disabled={false}
+            id="lastName"
+            name="lastName"
+            onChange={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+              }
+            }
+            type="text"
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-bZQynM bOrPFB"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
+            }
+          }
+        >
+          <label
+            htmlFor="email"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            Email
+          </label>
+          <input
+            disabled={true}
+            id="email"
+            name="email"
+            onChange={[Function]}
+            readOnly={true}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+              }
+            }
+            type="text"
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-iwsKbI eQdjUy"
+      >
+        <div
+          className="sc-gqjmRU jrxYk"
+        >
+          <div
+            className="sc-gZMcBi brDpsb"
+          >
+            <button
+              disabled={true}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#71737e",
+                  "cursor": "default",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "marginLeft": 5,
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "width": "calc(50% - 5px)",
+                }
+              }
+              type="submit"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 `;
