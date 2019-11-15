@@ -229,7 +229,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         job = get_object_or_404(models.DataSourceJob, pk=job_id)
 
         data_source.set_active_job(job)
-        serializer = self.get_serializer(instance=data_source)
+        serializer = self.get_serializer(instance=data_source, context=data_source)
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
