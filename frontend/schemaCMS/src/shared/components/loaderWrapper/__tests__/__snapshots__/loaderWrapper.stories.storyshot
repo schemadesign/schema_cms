@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Shared Components|LoaderWrapper custom no data 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-eLExRp lfgpeQ"
+  >
+    <div
+      className="sc-jlyJG gwKZiE"
+    >
+      <span>
+        No Data Found.
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|LoaderWrapper loaded 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-eLExRp lfgpeQ"
+  >
+    <div
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    >
+      <h1>
+        Test
+      </h1>
+      <h2>
+        Ut elementum ex nulla
+      </h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec pulvinar est.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|LoaderWrapper loading 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-eLExRp lfgpeQ"
+  >
+    <div
+      className="sc-hSdWYo bsJfYm"
+    >
+      <span>
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|LoaderWrapper no data 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-eLExRp lfgpeQ"
+  >
+    <div
+      className="sc-jlyJG gwKZiE"
+    >
+      <span>
+        No Data Found.
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|LoaderWrapper with error 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="sc-eLExRp lfgpeQ"
+  >
+    <div
+      className="sc-cbkKFq fdULlA"
+    >
+      Some error
+    </div>
+  </div>
+</div>
+`;

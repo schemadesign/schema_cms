@@ -26,3 +26,21 @@ exports[`Storyshots Shared Components|NoData Default 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots Shared Components|NoData custom 1`] = `
+<div
+  className="sc-jlyJG kVqVxi"
+>
+  No Projects
+</div>
+`;
+
+exports[`Storyshots Shared Components|NoData default 1`] = `
+<div
+  className="sc-jlyJG kVqVxi"
+>
+  <span>
+    No Data Found.
+  </span>
+</div>
+`;

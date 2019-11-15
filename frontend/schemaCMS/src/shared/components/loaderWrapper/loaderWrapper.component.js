@@ -25,6 +25,6 @@ export class LoaderWrapper extends PureComponent {
   render() {
     const { loading, noData, noDataContent, error, children } = this.props;
 
-    return <Container>{this.renderContent({ loading, noData, error, children })}</Container>;
+    return <Container>{this.renderContent({ loading, noData, noDataContent, error, children })}</Container>;
   }
 }
