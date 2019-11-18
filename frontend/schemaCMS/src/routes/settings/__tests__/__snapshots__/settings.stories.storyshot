@@ -1,11 +1,123 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Settings Default 1`] = `
+.c6 {
+  height: 155px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c7 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, undefined,undefined 30%, rgba(0,0,0,0) );
+}
+
+.c9 {
+  width: calc(50% - 5px);
+}
+
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+}
+
+.c4 a {
+  padding: 8px 0;
+}
+
+@media (min-width:1040px) {
+  .c8 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c7 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c9 {
+    width: 23.5%;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    margin-top: 70px;
+  }
+}
+
 <div
-  className="sc-bHwgHz ePnYhO"
+  className=""
 >
   <div
-    className="sc-kjoXOD kNHzWn"
+    className="c0"
   >
     <div
       style={
@@ -22,7 +134,7 @@ exports[`Storyshots Settings Default 1`] = `
     >
       <div>
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -120,10 +232,10 @@ exports[`Storyshots Settings Default 1`] = `
       }
     >
       <div
-        className="sc-TOsTZ kjYrri"
+        className=""
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -160,16 +272,16 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-kgAjT gYPKSC"
+        className="c1"
       >
         <ul
-          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+          className="c2"
         />
         <ul
-          className="sc-cJSrbW sc-hmzhuo ieDQGb"
+          className="c3"
         >
           <li
-            className="sc-frDJqD sc-hqyNC ePUwpp"
+            className="c4"
           >
             <a
               href="/reset-password"
@@ -182,7 +294,7 @@ exports[`Storyshots Settings Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-frDJqD sc-hqyNC ePUwpp"
+            className="c4"
           >
             <a
               href="/logout"
@@ -239,14 +351,14 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-fjmCvl fwQMrf"
+    className="c5"
   >
     <form
-      className="sc-TFwJa gzYRmt"
+      className=""
       onSubmit={[Function]}
     >
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -306,7 +418,7 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -366,7 +478,7 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -427,16 +539,16 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-iwsKbI eQdjUy"
+        className="c6"
       >
         <div
-          className="sc-gqjmRU jrxYk"
+          className="c7"
         >
           <div
-            className="sc-gZMcBi brDpsb"
+            className="c8"
           >
             <button
-              className="sc-VigVT iGqnRu"
+              className="c9"
               disabled={true}
               style={
                 Object {

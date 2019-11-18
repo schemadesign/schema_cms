@@ -1,6 +1,504 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project/View default 1`] = `
+.c28 {
+  height: 155px;
+}
+
+.c30 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c29 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c1 {
+  width: calc(100% - 50px);
+}
+
+.c2 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c4:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6 a {
+  padding: 8px 0;
+}
+
+.c7 {
+  display: none;
+}
+
+.c10 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c10:hover {
+  border-bottom-color: #FFF;
+}
+
+.c8 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c8:hover {
+  border-bottom-color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 {
+  font-weight: 600;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c16 {
+  list-style: none;
+  font-size: 14px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.c17 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c21 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c22 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c23 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c24 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c25 {
+  color: #FFF;
+  margin-bottom: 4px;
+  border-top: 2px solid #2F2F36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 37px);
+  padding: 12px 0 8px 0;
+}
+
+.c19 {
+  color: #71737e;
+  margin-right: 5px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c20 {
+  color: #FFF;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.c12 {
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+.c13 {
+  font-size: 12px;
+  display: inline-block;
+  width: calc(50% - 7px);
+  margin-bottom: 14px;
+}
+
+.c13:nth-child(2n + 1) {
+  margin-right: 7px;
+}
+
+.c13:nth-child(2n) {
+  margin-left: 7px;
+}
+
+.c14 {
+  font-size: 12px;
+}
+
+.c15 {
+  display: block;
+  font-size: 66px;
+  line-height: 1.09;
+  font-weight: 500;
+}
+
+.c26 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c27 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c27:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+@media (min-width:1040px) {
+  .c30 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c29 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c7 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c11 {
+    margin-top: 70px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c16 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:1040px) {
+  .c17 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+@media (min-width:1040px) {
+  .c21 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+}
+
+@media (min-width:1040px) {
+  .c22 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 5;
+    -ms-flex-order: 5;
+    order: 5;
+  }
+}
+
+@media (min-width:1040px) {
+  .c23 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+}
+
+@media (min-width:1040px) {
+  .c24 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 4;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+}
+
+@media (min-width:1040px) {
+  .c25 {
+    border-top-color: #1d1d20;
+    width: calc(50% - 10px);
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 6;
+    -ms-flex-order: 6;
+    order: 6;
+  }
+}
+
+@media (min-width:1040px) {
+  .c18 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-weight: normal;
+  }
+}
+
+@media (min-width:1040px) {
+  .c19 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c20 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    margin-bottom: 30px;
+    margin-left: -15px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    font-size: 18px;
+    width: calc(25% - 15px);
+  }
+
+  .c13:nth-child(2n + 1) {
+    margin-right: 0;
+    margin-left: 15px;
+  }
+
+  .c13:nth-child(2n) {
+    margin-left: 15px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    padding-top: 40px;
+    font-size: 108px;
+    line-height: 1em;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,11 +508,11 @@ exports[`Storyshots Project/View default 1`] = `
   }
 >
   <div
-    className="sc-eerKOB kCRaGL"
+    className="c0"
   >
     <div>
       <div
-        className="sc-kjoXOD kNHzWn"
+        className="c1"
       >
         <div
           style={
@@ -31,7 +529,7 @@ exports[`Storyshots Project/View default 1`] = `
         >
           <div>
             <div
-              className="sc-cHGsZl bHiaRe"
+              className=""
             >
               <h2
                 id="headerTitle"
@@ -126,10 +624,10 @@ exports[`Storyshots Project/View default 1`] = `
           }
         >
           <div
-            className="sc-TOsTZ kjYrri"
+            className=""
           >
             <div
-              className="sc-cHGsZl bHiaRe"
+              className=""
             >
               <h2
                 id="headerTitle"
@@ -162,13 +660,13 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </div>
           <div
-            className="sc-kgAjT gYPKSC"
+            className="c2"
           >
             <ul
-              className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+              className="c3"
             >
               <li
-                className="sc-frDJqD sc-kvZOFW jeugWf"
+                className="c4"
               >
                 <a
                   href="/project/100/datasource"
@@ -180,10 +678,10 @@ exports[`Storyshots Project/View default 1`] = `
               </li>
             </ul>
             <ul
-              className="sc-cJSrbW sc-hmzhuo ieDQGb"
+              className="c5"
             >
               <li
-                className="sc-frDJqD sc-hqyNC kPGXtZ"
+                className="c6"
               >
                 <a
                   href="/project/edit/100"
@@ -194,14 +692,14 @@ exports[`Storyshots Project/View default 1`] = `
                 </a>
               </li>
               <li
-                className="sc-frDJqD sc-hqyNC kPGXtZ"
+                className="c6"
                 id={null}
                 onClick={[Function]}
               >
                 Delete Project
               </li>
               <li
-                className="sc-frDJqD sc-hqyNC kPGXtZ"
+                className="c6"
               >
                 <a
                   href="/logout"
@@ -257,16 +755,16 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </div>
       <div
-        className="sc-cMhqgX dwYjBs"
+        className=""
       >
         <div
-          className="sc-iQNlJl ckbacU"
+          className="c7"
         >
           <div
-            className="sc-bsbRJL jDDcYp"
+            className="c8"
           >
             <a
-              className="sc-hZSUBg dVYOgC"
+              className="c9"
               href="/project/100"
               onClick={[Function]}
             >
@@ -276,10 +774,10 @@ exports[`Storyshots Project/View default 1`] = `
             </a>
           </div>
           <div
-            className="sc-bsbRJL iEnqaB"
+            className="c10"
           >
             <a
-              className="sc-hZSUBg dVYOgC"
+              className="c9"
               href="/project/100/datasource"
               onClick={[Function]}
             >
@@ -289,10 +787,10 @@ exports[`Storyshots Project/View default 1`] = `
             </a>
           </div>
           <div
-            className="sc-bsbRJL iEnqaB"
+            className="c10"
           >
             <a
-              className="sc-hZSUBg dVYOgC"
+              className="c9"
               href="/project/100/user"
               onClick={[Function]}
             >
@@ -317,13 +815,13 @@ exports[`Storyshots Project/View default 1`] = `
         </div>
       </div>
       <div
-        className="sc-emmjRN bNfkaf"
+        className="c11"
       >
         <ul
-          className="sc-jzgbtB izoRtv"
+          className="c12"
         >
           <li
-            className="sc-gJWqzi iuUsDq"
+            className="c13"
           >
             <div
               id="projectDataSources"
@@ -351,13 +849,13 @@ exports[`Storyshots Project/View default 1`] = `
                 }
               >
                 <span
-                  className="sc-rBLzX kmjjvp"
+                  className="c14"
                 >
                   Data Sources
                 </span>
               </div>
               <span
-                className="sc-bMvGRv bAmQmG"
+                className="c15"
                 id="projectDataSourcesValue"
               >
                 3
@@ -365,7 +863,7 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-gJWqzi iuUsDq"
+            className="c13"
           >
             <div
               id="projectUsers"
@@ -393,13 +891,13 @@ exports[`Storyshots Project/View default 1`] = `
                 }
               >
                 <span
-                  className="sc-rBLzX kmjjvp"
+                  className="c14"
                 >
                   Users
                 </span>
               </div>
               <span
-                className="sc-bMvGRv bAmQmG"
+                className="c15"
                 id="projectUsersValue"
               >
                 2
@@ -408,24 +906,24 @@ exports[`Storyshots Project/View default 1`] = `
           </li>
         </ul>
         <ul
-          className="sc-cpmLhU kuLRsk"
+          className="c16"
         >
           <li
-            className="sc-dymIpo bKnZot"
+            className="c17"
             order={1}
           >
             <div
-              className="sc-bnXvFD edggOR"
+              className="c18"
               id="fieldLastUpdated"
             >
               <span
-                className="sc-gFaPwZ fLHPWQ"
+                className="c19"
                 id="fieldLastUpdatedLabel"
               >
                 Last Update
               </span>
               <span
-                className="sc-fhYwyz fnihDs"
+                className="c20"
                 id="fieldLastUpdatedValue"
               >
                 3 months ago
@@ -433,21 +931,21 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-dymIpo cXCYal"
+            className="c21"
             order={3}
           >
             <div
-              className="sc-bnXvFD edggOR"
+              className="c18"
               id="fieldStatus"
             >
               <span
-                className="sc-gFaPwZ fLHPWQ"
+                className="c19"
                 id="fieldStatusLabel"
               >
                 Status
               </span>
               <span
-                className="sc-fhYwyz fnihDs"
+                className="c20"
                 id="fieldStatusValue"
               >
                 Status
@@ -455,21 +953,21 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-dymIpo gcaVFP"
+            className="c22"
             order={5}
           >
             <div
-              className="sc-bnXvFD edggOR"
+              className="c18"
               id="fieldOwner"
             >
               <span
-                className="sc-gFaPwZ fLHPWQ"
+                className="c19"
                 id="fieldOwnerLabel"
               >
                 Owner
               </span>
               <span
-                className="sc-fhYwyz fnihDs"
+                className="c20"
                 id="fieldOwnerValue"
               >
                 Firstname Lastname
@@ -477,21 +975,21 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-dymIpo hjEcTe"
+            className="c23"
             order={2}
           >
             <div
-              className="sc-bnXvFD edggOR"
+              className="c18"
               id="fieldTitle"
             >
               <span
-                className="sc-gFaPwZ fLHPWQ"
+                className="c19"
                 id="fieldTitleLabel"
               >
                 Title
               </span>
               <span
-                className="sc-fhYwyz fnihDs"
+                className="c20"
                 id="fieldTitleValue"
               >
                 Project Name
@@ -499,21 +997,21 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-dymIpo fytqUD"
+            className="c24"
             order={4}
           >
             <div
-              className="sc-bnXvFD edggOR"
+              className="c18"
               id="fieldDescription"
             >
               <span
-                className="sc-gFaPwZ fLHPWQ"
+                className="c19"
                 id="fieldDescriptionLabel"
               >
                 Description
               </span>
               <span
-                className="sc-fhYwyz fnihDs"
+                className="c20"
                 id="fieldDescriptionValue"
               >
                 Description
@@ -521,21 +1019,21 @@ exports[`Storyshots Project/View default 1`] = `
             </div>
           </li>
           <li
-            className="sc-dymIpo bplZNM"
+            className="c25"
             order={6}
           >
             <div
-              className="sc-bnXvFD edggOR"
+              className="c18"
               id="fieldSlug"
             >
               <span
-                className="sc-gFaPwZ fLHPWQ"
+                className="c19"
                 id="fieldSlugLabel"
               >
                 API
               </span>
               <span
-                className="sc-fhYwyz fnihDs"
+                className="c20"
                 id="fieldSlugValue"
               >
                 schemacms/api/project_title
@@ -545,10 +1043,10 @@ exports[`Storyshots Project/View default 1`] = `
         </ul>
       </div>
       <div
-        className="sc-CtfFt grSJde"
+        className="c26"
       >
         <span
-          className="sc-laTMn hEJgkH"
+          className="c27"
           id="deleteProjectDesktopBtn"
           onClick={[Function]}
           style={
@@ -565,13 +1063,13 @@ exports[`Storyshots Project/View default 1`] = `
       </div>
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c28"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c29"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="c30"
         >
           <button
             disabled={false}
@@ -620,6 +1118,226 @@ exports[`Storyshots Project/View default 1`] = `
 `;
 
 exports[`Storyshots Project/View loading 1`] = `
+.c14 {
+  height: 155px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c15 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c11 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.c1 {
+  width: calc(100% - 50px);
+}
+
+.c2 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c5 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c4:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6 a {
+  padding: 8px 0;
+}
+
+.c7 {
+  display: none;
+}
+
+.c10 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c10:hover {
+  border-bottom-color: #FFF;
+}
+
+.c8 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c8:hover {
+  border-bottom-color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 {
+  font-weight: 600;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c13 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c13:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+@media (min-width:1040px) {
+  .c16 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c7 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
+  }
+}
+
 <div
   style={
     Object {
@@ -629,11 +1347,11 @@ exports[`Storyshots Project/View loading 1`] = `
   }
 >
   <div
-    className="sc-eerKOB kCRaGL"
+    className="c0"
   >
     <div>
       <div
-        className="sc-kjoXOD kNHzWn"
+        className="c1"
       >
         <div
           style={
@@ -650,7 +1368,7 @@ exports[`Storyshots Project/View loading 1`] = `
         >
           <div>
             <div
-              className="sc-cHGsZl bHiaRe"
+              className=""
             >
               <h2
                 id="headerTitle"
@@ -743,10 +1461,10 @@ exports[`Storyshots Project/View loading 1`] = `
           }
         >
           <div
-            className="sc-TOsTZ kjYrri"
+            className=""
           >
             <div
-              className="sc-cHGsZl bHiaRe"
+              className=""
             >
               <h2
                 id="headerTitle"
@@ -777,13 +1495,13 @@ exports[`Storyshots Project/View loading 1`] = `
             </div>
           </div>
           <div
-            className="sc-kgAjT gYPKSC"
+            className="c2"
           >
             <ul
-              className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+              className="c3"
             >
               <li
-                className="sc-frDJqD sc-kvZOFW jeugWf"
+                className="c4"
               >
                 <a
                   href="/project/100/datasource"
@@ -795,10 +1513,10 @@ exports[`Storyshots Project/View loading 1`] = `
               </li>
             </ul>
             <ul
-              className="sc-cJSrbW sc-hmzhuo ieDQGb"
+              className="c5"
             >
               <li
-                className="sc-frDJqD sc-hqyNC kPGXtZ"
+                className="c6"
               >
                 <a
                   href="/project/edit/100"
@@ -809,14 +1527,14 @@ exports[`Storyshots Project/View loading 1`] = `
                 </a>
               </li>
               <li
-                className="sc-frDJqD sc-hqyNC kPGXtZ"
+                className="c6"
                 id={null}
                 onClick={[Function]}
               >
                 Delete Project
               </li>
               <li
-                className="sc-frDJqD sc-hqyNC kPGXtZ"
+                className="c6"
               >
                 <a
                   href="/logout"
@@ -872,16 +1590,16 @@ exports[`Storyshots Project/View loading 1`] = `
         </div>
       </div>
       <div
-        className="sc-cMhqgX dwYjBs"
+        className=""
       >
         <div
-          className="sc-iQNlJl ckbacU"
+          className="c7"
         >
           <div
-            className="sc-bsbRJL jDDcYp"
+            className="c8"
           >
             <a
-              className="sc-hZSUBg dVYOgC"
+              className="c9"
               href="/project/100"
               onClick={[Function]}
             >
@@ -891,10 +1609,10 @@ exports[`Storyshots Project/View loading 1`] = `
             </a>
           </div>
           <div
-            className="sc-bsbRJL iEnqaB"
+            className="c10"
           >
             <a
-              className="sc-hZSUBg dVYOgC"
+              className="c9"
               href="/project/100/datasource"
               onClick={[Function]}
             >
@@ -904,10 +1622,10 @@ exports[`Storyshots Project/View loading 1`] = `
             </a>
           </div>
           <div
-            className="sc-bsbRJL iEnqaB"
+            className="c10"
           >
             <a
-              className="sc-hZSUBg dVYOgC"
+              className="c9"
               href="/project/100/user"
               onClick={[Function]}
             >
@@ -932,17 +1650,17 @@ exports[`Storyshots Project/View loading 1`] = `
         </div>
       </div>
       <div
-        className="sc-eHgmQL gCbwae"
+        className="c11"
       >
         <span>
           Loading...
         </span>
       </div>
       <div
-        className="sc-CtfFt grSJde"
+        className="c12"
       >
         <span
-          className="sc-laTMn hEJgkH"
+          className="c13"
           id="deleteProjectDesktopBtn"
           onClick={[Function]}
           style={
@@ -959,13 +1677,13 @@ exports[`Storyshots Project/View loading 1`] = `
       </div>
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c14"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c15"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="c16"
         >
           <button
             disabled={false}

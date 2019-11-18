@@ -1,6 +1,168 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
+.c8 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c9 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c11 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c10 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c10 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c10:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c12 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c12 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c12 a {
+  padding: 8px 0;
+}
+
+.c0 {
+  display: none;
+}
+
+.c1 {
+  width: 1000px;
+}
+
+.c7 {
+  display: none;
+  background: #1d1d20;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 950px;
+  height: 62px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 20px);
+  margin: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 20px);
+  margin: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 0;
+  padding: 0 7px;
+}
+
+.c4 {
+  fill: #FFF;
+  width: 96px;
+  height: 16px;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-bottom: solid 2px #1d1d20;
+    width: 100%;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,10 +172,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   }
 >
   <div
-    className="sc-dTdPqK coZwRo"
+    className="c0"
   >
     <div
-      className="sc-itybZL WHeQL"
+      className="c1"
     >
       <div
         style={
@@ -31,22 +193,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
       >
         <div>
           <div
-            className="sc-fzsDOv igfwvp"
+            className="c2"
           >
             <a
-              className="sc-jVODtj sc-kUaPvJ bEWXtm"
+              className="c3"
               href="/"
               onClick={[Function]}
             >
               <schemaLogo.svg
-                className="sc-fONwsr dCUrXn"
+                className="c4"
               />
             </a>
             <div
-              className="sc-gPWkxV kadvqG"
+              className="c5"
             >
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="c6"
                 href="/logout"
                 onClick={[Function]}
               >
@@ -66,7 +228,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 </svg>
               </a>
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="c6"
                 href="/user/me"
                 onClick={[Function]}
               >
@@ -152,7 +314,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
         </button>
       </div>
       <div
-        className="sc-eMigcr eGxKvP"
+        className="c7"
       />
       <div
         style={
@@ -175,10 +337,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -211,13 +373,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c8"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c9"
           >
             <li
-              className="sc-frDJqD sc-kvZOFW jeugWf"
+              className="c10"
             >
               <a
                 href="/path"
@@ -228,7 +390,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
             </li>
             <li
-              className="sc-frDJqD sc-kvZOFW jeugWf"
+              className="c10"
             >
               <a
                 href="/path"
@@ -240,10 +402,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
             </li>
           </ul>
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c11"
           >
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c12"
             >
               <a
                 href="/logout"
@@ -254,7 +416,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
             </li>
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c12"
               id="id"
               onClick={[Function]}
             >
@@ -310,6 +472,195 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`] = `
+.c10 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c11 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c13 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c12 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c12 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c12:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c14 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c14 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c14 a {
+  padding: 8px 0;
+}
+
+.c0 {
+  display: none;
+}
+
+.c1 {
+  width: 1000px;
+}
+
+.c9 {
+  display: none;
+  background: #1d1d20;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 950px;
+  height: 62px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 20px);
+  margin: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 20px);
+  margin: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 0;
+  padding: 0 7px;
+}
+
+.c4 {
+  fill: #FFF;
+  width: 96px;
+  height: 16px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 10px;
+  overflow: hidden;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-bottom: solid 2px #1d1d20;
+    width: 100%;
+  }
+}
+
 <div
   style={
     Object {
@@ -319,10 +670,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   }
 >
   <div
-    className="sc-dTdPqK coZwRo"
+    className="c0"
   >
     <div
-      className="sc-itybZL WHeQL"
+      className="c1"
     >
       <div
         style={
@@ -340,22 +691,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
       >
         <div>
           <div
-            className="sc-fzsDOv igfwvp"
+            className="c2"
           >
             <a
-              className="sc-jVODtj sc-kUaPvJ bEWXtm"
+              className="c3"
               href="/"
               onClick={[Function]}
             >
               <schemaLogo.svg
-                className="sc-fONwsr dCUrXn"
+                className="c4"
               />
             </a>
             <div
-              className="sc-VJcYb btoQmr"
+              className="c5"
             >
               <h1
-                className="sc-ipXKqB bgxuUB"
+                className="c6"
                 style={
                   Object {
                     "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -375,10 +726,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </h1>
             </div>
             <div
-              className="sc-gPWkxV kadvqG"
+              className="c7"
             >
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="c8"
                 href="/logout"
                 onClick={[Function]}
               >
@@ -398,7 +749,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 </svg>
               </a>
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="c8"
                 href="/user/me"
                 onClick={[Function]}
               >
@@ -484,7 +835,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
         </button>
       </div>
       <div
-        className="sc-eMigcr eGxKvP"
+        className="c9"
       />
       <div
         style={
@@ -507,10 +858,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -543,13 +894,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c10"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c11"
           >
             <li
-              className="sc-frDJqD sc-kvZOFW jeugWf"
+              className="c12"
             >
               <a
                 href="/path"
@@ -560,7 +911,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
             </li>
             <li
-              className="sc-frDJqD sc-kvZOFW jeugWf"
+              className="c12"
             >
               <a
                 href="/path"
@@ -572,10 +923,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
             </li>
           </ul>
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c13"
           >
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c14"
             >
               <a
                 href="/logout"
@@ -586,7 +937,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
             </li>
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c14"
               id="id"
               onClick={[Function]}
             >
@@ -642,6 +993,195 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
+.c10 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c11 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c13 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c12 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c12 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c12:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c14 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c14 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c14 a {
+  padding: 8px 0;
+}
+
+.c0 {
+  display: none;
+}
+
+.c1 {
+  width: 1000px;
+}
+
+.c9 {
+  display: none;
+  background: #1d1d20;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 950px;
+  height: 62px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 20px);
+  margin: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 20px);
+  margin: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 0;
+  padding: 0 7px;
+}
+
+.c4 {
+  fill: #FFF;
+  width: 96px;
+  height: 16px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 10px;
+  overflow: hidden;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-bottom: solid 2px #1d1d20;
+    width: 100%;
+  }
+}
+
 <div
   style={
     Object {
@@ -651,10 +1191,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   }
 >
   <div
-    className="sc-dTdPqK coZwRo"
+    className="c0"
   >
     <div
-      className="sc-itybZL WHeQL"
+      className="c1"
     >
       <div
         style={
@@ -672,22 +1212,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
       >
         <div>
           <div
-            className="sc-fzsDOv igfwvp"
+            className="c2"
           >
             <a
-              className="sc-jVODtj sc-kUaPvJ bEWXtm"
+              className="c3"
               href="/"
               onClick={[Function]}
             >
               <schemaLogo.svg
-                className="sc-fONwsr dCUrXn"
+                className="c4"
               />
             </a>
             <div
-              className="sc-VJcYb btoQmr"
+              className="c5"
             >
               <h1
-                className="sc-ipXKqB bgxuUB"
+                className="c6"
                 style={
                   Object {
                     "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -703,10 +1243,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </h1>
             </div>
             <div
-              className="sc-gPWkxV kadvqG"
+              className="c7"
             >
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="c8"
                 href="/logout"
                 onClick={[Function]}
               >
@@ -726,7 +1266,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 </svg>
               </a>
               <a
-                className="sc-jVODtj sc-giadOv flAysj"
+                className="c8"
                 href="/user/me"
                 onClick={[Function]}
               >
@@ -812,7 +1352,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
         </button>
       </div>
       <div
-        className="sc-eMigcr eGxKvP"
+        className="c9"
       />
       <div
         style={
@@ -835,10 +1375,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -871,13 +1411,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c10"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c11"
           >
             <li
-              className="sc-frDJqD sc-kvZOFW jeugWf"
+              className="c12"
             >
               <a
                 href="/path"
@@ -888,7 +1428,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </a>
             </li>
             <li
-              className="sc-frDJqD sc-kvZOFW jeugWf"
+              className="c12"
             >
               <a
                 href="/path"
@@ -900,10 +1440,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
             </li>
           </ul>
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c13"
           >
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c14"
             >
               <a
                 href="/logout"
@@ -914,7 +1454,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </a>
             </li>
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c14"
               id="id"
               onClick={[Function]}
             >

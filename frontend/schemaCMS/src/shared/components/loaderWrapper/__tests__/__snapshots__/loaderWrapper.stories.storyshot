@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|LoaderWrapper custom no data 1`] = `
+.c0 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 <div
   style={
     Object {
@@ -10,10 +18,10 @@ exports[`Storyshots Shared Components|LoaderWrapper custom no data 1`] = `
   }
 >
   <div
-    className="sc-krvtoX fMwaVV"
+    className=""
   >
     <div
-      className="sc-gipzik ukuNU"
+      className="c0"
     >
       No projects
     </div>
@@ -31,7 +39,7 @@ exports[`Storyshots Shared Components|LoaderWrapper loaded 1`] = `
   }
 >
   <div
-    className="sc-krvtoX fMwaVV"
+    className=""
   >
     <div
       style={
@@ -55,6 +63,14 @@ exports[`Storyshots Shared Components|LoaderWrapper loaded 1`] = `
 `;
 
 exports[`Storyshots Shared Components|LoaderWrapper loading 1`] = `
+.c0 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 <div
   style={
     Object {
@@ -64,10 +80,10 @@ exports[`Storyshots Shared Components|LoaderWrapper loading 1`] = `
   }
 >
   <div
-    className="sc-krvtoX fMwaVV"
+    className=""
   >
     <div
-      className="sc-eHgmQL gCbwae"
+      className="c0"
     >
       <span>
         Loading...
@@ -78,6 +94,14 @@ exports[`Storyshots Shared Components|LoaderWrapper loading 1`] = `
 `;
 
 exports[`Storyshots Shared Components|LoaderWrapper no data 1`] = `
+.c0 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 <div
   style={
     Object {
@@ -87,10 +111,10 @@ exports[`Storyshots Shared Components|LoaderWrapper no data 1`] = `
   }
 >
   <div
-    className="sc-krvtoX fMwaVV"
+    className=""
   >
     <div
-      className="sc-gipzik ukuNU"
+      className="c0"
     >
       <span>
         No Data Found.
@@ -101,6 +125,14 @@ exports[`Storyshots Shared Components|LoaderWrapper no data 1`] = `
 `;
 
 exports[`Storyshots Shared Components|LoaderWrapper with error 1`] = `
+.c0 {
+  color: #f21e29;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 <div
   style={
     Object {
@@ -110,10 +142,10 @@ exports[`Storyshots Shared Components|LoaderWrapper with error 1`] = `
   }
 >
   <div
-    className="sc-krvtoX fMwaVV"
+    className=""
   >
     <div
-      className="sc-fYiAbW eZfVup"
+      className="c0"
     >
       Some error
     </div>
