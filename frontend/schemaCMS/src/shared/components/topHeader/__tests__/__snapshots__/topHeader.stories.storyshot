@@ -1,6 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c4 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c3 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c3:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c5 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c5 a {
+  padding: 8px 0;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,7 +78,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   }
 >
   <div
-    className="sc-kjoXOD kNHzWn"
+    className="c0"
   >
     <div
       style={
@@ -27,7 +95,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
     >
       <div>
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -121,10 +189,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
       }
     >
       <div
-        className="sc-TOsTZ kjYrri"
+        className=""
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -157,13 +225,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-kgAjT gYPKSC"
+        className="c1"
       >
         <ul
-          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+          className="c2"
         >
           <li
-            className="sc-frDJqD sc-kvZOFW jeugWf"
+            className="c3"
           >
             <a
               href="/path"
@@ -174,7 +242,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-frDJqD sc-kvZOFW jeugWf"
+            className="c3"
           >
             <a
               href="/path"
@@ -186,10 +254,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           </li>
         </ul>
         <ul
-          className="sc-cJSrbW sc-hmzhuo ieDQGb"
+          className="c4"
         >
           <li
-            className="sc-frDJqD sc-hqyNC kPGXtZ"
+            className="c5"
           >
             <a
               href="/logout"
@@ -200,7 +268,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="sc-frDJqD sc-hqyNC kPGXtZ"
+            className="c5"
             id="id"
             onClick={[Function]}
           >
@@ -254,6 +322,74 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 1`] = `
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c4 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c3 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c3:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c5 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c5 a {
+  padding: 8px 0;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
 <div
   style={
     Object {
@@ -263,7 +399,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
   }
 >
   <div
-    className="sc-kjoXOD kNHzWn"
+    className="c0"
   >
     <div
       style={
@@ -280,7 +416,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
     >
       <div>
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -382,10 +518,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
       }
     >
       <div
-        className="sc-TOsTZ kjYrri"
+        className=""
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -426,13 +562,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
         </div>
       </div>
       <div
-        className="sc-kgAjT gYPKSC"
+        className="c1"
       >
         <ul
-          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+          className="c2"
         >
           <li
-            className="sc-frDJqD sc-kvZOFW jeugWf"
+            className="c3"
           >
             <a
               href="/path"
@@ -443,7 +579,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
             </a>
           </li>
           <li
-            className="sc-frDJqD sc-kvZOFW jeugWf"
+            className="c3"
           >
             <a
               href="/path"
@@ -455,10 +591,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
           </li>
         </ul>
         <ul
-          className="sc-cJSrbW sc-hmzhuo ieDQGb"
+          className="c4"
         >
           <li
-            className="sc-frDJqD sc-hqyNC kPGXtZ"
+            className="c5"
           >
             <a
               href="/logout"
@@ -469,7 +605,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
             </a>
           </li>
           <li
-            className="sc-frDJqD sc-hqyNC kPGXtZ"
+            className="c5"
             id="id"
             onClick={[Function]}
           >

@@ -9,6 +9,6 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 
-addDecorator(withIntl)
+addDecorator(withIntl);
 
 configure(loadStories, module);

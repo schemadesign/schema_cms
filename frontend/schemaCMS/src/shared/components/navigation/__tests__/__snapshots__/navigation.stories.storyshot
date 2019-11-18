@@ -49,6 +49,19 @@ exports[`Storyshots Shared Components|Navigation BackArrowButton 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
+.c0 {
+  width: calc(50% - 5px);
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
 <div
   style={
     Object {
@@ -58,7 +71,7 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
   }
 >
   <button
-    className="sc-VigVT dNFsjT"
+    className="c0"
     disabled={false}
     style={
       Object {
@@ -86,6 +99,52 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
+.c0 {
+  height: 155px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c1 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+@media (min-width:1040px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    width: 1000px;
+  }
+}
+
 <div
   style={
     Object {
@@ -95,13 +154,13 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
   }
 >
   <div
-    className="sc-iwsKbI eQdjUy"
+    className="c0"
   >
     <div
-      className="sc-gqjmRU fIKSOC"
+      className="c1"
     >
       <div
-        className="sc-gZMcBi brDpsb"
+        className="c2"
       >
         <button
           disabled={false}
@@ -146,6 +205,19 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
+.c0 {
+  width: calc(50% - 5px);
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    width: 23.5%;
+    -webkit-transform: translateX(-255px);
+    -ms-transform: translateX(-255px);
+    transform: translateX(-255px);
+  }
+}
+
 <div
   style={
     Object {
@@ -155,7 +227,7 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
   }
 >
   <button
-    className="sc-VigVT eTfsKS"
+    className="c0"
     disabled={false}
     style={
       Object {

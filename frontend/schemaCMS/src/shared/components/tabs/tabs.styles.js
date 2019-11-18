@@ -10,7 +10,7 @@ export const Container = styled.div`
     display: flex;
     margin: 29px 0 20px 0;
     font-size: 15px;
-  `}
+  `};
 `;
 
 export const Tab = styled.div`

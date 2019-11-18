@@ -1,6 +1,139 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project/List empty 1`] = `
+.c10 {
+  height: 155px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c11 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c9 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c4 a {
+  padding: 8px 0;
+}
+
+.c5 {
+  display: none;
+}
+
+.c6 {
+  margin-right: 20px;
+}
+
+.c7 {
+  color: #FFF;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c11 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,10 +143,10 @@ exports[`Storyshots Project/List empty 1`] = `
   }
 >
   <div
-    className="sc-exAgwC kvVgIg"
+    className=""
   >
     <div
-      className="sc-kjoXOD kNHzWn"
+      className="c0"
     >
       <div
         style={
@@ -30,7 +163,7 @@ exports[`Storyshots Project/List empty 1`] = `
       >
         <div>
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -124,10 +257,10 @@ exports[`Storyshots Project/List empty 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -160,16 +293,16 @@ exports[`Storyshots Project/List empty 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c1"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c2"
           />
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c3"
           >
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c4"
             >
               <a
                 href="/user"
@@ -180,7 +313,7 @@ exports[`Storyshots Project/List empty 1`] = `
               </a>
             </li>
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c4"
             >
               <a
                 href="/logout"
@@ -235,13 +368,13 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu dLyPNV"
+      className="c5"
     >
       <div
-        className="sc-dNLxif hhzHuo"
+        className="c6"
       >
         <h2
-          className="sc-jqCOkK iblYWW"
+          className="c7"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -255,7 +388,7 @@ exports[`Storyshots Project/List empty 1`] = `
           Projects
         </h2>
         <h1
-          className="sc-uJMKN bZCpGz"
+          className="c8"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -272,7 +405,7 @@ exports[`Storyshots Project/List empty 1`] = `
         </h1>
       </div>
       <div
-        className="sc-bbmXgH fNYDXK"
+        className=""
       >
         <button
           disabled={false}
@@ -316,20 +449,20 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-eHgmQL gCbwae"
+      className="c9"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c10"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c11"
       >
         <div
-          className="sc-gZMcBi elFcsa"
+          className="c12"
         >
           <button
             disabled={false}
@@ -378,6 +511,139 @@ exports[`Storyshots Project/List empty 1`] = `
 `;
 
 exports[`Storyshots Project/List list 1`] = `
+.c10 {
+  height: 155px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c11 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c9 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c4 a {
+  padding: 8px 0;
+}
+
+.c5 {
+  display: none;
+}
+
+.c6 {
+  margin-right: 20px;
+}
+
+.c7 {
+  color: #FFF;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c11 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
 <div
   style={
     Object {
@@ -387,10 +653,10 @@ exports[`Storyshots Project/List list 1`] = `
   }
 >
   <div
-    className="sc-exAgwC kvVgIg"
+    className=""
   >
     <div
-      className="sc-kjoXOD kNHzWn"
+      className="c0"
     >
       <div
         style={
@@ -407,7 +673,7 @@ exports[`Storyshots Project/List list 1`] = `
       >
         <div>
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -501,10 +767,10 @@ exports[`Storyshots Project/List list 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -537,16 +803,16 @@ exports[`Storyshots Project/List list 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c1"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c2"
           />
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c3"
           >
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c4"
             >
               <a
                 href="/user"
@@ -557,7 +823,7 @@ exports[`Storyshots Project/List list 1`] = `
               </a>
             </li>
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c4"
             >
               <a
                 href="/logout"
@@ -612,13 +878,13 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu dLyPNV"
+      className="c5"
     >
       <div
-        className="sc-dNLxif hhzHuo"
+        className="c6"
       >
         <h2
-          className="sc-jqCOkK iblYWW"
+          className="c7"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -632,7 +898,7 @@ exports[`Storyshots Project/List list 1`] = `
           Projects
         </h2>
         <h1
-          className="sc-uJMKN bZCpGz"
+          className="c8"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -649,7 +915,7 @@ exports[`Storyshots Project/List list 1`] = `
         </h1>
       </div>
       <div
-        className="sc-bbmXgH fNYDXK"
+        className=""
       >
         <button
           disabled={false}
@@ -693,20 +959,20 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className="sc-eHgmQL gCbwae"
+      className="c9"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c10"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c11"
       >
         <div
-          className="sc-gZMcBi elFcsa"
+          className="c12"
         >
           <button
             disabled={false}

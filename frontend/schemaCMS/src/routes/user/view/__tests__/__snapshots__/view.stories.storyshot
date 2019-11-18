@@ -1,11 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots View Default 1`] = `
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+}
+
+.c4 a {
+  padding: 8px 0;
+}
+
+.c5 {
+  display: none;
+}
+
+.c6 {
+  margin-right: 20px;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
 <div
-  className="sc-bHwgHz ePnYhO"
+  className=""
 >
   <div
-    className="sc-kjoXOD kNHzWn"
+    className="c0"
   >
     <div
       style={
@@ -22,7 +95,7 @@ exports[`Storyshots View Default 1`] = `
     >
       <div>
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -120,10 +193,10 @@ exports[`Storyshots View Default 1`] = `
       }
     >
       <div
-        className="sc-TOsTZ kjYrri"
+        className=""
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -160,16 +233,16 @@ exports[`Storyshots View Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-kgAjT gYPKSC"
+        className="c1"
       >
         <ul
-          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+          className="c2"
         />
         <ul
-          className="sc-cJSrbW sc-hmzhuo ieDQGb"
+          className="c3"
         >
           <li
-            className="sc-frDJqD sc-hqyNC ePUwpp"
+            className="c4"
             id={null}
             onClick={[Function]}
           >
@@ -222,13 +295,13 @@ exports[`Storyshots View Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-jbKcbu dLyPNV"
+    className="c5"
   >
     <div
-      className="sc-dNLxif hhzHuo"
+      className="c6"
     >
       <h2
-        className="sc-jqCOkK kaoYrU"
+        className=""
         id="desktopHeaderTitle"
         style={
           Object {
@@ -244,7 +317,7 @@ exports[`Storyshots View Default 1`] = `
         </span>
       </h2>
       <h1
-        className="sc-uJMKN bBEIYt"
+        className=""
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -263,7 +336,7 @@ exports[`Storyshots View Default 1`] = `
       </h1>
     </div>
     <div
-      className="sc-bbmXgH fNYDXK"
+      className=""
     />
   </div>
 </div>

@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   ${media.desktop`
     display: none;
-  `}
+  `};
 `;
 
 export const HeaderWrapper = styled.div``;

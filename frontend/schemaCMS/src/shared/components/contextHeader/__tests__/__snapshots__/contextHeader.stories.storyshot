@@ -1,6 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
+.c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,13 +44,13 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
   }
 >
   <div
-    className="sc-jbKcbu dLyPNV"
+    className="c0"
   >
     <div
-      className="sc-dNLxif hhzHuo"
+      className="c1"
     >
       <h2
-        className="sc-jqCOkK iblYWW"
+        className="c2"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -30,7 +64,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
         Projects
       </h2>
       <h1
-        className="sc-uJMKN bZCpGz"
+        className="c3"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -47,13 +81,47 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
       </h1>
     </div>
     <div
-      className="sc-bbmXgH fNYDXK"
+      className=""
     />
   </div>
 </div>
 `;
 
 exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
+.c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
 <div
   style={
     Object {
@@ -63,13 +131,13 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
   }
 >
   <div
-    className="sc-jbKcbu dLyPNV"
+    className="c0"
   >
     <div
-      className="sc-dNLxif hhzHuo"
+      className="c1"
     >
       <h2
-        className="sc-jqCOkK iblYWW"
+        className="c2"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -83,7 +151,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
         Projects
       </h2>
       <h1
-        className="sc-uJMKN bZCpGz"
+        className="c3"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -100,7 +168,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
       </h1>
     </div>
     <div
-      className="sc-bbmXgH fNYDXK"
+      className=""
     >
       <button
         disabled={false}
@@ -145,6 +213,40 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = `
+.c0 {
+  display: none;
+}
+
+.c1 {
+  margin-right: 20px;
+}
+
+.c2 {
+  color: #FFF;
+}
+
+.c3 {
+  color: #FFF;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
 <div
   style={
     Object {
@@ -154,13 +256,13 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
   }
 >
   <div
-    className="sc-jbKcbu dLyPNV"
+    className="c0"
   >
     <div
-      className="sc-dNLxif hhzHuo"
+      className="c1"
     >
       <h2
-        className="sc-jqCOkK iblYWW"
+        className="c2"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -178,7 +280,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
 
       </h2>
       <h1
-        className="sc-uJMKN bZCpGz"
+        className="c3"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -199,7 +301,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
       </h1>
     </div>
     <div
-      className="sc-bbmXgH fNYDXK"
+      className=""
     >
       <button
         disabled={false}

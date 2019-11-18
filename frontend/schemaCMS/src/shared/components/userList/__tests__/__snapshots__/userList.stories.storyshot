@@ -1,6 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,12 +35,81 @@ exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
   }
 >
   <section
-    className="sc-cbkKFq MSVjj"
+    className="c0"
   />
 </div>
 `;
 
 exports[`Storyshots Shared Components|UserList with users 1`] = `
+.c1 {
+  margin-bottom: 20px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0 -5px 0 5px;
+}
+
+.c2 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c3 {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.c4 {
+  display: block;
+  padding-top: 10px;
+  word-break: break-all;
+  font-weight: 200;
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
 <div
   style={
     Object {
@@ -25,10 +119,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
   }
 >
   <section
-    className="sc-cbkKFq MSVjj"
+    className="c0"
   >
     <div
-      className="sc-eLExRp hYupqw"
+      className="c1"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -42,10 +136,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       }
     >
       <div
-        className="sc-fOKMvo gdRyPW"
+        className="c2"
       >
         <a
-          className="sc-dUjcNx hsSDAG"
+          className="c3"
           href="/user/1"
           onClick={[Function]}
         >
@@ -54,15 +148,15 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           Watts
         </a>
         <span
-          className="sc-gHboQg kRrBEr"
+          className="c4"
         />
       </div>
       <div
-        className="sc-fYiAbW cNNgJZ"
+        className="c5"
       />
     </div>
     <div
-      className="sc-eLExRp hYupqw"
+      className="c1"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -76,10 +170,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       }
     >
       <div
-        className="sc-fOKMvo gdRyPW"
+        className="c2"
       >
         <a
-          className="sc-dUjcNx hsSDAG"
+          className="c3"
           href="/user/2"
           onClick={[Function]}
         >
@@ -88,15 +182,15 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           Chihuly
         </a>
         <span
-          className="sc-gHboQg kRrBEr"
+          className="c4"
         />
       </div>
       <div
-        className="sc-fYiAbW cNNgJZ"
+        className="c5"
       />
     </div>
     <div
-      className="sc-eLExRp hYupqw"
+      className="c1"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -110,10 +204,10 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       }
     >
       <div
-        className="sc-fOKMvo gdRyPW"
+        className="c2"
       >
         <a
-          className="sc-dUjcNx hsSDAG"
+          className="c3"
           href="/user/3"
           onClick={[Function]}
         >
@@ -122,13 +216,13 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
           Bowie
         </a>
         <span
-          className="sc-gHboQg kRrBEr"
+          className="c4"
         >
           loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
         </span>
       </div>
       <div
-        className="sc-fYiAbW cNNgJZ"
+        className="c5"
       />
     </div>
   </section>
@@ -136,6 +230,75 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
 `;
 
 exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
+.c1 {
+  margin-bottom: 20px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0 -5px 0 5px;
+}
+
+.c2 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c3 {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.c4 {
+  display: block;
+  padding-top: 10px;
+  word-break: break-all;
+  font-weight: 200;
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
 <div
   style={
     Object {
@@ -145,10 +308,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
   }
 >
   <section
-    className="sc-cbkKFq MSVjj"
+    className="c0"
   >
     <div
-      className="sc-eLExRp hYupqw"
+      className="c1"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -162,10 +325,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       }
     >
       <div
-        className="sc-fOKMvo gdRyPW"
+        className="c2"
       >
         <a
-          className="sc-dUjcNx hsSDAG"
+          className="c3"
           href="/user/1"
           onClick={[Function]}
         >
@@ -174,11 +337,11 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
           Watts
         </a>
         <span
-          className="sc-gHboQg kRrBEr"
+          className="c4"
         />
       </div>
       <div
-        className="sc-fYiAbW cNNgJZ"
+        className="c5"
       >
         <button
           disabled={false}
@@ -221,7 +384,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       </div>
     </div>
     <div
-      className="sc-eLExRp hYupqw"
+      className="c1"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -235,10 +398,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       }
     >
       <div
-        className="sc-fOKMvo gdRyPW"
+        className="c2"
       >
         <a
-          className="sc-dUjcNx hsSDAG"
+          className="c3"
           href="/user/2"
           onClick={[Function]}
         >
@@ -247,11 +410,11 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
           Chihuly
         </a>
         <span
-          className="sc-gHboQg kRrBEr"
+          className="c4"
         />
       </div>
       <div
-        className="sc-fYiAbW cNNgJZ"
+        className="c5"
       >
         <button
           disabled={false}
@@ -294,7 +457,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       </div>
     </div>
     <div
-      className="sc-eLExRp hYupqw"
+      className="c1"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -308,10 +471,10 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       }
     >
       <div
-        className="sc-fOKMvo gdRyPW"
+        className="c2"
       >
         <a
-          className="sc-dUjcNx hsSDAG"
+          className="c3"
           href="/user/3"
           onClick={[Function]}
         >
@@ -320,13 +483,13 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
           Bowie
         </a>
         <span
-          className="sc-gHboQg kRrBEr"
+          className="c4"
         >
           loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
         </span>
       </div>
       <div
-        className="sc-fYiAbW cNNgJZ"
+        className="c5"
       >
         <button
           disabled={false}

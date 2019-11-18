@@ -1,6 +1,213 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots DataSourceList Empty 1`] = `
+.c14 {
+  height: 155px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c15 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c4 a {
+  padding: 8px 0;
+}
+
+.c9 {
+  display: none;
+}
+
+.c10 {
+  margin-right: 20px;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c12 {
+  color: #FFF;
+}
+
+.c5 {
+  display: none;
+}
+
+.c6 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c6:hover {
+  border-bottom-color: #FFF;
+}
+
+.c8 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c8:hover {
+  border-bottom-color: #FFF;
+}
+
+.c7 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media (min-width:1040px) {
+  .c16 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,10 +217,10 @@ exports[`Storyshots DataSourceList Empty 1`] = `
   }
 >
   <div
-    className="sc-iuJeZd guOzZL"
+    className=""
   >
     <div
-      className="sc-kjoXOD kNHzWn"
+      className="c0"
     >
       <div
         style={
@@ -30,7 +237,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       >
         <div>
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -124,10 +331,10 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -160,16 +367,16 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c1"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c2"
           />
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c3"
           >
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c4"
             >
               <a
                 href="/project/1"
@@ -224,16 +431,16 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-cMhqgX dwYjBs"
+      className=""
     >
       <div
-        className="sc-iQNlJl ckbacU"
+        className="c5"
       >
         <div
-          className="sc-bsbRJL iEnqaB"
+          className="c6"
         >
           <a
-            className="sc-hZSUBg dVYOgC"
+            className="c7"
             href="/project/1"
             onClick={[Function]}
           >
@@ -243,10 +450,10 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL jDDcYp"
+          className="c8"
         >
           <a
-            className="sc-hZSUBg dVYOgC"
+            className="c7"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -256,10 +463,10 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL iEnqaB"
+          className="c6"
         >
           <a
-            className="sc-hZSUBg dVYOgC"
+            className="c7"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -271,13 +478,13 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu dLyPNV"
+      className="c9"
     >
       <div
-        className="sc-dNLxif hhzHuo"
+        className="c10"
       >
         <h2
-          className="sc-jqCOkK iblYWW"
+          className="c11"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -291,7 +498,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
           Data Sources
         </h2>
         <h1
-          className="sc-uJMKN bZCpGz"
+          className="c12"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -308,7 +515,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
         </h1>
       </div>
       <div
-        className="sc-bbmXgH fNYDXK"
+        className=""
       >
         <button
           disabled={false}
@@ -352,16 +559,16 @@ exports[`Storyshots DataSourceList Empty 1`] = `
       </div>
     </div>
     <section
-      className="sc-cbkKFq MSVjj"
+      className="c13"
     />
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c14"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c15"
       >
         <div
-          className="sc-gZMcBi jZympT"
+          className="c16"
         >
           <button
             disabled={false}
@@ -448,6 +655,309 @@ exports[`Storyshots DataSourceList Empty 1`] = `
 `;
 
 exports[`Storyshots DataSourceList With data source 1`] = `
+.c24 {
+  height: 155px;
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c25 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c4 a {
+  padding: 8px 0;
+}
+
+.c9 {
+  display: none;
+}
+
+.c10 {
+  margin-right: 20px;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c12 {
+  color: #FFF;
+}
+
+.c5 {
+  display: none;
+}
+
+.c6 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c6:hover {
+  border-bottom-color: #FFF;
+}
+
+.c8 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c8:hover {
+  border-bottom-color: #FFF;
+}
+
+.c7 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c19 {
+  cursor: pointer;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 27px;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c22 {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.c23 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c18 {
+  margin-top: -8px;
+}
+
+.c16 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c17 {
+  display: inline-block;
+  line-height: 1.25;
+  margin-right: 1.5em;
+  color: #71737e;
+}
+
+.c17::before {
+  content: '•';
+  margin-left: -1.5em;
+  display: inline-block;
+  padding: 0 7px;
+}
+
+.c14 {
+  margin-bottom: 20px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media (min-width:1040px) {
+  .c26 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c25 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
 <div
   style={
     Object {
@@ -457,10 +967,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
   }
 >
   <div
-    className="sc-iuJeZd guOzZL"
+    className=""
   >
     <div
-      className="sc-kjoXOD kNHzWn"
+      className="c0"
     >
       <div
         style={
@@ -477,7 +987,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       >
         <div>
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -571,10 +1081,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -607,16 +1117,16 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c1"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c2"
           />
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c3"
           >
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c4"
             >
               <a
                 href="/project/1"
@@ -671,16 +1181,16 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="sc-cMhqgX dwYjBs"
+      className=""
     >
       <div
-        className="sc-iQNlJl ckbacU"
+        className="c5"
       >
         <div
-          className="sc-bsbRJL iEnqaB"
+          className="c6"
         >
           <a
-            className="sc-hZSUBg dVYOgC"
+            className="c7"
             href="/project/1"
             onClick={[Function]}
           >
@@ -690,10 +1200,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL jDDcYp"
+          className="c8"
         >
           <a
-            className="sc-hZSUBg dVYOgC"
+            className="c7"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -703,10 +1213,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL iEnqaB"
+          className="c6"
         >
           <a
-            className="sc-hZSUBg dVYOgC"
+            className="c7"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -718,13 +1228,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu dLyPNV"
+      className="c9"
     >
       <div
-        className="sc-dNLxif hhzHuo"
+        className="c10"
       >
         <h2
-          className="sc-jqCOkK iblYWW"
+          className="c11"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -738,7 +1248,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           Data Sources
         </h2>
         <h1
-          className="sc-uJMKN bZCpGz"
+          className="c12"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -755,7 +1265,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </h1>
       </div>
       <div
-        className="sc-bbmXgH fNYDXK"
+        className=""
       >
         <button
           disabled={false}
@@ -799,10 +1309,10 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       </div>
     </div>
     <section
-      className="sc-cbkKFq MSVjj"
+      className="c13"
     >
       <div
-        className="sc-eLExRp hYupqw"
+        className="c14"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -825,26 +1335,26 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           }
         >
           <div
-            className="sc-bMVAic jDpWLW"
+            className="c15"
           >
             <ul
-              className="sc-daURTG cjJqXw"
+              className="c16"
             >
               <li
-                className="sc-bXGyLb cAzlMI"
+                className="c17"
                 id="headerItem-0"
               >
                 3 months ago
               </li>
               <li
-                className="sc-bXGyLb cAzlMI"
+                className="c17"
                 id="headerItem-1"
               >
                 firstName lastName
               </li>
             </ul>
             <div
-              className="sc-bAeIUo fhsuHf"
+              className="c18"
             >
               <svg
                 style={
@@ -867,7 +1377,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </div>
         </div>
         <h1
-          className="sc-cmthru fTwIns"
+          className="c19"
           id="dataSourceTitle"
           onClick={[Function]}
           style={
@@ -884,19 +1394,19 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           name
         </h1>
         <div
-          className="sc-hMFtBS kbcMkN"
+          className="c20"
         >
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-0"
             >
               Source
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-0"
             >
               <svg
@@ -917,64 +1427,64 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-1"
             >
               Items
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-1"
             >
               —
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-2"
             >
               Fields
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-2"
             >
               —
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-3"
             >
               Filters
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-3"
             >
               —
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-4"
             >
               Views
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-4"
             >
               —
@@ -983,7 +1493,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         </div>
       </div>
       <div
-        className="sc-eLExRp hYupqw"
+        className="c14"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1006,26 +1516,26 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           }
         >
           <div
-            className="sc-bMVAic jDpWLW"
+            className="c15"
           >
             <ul
-              className="sc-daURTG cjJqXw"
+              className="c16"
             >
               <li
-                className="sc-bXGyLb cAzlMI"
+                className="c17"
                 id="headerItem-0"
               >
                 3 months ago
               </li>
               <li
-                className="sc-bXGyLb cAzlMI"
+                className="c17"
                 id="headerItem-1"
               >
                 firstName lastName
               </li>
             </ul>
             <div
-              className="sc-bAeIUo fhsuHf"
+              className="c18"
             >
               <svg
                 style={
@@ -1048,7 +1558,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           </div>
         </div>
         <h1
-          className="sc-cmthru fTwIns"
+          className="c19"
           id="dataSourceTitle"
           onClick={[Function]}
           style={
@@ -1065,19 +1575,19 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           name
         </h1>
         <div
-          className="sc-hMFtBS kbcMkN"
+          className="c20"
         >
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-0"
             >
               Source
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-0"
             >
               <svg
@@ -1098,64 +1608,64 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-1"
             >
               Items
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-1"
             >
               246
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-2"
             >
               Fields
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-2"
             >
               11
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-3"
             >
               Filters
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-3"
             >
               —
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-4"
             >
               Views
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-4"
             >
               —
@@ -1165,13 +1675,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
       </div>
     </section>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c24"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c25"
       >
         <div
-          className="sc-gZMcBi jZympT"
+          className="c26"
         >
           <button
             disabled={false}
@@ -1258,6 +1768,309 @@ exports[`Storyshots DataSourceList With data source 1`] = `
 `;
 
 exports[`Storyshots DataSourceList With jobs 1`] = `
+.c24 {
+  height: 155px;
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c25 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c4 a {
+  padding: 8px 0;
+}
+
+.c9 {
+  display: none;
+}
+
+.c10 {
+  margin-right: 20px;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c12 {
+  color: #FFF;
+}
+
+.c5 {
+  display: none;
+}
+
+.c6 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c6:hover {
+  border-bottom-color: #FFF;
+}
+
+.c8 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c8:hover {
+  border-bottom-color: #FFF;
+}
+
+.c7 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c19 {
+  cursor: pointer;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 27px;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c22 {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.c23 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c18 {
+  margin-top: -8px;
+}
+
+.c16 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c17 {
+  display: inline-block;
+  line-height: 1.25;
+  margin-right: 1.5em;
+  color: #71737e;
+}
+
+.c17::before {
+  content: '•';
+  margin-left: -1.5em;
+  display: inline-block;
+  padding: 0 7px;
+}
+
+.c14 {
+  margin-bottom: 20px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media (min-width:1040px) {
+  .c26 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c25 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
 <div
   style={
     Object {
@@ -1267,10 +2080,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
   }
 >
   <div
-    className="sc-iuJeZd guOzZL"
+    className=""
   >
     <div
-      className="sc-kjoXOD kNHzWn"
+      className="c0"
     >
       <div
         style={
@@ -1287,7 +2100,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       >
         <div>
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -1381,10 +2194,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -1417,16 +2230,16 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c1"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c2"
           />
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c3"
           >
             <li
-              className="sc-frDJqD sc-hqyNC kPGXtZ"
+              className="c4"
             >
               <a
                 href="/project/1"
@@ -1481,16 +2294,16 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="sc-cMhqgX dwYjBs"
+      className=""
     >
       <div
-        className="sc-iQNlJl ckbacU"
+        className="c5"
       >
         <div
-          className="sc-bsbRJL iEnqaB"
+          className="c6"
         >
           <a
-            className="sc-hZSUBg dVYOgC"
+            className="c7"
             href="/project/1"
             onClick={[Function]}
           >
@@ -1500,10 +2313,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL jDDcYp"
+          className="c8"
         >
           <a
-            className="sc-hZSUBg dVYOgC"
+            className="c7"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -1513,10 +2326,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="sc-bsbRJL iEnqaB"
+          className="c6"
         >
           <a
-            className="sc-hZSUBg dVYOgC"
+            className="c7"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -1528,13 +2341,13 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu dLyPNV"
+      className="c9"
     >
       <div
-        className="sc-dNLxif hhzHuo"
+        className="c10"
       >
         <h2
-          className="sc-jqCOkK iblYWW"
+          className="c11"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -1548,7 +2361,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           Data Sources
         </h2>
         <h1
-          className="sc-uJMKN bZCpGz"
+          className="c12"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -1565,7 +2378,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         </h1>
       </div>
       <div
-        className="sc-bbmXgH fNYDXK"
+        className=""
       >
         <button
           disabled={false}
@@ -1609,10 +2422,10 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       </div>
     </div>
     <section
-      className="sc-cbkKFq MSVjj"
+      className="c13"
     >
       <div
-        className="sc-eLExRp hYupqw"
+        className="c14"
         style={
           Object {
             "backgroundColor": "#1d1d20",
@@ -1635,26 +2448,26 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           }
         >
           <div
-            className="sc-bMVAic jDpWLW"
+            className="c15"
           >
             <ul
-              className="sc-daURTG cjJqXw"
+              className="c16"
             >
               <li
-                className="sc-bXGyLb cAzlMI"
+                className="c17"
                 id="headerItem-0"
               >
                 3 months ago
               </li>
               <li
-                className="sc-bXGyLb cAzlMI"
+                className="c17"
                 id="headerItem-1"
               >
                 firstName lastName
               </li>
             </ul>
             <div
-              className="sc-bAeIUo fhsuHf"
+              className="c18"
             >
               <svg
                 style={
@@ -1677,7 +2490,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           </div>
         </div>
         <h1
-          className="sc-cmthru fTwIns"
+          className="c19"
           id="dataSourceTitle"
           onClick={[Function]}
           style={
@@ -1694,19 +2507,19 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           name
         </h1>
         <div
-          className="sc-hMFtBS kbcMkN"
+          className="c20"
         >
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-0"
             >
               Source
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-0"
             >
               <svg
@@ -1727,64 +2540,64 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-1"
             >
               Items
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-1"
             >
               —
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-2"
             >
               Fields
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-2"
             >
               —
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-3"
             >
               Filters
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-3"
             >
               —
             </span>
           </div>
           <div
-            className="sc-cLQEGU cqadDc"
+            className="c21"
           >
             <span
-              className="sc-gqPbQI fBDXTn"
+              className="c22"
               id="metaItem-4"
             >
               Views
             </span>
             <span
-              className="sc-hORach iXxwtk"
+              className="c23"
               id="metaItemValue-4"
             >
               —
@@ -1794,13 +2607,13 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
       </div>
     </section>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c24"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c25"
       >
         <div
-          className="sc-gZMcBi jZympT"
+          className="c26"
         >
           <button
             disabled={false}

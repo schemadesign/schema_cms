@@ -11,7 +11,7 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: flex-end;
     margin: 60px 0 40px 0;
-  `}
+  `};
 `;
 
 export const Header = styled.div`

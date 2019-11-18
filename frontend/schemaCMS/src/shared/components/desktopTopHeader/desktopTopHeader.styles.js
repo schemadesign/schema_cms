@@ -14,7 +14,7 @@ export const TopContainer = styled.div`
     flex-direction: column;
     border-bottom: solid 2px ${({ theme: { card } }) => card.background};
     width: 100%;
-  `}
+  `};
 `;
 
 export const Container = styled.div`

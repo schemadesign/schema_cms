@@ -1,6 +1,136 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project/AddUser Default 1`] = `
+.c9 {
+  height: 155px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c10 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c12 {
+  width: calc(50% - 5px);
+}
+
+.c1 {
+  width: calc(100% - 50px);
+}
+
+.c2 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c4 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c5 {
+  display: none;
+}
+
+.c6 {
+  margin-right: 20px;
+}
+
+.c7 {
+  color: #FFF;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+@media (min-width:1040px) {
+  .c11 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c10 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    margin-top: 70px;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,10 +140,10 @@ exports[`Storyshots Project/AddUser Default 1`] = `
   }
 >
   <div
-    className="sc-esjQYD fTnZAU"
+    className="c0"
   >
     <div
-      className="sc-kjoXOD kNHzWn"
+      className="c1"
     >
       <div
         style={
@@ -30,7 +160,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
       >
         <div>
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -128,10 +258,10 @@ exports[`Storyshots Project/AddUser Default 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -168,13 +298,13 @@ exports[`Storyshots Project/AddUser Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c2"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c3"
           />
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c4"
           />
         </div>
         <button
@@ -220,13 +350,13 @@ exports[`Storyshots Project/AddUser Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu dLyPNV"
+      className="c5"
     >
       <div
-        className="sc-dNLxif hhzHuo"
+        className="c6"
       >
         <h2
-          className="sc-jqCOkK iblYWW"
+          className="c7"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -242,7 +372,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
           </span>
         </h2>
         <h1
-          className="sc-uJMKN bZCpGz"
+          className="c8"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -261,20 +391,20 @@ exports[`Storyshots Project/AddUser Default 1`] = `
         </h1>
       </div>
       <div
-        className="sc-bbmXgH fNYDXK"
+        className=""
       />
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c9"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c10"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="c11"
         >
           <button
-            className="sc-VigVT dNFsjT"
+            className="c12"
             disabled={false}
             onClick={[Function]}
             style={
@@ -307,6 +437,241 @@ exports[`Storyshots Project/AddUser Default 1`] = `
 `;
 
 exports[`Storyshots Project/AddUser with users 1`] = `
+.c16 {
+  height: 155px;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c17 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c19 {
+  width: calc(50% - 5px);
+}
+
+.c1 {
+  width: calc(100% - 50px);
+}
+
+.c2 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c4 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c5 {
+  display: none;
+}
+
+.c6 {
+  margin-right: 20px;
+}
+
+.c7 {
+  color: #FFF;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding: 10px 0;
+  color: #b7b7b7;
+  border-top: 1px solid #b7b7b7;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 10px;
+}
+
+.c15 {
+  position: relative;
+  height: 15px;
+  width: 15px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.c15:before {
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 2px;
+  background-color: #b7b7b7;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 0;
+}
+
+.c15:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  background-color: #b7b7b7;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.c14 {
+  position: relative;
+  height: 15px;
+  width: 15px;
+}
+
+.c14:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  background-color: #b7b7b7;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.c13 {
+  background-color: transparent !important;
+}
+
+.c11 {
+  word-break: break-all;
+}
+
+@media (min-width:1040px) {
+  .c18 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c17 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c19 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    margin-top: 70px;
+  }
+}
+
 <div
   style={
     Object {
@@ -316,10 +681,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
   }
 >
   <div
-    className="sc-esjQYD fTnZAU"
+    className="c0"
   >
     <div
-      className="sc-kjoXOD kNHzWn"
+      className="c1"
     >
       <div
         style={
@@ -336,7 +701,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
       >
         <div>
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -434,10 +799,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -474,13 +839,13 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c2"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c3"
           />
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c4"
           />
         </div>
         <button
@@ -526,13 +891,13 @@ exports[`Storyshots Project/AddUser with users 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu dLyPNV"
+      className="c5"
     >
       <div
-        className="sc-dNLxif hhzHuo"
+        className="c6"
       >
         <h2
-          className="sc-jqCOkK iblYWW"
+          className="c7"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -548,7 +913,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           </span>
         </h2>
         <h1
-          className="sc-uJMKN bZCpGz"
+          className="c8"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -567,17 +932,17 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         </h1>
       </div>
       <div
-        className="sc-bbmXgH fNYDXK"
+        className=""
       />
     </div>
     <div
-      className="sc-kIPQKe eAOhKr"
+      className="c9"
     >
       <div
-        className="sc-eXEjpC bXTkJV"
+        className="c10"
       >
         <h2
-          className="sc-hrWEMg fOsrtz"
+          className=""
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -590,7 +955,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           Alan Watts
         </h2>
         <h3
-          className="sc-eTuwsz guwQOp"
+          className="c11"
           style={
             Object {
               "color": Object {
@@ -606,10 +971,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         />
       </div>
       <div
-        className="sc-ibxdXY dPivpT"
+        className="c12"
       >
         <button
-          className="sc-bwCtUz dCnfmX"
+          className="c13"
           disabled={false}
           id="removeUserPlusButton0"
           onClick={[Function]}
@@ -631,19 +996,19 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           }
         >
           <div
-            className="sc-iQKALj hSutdd"
+            className="c14"
           />
         </button>
       </div>
     </div>
     <div
-      className="sc-kIPQKe eAOhKr"
+      className="c9"
     >
       <div
-        className="sc-eXEjpC bXTkJV"
+        className="c10"
       >
         <h2
-          className="sc-hrWEMg fOsrtz"
+          className=""
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -656,7 +1021,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           Dale Chihuly
         </h2>
         <h3
-          className="sc-eTuwsz guwQOp"
+          className="c11"
           style={
             Object {
               "color": Object {
@@ -674,10 +1039,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         </h3>
       </div>
       <div
-        className="sc-ibxdXY dPivpT"
+        className="c12"
       >
         <button
-          className="sc-bwCtUz dCnfmX"
+          className="c13"
           disabled={false}
           id="addUserPlusButton1"
           onClick={[Function]}
@@ -699,19 +1064,19 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           }
         >
           <div
-            className="sc-RefOD dkoxiL"
+            className="c15"
           />
         </button>
       </div>
     </div>
     <div
-      className="sc-kIPQKe eAOhKr"
+      className="c9"
     >
       <div
-        className="sc-eXEjpC bXTkJV"
+        className="c10"
       >
         <h2
-          className="sc-hrWEMg fOsrtz"
+          className=""
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -724,7 +1089,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           Dave Bowie
         </h2>
         <h3
-          className="sc-eTuwsz guwQOp"
+          className="c11"
           style={
             Object {
               "color": Object {
@@ -740,10 +1105,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         />
       </div>
       <div
-        className="sc-ibxdXY dPivpT"
+        className="c12"
       >
         <button
-          className="sc-bwCtUz dCnfmX"
+          className="c13"
           disabled={false}
           id="addUserPlusButton2"
           onClick={[Function]}
@@ -765,19 +1130,19 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           }
         >
           <div
-            className="sc-RefOD dkoxiL"
+            className="c15"
           />
         </button>
       </div>
     </div>
     <div
-      className="sc-kIPQKe eAOhKr"
+      className="c9"
     >
       <div
-        className="sc-eXEjpC bXTkJV"
+        className="c10"
       >
         <h2
-          className="sc-hrWEMg fOsrtz"
+          className=""
           style={
             Object {
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -790,7 +1155,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           Pellentesque a massa at purus cursus egestas. Aliquam ut vehicula. Praesent est erat, laoreet et ornare ullamcorper, finibus id nisl. Etiam tempor, ligula a sagittis
         </h2>
         <h3
-          className="sc-eTuwsz guwQOp"
+          className="c11"
           style={
             Object {
               "color": Object {
@@ -808,10 +1173,10 @@ exports[`Storyshots Project/AddUser with users 1`] = `
         </h3>
       </div>
       <div
-        className="sc-ibxdXY dPivpT"
+        className="c12"
       >
         <button
-          className="sc-bwCtUz dCnfmX"
+          className="c13"
           disabled={false}
           id="addUserPlusButton3"
           onClick={[Function]}
@@ -833,22 +1198,22 @@ exports[`Storyshots Project/AddUser with users 1`] = `
           }
         >
           <div
-            className="sc-RefOD dkoxiL"
+            className="c15"
           />
         </button>
       </div>
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c16"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c17"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="c18"
         >
           <button
-            className="sc-VigVT dNFsjT"
+            className="c19"
             disabled={false}
             onClick={[Function]}
             style={
