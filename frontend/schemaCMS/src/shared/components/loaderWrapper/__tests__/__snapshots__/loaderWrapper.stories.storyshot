@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|LoaderWrapper custom no data 1`] = `
   }
 >
   <div
-    className="sc-eLExRp lfgpeQ"
+    className="sc-krvtoX fMwaVV"
   >
     <div
-      className="sc-jlyJG gwKZiE"
+      className="sc-gipzik ukuNU"
     >
       No projects
     </div>
@@ -31,7 +31,7 @@ exports[`Storyshots Shared Components|LoaderWrapper loaded 1`] = `
   }
 >
   <div
-    className="sc-eLExRp lfgpeQ"
+    className="sc-krvtoX fMwaVV"
   >
     <div
       style={
@@ -64,10 +64,10 @@ exports[`Storyshots Shared Components|LoaderWrapper loading 1`] = `
   }
 >
   <div
-    className="sc-eLExRp lfgpeQ"
+    className="sc-krvtoX fMwaVV"
   >
     <div
-      className="sc-hSdWYo bsJfYm"
+      className="sc-eHgmQL gCbwae"
     >
       <span>
         Loading...
@@ -87,10 +87,10 @@ exports[`Storyshots Shared Components|LoaderWrapper no data 1`] = `
   }
 >
   <div
-    className="sc-eLExRp lfgpeQ"
+    className="sc-krvtoX fMwaVV"
   >
     <div
-      className="sc-jlyJG gwKZiE"
+      className="sc-gipzik ukuNU"
     >
       <span>
         No Data Found.
@@ -110,10 +110,10 @@ exports[`Storyshots Shared Components|LoaderWrapper with error 1`] = `
   }
 >
   <div
-    className="sc-eLExRp lfgpeQ"
+    className="sc-krvtoX fMwaVV"
   >
     <div
-      className="sc-cbkKFq fdULlA"
+      className="sc-fYiAbW eZfVup"
     >
       Some error
     </div>

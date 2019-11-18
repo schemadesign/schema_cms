@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   }
 >
   <div
-    className="sc-itybZL iZLSTK"
+    className="sc-dTdPqK coZwRo"
   >
     <div
-      className="sc-eMigcr gAIcHu"
+      className="sc-itybZL WHeQL"
     >
       <div
         style={
@@ -31,24 +31,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
       >
         <div>
           <div
-            className="sc-gPWkxV eqQRaT"
+            className="sc-fzsDOv igfwvp"
           >
             <a
-              className="sc-kUaPvJ sc-giadOv gFLRs"
+              className="sc-jVODtj sc-kUaPvJ bEWXtm"
               href="/"
               onClick={[Function]}
             >
-              <svg
-                className="sc-VJcYb jXZujN"
-              >
-                schemaLogo.svg
-              </svg>
+              <schemaLogo.svg
+                className="sc-fONwsr dCUrXn"
+              />
             </a>
             <div
-              className="sc-jVODtj gbMVYW"
+              className="sc-gPWkxV kadvqG"
             >
               <a
-                className="sc-kUaPvJ sc-fONwsr lcYbyR"
+                className="sc-jVODtj sc-giadOv flAysj"
                 href="/logout"
                 onClick={[Function]}
               >
@@ -68,7 +66,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 </svg>
               </a>
               <a
-                className="sc-kUaPvJ sc-fONwsr lcYbyR"
+                className="sc-jVODtj sc-giadOv flAysj"
                 href="/user/me"
                 onClick={[Function]}
               >
@@ -154,7 +152,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
         </button>
       </div>
       <div
-        className="sc-fzsDOv fnjgfI"
+        className="sc-eMigcr eGxKvP"
       />
       <div
         style={
@@ -177,10 +175,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
         }
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className="sc-TOsTZ kjYrri"
         >
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -213,13 +211,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-TOsTZ iUQrOT"
+          className="sc-kgAjT gYPKSC"
         >
           <ul
-            className="sc-kgAjT sc-cJSrbW doKZeW"
+            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
           >
             <li
-              className="sc-hmzhuo sc-frDJqD TGbH"
+              className="sc-frDJqD sc-kvZOFW jeugWf"
             >
               <a
                 href="/path"
@@ -230,7 +228,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
             </li>
             <li
-              className="sc-hmzhuo sc-frDJqD TGbH"
+              className="sc-frDJqD sc-kvZOFW jeugWf"
             >
               <a
                 href="/path"
@@ -242,10 +240,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
             </li>
           </ul>
           <ul
-            className="sc-kgAjT sc-ksYbfQ iFxI"
+            className="sc-cJSrbW sc-hmzhuo ieDQGb"
           >
             <li
-              className="sc-hmzhuo sc-kvZOFW ixXwCE"
+              className="sc-frDJqD sc-hqyNC kPGXtZ"
             >
               <a
                 href="/logout"
@@ -256,7 +254,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
             </li>
             <li
-              className="sc-hmzhuo sc-kvZOFW ixXwCE"
+              className="sc-frDJqD sc-hqyNC kPGXtZ"
               id="id"
               onClick={[Function]}
             >
@@ -321,10 +319,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   }
 >
   <div
-    className="sc-itybZL iZLSTK"
+    className="sc-dTdPqK coZwRo"
   >
     <div
-      className="sc-eMigcr gAIcHu"
+      className="sc-itybZL WHeQL"
     >
       <div
         style={
@@ -342,24 +340,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
       >
         <div>
           <div
-            className="sc-gPWkxV eqQRaT"
+            className="sc-fzsDOv igfwvp"
           >
             <a
-              className="sc-kUaPvJ sc-giadOv gFLRs"
+              className="sc-jVODtj sc-kUaPvJ bEWXtm"
               href="/"
               onClick={[Function]}
             >
-              <svg
-                className="sc-VJcYb jXZujN"
-              >
-                schemaLogo.svg
-              </svg>
+              <schemaLogo.svg
+                className="sc-fONwsr dCUrXn"
+              />
             </a>
             <div
-              className="sc-ipXKqB eiygcr"
+              className="sc-VJcYb btoQmr"
             >
               <h1
-                className="sc-hmXxxW iJBpOx"
+                className="sc-ipXKqB bgxuUB"
                 style={
                   Object {
                     "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -379,10 +375,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </h1>
             </div>
             <div
-              className="sc-jVODtj gbMVYW"
+              className="sc-gPWkxV kadvqG"
             >
               <a
-                className="sc-kUaPvJ sc-fONwsr lcYbyR"
+                className="sc-jVODtj sc-giadOv flAysj"
                 href="/logout"
                 onClick={[Function]}
               >
@@ -402,7 +398,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 </svg>
               </a>
               <a
-                className="sc-kUaPvJ sc-fONwsr lcYbyR"
+                className="sc-jVODtj sc-giadOv flAysj"
                 href="/user/me"
                 onClick={[Function]}
               >
@@ -488,7 +484,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
         </button>
       </div>
       <div
-        className="sc-fzsDOv fnjgfI"
+        className="sc-eMigcr eGxKvP"
       />
       <div
         style={
@@ -511,10 +507,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
         }
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className="sc-TOsTZ kjYrri"
         >
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -547,13 +543,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
           </div>
         </div>
         <div
-          className="sc-TOsTZ iUQrOT"
+          className="sc-kgAjT gYPKSC"
         >
           <ul
-            className="sc-kgAjT sc-cJSrbW doKZeW"
+            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
           >
             <li
-              className="sc-hmzhuo sc-frDJqD TGbH"
+              className="sc-frDJqD sc-kvZOFW jeugWf"
             >
               <a
                 href="/path"
@@ -564,7 +560,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
             </li>
             <li
-              className="sc-hmzhuo sc-frDJqD TGbH"
+              className="sc-frDJqD sc-kvZOFW jeugWf"
             >
               <a
                 href="/path"
@@ -576,10 +572,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
             </li>
           </ul>
           <ul
-            className="sc-kgAjT sc-ksYbfQ iFxI"
+            className="sc-cJSrbW sc-hmzhuo ieDQGb"
           >
             <li
-              className="sc-hmzhuo sc-kvZOFW ixXwCE"
+              className="sc-frDJqD sc-hqyNC kPGXtZ"
             >
               <a
                 href="/logout"
@@ -590,7 +586,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
             </li>
             <li
-              className="sc-hmzhuo sc-kvZOFW ixXwCE"
+              className="sc-frDJqD sc-hqyNC kPGXtZ"
               id="id"
               onClick={[Function]}
             >
@@ -655,10 +651,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   }
 >
   <div
-    className="sc-itybZL iZLSTK"
+    className="sc-dTdPqK coZwRo"
   >
     <div
-      className="sc-eMigcr gAIcHu"
+      className="sc-itybZL WHeQL"
     >
       <div
         style={
@@ -676,24 +672,22 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
       >
         <div>
           <div
-            className="sc-gPWkxV eqQRaT"
+            className="sc-fzsDOv igfwvp"
           >
             <a
-              className="sc-kUaPvJ sc-giadOv gFLRs"
+              className="sc-jVODtj sc-kUaPvJ bEWXtm"
               href="/"
               onClick={[Function]}
             >
-              <svg
-                className="sc-VJcYb jXZujN"
-              >
-                schemaLogo.svg
-              </svg>
+              <schemaLogo.svg
+                className="sc-fONwsr dCUrXn"
+              />
             </a>
             <div
-              className="sc-ipXKqB eiygcr"
+              className="sc-VJcYb btoQmr"
             >
               <h1
-                className="sc-hmXxxW iJBpOx"
+                className="sc-ipXKqB bgxuUB"
                 style={
                   Object {
                     "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
@@ -709,10 +703,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </h1>
             </div>
             <div
-              className="sc-jVODtj gbMVYW"
+              className="sc-gPWkxV kadvqG"
             >
               <a
-                className="sc-kUaPvJ sc-fONwsr lcYbyR"
+                className="sc-jVODtj sc-giadOv flAysj"
                 href="/logout"
                 onClick={[Function]}
               >
@@ -732,7 +726,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 </svg>
               </a>
               <a
-                className="sc-kUaPvJ sc-fONwsr lcYbyR"
+                className="sc-jVODtj sc-giadOv flAysj"
                 href="/user/me"
                 onClick={[Function]}
               >
@@ -818,7 +812,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
         </button>
       </div>
       <div
-        className="sc-fzsDOv fnjgfI"
+        className="sc-eMigcr eGxKvP"
       />
       <div
         style={
@@ -841,10 +835,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
         }
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className="sc-TOsTZ kjYrri"
         >
           <div
-            className="sc-kjoXOD hpTAeq"
+            className="sc-cHGsZl bHiaRe"
           >
             <h2
               id="headerTitle"
@@ -877,13 +871,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
           </div>
         </div>
         <div
-          className="sc-TOsTZ iUQrOT"
+          className="sc-kgAjT gYPKSC"
         >
           <ul
-            className="sc-kgAjT sc-cJSrbW doKZeW"
+            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
           >
             <li
-              className="sc-hmzhuo sc-frDJqD TGbH"
+              className="sc-frDJqD sc-kvZOFW jeugWf"
             >
               <a
                 href="/path"
@@ -894,7 +888,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </a>
             </li>
             <li
-              className="sc-hmzhuo sc-frDJqD TGbH"
+              className="sc-frDJqD sc-kvZOFW jeugWf"
             >
               <a
                 href="/path"
@@ -906,10 +900,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
             </li>
           </ul>
           <ul
-            className="sc-kgAjT sc-ksYbfQ iFxI"
+            className="sc-cJSrbW sc-hmzhuo ieDQGb"
           >
             <li
-              className="sc-hmzhuo sc-kvZOFW ixXwCE"
+              className="sc-frDJqD sc-hqyNC kPGXtZ"
             >
               <a
                 href="/logout"
@@ -920,7 +914,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </a>
             </li>
             <li
-              className="sc-hmzhuo sc-kvZOFW ixXwCE"
+              className="sc-frDJqD sc-hqyNC kPGXtZ"
               id="id"
               onClick={[Function]}
             >

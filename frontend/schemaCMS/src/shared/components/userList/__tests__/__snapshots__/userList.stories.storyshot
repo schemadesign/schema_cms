@@ -9,8 +9,8 @@ exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
     }
   }
 >
-  <div
-    className="sc-krvtoX fcledC"
+  <section
+    className="sc-cbkKFq MSVjj"
   />
 </div>
 `;
@@ -24,11 +24,11 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
     }
   }
 >
-  <div
-    className="sc-krvtoX fcledC"
+  <section
+    className="sc-cbkKFq MSVjj"
   >
     <div
-      className="sc-fYiAbW iBLBRn"
+      className="sc-eLExRp hYupqw"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -62,7 +62,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       />
     </div>
     <div
-      className="sc-fYiAbW iBLBRn"
+      className="sc-eLExRp hYupqw"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -96,7 +96,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       />
     </div>
     <div
-      className="sc-fYiAbW iBLBRn"
+      className="sc-eLExRp hYupqw"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -131,7 +131,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
         className="sc-fOKMvo ihHVFz"
       />
     </div>
-  </div>
+  </section>
 </div>
 `;
 
@@ -144,11 +144,11 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
     }
   }
 >
-  <div
-    className="sc-krvtoX fcledC"
+  <section
+    className="sc-cbkKFq MSVjj"
   >
     <div
-      className="sc-fYiAbW iBLBRn"
+      className="sc-eLExRp hYupqw"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -222,7 +222,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       </div>
     </div>
     <div
-      className="sc-fYiAbW iBLBRn"
+      className="sc-eLExRp hYupqw"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -296,7 +296,7 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       </div>
     </div>
     <div
-      className="sc-fYiAbW iBLBRn"
+      className="sc-eLExRp hYupqw"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -371,6 +371,6 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
         </button>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;

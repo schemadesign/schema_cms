@@ -2,7 +2,7 @@
 
 exports[`Storyshots Shared Components|NoData custom 1`] = `
 <div
-  className="sc-jlyJG kVqVxi"
+  className="sc-gipzik oZzpl"
 >
   No Projects
 </div>
@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|NoData custom 1`] = `
 
 exports[`Storyshots Shared Components|NoData default 1`] = `
 <div
-  className="sc-jlyJG kVqVxi"
+  className="sc-gipzik oZzpl"
 >
   <span>
     No Data Found.

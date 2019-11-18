@@ -10,10 +10,10 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
   }
 >
   <div
-    className="sc-TFwJa elkDCw"
+    className="sc-fjmCvl fwQMrf"
   >
     <form
-      className="sc-bHwgHz ePnYhO"
+      className="sc-TFwJa gzYRmt"
       onSubmit={[Function]}
     >
       <div
@@ -229,6 +229,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             Role
           </label>
           <input
+            disabled={true}
             id="role"
             name="role"
             onChange={[Function]}
@@ -266,6 +267,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
             className="sc-gZMcBi brDpsb"
           >
             <button
+              className="sc-VigVT iGqnRu"
               disabled={false}
               onClick={[Function]}
               style={
@@ -279,11 +281,9 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
                   "fill": "#FFF",
                   "fontSize": "18px",
                   "margin": "0",
-                  "marginRight": 5,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "width": "calc(50% - 5px)",
                 }
               }
               type="button"
@@ -293,6 +293,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
               </span>
             </button>
             <button
+              className="sc-VigVT iGqnRu"
               disabled={false}
               style={
                 Object {
@@ -305,11 +306,9 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
                   "fill": "#FFF",
                   "fontSize": "18px",
                   "margin": "0",
-                  "marginLeft": 5,
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
-                  "width": "calc(50% - 5px)",
                 }
               }
               type="submit"
