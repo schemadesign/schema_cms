@@ -15,6 +15,13 @@ export class LoaderWrapper extends PureComponent {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   };
 
+  static defaultProps = {
+    loading: false,
+    noData: false,
+    noDataContent: null,
+    error: null,
+  };
+
   renderContent = cond([
     [propEq('loading', true), always(<Loader />)],
     [({ error }) => !isNil(error), () => <ErrorContainer>{this.props.error}</ErrorContainer>],
