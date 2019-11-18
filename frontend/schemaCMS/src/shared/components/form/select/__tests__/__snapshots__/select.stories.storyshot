@@ -1,9 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Form/Select Default 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c0 label {
+  margin-bottom: 1px;
+}
+
+.c1 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
 <div>
   <div
-    className="sc-fYxtnH bBxIKO"
+    className="c0"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -29,7 +51,7 @@ exports[`Storyshots Shared Components|Form/Select Default 1`] = `
       value="one"
     />
     <div
-      className="sc-tilXH eucPMw"
+      className="c1"
     >
       <svg
         style={

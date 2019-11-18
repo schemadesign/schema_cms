@@ -4,9 +4,7 @@ import { colors } from '../../../theme/styled';
 
 const { Span: SpanUI } = Typography;
 
-export const Container = styled.div`
-  ${({ theme }) => theme.colors.white}
-`;
+export const Container = styled.div``;
 
 export const buttonStyles = {
   width: 96,

@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const ProjectView = styled.div`
   ${media.desktop`
     margin-top: 70px;
-  `}
+  `};
 `;
 
 export const Details = styled.ul`
@@ -31,7 +31,7 @@ export const Details = styled.ul`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  `}
+  `};
 `;
 
 export const DetailItem = styled.li`
@@ -45,7 +45,7 @@ export const DetailItem = styled.li`
     width: calc(50% - 10px);
     flex: 0 0 auto;
     order: ${({ order }) => order};
-  `}
+  `};
 `;
 
 export const DetailWrapper = styled.div`
@@ -57,7 +57,7 @@ export const DetailWrapper = styled.div`
   ${media.desktop`
     flex-direction: column;
     font-weight: normal;
-  `}
+  `};
 `;
 
 export const DetailLabel = styled.span`
@@ -68,7 +68,7 @@ export const DetailLabel = styled.span`
   ${media.desktop`
     font-size: 14px;
     margin-bottom: 6px;
-  `}
+  `};
 `;
 
 export const DetailValue = styled.span`
@@ -79,7 +79,7 @@ export const DetailValue = styled.span`
 
   ${media.desktop`
     font-size: 18px;
-  `}
+  `};
 `;
 
 export const Statistics = styled.ul`
@@ -89,7 +89,7 @@ export const Statistics = styled.ul`
   ${media.desktop`
     margin-bottom: 30px;
     margin-left: -${desktopMargin}px;
-  `}
+  `};
 `;
 
 export const CardWrapper = styled.li`
@@ -118,7 +118,7 @@ export const CardWrapper = styled.li`
     &:nth-child(2n) {
       margin-left: ${desktopMargin}px;
     }
-  `}
+  `};
 `;
 
 export const CardHeader = styled.span`
@@ -126,7 +126,7 @@ export const CardHeader = styled.span`
 
   ${media.desktop`
     font-size: 18px;
-  `}
+  `};
 `;
 
 export const CardValue = styled.span`
@@ -139,7 +139,7 @@ export const CardValue = styled.span`
     padding-top: 40px;
     font-size: 108px;
     line-height: 1em;
-  `}
+  `};
 `;
 
 export const statisticsCardStyles = {

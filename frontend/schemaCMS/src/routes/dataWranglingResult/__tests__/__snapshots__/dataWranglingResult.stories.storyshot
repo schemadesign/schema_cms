@@ -1,6 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots DataWranglingResult Default 1`] = `
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 23px;
+}
+
+.c1 {
+  height: 155px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c2 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c4 {
+  width: calc(50% - 5px);
+}
+
+.c5 {
+  width: calc(50% - 5px);
+}
+
+.c0 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c2 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    width: 23.5%;
+    -webkit-transform: translateX(-255px);
+    -ms-transform: translateX(-255px);
+    transform: translateX(-255px);
+  }
+}
+
 <div
   style={
     Object {
@@ -10,13 +99,13 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
   }
 >
   <div
-    className="sc-cvbbAY dbHDoR"
+    className=""
   >
     <div
-      className="sc-dVhcbM fghLuF"
+      className=""
     >
       <div
-        className="sc-eHgmQL gCbwae"
+        className="c0"
       >
         <span>
           Loading...
@@ -24,16 +113,16 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c1"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c2"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="c3"
         >
           <button
-            className="sc-VigVT dNFsjT"
+            className="c4"
             disabled={false}
             onClick={[Function]}
             style={
@@ -59,7 +148,7 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
             </span>
           </button>
           <button
-            className="sc-VigVT eTfsKS"
+            className="c5"
             disabled={false}
             onClick={[Function]}
             style={
@@ -85,7 +174,7 @@ exports[`Storyshots DataWranglingResult Default 1`] = `
             </span>
           </button>
           <div
-            className="sc-dnqmqq iuexap"
+            className="c6"
           >
             <div
               style={

@@ -54,7 +54,7 @@ export const ModalActions = styled.div`
   ${media.desktop`
     margin-top: 30px;
     position: static;
-  `}
+  `};
 `;
 
 export const getModalStyles = () => {

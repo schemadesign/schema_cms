@@ -7,7 +7,7 @@ import { media } from '../../../theme/media';
 export const Container = styled.div`
   ${media.desktop`
     margin-top: 70px;
-  `}
+  `};
 `;
 
 export const UserItem = styled.div`

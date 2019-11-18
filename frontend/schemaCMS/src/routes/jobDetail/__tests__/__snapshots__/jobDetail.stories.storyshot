@@ -2,8 +2,39 @@
 
 exports[`Storyshots JobDetail Default 1`] = `
 Array [
-  <div
-    className="sc-kjoXOD kNHzWn"
+  .c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+<div
+    className="c0"
   >
     <div
       style={
@@ -20,7 +51,7 @@ Array [
     >
       <div>
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -118,10 +149,10 @@ Array [
       }
     >
       <div
-        className="sc-TOsTZ kjYrri"
+        className=""
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -158,13 +189,13 @@ Array [
         </div>
       </div>
       <div
-        className="sc-kgAjT gYPKSC"
+        className="c1"
       >
         <ul
-          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+          className="c2"
         />
         <ul
-          className="sc-cJSrbW sc-hmzhuo ieDQGb"
+          className="c3"
         />
       </div>
       <button
@@ -209,24 +240,103 @@ Array [
       </button>
     </div>
   </div>,
-  <div
-    className="sc-eHgmQL bVPvTv"
+  .c0 {
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+<div
+    className="c0"
   >
     <span>
       Loading...
     </span>
   </div>,
-  <div
-    className="sc-iwsKbI eQdjUy"
+  .c0 {
+  height: 155px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c1 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, undefined,undefined 30%, rgba(0,0,0,0) );
+}
+
+.c3 {
+  width: calc(50% - 5px);
+}
+
+.c4 {
+  width: calc(50% - 5px);
+}
+
+@media (min-width:1040px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    width: 23.5%;
+    -webkit-transform: translateX(-255px);
+    -ms-transform: translateX(-255px);
+    transform: translateX(-255px);
+  }
+}
+
+<div
+    className="c0"
   >
     <div
-      className="sc-gqjmRU jrxYk"
+      className="c1"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="c2"
       >
         <button
-          className="sc-VigVT dNFsjT"
+          className="c3"
           disabled={false}
           onClick={[Function]}
           style={
@@ -252,7 +362,7 @@ Array [
           </span>
         </button>
         <button
-          className="sc-VigVT eTfsKS"
+          className="c4"
           disabled={false}
           onClick={[Function]}
           style={

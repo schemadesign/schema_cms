@@ -1,6 +1,173 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
+.c9 {
+  padding-top: 7px;
+}
+
+.c12 {
+  height: 155px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c13 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c15 {
+  width: calc(50% - 5px);
+}
+
+.c16 {
+  width: calc(50% - 5px);
+}
+
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  display: none;
+}
+
+.c5 {
+  margin-right: 20px;
+}
+
+.c6 {
+  color: #FFF;
+}
+
+.c7 {
+  color: #FFF;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c10 label {
+  margin-bottom: 1px;
+}
+
+.c11 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c8 {
+  width: 100%;
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c16 {
+    width: 23.5%;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,10 +177,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
   }
 >
   <div
-    className="sc-ipXKqB FyGUD"
+    className=""
   >
     <div
-      className="sc-kjoXOD kNHzWn"
+      className="c0"
     >
       <div
         style={
@@ -30,7 +197,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       >
         <div>
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -128,10 +295,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -168,13 +335,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c1"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c2"
           />
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c3"
           />
         </div>
         <button
@@ -220,13 +387,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-jbKcbu dLyPNV"
+      className="c4"
     >
       <div
-        className="sc-dNLxif hhzHuo"
+        className="c5"
       >
         <h2
-          className="sc-jqCOkK iblYWW"
+          className="c6"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -242,7 +409,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           </span>
         </h2>
         <h1
-          className="sc-uJMKN bZCpGz"
+          className="c7"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -261,15 +428,15 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </h1>
       </div>
       <div
-        className="sc-bbmXgH fNYDXK"
+        className=""
       />
     </div>
     <form
-      className="sc-hmXxxW jjDAwG"
+      className="c8"
       onSubmit={[Function]}
     >
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -329,7 +496,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -389,7 +556,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -445,7 +612,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             }
           >
             <div
-              className="sc-gzVnrw bHgYaJ"
+              className="c9"
             >
               <svg
                 style={
@@ -467,7 +634,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-fYxtnH bBxIKO"
+        className="c10"
       >
         <label
           id="fieldProjectStatusLabel"
@@ -493,7 +660,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           value="admin"
         />
         <div
-          className="sc-tilXH eucPMw"
+          className="c11"
         >
           <svg
             style={
@@ -603,16 +770,16 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-iwsKbI eQdjUy"
+        className="c12"
       >
         <div
-          className="sc-gqjmRU fIKSOC"
+          className="c13"
         >
           <div
-            className="sc-gZMcBi jSdIIC"
+            className="c14"
           >
             <button
-              className="sc-VigVT dNFsjT"
+              className="c15"
               disabled={false}
               onClick={[Function]}
               style={
@@ -638,7 +805,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
               </span>
             </button>
             <button
-              className="sc-VigVT iGqnRu"
+              className="c16"
               disabled={false}
               style={
                 Object {

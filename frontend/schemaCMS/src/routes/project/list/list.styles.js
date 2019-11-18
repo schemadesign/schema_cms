@@ -11,7 +11,7 @@ export const ProjectsList = styled.ul`
     display: flex;
     flex-wrap: wrap;
     margin-left: -20px;
-  `}
+  `};
 `;
 
 export const ProjectItem = styled.li`
@@ -27,7 +27,7 @@ export const ProjectItem = styled.li`
     width: calc(33% - 16.66px);
     margin: 0 0 20px 20px;
     background: ${({ theme: { card } }) => card.background};
-  `}
+  `};
 `;
 
 export const HeaderList = styled.ul`

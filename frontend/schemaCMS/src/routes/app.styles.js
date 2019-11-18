@@ -11,5 +11,5 @@ export const Content = styled.div`
     width: ${contentSizes.desktop}px;
     margin: 0 auto;
     padding: 0 0 24px 0;
-  `}
+  `};
 `;
