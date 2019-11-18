@@ -1,19 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Settings Default 1`] = `
-.c6 {
+.c9 {
+  padding-top: 7px;
+}
+
+.c12 {
   height: 155px;
 }
 
-.c8 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -24,16 +28,45 @@ exports[`Storyshots Settings Default 1`] = `
   width: 100%;
 }
 
-.c7 {
+.c13 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
   width: calc(100% - 40px);
-  background-image: linear-gradient( to top, undefined,undefined 30%, rgba(0,0,0,0) );
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c9 {
+.c15 {
   width: calc(50% - 5px);
+}
+
+.c11 {
+  cursor: pointer;
+  margin-bottom: 30px;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c11:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c10 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .c0 {
@@ -62,23 +95,23 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 .c4 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
+  display: none;
 }
 
-.c4 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: block;
+.c5 {
+  margin-right: 20px;
 }
 
-.c4 a {
-  padding: 8px 0;
+.c6 {
+  color: #FFF;
+}
+
+.c7 {
+  color: #FFF;
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c14 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -87,13 +120,13 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c7 {
+  .c13 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c15 {
     width: 23.5%;
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -108,13 +141,36 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c5 {
+  .c4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c8 {
     margin-top: 70px;
   }
 }
 
 <div
-  className=""
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
 >
   <div
     className="c0"
@@ -148,7 +204,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           >
             <span>
-              Admin Settings
+              SchemaCMS
             </span>
           </h2>
           <h1
@@ -165,7 +221,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           >
             <span>
-              Profile
+              My Profile
             </span>
           </h1>
         </div>
@@ -249,7 +305,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           >
             <span>
-              Admin Settings
+              SchemaCMS
             </span>
           </h2>
           <h1
@@ -266,7 +322,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           >
             <span>
-              Profile
+              My Profile
             </span>
           </h1>
         </div>
@@ -279,34 +335,7 @@ exports[`Storyshots Settings Default 1`] = `
         />
         <ul
           className="c3"
-        >
-          <li
-            className="c4"
-          >
-            <a
-              href="/reset-password"
-              id={null}
-              onClick={[Function]}
-            >
-              <span>
-                Reset Password
-              </span>
-            </a>
-          </li>
-          <li
-            className="c4"
-          >
-            <a
-              href="/logout"
-              id={null}
-              onClick={[Function]}
-            >
-              <span>
-                Log out
-              </span>
-            </a>
-          </li>
-        </ul>
+        />
       </div>
       <button
         disabled={false}
@@ -351,7 +380,52 @@ exports[`Storyshots Settings Default 1`] = `
     </div>
   </div>
   <div
-    className="c5"
+    className="c4"
+  >
+    <div
+      className="c5"
+    >
+      <h2
+        className="c6"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          SchemaCMS
+        </span>
+      </h2>
+      <h1
+        className="c7"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          My Profile
+        </span>
+      </h1>
+    </div>
+    <div
+      className=""
+    />
+  </div>
+  <div
+    className="c8"
   >
     <form
       className=""
@@ -414,7 +488,27 @@ exports[`Storyshots Settings Default 1`] = `
                 "top": 0,
               }
             }
-          />
+          >
+            <div
+              className="c9"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -474,7 +568,27 @@ exports[`Storyshots Settings Default 1`] = `
                 "top": 0,
               }
             }
-          />
+          >
+            <div
+              className="c9"
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "30px",
+                    "width": "30px",
+                  }
+                }
+                viewBox="0 0 30 30"
+              >
+                <path
+                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -513,7 +627,6 @@ exports[`Storyshots Settings Default 1`] = `
             id="email"
             name="email"
             onChange={[Function]}
-            readOnly={true}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -525,7 +638,6 @@ exports[`Storyshots Settings Default 1`] = `
               }
             }
             type="text"
-            value=""
           />
           <div
             style={
@@ -539,16 +651,60 @@ exports[`Storyshots Settings Default 1`] = `
         </div>
       </div>
       <div
-        className="c6"
+        className="c10"
+      >
+        <span
+          className="c11"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "14px",
+            }
+          }
+        >
+          <span>
+            Reset password
+          </span>
+        </span>
+      </div>
+      <div
+        className="c12"
       >
         <div
-          className="c7"
+          className="c13"
         >
           <div
-            className="c8"
+            className="c14"
           >
             <button
-              className="c9"
+              className="c15"
+              disabled={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                }
+              }
+              type="button"
+            >
+              <span>
+                Back
+              </span>
+            </button>
+            <button
+              className="c15"
               disabled={true}
               style={
                 Object {

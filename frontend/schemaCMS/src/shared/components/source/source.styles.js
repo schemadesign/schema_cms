@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../../../theme/styled';
 
-const { Span: SpanUI } = Typography;
-
 export const Container = styled.div``;
 
 export const buttonStyles = {
