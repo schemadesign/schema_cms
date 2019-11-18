@@ -34,13 +34,14 @@ export class UserProfile extends PureComponent {
     removeUserFromProject: PropTypes.func,
     isAdmin: PropTypes.bool,
     intl: PropTypes.object.isRequired,
-    isCurrentUser: PropTypes.bool.isRequired,
+    isCurrentUser: PropTypes.bool,
     match: PropTypes.object,
     history: PropTypes.object.isRequired,
   };
 
   static defaultProps = {
     isAdmin: false,
+    isCurrentUser: false,
   };
 
   state = {
@@ -118,7 +119,12 @@ export class UserProfile extends PureComponent {
   );
 
   renderContent = ({ values, handleChange, handleSubmit, dirty, ...restProps }) => {
-    const { intl, isCurrentUser, isAdmin } = this.props;
+    const {
+      intl,
+      isCurrentUser,
+      isAdmin,
+      userData: { email },
+    } = this.props;
     const { projectId } = this.state;
     const firstNameLabel = intl.formatMessage(messages.firstNameLabel);
     const lastNameLabel = intl.formatMessage(messages.lastNameLabel);
@@ -149,7 +155,7 @@ export class UserProfile extends PureComponent {
             label={lastNameLabel}
             {...restProps}
           />
-          <TextInput disabled fullWidth readOnly value={values[EMAIL]} name={EMAIL} label={emailLabel} />
+          <TextInput disabled fullWidth value={email} onChange={handleChange} name={EMAIL} label={emailLabel} />
           {this.renderRole({ values, roleLabel, restProps })(!isCurrentUser)}
           {this.renderLink(isCurrentUser)}
           <Modal isOpen={this.state.userRemoveModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>

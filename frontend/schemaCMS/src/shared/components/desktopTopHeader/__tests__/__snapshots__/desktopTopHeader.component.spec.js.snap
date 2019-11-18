@@ -35,7 +35,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
             <Component />
           </Styled(Styled(Link))>
           <Styled(Styled(Link))
-            to="/user/me"
+            to="/settings"
           >
             <Component />
           </Styled(Styled(Link))>

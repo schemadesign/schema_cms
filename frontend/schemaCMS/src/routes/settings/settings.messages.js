@@ -3,11 +3,11 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'user.view.title',
-    defaultMessage: 'Users',
+    id: 'settings.title',
+    defaultMessage: 'SchemaCMS',
   },
   subTitle: {
-    id: 'user.view.subTitle',
-    defaultMessage: 'Profile',
+    id: 'settings.subTitle',
+    defaultMessage: 'My Profile',
   },
 });

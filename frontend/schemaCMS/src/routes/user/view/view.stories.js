@@ -2,20 +2,21 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { View } from './view.component';
+import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   fetchUser: Function.prototype,
   removeUser: Function.prototype,
-  updateMe: Function.prototype,
   removeUserFromProject: Function.prototype,
-  currentUser: {},
+  userData: { id: '1' },
   history: {},
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
-  user: {},
   isAdmin: true,
   match: { params: { userId: '1' } },
 };
 
-storiesOf('View', module).add('Default', () => <View {...defaultProps} />);
+storiesOf('View', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <View {...defaultProps} />);

@@ -54,7 +54,7 @@ export class DesktopTopHeader extends TopHeader {
         <IconLink to="/logout">
           <ExitIcon />
         </IconLink>
-        <IconLink to="/user/me">
+        <IconLink to="/settings">
           <UserIcon />
         </IconLink>
       </Actions>

@@ -17,7 +17,6 @@ exports[`View: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
-    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={
@@ -33,6 +32,31 @@ exports[`View: Component should render correctly 1`] = `
         id="user.view.title"
         values={Object {}}
       />
+    }
+  />
+  <UserProfile
+    fetchUser={[Function]}
+    history={Object {}}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAdmin={true}
+    isCurrentUser={false}
+    match={
+      Object {
+        "params": Object {
+          "userId": "1",
+        },
+      }
+    }
+    removeUser={[Function]}
+    removeUserFromProject={[Function]}
+    userData={
+      Object {
+        "id": "1",
+      }
     }
   />
 </styled.div>
@@ -55,7 +79,6 @@ exports[`View: Component should render without remove user button 1`] = `
         values={Object {}}
       />
     }
-    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={
@@ -71,6 +94,31 @@ exports[`View: Component should render without remove user button 1`] = `
         id="user.view.title"
         values={Object {}}
       />
+    }
+  />
+  <UserProfile
+    fetchUser={[Function]}
+    history={Object {}}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAdmin={false}
+    isCurrentUser={false}
+    match={
+      Object {
+        "params": Object {
+          "userId": "1",
+        },
+      }
+    }
+    removeUser={[Function]}
+    removeUserFromProject={[Function]}
+    userData={
+      Object {
+        "id": "1",
+      }
     }
   />
 </styled.div>

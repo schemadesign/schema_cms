@@ -1,10 +1,10 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 import { Container, Form } from './userCreate.styles';
 import { NEW_USER_ROLES_OPTIONS, USER_ROLE } from '../../../../modules/user/user.constants';
-import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../utils/rendering';
+import { renderWhenTrueOtherwise } from '../../../utils/rendering';
 import { TextInput } from '../../form/inputs/textInput';
 import { EMAIL, FIRST_NAME, LAST_NAME } from '../../../../modules/userProfile/userProfile.constants';
 import { Select } from '../../form/select';

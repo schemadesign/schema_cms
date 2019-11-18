@@ -428,7 +428,6 @@ exports[`UserProfile: Component should render correctly form 1`] = `
         label="Email"
         name="email"
         onChange={[Function]}
-        readOnly={true}
         touched={Object {}}
         value=""
       />
@@ -862,7 +861,6 @@ exports[`UserProfile: Component should render correctly form for user settings 1
         label="Email"
         name="email"
         onChange={[Function]}
-        readOnly={true}
         touched={Object {}}
         value=""
       />

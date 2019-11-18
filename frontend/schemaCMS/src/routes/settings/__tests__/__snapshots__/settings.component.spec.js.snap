@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings: Component should render correctly 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="My Profile"
+        id="settings.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="SchemaCMS"
+        id="settings.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="My Profile"
+        id="settings.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="SchemaCMS"
+        id="settings.title"
+        values={Object {}}
+      />
+    }
+  />
+  <UserProfile
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAdmin={false}
+    isCurrentUser={true}
+    updateMe={[Function]}
+    userData={Object {}}
+  />
+</Fragment>
+`;
