@@ -1,10 +1,22 @@
 import softdelete.models
 from django.db import models, transaction
+from django.db.models.functions import Coalesce
 
 
 class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
     def annotate_data_source_count(self):
-        return self.annotate(data_source_count=models.Count("data_sources"))
+        from .models import DataSource
+
+        subquery = (
+            DataSource.objects.order_by()
+            .values('project')
+            .filter(project=models.OuterRef("pk"))
+            .annotate(count=models.Count("pk"))
+            .values("count")
+        )
+        return self.annotate(
+            data_source_count=Coalesce(models.Subquery(subquery, output_field=models.IntegerField()), 0)
+        )
 
 
 def generate_soft_delete_manager(queryset_class):
