@@ -160,9 +160,9 @@ function* revertToJob({ payload: { dataSourceId, jobId } }) {
   try {
     yield put(DataSourceRoutines.revertToJob.request());
 
-    yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/revert-job`, { id: jobId });
+    const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/revert-job`, { id: jobId });
 
-    yield put(DataSourceRoutines.revertToJob.success());
+    yield put(DataSourceRoutines.revertToJob.success(data));
     browserHistory.push(`/datasource/${dataSourceId}/4`);
   } catch (error) {
     yield put(DataSourceRoutines.revertToJob.failure(error));

@@ -41,4 +41,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [DataSourceRoutines.fetchList.SUCCESS]: updateDataSources,
   [DataSourceRoutines.fetchFieldsInfo.SUCCESS]: setFieldsInfo,
   [DataSourceRoutines.fetchPreview.SUCCESS]: setPreviewData,
+  [DataSourceRoutines.revertToJob.SUCCESS]: updateDataSource,
 });
