@@ -41,7 +41,7 @@ class TestUser:
 
         token = user.get_jwt_token()
 
-        jwt_payload_handler_mock.assert_called_with(user)
+        jwt_payload_handler_mock.assert_called_with(user, extra_data={"auth_method": None})
         jwt_encode_handler_mock.assert_called_with(jwt_payload_handler_mock.return_value)
         assert token == jwt_encode_handler_mock.return_value
 
