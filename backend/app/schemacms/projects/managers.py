@@ -15,7 +15,9 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
             .values("count")
         )
         return self.annotate(
-            data_source_count=Coalesce(models.Subquery(subquery, output_field=models.IntegerField()), 0)
+            data_source_count=Coalesce(
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
+            )
         )
 
 
