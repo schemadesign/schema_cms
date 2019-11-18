@@ -11,15 +11,13 @@ export class RadioStyled extends PureComponent {
   };
 
   render() {
-    const { containerStyles, radioStyles, checkedRadioStyles } = getStyles(this.props.theme);
+    const { radioStyles, checkedRadioStyles } = getStyles(this.props.theme);
     const { value, selectedValue } = this.props;
 
     return (
-      <section style={containerStyles}>
-        <RadioBaseComponent {...this.props}>
-          <div style={radioStyles}>{value === selectedValue ? <div style={checkedRadioStyles} /> : null}</div>
-        </RadioBaseComponent>
-      </section>
+      <RadioBaseComponent {...this.props}>
+        <div style={radioStyles}>{value === selectedValue ? <div style={checkedRadioStyles} /> : null}</div>
+      </RadioBaseComponent>
     );
   }
 }

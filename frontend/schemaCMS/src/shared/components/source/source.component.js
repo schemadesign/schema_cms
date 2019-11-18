@@ -36,7 +36,7 @@ import { renderWhenTrue } from '../../utils/rendering';
 import browserHistory from '../../utils/history';
 import { getModalStyles, ModalActions, ModalButton, ModalTitle } from '../modal/modal.styles';
 
-const { RadioGroup, RadioButton, Label } = Form;
+const { RadioGroup, RadioBaseComponent, Label } = Form;
 const { CsvIcon } = Icons;
 
 export class SourceComponent extends PureComponent {
@@ -149,7 +149,7 @@ export class SourceComponent extends PureComponent {
     const { fill, background } = type === DATA_SOURCE_FILE ? active : unActive;
 
     return (
-      <RadioButton
+      <RadioBaseComponent
         label={this.props.intl.formatMessage(messages.spreadsheet)}
         value={DATA_SOURCE_FILE}
         id={DATA_SOURCE_FILE}
@@ -157,7 +157,7 @@ export class SourceComponent extends PureComponent {
         <Button customStyles={{ background, ...buttonStyles }} type="button">
           <CsvIcon customStyles={{ fill }} />
         </Button>
-      </RadioButton>
+      </RadioBaseComponent>
     );
   };
 

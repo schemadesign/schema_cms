@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { RadioGroup } from '../radioGroup.component';
-import { RadioButton } from '../../radioButton';
+import { RadioBaseComponent } from '../../radioButton/radioBase/radioBase.component.js';
 
 describe('RadioGroup: Component', () => {
   const defaultProps = {
@@ -13,12 +13,12 @@ describe('RadioGroup: Component', () => {
 
   const component = props => (
     <RadioGroup {...defaultProps} {...props}>
-      <RadioButton label="label 1" value="value 1" id="label 1">
+      <RadioBaseComponent label="label 1" value="value 1" id="label 1">
         label 1
-      </RadioButton>
-      <RadioButton label="label 2" value="value 2" id="label 2">
+      </RadioBaseComponent>
+      <RadioBaseComponent label="label 2" value="value 2" id="label 2">
         label 2
-      </RadioButton>
+      </RadioBaseComponent>
     </RadioGroup>
   );
 

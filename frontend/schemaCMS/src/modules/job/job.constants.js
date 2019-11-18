@@ -2,6 +2,8 @@ import * as Yup from 'yup';
 
 export const JOB_DETAIL_FORM = 'job_detail_form';
 
+export const JOB_OPTION = 'job_option_revert';
+
 export const JOB_STATE_PENDING = 'pending';
 export const JOB_STATE_PROCESSING = 'processing';
 export const JOB_STATE_SUCCESS = 'success';

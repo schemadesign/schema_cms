@@ -30,7 +30,7 @@ class RadioGroupStory extends PureComponent {
 
   render() {
     return (
-      <RadioGroup {...defaultProps} onChange={this.onChange} value={this.state}>
+      <RadioGroup {...defaultProps} onChange={this.onChange} value={this.state.value}>
         <RadioBaseComponent label="radio 1" value="radio 1" id="label 1">
           <PlusIcon />
         </RadioBaseComponent>

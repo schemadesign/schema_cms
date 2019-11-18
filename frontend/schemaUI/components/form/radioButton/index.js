@@ -1,1 +1,2 @@
-export { RadioButton } from './radioButton.component';
+export { RadioBaseComponent } from './radioBase/radioBase.component';
+export { RadioStyled } from './radioStyled/radioStyled.component';

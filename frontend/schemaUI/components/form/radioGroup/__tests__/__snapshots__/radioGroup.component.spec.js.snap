@@ -20,20 +20,20 @@ exports[`RadioGroup: Component should render correctly 1`] = `
       }
     }
   >
-    <Component
+    <RadioBaseComponent
       id="label 1"
       label="label 1"
       value="value 1"
     >
       label 1
-    </Component>
-    <Component
+    </RadioBaseComponent>
+    <RadioBaseComponent
       id="label 2"
       label="label 2"
       value="value 2"
     >
       label 2
-    </Component>
+    </RadioBaseComponent>
   </ContextProvider>
 </div>
 `;
@@ -63,20 +63,20 @@ exports[`RadioGroup: Component should render with custom styles 1`] = `
       }
     }
   >
-    <Component
+    <RadioBaseComponent
       id="label 1"
       label="label 1"
       value="value 1"
     >
       label 1
-    </Component>
-    <Component
+    </RadioBaseComponent>
+    <RadioBaseComponent
       id="label 2"
       label="label 2"
       value="value 2"
     >
       label 2
-    </Component>
+    </RadioBaseComponent>
   </ContextProvider>
 </div>
 `;

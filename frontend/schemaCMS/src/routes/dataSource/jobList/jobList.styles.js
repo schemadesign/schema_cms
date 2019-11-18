@@ -10,6 +10,10 @@ export const ListWrapper = styled.div`
   width: 100%;
 `;
 
+export const customRadioGroupStyles = {
+  flexDirection: 'column',
+};
+
 export const JobItemWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -34,10 +38,6 @@ export const Dot = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-export const RadioInput = styled.input`
-  margin-right: 15px;
-`;
-
 export const Eye = styled(Icons.EyeIcon)`
   cursor: pointer;
 `;
@@ -46,4 +46,5 @@ export const RadioLabel = styled.label`
   cursor: pointer;
   display: flex;
   align-items: center;
+  margin-left: 5px;
 `;

@@ -18,12 +18,6 @@ const getCheckedRadio = ({ radioButton }) => ({
 });
 
 export const getStyles = (theme = defaultTheme) => ({
-  containerStyles: {
-    textAlign: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    color: theme.radioButton.text,
-  },
   radioStyles: getRadio(theme),
   checkedRadioStyles: getCheckedRadio(theme),
 });

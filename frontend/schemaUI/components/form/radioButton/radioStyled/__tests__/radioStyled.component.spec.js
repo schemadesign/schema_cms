@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { RadioButtonComponent } from '../radioButton.component';
-import RadioGroupContext from '../../radioGroup/radioGroup.context';
+import { RadioStyled } from '../radioStyled.component';
+import RadioGroupContext from '../../../radioGroup/radioGroup.context';
 
-describe('RadioButtonComponent: Component', () => {
+describe('RadioStyled: Component', () => {
   const defaultProps = {
     value: 'value',
     label: 'name',
@@ -25,16 +25,11 @@ describe('RadioButtonComponent: Component', () => {
 
   const component = props => (
     <RadioGroupContext.Provider value={context}>
-      <RadioButtonComponent {...defaultProps} {...props}>
-        radio
-      </RadioButtonComponent>
+      <RadioStyled {...defaultProps} {...props} />
     </RadioGroupContext.Provider>
   );
 
-  const render = (props = {}) =>
-    shallow(component(props))
-      .dive()
-      .dive();
+  const render = (props = {}) => shallow(component(props)).dive();
 
   it('should render correctly', () => {
     const wrapper = render();

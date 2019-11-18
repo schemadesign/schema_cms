@@ -73,6 +73,7 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
             "background": "#1d1d20",
             "fill": "#FFF",
           },
+          "border": "#1d1d20",
           "text": "#1d1d20",
           "unActive": Object {
             "background": "#f0efef",
