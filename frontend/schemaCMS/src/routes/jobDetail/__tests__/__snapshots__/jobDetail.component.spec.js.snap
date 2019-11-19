@@ -231,7 +231,7 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
       />
     }
   />
-  <Loader />
+  <Loading />
   <NavigationContainer
     hideOnDesktop={false}
     right={false}

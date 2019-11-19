@@ -208,6 +208,6 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
     subtitle="View step"
     title="Data Wrangling"
   />
-  <Loader />
+  <Loading />
 </styled.div>
 `;

@@ -449,15 +449,11 @@ exports[`Storyshots Project/List empty 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c9"
     >
-      <div
-        className="c9"
-      >
-        <span>
-          Loading...
-        </span>
-      </div>
+      <span>
+        Loading...
+      </span>
     </div>
     <div
       className="c10"
@@ -963,15 +959,11 @@ exports[`Storyshots Project/List list 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c9"
     >
-      <div
-        className="c9"
-      >
-        <span>
-          Loading...
-        </span>
-      </div>
+      <span>
+        Loading...
+      </span>
     </div>
     <div
       className="c10"

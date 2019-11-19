@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Shared Components|ErrorContainer Default 1`] = `
+.c0 {
+  color: #f21e29;
+  font-weight: 200;
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="c0"
+    type="default"
+  >
+    Default error
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|ErrorContainer Page error 1`] = `
+.c0 {
+  color: #f21e29;
+  font-weight: 200;
+  text-align: center;
+  padding: 50px 10px;
+  font-size: 20px;
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="c0"
+    type="page"
+  >
+    Page error
+  </div>
+</div>
+`;

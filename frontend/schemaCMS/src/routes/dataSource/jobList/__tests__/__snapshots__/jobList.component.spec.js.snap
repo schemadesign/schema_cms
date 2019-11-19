@@ -18,7 +18,7 @@ exports[`JobList: Component should render correctly 1`] = `
       />
     }
   />
-  <Loader />
+  <Loading />
   <NavigationContainer
     hideOnDesktop={false}
     right={false}

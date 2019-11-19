@@ -229,7 +229,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
               <a
                 className="c6"
-                href="/user/me"
+                href="/settings"
                 onClick={[Function]}
               >
                 <svg
@@ -750,7 +750,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
               <a
                 className="c8"
-                href="/user/me"
+                href="/settings"
                 onClick={[Function]}
               >
                 <svg
@@ -1267,7 +1267,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </a>
               <a
                 className="c8"
-                href="/user/me"
+                href="/settings"
                 onClick={[Function]}
               >
                 <svg
