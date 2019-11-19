@@ -48,7 +48,7 @@ export const defaultProps = {
 const editorProps = {
   ...defaultProps,
   isAdmin: false,
-}
+};
 
 storiesOf('Project/List', module)
   .addDecorator(withRouter)

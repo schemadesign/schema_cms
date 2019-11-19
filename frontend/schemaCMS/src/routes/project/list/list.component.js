@@ -87,7 +87,7 @@ export class List extends PureComponent {
 
   renderList = ({ list }) => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
-  renderAddButton = (isAdmin, id) => isAdmin ? <PlusButton id={id} onClick={this.handleNewProject} /> : null;
+  renderAddButton = (isAdmin, id) => (isAdmin ? <PlusButton id={id} onClick={this.handleNewProject} /> : null);
 
   renderNoData = () => (
     <Empty>
