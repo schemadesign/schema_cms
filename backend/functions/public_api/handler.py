@@ -72,14 +72,14 @@ def data_source_filters(data_source_id):
 
 @app.route("/datasources/<int:data_source_id>/records", methods=["GET"])
 def data_source_results(data_source_id):
-    parquet = request.args.get("parquet", False)
+    format_ = request.args.get("format", None)
     orient = request.args.get("orient", "index")
 
     try:
         data_source = types.DataSource.get_by_id(id=data_source_id)
         items = data_source.items
 
-        if parquet:
+        if format_ == "parquet":
             result_file = services.get_s3_object(data_source.result_parquet)
             file = BufferReader(result_file["Body"].read())
             records = json.loads(pd.read_parquet(file, engine="pyarrow").to_json(orient=orient))
