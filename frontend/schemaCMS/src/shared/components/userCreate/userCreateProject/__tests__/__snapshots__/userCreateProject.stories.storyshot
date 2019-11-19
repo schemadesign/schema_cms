@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] = `
+.c0 {
+  color: #FFF;
+}
+
 <div
   style={
     Object {
@@ -10,7 +14,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
   }
 >
   <div
-    className="sc-hmXxxW ixbyrh"
+    className="c0"
   >
     <span>
       Loading...

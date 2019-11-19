@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Filter Default 1`] = `
+.c0 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 <div
   style={
     Object {
@@ -10,10 +18,10 @@ exports[`Storyshots Filter Default 1`] = `
   }
 >
   <div
-    className="sc-elJkPf jRsZyA"
+    className=""
   >
     <div
-      className="sc-eHgmQL gCbwae"
+      className="c0"
     >
       <span>
         Loading...

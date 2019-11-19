@@ -1,6 +1,144 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots CreateDataSource Default 1`] = `
+.c6 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
+  padding-top: 7px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 23px;
+}
+
+.c7 {
+  height: 155px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c8 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c10 {
+  width: calc(50% - 5px);
+}
+
+.c11 {
+  width: calc(50% - 5px);
+}
+
+.c1 {
+  width: calc(100% - 50px);
+}
+
+.c2 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c4 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width:1040px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c8 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c10 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c11 {
+    width: 23.5%;
+    -webkit-transform: translateX(-255px);
+    -ms-transform: translateX(-255px);
+    transform: translateX(-255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    margin-top: 70px;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,10 +148,10 @@ exports[`Storyshots CreateDataSource Default 1`] = `
   }
 >
   <div
-    className="sc-hXRMBi kDnmWm"
+    className="c0"
   >
     <div
-      className="sc-kjoXOD kNHzWn"
+      className="c1"
     >
       <div
         style={
@@ -30,7 +168,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
       >
         <div>
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -128,10 +266,10 @@ exports[`Storyshots CreateDataSource Default 1`] = `
         }
       >
         <div
-          className="sc-TOsTZ kjYrri"
+          className=""
         >
           <div
-            className="sc-cHGsZl bHiaRe"
+            className=""
           >
             <h2
               id="headerTitle"
@@ -168,13 +306,13 @@ exports[`Storyshots CreateDataSource Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-kgAjT gYPKSC"
+          className="c2"
         >
           <ul
-            className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+            className="c3"
           />
           <ul
-            className="sc-cJSrbW sc-hmzhuo ieDQGb"
+            className="c4"
           />
         </div>
         <button
@@ -220,10 +358,10 @@ exports[`Storyshots CreateDataSource Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-htpNat hqKAHB"
+      className=""
     >
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -280,7 +418,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
             }
           >
             <div
-              className="sc-gzVnrw bHgYaJ"
+              className="c5"
             >
               <svg
                 style={
@@ -416,19 +554,19 @@ exports[`Storyshots CreateDataSource Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-EHOje eiaHYL"
+        className="c6"
       />
       <div
-        className="sc-iwsKbI eQdjUy"
+        className="c7"
       >
         <div
-          className="sc-gqjmRU fIKSOC"
+          className="c8"
         >
           <div
-            className="sc-gZMcBi jSdIIC"
+            className="c9"
           >
             <button
-              className="sc-VigVT dNFsjT"
+              className="c10"
               disabled={false}
               onClick={[Function]}
               style={
@@ -454,7 +592,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
               </span>
             </button>
             <button
-              className="sc-VigVT eTfsKS"
+              className="c11"
               disabled={true}
               onClick={[Function]}
               style={
@@ -480,7 +618,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
               </span>
             </button>
             <div
-              className="sc-dnqmqq iuexap"
+              className="c12"
             >
               <div
                 style={

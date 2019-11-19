@@ -1,6 +1,209 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project/UserList list 1`] = `
+.c13 {
+  height: 155px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c14 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c16 {
+  width: calc(50% - 5px);
+}
+
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c8 {
+  display: none;
+}
+
+.c9 {
+  margin-right: 20px;
+}
+
+.c10 {
+  color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c4 {
+  display: none;
+}
+
+.c5 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c5:hover {
+  border-bottom-color: #FFF;
+}
+
+.c7 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c7:hover {
+  border-bottom-color: #FFF;
+}
+
+.c6 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c16 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c8 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
 <div
   style={
     Object {
@@ -10,7 +213,7 @@ exports[`Storyshots Project/UserList list 1`] = `
   }
 >
   <div
-    className="sc-kjoXOD kNHzWn"
+    className="c0"
   >
     <div
       style={
@@ -27,7 +230,7 @@ exports[`Storyshots Project/UserList list 1`] = `
     >
       <div>
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -125,10 +328,10 @@ exports[`Storyshots Project/UserList list 1`] = `
       }
     >
       <div
-        className="sc-TOsTZ kjYrri"
+        className=""
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -165,13 +368,13 @@ exports[`Storyshots Project/UserList list 1`] = `
         </div>
       </div>
       <div
-        className="sc-kgAjT gYPKSC"
+        className="c1"
       >
         <ul
-          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+          className="c2"
         />
         <ul
-          className="sc-cJSrbW sc-hmzhuo ieDQGb"
+          className="c3"
         />
       </div>
       <button
@@ -217,16 +420,16 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-hZSUBg VKktY"
+    className=""
   >
     <div
-      className="sc-epnACN eSYYqU"
+      className="c4"
     >
       <div
-        className="sc-iQNlJl fuSGWJ"
+        className="c5"
       >
         <a
-          className="sc-bsbRJL gzXytr"
+          className="c6"
           href="/project/1"
           onClick={[Function]}
         >
@@ -236,10 +439,10 @@ exports[`Storyshots Project/UserList list 1`] = `
         </a>
       </div>
       <div
-        className="sc-iQNlJl fuSGWJ"
+        className="c5"
       >
         <a
-          className="sc-bsbRJL gzXytr"
+          className="c6"
           href="/project/1/datasource"
           onClick={[Function]}
         >
@@ -249,10 +452,10 @@ exports[`Storyshots Project/UserList list 1`] = `
         </a>
       </div>
       <div
-        className="sc-iQNlJl kHKALF"
+        className="c7"
       >
         <a
-          className="sc-bsbRJL gzXytr"
+          className="c6"
           href="/project/1/user"
           onClick={[Function]}
         >
@@ -264,13 +467,13 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <div
-    className="sc-jbKcbu dLyPNV"
+    className="c8"
   >
     <div
-      className="sc-dNLxif hhzHuo"
+      className="c9"
     >
       <h2
-        className="sc-jqCOkK iblYWW"
+        className="c10"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -286,7 +489,7 @@ exports[`Storyshots Project/UserList list 1`] = `
         </span>
       </h2>
       <h1
-        className="sc-uJMKN bZCpGz"
+        className="c11"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -305,7 +508,7 @@ exports[`Storyshots Project/UserList list 1`] = `
       </h1>
     </div>
     <div
-      className="sc-bbmXgH fNYDXK"
+      className=""
     >
       <button
         disabled={false}
@@ -349,19 +552,19 @@ exports[`Storyshots Project/UserList list 1`] = `
     </div>
   </div>
   <section
-    className="sc-eLExRp jJeQlq"
+    className="c12"
   />
   <div
-    className="sc-iwsKbI eQdjUy"
+    className="c13"
   >
     <div
-      className="sc-gqjmRU fIKSOC"
+      className="c14"
     >
       <div
-        className="sc-gZMcBi jZympT"
+        className="c15"
       >
         <button
-          className="sc-VigVT dNFsjT"
+          className="c16"
           disabled={false}
           onClick={[Function]}
           style={
@@ -432,6 +635,253 @@ exports[`Storyshots Project/UserList list 1`] = `
 `;
 
 exports[`Storyshots Project/UserList list with users 1`] = `
+.c18 {
+  height: 155px;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c19 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c21 {
+  width: calc(50% - 5px);
+}
+
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c8 {
+  display: none;
+}
+
+.c9 {
+  margin-right: 20px;
+}
+
+.c10 {
+  color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c4 {
+  display: none;
+}
+
+.c5 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #2F2F36;
+  cursor: pointer;
+}
+
+.c5:hover {
+  border-bottom-color: #FFF;
+}
+
+.c7 {
+  display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+}
+
+.c7:hover {
+  border-bottom-color: #FFF;
+}
+
+.c6 {
+  color: #FFF;
+  display: block;
+  padding: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c13 {
+  margin-bottom: 20px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c17 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0 -5px 0 5px;
+}
+
+.c14 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c15 {
+  color: #FFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.c16 {
+  display: block;
+  padding-top: 10px;
+  word-break: break-all;
+  font-weight: 200;
+}
+
+@media (min-width:1040px) {
+  .c20 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c19 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c21 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c8 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: calc(100%/3 - 20px);
+    max-width: 320px;
+    min-height: 192px;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
 <div
   style={
     Object {
@@ -441,7 +891,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   }
 >
   <div
-    className="sc-kjoXOD kNHzWn"
+    className="c0"
   >
     <div
       style={
@@ -458,7 +908,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     >
       <div>
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -556,10 +1006,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       }
     >
       <div
-        className="sc-TOsTZ kjYrri"
+        className=""
       >
         <div
-          className="sc-cHGsZl bHiaRe"
+          className=""
         >
           <h2
             id="headerTitle"
@@ -596,13 +1046,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </div>
       </div>
       <div
-        className="sc-kgAjT gYPKSC"
+        className="c1"
       >
         <ul
-          className="sc-cJSrbW sc-ksYbfQ cJIpKo"
+          className="c2"
         />
         <ul
-          className="sc-cJSrbW sc-hmzhuo ieDQGb"
+          className="c3"
         />
       </div>
       <button
@@ -648,16 +1098,16 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-hZSUBg VKktY"
+    className=""
   >
     <div
-      className="sc-epnACN eSYYqU"
+      className="c4"
     >
       <div
-        className="sc-iQNlJl fuSGWJ"
+        className="c5"
       >
         <a
-          className="sc-bsbRJL gzXytr"
+          className="c6"
           href="/project/1"
           onClick={[Function]}
         >
@@ -667,10 +1117,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </div>
       <div
-        className="sc-iQNlJl fuSGWJ"
+        className="c5"
       >
         <a
-          className="sc-bsbRJL gzXytr"
+          className="c6"
           href="/project/1/datasource"
           onClick={[Function]}
         >
@@ -680,10 +1130,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </a>
       </div>
       <div
-        className="sc-iQNlJl kHKALF"
+        className="c7"
       >
         <a
-          className="sc-bsbRJL gzXytr"
+          className="c6"
           href="/project/1/user"
           onClick={[Function]}
         >
@@ -695,13 +1145,13 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <div
-    className="sc-jbKcbu dLyPNV"
+    className="c8"
   >
     <div
-      className="sc-dNLxif hhzHuo"
+      className="c9"
     >
       <h2
-        className="sc-jqCOkK iblYWW"
+        className="c10"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -717,7 +1167,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         </span>
       </h2>
       <h1
-        className="sc-uJMKN bZCpGz"
+        className="c11"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -736,7 +1186,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </h1>
     </div>
     <div
-      className="sc-bbmXgH fNYDXK"
+      className=""
     >
       <button
         disabled={false}
@@ -780,10 +1230,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </div>
   <section
-    className="sc-eLExRp jJeQlq"
+    className="c12"
   >
     <div
-      className="sc-lkqHmb kwfoNI"
+      className="c13"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -797,10 +1247,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       }
     >
       <div
-        className="sc-fYiAbW dqzNCO"
+        className="c14"
       >
         <a
-          className="sc-fOKMvo lnkgrV"
+          className="c15"
           href="/project/1/user/1"
           onClick={[Function]}
         >
@@ -809,11 +1259,11 @@ exports[`Storyshots Project/UserList list with users 1`] = `
           Watts
         </a>
         <span
-          className="sc-dUjcNx lcGoSO"
+          className="c16"
         />
       </div>
       <div
-        className="sc-krvtoX gXqIUj"
+        className="c17"
       >
         <button
           disabled={false}
@@ -857,7 +1307,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </div>
     </div>
     <div
-      className="sc-lkqHmb kwfoNI"
+      className="c13"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -871,10 +1321,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       }
     >
       <div
-        className="sc-fYiAbW dqzNCO"
+        className="c14"
       >
         <a
-          className="sc-fOKMvo lnkgrV"
+          className="c15"
           href="/project/1/user/2"
           onClick={[Function]}
         >
@@ -883,11 +1333,11 @@ exports[`Storyshots Project/UserList list with users 1`] = `
           Chihuly
         </a>
         <span
-          className="sc-dUjcNx lcGoSO"
+          className="c16"
         />
       </div>
       <div
-        className="sc-krvtoX gXqIUj"
+        className="c17"
       >
         <button
           disabled={false}
@@ -931,7 +1381,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       </div>
     </div>
     <div
-      className="sc-lkqHmb kwfoNI"
+      className="c13"
       style={
         Object {
           "backgroundColor": "#1d1d20",
@@ -945,10 +1395,10 @@ exports[`Storyshots Project/UserList list with users 1`] = `
       }
     >
       <div
-        className="sc-fYiAbW dqzNCO"
+        className="c14"
       >
         <a
-          className="sc-fOKMvo lnkgrV"
+          className="c15"
           href="/project/1/user/3"
           onClick={[Function]}
         >
@@ -957,11 +1407,11 @@ exports[`Storyshots Project/UserList list with users 1`] = `
           Bowie
         </a>
         <span
-          className="sc-dUjcNx lcGoSO"
+          className="c16"
         />
       </div>
       <div
-        className="sc-krvtoX gXqIUj"
+        className="c17"
       >
         <button
           disabled={false}
@@ -1006,16 +1456,16 @@ exports[`Storyshots Project/UserList list with users 1`] = `
     </div>
   </section>
   <div
-    className="sc-iwsKbI eQdjUy"
+    className="c18"
   >
     <div
-      className="sc-gqjmRU fIKSOC"
+      className="c19"
     >
       <div
-        className="sc-gZMcBi jZympT"
+        className="c20"
       >
         <button
-          className="sc-VigVT dNFsjT"
+          className="c21"
           disabled={false}
           onClick={[Function]}
           style={
