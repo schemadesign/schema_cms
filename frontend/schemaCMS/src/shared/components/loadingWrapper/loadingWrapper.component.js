@@ -2,11 +2,12 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { always, cond, isNil, prop, propEq, T } from 'ramda';
 
-import { Loader } from '../loader';
+import { ErrorContainer } from '../errorContainer';
+import { ERROR_TYPES } from '../errorContainer/errorContainer.constants';
+import { Loading } from '../loading';
 import { NoData } from '../noData';
-import { Container, ErrorContainer } from './loaderWrapper.styles';
 
-export class LoaderWrapper extends PureComponent {
+export class LoadingWrapper extends PureComponent {
   static propTypes = {
     loading: PropTypes.bool,
     noData: PropTypes.bool,
@@ -23,8 +24,8 @@ export class LoaderWrapper extends PureComponent {
   };
 
   renderContent = cond([
-    [propEq('loading', true), always(<Loader />)],
-    [({ error }) => !isNil(error), () => <ErrorContainer>{this.props.error}</ErrorContainer>],
+    [propEq('loading', true), always(<Loading />)],
+    [({ error }) => !isNil(error), ({ error }) => <ErrorContainer>{error}</ErrorContainer>],
     [propEq('noData', true), ({ noDataContent }) => <NoData>{noDataContent}</NoData>],
     [T, prop('children')],
   ]);
@@ -32,6 +33,6 @@ export class LoaderWrapper extends PureComponent {
   render() {
     const { loading, noData, noDataContent, error, children } = this.props;
 
-    return <Container>{this.renderContent({ loading, noData, noDataContent, error, children })}</Container>;
+    return this.renderContent({ loading, noData, noDataContent, error, children });
   }
 }

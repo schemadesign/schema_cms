@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { LoaderWrapper } from '../loaderWrapper.component';
-import { content, contentProps, errorProps, loadingProps, noDataProps } from '../loaderWrapper.stories';
+import { LoadingWrapper } from '../loadingWrapper.component';
+import { content, contentProps, errorProps, loadingProps, noDataProps } from '../loadingWrapper.stories';
 
 describe('LoaderWrapper: Component', () => {
   const component = props => (
-    <LoaderWrapper {...contentProps} {...props}>
+    <LoadingWrapper {...contentProps} {...props}>
       {content}
-    </LoaderWrapper>
+    </LoadingWrapper>
   );
 
   const render = (props = {}) => shallow(component(props));

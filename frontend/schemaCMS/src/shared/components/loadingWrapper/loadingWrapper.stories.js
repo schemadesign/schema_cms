@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withTheme } from '../../../.storybook/decorators';
-import { LoaderWrapper } from './loaderWrapper.component';
+import { LoadingWrapper } from './loadingWrapper.component';
 
 export const loadingProps = {
   loading: true,
@@ -38,10 +38,10 @@ export const content = (
   </div>
 );
 
-storiesOf('Shared Components|LoaderWrapper', module)
+storiesOf('Shared Components|LoadingWrapper', module)
   .addDecorator(withTheme())
-  .add('loading', () => <LoaderWrapper {...loadingProps}>{content}</LoaderWrapper>)
-  .add('no data', () => <LoaderWrapper {...noDataProps}>{content}</LoaderWrapper>)
-  .add('custom no data', () => <LoaderWrapper {...customNoData}>{content}</LoaderWrapper>)
-  .add('loaded', () => <LoaderWrapper {...contentProps}>{content}</LoaderWrapper>)
-  .add('with error', () => <LoaderWrapper {...errorProps}>{content}</LoaderWrapper>);
+  .add('loading', () => <LoadingWrapper {...loadingProps}>{content}</LoadingWrapper>)
+  .add('no data', () => <LoadingWrapper {...noDataProps}>{content}</LoadingWrapper>)
+  .add('custom no data', () => <LoadingWrapper {...customNoData}>{content}</LoadingWrapper>)
+  .add('loaded', () => <LoadingWrapper {...contentProps}>{content}</LoadingWrapper>)
+  .add('with error', () => <LoadingWrapper {...errorProps}>{content}</LoadingWrapper>);
