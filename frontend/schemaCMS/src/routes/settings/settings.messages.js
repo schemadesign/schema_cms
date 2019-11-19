@@ -10,4 +10,12 @@ export default defineMessages({
     id: 'settings.subTitle',
     defaultMessage: 'My Profile',
   },
+  save: {
+    id: 'settings.save',
+    defaultMessage: 'Save',
+  },
+  resetPassword: {
+    id: 'settings.resetPassword',
+    defaultMessage: 'Reset password',
+  },
 });

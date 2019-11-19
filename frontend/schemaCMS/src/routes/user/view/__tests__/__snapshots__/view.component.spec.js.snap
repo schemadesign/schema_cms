@@ -34,35 +34,104 @@ exports[`View: Component should render correctly 1`] = `
       />
     }
   />
-  <UserProfile
-    fetchUser={[Function]}
-    history={Object {}}
-    intl={
+  <styled.div>
+    <Styled(Span)
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Remove user"
+        id="user.view.removeUser"
+        values={Object {}}
+      />
+    </Styled(Span)>
+  </styled.div>
+  <NavigationContainer
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    />
+  </NavigationContainer>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
       Object {
-        "formatMessage": [Function],
-      }
-    }
-    isAdmin={true}
-    isCurrentUser={false}
-    match={
-      Object {
-        "params": Object {
-          "userId": "1",
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": null,
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
         },
       }
     }
-    removeUser={[Function]}
-    removeUserFromProject={[Function]}
-    userData={
-      Object {
-        "id": "1",
-      }
-    }
-  />
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you want to remove user?"
+        id="user.view.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="user.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="user.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
 </styled.div>
 `;
 
-exports[`View: Component should render without remove user button 1`] = `
+exports[`View: Component should render correctly for admin user 1`] = `
 <styled.div>
   <TopHeader
     headerSubtitle={
@@ -96,30 +165,108 @@ exports[`View: Component should render without remove user button 1`] = `
       />
     }
   />
-  <UserProfile
-    fetchUser={[Function]}
-    history={Object {}}
-    intl={
+  <styled.div>
+    <Styled(Span)
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Remove user"
+        id="user.view.removeUser"
+        values={Object {}}
+      />
+    </Styled(Span)>
+    <Styled(Span)
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Make admin"
+        id="user.view.makeAdmin"
+        values={Object {}}
+      />
+    </Styled(Span)>
+  </styled.div>
+  <NavigationContainer
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    />
+  </NavigationContainer>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
       Object {
-        "formatMessage": [Function],
-      }
-    }
-    isAdmin={false}
-    isCurrentUser={false}
-    match={
-      Object {
-        "params": Object {
-          "userId": "1",
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+          "border": null,
+          "borderRadius": "4px",
+          "bottom": "40px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "color": "FFFFFF",
+          "display": "flex",
+          "left": "40px",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
+          "right": "40px",
+          "top": "40px",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
         },
       }
     }
-    removeUser={[Function]}
-    removeUserFromProject={[Function]}
-    userData={
-      Object {
-        "id": "1",
-      }
-    }
-  />
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you want to remove user?"
+        id="user.view.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="user.view.cancelRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+      <Styled(Component)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="user.view.confirmRemoval"
+          values={Object {}}
+        />
+      </Styled(Component)>
+    </styled.div>
+  </Modal>
 </styled.div>
 `;

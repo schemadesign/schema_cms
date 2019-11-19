@@ -4,12 +4,10 @@ import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
-import { injectIntl } from 'react-intl';
 
 import { View } from './view.component';
 import { selectUser, UserRoutines } from '../../../modules/user';
 import { selectIsAdmin } from '../../../modules/userProfile';
-import { ProjectRoutines } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
   userData: selectUser,
@@ -22,7 +20,6 @@ export const mapDispatchToProps = dispatch => ({
       fetchUser: promisifyRoutine(UserRoutines.fetchUser),
       makeAdmin: promisifyRoutine(UserRoutines.makeAdmin),
       removeUser: promisifyRoutine(UserRoutines.removeUser),
-      removeUserFromProject: promisifyRoutine(ProjectRoutines.removeEditor),
     },
     dispatch
   ),
@@ -34,6 +31,5 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
-  injectIntl,
   withRouter
 )(View);

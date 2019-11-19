@@ -73,11 +73,17 @@ function* removeOne({ payload }) {
   }
 }
 
-function* removeEditor({ payload: { projectId, userId: id } }) {
+function* removeEditor({ payload: { projectId, userId: id, isDetails = false } }) {
   try {
     yield put(ProjectRoutines.removeEditor.request());
     yield api.post(`${PROJECTS_PATH}/${projectId}/remove-editor`, { id });
-    yield fetchOne({ payload: { projectId } });
+
+    if (isDetails) {
+      browserHistory.push(`/project/${projectId}/user`);
+    } else {
+      yield fetchOne({ payload: { projectId } });
+    }
+
     yield put(ProjectRoutines.removeEditor.success());
   } catch (error) {
     yield put(ProjectRoutines.removeEditor.failure(error));

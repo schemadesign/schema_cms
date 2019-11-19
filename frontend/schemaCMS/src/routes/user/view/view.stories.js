@@ -3,20 +3,29 @@ import { storiesOf } from '@storybook/react';
 
 import { View } from './view.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
   fetchUser: Function.prototype,
   removeUser: Function.prototype,
-  removeUserFromProject: Function.prototype,
-  userData: { id: '1' },
-  history: {},
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
+  makeAdmin: Function.prototype,
+  userData: {},
+  isAdmin: false,
+  history: {
+    push: Function.prototype,
+  },
+  match: { params: { userId: '1' } },
+};
+
+export const adminProps = {
+  ...defaultProps,
+  userData: {
+    role: ROLES.EDITOR,
   },
   isAdmin: true,
-  match: { params: { userId: '1' } },
 };
 
 storiesOf('View', module)
   .addDecorator(withTheme())
-  .add('Default', () => <View {...defaultProps} />);
+  .add('Default', () => <View {...defaultProps} />)
+  .add('Admin', () => <View {...adminProps} />);
