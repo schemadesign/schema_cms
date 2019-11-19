@@ -1,10 +1,11 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Card } from 'schemaUI';
-import { has, isEmpty, isNil, path, always, cond, T } from 'ramda';
+import { has, isEmpty, isNil, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import browserHistory from '../../../shared/utils/history';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -67,11 +68,11 @@ export class View extends PureComponent {
     return this.props.unmountProject();
   }
 
-  getHeaderAndMenuConfig = (headerSubtitle, projectId, hasNoData) => {
+  getHeaderAndMenuConfig = (headerSubtitle, projectId, hasMenu) => {
     const primaryMenuItems = [];
     const secondaryMenuItems = [];
 
-    if (!hasNoData) {
+    if (hasMenu) {
       primaryMenuItems.push({
         label: this.formatMessage(messages.dataSources),
         to: `/project/${projectId}/datasource`,
@@ -195,23 +196,32 @@ export class View extends PureComponent {
     )
   );
 
+  renderContent = (project, projectId, isAdmin) =>
+    renderWhenTrue(() => (
+      <Fragment>
+        <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
+        {this.renderProject(project)}
+        {this.renderRemoveProjectButton(isAdmin)}
+      </Fragment>
+    ))(!isEmpty(project));
+
   render() {
     const { project, isAdmin } = this.props;
     const { confirmationModalOpen } = this.state;
     const { projectId } = this.props.match.params;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, !projectId || has('error', project));
+    const loading = isEmpty(project);
+    const hasMenu = !loading && projectId && !has('error', project);
+    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, hasMenu);
 
     return (
       <Container>
         <div>
           <Helmet title={title} />
           <TopHeader {...topHeaderConfig} />
-          <LoadingWrapper loading={isEmpty(project)}>
-            <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
-            {this.renderProject(project)}
-            {this.renderRemoveProjectButton(isAdmin)}
+          <LoadingWrapper loading={loading} error={project.error}>
+            {this.renderContent(project, projectId, isAdmin)}
           </LoadingWrapper>
         </div>
         <NavigationContainer>
