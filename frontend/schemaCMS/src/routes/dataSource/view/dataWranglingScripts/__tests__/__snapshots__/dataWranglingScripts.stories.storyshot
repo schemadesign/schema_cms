@@ -158,9 +158,11 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                     "background": "#FFF",
                     "fill": "#1d1d20",
                   },
+                  "border": "#FFF",
                   "text": "#FFF",
                   "unActive": Object {
                     "background": "#1d1d20",
+                    "dot": "#FFF",
                     "fill": "#FFF",
                   },
                 },

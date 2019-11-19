@@ -59,6 +59,10 @@ export class JobList extends PureComponent {
     }
   }
 
+  getSelectedJob = () => (this.state.selectedJob ? this.state.selectedJob : this.props.dataSource.activeJob);
+
+  isJobActive = id => id === this.props.dataSource.activeJob;
+
   handleChange = ({ target: { value: selectedJob } }) => {
     selectedJob = parseInt(selectedJob, 10);
     const { jobList, dataSource } = this.props;
@@ -85,9 +89,10 @@ export class JobList extends PureComponent {
   renderActiveInformation = isActive => renderWhenTrue(always(<FormattedMessage {...messages.active} />))(isActive);
 
   renderList = (job, index) => {
-    const isActive = job.id === this.props.dataSource.activeJob;
+    const isActive = this.isJobActive(job.id);
+    const selectedJob = this.getSelectedJob();
     const id = `${JOB_OPTION}-${index}`;
-    const selectedJob = this.state.selectedJob ? this.state.selectedJob : this.props.dataSource.activeJob;
+
     return (
       <JobItemWrapper key={index}>
         <JobItem>
@@ -116,7 +121,7 @@ export class JobList extends PureComponent {
           name={JOB_OPTION}
           onChange={this.handleChange}
           customStyles={customRadioGroupStyles}
-          value={this.state.selectedJob ? this.state.selectedJob : this.props.dataSource.activeJob}
+          value={this.getSelectedJob()}
         >
           <ListWrapper>{this.props.jobList.map(this.renderList)}</ListWrapper>
         </RadioGroup>

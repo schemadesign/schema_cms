@@ -98,9 +98,11 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "background": "#FFF",
           "fill": "#1d1d20",
         },
+        "border": "#FFF",
         "text": "#FFF",
         "unActive": Object {
           "background": "#1d1d20",
+          "dot": "#FFF",
           "fill": "#FFF",
         },
       },
@@ -271,9 +273,11 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "background": "#FFF",
           "fill": "#1d1d20",
         },
+        "border": "#FFF",
         "text": "#FFF",
         "unActive": Object {
           "background": "#1d1d20",
+          "dot": "#FFF",
           "fill": "#FFF",
         },
       },

@@ -1,34 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioStyled: Component should render correctly 1`] = `
-<section
-  style={
-    Object {
-      "color": "#FFF",
-      "display": "flex",
-      "flexDirection": "column",
-      "textAlign": "center",
-    }
-  }
+<RadioBaseComponent
+  id="id"
+  label="name"
+  value="value"
 >
-  <RadioBaseComponent
-    id="id"
-    label="name"
-    value="value"
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "border": "1px solid #FFF",
+        "borderRadius": "50%",
+        "display": "flex",
+        "height": "16px",
+        "justifyContent": "center",
+        "width": "16px",
+      }
+    }
   >
     <div
       style={
         Object {
-          "alignItems": "center",
-          "border": "1px solid #FFF",
+          "backgroundColor": "transparent",
           "borderRadius": "50%",
-          "display": "flex",
-          "height": "16px",
-          "justifyContent": "center",
-          "width": "16px",
+          "height": "8px",
+          "transition": "background 0.25s ease-in-out",
+          "width": "8px",
         }
       }
     />
-  </RadioBaseComponent>
-</section>
+  </div>
+</RadioBaseComponent>
 `;
