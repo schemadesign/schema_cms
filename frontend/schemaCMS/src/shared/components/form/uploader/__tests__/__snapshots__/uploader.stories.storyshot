@@ -10,7 +10,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
   }
 >
   <div
-    className="sc-jTzLTM eCMmlJ"
+    className=""
   >
     <div
       style={Object {}}
@@ -280,6 +280,16 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #f21e29;
+  margin: -20px 0 20px 0;
+  font-size: 0.9em;
+}
+
 <div
   style={
     Object {
@@ -289,7 +299,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
   }
 >
   <div
-    className="sc-jTzLTM eCMmlJ"
+    className=""
   >
     <div
       style={Object {}}
@@ -555,7 +565,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
       />
     </div>
     <div
-      className="sc-fjdhpX iWGokr"
+      className="c0"
     >
       error
     </div>

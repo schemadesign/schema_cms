@@ -26,7 +26,7 @@ class Common(Configuration):
     if os.getenv("SENTRY_DNS"):
         sentry_sdk.init(dsn=os.getenv("SENTRY_DNS"), integrations=[DjangoIntegration()])
 
-    INSTALLED_APPS = (
+    INSTALLED_APPS = [
         "django.contrib.admin",
         "django.contrib.auth",
         "django.contrib.contenttypes",
@@ -45,10 +45,10 @@ class Common(Configuration):
         "schemacms.users",
         "schemacms.authorization",
         "schemacms.projects",
-    )
+    ]
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
-    MIDDLEWARE = (
+    MIDDLEWARE = [
         "django.middleware.security.SecurityMiddleware",
         "corsheaders.middleware.CorsMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
@@ -58,7 +58,7 @@ class Common(Configuration):
         "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.clickjacking.XFrameOptionsMiddleware",
         "schemacms.config.middlewares.SocialAuthExceptionMiddleware",
-    )
+    ]
 
     ALLOWED_HOSTS = ["*"]
     DEFAULT_HOST = os.getenv("DJANGO_HOST", "http://localhost:8000")  # without trailing slash
@@ -212,7 +212,11 @@ class Common(Configuration):
     }
 
     # JWT
-    JWT_AUTH = {"JWT_AUTH_HEADER_PREFIX": "JWT", "JWT_EXPIRATION_DELTA": datetime.timedelta(days=30)}
+    JWT_AUTH = {
+        "JWT_AUTH_HEADER_PREFIX": "JWT",
+        "JWT_EXPIRATION_DELTA": datetime.timedelta(days=30),
+        "JWT_PAYLOAD_HANDLER": "schemacms.authorization.jwt.payload_handler",
+    }
 
     # social-django
 

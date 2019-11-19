@@ -24,7 +24,7 @@ export const NavigationContent = styled.div`
 
   ${media.desktop`
     display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'flex')};
-  `}
+  `};
 `;
 
 export const Navigation = styled.div`
@@ -40,7 +40,7 @@ export const Navigation = styled.div`
 
   ${media.desktop`
     width: ${contentSizes.desktop}px;
-  `}
+  `};
 `;
 
 export const NavigationButton = styled(Button)`
@@ -49,7 +49,7 @@ export const NavigationButton = styled(Button)`
   ${media.desktop`
     width: 23.5%;
     transform: translateX(${setTranslate(BUTTON_MARGIN_DESKTOP)});
-  `}
+  `};
 `;
 
 export const buttonIconStyles = {

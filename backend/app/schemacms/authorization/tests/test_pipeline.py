@@ -119,7 +119,7 @@ class TestRedirectWithToken:
             host=settings.DEFAULT_WEBAPP_HOST,
             path="auth/confirm",
             user_id=str(user.id),
-            token=user.get_exchange_token(),
+            token=pipeline.generate_signed_exchange_token(user),
         )
 
         ret = pipeline.redirect_with_token(strategy=strategy, user=user)

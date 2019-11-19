@@ -1,6 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Table Default 1`] = `
+.c0 {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.c1 {
+  border-collapse: collapse;
+  min-width: 100%;
+}
+
+.c2:last-of-type td:first-of-type {
+  border-bottom-color: #1d1d20;
+  padding-bottom: 10px;
+}
+
+.c3 {
+  font-size: 14px;
+  padding: 7px 12px;
+  border-bottom: 2px solid #1d1d20;
+  border-right: 2px solid #1d1d20;
+  color: #FFF;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+
 <div
   style={
     Object {
@@ -10,119 +38,119 @@ exports[`Storyshots Shared Components|Table Default 1`] = `
   }
 >
   <div
-    className="sc-jWBwVP ejXLLH"
+    className="c0"
   >
     <table
-      className="sc-brqgnP fkvggI"
+      className="c1"
     >
       <tbody
-        className="sc-jAaTju fNCBho"
+        className=""
       >
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             US
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             USA
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             PL
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             Warsaw
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             Poland
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             DE
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             Berlin
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             Germany
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             FR
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             Paris
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             France
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             ES
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             Madird
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             Spain
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             —
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
@@ -135,7 +163,7 @@ exports[`Storyshots Shared Components|Table Default 1`] = `
 
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c3"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
@@ -155,6 +183,61 @@ exports[`Storyshots Shared Components|Table Default 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Table with header 1`] = `
+.c0 {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.c1 {
+  border-collapse: collapse;
+  min-width: 100%;
+}
+
+.c2:last-of-type td:first-of-type {
+  border-bottom-color: #1d1d20;
+  padding-bottom: 10px;
+}
+
+.c4 {
+  font-size: 14px;
+  padding: 7px 12px;
+  border-bottom: 2px solid #1d1d20;
+  border-right: 2px solid #1d1d20;
+  color: #FFF;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+
+.c3 {
+  font-size: 14px;
+  padding: 7px 12px;
+  border-bottom: 2px solid #1d1d20;
+  border-right: 2px solid #1d1d20;
+  color: #FFF;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+  background-color: #1d1d20;
+  color: #71737e;
+  font-weight: 600;
+  padding: 12px;
+  border-right-color: #000;
+  border-bottom-color: #000;
+  text-align: left;
+}
+
+.c3:first-of-type {
+  text-align: center;
+}
+
+.c3:last-of-type {
+  border-right-color: #000;
+}
+
 <div
   style={
     Object {
@@ -164,142 +247,142 @@ exports[`Storyshots Shared Components|Table with header 1`] = `
   }
 >
   <div
-    className="sc-jWBwVP ejXLLH"
+    className="c0"
   >
     <table
-      className="sc-brqgnP fkvggI"
+      className="c1"
     >
       <thead
-        className="sc-cMljjf eTbdzc"
+        className=""
       >
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <th
-            className="sc-iRbamj fJZQwr"
+            className="c3"
           >
             Code
           </th>
           <th
-            className="sc-iRbamj fJZQwr"
+            className="c3"
           >
             Capital
           </th>
           <th
-            className="sc-iRbamj fJZQwr"
+            className="c3"
           >
             Country
           </th>
         </tr>
       </thead>
       <tbody
-        className="sc-jAaTju fNCBho"
+        className=""
       >
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             US
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             USA
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             PL
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             Warsaw
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             Poland
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             DE
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             Berlin
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             Germany
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             FR
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             Paris
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             France
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             ES
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             Madird
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             Spain
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             —
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
@@ -312,7 +395,7 @@ exports[`Storyshots Shared Components|Table with header 1`] = `
 
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c4"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
@@ -332,6 +415,81 @@ exports[`Storyshots Shared Components|Table with header 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Table with numbered rows 1`] = `
+.c0 {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.c1 {
+  border-collapse: collapse;
+  min-width: 100%;
+}
+
+.c2:last-of-type td:first-of-type {
+  border-bottom-color: #1d1d20;
+  padding-bottom: 10px;
+}
+
+.c5 {
+  font-size: 14px;
+  padding: 7px 12px;
+  border-bottom: 2px solid #1d1d20;
+  border-right: 2px solid #1d1d20;
+  color: #FFF;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+
+.c3 {
+  font-size: 14px;
+  padding: 7px 12px;
+  border-bottom: 2px solid #1d1d20;
+  border-right: 2px solid #1d1d20;
+  color: #FFF;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+  background-color: #1d1d20;
+  color: #71737e;
+  font-weight: 600;
+  padding: 12px;
+  border-right-color: #000;
+  border-bottom-color: #000;
+  text-align: left;
+}
+
+.c3:first-of-type {
+  text-align: center;
+}
+
+.c3:last-of-type {
+  border-right-color: #000;
+}
+
+.c4 {
+  font-size: 14px;
+  padding: 7px 12px;
+  border-bottom: 2px solid #1d1d20;
+  border-right: 2px solid #1d1d20;
+  color: #FFF;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+  background-color: #1d1d20;
+  color: #71737e;
+  font-weight: 600;
+  padding: 12px;
+  border-right-color: #000;
+  border-bottom-color: #000;
+  text-align: center;
+  width: 40px;
+}
+
 <div
   style={
     Object {
@@ -341,177 +499,177 @@ exports[`Storyshots Shared Components|Table with numbered rows 1`] = `
   }
 >
   <div
-    className="sc-jWBwVP ejXLLH"
+    className="c0"
   >
     <table
-      className="sc-brqgnP fkvggI"
+      className="c1"
     >
       <thead
-        className="sc-cMljjf eTbdzc"
+        className=""
       >
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <th
-            className="sc-iRbamj fJZQwr"
+            className="c3"
           >
             #
           </th>
           <th
-            className="sc-iRbamj fJZQwr"
+            className="c3"
           >
             Code
           </th>
           <th
-            className="sc-iRbamj fJZQwr"
+            className="c3"
           >
             Capital
           </th>
           <th
-            className="sc-iRbamj fJZQwr"
+            className="c3"
           >
             Country
           </th>
         </tr>
       </thead>
       <tbody
-        className="sc-jAaTju fNCBho"
+        className=""
       >
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-jlyJG jvfCpw"
+            className="c4"
           >
             1
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             US
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             Washington, D.C.
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             USA
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-jlyJG jvfCpw"
+            className="c4"
           >
             2
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             PL
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             Warsaw
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             Poland
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-jlyJG jvfCpw"
+            className="c4"
           >
             3
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             DE
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             Berlin
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             Germany
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-jlyJG jvfCpw"
+            className="c4"
           >
             4
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             FR
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             Paris
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             France
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-jlyJG jvfCpw"
+            className="c4"
           >
             5
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             ES
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             Madird
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             Spain
           </td>
         </tr>
         <tr
-          className="sc-jDwBTQ bJjYMm"
+          className="c2"
         >
           <td
-            className="sc-jlyJG jvfCpw"
+            className="c4"
           >
             6
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             —
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna
@@ -524,7 +682,7 @@ exports[`Storyshots Shared Components|Table with numbered rows 1`] = `
 
           </td>
           <td
-            className="sc-gPEVay fqJWMU"
+            className="c5"
           >
             Sed eu dictum orci. In hac habitasse platea dictumst.
   Donec vestibulum scelerisque est sit amet mattis. Duis ac magna

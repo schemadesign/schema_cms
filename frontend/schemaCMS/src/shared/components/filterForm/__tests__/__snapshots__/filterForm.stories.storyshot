@@ -1,6 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots FilterForm Create form 1`] = `
+.c1 {
+  padding-top: 7px;
+}
+
+.c5 {
+  height: 155px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c6 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c8 {
+  width: calc(50% - 5px);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c2 label {
+  margin-bottom: 1px;
+}
+
+.c3 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c4 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto;
+}
+
+.c0 {
+  padding-top: 24px;
+}
+
+@media (min-width:1040px) {
+  .c7 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c6 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c8 {
+    width: 23.5%;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
 <div
   style={
     Object {
@@ -10,12 +105,12 @@ exports[`Storyshots FilterForm Create form 1`] = `
   }
 >
   <form
-    className="sc-ktHwxA gBklOe"
+    className="c0"
     onReset={[Function]}
     onSubmit={[Function]}
   >
     <div
-      className="sc-bZQynM bOrPFB"
+      className=""
     >
       <div
         style={
@@ -74,7 +169,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
           }
         >
           <div
-            className="sc-gzVnrw bHgYaJ"
+            className="c1"
           >
             <svg
               style={
@@ -96,7 +191,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-fYxtnH bBxIKO"
+      className="c2"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -124,7 +219,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         value="field"
       />
       <div
-        className="sc-tilXH eucPMw"
+        className="c3"
       >
         <svg
           style={
@@ -220,7 +315,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-fYxtnH bBxIKO"
+      className="c2"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -248,7 +343,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         value="checkbox"
       />
       <div
-        className="sc-tilXH eucPMw"
+        className="c3"
       >
         <svg
           style={
@@ -344,10 +439,10 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-hEsumM ijWfjS"
+      className="c4"
     >
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -409,7 +504,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -472,16 +567,16 @@ exports[`Storyshots FilterForm Create form 1`] = `
       </div>
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c5"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c6"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="c7"
         >
           <button
-            className="sc-VigVT iGqnRu"
+            className="c8"
             disabled={false}
             onClick={[Function]}
             style={
@@ -507,7 +602,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
             </span>
           </button>
           <button
-            className="sc-VigVT iGqnRu"
+            className="c8"
             disabled={true}
             style={
               Object {
@@ -539,6 +634,101 @@ exports[`Storyshots FilterForm Create form 1`] = `
 `;
 
 exports[`Storyshots FilterForm Edit form 1`] = `
+.c1 {
+  padding-top: 7px;
+}
+
+.c5 {
+  height: 155px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c6 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c8 {
+  width: calc(50% - 5px);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c2 label {
+  margin-bottom: 1px;
+}
+
+.c3 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.c4 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto;
+}
+
+.c0 {
+  padding-top: 24px;
+}
+
+@media (min-width:1040px) {
+  .c7 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c6 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c8 {
+    width: 23.5%;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
 <div
   style={
     Object {
@@ -548,12 +738,12 @@ exports[`Storyshots FilterForm Edit form 1`] = `
   }
 >
   <form
-    className="sc-ktHwxA gBklOe"
+    className="c0"
     onReset={[Function]}
     onSubmit={[Function]}
   >
     <div
-      className="sc-bZQynM bOrPFB"
+      className=""
     >
       <div
         style={
@@ -612,7 +802,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
           }
         >
           <div
-            className="sc-gzVnrw bHgYaJ"
+            className="c1"
           >
             <svg
               style={
@@ -634,7 +824,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-fYxtnH bBxIKO"
+      className="c2"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -662,7 +852,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         value="field"
       />
       <div
-        className="sc-tilXH eucPMw"
+        className="c3"
       >
         <svg
           style={
@@ -758,7 +948,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-fYxtnH bBxIKO"
+      className="c2"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -786,7 +976,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         value="checkbox"
       />
       <div
-        className="sc-tilXH eucPMw"
+        className="c3"
       >
         <svg
           style={
@@ -882,10 +1072,10 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-hEsumM ijWfjS"
+      className="c4"
     >
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -947,7 +1137,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         </div>
       </div>
       <div
-        className="sc-bZQynM bOrPFB"
+        className=""
       >
         <div
           style={
@@ -1010,16 +1200,16 @@ exports[`Storyshots FilterForm Edit form 1`] = `
       </div>
     </div>
     <div
-      className="sc-iwsKbI eQdjUy"
+      className="c5"
     >
       <div
-        className="sc-gqjmRU fIKSOC"
+        className="c6"
       >
         <div
-          className="sc-gZMcBi jSdIIC"
+          className="c7"
         >
           <button
-            className="sc-VigVT iGqnRu"
+            className="c8"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1045,7 +1235,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
             </span>
           </button>
           <button
-            className="sc-VigVT iGqnRu"
+            className="c8"
             disabled={true}
             style={
               Object {

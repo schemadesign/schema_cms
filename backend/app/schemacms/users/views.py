@@ -3,6 +3,7 @@ from django.db import transaction
 from django_filters import rest_framework as django_filters
 from rest_framework import decorators, mixins, permissions, response, status, serializers, viewsets
 
+from schemacms.authorization import constants as auth_constants
 from schemacms.users import signals
 from .constants import UserRole, ErrorCode
 from . import models as user_models, permissions as user_permissions, serializers as user_serializers
@@ -83,5 +84,10 @@ class CurrentUserViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, vie
         detail=True, permission_classes=(permissions.IsAuthenticated,), url_path="reset-password"
     )
     def reset_password(self, request):
+        auth_method = auth_constants.JWTAuthMethod.get_method_from_jwt_token(request.auth.decode())
+        if auth_method == auth_constants.JWTAuthMethod.GMAIL:
+            msg = "User registered by social providers should change password on provider's application"
+            code = "invalidAuthMethod"
+            raise serializers.ValidationError(msg, code=code)
         url = user_mgtm_backend.password_change_url(user=self.get_object())
         return response.Response({"ticket": url})

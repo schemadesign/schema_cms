@@ -1,6 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 23px;
+}
+
+.c0 {
+  height: 155px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c1 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c3 {
+  width: calc(50% - 5px);
+}
+
+.c4 {
+  width: calc(50% - 5px);
+}
+
+@media (min-width:1040px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    width: 23.5%;
+    -webkit-transform: translateX(-255px);
+    -ms-transform: translateX(-255px);
+    transform: translateX(-255px);
+  }
+}
+
 <div
   style={
     Object {
@@ -10,16 +91,16 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
   }
 >
   <div
-    className="sc-iwsKbI eQdjUy"
+    className="c0"
   >
     <div
-      className="sc-gqjmRU fIKSOC"
+      className="c1"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="c2"
       >
         <button
-          className="sc-VigVT dNFsjT"
+          className="c3"
           disabled={false}
           onClick={[Function]}
           style={
@@ -45,7 +126,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
           </span>
         </button>
         <button
-          className="sc-VigVT eTfsKS"
+          className="c4"
           disabled={false}
           onClick={[Function]}
           style={
@@ -71,7 +152,7 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
           </span>
         </button>
         <div
-          className="sc-dnqmqq iuexap"
+          className="c5"
         >
           <div
             style={
@@ -191,6 +272,87 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
 `;
 
 exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 23px;
+}
+
+.c0 {
+  height: 155px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c1 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c3 {
+  width: calc(50% - 5px);
+}
+
+.c4 {
+  width: calc(50% - 5px);
+}
+
+@media (min-width:1040px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    width: 23.5%;
+    -webkit-transform: translateX(-255px);
+    -ms-transform: translateX(-255px);
+    transform: translateX(-255px);
+  }
+}
+
 <div
   style={
     Object {
@@ -200,16 +362,16 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
   }
 >
   <div
-    className="sc-iwsKbI eQdjUy"
+    className="c0"
   >
     <div
-      className="sc-gqjmRU fIKSOC"
+      className="c1"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="c2"
       >
         <button
-          className="sc-VigVT dNFsjT"
+          className="c3"
           disabled={true}
           onClick={[Function]}
           style={
@@ -235,7 +397,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
           </span>
         </button>
         <button
-          className="sc-VigVT eTfsKS"
+          className="c4"
           disabled={false}
           onClick={[Function]}
           style={
@@ -261,7 +423,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
           </span>
         </button>
         <div
-          className="sc-dnqmqq iuexap"
+          className="c5"
         >
           <div
             style={
@@ -381,6 +543,87 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
 `;
 
 exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 23px;
+}
+
+.c0 {
+  height: 155px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c1 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c3 {
+  width: calc(50% - 5px);
+}
+
+.c4 {
+  width: calc(50% - 5px);
+}
+
+@media (min-width:1040px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    width: 23.5%;
+    -webkit-transform: translateX(-255px);
+    -ms-transform: translateX(-255px);
+    transform: translateX(-255px);
+  }
+}
+
 <div
   style={
     Object {
@@ -390,16 +633,16 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
   }
 >
   <div
-    className="sc-iwsKbI eQdjUy"
+    className="c0"
   >
     <div
-      className="sc-gqjmRU fIKSOC"
+      className="c1"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="c2"
       >
         <button
-          className="sc-VigVT dNFsjT"
+          className="c3"
           disabled={false}
           onClick={[Function]}
           style={
@@ -425,7 +668,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
           </span>
         </button>
         <button
-          className="sc-VigVT eTfsKS"
+          className="c4"
           disabled={true}
           onClick={[Function]}
           style={
@@ -451,7 +694,7 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
           </span>
         </button>
         <div
-          className="sc-dnqmqq iuexap"
+          className="c5"
         >
           <div
             style={
@@ -571,6 +814,87 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
 `;
 
 exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 23px;
+}
+
+.c0 {
+  height: 155px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c1 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c3 {
+  width: calc(50% - 5px);
+}
+
+.c4 {
+  width: calc(50% - 5px);
+}
+
+@media (min-width:1040px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    width: 23.5%;
+    -webkit-transform: translateX(-255px);
+    -ms-transform: translateX(-255px);
+    transform: translateX(-255px);
+  }
+}
+
 <div
   style={
     Object {
@@ -580,16 +904,16 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
   }
 >
   <div
-    className="sc-iwsKbI eQdjUy"
+    className="c0"
   >
     <div
-      className="sc-gqjmRU fIKSOC"
+      className="c1"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="c2"
       >
         <button
-          className="sc-VigVT dNFsjT"
+          className="c3"
           disabled={true}
           onClick={[Function]}
           style={
@@ -615,7 +939,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
           </span>
         </button>
         <button
-          className="sc-VigVT eTfsKS"
+          className="c4"
           disabled={true}
           onClick={[Function]}
           style={
@@ -641,7 +965,7 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
           </span>
         </button>
         <div
-          className="sc-dnqmqq iuexap"
+          className="c5"
         >
           <div
             style={
@@ -761,6 +1085,87 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
 `;
 
 exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 23px;
+}
+
+.c0 {
+  height: 155px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c1 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c3 {
+  width: calc(50% - 5px);
+}
+
+.c4 {
+  width: calc(50% - 5px);
+}
+
+@media (min-width:1040px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c1 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    width: 23.5%;
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    width: 23.5%;
+    -webkit-transform: translateX(-255px);
+    -ms-transform: translateX(-255px);
+    transform: translateX(-255px);
+  }
+}
+
 <div
   style={
     Object {
@@ -770,16 +1175,16 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
   }
 >
   <div
-    className="sc-iwsKbI eQdjUy"
+    className="c0"
   >
     <div
-      className="sc-gqjmRU fIKSOC"
+      className="c1"
     >
       <div
-        className="sc-gZMcBi jSdIIC"
+        className="c2"
       >
         <button
-          className="sc-VigVT dNFsjT"
+          className="c3"
           disabled={false}
           onClick={[Function]}
           style={
@@ -805,7 +1210,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
           </span>
         </button>
         <button
-          className="sc-VigVT eTfsKS"
+          className="c4"
           disabled={false}
           onClick={[Function]}
           style={
@@ -831,7 +1236,7 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
           </span>
         </button>
         <div
-          className="sc-dnqmqq iuexap"
+          className="c5"
         >
           <div
             style={
