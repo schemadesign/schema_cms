@@ -30,6 +30,9 @@ custom:
 
 package:
   individually: true
+  exclude:
+    - .git/**
+    - node_modules/**
 
 functions:
   main:

@@ -58,7 +58,12 @@ function get_lambda_arn() {
 
 function create_worker_lambda() {
   cd ../functions/worker && \
-  serverless plugin install -n serverless-python-requirements && \
+  SLS_DEBUG=* serverless deploy --verbose --stage local && \
+  cd ../../app
+}
+
+function create_public_api_lambda() {
+  cd ../functions/public_api && \
   SLS_DEBUG=* serverless deploy --verbose --stage local && \
   cd ../../app
 }

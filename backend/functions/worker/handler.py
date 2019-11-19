@@ -8,7 +8,7 @@ import logging
 import os
 import re
 import sys
-from io import StringIO
+from io import StringIO, BytesIO
 
 import dateutil
 import datatable as dt
@@ -18,13 +18,7 @@ import pytz
 import requests
 import scipy as sp
 
-from common import (
-    api,
-    db,
-    services,
-    settings,
-    types,
-)
+from common import api, db, services, settings, types
 import errors
 import mocks
 
@@ -45,13 +39,17 @@ def write_dataframe_to_csv_on_s3(dataframe, filename):
     )
 
 
+def write_dataframe_to_parquet_on_s3(dataframe, filename):
+    buffer = BytesIO()
+    dataframe.to_parquet(buffer, engine="pyarrow", index=False)
+
+    return services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(Body=buffer.getvalue())
+
+
 def process_job(job):
     global df
 
-    api.schemacms_api.update_job_state(
-        job_pk=job.id,
-        state=db.JobState.PROCESSING,
-    )
+    api.schemacms_api.update_job_state(job_pk=job.id, state=db.JobState.PROCESSING)
 
     logger.info(f"Loading source file: {job.source_file_path} ver. {job.source_file_version}")
     source_file = services.get_s3_object(job.source_file_path, version=job.source_file_version)
@@ -70,12 +68,12 @@ def process_job(job):
         logger.info(f"Step {step.id} done")
 
     result_file_name = f"{job.datasource.id}/outputs/job_{job.id}_result.csv"
+
     write_dataframe_to_csv_on_s3(df, result_file_name)
+    write_dataframe_to_parquet_on_s3(df, result_file_name.replace(".csv", ".parquet"))
+
     api.schemacms_api.update_job_state(
-        job_pk=job.id,
-        state=db.JobState.SUCCESS,
-        result=result_file_name,
-        error="",
+        job_pk=job.id, state=db.JobState.SUCCESS, result=result_file_name, error=""
     )
 
 
@@ -97,16 +95,12 @@ def main(event, context):
             process_job(job=job)
         except errors.JobLoadingSourceFileError as e:
             api.schemacms_api.update_job_state(
-                job_pk=job.id,
-                state=db.JobState.FAILED,
-                error=f"{e} @ loading source file"
+                job_pk=job.id, state=db.JobState.FAILED, error=f"{e} @ loading source file"
             )
             return logging.critical(f"Error while loading source file - {e}")
         except errors.JobSetExecutionError as e:
             api.schemacms_api.update_job_state(
-                job_pk=job.id,
-                state=db.JobState.FAILED,
-                error=f"{e.msg} @ {e.step.id}"
+                job_pk=job.id, state=db.JobState.FAILED, error=f"{e.msg} @ {e.step.id}"
             )
             return logging.critical(f"Error while executing {e.step.script.name}")
         except Exception as e:

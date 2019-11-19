@@ -102,18 +102,25 @@ class TestDataSource:
     def test_meta_file_serialization(self, data_source_factory, job_factory, job_meta_factory):
         ds = data_source_factory()
         job = job_factory(datasource=ds)
-        job_meta = job_meta_factory(job=job)
         ds.active_job = job
-        ds.save(update_fields=["active_job"])
+        ds.active_job.update_meta()
 
+        ds.save(update_fields=["active_job"])
+        ds.refresh_from_db()
         ret = ds.meta_file_serialization()
 
         assert ret == {
             'id': ds.id,
             'name': ds.name,
             'file': ds.file.name,
-            'items': job_meta.items,
-            'result': "",
+            'items': job.meta_data.items,
+            'result': job.result,
+            'filters': [],
+            'fields': [
+                {'name': 'col_0', 'type': 'boolean'},
+                {'name': 'col_1', 'type': 'boolean'},
+                {'name': 'col_2', 'type': 'number'},
+            ],
         }
 
 

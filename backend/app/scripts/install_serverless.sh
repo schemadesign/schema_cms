@@ -14,6 +14,6 @@ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(
 apt update
 apt install -y docker-ce docker-ce-cli containerd.io npm
 npm install -g serverless
-npm install --save-dev serverless-localstack
-npm install --save-dev serverless-package-external
+npm install --save-dev serverless-localstack serverless-wsgi serverless-python-requirements \
+  serverless-package-external
 pip install awscli gevent

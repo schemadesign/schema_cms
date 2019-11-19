@@ -3,10 +3,7 @@ import json
 import operator
 import typing
 
-from . import (
-    settings,
-    services,
-)
+from . import settings, services
 
 
 class LoaderMixin:
@@ -37,6 +34,12 @@ class DataSource(LoaderMixin, FetchMetaFileMixin):
     file: str = ""
     items: int = 0
     result: str = ""
+    fields: list = dataclasses.field(default_factory=list)
+    filters: list = dataclasses.field(default_factory=list)
+
+    @property
+    def result_parquet(self):
+        return self.result.replace(".csv", ".parquet")
 
 
 @dataclasses.dataclass()
@@ -73,7 +76,6 @@ class Job(LoaderMixin):
         data = data.copy()
         data["datasource"] = DataSource.from_json(data["datasource"])
         data["steps"] = sorted(
-            map(Step.from_json, data.get("steps", [])),
-            key=operator.attrgetter("exec_order")
+            map(Step.from_json, data.get("steps", [])), key=operator.attrgetter("exec_order")
         )
         return super().from_json(data)
