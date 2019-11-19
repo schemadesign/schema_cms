@@ -56,12 +56,12 @@ install_db_secret
     echo "Worker-Lambda function NOT created"
 }
 
-{
-    create_public_api_lambda &&
-    echo "Public-API function created"
-} || {
-    echo "Public-API function NOT created"
-}
+#{
+#    create_public_api_lambda &&
+#    echo "Public-API function created"
+#} || {
+#    echo "Public-API function NOT created"
+#}
 
 WORKER_SUCCESS_ARN=$(get_worker_success_lambda_arn)
 
