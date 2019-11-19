@@ -25,6 +25,7 @@ export class List extends PureComponent {
     fetchProjectsList: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
   };
 
   state = {
@@ -36,14 +37,19 @@ export class List extends PureComponent {
     this.setState({ loading: false });
   }
 
-  getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => ({
-    headerTitle,
-    headerSubtitle,
-    secondaryMenuItems: [
-      { label: this.formatMessage(messages.users), to: '/user', id: 'userBtn' },
-      { label: this.formatMessage(messages.logOut), to: '/logout', id: 'logoutBtn' },
-    ],
-  });
+  getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => {
+    const secondaryMenuItems = [{ label: this.formatMessage(messages.logOut), to: '/logout', id: 'logoutBtn' }];
+
+    if (this.props.isAdmin) {
+      secondaryMenuItems.push({ label: this.formatMessage(messages.users), to: '/user', id: 'userBtn' });
+    }
+
+    return {
+      headerTitle,
+      headerSubtitle,
+      secondaryMenuItems,
+    };
+  };
 
   formatMessage = value => this.props.intl.formatMessage(value);
 

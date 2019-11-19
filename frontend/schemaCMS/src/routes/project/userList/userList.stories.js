@@ -8,6 +8,7 @@ export const defaultProps = {
   clearProject: Function.prototype,
   fetchProject: Function.prototype,
   removeUser: Function.prototype,
+  isAdmin: true,
   users: [],
   match: {
     params: {

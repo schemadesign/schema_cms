@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { path } from 'ramda';
+import { always, path } from 'ramda';
 
 import { Container } from './userDetails.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -18,6 +18,7 @@ export class UserDetails extends PureComponent {
     fetchUser: PropTypes.func.isRequired,
     removeEditorFromProject: PropTypes.func.isRequired,
     userData: PropTypes.object.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
     history: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
@@ -52,8 +53,18 @@ export class UserDetails extends PureComponent {
 
   renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
 
+  renderRemoveUserButton = renderWhenTrue(
+    always(
+      <LinkContainer>
+        <Link onClick={() => this.setState({ userRemoveModalOpen: true })}>
+          <FormattedMessage {...messages.removeEditorFromProject} />
+        </Link>
+      </LinkContainer>
+    )
+  );
+
   render() {
-    const { userData } = this.props;
+    const { userData, isAdmin } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -62,11 +73,7 @@ export class UserDetails extends PureComponent {
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         {this.renderContent(userData)}
-        <LinkContainer>
-          <Link onClick={() => this.setState({ userRemoveModalOpen: true })}>
-            <FormattedMessage {...messages.removeEditorFromProject} />
-          </Link>
-        </LinkContainer>
+        {this.renderRemoveUserButton(isAdmin)}
         <NavigationContainer>
           <BackButton type="button" onClick={this.handleBack} />
         </NavigationContainer>

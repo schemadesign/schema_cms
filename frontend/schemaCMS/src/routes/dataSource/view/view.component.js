@@ -33,6 +33,7 @@ export class View extends PureComponent {
     fetchPreview: PropTypes.func.isRequired,
     fetchDataWranglingScripts: PropTypes.func.isRequired,
     isAnyJobProcessing: PropTypes.bool.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     fetchFilters: PropTypes.func.isRequired,

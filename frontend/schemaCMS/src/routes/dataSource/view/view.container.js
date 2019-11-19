@@ -16,6 +16,7 @@ import {
 import { DataWranglingScriptsRoutines, selectDataWranglingScripts } from '../../../modules/dataWranglingScripts';
 import { selectFilters } from '../../../modules/filter';
 import { FilterRoutines } from '../../../modules/filter/filter.redux';
+import { selectIsAdmin } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
   dataSource: selectDataSource,
@@ -23,6 +24,7 @@ const mapStateToProps = createStructuredSelector({
   filters: selectFilters,
   previewData: selectPreviewData,
   isAnyJobProcessing: selectIsAnyJobProcessing,
+  isAdmin: selectIsAdmin,
 });
 
 export const mapDispatchToProps = dispatch => ({

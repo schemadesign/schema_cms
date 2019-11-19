@@ -40,6 +40,7 @@ exports[`User List: Component should render correctly 1`] = `
     />
   </ContextHeader>
   <UserList
+    isAdmin={true}
     users={Array []}
   />
   <NavigationContainer
@@ -104,6 +105,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
     />
   </ContextHeader>
   <UserList
+    isAdmin={true}
     users={
       Array [
         Object {

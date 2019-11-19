@@ -9,10 +9,20 @@ export class User extends PureComponent {
   static propTypes = {
     createUserProject: PropTypes.func.isRequired,
     createUserCMS: PropTypes.func.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       path: PropTypes.string.isRequired,
     }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }).isRequired,
   };
+
+  componentDidMount() {
+    if (!this.props.isAdmin) {
+      this.props.history.push('/');
+    }
+  }
 
   render() {
     const {

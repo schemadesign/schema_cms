@@ -13,6 +13,7 @@ export const defaultProps = {
   dataWranglingScripts: [],
   filters: [],
   isAnyJobProcessing: false,
+  isAdmin: true,
   fetchFields: Function.prototype,
   onDataSourceChange: Function.prototype,
   setFilters: Function.prototype,

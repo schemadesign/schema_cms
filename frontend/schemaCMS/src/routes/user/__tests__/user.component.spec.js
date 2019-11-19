@@ -6,6 +6,10 @@ import { User } from '../user.component';
 const defaultProps = {
   createUserProject: Function.prototype,
   createUserCMS: Function.prototype,
+  isAdmin: true,
+  history: {
+    push: Function.prototype,
+  },
   match: {
     path: '/user',
   },
