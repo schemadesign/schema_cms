@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Formik } from 'formik';
 import { withTheme } from 'styled-components';
-import Modal from 'react-modal';
 
 import {
   buttonStyles,
@@ -32,8 +31,9 @@ import { Uploader } from '../form/uploader';
 import { errorMessageParser } from '../../utils/helpers';
 import { renderWhenTrue } from '../../utils/rendering';
 import browserHistory from '../../utils/history';
-import { getModalStyles, ModalActions, ModalButton, ModalTitle } from '../modal/modal.styles';
+import { ModalActions, Modal, ModalTitle, modalStyles } from '../modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
+import { BackButton, NextButton } from '../navigation';
 
 const { RadioGroup, RadioBaseComponent, Label } = Form;
 const { CsvIcon } = Icons;
@@ -237,17 +237,17 @@ export class SourceComponent extends PureComponent {
             );
           }}
         </Formik>
-        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <ModalButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove}>
               <FormattedMessage {...messages.cancelRemoval} />
-            </ModalButton>
-            <ModalButton onClick={this.handleConfirmRemove}>
+            </BackButton>
+            <NextButton onClick={this.handleConfirmRemove}>
               <FormattedMessage {...messages.confirmRemoval} />
-            </ModalButton>
+            </NextButton>
           </ModalActions>
         </Modal>
       </Container>

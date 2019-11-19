@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always } from 'ramda';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { defaultStyle, dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FormattedMessage } from 'react-intl';
 
 import { DATA_WRANGLING_STEP } from '../../modules/dataSource/dataSource.constants';
@@ -26,6 +26,7 @@ export class DataWranglingScript extends PureComponent {
     fetchDataWranglingScript: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         scriptId: PropTypes.string.isRequired,
@@ -69,7 +70,8 @@ export class DataWranglingScript extends PureComponent {
   };
 
   renderContent() {
-    const { intl, dataWranglingScript, match, history } = this.props;
+    const { intl, dataWranglingScript, match, history, isAdmin } = this.props;
+    const syntaxTheme = isAdmin ? dracula : defaultStyle;
 
     const descriptionFieldProps = {
       name: DESCRIPTION,
@@ -86,7 +88,7 @@ export class DataWranglingScript extends PureComponent {
       <Fragment>
         <Form name={DATA_WRANGLING_FORM_NAME}>
           <TextInput {...descriptionFieldProps} />
-          <SyntaxHighlighter language="python" style={darcula}>
+          <SyntaxHighlighter language="python" style={syntaxTheme}>
             {dataWranglingScript.body}
           </SyntaxHighlighter>
         </Form>

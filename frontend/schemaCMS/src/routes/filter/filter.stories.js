@@ -18,6 +18,7 @@ export const defaultProps = {
   removeFilter: Function.prototype,
   filter: {
     datasource: {
+      id: '1',
       name: 'name',
     },
   },

@@ -34,10 +34,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 
 .c12 {
   width: calc(50% - 5px);
-}
-
-.c13 {
-  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c0 {
@@ -102,19 +99,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
 
 @media (min-width:1040px) {
   .c12 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c13 {
-    width: 23.5%;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
+    width: 240px;
   }
 }
 
@@ -674,14 +659,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                   "padding": "0",
                 }
               }
-              type="back"
             >
               <span>
                 Cancel
               </span>
             </button>
             <button
-              className="c13"
+              className="c12"
               disabled={false}
               style={
                 Object {

@@ -51,14 +51,12 @@ exports[`Storyshots Shared Components|Navigation BackArrowButton 1`] = `
 exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
 .c0 {
   width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 @media (min-width:1040px) {
   .c0 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
+    width: 240px;
   }
 }
 
@@ -89,7 +87,6 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
         "padding": "0",
       }
     }
-    type="back"
   >
     <span>
       Back
@@ -207,14 +204,12 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
 exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
 .c0 {
   width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 @media (min-width:1040px) {
   .c0 {
-    width: 23.5%;
-    -webkit-transform: translateX(-255px);
-    -ms-transform: translateX(-255px);
-    transform: translateX(-255px);
+    width: 240px;
   }
 }
 
@@ -245,7 +240,6 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
         "padding": "0",
       }
     }
-    type="next"
   >
     <span>
       Next

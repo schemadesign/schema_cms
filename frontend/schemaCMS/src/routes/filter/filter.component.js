@@ -57,6 +57,8 @@ export class Filter extends PureComponent {
         updateFilter={this.props.updateFilter}
         filter={this.props.filter}
         removeFilter={this.props.removeFilter}
+        history={this.props.history}
+        dataSourceId={this.props.filter.datasource.id}
       />
     </Fragment>
   ));

@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { path } from 'ramda';
-import Modal from 'react-modal';
 
 import { Container } from './userDetails.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -10,9 +9,9 @@ import { UserProfile } from '../../../shared/components/userProfile/userProfile.
 import messages from './userDetails.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { getModalStyles, ModalActions, ModalButton, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { Modal, modalStyles, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
-import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 export class UserDetails extends PureComponent {
   static propTypes = {
@@ -71,17 +70,17 @@ export class UserDetails extends PureComponent {
         <NavigationContainer>
           <BackButton type="button" onClick={this.handleBack} />
         </NavigationContainer>
-        <Modal isOpen={this.state.userRemoveModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
+        <Modal isOpen={this.state.userRemoveModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <ModalButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove}>
               <FormattedMessage {...messages.cancelRemoval} />
-            </ModalButton>
-            <ModalButton onClick={this.handleConfirmRemove}>
+            </BackButton>
+            <NextButton onClick={this.handleConfirmRemove}>
               <FormattedMessage {...messages.confirmRemoval} />
-            </ModalButton>
+            </NextButton>
           </ModalActions>
         </Modal>
       </Container>

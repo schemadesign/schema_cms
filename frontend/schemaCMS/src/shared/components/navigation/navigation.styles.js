@@ -1,15 +1,10 @@
 import styled from 'styled-components';
-import { always, cond, ifElse, propEq, T } from 'ramda';
+import { always, ifElse, propEq } from 'ramda';
 import { Button } from 'schemaUI';
 
 import { media, contentSizes } from '../../../theme/media';
-import { BACK, NEXT } from './navigation.constants';
 
 const BUTTON_MARGIN = 5;
-const BUTTON_MARGIN_DESKTOP = 255;
-
-const setTranslate = x =>
-  cond([[propEq('type', BACK), always(`${x}px`)], [propEq('type', NEXT), always(`${-x}px`)], [T, always('0')]]);
 
 export const Container = styled.div`
   height: 155px;
@@ -45,10 +40,10 @@ export const Navigation = styled.div`
 
 export const NavigationButton = styled(Button)`
   width: calc(50% - ${BUTTON_MARGIN}px);
+  max-width: 240px;
 
   ${media.desktop`
-    width: 23.5%;
-    transform: translateX(${setTranslate(BUTTON_MARGIN_DESKTOP)});
+    width: 240px;
   `};
 `;
 

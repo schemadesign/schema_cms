@@ -5,7 +5,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
   padding-top: 7px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -47,10 +47,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
 
 .c5 {
   width: calc(50% - 5px);
-}
-
-.c6 {
-  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c1 {
@@ -86,19 +83,7 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
 
 @media (min-width:1040px) {
   .c5 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c6 {
-    width: 23.5%;
-    -webkit-transform: translateX(-255px);
-    -ms-transform: translateX(-255px);
-    transform: translateX(-255px);
+    width: 240px;
   }
 }
 
@@ -338,14 +323,13 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                 "padding": "0",
               }
             }
-            type="back"
           >
             <span>
               Cancel
             </span>
           </button>
           <button
-            className="c6"
+            className="c5"
             disabled={true}
             onClick={[Function]}
             style={
@@ -364,14 +348,13 @@ exports[`Storyshots DataSource/View/Source Default 1`] = `
                 "padding": "0",
               }
             }
-            type="next"
           >
             <span>
               Next
             </span>
           </button>
           <div
-            className="c7"
+            className="c6"
           >
             <div
               style={

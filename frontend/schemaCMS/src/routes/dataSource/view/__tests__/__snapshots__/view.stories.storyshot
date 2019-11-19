@@ -2,6 +2,15 @@
 
 exports[`Storyshots DataSource/View Default 1`] = `
 <div
-  className=""
-/>
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className=""
+  />
+</div>
 `;

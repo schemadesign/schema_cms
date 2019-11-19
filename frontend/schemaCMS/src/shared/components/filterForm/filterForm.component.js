@@ -2,8 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { FormattedMessage } from 'react-intl';
-import { always, keys, map, path, pathOr, pipe, toString } from 'ramda';
-import Modal from 'react-modal';
+import { always, equals, ifElse, keys, map, path, pathOr, pipe, toString } from 'ramda';
 
 import { TextInput } from '../form/inputs/textInput';
 import messages from './filterForm.messages';
@@ -19,9 +18,9 @@ import {
 import { Select } from '../form/select';
 import { Form, Row } from './filterForm.styles';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
-import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../modal/modal.styles';
-import { renderWhenTrueOtherwise } from '../../utils/rendering';
+import { ModalActions, modalStyles, ModalTitle, Modal } from '../modal/modal.styles';
 import { FILTERS_STEP } from '../../../modules/dataSource/dataSource.constants';
+import { Link, LinkContainer } from '../../../theme/typography';
 
 export class FilterForm extends PureComponent {
   static propTypes = {
@@ -30,10 +29,10 @@ export class FilterForm extends PureComponent {
     updateFilter: PropTypes.func,
     removeFilter: PropTypes.func,
     filter: PropTypes.object,
-    dataSourceId: PropTypes.string,
+    dataSourceId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     history: PropTypes.shape({
-      push: PropTypes.func,
-    }),
+      push: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   static defaultProps = {
@@ -43,6 +42,8 @@ export class FilterForm extends PureComponent {
   state = {
     confirmationModalOpen: false,
   };
+
+  getBackMessage = ifElse(equals(true), always('cancel'), always('back'));
 
   getDependencyValues = value => ({
     uniqueItems: path(['fieldsInfo', value, FILTER_UNIQUE_ITEMS], this.props),
@@ -80,22 +81,9 @@ export class FilterForm extends PureComponent {
 
   handleSubmit = formData => {
     const submitFunc = this.props.createFilter || this.props.updateFilter;
-    const dataSourceId = this.props.dataSourceId || this.props.filter.datasource.id;
+    const dataSourceId = this.props.dataSourceId;
     submitFunc({ dataSourceId, filterId: this.props.filter.id, formData });
   };
-
-  renderLeftButton = renderWhenTrueOtherwise(
-    always(
-      <BackButton onClick={this.handleRemoveFilter} type="button">
-        <FormattedMessage {...messages.deleteFilter} />
-      </BackButton>
-    ),
-    always(
-      <BackButton onClick={this.handleBack} type="button">
-        <FormattedMessage {...messages.cancel} />
-      </BackButton>
-    )
-  );
 
   render() {
     const fieldOptions = pipe(
@@ -166,8 +154,15 @@ export class FilterForm extends PureComponent {
                     {...rest}
                   />
                 </Row>
+                <LinkContainer>
+                  <Link onClick={this.handleRemoveFilter}>
+                    <FormattedMessage {...messages.deleteFilter} />
+                  </Link>
+                </LinkContainer>
                 <NavigationContainer>
-                  {this.renderLeftButton(!this.props.dataSourceId)}
+                  <BackButton onClick={this.handleBack} type="button">
+                    <FormattedMessage {...messages[this.getBackMessage(!this.props.filter.id)]} />
+                  </BackButton>
                   <NextButton disabled={!dirty || !isValid} type="submit">
                     <FormattedMessage {...messages.saveFilter} />
                   </NextButton>
@@ -176,17 +171,17 @@ export class FilterForm extends PureComponent {
             );
           }}
         </Formik>
-        <Modal isOpen={this.state.confirmationModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
+        <Modal isOpen={this.state.confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <ModalButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove}>
               <FormattedMessage {...messages.cancelRemoval} />
-            </ModalButton>
-            <ModalButton onClick={this.handleConfirmRemove}>
+            </BackButton>
+            <NextButton onClick={this.handleConfirmRemove}>
               <FormattedMessage {...messages.confirmRemoval} />
-            </ModalButton>
+            </NextButton>
           </ModalActions>
         </Modal>
       </Fragment>

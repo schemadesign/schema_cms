@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { FilterForm } from './filterForm.component';
 import { withTheme } from '../../../.storybook/decorators';
 
-const defaultProps = {
+export const defaultProps = {
   fieldsInfo: {
     field: {
       filterType: ['checkbox'],
@@ -12,15 +12,15 @@ const defaultProps = {
       fieldType: 'string',
     },
   },
+  dataSourceId: '1',
+  history: {
+    push: Function.prototype,
+  },
 };
 
 export const createProps = {
   ...defaultProps,
   createFilter: Function.prototype,
-  dataSourceId: '1',
-  history: {
-    push: Function.prototype,
-  },
 };
 
 export const editProps = {

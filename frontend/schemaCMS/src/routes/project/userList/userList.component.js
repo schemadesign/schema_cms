@@ -1,12 +1,11 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import Modal from 'react-modal';
 import { path } from 'ramda';
 
 import { UserList as UserListComponent } from '../../../shared/components/userList';
-import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { BackButton, NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
+import { ModalActions, Modal, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { USERS } from '../../../shared/components/projectTabs/projectTabs.constants';
@@ -98,17 +97,17 @@ export class UserList extends PureComponent {
           </BackButton>
           <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
         </NavigationContainer>
-        <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={getModalStyles()}>
+        <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <ModalButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove}>
               <FormattedMessage {...messages.cancelRemoval} />
-            </ModalButton>
-            <ModalButton onClick={this.handleConfirmRemove}>
+            </BackButton>
+            <NextButton onClick={this.handleConfirmRemove}>
               <FormattedMessage {...messages.confirmRemoval} />
-            </ModalButton>
+            </NextButton>
           </ModalActions>
         </Modal>
       </Fragment>

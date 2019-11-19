@@ -5,7 +5,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
   padding-top: 7px;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -47,10 +47,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
 
 .c10 {
   width: calc(50% - 5px);
-}
-
-.c11 {
-  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c6 {
@@ -111,19 +108,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
 
 @media (min-width:1040px) {
   .c10 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c11 {
-    width: 23.5%;
-    -webkit-transform: translateX(-255px);
-    -ms-transform: translateX(-255px);
-    transform: translateX(-255px);
+    width: 240px;
   }
 }
 
@@ -585,14 +570,13 @@ exports[`Storyshots CreateDataSource Default 1`] = `
                   "padding": "0",
                 }
               }
-              type="back"
             >
               <span>
                 Cancel
               </span>
             </button>
             <button
-              className="c11"
+              className="c10"
               disabled={true}
               onClick={[Function]}
               style={
@@ -611,14 +595,13 @@ exports[`Storyshots CreateDataSource Default 1`] = `
                   "padding": "0",
                 }
               }
-              type="next"
             >
               <span>
                 Next
               </span>
             </button>
             <div
-              className="c12"
+              className="c11"
             >
               <div
                 style={

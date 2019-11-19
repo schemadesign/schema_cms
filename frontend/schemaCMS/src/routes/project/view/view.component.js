@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import { Card } from 'schemaUI';
 import { has, isEmpty, isNil, path, always, cond, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
-import Modal from 'react-modal';
 
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import browserHistory from '../../../shared/utils/history';
@@ -28,9 +27,9 @@ import {
   Statistics,
   statisticsCardStyles,
 } from './view.styles';
-import { BackArrowButton, NavigationContainer } from '../../../shared/components/navigation';
+import { BackArrowButton, BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
-import { getModalStyles, ModalTitle, ModalButton, ModalActions } from '../../../shared/components/modal/modal.styles';
+import { modalStyles, Modal, ModalTitle, ModalActions } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
 
 export class View extends PureComponent {
@@ -211,17 +210,17 @@ export class View extends PureComponent {
         <NavigationContainer>
           <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
-        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={getModalStyles()}>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <ModalButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove}>
               <FormattedMessage {...messages.cancelRemoval} />
-            </ModalButton>
-            <ModalButton onClick={this.handleConfirmRemove}>
+            </BackButton>
+            <NextButton onClick={this.handleConfirmRemove}>
               <FormattedMessage {...messages.confirmRemoval} />
-            </ModalButton>
+            </NextButton>
           </ModalActions>
         </Modal>
       </Container>

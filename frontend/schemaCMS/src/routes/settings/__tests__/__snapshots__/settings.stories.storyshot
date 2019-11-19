@@ -38,6 +38,7 @@ exports[`Storyshots Settings Default 1`] = `
 
 .c14 {
   width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c10 {
@@ -127,10 +128,7 @@ exports[`Storyshots Settings Default 1`] = `
 
 @media (min-width:1040px) {
   .c14 {
-    width: 23.5%;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
+    width: 240px;
   }
 }
 

@@ -13,6 +13,7 @@ exports[`Filter: Component should render correctly 1`] = `
     headerTitle="name"
   />
   <FilterForm
+    dataSourceId="1"
     fieldsInfo={
       Object {
         "field": Object {
@@ -27,8 +28,14 @@ exports[`Filter: Component should render correctly 1`] = `
     filter={
       Object {
         "datasource": Object {
+          "id": "1",
           "name": "name",
         },
+      }
+    }
+    history={
+      Object {
+        "push": [Function],
       }
     }
     removeFilter={[Function]}

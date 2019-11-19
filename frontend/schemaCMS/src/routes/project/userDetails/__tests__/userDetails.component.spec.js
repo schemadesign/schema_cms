@@ -3,8 +3,7 @@ import { shallow } from 'enzyme';
 
 import { UserDetails } from '../userDetails.component';
 import { defaultProps } from '../userDetails.stories';
-import { BackButton } from '../../../../shared/components/navigation';
-import { ModalButton } from '../../../../shared/components/modal/modal.styles';
+import { BackButton, NextButton } from '../../../../shared/components/navigation';
 
 describe('UserDetails: Component', () => {
   const component = props => <UserDetails {...defaultProps} {...props} />;
@@ -28,7 +27,10 @@ describe('UserDetails: Component', () => {
     jest.spyOn(defaultProps.history, 'push');
 
     const wrapper = render(defaultProps);
-    wrapper.find(BackButton).simulate('click');
+    wrapper
+      .find(BackButton)
+      .at(0)
+      .simulate('click');
 
     expect(defaultProps.history.push).toBeCalledWith('/project/1/user');
   });
@@ -38,10 +40,7 @@ describe('UserDetails: Component', () => {
 
     const wrapper = render();
 
-    wrapper
-      .find(ModalButton)
-      .at(1)
-      .simulate('click');
+    wrapper.find(NextButton).simulate('click');
 
     expect(defaultProps.removeEditorFromProject).toBeCalledWith({ isDetails: true, projectId: '1', userId: '1' });
   });

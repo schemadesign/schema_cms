@@ -1,28 +1,31 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { IntlProvider } from 'react-intl';
+import { shallow } from 'enzyme';
+import { Formik } from 'formik';
 
 import { FilterForm } from '../filterForm.component';
-import { createProps, editProps } from '../filterForm.stories';
-import { DEFAULT_LOCALE } from '../../../../i18n';
+import { defaultProps, createProps, editProps } from '../filterForm.stories';
 
 describe('FilterForm: Component', () => {
-  const defaultProps = {};
-  const component = props => (
-    <IntlProvider locale={DEFAULT_LOCALE}>
-      <FilterForm {...defaultProps} {...props} />
-    </IntlProvider>
-  );
+  const component = props => <FilterForm {...defaultProps} {...props} />;
 
-  const render = (props = {}) => mount(component(props));
+  const render = (props = {}) => shallow(component(props));
 
-  it('should render create form', () => {
-    const wrapper = render(createProps);
+  it('should render correctly', () => {
+    const wrapper = render();
     global.expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render create form', () => {
+    const form = render(createProps)
+      .find(Formik)
+      .dive();
+    global.expect(form).toMatchSnapshot();
+  });
+
   it('should render edit form', () => {
-    const wrapper = render(editProps);
-    global.expect(wrapper).toMatchSnapshot();
+    const form = render(editProps)
+      .find(Formik)
+      .dive();
+    global.expect(form).toMatchSnapshot();
   });
 });

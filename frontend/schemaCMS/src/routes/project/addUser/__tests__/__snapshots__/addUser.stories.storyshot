@@ -34,6 +34,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
 
 .c12 {
   width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c1 {
@@ -94,10 +95,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
 
 @media (min-width:1040px) {
   .c12 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
+    width: 240px;
   }
 }
 
@@ -423,7 +421,6 @@ exports[`Storyshots Project/AddUser Default 1`] = `
                 "padding": "0",
               }
             }
-            type="back"
           >
             <span>
               Back
@@ -470,6 +467,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
 
 .c19 {
   width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c1 {
@@ -635,10 +633,7 @@ exports[`Storyshots Project/AddUser with users 1`] = `
 
 @media (min-width:1040px) {
   .c19 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
+    width: 240px;
   }
 }
 
@@ -1232,7 +1227,6 @@ exports[`Storyshots Project/AddUser with users 1`] = `
                 "padding": "0",
               }
             }
-            type="back"
           >
             <span>
               Back

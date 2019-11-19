@@ -8,9 +8,11 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { DataWranglingScriptsRoutines, selectDataWranglingScript } from '../../modules/dataWranglingScripts';
 import { DataWranglingScript } from './dataWranglingScript.component';
+import { selectIsAdmin } from '../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
   dataWranglingScript: selectDataWranglingScript,
+  isAdmin: selectIsAdmin,
 });
 
 export const mapDispatchToProps = dispatch => ({

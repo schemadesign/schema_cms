@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Jwt } from './jwt.component';
+import { withTheme } from '../../.storybook/decorators';
 
 const location = {
   state: {
@@ -15,4 +16,6 @@ const defaultProps = {
   location,
 };
 
-storiesOf('Jwt', module).add('Default', () => <Jwt {...defaultProps} />);
+storiesOf('Jwt', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <Jwt {...defaultProps} />);
