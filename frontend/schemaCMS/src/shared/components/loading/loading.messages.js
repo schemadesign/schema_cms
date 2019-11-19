@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   loading: {
-    id: 'shared.components.loader.loading',
+    id: 'sharedComponents.loading.loading',
     defaultMessage: 'Loading...',
   },
 });
