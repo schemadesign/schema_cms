@@ -6,6 +6,7 @@ import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { generateApiUrl } from '../../../shared/utils/helpers';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { Empty } from '../project.styles';
@@ -87,7 +88,7 @@ export class List extends PureComponent {
 
   renderList = ({ list }) => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
-  renderAddButton = (isAdmin, id) => (isAdmin ? <PlusButton id={id} onClick={this.handleNewProject} /> : null);
+  renderAddButton = (isAdmin, id) => renderWhenTrue(always(<PlusButton id={id} onClick={this.handleNewProject} />))(isAdmin);
 
   renderNoData = () => (
     <Empty>
