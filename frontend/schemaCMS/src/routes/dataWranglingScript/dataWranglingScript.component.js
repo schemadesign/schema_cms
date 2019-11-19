@@ -11,7 +11,7 @@ import {
   DESCRIPTION,
 } from '../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
-import { Loader } from '../../shared/components/loader';
+import { Loading } from '../../shared/components/loading';
 import { TopHeader } from '../../shared/components/topHeader';
 import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { Container, Form, customInputStyles } from './dataWranglingScript.styles';
@@ -56,7 +56,7 @@ export class DataWranglingScript extends PureComponent {
     };
   };
 
-  getContentOrLoader = renderWhenTrueOtherwise(always(<Loader />), this.renderContent);
+  getContentOrLoading = renderWhenTrueOtherwise(always(<Loading />), this.renderContent);
 
   handleGoToDataWranglingList = (match, history) => () => {
     const { dataWranglingScript } = this.props;
@@ -100,7 +100,7 @@ export class DataWranglingScript extends PureComponent {
 
   render() {
     const { loading } = this.state;
-    const content = this.getContentOrLoader(loading);
+    const content = this.getContentOrLoading(loading);
     const headerConfig = this.getHeaderAndMenuConfig();
 
     return (

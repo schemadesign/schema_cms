@@ -12,7 +12,7 @@ import { DESCRIPTION, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { TopHeader } from '../../shared/components/topHeader';
-import { Loader } from '../../shared/components/loader';
+import { Loading } from '../../shared/components/loading';
 
 export class JobDetail extends PureComponent {
   static propTypes = {
@@ -72,7 +72,7 @@ export class JobDetail extends PureComponent {
     )(isSuccess);
 
   renderForm = job =>
-    renderWhenTrueOtherwise(always(<Loader />), () => (
+    renderWhenTrueOtherwise(always(<Loading />), () => (
       <Fragment>
         <TextInput
           label={<FormattedMessage {...messages[JOB_ID]} />}

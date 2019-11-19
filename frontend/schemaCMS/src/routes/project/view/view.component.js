@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import browserHistory from '../../../shared/utils/history';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { Loader } from '../../../shared/components/loader';
+import { Loading } from '../../../shared/components/loading';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { SETTINGS } from '../../../shared/components/projectTabs/projectTabs.constants';
@@ -185,7 +185,7 @@ export class View extends PureComponent {
     );
   };
 
-  renderContent = cond([[isEmpty, always(<Loader />)], [T, () => this.renderProject(this.props.project)]]);
+  renderContent = cond([[isEmpty, always(<Loading />)], [T, () => this.renderProject(this.props.project)]]);
 
   renderRemoveProjectButton = renderWhenTrue(
     always(

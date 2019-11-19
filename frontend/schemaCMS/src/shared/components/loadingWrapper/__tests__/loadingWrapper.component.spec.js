@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { LoadingWrapper } from '../loadingWrapper.component';
 import { content, contentProps, errorProps, loadingProps, noDataProps } from '../loadingWrapper.stories';
 
-describe('LoaderWrapper: Component', () => {
+describe('LoadingWrapper: Component', () => {
   const component = props => (
     <LoadingWrapper {...contentProps} {...props}>
       {content}

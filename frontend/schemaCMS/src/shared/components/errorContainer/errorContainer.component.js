@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'ramda';
 
 import { ERROR_TYPES } from './errorContainer.constants';
 import { Container } from './errorContainer.styles';
@@ -16,8 +15,12 @@ export class ErrorContainer extends PureComponent {
   };
 
   render() {
-    const {type, children, rest} = this.props;
+    const { type, children, ...rest } = this.props;
 
-    return <Container type={type} {...rest}>{children}</Container>;
+    return (
+      <Container type={type} {...rest}>
+        {children}
+      </Container>
+    );
   }
 }

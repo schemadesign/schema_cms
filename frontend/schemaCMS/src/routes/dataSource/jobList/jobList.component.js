@@ -19,7 +19,7 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 
 import messages from './jobList.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
-import { Loader } from '../../../shared/components/loader';
+import { Loading } from '../../../shared/components/loading';
 import { NoData } from '../../../shared/components/noData';
 import { JOB_STATE_SUCCESS, JOB_OPTION } from '../../../modules/job/job.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -112,7 +112,7 @@ export class JobList extends PureComponent {
   };
 
   renderContent = cond([
-    [either(propEq('loading', true), propEq('dataSource', {})), always(<Loader />)],
+    [either(propEq('loading', true), propEq('dataSource', {})), always(<Loading />)],
     [propEq('jobList', []), always(<NoData />)],
     [
       T,

@@ -6,7 +6,9 @@ export const Container = styled.div`
   color: ${({ theme: { error } }) => error};
   font-weight: 200;
 
-  ${({ type }) => type === ERROR_TYPES.PAGE && `
+  ${({ type }) =>
+    type === ERROR_TYPES.PAGE &&
+    `
     text-align: center;
     padding: 50px 10px;
     font-size: 20px;

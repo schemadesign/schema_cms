@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import { Container } from './filter.styles';
 import messages from './filter.messages';
 import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
-import { Loader } from '../../shared/components/loader';
+import { Loading } from '../../shared/components/loading';
 import { FilterForm } from '../../shared/components/filterForm';
 import { TopHeader } from '../../shared/components/topHeader';
 
@@ -49,7 +49,7 @@ export class Filter extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
-  renderContent = renderWhenTrueOtherwise(always(<Loader />), () => (
+  renderContent = renderWhenTrueOtherwise(always(<Loading />), () => (
     <Fragment>
       <TopHeader {...this.getHeaderAndMenuConfig()} />
       <FilterForm

@@ -8,7 +8,7 @@ import { FilterForm } from '../../../../shared/components/filterForm';
 import messages from './createFilter.messages';
 import { TopHeader } from '../../../../shared/components/topHeader';
 import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
-import { Loader } from '../../../../shared/components/loader';
+import { Loading } from '../../../../shared/components/loading';
 import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
 
 export class CreateFilter extends PureComponent {
@@ -49,7 +49,7 @@ export class CreateFilter extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
-  renderFilterForm = renderWhenTrueOtherwise(always(<Loader />), () => (
+  renderFilterForm = renderWhenTrueOtherwise(always(<Loading />), () => (
     <FilterForm
       fieldsInfo={this.props.fieldsInfo}
       createFilter={this.props.createFilter}

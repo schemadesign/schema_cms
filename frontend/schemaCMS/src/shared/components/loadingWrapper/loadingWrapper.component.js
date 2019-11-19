@@ -25,7 +25,7 @@ export class LoadingWrapper extends PureComponent {
 
   renderContent = cond([
     [propEq('loading', true), always(<Loading />)],
-    [({ error }) => !isNil(error), ({ error }) => <ErrorContainer>{error}</ErrorContainer>],
+    [({ error }) => !isNil(error), ({ error }) => <ErrorContainer type={ERROR_TYPES.PAGE}>{error}</ErrorContainer>],
     [propEq('noData', true), ({ noDataContent }) => <NoData>{noDataContent}</NoData>],
     [T, prop('children')],
   ]);

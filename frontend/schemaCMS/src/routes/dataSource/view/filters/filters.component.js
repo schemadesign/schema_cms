@@ -9,7 +9,7 @@ import { ButtonContainer, Container, FilterCounter, Header, Link, PlusButton } f
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
 import messages from './filters.messages';
 import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
-import { Loader } from '../../../../shared/components/loader';
+import { Loading } from '../../../../shared/components/loading';
 import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
 
 const { PlusIcon } = Icons;
@@ -72,7 +72,7 @@ export class Filters extends PureComponent {
     </Checkbox>
   );
 
-  renderContent = renderWhenTrueOtherwise(always(<Loader />), () => {
+  renderContent = renderWhenTrueOtherwise(always(<Loading />), () => {
     const { filters } = this.props;
     const initialValues = filters.filter(({ isActive }) => isActive).map(({ id }) => id.toString());
 

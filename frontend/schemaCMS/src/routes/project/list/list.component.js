@@ -6,7 +6,10 @@ import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { generateApiUrl } from '../../../shared/utils/helpers';
+<<<<<<< HEAD
 import { renderWhenTrue } from '../../../shared/utils/rendering';
+=======
+>>>>>>> clean up
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
@@ -49,7 +52,7 @@ export class List extends PureComponent {
     };
   };
 
-  getLoaderConfig = (list, loading) => ({
+  getLoadingConfig = (list, loading) => ({
     loading,
     noData: !list.length,
     noDataContent: this.formatMessage(messages.noProjects),
@@ -109,7 +112,7 @@ export class List extends PureComponent {
     const subtitle = this.formatMessage(messages.overview);
 
     const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
-    const loaderConfig = this.getLoaderConfig(list, loading);
+    const loadingConfig = this.getLoadingConfig(list, loading);
 
     return (
       <Container>
@@ -118,7 +121,7 @@ export class List extends PureComponent {
         <ContextHeader title={title} subtitle={subtitle}>
           {this.renderAddButton(isAdmin, 'addProjectDesktopBtn')}
         </ContextHeader>
-        <LoaderWrapper {...loaderConfig}>{this.renderList(list)}</LoaderWrapper>
+        <LoadingWrapper {...loadingConfig}>{this.renderList(list)}</LoadingWrapper>
         <NavigationContainer right hideOnDesktop>
           {this.renderAddButton(isAdmin, 'addProjectBtn')}
         </NavigationContainer>
