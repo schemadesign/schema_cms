@@ -87,7 +87,7 @@ export class List extends PureComponent {
 
   renderList = ({ list }) => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
-  renderAddButton = (isAdmin = true, id) => isAdmin && <PlusButton id={id} onClick={this.handleNewProject} />;
+  renderAddButton = (isAdmin, id) => isAdmin ? <PlusButton id={id} onClick={this.handleNewProject} /> : null;
 
   renderNoData = () => (
     <Empty>
@@ -109,8 +109,6 @@ export class List extends PureComponent {
     const subtitle = this.formatMessage(messages.overview);
 
     const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
-
-    console.log({ isAdmin });
 
     return (
       <Container>

@@ -6,8 +6,16 @@ import { withRouter, withTheme } from '../../../.storybook/decorators';
 import { PROJECT_STATUSES } from '../../../modules/project/project.constants';
 import { List } from './list.component';
 
-export const defaultProps = {
+export const emptyListProps = {
   isAdmin: true,
+  list: [],
+  fetchProjectsList: Function.prototype,
+  history: {},
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+};
+
+export const defaultProps = {
+  ...emptyListProps,
   list: [
     {
       title: 'Project Name',
@@ -35,16 +43,6 @@ export const defaultProps = {
       },
     },
   ],
-  fetchProjectsList: Function.prototype,
-  history: {},
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
-};
-
-export const emptyListProps = {
-  list: [],
-  fetchProjectsList: Function.prototype,
-  history: {},
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
 const editorProps = {
