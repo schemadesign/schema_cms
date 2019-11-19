@@ -18,12 +18,4 @@ export default defineMessages({
     id: 'userProfile.roleLabel',
     defaultMessage: 'Role',
   },
-  save: {
-    id: 'userProfile.save',
-    defaultMessage: 'Save',
-  },
-  makeAdmin: {
-    id: 'userProfile.makeAdmin',
-    defaultMessage: 'Make admin',
-  },
 });

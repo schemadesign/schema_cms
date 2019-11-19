@@ -4,18 +4,18 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   title: {
     id: 'settings.title',
-    defaultMessage: 'Admin Settings',
+    defaultMessage: 'SchemaCMS',
   },
   subTitle: {
     id: 'settings.subTitle',
-    defaultMessage: 'Profile',
+    defaultMessage: 'My Profile',
   },
-  logout: {
-    id: 'settings.logout',
-    defaultMessage: 'Log out',
+  save: {
+    id: 'settings.save',
+    defaultMessage: 'Save',
   },
   resetPassword: {
     id: 'settings.resetPassword',
-    defaultMessage: 'Reset Password',
+    defaultMessage: 'Reset password',
   },
 });

@@ -10,6 +10,10 @@ export default defineMessages({
     id: 'user.view.subTitle',
     defaultMessage: 'Profile',
   },
+  makeAdmin: {
+    id: 'user.view.makeAdmin',
+    defaultMessage: 'Make admin',
+  },
   removeUser: {
     id: 'user.view.removeUser',
     defaultMessage: 'Remove user',

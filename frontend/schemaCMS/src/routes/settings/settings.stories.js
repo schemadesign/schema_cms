@@ -2,17 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Settings } from './settings.component';
-import { withRouter } from '../../.storybook/decorators';
+import { withTheme } from '../../.storybook/decorators';
 
 export const defaultProps = {
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
-  },
-  userData: {},
   updateMe: Function.prototype,
-  match: {},
+  userData: {},
+  history: { push: Function.prototype, goBack: Function.prototype },
 };
 
 storiesOf('Settings', module)
-  .addDecorator(withRouter)
+  .addDecorator(withTheme())
   .add('Default', () => <Settings {...defaultProps} />);

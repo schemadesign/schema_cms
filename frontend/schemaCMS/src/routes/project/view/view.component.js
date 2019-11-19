@@ -27,12 +27,11 @@ import {
   DetailValue,
   Statistics,
   statisticsCardStyles,
-  Link,
-  LinkContainer,
 } from './view.styles';
 import { BackArrowButton, NavigationContainer } from '../../../shared/components/navigation';
 
 import { getModalStyles, ModalTitle, ModalButton, ModalActions } from '../../../shared/components/modal/modal.styles';
+import { Link, LinkContainer } from '../../../theme/typography';
 
 export class View extends PureComponent {
   static propTypes = {

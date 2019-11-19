@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import { Typography } from 'schemaUI';
 
 import { media } from '../../../theme/media';
 
-const { Span } = Typography;
 const mobileMargin = 7;
 const desktopMargin = 15;
 
@@ -145,21 +143,3 @@ export const CardValue = styled.span`
 export const statisticsCardStyles = {
   cursor: 'pointer',
 };
-
-export const LinkContainer = styled.div`
-  border-top: 2px solid ${({ theme }) => theme.label.border};
-  padding-top: 35px;
-  display: flex;
-  align-items: flex-start;
-`;
-
-export const Link = styled(Span)`
-  cursor: pointer;
-  color: ${({ theme }) => theme.text};
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-
-  &:hover {
-    border-bottom: 1px solid ${({ theme }) => theme.text};
-  }
-`;

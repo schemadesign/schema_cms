@@ -150,5 +150,42 @@ describe('Project: sagas', () => {
         .dispatch(ProjectRoutines.createProject({ payload }))
         .silentRun();
     });
+
+    it('should put ProjectRoutines.removeEditor.success action and fetch project', async () => {
+      const payload = {
+        projectId: '1',
+        userId: '1',
+      };
+      const response = [{ id: '1' }];
+
+      mockApi.post(`${PROJECTS_PATH}/${payload.projectId}/remove-editor`, { id: payload.userId }).reply(OK, response);
+
+      await expectSaga(watchProject)
+        .withState(defaultState)
+        .put(ProjectRoutines.removeEditor.success())
+        .put(ProjectRoutines.fetchOne.request())
+        .dispatch(ProjectRoutines.removeEditor(payload))
+        .silentRun();
+    });
+
+    it('should put ProjectRoutines.removeEditor.success action and redirect to users list', async () => {
+      jest.spyOn(browserHistory, 'push');
+      const payload = {
+        projectId: '1',
+        userId: '1',
+        isDetails: true,
+      };
+      const response = [{ id: '1' }];
+
+      mockApi.post(`${PROJECTS_PATH}/${payload.projectId}/remove-editor`, { id: payload.userId }).reply(OK, response);
+
+      await expectSaga(watchProject)
+        .withState(defaultState)
+        .put(ProjectRoutines.removeEditor.success())
+        .dispatch(ProjectRoutines.removeEditor(payload))
+        .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith(`/project/${payload.projectId}/user`);
+    });
   });
 });

@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
-import { injectIntl } from 'react-intl';
 
 import { View } from './view.component';
 import { selectUser, UserRoutines } from '../../../modules/user';
@@ -32,6 +31,5 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
-  injectIntl,
   withRouter
 )(View);

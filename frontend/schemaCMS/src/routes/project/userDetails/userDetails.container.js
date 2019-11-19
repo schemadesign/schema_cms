@@ -5,17 +5,19 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
-import { Settings } from './settings.component';
-import { selectUserData, UserProfileRoutines } from '../../modules/userProfile';
+import { UserDetails } from './userDetails.component';
+import { selectUser, UserRoutines } from '../../../modules/user';
+import { ProjectRoutines } from '../../../modules/project';
 
 const mapStateToProps = createStructuredSelector({
-  userData: selectUserData,
+  userData: selectUser,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      updateMe: promisifyRoutine(UserProfileRoutines.updateMe),
+      fetchUser: promisifyRoutine(UserRoutines.fetchUser),
+      removeEditorFromProject: promisifyRoutine(ProjectRoutines.removeEditor),
     },
     dispatch
   ),
@@ -28,4 +30,4 @@ export default compose(
     mapDispatchToProps
   ),
   withRouter
-)(Settings);
+)(UserDetails);

@@ -4,28 +4,26 @@ import { FormattedMessage } from 'react-intl';
 import { path } from 'ramda';
 import Modal from 'react-modal';
 
-import { Container } from './view.styles';
+import { Container } from './userDetails.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { UserProfile } from '../../../shared/components/userProfile/userProfile.component';
+import messages from './userDetails.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import messages from './view.messages';
 import { getModalStyles, ModalActions, ModalButton, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
-import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 
-export class View extends PureComponent {
+export class UserDetails extends PureComponent {
   static propTypes = {
     fetchUser: PropTypes.func.isRequired,
-    removeUser: PropTypes.func.isRequired,
-    makeAdmin: PropTypes.func.isRequired,
+    removeEditorFromProject: PropTypes.func.isRequired,
     userData: PropTypes.object.isRequired,
-    isAdmin: PropTypes.bool.isRequired,
     history: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         userId: PropTypes.string.isRequired,
+        projectId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   };
@@ -40,30 +38,23 @@ export class View extends PureComponent {
   }
 
   getUserId = () => path(['match', 'params', 'userId'], this.props);
+  getProjectId = () => path(['match', 'params', 'projectId'], this.props);
 
   handleCancelRemove = () => this.setState({ userRemoveModalOpen: false });
 
   handleConfirmRemove = () => {
     const userId = this.getUserId();
+    const projectId = this.getProjectId();
 
-    return this.props.removeUser({ userId });
+    this.props.removeEditorFromProject({ projectId, userId, isDetails: true });
   };
 
-  handleMakeAdmin = () => this.props.makeAdmin({ userId: this.getUserId() });
-
-  handleBack = () => this.props.history.push('/user');
+  handleBack = () => this.props.history.push(`/project/${this.getProjectId()}/user`);
 
   renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
 
-  renderMakeAdmin = renderWhenTrue(() => (
-    <Link onClick={this.handleMakeAdmin}>
-      <FormattedMessage {...messages.makeAdmin} />
-    </Link>
-  ));
-
   render() {
-    const { userData, isAdmin } = this.props;
-    const isEditor = userData.role === ROLES.EDITOR;
+    const { userData } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -74,9 +65,8 @@ export class View extends PureComponent {
         {this.renderContent(userData)}
         <LinkContainer>
           <Link onClick={() => this.setState({ userRemoveModalOpen: true })}>
-            <FormattedMessage {...messages.removeUser} />
+            <FormattedMessage {...messages.removeEditorFromProject} />
           </Link>
-          {this.renderMakeAdmin(isEditor && isAdmin)}
         </LinkContainer>
         <NavigationContainer>
           <BackButton type="button" onClick={this.handleBack} />

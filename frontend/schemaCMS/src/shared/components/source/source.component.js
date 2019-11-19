@@ -14,8 +14,6 @@ import {
   customRadioButtonStyles,
   customRadioGroupStyles,
   WarningWrapper,
-  Link,
-  LinkContainer,
 } from './source.styles';
 import messages from './source.messages';
 import { TextInput } from '../form/inputs/textInput';
@@ -35,6 +33,7 @@ import { errorMessageParser } from '../../utils/helpers';
 import { renderWhenTrue } from '../../utils/rendering';
 import browserHistory from '../../utils/history';
 import { getModalStyles, ModalActions, ModalButton, ModalTitle } from '../modal/modal.styles';
+import { Link, LinkContainer } from '../../../theme/typography';
 
 const { RadioGroup, RadioButton, Label } = Form;
 const { CsvIcon } = Icons;

@@ -17,18 +17,6 @@ exports[`View: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
-    secondaryMenuItems={
-      Array [
-        Object {
-          "label": <FormattedMessage
-            defaultMessage="Remove user"
-            id="user.view.removeUser"
-            values={Object {}}
-          />,
-          "onClick": [Function],
-        },
-      ]
-    }
   />
   <ContextHeader
     subtitle={
@@ -46,6 +34,27 @@ exports[`View: Component should render correctly 1`] = `
       />
     }
   />
+  <styled.div>
+    <Styled(Span)
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Remove user"
+        id="user.view.removeUser"
+        values={Object {}}
+      />
+    </Styled(Span)>
+  </styled.div>
+  <NavigationContainer
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    />
+  </NavigationContainer>
   <Modal
     ariaHideApp={true}
     bodyOpenClassName="ReactModal__Body--open"
@@ -122,7 +131,7 @@ exports[`View: Component should render correctly 1`] = `
 </styled.div>
 `;
 
-exports[`View: Component should render without remove user button 1`] = `
+exports[`View: Component should render correctly for admin user 1`] = `
 <styled.div>
   <TopHeader
     headerSubtitle={
@@ -139,7 +148,6 @@ exports[`View: Component should render without remove user button 1`] = `
         values={Object {}}
       />
     }
-    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={
@@ -157,6 +165,36 @@ exports[`View: Component should render without remove user button 1`] = `
       />
     }
   />
+  <styled.div>
+    <Styled(Span)
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Remove user"
+        id="user.view.removeUser"
+        values={Object {}}
+      />
+    </Styled(Span)>
+    <Styled(Span)
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Make admin"
+        id="user.view.makeAdmin"
+        values={Object {}}
+      />
+    </Styled(Span)>
+  </styled.div>
+  <NavigationContainer
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    />
+  </NavigationContainer>
   <Modal
     ariaHideApp={true}
     bodyOpenClassName="ReactModal__Body--open"
