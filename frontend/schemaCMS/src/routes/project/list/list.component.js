@@ -19,6 +19,7 @@ const { H1, P, Span } = Typography;
 
 export class List extends PureComponent {
   static propTypes = {
+    isAdmin: PropTypes.bool.isRequired,
     list: PropTypes.array.isRequired,
     fetchProjectsList: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
@@ -86,6 +87,8 @@ export class List extends PureComponent {
 
   renderList = ({ list }) => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
+  renderAddButton = (isAdmin = true, id) => isAdmin && <PlusButton id={id} onClick={this.handleNewProject} />;
+
   renderNoData = () => (
     <Empty>
       <P>{this.props.intl.formatMessage(messages.noProjects)} </P>
@@ -99,7 +102,7 @@ export class List extends PureComponent {
   ]);
 
   render() {
-    const { list = [] } = this.props;
+    const { list = [], isAdmin } = this.props;
     const { loading } = this.state;
 
     const title = this.formatMessage(messages.title);
@@ -107,16 +110,18 @@ export class List extends PureComponent {
 
     const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
 
+    console.log({ isAdmin });
+
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...topHeaderConfig} />
         <ContextHeader title={title} subtitle={subtitle}>
-          <PlusButton id="addProjectBtnDesktop" onClick={this.handleNewProject} />
+          {this.renderAddButton(isAdmin, 'addProjectDesktopBtn')}
         </ContextHeader>
         {this.renderContent({ list, loading })}
         <NavigationContainer right hideOnDesktop>
-          <PlusButton id="addProjectBtn" onClick={this.handleNewProject} />
+          {this.renderAddButton(isAdmin, 'addProjectBtn')}
         </NavigationContainer>
       </Container>
     );

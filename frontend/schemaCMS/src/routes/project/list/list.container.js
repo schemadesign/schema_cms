@@ -9,9 +9,11 @@ import { compose } from 'ramda';
 import { List } from './list.component';
 import { ProjectRoutines } from '../../../modules/project';
 import { selectProjectsList } from '../../../modules/project/project.selectors';
+import { selectIsAdmin } from '../../../modules/userProfile/userProfile.selectors';
 
 const mapStateToProps = createStructuredSelector({
   list: selectProjectsList,
+  isAdmin: selectIsAdmin,
 });
 
 export const mapDispatchToProps = dispatch =>

@@ -1,11 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { Theme } from 'schemaUI';
 
 import { withRouter, withTheme } from '../../../.storybook/decorators';
 import { PROJECT_STATUSES } from '../../../modules/project/project.constants';
 import { List } from './list.component';
 
 export const defaultProps = {
+  isAdmin: true,
   list: [
     {
       title: 'Project Name',
@@ -45,8 +47,18 @@ export const emptyListProps = {
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
+const editorProps = {
+  ...defaultProps,
+  isAdmin: false,
+}
+
 storiesOf('Project/List', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('list', () => <List {...defaultProps} />)
-  .add('empty', () => <List {...emptyListProps} />);
+  .add('empty', () => <List {...emptyListProps} />)
+  .add('admin list', () => <List {...defaultProps} />);
+
+storiesOf('Project/List', module)
+  .addDecorator(withRouter)
+  .addDecorator(withTheme(Theme.light))
+  .add('editor list', () => <List {...editorProps} />);
