@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import browserHistory from '../../../shared/utils/history';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { Loading } from '../../../shared/components/loading';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { SETTINGS } from '../../../shared/components/projectTabs/projectTabs.constants';
@@ -129,7 +129,7 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = ({ id: projectId, editors, owner, slug, created, charts, pages, meta, status } = {}) => {
+  renderProject = ({ id: projectId, editors, owner = {}, slug, created, charts, pages, meta, status } = {}) => {
     const statistics = [
       {
         header: this.renderStatisticHeader(messages.dataSources),
@@ -185,8 +185,6 @@ export class View extends PureComponent {
     );
   };
 
-  renderContent = cond([[isEmpty, always(<Loading />)], [T, () => this.renderProject(this.props.project)]]);
-
   renderRemoveProjectButton = renderWhenTrue(
     always(
       <LinkContainer>
@@ -196,6 +194,7 @@ export class View extends PureComponent {
       </LinkContainer>
     )
   );
+
   render() {
     const { project, isAdmin } = this.props;
     const { confirmationModalOpen } = this.state;
@@ -209,12 +208,14 @@ export class View extends PureComponent {
         <div>
           <Helmet title={title} />
           <TopHeader {...topHeaderConfig} />
-          <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
-          {this.renderContent(project)}
-          {this.renderRemoveProjectButton(isAdmin)}
+          <LoadingWrapper loading={isEmpty(project)}>
+            <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
+            {this.renderProject(project)}
+            {this.renderRemoveProjectButton(isAdmin)}
+          </LoadingWrapper>
         </div>
         <NavigationContainer>
-          <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />
+          <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
         <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
