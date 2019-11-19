@@ -75,6 +75,7 @@ const light = {
   },
   radioButton: {
     text: colors.darkGrey,
+    border: colors.darkGrey,
     active: {
       background: colors.darkGrey,
       fill: colors.white,
@@ -179,6 +180,7 @@ const dark = {
   },
   radioButton: {
     text: colors.white,
+    border: colors.white,
     active: {
       background: colors.white,
       fill: colors.darkGrey,
@@ -186,6 +188,7 @@ const dark = {
     unActive: {
       background: colors.darkGrey,
       fill: colors.white,
+      dot: colors.white,
     },
   },
   table: {

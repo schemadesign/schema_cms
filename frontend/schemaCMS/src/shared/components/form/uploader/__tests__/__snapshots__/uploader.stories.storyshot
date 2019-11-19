@@ -197,9 +197,11 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
                 "background": "#FFF",
                 "fill": "#1d1d20",
               },
+              "border": "#FFF",
               "text": "#FFF",
               "unActive": Object {
                 "background": "#1d1d20",
+                "dot": "#FFF",
                 "fill": "#FFF",
               },
             },
@@ -484,9 +486,11 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
                 "background": "#FFF",
                 "fill": "#1d1d20",
               },
+              "border": "#FFF",
               "text": "#FFF",
               "unActive": Object {
                 "background": "#1d1d20",
+                "dot": "#FFF",
                 "fill": "#FFF",
               },
             },

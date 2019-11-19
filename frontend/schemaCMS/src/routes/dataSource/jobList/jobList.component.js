@@ -1,10 +1,19 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { always, either, cond, findLast, path, pipe, propEq, T } from 'ramda';
-import { Typography } from 'schemaUI';
+import { Form, Typography } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
-import { Container, Dot, Eye, JobItem, JobItemWrapper, ListWrapper, RadioInput, RadioLabel } from './jobList.styles';
+import {
+  Container,
+  Dot,
+  Eye,
+  JobItem,
+  JobItemWrapper,
+  RadioLabel,
+  ListWrapper,
+  customRadioGroupStyles,
+} from './jobList.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
@@ -12,10 +21,11 @@ import messages from './jobList.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { Loader } from '../../../shared/components/loader';
 import { NoData } from '../../../shared/components/noData';
-import { JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
+import { JOB_STATE_SUCCESS, JOB_OPTION } from '../../../modules/job/job.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 
-const JOB_LIST_NAME = 'job_list';
+const { RadioGroup, RadioStyled } = Form;
+
 const { Span } = Typography;
 
 export class JobList extends PureComponent {
@@ -49,6 +59,10 @@ export class JobList extends PureComponent {
     }
   }
 
+  getSelectedJob = () => (this.state.selectedJob ? this.state.selectedJob : this.props.dataSource.activeJob);
+
+  isJobActive = id => id === this.props.dataSource.activeJob;
+
   handleChange = ({ target: { value: selectedJob } }) => {
     selectedJob = parseInt(selectedJob, 10);
     const { jobList, dataSource } = this.props;
@@ -75,20 +89,14 @@ export class JobList extends PureComponent {
   renderActiveInformation = isActive => renderWhenTrue(always(<FormattedMessage {...messages.active} />))(isActive);
 
   renderList = (job, index) => {
-    const isActive = job.id === this.props.dataSource.activeJob;
-    const id = `${JOB_LIST_NAME}-${index}`;
+    const isActive = this.isJobActive(job.id);
+    const selectedJob = this.getSelectedJob();
+    const id = `${JOB_OPTION}-${index}`;
 
     return (
       <JobItemWrapper key={index}>
         <JobItem>
-          <RadioInput
-            value={job.id}
-            type="radio"
-            name={JOB_LIST_NAME}
-            id={id}
-            onChange={this.handleChange}
-            defaultChecked={isActive}
-          />
+          <RadioStyled value={job.id} id={id} selectedValue={selectedJob} />
           <RadioLabel htmlFor={id}>
             <Span>{extendedDayjs(job.created, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm')}</Span>
             <Dot />
@@ -106,7 +114,19 @@ export class JobList extends PureComponent {
   renderContent = cond([
     [either(propEq('loading', true), propEq('dataSource', {})), always(<Loader />)],
     [propEq('jobList', []), always(<NoData />)],
-    [T, () => <ListWrapper>{this.props.jobList.map(this.renderList)}</ListWrapper>],
+    [
+      T,
+      () => (
+        <RadioGroup
+          name={JOB_OPTION}
+          onChange={this.handleChange}
+          customStyles={customRadioGroupStyles}
+          value={this.getSelectedJob()}
+        >
+          <ListWrapper>{this.props.jobList.map(this.renderList)}</ListWrapper>
+        </RadioGroup>
+      ),
+    ],
   ]);
 
   render() {

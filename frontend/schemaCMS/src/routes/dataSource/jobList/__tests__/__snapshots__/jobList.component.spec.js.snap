@@ -68,72 +68,76 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
       />
     }
   />
-  <styled.div>
-    <styled.div
-      key="0"
-    >
-      <styled.div>
-        <styled.input
-          defaultChecked={false}
-          id="job_list-0"
-          name="job_list"
-          onChange={[Function]}
-          type="radio"
-          value="1"
+  <RadioGroup
+    customCheckedStyles={Object {}}
+    customLabelStyles={Object {}}
+    customStyles={
+      Object {
+        "flexDirection": "column",
+      }
+    }
+    name="job_option_revert"
+    onChange={[Function]}
+  >
+    <styled.div>
+      <styled.div
+        key="0"
+      >
+        <styled.div>
+          <RadioStyled
+            id="job_option_revert-0"
+            value="1"
+          />
+          <styled.label
+            htmlFor="job_option_revert-0"
+          >
+            <Span>
+              Invalid Date
+            </Span>
+            <styled.div />
+            <Span>
+              <FormattedMessage
+                defaultMessage="Success"
+                id="dataSource.jobList.success"
+                values={Object {}}
+              />
+            </Span>
+          </styled.label>
+        </styled.div>
+        <Styled(Component)
+          onClick={[Function]}
         />
-        <styled.label
-          htmlFor="job_list-0"
-        >
-          <Span>
-            Invalid Date
-          </Span>
-          <styled.div />
-          <Span>
-            <FormattedMessage
-              defaultMessage="Success"
-              id="dataSource.jobList.success"
-              values={Object {}}
-            />
-          </Span>
-        </styled.label>
       </styled.div>
-      <Styled(Component)
-        onClick={[Function]}
-      />
-    </styled.div>
-    <styled.div
-      key="1"
-    >
-      <styled.div>
-        <styled.input
-          defaultChecked={false}
-          id="job_list-1"
-          name="job_list"
-          onChange={[Function]}
-          type="radio"
-          value="2"
+      <styled.div
+        key="1"
+      >
+        <styled.div>
+          <RadioStyled
+            id="job_option_revert-1"
+            value="2"
+          />
+          <styled.label
+            htmlFor="job_option_revert-1"
+          >
+            <Span>
+              Invalid Date
+            </Span>
+            <styled.div />
+            <Span>
+              <FormattedMessage
+                defaultMessage="Success"
+                id="dataSource.jobList.success"
+                values={Object {}}
+              />
+            </Span>
+          </styled.label>
+        </styled.div>
+        <Styled(Component)
+          onClick={[Function]}
         />
-        <styled.label
-          htmlFor="job_list-1"
-        >
-          <Span>
-            Invalid Date
-          </Span>
-          <styled.div />
-          <Span>
-            <FormattedMessage
-              defaultMessage="Success"
-              id="dataSource.jobList.success"
-              values={Object {}}
-            />
-          </Span>
-        </styled.label>
       </styled.div>
-      <Styled(Component)
-        onClick={[Function]}
-      />
     </styled.div>
-  </styled.div>
+  </RadioGroup>
   <NavigationContainer
     hideOnDesktop={false}
     right={false}

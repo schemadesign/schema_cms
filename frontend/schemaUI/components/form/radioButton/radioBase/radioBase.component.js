@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import RadioGroupContext from '../radioGroup/radioGroup.context';
-import { getStyles } from './radioButton.styles';
-import { withStyles } from '../../styles/withStyles';
+import RadioGroupContext from '../../radioGroup/radioGroup.context';
+import { getStyles } from './radioBase.styles';
 
-export class RadioButtonComponent extends PureComponent {
+export class RadioBaseComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     id: PropTypes.string.isRequired,
@@ -49,5 +48,3 @@ export class RadioButtonComponent extends PureComponent {
     );
   }
 }
-
-export const RadioButton = withStyles(RadioButtonComponent);

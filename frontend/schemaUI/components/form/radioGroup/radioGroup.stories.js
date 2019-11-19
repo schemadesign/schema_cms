@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { RadioGroup } from './radioGroup.component';
-import { RadioButton } from '../radioButton/radioButton.component';
+import { RadioBaseComponent } from '../radioButton/radioBase/radioBase.component';
 import { PlusIcon } from '../../icons/plusIcon';
+import { withTheme } from '../../../.storybook/decorators';
 
 const defaultProps = {
   name: 'name',
@@ -20,13 +21,27 @@ const defaultProps = {
   onChange: Function.prototype,
 };
 
-storiesOf('Form/RadioGroup', module).add('Default', () => (
-  <RadioGroup {...defaultProps}>
-    <RadioButton label="radio 1" value="radio 1" id="label 1">
-      <PlusIcon />
-    </RadioButton>
-    <RadioButton label="radio 2" value="radio 2" id="label 2">
-      <PlusIcon />
-    </RadioButton>
-  </RadioGroup>
-));
+class RadioGroupStory extends PureComponent {
+  state = {
+    value: null,
+  };
+
+  onChange = ({ target: { value } }) => this.setState({ value });
+
+  render() {
+    return (
+      <RadioGroup {...defaultProps} onChange={this.onChange} value={this.state.value}>
+        <RadioBaseComponent label="radio 1" value="radio 1" id="label 1">
+          <PlusIcon />
+        </RadioBaseComponent>
+        <RadioBaseComponent label="radio 2" value="radio 2" id="label 2">
+          <PlusIcon />
+        </RadioBaseComponent>
+      </RadioGroup>
+    );
+  }
+}
+
+storiesOf('Form/RadioGroup', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <RadioGroupStory />);

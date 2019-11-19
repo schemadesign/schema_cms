@@ -1,4 +1,4 @@
-import { defaultTheme } from '../../../utils/theme';
+import { defaultTheme } from '../../../../utils/theme';
 
 export const getStyles = (theme = defaultTheme) => ({
   containerStyles: {
