@@ -355,5 +355,6 @@ class FilterSerializer(serializers.ModelSerializer):
 
         filter_ = models.Filter(datasource=datasource, **validated_data)
         filter_.save()
+        datasource.create_meta_file()
 
         return filter_

@@ -248,11 +248,38 @@ class DataSource(
         except DataSourceJob.DoesNotExist:
             return None
 
+    def result_fields_info(self):
+        preview = self.current_job.meta_data.preview
+        fields = json.loads(preview.read())["fields"]
+
+        data = [{"name": key, "type": map_general_dtypes(value["dtype"])} for key, value in fields.items()]
+
+        return data
+
     def meta_file_serialization(self):
-        data = {"id": self.id, "name": self.name, "file": self.file.name, "items": 0, "result": ""}
+        data = {
+            "id": self.id,
+            "name": self.name,
+            "file": self.file.name,
+            "items": 0,
+            "result": "",
+            "fields": [],
+            "filters": [],
+        }
+
         current_job = self.current_job
+
         if current_job:
-            data.update({"items": current_job.meta_data.items, "result": current_job.result.name or ""})
+            data.update(
+                {
+                    "items": current_job.meta_data.items,
+                    "result": current_job.result.name or "",
+                    "fields": self.result_fields_info(),
+                }
+            )
+        if self.filters:
+            filters = [f.meta_file_serialization() for f in self.filters.filter(is_active=True)]
+            data.update({"filters": filters})
         return data
 
 
@@ -401,7 +428,9 @@ class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
 # Filters
 
 
-class Filter(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+class Filter(
+    utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
+):
     datasource: DataSource = models.ForeignKey(DataSource, on_delete=models.CASCADE, related_name='filters')
     name = models.CharField(max_length=25)
     filter_type = models.CharField(max_length=25, choices=constants.FilterType.choices())
@@ -419,3 +448,7 @@ class Filter(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     def get_fields_info(self):
         last_job = self.datasource.get_last_success_job()
         return json.loads(last_job.meta_data.preview.read())
+
+    def meta_file_serialization(self):
+        data = {"id": self.id, "name": self.name, "type": self.filter_type, "field": self.field}
+        return data

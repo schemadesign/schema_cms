@@ -15,9 +15,9 @@ plugins:
 custom:
   wsgi:
     app: handler.app
-    packRequirements: false
   pythonRequirements:
-    dockerizePip: non-linux
+    dockerizePip: false
+    zip: true
     slim: true
   localstack:
     stages:
@@ -28,12 +28,17 @@ custom:
 #    host: http://localhost
     lambda:
       mountCode: False
+  stages:
+    - local
+    - prod
   packageExternal:
     external:
       - '../common'
 
 
 package:
+  package:
+    individually: true
   exclude:
     - .git/**
     - node_modules/**
@@ -45,4 +50,9 @@ functions:
       - http: ANY /
       - http: 'ANY {proxy+}'
     environment:
-      DB_SECRET_ARN: arn:aws:secretsmanager:us-east-1:1234567890:secret:dbSecret
+      AWS_STORAGE_BUCKET_NAME: schemacms
+      AWS_ACCESS_KEY_ID: foo
+      AWS_SECRET_ACCESS_KEY: bar
+      AWS_DEFAULT_REGION: us-east-1
+      BACKEND_URL: http://host.docker.internal:8000/api/v1
+      LAMBDA_AUTH_TOKEN: 97090e73a80c4692bbbf7dedc17c59e0

@@ -69,6 +69,7 @@ class JobFactory(factory.django.DjangoModelFactory):
         model = "projects.DataSourceJob"
 
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
+    result = factory.django.FileField(filename="result.csv", from_func=utils_test.make_csv)
     source_file_path = factory.SelfAttribute(".datasource.file.name")
     source_file_version = factory.Faker("uuid4")
 
