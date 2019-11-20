@@ -28,6 +28,6 @@ export const propsWithJobs = {
   ],
 };
 
-storiesOf('JobList', module)
+storiesOf('Data Source|JobList', module)
   .addDecorator(withTheme())
   .add('Default', () => <JobList {...defaultProps} />);

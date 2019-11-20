@@ -19,6 +19,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Fields', module)
+storiesOf('Data Source|Fields', module)
   .addDecorator(withTheme())
   .add('Default', () => <Fields {...defaultProps} />);

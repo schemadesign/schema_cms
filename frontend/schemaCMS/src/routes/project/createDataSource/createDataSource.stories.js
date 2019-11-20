@@ -11,6 +11,6 @@ export const defaultProps = {
   history: { push: Function.prototype },
 };
 
-storiesOf('CreateDataSource', module)
+storiesOf('Project|CreateDataSource', module)
   .addDecorator(withTheme())
   .add('Default', () => <CreateDataSource {...defaultProps} />);

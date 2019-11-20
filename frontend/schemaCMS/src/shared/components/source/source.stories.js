@@ -29,6 +29,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DataSource/View/Source', module)
+storiesOf('Shared Components|Source', module)
   .addDecorator(withTheme())
   .add('Default', () => <SourceComponent {...defaultProps} />);

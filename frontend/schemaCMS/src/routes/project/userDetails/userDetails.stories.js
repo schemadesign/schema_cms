@@ -18,6 +18,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('UserDetails', module)
+storiesOf('Project|UserDetails', module)
   .addDecorator(withTheme())
   .add('Default', () => <UserDetails {...defaultProps} />);

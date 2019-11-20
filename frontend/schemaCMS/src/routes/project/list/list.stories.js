@@ -50,7 +50,7 @@ const editorProps = {
   isAdmin: false,
 };
 
-storiesOf('Project/List', module)
+storiesOf('Project|List', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('empty', () => <List {...emptyListProps} />)

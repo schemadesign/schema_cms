@@ -25,7 +25,7 @@ export const adminProps = {
   isAdmin: true,
 };
 
-storiesOf('View', module)
+storiesOf('User View', module)
   .addDecorator(withTheme())
   .add('Default', () => <View {...defaultProps} />)
   .add('Admin', () => <View {...adminProps} />);

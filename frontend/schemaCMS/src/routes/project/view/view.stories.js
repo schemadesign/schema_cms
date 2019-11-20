@@ -48,7 +48,7 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Project/View', module)
+storiesOf('Project|View', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('default', () => <View {...defaultProps} />)

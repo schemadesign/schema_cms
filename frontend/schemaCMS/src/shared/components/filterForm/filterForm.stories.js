@@ -36,7 +36,7 @@ export const editProps = {
   },
 };
 
-storiesOf('FilterForm', module)
+storiesOf('Shared Components|FilterForm', module)
   .addDecorator(withTheme())
   .add('Create form', () => <FilterForm {...createProps} />)
   .add('Edit form', () => <FilterForm {...editProps} />);
