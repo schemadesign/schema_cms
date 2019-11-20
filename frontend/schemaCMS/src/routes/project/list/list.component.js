@@ -25,7 +25,6 @@ export class List extends PureComponent {
     fetchProjectsList: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
-    isAdmin: PropTypes.bool.isRequired,
   };
 
   state = {

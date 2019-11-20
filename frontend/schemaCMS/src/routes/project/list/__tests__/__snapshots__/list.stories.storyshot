@@ -815,17 +815,6 @@ exports[`Storyshots Project/List editor list 1`] = `
               className="c4"
             >
               <a
-                href="/user"
-                id="userBtn"
-                onClick={[Function]}
-              >
-                Users
-              </a>
-            </li>
-            <li
-              className="c4"
-            >
-              <a
                 href="/logout"
                 id="logoutBtn"
                 onClick={[Function]}
