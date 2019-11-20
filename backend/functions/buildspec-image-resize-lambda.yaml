@@ -11,7 +11,7 @@ phases:
     commands:
       - echo Build lambda worker function package
       - mkdir -p backend/functions/build
-      - cd backend/functions/image_resize/source/image-handler
+      - cd backend/functions/image_resize/
       - npm install && node_modules/serverless/bin/serverless package
       - unzip .serverless/main.zip -d ${OLDPATH}/backend/functions/build
   post_build:

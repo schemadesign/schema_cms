@@ -1,2 +1,4 @@
 # System Files
 **/.DS_Store
+.serverless/*
+http_event_example
