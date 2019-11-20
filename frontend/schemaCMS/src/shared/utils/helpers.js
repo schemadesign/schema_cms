@@ -1,18 +1,23 @@
-import { either, filter, isEmpty, keys, map, not, pipe, propEq, propOr } from 'ramda';
+import { either, is, filter, isEmpty, keys, map, not, pipe, propEq, propOr } from 'ramda';
 import { camelize } from 'humps';
 import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 
-export const errorMessageParser = ({ errors, messages, formatMessage }) =>
-  errors.reduce((previousValue, { code, name }) => {
-    const error = camelize(`${name}_${code}_error`);
-    const messageError = messages[error];
-    const defaultErrorMessage = 'Something went wrong.';
-    const formattedMessageError = messageError ? formatMessage(messageError) : defaultErrorMessage;
+export const errorMessageParser = ({ errors, messages, formatMessage }) => {
+  if (is(Array, errors)) {
+    return errors.reduce((previousValue, { code, name }) => {
+      const error = camelize(`${name}_${code}_error`);
+      const messageError = messages[error];
+      const defaultErrorMessage = 'Something went wrong.';
+      const formattedMessageError = messageError ? formatMessage(messageError) : defaultErrorMessage;
 
-    return { [name]: formattedMessageError, ...previousValue };
-  }, {});
+      return { [name]: formattedMessageError, ...previousValue };
+    }, {});
+  }
+
+  return {};
+};
 
 export const getTableData = (data = []) => {
   const header = keys(data[0]);

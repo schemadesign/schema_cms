@@ -22,6 +22,15 @@ describe('Helpers', () => {
 
       global.expect(errorMessageParser({ errors, messages, formatMessage })).toEqual(result);
     });
+
+    it('should return empty object if errors is not a array', () => {
+      const errors = {};
+      const message = 'DataSource with this name already exist in project.';
+      const messages = { nameUniqueError: { message } };
+      const formatMessage = ({ message }) => message;
+
+      global.expect(errorMessageParser({ errors, messages, formatMessage })).toEqual({});
+    });
   });
 
   describe('getIsAnyResultProcessing', () => {
