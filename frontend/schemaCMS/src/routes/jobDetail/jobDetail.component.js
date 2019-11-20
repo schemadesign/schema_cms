@@ -5,14 +5,14 @@ import { FormattedMessage } from 'react-intl';
 
 import { Download, Form, LinkWrapper, PreviewLink, Step, StepsTitle, StepsWrapper } from './jobDetail.styles';
 import browserHistory from '../../shared/utils/history';
-import { renderWhenTrue, renderWhenTrueOtherwise } from '../../shared/utils/rendering';
+import { renderWhenTrue } from '../../shared/utils/rendering';
 
 import messages from './jobDetail.messages';
 import { DESCRIPTION, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { TopHeader } from '../../shared/components/topHeader';
-import { Loading } from '../../shared/components/loading';
+import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 
 export class JobDetail extends PureComponent {
   static propTypes = {
@@ -71,8 +71,8 @@ export class JobDetail extends PureComponent {
       )
     )(isSuccess);
 
-  renderForm = job =>
-    renderWhenTrueOtherwise(always(<Loading />), () => (
+  renderForm = (job, loading) =>
+    renderWhenTrue(() => (
       <Fragment>
         <TextInput
           label={<FormattedMessage {...messages[JOB_ID]} />}
@@ -111,7 +111,7 @@ export class JobDetail extends PureComponent {
           </Download>
         </LinkWrapper>
       </Fragment>
-    ))(this.state.loading);
+    ))(!loading);
 
   renderSaveButton = renderWhenTrue(() => (
     <NextButton onClick={this.props.handleSubmit} disabled={!this.props.dirty || !this.props.isValid}>
@@ -120,17 +120,19 @@ export class JobDetail extends PureComponent {
   ));
 
   render() {
+    const { loading } = this.state;
+    const { job } = this.props;
     const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Fragment>
         <TopHeader {...topHeaderConfig} />
-        {this.renderForm(this.props.job)}
+        <LoadingWrapper loading={loading}>{this.renderForm(job, loading)}</LoadingWrapper>
         <NavigationContainer>
           <BackButton onClick={this.handleGoBack}>
             <FormattedMessage {...messages.back} />
           </BackButton>
-          {this.renderSaveButton(!!this.props.job.id)}
+          {this.renderSaveButton(!!job.id)}
         </NavigationContainer>
       </Fragment>
     );

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, either, cond, findLast, path, pipe, propEq, T } from 'ramda';
+import { always, findLast, isEmpty, path, pipe, propEq } from 'ramda';
 import { Form, Typography } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
@@ -19,8 +19,7 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 
 import messages from './jobList.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
-import { Loading } from '../../../shared/components/loading';
-import { NoData } from '../../../shared/components/noData';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { JOB_STATE_SUCCESS, JOB_OPTION } from '../../../modules/job/job.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 
@@ -51,9 +50,7 @@ export class JobList extends PureComponent {
   async componentDidMount() {
     try {
       await this.props.fetchJobList(path(['match', 'params'], this.props));
-      this.setState({
-        loading: false,
-      });
+      this.setState({ loading: false });
     } catch (e) {
       this.props.history.push('/');
     }
@@ -111,24 +108,6 @@ export class JobList extends PureComponent {
     );
   };
 
-  renderContent = cond([
-    [either(propEq('loading', true), propEq('dataSource', {})), always(<Loading />)],
-    [propEq('jobList', []), always(<NoData />)],
-    [
-      T,
-      () => (
-        <RadioGroup
-          name={JOB_OPTION}
-          onChange={this.handleChange}
-          customStyles={customRadioGroupStyles}
-          value={this.getSelectedJob()}
-        >
-          <ListWrapper>{this.props.jobList.map(this.renderList)}</ListWrapper>
-        </RadioGroup>
-      ),
-    ],
-  ]);
-
   render() {
     const { loading, canRevert } = this.state;
     const { dataSource, jobList } = this.props;
@@ -136,19 +115,30 @@ export class JobList extends PureComponent {
       headerTitle: <FormattedMessage {...messages.title} />,
       headerSubtitle: <FormattedMessage {...messages.subTitle} />,
     };
+    const isLoading = loading || isEmpty(dataSource);
 
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
-        {this.renderContent({ loading, dataSource, jobList })}
-        <NavigationContainer>
-          <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
-            <FormattedMessage {...messages.cancel} />
-          </BackButton>
-          <NextButton id="revertBtn" onClick={this.handleRevertClick} disabled={!canRevert}>
-            <FormattedMessage {...messages.revert} />
-          </NextButton>
-        </NavigationContainer>
+        <LoadingWrapper loading={isLoading} noData={isEmpty(jobList)}>
+          <RadioGroup
+            name={JOB_OPTION}
+            onChange={this.handleChange}
+            customStyles={customRadioGroupStyles}
+            value={this.getSelectedJob()}
+          >
+            <ListWrapper>{jobList.map(this.renderList)}</ListWrapper>
+          </RadioGroup>
+          <NavigationContainer>
+            <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
+              <FormattedMessage {...messages.cancel} />
+            </BackButton>
+            <NextButton id="revertBtn" onClick={this.handleRevertClick} disabled={!canRevert}>
+              <FormattedMessage {...messages.revert} />
+            </NextButton>
+          </NavigationContainer>
+          //{' '}
+        </LoadingWrapper>
       </Container>
     );
   }
