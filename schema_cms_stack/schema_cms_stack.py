@@ -371,12 +371,22 @@ class PublicAPI(core.Stack):
         scope.base.db.secret.grant_read(self.public_api_lambda.role)
         scope.base.app_bucket.grant_read(self.public_api_lambda.role)
 
-        self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
-        self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.public_api_lambda)
-        self.publicApiGateway.root.add_proxy(
-            default_integration=self.publicApiLambdaIntegration,
-            any_method=True
+        # self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
+        self.publicApiLambdaIntegration = aws_apigateway.LambdaRestApi(
+            self,
+            "rest-api",
+            handler=self.public_api_lambda
         )
+        # self.publicApiGateway.root.add_resource(
+        #     "datasources"
+        # ).add_resource(
+        #     "{data_source_id}"
+        # ).add_method(
+        #     "GET", self.publicApiLambdaIntegration
+        # ).add_proxy(
+        #     default_integration=self.publicApiLambdaIntegration,
+        #     any_method=True
+        # )
 
 
 class CIPipeline(core.Stack):
