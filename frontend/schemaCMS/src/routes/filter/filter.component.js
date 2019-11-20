@@ -1,11 +1,10 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, path, pathOr } from 'ramda';
+import { path, pathOr } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Container } from './filter.styles';
 import messages from './filter.messages';
-import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { FilterForm } from '../../shared/components/filterForm';
 import { TopHeader } from '../../shared/components/topHeader';
@@ -45,12 +44,12 @@ export class Filter extends PureComponent {
   }
 
   getHeaderAndMenuConfig = () => ({
-    headerTitle: pathOr('', ['filter', 'datasource', 'name'] this.props),
+    headerTitle: pathOr('', ['filter', 'datasource', 'name'], this.props),
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
   render() {
-    const {loading} = this.state;
+    const { loading } = this.state;
 
     return (
       <Container>

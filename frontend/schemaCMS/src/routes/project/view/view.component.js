@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Card } from 'schemaUI';
-import { has, isEmpty, isNil, path } from 'ramda';
+import { always, has, isEmpty, isNil, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -32,7 +32,6 @@ import { BackArrowButton, BackButton, NavigationContainer, NextButton } from '..
 
 import { modalStyles, Modal, ModalTitle, ModalActions } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
-import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 export class View extends PureComponent {
   static propTypes = {
