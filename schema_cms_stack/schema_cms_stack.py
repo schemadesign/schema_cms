@@ -373,7 +373,13 @@ class PublicAPI(core.Stack):
 
         self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
         self.publicApiLambdaIntegration = aws_apigateway.LambdaIntegration(self.public_api_lambda)
-        self.publicApiGateway.root.add_proxy(
+        self.publicApiGateway.root.add_resource(
+            "datasources"
+        ).add_resource(
+            "{data_source_id}"
+        ).add_method(
+            "GET", self.publicApiLambdaIntegration
+        ).add_proxy(
             default_integration=self.publicApiLambdaIntegration,
             any_method=True
         )
