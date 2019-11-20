@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { always, findLast, isEmpty, path, pipe, propEq } from 'ramda';
 import { Form, Typography } from 'schemaUI';
@@ -121,23 +121,24 @@ export class JobList extends PureComponent {
       <Container>
         <TopHeader {...topHeaderConfig} />
         <LoadingWrapper loading={isLoading} noData={isEmpty(jobList)}>
-          <RadioGroup
-            name={JOB_OPTION}
-            onChange={this.handleChange}
-            customStyles={customRadioGroupStyles}
-            value={this.getSelectedJob()}
-          >
-            <ListWrapper>{jobList.map(this.renderList)}</ListWrapper>
-          </RadioGroup>
-          <NavigationContainer>
-            <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
-              <FormattedMessage {...messages.cancel} />
-            </BackButton>
-            <NextButton id="revertBtn" onClick={this.handleRevertClick} disabled={!canRevert}>
-              <FormattedMessage {...messages.revert} />
-            </NextButton>
-          </NavigationContainer>
-          //{' '}
+          <Fragment>
+            <RadioGroup
+              name={JOB_OPTION}
+              onChange={this.handleChange}
+              customStyles={customRadioGroupStyles}
+              value={this.getSelectedJob()}
+            >
+              <ListWrapper>{jobList.map(this.renderList)}</ListWrapper>
+            </RadioGroup>
+            <NavigationContainer>
+              <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
+                <FormattedMessage {...messages.cancel} />
+              </BackButton>
+              <NextButton id="revertBtn" onClick={this.handleRevertClick} disabled={!canRevert}>
+                <FormattedMessage {...messages.revert} />
+              </NextButton>
+            </NavigationContainer>
+          </Fragment>
         </LoadingWrapper>
       </Container>
     );
