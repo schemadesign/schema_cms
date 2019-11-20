@@ -26,7 +26,7 @@ custom:
     - prod
 
 functions:
-  resizer:
+  main:
     handler: index.handler
     events:
       - http:
