@@ -1,7 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always } from 'ramda';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
@@ -66,35 +65,39 @@ export class DataWranglingScript extends PureComponent {
     return history.push(`/datasource/${dataWranglingScript.datasource}/${DATA_WRANGLING_STEP}`);
   };
 
-  renderContent = loading => renderWhenTrue(() => {
-    const { intl, dataWranglingScript, match, history, isAdmin } = this.props;
-    const syntaxTheme = isAdmin ? darcula : defaultStyle;
+  renderContent = loading =>
+    renderWhenTrue(() => {
+      const { intl, dataWranglingScript, match, history, isAdmin } = this.props;
+      const syntaxTheme = isAdmin ? dracula : defaultStyle;
 
-    const descriptionFieldProps = {
-      name: DESCRIPTION,
-      value: dataWranglingScript.name,
-      label: intl.formatMessage(messages.description),
-      placeholder: intl.formatMessage(messages.descriptionPlaceholder),
-      fullWidth: true,
-      disabled: true,
-      onChange: Function.prototype,
-      customInputStyles,
-    };
+      const descriptionFieldProps = {
+        name: DESCRIPTION,
+        value: dataWranglingScript.name,
+        label: intl.formatMessage(messages.description),
+        placeholder: intl.formatMessage(messages.descriptionPlaceholder),
+        fullWidth: true,
+        disabled: true,
+        onChange: Function.prototype,
+        customInputStyles,
+      };
 
-    return (
-      <Fragment>
-        <Form name={DATA_WRANGLING_FORM_NAME}>
-          <TextInput {...descriptionFieldProps} />
-          <SyntaxHighlighter language="python" style={syntaxTheme}>
-            {dataWranglingScript.body}
-          </SyntaxHighlighter>
-        </Form>
-        <NavigationContainer>
-          <BackButton onClick={this.handleGoToDataWranglingList(match, history)} />
-        </NavigationContainer>
-      </Fragment>
-    );
-  })(!loading);
+      return (
+        <Fragment>
+          <Form name={DATA_WRANGLING_FORM_NAME}>
+            <TextInput {...descriptionFieldProps} />
+            <SyntaxHighlighter language="python" style={syntaxTheme}>
+              {dataWranglingScript.body}
+            </SyntaxHighlighter>
+          </Form>
+          <NavigationContainer>
+            <BackButton onClick={this.handleGoToDataWranglingList(match, history)} />
+            <NextButton onClick={this.handleGoToDataWranglingList(match, history)}>
+              <FormattedMessage {...messages.ok} />
+            </NextButton>
+          </NavigationContainer>
+        </Fragment>
+      );
+    })(!loading);
 
   render() {
     const { loading } = this.state;
@@ -105,9 +108,7 @@ export class DataWranglingScript extends PureComponent {
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        <LoadingWrapper loading={loading}>
-          {this.renderContent(loading)}
-        </LoadingWrapper>
+        <LoadingWrapper loading={loading}>{this.renderContent(loading)}</LoadingWrapper>
       </Container>
     );
   }
