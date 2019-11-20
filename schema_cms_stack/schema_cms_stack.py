@@ -91,8 +91,19 @@ class BaseResources(core.Stack):
             deletion_protection=False,
             delete_automated_backups=True,
         )
-        # self.db_secret_rotation = self.db.add_rotation_single_user("db-rotation")
-        self.app_bucket = aws_s3.Bucket(self, APP_S3_BUCKET_NAME, versioned=True)
+        self.app_bucket = aws_s3.Bucket(
+            self,
+            APP_S3_BUCKET_NAME,
+            versioned=True,
+            website_routing_rules=[
+                aws_s3.RoutingRule(
+                    condition=aws_s3.RoutingRuleCondition(key_prefix_equals="", http_error_code_returned_equals="404"),
+                    host_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
+                    replace_key=aws_s3.ReplaceKey.prefix_with("prod/resize?key="),
+                    http_redirect_code="307"
+                )
+            ]
+        )
 
 
 class CertsStack(core.Stack):
@@ -389,6 +400,33 @@ class PublicAPI(core.Stack):
         # )
 
 
+class ImageResize(core.Stack):
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+    def create_lambda(self, scope: core.Construct):
+        domain = self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
+        self.function_code = aws_lambda.Code.from_cfn_parameters()
+        self.image_resize_lambda = aws_lambda.Function(
+            self,
+            "image-resize-lambda",
+            code=self.function_code,
+            handler="index.handler",
+            runtime=aws_lambda.Runtime.NODEJS_10_X,
+            environment={
+                "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "BACKEND_URL": BACKEND_URL.format(domain=domain),
+                "SOURCE_BUCKETS": scope.base.app_bucket.bucket_name,
+            },
+            memory_size=512,
+            timeout=core.Duration.seconds(30),
+            tracing=aws_lambda.Tracing.ACTIVE,
+        )
+
+        scope.base.app_bucket.grant_read_write(self.image_resize_lambda.role)
+        aws_apigateway.LambdaRestApi(self, "lambda-image-resize-api", handler=self.image_resizer_lambda)
+
+
 class CIPipeline(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
@@ -519,6 +557,26 @@ class CIPipeline(core.Stack):
             outputs=[public_api_lambda_build_output],
         )
 
+        build_image_resize_lambda_project = aws_codebuild.PipelineProject(
+            self,
+            "build_image_resize_lambda_project",
+            project_name="schema_cms_build_image_resize_lambda",
+            environment=aws_codebuild.BuildEnvironment(
+                build_image=aws_codebuild.LinuxBuildImage.STANDARD_2_0
+            ),
+            build_spec=aws_codebuild.BuildSpec.from_source_filename(
+                "backend/functions/buildspec-image-resize-lambda.yaml"
+            ),
+        )
+
+        image_resize_lambda_build_output = aws_codepipeline.Artifact()
+        build_image_resize_lambda_action = aws_codepipeline_actions.CodeBuildAction(
+            action_name="build_image_resize_lambda",
+            input=source_output,
+            project=build_image_resize_lambda_project,
+            outputs=[image_resize_lambda_build_output],
+        )
+
         build_workers_success_lambda_project = aws_codebuild.PipelineProject(
             self,
             "build_workers_success_lambda_project",
@@ -590,6 +648,7 @@ class CIPipeline(core.Stack):
             actions=[
                 build_fe_action,
                 build_app_action,
+                build_image_resize_lambda_action,
                 build_workers_action,
                 *[action for (action, *_) in lambda_workers_build_actions],
                 build_public_api_lambda_action,
@@ -626,6 +685,24 @@ class CIPipeline(core.Stack):
                     },
                     extra_inputs=[public_api_lambda_build_output],
                 ),
+                ###
+                aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
+                    action_name="prepare_image_resize_lambda_changes",
+                    stack_name=scope.public_api.stack_name,
+                    change_set_name="imageResizeLambdaStagedChangeSet",
+                    admin_permissions=True,
+                    template_path=cdk_artifact.at_path("cdk.out/image-resize.template.json"),
+                    run_order=2,
+                    parameter_overrides={
+                        **scope.public_api.function_code.assign(
+                            bucket_name=image_resize_lambda_build_output.s3_location.bucket_name,
+                            object_key=image_resize_lambda_build_output.s3_location.object_key,
+                            object_version=image_resize_lambda_build_output.s3_location.object_version,
+                        )
+                    },
+                    extra_inputs=[image_resize_lambda_build_output],
+                ),
+                ###
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_workers_changes",
                     stack_name=scope.workers.stack_name,

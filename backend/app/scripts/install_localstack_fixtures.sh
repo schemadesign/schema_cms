@@ -68,6 +68,12 @@ function create_public_api_lambda() {
   cd ../../app
 }
 
+function create_image_handler_lambda() {
+  cd ../functions/image-handler && \
+  SLS_DEBUG=* serverless deploy --verbose --stage local && \
+  cd ../../app
+}
+
 function get_public_api_lambda_arn {
     get_lambda_arn $PUBLIC_API_FUNCTION_NAME
 }
