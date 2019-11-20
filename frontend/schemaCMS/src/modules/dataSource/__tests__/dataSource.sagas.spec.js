@@ -149,16 +149,8 @@ describe('DataSource: sagas', () => {
 
     describe('on success', () => {
       beforeEach(() => {
-        const options = {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        };
-
         mockApi
-          .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, /form-data; name="data"[^]*data/m, options)
-          .reply(OK, responseData);
-
-        mockApi
-          .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, { name: payload.requestData.name }, options)
+          .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, { name: payload.requestData.name })
           .reply(OK, responseData);
       });
 
@@ -182,6 +174,14 @@ describe('DataSource: sagas', () => {
       });
 
       it('should redirect to next step after send file', async () => {
+        const options = {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        };
+
+        mockApi
+          .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, /form-data; name="data"[^]*data/m, options)
+          .reply(OK, responseData);
+
         jest.spyOn(browserHistory, 'push');
         payload.requestData.file = 'file';
 

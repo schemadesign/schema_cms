@@ -74,7 +74,7 @@ const getData = path(['response', 'data']);
 const getCode = name =>
   pipe(
     getData,
-    ifElse(propIs(name, Array), path([name, 0, 'code']), path([name, 'code']))
+    ifElse(propIs(Array, name), path([name, 0, 'code']), path([name, 'code']))
   );
 
 const convertResponseErrors = error =>
