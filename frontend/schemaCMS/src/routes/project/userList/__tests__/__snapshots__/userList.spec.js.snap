@@ -44,6 +44,7 @@ exports[`UserList: Component should render correctly 1`] = `
     />
   </ContextHeader>
   <UserList
+    isAdmin={true}
     onRemoveUser={[Function]}
     projectId="1"
     users={Array []}
@@ -179,6 +180,7 @@ exports[`UserList: Component should render correctly with users 1`] = `
     />
   </ContextHeader>
   <UserList
+    isAdmin={true}
     onRemoveUser={[Function]}
     projectId="1"
     users={

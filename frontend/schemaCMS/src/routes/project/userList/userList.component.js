@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { path } from 'ramda';
+import { always, path } from 'ramda';
 
 import { UserList as UserListComponent } from '../../../shared/components/userList';
 import { BackButton, NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
@@ -12,6 +12,7 @@ import { USERS } from '../../../shared/components/projectTabs/projectTabs.consta
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './userList.messages';
 import browserHistory from '../../../shared/utils/history';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 export class UserList extends PureComponent {
   static propTypes = {
@@ -19,6 +20,7 @@ export class UserList extends PureComponent {
     fetchProject: PropTypes.func.isRequired,
     removeUser: PropTypes.func.isRequired,
     users: PropTypes.array.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.object.isRequired,
     }).isRequired,
@@ -74,9 +76,12 @@ export class UserList extends PureComponent {
     });
   };
 
+  renderCreateUserButton = ({ id, isAdmin }) =>
+    renderWhenTrue(always(<PlusButton id={id} onClick={this.handleAddUser} />))(isAdmin);
+
   render() {
     const { showConfirmationModal } = this.state;
-    const { users, match } = this.props;
+    const { users, match, isAdmin } = this.props;
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.headerTitle} />,
       headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
@@ -88,14 +93,14 @@ export class UserList extends PureComponent {
         <TopHeader {...topHeaderConfig} />
         <ProjectTabs active={USERS} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={topHeaderConfig.headerTitle} subtitle={topHeaderConfig.headerSubtitle}>
-          <PlusButton id="addUserDesktopBtn" onClick={this.handleAddUser} />
+          {this.renderCreateUserButton({ id: 'addUserDesktopBtn', isAdmin })}
         </ContextHeader>
-        <UserListComponent users={users} projectId={projectId} onRemoveUser={this.handleRemoveUser} />
+        <UserListComponent users={users} projectId={projectId} onRemoveUser={this.handleRemoveUser} isAdmin={isAdmin} />
         <NavigationContainer hideOnDesktop>
           <BackButton onClick={this.handleBackClick}>
             <FormattedMessage {...messages.back} />
           </BackButton>
-          <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
+          {this.renderCreateUserButton({ id: 'addUserBtn', isAdmin })}
         </NavigationContainer>
         <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>

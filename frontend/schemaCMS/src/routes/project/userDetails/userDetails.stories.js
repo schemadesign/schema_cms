@@ -8,6 +8,7 @@ export const defaultProps = {
   fetchUser: Function.prototype,
   removeEditorFromProject: Function.prototype,
   userData: {},
+  isAdmin: true,
   history: { push: Function.prototype },
   match: {
     params: {

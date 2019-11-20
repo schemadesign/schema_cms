@@ -5,6 +5,7 @@ import { List } from '../list.component';
 
 const defaultProps = {
   fetchUsers: Function.prototype,
+  isAdmin: true,
   users: [],
 };
 

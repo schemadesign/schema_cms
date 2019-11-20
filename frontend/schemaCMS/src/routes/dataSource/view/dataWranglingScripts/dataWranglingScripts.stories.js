@@ -11,6 +11,7 @@ export const defaultProps = {
   fetchDataWranglingScripts: Function.prototype,
   uploadScript: Function.prototype,
   sendUpdatedDataWranglingScript: Function.prototype,
+  isAdmin: true,
   history: {
     push: Function.prototype,
   },

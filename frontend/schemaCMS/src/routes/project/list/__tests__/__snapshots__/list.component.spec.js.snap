@@ -13,14 +13,14 @@ exports[`List: Component should render correctly 1`] = `
     secondaryMenuItems={
       Array [
         Object {
-          "id": "userBtn",
-          "label": "Users",
-          "to": "/user",
-        },
-        Object {
           "id": "logoutBtn",
           "label": "Log Out",
           "to": "/logout",
+        },
+        Object {
+          "id": "userBtn",
+          "label": "Users",
+          "to": "/user",
         },
       ]
     }
@@ -177,14 +177,14 @@ exports[`List: Component should render correctly with loading 1`] = `
     secondaryMenuItems={
       Array [
         Object {
-          "id": "userBtn",
-          "label": "Users",
-          "to": "/user",
-        },
-        Object {
           "id": "logoutBtn",
           "label": "Log Out",
           "to": "/logout",
+        },
+        Object {
+          "id": "userBtn",
+          "label": "Users",
+          "to": "/user",
         },
       ]
     }
@@ -224,14 +224,14 @@ exports[`List: Component should render without data 1`] = `
     secondaryMenuItems={
       Array [
         Object {
-          "id": "userBtn",
-          "label": "Users",
-          "to": "/user",
-        },
-        Object {
           "id": "logoutBtn",
           "label": "Log Out",
           "to": "/logout",
+        },
+        Object {
+          "id": "userBtn",
+          "label": "Users",
+          "to": "/user",
         },
       ]
     }

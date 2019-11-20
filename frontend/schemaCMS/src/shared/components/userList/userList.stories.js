@@ -6,6 +6,7 @@ import { withRouter, withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   users: [],
+  isAdmin: true,
 };
 
 const email = 'loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com';
@@ -16,6 +17,7 @@ export const propsWithUsers = {
     { id: 2, firstName: 'Dale', lastName: 'Chihuly' },
     { id: 3, firstName: 'Dave', lastName: 'Bowie', email },
   ],
+  isAdmin: true,
 };
 
 export const propsWithUsersAndActions = {

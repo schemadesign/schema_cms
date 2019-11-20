@@ -305,22 +305,22 @@ exports[`Storyshots Project/List admin list 1`] = `
               className="c4"
             >
               <a
-                href="/user"
-                id="userBtn"
+                href="/logout"
+                id="logoutBtn"
                 onClick={[Function]}
               >
-                Users
+                Log Out
               </a>
             </li>
             <li
               className="c4"
             >
               <a
-                href="/logout"
-                id="logoutBtn"
+                href="/user"
+                id="userBtn"
                 onClick={[Function]}
               >
-                Log Out
+                Users
               </a>
             </li>
           </ul>
@@ -815,17 +815,6 @@ exports[`Storyshots Project/List editor list 1`] = `
               className="c4"
             >
               <a
-                href="/user"
-                id="userBtn"
-                onClick={[Function]}
-              >
-                Users
-              </a>
-            </li>
-            <li
-              className="c4"
-            >
-              <a
                 href="/logout"
                 id="logoutBtn"
                 onClick={[Function]}
@@ -1245,22 +1234,22 @@ exports[`Storyshots Project/List empty 1`] = `
               className="c4"
             >
               <a
-                href="/user"
-                id="userBtn"
+                href="/logout"
+                id="logoutBtn"
                 onClick={[Function]}
               >
-                Users
+                Log Out
               </a>
             </li>
             <li
               className="c4"
             >
               <a
-                href="/logout"
-                id="logoutBtn"
+                href="/user"
+                id="userBtn"
                 onClick={[Function]}
               >
-                Log Out
+                Users
               </a>
             </li>
           </ul>

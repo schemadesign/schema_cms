@@ -31,6 +31,7 @@ import { BackArrowButton, BackButton, NavigationContainer, NextButton } from '..
 
 import { modalStyles, Modal, ModalTitle, ModalActions } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -186,8 +187,17 @@ export class View extends PureComponent {
 
   renderContent = cond([[isEmpty, always(<Loader />)], [T, () => this.renderProject(this.props.project)]]);
 
+  renderRemoveProjectButton = renderWhenTrue(
+    always(
+      <LinkContainer>
+        <Link id="deleteProjectDesktopBtn" onClick={this.handleDeleteClick}>
+          <FormattedMessage {...messages.deleteProject} />
+        </Link>
+      </LinkContainer>
+    )
+  );
   render() {
-    const { project } = this.props;
+    const { project, isAdmin } = this.props;
     const { confirmationModalOpen } = this.state;
     const { projectId } = this.props.match.params;
     const projectName = path(['title'], project, '');
@@ -201,11 +211,7 @@ export class View extends PureComponent {
           <TopHeader {...topHeaderConfig} />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           {this.renderContent(project)}
-          <LinkContainer>
-            <Link id="deleteProjectDesktopBtn" onClick={this.handleDeleteClick}>
-              <FormattedMessage {...messages.deleteProject} />
-            </Link>
-          </LinkContainer>
+          {this.renderRemoveProjectButton(isAdmin)}
         </div>
         <NavigationContainer>
           <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />

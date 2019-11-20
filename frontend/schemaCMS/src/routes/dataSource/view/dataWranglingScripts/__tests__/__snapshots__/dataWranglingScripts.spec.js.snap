@@ -149,6 +149,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         "push": [Function],
       }
     }
+    isAdmin={true}
     loading={false}
     match={
       Object {

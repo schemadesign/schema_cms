@@ -20,6 +20,7 @@ export class DataWranglingScripts extends PureComponent {
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     dataSource: PropTypes.object.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
@@ -87,9 +88,21 @@ export class DataWranglingScripts extends PureComponent {
       </Error>
     ))(!!errorMessageOnUploading.length);
 
+  renderUploadButton = renderWhenTrue(
+    always(
+      <FileUpload
+        type="file"
+        id="fileUpload"
+        onChange={this.handleUploadScript}
+        accept=".py"
+        disabled={this.state.uploading}
+      />
+    )
+  );
+
   render() {
-    const { dataWranglingScripts, dataSource } = this.props;
-    const { uploading, errorMessageOnUploading } = this.state;
+    const { dataWranglingScripts, dataSource, isAdmin } = this.props;
+    const { errorMessageOnUploading } = this.state;
     const steps = pipe(
       pathOr([], ['jobs', 0, 'steps']),
       map(prop('script')),
@@ -104,15 +117,7 @@ export class DataWranglingScripts extends PureComponent {
             <FormattedMessage values={{ length: dataWranglingScripts.length }} {...messages.steps} />
             {this.renderUploadingError(errorMessageOnUploading)}
           </StepCounter>
-          <UploadContainer>
-            <FileUpload
-              type="file"
-              id="fileUpload"
-              onChange={this.handleUploadScript}
-              accept=".py"
-              disabled={uploading}
-            />
-          </UploadContainer>
+          <UploadContainer>{this.renderUploadButton(isAdmin)}</UploadContainer>
         </Header>
         <Formik initialValues={{ steps }} onSubmit={this.handleSubmit}>
           {({ values: { steps }, setFieldValue, submitForm }) => {
