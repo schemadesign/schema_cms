@@ -364,8 +364,9 @@ class DataSourceJob(
 
     def relative_path_to_save(self, filename):
         base_path = self.result.storage.location
-
-        return os.path.join(base_path, f"{self.datasource.id}/jobs/{self.id}/outputs/{filename}")
+        if self.id is None or self.datasource_id is None:
+            raise ValueError("Job or DataSource ID is not set")
+        return os.path.join(base_path, f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}")
 
     def update_meta(self):
         preview_json, items, fields = get_preview_data(self.result.url)

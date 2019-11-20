@@ -847,7 +847,7 @@ class TestJobDetailView:
 
         assert response.status_code == status.HTTP_200_OK
         assert job.error == old_error
-        assert job.result.name == f"/{job.datasource_id}/outputs/result.csv"
+        assert job.result.name == ""
         assert job.steps == old_steps
 
     @staticmethod

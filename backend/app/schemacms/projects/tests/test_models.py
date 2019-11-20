@@ -99,9 +99,11 @@ class TestDataSource:
         assert job.source_file_path == ds.file.name
         assert job.source_file_version == ds.source_file_latest_version
 
-    def test_meta_file_serialization(self, data_source_factory, job_factory, job_meta_factory):
+    def test_meta_file_serialization(self, data_source_factory, job_factory):
         ds = data_source_factory()
         job = job_factory(datasource=ds)
+        job.result = ds.file
+        job.save()
         ds.active_job = job
         ds.active_job.update_meta()
 
