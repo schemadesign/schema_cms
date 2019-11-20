@@ -11,9 +11,9 @@ import {
   DESCRIPTION,
 } from '../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
-import { Loading } from '../../shared/components/loading';
+import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { TopHeader } from '../../shared/components/topHeader';
-import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
+import { renderWhenTrue } from '../../shared/utils/rendering';
 import { Container, Form, customInputStyles } from './dataWranglingScript.styles';
 import messages from './dataWranglingScript.messages';
 import { BackButton, NavigationContainer } from '../../shared/components/navigation';
@@ -56,8 +56,6 @@ export class DataWranglingScript extends PureComponent {
     };
   };
 
-  getContentOrLoading = renderWhenTrueOtherwise(always(<Loading />), this.renderContent);
-
   handleGoToDataWranglingList = (match, history) => () => {
     const { dataWranglingScript } = this.props;
 
@@ -68,7 +66,7 @@ export class DataWranglingScript extends PureComponent {
     return history.push(`/datasource/${dataWranglingScript.datasource}/${DATA_WRANGLING_STEP}`);
   };
 
-  renderContent() {
+  renderContent = loading => renderWhenTrue(() => {
     const { intl, dataWranglingScript, match, history, isAdmin } = this.props;
     const syntaxTheme = isAdmin ? darcula : defaultStyle;
 
@@ -96,11 +94,10 @@ export class DataWranglingScript extends PureComponent {
         </NavigationContainer>
       </Fragment>
     );
-  }
+  })(!loading);
 
   render() {
     const { loading } = this.state;
-    const content = this.getContentOrLoading(loading);
     const headerConfig = this.getHeaderAndMenuConfig();
 
     return (
@@ -108,7 +105,9 @@ export class DataWranglingScript extends PureComponent {
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        {content}
+        <LoadingWrapper loading={loading}>
+          {this.renderContent(loading)}
+        </LoadingWrapper>
       </Container>
     );
   }
