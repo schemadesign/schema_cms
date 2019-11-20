@@ -30,7 +30,7 @@ exports[`List: Component should render correctly 1`] = `
     title="Projects"
   >
     <PlusButton
-      id="addProjectBtnDesktop"
+      id="addProjectDesktopBtn"
       onClick={[Function]}
     />
   </ContextHeader>
@@ -194,7 +194,7 @@ exports[`List: Component should render correctly with loading 1`] = `
     title="Projects"
   >
     <PlusButton
-      id="addProjectBtnDesktop"
+      id="addProjectDesktopBtn"
       onClick={[Function]}
     />
   </ContextHeader>
@@ -241,7 +241,7 @@ exports[`List: Component should render without data 1`] = `
     title="Projects"
   >
     <PlusButton
-      id="addProjectBtnDesktop"
+      id="addProjectDesktopBtn"
       onClick={[Function]}
     />
   </ContextHeader>
