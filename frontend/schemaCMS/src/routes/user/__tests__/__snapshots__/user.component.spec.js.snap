@@ -17,6 +17,11 @@ exports[`User: Component should render correctly 1`] = `
     path="/user/add"
     render={[Function]}
   />
+  <Redirect
+    exact={true}
+    path="/user/me"
+    to="/settings"
+  />
   <Route
     component={[Function]}
     exact={true}
@@ -41,6 +46,11 @@ exports[`User: Component should render correctly with project id 1`] = `
     exact={true}
     path="/user/1/add/add"
     render={[Function]}
+  />
+  <Redirect
+    exact={true}
+    path="/user/1/add/me"
+    to="/settings"
   />
   <Route
     component={[Function]}
