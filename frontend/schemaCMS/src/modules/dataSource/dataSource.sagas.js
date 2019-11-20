@@ -102,21 +102,25 @@ function* updateOne({ payload: { dataSourceId, requestData, step } }) {
     yield put(DataSourceRoutines.updateOne.request());
     const formData = new FormData();
 
-    yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, { name: requestData.name });
+    const response = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, { name: requestData.name });
 
-    pipe(
-      omit(['name']),
-      keys,
-      forEach(name => formData.append(name, requestData[name]))
-    )(requestData);
+    if (requestData.file) {
+      pipe(
+        omit(['name']),
+        keys,
+        forEach(name => formData.append(name, requestData[name]))
+      )(requestData);
 
-    const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
+      const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+
+      response.data = data;
+    }
 
     const redirectUri = `/datasource/${dataSourceId}/${parseInt(step, 10) + 1}`;
 
-    yield put(DataSourceRoutines.updateOne.success(data));
+    yield put(DataSourceRoutines.updateOne.success(response.data));
 
     browserHistory.push(redirectUri);
   } catch (error) {

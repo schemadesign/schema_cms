@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BAD_REQUEST, UNAUTHORIZED } from 'http-status-codes';
+import { BAD_REQUEST, FORBIDDEN, UNAUTHORIZED } from 'http-status-codes';
 import { camelizeKeys, decamelizeKeys, pascalize } from 'humps';
 import {
   __,
@@ -17,6 +17,7 @@ import {
   not,
   path,
   pipe,
+  propIs,
   startsWith,
   toLower,
   when,
@@ -73,7 +74,7 @@ const getData = path(['response', 'data']);
 const getCode = name =>
   pipe(
     getData,
-    path([name, 0, 'code'])
+    ifElse(propIs(Array, name), path([name, 0, 'code']), path([name, 'code']))
   );
 
 const convertResponseErrors = error =>
@@ -97,7 +98,7 @@ api.interceptors.response.use(
       return window.location.replace(AUTH_PATH);
     }
 
-    if (error.response.status === BAD_REQUEST) {
+    if ([FORBIDDEN, BAD_REQUEST].includes(error.response.status)) {
       return Promise.reject(convertResponseErrors(error));
     }
 
