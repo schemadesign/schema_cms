@@ -8,7 +8,7 @@ import { FilterForm } from '../../../../shared/components/filterForm';
 import messages from './createFilter.messages';
 import { TopHeader } from '../../../../shared/components/topHeader';
 import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
-import { Loading } from '../../../../shared/components/loading';
+import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
 import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
 
 export class CreateFilter extends PureComponent {
@@ -49,22 +49,20 @@ export class CreateFilter extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
-  renderFilterForm = renderWhenTrueOtherwise(always(<Loading />), () => (
-    <FilterForm
-      fieldsInfo={this.props.fieldsInfo}
-      createFilter={this.props.createFilter}
-      history={this.props.history}
-      dataSourceId={this.getDataSourceId(this.props)}
-    />
-  ));
-
   render() {
     const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
-        {this.renderFilterForm(this.state.loading)}
+        <LoadingWrapper loading={this.state.loading}>
+          <FilterForm
+            fieldsInfo={this.props.fieldsInfo}
+            createFilter={this.props.createFilter}
+            history={this.props.history}
+            dataSourceId={this.getDataSourceId(this.props)}
+          />
+        </LoadingWrapper>
       </Container>
     );
   }
