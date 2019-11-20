@@ -55,38 +55,28 @@ exports[`UserDetails: Component should render correctly 1`] = `
       type="button"
     />
   </NavigationContainer>
-  <Modal
-    ariaHideApp={true}
-    bodyOpenClassName="ReactModal__Body--open"
-    closeTimeoutMS={0}
+  <Styled(Modal)
     contentLabel="Confirm Removal"
     isOpen={false}
-    parentSelector={[Function]}
-    portalClassName="ReactModalPortal"
-    role="dialog"
-    shouldCloseOnEsc={true}
-    shouldCloseOnOverlayClick={true}
-    shouldFocusAfterRender={true}
-    shouldReturnFocusAfterClose={true}
     style={
       Object {
         "content": Object {
           "WebkitOverflowScrolling": "touch",
           "alignItems": "center",
-          "backgroundColor": "rgba(0, 0, 0, 0.9)",
           "border": null,
           "borderRadius": "4px",
-          "bottom": "40px",
           "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
-          "color": "FFFFFF",
           "display": "flex",
-          "left": "40px",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
           "outline": "none",
           "overflow": "auto",
-          "padding": "20px",
           "position": "absolute",
-          "right": "40px",
-          "top": "40px",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
         },
         "overlay": Object {
           "backgroundColor": "rgba(29, 29, 32, 0.75)",
@@ -108,7 +98,8 @@ exports[`UserDetails: Component should render correctly 1`] = `
       />
     </Styled(H1)>
     <styled.div>
-      <Styled(Component)
+      <BackButton
+        disabled={false}
         onClick={[Function]}
       >
         <FormattedMessage
@@ -116,8 +107,9 @@ exports[`UserDetails: Component should render correctly 1`] = `
           id="project.userDetails.cancelRemoval"
           values={Object {}}
         />
-      </Styled(Component)>
-      <Styled(Component)
+      </BackButton>
+      <NextButton
+        loading={false}
         onClick={[Function]}
       >
         <FormattedMessage
@@ -125,8 +117,8 @@ exports[`UserDetails: Component should render correctly 1`] = `
           id="project.userDetails.confirmRemoval"
           values={Object {}}
         />
-      </Styled(Component)>
+      </NextButton>
     </styled.div>
-  </Modal>
+  </Styled(Modal)>
 </styled.div>
 `;

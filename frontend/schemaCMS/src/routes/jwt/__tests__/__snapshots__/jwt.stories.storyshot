@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Jwt Default 1`] = `
-<div>
-  Validating...
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div>
+    Validating...
+  </div>
 </div>
 `;

@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { View } from './view.component';
+import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   dataSource: {
@@ -37,4 +38,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DataSource/View', module).add('Default', () => <View {...defaultProps} />);
+storiesOf('DataSource/View', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <View {...defaultProps} />);

@@ -16,6 +16,7 @@ export const defaultProps = {
   history: {
     push: Function.prototype,
   },
+  isAdmin: false,
   match: {
     params: {
       projectId: '1',

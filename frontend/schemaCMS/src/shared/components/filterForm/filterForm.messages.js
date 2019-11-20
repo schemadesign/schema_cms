@@ -10,47 +10,51 @@ import {
 
 export default defineMessages({
   [FILTER_NAME]: {
-    id: `shared.components.filter.${FILTER_NAME}`,
+    id: `shared.components.filterForm.${FILTER_NAME}`,
     defaultMessage: 'Filter Name',
   },
   [FILTER_FIELD]: {
-    id: `shared.components.filter.${FILTER_FIELD}`,
+    id: `shared.components.filterForm.${FILTER_FIELD}`,
     defaultMessage: 'Field',
   },
   [FILTER_FIELD_TYPE]: {
-    id: `shared.components.filter.${FILTER_FIELD_TYPE}`,
+    id: `shared.components.filterForm.${FILTER_FIELD_TYPE}`,
     defaultMessage: 'Field Type',
   },
   [FILTER_TYPE]: {
-    id: `shared.components.filter.${FILTER_TYPE}`,
+    id: `shared.components.filterForm.${FILTER_TYPE}`,
     defaultMessage: 'Filter Type',
   },
   [FILTER_UNIQUE_ITEMS]: {
-    id: `shared.components.filter.${FILTER_UNIQUE_ITEMS}`,
+    id: `shared.components.filterForm.${FILTER_UNIQUE_ITEMS}`,
     defaultMessage: 'Unique items',
   },
   saveFilter: {
-    id: 'shared.components.filter.saveFilter',
+    id: 'shared.components.filterForm.saveFilter',
     defaultMessage: 'Save',
   },
   deleteFilter: {
-    id: 'shared.components.filter.deleteFilter',
-    defaultMessage: 'Delete',
+    id: 'shared.components.filterForm.deleteFilter',
+    defaultMessage: 'Remove filter',
   },
   cancel: {
-    id: 'shared.components.filter.cancel',
+    id: 'shared.components.filterForm.cancel',
     defaultMessage: 'Cancel',
   },
+  back: {
+    id: 'shared.components.filterForm.back',
+    defaultMessage: 'Back',
+  },
   cancelRemoval: {
-    id: 'shared.components.filter.cancelRemoval',
+    id: 'shared.components.filterForm.cancelRemoval',
     defaultMessage: 'Cancel',
   },
   confirmRemoval: {
-    id: 'shared.components.filter.confirmRemoval',
+    id: 'shared.components.filterForm.confirmRemoval',
     defaultMessage: 'Confirm',
   },
   removeTitle: {
-    id: 'shared.components.filter.removeTitle',
+    id: 'shared.components.filterForm.removeTitle',
     defaultMessage: 'Are you sure you want to remove the filter?',
   },
 });

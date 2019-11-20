@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Fields Default 1`] = `
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -43,10 +43,7 @@ exports[`Storyshots Fields Default 1`] = `
 
 .c4 {
   width: calc(50% - 5px);
-}
-
-.c5 {
-  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c0 {
@@ -74,19 +71,7 @@ exports[`Storyshots Fields Default 1`] = `
 
 @media (min-width:1040px) {
   .c4 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c5 {
-    width: 23.5%;
-    -webkit-transform: translateX(-255px);
-    -ms-transform: translateX(-255px);
-    transform: translateX(-255px);
+    width: 240px;
   }
 }
 
@@ -141,14 +126,13 @@ exports[`Storyshots Fields Default 1`] = `
                 "padding": "0",
               }
             }
-            type="back"
           >
             <span>
               Back
             </span>
           </button>
           <button
-            className="c5"
+            className="c4"
             disabled={false}
             onClick={[Function]}
             style={
@@ -167,14 +151,13 @@ exports[`Storyshots Fields Default 1`] = `
                 "padding": "0",
               }
             }
-            type="next"
           >
             <span>
               Next
             </span>
           </button>
           <div
-            className="c6"
+            className="c5"
           >
             <div
               style={

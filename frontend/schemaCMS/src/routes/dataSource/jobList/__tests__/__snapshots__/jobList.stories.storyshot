@@ -34,10 +34,7 @@ exports[`Storyshots JobList Default 1`] = `
 
 .c8 {
   width: calc(50% - 5px);
-}
-
-.c9 {
-  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c4 {
@@ -90,19 +87,7 @@ exports[`Storyshots JobList Default 1`] = `
 
 @media (min-width:1040px) {
   .c8 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c9 {
-    width: 23.5%;
-    -webkit-transform: translateX(-255px);
-    -ms-transform: translateX(-255px);
-    transform: translateX(-255px);
+    width: 240px;
   }
 }
 
@@ -367,14 +352,13 @@ exports[`Storyshots JobList Default 1`] = `
                 "padding": "0",
               }
             }
-            type="back"
           >
             <span>
               Cancel
             </span>
           </button>
           <button
-            className="c9"
+            className="c8"
             disabled={true}
             id="revertBtn"
             onClick={[Function]}
@@ -394,7 +378,6 @@ exports[`Storyshots JobList Default 1`] = `
                 "padding": "0",
               }
             }
-            type="next"
           >
             <span>
               Revert

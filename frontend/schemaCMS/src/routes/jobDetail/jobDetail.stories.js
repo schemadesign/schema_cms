@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { JobDetail } from './jobDetail.component';
 import { INITIAL_VALUES, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
-import { withRouter } from '../../.storybook/decorators';
+import { withRouter, withTheme } from '../../.storybook/decorators';
 
 export const defaultProps = {
   job: {
@@ -32,4 +32,5 @@ export const defaultProps = {
 
 storiesOf('JobDetail', module)
   .addDecorator(withRouter)
+  .addDecorator(withTheme())
   .add('Default', () => <JobDetail {...defaultProps} />);

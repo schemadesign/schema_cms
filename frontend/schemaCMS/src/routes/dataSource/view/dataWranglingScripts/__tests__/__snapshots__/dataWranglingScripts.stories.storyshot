@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -43,10 +43,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
 
 .c8 {
   width: calc(50% - 5px);
-}
-
-.c9 {
-  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c0 {
@@ -102,19 +99,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
 
 @media (min-width:1040px) {
   .c8 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c9 {
-    width: 23.5%;
-    -webkit-transform: translateX(-255px);
-    -ms-transform: translateX(-255px);
-    transform: translateX(-255px);
+    width: 240px;
   }
 }
 
@@ -593,14 +578,13 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                 "padding": "0",
               }
             }
-            type="back"
           >
             <span>
               Back
             </span>
           </button>
           <button
-            className="c9"
+            className="c8"
             disabled={false}
             onClick={[Function]}
             style={
@@ -619,14 +603,13 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                 "padding": "0",
               }
             }
-            type="next"
           >
             <span>
               Next
             </span>
           </button>
           <div
-            className="c10"
+            className="c9"
           >
             <div
               style={

@@ -1,11 +1,18 @@
 import styled from 'styled-components';
-import { Typography, Button } from 'schemaUI';
-import { media, isDesktop as isDesktopFn } from '../../../theme/media';
+import { Typography } from 'schemaUI';
+import ReactModal from 'react-modal';
+
+import { media } from '../../../theme/media';
 
 const { H1 } = Typography;
 
-export const ModalButton = styled(Button)`
-  width: 100px;
+export const Modal = styled(ReactModal)`
+  background-color: ${({ theme }) => theme.background};
+  padding: 50px 20px;
+
+  ${media.tablet`
+    padding: 50px;
+  `};
 `;
 
 export const modalStyles = {
@@ -20,63 +27,32 @@ export const modalStyles = {
   },
   content: {
     position: 'absolute',
-    top: '40px',
-    left: '40px',
-    right: '40px',
-    bottom: '40px',
+    top: '50%',
+    left: '50%',
+    right: '10px',
+    transform: 'translate(-50%, -50%)',
+    width: 'calc(100% - 20px)',
+    maxWidth: '600px',
     border: null,
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.5)',
-    backgroundColor: 'rgba(0, 0, 0, 0.9)',
-    color: 'FFFFFF',
     overflow: 'auto',
     WebkitOverflowScrolling: 'touch',
     borderRadius: '4px',
     outline: 'none',
-    padding: '20px',
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
   },
 };
 
 export const ModalTitle = styled(H1)`
-  color: #ffffff;
+  color: ${({ theme }) => theme.text};
+  text-align: center;
 `;
 
 export const ModalActions = styled.div`
-  position: absolute;
-  bottom: 10px;
-  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-
-  ${media.desktop`
-    margin-top: 30px;
-    position: static;
-  `};
+  margin-top: 40px;
 `;
-
-export const getModalStyles = () => {
-  const isDesktop = isDesktopFn();
-
-  if (!isDesktop) {
-    return modalStyles;
-  }
-
-  return {
-    overlay: {
-      ...modalStyles.overlay,
-    },
-    content: {
-      ...modalStyles.content,
-      top: '80px',
-      left: '50%',
-      right: null,
-      bottom: null,
-      transform: 'translateX(-50%)',
-      padding: '50px',
-      flexDirection: 'column',
-    },
-  };
-};

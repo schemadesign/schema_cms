@@ -5,7 +5,7 @@ import { View } from '../view.component';
 import { defaultProps, adminProps } from '../view.stories';
 import { ModalButton } from '../../../../shared/components/modal/modal.styles';
 import { Link } from '../../../../theme/typography';
-import { BackButton } from '../../../../shared/components/navigation';
+import { BackButton, NextButton } from '../../../../shared/components/navigation';
 
 describe('View: Component', () => {
   const component = props => <View {...defaultProps} {...props} />;
@@ -35,10 +35,7 @@ describe('View: Component', () => {
 
     const wrapper = render();
 
-    wrapper
-      .find(ModalButton)
-      .at(1)
-      .simulate('click');
+    wrapper.find(NextButton).simulate('click');
 
     expect(defaultProps.removeUser).toBeCalledWith({ userId: '1' });
   });
@@ -60,7 +57,10 @@ describe('View: Component', () => {
     jest.spyOn(defaultProps.history, 'push');
 
     const wrapper = render();
-    wrapper.find(BackButton).simulate('click');
+    wrapper
+      .find(BackButton)
+      .at(0)
+      .simulate('click');
 
     expect(defaultProps.history.push).toBeCalledWith('/user');
   });

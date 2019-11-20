@@ -2,10 +2,19 @@
 
 exports[`Storyshots Logout Default 1`] = `
 <div
-  className=""
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
 >
-  <span>
-    Loging out..
-  </span>
+  <div
+    className=""
+  >
+    <span>
+      Loging out..
+    </span>
+  </div>
 </div>
 `;

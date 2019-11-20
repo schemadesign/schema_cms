@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { always, find, ifElse, path, propEq } from 'ramda';
 import { FormattedMessage } from 'react-intl';
-import Modal from 'react-modal';
 
 import browserHistory from '../../../shared/utils/history';
 import {
@@ -18,8 +17,8 @@ import {
 } from './addUser.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './addUser.messages';
-import { ModalActions, ModalButton, getModalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
-import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
+import { ModalActions, modalStyles, Modal, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 
 export class AddUser extends PureComponent {
@@ -125,17 +124,17 @@ export class AddUser extends PureComponent {
             <FormattedMessage {...messages.back} />
           </BackButton>
         </NavigationContainer>
-        <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={getModalStyles()}>
+        <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <ModalButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={this.handleCancelRemove}>
               <FormattedMessage {...messages.cancelRemoval} />
-            </ModalButton>
-            <ModalButton onClick={this.handleConfirmRemove}>
+            </BackButton>
+            <NextButton onClick={this.handleConfirmRemove}>
               <FormattedMessage {...messages.confirmRemoval} />
-            </ModalButton>
+            </NextButton>
           </ModalActions>
         </Modal>
       </Container>

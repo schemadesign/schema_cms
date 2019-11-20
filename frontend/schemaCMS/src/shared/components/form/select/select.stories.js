@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Select } from './select.component';
+import { withTheme } from '../../../../.storybook/decorators';
 
 export const defaultProps = {
   label: 'Selector',
@@ -28,4 +29,6 @@ class TestComponent extends PureComponent {
   }
 }
 
-storiesOf('Shared Components|Form/Select', module).add('Default', () => <TestComponent />);
+storiesOf('Shared Components|Form/Select', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <TestComponent />);

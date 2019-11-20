@@ -18,7 +18,6 @@ exports[`Navigation: Component should render BackButton 1`] = `
 <Styled(Component)
   disabled={false}
   onClick={[Function]}
-  type="back"
 >
   <FormattedMessage
     defaultMessage="Back"
@@ -32,7 +31,6 @@ exports[`Navigation: Component should render BackButton with custom children 1`]
 <Styled(Component)
   disabled={false}
   onClick={[Function]}
-  type="back"
 >
   <FormattedMessage
     defaultMessage="{loading, select, true {Loading...} other {Next}}"
@@ -61,7 +59,6 @@ exports[`Navigation: Component should render NextButton 1`] = `
 <Styled(Component)
   inverse={true}
   onClick={[Function]}
-  type="next"
 >
   <FormattedMessage
     defaultMessage="{loading, select, true {Loading...} other {Next}}"
@@ -79,7 +76,6 @@ exports[`Navigation: Component should render NextButton with custom children 1`]
 <Styled(Component)
   inverse={true}
   onClick={[Function]}
-  type="next"
 >
   <FormattedMessage
     defaultMessage="Back"
