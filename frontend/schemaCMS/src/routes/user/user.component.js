@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { UserCreateCMS, UserCreateProject } from '../../shared/components/userCreate';
 import List from './list/list.container';
@@ -22,12 +22,14 @@ export class User extends PureComponent {
     const withUserId = `${path}/:userId`;
     const withProjectId = `${withUserId}/add/:projectId`;
     const add = `${path}/add`;
+    const mePath = `${path}/me`;
 
     return (
       <Switch>
         <Route exact path={path} component={List} />
         <Route exact path={withProjectId} render={({ match }) => <UserCreateProject {...this.props} match={match} />} />
         <Route exact path={add} render={() => <UserCreateCMS {...this.props} />} />
+        <Redirect exact path={mePath} to="/settings" />
         <Route exact path={withUserId} component={View} />
       </Switch>
     );
