@@ -19,6 +19,7 @@ class TestStepSerializer:
             "script": step.script_id,
             "body": step.body,
             "exec_order": step.exec_order,
+            "options": step.options,
         }
 
 

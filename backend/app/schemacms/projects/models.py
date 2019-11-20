@@ -13,6 +13,7 @@ from django.db import models, transaction
 from django.utils import functional
 from django.utils.translation import ugettext as _
 from django_extensions.db import models as ext_models
+from django.contrib.postgres import fields as pg_fields
 
 from schemacms.users import constants as users_constants
 from . import constants, managers, fsm, services
@@ -363,8 +364,9 @@ class DataSourceJob(
 
     def relative_path_to_save(self, filename):
         base_path = self.result.storage.location
-
-        return os.path.join(base_path, f"{self.datasource.id}/outputs/{filename}")
+        if self.id is None or self.datasource_id is None:
+            raise ValueError("Job or DataSource ID is not set")
+        return os.path.join(base_path, f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}")
 
     def update_meta(self):
         preview_json, items, fields = get_preview_data(self.result.url)
@@ -414,6 +416,7 @@ class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
     )
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
+    options: dict = pg_fields.JSONField(default=dict)
 
     def meta_file_serialization(self):
         data = {
@@ -421,6 +424,7 @@ class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
             "body": self.body,
             "script": self.script.meta_file_serialization(),
             "exec_order": self.exec_order,
+            "options": self.options,
         }
         return data
 

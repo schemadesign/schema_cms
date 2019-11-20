@@ -27,7 +27,7 @@ class StepSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.DataSourceJobStep
-        fields = ("script_name", "script", "body", "exec_order")
+        fields = ("script_name", "script", "body", "exec_order", "options")
 
     def get_script_name(self, obj):
         return obj.script.name
@@ -237,12 +237,12 @@ class CreateJobSerializer(serializers.ModelSerializer):
 
     @staticmethod
     def create_steps(steps, job):
-        for step in steps:
+        for step_dict in steps:
             step_instance = models.DataSourceJobStep()
-            step_instance.script = step["script"]
-            step_instance.body = step["script"].body
+            for k, v in step_dict.items():
+                setattr(step_instance, k, v)
+            step_instance.body = step_dict["script"].body
             step_instance.datasource_job = job
-            step_instance.exec_order = step["exec_order"]
             yield step_instance
 
 

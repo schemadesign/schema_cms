@@ -303,19 +303,6 @@ Content-Type: application/json
 201 Created
 ```
 
-
-## Enums
-Data source statuses: `file`, `database`, `api`
-
-## Structures
-
-#### Step
-
-Name       | Type   | Description
------------|--------|---
-script     | int    | Script ID
-exec_order | int    | Order of step
-
 ## Get data source jobs history
 
 **Request**:
@@ -499,3 +486,17 @@ id           | integer  | Job ID.
 Content-Type: application/json
 200 OK
 ```
+
+
+## Enums
+Data source statuses: `file`, `database`, `api`
+
+## Structures
+
+#### Step
+
+Name       | Type   | Description
+-----------|--------|---
+script     | int    | Script ID
+exec_order | int    | Order of step
+options    | object | Additional options

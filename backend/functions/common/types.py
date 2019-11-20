@@ -54,6 +54,8 @@ class Step(LoaderMixin):
     script: Script
     body: str
     exec_order: int = 0
+    options: dict = dataclasses.field(default_factory=dict)
+    job: "Job" = None
 
     @classmethod
     def from_json(cls, data: dict):
@@ -72,10 +74,13 @@ class Job(LoaderMixin):
     steps: typing.List[Step] = dataclasses.field(default_factory=list)
 
     @classmethod
-    def from_json(cls, data: dict):
+    def from_json(cls, data: dict) -> "Job":
         data = data.copy()
         data["datasource"] = DataSource.from_json(data["datasource"])
         data["steps"] = sorted(
             map(Step.from_json, data.get("steps", [])), key=operator.attrgetter("exec_order")
         )
-        return super().from_json(data)
+        job = super().from_json(data)
+        for step in job.steps:
+            step.job = job
+        return job
