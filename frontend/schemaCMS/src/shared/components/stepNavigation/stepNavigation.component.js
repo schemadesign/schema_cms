@@ -2,11 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Stepper } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
+import { always } from 'ramda';
 
-import { stepperStyles, stepperBlockStyles, StepperContainer } from './stepNavigation.styles';
+import { stepperBlockStyles, StepperContainer, stepperStyles } from './stepNavigation.styles';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
 import messages from './stepNavigation.messages';
 import { INITIAL_STEP, MAX_STEPS } from '../../../modules/dataSource/dataSource.constants';
+import { renderWhenTrue } from '../../utils/rendering';
 
 export class StepNavigation extends PureComponent {
   static propTypes = {
@@ -55,6 +57,13 @@ export class StepNavigation extends PureComponent {
 
   handleBackClick = () => this.handleStepChange(parseInt(this.props.match.params.step || INITIAL_STEP, 10) - 1);
 
+  renderNextButton = ({ submitForm, nextDisabled, loading, activeStep }) =>
+    renderWhenTrue(
+      always(
+        <NextButton onClick={this.handleNextClick(submitForm)} disabled={nextDisabled || loading} loading={loading} />
+      )
+    )(activeStep !== MAX_STEPS);
+
   render() {
     const {
       loading,
@@ -74,7 +83,7 @@ export class StepNavigation extends PureComponent {
         <BackButton onClick={this.handleBackClick} disabled={backDisabled || loading}>
           <FormattedMessage {...messages.back} values={{ cancel: activeStep === INITIAL_STEP }} />
         </BackButton>
-        <NextButton onClick={this.handleNextClick(submitForm)} disabled={nextDisabled || loading} loading={loading} />
+        {this.renderNextButton({ submitForm, nextDisabled, loading, activeStep })}
         <StepperContainer>
           <Stepper
             activeStep={activeStep}

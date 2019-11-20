@@ -34,10 +34,6 @@ export default defineMessages({
     id: 'dataWranglingscripts.view.back',
     defaultMessage: 'Back',
   },
-  ok: {
-    id: 'dataWranglingscripts.view.ok',
-    defaultMessage: 'OK',
-  },
   save: {
     id: 'dataWranglingscripts.view.save',
     defaultMessage: 'Save',

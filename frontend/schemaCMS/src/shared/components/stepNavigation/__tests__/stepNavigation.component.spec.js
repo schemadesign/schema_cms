@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { StepNavigation } from '../stepNavigation.component';
-import { defaultProps, nextStepProps } from '../stepNavigation.stories';
+import { defaultProps, nextStepProps, lastStepProps } from '../stepNavigation.stories';
 import { BackButton, NextButton } from '../../navigation';
 
 describe('StepNavigation: Component', () => {
@@ -17,6 +17,11 @@ describe('StepNavigation: Component', () => {
 
   it('should render with next step', () => {
     const wrapper = render(nextStepProps);
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should hide next button on last step', () => {
+    const wrapper = render(lastStepProps);
     global.expect(wrapper).toMatchSnapshot();
   });
 

@@ -120,16 +120,6 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       disabled={false}
       onClick={[Function]}
     />
-    <NextButton
-      loading={false}
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="OK"
-        id="dataWranglingscripts.view.ok"
-        values={Object {}}
-      />
-    </NextButton>
   </NavigationContainer>
 </styled.div>
 `;
@@ -199,16 +189,6 @@ exports[`DataWranglingScript: Component should render correctly with link to dat
       disabled={false}
       onClick={[Function]}
     />
-    <NextButton
-      loading={false}
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="OK"
-        id="dataWranglingscripts.view.ok"
-        values={Object {}}
-      />
-    </NextButton>
   </NavigationContainer>
 </styled.div>
 `;

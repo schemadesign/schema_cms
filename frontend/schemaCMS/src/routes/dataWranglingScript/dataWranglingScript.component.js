@@ -94,9 +94,6 @@ export class DataWranglingScript extends PureComponent {
         </Form>
         <NavigationContainer>
           <BackButton onClick={this.handleGoToDataWranglingList(match, history)} />
-          <NextButton onClick={this.handleGoToDataWranglingList(match, history)}>
-            <FormattedMessage {...messages.ok} />
-          </NextButton>
         </NavigationContainer>
       </Fragment>
     );
