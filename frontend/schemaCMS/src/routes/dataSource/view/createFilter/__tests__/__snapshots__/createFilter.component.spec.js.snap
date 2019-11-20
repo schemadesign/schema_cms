@@ -12,27 +12,34 @@ exports[`CreateFilter: Component should render correctly 1`] = `
     }
     headerTitle="name"
   />
-  <FilterForm
-    createFilter={[Function]}
-    dataSourceId="1"
-    fieldsInfo={
-      Object {
-        "field": Object {
-          "fieldType": "fieldType",
-          "filterType": Array [
-            "filterType",
-          ],
-          "unique": "unique",
-        },
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <FilterForm
+      createFilter={[Function]}
+      dataSourceId="1"
+      fieldsInfo={
+        Object {
+          "field": Object {
+            "fieldType": "fieldType",
+            "filterType": Array [
+              "filterType",
+            ],
+            "unique": "unique",
+          },
+        }
       }
-    }
-    filter={Object {}}
-    history={
-      Object {
-        "push": [Function],
+      filter={Object {}}
+      history={
+        Object {
+          "push": [Function],
+        }
       }
-    }
-  />
+    />
+  </LoadingWrapper>
 </styled.div>
 `;
 
@@ -48,6 +55,33 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
     }
     headerTitle="name"
   />
-  <Loading />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <FilterForm
+      createFilter={[Function]}
+      dataSourceId="1"
+      fieldsInfo={
+        Object {
+          "field": Object {
+            "fieldType": "fieldType",
+            "filterType": Array [
+              "filterType",
+            ],
+            "unique": "unique",
+          },
+        }
+      }
+      filter={Object {}}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+    />
+  </LoadingWrapper>
 </styled.div>
 `;

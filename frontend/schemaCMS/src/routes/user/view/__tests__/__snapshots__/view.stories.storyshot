@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots View Admin 1`] = `
-.c10 {
+exports[`Storyshots User/View Admin 1`] = `
+.c9 {
   height: 155px;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots View Admin 1`] = `
   width: 100%;
 }
 
-.c11 {
+.c10 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,37 +32,17 @@ exports[`Storyshots View Admin 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c13 {
+.c12 {
   width: calc(50% - 5px);
-}
-
-.c9 {
-  cursor: pointer;
-  margin-bottom: 30px;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c9:hover {
-  border-bottom: 1px solid #FFF;
+  max-width: 240px;
 }
 
 .c8 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
 }
 
 .c0 {
@@ -107,7 +87,7 @@ exports[`Storyshots View Admin 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c11 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -116,17 +96,14 @@ exports[`Storyshots View Admin 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c10 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c13 {
-    width: 23.5%;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
+  .c12 {
+    width: 240px;
   }
 }
 
@@ -420,46 +397,21 @@ exports[`Storyshots View Admin 1`] = `
     <div
       className="c8"
     >
-      <span
-        className="c9"
-        onClick={[Function]}
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          }
-        }
-      >
-        <span>
-          Remove user
-        </span>
-      </span>
-      <span
-        className="c9"
-        onClick={[Function]}
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          }
-        }
-      >
-        <span>
-          Make admin
-        </span>
+      <span>
+        Loading...
       </span>
     </div>
     <div
-      className="c10"
+      className="c9"
     >
       <div
-        className="c11"
+        className="c10"
       >
         <div
-          className="c12"
+          className="c11"
         >
           <button
-            className="c13"
+            className="c12"
             disabled={false}
             onClick={[Function]}
             style={
@@ -491,12 +443,12 @@ exports[`Storyshots View Admin 1`] = `
 </div>
 `;
 
-exports[`Storyshots View Default 1`] = `
-.c10 {
+exports[`Storyshots User/View Editor 1`] = `
+.c9 {
   height: 155px;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -515,7 +467,7 @@ exports[`Storyshots View Default 1`] = `
   width: 100%;
 }
 
-.c11 {
+.c10 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -523,37 +475,17 @@ exports[`Storyshots View Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c13 {
+.c12 {
   width: calc(50% - 5px);
-}
-
-.c9 {
-  cursor: pointer;
-  margin-bottom: 30px;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c9:hover {
-  border-bottom: 1px solid #FFF;
+  max-width: 240px;
 }
 
 .c8 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
 }
 
 .c0 {
@@ -598,7 +530,7 @@ exports[`Storyshots View Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c11 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -607,17 +539,14 @@ exports[`Storyshots View Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c10 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c13 {
-    width: 23.5%;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
+  .c12 {
+    width: 240px;
   }
 }
 
@@ -911,32 +840,21 @@ exports[`Storyshots View Default 1`] = `
     <div
       className="c8"
     >
-      <span
-        className="c9"
-        onClick={[Function]}
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          }
-        }
-      >
-        <span>
-          Remove user
-        </span>
+      <span>
+        Loading...
       </span>
     </div>
     <div
-      className="c10"
+      className="c9"
     >
       <div
-        className="c11"
+        className="c10"
       >
         <div
-          className="c12"
+          className="c11"
         >
           <button
-            className="c13"
+            className="c12"
             disabled={false}
             onClick={[Function]}
             style={

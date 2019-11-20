@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/View default 1`] = `
+exports[`Storyshots Project|View default 1`] = `
 .c28 {
   height: 155px;
 }
@@ -803,19 +803,6 @@ exports[`Storyshots Project/View default 1`] = `
               </span>
             </a>
           </div>
-          <div
-            className="c10"
-          >
-            <a
-              className="c9"
-              href="/project/100/directory"
-              onClick={[Function]}
-            >
-              <span>
-                Directories
-              </span>
-            </a>
-          </div>
         </div>
       </div>
       <div
@@ -1077,7 +1064,7 @@ exports[`Storyshots Project/View default 1`] = `
         >
           <button
             disabled={false}
-            id="addProjectBtn"
+            id="backProjectBtn"
             onClick={[Function]}
             style={
               Object {
@@ -1121,12 +1108,12 @@ exports[`Storyshots Project/View default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project/View loading 1`] = `
-.c14 {
+exports[`Storyshots Project|View loading 1`] = `
+.c7 {
   height: 155px;
 }
 
-.c16 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1145,7 +1132,7 @@ exports[`Storyshots Project/View loading 1`] = `
   width: 100%;
 }
 
-.c15 {
+.c8 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -1153,36 +1140,7 @@ exports[`Storyshots Project/View loading 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c13 {
-  cursor: pointer;
-  margin-bottom: 30px;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c13:hover {
-  border-bottom: 1px solid #FFF;
-}
-
-.c12 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c11 {
+.c6 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -1209,93 +1167,27 @@ exports[`Storyshots Project/View loading 1`] = `
   margin-bottom: 20px;
 }
 
-.c5 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 {
+.c5 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
-  font-size: 24px;
-  border-bottom: 2.4px solid #2F2F36;
-  padding: 8px 0 13px;
 }
 
-.c4 a {
+.c5 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c4:first-of-type {
-  border-top: 2.4px solid #2F2F36;
-}
-
-.c6 {
-  line-height: 1.5;
-  margin: 2px 0;
-  cursor: pointer;
-}
-
-.c6 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #FFF;
-  display: block;
-}
-
-.c6 a {
+.c5 a {
   padding: 8px 0;
-}
-
-.c7 {
-  display: none;
-}
-
-.c10 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #2F2F36;
-  cursor: pointer;
-}
-
-.c10:hover {
-  border-bottom-color: #FFF;
-}
-
-.c8 {
-  display: block;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  text-align: center;
-  border-bottom: 2px solid #FFF;
-  cursor: pointer;
-}
-
-.c8:hover {
-  border-bottom-color: #FFF;
-}
-
-.c9 {
-  color: #FFF;
-  display: block;
-  padding: 16px;
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
 .c0 {
@@ -1315,7 +1207,7 @@ exports[`Storyshots Project/View loading 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1324,7 +1216,7 @@ exports[`Storyshots Project/View loading 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c8 {
     width: 1000px;
   }
 }
@@ -1332,17 +1224,6 @@ exports[`Storyshots Project/View loading 1`] = `
 @media (min-width:1040px) {
   .c1 {
     display: none;
-  }
-}
-
-@media (min-width:1040px) {
-  .c7 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 29px 0 20px 0;
-    font-size: 15px;
   }
 }
 
@@ -1507,42 +1388,12 @@ exports[`Storyshots Project/View loading 1`] = `
           >
             <ul
               className="c3"
-            >
-              <li
-                className="c4"
-              >
-                <a
-                  href="/project/100/datasource"
-                  id={null}
-                  onClick={[Function]}
-                >
-                  Data Sources
-                </a>
-              </li>
-            </ul>
+            />
             <ul
-              className="c5"
+              className="c4"
             >
               <li
-                className="c6"
-              >
-                <a
-                  href="/project/edit/100"
-                  id={null}
-                  onClick={[Function]}
-                >
-                  Edit Project Settings
-                </a>
-              </li>
-              <li
-                className="c6"
-                id={null}
-                onClick={[Function]}
-              >
-                Delete Project
-              </li>
-              <li
-                className="c6"
+                className="c5"
               >
                 <a
                   href="/logout"
@@ -1598,104 +1449,25 @@ exports[`Storyshots Project/View loading 1`] = `
         </div>
       </div>
       <div
-        className=""
-      >
-        <div
-          className="c7"
-        >
-          <div
-            className="c8"
-          >
-            <a
-              className="c9"
-              href="/project/100"
-              onClick={[Function]}
-            >
-              <span>
-                Settings
-              </span>
-            </a>
-          </div>
-          <div
-            className="c10"
-          >
-            <a
-              className="c9"
-              href="/project/100/datasource"
-              onClick={[Function]}
-            >
-              <span>
-                Sources
-              </span>
-            </a>
-          </div>
-          <div
-            className="c10"
-          >
-            <a
-              className="c9"
-              href="/project/100/user"
-              onClick={[Function]}
-            >
-              <span>
-                Users
-              </span>
-            </a>
-          </div>
-          <div
-            className="c10"
-          >
-            <a
-              className="c9"
-              href="/project/100/directory"
-              onClick={[Function]}
-            >
-              <span>
-                Directories
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div
-        className="c11"
+        className="c6"
       >
         <span>
           Loading...
         </span>
       </div>
-      <div
-        className="c12"
-      >
-        <span
-          className="c13"
-          id="deleteProjectDesktopBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "14px",
-            }
-          }
-        >
-          <span>
-            Delete Project
-          </span>
-        </span>
-      </div>
     </div>
     <div
-      className="c14"
+      className="c7"
     >
       <div
-        className="c15"
+        className="c8"
       >
         <div
-          className="c16"
+          className="c9"
         >
           <button
             disabled={false}
-            id="addProjectBtn"
+            id="backProjectBtn"
             onClick={[Function]}
             style={
               Object {

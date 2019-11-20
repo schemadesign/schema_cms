@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DataSourceList Empty 1`] = `
+exports[`Storyshots Project|DataSourceList Empty 1`] = `
 .c14 {
   height: 155px;
 }
@@ -672,7 +672,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
 </div>
 `;
 
-exports[`Storyshots DataSourceList With data source 1`] = `
+exports[`Storyshots Project|DataSourceList With data source 1`] = `
 .c24 {
   height: 155px;
 }
@@ -1825,7 +1825,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
 </div>
 `;
 
-exports[`Storyshots DataSourceList With jobs 1`] = `
+exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 .c24 {
   height: 155px;
 }

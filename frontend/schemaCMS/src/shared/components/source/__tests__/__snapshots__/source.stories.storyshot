@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DataSource/View/Source Default 1`] = `
+exports[`Storyshots Shared Components|Source Default 1`] = `
 .c0 {
   padding-top: 7px;
 }

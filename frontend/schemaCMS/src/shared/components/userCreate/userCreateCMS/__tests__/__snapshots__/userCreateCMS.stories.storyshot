@@ -38,10 +38,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
 
 .c15 {
   width: calc(50% - 5px);
-}
-
-.c16 {
-  width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c0 {
@@ -128,19 +125,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
 
 @media (min-width:1040px) {
   .c15 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
-  }
-}
-
-@media (min-width:1040px) {
-  .c16 {
-    width: 23.5%;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
+    width: 240px;
   }
 }
 
@@ -798,14 +783,13 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
                   "padding": "0",
                 }
               }
-              type="back"
             >
               <span>
                 Cancel
               </span>
             </button>
             <button
-              className="c16"
+              className="c15"
               disabled={false}
               style={
                 Object {

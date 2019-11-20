@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/AddUser Default 1`] = `
+exports[`Storyshots Project|AddUser Default 1`] = `
 .c9 {
   height: 155px;
 }
@@ -436,7 +436,7 @@ exports[`Storyshots Project/AddUser Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project/AddUser with users 1`] = `
+exports[`Storyshots Project|AddUser with users 1`] = `
 .c16 {
   height: 155px;
 }

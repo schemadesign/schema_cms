@@ -1,6 +1,425 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/List empty 1`] = `
+exports[`Storyshots Project/List editor list 1`] = `
+.c10 {
+  height: 155px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c11 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(0,0,0,0) );
+}
+
+.c9 {
+  color: #1d1d20;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.c0 {
+  width: calc(100% - 50px);
+}
+
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  margin: 20px -20px 0 0;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.c3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1d1d20;
+  display: block;
+}
+
+.c4 a {
+  padding: 8px 0;
+}
+
+.c5 {
+  display: none;
+}
+
+.c6 {
+  margin-right: 20px;
+}
+
+.c7 {
+  color: #1d1d20;
+}
+
+.c8 {
+  color: #1d1d20;
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c11 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#FFF",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className=""
+  >
+    <div
+      className="c0"
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "color": "#1d1d20",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingBottom": "18px",
+            "width": "100%",
+          }
+        }
+      >
+        <div>
+          <div
+            className=""
+          >
+            <h2
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            >
+              Projects
+            </h2>
+            <h1
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Overview
+            </h1>
+          </div>
+        </div>
+        <button
+          disabled={false}
+          id="topHeaderOpenMenuBtn"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#1d1d20",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": "absolute",
+              "right": 0,
+              "top": 6,
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "color": "#000",
+            "maxWidth": null,
+            "minHeight": "100vh",
+            "padding": "18px 20px 27px",
+            "position": "fixed",
+            "right": 0,
+            "textAlign": "left",
+            "top": 0,
+            "transform": "translateX(100%)",
+            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+            "visibility": 0,
+            "width": "100%",
+            "zIndex": 9999,
+          }
+        }
+      >
+        <div
+          className=""
+        >
+          <div
+            className=""
+          >
+            <h2
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            >
+              Projects
+            </h2>
+            <h1
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Overview
+            </h1>
+          </div>
+        </div>
+        <div
+          className="c1"
+        >
+          <ul
+            className="c2"
+          />
+          <ul
+            className="c3"
+          >
+            <li
+              className="c4"
+            >
+              <a
+                href="/logout"
+                id="logoutBtn"
+                onClick={[Function]}
+              >
+                Log Out
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button
+          disabled={false}
+          id="topHeaderCloseMenuButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#1d1d20",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": "absolute",
+              "right": 0,
+              "top": "6px",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#1d1d20",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c6"
+      >
+        <h2
+          className="c7"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          Projects
+        </h2>
+        <h1
+          className="c8"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          Overview
+        </h1>
+      </div>
+      <div
+        className=""
+      />
+    </div>
+    <div
+      className="c9"
+    >
+      <span>
+        Loading...
+      </span>
+    </div>
+    <div
+      className="c10"
+    >
+      <div
+        className="c11"
+      >
+        <div
+          className="c12"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Project|List admin list 1`] = `
 .c10 {
   height: 155px;
 }
@@ -305,22 +724,22 @@ exports[`Storyshots Project/List empty 1`] = `
               className="c4"
             >
               <a
-                href="/user"
-                id="userBtn"
+                href="/logout"
+                id="logoutBtn"
                 onClick={[Function]}
               >
-                Users
+                Log Out
               </a>
             </li>
             <li
               className="c4"
             >
               <a
-                href="/logout"
-                id="logoutBtn"
+                href="/user"
+                id="userBtn"
                 onClick={[Function]}
               >
-                Log Out
+                Users
               </a>
             </li>
           </ul>
@@ -409,7 +828,7 @@ exports[`Storyshots Project/List empty 1`] = `
       >
         <button
           disabled={false}
-          id="addProjectBtnDesktop"
+          id="addProjectDesktopBtn"
           onClick={[Function]}
           style={
             Object {
@@ -510,7 +929,7 @@ exports[`Storyshots Project/List empty 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project/List list 1`] = `
+exports[`Storyshots Project|List empty 1`] = `
 .c10 {
   height: 155px;
 }
@@ -815,22 +1234,22 @@ exports[`Storyshots Project/List list 1`] = `
               className="c4"
             >
               <a
-                href="/user"
-                id="userBtn"
+                href="/logout"
+                id="logoutBtn"
                 onClick={[Function]}
               >
-                Users
+                Log Out
               </a>
             </li>
             <li
               className="c4"
             >
               <a
-                href="/logout"
-                id="logoutBtn"
+                href="/user"
+                id="userBtn"
                 onClick={[Function]}
               >
-                Log Out
+                Users
               </a>
             </li>
           </ul>
@@ -919,7 +1338,7 @@ exports[`Storyshots Project/List list 1`] = `
       >
         <button
           disabled={false}
-          id="addProjectBtnDesktop"
+          id="addProjectDesktopBtn"
           onClick={[Function]}
           style={
             Object {

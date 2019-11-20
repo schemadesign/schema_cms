@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Filters: Component should render correctly 1`] = `
-<styled.div>
+<LoadingWrapper
+  error={null}
+  loading={false}
+  noData={false}
+  noDataContent={null}
+>
   <styled.div>
     <styled.div>
       <Styled(Component)
@@ -36,11 +41,14 @@ exports[`Filters: Component should render correctly 1`] = `
   >
     <Component />
   </Formik>
-</styled.div>
+</LoadingWrapper>
 `;
 
 exports[`Filters: Component should render correctly with loader 1`] = `
-<styled.div>
-  <Loading />
-</styled.div>
+<LoadingWrapper
+  error={null}
+  loading={true}
+  noData={false}
+  noDataContent={null}
+/>
 `;

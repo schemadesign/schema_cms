@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/UserList list 1`] = `
+exports[`Storyshots Project|UserList list 1`] = `
 .c13 {
   height: 155px;
 }
@@ -34,6 +34,7 @@ exports[`Storyshots Project/UserList list 1`] = `
 
 .c16 {
   width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c0 {
@@ -147,10 +148,7 @@ exports[`Storyshots Project/UserList list 1`] = `
 
 @media (min-width:1040px) {
   .c16 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
+    width: 240px;
   }
 }
 
@@ -596,7 +594,6 @@ exports[`Storyshots Project/UserList list 1`] = `
               "padding": "0",
             }
           }
-          type="back"
         >
           <span>
             Back
@@ -647,7 +644,7 @@ exports[`Storyshots Project/UserList list 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project/UserList list with users 1`] = `
+exports[`Storyshots Project|UserList list with users 1`] = `
 .c18 {
   height: 155px;
 }
@@ -681,6 +678,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
 
 .c21 {
   width: calc(50% - 5px);
+  max-width: 240px;
 }
 
 .c0 {
@@ -826,10 +824,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
 
 @media (min-width:1040px) {
   .c21 {
-    width: 23.5%;
-    -webkit-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    transform: translateX(255px);
+    width: 240px;
   }
 }
 
@@ -1510,7 +1505,6 @@ exports[`Storyshots Project/UserList list with users 1`] = `
               "padding": "0",
             }
           }
-          type="back"
         >
           <span>
             Back
