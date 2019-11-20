@@ -43,7 +43,7 @@ export class FilterForm extends PureComponent {
     confirmationModalOpen: false,
   };
 
-  getBackMessage = ifElse(equals(true), always('cancel'), always('back'));
+  getBackMessageId = ifElse(equals(true), always('cancel'), always('back'));
 
   getDependencyValues = value => ({
     uniqueItems: path(['fieldsInfo', value, FILTER_UNIQUE_ITEMS], this.props),
@@ -161,7 +161,7 @@ export class FilterForm extends PureComponent {
                 </LinkContainer>
                 <NavigationContainer>
                   <BackButton onClick={this.handleBack} type="button">
-                    <FormattedMessage {...messages[this.getBackMessage(!this.props.filter.id)]} />
+                    <FormattedMessage {...messages[this.getBackMessageId(!this.props.filter.id)]} />
                   </BackButton>
                   <NextButton disabled={!dirty || !isValid} type="submit">
                     <FormattedMessage {...messages.saveFilter} />
