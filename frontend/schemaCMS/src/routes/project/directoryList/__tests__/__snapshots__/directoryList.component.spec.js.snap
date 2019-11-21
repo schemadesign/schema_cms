@@ -5,20 +5,20 @@ exports[`DirectoryList: Component should render correctly 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Directory"
+    title="Directories"
   />
   <TopHeader
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="List"
-        id="dataSource.list.subTitle"
+        defaultMessage="Overview"
+        id="project.directoryList.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Directory"
-        id="dataSource.list.title"
+        defaultMessage="Directories"
+        id="project.directoryList.title"
         values={Object {}}
       />
     }
@@ -30,15 +30,15 @@ exports[`DirectoryList: Component should render correctly 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="List"
-        id="dataSource.list.subTitle"
+        defaultMessage="Overview"
+        id="project.directoryList.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
-        defaultMessage="Directory"
-        id="dataSource.list.title"
+        defaultMessage="Directories"
+        id="project.directoryList.title"
         values={Object {}}
       />
     }
@@ -99,20 +99,20 @@ exports[`DirectoryList: Component should render correctly with loader 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Directory"
+    title="Directories"
   />
   <TopHeader
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="List"
-        id="dataSource.list.subTitle"
+        defaultMessage="Overview"
+        id="project.directoryList.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Directory"
-        id="dataSource.list.title"
+        defaultMessage="Directories"
+        id="project.directoryList.title"
         values={Object {}}
       />
     }
@@ -124,15 +124,15 @@ exports[`DirectoryList: Component should render correctly with loader 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="List"
-        id="dataSource.list.subTitle"
+        defaultMessage="Overview"
+        id="project.directoryList.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
-        defaultMessage="Directory"
-        id="dataSource.list.title"
+        defaultMessage="Directories"
+        id="project.directoryList.title"
         values={Object {}}
       />
     }

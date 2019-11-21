@@ -120,7 +120,7 @@ exports[`Storyshots ProjectTabs Default 1`] = `
           onClick={[Function]}
         >
           <span>
-            Pages Directory
+            Directories
           </span>
         </a>
       </div>

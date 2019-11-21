@@ -473,7 +473,7 @@ exports[`Storyshots Project/UserList list 1`] = `
           onClick={[Function]}
         >
           <span>
-            Pages Directory
+            Directories
           </span>
         </a>
       </div>
@@ -1166,7 +1166,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
           onClick={[Function]}
         >
           <span>
-            Pages Directory
+            Directories
           </span>
         </a>
       </div>

@@ -486,7 +486,7 @@ exports[`Storyshots DataSourceList Empty 1`] = `
             onClick={[Function]}
           >
             <span>
-              Pages Directory
+              Directories
             </span>
           </a>
         </div>
@@ -1254,7 +1254,7 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             onClick={[Function]}
           >
             <span>
-              Pages Directory
+              Directories
             </span>
           </a>
         </div>
@@ -2385,7 +2385,7 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             onClick={[Function]}
           >
             <span>
-              Pages Directory
+              Directories
             </span>
           </a>
         </div>

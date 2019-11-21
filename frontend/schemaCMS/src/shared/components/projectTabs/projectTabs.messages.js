@@ -18,6 +18,6 @@ export default defineMessages({
   },
   [DIRECTORY]: {
     id: `shared.components.projectTabs.${DIRECTORY}`,
-    defaultMessage: 'Pages Directory',
+    defaultMessage: 'Directories',
   },
 });

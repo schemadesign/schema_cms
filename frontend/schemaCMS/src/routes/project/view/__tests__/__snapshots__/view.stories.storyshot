@@ -812,7 +812,7 @@ exports[`Storyshots Project/View default 1`] = `
               onClick={[Function]}
             >
               <span>
-                Pages Directory
+                Directories
               </span>
             </a>
           </div>
@@ -1651,7 +1651,7 @@ exports[`Storyshots Project/View loading 1`] = `
               onClick={[Function]}
             >
               <span>
-                Pages Directory
+                Directories
               </span>
             </a>
           </div>

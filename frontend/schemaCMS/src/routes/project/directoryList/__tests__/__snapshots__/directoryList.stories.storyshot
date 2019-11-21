@@ -217,7 +217,7 @@ exports[`Storyshots DirectoryList Default 1`] = `
               }
             >
               <span>
-                Directory
+                Directories
               </span>
             </h2>
             <h1
@@ -234,7 +234,7 @@ exports[`Storyshots DirectoryList Default 1`] = `
               }
             >
               <span>
-                List
+                Overview
               </span>
             </h1>
           </div>
@@ -319,7 +319,7 @@ exports[`Storyshots DirectoryList Default 1`] = `
               }
             >
               <span>
-                Directory
+                Directories
               </span>
             </h2>
             <h1
@@ -336,7 +336,7 @@ exports[`Storyshots DirectoryList Default 1`] = `
               }
             >
               <span>
-                List
+                Overview
               </span>
             </h1>
           </div>
@@ -448,7 +448,7 @@ exports[`Storyshots DirectoryList Default 1`] = `
             onClick={[Function]}
           >
             <span>
-              Pages Directory
+              Directories
             </span>
           </a>
         </div>
@@ -473,7 +473,7 @@ exports[`Storyshots DirectoryList Default 1`] = `
           }
         >
           <span>
-            Directory
+            Directories
           </span>
         </h2>
         <h1
@@ -491,7 +491,7 @@ exports[`Storyshots DirectoryList Default 1`] = `
           }
         >
           <span>
-            List
+            Overview
           </span>
         </h1>
       </div>

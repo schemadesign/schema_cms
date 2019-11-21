@@ -3,11 +3,11 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'dataSource.list.title',
-    defaultMessage: 'Directory',
+    id: 'project.directoryList.title',
+    defaultMessage: 'Directories',
   },
   subTitle: {
-    id: 'dataSource.list.subTitle',
-    defaultMessage: 'List',
+    id: 'project.directoryList.subTitle',
+    defaultMessage: 'Overview',
   },
 });
