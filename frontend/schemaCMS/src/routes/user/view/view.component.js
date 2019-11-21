@@ -43,10 +43,10 @@ export class View extends PureComponent {
 
       await this.props.fetchUser({ userId });
       this.setState({ loading: false });
-    } catch (e) {
+    } catch (error) {
       this.setState({
         loading: false,
-        error: path(['error', 'message'], e),
+        error,
       });
     }
   }

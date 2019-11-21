@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always, isEmpty, path } from 'ramda';
+import { always, isEmpty } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -35,10 +35,10 @@ export class List extends PureComponent {
     try {
       await this.props.fetchProjectsList();
       this.setState({ loading: false });
-    } catch (e) {
+    } catch (error) {
       this.setState({
         loading: false,
-        error: path(['error', 'messages'], e),
+        error,
       });
     }
   }

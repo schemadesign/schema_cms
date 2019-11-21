@@ -35,9 +35,5 @@ export const getIsAnyResultProcessing = pipe(
 );
 
 export const getError = error => ({
-  error: {
-    message: path(['response', 'data', 'detail', 'message'], error),
-    code: path(['response', 'data', 'detail', 'code'], error),
-    status: path(['response', 'status'], error),
-  },
+  code: path(['response', 'data', 'detail', 'code'], error),
 });

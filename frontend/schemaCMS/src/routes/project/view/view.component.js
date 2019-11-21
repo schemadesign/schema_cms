@@ -60,10 +60,10 @@ export class View extends PureComponent {
     try {
       await this.props.fetchProject(this.props.match.params);
       this.setState({ loading: false });
-    } catch (e) {
+    } catch (error) {
       this.setState({
         loading: false,
-        error: path(['error', 'message'], e),
+        error,
       });
     }
   }
