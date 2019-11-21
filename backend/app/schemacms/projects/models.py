@@ -203,6 +203,10 @@ class DataSource(
         name, ext = os.path.splitext(os.path.basename(file_name))
         return name, os.path.basename(file_name)
 
+    @functional.cached_property
+    def filters_count(self):
+        return self.filters.count()
+
     @property
     def available_scripts(self):
         return WranglingScript.objects.filter(

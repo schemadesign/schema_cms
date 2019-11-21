@@ -31,7 +31,12 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     def datasources(self, request, **kwargs):
         project = self.get_object()
         queryset = (
-            project.data_sources.all().prefetch_related("jobs").available_for_user(user=self.request.user)
+            project.data_sources.all()
+            .prefetch_related("jobs", "filters", "meta_data")
+            .select_related("project", "created_by", "active_job")
+            .order_by("-created")
+            .annotate_filters_count()
+            .available_for_user(user=self.request.user)
         )
 
         page = self.paginate_queryset(queryset)
@@ -78,7 +83,11 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.prefetch_related("jobs", "filters").order_by("-created")
+    queryset = (
+        models.DataSource.objects.prefetch_related("jobs", "filters", "meta_data")
+        .select_related("project", "created_by", "active_job")
+        .order_by("-created")
+    )
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "script": serializers.DataSourceScriptSerializer,
@@ -90,7 +99,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     }
 
     def get_queryset(self):
-        return super().get_queryset().available_for_user(user=self.request.user)
+        return super().get_queryset().annotate_filters_count().available_for_user(user=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)

@@ -1,3 +1,8 @@
+try:
+    import unzip_requirements
+except ImportError:
+    pass
+
 import asyncio
 import logging
 import os
@@ -7,7 +12,7 @@ from urllib import parse
 
 import aiohttp
 import aiobotocore
-from validator_collection import checkers
+import validators
 import pandas as pd
 
 from common import settings
@@ -20,7 +25,7 @@ RANDOM_SUFFIX_LENGTH = 5
 
 
 def is_valid_url(url: str) -> bool:
-    return checkers.is_url(url)
+    return validators.url(url)
 
 
 def is_image_response(http_response) -> bool:
@@ -55,9 +60,7 @@ async def upload(s3_client, path, http_response):
         ACL='public-read',
         ContentDisposition="inline",
         ContentType=http_response.headers.get("Content-Type"),
-        Metadata={
-            'source': str(http_response.url),
-        }
+        Metadata={'source': str(http_response.url),},
     )
 
 
@@ -69,11 +72,7 @@ async def fetch_and_upload_task(url, current_step, http_session, s3_client, dirp
         return url
     parsed_url = parse.urlparse(url)
     filename = generate_available_filename(os.path.basename(parsed_url.path))
-    path = os.path.join(
-        f"{current_step.job.datasource.id}/jobs/{current_step.job.id}",
-        dirpath,
-        filename
-    )
+    path = os.path.join(f"{current_step.job.datasource.id}/jobs/{current_step.job.id}", dirpath, filename)
     await upload(s3_client, path, http_response)
     return parse.urljoin(s3_client.meta.endpoint_url, path)
 
@@ -85,8 +84,12 @@ async def column_image_scrapping(df, current_step, column):
         boto_session = aiobotocore.get_session()
         async with boto_session.create_client('s3', endpoint_url=settings.AWS_S3_ENDPOINT_URL) as s3_client:
             return await asyncio.gather(
-                *(fetch_and_upload_task(url, current_step=current_step, http_session=http_session, s3_client=s3_client)
-                  for url in df[column])
+                *(
+                    fetch_and_upload_task(
+                        url, current_step=current_step, http_session=http_session, s3_client=s3_client
+                    )
+                    for url in df[column]
+                )
             )
 
 
