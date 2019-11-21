@@ -93,8 +93,6 @@ export class DirectoryList extends PureComponent {
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
-    console.log({loading});
-
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
