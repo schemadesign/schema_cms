@@ -10,6 +10,7 @@ import { DataSourceList } from './dataSourceList';
 import UserList from './userList/userList.container';
 import { AddUser } from './addUser';
 import { CreateDataSource } from './createDataSource';
+import { DirectoryList } from './directoryList';
 
 export class Project extends PureComponent {
   static propTypes = {
@@ -29,6 +30,7 @@ export class Project extends PureComponent {
     const addUserList = `${usersPath}/add`;
     const dataSourceListPath = `${viewPath}/datasource`;
     const createDataSourcePath = `${dataSourceListPath}/add`;
+    const directoryListPath = `${viewPath}/directory`;
 
     return (
       <Switch>
@@ -40,6 +42,7 @@ export class Project extends PureComponent {
         <Route exact path={usersPath} component={UserList} />
         <Route exact path={addUserList} component={AddUser} />
         <Route exact path={userPath} component={UserDetails} />
+        <Route exact path={directoryListPath} component={DirectoryList} />
       </Switch>
     );
   }
