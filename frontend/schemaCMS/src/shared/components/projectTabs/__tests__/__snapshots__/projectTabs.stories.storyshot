@@ -111,6 +111,19 @@ exports[`Storyshots ProjectTabs Default 1`] = `
           </span>
         </a>
       </div>
+      <div
+        className="c3"
+      >
+        <a
+          className="c2"
+          href="/project/1/directory"
+          onClick={[Function]}
+        >
+          <span>
+            Pages Directory
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
