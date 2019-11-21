@@ -26,8 +26,7 @@ exports[`LoadingWrapper: Component should render correctly when no data 1`] = `<
 
 exports[`LoadingWrapper: Component should render error correctly 1`] = `
 <ErrorContainer
+  error="Some error"
   type="page"
->
-  Some error
-</ErrorContainer>
+/>
 `;

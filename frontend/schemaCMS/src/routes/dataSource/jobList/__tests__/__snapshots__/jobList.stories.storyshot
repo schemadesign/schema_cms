@@ -126,6 +126,7 @@ exports[`Storyshots Data Source|JobList default 1`] = `
               "position": "absolute",
               "right": 0,
               "top": 6,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -237,6 +238,7 @@ exports[`Storyshots Data Source|JobList default 1`] = `
               "position": "absolute",
               "right": 0,
               "top": "6px",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -395,6 +397,7 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
               "position": "absolute",
               "right": 0,
               "top": 6,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -506,6 +509,7 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
               "position": "absolute",
               "right": 0,
               "top": "6px",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >

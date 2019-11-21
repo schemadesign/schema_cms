@@ -213,6 +213,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               "position": "absolute",
               "right": 0,
               "top": 6,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -324,6 +325,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
               "position": "absolute",
               "right": 0,
               "top": "6px",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -429,6 +431,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             disabled={true}
             id="firstName"
             name="firstName"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {
@@ -488,6 +491,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             disabled={true}
             id="lastName"
             name="lastName"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {
@@ -657,8 +661,10 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 }
               }
+              type="button"
             >
               <span>
                 Cancel
@@ -681,6 +687,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 }
               }
               type="submit"

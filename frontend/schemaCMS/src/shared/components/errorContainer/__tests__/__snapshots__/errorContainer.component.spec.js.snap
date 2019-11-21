@@ -3,5 +3,7 @@
 exports[`ErrorContainer: Component should render correctly 1`] = `
 <styled.div
   type="page"
-/>
+>
+  Page error
+</styled.div>
 `;
