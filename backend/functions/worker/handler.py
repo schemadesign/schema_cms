@@ -26,7 +26,6 @@ from image_scrapping import image_scrapping
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-
 df = None
 current_job = None
 current_step = None
@@ -56,7 +55,9 @@ def process_job():
     api.schemacms_api.update_job_state(job_pk=current_job.id, state=db.JobState.PROCESSING)
 
     logger.info(f"Loading source file: {current_job.source_file_path} ver. {current_job.source_file_version}")
-    source_file = services.get_s3_object(current_job.source_file_path, version=current_job.source_file_version)
+    source_file = services.get_s3_object(
+        current_job.source_file_path, version=current_job.source_file_version
+    )
     try:
         df = dt.fread(source_file["Body"], na_strings=["", ""], fill=True).to_pandas()
     except Exception as e:
@@ -72,7 +73,9 @@ def process_job():
 
         logger.info(f"Step {step.id} done")
 
-    result_file_name = f"{current_job.datasource.id}/jobs/{current_job.id}/outputs/job_{current_job.id}_result.csv"
+    result_file_name = (
+        f"{current_job.datasource.id}/jobs/{current_job.id}/outputs/job_{current_job.id}_result.csv"
+    )
     write_dataframe_to_csv_on_s3(df, result_file_name)
     write_dataframe_to_parquet_on_s3(df, result_file_name.replace(".csv", ".parquet"))
 

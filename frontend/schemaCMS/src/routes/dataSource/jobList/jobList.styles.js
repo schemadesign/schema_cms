@@ -18,9 +18,9 @@ export const JobItemWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.text};
   width: 100%;
-  border-top: 1px solid ${({ theme }) => theme.colors.grey};
+  border-top: 2px solid ${({ theme }) => theme.border};
   padding: 10px 0;
 `;
 
@@ -35,7 +35,7 @@ export const Dot = styled.div`
   height: 7px;
   border-radius: 50%;
   margin: 10px;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.text};
 `;
 
 export const Eye = styled(Icons.EyeIcon)`

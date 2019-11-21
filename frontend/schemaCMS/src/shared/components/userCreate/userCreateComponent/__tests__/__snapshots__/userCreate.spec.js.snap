@@ -112,6 +112,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
       <BackButton
         disabled={false}
         onClick={[Function]}
+        type="button"
       >
         <FormattedMessage
           defaultMessage="Cancel"

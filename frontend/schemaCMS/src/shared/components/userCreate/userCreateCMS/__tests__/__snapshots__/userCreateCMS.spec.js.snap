@@ -12,7 +12,7 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
       "role": "admin",
     }
   }
-  isInitialValid={true}
+  isInitialValid={false}
   onSubmit={[Function]}
   render={[Function]}
   validateOnBlur={true}

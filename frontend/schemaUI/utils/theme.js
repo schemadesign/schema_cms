@@ -216,6 +216,7 @@ const dark = {
   },
   background: colors.black,
   text: colors.white,
+  border: colors.mediumGray,
   secondaryText: colors.lightGrey,
   error: colors.red,
   colors,

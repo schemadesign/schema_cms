@@ -68,7 +68,7 @@ export class UserCreate extends PureComponent {
 
     return (
       <NavigationContainer>
-        <BackButton onClick={this.props.onCancelClick}>
+        <BackButton type="button" onClick={this.props.onCancelClick}>
           <FormattedMessage {...messages.cancel} />
         </BackButton>
         <NextButton type="submit" disabled={!this.props.isValid}>

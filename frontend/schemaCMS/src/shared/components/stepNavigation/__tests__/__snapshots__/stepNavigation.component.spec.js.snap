@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`StepNavigation: Component should hide next button on last step 1`] = `
+<NavigationContainer
+  hideOnDesktop={false}
+  right={false}
+>
+  <BackButton
+    disabled={false}
+    onClick={[Function]}
+  >
+    <FormattedMessage
+      defaultMessage="{cancel, select, true {Cancel} other {Back}}"
+      id="shared.components.stepNavigation.back"
+      values={
+        Object {
+          "cancel": false,
+        }
+      }
+    />
+  </BackButton>
+  <styled.div>
+    <Component
+      activeStep={7}
+      customStyles={
+        Object {
+          "margin": "0 auto",
+          "pointerEvents": "none",
+        }
+      }
+      onStepChange={[Function]}
+      steps={7}
+    />
+  </styled.div>
+</NavigationContainer>
+`;
+
 exports[`StepNavigation: Component should render correctly 1`] = `
 <NavigationContainer
   hideOnDesktop={false}

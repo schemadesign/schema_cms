@@ -76,7 +76,7 @@ export class DataWranglingScripts extends PureComponent {
   };
 
   renderCheckboxes = ({ id, name }, index) => (
-    <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index} isEdit>
+    <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index}>
       <Link to={`/script/${id}`}>{name}</Link>
     </Checkbox>
   );

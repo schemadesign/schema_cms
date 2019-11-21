@@ -95,7 +95,6 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
   >
     <Component
       id="checkbox-0"
-      isEdit={true}
       key="0"
       value="1"
     >
@@ -107,7 +106,6 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
     </Component>
     <Component
       id="checkbox-1"
-      isEdit={true}
       key="1"
       value="2"
     >

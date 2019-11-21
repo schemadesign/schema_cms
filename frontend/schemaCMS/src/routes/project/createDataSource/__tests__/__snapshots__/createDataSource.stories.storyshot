@@ -210,6 +210,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
               "position": "absolute",
               "right": 0,
               "top": 6,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -321,6 +322,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
               "position": "absolute",
               "right": 0,
               "top": "6px",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -514,6 +516,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
                   "outline": "none",
                   "padding": "0",
                   "pointerEvents": "none",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": 96,
                 }
               }
@@ -569,6 +572,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 }
               }
             >
@@ -594,6 +598,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 }
               }
             >

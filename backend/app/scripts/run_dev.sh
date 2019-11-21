@@ -10,7 +10,7 @@ echo "Secrets manager is up"
 
 # install all localstack fixtures
 
-install_db_secret
+#install_db_secret
 
 {
     create_s3_bucket "schemacms" &&

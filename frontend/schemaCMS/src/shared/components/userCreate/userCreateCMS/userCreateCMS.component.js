@@ -13,8 +13,7 @@ export class UserCreateCMS extends PureComponent {
 
   handleSubmit = values => this.props.createUserCMS(values);
 
-  handleCancelClick = evt => {
-    evt.preventDefault();
+  handleCancelClick = () => {
     browserHistory.push('/user');
   };
 
@@ -30,7 +29,6 @@ export class UserCreateCMS extends PureComponent {
           [LAST_NAME]: '',
           [EMAIL]: '',
         }}
-        isInitialValid
         enableReinitialize
         render={({ handleSubmit, ...restProps }) => (
           <UserCreate handleSubmit={handleSubmit} onCancelClick={this.handleCancelClick} isInvitation {...restProps} />

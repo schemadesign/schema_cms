@@ -15,5 +15,6 @@ export const getStyles = (theme = defaultTheme, buttonType = BUTTON, disabled) =
     minHeight: '48px',
     fontSize: '18px',
     display: 'inline-block',
+    transition: 'background 0.25s ease-in-out, color 0.25s ease-in-out',
   },
 });

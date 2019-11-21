@@ -641,6 +641,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
             type="button"
@@ -666,6 +667,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
             type="submit"
@@ -1322,6 +1324,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
             type="button"
@@ -1347,6 +1350,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
             type="submit"
