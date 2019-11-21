@@ -18,6 +18,7 @@ export class UserCreate extends PureComponent {
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
+    handleBlur: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
     isValid: PropTypes.bool.isRequired,
     headerValues: PropTypes.object,
@@ -78,22 +79,21 @@ export class UserCreate extends PureComponent {
   };
 
   renderEmailField = renderWhenTrueOtherwise(
+    () => <TextInput fullWidth label="Email" name={EMAIL} onChange={this.props.handleChange} isEdit {...this.props} />,
     () => (
       <TextInput
         fullWidth
         label="Email"
-        onChange={this.props.handleChange}
+        value={this.props.values[EMAIL]}
         name={EMAIL}
-        isEdit
-        {...this.props}
-        checkOnlyErrors
+        onChange={this.props.handleChange}
+        disabled
       />
-    ),
-    () => <TextInput fullWidth label="Email" value={this.props.values[EMAIL]} name={EMAIL} disabled />
+    )
   );
 
   render() {
-    const { isInvitation, headerValues } = this.props;
+    const { isInvitation, headerValues, ...restProps } = this.props;
     const headerConfig = this.getHeaderAndMenuConfig(headerValues)(isInvitation);
 
     return (
@@ -108,6 +108,7 @@ export class UserCreate extends PureComponent {
             value={this.props.values[FIRST_NAME]}
             onChange={this.props.handleChange}
             disabled={!isInvitation}
+            {...restProps}
           />
           <TextInput
             fullWidth
@@ -116,6 +117,7 @@ export class UserCreate extends PureComponent {
             value={this.props.values[LAST_NAME]}
             onChange={this.props.handleChange}
             disabled={!isInvitation}
+            {...restProps}
           />
           {this.renderEmailField(isInvitation)}
           {this.renderSelectOrText(isInvitation)}

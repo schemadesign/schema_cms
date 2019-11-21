@@ -23,6 +23,7 @@ export class TextInput extends PureComponent {
     value: PropTypes.string,
     readOnly: PropTypes.bool,
     isEdit: PropTypes.bool,
+    handleBlur: PropTypes.func,
     onChange: PropTypes.func,
   };
 
@@ -49,6 +50,7 @@ export class TextInput extends PureComponent {
       errors,
       touched,
       onChange,
+      handleBlur,
       label,
       multiline,
       customStyles,
@@ -70,6 +72,7 @@ export class TextInput extends PureComponent {
         <TextField
           label={label}
           onChange={onChange}
+          onBlur={handleBlur}
           error={error}
           multiline={multiline}
           customStyles={customStyles}

@@ -14,6 +14,7 @@ describe('TextInput: Component', () => {
     errors: {},
     value: '',
     name: 'A_FIELD_NAME',
+    handleChange: Function.prototype,
     onChange: Function.prototype,
   };
 
@@ -46,5 +47,14 @@ describe('TextInput: Component', () => {
     wrapper.find(TextField).prop('onChange')();
 
     expect(onChange).to.have.been.calledOnce;
+  });
+
+  it('should call handleBlur on TextField blur', () => {
+    const handleBlur = spy();
+    const wrapper = render({ handleBlur });
+
+    wrapper.find(TextField).prop('onBlur')();
+
+    expect(handleBlur).to.have.been.calledOnce;
   });
 });
