@@ -18,6 +18,23 @@ function* fetchList({ payload: { projectId } }) {
   }
 }
 
+function* create({ payload: { projectId, name } }) {
+  try {
+    yield put(DirectoryRoutines.create.request());
+
+    const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}${DIRECTORIES_PATH}`, { name });
+
+    yield put(DirectoryRoutines.create.success(data));
+  } catch (e) {
+    yield put(DirectoryRoutines.create.failure(e));
+  } finally {
+    yield put(DirectoryRoutines.create.fulfill());
+  }
+}
+
 export function* watchDirectory() {
-  yield all([takeLatest(DirectoryRoutines.fetchList.TRIGGER, fetchList)]);
+  yield all([
+    takeLatest(DirectoryRoutines.fetchList.TRIGGER, fetchList),
+    takeLatest(DirectoryRoutines.create.TRIGGER, create),
+  ]);
 }

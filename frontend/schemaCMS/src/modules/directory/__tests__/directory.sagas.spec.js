@@ -34,4 +34,24 @@ describe('Directory: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('when create action is called', () => {
+    it('should put create.success action', async () => {
+      const response = {
+        id: 1,
+      };
+      const payload = {
+        projectId: 1,
+        name: 'A directory name',
+      };
+
+      mockApi.post(`/projects/${payload.projectId}/directories`).reply(OK, response);
+
+      await expectSaga(watchDirectory)
+        .withState(defaultState)
+        .put(DirectoryRoutines.create.success(response))
+        .dispatch(DirectoryRoutines.create(payload))
+        .silentRun();
+    });
+  });
 });

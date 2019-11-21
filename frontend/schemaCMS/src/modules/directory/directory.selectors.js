@@ -7,3 +7,8 @@ export const selectDirectories = createSelector(
   selectDirectoryDomain,
   prop('directories')
 );
+
+export const selectDirectory = createSelector(
+  selectDirectoryDomain,
+  prop('directory')
+);
