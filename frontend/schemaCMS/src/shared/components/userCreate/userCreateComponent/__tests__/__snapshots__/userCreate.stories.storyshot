@@ -429,6 +429,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             disabled={true}
             id="firstName"
             name="firstName"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {
@@ -488,6 +489,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreate Default 1`] = `
             disabled={true}
             id="lastName"
             name="lastName"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {

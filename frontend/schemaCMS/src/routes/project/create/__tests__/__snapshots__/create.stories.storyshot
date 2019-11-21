@@ -442,6 +442,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           <input
             id="title"
             name="title"
+            onBlur={[Function]}
             onChange={[Function]}
             placeholder="Project title"
             style={
@@ -522,6 +523,7 @@ exports[`Storyshots Project/Create Default 1`] = `
           <input
             id="description"
             name="description"
+            onBlur={[Function]}
             onChange={[Function]}
             placeholder="Project description"
             style={
@@ -602,6 +604,7 @@ exports[`Storyshots Project/Create Default 1`] = `
             disabled={true}
             id="owner"
             name="owner"
+            onBlur={[Function]}
             onChange={[Function]}
             readOnly={true}
             style={

@@ -455,6 +455,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             disabled={false}
             id="firstName"
             name="firstName"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {
@@ -515,6 +516,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
             disabled={false}
             id="lastName"
             name="lastName"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {
@@ -574,6 +576,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
           <input
             id="email"
             name="email"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {

@@ -379,6 +379,7 @@ exports[`Storyshots CreateDataSource Default 1`] = `
           <input
             id="name"
             name="name"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {
