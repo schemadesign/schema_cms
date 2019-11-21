@@ -16,7 +16,11 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     serializer_class = serializers.ProjectSerializer
     permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
     queryset = models.Project.objects.none()
-    serializer_class_mapping = {"datasources": serializers.DataSourceSerializer}
+    serializer_class_mapping = {
+        "datasources": serializers.DataSourceSerializer,
+        "directories": serializers.DirectorySerializer,
+        "add_directory": serializers.DirectorySerializer,
+    }
 
     def get_queryset(self):
         return (
@@ -75,6 +79,28 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
                 "Please enter the user 'id' you want to add.", status.HTTP_400_BAD_REQUEST
             )
 
+    @decorators.action(detail=True, url_path="directories", methods=["get"])
+    def directories(self, request, **kwargs):
+        project = self.get_object()
+
+        queryset = project.directories.select_related("created_by").all()
+
+        serializer = self.get_serializer(queryset, many=True)
+
+        return response.Response(serializer.data, status=status.HTTP_200_OK)
+
+    @decorators.action(detail=True, url_path="add-directory", methods=["post"])
+    def add_directory(self, request, pk=None, **kwargs):
+        project = self.get_object()
+
+        request.data["project"] = project.id
+
+        serializer = self.get_serializer(data=request.data, context=project)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return response.Response(serializer.data, status=status.HTTP_201_CREATED)
+
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
@@ -119,7 +145,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True)
     def script(self, request, pk=None, **kwargs):
         serializer = self.get_serializer(instance=self.get_object().available_scripts, many=True)
-        return response.Response(data=serializer.data)
+        return response.Response(data=serializer.data, status=status.HTTP_200_OK)
 
     @decorators.action(
         detail=True,
@@ -129,8 +155,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     )
     def script_upload(self, request, pk=None, **kwargs):
         datasource = self.get_object()
-        if not request.data.get("datasource"):
-            request.data["datasource"] = datasource
+        request.data["datasource"] = datasource
         if not request.data.get("name"):
             request.data["name"] = os.path.splitext(request.data["file"].name)[0]
 
@@ -143,8 +168,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="job", methods=["post"])
     def job(self, request, pk=None, **kwargs):
         datasource = self.get_object()
-        if not request.data.get("datasource"):
-            request.data["datasource"] = datasource
+        request.data["datasource"] = datasource
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         with transaction.atomic():
@@ -196,11 +220,9 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
             return response.Response(data=serializer.data)
 
         else:
-            if not request.data.get("datasource"):
-                filter_ = request.data.copy()
-                filter_["datasource"] = data_source
+            request.data["datasource"] = data_source
 
-            serializer = self.get_serializer(data=filter_, context=data_source)
+            serializer = self.get_serializer(data=request.data, context=data_source)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 
@@ -306,3 +328,9 @@ class FilterDetailViewSet(
 
     def get_queryset(self):
         return models.Filter.objects.all().select_related("datasource")
+
+
+class DirectoryViewSet(mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
+    queryset = models.Directory.objects.select_related("project", "created_by").all()
+    serializer_class = serializers.DirectorySerializer
+    permission_classes = (permissions.IsAuthenticated,)

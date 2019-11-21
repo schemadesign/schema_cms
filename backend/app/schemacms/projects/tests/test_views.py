@@ -900,7 +900,7 @@ class TestFilterCreateView:
         )
 
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(data_source.id), data=payload)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
         filter_id = response.data["id"]
         filter_ = projects_models.Filter.objects.get(pk=filter_id)
 
@@ -981,3 +981,80 @@ class TestSetFiltersView:
     @staticmethod
     def get_url(pk):
         return reverse("projects:datasource-set-filters", kwargs=dict(pk=pk))
+
+
+class TestDirectoryListView:
+    def test_response(self, api_client, admin, project, directory_factory):
+        directories = directory_factory.create_batch(2, project=project, created_by=admin)
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url())
+
+        assert response.status_code == status.HTTP_200_OK
+        assert (
+            response.data["results"]
+            == projects_serializers.DirectorySerializer(
+                instance=self.sort_directories(directories), many=True
+            ).data
+        )
+
+    def test_response_from_projects(self, api_client, admin, project_factory, directory_factory):
+        project_1, project_2 = project_factory.create_batch(2, owner=admin)
+        directories = directory_factory.create_batch(3, project=project_1, created_by=admin)
+        directory_factory.create_batch(2, project=project_2, created_by=admin)
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_project_url(project_1.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(response.data) == 3
+        assert (
+            response.data
+            == projects_serializers.DirectorySerializer(
+                instance=self.sort_directories(directories), many=True
+            ).data
+        )
+
+    @staticmethod
+    def get_url():
+        return reverse("projects:directory-list")
+
+    @staticmethod
+    def get_project_url(pk):
+        return reverse("projects:project-directories", kwargs=dict(pk=pk))
+
+    @staticmethod
+    def sort_directories(iterable):
+        return sorted(iterable, key=operator.attrgetter("name"))
+
+
+class TestDirectoryCreateView:
+    def test_response(self, api_client, admin, project, faker):
+        payload = dict(name=faker.word(), project=project.id)
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(), data=payload)
+        directory = projects_models.Directory.objects.get(pk=response.data["id"])
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert projects_models.Directory.objects.filter(pk=response.data["id"]).exists()
+        assert response.data == projects_serializers.DirectorySerializer(directory).data
+
+    def test_add_directory(self, api_client, admin, project, faker):
+        payload = {"name": "About"}
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_project_url(project.id), data=payload, format="json")
+        project_directories = project.directories.all()
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert project_directories.count() == 1
+        assert response.data == projects_serializers.DirectorySerializer(project_directories[0]).data
+
+    @staticmethod
+    def get_url():
+        return reverse("projects:directory-list")
+
+    @staticmethod
+    def get_project_url(pk):
+        return reverse("projects:project-add-directory", kwargs=dict(pk=pk))

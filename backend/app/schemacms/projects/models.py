@@ -456,3 +456,21 @@ class Filter(
     def meta_file_serialization(self):
         data = {"id": self.id, "name": self.name, "type": self.filter_type, "field": self.field}
         return data
+
+
+# Pages
+
+
+class Directory(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+    project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='directories')
+    name = models.CharField(max_length=25)
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="directories", null=True
+    )
+
+    def __str__(self):
+        return str(self.id)
+
+    class Meta:
+        unique_together = ("name", "project")
+        ordering = ('name',)

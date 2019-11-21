@@ -188,5 +188,84 @@ Content-Type application/json
 200 OK
 ```
 
+## list project directories
+
+**Request**:
+
+`GET` `/api/v1/projects/:id/directories`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+**Response**:
+
+```json
+Content-Type application/json
+200 OK
+[
+    {
+        "id": 2,
+        "name": "Info",
+        "created_by": {
+            "id": "95fad5a2-d6c0-48cc-9fb5-b492f04d48f7",
+            "first_name": "",
+            "last_name": ""
+        },
+        "created": "2019-11-21T12:16:39+0000",
+        "modified": "2019-11-21T12:16:39+0000",
+        "project": 1
+    },
+    {
+        "id": 1,
+        "name": "Index",
+        "created_by": {
+            "id": "95fad5a2-d6c0-48cc-9fb5-b492f04d48f7",
+            "first_name": "",
+            "last_name": ""
+        },
+        "created": "2019-11-21T12:16:35+0000",
+        "modified": "2019-11-21T12:16:35+0000",
+        "project": 1
+    }
+]
+```
+
+## Add directory to project
+
+**Request**:
+
+`POST` `/api/v1/projects/:id/add-directory`
+
+Parameters:
+
+Name  | Type    | Required | Description
+------|---------|----------|------------
+name  | string  | Yes      | Directory name
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+**Response**:
+
+```json
+Content-Type application/json
+201 CREATED
+
+{
+    "id": 3,
+    "name": "Views",
+    "created_by": {
+        "id": "95fad5a2-d6c0-48cc-9fb5-b492f04d48f7",
+        "first_name": "",
+        "last_name": ""
+    },
+    "created": "2019-11-21T14:00:59+0000",
+    "modified": "2019-11-21T14:00:59+0000",
+    "project": 1
+}
+```
+
 ## Enums
 Project statuses: `initial`, `processing`
