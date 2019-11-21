@@ -35,6 +35,16 @@ exports[`ProjectTabs: Component should render correctly 1`] = `
           "id": "users",
           "to": "/project/1/user",
         },
+        Object {
+          "active": false,
+          "content": <FormattedMessage
+            defaultMessage="Directories"
+            id="shared.components.projectTabs.directory"
+            values={Object {}}
+          />,
+          "id": "directory",
+          "to": "/project/1/directory",
+        },
       ]
     }
   />

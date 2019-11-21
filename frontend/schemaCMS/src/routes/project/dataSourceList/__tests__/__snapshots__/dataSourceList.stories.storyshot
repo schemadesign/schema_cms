@@ -477,6 +477,19 @@ exports[`Storyshots DataSourceList Empty 1`] = `
             </span>
           </a>
         </div>
+        <div
+          className="c6"
+        >
+          <a
+            className="c7"
+            href="/project/1/directory"
+            onClick={[Function]}
+          >
+            <span>
+              Directories
+            </span>
+          </a>
+        </div>
       </div>
     </div>
     <div
@@ -1229,6 +1242,19 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           >
             <span>
               Users
+            </span>
+          </a>
+        </div>
+        <div
+          className="c6"
+        >
+          <a
+            className="c7"
+            href="/project/1/directory"
+            onClick={[Function]}
+          >
+            <span>
+              Directories
             </span>
           </a>
         </div>
@@ -2347,6 +2373,19 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           >
             <span>
               Users
+            </span>
+          </a>
+        </div>
+        <div
+          className="c6"
+        >
+          <a
+            className="c7"
+            href="/project/1/directory"
+            onClick={[Function]}
+          >
+            <span>
+              Directories
             </span>
           </a>
         </div>

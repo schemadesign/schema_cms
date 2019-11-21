@@ -803,6 +803,19 @@ exports[`Storyshots Project/View default 1`] = `
               </span>
             </a>
           </div>
+          <div
+            className="c10"
+          >
+            <a
+              className="c9"
+              href="/project/100/directory"
+              onClick={[Function]}
+            >
+              <span>
+                Directories
+              </span>
+            </a>
+          </div>
         </div>
       </div>
       <div
@@ -1626,6 +1639,19 @@ exports[`Storyshots Project/View loading 1`] = `
             >
               <span>
                 Users
+              </span>
+            </a>
+          </div>
+          <div
+            className="c10"
+          >
+            <a
+              className="c9"
+              href="/project/100/directory"
+              onClick={[Function]}
+            >
+              <span>
+                Directories
               </span>
             </a>
           </div>

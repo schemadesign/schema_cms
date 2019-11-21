@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DirectoryList: Component should render correctly 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Directories"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="project.directoryList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Directories"
+        id="project.directoryList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ProjectTabs
+    active="directory"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="project.directoryList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Directories"
+        id="project.directoryList.title"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      id="createDirectoryDesktopBtn"
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <styled.section>
+    <Styled(Component)
+      headerComponent={
+        <ForwardRef(styled.ul)>
+          <ForwardRef(styled.li)
+            id="headerItem-0"
+          >
+            12 days ago
+          </ForwardRef(styled.li)>
+          <ForwardRef(styled.li)
+            id="headerItem-1"
+          >
+            firstNamelastName
+          </ForwardRef(styled.li)>
+        </ForwardRef(styled.ul)>
+      }
+      key="0"
+    >
+      <H1
+        customStyles={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+        id="projectName-0"
+        onClick={[Function]}
+      >
+        name
+      </H1>
+    </Styled(Component)>
+  </styled.section>
+  <NavigationContainer
+    hideOnDesktop={true}
+    right={false}
+  >
+    <BackArrowButton
+      id="backBtn"
+      onClick={[Function]}
+    />
+    <PlusButton
+      id="createDirectoryBtn"
+    />
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`DirectoryList: Component should render correctly with loader 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Directories"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="project.directoryList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Directories"
+        id="project.directoryList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ProjectTabs
+    active="directory"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="project.directoryList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Directories"
+        id="project.directoryList.title"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      id="createDirectoryDesktopBtn"
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <Loader />
+  <NavigationContainer
+    hideOnDesktop={true}
+    right={false}
+  >
+    <BackArrowButton
+      id="backBtn"
+      onClick={[Function]}
+    />
+    <PlusButton
+      id="createDirectoryBtn"
+    />
+  </NavigationContainer>
+</styled.div>
+`;
