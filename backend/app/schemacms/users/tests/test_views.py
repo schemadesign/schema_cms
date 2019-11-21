@@ -341,6 +341,7 @@ class TestMeView:
         response = api_client.get(self._url)
 
         assert response.status_code == status.HTTP_200_OK
+        assert response.data["auth_method"] == jwt_extra_data.get("auth_method")
 
     def test_user_not_active(self, api_client, user_factory):
         user = user_factory(is_active=False)
