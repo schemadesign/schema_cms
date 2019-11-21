@@ -10,9 +10,11 @@ import { AddUser } from './addUser.component';
 
 import { ProjectRoutines, selectProjectUsers } from '../../../modules/project';
 import { selectEditorUsers, UserRoutines } from '../../../modules/user';
+import { selectIsAdmin } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
   users: selectEditorUsers,
+  isAdmin: selectIsAdmin,
   usersInProject: selectProjectUsers,
 });
 

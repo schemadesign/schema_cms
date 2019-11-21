@@ -17,10 +17,12 @@ import { Settings } from './settings';
 import { JobDetail } from './jobDetail';
 import { Filter } from './filter';
 import { Preview as JobPreview } from './jobDetail/preview';
+import { NotAuthorized } from './notAuthorized';
 
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
+  NOT_AUTHORIZED: '/not-authorized',
   PROJECT: '/project',
   RESET_PASSWORD: '/reset-password',
   LOGOUT: '/logout',
@@ -40,6 +42,8 @@ export default class RootContainer extends Component {
 
         <App>
           <Switch>
+            <AuthRoute exact path={ROUTES.NOT_AUTHORIZED} component={NotAuthorized} />
+
             <AuthRoute exact path={ROUTES.HOME} render={() => <Redirect to={ROUTES.PROJECT} />} />
 
             <AuthRoute path={ROUTES.PROJECT} component={Project} />

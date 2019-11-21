@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { always, find, ifElse, path, propEq } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
-import browserHistory from '../../../shared/utils/history';
 import {
   Action,
   AddIcon,
@@ -28,11 +27,15 @@ export class AddUser extends PureComponent {
         projectId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }),
     fetchUsers: PropTypes.func.isRequired,
     removeUser: PropTypes.func.isRequired,
     fetchProject: PropTypes.func.isRequired,
     users: PropTypes.array.isRequired,
     usersInProject: PropTypes.array.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
   };
 
   state = {
@@ -42,10 +45,15 @@ export class AddUser extends PureComponent {
 
   async componentDidMount() {
     try {
-      await this.props.fetchProject(path(['match', 'params'], this.props));
+      const projectId = path(['match', 'params', 'projectId'], this.props);
+      if (!this.props.isAdmin) {
+        return this.props.history.push('/not-authorized');
+      }
+
+      await this.props.fetchProject({ projectId });
       await this.props.fetchUsers();
     } catch (e) {
-      browserHistory.push('/');
+      this.props.history.push('/');
     }
   }
 
@@ -55,7 +63,7 @@ export class AddUser extends PureComponent {
   });
 
   handleAddUser = userId =>
-    browserHistory.push(`/user/${userId}/add/${path(['match', 'params', 'projectId'], this.props)}`);
+    this.props.history.push(`/user/${userId}/add/${path(['match', 'params', 'projectId'], this.props)}`);
 
   handleRemoveUser = userId =>
     this.setState({
@@ -80,10 +88,11 @@ export class AddUser extends PureComponent {
     });
   };
 
-  handleBackClick = () => browserHistory.push(`/project/${this.props.match.params.projectId}/user`);
+  handleBackClick = () => this.props.history.push(`/project/${this.props.match.params.projectId}/user`);
 
   renderAction = ({ id }, index) => {
     const { usersInProject } = this.props;
+
     return ifElse(
       find(propEq('id', id)),
       always(
