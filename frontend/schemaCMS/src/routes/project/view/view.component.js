@@ -59,6 +59,7 @@ export class View extends PureComponent {
   async componentDidMount() {
     try {
       await this.props.fetchProject(this.props.match.params);
+      this.setState({ loading: false });
     } catch (e) {
       this.setState({
         loading: false,
