@@ -56,7 +56,7 @@ storiesOf('Project|List', module)
   .add('empty', () => <List {...emptyListProps} />)
   .add('admin list', () => <List {...defaultProps} />);
 
-storiesOf('Project/List', module)
+storiesOf('Project|List', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme(Theme.light))
   .add('editor list', () => <List {...editorProps} />);
