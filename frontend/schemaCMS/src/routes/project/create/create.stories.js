@@ -12,6 +12,7 @@ export const defaultProps = {
   },
   handleChange: Function.prototype,
   handleSubmit: Function.prototype,
+  handleBlur: Function.prototype,
   setFieldValue: Function.prototype,
   touched: {},
   errors: {},

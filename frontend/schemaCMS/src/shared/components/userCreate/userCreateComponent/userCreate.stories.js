@@ -7,6 +7,7 @@ import { UserCreate } from './userCreate.component';
 export const defaultProps = {
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
+  handleBlur: Function.prototype,
   setFieldValue: Function.prototype,
   onCancelClick: Function.prototype,
   isValid: true,

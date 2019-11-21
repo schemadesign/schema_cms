@@ -459,6 +459,7 @@ exports[`Storyshots Settings Default 1`] = `
           disabled={false}
           id="firstName"
           name="firstName"
+          onBlur={[Function]}
           onChange={[Function]}
           style={
             Object {
@@ -541,6 +542,7 @@ exports[`Storyshots Settings Default 1`] = `
           disabled={false}
           id="lastName"
           name="lastName"
+          onBlur={[Function]}
           onChange={[Function]}
           style={
             Object {
@@ -685,6 +687,7 @@ exports[`Storyshots Settings Default 1`] = `
           disabled={true}
           id="role"
           name="role"
+          onBlur={[Function]}
           onChange={[Function]}
           style={
             Object {

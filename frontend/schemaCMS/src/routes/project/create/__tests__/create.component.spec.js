@@ -36,4 +36,15 @@ describe('Create: Component', () => {
       .prop('onChange')();
     expect(handleChange).to.have.been.calledOnce;
   });
+
+  it('should call handleBlur on blur of TextInput value', () => {
+    const handleBlur = spy();
+
+    const wrapper = render({ handleBlur });
+    wrapper
+      .find(TextInput)
+      .first()
+      .prop('handleBlur')();
+    expect(handleBlur).to.have.been.calledOnce;
+  });
 });

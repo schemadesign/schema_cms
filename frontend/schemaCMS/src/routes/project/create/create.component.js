@@ -23,6 +23,7 @@ export class Create extends PureComponent {
     values: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
+    handleBlur: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object,

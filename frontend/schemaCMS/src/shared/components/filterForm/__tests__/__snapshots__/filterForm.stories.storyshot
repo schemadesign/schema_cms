@@ -172,6 +172,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
         <input
           id="name"
           name="name"
+          onBlur={[Function]}
           onChange={[Function]}
           style={
             Object {
@@ -505,6 +506,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
             disabled={true}
             id="fieldType"
             name="fieldType"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {
@@ -567,6 +569,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
             disabled={true}
             id="unique"
             name="unique"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {
@@ -852,6 +855,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
         <input
           id="name"
           name="name"
+          onBlur={[Function]}
           onChange={[Function]}
           style={
             Object {
@@ -1185,6 +1189,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
             disabled={true}
             id="fieldType"
             name="fieldType"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {
@@ -1247,6 +1252,7 @@ exports[`Storyshots FilterForm Edit form 1`] = `
             disabled={true}
             id="unique"
             name="unique"
+            onBlur={[Function]}
             onChange={[Function]}
             style={
               Object {

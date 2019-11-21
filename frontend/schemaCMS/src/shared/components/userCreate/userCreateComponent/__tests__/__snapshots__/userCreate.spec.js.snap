@@ -52,22 +52,36 @@ exports[`UserCreate: Component should render correctly 1`] = `
       disabled={true}
       errors={Object {}}
       fullWidth={true}
+      handleBlur={[Function]}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
       isEdit={false}
+      isValid={true}
       label="Name"
       name="firstName"
+      onCancelClick={[Function]}
       onChange={[Function]}
+      setFieldValue={[Function]}
       touched={Object {}}
+      values={Object {}}
     />
     <TextInput
       checkOnlyErrors={false}
       disabled={true}
       errors={Object {}}
       fullWidth={true}
+      handleBlur={[Function]}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
       isEdit={false}
+      isValid={true}
       label="Last name"
       name="lastName"
+      onCancelClick={[Function]}
       onChange={[Function]}
+      setFieldValue={[Function]}
       touched={Object {}}
+      values={Object {}}
     />
     <TextInput
       checkOnlyErrors={false}
