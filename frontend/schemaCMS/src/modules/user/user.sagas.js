@@ -37,8 +37,6 @@ function* createUserProject({ payload: { projectId, userId } }) {
 }
 
 function* fetchUser({ payload: { userId } }) {
-  let response;
-
   try {
     yield put(UserRoutines.fetchUser.request());
 
