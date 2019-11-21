@@ -74,7 +74,7 @@ class UserViewSet(
 
 class CurrentUserViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
     queryset = user_models.User.objects.none()
-    serializer_class = user_serializers.UserSerializer
+    serializer_class = user_serializers.CurrentUserSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_object(self):

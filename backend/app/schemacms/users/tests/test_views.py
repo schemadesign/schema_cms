@@ -5,7 +5,7 @@ import pytest
 from rest_framework import status
 
 from schemacms.authorization import constants as auth_constants
-from schemacms.users import constants as user_constants, serializers as user_serializers
+from schemacms.users import constants as user_constants, views as user_views
 
 pytestmark = [pytest.mark.django_db]
 
@@ -186,7 +186,7 @@ class TestUserDetailView:
         response = api_client.get(self.get_url(user.pk))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == user_serializers.UserSerializer(instance=user).data
+        assert response.data == user_views.UserViewSet.serializer_class(instance=user).data
 
     def test_retrieve(self, api_client, user_factory):
         user = user_factory()
@@ -308,7 +308,7 @@ class TestMeView:
         response = api_client.get(self._url)
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == user_serializers.UserSerializer(instance=user).data
+        assert response.data == user_views.CurrentUserViewSet.serializer_class(instance=user).data
 
     @pytest.mark.parametrize("http_method", ["put", "patch"])
     def test_update_details(self, api_client, faker, user, http_method):
@@ -319,7 +319,7 @@ class TestMeView:
 
         user.refresh_from_db()
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == user_serializers.UserSerializer(instance=user).data
+        assert response.data == user_views.CurrentUserViewSet.serializer_class(instance=user).data
 
     def test_unauthorized(self, api_client):
         response = api_client.get(self._url)
