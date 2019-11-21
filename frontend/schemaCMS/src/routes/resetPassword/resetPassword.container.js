@@ -7,8 +7,11 @@ import { compose } from 'ramda';
 
 import { ResetPassword } from './resetPassword.component';
 import { UserAuthActions } from '../../modules/userAuth';
+import { selectUserData } from '../../modules/userProfile';
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  userData: selectUserData,
+});
 
 export const mapDispatchToProps = dispatch =>
   bindActionCreators(

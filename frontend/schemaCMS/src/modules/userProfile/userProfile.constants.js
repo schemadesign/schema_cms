@@ -5,6 +5,11 @@ export const ROLES = {
   EDITOR: 'editor',
 };
 
+export const AUTH_METHODS = {
+  EMAIL: 'email',
+  GMAIL: 'gmail',
+};
+
 export const USER_PROFILE_FORM = 'user_profile_form';
 export const FIRST_NAME = 'firstName';
 export const LAST_NAME = 'lastName';
