@@ -32,7 +32,6 @@ export const adminProps = {
   ...defaultProps,
   userData: {
     ...editorProps.userData,
-    role: ROLES.ADMIN,
   },
   isAdmin: true,
 };

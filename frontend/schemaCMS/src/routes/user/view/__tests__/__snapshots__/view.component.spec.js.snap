@@ -244,7 +244,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
           "firstName": "firstName",
           "id": "1",
           "lastName": "lastName",
-          "role": "admin",
+          "role": "editor",
         }
       }
     />
@@ -255,6 +255,15 @@ exports[`View: Component should render correctly for admin user 1`] = `
         <FormattedMessage
           defaultMessage="Remove user"
           id="user.view.removeUser"
+          values={Object {}}
+        />
+      </Styled(Span)>
+      <Styled(Span)
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Make admin"
+          id="user.view.makeAdmin"
           values={Object {}}
         />
       </Styled(Span)>

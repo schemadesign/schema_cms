@@ -11,24 +11,9 @@ exports[`View: Component should render correctly 1`] = `
     <TopHeader
       headerSubtitle="Project Name"
       headerTitle="Project"
-      primaryMenuItems={
-        Array [
-          Object {
-            "label": "Data Sources",
-            "to": "/project/100/datasource",
-          },
-        ]
-      }
+      primaryMenuItems={Array []}
       secondaryMenuItems={
         Array [
-          Object {
-            "label": "Edit Project Settings",
-            "to": "/project/edit/100",
-          },
-          Object {
-            "label": "Delete Project",
-            "onClick": [Function],
-          },
           Object {
             "label": "Log Out",
             "to": "/logout",
@@ -38,7 +23,7 @@ exports[`View: Component should render correctly 1`] = `
     />
     <LoadingWrapper
       error={null}
-      loading={false}
+      loading={true}
       noData={false}
       noDataContent={null}
     >

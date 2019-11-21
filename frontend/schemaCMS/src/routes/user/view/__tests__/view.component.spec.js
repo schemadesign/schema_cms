@@ -39,21 +39,18 @@ describe('View: Component', () => {
     expect(defaultProps.removeUser).toBeCalledWith({ userId: '1' });
   });
 
-  // it('should call makeAdmin', async () => {
-  //   jest.spyOn(adminProps, 'makeAdmin');
+  it('should call makeAdmin', async () => {
+    jest.spyOn(adminProps, 'makeAdmin');
 
-  //   const wrapper = render(adminProps);
+    const wrapper = render(adminProps);
 
-  //   await Promise.resolve();
+    wrapper
+      .find(Link)
+      .at(1)
+      .simulate('click');
 
-  //   wrapper
-  //     .find(Link)
-  //     .dive()
-  //     .at(1)
-  //     .simulate('click');
-
-  //   expect(adminProps.makeAdmin).toBeCalledWith({ userId: '1' });
-  // });
+    expect(adminProps.makeAdmin).toBeCalledWith({ userId: '1' });
+  });
 
   it('should go back', () => {
     jest.spyOn(defaultProps.history, 'push');

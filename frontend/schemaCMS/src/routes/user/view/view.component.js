@@ -31,6 +31,7 @@ export class View extends PureComponent {
   };
 
   state = {
+    error: null,
     loading: true,
     userRemoveModalOpen: false,
     makeAdminModalOpen: false,
@@ -43,7 +44,10 @@ export class View extends PureComponent {
       await this.props.fetchUser({ userId });
       this.setState({ loading: false });
     } catch (e) {
-      browserHistory.push('/');
+      this.setState({
+        loading: false,
+        error: path(['error', 'message'], e),
+      });
     }
   }
 
@@ -74,7 +78,7 @@ export class View extends PureComponent {
   ));
 
   render() {
-    const { loading } = this.state;
+    const { loading, error } = this.state;
     const { userData, isAdmin } = this.props;
     const isEditor = userData.role === ROLES.EDITOR;
     const headerTitle = <FormattedMessage {...messages.title} />;
@@ -84,7 +88,7 @@ export class View extends PureComponent {
       <Container>
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
-        <LoadingWrapper loading={loading}>
+        <LoadingWrapper loading={loading} error={error}>
           <Fragment>
             {this.renderContent(userData)}
             <LinkContainer>
