@@ -187,6 +187,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
             "minHeight": "48px",
             "outline": "none",
             "padding": "0",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             "width": "60px",
           }
         }
@@ -320,6 +321,7 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
             "minHeight": "48px",
             "outline": "none",
             "padding": "0",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             "width": "60px",
           }
         }

@@ -157,6 +157,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                   "minHeight": "48px",
                   "outline": "none",
                   "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 }
               }
             >
@@ -195,6 +196,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
             theme={
               Object {
                 "background": "#000",
+                "border": "#2F2F36",
                 "button": Object {
                   "background": "#1d1d20",
                   "text": "#FFF",
@@ -576,6 +578,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
           >
@@ -601,6 +604,7 @@ exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
                 "minHeight": "48px",
                 "outline": "none",
                 "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
           >

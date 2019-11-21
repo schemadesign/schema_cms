@@ -33,6 +33,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   theme={
     Object {
       "background": "#000",
+      "border": "#2F2F36",
       "button": Object {
         "background": "#1d1d20",
         "text": "#FFF",
@@ -208,6 +209,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
   theme={
     Object {
       "background": "#000",
+      "border": "#2F2F36",
       "button": Object {
         "background": "#1d1d20",
         "text": "#FFF",

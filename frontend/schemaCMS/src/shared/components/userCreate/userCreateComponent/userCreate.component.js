@@ -67,7 +67,7 @@ export class UserCreate extends PureComponent {
 
     return (
       <NavigationContainer>
-        <BackButton onClick={this.props.onCancelClick}>
+        <BackButton type="button" onClick={this.props.onCancelClick}>
           <FormattedMessage {...messages.cancel} />
         </BackButton>
         <NextButton type="submit" disabled={!this.props.isValid}>
@@ -78,17 +78,7 @@ export class UserCreate extends PureComponent {
   };
 
   renderEmailField = renderWhenTrueOtherwise(
-    () => (
-      <TextInput
-        fullWidth
-        label="Email"
-        onChange={this.props.handleChange}
-        name={EMAIL}
-        isEdit
-        {...this.props}
-        checkOnlyErrors
-      />
-    ),
+    () => <TextInput fullWidth label="Email" onChange={this.props.handleChange} name={EMAIL} isEdit />,
     () => <TextInput fullWidth label="Email" value={this.props.values[EMAIL]} name={EMAIL} disabled />
   );
 

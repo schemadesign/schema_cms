@@ -292,6 +292,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               "position": null,
               "right": 0,
               "top": 6,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -444,6 +445,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               "position": "absolute",
               "right": 44,
               "top": 44,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -811,6 +813,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               "position": null,
               "right": 0,
               "top": 6,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -963,6 +966,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               "position": "absolute",
               "right": 44,
               "top": 44,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -1326,6 +1330,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               "position": null,
               "right": 0,
               "top": 6,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
@@ -1478,6 +1483,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               "position": "absolute",
               "right": 44,
               "top": 44,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
