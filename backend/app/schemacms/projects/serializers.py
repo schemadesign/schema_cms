@@ -10,9 +10,14 @@ from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
 
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
+    filters = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = DataSourceMeta
-        fields = ("items", "fields", "preview")
+        fields = ("items", "fields", "preview", "filters")
+
+    def get_filters(self, meta):
+        return meta.datasource.filters_count
 
 
 class DataSourceCreatorSerializer(serializers.ModelSerializer):

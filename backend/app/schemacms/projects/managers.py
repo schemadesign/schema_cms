@@ -68,6 +68,23 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         return dsource
 
+    def annotate_filters_count(self):
+        from .models import Filter
+
+        subquery = (
+            Filter.objects.order_by()
+            .values('datasource')
+            .filter(datasource=models.OuterRef("pk"))
+            .annotate(count=models.Count("pk"))
+            .values("count")
+        )
+
+        return self.annotate(
+            filters_count=Coalesce(
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
+            )
+        )
+
     def available_for_user(self, user):
         """Return Datasouces available for user. If user is admin then return all datasources
         else returns datasources where user is assigned as project's editor"""
