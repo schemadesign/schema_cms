@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always, isEmpty } from 'ramda';
+import { always, isEmpty, path } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
@@ -28,11 +28,19 @@ export class List extends PureComponent {
 
   state = {
     loading: true,
+    error: null,
   };
 
   async componentDidMount() {
-    await this.props.fetchProjectsList();
-    this.setState({ loading: false });
+    try {
+      await this.props.fetchProjectsList();
+      this.setState({ loading: false });
+    } catch (e) {
+      this.setState({
+        loading: false,
+        error: path(['error', 'messages'], e),
+      });
+    }
   }
 
   getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => {
@@ -49,8 +57,9 @@ export class List extends PureComponent {
     };
   };
 
-  getLoadingConfig = (list, loading) => ({
+  getLoadingConfig = (list, loading, error) => ({
     loading,
+    error,
     noData: !list.length,
     noDataContent: this.formatMessage(messages.noProjects),
   });
@@ -103,13 +112,13 @@ export class List extends PureComponent {
 
   render() {
     const { list = [], isAdmin } = this.props;
-    const { loading } = this.state;
+    const { loading, error } = this.state;
 
     const title = this.formatMessage(messages.title);
     const subtitle = this.formatMessage(messages.overview);
 
     const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
-    const loadingConfig = this.getLoadingConfig(list, loading);
+    const loadingConfig = this.getLoadingConfig(list, loading, error);
 
     return (
       <Container>

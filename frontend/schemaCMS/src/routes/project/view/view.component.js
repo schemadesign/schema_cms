@@ -2,12 +2,11 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Card } from 'schemaUI';
-import { always, has, isEmpty, isNil, path } from 'ramda';
+import { always, isEmpty, isNil, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
-import browserHistory from '../../../shared/utils/history';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -52,6 +51,8 @@ export class View extends PureComponent {
   };
 
   state = {
+    loading: true,
+    error: null,
     confirmationModalOpen: false,
   };
 
@@ -59,7 +60,10 @@ export class View extends PureComponent {
     try {
       await this.props.fetchProject(this.props.match.params);
     } catch (e) {
-      browserHistory.push('/');
+      this.setState({
+        loading: false,
+        error: path(['error', 'message'], e),
+      });
     }
   }
 
@@ -206,20 +210,18 @@ export class View extends PureComponent {
 
   render() {
     const { project, isAdmin } = this.props;
-    const { confirmationModalOpen } = this.state;
+    const { confirmationModalOpen, error, loading } = this.state;
     const { projectId } = this.props.match.params;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
-    const loading = isEmpty(project);
-    const hasMenu = !loading && projectId && !has('error', project);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, hasMenu);
+    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, !loading);
 
     return (
       <Container>
         <div>
           <Helmet title={title} />
           <TopHeader {...topHeaderConfig} />
-          <LoadingWrapper loading={loading} error={project.error}>
+          <LoadingWrapper loading={loading} error={error}>
             {this.renderContent(project, projectId, isAdmin)}
           </LoadingWrapper>
         </div>

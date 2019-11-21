@@ -5,6 +5,7 @@ import { UserRoutines } from './user.redux';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { ROLES } from '../userProfile/userProfile.constants';
 import browserHistory from '../../shared/utils/history';
+import { getError } from '../../shared/utils/helpers';
 
 function* createUserCMS({ payload }) {
   try {
@@ -36,14 +37,18 @@ function* createUserProject({ payload: { projectId, userId } }) {
 }
 
 function* fetchUser({ payload: { userId } }) {
+  let response;
+
   try {
     yield put(UserRoutines.fetchUser.request());
 
-    const { data } = yield api.get(`users/${userId}`);
+    response = yield api.get(`users/${userId}`);
+
+    const { data } = response;
 
     yield put(UserRoutines.fetchUser.success(data));
   } catch (error) {
-    yield put(UserRoutines.fetchUser.failure());
+    yield put(UserRoutines.fetchUser.failure(getError(error)));
   } finally {
     yield put(UserRoutines.fetchUser.fulfill());
   }

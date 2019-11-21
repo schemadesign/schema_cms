@@ -1,4 +1,4 @@
-import { either, is, filter, isEmpty, keys, map, not, pipe, propEq, propOr } from 'ramda';
+import { either, is, filter, isEmpty, keys, map, not, path, pipe, propEq, propOr } from 'ramda';
 import { camelize } from 'humps';
 import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
 
@@ -33,3 +33,11 @@ export const getIsAnyResultProcessing = pipe(
   isEmpty,
   not
 );
+
+export const getError = error => ({
+  error: {
+    message: path(['response', 'data', 'detail', 'message'], error),
+    code: path(['response', 'data', 'detail', 'code'], error),
+    status: path(['response', 'status'], error),
+  },
+});
