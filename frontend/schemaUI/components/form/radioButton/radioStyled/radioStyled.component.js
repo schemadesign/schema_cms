@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 
 import { getStyles } from './radioStyled.styles';
 import { RadioBaseComponent } from '../radioBase/radioBase.component';
+import { withStyles } from '../../../styles/withStyles';
 
-export class RadioStyled extends PureComponent {
+export class RadioStyledComponent extends PureComponent {
   static propTypes = {
     selectedValue: PropTypes.string,
     value: PropTypes.string,
+    theme: PropTypes.object,
   };
 
   render() {
-    const { radioStyles, checkedRadioStyles, unCheckedRadioStyles } = getStyles(this.props.theme);
-    const { selectedValue, ...restProps } = this.props;
+    const { selectedValue, theme, ...restProps } = this.props;
+    const { radioStyles, checkedRadioStyles, unCheckedRadioStyles } = getStyles(theme);
 
     return (
       <RadioBaseComponent {...restProps}>
@@ -27,3 +29,5 @@ export class RadioStyled extends PureComponent {
     );
   }
 }
+
+export const RadioStyled = withStyles(RadioStyledComponent);

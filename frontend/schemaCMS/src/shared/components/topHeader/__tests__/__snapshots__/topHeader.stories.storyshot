@@ -148,6 +148,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             "position": "absolute",
             "right": 0,
             "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
@@ -297,6 +298,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             "position": "absolute",
             "right": 0,
             "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
@@ -477,6 +479,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
             "position": "absolute",
             "right": 0,
             "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
@@ -634,6 +637,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
             "position": "absolute",
             "right": 0,
             "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >

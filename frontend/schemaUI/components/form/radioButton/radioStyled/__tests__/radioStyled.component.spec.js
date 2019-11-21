@@ -32,7 +32,9 @@ describe('RadioStyled: Component', () => {
   const render = (props = {}) => shallow(component(props)).dive();
 
   it('should render correctly', () => {
-    const wrapper = render();
+    const wrapper = render()
+      .dive()
+      .dive();
     global.expect(wrapper).toMatchSnapshot();
   });
 });

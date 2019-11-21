@@ -84,7 +84,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
         key="0"
       >
         <styled.div>
-          <RadioStyled
+          <Component
             id="job_option_revert-0"
             value="1"
           />
@@ -112,7 +112,7 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
         key="1"
       >
         <styled.div>
-          <RadioStyled
+          <Component
             id="job_option_revert-1"
             value="2"
           />
