@@ -6,6 +6,7 @@ import { reducer as directoryReducer, DirectoryRoutines } from '../directory.red
 describe('Directory: redux', () => {
   const state = Immutable({
     directories: [],
+    directory: {},
   });
 
   describe('reducer', () => {
@@ -24,6 +25,15 @@ describe('Directory: redux', () => {
 
       const resultState = directoryReducer(state, DirectoryRoutines.fetchList.success(directories));
       expect(resultState.directories).to.deep.equal(directories);
+    });
+  });
+
+  describe('when FILTERS/CREATE action is received', () => {
+    it('should set filters', () => {
+      const directory = { data: 'data' };
+
+      const resultState = directoryReducer(state, DirectoryRoutines.create.success(directory));
+      expect(resultState.directory).to.deep.equal(directory);
     });
   });
 });

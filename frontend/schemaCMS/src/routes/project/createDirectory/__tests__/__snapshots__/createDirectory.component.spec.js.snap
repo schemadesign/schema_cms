@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateDirectory: Component should render correctly 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Create"
+        id="project.createDirectory.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Directories"
+        id="project.createDirectory.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Create"
+        id="project.createDirectory.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Directories"
+        id="project.createDirectory.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      history={Object {}}
+      isEdit={true}
+      name="name"
+      onChange={[Function]}
+      touched={Object {}}
+    />
+    <NavigationContainer
+      hideOnDesktop={true}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        id="backBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Back"
+          id="project.createDirectory.back"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={true}
+        id="createDirectoryBtn"
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Create"
+          id="project.createDirectory.createDirectory"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
+</Fragment>
+`;

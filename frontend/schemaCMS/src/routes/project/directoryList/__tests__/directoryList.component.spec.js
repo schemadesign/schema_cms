@@ -56,7 +56,7 @@ describe('DirectoryList: Component', () => {
       .at(0)
       .simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/project/1/create');
+    expect(defaultProps.history.push).toBeCalledWith('/project/1/directory/create');
   });
 
   it('should create directory on mobile', () => {
@@ -67,7 +67,7 @@ describe('DirectoryList: Component', () => {
       .at(1)
       .simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/project/1/create');
+    expect(defaultProps.history.push).toBeCalledWith('/project/1/directory/create');
   });
 
   it('should show directory', async () => {

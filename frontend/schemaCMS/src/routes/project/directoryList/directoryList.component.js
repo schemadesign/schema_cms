@@ -16,6 +16,7 @@ import { Loader } from '../../../shared/components/loader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
+import { NoData } from '../../../shared/components/noData';
 
 const { H1 } = Typography;
 
@@ -50,7 +51,7 @@ export class DirectoryList extends PureComponent {
 
   getProjectId = () => path(['match', 'params', 'projectId'], this.props);
 
-  handleCreateDirectory = () => this.props.history.push(`/project/${this.getProjectId()}/create`);
+  handleCreateDirectory = () => this.props.history.push(`/project/${this.getProjectId()}/directory/create`);
 
   handleShowProject = () => this.props.history.push(`/project/${this.getProjectId()}`);
 
@@ -84,7 +85,7 @@ export class DirectoryList extends PureComponent {
 
   renderContent = cond([
     [propEq('loading', true), always(<Loader />)],
-    [propEq('list', []), this.renderNoData],
+    [propEq('list', []), always(<NoData />)],
     [T, this.renderList],
   ]);
 
@@ -105,7 +106,7 @@ export class DirectoryList extends PureComponent {
         {this.renderContent({ loading, list: directories })}
         <NavigationContainer hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
-          <PlusButton id="createDirectoryBtn" onClick={this.handleCreateDataSource} />
+          <PlusButton id="createDirectoryBtn" onClick={this.handleCreateDirectory} />
         </NavigationContainer>
       </Container>
     );
