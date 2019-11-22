@@ -5,7 +5,7 @@
     }
   },
   "httpMethod": "GET",
-  "path": "/resize&key=200x200/29/jobs/9/images/maxresdefault_6e29a.jpg",
+  "path": "200x200/29/jobs/9/images/maxresdefault_6e29a.jpg",
   "queryStringParameters": {
     "query": "1234ABCD"
   },
