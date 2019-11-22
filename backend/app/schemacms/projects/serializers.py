@@ -430,4 +430,4 @@ class PageDirectorySerializer(serializers.ModelSerializer):
 
 
 class PageDetailSerializer(PageSerializer):
-    directory = NestedRelatedModelSerializer(serializer=PageDirectorySerializer(), read_only=True,)
+    directory = NestedRelatedModelSerializer(serializer=PageDirectorySerializer(), read_only=True)
