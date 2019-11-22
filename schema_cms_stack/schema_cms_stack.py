@@ -348,7 +348,7 @@ class LambdaWorker(core.Stack):
             aws_lambda_event_sources.SqsEventSource(queue, batch_size=1)
         )
         scope.base.app_bucket.grant_read_write(lambda_fn.role)
-        scope.image_resize_lambda.grant_read_write(lambda_fn.role)
+        scope.image_resize_lambda.image_bucket.grant_read_write(lambda_fn.role)
         return lambda_fn, lambda_code
 
 
