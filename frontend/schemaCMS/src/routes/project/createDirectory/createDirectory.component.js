@@ -45,9 +45,9 @@ export class CreateDirectory extends PureComponent {
             isEdit
             {...restProps}
           />
-          <NavigationContainer hideOnDesktop>
+          <NavigationContainer>
             <BackButton id="backBtn" onClick={this.handleBackClick}>
-              <FormattedMessage {...messages.back} />
+              <FormattedMessage {...messages.cancel} />
             </BackButton>
             <NextButton id="createDirectoryBtn" type="submit" disabled={!restProps.isValid}>
               <FormattedMessage {...messages.createDirectory} />

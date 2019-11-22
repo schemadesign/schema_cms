@@ -9,6 +9,10 @@ export const getStyles = (theme = defaultTheme) => ({
     color: theme.label.text,
     marginBottom: 4,
   },
+  upperStyles: {
+    width: '100%',
+    height: '100%',
+  },
   containerStyles: {
     position: 'relative',
     fontSize: '12px',

@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import { always, cond, path, propEq, T } from 'ramda';
 import { Typography } from 'schemaUI';
 
-import { Container } from './directoryList.styles';
+import { Container, ListItemContent } from './directoryList.styles';
 import messages from './directoryList.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -17,6 +17,7 @@ import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedD
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
 import { NoData } from '../../../shared/components/noData';
+import { Link } from '../../../theme/typography';
 
 const { H1 } = Typography;
 
@@ -52,10 +53,9 @@ export class DirectoryList extends PureComponent {
   getProjectId = () => path(['match', 'params', 'projectId'], this.props);
 
   handleCreateDirectory = () => this.props.history.push(`/project/${this.getProjectId()}/directory/create`);
-
   handleShowProject = () => this.props.history.push(`/project/${this.getProjectId()}`);
-
   handleShowDirectory = id => this.props.history.push(`/directory/${id}`);
+  handleEditDirectory = id => this.props.history.push(`/directory/${id}/edit`);
 
   renderHeader = (list = []) => (
     <HeaderList>
@@ -74,9 +74,12 @@ export class DirectoryList extends PureComponent {
 
     return (
       <ListItem key={index} headerComponent={header}>
-        <H1 id={`directoryName-${index}`} customStyles={titleStyles} onClick={() => this.handleShowDirectory(id)}>
-          {name}
-        </H1>
+        <ListItemContent>
+          <H1 id={`directoryName-${index}`} customStyles={titleStyles} onClick={() => this.handleShowDirectory(id)}>
+            {name}
+          </H1>
+          <Link onClick={() => this.handleEditDirectory(id)}>Edit directory</Link>
+        </ListItemContent>
       </ListItem>
     );
   }

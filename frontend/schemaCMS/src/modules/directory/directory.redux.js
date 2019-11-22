@@ -8,6 +8,7 @@ export const DirectoryRoutines = {
   fetchList: createRoutine(`${PREFIX}FETCH_LIST`),
   fetchOne: createRoutine(`${PREFIX}FETCH_ONE`),
   create: createRoutine(`${PREFIX}CREATE`),
+  update: createRoutine(`${PREFIX}UPDATE`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -21,5 +22,5 @@ const setDirectory = (state = INITIAL_STATE, { payload }) => state.set('director
 export const reducer = createReducer(INITIAL_STATE, {
   [DirectoryRoutines.fetchList.success]: setDirectories,
   [DirectoryRoutines.fetchOne.success]: setDirectory,
-  [DirectoryRoutines.create.success]: setDirectory,
+  [DirectoryRoutines.update.success]: setDirectory,
 });

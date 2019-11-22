@@ -8,7 +8,7 @@ export default defineMessages({
   },
   subTitle: {
     id: 'project.createDirectory.subTitle',
-    defaultMessage: 'Create',
+    defaultMessage: 'Edit',
   },
   directoryFieldName: {
     id: 'project.createDirectory.directoryFieldName',
@@ -20,10 +20,10 @@ export default defineMessages({
   },
   createDirectory: {
     id: 'project.createDirectory.createDirectory',
-    defaultMessage: 'Create',
+    defaultMessage: 'Save',
   },
   cancel: {
     id: 'project.createDirectory.cancel',
-    defaultMessage: 'Cancel',
+    defaultMessage: 'Back',
   },
 });
