@@ -749,6 +749,12 @@ class CIPipeline(core.Stack):
                     run_order=2,
                 ),
                 aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
+                    action_name="execute_image_resize_lambda_changes",
+                    stack_name=scope.image_resize_lambda.stack_name,
+                    change_set_name="imageResizeLambdaStagedChangeSet",
+                    run_order=3,
+                ),
+                aws_codepipeline_actions.CloudFormationExecuteChangeSetAction(
                     action_name="execute_workers_changes",
                     stack_name=scope.workers.stack_name,
                     change_set_name="workersStagedChangeSet",
