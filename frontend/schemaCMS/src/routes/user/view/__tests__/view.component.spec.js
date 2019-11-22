@@ -3,8 +3,6 @@ import { shallow } from 'enzyme';
 
 import { View } from '../view.component';
 import { defaultProps, adminProps } from '../view.stories';
-import { ModalButton } from '../../../../shared/components/modal/modal.styles';
-import { Link } from '../../../../theme/typography';
 import { BackButton, NextButton } from '../../../../shared/components/navigation';
 
 describe('View: Component', () => {
@@ -35,7 +33,10 @@ describe('View: Component', () => {
 
     const wrapper = render();
 
-    wrapper.find(NextButton).simulate('click');
+    wrapper
+      .find(NextButton)
+      .at(0)
+      .simulate('click');
 
     expect(defaultProps.removeUser).toBeCalledWith({ userId: '1' });
   });
@@ -46,7 +47,7 @@ describe('View: Component', () => {
     const wrapper = render(adminProps);
 
     wrapper
-      .find(Link)
+      .find(NextButton)
       .at(1)
       .simulate('click');
 

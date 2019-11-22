@@ -31,6 +31,7 @@ export class View extends PureComponent {
 
   state = {
     userRemoveModalOpen: false,
+    makeAdminModalOpen: false,
   };
 
   componentDidMount() {
@@ -41,6 +42,7 @@ export class View extends PureComponent {
   getUserId = () => path(['match', 'params', 'userId'], this.props);
 
   handleCancelRemove = () => this.setState({ userRemoveModalOpen: false });
+  handleCancelMakeAdmin = () => this.setState({ makeAdminModalOpen: false });
 
   handleConfirmRemove = () => {
     const userId = this.getUserId();
@@ -48,14 +50,17 @@ export class View extends PureComponent {
     return this.props.removeUser({ userId });
   };
 
-  handleMakeAdmin = () => this.props.makeAdmin({ userId: this.getUserId() });
+  handleConfirmMakeAdmin = () => {
+    this.setState({ makeAdminModalOpen: false });
+    this.props.makeAdmin({ userId: this.getUserId() });
+  };
 
   handleBack = () => this.props.history.push('/user');
 
   renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
 
   renderMakeAdmin = renderWhenTrue(() => (
-    <Link onClick={this.handleMakeAdmin}>
+    <Link onClick={() => this.setState({ makeAdminModalOpen: true })}>
       <FormattedMessage {...messages.makeAdmin} />
     </Link>
   ));
@@ -89,6 +94,19 @@ export class View extends PureComponent {
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
             <NextButton onClick={this.handleConfirmRemove}>
+              <FormattedMessage {...messages.confirmRemoval} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
+        <Modal isOpen={this.state.makeAdminModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.makeAdminTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton onClick={this.handleCancelMakeAdmin}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </BackButton>
+            <NextButton onClick={this.handleConfirmMakeAdmin}>
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>
