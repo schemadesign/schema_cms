@@ -1,4 +1,5 @@
 # System Files
 **/.DS_Store
+node_modules/*
 .serverless/*
 http_event_example

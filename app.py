@@ -21,11 +21,11 @@ class App(core.App):
         super().__init__(**kwargs)
         self.certs = CertsStack(self, 'certs')
         self.base = BaseResources(self, 'base')
+        self.image_resize_lambda = ImageResize(self, 'image-resize')
         self.workers = Workers(self, 'workers')
         self.api = API(self, 'api')
         self.lambda_worker = LambdaWorker(self, 'lambda-worker')
         self.public_api = PublicAPI(self, 'public-api')
-        self.image_resize_lambda = ImageResize(self, 'image-resize')
         installation_mode = self.node.try_get_context(INSTALLATION_MODE_CONTEXT_KEY)
         if installation_mode == INSTALLATION_MODE_FULL:
             self.ci_pipeline = CIPipeline(self, 'ci-pipeline')

@@ -22,6 +22,7 @@ from aws_cdk import (
 
 DB_NAME = "gistdb"
 APP_S3_BUCKET_NAME = "schemacms"
+IMAGE_S3_BUCKET_NAME = "schemacms-images"
 LAMBDA_AUTH_TOKEN_ENV_NAME = "LAMBDA_AUTH_TOKEN"
 JOB_PROCESSING_MAX_RETRIES = 3
 JOB_PROCESSING_MEMORY_SIZES = [512, 1280]
@@ -94,15 +95,7 @@ class BaseResources(core.Stack):
         self.app_bucket = aws_s3.Bucket(
             self,
             APP_S3_BUCKET_NAME,
-            versioned=True,
-            website_routing_rules=[
-                aws_s3.RoutingRule(
-                    condition=aws_s3.RoutingRuleCondition(key_prefix_equals="", http_error_code_returned_equals="404"),
-                    host_name=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY),
-                    replace_key=aws_s3.ReplaceKey.prefix_with("prod/resize?key="),
-                    http_redirect_code="307"
-                )
-            ]
+            versioned=True
         )
 
 
@@ -291,6 +284,7 @@ class API(core.Stack):
         self.djangoSecret.grant_read(self.api.service.task_definition.task_role)
         scope.workers.worker_state_machine.grant_start_execution(self.api.service.task_definition.task_role)
         scope.base.app_bucket.grant_read_write(self.api.service.task_definition.task_role)
+        scope.image_resize_lambda.image_bucket.grant_read(self.api.service.task_definition.task_role)
 
         for queue in self.job_processing_queues:
             queue.grant_send_messages(self.api.service.task_definition.task_role)
@@ -340,6 +334,7 @@ class LambdaWorker(core.Stack):
             handler="handler.main",
             environment={
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "AWS_IMAGE_STORAGE_BUCKET_NAME": scope.image_resize_lambda.image_bucket.bucket_name,
                 "BACKEND_URL": BACKEND_URL.format(
                     domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
                 ),
@@ -404,27 +399,49 @@ class ImageResize(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-    def create_lambda(self, scope: core.Construct):
+        self.image_resize_lambda, self.function_code, self.api_gateway = self.create_lambda()
+        self.image_bucket = self.create_bucket(host_name=self.api_gateway.domain_name)
+        self.image_resize_lambda.add_environment(key="AWS_STORAGE_BUCKET_NAME", value=self.image_bucket.bucket_name)
+        self.image_resize_lambda.add_environment(key="SOURCE_BUCKETS", value=self.image_bucket.bucket_name)
+        self.image_bucket.grant_read_write(self.image_resize_lambda.role)
+
+    def create_bucket(self, host_name):
+        return aws_s3.Bucket(
+            self,
+            IMAGE_S3_BUCKET_NAME,
+            public_read_access=True,
+            website_index_document="index.html",
+            website_routing_rules=[
+                aws_s3.RoutingRule(
+                    condition=aws_s3.RoutingRuleCondition(http_error_code_returned_equals="404"),
+                    protocol=aws_s3.RedirectProtocol.HTTPS,
+                    host_name=host_name,
+                    replace_key=aws_s3.ReplaceKey.prefix_with("prod/resize?key="),
+                    http_redirect_code="307"
+                )
+            ]
+        )
+
+    def create_lambda(self):
         domain = self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
-        self.function_code = aws_lambda.Code.from_cfn_parameters()
-        self.image_resize_lambda = aws_lambda.Function(
+        code = aws_lambda.Code.from_cfn_parameters()
+        image_resize_lambda = aws_lambda.Function(
             self,
             "image-resize-lambda",
-            code=self.function_code,
+            code=code,
             handler="index.handler",
             runtime=aws_lambda.Runtime.NODEJS_10_X,
             environment={
-                "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
                 "BACKEND_URL": BACKEND_URL.format(domain=domain),
-                "SOURCE_BUCKETS": scope.base.app_bucket.bucket_name,
             },
             memory_size=512,
             timeout=core.Duration.seconds(30),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
 
-        scope.base.app_bucket.grant_read_write(self.image_resize_lambda.role)
-        aws_apigateway.LambdaRestApi(self, "lambda-image-resize-api", handler=self.image_resizer_lambda)
+        api_gateway = aws_apigateway.LambdaRestApi(self, "lambda-image-resize-api", handler=image_resize_lambda)
+
+        return image_resize_lambda, code, api_gateway
 
 
 class CIPipeline(core.Stack):
@@ -685,16 +702,15 @@ class CIPipeline(core.Stack):
                     },
                     extra_inputs=[public_api_lambda_build_output],
                 ),
-                ###
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_image_resize_lambda_changes",
-                    stack_name=scope.public_api.stack_name,
+                    stack_name=scope.image_resize_lambda.stack_name,
                     change_set_name="imageResizeLambdaStagedChangeSet",
                     admin_permissions=True,
                     template_path=cdk_artifact.at_path("cdk.out/image-resize.template.json"),
                     run_order=2,
                     parameter_overrides={
-                        **scope.public_api.function_code.assign(
+                        **scope.image_resize_lambda.function_code.assign(
                             bucket_name=image_resize_lambda_build_output.s3_location.bucket_name,
                             object_key=image_resize_lambda_build_output.s3_location.object_key,
                             object_version=image_resize_lambda_build_output.s3_location.object_version,
@@ -702,7 +718,6 @@ class CIPipeline(core.Stack):
                     },
                     extra_inputs=[image_resize_lambda_build_output],
                 ),
-                ###
                 aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
                     action_name="prepare_workers_changes",
                     stack_name=scope.workers.stack_name,
