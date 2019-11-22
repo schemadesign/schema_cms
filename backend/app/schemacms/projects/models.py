@@ -478,3 +478,24 @@ class Directory(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel)
     class Meta:
         unique_together = ("name", "project")
         ordering = ('name',)
+
+
+class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
+    directory: Directory = models.ForeignKey(Directory, on_delete=models.CASCADE, related_name='pages')
+    keywords = models.TextField(blank=True, default="")
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="pages", null=True
+    )
+
+    def __str__(self):
+        return str(self.pk)
+
+    class Meta:
+        unique_together = ("title", "directory")
+        ordering = ('created',)
+
+    @property
+    def page_url(self):
+        return os.path.join(
+            settings.PUBLIC_API_LAMBDA_URL, "projects", str(self.directory.project_id), "pages", str(self.pk)
+        )
