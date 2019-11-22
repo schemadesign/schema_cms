@@ -405,11 +405,12 @@ class ImageResize(core.Stack):
         self.image_resize_lambda, self.function_code, self.api_gateway = self.create_lambda()
         self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
         self.image_resize_lambda.add_environment(key="AWS_STORAGE_BUCKET_NAME", value=self.image_bucket.bucket_name)
+        self.image_resize_lambda.add_environment(key="REDIRECT_URL", value=self.image_bucket.url_for_object())
         self.image_resize_lambda.add_environment(key="SOURCE_BUCKETS", value=self.image_bucket.bucket_name)
         self.image_bucket.grant_read_write(self.image_resize_lambda.role)
 
     def create_bucket(self, lambda_url):
-        parsed_url = parse.urlparse(self.api_gateway.url)
+        parsed_url = parse.urlparse(lambda_url)
         protocol_mapping = {
             "HTTP": aws_s3.RedirectProtocol.HTTP,
             "HTTPS": aws_s3.RedirectProtocol.HTTPS,
@@ -424,14 +425,12 @@ class ImageResize(core.Stack):
                     condition=aws_s3.RoutingRuleCondition(http_error_code_returned_equals="404"),
                     protocol=protocol_mapping[parsed_url.scheme.upper()],  # enum required
                     host_name=parsed_url.netloc,
-                    replace_key=aws_s3.ReplaceKey.prefix_with("prod/resize?key="),
                     http_redirect_code="307"
                 )
             ]
         )
 
     def create_lambda(self):
-        domain = self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
         code = aws_lambda.Code.from_cfn_parameters()
         image_resize_lambda = aws_lambda.Function(
             self,
@@ -439,9 +438,6 @@ class ImageResize(core.Stack):
             code=code,
             handler="index.handler",
             runtime=aws_lambda.Runtime.NODEJS_10_X,
-            environment={
-                "BACKEND_URL": BACKEND_URL.format(domain=domain),
-            },
             memory_size=512,
             timeout=core.Duration.seconds(30),
             tracing=aws_lambda.Tracing.ACTIVE,

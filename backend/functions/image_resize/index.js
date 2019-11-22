@@ -15,18 +15,22 @@ const ImageRequest = require('./image-request.js');
 const ImageHandler = require('./image-handler.js');
 
 exports.handler = async (event) => {
-    console.log(event);
     const imageRequest = new ImageRequest();
     const imageHandler = new ImageHandler();
     try {
         const request = await imageRequest.setup(event);
-        console.log(request);
-        const processedRequest = await imageHandler.process(request);
+        const {width, height} = request.edits["resize"];
+        const key = `${width}x${height}/${request.key}`;
+        const params = {
+            bucket: request.bucket,
+            key: key,
+            buffer: await imageHandler.process(request)
+        };
+        await imageHandler.save(params);
         const response = {
-            "statusCode": 200,
-            "headers" : getResponseHeaders(),
-            "body": processedRequest,
-            "isBase64Encoded": true
+            "statusCode": 301,
+            "headers" : {...getResponseHeaders(), "Location": getResponseLocation(key)},
+            "isBase64Encoded": false
         }
         return response;
     } catch (err) {
@@ -42,9 +46,9 @@ exports.handler = async (event) => {
 }
 
 /**
- * Generates the appropriate set of response headers based on a success 
+ * Generates the appropriate set of response headers based on a success
  * or error condition.
- * @param {boolean} isErr - has an error been thrown? 
+ * @param {boolean} isErr - has an error been thrown?
  */
 const getResponseHeaders = (isErr) => {
     const corsEnabled = (process.env.CORS_ENABLED === "Yes");
@@ -61,4 +65,10 @@ const getResponseHeaders = (isErr) => {
         headers["Content-Type"] = "application/json"
     }
     return headers;
+}
+
+
+const getResponseLocation = (key) => {
+    const redirectUrl = process.env.REDIRECT_URL;
+    return `${redirectUrl}/${key}`;
 }
