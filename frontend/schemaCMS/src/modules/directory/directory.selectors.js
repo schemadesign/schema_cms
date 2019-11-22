@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { prop } from 'ramda';
+import { prop, path } from 'ramda';
 
 export const selectDirectoryDomain = prop('directory');
 
@@ -11,4 +11,9 @@ export const selectDirectories = createSelector(
 export const selectDirectory = createSelector(
   selectDirectoryDomain,
   prop('directory')
+);
+
+export const selectDirectoryName = createSelector(
+  selectDirectoryDomain,
+  path(['directory', 'name'])
 );
