@@ -15,6 +15,8 @@ export const defaultProps = {
   fetchProject: Function.prototype,
   users: [],
   usersInProject: [],
+  isAdmin: true,
+  history: { push: Function.prototype },
 };
 
 const email = 'loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com';

@@ -1,11 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { CreateDirectory } from '../createDirectory.component';
-import { defaultProps } from '../createDirectory.stories';
+import { NotAuthorized } from '../notAuthorized.component';
 
-describe('CreateDirectory: Component', () => {
-  const component = props => <CreateDirectory {...defaultProps} {...props} />;
+describe('NotAuthorized: Component', () => {
+  const defaultProps = {};
+
+  const component = props => <NotAuthorized {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

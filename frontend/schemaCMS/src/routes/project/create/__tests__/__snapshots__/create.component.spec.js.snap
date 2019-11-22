@@ -20,11 +20,17 @@ exports[`Create: Component should render correctly 1`] = `
       handleBlur={[Function]}
       handleChange={[Function]}
       handleSubmit={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
       intl={
         Object {
           "formatMessage": [Function],
         }
       }
+      isAdmin={true}
       isEdit={true}
       label="Title"
       name="title"
@@ -47,11 +53,17 @@ exports[`Create: Component should render correctly 1`] = `
       handleBlur={[Function]}
       handleChange={[Function]}
       handleSubmit={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
       intl={
         Object {
           "formatMessage": [Function],
         }
       }
+      isAdmin={true}
       isEdit={true}
       label="Description"
       name="description"
@@ -74,11 +86,17 @@ exports[`Create: Component should render correctly 1`] = `
       handleBlur={[Function]}
       handleChange={[Function]}
       handleSubmit={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
       intl={
         Object {
           "formatMessage": [Function],
         }
       }
+      isAdmin={true}
       isEdit={false}
       label="Owner"
       name="owner"

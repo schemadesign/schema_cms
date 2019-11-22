@@ -3,13 +3,12 @@ import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import { compose } from 'ramda';
+import { compose, path } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
 import { CreateDirectory } from './createDirectory.component';
 import { DirectoryRoutines, selectDirectoryName } from '../../../modules/directory';
-import { errorMessageParser } from '../../../shared/utils/helpers';
 import {
   DIRECTORY_FORM,
   DIRECTORY_NAME,
@@ -46,16 +45,18 @@ export default compose(
       [DIRECTORY_NAME]: directoryName,
     }),
     validationSchema: () => DIRECTORY_SCHEMA,
-    handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
+    handleSubmit: async (data, { props, setSubmitting }) => {
       try {
         setSubmitting(true);
+        const projectId = path(['match', 'params', 'projectId'], props);
 
-        await props.createDirectory(data);
+        await props.createDirectory({ projectId, ...data });
       } catch (errors) {
-        const { formatMessage } = props.intl;
-        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
-
-        setErrors(errorMessages);
+        console.log(errors);
+        // const { formatMessage } = props.intl;
+        // const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+        //
+        // setErrors(errorMessages);
       } finally {
         setSubmitting(false);
       }

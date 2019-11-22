@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { always } from 'ramda';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { defaultStyle, dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FormattedMessage } from 'react-intl';
 
 import { DATA_WRANGLING_STEP } from '../../modules/dataSource/dataSource.constants';
@@ -71,7 +71,7 @@ export class DataWranglingScript extends PureComponent {
 
   renderContent() {
     const { intl, dataWranglingScript, match, history, isAdmin } = this.props;
-    const syntaxTheme = isAdmin ? dracula : defaultStyle;
+    const syntaxTheme = isAdmin ? darcula : defaultStyle;
 
     const descriptionFieldProps = {
       name: DESCRIPTION,

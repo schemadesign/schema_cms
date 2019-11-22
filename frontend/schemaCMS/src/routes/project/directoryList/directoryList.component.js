@@ -50,7 +50,7 @@ export class DirectoryList extends PureComponent {
 
   getProjectId = () => path(['match', 'params', 'projectId'], this.props);
 
-  handleCreateDirectory = () => this.props.history.push(`/project/${this.getProjectId()}/create`);
+  handleCreateDirectory = () => this.props.history.push(`/project/${this.getProjectId()}/directory/create`);
 
   handleShowProject = () => this.props.history.push(`/project/${this.getProjectId()}`);
 
@@ -105,7 +105,7 @@ export class DirectoryList extends PureComponent {
         {this.renderContent({ loading, list: directories })}
         <NavigationContainer hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
-          <PlusButton id="createDirectoryBtn" onClick={this.handleCreateDataSource} />
+          <PlusButton id="createDirectoryBtn" onClick={this.handleCreateDirectory} />
         </NavigationContainer>
       </Container>
     );

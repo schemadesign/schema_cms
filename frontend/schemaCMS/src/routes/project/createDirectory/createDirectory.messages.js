@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   title: {
     id: 'project.createDirectory.title',
-    defaultMessage: 'Data Sources',
+    defaultMessage: 'Directories',
   },
   subTitle: {
     id: 'project.createDirectory.subTitle',
@@ -17,5 +17,13 @@ export default defineMessages({
   directoryFieldPlaceholder: {
     id: 'project.createDirectory.directoryFieldPlaceholder',
     defaultMessage: 'Name',
+  },
+  createDirectory: {
+    id: 'project.createDirectory.createDirectory',
+    defaultMessage: 'Create',
+  },
+  back: {
+    id: 'project.createDirectory.back',
+    defaultMessage: 'Back',
   },
 });

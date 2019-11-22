@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotAuthorized: Component should render correctly 1`] = `
+<styled.div>
+  <H1>
+    <FormattedMessage
+      defaultMessage="Not authorized"
+      id="notAuthorized.notAuthorized"
+      values={Object {}}
+    />
+  </H1>
+</styled.div>
+`;
