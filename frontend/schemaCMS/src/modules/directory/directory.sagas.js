@@ -3,6 +3,7 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 import { DirectoryRoutines } from './directory.redux';
 import api from '../../shared/services/api';
 import { PROJECTS_PATH, DIRECTORIES_PATH } from '../../shared/utils/api.constants';
+import browserHistory from '../../shared/utils/history';
 
 function* fetchList({ payload: { projectId } }) {
   try {
@@ -25,6 +26,7 @@ function* create({ payload: { projectId, name } }) {
     const { data } = yield api.post(`${PROJECTS_PATH}/${projectId}${DIRECTORIES_PATH}`, { name });
 
     yield put(DirectoryRoutines.create.success(data));
+    browserHistory.push(`/project/${projectId}/directory`);
   } catch (e) {
     yield put(DirectoryRoutines.create.failure(e));
   } finally {

@@ -15,6 +15,7 @@ import {
   DIRECTORY_SCHEMA,
   INITIAL_VALUES,
 } from '../../../modules/directory/directory.constants';
+import { errorMessageParser } from '../../../shared/utils/helpers';
 
 const mapStateToProps = createStructuredSelector({
   directoryName: selectDirectoryName,
@@ -45,18 +46,17 @@ export default compose(
       [DIRECTORY_NAME]: directoryName,
     }),
     validationSchema: () => DIRECTORY_SCHEMA,
-    handleSubmit: async (data, { props, setSubmitting }) => {
+    handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
         const projectId = path(['match', 'params', 'projectId'], props);
 
         await props.createDirectory({ projectId, ...data });
       } catch (errors) {
-        console.log(errors);
-        // const { formatMessage } = props.intl;
-        // const errorMessages = errorMessageParser({ errors, messages, formatMessage });
-        //
-        // setErrors(errorMessages);
+        const { formatMessage } = props.intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+        setErrors(errorMessages);
       } finally {
         setSubmitting(false);
       }

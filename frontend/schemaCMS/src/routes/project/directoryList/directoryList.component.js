@@ -16,6 +16,7 @@ import { Loader } from '../../../shared/components/loader';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
+import { NoData } from '../../../shared/components/noData';
 
 const { H1 } = Typography;
 
@@ -84,7 +85,7 @@ export class DirectoryList extends PureComponent {
 
   renderContent = cond([
     [propEq('loading', true), always(<Loader />)],
-    [propEq('list', []), this.renderNoData],
+    [propEq('list', []), always(<NoData />)],
     [T, this.renderList],
   ]);
 
