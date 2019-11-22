@@ -10,6 +10,7 @@ import mockApi from '../../../shared/utils/mockApi';
 describe('Directory: sagas', () => {
   const defaultState = Immutable({
     directories: [],
+    directory: {},
   });
 
   beforeEach(() => {
@@ -31,6 +32,25 @@ describe('Directory: sagas', () => {
         .withState(defaultState)
         .put(DirectoryRoutines.fetchList.success(response))
         .dispatch(DirectoryRoutines.fetchList(payload))
+        .silentRun();
+    });
+  });
+
+  describe('when fetchOne action is called', () => {
+    it('should put fetchOne.success action', async () => {
+      const response = {
+        id: 1,
+      };
+      const payload = {
+        directoryId: 1,
+      };
+
+      mockApi.get(`/directories/${payload.directoryId}`).reply(OK, response);
+
+      await expectSaga(watchDirectory)
+        .withState(defaultState)
+        .put(DirectoryRoutines.fetchOne.success(response))
+        .dispatch(DirectoryRoutines.fetchOne(payload))
         .silentRun();
     });
   });

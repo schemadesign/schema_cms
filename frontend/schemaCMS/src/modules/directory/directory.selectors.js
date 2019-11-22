@@ -13,6 +13,11 @@ export const selectDirectory = createSelector(
   prop('directory')
 );
 
+export const selectDirectory = createSelector(
+  selectDirectoryDomain,
+  prop('directory')
+);
+
 export const selectDirectoryName = createSelector(
   selectDirectoryDomain,
   pathOr('', ['directory', 'name'])

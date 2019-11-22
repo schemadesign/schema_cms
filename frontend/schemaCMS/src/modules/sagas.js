@@ -11,6 +11,7 @@ import { watchUser } from './user/user.sagas';
 import { watchJob } from './job/job.sagas';
 import { watchFilter } from './filter/filter.sagas';
 import { watchDirectory } from './directory/directory.sagas';
+import { watchPage } from './page/page.sagas';
 //<-- IMPORT MODULE SAGA -->
 
 export default function* rootSaga() {
@@ -26,6 +27,7 @@ export default function* rootSaga() {
       fork(watchJob),
       fork(watchFilter),
       fork(watchDirectory),
+      fork(watchPage),
       //<-- INJECT MODULE SAGA -->
     ]);
   } catch (e) {
