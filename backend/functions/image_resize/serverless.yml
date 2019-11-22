@@ -6,12 +6,13 @@ provider:
 
 plugins:
   - serverless-localstack
+  - serverless-plugin-include-dependencies
 
 package:
   individually: true
   exclude:
     - .git/**
-    - node_modules/**
+    - node_modules/**  # no need to add this yourself, serverless-plugin-include-dependencies does it for you
 
 
 custom:

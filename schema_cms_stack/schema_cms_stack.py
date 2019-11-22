@@ -1,3 +1,5 @@
+from urllib import parse
+
 from aws_cdk import (
     core,
     aws_s3,
@@ -401,12 +403,17 @@ class ImageResize(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         self.image_resize_lambda, self.function_code, self.api_gateway = self.create_lambda()
-        self.image_bucket = self.create_bucket(host_name=self.api_gateway.domain_name)
+        self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
         self.image_resize_lambda.add_environment(key="AWS_STORAGE_BUCKET_NAME", value=self.image_bucket.bucket_name)
         self.image_resize_lambda.add_environment(key="SOURCE_BUCKETS", value=self.image_bucket.bucket_name)
         self.image_bucket.grant_read_write(self.image_resize_lambda.role)
 
-    def create_bucket(self, host_name):
+    def create_bucket(self, lambda_url):
+        parsed_url = parse.urlparse(self.api_gateway.url)
+        protocol_mapping = {
+            "HTTP": aws_s3.RedirectProtocol.HTTP,
+            "HTTPS": aws_s3.RedirectProtocol.HTTPS,
+        }
         return aws_s3.Bucket(
             self,
             IMAGE_S3_BUCKET_NAME,
@@ -415,8 +422,8 @@ class ImageResize(core.Stack):
             website_routing_rules=[
                 aws_s3.RoutingRule(
                     condition=aws_s3.RoutingRuleCondition(http_error_code_returned_equals="404"),
-                    protocol=aws_s3.RedirectProtocol.HTTPS,
-                    host_name=host_name,
+                    protocol=protocol_mapping[parsed_url.scheme.upper()],  # enum required
+                    host_name=parsed_url.netloc,
                     replace_key=aws_s3.ReplaceKey.prefix_with("prod/resize?key="),
                     http_redirect_code="307"
                 )
@@ -440,7 +447,9 @@ class ImageResize(core.Stack):
             tracing=aws_lambda.Tracing.ACTIVE,
         )
 
-        api_gateway = aws_apigateway.LambdaRestApi(self, "lambda-image-resize-api", handler=image_resize_lambda)
+        api_gateway = aws_apigateway.RestApi(self, "lambda-image-resize-api")
+        lambda_integration = aws_apigateway.LambdaIntegration(image_resize_lambda)
+        api_gateway.root.add_resource("{size}").add_resource("{image}").add_method("GET", lambda_integration)
 
         return image_resize_lambda, code, api_gateway
 
