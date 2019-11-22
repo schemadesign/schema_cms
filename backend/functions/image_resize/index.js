@@ -21,12 +21,11 @@ exports.handler = async (event) => {
         const request = await imageRequest.setup(event);
         const {width, height} = request.edits["resize"];
         const key = `${width}x${height}/${request.key}`;
-        const params = {
-            bucket: request.bucket,
-            key: key,
-            buffer: await imageHandler.process(request)
-        };
-        await imageHandler.save(params);
+        await imageHandler.save(
+            request.bucket,
+            key,
+            await imageHandler.process(request)
+        );
         const response = {
             "statusCode": 301,
             "headers" : {...getResponseHeaders(), "Location": getResponseLocation(key)},
