@@ -96,3 +96,12 @@ class FilterFactory(factory.django.DjangoModelFactory):
 
     datasource = factory.SubFactory(DataSourceFactory, meta_data=None)
     name = factory.Faker("text", max_nb_chars=25)
+
+
+class DirectoryFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.Directory"
+
+    project = factory.SubFactory(ProjectFactory)
+    name = factory.Faker("text", max_nb_chars=25)
+    created_by = factory.SubFactory(UserFactory)

@@ -363,3 +363,29 @@ class FilterSerializer(serializers.ModelSerializer):
         datasource.create_meta_file()
 
         return filter_
+
+
+# Pages
+
+
+class DirectorySerializer(serializers.ModelSerializer):
+    created_by = NestedRelatedModelSerializer(
+        serializer=DataSourceCreatorSerializer(),
+        read_only=True,
+        pk_field=serializers.UUIDField(format="hex_verbose"),
+    )
+
+    class Meta:
+        model = models.Directory
+        fields = ("id", "name", "created_by", "created", "modified", "project")
+
+    def create(self, validated_data):
+        directory = models.Directory(created_by=self.context["request"].user, **validated_data)
+        directory.save()
+
+        return directory
+
+
+class DirectoryDetailSerializer(DirectorySerializer):
+    class Meta(DirectorySerializer.Meta):
+        read_only_fields = ("project",)
