@@ -15,3 +15,4 @@ nav:
     - Scripts: 'api/scripts.md'
     - Jobs: 'api/jobs.md'
     - Filters: 'api/filters.md'
+    - Directories: 'api/directories.md'

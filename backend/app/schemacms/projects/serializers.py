@@ -379,3 +379,8 @@ class DirectorySerializer(serializers.ModelSerializer):
         directory.save()
 
         return directory
+
+
+class DirectoryDetailSerializer(DirectorySerializer):
+    class Meta(DirectorySerializer.Meta):
+        read_only_fields = ("project",)

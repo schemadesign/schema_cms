@@ -330,7 +330,18 @@ class FilterDetailViewSet(
         return models.Filter.objects.all().select_related("datasource")
 
 
-class DirectoryViewSet(mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
+class DirectoryViewSet(
+    utils_serializers.ActionSerializerViewSetMixin,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.CreateModelMixin,
+    viewsets.GenericViewSet,
+):
     queryset = models.Directory.objects.select_related("project", "created_by").all()
     serializer_class = serializers.DirectorySerializer
     permission_classes = (permissions.IsAuthenticated,)
+    serializer_class_mapping = {
+        "partial_update": serializers.DirectoryDetailSerializer,
+        "update": serializers.DirectoryDetailSerializer,
+    }

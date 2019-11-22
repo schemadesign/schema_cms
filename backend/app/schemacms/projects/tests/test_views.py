@@ -1058,3 +1058,41 @@ class TestDirectoryCreateView:
     @staticmethod
     def get_project_url(pk):
         return reverse("projects:project-add-directory", kwargs=dict(pk=pk))
+
+
+class TestDirectoryDetailView:
+    def test_response(self, api_client, admin, directory):
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(directory.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == projects_serializers.DirectorySerializer(directory).data
+
+    def test_edit_name(self, api_client, admin, directory, faker):
+        new_name = faker.word()
+        payload = {"name": new_name}
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(directory.id), data=payload)
+        directory.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert directory.name == new_name
+
+    def test_update_directory(self, api_client, admin, project, project_factory, directory, faker):
+        new_project = project_factory(owner=admin)
+        new_name = faker.word()
+        payload = dict(name=new_name, project=new_project.id)
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(directory.id), data=payload, format="json")
+        directory.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["name"] == new_name
+        assert directory.project_id == project.id
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:directory-detail", kwargs=dict(pk=pk))
