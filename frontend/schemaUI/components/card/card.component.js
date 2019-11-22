@@ -24,7 +24,7 @@ export class CardComponent extends PureComponent {
 
     return (
       <div style={styles} {...restProps}>
-        <div>
+        <div style={{ width: '100%' }}>
           {this.renderHeader(headerComponent, headerStyles)}
           {children}
         </div>

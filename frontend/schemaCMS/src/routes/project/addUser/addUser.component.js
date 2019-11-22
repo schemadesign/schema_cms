@@ -51,9 +51,9 @@ export class AddUser extends PureComponent {
       }
 
       await this.props.fetchProject({ projectId });
-      await this.props.fetchUsers();
+      return await this.props.fetchUsers();
     } catch (e) {
-      this.props.history.push('/');
+      return this.props.history.push('/');
     }
   }
 

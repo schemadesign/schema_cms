@@ -1362,7 +1362,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           }
         }
       >
-        <div>
+        <div
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        >
           <div
             style={
               Object {
@@ -1547,7 +1553,13 @@ exports[`Storyshots DataSourceList With data source 1`] = `
           }
         }
       >
-        <div>
+        <div
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        >
           <div
             style={
               Object {
@@ -2501,7 +2513,13 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
           }
         }
       >
-        <div>
+        <div
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        >
           <div
             style={
               Object {

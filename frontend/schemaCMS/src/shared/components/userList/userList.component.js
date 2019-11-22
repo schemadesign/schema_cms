@@ -4,7 +4,16 @@ import { Button, Icons } from 'schemaUI';
 import { ifElse, is } from 'ramda';
 
 import { renderWhenTrue } from '../../utils/rendering';
-import { Actions, UserDetails, UserFullName, Email, buttonIconStyles, iconStyles, cardStyles } from './userList.styles';
+import {
+  Actions,
+  UserDetails,
+  UserFullName,
+  Email,
+  buttonIconStyles,
+  iconStyles,
+  cardStyles,
+  ListItemContent,
+} from './userList.styles';
 
 import { ListItem, ListContainer } from '../listComponents';
 
@@ -28,13 +37,15 @@ export class UserList extends PureComponent {
 
   renderListItem = ({ user, hasRemoving, isAdmin, index }) => (
     <ListItem key={index} customStyles={cardStyles}>
-      <UserDetails>
-        <UserFullName to={`${this.getUrl(this.props.projectId)}${user.id}`}>
-          {user.firstName} {user.lastName}
-        </UserFullName>
-        <Email>{user.email}</Email>
-      </UserDetails>
-      <Actions>{this.renderRemove(hasRemoving && isAdmin, user)}</Actions>
+      <ListItemContent>
+        <UserDetails>
+          <UserFullName to={`${this.getUrl(this.props.projectId)}${user.id}`}>
+            {user.firstName} {user.lastName}
+          </UserFullName>
+          <Email>{user.email}</Email>
+        </UserDetails>
+        <Actions>{this.renderRemove(hasRemoving && isAdmin, user)}</Actions>
+      </ListItemContent>
     </ListItem>
   );
 

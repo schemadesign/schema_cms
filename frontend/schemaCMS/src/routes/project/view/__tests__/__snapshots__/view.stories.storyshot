@@ -846,7 +846,13 @@ exports[`Storyshots Project/View default 1`] = `
                 }
               }
             >
-              <div>
+              <div
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
                 <div
                   style={
                     Object {
@@ -892,7 +898,13 @@ exports[`Storyshots Project/View default 1`] = `
                 }
               }
             >
-              <div>
+              <div
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
                 <div
                   style={
                     Object {

@@ -650,11 +650,11 @@ exports[`Storyshots Project/UserList list 1`] = `
 `;
 
 exports[`Storyshots Project/UserList list with users 1`] = `
-.c18 {
+.c19 {
   height: 155px;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -673,7 +673,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   width: 100%;
 }
 
-.c19 {
+.c20 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -681,7 +681,7 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c21 {
+.c22 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -787,20 +787,20 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   text-decoration: none;
 }
 
-.c17 {
+.c18 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin: 0 -5px 0 5px;
 }
 
-.c14 {
+.c15 {
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
-.c15 {
+.c16 {
   color: #FFF;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -808,27 +808,40 @@ exports[`Storyshots Project/UserList list with users 1`] = `
   font-weight: 600;
 }
 
-.c16 {
+.c17 {
   display: block;
   padding-top: 10px;
   word-break: break-all;
   font-weight: 200;
 }
 
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+}
+
 @media (min-width:1040px) {
-  .c20 {
+  .c21 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c20 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c21 {
+  .c22 {
     width: 240px;
   }
 }
@@ -1278,66 +1291,76 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         }
       }
     >
-      <div>
+      <div
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
         <div
           className="c14"
         >
-          <a
+          <div
             className="c15"
-            href="/project/1/user/1"
-            onClick={[Function]}
           >
-            Alan
-             
-            Watts
-          </a>
-          <span
-            className="c16"
-          />
-        </div>
-        <div
-          className="c17"
-        >
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": 40,
-                "margin": "0",
-                "marginTop": -5,
-                "minHeight": 40,
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": 40,
-              }
-            }
+            <a
+              className="c16"
+              href="/project/1/user/1"
+              onClick={[Function]}
+            >
+              Alan
+               
+              Watts
+            </a>
+            <span
+              className="c17"
+            />
+          </div>
+          <div
+            className="c18"
           >
-            <svg
+            <button
+              disabled={false}
+              onClick={[Function]}
               style={
                 Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
                   "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": 40,
+                  "margin": "0",
+                  "marginTop": -5,
+                  "minHeight": 40,
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": 40,
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1358,66 +1381,76 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         }
       }
     >
-      <div>
+      <div
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
         <div
           className="c14"
         >
-          <a
+          <div
             className="c15"
-            href="/project/1/user/2"
-            onClick={[Function]}
           >
-            Dale
-             
-            Chihuly
-          </a>
-          <span
-            className="c16"
-          />
-        </div>
-        <div
-          className="c17"
-        >
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": 40,
-                "margin": "0",
-                "marginTop": -5,
-                "minHeight": 40,
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": 40,
-              }
-            }
+            <a
+              className="c16"
+              href="/project/1/user/2"
+              onClick={[Function]}
+            >
+              Dale
+               
+              Chihuly
+            </a>
+            <span
+              className="c17"
+            />
+          </div>
+          <div
+            className="c18"
           >
-            <svg
+            <button
+              disabled={false}
+              onClick={[Function]}
               style={
                 Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
                   "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": 40,
+                  "margin": "0",
+                  "marginTop": -5,
+                  "minHeight": 40,
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": 40,
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1438,81 +1471,91 @@ exports[`Storyshots Project/UserList list with users 1`] = `
         }
       }
     >
-      <div>
+      <div
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
         <div
           className="c14"
         >
-          <a
+          <div
             className="c15"
-            href="/project/1/user/3"
-            onClick={[Function]}
           >
-            Dave
-             
-            Bowie
-          </a>
-          <span
-            className="c16"
-          />
-        </div>
-        <div
-          className="c17"
-        >
-          <button
-            disabled={false}
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#1d1d20",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": 40,
-                "margin": "0",
-                "marginTop": -5,
-                "minHeight": 40,
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": 40,
-              }
-            }
+            <a
+              className="c16"
+              href="/project/1/user/3"
+              onClick={[Function]}
+            >
+              Dave
+               
+              Bowie
+            </a>
+            <span
+              className="c17"
+            />
+          </div>
+          <div
+            className="c18"
           >
-            <svg
+            <button
+              disabled={false}
+              onClick={[Function]}
               style={
                 Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
                   "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": 40,
+                  "margin": "0",
+                  "marginTop": -5,
+                  "minHeight": 40,
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": 40,
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </section>
   <div
-    className="c18"
+    className="c19"
   >
     <div
-      className="c19"
+      className="c20"
     >
       <div
-        className="c20"
+        className="c21"
       >
         <button
-          className="c21"
+          className="c22"
           disabled={false}
           onClick={[Function]}
           style={
