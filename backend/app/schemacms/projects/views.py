@@ -19,7 +19,6 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     serializer_class_mapping = {
         "datasources": serializers.DataSourceSerializer,
         "directories": serializers.DirectorySerializer,
-        "add_directory": serializers.DirectorySerializer,
     }
 
     def get_queryset(self):
@@ -79,27 +78,23 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
                 "Please enter the user 'id' you want to add.", status.HTTP_400_BAD_REQUEST
             )
 
-    @decorators.action(detail=True, url_path="directories", methods=["get"])
+    @decorators.action(detail=True, url_path="directories", methods=["get", "post"])
     def directories(self, request, **kwargs):
         project = self.get_object()
 
-        queryset = project.directories.select_related("created_by").all()
+        if request.method == "GET":
+            queryset = project.directories.select_related("created_by").all()
+            serializer = self.get_serializer(queryset, many=True)
+            return response.Response(serializer.data, status=status.HTTP_200_OK)
 
-        serializer = self.get_serializer(queryset, many=True)
+        else:
+            request.data["project"] = project.id
 
-        return response.Response(serializer.data, status=status.HTTP_200_OK)
+            serializer = self.get_serializer(data=request.data, context=project)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
 
-    @decorators.action(detail=True, url_path="add-directory", methods=["post"])
-    def add_directory(self, request, pk=None, **kwargs):
-        project = self.get_object()
-
-        request.data["project"] = project.id
-
-        serializer = self.get_serializer(data=request.data, context=project)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-
-        return response.Response(serializer.data, status=status.HTTP_201_CREATED)
+            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):

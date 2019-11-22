@@ -235,7 +235,7 @@ Content-Type application/json
 
 **Request**:
 
-`POST` `/api/v1/projects/:id/add-directory`
+`POST` `/api/v1/projects/:id/directories`
 
 Parameters:
 

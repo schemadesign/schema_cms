@@ -1040,7 +1040,7 @@ class TestDirectoryCreateView:
         assert projects_models.Directory.objects.filter(pk=response.data["id"]).exists()
         assert response.data == projects_serializers.DirectorySerializer(directory).data
 
-    def test_add_directory(self, api_client, admin, project, faker):
+    def test_add_directory_to_project(self, api_client, admin, project, faker):
         payload = {"name": "About"}
 
         api_client.force_authenticate(admin)
@@ -1057,7 +1057,7 @@ class TestDirectoryCreateView:
 
     @staticmethod
     def get_project_url(pk):
-        return reverse("projects:project-add-directory", kwargs=dict(pk=pk))
+        return reverse("projects:project-directories", kwargs=dict(pk=pk))
 
 
 class TestDirectoryDetailView:
