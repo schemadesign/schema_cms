@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, cond, isNil, prop, propEq, T } from 'ramda';
+import { always, cond, is, isNil, propEq, T } from 'ramda';
 
 import { ErrorContainer } from '../errorContainer';
 import { ERROR_TYPES } from '../errorContainer/errorContainer.constants';
@@ -13,7 +13,7 @@ export class LoadingWrapper extends PureComponent {
     noData: PropTypes.bool,
     noDataContent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     error: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.func]),
   };
 
   static defaultProps = {
@@ -27,7 +27,7 @@ export class LoadingWrapper extends PureComponent {
     [propEq('loading', true), always(<Loading />)],
     [({ error }) => !isNil(error), ({ error }) => <ErrorContainer type={ERROR_TYPES.PAGE} error={error} />],
     [propEq('noData', true), ({ noDataContent }) => <NoData>{noDataContent}</NoData>],
-    [T, prop('children')],
+    [T, ({ children }) => (is(Function, children) ? children() : children)],
   ]);
 
   render() {

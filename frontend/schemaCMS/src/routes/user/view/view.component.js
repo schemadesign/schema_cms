@@ -69,13 +69,25 @@ export class View extends PureComponent {
 
   handleBack = () => this.props.history.push('/user');
 
-  renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
+  renderUserContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
 
   renderMakeAdmin = renderWhenTrue(() => (
     <Link onClick={() => this.setState({ makeAdminModalOpen: true })}>
       <FormattedMessage {...messages.makeAdmin} />
     </Link>
   ));
+
+  renderContent = (userData, isEditor, isAdmin) => () => (
+    <Fragment>
+      {this.renderUserContent(userData)}
+      <LinkContainer>
+        <Link onClick={() => this.setState({ userRemoveModalOpen: true })}>
+          <FormattedMessage {...messages.removeUser} />
+        </Link>
+        {this.renderMakeAdmin(isEditor && isAdmin)}
+      </LinkContainer>
+    </Fragment>
+  );
 
   render() {
     const { loading, error } = this.state;
@@ -89,15 +101,7 @@ export class View extends PureComponent {
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <LoadingWrapper loading={loading} error={error}>
-          <Fragment>
-            {this.renderContent(userData)}
-            <LinkContainer>
-              <Link onClick={() => this.setState({ userRemoveModalOpen: true })}>
-                <FormattedMessage {...messages.removeUser} />
-              </Link>
-              {this.renderMakeAdmin(isEditor && isAdmin)}
-            </LinkContainer>
-          </Fragment>
+          {this.renderContent(userData, isEditor, isAdmin)}
         </LoadingWrapper>
         <NavigationContainer>
           <BackButton type="button" onClick={this.handleBack} />

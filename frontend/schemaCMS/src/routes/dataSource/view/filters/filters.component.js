@@ -8,7 +8,6 @@ import { always, append, equals, ifElse, path, reject } from 'ramda';
 import { ButtonContainer, FilterCounter, Header, Link, PlusButton } from './filters.styles';
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
 import messages from './filters.messages';
-import { renderWhenTrue } from '../../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
 import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
 
@@ -72,51 +71,50 @@ export class Filters extends PureComponent {
     </Checkbox>
   );
 
-  renderContent = loading =>
-    renderWhenTrue(() => {
-      const { filters = [] } = this.props;
-      const initialValues = filters.filter(({ isActive }) => isActive).map(({ id }) => id.toString());
+  renderContent = () => {
+    const { filters = [] } = this.props;
+    const initialValues = filters.filter(({ isActive }) => isActive).map(({ id }) => id.toString());
 
-      return (
-        <Fragment>
-          <Header>
-            <ButtonContainer>
-              <PlusButton onClick={this.handleCreateFilter}>
-                <PlusIcon />
-              </PlusButton>
-            </ButtonContainer>
-            <FilterCounter>
-              <FormattedMessage values={{ length: filters.length }} {...messages.filters} />
-            </FilterCounter>
-          </Header>
-          <Formik initialValues={initialValues} onSubmit={this.handleSubmit}>
-            {({ values, setValues, submitForm, dirty }) => {
-              if (!dirty) {
-                submitForm = null;
-              }
+    return (
+      <Fragment>
+        <Header>
+          <ButtonContainer>
+            <PlusButton onClick={this.handleCreateFilter}>
+              <PlusIcon />
+            </PlusButton>
+          </ButtonContainer>
+          <FilterCounter>
+            <FormattedMessage values={{ length: filters.length }} {...messages.filters} />
+          </FilterCounter>
+        </Header>
+        <Formik initialValues={initialValues} onSubmit={this.handleSubmit}>
+          {({ values, setValues, submitForm, dirty }) => {
+            if (!dirty) {
+              submitForm = null;
+            }
 
-              return (
-                <Fragment>
-                  <CheckboxGroup
-                    onChange={e => this.handleChange({ e, setValues, values })}
-                    value={values}
-                    name="steps"
-                    id="fieldStepsCheckboxGroup"
-                  >
-                    {filters.map(this.renderCheckboxes)}
-                  </CheckboxGroup>
-                  <StepNavigation submitForm={submitForm} {...this.props} />
-                </Fragment>
-              );
-            }}
-          </Formik>
-        </Fragment>
-      );
-    })(!loading);
+            return (
+              <Fragment>
+                <CheckboxGroup
+                  onChange={e => this.handleChange({ e, setValues, values })}
+                  value={values}
+                  name="steps"
+                  id="fieldStepsCheckboxGroup"
+                >
+                  {filters.map(this.renderCheckboxes)}
+                </CheckboxGroup>
+                <StepNavigation submitForm={submitForm} {...this.props} />
+              </Fragment>
+            );
+          }}
+        </Formik>
+      </Fragment>
+    );
+  };
 
   render() {
     const { loading } = this.state;
 
-    return <LoadingWrapper loading={loading}>{this.renderContent(loading)}</LoadingWrapper>;
+    return <LoadingWrapper loading={loading}>{this.renderContent}</LoadingWrapper>;
   }
 }

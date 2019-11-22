@@ -48,20 +48,22 @@ export class CreateFilter extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
+  renderContent = () => (
+    <FilterForm
+      fieldsInfo={this.props.fieldsInfo}
+      createFilter={this.props.createFilter}
+      history={this.props.history}
+      dataSourceId={this.getDataSourceId(this.props)}
+    />
+  );
+
   render() {
     const topHeaderConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
-        <LoadingWrapper loading={this.state.loading}>
-          <FilterForm
-            fieldsInfo={this.props.fieldsInfo}
-            createFilter={this.props.createFilter}
-            history={this.props.history}
-            dataSourceId={this.getDataSourceId(this.props)}
-          />
-        </LoadingWrapper>
+        <LoadingWrapper loading={this.state.loading}>{this.renderContent}</LoadingWrapper>
       </Container>
     );
   }

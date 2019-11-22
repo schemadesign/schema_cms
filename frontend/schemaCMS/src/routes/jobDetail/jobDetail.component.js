@@ -71,47 +71,46 @@ export class JobDetail extends PureComponent {
       )
     )(isSuccess);
 
-  renderForm = (job, loading) =>
-    renderWhenTrue(() => (
-      <Fragment>
+  renderForm = job => () => (
+    <Fragment>
+      <TextInput
+        label={<FormattedMessage {...messages[JOB_ID]} />}
+        value={job.id.toString()}
+        name={JOB_ID}
+        fullWidth
+        disabled
+      />
+      <TextInput
+        label={<FormattedMessage {...messages[JOB_STATE]} />}
+        value={messages[job.jobState] ? this.props.intl.formatMessage(messages[job.jobState]) : ''}
+        name={JOB_STATE}
+        fullWidth
+        disabled
+      />
+      <Form onSubmit={this.props.handleSubmit}>
         <TextInput
-          label={<FormattedMessage {...messages[JOB_ID]} />}
-          value={job.id.toString()}
-          name={JOB_ID}
+          label={<FormattedMessage {...messages.descriptionLabel} />}
+          value={this.props.values[DESCRIPTION]}
+          onChange={this.props.handleChange}
+          name={DESCRIPTION}
           fullWidth
-          disabled
+          isEdit
+          {...this.props}
+          multiline
         />
-        <TextInput
-          label={<FormattedMessage {...messages[JOB_STATE]} />}
-          value={messages[job.jobState] ? this.props.intl.formatMessage(messages[job.jobState]) : ''}
-          name={JOB_STATE}
-          fullWidth
-          disabled
-        />
-        <Form onSubmit={this.props.handleSubmit}>
-          <TextInput
-            label={<FormattedMessage {...messages.descriptionLabel} />}
-            value={this.props.values[DESCRIPTION]}
-            onChange={this.props.handleChange}
-            name={DESCRIPTION}
-            fullWidth
-            isEdit
-            {...this.props}
-            multiline
-          />
-        </Form>
-        <StepsTitle>
-          <FormattedMessage {...messages.stepsTitle} />
-        </StepsTitle>
-        <StepsWrapper>{this.renderSteps(this.props.job.steps)}</StepsWrapper>
-        <LinkWrapper>
-          {this.renderSuccessLinks(job.jobState === JOB_STATE_SUCCESS)}
-          <Download href={job.sourceFileUrl} download>
-            <FormattedMessage {...messages.originalFile} />
-          </Download>
-        </LinkWrapper>
-      </Fragment>
-    ))(!loading);
+      </Form>
+      <StepsTitle>
+        <FormattedMessage {...messages.stepsTitle} />
+      </StepsTitle>
+      <StepsWrapper>{this.renderSteps(this.props.job.steps)}</StepsWrapper>
+      <LinkWrapper>
+        {this.renderSuccessLinks(job.jobState === JOB_STATE_SUCCESS)}
+        <Download href={job.sourceFileUrl} download>
+          <FormattedMessage {...messages.originalFile} />
+        </Download>
+      </LinkWrapper>
+    </Fragment>
+  );
 
   renderSaveButton = renderWhenTrue(() => (
     <NextButton onClick={this.props.handleSubmit} disabled={!this.props.dirty || !this.props.isValid}>
@@ -127,7 +126,7 @@ export class JobDetail extends PureComponent {
     return (
       <Fragment>
         <TopHeader {...topHeaderConfig} />
-        <LoadingWrapper loading={loading}>{this.renderForm(job, loading)}</LoadingWrapper>
+        <LoadingWrapper loading={loading}>{this.renderForm(job)}</LoadingWrapper>
         <NavigationContainer>
           <BackButton onClick={this.handleGoBack}>
             <FormattedMessage {...messages.back} />

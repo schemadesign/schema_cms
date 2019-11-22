@@ -108,6 +108,27 @@ export class JobList extends PureComponent {
     );
   };
 
+  renderContent = (jobList, canRevert) => () => (
+    <Fragment>
+      <RadioGroup
+        name={JOB_OPTION}
+        onChange={this.handleChange}
+        customStyles={customRadioGroupStyles}
+        value={this.getSelectedJob()}
+      >
+        <ListWrapper>{jobList.map(this.renderList)}</ListWrapper>
+      </RadioGroup>
+      <NavigationContainer>
+        <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
+          <FormattedMessage {...messages.cancel} />
+        </BackButton>
+        <NextButton id="revertBtn" onClick={this.handleRevertClick} disabled={!canRevert}>
+          <FormattedMessage {...messages.revert} />
+        </NextButton>
+      </NavigationContainer>
+    </Fragment>
+  );
+
   render() {
     const { loading, canRevert } = this.state;
     const { dataSource, jobList } = this.props;
@@ -121,24 +142,7 @@ export class JobList extends PureComponent {
       <Container>
         <TopHeader {...topHeaderConfig} />
         <LoadingWrapper loading={isLoading} noData={isEmpty(jobList)}>
-          <Fragment>
-            <RadioGroup
-              name={JOB_OPTION}
-              onChange={this.handleChange}
-              customStyles={customRadioGroupStyles}
-              value={this.getSelectedJob()}
-            >
-              <ListWrapper>{jobList.map(this.renderList)}</ListWrapper>
-            </RadioGroup>
-            <NavigationContainer>
-              <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
-                <FormattedMessage {...messages.cancel} />
-              </BackButton>
-              <NextButton id="revertBtn" onClick={this.handleRevertClick} disabled={!canRevert}>
-                <FormattedMessage {...messages.revert} />
-              </NextButton>
-            </NavigationContainer>
-          </Fragment>
+          {this.renderContent(jobList, canRevert)}
         </LoadingWrapper>
       </Container>
     );
