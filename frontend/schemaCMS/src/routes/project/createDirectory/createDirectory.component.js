@@ -21,23 +21,19 @@ export class CreateDirectory extends PureComponent {
     handleBlur: PropTypes.func.isRequired,
   };
 
-  getHeaderAndMenuConfig = () => ({
-    headerTitle: <FormattedMessage {...messages.title} />,
-    headerSubtitle: <FormattedMessage {...messages.subTitle} />,
-  });
-
   getProjectId = () => path(['match', 'params', 'projectId'], this.props);
 
   handleBackClick = () => this.props.history.push(`/project/${this.getProjectId()}/directory`);
 
   render() {
     const { intl, values, handleSubmit, handleChange, ...restProps } = this.props;
-    const topHeaderConfig = this.getHeaderAndMenuConfig();
+    const headerTitle = <FormattedMessage {...messages.title} />;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
-        <TopHeader headerTitle={topHeaderConfig.headerTitle} headerSubtitle={topHeaderConfig.headerSubtitle} />
-        <ContextHeader title={topHeaderConfig.headerTitle} subtitle={topHeaderConfig.headerSubtitle} />
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <TextInput
             value={values[DIRECTORY_NAME]}

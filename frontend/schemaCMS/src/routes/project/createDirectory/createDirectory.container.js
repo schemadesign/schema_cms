@@ -39,7 +39,6 @@ export default compose(
   injectIntl,
   withFormik({
     displayName: DIRECTORY_FORM,
-    isInitialValid: true,
     enableReinitialize: true,
     mapPropsToValues: ({ directoryName }) => ({
       ...INITIAL_VALUES,
