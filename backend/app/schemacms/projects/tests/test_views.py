@@ -1096,3 +1096,63 @@ class TestDirectoryDetailView:
     @staticmethod
     def get_url(pk):
         return reverse("projects:directory-detail", kwargs=dict(pk=pk))
+
+
+class TestPageListCreateView:
+    def test_response(self, api_client, admin, directory, page_factory):
+        pages = page_factory.create_batch(2, directory=directory, created_by=admin)
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(directory.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert (
+            response.data
+            == projects_serializers.PageSerializer(instance=self.sort_directories(pages), many=True).data
+        )
+
+    def test_create(self, api_client, admin, directory, faker):
+        payload = dict(title=faker.word())
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(directory.id), data=payload, format="json")
+        directory_pages = directory.pages.all()
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert directory_pages.count() == 1
+        assert response.data == projects_serializers.PageSerializer(directory_pages[0]).data
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:directory-pages", kwargs=dict(pk=pk))
+
+    @staticmethod
+    def sort_directories(iterable):
+        return sorted(iterable, key=operator.attrgetter("created"))
+
+
+class TestPageDetailView:
+    def test_response(self, api_client, admin, page):
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(page.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == projects_serializers.PageDetailSerializer(page).data
+
+    def test_update_page(self, api_client, admin, directory, directory_factory, page, faker):
+        new_directory = directory_factory()
+        new_title = faker.word()
+        payload = dict(title=new_title, directory=new_directory.id)
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(page.id), data=payload, format="json")
+        page.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["title"] == new_title
+        assert page.directory_id == directory.id
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:page-detail", kwargs=dict(pk=pk))

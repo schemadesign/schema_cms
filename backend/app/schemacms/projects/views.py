@@ -348,4 +348,39 @@ class DirectoryViewSet(
     serializer_class_mapping = {
         "partial_update": serializers.DirectoryDetailSerializer,
         "update": serializers.DirectoryDetailSerializer,
+        "pages": serializers.PageSerializer,
+    }
+
+    @decorators.action(detail=True, url_path='pages', methods=["GET", "POST"])
+    def pages(self, request, pk=None, **kwargs):
+        directory = self.get_object()
+
+        if request.method == "GET":
+            queryset = directory.pages.select_related("created_by").all()
+            serializer = self.get_serializer(instance=queryset, many=True)
+            return response.Response(serializer.data, status=status.HTTP_200_OK)
+
+        else:
+            request.data["directory"] = directory.id
+
+            serializer = self.get_serializer(data=request.data, context=directory)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class PageViewSet(
+    utils_serializers.ActionSerializerViewSetMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    viewsets.GenericViewSet,
+):
+    queryset = models.Page.objects.select_related("directory", "created_by").all()
+    serializer_class = serializers.PageSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+    serializer_class_mapping = {
+        "retrieve": serializers.PageDetailSerializer,
+        "update": serializers.PageDetailSerializer,
+        "partial_update": serializers.PageDetailSerializer,
     }

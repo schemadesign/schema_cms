@@ -294,3 +294,4 @@ class Common(Configuration):
 
     # Allow lambda function to call API endpoint
     LAMBDA_AUTH_TOKEN = os.getenv('LAMBDA_AUTH_TOKEN')
+    PUBLIC_API_LAMBDA_URL = os.getenv("PUBLIC_API_LAMBDA_URL")

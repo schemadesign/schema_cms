@@ -16,3 +16,4 @@ nav:
     - Jobs: 'api/jobs.md'
     - Filters: 'api/filters.md'
     - Directories: 'api/directories.md'
+    - Pages: 'api/pages.md'

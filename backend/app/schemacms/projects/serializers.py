@@ -389,3 +389,45 @@ class DirectorySerializer(serializers.ModelSerializer):
 class DirectoryDetailSerializer(DirectorySerializer):
     class Meta(DirectorySerializer.Meta):
         read_only_fields = ("project",)
+
+
+class PageSerializer(serializers.ModelSerializer):
+    created_by = NestedRelatedModelSerializer(
+        serializer=DataSourceCreatorSerializer(),
+        read_only=True,
+        pk_field=serializers.UUIDField(format="hex_verbose"),
+    )
+    page_url = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = models.Page
+        fields = (
+            "id",
+            "directory",
+            "title",
+            "description",
+            "keywords",
+            "page_url",
+            "created_by",
+            "created",
+            "modified",
+        )
+
+    def create(self, validated_data):
+        page = models.Page(created_by=self.context["request"].user, **validated_data)
+        page.save()
+
+        return page
+
+    def get_page_url(self, page):
+        return page.page_url
+
+
+class PageDirectorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Directory
+        fields = ("id", "name", "project")
+
+
+class PageDetailSerializer(PageSerializer):
+    directory = NestedRelatedModelSerializer(serializer=PageDirectorySerializer(), read_only=True,)
