@@ -54,7 +54,7 @@ async def fetch(session, url):
 
 async def upload(s3_client, path, http_response):
     return await s3_client.put_object(
-        Bucket=settings.AWS_STORAGE_BUCKET_NAME,
+        Bucket=settings.AWS_IMAGE_STORAGE_BUCKET_NAME,
         Key=path,
         Body=await http_response.read(),
         ACL='public-read',
