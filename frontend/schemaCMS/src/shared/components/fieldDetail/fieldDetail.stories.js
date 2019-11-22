@@ -21,7 +21,7 @@ export const defaultProps = {
     mean: 4,
     min: 1,
     std: 23.033282731964,
-    sample: 'Sample',
+    sample: long,
     unique: 99,
     percentile10: long,
     percentile25: 100283.30095,

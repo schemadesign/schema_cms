@@ -19,20 +19,6 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
   justify-content: space-between;
 }
 
-.c1 {
-  border-bottom: 2px solid #2F2F36;
-  padding: 12px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-
-.c1:first-of-type {
-  border-top: 2px solid #2F2F36;
-}
-
 .c2 {
   color: #71737e;
   display: inline-block;
@@ -47,6 +33,27 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+}
+
+.c1 {
+  border-bottom: 2px solid #2F2F36;
+  padding: 12px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c1:first-of-type {
+  border-top: 2px solid #2F2F36;
+}
+
+.c1 .c3 {
+  overflow: hidden;
+  min-width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c5 {
@@ -113,9 +120,17 @@ exports[`Storyshots Shared Components|FieldDetail Default 1`] = `
         </span>
         <span
           className="c3 c4"
-          title="Sample"
+          title="
+  Donec at erat dictum, congue lorem at, gravida magna.
+  Phasellus nulla turpis, hendrerit vulputate velit ut,
+  semper condimentum libero. Maecenas sodales at nisl non pellentesque.
+"
         >
-          Sample
+          
+  Donec at erat dictum, congue lorem at, gravida magna.
+  Phasellus nulla turpis, hendrerit vulputate velit ut,
+  semper condimentum libero. Maecenas sodales at nisl non pellentesque.
+
         </span>
       </li>
       <li

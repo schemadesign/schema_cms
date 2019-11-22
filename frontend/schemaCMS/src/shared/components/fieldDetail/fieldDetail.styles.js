@@ -13,17 +13,6 @@ export const List = styled.ul`
   justify-content: space-between;
 `;
 
-export const FieldInformation = styled.li`
-  border-bottom: 2px solid ${({ theme }) => theme.label.border};
-  padding: 12px 0;
-  display: flex;
-  width: 100%;
-
-  &:first-of-type {
-    border-top: 2px solid ${({ theme }) => theme.label.border};
-  }
-`;
-
 export const Label = styled.span`
   color: ${({ theme }) => theme.secondaryText};
   display: inline-block;
@@ -36,9 +25,15 @@ export const Value = styled.span`
   flex: 1 1 auto;
 `;
 
-export const FieldSummary = styled(FieldInformation)`
+export const FieldInformation = styled.li`
+  border-bottom: 2px solid ${({ theme }) => theme.label.border};
+  padding: 12px 0;
   display: flex;
-  width: calc(50% - 10px);
+  width: 100%;
+
+  &:first-of-type {
+    border-top: 2px solid ${({ theme }) => theme.label.border};
+  }
 
   ${Value} {
     overflow: hidden;
@@ -46,6 +41,11 @@ export const FieldSummary = styled(FieldInformation)`
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+`;
+
+export const FieldSummary = styled(FieldInformation)`
+  display: flex;
+  width: calc(50% - 10px);
 `;
 
 export const EditIcon = styled(Icons.EditIcon)`
