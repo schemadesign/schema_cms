@@ -10,6 +10,7 @@ router.register(r"projects", views.ProjectViewSet)
 router.register(r"datasources", views.DataSourceViewSet)
 router.register(r"jobs", views.DataSourceJobDetailViewSet)
 router.register(r"filters", views.FilterDetailViewSet)
+router.register(r"directories", views.DirectoryViewSet)
 
 urlpatterns = router.urls + [
     path("script/<int:pk>", views.DataSourceScriptDetailView.as_view(), name="script_detail")
