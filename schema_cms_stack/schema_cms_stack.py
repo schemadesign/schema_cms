@@ -447,9 +447,7 @@ class ImageResize(core.Stack):
             tracing=aws_lambda.Tracing.ACTIVE,
         )
 
-        api_gateway = aws_apigateway.RestApi(self, "lambda-image-resize-api")
-        lambda_integration = aws_apigateway.LambdaIntegration(image_resize_lambda)
-        api_gateway.root.add_resource("{size}").add_resource("{image}").add_method("GET", lambda_integration)
+        api_gateway = aws_apigateway.LambdaRestApi(self, "lambda-image-resize-api", handler=image_resize_lambda)
 
         return image_resize_lambda, code, api_gateway
 
