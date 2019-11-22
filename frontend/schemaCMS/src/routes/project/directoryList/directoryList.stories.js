@@ -16,7 +16,7 @@ export const defaultProps = {
       },
     },
   ],
-  fetchList: Function.prototype,
+  fetchDirectories: Function.prototype,
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
   history: { push: Function.prototype },
   match: {

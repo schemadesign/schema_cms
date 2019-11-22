@@ -90,6 +90,16 @@ exports[`Storyshots DataSourceList Empty 1`] = `
   color: #FFF;
 }
 
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c5 {
   display: none;
 }
@@ -136,16 +146,6 @@ exports[`Storyshots DataSourceList Empty 1`] = `
   text-decoration: none;
 }
 
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 @media (min-width:1040px) {
   .c16 {
     display: none;
@@ -183,17 +183,6 @@ exports[`Storyshots DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c5 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 29px 0 20px 0;
-    font-size: 15px;
-  }
-}
-
-@media (min-width:1040px) {
   .c13 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
@@ -205,6 +194,17 @@ exports[`Storyshots DataSourceList Empty 1`] = `
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
   }
 }
 
@@ -762,6 +762,41 @@ exports[`Storyshots DataSourceList With data source 1`] = `
   color: #FFF;
 }
 
+.c16 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c17 {
+  display: inline-block;
+  line-height: 1.25;
+  margin-right: 1.5em;
+  color: #71737e;
+}
+
+.c17::before {
+  content: '•';
+  margin-left: -1.5em;
+  display: inline-block;
+  padding: 0 7px;
+}
+
+.c14 {
+  margin-bottom: 20px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c5 {
   display: none;
 }
@@ -867,41 +902,6 @@ exports[`Storyshots DataSourceList With data source 1`] = `
   margin-top: -8px;
 }
 
-.c16 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.c17 {
-  display: inline-block;
-  line-height: 1.25;
-  margin-right: 1.5em;
-  color: #71737e;
-}
-
-.c17::before {
-  content: '•';
-  margin-left: -1.5em;
-  display: inline-block;
-  padding: 0 7px;
-}
-
-.c14 {
-  margin-bottom: 20px;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 @media (min-width:1040px) {
   .c26 {
     display: none;
@@ -939,17 +939,6 @@ exports[`Storyshots DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c5 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 29px 0 20px 0;
-    font-size: 15px;
-  }
-}
-
-@media (min-width:1040px) {
   .c14 {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
@@ -973,6 +962,17 @@ exports[`Storyshots DataSourceList With data source 1`] = `
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
   }
 }
 
@@ -1355,174 +1355,178 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             "display": "flex",
             "flexDirection": "column",
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
             "padding": "12px 14px 14px",
+            "position": "relative",
           }
         }
       >
-        <div
-          style={
-            Object {
-              "color": undefined,
-              "fontSize": "12px",
-              "marginBottom": "14px",
-            }
-          }
-        >
+        <div>
           <div
-            className="c15"
+            style={
+              Object {
+                "color": undefined,
+                "marginBottom": 14,
+              }
+            }
           >
-            <ul
-              className="c16"
-            >
-              <li
-                className="c17"
-                id="headerItem-0"
-              >
-                3 months ago
-              </li>
-              <li
-                className="c17"
-                id="headerItem-1"
-              >
-                firstName lastName
-              </li>
-            </ul>
             <div
-              className="c18"
+              className="c15"
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
+              <ul
+                className="c16"
               >
-                <path
-                  d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-                <path
-                  d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-              </svg>
+                <li
+                  className="c17"
+                  id="headerItem-0"
+                >
+                  3 months ago
+                </li>
+                <li
+                  className="c17"
+                  id="headerItem-1"
+                >
+                  firstName lastName
+                </li>
+              </ul>
+              <div
+                className="c18"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                  <path
+                    d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <h1
-          className="c19"
-          id="dataSourceTitle"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
+          <h1
+            className="c19"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
             }
-          }
-        >
-          name
-        </h1>
-        <div
-          className="c20"
-        >
-          <div
-            className="c21"
           >
-            <span
-              className="c22"
-              id="metaItem-0"
+            name
+          </h1>
+          <div
+            className="c20"
+          >
+            <div
+              className="c21"
             >
-              Source
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-0"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
+              <span
+                className="c22"
+                id="metaItem-0"
               >
-                <path
-                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-1"
+                Source
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              Items
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-1"
+              <span
+                className="c22"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              —
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-2"
+              <span
+                className="c22"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              Fields
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-2"
+              <span
+                className="c22"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              —
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-3"
-            >
-              Filters
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-3"
-            >
-              —
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-4"
-            >
-              Views
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-4"
-            >
-              —
-            </span>
+              <span
+                className="c22"
+                id="metaItem-4"
+              >
+                Views
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -1536,174 +1540,178 @@ exports[`Storyshots DataSourceList With data source 1`] = `
             "display": "flex",
             "flexDirection": "column",
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
             "padding": "12px 14px 14px",
+            "position": "relative",
           }
         }
       >
-        <div
-          style={
-            Object {
-              "color": undefined,
-              "fontSize": "12px",
-              "marginBottom": "14px",
-            }
-          }
-        >
+        <div>
           <div
-            className="c15"
+            style={
+              Object {
+                "color": undefined,
+                "marginBottom": 14,
+              }
+            }
           >
-            <ul
-              className="c16"
-            >
-              <li
-                className="c17"
-                id="headerItem-0"
-              >
-                3 months ago
-              </li>
-              <li
-                className="c17"
-                id="headerItem-1"
-              >
-                firstName lastName
-              </li>
-            </ul>
             <div
-              className="c18"
+              className="c15"
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
+              <ul
+                className="c16"
               >
-                <path
-                  d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-                <path
-                  d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-              </svg>
+                <li
+                  className="c17"
+                  id="headerItem-0"
+                >
+                  3 months ago
+                </li>
+                <li
+                  className="c17"
+                  id="headerItem-1"
+                >
+                  firstName lastName
+                </li>
+              </ul>
+              <div
+                className="c18"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                  <path
+                    d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <h1
-          className="c19"
-          id="dataSourceTitle"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
+          <h1
+            className="c19"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
             }
-          }
-        >
-          name
-        </h1>
-        <div
-          className="c20"
-        >
-          <div
-            className="c21"
           >
-            <span
-              className="c22"
-              id="metaItem-0"
+            name
+          </h1>
+          <div
+            className="c20"
+          >
+            <div
+              className="c21"
             >
-              Source
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-0"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
+              <span
+                className="c22"
+                id="metaItem-0"
               >
-                <path
-                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-1"
+                Source
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              Items
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-1"
+              <span
+                className="c22"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-1"
+              >
+                246
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              246
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-2"
+              <span
+                className="c22"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-2"
+              >
+                11
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              Fields
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-2"
+              <span
+                className="c22"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              11
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-3"
-            >
-              Filters
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-3"
-            >
-              —
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-4"
-            >
-              Views
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-4"
-            >
-              —
-            </span>
+              <span
+                className="c22"
+                id="metaItem-4"
+              >
+                Views
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -1893,6 +1901,41 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
   color: #FFF;
 }
 
+.c16 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c17 {
+  display: inline-block;
+  line-height: 1.25;
+  margin-right: 1.5em;
+  color: #71737e;
+}
+
+.c17::before {
+  content: '•';
+  margin-left: -1.5em;
+  display: inline-block;
+  padding: 0 7px;
+}
+
+.c14 {
+  margin-bottom: 20px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c5 {
   display: none;
 }
@@ -1998,41 +2041,6 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
   margin-top: -8px;
 }
 
-.c16 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.c17 {
-  display: inline-block;
-  line-height: 1.25;
-  margin-right: 1.5em;
-  color: #71737e;
-}
-
-.c17::before {
-  content: '•';
-  margin-left: -1.5em;
-  display: inline-block;
-  padding: 0 7px;
-}
-
-.c14 {
-  margin-bottom: 20px;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 @media (min-width:1040px) {
   .c26 {
     display: none;
@@ -2070,17 +2078,6 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c5 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 29px 0 20px 0;
-    font-size: 15px;
-  }
-}
-
-@media (min-width:1040px) {
   .c14 {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
@@ -2104,6 +2101,17 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 29px 0 20px 0;
+    font-size: 15px;
   }
 }
 
@@ -2486,174 +2494,178 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
             "display": "flex",
             "flexDirection": "column",
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "justifyContent": "space-between",
             "padding": "12px 14px 14px",
+            "position": "relative",
           }
         }
       >
-        <div
-          style={
-            Object {
-              "color": undefined,
-              "fontSize": "12px",
-              "marginBottom": "14px",
-            }
-          }
-        >
+        <div>
           <div
-            className="c15"
+            style={
+              Object {
+                "color": undefined,
+                "marginBottom": 14,
+              }
+            }
           >
-            <ul
-              className="c16"
-            >
-              <li
-                className="c17"
-                id="headerItem-0"
-              >
-                3 months ago
-              </li>
-              <li
-                className="c17"
-                id="headerItem-1"
-              >
-                firstName lastName
-              </li>
-            </ul>
             <div
-              className="c18"
+              className="c15"
             >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
+              <ul
+                className="c16"
               >
-                <path
-                  d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-                <path
-                  d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                />
-              </svg>
+                <li
+                  className="c17"
+                  id="headerItem-0"
+                >
+                  3 months ago
+                </li>
+                <li
+                  className="c17"
+                  id="headerItem-1"
+                >
+                  firstName lastName
+                </li>
+              </ul>
+              <div
+                className="c18"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "30px",
+                      "width": "30px",
+                    }
+                  }
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                  <path
+                    d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <h1
-          className="c19"
-          id="dataSourceTitle"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-              "fontSize": "24px",
-              "fontWeight": 600,
-              "letterSpacing": "-0.12px",
-              "lineHight": 1.25,
-              "margin": 0,
+          <h1
+            className="c19"
+            id="dataSourceTitle"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
             }
-          }
-        >
-          name
-        </h1>
-        <div
-          className="c20"
-        >
-          <div
-            className="c21"
           >
-            <span
-              className="c22"
-              id="metaItem-0"
+            name
+          </h1>
+          <div
+            className="c20"
+          >
+            <div
+              className="c21"
             >
-              Source
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-0"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-                viewBox="0 0 60 60"
+              <span
+                className="c22"
+                id="metaItem-0"
               >
-                <path
-                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-1"
+                Source
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-0"
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              Items
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-1"
+              <span
+                className="c22"
+                id="metaItem-1"
+              >
+                Items
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-1"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              —
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-2"
+              <span
+                className="c22"
+                id="metaItem-2"
+              >
+                Fields
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-2"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              Fields
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-2"
+              <span
+                className="c22"
+                id="metaItem-3"
+              >
+                Filters
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-3"
+              >
+                —
+              </span>
+            </div>
+            <div
+              className="c21"
             >
-              —
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-3"
-            >
-              Filters
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-3"
-            >
-              —
-            </span>
-          </div>
-          <div
-            className="c21"
-          >
-            <span
-              className="c22"
-              id="metaItem-4"
-            >
-              Views
-            </span>
-            <span
-              className="c23"
-              id="metaItemValue-4"
-            >
-              —
-            </span>
+              <span
+                className="c22"
+                id="metaItem-4"
+              >
+                Views
+              </span>
+              <span
+                className="c23"
+                id="metaItemValue-4"
+              >
+                —
+              </span>
+            </div>
           </div>
         </div>
       </div>

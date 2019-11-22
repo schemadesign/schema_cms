@@ -12,17 +12,22 @@ exports[`Card: Component should render children when passed in 1`] = `
           "display": "flex",
           "flexDirection": "column",
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
           "padding": "12px 14px 14px",
+          "position": "relative",
         }
       }
     >
       <div>
-        <h1>
-          Test
-        </h1>
-        <p>
-          Content
-        </p>
+        <div>
+          <h1>
+            Test
+          </h1>
+          <p>
+            Content
+          </p>
+        </div>
       </div>
     </div>
   </CardComponent>
@@ -75,33 +80,37 @@ exports[`Card: Component should render component  with custom style and with hea
           "display": "flex",
           "flexDirection": "column",
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
           "padding": "12px 14px 14px",
+          "position": "relative",
         }
       }
     >
-      <div
-        style={
-          Object {
-            "color": undefined,
-            "fontSize": "12px",
-            "marginBottom": "14px",
-          }
-        }
-      >
-        <h1
+      <div>
+        <div
           style={
             Object {
-              "color": "red",
+              "color": undefined,
+              "marginBottom": 14,
             }
           }
         >
-          header
-        </h1>
-      </div>
-      <div>
-        <p>
-          Content
-        </p>
+          <h1
+            style={
+              Object {
+                "color": "red",
+              }
+            }
+          >
+            header
+          </h1>
+        </div>
+        <div>
+          <p>
+            Content
+          </p>
+        </div>
       </div>
     </div>
   </CardComponent>
@@ -120,10 +129,15 @@ exports[`Card: Component should render correctly 1`] = `
           "display": "flex",
           "flexDirection": "column",
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
           "padding": "12px 14px 14px",
+          "position": "relative",
         }
       }
-    />
+    >
+      <div />
+    </div>
   </CardComponent>
 </Component>
 `;
@@ -157,12 +171,17 @@ exports[`Card: Component should render with attributes 1`] = `
           "display": "flex",
           "flexDirection": "column",
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "justifyContent": "space-between",
           "padding": "12px 14px 14px",
+          "position": "relative",
         }
       }
       title="test title"
     >
-      Card with attributes
+      <div>
+        Card with attributes
+      </div>
     </div>
   </CardComponent>
 </Component>
