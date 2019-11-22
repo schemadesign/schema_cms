@@ -1,15 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
-import { expect } from 'chai';
 
 import { ResetPassword } from '../resetPassword.component';
+import { defaultProps } from '../resetPassword.stories';
+import { AUTH_METHODS } from '../../../modules/userProfile/userProfile.constants';
 
 describe('ResetPassword: Component', () => {
-  const defaultProps = {
-    resetPassword: Function.prototype,
-  };
-
   const component = props => <ResetPassword {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
@@ -20,9 +16,17 @@ describe('ResetPassword: Component', () => {
   });
 
   it('should call resetPassword function on componentDidMount', () => {
-    const resetPassword = spy();
-    render({ resetPassword });
+    jest.spyOn(defaultProps, 'resetPassword');
+    render();
 
-    expect(resetPassword).to.have.been.calledOnce;
+    expect(defaultProps.resetPassword).toHaveBeenCalled();
+  });
+
+  it('should go to settings', () => {
+    defaultProps.userData.authMethod = AUTH_METHODS.GMAIL;
+    jest.spyOn(defaultProps.history, 'push');
+    render(defaultProps);
+
+    expect(defaultProps.history.push).toHaveBeenCalled();
   });
 });

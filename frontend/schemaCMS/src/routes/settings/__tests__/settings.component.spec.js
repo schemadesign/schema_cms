@@ -6,6 +6,7 @@ import { Settings } from '../settings.component';
 import { defaultProps } from '../settings.stories';
 import { Link } from '../../../theme/typography';
 import { BackButton } from '../../../shared/components/navigation';
+import { AUTH_METHODS } from '../../../modules/userProfile/userProfile.constants';
 
 describe('Settings: Component', () => {
   const component = props => <Settings {...defaultProps} {...props} />;
@@ -17,8 +18,20 @@ describe('Settings: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render correctly', () => {
+    const wrapper = render();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
   it('should render correctly form', () => {
     const wrapper = render()
+      .find(Formik)
+      .dive();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render form without reset password link', () => {
+    const wrapper = render({ userData: { authMethod: AUTH_METHODS.GMAIL } })
       .find(Formik)
       .dive();
     global.expect(wrapper).toMatchSnapshot();
