@@ -83,7 +83,12 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
                 "Please enter the user 'id' you want to add.", status.HTTP_400_BAD_REQUEST
             )
 
-    @decorators.action(detail=True, url_path="directories", methods=["get", "post"])
+    @decorators.action(
+        detail=True,
+        permission_classes=[permissions.IsAuthenticated],
+        url_path="directories",
+        methods=["get", "post"],
+    )
     def directories(self, request, **kwargs):
         project = self.get_object()
 
