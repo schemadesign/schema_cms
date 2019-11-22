@@ -18,9 +18,17 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         Sample
       </styled.span>
       <styled.span
-        title="Sample"
+        title="
+  Donec at erat dictum, congue lorem at, gravida magna.
+  Phasellus nulla turpis, hendrerit vulputate velit ut,
+  semper condimentum libero. Maecenas sodales at nisl non pellentesque.
+"
       >
-        Sample
+        
+  Donec at erat dictum, congue lorem at, gravida magna.
+  Phasellus nulla turpis, hendrerit vulputate velit ut,
+  semper condimentum libero. Maecenas sodales at nisl non pellentesque.
+
       </styled.span>
     </styled.li>
     <styled.li
