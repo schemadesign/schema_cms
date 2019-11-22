@@ -130,7 +130,7 @@ export class JobList extends PureComponent {
   );
 
   render() {
-    const { loading, canRevert } = this.state;
+    const { loading, canRevert, selectedJob } = this.state;
     const { dataSource, jobList } = this.props;
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.title} />,

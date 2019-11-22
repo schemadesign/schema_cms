@@ -7,40 +7,7 @@ exports[`Filters: Component should render correctly 1`] = `
   noData={false}
   noDataContent={null}
 >
-  <styled.div>
-    <styled.div>
-      <Styled(Component)
-        onClick={[Function]}
-      >
-        <Component />
-      </Styled(Component)>
-    </styled.div>
-    <styled.div>
-      <FormattedMessage
-        defaultMessage="{length} {length, plural,one {Filter} other {Filters}}"
-        id="dataSource.view.filters.filters"
-        values={
-          Object {
-            "length": 2,
-          }
-        }
-      />
-    </styled.div>
-  </styled.div>
-  <Formik
-    enableReinitialize={false}
-    initialValues={
-      Array [
-        "1",
-      ]
-    }
-    isInitialValid={false}
-    onSubmit={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
-  >
-    <Component />
-  </Formik>
+  <Component />
 </LoadingWrapper>
 `;
 
@@ -50,5 +17,7 @@ exports[`Filters: Component should render correctly with loader 1`] = `
   loading={true}
   noData={false}
   noDataContent={null}
-/>
+>
+  <Component />
+</LoadingWrapper>
 `;

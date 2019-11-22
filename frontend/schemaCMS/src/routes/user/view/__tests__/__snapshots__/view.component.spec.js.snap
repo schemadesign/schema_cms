@@ -40,17 +40,7 @@ exports[`View: Component should render correctly 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <styled.div>
-      <Styled(Span)
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Remove user"
-          id="user.view.removeUser"
-          values={Object {}}
-        />
-      </Styled(Span)>
-    </styled.div>
+    <Component />
   </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={false}
@@ -235,39 +225,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <UserProfile
-      handleChange={[Function]}
-      isCurrentUser={false}
-      values={
-        Object {
-          "email": "email@example.com",
-          "firstName": "firstName",
-          "id": "1",
-          "lastName": "lastName",
-          "role": "editor",
-        }
-      }
-    />
-    <styled.div>
-      <Styled(Span)
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Remove user"
-          id="user.view.removeUser"
-          values={Object {}}
-        />
-      </Styled(Span)>
-      <Styled(Span)
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Make admin"
-          id="user.view.makeAdmin"
-          values={Object {}}
-        />
-      </Styled(Span)>
-    </styled.div>
+    <Component />
   </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={false}
