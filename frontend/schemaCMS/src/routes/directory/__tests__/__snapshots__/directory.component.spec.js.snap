@@ -7,5 +7,10 @@ exports[`Directory: Component should render correctly 1`] = `
     exact={true}
     path="path/:directoryId"
   />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="path/:directoryId/edit"
+  />
 </Switch>
 `;

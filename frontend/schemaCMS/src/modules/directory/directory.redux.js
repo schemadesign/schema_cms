@@ -22,5 +22,4 @@ const setDirectory = (state = INITIAL_STATE, { payload }) => state.set('director
 export const reducer = createReducer(INITIAL_STATE, {
   [DirectoryRoutines.fetchList.success]: setDirectories,
   [DirectoryRoutines.fetchOne.success]: setDirectory,
-  [DirectoryRoutines.update.success]: setDirectory,
 });

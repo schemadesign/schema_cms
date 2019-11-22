@@ -39,7 +39,7 @@ export class Edit extends PureComponent {
 
   async componentDidMount() {
     try {
-      const directoryId = this.getDirectoryId();
+      const directoryId = path(['match', 'params', 'directoryId'], this.props);
       await this.props.fetchDirectory({ directoryId });
       this.setState({ loading: false });
     } catch (e) {
@@ -47,10 +47,7 @@ export class Edit extends PureComponent {
     }
   }
 
-  getDirectoryId = () => path(['match', 'params', 'directoryId'], this.props);
-  getProjectId = () => path(['directory', 'project'], this.props);
-
-  handleBackClick = () => this.props.history.push(`/project/${this.getProjectId()}/directory`);
+  handleBackClick = () => this.props.history.push(`/project/${path(['directory', 'project'], this.props)}/directory`);
 
   renderContent = renderWhenTrueOtherwise(always(<Loader />), () => (
     <TextInput

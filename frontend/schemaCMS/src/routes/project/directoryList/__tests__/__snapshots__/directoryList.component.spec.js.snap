@@ -66,17 +66,24 @@ exports[`DirectoryList: Component should render correctly 1`] = `
       }
       key="0"
     >
-      <H1
-        customStyles={
-          Object {
-            "cursor": "pointer",
+      <styled.div>
+        <H1
+          customStyles={
+            Object {
+              "cursor": "pointer",
+            }
           }
-        }
-        id="directoryName-0"
-        onClick={[Function]}
-      >
-        name
-      </H1>
+          id="directoryName-0"
+          onClick={[Function]}
+        >
+          name
+        </H1>
+        <Styled(Span)
+          onClick={[Function]}
+        >
+          Edit directory
+        </Styled(Span)>
+      </styled.div>
     </Styled(Component)>
   </styled.section>
   <NavigationContainer

@@ -359,7 +359,10 @@ Array [
 
 @media (min-width:1040px) {
   .c4 {
-    display: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -393,11 +396,29 @@ Array [
           }
         }
       >
+        <label
+          htmlFor="name"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Directory Name
+        </label>
         <input
           id="name"
           name="name"
           onBlur={[Function]}
           onChange={[Function]}
+          placeholder="Name"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -474,7 +495,7 @@ Array [
             }
           >
             <span>
-              Back
+              Cancel
             </span>
           </button>
           <button

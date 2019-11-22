@@ -19,6 +19,11 @@ export class CreateDirectory extends PureComponent {
     handleSubmit: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleBlur: PropTypes.func.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        projectId: PropTypes.string.isRequired,
+      }),
+    }),
   };
 
   getProjectId = () => path(['match', 'params', 'projectId'], this.props);

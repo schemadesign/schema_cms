@@ -36,13 +36,4 @@ describe('Directory: redux', () => {
       expect(resultState.directory).to.deep.equal(directory);
     });
   });
-
-  describe('when DIRECTORY/CREATE action is received', () => {
-    it('should set filters', () => {
-      const directory = { data: 'data' };
-
-      const resultState = directoryReducer(state, DirectoryRoutines.create.success(directory));
-      expect(resultState.directory).to.deep.equal(directory);
-    });
-  });
 });

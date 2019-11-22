@@ -50,16 +50,16 @@ function* create({ payload: { projectId, name } }) {
 
 function* update({ payload: { directoryId, projectId, name } }) {
   try {
-    yield put(DirectoryRoutines.create.request());
+    yield put(DirectoryRoutines.update.request());
 
     const { data } = yield api.patch(`${DIRECTORIES_PATH}/${directoryId}`, { name });
 
-    yield put(DirectoryRoutines.create.success(data));
+    yield put(DirectoryRoutines.update.success(data));
     browserHistory.push(`/project/${projectId}/directory`);
   } catch (e) {
-    yield put(DirectoryRoutines.create.failure(e));
+    yield put(DirectoryRoutines.update.failure(e));
   } finally {
-    yield put(DirectoryRoutines.create.fulfill());
+    yield put(DirectoryRoutines.update.fulfill());
   }
 }
 

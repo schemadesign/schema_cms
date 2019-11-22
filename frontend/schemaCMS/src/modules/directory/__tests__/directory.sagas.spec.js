@@ -6,6 +6,7 @@ import { OK } from 'http-status-codes';
 import { watchDirectory } from '../directory.sagas';
 import { DirectoryRoutines } from '../directory.redux';
 import mockApi from '../../../shared/utils/mockApi';
+import browserHistory from '../../../shared/utils/history';
 
 describe('Directory: sagas', () => {
   const defaultState = Immutable({
@@ -57,6 +58,7 @@ describe('Directory: sagas', () => {
 
   describe('when create action is called', () => {
     it('should put create.success action', async () => {
+      jest.spyOn(browserHistory, 'push');
       const response = {
         id: 1,
       };
@@ -65,13 +67,39 @@ describe('Directory: sagas', () => {
         name: 'A directory name',
       };
 
-      mockApi.post(`/projects/${payload.projectId}/directories`).reply(OK, response);
+      mockApi.post(`/projects/${payload.projectId}/directories`, { name: payload.name }).reply(OK, response);
 
       await expectSaga(watchDirectory)
         .withState(defaultState)
         .put(DirectoryRoutines.create.success(response))
         .dispatch(DirectoryRoutines.create(payload))
         .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith(`/project/${payload.projectId}/directory`);
+    });
+  });
+
+  describe('when update action is called', () => {
+    it('should put update.success action', async () => {
+      jest.spyOn(browserHistory, 'push');
+      const response = {
+        id: 1,
+      };
+      const payload = {
+        projectId: 1,
+        directoryId: 2,
+        name: 'A directory name',
+      };
+
+      mockApi.patch(`/directories/${payload.directoryId}`, { name: payload.name }).reply(OK, response);
+
+      await expectSaga(watchDirectory)
+        .withState(defaultState)
+        .put(DirectoryRoutines.update.success(response))
+        .dispatch(DirectoryRoutines.update(payload))
+        .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith(`/project/${payload.projectId}/directory`);
     });
   });
 });
