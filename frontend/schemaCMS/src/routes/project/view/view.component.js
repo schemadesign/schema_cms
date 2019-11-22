@@ -222,7 +222,7 @@ export class View extends PureComponent {
         <div>
           <Helmet title={title} />
           <TopHeader {...topHeaderConfig} />
-          <LoadingWrapper loading={loading} error={error}>
+          <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>
             {this.renderContent(project, projectId, isAdmin)}
           </LoadingWrapper>
         </div>
