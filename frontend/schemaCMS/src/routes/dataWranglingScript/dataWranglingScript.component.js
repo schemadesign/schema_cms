@@ -68,7 +68,7 @@ export class DataWranglingScript extends PureComponent {
   renderContent = loading =>
     renderWhenTrue(() => {
       const { intl, dataWranglingScript, match, history, isAdmin } = this.props;
-      const syntaxTheme = isAdmin ? dracula : defaultStyle;
+      const syntaxTheme = isAdmin ? darcula : defaultStyle;
 
       const descriptionFieldProps = {
         name: DESCRIPTION,
