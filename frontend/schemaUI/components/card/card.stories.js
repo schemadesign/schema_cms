@@ -49,6 +49,7 @@ storiesOf('Card', module).add('with header', () => (
 
 const withProps = {
   headerComponent: <b style={{ color: '#d9d9f5', fontSize: '25px' }}>Header</b>,
+  footerComponent: <b style={{ color: '#d9d9f5', fontSize: '25px' }}>Footer</b>,
   customStyles: {
     color: '#fff',
     backgroundColor: '#7575b3',
@@ -58,7 +59,7 @@ const withProps = {
   id: 'unique-card',
 };
 
-storiesOf('Card', module).add('with header, custom styles and other attributes', () => (
+storiesOf('Card', module).add('with header, footer, custom styles and other attributes', () => (
   <Card {...withProps}>
     <span>
       <b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit. Morbi a auctor ante. Ut at lorem id elit elementum

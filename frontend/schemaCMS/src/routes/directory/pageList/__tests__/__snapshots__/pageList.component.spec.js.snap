@@ -1,55 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DirectoryList: Component should render correctly 1`] = `
+exports[`PageList: Component should render correctly 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Directories"
+    title="Pages"
   />
   <TopHeader
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="project.directoryList.subTitle"
+        id="directory.pageList.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Directories"
-        id="project.directoryList.title"
+        defaultMessage="Pages"
+        id="directory.pageList.title"
         values={Object {}}
       />
     }
-  />
-  <ProjectTabs
-    active="directory"
-    url="/project/1"
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="project.directoryList.subTitle"
+        id="directory.pageList.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
-        defaultMessage="Directories"
-        id="project.directoryList.title"
+        defaultMessage="Pages"
+        id="directory.pageList.title"
         values={Object {}}
       />
     }
   >
     <PlusButton
-      id="createDirectoryDesktopBtn"
+      id="createPageDesktopBtn"
       onClick={[Function]}
     />
   </ContextHeader>
   <styled.section>
     <Styled(Component)
+      footerComponent={
+        <FormattedMessage
+          defaultMessage="{length} {length, plural,one {Block} other {Blocks}}"
+          id="directory.pageList.blocks"
+          values={
+            Object {
+              "length": 8,
+            }
+          }
+        />
+      }
       headerComponent={
         <ForwardRef(styled.ul)>
           <ForwardRef(styled.li)
@@ -72,11 +79,20 @@ exports[`DirectoryList: Component should render correctly 1`] = `
             "cursor": "pointer",
           }
         }
-        id="directoryName-0"
+        id="pageName-0"
         onClick={[Function]}
       >
         name
       </H1>
+      <styled.div
+        onClick={[Function]}
+      >
+        <P
+          id="pageDescription-0"
+        >
+          description
+        </P>
+      </styled.div>
     </Styled(Component)>
   </styled.section>
   <NavigationContainer
@@ -88,58 +104,54 @@ exports[`DirectoryList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
     <PlusButton
-      id="createDirectoryBtn"
+      id="createPageBtn"
       onClick={[Function]}
     />
   </NavigationContainer>
 </styled.div>
 `;
 
-exports[`DirectoryList: Component should render correctly with loader 1`] = `
+exports[`PageList: Component should render correctly with loader 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="Directories"
+    title="Pages"
   />
   <TopHeader
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="project.directoryList.subTitle"
+        id="directory.pageList.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Directories"
-        id="project.directoryList.title"
+        defaultMessage="Pages"
+        id="directory.pageList.title"
         values={Object {}}
       />
     }
-  />
-  <ProjectTabs
-    active="directory"
-    url="/project/1"
   />
   <ContextHeader
     subtitle={
       <FormattedMessage
         defaultMessage="Overview"
-        id="project.directoryList.subTitle"
+        id="directory.pageList.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
-        defaultMessage="Directories"
-        id="project.directoryList.title"
+        defaultMessage="Pages"
+        id="directory.pageList.title"
         values={Object {}}
       />
     }
   >
     <PlusButton
-      id="createDirectoryDesktopBtn"
+      id="createPageDesktopBtn"
       onClick={[Function]}
     />
   </ContextHeader>
@@ -153,7 +165,7 @@ exports[`DirectoryList: Component should render correctly with loader 1`] = `
       onClick={[Function]}
     />
     <PlusButton
-      id="createDirectoryBtn"
+      id="createPageBtn"
       onClick={[Function]}
     />
   </NavigationContainer>

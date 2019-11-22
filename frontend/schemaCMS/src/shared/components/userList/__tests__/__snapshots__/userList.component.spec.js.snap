@@ -13,16 +13,18 @@ exports[`UserList: Component should render correctly with users 1`] = `
     key="0"
   >
     <styled.div>
-      <Styled(Link)
-        to="/user/1"
-      >
-        Alan
-         
-        Watts
-      </Styled(Link)>
-      <styled.span />
+      <styled.div>
+        <Styled(Link)
+          to="/user/1"
+        >
+          Alan
+           
+          Watts
+        </Styled(Link)>
+        <styled.span />
+      </styled.div>
+      <styled.div />
     </styled.div>
-    <styled.div />
   </Styled(Component)>
   <Styled(Component)
     customStyles={
@@ -33,16 +35,18 @@ exports[`UserList: Component should render correctly with users 1`] = `
     key="1"
   >
     <styled.div>
-      <Styled(Link)
-        to="/user/2"
-      >
-        Dale
-         
-        Chihuly
-      </Styled(Link)>
-      <styled.span />
+      <styled.div>
+        <Styled(Link)
+          to="/user/2"
+        >
+          Dale
+           
+          Chihuly
+        </Styled(Link)>
+        <styled.span />
+      </styled.div>
+      <styled.div />
     </styled.div>
-    <styled.div />
   </Styled(Component)>
   <Styled(Component)
     customStyles={
@@ -53,18 +57,20 @@ exports[`UserList: Component should render correctly with users 1`] = `
     key="2"
   >
     <styled.div>
-      <Styled(Link)
-        to="/user/3"
-      >
-        Dave
-         
-        Bowie
-      </Styled(Link)>
-      <styled.span>
-        loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
-      </styled.span>
+      <styled.div>
+        <Styled(Link)
+          to="/user/3"
+        >
+          Dave
+           
+          Bowie
+        </Styled(Link)>
+        <styled.span>
+          loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+        </styled.span>
+      </styled.div>
+      <styled.div />
     </styled.div>
-    <styled.div />
   </Styled(Component)>
 </styled.section>
 `;

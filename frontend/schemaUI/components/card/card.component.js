@@ -9,21 +9,26 @@ export class CardComponent extends PureComponent {
     customStyles: PropTypes.object,
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     headerComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    footerComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     theme: PropTypes.object,
   };
 
   renderHeader = (component, headerStyles) => (component ? <div style={headerStyles}>{component}</div> : null);
+  renderFooter = (component, footerStyles) => (component ? <div style={footerStyles}>{component}</div> : null);
 
   render() {
-    const { customStyles, headerComponent, children, theme, ...restProps } = this.props;
-    const { containerStyles, headerStyles } = getStyles(theme);
+    const { customStyles, headerComponent, footerComponent, children, theme, ...restProps } = this.props;
+    const { containerStyles, headerStyles, footerStyles } = getStyles(theme);
 
     const styles = { ...containerStyles, ...customStyles };
 
     return (
       <div style={styles} {...restProps}>
-        {this.renderHeader(headerComponent, headerStyles)}
-        {children}
+        <div style={{ width: '100%' }}>
+          {this.renderHeader(headerComponent, headerStyles)}
+          {children}
+        </div>
+        {this.renderFooter(footerComponent, footerStyles)}
       </div>
     );
   }

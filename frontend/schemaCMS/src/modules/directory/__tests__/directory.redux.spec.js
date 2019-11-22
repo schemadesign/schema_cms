@@ -19,7 +19,7 @@ describe('Directory: redux', () => {
     });
   });
 
-  describe('when FILTERS/FETCH_LIST action is received', () => {
+  describe('when DIRECTORY/FETCH_LIST action is received', () => {
     it('should set filters', () => {
       const directories = [{ data: 'data' }];
 
@@ -28,7 +28,16 @@ describe('Directory: redux', () => {
     });
   });
 
-  describe('when FILTERS/CREATE action is received', () => {
+  describe('when DIRECTORY/FETCH_ONE action is received', () => {
+    it('should set filters', () => {
+      const directory = { data: 'data' };
+
+      const resultState = directoryReducer(state, DirectoryRoutines.fetchOne.success(directory));
+      expect(resultState.directory).to.deep.equal(directory);
+    });
+  });
+
+  describe('when DIRECTORY/CREATE action is received', () => {
     it('should set filters', () => {
       const directory = { data: 'data' };
 

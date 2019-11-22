@@ -839,31 +839,41 @@ exports[`Storyshots Project/View default 1`] = `
                   "display": "flex",
                   "flexDirection": "column",
                   "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "12px",
+                  "justifyContent": "space-between",
                   "padding": "12px 14px 14px",
+                  "position": "relative",
                 }
               }
             >
               <div
                 style={
                   Object {
-                    "color": undefined,
-                    "fontSize": "12px",
-                    "marginBottom": "14px",
+                    "width": "100%",
                   }
                 }
               >
-                <span
-                  className="c14"
+                <div
+                  style={
+                    Object {
+                      "color": undefined,
+                      "marginBottom": 14,
+                    }
+                  }
                 >
-                  Data Sources
+                  <span
+                    className="c14"
+                  >
+                    Data Sources
+                  </span>
+                </div>
+                <span
+                  className="c15"
+                  id="projectDataSourcesValue"
+                >
+                  3
                 </span>
               </div>
-              <span
-                className="c15"
-                id="projectDataSourcesValue"
-              >
-                3
-              </span>
             </div>
           </li>
           <li
@@ -881,31 +891,41 @@ exports[`Storyshots Project/View default 1`] = `
                   "display": "flex",
                   "flexDirection": "column",
                   "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "12px",
+                  "justifyContent": "space-between",
                   "padding": "12px 14px 14px",
+                  "position": "relative",
                 }
               }
             >
               <div
                 style={
                   Object {
-                    "color": undefined,
-                    "fontSize": "12px",
-                    "marginBottom": "14px",
+                    "width": "100%",
                   }
                 }
               >
-                <span
-                  className="c14"
+                <div
+                  style={
+                    Object {
+                      "color": undefined,
+                      "marginBottom": 14,
+                    }
+                  }
                 >
-                  Users
+                  <span
+                    className="c14"
+                  >
+                    Users
+                  </span>
+                </div>
+                <span
+                  className="c15"
+                  id="projectUsersValue"
+                >
+                  2
                 </span>
               </div>
-              <span
-                className="c15"
-                id="projectUsersValue"
-              >
-                2
-              </span>
             </div>
           </li>
         </ul>

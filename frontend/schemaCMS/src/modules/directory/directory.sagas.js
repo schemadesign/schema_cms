@@ -19,6 +19,20 @@ function* fetchList({ payload: { projectId } }) {
   }
 }
 
+function* fetchOne({ payload: { directoryId } }) {
+  try {
+    yield put(DirectoryRoutines.fetchOne.request());
+
+    const { data } = yield api.get(`${DIRECTORIES_PATH}/${directoryId}`);
+
+    yield put(DirectoryRoutines.fetchOne.success(data));
+  } catch (e) {
+    yield put(DirectoryRoutines.fetchOne.failure(e));
+  } finally {
+    yield put(DirectoryRoutines.fetchOne.fulfill());
+  }
+}
+
 function* create({ payload: { projectId, name } }) {
   try {
     yield put(DirectoryRoutines.create.request());
@@ -37,6 +51,7 @@ function* create({ payload: { projectId, name } }) {
 export function* watchDirectory() {
   yield all([
     takeLatest(DirectoryRoutines.fetchList.TRIGGER, fetchList),
+    takeLatest(DirectoryRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(DirectoryRoutines.create.TRIGGER, create),
   ]);
 }

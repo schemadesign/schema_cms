@@ -24,6 +24,12 @@ export const Email = styled.span`
   font-weight: 200;
 `;
 
+export const ListItemContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+`;
+
 export const cardStyles = {
   flexDirection: null,
 };

@@ -1,22 +1,25 @@
 import { connect } from 'react-redux';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
-import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
-import { DirectoryList } from './directoryList.component';
-import { selectDirectories, DirectoryRoutines } from '../../../modules/directory';
+import { PageList } from './pageList.component';
+import { PageRoutines, selectPages } from '../../../modules/page';
+import { DirectoryRoutines, selectDirectory } from '../../../modules/directory';
 
 const mapStateToProps = createStructuredSelector({
-  directories: selectDirectories,
+  pages: selectPages,
+  directory: selectDirectory,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchDirectories: promisifyRoutine(DirectoryRoutines.fetchList),
+      fetchPages: promisifyRoutine(PageRoutines.fetchList),
+      fetchDirectory: promisifyRoutine(DirectoryRoutines.fetchOne),
     },
     dispatch
   ),
@@ -30,4 +33,4 @@ export default compose(
   ),
   injectIntl,
   withRouter
-)(DirectoryList);
+)(PageList);

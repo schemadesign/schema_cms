@@ -8,6 +8,7 @@ import { reducer as userReducer } from './user/user.redux';
 import { reducer as jobReducer } from './job/job.redux';
 import { reducer as filterReducer } from './filter/filter.redux';
 import { reducer as directoryReducer } from './directory/directory.redux';
+import { reducer as pageReducer } from './page/page.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -22,6 +23,7 @@ export default function createReducer() {
     job: jobReducer,
     filter: filterReducer,
     directory: directoryReducer,
+    page: pageReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }
