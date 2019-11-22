@@ -5,13 +5,13 @@ import { FormattedMessage } from 'react-intl';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { Select } from '../../../shared/components/form/select';
-import { Form, Container } from './create.styles';
+import { Container, Form } from './create.styles';
 import {
   PROJECT_DESCRIPTION,
-  PROJECT_TITLE,
   PROJECT_OWNER,
   PROJECT_STATUS,
   PROJECT_STATUSES_LIST,
+  PROJECT_TITLE,
 } from '../../../modules/project/project.constants';
 
 import messages from './create.messages';
@@ -26,8 +26,17 @@ export class Create extends PureComponent {
     handleBlur: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
-    history: PropTypes.object,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }),
+    isAdmin: PropTypes.bool.isRequired,
   };
+
+  componentDidMount() {
+    if (!this.props.isAdmin) {
+      this.props.history.push('/not-authorized');
+    }
+  }
 
   getHeaderAndMenuConfig = intl => ({
     headerTitle: intl.formatMessage(messages.pageTitle),

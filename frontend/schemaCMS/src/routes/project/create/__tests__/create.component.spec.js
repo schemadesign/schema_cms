@@ -1,7 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
-import { expect } from 'chai';
 
 import { Create } from '../create.component';
 import { TextInput } from '../../../../shared/components/form/inputs/textInput';
@@ -19,32 +17,40 @@ describe('Create: Component', () => {
   });
 
   it('should call handleSubmit on form submit', () => {
-    const handleSubmit = spy();
+    jest.spyOn(defaultProps, 'handleSubmit');
 
-    const wrapper = render({ handleSubmit });
+    const wrapper = render();
     wrapper.find(Form).simulate('submit');
-    expect(handleSubmit).to.have.been.calledOnce;
+    expect(defaultProps.handleSubmit).toHaveBeenCalled();
   });
 
   it('should call handleChange on change of TextInput value', () => {
-    const handleChange = spy();
+    jest.spyOn(defaultProps, 'handleChange');
 
-    const wrapper = render({ handleChange });
+    const wrapper = render();
     wrapper
       .find(TextInput)
       .first()
       .prop('onChange')();
-    expect(handleChange).to.have.been.calledOnce;
+    expect(defaultProps.handleChange).toHaveBeenCalledTimes(1);
   });
 
   it('should call handleBlur on blur of TextInput value', () => {
-    const handleBlur = spy();
+    jest.spyOn(defaultProps, 'handleBlur');
 
-    const wrapper = render({ handleBlur });
+    const wrapper = render();
     wrapper
       .find(TextInput)
       .first()
       .prop('handleBlur')();
-    expect(handleBlur).to.have.been.calledOnce;
+
+    expect(defaultProps.handleBlur).toHaveBeenCalledTimes(1);
+  });
+
+  it('should redirect to not-authorized page not admin user', () => {
+    jest.spyOn(defaultProps.history, 'push');
+    render({ isAdmin: false });
+
+    expect(defaultProps.history.push).toHaveBeenCalledWith('/not-authorized');
   });
 });

@@ -16,6 +16,8 @@ export const defaultProps = {
   setFieldValue: Function.prototype,
   touched: {},
   errors: {},
+  isAdmin: true,
+  history: { push: Function.prototype },
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 

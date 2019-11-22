@@ -20,7 +20,7 @@ export class User extends PureComponent {
 
   componentDidMount() {
     if (!this.props.isAdmin) {
-      this.props.history.push('/');
+      this.props.history.push('/not-authorized');
     }
   }
 
