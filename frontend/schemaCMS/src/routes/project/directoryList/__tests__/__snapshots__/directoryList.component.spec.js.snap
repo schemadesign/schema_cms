@@ -151,7 +151,7 @@ exports[`DirectoryList: Component should render correctly with loader 1`] = `
   </ContextHeader>
   <LoadingWrapper
     error={null}
-    loading={false}
+    loading={true}
     noData={false}
     noDataContent={null}
   >

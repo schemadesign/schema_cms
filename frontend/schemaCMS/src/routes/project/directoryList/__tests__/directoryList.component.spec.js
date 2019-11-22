@@ -33,50 +33,50 @@ describe('DirectoryList: Component', () => {
     expect(defaultProps.history.push).toBeCalledWith('/');
   });
 
-  // it('should fetch list', () => {
-  //   jest.spyOn(defaultProps, 'fetchList');
-  //   render();
+  it('should fetch list', () => {
+    jest.spyOn(defaultProps, 'fetchList');
+    render();
 
-  //   expect(defaultProps.fetchList).toBeCalledWith({ projectId: '1' });
-  // });
+    expect(defaultProps.fetchList).toBeCalledWith({ projectId: '1' });
+  });
 
-  // it('should go back', () => {
-  //   jest.spyOn(defaultProps.history, 'push');
-  //   const wrapper = render();
-  //   wrapper.find(BackArrowButton).simulate('click');
+  it('should go back', () => {
+    jest.spyOn(defaultProps.history, 'push');
+    const wrapper = render();
+    wrapper.find(BackArrowButton).simulate('click');
 
-  //   expect(defaultProps.history.push).toBeCalledWith('/project/1');
-  // });
+    expect(defaultProps.history.push).toBeCalledWith('/project/1');
+  });
 
-  // it('should create on desktop', () => {
-  //   jest.spyOn(defaultProps.history, 'push');
-  //   const wrapper = render();
-  //   wrapper
-  //     .find(PlusButton)
-  //     .at(0)
-  //     .simulate('click');
+  it('should create on desktop', () => {
+    jest.spyOn(defaultProps.history, 'push');
+    const wrapper = render();
+    wrapper
+      .find(PlusButton)
+      .at(0)
+      .simulate('click');
 
-  //   expect(defaultProps.history.push).toBeCalledWith('/project/1/create');
-  // });
+    expect(defaultProps.history.push).toBeCalledWith('/project/1/create');
+  });
 
-  // it('should create directory on mobile', () => {
-  //   jest.spyOn(defaultProps.history, 'push');
-  //   const wrapper = render();
-  //   wrapper
-  //     .find(PlusButton)
-  //     .at(1)
-  //     .simulate('click');
+  it('should create directory on mobile', () => {
+    jest.spyOn(defaultProps.history, 'push');
+    const wrapper = render();
+    wrapper
+      .find(PlusButton)
+      .at(1)
+      .simulate('click');
 
-  //   expect(defaultProps.history.push).toBeCalledWith('/project/1/create');
-  // });
+    expect(defaultProps.history.push).toBeCalledWith('/project/1/create');
+  });
 
-  // it('should show directory', async () => {
-  //   jest.spyOn(defaultProps.history, 'push');
-  //   defaultProps.fetchList = jest.fn().mockReturnValue(Promise.resolve());
-  //   const wrapper = render();
-  //   await Promise.resolve();
-  //   wrapper.find(H1).simulate('click');
+  it('should show directory', async () => {
+    jest.spyOn(defaultProps.history, 'push');
+    defaultProps.fetchList = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = render();
+    await Promise.resolve();
+    wrapper.find(H1).simulate('click');
 
-  //   expect(defaultProps.history.push).toBeCalledWith('/directory/1');
-  // });
+    expect(defaultProps.history.push).toBeCalledWith('/directory/1');
+  });
 });

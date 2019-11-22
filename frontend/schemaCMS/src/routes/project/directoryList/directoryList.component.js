@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import { Typography } from 'schemaUI';
 
@@ -15,7 +16,6 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
-import { NoData } from '../../../shared/components/noData';
 import { Link } from '../../../theme/typography';
 
 const { H1 } = Typography;
@@ -42,10 +42,10 @@ export class DirectoryList extends PureComponent {
   async componentDidMount() {
     try {
       const projectId = this.getProjectId();
+
       await this.props.fetchDirectories({ projectId });
       this.setState({ loading: false });
     } catch (e) {
-      this.setState({ loading: false });
       this.props.history.push('/');
     }
   }
@@ -106,7 +106,7 @@ export class DirectoryList extends PureComponent {
         </LoadingWrapper>
         <NavigationContainer hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
-          <PlusButton id="createDirectoryBtn" onClick={this.handleCreateDirectory} />
+          <PlusButton id="createDirectoryBtn" onClick={this.handleCreateDataSource} />
         </NavigationContainer>
       </Container>
     );
