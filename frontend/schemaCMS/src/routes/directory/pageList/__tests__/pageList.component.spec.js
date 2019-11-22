@@ -78,7 +78,7 @@ describe('PageList: Component', () => {
       .at(0)
       .simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/directory/1/create-page');
+    expect(defaultProps.history.push).toBeCalledWith('/directory/1/page/create');
   });
 
   it('should go to create page on mobile', () => {
@@ -89,7 +89,7 @@ describe('PageList: Component', () => {
       .at(1)
       .simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/directory/1/create-page');
+    expect(defaultProps.history.push).toBeCalledWith('/directory/1/page/create');
   });
 
   it('should show page', async () => {

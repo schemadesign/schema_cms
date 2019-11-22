@@ -54,7 +54,7 @@ export class PageList extends PureComponent {
   getDirectoryId = () => path(['match', 'params', 'directoryId'], this.props);
   getProjectId = () => path(['directory', 'project'], this.props);
 
-  handleCreatePage = () => this.props.history.push(`/directory/${this.getDirectoryId()}/create-page`);
+  handleCreatePage = () => this.props.history.push(`/directory/${this.getDirectoryId()}/page/create`);
 
   handleShowDirectoryList = () => this.props.history.push(`/project/${this.getProjectId()}/directory`);
 
