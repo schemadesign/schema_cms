@@ -425,6 +425,7 @@ class ImageResize(core.Stack):
                     condition=aws_s3.RoutingRuleCondition(http_error_code_returned_equals="404"),
                     protocol=protocol_mapping[parsed_url.scheme.upper()],  # enum required
                     host_name=parsed_url.netloc,
+                    replace_key=aws_s3.ReplaceKey.with_key("prod/")
                     http_redirect_code="307"
                 )
             ]

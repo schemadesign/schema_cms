@@ -36,7 +36,7 @@ class ImageHandler {
 
     async save(bucket, key, buffer) {
         const s3 = new AWS.S3();
-        const params = { Bucket: bucket, Key: key, Body: buffer};
+        const params = { Bucket: bucket, Key: key, Body: buffer, ContentDisposition: "inline", ContentType: "image"};
         return await s3.putObject(params).promise();
     }
 
