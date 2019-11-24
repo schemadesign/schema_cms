@@ -407,7 +407,7 @@ class ImageResize(core.Stack):
         self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
         self.image_resize_lambda.add_environment(key="BUCKET", value=self.image_bucket.bucket_name)
         self.image_resize_lambda.add_environment(key="REDIRECT_URL", value=self.image_bucket.url_for_object())
-        self.image_resize_lambda.add_environment(key="CORS_ORIGIN", value=domain_name)
+        self.image_resize_lambda.add_environment(key="CORS_ORIGIN", value=f"https://{domain_name}")
         self.image_resize_lambda.add_environment(key="ALLOWED_DIMENSIONS", value="150x150,1024x1024")
         self.image_bucket.grant_read_write(self.image_resize_lambda.role)
 
