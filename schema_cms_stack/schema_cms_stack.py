@@ -401,12 +401,14 @@ class PublicAPI(core.Stack):
 class ImageResize(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
+        domain_name = self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
 
         self.image_resize_lambda, self.function_code, self.api_gateway = self.create_lambda()
         self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
-        self.image_resize_lambda.add_environment(key="AWS_STORAGE_BUCKET_NAME", value=self.image_bucket.bucket_name)
+        self.image_resize_lambda.add_environment(key="BUCKET", value=self.image_bucket.bucket_name)
         self.image_resize_lambda.add_environment(key="REDIRECT_URL", value=self.image_bucket.url_for_object())
-        self.image_resize_lambda.add_environment(key="SOURCE_BUCKETS", value=self.image_bucket.bucket_name)
+        self.image_resize_lambda.add_environment(key="CORS_ORIGIN", value=domain_name)
+        self.image_resize_lambda.add_environment(key="ALLOWED_DIMENSIONS", value="150x150,1024x1024")
         self.image_bucket.grant_read_write(self.image_resize_lambda.role)
 
     def create_bucket(self, lambda_url):
@@ -425,7 +427,7 @@ class ImageResize(core.Stack):
                     condition=aws_s3.RoutingRuleCondition(http_error_code_returned_equals="404"),
                     protocol=protocol_mapping[parsed_url.scheme.upper()],  # enum required
                     host_name=parsed_url.netloc,
-                    replace_key=aws_s3.ReplaceKey.prefix_with("prod/"),
+                    replace_key=aws_s3.ReplaceKey.prefix_with("prod/resize?key="),
                     http_redirect_code="307"
                 )
             ]
