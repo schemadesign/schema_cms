@@ -25,7 +25,7 @@ RANDOM_SUFFIX_LENGTH = 5
 
 
 def is_valid_url(url: str) -> bool:
-    return validators.url(url)
+    return bool(url) and validators.url(url)
 
 
 def is_image_response(http_response) -> bool:

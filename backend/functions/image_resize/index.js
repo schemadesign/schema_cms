@@ -1,73 +1,66 @@
-/*********************************************************************************************************************
- *  Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.                                           *
- *                                                                                                                    *
- *  Licensed under the Amazon Software License (the "License"). You may not use this file except in compliance        *
- *  with the License. A copy of the License is located at                                                             *
- *                                                                                                                    *
- *      http://aws.amazon.com/asl/                                                                                    *
- *                                                                                                                    *
- *  or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES *
- *  OR CONDITIONS OF ANY KIND, express or implied. See the License for the specific language governing permissions    *
- *  and limitations under the License.                                                                                *
- *********************************************************************************************************************/
+'use strict';
 
-const ImageRequest = require('./image-request.js');
-const ImageHandler = require('./image-handler.js');
+const AWS = require('aws-sdk');
+const S3 = new AWS.S3();
+const Sharp = require('sharp');
 
-exports.handler = async (event) => {
-    const imageRequest = new ImageRequest();
-    const imageHandler = new ImageHandler();
-    try {
-        const request = await imageRequest.setup(event);
-        const {width, height} = request.edits["resize"];
-        const key = `${width}x${height}/${request.key}`;
-        await imageHandler.save(
-            request.bucket,
-            key,
-            await imageHandler.process(request)
-        );
-        const response = {
-            "statusCode": 301,
-            "headers" : {...getResponseHeaders(), "Location": getResponseLocation(key)},
-            "isBase64Encoded": false
-        }
-        return response;
-    } catch (err) {
-        console.log(err);
-        const response = {
-            "statusCode": err.status,
-            "headers" : getResponseHeaders(true),
-            "body": JSON.stringify(err),
-            "isBase64Encoded": false
-        }
-        return response;
-    }
+const BUCKET = process.env.BUCKET;
+const URL = process.env.REDIRECT_URL;
+const ALLOWED_DIMENSIONS = new Set();
+const CORS_ORIGIN = process.env.CORS_ORIGIN;
+
+if (process.env.ALLOWED_DIMENSIONS) {
+  const dimensions = process.env.ALLOWED_DIMENSIONS.split(/\s*,\s*/);
+  dimensions.forEach((dimension) => ALLOWED_DIMENSIONS.add(dimension));
 }
 
-/**
- * Generates the appropriate set of response headers based on a success
- * or error condition.
- * @param {boolean} isErr - has an error been thrown?
- */
-const getResponseHeaders = (isErr) => {
-    const corsEnabled = (process.env.CORS_ENABLED === "Yes");
-    const headers = {
-        "Access-Control-Allow-Methods": "GET",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization",
-        "Access-Control-Allow-Credentials": true,
-        "Content-Type": "image"
-    }
-    if (corsEnabled) {
-        headers["Access-Control-Allow-Origin"] = process.env.CORS_ORIGIN;
-    }
-    if (isErr) {
-        headers["Content-Type"] = "application/json"
-    }
-    return headers;
-}
+exports.handler = function(event, context, callback) {
+  const key = event.queryStringParameters.key;
+  const match = key.match(/((\d+)x(\d+))\/(.*)/);
+  const dimensions = match[1];
+  const width = parseInt(match[2], 10);
+  const height = parseInt(match[3], 10);
+  const originalKey = match[4];
 
+  console.log(`Key: ${key}, Width: ${width}, height: ${height}, Original Key: ${originalKey}`);
 
-const getResponseLocation = (key) => {
-    const redirectUrl = process.env.REDIRECT_URL;
-    return `${redirectUrl}/${key}`;
+  if(ALLOWED_DIMENSIONS.size > 0 && !ALLOWED_DIMENSIONS.has(dimensions)) {
+     callback(null, {
+      statusCode: '403',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({"message": "Not Allowed dimension"})
+    });
+    return;
+  }
+
+  S3.getObject({Bucket: BUCKET, Key: originalKey}).promise()
+    .then(data => Sharp(data.Body)
+      .resize(width, height)
+      .toBuffer()
+    )
+    .then(buffer => S3.putObject({
+        Body: buffer,
+        Bucket: BUCKET,
+        Key: key,
+        ContentDisposition: "inline",
+        ContentType: "image"
+      }).promise()
+    )
+    .then(() => {
+        const headers = {
+            "Access-Control-Allow-Methods": "GET",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization",
+            "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Origin": CORS_ORIGIN,
+            "Content-Type": "image",
+            'Location': `${URL}/${key}`
+        };
+        return callback(null, {
+            statusCode: '301',
+            headers: headers,
+            body: ''
+          })
+        }
+    )
+    .catch(err => callback(err))
 }

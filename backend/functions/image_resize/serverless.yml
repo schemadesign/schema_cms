@@ -35,9 +35,9 @@ functions:
           method: get
     environment:
       AWS_STORAGE_BUCKET_NAME: schemacms
-      AWS_ACCESS_KEY_ID: foo
-      AWS_SECRET_ACCESS_KEY: bar
-      AWS_DEFAULT_REGION: us-east-1
+#      AWS_ACCESS_KEY_ID: foo
+#      AWS_SECRET_ACCESS_KEY: bar
+#      AWS_DEFAULT_REGION: us-east-1
     iamRoleStatements:
       - Effect: "Allow"
         Action:
