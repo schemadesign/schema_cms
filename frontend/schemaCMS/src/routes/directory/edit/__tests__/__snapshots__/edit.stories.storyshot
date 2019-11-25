@@ -1,8 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CreateDirectory Default 1`] = `
-Array [
-  .c0 {
+exports[`Storyshots Edit Default 1`] = `
+.c9 {
+  height: 155px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c10 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c12 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c8 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.c0 {
   width: calc(100% - 50px);
 }
 
@@ -27,13 +70,76 @@ Array [
   padding: 0;
 }
 
+.c4 {
+  display: none;
+}
+
+.c5 {
+  margin-right: 20px;
+}
+
+.c6 {
+  color: #FFF;
+}
+
+.c7 {
+  color: #FFF;
+}
+
+@media (min-width:1040px) {
+  .c11 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c10 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    width: 240px;
+  }
+}
+
 @media (min-width:1040px) {
   .c0 {
     display: none;
   }
 }
 
+@media (min-width:1040px) {
+  .c4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
 <div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
     className="c0"
   >
     <div
@@ -82,7 +188,7 @@ Array [
             }
           >
             <span>
-              Create
+              Edit
             </span>
           </h1>
         </div>
@@ -184,7 +290,7 @@ Array [
             }
           >
             <span>
-              Create
+              Edit
             </span>
           </h1>
         </div>
@@ -241,41 +347,15 @@ Array [
         </svg>
       </button>
     </div>
-  </div>,
-  .c0 {
-  display: none;
-}
-
-.c1 {
-  margin-right: 20px;
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    margin: 60px 0 40px 0;
-  }
-}
-
-<div
-    className="c0"
+  </div>
+  <div
+    className="c4"
   >
     <div
-      className="c1"
+      className="c5"
     >
       <h2
-        className=""
+        className="c6"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -291,7 +371,7 @@ Array [
         </span>
       </h2>
       <h1
-        className=""
+        className="c7"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -305,174 +385,36 @@ Array [
         }
       >
         <span>
-          Create
+          Edit
         </span>
       </h1>
     </div>
     <div
       className=""
     />
-  </div>,
-  .c1 {
-  padding-top: 7px;
-}
-
-.c2 {
-  height: 155px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c3 {
-  position: fixed;
-  padding: 40px 0 36px;
-  bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, undefined,undefined 30%, rgba(0,0,0,0) );
-}
-
-.c5 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
-.c0 {
-  width: 100%;
-}
-
-@media (min-width:1040px) {
-  .c4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c3 {
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c5 {
-    width: 240px;
-  }
-}
-
-<form
-    className="c0"
+  </div>
+  <form
+    className=""
     onSubmit={[Function]}
   >
     <div
-      className=""
+      className="c8"
     >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "maxWidth": "100%",
-            "paddingBottom": "30px",
-            "position": "relative",
-          }
-        }
-      >
-        <label
-          htmlFor="name"
-          style={
-            Object {
-              "border": "none",
-              "borderTop": "2px solid #2F2F36",
-              "color": "#71737e",
-              "display": "block",
-              "fontSize": "14px",
-              "outline": "none",
-              "paddingTop": "8px",
-              "width": "100%",
-            }
-          }
-        >
-          Directory Name
-        </label>
-        <input
-          id="name"
-          name="name"
-          onBlur={[Function]}
-          onChange={[Function]}
-          placeholder="Name"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "color": "#FFF",
-              "fontSize": "18px",
-              "lineHeight": "24px",
-              "outline": "none",
-            }
-          }
-          type="text"
-        />
-        <div
-          style={
-            Object {
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        >
-          <div
-            className="c1"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
+      <span>
+        Loading...
+      </span>
     </div>
     <div
-      className="c2"
+      className="c9"
     >
       <div
-        className="c3"
+        className="c10"
       >
         <div
-          className="c4"
+          className="c11"
         >
           <button
-            className="c5"
+            className="c12"
             disabled={false}
             id="backBtn"
             onClick={[Function]}
@@ -495,20 +437,20 @@ Array [
             }
           >
             <span>
-              Cancel
+              Back
             </span>
           </button>
           <button
-            className="c5"
-            disabled={true}
-            id="createDirectoryBtn"
+            className="c12"
+            disabled={false}
+            id="editDirectoryBtn"
             style={
               Object {
-                "backgroundColor": "#1d1d20",
+                "backgroundColor": "#FFF",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
+                "color": "#000",
+                "cursor": "pointer",
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",
@@ -522,12 +464,12 @@ Array [
             type="submit"
           >
             <span>
-              Create
+              Save
             </span>
           </button>
         </div>
       </div>
     </div>
-  </form>,
-]
+  </form>
+</div>
 `;

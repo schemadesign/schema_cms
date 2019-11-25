@@ -42,14 +42,27 @@ exports[`CreateDirectory: Component should render correctly 1`] = `
       errors={Object {}}
       fullWidth={true}
       handleBlur={[Function]}
-      history={Object {}}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
       isEdit={true}
+      label="Directory Name"
+      match={
+        Object {
+          "params": Object {
+            "projectId": "1",
+          },
+        }
+      }
       name="name"
       onChange={[Function]}
+      placeholder="Name"
       touched={Object {}}
     />
     <NavigationContainer
-      hideOnDesktop={true}
+      hideOnDesktop={false}
       right={false}
     >
       <BackButton
@@ -58,8 +71,8 @@ exports[`CreateDirectory: Component should render correctly 1`] = `
         onClick={[Function]}
       >
         <FormattedMessage
-          defaultMessage="Back"
-          id="project.createDirectory.back"
+          defaultMessage="Cancel"
+          id="project.createDirectory.cancel"
           values={Object {}}
         />
       </BackButton>

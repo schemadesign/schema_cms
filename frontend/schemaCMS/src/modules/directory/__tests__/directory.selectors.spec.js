@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectDirectoryDomain, selectDirectories, selectDirectory, selectDirectoryName } from '../directory.selectors';
+import { selectDirectoryDomain, selectDirectories, selectDirectory } from '../directory.selectors';
 
 describe('Directory: selectors', () => {
   const state = Immutable({
@@ -28,12 +28,6 @@ describe('Directory: selectors', () => {
   describe('selectDirectory', () => {
     it('should select a directory', () => {
       expect(selectDirectory(state)).to.equal(state.directory.directory);
-    });
-  });
-
-  describe('selectDirectoryName', () => {
-    it('should select a directory name', () => {
-      expect(selectDirectoryName(state)).to.equal(state.directory.directory.name);
     });
   });
 });
