@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { CreateDirectory } from './createDirectory.component';
+import { CreatePage } from './createPage.component';
 
 export const defaultProps = {
   intl: {
@@ -14,4 +14,4 @@ export const defaultProps = {
   handleBlur: Function.prototype,
 };
 
-storiesOf('CreateDirectory', module).add('Default', () => <CreateDirectory {...defaultProps} />);
+storiesOf('CreatePage', module).add('Default', () => <CreatePage {...defaultProps} />);

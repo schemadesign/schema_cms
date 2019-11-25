@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateDirectory: Component should render correctly 1`] = `
+exports[`CreatePage: Component should render correctly 1`] = `
 <Fragment>
   <TopHeader
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="project.createDirectory.subTitle"
+        id="project.createPage.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Directories"
-        id="project.createDirectory.title"
+        defaultMessage="Page"
+        id="project.createPage.title"
         values={Object {}}
       />
     }
@@ -22,14 +22,14 @@ exports[`CreateDirectory: Component should render correctly 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="project.createDirectory.subTitle"
+        id="project.createPage.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
-        defaultMessage="Directories"
-        id="project.createDirectory.title"
+        defaultMessage="Page"
+        id="project.createPage.title"
         values={Object {}}
       />
     }
@@ -43,8 +43,32 @@ exports[`CreateDirectory: Component should render correctly 1`] = `
       fullWidth={true}
       handleBlur={[Function]}
       history={Object {}}
-      isEdit={true}
-      name="name"
+      isEdit={false}
+      name="title"
+      onChange={[Function]}
+      touched={Object {}}
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      history={Object {}}
+      isEdit={false}
+      multiline={true}
+      name="description"
+      onChange={[Function]}
+      touched={Object {}}
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      history={Object {}}
+      isEdit={false}
+      multiline={true}
+      name="keywords"
       onChange={[Function]}
       touched={Object {}}
     />
@@ -59,19 +83,19 @@ exports[`CreateDirectory: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Back"
-          id="project.createDirectory.back"
+          id="project.createPage.back"
           values={Object {}}
         />
       </BackButton>
       <NextButton
         disabled={true}
-        id="createDirectoryBtn"
+        id="createPageBtn"
         loading={false}
         type="submit"
       >
         <FormattedMessage
           defaultMessage="Create"
-          id="project.createDirectory.createDirectory"
+          id="project.createPage.createPage"
           values={Object {}}
         />
       </NextButton>

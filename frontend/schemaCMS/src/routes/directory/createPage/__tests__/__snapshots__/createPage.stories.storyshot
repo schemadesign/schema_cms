@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CreateDirectory Default 1`] = `
+exports[`Storyshots CreatePage Default 1`] = `
 Array [
   .c0 {
   width: calc(100% - 50px);
@@ -65,7 +65,7 @@ Array [
             }
           >
             <span>
-              Directories
+              Page
             </span>
           </h2>
           <h1
@@ -167,7 +167,7 @@ Array [
             }
           >
             <span>
-              Directories
+              Page
             </span>
           </h2>
           <h1
@@ -287,7 +287,7 @@ Array [
         }
       >
         <span>
-          Directories
+          Page
         </span>
       </h2>
       <h1
@@ -314,14 +314,10 @@ Array [
     />
   </div>,
   .c1 {
-  padding-top: 7px;
-}
-
-.c2 {
   height: 155px;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -340,7 +336,7 @@ Array [
   width: 100%;
 }
 
-.c3 {
+.c2 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -348,7 +344,7 @@ Array [
   background-image: linear-gradient( to top, undefined,undefined 30%, rgba(0,0,0,0) );
 }
 
-.c5 {
+.c4 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -358,19 +354,19 @@ Array [
 }
 
 @media (min-width:1040px) {
-  .c4 {
+  .c3 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c3 {
+  .c2 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c5 {
+  .c4 {
     width: 240px;
   }
 }
@@ -394,8 +390,8 @@ Array [
         }
       >
         <input
-          id="name"
-          name="name"
+          id="title"
+          name="title"
           onBlur={[Function]}
           onChange={[Function]}
           style={
@@ -418,40 +414,154 @@ Array [
               "top": 0,
             }
           }
-        >
-          <div
-            className="c1"
-          >
-            <svg
-              style={
-                Object {
-                  "fill": "#FFF",
-                  "height": "30px",
-                  "width": "30px",
-                }
-              }
-              viewBox="0 0 30 30"
-            >
-              <path
-                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
+        />
       </div>
     </div>
     <div
-      className="c2"
+      className=""
     >
       <div
-        className="c3"
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <textarea
+          id="description"
+          onBlur={[Function]}
+          onChange={[Function]}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": "0",
+              "resize": "none",
+            }
+          }
+          type="text"
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className=""
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <textarea
+          id="keywords"
+          onBlur={[Function]}
+          onChange={[Function]}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": "0",
+              "resize": "none",
+            }
+          }
+          type="text"
+        />
+        <textarea
+          aria-hidden={true}
+          readOnly={true}
+          style={
+            Object {
+              "background": "#000",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "height": 0,
+              "left": 0,
+              "lineHeight": "24px",
+              "outline": "none",
+              "overflow": "hidden",
+              "padding": "0",
+              "position": "absolute",
+              "resize": "none",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          tabIndex={-1}
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
       >
         <div
-          className="c4"
+          className="c3"
         >
           <button
-            className="c5"
+            className="c4"
             disabled={false}
             id="backBtn"
             onClick={[Function]}
@@ -478,9 +588,9 @@ Array [
             </span>
           </button>
           <button
-            className="c5"
+            className="c4"
             disabled={true}
-            id="createDirectoryBtn"
+            id="createPageBtn"
             style={
               Object {
                 "backgroundColor": "#1d1d20",

@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { CreateDirectory } from '../createDirectory.component';
-import { defaultProps } from '../createDirectory.stories';
+import { CreatePage } from '../createPage.component';
+import { defaultProps } from '../createPage.stories';
 
-describe('CreateDirectory: Component', () => {
-  const component = props => <CreateDirectory {...defaultProps} {...props} />;
+describe('CreatePage: Component', () => {
+  const component = props => <CreatePage {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
