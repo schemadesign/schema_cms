@@ -7,7 +7,7 @@ import { watchPage } from '../page.sagas';
 import { PageRoutines } from '../page.redux';
 import mockApi from '../../../shared/utils/mockApi';
 
-describe('Directory: sagas', () => {
+describe('Page: sagas', () => {
   const defaultState = Immutable({
     pages: [],
   });

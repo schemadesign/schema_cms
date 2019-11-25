@@ -19,8 +19,8 @@ describe('Page: redux', () => {
     });
   });
 
-  describe('when PAGE/FETCH_LIST success action is received', () => {
-    it('should set filters', () => {
+  describe('when PAGE/FETCH_LIST action is received', () => {
+    it('should set pages', () => {
       const pages = [{ data: 'data' }];
 
       const resultState = pageReducer(state, PageRoutines.fetchList.success(pages));

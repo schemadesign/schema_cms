@@ -12,6 +12,7 @@ import { watchJob } from './job/job.sagas';
 import { watchFilter } from './filter/filter.sagas';
 import { watchDirectory } from './directory/directory.sagas';
 import { watchPage } from './page/page.sagas';
+import { watchBlock } from './block/block.sagas';
 //<-- IMPORT MODULE SAGA -->
 
 export default function* rootSaga() {
@@ -28,6 +29,7 @@ export default function* rootSaga() {
       fork(watchFilter),
       fork(watchDirectory),
       fork(watchPage),
+      fork(watchBlock),
       //<-- INJECT MODULE SAGA -->
     ]);
   } catch (e) {
