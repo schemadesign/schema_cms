@@ -39,8 +39,7 @@ function* fetchUser({ payload: { userId } }) {
   try {
     yield put(UserRoutines.fetchUser.request());
 
-    response = yield api.get(`users/${userId}`);
-
+    const response = yield api.get(`users/${userId}`);
     const { data } = response;
 
     yield put(UserRoutines.fetchUser.success(data));
