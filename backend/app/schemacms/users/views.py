@@ -55,7 +55,7 @@ class UserViewSet(
         try:
             self.perform_create(serializer)
         except auth0.v3.Auth0Error as e:
-            raise serializers.ValidationError(e.message, code=ErrorCode.AUTH0_USER_ALREADY_EXIST)
+            raise serializers.ValidationError({"email": [e.message]}, code=ErrorCode.AUTH0_USER_ALREADY_EXIST)
         headers = self.get_success_headers(serializer.data)
         return response.Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
