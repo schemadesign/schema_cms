@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { find, path, prop, propEq } from 'ramda';
 import { Formik } from 'formik';
-import { FormattedMessage } from 'react-intl';
 
 import browserHistory from '../../../utils/history';
 import {
@@ -13,7 +12,6 @@ import {
 } from '../../../../modules/user/user.constants';
 import { ROLES } from '../../../../modules/userProfile/userProfile.constants';
 import { UserCreate } from '../userCreateComponent/userCreate.component';
-import { renderWhenTrueOtherwise } from '../../../utils/rendering';
 import { errorMessageParser } from '../../../utils/helpers';
 import { LoadingWrapper } from '../../loadingWrapper';
 
@@ -52,8 +50,6 @@ export class UserCreateProject extends PureComponent {
 
       this.setState({ loading: false });
     } catch (e) {
-      console.log(e);
-      debugger;
       browserHistory.push('/');
     }
   }
