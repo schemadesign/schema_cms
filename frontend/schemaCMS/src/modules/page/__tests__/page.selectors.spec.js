@@ -1,12 +1,13 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
-import { selectPageDomain, selectPages } from '../page.selectors';
+import { selectPageDomain, selectPages, selectPage } from '../page.selectors';
 
 describe('Page: selectors', () => {
   const state = Immutable({
     page: {
       pages: [],
+      page: {},
     },
   });
 
@@ -19,6 +20,12 @@ describe('Page: selectors', () => {
   describe('selectPages', () => {
     it('should select a pages', () => {
       expect(selectPages(state)).to.equal(state.page.pages);
+    });
+  });
+
+  describe('selectPage', () => {
+    it('should select a page', () => {
+      expect(selectPage(state)).to.equal(state.page.page);
     });
   });
 });

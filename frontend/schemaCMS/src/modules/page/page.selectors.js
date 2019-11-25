@@ -7,3 +7,8 @@ export const selectPages = createSelector(
   selectPageDomain,
   prop('pages')
 );
+
+export const selectPage = createSelector(
+  selectPageDomain,
+  prop('page')
+);

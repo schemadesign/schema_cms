@@ -8,6 +8,7 @@ export const PROJECTS_PATH = '/projects';
 export const DATA_SOURCES_PATH = '/datasources';
 export const DIRECTORIES_PATH = '/directories';
 export const PAGES_PATH = '/pages';
+export const BLOCK_PATH = '/blocks';
 export const FILTERS_PATH = '/filters';
 export const DATA_WRANGLING_SCRIPTS_PATH = '/script';
 export const DATA_WRANGLING_JOB_PATH = '/job';

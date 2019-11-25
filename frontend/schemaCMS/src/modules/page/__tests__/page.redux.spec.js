@@ -19,12 +19,21 @@ describe('Page: redux', () => {
     });
   });
 
-  describe('when PAGE/FETCH_LIST success action is received', () => {
-    it('should set filters', () => {
+  describe('when PAGE/FETCH_LIST action is received', () => {
+    it('should set pages', () => {
       const pages = [{ data: 'data' }];
 
       const resultState = pageReducer(state, PageRoutines.fetchList.success(pages));
       expect(resultState.pages).to.deep.equal(pages);
+    });
+  });
+
+  describe('when PAGE/FETCH_ONE action is received', () => {
+    it('should set page', () => {
+      const page = { data: 'data' };
+
+      const resultState = pageReducer(state, PageRoutines.fetchOne.success(page));
+      expect(resultState.page).to.deep.equal(page);
     });
   });
 

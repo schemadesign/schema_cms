@@ -18,7 +18,7 @@ export const defaultProps = {
         firstName: 'firstName',
         lastName: 'lastName',
       },
-      metaData: {
+      meta: {
         blocks: 8,
       },
     },

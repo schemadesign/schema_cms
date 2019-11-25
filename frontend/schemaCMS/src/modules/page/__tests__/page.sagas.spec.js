@@ -7,7 +7,7 @@ import { watchPage } from '../page.sagas';
 import { PageRoutines } from '../page.redux';
 import mockApi from '../../../shared/utils/mockApi';
 
-describe('Directory: sagas', () => {
+describe('Page: sagas', () => {
   const defaultState = Immutable({
     pages: [],
   });
@@ -31,6 +31,25 @@ describe('Directory: sagas', () => {
         .withState(defaultState)
         .put(PageRoutines.fetchList.success(response))
         .dispatch(PageRoutines.fetchList(payload))
+        .silentRun();
+    });
+  });
+
+  describe('when fetchOne action is called', () => {
+    it('should put fetchOne.success action', async () => {
+      const response = {
+        id: 1,
+      };
+      const payload = {
+        pageId: 1,
+      };
+
+      mockApi.get(`/pages/${payload.pageId}`).reply(OK, response);
+
+      await expectSaga(watchPage)
+        .withState(defaultState)
+        .put(PageRoutines.fetchOne.success(response))
+        .dispatch(PageRoutines.fetchOne(payload))
         .silentRun();
     });
   });

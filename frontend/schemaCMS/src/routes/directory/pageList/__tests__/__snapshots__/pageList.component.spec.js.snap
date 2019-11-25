@@ -58,7 +58,7 @@ exports[`PageList: Component should render correctly 1`] = `
             id="directory.pageList.blocks"
             values={
               Object {
-                "length": "0",
+                "length": 8,
               }
             }
           />
@@ -176,7 +176,7 @@ exports[`PageList: Component should render correctly with loader 1`] = `
             id="directory.pageList.blocks"
             values={
               Object {
-                "length": "0",
+                "length": 8,
               }
             }
           />

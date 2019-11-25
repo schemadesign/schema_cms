@@ -19,6 +19,20 @@ function* fetchList({ payload: { directoryId } }) {
   }
 }
 
+function* fetchOne({ payload: { pageId } }) {
+  try {
+    yield put(PageRoutines.fetchList.request());
+
+    const { data } = yield api.get(`${PAGES_PATH}/${pageId}`);
+
+    yield put(PageRoutines.fetchOne.success(data));
+  } catch (e) {
+    yield put(PageRoutines.fetchOne.failure(e));
+  } finally {
+    yield put(PageRoutines.fetchOne.fulfill());
+  }
+}
+
 function* create({ payload: { directoryId, ...payload } }) {
   try {
     yield put(PageRoutines.create.request());
@@ -35,5 +49,9 @@ function* create({ payload: { directoryId, ...payload } }) {
 }
 
 export function* watchPage() {
-  yield all([takeLatest(PageRoutines.fetchList.TRIGGER, fetchList), takeLatest(PageRoutines.create.TRIGGER, create)]);
+  yield all([
+    takeLatest(PageRoutines.fetchList.TRIGGER, fetchList),
+    takeLatest(PageRoutines.fetchOne.TRIGGER, fetchOne),
+    takeLatest(PageRoutines.create.TRIGGER, create),
+  ]);
 }
