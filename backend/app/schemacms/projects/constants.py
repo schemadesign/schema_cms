@@ -1,5 +1,10 @@
 from enum import Enum
 
+SCRIPT_NAME_MAX_LENGTH = 50
+DATASOURCE_NAME_MAX_LENGTH = 50
+DIRECTORY_NAME_MAX_LENGTH = 50
+BLOCK_NAME_MAX_LENGTH = 50
+
 
 class ProjectStatus:
     IN_PROGRESS = "in_progress"
@@ -14,9 +19,6 @@ PROJECT_STATUS_CHOICES = (
     (ProjectStatus.HOLD, "hold"),
     (ProjectStatus.PUBLISHED, "published"),
 )
-
-
-DATASOURCE_NAME_MAX_LENGTH = 25
 
 
 class DataSourceType:
@@ -45,8 +47,6 @@ DATA_SOURCE_JOB_STATE_CHOICES = (
     (DataSourceJobState.FAILED, 'Failed'),
     (DataSourceJobState.SUCCESS, 'Success'),
 )
-
-SCRIPT_NAME_MAX_LENGTH = 50
 
 
 class FilterType(Enum):
