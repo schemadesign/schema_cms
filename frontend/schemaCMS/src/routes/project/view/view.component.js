@@ -134,16 +134,22 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = ({ id: projectId, editors, owner = {}, slug, created, charts, pages, meta, status } = {}) => {
+  renderProject = ({ id: projectId, editors, owner = {}, slug, created, charts, meta, status } = {}) => {
+    const getCounter = propName => path([propName, 'count'], meta);
     const statistics = [
       {
         header: this.renderStatisticHeader(messages.dataSources),
-        value: path(['dataSources', 'count'], meta),
+        value: getCounter('dataSources'),
         to: `/project/${projectId}/datasource`,
         id: 'projectDataSources',
       },
       { header: this.renderStatisticHeader(messages.charts), value: this.countItems(charts) },
-      { header: this.renderStatisticHeader(messages.pages), value: this.countItems(pages) },
+      {
+        header: this.renderStatisticHeader(messages.pages),
+        value: getCounter('pages'),
+        to: `/project/${projectId}/directory`,
+        id: 'projectDirectories',
+      },
       {
         header: this.renderStatisticHeader(messages.users),
         value: this.countItems(editors),
