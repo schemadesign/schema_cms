@@ -109,3 +109,18 @@ FIELD_TYPE_CHOICES = (
     (FieldType.BOOLEAN, 'Boolean'),
     (FieldType.NUMBER, 'Number'),
 )
+
+
+class BlockTypes:
+    VIDEO = "youtube_embed"
+    CODE = "code_snippet"
+    TEXT = "markdown_text"
+    IMAGE = "image_uploaded"
+
+
+BLOCK_TYPE_CHOICES = (
+    (BlockTypes.VIDEO, 'Youtube Embed'),
+    (BlockTypes.CODE, 'Code Snippet'),
+    (BlockTypes.TEXT, 'Markdown Text'),
+    (BlockTypes.IMAGE, 'Image Uploaded'),
+)
