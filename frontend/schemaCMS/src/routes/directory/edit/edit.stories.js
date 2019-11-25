@@ -29,6 +29,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Edit', module)
+storiesOf('Directory/Edit', module)
   .addDecorator(withTheme())
   .add('Default', () => <Edit {...defaultProps} />);
