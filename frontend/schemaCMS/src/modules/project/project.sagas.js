@@ -2,7 +2,6 @@ import { all, put, takeLatest, select } from 'redux-saga/effects';
 
 import { ProjectRoutines } from './project.redux';
 import browserHistory from '../../shared/utils/history';
-import { getError } from '../../shared/utils/helpers';
 import api from '../../shared/services/api';
 import { PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { PROJECT_OWNER } from './project.constants';
@@ -20,7 +19,7 @@ function* fetchList() {
 
     yield put(ProjectRoutines.fetchList.success(results));
   } catch (error) {
-    yield put(ProjectRoutines.fetchList.failure(getError(error)));
+    yield put(ProjectRoutines.fetchList.failure(error));
   } finally {
     yield put(ProjectRoutines.fetchList.fulfill());
   }
@@ -50,7 +49,7 @@ function* fetchOne({ payload }) {
 
     yield put(ProjectRoutines.fetchOne.success(data));
   } catch (error) {
-    yield put(ProjectRoutines.fetchOne.failure(getError(error)));
+    yield put(ProjectRoutines.fetchOne.failure(error));
   } finally {
     yield put(ProjectRoutines.fetchOne.fulfill());
   }

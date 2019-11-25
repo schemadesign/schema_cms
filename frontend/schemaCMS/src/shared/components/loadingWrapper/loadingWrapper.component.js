@@ -12,7 +12,7 @@ export class LoadingWrapper extends PureComponent {
     loading: PropTypes.bool,
     noData: PropTypes.bool,
     noDataContent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    error: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    error: PropTypes.any,
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.func]),
   };
 

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { has, is } from 'ramda';
+import { is, path } from 'ramda';
 
 import { ERROR_TYPES, CODES, OTHER } from './errorContainer.constants';
 import { Container } from './errorContainer.styles';
@@ -10,11 +10,12 @@ import messages from './errorContainer.messages';
 export class ErrorContainer extends PureComponent {
   static propTypes = {
     type: PropTypes.string,
-    error: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.element]),
+    error: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   };
 
   static defaultProps = {
     type: ERROR_TYPES.DEFAULT,
+    error: null,
   };
 
   renderContent = error => {
@@ -22,14 +23,14 @@ export class ErrorContainer extends PureComponent {
       return null;
     }
 
-    if (is(Object, error) && has('code', error)) {
-      const { code = OTHER } = error;
-      const updatedCode = CODES[code] || OTHER;
-
-      return <FormattedMessage {...messages[updatedCode]} />;
+    if (is(String, error)) {
+      return error;
     }
 
-    return error;
+    const code = path([0, 'code'], error);
+    const updatedCode = CODES[code] || OTHER;
+
+    return <FormattedMessage {...messages[updatedCode]} />;
   };
 
   render() {
