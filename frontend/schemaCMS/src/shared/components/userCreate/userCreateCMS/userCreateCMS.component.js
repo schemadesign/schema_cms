@@ -15,7 +15,6 @@ export class UserCreateCMS extends PureComponent {
   };
 
   handleSubmit = (createUserCMS, intl) => async (data, { setSubmitting, setErrors }) => {
-    debugger;
     try {
       setSubmitting(true);
 
