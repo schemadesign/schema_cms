@@ -53,7 +53,7 @@ export class PageList extends PureComponent {
   getDirectoryId = () => path(['match', 'params', 'directoryId'], this.props);
   getProjectId = () => path(['directory', 'project'], this.props);
 
-  handleCreatePage = () => this.props.history.push(`/directory/${this.getDirectoryId()}/page/create`);
+  handleCreatePage = () => this.props.history.push(`/directory/${this.getDirectoryId()}/page`);
 
   handleShowDirectoryList = () => this.props.history.push(`/project/${this.getProjectId()}/directory`);
 
@@ -69,11 +69,11 @@ export class PageList extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ id, name = '', created = '', createdBy = {}, description, metaData }, index) {
+  renderItem({ id, name = '', created = '', createdBy = {}, description }, index) {
     const { firstName, lastName } = createdBy;
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderHeader([whenCreated, `${firstName} ${lastName}`]);
-    const footer = <FormattedMessage values={{ length: metaData.blocks }} {...messages.blocks} />;
+    const footer = <FormattedMessage values={{ length: '0' }} {...messages.blocks} />;
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>

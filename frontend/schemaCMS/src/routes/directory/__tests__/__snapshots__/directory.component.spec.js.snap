@@ -10,6 +10,11 @@ exports[`Directory: Component should render correctly 1`] = `
   <Route
     component={[Function]}
     exact={true}
+    path="path/:directoryId/page"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
     path="path/:directoryId/edit"
   />
 </Switch>

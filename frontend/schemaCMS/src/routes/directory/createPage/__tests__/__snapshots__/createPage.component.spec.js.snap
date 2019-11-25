@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreatePage: Component should render correctly 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Create"
+        id="directory.createPage.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Page"
+        id="directory.createPage.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Create"
+        id="directory.createPage.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Page"
+        id="directory.createPage.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      isEdit={false}
+      match={
+        Object {
+          "params": Object {
+            "projectId": 1,
+          },
+        }
+      }
+      name="title"
+      onChange={[Function]}
+      touched={Object {}}
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      isEdit={false}
+      match={
+        Object {
+          "params": Object {
+            "projectId": 1,
+          },
+        }
+      }
+      multiline={true}
+      name="description"
+      onChange={[Function]}
+      touched={Object {}}
+    />
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      isEdit={false}
+      match={
+        Object {
+          "params": Object {
+            "projectId": 1,
+          },
+        }
+      }
+      multiline={true}
+      name="keywords"
+      onChange={[Function]}
+      touched={Object {}}
+    />
+    <NavigationContainer
+      hideOnDesktop={true}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        id="backBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Back"
+          id="directory.createPage.back"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={true}
+        id="createPageBtn"
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Create"
+          id="directory.createPage.createPage"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
+</Fragment>
+`;
