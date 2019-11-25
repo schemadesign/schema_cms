@@ -97,7 +97,6 @@ Content-Type application/json
 Content-Type application/json
 200 OK
 [
-[
     {
         "id": 1,
         "page": 1,
