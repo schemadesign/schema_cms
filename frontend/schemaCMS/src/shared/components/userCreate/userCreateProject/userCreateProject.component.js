@@ -15,9 +15,7 @@ import { ROLES } from '../../../../modules/userProfile/userProfile.constants';
 import { UserCreate } from '../userCreateComponent/userCreate.component';
 import { renderWhenTrueOtherwise } from '../../../utils/rendering';
 import { errorMessageParser } from '../../../utils/helpers';
-import { Loading } from './userCreateProject.styles';
-
-import messages from './userCreateProject.messages';
+import { LoadingWrapper } from '../../loadingWrapper';
 
 export class UserCreateProject extends PureComponent {
   static propTypes = {
@@ -34,6 +32,10 @@ export class UserCreateProject extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
+  state = {
+    loading: true,
+  };
+
   async componentDidMount() {
     try {
       const { match } = this.props;
@@ -47,7 +49,11 @@ export class UserCreateProject extends PureComponent {
         await this.props.fetchUser({ userId });
         await this.props.fetchProject({ projectId });
       }
+
+      this.setState({ loading: false });
     } catch (e) {
+      console.log(e);
+      debugger;
       browserHistory.push('/');
     }
   }
@@ -80,46 +86,40 @@ export class UserCreateProject extends PureComponent {
     browserHistory.push(`/project/${this.props.project.id}/user/add`);
   };
 
-  renderLoading = renderWhenTrueOtherwise(
-    () => (
-      <Loading>
-        <FormattedMessage {...messages.loading} />
-      </Loading>
-    ),
-    () => {
-      const { project, user, createUserProject, intl } = this.props;
+  renderContent = () => {
+    const { project, user, createUserProject, intl } = this.props;
 
-      const headerValues = {
-        project: project.title,
-        user: `${user.firstName} ${user.lastName}`,
-      };
+    const headerValues = {
+      project: project.title,
+      user: `${user.firstName} ${user.lastName}`,
+    };
 
-      return (
-        <Formik
-          isInitialValid
-          enableReinitialize={false}
-          displayName={USER_CREATE_PROJECT_FORM}
-          validationSchema={USER_CREATE_PROJECT_SCHEME}
-          onSubmit={this.handleSubmit(project, createUserProject, intl)}
-          initialValues={{
-            ...this.props.user,
-            [USER_ROLE]: prop('label')(find(propEq('value', ROLES.EDITOR), NEW_USER_ROLES_OPTIONS)),
-          }}
-          render={({ handleSubmit, ...restProps }) => (
-            <UserCreate
-              handleSubmit={handleSubmit}
-              headerValues={headerValues}
-              onCancelClick={this.handleCancelClick}
-              {...restProps}
-            />
-          )}
-        />
-      );
-    }
-  );
+    return (
+      <Formik
+        isInitialValid
+        enableReinitialize={false}
+        displayName={USER_CREATE_PROJECT_FORM}
+        validationSchema={USER_CREATE_PROJECT_SCHEME}
+        onSubmit={this.handleSubmit(project, createUserProject, intl)}
+        initialValues={{
+          ...this.props.user,
+          [USER_ROLE]: prop('label')(find(propEq('value', ROLES.EDITOR), NEW_USER_ROLES_OPTIONS)),
+        }}
+        render={({ handleSubmit, ...restProps }) => (
+          <UserCreate
+            handleSubmit={handleSubmit}
+            headerValues={headerValues}
+            onCancelClick={this.handleCancelClick}
+            {...restProps}
+          />
+        )}
+      />
+    );
+  };
 
   render() {
-    const { project, user } = this.props;
-    return this.renderLoading(!project.id || !user.id);
+    const { loading } = this.state;
+
+    return <LoadingWrapper loading={loading}>{this.renderContent}</LoadingWrapper>;
   }
 }
