@@ -111,6 +111,7 @@ class TestListCreateProjectView:
         # +1 count query for pagination
         # +1 projects query
         # +1 prefetch editors
+        # +1 prefetch directories
         with django_assert_num_queries(4):
             response = api_client.get(self.get_url())
         assert response.status_code == status.HTTP_200_OK
