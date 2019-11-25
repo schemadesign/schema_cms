@@ -1365,7 +1365,6 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         <div
           style={
             Object {
-              "height": "100%",
               "width": "100%",
             }
           }
@@ -1557,7 +1556,6 @@ exports[`Storyshots DataSourceList With data source 1`] = `
         <div
           style={
             Object {
-              "height": "100%",
               "width": "100%",
             }
           }
@@ -2518,7 +2516,6 @@ exports[`Storyshots DataSourceList With jobs 1`] = `
         <div
           style={
             Object {
-              "height": "100%",
               "width": "100%",
             }
           }

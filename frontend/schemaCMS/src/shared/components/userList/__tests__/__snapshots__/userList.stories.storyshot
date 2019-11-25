@@ -154,7 +154,6 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       <div
         style={
           Object {
-            "height": "100%",
             "width": "100%",
           }
         }
@@ -204,7 +203,6 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       <div
         style={
           Object {
-            "height": "100%",
             "width": "100%",
           }
         }
@@ -254,7 +252,6 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
       <div
         style={
           Object {
-            "height": "100%",
             "width": "100%",
           }
         }
@@ -404,7 +401,6 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       <div
         style={
           Object {
-            "height": "100%",
             "width": "100%",
           }
         }
@@ -494,7 +490,6 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       <div
         style={
           Object {
-            "height": "100%",
             "width": "100%",
           }
         }
@@ -584,7 +579,6 @@ exports[`Storyshots Shared Components|UserList with users and actions 1`] = `
       <div
         style={
           Object {
-            "height": "100%",
             "width": "100%",
           }
         }

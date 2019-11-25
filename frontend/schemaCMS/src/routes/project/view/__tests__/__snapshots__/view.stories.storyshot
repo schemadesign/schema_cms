@@ -849,7 +849,6 @@ exports[`Storyshots Project/View default 1`] = `
               <div
                 style={
                   Object {
-                    "height": "100%",
                     "width": "100%",
                   }
                 }
@@ -902,7 +901,6 @@ exports[`Storyshots Project/View default 1`] = `
               <div
                 style={
                   Object {
-                    "height": "100%",
                     "width": "100%",
                   }
                 }
