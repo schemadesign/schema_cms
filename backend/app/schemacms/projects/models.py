@@ -511,8 +511,8 @@ class Block(utils_models.MetaGeneratorMixin, ext_models.TimeStampedModel):
     page: Page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name="blocks")
     name = models.CharField(max_length=25)
     type = models.CharField(max_length=25, choices=constants.BLOCK_TYPE_CHOICES)
-    content = models.TextField(null=True, blank=True, default="")
-    image = models.ImageField(upload_to=file_upload_path, null=True,)
+    content = models.TextField(blank=True, default="")
+    image = models.ImageField(upload_to=file_upload_path, null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
