@@ -6,14 +6,14 @@ exports[`CreatePage: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="project.createPage.subTitle"
+        id="directory.createPage.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Page"
-        id="project.createPage.title"
+        id="directory.createPage.title"
         values={Object {}}
       />
     }
@@ -22,14 +22,14 @@ exports[`CreatePage: Component should render correctly 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="project.createPage.subTitle"
+        id="directory.createPage.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Page"
-        id="project.createPage.title"
+        id="directory.createPage.title"
         values={Object {}}
       />
     }
@@ -42,8 +42,19 @@ exports[`CreatePage: Component should render correctly 1`] = `
       errors={Object {}}
       fullWidth={true}
       handleBlur={[Function]}
-      history={Object {}}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
       isEdit={false}
+      match={
+        Object {
+          "params": Object {
+            "projectId": 1,
+          },
+        }
+      }
       name="title"
       onChange={[Function]}
       touched={Object {}}
@@ -53,8 +64,19 @@ exports[`CreatePage: Component should render correctly 1`] = `
       errors={Object {}}
       fullWidth={true}
       handleBlur={[Function]}
-      history={Object {}}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
       isEdit={false}
+      match={
+        Object {
+          "params": Object {
+            "projectId": 1,
+          },
+        }
+      }
       multiline={true}
       name="description"
       onChange={[Function]}
@@ -65,8 +87,19 @@ exports[`CreatePage: Component should render correctly 1`] = `
       errors={Object {}}
       fullWidth={true}
       handleBlur={[Function]}
-      history={Object {}}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
       isEdit={false}
+      match={
+        Object {
+          "params": Object {
+            "projectId": 1,
+          },
+        }
+      }
       multiline={true}
       name="keywords"
       onChange={[Function]}
@@ -83,7 +116,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Back"
-          id="project.createPage.back"
+          id="directory.createPage.back"
           values={Object {}}
         />
       </BackButton>
@@ -95,7 +128,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Create"
-          id="project.createPage.createPage"
+          id="directory.createPage.createPage"
           values={Object {}}
         />
       </NextButton>
