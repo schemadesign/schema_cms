@@ -27,9 +27,9 @@ describe('DirectoryList: Component', () => {
 
   it('should go to main page', async () => {
     jest.spyOn(defaultProps.history, 'push');
-    defaultProps.fetchList = jest.fn().mockReturnValue(Promise.reject());
-    render();
-    await Promise.resolve();
+    defaultProps.fetchDirectories = jest.fn().mockReturnValue(Promise.reject());
+    await render();
+
     expect(defaultProps.history.push).toBeCalledWith('/');
   });
 
@@ -37,7 +37,7 @@ describe('DirectoryList: Component', () => {
     jest.spyOn(defaultProps, 'fetchList');
     render();
 
-    expect(defaultProps.fetchList).toBeCalledWith({ projectId: '1' });
+    expect(defaultProps.fetchDirectories).toBeCalledWith({ projectId: '1' });
   });
 
   it('should go back', () => {

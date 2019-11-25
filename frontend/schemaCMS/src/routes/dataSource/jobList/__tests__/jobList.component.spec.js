@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
 
 import { JobList } from '../jobList.component';
 import { defaultProps, propsWithJobs } from '../jobList.stories';

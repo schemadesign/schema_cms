@@ -2,6 +2,7 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import { FormattedMessage } from 'react-intl';
 import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { DATA_WRANGLING_STEP } from '../../modules/dataSource/dataSource.constants';
@@ -14,7 +15,7 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { TopHeader } from '../../shared/components/topHeader';
 import { Container, Form, customInputStyles } from './dataWranglingScript.styles';
 import messages from './dataWranglingScript.messages';
-import { BackButton, NavigationContainer } from '../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { ContextHeader } from '../../shared/components/contextHeader';
 
 export class DataWranglingScript extends PureComponent {

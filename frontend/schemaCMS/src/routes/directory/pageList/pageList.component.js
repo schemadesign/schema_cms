@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, cond, path, propEq, T } from 'ramda';
+import { path } from 'ramda';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { Typography } from 'schemaUI';
