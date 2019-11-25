@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { UserCreateProject } from '../userCreateProject';
+import { UserCreateProject } from '../userCreateProject.component';
 import { userCreateProjectProps } from '../userCreateProject.stories';
 
 describe('UserCreateProject: Component', () => {

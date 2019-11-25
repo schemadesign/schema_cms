@@ -14,6 +14,7 @@ import {
 import { ROLES } from '../../../../modules/userProfile/userProfile.constants';
 import { UserCreate } from '../userCreateComponent/userCreate.component';
 import { renderWhenTrueOtherwise } from '../../../utils/rendering';
+import { errorMessageParser } from '../../../utils/helpers';
 import { Loading } from './userCreateProject.styles';
 
 import messages from './userCreateProject.messages';
@@ -30,6 +31,7 @@ export class UserCreateProject extends PureComponent {
     match: PropTypes.shape({
       params: PropTypes.object.isRequired,
     }).isRequired,
+    intl: PropTypes.object.isRequired,
   };
 
   async componentDidMount() {
@@ -55,6 +57,24 @@ export class UserCreateProject extends PureComponent {
     this.props.createUserProject({ projectId, userId });
   };
 
+  handleSubmit = ({ id: projectId }, createUserProject, intl) => async (
+    { id: userId },
+    { setSubmitting, setErrors }
+  ) => {
+    try {
+      setSubmitting(true);
+
+      await createUserProject({ projectId, userId });
+    } catch (errors) {
+      const { formatMessage } = intl;
+      const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+      setErrors(errorMessages);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   handleCancelClick = evt => {
     evt.preventDefault();
     browserHistory.push(`/project/${this.props.project.id}/user/add`);
@@ -67,7 +87,7 @@ export class UserCreateProject extends PureComponent {
       </Loading>
     ),
     () => {
-      const { project, user } = this.props;
+      const { project, user, createUserProject, intl } = this.props;
 
       const headerValues = {
         project: project.title,
@@ -80,7 +100,7 @@ export class UserCreateProject extends PureComponent {
           enableReinitialize={false}
           displayName={USER_CREATE_PROJECT_FORM}
           validationSchema={USER_CREATE_PROJECT_SCHEME}
-          onSubmit={this.handleSubmit}
+          onSubmit={this.handleSubmit(project, createUserProject, intl)}
           initialValues={{
             ...this.props.user,
             [USER_ROLE]: prop('label')(find(propEq('value', ROLES.EDITOR), NEW_USER_ROLES_OPTIONS)),

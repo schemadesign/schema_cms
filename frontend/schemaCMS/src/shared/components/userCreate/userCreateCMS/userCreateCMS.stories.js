@@ -9,6 +9,9 @@ export const userCreateCMSProps = {
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   values: {},
+  intl: {
+    formatMessage: ({ defaultMessage }) => defaultMessage,
+  },
 };
 
 storiesOf('Shared Components|UserCreate/UserCreateCMS', module)
