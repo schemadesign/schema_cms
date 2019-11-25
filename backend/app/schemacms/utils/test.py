@@ -1,8 +1,16 @@
+from PIL import Image
 import csv
 import faker.providers
 import io
 
 from django.core.files import base
+
+
+def make_image(size=(100, 100), image_mode='RGB', image_format='PNG'):
+    data = io.BytesIO()
+    Image.new(image_mode, size).save(data, image_format)
+    data.seek(0)
+    return data
 
 
 def make_csv(cols_num=3, rows_num=1):
@@ -40,3 +48,11 @@ class PythonScriptProvider(faker.providers.BaseProvider):
 
     def python_upload_file(self, code, filename="test.py"):
         return base.ContentFile(content=make_script(code).getvalue(), name=filename)
+
+
+class ImageProvider(faker.providers.BaseProvider):
+    def make_image(self, *args, **kwargs):
+        return make_image(*args, **kwargs)
+
+    def image_upload_file(self, filename="test.png"):
+        return base.ContentFile(content=make_image().read(), name=filename)

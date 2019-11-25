@@ -7,18 +7,26 @@ import { compose, path } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
-import { CreateDirectory } from './createDirectory.component';
-import messages from './createDirectory.messages';
-import { DirectoryRoutines } from '../../../modules/directory';
-import { DIRECTORY_FORM, DIRECTORY_SCHEMA, INITIAL_VALUES } from '../../../modules/directory/directory.constants';
+import { Edit } from './edit.component';
+import messages from './edit.messages';
+import { DirectoryRoutines, selectDirectory } from '../../../modules/directory';
+import {
+  DIRECTORY_FORM,
+  DIRECTORY_NAME,
+  DIRECTORY_SCHEMA,
+  INITIAL_VALUES,
+} from '../../../modules/directory/directory.constants';
 import { errorMessageParser } from '../../../shared/utils/helpers';
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  directory: selectDirectory,
+});
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      createDirectory: promisifyRoutine(DirectoryRoutines.create),
+      updateDirectory: promisifyRoutine(DirectoryRoutines.update),
+      fetchDirectory: promisifyRoutine(DirectoryRoutines.fetchOne),
     },
     dispatch
   );
@@ -34,14 +42,18 @@ export default compose(
   withFormik({
     displayName: DIRECTORY_FORM,
     enableReinitialize: true,
-    mapPropsToValues: () => INITIAL_VALUES,
+    mapPropsToValues: ({ directory }) => ({
+      ...INITIAL_VALUES,
+      [DIRECTORY_NAME]: directory.name,
+    }),
     validationSchema: () => DIRECTORY_SCHEMA,
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const projectId = path(['match', 'params', 'projectId'], props);
+        const directoryId = path(['match', 'params', 'directoryId'], props);
+        const projectId = path(['directory', 'project'], props);
 
-        await props.createDirectory({ projectId, ...data });
+        await props.updateDirectory({ directoryId, projectId, ...data });
       } catch (errors) {
         const { formatMessage } = props.intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });
@@ -52,4 +64,4 @@ export default compose(
       }
     },
   })
-)(CreateDirectory);
+)(Edit);

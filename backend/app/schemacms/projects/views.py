@@ -381,11 +381,64 @@ class PageViewSet(
     mixins.UpdateModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = models.Page.objects.select_related("directory", "created_by").all()
+    queryset = models.Page.objects.prefetch_related("blocks").select_related("directory", "created_by").all()
     serializer_class = serializers.PageSerializer
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "retrieve": serializers.PageDetailSerializer,
         "update": serializers.PageDetailSerializer,
         "partial_update": serializers.PageDetailSerializer,
+        "blocks": serializers.BlockSerializer,
+        "set_blocks": serializers.BlockSerializer,
+    }
+
+    @decorators.action(detail=True, url_path='blocks', methods=["GET", "POST"])
+    def blocks(self, request, pk=None, **kwargs):
+        page = self.get_object()
+
+        if request.method == "GET":
+            queryset = page.blocks.select_related("page").all()
+            serializer = self.get_serializer(instance=queryset, many=True)
+            return response.Response(serializer.data, status=status.HTTP_200_OK)
+
+        else:
+            request.data["page"] = page.id
+
+            serializer = self.get_serializer(data=request.data, context=page)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    @decorators.action(detail=True, url_path='set-blocks', methods=["post"])
+    def set_blocks(self, request, pk=None, **kwargs):
+        page = self.get_object()
+        active = request.data.get("active", [])
+        inactive = request.data.get("inactive", [])
+
+        page.blocks.filter(id__in=active).update(is_active=True)
+        page.blocks.filter(id__in=inactive).update(is_active=False)
+
+        page.refresh_from_db()
+
+        serializer = self.get_serializer(instance=page.blocks, many=True)
+
+        return response.Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class BlockViewSet(
+    utils_serializers.ActionSerializerViewSetMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+    viewsets.GenericViewSet,
+):
+    queryset = models.Block.objects.select_related("page").all()
+    serializer_class = serializers.BlockSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    serializer_class_mapping = {
+        "retrieve": serializers.BlockDetailSerializer,
+        "update": serializers.BlockDetailSerializer,
+        "partial_update": serializers.BlockDetailSerializer,
     }

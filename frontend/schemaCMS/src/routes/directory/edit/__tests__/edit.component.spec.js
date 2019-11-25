@@ -1,18 +1,25 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { CreateDirectory } from '../createDirectory.component';
-import { defaultProps } from '../createDirectory.stories';
+import { Edit } from '../edit.component';
+import { defaultProps } from '../edit.stories';
 import { BackButton } from '../../../../shared/components/navigation';
-import { Form } from '../createDirectory.styles';
+import { Form } from '../edit.styles';
 
-describe('CreateDirectory: Component', () => {
-  const component = props => <CreateDirectory {...defaultProps} {...props} />;
+describe('Edit: Component', () => {
+  const component = props => <Edit {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
-  it('should render correctly', () => {
+  it('should render correctly with loader', () => {
     const wrapper = render();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly', async () => {
+    defaultProps.fetchDirectory = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = render();
+    await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
   });
 

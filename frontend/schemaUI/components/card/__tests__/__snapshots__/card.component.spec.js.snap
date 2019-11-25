@@ -22,6 +22,7 @@ exports[`Card: Component should render children when passed in 1`] = `
       <div
         style={
           Object {
+            "height": "100%",
             "width": "100%",
           }
         }
@@ -96,6 +97,7 @@ exports[`Card: Component should render component  with custom style and with hea
       <div
         style={
           Object {
+            "height": "100%",
             "width": "100%",
           }
         }
@@ -151,6 +153,7 @@ exports[`Card: Component should render correctly 1`] = `
       <div
         style={
           Object {
+            "height": "100%",
             "width": "100%",
           }
         }
@@ -200,6 +203,7 @@ exports[`Card: Component should render with attributes 1`] = `
       <div
         style={
           Object {
+            "height": "100%",
             "width": "100%",
           }
         }

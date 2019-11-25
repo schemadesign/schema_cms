@@ -48,10 +48,26 @@ function* create({ payload: { projectId, name } }) {
   }
 }
 
+function* update({ payload: { directoryId, projectId, name } }) {
+  try {
+    yield put(DirectoryRoutines.update.request());
+
+    const { data } = yield api.patch(`${DIRECTORIES_PATH}/${directoryId}`, { name });
+
+    yield put(DirectoryRoutines.update.success(data));
+    browserHistory.push(`/project/${projectId}/directory`);
+  } catch (e) {
+    yield put(DirectoryRoutines.update.failure(e));
+  } finally {
+    yield put(DirectoryRoutines.update.fulfill());
+  }
+}
+
 export function* watchDirectory() {
   yield all([
     takeLatest(DirectoryRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(DirectoryRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(DirectoryRoutines.create.TRIGGER, create),
+    takeLatest(DirectoryRoutines.update.TRIGGER, update),
   ]);
 }

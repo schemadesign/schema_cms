@@ -1,5 +1,6 @@
 import operator
 
+import auth0.v3
 from django import urls
 import pytest
 from rest_framework import status
@@ -168,6 +169,25 @@ class TestUserCreateView:
         response = api_client.post(self.get_url(), payload)
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
+
+    def test_user_already_exist_in_auth0(self, api_client, faker, mocker, admin):
+        api_client.force_authenticate(admin)
+        url = self.get_url()
+        payload = dict(email=faker.email())
+        error_msg = "The user already exists."
+        mocker.patch(
+            "schemacms.users.views.UserViewSet.perform_create",
+            side_effect=auth0.v3.Auth0Error(
+                status_code=status.HTTP_409_CONFLICT, message=error_msg, error_code=409
+            ),
+        )
+
+        response = api_client.post(url, payload)
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.data == {
+            "email": [{"message": error_msg, "code": user_constants.ErrorCode.AUTH0_USER_ALREADY_EXIST}]
+        }
 
     def test_url(self):
         assert "/api/v1/users" == self.get_url()

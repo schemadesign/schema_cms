@@ -22,8 +22,8 @@ export default defineMessages({
     id: 'project.createDirectory.createDirectory',
     defaultMessage: 'Create',
   },
-  back: {
-    id: 'project.createDirectory.back',
-    defaultMessage: 'Back',
+  cancel: {
+    id: 'project.createDirectory.cancel',
+    defaultMessage: 'Cancel',
   },
 });

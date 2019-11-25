@@ -18,13 +18,13 @@ export class CardComponent extends PureComponent {
 
   render() {
     const { customStyles, headerComponent, footerComponent, children, theme, ...restProps } = this.props;
-    const { containerStyles, headerStyles, footerStyles } = getStyles(theme);
+    const { containerStyles, headerStyles, footerStyles, upperStyles } = getStyles(theme);
 
     const styles = { ...containerStyles, ...customStyles };
 
     return (
       <div style={styles} {...restProps}>
-        <div style={{ width: '100%' }}>
+        <div style={upperStyles}>
           {this.renderHeader(headerComponent, headerStyles)}
           {children}
         </div>
