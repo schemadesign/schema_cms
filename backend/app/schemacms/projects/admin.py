@@ -63,7 +63,7 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
         return super().get_queryset(request).select_related("owner").prefetch_related("editors")
 
     def get_editors(self, obj):
-        # to reduce db call use prefetch related cache
+        # to reduce db calls use prefetch related cache
         emails = (editor.email for editor in obj.editors.all())
         html = render_to_string(
             "common/unordered_list.html", context=dict(objects=emails)
