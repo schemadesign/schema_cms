@@ -21,7 +21,9 @@ export class PageList extends PureComponent {
   static propTypes = {
     fetchPages: PropTypes.func.isRequired,
     fetchDirectory: PropTypes.func.isRequired,
-    intl: PropTypes.object.isRequired,
+    intl: PropTypes.shape({
+      formatMessage: PropTypes.func.isRequired,
+    }),
     pages: PropTypes.array.isRequired,
     directory: PropTypes.object.isRequired,
     match: PropTypes.shape({
@@ -69,11 +71,11 @@ export class PageList extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ id, name = '', created = '', createdBy = {}, description }, index) {
+  renderItem({ id, name = '', created = '', createdBy = {}, description = '', metaData = {} }, index) {
     const { firstName, lastName } = createdBy;
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderHeader([whenCreated, `${firstName} ${lastName}`]);
-    const footer = <FormattedMessage values={{ length: '0' }} {...messages.blocks} />;
+    const footer = <FormattedMessage values={{ length: metaData.blocks }} {...messages.blocks} />;
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>

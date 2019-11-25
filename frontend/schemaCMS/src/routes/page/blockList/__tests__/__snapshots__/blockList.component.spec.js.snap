@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlockList: Component should render correctly 1`] = `
+<styled.div>
+  BlockList component
+</styled.div>
+`;
