@@ -10,7 +10,7 @@ export const defaultProps = {
   url: '/project/1',
 };
 
-storiesOf('ProjectTabs', module)
+storiesOf('Shared Components|ProjectTabs', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <ProjectTabs {...defaultProps} />);

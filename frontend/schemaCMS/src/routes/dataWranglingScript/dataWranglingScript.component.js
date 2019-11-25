@@ -1,8 +1,8 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always } from 'ramda';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import { FormattedMessage } from 'react-intl';
 import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { DATA_WRANGLING_STEP } from '../../modules/dataSource/dataSource.constants';
@@ -11,12 +11,11 @@ import {
   DESCRIPTION,
 } from '../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
-import { Loader } from '../../shared/components/loader';
+import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { TopHeader } from '../../shared/components/topHeader';
-import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { Container, Form, customInputStyles } from './dataWranglingScript.styles';
 import messages from './dataWranglingScript.messages';
-import { BackButton, NavigationContainer } from '../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { ContextHeader } from '../../shared/components/contextHeader';
 
 export class DataWranglingScript extends PureComponent {
@@ -56,8 +55,6 @@ export class DataWranglingScript extends PureComponent {
     };
   };
 
-  getContentOrLoader = renderWhenTrueOtherwise(always(<Loader />), this.renderContent);
-
   handleGoToDataWranglingList = (match, history) => () => {
     const { dataWranglingScript } = this.props;
 
@@ -68,7 +65,7 @@ export class DataWranglingScript extends PureComponent {
     return history.push(`/datasource/${dataWranglingScript.datasource}/${DATA_WRANGLING_STEP}`);
   };
 
-  renderContent() {
+  renderContent = () => {
     const { intl, dataWranglingScript, match, history, isAdmin } = this.props;
     const syntaxTheme = isAdmin ? darcula : defaultStyle;
 
@@ -93,14 +90,16 @@ export class DataWranglingScript extends PureComponent {
         </Form>
         <NavigationContainer>
           <BackButton onClick={this.handleGoToDataWranglingList(match, history)} />
+          <NextButton onClick={this.handleGoToDataWranglingList(match, history)}>
+            <FormattedMessage {...messages.ok} />
+          </NextButton>
         </NavigationContainer>
       </Fragment>
     );
-  }
+  };
 
   render() {
     const { loading } = this.state;
-    const content = this.getContentOrLoader(loading);
     const headerConfig = this.getHeaderAndMenuConfig();
 
     return (
@@ -108,7 +107,7 @@ export class DataWranglingScript extends PureComponent {
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        {content}
+        <LoadingWrapper loading={loading}>{this.renderContent}</LoadingWrapper>
       </Container>
     );
   }

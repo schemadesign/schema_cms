@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-export const Empty = styled.div`
+export const Container = styled.div`
   color: ${({ theme: { text } }) => text};
   text-align: center;
-  padding: 10px;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
 `;

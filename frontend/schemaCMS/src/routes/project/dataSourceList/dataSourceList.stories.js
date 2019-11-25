@@ -59,7 +59,7 @@ export const propsWithJob = {
   dataSources: [withJob],
 };
 
-storiesOf('DataSourceList', module)
+storiesOf('Project|DataSourceList', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Empty', () => <DataSourceList {...defaultProps} />)

@@ -38,4 +38,8 @@ export default defineMessages({
     id: 'dataWranglingscripts.view.save',
     defaultMessage: 'Save',
   },
+  ok: {
+    id: 'dataWranglingscripts.view.ok',
+    defaultMessage: 'OK',
+  },
 });

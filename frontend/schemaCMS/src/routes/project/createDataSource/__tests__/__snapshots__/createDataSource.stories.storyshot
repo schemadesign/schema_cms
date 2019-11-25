@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CreateDataSource Default 1`] = `
+exports[`Storyshots Project|CreateDataSource Default 1`] = `
 .c5 {
   padding-top: 7px;
 }

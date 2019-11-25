@@ -1,12 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Loader } from '../loader.component';
+import { Loading } from '../loading.component';
 
-describe('Loader: Component', () => {
-  const defaultProps = {};
-
-  const component = props => <Loader {...defaultProps} {...props} />;
+describe('Loading: Component', () => {
+  const component = props => <Loading {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

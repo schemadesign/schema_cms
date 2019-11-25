@@ -23,6 +23,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('CreateFilter', module)
+storiesOf('Data Source|CreateFilter', module)
   .addDecorator(withTheme())
   .add('Default', () => <CreateFilter {...defaultProps} />);

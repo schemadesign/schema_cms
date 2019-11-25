@@ -32,7 +32,7 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Filters', module)
+storiesOf('Data Source|Filters', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <Filters {...defaultProps} />);

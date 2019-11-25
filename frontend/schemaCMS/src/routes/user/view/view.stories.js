@@ -17,15 +17,26 @@ export const defaultProps = {
   match: { params: { userId: '1' } },
 };
 
+export const editorProps = {
+  ...defaultProps,
+  userData: {
+    id: '1',
+    firstName: 'firstName',
+    lastName: 'lastName',
+    email: 'email@example.com',
+    role: ROLES.EDITOR,
+  },
+};
+
 export const adminProps = {
   ...defaultProps,
   userData: {
-    role: ROLES.EDITOR,
+    ...editorProps.userData,
   },
   isAdmin: true,
 };
 
-storiesOf('View', module)
+storiesOf('User/View', module)
   .addDecorator(withTheme())
-  .add('Default', () => <View {...defaultProps} />)
+  .add('Editor', () => <View {...editorProps} />)
   .add('Admin', () => <View {...adminProps} />);

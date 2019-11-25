@@ -1,5 +1,4 @@
 import { all, put, takeLatest, select } from 'redux-saga/effects';
-import { path } from 'ramda';
 
 import { ProjectRoutines } from './project.redux';
 import browserHistory from '../../shared/utils/history';
@@ -50,10 +49,7 @@ function* fetchOne({ payload }) {
 
     yield put(ProjectRoutines.fetchOne.success(data));
   } catch (error) {
-    const detail = path(['response', 'data', 'detail'], error);
-    const status = path(['response', 'status'], error);
-
-    yield put(ProjectRoutines.fetchOne.failure({ id: payload.projectId, error: { detail, status } }));
+    yield put(ProjectRoutines.fetchOne.failure(error));
   } finally {
     yield put(ProjectRoutines.fetchOne.fulfill());
   }

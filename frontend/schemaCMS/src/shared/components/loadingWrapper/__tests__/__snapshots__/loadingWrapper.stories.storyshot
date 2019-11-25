@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Shared Components|LoadingWrapper custom no data 1`] = `
+.c0 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    No projects
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|LoadingWrapper loaded 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "color": "white",
+      }
+    }
+  >
+    <h1>
+      Test
+    </h1>
+    <h2>
+      Ut elementum ex nulla
+    </h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec pulvinar est.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|LoadingWrapper loading 1`] = `
+.c0 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    <span>
+      Loading...
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|LoadingWrapper no data 1`] = `
+.c0 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    <span>
+      No Data Found.
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|LoadingWrapper with error 1`] = `
+.c0 {
+  color: #f21e29;
+  font-weight: 200;
+  text-align: center;
+  padding: 50px 10px;
+  font-size: 20px;
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className="c0"
+    type="page"
+  >
+    Some error
+  </div>
+</div>
+`;

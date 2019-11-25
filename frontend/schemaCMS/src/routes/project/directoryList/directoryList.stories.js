@@ -7,7 +7,7 @@ import { withRouter, withTheme } from '../../../.storybook/decorators';
 export const defaultProps = {
   directories: [
     {
-      id: 1,
+      id: '1',
       name: 'name',
       created: '2019-11-18T14:17:06+0000',
       createdBy: {
@@ -26,7 +26,7 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DirectoryList', module)
+storiesOf('Project|DirectoryList', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <DirectoryList {...defaultProps} />);

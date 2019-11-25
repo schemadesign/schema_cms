@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Filters Default 1`] = `
+exports[`Storyshots Data Source|Filters Default 1`] = `
 .c0 {
   color: #FFF;
   text-align: center;
@@ -18,15 +18,11 @@ exports[`Storyshots Filters Default 1`] = `
   }
 >
   <div
-    className=""
+    className="c0"
   >
-    <div
-      className="c0"
-    >
-      <span>
-        Loading...
-      </span>
-    </div>
+    <span>
+      Loading...
+    </span>
   </div>
 </div>
 `;

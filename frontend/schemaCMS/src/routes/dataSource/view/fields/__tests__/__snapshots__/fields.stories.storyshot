@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Fields Default 1`] = `
+exports[`Storyshots Data Source|Fields Default 1`] = `
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;

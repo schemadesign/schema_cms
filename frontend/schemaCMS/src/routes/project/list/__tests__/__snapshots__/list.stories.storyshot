@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/List admin list 1`] = `
+exports[`Storyshots Project|List admin list 1`] = `
 .c10 {
   height: 155px;
 }
@@ -514,7 +514,7 @@ exports[`Storyshots Project/List admin list 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project/List editor list 1`] = `
+exports[`Storyshots Project|List editor list 1`] = `
 .c10 {
   height: 155px;
 }
@@ -935,7 +935,7 @@ exports[`Storyshots Project/List editor list 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project/List empty 1`] = `
+exports[`Storyshots Project|List empty 1`] = `
 .c10 {
   height: 155px;
 }

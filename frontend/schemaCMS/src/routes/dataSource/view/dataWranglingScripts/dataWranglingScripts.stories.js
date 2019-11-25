@@ -25,7 +25,7 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DataSource/View/DataWranglingScripts', module)
+storiesOf('Data Source|DataWranglingScripts', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <DataWranglingScripts {...defaultProps} />);

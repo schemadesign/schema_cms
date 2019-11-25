@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { path } from 'ramda';
@@ -13,6 +13,7 @@ import { modalStyles, Modal, ModalActions, ModalTitle } from '../../../shared/co
 import { Link, LinkContainer } from '../../../theme/typography';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -30,13 +31,24 @@ export class View extends PureComponent {
   };
 
   state = {
+    error: null,
+    loading: true,
     userRemoveModalOpen: false,
     makeAdminModalOpen: false,
   };
 
-  componentDidMount() {
-    const userId = this.getUserId();
-    this.props.fetchUser({ userId });
+  async componentDidMount() {
+    try {
+      const userId = this.getUserId();
+
+      await this.props.fetchUser({ userId });
+      this.setState({ loading: false });
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error,
+      });
+    }
   }
 
   getUserId = () => path(['match', 'params', 'userId'], this.props);
@@ -57,7 +69,7 @@ export class View extends PureComponent {
 
   handleBack = () => this.props.history.push('/user');
 
-  renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
+  renderUserContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
 
   renderMakeAdmin = renderWhenTrue(() => (
     <Link onClick={() => this.setState({ makeAdminModalOpen: true })}>
@@ -65,7 +77,20 @@ export class View extends PureComponent {
     </Link>
   ));
 
+  renderContent = (userData, isEditor, isAdmin) => () => (
+    <Fragment>
+      {this.renderUserContent(userData)}
+      <LinkContainer>
+        <Link onClick={() => this.setState({ userRemoveModalOpen: true })}>
+          <FormattedMessage {...messages.removeUser} />
+        </Link>
+        {this.renderMakeAdmin(isEditor && isAdmin)}
+      </LinkContainer>
+    </Fragment>
+  );
+
   render() {
+    const { loading, error } = this.state;
     const { userData, isAdmin } = this.props;
     const isEditor = userData.role === ROLES.EDITOR;
     const headerTitle = <FormattedMessage {...messages.title} />;
@@ -75,13 +100,9 @@ export class View extends PureComponent {
       <Container>
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
-        {this.renderContent(userData)}
-        <LinkContainer>
-          <Link onClick={() => this.setState({ userRemoveModalOpen: true })}>
-            <FormattedMessage {...messages.removeUser} />
-          </Link>
-          {this.renderMakeAdmin(isEditor && isAdmin)}
-        </LinkContainer>
+        <LoadingWrapper loading={loading} error={error}>
+          {this.renderContent(userData, isEditor, isAdmin)}
+        </LoadingWrapper>
         <NavigationContainer>
           <BackButton type="button" onClick={this.handleBack} />
         </NavigationContainer>

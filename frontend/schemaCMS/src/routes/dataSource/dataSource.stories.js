@@ -18,7 +18,7 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DataSource', module)
+storiesOf('Data Source|DataSource', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <DataSource {...defaultProps} />);

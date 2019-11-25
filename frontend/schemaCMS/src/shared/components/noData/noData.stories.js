@@ -6,4 +6,5 @@ import { withTheme } from '../../../.storybook/decorators';
 
 storiesOf('Shared Components|NoData', module)
   .addDecorator(withTheme())
-  .add('Default', () => <NoData />);
+  .add('default', () => <NoData />)
+  .add('custom', () => <NoData>No Projects</NoData>);

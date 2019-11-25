@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CreateFilter Default 1`] = `
+exports[`Storyshots Data Source|CreateFilter Default 1`] = `
 .c4 {
   color: #FFF;
   text-align: center;
