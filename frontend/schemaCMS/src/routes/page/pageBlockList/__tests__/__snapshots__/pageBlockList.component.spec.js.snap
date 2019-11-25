@@ -58,22 +58,29 @@ exports[`PageBlockList: Component should render correctly 1`] = `
     </styled.div>
     <styled.div />
   </styled.div>
-  <Formik
-    enableReinitialize={false}
-    initialValues={
-      Object {
-        "pageBlocks": Array [
-          "1",
-        ],
-      }
-    }
-    isInitialValid={false}
-    onSubmit={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
   >
-    <Component />
-  </Formik>
+    <Formik
+      enableReinitialize={false}
+      initialValues={
+        Object {
+          "pageBlocks": Array [
+            "1",
+          ],
+        }
+      }
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+    >
+      <Component />
+    </Formik>
+  </LoadingWrapper>
 </styled.div>
 `;
 
@@ -243,6 +250,28 @@ exports[`PageBlockList: Component should render correctly with loader 1`] = `
     </styled.div>
     <styled.div />
   </styled.div>
-  <Loader />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <Formik
+      enableReinitialize={false}
+      initialValues={
+        Object {
+          "pageBlocks": Array [
+            "1",
+          ],
+        }
+      }
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+    >
+      <Component />
+    </Formik>
+  </LoadingWrapper>
 </styled.div>
 `;

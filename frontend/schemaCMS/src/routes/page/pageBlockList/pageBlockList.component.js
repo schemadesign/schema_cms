@@ -2,32 +2,16 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
-import {
-  always,
-  append,
-  cond,
-  equals,
-  filter,
-  ifElse,
-  map,
-  path,
-  pipe,
-  prop,
-  propEq,
-  reject,
-  T,
-  toString,
-} from 'ramda';
+import { always, append, equals, filter, ifElse, map, path, pipe, prop, propEq, reject, toString } from 'ramda';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 
 import { BlockCounter, Container, CreateButtonContainer, Empty, Header, Link } from './pageBlockList.styles';
 import messages from './pageBlockList.messages';
 import { BackArrowButton, NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
-import { Loader } from '../../../shared/components/loader';
-import { NoData } from '../../../shared/components/noData';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
 const { CheckboxGroup, Checkbox } = Form;
 
@@ -98,7 +82,7 @@ export class PageBlockList extends PureComponent {
     </Checkbox>
   );
 
-  renderList = ({ list }) => {
+  renderContent = list => {
     const activeBlocks = pipe(
       filter(propEq('isActive', true)),
       map(prop('id')),
@@ -131,12 +115,6 @@ export class PageBlockList extends PureComponent {
     );
   };
 
-  renderContent = cond([
-    [propEq('loading', true), always(<Loader />)],
-    [propEq('list', []), always(<NoData />)],
-    [T, this.renderList],
-  ]);
-
   render() {
     const { pageBlocks } = this.props;
     const { loading } = this.state;
@@ -157,7 +135,9 @@ export class PageBlockList extends PureComponent {
           </BlockCounter>
           <Empty />
         </Header>
-        {this.renderContent({ loading, list: pageBlocks })}
+        <LoadingWrapper loading={loading} noData={!pageBlocks.length}>
+          {this.renderContent(pageBlocks)}
+        </LoadingWrapper>
       </Container>
     );
   }
