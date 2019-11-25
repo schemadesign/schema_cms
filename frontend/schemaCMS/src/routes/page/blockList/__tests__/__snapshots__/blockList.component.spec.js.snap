@@ -1,7 +1,248 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BlockList: Component should render correctly 1`] = `
+exports[`PageList: Component should render correctly 1`] = `
 <styled.div>
-  BlockList component
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Blocks"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="page.blockList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Blocks"
+        id="page.blockList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="page.blockList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Blocks"
+        id="page.blockList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.div>
+    <styled.div>
+      <PlusButton
+        onClick={[Function]}
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="{length} {length, plural,one {Block} other {Blocks}}"
+        id="page.blockList.blocks"
+        values={
+          Object {
+            "length": 2,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div />
+  </styled.div>
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Object {
+        "blocks": Array [
+          "1",
+        ],
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Component />
+  </Formik>
+</styled.div>
+`;
+
+exports[`PageList: Component should render correctly form 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "blocks": Array [
+          "1",
+        ],
+      },
+      "isSubmitting": false,
+      "isValid": false,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": undefined,
+      "values": Object {
+        "blocks": Array [
+          "1",
+        ],
+      },
+    }
+  }
+>
+  <Component
+    id="blocksCheckboxGroup"
+    name="blocks"
+    onChange={[Function]}
+    value={
+      Array [
+        "1",
+      ]
+    }
+  >
+    <Component
+      id="checkbox-0"
+      isEdit={true}
+      key="0"
+      value="1"
+    >
+      <Styled(Link)
+        to="/block/1"
+      >
+        block 1
+      </Styled(Link)>
+    </Component>
+    <Component
+      id="checkbox-1"
+      isEdit={true}
+      key="1"
+      value="2"
+    >
+      <Styled(Link)
+        to="/block/2"
+      >
+        block 2
+      </Styled(Link)>
+    </Component>
+  </Component>
+  <NavigationContainer
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackArrowButton
+      onClick={[Function]}
+      type="button"
+    />
+    <NextButton
+      disabled={true}
+      loading={false}
+      onClick={[Function]}
+      type="submit"
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="page.blockList.save"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</ContextProvider>
+`;
+
+exports[`PageList: Component should render correctly with loader 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Blocks"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="page.blockList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Blocks"
+        id="page.blockList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="page.blockList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Blocks"
+        id="page.blockList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.div>
+    <styled.div>
+      <PlusButton
+        onClick={[Function]}
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="{length} {length, plural,one {Block} other {Blocks}}"
+        id="page.blockList.blocks"
+        values={
+          Object {
+            "length": 2,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div />
+  </styled.div>
+  <Loader />
 </styled.div>
 `;

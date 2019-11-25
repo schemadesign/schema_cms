@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Page: Component should render correctly 1`] = `
-<styled.div>
-  Page component
-</styled.div>
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="path/:pageId"
+  />
+</Switch>
 `;

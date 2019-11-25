@@ -94,13 +94,12 @@ export class BlockList extends PureComponent {
     </Checkbox>
   );
 
-  renderList = () => {
-    let activeBlocks;
-    activeBlocks = pipe(
+  renderList = ({ list }) => {
+    const activeBlocks = pipe(
       filter(propEq('isActive', true)),
       map(prop('id')),
       map(toString)
-    )(this.props.blocks);
+    )(list);
 
     return (
       <Formik initialValues={{ blocks: activeBlocks }} onSubmit={this.handleSubmit}>
@@ -113,7 +112,7 @@ export class BlockList extends PureComponent {
                 name="blocks"
                 id="blocksCheckboxGroup"
               >
-                {this.props.blocks.map(this.renderCheckbox)}
+                {list.map(this.renderCheckbox)}
               </CheckboxGroup>
               <NavigationContainer>
                 <BackArrowButton type="button" onClick={this.handleShowPages} />
