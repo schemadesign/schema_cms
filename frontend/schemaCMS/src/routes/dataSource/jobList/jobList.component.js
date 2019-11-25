@@ -108,7 +108,7 @@ export class JobList extends PureComponent {
     );
   };
 
-  renderContent = (jobList, canRevert) => () => (
+  renderContent = (jobList, canRevert) => (
     <Fragment>
       <RadioGroup
         name={JOB_OPTION}

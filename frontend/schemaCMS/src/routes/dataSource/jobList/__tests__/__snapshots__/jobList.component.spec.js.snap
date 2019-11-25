@@ -24,7 +24,47 @@ exports[`JobList: Component should render correctly 1`] = `
     noData={true}
     noDataContent={null}
   >
-    <Component />
+    <RadioGroup
+      customCheckedStyles={Object {}}
+      customLabelStyles={Object {}}
+      customStyles={
+        Object {
+          "flexDirection": "column",
+        }
+      }
+      name="job_option_revert"
+      onChange={[Function]}
+    >
+      <styled.div />
+    </RadioGroup>
+    <NavigationContainer
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        id="cancelBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.jobList.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={true}
+        id="revertBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Revert"
+          id="dataSource.jobList.revert"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
   </LoadingWrapper>
 </styled.div>
 `;
@@ -53,7 +93,104 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
     noData={false}
     noDataContent={null}
   >
-    <Component />
+    <RadioGroup
+      customCheckedStyles={Object {}}
+      customLabelStyles={Object {}}
+      customStyles={
+        Object {
+          "flexDirection": "column",
+        }
+      }
+      name="job_option_revert"
+      onChange={[Function]}
+    >
+      <styled.div>
+        <styled.div
+          key="0"
+        >
+          <styled.div>
+            <Component
+              id="job_option_revert-0"
+              value={1}
+            />
+            <styled.label
+              htmlFor="job_option_revert-0"
+            >
+              <Span>
+                Invalid Date
+              </Span>
+              <styled.div />
+              <Span>
+                <FormattedMessage
+                  defaultMessage="Success"
+                  id="dataSource.jobList.success"
+                  values={Object {}}
+                />
+              </Span>
+            </styled.label>
+          </styled.div>
+          <Styled(Component)
+            onClick={[Function]}
+          />
+        </styled.div>
+        <styled.div
+          key="1"
+        >
+          <styled.div>
+            <Component
+              id="job_option_revert-1"
+              value={2}
+            />
+            <styled.label
+              htmlFor="job_option_revert-1"
+            >
+              <Span>
+                Invalid Date
+              </Span>
+              <styled.div />
+              <Span>
+                <FormattedMessage
+                  defaultMessage="Success"
+                  id="dataSource.jobList.success"
+                  values={Object {}}
+                />
+              </Span>
+            </styled.label>
+          </styled.div>
+          <Styled(Component)
+            onClick={[Function]}
+          />
+        </styled.div>
+      </styled.div>
+    </RadioGroup>
+    <NavigationContainer
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        id="cancelBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.jobList.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={true}
+        id="revertBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Revert"
+          id="dataSource.jobList.revert"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
   </LoadingWrapper>
 </styled.div>
 `;
@@ -82,7 +219,47 @@ exports[`JobList: Component should render correctly with no data 1`] = `
     noData={true}
     noDataContent={null}
   >
-    <Component />
+    <RadioGroup
+      customCheckedStyles={Object {}}
+      customLabelStyles={Object {}}
+      customStyles={
+        Object {
+          "flexDirection": "column",
+        }
+      }
+      name="job_option_revert"
+      onChange={[Function]}
+    >
+      <styled.div />
+    </RadioGroup>
+    <NavigationContainer
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        id="cancelBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.jobList.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={true}
+        id="revertBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Revert"
+          id="dataSource.jobList.revert"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
   </LoadingWrapper>
 </styled.div>
 `;
