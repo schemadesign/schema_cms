@@ -471,7 +471,7 @@ class Filter(
 
 class Directory(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='directories')
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=constants.DIRECTORY_NAME_MAX_LENGTH)
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="directories", null=True
     )
@@ -515,7 +515,7 @@ class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
 
 class Block(utils_models.MetaGeneratorMixin, ext_models.TimeStampedModel):
     page: Page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name="blocks")
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=constants.BLOCK_NAME_MAX_LENGTH)
     type = models.CharField(max_length=25, choices=constants.BLOCK_TYPE_CHOICES)
     content = models.TextField(blank=True, default="")
     image = models.ImageField(upload_to=file_upload_path, null=True, blank=True)
