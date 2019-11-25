@@ -3,43 +3,43 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'project.createPage.title',
+    id: 'directory.createPage.title',
     defaultMessage: 'Page',
   },
   subTitle: {
-    id: 'project.createPage.subTitle',
+    id: 'directory.createPage.subTitle',
     defaultMessage: 'Create',
   },
   pageFieldTitle: {
-    id: 'project.createPage.pageFieldTitle',
+    id: 'directory.createPage.pageFieldTitle',
     defaultMessage: 'Page Name',
   },
   pageFieldTitlePlaceholder: {
-    id: 'project.createPage.pageFieldTitlePlaceholder',
+    id: 'directory.createPage.pageFieldTitlePlaceholder',
     defaultMessage: 'Name',
   },
   pageFieldDescription: {
-    id: 'project.createPage.pageFieldDescription',
+    id: 'directory.createPage.pageFieldDescription',
     defaultMessage: 'Description',
   },
   pageFieldDescriptionPlaceholder: {
-    id: 'project.createPage.pageFieldDescriptionPlaceholder',
+    id: 'directory.createPage.pageFieldDescriptionPlaceholder',
     defaultMessage: 'Description',
   },
   pageFieldKeywords: {
-    id: 'project.createPage.pageFieldKeywords',
+    id: 'directory.createPage.pageFieldKeywords',
     defaultMessage: 'Keywords',
   },
   pageFieldKeywordsPlaceholder: {
-    id: 'project.createPage.pageFieldKeywordsPlaceholder',
+    id: 'directory.createPage.pageFieldKeywordsPlaceholder',
     defaultMessage: 'Keywords',
   },
   createPage: {
-    id: 'project.createPage.createPage',
+    id: 'directory.createPage.createPage',
     defaultMessage: 'Create',
   },
   back: {
-    id: 'project.createPage.back',
+    id: 'directory.createPage.back',
     defaultMessage: 'Back',
   },
 });
