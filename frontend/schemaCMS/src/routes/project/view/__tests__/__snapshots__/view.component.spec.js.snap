@@ -68,6 +68,30 @@ exports[`View: Component should render correctly 1`] = `
               }
               headerComponent={
                 <ForwardRef(styled.span)>
+                  Pages
+                </ForwardRef(styled.span)>
+              }
+              id="projectDirectories"
+              onClick={[Function]}
+            >
+              <styled.span
+                id="projectDirectoriesValue"
+              >
+                6
+              </styled.span>
+            </Component>
+          </styled.li>
+          <styled.li
+            key="2"
+          >
+            <Component
+              customStyles={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+              headerComponent={
+                <ForwardRef(styled.span)>
                   Users
                 </ForwardRef(styled.span)>
               }
