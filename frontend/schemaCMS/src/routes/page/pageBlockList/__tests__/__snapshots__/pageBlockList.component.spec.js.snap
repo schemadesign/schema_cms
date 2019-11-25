@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageList: Component should render correctly 1`] = `
+exports[`PageBlockList: Component should render correctly 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}
@@ -62,7 +62,7 @@ exports[`PageList: Component should render correctly 1`] = `
     enableReinitialize={false}
     initialValues={
       Object {
-        "blocks": Array [
+        "pageBlocks": Array [
           "1",
         ],
       }
@@ -77,7 +77,7 @@ exports[`PageList: Component should render correctly 1`] = `
 </styled.div>
 `;
 
-exports[`PageList: Component should render correctly form 1`] = `
+exports[`PageBlockList: Component should render correctly form 1`] = `
 <ContextProvider
   value={
     Object {
@@ -88,7 +88,7 @@ exports[`PageList: Component should render correctly form 1`] = `
       "handleReset": [Function],
       "handleSubmit": [Function],
       "initialValues": Object {
-        "blocks": Array [
+        "pageBlocks": Array [
           "1",
         ],
       },
@@ -119,7 +119,7 @@ exports[`PageList: Component should render correctly form 1`] = `
       "validateOnChange": true,
       "validationSchema": undefined,
       "values": Object {
-        "blocks": Array [
+        "pageBlocks": Array [
           "1",
         ],
       },
@@ -128,7 +128,7 @@ exports[`PageList: Component should render correctly form 1`] = `
 >
   <Component
     id="blocksCheckboxGroup"
-    name="blocks"
+    name="pageBlocks"
     onChange={[Function]}
     value={
       Array [
@@ -185,7 +185,7 @@ exports[`PageList: Component should render correctly form 1`] = `
 </ContextProvider>
 `;
 
-exports[`PageList: Component should render correctly with loader 1`] = `
+exports[`PageBlockList: Component should render correctly with loader 1`] = `
 <styled.div>
   <HelmetWrapper
     defer={true}

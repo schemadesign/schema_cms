@@ -21,8 +21,8 @@ import {
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 
-import { BlockCounter, Container, CreateButtonContainer, Empty, Header, Link } from './blockList.styles';
-import messages from './blockList.messages';
+import { BlockCounter, Container, CreateButtonContainer, Empty, Header, Link } from './pageBlockList.styles';
+import messages from './pageBlockList.messages';
 import { BackArrowButton, NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
 import { Loader } from '../../../shared/components/loader';
 import { NoData } from '../../../shared/components/noData';
@@ -31,13 +31,13 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 
 const { CheckboxGroup, Checkbox } = Form;
 
-export class BlockList extends PureComponent {
+export class PageBlockList extends PureComponent {
   static propTypes = {
-    blocks: PropTypes.array.isRequired,
+    pageBlocks: PropTypes.array.isRequired,
     page: PropTypes.object.isRequired,
-    fetchBlocks: PropTypes.func.isRequired,
+    fetchPageBlocks: PropTypes.func.isRequired,
     fetchPage: PropTypes.func.isRequired,
-    setBlocks: PropTypes.func.isRequired,
+    setPageBlocks: PropTypes.func.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         pageId: PropTypes.string.isRequired,
@@ -59,7 +59,7 @@ export class BlockList extends PureComponent {
     try {
       const pageId = this.getPageId();
       await this.props.fetchPage({ pageId });
-      await this.props.fetchBlocks({ pageId });
+      await this.props.fetchPageBlocks({ pageId });
       this.setState({ loading: false });
     } catch (e) {
       this.props.history.push('/');
@@ -72,20 +72,24 @@ export class BlockList extends PureComponent {
   handleCreateBlock = () => this.props.history.push(`/page/${this.getPageId()}/block/create`);
   handleShowPages = () => this.props.history.push(`/directory/${this.getDirectoryId()}`);
 
-  handleSubmit = ({ blocks }) => {
+  handleSubmit = ({ pageBlocks }) => {
     const pageId = this.getPageId();
-    const inactive = this.props.blocks
-      .filter(({ id }) => !blocks.includes(id.toString()))
+    const inactive = this.props.pageBlocks
+      .filter(({ id }) => !pageBlocks.includes(id.toString()))
       .map(({ id }) => id.toString());
 
-    this.props.setBlocks({ pageId, active: blocks, inactive });
+    this.props.setPageBlocks({ pageId, active: pageBlocks, inactive });
   };
 
-  handleChange = ({ e, setFieldValue, blocks }) => {
+  handleChange = ({ e, setFieldValue, pageBlocks }) => {
     const { value, checked } = e.target;
-    const setBlocks = ifElse(equals(true), always(append(value, blocks)), always(reject(equals(value), blocks)));
+    const setPageBlocks = ifElse(
+      equals(true),
+      always(append(value, pageBlocks)),
+      always(reject(equals(value), pageBlocks))
+    );
 
-    setFieldValue('blocks', setBlocks(checked));
+    setFieldValue('pageBlocks', setPageBlocks(checked));
   };
 
   renderCheckbox = ({ id, name }, index) => (
@@ -102,14 +106,14 @@ export class BlockList extends PureComponent {
     )(list);
 
     return (
-      <Formik initialValues={{ blocks: activeBlocks }} onSubmit={this.handleSubmit}>
-        {({ values: { blocks }, setFieldValue, submitForm, dirty }) => {
+      <Formik initialValues={{ pageBlocks: activeBlocks }} onSubmit={this.handleSubmit}>
+        {({ values: { pageBlocks }, setFieldValue, submitForm, dirty }) => {
           return (
             <Fragment>
               <CheckboxGroup
-                onChange={e => this.handleChange({ e, setFieldValue, blocks })}
-                value={blocks}
-                name="blocks"
+                onChange={e => this.handleChange({ e, setFieldValue, pageBlocks })}
+                value={pageBlocks}
+                name="pageBlocks"
                 id="blocksCheckboxGroup"
               >
                 {list.map(this.renderCheckbox)}
@@ -134,7 +138,7 @@ export class BlockList extends PureComponent {
   ]);
 
   render() {
-    const { blocks } = this.props;
+    const { pageBlocks } = this.props;
     const { loading } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
@@ -149,11 +153,11 @@ export class BlockList extends PureComponent {
             <PlusButton onClick={this.handleCreateBlock} />
           </CreateButtonContainer>
           <BlockCounter>
-            <FormattedMessage values={{ length: blocks.length }} {...messages.blocks} />
+            <FormattedMessage values={{ length: pageBlocks.length }} {...messages.blocks} />
           </BlockCounter>
           <Empty />
         </Header>
-        {this.renderContent({ loading, list: blocks })}
+        {this.renderContent({ loading, list: pageBlocks })}
       </Container>
     );
   }

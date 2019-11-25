@@ -3,11 +3,11 @@ import nock from 'nock';
 import { OK } from 'http-status-codes';
 import { expectSaga } from 'redux-saga-test-plan';
 
-import { watchBlock } from '../block.sagas';
-import { BlockRoutines } from '../block.redux';
+import { watchPageBlock } from '../pageBlock.sagas';
+import { PageBlockRoutines } from '../pageBlock.redux';
 import mockApi from '../../../shared/utils/mockApi';
 
-describe('Block: sagas', () => {
+describe('PageBlock: sagas', () => {
   const defaultState = Immutable({
     blocks: [],
   });
@@ -27,10 +27,10 @@ describe('Block: sagas', () => {
 
       mockApi.get(`/pages/${payload.pageId}/blocks`).reply(OK, response);
 
-      await expectSaga(watchBlock)
+      await expectSaga(watchPageBlock)
         .withState(defaultState)
-        .put(BlockRoutines.fetchList.success(response))
-        .dispatch(BlockRoutines.fetchList(payload))
+        .put(PageBlockRoutines.fetchList.success(response))
+        .dispatch(PageBlockRoutines.fetchList(payload))
         .silentRun();
     });
   });
@@ -50,10 +50,10 @@ describe('Block: sagas', () => {
 
       mockApi.post(`/pages/${payload.pageId}/set-blocks`, { active, inactive }).reply(OK, response);
 
-      await expectSaga(watchBlock)
+      await expectSaga(watchPageBlock)
         .withState(defaultState)
-        .put(BlockRoutines.setBlocks.success(response))
-        .dispatch(BlockRoutines.setBlocks(payload))
+        .put(PageBlockRoutines.setBlocks.success(response))
+        .dispatch(PageBlockRoutines.setBlocks(payload))
         .silentRun();
     });
   });

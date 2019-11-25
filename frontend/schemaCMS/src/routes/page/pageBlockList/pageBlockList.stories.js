@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BlockList } from './blockList.component';
+import { PageBlockList } from './pageBlockList.component';
 import { withRouter, withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
-  blocks: [
+  pageBlocks: [
     {
       name: 'block 1',
       isActive: true,
@@ -22,9 +22,9 @@ export const defaultProps = {
       id: '1',
     },
   },
-  fetchBlocks: Function.prototype,
+  fetchPageBlocks: Function.prototype,
   fetchPage: Function.prototype,
-  setBlocks: Function.prototype,
+  setPageBlocks: Function.prototype,
   match: {
     params: {
       pageId: '1',
@@ -37,4 +37,4 @@ export const defaultProps = {
 storiesOf('BlockList', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('Default', () => <BlockList {...defaultProps} />);
+  .add('Default', () => <PageBlockList {...defaultProps} />);

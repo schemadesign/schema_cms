@@ -9,7 +9,7 @@ import { reducer as jobReducer } from './job/job.redux';
 import { reducer as filterReducer } from './filter/filter.redux';
 import { reducer as directoryReducer } from './directory/directory.redux';
 import { reducer as pageReducer } from './page/page.redux';
-import { reducer as blockReducer } from './block/block.redux';
+import { reducer as pageBlockReducer } from './pageBlock/pageBlock.redux';
 //<-- IMPORT MODULE REDUCER -->
 
 export default function createReducer() {
@@ -25,7 +25,7 @@ export default function createReducer() {
     filter: filterReducer,
     directory: directoryReducer,
     page: pageReducer,
-    block: blockReducer,
+    pageBlock: pageBlockReducer,
     //<-- INJECT MODULE REDUCER -->
   };
 }

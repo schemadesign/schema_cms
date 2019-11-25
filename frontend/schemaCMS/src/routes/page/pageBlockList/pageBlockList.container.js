@@ -6,20 +6,20 @@ import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 
-import { BlockList } from './blockList.component';
-import { BlockRoutines, selectBlocks } from '../../../modules/block';
+import { PageBlockList } from './pageBlockList.component';
+import { PageBlockRoutines, selectPageBlocks } from '../../../modules/pageBlock';
 import { PageRoutines, selectPage } from '../../../modules/page';
 
 const mapStateToProps = createStructuredSelector({
-  blocks: selectBlocks,
+  pageBlocks: selectPageBlocks,
   page: selectPage,
 });
 
 export const mapDispatchToProps = dispatch => ({
   ...bindPromiseCreators(
     {
-      fetchBlocks: promisifyRoutine(BlockRoutines.fetchList),
-      setBlocks: promisifyRoutine(BlockRoutines.setBlocks),
+      fetchPageBlocks: promisifyRoutine(PageBlockRoutines.fetchList),
+      setPageBlocks: promisifyRoutine(PageBlockRoutines.setBlocks),
       fetchPage: promisifyRoutine(PageRoutines.fetchOne),
     },
     dispatch
@@ -34,4 +34,4 @@ export default compose(
   ),
   injectIntl,
   withRouter
-)(BlockList);
+)(PageBlockList);

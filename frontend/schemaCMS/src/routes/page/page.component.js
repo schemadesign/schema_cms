@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router';
 
-import { BlockList } from './blockList';
+import { PageBlockList } from './pageBlockList';
 
 export class Page extends PureComponent {
   static propTypes = {
@@ -18,7 +18,7 @@ export class Page extends PureComponent {
 
     return (
       <Switch>
-        <Route exact path={pagePath} component={BlockList} />
+        <Route exact path={pagePath} component={PageBlockList} />
       </Switch>
     );
   }

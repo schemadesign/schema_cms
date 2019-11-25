@@ -2,36 +2,36 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Formik } from 'formik';
 
-import { BlockList } from '../blockList.component';
-import { Link } from '../blockList.styles';
-import { defaultProps } from '../blockList.stories';
+import { PageBlockList } from '../pageBlockList.component';
+import { Link } from '../pageBlockList.styles';
+import { defaultProps } from '../pageBlockList.stories';
 import { BackArrowButton, PlusButton } from '../../../../shared/components/navigation';
 
-describe('PageList: Component', () => {
-  const component = props => <BlockList {...defaultProps} {...props} />;
+describe('PageBlockList: Component', () => {
+  const component = props => <PageBlockList {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
   it('should render correctly with loader', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly', async () => {
     const props = {
       fetchPage: jest.fn().mockReturnValue(Promise.resolve()),
-      fetchBlocks: jest.fn().mockReturnValue(Promise.resolve()),
+      fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
     };
     const wrapper = render(props);
     await Promise.resolve();
     await Promise.resolve();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly form', async () => {
     const props = {
       fetchPage: jest.fn().mockReturnValue(Promise.resolve()),
-      fetchBlocks: jest.fn().mockReturnValue(Promise.resolve()),
+      fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
     };
     const wrapper = render(props);
 
@@ -40,13 +40,13 @@ describe('PageList: Component', () => {
 
     const form = wrapper.find(Formik).dive();
 
-    global.expect(form).toMatchSnapshot();
+    expect(form).toMatchSnapshot();
   });
 
-  it('should go to main page when fetchBlocks fails', async () => {
+  it('should go to main page when fetchPageBlocks fails', async () => {
     jest.spyOn(defaultProps.history, 'push');
     const props = {
-      fetchBlocks: jest.fn().mockReturnValue(Promise.reject()),
+      fetchPageBlocks: jest.fn().mockReturnValue(Promise.reject()),
       fetchPage: jest.fn().mockReturnValue(Promise.resolve()),
     };
     render(props);
@@ -58,7 +58,7 @@ describe('PageList: Component', () => {
   it('should go to main page when fetchPage fails', async () => {
     jest.spyOn(defaultProps.history, 'push');
     const props = {
-      fetchBlocks: jest.fn().mockReturnValue(Promise.resolve()),
+      fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
       fetchPage: jest.fn().mockReturnValue(Promise.reject()),
     };
     render(props);
@@ -68,18 +68,18 @@ describe('PageList: Component', () => {
 
   it('should fetch list', async () => {
     jest.spyOn(defaultProps, 'fetchPage');
-    jest.spyOn(defaultProps, 'fetchBlocks');
+    jest.spyOn(defaultProps, 'fetchPageBlocks');
     render();
     await Promise.resolve();
     await Promise.resolve();
     expect(defaultProps.fetchPage).toBeCalledWith({ pageId: '1' });
-    expect(defaultProps.fetchBlocks).toBeCalledWith({ pageId: '1' });
+    expect(defaultProps.fetchPageBlocks).toBeCalledWith({ pageId: '1' });
   });
 
   it('should go to page list page', async () => {
     const props = {
       fetchPage: jest.fn().mockReturnValue(Promise.resolve()),
-      fetchBlocks: jest.fn().mockReturnValue(Promise.resolve()),
+      fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
     };
     jest.spyOn(defaultProps.history, 'push');
     const wrapper = render(props);
@@ -105,7 +105,7 @@ describe('PageList: Component', () => {
   it('should have link to block', async () => {
     const props = {
       fetchPage: jest.fn().mockReturnValue(Promise.resolve()),
-      fetchBlocks: jest.fn().mockReturnValue(Promise.resolve()),
+      fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
     };
     const wrapper = render(props);
     await Promise.resolve();
@@ -120,19 +120,19 @@ describe('PageList: Component', () => {
   });
 
   it('should submit form', async () => {
-    jest.spyOn(defaultProps, 'setBlocks');
+    jest.spyOn(defaultProps, 'setPageBlocks');
     const props = {
       fetchPage: jest.fn().mockReturnValue(Promise.resolve()),
-      fetchBlocks: jest.fn().mockReturnValue(Promise.resolve()),
+      fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
     };
     const values = {
-      blocks: ['1', '2'],
+      pageBlocks: ['1', '2'],
     };
     const wrapper = render(props);
     await Promise.resolve();
     await Promise.resolve();
     wrapper.find(Formik).prop('onSubmit')(values);
 
-    expect(defaultProps.setBlocks).toBeCalledWith({ active: ['1', '2'], inactive: [], pageId: '1' });
+    expect(defaultProps.setPageBlocks).toBeCalledWith({ active: ['1', '2'], inactive: [], pageId: '1' });
   });
 });
