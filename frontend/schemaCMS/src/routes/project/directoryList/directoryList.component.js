@@ -106,7 +106,7 @@ export class DirectoryList extends PureComponent {
         </LoadingWrapper>
         <NavigationContainer hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
-          <PlusButton id="createDirectoryBtn" onClick={this.handleCreateDataSource} />
+          <PlusButton id="createDirectoryBtn" onClick={this.handleCreateDirectory} />
         </NavigationContainer>
       </Container>
     );

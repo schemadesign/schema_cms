@@ -598,6 +598,7 @@ exports[`Storyshots Project|DirectoryList Default 1`] = `
           <button
             disabled={false}
             id="createDirectoryBtn"
+            onClick={[Function]}
             style={
               Object {
                 "backgroundColor": "#FFF",

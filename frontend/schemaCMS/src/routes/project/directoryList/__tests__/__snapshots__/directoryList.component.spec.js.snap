@@ -103,6 +103,7 @@ exports[`DirectoryList: Component should render correctly 1`] = `
     />
     <PlusButton
       id="createDirectoryBtn"
+      onClick={[Function]}
     />
   </NavigationContainer>
 </styled.div>
@@ -211,6 +212,7 @@ exports[`DirectoryList: Component should render correctly with loader 1`] = `
     />
     <PlusButton
       id="createDirectoryBtn"
+      onClick={[Function]}
     />
   </NavigationContainer>
 </styled.div>
