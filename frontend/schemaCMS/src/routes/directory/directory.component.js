@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router';
 
 import { PageList } from './pageList';
-<<<<<<< HEAD
 import { CreatePage } from './createPage';
-=======
 import { Edit } from './edit';
->>>>>>> master
 
 export class Directory extends PureComponent {
   static propTypes = {
