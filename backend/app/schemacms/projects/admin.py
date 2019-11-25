@@ -1,4 +1,7 @@
+import itertools
+
 from django.contrib import admin
+from django.contrib import messages
 from django.db import transaction
 from django.utils import safestring
 from django.template.loader import render_to_string
@@ -32,12 +35,38 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
 
     delete_selected.short_description = 'Soft delete selected objects'
 
+    def soft_undelete(self, request, queryset):
+        queryset = queryset.filter(deleted_at__isnull=0)
+        # Check if project names exist in the not deleted queryset
+        field = "title"
+        conflicts = self.model.objects.values_list(field, flat=True).filter(
+            **{f"{field}__in": queryset.values(field)}).distinct(field).iterator()
+        conflict = next(conflicts, None)
+        if conflict:
+            html = render_to_string(
+                "common/unordered_list.html",
+                context=dict(
+                    objects=itertools.chain([conflict], conflicts),
+                    li_style="background: transparent; padding: 0px;"
+                ),
+            )
+            msg = safestring.mark_safe(
+                f"Project(s) with name: {html} already exists. Please change name of this project before undeleting it."
+            )
+            self.message_user(request=request, message=msg, level=messages.ERROR)
+            return
+        return super().soft_undelete(request, queryset)
+
+    soft_undelete.short_description = 'Undelete selected objects'
+
     def get_queryset(self, request):
         return super().get_queryset(request).select_related("owner").prefetch_related("editors")
 
     def get_editors(self, obj):
+        # to reduce db call use prefetch related cache
+        emails = (editor.email for editor in obj.editors.all())
         html = render_to_string(
-            "common/unordered_list.html", context=dict(objects=obj.editors.values_list("email", flat=True))
+            "common/unordered_list.html", context=dict(objects=emails)
         )
         return safestring.mark_safe(html)
 
