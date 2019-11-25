@@ -25,8 +25,9 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         return (
             models.Project.get_projects_for_user(self.request.user)
             .annotate_data_source_count()
+            .annotate_pages_count()
             .select_related("owner")
-            .prefetch_related("editors")
+            .prefetch_related("editors", "directories")
             .order_by("-created")
         )
 

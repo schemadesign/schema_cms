@@ -20,6 +20,22 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
             )
         )
 
+    def annotate_pages_count(self):
+        from .models import Page
+
+        subquery = (
+            Page.objects.order_by()
+            .values('directory__project')
+            .filter(directory__project=models.OuterRef("pk"))
+            .annotate(count=models.Count("pk"))
+            .values("count")
+        )
+        return self.annotate(
+            pages_count=Coalesce(
+                models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
+            )
+        )
+
 
 def generate_soft_delete_manager(queryset_class):
     class _soft_delete_manager_class(softdelete.models.SoftDeleteManager):
@@ -103,12 +119,12 @@ class PageQuerySet(models.QuerySet):
         subquery = (
             Block.objects.order_by()
             .values('page')
-            .filter(project=models.OuterRef("pk"))
+            .filter(page=models.OuterRef("pk"))
             .annotate(count=models.Count("pk"))
             .values("count")
         )
         return self.annotate(
-            data_source_count=Coalesce(
+            blocks_count=Coalesce(
                 models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
         )
