@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BAD_REQUEST, FORBIDDEN, UNAUTHORIZED } from 'http-status-codes';
+import { BAD_REQUEST, FORBIDDEN, NOT_FOUND, UNAUTHORIZED } from 'http-status-codes';
 import { camelizeKeys, decamelizeKeys, pascalize } from 'humps';
 import {
   __,
@@ -98,7 +98,7 @@ api.interceptors.response.use(
       return window.location.replace(AUTH_PATH);
     }
 
-    if ([FORBIDDEN, BAD_REQUEST].includes(error.response.status)) {
+    if ([FORBIDDEN, BAD_REQUEST, NOT_FOUND].includes(error.response.status)) {
       return Promise.reject(convertResponseErrors(error));
     }
 

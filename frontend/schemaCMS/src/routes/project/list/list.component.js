@@ -1,19 +1,18 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { always, cond, isEmpty, propEq, T } from 'ramda';
+import { always, isEmpty } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { generateApiUrl } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { Empty } from '../project.styles';
 import messages from './list.messages';
 import { Container, Description, HeaderItem, HeaderList, urlStyles, titleStyles } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { Loader } from '../../../shared/components/loader';
 import { ListItem, ListContainer } from '../../../shared/components/listComponents';
 
 const { H1, P, Span } = Typography;
@@ -29,11 +28,19 @@ export class List extends PureComponent {
 
   state = {
     loading: true,
+    error: null,
   };
 
   async componentDidMount() {
-    await this.props.fetchProjectsList();
-    this.setState({ loading: false });
+    try {
+      await this.props.fetchProjectsList();
+      this.setState({ loading: false });
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error,
+      });
+    }
   }
 
   getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => {
@@ -49,6 +56,13 @@ export class List extends PureComponent {
       secondaryMenuItems,
     };
   };
+
+  getLoadingConfig = (list, loading, error) => ({
+    loading,
+    error,
+    noData: !list.length,
+    noDataContent: this.formatMessage(messages.noProjects),
+  });
 
   formatMessage = value => this.props.intl.formatMessage(value);
 
@@ -91,31 +105,20 @@ export class List extends PureComponent {
     );
   }
 
-  renderList = ({ list }) => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
+  renderList = list => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
   renderAddButton = (isAdmin, id) =>
     renderWhenTrue(always(<PlusButton id={id} onClick={this.handleNewProject} />))(isAdmin);
 
-  renderNoData = () => (
-    <Empty>
-      <P>{this.props.intl.formatMessage(messages.noProjects)} </P>
-    </Empty>
-  );
-
-  renderContent = cond([
-    [propEq('loading', true), always(<Loader />)],
-    [propEq('list', []), this.renderNoData],
-    [T, this.renderList],
-  ]);
-
   render() {
     const { list = [], isAdmin } = this.props;
-    const { loading } = this.state;
+    const { loading, error } = this.state;
 
     const title = this.formatMessage(messages.title);
     const subtitle = this.formatMessage(messages.overview);
 
     const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
+    const loadingConfig = this.getLoadingConfig(list, loading, error);
 
     return (
       <Container>
@@ -124,7 +127,7 @@ export class List extends PureComponent {
         <ContextHeader title={title} subtitle={subtitle}>
           {this.renderAddButton(isAdmin, 'addProjectDesktopBtn')}
         </ContextHeader>
-        {this.renderContent({ list, loading })}
+        <LoadingWrapper {...loadingConfig}>{this.renderList(list)}</LoadingWrapper>
         <NavigationContainer right hideOnDesktop>
           {this.renderAddButton(isAdmin, 'addProjectBtn')}
         </NavigationContainer>

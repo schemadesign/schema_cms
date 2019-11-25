@@ -2,6 +2,6 @@
 
 exports[`DataPreview: Component should render correctly 1`] = `
 <styled.div>
-  <Loader />
+  <Loading />
 </styled.div>
 `;

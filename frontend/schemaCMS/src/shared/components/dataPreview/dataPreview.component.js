@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Icons } from 'schemaUI';
 import { isEmpty } from 'ramda';
 
-import { Loader } from '../loader';
+import { Loading } from '../loading';
 import { Table } from '../table';
 import { FieldDetail } from '../fieldDetail';
 import messages from './dataPreview.messages';
@@ -136,7 +136,7 @@ export default class DataPreview extends PureComponent {
   }
 
   render() {
-    const content = this.state.loading ? <Loader /> : this.renderContent();
+    const content = this.state.loading ? <Loading /> : this.renderContent();
 
     return <Container>{content}</Container>;
   }

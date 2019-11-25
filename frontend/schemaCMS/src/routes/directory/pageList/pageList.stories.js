@@ -36,6 +36,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('PageList', module)
+storiesOf('Directory/PageList', module)
   .addDecorator(withTheme())
   .add('Default', () => <PageList {...defaultProps} />);

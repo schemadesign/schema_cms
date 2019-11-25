@@ -1,18 +1,18 @@
 import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import messages from './loader.messages';
+import messages from './loading.messages';
 
-import { LoaderContainer } from './loader.styles';
+import { Container } from './loading.styles';
 
-export class Loader extends PureComponent {
+export class Loading extends PureComponent {
   static propTypes = {};
 
   render() {
     return (
-      <LoaderContainer>
+      <Container>
         <FormattedMessage {...messages.loading} />
-      </LoaderContainer>
+      </Container>
     );
   }
 }

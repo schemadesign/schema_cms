@@ -39,6 +39,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DataSource/View', module)
+storiesOf('Data Source|View', module)
   .addDecorator(withTheme())
   .add('Default', () => <View {...defaultProps} />);

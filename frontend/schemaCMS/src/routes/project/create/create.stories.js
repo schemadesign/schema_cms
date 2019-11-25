@@ -21,6 +21,6 @@ export const defaultProps = {
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
-storiesOf('Project/Create', module)
+storiesOf('Project|Create', module)
   .addDecorator(withTheme())
   .add('Default', () => <Create {...defaultProps} />);

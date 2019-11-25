@@ -39,11 +39,13 @@ function* fetchUser({ payload: { userId } }) {
   try {
     yield put(UserRoutines.fetchUser.request());
 
-    const { data } = yield api.get(`users/${userId}`);
+    response = yield api.get(`users/${userId}`);
+
+    const { data } = response;
 
     yield put(UserRoutines.fetchUser.success(data));
   } catch (error) {
-    yield put(UserRoutines.fetchUser.failure());
+    yield put(UserRoutines.fetchUser.failure(error));
   } finally {
     yield put(UserRoutines.fetchUser.fulfill());
   }

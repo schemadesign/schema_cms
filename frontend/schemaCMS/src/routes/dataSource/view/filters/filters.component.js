@@ -5,11 +5,10 @@ import { Form, Icons } from 'schemaUI';
 import { Formik } from 'formik';
 import { always, append, equals, ifElse, path, reject } from 'ramda';
 
-import { ButtonContainer, Container, FilterCounter, Header, Link, PlusButton } from './filters.styles';
+import { ButtonContainer, FilterCounter, Header, Link, PlusButton } from './filters.styles';
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
 import messages from './filters.messages';
-import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
-import { Loader } from '../../../../shared/components/loader';
+import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
 import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
 
 const { PlusIcon } = Icons;
@@ -72,8 +71,8 @@ export class Filters extends PureComponent {
     </Checkbox>
   );
 
-  renderContent = renderWhenTrueOtherwise(always(<Loader />), () => {
-    const { filters } = this.props;
+  renderContent = () => {
+    const { filters = [] } = this.props;
     const initialValues = filters.filter(({ isActive }) => isActive).map(({ id }) => id.toString());
 
     return (
@@ -111,9 +110,11 @@ export class Filters extends PureComponent {
         </Formik>
       </Fragment>
     );
-  });
+  };
 
   render() {
-    return <Container>{this.renderContent(this.state.loading)}</Container>;
+    const { loading } = this.state;
+
+    return <LoadingWrapper loading={loading}>{this.renderContent}</LoadingWrapper>;
   }
 }

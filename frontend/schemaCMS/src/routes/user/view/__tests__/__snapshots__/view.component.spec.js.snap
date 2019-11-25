@@ -34,17 +34,14 @@ exports[`View: Component should render correctly 1`] = `
       />
     }
   />
-  <styled.div>
-    <Styled(Span)
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="Remove user"
-        id="user.view.removeUser"
-        values={Object {}}
-      />
-    </Styled(Span)>
-  </styled.div>
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <Component />
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={false}
     right={false}
@@ -222,26 +219,14 @@ exports[`View: Component should render correctly for admin user 1`] = `
       />
     }
   />
-  <styled.div>
-    <Styled(Span)
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="Remove user"
-        id="user.view.removeUser"
-        values={Object {}}
-      />
-    </Styled(Span)>
-    <Styled(Span)
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="Make admin"
-        id="user.view.makeAdmin"
-        values={Object {}}
-      />
-    </Styled(Span)>
-  </styled.div>
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <Component />
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={false}
     right={false}

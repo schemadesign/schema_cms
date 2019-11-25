@@ -48,44 +48,51 @@ exports[`DirectoryList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <styled.section>
-    <Styled(Component)
-      headerComponent={
-        <ForwardRef(styled.ul)>
-          <ForwardRef(styled.li)
-            id="headerItem-0"
-          >
-            12 days ago
-          </ForwardRef(styled.li)>
-          <ForwardRef(styled.li)
-            id="headerItem-1"
-          >
-            firstName lastName
-          </ForwardRef(styled.li)>
-        </ForwardRef(styled.ul)>
-      }
-      key="0"
-    >
-      <styled.div>
-        <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.section>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              12 days ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              firstName lastName
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="0"
+      >
+        <styled.div>
+          <H1
+            customStyles={
+              Object {
+                "cursor": "pointer",
+              }
             }
-          }
-          id="directoryName-0"
-          onClick={[Function]}
-        >
-          name
-        </H1>
-        <Styled(Span)
-          onClick={[Function]}
-        >
-          Edit directory
-        </Styled(Span)>
-      </styled.div>
-    </Styled(Component)>
-  </styled.section>
+            id="directoryName-0"
+            onClick={[Function]}
+          >
+            name
+          </H1>
+          <Styled(Span)
+            onClick={[Function]}
+          >
+            Edit directory
+          </Styled(Span)>
+        </styled.div>
+      </Styled(Component)>
+    </styled.section>
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={true}
     right={false}
@@ -150,7 +157,51 @@ exports[`DirectoryList: Component should render correctly with loader 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <Loader />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.section>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              12 days ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              firstName lastName
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="0"
+      >
+        <styled.div>
+          <H1
+            customStyles={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+            id="directoryName-0"
+            onClick={[Function]}
+          >
+            name
+          </H1>
+          <Styled(Span)
+            onClick={[Function]}
+          >
+            Edit directory
+          </Styled(Span)>
+        </styled.div>
+      </Styled(Component)>
+    </styled.section>
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={true}
     right={false}

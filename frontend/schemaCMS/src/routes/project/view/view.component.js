@@ -1,14 +1,14 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Card } from 'schemaUI';
-import { has, isEmpty, isNil, path, always, cond, T } from 'ramda';
+import { always, isEmpty, isNil, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { generateApiUrl } from '../../../shared/utils/helpers';
-import browserHistory from '../../../shared/utils/history';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
-import { Loader } from '../../../shared/components/loader';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { SETTINGS } from '../../../shared/components/projectTabs/projectTabs.constants';
@@ -31,7 +31,6 @@ import { BackArrowButton, BackButton, NavigationContainer, NextButton } from '..
 
 import { modalStyles, Modal, ModalTitle, ModalActions } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
-import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -52,14 +51,20 @@ export class View extends PureComponent {
   };
 
   state = {
+    loading: true,
+    error: null,
     confirmationModalOpen: false,
   };
 
   async componentDidMount() {
     try {
       await this.props.fetchProject(this.props.match.params);
-    } catch (e) {
-      browserHistory.push('/');
+      this.setState({ loading: false });
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error,
+      });
     }
   }
 
@@ -67,11 +72,11 @@ export class View extends PureComponent {
     return this.props.unmountProject();
   }
 
-  getHeaderAndMenuConfig = (headerSubtitle, projectId, hasNoData) => {
+  getHeaderAndMenuConfig = (headerSubtitle, projectId, hasMenu) => {
     const primaryMenuItems = [];
     const secondaryMenuItems = [];
 
-    if (!hasNoData) {
+    if (hasMenu) {
       primaryMenuItems.push({
         label: this.formatMessage(messages.dataSources),
         to: `/project/${projectId}/datasource`,
@@ -129,7 +134,7 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = ({ id: projectId, editors, owner, slug, created, charts, pages, meta, status } = {}) => {
+  renderProject = ({ id: projectId, editors, owner = {}, slug, created, charts, pages, meta, status } = {}) => {
     const statistics = [
       {
         header: this.renderStatisticHeader(messages.dataSources),
@@ -185,8 +190,6 @@ export class View extends PureComponent {
     );
   };
 
-  renderContent = cond([[isEmpty, always(<Loader />)], [T, () => this.renderProject(this.props.project)]]);
-
   renderRemoveProjectButton = renderWhenTrue(
     always(
       <LinkContainer>
@@ -196,25 +199,35 @@ export class View extends PureComponent {
       </LinkContainer>
     )
   );
+
+  renderContent = (project, projectId, isAdmin) =>
+    renderWhenTrue(() => (
+      <Fragment>
+        <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
+        {this.renderProject(project)}
+        {this.renderRemoveProjectButton(isAdmin)}
+      </Fragment>
+    ))(!isEmpty(project));
+
   render() {
     const { project, isAdmin } = this.props;
-    const { confirmationModalOpen } = this.state;
+    const { confirmationModalOpen, error, loading } = this.state;
     const { projectId } = this.props.match.params;
     const projectName = path(['title'], project, '');
     const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, !projectId || has('error', project));
+    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, !loading);
 
     return (
       <Container>
         <div>
           <Helmet title={title} />
           <TopHeader {...topHeaderConfig} />
-          <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
-          {this.renderContent(project)}
-          {this.renderRemoveProjectButton(isAdmin)}
+          <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>
+            {this.renderContent(project, projectId, isAdmin)}
+          </LoadingWrapper>
         </div>
         <NavigationContainer>
-          <BackArrowButton id="addProjectBtn" onClick={this.handleGoTo('/project')} />
+          <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
         <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>

@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
-import { always, cond, path, propEq, T } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import { Container, ListItemContent } from './directoryList.styles';
@@ -12,11 +12,10 @@ import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { DIRECTORY } from '../../../shared/components/projectTabs/projectTabs.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
-import { Loader } from '../../../shared/components/loader';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
-import { NoData } from '../../../shared/components/noData';
 import { Link } from '../../../theme/typography';
 
 const { H1 } = Typography;
@@ -43,6 +42,7 @@ export class DirectoryList extends PureComponent {
   async componentDidMount() {
     try {
       const projectId = this.getProjectId();
+
       await this.props.fetchDirectories({ projectId });
       this.setState({ loading: false });
     } catch (e) {
@@ -84,17 +84,12 @@ export class DirectoryList extends PureComponent {
     );
   }
 
-  renderList = ({ list }) => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
-
-  renderContent = cond([
-    [propEq('loading', true), always(<Loader />)],
-    [propEq('list', []), always(<NoData />)],
-    [T, this.renderList],
-  ]);
+  renderList = list => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
   render() {
-    const { match, directories } = this.props;
     const { loading } = this.state;
+    const { match, directories } = this.props;
+
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -106,7 +101,9 @@ export class DirectoryList extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton id="createDirectoryDesktopBtn" onClick={this.handleCreateDirectory} />
         </ContextHeader>
-        {this.renderContent({ loading, list: directories })}
+        <LoadingWrapper loading={loading} noData={!directories.length}>
+          {this.renderList(directories)}
+        </LoadingWrapper>
         <NavigationContainer hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
           <PlusButton id="createDirectoryBtn" onClick={this.handleCreateDirectory} />

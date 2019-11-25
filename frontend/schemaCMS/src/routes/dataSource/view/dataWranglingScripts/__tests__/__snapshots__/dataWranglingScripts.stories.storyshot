@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DataSource/View/DataWranglingScripts Default 1`] = `
+exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;

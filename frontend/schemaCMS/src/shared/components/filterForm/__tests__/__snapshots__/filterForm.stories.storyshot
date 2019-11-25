@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots FilterForm Create form 1`] = `
+exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 .c1 {
   padding-top: 7px;
 }
@@ -683,7 +683,7 @@ exports[`Storyshots FilterForm Create form 1`] = `
 </div>
 `;
 
-exports[`Storyshots FilterForm Edit form 1`] = `
+exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 .c1 {
   padding-top: 7px;
 }

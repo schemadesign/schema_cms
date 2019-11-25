@@ -1,14 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, path } from 'ramda';
+import { path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Container } from './createFilter.styles';
 import { FilterForm } from '../../../../shared/components/filterForm';
 import messages from './createFilter.messages';
 import { TopHeader } from '../../../../shared/components/topHeader';
-import { renderWhenTrueOtherwise } from '../../../../shared/utils/rendering';
-import { Loader } from '../../../../shared/components/loader';
+import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
 import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
 
 export class CreateFilter extends PureComponent {
@@ -49,14 +48,14 @@ export class CreateFilter extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.subTitle} />,
   });
 
-  renderFilterForm = renderWhenTrueOtherwise(always(<Loader />), () => (
+  renderContent = () => (
     <FilterForm
       fieldsInfo={this.props.fieldsInfo}
       createFilter={this.props.createFilter}
       history={this.props.history}
       dataSourceId={this.getDataSourceId(this.props)}
     />
-  ));
+  );
 
   render() {
     const topHeaderConfig = this.getHeaderAndMenuConfig();
@@ -64,7 +63,7 @@ export class CreateFilter extends PureComponent {
     return (
       <Container>
         <TopHeader {...topHeaderConfig} />
-        {this.renderFilterForm(this.state.loading)}
+        <LoadingWrapper loading={this.state.loading}>{this.renderContent}</LoadingWrapper>
       </Container>
     );
   }

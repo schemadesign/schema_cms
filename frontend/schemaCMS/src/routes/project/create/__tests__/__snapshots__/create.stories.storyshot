@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/Create Default 1`] = `
+exports[`Storyshots Project|Create Default 1`] = `
 .c9 {
   padding-top: 7px;
 }

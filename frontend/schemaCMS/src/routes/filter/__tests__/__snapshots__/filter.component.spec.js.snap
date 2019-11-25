@@ -12,40 +12,92 @@ exports[`Filter: Component should render correctly 1`] = `
     }
     headerTitle="name"
   />
-  <FilterForm
-    dataSourceId="1"
-    fieldsInfo={
-      Object {
-        "field": Object {
-          "fieldType": "fieldType",
-          "filterType": Array [
-            "filterType",
-          ],
-          "unique": "unique",
-        },
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <FilterForm
+      dataSourceId="1"
+      fieldsInfo={
+        Object {
+          "field": Object {
+            "fieldType": "fieldType",
+            "filterType": Array [
+              "filterType",
+            ],
+            "unique": "unique",
+          },
+        }
       }
-    }
-    filter={
-      Object {
-        "datasource": Object {
-          "id": "1",
-          "name": "name",
-        },
+      filter={
+        Object {
+          "datasource": Object {
+            "id": "1",
+            "name": "name",
+          },
+        }
       }
-    }
-    history={
-      Object {
-        "push": [Function],
+      history={
+        Object {
+          "push": [Function],
+        }
       }
-    }
-    removeFilter={[Function]}
-    updateFilter={[Function]}
-  />
+      removeFilter={[Function]}
+      updateFilter={[Function]}
+    />
+  </LoadingWrapper>
 </styled.div>
 `;
 
 exports[`Filter: Component should render correctly with loader 1`] = `
 <styled.div>
-  <Loader />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit Filter"
+        id="filter.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle="name"
+  />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <FilterForm
+      dataSourceId="1"
+      fieldsInfo={
+        Object {
+          "field": Object {
+            "fieldType": "fieldType",
+            "filterType": Array [
+              "filterType",
+            ],
+            "unique": "unique",
+          },
+        }
+      }
+      filter={
+        Object {
+          "datasource": Object {
+            "id": "1",
+            "name": "name",
+          },
+        }
+      }
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      removeFilter={[Function]}
+      updateFilter={[Function]}
+    />
+  </LoadingWrapper>
 </styled.div>
 `;

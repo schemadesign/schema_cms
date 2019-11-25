@@ -48,8 +48,8 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Project/View', module)
+storiesOf('Project|View', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('default', () => <View {...defaultProps} />)
-  .add('loading', () => <View {...emptyProps} />);
+  .add('no data', () => <View {...emptyProps} />);

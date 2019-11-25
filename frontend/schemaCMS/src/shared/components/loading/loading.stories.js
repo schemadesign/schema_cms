@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Loader } from './loader.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { Loading } from './loading.component';
 
-storiesOf('Shared Components|Loader', module)
+storiesOf('Shared Components|Loading', module)
   .addDecorator(withTheme())
-  .add('Default', () => <Loader />);
+  .add('Default', () => <Loading />);

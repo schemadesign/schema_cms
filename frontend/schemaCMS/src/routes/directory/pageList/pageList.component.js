@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, cond, path, propEq, T } from 'ramda';
+import { path } from 'ramda';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { Typography } from 'schemaUI';
@@ -13,8 +13,7 @@ import { BackArrowButton, NavigationContainer, PlusButton } from '../../../share
 import { Description, HeaderItem, HeaderList, titleStyles } from '../../project/list/list.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
-import { Loader } from '../../../shared/components/loader';
-import { NoData } from '../../../shared/components/noData';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
 const { H1, P } = Typography;
 
@@ -88,13 +87,7 @@ export class PageList extends PureComponent {
     );
   }
 
-  renderList = ({ list }) => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
-
-  renderContent = cond([
-    [propEq('loading', true), always(<Loader />)],
-    [propEq('list', []), always(<NoData />)],
-    [T, this.renderList],
-  ]);
+  renderContent = list => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
   render() {
     const { pages } = this.props;
@@ -109,7 +102,9 @@ export class PageList extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton id="createPageDesktopBtn" onClick={this.handleCreatePage} />
         </ContextHeader>
-        {this.renderContent({ loading, list: pages })}
+        <LoadingWrapper loading={loading} noData={!pages.length}>
+          {this.renderContent(pages)}
+        </LoadingWrapper>
         <NavigationContainer hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowDirectoryList} />
           <PlusButton id="createPageBtn" onClick={this.handleCreatePage} />

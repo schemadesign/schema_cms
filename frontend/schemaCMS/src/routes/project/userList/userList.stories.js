@@ -26,7 +26,7 @@ export const propsWithUsers = {
   ],
 };
 
-storiesOf('Project/UserList', module)
+storiesOf('Project|UserList', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('list', () => <UserList {...defaultProps} />)

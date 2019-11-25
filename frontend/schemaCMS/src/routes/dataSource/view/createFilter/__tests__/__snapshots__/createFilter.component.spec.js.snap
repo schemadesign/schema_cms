@@ -12,27 +12,14 @@ exports[`CreateFilter: Component should render correctly 1`] = `
     }
     headerTitle="name"
   />
-  <FilterForm
-    createFilter={[Function]}
-    dataSourceId="1"
-    fieldsInfo={
-      Object {
-        "field": Object {
-          "fieldType": "fieldType",
-          "filterType": Array [
-            "filterType",
-          ],
-          "unique": "unique",
-        },
-      }
-    }
-    filter={Object {}}
-    history={
-      Object {
-        "push": [Function],
-      }
-    }
-  />
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <Component />
+  </LoadingWrapper>
 </styled.div>
 `;
 
@@ -48,6 +35,13 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
     }
     headerTitle="name"
   />
-  <Loader />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <Component />
+  </LoadingWrapper>
 </styled.div>
 `;

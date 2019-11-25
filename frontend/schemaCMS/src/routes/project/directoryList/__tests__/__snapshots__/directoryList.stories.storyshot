@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DirectoryList Default 1`] = `
+exports[`Storyshots Project|DirectoryList Default 1`] = `
 .c13 {
   height: 155px;
 }

@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
-import { always, path } from 'ramda';
+import { path } from 'ramda';
 
 import { Form } from './edit.styles';
 import messages from './edit.messages';
@@ -10,8 +10,7 @@ import { DIRECTORY_NAME } from '../../../modules/directory/directory.constants';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
-import { Loader } from '../../../shared/components/loader';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
 export class Edit extends PureComponent {
   static propTypes = {
@@ -49,7 +48,7 @@ export class Edit extends PureComponent {
 
   handleBackClick = () => this.props.history.push(`/project/${path(['directory', 'project'], this.props)}/directory`);
 
-  renderContent = renderWhenTrueOtherwise(always(<Loader />), () => (
+  renderContent = () => (
     <TextInput
       value={this.props.values[DIRECTORY_NAME]}
       onChange={this.props.handleChange}
@@ -60,7 +59,7 @@ export class Edit extends PureComponent {
       isEdit
       {...this.props}
     />
-  ));
+  );
 
   render() {
     const { handleSubmit, isValid } = this.props;
@@ -73,7 +72,7 @@ export class Edit extends PureComponent {
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
-          {this.renderContent(loading)}
+          <LoadingWrapper loading={loading}>{this.renderContent}</LoadingWrapper>
           <NavigationContainer>
             <BackButton id="backBtn" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />

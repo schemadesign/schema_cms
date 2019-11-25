@@ -34,124 +34,131 @@ exports[`List: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <styled.section>
-    <Styled(Component)
-      headerComponent={
-        <ForwardRef(styled.ul)>
-          <ForwardRef(styled.li)
-            id="headerItem-0"
-          >
-            3 months ago
-          </ForwardRef(styled.li)>
-          <ForwardRef(styled.li)
-            id="headerItem-1"
-          >
-            In Progress
-          </ForwardRef(styled.li)>
-          <ForwardRef(styled.li)
-            id="headerItem-2"
-          >
-            Sed sed risus a nibh Maecenas nec pulvinar ex
-          </ForwardRef(styled.li)>
-        </ForwardRef(styled.ul)>
-      }
-      key="0"
-    >
-      <H1
-        customStyles={
-          Object {
-            "cursor": "pointer",
-          }
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent="No Projects"
+  >
+    <styled.section>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              3 months ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              In Progress
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-2"
+            >
+              Sed sed risus a nibh Maecenas nec pulvinar ex
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
         }
-        id="projectName-0"
-        onClick={[Function]}
+        key="0"
       >
-        Project Name
-      </H1>
-      <styled.div
-        onClick={[Function]}
-      >
-        <P
-          id="projectDescription-0"
+        <H1
+          customStyles={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          id="projectName-0"
+          onClick={[Function]}
         >
-          Description
-        </P>
-      </styled.div>
-      <Span
-        customStyles={
-          Object {
-            "display": "block",
-            "fontSize": "12px",
-            "overflow": "hidden",
-            "textOverflow": "ellipsis",
-            "whiteSpace": "nowrap",
-            "width": "100%",
-          }
-        }
-        id="apiPath-0"
-      >
-        schemacms/api/project_title
-      </Span>
-    </Styled(Component)>
-    <Styled(Component)
-      headerComponent={
-        <ForwardRef(styled.ul)>
-          <ForwardRef(styled.li)
-            id="headerItem-0"
-          >
-            3 months ago
-          </ForwardRef(styled.li)>
-          <ForwardRef(styled.li)
-            id="headerItem-1"
-          >
-            Published
-          </ForwardRef(styled.li)>
-          <ForwardRef(styled.li)
-            id="headerItem-2"
-          >
-            Tadeusz Kosciuszko
-          </ForwardRef(styled.li)>
-        </ForwardRef(styled.ul)>
-      }
-      key="1"
-    >
-      <H1
-        customStyles={
-          Object {
-            "cursor": "pointer",
-          }
-        }
-        id="projectName-1"
-        onClick={[Function]}
-      >
-        Honec sodales libero non fermentum aliquam
-      </H1>
-      <styled.div
-        onClick={[Function]}
-      >
-        <P
-          id="projectDescription-1"
+          Project Name
+        </H1>
+        <styled.div
+          onClick={[Function]}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
-        </P>
-      </styled.div>
-      <Span
-        customStyles={
-          Object {
-            "display": "block",
-            "fontSize": "12px",
-            "overflow": "hidden",
-            "textOverflow": "ellipsis",
-            "whiteSpace": "nowrap",
-            "width": "100%",
+          <P
+            id="projectDescription-0"
+          >
+            Description
+          </P>
+        </styled.div>
+        <Span
+          customStyles={
+            Object {
+              "display": "block",
+              "fontSize": "12px",
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
+              "width": "100%",
+            }
           }
+          id="apiPath-0"
+        >
+          schemacms/api/project_title
+        </Span>
+      </Styled(Component)>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              3 months ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              Published
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-2"
+            >
+              Tadeusz Kosciuszko
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
         }
-        id="apiPath-1"
+        key="1"
       >
-        schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
-      </Span>
-    </Styled(Component)>
-  </styled.section>
+        <H1
+          customStyles={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          id="projectName-1"
+          onClick={[Function]}
+        >
+          Honec sodales libero non fermentum aliquam
+        </H1>
+        <styled.div
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-1"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
+          </P>
+        </styled.div>
+        <Span
+          customStyles={
+            Object {
+              "display": "block",
+              "fontSize": "12px",
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
+              "width": "100%",
+            }
+          }
+          id="apiPath-1"
+        >
+          schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+        </Span>
+      </Styled(Component)>
+    </styled.section>
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={true}
     right={true}
@@ -198,7 +205,131 @@ exports[`List: Component should render correctly with loading 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <Loader />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent="No Projects"
+  >
+    <styled.section>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              3 months ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              In Progress
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-2"
+            >
+              Sed sed risus a nibh Maecenas nec pulvinar ex
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="0"
+      >
+        <H1
+          customStyles={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          id="projectName-0"
+          onClick={[Function]}
+        >
+          Project Name
+        </H1>
+        <styled.div
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-0"
+          >
+            Description
+          </P>
+        </styled.div>
+        <Span
+          customStyles={
+            Object {
+              "display": "block",
+              "fontSize": "12px",
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
+              "width": "100%",
+            }
+          }
+          id="apiPath-0"
+        >
+          schemacms/api/project_title
+        </Span>
+      </Styled(Component)>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              3 months ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              Published
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-2"
+            >
+              Tadeusz Kosciuszko
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="1"
+      >
+        <H1
+          customStyles={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          id="projectName-1"
+          onClick={[Function]}
+        >
+          Honec sodales libero non fermentum aliquam
+        </H1>
+        <styled.div
+          onClick={[Function]}
+        >
+          <P
+            id="projectDescription-1"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
+          </P>
+        </styled.div>
+        <Span
+          customStyles={
+            Object {
+              "display": "block",
+              "fontSize": "12px",
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
+              "width": "100%",
+            }
+          }
+          id="apiPath-1"
+        >
+          schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+        </Span>
+      </Styled(Component)>
+    </styled.section>
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={true}
     right={true}
@@ -245,12 +376,14 @@ exports[`List: Component should render without data 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <styled.div>
-    <P>
-      No Projects
-       
-    </P>
-  </styled.div>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={true}
+    noDataContent="No Projects"
+  >
+    <styled.section />
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={true}
     right={true}

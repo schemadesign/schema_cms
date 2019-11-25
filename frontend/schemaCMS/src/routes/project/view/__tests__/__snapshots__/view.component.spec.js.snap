@@ -11,24 +11,9 @@ exports[`View: Component should render correctly 1`] = `
     <TopHeader
       headerSubtitle="Project Name"
       headerTitle="Project"
-      primaryMenuItems={
-        Array [
-          Object {
-            "label": "Data Sources",
-            "to": "/project/100/datasource",
-          },
-        ]
-      }
+      primaryMenuItems={Array []}
       secondaryMenuItems={
         Array [
-          Object {
-            "label": "Edit Project Settings",
-            "to": "/project/edit/100",
-          },
-          Object {
-            "label": "Delete Project",
-            "onClick": [Function],
-          },
           Object {
             "label": "Log Out",
             "to": "/logout",
@@ -36,197 +21,204 @@ exports[`View: Component should render correctly 1`] = `
         ]
       }
     />
-    <ProjectTabs
-      active="settings"
-      url="/project/100"
-    />
-    <styled.div>
-      <styled.ul>
-        <styled.li
-          key="0"
-        >
-          <Component
-            customStyles={
-              Object {
-                "cursor": "pointer",
+    <LoadingWrapper
+      error={null}
+      loading={true}
+      noData={false}
+      noDataContent={null}
+    >
+      <ProjectTabs
+        active="settings"
+        url="/project/100"
+      />
+      <styled.div>
+        <styled.ul>
+          <styled.li
+            key="0"
+          >
+            <Component
+              customStyles={
+                Object {
+                  "cursor": "pointer",
+                }
               }
-            }
-            headerComponent={
-              <ForwardRef(styled.span)>
-                Data Sources
-              </ForwardRef(styled.span)>
-            }
-            id="projectDataSources"
-            onClick={[Function]}
-          >
-            <styled.span
-              id="projectDataSourcesValue"
-            >
-              3
-            </styled.span>
-          </Component>
-        </styled.li>
-        <styled.li
-          key="1"
-        >
-          <Component
-            customStyles={
-              Object {
-                "cursor": "pointer",
+              headerComponent={
+                <ForwardRef(styled.span)>
+                  Data Sources
+                </ForwardRef(styled.span)>
               }
-            }
-            headerComponent={
-              <ForwardRef(styled.span)>
-                Users
-              </ForwardRef(styled.span)>
-            }
-            id="projectUsers"
-            onClick={[Function]}
-          >
-            <styled.span
-              id="projectUsersValue"
+              id="projectDataSources"
+              onClick={[Function]}
             >
-              2
-            </styled.span>
-          </Component>
-        </styled.li>
-      </styled.ul>
-      <styled.ul>
-        <styled.li
-          key="0"
-          order={1}
+              <styled.span
+                id="projectDataSourcesValue"
+              >
+                3
+              </styled.span>
+            </Component>
+          </styled.li>
+          <styled.li
+            key="1"
+          >
+            <Component
+              customStyles={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+              headerComponent={
+                <ForwardRef(styled.span)>
+                  Users
+                </ForwardRef(styled.span)>
+              }
+              id="projectUsers"
+              onClick={[Function]}
+            >
+              <styled.span
+                id="projectUsersValue"
+              >
+                2
+              </styled.span>
+            </Component>
+          </styled.li>
+        </styled.ul>
+        <styled.ul>
+          <styled.li
+            key="0"
+            order={1}
+          >
+            <styled.div
+              id="fieldLastUpdated"
+            >
+              <styled.span
+                id="fieldLastUpdatedLabel"
+              >
+                Last Update
+              </styled.span>
+              <styled.span
+                id="fieldLastUpdatedValue"
+              >
+                3 months ago
+              </styled.span>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="1"
+            order={3}
+          >
+            <styled.div
+              id="fieldStatus"
+            >
+              <styled.span
+                id="fieldStatusLabel"
+              >
+                Status
+              </styled.span>
+              <styled.span
+                id="fieldStatusValue"
+              >
+                Status
+              </styled.span>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="2"
+            order={5}
+          >
+            <styled.div
+              id="fieldOwner"
+            >
+              <styled.span
+                id="fieldOwnerLabel"
+              >
+                Owner
+              </styled.span>
+              <styled.span
+                id="fieldOwnerValue"
+              >
+                Firstname Lastname
+              </styled.span>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="3"
+            order={2}
+          >
+            <styled.div
+              id="fieldTitle"
+            >
+              <styled.span
+                id="fieldTitleLabel"
+              >
+                Title
+              </styled.span>
+              <styled.span
+                id="fieldTitleValue"
+              >
+                Project Name
+              </styled.span>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="4"
+            order={4}
+          >
+            <styled.div
+              id="fieldDescription"
+            >
+              <styled.span
+                id="fieldDescriptionLabel"
+              >
+                Description
+              </styled.span>
+              <styled.span
+                id="fieldDescriptionValue"
+              >
+                Description
+              </styled.span>
+            </styled.div>
+          </styled.li>
+          <styled.li
+            key="5"
+            order={6}
+          >
+            <styled.div
+              id="fieldSlug"
+            >
+              <styled.span
+                id="fieldSlugLabel"
+              >
+                API
+              </styled.span>
+              <styled.span
+                id="fieldSlugValue"
+              >
+                schemacms/api/project_title
+              </styled.span>
+            </styled.div>
+          </styled.li>
+        </styled.ul>
+      </styled.div>
+      <styled.div>
+        <Styled(Span)
+          id="deleteProjectDesktopBtn"
+          onClick={[Function]}
         >
-          <styled.div
-            id="fieldLastUpdated"
-          >
-            <styled.span
-              id="fieldLastUpdatedLabel"
-            >
-              Last Update
-            </styled.span>
-            <styled.span
-              id="fieldLastUpdatedValue"
-            >
-              3 months ago
-            </styled.span>
-          </styled.div>
-        </styled.li>
-        <styled.li
-          key="1"
-          order={3}
-        >
-          <styled.div
-            id="fieldStatus"
-          >
-            <styled.span
-              id="fieldStatusLabel"
-            >
-              Status
-            </styled.span>
-            <styled.span
-              id="fieldStatusValue"
-            >
-              Status
-            </styled.span>
-          </styled.div>
-        </styled.li>
-        <styled.li
-          key="2"
-          order={5}
-        >
-          <styled.div
-            id="fieldOwner"
-          >
-            <styled.span
-              id="fieldOwnerLabel"
-            >
-              Owner
-            </styled.span>
-            <styled.span
-              id="fieldOwnerValue"
-            >
-              Firstname Lastname
-            </styled.span>
-          </styled.div>
-        </styled.li>
-        <styled.li
-          key="3"
-          order={2}
-        >
-          <styled.div
-            id="fieldTitle"
-          >
-            <styled.span
-              id="fieldTitleLabel"
-            >
-              Title
-            </styled.span>
-            <styled.span
-              id="fieldTitleValue"
-            >
-              Project Name
-            </styled.span>
-          </styled.div>
-        </styled.li>
-        <styled.li
-          key="4"
-          order={4}
-        >
-          <styled.div
-            id="fieldDescription"
-          >
-            <styled.span
-              id="fieldDescriptionLabel"
-            >
-              Description
-            </styled.span>
-            <styled.span
-              id="fieldDescriptionValue"
-            >
-              Description
-            </styled.span>
-          </styled.div>
-        </styled.li>
-        <styled.li
-          key="5"
-          order={6}
-        >
-          <styled.div
-            id="fieldSlug"
-          >
-            <styled.span
-              id="fieldSlugLabel"
-            >
-              API
-            </styled.span>
-            <styled.span
-              id="fieldSlugValue"
-            >
-              schemacms/api/project_title
-            </styled.span>
-          </styled.div>
-        </styled.li>
-      </styled.ul>
-    </styled.div>
-    <styled.div>
-      <Styled(Span)
-        id="deleteProjectDesktopBtn"
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Delete Project"
-          id="project.view.deleteProject"
-          values={Object {}}
-        />
-      </Styled(Span)>
-    </styled.div>
+          <FormattedMessage
+            defaultMessage="Delete Project"
+            id="project.view.deleteProject"
+            values={Object {}}
+          />
+        </Styled(Span)>
+      </styled.div>
+    </LoadingWrapper>
   </div>
   <NavigationContainer
     hideOnDesktop={false}
     right={false}
   >
     <BackArrowButton
-      id="addProjectBtn"
+      id="backProjectBtn"
       onClick={[Function]}
     />
   </NavigationContainer>

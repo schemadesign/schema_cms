@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project/UserList list 1`] = `
+exports[`Storyshots Project|UserList list 1`] = `
 .c13 {
   height: 155px;
 }
@@ -649,7 +649,7 @@ exports[`Storyshots Project/UserList list 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project/UserList list with users 1`] = `
+exports[`Storyshots Project|UserList list with users 1`] = `
 .c19 {
   height: 155px;
 }
