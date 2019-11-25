@@ -18,6 +18,23 @@ function* fetchList({ payload: { pageId } }) {
   }
 }
 
+function* setBlocks({ payload: { pageId, active, inactive } }) {
+  try {
+    yield put(BlockRoutines.setBlocks.request());
+
+    const { data } = yield api.post(`${PAGES_PATH}/${pageId}/set-blocks`, { active, inactive });
+
+    yield put(BlockRoutines.setBlocks.success(data));
+  } catch (e) {
+    yield put(BlockRoutines.setBlocks.failure(e));
+  } finally {
+    yield put(BlockRoutines.setBlocks.fulfill());
+  }
+}
+
 export function* watchBlock() {
-  yield all([takeLatest(BlockRoutines.fetchList.TRIGGER, fetchList)]);
+  yield all([
+    takeLatest(BlockRoutines.fetchList.TRIGGER, fetchList),
+    takeLatest(BlockRoutines.setBlocks.TRIGGER, setBlocks),
+  ]);
 }

@@ -28,6 +28,15 @@ describe('Page: redux', () => {
     });
   });
 
+  describe('when PAGE/FETCH_ONE action is received', () => {
+    it('should set page', () => {
+      const page = { data: 'data' };
+
+      const resultState = pageReducer(state, PageRoutines.fetchOne.success(page));
+      expect(resultState.page).to.deep.equal(page);
+    });
+  });
+
   describe('when PAGE/CREATE success action is received', () => {
     it('should set filters', () => {
       const page = { data: 'data' };

@@ -26,4 +26,13 @@ describe('Block: redux', () => {
       expect(resultState.blocks).to.deep.equal(blocks);
     });
   });
+
+  describe('when BLOCK/SET_BLOCKS action is received', () => {
+    it('should set blocks', () => {
+      const blocks = [{ data: 'data' }];
+
+      const resultState = blockReducer(state, BlockRoutines.setBlocks.success(blocks));
+      expect(resultState.blocks).to.deep.equal(blocks);
+    });
+  });
 });

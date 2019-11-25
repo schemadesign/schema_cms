@@ -35,6 +35,25 @@ describe('Page: sagas', () => {
     });
   });
 
+  describe('when fetchOne action is called', () => {
+    it('should put fetchOne.success action', async () => {
+      const response = {
+        id: 1,
+      };
+      const payload = {
+        pageId: 1,
+      };
+
+      mockApi.get(`/pages/${payload.pageId}`).reply(OK, response);
+
+      await expectSaga(watchPage)
+        .withState(defaultState)
+        .put(PageRoutines.fetchOne.success(response))
+        .dispatch(PageRoutines.fetchOne(payload))
+        .silentRun();
+    });
+  });
+
   describe('when create action is called', () => {
     it('should put create.success action', async () => {
       const response = {

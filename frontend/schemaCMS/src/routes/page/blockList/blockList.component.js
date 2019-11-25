@@ -34,7 +34,10 @@ const { CheckboxGroup, Checkbox } = Form;
 export class BlockList extends PureComponent {
   static propTypes = {
     blocks: PropTypes.array.isRequired,
+    page: PropTypes.object.isRequired,
     fetchBlocks: PropTypes.func.isRequired,
+    fetchPage: PropTypes.func.isRequired,
+    setBlocks: PropTypes.func.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         pageId: PropTypes.string.isRequired,
@@ -55,6 +58,7 @@ export class BlockList extends PureComponent {
   async componentDidMount() {
     try {
       const pageId = this.getPageId();
+      await this.props.fetchPage({ pageId });
       await this.props.fetchBlocks({ pageId });
       this.setState({ loading: false });
     } catch (e) {
@@ -63,10 +67,19 @@ export class BlockList extends PureComponent {
   }
 
   getPageId = () => path(['match', 'params', 'pageId'], this.props);
-  getDirectoryId = () => path(['match', 'params', 'directoryId'], this.props);
+  getDirectoryId = () => path(['page', 'directory', 'id'], this.props);
 
   handleCreateBlock = () => this.props.history.push(`/page/${this.getPageId()}/block/create`);
   handleShowPages = () => this.props.history.push(`/directory/${this.getDirectoryId()}`);
+
+  handleSubmit = ({ blocks }) => {
+    const pageId = this.getPageId();
+    const inactive = this.props.blocks
+      .filter(({ id }) => !blocks.includes(id.toString()))
+      .map(({ id }) => id.toString());
+
+    this.props.setBlocks({ pageId, active: blocks, inactive });
+  };
 
   handleChange = ({ e, setFieldValue, blocks }) => {
     const { value, checked } = e.target;
@@ -92,10 +105,6 @@ export class BlockList extends PureComponent {
     return (
       <Formik initialValues={{ blocks: activeBlocks }} onSubmit={this.handleSubmit}>
         {({ values: { blocks }, setFieldValue, submitForm, dirty }) => {
-          if (!blocks.length) {
-            submitForm = null;
-          }
-
           return (
             <Fragment>
               <CheckboxGroup

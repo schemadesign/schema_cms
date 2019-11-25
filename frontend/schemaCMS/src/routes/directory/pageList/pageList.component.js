@@ -71,11 +71,11 @@ export class PageList extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ id, name = '', created = '', createdBy = {}, description = '', metaData = {} }, index) {
+  renderItem({ id, name = '', created = '', createdBy = {}, description = '', meta = {} }, index) {
     const { firstName, lastName } = createdBy;
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderHeader([whenCreated, `${firstName} ${lastName}`]);
-    const footer = <FormattedMessage values={{ length: metaData.blocks }} {...messages.blocks} />;
+    const footer = <FormattedMessage values={{ length: meta.blocks }} {...messages.blocks} />;
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>

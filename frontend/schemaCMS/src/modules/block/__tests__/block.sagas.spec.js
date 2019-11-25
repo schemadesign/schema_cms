@@ -34,4 +34,27 @@ describe('Block: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('when setBlocks action is called', () => {
+    it('should put setBlocks.success action', async () => {
+      const response = {
+        id: 1,
+      };
+      const active = ['1'];
+      const inactive = ['2'];
+      const payload = {
+        pageId: 1,
+        active,
+        inactive,
+      };
+
+      mockApi.post(`/pages/${payload.pageId}/set-blocks`, { active, inactive }).reply(OK, response);
+
+      await expectSaga(watchBlock)
+        .withState(defaultState)
+        .put(BlockRoutines.setBlocks.success(response))
+        .dispatch(BlockRoutines.setBlocks(payload))
+        .silentRun();
+    });
+  });
 });

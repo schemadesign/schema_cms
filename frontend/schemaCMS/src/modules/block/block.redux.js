@@ -6,6 +6,7 @@ const PREFIX = 'BLOCK/';
 
 export const BlockRoutines = {
   fetchList: createRoutine(`${PREFIX}FETCH_LIST`),
+  setBlocks: createRoutine(`${PREFIX}SET_BLOCKS`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -16,4 +17,5 @@ const setBlocks = (state = INITIAL_STATE, { payload }) => state.set('blocks', pa
 
 export const reducer = createReducer(INITIAL_STATE, {
   [BlockRoutines.fetchList.success]: setBlocks,
+  [BlockRoutines.setBlocks.success]: setBlocks,
 });

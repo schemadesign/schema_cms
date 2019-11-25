@@ -7,6 +7,7 @@ const PREFIX = 'PAGE/';
 export const PageRoutines = {
   fetchList: createRoutine(`${PREFIX}FETCH_LIST`),
   create: createRoutine(`${PREFIX}CREATE`),
+  fetchOne: createRoutine(`${PREFIX}FETCH_ONE`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -20,4 +21,5 @@ const setPage = (state = INITIAL_STATE, { payload }) => state.set('page', payloa
 export const reducer = createReducer(INITIAL_STATE, {
   [PageRoutines.fetchList.success]: setPages,
   [PageRoutines.create.success]: setPage,
+  [PageRoutines.fetchOne.success]: setPage,
 });
