@@ -39,19 +39,24 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
         queryset = queryset.filter(deleted_at__isnull=0)
         # Check if project names exist in the not deleted queryset
         field = "title"
-        conflicts = self.model.objects.values_list(field, flat=True).filter(
-            **{f"{field}__in": queryset.values(field)}).distinct(field).iterator()
+        conflicts = (
+            self.model.objects.values_list(field, flat=True)
+            .filter(**{f"{field}__in": queryset.values(field)})
+            .distinct(field)
+            .iterator()
+        )
         conflict = next(conflicts, None)
         if conflict:
             html = render_to_string(
                 "common/unordered_list.html",
                 context=dict(
                     objects=itertools.chain([conflict], conflicts),
-                    li_style="background: transparent; padding: 0px;"
+                    li_style="background: transparent; padding: 0px;",
                 ),
             )
             msg = safestring.mark_safe(
-                f"Project(s) with name: {html} already exists. Please change name of this project before undeleting it."
+                f"Project(s) with name: {html} already exists. "
+                f"Please change name of this project before undeleting it."
             )
             self.message_user(request=request, message=msg, level=messages.ERROR)
             return
@@ -65,9 +70,7 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
     def get_editors(self, obj):
         # to reduce db calls use prefetch related cache
         emails = (editor.email for editor in obj.editors.all())
-        html = render_to_string(
-            "common/unordered_list.html", context=dict(objects=emails)
-        )
+        html = render_to_string("common/unordered_list.html", context=dict(objects=emails))
         return safestring.mark_safe(html)
 
     get_editors.short_description = "Editors"
