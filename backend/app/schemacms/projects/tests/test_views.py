@@ -1156,3 +1156,115 @@ class TestPageDetailView:
     @staticmethod
     def get_url(pk):
         return reverse("projects:page-detail", kwargs=dict(pk=pk))
+
+
+class TestBlockListCreateView:
+    def test_response(self, api_client, admin, page, block_factory):
+        blocks = block_factory.create_batch(2, page=page)
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(page.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert (
+            response.data
+            == projects_serializers.BlockSerializer(instance=self.sort_directories(blocks), many=True).data
+        )
+
+    def test_create(self, api_client, admin, page, faker):
+        payload = dict(name=faker.word(), type=projects_constants.BlockTypes.CODE, content="<p>test</p>")
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(page.id), data=payload, format="json")
+        page_blocks = page.blocks.all()
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert page_blocks.count() == 1
+        assert response.data == projects_serializers.BlockSerializer(page_blocks[0]).data
+
+    def test_image_upload(self, api_client, admin, page, faker):
+        payload = dict(
+            name=faker.word(), type=projects_constants.BlockTypes.IMAGE, image=faker.image_upload_file()
+        )
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(page.id), data=payload, format="multipart")
+        block = page.blocks.get(pk=response.data["id"])
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert block.image.name == '/pages/8/test.png'
+
+    def test_400_on_image_upload_with_wrong_type(self, api_client, admin, page, faker):
+        payload = dict(
+            name=faker.word(), type=projects_constants.BlockTypes.TEXT, image=faker.image_upload_file()
+        )
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(page.id), data=payload, format="multipart")
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+
+    def test_400_on_sending_type_image_without_file(self, api_client, admin, page, faker):
+        payload = dict(name=faker.word(), type=projects_constants.BlockTypes.IMAGE,)
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(page.id), data=payload, format="json")
+
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:page-blocks", kwargs=dict(pk=pk))
+
+    @staticmethod
+    def sort_directories(iterable):
+        return sorted(iterable, key=operator.attrgetter("created"))
+
+
+class TestBlockDetailView:
+    def test_response(self, api_client, admin, block):
+
+        api_client.force_authenticate(admin)
+        response = api_client.get(self.get_url(block.id))
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data == projects_serializers.BlockDetailSerializer(block).data
+
+    def test_update_block(self, api_client, admin, page, page_factory, block, faker):
+        new_page = page_factory()
+        new_name = faker.word()
+        payload = dict(name=new_name, page=new_page.id)
+
+        api_client.force_authenticate(admin)
+        response = api_client.patch(self.get_url(block.id), data=payload, format="json")
+        block.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["name"] == new_name
+        assert block.page_id == page.id
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:block-detail", kwargs=dict(pk=pk))
+
+
+class TestSetBlocksView:
+    def test_response(self, api_client, admin, page, block_factory):
+        block1 = block_factory(page=page, is_active=False)
+        block2 = block_factory(page=page, is_active=True)
+        block1_old_status = block1.is_active
+        block2_old_status = block2.is_active
+        payload = {"active": [block1.id], "inactive": [block2.id]}
+
+        api_client.force_authenticate(admin)
+        response = api_client.post(self.get_url(page.id), data=payload)
+        block1.refresh_from_db()
+        block2.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert block1_old_status != block1.is_active
+        assert block2_old_status != block2.is_active
+
+    @staticmethod
+    def get_url(pk):
+        return reverse("projects:page-set-blocks", kwargs=dict(pk=pk))

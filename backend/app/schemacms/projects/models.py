@@ -487,6 +487,8 @@ class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="pages", null=True
     )
 
+    objects = managers.PageQuerySet().as_manager()
+
     def __str__(self):
         return str(self.pk)
 
@@ -494,8 +496,34 @@ class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
         unique_together = ("title", "directory")
         ordering = ('created',)
 
+    @functional.cached_property
+    def blocks_count(self):
+        return self.blocks.count()
+
     @property
     def page_url(self):
         return os.path.join(
             settings.PUBLIC_API_LAMBDA_URL, "projects", str(self.directory.project_id), "pages", str(self.pk)
         )
+
+
+class Block(utils_models.MetaGeneratorMixin, ext_models.TimeStampedModel):
+    page: Page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name="blocks")
+    name = models.CharField(max_length=25)
+    type = models.CharField(max_length=25, choices=constants.BLOCK_TYPE_CHOICES)
+    content = models.TextField(null=True, blank=True, default="")
+    image = models.ImageField(upload_to=file_upload_path, null=True,)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return str(self.pk)
+
+    class Meta:
+        unique_together = ("name", "page")
+        ordering = ('created',)
+
+    def relative_path_to_save(self, filename):
+        base_path = self.image.storage.location
+        if not self.page_id:
+            raise ValueError("Page is not set")
+        return os.path.join(base_path, f"pages/{self.page_id}/{filename}")

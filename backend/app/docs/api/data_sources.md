@@ -434,7 +434,7 @@ Content-Type: application/json
 ]
 ```
 
-## Revert to data source job
+## activate/deactivate filters
 
 **Request**:
 

@@ -16,6 +16,7 @@ def faker():
     fake = faker_.Faker()
     fake.add_provider(utils_test.CSVProvider)
     fake.add_provider(utils_test.PythonScriptProvider)
+    fake.add_provider(utils_test.ImageProvider)
     return fake
 
 

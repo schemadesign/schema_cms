@@ -114,3 +114,11 @@ class PageFactory(factory.django.DjangoModelFactory):
     directory = factory.SubFactory(DirectoryFactory)
     title = factory.Faker("text", max_nb_chars=25)
     created_by = factory.SubFactory(UserFactory)
+
+
+class BlockFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "projects.Block"
+
+    page = factory.SubFactory(PageFactory)
+    name = factory.Faker("text", max_nb_chars=25)

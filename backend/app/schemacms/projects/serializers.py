@@ -2,7 +2,7 @@ from django.db import transaction
 from rest_framework import serializers, exceptions
 
 from schemacms.projects import models
-from .constants import DataSourceJobState
+from .constants import DataSourceJobState, BlockTypes
 from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
@@ -398,6 +398,7 @@ class PageSerializer(serializers.ModelSerializer):
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
     page_url = serializers.SerializerMethodField(read_only=True)
+    meta = serializers.SerializerMethodField()
 
     class Meta:
         model = models.Page
@@ -411,7 +412,9 @@ class PageSerializer(serializers.ModelSerializer):
             "created_by",
             "created",
             "modified",
+            "meta",
         )
+        extra_kwargs = {"directory": {"required": False, "allow_null": True}}
 
     def create(self, validated_data):
         page = models.Page(created_by=self.context["request"].user, **validated_data)
@@ -422,6 +425,9 @@ class PageSerializer(serializers.ModelSerializer):
     def get_page_url(self, page):
         return page.page_url
 
+    def get_meta(self, page):
+        return {"blocks": page.blocks_count}
+
 
 class PageDirectorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -431,3 +437,40 @@ class PageDirectorySerializer(serializers.ModelSerializer):
 
 class PageDetailSerializer(PageSerializer):
     directory = NestedRelatedModelSerializer(serializer=PageDirectorySerializer(), read_only=True)
+
+
+class BlockSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Block
+        fields = ("id", "page", "name", "type", "content", "image", "is_active")
+        extra_kwargs = {"page": {"required": False, "allow_null": True}}
+
+    def validate_type(self, type_):
+        if type_ == BlockTypes.IMAGE and not self.initial_data.get("image", None):
+            message = f"Please select image to upload."
+            raise serializers.ValidationError({"image": message}, code="noImage")
+
+        if self.initial_data.get("image", None) and type_ != BlockTypes.IMAGE:
+            message = f"For image upload use Image Uploaded block type."
+            raise serializers.ValidationError({"type": message}, code="invalidType")
+
+        return type_
+
+    @transaction.atomic()
+    def update(self, instance, validated_data):
+        new_type = validated_data.get("type")
+
+        if new_type and (instance.type == BlockTypes.IMAGE and new_type != BlockTypes.IMAGE):
+            instance.image.delete()
+
+        return super().update(instance, validated_data)
+
+
+class BlockPageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Page
+        fields = ("id", "title", "directory")
+
+
+class BlockDetailSerializer(BlockSerializer):
+    page = NestedRelatedModelSerializer(serializer=BlockPageSerializer(), read_only=True)
