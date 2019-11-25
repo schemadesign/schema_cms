@@ -142,6 +142,10 @@ class Project(
     def data_source_count(self):
         return self.data_sources.count()
 
+    @functional.cached_property
+    def pages_count(self):
+        return self.directories.values("pages").count()
+
 
 class DataSource(
     utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
@@ -476,6 +480,8 @@ class Directory(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel)
         return str(self.id)
 
     class Meta:
+        verbose_name = _("Directory")
+        verbose_name_plural = _("Directories")
         unique_together = ("name", "project")
         ordering = ('name',)
 
