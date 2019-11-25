@@ -443,7 +443,7 @@ exports[`Storyshots Edit Default 1`] = `
           <button
             className="c12"
             disabled={false}
-            id="createDirectoryBtn"
+            id="editDirectoryBtn"
             style={
               Object {
                 "backgroundColor": "#FFF",

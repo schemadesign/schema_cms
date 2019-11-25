@@ -78,7 +78,7 @@ export class Edit extends PureComponent {
             <BackButton id="backBtn" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
-            <NextButton id="createDirectoryBtn" type="submit" disabled={!isValid}>
+            <NextButton id="editDirectoryBtn" type="submit" disabled={!isValid}>
               <FormattedMessage {...messages.createDirectory} />
             </NextButton>
           </NavigationContainer>

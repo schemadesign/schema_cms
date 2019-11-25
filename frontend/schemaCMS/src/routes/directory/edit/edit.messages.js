@@ -3,27 +3,27 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'project.createDirectory.title',
+    id: 'directory.edit.title',
     defaultMessage: 'Directories',
   },
   subTitle: {
-    id: 'project.createDirectory.subTitle',
+    id: 'directory.edit.subTitle',
     defaultMessage: 'Edit',
   },
   directoryFieldName: {
-    id: 'project.createDirectory.directoryFieldName',
+    id: 'directory.edit.directoryFieldName',
     defaultMessage: 'Directory Name',
   },
   directoryFieldPlaceholder: {
-    id: 'project.createDirectory.directoryFieldPlaceholder',
+    id: 'directory.edit.directoryFieldPlaceholder',
     defaultMessage: 'Name',
   },
   createDirectory: {
-    id: 'project.createDirectory.createDirectory',
+    id: 'directory.edit.createDirectory',
     defaultMessage: 'Save',
   },
   cancel: {
-    id: 'project.createDirectory.cancel',
+    id: 'directory.edit.cancel',
     defaultMessage: 'Back',
   },
 });
