@@ -8,7 +8,14 @@ export const defaultProps = {
     formatMessage: Function.prototype,
   },
   values: {},
-  history: {},
+  match: {
+    params: {
+      projectId: 1,
+    },
+  },
+  history: {
+    push: Function.prototype,
+  },
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
   handleBlur: Function.prototype,
