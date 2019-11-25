@@ -19,7 +19,7 @@ describe('DirectoryList: Component', () => {
   });
 
   it('should render correctly', async () => {
-    defaultProps.fetchList = jest.fn().mockReturnValue(Promise.resolve());
+    defaultProps.fetchDirectories = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render();
     await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
@@ -28,13 +28,13 @@ describe('DirectoryList: Component', () => {
   it('should go to main page', async () => {
     jest.spyOn(defaultProps.history, 'push');
     defaultProps.fetchDirectories = jest.fn().mockReturnValue(Promise.reject());
-    await render();
-
+    render();
+    await Promise.resolve();
     expect(defaultProps.history.push).toBeCalledWith('/');
   });
 
   it('should fetch list', () => {
-    jest.spyOn(defaultProps, 'fetchList');
+    jest.spyOn(defaultProps, 'fetchDirectories');
     render();
 
     expect(defaultProps.fetchDirectories).toBeCalledWith({ projectId: '1' });
@@ -56,7 +56,7 @@ describe('DirectoryList: Component', () => {
       .at(0)
       .simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/project/1/create');
+    expect(defaultProps.history.push).toBeCalledWith('/project/1/directory/create');
   });
 
   it('should create directory on mobile', () => {
@@ -67,12 +67,12 @@ describe('DirectoryList: Component', () => {
       .at(1)
       .simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/project/1/create');
+    expect(defaultProps.history.push).toBeCalledWith('/project/1/directory/create');
   });
 
   it('should show directory', async () => {
     jest.spyOn(defaultProps.history, 'push');
-    defaultProps.fetchList = jest.fn().mockReturnValue(Promise.resolve());
+    defaultProps.fetchDirectories = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render();
     await Promise.resolve();
     wrapper.find(H1).simulate('click');

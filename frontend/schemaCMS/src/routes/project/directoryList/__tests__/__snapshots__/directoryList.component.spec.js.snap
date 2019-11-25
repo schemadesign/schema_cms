@@ -66,23 +66,30 @@ exports[`DirectoryList: Component should render correctly 1`] = `
             <ForwardRef(styled.li)
               id="headerItem-1"
             >
-              firstNamelastName
+              firstName lastName
             </ForwardRef(styled.li)>
           </ForwardRef(styled.ul)>
         }
         key="0"
       >
-        <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
+        <styled.div>
+          <H1
+            customStyles={
+              Object {
+                "cursor": "pointer",
+              }
             }
-          }
-          id="projectName-0"
-          onClick={[Function]}
-        >
-          name
-        </H1>
+            id="directoryName-0"
+            onClick={[Function]}
+          >
+            name
+          </H1>
+          <Styled(Span)
+            onClick={[Function]}
+          >
+            Edit directory
+          </Styled(Span)>
+        </styled.div>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
@@ -167,23 +174,30 @@ exports[`DirectoryList: Component should render correctly with loader 1`] = `
             <ForwardRef(styled.li)
               id="headerItem-1"
             >
-              firstNamelastName
+              firstName lastName
             </ForwardRef(styled.li)>
           </ForwardRef(styled.ul)>
         }
         key="0"
       >
-        <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
+        <styled.div>
+          <H1
+            customStyles={
+              Object {
+                "cursor": "pointer",
+              }
             }
-          }
-          id="projectName-0"
-          onClick={[Function]}
-        >
-          name
-        </H1>
+            id="directoryName-0"
+            onClick={[Function]}
+          >
+            name
+          </H1>
+          <Styled(Span)
+            onClick={[Function]}
+          >
+            Edit directory
+          </Styled(Span)>
+        </styled.div>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
