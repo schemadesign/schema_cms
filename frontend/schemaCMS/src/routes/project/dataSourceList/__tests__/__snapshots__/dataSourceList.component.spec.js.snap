@@ -40,6 +40,77 @@ exports[`DataSourceList: Component should render card with job 1`] = `
   >
     <styled.section>
       <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
         headerComponent={
           <ForwardRef(styled.div)>
             <ForwardRef(styled.ul)>
@@ -67,85 +138,6 @@ exports[`DataSourceList: Component should render card with job 1`] = `
         >
           name
         </Styled(H1)>
-        <styled.div>
-          <styled.div
-            key="0"
-          >
-            <styled.span
-              id="metaItem-0"
-            >
-              Source
-            </styled.span>
-            <styled.span
-              id="metaItemValue-0"
-            >
-              <Component
-                customStyles={
-                  Object {
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-              />
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="1"
-          >
-            <styled.span
-              id="metaItem-1"
-            >
-              Items
-            </styled.span>
-            <styled.span
-              id="metaItemValue-1"
-            >
-              —
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="2"
-          >
-            <styled.span
-              id="metaItem-2"
-            >
-              Fields
-            </styled.span>
-            <styled.span
-              id="metaItemValue-2"
-            >
-              —
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="3"
-          >
-            <styled.span
-              id="metaItem-3"
-            >
-              Filters
-            </styled.span>
-            <styled.span
-              id="metaItemValue-3"
-            >
-              —
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="4"
-          >
-            <styled.span
-              id="metaItem-4"
-            >
-              Views
-            </styled.span>
-            <styled.span
-              id="metaItemValue-4"
-            >
-              —
-            </styled.span>
-          </styled.div>
-        </styled.div>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
@@ -205,6 +197,77 @@ exports[`DataSourceList: Component should render correctly 1`] = `
   >
     <styled.section>
       <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
         headerComponent={
           <ForwardRef(styled.div)>
             <ForwardRef(styled.ul)>
@@ -232,87 +295,79 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         >
           name
         </Styled(H1)>
-        <styled.div>
-          <styled.div
-            key="0"
-          >
-            <styled.span
-              id="metaItem-0"
-            >
-              Source
-            </styled.span>
-            <styled.span
-              id="metaItemValue-0"
-            >
-              <Component
-                customStyles={
-                  Object {
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-              />
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="1"
-          >
-            <styled.span
-              id="metaItem-1"
-            >
-              Items
-            </styled.span>
-            <styled.span
-              id="metaItemValue-1"
-            >
-              —
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="2"
-          >
-            <styled.span
-              id="metaItem-2"
-            >
-              Fields
-            </styled.span>
-            <styled.span
-              id="metaItemValue-2"
-            >
-              —
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="3"
-          >
-            <styled.span
-              id="metaItem-3"
-            >
-              Filters
-            </styled.span>
-            <styled.span
-              id="metaItemValue-3"
-            >
-              —
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="4"
-          >
-            <styled.span
-              id="metaItem-4"
-            >
-              Views
-            </styled.span>
-            <styled.span
-              id="metaItemValue-4"
-            >
-              —
-            </styled.span>
-          </styled.div>
-        </styled.div>
       </Styled(Component)>
       <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                246
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                11
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
         headerComponent={
           <ForwardRef(styled.div)>
             <ForwardRef(styled.ul)>
@@ -340,85 +395,6 @@ exports[`DataSourceList: Component should render correctly 1`] = `
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </Styled(H1)>
-        <styled.div>
-          <styled.div
-            key="0"
-          >
-            <styled.span
-              id="metaItem-0"
-            >
-              Source
-            </styled.span>
-            <styled.span
-              id="metaItemValue-0"
-            >
-              <Component
-                customStyles={
-                  Object {
-                    "height": 40,
-                    "width": 40,
-                  }
-                }
-              />
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="1"
-          >
-            <styled.span
-              id="metaItem-1"
-            >
-              Items
-            </styled.span>
-            <styled.span
-              id="metaItemValue-1"
-            >
-              246
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="2"
-          >
-            <styled.span
-              id="metaItem-2"
-            >
-              Fields
-            </styled.span>
-            <styled.span
-              id="metaItemValue-2"
-            >
-              11
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="3"
-          >
-            <styled.span
-              id="metaItem-3"
-            >
-              Filters
-            </styled.span>
-            <styled.span
-              id="metaItemValue-3"
-            >
-              —
-            </styled.span>
-          </styled.div>
-          <styled.div
-            key="4"
-          >
-            <styled.span
-              id="metaItem-4"
-            >
-              Views
-            </styled.span>
-            <styled.span
-              id="metaItemValue-4"
-            >
-              —
-            </styled.span>
-          </styled.div>
-        </styled.div>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
