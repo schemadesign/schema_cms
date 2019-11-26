@@ -20,6 +20,7 @@ export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
       updatePage: promisifyRoutine(PageRoutines.update),
+      fetchPage: promisifyRoutine(PageRoutines.fetchOne),
     },
     dispatch
   );

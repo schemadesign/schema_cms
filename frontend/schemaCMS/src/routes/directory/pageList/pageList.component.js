@@ -14,6 +14,7 @@ import { Description, HeaderItem, HeaderList, titleStyles } from '../../project/
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { Link } from '../../../theme/typography';
 
 const { H1, P } = Typography;
 
@@ -38,6 +39,7 @@ export class PageList extends PureComponent {
 
   state = {
     loading: true,
+    error: null,
   };
 
   async componentDidMount() {
@@ -47,13 +49,14 @@ export class PageList extends PureComponent {
       await this.props.fetchPages({ directoryId });
 
       this.setState({ loading: false });
-    } catch (e) {
-      this.props.history.push('/');
+    } catch (error) {
+      this.setState({ loading: false, error });
     }
   }
 
   getDirectoryId = () => path(['match', 'params', 'directoryId'], this.props);
   getProjectId = () => path(['directory', 'project'], this.props);
+  handleEditPage = id => this.props.history.push(`/page/${id}/edit`);
 
   handleCreatePage = () => this.props.history.push(`/directory/${this.getDirectoryId()}/page`);
 
@@ -85,6 +88,7 @@ export class PageList extends PureComponent {
         <Description onClick={() => this.handleShowPage(id)}>
           <P id={`pageDescription-${index}`}>{description}</P>
         </Description>
+        <Link onClick={() => this.handleEditPage(id)}>Edit Page</Link>
       </ListItem>
     );
   }
@@ -93,7 +97,7 @@ export class PageList extends PureComponent {
 
   render() {
     const { pages } = this.props;
-    const { loading } = this.state;
+    const { loading, error } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -104,12 +108,12 @@ export class PageList extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton id="createPageDesktopBtn" onClick={this.handleCreatePage} />
         </ContextHeader>
-        <LoadingWrapper loading={loading} noData={!pages.length}>
+        <LoadingWrapper loading={loading} error={error} noData={!pages.length}>
           {this.renderContent(pages)}
         </LoadingWrapper>
-        <NavigationContainer hideOnDesktop>
+        <NavigationContainer>
           <BackArrowButton id="backBtn" onClick={this.handleShowDirectoryList} />
-          <PlusButton id="createPageBtn" onClick={this.handleCreatePage} />
+          <PlusButton hideOnDesktop id="createPageBtn" onClick={this.handleCreatePage} />
         </NavigationContainer>
       </Container>
     );

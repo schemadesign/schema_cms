@@ -21,7 +21,9 @@ export class CreatePage extends PureComponent {
     handleBlur: PropTypes.func.isRequired,
   };
 
-  handleBackClick = () => this.props.history.push(`/project/${getProjectId(this.props)}/directory`);
+  getDirectoryId = () => path(['match', 'params', 'directoryId'], this.props);
+
+  handleCancelClick = () => this.props.history.push(`/directory/${this.getDirectoryId()}`);
 
   render() {
     const { intl, values, handleSubmit, handleChange, ...restProps } = this.props;
@@ -63,7 +65,7 @@ export class CreatePage extends PureComponent {
             {...restProps}
           />
           <NavigationContainer>
-            <BackButton id="backBtn" onClick={this.handleBackClick}>
+            <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
             <NextButton id="createPageBtn" type="submit" disabled={!restProps.isValid}>

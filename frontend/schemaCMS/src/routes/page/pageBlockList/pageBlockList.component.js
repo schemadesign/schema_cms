@@ -12,6 +12,7 @@ import { BackArrowButton, NavigationContainer, NextButton, PlusButton } from '..
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { CheckboxGroup, Checkbox } = Form;
 
@@ -37,6 +38,7 @@ export class PageBlockList extends PureComponent {
 
   state = {
     loading: true,
+    error: null,
   };
 
   async componentDidMount() {
@@ -45,8 +47,8 @@ export class PageBlockList extends PureComponent {
       await this.props.fetchPage({ pageId });
       await this.props.fetchPageBlocks({ pageId });
       this.setState({ loading: false });
-    } catch (e) {
-      this.props.history.push('/');
+    } catch (error) {
+      this.setState({ loading: false, error });
     }
   }
 
@@ -82,7 +84,10 @@ export class PageBlockList extends PureComponent {
     </Checkbox>
   );
 
-  renderContent = list => {
+  renderContent = () => {
+    const { pageBlocks: list } = this.props;
+    const { loading, error } = this.state;
+
     const activeBlocks = pipe(
       filter(propEq('isActive', true)),
       map(prop('id')),
@@ -94,14 +99,16 @@ export class PageBlockList extends PureComponent {
         {({ values: { pageBlocks }, setFieldValue, submitForm, dirty }) => {
           return (
             <Fragment>
-              <CheckboxGroup
-                onChange={e => this.handleChange({ e, setFieldValue, pageBlocks })}
-                value={pageBlocks}
-                name="pageBlocks"
-                id="blocksCheckboxGroup"
-              >
-                {list.map(this.renderCheckbox)}
-              </CheckboxGroup>
+              <LoadingWrapper loading={loading} error={error} noData={!list.length}>
+                <CheckboxGroup
+                  onChange={e => this.handleChange({ e, setFieldValue, pageBlocks })}
+                  value={pageBlocks}
+                  name="pageBlocks"
+                  id="blocksCheckboxGroup"
+                >
+                  {list.map(this.renderCheckbox)}
+                </CheckboxGroup>
+              </LoadingWrapper>
               <NavigationContainer>
                 <BackArrowButton type="button" onClick={this.handleShowPages} />
                 <NextButton type="submit" onClick={submitForm} disabled={!dirty}>
@@ -115,8 +122,15 @@ export class PageBlockList extends PureComponent {
     );
   };
 
+  renderBlockCounter = renderWhenTrue(
+    always(
+      <BlockCounter>
+        <FormattedMessage values={{ length: this.props.pageBlocks.length }} {...messages.blocks} />
+      </BlockCounter>
+    )
+  );
+
   render() {
-    const { pageBlocks } = this.props;
     const { loading } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
@@ -130,14 +144,10 @@ export class PageBlockList extends PureComponent {
           <CreateButtonContainer>
             <PlusButton onClick={this.handleCreateBlock} />
           </CreateButtonContainer>
-          <BlockCounter>
-            <FormattedMessage values={{ length: pageBlocks.length }} {...messages.blocks} />
-          </BlockCounter>
+          {this.renderBlockCounter(!loading)}
           <Empty />
         </Header>
-        <LoadingWrapper loading={loading} noData={!pageBlocks.length}>
-          {this.renderContent(pageBlocks)}
-        </LoadingWrapper>
+        {this.renderContent()}
       </Container>
     );
   }

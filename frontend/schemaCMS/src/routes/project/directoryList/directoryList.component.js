@@ -45,8 +45,8 @@ export class DirectoryList extends PureComponent {
 
       await this.props.fetchDirectories({ projectId });
       this.setState({ loading: false });
-    } catch (e) {
-      this.props.history.push('/');
+    } catch (error) {
+      this.setState({ loading: false, error });
     }
   }
 
@@ -85,7 +85,7 @@ export class DirectoryList extends PureComponent {
   renderList = list => <ListContainer>{list.map((item, index) => this.renderItem(item, index))}</ListContainer>;
 
   render() {
-    const { loading } = this.state;
+    const { loading, error } = this.state;
     const { match, directories } = this.props;
 
     const headerTitle = <FormattedMessage {...messages.title} />;
@@ -99,7 +99,7 @@ export class DirectoryList extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton id="createDirectoryDesktopBtn" onClick={this.handleCreateDirectory} />
         </ContextHeader>
-        <LoadingWrapper loading={loading} noData={!directories.length}>
+        <LoadingWrapper loading={loading} error={error} noData={!directories.length}>
           {this.renderList(directories)}
         </LoadingWrapper>
         <NavigationContainer hideOnDesktop>
