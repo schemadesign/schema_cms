@@ -28,9 +28,7 @@ class ProjectsConfig(AppConfig):
         )
 
         db_signals.post_save.connect(
-            receivers.update_meta_file,
-            sender=models.Page,
-            dispatch_uid="projects.receivers.update_meta_file",
+            receivers.update_meta_file, sender=models.Page, dispatch_uid="projects.receivers.update_meta_file"
         )
         db_signals.post_save.connect(
             receivers.update_meta_file,
