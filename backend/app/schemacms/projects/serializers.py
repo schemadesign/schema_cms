@@ -184,7 +184,12 @@ class ProjectSerializer(serializers.ModelSerializer):
         return project
 
     def get_meta(self, project):
-        return {"data_sources": {"count": project.data_source_count}, "pages": {"count": project.pages_count}}
+        return {
+            "data_sources": project.data_source_count,
+            "pages": project.pages_count,
+            "users": project.users_count,
+            "charts": project.charts_count,
+        }
 
 
 class WranglingScriptSerializer(serializers.ModelSerializer):

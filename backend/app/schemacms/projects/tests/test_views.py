@@ -150,7 +150,7 @@ class TestRetrieveUpdateDeleteProjectView:
 
         assert response.status_code == status.HTTP_200_OK
         assert "meta" in response.data
-        assert response.data["meta"]["data_sources"] == {"count": expected}
+        assert response.data["meta"]["data_sources"] == expected
 
     def test_update_project_by_owner(self, api_client, user, project):
         api_client.force_authenticate(user)
