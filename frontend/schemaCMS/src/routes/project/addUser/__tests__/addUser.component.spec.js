@@ -27,11 +27,11 @@ describe('AddUser: Component', () => {
     expect(defaultProps.history.push).toHaveBeenCalledWith('/not-authorized');
   });
 
-  it('should fetch project', async () => {
-    jest.spyOn(defaultProps, 'fetchProject');
+  it('should fetch project editors', async () => {
+    jest.spyOn(defaultProps, 'fetchProjectEditors');
     render();
     await Promise.resolve();
-    expect(defaultProps.fetchProject).toHaveBeenCalledWith({ projectId: '1' });
+    expect(defaultProps.fetchProjectEditors).toHaveBeenCalledWith({ projectId: '1' });
   });
 
   it('should fetch users', async () => {

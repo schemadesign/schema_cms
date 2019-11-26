@@ -5,8 +5,7 @@ import { withRouter, withTheme } from '../../../.storybook/decorators';
 import { UserList } from './userList.component';
 
 export const defaultProps = {
-  clearProject: Function.prototype,
-  fetchProject: Function.prototype,
+  fetchUsers: Function.prototype,
   removeUser: Function.prototype,
   isAdmin: true,
   users: [],

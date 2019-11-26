@@ -7,21 +7,18 @@ import { compose } from 'ramda';
 import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
 
 import { UserList } from './userList.component';
-import { ProjectRoutines } from '../../../modules/project';
-import { selectProject, selectProjectUsers } from '../../../modules/project/project.selectors';
+import { ProjectRoutines, selectEditors } from '../../../modules/project';
 import { selectIsAdmin } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
-  users: selectProjectUsers,
-  project: selectProject,
+  users: selectEditors,
   isAdmin: selectIsAdmin,
 });
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
-      clearProject: promisifyRoutine(ProjectRoutines.unmountOne),
+      fetchUsers: promisifyRoutine(ProjectRoutines.fetchEditors),
       removeUser: promisifyRoutine(ProjectRoutines.removeEditor),
     },
     dispatch

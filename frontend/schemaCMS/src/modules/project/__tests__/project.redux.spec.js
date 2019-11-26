@@ -7,6 +7,7 @@ describe('Project: redux', () => {
   const defaultState = Immutable({
     projects: [],
     project: {},
+    editors: [],
   });
 
   describe('reducer', () => {
@@ -91,6 +92,14 @@ describe('Project: redux', () => {
     it('should merge project to list of projects', () => {
       const resultState = projectReducer(defaultState, ProjectRoutines.unmountOne());
       expect(resultState.project).to.deep.equal(defaultState.project);
+    });
+  });
+
+  describe('when PROJECTS/FETCH_EDITORS_SUCCESS action is received', () => {
+    it('should set editors', () => {
+      const editors = [{ data: 'data' }];
+      const resultState = projectReducer(defaultState, ProjectRoutines.fetchEditors.success(editors));
+      expect(resultState.editors).to.deep.equal(editors);
     });
   });
 });

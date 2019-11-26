@@ -12,11 +12,13 @@ export const ProjectRoutines = {
   createProject: createRoutine(`${prefix}CREATE_PROJECT`),
   removeEditor: createRoutine(`${prefix}REMOVE_EDITOR`),
   addEditor: createRoutine(`${prefix}ADD_EDITOR`),
+  fetchEditors: createRoutine(`${prefix}FETCH_EDITORS`),
 };
 
 export const INITIAL_STATE = new Immutable({
   projects: [],
   project: {},
+  editors: [],
 });
 
 const updateList = (state = INITIAL_STATE, { payload }) => state.set('projects', payload);
@@ -26,6 +28,8 @@ const createProjectSuccess = (state = INITIAL_STATE, { payload }) =>
 
 const updateOne = (state = INITIAL_STATE, { payload }) => state.set('project', payload);
 
+const setEditors = (state = INITIAL_STATE, { payload }) => state.set('editors', payload);
+
 const unmountOne = (state = INITIAL_STATE) => state.set('project', INITIAL_STATE.project);
 
 export const reducer = createReducer(INITIAL_STATE, {
@@ -33,4 +37,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [ProjectRoutines.fetchOne.SUCCESS]: updateOne,
   [ProjectRoutines.unmountOne.TRIGGER]: unmountOne,
   [ProjectRoutines.createProject.SUCCESS]: createProjectSuccess,
+  [ProjectRoutines.fetchEditors.SUCCESS]: setEditors,
 });

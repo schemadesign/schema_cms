@@ -1,7 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
-import { path } from 'ramda';
 
 import { Form } from './createPage.styles';
 import messages from './createPage.messages';
@@ -10,6 +9,7 @@ import { PAGE_DESCRIPTION, PAGE_KEYWORDS, PAGE_TITLE } from '../../../modules/pa
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { getProjectId } from '../../../shared/utils/helpers';
 
 export class CreatePage extends PureComponent {
   static propTypes = {
@@ -21,9 +21,7 @@ export class CreatePage extends PureComponent {
     handleBlur: PropTypes.func.isRequired,
   };
 
-  getProjectId = () => path(['match', 'params', 'projectId'], this.props);
-
-  handleBackClick = () => this.props.history.push(`/project/${this.getProjectId()}/directory`);
+  handleBackClick = () => this.props.history.push(`/project/${getProjectId(this.props)}/directory`);
 
   render() {
     const { intl, values, handleSubmit, handleChange, ...restProps } = this.props;

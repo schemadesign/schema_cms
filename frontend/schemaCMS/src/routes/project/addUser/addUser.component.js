@@ -16,9 +16,10 @@ import {
 } from './addUser.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './addUser.messages';
-import { ModalActions, modalStyles, Modal, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
 export class AddUser extends PureComponent {
   static propTypes = {
@@ -32,7 +33,7 @@ export class AddUser extends PureComponent {
     }),
     fetchUsers: PropTypes.func.isRequired,
     removeUser: PropTypes.func.isRequired,
-    fetchProject: PropTypes.func.isRequired,
+    fetchProjectEditors: PropTypes.func.isRequired,
     users: PropTypes.array.isRequired,
     usersInProject: PropTypes.array.isRequired,
     isAdmin: PropTypes.bool.isRequired,
@@ -41,6 +42,7 @@ export class AddUser extends PureComponent {
   state = {
     userToBeRemoved: null,
     showConfirmationModal: false,
+    loading: true,
   };
 
   async componentDidMount() {
@@ -50,7 +52,8 @@ export class AddUser extends PureComponent {
         return this.props.history.push('/not-authorized');
       }
 
-      await this.props.fetchProject({ projectId });
+      await this.props.fetchProjectEditors({ projectId });
+      this.setState({ loading: false });
       return await this.props.fetchUsers();
     } catch (e) {
       return this.props.history.push('/');
@@ -120,14 +123,16 @@ export class AddUser extends PureComponent {
 
   render() {
     const { users } = this.props;
-    const { showConfirmationModal } = this.state;
+    const { showConfirmationModal, loading } = this.state;
     const headerConfig = this.getHeaderConfig();
 
     return (
       <Container>
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        {users.map(this.renderUser)}
+        <LoadingWrapper loading={loading} noData={!users.length}>
+          {this.props.users.map(this.renderUser)}
+        </LoadingWrapper>
         <NavigationContainer>
           <BackButton onClick={this.handleBackClick}>
             <FormattedMessage {...messages.back} />

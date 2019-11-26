@@ -43,12 +43,19 @@ exports[`UserList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <UserList
-    isAdmin={true}
-    onRemoveUser={[Function]}
-    projectId="1"
-    users={Array []}
-  />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={true}
+    noDataContent={null}
+  >
+    <UserList
+      isAdmin={true}
+      onRemoveUser={[Function]}
+      projectId="1"
+      users={Array []}
+    />
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={true}
     right={false}
@@ -137,155 +144,28 @@ exports[`UserList: Component should render correctly 1`] = `
 `;
 
 exports[`UserList: Component should render correctly with users 1`] = `
-<Fragment>
-  <TopHeader
-    headerSubtitle={
-      <FormattedMessage
-        defaultMessage="Project users list"
-        id="project.userList.headerSubtitle"
-        values={Object {}}
-      />
-    }
-    headerTitle={
-      <FormattedMessage
-        defaultMessage="Users"
-        id="project.userList.headerTitle"
-        values={Object {}}
-      />
-    }
-  />
-  <ProjectTabs
-    active="users"
-    url="/project/1"
-  />
-  <ContextHeader
-    subtitle={
-      <FormattedMessage
-        defaultMessage="Project users list"
-        id="project.userList.headerSubtitle"
-        values={Object {}}
-      />
-    }
-    title={
-      <FormattedMessage
-        defaultMessage="Users"
-        id="project.userList.headerTitle"
-        values={Object {}}
-      />
-    }
-  >
-    <PlusButton
-      id="addUserDesktopBtn"
-      onClick={[Function]}
-    />
-  </ContextHeader>
-  <UserList
-    isAdmin={true}
-    onRemoveUser={[Function]}
-    projectId="1"
-    users={
-      Array [
-        Object {
-          "firstName": "Alan",
-          "id": "1",
-          "lastName": "Watts",
-        },
-        Object {
-          "firstName": "Dale",
-          "id": "2",
-          "lastName": "Chihuly",
-        },
-        Object {
-          "firstName": "Dave",
-          "id": "3",
-          "lastName": "Bowie",
-        },
-      ]
-    }
-  />
-  <NavigationContainer
-    hideOnDesktop={true}
-    right={false}
-  >
-    <BackButton
-      disabled={false}
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="Back"
-        id="project.userList.back"
-        values={Object {}}
-      />
-    </BackButton>
-    <PlusButton
-      id="addUserBtn"
-      onClick={[Function]}
-    />
-  </NavigationContainer>
-  <Styled(Modal)
-    contentLabel="Confirm Removal"
-    isOpen={false}
-    style={
+<UserList
+  isAdmin={true}
+  onRemoveUser={[Function]}
+  projectId="1"
+  users={
+    Array [
       Object {
-        "content": Object {
-          "WebkitOverflowScrolling": "touch",
-          "alignItems": "center",
-          "border": null,
-          "borderRadius": "4px",
-          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
-          "display": "flex",
-          "flexDirection": "column",
-          "left": "50%",
-          "maxWidth": "600px",
-          "outline": "none",
-          "overflow": "auto",
-          "position": "absolute",
-          "right": "10px",
-          "top": "50%",
-          "transform": "translate(-50%, -50%)",
-          "width": "calc(100% - 20px)",
-        },
-        "overlay": Object {
-          "backgroundColor": "rgba(29, 29, 32, 0.75)",
-          "bottom": 0,
-          "left": 0,
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-          "zIndex": 10000,
-        },
-      }
-    }
-  >
-    <Styled(H1)>
-      <FormattedMessage
-        defaultMessage="Are you sure you want to remove the user from the project?"
-        id="project.userList.removeTitle"
-        values={Object {}}
-      />
-    </Styled(H1)>
-    <styled.div>
-      <BackButton
-        disabled={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Cancel"
-          id="project.userList.cancelRemoval"
-          values={Object {}}
-        />
-      </BackButton>
-      <NextButton
-        loading={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Confirm"
-          id="project.userList.confirmRemoval"
-          values={Object {}}
-        />
-      </NextButton>
-    </styled.div>
-  </Styled(Modal)>
-</Fragment>
+        "firstName": "Alan",
+        "id": "1",
+        "lastName": "Watts",
+      },
+      Object {
+        "firstName": "Dale",
+        "id": "2",
+        "lastName": "Chihuly",
+      },
+      Object {
+        "firstName": "Dave",
+        "id": "3",
+        "lastName": "Bowie",
+      },
+    ]
+  }
+/>
 `;

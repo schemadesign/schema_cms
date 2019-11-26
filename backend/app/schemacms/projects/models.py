@@ -146,6 +146,14 @@ class Project(
     def pages_count(self):
         return self.directories.values("pages").count()
 
+    @functional.cached_property
+    def users_count(self):
+        return self.editors.all().count()
+
+    @functional.cached_property
+    def charts_count(self):
+        return 0  # just for mock purposes till charts will be implemented
+
 
 class DataSource(
     utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel

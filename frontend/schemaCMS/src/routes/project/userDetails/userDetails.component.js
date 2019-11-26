@@ -12,6 +12,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { Modal, modalStyles, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { getProjectId } from '../../../shared/utils/helpers';
 
 export class UserDetails extends PureComponent {
   static propTypes = {
@@ -38,18 +39,17 @@ export class UserDetails extends PureComponent {
   }
 
   getUserId = () => path(['match', 'params', 'userId'], this.props);
-  getProjectId = () => path(['match', 'params', 'projectId'], this.props);
 
   handleCancelRemove = () => this.setState({ userRemoveModalOpen: false });
 
   handleConfirmRemove = () => {
     const userId = this.getUserId();
-    const projectId = this.getProjectId();
+    const projectId = getProjectId(this.props);
 
     this.props.removeEditorFromProject({ projectId, userId, isDetails: true });
   };
 
-  handleBack = () => this.props.history.push(`/project/${this.getProjectId()}/user`);
+  handleBack = () => this.props.history.push(`/project/${getProjectId(this.props)}/user`);
 
   renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
 

@@ -187,5 +187,20 @@ describe('Project: sagas', () => {
 
       expect(browserHistory.push).toBeCalledWith(`/project/${payload.projectId}/user`);
     });
+
+    it('should put ProjectRoutines.fetchEditors.success action', async () => {
+      const payload = {
+        projectId: '1',
+      };
+      const response = { id: '1' };
+
+      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}/users`).reply(OK, response);
+
+      await expectSaga(watchProject)
+        .withState(defaultState)
+        .put(ProjectRoutines.fetchEditors.success())
+        .dispatch(ProjectRoutines.fetchEditors(payload))
+        .silentRun();
+    });
   });
 });

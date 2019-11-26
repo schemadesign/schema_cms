@@ -19,6 +19,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     serializer_class_mapping = {
         "datasources": serializers.DataSourceSerializer,
         "directories": serializers.DirectorySerializer,
+        "users": serializers.ProjectEditorSerializer,
     }
 
     def get_queryset(self):
@@ -49,6 +50,19 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
+        return response.Response(serializer.data)
+
+    @decorators.action(detail=True, url_path="users", methods=["get"])
+    def users(self, request, **kwargs):
+        project = self.get_object()
+        editors = project.editors.all().order_by("last_name")
+
+        page = self.paginate_queryset(editors)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(editors, many=True)
         return response.Response(serializer.data)
 
     @decorators.action(detail=True, url_path="remove-editor", methods=["post"])

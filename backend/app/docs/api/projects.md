@@ -142,6 +142,35 @@ Content-Type application/json
 204 No Content
 ```
 
+## list project users
+
+**Request**:
+
+`GET` `/api/v1/projects/:id/users`
+
+*Note:*
+
+- **[Authorization Protected](authentication.md)**
+
+**Response**:
+
+```json
+Content-Type application/json
+200 OK
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "a3f2757e-3c0f-48c2-969e-8947fee8be87",
+            "first_name": "Jan",
+            "last_name": "Kowalsky"
+        }
+    ]
+}
+```
+
 ## Remove editor from project
 
 **Request**:

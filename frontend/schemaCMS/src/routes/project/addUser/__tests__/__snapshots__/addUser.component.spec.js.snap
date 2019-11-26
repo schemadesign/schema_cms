@@ -34,6 +34,12 @@ exports[`AddUser: Component should render correctly 1`] = `
       />
     }
   />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={true}
+    noDataContent={null}
+  />
   <NavigationContainer
     hideOnDesktop={false}
     right={false}
@@ -151,82 +157,89 @@ exports[`AddUser: Component should render correctly with users 1`] = `
       />
     }
   />
-  <styled.div
-    key="0"
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
   >
-    <styled.div>
-      <Styled(H2)>
-        Alan Watts
-      </Styled(H2)>
-      <Styled(H3) />
+    <styled.div
+      key="0"
+    >
+      <styled.div>
+        <Styled(H2)>
+          Alan Watts
+        </Styled(H2)>
+        <Styled(H3) />
+      </styled.div>
+      <styled.div>
+        <Styled(Component)
+          id="removeUserPlusButton0"
+          onClick={[Function]}
+        >
+          <styled.div />
+        </Styled(Component)>
+      </styled.div>
     </styled.div>
-    <styled.div>
-      <Styled(Component)
-        id="removeUserPlusButton0"
-        onClick={[Function]}
-      >
-        <styled.div />
-      </Styled(Component)>
+    <styled.div
+      key="1"
+    >
+      <styled.div>
+        <Styled(H2)>
+          Dale Chihuly
+        </Styled(H2)>
+        <Styled(H3)>
+          loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+        </Styled(H3)>
+      </styled.div>
+      <styled.div>
+        <Styled(Component)
+          id="addUserPlusButton1"
+          onClick={[Function]}
+        >
+          <styled.div />
+        </Styled(Component)>
+      </styled.div>
     </styled.div>
-  </styled.div>
-  <styled.div
-    key="1"
-  >
-    <styled.div>
-      <Styled(H2)>
-        Dale Chihuly
-      </Styled(H2)>
-      <Styled(H3)>
-        loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
-      </Styled(H3)>
+    <styled.div
+      key="2"
+    >
+      <styled.div>
+        <Styled(H2)>
+          Dave Bowie
+        </Styled(H2)>
+        <Styled(H3) />
+      </styled.div>
+      <styled.div>
+        <Styled(Component)
+          id="addUserPlusButton2"
+          onClick={[Function]}
+        >
+          <styled.div />
+        </Styled(Component)>
+      </styled.div>
     </styled.div>
-    <styled.div>
-      <Styled(Component)
-        id="addUserPlusButton1"
-        onClick={[Function]}
-      >
-        <styled.div />
-      </Styled(Component)>
+    <styled.div
+      key="3"
+    >
+      <styled.div>
+        <Styled(H2)>
+          Pellentesque a massa at purus cursus egestas. Aliquam ut vehicula. Praesent est erat, laoreet et ornare ullamcorper, finibus id nisl. Etiam tempor, ligula a sagittis
+        </Styled(H2)>
+        <Styled(H3)>
+          loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
+        </Styled(H3)>
+      </styled.div>
+      <styled.div>
+        <Styled(Component)
+          id="addUserPlusButton3"
+          onClick={[Function]}
+        >
+          <styled.div />
+        </Styled(Component)>
+      </styled.div>
     </styled.div>
-  </styled.div>
-  <styled.div
-    key="2"
-  >
-    <styled.div>
-      <Styled(H2)>
-        Dave Bowie
-      </Styled(H2)>
-      <Styled(H3) />
-    </styled.div>
-    <styled.div>
-      <Styled(Component)
-        id="addUserPlusButton2"
-        onClick={[Function]}
-      >
-        <styled.div />
-      </Styled(Component)>
-    </styled.div>
-  </styled.div>
-  <styled.div
-    key="3"
-  >
-    <styled.div>
-      <Styled(H2)>
-        Pellentesque a massa at purus cursus egestas. Aliquam ut vehicula. Praesent est erat, laoreet et ornare ullamcorper, finibus id nisl. Etiam tempor, ligula a sagittis
-      </Styled(H2)>
-      <Styled(H3)>
-        loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
-      </Styled(H3)>
-    </styled.div>
-    <styled.div>
-      <Styled(Component)
-        id="addUserPlusButton3"
-        onClick={[Function]}
-      >
-        <styled.div />
-      </Styled(Component)>
-    </styled.div>
-  </styled.div>
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={false}
     right={false}

@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import { Typography } from 'schemaUI';
 
@@ -17,6 +16,7 @@ import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedD
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
 import { Link } from '../../../theme/typography';
+import { getProjectId } from '../../../shared/utils/helpers';
 
 const { H1 } = Typography;
 
@@ -41,7 +41,7 @@ export class DirectoryList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const projectId = this.getProjectId();
+      const projectId = getProjectId(this.props);
 
       await this.props.fetchDirectories({ projectId });
       this.setState({ loading: false });
@@ -50,10 +50,8 @@ export class DirectoryList extends PureComponent {
     }
   }
 
-  getProjectId = () => path(['match', 'params', 'projectId'], this.props);
-
-  handleCreateDirectory = () => this.props.history.push(`/project/${this.getProjectId()}/directory/create`);
-  handleShowProject = () => this.props.history.push(`/project/${this.getProjectId()}`);
+  handleCreateDirectory = () => this.props.history.push(`/project/${getProjectId(this.props)}/directory/create`);
+  handleShowProject = () => this.props.history.push(`/project/${getProjectId(this.props)}`);
   handleShowDirectory = id => this.props.history.push(`/directory/${id}`);
   handleEditDirectory = id => this.props.history.push(`/directory/${id}/edit`);
 
