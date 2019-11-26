@@ -9,12 +9,14 @@ import {
   Content,
   HeaderWrapper,
   MenuHeader,
-  PrimaryList,
-  SecondaryList,
   PrimaryItem,
+  PrimaryList,
   SecondaryItem,
-  menuStyles,
+  SecondaryList,
+  Subtitle,
+  Title,
   closeButtonStyles,
+  menuStyles,
 } from './topHeader.styles';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
 
@@ -60,8 +62,8 @@ export class TopHeader extends PureComponent {
 
   renderHeader = (title, subtitle) => (
     <HeaderWrapper>
-      <H2 id="headerTitle">{title}</H2>
-      <H1 id="headerSubtitle">{subtitle}</H1>
+      <Title id="headerTitle">{title}</Title>
+      <Subtitle id="headerSubtitle">{subtitle}</Subtitle>
     </HeaderWrapper>
   );
 
