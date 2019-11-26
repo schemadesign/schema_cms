@@ -46,6 +46,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "background": "#1d1d20",
         "border": "#FFF",
         "label": undefined,
+        "text": "#FFF",
       },
       "checkbox": Object {
         "border": "#2F2F36",
@@ -222,6 +223,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "background": "#1d1d20",
         "border": "#FFF",
         "label": undefined,
+        "text": "#FFF",
       },
       "checkbox": Object {
         "border": "#2F2F36",

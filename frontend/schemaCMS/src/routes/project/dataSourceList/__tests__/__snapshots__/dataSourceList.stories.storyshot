@@ -870,6 +870,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  color: #FFF;
 }
 
 .c22 {
@@ -1437,6 +1438,15 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           >
             name
           </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+            }
+          }
+        >
           <div
             className="c20"
           >
@@ -1629,6 +1639,15 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           >
             name
           </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+            }
+          }
+        >
           <div
             className="c20"
           >
@@ -2023,6 +2042,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  color: #FFF;
 }
 
 .c22 {
@@ -2590,6 +2610,15 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           >
             name
           </h1>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#71737e",
+              "marginBottom": 4,
+            }
+          }
+        >
           <div
             className="c20"
           >
