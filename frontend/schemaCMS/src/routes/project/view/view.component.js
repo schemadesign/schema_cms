@@ -103,8 +103,6 @@ export class View extends PureComponent {
     };
   };
 
-  countItems = value => (isNil(value) ? null : value.length);
-
   formatMessage = value => this.props.intl.formatMessage(value);
 
   handleGoTo = to => () => (to ? this.props.history.push(to) : null);
@@ -134,25 +132,24 @@ export class View extends PureComponent {
     </DetailItem>
   );
 
-  renderProject = ({ id: projectId, editors, owner = {}, slug, created, charts, meta, status } = {}) => {
-    const getCount = propName => path([propName, 'count'], meta);
+  renderProject = ({ id: projectId, owner = {}, slug, created, meta, status } = {}) => {
     const statistics = [
       {
         header: this.renderStatisticHeader(messages.dataSources),
-        value: getCount('dataSources'),
+        value: meta.dataSources,
         to: `/project/${projectId}/datasource`,
         id: 'projectDataSources',
       },
-      { header: this.renderStatisticHeader(messages.charts), value: this.countItems(charts) },
+      { header: this.renderStatisticHeader(messages.charts), value: meta.charts },
       {
         header: this.renderStatisticHeader(messages.pages),
-        value: getCount('pages'),
+        value: meta.pages,
         to: `/project/${projectId}/directory`,
-        id: 'projectDirectories',
+        id: 'projectUsers',
       },
       {
         header: this.renderStatisticHeader(messages.users),
-        value: this.countItems(editors),
+        value: meta.users,
         to: `/project/${projectId}/user`,
         id: 'projectUsers',
       },

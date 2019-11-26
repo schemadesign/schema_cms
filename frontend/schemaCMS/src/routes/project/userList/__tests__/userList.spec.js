@@ -1,10 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { spy } from 'sinon';
-import { expect } from 'chai';
 
 import { UserList } from '../userList.component';
 import { defaultProps, propsWithUsers } from '../userList.stories';
+import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
 
 describe('UserList: Component', () => {
   const component = props => <UserList {...defaultProps} {...props} />;
@@ -13,35 +12,21 @@ describe('UserList: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
-    global.expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly with users', () => {
+  it('should render correctly with users', async () => {
+    propsWithUsers.fetchUsers = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render(propsWithUsers);
-    global.expect(wrapper).toMatchSnapshot();
+    await Promise.resolve();
+    const usersList = wrapper.find(LoadingWrapper).dive();
+    expect(usersList).toMatchSnapshot();
   });
 
-  it('should call clearProject prop on componentDidMount', async () => {
-    const clearProject = spy();
-    const props = {
-      ...defaultProps,
-      clearProject,
-    };
+  it('should call fetchProject prop on componentDidMount', () => {
+    jest.spyOn(defaultProps, 'fetchUsers');
+    render();
 
-    await render(props);
-
-    expect(clearProject).to.have.been.called;
-  });
-
-  it('should call fetchProject prop on componentDidMount', async () => {
-    const fetchProject = spy();
-    const props = {
-      ...defaultProps,
-      fetchProject,
-    };
-
-    await render(props);
-
-    expect(fetchProject).to.have.been.called;
+    expect(defaultProps.fetchUsers).toHaveBeenCalled();
   });
 });

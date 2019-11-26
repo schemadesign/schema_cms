@@ -12,7 +12,7 @@ export const defaultProps = {
   },
   fetchUsers: Function.prototype,
   removeUser: Function.prototype,
-  fetchProject: Function.prototype,
+  fetchProjectEditors: Function.prototype,
   users: [],
   usersInProject: [],
   isAdmin: true,

@@ -8,21 +8,21 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 
 import { AddUser } from './addUser.component';
 
-import { ProjectRoutines, selectProjectUsers } from '../../../modules/project';
+import { ProjectRoutines, selectEditors } from '../../../modules/project';
 import { selectEditorUsers, UserRoutines } from '../../../modules/user';
 import { selectIsAdmin } from '../../../modules/userProfile';
 
 const mapStateToProps = createStructuredSelector({
   users: selectEditorUsers,
   isAdmin: selectIsAdmin,
-  usersInProject: selectProjectUsers,
+  usersInProject: selectEditors,
 });
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
       fetchUsers: promisifyRoutine(UserRoutines.fetchUsers),
-      fetchProject: promisifyRoutine(ProjectRoutines.fetchOne),
+      fetchProjectEditors: promisifyRoutine(ProjectRoutines.fetchEditors),
       removeUser: promisifyRoutine(ProjectRoutines.removeEditor),
     },
     dispatch

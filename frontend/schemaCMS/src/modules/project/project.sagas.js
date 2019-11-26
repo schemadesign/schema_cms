@@ -102,6 +102,22 @@ function* addEditor({ payload: { projectId, userId: id } }) {
   }
 }
 
+function* fetchEditors({ payload: { projectId } }) {
+  try {
+    yield put(ProjectRoutines.fetchEditors.request());
+
+    const {
+      data: { results },
+    } = yield api.get(`${PROJECTS_PATH}/${projectId}/users`);
+
+    yield put(ProjectRoutines.fetchEditors.success(results));
+  } catch (error) {
+    yield put(ProjectRoutines.fetchEditors.failure());
+  } finally {
+    yield put(ProjectRoutines.fetchEditors.fulfill());
+  }
+}
+
 export function* watchProject() {
   yield all([
     takeLatest(ProjectRoutines.fetchList.TRIGGER, fetchList),
@@ -110,5 +126,6 @@ export function* watchProject() {
     takeLatest(ProjectRoutines.removeOne.TRIGGER, removeOne),
     takeLatest(ProjectRoutines.removeEditor.TRIGGER, removeEditor),
     takeLatest(ProjectRoutines.addEditor.TRIGGER, addEditor),
+    takeLatest(ProjectRoutines.fetchEditors.TRIGGER, fetchEditors),
   ]);
 }
