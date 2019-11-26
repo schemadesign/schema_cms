@@ -46,4 +46,8 @@ export default defineMessages({
     id: 'dataSource.list.views',
     defaultMessage: 'Views',
   },
+  noData: {
+    id: 'dataSource.list.noData',
+    defaultMessage: 'No Data Sources',
+  },
 });

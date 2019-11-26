@@ -13,6 +13,7 @@ export const Description = styled.div`
 
 export const DataSourceTitle = styled(Typography.H1)`
   cursor: pointer;
+  word-break: break-word;
 `;
 
 export const MetaDataWrapper = styled.div`

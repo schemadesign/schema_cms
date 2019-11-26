@@ -6,8 +6,11 @@ import { always, cond, propEq, propIs, T } from 'ramda';
 
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
-import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { ListItem, ListContainer } from '../../../shared/components/listComponents';
+import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import {
   Container,
   DataSourceTitle,
@@ -27,9 +30,6 @@ import {
   FIELDS_STEP,
   INITIAL_STEP,
 } from '../../../modules/dataSource/dataSource.constants';
-import { ListItem, ListContainer } from '../../../shared/components/listComponents';
-
-import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -49,10 +49,23 @@ export class DataSourceList extends PureComponent {
     }).isRequired,
   };
 
-  componentDidMount() {
-    const projectId = this.props.match.params.projectId;
+  state = {
+    loading: true,
+    error: null,
+  };
 
-    this.props.fetchDataSources({ projectId });
+  async componentDidMount() {
+    try {
+      const projectId = this.props.match.params.projectId;
+
+      await this.props.fetchDataSources({ projectId });
+      this.setState({ loading: false });
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error,
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -75,6 +88,13 @@ export class DataSourceList extends PureComponent {
     [propIs(Object, 'metaData'), always(FIELDS_STEP)],
     [T, always(INITIAL_STEP)],
   ]);
+
+  getLoadingConfig = (loading, error, dataSources) => ({
+    loading,
+    error,
+    noData: !dataSources.length,
+    noDataContent: this.props.intl.formatMessage(messages.noData),
+  });
 
   handleShowProject = () => this.props.history.push(`/project/${this.props.match.params.projectId}`);
 
@@ -138,10 +158,12 @@ export class DataSourceList extends PureComponent {
   };
 
   render() {
+    const { loading, error } = this.state;
     const { dataSources = [], match } = this.props;
     const title = this.props.intl.formatMessage(messages.title);
     const subtitle = this.props.intl.formatMessage(messages.subTitle);
     const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
+    const loadingConfig = this.getLoadingConfig(loading, error, dataSources);
 
     return (
       <Container>
@@ -151,8 +173,9 @@ export class DataSourceList extends PureComponent {
         <ContextHeader title={title} subtitle={subtitle}>
           <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />
         </ContextHeader>
-        <ListContainer>{dataSources.map(this.renderItem)}</ListContainer>
-
+        <LoadingWrapper {...loadingConfig}>
+          <ListContainer>{dataSources.map(this.renderItem)}</ListContainer>
+        </LoadingWrapper>
         <NavigationContainer hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
           <PlusButton id="createDataSourceBtn" onClick={this.handleCreateDataSource} />

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Header, Menu, Typography } from 'schemaUI';
+import { Header, Menu } from 'schemaUI';
 import { always } from 'ramda';
 
 import {
@@ -19,8 +19,6 @@ import {
   menuStyles,
 } from './topHeader.styles';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
-
-const { H1, H2 } = Typography;
 
 export class TopHeader extends PureComponent {
   static propTypes = {
