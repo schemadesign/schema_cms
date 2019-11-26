@@ -209,6 +209,7 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
                   "background": "#1d1d20",
                   "border": "#FFF",
                   "label": undefined,
+                  "text": "#FFF",
                 },
                 "checkbox": Object {
                   "border": "#2F2F36",
