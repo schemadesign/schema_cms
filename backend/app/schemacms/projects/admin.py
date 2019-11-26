@@ -13,6 +13,7 @@ from schemacms.utils import admin as utils_admin
 admin.site.register(models.WranglingScript)
 admin.site.register(models.Directory)
 admin.site.register(models.Page)
+admin.site.register(models.Block)
 
 
 def update_meta_file(modeladmin, request, queryset):
