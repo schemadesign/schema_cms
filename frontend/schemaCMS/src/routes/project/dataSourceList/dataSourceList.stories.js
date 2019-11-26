@@ -22,7 +22,7 @@ const dataSource2 = {
     fields: 11,
     items: 246,
   },
-  name: 'name',
+  name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
   jobs: [],
 };
 

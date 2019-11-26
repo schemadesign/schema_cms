@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Job/Preview Default 1`] = `
-.c5 {
+.c7 {
   height: 155px;
 }
 
-.c7 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
   width: 100%;
 }
 
-.c6 {
+.c8 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,12 +32,12 @@ exports[`Storyshots Job/Preview Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c8 {
+.c10 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c4 {
+.c6 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -49,7 +49,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -57,21 +57,29 @@ exports[`Storyshots Job/Preview Default 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
+}
+
 @media (min-width:1040px) {
-  .c7 {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -80,13 +88,13 @@ exports[`Storyshots Job/Preview Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c6 {
+  .c8 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c10 {
     width: 240px;
   }
 }
@@ -129,6 +137,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -144,6 +153,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
               </span>
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -231,6 +241,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -246,6 +257,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
               </span>
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -265,13 +277,13 @@ exports[`Storyshots Job/Preview Default 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           />
         </div>
         <button
@@ -321,7 +333,7 @@ exports[`Storyshots Job/Preview Default 1`] = `
       className=""
     >
       <div
-        className="c4"
+        className="c6"
       >
         <span>
           Loading...
@@ -329,16 +341,16 @@ exports[`Storyshots Job/Preview Default 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      className="c7"
     >
       <div
-        className="c6"
+        className="c8"
       >
         <div
-          className="c7"
+          className="c9"
         >
           <button
-            className="c8"
+            className="c10"
             disabled={false}
             onClick={[Function]}
             style={

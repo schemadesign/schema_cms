@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Data Source|JobList default 1`] = `
-.c4 {
+.c6 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -13,7 +13,7 @@ exports[`Storyshots Data Source|JobList default 1`] = `
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -21,17 +21,25 @@ exports[`Storyshots Data Source|JobList default 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
 }
 
 @media (min-width:1040px) {
@@ -72,6 +80,7 @@ exports[`Storyshots Data Source|JobList default 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -87,6 +96,7 @@ exports[`Storyshots Data Source|JobList default 1`] = `
               </span>
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -174,6 +184,7 @@ exports[`Storyshots Data Source|JobList default 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -189,6 +200,7 @@ exports[`Storyshots Data Source|JobList default 1`] = `
               </span>
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -208,13 +220,13 @@ exports[`Storyshots Data Source|JobList default 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           />
         </div>
         <button
@@ -261,7 +273,7 @@ exports[`Storyshots Data Source|JobList default 1`] = `
       </div>
     </div>
     <div
-      className="c4"
+      className="c6"
     >
       <span>
         Loading...
@@ -272,7 +284,7 @@ exports[`Storyshots Data Source|JobList default 1`] = `
 `;
 
 exports[`Storyshots Data Source|JobList no data 1`] = `
-.c4 {
+.c6 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -284,7 +296,7 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -292,17 +304,25 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
 }
 
 @media (min-width:1040px) {
@@ -343,6 +363,7 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -358,6 +379,7 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
               </span>
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -445,6 +467,7 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -460,6 +483,7 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
               </span>
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -479,13 +503,13 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           />
         </div>
         <button
@@ -532,7 +556,7 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
       </div>
     </div>
     <div
-      className="c4"
+      className="c6"
     >
       <span>
         Loading...

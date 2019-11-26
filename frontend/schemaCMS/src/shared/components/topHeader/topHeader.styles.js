@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Typography } from 'schemaUI';
 
 import { media } from '../../../theme/media';
 
@@ -60,6 +61,14 @@ export const SecondaryItem = styled(Item)`
   a {
     padding: 8px 0;
   }
+`;
+
+export const Title = styled(Typography.H2)`
+  word-break: break-word;
+`;
+
+export const Subtitle = styled(Typography.H1)`
+  word-break: break-word;
 `;
 
 export const menuStyles = {

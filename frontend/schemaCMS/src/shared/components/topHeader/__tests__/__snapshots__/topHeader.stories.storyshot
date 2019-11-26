@@ -5,7 +5,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -13,20 +13,20 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c4 {
+.c6 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c3 {
+.c5 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -35,32 +35,40 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   padding: 8px 0 13px;
 }
 
-.c3 a {
+.c5 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c3:first-of-type {
+.c5:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c5 {
+.c7 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c5 a {
+.c7 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c5 a {
+.c7 a {
   padding: 8px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
 }
 
 @media (min-width:1040px) {
@@ -98,6 +106,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           className=""
         >
           <h2
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -111,6 +120,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             Projects
           </h2>
           <h1
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -196,6 +206,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           className=""
         >
           <h2
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -209,6 +220,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             Projects
           </h2>
           <h1
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -226,13 +238,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
         </div>
       </div>
       <div
-        className="c1"
+        className="c3"
       >
         <ul
-          className="c2"
+          className="c4"
         >
           <li
-            className="c3"
+            className="c5"
           >
             <a
               href="/path"
@@ -243,7 +255,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="c3"
+            className="c5"
           >
             <a
               href="/path"
@@ -255,10 +267,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           </li>
         </ul>
         <ul
-          className="c4"
+          className="c6"
         >
           <li
-            className="c5"
+            className="c7"
           >
             <a
               href="/logout"
@@ -269,7 +281,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="c5"
+            className="c7"
             id="id"
             onClick={[Function]}
           >
@@ -328,7 +340,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -336,20 +348,20 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c4 {
+.c6 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c3 {
+.c5 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -358,32 +370,40 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
   padding: 8px 0 13px;
 }
 
-.c3 a {
+.c5 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c3:first-of-type {
+.c5:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c5 {
+.c7 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c5 a {
+.c7 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c5 a {
+.c7 a {
   padding: 8px 0;
+}
+
+.c1 {
+  word-break: break-word;
+}
+
+.c2 {
+  word-break: break-word;
 }
 
 @media (min-width:1040px) {
@@ -421,6 +441,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
           className=""
         >
           <h2
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -438,6 +459,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
 
           </h2>
           <h1
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -527,6 +549,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
           className=""
         >
           <h2
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -544,6 +567,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
 
           </h2>
           <h1
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -565,13 +589,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
         </div>
       </div>
       <div
-        className="c1"
+        className="c3"
       >
         <ul
-          className="c2"
+          className="c4"
         >
           <li
-            className="c3"
+            className="c5"
           >
             <a
               href="/path"
@@ -582,7 +606,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
             </a>
           </li>
           <li
-            className="c3"
+            className="c5"
           >
             <a
               href="/path"
@@ -594,10 +618,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
           </li>
         </ul>
         <ul
-          className="c4"
+          className="c6"
         >
           <li
-            className="c5"
+            className="c7"
           >
             <a
               href="/logout"
@@ -608,7 +632,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
             </a>
           </li>
           <li
-            className="c5"
+            className="c7"
             id="id"
             onClick={[Function]}
           >

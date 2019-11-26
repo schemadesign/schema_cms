@@ -32,108 +32,115 @@ exports[`DataSourceList: Component should render card with job 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <styled.section>
-    <Styled(Component)
-      footerComponent={
-        <ForwardRef(styled.div)>
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent="No Data Sources"
+  >
+    <styled.section>
+      <Styled(Component)
+        footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-0"
-            >
-              Source
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-0"
-            >
-              <Unknown
-                customStyles={
-                  Object {
-                    "height": 40,
-                    "width": 40,
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "height": 40,
+                      "width": 40,
+                    }
                   }
-                }
-              />
-            </ForwardRef(styled.span)>
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
+        }
+        headerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-1"
-            >
-              Items
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-1"
-            >
-              —
-            </ForwardRef(styled.span)>
+            <ForwardRef(styled.ul)>
+              <ForwardRef(styled.li)
+                id="headerItem-0"
+              >
+                3 months ago
+              </ForwardRef(styled.li)>
+              <ForwardRef(styled.li)
+                id="headerItem-1"
+              >
+                firstName lastName
+              </ForwardRef(styled.li)>
+            </ForwardRef(styled.ul)>
+            <ForwardRef(styled.div)>
+              <Unknown />
+            </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-2"
-            >
-              Fields
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-2"
-            >
-              —
-            </ForwardRef(styled.span)>
-          </ForwardRef(styled.div)>
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-3"
-            >
-              Filters
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-3"
-            >
-              —
-            </ForwardRef(styled.span)>
-          </ForwardRef(styled.div)>
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-4"
-            >
-              Views
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-4"
-            >
-              —
-            </ForwardRef(styled.span)>
-          </ForwardRef(styled.div)>
-        </ForwardRef(styled.div)>
-      }
-      headerComponent={
-        <ForwardRef(styled.div)>
-          <ForwardRef(styled.ul)>
-            <ForwardRef(styled.li)
-              id="headerItem-0"
-            >
-              3 months ago
-            </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)
-              id="headerItem-1"
-            >
-              firstName lastName
-            </ForwardRef(styled.li)>
-          </ForwardRef(styled.ul)>
-          <ForwardRef(styled.div)>
-            <Unknown />
-          </ForwardRef(styled.div)>
-        </ForwardRef(styled.div)>
-      }
-      key="0"
-    >
-      <Styled(H1)
-        id="dataSourceTitle"
-        onClick={[Function]}
+        }
+        key="0"
       >
-        name
-      </Styled(H1)>
-    </Styled(Component)>
-  </styled.section>
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          name
+        </Styled(H1)>
+      </Styled(Component)>
+    </styled.section>
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={true}
     right={false}
@@ -182,208 +189,215 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <styled.section>
-    <Styled(Component)
-      footerComponent={
-        <ForwardRef(styled.div)>
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent="No Data Sources"
+  >
+    <styled.section>
+      <Styled(Component)
+        footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-0"
-            >
-              Source
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-0"
-            >
-              <Unknown
-                customStyles={
-                  Object {
-                    "height": 40,
-                    "width": 40,
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "height": 40,
+                      "width": 40,
+                    }
                   }
-                }
-              />
-            </ForwardRef(styled.span)>
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
+        }
+        headerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-1"
-            >
-              Items
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-1"
-            >
-              —
-            </ForwardRef(styled.span)>
+            <ForwardRef(styled.ul)>
+              <ForwardRef(styled.li)
+                id="headerItem-0"
+              >
+                3 months ago
+              </ForwardRef(styled.li)>
+              <ForwardRef(styled.li)
+                id="headerItem-1"
+              >
+                firstName lastName
+              </ForwardRef(styled.li)>
+            </ForwardRef(styled.ul)>
+            <ForwardRef(styled.div)>
+              <Unknown />
+            </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-2"
-            >
-              Fields
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-2"
-            >
-              —
-            </ForwardRef(styled.span)>
-          </ForwardRef(styled.div)>
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-3"
-            >
-              Filters
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-3"
-            >
-              —
-            </ForwardRef(styled.span)>
-          </ForwardRef(styled.div)>
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-4"
-            >
-              Views
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-4"
-            >
-              —
-            </ForwardRef(styled.span)>
-          </ForwardRef(styled.div)>
-        </ForwardRef(styled.div)>
-      }
-      headerComponent={
-        <ForwardRef(styled.div)>
-          <ForwardRef(styled.ul)>
-            <ForwardRef(styled.li)
-              id="headerItem-0"
-            >
-              3 months ago
-            </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)
-              id="headerItem-1"
-            >
-              firstName lastName
-            </ForwardRef(styled.li)>
-          </ForwardRef(styled.ul)>
-          <ForwardRef(styled.div)>
-            <Unknown />
-          </ForwardRef(styled.div)>
-        </ForwardRef(styled.div)>
-      }
-      key="0"
-    >
-      <Styled(H1)
-        id="dataSourceTitle"
-        onClick={[Function]}
+        }
+        key="0"
       >
-        name
-      </Styled(H1)>
-    </Styled(Component)>
-    <Styled(Component)
-      footerComponent={
-        <ForwardRef(styled.div)>
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          name
+        </Styled(H1)>
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-0"
-            >
-              Source
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-0"
-            >
-              <Unknown
-                customStyles={
-                  Object {
-                    "height": 40,
-                    "width": 40,
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "height": 40,
+                      "width": 40,
+                    }
                   }
-                }
-              />
-            </ForwardRef(styled.span)>
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                246
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                11
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
+        }
+        headerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-1"
-            >
-              Items
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-1"
-            >
-              246
-            </ForwardRef(styled.span)>
+            <ForwardRef(styled.ul)>
+              <ForwardRef(styled.li)
+                id="headerItem-0"
+              >
+                3 months ago
+              </ForwardRef(styled.li)>
+              <ForwardRef(styled.li)
+                id="headerItem-1"
+              >
+                firstName lastName
+              </ForwardRef(styled.li)>
+            </ForwardRef(styled.ul)>
+            <ForwardRef(styled.div)>
+              <Unknown />
+            </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-2"
-            >
-              Fields
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-2"
-            >
-              11
-            </ForwardRef(styled.span)>
-          </ForwardRef(styled.div)>
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-3"
-            >
-              Filters
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-3"
-            >
-              —
-            </ForwardRef(styled.span)>
-          </ForwardRef(styled.div)>
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.span)
-              id="metaItem-4"
-            >
-              Views
-            </ForwardRef(styled.span)>
-            <ForwardRef(styled.span)
-              id="metaItemValue-4"
-            >
-              —
-            </ForwardRef(styled.span)>
-          </ForwardRef(styled.div)>
-        </ForwardRef(styled.div)>
-      }
-      headerComponent={
-        <ForwardRef(styled.div)>
-          <ForwardRef(styled.ul)>
-            <ForwardRef(styled.li)
-              id="headerItem-0"
-            >
-              3 months ago
-            </ForwardRef(styled.li)>
-            <ForwardRef(styled.li)
-              id="headerItem-1"
-            >
-              firstName lastName
-            </ForwardRef(styled.li)>
-          </ForwardRef(styled.ul)>
-          <ForwardRef(styled.div)>
-            <Unknown />
-          </ForwardRef(styled.div)>
-        </ForwardRef(styled.div)>
-      }
-      key="1"
-    >
-      <Styled(H1)
-        id="dataSourceTitle"
-        onClick={[Function]}
+        }
+        key="1"
       >
-        name
-      </Styled(H1)>
-    </Styled(Component)>
-  </styled.section>
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </Styled(H1)>
+      </Styled(Component)>
+    </styled.section>
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={true}
     right={false}
@@ -432,7 +446,14 @@ exports[`DataSourceList: Component should render empty 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <styled.section />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={true}
+    noDataContent="No Data Sources"
+  >
+    <styled.section />
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={true}
     right={false}

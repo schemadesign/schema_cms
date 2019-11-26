@@ -70,16 +70,16 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
     >
       <styled.div>
         <styled.div>
-          <H2
+          <Styled(H2)
             id="headerTitle"
           >
             SchemaCMS
-          </H2>
-          <H1
+          </Styled(H2)>
+          <Styled(H1)
             id="headerSubtitle"
           >
             Menu
-          </H1>
+          </Styled(H1)>
         </styled.div>
       </styled.div>
       <styled.div>

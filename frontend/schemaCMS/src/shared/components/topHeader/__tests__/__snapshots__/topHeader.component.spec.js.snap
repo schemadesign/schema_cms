@@ -11,16 +11,16 @@ exports[`TopHeader: Component should render correctly 1`] = `
     }
   >
     <styled.div>
-      <H2
+      <Styled(H2)
         id="headerTitle"
       >
         Projects
-      </H2>
-      <H1
+      </Styled(H2)>
+      <Styled(H1)
         id="headerSubtitle"
       >
         Overview
-      </H1>
+      </Styled(H1)>
     </styled.div>
   </Component>
   <Component
@@ -43,16 +43,16 @@ exports[`TopHeader: Component should render correctly 1`] = `
   >
     <styled.div>
       <styled.div>
-        <H2
+        <Styled(H2)
           id="headerTitle"
         >
           Projects
-        </H2>
-        <H1
+        </Styled(H2)>
+        <Styled(H1)
           id="headerSubtitle"
         >
           Overview
-        </H1>
+        </Styled(H1)>
       </styled.div>
     </styled.div>
     <styled.div>

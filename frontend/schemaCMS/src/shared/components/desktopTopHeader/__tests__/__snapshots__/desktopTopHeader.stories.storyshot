@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
-.c8 {
+.c10 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -9,20 +9,20 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c9 {
+.c11 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c11 {
+.c13 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c10 {
+.c12 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -31,32 +31,40 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   padding: 8px 0 13px;
 }
 
-.c10 a {
+.c12 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c10:first-of-type {
+.c12:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c12 {
+.c14 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c12 a {
+.c14 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c12 a {
+.c14 a {
   padding: 8px 0;
+}
+
+.c8 {
+  word-break: break-word;
+}
+
+.c9 {
+  word-break: break-word;
 }
 
 .c0 {
@@ -343,6 +351,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
             className=""
           >
             <h2
+              className="c8"
               id="headerTitle"
               style={
                 Object {
@@ -356,6 +365,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               SchemaCMS
             </h2>
             <h1
+              className="c9"
               id="headerSubtitle"
               style={
                 Object {
@@ -373,13 +383,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
           </div>
         </div>
         <div
-          className="c8"
+          className="c10"
         >
           <ul
-            className="c9"
+            className="c11"
           >
             <li
-              className="c10"
+              className="c12"
             >
               <a
                 href="/path"
@@ -390,7 +400,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
             </li>
             <li
-              className="c10"
+              className="c12"
             >
               <a
                 href="/path"
@@ -402,10 +412,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
             </li>
           </ul>
           <ul
-            className="c11"
+            className="c13"
           >
             <li
-              className="c12"
+              className="c14"
             >
               <a
                 href="/logout"
@@ -416,7 +426,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
             </li>
             <li
-              className="c12"
+              className="c14"
               id="id"
               onClick={[Function]}
             >
@@ -472,7 +482,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`] = `
-.c10 {
+.c12 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -480,20 +490,20 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   -webkit-overflow-scrolling: touch;
 }
 
-.c11 {
+.c13 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c13 {
+.c15 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c12 {
+.c14 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -502,32 +512,40 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   padding: 8px 0 13px;
 }
 
-.c12 a {
+.c14 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c12:first-of-type {
+.c14:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c14 {
+.c16 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c14 a {
+.c16 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c14 a {
+.c16 a {
   padding: 8px 0;
+}
+
+.c10 {
+  word-break: break-word;
+}
+
+.c11 {
+  word-break: break-word;
 }
 
 .c0 {
@@ -864,6 +882,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
             className=""
           >
             <h2
+              className="c10"
               id="headerTitle"
               style={
                 Object {
@@ -877,6 +896,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               SchemaCMS
             </h2>
             <h1
+              className="c11"
               id="headerSubtitle"
               style={
                 Object {
@@ -894,13 +914,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
           </div>
         </div>
         <div
-          className="c10"
+          className="c12"
         >
           <ul
-            className="c11"
+            className="c13"
           >
             <li
-              className="c12"
+              className="c14"
             >
               <a
                 href="/path"
@@ -911,7 +931,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
             </li>
             <li
-              className="c12"
+              className="c14"
             >
               <a
                 href="/path"
@@ -923,10 +943,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
             </li>
           </ul>
           <ul
-            className="c13"
+            className="c15"
           >
             <li
-              className="c14"
+              className="c16"
             >
               <a
                 href="/logout"
@@ -937,7 +957,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
             </li>
             <li
-              className="c14"
+              className="c16"
               id="id"
               onClick={[Function]}
             >
@@ -993,7 +1013,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 `;
 
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
-.c10 {
+.c12 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -1001,20 +1021,20 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c11 {
+.c13 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c13 {
+.c15 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c12 {
+.c14 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1023,32 +1043,40 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   padding: 8px 0 13px;
 }
 
-.c12 a {
+.c14 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c12:first-of-type {
+.c14:first-of-type {
   border-top: 2.4px solid #2F2F36;
 }
 
-.c14 {
+.c16 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c14 a {
+.c16 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c14 a {
+.c16 a {
   padding: 8px 0;
+}
+
+.c10 {
+  word-break: break-word;
+}
+
+.c11 {
+  word-break: break-word;
 }
 
 .c0 {
@@ -1381,6 +1409,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
             className=""
           >
             <h2
+              className="c10"
               id="headerTitle"
               style={
                 Object {
@@ -1394,6 +1423,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               SchemaCMS
             </h2>
             <h1
+              className="c11"
               id="headerSubtitle"
               style={
                 Object {
@@ -1411,13 +1441,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
           </div>
         </div>
         <div
-          className="c10"
+          className="c12"
         >
           <ul
-            className="c11"
+            className="c13"
           >
             <li
-              className="c12"
+              className="c14"
             >
               <a
                 href="/path"
@@ -1428,7 +1458,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </a>
             </li>
             <li
-              className="c12"
+              className="c14"
             >
               <a
                 href="/path"
@@ -1440,10 +1470,10 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
             </li>
           </ul>
           <ul
-            className="c13"
+            className="c15"
           >
             <li
-              className="c14"
+              className="c16"
             >
               <a
                 href="/logout"
@@ -1454,7 +1484,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               </a>
             </li>
             <li
-              className="c14"
+              className="c16"
               id="id"
               onClick={[Function]}
             >

@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|List admin list 1`] = `
-.c10 {
+.c12 {
   height: 155px;
 }
 
-.c12 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Project|List admin list 1`] = `
   width: 100%;
 }
 
-.c11 {
+.c13 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,7 +32,7 @@ exports[`Storyshots Project|List admin list 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c9 {
+.c11 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -44,7 +44,7 @@ exports[`Storyshots Project|List admin list 1`] = `
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -52,60 +52,68 @@ exports[`Storyshots Project|List admin list 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 {
+.c6 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c4 a {
+.c6 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c4 a {
+.c6 a {
   padding: 8px 0;
 }
 
-.c5 {
-  display: none;
+.c1 {
+  word-break: break-word;
 }
 
-.c6 {
-  margin-right: 20px;
+.c2 {
+  word-break: break-word;
 }
 
 .c7 {
-  color: #FFF;
+  display: none;
 }
 
 .c8 {
+  margin-right: 20px;
+}
+
+.c9 {
+  color: #FFF;
+}
+
+.c10 {
   color: #FFF;
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c14 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c13 {
     width: 1000px;
   }
 }
@@ -117,7 +125,7 @@ exports[`Storyshots Project|List admin list 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c5 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -166,6 +174,7 @@ exports[`Storyshots Project|List admin list 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -179,6 +188,7 @@ exports[`Storyshots Project|List admin list 1`] = `
               Projects
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -264,6 +274,7 @@ exports[`Storyshots Project|List admin list 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -277,6 +288,7 @@ exports[`Storyshots Project|List admin list 1`] = `
               Projects
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -294,16 +306,16 @@ exports[`Storyshots Project|List admin list 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           >
             <li
-              className="c4"
+              className="c6"
             >
               <a
                 href="/logout"
@@ -314,7 +326,7 @@ exports[`Storyshots Project|List admin list 1`] = `
               </a>
             </li>
             <li
-              className="c4"
+              className="c6"
             >
               <a
                 href="/user"
@@ -370,13 +382,13 @@ exports[`Storyshots Project|List admin list 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      className="c7"
     >
       <div
-        className="c6"
+        className="c8"
       >
         <h2
-          className="c7"
+          className="c9"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -390,7 +402,7 @@ exports[`Storyshots Project|List admin list 1`] = `
           Projects
         </h2>
         <h1
-          className="c8"
+          className="c10"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -452,20 +464,20 @@ exports[`Storyshots Project|List admin list 1`] = `
       </div>
     </div>
     <div
-      className="c9"
+      className="c11"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c10"
+      className="c12"
     >
       <div
-        className="c11"
+        className="c13"
       >
         <div
-          className="c12"
+          className="c14"
         >
           <button
             disabled={false}
@@ -515,11 +527,11 @@ exports[`Storyshots Project|List admin list 1`] = `
 `;
 
 exports[`Storyshots Project|List editor list 1`] = `
-.c10 {
+.c12 {
   height: 155px;
 }
 
-.c12 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -538,7 +550,7 @@ exports[`Storyshots Project|List editor list 1`] = `
   width: 100%;
 }
 
-.c11 {
+.c13 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -546,7 +558,7 @@ exports[`Storyshots Project|List editor list 1`] = `
   background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(0,0,0,0) );
 }
 
-.c9 {
+.c11 {
   color: #1d1d20;
   text-align: center;
   padding: 50px 10px;
@@ -558,7 +570,7 @@ exports[`Storyshots Project|List editor list 1`] = `
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -566,60 +578,68 @@ exports[`Storyshots Project|List editor list 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 {
+.c6 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c4 a {
+.c6 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #1d1d20;
   display: block;
 }
 
-.c4 a {
+.c6 a {
   padding: 8px 0;
 }
 
-.c5 {
-  display: none;
+.c1 {
+  word-break: break-word;
 }
 
-.c6 {
-  margin-right: 20px;
+.c2 {
+  word-break: break-word;
 }
 
 .c7 {
-  color: #1d1d20;
+  display: none;
 }
 
 .c8 {
+  margin-right: 20px;
+}
+
+.c9 {
+  color: #1d1d20;
+}
+
+.c10 {
   color: #1d1d20;
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c14 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c13 {
     width: 1000px;
   }
 }
@@ -631,7 +651,7 @@ exports[`Storyshots Project|List editor list 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c5 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -680,6 +700,7 @@ exports[`Storyshots Project|List editor list 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -693,6 +714,7 @@ exports[`Storyshots Project|List editor list 1`] = `
               Projects
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -778,6 +800,7 @@ exports[`Storyshots Project|List editor list 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -791,6 +814,7 @@ exports[`Storyshots Project|List editor list 1`] = `
               Projects
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -808,16 +832,16 @@ exports[`Storyshots Project|List editor list 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           >
             <li
-              className="c4"
+              className="c6"
             >
               <a
                 href="/logout"
@@ -873,13 +897,13 @@ exports[`Storyshots Project|List editor list 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      className="c7"
     >
       <div
-        className="c6"
+        className="c8"
       >
         <h2
-          className="c7"
+          className="c9"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -893,7 +917,7 @@ exports[`Storyshots Project|List editor list 1`] = `
           Projects
         </h2>
         <h1
-          className="c8"
+          className="c10"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -914,20 +938,20 @@ exports[`Storyshots Project|List editor list 1`] = `
       />
     </div>
     <div
-      className="c9"
+      className="c11"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c10"
+      className="c12"
     >
       <div
-        className="c11"
+        className="c13"
       >
         <div
-          className="c12"
+          className="c14"
         />
       </div>
     </div>
@@ -936,11 +960,11 @@ exports[`Storyshots Project|List editor list 1`] = `
 `;
 
 exports[`Storyshots Project|List empty 1`] = `
-.c10 {
+.c12 {
   height: 155px;
 }
 
-.c12 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -959,7 +983,7 @@ exports[`Storyshots Project|List empty 1`] = `
   width: 100%;
 }
 
-.c11 {
+.c13 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -967,7 +991,7 @@ exports[`Storyshots Project|List empty 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c9 {
+.c11 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -979,7 +1003,7 @@ exports[`Storyshots Project|List empty 1`] = `
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -987,60 +1011,68 @@ exports[`Storyshots Project|List empty 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 {
+.c6 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c4 a {
+.c6 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c4 a {
+.c6 a {
   padding: 8px 0;
 }
 
-.c5 {
-  display: none;
+.c1 {
+  word-break: break-word;
 }
 
-.c6 {
-  margin-right: 20px;
+.c2 {
+  word-break: break-word;
 }
 
 .c7 {
-  color: #FFF;
+  display: none;
 }
 
 .c8 {
+  margin-right: 20px;
+}
+
+.c9 {
+  color: #FFF;
+}
+
+.c10 {
   color: #FFF;
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c14 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c13 {
     width: 1000px;
   }
 }
@@ -1052,7 +1084,7 @@ exports[`Storyshots Project|List empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c5 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1101,6 +1133,7 @@ exports[`Storyshots Project|List empty 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -1114,6 +1147,7 @@ exports[`Storyshots Project|List empty 1`] = `
               Projects
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -1199,6 +1233,7 @@ exports[`Storyshots Project|List empty 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -1212,6 +1247,7 @@ exports[`Storyshots Project|List empty 1`] = `
               Projects
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -1229,16 +1265,16 @@ exports[`Storyshots Project|List empty 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           >
             <li
-              className="c4"
+              className="c6"
             >
               <a
                 href="/logout"
@@ -1249,7 +1285,7 @@ exports[`Storyshots Project|List empty 1`] = `
               </a>
             </li>
             <li
-              className="c4"
+              className="c6"
             >
               <a
                 href="/user"
@@ -1305,13 +1341,13 @@ exports[`Storyshots Project|List empty 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      className="c7"
     >
       <div
-        className="c6"
+        className="c8"
       >
         <h2
-          className="c7"
+          className="c9"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -1325,7 +1361,7 @@ exports[`Storyshots Project|List empty 1`] = `
           Projects
         </h2>
         <h1
-          className="c8"
+          className="c10"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -1387,20 +1423,20 @@ exports[`Storyshots Project|List empty 1`] = `
       </div>
     </div>
     <div
-      className="c9"
+      className="c11"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c10"
+      className="c12"
     >
       <div
-        className="c11"
+        className="c13"
       >
         <div
-          className="c12"
+          className="c14"
         >
           <button
             disabled={false}
