@@ -49,7 +49,12 @@ exports[`UserList: Component should render correctly 1`] = `
     noData={true}
     noDataContent={null}
   >
-    <Component />
+    <UserList
+      isAdmin={true}
+      onRemoveUser={[Function]}
+      projectId="1"
+      users={Array []}
+    />
   </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={true}

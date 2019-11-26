@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { always, path } from 'ramda';
+import { always } from 'ramda';
 
 import { UserList as UserListComponent } from '../../../shared/components/userList';
 import { BackButton, NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
@@ -14,6 +14,7 @@ import messages from './userList.messages';
 import browserHistory from '../../../shared/utils/history';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { getProjectId } from '../../../shared/utils/helpers';
 
 export class UserList extends PureComponent {
   static propTypes = {
@@ -34,7 +35,7 @@ export class UserList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const projectId = this.getProjectId();
+      const projectId = getProjectId(this.props);
 
       await this.props.fetchUsers({ projectId });
       this.setState({ loading: false });
@@ -43,10 +44,8 @@ export class UserList extends PureComponent {
     }
   }
 
-  getProjectId = () => path(['match', 'params', 'projectId'], this.props);
-
   handleAddUser = () => {
-    const projectId = path(['match', 'params', 'projectId'], this.props);
+    const projectId = getProjectId(this.props);
     return browserHistory.push(`/project/${projectId}/user/add`);
   };
 
@@ -66,7 +65,7 @@ export class UserList extends PureComponent {
 
   handleConfirmRemove = () => {
     const { userToBeRemoved } = this.state;
-    const projectId = this.getProjectId();
+    const projectId = getProjectId(this.props);
 
     this.props.removeUser({ projectId, userId: userToBeRemoved });
     this.setState({
@@ -77,15 +76,6 @@ export class UserList extends PureComponent {
 
   renderCreateUserButton = ({ id, isAdmin }) =>
     renderWhenTrue(always(<PlusButton id={id} onClick={this.handleAddUser} />))(isAdmin);
-
-  renderContent = () => (
-    <UserListComponent
-      users={this.props.users}
-      projectId={this.getProjectId()}
-      onRemoveUser={this.handleRemoveUser}
-      isAdmin={this.props.isAdmin}
-    />
-  );
 
   render() {
     const { showConfirmationModal, loading } = this.state;
@@ -103,7 +93,12 @@ export class UserList extends PureComponent {
           {this.renderCreateUserButton({ id: 'addUserDesktopBtn', isAdmin })}
         </ContextHeader>
         <LoadingWrapper loading={loading} noData={!users.length}>
-          {this.renderContent}
+          <UserListComponent
+            users={this.props.users}
+            projectId={getProjectId(this.props)}
+            onRemoveUser={this.handleRemoveUser}
+            isAdmin={this.props.isAdmin}
+          />
         </LoadingWrapper>
         <NavigationContainer hideOnDesktop>
           <BackButton onClick={this.handleBackClick}>

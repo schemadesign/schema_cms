@@ -1,4 +1,4 @@
-import { either, is, filter, isEmpty, keys, map, not, pipe, propEq, propOr } from 'ramda';
+import { either, is, filter, isEmpty, keys, map, not, pipe, propEq, propOr, path } from 'ramda';
 import { camelize } from 'humps';
 import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
 
@@ -33,3 +33,5 @@ export const getIsAnyResultProcessing = pipe(
   isEmpty,
   not
 );
+
+export const getProjectId = path(['match', 'params', 'projectId']);

@@ -1,7 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
-import { path } from 'ramda';
 
 import { Form } from './createDirectory.styles';
 import messages from './createDirectory.messages';
@@ -10,6 +9,7 @@ import { DIRECTORY_NAME } from '../../../modules/directory/directory.constants';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { getProjectId } from '../../../shared/utils/helpers';
 
 export class CreateDirectory extends PureComponent {
   static propTypes = {
@@ -26,9 +26,7 @@ export class CreateDirectory extends PureComponent {
     }),
   };
 
-  getProjectId = () => path(['match', 'params', 'projectId'], this.props);
-
-  handleBackClick = () => this.props.history.push(`/project/${this.getProjectId()}/directory`);
+  handleBackClick = () => this.props.history.push(`/project/${getProjectId(this.props)}/directory`);
 
   render() {
     const { intl, values, handleSubmit, handleChange, ...restProps } = this.props;

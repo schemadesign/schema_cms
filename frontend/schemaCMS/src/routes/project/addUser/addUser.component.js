@@ -121,8 +121,6 @@ export class AddUser extends PureComponent {
     </UserItem>
   );
 
-  renderContent = () => this.props.users.map(this.renderUser);
-
   render() {
     const { users } = this.props;
     const { showConfirmationModal, loading } = this.state;
@@ -133,7 +131,7 @@ export class AddUser extends PureComponent {
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <LoadingWrapper loading={loading} noData={!users.length}>
-          {this.renderContent()}
+          {this.props.users.map(this.renderUser)}
         </LoadingWrapper>
         <NavigationContainer>
           <BackButton onClick={this.handleBackClick}>

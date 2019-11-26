@@ -37,6 +37,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [ProjectRoutines.fetchOne.SUCCESS]: updateOne,
   [ProjectRoutines.unmountOne.TRIGGER]: unmountOne,
   [ProjectRoutines.createProject.SUCCESS]: createProjectSuccess,
-  [ProjectRoutines.createProject.SUCCESS]: createProjectSuccess,
   [ProjectRoutines.fetchEditors.SUCCESS]: setEditors,
 });
