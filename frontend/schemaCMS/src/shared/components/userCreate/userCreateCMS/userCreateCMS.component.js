@@ -14,19 +14,23 @@ export class UserCreateCMS extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
-  handleSubmit = (createUserCMS, intl) => async (data, { setSubmitting, setErrors }) => {
-    try {
-      setSubmitting(true);
+  handleSubmit = () => {
+    const { createUserCMS, intl } = this.props;
 
-      await createUserCMS(data);
-    } catch (errors) {
-      const { formatMessage } = intl;
-      const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+    return async (data, { setSubmitting, setErrors }) => {
+      try {
+        setSubmitting(true);
 
-      setErrors(errorMessages);
-    } finally {
-      setSubmitting(false);
-    }
+        await createUserCMS(data);
+      } catch (errors) {
+        const { formatMessage } = intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+        setErrors(errorMessages);
+      } finally {
+        setSubmitting(false);
+      }
+    };
   };
 
   handleCancelClick = () => {
@@ -34,13 +38,11 @@ export class UserCreateCMS extends PureComponent {
   };
 
   render() {
-    const { createUserCMS, intl } = this.props;
-
     return (
       <Formik
         displayName={USER_CREATE_CMS_FORM}
         validationSchema={USER_CREATE_CMS_SCHEME}
-        onSubmit={this.handleSubmit(createUserCMS, intl)}
+        onSubmit={this.handleSubmit()}
         initialValues={{
           [USER_ROLE]: ROLES.ADMIN,
           [FIRST_NAME]: '',
@@ -49,13 +51,7 @@ export class UserCreateCMS extends PureComponent {
         }}
         enableReinitialize
         render={({ handleSubmit, ...restProps }) => (
-          <UserCreate
-            handleSubmit={handleSubmit}
-            onCancelClick={this.handleCancelClick}
-            intl={intl}
-            isInvitation
-            {...restProps}
-          />
+          <UserCreate handleSubmit={handleSubmit} onCancelClick={this.handleCancelClick} isInvitation {...restProps} />
         )}
       />
     );

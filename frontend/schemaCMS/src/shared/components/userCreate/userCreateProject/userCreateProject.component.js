@@ -54,27 +54,27 @@ export class UserCreateProject extends PureComponent {
     }
   }
 
-  handleSubmit = ({ id: userId }) => {
-    const projectId = this.props.project.id;
-    this.props.createUserProject({ projectId, userId });
-  };
+  handleSubmit = () => {
+    const {
+      project: { id: projectId },
+      createUserProject,
+      intl,
+    } = this.props;
 
-  handleSubmit = ({ id: projectId }, createUserProject, intl) => async (
-    { id: userId },
-    { setSubmitting, setErrors }
-  ) => {
-    try {
-      setSubmitting(true);
+    return async ({ id: userId }, { setSubmitting, setErrors }) => {
+      try {
+        setSubmitting(true);
 
-      await createUserProject({ projectId, userId });
-    } catch (errors) {
-      const { formatMessage } = intl;
-      const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+        await createUserProject({ projectId, userId });
+      } catch (errors) {
+        const { formatMessage } = intl;
+        const errorMessages = errorMessageParser({ errors, messages, formatMessage });
 
-      setErrors(errorMessages);
-    } finally {
-      setSubmitting(false);
-    }
+        setErrors(errorMessages);
+      } finally {
+        setSubmitting(false);
+      }
+    };
   };
 
   handleCancelClick = evt => {
@@ -83,7 +83,7 @@ export class UserCreateProject extends PureComponent {
   };
 
   renderContent = () => {
-    const { project, user, createUserProject, intl } = this.props;
+    const { project, user } = this.props;
 
     const headerValues = {
       project: project.title,
@@ -96,7 +96,7 @@ export class UserCreateProject extends PureComponent {
         enableReinitialize={false}
         displayName={USER_CREATE_PROJECT_FORM}
         validationSchema={USER_CREATE_PROJECT_SCHEME}
-        onSubmit={this.handleSubmit(project, createUserProject, intl)}
+        onSubmit={this.handleSubmit()}
         initialValues={{
           ...this.props.user,
           [USER_ROLE]: prop('label')(find(propEq('value', ROLES.EDITOR), NEW_USER_ROLES_OPTIONS)),
