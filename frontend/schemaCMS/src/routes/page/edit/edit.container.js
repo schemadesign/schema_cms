@@ -7,17 +7,19 @@ import { compose, path } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
-import { CreatePage } from './createPage.component';
-import { PageRoutines } from '../../../modules/page';
+import { Edit } from './edit.component';
+import { PageRoutines, selectPage } from '../../../modules/page';
 import { PAGE_FORM, INITIAL_VALUES, PAGE_SCHEMA } from '../../../modules/page/page.constants';
 import { errorMessageParser } from '../../../shared/utils/helpers';
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  page: selectPage,
+});
 
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      createPage: promisifyRoutine(PageRoutines.create),
+      updatePage: promisifyRoutine(PageRoutines.update),
     },
     dispatch
   );
@@ -33,14 +35,15 @@ export default compose(
   withFormik({
     displayName: PAGE_FORM,
     enableReinitialize: true,
-    mapPropsToValues: () => INITIAL_VALUES,
+    mapPropsToValues: ({ page }) => ({ ...INITIAL_VALUES, ...page }),
     validationSchema: () => PAGE_SCHEMA,
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const directoryId = path(['match', 'params', 'directoryId'], props);
+        const pageId = path(['match', 'params', 'pageId'], props);
+        const directoryId = path(['page', 'directory', 'id'], props);
 
-        await props.createPage({ directoryId, ...data });
+        await props.updatePage({ pageId, directoryId, ...data });
       } catch (errors) {
         const { formatMessage } = props.intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });
@@ -51,4 +54,4 @@ export default compose(
       }
     },
   })
-)(CreatePage);
+)(Edit);

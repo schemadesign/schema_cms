@@ -6,6 +6,7 @@ import { OK } from 'http-status-codes';
 import { watchPage } from '../page.sagas';
 import { PageRoutines } from '../page.redux';
 import mockApi from '../../../shared/utils/mockApi';
+import browserHistory from '../../../shared/utils/history';
 
 describe('Page: sagas', () => {
   const defaultState = Immutable({
@@ -71,6 +72,30 @@ describe('Page: sagas', () => {
         .put(PageRoutines.create.success(response))
         .dispatch(PageRoutines.create(payload))
         .silentRun();
+    });
+  });
+
+  describe('when update action is called', () => {
+    it('should put update.success action', async () => {
+      jest.spyOn(browserHistory, 'push');
+      const response = {
+        id: 1,
+      };
+      const payload = {
+        directoryId: 1,
+        pageId: 2,
+        title: 'a title',
+      };
+
+      mockApi.patch(`/pages/${payload.pageId}`, { title: payload.title }).reply(OK, response);
+
+      await expectSaga(watchPage)
+        .withState(defaultState)
+        .put(PageRoutines.update.success(response))
+        .dispatch(PageRoutines.update(payload))
+        .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith(`/directory/${payload.directoryId}`);
     });
   });
 });

@@ -62,9 +62,9 @@ export class CreatePage extends PureComponent {
             multiline
             {...restProps}
           />
-          <NavigationContainer hideOnDesktop>
+          <NavigationContainer>
             <BackButton id="backBtn" onClick={this.handleBackClick}>
-              <FormattedMessage {...messages.back} />
+              <FormattedMessage {...messages.cancel} />
             </BackButton>
             <NextButton id="createPageBtn" type="submit" disabled={!restProps.isValid}>
               <FormattedMessage {...messages.createPage} />

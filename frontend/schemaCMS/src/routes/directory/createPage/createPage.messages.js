@@ -12,11 +12,11 @@ export default defineMessages({
   },
   pageFieldTitle: {
     id: 'directory.createPage.pageFieldTitle',
-    defaultMessage: 'Page Name',
+    defaultMessage: 'Page Title',
   },
   pageFieldTitlePlaceholder: {
     id: 'directory.createPage.pageFieldTitlePlaceholder',
-    defaultMessage: 'Name',
+    defaultMessage: 'Title',
   },
   pageFieldDescription: {
     id: 'directory.createPage.pageFieldDescription',
@@ -38,8 +38,8 @@ export default defineMessages({
     id: 'directory.createPage.createPage',
     defaultMessage: 'Create',
   },
-  back: {
-    id: 'directory.createPage.back',
-    defaultMessage: 'Back',
+  cancel: {
+    id: 'directory.createPage.cancel',
+    defaultMessage: 'Cancel',
   },
 });

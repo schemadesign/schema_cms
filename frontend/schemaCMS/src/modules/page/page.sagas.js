@@ -48,10 +48,26 @@ function* create({ payload: { directoryId, ...payload } }) {
   }
 }
 
+function* update({ payload: { pageId, directoryId, ...payload } }) {
+  try {
+    yield put(PageRoutines.update.request());
+
+    const { data } = yield api.patch(`${PAGES_PATH}/${pageId}`, { ...payload });
+
+    yield put(PageRoutines.update.success(data));
+    browserHistory.push(`/directory/${directoryId}`);
+  } catch (e) {
+    yield put(PageRoutines.update.failure(e));
+  } finally {
+    yield put(PageRoutines.update.fulfill());
+  }
+}
+
 export function* watchPage() {
   yield all([
     takeLatest(PageRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(PageRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(PageRoutines.create.TRIGGER, create),
+    takeLatest(PageRoutines.update.TRIGGER, update),
   ]);
 }

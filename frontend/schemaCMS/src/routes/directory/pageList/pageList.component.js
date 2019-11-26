@@ -71,7 +71,7 @@ export class PageList extends PureComponent {
     </HeaderList>
   );
 
-  renderItem({ id, name = '', created = '', createdBy = {}, description = '', meta = {} }, index) {
+  renderItem({ id, title = '', created = '', createdBy = {}, description = '', meta = {} }, index) {
     const { firstName, lastName } = createdBy;
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderHeader([whenCreated, `${firstName} ${lastName}`]);
@@ -79,8 +79,8 @@ export class PageList extends PureComponent {
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>
-        <H1 id={`pageName-${index}`} customStyles={titleStyles} onClick={() => this.handleShowPage(id)}>
-          {name}
+        <H1 id={`pageTitle-${index}`} customStyles={titleStyles} onClick={() => this.handleShowPage(id)}>
+          {title}
         </H1>
         <Description onClick={() => this.handleShowPage(id)}>
           <P id={`pageDescription-${index}`}>{description}</P>
