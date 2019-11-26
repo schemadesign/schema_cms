@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Directory/PageList Default 1`] = `
-.c11 {
+.c12 {
   height: 155px;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
   width: 100%;
 }
 
-.c12 {
+.c13 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,7 +32,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c10 {
+.c11 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -90,14 +90,29 @@ exports[`Storyshots Directory/PageList Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c13 {
-    display: none;
+  .c14 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c13 {
     width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c10 {
+    display: block;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: none;
   }
 }
 
@@ -393,63 +408,67 @@ exports[`Storyshots Directory/PageList Default 1`] = `
       <div
         className=""
       >
-        <button
-          disabled={false}
-          id="createPageDesktopBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
+        <div
+          className="c10"
         >
-          <svg
+          <button
+            disabled={false}
+            id="createPageDesktopBtn"
+            onClick={[Function]}
             style={
               Object {
-                "fill": "#000",
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
                 "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
     <div
-      className="c10"
+      className="c11"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c11"
+      className="c12"
     >
       <div
-        className="c12"
+        className="c13"
       >
         <div
-          className="c13"
+          className="c14"
         >
           <button
             disabled={false}
@@ -490,46 +509,50 @@ exports[`Storyshots Directory/PageList Default 1`] = `
               />
             </svg>
           </button>
-          <button
-            disabled={false}
-            id="createPageBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
+          <div
+            className="c15"
           >
-            <svg
+            <button
+              disabled={false}
+              id="createPageBtn"
+              onClick={[Function]}
               style={
                 Object {
-                  "fill": "#000",
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": "60px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": "60px",
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#000",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,241 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Edit: Component should render correctly 1`] = `
-<styled.div>
-  Edit component
-</styled.div>
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="page.edit.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Page"
+        id="page.edit.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="page.edit.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Page"
+        id="page.edit.title"
+        values={Object {}}
+      />
+    }
+  />
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <PageForm
+        fetchPage={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "pageId": "1",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": Promise {},
+              },
+            ],
+          }
+        }
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        match={
+          Object {
+            "params": Object {
+              "pageId": "1",
+            },
+          }
+        }
+        page={
+          Object {
+            "directory": Object {
+              "id": "1",
+            },
+          }
+        }
+        values={
+          Object {
+            "description": "description",
+            "keywords": "keywords",
+            "title": "title",
+          }
+        }
+      />
+      <NavigationContainer
+        hideOnDesktop={false}
+        right={false}
+      >
+        <BackButton
+          disabled={false}
+          id="backBtn"
+          onClick={[Function]}
+        >
+          <FormattedMessage
+            defaultMessage="Back"
+            id="page.edit.back"
+            values={Object {}}
+          />
+        </BackButton>
+        <NextButton
+          disabled={true}
+          id="savePageBtn"
+          loading={false}
+          type="submit"
+        >
+          <FormattedMessage
+            defaultMessage="Save"
+            id="page.edit.save"
+            values={Object {}}
+          />
+        </NextButton>
+      </NavigationContainer>
+    </styled.form>
+  </LoadingWrapper>
+</Fragment>
+`;
+
+exports[`Edit: Component should render correctly with loader 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="page.edit.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Page"
+        id="page.edit.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="page.edit.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Page"
+        id="page.edit.title"
+        values={Object {}}
+      />
+    }
+  />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <PageForm
+        fetchPage={[Function]}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        match={
+          Object {
+            "params": Object {
+              "pageId": "1",
+            },
+          }
+        }
+        page={
+          Object {
+            "directory": Object {
+              "id": "1",
+            },
+          }
+        }
+        values={
+          Object {
+            "description": "description",
+            "keywords": "keywords",
+            "title": "title",
+          }
+        }
+      />
+      <NavigationContainer
+        hideOnDesktop={false}
+        right={false}
+      >
+        <BackButton
+          disabled={false}
+          id="backBtn"
+          onClick={[Function]}
+        >
+          <FormattedMessage
+            defaultMessage="Back"
+            id="page.edit.back"
+            values={Object {}}
+          />
+        </BackButton>
+        <NextButton
+          disabled={true}
+          id="savePageBtn"
+          loading={false}
+          type="submit"
+        >
+          <FormattedMessage
+            defaultMessage="Save"
+            id="page.edit.save"
+            values={Object {}}
+          />
+        </NextButton>
+      </NavigationContainer>
+    </styled.form>
+  </LoadingWrapper>
+</Fragment>
 `;

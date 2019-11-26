@@ -253,6 +253,12 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
 `;
 
 exports[`Storyshots Shared Components|Navigation PlusButton 1`] = `
+@media (min-width:1040px) {
+  .c0 {
+    display: block;
+  }
+}
+
 <div
   style={
     Object {
@@ -261,43 +267,47 @@ exports[`Storyshots Shared Components|Navigation PlusButton 1`] = `
     }
   }
 >
-  <button
-    disabled={false}
-    style={
-      Object {
-        "backgroundColor": "#FFF",
-        "border": "none",
-        "borderRadius": "48px",
-        "color": "#000",
-        "cursor": "pointer",
-        "display": "inline-block",
-        "fill": "#FFF",
-        "fontSize": "18px",
-        "height": "60px",
-        "margin": "0",
-        "minHeight": "48px",
-        "outline": "none",
-        "padding": "0",
-        "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-        "width": "60px",
-      }
-    }
+  <div
+    className="c0"
   >
-    <svg
+    <button
+      disabled={false}
       style={
         Object {
-          "fill": "#000",
+          "backgroundColor": "#FFF",
+          "border": "none",
+          "borderRadius": "48px",
+          "color": "#000",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fill": "#FFF",
+          "fontSize": "18px",
           "height": "60px",
+          "margin": "0",
+          "minHeight": "48px",
+          "outline": "none",
+          "padding": "0",
+          "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           "width": "60px",
         }
       }
-      viewBox="0 0 60 60"
     >
-      <path
-        d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-        fillRule="evenodd"
-      />
-    </svg>
-  </button>
+      <svg
+        style={
+          Object {
+            "fill": "#000",
+            "height": "60px",
+            "width": "60px",
+          }
+        }
+        viewBox="0 0 60 60"
+      >
+        <path
+          d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
 </div>
 `;

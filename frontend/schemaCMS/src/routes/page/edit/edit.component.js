@@ -1,13 +1,12 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { path } from 'ramda';
 
-import { Container } from './edit.styles';
+import { Form } from './edit.styles';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { Form } from '../../directory/createPage/createPage.styles';
 import messages from './edit.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { PageForm } from '../../../shared/components/pageForm';
@@ -34,6 +33,7 @@ export class Edit extends PureComponent {
 
   state = {
     loading: true,
+    error: null,
   };
 
   async componentDidMount() {
@@ -42,8 +42,8 @@ export class Edit extends PureComponent {
 
       await this.props.fetchPage({ pageId });
       this.setState({ loading: false });
-    } catch (e) {
-      this.props.history.push('/');
+    } catch (error) {
+      this.setState({ loading: false, error });
     }
   }
 
@@ -52,16 +52,16 @@ export class Edit extends PureComponent {
   handleBackClick = () => this.props.history.push(`/directory/${this.getDirectoryId()}`);
 
   render() {
-    const { loading } = this.state;
+    const { loading, error } = this.state;
     const { handleSubmit, ...restProps } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
-      <Container>
+      <Fragment>
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
-        <LoadingWrapper loading={loading}>
+        <LoadingWrapper loading={loading} error={error}>
           <Form onSubmit={handleSubmit}>
             <PageForm {...this.props} />
             <NavigationContainer>
@@ -74,7 +74,7 @@ export class Edit extends PureComponent {
             </NavigationContainer>
           </Form>
         </LoadingWrapper>
-      </Container>
+      </Fragment>
     );
   }
 }

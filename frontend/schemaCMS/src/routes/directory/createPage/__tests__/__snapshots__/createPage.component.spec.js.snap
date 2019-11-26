@@ -37,86 +37,41 @@ exports[`CreatePage: Component should render correctly 1`] = `
   <styled.form
     onSubmit={[Function]}
   >
-    <TextInput
-      checkOnlyErrors={false}
-      errors={Object {}}
-      fullWidth={true}
+    <PageForm
       handleBlur={[Function]}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
       history={
         Object {
           "push": [Function],
         }
       }
-      isEdit={false}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
       match={
         Object {
           "params": Object {
-            "projectId": 1,
+            "directoryId": 1,
           },
         }
       }
-      name="title"
-      onChange={[Function]}
-      touched={Object {}}
-    />
-    <TextInput
-      checkOnlyErrors={false}
-      errors={Object {}}
-      fullWidth={true}
-      handleBlur={[Function]}
-      history={
-        Object {
-          "push": [Function],
-        }
-      }
-      isEdit={false}
-      match={
-        Object {
-          "params": Object {
-            "projectId": 1,
-          },
-        }
-      }
-      multiline={true}
-      name="description"
-      onChange={[Function]}
-      touched={Object {}}
-    />
-    <TextInput
-      checkOnlyErrors={false}
-      errors={Object {}}
-      fullWidth={true}
-      handleBlur={[Function]}
-      history={
-        Object {
-          "push": [Function],
-        }
-      }
-      isEdit={false}
-      match={
-        Object {
-          "params": Object {
-            "projectId": 1,
-          },
-        }
-      }
-      multiline={true}
-      name="keywords"
-      onChange={[Function]}
-      touched={Object {}}
+      values={Object {}}
     />
     <NavigationContainer
-      hideOnDesktop={true}
+      hideOnDesktop={false}
       right={false}
     >
       <BackButton
         disabled={false}
-        id="backBtn"
+        id="cancelBtn"
         onClick={[Function]}
       >
         <FormattedMessage
-          defaultMessage="Back"
-          id="directory.createPage.back"
+          defaultMessage="Cancel"
+          id="directory.createPage.cancel"
           values={Object {}}
         />
       </BackButton>

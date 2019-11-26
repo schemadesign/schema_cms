@@ -43,7 +43,6 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 
 .c6 {
   cursor: pointer;
-  margin-bottom: 30px;
   color: #FFF;
   -webkit-transition: border 400ms;
   transition: border 400ms;
@@ -726,7 +725,6 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 
 .c6 {
   cursor: pointer;
-  margin-bottom: 30px;
   color: #FFF;
   -webkit-transition: border 400ms;
   transition: border 400ms;

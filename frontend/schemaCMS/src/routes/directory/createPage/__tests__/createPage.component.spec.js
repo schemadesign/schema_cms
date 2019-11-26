@@ -18,8 +18,8 @@ describe('CreatePage: Component', () => {
   it('should push a new state to history on back click', () => {
     jest.spyOn(defaultProps.history, 'push');
     const wrapper = render();
-    wrapper.find('#backBtn').simulate('click');
-    expect(defaultProps.history.push).toHaveBeenCalledWith(`/project/${defaultProps.match.params.projectId}/directory`);
+    wrapper.find('#cancelBtn').simulate('click');
+    expect(defaultProps.history.push).toHaveBeenCalledWith(`/directory/${defaultProps.match.params.directoryId}`);
   });
 
   it('should call handleSubmit on form submit', () => {

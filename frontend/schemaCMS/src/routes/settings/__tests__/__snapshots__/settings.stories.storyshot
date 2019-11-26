@@ -43,7 +43,6 @@ exports[`Storyshots Settings Default 1`] = `
 
 .c12 {
   cursor: pointer;
-  margin-bottom: 30px;
   color: #FFF;
   -webkit-transition: border 400ms;
   transition: border 400ms;

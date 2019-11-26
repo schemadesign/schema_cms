@@ -43,29 +43,6 @@ describe('PageBlockList: Component', () => {
     expect(form).toMatchSnapshot();
   });
 
-  it('should go to main page when fetchPageBlocks fails', async () => {
-    jest.spyOn(defaultProps.history, 'push');
-    const props = {
-      fetchPageBlocks: jest.fn().mockReturnValue(Promise.reject()),
-      fetchPage: jest.fn().mockReturnValue(Promise.resolve()),
-    };
-    render(props);
-    await Promise.resolve();
-    await Promise.resolve();
-    expect(defaultProps.history.push).toBeCalledWith('/');
-  });
-
-  it('should go to main page when fetchPage fails', async () => {
-    jest.spyOn(defaultProps.history, 'push');
-    const props = {
-      fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
-      fetchPage: jest.fn().mockReturnValue(Promise.reject()),
-    };
-    render(props);
-    await Promise.resolve();
-    expect(defaultProps.history.push).toBeCalledWith('/');
-  });
-
   it('should fetch list', async () => {
     jest.spyOn(defaultProps, 'fetchPage');
     jest.spyOn(defaultProps, 'fetchPageBlocks');
