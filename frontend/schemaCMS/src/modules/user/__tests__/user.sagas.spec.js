@@ -12,6 +12,8 @@ expectSaga.DEFAULT_TIMEOUT = 500;
 
 describe('User: sagas', () => {
   const defaultState = Immutable({});
+  const errorResponseData = { name: [{ code: 'code', message: 'message' }] };
+  const errorResult = [{ code: 'code', name: 'name' }];
 
   describe('when /CREATE_USER_CMS action is fired', () => {
     it('should put createUserCMS success action', async () => {
@@ -29,13 +31,13 @@ describe('User: sagas', () => {
     });
 
     it('should put createUserCMS failure action', async () => {
-      mockApi.post('/users').reply(BAD_REQUEST);
+      mockApi.post('/users').reply(BAD_REQUEST, errorResponseData);
 
       const payload = {};
 
       await expectSaga(watchUser)
         .withState(defaultState)
-        .put(UserRoutines.createUserCMS.failure())
+        .put(UserRoutines.createUserCMS.failure(errorResult))
         .dispatch(UserRoutines.createUserCMS({ payload }))
         .silentRun();
     });
@@ -56,8 +58,8 @@ describe('User: sagas', () => {
         .silentRun();
     });
 
-    it('should put createUserCMS failure action', async () => {
-      mockApi.post(`${PROJECTS_PATH}/1`).reply(BAD_REQUEST);
+    it('should put createUserProject failure action', async () => {
+      mockApi.post(`${PROJECTS_PATH}/1`).reply(BAD_REQUEST, errorResponseData);
 
       const payload = {
         projectId: 1,
@@ -65,7 +67,7 @@ describe('User: sagas', () => {
       };
       await expectSaga(watchUser)
         .withState(defaultState)
-        .put(UserRoutines.createUserProject.failure())
+        .put(UserRoutines.createUserProject.failure(errorResult))
         .dispatch(UserRoutines.createUserProject(payload))
         .silentRun();
     });

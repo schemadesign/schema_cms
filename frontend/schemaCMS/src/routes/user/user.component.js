@@ -16,6 +16,7 @@ export class User extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }).isRequired,
+    intl: PropTypes.object.isRequired,
   };
 
   componentDidMount() {

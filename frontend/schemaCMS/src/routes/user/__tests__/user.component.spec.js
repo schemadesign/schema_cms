@@ -13,6 +13,9 @@ const defaultProps = {
   match: {
     path: '/user',
   },
+  intl: {
+    formatMessage: ({ defaultMessage }) => defaultMessage,
+  },
 };
 
 const propsWithId = {

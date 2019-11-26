@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withTheme } from '../../../../.storybook/decorators';
-import { UserCreateProject } from './userCreateProject';
+import { UserCreateProject } from './userCreateProject.component';
 
 export const userCreateProjectProps = {
   createUserProject: Function.prototype,
@@ -20,6 +20,9 @@ export const userCreateProjectProps = {
     params: {
       projectId: 1,
     },
+  },
+  intl: {
+    formatMessage: ({ defaultMessage }) => defaultMessage,
   },
 };
 

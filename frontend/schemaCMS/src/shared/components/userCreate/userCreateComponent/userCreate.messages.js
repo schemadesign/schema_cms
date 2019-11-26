@@ -26,4 +26,8 @@ export default defineMessages({
     id: 'userCreate.addUser',
     defaultMessage: 'You are adding {user} to {project}',
   },
+  emailAuth0UserAlreadyExistError: {
+    id: 'userCreate.0Auth0UserAlreadyExistError',
+    defaultMessage: 'User with that email already exists.',
+  },
 });

@@ -55,6 +55,11 @@ exports[`UserCreate: Component should render correctly 1`] = `
       handleBlur={[Function]}
       handleChange={[Function]}
       handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
       isEdit={false}
       isValid={true}
       label="Name"
@@ -73,6 +78,11 @@ exports[`UserCreate: Component should render correctly 1`] = `
       handleBlur={[Function]}
       handleChange={[Function]}
       handleSubmit={[Function]}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
       isEdit={false}
       isValid={true}
       label="Last name"

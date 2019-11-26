@@ -15,7 +15,7 @@ function* createUserCMS({ payload }) {
     yield put(UserRoutines.createUserCMS.success());
     browserHistory.push('/user');
   } catch (error) {
-    yield put(UserRoutines.createUserCMS.failure());
+    yield put(UserRoutines.createUserCMS.failure(error));
   } finally {
     yield put(UserRoutines.createUserCMS.fulfill());
   }
@@ -29,7 +29,7 @@ function* createUserProject({ payload: { projectId, userId } }) {
 
     yield put(UserRoutines.createUserProject.success());
   } catch (error) {
-    yield put(UserRoutines.createUserProject.failure());
+    yield put(UserRoutines.createUserProject.failure(error));
   } finally {
     yield put(UserRoutines.createUserProject.fulfill());
   }
@@ -39,8 +39,7 @@ function* fetchUser({ payload: { userId } }) {
   try {
     yield put(UserRoutines.fetchUser.request());
 
-    response = yield api.get(`users/${userId}`);
-
+    const response = yield api.get(`users/${userId}`);
     const { data } = response;
 
     yield put(UserRoutines.fetchUser.success(data));

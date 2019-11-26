@@ -12,6 +12,9 @@ export const defaultProps = {
   onCancelClick: Function.prototype,
   isValid: true,
   values: {},
+  intl: {
+    formatMessage: ({ defaultMessage }) => defaultMessage,
+  },
 };
 
 storiesOf('Shared Components|UserCreate/UserCreate', module)

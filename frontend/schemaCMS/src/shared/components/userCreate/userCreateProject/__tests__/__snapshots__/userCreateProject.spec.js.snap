@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UserCreateProject: Component should render correctly 1`] = `
-<styled.div>
-  <FormattedMessage
-    defaultMessage="Loading..."
-    id="userCreateProject.loading"
-    values={Object {}}
-  />
-</styled.div>
+<LoadingWrapper
+  error={null}
+  loading={false}
+  noData={false}
+  noDataContent={null}
+>
+  <Component />
+</LoadingWrapper>
 `;
