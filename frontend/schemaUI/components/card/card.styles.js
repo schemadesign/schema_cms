@@ -7,6 +7,7 @@ export const getStyles = (theme = defaultTheme) => ({
   },
   footerStyles: {
     color: theme.label.text,
+    marginTop: 10,
     marginBottom: 4,
   },
   upperStyles: {

@@ -2,9 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
-import { Typography } from 'schemaUI';
 
-import { Container, ListItemContent } from './directoryList.styles';
+import { Container } from './directoryList.styles';
 import messages from './directoryList.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -17,8 +16,7 @@ import { ListContainer, ListItem } from '../../../shared/components/listComponen
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
 import { Link } from '../../../theme/typography';
 import { getProjectId } from '../../../shared/utils/helpers';
-
-const { H1 } = Typography;
+import { ListItemTitle, ListItemContent } from '../../../shared/components/listComponents/listItem.styles';
 
 export class DirectoryList extends PureComponent {
   static propTypes = {
@@ -73,9 +71,13 @@ export class DirectoryList extends PureComponent {
     return (
       <ListItem key={index} headerComponent={header}>
         <ListItemContent>
-          <H1 id={`directoryName-${index}`} customStyles={titleStyles} onClick={() => this.handleShowDirectory(id)}>
+          <ListItemTitle
+            id={`directoryName-${index}`}
+            customStyles={titleStyles}
+            onClick={() => this.handleShowDirectory(id)}
+          >
             {name}
-          </H1>
+          </ListItemTitle>
           <Link onClick={() => this.handleEditDirectory(id)}>Edit directory</Link>
         </ListItemContent>
       </ListItem>

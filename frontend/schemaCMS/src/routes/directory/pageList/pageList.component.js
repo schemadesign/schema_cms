@@ -15,8 +15,13 @@ import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedD
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { Link } from '../../../theme/typography';
+import {
+  ListItemContent,
+  ListItemTitle,
+  ListItemDescription,
+} from '../../../shared/components/listComponents/listItem.styles';
 
-const { H1, P } = Typography;
+const { P } = Typography;
 
 export class PageList extends PureComponent {
   static propTypes = {
@@ -82,13 +87,17 @@ export class PageList extends PureComponent {
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>
-        <H1 id={`pageTitle-${index}`} customStyles={titleStyles} onClick={() => this.handleShowPage(id)}>
-          {title}
-        </H1>
-        <Description onClick={() => this.handleShowPage(id)}>
-          <P id={`pageDescription-${index}`}>{description}</P>
-        </Description>
-        <Link onClick={() => this.handleEditPage(id)}>Edit Page</Link>
+        <ListItemContent>
+          <ListItemDescription>
+            <ListItemTitle id={`pageTitle-${index}`} customStyles={titleStyles} onClick={() => this.handleShowPage(id)}>
+              {title}
+            </ListItemTitle>
+            <Description onClick={() => this.handleShowPage(id)}>
+              <P id={`pageDescription-${index}`}>{description}</P>
+            </Description>
+          </ListItemDescription>
+          <Link onClick={() => this.handleEditPage(id)}>Edit Page</Link>
+        </ListItemContent>
       </ListItem>
     );
   }

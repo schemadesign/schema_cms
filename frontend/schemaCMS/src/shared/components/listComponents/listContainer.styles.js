@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import { media } from '../../../theme/media';
 
+const LIST_ITEM_MARGIN = 10;
 export const ListContainer = styled.section`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 
   ${media.desktop`
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: flex-start;
+    margin: 0 -${LIST_ITEM_MARGIN}px;
   `};
 `;
