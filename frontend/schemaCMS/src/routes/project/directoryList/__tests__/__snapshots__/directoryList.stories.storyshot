@@ -448,7 +448,7 @@ exports[`Storyshots Project|DirectoryList Default 1`] = `
             onClick={[Function]}
           >
             <span>
-              Directories
+              Pages
             </span>
           </a>
         </div>

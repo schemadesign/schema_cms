@@ -42,6 +42,9 @@ export const defaultProps = {
       dataSources: {
         count: 3,
       },
+      pages: {
+        count: 6,
+      },
     },
     editors: ['3da51ad7-a8b4-4755-b5d6-b51f01f1cb2e', '44da51ad7-a8b4-4355-b5d6-b51f01f1cb2e'],
     modified: '2019-08-21T10:12:52.030069Z',
