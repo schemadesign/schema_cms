@@ -126,13 +126,13 @@ export class DataSourceList extends PureComponent {
   renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, jobs }, index) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]);
+    const footer = this.renderMetaData(metaData || {});
 
     return (
-      <ListItem key={index} headerComponent={header}>
+      <ListItem key={index} headerComponent={header} footerComponent={footer}>
         <DataSourceTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
           {name}
         </DataSourceTitle>
-        {this.renderMetaData(metaData || {})}
       </ListItem>
     );
   };

@@ -11,11 +11,11 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './list.messages';
-import { Container, Description, HeaderItem, HeaderList, urlStyles, titleStyles } from './list.styles';
+import { Container, Description, HeaderItem, HeaderList, Footer, descriptionStyles, titleStyles } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { ListItem, ListContainer } from '../../../shared/components/listComponents';
 
-const { H1, P, Span } = Typography;
+const { H1, P } = Typography;
 
 export class List extends PureComponent {
   static propTypes = {
@@ -80,6 +80,8 @@ export class List extends PureComponent {
     </HeaderList>
   );
 
+  renderFooter = (index, slug) => <Footer id={`apiPath-${index}`}>{generateApiUrl(slug)}</Footer>;
+
   renderItem({ id, title = '', description = '', slug = '', created = '', status = '', owner = {} }, index) {
     const { firstName = '', lastName = '' } = owner;
     const user = isEmpty(firstName) ? lastName : `${firstName} ${lastName}`;
@@ -87,20 +89,18 @@ export class List extends PureComponent {
 
     const statusValue = messages[status] ? this.formatMessage(messages[status]) : status;
 
-    const header = this.renderHeader([whenCreated, statusValue, user]);
     const handleShowProject = this.handleShowProject(id);
+    const header = this.renderHeader([whenCreated, statusValue, user]);
+    const footer = this.renderFooter(index, slug);
 
     return (
-      <ListItem key={index} headerComponent={header}>
+      <ListItem key={index} headerComponent={header} footerComponent={footer}>
         <H1 id={`projectName-${index}`} customStyles={titleStyles} onClick={handleShowProject}>
           {title}
         </H1>
-        <Description onClick={handleShowProject}>
+        <Description onClick={handleShowProject} customStyles={descriptionStyles}>
           <P id={`projectDescription-${index}`}>{description}</P>
         </Description>
-        <Span id={`apiPath-${index}`} customStyles={urlStyles}>
-          {generateApiUrl(slug)}
-        </Span>
       </ListItem>
     );
   }

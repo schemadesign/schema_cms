@@ -26,9 +26,9 @@ const light = {
   },
   card: {
     label: colors.lightGrey,
-    text: colors.white,
     border: colors.black,
     background: colors.veryLightPink,
+    text: colors.black,
   },
   providerContainer: {
     backgroundColor: colors.white,
@@ -133,6 +133,7 @@ const dark = {
     label: colors.label,
     border: colors.white,
     background: colors.darkGrey,
+    text: colors.white,
   },
   providerContainer: {
     backgroundColor: colors.black,

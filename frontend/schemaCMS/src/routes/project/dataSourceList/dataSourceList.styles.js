@@ -25,6 +25,7 @@ export const MetaDataWrapper = styled.div`
 export const MetaData = styled.div`
   display: flex;
   flex-direction: column;
+  color: ${({ theme: { card } }) => card.text};
 `;
 
 export const MetaDataName = styled.span`
