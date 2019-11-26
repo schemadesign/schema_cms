@@ -72,7 +72,7 @@ export class Edit extends PureComponent {
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
-          <LoadingWrapper loading={loading}>{this.renderContent}</LoadingWrapper>
+          <LoadingWrapper loading={loading}>{this.renderContent()}</LoadingWrapper>
           <NavigationContainer>
             <BackButton id="backBtn" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />

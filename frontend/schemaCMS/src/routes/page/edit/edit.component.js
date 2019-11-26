@@ -8,10 +8,9 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { Form } from '../../directory/createPage/createPage.styles';
-import { TextInput } from '../../../shared/components/form/inputs/textInput';
-import { PAGE_DESCRIPTION, PAGE_KEYWORDS, PAGE_TITLE } from '../../../modules/page/page.constants';
 import messages from './edit.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { PageForm } from '../../../shared/components/pageForm';
 
 export class Edit extends PureComponent {
   static propTypes = {
@@ -54,7 +53,7 @@ export class Edit extends PureComponent {
 
   render() {
     const { loading } = this.state;
-    const { intl, values, handleSubmit, handleChange, ...restProps } = this.props;
+    const { handleSubmit, ...restProps } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -64,35 +63,7 @@ export class Edit extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <LoadingWrapper loading={loading}>
           <Form onSubmit={handleSubmit}>
-            <TextInput
-              value={values[PAGE_TITLE]}
-              onChange={handleChange}
-              name={PAGE_TITLE}
-              label={intl.formatMessage(messages.pageFieldTitle)}
-              placeholder={intl.formatMessage(messages.pageFieldTitlePlaceholder)}
-              fullWidth
-              {...restProps}
-            />
-            <TextInput
-              value={values[PAGE_DESCRIPTION]}
-              onChange={handleChange}
-              name={PAGE_DESCRIPTION}
-              label={intl.formatMessage(messages.pageFieldDescription)}
-              placeholder={intl.formatMessage(messages.pageFieldDescriptionPlaceholder)}
-              fullWidth
-              multiline
-              {...restProps}
-            />
-            <TextInput
-              value={values[PAGE_KEYWORDS]}
-              onChange={handleChange}
-              name={PAGE_KEYWORDS}
-              label={intl.formatMessage(messages.pageFieldKeywords)}
-              placeholder={intl.formatMessage(messages.pageFieldKeywordsPlaceholder)}
-              fullWidth
-              multiline
-              {...restProps}
-            />
+            <PageForm {...this.props} />
             <NavigationContainer>
               <BackButton id="backBtn" onClick={this.handleBackClick}>
                 <FormattedMessage {...messages.back} />
