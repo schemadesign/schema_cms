@@ -261,7 +261,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         data_source.filters.filter(id__in=active).update(is_active=True)
         data_source.filters.filter(id__in=inactive).update(is_active=False)
 
-        data_source.refresh_from_db()
+        data_source = self.get_object()
         data_source.create_meta_file()
 
         serializer = self.get_serializer(instance=data_source.filters, many=True)
@@ -434,7 +434,7 @@ class PageViewSet(
         page.blocks.filter(id__in=active).update(is_active=True)
         page.blocks.filter(id__in=inactive).update(is_active=False)
 
-        page.refresh_from_db()
+        page = self.get_object()
 
         serializer = self.get_serializer(instance=page.blocks, many=True)
 
