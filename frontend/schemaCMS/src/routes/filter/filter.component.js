@@ -50,6 +50,7 @@ export class Filter extends PureComponent {
 
   render() {
     const { loading } = this.state;
+    const dataSourceId = pathOr('', ['filter', 'datasource', 'id'], this.props);
 
     return (
       <Container>
@@ -61,7 +62,7 @@ export class Filter extends PureComponent {
             filter={this.props.filter}
             removeFilter={this.props.removeFilter}
             history={this.props.history}
-            dataSourceId={this.props.filter.datasource.id}
+            dataSourceId={dataSourceId}
           />
         </LoadingWrapper>
       </Container>

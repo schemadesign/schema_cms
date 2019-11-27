@@ -4,7 +4,7 @@ import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.c
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 
-export const errorMessageParser = ({ errors, messages, formatMessage }) => {
+export const errorMessageParser = ({ errors, messages = {}, formatMessage = () => {} }) => {
   if (is(Array, errors)) {
     return errors.reduce((previousValue, { code, name }) => {
       const error = camelize(`${name}_${code}_error`);

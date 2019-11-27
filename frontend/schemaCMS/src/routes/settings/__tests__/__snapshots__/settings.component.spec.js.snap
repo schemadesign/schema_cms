@@ -45,7 +45,7 @@ exports[`Settings: Component should render correctly 1`] = `
         "lastName": "",
       }
     }
-    isInitialValid={true}
+    isInitialValid={false}
     onSubmit={[Function]}
     render={[Function]}
     validateOnBlur={true}
@@ -226,7 +226,7 @@ exports[`Settings: Component should render correctly 2`] = `
         "lastName": "",
       }
     }
-    isInitialValid={true}
+    isInitialValid={false}
     onSubmit={[Function]}
     render={[Function]}
     validateOnBlur={true}
@@ -379,7 +379,7 @@ exports[`Settings: Component should render correctly form 1`] = `
         "lastName": "",
       },
       "isSubmitting": false,
-      "isValid": true,
+      "isValid": false,
       "isValidating": false,
       "registerField": [Function],
       "resetForm": [Function],
@@ -554,8 +554,7 @@ exports[`Settings: Component should render correctly form 1`] = `
         }
       }
       isCurrentUser={true}
-      isSubmitting={false}
-      isValid={true}
+      isValid={false}
       isValidating={false}
       registerField={[Function]}
       resetForm={[Function]}
@@ -639,7 +638,7 @@ exports[`Settings: Component should render form without reset password link 1`] 
         "lastName": "",
       },
       "isSubmitting": false,
-      "isValid": true,
+      "isValid": false,
       "isValidating": false,
       "registerField": [Function],
       "resetForm": [Function],
@@ -814,8 +813,7 @@ exports[`Settings: Component should render form without reset password link 1`] 
         }
       }
       isCurrentUser={true}
-      isSubmitting={false}
-      isValid={true}
+      isValid={false}
       isValidating={false}
       registerField={[Function]}
       resetForm={[Function]}

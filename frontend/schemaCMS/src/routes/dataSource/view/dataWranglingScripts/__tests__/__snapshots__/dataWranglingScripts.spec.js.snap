@@ -137,7 +137,6 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
     }
     disabled={
       Object {
-        "back": false,
         "next": false,
       }
     }

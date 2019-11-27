@@ -30,6 +30,8 @@ export class Create extends PureComponent {
       push: PropTypes.func.isRequired,
     }),
     isAdmin: PropTypes.bool.isRequired,
+    isValid: PropTypes.bool.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
   };
 
   componentDidMount() {
@@ -56,7 +58,7 @@ export class Create extends PureComponent {
   };
 
   render() {
-    const { values, handleChange, handleSubmit, setFieldValue, intl } = this.props;
+    const { values, handleChange, handleSubmit, setFieldValue, intl, isValid, isSubmitting } = this.props;
     const topHeaderConfig = this.getHeaderAndMenuConfig(intl);
 
     return (
@@ -103,10 +105,10 @@ export class Create extends PureComponent {
             id="fieldProjectStatus"
           />
           <NavigationContainer>
-            <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
+            <BackButton type="button" id="cancelBtn" onClick={this.handleCancelClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
-            <NextButton id="finishBtn">
+            <NextButton type="submit" id="finishBtn" loading={isSubmitting} disabled={!isValid || isSubmitting}>
               <FormattedMessage {...messages.finish} />
             </NextButton>
           </NavigationContainer>

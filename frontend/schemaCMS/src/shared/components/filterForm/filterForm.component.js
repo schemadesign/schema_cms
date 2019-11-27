@@ -21,6 +21,7 @@ import { BackButton, NavigationContainer, NextButton } from '../navigation';
 import { ModalActions, modalStyles, ModalTitle, Modal } from '../modal/modal.styles';
 import { FILTERS_STEP } from '../../../modules/dataSource/dataSource.constants';
 import { Link, LinkContainer } from '../../../theme/typography';
+import { renderWhenTrue } from '../../utils/rendering';
 
 export class FilterForm extends PureComponent {
   static propTypes = {
@@ -85,6 +86,16 @@ export class FilterForm extends PureComponent {
     submitFunc({ dataSourceId, filterId: this.props.filter.id, formData });
   };
 
+  renderRemoveFilterLink = renderWhenTrue(
+    always(
+      <LinkContainer>
+        <Link onClick={this.handleRemoveFilter}>
+          <FormattedMessage {...messages.deleteFilter} />
+        </Link>
+      </LinkContainer>
+    )
+  );
+
   render() {
     const fieldOptions = pipe(
       keys,
@@ -104,7 +115,7 @@ export class FilterForm extends PureComponent {
     return (
       <Fragment>
         <Formik initialValues={initialValues} onSubmit={this.handleSubmit} validationSchema={FILTERS_SCHEMA}>
-          {({ values, handleChange, setFieldValue, dirty, isValid, ...rest }) => {
+          {({ values, handleChange, setFieldValue, dirty, isValid, isSubmitting, ...rest }) => {
             const filterTypes = this.getFilerTypes(values[FILTER_FIELD]);
             const filterTypeOptions = filterTypes.map(key => ({
               value: key,
@@ -154,16 +165,12 @@ export class FilterForm extends PureComponent {
                     {...rest}
                   />
                 </Row>
-                <LinkContainer>
-                  <Link onClick={this.handleRemoveFilter}>
-                    <FormattedMessage {...messages.deleteFilter} />
-                  </Link>
-                </LinkContainer>
+                {this.renderRemoveFilterLink(!!this.props.filter.id)}
                 <NavigationContainer>
                   <BackButton onClick={this.handleBack} type="button">
                     <FormattedMessage {...messages[this.getBackMessageId(!this.props.filter.id)]} />
                   </BackButton>
-                  <NextButton disabled={!dirty || !isValid} type="submit">
+                  <NextButton loading={isSubmitting} disabled={!dirty || !isValid || isSubmitting} type="submit">
                     <FormattedMessage {...messages.saveFilter} />
                   </NextButton>
                 </NavigationContainer>

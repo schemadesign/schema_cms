@@ -60,7 +60,6 @@ export class SourceComponent extends PureComponent {
   };
 
   state = {
-    loading: false,
     confirmationModalOpen: false,
   };
 
@@ -86,18 +85,20 @@ export class SourceComponent extends PureComponent {
     setFieldValue('fileName', pathOr('', ['name'], uploadFile));
   };
 
-  handleSubmit = async (requestData, { setErrors }) => {
+  handleSubmit = async (requestData, { setErrors, setSubmitting }) => {
     const { onDataSourceChange, match } = this.props;
     const { dataSourceId, projectId, step } = match.params;
 
     try {
+      setSubmitting(true);
       await onDataSourceChange({ requestData, dataSourceId, step, projectId });
     } catch (errors) {
       const { formatMessage } = this.props.intl;
       const errorMessages = errorMessageParser({ errors, messages, formatMessage });
 
       setErrors(errorMessages);
-      this.setState({ loading: false });
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -179,7 +180,7 @@ export class SourceComponent extends PureComponent {
   render() {
     const { dataSource, ...restProps } = this.props;
     const { jobs = [] } = dataSource;
-    const { loading, confirmationModalOpen } = this.state;
+    const { confirmationModalOpen } = this.state;
 
     return (
       <Container>
@@ -190,11 +191,11 @@ export class SourceComponent extends PureComponent {
           validationSchema={DATA_SOURCE_SCHEMA}
           onSubmit={this.handleSubmit}
         >
-          {({ handleChange, values: { name, type, fileName }, submitForm, dirty, isValid, ...rest }) => {
+          {({ handleChange, values: { name, type, fileName }, submitForm, dirty, isValid, isSubmitting, ...rest }) => {
             if (!dirty && isValid) {
               submitForm = null;
             }
-            const disabled = { next: !fileName || !isValid };
+            const disabled = { next: !fileName || !isValid || isSubmitting };
 
             return (
               <Fragment>
@@ -227,7 +228,7 @@ export class SourceComponent extends PureComponent {
                   {this.renderJobListLink(!!jobs.length)}
                 </LinkContainer>
                 <StepNavigation
-                  loading={loading}
+                  loading={isSubmitting}
                   disabled={disabled}
                   dataSource={dataSource}
                   submitForm={submitForm}

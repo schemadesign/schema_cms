@@ -11,6 +11,7 @@ export const defaultProps = {
   setFieldValue: Function.prototype,
   onCancelClick: Function.prototype,
   isValid: true,
+  isSubmitting: false,
   values: {},
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
