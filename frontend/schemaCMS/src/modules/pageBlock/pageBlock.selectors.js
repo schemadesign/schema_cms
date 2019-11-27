@@ -7,3 +7,8 @@ export const selectPageBlocks = createSelector(
   selectPageBlockDomain,
   prop('pageBlocks')
 );
+
+export const selectPageBlock = createSelector(
+  selectPageBlockDomain,
+  prop('pageBlock')
+);

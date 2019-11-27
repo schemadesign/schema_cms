@@ -6,8 +6,10 @@ const PREFIX = 'PAGE_BLOCK/';
 
 export const PageBlockRoutines = {
   fetchList: createRoutine(`${PREFIX}FETCH_LIST`),
+  fetchOne: createRoutine(`${PREFIX}FETCH_ONE`),
   setBlocks: createRoutine(`${PREFIX}SET_BLOCKS`),
   create: createRoutine(`${PREFIX}CREATE`),
+  update: createRoutine(`${PREFIX}UPDATE`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -21,5 +23,5 @@ const setBlock = (state = INITIAL_STATE, { payload }) => state.set('pageBlock', 
 export const reducer = createReducer(INITIAL_STATE, {
   [PageBlockRoutines.fetchList.success]: setBlocks,
   [PageBlockRoutines.setBlocks.success]: setBlocks,
-  [PageBlockRoutines.create.success]: setBlock,
+  [PageBlockRoutines.update.success]: setBlock,
 });
