@@ -480,6 +480,7 @@ exports[`Storyshots Settings Default 1`] = `
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
+              "padding": 0,
             }
           }
           type="text"
@@ -563,6 +564,7 @@ exports[`Storyshots Settings Default 1`] = `
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
+              "padding": 0,
             }
           }
           type="text"
@@ -645,6 +647,7 @@ exports[`Storyshots Settings Default 1`] = `
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
+              "padding": 0,
             }
           }
           type="text"
@@ -708,6 +711,7 @@ exports[`Storyshots Settings Default 1`] = `
               "fontSize": "18px",
               "lineHeight": "24px",
               "outline": "none",
+              "padding": 0,
             }
           }
           type="text"
