@@ -1,10 +1,10 @@
-# Directories
+# Folders
 
-## Get directories data
+## Get folders data
 
 **Request**:
 
-`GET` `/api/v1/directories`
+`GET` `/api/v1/folders`
 
 *Note:*
 
@@ -48,11 +48,11 @@ Content-Type application/json
 }
 ```
 
-## Create directory
+## Create folder
 
 **Request**:
 
-`POST` `/api/v1/directories`
+`POST` `/api/v1/folders`
 
 
 Parameters:
@@ -84,11 +84,11 @@ Content-Type application/json
     }
 ```
 
-## Get directory data
+## Get foler data
 
 **Request**:
 
-`GET` `/api/v1/directories/:id`
+`GET` `/api/v1/folder/:id`
 
 *Note:*
 
@@ -118,7 +118,7 @@ Content-Type application/json
 
 **Request**:
 
-`PATCH` `/api/v1/directories/:id`
+`PATCH` `/api/v1/folders/:id`
 
 Parameters:
 
@@ -149,11 +149,11 @@ Content-Type application/json
 }
 ```
 
-## list pages for directory
+## list pages in folder
 
 **Request**:
 
-`GET` `/api/v1/directories/:id/pages`
+`GET` `/api/v1/folders/:id/pages`
 
 *Note:*
 
@@ -167,7 +167,7 @@ Content-Type application/json
 [
     {
         "id": 1,
-        "directory": 2,
+        "folder": 2,
         "title": "my super page",
         "description": "test 1",
         "keywords": "lskdjflksdjf",
@@ -182,7 +182,7 @@ Content-Type application/json
     },
     {
         "id": 2,
-        "directory": 2,
+        "folder": 2,
         "title": "my super page 2",
         "description": "test 2",
         "keywords": "",
@@ -198,11 +198,11 @@ Content-Type application/json
 ]
 ```
 
-## Add directory to project
+## Add page to folder
 
 **Request**:
 
-`POST` `/api/v1/directories/:id/pages`
+`POST` `/api/v1/folders/:id/pages`
 
 Parameters:
 
@@ -224,7 +224,7 @@ Content-Type application/json
 201 CREATED
 {
     "id": 3,
-    "directory": 2,
+    "folder": 2,
     "title": "test page",
     "description": "i'm testing page",
     "keywords": "test; page",
