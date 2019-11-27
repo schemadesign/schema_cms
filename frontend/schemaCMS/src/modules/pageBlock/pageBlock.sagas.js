@@ -1,4 +1,5 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
+import { forEach, keys, pipe } from 'ramda';
 
 import { PageBlockRoutines } from './pageBlock.redux';
 import api from '../../shared/services/api';
@@ -36,8 +37,16 @@ function* setBlocks({ payload: { pageId, active, inactive } }) {
 function* create({ payload: { pageId, ...restFields } }) {
   try {
     yield put(PageBlockRoutines.create.request());
+    const formData = new FormData();
 
-    const { data } = yield api.post(`${PAGES_PATH}/${pageId}/blocks`, restFields);
+    pipe(
+      keys,
+      forEach(name => formData.append(name, restFields[name]))
+    )(restFields);
+
+    const { data } = yield api.post(`${PAGES_PATH}/${pageId}/blocks`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
 
     yield put(PageBlockRoutines.create.success(data));
     browserHistory.push(`/page/${pageId}/`);

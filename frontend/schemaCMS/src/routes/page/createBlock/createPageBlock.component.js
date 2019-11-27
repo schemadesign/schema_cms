@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
-import { cond, equals, always } from 'ramda';
+import { cond, equals, always, pathOr } from 'ramda';
 
 import { Container, Form } from './createPageBlock.styles';
 import {
@@ -23,7 +23,6 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { Uploader } from '../../../shared/components/form/uploader';
-import { DATA_SOURCE_FILE } from '../../../modules/dataSource/dataSource.constants';
 
 export class CreatePageBlock extends PureComponent {
   static propTypes = {
@@ -46,32 +45,35 @@ export class CreatePageBlock extends PureComponent {
     this.props.setFieldValue(BLOCK_TYPE, selectedStatus);
   };
 
-  handleUploadChange = value => this.props.setFieldValue(DATA_SOURCE_FILE, value);
+  handleUploadChange = ({ files: [uploadFile] }) => {
+    this.props.setFieldValue(BLOCK_IMAGE, uploadFile);
+    this.props.setFieldValue('fileName', pathOr('', ['name'], uploadFile));
+  };
 
   renderContent = (messageId, messagePlaceholderId) => (
     <TextInput
       value={this.props.values[BLOCK_CONTENT]}
       name={BLOCK_CONTENT}
-      onChange={this.props.handleChange}
       label={this.props.intl.formatMessage(messages[messageId])}
       placeholder={this.props.intl.formatMessage(messages[messagePlaceholderId])}
       fullWidth
       multiline
       {...this.props}
+      onChange={this.props.handleChange}
     />
   );
 
   renderImage = () => (
     <Uploader
-      fileName={BLOCK_IMAGE}
-      name={DATA_SOURCE_FILE}
+      fileName={this.props.values.fileName}
+      name={BLOCK_IMAGE}
       label={this.props.intl.formatMessage(messages.pageBlockFieldImage)}
       type="file"
       id="fileUpload"
       onChange={({ currentTarget }) => this.handleUploadChange(currentTarget)}
       accept="image/gif,image/jpeg"
       checkOnlyErrors
-      {...restProps}
+      {...this.props}
     />
   );
 
@@ -79,7 +81,7 @@ export class CreatePageBlock extends PureComponent {
     [equals(MARKDOWN_TYPE), () => this.renderContent('pageBlockFieldMarkdown', 'pageBlockFieldMarkdownPlaceholder')],
     [equals(EMBED_TYPE), () => this.renderContent('pageBlockFieldEmbed', 'pageBlockFieldEmbedPlaceholder')],
     [equals(CODE_TYPE), () => this.renderContent('pageBlockFieldCode', 'pageBlockFieldCodePlaceholder')],
-    [equals(IMAGE_TYPE), () => this.renderImage],
+    [equals(IMAGE_TYPE), this.renderImage],
     [equals(NONE), always(null)],
   ]);
 
