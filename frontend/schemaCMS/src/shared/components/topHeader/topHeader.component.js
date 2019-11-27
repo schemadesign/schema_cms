@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Header, Menu, Typography } from 'schemaUI';
+import { Header, Menu } from 'schemaUI';
 import { always } from 'ramda';
 
 import {
@@ -9,16 +9,16 @@ import {
   Content,
   HeaderWrapper,
   MenuHeader,
-  PrimaryList,
-  SecondaryList,
   PrimaryItem,
+  PrimaryList,
   SecondaryItem,
-  menuStyles,
+  SecondaryList,
+  Subtitle,
+  Title,
   closeButtonStyles,
+  menuStyles,
 } from './topHeader.styles';
 import { renderWhenTrueOtherwise } from '../../utils/rendering';
-
-const { H1, H2 } = Typography;
 
 export class TopHeader extends PureComponent {
   static propTypes = {
@@ -60,8 +60,8 @@ export class TopHeader extends PureComponent {
 
   renderHeader = (title, subtitle) => (
     <HeaderWrapper>
-      <H2 id="headerTitle">{title}</H2>
-      <H1 id="headerSubtitle">{subtitle}</H1>
+      <Title id="headerTitle">{title}</Title>
+      <Subtitle id="headerSubtitle">{subtitle}</Subtitle>
     </HeaderWrapper>
   );
 

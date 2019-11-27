@@ -10,7 +10,7 @@ export const defaultProps = {
   values: {},
   match: {
     params: {
-      projectId: 1,
+      directoryId: 1,
     },
   },
   history: {

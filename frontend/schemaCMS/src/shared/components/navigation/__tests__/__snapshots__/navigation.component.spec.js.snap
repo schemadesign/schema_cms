@@ -86,18 +86,22 @@ exports[`Navigation: Component should render NextButton with custom children 1`]
 `;
 
 exports[`Navigation: Component should render PlusButton 1`] = `
-<Component
-  customStyles={
-    Object {
-      "height": "60px",
-      "width": "60px",
-    }
-  }
-  inverse={true}
-  onClick={[Function]}
+<styled.div
+  hideOnDesktop={false}
 >
   <Component
+    customStyles={
+      Object {
+        "height": "60px",
+        "width": "60px",
+      }
+    }
     inverse={true}
-  />
-</Component>
+    onClick={[Function]}
+  >
+    <Component
+      inverse={true}
+    />
+  </Component>
+</styled.div>
 `;

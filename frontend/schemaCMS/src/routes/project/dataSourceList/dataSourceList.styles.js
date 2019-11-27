@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Theme, Typography } from 'schemaUI';
+import { Theme } from 'schemaUI';
 import { Link } from 'react-router-dom';
 import { styleWhenTrue } from '../../../shared/utils/rendering';
 import { media } from '../../../theme/media';
@@ -8,10 +8,6 @@ export const Container = styled.div``;
 
 export const Description = styled.div`
   margin: 7px 0 14px;
-  cursor: pointer;
-`;
-
-export const DataSourceTitle = styled(Typography.H1)`
   cursor: pointer;
 `;
 
@@ -25,6 +21,7 @@ export const MetaDataWrapper = styled.div`
 export const MetaData = styled.div`
   display: flex;
   flex-direction: column;
+  color: ${({ theme: { card } }) => card.text};
 `;
 
 export const MetaDataName = styled.span`

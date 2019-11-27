@@ -37,11 +37,11 @@ describe('Page: redux', () => {
     });
   });
 
-  describe('when PAGE/CREATE success action is received', () => {
-    it('should set filters', () => {
+  describe('when PAGE/UPDATE success action is received', () => {
+    it('should set page', () => {
       const page = { data: 'data' };
 
-      const resultState = pageReducer(state, PageRoutines.create.success(page));
+      const resultState = pageReducer(state, PageRoutines.update.success(page));
       expect(resultState.page).to.deep.equal(page);
     });
   });

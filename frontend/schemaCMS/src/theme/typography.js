@@ -18,7 +18,6 @@ export const H2 = styled.h2`
 
 export const Link = styled(SpanUI)`
   cursor: pointer;
-  margin-bottom: 30px;
   color: ${({ theme }) => theme.text};
   transition: border 400ms;
   border-bottom: 1px solid transparent;

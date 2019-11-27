@@ -971,7 +971,7 @@ class TestSetFiltersView:
         payload = {"active": [filter1.id], "inactive": [filter2.id]}
 
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(data_source.id), data=payload)
+        response = api_client.post(self.get_url(data_source.id), data=payload, format="json")
         filter1.refresh_from_db()
         filter2.refresh_from_db()
 
@@ -1193,7 +1193,7 @@ class TestBlockListCreateView:
         block = page.blocks.get(pk=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert block.image.name == '/pages/8/test.png'
+        assert block.image.name == f'/pages/{page.id}/test.png'
 
     def test_400_on_image_upload_with_wrong_type(self, api_client, admin, page, faker):
         payload = dict(
@@ -1250,7 +1250,8 @@ class TestBlockDetailView:
 
 
 class TestSetBlocksView:
-    def test_response(self, api_client, admin, page, block_factory):
+    def test_response(self, api_client, admin, directory, page_factory, block_factory):
+        page = page_factory(directory=directory)
         block1 = block_factory(page=page, is_active=False)
         block2 = block_factory(page=page, is_active=True)
         block1_old_status = block1.is_active
@@ -1258,7 +1259,7 @@ class TestSetBlocksView:
         payload = {"active": [block1.id], "inactive": [block2.id]}
 
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(page.id), data=payload)
+        response = api_client.post(self.get_url(page.id), data=payload, format="json")
         block1.refresh_from_db()
         block2.refresh_from_db()
 

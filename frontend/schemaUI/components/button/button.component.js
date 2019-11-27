@@ -37,7 +37,7 @@ class ButtonComponent extends PureComponent {
     const buttonProps = { disabled, ...restProps };
 
     return (
-      <button {...buttonProps} style={style}>
+      <button style={style} {...buttonProps}>
         {children}
       </button>
     );

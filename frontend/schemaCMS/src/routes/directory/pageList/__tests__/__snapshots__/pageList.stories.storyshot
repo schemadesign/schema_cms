@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Directory/PageList Default 1`] = `
-.c9 {
+.c12 {
   height: 155px;
 }
 
-.c11 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
   width: 100%;
 }
 
-.c10 {
+.c13 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,7 +32,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c8 {
+.c11 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -44,7 +44,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -52,44 +52,67 @@ exports[`Storyshots Directory/PageList Default 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 {
-  display: none;
+.c1 {
+  word-break: break-word;
 }
 
-.c5 {
-  margin-right: 20px;
+.c2 {
+  word-break: break-word;
 }
 
 .c6 {
-  color: #FFF;
+  display: none;
 }
 
 .c7 {
+  margin-right: 20px;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+.c9 {
   color: #FFF;
 }
 
 @media (min-width:1040px) {
-  .c11 {
-    display: none;
+  .c14 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
   .c10 {
-    width: 1000px;
+    display: block;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: none;
   }
 }
 
@@ -100,7 +123,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c4 {
+  .c6 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -149,6 +172,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -164,6 +188,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
               </span>
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -251,6 +276,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -266,6 +292,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
               </span>
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -285,13 +312,13 @@ exports[`Storyshots Directory/PageList Default 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           />
         </div>
         <button
@@ -338,13 +365,13 @@ exports[`Storyshots Directory/PageList Default 1`] = `
       </div>
     </div>
     <div
-      className="c4"
+      className="c6"
     >
       <div
-        className="c5"
+        className="c7"
       >
         <h2
-          className="c6"
+          className="c8"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -360,7 +387,7 @@ exports[`Storyshots Directory/PageList Default 1`] = `
           </span>
         </h2>
         <h1
-          className="c7"
+          className="c9"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -381,63 +408,67 @@ exports[`Storyshots Directory/PageList Default 1`] = `
       <div
         className=""
       >
-        <button
-          disabled={false}
-          id="createPageDesktopBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
+        <div
+          className="c10"
         >
-          <svg
+          <button
+            disabled={false}
+            id="createPageDesktopBtn"
+            onClick={[Function]}
             style={
               Object {
-                "fill": "#000",
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
                 "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
     <div
-      className="c8"
+      className="c11"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c9"
+      className="c12"
     >
       <div
-        className="c10"
+        className="c13"
       >
         <div
-          className="c11"
+          className="c14"
         >
           <button
             disabled={false}
@@ -478,46 +509,50 @@ exports[`Storyshots Directory/PageList Default 1`] = `
               />
             </svg>
           </button>
-          <button
-            disabled={false}
-            id="createPageBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
+          <div
+            className="c15"
           >
-            <svg
+            <button
+              disabled={false}
+              id="createPageBtn"
+              onClick={[Function]}
               style={
                 Object {
-                  "fill": "#000",
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": "60px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": "60px",
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#000",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

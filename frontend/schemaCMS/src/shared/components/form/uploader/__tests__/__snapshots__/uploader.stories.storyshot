@@ -146,6 +146,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
               "background": "#1d1d20",
               "border": "#FFF",
               "label": undefined,
+              "text": "#FFF",
             },
             "checkbox": Object {
               "border": "#2F2F36",
@@ -437,6 +438,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
               "background": "#1d1d20",
               "border": "#FFF",
               "label": undefined,
+              "text": "#FFF",
             },
             "checkbox": Object {
               "border": "#2F2F36",

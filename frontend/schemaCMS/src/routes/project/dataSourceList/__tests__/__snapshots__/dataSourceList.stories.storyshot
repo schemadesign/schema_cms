@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|DataSourceList Empty 1`] = `
-.c14 {
+.c17 {
   height: 155px;
 }
 
-.c16 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   width: 100%;
 }
 
-.c15 {
+.c18 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,11 +32,19 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
+.c16 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 .c0 {
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -44,67 +52,65 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 {
+.c6 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c4 a {
+.c6 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c4 a {
+.c6 a {
   padding: 8px 0;
 }
 
-.c9 {
-  display: none;
+.c1 {
+  word-break: break-word;
 }
 
-.c10 {
-  margin-right: 20px;
+.c2 {
+  word-break: break-word;
 }
 
 .c11 {
-  color: #FFF;
-}
-
-.c12 {
-  color: #FFF;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c5 {
   display: none;
 }
 
-.c6 {
+.c12 {
+  margin-right: 20px;
+}
+
+.c13 {
+  color: #FFF;
+}
+
+.c14 {
+  color: #FFF;
+}
+
+.c7 {
+  display: none;
+}
+
+.c8 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -117,11 +123,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   cursor: pointer;
 }
 
-.c6:hover {
+.c8:hover {
   border-bottom-color: #FFF;
 }
 
-.c8 {
+.c10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -134,11 +140,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c10:hover {
   border-bottom-color: #FFF;
 }
 
-.c7 {
+.c9 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -147,14 +153,20 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c19 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c18 {
     width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: block;
   }
 }
 
@@ -165,7 +177,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c11 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -183,22 +195,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c13 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width:1040px) {
-  .c5 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -240,6 +237,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -253,6 +251,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               Data Sources
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -338,6 +337,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -351,6 +351,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               Data Sources
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -368,16 +369,16 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           >
             <li
-              className="c4"
+              className="c6"
             >
               <a
                 href="/project/1"
@@ -436,13 +437,13 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
       className=""
     >
       <div
-        className="c5"
+        className="c7"
       >
         <div
-          className="c6"
+          className="c8"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1"
             onClick={[Function]}
           >
@@ -452,10 +453,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="c8"
+          className="c10"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -465,10 +466,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="c6"
+          className="c8"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -478,10 +479,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="c6"
+          className="c8"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1/directory"
             onClick={[Function]}
           >
@@ -493,13 +494,13 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="c9"
+      className="c11"
     >
       <div
-        className="c10"
+        className="c12"
       >
         <h2
-          className="c11"
+          className="c13"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -513,7 +514,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           Data Sources
         </h2>
         <h1
-          className="c12"
+          className="c14"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -532,59 +533,67 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
       <div
         className=""
       >
-        <button
-          disabled={false}
-          id="createDataSourceDesktopBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
+        <div
+          className="c15"
         >
-          <svg
+          <button
+            disabled={false}
+            id="createDataSourceDesktopBtn"
+            onClick={[Function]}
             style={
               Object {
-                "fill": "#000",
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
                 "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
-    <section
-      className="c13"
-    />
     <div
-      className="c14"
+      className="c16"
+    >
+      <span>
+        Loading...
+      </span>
+    </div>
+    <div
+      className="c17"
     >
       <div
-        className="c15"
+        className="c18"
       >
         <div
-          className="c16"
+          className="c19"
         >
           <button
             disabled={false}
@@ -625,46 +634,50 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               />
             </svg>
           </button>
-          <button
-            disabled={false}
-            id="createDataSourceBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
+          <div
+            className="c15"
           >
-            <svg
+            <button
+              disabled={false}
+              id="createDataSourceBtn"
+              onClick={[Function]}
               style={
                 Object {
-                  "fill": "#000",
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": "60px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": "60px",
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#000",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -673,11 +686,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 `;
 
 exports[`Storyshots Project|DataSourceList With data source 1`] = `
-.c24 {
+.c17 {
   height: 155px;
 }
 
-.c26 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -696,7 +709,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   width: 100%;
 }
 
-.c25 {
+.c18 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -704,11 +717,19 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
+.c16 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 .c0 {
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -716,92 +737,65 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 {
+.c6 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c4 a {
+.c6 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c4 a {
+.c6 a {
   padding: 8px 0;
 }
 
-.c9 {
-  display: none;
+.c1 {
+  word-break: break-word;
 }
 
-.c10 {
-  margin-right: 20px;
+.c2 {
+  word-break: break-word;
 }
 
 .c11 {
-  color: #FFF;
-}
-
-.c12 {
-  color: #FFF;
-}
-
-.c16 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.c17 {
-  display: inline-block;
-  line-height: 1.25;
-  margin-right: 1.5em;
-  color: #71737e;
-}
-
-.c17::before {
-  content: '•';
-  margin-left: -1.5em;
-  display: inline-block;
-  padding: 0 7px;
-}
-
-.c14 {
-  margin-bottom: 20px;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c5 {
   display: none;
 }
 
-.c6 {
+.c12 {
+  margin-right: 20px;
+}
+
+.c13 {
+  color: #FFF;
+}
+
+.c14 {
+  color: #FFF;
+}
+
+.c7 {
+  display: none;
+}
+
+.c8 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -814,11 +808,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   cursor: pointer;
 }
 
-.c6:hover {
+.c8:hover {
   border-bottom-color: #FFF;
 }
 
-.c8 {
+.c10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -831,11 +825,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c10:hover {
   border-bottom-color: #FFF;
 }
 
-.c7 {
+.c9 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -843,74 +837,21 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   text-decoration: none;
 }
 
-.c19 {
-  cursor: pointer;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-top: 27px;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c22 {
-  font-weight: 600;
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-.c23 {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c18 {
-  margin-top: -8px;
-}
-
 @media (min-width:1040px) {
-  .c26 {
+  .c19 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c25 {
+  .c18 {
     width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: block;
   }
 }
 
@@ -921,7 +862,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c11 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -939,34 +880,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c14 {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: calc(100%/3 - 20px);
-    max-width: 320px;
-    min-height: 192px;
-    margin: 10px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c13 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width:1040px) {
-  .c5 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1008,6 +922,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -1021,6 +936,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               Data Sources
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -1106,6 +1022,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -1119,6 +1036,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               Data Sources
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -1136,16 +1054,16 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           >
             <li
-              className="c4"
+              className="c6"
             >
               <a
                 href="/project/1"
@@ -1204,13 +1122,13 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
       className=""
     >
       <div
-        className="c5"
+        className="c7"
       >
         <div
-          className="c6"
+          className="c8"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1"
             onClick={[Function]}
           >
@@ -1220,10 +1138,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="c8"
+          className="c10"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -1233,10 +1151,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="c6"
+          className="c8"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -1246,10 +1164,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="c6"
+          className="c8"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1/directory"
             onClick={[Function]}
           >
@@ -1261,13 +1179,13 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="c9"
+      className="c11"
     >
       <div
-        className="c10"
+        className="c12"
       >
         <h2
-          className="c11"
+          className="c13"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -1281,7 +1199,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           Data Sources
         </h2>
         <h1
-          className="c12"
+          className="c14"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -1300,444 +1218,67 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
       <div
         className=""
       >
-        <button
-          disabled={false}
-          id="createDataSourceDesktopBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
+        <div
+          className="c15"
         >
-          <svg
+          <button
+            disabled={false}
+            id="createDataSourceDesktopBtn"
+            onClick={[Function]}
             style={
               Object {
-                "fill": "#000",
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
                 "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
-    <section
-      className="c13"
-    >
-      <div
-        className="c14"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "12px",
-            "justifyContent": "space-between",
-            "padding": "12px 14px 14px",
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "100%",
-              "width": "100%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": undefined,
-                "marginBottom": 14,
-              }
-            }
-          >
-            <div
-              className="c15"
-            >
-              <ul
-                className="c16"
-              >
-                <li
-                  className="c17"
-                  id="headerItem-0"
-                >
-                  3 months ago
-                </li>
-                <li
-                  className="c17"
-                  id="headerItem-1"
-                >
-                  firstName lastName
-                </li>
-              </ul>
-              <div
-                className="c18"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
-                  }
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                  />
-                  <path
-                    d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <h1
-            className="c19"
-            id="dataSourceTitle"
-            onClick={[Function]}
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-              }
-            }
-          >
-            name
-          </h1>
-          <div
-            className="c20"
-          >
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-0"
-              >
-                Source
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-0"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-1"
-              >
-                Items
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-1"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-2"
-              >
-                Fields
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-2"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-3"
-              >
-                Filters
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-3"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-4"
-              >
-                Views
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-4"
-              >
-                —
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="c14"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "12px",
-            "justifyContent": "space-between",
-            "padding": "12px 14px 14px",
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "100%",
-              "width": "100%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "color": undefined,
-                "marginBottom": 14,
-              }
-            }
-          >
-            <div
-              className="c15"
-            >
-              <ul
-                className="c16"
-              >
-                <li
-                  className="c17"
-                  id="headerItem-0"
-                >
-                  3 months ago
-                </li>
-                <li
-                  className="c17"
-                  id="headerItem-1"
-                >
-                  firstName lastName
-                </li>
-              </ul>
-              <div
-                className="c18"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
-                  }
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                  />
-                  <path
-                    d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <h1
-            className="c19"
-            id="dataSourceTitle"
-            onClick={[Function]}
-            style={
-              Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
-              }
-            }
-          >
-            name
-          </h1>
-          <div
-            className="c20"
-          >
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-0"
-              >
-                Source
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-0"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-1"
-              >
-                Items
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-1"
-              >
-                246
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-2"
-              >
-                Fields
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-2"
-              >
-                11
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-3"
-              >
-                Filters
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-3"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-4"
-              >
-                Views
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-4"
-              >
-                —
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <div
-      className="c24"
+      className="c16"
+    >
+      <span>
+        Loading...
+      </span>
+    </div>
+    <div
+      className="c17"
     >
       <div
-        className="c25"
+        className="c18"
       >
         <div
-          className="c26"
+          className="c19"
         >
           <button
             disabled={false}
@@ -1778,46 +1319,50 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               />
             </svg>
           </button>
-          <button
-            disabled={false}
-            id="createDataSourceBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
+          <div
+            className="c15"
           >
-            <svg
+            <button
+              disabled={false}
+              id="createDataSourceBtn"
+              onClick={[Function]}
               style={
                 Object {
-                  "fill": "#000",
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": "60px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": "60px",
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#000",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1826,11 +1371,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 `;
 
 exports[`Storyshots Project|DataSourceList With jobs 1`] = `
-.c24 {
+.c17 {
   height: 155px;
 }
 
-.c26 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1849,7 +1394,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   width: 100%;
 }
 
-.c25 {
+.c18 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -1857,11 +1402,19 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
+.c16 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 .c0 {
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -1869,92 +1422,65 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 {
+.c6 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
 }
 
-.c4 a {
+.c6 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c4 a {
+.c6 a {
   padding: 8px 0;
 }
 
-.c9 {
-  display: none;
+.c1 {
+  word-break: break-word;
 }
 
-.c10 {
-  margin-right: 20px;
+.c2 {
+  word-break: break-word;
 }
 
 .c11 {
-  color: #FFF;
-}
-
-.c12 {
-  color: #FFF;
-}
-
-.c16 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.c17 {
-  display: inline-block;
-  line-height: 1.25;
-  margin-right: 1.5em;
-  color: #71737e;
-}
-
-.c17::before {
-  content: '•';
-  margin-left: -1.5em;
-  display: inline-block;
-  padding: 0 7px;
-}
-
-.c14 {
-  margin-bottom: 20px;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c5 {
   display: none;
 }
 
-.c6 {
+.c12 {
+  margin-right: 20px;
+}
+
+.c13 {
+  color: #FFF;
+}
+
+.c14 {
+  color: #FFF;
+}
+
+.c7 {
+  display: none;
+}
+
+.c8 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1967,11 +1493,11 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   cursor: pointer;
 }
 
-.c6:hover {
+.c8:hover {
   border-bottom-color: #FFF;
 }
 
-.c8 {
+.c10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1984,11 +1510,11 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c10:hover {
   border-bottom-color: #FFF;
 }
 
-.c7 {
+.c9 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -1996,74 +1522,21 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   text-decoration: none;
 }
 
-.c19 {
-  cursor: pointer;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-top: 27px;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c22 {
-  font-weight: 600;
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-.c23 {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c18 {
-  margin-top: -8px;
-}
-
 @media (min-width:1040px) {
-  .c26 {
+  .c19 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c25 {
+  .c18 {
     width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: block;
   }
 }
 
@@ -2074,7 +1547,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c11 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2092,34 +1565,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c14 {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: calc(100%/3 - 20px);
-    max-width: 320px;
-    min-height: 192px;
-    margin: 10px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c13 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width:1040px) {
-  .c5 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2161,6 +1607,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -2174,6 +1621,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
               Data Sources
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -2259,6 +1707,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -2272,6 +1721,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
               Data Sources
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -2289,16 +1739,16 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           >
             <li
-              className="c4"
+              className="c6"
             >
               <a
                 href="/project/1"
@@ -2357,13 +1807,13 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
       className=""
     >
       <div
-        className="c5"
+        className="c7"
       >
         <div
-          className="c6"
+          className="c8"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1"
             onClick={[Function]}
           >
@@ -2373,10 +1823,10 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="c8"
+          className="c10"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -2386,10 +1836,10 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="c6"
+          className="c8"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -2399,10 +1849,10 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="c6"
+          className="c8"
         >
           <a
-            className="c7"
+            className="c9"
             href="/project/1/directory"
             onClick={[Function]}
           >
@@ -2414,13 +1864,13 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="c9"
+      className="c11"
     >
       <div
-        className="c10"
+        className="c12"
       >
         <h2
-          className="c11"
+          className="c13"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -2434,7 +1884,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           Data Sources
         </h2>
         <h1
-          className="c12"
+          className="c14"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -2453,252 +1903,67 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
       <div
         className=""
       >
-        <button
-          disabled={false}
-          id="createDataSourceDesktopBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#000",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <section
-      className="c13"
-    >
-      <div
-        className="c14"
-        style={
-          Object {
-            "backgroundColor": "#1d1d20",
-            "borderTop": "2px solid #FFF",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "column",
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "12px",
-            "justifyContent": "space-between",
-            "padding": "12px 14px 14px",
-            "position": "relative",
-          }
-        }
-      >
         <div
-          style={
-            Object {
-              "height": "100%",
-              "width": "100%",
-            }
-          }
+          className="c15"
         >
-          <div
-            style={
-              Object {
-                "color": undefined,
-                "marginBottom": 14,
-              }
-            }
-          >
-            <div
-              className="c15"
-            >
-              <ul
-                className="c16"
-              >
-                <li
-                  className="c17"
-                  id="headerItem-0"
-                >
-                  3 months ago
-                </li>
-                <li
-                  className="c17"
-                  id="headerItem-1"
-                >
-                  firstName lastName
-                </li>
-              </ul>
-              <div
-                className="c18"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "30px",
-                      "width": "30px",
-                    }
-                  }
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    d="M11 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                  />
-                  <path
-                    d="M19 23a8 8 0 100-16 8 8 0 000 16zm0-1a7 7 0 110-14 7 7 0 010 14z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <h1
-            className="c19"
-            id="dataSourceTitle"
+          <button
+            disabled={false}
+            id="createDataSourceDesktopBtn"
             onClick={[Function]}
             style={
               Object {
-                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                "fontSize": "24px",
-                "fontWeight": 600,
-                "letterSpacing": "-0.12px",
-                "lineHight": 1.25,
-                "margin": 0,
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": "60px",
               }
             }
           >
-            name
-          </h1>
-          <div
-            className="c20"
-          >
-            <div
-              className="c21"
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
             >
-              <span
-                className="c22"
-                id="metaItem-0"
-              >
-                Source
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-0"
-              >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-1"
-              >
-                Items
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-1"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-2"
-              >
-                Fields
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-2"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-3"
-              >
-                Filters
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-3"
-              >
-                —
-              </span>
-            </div>
-            <div
-              className="c21"
-            >
-              <span
-                className="c22"
-                id="metaItem-4"
-              >
-                Views
-              </span>
-              <span
-                className="c23"
-                id="metaItemValue-4"
-              >
-                —
-              </span>
-            </div>
-          </div>
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
         </div>
       </div>
-    </section>
+    </div>
     <div
-      className="c24"
+      className="c16"
+    >
+      <span>
+        Loading...
+      </span>
+    </div>
+    <div
+      className="c17"
     >
       <div
-        className="c25"
+        className="c18"
       >
         <div
-          className="c26"
+          className="c19"
         >
           <button
             disabled={false}
@@ -2739,46 +2004,50 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
               />
             </svg>
           </button>
-          <button
-            disabled={false}
-            id="createDataSourceBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
+          <div
+            className="c15"
           >
-            <svg
+            <button
+              disabled={false}
+              id="createDataSourceBtn"
+              onClick={[Function]}
               style={
                 Object {
-                  "fill": "#000",
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": "60px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": "60px",
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#000",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

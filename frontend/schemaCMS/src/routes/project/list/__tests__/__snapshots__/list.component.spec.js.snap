@@ -30,6 +30,7 @@ exports[`List: Component should render correctly 1`] = `
     title="Projects"
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectDesktopBtn"
       onClick={[Function]}
     />
@@ -42,6 +43,13 @@ exports[`List: Component should render correctly 1`] = `
   >
     <styled.section>
       <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)
+            id="apiPath-0"
+          >
+            schemacms/api/project_title
+          </ForwardRef(styled.div)>
+        }
         headerComponent={
           <ForwardRef(styled.ul)>
             <ForwardRef(styled.li)
@@ -75,6 +83,11 @@ exports[`List: Component should render correctly 1`] = `
           Project Name
         </H1>
         <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
           onClick={[Function]}
         >
           <P
@@ -83,23 +96,15 @@ exports[`List: Component should render correctly 1`] = `
             Description
           </P>
         </styled.div>
-        <Span
-          customStyles={
-            Object {
-              "display": "block",
-              "fontSize": "12px",
-              "overflow": "hidden",
-              "textOverflow": "ellipsis",
-              "whiteSpace": "nowrap",
-              "width": "100%",
-            }
-          }
-          id="apiPath-0"
-        >
-          schemacms/api/project_title
-        </Span>
       </Styled(Component)>
       <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)
+            id="apiPath-1"
+          >
+            schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+          </ForwardRef(styled.div)>
+        }
         headerComponent={
           <ForwardRef(styled.ul)>
             <ForwardRef(styled.li)
@@ -133,6 +138,11 @@ exports[`List: Component should render correctly 1`] = `
           Honec sodales libero non fermentum aliquam
         </H1>
         <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
           onClick={[Function]}
         >
           <P
@@ -141,21 +151,6 @@ exports[`List: Component should render correctly 1`] = `
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
           </P>
         </styled.div>
-        <Span
-          customStyles={
-            Object {
-              "display": "block",
-              "fontSize": "12px",
-              "overflow": "hidden",
-              "textOverflow": "ellipsis",
-              "whiteSpace": "nowrap",
-              "width": "100%",
-            }
-          }
-          id="apiPath-1"
-        >
-          schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
-        </Span>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
@@ -164,6 +159,7 @@ exports[`List: Component should render correctly 1`] = `
     right={true}
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectBtn"
       onClick={[Function]}
     />
@@ -201,6 +197,7 @@ exports[`List: Component should render correctly with loading 1`] = `
     title="Projects"
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectDesktopBtn"
       onClick={[Function]}
     />
@@ -213,6 +210,13 @@ exports[`List: Component should render correctly with loading 1`] = `
   >
     <styled.section>
       <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)
+            id="apiPath-0"
+          >
+            schemacms/api/project_title
+          </ForwardRef(styled.div)>
+        }
         headerComponent={
           <ForwardRef(styled.ul)>
             <ForwardRef(styled.li)
@@ -246,6 +250,11 @@ exports[`List: Component should render correctly with loading 1`] = `
           Project Name
         </H1>
         <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
           onClick={[Function]}
         >
           <P
@@ -254,23 +263,15 @@ exports[`List: Component should render correctly with loading 1`] = `
             Description
           </P>
         </styled.div>
-        <Span
-          customStyles={
-            Object {
-              "display": "block",
-              "fontSize": "12px",
-              "overflow": "hidden",
-              "textOverflow": "ellipsis",
-              "whiteSpace": "nowrap",
-              "width": "100%",
-            }
-          }
-          id="apiPath-0"
-        >
-          schemacms/api/project_title
-        </Span>
       </Styled(Component)>
       <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)
+            id="apiPath-1"
+          >
+            schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
+          </ForwardRef(styled.div)>
+        }
         headerComponent={
           <ForwardRef(styled.ul)>
             <ForwardRef(styled.li)
@@ -304,6 +305,11 @@ exports[`List: Component should render correctly with loading 1`] = `
           Honec sodales libero non fermentum aliquam
         </H1>
         <styled.div
+          customStyles={
+            Object {
+              "fontWeight": 300,
+            }
+          }
           onClick={[Function]}
         >
           <P
@@ -312,21 +318,6 @@ exports[`List: Component should render correctly with loading 1`] = `
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie fermentum dictum. In id posuere nibh.
           </P>
         </styled.div>
-        <Span
-          customStyles={
-            Object {
-              "display": "block",
-              "fontSize": "12px",
-              "overflow": "hidden",
-              "textOverflow": "ellipsis",
-              "whiteSpace": "nowrap",
-              "width": "100%",
-            }
-          }
-          id="apiPath-1"
-        >
-          schemacms/api/wuwhonec-sodales-libero-non-fermentum-aliquam-honec-sodales-libero-non-fermentum-aliquam
-        </Span>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
@@ -335,6 +326,7 @@ exports[`List: Component should render correctly with loading 1`] = `
     right={true}
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectBtn"
       onClick={[Function]}
     />
@@ -372,6 +364,7 @@ exports[`List: Component should render without data 1`] = `
     title="Projects"
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectDesktopBtn"
       onClick={[Function]}
     />
@@ -389,6 +382,7 @@ exports[`List: Component should render without data 1`] = `
     right={true}
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectBtn"
       onClick={[Function]}
     />

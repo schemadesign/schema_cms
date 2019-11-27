@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|UserDetails Default 1`] = `
-.c10 {
+.c12 {
   height: 155px;
 }
 
-.c12 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
   width: 100%;
 }
 
-.c11 {
+.c13 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,25 +32,24 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c13 {
+.c15 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c9 {
+.c11 {
   cursor: pointer;
-  margin-bottom: 30px;
   color: #FFF;
   -webkit-transition: border 400ms;
   transition: border 400ms;
   border-bottom: 1px solid transparent;
 }
 
-.c9:hover {
+.c11:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c8 {
+.c10 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -70,7 +69,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -78,37 +77,45 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 {
-  display: none;
+.c1 {
+  word-break: break-word;
 }
 
-.c5 {
-  margin-right: 20px;
+.c2 {
+  word-break: break-word;
 }
 
 .c6 {
-  color: #FFF;
+  display: none;
 }
 
 .c7 {
+  margin-right: 20px;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+.c9 {
   color: #FFF;
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c14 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -117,13 +124,13 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c13 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c15 {
     width: 240px;
   }
 }
@@ -135,7 +142,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c4 {
+  .c6 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -184,6 +191,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -199,6 +207,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               </span>
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -286,6 +295,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
             className=""
           >
             <h2
+              className="c1"
               id="headerTitle"
               style={
                 Object {
@@ -301,6 +311,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
               </span>
             </h2>
             <h1
+              className="c2"
               id="headerSubtitle"
               style={
                 Object {
@@ -320,13 +331,13 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
           </div>
         </div>
         <div
-          className="c1"
+          className="c3"
         >
           <ul
-            className="c2"
+            className="c4"
           />
           <ul
-            className="c3"
+            className="c5"
           />
         </div>
         <button
@@ -373,13 +384,13 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
       </div>
     </div>
     <div
-      className="c4"
+      className="c6"
     >
       <div
-        className="c5"
+        className="c7"
       >
         <h2
-          className="c6"
+          className="c8"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -395,7 +406,7 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
           </span>
         </h2>
         <h1
-          className="c7"
+          className="c9"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -418,10 +429,10 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
       />
     </div>
     <div
-      className="c8"
+      className="c10"
     >
       <span
-        className="c9"
+        className="c11"
         onClick={[Function]}
         style={
           Object {
@@ -436,16 +447,16 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
       </span>
     </div>
     <div
-      className="c10"
+      className="c12"
     >
       <div
-        className="c11"
+        className="c13"
       >
         <div
-          className="c12"
+          className="c14"
         >
           <button
-            className="c13"
+            className="c15"
             disabled={false}
             onClick={[Function]}
             style={

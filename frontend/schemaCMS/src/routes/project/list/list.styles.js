@@ -26,7 +26,6 @@ export const ProjectItem = styled.li`
     flex: 0 0 auto;
     width: calc(33% - 16.66px);
     margin: 0 0 20px 20px;
-    background: ${({ theme: { card } }) => card.background};
   `};
 `;
 
@@ -58,13 +57,19 @@ export const Description = styled.div`
   word-break: break-word;
 `;
 
-export const urlStyles = {
-  fontSize: '12px',
-  whiteSpace: 'nowrap',
-  display: 'block',
-  width: '100%',
-  textOverflow: 'ellipsis',
-  overflow: 'hidden',
+export const Footer = styled.div`
+  color: ${({ theme: { card } }) => card.text};
+  font-size: 12px;
+  font-weight: 300;
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+`;
+
+export const descriptionStyles = {
+  fontWeight: 300,
 };
 
 export const titleStyles = {

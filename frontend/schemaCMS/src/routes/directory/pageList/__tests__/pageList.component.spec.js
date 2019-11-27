@@ -1,12 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Typography } from 'schemaUI';
 
 import { PageList } from '../pageList.component';
 import { defaultProps } from '../pageList.stories';
 import { BackArrowButton, PlusButton } from '../../../../shared/components/navigation';
-
-const { H1 } = Typography;
+import { ListItemTitle } from '../../../../shared/components/listComponents/listItem.styles';
 
 describe('PageList: Component', () => {
   const component = props => <PageList {...defaultProps} {...props} />;
@@ -27,29 +25,6 @@ describe('PageList: Component', () => {
     await Promise.resolve();
     await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should go to main page when fetchPages fails', async () => {
-    jest.spyOn(defaultProps.history, 'push');
-    const props = {
-      fetchDirectory: jest.fn().mockReturnValue(Promise.resolve()),
-      fetchPages: jest.fn().mockReturnValue(Promise.reject()),
-    };
-    render(props);
-    await Promise.resolve();
-    await Promise.resolve();
-    expect(defaultProps.history.push).toBeCalledWith('/');
-  });
-
-  it('should go to main pag when fetchDirectory fails', async () => {
-    jest.spyOn(defaultProps.history, 'push');
-    const props = {
-      fetchDirectory: jest.fn().mockReturnValue(Promise.reject()),
-      fetchPages: jest.fn().mockReturnValue(Promise.resolve()),
-    };
-    render(props);
-    await Promise.resolve();
-    expect(defaultProps.history.push).toBeCalledWith('/');
   });
 
   it('should fetch list', async () => {
@@ -99,7 +74,7 @@ describe('PageList: Component', () => {
     const wrapper = render();
     await Promise.resolve();
     await Promise.resolve();
-    wrapper.find(H1).simulate('click');
+    wrapper.find(ListItemTitle).simulate('click');
 
     expect(defaultProps.history.push).toBeCalledWith('/page/1');
   });

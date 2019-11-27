@@ -47,6 +47,12 @@ export const NavigationButton = styled(Button)`
   `};
 `;
 
+export const ButtonContainer = styled.div`
+  ${media.desktop`
+    display: ${({ hideOnDesktop }) => (hideOnDesktop ? 'none' : 'block')};
+  `};
+`;
+
 export const buttonIconStyles = {
   height: '60px',
   width: '60px',
