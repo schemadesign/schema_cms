@@ -1,5 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+
+import { Container } from './jwt.styles';
+import messages from './jwt.messages';
 
 export class Jwt extends PureComponent {
   static propTypes = {
@@ -16,6 +20,10 @@ export class Jwt extends PureComponent {
   }
 
   render() {
-    return <div>Validating...</div>;
+    return (
+      <Container>
+        <FormattedMessage {...messages.validating} />
+      </Container>
+    );
   }
 }

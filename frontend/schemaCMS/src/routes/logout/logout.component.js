@@ -17,7 +17,7 @@ export class Logout extends PureComponent {
   render() {
     return (
       <Container>
-        <FormattedMessage {...messages.logout} />
+        <FormattedMessage {...messages.loggingOut} />
       </Container>
     );
   }

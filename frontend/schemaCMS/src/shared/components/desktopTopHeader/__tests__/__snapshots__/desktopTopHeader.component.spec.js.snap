@@ -29,11 +29,21 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           <styled.schemaLogo.svg />
         </Styled(Styled(Link))>
         <styled.div>
-          <Styled(Styled(Link))
-            to="/logout"
+          <Component
+            customStyles={
+              Object {
+                "backgroundColor": "transparent",
+                "borderRadius": null,
+                "display": "flex",
+                "height": "calc(100% - 20px)",
+                "margin": "7px 0 10px 10px",
+                "padding": "0 7px",
+              }
+            }
+            onClick={[Function]}
           >
             <Component />
-          </Styled(Styled(Link))>
+          </Component>
           <Styled(Styled(Link))
             to="/settings"
           >
@@ -42,9 +52,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         </styled.div>
       </styled.div>
     </Component>
-    <styled.div
-      visible={false}
-    />
+    <styled.div />
     <Component
       closeButtonProps={
         Object {
@@ -66,7 +74,6 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         }
       }
       onClose={[Function]}
-      open={false}
     >
       <styled.div>
         <styled.div>
@@ -127,5 +134,10 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
       </styled.div>
     </Component>
   </styled.div>
+  <LogoutModal
+    logoutModalOpen={false}
+    onCancel={[Function]}
+    onConfirm={[Function]}
+  />
 </styled.div>
 `;

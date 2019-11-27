@@ -1,32 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Menu, Icons, Header } from 'schemaUI';
+import { Button, Header, Icons, Menu } from 'schemaUI';
 
 import { renderWhenTrue } from '../../utils/rendering';
+import { LogoutModal } from '../logoutModal';
 import { TopHeader } from '../topHeader';
 import {
   Content,
-  PrimaryList,
-  SecondaryList,
-  PrimaryItem,
-  SecondaryItem,
   MenuHeader,
+  PrimaryItem,
+  PrimaryList,
+  SecondaryItem,
+  SecondaryList,
 } from '../topHeader/topHeader.styles';
 import {
-  Container,
-  Overlayer,
-  TopContainer,
-  HeaderWrapper,
-  Title,
-  TitleWrapper,
   Actions,
+  Container,
+  HeaderWrapper,
+  IconLink,
   Logo,
   LogoLink,
-  IconLink,
-  menuStyles,
-  headerCustomStyles,
-  customButtonStyles,
+  Overlayer,
+  Title,
+  TitleWrapper,
+  TopContainer,
   closeButtonStyles,
+  customButtonStyles,
+  headerCustomStyles,
+  menuStyles,
+  logoutButtonStyles,
 } from './desktopTopHeader.styles';
 
 const { ExitIcon, UserIcon } = Icons;
@@ -36,6 +38,28 @@ export class DesktopTopHeader extends TopHeader {
     title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     primaryMenuItems: PropTypes.array,
     secondaryMenuItems: PropTypes.array,
+    history: PropTypes.object,
+  };
+
+  state = {
+    logoutModalOpen: false,
+  };
+
+  handleLogout = () => {
+    this.setState({
+      logoutModalOpen: true,
+    });
+  };
+
+  handleCancelLogout = () => {
+    this.setState({
+      logoutModalOpen: false,
+    });
+  };
+
+  handleConfirmLogout = () => {
+    this.handleCancelLogout();
+    this.props.history.push('/logout');
   };
 
   renderTitle = renderWhenTrue((_, title) => (
@@ -51,9 +75,9 @@ export class DesktopTopHeader extends TopHeader {
       </LogoLink>
       {this.renderTitle(!!title, title)}
       <Actions>
-        <IconLink to="/logout">
+        <Button onClick={this.handleLogout} customStyles={logoutButtonStyles}>
           <ExitIcon />
-        </IconLink>
+        </Button>
         <IconLink to="/settings">
           <UserIcon />
         </IconLink>
@@ -62,6 +86,7 @@ export class DesktopTopHeader extends TopHeader {
   );
 
   render() {
+    const { logoutModalOpen } = this.state;
     const { title, primaryMenuItems, secondaryMenuItems } = this.props;
 
     const buttonProps = {
@@ -96,6 +121,11 @@ export class DesktopTopHeader extends TopHeader {
             </Content>
           </Menu>
         </Container>
+        <LogoutModal
+          logoutModalOpen={logoutModalOpen}
+          onConfirm={this.handleConfirmLogout}
+          onCancel={this.handleCancelLogout}
+        />
       </TopContainer>
     );
   }

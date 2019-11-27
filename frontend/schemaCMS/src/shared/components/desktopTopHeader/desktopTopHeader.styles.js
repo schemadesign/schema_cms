@@ -108,3 +108,12 @@ export const menuStyles = {
   minHeight: null,
   transform: `translateX(calc((100vw - ${contentSizes.desktop}px) / -2 + 8px))`,
 };
+
+export const logoutButtonStyles = {
+  display: 'flex',
+  height: 'calc(100% - 20px)',
+  borderRadius: null,
+  margin: '7px 0 10px 10px',
+  padding: '0 7px',
+  backgroundColor: 'transparent',
+};

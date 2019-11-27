@@ -20,6 +20,7 @@ export class App extends PureComponent {
     match: PropTypes.object.isRequired,
     startup: PropTypes.func.isRequired,
     isAdmin: PropTypes.bool,
+    history: PropTypes.object,
   };
 
   static defaultProps = {
@@ -43,7 +44,7 @@ export class App extends PureComponent {
               </FormattedMessage>
 
               <GlobalStyle />
-              <DesktopTopHeader />
+              <DesktopTopHeader history={this.props.history} />
               <Content>{React.Children.only(this.props.children)}</Content>
             </Container>
           </ThemeProvider>

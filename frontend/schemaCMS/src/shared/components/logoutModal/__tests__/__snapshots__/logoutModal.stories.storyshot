@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Shared Components|LogoutModal Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <button
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "border": "none",
+        "borderRadius": "48px",
+        "color": "#000",
+        "cursor": "pointer",
+        "display": "inline-block",
+        "fill": "#FFF",
+        "fontSize": "18px",
+        "margin": 40,
+        "minHeight": "48px",
+        "outline": "none",
+        "padding": "0 20px",
+        "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+      }
+    }
+  >
+    Show 
+    <b>
+      LogoutModal
+    </b>
+  </button>
+</div>
+`;

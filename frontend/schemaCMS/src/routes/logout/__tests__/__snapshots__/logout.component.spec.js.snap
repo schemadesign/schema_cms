@@ -3,8 +3,8 @@
 exports[`Logout: Component should render correctly 1`] = `
 <styled.div>
   <FormattedMessage
-    defaultMessage="Loging out.."
-    id="logout.logout"
+    defaultMessage="Logging out..."
+    id="logout.loggingOut"
     values={Object {}}
   />
 </styled.div>

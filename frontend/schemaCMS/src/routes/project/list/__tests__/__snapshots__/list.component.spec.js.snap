@@ -15,7 +15,7 @@ exports[`List: Component should render correctly 1`] = `
         Object {
           "id": "logoutBtn",
           "label": "Log Out",
-          "to": "/logout",
+          "onClick": [Function],
         },
         Object {
           "id": "userBtn",
@@ -164,6 +164,11 @@ exports[`List: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
+  <LogoutModal
+    logoutModalOpen={false}
+    onCancel={[Function]}
+    onConfirm={[Function]}
+  />
 </styled.div>
 `;
 
@@ -182,7 +187,7 @@ exports[`List: Component should render correctly with loading 1`] = `
         Object {
           "id": "logoutBtn",
           "label": "Log Out",
-          "to": "/logout",
+          "onClick": [Function],
         },
         Object {
           "id": "userBtn",
@@ -331,6 +336,11 @@ exports[`List: Component should render correctly with loading 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
+  <LogoutModal
+    logoutModalOpen={false}
+    onCancel={[Function]}
+    onConfirm={[Function]}
+  />
 </styled.div>
 `;
 
@@ -349,7 +359,7 @@ exports[`List: Component should render without data 1`] = `
         Object {
           "id": "logoutBtn",
           "label": "Log Out",
-          "to": "/logout",
+          "onClick": [Function],
         },
         Object {
           "id": "userBtn",
@@ -387,5 +397,10 @@ exports[`List: Component should render without data 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
+  <LogoutModal
+    logoutModalOpen={false}
+    onCancel={[Function]}
+    onConfirm={[Function]}
+  />
 </styled.div>
 `;
