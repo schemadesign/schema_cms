@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router';
 
 import { PageBlockList } from './pageBlockList';
-import { CreatePageBlock } from './createBlock';
+import { CreatePageBlock } from './createPageBlock';
 import { Edit } from './edit';
 
 export class Page extends PureComponent {
