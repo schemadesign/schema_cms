@@ -6,7 +6,7 @@ import { expectSaga } from 'redux-saga-test-plan';
 import { watchPageBlock } from '../pageBlock.sagas';
 import { PageBlockRoutines } from '../pageBlock.redux';
 import mockApi from '../../../shared/utils/mockApi';
-import { MARKDOWN_TYPE } from '../pageBlock.constants';
+import { IMAGE_TYPE, MARKDOWN_TYPE } from '../pageBlock.constants';
 
 describe('PageBlock: sagas', () => {
   const defaultState = Immutable({
@@ -71,7 +71,42 @@ describe('PageBlock: sagas', () => {
         type: [MARKDOWN_TYPE],
       };
 
-      mockApi.post(`/pages/${payload.pageId}/blocks`, { name: 'Title', type: [MARKDOWN_TYPE] }).reply(OK, response);
+      mockApi
+        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="name"[^]*name/m, {
+          name: 'Title',
+          type: [MARKDOWN_TYPE],
+        })
+        .reply(OK, response);
+
+      await expectSaga(watchPageBlock)
+        .withState(defaultState)
+        .put(PageBlockRoutines.create.success(response))
+        .dispatch(PageBlockRoutines.create(payload))
+        .silentRun();
+    });
+
+    it('should put create.success action for image type', async () => {
+      const response = {
+        id: 1,
+      };
+
+      const payload = {
+        pageId: 1,
+        name: 'Title',
+        image: 'file',
+        type: [IMAGE_TYPE],
+      };
+
+      const options = {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      };
+
+      mockApi
+        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="name"[^]*name/m, options, {
+          name: 'Title',
+          type: [MARKDOWN_TYPE],
+        })
+        .reply(OK, response);
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)
