@@ -81,6 +81,7 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
                 dsource.update_meta(file=file, file_name=file.name)
                 file.seek(0)
                 dsource.file.save(file.name, file)
+                dsource.project.create_meta_file()
 
         return dsource
 

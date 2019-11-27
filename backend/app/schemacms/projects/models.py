@@ -1,3 +1,4 @@
+import itertools
 import json
 import logging
 import os
@@ -108,7 +109,10 @@ class MetaDataModel(models.Model):
 
 
 class Project(
-    softdelete.models.SoftDeleteObject, ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel
+    utils_models.MetaGeneratorMixin,
+    softdelete.models.SoftDeleteObject,
+    ext_models.TitleSlugDescriptionModel,
+    ext_models.TimeStampedModel,
 ):
     status = django_fsm.FSMField(
         choices=constants.PROJECT_STATUS_CHOICES, default=constants.ProjectStatus.IN_PROGRESS
@@ -153,6 +157,32 @@ class Project(
     @functional.cached_property
     def charts_count(self):
         return 0  # just for mock purposes till charts will be implemented
+
+    def meta_file_serialization(self):
+        data = {
+            "id": self.id,
+            "title": self.title,
+            "description": self.description,
+            "owner": self.owner_id,
+            "pages": [],
+            "data_sources": [],
+        }
+
+        if self.data_sources:
+            data_sources = [
+                {"id": data_source.id, "name": data_source.name} for data_source in self.data_sources.all()
+            ]
+            data.update({"data_sources": data_sources})
+
+        if self.directories:
+            pages = [d.meta_file_serialization() for d in self.directories.all()]
+            data.update({"pages": list(itertools.chain.from_iterable(pages))})
+
+        return data
+
+    def meta_file_path(self):
+        path = super().meta_file_path()
+        return os.path.join("projects", path)
 
 
 class DataSource(
@@ -477,7 +507,9 @@ class Filter(
 # Pages
 
 
-class Directory(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+class Directory(
+    utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
+):
     project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='directories')
     name = models.CharField(max_length=constants.DIRECTORY_NAME_MAX_LENGTH)
     created_by = models.ForeignKey(
@@ -492,6 +524,25 @@ class Directory(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel)
         verbose_name_plural = _("Directories")
         unique_together = ("name", "project")
         ordering = ('name',)
+
+    def get_project(self):
+        return self.project
+
+    def meta_file_serialization(self):
+        data = []
+
+        for page in self.pages.all():
+            page_dict = {
+                "id": page.id,
+                "title": page.title,
+                "description": page.description,
+                "directory": self.name,
+                "keywords": page.keywords,
+                "blocks": page.get_blocks(),
+            }
+            data.append(page_dict)
+
+        return data
 
 
 class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
@@ -520,6 +571,24 @@ class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
             settings.PUBLIC_API_LAMBDA_URL, "projects", str(self.directory.project_id), "pages", str(self.pk)
         )
 
+    def get_project(self):
+        return self.directory.project
+
+    def get_blocks(self):
+        blocks = []
+
+        for block in self.blocks.filter(is_active=True):
+            data = {
+                "id": block.id,
+                "name": block.name,
+                "type": block.type,
+                "content": block.content,
+                "image": None if not block.image else block.image.url,
+            }
+            blocks.append(data)
+
+        return blocks
+
 
 class Block(utils_models.MetaGeneratorMixin, ext_models.TimeStampedModel):
     page: Page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name="blocks")
@@ -541,3 +610,6 @@ class Block(utils_models.MetaGeneratorMixin, ext_models.TimeStampedModel):
         if not self.page_id:
             raise ValueError("Page is not set")
         return os.path.join(base_path, f"pages/{self.page_id}/{filename}")
+
+    def get_project(self):
+        return self.page.directory.project

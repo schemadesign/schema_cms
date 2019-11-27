@@ -1,2 +1,7 @@
 def update_meta_file(sender, instance, **kwargs):
-    instance.create_meta_file()
+
+    if hasattr(instance, "get_project"):
+        project = instance.get_project()
+        project.create_meta_file()
+    else:
+        instance.create_meta_file()
