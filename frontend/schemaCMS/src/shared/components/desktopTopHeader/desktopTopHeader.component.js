@@ -39,6 +39,7 @@ export class DesktopTopHeader extends TopHeader {
     title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     primaryMenuItems: PropTypes.array,
     secondaryMenuItems: PropTypes.array,
+    history: PropTypes.object,
   };
 
   state = {
@@ -58,7 +59,8 @@ export class DesktopTopHeader extends TopHeader {
   };
 
   handleConfirmLogout = () => {
-    browserHistory.push('/logout');
+    this.handleCancelLogout();
+    this.props.history.push('/logout');
   };
 
   renderTitle = renderWhenTrue((_, title) => (
