@@ -4,7 +4,11 @@ import { shallow } from 'enzyme';
 import { LogoutModal } from '../logoutModal.component';
 
 describe('LogoutModal: Component', () => {
-  const defaultProps = {};
+  const defaultProps = {
+    logoutModalOpen: true
+    onConfirm: Function.prototype,
+    onCancel: Function.prototype,
+  };
 
   const component = props => <LogoutModal {...defaultProps} {...props} />;
 

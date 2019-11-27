@@ -1,8 +1,50 @@
-import React from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
+import { Button } from 'schemaUI';
 
+import { withTheme } from '../../../.storybook/decorators';
 import { LogoutModal } from './logoutModal.component';
 
-const defaultProps = {};
+export class LogoutModalWrapper extends PureComponent {
+  state = {
+    logoutModalOpen: false,
+  };
 
-storiesOf('Shared Components|LogoutModal', module).add('Default', () => <LogoutModal {...defaultProps} />);
+  handleLogout = () => {
+    this.setState({
+      logoutModalOpen: true,
+    });
+  };
+
+  handleCancelLogout = () => {
+    this.setState({
+      logoutModalOpen: false,
+    });
+  };
+
+  handleConfirmLogout = () => {
+    console.log('LOGGED OUT'); //eslint-disable-line
+    this.handleCancelLogout();
+  };
+
+  render() {
+    const { logoutModalOpen } = this.state;
+
+    return (
+      <Fragment>
+        <Button inverse onClick={this.handleLogout} customStyles={{ margin: 40, padding: '0 20px' }}>
+          Show Log Out Modal
+        </Button>
+        <LogoutModal
+          logoutModalOpen={logoutModalOpen}
+          onConfirm={this.handleConfirmLogout}
+          onCancel={this.handleCancelLogout}
+        />
+      </Fragment>
+    );
+  }
+}
+
+storiesOf('Shared Components|LogoutModal', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <LogoutModalWrapper />);

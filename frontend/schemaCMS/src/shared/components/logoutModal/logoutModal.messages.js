@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   title: {
     id: 'shared.components.logoutModal.title',
-    defaultMessage: 'Are you sure you want to delete the project?',
+    defaultMessage: 'Are you sure you want to log out?',
   },
   cancel: {
     id: 'shared.components.logoutModal.cancel',
