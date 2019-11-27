@@ -12,10 +12,10 @@ export default defineMessages({
   },
   errorTooLongName: {
     id: 'dataWranglingScripts.errorOnUploading',
-    defaultMessage: 'Script name should have maximum 50 characters',
+    defaultMessage: 'Script name should have maximum 50 characters.',
   },
   errorJobFailed: {
     id: 'dataWranglingScripts.errorOnUploading',
-    defaultMessage: 'Error on starting job.',
+    defaultMessage: 'An error happened while trying to process the scripts.',
   },
 });

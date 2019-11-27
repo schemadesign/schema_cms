@@ -73,7 +73,7 @@ export class DataWranglingScripts extends PureComponent {
       setSubmitting(true);
       this.setState({ errorMessage: '' });
       const { dataSourceId } = this.props.match.params;
-      steps = steps.map((script, index) => ({ script: parseInt(script, 10), execOrder: index }));
+      steps = steps.map((script, index) => ({ script, execOrder: index }));
 
       await this.props.sendUpdatedDataWranglingScript({ steps, dataSourceId });
     } catch (error) {
