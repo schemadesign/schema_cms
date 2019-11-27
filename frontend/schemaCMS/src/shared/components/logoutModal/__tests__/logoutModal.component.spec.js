@@ -5,7 +5,7 @@ import { LogoutModal } from '../logoutModal.component';
 
 describe('LogoutModal: Component', () => {
   const defaultProps = {
-    logoutModalOpen: true
+    logoutModalOpen: true,
     onConfirm: Function.prototype,
     onCancel: Function.prototype,
   };
@@ -16,6 +16,13 @@ describe('LogoutModal: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should be hidden', () => {
+    const wrapper = render({
+      logoutModalOpen: false,
+    });
     global.expect(wrapper).toMatchSnapshot();
   });
 });
