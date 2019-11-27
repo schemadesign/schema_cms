@@ -6,6 +6,11 @@ DIRECTORY_NAME_MAX_LENGTH = 50
 BLOCK_NAME_MAX_LENGTH = 50
 
 
+class WorkerProcessType:
+    META_PROCESSING = "meta-processing"
+    SCRIPTS_PROCESSING = "scripts-processing"
+
+
 class ProjectStatus:
     IN_PROGRESS = "in_progress"
     DONE = "done"

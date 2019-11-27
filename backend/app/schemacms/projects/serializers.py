@@ -7,6 +7,7 @@ from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
 from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
+from . import services
 
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
@@ -124,12 +125,9 @@ class DataSourceSerializer(serializers.ModelSerializer):
             return []
 
     @transaction.atomic()
-    def update(self, instance, validated_data):
-        file = validated_data.get("file", None)
-        if file:
-            instance.update_meta(file=file, file_name=file.name)
-            file.seek(0)
-        obj = super().update(instance=instance, validated_data=validated_data)
+    def save(self, *args, **kwargs):
+        obj = super().save(*args, **kwargs)
+        obj.schedule_update_meta()
         return obj
 
 
@@ -287,6 +285,15 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
 
     def get_project(self, obj):
         return obj.datasource.project_id
+
+
+class PublicApiDataSourceUpdateMetaSerializer(serializers.Serializer):
+    items = serializers.IntegerField(min_value=0)
+    fields = serializers.IntegerField(min_value=0)
+    preview_data = serializers.DictField()
+
+    class Meta:
+        fields = ("items", "fields", "preview_data")
 
 
 class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):

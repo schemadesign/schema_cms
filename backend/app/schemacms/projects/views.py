@@ -137,6 +137,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "jobs_history": serializers.DataSourceJobSerializer,
         "filters": serializers.FilterSerializer,
         "set_filters": serializers.FilterSerializer,
+        "update_meta": serializers.PublicApiDataSourceUpdateMetaSerializer,
     }
 
     def get_queryset(self):
@@ -156,15 +157,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         data["data_source"] = {"name": data_source.name}
 
         return response.Response(data, status=status.HTTP_200_OK)
-
-    @decorators.action(detail=True, methods=["post"])
-    def process(self, request, pk=None, **kwargs):
-        obj = self.get_object()
-        try:
-            return response.Response(obj.meta_data.data, status=status.HTTP_200_OK)
-        except Exception as e:
-            logging.error(f"DataSource {self.get_object().id} processing error - {e}")
-            return response.Response(status=status.HTTP_404_NOT_FOUND)
 
     @decorators.action(detail=True)
     def script(self, request, pk=None, **kwargs):
@@ -197,7 +189,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         serializer.is_valid(raise_exception=True)
         with transaction.atomic():
             job = serializer.save()
-            transaction.on_commit(lambda: services.schedule_worker_with(job, datasource.file.size))
+            transaction.on_commit(job.schedule)
         return response.Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
     @decorators.action(detail=True, url_path="jobs-history", methods=["get"])
@@ -278,6 +270,22 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         serializer = self.get_serializer(instance=data_source, context=data_source)
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
+
+    @decorators.action(
+        detail=True,
+        url_path="update-meta",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
+    def update_meta(self, request, pk, *args, **kwargs):
+        data_source: models.DataSource = get_object_or_404(models.DataSource, pk=pk)
+        serializer = self.get_serializer(instance=getattr(data_source, 'meta_data', None), data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        data_source.update_meta(**serializer.validated_data)
+
+        return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class DataSourceJobDetailViewSet(

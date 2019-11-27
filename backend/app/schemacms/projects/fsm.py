@@ -26,7 +26,7 @@ class DataSourceJobFSM(models.Model):
         target=constants.DataSourceJobState.SUCCESS,
     )
     def success(self):
-        self.update_meta()
+        self.schedule_update_meta()
         self.datasource.set_active_job(self)
 
     @django_fsm.transition(

@@ -2,13 +2,13 @@ import json
 
 import pytest
 
-from schemacms.projects import services
+from schemacms.projects import constants, services
 
 
 pytestmark = [pytest.mark.django_db]
 
 
-class TestScheduleWorkerWith:
+class TestScheduleJobScriptsProcessingWith:
     @pytest.mark.parametrize(
         "file_size, expected_queue_idx",
         [
@@ -19,14 +19,17 @@ class TestScheduleWorkerWith:
             (209715200, 1),  # 200MB
         ],
     )
-    def test_call(self, mocker, settings, job, file_size, expected_queue_idx):
+    def test_call(self, settings, job, file_size, expected_queue_idx, sqs):
         queues = [settings.SQS_WORKER_QUEUE_URL, settings.SQS_WORKER_EXT_QUEUE_URL]
         expected_queue_url = queues[expected_queue_idx]
         settings.SQS_WORKER_QUEUE_FILE_SIZE = 52428800  # 50mb
-        send_message_mock = mocker.patch("schemacms.projects.services.sqs.send_message")
+        data = {
+            "type": constants.WorkerProcessType.SCRIPTS_PROCESSING,
+            "data": job.meta_file_serialization(),
+        }
 
-        services.schedule_worker_with(job, file_size)
+        services.schedule_job_scripts_processing(job, file_size)
 
-        send_message_mock.assert_called_with(
-            QueueUrl=expected_queue_url, MessageBody=json.dumps(job.meta_file_serialization())
+        sqs.send_message_mock.assert_called_with(
+            QueueUrl=expected_queue_url, MessageBody=json.dumps(data)
         )

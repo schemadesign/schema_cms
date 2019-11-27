@@ -6,7 +6,6 @@ from factory.django import FileField
 from pandas import read_csv
 
 from schemacms.utils.test import make_csv
-from schemacms.projects.models import get_preview_data
 from schemacms.projects.tests.factories import DataSourceFactory
 
 
@@ -86,16 +85,6 @@ class TestDataSource:
         assert data_source.meta_data.fields == cols_number
         assert data_source.meta_data.items == rows_number
         assert data_source.meta_data.preview != old_preview
-
-    def test_get_preview(self, data_source):
-        source_file = data_source.file
-
-        data_source.update_meta()
-        expected_preview, _, _ = get_preview_data(source_file)
-        result_json = json.loads(data_source.meta_data.preview.read())
-
-        assert json.loads(expected_preview)["data"] == result_json["data"]
-        assert json.loads(expected_preview)["fields"] == result_json["fields"]
 
     def test_source_file_latest_version(self, mocker, data_source_factory, s3_object_version_factory):
         ds = data_source_factory()
