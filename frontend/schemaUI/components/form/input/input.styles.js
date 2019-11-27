@@ -7,4 +7,5 @@ export const getStyles = (theme = defaultTheme) => ({
   fontSize: '18px',
   lineHeight: '24px',
   backgroundColor: 'transparent',
+  padding: 0,
 });
