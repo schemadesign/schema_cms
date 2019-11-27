@@ -148,7 +148,7 @@ class Project(
 
     @functional.cached_property
     def pages_count(self):
-        return self.directories.values("pages").count()
+        return self.folders.values("pages").count()
 
     @functional.cached_property
     def users_count(self):
@@ -174,8 +174,8 @@ class Project(
             ]
             data.update({"data_sources": data_sources})
 
-        if self.directories:
-            pages = [d.meta_file_serialization() for d in self.directories.all()]
+        if self.folders:
+            pages = [d.meta_file_serialization() for d in self.folders.all()]
             data.update({"pages": list(itertools.chain.from_iterable(pages))})
 
         return data
@@ -507,21 +507,21 @@ class Filter(
 # Pages
 
 
-class Directory(
+class Folder(
     utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
 ):
-    project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='directories')
+    project: Project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='folders')
     name = models.CharField(max_length=constants.DIRECTORY_NAME_MAX_LENGTH)
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="directories", null=True
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="folders", null=True
     )
 
     def __str__(self):
         return str(self.id)
 
     class Meta:
-        verbose_name = _("Directory")
-        verbose_name_plural = _("Directories")
+        verbose_name = _("Folder")
+        verbose_name_plural = _("Folders")
         unique_together = ("name", "project")
         ordering = ('name',)
 
@@ -536,7 +536,7 @@ class Directory(
                 "id": page.id,
                 "title": page.title,
                 "description": page.description,
-                "directory": self.name,
+                "folder": self.name,
                 "keywords": page.keywords,
                 "blocks": page.get_blocks(),
             }
@@ -546,7 +546,7 @@ class Directory(
 
 
 class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
-    directory: Directory = models.ForeignKey(Directory, on_delete=models.CASCADE, related_name='pages')
+    folder: Folder = models.ForeignKey(Folder, on_delete=models.CASCADE, related_name='pages')
     keywords = models.TextField(blank=True, default="")
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="pages", null=True
@@ -558,7 +558,7 @@ class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
         return str(self.pk)
 
     class Meta:
-        unique_together = ("title", "directory")
+        unique_together = ("title", "folder")
         ordering = ('created',)
 
     @functional.cached_property
@@ -568,11 +568,11 @@ class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
     @property
     def page_url(self):
         return os.path.join(
-            settings.PUBLIC_API_LAMBDA_URL, "projects", str(self.directory.project_id), "pages", str(self.pk)
+            settings.PUBLIC_API_LAMBDA_URL, "projects", str(self.folder.project_id), "pages", str(self.pk)
         )
 
     def get_project(self):
-        return self.directory.project
+        return self.folder.project
 
     def get_blocks(self):
         blocks = []
@@ -612,4 +612,4 @@ class Block(utils_models.MetaGeneratorMixin, ext_models.TimeStampedModel):
         return os.path.join(base_path, f"pages/{self.page_id}/{filename}")
 
     def get_project(self):
-        return self.page.directory.project
+        return self.page.folder.project

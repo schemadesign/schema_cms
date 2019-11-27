@@ -985,8 +985,8 @@ class TestSetFiltersView:
 
 
 class TestDirectoryListView:
-    def test_response(self, api_client, admin, project, directory_factory):
-        directories = directory_factory.create_batch(2, project=project, created_by=admin)
+    def test_response(self, api_client, admin, project, folder_factory):
+        folders = folder_factory.create_batch(2, project=project, created_by=admin)
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url())
@@ -994,15 +994,13 @@ class TestDirectoryListView:
         assert response.status_code == status.HTTP_200_OK
         assert (
             response.data["results"]
-            == projects_serializers.DirectorySerializer(
-                instance=self.sort_directories(directories), many=True
-            ).data
+            == projects_serializers.FolderSerializer(instance=self.sort_directories(folders), many=True).data
         )
 
-    def test_response_from_projects(self, api_client, admin, project_factory, directory_factory):
+    def test_response_from_projects(self, api_client, admin, project_factory, folder_factory):
         project_1, project_2 = project_factory.create_batch(2, owner=admin)
-        directories = directory_factory.create_batch(3, project=project_1, created_by=admin)
-        directory_factory.create_batch(2, project=project_2, created_by=admin)
+        folders = folder_factory.create_batch(3, project=project_1, created_by=admin)
+        folder_factory.create_batch(2, project=project_2, created_by=admin)
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_project_url(project_1.id))
@@ -1011,100 +1009,98 @@ class TestDirectoryListView:
         assert len(response.data) == 3
         assert (
             response.data
-            == projects_serializers.DirectorySerializer(
-                instance=self.sort_directories(directories), many=True
-            ).data
+            == projects_serializers.FolderSerializer(instance=self.sort_directories(folders), many=True).data
         )
 
     @staticmethod
     def get_url():
-        return reverse("projects:directory-list")
+        return reverse("projects:folder-list")
 
     @staticmethod
     def get_project_url(pk):
-        return reverse("projects:project-directories", kwargs=dict(pk=pk))
+        return reverse("projects:project-folders", kwargs=dict(pk=pk))
 
     @staticmethod
     def sort_directories(iterable):
         return sorted(iterable, key=operator.attrgetter("name"))
 
 
-class TestDirectoryCreateView:
+class TestFolderCreateView:
     def test_response(self, api_client, admin, project, faker):
         payload = dict(name=faker.word(), project=project.id)
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(), data=payload)
-        directory = projects_models.Directory.objects.get(pk=response.data["id"])
+        folder = projects_models.Folder.objects.get(pk=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert projects_models.Directory.objects.filter(pk=response.data["id"]).exists()
-        assert response.data == projects_serializers.DirectorySerializer(directory).data
+        assert projects_models.Folder.objects.filter(pk=response.data["id"]).exists()
+        assert response.data == projects_serializers.FolderSerializer(folder).data
 
-    def test_add_directory_to_project(self, api_client, admin, project, faker):
+    def test_add_folder_to_project(self, api_client, admin, project, faker):
         payload = {"name": "About"}
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_project_url(project.id), data=payload, format="json")
-        project_directories = project.directories.all()
+        project_folders = project.folders.all()
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert project_directories.count() == 1
-        assert response.data == projects_serializers.DirectorySerializer(project_directories[0]).data
+        assert project_folders.count() == 1
+        assert response.data == projects_serializers.FolderSerializer(project_folders[0]).data
 
     @staticmethod
     def get_url():
-        return reverse("projects:directory-list")
+        return reverse("projects:folder-list")
 
     @staticmethod
     def get_project_url(pk):
-        return reverse("projects:project-directories", kwargs=dict(pk=pk))
+        return reverse("projects:project-folders", kwargs=dict(pk=pk))
 
 
-class TestDirectoryDetailView:
-    def test_response(self, api_client, admin, directory):
+class TestFolderDetailView:
+    def test_response(self, api_client, admin, folder):
 
         api_client.force_authenticate(admin)
-        response = api_client.get(self.get_url(directory.id))
+        response = api_client.get(self.get_url(folder.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == projects_serializers.DirectorySerializer(directory).data
+        assert response.data == projects_serializers.FolderSerializer(folder).data
 
-    def test_edit_name(self, api_client, admin, directory, faker):
+    def test_edit_name(self, api_client, admin, folder, faker):
         new_name = faker.word()
         payload = {"name": new_name}
 
         api_client.force_authenticate(admin)
-        response = api_client.patch(self.get_url(directory.id), data=payload)
-        directory.refresh_from_db()
+        response = api_client.patch(self.get_url(folder.id), data=payload)
+        folder.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
-        assert directory.name == new_name
+        assert folder.name == new_name
 
-    def test_update_directory(self, api_client, admin, project, project_factory, directory, faker):
+    def test_update_folder(self, api_client, admin, project, project_factory, folder, faker):
         new_project = project_factory(owner=admin)
         new_name = faker.word()
         payload = dict(name=new_name, project=new_project.id)
 
         api_client.force_authenticate(admin)
-        response = api_client.patch(self.get_url(directory.id), data=payload, format="json")
-        directory.refresh_from_db()
+        response = api_client.patch(self.get_url(folder.id), data=payload, format="json")
+        folder.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["name"] == new_name
-        assert directory.project_id == project.id
+        assert folder.project_id == project.id
 
     @staticmethod
     def get_url(pk):
-        return reverse("projects:directory-detail", kwargs=dict(pk=pk))
+        return reverse("projects:folder-detail", kwargs=dict(pk=pk))
 
 
 class TestPageListCreateView:
-    def test_response(self, api_client, admin, directory, page_factory):
-        pages = page_factory.create_batch(2, directory=directory, created_by=admin)
+    def test_response(self, api_client, admin, folder, page_factory):
+        pages = page_factory.create_batch(2, folder=folder, created_by=admin)
 
         api_client.force_authenticate(admin)
-        response = api_client.get(self.get_url(directory.id))
+        response = api_client.get(self.get_url(folder.id))
 
         assert response.status_code == status.HTTP_200_OK
         assert (
@@ -1112,20 +1108,20 @@ class TestPageListCreateView:
             == projects_serializers.PageSerializer(instance=self.sort_directories(pages), many=True).data
         )
 
-    def test_create(self, api_client, admin, directory, faker):
+    def test_create(self, api_client, admin, folder, faker):
         payload = dict(title=faker.word())
 
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(directory.id), data=payload, format="json")
-        directory_pages = directory.pages.all()
+        response = api_client.post(self.get_url(folder.id), data=payload, format="json")
+        folder_pages = folder.pages.all()
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert directory_pages.count() == 1
-        assert response.data == projects_serializers.PageSerializer(directory_pages[0]).data
+        assert folder_pages.count() == 1
+        assert response.data == projects_serializers.PageSerializer(folder_pages[0]).data
 
     @staticmethod
     def get_url(pk):
-        return reverse("projects:directory-pages", kwargs=dict(pk=pk))
+        return reverse("projects:folder-pages", kwargs=dict(pk=pk))
 
     @staticmethod
     def sort_directories(iterable):
@@ -1141,10 +1137,10 @@ class TestPageDetailView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data == projects_serializers.PageDetailSerializer(page).data
 
-    def test_update_page(self, api_client, admin, directory, directory_factory, page, faker):
-        new_directory = directory_factory()
+    def test_update_page(self, api_client, admin, folder, folder_factory, page, faker):
+        new_folder = folder_factory()
         new_title = faker.word()
-        payload = dict(title=new_title, directory=new_directory.id)
+        payload = dict(title=new_title, folder=new_folder.id)
 
         api_client.force_authenticate(admin)
         response = api_client.patch(self.get_url(page.id), data=payload, format="json")
@@ -1152,7 +1148,7 @@ class TestPageDetailView:
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["title"] == new_title
-        assert page.directory_id == directory.id
+        assert page.folder_id == folder.id
 
     @staticmethod
     def get_url(pk):
@@ -1250,8 +1246,8 @@ class TestBlockDetailView:
 
 
 class TestSetBlocksView:
-    def test_response(self, api_client, admin, directory, page_factory, block_factory):
-        page = page_factory(directory=directory)
+    def test_response(self, api_client, admin, folder, page_factory, block_factory):
+        page = page_factory(folder=folder)
         block1 = block_factory(page=page, is_active=False)
         block2 = block_factory(page=page, is_active=True)
         block1_old_status = block1.is_active

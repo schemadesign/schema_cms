@@ -10,7 +10,7 @@ router.register(r"projects", views.ProjectViewSet)
 router.register(r"datasources", views.DataSourceViewSet)
 router.register(r"jobs", views.DataSourceJobDetailViewSet)
 router.register(r"filters", views.FilterDetailViewSet)
-router.register(r"directories", views.DirectoryViewSet)
+router.register(r"folders", views.FolderViewSet)
 router.register(r"pages", views.PageViewSet)
 router.register(r"blocks", views.BlockViewSet)
 
