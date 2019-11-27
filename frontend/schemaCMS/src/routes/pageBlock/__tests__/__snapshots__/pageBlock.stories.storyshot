@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots PageBlock Default 1`] = `
+<div
+  className=""
+>
+  PageBlock component
+</div>
+`;

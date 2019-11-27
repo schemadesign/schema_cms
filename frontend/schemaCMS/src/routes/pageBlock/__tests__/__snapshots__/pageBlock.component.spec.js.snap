@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageBlock: Component should render correctly 1`] = `
+<styled.div>
+  PageBlock component
+</styled.div>
+`;
