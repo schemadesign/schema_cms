@@ -3,6 +3,7 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 import { PageBlockRoutines } from './pageBlock.redux';
 import api from '../../shared/services/api';
 import { BLOCK_PATH, PAGES_PATH } from '../../shared/utils/api.constants';
+import browserHistory from '../../shared/utils/history';
 
 function* fetchList({ payload: { pageId } }) {
   try {
@@ -32,9 +33,25 @@ function* setBlocks({ payload: { pageId, active, inactive } }) {
   }
 }
 
+function* create({ payload: { pageId, ...restFields } }) {
+  try {
+    yield put(PageBlockRoutines.create.request());
+
+    const { data } = yield api.post(`${PAGES_PATH}/${pageId}/blocks`, restFields);
+
+    yield put(PageBlockRoutines.create.success(data));
+    browserHistory.push(`/page/${pageId}/`);
+  } catch (e) {
+    yield put(PageBlockRoutines.create.failure(e));
+  } finally {
+    yield put(PageBlockRoutines.create.fulfill());
+  }
+}
+
 export function* watchPageBlock() {
   yield all([
     takeLatest(PageBlockRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(PageBlockRoutines.setBlocks.TRIGGER, setBlocks),
+    takeLatest(PageBlockRoutines.create.TRIGGER, create),
   ]);
 }

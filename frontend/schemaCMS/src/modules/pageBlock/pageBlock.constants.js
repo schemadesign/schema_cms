@@ -3,15 +3,19 @@ import * as Yup from 'yup';
 export const BLOCK_FORM = 'block_form';
 export const BLOCK_NAME = 'name';
 export const BLOCK_TYPE = 'type';
+export const BLOCK_CONTENT = 'content';
+export const BLOCK_IMAGE = 'image';
 
-export const IMAGE_TYPE = 'image';
-export const MARKDOWN_TYPE = 'markdown';
-export const EMBED_TYPE = 'embed';
-export const CODE_TYPE = 'code-snippet';
+export const IMAGE_TYPE = 'image_uploaded';
+export const MARKDOWN_TYPE = 'markdown_text';
+export const EMBED_TYPE = 'youtube_embed';
+export const CODE_TYPE = 'code_snippet';
 export const NONE = 'none';
 
 export const INITIAL_VALUES = {
   [BLOCK_NAME]: '',
+  [BLOCK_CONTENT]: '',
+  [BLOCK_IMAGE]: null,
   [BLOCK_TYPE]: NONE,
 };
 

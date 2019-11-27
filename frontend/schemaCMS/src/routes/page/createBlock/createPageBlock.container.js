@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { bindPromiseCreators } from 'redux-saga-routines';
+import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
@@ -9,6 +9,7 @@ import { withFormik } from 'formik';
 
 import { CreatePageBlock } from './createPageBlock.component';
 import { PageBlockRoutines } from '../../../modules/pageBlock';
+import messages from './createPageBlock.messages';
 
 import { errorMessageParser } from '../../../shared/utils/helpers';
 import { BLOCK_FORM, BLOCK_SCHEMA, INITIAL_VALUES } from '../../../modules/pageBlock/pageBlock.constants';
@@ -18,7 +19,7 @@ const mapStateToProps = createStructuredSelector({});
 export const mapDispatchToProps = dispatch =>
   bindPromiseCreators(
     {
-      createBlock: PageBlockRoutines.create,
+      createBlock: promisifyRoutine(PageBlockRoutines.create),
     },
     dispatch
   );
@@ -34,10 +35,7 @@ export default compose(
   withFormik({
     displayName: BLOCK_FORM,
     enableReinitialize: true,
-    mapPropsToValues: values => ({
-      ...INITIAL_VALUES,
-      ...values,
-    }),
+    mapPropsToValues: () => INITIAL_VALUES,
     validationSchema: () => BLOCK_SCHEMA,
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
