@@ -113,7 +113,8 @@ exports[`CreatePageBlock: Component should render correctly 1`] = `
     >
       <BackButton
         disabled={false}
-        id="backBtn"
+        id="cancelBtn"
+        onClick={[Function]}
       >
         <FormattedMessage
           defaultMessage="Cancel"
@@ -251,7 +252,8 @@ exports[`CreatePageBlock: Component should render correctly with block type 1`] 
     >
       <BackButton
         disabled={false}
-        id="backBtn"
+        id="cancelBtn"
+        onClick={[Function]}
       >
         <FormattedMessage
           defaultMessage="Cancel"
@@ -434,7 +436,8 @@ exports[`CreatePageBlock: Component should render correctly with code type 1`] =
     >
       <BackButton
         disabled={false}
-        id="backBtn"
+        id="cancelBtn"
+        onClick={[Function]}
       >
         <FormattedMessage
           defaultMessage="Cancel"
@@ -618,7 +621,8 @@ exports[`CreatePageBlock: Component should render correctly with embed type 1`] 
     >
       <BackButton
         disabled={false}
-        id="backBtn"
+        id="cancelBtn"
+        onClick={[Function]}
       >
         <FormattedMessage
           defaultMessage="Cancel"
@@ -793,7 +797,8 @@ exports[`CreatePageBlock: Component should render correctly with image type 1`] 
     >
       <BackButton
         disabled={false}
-        id="backBtn"
+        id="cancelBtn"
+        onClick={[Function]}
       >
         <FormattedMessage
           defaultMessage="Cancel"
@@ -975,7 +980,8 @@ exports[`CreatePageBlock: Component should render correctly with markdown type 1
     >
       <BackButton
         disabled={false}
-        id="backBtn"
+        id="cancelBtn"
+        onClick={[Function]}
       >
         <FormattedMessage
           defaultMessage="Cancel"
