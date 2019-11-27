@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateFolder: Component should render correctly 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Create"
+        id="project.createFolder.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Folders"
+        id="project.createFolder.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Create"
+        id="project.createFolder.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Folders"
+        id="project.createFolder.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <TextInput
+      checkOnlyErrors={false}
+      errors={Object {}}
+      fullWidth={true}
+      handleBlur={[Function]}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      isEdit={true}
+      label="Folder Name"
+      match={
+        Object {
+          "params": Object {
+            "projectId": "1",
+          },
+        }
+      }
+      name="name"
+      onChange={[Function]}
+      placeholder="Name"
+      touched={Object {}}
+    />
+    <NavigationContainer
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        id="backBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="project.createFolder.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={true}
+        id="createFolderBtn"
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Create"
+          id="project.createFolder.createFolder"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
+</Fragment>
+`;

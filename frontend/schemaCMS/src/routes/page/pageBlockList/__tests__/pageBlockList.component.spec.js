@@ -68,7 +68,7 @@ describe('PageBlockList: Component', () => {
       .find(BackArrowButton)
       .simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/directory/1');
+    expect(defaultProps.history.push).toBeCalledWith('/folder/1');
   });
 
   it('should go to create block', () => {

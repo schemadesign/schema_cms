@@ -42,9 +42,9 @@ export default compose(
       try {
         setSubmitting(true);
         const pageId = path(['match', 'params', 'pageId'], props);
-        const directoryId = path(['page', 'directory', 'id'], props);
+        const folderId = path(['page', 'folder', 'id'], props);
 
-        await props.updatePage({ pageId, directoryId, ...data });
+        await props.updatePage({ pageId, folderId, ...data });
       } catch (errors) {
         const { formatMessage } = props.intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });

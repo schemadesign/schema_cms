@@ -23,10 +23,10 @@ describe('Page: sagas', () => {
         id: 1,
       };
       const payload = {
-        directoryId: 1,
+        folderId: 1,
       };
 
-      mockApi.get(`/directories/${payload.directoryId}/pages`).reply(OK, response);
+      mockApi.get(`/folders/${payload.folderId}/pages`).reply(OK, response);
 
       await expectSaga(watchPage)
         .withState(defaultState)
@@ -61,11 +61,11 @@ describe('Page: sagas', () => {
         id: 1,
       };
       const payload = {
-        directoryId: 1,
+        folderId: 1,
         title: 'a title',
       };
 
-      mockApi.post(`/directories/${payload.directoryId}/pages`, { title: payload.title }).reply(OK, response);
+      mockApi.post(`/folders/${payload.folderId}/pages`, { title: payload.title }).reply(OK, response);
 
       await expectSaga(watchPage)
         .withState(defaultState)
@@ -82,7 +82,7 @@ describe('Page: sagas', () => {
         id: 1,
       };
       const payload = {
-        directoryId: 1,
+        folderId: 1,
         pageId: 2,
         title: 'a title',
       };
@@ -95,7 +95,7 @@ describe('Page: sagas', () => {
         .dispatch(PageRoutines.update(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith(`/directory/${payload.directoryId}`);
+      expect(browserHistory.push).toBeCalledWith(`/folder/${payload.folderId}`);
     });
   });
 });

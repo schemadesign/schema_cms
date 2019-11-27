@@ -2,14 +2,14 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { PageRoutines } from './page.redux';
 import api from '../../shared/services/api';
-import { PAGES_PATH, DIRECTORIES_PATH } from '../../shared/utils/api.constants';
+import { PAGES_PATH, FOLDERS_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 
-function* fetchList({ payload: { directoryId } }) {
+function* fetchList({ payload: { folderId } }) {
   try {
     yield put(PageRoutines.fetchList.request());
 
-    const { data } = yield api.get(`${DIRECTORIES_PATH}/${directoryId}${PAGES_PATH}`);
+    const { data } = yield api.get(`${FOLDERS_PATH}/${folderId}${PAGES_PATH}`);
 
     yield put(PageRoutines.fetchList.success(data));
   } catch (e) {
@@ -33,14 +33,14 @@ function* fetchOne({ payload: { pageId } }) {
   }
 }
 
-function* create({ payload: { directoryId, ...payload } }) {
+function* create({ payload: { folderId, ...payload } }) {
   try {
     yield put(PageRoutines.create.request());
 
-    const { data } = yield api.post(`${DIRECTORIES_PATH}/${directoryId}${PAGES_PATH}`, { ...payload });
+    const { data } = yield api.post(`${FOLDERS_PATH}/${folderId}${PAGES_PATH}`, { ...payload });
 
     yield put(PageRoutines.create.success(data));
-    browserHistory.push(`/directory/${directoryId}`);
+    browserHistory.push(`/folder/${folderId}`);
   } catch (e) {
     yield put(PageRoutines.create.failure(e));
   } finally {
@@ -48,14 +48,14 @@ function* create({ payload: { directoryId, ...payload } }) {
   }
 }
 
-function* update({ payload: { pageId, directoryId, ...payload } }) {
+function* update({ payload: { pageId, folderId, ...payload } }) {
   try {
     yield put(PageRoutines.update.request());
 
     const { data } = yield api.patch(`${PAGES_PATH}/${pageId}`, { ...payload });
 
     yield put(PageRoutines.update.success(data));
-    browserHistory.push(`/directory/${directoryId}`);
+    browserHistory.push(`/folder/${folderId}`);
   } catch (e) {
     yield put(PageRoutines.update.failure(e));
   } finally {

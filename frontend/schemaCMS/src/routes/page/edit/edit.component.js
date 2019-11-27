@@ -47,9 +47,9 @@ export class Edit extends PureComponent {
     }
   }
 
-  getDirectoryId = () => path(['page', 'directory', 'id'], this.props);
+  getFolderId = () => path(['page', 'folder', 'id'], this.props);
 
-  handleBackClick = () => this.props.history.push(`/directory/${this.getDirectoryId()}`);
+  handleBackClick = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
   render() {
     const { loading, error } = this.state;

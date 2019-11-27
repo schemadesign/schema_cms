@@ -10,8 +10,8 @@ import { DataSourceList } from './dataSourceList';
 import UserList from './userList/userList.container';
 import { AddUser } from './addUser';
 import { CreateDataSource } from './createDataSource';
-import { DirectoryList } from './directoryList';
-import { CreateDirectory } from './createDirectory';
+import { FolderList } from './folderList';
+import { CreateFolder } from './createFolder';
 
 export class Project extends PureComponent {
   static propTypes = {
@@ -31,8 +31,8 @@ export class Project extends PureComponent {
     const addUserList = `${usersPath}/add`;
     const dataSourceListPath = `${viewPath}/datasource`;
     const createDataSourcePath = `${dataSourceListPath}/add`;
-    const directoryListPath = `${viewPath}/directory`;
-    const directoryCreatePath = `${viewPath}/directory/create`;
+    const folderListPath = `${viewPath}/folder`;
+    const folderCreatePath = `${viewPath}/folder/create`;
 
     return (
       <Switch>
@@ -44,8 +44,8 @@ export class Project extends PureComponent {
         <Route exact path={usersPath} component={UserList} />
         <Route exact path={addUserList} component={AddUser} />
         <Route exact path={userPath} component={UserDetails} />
-        <Route exact path={directoryListPath} component={DirectoryList} />
-        <Route exact path={directoryCreatePath} component={CreateDirectory} />
+        <Route exact path={folderListPath} component={FolderList} />
+        <Route exact path={folderCreatePath} component={CreateFolder} />
       </Switch>
     );
   }

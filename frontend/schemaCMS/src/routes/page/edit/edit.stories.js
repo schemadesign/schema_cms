@@ -5,7 +5,7 @@ import { Edit } from './edit.component';
 import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
-  page: { directory: { id: '1' } },
+  page: { folder: { id: '1' } },
   values: {
     title: 'title',
     description: 'description',

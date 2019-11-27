@@ -53,10 +53,10 @@ export class PageBlockList extends PureComponent {
   }
 
   getPageId = () => path(['match', 'params', 'pageId'], this.props);
-  getDirectoryId = () => path(['page', 'directory', 'id'], this.props);
+  getFolderId = () => path(['page', 'folder', 'id'], this.props);
 
   handleCreateBlock = () => this.props.history.push(`/page/${this.getPageId()}/block/create`);
-  handleShowPages = () => this.props.history.push(`/directory/${this.getDirectoryId()}`);
+  handleShowPages = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
   handleSubmit = ({ pageBlocks }) => {
     const pageId = this.getPageId();

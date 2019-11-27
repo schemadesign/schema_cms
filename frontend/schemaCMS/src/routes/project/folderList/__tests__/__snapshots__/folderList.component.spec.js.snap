@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FolderList: Component should render correctly 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Folders"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="project.folderList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Folders"
+        id="project.folderList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ProjectTabs
+    active="folder"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="project.folderList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Folders"
+        id="project.folderList.title"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      hideOnDesktop={false}
+      id="createFolderDesktopBtn"
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.section>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              12 days ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              firstName lastName
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="0"
+      >
+        <styled.div>
+          <Styled(H1)
+            customStyles={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+            id="folderName-0"
+            onClick={[Function]}
+          >
+            name
+          </Styled(H1)>
+          <Styled(Span)
+            onClick={[Function]}
+          >
+            Edit folder
+          </Styled(Span)>
+        </styled.div>
+      </Styled(Component)>
+    </styled.section>
+  </LoadingWrapper>
+  <NavigationContainer
+    hideOnDesktop={true}
+    right={false}
+  >
+    <BackArrowButton
+      id="backBtn"
+      onClick={[Function]}
+    />
+    <PlusButton
+      hideOnDesktop={false}
+      id="createFolderBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;
+
+exports[`FolderList: Component should render correctly with loader 1`] = `
+<styled.div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Folders"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="project.folderList.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Folders"
+        id="project.folderList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ProjectTabs
+    active="folder"
+    url="/project/1"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Overview"
+        id="project.folderList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Folders"
+        id="project.folderList.title"
+        values={Object {}}
+      />
+    }
+  >
+    <PlusButton
+      hideOnDesktop={false}
+      id="createFolderDesktopBtn"
+      onClick={[Function]}
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.section>
+      <Styled(Component)
+        headerComponent={
+          <ForwardRef(styled.ul)>
+            <ForwardRef(styled.li)
+              id="headerItem-0"
+            >
+              12 days ago
+            </ForwardRef(styled.li)>
+            <ForwardRef(styled.li)
+              id="headerItem-1"
+            >
+              firstName lastName
+            </ForwardRef(styled.li)>
+          </ForwardRef(styled.ul)>
+        }
+        key="0"
+      >
+        <styled.div>
+          <Styled(H1)
+            customStyles={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+            id="folderName-0"
+            onClick={[Function]}
+          >
+            name
+          </Styled(H1)>
+          <Styled(Span)
+            onClick={[Function]}
+          >
+            Edit folder
+          </Styled(Span)>
+        </styled.div>
+      </Styled(Component)>
+    </styled.section>
+  </LoadingWrapper>
+  <NavigationContainer
+    hideOnDesktop={true}
+    right={false}
+  >
+    <BackArrowButton
+      id="backBtn"
+      onClick={[Function]}
+    />
+    <PlusButton
+      hideOnDesktop={false}
+      id="createFolderBtn"
+      onClick={[Function]}
+    />
+  </NavigationContainer>
+</styled.div>
+`;

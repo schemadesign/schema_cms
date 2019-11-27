@@ -18,7 +18,7 @@ import { JobDetail } from './jobDetail';
 import { Filter } from './filter';
 import { Preview as JobPreview } from './jobDetail/preview';
 import { NotAuthorized } from './notAuthorized';
-import { Directory } from './directory';
+import { Folder } from './folder';
 import { Page } from './page';
 
 export const ROUTES = {
@@ -29,7 +29,7 @@ export const ROUTES = {
   RESET_PASSWORD: '/reset-password',
   LOGOUT: '/logout',
   DATA_SOURCE: '/datasource',
-  DIRECTORY: '/directory',
+  FOLDER: '/folder',
   PAGE: '/page',
   DATA_WRANGLING_SCRIPTS: '/script',
   SETTINGS: '/settings',
@@ -54,7 +54,7 @@ export default class RootContainer extends Component {
 
             <AuthRoute path={`${ROUTES.DATA_SOURCE}/:dataSourceId`} component={DataSource} />
 
-            <AuthRoute path={ROUTES.DIRECTORY} component={Directory} />
+            <AuthRoute path={ROUTES.FOLDER} component={Folder} />
 
             <AuthRoute path={ROUTES.PAGE} component={Page} />
 

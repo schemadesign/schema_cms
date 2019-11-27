@@ -144,7 +144,7 @@ export class View extends PureComponent {
       {
         header: this.renderStatisticHeader(messages.pages),
         value: meta.pages,
-        to: `/project/${projectId}/directory`,
+        to: `/project/${projectId}/folder`,
         id: 'projectUsers',
       },
       {

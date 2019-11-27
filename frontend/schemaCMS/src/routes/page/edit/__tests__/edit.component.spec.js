@@ -23,12 +23,12 @@ describe('Edit: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should return to directory list', () => {
+  it('should return to folder list', () => {
     jest.spyOn(defaultProps.history, 'push');
     const wrapper = render();
     wrapper.find(BackButton).simulate('click');
 
-    expect(defaultProps.history.push).toHaveBeenCalledWith('/directory/1');
+    expect(defaultProps.history.push).toHaveBeenCalledWith('/folder/1');
   });
 
   it('should submit form', () => {
