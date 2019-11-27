@@ -33,7 +33,7 @@ export class LogoutModalWrapper extends PureComponent {
     return (
       <Fragment>
         <Button inverse onClick={this.handleLogout} customStyles={{ margin: 40, padding: '0 20px' }}>
-          Show Log Out Modal
+          Show <b>LogoutModal</b>
         </Button>
         <LogoutModal
           logoutModalOpen={logoutModalOpen}

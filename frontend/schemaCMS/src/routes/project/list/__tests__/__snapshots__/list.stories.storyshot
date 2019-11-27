@@ -322,14 +322,10 @@ exports[`Storyshots Project|List admin list 1`] = `
           >
             <li
               className="c6"
+              id="logoutBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/logout"
-                id="logoutBtn"
-                onClick={[Function]}
-              >
-                Log Out
-              </a>
+              Log Out
             </li>
             <li
               className="c6"
@@ -856,14 +852,10 @@ exports[`Storyshots Project|List editor list 1`] = `
           >
             <li
               className="c6"
+              id="logoutBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/logout"
-                id="logoutBtn"
-                onClick={[Function]}
-              >
-                Log Out
-              </a>
+              Log Out
             </li>
           </ul>
         </div>
@@ -1295,14 +1287,10 @@ exports[`Storyshots Project|List empty 1`] = `
           >
             <li
               className="c6"
+              id="logoutBtn"
+              onClick={[Function]}
             >
-              <a
-                href="/logout"
-                id="logoutBtn"
-                onClick={[Function]}
-              >
-                Log Out
-              </a>
+              Log Out
             </li>
             <li
               className="c6"
