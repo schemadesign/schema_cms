@@ -10,21 +10,16 @@ export class LogoutModalWrapper extends PureComponent {
     logoutModalOpen: false,
   };
 
-  handleLogout = () => {
+  handleShowModal = () => {
     this.setState({
       logoutModalOpen: true,
     });
   };
 
-  handleCancelLogout = () => {
+  handleHideModal = () => {
     this.setState({
       logoutModalOpen: false,
     });
-  };
-
-  handleConfirmLogout = () => {
-    console.log('LOGGED OUT'); //eslint-disable-line
-    this.handleCancelLogout();
   };
 
   render() {
@@ -32,13 +27,13 @@ export class LogoutModalWrapper extends PureComponent {
 
     return (
       <Fragment>
-        <Button inverse onClick={this.handleLogout} customStyles={{ margin: 40, padding: '0 20px' }}>
+        <Button inverse onClick={this.handleShowModal} customStyles={{ margin: 40, padding: '0 20px' }}>
           Show <b>LogoutModal</b>
         </Button>
         <LogoutModal
           logoutModalOpen={logoutModalOpen}
-          onConfirm={this.handleConfirmLogout}
-          onCancel={this.handleCancelLogout}
+          onConfirm={this.handleHideModal}
+          onCancel={this.handleHideModal}
         />
       </Fragment>
     );
