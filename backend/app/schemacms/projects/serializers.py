@@ -383,6 +383,15 @@ class FolderSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Folder
         fields = ("id", "name", "created_by", "created", "modified", "project")
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Folder.objects.all(),
+                fields=("project", "name"),
+                key_field_name="name",
+                code="folderNameUnique",
+                message="Folder with this name already exist in project.",
+            )
+        ]
 
     def create(self, validated_data):
         folder = models.Folder(created_by=self.context["request"].user, **validated_data)
@@ -420,6 +429,15 @@ class PageSerializer(serializers.ModelSerializer):
             "meta",
         )
         extra_kwargs = {"folder": {"required": False, "allow_null": True}}
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Page.objects.all(),
+                fields=("folder", "title"),
+                key_field_name="title",
+                code="pageNameUnique",
+                message="Page with this title already exist in folder.",
+            )
+        ]
 
     def create(self, validated_data):
         page = models.Page(created_by=self.context["request"].user, **validated_data)
@@ -449,6 +467,15 @@ class BlockSerializer(serializers.ModelSerializer):
         model = models.Block
         fields = ("id", "page", "name", "type", "content", "image", "is_active")
         extra_kwargs = {"page": {"required": False, "allow_null": True}}
+        validators = [
+            CustomUniqueTogetherValidator(
+                queryset=models.Block.objects.all(),
+                fields=("page", "name"),
+                key_field_name="name",
+                code="blockNameUnique",
+                message="Block with this name already exist in page.",
+            )
+        ]
 
     def validate_type(self, type_):
         if type_ == BlockTypes.IMAGE and not self.initial_data.get("image", None):
