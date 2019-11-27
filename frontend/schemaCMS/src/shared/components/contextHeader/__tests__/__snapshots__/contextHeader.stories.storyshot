@@ -105,6 +105,12 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
 }
 
 @media (min-width:1040px) {
+  .c4 {
+    display: block;
+  }
+}
+
+@media (min-width:1040px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -170,44 +176,48 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
     <div
       className=""
     >
-      <button
-        disabled={false}
-        style={
-          Object {
-            "backgroundColor": "#FFF",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#000",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": "60px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            "width": "60px",
-          }
-        }
+      <div
+        className="c4"
       >
-        <svg
+        <button
+          disabled={false}
           style={
             Object {
-              "fill": "#000",
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
               "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
+          <svg
+            style={
+              Object {
+                "fill": "#000",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -228,6 +238,12 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
 
 .c3 {
   color: #FFF;
+}
+
+@media (min-width:1040px) {
+  .c4 {
+    display: block;
+  }
 }
 
 @media (min-width:1040px) {
@@ -304,44 +320,48 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
     <div
       className=""
     >
-      <button
-        disabled={false}
-        style={
-          Object {
-            "backgroundColor": "#FFF",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#000",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": "60px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            "width": "60px",
-          }
-        }
+      <div
+        className="c4"
       >
-        <svg
+        <button
+          disabled={false}
           style={
             Object {
-              "fill": "#000",
+              "backgroundColor": "#FFF",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#000",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
               "height": "60px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               "width": "60px",
             }
           }
-          viewBox="0 0 60 60"
         >
-          <path
-            d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
+          <svg
+            style={
+              Object {
+                "fill": "#000",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>

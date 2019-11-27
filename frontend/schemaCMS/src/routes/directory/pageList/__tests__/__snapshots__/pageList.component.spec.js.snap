@@ -40,6 +40,7 @@ exports[`PageList: Component should render correctly 1`] = `
     }
   >
     <PlusButton
+      hideOnDesktop={false}
       id="createPageDesktopBtn"
       onClick={[Function]}
     />
@@ -79,31 +80,38 @@ exports[`PageList: Component should render correctly 1`] = `
         }
         key="0"
       >
-        <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-          id="pageName-0"
-          onClick={[Function]}
-        >
-          name
-        </H1>
-        <styled.div
-          onClick={[Function]}
-        >
-          <P
-            id="pageDescription-0"
+        <styled.div>
+          <styled.div>
+            <Styled(H1)
+              customStyles={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+              id="pageTitle-0"
+              onClick={[Function]}
+            />
+            <styled.div
+              onClick={[Function]}
+            >
+              <P
+                id="pageDescription-0"
+              >
+                description
+              </P>
+            </styled.div>
+          </styled.div>
+          <Styled(Span)
+            onClick={[Function]}
           >
-            description
-          </P>
+            Edit Page
+          </Styled(Span)>
         </styled.div>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
   <NavigationContainer
-    hideOnDesktop={true}
+    hideOnDesktop={false}
     right={false}
   >
     <BackArrowButton
@@ -111,6 +119,7 @@ exports[`PageList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      hideOnDesktop={true}
       id="createPageBtn"
       onClick={[Function]}
     />
@@ -158,6 +167,7 @@ exports[`PageList: Component should render correctly with loader 1`] = `
     }
   >
     <PlusButton
+      hideOnDesktop={false}
       id="createPageDesktopBtn"
       onClick={[Function]}
     />
@@ -197,31 +207,38 @@ exports[`PageList: Component should render correctly with loader 1`] = `
         }
         key="0"
       >
-        <H1
-          customStyles={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-          id="pageName-0"
-          onClick={[Function]}
-        >
-          name
-        </H1>
-        <styled.div
-          onClick={[Function]}
-        >
-          <P
-            id="pageDescription-0"
+        <styled.div>
+          <styled.div>
+            <Styled(H1)
+              customStyles={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+              id="pageTitle-0"
+              onClick={[Function]}
+            />
+            <styled.div
+              onClick={[Function]}
+            >
+              <P
+                id="pageDescription-0"
+              >
+                description
+              </P>
+            </styled.div>
+          </styled.div>
+          <Styled(Span)
+            onClick={[Function]}
           >
-            description
-          </P>
+            Edit Page
+          </Styled(Span)>
         </styled.div>
       </Styled(Component)>
     </styled.section>
   </LoadingWrapper>
   <NavigationContainer
-    hideOnDesktop={true}
+    hideOnDesktop={false}
     right={false}
   >
     <BackArrowButton
@@ -229,6 +246,7 @@ exports[`PageList: Component should render correctly with loader 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      hideOnDesktop={true}
       id="createPageBtn"
       onClick={[Function]}
     />

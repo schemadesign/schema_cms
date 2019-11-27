@@ -39,6 +39,7 @@ exports[`UserList: Component should render correctly 1`] = `
     }
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addUserDesktopBtn"
       onClick={[Function]}
     />
@@ -71,6 +72,7 @@ exports[`UserList: Component should render correctly 1`] = `
       />
     </BackButton>
     <PlusButton
+      hideOnDesktop={false}
       id="addUserBtn"
       onClick={[Function]}
     />

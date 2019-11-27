@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|DataSourceList Empty 1`] = `
-.c16 {
+.c17 {
   height: 155px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   width: 100%;
 }
 
-.c17 {
+.c18 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,7 +32,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c15 {
+.c16 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -153,14 +153,20 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: block;
   }
 }
 
@@ -527,63 +533,67 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
       <div
         className=""
       >
-        <button
-          disabled={false}
-          id="createDataSourceDesktopBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
+        <div
+          className="c15"
         >
-          <svg
+          <button
+            disabled={false}
+            id="createDataSourceDesktopBtn"
+            onClick={[Function]}
             style={
               Object {
-                "fill": "#000",
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
                 "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
     <div
-      className="c15"
+      className="c16"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c16"
+      className="c17"
     >
       <div
-        className="c17"
+        className="c18"
       >
         <div
-          className="c18"
+          className="c19"
         >
           <button
             disabled={false}
@@ -624,46 +634,50 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               />
             </svg>
           </button>
-          <button
-            disabled={false}
-            id="createDataSourceBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
+          <div
+            className="c15"
           >
-            <svg
+            <button
+              disabled={false}
+              id="createDataSourceBtn"
+              onClick={[Function]}
               style={
                 Object {
-                  "fill": "#000",
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": "60px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": "60px",
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#000",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -672,11 +686,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 `;
 
 exports[`Storyshots Project|DataSourceList With data source 1`] = `
-.c16 {
+.c17 {
   height: 155px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -695,7 +709,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   width: 100%;
 }
 
-.c17 {
+.c18 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -703,7 +717,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c15 {
+.c16 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -824,14 +838,20 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: block;
   }
 }
 
@@ -1198,63 +1218,67 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
       <div
         className=""
       >
-        <button
-          disabled={false}
-          id="createDataSourceDesktopBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
+        <div
+          className="c15"
         >
-          <svg
+          <button
+            disabled={false}
+            id="createDataSourceDesktopBtn"
+            onClick={[Function]}
             style={
               Object {
-                "fill": "#000",
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
                 "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
     <div
-      className="c15"
+      className="c16"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c16"
+      className="c17"
     >
       <div
-        className="c17"
+        className="c18"
       >
         <div
-          className="c18"
+          className="c19"
         >
           <button
             disabled={false}
@@ -1295,46 +1319,50 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               />
             </svg>
           </button>
-          <button
-            disabled={false}
-            id="createDataSourceBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
+          <div
+            className="c15"
           >
-            <svg
+            <button
+              disabled={false}
+              id="createDataSourceBtn"
+              onClick={[Function]}
               style={
                 Object {
-                  "fill": "#000",
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": "60px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": "60px",
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#000",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1343,11 +1371,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 `;
 
 exports[`Storyshots Project|DataSourceList With jobs 1`] = `
-.c16 {
+.c17 {
   height: 155px;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1366,7 +1394,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   width: 100%;
 }
 
-.c17 {
+.c18 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -1374,7 +1402,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c15 {
+.c16 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -1495,14 +1523,20 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
+    display: block;
   }
 }
 
@@ -1869,63 +1903,67 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
       <div
         className=""
       >
-        <button
-          disabled={false}
-          id="createDataSourceDesktopBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#FFF",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#000",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": "60px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              "width": "60px",
-            }
-          }
+        <div
+          className="c15"
         >
-          <svg
+          <button
+            disabled={false}
+            id="createDataSourceDesktopBtn"
+            onClick={[Function]}
             style={
               Object {
-                "fill": "#000",
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
                 "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 "width": "60px",
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
     <div
-      className="c15"
+      className="c16"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c16"
+      className="c17"
     >
       <div
-        className="c17"
+        className="c18"
       >
         <div
-          className="c18"
+          className="c19"
         >
           <button
             disabled={false}
@@ -1966,46 +2004,50 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
               />
             </svg>
           </button>
-          <button
-            disabled={false}
-            id="createDataSourceBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "height": "60px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                "width": "60px",
-              }
-            }
+          <div
+            className="c15"
           >
-            <svg
+            <button
+              disabled={false}
+              id="createDataSourceBtn"
+              onClick={[Function]}
               style={
                 Object {
-                  "fill": "#000",
+                  "backgroundColor": "#FFF",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#000",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": "18px",
                   "height": "60px",
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                   "width": "60px",
                 }
               }
-              viewBox="0 0 60 60"
             >
-              <path
-                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                style={
+                  Object {
+                    "fill": "#000",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

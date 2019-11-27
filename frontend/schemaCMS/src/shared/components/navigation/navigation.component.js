@@ -1,9 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Icons } from 'schemaUI';
+import { Icons, Button } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 
-import { buttonIconStyles, Container, Navigation, NavigationContent, NavigationButton } from './navigation.styles';
+import {
+  buttonIconStyles,
+  Container,
+  Navigation,
+  NavigationContent,
+  NavigationButton,
+  ButtonContainer,
+} from './navigation.styles';
 import messages from './navigation.messages';
 
 const { PlusIcon, ArrowLeftIcon } = Icons;
@@ -34,11 +41,22 @@ export class NavigationContainer extends PureComponent {
 }
 
 export class PlusButton extends PureComponent {
+  static propTypes = {
+    hideOnDesktop: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    hideOnDesktop: false,
+  };
+
   render() {
+    const { hideOnDesktop, ...restProps } = this.props;
     return (
-      <Button inverse customStyles={buttonIconStyles} {...this.props}>
-        <PlusIcon inverse />
-      </Button>
+      <ButtonContainer hideOnDesktop={hideOnDesktop}>
+        <Button inverse customStyles={buttonIconStyles} {...restProps}>
+          <PlusIcon inverse />
+        </Button>
+      </ButtonContainer>
     );
   }
 }

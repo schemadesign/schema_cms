@@ -13,7 +13,6 @@ import { BackArrowButton, NavigationContainer, PlusButton } from '../../../share
 import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import {
   Container,
-  DataSourceTitle,
   Header,
   HeaderIcon,
   iconSourceStyles,
@@ -30,6 +29,7 @@ import {
   FIELDS_STEP,
   INITIAL_STEP,
 } from '../../../modules/dataSource/dataSource.constants';
+import { ListItemTitle } from '../../../shared/components/listComponents/listItem.styles';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -150,9 +150,9 @@ export class DataSourceList extends PureComponent {
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>
-        <DataSourceTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
+        <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
           {name}
-        </DataSourceTitle>
+        </ListItemTitle>
       </ListItem>
     );
   };

@@ -1,15 +1,14 @@
 import React, { Fragment, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
+import { path } from 'ramda';
 import PropTypes from 'prop-types';
 
 import { Form } from './createPage.styles';
 import messages from './createPage.messages';
-import { TextInput } from '../../../shared/components/form/inputs/textInput';
-import { PAGE_DESCRIPTION, PAGE_KEYWORDS, PAGE_TITLE } from '../../../modules/page/page.constants';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { getProjectId } from '../../../shared/utils/helpers';
+import { PageForm } from '../../../shared/components/pageForm';
 
 export class CreatePage extends PureComponent {
   static propTypes = {
@@ -21,10 +20,12 @@ export class CreatePage extends PureComponent {
     handleBlur: PropTypes.func.isRequired,
   };
 
-  handleBackClick = () => this.props.history.push(`/project/${getProjectId(this.props)}/directory`);
+  getDirectoryId = () => path(['match', 'params', 'directoryId'], this.props);
+
+  handleCancelClick = () => this.props.history.push(`/directory/${this.getDirectoryId()}`);
 
   render() {
-    const { intl, values, handleSubmit, handleChange, ...restProps } = this.props;
+    const { handleSubmit, ...restProps } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -33,38 +34,10 @@ export class CreatePage extends PureComponent {
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
-          <TextInput
-            value={values[PAGE_TITLE]}
-            onChange={handleChange}
-            name={PAGE_TITLE}
-            label={intl.formatMessage(messages.pageFieldTitle)}
-            placeholder={intl.formatMessage(messages.pageFieldTitlePlaceholder)}
-            fullWidth
-            {...restProps}
-          />
-          <TextInput
-            value={values[PAGE_DESCRIPTION]}
-            onChange={handleChange}
-            name={PAGE_DESCRIPTION}
-            label={intl.formatMessage(messages.pageFieldDescription)}
-            placeholder={intl.formatMessage(messages.pageFieldDescriptionPlaceholder)}
-            fullWidth
-            multiline
-            {...restProps}
-          />
-          <TextInput
-            value={values[PAGE_KEYWORDS]}
-            onChange={handleChange}
-            name={PAGE_KEYWORDS}
-            label={intl.formatMessage(messages.pageFieldKeywords)}
-            placeholder={intl.formatMessage(messages.pageFieldKeywordsPlaceholder)}
-            fullWidth
-            multiline
-            {...restProps}
-          />
-          <NavigationContainer hideOnDesktop>
-            <BackButton id="backBtn" onClick={this.handleBackClick}>
-              <FormattedMessage {...messages.back} />
+          <PageForm {...this.props} />
+          <NavigationContainer>
+            <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
+              <FormattedMessage {...messages.cancel} />
             </BackButton>
             <NextButton id="createPageBtn" type="submit" disabled={!restProps.isValid}>
               <FormattedMessage {...messages.createPage} />

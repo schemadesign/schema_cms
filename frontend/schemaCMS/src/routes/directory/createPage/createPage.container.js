@@ -33,10 +33,7 @@ export default compose(
   withFormik({
     displayName: PAGE_FORM,
     enableReinitialize: true,
-    mapPropsToValues: values => ({
-      ...INITIAL_VALUES,
-      ...values,
-    }),
+    mapPropsToValues: () => INITIAL_VALUES,
     validationSchema: () => PAGE_SCHEMA,
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {

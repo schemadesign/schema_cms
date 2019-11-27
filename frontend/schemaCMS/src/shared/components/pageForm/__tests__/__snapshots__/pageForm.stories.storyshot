@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots PageForm Default 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="title"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Page Title
+      </label>
+      <input
+        id="title"
+        name="title"
+        onChange={[Function]}
+        placeholder="Title"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+          }
+        }
+        type="text"
+        value="title"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="description"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Description
+      </label>
+      <textarea
+        id="description"
+        onChange={[Function]}
+        placeholder="Description"
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": "0",
+            "resize": "none",
+          }
+        }
+        type="text"
+        value="description"
+      />
+      <textarea
+        aria-hidden={true}
+        readOnly={true}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "left": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "overflow": "hidden",
+            "padding": "0",
+            "position": "absolute",
+            "resize": "none",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="keywords"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Keywords
+      </label>
+      <textarea
+        id="keywords"
+        onChange={[Function]}
+        placeholder="Keywords"
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": "0",
+            "resize": "none",
+          }
+        }
+        type="text"
+        value="keywords"
+      />
+      <textarea
+        aria-hidden={true}
+        readOnly={true}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "left": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "overflow": "hidden",
+            "padding": "0",
+            "position": "absolute",
+            "resize": "none",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

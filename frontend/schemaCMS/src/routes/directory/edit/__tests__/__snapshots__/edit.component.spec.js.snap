@@ -43,7 +43,67 @@ exports[`Edit: Component should render correctly 1`] = `
       noData={false}
       noDataContent={null}
     >
-      <Component />
+      <TextInput
+        checkOnlyErrors={false}
+        directory={
+          Object {
+            "name": "name",
+            "project": "1",
+          }
+        }
+        errors={Object {}}
+        fetchDirectory={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "directoryId": "1",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": Promise {},
+              },
+            ],
+          }
+        }
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        isEdit={true}
+        isValid={true}
+        label="Directory Name"
+        match={
+          Object {
+            "params": Object {
+              "directoryId": "1",
+            },
+          }
+        }
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        touched={Object {}}
+        value="name"
+        values={
+          Object {
+            "name": "name",
+          }
+        }
+      />
     </LoadingWrapper>
     <NavigationContainer
       hideOnDesktop={false}
@@ -120,7 +180,51 @@ exports[`Edit: Component should render correctly with loader 1`] = `
       noData={false}
       noDataContent={null}
     >
-      <Component />
+      <TextInput
+        checkOnlyErrors={false}
+        directory={
+          Object {
+            "name": "name",
+            "project": "1",
+          }
+        }
+        errors={Object {}}
+        fetchDirectory={[Function]}
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        isEdit={true}
+        isValid={true}
+        label="Directory Name"
+        match={
+          Object {
+            "params": Object {
+              "directoryId": "1",
+            },
+          }
+        }
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        touched={Object {}}
+        value="name"
+        values={
+          Object {
+            "name": "name",
+          }
+        }
+      />
     </LoadingWrapper>
     <NavigationContainer
       hideOnDesktop={false}

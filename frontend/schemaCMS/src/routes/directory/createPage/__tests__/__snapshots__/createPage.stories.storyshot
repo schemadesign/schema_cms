@@ -367,7 +367,10 @@ Array [
 
 @media (min-width:1040px) {
   .c3 {
-    display: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -575,7 +578,7 @@ Array [
           <button
             className="c4"
             disabled={false}
-            id="backBtn"
+            id="cancelBtn"
             onClick={[Function]}
             style={
               Object {
@@ -596,7 +599,7 @@ Array [
             }
           >
             <span>
-              Back
+              Cancel
             </span>
           </button>
           <button

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageForm: Component should render correctly 1`] = `
+<Fragment>
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={false}
+    label="Page Title"
+    name="title"
+    onChange={[Function]}
+    placeholder="Title"
+    touched={Object {}}
+    value="title"
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={false}
+    label="Description"
+    multiline={true}
+    name="description"
+    onChange={[Function]}
+    placeholder="Description"
+    touched={Object {}}
+    value="description"
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={false}
+    label="Keywords"
+    multiline={true}
+    name="keywords"
+    onChange={[Function]}
+    placeholder="Keywords"
+    touched={Object {}}
+    value="keywords"
+  />
+</Fragment>
+`;

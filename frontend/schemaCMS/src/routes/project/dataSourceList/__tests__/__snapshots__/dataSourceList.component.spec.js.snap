@@ -28,6 +28,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
     title="Data Sources"
   >
     <PlusButton
+      hideOnDesktop={false}
       id="createDataSourceDesktopBtn"
       onClick={[Function]}
     />
@@ -150,6 +151,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      hideOnDesktop={false}
       id="createDataSourceBtn"
       onClick={[Function]}
     />
@@ -185,6 +187,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
     title="Data Sources"
   >
     <PlusButton
+      hideOnDesktop={false}
       id="createDataSourceDesktopBtn"
       onClick={[Function]}
     />
@@ -407,6 +410,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      hideOnDesktop={false}
       id="createDataSourceBtn"
       onClick={[Function]}
     />
@@ -442,6 +446,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
     title="Data Sources"
   >
     <PlusButton
+      hideOnDesktop={false}
       id="createDataSourceDesktopBtn"
       onClick={[Function]}
     />
@@ -463,6 +468,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
       onClick={[Function]}
     />
     <PlusButton
+      hideOnDesktop={false}
       id="createDataSourceBtn"
       onClick={[Function]}
     />

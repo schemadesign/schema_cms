@@ -42,6 +42,7 @@ exports[`PageBlockList: Component should render correctly 1`] = `
   <styled.div>
     <styled.div>
       <PlusButton
+        hideOnDesktop={false}
         onClick={[Function]}
       />
     </styled.div>
@@ -58,29 +59,22 @@ exports[`PageBlockList: Component should render correctly 1`] = `
     </styled.div>
     <styled.div />
   </styled.div>
-  <LoadingWrapper
-    error={null}
-    loading={false}
-    noData={false}
-    noDataContent={null}
-  >
-    <Formik
-      enableReinitialize={false}
-      initialValues={
-        Object {
-          "pageBlocks": Array [
-            "1",
-          ],
-        }
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Object {
+        "pageBlocks": Array [
+          "1",
+        ],
       }
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
-    >
-      <Component />
-    </Formik>
-  </LoadingWrapper>
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Component />
+  </Formik>
 </styled.div>
 `;
 
@@ -133,41 +127,48 @@ exports[`PageBlockList: Component should render correctly form 1`] = `
     }
   }
 >
-  <Component
-    id="blocksCheckboxGroup"
-    name="pageBlocks"
-    onChange={[Function]}
-    value={
-      Array [
-        "1",
-      ]
-    }
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
   >
     <Component
-      id="checkbox-0"
-      isEdit={true}
-      key="0"
-      value="1"
+      id="blocksCheckboxGroup"
+      name="pageBlocks"
+      onChange={[Function]}
+      value={
+        Array [
+          "1",
+        ]
+      }
     >
-      <Styled(Link)
-        to="/block/1"
+      <Component
+        id="checkbox-0"
+        isEdit={true}
+        key="0"
+        value="1"
       >
-        block 1
-      </Styled(Link)>
-    </Component>
-    <Component
-      id="checkbox-1"
-      isEdit={true}
-      key="1"
-      value="2"
-    >
-      <Styled(Link)
-        to="/block/2"
+        <Styled(Link)
+          to="/block/1"
+        >
+          block 1
+        </Styled(Link)>
+      </Component>
+      <Component
+        id="checkbox-1"
+        isEdit={true}
+        key="1"
+        value="2"
       >
-        block 2
-      </Styled(Link)>
+        <Styled(Link)
+          to="/block/2"
+        >
+          block 2
+        </Styled(Link)>
+      </Component>
     </Component>
-  </Component>
+  </LoadingWrapper>
   <NavigationContainer
     hideOnDesktop={false}
     right={false}
@@ -234,44 +235,27 @@ exports[`PageBlockList: Component should render correctly with loader 1`] = `
   <styled.div>
     <styled.div>
       <PlusButton
+        hideOnDesktop={false}
         onClick={[Function]}
-      />
-    </styled.div>
-    <styled.div>
-      <FormattedMessage
-        defaultMessage="{length} {length, plural,one {Block} other {Blocks}}"
-        id="page.blockList.blocks"
-        values={
-          Object {
-            "length": 2,
-          }
-        }
       />
     </styled.div>
     <styled.div />
   </styled.div>
-  <LoadingWrapper
-    error={null}
-    loading={true}
-    noData={false}
-    noDataContent={null}
-  >
-    <Formik
-      enableReinitialize={false}
-      initialValues={
-        Object {
-          "pageBlocks": Array [
-            "1",
-          ],
-        }
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Object {
+        "pageBlocks": Array [
+          "1",
+        ],
       }
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
-    >
-      <Component />
-    </Formik>
-  </LoadingWrapper>
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Component />
+  </Formik>
 </styled.div>
 `;

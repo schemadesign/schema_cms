@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|UserList list 1`] = `
-.c15 {
+.c16 {
   height: 155px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Project|UserList list 1`] = `
   width: 100%;
 }
 
-.c16 {
+.c17 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,12 +32,12 @@ exports[`Storyshots Project|UserList list 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c18 {
+.c19 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c14 {
+.c15 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -141,20 +141,26 @@ exports[`Storyshots Project|UserList list 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c17 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     width: 240px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    display: block;
   }
 }
 
@@ -518,93 +524,12 @@ exports[`Storyshots Project|UserList list 1`] = `
     <div
       className=""
     >
-      <button
-        disabled={false}
-        id="addUserDesktopBtn"
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#FFF",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#000",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": "60px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            "width": "60px",
-          }
-        }
-      >
-        <svg
-          style={
-            Object {
-              "fill": "#000",
-              "height": "60px",
-              "width": "60px",
-            }
-          }
-          viewBox="0 0 60 60"
-        >
-          <path
-            d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div
-    className="c14"
-  >
-    <span>
-      Loading...
-    </span>
-  </div>
-  <div
-    className="c15"
-  >
-    <div
-      className="c16"
-    >
       <div
-        className="c17"
+        className="c14"
       >
         <button
-          className="c18"
           disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <span>
-            Back
-          </span>
-        </button>
-        <button
-          disabled={false}
-          id="addUserBtn"
+          id="addUserDesktopBtn"
           onClick={[Function]}
           style={
             Object {
@@ -642,6 +567,95 @@ exports[`Storyshots Project|UserList list 1`] = `
             />
           </svg>
         </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c15"
+  >
+    <span>
+      Loading...
+    </span>
+  </div>
+  <div
+    className="c16"
+  >
+    <div
+      className="c17"
+    >
+      <div
+        className="c18"
+      >
+        <button
+          className="c19"
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+        >
+          <span>
+            Back
+          </span>
+        </button>
+        <div
+          className="c14"
+        >
+          <button
+            disabled={false}
+            id="addUserBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": "60px",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -649,11 +663,11 @@ exports[`Storyshots Project|UserList list 1`] = `
 `;
 
 exports[`Storyshots Project|UserList list with users 1`] = `
-.c15 {
+.c16 {
   height: 155px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -672,7 +686,7 @@ exports[`Storyshots Project|UserList list with users 1`] = `
   width: 100%;
 }
 
-.c16 {
+.c17 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -680,12 +694,12 @@ exports[`Storyshots Project|UserList list with users 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c18 {
+.c19 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c14 {
+.c15 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -789,20 +803,26 @@ exports[`Storyshots Project|UserList list with users 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c17 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     width: 240px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    display: block;
   }
 }
 
@@ -1166,93 +1186,12 @@ exports[`Storyshots Project|UserList list with users 1`] = `
     <div
       className=""
     >
-      <button
-        disabled={false}
-        id="addUserDesktopBtn"
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#FFF",
-            "border": "none",
-            "borderRadius": "48px",
-            "color": "#000",
-            "cursor": "pointer",
-            "display": "inline-block",
-            "fill": "#FFF",
-            "fontSize": "18px",
-            "height": "60px",
-            "margin": "0",
-            "minHeight": "48px",
-            "outline": "none",
-            "padding": "0",
-            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            "width": "60px",
-          }
-        }
-      >
-        <svg
-          style={
-            Object {
-              "fill": "#000",
-              "height": "60px",
-              "width": "60px",
-            }
-          }
-          viewBox="0 0 60 60"
-        >
-          <path
-            d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div
-    className="c14"
-  >
-    <span>
-      Loading...
-    </span>
-  </div>
-  <div
-    className="c15"
-  >
-    <div
-      className="c16"
-    >
       <div
-        className="c17"
+        className="c14"
       >
         <button
-          className="c18"
           disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <span>
-            Back
-          </span>
-        </button>
-        <button
-          disabled={false}
-          id="addUserBtn"
+          id="addUserDesktopBtn"
           onClick={[Function]}
           style={
             Object {
@@ -1290,6 +1229,95 @@ exports[`Storyshots Project|UserList list with users 1`] = `
             />
           </svg>
         </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c15"
+  >
+    <span>
+      Loading...
+    </span>
+  </div>
+  <div
+    className="c16"
+  >
+    <div
+      className="c17"
+    >
+      <div
+        className="c18"
+      >
+        <button
+          className="c19"
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+        >
+          <span>
+            Back
+          </span>
+        </button>
+        <div
+          className="c14"
+        >
+          <button
+            disabled={false}
+            id="addUserBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#000",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "height": "60px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": "60px",
+              }
+            }
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#000",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>

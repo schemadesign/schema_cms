@@ -30,6 +30,7 @@ exports[`List: Component should render correctly 1`] = `
     title="Projects"
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectDesktopBtn"
       onClick={[Function]}
     />
@@ -158,6 +159,7 @@ exports[`List: Component should render correctly 1`] = `
     right={true}
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectBtn"
       onClick={[Function]}
     />
@@ -195,6 +197,7 @@ exports[`List: Component should render correctly with loading 1`] = `
     title="Projects"
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectDesktopBtn"
       onClick={[Function]}
     />
@@ -323,6 +326,7 @@ exports[`List: Component should render correctly with loading 1`] = `
     right={true}
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectBtn"
       onClick={[Function]}
     />
@@ -360,6 +364,7 @@ exports[`List: Component should render without data 1`] = `
     title="Projects"
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectDesktopBtn"
       onClick={[Function]}
     />
@@ -377,6 +382,7 @@ exports[`List: Component should render without data 1`] = `
     right={true}
   >
     <PlusButton
+      hideOnDesktop={false}
       id="addProjectBtn"
       onClick={[Function]}
     />

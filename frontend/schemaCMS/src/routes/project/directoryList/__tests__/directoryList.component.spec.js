@@ -1,12 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Typography } from 'schemaUI';
 
 import { DirectoryList } from '../directoryList.component';
 import { defaultProps } from '../directoryList.stories';
 import { BackArrowButton, PlusButton } from '../../../../shared/components/navigation';
-
-const { H1 } = Typography;
+import { ListItemTitle } from '../../../../shared/components/listComponents/listItem.styles';
 
 describe('DirectoryList: Component', () => {
   const component = props => <DirectoryList {...defaultProps} {...props} />;
@@ -23,14 +21,6 @@ describe('DirectoryList: Component', () => {
     const wrapper = render();
     await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should go to main page', async () => {
-    jest.spyOn(defaultProps.history, 'push');
-    defaultProps.fetchDirectories = jest.fn().mockReturnValue(Promise.reject());
-    render();
-    await Promise.resolve();
-    expect(defaultProps.history.push).toBeCalledWith('/');
   });
 
   it('should fetch list', () => {
@@ -75,7 +65,7 @@ describe('DirectoryList: Component', () => {
     defaultProps.fetchDirectories = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render();
     await Promise.resolve();
-    wrapper.find(H1).simulate('click');
+    wrapper.find(ListItemTitle).simulate('click');
 
     expect(defaultProps.history.push).toBeCalledWith('/directory/1');
   });
