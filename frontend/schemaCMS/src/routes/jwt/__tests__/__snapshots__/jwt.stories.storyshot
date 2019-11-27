@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Jwt Default 1`] = `
+@media (min-width:1040px) {
+  .c0 {
+    margin-top: 70px;
+  }
+}
+
 <div
   style={
     Object {
@@ -9,8 +15,12 @@ exports[`Storyshots Jwt Default 1`] = `
     }
   }
 >
-  <div>
-    Validating...
+  <div
+    className="c0"
+  >
+    <span>
+      Validating...
+    </span>
   </div>
 </div>
 `;

@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Jwt: Component should render correctly 1`] = `
-<div>
-  Validating...
-</div>
+<styled.div>
+  <FormattedMessage
+    defaultMessage="Validating..."
+    id="jwt.validating"
+    values={Object {}}
+  />
+</styled.div>
 `;
