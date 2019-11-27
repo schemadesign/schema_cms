@@ -403,6 +403,7 @@ exports[`CreatePageBlock: Component should render correctly with code type 1`] =
         }
       }
       isEdit={false}
+      isSubmitting={false}
       label="Code Snippet"
       match={
         Object {
@@ -587,6 +588,7 @@ exports[`CreatePageBlock: Component should render correctly with embed type 1`] 
         }
       }
       isEdit={false}
+      isSubmitting={false}
       label="Embed Code"
       match={
         Object {
@@ -772,6 +774,7 @@ exports[`CreatePageBlock: Component should render correctly with image type 1`] 
           "formatMessage": [Function],
         }
       }
+      isSubmitting={false}
       label="File Name"
       match={
         Object {
@@ -948,6 +951,7 @@ exports[`CreatePageBlock: Component should render correctly with markdown type 1
         }
       }
       isEdit={false}
+      isSubmitting={false}
       label="Markdown Text"
       match={
         Object {
