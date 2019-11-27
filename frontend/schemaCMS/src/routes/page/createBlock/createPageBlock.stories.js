@@ -22,6 +22,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   handleBlur: Function.prototype,
   setFieldValue: Function.prototype,
+  isSubmitting: false,
 };
 
 storiesOf('CreatePageBlock', module)

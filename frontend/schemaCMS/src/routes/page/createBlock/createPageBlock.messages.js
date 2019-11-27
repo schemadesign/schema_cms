@@ -58,7 +58,7 @@ export default defineMessages({
     <iframe 
         width="560" 
         height="315" 
-        src="https://www.youtube.com/embed/q_vRX20Asqg"
+        src="https://www.youtube.com/embed/avideo"
         frameborder="0"
         allowfullscreen
     />

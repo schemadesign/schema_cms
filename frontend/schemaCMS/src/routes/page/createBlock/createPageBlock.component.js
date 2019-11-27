@@ -23,7 +23,6 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { Uploader } from '../../../shared/components/form/uploader';
-import { getProjectId } from '../../../shared/utils/helpers';
 
 export class CreatePageBlock extends PureComponent {
   static propTypes = {
@@ -34,6 +33,7 @@ export class CreatePageBlock extends PureComponent {
     handleChange: PropTypes.func.isRequired,
     handleBlur: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         pageId: PropTypes.string.isRequired,
@@ -58,7 +58,7 @@ export class CreatePageBlock extends PureComponent {
 
   handleBackClick = () => this.props.history.push(`/page/${this.props.match.params.pageId}`);
 
-  renderContent = (messageId, messagePlaceholderId) => (
+  renderBlock = (messageId, messagePlaceholderId) => (
     <TextInput
       value={this.props.values[BLOCK_CONTENT]}
       name={BLOCK_CONTENT}
@@ -86,15 +86,15 @@ export class CreatePageBlock extends PureComponent {
   );
 
   renderBlockContent = cond([
-    [equals(MARKDOWN_TYPE), () => this.renderContent('pageBlockFieldMarkdown', 'pageBlockFieldMarkdownPlaceholder')],
-    [equals(EMBED_TYPE), () => this.renderContent('pageBlockFieldEmbed', 'pageBlockFieldEmbedPlaceholder')],
-    [equals(CODE_TYPE), () => this.renderContent('pageBlockFieldCode', 'pageBlockFieldCodePlaceholder')],
+    [equals(MARKDOWN_TYPE), () => this.renderBlock('pageBlockFieldMarkdown', 'pageBlockFieldMarkdownPlaceholder')],
+    [equals(EMBED_TYPE), () => this.renderBlock('pageBlockFieldEmbed', 'pageBlockFieldEmbedPlaceholder')],
+    [equals(CODE_TYPE), () => this.renderBlock('pageBlockFieldCode', 'pageBlockFieldCodePlaceholder')],
     [equals(IMAGE_TYPE), this.renderImage],
     [equals(NONE), always(null)],
   ]);
 
   render() {
-    const { intl, handleSubmit, handleChange, values, ...restProps } = this.props;
+    const { intl, handleSubmit, handleChange, values, isSubmitting, ...restProps } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -126,7 +126,12 @@ export class CreatePageBlock extends PureComponent {
             <BackButton id="cancelBtn" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
-            <NextButton id="createPageBlockBtn" type="submit" disabled={!restProps.isValid}>
+            <NextButton
+              id="createPageBlockBtn"
+              loading={isSubmitting}
+              type="submit"
+              disabled={!restProps.isValid || isSubmitting}
+            >
               <FormattedMessage {...messages.createPageBlock} />
             </NextButton>
           </NavigationContainer>
