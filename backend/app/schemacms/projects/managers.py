@@ -25,8 +25,8 @@ class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
 
         subquery = (
             Page.objects.order_by()
-            .values('directory__project')
-            .filter(directory__project=models.OuterRef("pk"))
+            .values('folder__project')
+            .filter(folder__project=models.OuterRef("pk"))
             .annotate(count=models.Count("pk"))
             .values("count")
         )

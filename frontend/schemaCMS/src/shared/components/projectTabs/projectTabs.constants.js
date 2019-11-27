@@ -4,4 +4,4 @@ export const SOURCES = 'sources';
 
 export const USERS = 'users';
 
-export const DIRECTORY = 'directory';
+export const FOLDER = 'folder';

@@ -29,6 +29,8 @@ export class Edit extends PureComponent {
     intl: PropTypes.shape({
       formatMessage: PropTypes.func.isRequired,
     }),
+    isValid: PropTypes.bool.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
   };
 
   state = {
@@ -47,13 +49,13 @@ export class Edit extends PureComponent {
     }
   }
 
-  getDirectoryId = () => path(['page', 'directory', 'id'], this.props);
+  getFolderId = () => path(['page', 'folder', 'id'], this.props);
 
-  handleBackClick = () => this.props.history.push(`/directory/${this.getDirectoryId()}`);
+  handleBackClick = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
   render() {
     const { loading, error } = this.state;
-    const { handleSubmit, ...restProps } = this.props;
+    const { handleSubmit, isValid, isSubmitting } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -68,7 +70,7 @@ export class Edit extends PureComponent {
               <BackButton id="backBtn" onClick={this.handleBackClick}>
                 <FormattedMessage {...messages.back} />
               </BackButton>
-              <NextButton id="savePageBtn" type="submit" disabled={!restProps.isValid}>
+              <NextButton id="savePageBtn" type="submit" loading={isSubmitting} disabled={!isValid || isSubmitting}>
                 <FormattedMessage {...messages.save} />
               </NextButton>
             </NavigationContainer>

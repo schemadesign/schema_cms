@@ -23,7 +23,7 @@ class ProjectsConfig(AppConfig):
 
         db_signals.post_save.connect(
             receivers.update_meta_file,
-            sender=models.Directory,
+            sender=models.Folder,
             dispatch_uid="projects.receivers.update_meta_file",
         )
 

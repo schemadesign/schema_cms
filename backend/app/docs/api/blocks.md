@@ -20,7 +20,7 @@ Content-Type application/json
     "page": {
         "id": 1,
         "title": "New Page",
-        "directory": 1
+        "folder": 1
     },
     "name": "New Snippet",
     "type": "code_snippet",
@@ -28,7 +28,7 @@ Content-Type application/json
     "image": null,
     "is_active": true
 }
-`````
+```
 
 ## Update block data
 
@@ -41,7 +41,7 @@ Parameters:
 Name        | Type    | Required | Description
 ------------|---------|----------|------------
 name        | string  | no       | Block name
-type        | string  | no       | Block type
+type        | string  | no       | Block type ([available types](#enums)).
 content     | string  | No       | Block content
 image       | file    | No       | Image file
 is_active   | bool    | No       | Is block active?
@@ -65,3 +65,6 @@ Content-Type application/json
     "is_active": true
 }
 ```
+
+## Enums
+Block types: `youtube_embed`, `code_snippet`, `markdown_text`, `image_uploaded`

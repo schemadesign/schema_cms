@@ -18,7 +18,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     queryset = models.Project.objects.none()
     serializer_class_mapping = {
         "datasources": serializers.DataSourceSerializer,
-        "directories": serializers.DirectorySerializer,
+        "folders": serializers.FolderSerializer,
         "users": serializers.ProjectEditorSerializer,
     }
 
@@ -28,7 +28,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .annotate_data_source_count()
             .annotate_pages_count()
             .select_related("owner")
-            .prefetch_related("editors", "directories")
+            .prefetch_related("editors", "folders")
             .order_by("-created")
         )
 
@@ -101,14 +101,14 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
     @decorators.action(
         detail=True,
         permission_classes=[permissions.IsAuthenticated],
-        url_path="directories",
+        url_path="folders",
         methods=["get", "post"],
     )
-    def directories(self, request, **kwargs):
+    def folders(self, request, **kwargs):
         project = self.get_object()
 
         if request.method == "GET":
-            queryset = project.directories.select_related("created_by").all()
+            queryset = project.folders.select_related("created_by").all()
             serializer = self.get_serializer(queryset, many=True)
             return response.Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -354,7 +354,7 @@ class FilterDetailViewSet(
         return models.Filter.objects.all().select_related("datasource")
 
 
-class DirectoryViewSet(
+class FolderViewSet(
     utils_serializers.ActionSerializerViewSetMixin,
     mixins.ListModelMixin,
     mixins.RetrieveModelMixin,
@@ -362,28 +362,28 @@ class DirectoryViewSet(
     mixins.CreateModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = models.Directory.objects.select_related("project", "created_by").all()
-    serializer_class = serializers.DirectorySerializer
+    queryset = models.Folder.objects.select_related("project", "created_by").all()
+    serializer_class = serializers.FolderSerializer
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
-        "partial_update": serializers.DirectoryDetailSerializer,
-        "update": serializers.DirectoryDetailSerializer,
+        "partial_update": serializers.FolderDetailSerializer,
+        "update": serializers.FolderDetailSerializer,
         "pages": serializers.PageSerializer,
     }
 
     @decorators.action(detail=True, url_path='pages', methods=["GET", "POST"])
     def pages(self, request, pk=None, **kwargs):
-        directory = self.get_object()
+        folder = self.get_object()
 
         if request.method == "GET":
-            queryset = directory.pages.select_related("created_by").all()
+            queryset = folder.pages.select_related("created_by").all()
             serializer = self.get_serializer(instance=queryset, many=True)
             return response.Response(serializer.data, status=status.HTTP_200_OK)
 
         else:
-            request.data["directory"] = directory.id
+            request.data["folder"] = folder.id
 
-            serializer = self.get_serializer(data=request.data, context=directory)
+            serializer = self.get_serializer(data=request.data, context=folder)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 
@@ -396,7 +396,7 @@ class PageViewSet(
     mixins.UpdateModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = models.Page.objects.prefetch_related("blocks").select_related("directory", "created_by").all()
+    queryset = models.Page.objects.prefetch_related("blocks").select_related("folder", "created_by").all()
     serializer_class = serializers.PageSerializer
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {

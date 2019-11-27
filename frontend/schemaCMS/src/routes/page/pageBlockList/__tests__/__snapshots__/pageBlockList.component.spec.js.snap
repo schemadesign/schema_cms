@@ -60,10 +60,10 @@ exports[`PageBlockList: Component should render correctly 1`] = `
     <styled.div />
   </styled.div>
   <Formik
-    enableReinitialize={false}
+    enableReinitialize={true}
     initialValues={
       Object {
-        "pageBlocks": Array [
+        "blocks": Array [
           "1",
         ],
       }
@@ -89,7 +89,7 @@ exports[`PageBlockList: Component should render correctly form 1`] = `
       "handleReset": [Function],
       "handleSubmit": [Function],
       "initialValues": Object {
-        "pageBlocks": Array [
+        "blocks": Array [
           "1",
         ],
       },
@@ -120,7 +120,7 @@ exports[`PageBlockList: Component should render correctly form 1`] = `
       "validateOnChange": true,
       "validationSchema": undefined,
       "values": Object {
-        "pageBlocks": Array [
+        "blocks": Array [
           "1",
         ],
       },
@@ -242,10 +242,10 @@ exports[`PageBlockList: Component should render correctly with loader 1`] = `
     <styled.div />
   </styled.div>
   <Formik
-    enableReinitialize={false}
+    enableReinitialize={true}
     initialValues={
       Object {
-        "pageBlocks": Array [
+        "blocks": Array [
           "1",
         ],
       }

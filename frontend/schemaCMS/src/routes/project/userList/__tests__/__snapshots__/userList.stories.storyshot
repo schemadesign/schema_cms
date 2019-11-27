@@ -470,7 +470,7 @@ exports[`Storyshots Project|UserList list 1`] = `
       >
         <a
           className="c8"
-          href="/project/1/directory"
+          href="/project/1/folder"
           onClick={[Function]}
         >
           <span>
@@ -1132,7 +1132,7 @@ exports[`Storyshots Project|UserList list with users 1`] = `
       >
         <a
           className="c8"
-          href="/project/1/directory"
+          href="/project/1/folder"
           onClick={[Function]}
         >
           <span>

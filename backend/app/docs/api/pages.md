@@ -17,7 +17,7 @@ Content-Type application/json
 200 OK
 {
     "id": 3,
-    "directory": {
+    "folder": {
         "id": 2,
         "name": "About",
         "project": 1
@@ -62,7 +62,7 @@ Content-Type application/json
 200 OK
 {
     "id": 3,
-    "directory": {
+    "folder": {
         "id": 2,
         "name": "About",
         "project": 1

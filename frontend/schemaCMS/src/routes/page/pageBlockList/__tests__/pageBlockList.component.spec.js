@@ -68,7 +68,7 @@ describe('PageBlockList: Component', () => {
       .find(BackArrowButton)
       .simulate('click');
 
-    expect(defaultProps.history.push).toBeCalledWith('/directory/1');
+    expect(defaultProps.history.push).toBeCalledWith('/folder/1');
   });
 
   it('should go to create block', () => {
@@ -103,12 +103,12 @@ describe('PageBlockList: Component', () => {
       fetchPageBlocks: jest.fn().mockReturnValue(Promise.resolve()),
     };
     const values = {
-      pageBlocks: ['1', '2'],
+      blocks: ['1', '2'],
     };
     const wrapper = render(props);
     await Promise.resolve();
     await Promise.resolve();
-    wrapper.find(Formik).prop('onSubmit')(values);
+    await wrapper.find(Formik).prop('onSubmit')(values, { setSubmitting: Function.prototype });
 
     expect(defaultProps.setPageBlocks).toBeCalledWith({ active: ['1', '2'], inactive: [], pageId: '1' });
   });

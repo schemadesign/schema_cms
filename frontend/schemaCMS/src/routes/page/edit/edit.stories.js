@@ -5,7 +5,7 @@ import { Edit } from './edit.component';
 import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
-  page: { directory: { id: '1' } },
+  page: { folder: { id: '1' } },
   values: {
     title: 'title',
     description: 'description',
@@ -23,6 +23,8 @@ export const defaultProps = {
     push: Function.prototype,
   },
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+  isValid: true,
+  isSubmitting: false,
 };
 
 storiesOf('Edit', module)

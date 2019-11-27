@@ -8,6 +8,7 @@ import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
 import { Edit } from './edit.component';
+import messages from './edit.messages';
 import { PageRoutines, selectPage } from '../../../modules/page';
 import { PAGE_FORM, INITIAL_VALUES, PAGE_SCHEMA } from '../../../modules/page/page.constants';
 import { errorMessageParser } from '../../../shared/utils/helpers';
@@ -42,9 +43,9 @@ export default compose(
       try {
         setSubmitting(true);
         const pageId = path(['match', 'params', 'pageId'], props);
-        const directoryId = path(['page', 'directory', 'id'], props);
+        const folderId = path(['page', 'folder', 'id'], props);
 
-        await props.updatePage({ pageId, directoryId, ...data });
+        await props.updatePage({ pageId, folderId, ...data });
       } catch (errors) {
         const { formatMessage } = props.intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });

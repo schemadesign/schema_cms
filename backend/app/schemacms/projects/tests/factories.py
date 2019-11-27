@@ -98,9 +98,9 @@ class FilterFactory(factory.django.DjangoModelFactory):
     name = factory.Faker("text", max_nb_chars=25)
 
 
-class DirectoryFactory(factory.django.DjangoModelFactory):
+class FolderFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = "projects.Directory"
+        model = "projects.Folder"
 
     project = factory.SubFactory(ProjectFactory)
     name = factory.Faker("text", max_nb_chars=25)
@@ -111,7 +111,7 @@ class PageFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = "projects.Page"
 
-    directory = factory.SubFactory(DirectoryFactory)
+    folder = factory.SubFactory(FolderFactory)
     title = factory.Faker("text", max_nb_chars=25)
     created_by = factory.SubFactory(UserFactory)
 

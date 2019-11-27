@@ -483,7 +483,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
         >
           <a
             className="c9"
-            href="/project/1/directory"
+            href="/project/1/folder"
             onClick={[Function]}
           >
             <span>
@@ -1168,7 +1168,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
         >
           <a
             className="c9"
-            href="/project/1/directory"
+            href="/project/1/folder"
             onClick={[Function]}
           >
             <span>
@@ -1853,7 +1853,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
         >
           <a
             className="c9"
-            href="/project/1/directory"
+            href="/project/1/folder"
             onClick={[Function]}
           >
             <span>

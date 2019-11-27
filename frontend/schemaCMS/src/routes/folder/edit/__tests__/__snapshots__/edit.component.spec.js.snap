@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit: Component should render correctly 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="folder.edit.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Folders"
+        id="folder.edit.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="folder.edit.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Folders"
+        id="folder.edit.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <LoadingWrapper
+      error={null}
+      loading={false}
+      noData={false}
+      noDataContent={null}
+    >
+      <TextInput
+        checkOnlyErrors={false}
+        errors={Object {}}
+        fetchFolder={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "folderId": "1",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": Promise {},
+              },
+            ],
+          }
+        }
+        folder={
+          Object {
+            "name": "name",
+            "project": "1",
+          }
+        }
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        isEdit={true}
+        isSubmitting={false}
+        isValid={true}
+        label="Folder Name"
+        match={
+          Object {
+            "params": Object {
+              "folderId": "1",
+            },
+          }
+        }
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        touched={Object {}}
+        value="name"
+        values={
+          Object {
+            "name": "name",
+          }
+        }
+      />
+    </LoadingWrapper>
+    <NavigationContainer
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        id="backBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Back"
+          id="folder.edit.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="editFolderBtn"
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Save"
+          id="folder.edit.createFolder"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
+</Fragment>
+`;
+
+exports[`Edit: Component should render correctly with loader 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="folder.edit.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Folders"
+        id="folder.edit.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="folder.edit.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Folders"
+        id="folder.edit.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <LoadingWrapper
+      error={null}
+      loading={true}
+      noData={false}
+      noDataContent={null}
+    >
+      <TextInput
+        checkOnlyErrors={false}
+        errors={Object {}}
+        fetchFolder={[Function]}
+        folder={
+          Object {
+            "name": "name",
+            "project": "1",
+          }
+        }
+        fullWidth={true}
+        handleBlur={[Function]}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        isEdit={true}
+        isSubmitting={false}
+        isValid={true}
+        label="Folder Name"
+        match={
+          Object {
+            "params": Object {
+              "folderId": "1",
+            },
+          }
+        }
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        touched={Object {}}
+        value="name"
+        values={
+          Object {
+            "name": "name",
+          }
+        }
+      />
+    </LoadingWrapper>
+    <NavigationContainer
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        id="backBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Back"
+          id="folder.edit.cancel"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={false}
+        id="editFolderBtn"
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Save"
+          id="folder.edit.createFolder"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
+</Fragment>
+`;

@@ -18,7 +18,7 @@ export const defaultProps = {
     },
   ],
   page: {
-    directory: {
+    folder: {
       id: '1',
     },
   },

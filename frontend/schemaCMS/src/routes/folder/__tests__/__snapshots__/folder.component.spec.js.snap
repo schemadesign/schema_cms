@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Folder: Component should render correctly 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="path/:folderId"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="path/:folderId/page"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="path/:folderId/edit"
+  />
+</Switch>
+`;

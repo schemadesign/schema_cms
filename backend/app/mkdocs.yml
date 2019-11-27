@@ -15,6 +15,6 @@ nav:
     - Scripts: 'api/scripts.md'
     - Jobs: 'api/jobs.md'
     - Filters: 'api/filters.md'
-    - Directories: 'api/directories.md'
+    - Folders: 'api/folders.md'
     - Pages: 'api/pages.md'
     - Blocks: 'api/blocks.md'
