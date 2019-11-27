@@ -1,12 +1,59 @@
 import React, { PureComponent } from 'react';
+import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
-import { Container } from './pageBlock.styles';
+import { Container, Form } from './pageBlock.styles';
+import messages from './pageBlock.messages';
+import { TopHeader } from '../../shared/components/topHeader';
+import { ContextHeader } from '../../shared/components/contextHeader';
+import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
+import { PageBlockForm } from '../../shared/components/pageBlockForm';
 
 export class PageBlock extends PureComponent {
-  static propTypes = {};
+  static propTypes = {
+    intl: PropTypes.object.isRequired,
+    values: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handleBlur: PropTypes.func.isRequired,
+    setFieldValue: PropTypes.func.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        pageId: PropTypes.string.isRequired,
+      }),
+    }),
+  };
+
+  handleBackClick = () => this.props.history.push(`/page/${this.props.match.params.pageId}`);
 
   render() {
-    return <Container>PageBlock component</Container>;
+    const { handleSubmit, isSubmitting, ...restProps } = this.props;
+    const headerTitle = <FormattedMessage {...messages.title} />;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+
+    return (
+      <Container>
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
+        <Form onSubmit={handleSubmit}>
+          <PageBlockForm {...this.props} />
+          <NavigationContainer>
+            <BackButton id="cancelBtn" onClick={this.handleBackClick}>
+              <FormattedMessage {...messages.back} />
+            </BackButton>
+            <NextButton
+              id="editPageBlockBtn"
+              loading={isSubmitting}
+              type="submit"
+              disabled={!restProps.isValid || isSubmitting}
+            >
+              <FormattedMessage {...messages.save} />
+            </NextButton>
+          </NavigationContainer>
+        </Form>
+      </Container>
+    );
   }
 }

@@ -20,6 +20,7 @@ import { Preview as JobPreview } from './jobDetail/preview';
 import { NotAuthorized } from './notAuthorized';
 import { Folder } from './folder';
 import { Page } from './page';
+import { PageBlock } from './pageBlock';
 
 export const ROUTES = {
   HOME: '/',
@@ -31,6 +32,7 @@ export const ROUTES = {
   DATA_SOURCE: '/datasource',
   FOLDER: '/folder',
   PAGE: '/page',
+  BLOCK: '/block',
   DATA_WRANGLING_SCRIPTS: '/script',
   SETTINGS: '/settings',
   USER: '/user',
@@ -77,6 +79,8 @@ export default class RootContainer extends Component {
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
             <Route exact path="/auth/confirm/" component={JWT} />
+
+            <Route exact path={`${ROUTES.BLOCK}/:blockId`} component={PageBlock} />
 
             <Route
               exact
