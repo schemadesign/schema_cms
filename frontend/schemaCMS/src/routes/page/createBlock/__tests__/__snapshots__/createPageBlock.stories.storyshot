@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots CreateBlock Default 1`] = `
-.c8 {
+.c10 {
   height: 155px;
 }
 
-.c10 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
   width: 100%;
 }
 
-.c9 {
+.c11 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,7 +32,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
   background-image: linear-gradient( to top, undefined,undefined 30%, rgba(0,0,0,0) );
 }
 
-.c11 {
+.c13 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -41,7 +41,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
   width: calc(100% - 50px);
 }
 
-.c1 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -49,28 +49,36 @@ exports[`Storyshots CreateBlock Default 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c2 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c3 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 {
-  display: none;
+.c1 {
+  word-break: break-word;
 }
 
-.c5 {
-  margin-right: 20px;
+.c2 {
+  word-break: break-word;
 }
 
 .c6 {
+  display: none;
+}
+
+.c7 {
+  margin-right: 20px;
+}
+
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -82,18 +90,18 @@ exports[`Storyshots CreateBlock Default 1`] = `
   position: relative;
 }
 
-.c6 label {
+.c8 label {
   margin-bottom: 1px;
 }
 
-.c7 {
+.c9 {
   position: absolute;
   right: 0;
   top: 5px;
 }
 
 @media (min-width:1040px) {
-  .c10 {
+  .c12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -102,13 +110,13 @@ exports[`Storyshots CreateBlock Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c11 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c13 {
     width: 240px;
   }
 }
@@ -120,7 +128,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c4 {
+  .c6 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -161,6 +169,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
           className=""
         >
           <h2
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -176,6 +185,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
             </span>
           </h2>
           <h1
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -263,6 +273,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
           className=""
         >
           <h2
+            className="c1"
             id="headerTitle"
             style={
               Object {
@@ -278,6 +289,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
             </span>
           </h2>
           <h1
+            className="c2"
             id="headerSubtitle"
             style={
               Object {
@@ -297,13 +309,13 @@ exports[`Storyshots CreateBlock Default 1`] = `
         </div>
       </div>
       <div
-        className="c1"
+        className="c3"
       >
         <ul
-          className="c2"
+          className="c4"
         />
         <ul
-          className="c3"
+          className="c5"
         />
       </div>
       <button
@@ -350,10 +362,10 @@ exports[`Storyshots CreateBlock Default 1`] = `
     </div>
   </div>
   <div
-    className="c4"
+    className="c6"
   >
     <div
-      className="c5"
+      className="c7"
     >
       <h2
         className=""
@@ -459,7 +471,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
       </div>
     </div>
     <div
-      className="c6"
+      className="c8"
     >
       <label
         id="fieldProjectStatusLabel"
@@ -485,7 +497,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
         value="none"
       />
       <div
-        className="c7"
+        className="c9"
       >
         <svg
           style={
@@ -638,16 +650,16 @@ exports[`Storyshots CreateBlock Default 1`] = `
       </div>
     </div>
     <div
-      className="c8"
+      className="c10"
     >
       <div
-        className="c9"
+        className="c11"
       >
         <div
-          className="c10"
+          className="c12"
         >
           <button
-            className="c11"
+            className="c13"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
@@ -674,7 +686,7 @@ exports[`Storyshots CreateBlock Default 1`] = `
             </span>
           </button>
           <button
-            className="c11"
+            className="c13"
             disabled={true}
             id="createPageBlockBtn"
             style={
