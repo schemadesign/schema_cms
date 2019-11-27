@@ -1,15 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Icons, Button } from 'schemaUI';
+import { Button, Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
+import { always, cond, propEq, T, prop } from 'ramda';
 
 import {
+  ButtonContainer,
   buttonIconStyles,
   Container,
   Navigation,
-  NavigationContent,
   NavigationButton,
-  ButtonContainer,
+  NavigationContent,
 } from './navigation.styles';
 import messages from './navigation.messages';
 
@@ -98,14 +99,21 @@ export class NextButton extends PureComponent {
 
   static defaultProps = {
     loading: false,
+    children: null,
   };
 
+  renderContent = cond([
+    [propEq('loading', true), always(<FormattedMessage {...messages.loading} />)],
+    [propEq('children', null), always(<FormattedMessage {...messages.next} />)],
+    [T, prop('children')],
+  ]);
+
   render() {
-    const { loading, ...restProps } = this.props;
+    const { loading, children, ...restProps } = this.props;
 
     return (
       <NavigationButton inverse {...restProps}>
-        {this.props.children || <FormattedMessage {...messages.next} values={{ loading }} />}
+        {this.renderContent({ loading, children })}
       </NavigationButton>
     );
   }

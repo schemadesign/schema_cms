@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'page.edit.back',
     defaultMessage: 'Back',
   },
+  titlePageNameUniqueError: {
+    id: 'page.edit.titlePageNameUniqueError',
+    defaultMessage: 'Page with this name already exist in folder.',
+  },
 });

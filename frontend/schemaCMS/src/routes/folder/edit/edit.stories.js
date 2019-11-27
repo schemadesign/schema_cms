@@ -15,6 +15,7 @@ export const defaultProps = {
     project: '1',
   },
   isValid: true,
+  isSubmitting: false,
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
   handleBlur: Function.prototype,

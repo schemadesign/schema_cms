@@ -24,12 +24,14 @@ export class CreateFolder extends PureComponent {
         projectId: PropTypes.string.isRequired,
       }),
     }),
+    isValid: PropTypes.bool.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
   };
 
   handleBackClick = () => this.props.history.push(`/project/${getProjectId(this.props)}/folder`);
 
   render() {
-    const { intl, values, handleSubmit, handleChange, ...restProps } = this.props;
+    const { intl, values, handleSubmit, handleChange, isValid, isSubmitting, ...restProps } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -52,7 +54,7 @@ export class CreateFolder extends PureComponent {
             <BackButton id="backBtn" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
-            <NextButton id="createFolderBtn" type="submit" disabled={!restProps.isValid}>
+            <NextButton id="createFolderBtn" type="submit" loading={isSubmitting} disabled={!isValid || isSubmitting}>
               <FormattedMessage {...messages.createFolder} />
             </NextButton>
           </NavigationContainer>

@@ -58,24 +58,26 @@ export class PageBlockList extends PureComponent {
   handleCreateBlock = () => this.props.history.push(`/page/${this.getPageId()}/block/create`);
   handleShowPages = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
-  handleSubmit = ({ pageBlocks }) => {
-    const pageId = this.getPageId();
-    const inactive = this.props.pageBlocks
-      .filter(({ id }) => !pageBlocks.includes(id.toString()))
-      .map(({ id }) => id.toString());
+  handleSubmit = async ({ blocks: active }, { setSubmitting }) => {
+    try {
+      const pageId = this.getPageId();
+      const inactive = this.props.pageBlocks
+        .filter(({ id }) => !active.includes(id.toString()))
+        .map(({ id }) => id.toString());
 
-    this.props.setPageBlocks({ pageId, active: pageBlocks, inactive });
+      await this.props.setPageBlocks({ pageId, active, inactive });
+    } catch (error) {
+      this.setState({ error });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
-  handleChange = ({ e, setFieldValue, pageBlocks }) => {
+  handleChange = ({ e, setFieldValue, blocks }) => {
     const { value, checked } = e.target;
-    const setPageBlocks = ifElse(
-      equals(true),
-      always(append(value, pageBlocks)),
-      always(reject(equals(value), pageBlocks))
-    );
+    const setPageBlocks = ifElse(equals(true), always(append(value, blocks)), always(reject(equals(value), blocks)));
 
-    setFieldValue('pageBlocks', setPageBlocks(checked));
+    setFieldValue('blocks', setPageBlocks(checked));
   };
 
   renderCheckbox = ({ id, name }, index) => (
@@ -85,33 +87,32 @@ export class PageBlockList extends PureComponent {
   );
 
   renderContent = () => {
-    const { pageBlocks: list } = this.props;
+    const { pageBlocks } = this.props;
     const { loading, error } = this.state;
-
     const activeBlocks = pipe(
       filter(propEq('isActive', true)),
       map(prop('id')),
       map(toString)
-    )(list);
+    )(pageBlocks);
 
     return (
-      <Formik initialValues={{ pageBlocks: activeBlocks }} onSubmit={this.handleSubmit}>
-        {({ values: { pageBlocks }, setFieldValue, submitForm, dirty }) => {
+      <Formik initialValues={{ blocks: activeBlocks }} enableReinitialize onSubmit={this.handleSubmit}>
+        {({ values: { blocks }, setFieldValue, submitForm, dirty, isSubmitting }) => {
           return (
             <Fragment>
-              <LoadingWrapper loading={loading} error={error} noData={!list.length}>
+              <LoadingWrapper loading={loading} error={error} noData={!pageBlocks.length}>
                 <CheckboxGroup
-                  onChange={e => this.handleChange({ e, setFieldValue, pageBlocks })}
-                  value={pageBlocks}
+                  onChange={e => this.handleChange({ e, setFieldValue, blocks })}
+                  value={blocks}
                   name="pageBlocks"
                   id="blocksCheckboxGroup"
                 >
-                  {list.map(this.renderCheckbox)}
+                  {pageBlocks.map(this.renderCheckbox)}
                 </CheckboxGroup>
               </LoadingWrapper>
               <NavigationContainer>
                 <BackArrowButton type="button" onClick={this.handleShowPages} />
-                <NextButton type="submit" onClick={submitForm} disabled={!dirty}>
+                <NextButton type="submit" onClick={submitForm} loading={isSubmitting} disabled={!dirty || isSubmitting}>
                   <FormattedMessage {...messages.save} />
                 </NextButton>
               </NavigationContainer>

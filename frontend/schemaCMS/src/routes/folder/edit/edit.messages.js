@@ -26,4 +26,8 @@ export default defineMessages({
     id: 'folder.edit.cancel',
     defaultMessage: 'Back',
   },
+  nameFolderNameUniqueError: {
+    id: 'project.createFolder.nameFolderNameUniqueError',
+    defaultMessage: 'Folder with this name already exist in project.',
+  },
 });

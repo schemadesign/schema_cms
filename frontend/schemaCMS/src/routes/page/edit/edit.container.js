@@ -8,6 +8,7 @@ import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
 import { Edit } from './edit.component';
+import messages from './edit.messages';
 import { PageRoutines, selectPage } from '../../../modules/page';
 import { PAGE_FORM, INITIAL_VALUES, PAGE_SCHEMA } from '../../../modules/page/page.constants';
 import { errorMessageParser } from '../../../shared/utils/helpers';

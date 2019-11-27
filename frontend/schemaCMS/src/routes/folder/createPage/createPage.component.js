@@ -18,6 +18,8 @@ export class CreatePage extends PureComponent {
     handleSubmit: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleBlur: PropTypes.func.isRequired,
+    isValid: PropTypes.bool.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
   };
 
   getFolderId = () => path(['match', 'params', 'folderId'], this.props);
@@ -25,7 +27,7 @@ export class CreatePage extends PureComponent {
   handleCancelClick = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
   render() {
-    const { handleSubmit, ...restProps } = this.props;
+    const { handleSubmit, isValid, isSubmitting } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -39,7 +41,7 @@ export class CreatePage extends PureComponent {
             <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
-            <NextButton id="createPageBtn" type="submit" disabled={!restProps.isValid}>
+            <NextButton id="createPageBtn" type="submit" loading={isSubmitting} disabled={!isValid || isSubmitting}>
               <FormattedMessage {...messages.createPage} />
             </NextButton>
           </NavigationContainer>

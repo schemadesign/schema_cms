@@ -33,7 +33,7 @@ exports[`Navigation: Component should render BackButton with custom children 1`]
   onClick={[Function]}
 >
   <FormattedMessage
-    defaultMessage="{loading, select, true {Loading...} other {Next}}"
+    defaultMessage="Next"
     id="shared.components.navigation.next"
     values={Object {}}
   />
@@ -61,13 +61,9 @@ exports[`Navigation: Component should render NextButton 1`] = `
   onClick={[Function]}
 >
   <FormattedMessage
-    defaultMessage="{loading, select, true {Loading...} other {Next}}"
+    defaultMessage="Next"
     id="shared.components.navigation.next"
-    values={
-      Object {
-        "loading": false,
-      }
-    }
+    values={Object {}}
   />
 </Styled(Component)>
 `;

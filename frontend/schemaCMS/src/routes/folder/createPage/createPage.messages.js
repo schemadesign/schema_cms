@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'folder.createPage.cancel',
     defaultMessage: 'Cancel',
   },
+  titlePageNameUniqueError: {
+    id: 'page.edit.titlePageNameUniqueError',
+    defaultMessage: 'Page with this name already exist in folder.',
+  },
 });

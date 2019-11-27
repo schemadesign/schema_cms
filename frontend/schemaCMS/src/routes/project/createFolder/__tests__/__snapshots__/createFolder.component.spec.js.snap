@@ -77,7 +77,7 @@ exports[`CreateFolder: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
-        disabled={true}
+        disabled={false}
         id="createFolderBtn"
         loading={false}
         type="submit"

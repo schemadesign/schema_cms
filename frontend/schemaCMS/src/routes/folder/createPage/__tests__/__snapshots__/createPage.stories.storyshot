@@ -604,15 +604,15 @@ Array [
           </button>
           <button
             className="c4"
-            disabled={true}
+            disabled={false}
             id="createPageBtn"
             style={
               Object {
-                "backgroundColor": "#1d1d20",
+                "backgroundColor": "#FFF",
                 "border": "none",
                 "borderRadius": "48px",
-                "color": "#71737e",
-                "cursor": "default",
+                "color": "#000",
+                "cursor": "pointer",
                 "display": "inline-block",
                 "fill": "#FFF",
                 "fontSize": "18px",

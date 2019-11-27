@@ -18,6 +18,7 @@ export class Edit extends PureComponent {
     values: PropTypes.object.isRequired,
     folder: PropTypes.object.isRequired,
     isValid: PropTypes.bool.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleBlur: PropTypes.func.isRequired,
@@ -62,7 +63,7 @@ export class Edit extends PureComponent {
   );
 
   render() {
-    const { handleSubmit, isValid } = this.props;
+    const { handleSubmit, isValid, isSubmitting } = this.props;
     const { loading } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
@@ -77,7 +78,7 @@ export class Edit extends PureComponent {
             <BackButton id="backBtn" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
-            <NextButton id="editFolderBtn" type="submit" disabled={!isValid}>
+            <NextButton id="editFolderBtn" type="submit" loading={isSubmitting} disabled={!isValid || isSubmitting}>
               <FormattedMessage {...messages.createFolder} />
             </NextButton>
           </NavigationContainer>

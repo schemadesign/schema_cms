@@ -23,6 +23,8 @@ export const defaultProps = {
     push: Function.prototype,
   },
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+  isValid: true,
+  isSubmitting: false,
 };
 
 storiesOf('Edit', module)

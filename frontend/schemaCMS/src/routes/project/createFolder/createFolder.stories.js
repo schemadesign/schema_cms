@@ -17,6 +17,8 @@ export const defaultProps = {
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
   handleBlur: Function.prototype,
+  isValid: true,
+  isSubmitting: false,
 };
 
 storiesOf('CreateFolder', module).add('Default', () => <CreateFolder {...defaultProps} />);

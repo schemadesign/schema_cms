@@ -73,6 +73,8 @@ exports[`Edit: Component should render correctly 1`] = `
             "formatMessage": [Function],
           }
         }
+        isSubmitting={false}
+        isValid={true}
         match={
           Object {
             "params": Object {
@@ -111,7 +113,7 @@ exports[`Edit: Component should render correctly 1`] = `
           />
         </BackButton>
         <NextButton
-          disabled={true}
+          disabled={false}
           id="savePageBtn"
           loading={false}
           type="submit"
@@ -185,6 +187,8 @@ exports[`Edit: Component should render correctly with loader 1`] = `
             "formatMessage": [Function],
           }
         }
+        isSubmitting={false}
+        isValid={true}
         match={
           Object {
             "params": Object {
@@ -223,7 +227,7 @@ exports[`Edit: Component should render correctly with loader 1`] = `
           />
         </BackButton>
         <NextButton
-          disabled={true}
+          disabled={false}
           id="savePageBtn"
           loading={false}
           type="submit"

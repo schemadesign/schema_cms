@@ -51,6 +51,8 @@ exports[`CreatePage: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      isSubmitting={false}
+      isValid={true}
       match={
         Object {
           "params": Object {
@@ -76,7 +78,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
-        disabled={true}
+        disabled={false}
         id="createPageBtn"
         loading={false}
         type="submit"
