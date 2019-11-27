@@ -6,6 +6,7 @@ import { reducer as blockReducer, PageBlockRoutines } from '../pageBlock.redux';
 describe('PageBlock: redux', () => {
   const state = Immutable({
     pageBlocks: [],
+    pageBlock: {},
   });
 
   describe('reducer', () => {
@@ -33,6 +34,15 @@ describe('PageBlock: redux', () => {
 
       const resultState = blockReducer(state, PageBlockRoutines.setBlocks.success(pageBlocks));
       expect(resultState.pageBlocks).to.deep.equal(pageBlocks);
+    });
+  });
+
+  describe('when PAGE_BLOCK/CREATE action is received', () => {
+    it('should set block', () => {
+      const pageBlock = { data: 'data' };
+
+      const resultState = blockReducer(state, PageBlockRoutines.create.success(pageBlock));
+      expect(resultState.pageBlock).to.deep.equal(pageBlock);
     });
   });
 });
