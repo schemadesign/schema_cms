@@ -23,6 +23,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { Uploader } from '../../../shared/components/form/uploader';
+import { getProjectId } from '../../../shared/utils/helpers';
 
 export class CreatePageBlock extends PureComponent {
   static propTypes = {
@@ -33,6 +34,11 @@ export class CreatePageBlock extends PureComponent {
     handleChange: PropTypes.func.isRequired,
     handleBlur: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        pageId: PropTypes.string.isRequired,
+      }),
+    }),
   };
 
   getStatusOptions = intl =>
@@ -49,6 +55,8 @@ export class CreatePageBlock extends PureComponent {
     this.props.setFieldValue(BLOCK_IMAGE, uploadFile);
     this.props.setFieldValue('fileName', pathOr('', ['name'], uploadFile));
   };
+
+  handleBackClick = () => this.props.history.push(`/page/${this.props.match.params.pageId}`);
 
   renderContent = (messageId, messagePlaceholderId) => (
     <TextInput
@@ -115,7 +123,7 @@ export class CreatePageBlock extends PureComponent {
           />
           {this.renderBlockContent(values[BLOCK_TYPE])}
           <NavigationContainer>
-            <BackButton id="backBtn" onClick={this.handleBackClick}>
+            <BackButton id="cancelBtn" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>
             <NextButton id="createPageBlockBtn" type="submit" disabled={!restProps.isValid}>
