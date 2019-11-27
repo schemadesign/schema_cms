@@ -37,7 +37,6 @@ export default compose(
   injectIntl,
   withFormik({
     displayName: CREATE_PROJECT_FORM,
-    isInitialValid: true,
     enableReinitialize: true,
     mapPropsToValues: ({ currentUser: { firstName, lastName } }) => ({
       ...INITIAL_VALUES,

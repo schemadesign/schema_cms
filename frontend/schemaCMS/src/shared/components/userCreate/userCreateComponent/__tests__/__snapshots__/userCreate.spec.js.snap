@@ -61,6 +61,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
         }
       }
       isEdit={false}
+      isSubmitting={false}
       isValid={true}
       label="Name"
       name="firstName"
@@ -84,6 +85,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
         }
       }
       isEdit={false}
+      isSubmitting={false}
       isValid={true}
       label="Last name"
       name="lastName"

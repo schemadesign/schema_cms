@@ -37,13 +37,13 @@ describe('Settings: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call updateMe on Formik submit', () => {
+  it('should call updateMe on Formik submit', async () => {
     jest.spyOn(defaultProps, 'updateMe');
 
     const values = { sample: 'test' };
     const wrapper = render(defaultProps);
 
-    wrapper.find(Formik).prop('onSubmit')(values);
+    await wrapper.find(Formik).prop('onSubmit')(values, { setSubmitting: Function.prototype });
     expect(defaultProps.updateMe).toBeCalledWith(values);
   });
 

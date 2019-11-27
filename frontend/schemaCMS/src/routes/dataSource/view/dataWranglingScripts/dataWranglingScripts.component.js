@@ -30,7 +30,7 @@ export class DataWranglingScripts extends PureComponent {
 
   state = {
     uploading: false,
-    errorMessageOnUploading: '',
+    errorMessage: '',
   };
 
   componentDidMount() {
@@ -46,18 +46,18 @@ export class DataWranglingScripts extends PureComponent {
     }
 
     if (file.name.length > SCRIPT_NAME_MAX_LENGTH) {
-      this.setState({ errorMessageOnUploading: 'errorTooLongName' });
+      this.setState({ errorMessage: 'errorTooLongName' });
       return;
     }
 
     try {
       const { dataSourceId } = this.props.match.params;
-      this.setState({ uploading: true, errorMessageOnUploading: '' });
+      this.setState({ uploading: true, errorMessage: '' });
 
       await this.props.uploadScript({ script: file, dataSourceId });
       this.setState({ uploading: false });
     } catch (e) {
-      this.setState({ uploading: false, errorMessageOnUploading: 'errorOnUploading' });
+      this.setState({ uploading: false, errorMessage: 'errorOnUploading' });
     }
   };
 
@@ -68,11 +68,19 @@ export class DataWranglingScripts extends PureComponent {
     setFieldValue('steps', setScripts(checked));
   };
 
-  handleSubmit = ({ steps }) => {
-    const { dataSourceId } = this.props.match.params;
-    steps = steps.map((script, index) => ({ script: parseInt(script, 10), execOrder: index }));
+  handleSubmit = async ({ steps }, { setSubmitting }) => {
+    try {
+      setSubmitting(true);
+      this.setState({ errorMessage: '' });
+      const { dataSourceId } = this.props.match.params;
+      steps = steps.map((script, index) => ({ script: parseInt(script, 10), execOrder: index }));
 
-    this.props.sendUpdatedDataWranglingScript({ steps, dataSourceId });
+      await this.props.sendUpdatedDataWranglingScript({ steps, dataSourceId });
+    } catch (error) {
+      this.setState({ errorMessage: 'errorJobFailed' });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   renderCheckboxes = ({ id, name }, index) => (
@@ -81,12 +89,12 @@ export class DataWranglingScripts extends PureComponent {
     </Checkbox>
   );
 
-  renderUploadingError = errorMessageOnUploading =>
+  renderUploadingError = errorMessage =>
     renderWhenTrue(() => (
       <Error>
-        <FormattedMessage {...messages[errorMessageOnUploading]} />
+        <FormattedMessage {...messages[errorMessage]} />
       </Error>
-    ))(!!errorMessageOnUploading.length);
+    ))(!!errorMessage.length);
 
   renderUploadButton = renderWhenTrue(
     always(
@@ -102,7 +110,7 @@ export class DataWranglingScripts extends PureComponent {
 
   render() {
     const { dataWranglingScripts, dataSource, isAdmin } = this.props;
-    const { errorMessageOnUploading } = this.state;
+    const { errorMessage } = this.state;
     const steps = pipe(
       pathOr([], ['jobs', 0, 'steps']),
       map(prop('script')),
@@ -115,15 +123,17 @@ export class DataWranglingScripts extends PureComponent {
           <Empty />
           <StepCounter>
             <FormattedMessage values={{ length: dataWranglingScripts.length }} {...messages.steps} />
-            {this.renderUploadingError(errorMessageOnUploading)}
+            {this.renderUploadingError(errorMessage)}
           </StepCounter>
           <UploadContainer>{this.renderUploadButton(isAdmin)}</UploadContainer>
         </Header>
         <Formik initialValues={{ steps }} onSubmit={this.handleSubmit}>
-          {({ values: { steps }, setFieldValue, submitForm }) => {
+          {({ values: { steps }, setFieldValue, submitForm, isSubmitting }) => {
             if (!steps.length) {
               submitForm = null;
             }
+
+            const disabled = { next: isSubmitting };
 
             return (
               <Fragment>
@@ -135,7 +145,7 @@ export class DataWranglingScripts extends PureComponent {
                 >
                   {dataWranglingScripts.map(this.renderCheckboxes)}
                 </CheckboxGroup>
-                <StepNavigation submitForm={submitForm} {...this.props} />
+                <StepNavigation submitForm={submitForm} loading={isSubmitting} disabled={disabled} {...this.props} />
               </Fragment>
             );
           }}

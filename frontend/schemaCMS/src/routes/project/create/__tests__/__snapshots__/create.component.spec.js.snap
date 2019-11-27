@@ -32,6 +32,8 @@ exports[`Create: Component should render correctly 1`] = `
       }
       isAdmin={true}
       isEdit={true}
+      isSubmitting={false}
+      isValid={true}
       label="Title"
       name="title"
       onChange={[Function]}
@@ -65,6 +67,8 @@ exports[`Create: Component should render correctly 1`] = `
       }
       isAdmin={true}
       isEdit={true}
+      isSubmitting={false}
+      isValid={true}
       label="Description"
       name="description"
       onChange={[Function]}
@@ -98,6 +102,8 @@ exports[`Create: Component should render correctly 1`] = `
       }
       isAdmin={true}
       isEdit={false}
+      isSubmitting={false}
+      isValid={true}
       label="Owner"
       name="owner"
       onChange={[Function]}
@@ -146,6 +152,7 @@ exports[`Create: Component should render correctly 1`] = `
         disabled={false}
         id="cancelBtn"
         onClick={[Function]}
+        type="button"
       >
         <FormattedMessage
           defaultMessage="Cancel"
@@ -154,8 +161,10 @@ exports[`Create: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        disabled={false}
         id="finishBtn"
         loading={false}
+        type="submit"
       >
         <FormattedMessage
           defaultMessage="Finish"

@@ -17,6 +17,8 @@ export const defaultProps = {
   touched: {},
   errors: {},
   isAdmin: true,
+  isValid: true,
+  isSubmitting: false,
   history: { push: Function.prototype },
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };

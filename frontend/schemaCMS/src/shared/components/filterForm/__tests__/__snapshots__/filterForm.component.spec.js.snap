@@ -286,7 +286,6 @@ exports[`FilterForm: Component should render create form 1`] = `
         }
       }
       isEdit={true}
-      isSubmitting={false}
       isValidating={false}
       label={
         <FormattedMessage
@@ -377,7 +376,6 @@ exports[`FilterForm: Component should render create form 1`] = `
           }
         }
         isEdit={false}
-        isSubmitting={false}
         isValidating={false}
         label={
           <FormattedMessage
@@ -427,7 +425,6 @@ exports[`FilterForm: Component should render create form 1`] = `
           }
         }
         isEdit={false}
-        isSubmitting={false}
         isValidating={false}
         label={
           <FormattedMessage
@@ -459,17 +456,6 @@ exports[`FilterForm: Component should render create form 1`] = `
         validateOnChange={true}
         value="1"
       />
-    </styled.div>
-    <styled.div>
-      <Styled(Span)
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Remove filter"
-          id="shared.components.filterForm.deleteFilter"
-          values={Object {}}
-        />
-      </Styled(Span)>
     </styled.div>
     <NavigationContainer
       hideOnDesktop={false}
@@ -635,7 +621,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
         }
       }
       isEdit={true}
-      isSubmitting={false}
       isValidating={false}
       label={
         <FormattedMessage
@@ -726,7 +711,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
           }
         }
         isEdit={false}
-        isSubmitting={false}
         isValidating={false}
         label={
           <FormattedMessage
@@ -776,7 +760,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
           }
         }
         isEdit={false}
-        isSubmitting={false}
         isValidating={false}
         label={
           <FormattedMessage
@@ -808,17 +791,6 @@ exports[`FilterForm: Component should render edit form 1`] = `
         validateOnChange={true}
         value="1"
       />
-    </styled.div>
-    <styled.div>
-      <Styled(Span)
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Remove filter"
-          id="shared.components.filterForm.deleteFilter"
-          values={Object {}}
-        />
-      </Styled(Span)>
     </styled.div>
     <NavigationContainer
       hideOnDesktop={false}

@@ -24,6 +24,7 @@ export const defaultProps = {
   },
   dirty: true,
   isValid: true,
+  isSubmitting: false,
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
   steps: [{ scriptName: 'scriptName 1' }, { scriptName: 'scriptName 2' }, { scriptName: 'scriptName 3' }],

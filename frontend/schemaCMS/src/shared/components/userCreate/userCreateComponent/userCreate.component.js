@@ -23,6 +23,7 @@ export class UserCreate extends PureComponent {
     isValid: PropTypes.bool.isRequired,
     headerValues: PropTypes.object,
     isInvitation: PropTypes.bool,
+    isSubmitting: PropTypes.bool.isRequired,
     values: PropTypes.object.isRequired,
     onCancelClick: PropTypes.func.isRequired,
   };
@@ -71,7 +72,11 @@ export class UserCreate extends PureComponent {
         <BackButton type="button" onClick={this.props.onCancelClick}>
           <FormattedMessage {...messages.cancel} />
         </BackButton>
-        <NextButton type="submit" disabled={!this.props.isValid}>
+        <NextButton
+          type="submit"
+          loading={this.props.isSubmitting}
+          disabled={!this.props.isValid || this.props.isSubmitting}
+        >
           <FormattedMessage {...invitationLabel} />
         </NextButton>
       </NavigationContainer>

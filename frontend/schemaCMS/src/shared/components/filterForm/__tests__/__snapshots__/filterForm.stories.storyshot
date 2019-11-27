@@ -5,11 +5,11 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   padding-top: 7px;
 }
 
-.c7 {
+.c5 {
   height: 155px;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,7 +28,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   width: 100%;
 }
 
-.c8 {
+.c6 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -36,37 +36,9 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c10 {
+.c8 {
   width: calc(50% - 5px);
   max-width: 240px;
-}
-
-.c6 {
-  cursor: pointer;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c6:hover {
-  border-bottom: 1px solid #FFF;
-}
-
-.c5 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
 }
 
 .c2 {
@@ -102,7 +74,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -111,13 +83,13 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c6 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c10 {
+  .c8 {
     width: 240px;
   }
 }
@@ -598,32 +570,14 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
     <div
       className="c5"
     >
-      <span
-        className="c6"
-        onClick={[Function]}
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          }
-        }
-      >
-        <span>
-          Remove filter
-        </span>
-      </span>
-    </div>
-    <div
-      className="c7"
-    >
       <div
-        className="c8"
+        className="c6"
       >
         <div
-          className="c9"
+          className="c7"
         >
           <button
-            className="c10"
+            className="c8"
             disabled={false}
             onClick={[Function]}
             style={
@@ -650,7 +604,7 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
             </span>
           </button>
           <button
-            className="c10"
+            className="c8"
             disabled={true}
             style={
               Object {
@@ -687,11 +641,11 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   padding-top: 7px;
 }
 
-.c7 {
+.c5 {
   height: 155px;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -710,7 +664,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   width: 100%;
 }
 
-.c8 {
+.c6 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -718,37 +672,9 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c10 {
+.c8 {
   width: calc(50% - 5px);
   max-width: 240px;
-}
-
-.c6 {
-  cursor: pointer;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c6:hover {
-  border-bottom: 1px solid #FFF;
-}
-
-.c5 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
 }
 
 .c2 {
@@ -784,7 +710,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -793,13 +719,13 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c6 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c10 {
+  .c8 {
     width: 240px;
   }
 }
@@ -1280,32 +1206,14 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
     <div
       className="c5"
     >
-      <span
-        className="c6"
-        onClick={[Function]}
-        style={
-          Object {
-            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-            "fontSize": "14px",
-          }
-        }
-      >
-        <span>
-          Remove filter
-        </span>
-      </span>
-    </div>
-    <div
-      className="c7"
-    >
       <div
-        className="c8"
+        className="c6"
       >
         <div
-          className="c9"
+          className="c7"
         >
           <button
-            className="c10"
+            className="c8"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1332,7 +1240,7 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
             </span>
           </button>
           <button
-            className="c10"
+            className="c8"
             disabled={true}
             style={
               Object {

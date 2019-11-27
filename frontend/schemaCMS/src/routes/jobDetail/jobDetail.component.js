@@ -30,6 +30,7 @@ export class JobDetail extends PureComponent {
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
+    isSubmitting: PropTypes.bool.isRequired,
   };
 
   state = {
@@ -113,7 +114,11 @@ export class JobDetail extends PureComponent {
   );
 
   renderSaveButton = renderWhenTrue(() => (
-    <NextButton onClick={this.props.handleSubmit} disabled={!this.props.dirty || !this.props.isValid}>
+    <NextButton
+      onClick={this.props.handleSubmit}
+      loading={this.props.isSubmitting}
+      disabled={!this.props.dirty || !this.props.isValid || this.props.isSubmitting}
+    >
       <FormattedMessage {...messages.save} />
     </NextButton>
   ));
