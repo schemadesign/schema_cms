@@ -132,7 +132,7 @@ export class List extends PureComponent {
     renderWhenTrue(always(<PlusButton id={id} onClick={this.handleNewProject} />))(isAdmin);
 
   render() {
-    const { list = [], isAdmin, history } = this.props;
+    const { list = [], isAdmin } = this.props;
     const { loading, error, logoutModalOpen } = this.state;
 
     const title = this.formatMessage(messages.title);

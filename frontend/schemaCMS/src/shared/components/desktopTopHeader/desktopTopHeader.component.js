@@ -1,34 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Menu, Icons, Header } from 'schemaUI';
+import { Button, Header, Icons, Menu } from 'schemaUI';
 
-import browserHistory from '../../utils/history';
 import { renderWhenTrue } from '../../utils/rendering';
 import { LogoutModal } from '../logoutModal';
 import { TopHeader } from '../topHeader';
 import {
   Content,
-  PrimaryList,
-  SecondaryList,
-  PrimaryItem,
-  SecondaryItem,
   MenuHeader,
+  PrimaryItem,
+  PrimaryList,
+  SecondaryItem,
+  SecondaryList,
 } from '../topHeader/topHeader.styles';
 import {
-  Container,
-  Overlayer,
-  TopContainer,
-  HeaderWrapper,
-  Title,
-  TitleWrapper,
   Actions,
+  Container,
+  HeaderWrapper,
+  IconLink,
   Logo,
   LogoLink,
-  IconLink,
-  menuStyles,
-  headerCustomStyles,
-  customButtonStyles,
+  Overlayer,
+  Title,
+  TitleWrapper,
+  TopContainer,
   closeButtonStyles,
+  customButtonStyles,
+  headerCustomStyles,
+  menuStyles,
   logoutButtonStyles,
 } from './desktopTopHeader.styles';
 
