@@ -4,27 +4,27 @@ import { CODE_TYPE, EMBED_TYPE, IMAGE_TYPE, MARKDOWN_TYPE, NONE } from '../../..
 
 export default defineMessages({
   title: {
-    id: 'directory.createPageBlock.title',
+    id: 'page.createPageBlock.title',
     defaultMessage: 'Page Block',
   },
   subTitle: {
-    id: 'directory.createPageBlock.subTitle',
+    id: 'page.createPageBlock.subTitle',
     defaultMessage: 'Create',
   },
   pageBlockFieldName: {
-    id: 'directory.createPageBlock.pageBlockFieldName',
+    id: 'page.createPageBlock.pageBlockFieldName',
     defaultMessage: 'Block Name',
   },
   pageBlockFieldNamePlaceholder: {
-    id: 'directory.createPageBlock.pageFieldNamePlaceholder',
+    id: 'page.createPageBlock.pageFieldNamePlaceholder',
     defaultMessage: 'Name',
   },
   pageBlockFieldMarkdown: {
-    id: 'directory.createPageBlock.pageBlockFieldMarkdown',
+    id: 'page.createPageBlock.pageBlockFieldMarkdown',
     defaultMessage: 'Markdown Text',
   },
   pageBlockFieldMarkdownPlaceholder: {
-    id: 'directory.createPageBlock.pageBlockFieldMarkdownPlaceholder',
+    id: 'page.createPageBlock.pageBlockFieldMarkdownPlaceholder',
     defaultMessage: `
     # My Cool Title
     
@@ -34,11 +34,11 @@ export default defineMessages({
     `,
   },
   pageBlockFieldCode: {
-    id: 'directory.createPageBlock.pageBlockFieldCode',
+    id: 'page.createPageBlock.pageBlockFieldCode',
     defaultMessage: 'Code Snippet',
   },
   pageBlockFieldCodePlaceholder: {
-    id: 'directory.createPageBlock.pageBlockFieldCodePlaceholder',
+    id: 'page.createPageBlock.pageBlockFieldCodePlaceholder',
     defaultMessage: `
     <button id="my-button">
         Click Me
@@ -49,11 +49,11 @@ export default defineMessages({
     `,
   },
   pageBlockFieldEmbed: {
-    id: 'directory.createPageBlock.pageBlockFieldEmbed',
+    id: 'page.createPageBlock.pageBlockFieldEmbed',
     defaultMessage: 'Embed Code',
   },
   pageBlockFieldEmbedPlaceholder: {
-    id: 'directory.createPageBlock.pageBlockFieldEmbedPlaceholder',
+    id: 'page.createPageBlock.pageBlockFieldEmbedPlaceholder',
     defaultMessage: `
     <iframe 
         width="560" 
@@ -65,39 +65,39 @@ export default defineMessages({
     `,
   },
   pageBlockFieldImage: {
-    id: 'directory.createPageBlock.pageBlockFieldImage',
+    id: 'page.createPageBlock.pageBlockFieldImage',
     defaultMessage: 'File Name',
   },
   pageBlockFieldType: {
-    id: 'directory.createPageBlock.pageBlockFieldType',
+    id: 'page.createPageBlock.pageBlockFieldType',
     defaultMessage: 'Type',
   },
   createPageBlock: {
-    id: 'directory.createPageBlock.createPageBlock',
+    id: 'page.createPageBlock.createPageBlock',
     defaultMessage: 'Create',
   },
   cancel: {
-    id: 'directory.createPageBlock.cancel',
+    id: 'page.createPageBlock.cancel',
     defaultMessage: 'Cancel',
   },
   [NONE]: {
-    id: `directory.createPageBlock.${NONE}`,
+    id: `page.createPageBlock.${NONE}`,
     defaultMessage: 'Select one',
   },
   [CODE_TYPE]: {
-    id: `directory.createPageBlock.${CODE_TYPE}`,
+    id: `page.createPageBlock.${CODE_TYPE}`,
     defaultMessage: 'Code Snippet',
   },
   [EMBED_TYPE]: {
-    id: `directory.createPageBlock.${EMBED_TYPE}`,
+    id: `page.createPageBlock.${EMBED_TYPE}`,
     defaultMessage: 'Embed',
   },
   [IMAGE_TYPE]: {
-    id: `directory.createPageBlock.${IMAGE_TYPE}`,
+    id: `page.createPageBlock.${IMAGE_TYPE}`,
     defaultMessage: 'Image Upload',
   },
   [MARKDOWN_TYPE]: {
-    id: `directory.createPageBlock.${MARKDOWN_TYPE}`,
+    id: `page.createPageBlock.${MARKDOWN_TYPE}`,
     defaultMessage: 'Markdown Text',
   },
 });

@@ -6,14 +6,14 @@ exports[`CreatePageBlock: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -22,14 +22,14 @@ exports[`CreatePageBlock: Component should render correctly 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -118,7 +118,7 @@ exports[`CreatePageBlock: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="directory.createPageBlock.cancel"
+          id="page.createPageBlock.cancel"
           values={Object {}}
         />
       </BackButton>
@@ -130,7 +130,7 @@ exports[`CreatePageBlock: Component should render correctly 1`] = `
       >
         <FormattedMessage
           defaultMessage="Create"
-          id="directory.createPageBlock.createPageBlock"
+          id="page.createPageBlock.createPageBlock"
           values={Object {}}
         />
       </NextButton>
@@ -145,14 +145,14 @@ exports[`CreatePageBlock: Component should render correctly with block type 1`] 
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -161,14 +161,14 @@ exports[`CreatePageBlock: Component should render correctly with block type 1`] 
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -257,7 +257,7 @@ exports[`CreatePageBlock: Component should render correctly with block type 1`] 
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="directory.createPageBlock.cancel"
+          id="page.createPageBlock.cancel"
           values={Object {}}
         />
       </BackButton>
@@ -269,7 +269,7 @@ exports[`CreatePageBlock: Component should render correctly with block type 1`] 
       >
         <FormattedMessage
           defaultMessage="Create"
-          id="directory.createPageBlock.createPageBlock"
+          id="page.createPageBlock.createPageBlock"
           values={Object {}}
         />
       </NextButton>
@@ -284,14 +284,14 @@ exports[`CreatePageBlock: Component should render correctly with code type 1`] =
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -300,14 +300,14 @@ exports[`CreatePageBlock: Component should render correctly with code type 1`] =
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -441,7 +441,7 @@ exports[`CreatePageBlock: Component should render correctly with code type 1`] =
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="directory.createPageBlock.cancel"
+          id="page.createPageBlock.cancel"
           values={Object {}}
         />
       </BackButton>
@@ -453,7 +453,7 @@ exports[`CreatePageBlock: Component should render correctly with code type 1`] =
       >
         <FormattedMessage
           defaultMessage="Create"
-          id="directory.createPageBlock.createPageBlock"
+          id="page.createPageBlock.createPageBlock"
           values={Object {}}
         />
       </NextButton>
@@ -468,14 +468,14 @@ exports[`CreatePageBlock: Component should render correctly with embed type 1`] 
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -484,14 +484,14 @@ exports[`CreatePageBlock: Component should render correctly with embed type 1`] 
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -626,7 +626,7 @@ exports[`CreatePageBlock: Component should render correctly with embed type 1`] 
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="directory.createPageBlock.cancel"
+          id="page.createPageBlock.cancel"
           values={Object {}}
         />
       </BackButton>
@@ -638,7 +638,7 @@ exports[`CreatePageBlock: Component should render correctly with embed type 1`] 
       >
         <FormattedMessage
           defaultMessage="Create"
-          id="directory.createPageBlock.createPageBlock"
+          id="page.createPageBlock.createPageBlock"
           values={Object {}}
         />
       </NextButton>
@@ -653,14 +653,14 @@ exports[`CreatePageBlock: Component should render correctly with image type 1`] 
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -669,14 +669,14 @@ exports[`CreatePageBlock: Component should render correctly with image type 1`] 
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -802,7 +802,7 @@ exports[`CreatePageBlock: Component should render correctly with image type 1`] 
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="directory.createPageBlock.cancel"
+          id="page.createPageBlock.cancel"
           values={Object {}}
         />
       </BackButton>
@@ -814,7 +814,7 @@ exports[`CreatePageBlock: Component should render correctly with image type 1`] 
       >
         <FormattedMessage
           defaultMessage="Create"
-          id="directory.createPageBlock.createPageBlock"
+          id="page.createPageBlock.createPageBlock"
           values={Object {}}
         />
       </NextButton>
@@ -829,14 +829,14 @@ exports[`CreatePageBlock: Component should render correctly with markdown type 1
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     headerTitle={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -845,14 +845,14 @@ exports[`CreatePageBlock: Component should render correctly with markdown type 1
     subtitle={
       <FormattedMessage
         defaultMessage="Create"
-        id="directory.createPageBlock.subTitle"
+        id="page.createPageBlock.subTitle"
         values={Object {}}
       />
     }
     title={
       <FormattedMessage
         defaultMessage="Page Block"
-        id="directory.createPageBlock.title"
+        id="page.createPageBlock.title"
         values={Object {}}
       />
     }
@@ -985,7 +985,7 @@ exports[`CreatePageBlock: Component should render correctly with markdown type 1
       >
         <FormattedMessage
           defaultMessage="Cancel"
-          id="directory.createPageBlock.cancel"
+          id="page.createPageBlock.cancel"
           values={Object {}}
         />
       </BackButton>
@@ -997,7 +997,7 @@ exports[`CreatePageBlock: Component should render correctly with markdown type 1
       >
         <FormattedMessage
           defaultMessage="Create"
-          id="directory.createPageBlock.createPageBlock"
+          id="page.createPageBlock.createPageBlock"
           values={Object {}}
         />
       </NextButton>

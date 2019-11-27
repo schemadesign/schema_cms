@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { CreatePageBlock } from './createPageBlock.component';
 import { NONE } from '../../../modules/pageBlock/pageBlock.constants';
+import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
@@ -23,4 +24,6 @@ export const defaultProps = {
   setFieldValue: Function.prototype,
 };
 
-storiesOf('CreateBlock', module).add('Default', () => <CreatePageBlock {...defaultProps} />);
+storiesOf('CreatePageBlock', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <CreatePageBlock {...defaultProps} />);
