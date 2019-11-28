@@ -94,6 +94,21 @@ function* update({ payload: { pageId, blockId, ...restFields } }) {
   }
 }
 
+function* removeOne({ payload: { folderId, pageId } }) {
+  try {
+    yield put(PageBlockRoutines.update.request());
+
+    yield api.delete(`${PAGES_PATH}/${pageId}`);
+
+    yield put(PageBlockRoutines.update.success());
+    browserHistory.push(`/folder/${folderId}/`);
+  } catch (e) {
+    yield put(PageBlockRoutines.update.failure(e));
+  } finally {
+    yield put(PageBlockRoutines.update.fulfill());
+  }
+}
+
 export function* watchPageBlock() {
   yield all([
     takeLatest(PageBlockRoutines.fetchList.TRIGGER, fetchList),
@@ -101,5 +116,6 @@ export function* watchPageBlock() {
     takeLatest(PageBlockRoutines.setBlocks.TRIGGER, setBlocks),
     takeLatest(PageBlockRoutines.create.TRIGGER, create),
     takeLatest(PageBlockRoutines.update.TRIGGER, update),
+    takeLatest(PageBlockRoutines.removeOne.TRIGGER, removeOne),
   ]);
 }

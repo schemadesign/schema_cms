@@ -22,4 +22,20 @@ export default defineMessages({
     id: 'page.edit.titlePageNameUniqueError',
     defaultMessage: 'Page with this name already exist in folder.',
   },
+  removePage: {
+    id: 'page.edit.removePage',
+    defaultMessage: 'Remove Page',
+  },
+  cancelRemoval: {
+    id: 'page.edit.cancelRemoval',
+    defaultMessage: 'Cancel',
+  },
+  confirmRemoval: {
+    id: 'page.edit.confirmRemoval',
+    defaultMessage: 'Confirm',
+  },
+  removeTitle: {
+    id: 'page.edit.removeTitle',
+    defaultMessage: 'Removing a page will also remove any content under it. Are you sure you want to proceed?',
+  },
 });

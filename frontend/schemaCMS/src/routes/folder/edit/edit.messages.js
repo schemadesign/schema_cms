@@ -10,6 +10,22 @@ export default defineMessages({
     id: 'folder.edit.subTitle',
     defaultMessage: 'Edit',
   },
+  removeFolder: {
+    id: 'folder.edit.removeFolder',
+    defaultMessage: 'Remove Folder',
+  },
+  cancelRemoval: {
+    id: 'folder.edit.cancelRemoval',
+    defaultMessage: 'Cancel',
+  },
+  confirmRemoval: {
+    id: 'folder.edit.confirmRemoval',
+    defaultMessage: 'Confirm',
+  },
+  removeTitle: {
+    id: 'folder.edit.removeTitle',
+    defaultMessage: 'Removing a folder will also remove any page under it. Are you sure you want to proceed?',
+  },
   folderFieldName: {
     id: 'folder.edit.folderFieldName',
     defaultMessage: 'Folder Name',
