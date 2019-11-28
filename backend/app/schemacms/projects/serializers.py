@@ -136,13 +136,13 @@ class DataSourceSerializer(serializers.ModelSerializer):
 class ProjectOwnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id", "first_name", "last_name")
+        fields = ("id", "first_name", "last_name", "role")
 
 
 class ProjectEditorSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id", "first_name", "last_name")
+        fields = ("id", "first_name", "last_name", "role")
 
 
 class ProjectSerializer(serializers.ModelSerializer):
