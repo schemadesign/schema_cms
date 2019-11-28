@@ -37,11 +37,11 @@ describe('PageBlock: redux', () => {
     });
   });
 
-  describe('when PAGE_BLOCK/UPDATE action is received', () => {
+  describe('when PAGE_BLOCK/FETCH_ONE action is received', () => {
     it('should set block', () => {
       const pageBlock = { data: 'data' };
 
-      const resultState = blockReducer(state, PageBlockRoutines.update.success(pageBlock));
+      const resultState = blockReducer(state, PageBlockRoutines.fetchOne.success(pageBlock));
       expect(resultState.pageBlock).to.deep.equal(pageBlock);
     });
   });

@@ -15,7 +15,7 @@ import { errorMessageParser } from '../../shared/utils/helpers';
 import { BLOCK_FORM, BLOCK_SCHEMA, INITIAL_VALUES } from '../../modules/pageBlock/pageBlock.constants';
 
 const mapStateToProps = createStructuredSelector({
-  pageBlock: selectPageBlock,
+  block: selectPageBlock,
 });
 
 export const mapDispatchToProps = dispatch =>
@@ -38,14 +38,22 @@ export default compose(
   withFormik({
     displayName: BLOCK_FORM,
     enableReinitialize: true,
-    mapPropsToValues: () => INITIAL_VALUES,
+    mapPropsToValues: ({ block: { name, type, content, image, imageName } }) => ({
+      ...INITIAL_VALUES,
+      name,
+      type,
+      content,
+      image,
+      imageName,
+    }),
     validationSchema: () => BLOCK_SCHEMA,
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
         const blockId = path(['match', 'params', 'blockId'], props);
+        const pageId = path(['block', 'page', 'id'], props);
 
-        await props.updatePageBlock({ blockId, ...data });
+        await props.updatePageBlock({ blockId, pageId, ...data });
       } catch (errors) {
         const { formatMessage } = props.intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });

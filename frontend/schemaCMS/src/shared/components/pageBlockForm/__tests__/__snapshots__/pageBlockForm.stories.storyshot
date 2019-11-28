@@ -1,9 +1,1919 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots PageBlockForm Default 1`] = `
+exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c0 label {
+  margin-bottom: 1px;
+}
+
+.c1 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
 <div
-  className=""
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
 >
-  PageBlockForm component
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Block Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="code name"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <label
+      id="fieldProjectStatusLabel"
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Type
+    </label>
+    <input
+      id="type"
+      name="type"
+      type="hidden"
+      value="code_snippet"
+    />
+    <div
+      className="c1"
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
+          }
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "color": "#FFF",
+          "display": "flex",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        id="fieldBlockType"
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "height": "30px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "cursor": "pointer",
+                "display": "flex",
+                "height": "30px",
+              }
+            }
+          >
+            Code Snippet
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "display": "none",
+              "flexDirection": "column",
+              "left": "0",
+              "maxHeight": "175px",
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": "46px",
+              "width": "100%",
+              "zIndex": 2,
+            }
+          }
+        >
+          <div
+            id="select-item-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "none",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Image Upload
+          </div>
+          <div
+            id="select-item-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Markdown Text
+          </div>
+          <div
+            id="select-item-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Code Snippet
+          </div>
+          <div
+            id="select-item-4"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Select one
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="content"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Code Snippet
+      </label>
+      <textarea
+        id="content"
+        onChange={[Function]}
+        placeholder="
+    <button id=\\"my-button\\">
+        Click Me
+    </button>
+    <div class=\\"hello-div\\">
+        Hello
+    </div>
+    "
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": "0",
+            "resize": "none",
+          }
+        }
+        type="text"
+        value="code content"
+      />
+      <textarea
+        aria-hidden={true}
+        readOnly={true}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "left": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "overflow": "hidden",
+            "padding": "0",
+            "position": "absolute",
+            "resize": "none",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c0 label {
+  margin-bottom: 1px;
+}
+
+.c1 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Block Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="embed name"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <label
+      id="fieldProjectStatusLabel"
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Type
+    </label>
+    <input
+      id="type"
+      name="type"
+      type="hidden"
+      value="youtube_embed"
+    />
+    <div
+      className="c1"
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
+          }
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "color": "#FFF",
+          "display": "flex",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        id="fieldBlockType"
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "height": "30px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "cursor": "pointer",
+                "display": "flex",
+                "height": "30px",
+              }
+            }
+          >
+            Embed
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "display": "none",
+              "flexDirection": "column",
+              "left": "0",
+              "maxHeight": "175px",
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": "46px",
+              "width": "100%",
+              "zIndex": 2,
+            }
+          }
+        >
+          <div
+            id="select-item-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "none",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Image Upload
+          </div>
+          <div
+            id="select-item-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Markdown Text
+          </div>
+          <div
+            id="select-item-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Code Snippet
+          </div>
+          <div
+            id="select-item-4"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Select one
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="content"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Embed Code
+      </label>
+      <textarea
+        id="content"
+        onChange={[Function]}
+        placeholder="
+    <iframe 
+        width=\\"560\\" 
+        height=\\"315\\" 
+        src=\\"https://www.youtube.com/embed/avideo\\"
+        frameborder=\\"0\\"
+        allowfullscreen
+    />
+    "
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": "0",
+            "resize": "none",
+          }
+        }
+        type="text"
+        value="embed content"
+      />
+      <textarea
+        aria-hidden={true}
+        readOnly={true}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "left": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "overflow": "hidden",
+            "padding": "0",
+            "position": "absolute",
+            "resize": "none",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c0 label {
+  margin-bottom: 1px;
+}
+
+.c1 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Block Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="name"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <label
+      id="fieldProjectStatusLabel"
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Type
+    </label>
+    <input
+      id="type"
+      name="type"
+      type="hidden"
+      value="image_uploaded"
+    />
+    <div
+      className="c1"
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
+          }
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "color": "#FFF",
+          "display": "flex",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        id="fieldBlockType"
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "height": "30px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "cursor": "pointer",
+                "display": "flex",
+                "height": "30px",
+              }
+            }
+          >
+            Image Upload
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "display": "none",
+              "flexDirection": "column",
+              "left": "0",
+              "maxHeight": "175px",
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": "46px",
+              "width": "100%",
+              "zIndex": 2,
+            }
+          }
+        >
+          <div
+            id="select-item-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "none",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Image Upload
+          </div>
+          <div
+            id="select-item-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Markdown Text
+          </div>
+          <div
+            id="select-item-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Code Snippet
+          </div>
+          <div
+            id="select-item-4"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Select one
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className=""
+  >
+    <div
+      style={Object {}}
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="fileName"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          File Name
+        </label>
+        <input
+          disabled={true}
+          id="fileName"
+          name="fileName"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="image name"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <label
+            htmlFor="fileUpload"
+            style={
+              Object {
+                "position": "relative",
+                "top": 10,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": 0,
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                }
+              }
+            >
+              <svg
+                style={
+                  Object {
+                    "fill": "#FFF",
+                    "height": "60px",
+                    "width": "60px",
+                  }
+                }
+                viewBox="0 0 60 60"
+              >
+                <path
+                  d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                />
+              </svg>
+            </div>
+          </label>
+        </div>
+      </div>
+      <input
+        accept="image/gif,image/jpeg"
+        aria-hidden={true}
+        id="fileUpload"
+        name="image"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        theme={
+          Object {
+            "background": "#000",
+            "border": "#2F2F36",
+            "button": Object {
+              "background": "#1d1d20",
+              "text": "#FFF",
+            },
+            "buttonDisabled": Object {
+              "background": "#1d1d20",
+              "text": "#71737e",
+            },
+            "card": Object {
+              "background": "#1d1d20",
+              "border": "#FFF",
+              "label": undefined,
+              "text": "#FFF",
+            },
+            "checkbox": Object {
+              "border": "#2F2F36",
+              "text": "#FFF",
+            },
+            "colors": Object {
+              "black": "#000",
+              "coolGray": "#a6a7aa",
+              "darkGrey": "#1d1d20",
+              "lightGrey": "#71737e",
+              "mediumGray": "#2F2F36",
+              "red": "#f21e29",
+              "veryLightPink": "#f0efef",
+              "white": "#FFF",
+            },
+            "dataGrid": Object {
+              "background": "#000",
+              "text": "#71737e",
+            },
+            "error": "#f21e29",
+            "header": Object {
+              "border": "#2F2F36",
+              "text": "#FFF",
+            },
+            "icon": Object {
+              "background": "#1d1d20",
+              "fill": "#FFF",
+              "fillInverse": "#000",
+            },
+            "input": Object {
+              "text": "#FFF",
+            },
+            "inverseButton": Object {
+              "background": "#FFF",
+              "text": "#000",
+            },
+            "label": Object {
+              "border": "#2F2F36",
+              "text": "#71737e",
+            },
+            "menu": Object {
+              "background": "#000",
+              "text": "#FFF",
+            },
+            "providerContainer": Object {
+              "backgroundColor": "#000",
+              "minHeight": "100vh",
+            },
+            "radioButton": Object {
+              "active": Object {
+                "background": "#FFF",
+                "fill": "#1d1d20",
+              },
+              "border": "#FFF",
+              "text": "#FFF",
+              "unActive": Object {
+                "background": "#1d1d20",
+                "dot": "#FFF",
+                "fill": "#FFF",
+              },
+            },
+            "secondaryText": "#71737e",
+            "select": Object {
+              "background": "#1d1d20",
+              "border": "#000",
+            },
+            "stepper": Object {
+              "active": "#FFF",
+              "background": "#1d1d20",
+            },
+            "tab": Object {
+              "active": "#FFF",
+              "hover": "#FFF",
+              "normal": "#2F2F36",
+            },
+            "table": Object {
+              "background": Object {
+                "body": "#000",
+                "header": "#1d1d20",
+              },
+              "border": Object {
+                "body": "#1d1d20",
+                "header": "#000",
+              },
+              "text": Object {
+                "body": "#FFF",
+                "header": "#71737e",
+              },
+            },
+            "text": "#FFF",
+            "textArea": Object {
+              "background": "#000",
+              "text": "#FFF",
+            },
+            "textField": Object {
+              "error": "#f21e29",
+              "label": "#71737e",
+            },
+            "typography": Object {
+              "h1": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontWeight": 600,
+              },
+              "h2": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontWeight": 100,
+              },
+              "h3": Object {
+                "color": Object {
+                  "border": "#f0efef",
+                  "text": "#a6a7aa",
+                },
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontWeight": 600,
+              },
+              "p": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontWeight": 200,
+              },
+              "pre": Object {
+                "fontFamily": "Hack, monospace",
+              },
+              "span": Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              },
+            },
+          }
+        }
+        type="file"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c0 label {
+  margin-bottom: 1px;
+}
+
+.c1 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Block Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value="markdown name"
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <label
+      id="fieldProjectStatusLabel"
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Type
+    </label>
+    <input
+      id="type"
+      name="type"
+      type="hidden"
+      value="markdown_text"
+    />
+    <div
+      className="c1"
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
+          }
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "color": "#FFF",
+          "display": "flex",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        id="fieldBlockType"
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "height": "30px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "cursor": "pointer",
+                "display": "flex",
+                "height": "30px",
+              }
+            }
+          >
+            Markdown Text
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "display": "none",
+              "flexDirection": "column",
+              "left": "0",
+              "maxHeight": "175px",
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": "46px",
+              "width": "100%",
+              "zIndex": 2,
+            }
+          }
+        >
+          <div
+            id="select-item-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "none",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Image Upload
+          </div>
+          <div
+            id="select-item-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Markdown Text
+          </div>
+          <div
+            id="select-item-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Code Snippet
+          </div>
+          <div
+            id="select-item-4"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Select one
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="content"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Markdown Text
+      </label>
+      <textarea
+        id="content"
+        onChange={[Function]}
+        placeholder="
+    # My Cool Title
+    
+    ## Awesome subtitle
+    
+    Description **bold**
+    "
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": "0",
+            "resize": "none",
+          }
+        }
+        type="text"
+        value="markdown content"
+      />
+      <textarea
+        aria-hidden={true}
+        readOnly={true}
+        style={
+          Object {
+            "background": "#000",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "height": 0,
+            "left": 0,
+            "lineHeight": "24px",
+            "outline": "none",
+            "overflow": "hidden",
+            "padding": "0",
+            "position": "absolute",
+            "resize": "none",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        tabIndex={-1}
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.c0 label {
+  margin-bottom: 1px;
+}
+
+.c1 {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <label
+        htmlFor="name"
+        style={
+          Object {
+            "border": "none",
+            "borderTop": "2px solid #2F2F36",
+            "color": "#71737e",
+            "display": "block",
+            "fontSize": "14px",
+            "outline": "none",
+            "paddingTop": "8px",
+            "width": "100%",
+          }
+        }
+      >
+        Block Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value=""
+      />
+      <div
+        style={
+          Object {
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <label
+      id="fieldProjectStatusLabel"
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
+      }
+    >
+      Type
+    </label>
+    <input
+      id="type"
+      name="type"
+      type="hidden"
+      value="none"
+    />
+    <div
+      className="c1"
+    >
+      <svg
+        style={
+          Object {
+            "fill": "#FFF",
+            "height": "30px",
+            "width": "30px",
+          }
+        }
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "color": "#FFF",
+          "display": "flex",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        id="fieldBlockType"
+        style={
+          Object {
+            "cursor": "pointer",
+            "display": "flex",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "flex",
+              "height": "30px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "cursor": "pointer",
+                "display": "flex",
+                "height": "30px",
+              }
+            }
+          >
+            Select one
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "display": "none",
+              "flexDirection": "column",
+              "left": "0",
+              "maxHeight": "175px",
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": "46px",
+              "width": "100%",
+              "zIndex": 2,
+            }
+          }
+        >
+          <div
+            id="select-item-0"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "none",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Image Upload
+          </div>
+          <div
+            id="select-item-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Markdown Text
+          </div>
+          <div
+            id="select-item-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Embed
+          </div>
+          <div
+            id="select-item-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Code Snippet
+          </div>
+          <div
+            id="select-item-4"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderTop": "1px solid  #000",
+                "cursor": "pointer",
+                "display": "block",
+                "padding": "7px",
+              }
+            }
+          >
+            Select one
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

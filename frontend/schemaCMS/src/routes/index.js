@@ -60,6 +60,8 @@ export default class RootContainer extends Component {
 
             <AuthRoute path={ROUTES.PAGE} component={Page} />
 
+            <AuthRoute exact path={`${ROUTES.BLOCK}/:blockId`} component={PageBlock} />
+
             <AuthRoute exact path={`${ROUTES.DATA_WRANGLING_SCRIPTS}/:scriptId`} component={DataWranglingScript} />
 
             <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
@@ -79,8 +81,6 @@ export default class RootContainer extends Component {
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
             <Route exact path="/auth/confirm/" component={JWT} />
-
-            <Route exact path={`${ROUTES.BLOCK}/:blockId`} component={PageBlock} />
 
             <Route
               exact

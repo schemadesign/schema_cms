@@ -2,6 +2,232 @@
 
 exports[`PageBlock: Component should render correctly 1`] = `
 <styled.div>
-  PageBlock component
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="pageBlock.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Page Block"
+        id="pageBlock.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="pageBlock.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Page Block"
+        id="pageBlock.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <LoadingWrapper
+      error={null}
+      loading={false}
+      noData={false}
+      noDataContent={null}
+    >
+      <PageBlockForm
+        block={
+          Object {
+            "page": Object {
+              "id": 1,
+            },
+          }
+        }
+        fetchPageBlock={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "blockId": "1",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": Promise {},
+              },
+            ],
+          }
+        }
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        isSubmitting={false}
+        match={
+          Object {
+            "params": Object {
+              "blockId": "1",
+            },
+          }
+        }
+        setFieldValue={[Function]}
+        values={Object {}}
+      />
+    </LoadingWrapper>
+    <NavigationContainer
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        id="backBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Back"
+          id="pageBlock.back"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={true}
+        id="editPageBlockBtn"
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Save"
+          id="pageBlock.save"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
+</styled.div>
+`;
+
+exports[`PageBlock: Component should render correctly with loader 1`] = `
+<styled.div>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="pageBlock.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Page Block"
+        id="pageBlock.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Edit"
+        id="pageBlock.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Page Block"
+        id="pageBlock.title"
+        values={Object {}}
+      />
+    }
+  />
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <LoadingWrapper
+      error={null}
+      loading={true}
+      noData={false}
+      noDataContent={null}
+    >
+      <PageBlockForm
+        block={
+          Object {
+            "page": Object {
+              "id": 1,
+            },
+          }
+        }
+        fetchPageBlock={[Function]}
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        history={
+          Object {
+            "push": [Function],
+          }
+        }
+        intl={
+          Object {
+            "formatMessage": [Function],
+          }
+        }
+        isSubmitting={false}
+        match={
+          Object {
+            "params": Object {
+              "blockId": "1",
+            },
+          }
+        }
+        setFieldValue={[Function]}
+        values={Object {}}
+      />
+    </LoadingWrapper>
+    <NavigationContainer
+      hideOnDesktop={false}
+      right={false}
+    >
+      <BackButton
+        disabled={false}
+        id="backBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Back"
+          id="pageBlock.back"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        disabled={true}
+        id="editPageBlockBtn"
+        loading={false}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Save"
+          id="pageBlock.save"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
 </styled.div>
 `;

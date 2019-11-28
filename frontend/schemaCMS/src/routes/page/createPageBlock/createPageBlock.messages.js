@@ -14,8 +14,8 @@ export default defineMessages({
     id: 'page.createPageBlock.cancel',
     defaultMessage: 'Cancel',
   },
-  createPageBlock: {
-    id: 'shared.components.pageBlockForm.createPageBlock',
+  create: {
+    id: 'page.createPageBlock.create',
     defaultMessage: 'Create',
   },
 });

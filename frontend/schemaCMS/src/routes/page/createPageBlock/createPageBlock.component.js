@@ -49,7 +49,7 @@ export class CreatePageBlock extends PureComponent {
               type="submit"
               disabled={!restProps.isValid || isSubmitting}
             >
-              <FormattedMessage {...messages.createPageBlock} />
+              <FormattedMessage {...messages.create} />
             </NextButton>
           </NavigationContainer>
         </Form>

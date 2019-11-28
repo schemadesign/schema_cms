@@ -81,7 +81,7 @@ function* update({ payload: { pageId, blockId, ...restFields } }) {
       forEach(name => formData.append(name, restFields[name]))
     )(restFields);
 
-    const { data } = yield api.post(`${BLOCK_PATH}/${blockId}`, formData, {
+    const { data } = yield api.patch(`${BLOCK_PATH}/${blockId}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 

@@ -159,7 +159,7 @@ describe('PageBlock: sagas', () => {
       };
 
       mockApi
-        .post(`/blocks/${payload.blockId}`, /form-data; name="name"[^]*name/m, options, {
+        .patch(`/blocks/${payload.blockId}`, /form-data; name="name"[^]*name/m, options, {
           name: 'Title',
           type: [MARKDOWN_TYPE],
         })

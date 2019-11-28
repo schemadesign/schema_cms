@@ -39,7 +39,7 @@ export class PageBlockForm extends PureComponent {
 
   handleUploadChange = ({ files: [uploadFile] }) => {
     this.props.setFieldValue(BLOCK_IMAGE, uploadFile);
-    this.props.setFieldValue('fileName', pathOr('', ['name'], uploadFile));
+    this.props.setFieldValue('imageName', pathOr('', ['name'], uploadFile));
   };
 
   renderBlock = (messageId, messagePlaceholderId) => (
@@ -57,7 +57,7 @@ export class PageBlockForm extends PureComponent {
 
   renderImage = () => (
     <Uploader
-      fileName={this.props.values.fileName}
+      fileName={this.props.values.imageName}
       name={BLOCK_IMAGE}
       label={this.props.intl.formatMessage(messages.pageBlockFieldImage)}
       type="file"

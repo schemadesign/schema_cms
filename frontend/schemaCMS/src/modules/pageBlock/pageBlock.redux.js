@@ -23,5 +23,5 @@ const setBlock = (state = INITIAL_STATE, { payload }) => state.set('pageBlock', 
 export const reducer = createReducer(INITIAL_STATE, {
   [PageBlockRoutines.fetchList.success]: setBlocks,
   [PageBlockRoutines.setBlocks.success]: setBlocks,
-  [PageBlockRoutines.update.success]: setBlock,
+  [PageBlockRoutines.fetchOne.success]: setBlock,
 });
