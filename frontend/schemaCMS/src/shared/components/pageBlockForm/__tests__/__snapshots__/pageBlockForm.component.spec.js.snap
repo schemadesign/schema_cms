@@ -1,0 +1,380 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageBlockForm: Component should render correctly 1`] = `
+<Fragment>
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={false}
+    label="Block Name"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value=""
+  />
+  <Select
+    id="fieldBlockType"
+    label="Type"
+    name="type"
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "Image Upload",
+          "value": "image_uploaded",
+        },
+        Object {
+          "label": "Markdown Text",
+          "value": "markdown_text",
+        },
+        Object {
+          "label": "Embed",
+          "value": "youtube_embed",
+        },
+        Object {
+          "label": "Code Snippet",
+          "value": "code_snippet",
+        },
+        Object {
+          "label": "Select one",
+          "value": "none",
+        },
+      ]
+    }
+    setFieldValue={[Function]}
+    value="none"
+  />
+</Fragment>
+`;
+
+exports[`PageBlockForm: Component should render correctly with code type 1`] = `
+<Fragment>
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={false}
+    label="Block Name"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value="code name"
+  />
+  <Select
+    id="fieldBlockType"
+    label="Type"
+    name="type"
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "Image Upload",
+          "value": "image_uploaded",
+        },
+        Object {
+          "label": "Markdown Text",
+          "value": "markdown_text",
+        },
+        Object {
+          "label": "Embed",
+          "value": "youtube_embed",
+        },
+        Object {
+          "label": "Code Snippet",
+          "value": "code_snippet",
+        },
+        Object {
+          "label": "Select one",
+          "value": "none",
+        },
+      ]
+    }
+    setFieldValue={[Function]}
+    value="code_snippet"
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    handleChange={[Function]}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isEdit={false}
+    label="Code Snippet"
+    multiline={true}
+    name="content"
+    onChange={[Function]}
+    placeholder="
+    <button id=\\"my-button\\">
+        Click Me
+    </button>
+    <div class=\\"hello-div\\">
+        Hello
+    </div>
+    "
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value="code content"
+    values={
+      Object {
+        "content": "code content",
+        "name": "code name",
+        "type": "code_snippet",
+      }
+    }
+  />
+</Fragment>
+`;
+
+exports[`PageBlockForm: Component should render correctly with embed type 1`] = `
+<Fragment>
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={false}
+    label="Block Name"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value="embed name"
+  />
+  <Select
+    id="fieldBlockType"
+    label="Type"
+    name="type"
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "Image Upload",
+          "value": "image_uploaded",
+        },
+        Object {
+          "label": "Markdown Text",
+          "value": "markdown_text",
+        },
+        Object {
+          "label": "Embed",
+          "value": "youtube_embed",
+        },
+        Object {
+          "label": "Code Snippet",
+          "value": "code_snippet",
+        },
+        Object {
+          "label": "Select one",
+          "value": "none",
+        },
+      ]
+    }
+    setFieldValue={[Function]}
+    value="youtube_embed"
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    handleChange={[Function]}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isEdit={false}
+    label="Embed Code"
+    multiline={true}
+    name="content"
+    onChange={[Function]}
+    placeholder="
+    <iframe 
+        width=\\"560\\" 
+        height=\\"315\\" 
+        src=\\"https://www.youtube.com/embed/avideo\\"
+        frameborder=\\"0\\"
+        allowfullscreen
+    />
+    "
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value="embed content"
+    values={
+      Object {
+        "content": "embed content",
+        "name": "embed name",
+        "type": "youtube_embed",
+      }
+    }
+  />
+</Fragment>
+`;
+
+exports[`PageBlockForm: Component should render correctly with image type 1`] = `
+<Fragment>
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={false}
+    label="Block Name"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value="name"
+  />
+  <Select
+    id="fieldBlockType"
+    label="Type"
+    name="type"
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "Image Upload",
+          "value": "image_uploaded",
+        },
+        Object {
+          "label": "Markdown Text",
+          "value": "markdown_text",
+        },
+        Object {
+          "label": "Embed",
+          "value": "youtube_embed",
+        },
+        Object {
+          "label": "Code Snippet",
+          "value": "code_snippet",
+        },
+        Object {
+          "label": "Select one",
+          "value": "none",
+        },
+      ]
+    }
+    setFieldValue={[Function]}
+    value="image_uploaded"
+  />
+  <Uploader
+    accept="image/gif,image/jpeg"
+    checkOnlyErrors={true}
+    errors={Object {}}
+    fileName="image name"
+    handleChange={[Function]}
+    id="fileUpload"
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    label="File Name"
+    name="image"
+    onChange={[Function]}
+    setFieldValue={[Function]}
+    touched={Object {}}
+    type="file"
+    values={
+      Object {
+        "image": "image",
+        "imageName": "image name",
+        "name": "name",
+        "type": "image_uploaded",
+      }
+    }
+  />
+</Fragment>
+`;
+
+exports[`PageBlockForm: Component should render correctly with markdown type 1`] = `
+<Fragment>
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    isEdit={false}
+    label="Block Name"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value="markdown name"
+  />
+  <Select
+    id="fieldBlockType"
+    label="Type"
+    name="type"
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "Image Upload",
+          "value": "image_uploaded",
+        },
+        Object {
+          "label": "Markdown Text",
+          "value": "markdown_text",
+        },
+        Object {
+          "label": "Embed",
+          "value": "youtube_embed",
+        },
+        Object {
+          "label": "Code Snippet",
+          "value": "code_snippet",
+        },
+        Object {
+          "label": "Select one",
+          "value": "none",
+        },
+      ]
+    }
+    setFieldValue={[Function]}
+    value="markdown_text"
+  />
+  <TextInput
+    checkOnlyErrors={false}
+    errors={Object {}}
+    fullWidth={true}
+    handleChange={[Function]}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isEdit={false}
+    label="Markdown Text"
+    multiline={true}
+    name="content"
+    onChange={[Function]}
+    placeholder="
+    # My Cool Title
+    
+    ## Awesome subtitle
+    
+    Description **bold**
+    "
+    setFieldValue={[Function]}
+    touched={Object {}}
+    value="markdown content"
+    values={
+      Object {
+        "content": "markdown content",
+        "name": "markdown name",
+        "type": "markdown_text",
+      }
+    }
+  />
+</Fragment>
+`;

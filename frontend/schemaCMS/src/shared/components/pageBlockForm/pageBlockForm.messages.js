@@ -3,28 +3,20 @@ import { defineMessages } from 'react-intl';
 import { CODE_TYPE, EMBED_TYPE, IMAGE_TYPE, MARKDOWN_TYPE, NONE } from '../../../modules/pageBlock/pageBlock.constants';
 
 export default defineMessages({
-  title: {
-    id: 'page.createPageBlock.title',
-    defaultMessage: 'Page Block',
-  },
-  subTitle: {
-    id: 'page.createPageBlock.subTitle',
-    defaultMessage: 'Create',
-  },
   pageBlockFieldName: {
-    id: 'page.createPageBlock.pageBlockFieldName',
+    id: 'shared.components.pageBlockForm.pageBlockFieldName',
     defaultMessage: 'Block Name',
   },
   pageBlockFieldNamePlaceholder: {
-    id: 'page.createPageBlock.pageFieldNamePlaceholder',
+    id: 'shared.components.pageBlockForm.pageFieldNamePlaceholder',
     defaultMessage: 'Name',
   },
   pageBlockFieldMarkdown: {
-    id: 'page.createPageBlock.pageBlockFieldMarkdown',
+    id: 'shared.components.pageBlockForm.pageBlockFieldMarkdown',
     defaultMessage: 'Markdown Text',
   },
   pageBlockFieldMarkdownPlaceholder: {
-    id: 'page.createPageBlock.pageBlockFieldMarkdownPlaceholder',
+    id: 'shared.components.pageBlockForm.pageBlockFieldMarkdownPlaceholder',
     defaultMessage: `
     # My Cool Title
     
@@ -34,11 +26,11 @@ export default defineMessages({
     `,
   },
   pageBlockFieldCode: {
-    id: 'page.createPageBlock.pageBlockFieldCode',
+    id: 'shared.components.pageBlockForm.pageBlockFieldCode',
     defaultMessage: 'Code Snippet',
   },
   pageBlockFieldCodePlaceholder: {
-    id: 'page.createPageBlock.pageBlockFieldCodePlaceholder',
+    id: 'shared.components.pageBlockForm.pageBlockFieldCodePlaceholder',
     defaultMessage: `
     <button id="my-button">
         Click Me
@@ -49,11 +41,11 @@ export default defineMessages({
     `,
   },
   pageBlockFieldEmbed: {
-    id: 'page.createPageBlock.pageBlockFieldEmbed',
+    id: 'shared.components.pageBlockForm.pageBlockFieldEmbed',
     defaultMessage: 'Embed Code',
   },
   pageBlockFieldEmbedPlaceholder: {
-    id: 'page.createPageBlock.pageBlockFieldEmbedPlaceholder',
+    id: 'shared.components.pageBlockForm.pageBlockFieldEmbedPlaceholder',
     defaultMessage: `
     <iframe 
         width="560" 
@@ -65,39 +57,35 @@ export default defineMessages({
     `,
   },
   pageBlockFieldImage: {
-    id: 'page.createPageBlock.pageBlockFieldImage',
+    id: 'shared.components.pageBlockForm.pageBlockFieldImage',
     defaultMessage: 'File Name',
   },
   pageBlockFieldType: {
-    id: 'page.createPageBlock.pageBlockFieldType',
+    id: 'shared.components.pageBlockForm.pageBlockFieldType',
     defaultMessage: 'Type',
   },
-  createPageBlock: {
-    id: 'page.createPageBlock.createPageBlock',
-    defaultMessage: 'Create',
-  },
   cancel: {
-    id: 'page.createPageBlock.cancel',
+    id: 'shared.components.pageBlockForm.cancel',
     defaultMessage: 'Cancel',
   },
   [NONE]: {
-    id: `page.createPageBlock.${NONE}`,
+    id: `shared.components.pageBlockForm.${NONE}`,
     defaultMessage: 'Select one',
   },
   [CODE_TYPE]: {
-    id: `page.createPageBlock.${CODE_TYPE}`,
+    id: `shared.components.pageBlockForm.${CODE_TYPE}`,
     defaultMessage: 'Code Snippet',
   },
   [EMBED_TYPE]: {
-    id: `page.createPageBlock.${EMBED_TYPE}`,
+    id: `shared.components.pageBlockForm.${EMBED_TYPE}`,
     defaultMessage: 'Embed',
   },
   [IMAGE_TYPE]: {
-    id: `page.createPageBlock.${IMAGE_TYPE}`,
+    id: `shared.components.pageBlockForm.${IMAGE_TYPE}`,
     defaultMessage: 'Image Upload',
   },
   [MARKDOWN_TYPE]: {
-    id: `page.createPageBlock.${MARKDOWN_TYPE}`,
+    id: `shared.components.pageBlockForm.${MARKDOWN_TYPE}`,
     defaultMessage: 'Markdown Text',
   },
 });

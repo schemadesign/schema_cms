@@ -7,6 +7,7 @@ import { watchPageBlock } from '../pageBlock.sagas';
 import { PageBlockRoutines } from '../pageBlock.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { IMAGE_TYPE, MARKDOWN_TYPE } from '../pageBlock.constants';
+import browserHistory from '../../../shared/utils/history';
 
 describe('PageBlock: sagas', () => {
   const defaultState = Immutable({
@@ -36,6 +37,25 @@ describe('PageBlock: sagas', () => {
     });
   });
 
+  describe('when fetchOne action is called', () => {
+    it('should put fetchOne.success action', async () => {
+      const response = {
+        id: 1,
+      };
+      const payload = {
+        blockId: 1,
+      };
+
+      mockApi.get(`/blocks/${payload.blockId}`).reply(OK, response);
+
+      await expectSaga(watchPageBlock)
+        .withState(defaultState)
+        .put(PageBlockRoutines.fetchOne.success(response))
+        .dispatch(PageBlockRoutines.fetchOne(payload))
+        .silentRun();
+    });
+  });
+
   describe('when setBlocks action is called', () => {
     it('should put setBlocks.success action', async () => {
       const response = {
@@ -61,6 +81,7 @@ describe('PageBlock: sagas', () => {
 
   describe('when create action is called', () => {
     it('should put create.success action', async () => {
+      jest.spyOn(browserHistory, 'push');
       const response = {
         id: 1,
       };
@@ -83,6 +104,8 @@ describe('PageBlock: sagas', () => {
         .put(PageBlockRoutines.create.success(response))
         .dispatch(PageBlockRoutines.create(payload))
         .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`);
     });
 
     it('should put create.success action for image type', async () => {
@@ -113,6 +136,41 @@ describe('PageBlock: sagas', () => {
         .put(PageBlockRoutines.create.success(response))
         .dispatch(PageBlockRoutines.create(payload))
         .silentRun();
+    });
+  });
+
+  describe('when update action is called', () => {
+    it('should put update.success action for image type', async () => {
+      jest.spyOn(browserHistory, 'push');
+      const response = {
+        id: 1,
+      };
+
+      const payload = {
+        pageId: 1,
+        blockId: 2,
+        name: 'Title',
+        image: 'file',
+        type: [IMAGE_TYPE],
+      };
+
+      const options = {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      };
+
+      mockApi
+        .patch(`/blocks/${payload.blockId}`, /form-data; name="name"[^]*name/m, options, {
+          name: 'Title',
+          type: [MARKDOWN_TYPE],
+        })
+        .reply(OK, response);
+
+      await expectSaga(watchPageBlock)
+        .withState(defaultState)
+        .put(PageBlockRoutines.update.success(response))
+        .dispatch(PageBlockRoutines.update(payload))
+        .silentRun();
+      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`);
     });
   });
 });

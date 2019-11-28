@@ -20,6 +20,20 @@ function* fetchList({ payload: { pageId } }) {
   }
 }
 
+function* fetchOne({ payload: { blockId } }) {
+  try {
+    yield put(PageBlockRoutines.fetchOne.request());
+
+    const { data } = yield api.get(`${BLOCK_PATH}/${blockId}`);
+
+    yield put(PageBlockRoutines.fetchOne.success(data));
+  } catch (e) {
+    yield put(PageBlockRoutines.fetchOne.failure(e));
+  } finally {
+    yield put(PageBlockRoutines.fetchOne.fulfill());
+  }
+}
+
 function* setBlocks({ payload: { pageId, active, inactive } }) {
   try {
     yield put(PageBlockRoutines.setBlocks.request());
@@ -49,7 +63,7 @@ function* create({ payload: { pageId, ...restFields } }) {
     });
 
     yield put(PageBlockRoutines.create.success(data));
-    browserHistory.push(`/page/${pageId}/`);
+    browserHistory.push(`/page/${pageId}`);
   } catch (e) {
     yield put(PageBlockRoutines.create.failure(e));
   } finally {
@@ -57,10 +71,35 @@ function* create({ payload: { pageId, ...restFields } }) {
   }
 }
 
+function* update({ payload: { pageId, blockId, ...restFields } }) {
+  try {
+    yield put(PageBlockRoutines.update.request());
+    const formData = new FormData();
+
+    pipe(
+      keys,
+      forEach(name => formData.append(name, restFields[name]))
+    )(restFields);
+
+    const { data } = yield api.patch(`${BLOCK_PATH}/${blockId}`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+
+    yield put(PageBlockRoutines.update.success(data));
+    browserHistory.push(`/page/${pageId}`);
+  } catch (e) {
+    yield put(PageBlockRoutines.update.failure(e));
+  } finally {
+    yield put(PageBlockRoutines.update.fulfill());
+  }
+}
+
 export function* watchPageBlock() {
   yield all([
     takeLatest(PageBlockRoutines.fetchList.TRIGGER, fetchList),
+    takeLatest(PageBlockRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(PageBlockRoutines.setBlocks.TRIGGER, setBlocks),
     takeLatest(PageBlockRoutines.create.TRIGGER, create),
+    takeLatest(PageBlockRoutines.update.TRIGGER, update),
   ]);
 }
