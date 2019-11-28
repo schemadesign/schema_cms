@@ -14,7 +14,6 @@ export class List extends PureComponent {
   static propTypes = {
     fetchUsers: PropTypes.func.isRequired,
     users: PropTypes.array.isRequired,
-    isAdmin: PropTypes.bool.isRequired,
   };
 
   componentDidMount() {
@@ -26,7 +25,7 @@ export class List extends PureComponent {
   handleCancelClick = () => browserHistory.push('/');
 
   render() {
-    const { users, isAdmin } = this.props;
+    const { users } = this.props;
     const headerConfig = {
       headerTitle: <FormattedMessage {...messages.headerTitle} />,
       headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
@@ -38,7 +37,7 @@ export class List extends PureComponent {
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle}>
           <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
         </ContextHeader>
-        <UserList users={users} isAdmin={isAdmin} />
+        <UserList users={users} />
         <NavigationContainer hideOnDesktop>
           <BackButton onClick={this.handleCancelClick}>
             <FormattedMessage {...messages.cancel} />
