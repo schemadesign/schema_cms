@@ -25,6 +25,6 @@ export const defaultProps = {
   isSubmitting: false,
 };
 
-storiesOf('CreatePageBlock', module)
+storiesOf('Page|CreatePageBlock', module)
   .addDecorator(withTheme())
   .add('Default', () => <CreatePageBlock {...defaultProps} />);

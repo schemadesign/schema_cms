@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Folder/PageList Default 1`] = `
+exports[`Storyshots Folder|PageList Default 1`] = `
 .c12 {
   height: 155px;
 }
