@@ -6,14 +6,11 @@ from django.db import transaction
 from django.utils import safestring
 from django.template.loader import render_to_string
 
-from . import models
 from schemacms.utils import admin as utils_admin
+from . import models, forms
 
 
 admin.site.register(models.WranglingScript)
-admin.site.register(models.Folder)
-admin.site.register(models.Page)
-admin.site.register(models.Block)
 
 
 def update_meta_file(modeladmin, request, queryset):
@@ -104,3 +101,22 @@ class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
     actions = (update_meta,)
     list_display = ('pk', 'datasource', 'created')
     inlines = [DataSourceJobStepInline]
+
+
+@admin.register(models.Folder)
+class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
+    list_display = ('pk', 'name', 'project')
+    search_fields = ['name']
+
+
+@admin.register(models.Page)
+class PageAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'title', 'folder')
+    search_fields = ['title']
+
+
+@admin.register(models.Block)
+class BlockAdmin(admin.ModelAdmin):
+    form = forms.BlockForm
+    list_display = ('pk', 'name', 'page')
+    search_fields = ['name']
