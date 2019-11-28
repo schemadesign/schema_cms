@@ -1090,6 +1090,15 @@ class TestFolderDetailView:
         assert response.data["name"] == new_name
         assert folder.project_id == project.id
 
+    def test_delete_folder(self, api_client, user, folder):
+        api_client.force_authenticate(user)
+
+        response = api_client.delete(self.get_url(pk=folder.pk))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not projects_models.Folder.objects.all().filter(pk=folder.pk).exists()
+        assert projects_models.Folder.objects.all_with_deleted().filter(pk=folder.pk).exists()
+
     @staticmethod
     def get_url(pk):
         return reverse("projects:folder-detail", kwargs=dict(pk=pk))
@@ -1149,6 +1158,15 @@ class TestPageDetailView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data["title"] == new_title
         assert page.folder_id == folder.id
+
+    def test_delete_page(self, api_client, user, page):
+        api_client.force_authenticate(user)
+
+        response = api_client.delete(self.get_url(pk=page.pk))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not projects_models.Page.objects.all().filter(pk=page.pk).exists()
+        assert projects_models.Page.objects.all_with_deleted().filter(pk=page.pk).exists()
 
     @staticmethod
     def get_url(pk):
@@ -1239,6 +1257,15 @@ class TestBlockDetailView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data["name"] == new_name
         assert block.page_id == page.id
+
+    def test_delete_block(self, api_client, user, block):
+        api_client.force_authenticate(user)
+
+        response = api_client.delete(self.get_url(pk=block.pk))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not projects_models.Block.objects.all().filter(pk=block.pk).exists()
+        assert projects_models.Block.objects.all_with_deleted().filter(pk=block.pk).exists()
 
     @staticmethod
     def get_url(pk):

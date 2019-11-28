@@ -517,7 +517,7 @@ class Folder(
     )
 
     def __str__(self):
-        return str(self.id)
+        return self.name or str(self.pk)
 
     class Meta:
         verbose_name = _("Folder")
@@ -545,17 +545,19 @@ class Folder(
         return data
 
 
-class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
+class Page(
+    ext_models.TitleSlugDescriptionModel, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
+):
     folder: Folder = models.ForeignKey(Folder, on_delete=models.CASCADE, related_name='pages')
     keywords = models.TextField(blank=True, default="")
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="pages", null=True
     )
 
-    objects = managers.PageQuerySet().as_manager()
+    objects = managers.PageManager()
 
     def __str__(self):
-        return str(self.pk)
+        return self.title or str(self.pk)
 
     class Meta:
         unique_together = ("title", "folder")
@@ -590,7 +592,7 @@ class Page(ext_models.TitleSlugDescriptionModel, ext_models.TimeStampedModel):
         return blocks
 
 
-class Block(utils_models.MetaGeneratorMixin, ext_models.TimeStampedModel):
+class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     page: Page = models.ForeignKey(Page, on_delete=models.CASCADE, related_name="blocks")
     name = models.CharField(max_length=constants.BLOCK_NAME_MAX_LENGTH)
     type = models.CharField(max_length=25, choices=constants.BLOCK_TYPE_CHOICES)
@@ -599,7 +601,7 @@ class Block(utils_models.MetaGeneratorMixin, ext_models.TimeStampedModel):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return str(self.pk)
+        return self.name or str(self.pk)
 
     class Meta:
         unique_together = ("name", "page")

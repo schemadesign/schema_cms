@@ -354,14 +354,7 @@ class FilterDetailViewSet(
         return models.Filter.objects.all().select_related("datasource")
 
 
-class FolderViewSet(
-    utils_serializers.ActionSerializerViewSetMixin,
-    mixins.ListModelMixin,
-    mixins.RetrieveModelMixin,
-    mixins.UpdateModelMixin,
-    mixins.CreateModelMixin,
-    viewsets.GenericViewSet,
-):
+class FolderViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     queryset = models.Folder.objects.select_related("project", "created_by").all()
     serializer_class = serializers.FolderSerializer
     permission_classes = (permissions.IsAuthenticated,)
@@ -394,6 +387,7 @@ class PageViewSet(
     utils_serializers.ActionSerializerViewSetMixin,
     mixins.RetrieveModelMixin,
     mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
     queryset = models.Page.objects.prefetch_related("blocks").select_related("folder", "created_by").all()

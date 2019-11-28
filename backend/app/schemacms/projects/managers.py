@@ -113,7 +113,7 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 DataSourceManager = generate_soft_delete_manager(queryset_class=DataSourceQuerySet)
 
 
-class PageQuerySet(models.QuerySet):
+class PageQuerySet(softdelete.models.SoftDeleteQuerySet):
     def annotate_blocks_count(self):
         from .models import Block
 
@@ -129,3 +129,6 @@ class PageQuerySet(models.QuerySet):
                 models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
         )
+
+
+PageManager = generate_soft_delete_manager(queryset_class=PageQuerySet)
