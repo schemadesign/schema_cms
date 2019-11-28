@@ -417,9 +417,11 @@ class PageViewSet(
             return response.Response(serializer.data, status=status.HTTP_200_OK)
 
         else:
-            request.data["page"] = page.id
+            data = request.data.copy()
 
-            serializer = self.get_serializer(data=request.data, context=page)
+            data["page"] = page.id
+
+            serializer = self.get_serializer(data=data, context=page)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 
