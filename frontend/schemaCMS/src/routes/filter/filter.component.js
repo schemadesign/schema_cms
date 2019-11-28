@@ -8,6 +8,7 @@ import messages from './filter.messages';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { FilterForm } from '../../shared/components/filterForm';
 import { TopHeader } from '../../shared/components/topHeader';
+import { ContextHeader } from '../../shared/components/contextHeader';
 
 export class Filter extends PureComponent {
   static propTypes = {
@@ -51,10 +52,12 @@ export class Filter extends PureComponent {
   render() {
     const { loading } = this.state;
     const dataSourceId = pathOr('', ['filter', 'datasource', 'id'], this.props);
+    const headerConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>
-        <TopHeader {...this.getHeaderAndMenuConfig()} />
+        <TopHeader {...headerConfig} />
+        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <LoadingWrapper loading={loading}>
           <FilterForm
             fieldsInfo={this.props.fieldsInfo}
