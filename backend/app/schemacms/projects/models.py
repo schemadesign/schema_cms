@@ -611,5 +611,11 @@ class Block(utils_models.MetaGeneratorMixin, ext_models.TimeStampedModel):
             raise ValueError("Page is not set")
         return os.path.join(base_path, f"pages/{self.page_id}/{filename}")
 
+    def get_original_image_name(self, file_name=None):
+        if not file_name:
+            file_name = self.image.name
+        name, ext = os.path.splitext(os.path.basename(file_name))
+        return name, os.path.basename(file_name)
+
     def get_project(self):
         return self.page.folder.project

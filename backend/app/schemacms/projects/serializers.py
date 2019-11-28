@@ -463,9 +463,11 @@ class PageDetailSerializer(PageSerializer):
 
 
 class BlockSerializer(serializers.ModelSerializer):
+    image_name = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = models.Block
-        fields = ("id", "page", "name", "type", "content", "image", "is_active")
+        fields = ("id", "page", "name", "type", "content", "image", "image_name", "is_active")
         extra_kwargs = {"page": {"required": False, "allow_null": True}}
         validators = [
             CustomUniqueTogetherValidator(
@@ -496,6 +498,11 @@ class BlockSerializer(serializers.ModelSerializer):
             instance.image.delete()
 
         return super().update(instance, validated_data)
+
+    def get_image_name(self, obj):
+        if obj.image:
+            _, file_name = obj.get_original_image_name()
+            return file_name
 
 
 class BlockPageSerializer(serializers.ModelSerializer):
