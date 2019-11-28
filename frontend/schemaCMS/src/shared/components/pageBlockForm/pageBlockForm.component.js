@@ -63,7 +63,7 @@ export class PageBlockForm extends PureComponent {
       type="file"
       id="fileUpload"
       onChange={({ currentTarget }) => this.handleUploadChange(currentTarget)}
-      accept="image/gif,image/jpeg"
+      accept=".png, .jpg, .jpeg, .gif"
       checkOnlyErrors
       {...this.props}
     />
@@ -79,6 +79,7 @@ export class PageBlockForm extends PureComponent {
 
   render() {
     const { values, intl, handleChange, ...restProps } = this.props;
+
     return (
       <Fragment>
         <TextInput

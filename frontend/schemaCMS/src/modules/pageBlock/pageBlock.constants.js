@@ -5,6 +5,7 @@ export const BLOCK_NAME = 'name';
 export const BLOCK_TYPE = 'type';
 export const BLOCK_CONTENT = 'content';
 export const BLOCK_IMAGE = 'image';
+export const BLOCK_IMAGE_NAME = 'imageName';
 
 export const IMAGE_TYPE = 'image_uploaded';
 export const MARKDOWN_TYPE = 'markdown_text';
@@ -28,4 +29,17 @@ export const BLOCK_SCHEMA = Yup.object().shape({
     .max(50, 'Block name should have maximum 50 characters')
     .required('Required'),
   [BLOCK_TYPE]: Yup.mixed().oneOf(VALID_TYPE_OPTIONS, 'This option is invalid.'),
+  [BLOCK_IMAGE_NAME]: Yup.string().when(BLOCK_TYPE, { is: IMAGE_TYPE, then: Yup.string().required('Required') }),
+  [`${MARKDOWN_TYPE}-${BLOCK_CONTENT}`]: Yup.string().when(BLOCK_TYPE, {
+    is: MARKDOWN_TYPE,
+    then: Yup.string().required('Required'),
+  }),
+  [`${EMBED_TYPE}-${BLOCK_CONTENT}`]: Yup.string().when(BLOCK_TYPE, {
+    is: EMBED_TYPE,
+    then: Yup.string().required('Required'),
+  }),
+  [`${CODE_TYPE}-${BLOCK_CONTENT}`]: Yup.string().when(BLOCK_TYPE, {
+    is: CODE_TYPE,
+    then: Yup.string().required('Required'),
+  }),
 });
