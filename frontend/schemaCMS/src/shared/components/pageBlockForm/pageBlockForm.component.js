@@ -44,8 +44,8 @@ export class PageBlockForm extends PureComponent {
 
   renderBlock = (messageId, messagePlaceholderId) => (
     <TextInput
-      value={this.props.values[BLOCK_CONTENT]}
-      name={BLOCK_CONTENT}
+      value={this.props.values[`${this.props.values[BLOCK_TYPE]}-${BLOCK_CONTENT}`]}
+      name={`${this.props.values[BLOCK_TYPE]}-${BLOCK_CONTENT}`}
       label={this.props.intl.formatMessage(messages[messageId])}
       placeholder={this.props.intl.formatMessage(messages[messagePlaceholderId])}
       fullWidth

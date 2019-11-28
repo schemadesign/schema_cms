@@ -14,7 +14,9 @@ export const NONE = 'none';
 
 export const INITIAL_VALUES = {
   [BLOCK_NAME]: '',
-  [BLOCK_CONTENT]: '',
+  [`${MARKDOWN_TYPE}-${BLOCK_CONTENT}`]: '',
+  [`${EMBED_TYPE}-${BLOCK_CONTENT}`]: '',
+  [`${CODE_TYPE}-${BLOCK_CONTENT}`]: '',
   [BLOCK_IMAGE]: null,
   [BLOCK_TYPE]: NONE,
 };
