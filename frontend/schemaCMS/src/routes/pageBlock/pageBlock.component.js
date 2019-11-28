@@ -10,6 +10,8 @@ import { ContextHeader } from '../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { PageBlockForm } from '../../shared/components/pageBlockForm';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
+import { Link } from '../../theme/typography';
 
 export class PageBlock extends PureComponent {
   static propTypes = {
@@ -17,6 +19,7 @@ export class PageBlock extends PureComponent {
     block: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     fetchPageBlock: PropTypes.func.isRequired,
+    removePageBlock: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
@@ -41,11 +44,22 @@ export class PageBlock extends PureComponent {
     }
   }
 
+  handleRemoveClick = () => this.setState({ confirmationModalOpen: true });
+
+  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
+
+  handleConfirmRemove = () => {
+    const pageId = path(['block', 'page'], this.props);
+    const blockId = path(['match', 'params', 'blockId'], this.props);
+
+    this.props.removePageBlock({ pageId, blockId });
+  };
+
   handleBackClick = () => this.props.history.push(`/page/${path(['block', 'page', 'id'], this.props)}`);
 
   render() {
     const { handleSubmit, isSubmitting, ...restProps } = this.props;
-    const { loading, error } = this.state;
+    const { loading, error, confirmationModalOpen } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -56,6 +70,9 @@ export class PageBlock extends PureComponent {
         <Form onSubmit={handleSubmit}>
           <LoadingWrapper loading={loading} error={error}>
             <PageBlockForm {...this.props} />
+            <Link id="removePageBlockDesktopBtn" onClick={this.handleRemoveClick}>
+              <FormattedMessage {...messages.removePageBlock} />
+            </Link>
           </LoadingWrapper>
           <NavigationContainer>
             <BackButton id="backBtn" onClick={this.handleBackClick}>
@@ -71,6 +88,19 @@ export class PageBlock extends PureComponent {
             </NextButton>
           </NavigationContainer>
         </Form>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton onClick={this.handleCancelRemove}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </BackButton>
+            <NextButton onClick={this.handleConfirmRemove}>
+              <FormattedMessage {...messages.confirmRemoval} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
       </Container>
     );
   }

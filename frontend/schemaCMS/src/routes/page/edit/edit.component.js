@@ -80,7 +80,7 @@ export class Edit extends PureComponent {
         <LoadingWrapper loading={loading} error={error}>
           <Form onSubmit={handleSubmit}>
             <PageForm {...this.props} />
-            <Link id="removeFolderDesktopBtn" onClick={this.handleRemoveClick}>
+            <Link id="removePageDesktopBtn" onClick={this.handleRemoveClick}>
               <FormattedMessage {...messages.removePage} />
             </Link>
             <NavigationContainer>
