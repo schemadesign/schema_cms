@@ -146,7 +146,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
             "card": Object {
               "background": "#1d1d20",
               "border": "#FFF",
-              "label": undefined,
+              "label": "#71737e",
               "text": "#FFF",
             },
             "checkbox": Object {
@@ -439,7 +439,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
             "card": Object {
               "background": "#1d1d20",
               "border": "#FFF",
-              "label": undefined,
+              "label": "#71737e",
               "text": "#FFF",
             },
             "checkbox": Object {

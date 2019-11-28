@@ -258,7 +258,7 @@ exports[`Storyshots Project|UserList list 1`] = `
             }
           >
             <span>
-              Project users list
+              Overview
             </span>
           </h1>
         </div>
@@ -362,7 +362,7 @@ exports[`Storyshots Project|UserList list 1`] = `
             }
           >
             <span>
-              Project users list
+              Overview
             </span>
           </h1>
         </div>
@@ -517,7 +517,7 @@ exports[`Storyshots Project|UserList list 1`] = `
         }
       >
         <span>
-          Project users list
+          Overview
         </span>
       </h1>
     </div>
@@ -920,7 +920,7 @@ exports[`Storyshots Project|UserList list with users 1`] = `
             }
           >
             <span>
-              Project users list
+              Overview
             </span>
           </h1>
         </div>
@@ -1024,7 +1024,7 @@ exports[`Storyshots Project|UserList list with users 1`] = `
             }
           >
             <span>
-              Project users list
+              Overview
             </span>
           </h1>
         </div>
@@ -1179,7 +1179,7 @@ exports[`Storyshots Project|UserList list with users 1`] = `
         }
       >
         <span>
-          Project users list
+          Overview
         </span>
       </h1>
     </div>
