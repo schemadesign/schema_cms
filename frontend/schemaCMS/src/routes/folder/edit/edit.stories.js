@@ -20,6 +20,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   handleBlur: Function.prototype,
   fetchFolder: Function.prototype,
+  removeFolder: Function.prototype,
   match: {
     params: {
       folderId: '1',

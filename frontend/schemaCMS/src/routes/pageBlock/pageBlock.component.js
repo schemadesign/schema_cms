@@ -49,7 +49,7 @@ export class PageBlock extends PureComponent {
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
   handleConfirmRemove = () => {
-    const pageId = path(['block', 'page'], this.props);
+    const pageId = path(['block', 'page', 'id'], this.props);
     const blockId = path(['match', 'params', 'blockId'], this.props);
 
     this.props.removePageBlock({ pageId, blockId });

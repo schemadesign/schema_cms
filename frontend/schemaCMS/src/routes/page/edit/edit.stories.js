@@ -14,6 +14,7 @@ export const defaultProps = {
   fetchPage: Function.prototype,
   handleChange: Function.prototype,
   handleSubmit: Function.prototype,
+  removePage: Function.prototype,
   match: {
     params: {
       pageId: '1',

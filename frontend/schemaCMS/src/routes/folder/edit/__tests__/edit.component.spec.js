@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 
 import { Edit } from '../edit.component';
 import { defaultProps } from '../edit.stories';
-import { BackButton } from '../../../../shared/components/navigation';
 import { Form } from '../edit.styles';
 
 describe('Edit: Component', () => {
@@ -26,7 +25,7 @@ describe('Edit: Component', () => {
   it('should return to folder list', () => {
     jest.spyOn(defaultProps.history, 'push');
     const wrapper = render();
-    wrapper.find(BackButton).simulate('click');
+    wrapper.find('#backBtn').simulate('click');
 
     expect(defaultProps.history.push).toHaveBeenCalledWith('/project/1/folder');
   });

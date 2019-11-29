@@ -89,6 +89,7 @@ exports[`Edit: Component should render correctly 1`] = `
             },
           }
         }
+        removePage={[Function]}
         values={
           Object {
             "description": "description",
@@ -97,6 +98,16 @@ exports[`Edit: Component should render correctly 1`] = `
           }
         }
       />
+      <Styled(Span)
+        id="removePageDesktopBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove Page"
+          id="page.edit.removePage"
+          values={Object {}}
+        />
+      </Styled(Span)>
       <NavigationContainer
         hideOnDesktop={false}
         right={false}
@@ -127,6 +138,70 @@ exports[`Edit: Component should render correctly 1`] = `
       </NavigationContainer>
     </styled.form>
   </LoadingWrapper>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Removing a page will also remove any content under it. Are you sure you want to proceed?"
+        id="page.edit.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="page.edit.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="page.edit.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
 </Fragment>
 `;
 
@@ -203,6 +278,7 @@ exports[`Edit: Component should render correctly with loader 1`] = `
             },
           }
         }
+        removePage={[Function]}
         values={
           Object {
             "description": "description",
@@ -211,6 +287,16 @@ exports[`Edit: Component should render correctly with loader 1`] = `
           }
         }
       />
+      <Styled(Span)
+        id="removePageDesktopBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove Page"
+          id="page.edit.removePage"
+          values={Object {}}
+        />
+      </Styled(Span)>
       <NavigationContainer
         hideOnDesktop={false}
         right={false}
@@ -241,5 +327,69 @@ exports[`Edit: Component should render correctly with loader 1`] = `
       </NavigationContainer>
     </styled.form>
   </LoadingWrapper>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Removing a page will also remove any content under it. Are you sure you want to proceed?"
+        id="page.edit.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="page.edit.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="page.edit.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
 </Fragment>
 `;

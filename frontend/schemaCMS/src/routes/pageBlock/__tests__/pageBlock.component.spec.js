@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 
 import { PageBlock } from '../pageBlock.component';
 import { defaultProps } from '../pageBlock.stories';
-import { BackButton } from '../../../shared/components/navigation';
 import { Form } from '../pageBlock.styles';
 
 describe('PageBlock: Component', () => {
@@ -29,7 +28,7 @@ describe('PageBlock: Component', () => {
     jest.spyOn(defaultProps.history, 'push');
 
     const wrapper = render();
-    wrapper.find(BackButton).simulate('click');
+    wrapper.find('#backBtn').simulate('click');
 
     expect(defaultProps.history.push).toHaveBeenCalledWith('/page/1');
   });
