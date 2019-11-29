@@ -200,6 +200,7 @@ exports[`Edit: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        id="confirmRemovalBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -398,6 +399,7 @@ exports[`Edit: Component should render correctly with loader 1`] = `
         />
       </BackButton>
       <NextButton
+        id="confirmRemovalBtn"
         loading={false}
         onClick={[Function]}
       >

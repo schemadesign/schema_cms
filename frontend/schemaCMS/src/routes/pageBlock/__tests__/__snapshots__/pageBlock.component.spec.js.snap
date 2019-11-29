@@ -185,6 +185,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
         />
       </BackButton>
       <NextButton
+        id="confirmRemovalBtn"
         loading={false}
         onClick={[Function]}
       >
@@ -368,6 +369,7 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
         />
       </BackButton>
       <NextButton
+        id="confirmRemovalBtn"
         loading={false}
         onClick={[Function]}
       >
