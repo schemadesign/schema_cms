@@ -506,6 +506,7 @@ class BlockSerializer(serializers.ModelSerializer):
         if obj.image:
             _, file_name = obj.get_original_image_name()
             return file_name
+        return ""
 
 
 class BlockPageSerializer(serializers.ModelSerializer):
