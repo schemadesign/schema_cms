@@ -196,12 +196,19 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="job", methods=["post"])
     def job(self, request, pk=None, **kwargs):
         datasource = self.get_object()
+
+        if datasource.jobs and datasource.jobs_in_process:
+            message = "Previous jobs is still in PROCESSING"
+            return response.Response(data=message, status=status.HTTP_400_BAD_REQUEST)
+
         request.data["datasource"] = datasource
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+
         with transaction.atomic():
             job = serializer.save()
             transaction.on_commit(lambda: services.schedule_worker_with(job, datasource.file.size))
+
         return response.Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
     @decorators.action(detail=True, url_path="jobs-history", methods=["get"])
