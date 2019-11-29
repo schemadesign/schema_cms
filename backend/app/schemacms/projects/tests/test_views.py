@@ -515,11 +515,9 @@ class TestUpdateDataSourceView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
-    def test_url(self, data_source):
-        assert f"/api/v1/datasources/{data_source.pk}" == self.get_url(pk=data_source.pk)
-
     def test_file_overwrite(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory()
+        data_source.update_meta(preview_data={}, items=0, fields=0)
         _, file_name_before_update = data_source.get_original_file_name()
         payload = dict(type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file())
 
@@ -528,6 +526,9 @@ class TestUpdateDataSourceView:
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["file_name"] == file_name_before_update
+
+    def test_url(self, data_source):
+        assert f"/api/v1/datasources/{data_source.pk}" == self.get_url(pk=data_source.pk)
 
     @staticmethod
     def get_url(pk):
@@ -567,7 +568,9 @@ class TestDataSourceJobCreate:
         assert data_source.jobs.last().steps.filter(script=script_1).exists()
 
     @pytest.mark.usefixtures("transaction_on_commit")
-    def test_schedule_datasource_processing(self, api_client, admin, data_source_factory, script_factory, mocker):
+    def test_schedule_datasource_processing(
+        self, api_client, admin, data_source_factory, script_factory, mocker
+    ):
         schedule_datasource_processing = mocker.patch(
             "schemacms.projects.services.schedule_job_scripts_processing"
         )
@@ -632,7 +635,6 @@ class TestDataSourceJobUpdateState:
         payload = dict(
             job_state=projects_constants.DataSourceJobState.SUCCESS, result="path/to/result.csv", error="test"
         )
-        schedule_update_meta_mock = mocker.patch("schemacms.projects.models.DataSourceJob.schedule_update_meta")
         set_active_job_mock = mocker.patch("schemacms.projects.models.DataSource.set_active_job")
 
         response = api_client.post(
@@ -648,7 +650,6 @@ class TestDataSourceJobUpdateState:
         assert job.result == payload["result"]
         assert job.error == ""
         set_active_job_mock.assert_called_with(job)
-        schedule_update_meta_mock.assert_called_with()
 
     def test_job_state_from_processing_to_failed(self, api_client, job_factory, lambda_auth_token):
         job = job_factory(job_state=projects_constants.DataSourceJobState.PROCESSING, result=None)

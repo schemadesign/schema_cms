@@ -1,5 +1,4 @@
 import factory
-from unittest import mock
 
 from schemacms.projects import constants as project_constants
 from schemacms.users.tests.factories import UserFactory

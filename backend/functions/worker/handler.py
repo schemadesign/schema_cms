@@ -38,48 +38,47 @@ def map_dataframe_dtypes(dtype):
         return dtype
 
 
-def get_preview_data(file):
-    data_frame = dt.fread(file, na_strings=["", ''], fill=True)
+def read_file_to_data_frame(file):
+    return dt.fread(file, na_strings=["", ''], fill=True).to_pandas()
 
+
+def get_preview_data(data_frame):
     items, fields = data_frame.shape
 
     if items == 0:
         return json.dumps({"data": [], "fields": {}}, indent=4).encode(), items, fields
 
-    sample_of_5 = data_frame.head(5).to_pandas()
+    items, fields = data_frame.shape
+    table_preview = json.loads(data_frame.head(5).to_json(orient="records"))
+    fields_info = json.loads(data_frame.describe(include="all", percentiles=[]).to_json(orient="columns"))
+    samples = json.loads(data_frame.sample(n=1).to_json(orient="records"))
 
-    table_preview = json.loads(sample_of_5.to_json(orient="records"))
-    samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
-
-    fields_info = {}
-    mean = data_frame.mean().to_dict()
-    min = data_frame.min().to_dict()
-    max = data_frame.max().to_dict()
-    std = data_frame.sd().to_dict()
-    unique = data_frame.nunique().to_dict()
-    columns = data_frame.names
-
-    for i in columns:
-        fields_info[i] = {}
-        fields_info[i]["mean"] = mean[i][0]
-        fields_info[i]["min"] = min[i][0]
-        fields_info[i]["max"] = max[i][0]
-        fields_info[i]["std"] = std[i][0]
-        fields_info[i]["unique"] = unique[i][0]
-        fields_info[i]["count"] = items
-
-    dtypes = {i: k for i, k in zip(columns, data_frame.stypes)}
-    for key, value in dtypes.items():
+    for key, value in dict(data_frame.dtypes).items():
         fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
 
     for key, value in samples[0].items():
         fields_info[key]["sample"] = value
 
-    preview = {"data": table_preview, "fields": fields_info}
+    preview_data = {"data": table_preview, "fields": fields_info}
 
-    del data_frame, sample_of_5
+    return preview_data, items, fields
 
-    return preview, items, fields
+
+def process_datasource_meta_source_file(data: dict):
+    try:
+        datasource = types.DataSource.from_json(data)
+    except Exception as e:
+        return logging.critical(f"Invalid message body - {e}")
+
+    s3obj = services.get_s3_object(datasource.file)
+    data_frame = read_file_to_data_frame(s3obj["Body"])
+    try:
+        preview_data, items, fields = get_preview_data(data_frame)
+        api.schemacms_api.update_datasource_meta(
+            datasource_pk=datasource.id, items=items, fields=fields, preview_data=preview_data
+        )
+    except Exception as e:
+        return logging.error(f"Data Source {datasource.id} fail to create meta data - {e}")
 
 
 def write_dataframe_to_csv_on_s3(dataframe, filename):
@@ -112,11 +111,10 @@ def process_job(job_data: dict):
         api.schemacms_api.update_job_state(job_pk=current_job.id, state=db.JobState.PROCESSING)
 
         logger.info(f"Loading source file: {current_job.source_file_path} ver. {current_job.source_file_version}")
-        source_file = services.get_s3_object(
-            current_job.source_file_path, version=current_job.source_file_version
-        )
+        source_file = current_job.source_file
+
         try:
-            df = dt.fread(source_file["Body"], na_strings=["", ""], fill=True).to_pandas()
+            df = read_file_to_data_frame(source_file["Body"])
         except Exception as e:
             raise errors.JobLoadingSourceFileError(f"{e} @ loading source file")
 
@@ -135,6 +133,12 @@ def process_job(job_data: dict):
         )
         write_dataframe_to_csv_on_s3(df, result_file_name)
         write_dataframe_to_parquet_on_s3(df, result_file_name.replace(".csv", ".parquet"))
+
+        # Update job's meta data
+        preview_data, items, fields = get_preview_data(df)
+        api.schemacms_api.update_job_meta(
+            job_pk=current_job.id, items=items, fields=fields, preview_data=preview_data
+        )
 
         api.schemacms_api.update_job_state(
             job_pk=current_job.id, state=db.JobState.SUCCESS, result=result_file_name, error=""
@@ -156,22 +160,6 @@ def process_job(job_data: dict):
         return logging.critical(str(e))
 
 
-def process_datasource_file(datasource_data: dict):
-    try:
-        datasource = types.DataSource.from_json(datasource_data)
-    except Exception as e:
-        return logging.critical(f"Invalid message body - {e}")
-
-    s3obj = services.get_s3_object(datasource.file)
-    try:
-        preview_data, items, fields = get_preview_data(s3obj["Body"])
-        api.schemacms_api.update_datasource_meta(
-            datasource_pk=datasource.id, items=items, fields=fields, preview_data=preview_data
-        )
-    except Exception as e:
-        return logging.error(f"Data Source {datasource.id} fail to create meta data - {e}")
-
-
 def main(event, context):
     """Invoke with
     python mocks.py sqs_message_mock.json.example | sls invoke local --function main --docker --docker-arg="--network host"
@@ -184,7 +172,7 @@ def main(event, context):
     for record in event["Records"]:
         body = json.loads(record["body"])
         processing_handler_mapping = {
-            "meta-processing": process_datasource_file,
+            "datasource-meta-processing": process_datasource_meta_source_file,
             "scripts-processing": process_job,
         }
         handler = processing_handler_mapping[body["type"]]

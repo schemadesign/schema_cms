@@ -33,18 +33,12 @@ def get_sqs_queue_url(file_size: int) -> str:
 
 def schedule_worker_with(data: dict, source_file_size: int):
     queue_url = get_sqs_queue_url(file_size=source_file_size)
-    sqs_response = sqs.send_message(
-        QueueUrl=queue_url, MessageBody=json.dumps(data)
-    )
+    sqs_response = sqs.send_message(QueueUrl=queue_url, MessageBody=json.dumps(data))
     return sqs_response['MessageId']
 
 
 def schedule_object_meta_processing(obj, source_file_size):
-    data = {
-        "type": constants.WorkerProcessType.META_PROCESSING,
-        "objType": obj.__class__.__name__,
-        "data": obj.meta_file_serialization(),
-    }
+    data = {"type": obj.meta_file_processing_type, "data": obj.meta_file_serialization()}
     return schedule_worker_with(data=data, source_file_size=source_file_size)
 
 

@@ -1,9 +1,6 @@
 import itertools
 import json
-import logging
 import os
-
-import datatable as dt
 
 import django.core.files.base
 import django_fsm
@@ -65,8 +62,12 @@ class MetaDataModel(models.Model):
         file = obj.get_source_file()
         if not file:
             raise ValueError("Cannot schedule meta processing without source file")
-        services.schedule_object_meta_processing(
-            obj=obj, source_file_size=file.size)
+        with transaction.atomic():
+            try:
+                obj.meta_data.delete()
+            except models.ObjectDoesNotExist:
+                pass
+            services.schedule_object_meta_processing(obj=obj, source_file_size=file.size)
 
 
 class Project(
@@ -178,6 +179,10 @@ class DataSource(
     def get_source_file(self):
         return self.file
 
+    @property
+    def meta_file_processing_type(self):
+        return constants.WorkerProcessType.DATASOURCE_META_PROCESSING
+
     def schedule_update_meta(self):
         return MetaDataModel.schedule_update_meta(obj=self)
 
@@ -191,7 +196,7 @@ class DataSource(
             file_name, _ = self.get_original_file_name(self.file.name)
             meta.preview.save(
                 f"{file_name}_preview.json",
-                django.core.files.base.ContentFile(content=json.dumps(preview_data).encode())
+                django.core.files.base.ContentFile(content=json.dumps(preview_data).encode()),
             )
 
     def relative_path_to_save(self, filename):
@@ -359,15 +364,10 @@ class DataSourceJob(
     def get_source_file(self):
         if not self.source_file_path:
             return
-        params = {
-            'Bucket': settings.AWS_STORAGE_BUCKET_NAME,
-            'Key': self.source_file_path,
-        }
+        params = {'Bucket': settings.AWS_STORAGE_BUCKET_NAME, 'Key': self.source_file_path}
         if self.source_file_version:
             params['VersionId'] = self.source_file_version
-        return django.core.files.base.File(
-            services.s3.get_object(**params)["Body"]
-        )
+        return django.core.files.base.File(services.s3.get_object(**params)["Body"])
 
     @property
     def source_file_url(self):
@@ -397,7 +397,7 @@ class DataSourceJob(
 
             meta.preview.save(
                 f"job_{self.id}_preview.json",
-                django.core.files.base.ContentFile(content=json.dumps(preview_data).encode())
+                django.core.files.base.ContentFile(content=json.dumps(preview_data).encode()),
             )
 
     def meta_file_serialization(self):
@@ -442,7 +442,7 @@ class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
     )
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
-    options: dict = pg_fields.JSONField(default=dict)
+    options: dict = pg_fields.JSONField(default=dict, blank=True)
 
     def meta_file_serialization(self):
         data = {

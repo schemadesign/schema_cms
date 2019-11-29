@@ -7,7 +7,6 @@ from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
 from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
-from . import services
 
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
@@ -287,7 +286,7 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
         return obj.datasource.project_id
 
 
-class PublicApiDataSourceUpdateMetaSerializer(serializers.Serializer):
+class PublicApiUpdateMetaSerializer(serializers.Serializer):
     items = serializers.IntegerField(min_value=0)
     fields = serializers.IntegerField(min_value=0)
     preview_data = serializers.DictField()

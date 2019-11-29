@@ -7,7 +7,7 @@ BLOCK_NAME_MAX_LENGTH = 50
 
 
 class WorkerProcessType:
-    META_PROCESSING = "meta-processing"
+    DATASOURCE_META_PROCESSING = "datasource-meta-processing"
     SCRIPTS_PROCESSING = "scripts-processing"
 
 

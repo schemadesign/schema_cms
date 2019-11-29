@@ -21,7 +21,18 @@ class SchemaCMSAPI:
 
     @check_response
     def update_datasource_meta(self, datasource_pk, items, fields, preview_data):
-        url = os.path.join(self._job_url(datasource_pk), "update-meta")
+        url = os.path.join(self._datasource_url(datasource_pk), "update-meta")
+        response = requests.post(
+            url,
+            json={"items": items, "fields": fields, "preview_data": preview_data},
+            headers=self.get_headers(),
+            timeout=self.timeout,
+        )
+        return response
+
+    @check_response
+    def update_job_meta(self, job_pk, items, fields, preview_data):
+        url = os.path.join(self._job_url(job_pk), "update-meta")
         response = requests.post(
             url,
             json={"items": items, "fields": fields, "preview_data": preview_data},
@@ -45,7 +56,7 @@ class SchemaCMSAPI:
         return {'Authorization': f'Token {settings.LAMBDA_AUTH_TOKEN}'}
 
     def _datasource_url(self, datasource_pk) -> str:
-        return os.path.join(self.backend_url, str(datasource_pk))
+        return os.path.join(self.backend_url, "datasources", str(datasource_pk))
 
     def _job_url(self, job_pk) -> str:
         return os.path.join(self.backend_url, "jobs", str(job_pk))
