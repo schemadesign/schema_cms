@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { Theme } from 'schemaUI';
 
 import { DataWranglingScript } from './dataWranglingScript.component';
 
@@ -16,7 +17,7 @@ export const defaultProps = {
   history: {
     push: Function.prototype,
   },
-  isAdmin: false,
+  isAdmin: true,
   match: {
     params: {
       projectId: '1',
@@ -27,6 +28,15 @@ export const defaultProps = {
   },
 };
 
+export const editorProps = {
+  ...defaultProps,
+  isAdmin: false,
+}
+
 storiesOf('DataWranglingScript', module)
   .addDecorator(withTheme())
-  .add('Default', () => <DataWranglingScript {...defaultProps} />);
+  .add('admin', () => <DataWranglingScript {...defaultProps} />);
+
+storiesOf('DataWranglingScript', module)
+  .addDecorator(withTheme(Theme.light))
+  .add('editor', () => <DataWranglingScript {...editorProps} />);

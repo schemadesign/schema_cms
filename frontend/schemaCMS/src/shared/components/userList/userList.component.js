@@ -1,62 +1,73 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Icons } from 'schemaUI';
 import { ifElse, is } from 'ramda';
+import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../utils/rendering';
 import {
-  Actions,
   UserDetails,
   UserFullName,
-  Email,
   buttonIconStyles,
-  iconStyles,
   cardStyles,
+  ListItem,
   ListItemContent,
+  Role,
 } from './userList.styles';
+import messages from './userList.messages';
 
-import { ListItem, ListContainer } from '../listComponents';
+import { ListContainer } from '../listComponents';
 
-const { CloseIcon } = Icons;
+const { EditIcon } = Icons;
 
 export class UserList extends PureComponent {
   static propTypes = {
     users: PropTypes.array.isRequired,
-    isAdmin: PropTypes.bool.isRequired,
+    isAdmin: PropTypes.bool,
     projectId: PropTypes.string,
-    onRemoveUser: PropTypes.func,
   };
 
   getUrl = ifElse(is(String), projectId => `/project/${projectId}/user/`, () => '/user/');
 
-  renderRemove = renderWhenTrue((_, user) => (
-    <Button customStyles={buttonIconStyles} onClick={this.props.onRemoveUser(user)}>
-      <CloseIcon customStyles={iconStyles} />
+  renderEdit = renderWhenTrue(() => (
+    <Button customStyles={buttonIconStyles}>
+      <EditIcon />
     </Button>
   ));
 
-  renderListItem = ({ user, hasRemoving, isAdmin, index }) => (
-    <ListItem key={index} customStyles={cardStyles}>
-      <ListItemContent>
-        <UserDetails>
-          <UserFullName to={`${this.getUrl(this.props.projectId)}${user.id}`}>
-            {user.firstName} {user.lastName}
-          </UserFullName>
-          <Email>{user.email}</Email>
-        </UserDetails>
-        <Actions>{this.renderRemove(hasRemoving && isAdmin, user)}</Actions>
-      </ListItemContent>
-    </ListItem>
+  renderRole = role =>
+    renderWhenTrue(() => (
+      <Role>
+        <FormattedMessage {...messages[role]} />
+      </Role>
+    ))(!!messages[role]);
+
+  renderHeader = ({ role }, isAdmin) => (
+    <Fragment>
+      {this.renderRole(role)}
+      {this.renderEdit(isAdmin)}
+    </Fragment>
   );
 
-  render() {
-    const { users, onRemoveUser, isAdmin } = this.props;
-    const hasRemoving = !!onRemoveUser;
+  renderListItem = ({ user, isAdmin, index }) => {
+    const header = this.renderHeader(user, isAdmin);
 
     return (
-      <ListContainer>
-        {users.map((user, index) => this.renderListItem({ user, hasRemoving, isAdmin, index }))}
-      </ListContainer>
+      <ListItem key={index} customStyles={cardStyles} headerComponent={header}>
+        <ListItemContent>
+          <UserDetails>
+            <UserFullName to={`${this.getUrl(this.props.projectId)}${user.id}`}>
+              {user.firstName} {user.lastName}
+            </UserFullName>
+          </UserDetails>
+        </ListItemContent>
+      </ListItem>
     );
+  };
+
+  render() {
+    const { users, isAdmin } = this.props;
+
+    return <ListContainer>{users.map((user, index) => this.renderListItem({ user, isAdmin, index }))}</ListContainer>;
   }
 }

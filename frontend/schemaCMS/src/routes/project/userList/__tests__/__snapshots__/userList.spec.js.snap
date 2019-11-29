@@ -5,7 +5,7 @@ exports[`UserList: Component should render correctly 1`] = `
   <TopHeader
     headerSubtitle={
       <FormattedMessage
-        defaultMessage="Project users list"
+        defaultMessage="Overview"
         id="project.userList.headerSubtitle"
         values={Object {}}
       />
@@ -25,7 +25,7 @@ exports[`UserList: Component should render correctly 1`] = `
   <ContextHeader
     subtitle={
       <FormattedMessage
-        defaultMessage="Project users list"
+        defaultMessage="Overview"
         id="project.userList.headerSubtitle"
         values={Object {}}
       />
@@ -51,8 +51,6 @@ exports[`UserList: Component should render correctly 1`] = `
     noDataContent={null}
   >
     <UserList
-      isAdmin={true}
-      onRemoveUser={[Function]}
       projectId="1"
       users={Array []}
     />
@@ -77,78 +75,11 @@ exports[`UserList: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
-  <Styled(Modal)
-    contentLabel="Confirm Removal"
-    isOpen={false}
-    style={
-      Object {
-        "content": Object {
-          "WebkitOverflowScrolling": "touch",
-          "alignItems": "center",
-          "border": null,
-          "borderRadius": "4px",
-          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
-          "display": "flex",
-          "flexDirection": "column",
-          "left": "50%",
-          "maxWidth": "600px",
-          "outline": "none",
-          "overflow": "auto",
-          "position": "absolute",
-          "right": "10px",
-          "top": "50%",
-          "transform": "translate(-50%, -50%)",
-          "width": "calc(100% - 20px)",
-        },
-        "overlay": Object {
-          "backgroundColor": "rgba(29, 29, 32, 0.75)",
-          "bottom": 0,
-          "left": 0,
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-          "zIndex": 10000,
-        },
-      }
-    }
-  >
-    <Styled(H1)>
-      <FormattedMessage
-        defaultMessage="Are you sure you want to remove the user from the project?"
-        id="project.userList.removeTitle"
-        values={Object {}}
-      />
-    </Styled(H1)>
-    <styled.div>
-      <BackButton
-        disabled={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Cancel"
-          id="project.userList.cancelRemoval"
-          values={Object {}}
-        />
-      </BackButton>
-      <NextButton
-        loading={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Confirm"
-          id="project.userList.confirmRemoval"
-          values={Object {}}
-        />
-      </NextButton>
-    </styled.div>
-  </Styled(Modal)>
 </Fragment>
 `;
 
 exports[`UserList: Component should render correctly with users 1`] = `
 <UserList
-  isAdmin={true}
-  onRemoveUser={[Function]}
   projectId="1"
   users={
     Array [

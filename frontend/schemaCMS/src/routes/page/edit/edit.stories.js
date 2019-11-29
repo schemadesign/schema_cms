@@ -28,6 +28,6 @@ export const defaultProps = {
   isSubmitting: false,
 };
 
-storiesOf('Edit', module)
+storiesOf('Page|Edit', module)
   .addDecorator(withTheme())
   .add('Default', () => <Edit {...defaultProps} />);

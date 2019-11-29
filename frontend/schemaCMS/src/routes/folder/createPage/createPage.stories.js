@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { CreatePage } from './createPage.component';
+import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   intl: {
@@ -23,4 +24,6 @@ export const defaultProps = {
   isSubmitting: false,
 };
 
-storiesOf('CreatePage', module).add('Default', () => <CreatePage {...defaultProps} />);
+storiesOf('Folder|CreatePage', module)
+  .addDecorator(withTheme())
+  .add('Default', () => <CreatePage {...defaultProps} />);

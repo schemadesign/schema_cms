@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CreateFolder Default 1`] = `
+exports[`Storyshots Project|CreateFolder Default 1`] = `
 Array [
   .c0 {
   width: calc(100% - 50px);

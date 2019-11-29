@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Filter Default 1`] = `
-.c6 {
+.c10 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -42,9 +42,43 @@ exports[`Storyshots Filter Default 1`] = `
   word-break: break-word;
 }
 
+.c6 {
+  display: none;
+}
+
+.c7 {
+  margin-right: 20px;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+}
+
 @media (min-width:1040px) {
   .c0 {
     display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c6 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
   }
 }
 
@@ -270,6 +304,49 @@ exports[`Storyshots Filter Default 1`] = `
     </div>
     <div
       className="c6"
+    >
+      <div
+        className="c7"
+      >
+        <h2
+          className="c8"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          name
+        </h2>
+        <h1
+          className="c9"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Edit Filter
+          </span>
+        </h1>
+      </div>
+      <div
+        className=""
+      />
+    </div>
+    <div
+      className="c10"
     >
       <span>
         Loading...

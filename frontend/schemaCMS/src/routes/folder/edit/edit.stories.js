@@ -31,6 +31,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Folder/Edit', module)
+storiesOf('Folder|Edit', module)
   .addDecorator(withTheme())
   .add('Default', () => <Edit {...defaultProps} />);

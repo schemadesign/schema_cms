@@ -1,8 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CreatePage Default 1`] = `
-Array [
-  .c0 {
+exports[`Storyshots Folder|CreatePage Default 1`] = `
+.c11 {
+  height: 155px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c12 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c14 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c0 {
   width: calc(100% - 50px);
 }
 
@@ -35,13 +70,80 @@ Array [
   word-break: break-word;
 }
 
+.c6 {
+  display: none;
+}
+
+.c7 {
+  margin-right: 20px;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+}
+
+.c10 {
+  width: 100%;
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    width: 240px;
+  }
+}
+
 @media (min-width:1040px) {
   .c0 {
     display: none;
   }
 }
 
+@media (min-width:1040px) {
+  .c6 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
+  }
+}
+
 <div
+  style={
+    Object {
+      "backgroundColor": "#000",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <div
     className="c0"
   >
     <div
@@ -253,41 +355,15 @@ Array [
         </svg>
       </button>
     </div>
-  </div>,
-  .c0 {
-  display: none;
-}
-
-.c1 {
-  margin-right: 20px;
-}
-
-@media (min-width:1040px) {
-  .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    margin: 60px 0 40px 0;
-  }
-}
-
-<div
-    className="c0"
+  </div>
+  <div
+    className="c6"
   >
     <div
-      className="c1"
+      className="c7"
     >
       <h2
-        className=""
+        className="c8"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -303,7 +379,7 @@ Array [
         </span>
       </h2>
       <h1
-        className=""
+        className="c9"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -324,70 +400,9 @@ Array [
     <div
       className=""
     />
-  </div>,
-  .c1 {
-  height: 155px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.c2 {
-  position: fixed;
-  padding: 40px 0 36px;
-  bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, undefined,undefined 30%, rgba(0,0,0,0) );
-}
-
-.c4 {
-  width: calc(50% - 5px);
-  max-width: 240px;
-}
-
-.c0 {
-  width: 100%;
-}
-
-@media (min-width:1040px) {
-  .c3 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (min-width:1040px) {
-  .c2 {
-    width: 1000px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c4 {
-    width: 240px;
-  }
-}
-
-<form
-    className="c0"
+  </div>
+  <form
+    className="c10"
     onSubmit={[Function]}
   >
     <div
@@ -568,16 +583,16 @@ Array [
       </div>
     </div>
     <div
-      className="c1"
+      className="c11"
     >
       <div
-        className="c2"
+        className="c12"
       >
         <div
-          className="c3"
+          className="c13"
         >
           <button
-            className="c4"
+            className="c14"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
@@ -604,7 +619,7 @@ Array [
             </span>
           </button>
           <button
-            className="c4"
+            className="c14"
             disabled={false}
             id="createPageBtn"
             style={
@@ -633,6 +648,6 @@ Array [
         </div>
       </div>
     </div>
-  </form>,
-]
+  </form>
+</div>
 `;

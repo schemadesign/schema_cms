@@ -6,7 +6,7 @@ import { expectSaga } from 'redux-saga-test-plan';
 import { watchPageBlock } from '../pageBlock.sagas';
 import { PageBlockRoutines } from '../pageBlock.redux';
 import mockApi from '../../../shared/utils/mockApi';
-import { IMAGE_TYPE, MARKDOWN_TYPE } from '../pageBlock.constants';
+import { CODE_TYPE, IMAGE_TYPE, MARKDOWN_TYPE } from '../pageBlock.constants';
 import browserHistory from '../../../shared/utils/history';
 import { BLOCK_PATH } from '../../../shared/utils/api.constants';
 
@@ -90,14 +90,13 @@ describe('PageBlock: sagas', () => {
       const payload = {
         pageId: 1,
         name: 'Title',
-        type: [MARKDOWN_TYPE],
+        type: MARKDOWN_TYPE,
+        image: null,
+        [`${MARKDOWN_TYPE}-content`]: 'content markdown type',
       };
 
       mockApi
-        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="name"[^]*name/m, {
-          name: 'Title',
-          type: [MARKDOWN_TYPE],
-        })
+        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="content"[^]*content markdown type/m)
         .reply(OK, response);
 
       await expectSaga(watchPageBlock)
@@ -118,7 +117,7 @@ describe('PageBlock: sagas', () => {
         pageId: 1,
         name: 'Title',
         image: 'file',
-        type: [IMAGE_TYPE],
+        type: IMAGE_TYPE,
       };
 
       const options = {
@@ -126,7 +125,7 @@ describe('PageBlock: sagas', () => {
       };
 
       mockApi
-        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="name"[^]*name/m, options, {
+        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="image"[^]*file/m, options, {
           name: 'Title',
           type: [MARKDOWN_TYPE],
         })
@@ -151,8 +150,8 @@ describe('PageBlock: sagas', () => {
         pageId: 1,
         blockId: 2,
         name: 'Title',
-        image: 'file',
-        type: [IMAGE_TYPE],
+        type: CODE_TYPE,
+        [`${CODE_TYPE}-content`]: 'content code type',
       };
 
       const options = {
@@ -160,10 +159,7 @@ describe('PageBlock: sagas', () => {
       };
 
       mockApi
-        .patch(`/blocks/${payload.blockId}`, /form-data; name="name"[^]*name/m, options, {
-          name: 'Title',
-          type: [MARKDOWN_TYPE],
-        })
+        .patch(`/blocks/${payload.blockId}`, /form-data; name="content"[^]*content code type/m, options)
         .reply(OK, response);
 
       await expectSaga(watchPageBlock)

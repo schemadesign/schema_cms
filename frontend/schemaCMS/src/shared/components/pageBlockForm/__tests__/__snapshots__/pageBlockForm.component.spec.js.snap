@@ -110,7 +110,7 @@ exports[`PageBlockForm: Component should render correctly with code type 1`] = `
     isEdit={false}
     label="Code Snippet"
     multiline={true}
-    name="content"
+    name="code_snippet-content"
     onChange={[Function]}
     placeholder="
     <button id=\\"my-button\\">
@@ -122,7 +122,6 @@ exports[`PageBlockForm: Component should render correctly with code type 1`] = `
     "
     setFieldValue={[Function]}
     touched={Object {}}
-    value="code content"
     values={
       Object {
         "content": "code content",
@@ -194,7 +193,7 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
     isEdit={false}
     label="Embed Code"
     multiline={true}
-    name="content"
+    name="youtube_embed-content"
     onChange={[Function]}
     placeholder="
     <iframe 
@@ -207,7 +206,6 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
     "
     setFieldValue={[Function]}
     touched={Object {}}
-    value="embed content"
     values={
       Object {
         "content": "embed content",
@@ -267,7 +265,7 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
     value="image_uploaded"
   />
   <Uploader
-    accept="image/gif,image/jpeg"
+    accept=".png, .jpg, .jpeg, .gif"
     checkOnlyErrors={true}
     errors={Object {}}
     fileName="image name"
@@ -356,7 +354,7 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
     isEdit={false}
     label="Markdown Text"
     multiline={true}
-    name="content"
+    name="markdown_text-content"
     onChange={[Function]}
     placeholder="
     # My Cool Title
@@ -367,7 +365,6 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
     "
     setFieldValue={[Function]}
     touched={Object {}}
-    value="markdown content"
     values={
       Object {
         "content": "markdown content",
