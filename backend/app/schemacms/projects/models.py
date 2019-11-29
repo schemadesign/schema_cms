@@ -388,7 +388,7 @@ class DataSourceJob(
     description = models.TextField(blank=True)
     source_file_path: str = models.CharField(max_length=255, editable=False)
     source_file_version = models.CharField(max_length=36, editable=False)
-    result = models.FileField(upload_to=file_upload_path, null=True)
+    result = models.FileField(upload_to=file_upload_path, null=True, blank=True)
     error = models.TextField(blank=True, default="")
 
     def __str__(self):
@@ -462,7 +462,7 @@ class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
     )
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
-    options: dict = pg_fields.JSONField(default=dict)
+    options: dict = pg_fields.JSONField(default=dict, blank=True)
 
     def meta_file_serialization(self):
         data = {
