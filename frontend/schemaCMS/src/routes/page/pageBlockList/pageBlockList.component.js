@@ -123,13 +123,14 @@ export class PageBlockList extends PureComponent {
     );
   };
 
-  renderBlockCounter = renderWhenTrue(
-    always(
-      <BlockCounter>
-        <FormattedMessage values={{ length: this.props.pageBlocks.length }} {...messages.blocks} />
-      </BlockCounter>
-    )
-  );
+  renderBlockCounter = (loading, count) =>
+    renderWhenTrue(
+      always(
+        <BlockCounter>
+          <FormattedMessage values={{ count }} {...messages.blocks} />
+        </BlockCounter>
+      )
+    )(!loading);
 
   render() {
     const { loading } = this.state;
@@ -145,7 +146,7 @@ export class PageBlockList extends PureComponent {
           <CreateButtonContainer>
             <PlusButton onClick={this.handleCreateBlock} />
           </CreateButtonContainer>
-          {this.renderBlockCounter(!loading)}
+          {this.renderBlockCounter(loading, this.props.pageBlocks.length)}
           <Empty />
         </Header>
         {this.renderContent()}
