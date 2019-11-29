@@ -9,6 +9,7 @@ export const PageRoutines = {
   create: createRoutine(`${PREFIX}CREATE`),
   fetchOne: createRoutine(`${PREFIX}FETCH_ONE`),
   update: createRoutine(`${PREFIX}UPDATE`),
+  removeOne: createRoutine(`${PREFIX}REMOVE_ONE`),
 };
 
 export const INITIAL_STATE = new Immutable({

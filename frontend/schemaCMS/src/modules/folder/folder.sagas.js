@@ -65,16 +65,16 @@ function* update({ payload: { folderId, projectId, name } }) {
 
 function* removeOne({ payload: { folderId, projectId } }) {
   try {
-    yield put(FolderRoutines.update.request());
+    yield put(FolderRoutines.removeOne.request());
 
     yield api.delete(`${FOLDERS_PATH}/${folderId}`);
 
-    yield put(FolderRoutines.update.success());
+    yield put(FolderRoutines.removeOne.success());
     browserHistory.push(`/project/${projectId}/folder`);
   } catch (e) {
-    yield put(FolderRoutines.update.failure(e));
+    yield put(FolderRoutines.removeOne.failure(e));
   } finally {
-    yield put(FolderRoutines.update.fulfill());
+    yield put(FolderRoutines.removeOne.fulfill());
   }
 }
 

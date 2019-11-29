@@ -8,6 +8,7 @@ import { PageBlockRoutines } from '../pageBlock.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { IMAGE_TYPE, MARKDOWN_TYPE } from '../pageBlock.constants';
 import browserHistory from '../../../shared/utils/history';
+import { BLOCK_PATH } from '../../../shared/utils/api.constants';
 
 describe('PageBlock: sagas', () => {
   const defaultState = Immutable({
@@ -171,6 +172,23 @@ describe('PageBlock: sagas', () => {
         .dispatch(PageBlockRoutines.update(payload))
         .silentRun();
       expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}`);
+    });
+  });
+
+  describe('removeOne', () => {
+    it('should dispatch a success action', async () => {
+      jest.spyOn(browserHistory, 'push');
+      const payload = { blockId: '1', pageId: '1' };
+
+      mockApi.delete(`${BLOCK_PATH}/${payload.blockId}`).reply(OK);
+
+      await expectSaga(watchPageBlock)
+        .withState(defaultState)
+        .put(PageBlockRoutines.removeOne.success())
+        .dispatch(PageBlockRoutines.removeOne(payload))
+        .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith(`/page/${payload.pageId}/`);
     });
   });
 });
