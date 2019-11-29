@@ -64,6 +64,14 @@ export default defineMessages({
     id: 'shared.components.pageBlockForm.pageBlockFieldType',
     defaultMessage: 'Type',
   },
+  changeTypeModalTitle: {
+    id: 'shared.components.pageBlockForm.changeTypeModalTitle',
+    defaultMessage: 'Are you sure you want to change the block type? Your data may be lost in the process.',
+  },
+  confirm: {
+    id: 'shared.components.pageBlockForm.confirm',
+    defaultMessage: 'Confirm',
+  },
   cancel: {
     id: 'shared.components.pageBlockForm.cancel',
     defaultMessage: 'Cancel',

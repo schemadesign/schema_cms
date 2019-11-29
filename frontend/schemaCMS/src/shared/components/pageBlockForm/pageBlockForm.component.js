@@ -1,7 +1,10 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, cond, equals, pathOr } from 'ramda';
+import { always, cond, equals, path, pathOr } from 'ramda';
+import { FormattedMessage } from 'react-intl';
 
+import { modalStyles, Modal, ModalTitle, ModalActions } from '../modal/modal.styles';
+import { BackButton, NextButton } from '../navigation';
 import { TextInput } from '../form/inputs/textInput';
 import {
   BLOCK_CONTENT,
@@ -23,9 +26,22 @@ export class PageBlockForm extends PureComponent {
   static propTypes = {
     intl: PropTypes.object.isRequired,
     values: PropTypes.object.isRequired,
+    initialValues: PropTypes.object,
     handleChange: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
   };
+
+  state = {
+    confirmationModalOpen: false,
+    wasImage: false,
+    selectedStatus: null,
+  };
+
+  componentDidMount() {
+    const type = path(['initialValues', 'type'], this.props);
+
+    this.setState({ wasImage: type === IMAGE_TYPE });
+  }
 
   getStatusOptions = intl =>
     [...VALID_TYPE_OPTIONS, NONE].map(status => ({
@@ -34,12 +50,39 @@ export class PageBlockForm extends PureComponent {
     }));
 
   handleSelectStatus = ({ value: selectedStatus }) => {
-    this.props.setFieldValue(BLOCK_TYPE, selectedStatus);
+    const { wasImage } = this.state;
+
+    if (wasImage && selectedStatus !== IMAGE_TYPE) {
+      this.setState({
+        selectedStatus,
+        confirmationModalOpen: true,
+      });
+    } else {
+      this.props.setFieldValue(BLOCK_TYPE, selectedStatus);
+    }
   };
 
   handleUploadChange = ({ files: [uploadFile] }) => {
     this.props.setFieldValue(BLOCK_IMAGE, uploadFile);
     this.props.setFieldValue('imageName', pathOr('', ['name'], uploadFile));
+  };
+
+  handleCancelTypeChange = () => {
+    this.setState({
+      confirmationModalOpen: false,
+      selectedStatus: null,
+    });
+  };
+
+  handleConfirmTypeChange = () => {
+    const { selectedStatus } = this.state;
+
+    this.props.setFieldValue(BLOCK_TYPE, selectedStatus);
+    this.setState({
+      confirmationModalOpen: false,
+      selectedStatus: null,
+      wasImage: false,
+    });
   };
 
   renderBlock = (messageId, messagePlaceholderId) => (
@@ -78,6 +121,7 @@ export class PageBlockForm extends PureComponent {
   ]);
 
   render() {
+    const { confirmationModalOpen } = this.state;
     const { values, intl, handleChange, ...restProps } = this.props;
 
     return (
@@ -101,6 +145,19 @@ export class PageBlockForm extends PureComponent {
           {...restProps}
         />
         {this.renderBlockContent(values[BLOCK_TYPE])}
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Change" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.changeTypeModalTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton onClick={this.handleCancelTypeChange}>
+              <FormattedMessage {...messages.cancel} />
+            </BackButton>
+            <NextButton onClick={this.handleConfirmTypeChange}>
+              <FormattedMessage {...messages.confirm} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
       </Fragment>
     );
   }
