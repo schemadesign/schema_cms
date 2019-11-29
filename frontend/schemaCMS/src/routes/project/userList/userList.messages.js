@@ -8,7 +8,7 @@ export default defineMessages({
   },
   headerSubtitle: {
     id: 'project.userList.headerSubtitle',
-    defaultMessage: 'Project users list',
+    defaultMessage: 'Overview',
   },
   removeTitle: {
     id: 'project.userList.removeTitle',

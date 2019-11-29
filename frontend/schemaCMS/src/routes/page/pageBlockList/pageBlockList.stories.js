@@ -34,7 +34,7 @@ export const defaultProps = {
   history: { push: Function.prototype },
 };
 
-storiesOf('BlockList', module)
+storiesOf('Page|PageBlockList', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <PageBlockList {...defaultProps} />);

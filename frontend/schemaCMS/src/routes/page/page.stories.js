@@ -10,6 +10,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Page', module)
+storiesOf('Page|Page', module)
   .addDecorator(withRouter)
   .add('Default', () => <Page {...defaultProps} />);

@@ -4,8 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { always } from 'ramda';
 
 import { UserList as UserListComponent } from '../../../shared/components/userList';
-import { BackButton, NavigationContainer, NextButton, PlusButton } from '../../../shared/components/navigation';
-import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { USERS } from '../../../shared/components/projectTabs/projectTabs.constants';
@@ -28,8 +27,6 @@ export class UserList extends PureComponent {
   };
 
   state = {
-    userToBeRemoved: null,
-    showConfirmationModal: false,
     loading: true,
   };
 
@@ -51,34 +48,11 @@ export class UserList extends PureComponent {
 
   handleBackClick = () => browserHistory.push(`/project/${this.props.match.params.projectId}`);
 
-  handleRemoveUser = ({ id: userId }) => () =>
-    this.setState({
-      userToBeRemoved: userId,
-      showConfirmationModal: true,
-    });
-
-  handleCancelRemove = () =>
-    this.setState({
-      userToBeRemoved: null,
-      showConfirmationModal: false,
-    });
-
-  handleConfirmRemove = () => {
-    const { userToBeRemoved } = this.state;
-    const projectId = getProjectId(this.props);
-
-    this.props.removeUser({ projectId, userId: userToBeRemoved });
-    this.setState({
-      userToBeRemoved: null,
-      showConfirmationModal: false,
-    });
-  };
-
   renderCreateUserButton = ({ id, isAdmin }) =>
     renderWhenTrue(always(<PlusButton id={id} onClick={this.handleAddUser} />))(isAdmin);
 
   render() {
-    const { showConfirmationModal, loading } = this.state;
+    const { loading } = this.state;
     const { match, isAdmin, users } = this.props;
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.headerTitle} />,
@@ -93,12 +67,7 @@ export class UserList extends PureComponent {
           {this.renderCreateUserButton({ id: 'addUserDesktopBtn', isAdmin })}
         </ContextHeader>
         <LoadingWrapper loading={loading} noData={!users.length}>
-          <UserListComponent
-            users={this.props.users}
-            projectId={getProjectId(this.props)}
-            onRemoveUser={this.handleRemoveUser}
-            isAdmin={this.props.isAdmin}
-          />
+          <UserListComponent users={this.props.users} projectId={getProjectId(this.props)} />
         </LoadingWrapper>
         <NavigationContainer hideOnDesktop>
           <BackButton onClick={this.handleBackClick}>
@@ -106,19 +75,6 @@ export class UserList extends PureComponent {
           </BackButton>
           {this.renderCreateUserButton({ id: 'addUserBtn', isAdmin })}
         </NavigationContainer>
-        <Modal isOpen={showConfirmationModal} contentLabel="Confirm Removal" style={modalStyles}>
-          <ModalTitle>
-            <FormattedMessage {...messages.removeTitle} />
-          </ModalTitle>
-          <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
-              <FormattedMessage {...messages.cancelRemoval} />
-            </BackButton>
-            <NextButton onClick={this.handleConfirmRemove}>
-              <FormattedMessage {...messages.confirmRemoval} />
-            </NextButton>
-          </ModalActions>
-        </Modal>
       </Fragment>
     );
   }

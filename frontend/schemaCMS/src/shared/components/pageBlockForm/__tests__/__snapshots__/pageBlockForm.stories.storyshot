@@ -1140,7 +1140,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             "card": Object {
               "background": "#1d1d20",
               "border": "#FFF",
-              "label": undefined,
+              "label": "#71737e",
               "text": "#FFF",
             },
             "checkbox": Object {
