@@ -38,12 +38,15 @@ class StepSerializer(serializers.ModelSerializer):
         return obj.script.name
 
 
-class DataSourceLastJobSerializer(serializers.ModelSerializer):
-    steps = StepSerializer(many=True)
+class ActiveJobSerializer(serializers.ModelSerializer):
+    scripts = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = models.DataSourceJob
-        fields = ("id", "job_state", "created", "modified", "steps")
+        fields = ("id", "scripts")
+
+    def get_scripts(self, obj):
+        return [step.script_id for step in obj.steps.all()]
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
@@ -57,6 +60,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
     )
     error_log = serializers.SerializerMethodField()
     jobs_in_process = serializers.SerializerMethodField(read_only=True)
+    active_job = ActiveJobSerializer(read_only=True)
 
     class Meta:
         model = DataSource
