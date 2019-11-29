@@ -26,6 +26,7 @@
     "chai": "^4.2.0",
     "chai-enzyme": "^1.0.0-beta.1",
     "chai-jest-diff": "^1.0.2",
+    "core-js": "^3.4.5",
     "css-loader": "2.1.1",
     "dayjs": "^1.8.16",
     "dotenv": "6.2.0",

@@ -17,6 +17,12 @@ export class TextAreaComponent extends PureComponent {
     this.syncHeight();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.value !== this.props.value) {
+      this.syncHeight();
+    }
+  }
+
   constructor(props) {
     super(props);
 
@@ -57,9 +63,7 @@ export class TextAreaComponent extends PureComponent {
     const border =
       this.getStyleValue(computedStyle, 'border-bottom-width') + this.getStyleValue(computedStyle, 'border-top-width');
     const innerHeight = inputShallow.scrollHeight - padding;
-    const singleRowHeight = inputShallow.scrollHeight - padding;
-    const outerHeight = Math.max(innerHeight, singleRowHeight);
-    const height = outerHeight + (boxSizing === 'border-box' ? padding + border : 0);
+    const height = innerHeight + (boxSizing === 'border-box' ? padding + border : 0);
 
     inputShallow.value = 'x';
 

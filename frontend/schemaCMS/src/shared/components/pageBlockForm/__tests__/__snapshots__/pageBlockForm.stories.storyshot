@@ -286,7 +286,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
       }
     >
       <label
-        htmlFor="content"
+        htmlFor="code_snippet-content"
         style={
           Object {
             "border": "none",
@@ -303,7 +303,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
         Code Snippet
       </label>
       <textarea
-        id="content"
+        id="code_snippet-content"
         onChange={[Function]}
         placeholder="
     <button id=\\"my-button\\">
@@ -327,7 +327,6 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
           }
         }
         type="text"
-        value="code content"
       />
       <textarea
         aria-hidden={true}
@@ -652,7 +651,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
       }
     >
       <label
-        htmlFor="content"
+        htmlFor="youtube_embed-content"
         style={
           Object {
             "border": "none",
@@ -669,7 +668,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
         Embed Code
       </label>
       <textarea
-        id="content"
+        id="youtube_embed-content"
         onChange={[Function]}
         placeholder="
     <iframe 
@@ -694,7 +693,6 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
           }
         }
         type="text"
-        value="embed content"
       />
       <textarea
         aria-hidden={true}
@@ -1112,7 +1110,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
         </div>
       </div>
       <input
-        accept="image/gif,image/jpeg"
+        accept=".png, .jpg, .jpeg, .gif"
         aria-hidden={true}
         id="fileUpload"
         name="image"
@@ -1565,7 +1563,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
       }
     >
       <label
-        htmlFor="content"
+        htmlFor="markdown_text-content"
         style={
           Object {
             "border": "none",
@@ -1582,7 +1580,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
         Markdown Text
       </label>
       <textarea
-        id="content"
+        id="markdown_text-content"
         onChange={[Function]}
         placeholder="
     # My Cool Title
@@ -1605,7 +1603,6 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
           }
         }
         type="text"
-        value="markdown content"
       />
       <textarea
         aria-hidden={true}
