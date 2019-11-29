@@ -136,13 +136,13 @@ class DataSourceSerializer(serializers.ModelSerializer):
 class ProjectOwnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id", "first_name", "last_name")
+        fields = ("id", "first_name", "last_name", "role")
 
 
 class ProjectEditorSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id", "first_name", "last_name")
+        fields = ("id", "first_name", "last_name", "role")
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -468,7 +468,11 @@ class BlockSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Block
         fields = ("id", "page", "name", "type", "content", "image", "image_name", "is_active")
-        extra_kwargs = {"page": {"required": False, "allow_null": True}}
+        extra_kwargs = {
+            "page": {"required": False, "allow_null": True},
+            "content": {"required": False, "allow_null": True, "allow_blank": True},
+            "image": {"required": False, "allow_null": True},
+        }
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Block.objects.all(),
