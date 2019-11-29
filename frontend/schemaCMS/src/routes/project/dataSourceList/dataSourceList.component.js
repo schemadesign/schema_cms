@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, propEq, propIs, T } from 'ramda';
+import { always, cond, propIs, T } from 'ramda';
 
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -84,7 +84,7 @@ export class DataSourceList extends PureComponent {
   });
 
   getStep = cond([
-    [propEq('isJobSuccess', true), always(DATA_WRANGLING_RESULT_STEP)],
+    [propIs(Object, 'activeJob'), always(DATA_WRANGLING_RESULT_STEP)],
     [propIs(Object, 'metaData'), always(FIELDS_STEP)],
     [T, always(INITIAL_STEP)],
   ]);
@@ -101,9 +101,8 @@ export class DataSourceList extends PureComponent {
   handleCreateDataSource = () =>
     this.props.history.push(`/project/${this.props.match.params.projectId}/datasource/add`);
 
-  handleShowDataSource = ({ id, metaData, jobs = [] }) => {
-    const isJobSuccess = jobs.some(({ jobState }) => jobState === 'success');
-    const step = this.getStep({ metaData, isJobSuccess });
+  handleShowDataSource = ({ id, metaData, activeJob }) => {
+    const step = this.getStep({ metaData, activeJob });
 
     this.props.history.push(`/datasource/${id}/${step}`);
   };
@@ -143,14 +142,14 @@ export class DataSourceList extends PureComponent {
     return <MetaDataWrapper>{elements}</MetaDataWrapper>;
   };
 
-  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, jobs }, index) => {
+  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, activeJob }, index) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]);
     const footer = this.renderMetaData(metaData || {});
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>
-        <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, jobs })}>
+        <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, activeJob })}>
           {name}
         </ListItemTitle>
       </ListItem>
