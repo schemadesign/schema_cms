@@ -48,11 +48,11 @@ exports[`PageBlockList: Component should render correctly 1`] = `
     </styled.div>
     <styled.div>
       <FormattedMessage
-        defaultMessage="{length} {length, plural,one {Block} other {Blocks}}"
+        defaultMessage="{count} {count, plural,one {Block} other {Blocks}}"
         id="page.blockList.blocks"
         values={
           Object {
-            "length": 2,
+            "count": 2,
           }
         }
       />
