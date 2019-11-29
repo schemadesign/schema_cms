@@ -7,6 +7,7 @@ import { Container } from './createFilter.styles';
 import { FilterForm } from '../../../../shared/components/filterForm';
 import messages from './createFilter.messages';
 import { TopHeader } from '../../../../shared/components/topHeader';
+import { ContextHeader } from '../../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
 import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
 
@@ -58,11 +59,12 @@ export class CreateFilter extends PureComponent {
   );
 
   render() {
-    const topHeaderConfig = this.getHeaderAndMenuConfig();
+    const headerConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>
-        <TopHeader {...topHeaderConfig} />
+        <TopHeader {...headerConfig} />
+        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <LoadingWrapper loading={this.state.loading}>{this.renderContent}</LoadingWrapper>
       </Container>
     );
