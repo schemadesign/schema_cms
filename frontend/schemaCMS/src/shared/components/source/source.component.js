@@ -13,6 +13,7 @@ import {
   customRadioButtonStyles,
   customRadioGroupStyles,
   WarningWrapper,
+  Link,
 } from './source.styles';
 import messages from './source.messages';
 import { TextInput } from '../form/inputs/textInput';
@@ -32,7 +33,7 @@ import { errorMessageParser } from '../../utils/helpers';
 import { renderWhenTrue } from '../../utils/rendering';
 import browserHistory from '../../utils/history';
 import { ModalActions, Modal, ModalTitle, modalStyles } from '../modal/modal.styles';
-import { Link, LinkContainer } from '../../../theme/typography';
+import { LinkContainer } from '../../../theme/typography';
 import { BackButton, NextButton } from '../navigation';
 
 const { RadioGroup, RadioBaseComponent, Label } = Form;
@@ -113,7 +114,7 @@ export class SourceComponent extends PureComponent {
     )
   );
 
-  renderCsvUploader = ({ setFieldValue, fileName, isAnyJobProcessing, ...restProps }) => (
+  renderCsvUploader = ({ setFieldValue, fileName, jobsInProcess, ...restProps }) => (
     <Uploader
       fileName={fileName}
       name={DATA_SOURCE_FILE}
@@ -122,20 +123,20 @@ export class SourceComponent extends PureComponent {
       id="fileUpload"
       onChange={({ currentTarget }) => this.handleUploadChange({ currentTarget, setFieldValue })}
       accept=".csv"
-      disabled={isAnyJobProcessing}
+      disabled={jobsInProcess}
       checkOnlyErrors
       {...restProps}
     />
   );
 
-  renderSourceUpload = ({ type, ...restProps }) =>
+  renderSourceUpload = ({ type, jobsInProcess, ...restProps }) =>
     cond([
       [
         equals(SOURCE_TYPE_FILE),
         () => (
           <Fragment>
-            {this.renderCsvUploader({ ...restProps, isAnyJobProcessing: this.props.isAnyJobProcessing })}
-            {this.renderProcessingMessage(this.props.isAnyJobProcessing)}
+            {this.renderCsvUploader({ ...restProps, jobsInProcess })}
+            {this.renderProcessingMessage(jobsInProcess)}
           </Fragment>
         ),
       ],
@@ -161,25 +162,22 @@ export class SourceComponent extends PureComponent {
     );
   };
 
-  renderJobListLink = renderWhenTrue(
+  renderLinks = renderWhenTrue(
     always(
-      <Link onClick={this.handlePastVersionsClick}>
-        <FormattedMessage {...messages.pastVersions} />
-      </Link>
-    )
-  );
-
-  renderRemoveDataSourceLink = renderWhenTrue(
-    always(
-      <Link id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick}>
-        <FormattedMessage {...messages.removeDataSource} />
-      </Link>
+      <LinkContainer>
+        <Link onClick={this.handlePastVersionsClick}>
+          <FormattedMessage {...messages.pastVersions} />
+        </Link>
+        <Link id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick}>
+          <FormattedMessage {...messages.removeDataSource} />
+        </Link>
+      </LinkContainer>
     )
   );
 
   render() {
     const { dataSource, ...restProps } = this.props;
-    const { jobs = [] } = dataSource;
+    const { jobsInProcess } = dataSource;
     const { confirmationModalOpen } = this.state;
 
     return (
@@ -222,11 +220,8 @@ export class SourceComponent extends PureComponent {
                 >
                   {this.renderRadioButton(type)}
                 </RadioGroup>
-                {this.renderSourceUpload({ type, fileName, ...rest })}
-                <LinkContainer>
-                  {this.renderRemoveDataSourceLink(!!dataSource.id)}
-                  {this.renderJobListLink(!!jobs.length)}
-                </LinkContainer>
+                {this.renderSourceUpload({ type, fileName, jobsInProcess, ...rest })}
+                {this.renderLinks(!!dataSource.id)}
                 <StepNavigation
                   loading={isSubmitting}
                   disabled={disabled}
