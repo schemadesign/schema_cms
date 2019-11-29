@@ -63,11 +63,27 @@ function* update({ payload: { folderId, projectId, name } }) {
   }
 }
 
+function* removeOne({ payload: { folderId, projectId } }) {
+  try {
+    yield put(FolderRoutines.removeOne.request());
+
+    yield api.delete(`${FOLDERS_PATH}/${folderId}`);
+
+    yield put(FolderRoutines.removeOne.success());
+    browserHistory.push(`/project/${projectId}/folder`);
+  } catch (e) {
+    yield put(FolderRoutines.removeOne.failure(e));
+  } finally {
+    yield put(FolderRoutines.removeOne.fulfill());
+  }
+}
+
 export function* watchFolder() {
   yield all([
     takeLatest(FolderRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(FolderRoutines.fetchOne.TRIGGER, fetchOne),
     takeLatest(FolderRoutines.create.TRIGGER, create),
     takeLatest(FolderRoutines.update.TRIGGER, update),
+    takeLatest(FolderRoutines.removeOne.TRIGGER, removeOne),
   ]);
 }

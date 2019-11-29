@@ -11,6 +11,8 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { Link } from '../../../theme/typography';
 
 export class Edit extends PureComponent {
   static propTypes = {
@@ -22,6 +24,7 @@ export class Edit extends PureComponent {
     handleSubmit: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleBlur: PropTypes.func.isRequired,
+    removeFolder: PropTypes.func.isRequired,
     fetchFolder: PropTypes.func.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
@@ -35,6 +38,7 @@ export class Edit extends PureComponent {
 
   state = {
     loading: true,
+    confirmationModalOpen: false,
   };
 
   async componentDidMount() {
@@ -46,6 +50,17 @@ export class Edit extends PureComponent {
       this.props.history.push('/');
     }
   }
+
+  handleRemoveClick = () => this.setState({ confirmationModalOpen: true });
+
+  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
+
+  handleConfirmRemove = () => {
+    const folderId = path(['match', 'params', 'folderId'], this.props);
+    const projectId = path(['folder', 'project'], this.props);
+
+    this.props.removeFolder({ folderId, projectId });
+  };
 
   handleBackClick = () => this.props.history.push(`/project/${path(['folder', 'project'], this.props)}/folder`);
 
@@ -64,7 +79,7 @@ export class Edit extends PureComponent {
 
   render() {
     const { handleSubmit, isValid, isSubmitting } = this.props;
-    const { loading } = this.state;
+    const { loading, confirmationModalOpen } = this.state;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -74,6 +89,9 @@ export class Edit extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <LoadingWrapper loading={loading}>{this.renderContent()}</LoadingWrapper>
+          <Link id="removeFolderDesktopBtn" onClick={this.handleRemoveClick}>
+            <FormattedMessage {...messages.removeFolder} />
+          </Link>
           <NavigationContainer>
             <BackButton id="backBtn" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />
@@ -83,6 +101,19 @@ export class Edit extends PureComponent {
             </NextButton>
           </NavigationContainer>
         </Form>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton onClick={this.handleCancelRemove}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </BackButton>
+            <NextButton id="confirmRemovalBtn" onClick={this.handleConfirmRemove}>
+              <FormattedMessage {...messages.confirmRemoval} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
       </Fragment>
     );
   }

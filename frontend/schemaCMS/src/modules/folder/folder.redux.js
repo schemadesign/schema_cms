@@ -9,6 +9,7 @@ export const FolderRoutines = {
   fetchOne: createRoutine(`${PREFIX}FETCH_ONE`),
   create: createRoutine(`${PREFIX}CREATE`),
   update: createRoutine(`${PREFIX}UPDATE`),
+  removeOne: createRoutine(`${PREFIX}REMOVE_ONE`),
 };
 
 export const INITIAL_STATE = new Immutable({

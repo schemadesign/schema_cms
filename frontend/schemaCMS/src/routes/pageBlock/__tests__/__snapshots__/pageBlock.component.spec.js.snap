@@ -88,9 +88,20 @@ exports[`PageBlock: Component should render correctly 1`] = `
             },
           }
         }
+        removePageBlock={[Function]}
         setFieldValue={[Function]}
         values={Object {}}
       />
+      <Styled(Span)
+        id="removePageBlockDesktopBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove Page Block"
+          id="pageBlock.removePageBlock"
+          values={Object {}}
+        />
+      </Styled(Span)>
     </LoadingWrapper>
     <NavigationContainer
       hideOnDesktop={false}
@@ -121,6 +132,71 @@ exports[`PageBlock: Component should render correctly 1`] = `
       </NextButton>
     </NavigationContainer>
   </styled.form>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Removing a page will also remove any image you uploaded. Are you sure you want to proceed?"
+        id="pageBlock.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="pageBlock.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        id="confirmRemovalBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="pageBlock.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
 </styled.div>
 `;
 
@@ -196,9 +272,20 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
             },
           }
         }
+        removePageBlock={[Function]}
         setFieldValue={[Function]}
         values={Object {}}
       />
+      <Styled(Span)
+        id="removePageBlockDesktopBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Remove Page Block"
+          id="pageBlock.removePageBlock"
+          values={Object {}}
+        />
+      </Styled(Span)>
     </LoadingWrapper>
     <NavigationContainer
       hideOnDesktop={false}
@@ -229,5 +316,70 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
       </NextButton>
     </NavigationContainer>
   </styled.form>
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Removing a page will also remove any image you uploaded. Are you sure you want to proceed?"
+        id="pageBlock.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="pageBlock.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        id="confirmRemovalBtn"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="pageBlock.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
 </styled.div>
 `;

@@ -22,6 +22,7 @@ export const mapDispatchToProps = dispatch =>
     {
       updateFolder: promisifyRoutine(FolderRoutines.update),
       fetchFolder: promisifyRoutine(FolderRoutines.fetchOne),
+      removeFolder: promisifyRoutine(FolderRoutines.removeOne),
     },
     dispatch
   );
