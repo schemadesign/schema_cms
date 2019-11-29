@@ -37,4 +37,12 @@ describe('Edit: Component', () => {
 
     expect(defaultProps.handleSubmit).toHaveBeenCalled();
   });
+
+  it('should call removeFolder on confirm button click', () => {
+    jest.spyOn(defaultProps, 'removeFolder');
+    const wrapper = render();
+    wrapper.find('#confirmRemovalBtn').simulate('click');
+
+    expect(defaultProps.removeFolder).toHaveBeenCalledWith({ projectId: '1', folderId: '1' });
+  });
 });

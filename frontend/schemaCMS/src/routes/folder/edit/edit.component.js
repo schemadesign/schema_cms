@@ -109,7 +109,7 @@ export class Edit extends PureComponent {
             <BackButton onClick={this.handleCancelRemove}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton onClick={this.handleConfirmRemove}>
+            <NextButton id="confirmRemovalBtn" onClick={this.handleConfirmRemove}>
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>

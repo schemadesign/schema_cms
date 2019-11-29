@@ -40,4 +40,12 @@ describe('PageBlock: Component', () => {
 
     expect(defaultProps.handleSubmit).toHaveBeenCalled();
   });
+
+  it('should call removePageBlock on confirm button click', () => {
+    jest.spyOn(defaultProps, 'removePageBlock');
+    const wrapper = render();
+    wrapper.find('#confirmRemovalBtn').simulate('click');
+
+    expect(defaultProps.removePageBlock).toHaveBeenCalledWith({ pageId: 1, blockId: '1' });
+  });
 });
