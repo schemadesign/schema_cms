@@ -126,7 +126,8 @@ class DataSourceSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
-        obj.schedule_update_meta()
+        if "file" in self.validated_data:
+            obj.schedule_update_meta()
         return obj
 
 

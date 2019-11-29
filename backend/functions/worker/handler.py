@@ -21,7 +21,7 @@ import scipy as sp
 from common import api, db, services, settings, types
 import errors
 import mocks
-from image_scrapping import image_scrapping  # noqa
+from image_scraping import image_scraping  # noqa
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -48,15 +48,18 @@ def get_preview_data(data_frame):
     if items == 0:
         return json.dumps({"data": [], "fields": {}}, indent=4).encode(), items, fields
 
-    items, fields = data_frame.shape
-    table_preview = json.loads(data_frame.head(5).to_json(orient="records"))
-    fields_info = json.loads(data_frame.describe(include="all", percentiles=[]).to_json(orient="columns"))
-    samples = json.loads(data_frame.sample(n=1).to_json(orient="records"))
+    sample_of_5 = data_frame.head(5)
+    table_preview = json.loads(sample_of_5.to_json(orient="records"))
+    fields_info = json.loads(data_frame.describe(include="all").to_json(orient="columns"))
+    samples = sample_of_5.iloc[0].to_dict()
+    columns = sample_of_5.columns.to_list()
 
-    for key, value in dict(data_frame.dtypes).items():
-        fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
+    dtypes = {i: map_dataframe_dtypes(k.name) for i, k in zip(columns, data_frame.dtypes)}
 
-    for key, value in samples[0].items():
+    for key, value in dtypes.items():
+        fields_info[key]["dtype"] = value
+
+    for key, value in samples.items():
         fields_info[key]["sample"] = value
 
     preview_data = {"data": table_preview, "fields": fields_info}
