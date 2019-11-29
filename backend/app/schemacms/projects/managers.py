@@ -2,6 +2,8 @@ import softdelete.models
 from django.db import models, transaction
 from django.db.models.functions import Coalesce
 
+from .constants import DataSourceJobState
+
 
 class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
     def annotate_data_source_count(self):
@@ -100,6 +102,21 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
             filters_count=Coalesce(
                 models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
+        )
+
+    def jobs_in_process(self):
+        from .models import DataSourceJob
+
+        return self.prefetch_related(
+            models.Prefetch(
+                "jobs",
+                queryset=DataSourceJob.objects.filter(
+                    job_state__in=[DataSourceJobState.PENDING, DataSourceJobState.PROCESSING]
+                ),
+                to_attr="jobs_in_process",
+            ),
+            "filters",
+            "meta_data",
         )
 
     def available_for_user(self, user):

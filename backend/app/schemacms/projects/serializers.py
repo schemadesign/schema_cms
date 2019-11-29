@@ -56,7 +56,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
     error_log = serializers.SerializerMethodField()
-    jobs = serializers.SerializerMethodField(read_only=True)
+    jobs_in_process = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = DataSource
@@ -71,8 +71,8 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "meta_data",
             "error_log",
             "project",
-            "jobs",
             "status",
+            "jobs_in_process",
             "active_job",
         )
 
@@ -117,11 +117,10 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def get_error_log(self, obj):
         return []
 
-    def get_jobs(self, obj):
-        if obj.jobs.exists():
-            return DataSourceLastJobSerializer(obj.jobs.order_by("-created")[:5], many=True).data
-        else:
-            return []
+    def get_jobs_in_process(self, obj):
+        if hasattr(obj, "jobs_in_process") and obj.jobs_in_process:
+            return True
+        return False
 
     @transaction.atomic()
     def update(self, instance, validated_data):
