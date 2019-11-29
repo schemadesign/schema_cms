@@ -17,8 +17,10 @@ export class TextAreaComponent extends PureComponent {
     this.syncHeight();
   }
 
-  componentDidUpdate() {
-    this.syncHeight();
+  componentDidUpdate(prevProps) {
+    if (prevProps.value !== this.props.value) {
+      this.syncHeight();
+    }
   }
 
   constructor(props) {
