@@ -2,10 +2,14 @@
 
 exports[`Storyshots Folder|CreatePage Default 1`] = `
 .c11 {
+  padding-top: 7px;
+}
+
+.c12 {
   height: 155px;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +28,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
   width: 100%;
 }
 
-.c12 {
+.c13 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,7 +36,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c14 {
+.c15 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -91,7 +95,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c14 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -100,13 +104,13 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c13 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c15 {
     width: 240px;
   }
 }
@@ -445,7 +449,27 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
               "top": 0,
             }
           }
-        />
+        >
+          <div
+            className="c11"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -512,7 +536,27 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
               "top": 0,
             }
           }
-        />
+        >
+          <div
+            className="c11"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -579,20 +623,40 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
               "top": 0,
             }
           }
-        />
+        >
+          <div
+            className="c11"
+          >
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
     <div
-      className="c11"
+      className="c12"
     >
       <div
-        className="c12"
+        className="c13"
       >
         <div
-          className="c13"
+          className="c14"
         >
           <button
-            className="c14"
+            className="c15"
             disabled={false}
             id="cancelBtn"
             onClick={[Function]}
@@ -620,7 +684,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
             </span>
           </button>
           <button
-            className="c14"
+            className="c15"
             disabled={false}
             id="createPageBtn"
             style={

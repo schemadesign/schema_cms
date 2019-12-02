@@ -89,6 +89,7 @@ export class PageBlockForm extends PureComponent {
           label={intl.formatMessage(messages.pageBlockFieldName)}
           placeholder={intl.formatMessage(messages.pageBlockFieldNamePlaceholder)}
           fullWidth
+          isEdit
           {...restProps}
         />
         <Select

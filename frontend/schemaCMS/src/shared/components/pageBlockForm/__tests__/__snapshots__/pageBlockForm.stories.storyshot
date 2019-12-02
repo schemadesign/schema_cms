@@ -2,6 +2,10 @@
 
 exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 .c0 {
+  padding-top: 7px;
+}
+
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13,11 +17,11 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
   position: relative;
 }
 
-.c0 label {
+.c1 label {
   margin-bottom: 1px;
 }
 
-.c1 {
+.c2 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -89,11 +93,31 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
             "top": 0,
           }
         }
-      />
+      >
+        <div
+          className="c0"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
   <div
-    className="c0"
+    className="c1"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -119,7 +143,7 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
       value="code_snippet"
     />
     <div
-      className="c1"
+      className="c2"
     >
       <svg
         style={
@@ -367,6 +391,10 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 .c0 {
+  padding-top: 7px;
+}
+
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -378,11 +406,11 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
   position: relative;
 }
 
-.c0 label {
+.c1 label {
   margin-bottom: 1px;
 }
 
-.c1 {
+.c2 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -454,11 +482,31 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             "top": 0,
           }
         }
-      />
+      >
+        <div
+          className="c0"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
   <div
-    className="c0"
+    className="c1"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -484,7 +532,7 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
       value="youtube_embed"
     />
     <div
-      className="c1"
+      className="c2"
     >
       <svg
         style={
@@ -733,6 +781,10 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 .c0 {
+  padding-top: 7px;
+}
+
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -744,11 +796,11 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   position: relative;
 }
 
-.c0 label {
+.c1 label {
   margin-bottom: 1px;
 }
 
-.c1 {
+.c2 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -820,11 +872,31 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             "top": 0,
           }
         }
-      />
+      >
+        <div
+          className="c0"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
   <div
-    className="c0"
+    className="c1"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -850,7 +922,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
       value="image_uploaded"
     />
     <div
-      className="c1"
+      className="c2"
     >
       <svg
         style={
@@ -1279,6 +1351,10 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 .c0 {
+  padding-top: 7px;
+}
+
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1290,11 +1366,11 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
   position: relative;
 }
 
-.c0 label {
+.c1 label {
   margin-bottom: 1px;
 }
 
-.c1 {
+.c2 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -1366,11 +1442,31 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
             "top": 0,
           }
         }
-      />
+      >
+        <div
+          className="c0"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
   <div
-    className="c0"
+    className="c1"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -1396,7 +1492,7 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
       value="markdown_text"
     />
     <div
-      className="c1"
+      className="c2"
     >
       <svg
         style={
@@ -1643,6 +1739,10 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 
 exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 .c0 {
+  padding-top: 7px;
+}
+
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1654,11 +1754,11 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
   position: relative;
 }
 
-.c0 label {
+.c1 label {
   margin-bottom: 1px;
 }
 
-.c1 {
+.c2 {
   position: absolute;
   right: 0;
   top: 5px;
@@ -1730,11 +1830,31 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
             "top": 0,
           }
         }
-      />
+      >
+        <div
+          className="c0"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
   <div
-    className="c0"
+    className="c1"
   >
     <label
       id="fieldProjectStatusLabel"
@@ -1760,7 +1880,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
       value="none"
     />
     <div
-      className="c1"
+      className="c2"
     >
       <svg
         style={
