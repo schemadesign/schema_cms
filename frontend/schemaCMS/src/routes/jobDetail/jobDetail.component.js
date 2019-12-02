@@ -12,6 +12,7 @@ import { DESCRIPTION, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { TopHeader } from '../../shared/components/topHeader';
+import { ContextHeader } from '../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 
 export class JobDetail extends PureComponent {
@@ -126,11 +127,12 @@ export class JobDetail extends PureComponent {
   render() {
     const { loading } = this.state;
     const { job } = this.props;
-    const topHeaderConfig = this.getHeaderAndMenuConfig();
+    const headerConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Fragment>
-        <TopHeader {...topHeaderConfig} />
+        <TopHeader {...headerConfig} />
+        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
         <LoadingWrapper loading={loading}>{this.renderForm(job)}</LoadingWrapper>
         <NavigationContainer fixed>
           <BackButton onClick={this.handleGoBack}>
