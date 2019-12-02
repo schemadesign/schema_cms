@@ -96,7 +96,7 @@ async def column_image_scraping(df, current_step, column):
             )
 
 
-def image_scraping(df, current_step, prefix="new_"):
+def image_scraping(df, current_step, prefix="scrapped_"):
     columns = current_step.options.get("columns", [])
     for column in columns:
         processed_urls = asyncio.run(column_image_scraping(df=df, current_step=current_step, column=column))
