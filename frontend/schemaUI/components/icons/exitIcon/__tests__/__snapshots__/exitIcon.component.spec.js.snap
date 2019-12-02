@@ -5,8 +5,8 @@ exports[`ExitIcon: Component should render correctly 1`] = `
   style={
     Object {
       "fill": "#FFF",
-      "height": "24px",
-      "width": "24px",
+      "height": 21,
+      "width": 24,
     }
   }
 />
