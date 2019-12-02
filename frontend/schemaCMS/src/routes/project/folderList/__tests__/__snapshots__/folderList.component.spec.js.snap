@@ -78,6 +78,7 @@ exports[`FolderList: Component should render correctly 1`] = `
             customStyles={
               Object {
                 "cursor": "pointer",
+                "wordBreak": "break-word",
               }
             }
             id="folderName-0"
@@ -189,6 +190,7 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
             customStyles={
               Object {
                 "cursor": "pointer",
+                "wordBreak": "break-word",
               }
             }
             id="folderName-0"
