@@ -64,7 +64,8 @@ class MetaDataModel(models.Model):
             raise ValueError("Cannot schedule meta processing without source file")
         with transaction.atomic():
             try:
-                obj.meta_data.delete()
+                obj.meta_data.deleted = True  # set flag to hard delete later
+                obj.meta_data.delete()  # hard delete
             except models.ObjectDoesNotExist:
                 pass
             transaction.on_commit(
@@ -200,6 +201,7 @@ class DataSource(
                 f"{file_name}_preview.json",
                 django.core.files.base.ContentFile(content=json.dumps(preview_data).encode()),
             )
+            meta.save(update_fields=["preview"])
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
