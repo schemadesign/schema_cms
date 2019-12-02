@@ -3,8 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import { Fields } from './fields.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { tableFields as fields, tableData as data } from '../../../shared/utils/dataMock';
 
-export const defaultProps = {
+export const noDataProps = {
   fetchPreview: Function.prototype,
   previewData: {},
   intl: {
@@ -21,6 +22,12 @@ export const defaultProps = {
   },
 };
 
+export const defaultProps = {
+  ...noDataProps,
+  previewData: { data, fields },
+}
+
 storiesOf('Data Source|Fields', module)
   .addDecorator(withTheme())
-  .add('Default', () => <Fields {...defaultProps} />);
+  .add('no data', () => <Fields {...noDataProps} />)
+  .add('default', () => <Fields {...defaultProps} />);
