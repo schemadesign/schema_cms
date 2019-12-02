@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import { SelectComponent } from './select.component';
 import { withTheme } from '../../../.storybook/decorators';
 
-const DEFAULT_OPTION = { value: 'default', label: 'Select your favorite from the list', selected: true };
-
 const options = [
   { value: 'dolphin', label: 'Dolphin' },
   { value: 'dog', label: 'Dog' },
@@ -18,7 +16,6 @@ const options = [
 
 class TestComponent extends PureComponent {
   static propTypes = {
-    defaultOption: PropTypes.object,
     native: PropTypes.bool,
   };
 
@@ -46,8 +43,8 @@ class TestComponent extends PureComponent {
   }
 }
 
-class TestComponentWithDefaultOption extends PureComponent {
-  state = { selectedOption: DEFAULT_OPTION };
+class TestComponentWithPlaceholder extends PureComponent {
+  state = { selectedOption: '' };
 
   onSelect = selectedOption => this.setState({ selectedOption: { ...selectedOption, selected: true } });
 
@@ -57,7 +54,7 @@ class TestComponentWithDefaultOption extends PureComponent {
 
     return (
       <div>
-        <SelectComponent options={parsedOptions} onSelect={this.onSelect} />
+        <SelectComponent options={parsedOptions} onSelect={this.onSelect} placeholder="Select one" />
         <br />
         <br />
         Selected: {selectedOption.label}
@@ -71,5 +68,5 @@ class TestComponentWithDefaultOption extends PureComponent {
 storiesOf('Form/Select', module)
   .addDecorator(withTheme())
   .add('Default', () => <TestComponent />)
-  .add('With Default Option', () => <TestComponentWithDefaultOption />)
+  .add('With Placeholder', () => <TestComponentWithPlaceholder />)
   .add('Native Select', () => <TestComponent native />);

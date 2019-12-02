@@ -597,7 +597,7 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
                   }
                 }
               >
-                Select one
+                Select type
               </div>
             </div>
             <div
@@ -671,20 +671,6 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
                 }
               >
                 Code Snippet
-              </div>
-              <div
-                id="select-item-4"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "borderTop": "1px solid  #000",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "padding": "7px",
-                  }
-                }
-              >
-                Select one
               </div>
             </div>
           </div>

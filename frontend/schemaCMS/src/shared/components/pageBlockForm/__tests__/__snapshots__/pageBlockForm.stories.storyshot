@@ -277,20 +277,6 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
           >
             Code Snippet
           </div>
-          <div
-            id="select-item-4"
-            onClick={[Function]}
-            style={
-              Object {
-                "borderTop": "1px solid  #000",
-                "cursor": "pointer",
-                "display": "block",
-                "padding": "7px",
-              }
-            }
-          >
-            Select one
-          </div>
         </div>
       </div>
     </div>
@@ -665,20 +651,6 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
             }
           >
             Code Snippet
-          </div>
-          <div
-            id="select-item-4"
-            onClick={[Function]}
-            style={
-              Object {
-                "borderTop": "1px solid  #000",
-                "cursor": "pointer",
-                "display": "block",
-                "padding": "7px",
-              }
-            }
-          >
-            Select one
           </div>
         </div>
       </div>
@@ -1055,20 +1027,6 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             }
           >
             Code Snippet
-          </div>
-          <div
-            id="select-item-4"
-            onClick={[Function]}
-            style={
-              Object {
-                "borderTop": "1px solid  #000",
-                "cursor": "pointer",
-                "display": "block",
-                "padding": "7px",
-              }
-            }
-          >
-            Select one
           </div>
         </div>
       </div>
@@ -1626,20 +1584,6 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
           >
             Code Snippet
           </div>
-          <div
-            id="select-item-4"
-            onClick={[Function]}
-            style={
-              Object {
-                "borderTop": "1px solid  #000",
-                "cursor": "pointer",
-                "display": "block",
-                "padding": "7px",
-              }
-            }
-          >
-            Select one
-          </div>
         </div>
       </div>
     </div>
@@ -1939,7 +1883,7 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
               }
             }
           >
-            Select one
+            Select type
           </div>
         </div>
         <div
@@ -2013,20 +1957,6 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
             }
           >
             Code Snippet
-          </div>
-          <div
-            id="select-item-4"
-            onClick={[Function]}
-            style={
-              Object {
-                "borderTop": "1px solid  #000",
-                "cursor": "pointer",
-                "display": "block",
-                "padding": "7px",
-              }
-            }
-          >
-            Select one
           </div>
         </div>
       </div>

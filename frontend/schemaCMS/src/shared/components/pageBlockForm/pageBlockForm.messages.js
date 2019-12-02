@@ -70,7 +70,7 @@ export default defineMessages({
   },
   [NONE]: {
     id: `shared.components.pageBlockForm.${NONE}`,
-    defaultMessage: 'Select one',
+    defaultMessage: 'Select type',
   },
   [CODE_TYPE]: {
     id: `shared.components.pageBlockForm.${CODE_TYPE}`,

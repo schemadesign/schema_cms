@@ -11,16 +11,16 @@ const { EditIcon } = Icons;
 
 export class Select extends PureComponent {
   static propTypes = {
-    defaultOption: PropTypes.object,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     name: PropTypes.string.isRequired,
     value: PropTypes.string,
+    placeholder: PropTypes.string,
     options: PropTypes.array.isRequired,
     onSelect: PropTypes.func.isRequired,
   };
 
   render() {
-    const { defaultOption, label, name, options, onSelect, value, ...restProps } = this.props;
+    const { label, name, options, onSelect, value, placeholder, ...restProps } = this.props;
     const updatedOptions = options.map(option => ({ ...option, selected: option.value === value }));
     const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.select];
 
@@ -33,7 +33,7 @@ export class Select extends PureComponent {
         <IconContainer>
           <EditIcon />
         </IconContainer>
-        <SelectElement defaultOption={defaultOption} options={updatedOptions} onSelect={onSelect} {...filteredProps} />
+        <SelectElement placeholder={placeholder} options={updatedOptions} onSelect={onSelect} {...filteredProps} />
       </Container>
     );
   }
