@@ -125,6 +125,7 @@ exports[`Edit: Component should render correctly 1`] = `
         disabled={false}
         id="backBtn"
         onClick={[Function]}
+        type="button"
       >
         <FormattedMessage
           defaultMessage="Back"
@@ -324,6 +325,7 @@ exports[`Edit: Component should render correctly with loader 1`] = `
         disabled={false}
         id="backBtn"
         onClick={[Function]}
+        type="button"
       >
         <FormattedMessage
           defaultMessage="Back"
