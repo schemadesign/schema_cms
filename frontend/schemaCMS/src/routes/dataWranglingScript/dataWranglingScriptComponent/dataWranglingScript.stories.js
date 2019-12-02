@@ -4,8 +4,8 @@ import { Theme } from 'schemaUI';
 
 import { DataWranglingScript } from './dataWranglingScript.component';
 
-import { withTheme } from '../../.storybook/decorators';
-import mockScripts, { BLANK_CELLS } from '../../modules/dataWranglingScripts/scripts.mock';
+import { withTheme } from '../../../.storybook/decorators';
+import mockScripts, { BLANK_CELLS } from '../../../modules/dataWranglingScripts/scripts.mock';
 
 export const defaultProps = {
   // eslint-disable-next-line import/no-named-as-default-member

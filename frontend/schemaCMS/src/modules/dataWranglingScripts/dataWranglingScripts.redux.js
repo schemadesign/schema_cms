@@ -1,6 +1,7 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
+import { IMAGE_SCRAPPING_SCRIPT_TYPE } from './dataWranglingScripts.constants';
 
 const prefix = 'DATA_WRANGLING_SCRIPTS/';
 
@@ -16,7 +17,10 @@ export const INITIAL_STATE = new Immutable({
   scripts: [],
 });
 
-const updateDataWranglingScript = (state = INITIAL_STATE, { payload }) => state.set('script', payload);
+const updateDataWranglingScript = (state = INITIAL_STATE, { payload }) => {
+  const parsedPayload = { ...payload, type: payload.name === 'Image Scrapping' ? IMAGE_SCRAPPING_SCRIPT_TYPE : null };
+  return state.set('script', parsedPayload);
+};
 const updateDataWranglingScripts = (state = INITIAL_STATE, { payload }) => state.set('scripts', payload);
 
 export const reducer = createReducer(INITIAL_STATE, {
