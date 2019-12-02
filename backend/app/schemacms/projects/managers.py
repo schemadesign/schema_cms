@@ -71,18 +71,13 @@ ProjectManager = generate_soft_delete_manager(queryset_class=ProjectQuerySet)
 
 
 class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
+    @transaction.atomic()
     def create(self, *args, **kwargs):
         file = kwargs.pop("file", None)
-
-        with transaction.atomic():
-            dsource = super().create(*args, **kwargs)
-
-            if file:
-                dsource.update_meta(file=file, file_name=file.name)
-                file.seek(0)
-                dsource.file.save(file.name, file)
-                dsource.project.create_meta_file()
-
+        dsource = super().create(*args, **kwargs)
+        if file:
+            dsource.file.save(file.name, file)
+            dsource.project.create_meta_file()
         return dsource
 
     def annotate_filters_count(self):

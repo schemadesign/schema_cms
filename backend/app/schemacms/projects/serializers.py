@@ -124,12 +124,10 @@ class DataSourceSerializer(serializers.ModelSerializer):
             return []
 
     @transaction.atomic()
-    def update(self, instance, validated_data):
-        file = validated_data.get("file", None)
-        if file:
-            instance.update_meta(file=file, file_name=file.name)
-            file.seek(0)
-        obj = super().update(instance=instance, validated_data=validated_data)
+    def save(self, *args, **kwargs):
+        obj = super().save(*args, **kwargs)
+        if "file" in self.validated_data:
+            obj.schedule_update_meta()
         return obj
 
 
@@ -287,6 +285,15 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
 
     def get_project(self, obj):
         return obj.datasource.project_id
+
+
+class PublicApiUpdateMetaSerializer(serializers.Serializer):
+    items = serializers.IntegerField(min_value=0)
+    fields = serializers.IntegerField(min_value=0)
+    preview_data = serializers.DictField()
+
+    class Meta:
+        fields = ("items", "fields", "preview_data")
 
 
 class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
