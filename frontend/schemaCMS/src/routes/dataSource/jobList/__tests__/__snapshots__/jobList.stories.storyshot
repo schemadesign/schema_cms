@@ -1,7 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Data Source|JobList default 1`] = `
-.c6 {
+.c11 {
+  height: 155px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c12 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c14 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c10 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -42,9 +78,64 @@ exports[`Storyshots Data Source|JobList default 1`] = `
   word-break: break-word;
 }
 
+.c6 {
+  display: none;
+}
+
+.c7 {
+  margin-right: 20px;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    width: 240px;
+  }
+}
+
 @media (min-width:1040px) {
   .c0 {
     display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c6 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
   }
 }
 
@@ -275,16 +366,163 @@ exports[`Storyshots Data Source|JobList default 1`] = `
     <div
       className="c6"
     >
+      <div
+        className="c7"
+      >
+        <h2
+          className="c8"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Past Versions
+          </span>
+        </h2>
+        <h1
+          className="c9"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Source
+          </span>
+        </h1>
+      </div>
+      <div
+        className=""
+      />
+    </div>
+    <div
+      className="c10"
+    >
       <span>
         Loading...
       </span>
+    </div>
+    <div
+      className="c11"
+    >
+      <div
+        className="c12"
+      >
+        <div
+          className="c13"
+        >
+          <button
+            className="c14"
+            disabled={false}
+            id="cancelBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+          >
+            <span>
+              Cancel
+            </span>
+          </button>
+          <button
+            className="c14"
+            disabled={true}
+            id="revertBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#71737e",
+                "cursor": "default",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+          >
+            <span>
+              Revert
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Data Source|JobList no data 1`] = `
-.c6 {
+.c11 {
+  height: 155px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c12 {
+  position: fixed;
+  padding: 40px 0 36px;
+  bottom: 0;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+}
+
+.c14 {
+  width: calc(50% - 5px);
+  max-width: 240px;
+}
+
+.c10 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -325,9 +563,64 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
   word-break: break-word;
 }
 
+.c6 {
+  display: none;
+}
+
+.c7 {
+  margin-right: 20px;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+}
+
+@media (min-width:1040px) {
+  .c13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    width: 1000px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    width: 240px;
+  }
+}
+
 @media (min-width:1040px) {
   .c0 {
     display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c6 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    margin: 60px 0 40px 0;
   }
 }
 
@@ -558,9 +851,120 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
     <div
       className="c6"
     >
+      <div
+        className="c7"
+      >
+        <h2
+          className="c8"
+          id="desktopHeaderTitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 100,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Past Versions
+          </span>
+        </h2>
+        <h1
+          className="c9"
+          id="desktopHeaderSubtitle"
+          style={
+            Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontSize": "24px",
+              "fontWeight": 600,
+              "letterSpacing": "-0.12px",
+              "lineHight": 1.25,
+              "margin": 0,
+            }
+          }
+        >
+          <span>
+            Source
+          </span>
+        </h1>
+      </div>
+      <div
+        className=""
+      />
+    </div>
+    <div
+      className="c10"
+    >
       <span>
         Loading...
       </span>
+    </div>
+    <div
+      className="c11"
+    >
+      <div
+        className="c12"
+      >
+        <div
+          className="c13"
+        >
+          <button
+            className="c14"
+            disabled={false}
+            id="cancelBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+          >
+            <span>
+              Cancel
+            </span>
+          </button>
+          <button
+            className="c14"
+            disabled={true}
+            id="revertBtn"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#71737e",
+                "cursor": "default",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+          >
+            <span>
+              Revert
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

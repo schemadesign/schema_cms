@@ -36,8 +36,9 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         project = self.get_object()
         queryset = (
             project.data_sources.all()
-            .prefetch_related("jobs", "filters", "meta_data")
-            .select_related("project", "created_by", "active_job")
+            .jobs_in_process()
+            .prefetch_related("filters")
+            .select_related("project", "meta_data", "created_by", "active_job")
             .order_by("-created")
             .annotate_filters_count()
             .available_for_user(user=self.request.user)
@@ -124,8 +125,8 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
     queryset = (
-        models.DataSource.objects.prefetch_related("jobs", "filters", "meta_data")
-        .select_related("project", "created_by", "active_job")
+        models.DataSource.objects.prefetch_related("filters")
+        .select_related("project", "meta_data", "created_by", "active_job")
         .order_by("-created")
     )
     permission_classes = (permissions.IsAuthenticated,)
@@ -140,7 +141,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     }
 
     def get_queryset(self):
-        return super().get_queryset().annotate_filters_count().available_for_user(user=self.request.user)
+        return (
+            super()
+            .get_queryset()
+            .annotate_filters_count()
+            .jobs_in_process()
+            .available_for_user(user=self.request.user)
+        )
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
@@ -183,9 +190,15 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="job", methods=["post"])
     def job(self, request, pk=None, **kwargs):
         datasource = self.get_object()
+
+        if datasource.jobs and datasource.jobs_in_process:
+            message = "Previous jobs is still in PROCESSING"
+            return response.Response(data=message, status=status.HTTP_400_BAD_REQUEST)
+
         request.data["datasource"] = datasource
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+
         with transaction.atomic():
             job = serializer.save()
             transaction.on_commit(job.schedule)

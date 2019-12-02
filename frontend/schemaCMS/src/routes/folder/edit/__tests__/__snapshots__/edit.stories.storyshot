@@ -1,6 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Folder|Edit Default 1`] = `
+.c11 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c11:hover {
+  border-bottom: 1px solid #FFF;
+}
+
 .c12 {
   height: 155px;
 }
@@ -35,18 +47,6 @@ exports[`Storyshots Folder|Edit Default 1`] = `
 .c15 {
   width: calc(50% - 5px);
   max-width: 240px;
-}
-
-.c11 {
-  cursor: pointer;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c11:hover {
-  border-bottom: 1px solid #FFF;
 }
 
 .c10 {

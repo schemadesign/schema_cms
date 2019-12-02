@@ -2,6 +2,8 @@ import softdelete.models
 from django.db import models, transaction
 from django.db.models.functions import Coalesce
 
+from .constants import DataSourceJobState
+
 
 class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
     def annotate_data_source_count(self):
@@ -96,6 +98,16 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
                 models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
         )
+
+    def jobs_in_process(self):
+        from .models import DataSourceJob
+
+        subquery = DataSourceJob.objects.filter(
+            datasource=models.OuterRef("pk"),
+            job_state__in=[DataSourceJobState.PENDING, DataSourceJobState.PROCESSING],
+        )
+
+        return self.annotate(jobs_in_process=models.Exists(subquery))
 
     def available_for_user(self, user):
         """Return Datasouces available for user. If user is admin then return all datasources

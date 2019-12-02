@@ -18,6 +18,22 @@ exports[`JobList: Component should render correctly 1`] = `
       />
     }
   />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.jobList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Past Versions"
+        id="dataSource.jobList.title"
+        values={Object {}}
+      />
+    }
+  />
   <LoadingWrapper
     error={null}
     loading={true}
@@ -37,35 +53,35 @@ exports[`JobList: Component should render correctly 1`] = `
     >
       <styled.div />
     </RadioGroup>
-    <NavigationContainer
-      hideOnDesktop={false}
-      right={false}
-    >
-      <BackButton
-        disabled={false}
-        id="cancelBtn"
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Cancel"
-          id="dataSource.jobList.cancel"
-          values={Object {}}
-        />
-      </BackButton>
-      <NextButton
-        disabled={true}
-        id="revertBtn"
-        loading={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Revert"
-          id="dataSource.jobList.revert"
-          values={Object {}}
-        />
-      </NextButton>
-    </NavigationContainer>
   </LoadingWrapper>
+  <NavigationContainer
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      id="cancelBtn"
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="dataSource.jobList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={true}
+      id="revertBtn"
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Revert"
+        id="dataSource.jobList.revert"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
 </styled.div>
 `;
 
@@ -80,6 +96,22 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
       />
     }
     headerTitle={
+      <FormattedMessage
+        defaultMessage="Past Versions"
+        id="dataSource.jobList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.jobList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
       <FormattedMessage
         defaultMessage="Past Versions"
         id="dataSource.jobList.title"
@@ -163,35 +195,35 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
         </styled.div>
       </styled.div>
     </RadioGroup>
-    <NavigationContainer
-      hideOnDesktop={false}
-      right={false}
-    >
-      <BackButton
-        disabled={false}
-        id="cancelBtn"
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Cancel"
-          id="dataSource.jobList.cancel"
-          values={Object {}}
-        />
-      </BackButton>
-      <NextButton
-        disabled={true}
-        id="revertBtn"
-        loading={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Revert"
-          id="dataSource.jobList.revert"
-          values={Object {}}
-        />
-      </NextButton>
-    </NavigationContainer>
   </LoadingWrapper>
+  <NavigationContainer
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      id="cancelBtn"
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="dataSource.jobList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={true}
+      id="revertBtn"
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Revert"
+        id="dataSource.jobList.revert"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
 </styled.div>
 `;
 
@@ -206,6 +238,22 @@ exports[`JobList: Component should render correctly with no data 1`] = `
       />
     }
     headerTitle={
+      <FormattedMessage
+        defaultMessage="Past Versions"
+        id="dataSource.jobList.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.jobList.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
       <FormattedMessage
         defaultMessage="Past Versions"
         id="dataSource.jobList.title"
@@ -232,34 +280,34 @@ exports[`JobList: Component should render correctly with no data 1`] = `
     >
       <styled.div />
     </RadioGroup>
-    <NavigationContainer
-      hideOnDesktop={false}
-      right={false}
-    >
-      <BackButton
-        disabled={false}
-        id="cancelBtn"
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Cancel"
-          id="dataSource.jobList.cancel"
-          values={Object {}}
-        />
-      </BackButton>
-      <NextButton
-        disabled={true}
-        id="revertBtn"
-        loading={false}
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Revert"
-          id="dataSource.jobList.revert"
-          values={Object {}}
-        />
-      </NextButton>
-    </NavigationContainer>
   </LoadingWrapper>
+  <NavigationContainer
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      id="cancelBtn"
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Cancel"
+        id="dataSource.jobList.cancel"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={true}
+      id="revertBtn"
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Revert"
+        id="dataSource.jobList.revert"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
 </styled.div>
 `;

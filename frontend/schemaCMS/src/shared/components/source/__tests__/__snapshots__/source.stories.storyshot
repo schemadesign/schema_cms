@@ -5,7 +5,7 @@ exports[`Storyshots Shared Components|Source Default 1`] = `
   padding-top: 7px;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -14,11 +14,11 @@ exports[`Storyshots Shared Components|Source Default 1`] = `
   margin-top: 23px;
 }
 
-.c2 {
+.c1 {
   height: 155px;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -37,7 +37,7 @@ exports[`Storyshots Shared Components|Source Default 1`] = `
   width: 100%;
 }
 
-.c3 {
+.c2 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -45,29 +45,13 @@ exports[`Storyshots Shared Components|Source Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c5 {
+.c4 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c1 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
 @media (min-width:1040px) {
-  .c4 {
+  .c3 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -76,13 +60,13 @@ exports[`Storyshots Shared Components|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c3 {
+  .c2 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c5 {
+  .c4 {
     width: 240px;
   }
 }
@@ -296,18 +280,15 @@ exports[`Storyshots Shared Components|Source Default 1`] = `
     </div>
     <div
       className="c1"
-    />
-    <div
-      className="c2"
     >
       <div
-        className="c3"
+        className="c2"
       >
         <div
-          className="c4"
+          className="c3"
         >
           <button
-            className="c5"
+            className="c4"
             disabled={false}
             onClick={[Function]}
             style={
@@ -333,7 +314,7 @@ exports[`Storyshots Shared Components|Source Default 1`] = `
             </span>
           </button>
           <button
-            className="c5"
+            className="c4"
             disabled={true}
             onClick={[Function]}
             style={
@@ -359,7 +340,7 @@ exports[`Storyshots Shared Components|Source Default 1`] = `
             </span>
           </button>
           <div
-            className="c6"
+            className="c5"
           >
             <div
               style={

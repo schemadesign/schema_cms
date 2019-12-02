@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { always, findLast, isEmpty, path, pipe, propEq } from 'ramda';
 import { Form, Typography } from 'schemaUI';
@@ -6,13 +6,13 @@ import { FormattedMessage } from 'react-intl';
 
 import {
   Container,
+  customRadioGroupStyles,
   Dot,
   Eye,
   JobItem,
   JobItemWrapper,
-  RadioLabel,
   ListWrapper,
-  customRadioGroupStyles,
+  RadioLabel,
 } from './jobList.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
@@ -20,8 +20,9 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 import messages from './jobList.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { JOB_STATE_SUCCESS, JOB_OPTION } from '../../../modules/job/job.constants';
+import { JOB_OPTION, JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 
 const { RadioGroup, RadioStyled } = Form;
 
@@ -56,18 +57,20 @@ export class JobList extends PureComponent {
     }
   }
 
-  getSelectedJob = () => (this.state.selectedJob ? this.state.selectedJob : this.props.dataSource.activeJob);
+  getActiveJobId = () => path(['dataSource', 'activeJob', 'id'], this.props);
 
-  isJobActive = id => id === this.props.dataSource.activeJob;
+  getSelectedJob = () => this.state.selectedJob || this.getActiveJobId();
+
+  isJobActive = id => id === this.getActiveJobId();
 
   handleChange = ({ target: { value: selectedJob } }) => {
     selectedJob = parseInt(selectedJob, 10);
-    const { jobList, dataSource } = this.props;
+    const { jobList } = this.props;
     const selectedJobSuccess = pipe(
       findLast(propEq('id', selectedJob)),
       propEq('jobState', JOB_STATE_SUCCESS)
     )(jobList);
-    const canRevert = selectedJob !== dataSource.activeJob && selectedJobSuccess;
+    const canRevert = selectedJob !== this.getActiveJobId(this.props) && selectedJobSuccess;
 
     this.setState({ selectedJob, canRevert });
   };
@@ -108,16 +111,18 @@ export class JobList extends PureComponent {
     );
   };
 
-  renderContent = (jobList, canRevert) => (
+  renderContent = ({ jobList, canRevert, isLoading }) => (
     <Fragment>
-      <RadioGroup
-        name={JOB_OPTION}
-        onChange={this.handleChange}
-        customStyles={customRadioGroupStyles}
-        value={this.getSelectedJob()}
-      >
-        <ListWrapper>{jobList.map(this.renderList)}</ListWrapper>
-      </RadioGroup>
+      <LoadingWrapper loading={isLoading} noData={isEmpty(jobList)}>
+        <RadioGroup
+          name={JOB_OPTION}
+          onChange={this.handleChange}
+          customStyles={customRadioGroupStyles}
+          value={this.getSelectedJob()}
+        >
+          <ListWrapper>{jobList.map(this.renderList)}</ListWrapper>
+        </RadioGroup>
+      </LoadingWrapper>
       <NavigationContainer>
         <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
           <FormattedMessage {...messages.cancel} />
@@ -132,18 +137,17 @@ export class JobList extends PureComponent {
   render() {
     const { loading, canRevert } = this.state;
     const { dataSource, jobList } = this.props;
-    const topHeaderConfig = {
-      headerTitle: <FormattedMessage {...messages.title} />,
-      headerSubtitle: <FormattedMessage {...messages.subTitle} />,
-    };
+
+    const headerTitle = <FormattedMessage {...messages.title} />;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
     const isLoading = loading || isEmpty(dataSource);
 
     return (
       <Container>
-        <TopHeader {...topHeaderConfig} />
-        <LoadingWrapper loading={isLoading} noData={isEmpty(jobList)}>
-          {this.renderContent(jobList, canRevert)}
-        </LoadingWrapper>
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
+
+        {this.renderContent({ jobList, canRevert, isLoading })}
       </Container>
     );
   }

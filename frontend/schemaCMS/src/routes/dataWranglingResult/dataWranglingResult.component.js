@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { path } from 'ramda';
 
 import messages from './dataWranglingResult.messages';
 import { Container } from './dataWranglingResult.styles';
@@ -18,13 +19,15 @@ export class DataWranglingResult extends PureComponent {
     }),
   };
 
+  getActiveJobId = () => path(['dataSource', 'activeJob', 'id'], this.props);
+
   render() {
-    const { activeJob } = this.props.dataSource;
+    const activeJobId = this.getActiveJobId(this.props);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <DataPreview {...this.props} jobId={activeJob} />
+        <DataPreview {...this.props} jobId={activeJobId} />
         <StepNavigation {...this.props} />
       </Container>
     );
