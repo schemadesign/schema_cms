@@ -67,7 +67,9 @@ class MetaDataModel(models.Model):
                 obj.meta_data.delete()
             except models.ObjectDoesNotExist:
                 pass
-            services.schedule_object_meta_processing(obj=obj, source_file_size=file.size)
+            transaction.on_commit(
+                lambda: services.schedule_object_meta_processing(obj=obj, source_file_size=file.size)
+            )
 
 
 class Project(
@@ -191,7 +193,7 @@ class DataSource(
             return
         with transaction.atomic():
             meta, _ = DataSourceMeta.objects.update_or_create(
-                datasource=self, defaults={"fields": fields, "items": items}
+                datasource_id=self.id, defaults={"fields": fields, "items": items}
             )
             file_name, _ = self.get_original_file_name(self.file.name)
             meta.preview.save(

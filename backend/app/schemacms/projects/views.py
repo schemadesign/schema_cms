@@ -291,12 +291,13 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         authentication_classes=[authentication.EnvTokenAuthentication],
     )
     def update_meta(self, request, pk, *args, **kwargs):
-        data_source: models.DataSource = get_object_or_404(models.DataSource, pk=pk)
-        serializer = self.get_serializer(instance=getattr(data_source, 'meta_data', None), data=request.data)
+        serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-
-        data_source.update_meta(**serializer.validated_data)
-
+        with transaction.atomic():
+            data_source: models.DataSource = get_object_or_404(
+                models.DataSource.objects.select_for_update(), pk=pk
+            )
+            data_source.update_meta(**serializer.validated_data)
         return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 
