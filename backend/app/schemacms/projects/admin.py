@@ -10,7 +10,9 @@ from schemacms.utils import admin as utils_admin
 from . import models, forms
 
 
-admin.site.register(models.WranglingScript)
+@admin.register(models.WranglingScript)
+class WranglingScript(utils_admin.SoftDeleteObjectAdmin):
+    readonly_fields = ("specs",)
 
 
 def update_meta_file(modeladmin, request, queryset):
@@ -100,7 +102,7 @@ class DataSourceJobStepInline(admin.TabularInline):
 @admin.register(models.DataSourceJob)
 class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
     actions = (update_meta,)
-    list_display = ('pk', 'datasource', 'created')
+    list_display = ('pk', 'datasource', 'job_state', 'created', 'deleted_at')
     inlines = [DataSourceJobStepInline]
 
 
