@@ -258,7 +258,9 @@ Content-Type: application/json
 *Note:*
 
 - **[Authorization Protected](authentication.md)**
-
+- `specs` allows to fetch extra context for step for example
+  `image scraping` step will return ```{"specs": {"type": "image_scraping"}}```
+  so we add special case for this type of step.
 
 **Response**:
 
@@ -272,10 +274,13 @@ Content-Type: application/json
         "name": "use first 10 rows",
         "body": "df = df.head(10)\n",
         "is_predefined": false,
-        "file": "http://localhost:8000/scripts/use_first_10_rows.py"
+        "file": "http://localhost:8000/scripts/use_first_10_rows.py",
+        "specs": {}
     },
 ]
 ```
+
+
 
 ## Upload data source's script
 
@@ -320,6 +325,8 @@ steps      | array[[step](#step)]   | List of steps to execute
 *Note:*
 
 - **[Authorization Protected](authentication.md)**
+- For `image scraping` step, `options` accept list of strings in the `columns` property
+  for example ```{"options": {"columns": ["Col1", "Col2"]}}```
 
 
 **Response**:

@@ -24,6 +24,10 @@ FETCH_TIMEOUT = 10  # seconds
 RANDOM_SUFFIX_LENGTH = 5
 
 
+def image_static_url(path):
+    return parse.urljoin(settings.AWS_IMAGE_STATIC_URL, path)
+
+
 def is_valid_url(url: str) -> bool:
     try:
         return validators.url(url)
@@ -63,7 +67,7 @@ async def upload(s3_client, path, http_response):
         ACL='public-read',
         ContentDisposition="inline",
         ContentType=http_response.headers.get("Content-Type"),
-        Metadata={'source': str(http_response.url),},
+        Metadata={'source': str(http_response.url)},
     )
 
 
@@ -77,7 +81,7 @@ async def fetch_and_upload_task(url, current_step, http_session, s3_client, dirp
     filename = generate_available_filename(os.path.basename(parsed_url.path))
     path = os.path.join(f"{current_step.job.datasource.id}/jobs/{current_step.job.id}", dirpath, filename)
     await upload(s3_client, path, http_response)
-    return parse.urljoin(s3_client.meta.endpoint_url, path)
+    return image_static_url(path)
 
 
 async def column_image_scraping(df, current_step, column):

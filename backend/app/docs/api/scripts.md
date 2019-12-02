@@ -9,6 +9,8 @@
 *Note:*
 
 - **[Authorization Protected](authentication.md)**
+- `specs` contains extra information for step like `type`<br/>
+  for example:<br/>```{"specs": {"type": "image_scraping"}}```
 
 **Response**:
 
@@ -27,6 +29,7 @@ Content-Type application/json
         "last_name": "Kowalsky"
     },
     "file": "http://localtest/schemacms/scripts/lambda2.py",
-    "body": "df = df.head(3)\n"
+    "body": "df = df.head(3)\n",
+    "specs": {}
 }
 ```

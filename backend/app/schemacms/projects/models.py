@@ -332,6 +332,7 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
     )
     body = models.TextField(blank=True)
     last_file_modification = models.DateTimeField(null=True)
+    specs = pg_fields.JSONField(default=dict, blank=True)
 
     def __str__(self):
         return self.name
