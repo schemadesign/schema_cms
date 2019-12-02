@@ -108,7 +108,6 @@ exports[`Storyshots Job/Preview Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

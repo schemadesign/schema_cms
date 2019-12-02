@@ -4,7 +4,6 @@ exports[`Storyshots Shared Components|Navigation BackArrowButton 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -64,7 +63,6 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -147,7 +145,6 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -219,7 +216,6 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -262,7 +258,6 @@ exports[`Storyshots Shared Components|Navigation PlusButton 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

@@ -11,6 +11,8 @@ import { GlobalStyle } from '../theme/global';
 import { DesktopTopHeader } from '../shared/components/desktopTopHeader';
 import messages from './app.messages';
 import { Container, Content } from './app.styles';
+import { renderWhenTrue } from '../shared/utils/rendering';
+import { LoadingWrapper } from '../shared/components/loadingWrapper';
 
 Modal.setAppElement('#app');
 
@@ -27,11 +29,25 @@ export class App extends PureComponent {
     isAdmin: false,
   };
 
-  componentDidMount() {
-    this.props.startup();
+  state = {
+    loading: true,
+    error: null,
+  };
+
+  async componentDidMount() {
+    try {
+      await this.props.startup();
+    } catch (error) {
+      this.setState({ error });
+    } finally {
+      this.setState({ loading: false });
+    }
   }
 
+  renderContent = loading => renderWhenTrue(() => React.Children.only(this.props.children))(!loading);
+
   render() {
+    const { loading, error } = this.state;
     const theme = this.props.isAdmin ? Theme.dark : Theme.light;
 
     return (
@@ -42,10 +58,13 @@ export class App extends PureComponent {
               <FormattedMessage {...messages.pageTitle}>
                 {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle} />}
               </FormattedMessage>
-
               <GlobalStyle />
               <DesktopTopHeader history={this.props.history} />
-              <Content>{React.Children.only(this.props.children)}</Content>
+              <Content>
+                <LoadingWrapper loading={loading} error={error}>
+                  {this.renderContent()}
+                </LoadingWrapper>
+              </Content>
             </Container>
           </ThemeProvider>
         </ThemeUIProvider>

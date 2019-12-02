@@ -51,7 +51,6 @@ exports[`Storyshots Data Source|JobList default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -334,7 +333,6 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

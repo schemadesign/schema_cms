@@ -97,7 +97,6 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -736,7 +735,6 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

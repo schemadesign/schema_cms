@@ -65,7 +65,6 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "text": "#000",
         },
         "providerContainer": Object {
-          "backgroundColor": "#FFF",
           "minHeight": "100vh",
         },
         "radioButton": Object {
@@ -151,7 +150,6 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
   <div
     style={
       Object {
-        "backgroundColor": "#FFF",
         "minHeight": "100vh",
       }
     }

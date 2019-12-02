@@ -148,7 +148,6 @@ exports[`Storyshots Project|AddUser Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -611,7 +610,6 @@ exports[`Storyshots Project|AddUser with users 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

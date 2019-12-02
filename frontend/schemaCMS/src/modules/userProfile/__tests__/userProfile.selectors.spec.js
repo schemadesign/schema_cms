@@ -14,6 +14,7 @@ describe('UserProfile: selectors', () => {
   const state = Immutable({
     userProfile: {
       isFetched: false,
+      isAdmin: true,
       user: { role: ROLES.ADMIN },
       dataWranglingDetail: { data: 'data' },
     },

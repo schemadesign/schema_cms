@@ -2,11 +2,13 @@ import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
 
 import { reducer as userProfileReducer, UserProfileActions, UserProfileRoutines } from '../userProfile.redux';
+import { ROLES } from '../userProfile.constants';
 
 describe('UserProfile: redux', () => {
   const defaultState = Immutable({
     user: {},
     isFetched: false,
+    isAdmin: false,
   });
 
   describe('reducer', () => {
@@ -36,6 +38,27 @@ describe('UserProfile: redux', () => {
 
       const resultState = userProfileReducer(defaultState, UserProfileRoutines.fetchUserDetails.success(user));
       expect(resultState.isFetched).to.deep.equal(true);
+    });
+
+    it('should set isAdmin to true', async () => {
+      const user = {
+        pk: 1,
+        role: ROLES.ADMIN,
+      };
+
+      const resultState = userProfileReducer(defaultState, UserProfileRoutines.fetchUserDetails.success(user));
+      expect(resultState.isAdmin).to.deep.equal(true);
+    });
+  });
+
+  describe('when USER_PROFILE/UPDATE_ME is received', () => {
+    it('should set user object', async () => {
+      const user = {
+        pk: 1,
+      };
+
+      const resultState = userProfileReducer(defaultState, UserProfileRoutines.updateMe.success(user));
+      expect(resultState.user).to.deep.equal(user);
     });
   });
 

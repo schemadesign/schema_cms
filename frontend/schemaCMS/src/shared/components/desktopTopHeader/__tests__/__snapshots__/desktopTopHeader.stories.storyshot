@@ -174,7 +174,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -699,7 +698,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -1247,7 +1245,6 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

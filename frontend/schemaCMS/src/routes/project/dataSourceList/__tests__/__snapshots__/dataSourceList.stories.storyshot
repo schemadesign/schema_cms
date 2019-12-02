@@ -208,7 +208,6 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -893,7 +892,6 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -1578,7 +1576,6 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

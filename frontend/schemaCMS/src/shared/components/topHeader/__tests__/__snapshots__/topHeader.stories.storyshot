@@ -80,7 +80,6 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -415,7 +414,6 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
