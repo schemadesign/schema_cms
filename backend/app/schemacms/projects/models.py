@@ -311,6 +311,12 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
 
         return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
 
+    def get_fields_names(self):
+        fields = json.loads(self.preview.read()).get("fields")
+        if fields:
+            return [key for key in fields.keys()]
+        return []
+
 
 class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
     datasource = models.ForeignKey(

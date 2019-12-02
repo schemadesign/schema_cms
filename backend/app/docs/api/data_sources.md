@@ -29,17 +29,21 @@ Content-Type: application/json
       "project": 285,
       "type": "file",
       "file": "http://localhost:8000/static/file.csv",
-      "active_job": 2,
+      "active_job": {
+        "id": 39,
+        "scripts": [
+            1
+        ]
+       },
       "meta_data": {
         "items": 2419,
         "fields": 3,
+        "fields_names": [
+            "C0",
+            "C1",
+            "C2",
+        ],
         "preview": "http://localhost:8000/static/preview_file.json"
-      },
-      "job": {
-        "id": 2,
-        "job_state": "pending",
-        "created": "2019-10-03T09:22:24+0000",
-        "modified": "2019-10-03T09:22:24+0000"
       }
     },
     {
@@ -48,17 +52,27 @@ Content-Type: application/json
       "project": 285,
       "type": "file",
       "file": "http://localhost:8000/static/file.csv",
-      "active_job": 3,
+      "active_job": {
+        "id": 39,
+        "scripts": [
+            1
+        ]
+       },
       "meta_data": {
         "items": 3179,
         "fields": 9,
+        "fields_names": [
+            "C0",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+        ],
         "preview": "http://localhost:8000/static/preview_file.json"
-      },
-      "job": {
-        "id": 3,
-        "job_state": "pending",
-        "created": "2019-10-03T09:22:24+0000",
-        "modified": "2019-10-03T09:22:24+0000"
       }
     }
   ]
@@ -94,36 +108,49 @@ Content-Type: application/json
       "project": 285,
       "type": "file",
       "file": "http://localhost:8000/static/file.csv",
-      "active_job": 2,
+      "active_job": {
+        "id": 39,
+        "scripts": [
+            1
+        ]
+       },
       "meta_data": {
         "items": 2419,
         "fields": 3,
+        "fields_names": [
+            "C0",
+            "C1",
+            "C2",
+        ],
         "preview": "http://localhost:8000/static/preview_file.json"
-       },
-      "job": {
-        "id": 2,
-        "job_state": "pending",
-        "created": "2019-10-03T09:22:24+0000",
-        "modified": "2019-10-03T09:22:24+0000"
-      }
+       }
     },
     {
       "id": 98,
       "name": "Also entire machine lay.",
       "project": 285,
       "type": "file",
-      "file": "http://localhost:8000/static/file.csv",
-      "active_job": 3,
+      "active_job": {
+        "id": 39,
+        "scripts": [
+            1
+        ]
+       },
       "meta_data": {
         "items": 3179,
         "fields": 9,
+        "fields_names": [
+            "C0",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+        ],
         "preview": "http://localhost:8000/static/preview_file.json"
-      },
-      "job": {
-        "id": 3,
-        "job_state": "pending",
-        "created": "2019-10-03T09:22:24+0000",
-        "modified": "2019-10-03T09:22:24+0000"
       }
     }
   ]
