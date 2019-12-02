@@ -4,6 +4,8 @@ import Helmet from 'react-helmet';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { FormattedMessage } from 'react-intl';
 import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Form as FormUI, Typography } from 'schemaUI';
+import { always, append, equals, ifElse, path, reject } from 'ramda';
 
 import { DATA_WRANGLING_STEP } from '../../../modules/dataSource/dataSource.constants';
 import {
@@ -16,19 +18,39 @@ import { Container, Form, customInputStyles } from './imageScrappingScript.style
 import messages from './imageScrappingScript.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+
+const { CheckboxGroup, Checkbox } = FormUI;
+const { Span } = Typography;
 
 export class ImageScrappingScript extends PureComponent {
   static propTypes = {
+    fetchDataSource: PropTypes.func.isRequired,
     dataWranglingScript: PropTypes.object,
+    fieldNames: PropTypes.array.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     isAdmin: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
-        scriptId: PropTypes.string.isRequired,
+        dataSourceId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   };
+
+  state = {
+    loading: true,
+    selectedFields: [],
+  };
+
+  async componentDidMount() {
+    try {
+      await this.props.fetchDataSource(path(['match', 'params'], this.props));
+      this.setState({ loading: false });
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   getHeaderAndMenuConfig = () => {
     const { intl, dataWranglingScript } = this.props;
@@ -37,6 +59,16 @@ export class ImageScrappingScript extends PureComponent {
       headerTitle: dataWranglingScript.title || intl.formatMessage(messages.title),
       headerSubtitle: intl.formatMessage(messages.subTitle),
     };
+  };
+
+  handleChange = ({ target: { value, checked } }) => {
+    const values = this.state.selectedFields;
+    const selectedFields = ifElse(equals(true), always(append(value, values)), always(reject(equals(value), values)))(
+      checked
+    );
+    return this.setState({
+      selectedFields,
+    });
   };
 
   handleGoToDataWranglingList = (match, history) => () => {
@@ -49,9 +81,16 @@ export class ImageScrappingScript extends PureComponent {
     return history.push(`/datasource/${dataWranglingScript.datasource}/${DATA_WRANGLING_STEP}`);
   };
 
+  renderCheckboxes = (name, index) => (
+    <Checkbox id={`checkbox-${index}`} value={name} key={index} isEdit>
+      <Span>{name}</Span>
+    </Checkbox>
+  );
+
   render() {
     const headerConfig = this.getHeaderAndMenuConfig();
-    const { intl, dataWranglingScript, match, history, isAdmin } = this.props;
+    const { intl, dataWranglingScript, match, history, isAdmin, fieldNames } = this.props;
+    const { loading } = this.state;
     const syntaxTheme = isAdmin ? darcula : defaultStyle;
 
     const descriptionFieldProps = {
@@ -75,7 +114,18 @@ export class ImageScrappingScript extends PureComponent {
           <SyntaxHighlighter language="python" style={syntaxTheme}>
             {dataWranglingScript.body}
           </SyntaxHighlighter>
-          Here is where I gonna add checkboxes
+          <LoadingWrapper loading={loading}>
+            {() => (
+              <CheckboxGroup
+                onChange={this.handleChange}
+                value={this.state.selectedFields}
+                name="fields"
+                id="fieldCheckboxGroup"
+              >
+                {fieldNames.map(this.renderCheckboxes)}
+              </CheckboxGroup>
+            )}
+          </LoadingWrapper>
         </Form>
         <NavigationContainer>
           <BackButton onClick={this.handleGoToDataWranglingList(match, history)} />

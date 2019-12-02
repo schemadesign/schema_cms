@@ -24,9 +24,7 @@ export class DataWranglingScriptComponent extends PureComponent {
     history: PropTypes.object.isRequired,
     isAdmin: PropTypes.bool.isRequired,
     match: PropTypes.shape({
-      params: PropTypes.shape({
-        scriptId: PropTypes.string.isRequired,
-      }).isRequired,
+      path: PropTypes.string.isRequired,
     }).isRequired,
   };
 

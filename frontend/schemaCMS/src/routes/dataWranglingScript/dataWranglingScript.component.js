@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, isEmpty } from 'ramda';
+import { isEmpty } from 'ramda';
 
 import { DataWranglingScriptComponent } from './dataWranglingScriptComponent/dataWranglingScript.component';
 import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';

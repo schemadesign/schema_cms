@@ -62,7 +62,11 @@ export default class RootContainer extends Component {
 
             <AuthRoute exact path={`${ROUTES.BLOCK}/:blockId`} component={PageBlock} />
 
-            <AuthRoute exact path={`${ROUTES.DATA_WRANGLING_SCRIPTS}/:scriptId`} component={DataWranglingScript} />
+            <AuthRoute
+              exact
+              path={`${ROUTES.DATA_WRANGLING_SCRIPTS}/:scriptId/:dataSourceId?`}
+              component={DataWranglingScript}
+            />
 
             <AuthRoute path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
 
