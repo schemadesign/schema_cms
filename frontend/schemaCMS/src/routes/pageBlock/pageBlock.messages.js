@@ -32,6 +32,6 @@ export default defineMessages({
   },
   removeTitle: {
     id: 'pageBlock.removeTitle',
-    defaultMessage: 'Removing a page will also remove any image you uploaded. Are you sure you want to proceed?',
+    defaultMessage: 'Removing a block will also remove any image you uploaded. Are you sure you want to proceed?',
   },
 });

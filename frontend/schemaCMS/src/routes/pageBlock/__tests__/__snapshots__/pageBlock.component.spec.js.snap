@@ -168,7 +168,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
   >
     <Styled(H1)>
       <FormattedMessage
-        defaultMessage="Removing a page will also remove any image you uploaded. Are you sure you want to proceed?"
+        defaultMessage="Removing a block will also remove any image you uploaded. Are you sure you want to proceed?"
         id="pageBlock.removeTitle"
         values={Object {}}
       />
@@ -352,7 +352,7 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
   >
     <Styled(H1)>
       <FormattedMessage
-        defaultMessage="Removing a page will also remove any image you uploaded. Are you sure you want to proceed?"
+        defaultMessage="Removing a block will also remove any image you uploaded. Are you sure you want to proceed?"
         id="pageBlock.removeTitle"
         values={Object {}}
       />
