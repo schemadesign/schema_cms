@@ -33,14 +33,13 @@ export class PageBlockForm extends PureComponent {
 
   state = {
     confirmationModalOpen: false,
-    wasImage: false,
+    contentType: NONE,
     selectedStatus: null,
   };
 
   componentDidMount() {
     const type = path(['initialValues', 'type'], this.props);
-
-    this.setState({ wasImage: type === IMAGE_TYPE });
+    this.setState({ contentType: type });
   }
 
   getStatusOptions = intl =>
@@ -50,9 +49,9 @@ export class PageBlockForm extends PureComponent {
     }));
 
   handleSelectStatus = ({ value: selectedStatus }) => {
-    const { wasImage } = this.state;
+    const { contentType } = this.state;
 
-    if (wasImage && selectedStatus !== IMAGE_TYPE) {
+    if (contentType !== NONE && selectedStatus !== contentType) {
       this.setState({
         selectedStatus,
         confirmationModalOpen: true,
@@ -81,7 +80,7 @@ export class PageBlockForm extends PureComponent {
     this.setState({
       confirmationModalOpen: false,
       selectedStatus: null,
-      wasImage: false,
+      contentType: NONE,
     });
   };
 
