@@ -44,6 +44,6 @@ export default defineMessages({
   },
   nameFolderNameUniqueError: {
     id: 'project.createFolder.nameFolderNameUniqueError',
-    defaultMessage: 'Folder with this name already exist in project.',
+    defaultMessage: 'A folder with this name already exists in project.',
   },
 });
