@@ -107,17 +107,12 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
     def jobs_in_process(self):
         from .models import DataSourceJob
 
-        return self.prefetch_related(
-            models.Prefetch(
-                "jobs",
-                queryset=DataSourceJob.objects.filter(
-                    job_state__in=[DataSourceJobState.PENDING, DataSourceJobState.PROCESSING]
-                ),
-                to_attr="jobs_in_process",
-            ),
-            "filters",
-            "meta_data",
+        subquery = DataSourceJob.objects.filter(
+            datasource=models.OuterRef("pk"),
+            job_state__in=[DataSourceJobState.PENDING, DataSourceJobState.PROCESSING],
         )
+
+        return self.annotate(jobs_in_process=models.Exists(subquery))
 
     def available_for_user(self, user):
         """Return Datasouces available for user. If user is admin then return all datasources

@@ -38,7 +38,8 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         queryset = (
             project.data_sources.all()
             .jobs_in_process()
-            .select_related("project", "created_by", "active_job")
+            .prefetch_related("filters")
+            .select_related("project", "meta_data", "created_by", "active_job")
             .order_by("-created")
             .annotate_filters_count()
             .available_for_user(user=self.request.user)
@@ -124,8 +125,10 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = models.DataSource.objects.select_related("project", "created_by", "active_job").order_by(
-        "-created"
+    queryset = (
+        models.DataSource.objects.prefetch_related("filters")
+        .select_related("project", "meta_data", "created_by", "active_job")
+        .order_by("-created")
     )
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
