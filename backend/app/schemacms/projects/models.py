@@ -263,7 +263,10 @@ class DataSource(
 
     def result_fields_info(self):
         preview = self.current_job.meta_data.preview
-        fields = json.loads(preview.read())["fields"]
+        try:
+            fields = json.loads(preview.read())["fields"]
+        except (json.JSONDecodeError, KeyError):
+            return []
 
         data = [{"name": key, "type": map_general_dtypes(value["dtype"])} for key, value in fields.items()]
 
@@ -283,9 +286,10 @@ class DataSource(
         current_job = self.current_job
 
         if current_job:
+            job_meta = getattr(current_job, "meta_data", None)
             data.update(
                 {
-                    "items": current_job.meta_data.items,
+                    "items": job_meta.items if job_meta else 0,
                     "result": current_job.result.name or "",
                     "fields": self.result_fields_info(),
                 }
