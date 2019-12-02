@@ -1,3 +1,5 @@
+import logging
+import json
 import functools
 import os
 import requests
@@ -11,6 +13,7 @@ def check_response(fn):
         response = fn(*args, **kwargs)
         response.raise_for_status()
         return response
+
     return _check_response
 
 
@@ -24,7 +27,11 @@ class SchemaCMSAPI:
         url = os.path.join(self._datasource_url(datasource_pk), "update-meta")
         response = requests.post(
             url,
-            json={"items": items, "fields": fields, "preview_data": preview_data},
+            json={
+                "items": items,
+                "fields": fields,
+                "preview_data": json.loads(preview_data),
+            },
             headers=self.get_headers(),
             timeout=self.timeout,
         )
@@ -35,7 +42,11 @@ class SchemaCMSAPI:
         url = os.path.join(self._job_url(job_pk), "update-meta")
         response = requests.post(
             url,
-            json={"items": items, "fields": fields, "preview_data": preview_data},
+            json={
+                "items": items,
+                "fields": fields,
+                "preview_data": json.loads(preview_data),
+            },
             headers=self.get_headers(),
             timeout=self.timeout,
         )
@@ -53,7 +64,7 @@ class SchemaCMSAPI:
         return response
 
     def get_headers(self):
-        return {'Authorization': f'Token {settings.LAMBDA_AUTH_TOKEN}'}
+        return {"Authorization": f"Token {settings.LAMBDA_AUTH_TOKEN}"}
 
     def _datasource_url(self, datasource_pk) -> str:
         return os.path.join(self.backend_url, "datasources", str(datasource_pk))
