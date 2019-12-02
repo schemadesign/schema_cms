@@ -4,12 +4,21 @@ import { ThemeProvider } from 'styled-components';
 import { ThemeProvider as ThemeProviderUI, Theme } from 'schemaUI';
 import { IntlProvider } from 'react-intl';
 import { MemoryRouter } from 'react-router';
-import { translationMessages, DEFAULT_LOCALE } from '../i18n';
 
+import { translationMessages, DEFAULT_LOCALE } from '../i18n';
+import { prepareFontSet } from '../../../schemaUI/.storybook/fonts';
+
+const baseStyles = (theme) => ({
+  color: theme.text,
+  fontFamily: ''
+})
 
 export const withTheme = (theme = Theme.dark) => (story) => (
   <ThemeProvider theme={theme}>
-    <ThemeProviderUI theme={theme}>{story()}</ThemeProviderUI>
+    <ThemeProviderUI theme={theme}>
+      <style>{prepareFontSet()}</style>
+      <div style={{ color: theme.text, fontFamily: 'Inter' }}>{story()}</div>
+    </ThemeProviderUI>
   </ThemeProvider>
 );
 
