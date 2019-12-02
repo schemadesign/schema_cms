@@ -328,9 +328,10 @@ class LambdaWorker(core.Stack):
 
     def _create_lambda_fn(self, scope, memory_size, queue):
         lambda_code = aws_lambda.Code.from_cfn_parameters()
+        name = f"lambda-worker-{memory_size}"
         lambda_fn = aws_lambda.Function(
             self,
-            f"lambda-worker-{memory_size}",
+            name,
             code=lambda_code,
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             handler="handler.main",
@@ -340,6 +341,7 @@ class LambdaWorker(core.Stack):
                 "BACKEND_URL": BACKEND_URL.format(
                     domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
                 ),
+                "SENTRY_DNS": self.get_secret("sentry_dns_arn", name + "-secret").secret_value.to_string(),
                 LAMBDA_AUTH_TOKEN_ENV_NAME: scope.api.api_lambda_token,
             },
             memory_size=memory_size,
@@ -352,6 +354,10 @@ class LambdaWorker(core.Stack):
         scope.base.app_bucket.grant_read_write(lambda_fn.role)
         scope.image_resize_lambda.image_bucket.grant_read_write(lambda_fn.role)
         return lambda_fn, lambda_code
+
+    def get_secret(self, secret_arn, secret_suffix):
+        return aws_secretsmanager.Secret.from_secret_attributes(
+            self, secret_arn + secret_suffix, secret_arn=self.node.try_get_context(secret_arn))
 
 
 class PublicAPI(core.Stack):
