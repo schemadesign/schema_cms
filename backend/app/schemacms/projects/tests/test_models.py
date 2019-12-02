@@ -3,10 +3,8 @@ import json
 
 import pytest
 from factory.django import FileField
-from pandas import read_csv
 
 from schemacms.utils.test import make_csv
-from schemacms.projects.models import get_preview_data
 from schemacms.projects.tests.factories import DataSourceFactory
 
 
@@ -64,39 +62,6 @@ class TestDataSource:
 
         assert correct_path == dsource.file.path
 
-    def test_creating_meta(self):
-        filename = "file_path_test.csv"
-        dsource = self.create_dsource(filename)
-
-        items, fields = read_csv(dsource.file.path).shape
-        assert dsource.meta_data.fields == fields
-        assert dsource.meta_data.items == items
-
-    def test_updating_meta(self, data_source):
-        cols_number = 4
-        rows_number = 3
-        new_file = make_csv(cols_number, rows_number)
-
-        old_preview = data_source.meta_data.preview
-
-        data_source.file.save("new_file.csv", new_file)
-        data_source.update_meta()
-        data_source.refresh_from_db()
-
-        assert data_source.meta_data.fields == cols_number
-        assert data_source.meta_data.items == rows_number
-        assert data_source.meta_data.preview != old_preview
-
-    def test_get_preview(self, data_source):
-        source_file = data_source.file
-
-        data_source.update_meta()
-        expected_preview, _, _ = get_preview_data(source_file)
-        result_json = json.loads(data_source.meta_data.preview.read())
-
-        assert json.loads(expected_preview)["data"] == result_json["data"]
-        assert json.loads(expected_preview)["fields"] == result_json["fields"]
-
     def test_source_file_latest_version(self, mocker, data_source_factory, s3_object_version_factory):
         ds = data_source_factory()
         file_versions = (
@@ -126,7 +91,14 @@ class TestDataSource:
         job.result = ds.file
         job.save()
         ds.active_job = job
-        ds.active_job.update_meta()
+        preview_data = {
+            'fields': {
+                'col_0': {'dtype': 'boolean'},
+                'col_1': {'dtype': 'boolean'},
+                'col_2': {'dtype': 'number'},
+            }
+        }
+        ds.active_job.update_meta(preview_data=preview_data, items=0, fields=0)
 
         ds.save(update_fields=["active_job"])
         ds.refresh_from_db()
@@ -149,11 +121,13 @@ class TestDataSource:
 
 class TestDataSourceMeta:
     @pytest.mark.parametrize("offset, whence", [(0, 0), (0, 2)])  # test different file cursor positions
-    def test_data(self, data_source_meta, offset, whence):
-        expected = json.loads(data_source_meta.preview.read())
-        data_source_meta.preview.seek(offset, whence)
+    def test_data(self, data_source_factory, offset, whence):
+        ds = data_source_factory()
+        ds.update_meta(preview_data={}, items=0, fields=0)
+        expected = json.loads(ds.meta_data.preview.read())
+        ds.meta_data.preview.seek(offset, whence)
 
-        assert data_source_meta.data == expected
+        assert ds.meta_data.data == expected
 
 
 class TestDataSourceJob:

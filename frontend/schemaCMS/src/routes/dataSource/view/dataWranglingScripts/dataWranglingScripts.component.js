@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import { always, append, equals, ifElse, pathOr, reject, map, pipe, prop, toString } from 'ramda';
+import { always, append, equals, ifElse, pathOr, reject, map, pipe, toString } from 'ramda';
 
 import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
@@ -112,8 +112,7 @@ export class DataWranglingScripts extends PureComponent {
     const { dataWranglingScripts, dataSource, isAdmin } = this.props;
     const { errorMessage } = this.state;
     const steps = pipe(
-      pathOr([], ['jobs', 0, 'steps']),
-      map(prop('script')),
+      pathOr([], ['activeJob', 'scripts']),
       map(toString)
     )(dataSource);
 

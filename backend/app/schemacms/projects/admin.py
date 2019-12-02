@@ -93,6 +93,7 @@ class DataSource(utils_admin.SoftDeleteObjectAdmin):
 
 class DataSourceJobStepInline(admin.TabularInline):
     model = models.DataSourceJobStep
+    exclude = ("deleted_at",)
     extra = 0
 
 

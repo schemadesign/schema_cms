@@ -1,9 +1,6 @@
 import itertools
 import json
-import logging
 import os
-
-import datatable as dt
 
 import django.core.files.base
 import django_fsm
@@ -45,53 +42,6 @@ def map_general_dtypes(dtype):
         return dtype
 
 
-def get_preview_data(file):
-    if hasattr(file, "temporary_file_path"):
-        data_frame = dt.fread(file.read(), na_strings=["", ''], fill=True)
-    else:
-        data_frame = dt.fread(file, na_strings=["", ''], fill=True)
-
-    items, fields = data_frame.shape
-
-    if items == 0:
-        return json.dumps({"data": [], "fields": {}}, indent=4).encode(), items, fields
-
-    sample_of_5 = data_frame.head(5).to_pandas()
-
-    table_preview = json.loads(sample_of_5.to_json(orient="records"))
-    samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
-
-    fields_info = {}
-    mean = data_frame.mean().to_dict()
-    min = data_frame.min().to_dict()
-    max = data_frame.max().to_dict()
-    std = data_frame.sd().to_dict()
-    unique = data_frame.nunique().to_dict()
-    columns = data_frame.names
-
-    for i in columns:
-        fields_info[i] = {}
-        fields_info[i]["mean"] = mean[i][0]
-        fields_info[i]["min"] = min[i][0]
-        fields_info[i]["max"] = max[i][0]
-        fields_info[i]["std"] = std[i][0]
-        fields_info[i]["unique"] = unique[i][0]
-        fields_info[i]["count"] = items
-
-    dtypes = {i: k for i, k in zip(columns, data_frame.stypes)}
-    for key, value in dtypes.items():
-        fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
-
-    for key, value in samples[0].items():
-        fields_info[key]["sample"] = value
-
-    preview_json = json.dumps({"data": table_preview, "fields": fields_info}, indent=4).encode()
-
-    del data_frame, sample_of_5
-
-    return preview_json, items, fields
-
-
 class MetaDataModel(models.Model):
     items = models.PositiveIntegerField()
     fields = models.PositiveSmallIntegerField()
@@ -106,6 +56,18 @@ class MetaDataModel(models.Model):
             return {}
         self.preview.seek(0)
         return json.loads(self.preview.read())
+
+    @classmethod
+    def schedule_update_meta(cls, obj):
+        file = obj.get_source_file()
+        if not file:
+            raise ValueError("Cannot schedule meta processing without source file")
+        with transaction.atomic():
+            try:
+                obj.meta_data.delete()
+            except models.ObjectDoesNotExist:
+                pass
+            services.schedule_object_meta_processing(obj=obj, source_file_size=file.size)
 
 
 class Project(
@@ -214,24 +176,28 @@ class DataSource(
     def __str__(self):
         return self.name or str(self.id)
 
-    def update_meta(self, file=None, file_name=None):
-        if not file:
-            file = self.file.url
+    def get_source_file(self):
+        return self.file
 
-        try:
-            preview_json, items, fields = get_preview_data(file)
+    @property
+    def meta_file_processing_type(self):
+        return constants.WorkerProcessType.DATASOURCE_META_PROCESSING
 
-            with transaction.atomic():
-                meta, _ = DataSourceMeta.objects.update_or_create(
-                    datasource=self, defaults={"fields": fields, "items": items}
-                )
-                file_name, _ = self.get_original_file_name(file_name)
-                meta.preview.save(
-                    f"{file_name}_preview.json", django.core.files.base.ContentFile(content=preview_json)
-                )
+    def schedule_update_meta(self):
+        return MetaDataModel.schedule_update_meta(obj=self)
 
-        except Exception as e:
-            return logging.error(f"Data Source {self.id} fail to create meta data - {e}")
+    def update_meta(self, preview_data: dict, items: int, fields: int):
+        if not self.file:
+            return
+        with transaction.atomic():
+            meta, _ = DataSourceMeta.objects.update_or_create(
+                datasource=self, defaults={"fields": fields, "items": items}
+            )
+            file_name, _ = self.get_original_file_name(self.file.name)
+            meta.preview.save(
+                f"{file_name}_preview.json",
+                django.core.files.base.ContentFile(content=json.dumps(preview_data).encode()),
+            )
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
@@ -297,7 +263,10 @@ class DataSource(
 
     def result_fields_info(self):
         preview = self.current_job.meta_data.preview
-        fields = json.loads(preview.read())["fields"]
+        try:
+            fields = json.loads(preview.read())["fields"]
+        except (json.JSONDecodeError, KeyError):
+            return []
 
         data = [{"name": key, "type": map_general_dtypes(value["dtype"])} for key, value in fields.items()]
 
@@ -317,9 +286,10 @@ class DataSource(
         current_job = self.current_job
 
         if current_job:
+            job_meta = getattr(current_job, "meta_data", None)
             data.update(
                 {
-                    "items": current_job.meta_data.items,
+                    "items": job_meta.items if job_meta else 0,
                     "result": current_job.result.name or "",
                     "fields": self.result_fields_info(),
                 }
@@ -340,6 +310,12 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
         base_path = self.preview.storage.location
 
         return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
+
+    def get_fields_names(self):
+        fields = json.loads(self.preview.read()).get("fields")
+        if fields:
+            return [key for key in fields.keys()]
+        return []
 
 
 class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
@@ -388,11 +364,20 @@ class DataSourceJob(
     description = models.TextField(blank=True)
     source_file_path: str = models.CharField(max_length=255, editable=False)
     source_file_version = models.CharField(max_length=36, editable=False)
-    result = models.FileField(upload_to=file_upload_path, null=True)
+    result = models.FileField(upload_to=file_upload_path, null=True, blank=True)
     error = models.TextField(blank=True, default="")
 
     def __str__(self):
         return f'DataSource Job #{self.pk}'
+
+    @property
+    def get_source_file(self):
+        if not self.source_file_path:
+            return
+        params = {'Bucket': settings.AWS_STORAGE_BUCKET_NAME, 'Key': self.source_file_path}
+        if self.source_file_version:
+            params['VersionId'] = self.source_file_version
+        return django.core.files.base.File(services.s3.get_object(**params)["Body"])
 
     @property
     def source_file_url(self):
@@ -414,16 +399,15 @@ class DataSourceJob(
             raise ValueError("Job or DataSource ID is not set")
         return os.path.join(base_path, f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}")
 
-    def update_meta(self):
-        preview_json, items, fields = get_preview_data(self.result.url)
-
+    def update_meta(self, preview_data: dict, items: int, fields: int):
         with transaction.atomic():
             meta, _ = DataSourceJobMetaData.objects.update_or_create(
                 job=self, defaults={"fields": fields, "items": items}
             )
 
             meta.preview.save(
-                f"job_{self.id}_preview.json", django.core.files.base.ContentFile(content=preview_json)
+                f"job_{self.id}_preview.json",
+                django.core.files.base.ContentFile(content=json.dumps(preview_data).encode()),
             )
 
     def meta_file_serialization(self):
@@ -437,6 +421,12 @@ class DataSourceJob(
             ],
         }
         return data
+
+    def schedule(self):
+        return services.schedule_job_scripts_processing(self, self.datasource.file.size)
+
+    def schedule_update_meta(self):
+        return MetaDataModel.schedule_update_meta(obj=self)
 
 
 class DataSourceJobMetaData(softdelete.models.SoftDeleteObject, MetaDataModel):
@@ -462,7 +452,7 @@ class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
     )
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)
-    options: dict = pg_fields.JSONField(default=dict)
+    options: dict = pg_fields.JSONField(default=dict, blank=True)
 
     def meta_file_serialization(self):
         data = {

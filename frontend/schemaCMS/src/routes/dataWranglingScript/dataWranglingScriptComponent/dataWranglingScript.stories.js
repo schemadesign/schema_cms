@@ -31,7 +31,7 @@ export const defaultProps = {
 export const editorProps = {
   ...defaultProps,
   isAdmin: false,
-}
+};
 
 storiesOf('DataWranglingScript', module)
   .addDecorator(withTheme())

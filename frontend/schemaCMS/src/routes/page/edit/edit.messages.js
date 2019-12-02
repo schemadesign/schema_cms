@@ -20,7 +20,7 @@ export default defineMessages({
   },
   titlePageNameUniqueError: {
     id: 'page.edit.titlePageNameUniqueError',
-    defaultMessage: 'Page with this name already exist in folder.',
+    defaultMessage: 'A page with this name already exists in folder.',
   },
   removePage: {
     id: 'page.edit.removePage',

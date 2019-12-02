@@ -1,5 +1,4 @@
 import json
-import logging
 import os
 
 from django.db import transaction
@@ -9,7 +8,7 @@ from rest_framework import decorators, mixins, permissions, response, status, vi
 from schemacms.authorization import authentication
 from schemacms.users import permissions as user_permissions
 from schemacms.utils import serializers as utils_serializers
-from . import constants, models, serializers, services
+from . import constants, models, serializers
 
 
 class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
@@ -37,8 +36,9 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         project = self.get_object()
         queryset = (
             project.data_sources.all()
-            .prefetch_related("jobs", "filters", "meta_data")
-            .select_related("project", "created_by", "active_job")
+            .jobs_in_process()
+            .prefetch_related("filters")
+            .select_related("project", "meta_data", "created_by", "active_job")
             .order_by("-created")
             .annotate_filters_count()
             .available_for_user(user=self.request.user)
@@ -125,8 +125,8 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
     queryset = (
-        models.DataSource.objects.prefetch_related("jobs", "filters", "meta_data")
-        .select_related("project", "created_by", "active_job")
+        models.DataSource.objects.prefetch_related("filters")
+        .select_related("project", "meta_data", "created_by", "active_job")
         .order_by("-created")
     )
     permission_classes = (permissions.IsAuthenticated,)
@@ -137,10 +137,17 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         "jobs_history": serializers.DataSourceJobSerializer,
         "filters": serializers.FilterSerializer,
         "set_filters": serializers.FilterSerializer,
+        "update_meta": serializers.PublicApiUpdateMetaSerializer,
     }
 
     def get_queryset(self):
-        return super().get_queryset().annotate_filters_count().available_for_user(user=self.request.user)
+        return (
+            super()
+            .get_queryset()
+            .annotate_filters_count()
+            .jobs_in_process()
+            .available_for_user(user=self.request.user)
+        )
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
@@ -156,15 +163,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         data["data_source"] = {"name": data_source.name}
 
         return response.Response(data, status=status.HTTP_200_OK)
-
-    @decorators.action(detail=True, methods=["post"])
-    def process(self, request, pk=None, **kwargs):
-        obj = self.get_object()
-        try:
-            return response.Response(obj.meta_data.data, status=status.HTTP_200_OK)
-        except Exception as e:
-            logging.error(f"DataSource {self.get_object().id} processing error - {e}")
-            return response.Response(status=status.HTTP_404_NOT_FOUND)
 
     @decorators.action(detail=True)
     def script(self, request, pk=None, **kwargs):
@@ -192,12 +190,18 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="job", methods=["post"])
     def job(self, request, pk=None, **kwargs):
         datasource = self.get_object()
+
+        if datasource.jobs and datasource.jobs_in_process:
+            message = "Previous jobs is still in PROCESSING"
+            return response.Response(data=message, status=status.HTTP_400_BAD_REQUEST)
+
         request.data["datasource"] = datasource
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+
         with transaction.atomic():
             job = serializer.save()
-            transaction.on_commit(lambda: services.schedule_worker_with(job, datasource.file.size))
+            transaction.on_commit(job.schedule)
         return response.Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
     @decorators.action(detail=True, url_path="jobs-history", methods=["get"])
@@ -279,6 +283,22 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
+    @decorators.action(
+        detail=True,
+        url_path="update-meta",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
+    def update_meta(self, request, pk, *args, **kwargs):
+        data_source: models.DataSource = get_object_or_404(models.DataSource, pk=pk)
+        serializer = self.get_serializer(instance=getattr(data_source, 'meta_data', None), data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        data_source.update_meta(**serializer.validated_data)
+
+        return response.Response(status=status.HTTP_204_NO_CONTENT)
+
 
 class DataSourceJobDetailViewSet(
     utils_serializers.ActionSerializerViewSetMixin,
@@ -289,7 +309,10 @@ class DataSourceJobDetailViewSet(
     queryset = models.DataSourceJob.objects.none()
     serializer_class = serializers.DataSourceJobSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    serializer_class_mapping = {"update_state": serializers.PublicApiDataSourceJobStateSerializer}
+    serializer_class_mapping = {
+        "update_state": serializers.PublicApiDataSourceJobStateSerializer,
+        "update_meta": serializers.PublicApiUpdateMetaSerializer,
+    }
 
     def get_queryset(self):
         return models.DataSourceJob.objects.all().select_related("datasource").prefetch_related("steps")
@@ -306,19 +329,6 @@ class DataSourceJobDetailViewSet(
 
         return response.Response(result, status=status.HTTP_200_OK)
 
-    @decorators.action(detail=True, permission_classes=[], url_path="update-meta", methods=["post"])
-    def update_meta(self, request, pk=None, **kwarg):
-        job = self.get_object()
-        try:
-            job.update_meta()
-            job.datasource.set_active_job(job)
-        except Exception as e:
-            return response.Response(
-                f"Unable to generate meta - {e}", status=status.HTTP_422_UNPROCESSABLE_ENTITY
-            )
-
-        return response.Response(status=status.HTTP_201_CREATED)
-
     @decorators.action(
         detail=True,
         url_path="update-state",
@@ -331,6 +341,22 @@ class DataSourceJobDetailViewSet(
         serializer = self.get_serializer(instance=job, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        return response.Response(status=status.HTTP_204_NO_CONTENT)
+
+    @decorators.action(
+        detail=True,
+        url_path="update-meta",
+        methods=["post"],
+        permission_classes=[permissions.IsAuthenticated],
+        authentication_classes=[authentication.EnvTokenAuthentication],
+    )
+    def update_meta(self, request, pk, *args, **kwargs):
+        job: models.DataSourceJob = get_object_or_404(models.DataSourceJob, pk=pk)
+        serializer = self.get_serializer(instance=getattr(job, 'meta_data', None), data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        job.update_meta(**serializer.validated_data)
+
         return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 

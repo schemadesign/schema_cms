@@ -25,7 +25,10 @@ RANDOM_SUFFIX_LENGTH = 5
 
 
 def is_valid_url(url: str) -> bool:
-    return bool(url) and validators.url(url)
+    try:
+        return validators.url(url)
+    except TypeError:
+        return False
 
 
 def is_image_response(http_response) -> bool:
@@ -77,7 +80,7 @@ async def fetch_and_upload_task(url, current_step, http_session, s3_client, dirp
     return parse.urljoin(s3_client.meta.endpoint_url, path)
 
 
-async def column_image_scrapping(df, current_step, column):
+async def column_image_scraping(df, current_step, column):
     """Fetch images from url in the data frame column, upload them to s3 and return new image url"""
 
     async with aiohttp.ClientSession() as http_session:
@@ -93,8 +96,8 @@ async def column_image_scrapping(df, current_step, column):
             )
 
 
-def image_scrapping(df, current_step, prefix="new_"):
+def image_scraping(df, current_step, prefix="new_"):
     columns = current_step.options.get("columns", [])
     for column in columns:
-        processed_urls = asyncio.run(column_image_scrapping(df=df, current_step=current_step, column=column))
+        processed_urls = asyncio.run(column_image_scraping(df=df, current_step=current_step, column=column))
         df[f"{prefix}{column}"] = pd.Series(processed_urls)

@@ -2,6 +2,8 @@ import softdelete.models
 from django.db import models, transaction
 from django.db.models.functions import Coalesce
 
+from .constants import DataSourceJobState
+
 
 class ProjectQuerySet(softdelete.models.SoftDeleteQuerySet):
     def annotate_data_source_count(self):
@@ -71,18 +73,13 @@ ProjectManager = generate_soft_delete_manager(queryset_class=ProjectQuerySet)
 
 
 class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
+    @transaction.atomic()
     def create(self, *args, **kwargs):
         file = kwargs.pop("file", None)
-
-        with transaction.atomic():
-            dsource = super().create(*args, **kwargs)
-
-            if file:
-                dsource.update_meta(file=file, file_name=file.name)
-                file.seek(0)
-                dsource.file.save(file.name, file)
-                dsource.project.create_meta_file()
-
+        dsource = super().create(*args, **kwargs)
+        if file:
+            dsource.file.save(file.name, file)
+            dsource.project.create_meta_file()
         return dsource
 
     def annotate_filters_count(self):
@@ -101,6 +98,16 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
                 models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
         )
+
+    def jobs_in_process(self):
+        from .models import DataSourceJob
+
+        subquery = DataSourceJob.objects.filter(
+            datasource=models.OuterRef("pk"),
+            job_state__in=[DataSourceJobState.PENDING, DataSourceJobState.PROCESSING],
+        )
+
+        return self.annotate(jobs_in_process=models.Exists(subquery))
 
     def available_for_user(self, user):
         """Return Datasouces available for user. If user is admin then return all datasources

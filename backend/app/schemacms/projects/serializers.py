@@ -11,13 +11,17 @@ from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
     filters = serializers.SerializerMethodField(read_only=True)
+    fields_names = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = DataSourceMeta
-        fields = ("items", "fields", "preview", "filters")
+        fields = ("items", "fields", "fields_names", "preview", "filters")
 
     def get_filters(self, meta):
         return meta.datasource.filters_count
+
+    def get_fields_names(self, meta):
+        return meta.get_fields_names()
 
 
 class DataSourceCreatorSerializer(serializers.ModelSerializer):
@@ -38,12 +42,15 @@ class StepSerializer(serializers.ModelSerializer):
         return obj.script.name
 
 
-class DataSourceLastJobSerializer(serializers.ModelSerializer):
-    steps = StepSerializer(many=True)
+class ActiveJobSerializer(serializers.ModelSerializer):
+    scripts = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = models.DataSourceJob
-        fields = ("id", "job_state", "created", "modified", "steps")
+        fields = ("id", "scripts")
+
+    def get_scripts(self, obj):
+        return [step.script_id for step in obj.steps.all()]
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
@@ -56,7 +63,8 @@ class DataSourceSerializer(serializers.ModelSerializer):
         pk_field=serializers.UUIDField(format="hex_verbose"),
     )
     error_log = serializers.SerializerMethodField()
-    jobs = serializers.SerializerMethodField(read_only=True)
+    jobs_in_process = serializers.SerializerMethodField(read_only=True)
+    active_job = ActiveJobSerializer(read_only=True)
 
     class Meta:
         model = DataSource
@@ -71,8 +79,8 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "meta_data",
             "error_log",
             "project",
-            "jobs",
             "status",
+            "jobs_in_process",
             "active_job",
         )
 
@@ -117,19 +125,16 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def get_error_log(self, obj):
         return []
 
-    def get_jobs(self, obj):
-        if obj.jobs.exists():
-            return DataSourceLastJobSerializer(obj.jobs.order_by("-created")[:5], many=True).data
-        else:
-            return []
+    def get_jobs_in_process(self, obj):
+        if hasattr(obj, "jobs_in_process") and obj.jobs_in_process:
+            return True
+        return False
 
     @transaction.atomic()
-    def update(self, instance, validated_data):
-        file = validated_data.get("file", None)
-        if file:
-            instance.update_meta(file=file, file_name=file.name)
-            file.seek(0)
-        obj = super().update(instance=instance, validated_data=validated_data)
+    def save(self, *args, **kwargs):
+        obj = super().save(*args, **kwargs)
+        if "file" in self.validated_data:
+            obj.schedule_update_meta()
         return obj
 
 
@@ -287,6 +292,15 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
 
     def get_project(self, obj):
         return obj.datasource.project_id
+
+
+class PublicApiUpdateMetaSerializer(serializers.Serializer):
+    items = serializers.IntegerField(min_value=0)
+    fields = serializers.IntegerField(min_value=0)
+    preview_data = serializers.DictField()
+
+    class Meta:
+        fields = ("items", "fields", "preview_data")
 
 
 class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
@@ -507,6 +521,7 @@ class BlockSerializer(serializers.ModelSerializer):
         if obj.image:
             _, file_name = obj.get_original_image_name()
             return file_name
+        return ""
 
 
 class BlockPageSerializer(serializers.ModelSerializer):
