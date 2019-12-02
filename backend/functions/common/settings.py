@@ -21,3 +21,5 @@ AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION")
 LAMBDA_AUTH_TOKEN = os.getenv("LAMBDA_AUTH_TOKEN", "")
 
 BACKEND_URL = os.getenv("BACKEND_URL", "")
+
+SENTRY_DNS = os.getenv("SENTRY_DNS", None)

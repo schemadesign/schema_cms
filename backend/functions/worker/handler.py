@@ -17,6 +17,7 @@ import pandas as pd
 import pytz
 import requests
 import scipy as sp
+import sentry_sdk
 
 from common import api, db, services, settings, types
 import errors
@@ -25,6 +26,10 @@ from image_scraping import image_scraping  # noqa
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
+
+
+if settings.SENTRY_DNS:
+    sentry_sdk.init(settings.SENTRY_DNS, name='lambda-worker')
 
 df = None
 current_job = None
