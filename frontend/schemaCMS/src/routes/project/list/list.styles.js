@@ -74,4 +74,5 @@ export const descriptionStyles = {
 
 export const titleStyles = {
   cursor: 'pointer',
+  wordBreak: 'break-word',
 };

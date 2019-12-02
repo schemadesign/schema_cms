@@ -40,11 +40,6 @@ class DataSourceFactory(factory.django.DjangoModelFactory):
     type = project_constants.DataSourceType.FILE
     file = factory.django.FileField(filename="test.csv", from_func=utils_test.make_csv)
 
-    @factory.post_generation
-    def meta_data_update(self, create, extracted, **kwargs):
-        if self.file:
-            self.update_meta()
-
 
 class DataSourceMetaFactory(BaseMetaDataFactory):
     class Meta:

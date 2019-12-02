@@ -20,6 +20,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   handleBlur: Function.prototype,
   fetchFolder: Function.prototype,
+  removeFolder: Function.prototype,
   match: {
     params: {
       folderId: '1',
@@ -30,6 +31,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Folder/Edit', module)
+storiesOf('Folder|Edit', module)
   .addDecorator(withTheme())
   .add('Default', () => <Edit {...defaultProps} />);

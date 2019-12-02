@@ -4,11 +4,22 @@ exports[`UserList: Component should render correctly 1`] = `<styled.section />`;
 
 exports[`UserList: Component should render correctly with users 1`] = `
 <styled.section>
-  <Styled(Component)
+  <Styled(Styled(Component))
     customStyles={
       Object {
         "flexDirection": null,
       }
+    }
+    headerComponent={
+      <React.Fragment>
+        <ForwardRef(styled.div)>
+          <FormattedMessage
+            defaultMessage="Admin"
+            id="shared.components.userList.admin"
+            values={Object {}}
+          />
+        </ForwardRef(styled.div)>
+      </React.Fragment>
     }
     key="0"
   >
@@ -21,16 +32,25 @@ exports[`UserList: Component should render correctly with users 1`] = `
            
           Watts
         </Styled(Link)>
-        <styled.span />
       </styled.div>
-      <styled.div />
     </styled.div>
-  </Styled(Component)>
-  <Styled(Component)
+  </Styled(Styled(Component))>
+  <Styled(Styled(Component))
     customStyles={
       Object {
         "flexDirection": null,
       }
+    }
+    headerComponent={
+      <React.Fragment>
+        <ForwardRef(styled.div)>
+          <FormattedMessage
+            defaultMessage="Editor"
+            id="shared.components.userList.editor"
+            values={Object {}}
+          />
+        </ForwardRef(styled.div)>
+      </React.Fragment>
     }
     key="1"
   >
@@ -43,16 +63,25 @@ exports[`UserList: Component should render correctly with users 1`] = `
            
           Chihuly
         </Styled(Link)>
-        <styled.span />
       </styled.div>
-      <styled.div />
     </styled.div>
-  </Styled(Component)>
-  <Styled(Component)
+  </Styled(Styled(Component))>
+  <Styled(Styled(Component))
     customStyles={
       Object {
         "flexDirection": null,
       }
+    }
+    headerComponent={
+      <React.Fragment>
+        <ForwardRef(styled.div)>
+          <FormattedMessage
+            defaultMessage="Admin"
+            id="shared.components.userList.admin"
+            values={Object {}}
+          />
+        </ForwardRef(styled.div)>
+      </React.Fragment>
     }
     key="2"
   >
@@ -65,12 +94,8 @@ exports[`UserList: Component should render correctly with users 1`] = `
            
           Bowie
         </Styled(Link)>
-        <styled.span>
-          loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
-        </styled.span>
       </styled.div>
-      <styled.div />
     </styled.div>
-  </Styled(Component)>
+  </Styled(Styled(Component))>
 </styled.section>
 `;

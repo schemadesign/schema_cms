@@ -21,4 +21,4 @@ export const defaultProps = {
   isSubmitting: false,
 };
 
-storiesOf('CreateFolder', module).add('Default', () => <CreateFolder {...defaultProps} />);
+storiesOf('Project|CreateFolder', module).add('Default', () => <CreateFolder {...defaultProps} />);

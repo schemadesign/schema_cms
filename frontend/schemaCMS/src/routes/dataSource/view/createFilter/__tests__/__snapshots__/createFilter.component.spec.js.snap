@@ -12,6 +12,16 @@ exports[`CreateFilter: Component should render correctly 1`] = `
     }
     headerTitle="name"
   />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Create Filter"
+        id="dataSource.view.filter.subTitle"
+        values={Object {}}
+      />
+    }
+    title="name"
+  />
   <LoadingWrapper
     error={null}
     loading={false}
@@ -34,6 +44,16 @@ exports[`CreateFilter: Component should render correctly with loader 1`] = `
       />
     }
     headerTitle="name"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Create Filter"
+        id="dataSource.view.filter.subTitle"
+        values={Object {}}
+      />
+    }
+    title="name"
   />
   <LoadingWrapper
     error={null}

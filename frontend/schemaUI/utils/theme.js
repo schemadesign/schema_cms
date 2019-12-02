@@ -25,7 +25,7 @@ const light = {
     text: colors.coolGray,
   },
   card: {
-    label: colors.lightGrey,
+    label: colors.coolGray,
     border: colors.black,
     background: colors.veryLightPink,
     text: colors.black,
@@ -130,7 +130,7 @@ const dark = {
     text: colors.lightGrey,
   },
   card: {
-    label: colors.label,
+    label: colors.lightGrey,
     border: colors.white,
     background: colors.darkGrey,
     text: colors.white,

@@ -1,10 +1,18 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import { forEach, keys, pipe } from 'ramda';
+import { forEach, keys, pipe, ifElse, equals, always } from 'ramda';
 
 import { PageBlockRoutines } from './pageBlock.redux';
 import api from '../../shared/services/api';
 import { BLOCK_PATH, PAGES_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
+import { IMAGE_TYPE } from './pageBlock.constants';
+
+const getBlockData = ({ name, image, type, ...rest }) =>
+  ifElse(
+    equals(IMAGE_TYPE),
+    always({ name, type, image, content: '' }),
+    always({ name, type, content: rest[`${type}-content`] })
+  )(type);
 
 function* fetchList({ payload: { pageId } }) {
   try {
@@ -52,11 +60,12 @@ function* create({ payload: { pageId, ...restFields } }) {
   try {
     yield put(PageBlockRoutines.create.request());
     const formData = new FormData();
+    const fields = getBlockData(restFields);
 
     pipe(
       keys,
-      forEach(name => formData.append(name, restFields[name]))
-    )(restFields);
+      forEach(name => formData.append(name, fields[name]))
+    )(fields);
 
     const { data } = yield api.post(`${PAGES_PATH}/${pageId}/blocks`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
@@ -75,11 +84,12 @@ function* update({ payload: { pageId, blockId, ...restFields } }) {
   try {
     yield put(PageBlockRoutines.update.request());
     const formData = new FormData();
+    const fields = getBlockData(restFields);
 
     pipe(
       keys,
-      forEach(name => formData.append(name, restFields[name]))
-    )(restFields);
+      forEach(name => formData.append(name, fields[name]))
+    )(fields);
 
     const { data } = yield api.patch(`${BLOCK_PATH}/${blockId}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
@@ -94,6 +104,21 @@ function* update({ payload: { pageId, blockId, ...restFields } }) {
   }
 }
 
+function* removeOne({ payload: { blockId, pageId } }) {
+  try {
+    yield put(PageBlockRoutines.removeOne.request());
+
+    yield api.delete(`${BLOCK_PATH}/${blockId}`);
+
+    yield put(PageBlockRoutines.removeOne.success());
+    browserHistory.push(`/page/${pageId}/`);
+  } catch (e) {
+    yield put(PageBlockRoutines.removeOne.failure(e));
+  } finally {
+    yield put(PageBlockRoutines.removeOne.fulfill());
+  }
+}
+
 export function* watchPageBlock() {
   yield all([
     takeLatest(PageBlockRoutines.fetchList.TRIGGER, fetchList),
@@ -101,5 +126,6 @@ export function* watchPageBlock() {
     takeLatest(PageBlockRoutines.setBlocks.TRIGGER, setBlocks),
     takeLatest(PageBlockRoutines.create.TRIGGER, create),
     takeLatest(PageBlockRoutines.update.TRIGGER, update),
+    takeLatest(PageBlockRoutines.removeOne.TRIGGER, removeOne),
   ]);
 }

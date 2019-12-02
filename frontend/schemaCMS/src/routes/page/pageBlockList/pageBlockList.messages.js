@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   blocks: {
     id: 'page.blockList.blocks',
-    defaultMessage: '{length} {length, plural,one {Block} other {Blocks}}',
+    defaultMessage: '{count} {count, plural,one {Block} other {Blocks}}',
   },
   title: {
     id: 'page.blockList.title',

@@ -49,7 +49,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
         "card": Object {
           "background": "#f0efef",
           "border": "#000",
-          "label": "#71737e",
+          "label": "#a6a7aa",
           "text": "#000",
         },
         "checkbox": Object {
@@ -194,7 +194,7 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "card": Object {
             "background": "#f0efef",
             "border": "#000",
-            "label": "#71737e",
+            "label": "#a6a7aa",
             "text": "#000",
           },
           "checkbox": Object {
@@ -395,7 +395,7 @@ exports[`App: Component should render App when language is set 1`] = `
         "card": Object {
           "background": "#f0efef",
           "border": "#000",
-          "label": "#71737e",
+          "label": "#a6a7aa",
           "text": "#000",
         },
         "checkbox": Object {
@@ -540,7 +540,7 @@ exports[`App: Component should render App when language is set 1`] = `
           "card": Object {
             "background": "#f0efef",
             "border": "#000",
-            "label": "#71737e",
+            "label": "#a6a7aa",
             "text": "#000",
           },
           "checkbox": Object {

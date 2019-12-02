@@ -14,6 +14,6 @@ export const defaultProps = {
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
-storiesOf('PageForm', module)
+storiesOf('Shared Components|PageForm', module)
   .addDecorator(withTheme())
   .add('Default', () => <PageForm {...defaultProps} />);

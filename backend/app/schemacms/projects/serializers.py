@@ -127,25 +127,23 @@ class DataSourceSerializer(serializers.ModelSerializer):
         return False
 
     @transaction.atomic()
-    def update(self, instance, validated_data):
-        file = validated_data.get("file", None)
-        if file:
-            instance.update_meta(file=file, file_name=file.name)
-            file.seek(0)
-        obj = super().update(instance=instance, validated_data=validated_data)
+    def save(self, *args, **kwargs):
+        obj = super().save(*args, **kwargs)
+        if "file" in self.validated_data:
+            obj.schedule_update_meta()
         return obj
 
 
 class ProjectOwnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id", "first_name", "last_name")
+        fields = ("id", "first_name", "last_name", "role")
 
 
 class ProjectEditorSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id", "first_name", "last_name")
+        fields = ("id", "first_name", "last_name", "role")
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -290,6 +288,15 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
 
     def get_project(self, obj):
         return obj.datasource.project_id
+
+
+class PublicApiUpdateMetaSerializer(serializers.Serializer):
+    items = serializers.IntegerField(min_value=0)
+    fields = serializers.IntegerField(min_value=0)
+    preview_data = serializers.DictField()
+
+    class Meta:
+        fields = ("items", "fields", "preview_data")
 
 
 class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
@@ -471,7 +478,11 @@ class BlockSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Block
         fields = ("id", "page", "name", "type", "content", "image", "image_name", "is_active")
-        extra_kwargs = {"page": {"required": False, "allow_null": True}}
+        extra_kwargs = {
+            "page": {"required": False, "allow_null": True},
+            "content": {"required": False, "allow_null": True, "allow_blank": True},
+            "image": {"required": False, "allow_null": True},
+        }
         validators = [
             CustomUniqueTogetherValidator(
                 queryset=models.Block.objects.all(),

@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Folder/Edit Default 1`] = `
-.c11 {
+exports[`Storyshots Folder|Edit Default 1`] = `
+.c12 {
   height: 155px;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Folder/Edit Default 1`] = `
   width: 100%;
 }
 
-.c12 {
+.c13 {
   position: fixed;
   padding: 40px 0 36px;
   bottom: 0;
@@ -32,9 +32,21 @@ exports[`Storyshots Folder/Edit Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c14 {
+.c15 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c11 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c11:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c10 {
@@ -95,7 +107,7 @@ exports[`Storyshots Folder/Edit Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c14 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -104,13 +116,13 @@ exports[`Storyshots Folder/Edit Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c13 {
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c15 {
     width: 240px;
   }
 }
@@ -416,17 +428,32 @@ exports[`Storyshots Folder/Edit Default 1`] = `
         Loading...
       </span>
     </div>
-    <div
+    <span
       className="c11"
+      id="removeFolderDesktopBtn"
+      onClick={[Function]}
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+        }
+      }
+    >
+      <span>
+        Remove Folder
+      </span>
+    </span>
+    <div
+      className="c12"
     >
       <div
-        className="c12"
+        className="c13"
       >
         <div
-          className="c13"
+          className="c14"
         >
           <button
-            className="c14"
+            className="c15"
             disabled={false}
             id="backBtn"
             onClick={[Function]}
@@ -453,7 +480,7 @@ exports[`Storyshots Folder/Edit Default 1`] = `
             </span>
           </button>
           <button
-            className="c14"
+            className="c15"
             disabled={false}
             id="editFolderBtn"
             style={

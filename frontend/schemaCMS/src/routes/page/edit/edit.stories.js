@@ -14,6 +14,7 @@ export const defaultProps = {
   fetchPage: Function.prototype,
   handleChange: Function.prototype,
   handleSubmit: Function.prototype,
+  removePage: Function.prototype,
   match: {
     params: {
       pageId: '1',
@@ -27,6 +28,6 @@ export const defaultProps = {
   isSubmitting: false,
 };
 
-storiesOf('Edit', module)
+storiesOf('Page|Edit', module)
   .addDecorator(withTheme())
   .add('Default', () => <Edit {...defaultProps} />);

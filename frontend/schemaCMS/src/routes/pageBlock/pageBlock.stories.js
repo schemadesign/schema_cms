@@ -13,6 +13,7 @@ export const defaultProps = {
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   fetchPageBlock: Function.prototype,
+  removePageBlock: Function.prototype,
   isSubmitting: false,
   match: {
     params: {

@@ -357,6 +357,7 @@ class TestCreateDataSourceView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
+    @pytest.mark.usefixtures("sqs")
     def test_create_by_editor_assigned_to_project(self, api_client, editor, project, faker):
         project.editors.add(editor)
         api_client.force_authenticate(editor)
@@ -366,6 +367,7 @@ class TestCreateDataSourceView:
 
         assert response.status_code == status.HTTP_201_CREATED
 
+    @pytest.mark.usefixtures("sqs")
     def test_create_by_editor_not_assigned_to_project(self, api_client, editor, project, faker):
         api_client.force_authenticate(editor)
         payload = self.generate_payload(project, faker)
@@ -374,20 +376,23 @@ class TestCreateDataSourceView:
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
-    def test_request_user_as_created_by(self, api_client, admin, project, faker):
+    def test_request_user_as_created_by(self, api_client, admin, project, faker, mocker):
         api_client.force_authenticate(admin)
         payload = self.generate_payload(project, faker)
+        schedule_update_meta_mock = mocker.patch("schemacms.projects.models.DataSource.schedule_update_meta")
 
         response = api_client.post(self.get_url(), payload, format="multipart")
 
         assert response.status_code == status.HTTP_201_CREATED, response.content
         assert project.data_sources.get(id=response.data["id"]).created_by == admin
+        schedule_update_meta_mock.assert_called_with()
 
     @staticmethod
     def get_url():
         return reverse("projects:datasource-list")
 
 
+@pytest.mark.usefixtures("sqs")  # mock s3 sqs calls
 class TestUpdateDataSourceView:
     def test_response(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory()
@@ -415,6 +420,21 @@ class TestUpdateDataSourceView:
 
         data_source.refresh_from_db()
         assert data_source.get_original_file_name()[1] == payload["file"].name
+
+    def test_schedule_update_meta(self, api_client, faker, mocker, admin, data_source_factory):
+        data_source = data_source_factory()
+        url = self.get_url(pk=data_source.pk)
+        payload = dict(
+            name=faker.word(),
+            type=projects_constants.DataSourceType.FILE,
+            file=faker.csv_upload_file(filename='filename.csv'),
+        )
+        api_client.force_authenticate(admin)
+        schedule_update_meta_mock = mocker.patch("schemacms.projects.models.DataSource.schedule_update_meta")
+
+        api_client.patch(url, payload, format="multipart")
+
+        schedule_update_meta_mock.assert_called_with()
 
     def test_update_by_editor_assigned_to_project(
         self, api_client, faker, editor, project, data_source_factory
@@ -495,11 +515,9 @@ class TestUpdateDataSourceView:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
-    def test_url(self, data_source):
-        assert f"/api/v1/datasources/{data_source.pk}" == self.get_url(pk=data_source.pk)
-
     def test_file_overwrite(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory()
+        data_source.update_meta(preview_data={}, items=0, fields=0)
         _, file_name_before_update = data_source.get_original_file_name()
         payload = dict(type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file())
 
@@ -509,32 +527,18 @@ class TestUpdateDataSourceView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data["file_name"] == file_name_before_update
 
+    def test_url(self, data_source):
+        assert f"/api/v1/datasources/{data_source.pk}" == self.get_url(pk=data_source.pk)
+
     @staticmethod
     def get_url(pk):
         return reverse("projects:datasource-detail", kwargs=dict(pk=pk))
 
 
-class TestDataSourceProcess:
-    def test_process_file(self, api_client, admin, data_source_factory, faker):
-        data_source = data_source_factory()
-        url = self.get_url(pk=data_source.pk)
-        api_client.force_authenticate(admin)
-
-        response = api_client.post(url)
-
-        data_source_refreshed = projects_models.DataSource.objects.select_related('meta_data').get(
-            pk=data_source.pk
-        )
-        assert response.data == data_source_refreshed.meta_data.data
-
-    @staticmethod
-    def get_url(pk):
-        return reverse("projects:datasource-process", kwargs=dict(pk=pk))
-
-
 class TestDataSourcePreview:
     def test_response(self, api_client, admin, data_source):
         api_client.force_authenticate(admin)
+        data_source.update_meta(preview_data={"test": "test"}, items=2, fields=2)
         expected_data = json.loads(data_source.meta_data.preview.read())
         expected_data["data_source"] = {"name": data_source.name}
 
@@ -564,18 +568,22 @@ class TestDataSourceJobCreate:
         assert data_source.jobs.last().steps.filter(script=script_1).exists()
 
     @pytest.mark.usefixtures("transaction_on_commit")
-    def test_schedule_worker_with(self, api_client, admin, data_source_factory, script_factory, mocker):
+    def test_schedule_datasource_processing(
+        self, api_client, admin, data_source_factory, script_factory, mocker
+    ):
+        schedule_datasource_processing = mocker.patch(
+            "schemacms.projects.services.schedule_job_scripts_processing"
+        )
         data_source = data_source_factory(created_by=admin)
         script_1 = script_factory(is_predefined=True, created_by=admin, datasource=None)
         job_data = dict(steps=[{"script": script_1.id, "exec_order": 0}])
-        schedule_worker_with_mock = mocker.patch("schemacms.projects.services.schedule_worker_with")
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(data_source.id), data=job_data, format="json")
 
         assert response.status_code == status.HTTP_201_CREATED
         job = projects_models.DataSourceJob.objects.all().get(pk=response.data["id"])
-        schedule_worker_with_mock.assert_called_with(job, data_source.file.size)
+        schedule_datasource_processing.assert_called_with(job, data_source.file.size)
 
     def test_step_with_options(self, api_client, admin, data_source_factory, script_factory):
         data_source = data_source_factory(created_by=admin)
@@ -862,7 +870,7 @@ class TestJobResultPreviewView:
         job_step_factory.create_batch(2, datasource_job=job)
         job.result = faker.csv_upload_file(filename="test_result.csv")
         job.save()
-        job.update_meta()
+        job.update_meta(preview_data={"test": "test"}, items=3, fields=2)
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(job.id))
@@ -1090,6 +1098,15 @@ class TestFolderDetailView:
         assert response.data["name"] == new_name
         assert folder.project_id == project.id
 
+    def test_delete_folder(self, api_client, user, folder):
+        api_client.force_authenticate(user)
+
+        response = api_client.delete(self.get_url(pk=folder.pk))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not projects_models.Folder.objects.all().filter(pk=folder.pk).exists()
+        assert projects_models.Folder.objects.all_with_deleted().filter(pk=folder.pk).exists()
+
     @staticmethod
     def get_url(pk):
         return reverse("projects:folder-detail", kwargs=dict(pk=pk))
@@ -1149,6 +1166,15 @@ class TestPageDetailView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data["title"] == new_title
         assert page.folder_id == folder.id
+
+    def test_delete_page(self, api_client, user, page):
+        api_client.force_authenticate(user)
+
+        response = api_client.delete(self.get_url(pk=page.pk))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not projects_models.Page.objects.all().filter(pk=page.pk).exists()
+        assert projects_models.Page.objects.all_with_deleted().filter(pk=page.pk).exists()
 
     @staticmethod
     def get_url(pk):
@@ -1239,6 +1265,15 @@ class TestBlockDetailView:
         assert response.status_code == status.HTTP_200_OK
         assert response.data["name"] == new_name
         assert block.page_id == page.id
+
+    def test_delete_block(self, api_client, user, block):
+        api_client.force_authenticate(user)
+
+        response = api_client.delete(self.get_url(pk=block.pk))
+
+        assert response.status_code == status.HTTP_204_NO_CONTENT
+        assert not projects_models.Block.objects.all().filter(pk=block.pk).exists()
+        assert projects_models.Block.objects.all_with_deleted().filter(pk=block.pk).exists()
 
     @staticmethod
     def get_url(pk):

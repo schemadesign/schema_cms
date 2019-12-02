@@ -73,18 +73,13 @@ ProjectManager = generate_soft_delete_manager(queryset_class=ProjectQuerySet)
 
 
 class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
+    @transaction.atomic()
     def create(self, *args, **kwargs):
         file = kwargs.pop("file", None)
-
-        with transaction.atomic():
-            dsource = super().create(*args, **kwargs)
-
-            if file:
-                dsource.update_meta(file=file, file_name=file.name)
-                file.seek(0)
-                dsource.file.save(file.name, file)
-                dsource.project.create_meta_file()
-
+        dsource = super().create(*args, **kwargs)
+        if file:
+            dsource.file.save(file.name, file)
+            dsource.project.create_meta_file()
         return dsource
 
     def annotate_filters_count(self):
@@ -125,7 +120,7 @@ class DataSourceQuerySet(softdelete.models.SoftDeleteQuerySet):
 DataSourceManager = generate_soft_delete_manager(queryset_class=DataSourceQuerySet)
 
 
-class PageQuerySet(models.QuerySet):
+class PageQuerySet(softdelete.models.SoftDeleteQuerySet):
     def annotate_blocks_count(self):
         from .models import Block
 
@@ -141,3 +136,6 @@ class PageQuerySet(models.QuerySet):
                 models.Subquery(subquery, output_field=models.IntegerField()), models.Value(0)
             )
         )
+
+
+PageManager = generate_soft_delete_manager(queryset_class=PageQuerySet)

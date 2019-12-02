@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots PageForm Default 1`] = `
+exports[`Storyshots Shared Components|PageForm Default 1`] = `
 <div
   style={
     Object {

@@ -7,6 +7,7 @@ import { watchFolder } from '../folder.sagas';
 import { FolderRoutines } from '../folder.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import browserHistory from '../../../shared/utils/history';
+import { FOLDERS_PATH } from '../../../shared/utils/api.constants';
 
 describe('Folder: sagas', () => {
   const defaultState = Immutable({
@@ -97,6 +98,23 @@ describe('Folder: sagas', () => {
         .withState(defaultState)
         .put(FolderRoutines.update.success(response))
         .dispatch(FolderRoutines.update(payload))
+        .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith(`/project/${payload.projectId}/folder`);
+    });
+  });
+
+  describe('removeOne', () => {
+    it('should dispatch a success action', async () => {
+      jest.spyOn(browserHistory, 'push');
+      const payload = { folderId: '1', pageId: '1' };
+
+      mockApi.delete(`${FOLDERS_PATH}/${payload.folderId}`).reply(OK);
+
+      await expectSaga(watchFolder)
+        .withState(defaultState)
+        .put(FolderRoutines.removeOne.success())
+        .dispatch(FolderRoutines.removeOne(payload))
         .silentRun();
 
       expect(browserHistory.push).toBeCalledWith(`/project/${payload.projectId}/folder`);

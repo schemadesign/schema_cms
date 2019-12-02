@@ -10,6 +10,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Folder', module)
+storiesOf('Folder|Folder', module)
   .addDecorator(withRouter)
   .add('Default', () => <Folder {...defaultProps} />);

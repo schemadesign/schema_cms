@@ -10,6 +10,8 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './edit.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { PageForm } from '../../../shared/components/pageForm';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
+import { Link } from '../../../theme/typography';
 
 export class Edit extends PureComponent {
   static propTypes = {
@@ -18,6 +20,7 @@ export class Edit extends PureComponent {
     fetchPage: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
+    removePage: PropTypes.func.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         pageId: PropTypes.string.isRequired,
@@ -51,10 +54,21 @@ export class Edit extends PureComponent {
 
   getFolderId = () => path(['page', 'folder', 'id'], this.props);
 
+  handleRemoveClick = () => this.setState({ confirmationModalOpen: true });
+
+  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
+
+  handleConfirmRemove = () => {
+    const pageId = path(['match', 'params', 'pageId'], this.props);
+    const folderId = this.getFolderId();
+
+    this.props.removePage({ pageId, folderId });
+  };
+
   handleBackClick = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
   render() {
-    const { loading, error } = this.state;
+    const { loading, error, confirmationModalOpen } = this.state;
     const { handleSubmit, isValid, isSubmitting } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
@@ -66,6 +80,9 @@ export class Edit extends PureComponent {
         <LoadingWrapper loading={loading} error={error}>
           <Form onSubmit={handleSubmit}>
             <PageForm {...this.props} />
+            <Link id="removePageDesktopBtn" onClick={this.handleRemoveClick}>
+              <FormattedMessage {...messages.removePage} />
+            </Link>
             <NavigationContainer>
               <BackButton id="backBtn" onClick={this.handleBackClick}>
                 <FormattedMessage {...messages.back} />
@@ -76,6 +93,19 @@ export class Edit extends PureComponent {
             </NavigationContainer>
           </Form>
         </LoadingWrapper>
+        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.removeTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton onClick={this.handleCancelRemove}>
+              <FormattedMessage {...messages.cancelRemoval} />
+            </BackButton>
+            <NextButton id="confirmRemovalBtn" onClick={this.handleConfirmRemove}>
+              <FormattedMessage {...messages.confirmRemoval} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
       </Fragment>
     );
   }

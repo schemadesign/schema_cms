@@ -7,6 +7,7 @@ import { watchPage } from '../page.sagas';
 import { PageRoutines } from '../page.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import browserHistory from '../../../shared/utils/history';
+import { PAGES_PATH } from '../../../shared/utils/api.constants';
 
 describe('Page: sagas', () => {
   const defaultState = Immutable({
@@ -96,6 +97,23 @@ describe('Page: sagas', () => {
         .silentRun();
 
       expect(browserHistory.push).toBeCalledWith(`/folder/${payload.folderId}`);
+    });
+  });
+
+  describe('removeOne', () => {
+    it('should dispatch a success action', async () => {
+      jest.spyOn(browserHistory, 'push');
+      const payload = { folderId: '1', pageId: '1' };
+
+      mockApi.delete(`${PAGES_PATH}/${payload.pageId}`).reply(OK);
+
+      await expectSaga(watchPage)
+        .withState(defaultState)
+        .put(PageRoutines.removeOne.success())
+        .dispatch(PageRoutines.removeOne(payload))
+        .silentRun();
+
+      expect(browserHistory.push).toBeCalledWith(`/folder/${payload.folderId}/`);
     });
   });
 });

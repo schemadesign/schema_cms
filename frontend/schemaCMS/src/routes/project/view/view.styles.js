@@ -123,6 +123,7 @@ export const CardHeader = styled.span`
   font-size: 12px;
 
   ${media.desktop`
+    color: ${({ theme: { card } }) => card.text};
     font-size: 18px;
   `};
 `;

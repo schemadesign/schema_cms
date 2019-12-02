@@ -12,7 +12,7 @@ import { PageBlockRoutines, selectPageBlock } from '../../modules/pageBlock';
 import messages from './pageBlock.messages';
 
 import { errorMessageParser } from '../../shared/utils/helpers';
-import { BLOCK_FORM, BLOCK_SCHEMA, INITIAL_VALUES } from '../../modules/pageBlock/pageBlock.constants';
+import { BLOCK_CONTENT, BLOCK_FORM, BLOCK_SCHEMA, INITIAL_VALUES } from '../../modules/pageBlock/pageBlock.constants';
 
 const mapStateToProps = createStructuredSelector({
   block: selectPageBlock,
@@ -23,6 +23,7 @@ export const mapDispatchToProps = dispatch =>
     {
       updatePageBlock: promisifyRoutine(PageBlockRoutines.update),
       fetchPageBlock: promisifyRoutine(PageBlockRoutines.fetchOne),
+      removePageBlock: promisifyRoutine(PageBlockRoutines.removeOne),
     },
     dispatch
   );
@@ -38,12 +39,11 @@ export default compose(
   withFormik({
     displayName: BLOCK_FORM,
     enableReinitialize: true,
-    mapPropsToValues: ({ block: { name, type, content, image, imageName } }) => ({
+    mapPropsToValues: ({ block: { name, type, content, imageName } }) => ({
       ...INITIAL_VALUES,
       name,
       type,
-      content,
-      image,
+      [`${type}-${BLOCK_CONTENT}`]: content,
       imageName,
     }),
     validationSchema: () => BLOCK_SCHEMA,

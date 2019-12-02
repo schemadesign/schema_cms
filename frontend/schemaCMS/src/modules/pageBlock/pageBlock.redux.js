@@ -10,6 +10,7 @@ export const PageBlockRoutines = {
   setBlocks: createRoutine(`${PREFIX}SET_BLOCKS`),
   create: createRoutine(`${PREFIX}CREATE`),
   update: createRoutine(`${PREFIX}UPDATE`),
+  removeOne: createRoutine(`${PREFIX}REMOVE_ONE`),
 };
 
 export const INITIAL_STATE = new Immutable({

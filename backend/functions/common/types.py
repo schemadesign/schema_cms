@@ -84,3 +84,9 @@ class Job(LoaderMixin):
         for step in job.steps:
             step.job = job
         return job
+
+    @property
+    def source_file(self):
+        return services.get_s3_object(
+            self.source_file_path, version=self.source_file_version
+        )
