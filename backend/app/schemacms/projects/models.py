@@ -312,10 +312,11 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
         return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
 
     def get_fields_names(self):
-        fields = json.loads(self.preview.read()).get("fields")
-        if fields:
+        try:
+            fields = json.loads(self.preview.read()).get("fields", {})
             return [key for key in fields.keys()]
-        return []
+        except OSError:
+            return []
 
 
 class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
@@ -332,7 +333,7 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
     )
     body = models.TextField(blank=True)
     last_file_modification = models.DateTimeField(null=True)
-    specs = pg_fields.JSONField(default=dict, blank=True)
+    specs = pg_fields.JSONField(default=dict, blank=True, editable=False)
 
     def __str__(self):
         return self.name
