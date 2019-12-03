@@ -26,4 +26,8 @@ export default defineMessages({
     id: 'dataSource.dataWranglingScripts.errorOnUploading',
     defaultMessage: 'An error happened while trying to process the scripts.',
   },
+  save: {
+    id: 'dataSource.dataWranglingScripts.save',
+    defaultMessage: 'Save',
+  },
 });

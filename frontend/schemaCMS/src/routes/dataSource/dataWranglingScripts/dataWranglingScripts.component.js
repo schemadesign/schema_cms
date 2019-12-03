@@ -8,11 +8,12 @@ import Helmet from 'react-helmet';
 
 import { Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
-import { StepNavigation } from '../../../shared/components/stepNavigation';
 import { SCRIPT_NAME_MAX_LENGTH } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
+import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
@@ -126,7 +127,9 @@ export class DataWranglingScripts extends PureComponent {
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
-        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
+          <DataSourceNavigation {...this.props} />
+        </ContextHeader>
         <Header>
           <Empty />
           <StepCounter>
@@ -141,8 +144,6 @@ export class DataWranglingScripts extends PureComponent {
               submitForm = null;
             }
 
-            const disabled = { next: isSubmitting };
-
             return (
               <Fragment>
                 <CheckboxGroup
@@ -153,7 +154,12 @@ export class DataWranglingScripts extends PureComponent {
                 >
                   {dataWranglingScripts.map(this.renderCheckboxes)}
                 </CheckboxGroup>
-                <StepNavigation submitForm={submitForm} loading={isSubmitting} disabled={disabled} {...this.props} />
+                <NavigationContainer right>
+                  <NextButton onClick={submitForm} disabled={isSubmitting} loading={isSubmitting}>
+                    <FormattedMessage {...messages.save} />
+                  </NextButton>
+                </NavigationContainer>
+                <DataSourceNavigation {...this.props} hideOnDesktop />
               </Fragment>
             );
           }}

@@ -4,10 +4,10 @@ import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 import messages from './fields.messages';
-import { StepNavigation } from '../../../shared/components/stepNavigation';
 import DataPreview from '../../../shared/components/dataPreview/dataPreview.component';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 
 export class Fields extends PureComponent {
   static propTypes = {
@@ -27,9 +27,11 @@ export class Fields extends PureComponent {
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
-        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
+          <DataSourceNavigation {...this.props} />
+        </ContextHeader>
         <DataPreview {...this.props} />
-        <StepNavigation {...this.props} />
+        <DataSourceNavigation {...this.props} hideOnDesktop />
       </Fragment>
     );
   }

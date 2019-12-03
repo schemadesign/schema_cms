@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { always, ifElse, propEq } from 'ramda';
 import { Button } from 'schemaUI';
 
 import { media, contentSizes } from '../../../theme/media';
+import { styleWhenTrue } from '../../utils/rendering';
 
 const BUTTON_MARGIN = 5;
 
@@ -22,16 +23,25 @@ export const NavigationContent = styled.div`
   `};
 `;
 
+const fixedNavigationStyles = styleWhenTrue(
+  always,
+  css`
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient(
+      to top,
+      ${({ theme: { background } }) => `${background}, ${background} 30%`},
+      rgba(0, 0, 0, 0)
+    );
+  `
+);
+
 export const Navigation = styled.div`
-  position: fixed;
-  padding: 40px 0 36px;
   bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient(
-    to top,
-    ${({ theme: { background } }) => `${background}, ${background} 30%`},
-    rgba(0, 0, 0, 0)
-  );
+  width: 100%;
+  padding: 40px 0 36px;
+
+  ${({ fixed }) => fixedNavigationStyles(fixed)};
 
   ${media.desktop`
     width: ${contentSizes.desktop}px;

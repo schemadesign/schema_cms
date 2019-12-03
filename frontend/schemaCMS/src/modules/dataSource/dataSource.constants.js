@@ -11,6 +11,13 @@ export const SOURCE_TYPE_FILE = 'file';
 export const SOURCE_TYPE_API = 'api';
 export const SOURCE_TYPE_DATABASE = 'database';
 
+export const SOURCE_PAGE = 'source';
+export const PREVIEW_PAGE = 'preview';
+export const STEPS_PAGE = 'steps';
+export const RESULT_PAGE = 'result';
+export const FILTERS_PAGE = 'filters';
+export const VIEWS_PAGE = 'views';
+
 export const INITIAL_STEP = 1;
 export const FIELDS_STEP = 2;
 export const DATA_WRANGLING_STEP = 3;

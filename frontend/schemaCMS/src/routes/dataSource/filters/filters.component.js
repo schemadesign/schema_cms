@@ -7,11 +7,12 @@ import { always, append, equals, ifElse, path, reject } from 'ramda';
 import Helmet from 'react-helmet';
 
 import { ButtonContainer, FilterCounter, Header, Link, PlusButton } from './filters.styles';
-import { StepNavigation } from '../../../shared/components/stepNavigation';
 import messages from './filters.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
@@ -76,16 +77,11 @@ export class Filters extends PureComponent {
   );
 
   renderContent = () => {
-    const { filters = [], dataSource } = this.props;
+    const { filters = [] } = this.props;
     const initialValues = filters.filter(({ isActive }) => isActive).map(({ id }) => id.toString());
-    const headerTitle = dataSource.name;
-    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
-        <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
-        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Header>
           <ButtonContainer>
             <PlusButton onClick={this.handleCreateFilter}>
@@ -112,7 +108,11 @@ export class Filters extends PureComponent {
                 >
                   {filters.map(this.renderCheckboxes)}
                 </CheckboxGroup>
-                <StepNavigation submitForm={submitForm} {...this.props} />
+                <NavigationContainer right>
+                  <NextButton onClick={submitForm}>
+                    <FormattedMessage {...messages.save} />
+                  </NextButton>
+                </NavigationContainer>
               </Fragment>
             );
           }}
@@ -123,7 +123,19 @@ export class Filters extends PureComponent {
 
   render() {
     const { loading } = this.state;
+    const headerTitle = this.props.dataSource.name;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
-    return <LoadingWrapper loading={loading}>{this.renderContent}</LoadingWrapper>;
+    return (
+      <Fragment>
+        <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
+          <DataSourceNavigation {...this.props} />
+        </ContextHeader>
+        <LoadingWrapper loading={loading}>{this.renderContent}</LoadingWrapper>
+        <DataSourceNavigation {...this.props} hideOnDesktop />
+      </Fragment>
+    );
   }
 }

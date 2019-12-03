@@ -1,21 +1,30 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import Helmet from 'react-helmet';
+import { path } from 'ramda';
+import { FormattedMessage } from 'react-intl';
 
-import { ComingSoon } from './dataSourceViews.styles';
-import messages from './dataSourceViews.messages';
+import messages from './dataWranglingResult.messages';
+import DataPreview from '../../../shared/components/dataPreview/dataPreview.component';
+import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 
-export class DataSourceViews extends PureComponent {
+export class DataWranglingResult extends PureComponent {
   static propTypes = {
-    dataSource: PropTypes.object.isRequired,
+    previewData: PropTypes.object.isRequired,
+    dataSource: PropTypes.object,
+    fetchPreview: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }),
   };
 
+  getActiveJobId = () => path(['dataSource', 'activeJob', 'id'], this.props);
+
   render() {
+    const activeJobId = this.getActiveJobId(this.props);
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -26,9 +35,7 @@ export class DataSourceViews extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>
-        <ComingSoon>
-          <FormattedMessage {...messages.coming} />
-        </ComingSoon>
+        <DataPreview {...this.props} jobId={activeJobId} />
         <DataSourceNavigation {...this.props} hideOnDesktop />
       </Fragment>
     );

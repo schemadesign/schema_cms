@@ -4,12 +4,15 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { compose } from 'ramda';
+import { injectIntl } from 'react-intl';
 
 import { DataWranglingResult } from './dataWranglingResult.component';
-import { JobRoutines, selectJobPreview } from '../../modules/job';
+import { JobRoutines, selectJobPreview } from '../../../modules/job';
+import { selectDataSource } from '../../../modules/dataSource';
 
 const mapStateToProps = createStructuredSelector({
   previewData: selectJobPreview,
+  dataSource: selectDataSource,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -27,5 +30,6 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
+  injectIntl,
   withRouter
 )(DataWranglingResult);

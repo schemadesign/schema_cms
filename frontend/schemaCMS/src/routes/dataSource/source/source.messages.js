@@ -6,6 +6,10 @@ export default defineMessages({
     id: 'dataSource.source.pastVersions',
     defaultMessage: 'View Past Versions',
   },
+  save: {
+    id: 'dataSource.source.save',
+    defaultMessage: 'Save',
+  },
   removeDataSource: {
     id: 'dataSource.source.removeDataSource',
     defaultMessage: 'Delete Data Source',

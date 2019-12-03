@@ -6,4 +6,8 @@ export default defineMessages({
     id: 'dataWranglingResult.pageTitle',
     defaultMessage: 'Data Wrangling Result',
   },
+  subTitle: {
+    id: 'dataWranglingResult.pageTitle',
+    defaultMessage: 'Data Wrangling Result',
+  },
 });

@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withTheme } from '../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { DataWranglingResult } from './dataWranglingResult.component';
-import { tableFields as fields, tableData as data } from '../../shared/utils/dataMock';
-import { JOB_STATE_FAILURE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
+import { tableFields as fields, tableData as data } from '../../../shared/utils/dataMock';
+import { JOB_STATE_FAILURE, JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
 
 export const defaultProps = {
   dataSource: {

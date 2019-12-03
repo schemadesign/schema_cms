@@ -9,16 +9,16 @@ import Helmet from 'react-helmet';
 import { Link } from './source.styles';
 import messages from './source.messages';
 import { DATA_SOURCE_SCHEMA, IGNORED_FIELDS } from '../../../modules/dataSource/dataSource.constants';
-import { StepNavigation } from '../../../shared/components/stepNavigation';
 import { errorMessageParser } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import browserHistory from '../../../shared/utils/history';
 import { ModalActions, Modal, ModalTitle, modalStyles } from '../../../shared/components/modal/modal.styles';
 import { LinkContainer } from '../../../theme/typography';
-import { BackButton, NextButton } from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { SourceForm } from '../../../shared/components/sourceForm';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 
 export class SourceComponent extends PureComponent {
   static propTypes = {
@@ -88,7 +88,7 @@ export class SourceComponent extends PureComponent {
   );
 
   render() {
-    const { dataSource, intl, ...restProps } = this.props;
+    const { dataSource, intl } = this.props;
     const { confirmationModalOpen } = this.state;
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
@@ -97,7 +97,9 @@ export class SourceComponent extends PureComponent {
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
-        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
+          <DataSourceNavigation {...this.props} />
+        </ContextHeader>
         <Formik
           enableReinitialize
           isInitialValid={!!dataSource.fileName}
@@ -109,23 +111,25 @@ export class SourceComponent extends PureComponent {
             if (!dirty && isValid) {
               submitForm = null;
             }
-            const disabled = { next: !values.fileName || !isValid || isSubmitting };
 
             return (
               <Fragment>
                 <SourceForm intl={intl} dataSource={dataSource} values={values} {...rest} />
                 {this.renderLinks(!!dataSource.id)}
-                <StepNavigation
-                  loading={isSubmitting}
-                  disabled={disabled}
-                  dataSource={dataSource}
-                  submitForm={submitForm}
-                  {...restProps}
-                />
+                <NavigationContainer right>
+                  <NextButton
+                    onClick={submitForm}
+                    disabled={!values.fileName || !isValid || isSubmitting}
+                    loading={isSubmitting}
+                  >
+                    <FormattedMessage {...messages.save} />
+                  </NextButton>
+                </NavigationContainer>
               </Fragment>
             );
           }}
         </Formik>
+        <DataSourceNavigation {...this.props} hideOnDesktop />
         <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />

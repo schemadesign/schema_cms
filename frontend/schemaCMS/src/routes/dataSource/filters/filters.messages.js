@@ -10,6 +10,10 @@ export default defineMessages({
     id: 'dataSource.filters.pageTitle',
     defaultMessage: 'Filters',
   },
+  save: {
+    id: 'dataSource.filters.save',
+    defaultMessage: 'Save',
+  },
   filters: {
     id: 'dataSource.view.filters.filters',
     defaultMessage: '{length} {length, plural,one {Filter} other {Filters}}',

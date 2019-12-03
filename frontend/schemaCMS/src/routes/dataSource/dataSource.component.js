@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -8,9 +8,11 @@ import { JobList } from './jobList';
 import { Filters } from './filters';
 import { Fields } from './fields';
 import { DataWranglingScripts } from './dataWranglingScripts';
-import { DataWranglingResult } from '../dataWranglingResult';
+import { DataWranglingResult } from './dataWranglingResult';
 import { DataSourceViews } from './dataSourceViews';
 import { renderWhenTrue } from '../../shared/utils/rendering';
+import { SOURCES } from '../../shared/components/projectTabs/projectTabs.constants';
+import { ProjectTabs } from '../../shared/components/projectTabs';
 
 export default class DataSource extends PureComponent {
   static propTypes = {
@@ -71,6 +73,11 @@ export default class DataSource extends PureComponent {
   });
 
   render() {
-    return this.renderRouting(!this.state.loading);
+    return (
+      <Fragment>
+        <ProjectTabs active={SOURCES} url={`/project/${this.props.dataSource.project}`} />
+        {this.renderRouting(!this.state.loading)}
+      </Fragment>
+    );
   }
 }
