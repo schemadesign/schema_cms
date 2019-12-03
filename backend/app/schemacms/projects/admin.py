@@ -114,7 +114,7 @@ class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
 
 @admin.register(models.Folder)
 class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ('id', 'name', 'project')
+    list_display = ('id', 'name', 'project', 'deleted_at')
     search_fields = ('name',)
     list_filter = ('project',)
 
@@ -124,7 +124,7 @@ class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
 
 @admin.register(models.Page)
 class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ('id', 'title', 'folder', 'project')
+    list_display = ('id', 'title', 'folder', 'project', 'deleted_at')
     search_fields = ('title',)
     list_filter = ('folder',)
 
@@ -138,7 +138,7 @@ class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
 @admin.register(models.Block)
 class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
     form = forms.BlockForm
-    list_display = ('id', 'name', 'page', 'folder', 'project')
+    list_display = ('id', 'name', 'page', 'folder', 'project', 'deleted_at')
     search_fields = ('name',)
     list_filter = ('page',)
 

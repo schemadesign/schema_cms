@@ -10,7 +10,7 @@ import softdelete.admin
 
 
 class SoftDeleteObjectAdmin(softdelete.admin.SoftDeleteObjectAdmin):
-    softdelete.admin.SoftDeleteObjectAdmin.actions = ["soft_undelete"]
+    actions = ["soft_undelete"]
     deletion_q = models.Q(deleted_at__isnull=0)
 
     def delete_selected(self, request, queryset):
