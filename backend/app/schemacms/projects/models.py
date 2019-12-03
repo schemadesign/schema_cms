@@ -272,10 +272,10 @@ class DataSource(
             return None
 
     def result_fields_info(self):
-        preview = self.current_job.meta_data.preview
         try:
+            preview = self.current_job.meta_data.preview
             fields = json.loads(preview.read())["fields"]
-        except (json.JSONDecodeError, KeyError):
+        except (DataSourceJobMetaData.DoesNotExist, json.JSONDecodeError, KeyError):
             return []
 
         data = [{"name": key, "type": map_general_dtypes(value["dtype"])} for key, value in fields.items()]
