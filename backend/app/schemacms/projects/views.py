@@ -454,6 +454,7 @@ class PageViewSet(
         page.blocks.filter(id__in=inactive).update(is_active=False)
 
         page = self.get_object()
+        page.get_project().create_meta_file()
 
         serializer = self.get_serializer(instance=page.blocks, many=True)
 
