@@ -8,16 +8,22 @@ import { MemoryRouter } from 'react-router';
 import { translationMessages, DEFAULT_LOCALE } from '../i18n';
 import { prepareFontSet } from '../../../schemaUI/.storybook/fonts';
 
-const baseStyles = (theme) => ({
-  color: theme.text,
-  fontFamily: ''
-})
+const getStyles = (theme) => `
+  body {
+    color: ${theme.text};
+    background-color: ${theme.background};
+    font-family: 'Inter';
+  }
+`;
 
 export const withTheme = (theme = Theme.dark) => (story) => (
   <ThemeProvider theme={theme}>
     <ThemeProviderUI theme={theme}>
-      <style>{prepareFontSet()}</style>
-      <div style={{ color: theme.text, fontFamily: 'Inter' }}>{story()}</div>
+      <style>
+        {prepareFontSet()}
+        {getStyles(theme)}
+      </style>
+      {story()}
     </ThemeProviderUI>
   </ThemeProvider>
 );
