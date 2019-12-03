@@ -28,6 +28,7 @@ export class ImageScrappingScript extends PureComponent {
     fetchDataSource: PropTypes.func.isRequired,
     dataWranglingScript: PropTypes.object,
     fieldNames: PropTypes.array.isRequired,
+    imageScrappingFields: PropTypes.array.isRequired,
     setImageScrappingFields: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -48,7 +49,7 @@ export class ImageScrappingScript extends PureComponent {
   async componentDidMount() {
     try {
       await this.props.fetchDataSource(path(['match', 'params'], this.props));
-      this.setState({ loading: false });
+      this.setState({ loading: false, selectedFields: this.props.imageScrappingFields });
     } catch (e) {
       console.log(e);
     }
