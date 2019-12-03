@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewIcon: Component should render correctly 1`] = `
+<view.svg
+  style={
+    Object {
+      "height": "60px",
+      "stroke": "#FFF",
+      "width": "60px",
+    }
+  }
+/>
+`;
+
+exports[`ViewIcon: Component should render with custom styles 1`] = `
+<view.svg
+  style={
+    Object {
+      "fill": "blue",
+      "height": "60px",
+      "stroke": "#FFF",
+      "width": "60px",
+    }
+  }
+/>
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FieldIcon: Component should render correctly 1`] = `
+<field.svg
+  style={
+    Object {
+      "fill": "#FFF",
+      "height": "60px",
+      "width": "60px",
+    }
+  }
+/>
+`;
+
+exports[`FieldIcon: Component should render with custom styles 1`] = `
+<field.svg
+  style={
+    Object {
+      "fill": "blue",
+      "height": "60px",
+      "width": "60px",
+    }
+  }
+/>
+`;

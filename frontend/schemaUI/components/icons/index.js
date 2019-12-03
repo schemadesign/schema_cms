@@ -12,8 +12,16 @@ import { UploadIcon } from './uploadIcon';
 import { CheckboxOffIcon } from './checkboxOffIcon';
 import { CheckboxOnIcon } from './checkboxOnIcon';
 import { EyeIcon } from './eyeIcon';
+import { ResultIcon } from './resultIcon';
+import { ViewIcon } from './viewIcon';
+import { FilterIcon } from './filterIcon';
+import { FieldIcon } from './fieldIcon';
 
 const Icons = {
+  ResultIcon,
+  ViewIcon,
+  FilterIcon,
+  FieldIcon,
   ArrowLeftIcon,
   ArrowRightIcon,
   CheckboxOffIcon,
