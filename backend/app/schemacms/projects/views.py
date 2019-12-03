@@ -11,6 +11,15 @@ from schemacms.utils import serializers as utils_serializers
 from . import constants, models, serializers
 
 
+def update_meta(view, model_class, request, pk, *args, **kwargs):
+    serializer = view.get_serializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    with transaction.atomic():
+        obj = get_object_or_404(model_class.objects.select_for_update(), pk=pk)
+        obj.update_meta(**serializer.validated_data)
+    return response.Response(status=status.HTTP_204_NO_CONTENT)
+
+
 class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.ProjectSerializer
     permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
@@ -290,14 +299,8 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         permission_classes=[permissions.IsAuthenticated],
         authentication_classes=[authentication.EnvTokenAuthentication],
     )
-    def update_meta(self, request, pk, *args, **kwargs):
-        data_source: models.DataSource = get_object_or_404(models.DataSource, pk=pk)
-        serializer = self.get_serializer(instance=getattr(data_source, 'meta_data', None), data=request.data)
-        serializer.is_valid(raise_exception=True)
-
-        data_source.update_meta(**serializer.validated_data)
-
-        return response.Response(status=status.HTTP_204_NO_CONTENT)
+    def update_meta(self, *args, **kwargs):
+        return update_meta(self, models.DataSource, *args, **kwargs)
 
 
 class DataSourceJobDetailViewSet(
@@ -350,14 +353,8 @@ class DataSourceJobDetailViewSet(
         permission_classes=[permissions.IsAuthenticated],
         authentication_classes=[authentication.EnvTokenAuthentication],
     )
-    def update_meta(self, request, pk, *args, **kwargs):
-        job: models.DataSourceJob = get_object_or_404(models.DataSourceJob, pk=pk)
-        serializer = self.get_serializer(instance=getattr(job, 'meta_data', None), data=request.data)
-        serializer.is_valid(raise_exception=True)
-
-        job.update_meta(**serializer.validated_data)
-
-        return response.Response(status=status.HTTP_204_NO_CONTENT)
+    def update_meta(self, *args, **kwargs):
+        return update_meta(self, models.DataSourceJob, *args, **kwargs)
 
 
 class DataSourceScriptDetailView(generics.RetrieveAPIView, generics.UpdateAPIView):
