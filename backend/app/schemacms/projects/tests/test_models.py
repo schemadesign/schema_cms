@@ -35,8 +35,8 @@ class TestProject:
             'title': project.title,
             "description": project.description,
             'owner': admin.id,
+            'data_sources': [{"id": ds.id, "name": ds.name, "type": ds.type}],
             'pages': folder.meta_file_serialization(),
-            'data_sources': [{"id": ds.id, "name": ds.name}],
         }
 
 

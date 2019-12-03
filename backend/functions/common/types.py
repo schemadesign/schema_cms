@@ -28,6 +28,20 @@ class FetchMetaFileMixin:
 
 
 @dataclasses.dataclass()
+class Project(LoaderMixin, FetchMetaFileMixin):
+    id: int
+    title: str = ""
+    description: str = ""
+    owner: str = ""
+    data_sources: list = dataclasses.field(default_factory=list)
+    pages: list = dataclasses.field(default_factory=list)
+
+    @classmethod
+    def get_meta_file_path(cls, id):
+        return f"projects/{id}/meta.json"
+
+
+@dataclasses.dataclass()
 class DataSource(LoaderMixin, FetchMetaFileMixin):
     id: int
     name: str = ""
@@ -87,6 +101,4 @@ class Job(LoaderMixin):
 
     @property
     def source_file(self):
-        return services.get_s3_object(
-            self.source_file_path, version=self.source_file_version
-        )
+        return services.get_s3_object(self.source_file_path, version=self.source_file_version)

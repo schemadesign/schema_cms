@@ -129,13 +129,14 @@ class Project(
             "title": self.title,
             "description": self.description,
             "owner": self.owner_id,
-            "pages": [],
             "data_sources": [],
+            "pages": [],
         }
 
         if self.data_sources:
             data_sources = [
-                {"id": data_source.id, "name": data_source.name} for data_source in self.data_sources.all()
+                {"id": data_source.id, "name": data_source.name, "type": data_source.type}
+                for data_source in self.data_sources.all()
             ]
             data.update({"data_sources": data_sources})
 
