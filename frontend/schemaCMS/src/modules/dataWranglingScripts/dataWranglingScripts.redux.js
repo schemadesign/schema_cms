@@ -13,7 +13,9 @@ export const DataWranglingScriptsRoutines = {
 };
 
 export const INITIAL_STATE = new Immutable({
-  script: {},
+  script: {
+    specs: {},
+  },
   scripts: [],
   imageScrappingFields: [],
   customScripts: [],

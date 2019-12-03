@@ -3,7 +3,22 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import { always, append, equals, ifElse, pathOr, reject, map, pipe, toString, insertAll, propEq, find } from 'ramda';
+import {
+  always,
+  append,
+  equals,
+  ifElse,
+  pathOr,
+  reject,
+  map,
+  pipe,
+  toString,
+  insertAll,
+  propEq,
+  find,
+  pathEq,
+  path,
+} from 'ramda';
 
 import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
@@ -25,6 +40,7 @@ export class DataWranglingScripts extends PureComponent {
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     dataSource: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
     isAdmin: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
@@ -43,12 +59,12 @@ export class DataWranglingScripts extends PureComponent {
     this.props.fetchDataWranglingScripts({ dataSourceId });
   }
 
-  getScriptLink = (scriptId, name, dataSourceId) =>
-    name === 'Image Scrapping' ? `/script/${scriptId}/${dataSourceId}` : `/script/${scriptId}`;
+  getScriptLink = (scriptId, specs, dataSourceId) =>
+    specs.type === IMAGE_SCRAPPING_SCRIPT_TYPE ? `/script/${scriptId}/${dataSourceId}` : `/script/${scriptId}`;
 
   parseSteps = (script, index) =>
     ifElse(
-      propEq('type', IMAGE_SCRAPPING_SCRIPT_TYPE),
+      pathEq(['specs', 'type'], IMAGE_SCRAPPING_SCRIPT_TYPE),
       always({ script, execOrder: index, options: { columns: this.props.imageScrappingFields } }),
       always({ script, execOrder: index })
     )(find(propEq('id', parseInt(script, 10)), this.props.dataWranglingScripts));
@@ -79,6 +95,12 @@ export class DataWranglingScripts extends PureComponent {
   handleChange = ({ e, setFieldValue, steps }) => {
     const { value, checked } = e.target;
     const setScripts = ifElse(equals(true), always(append(value, steps)), always(reject(equals(value), steps)));
+    const script = find(propEq('id', parseInt(value, 10)), this.props.dataWranglingScripts);
+
+    if (checked && script.specs.type === IMAGE_SCRAPPING_SCRIPT_TYPE) {
+      const dataSourceId = path(['match', 'params', 'dataSourceId'], this.props);
+      return this.props.history.push(`/script/${value}/${dataSourceId}`);
+    }
 
     setFieldValue('steps', setScripts(checked));
   };
@@ -99,9 +121,9 @@ export class DataWranglingScripts extends PureComponent {
     }
   };
 
-  renderCheckboxes = ({ id, name }, index) => (
+  renderCheckboxes = ({ id, name, specs }, index) => (
     <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index}>
-      <Link to={this.getScriptLink(id, name, this.props.match.params.dataSourceId)}>{name}</Link>
+      <Link to={this.getScriptLink(id, specs, this.props.match.params.dataSourceId)}>{name}</Link>
     </Checkbox>
   );
 

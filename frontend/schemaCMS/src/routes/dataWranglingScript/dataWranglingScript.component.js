@@ -39,7 +39,7 @@ export class DataWranglingScript extends PureComponent {
   render() {
     const { dataWranglingScript } = this.props;
     const { loading } = this.state;
-    const isCustom = dataWranglingScript.type === IMAGE_SCRAPPING_SCRIPT_TYPE;
+    const isCustom = dataWranglingScript.specs.type === IMAGE_SCRAPPING_SCRIPT_TYPE;
 
     return (
       <LoadingWrapper loading={loading} noData={isEmpty(dataWranglingScript)}>
