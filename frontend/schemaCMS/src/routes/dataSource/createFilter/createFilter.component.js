@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { path } from 'ramda';
+import { isEmpty, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Container } from './createFilter.styles';
@@ -9,7 +9,6 @@ import messages from './createFilter.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { FILTERS_STEP } from '../../../modules/dataSource/dataSource.constants';
 
 export class CreateFilter extends PureComponent {
   static propTypes = {
@@ -29,6 +28,7 @@ export class CreateFilter extends PureComponent {
 
   state = {
     loading: true,
+    error: null,
   };
 
   async componentDidMount() {
@@ -36,9 +36,10 @@ export class CreateFilter extends PureComponent {
 
     try {
       await this.props.fetchFieldsInfo({ dataSourceId });
+    } catch (error) {
+      this.setState({ error });
+    } finally {
       this.setState({ loading: false });
-    } catch (e) {
-      this.props.history.push(`/datasource/${dataSourceId}/${FILTERS_STEP}`);
     }
   }
 
@@ -59,13 +60,16 @@ export class CreateFilter extends PureComponent {
   );
 
   render() {
+    const { error, loading } = this.state;
     const headerConfig = this.getHeaderAndMenuConfig();
 
     return (
       <Container>
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        <LoadingWrapper loading={this.state.loading}>{this.renderContent}</LoadingWrapper>
+        <LoadingWrapper loading={loading} error={error || isEmpty(this.props.fieldsInfo)}>
+          {this.renderContent}
+        </LoadingWrapper>
       </Container>
     );
   }

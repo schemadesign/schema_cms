@@ -9,6 +9,7 @@ import { Filters } from './filters';
 import { Fields } from './fields';
 import { DataWranglingScripts } from './dataWranglingScripts';
 import { DataWranglingResult } from '../dataWranglingResult';
+import { DataSourceViews } from './dataSourceViews';
 import { renderWhenTrue } from '../../shared/utils/rendering';
 
 export default class DataSource extends PureComponent {
@@ -52,6 +53,7 @@ export default class DataSource extends PureComponent {
     const addFilterPath = `${path}/filters/add`;
     const resultPath = `${path}/result`;
     const stepsPath = `${path}/steps`;
+    const viewsPath = `${path}/views`;
 
     return (
       <Switch>
@@ -63,6 +65,7 @@ export default class DataSource extends PureComponent {
         <Route exact path={addFilterPath} component={CreateFilter} />
         <Route exact path={filtersPath} component={Filters} />
         <Route exact path={resultPath} component={DataWranglingResult} />
+        <Route exact path={viewsPath} component={DataSourceViews} />
       </Switch>
     );
   });
