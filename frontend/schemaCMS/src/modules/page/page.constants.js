@@ -13,9 +13,14 @@ export const INITIAL_VALUES = {
 
 export const PAGE_SCHEMA = Yup.object().shape({
   [PAGE_TITLE]: Yup.string()
+    .trim()
     .min(2, 'Page Title should have at least 2 characters')
     .max(50, 'Page Title should have maximum 50 characters')
     .required('Required'),
-  [PAGE_DESCRIPTION]: Yup.string().max(500, 'Page description should have maximum 500 characters'),
-  [PAGE_KEYWORDS]: Yup.string().max(500, 'Page Keywords should have maximum 500 characters'),
+  [PAGE_DESCRIPTION]: Yup.string()
+    .trim()
+    .max(500, 'Page description should have maximum 500 characters'),
+  [PAGE_KEYWORDS]: Yup.string()
+    .trim()
+    .max(500, 'Page Keywords should have maximum 500 characters'),
 });

@@ -13,9 +13,11 @@ export const NEW_USER_ROLES_OPTIONS = [
 
 export const USER_CREATE_CMS_SCHEME = Yup.object().shape({
   [FIRST_NAME]: Yup.string()
+    .trim()
     .min(2, 'Name should have at least 2 characters')
     .required('Required'),
   [LAST_NAME]: Yup.string()
+    .trim()
     .min(2, 'Last name should have at least 2 characters')
     .required('Required'),
   [USER_ROLE]: Yup.string()
