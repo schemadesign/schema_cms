@@ -13,6 +13,13 @@ echo "Secrets manager is up"
 #install_db_secret
 
 {
+    create_s3_bucket "schemacms-images" &&
+    echo "Scripts S3 bucket created"
+} || {
+    echo "Scripts S3 bucket NOT created"
+}
+
+{
     create_s3_bucket "schemacms" &&
     echo "Scripts S3 bucket created"
 } || {

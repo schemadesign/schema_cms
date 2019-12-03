@@ -20,12 +20,16 @@ from common import settings
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-FETCH_TIMEOUT = 10  # seconds
 RANDOM_SUFFIX_LENGTH = 5
 
 
+def append_path(*paths):
+    return '/'.join(s.strip('/') for s in paths)
+
+
 def image_static_url(path):
-    return parse.urljoin(settings.AWS_IMAGE_STATIC_URL, path)
+    host_url = settings.AWS_IMAGE_STATIC_URL
+    return append_path(host_url, path)
 
 
 def is_valid_url(url: str) -> bool:
@@ -51,7 +55,7 @@ def generate_available_filename(filename):
 
 async def fetch(session, url):
     try:
-        response = await session.get(url, timeout=FETCH_TIMEOUT)
+        response = await session.get(url, timeout=settings.IMAGE_SCRAPING_FETCH_TIMEOUT)
         response.raise_for_status()
         is_image_response(response)
     except (aiohttp.ClientError, ValueError):
@@ -72,24 +76,27 @@ async def upload(s3_client, path, http_response):
 
 
 async def fetch_and_upload_task(url, current_step, http_session, s3_client, dirpath="images"):
-    if not is_valid_url(url):
+    try:
+        if not is_valid_url(url):
+            return url
+        http_response = await fetch(http_session, url)
+        if http_response is None:
+            return url
+        parsed_url = parse.urlparse(url)
+        filename = generate_available_filename(os.path.basename(parsed_url.path))
+        path = os.path.join(f"{current_step.job.datasource.id}/jobs/{current_step.job.id}", dirpath, filename)
+        await upload(s3_client, path, http_response)
+    except (asyncio.TimeoutError, aiohttp.ClientError):
         return url
-    http_response = await fetch(http_session, url)
-    if http_response is None:
-        return url
-    parsed_url = parse.urlparse(url)
-    filename = generate_available_filename(os.path.basename(parsed_url.path))
-    path = os.path.join(f"{current_step.job.datasource.id}/jobs/{current_step.job.id}", dirpath, filename)
-    await upload(s3_client, path, http_response)
     return image_static_url(path)
 
 
 async def column_image_scraping(df, current_step, column):
     """Fetch images from url in the data frame column, upload them to s3 and return new image url"""
 
-    async with aiohttp.ClientSession() as http_session:
-        boto_session = aiobotocore.get_session()
-        async with boto_session.create_client('s3', endpoint_url=settings.AWS_S3_ENDPOINT_URL) as s3_client:
+    boto_session = aiobotocore.get_session()
+    async with boto_session.create_client('s3', endpoint_url=settings.AWS_S3_ENDPOINT_URL) as s3_client:
+        async with aiohttp.ClientSession() as http_session:
             return await asyncio.gather(
                 *(
                     fetch_and_upload_task(
