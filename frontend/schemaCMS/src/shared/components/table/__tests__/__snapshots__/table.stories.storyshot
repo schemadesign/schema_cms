@@ -32,7 +32,6 @@ exports[`Storyshots Shared Components|Table Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -241,7 +240,6 @@ exports[`Storyshots Shared Components|Table with header 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -493,7 +491,6 @@ exports[`Storyshots Shared Components|Table with numbered rows 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

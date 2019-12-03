@@ -85,7 +85,6 @@ exports[`Storyshots DataWranglingScript admin 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -435,7 +434,6 @@ exports[`Storyshots DataWranglingScript editor 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#FFF",
       "minHeight": "100vh",
     }
   }

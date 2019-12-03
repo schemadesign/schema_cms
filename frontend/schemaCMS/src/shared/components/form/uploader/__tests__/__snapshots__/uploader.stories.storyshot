@@ -4,7 +4,6 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -193,7 +192,6 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
               "text": "#FFF",
             },
             "providerContainer": Object {
-              "backgroundColor": "#000",
               "minHeight": "100vh",
             },
             "radioButton": Object {
@@ -297,7 +295,6 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -486,7 +483,6 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
               "text": "#FFF",
             },
             "providerContainer": Object {
-              "backgroundColor": "#000",
               "minHeight": "100vh",
             },
             "radioButton": Object {

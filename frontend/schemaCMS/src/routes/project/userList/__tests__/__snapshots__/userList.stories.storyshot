@@ -202,7 +202,6 @@ exports[`Storyshots Project|UserList list 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -864,7 +863,6 @@ exports[`Storyshots Project|UserList list with users 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

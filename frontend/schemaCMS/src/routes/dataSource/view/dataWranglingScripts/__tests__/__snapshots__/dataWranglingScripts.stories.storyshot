@@ -106,7 +106,6 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -255,7 +254,6 @@ exports[`Storyshots Data Source|DataWranglingScripts Default 1`] = `
                   "text": "#FFF",
                 },
                 "providerContainer": Object {
-                  "backgroundColor": "#000",
                   "minHeight": "100vh",
                 },
                 "radioButton": Object {

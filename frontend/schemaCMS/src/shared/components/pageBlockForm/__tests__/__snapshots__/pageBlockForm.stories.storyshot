@@ -26,7 +26,6 @@ exports[`Storyshots Shared Components|PageBlockForm Code type 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -391,7 +390,6 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -757,7 +755,6 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -1187,7 +1184,6 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               "text": "#FFF",
             },
             "providerContainer": Object {
-              "backgroundColor": "#000",
               "minHeight": "100vh",
             },
             "radioButton": Object {
@@ -1303,7 +1299,6 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -1667,7 +1662,6 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

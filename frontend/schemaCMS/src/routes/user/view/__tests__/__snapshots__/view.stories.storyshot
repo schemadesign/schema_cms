@@ -142,7 +142,6 @@ exports[`Storyshots User/View Admin 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -600,7 +599,6 @@ exports[`Storyshots User/View Editor 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

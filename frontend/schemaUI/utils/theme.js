@@ -31,7 +31,6 @@ const light = {
     text: colors.black,
   },
   providerContainer: {
-    backgroundColor: colors.white,
     minHeight: '100vh',
   },
   dataGrid: {
@@ -136,7 +135,6 @@ const dark = {
     text: colors.white,
   },
   providerContainer: {
-    backgroundColor: colors.black,
     minHeight: '100vh',
   },
   dataGrid: {

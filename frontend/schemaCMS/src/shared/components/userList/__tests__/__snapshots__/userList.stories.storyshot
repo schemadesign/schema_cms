@@ -27,7 +27,6 @@ exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -123,7 +122,6 @@ exports[`Storyshots Shared Components|UserList with users (as admin) 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -523,7 +521,6 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

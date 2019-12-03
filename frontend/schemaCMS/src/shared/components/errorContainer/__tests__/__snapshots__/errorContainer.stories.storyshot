@@ -9,7 +9,6 @@ exports[`Storyshots Shared Components|ErrorContainer Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -35,7 +34,6 @@ exports[`Storyshots Shared Components|ErrorContainer Not found Code 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -63,7 +61,6 @@ exports[`Storyshots Shared Components|ErrorContainer Not identified Code 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -91,7 +88,6 @@ exports[`Storyshots Shared Components|ErrorContainer Page error 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

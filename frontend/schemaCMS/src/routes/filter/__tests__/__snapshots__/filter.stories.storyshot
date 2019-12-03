@@ -85,7 +85,6 @@ exports[`Storyshots Filter Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

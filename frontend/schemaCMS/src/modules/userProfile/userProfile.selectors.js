@@ -1,6 +1,5 @@
 import { createSelector } from 'reselect';
-import { prop, propEq } from 'ramda';
-import { ROLES } from './userProfile.constants';
+import { prop } from 'ramda';
 
 export const selectUserProfileDomain = prop('userProfile');
 
@@ -20,6 +19,6 @@ export const selectDataWranglingDetail = createSelector(
 );
 
 export const selectIsAdmin = createSelector(
-  selectUserData,
-  propEq('role', ROLES.ADMIN)
+  selectUserProfileDomain,
+  prop('isAdmin')
 );
