@@ -173,7 +173,13 @@ class DataSource(
     objects = managers.DataSourceManager()
 
     class Meta:
-        unique_together = ("name", "project")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["project", "name"],
+                name="unique_project_datasource",
+                condition=models.Q(deleted_at=None),
+            )
+        ]
         ordering = ('-created',)
 
     def __str__(self):
@@ -317,7 +323,7 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
 
     def get_fields_names(self):
         try:
-            fields = json.loads(self.preview.read()).get("fields", {})
+            fields = json.loads(self.preview.file.read()).get("fields", {})
             return [key for key in fields.keys()]
         except OSError:
             return []
@@ -489,7 +495,13 @@ class Filter(
         return str(self.id)
 
     class Meta:
-        unique_together = ("name", "datasource")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["datasource", "name"],
+                name="unique_datasource_filter",
+                condition=models.Q(deleted_at=None),
+            )
+        ]
 
     def get_fields_info(self):
         last_job = self.datasource.get_last_success_job()
@@ -518,7 +530,11 @@ class Folder(
     class Meta:
         verbose_name = _("Folder")
         verbose_name_plural = _("Folders")
-        unique_together = ("name", "project")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["project", "name"], name="unique_project_folder", condition=models.Q(deleted_at=None)
+            )
+        ]
         ordering = ('name',)
 
     def get_project(self):
@@ -556,7 +572,11 @@ class Page(
         return self.title or str(self.pk)
 
     class Meta:
-        unique_together = ("title", "folder")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["folder", "title"], name="unique_folder_page", condition=models.Q(deleted_at=None)
+            )
+        ]
         ordering = ('created',)
 
     @functional.cached_property
@@ -600,7 +620,11 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
         return self.name or str(self.pk)
 
     class Meta:
-        unique_together = ("name", "page")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["page", "name"], name="unique_page_block", condition=models.Q(deleted_at=None)
+            )
+        ]
         ordering = ('created',)
 
     def relative_path_to_save(self, filename):
