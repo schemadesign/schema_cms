@@ -17,10 +17,10 @@ export const UserFullName = styled(Link)`
 `;
 
 export const ListItem = styled(ListItemBase)`
-  min-height: 94px;
+  min-height: 120px;
 
   ${media.desktop`
-    min-height: 88px;
+    min-height: 114px;
   `};
 `;
 
