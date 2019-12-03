@@ -32,8 +32,8 @@ export const editorProps = {
 
 storiesOf('DataWranglingScript', module)
   .addDecorator(withTheme())
-  .add('admin', () => <DataWranglingScript {...defaultProps} />);
+  .add('Default (admin)', () => <DataWranglingScript {...defaultProps} />);
 
 storiesOf('DataWranglingScript', module)
   .addDecorator(withTheme(Theme.light))
-  .add('editor', () => <DataWranglingScript {...editorProps} />);
+  .add('Default (editor)', () => <DataWranglingScript {...editorProps} />);

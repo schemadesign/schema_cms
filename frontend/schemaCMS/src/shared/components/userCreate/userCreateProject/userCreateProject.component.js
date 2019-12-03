@@ -87,7 +87,7 @@ export class UserCreateProject extends PureComponent {
 
     const headerValues = {
       project: project.title,
-      user: `${user.firstName} ${user.lastName}`,
+      user: `${user.firstName || ''} ${user.lastName || ''}`,
     };
 
     return (

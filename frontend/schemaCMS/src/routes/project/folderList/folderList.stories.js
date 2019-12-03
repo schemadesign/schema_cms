@@ -27,7 +27,13 @@ export const defaultProps = {
   },
 };
 
+const noDataProps = {
+  ...defaultProps,
+  folders: [],
+};
+
 storiesOf('Project|FolderList', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
+  .add('No data', () => <FolderList {...noDataProps} />)
   .add('Default', () => <FolderList {...defaultProps} />);

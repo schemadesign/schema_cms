@@ -40,5 +40,5 @@ export const propsWithUsers = {
 
 storiesOf('Project|AddUser', module)
   .addDecorator(withTheme())
-  .add('Default', () => <AddUser {...defaultProps} />)
-  .add('with users', () => <AddUser {...propsWithUsers} />);
+  .add('No data', () => <AddUser {...defaultProps} />)
+  .add('List', () => <AddUser {...propsWithUsers} />);

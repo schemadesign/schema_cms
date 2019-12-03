@@ -4,11 +4,12 @@ import { storiesOf } from '@storybook/react';
 import { UserDetails } from './userDetails.component';
 import { withTheme } from '../../../.storybook/decorators';
 import { history } from '../../../.storybook/helpers';
+import { userData } from '../../../modules/userProfile/userProfile.mock';
 
 export const defaultProps = {
   fetchUser: Function.prototype,
   removeEditorFromProject: Function.prototype,
-  userData: {},
+  userData,
   isAdmin: true,
   history,
   match: {

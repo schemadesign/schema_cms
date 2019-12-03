@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { DataSourceList } from '../dataSourceList.component';
-import { defaultProps, propsWithDataSource, propsWithJob } from '../dataSourceList.stories';
+import { defaultProps, propsWithDataSource } from '../dataSourceList.stories';
 import { ListItemTitle } from '../../../../shared/components/listComponents/listItem.styles';
 import { PlusButton } from '../../../../shared/components/navigation';
 
@@ -18,11 +18,6 @@ describe('DataSourceList: Component', () => {
 
   it('should render correctly', () => {
     const wrapper = render(propsWithDataSource);
-    global.expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should render card with job', () => {
-    const wrapper = render(propsWithJob);
     global.expect(wrapper).toMatchSnapshot();
   });
 

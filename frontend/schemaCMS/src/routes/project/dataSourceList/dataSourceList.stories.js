@@ -4,14 +4,12 @@ import { storiesOf } from '@storybook/react';
 import { withRouter, withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { DataSourceList } from './dataSourceList.component';
-import { jobs } from '../../../modules/dataSource/jobs.mock';
 
 const dataSource = {
   created: '2019-09-09T11:23:40+0000',
   createdBy: { firstName: 'firstName', lastName: 'lastName' },
   id: 17,
   metaData: null,
-  jobs: [],
   name: 'name',
 };
 
@@ -24,12 +22,6 @@ const dataSource2 = {
     items: 246,
   },
   name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-  jobs: [],
-};
-
-const withJob = {
-  ...dataSource,
-  jobs,
 };
 
 export const defaultProps = {
@@ -51,14 +43,8 @@ export const propsWithDataSource = {
   dataSources: [dataSource, dataSource2],
 };
 
-export const propsWithJob = {
-  ...defaultProps,
-  dataSources: [withJob],
-};
-
 storiesOf('Project|DataSourceList', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('Empty', () => <DataSourceList {...defaultProps} />)
-  .add('With data source', () => <DataSourceList {...propsWithDataSource} />)
-  .add('With jobs', () => <DataSourceList {...propsWithJob} />);
+  .add('No data', () => <DataSourceList {...defaultProps} />)
+  .add('List', () => <DataSourceList {...propsWithDataSource} />);

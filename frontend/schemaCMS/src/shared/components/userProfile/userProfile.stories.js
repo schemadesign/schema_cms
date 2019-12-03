@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { UserProfile } from './userProfile.component';
-import { ROLES } from '../../../modules/userProfile/userProfile.constants';
+import { userData } from '../../../modules/userProfile/userProfile.mock';
 import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
-  values: { firstName: 'firstName', lastName: 'lastName', email: 'email', role: ROLES.EDITOR },
+  values: userData,
   isCurrentUser: false,
   handleChange: Function.prototype,
 };
