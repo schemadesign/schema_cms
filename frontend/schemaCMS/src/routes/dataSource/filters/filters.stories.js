@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Filters } from './filters.component';
-import { withRouter, withTheme } from '../../../../.storybook/decorators';
+import { withRouter, withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   dataSource: {

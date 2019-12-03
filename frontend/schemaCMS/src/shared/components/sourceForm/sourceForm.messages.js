@@ -30,24 +30,4 @@ export default defineMessages({
     id: 'dataSource.view.source.fileMaxLengthError',
     defaultMessage: "File Name shouldn't be longer than 100 characters",
   },
-  pastVersions: {
-    id: 'dataSource.view.source.pastVersions',
-    defaultMessage: 'View Past Versions',
-  },
-  removeDataSource: {
-    id: 'dataSource.view.removeDataSource',
-    defaultMessage: 'Delete Data Source',
-  },
-  cancelRemoval: {
-    id: 'dataSource.view.cancelRemoval',
-    defaultMessage: 'Cancel',
-  },
-  confirmRemoval: {
-    id: 'dataSource.view.confirmRemoval',
-    defaultMessage: 'Confirm',
-  },
-  removeTitle: {
-    id: 'dataSource.view.removeTitle',
-    defaultMessage: 'Are you sure you want to remove the data source?',
-  },
 });

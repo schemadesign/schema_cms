@@ -4,12 +4,12 @@ import { path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Container } from './createFilter.styles';
-import { FilterForm } from '../../../../shared/components/filterForm';
+import { FilterForm } from '../../../shared/components/filterForm';
 import messages from './createFilter.messages';
-import { TopHeader } from '../../../../shared/components/topHeader';
-import { ContextHeader } from '../../../../shared/components/contextHeader';
-import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
-import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
+import { TopHeader } from '../../../shared/components/topHeader';
+import { ContextHeader } from '../../../shared/components/contextHeader';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { FILTERS_STEP } from '../../../modules/dataSource/dataSource.constants';
 
 export class CreateFilter extends PureComponent {
   static propTypes = {

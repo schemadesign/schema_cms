@@ -10,4 +10,8 @@ export default defineMessages({
     id: 'project.createDataSource.subTitle',
     defaultMessage: 'Create',
   },
+  pageTitle: {
+    id: 'project.createDataSource.pageTitle',
+    defaultMessage: 'Create Data Source',
+  },
 });

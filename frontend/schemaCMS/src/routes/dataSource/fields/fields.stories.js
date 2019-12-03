@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Fields } from './fields.component';
-import { withTheme } from '../../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   fetchPreview: Function.prototype,

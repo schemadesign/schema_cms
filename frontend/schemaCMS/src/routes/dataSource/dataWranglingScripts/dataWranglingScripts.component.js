@@ -7,9 +7,9 @@ import { always, append, equals, ifElse, pathOr, reject, map, pipe, toString } f
 
 import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
-import { StepNavigation } from '../../../../shared/components/stepNavigation';
-import { SCRIPT_NAME_MAX_LENGTH } from '../../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
-import { renderWhenTrue } from '../../../../shared/utils/rendering';
+import { StepNavigation } from '../../../shared/components/stepNavigation';
+import { SCRIPT_NAME_MAX_LENGTH } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
+import { renderWhenTrue } from '../../../shared/utils/rendering';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 

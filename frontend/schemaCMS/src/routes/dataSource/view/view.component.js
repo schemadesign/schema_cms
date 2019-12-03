@@ -5,9 +5,9 @@ import { FormattedMessage } from 'react-intl';
 
 import { Container, ComingSoon } from './view.styles';
 import messages from './view.messages';
-import { Source } from '../../../shared/components/source';
-import { DataWranglingScripts } from './dataWranglingScripts';
-import { Filters } from './filters';
+import { SourceForm } from '../../../shared/components/sourceForm';
+import { DataWranglingScripts } from '../dataWranglingScripts';
+import { Filters } from '../filters';
 import { DataWranglingResult } from '../../dataWranglingResult';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -22,7 +22,7 @@ import {
   META_DATA_STEP,
 } from '../../../modules/dataSource/dataSource.constants';
 import { StepNavigation } from '../../../shared/components/stepNavigation';
-import { Fields } from './fields';
+import { Fields } from '../fields';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -93,7 +93,7 @@ export class View extends PureComponent {
 
   renderContentForm = ({ activeStep, ...props }) =>
     cond([
-      [equals(INITIAL_STEP), always(<Source {...props} />)],
+      [equals(INITIAL_STEP), always(<SourceForm {...props} />)],
       [equals(FIELDS_STEP), always(<Fields {...props} />)],
       [equals(DATA_WRANGLING_STEP), always(<DataWranglingScripts {...props} />)],
       [equals(DATA_WRANGLING_RESULT_STEP), always(<DataWranglingResult {...props} />)],

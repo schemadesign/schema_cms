@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
 import { withTheme } from '../../../.storybook/decorators';
-import { SourceComponent } from './source.component';
+import { SourceFormComponent } from './sourceForm.component';
 
 export const defaultProps = {
   dataSource: {
@@ -29,6 +29,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Shared Components|Source', module)
+storiesOf('Shared Components|Source Form', module)
   .addDecorator(withTheme())
-  .add('Default', () => <SourceComponent {...defaultProps} />);
+  .add('Default', () => <SourceFormComponent {...defaultProps} />);

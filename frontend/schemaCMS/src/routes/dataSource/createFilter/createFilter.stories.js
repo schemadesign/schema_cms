@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { CreateFilter } from './createFilter.component';
-import { withTheme } from '../../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 
 export const defaultProps = {
   fetchFieldsInfo: Function.prototype,

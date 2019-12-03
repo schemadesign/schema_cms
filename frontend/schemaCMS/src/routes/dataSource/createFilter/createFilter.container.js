@@ -6,8 +6,8 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { compose } from 'ramda';
 
 import { CreateFilter } from './createFilter.component';
-import { DataSourceRoutines, selectFieldsInfo, selectDataSource } from '../../../../modules/dataSource';
-import { FilterRoutines } from '../../../../modules/filter';
+import { DataSourceRoutines, selectFieldsInfo, selectDataSource } from '../../../modules/dataSource';
+import { FilterRoutines } from '../../../modules/filter';
 
 const mapStateToProps = createStructuredSelector({
   fieldsInfo: selectFieldsInfo,

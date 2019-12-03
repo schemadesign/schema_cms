@@ -6,10 +6,10 @@ import { Formik } from 'formik';
 import { always, append, equals, ifElse, path, reject } from 'ramda';
 
 import { ButtonContainer, FilterCounter, Header, Link, PlusButton } from './filters.styles';
-import { StepNavigation } from '../../../../shared/components/stepNavigation';
+import { StepNavigation } from '../../../shared/components/stepNavigation';
 import messages from './filters.messages';
-import { LoadingWrapper } from '../../../../shared/components/loadingWrapper';
-import { FILTERS_STEP } from '../../../../modules/dataSource/dataSource.constants';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { FILTERS_STEP } from '../../../modules/dataSource/dataSource.constants';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
