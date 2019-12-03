@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import { always, append, equals, ifElse, pathOr, reject, map, pipe, toString } from 'ramda';
+import { always, append, equals, ifElse, pathOr, reject, map, pipe, toString, uniq, insertAll } from 'ramda';
 
 import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
@@ -16,6 +16,7 @@ const { CheckboxGroup, Checkbox, FileUpload } = Form;
 export class DataWranglingScripts extends PureComponent {
   static propTypes = {
     dataWranglingScripts: PropTypes.array.isRequired,
+    customScripts: PropTypes.array.isRequired,
     fetchDataWranglingScripts: PropTypes.func.isRequired,
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
@@ -112,11 +113,12 @@ export class DataWranglingScripts extends PureComponent {
   );
 
   render() {
-    const { dataWranglingScripts, dataSource, isAdmin } = this.props;
+    const { dataWranglingScripts, dataSource, isAdmin, customScripts } = this.props;
     const { errorMessage } = this.state;
     const steps = pipe(
       pathOr([], ['activeJob', 'scripts']),
-      map(toString)
+      map(toString),
+      insertAll(0, customScripts)
     )(dataSource);
 
     return (

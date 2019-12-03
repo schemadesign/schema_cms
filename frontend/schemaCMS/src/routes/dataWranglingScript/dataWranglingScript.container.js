@@ -22,6 +22,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       fetchDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.fetchOne),
       fetchDataSource: promisifyRoutine(DataSourceRoutines.fetchOne),
+      setImageScrappingFields: promisifyRoutine(DataWranglingScriptsRoutines.setImageScrappingFields),
     },
     dispatch
   ),

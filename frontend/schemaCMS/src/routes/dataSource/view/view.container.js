@@ -13,7 +13,11 @@ import {
   selectPreviewData,
   selectIsAnyJobProcessing,
 } from '../../../modules/dataSource';
-import { DataWranglingScriptsRoutines, selectDataWranglingScripts } from '../../../modules/dataWranglingScripts';
+import {
+  DataWranglingScriptsRoutines,
+  selectDataWranglingScripts,
+  selectCustomScripts,
+} from '../../../modules/dataWranglingScripts';
 import { selectFilters } from '../../../modules/filter';
 import { FilterRoutines } from '../../../modules/filter/filter.redux';
 import { selectIsAdmin } from '../../../modules/userProfile';
@@ -25,6 +29,7 @@ const mapStateToProps = createStructuredSelector({
   previewData: selectPreviewData,
   isAnyJobProcessing: selectIsAnyJobProcessing,
   isAdmin: selectIsAdmin,
+  customScripts: selectCustomScripts,
 });
 
 export const mapDispatchToProps = dispatch => ({

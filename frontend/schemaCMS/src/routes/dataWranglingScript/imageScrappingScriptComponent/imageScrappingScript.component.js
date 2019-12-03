@@ -28,12 +28,14 @@ export class ImageScrappingScript extends PureComponent {
     fetchDataSource: PropTypes.func.isRequired,
     dataWranglingScript: PropTypes.object,
     fieldNames: PropTypes.array.isRequired,
+    setImageScrappingFields: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     isAdmin: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
+        scriptId: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   };
@@ -80,6 +82,13 @@ export class ImageScrappingScript extends PureComponent {
 
     return history.push(`/datasource/${dataWranglingScript.datasource}/${DATA_WRANGLING_STEP}`);
   };
+
+  handleOkClick = () =>
+    this.props.setImageScrappingFields({
+      imageScrappingFields: this.state.selectedFields,
+      scriptId: path(['match', 'params', 'scriptId'], this.props),
+      dataSourceId: path(['match', 'params', 'dataSourceId'], this.props),
+    });
 
   renderCheckboxes = (name, index) => (
     <Checkbox id={`checkbox-${index}`} value={name} key={index} isEdit>
@@ -129,7 +138,7 @@ export class ImageScrappingScript extends PureComponent {
         </Form>
         <NavigationContainer>
           <BackButton onClick={this.handleGoToDataWranglingList(match, history)} />
-          <NextButton onClick={this.handleGoToDataWranglingList(match, history)}>
+          <NextButton onClick={this.handleOkClick}>
             <FormattedMessage {...messages.ok} />
           </NextButton>
         </NavigationContainer>

@@ -75,11 +75,25 @@ function* fetchOne({ payload: { scriptId } }) {
   }
 }
 
+function* setImageScrappingFields({ payload }) {
+  try {
+    yield put(DataWranglingScriptsRoutines.setImageScrappingFields.request());
+
+    yield put(DataWranglingScriptsRoutines.setImageScrappingFields.success(payload));
+    browserHistory.push(`/datasource/${payload.dataSourceId}/3`);
+  } catch (error) {
+    yield put(DataWranglingScriptsRoutines.setImageScrappingFields.failure(error));
+  } finally {
+    yield put(DataWranglingScriptsRoutines.setImageScrappingFields.fulfill());
+  }
+}
+
 export function* watchDataWranglingScripts() {
   yield all([
     takeLatest(DataWranglingScriptsRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(DataWranglingScriptsRoutines.sendList.TRIGGER, sendList),
     takeLatest(DataWranglingScriptsRoutines.uploadScript.TRIGGER, uploadScript),
     takeLatest(DataWranglingScriptsRoutines.fetchOne.TRIGGER, fetchOne),
+    takeLatest(DataWranglingScriptsRoutines.setImageScrappingFields.TRIGGER, setImageScrappingFields),
   ]);
 }
