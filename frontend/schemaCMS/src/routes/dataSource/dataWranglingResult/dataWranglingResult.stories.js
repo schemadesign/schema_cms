@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import { DataWranglingResult } from './dataWranglingResult.component';
 import { tableFields as fields, tableData as data } from '../../../shared/utils/dataMock';
 import { JOB_STATE_FAILURE, JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
@@ -11,17 +12,13 @@ export const defaultProps = {
     jobs: [{ id: 1, jobState: JOB_STATE_FAILURE }, { id: 2, jobState: JOB_STATE_SUCCESS }],
     metaData: {},
   },
-  history: {
-    push: Function.prototype,
-  },
   previewData: {
     fields,
     data,
   },
   fetchPreview: Function.prototype,
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
-  },
+  history,
+  intl,
   match: {
     params: {
       projectId: '1',
@@ -32,6 +29,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('DataWranglingResult', module)
+storiesOf('Data Source|DataWranglingResult', module)
   .addDecorator(withTheme())
   .add('Default', () => <DataWranglingResult {...defaultProps} />);

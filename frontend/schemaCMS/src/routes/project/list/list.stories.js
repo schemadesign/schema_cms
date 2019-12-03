@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
 import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import { PROJECT_STATUSES } from '../../../modules/project/project.constants';
 import { List } from './list.component';
 
@@ -10,8 +11,8 @@ export const emptyListProps = {
   isAdmin: true,
   list: [],
   fetchProjectsList: Function.prototype,
-  history: {},
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+  history,
+  intl,
 };
 
 export const defaultProps = {

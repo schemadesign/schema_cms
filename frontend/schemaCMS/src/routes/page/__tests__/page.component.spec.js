@@ -2,9 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { Page } from '../page.component';
-import { defaultProps } from '../page.stories';
 
 describe('Page: Component', () => {
+  const defaultProps = {
+    match: {
+      path: 'path',
+    },
+  };
+
   const component = props => <Page {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

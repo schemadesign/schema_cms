@@ -2,12 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { NotFoundComponent as NotFound } from '../notFound.component';
+import { defaultProps } from '../notFound.stories';
 
 describe('NotFound: Component', () => {
-  const defaultProps = {
-    intl: { formatMessage: ({ id }) => id },
-  };
-
   const component = props => <NotFound {...defaultProps} {...props} />;
 
   it('should render correctly', () => {

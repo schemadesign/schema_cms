@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { JobDetail } from './jobDetail.component';
 import { INITIAL_VALUES, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
 import { withRouter, withTheme } from '../../.storybook/decorators';
+import { history, intl } from '../../.storybook/helpers';
 
 export const defaultProps = {
   job: {
@@ -14,21 +15,19 @@ export const defaultProps = {
   },
   fetchOne: Function.prototype,
   values: INITIAL_VALUES,
-  history: {
-    push: Function.prototype,
-  },
-  match: {
-    params: {
-      jobId: '1',
-    },
-  },
   dirty: true,
   isValid: true,
   isSubmitting: false,
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
   steps: [{ scriptName: 'scriptName 1' }, { scriptName: 'scriptName 2' }, { scriptName: 'scriptName 3' }],
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+  history,
+  intl,
+  match: {
+    params: {
+      jobId: '1',
+    },
+  },
 };
 
 storiesOf('JobDetail', module)

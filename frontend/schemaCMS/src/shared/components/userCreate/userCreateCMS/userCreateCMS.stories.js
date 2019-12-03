@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withTheme } from '../../../../.storybook/decorators';
+import { intl } from '../../../../.storybook/helpers';
 import { UserCreateCMS } from './userCreateCMS.component';
 
 export const userCreateCMSProps = {
@@ -9,9 +10,7 @@ export const userCreateCMSProps = {
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   values: {},
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
-  },
+  intl,
 };
 
 storiesOf('Shared Components|UserCreate/UserCreateCMS', module)

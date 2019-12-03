@@ -3,18 +3,15 @@ import { storiesOf } from '@storybook/react';
 
 import { Fields } from './fields.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import { tableFields as fields, tableData as data } from '../../../shared/utils/dataMock';
 
 export const noDataProps = {
   fetchPreview: Function.prototype,
   previewData: {},
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
-  },
   dataSource: {},
-  history: {
-    push: Function.prototype,
-  },
+  history,
+  intl,
   match: {
     params: {
       step: '2',
@@ -26,7 +23,7 @@ export const noDataProps = {
 export const defaultProps = {
   ...noDataProps,
   previewData: { data, fields },
-}
+};
 
 storiesOf('Data Source|Fields', module)
   .addDecorator(withTheme())
