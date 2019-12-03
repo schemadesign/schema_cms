@@ -4,15 +4,14 @@ import { storiesOf } from '@storybook/react';
 import { JobList } from './jobList.component';
 import { JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
 import { withTheme } from '../../../.storybook/decorators';
+import { history } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   fetchJobList: Function.prototype,
   revertToJob: Function.prototype,
   jobList: [],
   dataSource: { jobActive: 1 },
-  history: {
-    push: Function.prototype,
-  },
+  history,
   match: {
     params: {
       dataSourceId: '1',

@@ -2,19 +2,16 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { User } from '../user.component';
+import { history, intl } from '../../../.storybook/helpers';
 
 const defaultProps = {
   createUserProject: Function.prototype,
   createUserCMS: Function.prototype,
   isAdmin: true,
-  history: {
-    push: Function.prototype,
-  },
+  history,
+  intl,
   match: {
     path: '/user',
-  },
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
   },
 };
 

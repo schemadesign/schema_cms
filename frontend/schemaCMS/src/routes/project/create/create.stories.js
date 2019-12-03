@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Create } from './create.component';
 import { INITIAL_VALUES, PROJECT_STATUS, PROJECT_TITLE } from '../../../modules/project/project.constants';
 import { withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   values: {
@@ -19,8 +20,8 @@ export const defaultProps = {
   isAdmin: true,
   isValid: true,
   isSubmitting: false,
-  history: { push: Function.prototype },
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+  history,
+  intl,
 };
 
 storiesOf('Project|Create', module)

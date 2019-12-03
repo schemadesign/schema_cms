@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withRouter, withTheme } from '../../../.storybook/decorators';
 
+import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import { DataWranglingScripts } from './dataWranglingScripts.component';
 
 export const defaultProps = {
@@ -12,9 +13,8 @@ export const defaultProps = {
   uploadScript: Function.prototype,
   sendUpdatedDataWranglingScript: Function.prototype,
   isAdmin: true,
-  history: {
-    push: Function.prototype,
-  },
+  history,
+  intl,
   match: {
     url: '/datasource/14/3',
     params: {
@@ -23,7 +23,6 @@ export const defaultProps = {
       step: '3',
     },
   },
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
 storiesOf('Data Source|DataWranglingScripts', module)

@@ -3,6 +3,6 @@ import { storiesOf } from '@storybook/react';
 
 import { NotAuthorized } from './notAuthorized.component';
 
-const defaultProps = {};
+export const defaultProps = {};
 
 storiesOf('NotAuthorized', module).add('Default', () => <NotAuthorized {...defaultProps} />);

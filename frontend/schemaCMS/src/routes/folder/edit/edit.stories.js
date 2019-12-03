@@ -3,10 +3,10 @@ import { storiesOf } from '@storybook/react';
 
 import { Edit } from './edit.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import { FOLDER_NAME } from '../../../modules/folder/folder.constants';
 
 export const defaultProps = {
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
   values: {
     [FOLDER_NAME]: 'name',
   },
@@ -21,13 +21,12 @@ export const defaultProps = {
   handleBlur: Function.prototype,
   fetchFolder: Function.prototype,
   removeFolder: Function.prototype,
+  history,
+  intl,
   match: {
     params: {
       folderId: '1',
     },
-  },
-  history: {
-    push: Function.prototype,
   },
 };
 

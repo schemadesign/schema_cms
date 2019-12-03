@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { PageForm } from './pageForm.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   values: {
@@ -11,7 +12,7 @@ export const defaultProps = {
     keywords: 'keywords',
   },
   handleChange: Function.prototype,
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+  intl,
 };
 
 storiesOf('Shared Components|PageForm', module)

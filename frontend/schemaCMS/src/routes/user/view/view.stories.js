@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { View } from './view.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { history } from '../../../.storybook/helpers';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 export const defaultProps = {
@@ -11,9 +12,7 @@ export const defaultProps = {
   makeAdmin: Function.prototype,
   userData: {},
   isAdmin: false,
-  history: {
-    push: Function.prototype,
-  },
+  history,
   match: { params: { userId: '1' } },
 };
 

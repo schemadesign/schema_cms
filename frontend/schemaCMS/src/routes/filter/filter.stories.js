@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Filter } from './filter.component';
 import { withTheme } from '../../.storybook/decorators';
+import { history } from '../../.storybook/helpers';
 
 export const defaultProps = {
   updateFilter: Function.prototype,
@@ -22,14 +23,12 @@ export const defaultProps = {
       name: 'name',
     },
   },
+  history,
   match: {
     params: {
       filterId: '1',
       step: '5',
     },
-  },
-  history: {
-    push: Function.prototype,
   },
 };
 

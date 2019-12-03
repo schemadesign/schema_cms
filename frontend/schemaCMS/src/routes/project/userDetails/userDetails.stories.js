@@ -3,13 +3,14 @@ import { storiesOf } from '@storybook/react';
 
 import { UserDetails } from './userDetails.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { history } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   fetchUser: Function.prototype,
   removeEditorFromProject: Function.prototype,
   userData: {},
   isAdmin: true,
-  history: { push: Function.prototype },
+  history,
   match: {
     params: {
       userId: '1',

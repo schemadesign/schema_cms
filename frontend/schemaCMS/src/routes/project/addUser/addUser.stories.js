@@ -2,21 +2,22 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withTheme } from '../../../.storybook/decorators';
+import { history } from '../../../.storybook/helpers';
 import { AddUser } from './addUser.component';
 
 export const defaultProps = {
-  match: {
-    params: {
-      projectId: '1',
-    },
-  },
   fetchUsers: Function.prototype,
   removeUser: Function.prototype,
   fetchProjectEditors: Function.prototype,
   users: [],
   usersInProject: [],
   isAdmin: true,
-  history: { push: Function.prototype },
+  history,
+  match: {
+    params: {
+      projectId: '1',
+    },
+  },
 };
 
 const email = 'loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com';

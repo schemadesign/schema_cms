@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withTheme } from '../../../../.storybook/decorators';
+import { intl } from '../../../../.storybook/helpers';
 import { UserCreateProject } from './userCreateProject.component';
 
 export const userCreateProjectProps = {
@@ -16,13 +17,11 @@ export const userCreateProjectProps = {
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   values: {},
+  intl,
   match: {
     params: {
       projectId: 1,
     },
-  },
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
   },
 };
 

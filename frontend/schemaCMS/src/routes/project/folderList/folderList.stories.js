@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { FolderList } from './folderList.component';
 import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   folders: [
@@ -17,8 +18,8 @@ export const defaultProps = {
     },
   ],
   fetchFolders: Function.prototype,
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
-  history: { push: Function.prototype },
+  history,
+  intl,
   match: {
     params: {
       projectId: '1',

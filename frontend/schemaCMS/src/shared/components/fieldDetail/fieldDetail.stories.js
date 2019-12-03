@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withTheme } from '../../../.storybook/decorators';
+import { intl } from '../../../.storybook/helpers';
 import { FieldDetail } from './fieldDetail.component';
 
 const long = `
@@ -26,9 +27,7 @@ export const defaultProps = {
     percentile10: long,
     percentile25: 100283.30095,
   },
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
-  },
+  intl,
 };
 
 storiesOf('Shared Components|FieldDetail', module)

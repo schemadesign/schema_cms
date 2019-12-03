@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
 import { withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import { SourceComponent } from './source.component';
 
 export const defaultProps = {
@@ -13,12 +14,9 @@ export const defaultProps = {
   theme: Theme.dark,
   onDataSourceChange: Function.prototype,
   removeDataSource: Function.prototype,
-  history: {
-    push: Function.prototype,
-  },
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
-  },
+  isAnyJobProcessing: false,
+  history,
+  intl,
   match: {
     params: {
       projectId: '1',
@@ -26,6 +24,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Shared Components|Source', module)
+storiesOf('Data Source|Source', module)
   .addDecorator(withTheme())
   .add('Default', () => <SourceComponent {...defaultProps} />);
