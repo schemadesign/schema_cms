@@ -11,8 +11,6 @@ import { DataWranglingScripts } from './dataWranglingScripts';
 import { DataWranglingResult } from '../dataWranglingResult';
 import { renderWhenTrue } from '../../shared/utils/rendering';
 
-const INITIAL_STEP = 1;
-
 export default class DataSource extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
@@ -49,21 +47,21 @@ export default class DataSource extends PureComponent {
     } = this.props;
     const sourcePath = `${path}/source`;
     const previewPath = `${path}/preview`;
-    const pathAddFilter = `${path}/filter`;
     const jobListPath = `${path}/job`;
     const filtersPath = `${path}/filters`;
+    const addFilterPath = `${path}/filters/add`;
     const resultPath = `${path}/result`;
     const stepsPath = `${path}/steps`;
 
     return (
       <Switch>
         <Route exact path={jobListPath} component={JobList} />
-        <Redirect exact path={path} to={`${path}/${INITIAL_STEP}`} />
+        <Redirect exact path={path} to={sourcePath} />
         <Route exact path={sourcePath} component={Source} />
         <Route exact path={previewPath} component={Fields} />
-        <Route exact path={pathAddFilter} component={CreateFilter} />
-        <Route exact path={filtersPath} component={Filters} />
         <Route exact path={stepsPath} component={DataWranglingScripts} />
+        <Route exact path={addFilterPath} component={CreateFilter} />
+        <Route exact path={filtersPath} component={Filters} />
         <Route exact path={resultPath} component={DataWranglingResult} />
       </Switch>
     );

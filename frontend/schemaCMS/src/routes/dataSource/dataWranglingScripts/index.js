@@ -1,1 +1,1 @@
-export { DataWranglingScripts } from './dataWranglingScripts.component';
+export { default as DataWranglingScripts } from './dataWranglingScripts.container';

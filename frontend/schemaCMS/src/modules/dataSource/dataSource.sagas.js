@@ -5,7 +5,7 @@ import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
-import { FETCH_LIST_DELAY, FIELDS_STEP } from './dataSource.constants';
+import { FETCH_LIST_DELAY } from './dataSource.constants';
 import { getIsAnyResultProcessing } from '../../shared/utils/helpers';
 
 const PAGE_SIZE = 1000;
@@ -25,7 +25,7 @@ function* create({ payload }) {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
-    browserHistory.push(`/datasource/${data.id}/${FIELDS_STEP}`);
+    browserHistory.push(`project/${payload.projectId}/datasource`);
     yield put(DataSourceRoutines.create.success(data));
   } catch (error) {
     yield put(DataSourceRoutines.create.failure(error));

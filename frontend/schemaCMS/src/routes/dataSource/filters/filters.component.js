@@ -4,12 +4,14 @@ import { FormattedMessage } from 'react-intl';
 import { Form, Icons } from 'schemaUI';
 import { Formik } from 'formik';
 import { always, append, equals, ifElse, path, reject } from 'ramda';
+import Helmet from 'react-helmet';
 
 import { ButtonContainer, FilterCounter, Header, Link, PlusButton } from './filters.styles';
 import { StepNavigation } from '../../../shared/components/stepNavigation';
 import messages from './filters.messages';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { FILTERS_STEP } from '../../../modules/dataSource/dataSource.constants';
+import { TopHeader } from '../../../shared/components/topHeader';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
@@ -19,6 +21,8 @@ export class Filters extends PureComponent {
     filters: PropTypes.array.isRequired,
     fetchFilters: PropTypes.func.isRequired,
     setFilters: PropTypes.func.isRequired,
+    dataSource: PropTypes.object.isRequired,
+    intl: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
@@ -62,7 +66,7 @@ export class Filters extends PureComponent {
 
   handleCreateFilter = () => {
     const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
-    this.props.history.push(`/datasource/${dataSourceId}/${FILTERS_STEP}/add`);
+    this.props.history.push(`/datasource/${dataSourceId}/filters/add`);
   };
 
   renderCheckboxes = ({ id, name }, index) => (
@@ -72,11 +76,16 @@ export class Filters extends PureComponent {
   );
 
   renderContent = () => {
-    const { filters = [] } = this.props;
+    const { filters = [], dataSource } = this.props;
     const initialValues = filters.filter(({ isActive }) => isActive).map(({ id }) => id.toString());
+    const headerTitle = dataSource.name;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
+        <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Header>
           <ButtonContainer>
             <PlusButton onClick={this.handleCreateFilter}>

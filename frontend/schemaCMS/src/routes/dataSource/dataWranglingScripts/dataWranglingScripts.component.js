@@ -4,12 +4,15 @@ import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
 import { always, append, equals, ifElse, pathOr, reject, map, pipe, toString } from 'ramda';
+import Helmet from 'react-helmet';
 
-import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
+import { Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import { StepNavigation } from '../../../shared/components/stepNavigation';
 import { SCRIPT_NAME_MAX_LENGTH } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { TopHeader } from '../../../shared/components/topHeader';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
@@ -20,6 +23,7 @@ export class DataWranglingScripts extends PureComponent {
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
     dataSource: PropTypes.object.isRequired,
+    intl: PropTypes.object.isRequired,
     isAdmin: PropTypes.bool.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
@@ -115,9 +119,14 @@ export class DataWranglingScripts extends PureComponent {
       pathOr([], ['activeJob', 'scripts']),
       map(toString)
     )(dataSource);
+    const headerTitle = dataSource.name;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
-      <Container>
+      <Fragment>
+        <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Header>
           <Empty />
           <StepCounter>
@@ -149,7 +158,7 @@ export class DataWranglingScripts extends PureComponent {
             );
           }}
         </Formik>
-      </Container>
+      </Fragment>
     );
   }
 }

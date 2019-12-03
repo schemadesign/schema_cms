@@ -10,6 +10,7 @@ import messages from './createDataSource.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DATA_SOURCE_SCHEMA } from '../../../modules/dataSource/dataSource.constants';
 import { StepNavigation } from '../../../shared/components/stepNavigation';
+import { errorMessageParser } from '../../../shared/utils/helpers';
 
 export class CreateDataSource extends PureComponent {
   static propTypes = {
@@ -20,13 +21,25 @@ export class CreateDataSource extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }).isRequired,
-    onDataSourceChange: PropTypes.func.isRequired,
+    createDataSource: PropTypes.func.isRequired,
   };
 
-  getHeaderAndMenuConfig = () => ({
-    headerTitle: <FormattedMessage {...messages.title} />,
-    headerSubtitle: <FormattedMessage {...messages.subTitle} />,
-  });
+  handleSubmit = async (requestData, { setErrors, setSubmitting }) => {
+    const { createDataSource, match } = this.props;
+    const { projectId } = match.params;
+
+    try {
+      setSubmitting(true);
+      await createDataSource({ requestData, projectId });
+    } catch (errors) {
+      const { formatMessage } = this.props.intl;
+      const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+      setErrors(errorMessages);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   render() {
     const { intl, ...restProps } = this.props;
