@@ -4,7 +4,6 @@ exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -80,7 +79,6 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -182,7 +180,6 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

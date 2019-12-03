@@ -64,10 +64,13 @@ class MetaDataModel(models.Model):
             raise ValueError("Cannot schedule meta processing without source file")
         with transaction.atomic():
             try:
-                obj.meta_data.delete()
+                obj.meta_data.deleted = True  # set flag to hard delete later
+                obj.meta_data.delete()  # hard delete
             except models.ObjectDoesNotExist:
                 pass
-            services.schedule_object_meta_processing(obj=obj, source_file_size=file.size)
+            transaction.on_commit(
+                lambda: services.schedule_object_meta_processing(obj=obj, source_file_size=file.size)
+            )
 
 
 class Project(
@@ -191,13 +194,14 @@ class DataSource(
             return
         with transaction.atomic():
             meta, _ = DataSourceMeta.objects.update_or_create(
-                datasource=self, defaults={"fields": fields, "items": items}
+                datasource_id=self.id, defaults={"fields": fields, "items": items}
             )
             file_name, _ = self.get_original_file_name(self.file.name)
             meta.preview.save(
                 f"{file_name}_preview.json",
                 django.core.files.base.ContentFile(content=json.dumps(preview_data).encode()),
             )
+            meta.save(update_fields=["preview"])
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
@@ -312,10 +316,11 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
         return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
 
     def get_fields_names(self):
-        fields = json.loads(self.preview.read()).get("fields")
-        if fields:
+        try:
+            fields = json.loads(self.preview.read()).get("fields", {})
             return [key for key in fields.keys()]
-        return []
+        except OSError:
+            return []
 
 
 class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
@@ -332,6 +337,7 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
     )
     body = models.TextField(blank=True)
     last_file_modification = models.DateTimeField(null=True)
+    specs = pg_fields.JSONField(default=dict, blank=True, editable=False)
 
     def __str__(self):
         return self.name

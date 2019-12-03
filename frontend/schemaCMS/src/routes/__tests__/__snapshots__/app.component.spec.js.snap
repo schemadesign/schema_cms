@@ -96,7 +96,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "text": "#000",
         },
         "providerContainer": Object {
-          "backgroundColor": "#FFF",
           "minHeight": "100vh",
         },
         "radioButton": Object {
@@ -241,7 +240,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
             "text": "#000",
           },
           "providerContainer": Object {
-            "backgroundColor": "#FFF",
             "minHeight": "100vh",
           },
           "radioButton": Object {
@@ -334,11 +332,18 @@ exports[`App: Component should not render App when language is not set 1`] = `
         <GlobalStyleComponent />
         <DesktopTopHeader />
         <styled.div>
-          <div
-            className="app__children"
+          <LoadingWrapper
+            error={null}
+            loading={true}
+            noData={false}
+            noDataContent={null}
           >
-            Children
-          </div>
+            <div
+              className="app__children"
+            >
+              Children
+            </div>
+          </LoadingWrapper>
         </styled.div>
       </styled.div>
     </ThemeProvider>
@@ -442,7 +447,6 @@ exports[`App: Component should render App when language is set 1`] = `
           "text": "#000",
         },
         "providerContainer": Object {
-          "backgroundColor": "#FFF",
           "minHeight": "100vh",
         },
         "radioButton": Object {
@@ -587,7 +591,6 @@ exports[`App: Component should render App when language is set 1`] = `
             "text": "#000",
           },
           "providerContainer": Object {
-            "backgroundColor": "#FFF",
             "minHeight": "100vh",
           },
           "radioButton": Object {
@@ -680,11 +683,18 @@ exports[`App: Component should render App when language is set 1`] = `
         <GlobalStyleComponent />
         <DesktopTopHeader />
         <styled.div>
-          <div
-            className="app__children"
+          <LoadingWrapper
+            error={null}
+            loading={true}
+            noData={false}
+            noDataContent={null}
           >
-            Children
-          </div>
+            <div
+              className="app__children"
+            >
+              Children
+            </div>
+          </LoadingWrapper>
         </styled.div>
       </styled.div>
     </ThemeProvider>

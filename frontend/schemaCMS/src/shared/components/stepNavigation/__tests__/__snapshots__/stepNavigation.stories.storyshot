@@ -70,7 +70,6 @@ exports[`Storyshots Shared Components|StepNavigation Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -326,7 +325,6 @@ exports[`Storyshots Shared Components|StepNavigation Disabled back 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -582,7 +580,6 @@ exports[`Storyshots Shared Components|StepNavigation Disabled next 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -838,7 +835,6 @@ exports[`Storyshots Shared Components|StepNavigation Last step 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -1068,7 +1064,6 @@ exports[`Storyshots Shared Components|StepNavigation Loading 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -1324,7 +1319,6 @@ exports[`Storyshots Shared Components|StepNavigation Next step 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

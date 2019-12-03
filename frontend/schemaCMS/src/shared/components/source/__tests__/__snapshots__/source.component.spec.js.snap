@@ -92,7 +92,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "text": "#FFF",
       },
       "providerContainer": Object {
-        "backgroundColor": "#000",
         "minHeight": "100vh",
       },
       "radioButton": Object {
@@ -269,7 +268,6 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "text": "#FFF",
       },
       "providerContainer": Object {
-        "backgroundColor": "#000",
         "minHeight": "100vh",
       },
       "radioButton": Object {

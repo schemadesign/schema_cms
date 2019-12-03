@@ -1,6 +1,7 @@
 import { createActions, createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
+import { ROLES } from './userProfile.constants';
 
 const prefix = 'USER_PROFILE/';
 
@@ -25,9 +26,14 @@ export const UserProfileRoutines = {
 export const INITIAL_STATE = new Immutable({
   user: {},
   isFetched: false,
+  isAdmin: false,
 });
 
-const updateUser = (state = INITIAL_STATE, { payload }) => state.set('user', payload).set('isFetched', true);
+const updateUser = (state = INITIAL_STATE, { payload }) =>
+  state
+    .set('user', payload)
+    .set('isFetched', true)
+    .set('isAdmin', payload.role === ROLES.ADMIN);
 
 const fetchUserFailure = state => state.set('user', {}).set('isFetched', true);
 

@@ -209,7 +209,7 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = WranglingScript
-        fields = ("id", "datasource", "name", "is_predefined", "created_by", "file", "body")
+        fields = ("id", "datasource", "name", "is_predefined", "created_by", "file", "body", "specs")
         extra_kwargs = {"name": {"required": False, "allow_null": True}}
 
     def create(self, validated_data):
@@ -227,7 +227,7 @@ class WranglingScriptSerializer(serializers.ModelSerializer):
 class DataSourceScriptSerializer(serializers.ModelSerializer):
     class Meta:
         model = WranglingScript
-        fields = ("id", "name", "is_predefined", "file", "body")
+        fields = ("id", "name", "is_predefined", "file", "body", "specs")
 
 
 class CreateJobSerializer(serializers.ModelSerializer):

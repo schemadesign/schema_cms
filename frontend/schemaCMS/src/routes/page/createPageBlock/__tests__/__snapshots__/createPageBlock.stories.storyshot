@@ -156,7 +156,6 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

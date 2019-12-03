@@ -12,7 +12,6 @@ exports[`Storyshots Shared Components|LoadingWrapper custom no data 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -29,7 +28,6 @@ exports[`Storyshots Shared Components|LoadingWrapper loaded 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -66,7 +64,6 @@ exports[`Storyshots Shared Components|LoadingWrapper loading 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -93,7 +90,6 @@ exports[`Storyshots Shared Components|LoadingWrapper no data 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -120,7 +116,6 @@ exports[`Storyshots Shared Components|LoadingWrapper with error 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

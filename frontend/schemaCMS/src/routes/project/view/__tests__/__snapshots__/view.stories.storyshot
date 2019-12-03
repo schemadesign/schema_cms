@@ -130,7 +130,6 @@ exports[`Storyshots Project|View default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
@@ -549,7 +548,6 @@ exports[`Storyshots Project|View no data 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }

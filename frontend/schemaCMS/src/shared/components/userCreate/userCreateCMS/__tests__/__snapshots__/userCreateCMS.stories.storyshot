@@ -164,7 +164,6 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateCMS Default 1`] = `
 <div
   style={
     Object {
-      "backgroundColor": "#000",
       "minHeight": "100vh",
     }
   }
