@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Form } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
-import { always, append, equals, ifElse, pathOr, reject, map, pipe, toString, uniq, insertAll } from 'ramda';
+import { always, append, equals, ifElse, pathOr, reject, map, pipe, toString, insertAll, propEq, find } from 'ramda';
 
 import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
-import { SCRIPT_NAME_MAX_LENGTH } from '../../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
+import {
+  IMAGE_SCRAPPING_SCRIPT_TYPE,
+  SCRIPT_NAME_MAX_LENGTH,
+} from '../../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
@@ -17,6 +20,7 @@ export class DataWranglingScripts extends PureComponent {
   static propTypes = {
     dataWranglingScripts: PropTypes.array.isRequired,
     customScripts: PropTypes.array.isRequired,
+    imageScrappingFields: PropTypes.array.isRequired,
     fetchDataWranglingScripts: PropTypes.func.isRequired,
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
@@ -41,6 +45,13 @@ export class DataWranglingScripts extends PureComponent {
 
   getScriptLink = (scriptId, name, dataSourceId) =>
     name === 'Image Scrapping' ? `/script/${scriptId}/${dataSourceId}` : `/script/${scriptId}`;
+
+  parseSteps = (script, index) =>
+    ifElse(
+      propEq('type', IMAGE_SCRAPPING_SCRIPT_TYPE),
+      always({ script, execOrder: index, options: { columns: this.props.imageScrappingFields } }),
+      always({ script, execOrder: index })
+    )(find(propEq('id', parseInt(script, 10)), this.props.dataWranglingScripts));
 
   handleUploadScript = async ({ target }) => {
     const [file] = target.files;
@@ -77,10 +88,11 @@ export class DataWranglingScripts extends PureComponent {
       setSubmitting(true);
       this.setState({ errorMessage: '' });
       const { dataSourceId } = this.props.match.params;
-      steps = steps.map((script, index) => ({ script, execOrder: index }));
+      const parsedSteps = steps.map(this.parseSteps);
 
-      await this.props.sendUpdatedDataWranglingScript({ steps, dataSourceId });
+      await this.props.sendUpdatedDataWranglingScript({ steps: parsedSteps, dataSourceId });
     } catch (error) {
+      console.error(error);
       this.setState({ errorMessage: 'errorJobFailed' });
     } finally {
       setSubmitting(false);
