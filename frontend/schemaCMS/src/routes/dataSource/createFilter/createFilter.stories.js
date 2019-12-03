@@ -11,7 +11,7 @@ export const defaultProps = {
   fieldsInfo: {
     field: {
       fieldType: 'fieldType',
-      filterType: ['filterType'],
+      filterType: ['Filter Type 1', 'Filter Type 2', 'Filter Type 3'],
       unique: 'unique',
     },
   },

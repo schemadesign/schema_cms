@@ -54,10 +54,10 @@ const editorProps = {
 storiesOf('Project|List', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('empty', () => <List {...emptyListProps} />)
-  .add('admin list', () => <List {...defaultProps} />);
+  .add('No data', () => <List {...emptyListProps} />)
+  .add('List (admin)', () => <List {...defaultProps} />);
 
 storiesOf('Project|List', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme(Theme.light))
-  .add('editor list', () => <List {...editorProps} />);
+  .add('List (editor)', () => <List {...editorProps} />);

@@ -27,5 +27,5 @@ export const defaultProps = {
 
 storiesOf('Data Source|Fields', module)
   .addDecorator(withTheme())
-  .add('no data', () => <Fields {...noDataProps} />)
-  .add('default', () => <Fields {...defaultProps} />);
+  .add('No data', () => <Fields {...noDataProps} />)
+  .add('Default', () => <Fields {...defaultProps} />);

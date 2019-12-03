@@ -29,5 +29,5 @@ export const propsWithJobs = {
 
 storiesOf('Data Source|JobList', module)
   .addDecorator(withTheme())
-  .add('no data', () => <JobList {...defaultProps} />)
-  .add('default', () => <JobList {...propsWithJobs} />);
+  .add('No data', () => <JobList {...defaultProps} />)
+  .add('Default', () => <JobList {...propsWithJobs} />);

@@ -51,5 +51,5 @@ export const defaultProps = {
 storiesOf('Project|View', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('default', () => <View {...defaultProps} />)
-  .add('no data', () => <View {...emptyProps} />);
+  .add('No data', () => <View {...emptyProps} />)
+  .add('Default', () => <View {...defaultProps} />);
