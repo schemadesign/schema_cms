@@ -11,7 +11,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Data Wrangling Result"
-        id="dataWranglingResult.pageTitle"
+        id="dataSource.dataWranglingResult.pageTitle"
         values={Object {}}
       />
     }
@@ -20,7 +20,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
     subtitle={
       <FormattedMessage
         defaultMessage="Data Wrangling Result"
-        id="dataWranglingResult.pageTitle"
+        id="dataSource.dataWranglingResult.pageTitle"
         values={Object {}}
       />
     }
@@ -337,7 +337,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
     headerSubtitle={
       <FormattedMessage
         defaultMessage="Data Wrangling Result"
-        id="dataWranglingResult.pageTitle"
+        id="dataSource.dataWranglingResult.pageTitle"
         values={Object {}}
       />
     }
@@ -346,7 +346,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
     subtitle={
       <FormattedMessage
         defaultMessage="Data Wrangling Result"
-        id="dataWranglingResult.pageTitle"
+        id="dataSource.dataWranglingResult.pageTitle"
         values={Object {}}
       />
     }

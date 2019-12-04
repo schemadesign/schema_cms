@@ -11,6 +11,6 @@ export const defaultProps = {
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
-storiesOf('DataSourceViews', module)
+storiesOf('Data Source|DataSourceViews', module)
   .addDecorator(withTheme())
   .add('Default', () => <DataSourceViews {...defaultProps} />);

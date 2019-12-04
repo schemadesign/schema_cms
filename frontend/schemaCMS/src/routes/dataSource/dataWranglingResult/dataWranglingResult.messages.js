@@ -3,11 +3,11 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   pageTitle: {
-    id: 'dataWranglingResult.pageTitle',
+    id: 'dataSource.dataWranglingResult.pageTitle',
     defaultMessage: 'Data Wrangling Result',
   },
   subTitle: {
-    id: 'dataWranglingResult.pageTitle',
+    id: 'dataSource.dataWranglingResult.pageTitle',
     defaultMessage: 'Data Wrangling Result',
   },
 });

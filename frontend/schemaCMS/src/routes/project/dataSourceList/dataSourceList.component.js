@@ -24,6 +24,7 @@ import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../list/list.styles';
 import { ListItemTitle } from '../../../shared/components/listComponents/listItem.styles';
+import { PREVIEW_PAGE } from '../../../modules/dataSource/dataSource.constants';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -90,7 +91,7 @@ export class DataSourceList extends PureComponent {
     this.props.history.push(`/project/${this.props.match.params.projectId}/datasource/add`);
 
   handleShowDataSource = ({ id }) => {
-    this.props.history.push(`/datasource/${id}/preview`);
+    this.props.history.push(`/datasource/${id}/${PREVIEW_PAGE}`);
   };
 
   renderCreatedInformation = list => (
