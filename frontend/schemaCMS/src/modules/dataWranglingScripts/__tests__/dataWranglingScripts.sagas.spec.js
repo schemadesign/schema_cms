@@ -87,4 +87,16 @@ describe('DataWranglingScripts: sagas', () => {
         .silentRun();
     });
   });
+
+  describe('setImageScrapingFields', () => {
+    it('should dispatch a success action', async () => {
+      const payload = { scriptId: '1', imageScrapingFields: ['data 1', 'data 2'] };
+
+      await expectSaga(watchDataWranglingScripts)
+        .withState(defaultState)
+        .put(DataWranglingScriptsRoutines.setImageScrapingFields.success(payload))
+        .dispatch(DataWranglingScriptsRoutines.setImageScrapingFields(payload))
+        .silentRun();
+    });
+  });
 });
