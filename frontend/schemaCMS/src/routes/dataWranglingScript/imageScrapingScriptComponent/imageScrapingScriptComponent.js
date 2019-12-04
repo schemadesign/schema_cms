@@ -50,8 +50,12 @@ export class ImageScrapingScript extends PureComponent {
     try {
       await this.props.fetchDataSource(path(['match', 'params'], this.props));
       this.setState({ loading: false, selectedFields: this.props.imageScrapingFields });
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.error(error);
+      this.setState({
+        loading: false,
+        error,
+      });
     }
   }
 
@@ -100,7 +104,7 @@ export class ImageScrapingScript extends PureComponent {
   render() {
     const headerConfig = this.getHeaderAndMenuConfig();
     const { intl, dataWranglingScript, match, history, isAdmin, fieldNames } = this.props;
-    const { loading } = this.state;
+    const { loading, error } = this.state;
     const syntaxTheme = isAdmin ? darcula : defaultStyle;
 
     const descriptionFieldProps = {
@@ -124,7 +128,7 @@ export class ImageScrapingScript extends PureComponent {
           <SyntaxHighlighter language="python" style={syntaxTheme}>
             {dataWranglingScript.body}
           </SyntaxHighlighter>
-          <LoadingWrapper loading={loading}>
+          <LoadingWrapper loading={loading} error={error}>
             {() => (
               <CheckboxGroup
                 onChange={this.handleChange}

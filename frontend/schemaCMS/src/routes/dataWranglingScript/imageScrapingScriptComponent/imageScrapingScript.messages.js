@@ -3,43 +3,43 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   pageTitle: {
-    id: 'imageScrapingScript.view.pageTitle',
+    id: 'imageScrapingScript.pageTitle',
     defaultMessage: 'View step',
   },
   title: {
-    id: 'imageScrapingScript.view.title',
+    id: 'imageScrapingScript.title',
     defaultMessage: 'Data Wrangling',
   },
   subTitle: {
-    id: 'imageScrapingScript.view.subTitle',
+    id: 'imageScrapingScript.subTitle',
     defaultMessage: 'View step',
   },
   description: {
-    id: 'imageScrapingScript.view.description',
+    id: 'imageScrapingScript.description',
     defaultMessage: 'Description',
   },
   descriptionPlaceholder: {
-    id: 'imageScrapingScript.view.descriptionPlaceholder',
+    id: 'imageScrapingScript.descriptionPlaceholder',
     defaultMessage: 'Description',
   },
   code: {
-    id: 'imageScrapingScript.view.code',
+    id: 'imageScrapingScript.code',
     defaultMessage: 'Python Code',
   },
   codePlaceholder: {
-    id: 'imageScrapingScript.view.codePlaceholder',
+    id: 'imageScrapingScript.codePlaceholder',
     defaultMessage: 'Python Code',
   },
   back: {
-    id: 'imageScrapingScript.view.back',
+    id: 'imageScrapingScript.back',
     defaultMessage: 'Back',
   },
   save: {
-    id: 'dataWranglingscripts.view.save',
+    id: 'imageScrapingScript.save',
     defaultMessage: 'Save',
   },
   ok: {
-    id: 'imageScrapingScript.view.ok',
+    id: 'imageScrapingScript.ok',
     defaultMessage: 'OK',
   },
 });

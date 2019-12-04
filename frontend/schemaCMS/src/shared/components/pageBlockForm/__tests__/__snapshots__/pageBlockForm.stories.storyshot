@@ -1876,7 +1876,9 @@ exports[`Storyshots Shared Components|PageBlockForm None type 1`] = `
                 "height": "30px",
               }
             }
-          />
+          >
+            Select type
+          </div>
         </div>
         <div
           style={

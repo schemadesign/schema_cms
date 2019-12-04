@@ -134,7 +134,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
     >
       <FormattedMessage
         defaultMessage="OK"
-        id="imageScrapingScript.view.ok"
+        id="imageScrapingScript.ok"
         values={Object {}}
       />
     </NextButton>
@@ -276,7 +276,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
     >
       <FormattedMessage
         defaultMessage="OK"
-        id="imageScrapingScript.view.ok"
+        id="imageScrapingScript.ok"
         values={Object {}}
       />
     </NextButton>

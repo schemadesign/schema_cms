@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { ImageScrapingScript } from '../imageScrapingScript.component';
+import { ImageScrapingScript } from '../imageScrapingScriptComponent';
 import { defaultProps } from '../imageScrapingScript.stories';
 import { BackButton, NextButton } from '../../../../shared/components/navigation';
 import mockScripts, { CASE_CONVERSION } from '../../../../modules/dataWranglingScripts/scripts.mock';

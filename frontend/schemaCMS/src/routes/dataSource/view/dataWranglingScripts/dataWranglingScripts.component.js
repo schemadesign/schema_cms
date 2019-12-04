@@ -123,7 +123,7 @@ export class DataWranglingScripts extends PureComponent {
 
   renderCheckboxes = ({ id, name, specs }, index) => (
     <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index}>
-      <Link to={this.getScriptLink(id, specs, this.props.match.params.dataSourceId)}>{name}</Link>
+      <Link to={this.getScriptLink(id, specs, path(['match', 'params', 'dataSourceId'], this.props))}>{name}</Link>
     </Checkbox>
   );
 

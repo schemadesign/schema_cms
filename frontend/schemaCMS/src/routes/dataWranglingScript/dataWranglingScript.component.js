@@ -6,7 +6,7 @@ import { DataWranglingScriptComponent } from './dataWranglingScriptComponent/dat
 import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { IMAGE_SCRAPING_SCRIPT_TYPE } from '../../modules/dataWranglingScripts/dataWranglingScripts.constants';
-import { ImageScrapingScript } from './imageScrapingScriptComponent/imageScrapingScript.component';
+import { ImageScrapingScript } from './imageScrapingScriptComponent/imageScrapingScriptComponent';
 
 export class DataWranglingScript extends PureComponent {
   static propTypes = {
@@ -39,11 +39,11 @@ export class DataWranglingScript extends PureComponent {
   render() {
     const { dataWranglingScript } = this.props;
     const { loading } = this.state;
-    const isCustom = dataWranglingScript.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE;
+    const isImageScraping = dataWranglingScript.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE;
 
     return (
       <LoadingWrapper loading={loading} noData={isEmpty(dataWranglingScript)}>
-        {this.renderGeneralOrCustomRoute(isCustom)}
+        {this.renderGeneralOrCustomRoute(isImageScraping)}
       </LoadingWrapper>
     );
   }

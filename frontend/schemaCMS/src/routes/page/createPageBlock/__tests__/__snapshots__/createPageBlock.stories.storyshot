@@ -595,7 +595,9 @@ exports[`Storyshots Page|CreatePageBlock Default 1`] = `
                     "height": "30px",
                   }
                 }
-              />
+              >
+                Select type
+              </div>
             </div>
             <div
               style={

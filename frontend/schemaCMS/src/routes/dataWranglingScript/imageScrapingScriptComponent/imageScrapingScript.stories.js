@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
-import { ImageScrapingScript } from './imageScrapingScript.component';
+import { ImageScrapingScript } from './imageScrapingScriptComponent';
 
 import { withTheme } from '../../../.storybook/decorators';
 import mockScripts, { BLANK_CELLS } from '../../../modules/dataWranglingScripts/scripts.mock';
@@ -37,10 +37,10 @@ export const editorProps = {
   isAdmin: false,
 }
 
-storiesOf('DataWranglingScript', module)
+storiesOf('ImageScrapingScript', module)
   .addDecorator(withTheme())
   .add('admin', () => <ImageScrapingScript {...defaultProps} />);
 
-storiesOf('DataWranglingScript', module)
+storiesOf('ImageScrapingScript', module)
   .addDecorator(withTheme(Theme.light))
   .add('editor', () => <ImageScrapingScript {...editorProps} />);
