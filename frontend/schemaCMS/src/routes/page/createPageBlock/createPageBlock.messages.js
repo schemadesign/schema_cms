@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'page.createPageBlock.create',
     defaultMessage: 'Create',
   },
+  nameBlockNameUniqueError: {
+    id: 'page.createPageBlock.nameBlockNameUniqueError',
+    defaultMessage: 'A block with this name already exists in page.',
+  },
 });
