@@ -5,8 +5,6 @@ import { expect } from 'chai';
 
 import { SelectComponent } from '../select.component';
 
-const DEFAULT_OPTION = { value: 'default', label: 'Select your favorite from the list', selected: true };
-
 const options = [
   { value: 'dolphin', label: 'Dolphin' },
   { value: 'dog', label: 'Dog' },
@@ -15,8 +13,6 @@ const options = [
   { value: 'alligator', label: 'Alligator' },
   { value: 'spider', label: 'Spider' },
 ];
-
-const optionsWithDefault = [...options, DEFAULT_OPTION];
 
 describe('Select: Component', () => {
   const defaultProps = {
@@ -33,8 +29,8 @@ describe('Select: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly with default options', () => {
-    const wrapper = render({ options: optionsWithDefault });
+  it('should render correctly with placeholder', () => {
+    const wrapper = render({ placeholder: 'Select one' });
     global.expect(wrapper).toMatchSnapshot();
   });
 

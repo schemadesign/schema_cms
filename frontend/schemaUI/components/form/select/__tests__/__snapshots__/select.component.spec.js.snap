@@ -153,7 +153,95 @@ exports[`Select: Component should render correctly 1`] = `
 </div>
 `;
 
-exports[`Select: Component should render correctly with default options 1`] = `
+exports[`Select: Component should render correctly with native 1`] = `
+<div
+  style={
+    Object {
+      "color": "#FFF",
+      "display": "flex",
+      "width": "100%",
+    }
+  }
+>
+  <select
+    onChange={[Function]}
+    onSelect={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "Dolphin",
+          "value": "dolphin",
+        },
+        Object {
+          "label": "Dog",
+          "value": "dog",
+        },
+        Object {
+          "label": "Parrot",
+          "value": "parrot",
+        },
+        Object {
+          "label": "Cat",
+          "value": "cat",
+        },
+        Object {
+          "label": "Alligator",
+          "value": "alligator",
+        },
+        Object {
+          "label": "Spider",
+          "value": "spider",
+        },
+      ]
+    }
+    placeholder=""
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+  >
+    <option
+      key="0"
+      value="dolphin"
+    >
+      Dolphin
+    </option>
+    <option
+      key="1"
+      value="dog"
+    >
+      Dog
+    </option>
+    <option
+      key="2"
+      value="parrot"
+    >
+      Parrot
+    </option>
+    <option
+      key="3"
+      value="cat"
+    >
+      Cat
+    </option>
+    <option
+      key="4"
+      value="alligator"
+    >
+      Alligator
+    </option>
+    <option
+      key="5"
+      value="spider"
+    >
+      Spider
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Select: Component should render correctly with placeholder 1`] = `
 <div
   style={
     Object {
@@ -194,7 +282,7 @@ exports[`Select: Component should render correctly with default options 1`] = `
           }
         }
       >
-        Select your favorite from the list
+        Select one
       </div>
     </div>
     <div
@@ -303,109 +391,7 @@ exports[`Select: Component should render correctly with default options 1`] = `
       >
         Spider
       </div>
-      <div
-        id="select-item-6"
-        key="6"
-        onClick={[Function]}
-        style={
-          Object {
-            "borderTop": "1px solid  #000",
-            "cursor": "pointer",
-            "display": "block",
-            "padding": "7px",
-          }
-        }
-      >
-        Select your favorite from the list
-      </div>
     </div>
   </div>
-</div>
-`;
-
-exports[`Select: Component should render correctly with native 1`] = `
-<div
-  style={
-    Object {
-      "color": "#FFF",
-      "display": "flex",
-      "width": "100%",
-    }
-  }
->
-  <select
-    onChange={[Function]}
-    onSelect={[Function]}
-    options={
-      Array [
-        Object {
-          "label": "Dolphin",
-          "value": "dolphin",
-        },
-        Object {
-          "label": "Dog",
-          "value": "dog",
-        },
-        Object {
-          "label": "Parrot",
-          "value": "parrot",
-        },
-        Object {
-          "label": "Cat",
-          "value": "cat",
-        },
-        Object {
-          "label": "Alligator",
-          "value": "alligator",
-        },
-        Object {
-          "label": "Spider",
-          "value": "spider",
-        },
-      ]
-    }
-    style={
-      Object {
-        "display": "flex",
-      }
-    }
-  >
-    <option
-      key="0"
-      value="dolphin"
-    >
-      Dolphin
-    </option>
-    <option
-      key="1"
-      value="dog"
-    >
-      Dog
-    </option>
-    <option
-      key="2"
-      value="parrot"
-    >
-      Parrot
-    </option>
-    <option
-      key="3"
-      value="cat"
-    >
-      Cat
-    </option>
-    <option
-      key="4"
-      value="alligator"
-    >
-      Alligator
-    </option>
-    <option
-      key="5"
-      value="spider"
-    >
-      Spider
-    </option>
-  </select>
 </div>
 `;

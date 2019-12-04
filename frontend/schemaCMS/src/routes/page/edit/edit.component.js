@@ -84,7 +84,7 @@ export class Edit extends PureComponent {
               <FormattedMessage {...messages.removePage} />
             </Link>
             <NavigationContainer>
-              <BackButton id="backBtn" onClick={this.handleBackClick}>
+              <BackButton id="backBtn" type="button" onClick={this.handleBackClick}>
                 <FormattedMessage {...messages.back} />
               </BackButton>
               <NextButton id="savePageBtn" type="submit" loading={isSubmitting} disabled={!isValid || isSubmitting}>

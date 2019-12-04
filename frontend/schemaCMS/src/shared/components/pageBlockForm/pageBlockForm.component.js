@@ -43,7 +43,7 @@ export class PageBlockForm extends PureComponent {
   }
 
   getStatusOptions = intl =>
-    [...VALID_TYPE_OPTIONS, NONE].map(status => ({
+    VALID_TYPE_OPTIONS.map(status => ({
       value: status,
       label: intl.formatMessage(messages[status]),
     }));
@@ -132,6 +132,7 @@ export class PageBlockForm extends PureComponent {
           label={intl.formatMessage(messages.pageBlockFieldName)}
           placeholder={intl.formatMessage(messages.pageBlockFieldNamePlaceholder)}
           fullWidth
+          isEdit
           {...restProps}
         />
         <Select
@@ -140,6 +141,7 @@ export class PageBlockForm extends PureComponent {
           value={values[BLOCK_TYPE]}
           options={this.getStatusOptions(intl)}
           onSelect={this.handleSelectStatus}
+          placeholder={intl.formatMessage(messages[NONE])}
           id="fieldBlockType"
           {...restProps}
         />

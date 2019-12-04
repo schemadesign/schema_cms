@@ -69,6 +69,7 @@ exports[`CreateFolder: Component should render correctly 1`] = `
         disabled={false}
         id="backBtn"
         onClick={[Function]}
+        type="button"
       >
         <FormattedMessage
           defaultMessage="Cancel"
