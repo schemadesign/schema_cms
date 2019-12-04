@@ -1,3 +1,4 @@
+from dataclasses import asdict
 import json
 import logging
 
@@ -25,6 +26,29 @@ def create_response(data):
     return Response(
         json.dumps(data, ensure_ascii=False, indent=4), content_type="application/json; charset=utf-8"
     )
+
+
+@app.route("/projects/<int:project_id>", methods=["GET"])
+def project_data(project_id):
+    try:
+        project = types.Project.get_by_id(id=project_id)
+    except Exception as e:
+        logging.info(f"Unable to get data source - {e}")
+        return create_response({"error": f"{e}"}), 404
+
+    return create_response(asdict(project)), 200
+
+
+@app.route("/projects/<int:project_id>/pages", methods=["GET"])
+def project_pages(project_id):
+    try:
+        project = types.Project.get_by_id(id=project_id)
+        pages = project.pages
+    except Exception as e:
+        logging.info(f"Unable to get data source - {e}")
+        return create_response({"error": f"{e}"}), 404
+
+    return create_response(pages), 200
 
 
 @app.route("/datasources/<int:data_source_id>", methods=["GET"])

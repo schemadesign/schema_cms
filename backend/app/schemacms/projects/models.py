@@ -129,13 +129,14 @@ class Project(
             "title": self.title,
             "description": self.description,
             "owner": self.owner_id,
-            "pages": [],
             "data_sources": [],
+            "pages": [],
         }
 
         if self.data_sources:
             data_sources = [
-                {"id": data_source.id, "name": data_source.name} for data_source in self.data_sources.all()
+                {"id": data_source.id, "name": data_source.name, "type": data_source.type}
+                for data_source in self.data_sources.all()
             ]
             data.update({"data_sources": data_sources})
 
@@ -173,7 +174,13 @@ class DataSource(
     objects = managers.DataSourceManager()
 
     class Meta:
-        unique_together = ("name", "project")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["project", "name"],
+                name="unique_project_datasource",
+                condition=models.Q(deleted_at=None),
+            )
+        ]
         ordering = ('-created',)
 
     def __str__(self):
@@ -266,10 +273,10 @@ class DataSource(
             return None
 
     def result_fields_info(self):
-        preview = self.current_job.meta_data.preview
         try:
+            preview = self.current_job.meta_data.preview
             fields = json.loads(preview.read())["fields"]
-        except (json.JSONDecodeError, KeyError):
+        except (DataSourceJobMetaData.DoesNotExist, json.JSONDecodeError, KeyError):
             return []
 
         data = [{"name": key, "type": map_general_dtypes(value["dtype"])} for key, value in fields.items()]
@@ -317,7 +324,7 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
 
     def get_fields_names(self):
         try:
-            fields = json.loads(self.preview.read()).get("fields", {})
+            fields = json.loads(self.preview.file.read()).get("fields", {})
             return [key for key in fields.keys()]
         except OSError:
             return []
@@ -489,7 +496,13 @@ class Filter(
         return str(self.id)
 
     class Meta:
-        unique_together = ("name", "datasource")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["datasource", "name"],
+                name="unique_datasource_filter",
+                condition=models.Q(deleted_at=None),
+            )
+        ]
 
     def get_fields_info(self):
         last_job = self.datasource.get_last_success_job()
@@ -518,7 +531,11 @@ class Folder(
     class Meta:
         verbose_name = _("Folder")
         verbose_name_plural = _("Folders")
-        unique_together = ("name", "project")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["project", "name"], name="unique_project_folder", condition=models.Q(deleted_at=None)
+            )
+        ]
         ordering = ('name',)
 
     def get_project(self):
@@ -556,7 +573,11 @@ class Page(
         return self.title or str(self.pk)
 
     class Meta:
-        unique_together = ("title", "folder")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["folder", "title"], name="unique_folder_page", condition=models.Q(deleted_at=None)
+            )
+        ]
         ordering = ('created',)
 
     @functional.cached_property
@@ -600,7 +621,11 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
         return self.name or str(self.pk)
 
     class Meta:
-        unique_together = ("name", "page")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["page", "name"], name="unique_page_block", condition=models.Q(deleted_at=None)
+            )
+        ]
         ordering = ('created',)
 
     def relative_path_to_save(self, filename):

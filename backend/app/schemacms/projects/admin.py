@@ -10,11 +10,6 @@ from schemacms.utils import admin as utils_admin
 from . import models, forms
 
 
-@admin.register(models.WranglingScript)
-class WranglingScript(utils_admin.SoftDeleteObjectAdmin):
-    readonly_fields = ("specs",)
-
-
 def update_meta_file(modeladmin, request, queryset):
     for obj in queryset.iterator():
         obj.create_meta_file()
@@ -23,6 +18,14 @@ def update_meta_file(modeladmin, request, queryset):
 def update_meta(modeladmin, request, queryset):
     for obj in queryset.iterator():
         obj.update_meta()
+
+
+@admin.register(models.WranglingScript)
+class WranglingScript(utils_admin.SoftDeleteObjectAdmin):
+    readonly_fields = ("specs",)
+
+    def soft_undelete(self, request, queryset):
+        self.handle_conflicts_on_undelate(request, queryset, field="name", model_name="Script")
 
 
 @admin.register(models.Project)
@@ -81,6 +84,9 @@ class DataSource(utils_admin.SoftDeleteObjectAdmin):
     actions = (update_meta_file, update_meta)
     list_display = ("name", "deleted_at")
 
+    def soft_undelete(self, request, queryset):
+        self.handle_conflicts_on_undelate(request, queryset, field="name", model_name="DataSource")
+
     @transaction.atomic()
     def save_model(self, request, obj, form, change):
         if 'file' in form.changed_data and obj.file:
@@ -108,25 +114,31 @@ class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
 
 @admin.register(models.Folder)
 class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ('id', 'name', 'project')
+    list_display = ('id', 'name', 'project', 'deleted_at')
     search_fields = ('name',)
     list_filter = ('project',)
+
+    def soft_undelete(self, request, queryset):
+        self.handle_unique_conflicts_on_undelate(request, queryset, field="name", model_name="Folder")
 
 
 @admin.register(models.Page)
 class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
-    list_display = ('id', 'title', 'folder', 'project')
+    list_display = ('id', 'title', 'folder', 'project', 'deleted_at')
     search_fields = ('title',)
     list_filter = ('folder',)
 
     def project(self, obj):
         return obj.folder.project.title
 
+    def soft_undelete(self, request, queryset):
+        self.handle_unique_conflicts_on_undelate(request, queryset, field="title", model_name="Page")
+
 
 @admin.register(models.Block)
 class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
     form = forms.BlockForm
-    list_display = ('id', 'name', 'page', 'folder', 'project')
+    list_display = ('id', 'name', 'page', 'folder', 'project', 'deleted_at')
     search_fields = ('name',)
     list_filter = ('page',)
 
@@ -135,3 +147,6 @@ class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
 
     def project(self, obj):
         return obj.page.folder.project.title
+
+    def soft_undelete(self, request, queryset):
+        self.handle_unique_conflicts_on_undelate(request, queryset, field="name", model_name="Block")

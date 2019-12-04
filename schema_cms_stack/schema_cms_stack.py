@@ -337,6 +337,7 @@ class LambdaWorker(core.Stack):
             handler="handler.main",
             environment={
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
+                "IMAGE_SCRAPING_FETCH_TIMEOUT": "15",
                 "AWS_IMAGE_STORAGE_BUCKET_NAME": scope.image_resize_lambda.image_bucket.bucket_name,
                 "AWS_IMAGE_STATIC_URL": scope.image_resize_lambda.image_bucket.bucket_website_url,
                 "BACKEND_URL": BACKEND_URL.format(

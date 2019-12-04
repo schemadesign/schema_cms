@@ -73,7 +73,7 @@ exports[`Storyshots Shared Components|UserList with users (as admin) 1`] = `
   flex: 0 0 auto;
   width: 100%;
   min-height: 150px;
-  min-height: 94px;
+  min-height: 120px;
 }
 
 .c3 {
@@ -115,7 +115,7 @@ exports[`Storyshots Shared Components|UserList with users (as admin) 1`] = `
 
 @media (min-width:1040px) {
   .c1 {
-    min-height: 88px;
+    min-height: 114px;
   }
 }
 
@@ -472,7 +472,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
   flex: 0 0 auto;
   width: 100%;
   min-height: 150px;
-  min-height: 94px;
+  min-height: 120px;
 }
 
 .c3 {
@@ -514,7 +514,7 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
 
 @media (min-width:1040px) {
   .c1 {
-    min-height: 88px;
+    min-height: 114px;
   }
 }
 
