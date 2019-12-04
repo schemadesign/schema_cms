@@ -5,7 +5,9 @@ import { DataWranglingScriptsRoutines, reducer as dataWranglingReducer } from '.
 
 describe('DataWranglingScripts: redux', () => {
   const defaultState = Immutable({
-    script: {},
+    script: {
+      specs: {},
+    },
     scripts: [],
     imageScrapingFields: [],
     customScripts: [],

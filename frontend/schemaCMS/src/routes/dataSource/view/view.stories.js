@@ -11,6 +11,8 @@ export const defaultProps = {
   },
   previewData: {},
   dataWranglingScripts: [],
+  customScripts: [],
+  imageScrapingFields: [],
   filters: [],
   isAnyJobProcessing: false,
   isAdmin: true,

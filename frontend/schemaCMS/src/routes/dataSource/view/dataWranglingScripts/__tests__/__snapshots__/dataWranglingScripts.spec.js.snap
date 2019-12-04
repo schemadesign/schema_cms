@@ -118,6 +118,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
   </Component>
   <StepNavigation
     bindSubmitForm={[Function]}
+    customScripts={Array []}
     dataSource={
       Object {
         "metaData": Object {},
@@ -128,10 +129,12 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         Object {
           "id": 1,
           "name": "name 1",
+          "specs": Object {},
         },
         Object {
           "id": 2,
           "name": "name 2",
+          "specs": Object {},
         },
       ]
     }
@@ -146,6 +149,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         "push": [Function],
       }
     }
+    imageScrapingFields={Array []}
     isAdmin={true}
     loading={false}
     match={

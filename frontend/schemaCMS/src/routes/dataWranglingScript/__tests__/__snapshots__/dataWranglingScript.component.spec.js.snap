@@ -3,11 +3,12 @@
 exports[`DataWranglingScript: Component should render correctly 1`] = `
 <LoadingWrapper
   error={null}
-  loading={true}
+  loading={false}
   noData={false}
   noDataContent={null}
 >
   <DataWranglingScriptComponent
+    customScripts={Array []}
     dataWranglingScript={
       Object {
         "body": "
@@ -31,14 +32,43 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
         "specs": Object {},
       }
     }
-    fetchDataWranglingScript={[MockFunction]}
-    match={
-      Object {
-        "path": Object {
-          "scriptId": 1,
-        },
+    fetchDataSource={[Function]}
+    fetchDataWranglingScript={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "scriptId": "1",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
       }
     }
+    fieldNames={Array []}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    imageScrapingFields={Array []}
+    intl={Object {}}
+    isAdmin={false}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "scriptId": "1",
+        },
+        "path": "/",
+      }
+    }
+    setImageScrapingFields={[Function]}
   />
 </LoadingWrapper>
 `;
@@ -46,11 +76,12 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
 exports[`DataWranglingScript: Component should render correctly with link to datasources 1`] = `
 <LoadingWrapper
   error={null}
-  loading={true}
+  loading={false}
   noData={false}
   noDataContent={null}
 >
   <DataWranglingScriptComponent
+    customScripts={Array []}
     dataWranglingScript={
       Object {
         "body": "
@@ -74,14 +105,43 @@ exports[`DataWranglingScript: Component should render correctly with link to dat
         "specs": Object {},
       }
     }
-    fetchDataWranglingScript={[MockFunction]}
-    match={
-      Object {
-        "path": Object {
-          "scriptId": 1,
-        },
+    fetchDataSource={[Function]}
+    fetchDataWranglingScript={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "scriptId": "1",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
       }
     }
+    fieldNames={Array []}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    imageScrapingFields={Array []}
+    intl={Object {}}
+    isAdmin={false}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "scriptId": "1",
+        },
+        "path": "/",
+      }
+    }
+    setImageScrapingFields={[Function]}
   />
 </LoadingWrapper>
 `;
@@ -94,6 +154,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
   noDataContent={null}
 >
   <DataWranglingScriptComponent
+    customScripts={Array []}
     dataWranglingScript={
       Object {
         "body": "
@@ -117,22 +178,27 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
         "specs": Object {},
       }
     }
+    fetchDataSource={[Function]}
     fetchDataWranglingScript={[Function]}
+    fieldNames={Array []}
     history={
       Object {
         "push": [Function],
       }
     }
+    imageScrapingFields={Array []}
     intl={Object {}}
     isAdmin={false}
     match={
       Object {
         "params": Object {
-          "scriptId": 1,
+          "dataSourceId": "1",
+          "scriptId": "1",
         },
         "path": "/",
       }
     }
+    setImageScrapingFields={[Function]}
   />
 </LoadingWrapper>
 `;
@@ -140,11 +206,12 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
 exports[`DataWranglingScript: Component should render correctly with route to custom script 1`] = `
 <LoadingWrapper
   error={null}
-  loading={true}
+  loading={false}
   noData={false}
   noDataContent={null}
 >
-  <ImageScrappingScript
+  <ImageScrapingScript
+    customScripts={Array []}
     dataWranglingScript={
       Object {
         "body": "
@@ -170,14 +237,43 @@ exports[`DataWranglingScript: Component should render correctly with route to cu
         },
       }
     }
-    fetchDataWranglingScript={[MockFunction]}
-    match={
-      Object {
-        "path": Object {
-          "scriptId": 1,
-        },
+    fetchDataSource={[Function]}
+    fetchDataWranglingScript={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "scriptId": "1",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
       }
     }
+    fieldNames={Array []}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    imageScrapingFields={Array []}
+    intl={Object {}}
+    isAdmin={false}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "scriptId": "1",
+        },
+        "path": "/",
+      }
+    }
+    setImageScrapingFields={[Function]}
   />
 </LoadingWrapper>
 `;

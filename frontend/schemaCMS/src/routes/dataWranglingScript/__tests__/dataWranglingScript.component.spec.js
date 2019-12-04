@@ -10,6 +10,11 @@ describe('DataWranglingScript: Component', () => {
     // eslint-disable-next-line import/no-named-as-default-member
     dataWranglingScript: mockScripts[CASE_CONVERSION],
     fetchDataWranglingScript: Function.prototype,
+    fetchDataSource: Function.prototype,
+    fieldNames: [],
+    imageScrapingFields: [],
+    setImageScrapingFields: Function.prototype,
+    customScripts: [],
     intl: {},
     history: {
       push: Function.prototype,
@@ -17,7 +22,8 @@ describe('DataWranglingScript: Component', () => {
     match: {
       path: '/',
       params: {
-        scriptId: 1,
+        scriptId: '1',
+        dataSourceId: '1',
       },
     },
     isAdmin: false,
