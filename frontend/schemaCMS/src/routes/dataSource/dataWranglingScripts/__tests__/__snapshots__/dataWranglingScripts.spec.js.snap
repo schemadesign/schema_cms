@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataWranglingScripts: Component should render correctly 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Data Wrangling"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Data Wrangling"
+        id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Data Wrangling"
+        id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      bindSubmitForm={[Function]}
+      dataSource={
+        Object {
+          "metaData": Object {},
+        }
+      }
+      dataWranglingScripts={
+        Array [
+          Object {
+            "id": 1,
+            "name": "name 1",
+          },
+          Object {
+            "id": 2,
+            "name": "name 2",
+          },
+        ]
+      }
+      fetchDataWranglingScripts={[Function]}
+      hideOnDesktop={false}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isAdmin={true}
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "3",
+          },
+          "url": "/datasource/14/3",
+        }
+      }
+      sendUpdatedDataWranglingScript={[Function]}
+      uploadScript={[Function]}
+    />
+  </ContextHeader>
+  <styled.div>
+    <styled.div />
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
+        id="dataSource.dataWranglingScripts.steps"
+        values={
+          Object {
+            "length": 2,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <Component
+        accept=".py"
+        disabled={false}
+        id="fileUpload"
+        onChange={[Function]}
+        type="file"
+      />
+    </styled.div>
+  </styled.div>
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Object {
+        "steps": Array [],
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Component />
+  </Formik>
+</Fragment>
+`;
+
+exports[`DataWranglingScripts: Component should render correctly form 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dirty": false,
+      "errors": Object {},
+      "handleBlur": [Function],
+      "handleChange": [Function],
+      "handleReset": [Function],
+      "handleSubmit": [Function],
+      "initialValues": Object {
+        "steps": Array [],
+      },
+      "isSubmitting": false,
+      "isValid": false,
+      "isValidating": false,
+      "registerField": [Function],
+      "resetForm": [Function],
+      "setError": [Function],
+      "setErrors": [Function],
+      "setFieldError": [Function],
+      "setFieldTouched": [Function],
+      "setFieldValue": [Function],
+      "setFormikState": [Function],
+      "setStatus": [Function],
+      "setSubmitting": [Function],
+      "setTouched": [Function],
+      "setValues": [Function],
+      "status": undefined,
+      "submitCount": 0,
+      "submitForm": [Function],
+      "touched": Object {},
+      "unregisterField": [Function],
+      "validate": undefined,
+      "validateField": [Function],
+      "validateForm": [Function],
+      "validateOnBlur": true,
+      "validateOnChange": true,
+      "validationSchema": undefined,
+      "values": Object {
+        "steps": Array [],
+      },
+    }
+  }
+>
+  <Component
+    id="fieldStepsCheckboxGroup"
+    name="steps"
+    onChange={[Function]}
+    value={Array []}
+  >
+    <Component
+      id="checkbox-0"
+      key="0"
+      value="1"
+    >
+      <Styled(Link)
+        to="/script/1"
+      >
+        name 1
+      </Styled(Link)>
+    </Component>
+    <Component
+      id="checkbox-1"
+      key="1"
+      value="2"
+    >
+      <Styled(Link)
+        to="/script/2"
+      >
+        name 2
+      </Styled(Link)>
+    </Component>
+  </Component>
+  <NavigationContainer
+    fixed={false}
+    hideOnDesktop={false}
+    right={true}
+  >
+    <NextButton
+      disabled={false}
+      loading={false}
+      onClick={null}
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="dataSource.dataWranglingScripts.save"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+  <DataSourceNavigation
+    bindSubmitForm={[Function]}
+    dataSource={
+      Object {
+        "metaData": Object {},
+      }
+    }
+    dataWranglingScripts={
+      Array [
+        Object {
+          "id": 1,
+          "name": "name 1",
+        },
+        Object {
+          "id": 2,
+          "name": "name 2",
+        },
+      ]
+    }
+    fetchDataWranglingScripts={[Function]}
+    hideOnDesktop={true}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAdmin={true}
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+          "projectId": "1",
+          "step": "3",
+        },
+        "url": "/datasource/14/3",
+      }
+    }
+    sendUpdatedDataWranglingScript={[Function]}
+    uploadScript={[Function]}
+  />
+</ContextProvider>
+`;

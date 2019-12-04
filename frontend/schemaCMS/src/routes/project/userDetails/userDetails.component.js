@@ -74,7 +74,7 @@ export class UserDetails extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         {this.renderContent(userData)}
         {this.renderRemoveUserButton(isAdmin)}
-        <NavigationContainer>
+        <NavigationContainer fixed>
           <BackButton type="button" onClick={this.handleBack} />
         </NavigationContainer>
         <Modal isOpen={this.state.userRemoveModalOpen} contentLabel="Confirm Removal" style={modalStyles}>

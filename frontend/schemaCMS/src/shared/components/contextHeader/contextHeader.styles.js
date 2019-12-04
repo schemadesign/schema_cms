@@ -9,7 +9,7 @@ export const Container = styled.div`
   ${media.desktop`
     display:flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin: 60px 0 40px 0;
   `};
 `;

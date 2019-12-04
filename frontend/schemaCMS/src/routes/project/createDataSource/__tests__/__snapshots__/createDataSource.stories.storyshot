@@ -1,24 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|CreateDataSource Default 1`] = `
-.c7 {
+.c10 {
   padding-top: 7px;
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  margin-top: 23px;
-}
-
-.c8 {
+.c11 {
   height: 155px;
 }
 
-.c10 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -37,24 +28,25 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
   width: 100%;
 }
 
-.c9 {
-  position: fixed;
-  padding: 40px 0 36px;
+.c12 {
   bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
   width: calc(100% - 40px);
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c11 {
+.c14 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c1 {
+.c0 {
   width: calc(100% - 50px);
 }
 
-.c4 {
+.c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
   margin: 20px -20px 0 0;
@@ -62,29 +54,45 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
   -webkit-overflow-scrolling: touch;
 }
 
-.c5 {
+.c4 {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
 }
 
-.c6 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.c1 {
+  word-break: break-word;
 }
 
 .c2 {
   word-break: break-word;
 }
 
-.c3 {
-  word-break: break-word;
+.c6 {
+  display: none;
+}
+
+.c7 {
+  margin-right: 20px;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
 }
 
 @media (min-width:1040px) {
-  .c10 {
+  .c13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -93,26 +101,41 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c12 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c14 {
     width: 240px;
   }
 }
 
 @media (min-width:1040px) {
-  .c1 {
+  .c0 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c0 {
-    margin-top: 70px;
+  .c6 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
   }
 }
 
@@ -127,303 +150,276 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
     className="c0"
   >
     <div
-      className="c1"
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingBottom": "18px",
+          "width": "100%",
+        }
+      }
     >
-      <div
-        style={
-          Object {
-            "alignItems": "flex-start",
-            "color": "#FFF",
-            "display": "flex",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "paddingBottom": "18px",
-            "width": "100%",
-          }
-        }
-      >
-        <div>
-          <div
-            className=""
-          >
-            <h2
-              className="c2"
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Data Sources
-              </span>
-            </h2>
-            <h1
-              className="c3"
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Create
-              </span>
-            </h1>
-          </div>
-        </div>
-        <button
-          disabled={false}
-          id="topHeaderOpenMenuBtn"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": 6,
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
-              }
-            }
-            viewBox="0 0 60 60"
-          >
-            <path
-              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        style={
-          Object {
-            "backgroundColor": "#000",
-            "color": "#FFF",
-            "maxWidth": null,
-            "minHeight": "100vh",
-            "padding": "18px 20px 27px",
-            "position": "fixed",
-            "right": 0,
-            "textAlign": "left",
-            "top": 0,
-            "transform": "translateX(100%)",
-            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
-            "visibility": 0,
-            "width": "100%",
-            "zIndex": 9999,
-          }
-        }
-      >
+      <div>
         <div
           className=""
         >
-          <div
-            className=""
-          >
-            <h2
-              className="c2"
-              id="headerTitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 100,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Data Sources
-              </span>
-            </h2>
-            <h1
-              className="c3"
-              id="headerSubtitle"
-              style={
-                Object {
-                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                  "fontSize": "24px",
-                  "fontWeight": 600,
-                  "letterSpacing": "-0.12px",
-                  "lineHight": 1.25,
-                  "margin": 0,
-                }
-              }
-            >
-              <span>
-                Create
-              </span>
-            </h1>
-          </div>
-        </div>
-        <div
-          className="c4"
-        >
-          <ul
-            className="c5"
-          />
-          <ul
-            className="c6"
-          />
-        </div>
-        <button
-          disabled={false}
-          id="topHeaderCloseMenuButton"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "position": "absolute",
-              "right": 0,
-              "top": "6px",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <svg
+          <h2
+            className="c1"
+            id="headerTitle"
             style={
               Object {
-                "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
               }
             }
-            viewBox="0 0 60 60"
           >
-            <path
-              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+            <span>
+              Data Sources
+            </span>
+          </h2>
+          <h1
+            className="c2"
+            id="headerSubtitle"
+            style={
+              Object {
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
+              }
+            }
+          >
+            <span>
+              Create
+            </span>
+          </h1>
+        </div>
       </div>
+      <button
+        disabled={false}
+        id="topHeaderOpenMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": 6,
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
     </div>
     <div
-      className=""
+      style={
+        Object {
+          "backgroundColor": "#000",
+          "color": "#FFF",
+          "maxWidth": null,
+          "minHeight": "100vh",
+          "padding": "18px 20px 27px",
+          "position": "fixed",
+          "right": 0,
+          "textAlign": "left",
+          "top": 0,
+          "transform": "translateX(100%)",
+          "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+          "visibility": 0,
+          "width": "100%",
+          "zIndex": 9999,
+        }
+      }
     >
       <div
         className=""
       >
         <div
-          style={
-            Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
-            }
-          }
+          className=""
         >
-          <label
-            htmlFor="name"
+          <h2
+            className="c1"
+            id="headerTitle"
             style={
               Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 100,
+                "margin": 0,
               }
             }
           >
-            Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            onBlur={[Function]}
-            onChange={[Function]}
+            <span>
+              Data Sources
+            </span>
+          </h2>
+          <h1
+            className="c2"
+            id="headerSubtitle"
             style={
               Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontSize": "18px",
-                "lineHeight": "24px",
-                "outline": "none",
-                "padding": 0,
-              }
-            }
-            type="text"
-            value=""
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
+                "fontWeight": 600,
+                "letterSpacing": "-0.12px",
+                "lineHight": 1.25,
+                "margin": 0,
               }
             }
           >
-            <div
-              className="c7"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "30px",
-                    "width": "30px",
-                  }
-                }
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
+            <span>
+              Create
+            </span>
+          </h1>
         </div>
       </div>
+      <div
+        className="c3"
+      >
+        <ul
+          className="c4"
+        />
+        <ul
+          className="c5"
+        />
+      </div>
+      <button
+        disabled={false}
+        id="topHeaderCloseMenuButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": "18px",
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "position": "absolute",
+            "right": 0,
+            "top": "6px",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#FFF",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+          viewBox="0 0 60 60"
+        >
+          <path
+            d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="c6"
+  >
+    <div
+      className="c7"
+    >
+      <h2
+        className="c8"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          Data Sources
+        </span>
+      </h2>
+      <h1
+        className="c9"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          Create
+        </span>
+      </h1>
+    </div>
+    <div
+      className=""
+    />
+  </div>
+  <div
+    className=""
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "maxWidth": "100%",
+          "paddingBottom": "30px",
+          "position": "relative",
+        }
+      }
+    >
       <label
+        htmlFor="name"
         style={
           Object {
             "border": "none",
@@ -431,290 +427,240 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
             "color": "#71737e",
             "display": "block",
             "fontSize": "14px",
-            "marginBottom": 20,
             "outline": "none",
             "paddingTop": "8px",
             "width": "100%",
           }
         }
       >
-        <span>
-          Source
-        </span>
+        Name
       </label>
+      <input
+        id="name"
+        name="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "none",
+            "color": "#FFF",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "outline": "none",
+            "padding": 0,
+          }
+        }
+        type="text"
+        value=""
+      />
       <div
         style={
           Object {
-            "display": "flex",
-            "flexDirection": "row",
-            "marginBottom": "40px",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
           }
         }
       >
         <div
+          className="c10"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "30px",
+                "width": "30px",
+              }
+            }
+            viewBox="0 0 30 30"
+          >
+            <path
+              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <label
+    style={
+      Object {
+        "border": "none",
+        "borderTop": "2px solid #2F2F36",
+        "color": "#71737e",
+        "display": "block",
+        "fontSize": "14px",
+        "marginBottom": 20,
+        "outline": "none",
+        "paddingTop": "8px",
+        "width": "100%",
+      }
+    }
+  >
+    <span>
+      Source
+    </span>
+  </label>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "marginBottom": "40px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "color": "#FFF",
+          "display": "flex",
+          "flexDirection": "column",
+          "textAlign": "center",
+        }
+      }
+    >
+      <input
+        aria-hidden={true}
+        defaultChecked={false}
+        id="file"
+        name="type"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "visibility": "hidden",
+          }
+        }
+        type="radio"
+        value="file"
+      />
+      <label
+        htmlFor="file"
+        style={
+          Object {
+            "alignItems": "center",
+            "cursor": "pointer",
+            "display": "flex",
+            "flexDirection": "column",
+            "width": 96,
+          }
+        }
+      >
+        <button
+          disabled={false}
           style={
             Object {
+              "background": "#1d1d20",
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
               "color": "#FFF",
-              "display": "flex",
-              "flexDirection": "column",
-              "textAlign": "center",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "height": 96,
+              "margin": "0",
+              "marginBottom": 10,
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "pointerEvents": "none",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": 96,
+            }
+          }
+          type="button"
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </label>
+      Spreadsheet
+    </div>
+  </div>
+  <div
+    className="c11"
+  >
+    <div
+      className="c12"
+    >
+      <div
+        className="c13"
+      >
+        <button
+          className="c14"
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
           }
         >
-          <input
-            aria-hidden={true}
-            defaultChecked={false}
-            id="file"
-            name="type"
-            onChange={[Function]}
-            style={
-              Object {
-                "height": 0,
-                "left": 0,
-                "overflow": "hidden",
-                "position": "absolute",
-                "top": 0,
-                "visibility": "hidden",
-              }
+          <span>
+            Cancel
+          </span>
+        </button>
+        <button
+          className="c14"
+          disabled={true}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#1d1d20",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#71737e",
+              "cursor": "default",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
             }
-            type="radio"
-            value="file"
-          />
-          <label
-            htmlFor="file"
-            style={
-              Object {
-                "alignItems": "center",
-                "cursor": "pointer",
-                "display": "flex",
-                "flexDirection": "column",
-                "width": 96,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              style={
-                Object {
-                  "background": "#1d1d20",
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "height": 96,
-                  "margin": "0",
-                  "marginBottom": 10,
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "pointerEvents": "none",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                  "width": 96,
-                }
-              }
-              type="button"
-            >
-              <svg
-                style={
-                  Object {
-                    "fill": "#FFF",
-                    "height": "60px",
-                    "width": "60px",
-                  }
-                }
-                viewBox="0 0 60 60"
-              >
-                <path
-                  d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </button>
-          </label>
-          Spreadsheet
-        </div>
-      </div>
-      <div
-        className="c8"
-      >
-        <div
-          className="c9"
+          }
         >
-          <div
-            className="c10"
-          >
-            <button
-              className="c11"
-              disabled={false}
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#FFF",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "margin": "0",
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                }
-              }
-            >
-              <span>
-                Cancel
-              </span>
-            </button>
-            <button
-              className="c11"
-              disabled={true}
-              onClick={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "#1d1d20",
-                  "border": "none",
-                  "borderRadius": "48px",
-                  "color": "#71737e",
-                  "cursor": "default",
-                  "display": "inline-block",
-                  "fill": "#FFF",
-                  "fontSize": "18px",
-                  "margin": "0",
-                  "minHeight": "48px",
-                  "outline": "none",
-                  "padding": "0",
-                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-                }
-              }
-            >
-              <span>
-                Next
-              </span>
-            </button>
-            <div
-              className="c12"
-            >
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "row",
-                    "margin": "0 auto",
-                    "pointerEvents": "none",
-                  }
-                }
-              >
-                <span
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "#FFF",
-                      "borderRadius": "50%",
-                      "cursor": "default",
-                      "display": "block",
-                      "height": "12px",
-                      "margin": "0 4px",
-                      "pointerEvents": "none",
-                      "width": "12px",
-                    }
-                  }
-                />
-                <span
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "#1d1d20",
-                      "borderRadius": "50%",
-                      "cursor": "pointer",
-                      "display": "block",
-                      "height": "12px",
-                      "margin": "0 4px",
-                      "width": "12px",
-                    }
-                  }
-                />
-                <span
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "#1d1d20",
-                      "borderRadius": "50%",
-                      "cursor": "pointer",
-                      "display": "block",
-                      "height": "12px",
-                      "margin": "0 4px",
-                      "width": "12px",
-                    }
-                  }
-                />
-                <span
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "#1d1d20",
-                      "borderRadius": "50%",
-                      "cursor": "pointer",
-                      "display": "block",
-                      "height": "12px",
-                      "margin": "0 4px",
-                      "width": "12px",
-                    }
-                  }
-                />
-                <span
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "#1d1d20",
-                      "borderRadius": "50%",
-                      "cursor": "pointer",
-                      "display": "block",
-                      "height": "12px",
-                      "margin": "0 4px",
-                      "width": "12px",
-                    }
-                  }
-                />
-                <span
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "#1d1d20",
-                      "borderRadius": "50%",
-                      "cursor": "pointer",
-                      "display": "block",
-                      "height": "12px",
-                      "margin": "0 4px",
-                      "width": "12px",
-                    }
-                  }
-                />
-                <span
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "#1d1d20",
-                      "borderRadius": "50%",
-                      "cursor": "pointer",
-                      "display": "block",
-                      "height": "12px",
-                      "margin": "0 4px",
-                      "width": "12px",
-                    }
-                  }
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+          <span>
+            Save
+          </span>
+        </button>
       </div>
     </div>
   </div>

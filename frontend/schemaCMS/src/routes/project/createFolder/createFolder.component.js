@@ -50,7 +50,7 @@ export class CreateFolder extends PureComponent {
             isEdit
             {...restProps}
           />
-          <NavigationContainer>
+          <NavigationContainer fixed>
             <BackButton id="backBtn" type="button" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultIcon: Component should render correctly 1`] = `
+<result.svg
+  style={
+    Object {
+      "fill": "#FFF",
+      "height": "60px",
+      "stroke": "#1d1d20",
+      "width": "60px",
+    }
+  }
+/>
+`;
+
+exports[`ResultIcon: Component should render with custom styles 1`] = `
+<result.svg
+  style={
+    Object {
+      "fill": "blue",
+      "height": "60px",
+      "stroke": "#1d1d20",
+      "width": "60px",
+    }
+  }
+/>
+`;

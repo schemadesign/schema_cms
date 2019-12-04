@@ -1,0 +1,337 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filters: Component should render correctly 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Filters"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Filters"
+        id="dataSource.filters.subTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Filters"
+        id="dataSource.filters.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "project": "1",
+        }
+      }
+      fetchFilters={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "dataSourceId": "1",
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": Promise {},
+            },
+          ],
+        }
+      }
+      filters={
+        Array [
+          Object {
+            "id": 1,
+            "isActive": true,
+            "name": "name 1",
+          },
+          Object {
+            "id": 2,
+            "isActive": false,
+            "name": "name 2",
+          },
+        ]
+      }
+      hideOnDesktop={false}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+        }
+      }
+      setFilters={[Function]}
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.div>
+      <styled.div>
+        <Styled(Component)
+          onClick={[Function]}
+        >
+          <Component />
+        </Styled(Component)>
+      </styled.div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="{length} {length, plural,one {Filter} other {Filters}}"
+          id="dataSource.view.filters.filters"
+          values={
+            Object {
+              "length": 2,
+            }
+          }
+        />
+      </styled.div>
+    </styled.div>
+    <Formik
+      enableReinitialize={true}
+      initialValues={
+        Array [
+          "1",
+        ]
+      }
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+    >
+      <Component />
+    </Formik>
+  </LoadingWrapper>
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "project": "1",
+      }
+    }
+    fetchFilters={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "dataSourceId": "1",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      }
+    }
+    filters={
+      Array [
+        Object {
+          "id": 1,
+          "isActive": true,
+          "name": "name 1",
+        },
+        Object {
+          "id": 2,
+          "isActive": false,
+          "name": "name 2",
+        },
+      ]
+    }
+    hideOnDesktop={true}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+        },
+      }
+    }
+    setFilters={[Function]}
+  />
+</Fragment>
+`;
+
+exports[`Filters: Component should render correctly with loader 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Filters"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Filters"
+        id="dataSource.filters.subTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Filters"
+        id="dataSource.filters.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "project": "1",
+        }
+      }
+      fetchFilters={[Function]}
+      filters={
+        Array [
+          Object {
+            "id": 1,
+            "isActive": true,
+            "name": "name 1",
+          },
+          Object {
+            "id": 2,
+            "isActive": false,
+            "name": "name 2",
+          },
+        ]
+      }
+      hideOnDesktop={false}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+        }
+      }
+      setFilters={[Function]}
+    />
+  </ContextHeader>
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <styled.div>
+      <styled.div>
+        <Styled(Component)
+          onClick={[Function]}
+        >
+          <Component />
+        </Styled(Component)>
+      </styled.div>
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="{length} {length, plural,one {Filter} other {Filters}}"
+          id="dataSource.view.filters.filters"
+          values={
+            Object {
+              "length": 2,
+            }
+          }
+        />
+      </styled.div>
+    </styled.div>
+    <Formik
+      enableReinitialize={true}
+      initialValues={
+        Array [
+          "1",
+        ]
+      }
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+    >
+      <Component />
+    </Formik>
+  </LoadingWrapper>
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "project": "1",
+      }
+    }
+    fetchFilters={[Function]}
+    filters={
+      Array [
+        Object {
+          "id": 1,
+          "isActive": true,
+          "name": "name 1",
+        },
+        Object {
+          "id": 2,
+          "isActive": false,
+          "name": "name 2",
+        },
+      ]
+    }
+    hideOnDesktop={true}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "dataSourceId": "1",
+        },
+      }
+    }
+    setFilters={[Function]}
+  />
+</Fragment>
+`;

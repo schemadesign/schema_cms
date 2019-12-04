@@ -157,6 +157,7 @@ exports[`List: Component should render correctly 1`] = `
     </styled.section>
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={true}
     right={true}
   >
@@ -331,6 +332,7 @@ exports[`List: Component should render correctly with loading 1`] = `
     </styled.section>
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={true}
     right={true}
   >
@@ -392,6 +394,7 @@ exports[`List: Component should render without data 1`] = `
     <styled.section />
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={true}
     right={true}
   >

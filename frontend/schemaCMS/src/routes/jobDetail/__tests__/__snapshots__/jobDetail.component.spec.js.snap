@@ -27,6 +27,7 @@ exports[`JobDetail: Component should render correctly 1`] = `
     <Component />
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >
@@ -82,6 +83,7 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
     <Component />
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >

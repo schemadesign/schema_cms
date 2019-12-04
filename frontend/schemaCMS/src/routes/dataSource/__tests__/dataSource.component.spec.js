@@ -9,8 +9,17 @@ describe('DataSource: Component', () => {
 
   const render = (props = {}) => shallow(component(props));
 
-  it('should render correctly', () => {
-    const wrapper = render();
+  it('should render without routing', async () => {
+    const fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = render({ fetchDataSource });
+    await Promise.resolve();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly', async () => {
+    const fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = render({ fetchDataSource });
+    await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
   });
 });

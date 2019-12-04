@@ -1,26 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataSource: Component should render correctly 1`] = `
-<Switch>
-  <Route
-    component={[Function]}
-    exact={true}
-    path="path/job"
+<Fragment>
+  <ProjectTabs
+    active="sources"
+    url="/project/2"
   />
-  <Redirect
-    exact={true}
-    path="path"
-    to="path/1"
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/job"
+    />
+    <Redirect
+      exact={true}
+      path="path"
+      to="path/source"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/source"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/preview"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/steps"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/filters/add"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/filters"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/result"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/views"
+    />
+  </Switch>
+</Fragment>
+`;
+
+exports[`DataSource: Component should render without routing 1`] = `
+<Fragment>
+  <ProjectTabs
+    active="sources"
+    url="/project/2"
   />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="path/:step"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="path/5/add"
-  />
-</Switch>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/job"
+    />
+    <Redirect
+      exact={true}
+      path="path"
+      to="path/source"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/source"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/preview"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/steps"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/filters/add"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/filters"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/result"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="path/views"
+    />
+  </Switch>
+</Fragment>
 `;

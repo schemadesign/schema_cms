@@ -43,6 +43,7 @@ exports[`View: Component should render correctly 1`] = `
     <Component />
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >
@@ -228,6 +229,7 @@ exports[`View: Component should render correctly for admin user 1`] = `
     <Component />
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >

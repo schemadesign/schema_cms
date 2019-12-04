@@ -109,6 +109,7 @@ exports[`Edit: Component should render correctly 1`] = `
         />
       </Styled(Span)>
       <NavigationContainer
+        fixed={true}
         hideOnDesktop={false}
         right={false}
       >
@@ -300,6 +301,7 @@ exports[`Edit: Component should render correctly with loader 1`] = `
         />
       </Styled(Span)>
       <NavigationContainer
+        fixed={true}
         hideOnDesktop={false}
         right={false}
       >

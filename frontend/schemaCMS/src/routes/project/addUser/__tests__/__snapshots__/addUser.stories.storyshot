@@ -25,9 +25,10 @@ exports[`Storyshots Project|AddUser Default 1`] = `
 }
 
 .c13 {
-  position: fixed;
-  padding: 40px 0 36px;
   bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
   width: calc(100% - 40px);
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
@@ -35,14 +36,6 @@ exports[`Storyshots Project|AddUser Default 1`] = `
 .c15 {
   width: calc(50% - 5px);
   max-width: 240px;
-}
-
-.c11 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c1 {
@@ -94,6 +87,14 @@ exports[`Storyshots Project|AddUser Default 1`] = `
   color: #FFF;
 }
 
+.c11 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 @media (min-width:1040px) {
   .c14 {
     display: -webkit-box;
@@ -105,6 +106,9 @@ exports[`Storyshots Project|AddUser Default 1`] = `
 
 @media (min-width:1040px) {
   .c13 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
 }
@@ -131,10 +135,10 @@ exports[`Storyshots Project|AddUser Default 1`] = `
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin: 60px 0 40px 0;
   }
 }
@@ -487,9 +491,10 @@ exports[`Storyshots Project|AddUser with users 1`] = `
 }
 
 .c13 {
-  position: fixed;
-  padding: 40px 0 36px;
   bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
   width: calc(100% - 40px);
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
@@ -497,14 +502,6 @@ exports[`Storyshots Project|AddUser with users 1`] = `
 .c15 {
   width: calc(50% - 5px);
   max-width: 240px;
-}
-
-.c11 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c1 {
@@ -556,6 +553,14 @@ exports[`Storyshots Project|AddUser with users 1`] = `
   color: #FFF;
 }
 
+.c11 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 @media (min-width:1040px) {
   .c14 {
     display: -webkit-box;
@@ -567,6 +572,9 @@ exports[`Storyshots Project|AddUser with users 1`] = `
 
 @media (min-width:1040px) {
   .c13 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
 }
@@ -593,10 +601,10 @@ exports[`Storyshots Project|AddUser with users 1`] = `
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin: 60px 0 40px 0;
   }
 }

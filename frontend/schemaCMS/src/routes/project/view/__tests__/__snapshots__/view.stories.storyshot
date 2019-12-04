@@ -25,19 +25,12 @@ exports[`Storyshots Project|View default 1`] = `
 }
 
 .c10 {
-  position: fixed;
-  padding: 40px 0 36px;
   bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
   width: calc(100% - 40px);
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c8 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c1 {
@@ -90,6 +83,14 @@ exports[`Storyshots Project|View default 1`] = `
   word-break: break-word;
 }
 
+.c8 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 .c0 {
   font-weight: 600;
   display: -webkit-box;
@@ -117,6 +118,9 @@ exports[`Storyshots Project|View default 1`] = `
 
 @media (min-width:1040px) {
   .c10 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
 }
@@ -443,19 +447,12 @@ exports[`Storyshots Project|View no data 1`] = `
 }
 
 .c10 {
-  position: fixed;
-  padding: 40px 0 36px;
   bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
   width: calc(100% - 40px);
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c8 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
 }
 
 .c1 {
@@ -508,6 +505,14 @@ exports[`Storyshots Project|View no data 1`] = `
   word-break: break-word;
 }
 
+.c8 {
+  color: #FFF;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
 .c0 {
   font-weight: 600;
   display: -webkit-box;
@@ -535,6 +540,9 @@ exports[`Storyshots Project|View no data 1`] = `
 
 @media (min-width:1040px) {
   .c10 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
 }

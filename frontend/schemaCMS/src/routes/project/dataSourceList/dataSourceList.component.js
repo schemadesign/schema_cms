@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, propIs, T } from 'ramda';
 
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -24,12 +23,8 @@ import {
 import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../list/list.styles';
-import {
-  DATA_WRANGLING_RESULT_STEP,
-  FIELDS_STEP,
-  INITIAL_STEP,
-} from '../../../modules/dataSource/dataSource.constants';
 import { ListItemTitle } from '../../../shared/components/listComponents/listItem.styles';
+import { PREVIEW_PAGE } from '../../../modules/dataSource/dataSource.constants';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -83,12 +78,6 @@ export class DataSourceList extends PureComponent {
     ],
   });
 
-  getStep = cond([
-    [propIs(Object, 'activeJob'), always(DATA_WRANGLING_RESULT_STEP)],
-    [propIs(Object, 'metaData'), always(FIELDS_STEP)],
-    [T, always(INITIAL_STEP)],
-  ]);
-
   getLoadingConfig = (loading, error, dataSources) => ({
     loading,
     error,
@@ -101,10 +90,8 @@ export class DataSourceList extends PureComponent {
   handleCreateDataSource = () =>
     this.props.history.push(`/project/${this.props.match.params.projectId}/datasource/add`);
 
-  handleShowDataSource = ({ id, metaData, activeJob }) => {
-    const step = this.getStep({ metaData, activeJob });
-
-    this.props.history.push(`/datasource/${id}/${step}`);
+  handleShowDataSource = ({ id }) => {
+    this.props.history.push(`/datasource/${id}/${PREVIEW_PAGE}`);
   };
 
   renderCreatedInformation = list => (
@@ -142,14 +129,14 @@ export class DataSourceList extends PureComponent {
     return <MetaDataWrapper>{elements}</MetaDataWrapper>;
   };
 
-  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData, activeJob }, index) => {
+  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData }, index) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const header = this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]);
     const footer = this.renderMetaData(metaData || {});
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>
-        <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, metaData, activeJob })}>
+        <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id })}>
           {name}
         </ListItemTitle>
       </ListItem>
@@ -175,7 +162,7 @@ export class DataSourceList extends PureComponent {
         <LoadingWrapper {...loadingConfig}>
           <ListContainer>{dataSources.map(this.renderItem)}</ListContainer>
         </LoadingWrapper>
-        <NavigationContainer hideOnDesktop>
+        <NavigationContainer fixed hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
           <PlusButton id="createDataSourceBtn" onClick={this.handleCreateDataSource} />
         </NavigationContainer>

@@ -110,7 +110,7 @@ export class PageBlockList extends PureComponent {
                   {pageBlocks.map(this.renderCheckbox)}
                 </CheckboxGroup>
               </LoadingWrapper>
-              <NavigationContainer>
+              <NavigationContainer fixed>
                 <BackArrowButton type="button" onClick={this.handleShowPages} />
                 <NextButton type="submit" onClick={submitForm} loading={isSubmitting} disabled={!dirty || isSubmitting}>
                   <FormattedMessage {...messages.save} />

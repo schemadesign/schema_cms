@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-// import { renderWhenTrueOtherwise } from '../../utils/rendering';
 import { Container, ContextContainer, Header, Title, Subtitle } from './contextHeader.styles';
 
 export class ContextHeader extends PureComponent {

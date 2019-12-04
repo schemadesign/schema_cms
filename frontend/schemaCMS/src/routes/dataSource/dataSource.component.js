@@ -1,13 +1,18 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { View } from './view';
-import { FILTERS_STEP } from '../../modules/dataSource/dataSource.constants';
-import { CreateFilter } from './view/createFilter';
+import { CreateFilter } from './createFilter';
+import { Source } from './source';
 import { JobList } from './jobList';
-
-const INITIAL_STEP = 1;
+import { Filters } from './filters';
+import { Fields } from './fields';
+import { DataWranglingScripts } from './dataWranglingScripts';
+import { DataWranglingResult } from './dataWranglingResult';
+import { DataSourceViews } from './dataSourceViews';
+import { renderWhenTrue } from '../../shared/utils/rendering';
+import { SOURCES } from '../../shared/components/projectTabs/projectTabs.constants';
+import { ProjectTabs } from '../../shared/components/projectTabs';
 
 export default class DataSource extends PureComponent {
   static propTypes = {
@@ -22,11 +27,16 @@ export default class DataSource extends PureComponent {
     }).isRequired,
   };
 
-  componentDidMount() {
+  state = {
+    loading: true,
+  };
+
+  async componentDidMount() {
     if (!this.props.dataSource.id) {
       const { dataSourceId } = this.props.match.params;
 
-      this.props.fetchDataSource({ dataSourceId });
+      await this.props.fetchDataSource({ dataSourceId });
+      this.setState({ loading: false });
     }
   }
 
@@ -34,21 +44,40 @@ export default class DataSource extends PureComponent {
     this.props.unmountDataSource();
   }
 
-  render() {
+  renderRouting = renderWhenTrue(() => {
     const {
       match: { path },
     } = this.props;
-    const viewPathWithStep = `${path}/:step`;
-    const pathAddFilter = `${path}/${FILTERS_STEP}/add`;
+    const sourcePath = `${path}/source`;
+    const previewPath = `${path}/preview`;
     const jobListPath = `${path}/job`;
+    const filtersPath = `${path}/filters`;
+    const addFilterPath = `${path}/filters/add`;
+    const resultPath = `${path}/result`;
+    const stepsPath = `${path}/steps`;
+    const viewsPath = `${path}/views`;
 
     return (
       <Switch>
         <Route exact path={jobListPath} component={JobList} />
-        <Redirect exact path={path} to={`${path}/${INITIAL_STEP}`} />
-        <Route exact path={viewPathWithStep} component={View} />
-        <Route exact path={pathAddFilter} component={CreateFilter} />
+        <Redirect exact path={path} to={sourcePath} />
+        <Route exact path={sourcePath} component={Source} />
+        <Route exact path={previewPath} component={Fields} />
+        <Route exact path={stepsPath} component={DataWranglingScripts} />
+        <Route exact path={addFilterPath} component={CreateFilter} />
+        <Route exact path={filtersPath} component={Filters} />
+        <Route exact path={resultPath} component={DataWranglingResult} />
+        <Route exact path={viewsPath} component={DataSourceViews} />
       </Switch>
+    );
+  });
+
+  render() {
+    return (
+      <Fragment>
+        <ProjectTabs active={SOURCES} url={`/project/${this.props.dataSource.project}`} />
+        {this.renderRouting(!this.state.loading)}
+      </Fragment>
     );
   }
 }

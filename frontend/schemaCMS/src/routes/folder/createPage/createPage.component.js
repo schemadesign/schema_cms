@@ -37,7 +37,7 @@ export class CreatePage extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <PageForm {...this.props} />
-          <NavigationContainer>
+          <NavigationContainer fixed>
             <BackButton id="cancelBtn" type="button" onClick={this.handleCancelClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>

@@ -120,7 +120,7 @@ export class PageList extends PureComponent {
         <LoadingWrapper loading={loading} error={error} noData={!pages.length}>
           {this.renderContent(pages)}
         </LoadingWrapper>
-        <NavigationContainer>
+        <NavigationContainer fixed>
           <BackArrowButton id="backBtn" onClick={this.handleShowFolderList} />
           <PlusButton hideOnDesktop id="createPageBtn" onClick={this.handleCreatePage} />
         </NavigationContainer>
