@@ -16,6 +16,7 @@ export const INITIAL_VALUES = {
 
 export const FILTERS_SCHEMA = Yup.object().shape({
   [FILTER_NAME]: Yup.string()
+    .trim()
     .min(3, 'Filter name should have at least 3 characters')
     .max(50, 'Filter name should have maximum 50 characters')
     .required('Required'),

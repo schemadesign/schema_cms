@@ -118,6 +118,7 @@ exports[`Settings: Component should render correctly 1`] = `
             "_exclusive": Object {
               "max": true,
               "min": true,
+              "trim": false,
             },
             "_mutate": undefined,
             "_options": Object {
@@ -133,8 +134,10 @@ exports[`Settings: Component should render correctly 1`] = `
             "tests": Array [
               [Function],
               [Function],
+              [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -149,6 +152,7 @@ exports[`Settings: Component should render correctly 1`] = `
               "max": true,
               "min": true,
               "required": true,
+              "trim": false,
             },
             "_mutate": undefined,
             "_options": Object {
@@ -165,8 +169,10 @@ exports[`Settings: Component should render correctly 1`] = `
               [Function],
               [Function],
               [Function],
+              [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -299,6 +305,7 @@ exports[`Settings: Component should render correctly 2`] = `
             "_exclusive": Object {
               "max": true,
               "min": true,
+              "trim": false,
             },
             "_mutate": undefined,
             "_options": Object {
@@ -314,8 +321,10 @@ exports[`Settings: Component should render correctly 2`] = `
             "tests": Array [
               [Function],
               [Function],
+              [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -330,6 +339,7 @@ exports[`Settings: Component should render correctly 2`] = `
               "max": true,
               "min": true,
               "required": true,
+              "trim": false,
             },
             "_mutate": undefined,
             "_options": Object {
@@ -346,8 +356,10 @@ exports[`Settings: Component should render correctly 2`] = `
               [Function],
               [Function],
               [Function],
+              [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -470,6 +482,7 @@ exports[`Settings: Component should render correctly form 1`] = `
             "_exclusive": Object {
               "max": true,
               "min": true,
+              "trim": false,
             },
             "_mutate": undefined,
             "_options": Object {
@@ -485,8 +498,10 @@ exports[`Settings: Component should render correctly form 1`] = `
             "tests": Array [
               [Function],
               [Function],
+              [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -501,6 +516,7 @@ exports[`Settings: Component should render correctly form 1`] = `
               "max": true,
               "min": true,
               "required": true,
+              "trim": false,
             },
             "_mutate": undefined,
             "_options": Object {
@@ -517,8 +533,10 @@ exports[`Settings: Component should render correctly form 1`] = `
               [Function],
               [Function],
               [Function],
+              [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -729,6 +747,7 @@ exports[`Settings: Component should render form without reset password link 1`] 
             "_exclusive": Object {
               "max": true,
               "min": true,
+              "trim": false,
             },
             "_mutate": undefined,
             "_options": Object {
@@ -744,8 +763,10 @@ exports[`Settings: Component should render form without reset password link 1`] 
             "tests": Array [
               [Function],
               [Function],
+              [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -760,6 +781,7 @@ exports[`Settings: Component should render form without reset password link 1`] 
               "max": true,
               "min": true,
               "required": true,
+              "trim": false,
             },
             "_mutate": undefined,
             "_options": Object {
@@ -776,8 +798,10 @@ exports[`Settings: Component should render form without reset password link 1`] 
               [Function],
               [Function],
               [Function],
+              [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },

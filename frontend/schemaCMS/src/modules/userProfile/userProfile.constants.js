@@ -24,9 +24,11 @@ export const INITIAL_VALUES = {
 
 export const USER_PROFILE_SCHEMA = Yup.object().shape({
   [FIRST_NAME]: Yup.string()
+    .trim()
     .min(2, 'First name should be at least 2 characters')
     .max(50, 'First name should have maximum 50 characters'),
   [LAST_NAME]: Yup.string()
+    .trim()
     .min(2, 'Last name should be at least 2 characters')
     .max(100, 'Last name should have maximum 100 characters')
     .required('Required'),

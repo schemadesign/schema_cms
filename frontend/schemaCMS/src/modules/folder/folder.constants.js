@@ -9,6 +9,7 @@ export const INITIAL_VALUES = {
 
 export const FOLDER_SCHEMA = Yup.object().shape({
   [FOLDER_NAME]: Yup.string()
+    .trim()
     .min(2, 'Folder Name should have at least 2 characters')
     .max(50, 'Folder Name should have maximum 50 characters')
     .required('Required'),

@@ -26,6 +26,7 @@ const FILE_SIZE = 300000000;
 
 export const DATA_SOURCE_SCHEMA = Yup.object().shape({
   [DATA_SOURCE_NAME]: Yup.string()
+    .trim()
     .min(3, 'Data source Name should have at least 3 characters')
     .max(25, 'Data source Name should have maximum 25 characters')
     .required('Required'),
