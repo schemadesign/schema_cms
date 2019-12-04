@@ -119,7 +119,7 @@ export class SourceComponent extends PureComponent {
                 <NavigationContainer right>
                   <NextButton
                     onClick={submitForm}
-                    disabled={!values.fileName || !isValid || isSubmitting}
+                    disabled={!values.fileName || isSubmitting || !dirty}
                     loading={isSubmitting}
                   >
                     <FormattedMessage {...messages.save} />

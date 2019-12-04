@@ -19,7 +19,7 @@ import { Select } from '../form/select';
 import { Form, Row } from './filterForm.styles';
 import { BackButton, NavigationContainer, NextButton } from '../navigation';
 import { ModalActions, modalStyles, ModalTitle, Modal } from '../modal/modal.styles';
-import { FILTERS_STEP } from '../../../modules/dataSource/dataSource.constants';
+import { FILTERS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { renderWhenTrue } from '../../utils/rendering';
 
@@ -73,7 +73,7 @@ export class FilterForm extends PureComponent {
 
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
-  handleBack = () => this.props.history.push(`/datasource/${this.props.dataSourceId}/${FILTERS_STEP}`);
+  handleBack = () => this.props.history.push(`/datasource/${this.props.dataSourceId}/${FILTERS_PAGE}`);
 
   handleConfirmRemove = () => {
     const { datasource, id: filterId } = this.props.filter;

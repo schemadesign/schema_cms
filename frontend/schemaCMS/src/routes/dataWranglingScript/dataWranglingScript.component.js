@@ -5,7 +5,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { FormattedMessage } from 'react-intl';
 import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-import { DATA_WRANGLING_STEP } from '../../modules/dataSource/dataSource.constants';
+import { STEPS_PAGE } from '../../modules/dataSource/dataSource.constants';
 import {
   DATA_WRANGLING_FORM_NAME,
   DESCRIPTION,
@@ -62,7 +62,7 @@ export class DataWranglingScript extends PureComponent {
       return history.goBack();
     }
 
-    return history.push(`/datasource/${dataWranglingScript.datasource}/${DATA_WRANGLING_STEP}`);
+    return history.push(`/datasource/${dataWranglingScript.datasource}/${STEPS_PAGE}`);
   };
 
   renderContent = () => {

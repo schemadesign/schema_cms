@@ -4,7 +4,7 @@ import { FilterRoutines } from './filter.redux';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, FILTERS_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
-import { FILTERS_STEP, VIEWS_STEP } from '../dataSource/dataSource.constants';
+import { FILTERS_PAGE } from '../dataSource/dataSource.constants';
 import { ROUTES } from '../../routes';
 
 function* fetchList({ payload: { dataSourceId } }) {
@@ -27,8 +27,6 @@ function* setFilters({ payload: { dataSourceId, active, inactive } }) {
 
     const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/set-filters`, { active, inactive });
 
-    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${VIEWS_STEP}`);
-
     yield put(FilterRoutines.setFilters.success(data));
   } catch (e) {
     yield put(FilterRoutines.setFilters.failure(e));
@@ -43,7 +41,7 @@ function* createFilter({ payload: { dataSourceId, formData } }) {
 
     const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/filters`, { ...formData, isActive: true });
 
-    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${FILTERS_STEP}`);
+    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${FILTERS_PAGE}`);
 
     yield put(FilterRoutines.createFilter.success(data));
   } catch (e) {
@@ -72,7 +70,7 @@ function* updateFilter({ payload: { filterId, dataSourceId, formData } }) {
     yield put(FilterRoutines.updateFilter.request());
 
     const { data } = yield api.put(`${FILTERS_PATH}/${filterId}`, { ...formData });
-    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${FILTERS_STEP}`);
+    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${FILTERS_PAGE}`);
 
     yield put(FilterRoutines.updateFilter.success(data));
   } catch (e) {
@@ -87,7 +85,7 @@ function* removeFilter({ payload: { filterId, dataSourceId } }) {
     yield put(FilterRoutines.removeFilter.request());
 
     const { data } = yield api.delete(`${FILTERS_PATH}/${filterId}`);
-    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${FILTERS_STEP}`);
+    browserHistory.push(`${ROUTES.DATA_SOURCE}/${dataSourceId}/${FILTERS_PAGE}`);
 
     yield put(FilterRoutines.removeFilter.success(data));
   } catch (e) {

@@ -13,6 +13,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
+import { errorMessageParser } from '../../../shared/utils/helpers';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
@@ -36,6 +37,7 @@ export class Filters extends PureComponent {
 
   state = {
     loading: true,
+    error: null,
   };
 
   async componentDidMount() {
@@ -43,8 +45,9 @@ export class Filters extends PureComponent {
       const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
 
       await this.props.fetchFilters({ dataSourceId });
-      this.setState({ loading: false });
-    } catch (e) {
+    } catch (error) {
+      this.setState({ error });
+    } finally {
       this.setState({ loading: false });
     }
   }
@@ -56,13 +59,23 @@ export class Filters extends PureComponent {
     setValues(setFilters(checked));
   };
 
-  handleSubmit = active => {
-    const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
-    const inactive = this.props.filters
-      .filter(({ id }) => !active.includes(id.toString()))
-      .map(({ id }) => id.toString());
+  handleSubmit = async (active, { setSubmitting, setErrors }) => {
+    try {
+      setSubmitting(true);
+      const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
+      const inactive = this.props.filters
+        .filter(({ id }) => !active.includes(id.toString()))
+        .map(({ id }) => id.toString());
 
-    this.props.setFilters({ dataSourceId, active, inactive });
+      await this.props.setFilters({ dataSourceId, active, inactive });
+    } catch (error) {
+      const { formatMessage } = this.props.intl;
+      const errorMessages = errorMessageParser({ errors, messages, formatMessage });
+
+      setErrors(errorMessages);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   handleCreateFilter = () => {
@@ -92,8 +105,8 @@ export class Filters extends PureComponent {
             <FormattedMessage values={{ length: filters.length }} {...messages.filters} />
           </FilterCounter>
         </Header>
-        <Formik initialValues={initialValues} onSubmit={this.handleSubmit}>
-          {({ values, setValues, submitForm, dirty }) => {
+        <Formik enableReinitialize initialValues={initialValues} onSubmit={this.handleSubmit}>
+          {({ values, setValues, submitForm, dirty, isSubmitting }) => {
             if (!dirty) {
               submitForm = null;
             }
@@ -109,7 +122,7 @@ export class Filters extends PureComponent {
                   {filters.map(this.renderCheckboxes)}
                 </CheckboxGroup>
                 <NavigationContainer right>
-                  <NextButton onClick={submitForm}>
+                  <NextButton onClick={submitForm} loading={isSubmitting} disabled={!dirty || isSubmitting}>
                     <FormattedMessage {...messages.save} />
                   </NextButton>
                 </NavigationContainer>
@@ -122,7 +135,7 @@ export class Filters extends PureComponent {
   };
 
   render() {
-    const { loading } = this.state;
+    const { loading, error } = this.state;
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -133,7 +146,9 @@ export class Filters extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>
-        <LoadingWrapper loading={loading}>{this.renderContent}</LoadingWrapper>
+        <LoadingWrapper loading={loading} error={error}>
+          {this.renderContent()}
+        </LoadingWrapper>
         <DataSourceNavigation {...this.props} hideOnDesktop />
       </Fragment>
     );

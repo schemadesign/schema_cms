@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Formik } from 'formik';
@@ -9,8 +9,8 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './createDataSource.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DATA_SOURCE_SCHEMA } from '../../../modules/dataSource/dataSource.constants';
-import { StepNavigation } from '../../../shared/components/stepNavigation';
-import { errorMessageParser } from '../../../shared/utils/helpers';
+import { errorMessageParser, getProjectId } from '../../../shared/utils/helpers';
+import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 export class CreateDataSource extends PureComponent {
   static propTypes = {
@@ -25,8 +25,8 @@ export class CreateDataSource extends PureComponent {
   };
 
   handleSubmit = async (requestData, { setErrors, setSubmitting }) => {
-    const { createDataSource, match } = this.props;
-    const { projectId } = match.params;
+    const { createDataSource } = this.props;
+    const projectId = getProjectId(this.props);
 
     try {
       setSubmitting(true);
@@ -41,8 +41,10 @@ export class CreateDataSource extends PureComponent {
     }
   };
 
+  handleCancelCreate = () => this.props.history.push(`/project/${getProjectId(this.props)}/datasource`);
+
   render() {
-    const { intl, ...restProps } = this.props;
+    const { intl } = this.props;
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -56,18 +58,22 @@ export class CreateDataSource extends PureComponent {
             if (!dirty && isValid) {
               submitForm = null;
             }
-            const disabled = { next: !values.fileName || !isValid || isSubmitting };
 
             return (
               <Fragment>
                 <SourceForm intl={intl} values={values} {...rest} />
-                <StepNavigation
-                  dataSource={{}}
-                  loading={isSubmitting}
-                  disabled={disabled}
-                  submitForm={submitForm}
-                  {...restProps}
-                />
+                <NavigationContainer fixed>
+                  <BackButton onClick={this.handleCancelCreate}>
+                    <FormattedMessage {...messages.cancel} />
+                  </BackButton>
+                  <NextButton
+                    onClick={submitForm}
+                    disabled={!values.fileName || !isValid || isSubmitting}
+                    loading={isSubmitting}
+                  >
+                    <FormattedMessage {...messages.save} />
+                  </NextButton>
+                </NavigationContainer>
               </Fragment>
             );
           }}

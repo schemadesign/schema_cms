@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { isEmpty, path } from 'ramda';
+import { path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Container } from './createFilter.styles';
@@ -67,7 +67,7 @@ export class CreateFilter extends PureComponent {
       <Container>
         <TopHeader {...headerConfig} />
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
-        <LoadingWrapper loading={loading} error={error || isEmpty(this.props.fieldsInfo)}>
+        <LoadingWrapper loading={loading} error={error}>
           {this.renderContent}
         </LoadingWrapper>
       </Container>

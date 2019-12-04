@@ -5,9 +5,9 @@ exports[`ResultIcon: Component should render correctly 1`] = `
   style={
     Object {
       "fill": "#FFF",
-      "height": "600px",
-      "stroke": "#000",
-      "width": "600px",
+      "height": "60px",
+      "stroke": "#1d1d20",
+      "width": "60px",
     }
   }
 />
@@ -18,9 +18,9 @@ exports[`ResultIcon: Component should render with custom styles 1`] = `
   style={
     Object {
       "fill": "blue",
-      "height": "600px",
-      "stroke": "#000",
-      "width": "600px",
+      "height": "60px",
+      "stroke": "#1d1d20",
+      "width": "60px",
     }
   }
 />

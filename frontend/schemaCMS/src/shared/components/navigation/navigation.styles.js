@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { always, ifElse, propEq } from 'ramda';
+import { always, identity, ifElse, propEq } from 'ramda';
 import { Button } from 'schemaUI';
 
 import { media, contentSizes } from '../../../theme/media';
@@ -24,7 +24,7 @@ export const NavigationContent = styled.div`
 `;
 
 const fixedNavigationStyles = styleWhenTrue(
-  always,
+  identity,
   css`
     position: fixed;
     width: calc(100% - 40px);

@@ -14,4 +14,12 @@ export default defineMessages({
     id: 'project.createDataSource.pageTitle',
     defaultMessage: 'Create Data Source',
   },
+  save: {
+    id: 'project.createDataSource.save',
+    defaultMessage: 'Save',
+  },
+  cancel: {
+    id: 'project.createDataSource.cancel',
+    defaultMessage: 'Cancel',
+  },
 });

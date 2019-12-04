@@ -25,7 +25,7 @@ function* create({ payload }) {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
-    browserHistory.push(`project/${payload.projectId}/datasource`);
+    browserHistory.push(`/project/${payload.projectId}/datasource`);
     yield put(DataSourceRoutines.create.success(data));
   } catch (error) {
     yield put(DataSourceRoutines.create.failure(error));
@@ -97,7 +97,7 @@ function* fetchList({ payload }) {
   yield cancel(bgSyncTask);
 }
 
-function* updateOne({ payload: { dataSourceId, requestData, step } }) {
+function* updateOne({ payload: { dataSourceId, requestData } }) {
   try {
     yield put(DataSourceRoutines.updateOne.request());
     const formData = new FormData();
@@ -118,11 +118,7 @@ function* updateOne({ payload: { dataSourceId, requestData, step } }) {
       response.data = data;
     }
 
-    const redirectUri = `/datasource/${dataSourceId}/${parseInt(step, 10) + 1}`;
-
     yield put(DataSourceRoutines.updateOne.success(response.data));
-
-    browserHistory.push(redirectUri);
   } catch (error) {
     yield put(DataSourceRoutines.updateOne.failure(error));
   } finally {

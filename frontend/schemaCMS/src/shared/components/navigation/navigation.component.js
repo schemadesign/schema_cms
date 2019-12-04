@@ -32,6 +32,7 @@ export class NavigationContainer extends PureComponent {
 
   render() {
     const { right, hideOnDesktop, children, fixed } = this.props;
+
     return (
       <Container>
         <Navigation fixed={fixed}>
