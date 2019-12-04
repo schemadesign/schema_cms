@@ -3,17 +3,19 @@ import PropTypes from 'prop-types';
 
 import { getStyles } from './select.styles';
 import { withStyles } from '../../styles/withStyles';
+import { find, pipe, prop, propOr } from 'ramda';
 
 export class SelectComponent extends PureComponent {
   static propTypes = {
     native: PropTypes.bool,
-    defaultOption: PropTypes.object,
     options: PropTypes.array.isRequired,
     onSelect: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
   };
 
   static defaultProps = {
     native: false,
+    placeholder: '',
   };
 
   state = {
@@ -44,9 +46,13 @@ export class SelectComponent extends PureComponent {
   };
 
   renderSelectedOption = ({ selectedOptionStyles }) => {
-    const selectedOption = this.props.options.find(option => option.selected) || '';
+    const label = pipe(
+      prop('options'),
+      find(({ selected }) => selected),
+      propOr(this.props.placeholder, 'label')
+    )(this.props);
 
-    return <div style={selectedOptionStyles}>{selectedOption.label}</div>;
+    return <div style={selectedOptionStyles}>{label}</div>;
   };
 
   renderOptions = ({ value, label, selected }, index, { customOptionStyle }) => {
@@ -94,7 +100,7 @@ export class SelectComponent extends PureComponent {
           {this.renderSelectedOption(restStyles)}
         </div>
         <div style={optionListStyles(this.state.isMenuOpen)}>
-          {this.props.options.map((item, index) => this.renderOptions(item, index, restStyles, id))}
+          {this.props.options.map((item, index) => this.renderOptions(item, index, restStyles))}
         </div>
       </div>
     );

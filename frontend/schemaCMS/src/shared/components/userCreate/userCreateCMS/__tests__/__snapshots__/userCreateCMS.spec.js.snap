@@ -86,6 +86,7 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
           "_exclusive": Object {
             "min": true,
             "required": true,
+            "trim": false,
           },
           "_mutate": undefined,
           "_options": Object {
@@ -101,8 +102,10 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
           "tests": Array [
             [Function],
             [Function],
+            [Function],
           ],
           "transforms": Array [
+            [Function],
             [Function],
           ],
         },
@@ -116,6 +119,7 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
           "_exclusive": Object {
             "min": true,
             "required": true,
+            "trim": false,
           },
           "_mutate": undefined,
           "_options": Object {
@@ -131,8 +135,10 @@ exports[`UserCreateCMS: Component should render correctly 1`] = `
           "tests": Array [
             [Function],
             [Function],
+            [Function],
           ],
           "transforms": Array [
+            [Function],
             [Function],
           ],
         },

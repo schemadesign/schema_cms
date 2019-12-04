@@ -25,6 +25,7 @@ export const INITIAL_VALUES = {
 export const VALID_TYPE_OPTIONS = [IMAGE_TYPE, MARKDOWN_TYPE, EMBED_TYPE, CODE_TYPE];
 export const BLOCK_SCHEMA = Yup.object().shape({
   [BLOCK_NAME]: Yup.string()
+    .trim()
     .min(2, 'Block name should have at least 2 characters')
     .max(50, 'Block name should have maximum 50 characters')
     .required('Required'),

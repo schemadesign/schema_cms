@@ -74,6 +74,7 @@ exports[`CreatePageBlock: Component should render correctly 1`] = `
         disabled={false}
         id="cancelBtn"
         onClick={[Function]}
+        type="button"
       >
         <FormattedMessage
           defaultMessage="Cancel"

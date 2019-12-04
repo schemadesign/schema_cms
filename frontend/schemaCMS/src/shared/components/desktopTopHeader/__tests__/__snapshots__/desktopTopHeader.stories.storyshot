@@ -240,20 +240,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                   style={
                     Object {
                       "fill": "#FFF",
-                      "height": 21,
-                      "width": 24,
+                      "height": "24px",
+                      "width": "24px",
                     }
                   }
-                  viewBox="0 0 24 21"
+                  viewBox="0 0 24 24"
                 >
                   <path
-                    d="M0 0h15v6h-1V1H1v19h13v-5h1v6H0z"
-                  />
-                  <path
-                    d="M8 10h15v1H8z"
-                  />
-                  <path
-                    d="M24 10.5L19 6l-.5 1 4 3.5-4 3.5.5 1z"
+                    d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5a2 2 0 00-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
                   />
                 </svg>
               </button>
@@ -793,20 +787,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                   style={
                     Object {
                       "fill": "#FFF",
-                      "height": 21,
-                      "width": 24,
+                      "height": "24px",
+                      "width": "24px",
                     }
                   }
-                  viewBox="0 0 24 21"
+                  viewBox="0 0 24 24"
                 >
                   <path
-                    d="M0 0h15v6h-1V1H1v19h13v-5h1v6H0z"
-                  />
-                  <path
-                    d="M8 10h15v1H8z"
-                  />
-                  <path
-                    d="M24 10.5L19 6l-.5 1 4 3.5-4 3.5.5 1z"
+                    d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5a2 2 0 00-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
                   />
                 </svg>
               </button>
@@ -1342,20 +1330,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                   style={
                     Object {
                       "fill": "#FFF",
-                      "height": 21,
-                      "width": 24,
+                      "height": "24px",
+                      "width": "24px",
                     }
                   }
-                  viewBox="0 0 24 21"
+                  viewBox="0 0 24 24"
                 >
                   <path
-                    d="M0 0h15v6h-1V1H1v19h13v-5h1v6H0z"
-                  />
-                  <path
-                    d="M8 10h15v1H8z"
-                  />
-                  <path
-                    d="M24 10.5L19 6l-.5 1 4 3.5-4 3.5.5 1z"
+                    d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5a2 2 0 00-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
                   />
                 </svg>
               </button>

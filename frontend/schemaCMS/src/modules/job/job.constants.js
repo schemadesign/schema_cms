@@ -27,5 +27,7 @@ export const INITIAL_VALUES = {
 };
 
 export const JOB_DETAIL_SCHEMA = Yup.object().shape({
-  [DESCRIPTION]: Yup.string().max(1000, 'Description should have maximum 1000 characters'),
+  [DESCRIPTION]: Yup.string()
+    .trim()
+    .max(1000, 'Description should have maximum 1000 characters'),
 });

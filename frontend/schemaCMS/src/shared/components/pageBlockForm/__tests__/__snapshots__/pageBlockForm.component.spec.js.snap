@@ -6,7 +6,7 @@ exports[`PageBlockForm: Component should render correctly 1`] = `
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
-    isEdit={false}
+    isEdit={true}
     label="Block Name"
     name="name"
     onChange={[Function]}
@@ -38,12 +38,9 @@ exports[`PageBlockForm: Component should render correctly 1`] = `
           "label": "Code Snippet",
           "value": "code_snippet",
         },
-        Object {
-          "label": "Select one",
-          "value": "none",
-        },
       ]
     }
+    placeholder="Select type"
     setFieldValue={[Function]}
     value="none"
   />
@@ -121,7 +118,7 @@ exports[`PageBlockForm: Component should render correctly with code type 1`] = `
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
-    isEdit={false}
+    isEdit={true}
     label="Block Name"
     name="name"
     onChange={[Function]}
@@ -153,12 +150,9 @@ exports[`PageBlockForm: Component should render correctly with code type 1`] = `
           "label": "Code Snippet",
           "value": "code_snippet",
         },
-        Object {
-          "label": "Select one",
-          "value": "none",
-        },
       ]
     }
+    placeholder="Select type"
     setFieldValue={[Function]}
     value="code_snippet"
   />
@@ -269,7 +263,7 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
-    isEdit={false}
+    isEdit={true}
     label="Block Name"
     name="name"
     onChange={[Function]}
@@ -301,12 +295,9 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
           "label": "Code Snippet",
           "value": "code_snippet",
         },
-        Object {
-          "label": "Select one",
-          "value": "none",
-        },
       ]
     }
+    placeholder="Select type"
     setFieldValue={[Function]}
     value="youtube_embed"
   />
@@ -418,7 +409,7 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
-    isEdit={false}
+    isEdit={true}
     label="Block Name"
     name="name"
     onChange={[Function]}
@@ -450,12 +441,9 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
           "label": "Code Snippet",
           "value": "code_snippet",
         },
-        Object {
-          "label": "Select one",
-          "value": "none",
-        },
       ]
     }
+    placeholder="Select type"
     setFieldValue={[Function]}
     value="image_uploaded"
   />
@@ -560,7 +548,7 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
     checkOnlyErrors={false}
     errors={Object {}}
     fullWidth={true}
-    isEdit={false}
+    isEdit={true}
     label="Block Name"
     name="name"
     onChange={[Function]}
@@ -592,12 +580,9 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
           "label": "Code Snippet",
           "value": "code_snippet",
         },
-        Object {
-          "label": "Select one",
-          "value": "none",
-        },
       ]
     }
+    placeholder="Select type"
     setFieldValue={[Function]}
     value="markdown_text"
   />

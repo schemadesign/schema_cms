@@ -473,6 +473,7 @@ exports[`Storyshots Folder|Edit Default 1`] = `
                 "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
               }
             }
+            type="button"
           >
             <span>
               Back

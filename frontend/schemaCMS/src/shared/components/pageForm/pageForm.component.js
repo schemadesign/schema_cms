@@ -25,6 +25,7 @@ export class PageForm extends PureComponent {
           label={intl.formatMessage(messages.pageFieldTitle)}
           placeholder={intl.formatMessage(messages.pageFieldTitlePlaceholder)}
           fullWidth
+          isEdit
           {...restProps}
         />
         <TextInput
@@ -35,6 +36,7 @@ export class PageForm extends PureComponent {
           placeholder={intl.formatMessage(messages.pageFieldDescriptionPlaceholder)}
           fullWidth
           multiline
+          isEdit
           {...restProps}
         />
         <TextInput
@@ -45,6 +47,7 @@ export class PageForm extends PureComponent {
           placeholder={intl.formatMessage(messages.pageFieldKeywordsPlaceholder)}
           fullWidth
           multiline
+          isEdit
           {...restProps}
         />
       </Fragment>
