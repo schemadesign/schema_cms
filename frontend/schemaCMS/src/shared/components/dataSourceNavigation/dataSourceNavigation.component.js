@@ -15,7 +15,7 @@ import {
 } from '../../../modules/dataSource/dataSource.constants';
 
 const { FieldIcon, FilterIcon, ViewIcon, UploadIcon, ResultIcon } = Icons;
-const listIcons = [
+export const listIcons = [
   { Icon: UploadIcon, page: SOURCE_PAGE },
   { Icon: FieldIcon, page: PREVIEW_PAGE },
   { Icon: ResultIcon, page: STEPS_PAGE },

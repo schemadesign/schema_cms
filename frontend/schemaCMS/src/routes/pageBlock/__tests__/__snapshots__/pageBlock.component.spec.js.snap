@@ -104,6 +104,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
       </Styled(Span)>
     </LoadingWrapper>
     <NavigationContainer
+      fixed={true}
       hideOnDesktop={false}
       right={false}
     >
@@ -289,6 +290,7 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
       </Styled(Span)>
     </LoadingWrapper>
     <NavigationContainer
+      fixed={true}
       hideOnDesktop={false}
       right={false}
     >

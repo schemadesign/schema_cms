@@ -1,13 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataWranglingScripts: Component should render correctly 1`] = `
-<styled.div>
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Data Wrangling"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Data Wrangling"
+        id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Data Wrangling"
+        id="dataSource.dataWranglingScripts.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      bindSubmitForm={[Function]}
+      dataSource={
+        Object {
+          "metaData": Object {},
+        }
+      }
+      dataWranglingScripts={
+        Array [
+          Object {
+            "id": 1,
+            "name": "name 1",
+          },
+          Object {
+            "id": 2,
+            "name": "name 2",
+          },
+        ]
+      }
+      fetchDataWranglingScripts={[Function]}
+      hideOnDesktop={false}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isAdmin={true}
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+            "projectId": "1",
+            "step": "3",
+          },
+          "url": "/datasource/14/3",
+        }
+      }
+      sendUpdatedDataWranglingScript={[Function]}
+      uploadScript={[Function]}
+    />
+  </ContextHeader>
   <styled.div>
     <styled.div />
     <styled.div>
       <FormattedMessage
         defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
-        id="dataWranglingScripts.steps"
+        id="dataSource.dataWranglingScripts.steps"
         values={
           Object {
             "length": 2,
@@ -39,7 +108,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
   >
     <Component />
   </Formik>
-</styled.div>
+</Fragment>
 `;
 
 exports[`DataWranglingScripts: Component should render correctly form 1`] = `
@@ -116,7 +185,24 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       </Styled(Link)>
     </Component>
   </Component>
-  <StepNavigation
+  <NavigationContainer
+    fixed={false}
+    hideOnDesktop={false}
+    right={true}
+  >
+    <NextButton
+      disabled={false}
+      loading={false}
+      onClick={null}
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="dataSource.dataWranglingScripts.save"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+  <DataSourceNavigation
     bindSubmitForm={[Function]}
     dataSource={
       Object {
@@ -135,19 +221,19 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         },
       ]
     }
-    disabled={
-      Object {
-        "next": false,
-      }
-    }
     fetchDataWranglingScripts={[Function]}
+    hideOnDesktop={true}
     history={
       Object {
         "push": [Function],
       }
     }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
     isAdmin={true}
-    loading={false}
     match={
       Object {
         "params": Object {
@@ -159,7 +245,6 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       }
     }
     sendUpdatedDataWranglingScript={[Function]}
-    submitForm={null}
     uploadScript={[Function]}
   />
 </ContextProvider>

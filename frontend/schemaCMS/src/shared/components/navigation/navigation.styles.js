@@ -23,18 +23,17 @@ export const NavigationContent = styled.div`
   `};
 `;
 
-const fixedNavigationStyles = styleWhenTrue(
-  identity,
-  css`
-    position: fixed;
-    width: calc(100% - 40px);
-    background-image: linear-gradient(
-      to top,
-      ${({ theme: { background } }) => `${background}, ${background} 30%`},
-      rgba(0, 0, 0, 0)
-    );
-  `
-);
+const fixedStyles = css`
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient(
+    to top,
+    ${({ theme: { background } }) => `${background}, ${background} 30%`},
+    rgba(0, 0, 0, 0)
+  );
+`;
+
+const fixedNavigationStyles = styleWhenTrue(identity, fixedStyles);
 
 export const Navigation = styled.div`
   bottom: 0;
@@ -44,6 +43,7 @@ export const Navigation = styled.div`
   ${({ fixed }) => fixedNavigationStyles(fixed)};
 
   ${media.desktop`
+    ${fixedStyles};
     width: ${contentSizes.desktop}px;
   `};
 `;

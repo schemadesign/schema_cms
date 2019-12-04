@@ -133,7 +133,7 @@ export class AddUser extends PureComponent {
         <LoadingWrapper loading={loading} noData={!users.length}>
           {this.props.users.map(this.renderUser)}
         </LoadingWrapper>
-        <NavigationContainer>
+        <NavigationContainer fixed>
           <BackButton onClick={this.handleBackClick}>
             <FormattedMessage {...messages.back} />
           </BackButton>

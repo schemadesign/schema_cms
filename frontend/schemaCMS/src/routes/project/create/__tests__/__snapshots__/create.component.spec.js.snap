@@ -145,6 +145,7 @@ exports[`Create: Component should render correctly 1`] = `
       value="in_progress"
     />
     <NavigationContainer
+      fixed={true}
       hideOnDesktop={false}
       right={false}
     >

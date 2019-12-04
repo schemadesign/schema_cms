@@ -39,7 +39,7 @@ export class Preview extends PureComponent {
       <Container>
         <TopHeader {...topHeaderConfig} />
         <DataPreview {...restProps} jobId={jobId} />
-        <NavigationContainer>
+        <NavigationContainer fixed>
           <BackButton onClick={this.handleBackClick} />
         </NavigationContainer>
       </Container>

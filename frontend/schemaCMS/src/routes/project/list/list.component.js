@@ -149,7 +149,7 @@ export class List extends PureComponent {
           {this.renderAddButton(isAdmin, 'addProjectDesktopBtn')}
         </ContextHeader>
         <LoadingWrapper {...loadingConfig}>{this.renderList(list)}</LoadingWrapper>
-        <NavigationContainer right hideOnDesktop>
+        <NavigationContainer right fixed hideOnDesktop>
           {this.renderAddButton(isAdmin, 'addProjectBtn')}
         </NavigationContainer>
         <LogoutModal

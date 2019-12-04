@@ -1,35 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SourceComponent: Component should render correctly 1`] = `
-<SourceComponent
+exports[`SourceFormComponent: Component should render correctly 1`] = `
+<SourceFormComponent
   dataSource={
     Object {
       "jobs": Array [],
       "metaData": Object {},
     }
   }
-  history={
-    Object {
-      "push": [Function],
-    }
-  }
+  handleChange={[Function]}
   intl={
     Object {
       "formatMessage": [Function],
     }
   }
-  isAnyJobProcessing={false}
-  match={
-    Object {
-      "params": Object {
-        "dataSourceId": "1",
-        "projectId": "1",
-        "step": "1",
-      },
-    }
-  }
-  onDataSourceChange={[Function]}
-  removeDataSource={[Function]}
   theme={
     Object {
       "background": "#000",
@@ -92,7 +76,6 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "text": "#FFF",
       },
       "providerContainer": Object {
-        "backgroundColor": "#000",
         "minHeight": "100vh",
       },
       "radioButton": Object {
@@ -173,40 +156,31 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
         },
       },
+    }
+  }
+  values={
+    Object {
+      "fileName": "fileName",
+      "name": "name",
+      "type": "file",
     }
   }
 />
 `;
 
-exports[`SourceComponent: Component should render file uploader 1`] = `
-<SourceComponent
+exports[`SourceFormComponent: Component should render file uploader 1`] = `
+<SourceFormComponent
   dataSource={
     Object {
       "type": "file",
     }
   }
-  history={
-    Object {
-      "push": [Function],
-    }
-  }
+  handleChange={[Function]}
   intl={
     Object {
       "formatMessage": [Function],
     }
   }
-  isAnyJobProcessing={false}
-  match={
-    Object {
-      "params": Object {
-        "dataSourceId": "1",
-        "projectId": "1",
-        "step": "1",
-      },
-    }
-  }
-  onDataSourceChange={[Function]}
-  removeDataSource={[Function]}
   theme={
     Object {
       "background": "#000",
@@ -269,7 +243,6 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "text": "#FFF",
       },
       "providerContainer": Object {
-        "backgroundColor": "#000",
         "minHeight": "100vh",
       },
       "radioButton": Object {
@@ -350,6 +323,13 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
         },
       },
+    }
+  }
+  values={
+    Object {
+      "fileName": "fileName",
+      "name": "name",
+      "type": "file",
     }
   }
 />

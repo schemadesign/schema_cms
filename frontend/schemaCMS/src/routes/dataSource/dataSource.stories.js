@@ -6,7 +6,7 @@ import { withRouter, withTheme } from '../../.storybook/decorators';
 
 export const defaultProps = {
   dataSource: {
-    id: '1',
+    project: '2',
   },
   fetchDataSource: Function.prototype,
   unmountDataSource: Function.prototype,

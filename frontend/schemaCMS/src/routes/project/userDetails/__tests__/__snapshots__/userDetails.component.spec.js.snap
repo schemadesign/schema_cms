@@ -46,6 +46,7 @@ exports[`UserDetails: Component should render correctly 1`] = `
     </Styled(Span)>
   </styled.div>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >

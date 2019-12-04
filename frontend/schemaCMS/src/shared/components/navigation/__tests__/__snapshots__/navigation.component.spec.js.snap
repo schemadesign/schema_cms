@@ -42,7 +42,9 @@ exports[`Navigation: Component should render BackButton with custom children 1`]
 
 exports[`Navigation: Component should render NavigationContainer 1`] = `
 <styled.div>
-  <styled.div>
+  <styled.div
+    fixed={false}
+  >
     <styled.div
       hideOnDesktop={false}
       right={false}

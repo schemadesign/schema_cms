@@ -1,16 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Fields: Component should render correctly 1`] = `
-<styled.div>
+<Fragment>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
     title="Fields"
   />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Fields"
+        id="dataSource.fields.subTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Fields"
+        id="dataSource.fields.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={Object {}}
+      fetchPreview={[Function]}
+      hideOnDesktop={false}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "step": "2",
+          },
+        }
+      }
+      previewData={Object {}}
+    />
+  </ContextHeader>
   <DataPreview
     dataSource={Object {}}
     fetchPreview={[Function]}
-    history={Object {}}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
     intl={
       Object {
         "formatMessage": [Function],
@@ -26,22 +72,20 @@ exports[`Fields: Component should render correctly 1`] = `
     }
     previewData={Object {}}
   />
-  <StepNavigation
+  <DataSourceNavigation
     dataSource={Object {}}
-    disabled={
+    fetchPreview={[Function]}
+    hideOnDesktop={true}
+    history={
       Object {
-        "back": false,
-        "next": false,
+        "push": [Function],
       }
     }
-    fetchPreview={[Function]}
-    history={Object {}}
     intl={
       Object {
         "formatMessage": [Function],
       }
     }
-    loading={false}
     match={
       Object {
         "params": Object {
@@ -51,5 +95,5 @@ exports[`Fields: Component should render correctly 1`] = `
     }
     previewData={Object {}}
   />
-</styled.div>
+</Fragment>
 `;

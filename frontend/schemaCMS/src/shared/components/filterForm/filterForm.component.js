@@ -166,7 +166,7 @@ export class FilterForm extends PureComponent {
                   />
                 </Row>
                 {this.renderRemoveFilterLink(!!this.props.filter.id)}
-                <NavigationContainer>
+                <NavigationContainer fixed>
                   <BackButton onClick={this.handleBack} type="button">
                     <FormattedMessage {...messages[this.getBackMessageId(!this.props.filter.id)]} />
                   </BackButton>

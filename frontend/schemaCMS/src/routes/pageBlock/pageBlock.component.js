@@ -74,7 +74,7 @@ export class PageBlock extends PureComponent {
               <FormattedMessage {...messages.removePageBlock} />
             </Link>
           </LoadingWrapper>
-          <NavigationContainer>
+          <NavigationContainer fixed>
             <BackButton id="backBtn" type="button" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.back} />
             </BackButton>

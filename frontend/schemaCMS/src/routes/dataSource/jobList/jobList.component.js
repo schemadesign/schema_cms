@@ -123,7 +123,7 @@ export class JobList extends PureComponent {
           <ListWrapper>{jobList.map(this.renderList)}</ListWrapper>
         </RadioGroup>
       </LoadingWrapper>
-      <NavigationContainer>
+      <NavigationContainer fixed>
         <BackButton id="cancelBtn" onClick={this.handleCancelClick}>
           <FormattedMessage {...messages.cancel} />
         </BackButton>

@@ -120,11 +120,9 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
 }
 
 .c1 {
-  position: fixed;
-  padding: 40px 0 36px;
   bottom: 0;
-  width: calc(100% - 40px);
-  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
+  width: 100%;
+  padding: 40px 0 36px;
 }
 
 @media (min-width:1040px) {
@@ -138,6 +136,9 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
 
 @media (min-width:1040px) {
   .c1 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
 }

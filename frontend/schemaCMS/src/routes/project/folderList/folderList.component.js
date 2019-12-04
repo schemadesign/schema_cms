@@ -104,7 +104,7 @@ export class FolderList extends PureComponent {
         <LoadingWrapper loading={loading} error={error} noData={!folders.length}>
           {this.renderList(folders)}
         </LoadingWrapper>
-        <NavigationContainer hideOnDesktop>
+        <NavigationContainer fixed hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
           <PlusButton id="createFolderBtn" onClick={this.handleCreateFolder} />
         </NavigationContainer>

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataSourceViews: Component should render correctly 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Views"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Views"
+        id="dataSource.dataSourceViews.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle="name"
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Views"
+        id="dataSource.dataSourceViews.subTitle"
+        values={Object {}}
+      />
+    }
+    title="name"
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "name": "name",
+        }
+      }
+      hideOnDesktop={false}
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+    />
+  </ContextHeader>
+  <styled.div>
+    <FormattedMessage
+      defaultMessage="Coming soon..."
+      id="dataSource.dataSourceViews.coming"
+      values={Object {}}
+    />
+  </styled.div>
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "name": "name",
+      }
+    }
+    hideOnDesktop={true}
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+  />
+</Fragment>
+`;

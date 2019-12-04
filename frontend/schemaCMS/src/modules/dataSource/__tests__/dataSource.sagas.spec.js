@@ -162,18 +162,7 @@ describe('DataSource: sagas', () => {
           .silentRun();
       });
 
-      it('should should redirect to next step', async () => {
-        jest.spyOn(browserHistory, 'push');
-
-        await expectSaga(watchDataSource)
-          .withState(defaultState)
-          .dispatch(DataSourceRoutines.updateOne(payload))
-          .silentRun();
-
-        expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
-      });
-
-      it('should redirect to next step after send file', async () => {
+      it('should redirect to list after send file', async () => {
         const options = {
           headers: { 'Content-Type': 'multipart/form-data' },
         };
@@ -190,7 +179,7 @@ describe('DataSource: sagas', () => {
           .dispatch(DataSourceRoutines.updateOne(payload))
           .silentRun();
 
-        expect(browserHistory.push).toBeCalledWith('/datasource/1/2');
+        expect(browserHistory.push).toBeCalledWith('/project/1/datasource');
       });
     });
 

@@ -23,6 +23,7 @@ export const defaultProps = {
       step: '3',
     },
   },
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
 storiesOf('Data Source|DataWranglingScripts', module)

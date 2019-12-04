@@ -161,7 +161,7 @@ export class DataSourceList extends PureComponent {
         <LoadingWrapper {...loadingConfig}>
           <ListContainer>{dataSources.map(this.renderItem)}</ListContainer>
         </LoadingWrapper>
-        <NavigationContainer hideOnDesktop>
+        <NavigationContainer fixed hideOnDesktop>
           <BackArrowButton id="backBtn" onClick={this.handleShowProject} />
           <PlusButton id="createDataSourceBtn" onClick={this.handleCreateDataSource} />
         </NavigationContainer>

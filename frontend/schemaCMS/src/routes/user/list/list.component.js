@@ -38,7 +38,7 @@ export class List extends PureComponent {
           <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
         </ContextHeader>
         <UserList users={users} />
-        <NavigationContainer hideOnDesktop>
+        <NavigationContainer fixed hideOnDesktop>
           <BackButton onClick={this.handleCancelClick}>
             <FormattedMessage {...messages.cancel} />
           </BackButton>

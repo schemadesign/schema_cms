@@ -30,6 +30,7 @@ export const defaultProps = {
       dataSourceId: '1',
     },
   },
+  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
 storiesOf('Data Source|Filters', module)

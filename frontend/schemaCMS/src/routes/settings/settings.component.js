@@ -58,7 +58,7 @@ export class Settings extends PureComponent {
       <Form onSubmit={handleSubmit}>
         <UserProfile {...restProps} isCurrentUser />
         {this.renderResetPasswordLink(this.props.userData.authMethod === AUTH_METHODS.EMAIL)}
-        <NavigationContainer>
+        <NavigationContainer fixed>
           <BackButton type="button" onClick={this.handleBack} />
           <NextButton type="submit" loading={isSubmitting} disabled={!dirty || isSubmitting}>
             <FormattedMessage {...messages.save} />

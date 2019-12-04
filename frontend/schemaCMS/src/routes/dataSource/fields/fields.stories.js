@@ -11,7 +11,9 @@ export const defaultProps = {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
   dataSource: {},
-  history: {},
+  history: {
+    push: Function.prototype,
+  },
   match: {
     params: {
       step: '2',

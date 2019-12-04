@@ -170,6 +170,7 @@ exports[`PageBlockList: Component should render correctly form 1`] = `
     </Component>
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >
