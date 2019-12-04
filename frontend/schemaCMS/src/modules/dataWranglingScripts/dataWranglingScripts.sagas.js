@@ -75,16 +75,16 @@ function* fetchOne({ payload: { scriptId } }) {
   }
 }
 
-function* setImageScrappingFields({ payload }) {
+function* setImageScrapingFields({ payload }) {
   try {
-    yield put(DataWranglingScriptsRoutines.setImageScrappingFields.request());
+    yield put(DataWranglingScriptsRoutines.setImageScrapingFields.request());
 
-    yield put(DataWranglingScriptsRoutines.setImageScrappingFields.success(payload));
+    yield put(DataWranglingScriptsRoutines.setImageScrapingFields.success(payload));
     browserHistory.push(`/datasource/${payload.dataSourceId}/3`);
   } catch (error) {
-    yield put(DataWranglingScriptsRoutines.setImageScrappingFields.failure(error));
+    yield put(DataWranglingScriptsRoutines.setImageScrapingFields.failure(error));
   } finally {
-    yield put(DataWranglingScriptsRoutines.setImageScrappingFields.fulfill());
+    yield put(DataWranglingScriptsRoutines.setImageScrapingFields.fulfill());
   }
 }
 
@@ -94,6 +94,6 @@ export function* watchDataWranglingScripts() {
     takeLatest(DataWranglingScriptsRoutines.sendList.TRIGGER, sendList),
     takeLatest(DataWranglingScriptsRoutines.uploadScript.TRIGGER, uploadScript),
     takeLatest(DataWranglingScriptsRoutines.fetchOne.TRIGGER, fetchOne),
-    takeLatest(DataWranglingScriptsRoutines.setImageScrappingFields.TRIGGER, setImageScrappingFields),
+    takeLatest(DataWranglingScriptsRoutines.setImageScrapingFields.TRIGGER, setImageScrapingFields),
   ]);
 }

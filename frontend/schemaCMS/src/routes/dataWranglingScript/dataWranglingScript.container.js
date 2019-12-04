@@ -9,7 +9,7 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import {
   DataWranglingScriptsRoutines,
   selectDataWranglingScript,
-  selectImageScrappingFields,
+  selectImageScrapingFields,
 } from '../../modules/dataWranglingScripts';
 import { DataWranglingScript } from './dataWranglingScript.component';
 import { selectIsAdmin } from '../../modules/userProfile';
@@ -19,7 +19,7 @@ const mapStateToProps = createStructuredSelector({
   dataWranglingScript: selectDataWranglingScript,
   fieldNames: selectFieldNames,
   isAdmin: selectIsAdmin,
-  imageScrappingFields: selectImageScrappingFields,
+  imageScrapingFields: selectImageScrapingFields,
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -27,7 +27,7 @@ export const mapDispatchToProps = dispatch => ({
     {
       fetchDataWranglingScript: promisifyRoutine(DataWranglingScriptsRoutines.fetchOne),
       fetchDataSource: promisifyRoutine(DataSourceRoutines.fetchOne),
-      setImageScrappingFields: promisifyRoutine(DataWranglingScriptsRoutines.setImageScrappingFields),
+      setImageScrapingFields: promisifyRoutine(DataWranglingScriptsRoutines.setImageScrapingFields),
     },
     dispatch
   ),

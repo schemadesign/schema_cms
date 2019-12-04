@@ -19,11 +19,9 @@ export const defaultProps = {
   },
   isAdmin: true,
   match: {
+    path: '/',
     params: {
-      projectId: '1',
-      dataSourceId: '1',
       scriptId: '1',
-      step: '3',
     },
   },
 };

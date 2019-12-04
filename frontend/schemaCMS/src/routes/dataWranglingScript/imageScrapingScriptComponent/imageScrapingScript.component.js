@@ -14,8 +14,8 @@ import {
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { TopHeader } from '../../../shared/components/topHeader';
-import { Container, Form, customInputStyles } from './imageScrappingScript.styles';
-import messages from './imageScrappingScript.messages';
+import { Container, Form, customInputStyles } from './imageScrapingScript.styles';
+import messages from './imageScrapingScript.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
@@ -23,13 +23,13 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 const { CheckboxGroup, Checkbox } = FormUI;
 const { Span } = Typography;
 
-export class ImageScrappingScript extends PureComponent {
+export class ImageScrapingScript extends PureComponent {
   static propTypes = {
     fetchDataSource: PropTypes.func.isRequired,
     dataWranglingScript: PropTypes.object,
     fieldNames: PropTypes.array.isRequired,
-    imageScrappingFields: PropTypes.array.isRequired,
-    setImageScrappingFields: PropTypes.func.isRequired,
+    imageScrapingFields: PropTypes.array.isRequired,
+    setImageScrapingFields: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     isAdmin: PropTypes.bool.isRequired,
@@ -49,7 +49,7 @@ export class ImageScrappingScript extends PureComponent {
   async componentDidMount() {
     try {
       await this.props.fetchDataSource(path(['match', 'params'], this.props));
-      this.setState({ loading: false, selectedFields: this.props.imageScrappingFields });
+      this.setState({ loading: false, selectedFields: this.props.imageScrapingFields });
     } catch (e) {
       console.log(e);
     }
@@ -85,8 +85,8 @@ export class ImageScrappingScript extends PureComponent {
   };
 
   handleOkClick = () =>
-    this.props.setImageScrappingFields({
-      imageScrappingFields: this.state.selectedFields,
+    this.props.setImageScrapingFields({
+      imageScrapingFields: this.state.selectedFields,
       scriptId: path(['match', 'params', 'scriptId'], this.props),
       dataSourceId: path(['match', 'params', 'dataSourceId'], this.props),
     });

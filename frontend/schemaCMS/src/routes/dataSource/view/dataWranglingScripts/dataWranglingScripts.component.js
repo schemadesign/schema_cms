@@ -24,7 +24,7 @@ import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } f
 import messages from './dataWranglingScripts.messages';
 import { StepNavigation } from '../../../../shared/components/stepNavigation';
 import {
-  IMAGE_SCRAPPING_SCRIPT_TYPE,
+  IMAGE_SCRAPING_SCRIPT_TYPE,
   SCRIPT_NAME_MAX_LENGTH,
 } from '../../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { renderWhenTrue } from '../../../../shared/utils/rendering';
@@ -35,7 +35,7 @@ export class DataWranglingScripts extends PureComponent {
   static propTypes = {
     dataWranglingScripts: PropTypes.array.isRequired,
     customScripts: PropTypes.array.isRequired,
-    imageScrappingFields: PropTypes.array.isRequired,
+    imageScrapingFields: PropTypes.array.isRequired,
     fetchDataWranglingScripts: PropTypes.func.isRequired,
     uploadScript: PropTypes.func.isRequired,
     sendUpdatedDataWranglingScript: PropTypes.func.isRequired,
@@ -60,12 +60,12 @@ export class DataWranglingScripts extends PureComponent {
   }
 
   getScriptLink = (scriptId, specs, dataSourceId) =>
-    specs.type === IMAGE_SCRAPPING_SCRIPT_TYPE ? `/script/${scriptId}/${dataSourceId}` : `/script/${scriptId}`;
+    specs.type === IMAGE_SCRAPING_SCRIPT_TYPE ? `/script/${scriptId}/${dataSourceId}` : `/script/${scriptId}`;
 
   parseSteps = (script, index) =>
     ifElse(
-      pathEq(['specs', 'type'], IMAGE_SCRAPPING_SCRIPT_TYPE),
-      always({ script, execOrder: index, options: { columns: this.props.imageScrappingFields } }),
+      pathEq(['specs', 'type'], IMAGE_SCRAPING_SCRIPT_TYPE),
+      always({ script, execOrder: index, options: { columns: this.props.imageScrapingFields } }),
       always({ script, execOrder: index })
     )(find(propEq('id', parseInt(script, 10)), this.props.dataWranglingScripts));
 
@@ -97,7 +97,7 @@ export class DataWranglingScripts extends PureComponent {
     const setScripts = ifElse(equals(true), always(append(value, steps)), always(reject(equals(value), steps)));
     const script = find(propEq('id', parseInt(value, 10)), this.props.dataWranglingScripts);
 
-    if (checked && script.specs.type === IMAGE_SCRAPPING_SCRIPT_TYPE) {
+    if (checked && script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE) {
       const dataSourceId = path(['match', 'params', 'dataSourceId'], this.props);
       return this.props.history.push(`/script/${value}/${dataSourceId}`);
     }

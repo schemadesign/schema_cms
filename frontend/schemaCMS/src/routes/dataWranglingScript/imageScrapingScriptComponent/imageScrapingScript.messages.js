@@ -3,35 +3,35 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   pageTitle: {
-    id: 'dataWranglingscripts.view.pageTitle',
+    id: 'imageScrapingScript.view.pageTitle',
     defaultMessage: 'View step',
   },
   title: {
-    id: 'dataWranglingscripts.view.title',
+    id: 'imageScrapingScript.view.title',
     defaultMessage: 'Data Wrangling',
   },
   subTitle: {
-    id: 'dataWranglingscripts.view.subTitle',
+    id: 'imageScrapingScript.view.subTitle',
     defaultMessage: 'View step',
   },
   description: {
-    id: 'dataWranglingscripts.view.description',
+    id: 'imageScrapingScript.view.description',
     defaultMessage: 'Description',
   },
   descriptionPlaceholder: {
-    id: 'dataWranglingscripts.view.descriptionPlaceholder',
+    id: 'imageScrapingScript.view.descriptionPlaceholder',
     defaultMessage: 'Description',
   },
   code: {
-    id: 'dataWranglingscripts.view.code',
+    id: 'imageScrapingScript.view.code',
     defaultMessage: 'Python Code',
   },
   codePlaceholder: {
-    id: 'dataWranglingscripts.view.codePlaceholder',
+    id: 'imageScrapingScript.view.codePlaceholder',
     defaultMessage: 'Python Code',
   },
   back: {
-    id: 'dataWranglingscripts.view.back',
+    id: 'imageScrapingScript.view.back',
     defaultMessage: 'Back',
   },
   save: {
@@ -39,7 +39,7 @@ export default defineMessages({
     defaultMessage: 'Save',
   },
   ok: {
-    id: 'dataWranglingscripts.view.ok',
+    id: 'imageScrapingScript.view.ok',
     defaultMessage: 'OK',
   },
 });

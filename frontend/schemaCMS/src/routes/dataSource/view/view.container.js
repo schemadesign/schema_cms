@@ -17,7 +17,7 @@ import {
   DataWranglingScriptsRoutines,
   selectDataWranglingScripts,
   selectCustomScripts,
-  selectImageScrappingFields,
+  selectImageScrapingFields,
 } from '../../../modules/dataWranglingScripts';
 import { selectFilters } from '../../../modules/filter';
 import { FilterRoutines } from '../../../modules/filter/filter.redux';
@@ -31,7 +31,7 @@ const mapStateToProps = createStructuredSelector({
   isAnyJobProcessing: selectIsAnyJobProcessing,
   isAdmin: selectIsAdmin,
   customScripts: selectCustomScripts,
-  imageScrappingFields: selectImageScrappingFields,
+  imageScrapingFields: selectImageScrapingFields,
 });
 
 export const mapDispatchToProps = dispatch => ({

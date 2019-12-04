@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { DataWranglingScript } from '../dataWranglingScript.component';
 import mockScripts, { CASE_CONVERSION } from '../../../modules/dataWranglingScripts/scripts.mock';
-import { IMAGE_SCRAPPING_SCRIPT_TYPE } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
+import { IMAGE_SCRAPING_SCRIPT_TYPE } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 
 describe('DataWranglingScript: Component', () => {
   const defaultProps = {
@@ -54,7 +54,7 @@ describe('DataWranglingScript: Component', () => {
       // eslint-disable-next-line import/no-named-as-default-member
       ...mockScripts[CASE_CONVERSION],
       specs: {
-        type: IMAGE_SCRAPPING_SCRIPT_TYPE,
+        type: IMAGE_SCRAPING_SCRIPT_TYPE,
       },
     };
 
