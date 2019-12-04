@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
-import { DataWranglingScript } from './dataWranglingScript.component';
+import { DataWranglingScriptComponent } from './dataWranglingScript.component';
 
 import { withTheme } from '../../../.storybook/decorators';
 import mockScripts, { BLANK_CELLS } from '../../../modules/dataWranglingScripts/scripts.mock';
@@ -16,6 +16,7 @@ export const defaultProps = {
   },
   history: {
     push: Function.prototype,
+    goBack: Function.prototype,
   },
   isAdmin: true,
   match: {
@@ -33,8 +34,8 @@ export const editorProps = {
 
 storiesOf('DataWranglingScript', module)
   .addDecorator(withTheme())
-  .add('admin', () => <DataWranglingScript {...defaultProps} />);
+  .add('admin', () => <DataWranglingScriptComponent {...defaultProps} />);
 
 storiesOf('DataWranglingScript', module)
   .addDecorator(withTheme(Theme.light))
-  .add('editor', () => <DataWranglingScript {...editorProps} />);
+  .add('editor', () => <DataWranglingScriptComponent {...editorProps} />);

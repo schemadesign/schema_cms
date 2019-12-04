@@ -17,6 +17,7 @@ export const defaultProps = {
   },
   history: {
     push: Function.prototype,
+    goBack: Function.prototype,
   },
   isAdmin: true,
   match: {
