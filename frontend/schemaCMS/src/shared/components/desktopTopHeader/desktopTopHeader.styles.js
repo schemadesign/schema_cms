@@ -111,9 +111,10 @@ export const menuStyles = {
 
 export const logoutButtonStyles = {
   display: 'flex',
+  alignItems: 'center',
   height: 'calc(100% - 20px)',
-  borderRadius: null,
   margin: '6px 0 10px 10px',
   padding: '0 7px',
+  borderRadius: null,
   backgroundColor: 'transparent',
 };
