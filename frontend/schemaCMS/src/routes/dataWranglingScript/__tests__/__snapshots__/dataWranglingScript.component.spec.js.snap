@@ -1,79 +1,183 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataWranglingScript: Component should render correctly 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="View step"
+<LoadingWrapper
+  error={null}
+  loading={true}
+  noData={false}
+  noDataContent={null}
+>
+  <DataWranglingScriptComponent
+    dataWranglingScript={
+      Object {
+        "body": "
+      import pandas as pd
+  
+      df = pd.DataFrame({'Place': ['newyork', 'Washington', 'Newyork', 'WASHIngton'],
+                         'var1': ['XSD', 'wer', 'xyz', 'zyx']})
+      # Uppercase
+      df = df['var1'].str.upper()
+      # lowercase
+      df = df['var1'].str.lower()
+      # Title case
+      df = df['var1'].str.title()
+      # Sentence Case
+      df = df['var1'].str.capitalize()
+    ",
+        "datasource": 2,
+        "id": 4,
+        "isPredefined": false,
+        "name": "local:case_conversion.py",
+        "specs": Object {},
+      }
+    }
+    fetchDataWranglingScript={[MockFunction]}
+    match={
+      Object {
+        "path": Object {
+          "scriptId": 1,
+        },
+      }
+    }
   />
-  <TopHeader
-    headerSubtitle="View step"
-    headerTitle="Data Wrangling"
-  />
-  <ContextHeader
-    subtitle="View step"
-    title="Data Wrangling"
-  />
-  <LoadingWrapper
-    error={null}
-    loading={false}
-    noData={false}
-    noDataContent={null}
-  >
-    <Component />
-  </LoadingWrapper>
-</styled.div>
+</LoadingWrapper>
 `;
 
 exports[`DataWranglingScript: Component should render correctly with link to datasources 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="View step"
+<LoadingWrapper
+  error={null}
+  loading={true}
+  noData={false}
+  noDataContent={null}
+>
+  <DataWranglingScriptComponent
+    dataWranglingScript={
+      Object {
+        "body": "
+      import pandas as pd
+  
+      df = pd.DataFrame({'Place': ['newyork', 'Washington', 'Newyork', 'WASHIngton'],
+                         'var1': ['XSD', 'wer', 'xyz', 'zyx']})
+      # Uppercase
+      df = df['var1'].str.upper()
+      # lowercase
+      df = df['var1'].str.lower()
+      # Title case
+      df = df['var1'].str.title()
+      # Sentence Case
+      df = df['var1'].str.capitalize()
+    ",
+        "datasource": 2,
+        "id": 4,
+        "isPredefined": false,
+        "name": "local:case_conversion.py",
+        "specs": Object {},
+      }
+    }
+    fetchDataWranglingScript={[MockFunction]}
+    match={
+      Object {
+        "path": Object {
+          "scriptId": 1,
+        },
+      }
+    }
   />
-  <TopHeader
-    headerSubtitle="View step"
-    headerTitle="Data Wrangling"
-  />
-  <ContextHeader
-    subtitle="View step"
-    title="Data Wrangling"
-  />
-  <LoadingWrapper
-    error={null}
-    loading={false}
-    noData={false}
-    noDataContent={null}
-  >
-    <Component />
-  </LoadingWrapper>
-</styled.div>
+</LoadingWrapper>
 `;
 
 exports[`DataWranglingScript: Component should render correctly with loader 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="View step"
+<LoadingWrapper
+  error={null}
+  loading={true}
+  noData={false}
+  noDataContent={null}
+>
+  <DataWranglingScriptComponent
+    dataWranglingScript={
+      Object {
+        "body": "
+      import pandas as pd
+  
+      df = pd.DataFrame({'Place': ['newyork', 'Washington', 'Newyork', 'WASHIngton'],
+                         'var1': ['XSD', 'wer', 'xyz', 'zyx']})
+      # Uppercase
+      df = df['var1'].str.upper()
+      # lowercase
+      df = df['var1'].str.lower()
+      # Title case
+      df = df['var1'].str.title()
+      # Sentence Case
+      df = df['var1'].str.capitalize()
+    ",
+        "datasource": 2,
+        "id": 4,
+        "isPredefined": false,
+        "name": "local:case_conversion.py",
+        "specs": Object {},
+      }
+    }
+    fetchDataWranglingScript={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={Object {}}
+    isAdmin={false}
+    match={
+      Object {
+        "params": Object {
+          "scriptId": 1,
+        },
+        "path": "/",
+      }
+    }
   />
-  <TopHeader
-    headerSubtitle="View step"
-    headerTitle="Data Wrangling"
+</LoadingWrapper>
+`;
+
+exports[`DataWranglingScript: Component should render correctly with route to custom script 1`] = `
+<LoadingWrapper
+  error={null}
+  loading={true}
+  noData={false}
+  noDataContent={null}
+>
+  <ImageScrappingScript
+    dataWranglingScript={
+      Object {
+        "body": "
+      import pandas as pd
+  
+      df = pd.DataFrame({'Place': ['newyork', 'Washington', 'Newyork', 'WASHIngton'],
+                         'var1': ['XSD', 'wer', 'xyz', 'zyx']})
+      # Uppercase
+      df = df['var1'].str.upper()
+      # lowercase
+      df = df['var1'].str.lower()
+      # Title case
+      df = df['var1'].str.title()
+      # Sentence Case
+      df = df['var1'].str.capitalize()
+    ",
+        "datasource": 2,
+        "id": 4,
+        "isPredefined": false,
+        "name": "local:case_conversion.py",
+        "specs": Object {
+          "type": "image_scraping",
+        },
+      }
+    }
+    fetchDataWranglingScript={[MockFunction]}
+    match={
+      Object {
+        "path": Object {
+          "scriptId": 1,
+        },
+      }
+    }
   />
-  <ContextHeader
-    subtitle="View step"
-    title="Data Wrangling"
-  />
-  <LoadingWrapper
-    error={null}
-    loading={true}
-    noData={false}
-    noDataContent={null}
-  >
-    <Component />
-  </LoadingWrapper>
-</styled.div>
+</LoadingWrapper>
 `;

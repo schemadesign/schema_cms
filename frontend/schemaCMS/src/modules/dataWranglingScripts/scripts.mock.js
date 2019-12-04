@@ -8,6 +8,7 @@ export default {
     id: 1,
     isPredefined: true,
     name: BLANK_CELLS,
+    specs: {},
     body: `
       import pandas as pd
       import numpy as np
@@ -82,6 +83,7 @@ export default {
     id: 2,
     isPredefined: true,
     name: WHITE_SPACES,
+    specs: {},
     body: `
       import pandas as pd
       
@@ -97,6 +99,7 @@ export default {
     id: 3,
     isPredefined: true,
     name: HANDLING_DUPLICATES,
+    specs: {},
     body: `
       import pandas as pd
       
@@ -119,6 +122,7 @@ export default {
     isPredefined: false,
     datasource: 2,
     name: CASE_CONVERSION,
+    specs: {},
     body: `
       import pandas as pd
   
