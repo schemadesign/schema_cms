@@ -17,6 +17,11 @@ def update_meta(view, model_class, request, pk, *args, **kwargs):
     with transaction.atomic():
         obj = get_object_or_404(model_class.objects.select_for_update(), pk=pk)
         obj.update_meta(**serializer.validated_data)
+
+        if isinstance(model_class(), models.DataSource):
+            fake_job = obj.create_job(description=f"DataSource {obj.id} file upload")
+            transaction.on_commit(fake_job.schedule)
+
     return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 
