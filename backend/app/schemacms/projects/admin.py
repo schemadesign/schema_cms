@@ -2,7 +2,7 @@ import itertools
 
 from django.contrib import admin
 from django.contrib import messages
-from django.db import transaction
+from django.db import transaction, models as dj_models
 from django.utils import safestring
 from django.template.loader import render_to_string
 
@@ -39,9 +39,13 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
     delete_selected.short_description = 'Soft delete selected objects'
 
     def soft_undelete(self, request, queryset):
-        queryset = queryset.filter(deleted_at__isnull=0)
         # Check if project names exist in the not deleted queryset
         field = "title"
+        queryset = queryset.filter(deleted_at__isnull=0)
+        if queryset.values(field).annotate(c=dj_models.Count(field)).filter(c__gt=1).exists():
+            msg = "Projects have the same name. Please change the name before undeleting"
+            self.message_user(request=request, message=msg, level=messages.ERROR)
+            return
         conflicts = (
             self.model.objects.values_list(field, flat=True)
             .filter(**{f"{field}__in": queryset.values(field)})
@@ -63,7 +67,8 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
             )
             self.message_user(request=request, message=msg, level=messages.ERROR)
             return
-        return super().soft_undelete(request, queryset)
+        with transaction.atomic():
+            return super().soft_undelete(request, queryset)
 
     soft_undelete.short_description = 'Undelete selected objects'
 
@@ -119,7 +124,7 @@ class FolderAdmin(utils_admin.SoftDeleteObjectAdmin):
     list_filter = ('project',)
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelate(request, queryset, field="name", model_name="Folder")
+        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Folder")
 
 
 @admin.register(models.Page)
@@ -132,7 +137,7 @@ class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
         return obj.folder.project.title
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelate(request, queryset, field="title", model_name="Page")
+        self.handle_unique_conflicts_on_undelete(request, queryset, field="title", model_name="Page")
 
 
 @admin.register(models.Block)
@@ -149,4 +154,4 @@ class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
         return obj.page.folder.project.title
 
     def soft_undelete(self, request, queryset):
-        self.handle_unique_conflicts_on_undelate(request, queryset, field="name", model_name="Block")
+        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="Block")

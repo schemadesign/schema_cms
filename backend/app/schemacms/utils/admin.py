@@ -24,7 +24,7 @@ class SoftDeleteObjectAdmin(softdelete.admin.SoftDeleteObjectAdmin):
 
     soft_undelete.short_description = 'Undelete selected objects'
 
-    def handle_unique_conflicts_on_undelate(self, request, queryset, field, model_name):
+    def handle_unique_conflicts_on_undelete(self, request, queryset, field, model_name):
         queryset = queryset.filter(deleted_at__isnull=0)
         conflicts = (
             self.model.objects.values_list(field, flat=True)
