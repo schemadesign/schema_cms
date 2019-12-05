@@ -8,6 +8,8 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     key="0"
   >
     <styled.div
+      active={true}
+      disabled={false}
       onClick={[Function]}
     >
       <Component
@@ -31,6 +33,8 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     key="1"
   >
     <styled.div
+      active={false}
+      disabled={true}
       onClick={[Function]}
     >
       <Component
@@ -54,6 +58,8 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     key="2"
   >
     <styled.div
+      active={false}
+      disabled={true}
       onClick={[Function]}
     >
       <Component
@@ -77,6 +83,8 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     key="3"
   >
     <styled.div
+      active={false}
+      disabled={true}
       onClick={[Function]}
     >
       <Component
@@ -100,6 +108,8 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     key="4"
   >
     <styled.div
+      active={false}
+      disabled={true}
       onClick={[Function]}
     >
       <Component
@@ -123,6 +133,322 @@ exports[`DataSourceNavigation: Component should render correctly 1`] = `
     key="5"
   >
     <styled.div
+      active={false}
+      disabled={true}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Views"
+        id="shared.components.dataSourceNavigation.views"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`DataSourceNavigation: Component should render correctly with fake job 1`] = `
+<styled.div
+  hideOnDesktop={false}
+>
+  <styled.div
+    key="0"
+  >
+    <styled.div
+      active={true}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Source"
+        id="shared.components.dataSourceNavigation.source"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="1"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Fields"
+        id="shared.components.dataSourceNavigation.preview"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="2"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Steps"
+        id="shared.components.dataSourceNavigation.steps"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="3"
+  >
+    <styled.div
+      active={false}
+      disabled={true}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Results"
+        id="shared.components.dataSourceNavigation.result"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="4"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Filters"
+        id="shared.components.dataSourceNavigation.filters"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="5"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Views"
+        id="shared.components.dataSourceNavigation.views"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`DataSourceNavigation: Component should render correctly with job 1`] = `
+<styled.div
+  hideOnDesktop={false}
+>
+  <styled.div
+    key="0"
+  >
+    <styled.div
+      active={true}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Source"
+        id="shared.components.dataSourceNavigation.source"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="1"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Fields"
+        id="shared.components.dataSourceNavigation.preview"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="2"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Steps"
+        id="shared.components.dataSourceNavigation.steps"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="3"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Results"
+        id="shared.components.dataSourceNavigation.result"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="4"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Filters"
+        id="shared.components.dataSourceNavigation.filters"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="5"
+  >
+    <styled.div
+      active={false}
+      disabled={false}
       onClick={[Function]}
     >
       <Component

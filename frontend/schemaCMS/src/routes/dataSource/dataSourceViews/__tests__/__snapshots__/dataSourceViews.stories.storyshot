@@ -123,6 +123,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
   align-items: center;
 }
 
+.c12 svg {
+  opacity: 0.4;
+}
+
 .c11 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -479,6 +483,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         >
           <div
             className="c12"
+            disabled={false}
             onClick={[Function]}
           >
             <svg
@@ -509,6 +514,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         >
           <div
             className="c12"
+            disabled={false}
             onClick={[Function]}
           >
             <svg
@@ -540,6 +546,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         >
           <div
             className="c12"
+            disabled={false}
             onClick={[Function]}
           >
             <svg
@@ -589,6 +596,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         >
           <div
             className="c12"
+            disabled={false}
             onClick={[Function]}
           >
             <svg
@@ -638,6 +646,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         >
           <div
             className="c12"
+            disabled={false}
             onClick={[Function]}
           >
             <svg
@@ -671,6 +680,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         >
           <div
             className="c12"
+            disabled={false}
             onClick={[Function]}
           >
             <svg
@@ -717,6 +727,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
     >
       <div
         className="c12"
+        disabled={false}
         onClick={[Function]}
       >
         <svg
@@ -747,6 +758,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
     >
       <div
         className="c12"
+        disabled={false}
         onClick={[Function]}
       >
         <svg
@@ -778,6 +790,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
     >
       <div
         className="c12"
+        disabled={false}
         onClick={[Function]}
       >
         <svg
@@ -827,6 +840,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
     >
       <div
         className="c12"
+        disabled={false}
         onClick={[Function]}
       >
         <svg
@@ -876,6 +890,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
     >
       <div
         className="c12"
+        disabled={false}
         onClick={[Function]}
       >
         <svg
@@ -909,6 +924,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
     >
       <div
         className="c12"
+        disabled={false}
         onClick={[Function]}
       >
         <svg

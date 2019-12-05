@@ -8,6 +8,9 @@ export const defaultProps = {
   dataSource: {
     name: 'name',
   },
+  match: {
+    url: 'url',
+  },
   intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 

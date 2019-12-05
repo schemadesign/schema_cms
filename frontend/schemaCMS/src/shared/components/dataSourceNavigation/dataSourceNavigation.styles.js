@@ -34,7 +34,7 @@ const disabledStyles = css`
 
 const inActiveStyles = css`
   svg {
-    opacity: 0.3;
+    opacity: 0.4;
   }
 `;
 

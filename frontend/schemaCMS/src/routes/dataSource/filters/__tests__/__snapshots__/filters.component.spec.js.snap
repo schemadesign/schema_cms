@@ -78,6 +78,7 @@ exports[`Filters: Component should render correctly 1`] = `
           "params": Object {
             "dataSourceId": "1",
           },
+          "url": "url",
         }
       }
       setFilters={[Function]}
@@ -177,6 +178,7 @@ exports[`Filters: Component should render correctly 1`] = `
         "params": Object {
           "dataSourceId": "1",
         },
+        "url": "url",
       }
     }
     setFilters={[Function]}
@@ -246,6 +248,7 @@ exports[`Filters: Component should render correctly with loader 1`] = `
           "params": Object {
             "dataSourceId": "1",
           },
+          "url": "url",
         }
       }
       setFilters={[Function]}
@@ -329,6 +332,7 @@ exports[`Filters: Component should render correctly with loader 1`] = `
         "params": Object {
           "dataSourceId": "1",
         },
+        "url": "url",
       }
     }
     setFilters={[Function]}

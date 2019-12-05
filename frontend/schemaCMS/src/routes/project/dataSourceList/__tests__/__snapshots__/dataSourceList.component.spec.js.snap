@@ -113,23 +113,11 @@ exports[`DataSourceList: Component should render card with job 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.ul)>
-              <ForwardRef(styled.li)
-                id="headerItem-0"
-              >
-                3 months ago
-              </ForwardRef(styled.li)>
-              <ForwardRef(styled.li)
-                id="headerItem-1"
-              >
-                firstName lastName
-              </ForwardRef(styled.li)>
-            </ForwardRef(styled.ul)>
-            <ForwardRef(styled.div)>
-              <Unknown />
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
+          <FormattedMessage
+            defaultMessage="Loading..."
+            id="project.dataSourceList.loading"
+            values={Object {}}
+          />
         }
         key="0"
       >

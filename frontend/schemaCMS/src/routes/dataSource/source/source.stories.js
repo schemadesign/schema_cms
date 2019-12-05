@@ -23,6 +23,7 @@ export const defaultProps = {
     params: {
       projectId: '1',
     },
+    url: 'url',
   },
 };
 
