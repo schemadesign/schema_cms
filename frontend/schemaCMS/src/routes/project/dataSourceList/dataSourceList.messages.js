@@ -3,51 +3,55 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'dataSource.list.title',
+    id: 'project.dataSourceList.title',
     defaultMessage: 'Data Sources',
   },
   subTitle: {
-    id: 'dataSource.list.subTitle',
+    id: 'project.dataSourceList.subTitle',
     defaultMessage: 'Overview',
   },
   projectDetails: {
-    id: 'dataSource.list.projectDetails',
+    id: 'project.dataSourceList.projectDetails',
     defaultMessage: 'Project details',
   },
   error: {
-    id: 'dataSource.list.error',
+    id: 'project.dataSourceList.error',
     defaultMessage: 'Error',
   },
   processing: {
-    id: 'dataSource.list.processing',
+    id: 'project.dataSourceList.processing',
     defaultMessage: 'Loading...',
   },
   draft: {
-    id: 'dataSource.list.draft',
+    id: 'project.dataSourceList.draft',
     defaultMessage: 'Draft',
   },
   source: {
-    id: 'dataSource.list.source',
+    id: 'project.dataSourceList.source',
     defaultMessage: 'Source',
   },
   items: {
-    id: 'dataSource.list.items',
+    id: 'project.dataSourceList.items',
     defaultMessage: 'Items',
   },
   fields: {
-    id: 'dataSource.list.fields',
+    id: 'project.dataSourceList.fields',
     defaultMessage: 'Fields',
   },
   filters: {
-    id: 'dataSource.list.filters',
+    id: 'project.dataSourceList.filters',
     defaultMessage: 'Filters',
   },
   views: {
-    id: 'dataSource.list.views',
+    id: 'project.dataSourceList.views',
     defaultMessage: 'Views',
   },
   noData: {
-    id: 'dataSource.list.noData',
+    id: 'project.dataSourceList.noData',
     defaultMessage: 'No Data Sources',
+  },
+  loading: {
+    id: 'project.dataSourceList.loading',
+    defaultMessage: 'Loading...',
   },
 });
