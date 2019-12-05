@@ -1,5 +1,4 @@
-import { errorMessageParser, generateApiUrl, getIsAnyResultProcessing } from '../helpers';
-import { JOB_STATE_PROCESSING, JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
+import { errorMessageParser, generateApiUrl } from '../helpers';
 
 describe('Helpers', () => {
   describe('generateApiUrl', () => {
@@ -30,26 +29,6 @@ describe('Helpers', () => {
       const formatMessage = ({ message }) => message;
 
       global.expect(errorMessageParser({ errors, messages, formatMessage })).toEqual({});
-    });
-  });
-
-  describe('getIsAnyResultProcessing', () => {
-    it('should return true', () => {
-      const jobs = [{ id: 2, jobState: JOB_STATE_PROCESSING }];
-      const datasource = {
-        jobs,
-      };
-
-      global.expect(getIsAnyResultProcessing(datasource)).toEqual(true);
-    });
-
-    it('should return false', () => {
-      const jobs = [{ id: 2, jobState: JOB_STATE_SUCCESS }];
-      const datasource = {
-        jobs,
-      };
-
-      global.expect(getIsAnyResultProcessing(datasource)).toEqual(false);
     });
   });
 });

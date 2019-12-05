@@ -61,14 +61,16 @@ describe('DataSource: sagas', () => {
     const responseData = {
       results: [
         {
-          jobs: [{ id: 1, jobState: 'processing' }],
+          activeJob: null,
+          jobsInProcess: true,
         },
       ],
     };
     const responseDoneData = {
       results: [
         {
-          jobs: [{ id: 1, jobState: 'succeed' }],
+          activeJob: { id: 'id' },
+          jobsInProcess: false,
         },
       ],
     };

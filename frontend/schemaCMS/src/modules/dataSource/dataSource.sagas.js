@@ -1,12 +1,11 @@
 import { all, put, takeLatest, take, delay, fork, cancel, cancelled } from 'redux-saga/effects';
-import { pipe, forEach, keys, any, omit } from 'ramda';
+import { pipe, all as ramdaAll, forEach, keys, omit, either, propEq, isEmpty, propIs, both } from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { FETCH_LIST_DELAY } from './dataSource.constants';
-import { getIsAnyResultProcessing } from '../../shared/utils/helpers';
 
 const PAGE_SIZE = 1000;
 
@@ -62,7 +61,10 @@ function* fetchOne({ payload: { dataSourceId } }) {
   }
 }
 
-const getIfAnyResultProcessing = any(getIsAnyResultProcessing);
+const getIfAllDataSourceProcessed = either(
+  isEmpty,
+  ramdaAll(both(propIs(Object, 'activeJob'), propEq('jobsInProcess', false)))
+);
 
 function* fetchListLoop(payload) {
   try {
@@ -75,7 +77,7 @@ function* fetchListLoop(payload) {
 
       yield put(DataSourceRoutines.fetchList.success(data.results));
 
-      if (!getIfAnyResultProcessing(data.results)) {
+      if (getIfAllDataSourceProcessed(data.results)) {
         yield cancel();
       }
 
