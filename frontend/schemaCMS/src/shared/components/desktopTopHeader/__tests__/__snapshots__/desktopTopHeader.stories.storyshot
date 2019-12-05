@@ -219,6 +219,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 onClick={[Function]}
                 style={
                   Object {
+                    "alignItems": "center",
                     "backgroundColor": "transparent",
                     "border": "none",
                     "borderRadius": null,
@@ -772,6 +773,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 onClick={[Function]}
                 style={
                   Object {
+                    "alignItems": "center",
                     "backgroundColor": "transparent",
                     "border": "none",
                     "borderRadius": null,
@@ -1321,6 +1323,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
                 onClick={[Function]}
                 style={
                   Object {
+                    "alignItems": "center",
                     "backgroundColor": "transparent",
                     "border": "none",
                     "borderRadius": null,
