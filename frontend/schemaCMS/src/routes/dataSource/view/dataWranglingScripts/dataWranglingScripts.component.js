@@ -18,6 +18,8 @@ import {
   find,
   pathEq,
   path,
+  prop,
+  pick,
 } from 'ramda';
 
 import { Container, Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
@@ -151,7 +153,12 @@ export class DataWranglingScripts extends PureComponent {
     const { errorMessage } = this.state;
     const steps = pipe(
       pathOr([], ['activeJob', 'scripts']),
-      map(toString),
+      map(
+        pipe(
+          prop('id'),
+          toString
+        )
+      ),
       insertAll(0, customScripts)
     )(dataSource);
 
