@@ -47,7 +47,6 @@ describe('Filter: sagas', () => {
         active,
         inactive,
       };
-      jest.spyOn(browserHistory, 'push');
 
       mockApi
         .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/set-filters`, { active, inactive })
@@ -58,8 +57,6 @@ describe('Filter: sagas', () => {
         .put(FilterRoutines.setFilters.success(response))
         .dispatch(FilterRoutines.setFilters(payload))
         .silentRun();
-
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/6');
     });
   });
 
@@ -84,7 +81,7 @@ describe('Filter: sagas', () => {
         .dispatch(FilterRoutines.createFilter(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/5');
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/filters');
     });
   });
 
@@ -126,7 +123,7 @@ describe('Filter: sagas', () => {
         .dispatch(FilterRoutines.updateFilter(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/5');
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/filters');
     });
   });
 
@@ -148,7 +145,7 @@ describe('Filter: sagas', () => {
         .dispatch(FilterRoutines.removeFilter(payload))
         .silentRun();
 
-      expect(browserHistory.push).toBeCalledWith('/datasource/1/5');
+      expect(browserHistory.push).toBeCalledWith('/datasource/1/filters');
     });
   });
 });

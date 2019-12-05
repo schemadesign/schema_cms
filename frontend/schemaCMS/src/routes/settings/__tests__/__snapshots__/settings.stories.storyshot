@@ -1,34 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Settings Default 1`] = `
-.c12 {
-  cursor: pointer;
-  color: #FFF;
-  -webkit-transition: border 400ms;
-  transition: border 400ms;
-  border-bottom: 1px solid transparent;
-}
-
-.c12:hover {
-  border-bottom: 1px solid #FFF;
-}
-
-.c11 {
-  border-top: 2px solid #2F2F36;
-  padding-top: 35px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
 .c10 {
   padding-top: 7px;
 }
@@ -57,9 +29,10 @@ exports[`Storyshots Settings Default 1`] = `
 }
 
 .c14 {
-  position: fixed;
-  padding: 40px 0 36px;
   bottom: 0;
+  width: 100%;
+  padding: 40px 0 36px;
+  position: fixed;
   width: calc(100% - 40px);
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
@@ -67,6 +40,34 @@ exports[`Storyshots Settings Default 1`] = `
 .c16 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c12 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+}
+
+.c12:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c11 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .c0 {
@@ -129,6 +130,9 @@ exports[`Storyshots Settings Default 1`] = `
 
 @media (min-width:1040px) {
   .c14 {
+    position: fixed;
+    width: calc(100% - 40px);
+    background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
     width: 1000px;
   }
 }
@@ -155,10 +159,10 @@ exports[`Storyshots Settings Default 1`] = `
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-align-items: flex-end;
-    -webkit-box-align: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin: 60px 0 40px 0;
   }
 }

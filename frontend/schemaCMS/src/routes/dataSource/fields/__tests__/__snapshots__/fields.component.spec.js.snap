@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fields: Component should render correctly 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Fields"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Fields"
+        id="dataSource.fields.subTitle"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Fields"
+        id="dataSource.fields.subTitle"
+        values={Object {}}
+      />
+    }
+  >
+    <DataSourceNavigation
+      dataSource={Object {}}
+      fetchPreview={[Function]}
+      hideOnDesktop={false}
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "step": "2",
+          },
+        }
+      }
+      previewData={Object {}}
+    />
+  </ContextHeader>
+  <DataPreview
+    dataSource={Object {}}
+    fetchPreview={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    jobId={null}
+    match={
+      Object {
+        "params": Object {
+          "step": "2",
+        },
+      }
+    }
+    previewData={Object {}}
+  />
+  <DataSourceNavigation
+    dataSource={Object {}}
+    fetchPreview={[Function]}
+    hideOnDesktop={true}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "step": "2",
+        },
+      }
+    }
+    previewData={Object {}}
+  />
+</Fragment>
+`;

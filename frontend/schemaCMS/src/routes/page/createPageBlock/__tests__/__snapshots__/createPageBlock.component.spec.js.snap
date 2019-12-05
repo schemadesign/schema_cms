@@ -67,6 +67,7 @@ exports[`CreatePageBlock: Component should render correctly 1`] = `
       }
     />
     <NavigationContainer
+      fixed={true}
       hideOnDesktop={false}
       right={false}
     >

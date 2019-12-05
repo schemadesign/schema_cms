@@ -118,6 +118,7 @@ exports[`UserCreate: Component should render correctly 1`] = `
       touched={Object {}}
     />
     <NavigationContainer
+      fixed={true}
       hideOnDesktop={false}
       right={false}
     >

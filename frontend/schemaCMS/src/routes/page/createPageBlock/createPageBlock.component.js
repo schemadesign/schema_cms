@@ -39,7 +39,7 @@ export class CreatePageBlock extends PureComponent {
         <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <Form onSubmit={handleSubmit}>
           <PageBlockForm {...this.props} />
-          <NavigationContainer>
+          <NavigationContainer fixed>
             <BackButton id="cancelBtn" type="button" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>

@@ -41,6 +41,7 @@ exports[`AddUser: Component should render correctly 1`] = `
     noDataContent={null}
   />
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >
@@ -241,6 +242,7 @@ exports[`AddUser: Component should render correctly with users 1`] = `
     </styled.div>
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >

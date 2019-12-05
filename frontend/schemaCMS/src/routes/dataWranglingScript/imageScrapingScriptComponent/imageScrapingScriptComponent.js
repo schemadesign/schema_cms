@@ -7,7 +7,7 @@ import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/
 import { Form as FormUI, Typography } from 'schemaUI';
 import { always, append, equals, ifElse, path, reject } from 'ramda';
 
-import { DATA_WRANGLING_STEP } from '../../../modules/dataSource/dataSource.constants';
+import { STEPS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import {
   DATA_WRANGLING_FORM_NAME,
   DESCRIPTION,
@@ -85,7 +85,7 @@ export class ImageScrapingScript extends PureComponent {
       return history.goBack();
     }
 
-    return history.push(`/datasource/${dataWranglingScript.datasource}/${DATA_WRANGLING_STEP}`);
+    return history.push(`/datasource/${dataWranglingScript.datasource}/${STEPS_PAGE}`);
   };
 
   handleOkClick = () =>

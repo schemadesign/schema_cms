@@ -69,7 +69,7 @@ export class UserList extends PureComponent {
         <LoadingWrapper loading={loading} noData={!users.length}>
           <UserListComponent users={this.props.users} projectId={getProjectId(this.props)} />
         </LoadingWrapper>
-        <NavigationContainer hideOnDesktop>
+        <NavigationContainer fixed hideOnDesktop>
           <BackButton onClick={this.handleBackClick}>
             <FormattedMessage {...messages.back} />
           </BackButton>

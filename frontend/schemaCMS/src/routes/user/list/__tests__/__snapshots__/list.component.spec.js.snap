@@ -44,6 +44,7 @@ exports[`User List: Component should render correctly 1`] = `
     users={Array []}
   />
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={true}
     right={false}
   >
@@ -121,6 +122,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
     }
   />
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={true}
     right={false}
   >

@@ -229,7 +229,7 @@ export class View extends PureComponent {
             {this.renderContent(project, projectId, isAdmin)}
           </LoadingWrapper>
         </div>
-        <NavigationContainer>
+        <NavigationContainer fixed>
           <BackArrowButton id="backProjectBtn" onClick={this.handleGoTo('/project')} />
         </NavigationContainer>
         <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>

@@ -103,7 +103,7 @@ export class View extends PureComponent {
         <LoadingWrapper loading={loading} error={error}>
           {this.renderContent(userData, isEditor, isAdmin)}
         </LoadingWrapper>
-        <NavigationContainer>
+        <NavigationContainer fixed>
           <BackButton type="button" onClick={this.handleBack} />
         </NavigationContainer>
         <Modal isOpen={this.state.userRemoveModalOpen} contentLabel="Confirm Removal" style={modalStyles}>

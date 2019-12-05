@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataSourceNavigation: Component should render correctly 1`] = `
+<styled.div
+  hideOnDesktop={false}
+>
+  <styled.div
+    key="0"
+  >
+    <styled.div
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Source"
+        id="shared.components.dataSourceNavigation.source"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="1"
+  >
+    <styled.div
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Fields"
+        id="shared.components.dataSourceNavigation.preview"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="2"
+  >
+    <styled.div
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Steps"
+        id="shared.components.dataSourceNavigation.steps"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="3"
+  >
+    <styled.div
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Results"
+        id="shared.components.dataSourceNavigation.result"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="4"
+  >
+    <styled.div
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Filters"
+        id="shared.components.dataSourceNavigation.filters"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="5"
+  >
+    <styled.div
+      onClick={[Function]}
+    >
+      <Component
+        customStyles={
+          Object {
+            "height": 54,
+            "width": 54,
+          }
+        }
+      />
+    </styled.div>
+    <styled.div>
+      <FormattedMessage
+        defaultMessage="Views"
+        id="shared.components.dataSourceNavigation.views"
+        values={Object {}}
+      />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

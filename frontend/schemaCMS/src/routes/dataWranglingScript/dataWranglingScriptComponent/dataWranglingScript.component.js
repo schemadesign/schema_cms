@@ -2,10 +2,9 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { FormattedMessage } from 'react-intl';
 import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-import { DATA_WRANGLING_STEP } from '../../../modules/dataSource/dataSource.constants';
+import { STEPS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import {
   DATA_WRANGLING_FORM_NAME,
   DESCRIPTION,
@@ -14,7 +13,7 @@ import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { Container, Form, customInputStyles } from './dataWranglingScript.styles';
 import messages from './dataWranglingScript.messages';
-import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 
 export class DataWranglingScriptComponent extends PureComponent {
@@ -44,7 +43,7 @@ export class DataWranglingScriptComponent extends PureComponent {
       return history.goBack();
     }
 
-    return history.push(`/datasource/${dataWranglingScript.datasource}/${DATA_WRANGLING_STEP}`);
+    return history.push(`/datasource/${dataWranglingScript.datasource}/${STEPS_PAGE}`);
   };
 
   render() {
@@ -74,11 +73,8 @@ export class DataWranglingScriptComponent extends PureComponent {
             {dataWranglingScript.body}
           </SyntaxHighlighter>
         </Form>
-        <NavigationContainer>
+        <NavigationContainer fixed>
           <BackButton onClick={this.handleGoToDataWranglingList(match, history)} />
-          <NextButton onClick={this.handleGoToDataWranglingList(match, history)}>
-            <FormattedMessage {...messages.ok} />
-          </NextButton>
         </NavigationContainer>
       </Container>
     );

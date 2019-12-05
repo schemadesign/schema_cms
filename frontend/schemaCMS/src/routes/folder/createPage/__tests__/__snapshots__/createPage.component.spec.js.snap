@@ -63,6 +63,7 @@ exports[`CreatePage: Component should render correctly 1`] = `
       values={Object {}}
     />
     <NavigationContainer
+      fixed={true}
       hideOnDesktop={false}
       right={false}
     >

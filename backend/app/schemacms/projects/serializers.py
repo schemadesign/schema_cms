@@ -134,6 +134,8 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
         if "file" in self.validated_data:
+            obj.active_job = None
+            obj.save(update_fields=["active_job"])
             obj.schedule_update_meta()
         return obj
 

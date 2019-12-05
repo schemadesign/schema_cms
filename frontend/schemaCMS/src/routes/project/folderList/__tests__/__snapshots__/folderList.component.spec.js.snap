@@ -96,6 +96,7 @@ exports[`FolderList: Component should render correctly 1`] = `
     </styled.section>
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={true}
     right={false}
   >
@@ -208,6 +209,7 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
     </styled.section>
   </LoadingWrapper>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={true}
     right={false}
   >

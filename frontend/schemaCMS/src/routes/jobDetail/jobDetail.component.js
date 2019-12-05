@@ -132,7 +132,7 @@ export class JobDetail extends PureComponent {
       <Fragment>
         <TopHeader {...topHeaderConfig} />
         <LoadingWrapper loading={loading}>{this.renderForm(job)}</LoadingWrapper>
-        <NavigationContainer>
+        <NavigationContainer fixed>
           <BackButton onClick={this.handleGoBack}>
             <FormattedMessage {...messages.back} />
           </BackButton>

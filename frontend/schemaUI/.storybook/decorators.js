@@ -6,7 +6,7 @@ import { fontFormats, interFontFaces } from './fonts';
 
 export const withTheme = (theme = Theme.dark) => story => (
   <ThemeProvider theme={theme}>
-    <div style={{ color: theme.text }}>{story()}</div>
+    <div style={{ color: theme.text, backgroundColor: theme.background }}>{story()}</div>
   </ThemeProvider>
 );
 

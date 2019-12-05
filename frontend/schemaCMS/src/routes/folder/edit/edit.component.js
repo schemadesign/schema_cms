@@ -92,7 +92,7 @@ export class Edit extends PureComponent {
           <Link id="removeFolderDesktopBtn" onClick={this.handleRemoveClick}>
             <FormattedMessage {...messages.removeFolder} />
           </Link>
-          <NavigationContainer>
+          <NavigationContainer fixed>
             <BackButton id="backBtn" type="button" onClick={this.handleBackClick}>
               <FormattedMessage {...messages.cancel} />
             </BackButton>

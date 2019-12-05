@@ -464,6 +464,7 @@ exports[`FilterForm: Component should render create form 1`] = `
       />
     </styled.div>
     <NavigationContainer
+      fixed={true}
       hideOnDesktop={false}
       right={false}
     >
@@ -802,6 +803,7 @@ exports[`FilterForm: Component should render edit form 1`] = `
       />
     </styled.div>
     <NavigationContainer
+      fixed={true}
       hideOnDesktop={false}
       right={false}
     >

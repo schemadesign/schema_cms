@@ -10,6 +10,7 @@ import {
 import browserHistory from '../../shared/utils/history';
 
 import { selectDataSource } from '../dataSource';
+import { STEPS_PAGE } from '../dataSource/dataSource.constants';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -80,8 +81,9 @@ function* setImageScrapingFields({ payload }) {
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.request());
 
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.success(payload));
-    browserHistory.push(`/datasource/${payload.dataSourceId}/3`);
+    browserHistory.push(`/datasource/${payload.dataSourceId}/${STEPS_PAGE}`);
   } catch (error) {
+    console.log(error);
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.failure(error));
   } finally {
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.fulfill());

@@ -68,7 +68,7 @@ export class UserCreate extends PureComponent {
     const invitationLabel = isInvitation ? { ...messages.invite } : { ...messages.add };
 
     return (
-      <NavigationContainer>
+      <NavigationContainer fixed>
         <BackButton type="button" onClick={this.props.onCancelClick}>
           <FormattedMessage {...messages.cancel} />
         </BackButton>
