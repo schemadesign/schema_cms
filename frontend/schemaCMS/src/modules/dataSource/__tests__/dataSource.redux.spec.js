@@ -79,14 +79,6 @@ describe('DataSource: redux', () => {
     });
   });
 
-  describe('when UNMOUNT_ONE/SUCCESS action is received', () => {
-    it('should unmount dataSource ', () => {
-      const resultState = dataSourceReducer(defaultState, DataSourceRoutines.unmountOne.success());
-
-      expect(resultState.dataSource).to.deep.equal({});
-    });
-  });
-
   describe('when FETCH_PREVIEW/SUCCESS action is received', () => {
     it('should set previewData ', () => {
       const previewData = {

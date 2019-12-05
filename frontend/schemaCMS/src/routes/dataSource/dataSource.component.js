@@ -1,6 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { always, pathEq } from 'ramda';
 
 import { CreateFilter } from './createFilter';
 import { Source } from './source';
@@ -10,15 +11,15 @@ import { Fields } from './fields';
 import { DataWranglingScripts } from './dataWranglingScripts';
 import { DataWranglingResult } from './dataWranglingResult';
 import { DataSourceViews } from './dataSourceViews';
-import { renderWhenTrue } from '../../shared/utils/rendering';
+import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { SOURCES } from '../../shared/components/projectTabs/projectTabs.constants';
 import { ProjectTabs } from '../../shared/components/projectTabs';
+import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 
 export default class DataSource extends PureComponent {
   static propTypes = {
     dataSource: PropTypes.object.isRequired,
     fetchDataSource: PropTypes.func.isRequired,
-    unmountDataSource: PropTypes.func.isRequired,
     match: PropTypes.shape({
       path: PropTypes.string.isRequired,
       params: PropTypes.shape({
@@ -29,54 +30,56 @@ export default class DataSource extends PureComponent {
 
   state = {
     loading: true,
+    error: null,
   };
 
   async componentDidMount() {
-    if (!this.props.dataSource.id) {
+    try {
       const { dataSourceId } = this.props.match.params;
 
       await this.props.fetchDataSource({ dataSourceId });
+    } catch (error) {
+      this.setState({ error });
+    } finally {
+      this.setState({ loading: false });
     }
-    this.setState({ loading: false });
   }
 
-  componentWillUnmount() {
-    this.props.unmountDataSource();
-  }
+  renderRestDataSourceSteps = ({ path, hasActiveJob }) =>
+    renderWhenTrueOtherwise(
+      always(<Redirect path={path} to={`${path}/source`} />),
+      always(
+        <Fragment>
+          <Route exact path={`${path}/preview`} component={Fields} />
+          <Route exact path={`${path}/steps`} component={DataWranglingScripts} />
+          <Route exact path={`${path}/filters/add`} component={CreateFilter} />
+          <Route exact path={`${path}/filters`} component={Filters} />
+          <Route exact path={`${path}/result`} component={DataWranglingResult} />
+          <Route exact path={`${path}/views`} component={DataSourceViews} />
+        </Fragment>
+      )
+    )(hasActiveJob);
 
-  renderRouting = renderWhenTrue(() => {
+  render() {
+    const { loading, error } = this.state;
     const {
       match: { path },
     } = this.props;
     const sourcePath = `${path}/source`;
-    const previewPath = `${path}/preview`;
     const jobListPath = `${path}/job`;
-    const filtersPath = `${path}/filters`;
-    const addFilterPath = `${path}/filters/add`;
-    const resultPath = `${path}/result`;
-    const stepsPath = `${path}/steps`;
-    const viewsPath = `${path}/views`;
+    const hasActiveJob = pathEq(['dataSource', 'activeJob'], null, this.props);
 
-    return (
-      <Switch>
-        <Route exact path={jobListPath} component={JobList} />
-        <Redirect exact path={path} to={sourcePath} />
-        <Route exact path={sourcePath} component={Source} />
-        <Route exact path={previewPath} component={Fields} />
-        <Route exact path={stepsPath} component={DataWranglingScripts} />
-        <Route exact path={addFilterPath} component={CreateFilter} />
-        <Route exact path={filtersPath} component={Filters} />
-        <Route exact path={resultPath} component={DataWranglingResult} />
-        <Route exact path={viewsPath} component={DataSourceViews} />
-      </Switch>
-    );
-  });
-
-  render() {
     return (
       <Fragment>
         <ProjectTabs active={SOURCES} url={`/project/${this.props.dataSource.project}`} />
-        {this.renderRouting(!this.state.loading)}
+        <LoadingWrapper loading={loading} error={error}>
+          <Switch>
+            <Redirect exact path={path} to={sourcePath} />
+            <Route exact path={sourcePath} component={Source} />
+            <Route exact path={jobListPath} component={JobList} />
+            {this.renderRestDataSourceSteps({ path, hasActiveJob })}
+          </Switch>
+        </LoadingWrapper>
       </Fragment>
     );
   }
