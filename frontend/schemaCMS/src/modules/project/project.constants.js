@@ -29,7 +29,7 @@ export const INITIAL_VALUES = {
 export const PROJECT_SCHEMA = Yup.object().shape({
   [PROJECT_TITLE]: Yup.string()
     .trim()
-    .min(3, 'Project Name should have at least 3 characters')
+    .min(1, 'Project Name should have at least 1 characters')
     .max(50, 'Project Name should have maximum 50 characters')
     .required('Required'),
   [PROJECT_DESCRIPTION]: Yup.string()
