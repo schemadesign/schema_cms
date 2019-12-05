@@ -39,36 +39,7 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
     delete_selected.short_description = 'Soft delete selected objects'
 
     def soft_undelete(self, request, queryset):
-        # Check if project names exist in the not deleted queryset
-        field = "title"
-        queryset = queryset.filter(deleted_at__isnull=0)
-        if queryset.values(field).annotate(c=dj_models.Count(field)).filter(c__gt=1).exists():
-            msg = "Projects have the same name. Please change the name before undeleting"
-            self.message_user(request=request, message=msg, level=messages.ERROR)
-            return
-        conflicts = (
-            self.model.objects.values_list(field, flat=True)
-            .filter(**{f"{field}__in": queryset.values(field)})
-            .distinct(field)
-            .iterator()
-        )
-        conflict = next(conflicts, None)
-        if conflict:
-            html = render_to_string(
-                "common/unordered_list.html",
-                context=dict(
-                    objects=itertools.chain([conflict], conflicts),
-                    li_style="background: transparent; padding: 0px;",
-                ),
-            )
-            msg = safestring.mark_safe(
-                f"Project(s) with name: {html} already exists. "
-                f"Please change name of this project before undeleting it."
-            )
-            self.message_user(request=request, message=msg, level=messages.ERROR)
-            return
-        with transaction.atomic():
-            return super().soft_undelete(request, queryset)
+        return self.handle_unique_conflicts_on_undelete(request, queryset, field="title", model_name="Project")
 
     soft_undelete.short_description = 'Undelete selected objects'
 

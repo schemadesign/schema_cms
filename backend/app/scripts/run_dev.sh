@@ -66,12 +66,12 @@ echo "Secrets manager is up"
 #  echo "Worker state machine NOT created"
 #}
 
-#{
-#    create_worker_lambda &&
-#    echo "Worker-Lambda function created"
-#} || {
-#    echo "Worker-Lambda function NOT created"
-#}
+{
+    create_worker_lambda &&
+    echo "Worker-Lambda function created"
+} || {
+    echo "Worker-Lambda function NOT created"
+}
 
 #{
 #    create_public_api_lambda &&
