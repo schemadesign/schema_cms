@@ -42,7 +42,7 @@ functions:
       - sqs: arn:aws:sqs:us-east-1:000000000000:schemacms-queue
     environment:
       AWS_STORAGE_BUCKET_NAME: schemacms
-      IMAGE_SCRAPING_FETCH_TIMEOUT: 15
+      IMAGE_SCRAPING_FETCH_TIMEOUT: "15"
       AWS_IMAGE_STORAGE_BUCKET_NAME: schemacms-images
       AWS_IMAGE_STATIC_URL: http://localhost:4572/schemacms-images
       AWS_ACCESS_KEY_ID: foo
