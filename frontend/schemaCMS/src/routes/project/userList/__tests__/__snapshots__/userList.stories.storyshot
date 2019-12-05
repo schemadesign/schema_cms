@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project|UserList list 1`] = `
+exports[`Storyshots Project|UserList List 1`] = `
 .c16 {
   height: 155px;
 }
@@ -210,6 +210,14 @@ exports[`Storyshots Project|UserList list 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -665,7 +673,7 @@ exports[`Storyshots Project|UserList list 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project|UserList list with users 1`] = `
+exports[`Storyshots Project|UserList No data 1`] = `
 .c16 {
   height: 155px;
 }
@@ -875,6 +883,14 @@ exports[`Storyshots Project|UserList list with users 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >

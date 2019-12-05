@@ -10,6 +10,11 @@ export const defaultProps = {
   values: {
     type: NONE,
   },
+  handleSubmit: Function.prototype,
+  handleChange: Function.prototype,
+  handleBlur: Function.prototype,
+  setFieldValue: Function.prototype,
+  isSubmitting: false,
   history,
   intl,
   match: {
@@ -17,11 +22,6 @@ export const defaultProps = {
       pageId: '1',
     },
   },
-  handleSubmit: Function.prototype,
-  handleChange: Function.prototype,
-  handleBlur: Function.prototype,
-  setFieldValue: Function.prototype,
-  isSubmitting: false,
 };
 
 storiesOf('Page|CreatePageBlock', module)

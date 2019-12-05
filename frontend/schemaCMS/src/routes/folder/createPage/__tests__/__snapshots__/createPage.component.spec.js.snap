@@ -60,7 +60,13 @@ exports[`CreatePage: Component should render correctly 1`] = `
           },
         }
       }
-      values={Object {}}
+      values={
+        Object {
+          "description": "description",
+          "keywords": "keywords",
+          "title": "title",
+        }
+      }
     />
     <NavigationContainer
       fixed={true}

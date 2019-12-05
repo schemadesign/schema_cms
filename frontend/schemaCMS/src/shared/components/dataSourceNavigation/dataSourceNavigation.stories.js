@@ -3,17 +3,16 @@ import { storiesOf } from '@storybook/react';
 
 import { DataSourceNavigation } from './dataSourceNavigation.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { history } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   dataSource: {
     id: '1',
   },
-  history: {
-    push: Function.prototype,
-  },
+  history,
   hideOnDesktop: false,
 };
 
-storiesOf('DataSourceNavigation', module)
+storiesOf('Shared Components|DataSourceNavigation', module)
   .addDecorator(withTheme())
   .add('Default', () => <DataSourceNavigation {...defaultProps} />);

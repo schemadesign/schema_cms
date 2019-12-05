@@ -84,6 +84,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -334,7 +342,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 1`] = `
+exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1`] = `
 .c0 {
   width: calc(100% - 50px);
 }
@@ -418,6 +426,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Long tiltle and subtitle 
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >

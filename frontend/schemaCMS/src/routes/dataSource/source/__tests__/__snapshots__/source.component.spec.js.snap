@@ -18,6 +18,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       "formatMessage": [Function],
     }
   }
+  isAnyJobProcessing={false}
   match={
     Object {
       "params": Object {
@@ -191,6 +192,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       "formatMessage": [Function],
     }
   }
+  isAnyJobProcessing={false}
   match={
     Object {
       "params": Object {

@@ -6,23 +6,18 @@ import { IntlProvider } from 'react-intl';
 import { MemoryRouter } from 'react-router';
 
 import { translationMessages, DEFAULT_LOCALE } from '../i18n';
-import { prepareFontSet } from '../../../schemaUI/.storybook/fonts';
 
 const getStyles = (theme) => `
   body {
     color: ${theme.text};
     background-color: ${theme.background};
-    font-family: 'Inter';
   }
 `;
 
 export const withTheme = (theme = Theme.dark) => (story) => (
   <ThemeProvider theme={theme}>
     <ThemeProviderUI theme={theme}>
-      <style>
-        {prepareFontSet()}
-        {getStyles(theme)}
-      </style>
+      <style>{getStyles(theme)}</style>
       {story()}
     </ThemeProviderUI>
   </ThemeProvider>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DataSourceNavigation Default 1`] = `
+exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
 .c0 {
   width: 100%;
   position: fixed;
@@ -105,6 +105,14 @@ exports[`Storyshots DataSourceNavigation Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >

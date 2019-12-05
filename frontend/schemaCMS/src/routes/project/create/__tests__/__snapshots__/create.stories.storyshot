@@ -172,6 +172,14 @@ exports[`Storyshots Project|Create Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >

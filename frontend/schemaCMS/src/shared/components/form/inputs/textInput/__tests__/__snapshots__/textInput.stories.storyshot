@@ -8,6 +8,14 @@ exports[`Storyshots Shared Components|Form/TextInput Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >
@@ -83,6 +91,14 @@ exports[`Storyshots Shared Components|Form/TextInput With edit icon 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >
@@ -184,6 +200,14 @@ exports[`Storyshots Shared Components|Form/TextInput With error 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >

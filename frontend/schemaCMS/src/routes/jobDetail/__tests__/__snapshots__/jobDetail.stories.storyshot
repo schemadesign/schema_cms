@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots JobDetail Default 1`] = `
-.c7 {
+.c11 {
   height: 155px;
 }
 
-.c9 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots JobDetail Default 1`] = `
   width: 100%;
 }
 
-.c8 {
+.c12 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -33,7 +33,7 @@ exports[`Storyshots JobDetail Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c10 {
+.c14 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -72,6 +72,22 @@ exports[`Storyshots JobDetail Default 1`] = `
 }
 
 .c6 {
+  display: none;
+}
+
+.c7 {
+  margin-right: 20px;
+}
+
+.c8 {
+  color: #FFF;
+}
+
+.c9 {
+  color: #FFF;
+}
+
+.c10 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -80,7 +96,7 @@ exports[`Storyshots JobDetail Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c9 {
+  .c13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -89,7 +105,7 @@ exports[`Storyshots JobDetail Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c12 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -98,7 +114,7 @@ exports[`Storyshots JobDetail Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c10 {
+  .c14 {
     width: 240px;
   }
 }
@@ -109,6 +125,24 @@ exports[`Storyshots JobDetail Default 1`] = `
   }
 }
 
+@media (min-width:1040px) {
+  .c6 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 60px 0 40px 0;
+  }
+}
+
 <div
   style={
     Object {
@@ -116,6 +150,14 @@ exports[`Storyshots JobDetail Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -332,21 +374,66 @@ exports[`Storyshots JobDetail Default 1`] = `
   <div
     className="c6"
   >
+    <div
+      className="c7"
+    >
+      <h2
+        className="c8"
+        id="desktopHeaderTitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 100,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          Job
+        </span>
+      </h2>
+      <h1
+        className="c9"
+        id="desktopHeaderSubtitle"
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.12px",
+            "lineHight": 1.25,
+            "margin": 0,
+          }
+        }
+      >
+        <span>
+          Details
+        </span>
+      </h1>
+    </div>
+    <div
+      className=""
+    />
+  </div>
+  <div
+    className="c10"
+  >
     <span>
       Loading...
     </span>
   </div>
   <div
-    className="c7"
+    className="c11"
   >
     <div
-      className="c8"
+      className="c12"
     >
       <div
-        className="c9"
+        className="c13"
       >
         <button
-          className="c10"
+          className="c14"
           disabled={false}
           onClick={[Function]}
           style={
@@ -372,7 +459,7 @@ exports[`Storyshots JobDetail Default 1`] = `
           </span>
         </button>
         <button
-          className="c10"
+          className="c14"
           disabled={false}
           onClick={[Function]}
           style={

@@ -146,6 +146,14 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >

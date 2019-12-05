@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project|List admin list 1`] = `
+exports[`Storyshots Project|List List (admin) 1`] = `
 .c13 {
   height: 155px;
 }
@@ -159,6 +159,14 @@ exports[`Storyshots Project|List admin list 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >
@@ -539,7 +547,7 @@ exports[`Storyshots Project|List admin list 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project|List editor list 1`] = `
+exports[`Storyshots Project|List List (editor) 1`] = `
 .c12 {
   height: 155px;
 }
@@ -692,6 +700,14 @@ exports[`Storyshots Project|List editor list 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #1d1d20;
+    background-color: #FFF;
+  }
+
+  </style>
   <div
     className=""
   >
@@ -971,7 +987,7 @@ exports[`Storyshots Project|List editor list 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project|List empty 1`] = `
+exports[`Storyshots Project|List No data 1`] = `
 .c13 {
   height: 155px;
 }
@@ -1130,6 +1146,14 @@ exports[`Storyshots Project|List empty 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >

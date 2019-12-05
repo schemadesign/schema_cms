@@ -1,19 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Shared Components|Source Default 1`] = `
-.c0 {
-  padding-top: 7px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  margin-top: 23px;
-}
-
 .c1 {
   height: 155px;
 }
@@ -50,6 +37,19 @@ exports[`Storyshots Shared Components|Source Default 1`] = `
   max-width: 240px;
 }
 
+.c0 {
+  padding-top: 7px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 23px;
+}
+
 @media (min-width:1040px) {
   .c3 {
     display: -webkit-box;
@@ -79,6 +79,14 @@ exports[`Storyshots Shared Components|Source Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >

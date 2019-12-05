@@ -40,9 +40,16 @@ exports[`User List: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <UserList
-    users={Array []}
-  />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={true}
+    noDataContent={null}
+  >
+    <UserList
+      users={Array []}
+    />
+  </LoadingWrapper>
   <NavigationContainer
     fixed={true}
     hideOnDesktop={true}
@@ -107,20 +114,27 @@ exports[`User List: Component should render correctly with users data 1`] = `
       onClick={[Function]}
     />
   </ContextHeader>
-  <UserList
-    users={
-      Array [
-        Object {
-          "firstName": "John",
-          "lastName": "Doe",
-        },
-        Object {
-          "firstName": "Alan",
-          "lastName": "Watts",
-        },
-      ]
-    }
-  />
+  <LoadingWrapper
+    error={null}
+    loading={true}
+    noData={false}
+    noDataContent={null}
+  >
+    <UserList
+      users={
+        Array [
+          Object {
+            "firstName": "John",
+            "lastName": "Doe",
+          },
+          Object {
+            "firstName": "Alan",
+            "lastName": "Watts",
+          },
+        ]
+      }
+    />
+  </LoadingWrapper>
   <NavigationContainer
     fixed={true}
     hideOnDesktop={true}

@@ -170,6 +170,14 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >
@@ -430,6 +438,258 @@ exports[`Storyshots Project|UserDetails Default 1`] = `
       <div
         className=""
       />
+    </div>
+    <div
+      className=""
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="firstName"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          <span>
+            First Name
+          </span>
+        </label>
+        <input
+          disabled={true}
+          id="firstName"
+          name="firstName"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="FirstName"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className=""
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="lastName"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          <span>
+            Last Name
+          </span>
+        </label>
+        <input
+          disabled={true}
+          id="lastName"
+          name="lastName"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="LastName"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className=""
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="email"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          <span>
+            Email
+          </span>
+        </label>
+        <input
+          disabled={true}
+          id="email"
+          name="email"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="email@example.com"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className=""
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <label
+          htmlFor="role"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          <span>
+            Role
+          </span>
+        </label>
+        <input
+          disabled={true}
+          id="role"
+          name="role"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="editor"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </div>
     </div>
     <div
       className="c10"

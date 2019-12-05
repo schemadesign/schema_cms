@@ -40,9 +40,11 @@ exports[`Settings: Component should render correctly 1`] = `
     initialValues={
       Object {
         "authMethod": "email",
-        "email": "",
-        "firstName": "",
-        "lastName": "",
+        "email": "email@example.com",
+        "firstName": "FirstName",
+        "id": "1",
+        "lastName": "LastName",
+        "role": "editor",
       }
     }
     isInitialValid={false}
@@ -227,9 +229,11 @@ exports[`Settings: Component should render correctly 2`] = `
     initialValues={
       Object {
         "authMethod": "email",
-        "email": "",
-        "firstName": "",
-        "lastName": "",
+        "email": "email@example.com",
+        "firstName": "FirstName",
+        "id": "1",
+        "lastName": "LastName",
+        "role": "editor",
       }
     }
     isInitialValid={false}
@@ -386,9 +390,11 @@ exports[`Settings: Component should render correctly form 1`] = `
       "handleSubmit": [Function],
       "initialValues": Object {
         "authMethod": "email",
-        "email": "",
-        "firstName": "",
-        "lastName": "",
+        "email": "email@example.com",
+        "firstName": "FirstName",
+        "id": "1",
+        "lastName": "LastName",
+        "role": "editor",
       },
       "isSubmitting": false,
       "isValid": false,
@@ -548,9 +554,11 @@ exports[`Settings: Component should render correctly form 1`] = `
       },
       "values": Object {
         "authMethod": "email",
-        "email": "",
-        "firstName": "",
-        "lastName": "",
+        "email": "email@example.com",
+        "firstName": "FirstName",
+        "id": "1",
+        "lastName": "LastName",
+        "role": "editor",
       },
     }
   }
@@ -566,9 +574,11 @@ exports[`Settings: Component should render correctly form 1`] = `
       initialValues={
         Object {
           "authMethod": "email",
-          "email": "",
-          "firstName": "",
-          "lastName": "",
+          "email": "email@example.com",
+          "firstName": "FirstName",
+          "id": "1",
+          "lastName": "LastName",
+          "role": "editor",
         }
       }
       isCurrentUser={true}
@@ -597,9 +607,11 @@ exports[`Settings: Component should render correctly form 1`] = `
       values={
         Object {
           "authMethod": "email",
-          "email": "",
-          "firstName": "",
-          "lastName": "",
+          "email": "email@example.com",
+          "firstName": "FirstName",
+          "id": "1",
+          "lastName": "LastName",
+          "role": "editor",
         }
       }
     />

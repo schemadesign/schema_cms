@@ -34,6 +34,19 @@ exports[`UserDetails: Component should render correctly 1`] = `
       />
     }
   />
+  <UserProfile
+    handleChange={[Function]}
+    isCurrentUser={false}
+    values={
+      Object {
+        "email": "email@example.com",
+        "firstName": "FirstName",
+        "id": "1",
+        "lastName": "LastName",
+        "role": "editor",
+      }
+    }
+  />
   <styled.div>
     <Styled(Span)
       onClick={[Function]}

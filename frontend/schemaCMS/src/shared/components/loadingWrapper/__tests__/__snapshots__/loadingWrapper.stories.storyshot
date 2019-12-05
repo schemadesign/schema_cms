@@ -16,6 +16,14 @@ exports[`Storyshots Shared Components|LoadingWrapper custom no data 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -32,6 +40,14 @@ exports[`Storyshots Shared Components|LoadingWrapper loaded 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     style={
       Object {
@@ -68,6 +84,14 @@ exports[`Storyshots Shared Components|LoadingWrapper loading 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -94,6 +118,14 @@ exports[`Storyshots Shared Components|LoadingWrapper no data 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -120,6 +152,14 @@ exports[`Storyshots Shared Components|LoadingWrapper with error 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
     type="page"

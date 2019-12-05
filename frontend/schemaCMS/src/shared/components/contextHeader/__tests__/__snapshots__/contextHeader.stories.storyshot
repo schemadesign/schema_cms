@@ -42,6 +42,14 @@ exports[`Storyshots Shared Components|Header/ContextHeader Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -134,6 +142,14 @@ exports[`Storyshots Shared Components|Header/ContextHeader with content 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -269,6 +285,14 @@ exports[`Storyshots Shared Components|Header/ContextHeader with long text 1`] = 
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
