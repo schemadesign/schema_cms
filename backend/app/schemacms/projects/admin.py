@@ -1,8 +1,5 @@
-import itertools
-
 from django.contrib import admin
-from django.contrib import messages
-from django.db import transaction, models as dj_models
+from django.db import transaction
 from django.utils import safestring
 from django.template.loader import render_to_string
 
@@ -39,7 +36,9 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
     delete_selected.short_description = 'Soft delete selected objects'
 
     def soft_undelete(self, request, queryset):
-        return self.handle_unique_conflicts_on_undelete(request, queryset, field="title", model_name="Project")
+        return self.handle_unique_conflicts_on_undelete(
+            request, queryset, field="title", model_name="Project"
+        )
 
     soft_undelete.short_description = 'Undelete selected objects'
 
