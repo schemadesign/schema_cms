@@ -206,20 +206,27 @@ class TestRetrieveUpdateDeleteProjectView:
 
 
 class TestProjectDataSourcesView:
-    def test_list_for_authenticate_admin_user(self, api_client, rf, admin, project, data_source_factory):
+    def test_list_for_authenticate_admin_user(
+        self, api_client, rf, admin, project, data_source_factory, job_step_factory
+    ):
         data_sources = data_source_factory.create_batch(2, project=project)
+        # Set active job to test active job serialization
+        for data_source in data_sources:
+            step = job_step_factory(
+                datasource_job__datasource=data_source,
+                datasource_job__job_state=projects_constants.DataSourceJobState.SUCCESS,
+                options={"columns": ["imageurl"]},
+            )
+            data_source.active_job = step.datasource_job
+            data_source.save(update_fields=["active_job"])
 
         request = rf.get(self.get_url(project.id))
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(project.id))
 
         assert response.status_code == status.HTTP_200_OK
-        assert (
-            response.data["results"]
-            == projects_serializers.DataSourceSerializer(
-                self.sort_data_sources(data_sources), many=True, context={"request": request}
-            ).data
-        )
+        for result, ds in zip(response.data["results"], self.sort_data_sources(data_sources)):
+            assert result == projects_serializers.DataSourceSerializer(ds, context={"request": request}).data
 
     def test_404_on_list_projects_for_non_authenticate_user(self, api_client, project):
         response = api_client.get(self.get_url(project.id))
