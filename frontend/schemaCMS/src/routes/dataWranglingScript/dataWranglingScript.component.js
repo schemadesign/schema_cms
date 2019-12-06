@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'ramda';
 
-import { DataWranglingScriptComponent } from './dataWranglingScriptComponent/dataWranglingScript.component';
+import { DataWranglingDefaultScript } from './dataWranglingScriptComponent/dataWranglingDefaultScript.component';
 import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { IMAGE_SCRAPING_SCRIPT_TYPE } from '../../modules/dataWranglingScripts/dataWranglingScripts.constants';
-import { ImageScrapingScript } from './imageScrapingScriptComponent/imageScrapingScriptComponent';
+import { ImageScrapingScript } from './imageScrapingScriptComponent/imageScrapingScript.component';
 
 export class DataWranglingScript extends PureComponent {
   static propTypes = {
@@ -33,7 +33,7 @@ export class DataWranglingScript extends PureComponent {
 
   renderGeneralOrCustomRoute = renderWhenTrueOtherwise(
     () => <ImageScrapingScript {...this.props} />,
-    () => <DataWranglingScriptComponent {...this.props} />
+    () => <DataWranglingDefaultScript {...this.props} />
   );
 
   render() {

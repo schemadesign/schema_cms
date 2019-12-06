@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { DataWranglingScriptComponent } from '../dataWranglingScript.component';
-import { defaultProps } from '../dataWranglingScript.stories';
+import { DataWranglingDefaultScript } from '../dataWranglingDefaultScript.component';
+import { defaultProps } from '../dataWranglingDefaultScript.stories';
 import { BackButton, NextButton } from '../../../../shared/components/navigation';
 import mockScripts, { CASE_CONVERSION } from '../../../../modules/dataWranglingScripts/scripts.mock';
 import { STEPS_PAGE } from '../../../../modules/dataSource/dataSource.constants';
 
 describe('DataWranglingScript: Component', () => {
-  const component = props => <DataWranglingScriptComponent {...defaultProps} {...props} />;
+  const component = props => <DataWranglingDefaultScript {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 

@@ -11,12 +11,12 @@ import {
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { TopHeader } from '../../../shared/components/topHeader';
-import { Container, Form, customInputStyles } from './dataWranglingScript.styles';
-import messages from './dataWranglingScript.messages';
+import { Container, Form, customInputStyles } from './dataWranglingDefaultScript.styles';
+import messages from './dataWranglingDefaultScript.messages';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 
-export class DataWranglingScriptComponent extends PureComponent {
+export class DataWranglingDefaultScript extends PureComponent {
   static propTypes = {
     dataWranglingScript: PropTypes.object,
     intl: PropTypes.object.isRequired,
