@@ -20,7 +20,7 @@ def check_response(fn):
 class SchemaCMSAPI:
     def __init__(self):
         self.backend_url = settings.BACKEND_URL
-        self.timeout = 10
+        self.timeout = 20
 
     @check_response
     def update_datasource_meta(self, datasource_pk, items, fields, preview_data):

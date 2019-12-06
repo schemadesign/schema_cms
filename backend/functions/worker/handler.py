@@ -45,7 +45,7 @@ def map_dataframe_dtypes(dtype):
 
 
 def read_file_to_data_frame(file):
-    return dt.fread(file, na_strings=["", ""], fill=True).to_pandas()
+    return dt.fread(file, na_strings=["", ""], fill=True)
 
 
 class NumpyEncoder(json.JSONEncoder):
@@ -82,29 +82,42 @@ def get_preview_data(data_frame):
     if items == 0:
         return json.dumps({"data": [], "fields": {}}).encode(), items, fields
 
-    sample_of_5 = data_frame.head(5)
+    sample_of_5 = data_frame.head(5).to_pandas()
     table_preview = json.loads(sample_of_5.to_json(orient="records"))
-    fields_info = json.loads(
-        data_frame.describe(include="all").to_json(orient="columns")
-    )
     samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
-    columns = sample_of_5.columns.to_list()
 
-    dtypes = {
-        i: map_dataframe_dtypes(k.name) for i, k in zip(columns, data_frame.dtypes)
-    }
+    mean = data_frame.mean().to_dict()
+    min_ = data_frame.min().to_dict()
+    max_ = data_frame.max().to_dict()
+    std = data_frame.sd().to_dict()
+    unique = data_frame.nunique().to_dict()
+    columns = data_frame.names
 
+    fields_info = {}
+
+    for i in columns:
+        fields_info[i] = {}
+        fields_info[i]["mean"] = mean[i][0]
+        fields_info[i]["min"] = min_[i][0]
+        fields_info[i]["max"] = max_[i][0]
+        fields_info[i]["std"] = std[i][0]
+        fields_info[i]["unique"] = unique[i][0]
+        fields_info[i]["count"] = items
+
+    dtypes = {i: k for i, k in zip(columns, data_frame.stypes)}
     for key, value in dtypes.items():
-        fields_info[key]["dtype"] = value
+        fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
 
     for key, value in samples[0].items():
         fields_info[key]["sample"] = value
 
-    preview_data = json.dumps(
+    preview_json = json.dumps(
         {"data": table_preview, "fields": fields_info}, cls=NumpyEncoder
     )
 
-    return preview_data, items, fields
+    del data_frame, sample_of_5
+
+    return preview_json, items, fields
 
 
 def process_datasource_meta_source_file(data: dict):
@@ -123,6 +136,7 @@ def process_datasource_meta_source_file(data: dict):
             fields=fields,
             preview_data=preview_data,
         )
+        logger.info(f"Meta created - DataSource # {datasource.id}")
     except Exception as e:
         return logging.error(
             f"Data Source {datasource.id} fail to create meta data - {e}"
@@ -168,7 +182,7 @@ def process_job(job_data: dict):
         source_file = current_job.source_file
 
         try:
-            df = read_file_to_data_frame(source_file["Body"])
+            df = read_file_to_data_frame(source_file["Body"]).to_pandas()
         except Exception as e:
             raise errors.JobLoadingSourceFileError(f"{e} @ loading source file")
 
@@ -189,10 +203,13 @@ def process_job(job_data: dict):
         )
 
         # Update job's meta data
+        df = dt.Frame(df)
         preview_data, items, fields = get_preview_data(df)
         api.schemacms_api.update_job_meta(
             job_pk=current_job.id, items=items, fields=fields, preview_data=preview_data
         )
+
+        logger.info(f"Meta created - Job # {current_job.id}")
 
         api.schemacms_api.update_job_state(
             job_pk=current_job.id,
