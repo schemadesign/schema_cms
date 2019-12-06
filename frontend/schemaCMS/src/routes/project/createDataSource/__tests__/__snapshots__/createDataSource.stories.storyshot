@@ -187,7 +187,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
             }
           >
             <span>
-              Data Sources
+              New Data Source
             </span>
           </h2>
           <h1
@@ -291,7 +291,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
             }
           >
             <span>
-              Data Sources
+              New Data Source
             </span>
           </h2>
           <h1
@@ -386,7 +386,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
         }
       >
         <span>
-          Data Sources
+          New Data Source
         </span>
       </h2>
       <h1
@@ -509,7 +509,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
     }
   >
     <span>
-      Source
+      Source Type
     </span>
   </label>
   <div
@@ -605,7 +605,7 @@ exports[`Storyshots Project|CreateDataSource Default 1`] = `
           </svg>
         </button>
       </label>
-      Spreadsheet
+      CSV
     </div>
   </div>
   <div

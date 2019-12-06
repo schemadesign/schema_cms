@@ -17,7 +17,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
     }
     headerTitle={
       <FormattedMessage
-        defaultMessage="Data Sources"
+        defaultMessage="New Data Source"
         id="project.createDataSource.title"
         values={Object {}}
       />
@@ -33,7 +33,7 @@ exports[`CreateDataSource: Component should render correctly 1`] = `
     }
     title={
       <FormattedMessage
-        defaultMessage="Data Sources"
+        defaultMessage="New Data Source"
         id="project.createDataSource.title"
         values={Object {}}
       />

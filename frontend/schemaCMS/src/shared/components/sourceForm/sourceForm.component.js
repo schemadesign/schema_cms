@@ -96,7 +96,7 @@ export class SourceFormComponent extends PureComponent {
 
     return (
       <RadioBaseComponent
-        label={this.props.intl.formatMessage(messages.spreadsheet)}
+        label={this.props.intl.formatMessage(messages.csv)}
         value={DATA_SOURCE_FILE}
         id={DATA_SOURCE_FILE}
       >

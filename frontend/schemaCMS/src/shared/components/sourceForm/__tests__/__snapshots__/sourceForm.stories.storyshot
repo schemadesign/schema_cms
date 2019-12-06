@@ -116,7 +116,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
     }
   >
     <span>
-      Source
+      Source Type
     </span>
   </label>
   <div
@@ -212,7 +212,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
           </svg>
         </button>
       </label>
-      Spreadsheet
+      CSV
     </div>
   </div>
   <div

@@ -8,11 +8,11 @@ export default defineMessages({
   },
   source: {
     id: 'dataSource.view.source.source',
-    defaultMessage: 'Source',
+    defaultMessage: 'Source Type',
   },
-  spreadsheet: {
-    id: 'dataSource.view.source.spreadsheet',
-    defaultMessage: 'Spreadsheet',
+  csv: {
+    id: 'dataSource.view.source.csv',
+    defaultMessage: 'CSV',
   },
   fileName: {
     id: 'dataSource.view.source.fileName',
