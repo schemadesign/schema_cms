@@ -21,16 +21,16 @@ exports[`View: Component should render correctly 1`] = `
         ]
       }
     />
+    <ProjectTabs
+      active="settings"
+      url="/project/100"
+    />
     <LoadingWrapper
       error={null}
       loading={true}
       noData={false}
       noDataContent={null}
     >
-      <ProjectTabs
-        active="settings"
-        url="/project/100"
-      />
       <styled.div>
         <styled.ul>
           <styled.li
