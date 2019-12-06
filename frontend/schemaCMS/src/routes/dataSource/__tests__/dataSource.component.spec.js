@@ -5,20 +5,6 @@ import DataSource from '../dataSource.component';
 import { defaultProps, propsWithActiveJob } from '../dataSource.stories';
 
 describe('DataSource: Component', () => {
-  const defaultProps = {
-    dataSource: {
-      id: '1',
-    },
-    fetchDataSource: Function.prototype,
-    unmountDataSource: Function.prototype,
-    match: {
-      params: {
-        dataSourceId: '1',
-      },
-      path: 'path',
-    },
-  };
-
   const component = props => <DataSource {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

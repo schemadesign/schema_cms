@@ -67,7 +67,7 @@ exports[`DataSource: Component should render without rest steps 1`] = `
 <Fragment>
   <ProjectTabs
     active="sources"
-    url="/project/undefined"
+    url="/project/2"
   />
   <LoadingWrapper
     error={null}
@@ -91,35 +91,9 @@ exports[`DataSource: Component should render without rest steps 1`] = `
         exact={true}
         path="path/job"
       />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/preview"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/steps"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/filters/add"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/filters"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/result"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/views"
+      <Redirect
+        path="path"
+        to="path/source"
       />
     </Switch>
   </LoadingWrapper>
@@ -130,7 +104,7 @@ exports[`DataSource: Component should render without routing 1`] = `
 <Fragment>
   <ProjectTabs
     active="sources"
-    url="/project/undefined"
+    url="/project/2"
   />
   <LoadingWrapper
     error={null}
@@ -154,35 +128,9 @@ exports[`DataSource: Component should render without routing 1`] = `
         exact={true}
         path="path/job"
       />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/preview"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/steps"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/filters/add"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/filters"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/result"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="path/views"
+      <Redirect
+        path="path"
+        to="path/source"
       />
     </Switch>
   </LoadingWrapper>
