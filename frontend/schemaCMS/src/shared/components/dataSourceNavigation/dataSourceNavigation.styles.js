@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { always, cond, T, propEq } from 'ramda';
 
 import { media } from '../../../theme/media';
 
@@ -26,12 +27,31 @@ export const Container = styled.div`
   `};
 `;
 
+const disabledStyles = css`
+  opacity: 0.2;
+  pointer-events: none;
+`;
+
+const inActiveStyles = css`
+  svg {
+    opacity: 0.4;
+  }
+`;
+
+const statusButtonStyles = cond([
+  [propEq('disabled', true), always(disabledStyles)],
+  [propEq('active', false), always(inActiveStyles)],
+  [T, always(null)],
+]);
+
 export const Button = styled.div`
   background-color: ${({ theme: { stepper } }) => stepper.background};
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${statusButtonStyles}
 
   ${media.desktop`
     width: 60px;

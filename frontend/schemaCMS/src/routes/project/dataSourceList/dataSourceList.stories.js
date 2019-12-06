@@ -10,20 +10,26 @@ const dataSource = {
   createdBy: { firstName: 'firstName', lastName: 'lastName' },
   id: 17,
   metaData: null,
-  jobs: [],
+  activeJob: null,
   name: 'name',
 };
 
-const dataSource2 = {
-  created: '2019-09-10T11:23:40+0000',
-  createdBy: { firstName: 'firstName', lastName: 'lastName' },
-  id: 17,
+const dataSourceWithFakeJob = {
+  ...dataSource,
   metaData: {
     fields: 11,
     items: 246,
   },
-  name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-  jobs: [],
+  activeJob: {
+    scripts: [],
+  },
+};
+
+const dataSourceWithJob = {
+  ...dataSourceWithFakeJob,
+  activeJob: {
+    scripts: [1],
+  },
 };
 
 const withJob = {
@@ -43,6 +49,7 @@ export const defaultProps = {
     params: {
       projectId: '1',
     },
+    url: 'url',
   },
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
@@ -51,7 +58,7 @@ export const defaultProps = {
 
 export const propsWithDataSource = {
   ...defaultProps,
-  dataSources: [dataSource, dataSource2],
+  dataSources: [dataSource, dataSourceWithFakeJob, dataSourceWithJob],
 };
 
 export const propsWithJob = {

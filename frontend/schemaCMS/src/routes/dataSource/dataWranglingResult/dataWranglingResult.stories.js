@@ -28,6 +28,7 @@ export const defaultProps = {
       dataSourceId: '1',
       step: '4',
     },
+    url: 'url',
   },
 };
 

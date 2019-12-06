@@ -26,7 +26,7 @@ describe('DataSourceList: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should go to data source', () => {
+  it('should go to source', () => {
     jest.spyOn(propsWithDataSource.history, 'push');
     const wrapper = render(propsWithDataSource);
 
@@ -35,7 +35,31 @@ describe('DataSourceList: Component', () => {
       .at(0)
       .simulate('click');
 
+    expect(propsWithDataSource.history.push).toHaveBeenCalledWith('/datasource/17/source');
+  });
+
+  it('should go to preview', () => {
+    jest.spyOn(propsWithDataSource.history, 'push');
+    const wrapper = render(propsWithDataSource);
+
+    wrapper
+      .find(ListItemTitle)
+      .at(1)
+      .simulate('click');
+
     expect(propsWithDataSource.history.push).toHaveBeenCalledWith('/datasource/17/preview');
+  });
+
+  it('should go to data result', () => {
+    jest.spyOn(propsWithDataSource.history, 'push');
+    const wrapper = render(propsWithDataSource);
+
+    wrapper
+      .find(ListItemTitle)
+      .at(2)
+      .simulate('click');
+
+    expect(propsWithDataSource.history.push).toHaveBeenCalledWith('/datasource/17/result');
   });
 
   it('should go to create data source page', () => {

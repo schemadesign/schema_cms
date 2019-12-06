@@ -18,6 +18,7 @@ export const defaultProps = {
     params: {
       step: '2',
     },
+    url: 'url',
   },
 };
 

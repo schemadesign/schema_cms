@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
+import { always, cond, equals, T, propEq } from 'ramda';
+import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
@@ -24,7 +26,8 @@ import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../list/list.styles';
 import { ListItemTitle } from '../../../shared/components/listComponents/listItem.styles';
-import { PREVIEW_PAGE } from '../../../modules/dataSource/dataSource.constants';
+import { PREVIEW_PAGE, RESULT_PAGE, SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
+import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -85,13 +88,21 @@ export class DataSourceList extends PureComponent {
     noDataContent: this.props.intl.formatMessage(messages.noData),
   });
 
+  getDataSourcePage = cond([
+    [equals(null), always(SOURCE_PAGE)],
+    [propEq('scripts', []), always(PREVIEW_PAGE)],
+    [T, always(RESULT_PAGE)],
+  ]);
+
   handleShowProject = () => this.props.history.push(`/project/${this.props.match.params.projectId}`);
 
   handleCreateDataSource = () =>
     this.props.history.push(`/project/${this.props.match.params.projectId}/datasource/add`);
 
-  handleShowDataSource = ({ id }) => {
-    this.props.history.push(`/datasource/${id}/${PREVIEW_PAGE}`);
+  handleShowDataSource = ({ id, activeJob }) => {
+    const dataSourcePage = this.getDataSourcePage(activeJob);
+
+    this.props.history.push(`/datasource/${id}/${dataSourcePage}`);
   };
 
   renderCreatedInformation = list => (
@@ -129,14 +140,24 @@ export class DataSourceList extends PureComponent {
     return <MetaDataWrapper>{elements}</MetaDataWrapper>;
   };
 
-  renderItem = ({ name, created, createdBy: { firstName, lastName }, id, metaData }, index) => {
+  renderHeader = ({ whenCreated, firstName, lastName, loading }) =>
+    renderWhenTrueOtherwise(
+      always(<FormattedMessage {...messages.loading} />),
+      always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))
+    )(loading);
+
+  renderItem = (
+    { name, created, createdBy: { firstName, lastName }, id, metaData, activeJob, jobsInProcess },
+    index
+  ) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
-    const header = this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]);
+    const loading = !activeJob || jobsInProcess;
+    const header = this.renderHeader({ whenCreated, firstName, lastName, loading });
     const footer = this.renderMetaData(metaData || {});
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>
-        <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id })}>
+        <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, activeJob })}>
           {name}
         </ListItemTitle>
       </ListItem>

@@ -39,6 +39,11 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
           "formatMessage": [Function],
         }
       }
+      match={
+        Object {
+          "url": "url",
+        }
+      }
     />
   </ContextHeader>
   <styled.div>
@@ -58,6 +63,11 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
     intl={
       Object {
         "formatMessage": [Function],
+      }
+    }
+    match={
+      Object {
+        "url": "url",
       }
     }
   />

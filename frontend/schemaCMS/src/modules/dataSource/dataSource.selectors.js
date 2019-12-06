@@ -1,6 +1,5 @@
 import { createSelector } from 'reselect';
 import { prop, pathOr } from 'ramda';
-import { getIsAnyResultProcessing } from '../../shared/utils/helpers';
 
 export const selectDataSourceDomain = prop('dataSource');
 
@@ -27,9 +26,4 @@ export const selectFieldsInfo = createSelector(
 export const selectFieldNames = createSelector(
   selectDataSourceDomain,
   pathOr([], ['dataSource', 'metaData', 'fieldsNames'])
-);
-
-export const selectIsAnyJobProcessing = createSelector(
-  selectDataSource,
-  getIsAnyResultProcessing
 );

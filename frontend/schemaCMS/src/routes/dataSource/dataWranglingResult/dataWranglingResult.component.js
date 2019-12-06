@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { path } from 'ramda';
+import { path, pathEq } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import messages from './dataWranglingResult.messages';
@@ -9,6 +9,7 @@ import DataPreview from '../../../shared/components/dataPreview/dataPreview.comp
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
 
 export class DataWranglingResult extends PureComponent {
   static propTypes = {
@@ -21,12 +22,17 @@ export class DataWranglingResult extends PureComponent {
     }),
   };
 
-  getActiveJobId = () => path(['dataSource', 'activeJob', 'id'], this.props);
-
   render() {
-    const activeJobId = this.getActiveJobId(this.props);
-    const headerTitle = this.props.dataSource.name;
+    const { dataSource } = this.props;
+    const activeJobId = path(['activeJob', 'id'], dataSource);
+    const headerTitle = dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
+    const isFakeJob = pathEq(['activeJob', 'scripts'], [], dataSource);
+
+    if (isFakeJob) {
+      this.props.history.push(`/datasource/${dataSource.id}/${SOURCE_PAGE}`);
+      return null;
+    }
 
     return (
       <Fragment>

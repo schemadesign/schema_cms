@@ -44,6 +44,7 @@ exports[`Fields: Component should render correctly 1`] = `
           "params": Object {
             "step": "2",
           },
+          "url": "url",
         }
       }
       previewData={Object {}}
@@ -68,6 +69,7 @@ exports[`Fields: Component should render correctly 1`] = `
         "params": Object {
           "step": "2",
         },
+        "url": "url",
       }
     }
     previewData={Object {}}
@@ -91,6 +93,7 @@ exports[`Fields: Component should render correctly 1`] = `
         "params": Object {
           "step": "2",
         },
+        "url": "url",
       }
     }
     previewData={Object {}}

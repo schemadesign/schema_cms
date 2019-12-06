@@ -1,6 +1,5 @@
-import { either, is, filter, isEmpty, keys, map, not, pipe, propEq, propOr, path } from 'ramda';
+import { is, isEmpty, keys, map, path } from 'ramda';
 import { camelize } from 'humps';
-import { JOB_STATE_PENDING, JOB_STATE_PROCESSING } from '../../modules/job/job.constants';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 
@@ -26,12 +25,5 @@ export const getTableData = (data = []) => {
 
   return { header, rows };
 };
-
-export const getIsAnyResultProcessing = pipe(
-  propOr([], 'jobs'),
-  filter(either(propEq('jobState', JOB_STATE_PENDING), propEq('jobState', JOB_STATE_PROCESSING))),
-  isEmpty,
-  not
-);
 
 export const getProjectId = path(['match', 'params', 'projectId']);

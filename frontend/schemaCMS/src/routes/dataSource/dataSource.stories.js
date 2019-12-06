@@ -7,6 +7,7 @@ import { withRouter, withTheme } from '../../.storybook/decorators';
 export const defaultProps = {
   dataSource: {
     project: '2',
+    activeJob: null,
   },
   fetchDataSource: Function.prototype,
   unmountDataSource: Function.prototype,
@@ -18,7 +19,19 @@ export const defaultProps = {
   },
 };
 
+export const propsWithActiveJob = {
+  ...defaultProps,
+  dataSource: {
+    project: '2',
+    activeJob: {
+      id: 1,
+      scripts: [1],
+    },
+  },
+};
+
 storiesOf('Data Source|DataSource', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('Default', () => <DataSource {...defaultProps} />);
+  .add('Default', () => <DataSource {...defaultProps} />)
+  .add('With active job', () => <DataSource {...propsWithActiveJob} />);

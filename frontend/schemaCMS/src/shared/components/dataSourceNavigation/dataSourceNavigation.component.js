@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Icons } from 'schemaUI';
 import { FormattedMessage } from 'react-intl';
+import { split, last, pipe, equals, path, propEq, pathEq, complement, both, either } from 'ramda';
 
 import { Container, Button, ButtonContainer, PageTitle } from './dataSourceNavigation.styles';
 import messages from './dataSourceNavigation.messages';
@@ -32,18 +33,38 @@ export class DataSourceNavigation extends PureComponent {
     }),
     dataSource: PropTypes.object.isRequired,
     hideOnDesktop: PropTypes.bool,
+    match: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+    }),
   };
 
   static defaultProps = {
     hideOnDesktop: false,
   };
 
+  getIsActive = page =>
+    pipe(
+      path(['match', 'url']),
+      split('/'),
+      last,
+      equals(page)
+    )(this.props);
+
+  getIsDisabled = either(
+    both(pathEq(['dataSource', 'activeJob'], null), complement(propEq('page', SOURCE_PAGE))),
+    both(pathEq(['dataSource', 'activeJob', 'scripts'], []), propEq('page', RESULT_PAGE))
+  );
+
   goToPage = page => () => this.props.history.push(`/datasource/${this.props.dataSource.id}/${page}`);
 
-  renderButtons = () =>
+  renderButtons = ({ dataSource }) =>
     listIcons.map(({ Icon, page }, index) => (
       <ButtonContainer key={index}>
-        <Button onClick={this.goToPage(page)}>
+        <Button
+          onClick={this.goToPage(page)}
+          active={this.getIsActive(page)}
+          disabled={this.getIsDisabled({ dataSource, page })}
+        >
           <Icon customStyles={iconSize} />
         </Button>
         <PageTitle>
@@ -53,6 +74,6 @@ export class DataSourceNavigation extends PureComponent {
     ));
 
   render() {
-    return <Container hideOnDesktop={this.props.hideOnDesktop}>{this.renderButtons()}</Container>;
+    return <Container hideOnDesktop={this.props.hideOnDesktop}>{this.renderButtons(this.props)}</Container>;
   }
 }
