@@ -1,5 +1,5 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import { forEach, keys, pipe, ifElse, equals, always } from 'ramda';
+import { forEach, keys, pipe, cond, equals, always, isNil, both, T } from 'ramda';
 
 import { PageBlockRoutines } from './pageBlock.redux';
 import api from '../../shared/services/api';
@@ -8,11 +8,11 @@ import browserHistory from '../../shared/utils/history';
 import { IMAGE_TYPE } from './pageBlock.constants';
 
 const getBlockData = ({ name, image, type, ...rest }) =>
-  ifElse(
-    equals(IMAGE_TYPE),
-    always({ name, type, image, content: '' }),
-    always({ name, type, content: rest[`${type}-content`] })
-  )(type);
+  cond([
+    [both(equals(IMAGE_TYPE), () => isNil(image)), always({ name, type, content: '' })],
+    [equals(IMAGE_TYPE), always({ name, type, image, content: '' })],
+    [T, always({ name, type, content: rest[`${type}-content`] })],
+  ])(type);
 
 function* fetchList({ payload: { pageId } }) {
   try {
