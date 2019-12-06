@@ -15,10 +15,7 @@ export const defaultProps = {
   setImageScrapingFields: Function.prototype,
   fetchDataWranglingScript: Function.prototype,
   isAdmin: true,
-  history: {
-    push: Function.prototype,
-    goBack: Function.prototype,
-  },
+  history,
   intl,
   match: {
     params: {
@@ -39,8 +36,8 @@ export const editorProps = {
 
 storiesOf('Data Wrangling Script|ImageScrapingScript', module)
   .addDecorator(withTheme())
-  .add('admin', () => <ImageScrapingScript {...defaultProps} />);
+  .add('Default (admin)', () => <ImageScrapingScript {...defaultProps} />);
 
 storiesOf('Data Wrangling Script|ImageScrapingScript', module)
   .addDecorator(withTheme(Theme.light))
-  .add('editor', () => <ImageScrapingScript {...editorProps} />);
+  .add('Default (editor)', () => <ImageScrapingScript {...editorProps} />);

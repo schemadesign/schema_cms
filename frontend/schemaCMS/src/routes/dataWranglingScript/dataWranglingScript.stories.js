@@ -25,15 +25,13 @@ export const defaultProps = {
   },
 };
 
-export const editorProps = {
+const emptyProps = {
   ...defaultProps,
-  isAdmin: false,
+  dataWranglingScript: {},
 };
 
 storiesOf('Data Wrangling Script|DataWranglingScript', module)
   .addDecorator(withTheme())
-  .add('Default (admin)', () => <DataWranglingScript {...defaultProps} />);
+  .add('No data', () => <DataWranglingScript {...emptyProps} />)
+  .add('Default', () => <DataWranglingScript {...defaultProps} />);
 
-storiesOf('Data Wrangling Script|DataWranglingScript', module)
-  .addDecorator(withTheme(Theme.light))
-  .add('Default (editor)', () => <DataWranglingScript {...editorProps} />);
