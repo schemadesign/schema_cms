@@ -500,9 +500,10 @@ class BlockSerializer(serializers.ModelSerializer):
         ]
 
     def validate_type(self, type_):
-        if type_ == BlockTypes.IMAGE and not self.initial_data.get("image", None):
-            message = f"Please select image to upload."
-            raise serializers.ValidationError({"image": message}, code="noImage")
+        if type_ == BlockTypes.IMAGE and "image" in self.initial_data:
+            if not self.initial_data["image"]:
+                message = f"Please select image to upload."
+                raise serializers.ValidationError({"image": message}, code="noImage")
 
         if self.initial_data.get("image", None) and type_ != BlockTypes.IMAGE:
             message = f"For image upload use Image Uploaded block type."
