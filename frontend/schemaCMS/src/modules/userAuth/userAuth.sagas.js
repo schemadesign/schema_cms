@@ -31,7 +31,6 @@ function* getJwtToken({ uid, token }) {
 }
 
 function* startup() {
-  yield put(UserProfileActions.clearUserDetails());
   const token = yield select(selectAuthToken);
   yield setAuthorizationToken(token);
 }
@@ -50,7 +49,6 @@ function* resetPassword() {
     data: { ticket },
   } = yield api.get(RESET_PASSWORD_PATH);
 
-  yield put(UserProfileActions.clearUserDetails());
   yield redirectExternal(ticket);
 }
 

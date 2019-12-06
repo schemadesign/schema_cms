@@ -46,16 +46,6 @@ describe('UserAuth: sagas', () => {
     });
   });
 
-  describe('when STARTUP action is fired', () => {
-    it('should put UserProfileActions.clearUserDetails action', async () => {
-      await expectSaga(watchUserAuth)
-        .withState(defaultState)
-        .put(UserProfileActions.clearUserDetails())
-        .dispatch(StartupActions.startup())
-        .silentRun();
-    });
-  });
-
   describe('when LOGOUT action is fired', () => {
     it('should put UserAuthActions.logoutSuccess action', async () => {
       await expectSaga(watchUserAuth)
