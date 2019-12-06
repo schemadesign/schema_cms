@@ -37,7 +37,11 @@ const updateUser = (state = INITIAL_STATE, { payload }) =>
 
 const fetchUserFailure = state => state.set('user', {}).set('isFetched', true);
 
-const clearUserDetails = state => state.set('user', {}).set('isFetched', false);
+const clearUserDetails = state =>
+  state
+    .set('user', {})
+    .set('isFetched', false)
+    .set('isAdmin', false);
 
 export const reducer = createReducer(INITIAL_STATE, {
   [UserProfileRoutines.fetchUserDetails.SUCCESS]: updateUser,
