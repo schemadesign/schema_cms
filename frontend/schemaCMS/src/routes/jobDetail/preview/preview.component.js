@@ -9,6 +9,7 @@ import { BackButton, NavigationContainer } from '../../../shared/components/navi
 import DataPreview from '../../../shared/components/dataPreview/dataPreview.component';
 import browserHistory from '../../../shared/utils/history';
 import messages from './preview.messages';
+import { ContextHeader } from '../../../shared/components/contextHeader';
 
 export class Preview extends PureComponent {
   static propTypes = {
@@ -23,21 +24,18 @@ export class Preview extends PureComponent {
     }).isRequired,
   };
 
-  getHeaderAndMenuConfig = () => ({
-    headerTitle: <FormattedMessage {...messages.title} />,
-    headerSubtitle: <FormattedMessage {...messages.subTitle} />,
-  });
-
   handleBackClick = () => browserHistory.push(`/job/${path(['match', 'params', 'jobId'], this.props)}`);
 
   render() {
-    const topHeaderConfig = this.getHeaderAndMenuConfig();
     const { match, ...restProps } = this.props;
     const jobId = path(['params', 'jobId'])(match);
+    const headerTitle = <FormattedMessage {...messages.title} />;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Container>
-        <TopHeader {...topHeaderConfig} />
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <DataPreview {...restProps} jobId={jobId} />
         <NavigationContainer fixed>
           <BackButton onClick={this.handleBackClick} />

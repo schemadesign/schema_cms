@@ -27,6 +27,10 @@ export const Error = styled.div`
   color: ${({ theme: { error } }) => error};
 `;
 
+export const Warning = styled.div`
+  color: ${({ theme: { warning } }) => warning};
+`;
+
 export const Link = styled(RouterLink)`
   color: inherit;
   text-decoration: none;

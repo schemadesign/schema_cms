@@ -83,7 +83,6 @@ function* setImageScrapingFields({ payload }) {
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.success(payload));
     browserHistory.push(`/datasource/${payload.dataSourceId}/${STEPS_PAGE}`);
   } catch (error) {
-    console.log(error);
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.failure(error));
   } finally {
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.fulfill());

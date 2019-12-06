@@ -47,7 +47,23 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
           },
         ]
       }
-      fetchDataWranglingScripts={[Function]}
+      fetchDataWranglingScripts={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "dataSourceId": "1",
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": Promise {},
+            },
+          ],
+        }
+      }
       hideOnDesktop={false}
       history={
         Object {
@@ -76,43 +92,50 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       uploadScript={[Function]}
     />
   </ContextHeader>
-  <styled.div>
-    <styled.div />
-    <styled.div>
-      <FormattedMessage
-        defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
-        id="dataSource.dataWranglingScripts.steps"
-        values={
-          Object {
-            "length": 2,
-          }
-        }
-      />
-    </styled.div>
-    <styled.div>
-      <Component
-        accept=".py"
-        disabled={false}
-        id="fileUpload"
-        onChange={[Function]}
-        type="file"
-      />
-    </styled.div>
-  </styled.div>
-  <Formik
-    enableReinitialize={false}
-    initialValues={
-      Object {
-        "steps": Array [],
-      }
-    }
-    isInitialValid={false}
-    onSubmit={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
   >
-    <Component />
-  </Formik>
+    <styled.div>
+      <styled.div />
+      <styled.div>
+        <FormattedMessage
+          defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
+          id="dataSource.dataWranglingScripts.steps"
+          values={
+            Object {
+              "length": 2,
+            }
+          }
+        />
+      </styled.div>
+      <styled.div>
+        <Component
+          accept=".py"
+          disabled={false}
+          id="fileUpload"
+          onChange={[Function]}
+          type="file"
+        />
+      </styled.div>
+    </styled.div>
+    <Formik
+      enableReinitialize={false}
+      initialValues={
+        Object {
+          "steps": Array [],
+        }
+      }
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+    >
+      <Component />
+    </Formik>
+  </LoadingWrapper>
 </Fragment>
 `;
 
@@ -196,9 +219,9 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
     right={true}
   >
     <NextButton
-      disabled={false}
+      disabled={true}
       loading={false}
-      onClick={null}
+      onClick={[Function]}
     >
       <FormattedMessage
         defaultMessage="Save"
@@ -229,7 +252,32 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         },
       ]
     }
-    fetchDataWranglingScripts={[Function]}
+    fetchDataWranglingScripts={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "dataSourceId": "1",
+            },
+          ],
+          Array [
+            Object {
+              "dataSourceId": "1",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      }
+    }
     hideOnDesktop={true}
     history={
       Object {

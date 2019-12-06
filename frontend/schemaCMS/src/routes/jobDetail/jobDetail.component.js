@@ -12,8 +12,8 @@ import { DESCRIPTION, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { TopHeader } from '../../shared/components/topHeader';
-import { ContextHeader } from '../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
+import { ContextHeader } from '../../shared/components/contextHeader';
 
 export class JobDetail extends PureComponent {
   static propTypes = {
@@ -47,11 +47,6 @@ export class JobDetail extends PureComponent {
       browserHistory.push('/');
     }
   }
-
-  getHeaderAndMenuConfig = () => ({
-    headerTitle: <FormattedMessage {...messages.title} />,
-    headerSubtitle: <FormattedMessage {...messages.subTitle} />,
-  });
 
   handleGoBack = () => this.props.history.push(`/datasource/${this.props.job.datasource}/job`);
 
@@ -127,12 +122,13 @@ export class JobDetail extends PureComponent {
   render() {
     const { loading } = this.state;
     const { job } = this.props;
-    const headerConfig = this.getHeaderAndMenuConfig();
+    const headerTitle = <FormattedMessage {...messages.title} />;
+    const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
-        <TopHeader {...headerConfig} />
-        <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle} />
+        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <ContextHeader title={headerTitle} subtitle={headerSubtitle} />
         <LoadingWrapper loading={loading}>{this.renderForm(job)}</LoadingWrapper>
         <NavigationContainer fixed>
           <BackButton onClick={this.handleGoBack}>

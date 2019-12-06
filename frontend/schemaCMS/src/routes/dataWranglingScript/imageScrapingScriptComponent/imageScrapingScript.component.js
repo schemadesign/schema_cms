@@ -51,6 +51,7 @@ export class ImageScrapingScript extends PureComponent {
       await this.props.fetchDataSource(path(['match', 'params'], this.props));
       this.setState({ loading: false, selectedFields: this.props.imageScrapingFields });
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
       this.setState({
         loading: false,

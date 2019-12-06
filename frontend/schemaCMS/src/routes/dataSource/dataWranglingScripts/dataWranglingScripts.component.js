@@ -7,32 +7,33 @@ import {
   always,
   append,
   equals,
-  ifElse,
-  pathOr,
-  reject,
-  map,
-  pipe,
-  toString,
-  insertAll,
-  propEq,
   find,
-  pathEq,
+  ifElse,
+  insertAll,
+  map,
   path,
+  pathEq,
+  pathOr,
+  pipe,
   prop,
+  propEq,
+  reject,
+  toString,
 } from 'ramda';
 import Helmet from 'react-helmet';
 
-import { Empty, Error, Header, Link, StepCounter, UploadContainer } from './dataWranglingScripts.styles';
+import { Empty, Error, Header, Link, StepCounter, UploadContainer, Warning } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import {
-  SCRIPT_NAME_MAX_LENGTH,
   IMAGE_SCRAPING_SCRIPT_TYPE,
+  SCRIPT_NAME_MAX_LENGTH,
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
@@ -56,13 +57,23 @@ export class DataWranglingScripts extends PureComponent {
   };
 
   state = {
+    loading: true,
     uploading: false,
     errorMessage: '',
+    error: null,
   };
 
-  componentDidMount() {
-    const { dataSourceId } = this.props.match.params;
-    this.props.fetchDataWranglingScripts({ dataSourceId });
+  async componentDidMount() {
+    try {
+      const { dataSourceId } = this.props.match.params;
+      await this.props.fetchDataWranglingScripts({ dataSourceId });
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+      this.setState({ error });
+    } finally {
+      this.setState({ loading: false });
+    }
   }
 
   getScriptLink = (scriptId, specs, dataSourceId) =>
@@ -94,7 +105,8 @@ export class DataWranglingScripts extends PureComponent {
       await this.props.uploadScript({ script: file, dataSourceId });
       this.setState({ uploading: false });
     } catch (e) {
-      console.log(e);
+      // eslint-disable-next-line no-console
+      console.error(e);
       this.setState({ uploading: false, errorMessage: 'errorOnUploading' });
     }
   };
@@ -109,7 +121,7 @@ export class DataWranglingScripts extends PureComponent {
       return this.props.history.push(`/script/${value}/${dataSourceId}`);
     }
 
-    setFieldValue('steps', setScripts(checked));
+    return setFieldValue('steps', setScripts(checked));
   };
 
   handleSubmit = async ({ steps }, { setSubmitting }) => {
@@ -121,7 +133,9 @@ export class DataWranglingScripts extends PureComponent {
 
       await this.props.sendUpdatedDataWranglingScript({ steps: parsedSteps, dataSourceId });
     } catch (error) {
-      console.warning(error);
+      // eslint-disable-next-line no-console
+      console.error(error);
+      window.scrollTo(0, 0);
       this.setState({ errorMessage: 'errorJobFailed' });
     } finally {
       setSubmitting(false);
@@ -141,6 +155,14 @@ export class DataWranglingScripts extends PureComponent {
       </Error>
     ))(!!errorMessage.length);
 
+  renderProcessingWarning = renderWhenTrue(
+    always(
+      <Warning>
+        <FormattedMessage {...messages.ongoingProcess} />
+      </Warning>
+    )
+  );
+
   renderUploadButton = renderWhenTrue(
     always(
       <FileUpload
@@ -155,7 +177,7 @@ export class DataWranglingScripts extends PureComponent {
 
   render() {
     const { dataWranglingScripts, dataSource, isAdmin, customScripts } = this.props;
-    const { errorMessage } = this.state;
+    const { errorMessage, loading, error } = this.state;
     const steps = pipe(
       pathOr([], ['activeJob', 'scripts']),
       map(
@@ -167,31 +189,29 @@ export class DataWranglingScripts extends PureComponent {
       insertAll(0, customScripts)
     )(dataSource);
 
-    const headerTitle = dataSource.name;
+    const { jobsInProcess, name } = dataSource;
+
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
-        <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
+        <TopHeader headerTitle={name} headerSubtitle={headerSubtitle} />
+        <ContextHeader title={name} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>
-        <Header>
-          <Empty />
-          <StepCounter>
-            <FormattedMessage values={{ length: dataWranglingScripts.length }} {...messages.steps} />
-            {this.renderUploadingError(errorMessage)}
-          </StepCounter>
-          <UploadContainer>{this.renderUploadButton(isAdmin)}</UploadContainer>
-        </Header>
-        <Formik initialValues={{ steps }} onSubmit={this.handleSubmit}>
-          {({ values: { steps }, setFieldValue, submitForm, isSubmitting }) => {
-            if (!steps.length) {
-              submitForm = null;
-            }
-
-            return (
+        <LoadingWrapper loading={loading} error={error}>
+          <Header>
+            <Empty />
+            <StepCounter>
+              <FormattedMessage values={{ length: dataWranglingScripts.length }} {...messages.steps} />
+              {this.renderUploadingError(errorMessage)}
+              {this.renderProcessingWarning(jobsInProcess)}
+            </StepCounter>
+            <UploadContainer>{this.renderUploadButton(isAdmin)}</UploadContainer>
+          </Header>
+          <Formik initialValues={{ steps }} onSubmit={this.handleSubmit}>
+            {({ values: { steps }, setFieldValue, submitForm, isSubmitting, dirty }) => (
               <Fragment>
                 <CheckboxGroup
                   onChange={e => this.handleChange({ e, setFieldValue, steps })}
@@ -202,15 +222,19 @@ export class DataWranglingScripts extends PureComponent {
                   {dataWranglingScripts.map(this.renderCheckboxes)}
                 </CheckboxGroup>
                 <NavigationContainer right>
-                  <NextButton onClick={submitForm} disabled={isSubmitting} loading={isSubmitting}>
+                  <NextButton
+                    onClick={submitForm}
+                    disabled={!dirty || isSubmitting || jobsInProcess || !steps.length}
+                    loading={isSubmitting}
+                  >
                     <FormattedMessage {...messages.save} />
                   </NextButton>
                 </NavigationContainer>
                 <DataSourceNavigation {...this.props} hideOnDesktop />
               </Fragment>
-            );
-          }}
-        </Formik>
+            )}
+          </Formik>
+        </LoadingWrapper>
       </Fragment>
     );
   }
