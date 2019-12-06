@@ -2,20 +2,22 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
-import { DataWranglingScript } from './dataWranglingScript.component';
+import { ImageScrapingScript } from './imageScrapingScript.component';
 
-import { withTheme } from '../../.storybook/decorators';
-import mockScripts, { BLANK_CELLS } from '../../modules/dataWranglingScripts/scripts.mock';
+import { withTheme } from '../../../.storybook/decorators';
+import mockScripts, { BLANK_CELLS } from '../../../modules/dataWranglingScripts/scripts.mock';
 
 export const defaultProps = {
   // eslint-disable-next-line import/no-named-as-default-member
   dataWranglingScript: mockScripts[BLANK_CELLS],
-  fetchDataWranglingScript: Function.prototype,
+  fetchDataSource: Function.prototype,
+  setImageScrapingFields: Function.prototype,
   intl: {
     formatMessage: ({ defaultMessage }) => defaultMessage,
   },
   history: {
     push: Function.prototype,
+    goBack: Function.prototype,
   },
   isAdmin: true,
   match: {
@@ -26,17 +28,19 @@ export const defaultProps = {
       step: '3',
     },
   },
+  fieldNames: [],
+  imageScrapingFields: [],
 };
 
 export const editorProps = {
   ...defaultProps,
   isAdmin: false,
-};
+}
 
-storiesOf('DataWranglingScript', module)
+storiesOf('ImageScrapingScript', module)
   .addDecorator(withTheme())
-  .add('admin', () => <DataWranglingScript {...defaultProps} />);
+  .add('admin', () => <ImageScrapingScript {...defaultProps} />);
 
-storiesOf('DataWranglingScript', module)
+storiesOf('ImageScrapingScript', module)
   .addDecorator(withTheme(Theme.light))
-  .add('editor', () => <DataWranglingScript {...editorProps} />);
+  .add('editor', () => <ImageScrapingScript {...editorProps} />);

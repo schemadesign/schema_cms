@@ -12,3 +12,13 @@ export const selectDataWranglingScripts = createSelector(
   selectDataWranglingScriptsDomain,
   prop('scripts')
 );
+
+export const selectImageScrapingFields = createSelector(
+  selectDataWranglingScriptsDomain,
+  prop('imageScrapingFields')
+);
+
+export const selectCustomScripts = createSelector(
+  selectDataWranglingScriptsDomain,
+  prop('customScripts')
+);

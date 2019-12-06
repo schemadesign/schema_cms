@@ -36,8 +36,8 @@ export default class DataSource extends PureComponent {
       const { dataSourceId } = this.props.match.params;
 
       await this.props.fetchDataSource({ dataSourceId });
-      this.setState({ loading: false });
     }
+    this.setState({ loading: false });
   }
 
   componentWillUnmount() {

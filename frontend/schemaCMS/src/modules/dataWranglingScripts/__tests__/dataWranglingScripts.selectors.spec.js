@@ -4,7 +4,7 @@ import Immutable from 'seamless-immutable';
 import {
   selectDataWranglingScripts,
   selectDataWranglingScript,
-  selectDataWranglingScriptsDomain,
+  selectDataWranglingScriptsDomain, selectImageScrapingFields, selectCustomScripts,
 } from '../dataWranglingScripts.selectors';
 
 describe('DataWranglingScripts: selectors', () => {
@@ -12,6 +12,8 @@ describe('DataWranglingScripts: selectors', () => {
     dataWranglingScripts: {
       scripts: [],
       script: {},
+      customScripts: [],
+      imageScrapingFields: [],
     },
   });
 
@@ -24,8 +26,16 @@ describe('DataWranglingScripts: selectors', () => {
       expect(selectDataWranglingScripts(state)).to.equal(state.dataWranglingScripts.scripts);
     });
 
-    it('should select a one data wranglings script', () => {
+    it('should select one data wranglings script', () => {
       expect(selectDataWranglingScript(state)).to.equal(state.dataWranglingScripts.script);
+    });
+
+    it('should select image scraping fields', () => {
+      expect(selectImageScrapingFields(state)).to.equal(state.dataWranglingScripts.imageScrapingFields);
+    });
+
+    it('should select custom scripts', () => {
+      expect(selectCustomScripts(state)).to.equal(state.dataWranglingScripts.customScripts);
     });
   });
 });

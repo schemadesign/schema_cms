@@ -5,8 +5,12 @@ import { DataWranglingScriptsRoutines, reducer as dataWranglingReducer } from '.
 
 describe('DataWranglingScripts: redux', () => {
   const defaultState = Immutable({
-    script: {},
+    script: {
+      specs: {},
+    },
     scripts: [],
+    imageScrapingFields: [],
+    customScripts: [],
   });
 
   describe('reducer', () => {
@@ -37,6 +41,36 @@ describe('DataWranglingScripts: redux', () => {
       const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchList.success(scripts));
 
       expect(resultState.scripts).to.deep.equal(scripts);
+    });
+  });
+
+  describe('when SET_IMAGE_SCRAPING_FIELDS/SUCCESS action is received', () => {
+    it('should set imageScrapingFields', () => {
+      const payload = {
+        imageScrapingFields: ['data 1', 'data 2'],
+        scriptId: 1,
+      };
+
+      const resultState = dataWranglingReducer(
+        defaultState,
+        DataWranglingScriptsRoutines.setImageScrapingFields.success(payload)
+      );
+
+      expect(resultState.imageScrapingFields).to.deep.equal(payload.imageScrapingFields);
+    });
+
+    it('should set customScripts', () => {
+      const payload = {
+        imageScrapingFields: ['data 1', 'data 2'],
+        scriptId: 1,
+      };
+
+      const resultState = dataWranglingReducer(
+        defaultState,
+        DataWranglingScriptsRoutines.setImageScrapingFields.success(payload)
+      );
+
+      expect(resultState.customScripts).to.deep.equal([payload.scriptId]);
     });
   });
 });

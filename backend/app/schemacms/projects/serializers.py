@@ -50,7 +50,7 @@ class ActiveJobSerializer(serializers.ModelSerializer):
         fields = ("id", "scripts")
 
     def get_scripts(self, obj):
-        return [step.script_id for step in obj.steps.all()]
+        return [{"id": step.script_id, "options": step.options} for step in obj.steps.all()]
 
 
 class DataSourceSerializer(serializers.ModelSerializer):

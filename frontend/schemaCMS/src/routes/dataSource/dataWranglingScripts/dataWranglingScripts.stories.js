@@ -5,11 +5,13 @@ import { withRouter, withTheme } from '../../../.storybook/decorators';
 import { DataWranglingScripts } from './dataWranglingScripts.component';
 
 export const defaultProps = {
-  dataWranglingScripts: [{ id: 1, name: 'name 1' }, { id: 2, name: 'name 2' }],
+  dataWranglingScripts: [{ id: 1, name: 'name 1', specs: {} }, { id: 2, name: 'name 2', specs: {} }],
   dataSource: { metaData: {} },
   bindSubmitForm: Function.prototype,
   fetchDataWranglingScripts: Function.prototype,
   uploadScript: Function.prototype,
+  imageScrapingFields: [],
+  customScripts: [],
   sendUpdatedDataWranglingScript: Function.prototype,
   isAdmin: true,
   history: {

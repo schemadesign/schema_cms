@@ -10,6 +10,7 @@ import {
 import browserHistory from '../../shared/utils/history';
 
 import { selectDataSource } from '../dataSource';
+import { STEPS_PAGE } from '../dataSource/dataSource.constants';
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -75,11 +76,26 @@ function* fetchOne({ payload: { scriptId } }) {
   }
 }
 
+function* setImageScrapingFields({ payload }) {
+  try {
+    yield put(DataWranglingScriptsRoutines.setImageScrapingFields.request());
+
+    yield put(DataWranglingScriptsRoutines.setImageScrapingFields.success(payload));
+    browserHistory.push(`/datasource/${payload.dataSourceId}/${STEPS_PAGE}`);
+  } catch (error) {
+    console.log(error);
+    yield put(DataWranglingScriptsRoutines.setImageScrapingFields.failure(error));
+  } finally {
+    yield put(DataWranglingScriptsRoutines.setImageScrapingFields.fulfill());
+  }
+}
+
 export function* watchDataWranglingScripts() {
   yield all([
     takeLatest(DataWranglingScriptsRoutines.fetchList.TRIGGER, fetchList),
     takeLatest(DataWranglingScriptsRoutines.sendList.TRIGGER, sendList),
     takeLatest(DataWranglingScriptsRoutines.uploadScript.TRIGGER, uploadScript),
     takeLatest(DataWranglingScriptsRoutines.fetchOne.TRIGGER, fetchOne),
+    takeLatest(DataWranglingScriptsRoutines.setImageScrapingFields.TRIGGER, setImageScrapingFields),
   ]);
 }
