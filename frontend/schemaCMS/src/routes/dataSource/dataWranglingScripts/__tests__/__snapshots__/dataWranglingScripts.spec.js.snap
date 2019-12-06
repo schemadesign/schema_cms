@@ -27,6 +27,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
   >
     <DataSourceNavigation
       bindSubmitForm={[Function]}
+      customScripts={Array []}
       dataSource={
         Object {
           "metaData": Object {},
@@ -37,10 +38,12 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
           Object {
             "id": 1,
             "name": "name 1",
+            "specs": Object {},
           },
           Object {
             "id": 2,
             "name": "name 2",
+            "specs": Object {},
           },
         ]
       }
@@ -51,6 +54,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
           "push": [Function],
         }
       }
+      imageScrapingFields={Array []}
       intl={
         Object {
           "formatMessage": [Function],
@@ -231,15 +235,12 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         "push": [Function],
       }
     }
-<<<<<<< HEAD:frontend/schemaCMS/src/routes/dataSource/view/dataWranglingScripts/__tests__/__snapshots__/dataWranglingScripts.spec.js.snap
     imageScrapingFields={Array []}
-=======
     intl={
       Object {
         "formatMessage": [Function],
       }
     }
->>>>>>> master:frontend/schemaCMS/src/routes/dataSource/dataWranglingScripts/__tests__/__snapshots__/dataWranglingScripts.spec.js.snap
     isAdmin={true}
     match={
       Object {

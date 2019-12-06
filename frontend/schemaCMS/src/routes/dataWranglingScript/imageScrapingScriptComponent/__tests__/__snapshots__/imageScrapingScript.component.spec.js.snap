@@ -121,6 +121,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
     </LoadingWrapper>
   </styled.form>
   <NavigationContainer
+    fixed={false}
     hideOnDesktop={false}
     right={false}
   >
@@ -263,6 +264,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
     </LoadingWrapper>
   </styled.form>
   <NavigationContainer
+    fixed={false}
     hideOnDesktop={false}
     right={false}
   >

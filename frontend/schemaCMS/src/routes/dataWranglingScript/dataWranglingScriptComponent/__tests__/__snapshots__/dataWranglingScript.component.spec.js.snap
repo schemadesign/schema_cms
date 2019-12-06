@@ -113,6 +113,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
     </SyntaxHighlighter>
   </styled.form>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >
@@ -120,16 +121,6 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
       disabled={false}
       onClick={[Function]}
     />
-    <NextButton
-      loading={false}
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="OK"
-        id="dataWranglingscripts.view.ok"
-        values={Object {}}
-      />
-    </NextButton>
   </NavigationContainer>
 </styled.div>
 `;
@@ -247,6 +238,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
     </SyntaxHighlighter>
   </styled.form>
   <NavigationContainer
+    fixed={true}
     hideOnDesktop={false}
     right={false}
   >
@@ -254,16 +246,6 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
       disabled={false}
       onClick={[Function]}
     />
-    <NextButton
-      loading={false}
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        defaultMessage="OK"
-        id="dataWranglingscripts.view.ok"
-        values={Object {}}
-      />
-    </NextButton>
   </NavigationContainer>
 </styled.div>
 `;
