@@ -140,11 +140,9 @@ export class DataSourceList extends PureComponent {
     return <MetaDataWrapper>{elements}</MetaDataWrapper>;
   };
 
-  renderLoadingMessage = () => <FormattedMessage {...messages.loading} />;
-
   renderHeader = ({ whenCreated, firstName, lastName, loading }) =>
     renderWhenTrueOtherwise(
-      this.renderLoadingMessage,
+      always(<FormattedMessage {...messages.loading} />),
       always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))
     )(loading);
 
