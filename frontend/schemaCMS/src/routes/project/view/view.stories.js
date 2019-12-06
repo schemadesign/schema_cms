@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import { View } from './view.component';
 
 const emptyProps = {
@@ -13,15 +14,13 @@ const emptyProps = {
     role: ROLES.ADMIN,
   },
   project: {},
-  history: {
-    push: Function.prototype,
-  },
+  history,
+  intl,
   match: {
     params: {
       projectId: '100',
     },
   },
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
   isAdmin: true,
 };
 
@@ -52,5 +51,5 @@ export const defaultProps = {
 storiesOf('Project|View', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('default', () => <View {...defaultProps} />)
-  .add('no data', () => <View {...emptyProps} />);
+  .add('No data', () => <View {...emptyProps} />)
+  .add('Default', () => <View {...defaultProps} />);

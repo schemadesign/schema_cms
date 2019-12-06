@@ -3,16 +3,19 @@ import { storiesOf } from '@storybook/react';
 
 import { CreateDataSource } from './createDataSource.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
   createDataSource: Function.prototype,
+  onDataSourceChange: Function.prototype,
+  match: { params: {} },
+  history,
+  intl,
   match: {
     params: {
       projectId: '1',
     },
   },
-  history: { push: Function.prototype },
 };
 
 storiesOf('Project|CreateDataSource', module)

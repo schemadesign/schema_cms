@@ -96,3 +96,18 @@ export const interFontFaces = [
   {style: 'normal', weight: 900, files: [InterBlackWoff2, InterBlackWoff, InterBlackTtf, InterBlackOtf]},
   {style: 'italic', weight: 900, files: [InterBlackItalicWoff2, InterBlackItalicWoff, InterBlackItalicTtf, InterBlackItalicOtf]},
 ];
+
+export const prepareFontFace = ({ style, weight, files }) => {
+  const srcs = fontFormats.map((format, index) => `url(${files[index]}) format('${format}')`);
+
+  return `
+    @font-face {
+      font-family: 'Inter';
+      font-style: ${style};
+      font-weight: ${weight};
+      src: ${srcs.join(',\n')};
+    }
+  `;
+};
+
+export const prepareFontSet = () => `${interFontFaces.map(prepareFontFace).join('\n')}`;

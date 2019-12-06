@@ -72,6 +72,7 @@ exports[`PageBlock: Component should render correctly 1`] = `
         handleSubmit={[Function]}
         history={
           Object {
+            "goBack": [Function],
             "push": [Function],
           }
         }
@@ -258,6 +259,7 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
         handleSubmit={[Function]}
         history={
           Object {
+            "goBack": [Function],
             "push": [Function],
           }
         }

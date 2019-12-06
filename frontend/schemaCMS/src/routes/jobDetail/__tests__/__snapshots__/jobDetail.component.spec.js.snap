@@ -18,6 +18,22 @@ exports[`JobDetail: Component should render correctly 1`] = `
       />
     }
   />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Details"
+        id="jobDetail.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Job"
+        id="jobDetail.title"
+        values={Object {}}
+      />
+    }
+  />
   <LoadingWrapper
     error={null}
     loading={false}
@@ -67,6 +83,22 @@ exports[`JobDetail: Component should render correctly with loader 1`] = `
       />
     }
     headerTitle={
+      <FormattedMessage
+        defaultMessage="Job"
+        id="jobDetail.title"
+        values={Object {}}
+      />
+    }
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Details"
+        id="jobDetail.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
       <FormattedMessage
         defaultMessage="Job"
         id="jobDetail.title"

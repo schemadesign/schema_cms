@@ -174,6 +174,14 @@ exports[`Storyshots Settings Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -487,7 +495,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           }
           type="text"
-          value=""
+          value="FirstName"
         />
         <div
           style={
@@ -571,7 +579,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           }
           type="text"
-          value=""
+          value="LastName"
         />
         <div
           style={
@@ -654,7 +662,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           }
           type="text"
-          value=""
+          value="email@example.com"
         />
         <div
           style={
@@ -718,6 +726,7 @@ exports[`Storyshots Settings Default 1`] = `
             }
           }
           type="text"
+          value="editor"
         />
         <div
           style={

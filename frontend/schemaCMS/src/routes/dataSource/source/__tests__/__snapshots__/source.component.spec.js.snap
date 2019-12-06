@@ -10,6 +10,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
   }
   history={
     Object {
+      "goBack": [Function],
       "push": [Function],
     }
   }
@@ -18,6 +19,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       "formatMessage": [Function],
     }
   }
+  isAnyJobProcessing={false}
   match={
     Object {
       "params": Object {
@@ -184,6 +186,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
   }
   history={
     Object {
+      "goBack": [Function],
       "push": [Function],
     }
   }
@@ -192,6 +195,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       "formatMessage": [Function],
     }
   }
+  isAnyJobProcessing={false}
   match={
     Object {
       "params": Object {

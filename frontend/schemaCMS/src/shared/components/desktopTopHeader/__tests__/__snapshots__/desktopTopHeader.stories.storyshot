@@ -178,6 +178,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -709,6 +717,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -1263,6 +1279,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >

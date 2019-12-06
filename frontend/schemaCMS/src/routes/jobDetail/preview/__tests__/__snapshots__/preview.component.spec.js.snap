@@ -23,6 +23,7 @@ exports[`Preview: Component should render correctly 1`] = `
     fetchPreview={[MockFunction]}
     history={
       Object {
+        "goBack": [Function],
         "push": [Function],
       }
     }
@@ -129,6 +130,7 @@ exports[`Preview: Component should render correctly with loader 1`] = `
     fetchPreview={[Function]}
     history={
       Object {
+        "goBack": [Function],
         "push": [Function],
       }
     }

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
 import { withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import DataPreview from './dataPreview.component';
 import { tableData as previewTable, tableFields as fields } from '../../utils/dataMock';
 
@@ -13,22 +14,18 @@ const dataSource = {
 };
 
 export const defaultProps = {
+  dataSource,
   previewData: { previewTable, fields },
   fetchPreview: Function.prototype,
+  history,
+  intl,
   match: {
     params: {
       step: '2',
     },
   },
-  history: {
-    push: Function.prototype,
-  },
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
-  },
-  dataSource,
 };
 
-storiesOf('Shared Components|Fields', module)
+storiesOf('Shared Components|DataPreview', module)
   .addDecorator(withTheme(Theme.light))
   .add('Default', () => <DataPreview {...defaultProps} />);

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DataWranglingDefaultScript admin 1`] = `
+exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (admin) 1`] = `
 .c10 {
   height: 155px;
 }
@@ -142,6 +142,14 @@ exports[`Storyshots DataWranglingDefaultScript admin 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >
@@ -1206,7 +1214,7 @@ exports[`Storyshots DataWranglingDefaultScript admin 1`] = `
 </div>
 `;
 
-exports[`Storyshots DataWranglingDefaultScript editor 1`] = `
+exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (editor) 1`] = `
 .c10 {
   height: 155px;
 }
@@ -1348,6 +1356,14 @@ exports[`Storyshots DataWranglingDefaultScript editor 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #1d1d20;
+    background-color: #FFF;
+  }
+
+  </style>
   <div
     className=""
   >

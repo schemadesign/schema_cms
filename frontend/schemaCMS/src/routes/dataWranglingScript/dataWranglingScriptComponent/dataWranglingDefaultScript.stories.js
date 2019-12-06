@@ -5,6 +5,7 @@ import { Theme } from 'schemaUI';
 import { DataWranglingDefaultScript } from './dataWranglingDefaultScript.component';
 
 import { withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import mockScripts, { BLANK_CELLS } from '../../../modules/dataWranglingScripts/scripts.mock';
 
 export const defaultProps = {
@@ -13,20 +14,10 @@ export const defaultProps = {
   fetchDataWranglingScript: Function.prototype,
   imageScrapingFields: [],
   setImageScrapingFields: Function.prototype,
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
-  },
-  history: {
-    push: Function.prototype,
-    goBack: Function.prototype,
-  },
   isAdmin: true,
-  match: {
-    path: '/',
-    params: {
-      scriptId: '1',
-    },
-  },
+  history,
+  intl,
+  match: {},
 };
 
 export const editorProps = {
@@ -34,10 +25,10 @@ export const editorProps = {
   isAdmin: false,
 };
 
-storiesOf('DataWranglingDefaultScript', module)
+storiesOf('Data Wrangling Script|DataWranglingDefaultScript', module)
   .addDecorator(withTheme())
-  .add('admin', () => <DataWranglingDefaultScript {...defaultProps} />);
+  .add('Default (admin)', () => <DataWranglingDefaultScript {...defaultProps} />);
 
-storiesOf('DataWranglingDefaultScript', module)
+storiesOf('Data Wrangling Script|DataWranglingDefaultScript', module)
   .addDecorator(withTheme(Theme.light))
-  .add('editor', () => <DataWranglingDefaultScript {...editorProps} />);
+  .add('Default (editor)', () => <DataWranglingDefaultScript {...editorProps} />);

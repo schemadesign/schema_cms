@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { CreateFilter } from './createFilter.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { history } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   fetchFieldsInfo: Function.prototype,
@@ -10,17 +11,15 @@ export const defaultProps = {
   fieldsInfo: {
     field: {
       fieldType: 'fieldType',
-      filterType: ['filterType'],
+      filterType: ['Filter Type 1', 'Filter Type 2', 'Filter Type 3'],
       unique: 'unique',
     },
   },
   dataSource: {
     name: 'name',
   },
+  history,
   match: { params: { dataSourceId: '1' } },
-  history: {
-    push: Function.prototype,
-  },
 };
 
 storiesOf('Data Source|CreateFilter', module)

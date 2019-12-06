@@ -146,6 +146,14 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >
@@ -200,7 +208,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
               }
             >
               <span>
-                You are adding undefined undefined to 
+                You are adding Ann Lorem to Ipsum Project
               </span>
             </h1>
           </div>
@@ -304,7 +312,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
               }
             >
               <span>
-                You are adding undefined undefined to 
+                You are adding Ann Lorem to Ipsum Project
               </span>
             </h1>
           </div>
@@ -399,7 +407,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
           }
         >
           <span>
-            You are adding undefined undefined to 
+            You are adding Ann Lorem to Ipsum Project
           </span>
         </h1>
       </div>
@@ -460,6 +468,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
               }
             }
             type="text"
+            value="Ann"
           />
           <div
             style={
@@ -521,6 +530,7 @@ exports[`Storyshots Shared Components|UserCreate/UserCreateProject Default 1`] =
               }
             }
             type="text"
+            value="Lorem"
           />
           <div
             style={

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots NotFound Default 1`] = `
+.c0 {
+  font-family: Arial;
+  font-weight: bold;
+  color: #000000;
+}
+
+<div
+  className=""
+>
+  <h1
+    className="c0"
+  >
+    <span>
+      Error: 404
+    </span>
+  </h1>
+</div>
+`;

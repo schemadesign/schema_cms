@@ -3,11 +3,11 @@ import { storiesOf } from '@storybook/react';
 
 import { PageList } from './pageList.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   fetchPages: Function.prototype,
   fetchFolder: Function.prototype,
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
   pages: [
     {
       id: 1,
@@ -26,13 +26,12 @@ export const defaultProps = {
   folder: {
     project: '1',
   },
+  history,
+  intl,
   match: {
     params: {
       folderId: '1',
     },
-  },
-  history: {
-    push: Function.prototype,
   },
 };
 

@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { UserList } from '../../../shared/components/userList';
 import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { Container } from '../../project/list/list.styles';
 import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './list.messages';
@@ -16,8 +17,21 @@ export class List extends PureComponent {
     users: PropTypes.array.isRequired,
   };
 
-  componentDidMount() {
-    this.props.fetchUsers();
+  state = {
+    loading: true,
+    error: null,
+  };
+
+  async componentDidMount() {
+    try {
+      await this.props.fetchUsers();
+      this.setState({ loading: false });
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error,
+      });
+    }
   }
 
   handleAddUser = () => browserHistory.push('/user/add');
@@ -25,6 +39,7 @@ export class List extends PureComponent {
   handleCancelClick = () => browserHistory.push('/');
 
   render() {
+    const { loading, error } = this.state;
     const { users } = this.props;
     const headerConfig = {
       headerTitle: <FormattedMessage {...messages.headerTitle} />,
@@ -37,7 +52,9 @@ export class List extends PureComponent {
         <ContextHeader title={headerConfig.headerTitle} subtitle={headerConfig.headerSubtitle}>
           <PlusButton id="addUserBtn" onClick={this.handleAddUser} />
         </ContextHeader>
-        <UserList users={users} />
+        <LoadingWrapper loading={loading} error={error} noData={!users.length}>
+          <UserList users={users} />
+        </LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
           <BackButton onClick={this.handleCancelClick}>
             <FormattedMessage {...messages.cancel} />

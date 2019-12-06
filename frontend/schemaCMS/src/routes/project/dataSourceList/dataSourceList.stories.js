@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import { DataSourceList } from './dataSourceList.component';
 import { jobs } from '../../../modules/dataSource/jobs.mock';
 
@@ -41,18 +42,14 @@ export const defaultProps = {
   createDataSource: Function.prototype,
   fetchDataSources: Function.prototype,
   cancelFetchListLoop: Function.prototype,
-  history: {
-    push: Function.prototype,
-  },
   dataSources: [],
+  history,
+  intl,
   match: {
     params: {
       projectId: '1',
     },
     url: 'url',
-  },
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
   },
 };
 

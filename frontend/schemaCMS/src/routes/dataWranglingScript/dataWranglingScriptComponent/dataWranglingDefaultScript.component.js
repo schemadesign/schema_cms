@@ -22,9 +22,7 @@ export class DataWranglingDefaultScript extends PureComponent {
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     isAdmin: PropTypes.bool.isRequired,
-    match: PropTypes.shape({
-      path: PropTypes.string.isRequired,
-    }).isRequired,
+    match: PropTypes.object.isRequired,
   };
 
   getHeaderAndMenuConfig = () => {

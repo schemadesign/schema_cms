@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project|View default 1`] = `
+exports[`Storyshots Project|View Default 1`] = `
 .c9 {
   height: 155px;
 }
@@ -138,6 +138,14 @@ exports[`Storyshots Project|View default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -422,7 +430,7 @@ exports[`Storyshots Project|View default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project|View no data 1`] = `
+exports[`Storyshots Project|View No data 1`] = `
 .c9 {
   height: 155px;
 }
@@ -560,6 +568,14 @@ exports[`Storyshots Project|View no data 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >

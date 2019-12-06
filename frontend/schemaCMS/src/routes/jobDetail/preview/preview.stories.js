@@ -4,16 +4,13 @@ import { storiesOf } from '@storybook/react';
 import { Preview } from './preview.component';
 import { tableFields as fields, tableData as data } from '../../../shared/utils/dataMock';
 import { withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   previewData: { data, fields },
   fetchPreview: Function.prototype,
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
-  },
-  history: {
-    push: Function.prototype,
-  },
+  history,
+  intl,
   match: {
     params: {
       jobId: '1',
@@ -21,6 +18,6 @@ export const defaultProps = {
   },
 };
 
-storiesOf('Job/Preview', module)
+storiesOf('JobDetail/Preview', module)
   .addDecorator(withTheme())
   .add('Default', () => <Preview {...defaultProps} />);

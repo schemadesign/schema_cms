@@ -131,6 +131,14 @@ exports[`Storyshots Shared Components|DataSourceNavigation Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -502,6 +510,14 @@ exports[`Storyshots Shared Components|DataSourceNavigation With Job 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -899,6 +915,14 @@ exports[`Storyshots Shared Components|DataSourceNavigation With fake Job 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >

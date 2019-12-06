@@ -8,6 +8,14 @@ exports[`Storyshots Shared Components|Navigation BackArrowButton 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <button
     disabled={false}
     style={
@@ -67,6 +75,14 @@ exports[`Storyshots Shared Components|Navigation BackButton 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <button
     className="c0"
     disabled={false}
@@ -150,6 +166,14 @@ exports[`Storyshots Shared Components|Navigation NavigationContainer 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -221,6 +245,14 @@ exports[`Storyshots Shared Components|Navigation NextButton 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <button
     className="c0"
     disabled={false}
@@ -263,6 +295,14 @@ exports[`Storyshots Shared Components|Navigation PlusButton 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >

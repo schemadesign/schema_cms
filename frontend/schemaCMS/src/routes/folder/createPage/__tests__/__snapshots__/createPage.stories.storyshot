@@ -150,6 +150,14 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -426,11 +434,29 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
           }
         }
       >
+        <label
+          htmlFor="title"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Page Title
+        </label>
         <input
           id="title"
           name="title"
           onBlur={[Function]}
           onChange={[Function]}
+          placeholder="Title"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -443,6 +469,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
             }
           }
           type="text"
+          value="title"
         />
         <div
           style={
@@ -489,10 +516,28 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
           }
         }
       >
+        <label
+          htmlFor="description"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Description
+        </label>
         <textarea
           id="description"
           onBlur={[Function]}
           onChange={[Function]}
+          placeholder="Description"
           style={
             Object {
               "background": "#000",
@@ -507,6 +552,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
             }
           }
           type="text"
+          value="description"
         />
         <textarea
           aria-hidden={true}
@@ -576,10 +622,28 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
           }
         }
       >
+        <label
+          htmlFor="keywords"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          Keywords
+        </label>
         <textarea
           id="keywords"
           onBlur={[Function]}
           onChange={[Function]}
+          placeholder="Keywords"
           style={
             Object {
               "background": "#000",
@@ -594,6 +658,7 @@ exports[`Storyshots Folder|CreatePage Default 1`] = `
             }
           }
           type="text"
+          value="keywords"
         />
         <textarea
           aria-hidden={true}

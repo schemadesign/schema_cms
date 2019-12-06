@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
 import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 import { PROJECT_STATUSES } from '../../../modules/project/project.constants';
 import { List } from './list.component';
 
@@ -10,8 +11,8 @@ export const emptyListProps = {
   isAdmin: true,
   list: [],
   fetchProjectsList: Function.prototype,
-  history: {},
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
+  history,
+  intl,
 };
 
 export const defaultProps = {
@@ -53,10 +54,10 @@ const editorProps = {
 storiesOf('Project|List', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
-  .add('empty', () => <List {...emptyListProps} />)
-  .add('admin list', () => <List {...defaultProps} />);
+  .add('No data', () => <List {...emptyListProps} />)
+  .add('List (admin)', () => <List {...defaultProps} />);
 
 storiesOf('Project|List', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme(Theme.light))
-  .add('editor list', () => <List {...editorProps} />);
+  .add('List (editor)', () => <List {...editorProps} />);

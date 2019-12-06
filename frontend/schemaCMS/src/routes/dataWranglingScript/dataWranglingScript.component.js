@@ -11,10 +11,10 @@ import { ImageScrapingScript } from './imageScrapingScriptComponent/imageScrapin
 export class DataWranglingScript extends PureComponent {
   static propTypes = {
     dataWranglingScript: PropTypes.object,
-    match: PropTypes.shape({
-      path: PropTypes.string.isRequired,
-    }).isRequired,
     fetchDataWranglingScript: PropTypes.func.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.object.isRequired,
+    }).isRequired,
   };
 
   state = {
@@ -39,7 +39,8 @@ export class DataWranglingScript extends PureComponent {
   render() {
     const { dataWranglingScript } = this.props;
     const { loading } = this.state;
-    const isImageScraping = dataWranglingScript.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE;
+    const noData = isEmpty(dataWranglingScript);
+    const isImageScraping = !noData && dataWranglingScript.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE;
 
     return (
       <LoadingWrapper loading={loading} noData={isEmpty(dataWranglingScript)}>

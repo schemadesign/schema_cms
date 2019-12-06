@@ -4,12 +4,22 @@ import { ThemeProvider } from 'styled-components';
 import { ThemeProvider as ThemeProviderUI, Theme } from 'schemaUI';
 import { IntlProvider } from 'react-intl';
 import { MemoryRouter } from 'react-router';
+
 import { translationMessages, DEFAULT_LOCALE } from '../i18n';
 
+const getStyles = (theme) => `
+  body {
+    color: ${theme.text};
+    background-color: ${theme.background};
+  }
+`;
 
 export const withTheme = (theme = Theme.dark) => (story) => (
   <ThemeProvider theme={theme}>
-    <ThemeProviderUI theme={theme}>{story()}</ThemeProviderUI>
+    <ThemeProviderUI theme={theme}>
+      <style>{getStyles(theme)}</style>
+      {story()}
+    </ThemeProviderUI>
   </ThemeProvider>
 );
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withTheme } from '../../../../.storybook/decorators';
+import { intl } from '../../../../.storybook/helpers';
 import { UserCreate } from './userCreate.component';
 
 export const defaultProps = {
@@ -13,9 +14,7 @@ export const defaultProps = {
   isValid: true,
   isSubmitting: false,
   values: {},
-  intl: {
-    formatMessage: ({ defaultMessage }) => defaultMessage,
-  },
+  intl,
 };
 
 storiesOf('Shared Components|UserCreate/UserCreate', module)

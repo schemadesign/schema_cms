@@ -51,6 +51,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       hideOnDesktop={false}
       history={
         Object {
+          "goBack": [Function],
           "push": [Function],
         }
       }
@@ -232,6 +233,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
     hideOnDesktop={true}
     history={
       Object {
+        "goBack": [Function],
         "push": [Function],
       }
     }

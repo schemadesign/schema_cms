@@ -31,6 +31,14 @@ exports[`Storyshots Shared Components|UserList default (empty) 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <section
     className="c0"
   />
@@ -126,6 +134,14 @@ exports[`Storyshots Shared Components|UserList with users (as admin) 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <section
     className="c0"
   >
@@ -525,6 +541,14 @@ exports[`Storyshots Shared Components|UserList with users 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <section
     className="c0"
   >

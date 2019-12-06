@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { PageBlockList } from './pageBlockList.component';
 import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   pageBlocks: [
@@ -25,13 +26,13 @@ export const defaultProps = {
   fetchPageBlocks: Function.prototype,
   fetchPage: Function.prototype,
   setPageBlocks: Function.prototype,
+  history,
+  intl,
   match: {
     params: {
       pageId: '1',
     },
   },
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
-  history: { push: Function.prototype },
 };
 
 storiesOf('Page|PageBlockList', module)

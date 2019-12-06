@@ -3,9 +3,10 @@ import { storiesOf } from '@storybook/react';
 
 import { PageBlock } from './pageBlock.component';
 import { withTheme } from '../../.storybook/decorators';
+import { history, intl } from '../../.storybook/helpers';
 
 export const defaultProps = {
-  history: { push: Function.prototype },
+  values: {},
   block: {
     page: { id: 1 },
   },
@@ -15,13 +16,13 @@ export const defaultProps = {
   fetchPageBlock: Function.prototype,
   removePageBlock: Function.prototype,
   isSubmitting: false,
+  history,
+  intl,
   match: {
     params: {
       blockId: '1',
     },
   },
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
-  values: {},
 };
 
 storiesOf('PageBlock', module)

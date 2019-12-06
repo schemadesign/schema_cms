@@ -65,6 +65,7 @@ exports[`Edit: Component should render correctly 1`] = `
         handleSubmit={[Function]}
         history={
           Object {
+            "goBack": [Function],
             "push": [Function],
           }
         }
@@ -257,6 +258,7 @@ exports[`Edit: Component should render correctly with loader 1`] = `
         handleSubmit={[Function]}
         history={
           Object {
+            "goBack": [Function],
             "push": [Function],
           }
         }

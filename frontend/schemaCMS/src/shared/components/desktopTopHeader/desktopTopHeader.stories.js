@@ -2,14 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { history } from '../../../.storybook/helpers';
 import { DesktopTopHeader } from './desktopTopHeader.component';
 
 export const defaultProps = {
   primaryMenuItems: [{ label: 'Data Sources', to: '/path' }, { label: 'Charts', to: '/path' }],
   secondaryMenuItems: [{ label: 'Log Out', to: '/logout' }, { label: 'Click action', onClick: () => {}, id: 'id' }],
-  history: {
-    push: Function.prototype,
-  },
+  history,
 };
 
 const titleProps = {

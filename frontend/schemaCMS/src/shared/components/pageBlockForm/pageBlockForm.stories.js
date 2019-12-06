@@ -3,12 +3,13 @@ import { storiesOf } from '@storybook/react';
 
 import { PageBlockForm } from './pageBlockForm.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { intl } from '../../../.storybook/helpers';
 import { IMAGE_TYPE, MARKDOWN_TYPE, NONE, EMBED_TYPE, CODE_TYPE } from '../../../modules/pageBlock/pageBlock.constants';
 
 export const defaultProps = {
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
+  intl,
 };
 
 export const noneProps = {

@@ -3,13 +3,11 @@ import { storiesOf } from '@storybook/react';
 
 import { Filters } from './filters.component';
 import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
   dataSource: {
     project: '1',
-  },
-  history: {
-    push: Function.prototype,
   },
   filters: [
     {
@@ -25,13 +23,14 @@ export const defaultProps = {
   ],
   fetchFilters: Function.prototype,
   setFilters: Function.prototype,
+  history,
+  intl,
   match: {
     params: {
       dataSourceId: '1',
     },
     url: 'url',
   },
-  intl: { formatMessage: ({ defaultMessage }) => defaultMessage },
 };
 
 storiesOf('Data Source|Filters', module)
