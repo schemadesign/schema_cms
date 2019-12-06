@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ImageScrapingScript admin 1`] = `
-.c11 {
+exports[`Storyshots DataWranglingDefaultScript admin 1`] = `
+.c10 {
   height: 155px;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,13 +24,16 @@ exports[`Storyshots ImageScrapingScript admin 1`] = `
   width: 100%;
 }
 
-.c12 {
+.c11 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c14 {
+.c13 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -84,16 +87,8 @@ exports[`Storyshots ImageScrapingScript admin 1`] = `
   color: #FFF;
 }
 
-.c10 {
-  color: #FFF;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
 @media (min-width:1040px) {
-  .c13 {
+  .c12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -102,7 +97,7 @@ exports[`Storyshots ImageScrapingScript admin 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c11 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -111,7 +106,7 @@ exports[`Storyshots ImageScrapingScript admin 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c13 {
     width: 240px;
   }
 }
@@ -1168,27 +1163,19 @@ exports[`Storyshots ImageScrapingScript admin 1`] = `
     
         </code>
       </pre>
-      <div
-        className="c10"
-      >
-        <span>
-          Loading...
-        </span>
-      </div>
     </form>
     <div
-      className="c11"
+      className="c10"
     >
       <div
-        className="c12"
+        className="c11"
       >
         <div
-          className="c13"
+          className="c12"
         >
           <button
-            className="c14"
+            className="c13"
             disabled={false}
-            id="imageScrapingBackBtn"
             onClick={[Function]}
             style={
               Object {
@@ -1212,33 +1199,6 @@ exports[`Storyshots ImageScrapingScript admin 1`] = `
               Back
             </span>
           </button>
-          <button
-            className="c14"
-            disabled={false}
-            id="imageScrapingNextBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#FFF",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#000",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#FFF",
-                "fontSize": "18px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              }
-            }
-          >
-            <span>
-              OK
-            </span>
-          </button>
         </div>
       </div>
     </div>
@@ -1246,12 +1206,12 @@ exports[`Storyshots ImageScrapingScript admin 1`] = `
 </div>
 `;
 
-exports[`Storyshots ImageScrapingScript editor 1`] = `
-.c11 {
+exports[`Storyshots DataWranglingDefaultScript editor 1`] = `
+.c10 {
   height: 155px;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1270,13 +1230,16 @@ exports[`Storyshots ImageScrapingScript editor 1`] = `
   width: 100%;
 }
 
-.c12 {
+.c11 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
+  position: fixed;
+  width: calc(100% - 40px);
+  background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(0,0,0,0) );
 }
 
-.c14 {
+.c13 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -1330,16 +1293,8 @@ exports[`Storyshots ImageScrapingScript editor 1`] = `
   color: #1d1d20;
 }
 
-.c10 {
-  color: #1d1d20;
-  text-align: center;
-  padding: 50px 10px;
-  font-weight: 200;
-  font-size: 20px;
-}
-
 @media (min-width:1040px) {
-  .c13 {
+  .c12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1348,7 +1303,7 @@ exports[`Storyshots ImageScrapingScript editor 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c11 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(0,0,0,0) );
@@ -1357,7 +1312,7 @@ exports[`Storyshots ImageScrapingScript editor 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c13 {
     width: 240px;
   }
 }
@@ -2414,27 +2369,19 @@ exports[`Storyshots ImageScrapingScript editor 1`] = `
     
         </code>
       </pre>
-      <div
-        className="c10"
-      >
-        <span>
-          Loading...
-        </span>
-      </div>
     </form>
     <div
-      className="c11"
+      className="c10"
     >
       <div
-        className="c12"
+        className="c11"
       >
         <div
-          className="c13"
+          className="c12"
         >
           <button
-            className="c14"
+            className="c13"
             disabled={false}
-            id="imageScrapingBackBtn"
             onClick={[Function]}
             style={
               Object {
@@ -2456,33 +2403,6 @@ exports[`Storyshots ImageScrapingScript editor 1`] = `
           >
             <span>
               Back
-            </span>
-          </button>
-          <button
-            className="c14"
-            disabled={false}
-            id="imageScrapingNextBtn"
-            onClick={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#000",
-                "border": "none",
-                "borderRadius": "48px",
-                "color": "#FFF",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fill": "#1d1d20",
-                "fontSize": "18px",
-                "margin": "0",
-                "minHeight": "48px",
-                "outline": "none",
-                "padding": "0",
-                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-              }
-            }
-          >
-            <span>
-              OK
             </span>
           </button>
         </div>

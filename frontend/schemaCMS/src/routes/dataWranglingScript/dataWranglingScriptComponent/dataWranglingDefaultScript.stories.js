@@ -34,10 +34,10 @@ export const editorProps = {
   isAdmin: false,
 };
 
-storiesOf('DataWranglingScript', module)
+storiesOf('DataWranglingDefaultScript', module)
   .addDecorator(withTheme())
   .add('admin', () => <DataWranglingDefaultScript {...defaultProps} />);
 
-storiesOf('DataWranglingScript', module)
+storiesOf('DataWranglingDefaultScript', module)
   .addDecorator(withTheme(Theme.light))
   .add('editor', () => <DataWranglingDefaultScript {...editorProps} />);

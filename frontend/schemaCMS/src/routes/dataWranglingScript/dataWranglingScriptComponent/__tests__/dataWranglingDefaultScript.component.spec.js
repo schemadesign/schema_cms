@@ -3,11 +3,11 @@ import { shallow } from 'enzyme';
 
 import { DataWranglingDefaultScript } from '../dataWranglingDefaultScript.component';
 import { defaultProps } from '../dataWranglingDefaultScript.stories';
-import { BackButton, NextButton } from '../../../../shared/components/navigation';
+import { BackButton } from '../../../../shared/components/navigation';
 import mockScripts, { CASE_CONVERSION } from '../../../../modules/dataWranglingScripts/scripts.mock';
 import { STEPS_PAGE } from '../../../../modules/dataSource/dataSource.constants';
 
-describe('DataWranglingScript: Component', () => {
+describe('DataWranglingDefaultScript: Component', () => {
   const component = props => <DataWranglingDefaultScript {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
@@ -31,9 +31,6 @@ describe('DataWranglingScript: Component', () => {
     await Promise.resolve();
     wrapper.find(BackButton).simulate('click');
     expect(defaultProps.history.goBack).toHaveBeenCalled();
-
-    wrapper.find(NextButton).simulate('click');
-    expect(defaultProps.history.goBack).toHaveBeenCalled();
   });
 
   it('should go to data wrangling step', async () => {
@@ -48,9 +45,6 @@ describe('DataWranglingScript: Component', () => {
     await Promise.resolve();
 
     wrapper.find(BackButton).simulate('click');
-    expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/2/${STEPS_PAGE}`);
-
-    wrapper.find(NextButton).simulate('click');
     expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/2/${STEPS_PAGE}`);
   });
 });

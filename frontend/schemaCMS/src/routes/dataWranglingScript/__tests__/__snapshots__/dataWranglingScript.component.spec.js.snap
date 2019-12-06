@@ -7,7 +7,7 @@ exports[`DataWranglingScript: Component should render correctly 1`] = `
   noData={false}
   noDataContent={null}
 >
-  <DataWranglingScriptComponent
+  <DataWranglingDefaultScript
     customScripts={Array []}
     dataWranglingScript={
       Object {
@@ -80,7 +80,7 @@ exports[`DataWranglingScript: Component should render correctly with link to dat
   noData={false}
   noDataContent={null}
 >
-  <DataWranglingScriptComponent
+  <DataWranglingDefaultScript
     customScripts={Array []}
     dataWranglingScript={
       Object {
@@ -153,7 +153,7 @@ exports[`DataWranglingScript: Component should render correctly with loader 1`] 
   noData={false}
   noDataContent={null}
 >
-  <DataWranglingScriptComponent
+  <DataWranglingDefaultScript
     customScripts={Array []}
     dataWranglingScript={
       Object {

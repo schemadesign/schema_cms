@@ -142,8 +142,8 @@ export class ImageScrapingScript extends PureComponent {
           </LoadingWrapper>
         </Form>
         <NavigationContainer>
-          <BackButton onClick={this.handleGoToDataWranglingList(match, history)} />
-          <NextButton onClick={this.handleOkClick}>
+          <BackButton id="imageScrapingBackBtn" onClick={this.handleGoToDataWranglingList(match, history)} />
+          <NextButton id="imageScrapingNextBtn" onClick={this.handleOkClick}>
             <FormattedMessage {...messages.ok} />
           </NextButton>
         </NavigationContainer>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { ImageScrapingScript } from '../imageScrapingScriptComponent';
+import { ImageScrapingScript } from '../imageScrapingScript.component';
 import { defaultProps } from '../imageScrapingScript.stories';
 import { BackButton, NextButton } from '../../../../shared/components/navigation';
 import mockScripts, { CASE_CONVERSION } from '../../../../modules/dataWranglingScripts/scripts.mock';
-import { DATA_WRANGLING_STEP } from '../../../../modules/dataSource/dataSource.constants';
+import { STEPS_PAGE } from '../../../../modules/dataSource/dataSource.constants';
 
 describe('DataWranglingScript: Component', () => {
   const component = props => <ImageScrapingScript {...defaultProps} {...props} />;
@@ -46,7 +46,7 @@ describe('DataWranglingScript: Component', () => {
     await Promise.resolve();
     wrapper.find(BackButton).simulate('click');
 
-    expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/2/${DATA_WRANGLING_STEP}`);
+    expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/2/${STEPS_PAGE}`);
   });
 
   it('should call setImageScrapingFields', async () => {

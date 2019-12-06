@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
-import { ImageScrapingScript } from './imageScrapingScriptComponent';
+import { ImageScrapingScript } from './imageScrapingScript.component';
 
 import { withTheme } from '../../../.storybook/decorators';
 import mockScripts, { BLANK_CELLS } from '../../../modules/dataWranglingScripts/scripts.mock';
