@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Project|AddUser Default 1`] = `
+exports[`Storyshots Project|AddUser List 1`] = `
 .c12 {
   height: 155px;
 }
@@ -156,6 +156,14 @@ exports[`Storyshots Project|AddUser Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >
@@ -466,7 +474,7 @@ exports[`Storyshots Project|AddUser Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Project|AddUser with users 1`] = `
+exports[`Storyshots Project|AddUser No data 1`] = `
 .c12 {
   height: 155px;
 }
@@ -622,6 +630,14 @@ exports[`Storyshots Project|AddUser with users 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className="c0"
   >

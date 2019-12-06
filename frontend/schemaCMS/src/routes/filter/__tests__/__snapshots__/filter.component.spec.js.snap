@@ -35,7 +35,9 @@ exports[`Filter: Component should render correctly 1`] = `
           "field": Object {
             "fieldType": "fieldType",
             "filterType": Array [
-              "filterType",
+              "Filter Type 1",
+              "Filter Type 2",
+              "Filter Type 3",
             ],
             "unique": "unique",
           },
@@ -51,6 +53,7 @@ exports[`Filter: Component should render correctly 1`] = `
       }
       history={
         Object {
+          "goBack": [Function],
           "push": [Function],
         }
       }
@@ -96,7 +99,9 @@ exports[`Filter: Component should render correctly with loader 1`] = `
           "field": Object {
             "fieldType": "fieldType",
             "filterType": Array [
-              "filterType",
+              "Filter Type 1",
+              "Filter Type 2",
+              "Filter Type 3",
             ],
             "unique": "unique",
           },
@@ -112,6 +117,7 @@ exports[`Filter: Component should render correctly with loader 1`] = `
       }
       history={
         Object {
+          "goBack": [Function],
           "push": [Function],
         }
       }

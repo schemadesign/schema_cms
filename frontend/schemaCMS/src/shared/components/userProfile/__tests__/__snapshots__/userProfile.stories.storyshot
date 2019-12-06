@@ -8,6 +8,14 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >
@@ -58,7 +66,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
           }
         }
         type="text"
-        value="firstName"
+        value="FirstName"
       />
       <div
         style={
@@ -121,7 +129,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
           }
         }
         type="text"
-        value="lastName"
+        value="LastName"
       />
       <div
         style={
@@ -184,7 +192,7 @@ exports[`Storyshots Shared Components|UserProfile Default 1`] = `
           }
         }
         type="text"
-        value="email"
+        value="email@example.com"
       />
       <div
         style={
@@ -275,6 +283,14 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >
@@ -325,7 +341,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           }
         }
         type="text"
-        value="firstName"
+        value="FirstName"
       />
       <div
         style={
@@ -408,7 +424,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           }
         }
         type="text"
-        value="lastName"
+        value="LastName"
       />
       <div
         style={
@@ -491,7 +507,7 @@ exports[`Storyshots Shared Components|UserProfile User profile 1`] = `
           }
         }
         type="text"
-        value="email"
+        value="email@example.com"
       />
       <div
         style={

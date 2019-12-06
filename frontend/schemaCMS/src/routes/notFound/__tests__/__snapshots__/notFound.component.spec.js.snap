@@ -5,7 +5,7 @@ exports[`NotFound: Component should render correctly 1`] = `
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
-    title="notFound.pageTitle"
+    title="Not found"
   />
   <styled.h1>
     <FormattedMessage

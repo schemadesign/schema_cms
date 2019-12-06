@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Shared Components|Fields Default 1`] = `
+exports[`Storyshots Shared Components|DataPreview Default 1`] = `
 .c0 {
   color: #1d1d20;
   text-align: center;
@@ -16,6 +16,14 @@ exports[`Storyshots Shared Components|Fields Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #1d1d20;
+    background-color: #FFF;
+  }
+
+  </style>
   <div
     className=""
   >

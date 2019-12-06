@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Job/Preview Default 1`] = `
+exports[`Storyshots JobDetail/Preview Default 1`] = `
 .c7 {
   height: 155px;
 }
@@ -116,6 +116,14 @@ exports[`Storyshots Job/Preview Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >

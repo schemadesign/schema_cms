@@ -31,6 +31,7 @@ exports[`Fields: Component should render correctly 1`] = `
       hideOnDesktop={false}
       history={
         Object {
+          "goBack": [Function],
           "push": [Function],
         }
       }
@@ -47,7 +48,66 @@ exports[`Fields: Component should render correctly 1`] = `
           "url": "url",
         }
       }
-      previewData={Object {}}
+      previewData={
+        Object {
+          "data": Array [
+            Object {
+              "Birthday": "02/22/1732",
+              "Birthplace": "Westmoreland County",
+              "First Name": "George",
+              "Full Name": "George Washington",
+              "Last Name": "Washington",
+              "State of Birth": "VA",
+              "Url": "some.url.com",
+            },
+            Object {
+              "Birthday": "10/30/1735",
+              "Birthplace": "Braintree",
+              "First Name": "John",
+              "Full Name": "John Adams",
+              "Last Name": "Adams",
+              "State of Birth": "MA",
+              "Url": "some.url.com",
+            },
+            Object {
+              "Birthday": "04/13/1743",
+              "Birthplace": "Shadwell",
+              "First Name": "Thomas",
+              "Full Name": "Thomas Jefferson",
+              "Last Name": "Jefferson",
+              "State of Birth": "VA",
+              "Url": "some.url.com",
+            },
+            Object {
+              "Birthday": "03/16/1751",
+              "Birthplace": "Port Conway",
+              "First Name": "James",
+              "Full Name": "James Madison",
+              "Last Name": "Madison",
+              "State of Birth": "VA",
+              "Url": "some.url.com",
+            },
+            Object {
+              "Birthday": "04/28/1758",
+              "Birthplace": "Monroe Hall",
+              "First Name": "James",
+              "Full Name": "James Monroe",
+              "Last Name": "Monroe",
+              "State of Birth": "VA",
+              "Url": "some.url.com",
+            },
+          ],
+          "fields": Object {
+            "Birthday": Object {},
+            "Birthplace": Object {},
+            "First Name": Object {},
+            "Full Name": Object {},
+            "Last Name": Object {},
+            "State of Birth": Object {},
+            "Url": Object {},
+          },
+        }
+      }
     />
   </ContextHeader>
   <DataPreview
@@ -55,6 +115,7 @@ exports[`Fields: Component should render correctly 1`] = `
     fetchPreview={[Function]}
     history={
       Object {
+        "goBack": [Function],
         "push": [Function],
       }
     }
@@ -72,7 +133,66 @@ exports[`Fields: Component should render correctly 1`] = `
         "url": "url",
       }
     }
-    previewData={Object {}}
+    previewData={
+      Object {
+        "data": Array [
+          Object {
+            "Birthday": "02/22/1732",
+            "Birthplace": "Westmoreland County",
+            "First Name": "George",
+            "Full Name": "George Washington",
+            "Last Name": "Washington",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "10/30/1735",
+            "Birthplace": "Braintree",
+            "First Name": "John",
+            "Full Name": "John Adams",
+            "Last Name": "Adams",
+            "State of Birth": "MA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "04/13/1743",
+            "Birthplace": "Shadwell",
+            "First Name": "Thomas",
+            "Full Name": "Thomas Jefferson",
+            "Last Name": "Jefferson",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "03/16/1751",
+            "Birthplace": "Port Conway",
+            "First Name": "James",
+            "Full Name": "James Madison",
+            "Last Name": "Madison",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "04/28/1758",
+            "Birthplace": "Monroe Hall",
+            "First Name": "James",
+            "Full Name": "James Monroe",
+            "Last Name": "Monroe",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+        ],
+        "fields": Object {
+          "Birthday": Object {},
+          "Birthplace": Object {},
+          "First Name": Object {},
+          "Full Name": Object {},
+          "Last Name": Object {},
+          "State of Birth": Object {},
+          "Url": Object {},
+        },
+      }
+    }
   />
   <DataSourceNavigation
     dataSource={Object {}}
@@ -80,6 +200,7 @@ exports[`Fields: Component should render correctly 1`] = `
     hideOnDesktop={true}
     history={
       Object {
+        "goBack": [Function],
         "push": [Function],
       }
     }
@@ -96,7 +217,66 @@ exports[`Fields: Component should render correctly 1`] = `
         "url": "url",
       }
     }
-    previewData={Object {}}
+    previewData={
+      Object {
+        "data": Array [
+          Object {
+            "Birthday": "02/22/1732",
+            "Birthplace": "Westmoreland County",
+            "First Name": "George",
+            "Full Name": "George Washington",
+            "Last Name": "Washington",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "10/30/1735",
+            "Birthplace": "Braintree",
+            "First Name": "John",
+            "Full Name": "John Adams",
+            "Last Name": "Adams",
+            "State of Birth": "MA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "04/13/1743",
+            "Birthplace": "Shadwell",
+            "First Name": "Thomas",
+            "Full Name": "Thomas Jefferson",
+            "Last Name": "Jefferson",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "03/16/1751",
+            "Birthplace": "Port Conway",
+            "First Name": "James",
+            "Full Name": "James Madison",
+            "Last Name": "Madison",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+          Object {
+            "Birthday": "04/28/1758",
+            "Birthplace": "Monroe Hall",
+            "First Name": "James",
+            "Full Name": "James Monroe",
+            "Last Name": "Monroe",
+            "State of Birth": "VA",
+            "Url": "some.url.com",
+          },
+        ],
+        "fields": Object {
+          "Birthday": Object {},
+          "Birthplace": Object {},
+          "First Name": Object {},
+          "Full Name": Object {},
+          "Last Name": Object {},
+          "State of Birth": Object {},
+          "Url": Object {},
+        },
+      }
+    }
   />
 </Fragment>
 `;

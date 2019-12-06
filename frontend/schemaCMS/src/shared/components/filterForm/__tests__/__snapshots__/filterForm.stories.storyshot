@@ -105,6 +105,14 @@ exports[`Storyshots Shared Components|FilterForm Create form 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <form
     className="c0"
     onReset={[Function]}
@@ -747,6 +755,14 @@ exports[`Storyshots Shared Components|FilterForm Edit form 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <form
     className="c0"
     onReset={[Function]}

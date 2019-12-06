@@ -27,4 +27,4 @@ storiesOf('Shared Components|Header/TopHeader', module)
   .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <TopHeader {...defaultProps} />)
-  .add('Long tiltle and subtitle', () => <TopHeader {...longProps} />);
+  .add('Long title and subtitle', () => <TopHeader {...longProps} />);

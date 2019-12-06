@@ -8,6 +8,14 @@ exports[`Storyshots Shared Components|LogoutModal Default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <button
     disabled={false}
     onClick={[Function]}

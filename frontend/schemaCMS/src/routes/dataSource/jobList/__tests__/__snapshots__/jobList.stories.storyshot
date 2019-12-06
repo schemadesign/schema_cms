@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Data Source|JobList default 1`] = `
+exports[`Storyshots Data Source|JobList Default 1`] = `
 .c11 {
   height: 155px;
 }
@@ -150,6 +150,14 @@ exports[`Storyshots Data Source|JobList default 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >
@@ -488,7 +496,7 @@ exports[`Storyshots Data Source|JobList default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Data Source|JobList no data 1`] = `
+exports[`Storyshots Data Source|JobList No data 1`] = `
 .c11 {
   height: 155px;
 }
@@ -638,6 +646,14 @@ exports[`Storyshots Data Source|JobList no data 1`] = `
     }
   }
 >
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
   <div
     className=""
   >

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { DataSourceNavigation } from './dataSourceNavigation.component';
 import { withTheme } from '../../../.storybook/decorators';
+import { history } from '../../../.storybook/helpers';
 import { SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
 
 export const defaultProps = {
@@ -10,9 +11,7 @@ export const defaultProps = {
     id: '1',
     activeJob: null,
   },
-  history: {
-    push: Function.prototype,
-  },
+  history,
   hideOnDesktop: false,
   match: {
     url: SOURCE_PAGE,

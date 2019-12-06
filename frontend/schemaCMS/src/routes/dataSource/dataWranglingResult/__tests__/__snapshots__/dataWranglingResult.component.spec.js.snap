@@ -46,6 +46,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
       hideOnDesktop={false}
       history={
         Object {
+          "goBack": [Function],
           "push": [Function],
         }
       }
@@ -146,6 +147,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
     fetchResult={[MockFunction]}
     history={
       Object {
+        "goBack": [Function],
         "push": [Function],
       }
     }
@@ -247,6 +249,7 @@ exports[`DataWranglingResult: Component should render correctly 1`] = `
     hideOnDesktop={true}
     history={
       Object {
+        "goBack": [Function],
         "push": [Function],
       }
     }
@@ -374,6 +377,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
       hideOnDesktop={false}
       history={
         Object {
+          "goBack": [Function],
           "push": [Function],
         }
       }
@@ -473,6 +477,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
     fetchPreview={[Function]}
     history={
       Object {
+        "goBack": [Function],
         "push": [Function],
       }
     }
@@ -573,6 +578,7 @@ exports[`DataWranglingResult: Component should render correctly with loading 1`]
     hideOnDesktop={true}
     history={
       Object {
+        "goBack": [Function],
         "push": [Function],
       }
     }

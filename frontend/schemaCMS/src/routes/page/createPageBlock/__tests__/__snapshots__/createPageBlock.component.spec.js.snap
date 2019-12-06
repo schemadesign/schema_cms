@@ -43,6 +43,7 @@ exports[`CreatePageBlock: Component should render correctly 1`] = `
       handleSubmit={[Function]}
       history={
         Object {
+          "goBack": [Function],
           "push": [Function],
         }
       }
