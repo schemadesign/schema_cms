@@ -13,6 +13,7 @@ import messages from './app.messages';
 import { Container, Content } from './app.styles';
 import { renderWhenTrue } from '../shared/utils/rendering';
 import { LoadingWrapper } from '../shared/components/loadingWrapper';
+import { ScrollToTop } from '../shared/components/scrollToTop';
 
 Modal.setAppElement('#app');
 
@@ -55,6 +56,7 @@ export class App extends PureComponent {
         <ThemeUIProvider theme={theme}>
           <ThemeProvider theme={theme}>
             <Container>
+              <ScrollToTop />
               <FormattedMessage {...messages.pageTitle}>
                 {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle} />}
               </FormattedMessage>
