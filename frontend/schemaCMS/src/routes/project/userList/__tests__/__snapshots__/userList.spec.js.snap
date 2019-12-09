@@ -17,6 +17,8 @@ exports[`UserList: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ProjectTabs
     active="users"

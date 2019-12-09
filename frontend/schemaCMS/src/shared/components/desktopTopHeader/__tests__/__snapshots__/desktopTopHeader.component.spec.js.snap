@@ -21,6 +21,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           "padding": null,
         }
       }
+      showButton={true}
     >
       <styled.div>
         <Styled(Styled(Link))

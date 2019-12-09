@@ -98,13 +98,18 @@ export class DesktopTopHeader extends TopHeader {
       id: 'desktopTopHeaderCloseMenuButton',
     };
 
-    const primaryMenu = this.renderMenu(primaryMenuItems, PrimaryList, PrimaryItem);
-    const secondaryMenu = this.renderMenu(secondaryMenuItems, SecondaryList, SecondaryItem);
+    const primaryMenu = this.renderMenuItems(primaryMenuItems, PrimaryList, PrimaryItem);
+    const secondaryMenu = this.renderMenuItems(secondaryMenuItems, SecondaryList, SecondaryItem);
 
     return (
       <TopContainer>
         <Container>
-          <Header buttonProps={buttonProps} customStyles={headerCustomStyles} customButtonStyles={customButtonStyles}>
+          <Header
+            buttonProps={buttonProps}
+            customStyles={headerCustomStyles}
+            customButtonStyles={customButtonStyles}
+            showButton
+          >
             {this.renderHeaderBar(title)}
           </Header>
           <Overlayer visible={this.state.isMenuOpen} />

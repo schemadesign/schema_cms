@@ -22,6 +22,7 @@ describe('Header: Component', () => {
         backgroundColor: '#FFF',
       },
       iconComponent: 'icon',
+      showButton: true,
     };
 
     const wrapper = render(props);
@@ -32,6 +33,7 @@ describe('Header: Component', () => {
     const onClick = jest.fn();
     const props = {
       buttonProps: { onClick },
+      showButton: true,
     };
     const wrapper = render(props);
 

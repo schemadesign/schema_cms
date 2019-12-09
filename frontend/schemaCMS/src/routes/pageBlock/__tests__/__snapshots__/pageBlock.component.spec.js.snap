@@ -17,6 +17,8 @@ exports[`PageBlock: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={
@@ -220,6 +222,8 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={

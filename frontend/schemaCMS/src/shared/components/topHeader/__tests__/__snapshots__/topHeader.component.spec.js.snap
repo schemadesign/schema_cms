@@ -9,6 +9,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
         "onClick": [Function],
       }
     }
+    showButton={true}
   >
     <styled.div>
       <Styled(H2)

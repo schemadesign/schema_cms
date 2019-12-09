@@ -22,6 +22,8 @@ exports[`FolderList: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ProjectTabs
     active="folder"
@@ -135,6 +137,8 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ProjectTabs
     active="folder"

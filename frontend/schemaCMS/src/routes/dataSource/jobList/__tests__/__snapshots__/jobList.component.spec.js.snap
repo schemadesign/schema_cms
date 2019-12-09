@@ -17,6 +17,8 @@ exports[`JobList: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={
@@ -103,6 +105,8 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={
@@ -246,6 +250,8 @@ exports[`JobList: Component should render correctly with no data 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={

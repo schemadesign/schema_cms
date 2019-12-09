@@ -2,23 +2,23 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Header, Menu } from 'schemaUI';
-import { always } from 'ramda';
+import { always, not, concat, isEmpty, pipe } from 'ramda';
 
 import {
+  closeButtonStyles,
   Container,
   Content,
   HeaderWrapper,
   MenuHeader,
+  menuStyles,
   PrimaryItem,
   PrimaryList,
   SecondaryItem,
   SecondaryList,
   Subtitle,
   Title,
-  closeButtonStyles,
-  menuStyles,
 } from './topHeader.styles';
-import { renderWhenTrueOtherwise } from '../../utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../utils/rendering';
 
 export class TopHeader extends PureComponent {
   static propTypes = {
@@ -26,6 +26,11 @@ export class TopHeader extends PureComponent {
     headerSubtitle: PropTypes.node,
     primaryMenuItems: PropTypes.array,
     secondaryMenuItems: PropTypes.array,
+  };
+
+  static defaultProps = {
+    primaryMenuItems: [],
+    secondaryMenuItems: [],
   };
 
   state = {
@@ -56,7 +61,7 @@ export class TopHeader extends PureComponent {
       )
     )(!!to);
 
-  renderMenu = (items = [], List, Item) => <List>{items.map(this.renderItem(Item))}</List>;
+  renderMenuItems = (items = [], List, Item) => <List>{items.map(this.renderItem(Item))}</List>;
 
   renderHeader = (title, subtitle) => (
     <HeaderWrapper>
@@ -65,25 +70,17 @@ export class TopHeader extends PureComponent {
     </HeaderWrapper>
   );
 
-  render() {
-    const { headerTitle, headerSubtitle, primaryMenuItems, secondaryMenuItems } = this.props;
+  renderMenu = ({ headerContent, showMenu }) =>
+    renderWhenTrue(() => {
+      const { primaryMenuItems, secondaryMenuItems } = this.props;
+      const closeButtonProps = {
+        customStyles: closeButtonStyles,
+        id: 'topHeaderCloseMenuButton',
+      };
+      const primaryMenu = this.renderMenuItems(primaryMenuItems, PrimaryList, PrimaryItem);
+      const secondaryMenu = this.renderMenuItems(secondaryMenuItems, SecondaryList, SecondaryItem);
 
-    const headerContent = this.renderHeader(headerTitle, headerSubtitle);
-
-    const primaryMenu = this.renderMenu(primaryMenuItems, PrimaryList, PrimaryItem);
-    const secondaryMenu = this.renderMenu(secondaryMenuItems, SecondaryList, SecondaryItem);
-    const buttonProps = {
-      onClick: this.handleToggleMenu,
-      id: 'topHeaderOpenMenuBtn',
-    };
-    const closeButtonProps = {
-      customStyles: closeButtonStyles,
-      id: 'topHeaderCloseMenuButton',
-    };
-
-    return (
-      <Container>
-        <Header buttonProps={buttonProps}>{headerContent}</Header>
+      return (
         <Menu
           open={this.state.isMenuOpen}
           onClose={this.handleToggleMenu}
@@ -96,6 +93,30 @@ export class TopHeader extends PureComponent {
             {secondaryMenu}
           </Content>
         </Menu>
+      );
+    })(showMenu);
+
+  render() {
+    const { headerTitle, headerSubtitle, primaryMenuItems, secondaryMenuItems } = this.props;
+
+    const headerContent = this.renderHeader(headerTitle, headerSubtitle);
+    const showMenu = pipe(
+      concat(secondaryMenuItems),
+      isEmpty,
+      not
+    )(primaryMenuItems);
+
+    const buttonProps = {
+      onClick: this.handleToggleMenu,
+      id: 'topHeaderOpenMenuBtn',
+    };
+
+    return (
+      <Container>
+        <Header buttonProps={buttonProps} showButton={showMenu}>
+          {headerContent}
+        </Header>
+        {this.renderMenu({ headerContent, showMenu })}
       </Container>
     );
   }

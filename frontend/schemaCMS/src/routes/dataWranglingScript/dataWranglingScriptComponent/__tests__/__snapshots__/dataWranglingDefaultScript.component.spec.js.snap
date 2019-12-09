@@ -10,6 +10,8 @@ exports[`DataWranglingDefaultScript: Component should render correctly 1`] = `
   <TopHeader
     headerSubtitle="View step"
     headerTitle="Data Wrangling"
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle="View step"
@@ -135,6 +137,8 @@ exports[`DataWranglingDefaultScript: Component should render correctly with load
   <TopHeader
     headerSubtitle="View step"
     headerTitle="Data Wrangling"
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle="View step"

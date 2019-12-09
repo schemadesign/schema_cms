@@ -16,6 +16,8 @@ exports[`DataSourceViews: Component should render correctly 1`] = `
       />
     }
     headerTitle="name"
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={

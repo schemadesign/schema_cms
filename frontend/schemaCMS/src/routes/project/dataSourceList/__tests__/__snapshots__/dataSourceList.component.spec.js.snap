@@ -10,6 +10,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
   <TopHeader
     headerSubtitle="Overview"
     headerTitle="Data Sources"
+    primaryMenuItems={Array []}
     secondaryMenuItems={
       Array [
         Object {
@@ -158,6 +159,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
   <TopHeader
     headerSubtitle="Overview"
     headerTitle="Data Sources"
+    primaryMenuItems={Array []}
     secondaryMenuItems={
       Array [
         Object {
@@ -506,6 +508,7 @@ exports[`DataSourceList: Component should render empty 1`] = `
   <TopHeader
     headerSubtitle="Overview"
     headerTitle="Data Sources"
+    primaryMenuItems={Array []}
     secondaryMenuItems={
       Array [
         Object {
