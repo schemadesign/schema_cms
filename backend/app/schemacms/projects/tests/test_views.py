@@ -1235,7 +1235,7 @@ class TestBlockListCreateView:
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
     def test_400_on_sending_type_image_without_file(self, api_client, admin, page, faker):
-        payload = dict(name=faker.word(), type=projects_constants.BlockTypes.IMAGE)
+        payload = dict(name=faker.word(), type=projects_constants.BlockTypes.IMAGE, image=None)
 
         api_client.force_authenticate(admin)
         response = api_client.post(self.get_url(page.id), data=payload, format="json")
@@ -1266,12 +1266,27 @@ class TestBlockDetailView:
         payload = dict(name=new_name, page=new_page.id)
 
         api_client.force_authenticate(admin)
+
         response = api_client.patch(self.get_url(block.id), data=payload, format="json")
         block.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
         assert response.data["name"] == new_name
         assert block.page_id == page.id
+
+    def test_update_name_for_image_block(self, api_client, admin, block_factory, faker):
+        """Test if its possible to change block name without uploading image again"""
+        block = block_factory(type=projects_constants.BlockTypes.IMAGE)
+        new_name = faker.word()
+        payload = dict(name=new_name, type=projects_constants.BlockTypes.IMAGE)
+
+        api_client.force_authenticate(admin)
+
+        response = api_client.patch(self.get_url(block.id), data=payload, format="json")
+        block.refresh_from_db()
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["name"] == new_name
 
     def test_delete_block(self, api_client, user, block):
         api_client.force_authenticate(user)
