@@ -45,6 +45,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
         "red": "#f21e29",
         "veryLightPink": "#f0efef",
         "white": "#FFF",
+        "yellow": "#be8f00",
       },
       "dataGrid": Object {
         "background": "#000",
@@ -156,6 +157,7 @@ exports[`SourceFormComponent: Component should render correctly 1`] = `
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
         },
       },
+      "warning": "#be8f00",
     }
   }
   values={
@@ -212,6 +214,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
         "red": "#f21e29",
         "veryLightPink": "#f0efef",
         "white": "#FFF",
+        "yellow": "#be8f00",
       },
       "dataGrid": Object {
         "background": "#000",
@@ -323,6 +326,7 @@ exports[`SourceFormComponent: Component should render file uploader 1`] = `
           "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
         },
       },
+      "warning": "#be8f00",
     }
   }
   values={

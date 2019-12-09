@@ -10,8 +10,10 @@ describe('DataWranglingScripts: Component', () => {
 
   const render = (props = {}) => shallow(component(props));
 
-  it('should render correctly', () => {
+  it('should render correctly', async () => {
+    defaultProps.fetchDataWranglingScripts = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render();
+    await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
   });
 

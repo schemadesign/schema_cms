@@ -9,6 +9,7 @@ const colors = {
   coolGray: '#a6a7aa',
   mediumGray: '#2F2F36',
   red: '#f21e29',
+  yellow: '#be8f00',
 };
 
 const light = {
@@ -112,6 +113,7 @@ const light = {
   text: colors.darkGrey,
   secondaryText: colors.coolGray,
   error: colors.red,
+  warning: colors.yellow,
   colors,
 };
 
@@ -218,6 +220,7 @@ const dark = {
   border: colors.mediumGray,
   secondaryText: colors.lightGrey,
   error: colors.red,
+  warning: colors.yellow,
   colors,
 };
 

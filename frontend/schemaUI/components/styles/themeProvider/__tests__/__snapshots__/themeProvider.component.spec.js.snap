@@ -34,6 +34,7 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
           "red": "#f21e29",
           "veryLightPink": "#f0efef",
           "white": "#FFF",
+          "yellow": "#be8f00",
         },
         "dataGrid": Object {
           "background": "#f0efef",
@@ -143,6 +144,7 @@ exports[`ThemeProvider: Component should render correctly 1`] = `
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
           },
         },
+        "warning": "#be8f00",
       },
     }
   }

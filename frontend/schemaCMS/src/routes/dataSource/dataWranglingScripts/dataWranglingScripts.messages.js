@@ -30,4 +30,8 @@ export default defineMessages({
     id: 'dataSource.dataWranglingScripts.save',
     defaultMessage: 'Save',
   },
+  ongoingProcess: {
+    id: 'dataSource.dataWranglingScripts.ongoingProcess',
+    defaultMessage: 'Another job is running.',
+  },
 });
