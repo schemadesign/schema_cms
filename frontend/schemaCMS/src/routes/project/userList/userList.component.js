@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { always } from 'ramda';
 
 import { UserList as UserListComponent } from '../../../shared/components/userList';
-import { BackButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
+import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { USERS } from '../../../shared/components/projectTabs/projectTabs.constants';
@@ -57,6 +57,7 @@ export class UserList extends PureComponent {
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.headerTitle} />,
       headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
+      projectId: this.props.match.params.projectId,
     };
 
     return (
@@ -70,9 +71,9 @@ export class UserList extends PureComponent {
           <UserListComponent users={this.props.users} projectId={getMatchParam(this.props, 'projectId')} />
         </LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
-          <BackButton onClick={this.handleBackClick}>
+          <BackArrowButton onClick={this.handleBackClick}>
             <FormattedMessage {...messages.back} />
-          </BackButton>
+          </BackArrowButton>
           {this.renderCreateUserButton({ id: 'addUserBtn', isAdmin })}
         </NavigationContainer>
       </Fragment>

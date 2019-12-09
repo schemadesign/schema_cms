@@ -33,7 +33,6 @@ describe('Header: Component', () => {
     const onClick = jest.fn();
     const props = {
       buttonProps: { onClick },
-      showButton: true,
     };
     const wrapper = render(props);
 

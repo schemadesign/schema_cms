@@ -5,7 +5,6 @@ import { getStyles } from './header.styles';
 import { Button } from '../button';
 import { MenuIcon } from '../icons/menuIcon';
 import { withStyles } from '../styles/withStyles';
-import { always, ifElse, equals } from 'ramda';
 
 export class HeaderComponent extends PureComponent {
   static propTypes = {
@@ -14,7 +13,6 @@ export class HeaderComponent extends PureComponent {
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     iconComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     buttonProps: PropTypes.object,
-    showButton: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -22,24 +20,18 @@ export class HeaderComponent extends PureComponent {
     customStyles: {},
     customButtonStyles: {},
     buttonProps: {},
-    showButton: false,
   };
 
-  renderIcon = buttonStyles =>
-    ifElse(
-      equals(true),
-      () => {
-        const { iconComponent, customButtonStyles, buttonProps } = this.props;
-        const styles = { ...buttonStyles, ...customButtonStyles };
+  renderIcon = buttonStyles => {
+    const { iconComponent, customButtonStyles, buttonProps } = this.props;
+    const styles = { ...buttonStyles, ...customButtonStyles };
 
-        return (
-          <Button customStyles={styles} {...buttonProps}>
-            {iconComponent}
-          </Button>
-        );
-      },
-      always(null)
-    )(this.props.showButton);
+    return (
+      <Button customStyles={styles} {...buttonProps}>
+        {iconComponent}
+      </Button>
+    );
+  };
 
   render() {
     const { theme, customStyles } = this.props;

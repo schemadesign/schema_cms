@@ -26,7 +26,11 @@ export class Fields extends PureComponent {
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <TopHeader
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          projectId={this.props.dataSource.project}
+        />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>

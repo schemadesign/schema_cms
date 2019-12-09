@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { always, identity, ifElse, propEq } from 'ramda';
 import { Button } from 'schemaUI';
+import { Link } from 'react-router-dom';
 
 import { media, contentSizes } from '../../../theme/media';
 import { styleWhenTrue } from '../../utils/rendering';
@@ -51,6 +52,22 @@ export const Navigation = styled.div`
 export const NavigationButton = styled(Button)`
   width: calc(50% - ${BUTTON_MARGIN}px);
   max-width: 240px;
+
+  ${media.desktop`
+    width: 240px;
+  `};
+`;
+
+export const NavigationLink = styled(Link)`
+  width: calc(50% - ${BUTTON_MARGIN}px);
+  max-width: 240px;
+  background-color: ${({ theme }) => theme.inverseButton.background};
+  color: ${({ theme }) => theme.inverseButton.text};
+  border-radius: 48px;
+  text-align: center;
+  line-height: 48px;
+  text-decoration: none;
+  font-size: 18px;
 
   ${media.desktop`
     width: 240px;

@@ -70,17 +70,6 @@ export class DataSourceList extends PureComponent {
     this.props.cancelFetchListLoop();
   }
 
-  getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => ({
-    headerTitle,
-    headerSubtitle,
-    secondaryMenuItems: [
-      {
-        label: this.props.intl.formatMessage(messages.projectDetails),
-        to: `/project/${this.props.match.params.projectId}`,
-      },
-    ],
-  });
-
   getLoadingConfig = (loading, error, dataSources) => ({
     loading,
     error,
@@ -169,13 +158,12 @@ export class DataSourceList extends PureComponent {
     const { dataSources = [], match } = this.props;
     const title = this.props.intl.formatMessage(messages.title);
     const subtitle = this.props.intl.formatMessage(messages.subTitle);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
     const loadingConfig = this.getLoadingConfig(loading, error, dataSources);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
-        <TopHeader {...topHeaderConfig} />
+        <TopHeader headerSubtitle={subtitle} headerTitle={title} projectId={this.props.match.params.projectId} />
         <ProjectTabs active={SOURCES} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={title} subtitle={subtitle}>
           <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />

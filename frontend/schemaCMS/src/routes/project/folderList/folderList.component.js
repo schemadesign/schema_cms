@@ -90,14 +90,17 @@ export class FolderList extends PureComponent {
   render() {
     const { loading, error } = this.state;
     const { match, folders } = this.props;
-
     const headerTitle = <FormattedMessage {...messages.title} />;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
-        <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+        <TopHeader
+          headerTitle={headerTitle}
+          headerSubtitle={headerSubtitle}
+          projectId={this.props.match.params.projectId}
+        />
         <ProjectTabs active={FOLDER} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>
           <PlusButton id="createFolderDesktopBtn" onClick={this.handleCreateFolder} />

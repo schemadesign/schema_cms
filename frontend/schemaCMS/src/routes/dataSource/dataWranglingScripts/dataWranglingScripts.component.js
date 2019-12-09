@@ -196,7 +196,7 @@ export class DataWranglingScripts extends PureComponent {
     return (
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader headerTitle={name} headerSubtitle={headerSubtitle} />
+        <TopHeader headerTitle={name} headerSubtitle={headerSubtitle} projectId={dataSource.project} />
         <ContextHeader title={name} subtitle={headerSubtitle}>
           <DataSourceNavigation {...this.props} />
         </ContextHeader>

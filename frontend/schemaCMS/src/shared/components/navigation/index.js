@@ -1,1 +1,8 @@
-export { NavigationContainer, BackArrowButton, PlusButton, BackButton, NextButton } from './navigation.component';
+export {
+  NavigationContainer,
+  BackArrowButton,
+  PlusButton,
+  BackButton,
+  NextButton,
+  ConfirmLink,
+} from './navigation.component';

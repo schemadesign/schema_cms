@@ -10,4 +10,8 @@ export default defineMessages({
     id: 'project.folderList.subTitle',
     defaultMessage: 'Overview',
   },
+  projectDetails: {
+    id: 'project.folderList.projectDetails',
+    defaultMessage: 'Project details',
+  },
 });

@@ -8,12 +8,10 @@ const defaultPropsWithCustomStyles = {
   customStyles: {
     backgroundColor: 'red',
   },
-  showButton: true,
 };
 
 const defaultPropsWithCustomIcon = {
   iconComponent: <div style={{ color: 'white', fontSize: '10px', padding: 10 }}>icon</div>,
-  showButton: true,
 };
 
 storiesOf('Header', module)

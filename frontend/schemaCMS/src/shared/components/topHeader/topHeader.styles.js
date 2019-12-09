@@ -21,19 +21,27 @@ export const Content = styled.div`
   margin: 20px -20px 0 0;
   padding-right: 20px;
   -webkit-overflow-scrolling: touch;
+
+  ${media.desktop`
+    margin-top: 42px
+  `};
 `;
 
 export const List = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const PrimaryList = styled(List)`
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
-export const SecondaryList = styled(List)``;
+export const SecondaryList = styled(List)`
+  align-items: flex-start;
+`;
 
 export const Item = styled.li`
   line-height: 1.5;
@@ -55,11 +63,22 @@ export const PrimaryItem = styled(Item)`
   &:first-of-type {
     border-top: 2.4px solid ${({ theme }) => theme.header.border};
   }
+
+  ${media.desktop`
+    padding: 22px 0 27px;
+    font-size: 20px;
+  `};
 `;
 
 export const SecondaryItem = styled(Item)`
-  a {
-    padding: 8px 0;
+  padding: 0;
+  margin: 10px 0;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+
+  &:hover {
+    border-bottom: 1px solid ${({ theme }) => theme.text};
   }
 `;
 

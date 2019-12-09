@@ -6,14 +6,14 @@ import { history } from '../../../.storybook/helpers';
 import { DesktopTopHeader } from './desktopTopHeader.component';
 
 export const defaultProps = {
-  primaryMenuItems: [{ label: 'Data Sources', to: '/path' }, { label: 'Charts', to: '/path' }],
-  secondaryMenuItems: [{ label: 'Log Out', to: '/logout' }, { label: 'Click action', onClick: () => {}, id: 'id' }],
   history,
+  isAdmin: false,
 };
 
 const titleProps = {
   ...defaultProps,
   title: 'Projects',
+  isAdmin: true,
 };
 
 const longText = `
