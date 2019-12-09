@@ -166,7 +166,13 @@ export class View extends PureComponent {
         id: 'fieldLastUpdated',
         order: 1,
       },
-      { label: this.formatMessage(messages.status), field: 'status', value: statusValue, id: 'fieldStatus', order: 3 },
+      {
+        label: this.formatMessage(messages.status),
+        field: 'status',
+        value: statusValue,
+        id: 'fieldStatus',
+        order: 3,
+      },
       {
         label: this.formatMessage(messages.owner),
         field: 'owner',
@@ -175,7 +181,12 @@ export class View extends PureComponent {
         order: 5,
       },
       { label: this.formatMessage(messages.titleField), field: 'title', id: 'fieldTitle', order: 2 },
-      { label: this.formatMessage(messages.description), field: 'description', id: 'fieldDescription', order: 4 },
+      {
+        label: this.formatMessage(messages.description),
+        field: 'description',
+        id: 'fieldDescription',
+        order: 4,
+      },
       {
         label: this.formatMessage(messages.api),
         field: 'slug',
@@ -203,10 +214,9 @@ export class View extends PureComponent {
     )
   );
 
-  renderContent = (project, projectId, isAdmin) =>
+  renderContent = ({ project, isAdmin }) =>
     renderWhenTrue(() => (
       <Fragment>
-        <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
         {this.renderProject(project)}
         {this.renderRemoveProjectButton(isAdmin)}
       </Fragment>
@@ -225,8 +235,9 @@ export class View extends PureComponent {
         <div>
           <Helmet title={title} />
           <TopHeader {...topHeaderConfig} />
+          <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>
-            {this.renderContent(project, projectId, isAdmin)}
+            {this.renderContent({ project, isAdmin })}
           </LoadingWrapper>
         </div>
         <NavigationContainer fixed>

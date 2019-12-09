@@ -868,7 +868,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     }
   >
     <span>
-      Source
+      Source Type
     </span>
   </label>
   <div
@@ -964,7 +964,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           </svg>
         </button>
       </label>
-      Spreadsheet
+      CSV
     </div>
   </div>
   <div
