@@ -9,7 +9,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import messages from './createDataSource.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DATA_SOURCE_SCHEMA } from '../../../modules/dataSource/dataSource.constants';
-import { errorMessageParser, getProjectId } from '../../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 
 export class CreateDataSource extends PureComponent {
@@ -26,7 +26,7 @@ export class CreateDataSource extends PureComponent {
 
   handleSubmit = async (requestData, { setErrors, setSubmitting }) => {
     const { createDataSource } = this.props;
-    const projectId = getProjectId(this.props);
+    const projectId = getMatchParam(this.props, 'projectId');
 
     try {
       setSubmitting(true);
@@ -41,7 +41,7 @@ export class CreateDataSource extends PureComponent {
     }
   };
 
-  handleCancelCreate = () => this.props.history.push(`/project/${getProjectId(this.props)}/datasource`);
+  handleCancelCreate = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/datasource`);
 
   render() {
     const { intl } = this.props;

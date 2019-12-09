@@ -11,7 +11,7 @@ import { PageBlock } from './pageBlock.component';
 import { PageBlockRoutines, selectPageBlock } from '../../modules/pageBlock';
 import messages from './pageBlock.messages';
 
-import { errorMessageParser } from '../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam } from '../../shared/utils/helpers';
 import { BLOCK_CONTENT, BLOCK_FORM, BLOCK_SCHEMA, INITIAL_VALUES } from '../../modules/pageBlock/pageBlock.constants';
 
 const mapStateToProps = createStructuredSelector({
@@ -50,7 +50,7 @@ export default compose(
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const blockId = path(['match', 'params', 'blockId'], props);
+        const blockId = getMatchParam(props, 'blockId');
         const pageId = path(['block', 'page', 'id'], props);
 
         await props.updatePageBlock({ blockId, pageId, ...data });

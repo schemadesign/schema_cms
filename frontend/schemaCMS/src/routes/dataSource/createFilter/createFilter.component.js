@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Container } from './createFilter.styles';
@@ -9,6 +8,7 @@ import messages from './createFilter.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class CreateFilter extends PureComponent {
   static propTypes = {
@@ -32,7 +32,7 @@ export class CreateFilter extends PureComponent {
   };
 
   async componentDidMount() {
-    const dataSourceId = this.getDataSourceId(this.props);
+    const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
     try {
       await this.props.fetchFieldsInfo({ dataSourceId });
@@ -42,8 +42,6 @@ export class CreateFilter extends PureComponent {
       this.setState({ loading: false });
     }
   }
-
-  getDataSourceId = path(['match', 'params', 'dataSourceId']);
 
   getHeaderAndMenuConfig = () => ({
     headerTitle: this.props.dataSource.name,
@@ -55,7 +53,7 @@ export class CreateFilter extends PureComponent {
       fieldsInfo={this.props.fieldsInfo}
       createFilter={this.props.createFilter}
       history={this.props.history}
-      dataSourceId={this.getDataSourceId(this.props)}
+      dataSourceId={getMatchParam(this.props, 'dataSourceId')}
     />
   );
 

@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react';
-import { always, omit, path } from 'ramda';
+import { always, omit } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Formik } from 'formik';
@@ -9,7 +9,7 @@ import Helmet from 'react-helmet';
 import { Link } from './source.styles';
 import messages from './source.messages';
 import { DATA_SOURCE_SCHEMA, IGNORED_FIELDS } from '../../../modules/dataSource/dataSource.constants';
-import { errorMessageParser } from '../../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import browserHistory from '../../../shared/utils/history';
 import { ModalActions, Modal, ModalTitle, modalStyles } from '../../../shared/components/modal/modal.styles';
@@ -71,8 +71,7 @@ export class SourceComponent extends PureComponent {
     }
   };
 
-  handlePastVersionsClick = () =>
-    browserHistory.push(`/datasource/${path(['match', 'params', 'dataSourceId'], this.props)}/job`);
+  handlePastVersionsClick = () => browserHistory.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/job`);
 
   renderLinks = renderWhenTrue(
     always(

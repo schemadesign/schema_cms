@@ -1,7 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { path } from 'ramda';
 
 import { Container } from './view.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -14,6 +13,7 @@ import { Link, LinkContainer } from '../../../theme/typography';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class View extends PureComponent {
   static propTypes = {
@@ -39,7 +39,7 @@ export class View extends PureComponent {
 
   async componentDidMount() {
     try {
-      const userId = this.getUserId();
+      const userId = getMatchParam(this.props, 'userId');
 
       await this.props.fetchUser({ userId });
       this.setState({ loading: false });
@@ -51,20 +51,18 @@ export class View extends PureComponent {
     }
   }
 
-  getUserId = () => path(['match', 'params', 'userId'], this.props);
-
   handleCancelRemove = () => this.setState({ userRemoveModalOpen: false });
   handleCancelMakeAdmin = () => this.setState({ makeAdminModalOpen: false });
 
   handleConfirmRemove = () => {
-    const userId = this.getUserId();
+    const userId = getMatchParam(this.props, 'userId');
 
     return this.props.removeUser({ userId });
   };
 
   handleConfirmMakeAdmin = () => {
     this.setState({ makeAdminModalOpen: false });
-    this.props.makeAdmin({ userId: this.getUserId() });
+    this.props.makeAdmin({ userId: getMatchParam(this.props, 'userId') });
   };
 
   handleBack = () => this.props.history.push('/user');

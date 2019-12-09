@@ -1,6 +1,5 @@
 import React, { Fragment, PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { path } from 'ramda';
 import PropTypes from 'prop-types';
 
 import { Form } from './createPage.styles';
@@ -9,6 +8,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { PageForm } from '../../../shared/components/pageForm';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class CreatePage extends PureComponent {
   static propTypes = {
@@ -22,9 +22,7 @@ export class CreatePage extends PureComponent {
     isSubmitting: PropTypes.bool.isRequired,
   };
 
-  getFolderId = () => path(['match', 'params', 'folderId'], this.props);
-
-  handleCancelClick = () => this.props.history.push(`/folder/${this.getFolderId()}`);
+  handleCancelClick = () => this.props.history.push(`/folder/${getMatchParam(this.props, 'folderId')}`);
 
   render() {
     const { handleSubmit, isValid, isSubmitting } = this.props;

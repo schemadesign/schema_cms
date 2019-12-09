@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, find, ifElse, path, propEq } from 'ramda';
+import { always, find, ifElse, propEq } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import {
@@ -20,6 +20,7 @@ import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/co
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class AddUser extends PureComponent {
   static propTypes = {
@@ -47,7 +48,7 @@ export class AddUser extends PureComponent {
 
   async componentDidMount() {
     try {
-      const projectId = path(['match', 'params', 'projectId'], this.props);
+      const projectId = getMatchParam(this.props, 'projectId');
       if (!this.props.isAdmin) {
         return this.props.history.push('/not-authorized');
       }
@@ -65,8 +66,7 @@ export class AddUser extends PureComponent {
     headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
   });
 
-  handleAddUser = userId =>
-    this.props.history.push(`/user/${userId}/add/${path(['match', 'params', 'projectId'], this.props)}`);
+  handleAddUser = userId => this.props.history.push(`/user/${userId}/add/${getMatchParam(this.props, 'projectId')}`);
 
   handleRemoveUser = userId =>
     this.setState({
@@ -82,7 +82,7 @@ export class AddUser extends PureComponent {
 
   handleConfirmRemove = () => {
     const { userToBeRemoved } = this.state;
-    const projectId = path(['match', 'params', 'projectId'], this.props);
+    const projectId = getMatchParam(this.props, 'projectId');
 
     this.props.removeUser({ projectId, userId: userToBeRemoved });
     this.setState({

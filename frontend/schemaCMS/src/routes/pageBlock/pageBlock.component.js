@@ -12,6 +12,7 @@ import { PageBlockForm } from '../../shared/components/pageBlockForm';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../shared/components/modal/modal.styles';
 import { Link } from '../../theme/typography';
+import { getMatchParam } from '../../shared/utils/helpers';
 
 export class PageBlock extends PureComponent {
   static propTypes = {
@@ -35,7 +36,7 @@ export class PageBlock extends PureComponent {
 
   async componentDidMount() {
     try {
-      const blockId = path(['match', 'params', 'blockId'], this.props);
+      const blockId = getMatchParam(this.props, 'blockId');
       await this.props.fetchPageBlock({ blockId });
     } catch (error) {
       this.setState({ error });
@@ -50,7 +51,7 @@ export class PageBlock extends PureComponent {
 
   handleConfirmRemove = () => {
     const pageId = path(['block', 'page', 'id'], this.props);
-    const blockId = path(['match', 'params', 'blockId'], this.props);
+    const blockId = getMatchParam(this.props, 'blockId');
 
     this.props.removePageBlock({ pageId, blockId });
   };

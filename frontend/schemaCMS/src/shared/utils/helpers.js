@@ -26,4 +26,4 @@ export const getTableData = (data = []) => {
   return { header, rows };
 };
 
-export const getProjectId = path(['match', 'params', 'projectId']);
+export const getMatchParam = (props, param) => path(['match', 'params', param])(props);

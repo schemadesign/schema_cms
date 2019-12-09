@@ -19,6 +19,7 @@ import messages from './imageScrapingScript.messages';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 const { CheckboxGroup, Checkbox } = FormUI;
 const { Span } = Typography;
@@ -92,8 +93,8 @@ export class ImageScrapingScript extends PureComponent {
   handleOkClick = () =>
     this.props.setImageScrapingFields({
       imageScrapingFields: this.state.selectedFields,
-      scriptId: path(['match', 'params', 'scriptId'], this.props),
-      dataSourceId: path(['match', 'params', 'dataSourceId'], this.props),
+      scriptId: getMatchParam(this.props, 'scriptId'),
+      dataSourceId: getMatchParam(this.props, 'dataSourceId'),
     });
 
   renderCheckboxes = (name, index) => (

@@ -12,6 +12,7 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 import { PageForm } from '../../../shared/components/pageForm';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link } from '../../../theme/typography';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class Edit extends PureComponent {
   static propTypes = {
@@ -59,7 +60,7 @@ export class Edit extends PureComponent {
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
   handleConfirmRemove = () => {
-    const pageId = path(['match', 'params', 'pageId'], this.props);
+    const pageId = getMatchParam(this.props, 'pageId');
     const folderId = this.getFolderId();
 
     this.props.removePage({ pageId, folderId });

@@ -15,7 +15,7 @@ import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedD
 import { ListContainer, ListItem } from '../../../shared/components/listComponents';
 import { HeaderItem, HeaderList, titleStyles } from '../list/list.styles';
 import { Link } from '../../../theme/typography';
-import { getProjectId } from '../../../shared/utils/helpers';
+import { getMatchParam } from '../../../shared/utils/helpers';
 import { ListItemTitle, ListItemContent } from '../../../shared/components/listComponents/listItem.styles';
 
 export class FolderList extends PureComponent {
@@ -39,7 +39,7 @@ export class FolderList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const projectId = getProjectId(this.props);
+      const projectId = getMatchParam(this.props, 'projectId');
 
       await this.props.fetchFolders({ projectId });
       this.setState({ loading: false });
@@ -48,8 +48,9 @@ export class FolderList extends PureComponent {
     }
   }
 
-  handleCreateFolder = () => this.props.history.push(`/project/${getProjectId(this.props)}/folder/create`);
-  handleShowProject = () => this.props.history.push(`/project/${getProjectId(this.props)}`);
+  handleCreateFolder = () =>
+    this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/folder/create`);
+  handleShowProject = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}`);
   handleShowFolder = id => this.props.history.push(`/folder/${id}`);
   handleEditFolder = id => this.props.history.push(`/folder/${id}/edit`);
 

@@ -11,7 +11,7 @@ import { Edit } from './edit.component';
 import messages from './edit.messages';
 import { PageRoutines, selectPage } from '../../../modules/page';
 import { PAGE_FORM, INITIAL_VALUES, PAGE_SCHEMA } from '../../../modules/page/page.constants';
-import { errorMessageParser } from '../../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 
 const mapStateToProps = createStructuredSelector({
   page: selectPage,
@@ -43,7 +43,7 @@ export default compose(
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const pageId = path(['match', 'params', 'pageId'], props);
+        const pageId = getMatchParam(props, 'pageId');
         const folderId = path(['page', 'folder', 'id'], props);
 
         await props.updatePage({ pageId, folderId, ...data });
