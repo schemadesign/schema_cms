@@ -3,10 +3,11 @@ import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 
 import { ScrollToTop } from '../scrollToTop.component';
+import { defaultProps } from '../scrollToTop.stories';
 
 describe('ScrollToTop: Component', () => {
   const routerProps = {
-    keyLength: 0,
+    keyLength: defaultProps.keyLength,
   };
 
   const component = props => (

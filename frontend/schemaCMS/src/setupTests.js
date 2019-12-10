@@ -30,6 +30,8 @@ jest.doMock('react-syntax-highlighter/dist/esm/styles/hljs', () => ({
   docco: {},
 }));
 
+window.scrollTo = jest.fn();
+
 afterEach(() => {
   nock.cleanAll();
 });
