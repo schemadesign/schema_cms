@@ -16,6 +16,7 @@ exports[`Filters: Component should render correctly 1`] = `
       />
     }
     primaryMenuItems={Array []}
+    projectId="1"
     secondaryMenuItems={Array []}
   />
   <ContextHeader
@@ -206,6 +207,7 @@ exports[`Filters: Component should render correctly with loader 1`] = `
       />
     }
     primaryMenuItems={Array []}
+    projectId="1"
     secondaryMenuItems={Array []}
   />
   <ContextHeader

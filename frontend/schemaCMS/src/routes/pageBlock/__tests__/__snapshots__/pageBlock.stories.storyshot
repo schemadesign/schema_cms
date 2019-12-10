@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots PageBlock Default 1`] = `
-.c11 {
+.c13 {
   height: 155px;
 }
 
-.c13 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots PageBlock Default 1`] = `
   width: 100%;
 }
 
-.c12 {
+.c14 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -33,7 +33,7 @@ exports[`Storyshots PageBlock Default 1`] = `
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c14 {
+.c16 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -45,8 +45,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -54,13 +53,74 @@ exports[`Storyshots PageBlock Default 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
-.c5 {
+.c6 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c5 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c5:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c1 {
@@ -71,23 +131,23 @@ exports[`Storyshots PageBlock Default 1`] = `
   word-break: break-word;
 }
 
-.c6 {
+.c8 {
   display: none;
 }
 
-.c7 {
+.c9 {
   margin-right: 20px;
 }
 
-.c8 {
-  color: #FFF;
-}
-
-.c9 {
-  color: #FFF;
-}
-
 .c10 {
+  color: #FFF;
+}
+
+.c11 {
+  color: #FFF;
+}
+
+.c12 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -96,7 +156,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c15 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -105,7 +165,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c14 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -114,7 +174,7 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c16 {
     width: 240px;
   }
 }
@@ -126,7 +186,21 @@ exports[`Storyshots PageBlock Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c6 {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -326,10 +400,73 @@ exports[`Storyshots PageBlock Default 1`] = `
         >
           <ul
             className="c4"
-          />
+          >
+            <li
+              className="c5"
+            >
+              <a
+                href="/project"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Projects
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+              id="logoutBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </li>
+          </ul>
           <ul
-            className="c5"
-          />
+            className="c6"
+          >
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  About Schema CMS
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  API Doc
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  GitHub Repository
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
         <button
           disabled={false}
@@ -375,13 +512,13 @@ exports[`Storyshots PageBlock Default 1`] = `
       </div>
     </div>
     <div
-      className="c6"
+      className="c8"
     >
       <div
-        className="c7"
+        className="c9"
       >
         <h2
-          className="c8"
+          className="c10"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -397,7 +534,7 @@ exports[`Storyshots PageBlock Default 1`] = `
           </span>
         </h2>
         <h1
-          className="c9"
+          className="c11"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -424,23 +561,23 @@ exports[`Storyshots PageBlock Default 1`] = `
       onSubmit={[Function]}
     >
       <div
-        className="c10"
+        className="c12"
       >
         <span>
           Loading...
         </span>
       </div>
       <div
-        className="c11"
+        className="c13"
       >
         <div
-          className="c12"
+          className="c14"
         >
           <div
-            className="c13"
+            className="c15"
           >
             <button
-              className="c14"
+              className="c16"
               disabled={false}
               id="backBtn"
               onClick={[Function]}
@@ -468,7 +605,7 @@ exports[`Storyshots PageBlock Default 1`] = `
               </span>
             </button>
             <button
-              className="c14"
+              className="c16"
               disabled={true}
               id="editPageBlockBtn"
               style={

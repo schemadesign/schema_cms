@@ -21,7 +21,6 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           "padding": null,
         }
       }
-      showButton={true}
     >
       <styled.div>
         <Styled(Styled(Link))
@@ -54,7 +53,9 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
         </styled.div>
       </styled.div>
     </Component>
-    <styled.div />
+    <styled.div
+      onClick={[Function]}
+    />
     <Component
       closeButtonProps={
         Object {
@@ -91,26 +92,22 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           </Styled(H1)>
         </styled.div>
       </styled.div>
-      <styled.div>
+      <styled.div
+        onClick={[Function]}
+      >
         <Styled(styled.ul)>
           <Styled(styled.li)
             key="0"
           >
             <Link
               id={null}
-              to="/path"
+              to="/project"
             >
-              Data Sources
-            </Link>
-          </Styled(styled.li)>
-          <Styled(styled.li)
-            key="1"
-          >
-            <Link
-              id={null}
-              to="/path"
-            >
-              Charts
+              <FormattedMessage
+                defaultMessage="Projects"
+                id="shared.components.desktopTopHeader.project"
+                values={Object {}}
+              />
             </Link>
           </Styled(styled.li)>
         </Styled(styled.ul)>
@@ -120,17 +117,42 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           >
             <Link
               id={null}
-              to="/logout"
+              to="/"
             >
-              Log Out
+              <FormattedMessage
+                defaultMessage="About Schema CMS"
+                id="shared.components.desktopTopHeader.about"
+                values={Object {}}
+              />
             </Link>
           </Styled(styled.li)>
           <Styled(styled.li)
-            id="id"
             key="1"
-            onClick={[Function]}
           >
-            Click action
+            <Link
+              id={null}
+              to="/"
+            >
+              <FormattedMessage
+                defaultMessage="API Doc"
+                id="shared.components.desktopTopHeader.api"
+                values={Object {}}
+              />
+            </Link>
+          </Styled(styled.li)>
+          <Styled(styled.li)
+            key="2"
+          >
+            <Link
+              id={null}
+              to="/"
+            >
+              <FormattedMessage
+                defaultMessage="GitHub Repository"
+                id="shared.components.desktopTopHeader.repository"
+                values={Object {}}
+              />
+            </Link>
           </Styled(styled.li)>
         </Styled(styled.ul)>
       </styled.div>
@@ -138,8 +160,8 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
   </styled.div>
   <LogoutModal
     logoutModalOpen={false}
-    onCancel={[Function]}
-    onConfirm={[Function]}
+    onAction={[Function]}
+    redirectUrl="/logout"
   />
 </styled.div>
 `;

@@ -18,12 +18,12 @@ export const MenuHeader = styled.div``;
 export const Content = styled.div`
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 
   ${media.desktop`
-    margin-top: 42px
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
   `};
 `;
 

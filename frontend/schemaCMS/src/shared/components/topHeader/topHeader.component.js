@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Header, Menu } from 'schemaUI';
-import { always } from 'ramda';
+import { always, equals, ifElse } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import {
@@ -41,6 +41,26 @@ export class TopHeader extends PureComponent {
     isMenuOpen: false,
     logoutModalOpen: false,
   };
+
+  getProjectRoutes = ({ projectId }) =>
+    ifElse(
+      equals(true),
+      always([]),
+      always([
+        {
+          label: <FormattedMessage {...messages.projectDetails} />,
+          to: `/project/${projectId}`,
+        },
+        {
+          label: <FormattedMessage {...messages.projectDataSources} />,
+          to: `/project/${projectId}/datasource`,
+        },
+        {
+          label: <FormattedMessage {...messages.projectPages} />,
+          to: `/project/${projectId}/folder`,
+        },
+      ])
+    )(!projectId);
 
   primaryMenuItems = [{ label: <FormattedMessage {...messages.project} />, to: '/project' }];
 
@@ -104,16 +124,16 @@ export class TopHeader extends PureComponent {
     };
 
     const bottomItems = secondaryMenuItems.concat(this.secondaryMenuItems);
-    const topItems = primaryMenuItems.concat(this.primaryMenuItems);
-
-    if (projectId) {
-      topItems.push({
-        label: <FormattedMessage {...messages.projectDetails} />,
-        to: `/project/${projectId}`,
-      });
-    }
-
-    topItems.push({ label: <FormattedMessage {...messages.logOut} />, onClick: this.handleLogout, id: 'logoutBtn' });
+    const topItems = [
+      ...primaryMenuItems,
+      ...this.primaryMenuItems,
+      ...this.getProjectRoutes({ projectId }),
+      {
+        label: <FormattedMessage {...messages.logOut} />,
+        onClick: this.handleLogout,
+        id: 'logoutBtn',
+      },
+    ];
 
     const primaryMenu = this.renderMenuItems(topItems, PrimaryList, PrimaryItem);
     const secondaryMenu = this.renderMenuItems(bottomItems, SecondaryList, SecondaryItem);

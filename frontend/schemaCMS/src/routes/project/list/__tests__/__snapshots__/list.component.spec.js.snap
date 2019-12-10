@@ -10,14 +10,8 @@ exports[`List: Component should render correctly 1`] = `
   <TopHeader
     headerSubtitle="Overview"
     headerTitle="Projects"
-    primaryMenuItems={Array []}
-    secondaryMenuItems={
+    primaryMenuItems={
       Array [
-        Object {
-          "id": "logoutBtn",
-          "label": "Log Out",
-          "onClick": [Function],
-        },
         Object {
           "id": "userBtn",
           "label": "Users",
@@ -25,6 +19,7 @@ exports[`List: Component should render correctly 1`] = `
         },
       ]
     }
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle="Overview"
@@ -168,11 +163,6 @@ exports[`List: Component should render correctly 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
-  <LogoutModal
-    logoutModalOpen={false}
-    onCancel={[Function]}
-    onConfirm={[Function]}
-  />
 </styled.div>
 `;
 
@@ -186,14 +176,8 @@ exports[`List: Component should render correctly with loading 1`] = `
   <TopHeader
     headerSubtitle="Overview"
     headerTitle="Projects"
-    primaryMenuItems={Array []}
-    secondaryMenuItems={
+    primaryMenuItems={
       Array [
-        Object {
-          "id": "logoutBtn",
-          "label": "Log Out",
-          "onClick": [Function],
-        },
         Object {
           "id": "userBtn",
           "label": "Users",
@@ -201,6 +185,7 @@ exports[`List: Component should render correctly with loading 1`] = `
         },
       ]
     }
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle="Overview"
@@ -344,11 +329,6 @@ exports[`List: Component should render correctly with loading 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
-  <LogoutModal
-    logoutModalOpen={false}
-    onCancel={[Function]}
-    onConfirm={[Function]}
-  />
 </styled.div>
 `;
 
@@ -362,14 +342,8 @@ exports[`List: Component should render without data 1`] = `
   <TopHeader
     headerSubtitle="Overview"
     headerTitle="Projects"
-    primaryMenuItems={Array []}
-    secondaryMenuItems={
+    primaryMenuItems={
       Array [
-        Object {
-          "id": "logoutBtn",
-          "label": "Log Out",
-          "onClick": [Function],
-        },
         Object {
           "id": "userBtn",
           "label": "Users",
@@ -377,6 +351,7 @@ exports[`List: Component should render without data 1`] = `
         },
       ]
     }
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle="Overview"
@@ -407,10 +382,5 @@ exports[`List: Component should render without data 1`] = `
       onClick={[Function]}
     />
   </NavigationContainer>
-  <LogoutModal
-    logoutModalOpen={false}
-    onCancel={[Function]}
-    onConfirm={[Function]}
-  />
 </styled.div>
 `;

@@ -30,4 +30,12 @@ export default defineMessages({
     id: 'shared.components.desktopTopHeader.projectDetails',
     defaultMessage: 'Project details',
   },
+  projectDataSources: {
+    id: 'shared.components.desktopTopHeader.projectDataSources',
+    defaultMessage: 'Data sources',
+  },
+  projectPages: {
+    id: 'shared.components.desktopTopHeader.projectPages',
+    defaultMessage: 'Pages',
+  },
 });

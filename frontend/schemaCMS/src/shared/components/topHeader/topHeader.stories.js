@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { TopHeader } from './topHeader.component';
 
 export const defaultProps = {
@@ -21,10 +21,10 @@ const longProps = {
   ...defaultProps,
   headerTitle: longText,
   headerSubtitle: longText,
+  projectId: 'projectId',
 };
 
 storiesOf('Shared Components|Header/TopHeader', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <TopHeader {...defaultProps} />)
   .add('Long title and subtitle', () => <TopHeader {...longProps} />);

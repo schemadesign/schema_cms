@@ -1,12 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withRouter, withTheme } from '../../../.storybook/decorators';
-import { history } from '../../../.storybook/helpers';
+import { withTheme } from '../../../.storybook/decorators';
 import { DesktopTopHeader } from './desktopTopHeader.component';
 
 export const defaultProps = {
-  history,
   isAdmin: false,
 };
 
@@ -28,7 +26,6 @@ const longProps = {
 };
 
 storiesOf('Shared Components|Header/DesktopTopHeader', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <DesktopTopHeader {...defaultProps} />)
   .add('With title', () => <DesktopTopHeader {...titleProps} />)

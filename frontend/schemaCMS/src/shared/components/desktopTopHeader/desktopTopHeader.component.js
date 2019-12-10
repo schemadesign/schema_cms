@@ -39,7 +39,6 @@ const { ExitIcon, UserIcon } = Icons;
 export class DesktopTopHeader extends TopHeader {
   static propTypes = {
     title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    history: PropTypes.object.isRequired,
     isAdmin: PropTypes.bool.isRequired,
   };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { FolderList } from './folderList.component';
-import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
@@ -33,7 +33,6 @@ const noDataProps = {
 };
 
 storiesOf('Project|FolderList', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('No data', () => <FolderList {...noDataProps} />)
   .add('Default', () => <FolderList {...defaultProps} />);

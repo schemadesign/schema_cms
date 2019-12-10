@@ -6,8 +6,8 @@ import { LogoutModal } from '../logoutModal.component';
 describe('LogoutModal: Component', () => {
   const defaultProps = {
     logoutModalOpen: true,
-    onConfirm: Function.prototype,
-    onCancel: Function.prototype,
+    onAction: Function.prototype,
+    redirectUrl: 'redirectUrl',
   };
 
   const component = props => <LogoutModal {...defaultProps} {...props} />;

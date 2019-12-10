@@ -23,6 +23,7 @@ exports[`FolderList: Component should render correctly 1`] = `
       />
     }
     primaryMenuItems={Array []}
+    projectId="1"
     secondaryMenuItems={Array []}
   />
   <ProjectTabs
@@ -138,6 +139,7 @@ exports[`FolderList: Component should render correctly with loader 1`] = `
       />
     }
     primaryMenuItems={Array []}
+    projectId="1"
     secondaryMenuItems={Array []}
   />
   <ProjectTabs

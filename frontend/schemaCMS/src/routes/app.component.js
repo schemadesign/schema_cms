@@ -23,7 +23,6 @@ export class App extends PureComponent {
     match: PropTypes.object.isRequired,
     startup: PropTypes.func.isRequired,
     isAdmin: PropTypes.bool,
-    history: PropTypes.object,
   };
 
   static defaultProps = {
@@ -62,7 +61,7 @@ export class App extends PureComponent {
                 {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle} />}
               </FormattedMessage>
               <GlobalStyle />
-              <DesktopTopHeader history={this.props.history} isAdmin={isAdmin} />
+              <DesktopTopHeader isAdmin={isAdmin} />
               <Content>
                 <LoadingWrapper loading={loading} error={error}>
                   {this.renderContent()}

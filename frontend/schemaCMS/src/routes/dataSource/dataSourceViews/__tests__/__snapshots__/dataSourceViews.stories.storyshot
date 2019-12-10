@@ -8,8 +8,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -17,13 +16,74 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
-.c5 {
+.c6 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c5 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c5:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c1 {
@@ -34,79 +94,79 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
   word-break: break-word;
 }
 
-.c6 {
+.c8 {
   display: none;
 }
 
-.c7 {
+.c9 {
   margin-right: 20px;
 }
 
-.c8 {
-  color: #FFF;
-}
-
-.c9 {
-  color: #FFF;
-}
-
 .c10 {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
-  justify-content: space-around;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 20px;
-  background-color: #1d1d20;
+  color: #FFF;
 }
 
-.c10 svg {
-  cursor: pointer;
-}
-
-.c15 {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
-  justify-content: space-around;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 20px;
-  background-color: #1d1d20;
-}
-
-.c15 svg {
-  cursor: pointer;
+.c11 {
+  color: #FFF;
 }
 
 .c12 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #1d1d20;
+}
+
+.c12 svg {
+  cursor: pointer;
+}
+
+.c17 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #1d1d20;
+}
+
+.c17 svg {
+  cursor: pointer;
+}
+
+.c14 {
   background-color: #1d1d20;
   border-radius: 50%;
   display: -webkit-box;
@@ -123,11 +183,11 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
   align-items: center;
 }
 
-.c12 svg {
+.c14 svg {
   opacity: 0.4;
 }
 
-.c11 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -141,14 +201,14 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
   align-items: center;
 }
 
-.c13 {
+.c15 {
   padding-top: 9px;
   color: #71737e;
   font-size: 12px;
   display: none;
 }
 
-.c14 {
+.c16 {
   color: #FFF;
   text-align: center;
 }
@@ -160,7 +220,21 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c6 {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -178,7 +252,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c10 {
+  .c12 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -190,7 +264,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c17 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -199,20 +273,20 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c14 {
     width: 60px;
     height: 60px;
   }
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c13 {
     margin-left: 15px;
   }
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c15 {
     display: block;
   }
 }
@@ -393,10 +467,73 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
       >
         <ul
           className="c4"
-        />
+        >
+          <li
+            className="c5"
+          >
+            <a
+              href="/project"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Projects
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+            id="logoutBtn"
+            onClick={[Function]}
+          >
+            <span>
+              Log out
+            </span>
+          </li>
+        </ul>
         <ul
-          className="c5"
-        />
+          className="c6"
+        >
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                About Schema CMS
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                API Doc
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                GitHub Repository
+              </span>
+            </a>
+          </li>
+        </ul>
       </div>
       <button
         disabled={false}
@@ -442,13 +579,13 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
     </div>
   </div>
   <div
-    className="c6"
+    className="c8"
   >
     <div
-      className="c7"
+      className="c9"
     >
       <h2
-        className="c8"
+        className="c10"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -462,7 +599,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         name
       </h2>
       <h1
-        className="c9"
+        className="c11"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -484,13 +621,13 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
       className=""
     >
       <div
-        className="c10"
+        className="c12"
       >
         <div
-          className="c11"
+          className="c13"
         >
           <div
-            className="c12"
+            className="c14"
             disabled={false}
             onClick={[Function]}
           >
@@ -510,7 +647,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
             </svg>
           </div>
           <div
-            className="c13"
+            className="c15"
           >
             <span>
               Source
@@ -518,10 +655,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
           </div>
         </div>
         <div
-          className="c11"
+          className="c13"
         >
           <div
-            className="c12"
+            className="c14"
             disabled={false}
             onClick={[Function]}
           >
@@ -542,7 +679,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
             </svg>
           </div>
           <div
-            className="c13"
+            className="c15"
           >
             <span>
               Fields
@@ -550,10 +687,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
           </div>
         </div>
         <div
-          className="c11"
+          className="c13"
         >
           <div
-            className="c12"
+            className="c14"
             disabled={false}
             onClick={[Function]}
           >
@@ -592,7 +729,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
             </svg>
           </div>
           <div
-            className="c13"
+            className="c15"
           >
             <span>
               Steps
@@ -600,10 +737,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
           </div>
         </div>
         <div
-          className="c11"
+          className="c13"
         >
           <div
-            className="c12"
+            className="c14"
             disabled={false}
             onClick={[Function]}
           >
@@ -642,7 +779,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
             </svg>
           </div>
           <div
-            className="c13"
+            className="c15"
           >
             <span>
               Results
@@ -650,10 +787,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
           </div>
         </div>
         <div
-          className="c11"
+          className="c13"
         >
           <div
-            className="c12"
+            className="c14"
             disabled={false}
             onClick={[Function]}
           >
@@ -676,7 +813,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
             </svg>
           </div>
           <div
-            className="c13"
+            className="c15"
           >
             <span>
               Filters
@@ -684,10 +821,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
           </div>
         </div>
         <div
-          className="c11"
+          className="c13"
         >
           <div
-            className="c12"
+            className="c14"
             disabled={false}
             onClick={[Function]}
           >
@@ -710,7 +847,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
             </svg>
           </div>
           <div
-            className="c13"
+            className="c15"
           >
             <span>
               Views
@@ -721,20 +858,20 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
     </div>
   </div>
   <div
-    className="c14"
+    className="c16"
   >
     <span>
       Coming soon...
     </span>
   </div>
   <div
-    className="c15"
+    className="c17"
   >
     <div
-      className="c11"
+      className="c13"
     >
       <div
-        className="c12"
+        className="c14"
         disabled={false}
         onClick={[Function]}
       >
@@ -754,7 +891,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         </svg>
       </div>
       <div
-        className="c13"
+        className="c15"
       >
         <span>
           Source
@@ -762,10 +899,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
       </div>
     </div>
     <div
-      className="c11"
+      className="c13"
     >
       <div
-        className="c12"
+        className="c14"
         disabled={false}
         onClick={[Function]}
       >
@@ -786,7 +923,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         </svg>
       </div>
       <div
-        className="c13"
+        className="c15"
       >
         <span>
           Fields
@@ -794,10 +931,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
       </div>
     </div>
     <div
-      className="c11"
+      className="c13"
     >
       <div
-        className="c12"
+        className="c14"
         disabled={false}
         onClick={[Function]}
       >
@@ -836,7 +973,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         </svg>
       </div>
       <div
-        className="c13"
+        className="c15"
       >
         <span>
           Steps
@@ -844,10 +981,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
       </div>
     </div>
     <div
-      className="c11"
+      className="c13"
     >
       <div
-        className="c12"
+        className="c14"
         disabled={false}
         onClick={[Function]}
       >
@@ -886,7 +1023,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         </svg>
       </div>
       <div
-        className="c13"
+        className="c15"
       >
         <span>
           Results
@@ -894,10 +1031,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
       </div>
     </div>
     <div
-      className="c11"
+      className="c13"
     >
       <div
-        className="c12"
+        className="c14"
         disabled={false}
         onClick={[Function]}
       >
@@ -920,7 +1057,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         </svg>
       </div>
       <div
-        className="c13"
+        className="c15"
       >
         <span>
           Filters
@@ -928,10 +1065,10 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
       </div>
     </div>
     <div
-      className="c11"
+      className="c13"
     >
       <div
-        className="c12"
+        className="c14"
         disabled={false}
         onClick={[Function]}
       >
@@ -954,7 +1091,7 @@ exports[`Storyshots Data Source|DataSourceViews Default 1`] = `
         </svg>
       </div>
       <div
-        className="c13"
+        className="c15"
       >
         <span>
           Views

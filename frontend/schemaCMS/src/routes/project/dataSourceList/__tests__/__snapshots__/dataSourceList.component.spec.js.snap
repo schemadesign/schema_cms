@@ -11,14 +11,8 @@ exports[`DataSourceList: Component should render card with job 1`] = `
     headerSubtitle="Overview"
     headerTitle="Data Sources"
     primaryMenuItems={Array []}
-    secondaryMenuItems={
-      Array [
-        Object {
-          "label": "Project details",
-          "to": "/project/1",
-        },
-      ]
-    }
+    projectId="1"
+    secondaryMenuItems={Array []}
   />
   <ProjectTabs
     active="sources"
@@ -160,14 +154,8 @@ exports[`DataSourceList: Component should render correctly 1`] = `
     headerSubtitle="Overview"
     headerTitle="Data Sources"
     primaryMenuItems={Array []}
-    secondaryMenuItems={
-      Array [
-        Object {
-          "label": "Project details",
-          "to": "/project/1",
-        },
-      ]
-    }
+    projectId="1"
+    secondaryMenuItems={Array []}
   />
   <ProjectTabs
     active="sources"
@@ -509,14 +497,8 @@ exports[`DataSourceList: Component should render empty 1`] = `
     headerSubtitle="Overview"
     headerTitle="Data Sources"
     primaryMenuItems={Array []}
-    secondaryMenuItems={
-      Array [
-        Object {
-          "label": "Project details",
-          "to": "/project/1",
-        },
-      ]
-    }
+    projectId="1"
+    secondaryMenuItems={Array []}
   />
   <ProjectTabs
     active="sources"

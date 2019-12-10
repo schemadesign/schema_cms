@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { UserList } from './userList.component';
-import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 
 const { ADMIN, EDITOR } = ROLES;
@@ -25,7 +25,6 @@ export const propsWithUsersAsAdmin = {
 };
 
 storiesOf('Shared Components|UserList', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('default (empty)', () => <UserList {...defaultProps} />)
   .add('with users', () => <UserList {...propsWithUsers} />)

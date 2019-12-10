@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (admin) 1`] = `
-.c10 {
+.c12 {
   height: 155px;
 }
 
-.c12 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
   width: 100%;
 }
 
-.c11 {
+.c13 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -33,7 +33,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
 }
 
-.c13 {
+.c15 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -45,8 +45,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -54,13 +53,74 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
-.c5 {
+.c6 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c5 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c5:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c1 {
@@ -71,24 +131,24 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
   word-break: break-word;
 }
 
-.c6 {
+.c8 {
   display: none;
 }
 
-.c7 {
+.c9 {
   margin-right: 20px;
 }
 
-.c8 {
+.c10 {
   color: #FFF;
 }
 
-.c9 {
+.c11 {
   color: #FFF;
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c14 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -97,7 +157,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c13 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -106,7 +166,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c15 {
     width: 240px;
   }
 }
@@ -118,7 +178,21 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
 }
 
 @media (min-width:1040px) {
-  .c6 {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -310,10 +384,73 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
         >
           <ul
             className="c4"
-          />
+          >
+            <li
+              className="c5"
+            >
+              <a
+                href="/project"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Projects
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+              id="logoutBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </li>
+          </ul>
           <ul
-            className="c5"
-          />
+            className="c6"
+          >
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  About Schema CMS
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  API Doc
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  GitHub Repository
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
         <button
           disabled={false}
@@ -359,13 +496,13 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
       </div>
     </div>
     <div
-      className="c6"
+      className="c8"
     >
       <div
-        className="c7"
+        className="c9"
       >
         <h2
-          className="c8"
+          className="c10"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -379,7 +516,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
           Data Wrangling
         </h2>
         <h1
-          className="c9"
+          className="c11"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -1173,16 +1310,16 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
       </pre>
     </form>
     <div
-      className="c10"
+      className="c12"
     >
       <div
-        className="c11"
+        className="c13"
       >
         <div
-          className="c12"
+          className="c14"
         >
           <button
-            className="c13"
+            className="c15"
             disabled={false}
             onClick={[Function]}
             style={
@@ -1215,11 +1352,11 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ad
 `;
 
 exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (editor) 1`] = `
-.c10 {
+.c12 {
   height: 155px;
 }
 
-.c12 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1238,7 +1375,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
   width: 100%;
 }
 
-.c11 {
+.c13 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -1247,7 +1384,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
   background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(0,0,0,0) );
 }
 
-.c13 {
+.c15 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
@@ -1259,8 +1396,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1268,13 +1404,74 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
-.c5 {
+.c6 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #f0efef;
+  padding: 8px 0 13px;
+}
+
+.c5 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1d1d20;
+  display: block;
+}
+
+.c5:first-of-type {
+  border-top: 2.4px solid #f0efef;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #1d1d20;
+  display: block;
+}
+
+.c7:hover {
+  border-bottom: 1px solid #1d1d20;
 }
 
 .c1 {
@@ -1285,24 +1482,24 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
   word-break: break-word;
 }
 
-.c6 {
+.c8 {
   display: none;
 }
 
-.c7 {
+.c9 {
   margin-right: 20px;
 }
 
-.c8 {
+.c10 {
   color: #1d1d20;
 }
 
-.c9 {
+.c11 {
   color: #1d1d20;
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c14 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1311,7 +1508,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c13 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #FFF,#FFF 30%, rgba(0,0,0,0) );
@@ -1320,7 +1517,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c15 {
     width: 240px;
   }
 }
@@ -1332,7 +1529,21 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
 }
 
 @media (min-width:1040px) {
-  .c6 {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1524,10 +1735,73 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
         >
           <ul
             className="c4"
-          />
+          >
+            <li
+              className="c5"
+            >
+              <a
+                href="/project"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Projects
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+              id="logoutBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </li>
+          </ul>
           <ul
-            className="c5"
-          />
+            className="c6"
+          >
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  About Schema CMS
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  API Doc
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  GitHub Repository
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
         <button
           disabled={false}
@@ -1573,13 +1847,13 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
       </div>
     </div>
     <div
-      className="c6"
+      className="c8"
     >
       <div
-        className="c7"
+        className="c9"
       >
         <h2
-          className="c8"
+          className="c10"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -1593,7 +1867,7 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
           Data Wrangling
         </h2>
         <h1
-          className="c9"
+          className="c11"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -2387,16 +2661,16 @@ exports[`Storyshots Data Wrangling Script|DataWranglingDefaultScript Default (ed
       </pre>
     </form>
     <div
-      className="c10"
+      className="c12"
     >
       <div
-        className="c11"
+        className="c13"
       >
         <div
-          className="c12"
+          className="c14"
         >
           <button
-            className="c13"
+            className="c15"
             disabled={false}
             onClick={[Function]}
             style={

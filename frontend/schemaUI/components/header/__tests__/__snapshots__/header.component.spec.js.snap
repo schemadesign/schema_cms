@@ -15,6 +15,18 @@ exports[`Header: Component should render correctly 1`] = `
   }
 >
   <div />
+  <Component
+    customStyles={
+      Object {
+        "backgroundColor": "transparent",
+        "position": "absolute",
+        "right": 0,
+        "top": 6,
+      }
+    }
+  >
+    <Component />
+  </Component>
 </div>
 `;
 

@@ -1,7 +1,7 @@
 import requireContext from 'require-context.macro';
 import { configure, addDecorator } from '@storybook/react';
 
-import { withIntl } from './decorators';
+import { withIntl, withRouter } from './decorators';
 
 function loadStories() {
   // automatically import all story js files that end with *.stories.js
@@ -10,5 +10,6 @@ function loadStories() {
 }
 
 addDecorator(withIntl);
+addDecorator(withRouter);
 
 configure(loadStories, module);

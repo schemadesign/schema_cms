@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
-import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { PROJECT_STATUSES } from '../../../modules/project/project.constants';
 import { List } from './list.component';
@@ -52,12 +52,10 @@ const editorProps = {
 };
 
 storiesOf('Project|List', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('No data', () => <List {...emptyListProps} />)
   .add('List (admin)', () => <List {...defaultProps} />);
 
 storiesOf('Project|List', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme(Theme.light))
   .add('List (editor)', () => <List {...editorProps} />);
