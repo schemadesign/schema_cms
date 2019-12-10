@@ -1,4 +1,5 @@
 from dataclasses import asdict
+import datetime
 import json
 import logging
 
@@ -25,9 +26,19 @@ def columns_to_records(pydict):
     return [dict(zip(pydict, i)) for i in zip(*pydict.values())]
 
 
+class JsonCustomEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, bytes):
+            return obj.decode(errors='ignore')
+        if isinstance(obj, (datetime.date, datetime.datetime)):
+            return obj.isoformat()
+
+        return json.JSONEncoder.default(self, obj)
+
+
 def create_response(data):
     return Response(
-        json.dumps(data, ensure_ascii=False, indent=4),
+        json.dumps(data, ensure_ascii=True, cls=JsonCustomEncoder),
         content_type="application/json; charset=utf-8",
     )
 

@@ -20,10 +20,15 @@ import scipy as sp
 import sentry_sdk
 from sentry_sdk.integrations.aws_lambda import AwsLambdaIntegration
 
+import pyarrow.parquet as pq
+from pyarrow import BufferReader, csv as pa_csv
+
 from common import api, db, services, settings, types
 import errors
 import mocks
 from image_scraping import image_scraping  # noqa
+from utils import NumpyEncoder
+
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -37,43 +42,8 @@ current_job = None
 current_step = None
 
 
-def map_dataframe_dtypes(dtype):
-    if dtype == "object":
-        return "string"
-    else:
-        return dtype
-
-
 def read_file_to_data_frame(file):
     return dt.fread(file, na_strings=["", ""], fill=True)
-
-
-class NumpyEncoder(json.JSONEncoder):
-    """ Special json encoder for numpy types """
-
-    def default(self, obj):
-        if isinstance(
-            obj,
-            (
-                np.int_,
-                np.intc,
-                np.intp,
-                np.int8,
-                np.int16,
-                np.int32,
-                np.int64,
-                np.uint8,
-                np.uint16,
-                np.uint32,
-                np.uint64,
-            ),
-        ):
-            return int(obj)
-        elif isinstance(obj, (np.float_, np.float16, np.float32, np.float64)):
-            return float(obj)
-        elif isinstance(obj, (np.ndarray,)):
-            return obj.tolist()
-        return json.JSONEncoder.default(self, obj)
 
 
 def get_preview_data(data_frame):
@@ -106,7 +76,7 @@ def get_preview_data(data_frame):
 
     dtypes = {i: k for i, k in zip(columns, data_frame.stypes)}
     for key, value in dtypes.items():
-        fields_info[key]["dtype"] = map_dataframe_dtypes(value.name)
+        fields_info[key]["dtype"] = value.name
 
     for key, value in samples[0].items():
         fields_info[key]["sample"] = value
@@ -143,22 +113,32 @@ def process_datasource_meta_source_file(data: dict):
         )
 
 
-def write_dataframe_to_csv_on_s3(dataframe, filename):
+def write_dataframe_to_csv_on_s3(dataframe, filename, is_pandas):
     csv_buffer = StringIO()
 
-    dataframe.to_csv(csv_buffer, encoding="utf-8", index=False)
-    return services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(
+    if is_pandas:
+        csv_buffer.write(dataframe.to_csv(index=False, encoding="utf-8"))
+    else:
+        csv_buffer.write(dataframe.to_csv())
+    services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(
         Body=csv_buffer.getvalue()
     )
 
+    return services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename)
 
-def write_dataframe_to_parquet_on_s3(dataframe, filename):
+
+def csv_to_parquet(file, file_name):
     buffer = BytesIO()
-    dataframe.to_parquet(buffer, engine="pyarrow", index=False)
+    convert_options = pa_csv.ConvertOptions(strings_can_be_null=True)
 
-    return services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(
-        Body=buffer.getvalue()
+    table = pa_csv.read_csv(
+        BufferReader(file.get()["Body"].read()), convert_options=convert_options
     )
+    pq.write_table(table, buffer, compression="snappy")
+
+    services.s3_resource.Object(
+        settings.AWS_STORAGE_BUCKET_NAME, file_name.replace(".csv", ".parquet")
+    ).put(Body=buffer.getvalue())
 
 
 def process_job(job_data: dict):
@@ -176,13 +156,21 @@ def process_job(job_data: dict):
             job_pk=current_job.id, state=db.JobState.PROCESSING
         )
 
-        logger.info(
-            f"Loading source file: {current_job.source_file_path} ver. {current_job.source_file_version}"
-        )
         source_file = current_job.source_file
+        source_file_path = current_job.source_file_path
+        source_file_version = current_job.source_file_version
+
+        logger.info(
+            f"Loading source file: {source_file_path} ver. {source_file_version}"
+        )
 
         try:
-            df = read_file_to_data_frame(source_file["Body"]).to_pandas()
+            if current_job.steps:
+                df = read_file_to_data_frame(source_file["Body"]).to_pandas()
+                is_pandas = True
+            else:
+                df = read_file_to_data_frame(source_file["Body"])
+                is_pandas = False
         except Exception as e:
             raise errors.JobLoadingSourceFileError(f"{e} @ loading source file")
 
@@ -197,13 +185,17 @@ def process_job(job_data: dict):
             logger.info(f"Step {step.id} done")
 
         result_file_name = f"{current_job.datasource.id}/jobs/{current_job.id}/outputs/job_{current_job.id}_result.csv"
-        write_dataframe_to_csv_on_s3(df, result_file_name)
-        write_dataframe_to_parquet_on_s3(
-            df, result_file_name.replace(".csv", ".parquet")
-        )
+
+        try:
+
+            new_csv = write_dataframe_to_csv_on_s3(df, result_file_name, is_pandas)
+            csv_to_parquet(new_csv, result_file_name)
+            df = dt.Frame(df)
+
+        except Exception as e:
+            raise errors.JobSavingFilesError(f"{e} @ saving results files")
 
         # Update job's meta data
-        df = dt.Frame(df)
         preview_data, items, fields = get_preview_data(df)
         api.schemacms_api.update_job_meta(
             job_pk=current_job.id, items=items, fields=fields, preview_data=preview_data
@@ -225,6 +217,7 @@ def process_job(job_data: dict):
         )
         logging.error(e, exc_info=True)
         return logging.critical(f"Error while loading source file - {e}")
+
     except errors.JobSetExecutionError as e:
         api.schemacms_api.update_job_state(
             job_pk=current_job.id,
@@ -233,8 +226,17 @@ def process_job(job_data: dict):
         )
         logging.error(e, exc_info=True)
         return logging.critical(f"Error while executing {e.step.script.name}")
-    except Exception as e:
+
+    except errors.JobSavingFilesError as e:
+        api.schemacms_api.update_job_state(
+            job_pk=current_job.id,
+            state=db.JobState.FAILED,
+            error=f"{e} @ saving results files",
+        )
         logging.error(e, exc_info=True)
+        return logging.critical(f"Error while saving results - {e}")
+
+    except Exception as e:
         return logging.critical(str(e))
 
 
