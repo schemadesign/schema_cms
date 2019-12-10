@@ -1,358 +1,1316 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SourceComponent: Component should render correctly 1`] = `
-<SourceComponent
-  dataSource={
-    Object {
-      "jobs": Array [],
-      "metaData": Object {},
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Source"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.source.subTitle"
+        values={Object {}}
+      />
     }
-  }
-  history={
-    Object {
-      "goBack": [Function],
-      "push": [Function],
+    primaryMenuItems={Array []}
+    projectId="projectId"
+    secondaryMenuItems={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.source.subTitle"
+        values={Object {}}
+      />
     }
-  }
-  intl={
-    Object {
-      "formatMessage": [Function],
-    }
-  }
-  isAnyJobProcessing={false}
-  match={
-    Object {
-      "params": Object {
-        "projectId": "1",
-      },
-      "url": "url",
-    }
-  }
-  onDataSourceChange={[Function]}
-  removeDataSource={[Function]}
-  theme={
-    Object {
-      "background": "#000",
-      "border": "#2F2F36",
-      "button": Object {
-        "background": "#1d1d20",
-        "text": "#FFF",
-      },
-      "buttonDisabled": Object {
-        "background": "#1d1d20",
-        "text": "#71737e",
-      },
-      "card": Object {
-        "background": "#1d1d20",
-        "border": "#FFF",
-        "label": "#71737e",
-        "text": "#FFF",
-      },
-      "checkbox": Object {
-        "border": "#2F2F36",
-        "text": "#FFF",
-      },
-      "colors": Object {
-        "black": "#000",
-        "coolGray": "#a6a7aa",
-        "darkGrey": "#1d1d20",
-        "lightGrey": "#71737e",
-        "mediumGray": "#2F2F36",
-        "red": "#f21e29",
-        "veryLightPink": "#f0efef",
-        "white": "#FFF",
-        "yellow": "#be8f00",
-      },
-      "dataGrid": Object {
-        "background": "#000",
-        "text": "#71737e",
-      },
-      "error": "#f21e29",
-      "header": Object {
-        "border": "#2F2F36",
-        "text": "#FFF",
-      },
-      "icon": Object {
-        "background": "#1d1d20",
-        "fill": "#FFF",
-        "fillInverse": "#000",
-      },
-      "input": Object {
-        "text": "#FFF",
-      },
-      "inverseButton": Object {
-        "background": "#FFF",
-        "text": "#000",
-      },
-      "label": Object {
-        "border": "#2F2F36",
-        "text": "#71737e",
-      },
-      "menu": Object {
-        "background": "#000",
-        "text": "#FFF",
-      },
-      "providerContainer": Object {
-        "minHeight": "100vh",
-      },
-      "radioButton": Object {
-        "active": Object {
-          "background": "#FFF",
-          "fill": "#1d1d20",
-        },
-        "border": "#FFF",
-        "text": "#FFF",
-        "unActive": Object {
-          "background": "#1d1d20",
-          "dot": "#FFF",
-          "fill": "#FFF",
-        },
-      },
-      "secondaryText": "#71737e",
-      "select": Object {
-        "background": "#1d1d20",
-        "border": "#000",
-      },
-      "stepper": Object {
-        "active": "#FFF",
-        "background": "#1d1d20",
-      },
-      "tab": Object {
-        "active": "#FFF",
-        "hover": "#FFF",
-        "normal": "#2F2F36",
-      },
-      "table": Object {
-        "background": Object {
-          "body": "#000",
-          "header": "#1d1d20",
-        },
-        "border": Object {
-          "body": "#1d1d20",
-          "header": "#000",
-        },
-        "text": Object {
-          "body": "#FFF",
-          "header": "#71737e",
-        },
-      },
-      "text": "#FFF",
-      "textArea": Object {
-        "background": "#000",
-        "text": "#FFF",
-      },
-      "textField": Object {
-        "error": "#f21e29",
-        "label": "#71737e",
-      },
-      "typography": Object {
-        "h1": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontWeight": 600,
-        },
-        "h2": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontWeight": 100,
-        },
-        "h3": Object {
-          "color": Object {
-            "border": "#f0efef",
-            "text": "#a6a7aa",
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "id": "dataSourceIdId",
+          "jobs": Array [],
+          "metaData": Object {},
+          "project": "projectId",
+        }
+      }
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isAnyJobProcessing={false}
+      match={
+        Object {
+          "params": Object {
+            "projectId": "1",
           },
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontWeight": 600,
+          "url": "url",
+        }
+      }
+      onDataSourceChange={[Function]}
+      removeDataSource={[Function]}
+      theme={
+        Object {
+          "background": "#000",
+          "border": "#2F2F36",
+          "button": Object {
+            "background": "#1d1d20",
+            "text": "#FFF",
+          },
+          "buttonDisabled": Object {
+            "background": "#1d1d20",
+            "text": "#71737e",
+          },
+          "card": Object {
+            "background": "#1d1d20",
+            "border": "#FFF",
+            "label": "#71737e",
+            "text": "#FFF",
+          },
+          "checkbox": Object {
+            "border": "#2F2F36",
+            "text": "#FFF",
+          },
+          "colors": Object {
+            "black": "#000",
+            "coolGray": "#a6a7aa",
+            "darkGrey": "#1d1d20",
+            "lightGrey": "#71737e",
+            "mediumGray": "#2F2F36",
+            "red": "#f21e29",
+            "veryLightPink": "#f0efef",
+            "white": "#FFF",
+            "yellow": "#be8f00",
+          },
+          "dataGrid": Object {
+            "background": "#000",
+            "text": "#71737e",
+          },
+          "error": "#f21e29",
+          "header": Object {
+            "border": "#2F2F36",
+            "text": "#FFF",
+          },
+          "icon": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+            "fillInverse": "#000",
+          },
+          "input": Object {
+            "text": "#FFF",
+          },
+          "inverseButton": Object {
+            "background": "#FFF",
+            "text": "#000",
+          },
+          "label": Object {
+            "border": "#2F2F36",
+            "text": "#71737e",
+          },
+          "menu": Object {
+            "background": "#000",
+            "text": "#FFF",
+          },
+          "providerContainer": Object {
+            "minHeight": "100vh",
+          },
+          "radioButton": Object {
+            "active": Object {
+              "background": "#FFF",
+              "fill": "#1d1d20",
+            },
+            "border": "#FFF",
+            "text": "#FFF",
+            "unActive": Object {
+              "background": "#1d1d20",
+              "dot": "#FFF",
+              "fill": "#FFF",
+            },
+          },
+          "secondaryText": "#71737e",
+          "select": Object {
+            "background": "#1d1d20",
+            "border": "#000",
+          },
+          "stepper": Object {
+            "active": "#FFF",
+            "background": "#1d1d20",
+          },
+          "tab": Object {
+            "active": "#FFF",
+            "hover": "#FFF",
+            "normal": "#2F2F36",
+          },
+          "table": Object {
+            "background": Object {
+              "body": "#000",
+              "header": "#1d1d20",
+            },
+            "border": Object {
+              "body": "#1d1d20",
+              "header": "#000",
+            },
+            "text": Object {
+              "body": "#FFF",
+              "header": "#71737e",
+            },
+          },
+          "text": "#FFF",
+          "textArea": Object {
+            "background": "#000",
+            "text": "#FFF",
+          },
+          "textField": Object {
+            "error": "#f21e29",
+            "label": "#71737e",
+          },
+          "typography": Object {
+            "h1": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 600,
+            },
+            "h2": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 100,
+            },
+            "h3": Object {
+              "color": Object {
+                "border": "#f0efef",
+                "text": "#a6a7aa",
+              },
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 600,
+            },
+            "p": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 200,
+            },
+            "pre": Object {
+              "fontFamily": "Hack, monospace",
+            },
+            "span": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            },
+          },
+          "warning": "#be8f00",
+        }
+      }
+    />
+  </ContextHeader>
+  <Formik
+    enableReinitialize={true}
+    initialValues={Object {}}
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+    validationSchema={
+      ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
         },
-        "p": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontWeight": 200,
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "file",
+          "type",
+          "name",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
         },
-        "pre": Object {
-          "fontFamily": "Hack, monospace",
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
         },
-        "span": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+        "fields": Object {
+          "file": SchemaType {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "fileName": false,
+              "fileSize": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "mixed",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [],
+          },
+          "name": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+              "trim": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+          "type": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
         },
-      },
-      "warning": "#be8f00",
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      }
     }
-  }
-/>
+  >
+    <Component />
+  </Formik>
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "id": "dataSourceIdId",
+        "jobs": Array [],
+        "metaData": Object {},
+        "project": "projectId",
+      }
+    }
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAnyJobProcessing={false}
+    match={
+      Object {
+        "params": Object {
+          "projectId": "1",
+        },
+        "url": "url",
+      }
+    }
+    onDataSourceChange={[Function]}
+    removeDataSource={[Function]}
+    theme={
+      Object {
+        "background": "#000",
+        "border": "#2F2F36",
+        "button": Object {
+          "background": "#1d1d20",
+          "text": "#FFF",
+        },
+        "buttonDisabled": Object {
+          "background": "#1d1d20",
+          "text": "#71737e",
+        },
+        "card": Object {
+          "background": "#1d1d20",
+          "border": "#FFF",
+          "label": "#71737e",
+          "text": "#FFF",
+        },
+        "checkbox": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
+        },
+        "colors": Object {
+          "black": "#000",
+          "coolGray": "#a6a7aa",
+          "darkGrey": "#1d1d20",
+          "lightGrey": "#71737e",
+          "mediumGray": "#2F2F36",
+          "red": "#f21e29",
+          "veryLightPink": "#f0efef",
+          "white": "#FFF",
+          "yellow": "#be8f00",
+        },
+        "dataGrid": Object {
+          "background": "#000",
+          "text": "#71737e",
+        },
+        "error": "#f21e29",
+        "header": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
+        },
+        "icon": Object {
+          "background": "#1d1d20",
+          "fill": "#FFF",
+          "fillInverse": "#000",
+        },
+        "input": Object {
+          "text": "#FFF",
+        },
+        "inverseButton": Object {
+          "background": "#FFF",
+          "text": "#000",
+        },
+        "label": Object {
+          "border": "#2F2F36",
+          "text": "#71737e",
+        },
+        "menu": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "providerContainer": Object {
+          "minHeight": "100vh",
+        },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#FFF",
+            "fill": "#1d1d20",
+          },
+          "border": "#FFF",
+          "text": "#FFF",
+          "unActive": Object {
+            "background": "#1d1d20",
+            "dot": "#FFF",
+            "fill": "#FFF",
+          },
+        },
+        "secondaryText": "#71737e",
+        "select": Object {
+          "background": "#1d1d20",
+          "border": "#000",
+        },
+        "stepper": Object {
+          "active": "#FFF",
+          "background": "#1d1d20",
+        },
+        "tab": Object {
+          "active": "#FFF",
+          "hover": "#FFF",
+          "normal": "#2F2F36",
+        },
+        "table": Object {
+          "background": Object {
+            "body": "#000",
+            "header": "#1d1d20",
+          },
+          "border": Object {
+            "body": "#1d1d20",
+            "header": "#000",
+          },
+          "text": Object {
+            "body": "#FFF",
+            "header": "#71737e",
+          },
+        },
+        "text": "#FFF",
+        "textArea": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "textField": Object {
+          "error": "#f21e29",
+          "label": "#71737e",
+        },
+        "typography": Object {
+          "h1": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "h2": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 100,
+          },
+          "h3": Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "p": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 200,
+          },
+          "pre": Object {
+            "fontFamily": "Hack, monospace",
+          },
+          "span": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          },
+        },
+        "warning": "#be8f00",
+      }
+    }
+  />
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the data source?"
+        id="dataSource.source.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.source.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        id="confirmRemoveDataSource"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="dataSource.source.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+  <Styled(Modal)
+    contentLabel="Confirm Run Last Job"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Do you want to run last steps on current file?"
+        id="dataSource.source.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        id="declineRunLastJob"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="No"
+          id="dataSource.source.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        id="confirmRunLastJob"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Yes"
+          id="dataSource.source.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+</Fragment>
 `;
 
 exports[`SourceComponent: Component should render file uploader 1`] = `
-<SourceComponent
-  dataSource={
-    Object {
-      "type": "file",
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Source"
+  />
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.source.subTitle"
+        values={Object {}}
+      />
     }
-  }
-  history={
-    Object {
-      "goBack": [Function],
-      "push": [Function],
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Source"
+        id="dataSource.source.subTitle"
+        values={Object {}}
+      />
     }
-  }
-  intl={
-    Object {
-      "formatMessage": [Function],
-    }
-  }
-  isAnyJobProcessing={false}
-  match={
-    Object {
-      "params": Object {
-        "projectId": "1",
-      },
-      "url": "url",
-    }
-  }
-  onDataSourceChange={[Function]}
-  removeDataSource={[Function]}
-  theme={
-    Object {
-      "background": "#000",
-      "border": "#2F2F36",
-      "button": Object {
-        "background": "#1d1d20",
-        "text": "#FFF",
-      },
-      "buttonDisabled": Object {
-        "background": "#1d1d20",
-        "text": "#71737e",
-      },
-      "card": Object {
-        "background": "#1d1d20",
-        "border": "#FFF",
-        "label": "#71737e",
-        "text": "#FFF",
-      },
-      "checkbox": Object {
-        "border": "#2F2F36",
-        "text": "#FFF",
-      },
-      "colors": Object {
-        "black": "#000",
-        "coolGray": "#a6a7aa",
-        "darkGrey": "#1d1d20",
-        "lightGrey": "#71737e",
-        "mediumGray": "#2F2F36",
-        "red": "#f21e29",
-        "veryLightPink": "#f0efef",
-        "white": "#FFF",
-        "yellow": "#be8f00",
-      },
-      "dataGrid": Object {
-        "background": "#000",
-        "text": "#71737e",
-      },
-      "error": "#f21e29",
-      "header": Object {
-        "border": "#2F2F36",
-        "text": "#FFF",
-      },
-      "icon": Object {
-        "background": "#1d1d20",
-        "fill": "#FFF",
-        "fillInverse": "#000",
-      },
-      "input": Object {
-        "text": "#FFF",
-      },
-      "inverseButton": Object {
-        "background": "#FFF",
-        "text": "#000",
-      },
-      "label": Object {
-        "border": "#2F2F36",
-        "text": "#71737e",
-      },
-      "menu": Object {
-        "background": "#000",
-        "text": "#FFF",
-      },
-      "providerContainer": Object {
-        "minHeight": "100vh",
-      },
-      "radioButton": Object {
-        "active": Object {
-          "background": "#FFF",
-          "fill": "#1d1d20",
-        },
-        "border": "#FFF",
-        "text": "#FFF",
-        "unActive": Object {
-          "background": "#1d1d20",
-          "dot": "#FFF",
-          "fill": "#FFF",
-        },
-      },
-      "secondaryText": "#71737e",
-      "select": Object {
-        "background": "#1d1d20",
-        "border": "#000",
-      },
-      "stepper": Object {
-        "active": "#FFF",
-        "background": "#1d1d20",
-      },
-      "tab": Object {
-        "active": "#FFF",
-        "hover": "#FFF",
-        "normal": "#2F2F36",
-      },
-      "table": Object {
-        "background": Object {
-          "body": "#000",
-          "header": "#1d1d20",
-        },
-        "border": Object {
-          "body": "#1d1d20",
-          "header": "#000",
-        },
-        "text": Object {
-          "body": "#FFF",
-          "header": "#71737e",
-        },
-      },
-      "text": "#FFF",
-      "textArea": Object {
-        "background": "#000",
-        "text": "#FFF",
-      },
-      "textField": Object {
-        "error": "#f21e29",
-        "label": "#71737e",
-      },
-      "typography": Object {
-        "h1": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontWeight": 600,
-        },
-        "h2": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontWeight": 100,
-        },
-        "h3": Object {
-          "color": Object {
-            "border": "#f0efef",
-            "text": "#a6a7aa",
+  >
+    <DataSourceNavigation
+      dataSource={
+        Object {
+          "type": "file",
+        }
+      }
+      hideOnDesktop={false}
+      history={
+        Object {
+          "goBack": [Function],
+          "push": [Function],
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      isAnyJobProcessing={false}
+      match={
+        Object {
+          "params": Object {
+            "projectId": "1",
           },
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontWeight": 600,
-        },
-        "p": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-          "fontWeight": 200,
-        },
-        "pre": Object {
-          "fontFamily": "Hack, monospace",
-        },
-        "span": Object {
-          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-        },
-      },
-      "warning": "#be8f00",
+          "url": "url",
+        }
+      }
+      onDataSourceChange={[Function]}
+      removeDataSource={[Function]}
+      theme={
+        Object {
+          "background": "#000",
+          "border": "#2F2F36",
+          "button": Object {
+            "background": "#1d1d20",
+            "text": "#FFF",
+          },
+          "buttonDisabled": Object {
+            "background": "#1d1d20",
+            "text": "#71737e",
+          },
+          "card": Object {
+            "background": "#1d1d20",
+            "border": "#FFF",
+            "label": "#71737e",
+            "text": "#FFF",
+          },
+          "checkbox": Object {
+            "border": "#2F2F36",
+            "text": "#FFF",
+          },
+          "colors": Object {
+            "black": "#000",
+            "coolGray": "#a6a7aa",
+            "darkGrey": "#1d1d20",
+            "lightGrey": "#71737e",
+            "mediumGray": "#2F2F36",
+            "red": "#f21e29",
+            "veryLightPink": "#f0efef",
+            "white": "#FFF",
+            "yellow": "#be8f00",
+          },
+          "dataGrid": Object {
+            "background": "#000",
+            "text": "#71737e",
+          },
+          "error": "#f21e29",
+          "header": Object {
+            "border": "#2F2F36",
+            "text": "#FFF",
+          },
+          "icon": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+            "fillInverse": "#000",
+          },
+          "input": Object {
+            "text": "#FFF",
+          },
+          "inverseButton": Object {
+            "background": "#FFF",
+            "text": "#000",
+          },
+          "label": Object {
+            "border": "#2F2F36",
+            "text": "#71737e",
+          },
+          "menu": Object {
+            "background": "#000",
+            "text": "#FFF",
+          },
+          "providerContainer": Object {
+            "minHeight": "100vh",
+          },
+          "radioButton": Object {
+            "active": Object {
+              "background": "#FFF",
+              "fill": "#1d1d20",
+            },
+            "border": "#FFF",
+            "text": "#FFF",
+            "unActive": Object {
+              "background": "#1d1d20",
+              "dot": "#FFF",
+              "fill": "#FFF",
+            },
+          },
+          "secondaryText": "#71737e",
+          "select": Object {
+            "background": "#1d1d20",
+            "border": "#000",
+          },
+          "stepper": Object {
+            "active": "#FFF",
+            "background": "#1d1d20",
+          },
+          "tab": Object {
+            "active": "#FFF",
+            "hover": "#FFF",
+            "normal": "#2F2F36",
+          },
+          "table": Object {
+            "background": Object {
+              "body": "#000",
+              "header": "#1d1d20",
+            },
+            "border": Object {
+              "body": "#1d1d20",
+              "header": "#000",
+            },
+            "text": Object {
+              "body": "#FFF",
+              "header": "#71737e",
+            },
+          },
+          "text": "#FFF",
+          "textArea": Object {
+            "background": "#000",
+            "text": "#FFF",
+          },
+          "textField": Object {
+            "error": "#f21e29",
+            "label": "#71737e",
+          },
+          "typography": Object {
+            "h1": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 600,
+            },
+            "h2": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 100,
+            },
+            "h3": Object {
+              "color": Object {
+                "border": "#f0efef",
+                "text": "#a6a7aa",
+              },
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 600,
+            },
+            "p": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 200,
+            },
+            "pre": Object {
+              "fontFamily": "Hack, monospace",
+            },
+            "span": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            },
+          },
+          "warning": "#be8f00",
+        }
+      }
+    />
+  </ContextHeader>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "type": "file",
+      }
     }
-  }
-/>
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+    validationSchema={
+      ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": undefined,
+        "_nodes": Array [
+          "file",
+          "type",
+          "name",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "file": SchemaType {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "fileName": false,
+              "fileSize": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "mixed",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [],
+          },
+          "name": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "max": true,
+              "min": true,
+              "required": true,
+              "trim": false,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+              [Function],
+              [Function],
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+          "type": StringSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {
+              "required": true,
+            },
+            "_mutate": undefined,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "string",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      }
+    }
+  >
+    <Component />
+  </Formik>
+  <DataSourceNavigation
+    dataSource={
+      Object {
+        "type": "file",
+      }
+    }
+    hideOnDesktop={true}
+    history={
+      Object {
+        "goBack": [Function],
+        "push": [Function],
+      }
+    }
+    intl={
+      Object {
+        "formatMessage": [Function],
+      }
+    }
+    isAnyJobProcessing={false}
+    match={
+      Object {
+        "params": Object {
+          "projectId": "1",
+        },
+        "url": "url",
+      }
+    }
+    onDataSourceChange={[Function]}
+    removeDataSource={[Function]}
+    theme={
+      Object {
+        "background": "#000",
+        "border": "#2F2F36",
+        "button": Object {
+          "background": "#1d1d20",
+          "text": "#FFF",
+        },
+        "buttonDisabled": Object {
+          "background": "#1d1d20",
+          "text": "#71737e",
+        },
+        "card": Object {
+          "background": "#1d1d20",
+          "border": "#FFF",
+          "label": "#71737e",
+          "text": "#FFF",
+        },
+        "checkbox": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
+        },
+        "colors": Object {
+          "black": "#000",
+          "coolGray": "#a6a7aa",
+          "darkGrey": "#1d1d20",
+          "lightGrey": "#71737e",
+          "mediumGray": "#2F2F36",
+          "red": "#f21e29",
+          "veryLightPink": "#f0efef",
+          "white": "#FFF",
+          "yellow": "#be8f00",
+        },
+        "dataGrid": Object {
+          "background": "#000",
+          "text": "#71737e",
+        },
+        "error": "#f21e29",
+        "header": Object {
+          "border": "#2F2F36",
+          "text": "#FFF",
+        },
+        "icon": Object {
+          "background": "#1d1d20",
+          "fill": "#FFF",
+          "fillInverse": "#000",
+        },
+        "input": Object {
+          "text": "#FFF",
+        },
+        "inverseButton": Object {
+          "background": "#FFF",
+          "text": "#000",
+        },
+        "label": Object {
+          "border": "#2F2F36",
+          "text": "#71737e",
+        },
+        "menu": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "providerContainer": Object {
+          "minHeight": "100vh",
+        },
+        "radioButton": Object {
+          "active": Object {
+            "background": "#FFF",
+            "fill": "#1d1d20",
+          },
+          "border": "#FFF",
+          "text": "#FFF",
+          "unActive": Object {
+            "background": "#1d1d20",
+            "dot": "#FFF",
+            "fill": "#FFF",
+          },
+        },
+        "secondaryText": "#71737e",
+        "select": Object {
+          "background": "#1d1d20",
+          "border": "#000",
+        },
+        "stepper": Object {
+          "active": "#FFF",
+          "background": "#1d1d20",
+        },
+        "tab": Object {
+          "active": "#FFF",
+          "hover": "#FFF",
+          "normal": "#2F2F36",
+        },
+        "table": Object {
+          "background": Object {
+            "body": "#000",
+            "header": "#1d1d20",
+          },
+          "border": Object {
+            "body": "#1d1d20",
+            "header": "#000",
+          },
+          "text": Object {
+            "body": "#FFF",
+            "header": "#71737e",
+          },
+        },
+        "text": "#FFF",
+        "textArea": Object {
+          "background": "#000",
+          "text": "#FFF",
+        },
+        "textField": Object {
+          "error": "#f21e29",
+          "label": "#71737e",
+        },
+        "typography": Object {
+          "h1": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "h2": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 100,
+          },
+          "h3": Object {
+            "color": Object {
+              "border": "#f0efef",
+              "text": "#a6a7aa",
+            },
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 600,
+          },
+          "p": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontWeight": 200,
+          },
+          "pre": Object {
+            "fontFamily": "Hack, monospace",
+          },
+          "span": Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          },
+        },
+        "warning": "#be8f00",
+      }
+    }
+  />
+  <Styled(Modal)
+    contentLabel="Confirm Removal"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to remove the data source?"
+        id="dataSource.source.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Cancel"
+          id="dataSource.source.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        id="confirmRemoveDataSource"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Confirm"
+          id="dataSource.source.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+  <Styled(Modal)
+    contentLabel="Confirm Run Last Job"
+    isOpen={false}
+    style={
+      Object {
+        "content": Object {
+          "WebkitOverflowScrolling": "touch",
+          "alignItems": "center",
+          "border": null,
+          "borderRadius": "4px",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.5)",
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "50%",
+          "maxWidth": "600px",
+          "outline": "none",
+          "overflow": "auto",
+          "position": "absolute",
+          "right": "10px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "calc(100% - 20px)",
+        },
+        "overlay": Object {
+          "backgroundColor": "rgba(29, 29, 32, 0.75)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10000,
+        },
+      }
+    }
+  >
+    <Styled(H1)>
+      <FormattedMessage
+        defaultMessage="Do you want to run last steps on current file?"
+        id="dataSource.source.removeTitle"
+        values={Object {}}
+      />
+    </Styled(H1)>
+    <styled.div>
+      <BackButton
+        disabled={false}
+        id="declineRunLastJob"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="No"
+          id="dataSource.source.cancelRemoval"
+          values={Object {}}
+        />
+      </BackButton>
+      <NextButton
+        id="confirmRunLastJob"
+        loading={false}
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Yes"
+          id="dataSource.source.confirmRemoval"
+          values={Object {}}
+        />
+      </NextButton>
+    </styled.div>
+  </Styled(Modal)>
+</Fragment>
 `;

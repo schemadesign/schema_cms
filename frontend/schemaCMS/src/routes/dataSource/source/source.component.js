@@ -161,7 +161,7 @@ export class SourceComponent extends PureComponent {
             <BackButton onClick={() => this.handleCloseModal('confirmationRemoveModalOpen')}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
-            <NextButton onClick={this.handleConfirmRemove}>
+            <NextButton id="confirmRemoveDataSource" onClick={this.handleConfirmRemove}>
               <FormattedMessage {...messages.confirmRemoval} />
             </NextButton>
           </ModalActions>
@@ -171,10 +171,10 @@ export class SourceComponent extends PureComponent {
             <FormattedMessage {...messages.runLastJobTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleRunLastJob()}>
+            <BackButton id="declineRunLastJob" onClick={this.handleRunLastJob()}>
               <FormattedMessage {...messages.cancelRunLastJob} />
             </BackButton>
-            <NextButton onClick={this.handleRunLastJob(true)}>
+            <NextButton id="confirmRunLastJob" onClick={this.handleRunLastJob(true)}>
               <FormattedMessage {...messages.confirmRunLastJob} />
             </NextButton>
           </ModalActions>

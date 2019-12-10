@@ -10,6 +10,8 @@ export const defaultProps = {
   dataSource: {
     metaData: {},
     jobs: [],
+    project: 'projectId',
+    id: 'dataSourceIdId',
   },
   theme: Theme.dark,
   onDataSourceChange: Function.prototype,

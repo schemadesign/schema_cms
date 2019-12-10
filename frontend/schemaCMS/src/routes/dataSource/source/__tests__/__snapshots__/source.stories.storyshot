@@ -5,11 +5,11 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   padding-top: 7px;
 }
 
-.c17 {
+.c19 {
   height: 155px;
 }
 
-.c19 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,15 +28,31 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c20 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
 }
 
-.c20 {
+.c22 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c17 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .c0 {
@@ -148,6 +164,23 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   color: #FFF;
 }
 
+.c18 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 30px;
+}
+
+.c18:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c18:last-child {
+  margin-bottom: 0;
+}
+
 .c12 {
   width: 100%;
   position: fixed;
@@ -176,7 +209,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   cursor: pointer;
 }
 
-.c21 {
+.c23 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -200,7 +233,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c21 svg {
+.c23 svg {
   cursor: pointer;
 }
 
@@ -247,7 +280,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c21 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -256,7 +289,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c20 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -265,7 +298,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c20 {
+  .c22 {
     width: 240px;
   }
 }
@@ -321,7 +354,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c21 {
+  .c23 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -531,6 +564,45 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             >
               <span>
                 Projects
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/projectId"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Project details
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/projectId/datasource"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Data sources
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/projectId/folder"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Pages
               </span>
             </a>
           </li>
@@ -1107,14 +1179,47 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   <div
     className="c17"
   >
-    <div
+    <span
       className="c18"
+      onClick={[Function]}
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+        }
+      }
+    >
+      <span>
+        View Past Versions
+      </span>
+    </span>
+    <span
+      className="c18"
+      id="removeDataSourceDesktopBtn"
+      onClick={[Function]}
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+        }
+      }
+    >
+      <span>
+        Delete Data Source
+      </span>
+    </span>
+  </div>
+  <div
+    className="c19"
+  >
+    <div
+      className="c20"
     >
       <div
-        className="c19"
+        className="c21"
       >
         <button
-          className="c20"
+          className="c22"
           disabled={true}
           onClick={[Function]}
           style={
@@ -1143,7 +1248,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     </div>
   </div>
   <div
-    className="c21"
+    className="c23"
   >
     <div
       className="c13"
