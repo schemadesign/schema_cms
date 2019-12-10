@@ -5,8 +5,7 @@ import mockApi from '../../../shared/utils/mockApi';
 import { watchUserAuth } from '../userAuth.sagas';
 import { UserAuthActions, INITIAL_STATE } from '../userAuth.redux';
 import { TOKEN_PATH } from '../../../shared/utils/api.constants';
-import { UserProfileActions, UserProfileRoutines } from '../../userProfile/userProfile.redux';
-import { StartupActions } from '../../startup';
+import { UserProfileRoutines } from '../../userProfile/userProfile.redux';
 
 describe('UserAuth: sagas', () => {
   const defaultState = INITIAL_STATE;

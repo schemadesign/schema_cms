@@ -32,7 +32,7 @@ export const defaultProps = {
 export const editorProps = {
   ...defaultProps,
   isAdmin: false,
-}
+};
 
 storiesOf('Data Wrangling Script|ImageScrapingScript', module)
   .addDecorator(withTheme())

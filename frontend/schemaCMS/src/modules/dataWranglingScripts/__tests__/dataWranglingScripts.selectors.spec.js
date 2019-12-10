@@ -4,7 +4,9 @@ import Immutable from 'seamless-immutable';
 import {
   selectDataWranglingScripts,
   selectDataWranglingScript,
-  selectDataWranglingScriptsDomain, selectImageScrapingFields, selectCustomScripts,
+  selectDataWranglingScriptsDomain,
+  selectImageScrapingFields,
+  selectCustomScripts,
 } from '../dataWranglingScripts.selectors';
 
 describe('DataWranglingScripts: selectors', () => {

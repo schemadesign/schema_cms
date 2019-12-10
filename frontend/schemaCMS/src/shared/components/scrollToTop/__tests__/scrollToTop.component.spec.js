@@ -1,19 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Router } from 'react-router';
-import { createMemoryHistory } from 'history';
+import { MemoryRouter } from 'react-router';
 
 import { ScrollToTop } from '../scrollToTop.component';
 
 describe('ScrollToTop: Component', () => {
   const routerProps = {
-    history: createMemoryHistory(),
+    keyLength: 0,
   };
 
   const component = props => (
-    <Router {...routerProps}>
-      <ScrollToTop {...props}/>
-    </Router>
+    <MemoryRouter {...routerProps}>
+      <ScrollToTop {...props} />
+    </MemoryRouter>
   );
 
   const render = (props = {}) => shallow(component(props));

@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Theme } from 'schemaUI';
 
 import { DataWranglingScript } from './dataWranglingScript.component';
 
@@ -34,4 +33,3 @@ storiesOf('Data Wrangling Script|DataWranglingScript', module)
   .addDecorator(withTheme())
   .add('No data', () => <DataWranglingScript {...emptyProps} />)
   .add('Default', () => <DataWranglingScript {...defaultProps} />);
-
