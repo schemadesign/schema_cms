@@ -18,7 +18,7 @@ export const RESULT_PAGE = 'result';
 export const FILTERS_PAGE = 'filters';
 export const VIEWS_PAGE = 'views';
 
-export const IGNORED_FIELDS = ['file', 'metaData', 'errorLog', 'createdBy', 'status', 'created', 'id'];
+export const DATA_SOURCE_FIELDS = ['fileName', 'type', 'name'];
 
 const FILE_SIZE = 300000000;
 

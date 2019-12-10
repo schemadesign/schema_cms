@@ -26,6 +26,18 @@ export default defineMessages({
     id: 'dataSource.source.removeTitle',
     defaultMessage: 'Are you sure you want to remove the data source?',
   },
+  cancelRunLastJob: {
+    id: 'dataSource.source.cancelRemoval',
+    defaultMessage: 'No',
+  },
+  confirmRunLastJob: {
+    id: 'dataSource.source.confirmRemoval',
+    defaultMessage: 'Yes',
+  },
+  runLastJobTitle: {
+    id: 'dataSource.source.removeTitle',
+    defaultMessage: 'Do you want to run last steps on current file?',
+  },
   subTitle: {
     id: 'dataSource.source.subTitle',
     defaultMessage: 'Source',

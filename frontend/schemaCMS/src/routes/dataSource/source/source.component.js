@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react';
-import { always, omit } from 'ramda';
+import { always, pathEq, pick } from 'ramda';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Formik } from 'formik';
@@ -8,7 +8,7 @@ import Helmet from 'react-helmet';
 
 import { Link } from './source.styles';
 import messages from './source.messages';
-import { DATA_SOURCE_SCHEMA, IGNORED_FIELDS } from '../../../modules/dataSource/dataSource.constants';
+import { DATA_SOURCE_SCHEMA, DATA_SOURCE_FIELDS } from '../../../modules/dataSource/dataSource.constants';
 import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import browserHistory from '../../../shared/utils/history';
@@ -39,24 +39,15 @@ export class SourceComponent extends PureComponent {
   };
 
   state = {
-    confirmationModalOpen: false,
+    confirmationRemoveModalOpen: false,
+    confirmationRunJobModalOpen: false,
+    runModalData: {},
   };
 
-  handleRemoveClick = () => this.setState({ confirmationModalOpen: true });
-
-  handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
-
-  handleConfirmRemove = () => {
-    const {
-      dataSource: { project: projectId, id: dataSourceId },
-    } = this.props;
-
-    this.props.removeDataSource({ projectId, dataSourceId });
-  };
-
-  handleSubmit = async (requestData, { setErrors, setSubmitting }) => {
+  updateDataSource = async ({ requestData, setErrors, setSubmitting, runLastJob = false }) => {
     const { onDataSourceChange, match } = this.props;
     const { dataSourceId, projectId, step } = match.params;
+    requestData.runLastJob = runLastJob;
 
     try {
       setSubmitting(true);
@@ -71,6 +62,39 @@ export class SourceComponent extends PureComponent {
     }
   };
 
+  handleOpenModal = modalState => this.setState({ [modalState]: true });
+
+  handleCloseModal = modalState => this.setState({ [modalState]: false });
+
+  handleCancelRemove = () => this.setState({ confirmationRemoveModalOpen: false });
+
+  handleConfirmRemove = () => {
+    const {
+      dataSource: { project: projectId, id: dataSourceId },
+    } = this.props;
+
+    this.props.removeDataSource({ projectId, dataSourceId });
+  };
+
+  handleRunLastJob = runLastJob => async () => {
+    this.handleCloseModal('confirmationRunJobModalOpen');
+    await this.updateDataSource({ ...this.state.runModalData, runLastJob });
+  };
+
+  handleSubmit = async (requestData, { setErrors, setSubmitting }) => {
+    const { dataSource } = this.props;
+    const formData = { requestData, setErrors, setSubmitting };
+    const isFakeJob = pathEq(['activeJob', 'scripts'], [], dataSource);
+
+    if (requestData.file && !isFakeJob) {
+      this.handleOpenModal('confirmationRunJobModalOpen');
+      this.setState({ runModalData: formData });
+      return;
+    }
+
+    await this.updateDataSource(formData);
+  };
+
   handlePastVersionsClick = () => browserHistory.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}/job`);
 
   renderLinks = renderWhenTrue(
@@ -79,7 +103,7 @@ export class SourceComponent extends PureComponent {
         <Link onClick={this.handlePastVersionsClick}>
           <FormattedMessage {...messages.pastVersions} />
         </Link>
-        <Link id="removeDataSourceDesktopBtn" onClick={this.handleRemoveClick}>
+        <Link id="removeDataSourceDesktopBtn" onClick={() => this.handleOpenModal('confirmationRemoveModalOpen')}>
           <FormattedMessage {...messages.removeDataSource} />
         </Link>
       </LinkContainer>
@@ -88,7 +112,7 @@ export class SourceComponent extends PureComponent {
 
   render() {
     const { dataSource, intl } = this.props;
-    const { confirmationModalOpen } = this.state;
+    const { confirmationRemoveModalOpen, confirmationRunJobModalOpen } = this.state;
     const headerTitle = this.props.dataSource.name;
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
@@ -102,7 +126,7 @@ export class SourceComponent extends PureComponent {
         <Formik
           enableReinitialize
           isInitialValid={!!dataSource.fileName}
-          initialValues={omit(IGNORED_FIELDS, dataSource)}
+          initialValues={pick(DATA_SOURCE_FIELDS, dataSource)}
           validationSchema={DATA_SOURCE_SCHEMA}
           onSubmit={this.handleSubmit}
         >
@@ -129,16 +153,29 @@ export class SourceComponent extends PureComponent {
           }}
         </Formik>
         <DataSourceNavigation {...this.props} hideOnDesktop />
-        <Modal isOpen={confirmationModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
+        <Modal isOpen={confirmationRemoveModalOpen} contentLabel="Confirm Removal" style={modalStyles}>
           <ModalTitle>
             <FormattedMessage {...messages.removeTitle} />
           </ModalTitle>
           <ModalActions>
-            <BackButton onClick={this.handleCancelRemove}>
+            <BackButton onClick={() => this.handleCloseModal('confirmationRemoveModalOpen')}>
               <FormattedMessage {...messages.cancelRemoval} />
             </BackButton>
             <NextButton onClick={this.handleConfirmRemove}>
               <FormattedMessage {...messages.confirmRemoval} />
+            </NextButton>
+          </ModalActions>
+        </Modal>
+        <Modal isOpen={confirmationRunJobModalOpen} contentLabel="Confirm Run Last Job" style={modalStyles}>
+          <ModalTitle>
+            <FormattedMessage {...messages.runLastJobTitle} />
+          </ModalTitle>
+          <ModalActions>
+            <BackButton onClick={this.handleRunLastJob()}>
+              <FormattedMessage {...messages.cancelRunLastJob} />
+            </BackButton>
+            <NextButton onClick={this.handleRunLastJob(true)}>
+              <FormattedMessage {...messages.confirmRunLastJob} />
             </NextButton>
           </ModalActions>
         </Modal>
