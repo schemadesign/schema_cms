@@ -17,6 +17,8 @@ exports[`AddUser: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={
@@ -141,6 +143,8 @@ exports[`AddUser: Component should render correctly with users 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle={

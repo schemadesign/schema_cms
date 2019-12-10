@@ -44,7 +44,7 @@ export class Edit extends PureComponent {
 
   async componentDidMount() {
     try {
-      const { pageId } = this.props.match.params;
+      const pageId = getMatchParam(this.props, 'pageId');
 
       await this.props.fetchPage({ pageId });
       this.setState({ loading: false });

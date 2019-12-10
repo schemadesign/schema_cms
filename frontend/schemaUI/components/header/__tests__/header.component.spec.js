@@ -22,6 +22,7 @@ describe('Header: Component', () => {
         backgroundColor: '#FFF',
       },
       iconComponent: 'icon',
+      showButton: true,
     };
 
     const wrapper = render(props);

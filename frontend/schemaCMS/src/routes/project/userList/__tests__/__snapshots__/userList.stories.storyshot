@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|UserList List 1`] = `
-.c16 {
+.c18 {
   height: 155px;
 }
 
-.c18 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,18 +24,13 @@ exports[`Storyshots Project|UserList List 1`] = `
   width: 100%;
 }
 
-.c17 {
+.c19 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c19 {
-  width: calc(50% - 5px);
-  max-width: 240px;
 }
 
 .c0 {
@@ -45,8 +40,7 @@ exports[`Storyshots Project|UserList List 1`] = `
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -54,13 +48,74 @@ exports[`Storyshots Project|UserList List 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
-.c5 {
+.c6 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c5 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c5:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c1 {
@@ -71,23 +126,23 @@ exports[`Storyshots Project|UserList List 1`] = `
   word-break: break-word;
 }
 
-.c10 {
+.c12 {
   display: none;
 }
 
-.c11 {
+.c13 {
   margin-right: 20px;
 }
 
-.c12 {
-  color: #FFF;
-}
-
-.c13 {
+.c14 {
   color: #FFF;
 }
 
 .c15 {
+  color: #FFF;
+}
+
+.c17 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -95,11 +150,11 @@ exports[`Storyshots Project|UserList List 1`] = `
   font-size: 20px;
 }
 
-.c6 {
+.c8 {
   display: none;
 }
 
-.c7 {
+.c9 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -112,11 +167,11 @@ exports[`Storyshots Project|UserList List 1`] = `
   cursor: pointer;
 }
 
-.c7:hover {
+.c9:hover {
   border-bottom-color: #FFF;
 }
 
-.c9 {
+.c11 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -129,11 +184,11 @@ exports[`Storyshots Project|UserList List 1`] = `
   cursor: pointer;
 }
 
-.c9:hover {
+.c11:hover {
   border-bottom-color: #FFF;
 }
 
-.c8 {
+.c10 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -142,13 +197,13 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c20 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c19 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -157,13 +212,7 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
-    width: 240px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c14 {
+  .c16 {
     display: block;
   }
 }
@@ -175,7 +224,21 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c10 {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -193,7 +256,7 @@ exports[`Storyshots Project|UserList List 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c6 {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -383,10 +446,112 @@ exports[`Storyshots Project|UserList List 1`] = `
       >
         <ul
           className="c4"
-        />
+        >
+          <li
+            className="c5"
+          >
+            <a
+              href="/project"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Projects
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/1"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Project details
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/1/datasource"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Data sources
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/1/folder"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Pages
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+            id="logoutBtn"
+            onClick={[Function]}
+          >
+            <span>
+              Log out
+            </span>
+          </li>
+        </ul>
         <ul
-          className="c5"
-        />
+          className="c6"
+        >
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                About Schema CMS
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                API Doc
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                GitHub Repository
+              </span>
+            </a>
+          </li>
+        </ul>
       </div>
       <button
         disabled={false}
@@ -435,13 +600,13 @@ exports[`Storyshots Project|UserList List 1`] = `
     className=""
   >
     <div
-      className="c6"
+      className="c8"
     >
       <div
-        className="c7"
+        className="c9"
       >
         <a
-          className="c8"
+          className="c10"
           href="/project/1"
           onClick={[Function]}
         >
@@ -451,10 +616,10 @@ exports[`Storyshots Project|UserList List 1`] = `
         </a>
       </div>
       <div
-        className="c7"
+        className="c9"
       >
         <a
-          className="c8"
+          className="c10"
           href="/project/1/datasource"
           onClick={[Function]}
         >
@@ -464,10 +629,10 @@ exports[`Storyshots Project|UserList List 1`] = `
         </a>
       </div>
       <div
-        className="c9"
+        className="c11"
       >
         <a
-          className="c8"
+          className="c10"
           href="/project/1/user"
           onClick={[Function]}
         >
@@ -477,10 +642,10 @@ exports[`Storyshots Project|UserList List 1`] = `
         </a>
       </div>
       <div
-        className="c7"
+        className="c9"
       >
         <a
-          className="c8"
+          className="c10"
           href="/project/1/folder"
           onClick={[Function]}
         >
@@ -492,13 +657,13 @@ exports[`Storyshots Project|UserList List 1`] = `
     </div>
   </div>
   <div
-    className="c10"
+    className="c12"
   >
     <div
-      className="c11"
+      className="c13"
     >
       <h2
-        className="c12"
+        className="c14"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -514,7 +679,7 @@ exports[`Storyshots Project|UserList List 1`] = `
         </span>
       </h2>
       <h1
-        className="c13"
+        className="c15"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -536,7 +701,7 @@ exports[`Storyshots Project|UserList List 1`] = `
       className=""
     >
       <div
-        className="c14"
+        className="c16"
       >
         <button
           disabled={false}
@@ -582,23 +747,22 @@ exports[`Storyshots Project|UserList List 1`] = `
     </div>
   </div>
   <div
-    className="c15"
+    className="c17"
   >
     <span>
       Loading...
     </span>
   </div>
   <div
-    className="c16"
+    className="c18"
   >
     <div
-      className="c17"
+      className="c19"
     >
       <div
-        className="c18"
+        className="c20"
       >
         <button
-          className="c19"
           disabled={false}
           onClick={[Function]}
           style={
@@ -611,20 +775,33 @@ exports[`Storyshots Project|UserList List 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
+              "height": "60px",
               "margin": "0",
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "60px",
             }
           }
         >
-          <span>
-            Back
-          </span>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+            />
+          </svg>
         </button>
         <div
-          className="c14"
+          className="c16"
         >
           <button
             disabled={false}
@@ -674,11 +851,11 @@ exports[`Storyshots Project|UserList List 1`] = `
 `;
 
 exports[`Storyshots Project|UserList No data 1`] = `
-.c16 {
+.c18 {
   height: 155px;
 }
 
-.c18 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -697,18 +874,13 @@ exports[`Storyshots Project|UserList No data 1`] = `
   width: 100%;
 }
 
-.c17 {
+.c19 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
   position: fixed;
   width: calc(100% - 40px);
   background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
-}
-
-.c19 {
-  width: calc(50% - 5px);
-  max-width: 240px;
 }
 
 .c0 {
@@ -718,8 +890,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -727,13 +898,74 @@ exports[`Storyshots Project|UserList No data 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
-.c5 {
+.c6 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+}
+
+.c5 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c5:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c1 {
@@ -744,23 +976,23 @@ exports[`Storyshots Project|UserList No data 1`] = `
   word-break: break-word;
 }
 
-.c10 {
+.c12 {
   display: none;
 }
 
-.c11 {
+.c13 {
   margin-right: 20px;
 }
 
-.c12 {
-  color: #FFF;
-}
-
-.c13 {
+.c14 {
   color: #FFF;
 }
 
 .c15 {
+  color: #FFF;
+}
+
+.c17 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -768,11 +1000,11 @@ exports[`Storyshots Project|UserList No data 1`] = `
   font-size: 20px;
 }
 
-.c6 {
+.c8 {
   display: none;
 }
 
-.c7 {
+.c9 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -785,11 +1017,11 @@ exports[`Storyshots Project|UserList No data 1`] = `
   cursor: pointer;
 }
 
-.c7:hover {
+.c9:hover {
   border-bottom-color: #FFF;
 }
 
-.c9 {
+.c11 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -802,11 +1034,11 @@ exports[`Storyshots Project|UserList No data 1`] = `
   cursor: pointer;
 }
 
-.c9:hover {
+.c11:hover {
   border-bottom-color: #FFF;
 }
 
-.c8 {
+.c10 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -815,13 +1047,13 @@ exports[`Storyshots Project|UserList No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c20 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c19 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -830,13 +1062,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
-    width: 240px;
-  }
-}
-
-@media (min-width:1040px) {
-  .c14 {
+  .c16 {
     display: block;
   }
 }
@@ -848,7 +1074,21 @@ exports[`Storyshots Project|UserList No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c10 {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -866,7 +1106,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c6 {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1056,10 +1296,112 @@ exports[`Storyshots Project|UserList No data 1`] = `
       >
         <ul
           className="c4"
-        />
+        >
+          <li
+            className="c5"
+          >
+            <a
+              href="/project"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Projects
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/1"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Project details
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/1/datasource"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Data sources
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/1/folder"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Pages
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+            id="logoutBtn"
+            onClick={[Function]}
+          >
+            <span>
+              Log out
+            </span>
+          </li>
+        </ul>
         <ul
-          className="c5"
-        />
+          className="c6"
+        >
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                About Schema CMS
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                API Doc
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                GitHub Repository
+              </span>
+            </a>
+          </li>
+        </ul>
       </div>
       <button
         disabled={false}
@@ -1108,13 +1450,13 @@ exports[`Storyshots Project|UserList No data 1`] = `
     className=""
   >
     <div
-      className="c6"
+      className="c8"
     >
       <div
-        className="c7"
+        className="c9"
       >
         <a
-          className="c8"
+          className="c10"
           href="/project/1"
           onClick={[Function]}
         >
@@ -1124,10 +1466,10 @@ exports[`Storyshots Project|UserList No data 1`] = `
         </a>
       </div>
       <div
-        className="c7"
+        className="c9"
       >
         <a
-          className="c8"
+          className="c10"
           href="/project/1/datasource"
           onClick={[Function]}
         >
@@ -1137,10 +1479,10 @@ exports[`Storyshots Project|UserList No data 1`] = `
         </a>
       </div>
       <div
-        className="c9"
+        className="c11"
       >
         <a
-          className="c8"
+          className="c10"
           href="/project/1/user"
           onClick={[Function]}
         >
@@ -1150,10 +1492,10 @@ exports[`Storyshots Project|UserList No data 1`] = `
         </a>
       </div>
       <div
-        className="c7"
+        className="c9"
       >
         <a
-          className="c8"
+          className="c10"
           href="/project/1/folder"
           onClick={[Function]}
         >
@@ -1165,13 +1507,13 @@ exports[`Storyshots Project|UserList No data 1`] = `
     </div>
   </div>
   <div
-    className="c10"
+    className="c12"
   >
     <div
-      className="c11"
+      className="c13"
     >
       <h2
-        className="c12"
+        className="c14"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -1187,7 +1529,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
         </span>
       </h2>
       <h1
-        className="c13"
+        className="c15"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -1209,7 +1551,7 @@ exports[`Storyshots Project|UserList No data 1`] = `
       className=""
     >
       <div
-        className="c14"
+        className="c16"
       >
         <button
           disabled={false}
@@ -1255,23 +1597,22 @@ exports[`Storyshots Project|UserList No data 1`] = `
     </div>
   </div>
   <div
-    className="c15"
+    className="c17"
   >
     <span>
       Loading...
     </span>
   </div>
   <div
-    className="c16"
+    className="c18"
   >
     <div
-      className="c17"
+      className="c19"
     >
       <div
-        className="c18"
+        className="c20"
       >
         <button
-          className="c19"
           disabled={false}
           onClick={[Function]}
           style={
@@ -1284,20 +1625,33 @@ exports[`Storyshots Project|UserList No data 1`] = `
               "display": "inline-block",
               "fill": "#FFF",
               "fontSize": "18px",
+              "height": "60px",
               "margin": "0",
               "minHeight": "48px",
               "outline": "none",
               "padding": "0",
               "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "width": "60px",
             }
           }
         >
-          <span>
-            Back
-          </span>
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M25.857 17L28 19.083 18.828 28H45v3H18.828L28 39.917 25.857 42 13 29.5 25.857 17z"
+            />
+          </svg>
         </button>
         <div
-          className="c14"
+          className="c16"
         >
           <button
             disabled={false}

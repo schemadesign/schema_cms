@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Filters } from './filters.component';
-import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
@@ -34,6 +34,5 @@ export const defaultProps = {
 };
 
 storiesOf('Data Source|Filters', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <Filters {...defaultProps} />);

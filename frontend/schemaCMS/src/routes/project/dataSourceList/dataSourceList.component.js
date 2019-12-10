@@ -28,6 +28,7 @@ import { HeaderItem, HeaderList } from '../list/list.styles';
 import { ListItemTitle } from '../../../shared/components/listComponents/listItem.styles';
 import { PREVIEW_PAGE, RESULT_PAGE, SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -54,7 +55,7 @@ export class DataSourceList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const projectId = this.props.match.params.projectId;
+      const projectId = getMatchParam(this.props, 'projectId');
 
       await this.props.fetchDataSources({ projectId });
       this.setState({ loading: false });
@@ -70,17 +71,6 @@ export class DataSourceList extends PureComponent {
     this.props.cancelFetchListLoop();
   }
 
-  getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => ({
-    headerTitle,
-    headerSubtitle,
-    secondaryMenuItems: [
-      {
-        label: this.props.intl.formatMessage(messages.projectDetails),
-        to: `/project/${this.props.match.params.projectId}`,
-      },
-    ],
-  });
-
   getLoadingConfig = (loading, error, dataSources) => ({
     loading,
     error,
@@ -94,10 +84,10 @@ export class DataSourceList extends PureComponent {
     [T, always(RESULT_PAGE)],
   ]);
 
-  handleShowProject = () => this.props.history.push(`/project/${this.props.match.params.projectId}`);
+  handleShowProject = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}`);
 
   handleCreateDataSource = () =>
-    this.props.history.push(`/project/${this.props.match.params.projectId}/datasource/add`);
+    this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/datasource/add`);
 
   handleShowDataSource = ({ id, activeJob }) => {
     const dataSourcePage = this.getDataSourcePage(activeJob);
@@ -169,13 +159,12 @@ export class DataSourceList extends PureComponent {
     const { dataSources = [], match } = this.props;
     const title = this.props.intl.formatMessage(messages.title);
     const subtitle = this.props.intl.formatMessage(messages.subTitle);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
     const loadingConfig = this.getLoadingConfig(loading, error, dataSources);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.title)} />
-        <TopHeader {...topHeaderConfig} />
+        <TopHeader headerSubtitle={subtitle} headerTitle={title} projectId={getMatchParam(this.props, 'projectId')} />
         <ProjectTabs active={SOURCES} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={title} subtitle={subtitle}>
           <PlusButton id="createDataSourceDesktopBtn" onClick={this.handleCreateDataSource} />

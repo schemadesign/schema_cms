@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { PageBlockList } from './pageBlockList.component';
-import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 
 export const defaultProps = {
@@ -36,6 +36,5 @@ export const defaultProps = {
 };
 
 storiesOf('Page|PageBlockList', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <PageBlockList {...defaultProps} />);

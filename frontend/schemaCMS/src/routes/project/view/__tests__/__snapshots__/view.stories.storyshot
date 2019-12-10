@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|View Default 1`] = `
-.c13 {
+.c14 {
   height: 155px;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Project|View Default 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -40,8 +40,7 @@ exports[`Storyshots Project|View Default 1`] = `
 .c4 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -49,30 +48,74 @@ exports[`Storyshots Project|View Default 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
-}
-
-.c6 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .c7 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c6 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
 }
 
-.c7 a {
+.c6 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c7 a {
-  padding: 8px 0;
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c8 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c8:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c2 {
@@ -83,7 +126,7 @@ exports[`Storyshots Project|View Default 1`] = `
   word-break: break-word;
 }
 
-.c12 {
+.c13 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -91,11 +134,11 @@ exports[`Storyshots Project|View Default 1`] = `
   font-size: 20px;
 }
 
-.c8 {
+.c9 {
   display: none;
 }
 
-.c11 {
+.c12 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -108,11 +151,11 @@ exports[`Storyshots Project|View Default 1`] = `
   cursor: pointer;
 }
 
-.c11:hover {
+.c12:hover {
   border-bottom-color: #FFF;
 }
 
-.c9 {
+.c10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -125,11 +168,11 @@ exports[`Storyshots Project|View Default 1`] = `
   cursor: pointer;
 }
 
-.c9:hover {
+.c10:hover {
   border-bottom-color: #FFF;
 }
 
-.c10 {
+.c11 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -154,7 +197,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -163,7 +206,7 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -178,7 +221,21 @@ exports[`Storyshots Project|View Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c4 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c6 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -239,7 +296,9 @@ exports[`Storyshots Project|View Default 1`] = `
                   }
                 }
               >
-                Project
+                <span>
+                  Project
+                </span>
               </h2>
               <h1
                 className="c3"
@@ -339,7 +398,9 @@ exports[`Storyshots Project|View Default 1`] = `
                   }
                 }
               >
-                Project
+                <span>
+                  Project
+                </span>
               </h2>
               <h1
                 className="c3"
@@ -364,19 +425,70 @@ exports[`Storyshots Project|View Default 1`] = `
           >
             <ul
               className="c5"
-            />
-            <ul
-              className="c6"
             >
               <li
-                className="c7"
+                className="c6"
               >
                 <a
-                  href="/logout"
+                  href="/project"
                   id={null}
                   onClick={[Function]}
                 >
-                  Log Out
+                  <span>
+                    Projects
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c6"
+                id="logoutBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Log out
+                </span>
+              </li>
+            </ul>
+            <ul
+              className="c7"
+            >
+              <li
+                className="c8"
+              >
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    About Schema CMS
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c8"
+              >
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    API Doc
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c8"
+              >
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    GitHub Repository
+                  </span>
                 </a>
               </li>
             </ul>
@@ -428,13 +540,13 @@ exports[`Storyshots Project|View Default 1`] = `
         className=""
       >
         <div
-          className="c8"
+          className="c9"
         >
           <div
-            className="c9"
+            className="c10"
           >
             <a
-              className="c10"
+              className="c11"
               href="/project/100"
               onClick={[Function]}
             >
@@ -444,10 +556,10 @@ exports[`Storyshots Project|View Default 1`] = `
             </a>
           </div>
           <div
-            className="c11"
+            className="c12"
           >
             <a
-              className="c10"
+              className="c11"
               href="/project/100/datasource"
               onClick={[Function]}
             >
@@ -457,10 +569,10 @@ exports[`Storyshots Project|View Default 1`] = `
             </a>
           </div>
           <div
-            className="c11"
+            className="c12"
           >
             <a
-              className="c10"
+              className="c11"
               href="/project/100/user"
               onClick={[Function]}
             >
@@ -470,10 +582,10 @@ exports[`Storyshots Project|View Default 1`] = `
             </a>
           </div>
           <div
-            className="c11"
+            className="c12"
           >
             <a
-              className="c10"
+              className="c11"
               href="/project/100/folder"
               onClick={[Function]}
             >
@@ -485,7 +597,7 @@ exports[`Storyshots Project|View Default 1`] = `
         </div>
       </div>
       <div
-        className="c12"
+        className="c13"
       >
         <span>
           Loading...
@@ -493,13 +605,13 @@ exports[`Storyshots Project|View Default 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className="c14"
     >
       <div
-        className="c14"
+        className="c15"
       >
         <div
-          className="c15"
+          className="c16"
         >
           <button
             disabled={false}
@@ -548,11 +660,11 @@ exports[`Storyshots Project|View Default 1`] = `
 `;
 
 exports[`Storyshots Project|View No data 1`] = `
-.c13 {
+.c14 {
   height: 155px;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -571,7 +683,7 @@ exports[`Storyshots Project|View No data 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c15 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -587,8 +699,7 @@ exports[`Storyshots Project|View No data 1`] = `
 .c4 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -596,30 +707,74 @@ exports[`Storyshots Project|View No data 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
-}
-
-.c6 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .c7 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c6 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
 }
 
-.c7 a {
+.c6 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c7 a {
-  padding: 8px 0;
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c8 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c8:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c2 {
@@ -630,7 +785,7 @@ exports[`Storyshots Project|View No data 1`] = `
   word-break: break-word;
 }
 
-.c12 {
+.c13 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -638,11 +793,11 @@ exports[`Storyshots Project|View No data 1`] = `
   font-size: 20px;
 }
 
-.c8 {
+.c9 {
   display: none;
 }
 
-.c11 {
+.c12 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -655,11 +810,11 @@ exports[`Storyshots Project|View No data 1`] = `
   cursor: pointer;
 }
 
-.c11:hover {
+.c12:hover {
   border-bottom-color: #FFF;
 }
 
-.c9 {
+.c10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -672,11 +827,11 @@ exports[`Storyshots Project|View No data 1`] = `
   cursor: pointer;
 }
 
-.c9:hover {
+.c10:hover {
   border-bottom-color: #FFF;
 }
 
-.c10 {
+.c11 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -701,7 +856,7 @@ exports[`Storyshots Project|View No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -710,7 +865,7 @@ exports[`Storyshots Project|View No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c15 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -725,7 +880,21 @@ exports[`Storyshots Project|View No data 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c4 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c6 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -786,7 +955,9 @@ exports[`Storyshots Project|View No data 1`] = `
                   }
                 }
               >
-                Project
+                <span>
+                  Project
+                </span>
               </h2>
               <h1
                 className="c3"
@@ -884,7 +1055,9 @@ exports[`Storyshots Project|View No data 1`] = `
                   }
                 }
               >
-                Project
+                <span>
+                  Project
+                </span>
               </h2>
               <h1
                 className="c3"
@@ -907,19 +1080,70 @@ exports[`Storyshots Project|View No data 1`] = `
           >
             <ul
               className="c5"
-            />
-            <ul
-              className="c6"
             >
               <li
-                className="c7"
+                className="c6"
               >
                 <a
-                  href="/logout"
+                  href="/project"
                   id={null}
                   onClick={[Function]}
                 >
-                  Log Out
+                  <span>
+                    Projects
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c6"
+                id="logoutBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Log out
+                </span>
+              </li>
+            </ul>
+            <ul
+              className="c7"
+            >
+              <li
+                className="c8"
+              >
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    About Schema CMS
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c8"
+              >
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    API Doc
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c8"
+              >
+                <a
+                  href="/"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    GitHub Repository
+                  </span>
                 </a>
               </li>
             </ul>
@@ -971,13 +1195,13 @@ exports[`Storyshots Project|View No data 1`] = `
         className=""
       >
         <div
-          className="c8"
+          className="c9"
         >
           <div
-            className="c9"
+            className="c10"
           >
             <a
-              className="c10"
+              className="c11"
               href="/project/100"
               onClick={[Function]}
             >
@@ -987,10 +1211,10 @@ exports[`Storyshots Project|View No data 1`] = `
             </a>
           </div>
           <div
-            className="c11"
+            className="c12"
           >
             <a
-              className="c10"
+              className="c11"
               href="/project/100/datasource"
               onClick={[Function]}
             >
@@ -1000,10 +1224,10 @@ exports[`Storyshots Project|View No data 1`] = `
             </a>
           </div>
           <div
-            className="c11"
+            className="c12"
           >
             <a
-              className="c10"
+              className="c11"
               href="/project/100/user"
               onClick={[Function]}
             >
@@ -1013,10 +1237,10 @@ exports[`Storyshots Project|View No data 1`] = `
             </a>
           </div>
           <div
-            className="c11"
+            className="c12"
           >
             <a
-              className="c10"
+              className="c11"
               href="/project/100/folder"
               onClick={[Function]}
             >
@@ -1028,7 +1252,7 @@ exports[`Storyshots Project|View No data 1`] = `
         </div>
       </div>
       <div
-        className="c12"
+        className="c13"
       >
         <span>
           Loading...
@@ -1036,13 +1260,13 @@ exports[`Storyshots Project|View No data 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className="c14"
     >
       <div
-        className="c14"
+        className="c15"
       >
         <div
-          className="c15"
+          className="c16"
         >
           <button
             disabled={false}

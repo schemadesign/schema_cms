@@ -12,13 +12,11 @@ export class HeaderComponent extends PureComponent {
     customButtonStyles: PropTypes.object,
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     iconComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    onButtonClick: PropTypes.func,
     buttonProps: PropTypes.object,
   };
 
   static defaultProps = {
     iconComponent: <MenuIcon />,
-    onButtonClick: () => {},
     customStyles: {},
     customButtonStyles: {},
     buttonProps: {},

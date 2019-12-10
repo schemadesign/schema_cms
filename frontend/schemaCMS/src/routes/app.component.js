@@ -23,7 +23,6 @@ export class App extends PureComponent {
     match: PropTypes.object.isRequired,
     startup: PropTypes.func.isRequired,
     isAdmin: PropTypes.bool,
-    history: PropTypes.object,
   };
 
   static defaultProps = {
@@ -49,7 +48,8 @@ export class App extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const theme = this.props.isAdmin ? Theme.dark : Theme.light;
+    const { isAdmin } = this.props;
+    const theme = isAdmin ? Theme.dark : Theme.light;
 
     return (
       <IntlProvider key={DEFAULT_LOCALE} locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
@@ -61,7 +61,7 @@ export class App extends PureComponent {
                 {pageTitle => <Helmet titleTemplate={`%s - ${pageTitle}`} defaultTitle={pageTitle} />}
               </FormattedMessage>
               <GlobalStyle />
-              <DesktopTopHeader history={this.props.history} />
+              <DesktopTopHeader isAdmin={isAdmin} />
               <Content>
                 <LoadingWrapper loading={loading} error={error}>
                   {this.renderContent()}

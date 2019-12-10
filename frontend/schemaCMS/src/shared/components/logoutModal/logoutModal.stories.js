@@ -30,11 +30,7 @@ export class LogoutModalWrapper extends PureComponent {
         <Button inverse onClick={this.handleShowModal} customStyles={{ margin: 40, padding: '0 20px' }}>
           Show <b>LogoutModal</b>
         </Button>
-        <LogoutModal
-          logoutModalOpen={logoutModalOpen}
-          onConfirm={this.handleHideModal}
-          onCancel={this.handleHideModal}
-        />
+        <LogoutModal logoutModalOpen={logoutModalOpen} onAction={this.handleHideModal} redirectUrl="redirectUrl" />
       </Fragment>
     );
   }

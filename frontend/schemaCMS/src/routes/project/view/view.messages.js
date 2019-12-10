@@ -9,6 +9,10 @@ export default defineMessages({
     id: 'project.view.pageTitle',
     defaultMessage: 'Project',
   },
+  subTitle: {
+    id: 'project.view.subTitle',
+    defaultMessage: 'Project',
+  },
   title: {
     id: 'project.view.title',
     defaultMessage: 'Project',

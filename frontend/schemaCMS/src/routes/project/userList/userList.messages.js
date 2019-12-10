@@ -26,4 +26,8 @@ export default defineMessages({
     id: 'project.userList.back',
     defaultMessage: 'Back',
   },
+  projectDetails: {
+    id: 'project.userList.projectDetails',
+    defaultMessage: 'Project details',
+  },
 });

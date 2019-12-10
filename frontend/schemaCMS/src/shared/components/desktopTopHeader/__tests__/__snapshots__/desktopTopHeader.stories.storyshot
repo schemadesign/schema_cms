@@ -4,8 +4,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 .c10 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -13,13 +12,31 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .c13 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .c12 {
@@ -46,6 +63,12 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
 }
 
 .c14 a {
@@ -55,8 +78,8 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   display: block;
 }
 
-.c14 a {
-  padding: 8px 0;
+.c14:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c8 {
@@ -151,6 +174,20 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   fill: #FFF;
   width: 96px;
   height: 16px;
+}
+
+@media (min-width:1040px) {
+  .c10 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
 }
 
 @media (min-width:1040px) {
@@ -354,6 +391,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
       </div>
       <div
         className="c7"
+        onClick={[Function]}
       />
       <div
         style={
@@ -415,6 +453,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
         </div>
         <div
           className="c10"
+          onClick={[Function]}
         >
           <ul
             className="c11"
@@ -423,22 +462,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               className="c12"
             >
               <a
-                href="/path"
+                href="/project"
                 id={null}
                 onClick={[Function]}
               >
-                Data Sources
-              </a>
-            </li>
-            <li
-              className="c12"
-            >
-              <a
-                href="/path"
-                id={null}
-                onClick={[Function]}
-              >
-                Charts
+                <span>
+                  Projects
+                </span>
               </a>
             </li>
           </ul>
@@ -449,19 +479,40 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               className="c14"
             >
               <a
-                href="/logout"
+                href="/"
                 id={null}
                 onClick={[Function]}
               >
-                Log Out
+                <span>
+                  About Schema CMS
+                </span>
               </a>
             </li>
             <li
               className="c14"
-              id="id"
-              onClick={[Function]}
             >
-              Click action
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  API Doc
+                </span>
+              </a>
+            </li>
+            <li
+              className="c14"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  GitHub Repository
+                </span>
+              </a>
             </li>
           </ul>
         </div>
@@ -516,8 +567,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 .c12 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -525,13 +575,31 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .c15 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .c14 {
@@ -558,6 +626,12 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
 }
 
 .c16 a {
@@ -567,8 +641,8 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   display: block;
 }
 
-.c16 a {
-  padding: 8px 0;
+.c16:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c10 {
@@ -690,6 +764,20 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
 }
 
 @media (min-width:1040px) {
@@ -916,6 +1004,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
       </div>
       <div
         className="c9"
+        onClick={[Function]}
       />
       <div
         style={
@@ -977,6 +1066,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
         </div>
         <div
           className="c12"
+          onClick={[Function]}
         >
           <ul
             className="c13"
@@ -985,22 +1075,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               className="c14"
             >
               <a
-                href="/path"
+                href="/project"
                 id={null}
                 onClick={[Function]}
               >
-                Data Sources
-              </a>
-            </li>
-            <li
-              className="c14"
-            >
-              <a
-                href="/path"
-                id={null}
-                onClick={[Function]}
-              >
-                Charts
+                <span>
+                  Projects
+                </span>
               </a>
             </li>
           </ul>
@@ -1011,19 +1092,40 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               className="c16"
             >
               <a
-                href="/logout"
+                href="/"
                 id={null}
                 onClick={[Function]}
               >
-                Log Out
+                <span>
+                  About Schema CMS
+                </span>
               </a>
             </li>
             <li
               className="c16"
-              id="id"
-              onClick={[Function]}
             >
-              Click action
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  API Doc
+                </span>
+              </a>
+            </li>
+            <li
+              className="c16"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  GitHub Repository
+                </span>
+              </a>
             </li>
           </ul>
         </div>
@@ -1078,8 +1180,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
 .c12 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1087,13 +1188,31 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .c15 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .c14 {
@@ -1120,6 +1239,12 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
 }
 
 .c16 a {
@@ -1129,8 +1254,8 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   display: block;
 }
 
-.c16 a {
-  padding: 8px 0;
+.c16:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c10 {
@@ -1252,6 +1377,20 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@media (min-width:1040px) {
+  .c12 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c14 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
 }
 
 @media (min-width:1040px) {
@@ -1474,6 +1613,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
       </div>
       <div
         className="c9"
+        onClick={[Function]}
       />
       <div
         style={
@@ -1535,6 +1675,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
         </div>
         <div
           className="c12"
+          onClick={[Function]}
         >
           <ul
             className="c13"
@@ -1543,22 +1684,26 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               className="c14"
             >
               <a
-                href="/path"
+                href="/project"
                 id={null}
                 onClick={[Function]}
               >
-                Data Sources
+                <span>
+                  Projects
+                </span>
               </a>
             </li>
             <li
               className="c14"
             >
               <a
-                href="/path"
+                href="/user"
                 id={null}
                 onClick={[Function]}
               >
-                Charts
+                <span>
+                  Users
+                </span>
               </a>
             </li>
           </ul>
@@ -1569,19 +1714,40 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
               className="c16"
             >
               <a
-                href="/logout"
+                href="/"
                 id={null}
                 onClick={[Function]}
               >
-                Log Out
+                <span>
+                  About Schema CMS
+                </span>
               </a>
             </li>
             <li
               className="c16"
-              id="id"
-              onClick={[Function]}
             >
-              Click action
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  API Doc
+                </span>
+              </a>
+            </li>
+            <li
+              className="c16"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  GitHub Repository
+                </span>
+              </a>
             </li>
           </ul>
         </div>

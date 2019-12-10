@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|DataSourceList Empty 1`] = `
-.c17 {
+.c18 {
   height: 155px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c19 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -40,8 +40,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -49,30 +48,74 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
-}
-
-.c5 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .c6 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
 }
 
-.c6 a {
+.c5 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c6 a {
-  padding: 8px 0;
+.c5:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c1 {
@@ -83,23 +126,23 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   word-break: break-word;
 }
 
-.c11 {
+.c12 {
   display: none;
 }
 
-.c12 {
-  margin-right: 20px;
-}
-
 .c13 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c14 {
   color: #FFF;
 }
 
-.c16 {
+.c15 {
+  color: #FFF;
+}
+
+.c17 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -107,11 +150,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   font-size: 20px;
 }
 
-.c7 {
+.c8 {
   display: none;
 }
 
-.c8 {
+.c9 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -124,11 +167,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom-color: #FFF;
 }
 
-.c10 {
+.c11 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -141,11 +184,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   cursor: pointer;
 }
 
-.c10:hover {
+.c11:hover {
   border-bottom-color: #FFF;
 }
 
-.c9 {
+.c10 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -154,13 +197,13 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c20 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -169,7 +212,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c16 {
     display: block;
   }
 }
@@ -181,7 +224,21 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -199,7 +256,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c7 {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -384,19 +441,109 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
         >
           <ul
             className="c4"
-          />
-          <ul
-            className="c5"
           >
             <li
-              className="c6"
+              className="c5"
+            >
+              <a
+                href="/project"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Projects
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
             >
               <a
                 href="/project/1"
                 id={null}
                 onClick={[Function]}
               >
-                Project details
+                <span>
+                  Project details
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+            >
+              <a
+                href="/project/1/datasource"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Data sources
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+            >
+              <a
+                href="/project/1/folder"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Pages
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+              id="logoutBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </li>
+          </ul>
+          <ul
+            className="c6"
+          >
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  About Schema CMS
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  API Doc
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  GitHub Repository
+                </span>
               </a>
             </li>
           </ul>
@@ -448,13 +595,13 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
       className=""
     >
       <div
-        className="c7"
+        className="c8"
       >
         <div
-          className="c8"
+          className="c9"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1"
             onClick={[Function]}
           >
@@ -464,10 +611,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="c10"
+          className="c11"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -477,10 +624,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="c8"
+          className="c9"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -490,10 +637,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="c8"
+          className="c9"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1/folder"
             onClick={[Function]}
           >
@@ -505,13 +652,13 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="c11"
+      className="c12"
     >
       <div
-        className="c12"
+        className="c13"
       >
         <h2
-          className="c13"
+          className="c14"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -525,7 +672,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           Data Sources
         </h2>
         <h1
-          className="c14"
+          className="c15"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -545,7 +692,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
         className=""
       >
         <div
-          className="c15"
+          className="c16"
         >
           <button
             disabled={false}
@@ -591,20 +738,20 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="c16"
+      className="c17"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c17"
+      className="c18"
     >
       <div
-        className="c18"
+        className="c19"
       >
         <div
-          className="c19"
+          className="c20"
         >
           <button
             disabled={false}
@@ -646,7 +793,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             </svg>
           </button>
           <div
-            className="c15"
+            className="c16"
           >
             <button
               disabled={false}
@@ -697,11 +844,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 `;
 
 exports[`Storyshots Project|DataSourceList With data source 1`] = `
-.c17 {
+.c18 {
   height: 155px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -720,7 +867,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c19 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -736,8 +883,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -745,30 +891,74 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
-}
-
-.c5 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .c6 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
 }
 
-.c6 a {
+.c5 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c6 a {
-  padding: 8px 0;
+.c5:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c1 {
@@ -779,23 +969,23 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   word-break: break-word;
 }
 
-.c11 {
+.c12 {
   display: none;
 }
 
-.c12 {
-  margin-right: 20px;
-}
-
 .c13 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c14 {
   color: #FFF;
 }
 
-.c16 {
+.c15 {
+  color: #FFF;
+}
+
+.c17 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -803,11 +993,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   font-size: 20px;
 }
 
-.c7 {
+.c8 {
   display: none;
 }
 
-.c8 {
+.c9 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -820,11 +1010,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom-color: #FFF;
 }
 
-.c10 {
+.c11 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -837,11 +1027,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   cursor: pointer;
 }
 
-.c10:hover {
+.c11:hover {
   border-bottom-color: #FFF;
 }
 
-.c9 {
+.c10 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -850,13 +1040,13 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c20 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -865,7 +1055,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c16 {
     display: block;
   }
 }
@@ -877,7 +1067,21 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -895,7 +1099,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c7 {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1080,19 +1284,109 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
         >
           <ul
             className="c4"
-          />
-          <ul
-            className="c5"
           >
             <li
-              className="c6"
+              className="c5"
+            >
+              <a
+                href="/project"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Projects
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
             >
               <a
                 href="/project/1"
                 id={null}
                 onClick={[Function]}
               >
-                Project details
+                <span>
+                  Project details
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+            >
+              <a
+                href="/project/1/datasource"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Data sources
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+            >
+              <a
+                href="/project/1/folder"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Pages
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+              id="logoutBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </li>
+          </ul>
+          <ul
+            className="c6"
+          >
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  About Schema CMS
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  API Doc
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  GitHub Repository
+                </span>
               </a>
             </li>
           </ul>
@@ -1144,13 +1438,13 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
       className=""
     >
       <div
-        className="c7"
+        className="c8"
       >
         <div
-          className="c8"
+          className="c9"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1"
             onClick={[Function]}
           >
@@ -1160,10 +1454,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="c10"
+          className="c11"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -1173,10 +1467,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="c8"
+          className="c9"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -1186,10 +1480,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="c8"
+          className="c9"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1/folder"
             onClick={[Function]}
           >
@@ -1201,13 +1495,13 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="c11"
+      className="c12"
     >
       <div
-        className="c12"
+        className="c13"
       >
         <h2
-          className="c13"
+          className="c14"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -1221,7 +1515,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           Data Sources
         </h2>
         <h1
-          className="c14"
+          className="c15"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -1241,7 +1535,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
         className=""
       >
         <div
-          className="c15"
+          className="c16"
         >
           <button
             disabled={false}
@@ -1287,20 +1581,20 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="c16"
+      className="c17"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c17"
+      className="c18"
     >
       <div
-        className="c18"
+        className="c19"
       >
         <div
-          className="c19"
+          className="c20"
         >
           <button
             disabled={false}
@@ -1342,7 +1636,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             </svg>
           </button>
           <div
-            className="c15"
+            className="c16"
           >
             <button
               disabled={false}
@@ -1393,11 +1687,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 `;
 
 exports[`Storyshots Project|DataSourceList With jobs 1`] = `
-.c17 {
+.c18 {
   height: 155px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1416,7 +1710,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c19 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -1432,8 +1726,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1441,30 +1734,74 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
-}
-
-.c5 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .c6 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
 }
 
-.c6 a {
+.c5 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c6 a {
-  padding: 8px 0;
+.c5:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c7 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c7 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c7:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c1 {
@@ -1475,23 +1812,23 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   word-break: break-word;
 }
 
-.c11 {
+.c12 {
   display: none;
 }
 
-.c12 {
-  margin-right: 20px;
-}
-
 .c13 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c14 {
   color: #FFF;
 }
 
-.c16 {
+.c15 {
+  color: #FFF;
+}
+
+.c17 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -1499,11 +1836,11 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   font-size: 20px;
 }
 
-.c7 {
+.c8 {
   display: none;
 }
 
-.c8 {
+.c9 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1516,11 +1853,11 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom-color: #FFF;
 }
 
-.c10 {
+.c11 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1533,11 +1870,11 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   cursor: pointer;
 }
 
-.c10:hover {
+.c11:hover {
   border-bottom-color: #FFF;
 }
 
-.c9 {
+.c10 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -1546,13 +1883,13 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c20 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c19 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1561,7 +1898,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c16 {
     display: block;
   }
 }
@@ -1573,7 +1910,21 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c11 {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1591,7 +1942,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c7 {
+  .c8 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1776,19 +2127,109 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
         >
           <ul
             className="c4"
-          />
-          <ul
-            className="c5"
           >
             <li
-              className="c6"
+              className="c5"
+            >
+              <a
+                href="/project"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Projects
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
             >
               <a
                 href="/project/1"
                 id={null}
                 onClick={[Function]}
               >
-                Project details
+                <span>
+                  Project details
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+            >
+              <a
+                href="/project/1/datasource"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Data sources
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+            >
+              <a
+                href="/project/1/folder"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  Pages
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+              id="logoutBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Log out
+              </span>
+            </li>
+          </ul>
+          <ul
+            className="c6"
+          >
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  About Schema CMS
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  API Doc
+                </span>
+              </a>
+            </li>
+            <li
+              className="c7"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  GitHub Repository
+                </span>
               </a>
             </li>
           </ul>
@@ -1840,13 +2281,13 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
       className=""
     >
       <div
-        className="c7"
+        className="c8"
       >
         <div
-          className="c8"
+          className="c9"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1"
             onClick={[Function]}
           >
@@ -1856,10 +2297,10 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="c10"
+          className="c11"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -1869,10 +2310,10 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="c8"
+          className="c9"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -1882,10 +2323,10 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="c8"
+          className="c9"
         >
           <a
-            className="c9"
+            className="c10"
             href="/project/1/folder"
             onClick={[Function]}
           >
@@ -1897,13 +2338,13 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="c11"
+      className="c12"
     >
       <div
-        className="c12"
+        className="c13"
       >
         <h2
-          className="c13"
+          className="c14"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -1917,7 +2358,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           Data Sources
         </h2>
         <h1
-          className="c14"
+          className="c15"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -1937,7 +2378,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
         className=""
       >
         <div
-          className="c15"
+          className="c16"
         >
           <button
             disabled={false}
@@ -1983,20 +2424,20 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="c16"
+      className="c17"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c17"
+      className="c18"
     >
       <div
-        className="c18"
+        className="c19"
       >
         <div
-          className="c19"
+          className="c20"
         >
           <button
             disabled={false}
@@ -2038,7 +2479,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
             </svg>
           </button>
           <div
-            className="c15"
+            className="c16"
           >
             <button
               disabled={false}

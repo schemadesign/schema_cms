@@ -11,6 +11,7 @@ import {
   Navigation,
   NavigationButton,
   NavigationContent,
+  NavigationLink,
 } from './navigation.styles';
 import messages from './navigation.messages';
 
@@ -120,5 +121,17 @@ export class NextButton extends PureComponent {
         {this.renderContent({ loading, children })}
       </NavigationButton>
     );
+  }
+}
+
+export class ConfirmLink extends PureComponent {
+  static propTypes = {
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
+  };
+
+  render() {
+    const { children, ...restProps } = this.props;
+
+    return <NavigationLink {...restProps}>{children}</NavigationLink>;
   }
 }

@@ -91,7 +91,7 @@ export class AddUser extends PureComponent {
     });
   };
 
-  handleBackClick = () => this.props.history.push(`/project/${this.props.match.params.projectId}/user`);
+  handleBackClick = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/user`);
 
   renderAction = ({ id }, index) => {
     const { usersInProject } = this.props;

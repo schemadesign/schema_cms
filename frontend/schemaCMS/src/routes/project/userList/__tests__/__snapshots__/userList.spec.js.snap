@@ -17,6 +17,9 @@ exports[`UserList: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
+    primaryMenuItems={Array []}
+    projectId="1"
+    secondaryMenuItems={Array []}
   />
   <ProjectTabs
     active="users"
@@ -60,8 +63,7 @@ exports[`UserList: Component should render correctly 1`] = `
     hideOnDesktop={true}
     right={false}
   >
-    <BackButton
-      disabled={false}
+    <BackArrowButton
       onClick={[Function]}
     >
       <FormattedMessage
@@ -69,7 +71,7 @@ exports[`UserList: Component should render correctly 1`] = `
         id="project.userList.back"
         values={Object {}}
       />
-    </BackButton>
+    </BackArrowButton>
     <PlusButton
       hideOnDesktop={false}
       id="addUserBtn"

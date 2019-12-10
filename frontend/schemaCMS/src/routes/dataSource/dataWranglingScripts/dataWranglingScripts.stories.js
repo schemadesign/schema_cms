@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { DataWranglingScripts } from './dataWranglingScripts.component';
 
@@ -28,6 +28,5 @@ export const defaultProps = {
 };
 
 storiesOf('Data Source|DataWranglingScripts', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <DataWranglingScripts {...defaultProps} />);

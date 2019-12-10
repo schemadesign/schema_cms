@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import DataSource from './dataSource.component';
-import { withRouter, withTheme } from '../../.storybook/decorators';
+import { withTheme } from '../../.storybook/decorators';
 
 export const defaultProps = {
   dataSource: {
@@ -31,7 +31,6 @@ export const propsWithActiveJob = {
 };
 
 storiesOf('Data Source|DataSource', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <DataSource {...defaultProps} />)
   .add('With active job', () => <DataSource {...propsWithActiveJob} />);

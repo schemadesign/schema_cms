@@ -77,6 +77,31 @@ exports[`TopHeader: Component should render correctly 1`] = `
             Charts
           </Link>
         </Styled(styled.li)>
+        <Styled(styled.li)
+          key="2"
+        >
+          <Link
+            id={null}
+            to="/project"
+          >
+            <FormattedMessage
+              defaultMessage="Projects"
+              id="shared.components.desktopTopHeader.project"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          id="logoutBtn"
+          key="3"
+          onClick={[Function]}
+        >
+          <FormattedMessage
+            defaultMessage="Log out"
+            id="shared.components.desktopTopHeader.logOut"
+            values={Object {}}
+          />
+        </Styled(styled.li)>
       </Styled(styled.ul)>
       <Styled(styled.ul)>
         <Styled(styled.li)
@@ -96,8 +121,271 @@ exports[`TopHeader: Component should render correctly 1`] = `
         >
           Click action
         </Styled(styled.li)>
+        <Styled(styled.li)
+          key="2"
+        >
+          <Link
+            id={null}
+            to="/"
+          >
+            <FormattedMessage
+              defaultMessage="About Schema CMS"
+              id="shared.components.desktopTopHeader.about"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="3"
+        >
+          <Link
+            id={null}
+            to="/"
+          >
+            <FormattedMessage
+              defaultMessage="API Doc"
+              id="shared.components.desktopTopHeader.api"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="4"
+        >
+          <Link
+            id={null}
+            to="/"
+          >
+            <FormattedMessage
+              defaultMessage="GitHub Repository"
+              id="shared.components.desktopTopHeader.repository"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
       </Styled(styled.ul)>
     </styled.div>
   </Component>
+  <LogoutModal
+    logoutModalOpen={false}
+    onAction={[Function]}
+    redirectUrl="/logout"
+  />
+</styled.div>
+`;
+
+exports[`TopHeader: Component should render correctly with project id 1`] = `
+<styled.div>
+  <Component
+    buttonProps={
+      Object {
+        "id": "topHeaderOpenMenuBtn",
+        "onClick": [Function],
+      }
+    }
+  >
+    <styled.div>
+      <Styled(H2)
+        id="headerTitle"
+      >
+        Projects
+      </Styled(H2)>
+      <Styled(H1)
+        id="headerSubtitle"
+      >
+        Overview
+      </Styled(H1)>
+    </styled.div>
+  </Component>
+  <Component
+    closeButtonProps={
+      Object {
+        "customStyles": Object {
+          "backgroundColor": "transparent",
+        },
+        "id": "topHeaderCloseMenuButton",
+      }
+    }
+    customStyles={
+      Object {
+        "maxWidth": null,
+        "zIndex": 9999,
+      }
+    }
+    onClose={[Function]}
+    open={false}
+  >
+    <styled.div>
+      <styled.div>
+        <Styled(H2)
+          id="headerTitle"
+        >
+          Projects
+        </Styled(H2)>
+        <Styled(H1)
+          id="headerSubtitle"
+        >
+          Overview
+        </Styled(H1)>
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <Styled(styled.ul)>
+        <Styled(styled.li)
+          key="0"
+        >
+          <Link
+            id={null}
+            to="/path"
+          >
+            Data Sources
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="1"
+        >
+          <Link
+            id={null}
+            to="/path"
+          >
+            Charts
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="2"
+        >
+          <Link
+            id={null}
+            to="/project"
+          >
+            <FormattedMessage
+              defaultMessage="Projects"
+              id="shared.components.desktopTopHeader.project"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="3"
+        >
+          <Link
+            id={null}
+            to="/project/projectId"
+          >
+            <FormattedMessage
+              defaultMessage="Project details"
+              id="shared.components.desktopTopHeader.projectDetails"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="4"
+        >
+          <Link
+            id={null}
+            to="/project/projectId/datasource"
+          >
+            <FormattedMessage
+              defaultMessage="Data sources"
+              id="shared.components.desktopTopHeader.projectDataSources"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="5"
+        >
+          <Link
+            id={null}
+            to="/project/projectId/folder"
+          >
+            <FormattedMessage
+              defaultMessage="Pages"
+              id="shared.components.desktopTopHeader.projectPages"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          id="logoutBtn"
+          key="6"
+          onClick={[Function]}
+        >
+          <FormattedMessage
+            defaultMessage="Log out"
+            id="shared.components.desktopTopHeader.logOut"
+            values={Object {}}
+          />
+        </Styled(styled.li)>
+      </Styled(styled.ul)>
+      <Styled(styled.ul)>
+        <Styled(styled.li)
+          key="0"
+        >
+          <Link
+            id={null}
+            to="/logout"
+          >
+            Log Out
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          id="id"
+          key="1"
+          onClick={[Function]}
+        >
+          Click action
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="2"
+        >
+          <Link
+            id={null}
+            to="/"
+          >
+            <FormattedMessage
+              defaultMessage="About Schema CMS"
+              id="shared.components.desktopTopHeader.about"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="3"
+        >
+          <Link
+            id={null}
+            to="/"
+          >
+            <FormattedMessage
+              defaultMessage="API Doc"
+              id="shared.components.desktopTopHeader.api"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          key="4"
+        >
+          <Link
+            id={null}
+            to="/"
+          >
+            <FormattedMessage
+              defaultMessage="GitHub Repository"
+              id="shared.components.desktopTopHeader.repository"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+      </Styled(styled.ul)>
+    </styled.div>
+  </Component>
+  <LogoutModal
+    logoutModalOpen={false}
+    onAction={[Function]}
+    redirectUrl="/logout"
+  />
 </styled.div>
 `;

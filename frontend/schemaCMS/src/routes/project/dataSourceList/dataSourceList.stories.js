@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { DataSourceList } from './dataSourceList.component';
 import { jobs } from '../../../modules/dataSource/jobs.mock';
@@ -64,7 +64,6 @@ export const propsWithJob = {
 };
 
 storiesOf('Project|DataSourceList', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Empty', () => <DataSourceList {...defaultProps} />)
   .add('With data source', () => <DataSourceList {...propsWithDataSource} />)

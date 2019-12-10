@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { Tabs } from './tabs.component';
 
 export const defaultProps = {
@@ -14,6 +14,5 @@ export const defaultProps = {
 };
 
 storiesOf('Shared Components|Tabs', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('Default', () => <Tabs {...defaultProps} />);

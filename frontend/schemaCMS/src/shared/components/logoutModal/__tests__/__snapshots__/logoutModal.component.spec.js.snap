@@ -54,16 +54,16 @@ exports[`LogoutModal: Component should be hidden 1`] = `
         values={Object {}}
       />
     </BackButton>
-    <NextButton
-      loading={false}
+    <ConfirmLink
       onClick={[Function]}
+      to="redirectUrl"
     >
       <FormattedMessage
         defaultMessage="Confirm"
         id="shared.components.logoutModal.confirm"
         values={Object {}}
       />
-    </NextButton>
+    </ConfirmLink>
   </styled.div>
 </Styled(Modal)>
 `;
@@ -122,16 +122,16 @@ exports[`LogoutModal: Component should render correctly 1`] = `
         values={Object {}}
       />
     </BackButton>
-    <NextButton
-      loading={false}
+    <ConfirmLink
       onClick={[Function]}
+      to="redirectUrl"
     >
       <FormattedMessage
         defaultMessage="Confirm"
         id="shared.components.logoutModal.confirm"
         values={Object {}}
       />
-    </NextButton>
+    </ConfirmLink>
   </styled.div>
 </Styled(Modal)>
 `;

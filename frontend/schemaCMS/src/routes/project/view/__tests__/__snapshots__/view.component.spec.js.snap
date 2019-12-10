@@ -6,20 +6,19 @@ exports[`View: Component should render correctly 1`] = `
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
-      title="Project Name"
+      title="Project"
     />
     <TopHeader
       headerSubtitle="Project Name"
-      headerTitle="Project"
-      primaryMenuItems={Array []}
-      secondaryMenuItems={
-        Array [
-          Object {
-            "label": "Log Out",
-            "to": "/logout",
-          },
-        ]
+      headerTitle={
+        <FormattedMessage
+          defaultMessage="Project"
+          id="project.view.title"
+          values={Object {}}
+        />
       }
+      primaryMenuItems={Array []}
+      secondaryMenuItems={Array []}
     />
     <ProjectTabs
       active="settings"

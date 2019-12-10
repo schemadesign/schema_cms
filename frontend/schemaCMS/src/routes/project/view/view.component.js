@@ -6,7 +6,7 @@ import { always, isEmpty, isNil, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
-import { generateApiUrl } from '../../../shared/utils/helpers';
+import { generateApiUrl, getMatchParam } from '../../../shared/utils/helpers';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -71,37 +71,6 @@ export class View extends PureComponent {
   componentWillUnmount() {
     return this.props.unmountProject();
   }
-
-  getHeaderAndMenuConfig = (headerSubtitle, projectId, hasMenu) => {
-    const primaryMenuItems = [];
-    const secondaryMenuItems = [];
-
-    if (hasMenu) {
-      primaryMenuItems.push({
-        label: this.formatMessage(messages.dataSources),
-        to: `/project/${projectId}/datasource`,
-      });
-
-      if (this.props.isAdmin) {
-        secondaryMenuItems.push(
-          { label: this.formatMessage(messages.editProjectSettings), to: `/project/edit/${projectId}` },
-          {
-            label: this.formatMessage(messages.deleteProject),
-            onClick: this.handleDeleteClick,
-          }
-        );
-      }
-    }
-
-    secondaryMenuItems.push({ label: this.formatMessage(messages.logOut), to: '/logout' });
-
-    return {
-      headerTitle: this.formatMessage(messages.title),
-      headerSubtitle,
-      primaryMenuItems,
-      secondaryMenuItems,
-    };
-  };
 
   formatMessage = value => this.props.intl.formatMessage(value);
 
@@ -225,16 +194,15 @@ export class View extends PureComponent {
   render() {
     const { project, isAdmin } = this.props;
     const { confirmationModalOpen, error, loading } = this.state;
-    const { projectId } = this.props.match.params;
-    const projectName = path(['title'], project, '');
-    const title = projectName ? projectName : this.formatMessage(messages.pageTitle);
-    const topHeaderConfig = this.getHeaderAndMenuConfig(projectName, projectId, !loading);
+    const projectId = getMatchParam(this.props, 'projectId');
+    const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
+    const headerTitle = <FormattedMessage {...messages.title} />;
 
     return (
       <Container>
         <div>
-          <Helmet title={title} />
-          <TopHeader {...topHeaderConfig} />
+          <Helmet title={this.formatMessage(messages.pageTitle)} />
+          <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>
             {this.renderContent({ project, isAdmin })}

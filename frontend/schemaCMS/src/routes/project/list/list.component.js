@@ -10,7 +10,6 @@ import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
-import { LogoutModal } from '../../../shared/components/logoutModal';
 import messages from './list.messages';
 import { Container, Description, HeaderItem, HeaderList, Footer, descriptionStyles, titleStyles } from './list.styles';
 import { NavigationContainer, PlusButton } from '../../../shared/components/navigation';
@@ -30,7 +29,6 @@ export class List extends PureComponent {
   state = {
     loading: true,
     error: null,
-    logoutModalOpen: false,
   };
 
   async componentDidMount() {
@@ -46,18 +44,16 @@ export class List extends PureComponent {
   }
 
   getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => {
-    const secondaryMenuItems = [
-      { label: this.formatMessage(messages.logOut), onClick: this.handleLogout, id: 'logoutBtn' },
-    ];
+    const primaryMenuItems = [];
 
     if (this.props.isAdmin) {
-      secondaryMenuItems.push({ label: this.formatMessage(messages.users), to: '/user', id: 'userBtn' });
+      primaryMenuItems.push({ label: this.formatMessage(messages.users), to: '/user', id: 'userBtn' });
     }
 
     return {
       headerTitle,
       headerSubtitle,
-      secondaryMenuItems,
+      primaryMenuItems,
     };
   };
 
@@ -73,23 +69,6 @@ export class List extends PureComponent {
   handleShowProject = id => () => this.props.history.push(`/project/${id}`);
 
   handleNewProject = () => this.props.history.push('/project/create/');
-
-  handleLogout = () => {
-    this.setState({
-      logoutModalOpen: true,
-    });
-  };
-
-  handleCancelLogout = () => {
-    this.setState({
-      logoutModalOpen: false,
-    });
-  };
-
-  handleConfirmLogout = () => {
-    this.handleCancelLogout();
-    this.props.history.push('/logout');
-  };
 
   renderHeader = (list = []) => (
     <HeaderList>
@@ -133,7 +112,7 @@ export class List extends PureComponent {
 
   render() {
     const { list = [], isAdmin } = this.props;
-    const { loading, error, logoutModalOpen } = this.state;
+    const { loading, error } = this.state;
 
     const title = this.formatMessage(messages.title);
     const subtitle = this.formatMessage(messages.overview);
@@ -152,11 +131,6 @@ export class List extends PureComponent {
         <NavigationContainer right fixed hideOnDesktop>
           {this.renderAddButton(isAdmin, 'addProjectBtn')}
         </NavigationContainer>
-        <LogoutModal
-          logoutModalOpen={logoutModalOpen}
-          onConfirm={this.handleConfirmLogout}
-          onCancel={this.handleCancelLogout}
-        />
       </Container>
     );
   }

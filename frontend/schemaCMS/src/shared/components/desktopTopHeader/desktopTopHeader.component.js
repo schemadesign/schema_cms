@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Header, Icons, Menu } from 'schemaUI';
+import { FormattedMessage } from 'react-intl';
+import { always, ifElse, equals } from 'ramda';
 
 import { renderWhenTrue } from '../../utils/rendering';
 import { LogoutModal } from '../logoutModal';
@@ -15,30 +17,29 @@ import {
 } from '../topHeader/topHeader.styles';
 import {
   Actions,
+  closeButtonStyles,
   Container,
+  customButtonStyles,
+  headerCustomStyles,
   HeaderWrapper,
   IconLink,
   Logo,
   LogoLink,
+  logoutButtonStyles,
+  menuStyles,
   Overlayer,
   Title,
   TitleWrapper,
   TopContainer,
-  closeButtonStyles,
-  customButtonStyles,
-  headerCustomStyles,
-  menuStyles,
-  logoutButtonStyles,
 } from './desktopTopHeader.styles';
+import messages from './desktopTopHeader.messages';
 
 const { ExitIcon, UserIcon } = Icons;
 
 export class DesktopTopHeader extends TopHeader {
   static propTypes = {
     title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    primaryMenuItems: PropTypes.array,
-    secondaryMenuItems: PropTypes.array,
-    history: PropTypes.object,
+    isAdmin: PropTypes.bool.isRequired,
   };
 
   state = {
@@ -55,11 +56,6 @@ export class DesktopTopHeader extends TopHeader {
     this.setState({
       logoutModalOpen: false,
     });
-  };
-
-  handleConfirmLogout = () => {
-    this.handleCancelLogout();
-    this.props.history.push('/logout');
   };
 
   renderTitle = renderWhenTrue((_, title) => (
@@ -85,9 +81,16 @@ export class DesktopTopHeader extends TopHeader {
     </HeaderWrapper>
   );
 
+  getTopItems = ifElse(
+    equals(true),
+    always([...this.primaryMenuItems, { label: <FormattedMessage {...messages.users} />, to: '/user' }]),
+    always(this.primaryMenuItems)
+  );
+
   render() {
     const { logoutModalOpen } = this.state;
-    const { title, primaryMenuItems, secondaryMenuItems } = this.props;
+    const { title, isAdmin } = this.props;
+    const primaryMenuItems = this.getTopItems(isAdmin);
 
     const buttonProps = {
       onClick: this.handleToggleMenu,
@@ -98,8 +101,8 @@ export class DesktopTopHeader extends TopHeader {
       id: 'desktopTopHeaderCloseMenuButton',
     };
 
-    const primaryMenu = this.renderMenu(primaryMenuItems, PrimaryList, PrimaryItem);
-    const secondaryMenu = this.renderMenu(secondaryMenuItems, SecondaryList, SecondaryItem);
+    const primaryMenu = this.renderMenuItems(primaryMenuItems, PrimaryList, PrimaryItem);
+    const secondaryMenu = this.renderMenuItems(this.secondaryMenuItems, SecondaryList, SecondaryItem);
 
     return (
       <TopContainer>
@@ -107,7 +110,7 @@ export class DesktopTopHeader extends TopHeader {
           <Header buttonProps={buttonProps} customStyles={headerCustomStyles} customButtonStyles={customButtonStyles}>
             {this.renderHeaderBar(title)}
           </Header>
-          <Overlayer visible={this.state.isMenuOpen} />
+          <Overlayer visible={this.state.isMenuOpen} onClick={this.handleToggleMenu} />
           <Menu
             open={this.state.isMenuOpen}
             onClose={this.handleToggleMenu}
@@ -115,17 +118,13 @@ export class DesktopTopHeader extends TopHeader {
             closeButtonProps={closeButtonProps}
           >
             <MenuHeader>{this.renderHeader('SchemaCMS', 'Menu')}</MenuHeader>
-            <Content>
+            <Content onClick={this.handleToggleMenu}>
               {primaryMenu}
               {secondaryMenu}
             </Content>
           </Menu>
         </Container>
-        <LogoutModal
-          logoutModalOpen={logoutModalOpen}
-          onConfirm={this.handleConfirmLogout}
-          onCancel={this.handleCancelLogout}
-        />
+        <LogoutModal logoutModalOpen={logoutModalOpen} onAction={this.handleCancelLogout} redirectUrl="/logout" />
       </TopContainer>
     );
   }

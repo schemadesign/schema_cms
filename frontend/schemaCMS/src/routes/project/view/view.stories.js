@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
-import { withRouter, withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { View } from './view.component';
 
@@ -49,7 +49,6 @@ export const defaultProps = {
 };
 
 storiesOf('Project|View', module)
-  .addDecorator(withRouter)
   .addDecorator(withTheme())
   .add('No data', () => <View {...emptyProps} />)
   .add('Default', () => <View {...defaultProps} />);

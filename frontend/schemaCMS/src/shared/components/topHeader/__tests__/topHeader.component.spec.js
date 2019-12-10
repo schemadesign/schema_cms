@@ -13,4 +13,9 @@ describe('TopHeader: Component', () => {
     const wrapper = render();
     global.expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render correctly with project id', () => {
+    const wrapper = render({ projectId: 'projectId' });
+    global.expect(wrapper).toMatchSnapshot();
+  });
 });

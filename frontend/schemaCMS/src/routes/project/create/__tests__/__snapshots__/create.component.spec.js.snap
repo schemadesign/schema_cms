@@ -5,6 +5,8 @@ exports[`Create: Component should render correctly 1`] = `
   <TopHeader
     headerSubtitle="Project Info"
     headerTitle="Create New Project"
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
   />
   <ContextHeader
     subtitle="Project Info"

@@ -8,8 +8,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -17,13 +16,31 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .c6 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .c5 {
@@ -50,6 +67,12 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
 }
 
 .c7 a {
@@ -59,8 +82,8 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   display: block;
 }
 
-.c7 a {
-  padding: 8px 0;
+.c7:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c1 {
@@ -74,6 +97,20 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
 @media (min-width:1040px) {
   .c0 {
     display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
   }
 }
 
@@ -272,6 +309,28 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
               Charts
             </a>
           </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Projects
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+            id="logoutBtn"
+            onClick={[Function]}
+          >
+            <span>
+              Log out
+            </span>
+          </li>
         </ul>
         <ul
           className="c6"
@@ -293,6 +352,45 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             onClick={[Function]}
           >
             Click action
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                About Schema CMS
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                API Doc
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                GitHub Repository
+              </span>
+            </a>
           </li>
         </ul>
       </div>
@@ -350,8 +448,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
 .c3 {
   overflow: auto;
   max-height: calc(100vh - 70px);
-  margin: 20px -20px 0 0;
-  padding-right: 20px;
+  padding: 40px 0;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -359,13 +456,31 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .c6 {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .c5 {
@@ -392,6 +507,12 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
 }
 
 .c7 a {
@@ -401,8 +522,8 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
   display: block;
 }
 
-.c7 a {
-  padding: 8px 0;
+.c7:hover {
+  border-bottom: 1px solid #FFF;
 }
 
 .c1 {
@@ -416,6 +537,20 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
 @media (min-width:1040px) {
   .c0 {
     display: none;
+  }
+}
+
+@media (min-width:1040px) {
+  .c3 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
   }
 }
 
@@ -630,6 +765,67 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
               Charts
             </a>
           </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Projects
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/projectId"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Project details
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/projectId/datasource"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Data sources
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/projectId/folder"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Pages
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+            id="logoutBtn"
+            onClick={[Function]}
+          >
+            <span>
+              Log out
+            </span>
+          </li>
         </ul>
         <ul
           className="c6"
@@ -651,6 +847,45 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
             onClick={[Function]}
           >
             Click action
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                About Schema CMS
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                API Doc
+              </span>
+            </a>
+          </li>
+          <li
+            className="c7"
+          >
+            <a
+              href="/"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                GitHub Repository
+              </span>
+            </a>
           </li>
         </ul>
       </div>
