@@ -10,6 +10,7 @@ import DataPreview from '../../../shared/components/dataPreview/dataPreview.comp
 import browserHistory from '../../../shared/utils/history';
 import messages from './preview.messages';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class Preview extends PureComponent {
   static propTypes = {
@@ -24,7 +25,7 @@ export class Preview extends PureComponent {
     }).isRequired,
   };
 
-  handleBackClick = () => browserHistory.push(`/job/${path(['match', 'params', 'jobId'], this.props)}`);
+  handleBackClick = () => browserHistory.push(`/job/${getMatchParam(this.props, 'jobId')}`);
 
   render() {
     const { match, ...restProps } = this.props;

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { always, path } from 'ramda';
+import { always } from 'ramda';
 
 import { Container } from './userDetails.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
@@ -12,7 +12,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { Modal, modalStyles, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link, LinkContainer } from '../../../theme/typography';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { getProjectId } from '../../../shared/utils/helpers';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class UserDetails extends PureComponent {
   static propTypes = {
@@ -34,22 +34,20 @@ export class UserDetails extends PureComponent {
   };
 
   componentDidMount() {
-    const userId = this.getUserId();
+    const userId = getMatchParam(this.props, 'userId');
     this.props.fetchUser({ userId });
   }
-
-  getUserId = () => path(['match', 'params', 'userId'], this.props);
 
   handleCancelRemove = () => this.setState({ userRemoveModalOpen: false });
 
   handleConfirmRemove = () => {
-    const userId = this.getUserId();
-    const projectId = getProjectId(this.props);
+    const userId = getMatchParam(this.props, 'userId');
+    const projectId = getMatchParam(this.props, 'projectId');
 
     this.props.removeEditorFromProject({ projectId, userId, isDetails: true });
   };
 
-  handleBack = () => this.props.history.push(`/project/${getProjectId(this.props)}/user`);
+  handleBack = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/user`);
 
   renderContent = userData => renderWhenTrue(() => <UserProfile values={userData} />)(!!userData.id);
 

@@ -3,7 +3,7 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import { compose, path } from 'ramda';
+import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
@@ -11,7 +11,7 @@ import { CreatePageBlock } from './createPageBlock.component';
 import { PageBlockRoutines } from '../../../modules/pageBlock';
 import messages from './createPageBlock.messages';
 
-import { errorMessageParser } from '../../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 import { BLOCK_FORM, BLOCK_SCHEMA, INITIAL_VALUES } from '../../../modules/pageBlock/pageBlock.constants';
 
 const mapStateToProps = createStructuredSelector({});
@@ -40,7 +40,7 @@ export default compose(
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const pageId = path(['match', 'params', 'pageId'], props);
+        const pageId = getMatchParam(props, 'pageId');
 
         await props.createBlock({ pageId, ...data });
       } catch (errors) {

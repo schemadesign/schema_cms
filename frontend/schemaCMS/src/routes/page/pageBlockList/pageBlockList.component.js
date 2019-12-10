@@ -13,6 +13,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 const { CheckboxGroup, Checkbox } = Form;
 
@@ -43,7 +44,7 @@ export class PageBlockList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const pageId = this.getPageId();
+      const pageId = getMatchParam(this.props, 'pageId');
       await this.props.fetchPage({ pageId });
       await this.props.fetchPageBlocks({ pageId });
       this.setState({ loading: false });
@@ -52,15 +53,14 @@ export class PageBlockList extends PureComponent {
     }
   }
 
-  getPageId = () => path(['match', 'params', 'pageId'], this.props);
   getFolderId = () => path(['page', 'folder', 'id'], this.props);
 
-  handleCreateBlock = () => this.props.history.push(`/page/${this.getPageId()}/block/create`);
+  handleCreateBlock = () => this.props.history.push(`/page/${getMatchParam(this.props, 'pageId')}/block/create`);
   handleShowPages = () => this.props.history.push(`/folder/${this.getFolderId()}`);
 
   handleSubmit = async ({ blocks: active }, { setSubmitting }) => {
     try {
-      const pageId = this.getPageId();
+      const pageId = getMatchParam(this.props, 'pageId');
       const inactive = this.props.pageBlocks
         .filter(({ id }) => !active.includes(id.toString()))
         .map(({ id }) => id.toString());

@@ -13,7 +13,7 @@ import messages from './userList.messages';
 import browserHistory from '../../../shared/utils/history';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { getProjectId } from '../../../shared/utils/helpers';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class UserList extends PureComponent {
   static propTypes = {
@@ -32,7 +32,7 @@ export class UserList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const projectId = getProjectId(this.props);
+      const projectId = getMatchParam(this.props, 'projectId');
 
       await this.props.fetchUsers({ projectId });
       this.setState({ loading: false });
@@ -42,7 +42,7 @@ export class UserList extends PureComponent {
   }
 
   handleAddUser = () => {
-    const projectId = getProjectId(this.props);
+    const projectId = getMatchParam(this.props, 'projectId');
     return browserHistory.push(`/project/${projectId}/user/add`);
   };
 
@@ -67,7 +67,7 @@ export class UserList extends PureComponent {
           {this.renderCreateUserButton({ id: 'addUserDesktopBtn', isAdmin })}
         </ContextHeader>
         <LoadingWrapper loading={loading} noData={!users.length}>
-          <UserListComponent users={this.props.users} projectId={getProjectId(this.props)} />
+          <UserListComponent users={this.props.users} projectId={getMatchParam(this.props, 'projectId')} />
         </LoadingWrapper>
         <NavigationContainer fixed hideOnDesktop>
           <BackButton onClick={this.handleBackClick}>

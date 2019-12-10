@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { path, pathOr } from 'ramda';
+import { pathOr } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Container } from './filter.styles';
@@ -9,6 +9,7 @@ import { LoadingWrapper } from '../../shared/components/loadingWrapper';
 import { FilterForm } from '../../shared/components/filterForm';
 import { TopHeader } from '../../shared/components/topHeader';
 import { ContextHeader } from '../../shared/components/contextHeader';
+import { getMatchParam } from '../../shared/utils/helpers';
 
 export class Filter extends PureComponent {
   static propTypes = {
@@ -34,7 +35,7 @@ export class Filter extends PureComponent {
 
   async componentDidMount() {
     try {
-      const filterId = path(['match', 'params', 'filterId'], this.props);
+      const filterId = getMatchParam(this.props, 'filterId');
       const data = await this.props.fetchFilter({ filterId });
       await this.props.fetchFieldsInfo({ dataSourceId: data.datasource.id });
 

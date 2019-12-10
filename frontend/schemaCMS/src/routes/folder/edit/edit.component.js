@@ -13,6 +13,7 @@ import { BackButton, NavigationContainer, NextButton } from '../../../shared/com
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../../../shared/components/modal/modal.styles';
 import { Link } from '../../../theme/typography';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class Edit extends PureComponent {
   static propTypes = {
@@ -43,7 +44,7 @@ export class Edit extends PureComponent {
 
   async componentDidMount() {
     try {
-      const folderId = path(['match', 'params', 'folderId'], this.props);
+      const folderId = getMatchParam(this.props, 'folderId');
       await this.props.fetchFolder({ folderId });
       this.setState({ loading: false });
     } catch (e) {
@@ -56,7 +57,7 @@ export class Edit extends PureComponent {
   handleCancelRemove = () => this.setState({ confirmationModalOpen: false });
 
   handleConfirmRemove = () => {
-    const folderId = path(['match', 'params', 'folderId'], this.props);
+    const folderId = getMatchParam(this.props, 'folderId');
     const projectId = path(['folder', 'project'], this.props);
 
     this.props.removeFolder({ folderId, projectId });

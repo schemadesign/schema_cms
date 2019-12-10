@@ -3,7 +3,7 @@ import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import { compose, path } from 'ramda';
+import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
@@ -11,7 +11,7 @@ import { CreateFolder } from './createFolder.component';
 import messages from './createFolder.messages';
 import { FolderRoutines } from '../../../modules/folder';
 import { FOLDER_FORM, FOLDER_SCHEMA, INITIAL_VALUES } from '../../../modules/folder/folder.constants';
-import { errorMessageParser } from '../../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 
 const mapStateToProps = createStructuredSelector({});
 
@@ -39,7 +39,7 @@ export default compose(
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const projectId = path(['match', 'params', 'projectId'], props);
+        const projectId = getMatchParam(props, 'projectId');
 
         await props.createFolder({ projectId, ...data });
       } catch (errors) {

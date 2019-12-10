@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Form, Icons } from 'schemaUI';
 import { Formik } from 'formik';
-import { always, append, equals, ifElse, path, reject } from 'ramda';
+import { always, append, equals, ifElse, reject } from 'ramda';
 import Helmet from 'react-helmet';
 
 import { ButtonContainer, FilterCounter, Header, Link, PlusButton } from './filters.styles';
@@ -13,7 +13,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
-import { errorMessageParser } from '../../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 
 const { PlusIcon } = Icons;
 const { CheckboxGroup, Checkbox } = Form;
@@ -42,7 +42,7 @@ export class Filters extends PureComponent {
 
   async componentDidMount() {
     try {
-      const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
+      const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
       await this.props.fetchFilters({ dataSourceId });
     } catch (error) {
@@ -62,7 +62,7 @@ export class Filters extends PureComponent {
   handleSubmit = async (active, { setSubmitting, setErrors }) => {
     try {
       setSubmitting(true);
-      const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
+      const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       const inactive = this.props.filters
         .filter(({ id }) => !active.includes(id.toString()))
         .map(({ id }) => id.toString());
@@ -79,7 +79,7 @@ export class Filters extends PureComponent {
   };
 
   handleCreateFilter = () => {
-    const dataSourceId = path(['match', 'params', 'dataSourceId'])(this.props);
+    const dataSourceId = getMatchParam(this.props, 'dataSourceId');
     this.props.history.push(`/datasource/${dataSourceId}/filters/add`);
   };
 

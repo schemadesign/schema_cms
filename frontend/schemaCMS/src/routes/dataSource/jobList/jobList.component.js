@@ -23,6 +23,7 @@ import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { JOB_OPTION, JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 const { RadioGroup, RadioStyled } = Form;
 
@@ -75,14 +76,13 @@ export class JobList extends PureComponent {
     this.setState({ selectedJob, canRevert });
   };
 
-  handleCancelClick = () =>
-    this.props.history.push(`/datasource/${path(['match', 'params', 'dataSourceId'], this.props)}`);
+  handleCancelClick = () => this.props.history.push(`/datasource/${getMatchParam(this.props, 'dataSourceId')}`);
 
   handleIconClick = jobId => this.props.history.push(`/job/${jobId}`);
 
   handleRevertClick = () =>
     this.props.revertToJob({
-      dataSourceId: path(['match', 'params', 'dataSourceId'], this.props),
+      dataSourceId: getMatchParam(this.props, 'dataSourceId'),
       jobId: this.state.selectedJob,
     });
 

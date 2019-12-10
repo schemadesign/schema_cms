@@ -20,6 +20,7 @@ import {
   ListItemTitle,
   ListItemDescription,
 } from '../../../shared/components/listComponents/listItem.styles';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 const { P } = Typography;
 
@@ -49,7 +50,7 @@ export class PageList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const folderId = this.getFolderId();
+      const folderId = getMatchParam(this.props, 'folderId');
       await this.props.fetchFolder({ folderId });
       await this.props.fetchPages({ folderId });
 
@@ -59,13 +60,12 @@ export class PageList extends PureComponent {
     }
   }
 
-  getFolderId = () => path(['match', 'params', 'folderId'], this.props);
-  getProjectId = () => path(['folder', 'project'], this.props);
+  getMatchParam = () => path(['folder', 'project'], this.props);
   handleEditPage = id => this.props.history.push(`/page/${id}/edit`);
 
-  handleCreatePage = () => this.props.history.push(`/folder/${this.getFolderId()}/page`);
+  handleCreatePage = () => this.props.history.push(`/folder/${getMatchParam(this.props, 'folderId')}/page`);
 
-  handleShowFolderList = () => this.props.history.push(`/project/${this.getProjectId()}/folder`);
+  handleShowFolderList = () => this.props.history.push(`/project/${this.getMatchParam()}/folder`);
 
   handleShowPage = id => this.props.history.push(`/page/${id}`);
 

@@ -11,7 +11,6 @@ import {
   ifElse,
   insertAll,
   map,
-  path,
   pathEq,
   pathOr,
   pipe,
@@ -34,6 +33,7 @@ import { ContextHeader } from '../../../shared/components/contextHeader';
 import { DataSourceNavigation } from '../../../shared/components/dataSourceNavigation';
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
@@ -117,7 +117,7 @@ export class DataWranglingScripts extends PureComponent {
     const script = find(propEq('id', parseInt(value, 10)), this.props.dataWranglingScripts);
 
     if (checked && script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE) {
-      const dataSourceId = path(['match', 'params', 'dataSourceId'], this.props);
+      const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       return this.props.history.push(`/script/${value}/${dataSourceId}`);
     }
 
@@ -144,7 +144,7 @@ export class DataWranglingScripts extends PureComponent {
 
   renderCheckboxes = ({ id, name, specs }, index) => (
     <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index}>
-      <Link to={this.getScriptLink(id, specs, path(['match', 'params', 'dataSourceId'], this.props))}>{name}</Link>
+      <Link to={this.getScriptLink(id, specs, getMatchParam(this.props, 'dataSourceId'), this.props)}>{name}</Link>
     </Checkbox>
   );
 

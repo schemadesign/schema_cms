@@ -3,7 +3,7 @@ import { promisifyRoutine, bindPromiseCreators } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import { compose, path } from 'ramda';
+import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
@@ -11,7 +11,7 @@ import { CreatePage } from './createPage.component';
 import messages from './createPage.messages';
 import { PageRoutines } from '../../../modules/page';
 import { PAGE_FORM, INITIAL_VALUES, PAGE_SCHEMA } from '../../../modules/page/page.constants';
-import { errorMessageParser } from '../../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 
 const mapStateToProps = createStructuredSelector({});
 
@@ -39,7 +39,7 @@ export default compose(
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const folderId = path(['match', 'params', 'folderId'], props);
+        const folderId = getMatchParam(props, 'folderId');
 
         await props.createPage({ folderId, ...data });
       } catch (errors) {

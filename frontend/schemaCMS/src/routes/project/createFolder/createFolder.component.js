@@ -9,7 +9,7 @@ import { FOLDER_NAME } from '../../../modules/folder/folder.constants';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
-import { getProjectId } from '../../../shared/utils/helpers';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class CreateFolder extends PureComponent {
   static propTypes = {
@@ -28,7 +28,7 @@ export class CreateFolder extends PureComponent {
     isSubmitting: PropTypes.bool.isRequired,
   };
 
-  handleBackClick = () => this.props.history.push(`/project/${getProjectId(this.props)}/folder`);
+  handleBackClick = () => this.props.history.push(`/project/${getMatchParam(this.props, 'projectId')}/folder`);
 
   render() {
     const { intl, values, handleSubmit, handleChange, isValid, isSubmitting, ...restProps } = this.props;

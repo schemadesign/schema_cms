@@ -11,7 +11,7 @@ import { Edit } from './edit.component';
 import messages from './edit.messages';
 import { FolderRoutines, selectFolder } from '../../../modules/folder';
 import { FOLDER_FORM, FOLDER_NAME, FOLDER_SCHEMA, INITIAL_VALUES } from '../../../modules/folder/folder.constants';
-import { errorMessageParser } from '../../../shared/utils/helpers';
+import { errorMessageParser, getMatchParam } from '../../../shared/utils/helpers';
 
 const mapStateToProps = createStructuredSelector({
   folder: selectFolder,
@@ -46,7 +46,7 @@ export default compose(
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
-        const folderId = path(['match', 'params', 'folderId'], props);
+        const folderId = getMatchParam(props, 'folderId');
         const projectId = path(['folder', 'project'], props);
 
         await props.updateFolder({ folderId, projectId, ...data });
