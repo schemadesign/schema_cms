@@ -44,4 +44,12 @@ export default defineMessages({
     id: 'dataSource.jobList.failure',
     defaultMessage: 'Failed',
   },
+  steps: {
+    id: 'dataSource.jobList.steps',
+    defaultMessage: '{length} {length, plural,one {Step} other {Steps}}',
+  },
+  originalFile: {
+    id: 'dataSource.jobList.originalFile',
+    defaultMessage: 'Original file',
+  },
 });

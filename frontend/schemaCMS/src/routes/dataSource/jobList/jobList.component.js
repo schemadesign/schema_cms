@@ -21,7 +21,7 @@ import messages from './jobList.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { JOB_OPTION, JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
-import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { getMatchParam } from '../../../shared/utils/helpers';
 
@@ -88,6 +88,12 @@ export class JobList extends PureComponent {
 
   renderActiveInformation = isActive => renderWhenTrue(always(<FormattedMessage {...messages.active} />))(isActive);
 
+  renderStepMessage = ({ steps }) =>
+    renderWhenTrueOtherwise(
+      always(<FormattedMessage {...messages.originalFile} />),
+      always(<FormattedMessage values={{ length: steps.length }} {...messages.steps} />)
+    )(isEmpty(steps));
+
   renderList = (job, index) => {
     const isActive = this.isJobActive(job.id);
     const selectedJob = this.getSelectedJob();
@@ -102,6 +108,10 @@ export class JobList extends PureComponent {
             <Dot />
             <Span>
               <FormattedMessage {...messages[job.jobState]} />
+            </Span>
+            <Dot />
+            <Span>
+              {this.renderStepMessage(job)}
               {this.renderActiveInformation(isActive)}
             </Span>
           </RadioLabel>
