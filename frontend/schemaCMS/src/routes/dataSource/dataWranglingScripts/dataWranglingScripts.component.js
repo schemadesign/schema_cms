@@ -65,7 +65,7 @@ export class DataWranglingScripts extends PureComponent {
 
   async componentDidMount() {
     try {
-      const { dataSourceId } = this.props.match.params;
+      const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       await this.props.fetchDataWranglingScripts({ dataSourceId });
     } catch (error) {
       // eslint-disable-next-line no-console
@@ -99,7 +99,7 @@ export class DataWranglingScripts extends PureComponent {
     }
 
     try {
-      const { dataSourceId } = this.props.match.params;
+      const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       this.setState({ uploading: true, errorMessage: '' });
 
       await this.props.uploadScript({ script: file, dataSourceId });
@@ -128,7 +128,7 @@ export class DataWranglingScripts extends PureComponent {
     try {
       setSubmitting(true);
       this.setState({ errorMessage: '' });
-      const { dataSourceId } = this.props.match.params;
+      const dataSourceId = getMatchParam(this.props, 'dataSourceId');
       const parsedSteps = steps.map(this.parseSteps);
 
       await this.props.sendUpdatedDataWranglingScript({ steps: parsedSteps, dataSourceId });

@@ -99,7 +99,7 @@ export class FolderList extends PureComponent {
         <TopHeader
           headerTitle={headerTitle}
           headerSubtitle={headerSubtitle}
-          projectId={this.props.match.params.projectId}
+          projectId={getMatchParam(this.props, 'projectId')}
         />
         <ProjectTabs active={FOLDER} url={`/project/${match.params.projectId}`} />
         <ContextHeader title={headerTitle} subtitle={headerSubtitle}>

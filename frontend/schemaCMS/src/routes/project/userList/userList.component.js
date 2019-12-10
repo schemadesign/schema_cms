@@ -46,7 +46,7 @@ export class UserList extends PureComponent {
     return browserHistory.push(`/project/${projectId}/user/add`);
   };
 
-  handleBackClick = () => browserHistory.push(`/project/${this.props.match.params.projectId}`);
+  handleBackClick = () => browserHistory.push(`/project/${getMatchParam(this.props, 'projectId')}`);
 
   renderCreateUserButton = ({ id, isAdmin }) =>
     renderWhenTrue(always(<PlusButton id={id} onClick={this.handleAddUser} />))(isAdmin);
@@ -57,7 +57,7 @@ export class UserList extends PureComponent {
     const topHeaderConfig = {
       headerTitle: <FormattedMessage {...messages.headerTitle} />,
       headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
-      projectId: this.props.match.params.projectId,
+      projectId: getMatchParam(this.props, 'projectId'),
     };
 
     return (

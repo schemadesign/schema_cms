@@ -15,6 +15,7 @@ import { renderWhenTrueOtherwise } from '../../shared/utils/rendering';
 import { SOURCES } from '../../shared/components/projectTabs/projectTabs.constants';
 import { ProjectTabs } from '../../shared/components/projectTabs';
 import { LoadingWrapper } from '../../shared/components/loadingWrapper';
+import { getMatchParam } from '../../shared/utils/helpers';
 
 export default class DataSource extends PureComponent {
   static propTypes = {
@@ -35,7 +36,7 @@ export default class DataSource extends PureComponent {
 
   async componentDidMount() {
     try {
-      const { dataSourceId } = this.props.match.params;
+      const dataSourceId = getMatchParam(this.props, 'dataSourceId');
 
       await this.props.fetchDataSource({ dataSourceId });
     } catch (error) {

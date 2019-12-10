@@ -8,6 +8,7 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { PageBlockForm } from '../../../shared/components/pageBlockForm';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class CreatePageBlock extends PureComponent {
   static propTypes = {
@@ -26,7 +27,7 @@ export class CreatePageBlock extends PureComponent {
     }),
   };
 
-  handleBackClick = () => this.props.history.push(`/page/${this.props.match.params.pageId}`);
+  handleBackClick = () => this.props.history.push(`/page/${getMatchParam(this.props, 'pageId')}`);
 
   render() {
     const { handleSubmit, isSubmitting, ...restProps } = this.props;

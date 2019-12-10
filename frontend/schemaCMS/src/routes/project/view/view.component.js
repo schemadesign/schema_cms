@@ -6,7 +6,7 @@ import { always, isEmpty, isNil, path } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { renderWhenTrue } from '../../../shared/utils/rendering';
-import { generateApiUrl } from '../../../shared/utils/helpers';
+import { generateApiUrl, getMatchParam } from '../../../shared/utils/helpers';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -194,7 +194,7 @@ export class View extends PureComponent {
   render() {
     const { project, isAdmin } = this.props;
     const { confirmationModalOpen, error, loading } = this.state;
-    const { projectId } = this.props.match.params;
+    const projectId = getMatchParam(this.props, 'projectId');
     const headerSubtitle = path(['title'], project, <FormattedMessage {...messages.subTitle} />);
     const headerTitle = <FormattedMessage {...messages.title} />;
 
