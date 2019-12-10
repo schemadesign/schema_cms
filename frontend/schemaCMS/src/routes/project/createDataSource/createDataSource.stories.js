@@ -8,7 +8,6 @@ import { history, intl } from '../../../.storybook/helpers';
 export const defaultProps = {
   createDataSource: Function.prototype,
   onDataSourceChange: Function.prototype,
-  match: { params: {} },
   history,
   intl,
   match: {
