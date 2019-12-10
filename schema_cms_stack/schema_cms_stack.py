@@ -347,7 +347,7 @@ class LambdaWorker(core.Stack):
                 LAMBDA_AUTH_TOKEN_ENV_NAME: scope.api.api_lambda_token,
             },
             memory_size=memory_size,
-            timeout=core.Duration.seconds(60),
+            timeout=core.Duration.seconds(180),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
         lambda_fn.add_event_source(
@@ -381,7 +381,7 @@ class PublicAPI(core.Stack):
                 ),
             },
             memory_size=512,
-            timeout=core.Duration.seconds(30),
+            timeout=core.Duration.seconds(60),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
 

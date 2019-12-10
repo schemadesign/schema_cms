@@ -1,4 +1,5 @@
 from dataclasses import asdict
+import datetime
 import json
 import logging
 
@@ -7,9 +8,9 @@ import math
 from flask import Flask, abort, request, Response
 from flask_cors import CORS
 
-# from flask_compress import Compress
 import pandas as pd
 from pyarrow import BufferReader
+import pyarrow.parquet as pq
 
 from common import services, settings, types
 
@@ -19,12 +20,26 @@ logger.setLevel(logging.INFO)
 
 app = Flask(__name__)
 CORS(app)
-# Compress(app)
+
+
+def columns_to_records(pydict):
+    return [dict(zip(pydict, i)) for i in zip(*pydict.values())]
+
+
+class JsonCustomEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, bytes):
+            return obj.decode(errors='ignore')
+        if isinstance(obj, (datetime.date, datetime.datetime)):
+            return obj.isoformat()
+
+        return json.JSONEncoder.default(self, obj)
 
 
 def create_response(data):
     return Response(
-        json.dumps(data, ensure_ascii=False, indent=4), content_type="application/json; charset=utf-8"
+        json.dumps(data, ensure_ascii=True, cls=JsonCustomEncoder),
+        content_type="application/json; charset=utf-8",
     )
 
 
@@ -58,8 +73,8 @@ def data_source_data(data_source_id):
         filters = data_source.filters
         fields = data_source.fields
         result_file = services.get_s3_object(data_source.result_parquet)
-        file = BufferReader(result_file["Body"].read())
-        records = json.loads(pd.read_parquet(file, engine="pyarrow").to_json(orient="index"))
+        file = pq.read_table(BufferReader(result_file["Body"].read()))
+        records = columns_to_records(file.to_pydict())
 
     except Exception as e:
         logging.info(f"Unable to get data source - {e}")
@@ -96,39 +111,38 @@ def data_source_filters(data_source_id):
 
 @app.route("/datasources/<int:data_source_id>/records", methods=["GET"])
 def data_source_results(data_source_id):
-    format_ = request.args.get("format", None)
-    orient = request.args.get("orient", "index")
+    page_size = request.args.get("page_size", None)
 
     try:
         data_source = types.DataSource.get_by_id(id=data_source_id)
         items = data_source.items
 
-        if format_ == "parquet":
-            result_file = services.get_s3_object(data_source.result_parquet)
-            file = BufferReader(result_file["Body"].read())
-            records = json.loads(pd.read_parquet(file, engine="pyarrow").to_json(orient=orient))
+        result_file = services.get_s3_object(data_source.result_parquet)
+        file = pq.read_table(BufferReader(result_file["Body"].read()))
+
+        if not page_size:
+            data_dict = file.to_pydict()
+            records = columns_to_records(data_dict)
             return create_response(records), 200
         else:
-            result_file = services.get_s3_object(data_source.result)
+            return (
+                create_response(
+                    get_paginated_list(
+                        file,
+                        items,
+                        page=int(request.args.get("page", 1)),
+                        page_size=int(page_size),
+                    )
+                ),
+                200,
+            )
 
     except Exception as e:
         logging.critical(f"Unable to get job results - {e}")
-        return create_response({"error": "There is no available results"}), 404
-
-    return (
-        create_response(
-            get_paginated_list(
-                result_file,
-                items,
-                page=int(request.args.get("page", 1)),
-                page_size=int(request.args.get("page_size", 10000)),
-            )
-        ),
-        200,
-    )
+        return create_response({"error": f"There is no available results"}), 404
 
 
-def get_paginated_list(s3obj, items, page, page_size):
+def get_paginated_list(file, items, page, page_size):
     rows_to_skip = (page - 1) * page_size
     count = items
     pages = math.ceil(count / page_size)
@@ -139,10 +153,9 @@ def get_paginated_list(s3obj, items, page, page_size):
     obj["pages"] = pages
 
     if (rows_to_skip + 1) > count:
-        obj["results"] = []
+        obj["records"] = []
     else:
-        pan = pd.read_csv(s3obj["Body"], skiprows=range(1, rows_to_skip + 1), iterator=True)
-        pan = pan.get_chunk(page_size)
-        obj["results"] = json.loads(pan.to_json(orient="records"))
+        sliced_data = file.slice(rows_to_skip, page_size).to_pydict()
+        obj["records"] = columns_to_records(sliced_data)
 
     return obj
