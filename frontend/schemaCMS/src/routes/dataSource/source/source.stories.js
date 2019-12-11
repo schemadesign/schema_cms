@@ -3,28 +3,44 @@ import { storiesOf } from '@storybook/react';
 import { Theme } from 'schemaUI';
 
 import { withTheme } from '../../../.storybook/decorators';
-import { history, intl } from '../../../.storybook/helpers';
-import { SourceComponent } from './source.component';
+import { intl } from '../../../.storybook/helpers';
+import { Source } from './source.component';
+import {
+  DATA_SOURCE_FILE,
+  DATA_SOURCE_NAME,
+  DATA_SOURCE_RUN_LAST_JOB,
+  DATA_SOURCE_TYPE,
+} from '../../../modules/dataSource/dataSource.constants';
 
 export const defaultProps = {
   dataSource: {
     metaData: {},
     jobs: [],
+    project: 'projectId',
+    id: 'dataSourceIdId',
   },
-  theme: Theme.dark,
-  onDataSourceChange: Function.prototype,
-  removeDataSource: Function.prototype,
-  isAnyJobProcessing: false,
-  history,
   intl,
+  theme: Theme.dark,
   match: {
     params: {
-      projectId: '1',
+      dataSourceId: '1',
     },
     url: 'url',
   },
+  isSubmitting: false,
+  dirty: false,
+  values: {
+    [DATA_SOURCE_NAME]: 'name',
+    [DATA_SOURCE_TYPE]: 'file',
+    [DATA_SOURCE_FILE]: 'file',
+    [DATA_SOURCE_RUN_LAST_JOB]: true,
+  },
+  handleSubmit: Function.prototype,
+  setFieldValue: Function.prototype,
+  removeDataSource: Function.prototype,
+  onDataSourceChange: Function.prototype,
 };
 
 storiesOf('Data Source|Source', module)
   .addDecorator(withTheme())
-  .add('Default', () => <SourceComponent {...defaultProps} />);
+  .add('Default', () => <Source {...defaultProps} />);

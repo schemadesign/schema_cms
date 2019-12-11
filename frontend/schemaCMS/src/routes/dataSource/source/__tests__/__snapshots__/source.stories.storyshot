@@ -5,11 +5,11 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   padding-top: 7px;
 }
 
-.c17 {
+.c19 {
   height: 155px;
 }
 
-.c19 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,15 +28,31 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c20 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
 }
 
-.c20 {
+.c22 {
   width: calc(50% - 5px);
   max-width: 240px;
+}
+
+.c17 {
+  border-top: 2px solid #2F2F36;
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 .c0 {
@@ -148,6 +164,23 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   color: #FFF;
 }
 
+.c18 {
+  cursor: pointer;
+  color: #FFF;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 30px;
+}
+
+.c18:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c18:last-child {
+  margin-bottom: 0;
+}
+
 .c12 {
   width: 100%;
   position: fixed;
@@ -176,7 +209,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   cursor: pointer;
 }
 
-.c21 {
+.c23 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -200,7 +233,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c21 svg {
+.c23 svg {
   cursor: pointer;
 }
 
@@ -247,7 +280,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c21 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -256,7 +289,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c18 {
+  .c20 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -265,7 +298,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c20 {
+  .c22 {
     width: 240px;
   }
 }
@@ -321,7 +354,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c21 {
+  .c23 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -531,6 +564,45 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             >
               <span>
                 Projects
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/projectId"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Project details
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/projectId/datasource"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Data sources
+              </span>
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              href="/project/projectId/folder"
+              id={null}
+              onClick={[Function]}
+            >
+              <span>
+                Pages
               </span>
             </a>
           </li>
@@ -908,242 +980,552 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
   </div>
-  <div
+  <form
     className=""
+    onSubmit={[Function]}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "maxWidth": "100%",
-          "paddingBottom": "30px",
-          "position": "relative",
-        }
-      }
+      className=""
     >
-      <label
-        htmlFor="name"
-        style={
-          Object {
-            "border": "none",
-            "borderTop": "2px solid #2F2F36",
-            "color": "#71737e",
-            "display": "block",
-            "fontSize": "14px",
-            "outline": "none",
-            "paddingTop": "8px",
-            "width": "100%",
-          }
-        }
-      >
-        Name
-      </label>
-      <input
-        id="name"
-        name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "border": "none",
-            "color": "#FFF",
-            "fontSize": "18px",
-            "lineHeight": "24px",
-            "outline": "none",
-            "padding": 0,
-          }
-        }
-        type="text"
-        value=""
-      />
       <div
         style={
           Object {
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
+            "display": "flex",
+            "flexDirection": "column",
+            "maxWidth": "100%",
+            "paddingBottom": "30px",
+            "position": "relative",
           }
         }
       >
-        <div
-          className="c16"
-        >
-          <svg
-            style={
-              Object {
-                "fill": "#FFF",
-                "height": "30px",
-                "width": "30px",
-              }
+        <label
+          htmlFor="name"
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
             }
-            viewBox="0 0 30 30"
+          }
+        >
+          Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          onChange={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "color": "#FFF",
+              "fontSize": "18px",
+              "lineHeight": "24px",
+              "outline": "none",
+              "padding": 0,
+            }
+          }
+          type="text"
+          value="name"
+        />
+        <div
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            className="c16"
           >
-            <path
-              d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
-              fillRule="evenodd"
-            />
-          </svg>
+            <svg
+              style={
+                Object {
+                  "fill": "#FFF",
+                  "height": "30px",
+                  "width": "30px",
+                }
+              }
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M21.789 10.92a.724.724 0 000-1.022l-1.687-1.687a.724.724 0 00-1.022 0l-1.322 1.322 2.709 2.709 1.322-1.322zM9 18.291V21h2.709l7.992-7.992-2.709-2.71L9 18.292z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <label
-    style={
-      Object {
-        "border": "none",
-        "borderTop": "2px solid #2F2F36",
-        "color": "#71737e",
-        "display": "block",
-        "fontSize": "14px",
-        "marginBottom": 20,
-        "outline": "none",
-        "paddingTop": "8px",
-        "width": "100%",
+    <label
+      style={
+        Object {
+          "border": "none",
+          "borderTop": "2px solid #2F2F36",
+          "color": "#71737e",
+          "display": "block",
+          "fontSize": "14px",
+          "marginBottom": 20,
+          "outline": "none",
+          "paddingTop": "8px",
+          "width": "100%",
+        }
       }
-    }
-  >
-    <span>
-      Source Type
-    </span>
-  </label>
-  <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "row",
-        "marginBottom": "40px",
-      }
-    }
-  >
+    >
+      <span>
+        Source Type
+      </span>
+    </label>
     <div
       style={
         Object {
-          "color": "#FFF",
           "display": "flex",
-          "flexDirection": "column",
-          "textAlign": "center",
+          "flexDirection": "row",
+          "marginBottom": "40px",
         }
       }
     >
-      <input
-        aria-hidden={true}
-        defaultChecked={false}
-        id="file"
-        name="type"
-        onChange={[Function]}
+      <div
         style={
           Object {
-            "height": 0,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "top": 0,
-            "visibility": "hidden",
-          }
-        }
-        type="radio"
-        value="file"
-      />
-      <label
-        htmlFor="file"
-        style={
-          Object {
-            "alignItems": "center",
-            "cursor": "pointer",
+            "color": "#FFF",
             "display": "flex",
             "flexDirection": "column",
-            "width": 96,
+            "textAlign": "center",
           }
         }
       >
-        <button
-          disabled={false}
+        <input
+          aria-hidden={true}
+          defaultChecked={true}
+          id="file"
+          name="type"
           style={
             Object {
-              "background": "#1d1d20",
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          type="radio"
+          value="file"
+        />
+        <label
+          htmlFor="file"
+          style={
+            Object {
+              "alignItems": "center",
               "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "height": 96,
-              "margin": "0",
-              "marginBottom": 10,
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "pointerEvents": "none",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "display": "flex",
+              "flexDirection": "column",
               "width": 96,
             }
           }
-          type="button"
         >
-          <svg
+          <button
+            disabled={false}
             style={
               Object {
+                "background": "#FFF",
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "display": "inline-block",
                 "fill": "#FFF",
-                "height": "60px",
-                "width": "60px",
+                "fontSize": "18px",
+                "height": 96,
+                "margin": "0",
+                "marginBottom": 10,
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "pointerEvents": "none",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                "width": 96,
               }
             }
-            viewBox="0 0 60 60"
+            type="button"
           >
-            <path
-              d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </label>
-      CSV
+            <svg
+              style={
+                Object {
+                  "fill": "#1d1d20",
+                  "height": "60px",
+                  "width": "60px",
+                }
+              }
+              viewBox="0 0 60 60"
+            >
+              <path
+                d="M33 8v9.332l.005.195A3.67 3.67 0 0036.668 21H46v27.902A3.106 3.106 0 0142.887 52H17.113A3.106 3.106 0 0114 48.902V10.48A2.484 2.484 0 0116.492 8H33zm7 20H20v17h20V28zM29 40v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm-9-5v3h-7v-3h7zm9 0v3h-7v-3h7zm7.5-11h-8.832l-.144-.006A1.67 1.67 0 0135 17.332V8.5L45.5 19z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
+        </label>
+        CSV
+      </div>
     </div>
-  </div>
-  <div
-    className="c17"
-  >
     <div
-      className="c18"
+      className=""
     >
       <div
-        className="c19"
+        style={Object {}}
       >
-        <button
-          className="c20"
-          disabled={true}
-          onClick={[Function]}
+        <div
           style={
             Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#71737e",
-              "cursor": "default",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": "18px",
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              "display": "flex",
+              "flexDirection": "column",
+              "maxWidth": "100%",
+              "paddingBottom": "30px",
+              "position": "relative",
             }
           }
         >
-          <span>
-            Save
-          </span>
-        </button>
+          <label
+            htmlFor="fileName"
+            style={
+              Object {
+                "border": "none",
+                "borderTop": "2px solid #2F2F36",
+                "color": "#71737e",
+                "display": "block",
+                "fontSize": "14px",
+                "outline": "none",
+                "paddingTop": "8px",
+                "width": "100%",
+              }
+            }
+          >
+            File Name
+          </label>
+          <input
+            disabled={true}
+            id="fileName"
+            name="fileName"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "border": "none",
+                "color": "#FFF",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "outline": "none",
+                "padding": 0,
+              }
+            }
+            type="text"
+            value="Select a file"
+          />
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <label
+              htmlFor="fileUpload"
+              style={
+                Object {
+                  "position": "relative",
+                  "top": 10,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#1d1d20",
+                    "border": "none",
+                    "borderRadius": "48px",
+                    "color": "#FFF",
+                    "cursor": "pointer",
+                    "display": "inline-block",
+                    "fill": "#FFF",
+                    "fontSize": 0,
+                    "margin": "0",
+                    "minHeight": "48px",
+                    "outline": "none",
+                    "padding": "0",
+                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                  }
+                }
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": "60px",
+                      "width": "60px",
+                    }
+                  }
+                  viewBox="0 0 60 60"
+                >
+                  <path
+                    d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                  />
+                </svg>
+              </div>
+            </label>
+          </div>
+        </div>
+        <input
+          accept=".csv"
+          aria-hidden={true}
+          id="fileUpload"
+          name="file"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          theme={
+            Object {
+              "background": "#000",
+              "border": "#2F2F36",
+              "button": Object {
+                "background": "#1d1d20",
+                "text": "#FFF",
+              },
+              "buttonDisabled": Object {
+                "background": "#1d1d20",
+                "text": "#71737e",
+              },
+              "card": Object {
+                "background": "#1d1d20",
+                "border": "#FFF",
+                "label": "#71737e",
+                "text": "#FFF",
+              },
+              "checkbox": Object {
+                "border": "#2F2F36",
+                "text": "#FFF",
+              },
+              "colors": Object {
+                "black": "#000",
+                "coolGray": "#a6a7aa",
+                "darkGrey": "#1d1d20",
+                "lightGrey": "#71737e",
+                "mediumGray": "#2F2F36",
+                "red": "#f21e29",
+                "veryLightPink": "#f0efef",
+                "white": "#FFF",
+                "yellow": "#be8f00",
+              },
+              "dataGrid": Object {
+                "background": "#000",
+                "text": "#71737e",
+              },
+              "error": "#f21e29",
+              "header": Object {
+                "border": "#2F2F36",
+                "text": "#FFF",
+              },
+              "icon": Object {
+                "background": "#1d1d20",
+                "fill": "#FFF",
+                "fillInverse": "#000",
+              },
+              "input": Object {
+                "text": "#FFF",
+              },
+              "inverseButton": Object {
+                "background": "#FFF",
+                "text": "#000",
+              },
+              "label": Object {
+                "border": "#2F2F36",
+                "text": "#71737e",
+              },
+              "menu": Object {
+                "background": "#000",
+                "text": "#FFF",
+              },
+              "providerContainer": Object {
+                "minHeight": "100vh",
+              },
+              "radioButton": Object {
+                "active": Object {
+                  "background": "#FFF",
+                  "fill": "#1d1d20",
+                },
+                "border": "#FFF",
+                "text": "#FFF",
+                "unActive": Object {
+                  "background": "#1d1d20",
+                  "dot": "#FFF",
+                  "fill": "#FFF",
+                },
+              },
+              "secondaryText": "#71737e",
+              "select": Object {
+                "background": "#1d1d20",
+                "border": "#000",
+              },
+              "stepper": Object {
+                "active": "#FFF",
+                "background": "#1d1d20",
+              },
+              "tab": Object {
+                "active": "#FFF",
+                "hover": "#FFF",
+                "normal": "#2F2F36",
+              },
+              "table": Object {
+                "background": Object {
+                  "body": "#000",
+                  "header": "#1d1d20",
+                },
+                "border": Object {
+                  "body": "#1d1d20",
+                  "header": "#000",
+                },
+                "text": Object {
+                  "body": "#FFF",
+                  "header": "#71737e",
+                },
+              },
+              "text": "#FFF",
+              "textArea": Object {
+                "background": "#000",
+                "text": "#FFF",
+              },
+              "textField": Object {
+                "error": "#f21e29",
+                "label": "#71737e",
+              },
+              "typography": Object {
+                "h1": Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontWeight": 600,
+                },
+                "h2": Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontWeight": 100,
+                },
+                "h3": Object {
+                  "color": Object {
+                    "border": "#f0efef",
+                    "text": "#a6a7aa",
+                  },
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontWeight": 600,
+                },
+                "p": Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontWeight": 200,
+                },
+                "pre": Object {
+                  "fontFamily": "Hack, monospace",
+                },
+                "span": Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                },
+              },
+              "warning": "#be8f00",
+            }
+          }
+          type="file"
+        />
       </div>
     </div>
-  </div>
+    <div
+      className="c17"
+    >
+      <span
+        className="c18"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          }
+        }
+      >
+        <span>
+          View Past Versions
+        </span>
+      </span>
+      <span
+        className="c18"
+        id="removeDataSourceDesktopBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+          }
+        }
+      >
+        <span>
+          Delete Data Source
+        </span>
+      </span>
+    </div>
+    <div
+      className="c19"
+    >
+      <div
+        className="c20"
+      >
+        <div
+          className="c21"
+        >
+          <button
+            className="c22"
+            disabled={true}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#1d1d20",
+                "border": "none",
+                "borderRadius": "48px",
+                "color": "#71737e",
+                "cursor": "default",
+                "display": "inline-block",
+                "fill": "#FFF",
+                "fontSize": "18px",
+                "margin": "0",
+                "minHeight": "48px",
+                "outline": "none",
+                "padding": "0",
+                "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+              }
+            }
+            type="submit"
+          >
+            <span>
+              Save
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
   <div
-    className="c21"
+    className="c23"
   >
     <div
       className="c13"

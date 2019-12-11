@@ -2,21 +2,22 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 
-import { SourceComponent } from '../source.component';
+import { Source } from '../source.component';
 import { defaultProps } from '../source.stories';
+import { Form } from '../source.styles';
 import { DEFAULT_LOCALE } from '../../../../i18n';
 
 describe('SourceComponent: Component', () => {
   const component = props => (
     <IntlProvider locale={DEFAULT_LOCALE}>
-      <SourceComponent {...defaultProps} {...props} />
+      <Source {...defaultProps} {...props} />
     </IntlProvider>
   );
 
   const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', () => {
-    const wrapper = render();
+    const wrapper = render().dive();
     global.expect(wrapper).toMatchSnapshot();
   });
 
@@ -26,7 +27,49 @@ describe('SourceComponent: Component', () => {
         type: 'file',
       },
     };
-    const wrapper = render(props);
+    const wrapper = render(props).dive();
     global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call handleSubmit', () => {
+    jest.spyOn(defaultProps, 'handleSubmit');
+    const wrapper = render().dive();
+    wrapper.find(Form).simulate('submit');
+    expect(defaultProps.handleSubmit).toHaveBeenCalled();
+  });
+
+  it('should call handleSubmit and set runLastJob on true', () => {
+    jest.spyOn(defaultProps, 'handleSubmit');
+    jest.spyOn(defaultProps, 'setFieldValue');
+    const wrapper = render().dive();
+    wrapper.find(Form).simulate('submit');
+    wrapper.find('#confirmRunLastJob').simulate('click');
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('runLastJob', true);
+  });
+
+  it('should call handleSubmit and set runLastJob on false', () => {
+    jest.spyOn(defaultProps, 'handleSubmit');
+    jest.spyOn(defaultProps, 'setFieldValue');
+    const wrapper = render().dive();
+    wrapper.find(Form).simulate('submit');
+    wrapper.find('#declineRunLastJob').simulate('click');
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('runLastJob', false);
+  });
+
+  it('should remove data source', () => {
+    jest.spyOn(defaultProps, 'removeDataSource');
+
+    const wrapper = render().dive();
+    wrapper
+      .find(Form)
+      .dive()
+      .find('#removeDataSourceDesktopBtn')
+      .simulate('click');
+    wrapper.find('#confirmRemoveDataSource').simulate('click');
+
+    expect(defaultProps.removeDataSource).toHaveBeenCalledWith({
+      dataSourceId: 'dataSourceIdId',
+      projectId: 'projectId',
+    });
   });
 });

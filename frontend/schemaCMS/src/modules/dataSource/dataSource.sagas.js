@@ -1,5 +1,6 @@
-import { all, put, takeLatest, take, delay, fork, cancel, cancelled } from 'redux-saga/effects';
-import { pipe, all as ramdaAll, forEach, keys, omit, either, propEq, isEmpty, propIs, both } from 'ramda';
+import { all, cancel, cancelled, delay, fork, put, take, takeLatest } from 'redux-saga/effects';
+import { all as ramdaAll, both, either, forEach, isEmpty, keys, omit, pipe, propEq, propIs, map } from 'ramda';
+import { camelize, decamelize } from 'humps';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
@@ -102,15 +103,16 @@ function* fetchList({ payload }) {
 function* updateOne({ payload: { dataSourceId, requestData } }) {
   try {
     yield put(DataSourceRoutines.updateOne.request());
-    const formData = new FormData();
-
     const response = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, { name: requestData.name });
 
     if (requestData.file) {
+      const formData = new FormData();
+
       pipe(
         omit(['name']),
         keys,
-        forEach(name => formData.append(name, requestData[name]))
+        map(decamelize),
+        forEach(name => formData.append(name, requestData[camelize(name)]))
       )(requestData);
 
       const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, formData, {

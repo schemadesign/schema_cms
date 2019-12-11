@@ -141,6 +141,7 @@ describe('DataSource: sagas', () => {
       requestData: {
         data: 'data',
         name: 'name',
+        camelizeData: 'camelizeData',
       },
     };
     const responseData = {
@@ -170,7 +171,11 @@ describe('DataSource: sagas', () => {
         };
 
         mockApi
-          .patch(`${DATA_SOURCES_PATH}/${payload.dataSourceId}`, /form-data; name="data"[^]*data/m, options)
+          .patch(
+            `${DATA_SOURCES_PATH}/${payload.dataSourceId}`,
+            /form-data; name="camelize_data"[^]*camelizeData/m,
+            options
+          )
           .reply(OK, responseData);
 
         jest.spyOn(browserHistory, 'push');

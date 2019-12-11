@@ -3,9 +3,11 @@ import { defaultTo } from 'ramda';
 
 export const FETCH_LIST_DELAY = 5 * 1000;
 
+export const DATA_SOURCE_FORM = 'data_source_form';
 export const DATA_SOURCE_NAME = 'name';
 export const DATA_SOURCE_FILE = 'file';
 export const DATA_SOURCE_TYPE = 'type';
+export const DATA_SOURCE_RUN_LAST_JOB = 'runLastJob';
 
 export const SOURCE_TYPE_FILE = 'file';
 export const SOURCE_TYPE_API = 'api';
@@ -18,7 +20,7 @@ export const RESULT_PAGE = 'result';
 export const FILTERS_PAGE = 'filters';
 export const VIEWS_PAGE = 'views';
 
-export const IGNORED_FIELDS = ['file', 'metaData', 'errorLog', 'createdBy', 'status', 'created', 'id'];
+export const DATA_SOURCE_FIELDS = ['fileName', 'type', 'name'];
 
 const FILE_SIZE = 300000000;
 

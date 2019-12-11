@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { colors } from '../../../theme/styled';
 import { Link as LinkTypography } from '../../../theme/typography';
 
+export const Form = styled.form``;
+
 export const buttonStyles = {
   width: 96,
   height: 96,
