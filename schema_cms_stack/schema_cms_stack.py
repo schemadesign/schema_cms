@@ -94,11 +94,7 @@ class BaseResources(core.Stack):
             deletion_protection=False,
             delete_automated_backups=True,
         )
-        self.app_bucket = aws_s3.Bucket(
-            self,
-            APP_S3_BUCKET_NAME,
-            versioned=True
-        )
+        self.app_bucket = aws_s3.Bucket(self, APP_S3_BUCKET_NAME, versioned=True)
 
 
 class CertsStack(core.Stack):
@@ -223,14 +219,12 @@ class API(core.Stack):
             "SENTRY_DNS": "sentry_dns_arn",
             "DJANGO_DEFAULT_FROM_EMAIL": "django_default_from_email_arn",
             "DJANGO_HOST": "django_host_arn",
+            "DJANGO_ROOT_PASSWORD": "django_root_password_arn",
         }
 
         self.env = {k: self.map_secret(v) for k, v in env_map.items()}
 
-        self.job_processing_dead_letter_sqs = aws_sqs.Queue(
-            self,
-            'job_processing_dead_letter_sqs',
-        )
+        self.job_processing_dead_letter_sqs = aws_sqs.Queue(self, 'job_processing_dead_letter_sqs',)
         self.job_processing_queues = [
             self._create_job_processing_queue(
                 scope=scope,
@@ -241,7 +235,7 @@ class API(core.Stack):
                 scope=scope,
                 name=f"job_processing_sqs_ext",
                 dead_letter_queue=self.job_processing_dead_letter_sqs,
-            )
+            ),
         ]
 
         self.api = aws_ecs_patterns.ApplicationLoadBalancedFargateService(
@@ -277,7 +271,7 @@ class API(core.Stack):
             secrets={
                 "DJANGO_SECRET_KEY": django_secret_key,
                 "DB_CONNECTION": connection_secret_key,
-                **self.env
+                **self.env,
             },
             cpu=256,
             memory_limit_mib=512,
@@ -311,9 +305,8 @@ class API(core.Stack):
             name,
             visibility_timeout=core.Duration.seconds(60),
             dead_letter_queue=aws_sqs.DeadLetterQueue(
-                queue=dead_letter_queue,
-                max_receive_count=JOB_PROCESSING_MAX_RETRIES
-            )
+                queue=dead_letter_queue, max_receive_count=JOB_PROCESSING_MAX_RETRIES
+            ),
         )
 
 
@@ -340,9 +333,7 @@ class LambdaWorker(core.Stack):
                 "IMAGE_SCRAPING_FETCH_TIMEOUT": "15",
                 "AWS_IMAGE_STORAGE_BUCKET_NAME": scope.image_resize_lambda.image_bucket.bucket_name,
                 "AWS_IMAGE_STATIC_URL": scope.image_resize_lambda.image_bucket.bucket_website_url,
-                "BACKEND_URL": BACKEND_URL.format(
-                    domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
-                ),
+                "BACKEND_URL": BACKEND_URL.format(domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)),
                 "SENTRY_DNS": self.get_secret("sentry_dns_arn", name + "-secret").secret_value.to_string(),
                 LAMBDA_AUTH_TOKEN_ENV_NAME: scope.api.api_lambda_token,
             },
@@ -350,16 +341,15 @@ class LambdaWorker(core.Stack):
             timeout=core.Duration.seconds(180),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
-        lambda_fn.add_event_source(
-            aws_lambda_event_sources.SqsEventSource(queue, batch_size=1)
-        )
+        lambda_fn.add_event_source(aws_lambda_event_sources.SqsEventSource(queue, batch_size=1))
         scope.base.app_bucket.grant_read_write(lambda_fn.role)
         scope.image_resize_lambda.image_bucket.grant_read_write(lambda_fn.role)
         return lambda_fn, lambda_code
 
     def get_secret(self, secret_arn, secret_suffix):
         return aws_secretsmanager.Secret.from_secret_attributes(
-            self, secret_arn + secret_suffix, secret_arn=self.node.try_get_context(secret_arn))
+            self, secret_arn + secret_suffix, secret_arn=self.node.try_get_context(secret_arn)
+        )
 
 
 class PublicAPI(core.Stack):
@@ -376,9 +366,7 @@ class PublicAPI(core.Stack):
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             environment={
                 "AWS_STORAGE_BUCKET_NAME": scope.base.app_bucket.bucket_name,
-                "BACKEND_URL": BACKEND_URL.format(
-                    domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)
-                ),
+                "BACKEND_URL": BACKEND_URL.format(domain=self.node.try_get_context(DOMAIN_NAME_CONTEXT_KEY)),
             },
             memory_size=512,
             timeout=core.Duration.seconds(60),
@@ -390,9 +378,7 @@ class PublicAPI(core.Stack):
 
         # self.publicApiGateway = aws_apigateway.RestApi(self, "rest-api")
         self.publicApiLambdaIntegration = aws_apigateway.LambdaRestApi(
-            self,
-            "rest-api",
-            handler=self.public_api_lambda
+            self, "rest-api", handler=self.public_api_lambda
         )
         # self.publicApiGateway.root.add_resource(
         #     "datasources"
@@ -414,7 +400,9 @@ class ImageResize(core.Stack):
         self.image_resize_lambda, self.function_code, self.api_gateway = self.create_lambda()
         self.image_bucket = self.create_bucket(lambda_url=self.api_gateway.url)
         self.image_resize_lambda.add_environment(key="BUCKET", value=self.image_bucket.bucket_name)
-        self.image_resize_lambda.add_environment(key="REDIRECT_URL", value=self.image_bucket.bucket_website_url)
+        self.image_resize_lambda.add_environment(
+            key="REDIRECT_URL", value=self.image_bucket.bucket_website_url
+        )
         self.image_resize_lambda.add_environment(key="CORS_ORIGIN", value=f"https://{domain_name}")
         self.image_resize_lambda.add_environment(key="ALLOWED_DIMENSIONS", value="150x150,1024x1024")
         self.image_bucket.grant_read_write(self.image_resize_lambda.role)
@@ -436,9 +424,9 @@ class ImageResize(core.Stack):
                     protocol=protocol_mapping[parsed_url.scheme.upper()],  # enum required
                     host_name=parsed_url.netloc,
                     replace_key=aws_s3.ReplaceKey.prefix_with("prod/resize?key="),
-                    http_redirect_code="307"
+                    http_redirect_code="307",
                 )
-            ]
+            ],
         )
 
     def create_lambda(self):
@@ -454,7 +442,9 @@ class ImageResize(core.Stack):
             tracing=aws_lambda.Tracing.ACTIVE,
         )
 
-        api_gateway = aws_apigateway.LambdaRestApi(self, "lambda-image-resize-api", handler=image_resize_lambda)
+        api_gateway = aws_apigateway.LambdaRestApi(
+            self, "lambda-image-resize-api", handler=image_resize_lambda
+        )
 
         return image_resize_lambda, code, api_gateway
 
@@ -671,8 +661,7 @@ class CIPipeline(core.Stack):
         )
 
         lambda_workers_build_actions = self.get_lambda_worker_build_actions(
-            scope=scope,
-            action_input=source_output
+            scope=scope, action_input=source_output
         )
 
         self.pipeline.add_stage(
@@ -873,10 +862,7 @@ class CIPipeline(core.Stack):
             )
             output = aws_codepipeline.Artifact()
             action = aws_codepipeline_actions.CodeBuildAction(
-                action_name=f"build_{function_name}",
-                input=action_input,
-                project=project,
-                outputs=[output],
+                action_name=f"build_{function_name}", input=action_input, project=project, outputs=[output],
             )
             actions_with_outputs.append((action, output, function, code))
         return actions_with_outputs
@@ -885,11 +871,13 @@ class CIPipeline(core.Stack):
         parameter_overrides = dict()
         extra_inputs = []
         for (_, output, _, code) in build_actions:
-            parameter_overrides.update(**code.assign(
-                bucket_name=output.s3_location.bucket_name,
-                object_key=output.s3_location.object_key,
-                object_version=output.s3_location.object_version,
-            ))
+            parameter_overrides.update(
+                **code.assign(
+                    bucket_name=output.s3_location.bucket_name,
+                    object_key=output.s3_location.object_key,
+                    object_version=output.s3_location.object_version,
+                )
+            )
             extra_inputs.append(output)
         return aws_codepipeline_actions.CloudFormationCreateReplaceChangeSetAction(
             action_name=f"prepare_lambda_worker_changes",

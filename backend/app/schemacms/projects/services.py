@@ -37,8 +37,12 @@ def schedule_worker_with(data: dict, source_file_size: int):
     return sqs_response['MessageId']
 
 
-def schedule_object_meta_processing(obj, source_file_size):
-    data = {"type": obj.meta_file_processing_type, "data": obj.meta_file_serialization()}
+def schedule_object_meta_processing(obj, source_file_size, rerun_scripts=False):
+    data = {
+        "type": obj.meta_file_processing_type,
+        "data": obj.meta_file_serialization(),
+        "rerun_scripts": rerun_scripts,
+    }
     return schedule_worker_with(data=data, source_file_size=source_file_size)
 
 

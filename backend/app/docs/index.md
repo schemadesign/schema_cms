@@ -25,6 +25,11 @@ Create a superuser to login to the admin:
 docker-compose run --rm backend ./manage.py createsuperuser
 ```
 
+Change root user password:
+
+```bash
+docker-compose run --rm backend ./manage.py changepassword root
+```
 
 # Continuous Deployment
 
