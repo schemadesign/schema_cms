@@ -169,7 +169,6 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
               "red": "#f21e29",
               "veryLightPink": "#f0efef",
               "white": "#FFF",
-              "yellow": "#be8f00",
             },
             "dataGrid": Object {
               "background": "#000",
@@ -281,7 +280,6 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               },
             },
-            "warning": "#be8f00",
           }
         }
         type="file"
@@ -470,7 +468,6 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
               "red": "#f21e29",
               "veryLightPink": "#f0efef",
               "white": "#FFF",
-              "yellow": "#be8f00",
             },
             "dataGrid": Object {
               "background": "#000",
@@ -582,7 +579,6 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
               },
             },
-            "warning": "#be8f00",
           }
         }
         type="file"

@@ -1,9 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
-
-import { Container } from './logout.styles';
-import messages from './logout.messages';
 
 export class Logout extends PureComponent {
   static propTypes = {
@@ -15,10 +11,6 @@ export class Logout extends PureComponent {
   }
 
   render() {
-    return (
-      <Container>
-        <FormattedMessage {...messages.loggingOut} />
-      </Container>
-    );
+    return null;
   }
 }

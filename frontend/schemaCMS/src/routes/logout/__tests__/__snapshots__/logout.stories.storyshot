@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Logout Default 1`] = `
-@media (min-width:1040px) {
-  .c0 {
-    margin-top: 70px;
-  }
-}
-
 <div
   style={
     Object {
@@ -22,12 +16,5 @@ exports[`Storyshots Logout Default 1`] = `
   }
 
   </style>
-  <div
-    className="c0"
-  >
-    <span>
-      Logging out...
-    </span>
-  </div>
 </div>
 `;

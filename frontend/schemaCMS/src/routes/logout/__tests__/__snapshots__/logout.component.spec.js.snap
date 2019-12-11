@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Logout: Component should render correctly 1`] = `
-<styled.div>
-  <FormattedMessage
-    defaultMessage="Logging out..."
-    id="logout.loggingOut"
-    values={Object {}}
-  />
-</styled.div>
-`;
+exports[`Logout: Component should render correctly 1`] = `""`;

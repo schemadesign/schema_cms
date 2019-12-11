@@ -65,7 +65,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
           "red": "#f21e29",
           "veryLightPink": "#f0efef",
           "white": "#FFF",
-          "yellow": "#be8f00",
         },
         "dataGrid": Object {
           "background": "#f0efef",
@@ -175,7 +174,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
           },
         },
-        "warning": "#be8f00",
       }
     }
   >
@@ -211,7 +209,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
             "red": "#f21e29",
             "veryLightPink": "#f0efef",
             "white": "#FFF",
-            "yellow": "#be8f00",
           },
           "dataGrid": Object {
             "background": "#f0efef",
@@ -321,7 +318,6 @@ exports[`App: Component should not render App when language is not set 1`] = `
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
             },
           },
-          "warning": "#be8f00",
         }
       }
     >
@@ -425,7 +421,6 @@ exports[`App: Component should render App when language is set 1`] = `
           "red": "#f21e29",
           "veryLightPink": "#f0efef",
           "white": "#FFF",
-          "yellow": "#be8f00",
         },
         "dataGrid": Object {
           "background": "#f0efef",
@@ -535,7 +530,6 @@ exports[`App: Component should render App when language is set 1`] = `
             "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
           },
         },
-        "warning": "#be8f00",
       }
     }
   >
@@ -571,7 +565,6 @@ exports[`App: Component should render App when language is set 1`] = `
             "red": "#f21e29",
             "veryLightPink": "#f0efef",
             "white": "#FFF",
-            "yellow": "#be8f00",
           },
           "dataGrid": Object {
             "background": "#f0efef",
@@ -681,7 +674,6 @@ exports[`App: Component should render App when language is set 1`] = `
               "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
             },
           },
-          "warning": "#be8f00",
         }
       }
     >
