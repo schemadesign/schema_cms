@@ -11,7 +11,6 @@ from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
 
 class DataSourceMetaSerializer(serializers.ModelSerializer):
     filters = serializers.SerializerMethodField(read_only=True)
-    fields_names = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = DataSourceMeta
@@ -19,9 +18,6 @@ class DataSourceMetaSerializer(serializers.ModelSerializer):
 
     def get_filters(self, meta):
         return meta.datasource.filters_count
-
-    def get_fields_names(self, meta):
-        return meta.get_fields_names()
 
 
 class DataSourceCreatorSerializer(serializers.ModelSerializer):
@@ -88,6 +84,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "name": {"required": True, "allow_null": False, "allow_blank": False},
             "type": {"required": True, "allow_null": False},
             "file": {"required": True, "allow_null": False},
+            "run_last_job": {"required": False, "allow_null": False, "allow_blank": False},
         }
         validators = [
             CustomUniqueTogetherValidator(
@@ -134,8 +131,6 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
         if "file" in self.validated_data:
-            obj.active_job = None
-            obj.save(update_fields=["active_job"])
             obj.schedule_update_meta()
         return obj
 
@@ -299,10 +294,11 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
 class PublicApiUpdateMetaSerializer(serializers.Serializer):
     items = serializers.IntegerField(min_value=0)
     fields = serializers.IntegerField(min_value=0)
+    fields_names = serializers.ListField()
     preview_data = serializers.DictField()
 
     class Meta:
-        fields = ("items", "fields", "preview_data")
+        fields = ("items", "fields", "fields_names", "preview_data")
 
 
 class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):

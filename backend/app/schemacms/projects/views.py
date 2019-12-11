@@ -11,15 +11,32 @@ from schemacms.utils import serializers as utils_serializers
 from . import constants, models, serializers
 
 
+def copy_steps_from_active_job(steps, job):
+    for step in steps:
+        step.id = None
+        step.datasource_job = job
+        step.save()
+
+
 def update_meta(view, model_class, request, pk, *args, **kwargs):
+    is_rerun = request.data.pop("rerun_scripts", None)
+
     serializer = view.get_serializer(data=request.data)
     serializer.is_valid(raise_exception=True)
+
     with transaction.atomic():
         obj = get_object_or_404(model_class.objects.select_for_update(), pk=pk)
         obj.update_meta(**serializer.validated_data)
 
         if isinstance(model_class(), models.DataSource):
             fake_job = obj.create_job(description=f"DataSource {obj.id} file upload")
+
+            if is_rerun:
+                copy_steps_from_active_job(obj.active_job.steps.all(), fake_job)
+
+            obj.active_job = None
+            obj.save(update_fields=["active_job"])
+
             transaction.on_commit(fake_job.schedule)
 
     return response.Response(status=status.HTTP_204_NO_CONTENT)
@@ -51,7 +68,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
         queryset = (
             project.data_sources.all()
             .jobs_in_process()
-            .prefetch_related("filters")
+            .prefetch_related("filters", "active_job__steps")
             .select_related("project", "meta_data", "created_by", "active_job")
             .order_by("-created")
             .annotate_filters_count()
@@ -139,7 +156,7 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
     queryset = (
-        models.DataSource.objects.prefetch_related("filters")
+        models.DataSource.objects.prefetch_related("filters", "active_job__steps")
         .select_related("project", "meta_data", "created_by", "active_job")
         .order_by("-created")
     )
@@ -221,7 +238,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
     @decorators.action(detail=True, url_path="jobs-history", methods=["get"])
     def jobs_history(self, request, pk=None, **kwargs):
         data_source = self.get_object()
-        queryset = data_source.jobs.all()
+        queryset = data_source.jobs.prefetch_related("steps__script").order_by("-created")
 
         page = self.paginate_queryset(queryset)
         if page is not None:

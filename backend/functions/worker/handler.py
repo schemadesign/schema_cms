@@ -81,36 +81,34 @@ def get_preview_data(data_frame):
     for key, value in samples[0].items():
         fields_info[key]["sample"] = value
 
-    preview_json = json.dumps(
-        {"data": table_preview, "fields": fields_info}, cls=NumpyEncoder
-    )
+    preview_json = json.dumps({"data": table_preview, "fields": fields_info}, cls=NumpyEncoder)
 
     del data_frame, sample_of_5
 
-    return preview_json, items, fields
+    return preview_json, items, fields, columns
 
 
-def process_datasource_meta_source_file(data: dict):
+def process_datasource_meta_source_file(data_source: dict):
     try:
-        datasource = types.DataSource.from_json(data)
+        datasource = types.DataSource.from_json(data_source["data"])
     except Exception as e:
         return logging.critical(f"Invalid message body - {e}")
 
     s3obj = services.get_s3_object(datasource.file)
     data_frame = read_file_to_data_frame(s3obj["Body"])
     try:
-        preview_data, items, fields = get_preview_data(data_frame)
+        preview_data, items, fields, fields_names = get_preview_data(data_frame)
         api.schemacms_api.update_datasource_meta(
             datasource_pk=datasource.id,
             items=items,
             fields=fields,
+            fields_names=fields_names,
             preview_data=preview_data,
+            rerun_scripts=data_source["rerun_scripts"],
         )
         logger.info(f"Meta created - DataSource # {datasource.id}")
     except Exception as e:
-        return logging.error(
-            f"Data Source {datasource.id} fail to create meta data - {e}"
-        )
+        return logging.error(f"Data Source {datasource.id} fail to create meta data - {e}")
 
 
 def write_dataframe_to_csv_on_s3(dataframe, filename, is_pandas):
@@ -120,9 +118,7 @@ def write_dataframe_to_csv_on_s3(dataframe, filename, is_pandas):
         csv_buffer.write(dataframe.to_csv(index=False, encoding="utf-8"))
     else:
         csv_buffer.write(dataframe.to_csv())
-    services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(
-        Body=csv_buffer.getvalue()
-    )
+    services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(Body=csv_buffer.getvalue())
 
     return services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename)
 
@@ -131,14 +127,12 @@ def csv_to_parquet(file, file_name):
     buffer = BytesIO()
     convert_options = pa_csv.ConvertOptions(strings_can_be_null=True)
 
-    table = pa_csv.read_csv(
-        BufferReader(file.get()["Body"].read()), convert_options=convert_options
-    )
+    table = pa_csv.read_csv(BufferReader(file.get()["Body"].read()), convert_options=convert_options)
     pq.write_table(table, buffer, compression="snappy")
 
-    services.s3_resource.Object(
-        settings.AWS_STORAGE_BUCKET_NAME, file_name.replace(".csv", ".parquet")
-    ).put(Body=buffer.getvalue())
+    services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, file_name.replace(".csv", ".parquet")).put(
+        Body=buffer.getvalue()
+    )
 
 
 def process_job(job_data: dict):
@@ -147,22 +141,18 @@ def process_job(job_data: dict):
     global current_step
 
     try:
-        current_job = types.Job.from_json(job_data)
+        current_job = types.Job.from_json(job_data["data"])
     except Exception as e:
         return logging.critical(f"Invalid message body - {e}")
 
     try:
-        api.schemacms_api.update_job_state(
-            job_pk=current_job.id, state=db.JobState.PROCESSING
-        )
+        api.schemacms_api.update_job_state(job_pk=current_job.id, state=db.JobState.PROCESSING)
 
         source_file = current_job.source_file
         source_file_path = current_job.source_file_path
         source_file_version = current_job.source_file_version
 
-        logger.info(
-            f"Loading source file: {source_file_path} ver. {source_file_version}"
-        )
+        logger.info(f"Loading source file: {source_file_path} ver. {source_file_version}")
 
         try:
             if current_job.steps:
@@ -184,7 +174,9 @@ def process_job(job_data: dict):
 
             logger.info(f"Step {step.id} done")
 
-        result_file_name = f"{current_job.datasource.id}/jobs/{current_job.id}/outputs/job_{current_job.id}_result.csv"
+        result_file_name = (
+            f"{current_job.datasource.id}/jobs/{current_job.id}/outputs/job_{current_job.id}_result.csv"
+        )
 
         try:
 
@@ -196,42 +188,37 @@ def process_job(job_data: dict):
             raise errors.JobSavingFilesError(f"{e} @ saving results files")
 
         # Update job's meta data
-        preview_data, items, fields = get_preview_data(df)
+        preview_data, items, fields, fields_names = get_preview_data(df)
         api.schemacms_api.update_job_meta(
-            job_pk=current_job.id, items=items, fields=fields, preview_data=preview_data
+            job_pk=current_job.id,
+            items=items,
+            fields=fields,
+            fields_names=fields_names,
+            preview_data=preview_data,
         )
 
         logger.info(f"Meta created - Job # {current_job.id}")
 
         api.schemacms_api.update_job_state(
-            job_pk=current_job.id,
-            state=db.JobState.SUCCESS,
-            result=result_file_name,
-            error="",
+            job_pk=current_job.id, state=db.JobState.SUCCESS, result=result_file_name, error="",
         )
     except errors.JobLoadingSourceFileError as e:
         api.schemacms_api.update_job_state(
-            job_pk=current_job.id,
-            state=db.JobState.FAILED,
-            error=f"{e} @ loading source file",
+            job_pk=current_job.id, state=db.JobState.FAILED, error=f"{e} @ loading source file",
         )
         logging.error(e, exc_info=True)
         return logging.critical(f"Error while loading source file - {e}")
 
     except errors.JobSetExecutionError as e:
         api.schemacms_api.update_job_state(
-            job_pk=current_job.id,
-            state=db.JobState.FAILED,
-            error=f"{e.msg} @ {e.step.id}",
+            job_pk=current_job.id, state=db.JobState.FAILED, error=f"{e.msg} @ {e.step.id}",
         )
         logging.error(e, exc_info=True)
         return logging.critical(f"Error while executing {e.step.script.name}")
 
     except errors.JobSavingFilesError as e:
         api.schemacms_api.update_job_state(
-            job_pk=current_job.id,
-            state=db.JobState.FAILED,
-            error=f"{e} @ saving results files",
+            job_pk=current_job.id, state=db.JobState.FAILED, error=f"{e} @ saving results files",
         )
         logging.error(e, exc_info=True)
         return logging.critical(f"Error while saving results - {e}")
@@ -256,7 +243,7 @@ def main(event, context):
             "scripts-processing": process_job,
         }
         handler = processing_handler_mapping[body["type"]]
-        handler(body["data"])
+        handler(body)
 
     return {"message": "Your function executed successfully!"}
 

@@ -46,6 +46,7 @@ class MetaDataModel(models.Model):
     items = models.PositiveIntegerField()
     fields = models.PositiveSmallIntegerField()
     preview = models.FileField(null=True, upload_to=file_upload_path)
+    fields_names = pg_fields.ArrayField(models.CharField(max_length=200), blank=True, default=list)
 
     class Meta:
         abstract = True
@@ -196,12 +197,13 @@ class DataSource(
     def schedule_update_meta(self):
         return MetaDataModel.schedule_update_meta(obj=self)
 
-    def update_meta(self, preview_data: dict, items: int, fields: int):
+    def update_meta(self, preview_data: dict, items: int, fields: int, fields_names: list):
         if not self.file:
             return
         with transaction.atomic():
             meta, _ = DataSourceMeta.objects.update_or_create(
-                datasource_id=self.id, defaults={"fields": fields, "items": items}
+                datasource_id=self.id,
+                defaults={"fields": fields, "items": items, "fields_names": fields_names},
             )
             file_name, _ = self.get_original_file_name(self.file.name)
             meta.preview.save(
@@ -322,12 +324,13 @@ class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
 
         return os.path.join(base_path, f"{self.datasource.id}/previews/{filename}")
 
-    def get_fields_names(self):
-        try:
-            fields = json.loads(self.preview.file.read()).get("fields", {})
-            return [key for key in fields.keys()]
-        except OSError:
-            return []
+    # def get_fields_names(self):
+    #     try:
+    #         self.preview.seek(0)
+    #         fields = json.loads(self.preview.read()).get("fields", {})
+    #         return [key for key in fields.keys()]
+    #     except OSError:
+    #         return []
 
 
 class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
@@ -412,10 +415,10 @@ class DataSourceJob(
             raise ValueError("Job or DataSource ID is not set")
         return os.path.join(base_path, f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}")
 
-    def update_meta(self, preview_data: dict, items: int, fields: int):
+    def update_meta(self, preview_data: dict, items: int, fields: int, fields_names: list):
         with transaction.atomic():
             meta, _ = DataSourceJobMetaData.objects.update_or_create(
-                job=self, defaults={"fields": fields, "items": items}
+                job=self, defaults={"fields": fields, "items": items, "fields_names": fields_names}
             )
 
             meta.preview.save(

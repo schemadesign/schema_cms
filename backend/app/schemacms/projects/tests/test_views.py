@@ -524,7 +524,7 @@ class TestUpdateDataSourceView:
 
     def test_file_overwrite(self, api_client, faker, admin, data_source_factory):
         data_source = data_source_factory()
-        data_source.update_meta(preview_data={}, items=0, fields=0)
+        data_source.update_meta(preview_data={}, items=0, fields=0, fields_names=[])
         _, file_name_before_update = data_source.get_original_file_name()
         payload = dict(type=projects_constants.DataSourceType.FILE, file=faker.csv_upload_file())
 
@@ -545,7 +545,9 @@ class TestUpdateDataSourceView:
 class TestDataSourcePreview:
     def test_response(self, api_client, admin, data_source):
         api_client.force_authenticate(admin)
-        data_source.update_meta(preview_data={"test": "test"}, items=2, fields=2)
+        data_source.update_meta(
+            preview_data={"test": "test"}, items=2, fields=2, fields_names=["col1", "col2"]
+        )
         expected_data = json.loads(data_source.meta_data.preview.read())
         expected_data["data_source"] = {"name": data_source.name}
 
@@ -877,7 +879,7 @@ class TestJobResultPreviewView:
         job_step_factory.create_batch(2, datasource_job=job)
         job.result = faker.csv_upload_file(filename="test_result.csv")
         job.save()
-        job.update_meta(preview_data={"test": "test"}, items=3, fields=2)
+        job.update_meta(preview_data={"test": "test"}, items=3, fields=2, fields_names=["col1", "col2"])
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(job.id))
