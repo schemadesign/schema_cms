@@ -114,6 +114,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
             values={Object {}}
           />
         }
+        id="dataSource-17"
         key="0"
       >
         <Styled(H1)
@@ -257,6 +258,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             values={Object {}}
           />
         }
+        id="dataSource-17"
         key="0"
       >
         <Styled(H1)
@@ -357,6 +359,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
         }
+        id="dataSource-17"
         key="1"
       >
         <Styled(H1)
@@ -457,6 +460,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
         }
+        id="dataSource-17"
         key="2"
       >
         <Styled(H1)

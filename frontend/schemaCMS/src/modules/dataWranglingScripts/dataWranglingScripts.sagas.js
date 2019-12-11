@@ -34,7 +34,7 @@ function* sendList({ payload: { steps, dataSourceId } }) {
 
     const dataSource = yield select(selectDataSource);
 
-    browserHistory.push(`/project/${dataSource.project}/datasource/`);
+    browserHistory.push(`/project/${dataSource.project}/datasource/`, { dataSourceId });
     yield put(DataWranglingScriptsRoutines.sendList.success());
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.sendList.failure());

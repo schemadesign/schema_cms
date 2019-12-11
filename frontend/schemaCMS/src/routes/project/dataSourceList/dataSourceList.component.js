@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, equals, T, propEq } from 'ramda';
+import { always, cond, equals, isNil, T, path, propEq } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -32,6 +32,7 @@ import { getMatchParam } from '../../../shared/utils/helpers';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
+const DATA_SOURCE_PREFIX = 'dataSource-';
 
 export class DataSourceList extends PureComponent {
   static propTypes = {
@@ -51,6 +52,7 @@ export class DataSourceList extends PureComponent {
   state = {
     loading: true,
     error: null,
+    dataSourceId: null,
   };
 
   async componentDidMount() {
@@ -58,12 +60,28 @@ export class DataSourceList extends PureComponent {
       const projectId = getMatchParam(this.props, 'projectId');
 
       await this.props.fetchDataSources({ projectId });
-      this.setState({ loading: false });
+
+      const dataSourceId = path(['history', 'location', 'state', 'dataSourceId'], this.props);
+
+      this.setState({ loading: false, dataSourceId });
     } catch (error) {
       this.setState({
         loading: false,
         error,
       });
+    }
+  }
+
+  componentDidUpdate() {
+    const { dataSourceId } = this.state;
+
+    if (!isNil(dataSourceId)) {
+      this.setState({ dataSourceId: null });
+
+      const item = document.getElementById(`${DATA_SOURCE_PREFIX}${dataSourceId}`);
+      const margin = 20;
+
+      window.scrollTo(0, item.offsetTop - margin);
     }
   }
 
@@ -146,7 +164,7 @@ export class DataSourceList extends PureComponent {
     const footer = this.renderMetaData(metaData || {});
 
     return (
-      <ListItem key={index} headerComponent={header} footerComponent={footer}>
+      <ListItem key={index} headerComponent={header} footerComponent={footer} id={`${DATA_SOURCE_PREFIX}${id}`}>
         <ListItemTitle id="dataSourceTitle" onClick={() => this.handleShowDataSource({ id, activeJob })}>
           {name}
         </ListItemTitle>
