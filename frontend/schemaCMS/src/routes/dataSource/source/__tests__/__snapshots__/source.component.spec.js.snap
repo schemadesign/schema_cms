@@ -37,29 +37,26 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "project": "projectId",
         }
       }
+      dirty={false}
+      handleSubmit={[Function]}
       hideOnDesktop={false}
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
-        }
-      }
       intl={
         Object {
           "formatMessage": [Function],
         }
       }
-      isAnyJobProcessing={false}
+      isSubmitting={false}
       match={
         Object {
           "params": Object {
-            "projectId": "1",
+            "dataSourceId": "1",
           },
           "url": "url",
         }
       }
       onDataSourceChange={[Function]}
       removeDataSource={[Function]}
+      setFieldValue={[Function]}
       theme={
         Object {
           "background": "#000",
@@ -206,144 +203,239 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "warning": "#be8f00",
         }
       }
+      values={
+        Object {
+          "file": "file",
+          "name": "name",
+          "runLastJob": true,
+          "type": "file",
+        }
+      }
     />
   </ContextHeader>
-  <Formik
-    enableReinitialize={true}
-    initialValues={Object {}}
-    isInitialValid={false}
+  <styled.form
     onSubmit={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
-    validationSchema={
-      ObjectSchema {
-        "_blacklist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "_conditions": Array [],
-        "_defaultDefault": [Function],
-        "_deps": Array [],
-        "_excludedEdges": Array [],
-        "_exclusive": Object {},
-        "_mutate": undefined,
-        "_nodes": Array [
-          "file",
-          "type",
-          "name",
-        ],
-        "_options": Object {
-          "abortEarly": true,
-          "recursive": true,
-        },
-        "_type": "object",
-        "_typeError": [Function],
-        "_whitelist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "fields": Object {
-          "file": SchemaType {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "fileName": false,
-              "fileSize": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "mixed",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [],
-          },
-          "name": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "max": true,
-              "min": true,
-              "required": true,
-              "trim": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-              [Function],
-            ],
-          },
-          "type": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "required": true,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-            ],
-          },
-        },
-        "tests": Array [],
-        "transforms": Array [
-          [Function],
-        ],
-      }
-    }
   >
-    <Component />
-  </Formik>
+    <WithTheme(SourceFormComponent)
+      dataSource={
+        Object {
+          "id": "dataSourceIdId",
+          "jobs": Array [],
+          "metaData": Object {},
+          "project": "projectId",
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+          "url": "url",
+        }
+      }
+      onDataSourceChange={[Function]}
+      removeDataSource={[Function]}
+      setFieldValue={[Function]}
+      theme={
+        Object {
+          "background": "#000",
+          "border": "#2F2F36",
+          "button": Object {
+            "background": "#1d1d20",
+            "text": "#FFF",
+          },
+          "buttonDisabled": Object {
+            "background": "#1d1d20",
+            "text": "#71737e",
+          },
+          "card": Object {
+            "background": "#1d1d20",
+            "border": "#FFF",
+            "label": "#71737e",
+            "text": "#FFF",
+          },
+          "checkbox": Object {
+            "border": "#2F2F36",
+            "text": "#FFF",
+          },
+          "colors": Object {
+            "black": "#000",
+            "coolGray": "#a6a7aa",
+            "darkGrey": "#1d1d20",
+            "lightGrey": "#71737e",
+            "mediumGray": "#2F2F36",
+            "red": "#f21e29",
+            "veryLightPink": "#f0efef",
+            "white": "#FFF",
+            "yellow": "#be8f00",
+          },
+          "dataGrid": Object {
+            "background": "#000",
+            "text": "#71737e",
+          },
+          "error": "#f21e29",
+          "header": Object {
+            "border": "#2F2F36",
+            "text": "#FFF",
+          },
+          "icon": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+            "fillInverse": "#000",
+          },
+          "input": Object {
+            "text": "#FFF",
+          },
+          "inverseButton": Object {
+            "background": "#FFF",
+            "text": "#000",
+          },
+          "label": Object {
+            "border": "#2F2F36",
+            "text": "#71737e",
+          },
+          "menu": Object {
+            "background": "#000",
+            "text": "#FFF",
+          },
+          "providerContainer": Object {
+            "minHeight": "100vh",
+          },
+          "radioButton": Object {
+            "active": Object {
+              "background": "#FFF",
+              "fill": "#1d1d20",
+            },
+            "border": "#FFF",
+            "text": "#FFF",
+            "unActive": Object {
+              "background": "#1d1d20",
+              "dot": "#FFF",
+              "fill": "#FFF",
+            },
+          },
+          "secondaryText": "#71737e",
+          "select": Object {
+            "background": "#1d1d20",
+            "border": "#000",
+          },
+          "stepper": Object {
+            "active": "#FFF",
+            "background": "#1d1d20",
+          },
+          "tab": Object {
+            "active": "#FFF",
+            "hover": "#FFF",
+            "normal": "#2F2F36",
+          },
+          "table": Object {
+            "background": Object {
+              "body": "#000",
+              "header": "#1d1d20",
+            },
+            "border": Object {
+              "body": "#1d1d20",
+              "header": "#000",
+            },
+            "text": Object {
+              "body": "#FFF",
+              "header": "#71737e",
+            },
+          },
+          "text": "#FFF",
+          "textArea": Object {
+            "background": "#000",
+            "text": "#FFF",
+          },
+          "textField": Object {
+            "error": "#f21e29",
+            "label": "#71737e",
+          },
+          "typography": Object {
+            "h1": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 600,
+            },
+            "h2": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 100,
+            },
+            "h3": Object {
+              "color": Object {
+                "border": "#f0efef",
+                "text": "#a6a7aa",
+              },
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 600,
+            },
+            "p": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 200,
+            },
+            "pre": Object {
+              "fontFamily": "Hack, monospace",
+            },
+            "span": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            },
+          },
+          "warning": "#be8f00",
+        }
+      }
+      values={
+        Object {
+          "file": "file",
+          "name": "name",
+          "runLastJob": true,
+          "type": "file",
+        }
+      }
+    />
+    <styled.div>
+      <Styled(Styled(Span))
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="View Past Versions"
+          id="dataSource.source.pastVersions"
+          values={Object {}}
+        />
+      </Styled(Styled(Span))>
+      <Styled(Styled(Span))
+        id="removeDataSourceDesktopBtn"
+        onClick={[Function]}
+      >
+        <FormattedMessage
+          defaultMessage="Delete Data Source"
+          id="dataSource.source.removeDataSource"
+          values={Object {}}
+        />
+      </Styled(Styled(Span))>
+    </styled.div>
+    <NavigationContainer
+      fixed={false}
+      hideOnDesktop={false}
+      right={true}
+    >
+      <NextButton
+        disabled={true}
+        loading={false}
+        onClick={[Function]}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Save"
+          id="dataSource.source.save"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
   <DataSourceNavigation
     dataSource={
       Object {
@@ -353,29 +445,26 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "project": "projectId",
       }
     }
+    dirty={false}
+    handleSubmit={[Function]}
     hideOnDesktop={true}
-    history={
-      Object {
-        "goBack": [Function],
-        "push": [Function],
-      }
-    }
     intl={
       Object {
         "formatMessage": [Function],
       }
     }
-    isAnyJobProcessing={false}
+    isSubmitting={false}
     match={
       Object {
         "params": Object {
-          "projectId": "1",
+          "dataSourceId": "1",
         },
         "url": "url",
       }
     }
     onDataSourceChange={[Function]}
     removeDataSource={[Function]}
+    setFieldValue={[Function]}
     theme={
       Object {
         "background": "#000",
@@ -522,6 +611,14 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         "warning": "#be8f00",
       }
     }
+    values={
+      Object {
+        "file": "file",
+        "name": "name",
+        "runLastJob": true,
+        "type": "file",
+      }
+    }
   />
   <Styled(Modal)
     contentLabel="Confirm Removal"
@@ -636,6 +733,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         disabled={false}
         id="declineRunLastJob"
         onClick={[Function]}
+        type="button"
       >
         <FormattedMessage
           defaultMessage="No"
@@ -647,6 +745,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         id="confirmRunLastJob"
         loading={false}
         onClick={[Function]}
+        type="button"
       >
         <FormattedMessage
           defaultMessage="Yes"
@@ -692,29 +791,26 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "type": "file",
         }
       }
+      dirty={false}
+      handleSubmit={[Function]}
       hideOnDesktop={false}
-      history={
-        Object {
-          "goBack": [Function],
-          "push": [Function],
-        }
-      }
       intl={
         Object {
           "formatMessage": [Function],
         }
       }
-      isAnyJobProcessing={false}
+      isSubmitting={false}
       match={
         Object {
           "params": Object {
-            "projectId": "1",
+            "dataSourceId": "1",
           },
           "url": "url",
         }
       }
       onDataSourceChange={[Function]}
       removeDataSource={[Function]}
+      setFieldValue={[Function]}
       theme={
         Object {
           "background": "#000",
@@ -861,177 +957,241 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "warning": "#be8f00",
         }
       }
+      values={
+        Object {
+          "file": "file",
+          "name": "name",
+          "runLastJob": true,
+          "type": "file",
+        }
+      }
     />
   </ContextHeader>
-  <Formik
-    enableReinitialize={true}
-    initialValues={
-      Object {
-        "type": "file",
-      }
-    }
-    isInitialValid={false}
+  <styled.form
     onSubmit={[Function]}
-    validateOnBlur={true}
-    validateOnChange={true}
-    validationSchema={
-      ObjectSchema {
-        "_blacklist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "_conditions": Array [],
-        "_defaultDefault": [Function],
-        "_deps": Array [],
-        "_excludedEdges": Array [],
-        "_exclusive": Object {},
-        "_mutate": undefined,
-        "_nodes": Array [
-          "file",
-          "type",
-          "name",
-        ],
-        "_options": Object {
-          "abortEarly": true,
-          "recursive": true,
-        },
-        "_type": "object",
-        "_typeError": [Function],
-        "_whitelist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "fields": Object {
-          "file": SchemaType {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "fileName": false,
-              "fileSize": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "mixed",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [],
-          },
-          "name": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "max": true,
-              "min": true,
-              "required": true,
-              "trim": false,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-              [Function],
-            ],
-          },
-          "type": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "required": true,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-            ],
-          },
-        },
-        "tests": Array [],
-        "transforms": Array [
-          [Function],
-        ],
-      }
-    }
   >
-    <Component />
-  </Formik>
+    <WithTheme(SourceFormComponent)
+      dataSource={
+        Object {
+          "type": "file",
+        }
+      }
+      intl={
+        Object {
+          "formatMessage": [Function],
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "dataSourceId": "1",
+          },
+          "url": "url",
+        }
+      }
+      onDataSourceChange={[Function]}
+      removeDataSource={[Function]}
+      setFieldValue={[Function]}
+      theme={
+        Object {
+          "background": "#000",
+          "border": "#2F2F36",
+          "button": Object {
+            "background": "#1d1d20",
+            "text": "#FFF",
+          },
+          "buttonDisabled": Object {
+            "background": "#1d1d20",
+            "text": "#71737e",
+          },
+          "card": Object {
+            "background": "#1d1d20",
+            "border": "#FFF",
+            "label": "#71737e",
+            "text": "#FFF",
+          },
+          "checkbox": Object {
+            "border": "#2F2F36",
+            "text": "#FFF",
+          },
+          "colors": Object {
+            "black": "#000",
+            "coolGray": "#a6a7aa",
+            "darkGrey": "#1d1d20",
+            "lightGrey": "#71737e",
+            "mediumGray": "#2F2F36",
+            "red": "#f21e29",
+            "veryLightPink": "#f0efef",
+            "white": "#FFF",
+            "yellow": "#be8f00",
+          },
+          "dataGrid": Object {
+            "background": "#000",
+            "text": "#71737e",
+          },
+          "error": "#f21e29",
+          "header": Object {
+            "border": "#2F2F36",
+            "text": "#FFF",
+          },
+          "icon": Object {
+            "background": "#1d1d20",
+            "fill": "#FFF",
+            "fillInverse": "#000",
+          },
+          "input": Object {
+            "text": "#FFF",
+          },
+          "inverseButton": Object {
+            "background": "#FFF",
+            "text": "#000",
+          },
+          "label": Object {
+            "border": "#2F2F36",
+            "text": "#71737e",
+          },
+          "menu": Object {
+            "background": "#000",
+            "text": "#FFF",
+          },
+          "providerContainer": Object {
+            "minHeight": "100vh",
+          },
+          "radioButton": Object {
+            "active": Object {
+              "background": "#FFF",
+              "fill": "#1d1d20",
+            },
+            "border": "#FFF",
+            "text": "#FFF",
+            "unActive": Object {
+              "background": "#1d1d20",
+              "dot": "#FFF",
+              "fill": "#FFF",
+            },
+          },
+          "secondaryText": "#71737e",
+          "select": Object {
+            "background": "#1d1d20",
+            "border": "#000",
+          },
+          "stepper": Object {
+            "active": "#FFF",
+            "background": "#1d1d20",
+          },
+          "tab": Object {
+            "active": "#FFF",
+            "hover": "#FFF",
+            "normal": "#2F2F36",
+          },
+          "table": Object {
+            "background": Object {
+              "body": "#000",
+              "header": "#1d1d20",
+            },
+            "border": Object {
+              "body": "#1d1d20",
+              "header": "#000",
+            },
+            "text": Object {
+              "body": "#FFF",
+              "header": "#71737e",
+            },
+          },
+          "text": "#FFF",
+          "textArea": Object {
+            "background": "#000",
+            "text": "#FFF",
+          },
+          "textField": Object {
+            "error": "#f21e29",
+            "label": "#71737e",
+          },
+          "typography": Object {
+            "h1": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 600,
+            },
+            "h2": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 100,
+            },
+            "h3": Object {
+              "color": Object {
+                "border": "#f0efef",
+                "text": "#a6a7aa",
+              },
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 600,
+            },
+            "p": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+              "fontWeight": 200,
+            },
+            "pre": Object {
+              "fontFamily": "Hack, monospace",
+            },
+            "span": Object {
+              "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+            },
+          },
+          "warning": "#be8f00",
+        }
+      }
+      values={
+        Object {
+          "file": "file",
+          "name": "name",
+          "runLastJob": true,
+          "type": "file",
+        }
+      }
+    />
+    <NavigationContainer
+      fixed={false}
+      hideOnDesktop={false}
+      right={true}
+    >
+      <NextButton
+        disabled={true}
+        loading={false}
+        onClick={[Function]}
+        type="submit"
+      >
+        <FormattedMessage
+          defaultMessage="Save"
+          id="dataSource.source.save"
+          values={Object {}}
+        />
+      </NextButton>
+    </NavigationContainer>
+  </styled.form>
   <DataSourceNavigation
     dataSource={
       Object {
         "type": "file",
       }
     }
+    dirty={false}
+    handleSubmit={[Function]}
     hideOnDesktop={true}
-    history={
-      Object {
-        "goBack": [Function],
-        "push": [Function],
-      }
-    }
     intl={
       Object {
         "formatMessage": [Function],
       }
     }
-    isAnyJobProcessing={false}
+    isSubmitting={false}
     match={
       Object {
         "params": Object {
-          "projectId": "1",
+          "dataSourceId": "1",
         },
         "url": "url",
       }
     }
     onDataSourceChange={[Function]}
     removeDataSource={[Function]}
+    setFieldValue={[Function]}
     theme={
       Object {
         "background": "#000",
@@ -1178,6 +1338,14 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         "warning": "#be8f00",
       }
     }
+    values={
+      Object {
+        "file": "file",
+        "name": "name",
+        "runLastJob": true,
+        "type": "file",
+      }
+    }
   />
   <Styled(Modal)
     contentLabel="Confirm Removal"
@@ -1292,6 +1460,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         disabled={false}
         id="declineRunLastJob"
         onClick={[Function]}
+        type="button"
       >
         <FormattedMessage
           defaultMessage="No"
@@ -1303,6 +1472,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         id="confirmRunLastJob"
         loading={false}
         onClick={[Function]}
+        type="button"
       >
         <FormattedMessage
           defaultMessage="Yes"

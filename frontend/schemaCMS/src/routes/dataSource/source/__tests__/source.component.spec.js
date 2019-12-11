@@ -1,16 +1,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { IntlProvider } from 'react-intl';
-import { Formik } from 'formik';
 
-import { SourceComponent } from '../source.component';
+import { Source } from '../source.component';
 import { defaultProps } from '../source.stories';
+import { Form } from '../source.styles';
 import { DEFAULT_LOCALE } from '../../../../i18n';
 
 describe('SourceComponent: Component', () => {
   const component = props => (
     <IntlProvider locale={DEFAULT_LOCALE}>
-      <SourceComponent {...defaultProps} {...props} />
+      <Source {...defaultProps} {...props} />
     </IntlProvider>
   );
 
@@ -31,56 +31,29 @@ describe('SourceComponent: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call onDataSourceChange', () => {
-    jest.spyOn(defaultProps, 'onDataSourceChange');
-    const values = {
-      type: 'file',
-    };
+  it('should call handleSubmit', () => {
+    jest.spyOn(defaultProps, 'handleSubmit');
     const wrapper = render().dive();
-    wrapper.find(Formik).prop('onSubmit')(values, {
-      setSubmitting: Function.prototype,
-      setErrors: Function.prototype,
-    });
-    expect(defaultProps.onDataSourceChange).toHaveBeenCalledWith({
-      projectId: '1',
-      requestData: { ...values, runLastJob: false },
-    });
+    wrapper.find(Form).simulate('submit');
+    expect(defaultProps.handleSubmit).toHaveBeenCalled();
   });
 
-  it('should call onDataSourceChange with file and with flag to run last job', () => {
-    jest.spyOn(defaultProps, 'onDataSourceChange');
-    const values = {
-      type: 'file',
-      file: 'file',
-    };
+  it('should call handleSubmit and set runLastJob on true', () => {
+    jest.spyOn(defaultProps, 'handleSubmit');
+    jest.spyOn(defaultProps, 'setFieldValue');
     const wrapper = render().dive();
-    wrapper.find(Formik).prop('onSubmit')(values, {
-      setSubmitting: Function.prototype,
-      setErrors: Function.prototype,
-    });
+    wrapper.find(Form).simulate('submit');
     wrapper.find('#confirmRunLastJob').simulate('click');
-    expect(defaultProps.onDataSourceChange).toHaveBeenCalledWith({
-      projectId: '1',
-      requestData: { ...values, runLastJob: true },
-    });
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('runLastJob', true);
   });
 
-  it('should call onDataSourceChange with file', () => {
-    jest.spyOn(defaultProps, 'onDataSourceChange');
-    const values = {
-      type: 'file',
-      file: 'file',
-    };
+  it('should call handleSubmit and set runLastJob on false', () => {
+    jest.spyOn(defaultProps, 'handleSubmit');
+    jest.spyOn(defaultProps, 'setFieldValue');
     const wrapper = render().dive();
-    wrapper.find(Formik).prop('onSubmit')(values, {
-      setSubmitting: Function.prototype,
-      setErrors: Function.prototype,
-    });
+    wrapper.find(Form).simulate('submit');
     wrapper.find('#declineRunLastJob').simulate('click');
-    expect(defaultProps.onDataSourceChange).toHaveBeenCalledWith({
-      projectId: '1',
-      requestData: { ...values, runLastJob: false },
-    });
+    expect(defaultProps.setFieldValue).toHaveBeenCalledWith('runLastJob', false);
   });
 
   it('should remove data source', () => {
@@ -88,7 +61,7 @@ describe('SourceComponent: Component', () => {
 
     const wrapper = render().dive();
     wrapper
-      .find(Formik)
+      .find(Form)
       .dive()
       .find('#removeDataSourceDesktopBtn')
       .simulate('click');
