@@ -74,6 +74,154 @@ exports[`JobDetail: Component should render correctly 1`] = `
 </Fragment>
 `;
 
+exports[`JobDetail: Component should render correctly with failure job 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Details"
+        id="jobDetail.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Job"
+        id="jobDetail.title"
+        values={Object {}}
+      />
+    }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Details"
+        id="jobDetail.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Job"
+        id="jobDetail.title"
+        values={Object {}}
+      />
+    }
+  />
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <Component />
+  </LoadingWrapper>
+  <NavigationContainer
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Back"
+        id="jobDetail.back"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={false}
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="jobDetail.save"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</Fragment>
+`;
+
+exports[`JobDetail: Component should render correctly with fake job 1`] = `
+<Fragment>
+  <TopHeader
+    headerSubtitle={
+      <FormattedMessage
+        defaultMessage="Details"
+        id="jobDetail.subTitle"
+        values={Object {}}
+      />
+    }
+    headerTitle={
+      <FormattedMessage
+        defaultMessage="Job"
+        id="jobDetail.title"
+        values={Object {}}
+      />
+    }
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
+  />
+  <ContextHeader
+    subtitle={
+      <FormattedMessage
+        defaultMessage="Details"
+        id="jobDetail.subTitle"
+        values={Object {}}
+      />
+    }
+    title={
+      <FormattedMessage
+        defaultMessage="Job"
+        id="jobDetail.title"
+        values={Object {}}
+      />
+    }
+  />
+  <LoadingWrapper
+    error={null}
+    loading={false}
+    noData={false}
+    noDataContent={null}
+  >
+    <Component />
+  </LoadingWrapper>
+  <NavigationContainer
+    fixed={true}
+    hideOnDesktop={false}
+    right={false}
+  >
+    <BackButton
+      disabled={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Back"
+        id="jobDetail.back"
+        values={Object {}}
+      />
+    </BackButton>
+    <NextButton
+      disabled={false}
+      loading={false}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        defaultMessage="Save"
+        id="jobDetail.save"
+        values={Object {}}
+      />
+    </NextButton>
+  </NavigationContainer>
+</Fragment>
+`;
+
 exports[`JobDetail: Component should render correctly with loader 1`] = `
 <Fragment>
   <TopHeader

@@ -13,6 +13,7 @@ import {
   JobItemWrapper,
   ListWrapper,
   RadioLabel,
+  JobInformation,
 } from './jobList.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
@@ -21,7 +22,7 @@ import messages from './jobList.messages';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { JOB_OPTION, JOB_STATE_SUCCESS } from '../../../modules/job/job.constants';
-import { renderWhenTrue } from '../../../shared/utils/rendering';
+import { renderWhenTrue, renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { getMatchParam } from '../../../shared/utils/helpers';
 
@@ -88,6 +89,12 @@ export class JobList extends PureComponent {
 
   renderActiveInformation = isActive => renderWhenTrue(always(<FormattedMessage {...messages.active} />))(isActive);
 
+  renderStepMessage = ({ steps }) =>
+    renderWhenTrueOtherwise(
+      always(<FormattedMessage {...messages.originalFile} />),
+      always(<FormattedMessage values={{ length: steps.length }} {...messages.steps} />)
+    )(isEmpty(steps));
+
   renderList = (job, index) => {
     const isActive = this.isJobActive(job.id);
     const selectedJob = this.getSelectedJob();
@@ -98,12 +105,22 @@ export class JobList extends PureComponent {
         <JobItem>
           <RadioStyled value={job.id} id={id} selectedValue={selectedJob} />
           <RadioLabel htmlFor={id}>
-            <Span>{extendedDayjs(job.created, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm')}</Span>
-            <Dot />
-            <Span>
-              <FormattedMessage {...messages[job.jobState]} />
-              {this.renderActiveInformation(isActive)}
-            </Span>
+            <JobInformation>
+              <Span>{extendedDayjs(job.created, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm')}</Span>
+            </JobInformation>
+            <JobInformation>
+              <Dot />
+              <Span>
+                <FormattedMessage {...messages[job.jobState]} />
+              </Span>
+            </JobInformation>
+            <JobInformation>
+              <Dot />
+              <Span>
+                {this.renderStepMessage(job)}
+                {this.renderActiveInformation(isActive)}
+              </Span>
+            </JobInformation>
           </RadioLabel>
         </JobItem>
         <Eye onClick={() => this.handleIconClick(job.id)} />

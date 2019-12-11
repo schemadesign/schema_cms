@@ -37,7 +37,7 @@ function* fetchJobList({ payload: { dataSourceId } }) {
 
     const {
       data: { results },
-    } = yield api.get(`/datasources/${dataSourceId}/jobs-history`);
+    } = yield api.get(`/datasources/${dataSourceId}/jobs-history?page_size=1000`);
 
     yield put(JobRoutines.fetchJobList.success(results));
   } catch (e) {

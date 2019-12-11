@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, path } from 'ramda';
+import { always, complement, isEmpty, path, pathSatisfies } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { Download, Form, LinkWrapper, PreviewLink, Step, StepsTitle, StepsWrapper } from './jobDetail.styles';
@@ -8,7 +8,7 @@ import browserHistory from '../../shared/utils/history';
 import { renderWhenTrue } from '../../shared/utils/rendering';
 
 import messages from './jobDetail.messages';
-import { DESCRIPTION, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
+import { DESCRIPTION, ERROR, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { TopHeader } from '../../shared/components/topHeader';
@@ -52,7 +52,39 @@ export class JobDetail extends PureComponent {
 
   renderStep = ({ scriptName }, index) => <Step key={index}>{scriptName}</Step>;
 
-  renderSteps = (steps = []) => steps.map(this.renderStep);
+  renderSteps = (steps = []) =>
+    renderWhenTrue(
+      always(
+        <Fragment>
+          <StepsTitle>
+            <FormattedMessage {...messages.stepsTitle} />
+          </StepsTitle>
+          <StepsWrapper>{steps.map(this.renderStep)}</StepsWrapper>
+        </Fragment>
+      )
+    )(!!steps.length);
+
+  renderError = error =>
+    renderWhenTrue(
+      always(
+        <TextInput
+          label={<FormattedMessage {...messages[ERROR]} />}
+          value={error}
+          name={ERROR}
+          fullWidth
+          disabled
+          multiline
+        />
+      )
+    )(!!error);
+
+  renderResultLink = renderWhenTrue(
+    always(
+      <Download href={this.props.job.result} download>
+        <FormattedMessage {...messages.resultFile} />
+      </Download>
+    )
+  );
 
   renderSuccessLinks = isSuccess =>
     renderWhenTrue(
@@ -61,9 +93,7 @@ export class JobDetail extends PureComponent {
           <PreviewLink to={`/job/${this.props.job.id}/preview`}>
             <FormattedMessage {...messages.preview} />
           </PreviewLink>
-          <Download href={this.props.job.result} download>
-            <FormattedMessage {...messages.resultFile} />
-          </Download>
+          {this.renderResultLink(pathSatisfies(complement(isEmpty), ['job', 'steps'], this.props))}
         </Fragment>
       )
     )(isSuccess);
@@ -96,10 +126,8 @@ export class JobDetail extends PureComponent {
           multiline
         />
       </Form>
-      <StepsTitle>
-        <FormattedMessage {...messages.stepsTitle} />
-      </StepsTitle>
-      <StepsWrapper>{this.renderSteps(this.props.job.steps)}</StepsWrapper>
+      {this.renderError(job.error)}
+      {this.renderSteps(job.steps)}
       <LinkWrapper>
         {this.renderSuccessLinks(job.jobState === JOB_STATE_SUCCESS)}
         <Download href={job.sourceFileUrl} download>
