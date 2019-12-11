@@ -4,7 +4,7 @@ import { spy } from 'sinon';
 import { expect } from 'chai';
 
 import { JobDetail } from '../jobDetail.component';
-import { defaultProps } from '../jobDetail.stories';
+import { defaultProps, failureJob, fakeJob } from '../jobDetail.stories';
 
 describe('JobDetail: Component', () => {
   const component = props => <JobDetail {...defaultProps} {...props} />;
@@ -19,6 +19,20 @@ describe('JobDetail: Component', () => {
   it('should render correctly', async () => {
     defaultProps.fetchOne = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render(defaultProps);
+    await Promise.resolve();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly with failure job', async () => {
+    defaultProps.fetchOne = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = render({ job: failureJob });
+    await Promise.resolve();
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly with fake job', async () => {
+    defaultProps.fetchOne = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = render({ job: fakeJob });
     await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
   });

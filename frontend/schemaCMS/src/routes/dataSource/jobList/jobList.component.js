@@ -13,6 +13,7 @@ import {
   JobItemWrapper,
   ListWrapper,
   RadioLabel,
+  JobInformation,
 } from './jobList.styles';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
@@ -104,16 +105,22 @@ export class JobList extends PureComponent {
         <JobItem>
           <RadioStyled value={job.id} id={id} selectedValue={selectedJob} />
           <RadioLabel htmlFor={id}>
-            <Span>{extendedDayjs(job.created, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm')}</Span>
-            <Dot />
-            <Span>
-              <FormattedMessage {...messages[job.jobState]} />
-            </Span>
-            <Dot />
-            <Span>
-              {this.renderStepMessage(job)}
-              {this.renderActiveInformation(isActive)}
-            </Span>
+            <JobInformation>
+              <Span>{extendedDayjs(job.created, BASE_DATE_FORMAT).format('DD/MM/YYYY HH:mm')}</Span>
+            </JobInformation>
+            <JobInformation>
+              <Dot />
+              <Span>
+                <FormattedMessage {...messages[job.jobState]} />
+              </Span>
+            </JobInformation>
+            <JobInformation>
+              <Dot />
+              <Span>
+                {this.renderStepMessage(job)}
+                {this.renderActiveInformation(isActive)}
+              </Span>
+            </JobInformation>
           </RadioLabel>
         </JobItem>
         <Eye onClick={() => this.handleIconClick(job.id)} />

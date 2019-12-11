@@ -153,17 +153,31 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
             <styled.label
               htmlFor="job_option_revert-0"
             >
-              <Span>
-                Invalid Date
-              </Span>
-              <styled.div />
-              <Span>
-                <FormattedMessage
-                  defaultMessage="Success"
-                  id="dataSource.jobList.success"
-                  values={Object {}}
-                />
-              </Span>
+              <styled.div>
+                <Span>
+                  Invalid Date
+                </Span>
+              </styled.div>
+              <styled.div>
+                <styled.div />
+                <Span>
+                  <FormattedMessage
+                    defaultMessage="Success"
+                    id="dataSource.jobList.success"
+                    values={Object {}}
+                  />
+                </Span>
+              </styled.div>
+              <styled.div>
+                <styled.div />
+                <Span>
+                  <FormattedMessage
+                    defaultMessage="Original file"
+                    id="dataSource.jobList.originalFile"
+                    values={Object {}}
+                  />
+                </Span>
+              </styled.div>
             </styled.label>
           </styled.div>
           <Styled(Component)
@@ -181,17 +195,81 @@ exports[`JobList: Component should render correctly with list of jobs 1`] = `
             <styled.label
               htmlFor="job_option_revert-1"
             >
-              <Span>
-                Invalid Date
-              </Span>
-              <styled.div />
-              <Span>
-                <FormattedMessage
-                  defaultMessage="Success"
-                  id="dataSource.jobList.success"
-                  values={Object {}}
-                />
-              </Span>
+              <styled.div>
+                <Span>
+                  Invalid Date
+                </Span>
+              </styled.div>
+              <styled.div>
+                <styled.div />
+                <Span>
+                  <FormattedMessage
+                    defaultMessage="Success"
+                    id="dataSource.jobList.success"
+                    values={Object {}}
+                  />
+                </Span>
+              </styled.div>
+              <styled.div>
+                <styled.div />
+                <Span>
+                  <FormattedMessage
+                    defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
+                    id="dataSource.jobList.steps"
+                    values={
+                      Object {
+                        "length": 1,
+                      }
+                    }
+                  />
+                </Span>
+              </styled.div>
+            </styled.label>
+          </styled.div>
+          <Styled(Component)
+            onClick={[Function]}
+          />
+        </styled.div>
+        <styled.div
+          key="2"
+        >
+          <styled.div>
+            <Component
+              id="job_option_revert-2"
+              value={3}
+            />
+            <styled.label
+              htmlFor="job_option_revert-2"
+            >
+              <styled.div>
+                <Span>
+                  Invalid Date
+                </Span>
+              </styled.div>
+              <styled.div>
+                <styled.div />
+                <Span>
+                  <FormattedMessage
+                    defaultMessage="Failed"
+                    id="dataSource.jobList.failure"
+                    values={Object {}}
+                  />
+                </Span>
+              </styled.div>
+              <styled.div>
+                <styled.div />
+                <Span>
+                  <FormattedMessage
+                    defaultMessage="{length} {length, plural,one {Step} other {Steps}}"
+                    id="dataSource.jobList.steps"
+                    values={
+                      Object {
+                        "length": 1,
+                      }
+                    }
+                  />
+                </Span>
+              </styled.div>
             </styled.label>
           </styled.div>
           <Styled(Component)

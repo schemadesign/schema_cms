@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { defineMessages } from 'react-intl';
 import {
+  ERROR,
   JOB_ID,
   JOB_STATE,
   JOB_STATE_FAILURE,
@@ -69,5 +70,9 @@ export default defineMessages({
   [JOB_STATE_SUCCESS]: {
     id: 'jobDetail.jobStateSuccess',
     defaultMessage: 'Success',
+  },
+  [ERROR]: {
+    id: `jobDetail.${ERROR}`,
+    defaultMessage: 'Error',
   },
 });

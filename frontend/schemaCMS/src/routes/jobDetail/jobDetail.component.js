@@ -8,7 +8,7 @@ import browserHistory from '../../shared/utils/history';
 import { renderWhenTrue } from '../../shared/utils/rendering';
 
 import messages from './jobDetail.messages';
-import { DESCRIPTION, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
+import { DESCRIPTION, ERROR, JOB_ID, JOB_STATE, JOB_STATE_SUCCESS } from '../../modules/job/job.constants';
 import { TextInput } from '../../shared/components/form/inputs/textInput';
 import { BackButton, NavigationContainer, NextButton } from '../../shared/components/navigation';
 import { TopHeader } from '../../shared/components/topHeader';
@@ -64,6 +64,20 @@ export class JobDetail extends PureComponent {
       )
     )(!!steps.length);
 
+  renderError = error =>
+    renderWhenTrue(
+      always(
+        <TextInput
+          label={<FormattedMessage {...messages[ERROR]} />}
+          value={error}
+          name={ERROR}
+          fullWidth
+          disabled
+          multiline
+        />
+      )
+    )(!!error);
+
   renderResultLink = renderWhenTrue(
     always(
       <Download href={this.props.job.result} download>
@@ -112,7 +126,8 @@ export class JobDetail extends PureComponent {
           multiline
         />
       </Form>
-      {this.renderSteps(this.props.job.steps)}
+      {this.renderError(job.error)}
+      {this.renderSteps(job.steps)}
       <LinkWrapper>
         {this.renderSuccessLinks(job.jobState === JOB_STATE_SUCCESS)}
         <Download href={job.sourceFileUrl} download>

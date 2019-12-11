@@ -34,17 +34,27 @@ export const Dot = styled.div`
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  margin: 10px;
+  margin-right: 10px;
   background-color: ${({ theme }) => theme.text};
 `;
 
 export const Eye = styled(Icons.EyeIcon)`
   cursor: pointer;
+  min-width: 30px;
 `;
 
 export const RadioLabel = styled.label`
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin-left: 5px;
+  margin-left: 10px;
+  flex-wrap: wrap;
+`;
+
+export const JobInformation = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+  line-height: 18px;
 `;
