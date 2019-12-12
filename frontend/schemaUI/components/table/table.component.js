@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, cond, equals, T } from 'ramda';
 
 import { withStyles } from '../styles/withStyles';
 import { getStyles, headerBaseWidth, headerNarrowWidth } from './table.styles';
 
 const NUMBERED_COLUMN_NAME = '#';
+const ROWS_LIMIT = 10;
 
 class TableComponent extends PureComponent {
   static propTypes = {
@@ -19,20 +19,25 @@ class TableComponent extends PureComponent {
     header: [],
   };
 
-  getHeaderCellStyle = (index, lastIndex, numberedRows, countRows, { headerCell, headerFirstCell, headerLastCell }) =>
-    cond([
-      [
-        index => !index && numberedRows,
-        () => ({ ...headerFirstCell, width: countRows < 10 ? headerNarrowWidth : headerBaseWidth }),
-      ],
-      [equals(lastIndex), always(headerLastCell)],
-      [T, always(headerCell)],
-    ])(index);
+  getLastIndex = (data = []) => data.length - 1;
+
+  getHeaderCellStyle = (index, lastIndex, numberedRows, countRows, { headerCell, headerFirstCell, headerLastCell }) => {
+    if (!index && numberedRows) {
+      return {
+        ...headerFirstCell,
+        width: countRows < ROWS_LIMIT ? headerNarrowWidth : headerBaseWidth,
+      };
+    } else if (index === lastIndex) {
+      return headerLastCell;
+    }
+
+    return headerCell;
+  };
 
   renderHeaderCells(styles) {
     const { header, numberedRows, rows } = this.props;
     const data = numberedRows ? [NUMBERED_COLUMN_NAME, ...header] : header;
-    const lastIndex = data.length - 1;
+    const lastIndex = this.getLastIndex(data);
     const countRows = rows.length;
 
     return data.map((value, index) => (
@@ -67,7 +72,7 @@ class TableComponent extends PureComponent {
 
   renderRows = styles => {
     const { rows, numberedRows } = this.props;
-    const lastIndex = rows.length - 1;
+    const lastIndex = this.getLastIndex(rows);
     const cellStyles = numberedRows ? styles.cell : styles.cellCustom;
 
     return rows.map((cells, index) => (

@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Icons } from 'schemaUI';
+import { Button, Icons, Table } from 'schemaUI';
 import { isEmpty } from 'ramda';
 
 import { Loading } from '../loading';
-import { Table } from '../table';
 import { FieldDetail } from '../fieldDetail';
 import messages from './dataPreview.messages';
 import {

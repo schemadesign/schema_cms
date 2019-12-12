@@ -1,5 +1,3 @@
-// import styled, { css } from 'styled-components';
-
 import { defaultTheme } from '../../utils/theme';
 
 export const getStyles = (theme = defaultTheme) => {
@@ -39,11 +37,10 @@ export const getStyles = (theme = defaultTheme) => {
       width: '100%',
       overflowX: 'auto',
       paddingBottom: '10px',
-      padding: 50,
     },
     table: {
       borderCollapse: 'collapse',
-      minWidth: '60%',
+      minWidth: '100%',
       fontSize: '14px',
       color: table.text.body,
     },
@@ -57,10 +54,7 @@ export const getStyles = (theme = defaultTheme) => {
       ...cell,
       border: `2px solid ${table.border.body}`,
     },
-    headerCell: {
-      ...headerCell,
-      textAlign: 'left',
-    },
+    headerCell,
     headerFirstCell: {
       ...headerCell,
       textAlign: 'center',
@@ -78,4 +72,4 @@ export const getStyles = (theme = defaultTheme) => {
 };
 
 export const headerBaseWidth = 40;
-export const headerNarrowWidth = 20;
+export const headerNarrowWidth = 25;

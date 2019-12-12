@@ -27,8 +27,14 @@ const tableWithHeader = { header, rows };
 
 export const tableWithNumberedRows = { header, rows, numberedRows: true };
 
+export const TableWrapper = props => (
+  <div style={{ padding: 50 }}>
+    <Table {...props} />
+  </div>
+);
+
 storiesOf('Table', module)
   .addDecorator(withTheme())
-  .add('Default', () => <Table {...table} />)
-  .add('with header', () => <Table {...tableWithHeader} />)
-  .add('with numbered rows', () => <Table {...tableWithNumberedRows} />);
+  .add('Default', () => <TableWrapper {...table} />)
+  .add('with header', () => <TableWrapper {...tableWithHeader} />)
+  .add('with numbered rows', () => <TableWrapper {...tableWithNumberedRows} />);
