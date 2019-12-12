@@ -516,9 +516,9 @@ class BlockSerializer(serializers.ModelSerializer):
         return type_
 
     @transaction.atomic()
-    def create(self, validated_data):
+    def save(self, *args, **kwargs):
         images = self.context.get('view').request.FILES
-        block = super().create(validated_data)
+        block = super().save(**kwargs)
 
         if images:
             models.BlockImage.objects.bulk_create(self.create_images(images, block))
