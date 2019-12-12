@@ -63,10 +63,20 @@ export class PageBlockForm extends PureComponent {
   };
 
   handleUploadChange = ({ files }) => {
-    const imageNames = map(prop('name'), files);
+    const { images, imageNames } = this.props.values;
+    const updateNames = imageNames.concat(map(prop('name'), files));
+    const updatedImages = images.concat([...files]);
 
+    this.props.setFieldValue(BLOCK_IMAGES, updatedImages);
+    this.props.setFieldValue(BLOCK_IMAGE_NAMES, updateNames);
+  };
+
+  handleRemoveItem = removeName => {
+    const { images, imageNames } = this.props.values;
+    const files = [...images].filter(({ name }) => name !== removeName);
+    const names = imageNames.filter(name => name !== removeName);
     this.props.setFieldValue(BLOCK_IMAGES, files);
-    this.props.setFieldValue(BLOCK_IMAGE_NAMES, imageNames);
+    this.props.setFieldValue(BLOCK_IMAGE_NAMES, names);
   };
 
   handleCancelTypeChange = () => {
@@ -108,6 +118,7 @@ export class PageBlockForm extends PureComponent {
       type="file"
       id="fileUpload"
       onChange={({ currentTarget }) => this.handleUploadChange(currentTarget)}
+      onRemoveItem={this.handleRemoveItem}
       accept=".png, .jpg, .jpeg, .gif"
       checkOnlyErrors
       multiple

@@ -18,7 +18,8 @@ export const INITIAL_VALUES = {
   [`${MARKDOWN_TYPE}-${BLOCK_CONTENT}`]: '',
   [`${EMBED_TYPE}-${BLOCK_CONTENT}`]: '',
   [`${CODE_TYPE}-${BLOCK_CONTENT}`]: '',
-  [BLOCK_IMAGES]: null,
+  [BLOCK_IMAGES]: [],
+  [BLOCK_IMAGE_NAMES]: [],
   [BLOCK_TYPE]: NONE,
 };
 
