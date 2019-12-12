@@ -124,13 +124,13 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       </styled.div>
     </styled.div>
     <Formik
-      enableReinitialize={false}
+      enableReinitialize={true}
       initialValues={
         Object {
           "steps": Array [],
         }
       }
-      isInitialValid={false}
+      isInitialValid={true}
       onSubmit={[Function]}
       validateOnBlur={true}
       validateOnChange={true}
@@ -155,7 +155,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         "steps": Array [],
       },
       "isSubmitting": false,
-      "isValid": false,
+      "isValid": true,
       "isValidating": false,
       "registerField": [Function],
       "resetForm": [Function],
