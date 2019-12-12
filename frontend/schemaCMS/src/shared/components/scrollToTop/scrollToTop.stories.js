@@ -10,12 +10,12 @@ import { ScrollToTop } from './scrollToTop.component';
 export const defaultProps = {
   history: createMemoryHistory(),
   keyLength: 0,
-}
+};
 
 export class Wrapper extends PureComponent {
   state = {
-    path: '/init'
-  }
+    path: '/init',
+  };
 
   componentDidMount() {
     setTimeout(() => {
@@ -29,18 +29,14 @@ export class Wrapper extends PureComponent {
 
     this.setState({ path });
     this.props.history.push(path);
-  }
+  };
 
   render() {
     return (
       <Router {...this.props}>
         <ScrollToTop />
-        <h1>
-          Scroll to top
-        </h1>
-        <h3 style={{backgroundColor: '#777', padding: '3px 15px', display: 'inline-block'}}>
-          {this.state.path}
-        </h3>
+        <h1>Scroll to top</h1>
+        <h3 style={{ backgroundColor: '#777', padding: '3px 15px', display: 'inline-block' }}>{this.state.path}</h3>
         <p>Lorem ipsum dolor sit amet,</p>
         <p>consectetur adipiscing elit.</p>
         <p>In vel augue eget enim auctor iaculis,</p>
@@ -55,11 +51,7 @@ export class Wrapper extends PureComponent {
         <p>ac malesuada nisi.</p>
         <p>Cras at lorem auctor.</p>
         <p>Linterdum dolor consequat.</p>
-        <Button
-          onClick={this.handleChangeLocation}
-          customStyles={{padding: '0 20px', margin: '20px 5px'}}
-          inverse
-        >
+        <Button onClick={this.handleChangeLocation} customStyles={{ padding: '0 20px', margin: '20px 5px' }} inverse>
           Change location
         </Button>
       </Router>
