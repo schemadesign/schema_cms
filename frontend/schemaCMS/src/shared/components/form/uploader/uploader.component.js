@@ -11,7 +11,7 @@ const { FileUpload } = Form;
 
 export class Uploader extends PureComponent {
   static propTypes = {
-    fileName: PropTypes.string,
+    fileNames: PropTypes.array,
     label: PropTypes.string,
     id: PropTypes.string,
     name: PropTypes.string,
@@ -31,7 +31,7 @@ export class Uploader extends PureComponent {
 
   render() {
     const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.input];
-    const { errors, touched, checkOnlyErrors, fileName, label, id, onChange, ...restProps } = this.props;
+    const { errors, touched, checkOnlyErrors, fileNames, label, id, onChange, ...restProps } = this.props;
     const filteredProps = pick(allowedAttributes, restProps);
     const isError = !!errors[filteredProps.name];
     const isTouched = touched[filteredProps.name];
@@ -39,7 +39,7 @@ export class Uploader extends PureComponent {
 
     return (
       <Container>
-        <FileUpload fileName={fileName} label={label} id={id} onChange={onChange} {...filteredProps} />
+        <FileUpload fileNames={fileNames} label={label} id={id} onChange={onChange} {...filteredProps} />
         {this.renderError(error)}
       </Container>
     );

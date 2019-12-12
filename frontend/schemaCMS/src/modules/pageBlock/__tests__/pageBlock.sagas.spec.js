@@ -91,7 +91,7 @@ describe('PageBlock: sagas', () => {
         pageId: 1,
         name: 'Title',
         type: MARKDOWN_TYPE,
-        image: null,
+        images: null,
         [`${MARKDOWN_TYPE}-content`]: 'content markdown type',
       };
 
@@ -116,7 +116,7 @@ describe('PageBlock: sagas', () => {
       const payload = {
         pageId: 1,
         name: 'Title',
-        image: 'file',
+        images: ['file'],
         type: IMAGE_TYPE,
       };
 
@@ -125,7 +125,7 @@ describe('PageBlock: sagas', () => {
       };
 
       mockApi
-        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="image"[^]*file/m, options, {
+        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="images"[^]*file/m, options, {
           name: 'Title',
           type: [MARKDOWN_TYPE],
         })

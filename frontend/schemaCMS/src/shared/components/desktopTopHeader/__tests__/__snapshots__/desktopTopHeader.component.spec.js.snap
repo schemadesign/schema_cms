@@ -103,6 +103,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           >
             <Link
               id={null}
+              onClick={[Function]}
               to="/project"
             >
               <FormattedMessage
@@ -137,6 +138,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           >
             <Link
               id={null}
+              onClick={[Function]}
               to="/"
             >
               <FormattedMessage
@@ -153,6 +155,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           >
             <Link
               id={null}
+              onClick={[Function]}
               to="/"
             >
               <FormattedMessage
@@ -169,6 +172,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           >
             <Link
               id={null}
+              onClick={[Function]}
               to="/"
             >
               <FormattedMessage

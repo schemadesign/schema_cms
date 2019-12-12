@@ -451,7 +451,6 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
     accept=".png, .jpg, .jpeg, .gif"
     checkOnlyErrors={true}
     errors={Object {}}
-    fileName="image name"
     handleChange={[Function]}
     id="fileUpload"
     intl={
@@ -460,7 +459,8 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
       }
     }
     label="File Name"
-    name="image"
+    multiple={true}
+    name="images"
     onChange={[Function]}
     setFieldValue={[Function]}
     touched={Object {}}

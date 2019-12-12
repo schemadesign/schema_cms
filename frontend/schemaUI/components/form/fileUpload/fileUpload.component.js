@@ -13,7 +13,7 @@ const DEFAULT_TEXT_VALUE = 'Select a file';
 export class FileUploadComponent extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
-    fileName: PropTypes.string,
+    fileNames: PropTypes.array,
     label: PropTypes.string,
     id: PropTypes.string.isRequired,
     accept: PropTypes.string,
@@ -44,14 +44,14 @@ export class FileUploadComponent extends PureComponent {
     </label>
   );
 
-  renderTextField = ({ fileName, label, id, customStyles, customLabelStyles, customInputStyles }) =>
+  renderTextField = ({ fileNames, label, id, customStyles, customLabelStyles, customInputStyles }) =>
     ifElse(
       equals(true),
       () => (
         <TextField
-          name="fileName"
+          name="fileNames"
           label={label}
-          value={fileName || DEFAULT_TEXT_VALUE}
+          value={fileNames || DEFAULT_TEXT_VALUE}
           fullWidth
           disabled
           customStyles={customStyles}
@@ -66,7 +66,7 @@ export class FileUploadComponent extends PureComponent {
   render() {
     const {
       id,
-      fileName,
+      fileNames,
       label,
       customStyles,
       customLabelStyles,
@@ -77,7 +77,7 @@ export class FileUploadComponent extends PureComponent {
 
     return (
       <div style={containerStyles}>
-        {this.renderTextField({ fileName, label, id, customStyles, customLabelStyles, customInputStyles })}
+        {this.renderTextField({ fileNames, label, id, customStyles, customLabelStyles, customInputStyles })}
         <input style={inputStyles} aria-hidden id={id} type="file" {...props} />
       </div>
     );

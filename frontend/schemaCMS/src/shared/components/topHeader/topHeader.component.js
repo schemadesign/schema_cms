@@ -115,7 +115,7 @@ export class TopHeader extends PureComponent {
     renderWhenTrueOtherwise(
       always(
         <Item key={index} active={this.getIsActive(page)} hide={hide}>
-          <Link id={id} to={to}>
+          <Link id={id} to={to} onClick={this.handleToggleMenu}>
             {label}
           </Link>
         </Item>

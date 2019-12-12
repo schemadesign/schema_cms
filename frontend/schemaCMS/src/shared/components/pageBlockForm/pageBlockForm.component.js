@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, cond, equals, path, pathOr } from 'ramda';
+import { always, cond, equals, path, map, prop } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { modalStyles, Modal, ModalTitle, ModalActions } from '../modal/modal.styles';
@@ -8,7 +8,8 @@ import { BackButton, NextButton } from '../navigation';
 import { TextInput } from '../form/inputs/textInput';
 import {
   BLOCK_CONTENT,
-  BLOCK_IMAGE,
+  BLOCK_IMAGES,
+  BLOCK_IMAGE_NAMES,
   BLOCK_NAME,
   BLOCK_TYPE,
   CODE_TYPE,
@@ -61,9 +62,11 @@ export class PageBlockForm extends PureComponent {
     }
   };
 
-  handleUploadChange = ({ files: [uploadFile] }) => {
-    this.props.setFieldValue(BLOCK_IMAGE, uploadFile);
-    this.props.setFieldValue('imageName', pathOr('', ['name'], uploadFile));
+  handleUploadChange = ({ files }) => {
+    const imageNames = map(prop('name'), files);
+
+    this.props.setFieldValue(BLOCK_IMAGES, files);
+    this.props.setFieldValue(BLOCK_IMAGE_NAMES, imageNames);
   };
 
   handleCancelTypeChange = () => {
@@ -99,14 +102,15 @@ export class PageBlockForm extends PureComponent {
 
   renderImage = () => (
     <Uploader
-      fileName={this.props.values.imageName}
-      name={BLOCK_IMAGE}
+      fileNames={this.props.values.imageNames}
+      name={BLOCK_IMAGES}
       label={this.props.intl.formatMessage(messages.pageBlockFieldImage)}
       type="file"
       id="fileUpload"
       onChange={({ currentTarget }) => this.handleUploadChange(currentTarget)}
       accept=".png, .jpg, .jpeg, .gif"
       checkOnlyErrors
+      multiple
       {...this.props}
     />
   );
