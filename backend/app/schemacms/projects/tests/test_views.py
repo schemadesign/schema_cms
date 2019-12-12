@@ -392,7 +392,7 @@ class TestCreateDataSourceView:
 
         assert response.status_code == status.HTTP_201_CREATED, response.content
         assert project.data_sources.get(id=response.data["id"]).created_by == admin
-        schedule_update_meta_mock.assert_called_with()
+        schedule_update_meta_mock.assert_called_with(False)
 
     @staticmethod
     def get_url():
@@ -441,7 +441,7 @@ class TestUpdateDataSourceView:
 
         api_client.patch(url, payload, format="multipart")
 
-        schedule_update_meta_mock.assert_called_with()
+        schedule_update_meta_mock.assert_called_with(False)
 
     def test_update_by_editor_assigned_to_project(
         self, api_client, faker, editor, project, data_source_factory

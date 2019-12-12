@@ -1,7 +1,6 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { createRoutine } from 'redux-saga-routines';
-import { sort, descend, prop } from 'ramda';
 
 const prefix = 'DATA_SOURCE/';
 
@@ -24,10 +23,8 @@ export const INITIAL_STATE = new Immutable({
   fieldsInfo: {},
 });
 
-const sortByDate = sort(descend(prop('created')));
-
 const updateDataSource = (state = INITIAL_STATE, { payload }) => state.set('dataSource', payload);
-const updateDataSources = (state = INITIAL_STATE, { payload }) => state.set('dataSources', sortByDate(payload));
+const updateDataSources = (state = INITIAL_STATE, { payload }) => state.set('dataSources', payload);
 const setFieldsInfo = (state = INITIAL_STATE, { payload }) => state.set('fieldsInfo', payload);
 const setPreviewData = (state = INITIAL_STATE, { payload }) => state.set('previewData', payload);
 

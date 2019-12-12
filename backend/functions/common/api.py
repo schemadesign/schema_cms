@@ -23,7 +23,7 @@ class SchemaCMSAPI:
         self.timeout = 20
 
     @check_response
-    def update_datasource_meta(self, datasource_pk, items, fields, fields_names, preview_data, rerun_scripts):
+    def update_datasource_meta(self, datasource_pk, items, fields, fields_names, preview_data, copy_steps):
         url = os.path.join(self._datasource_url(datasource_pk), "update-meta")
         response = requests.post(
             url,
@@ -32,7 +32,7 @@ class SchemaCMSAPI:
                 "fields": fields,
                 "fields_names": fields_names,
                 "preview_data": json.loads(preview_data),
-                "rerun_scripts": rerun_scripts,
+                "copy_steps": copy_steps,
             },
             headers=self.get_headers(),
             timeout=self.timeout,

@@ -19,7 +19,7 @@ def copy_steps_from_active_job(steps, job):
 
 
 def update_meta(view, model_class, request, pk, *args, **kwargs):
-    is_rerun = request.data.pop("rerun_scripts", None)
+    copy_steps = request.data.pop("copy_steps", None)
 
     serializer = view.get_serializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -31,7 +31,7 @@ def update_meta(view, model_class, request, pk, *args, **kwargs):
         if isinstance(model_class(), models.DataSource):
             fake_job = obj.create_job(description=f"DataSource {obj.id} file upload")
 
-            if is_rerun:
+            if copy_steps:
                 copy_steps_from_active_job(obj.active_job.steps.all(), fake_job)
 
             obj.active_job = None
@@ -70,7 +70,6 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
             .jobs_in_process()
             .prefetch_related("filters", "active_job__steps")
             .select_related("project", "meta_data", "created_by", "active_job")
-            .order_by("-created")
             .annotate_filters_count()
             .available_for_user(user=self.request.user)
         )
@@ -155,10 +154,8 @@ class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.Mo
 
 class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.DataSourceSerializer
-    queryset = (
-        models.DataSource.objects.prefetch_related("filters", "active_job__steps")
-        .select_related("project", "meta_data", "created_by", "active_job")
-        .order_by("-created")
+    queryset = models.DataSource.objects.prefetch_related("filters", "active_job__steps").select_related(
+        "project", "meta_data", "created_by", "active_job"
     )
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
@@ -232,6 +229,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         with transaction.atomic():
             job = serializer.save()
+            datasource.save()  # refresh "modified" field
             transaction.on_commit(job.schedule)
         return response.Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
