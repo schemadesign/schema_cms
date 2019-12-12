@@ -5,7 +5,7 @@ from schemacms.projects import models
 from .constants import DataSourceJobState, BlockTypes
 from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
-from ..utils.serializers import NestedRelatedModelSerializer, change_string_bools
+from ..utils.serializers import NestedRelatedModelSerializer
 from .validators import CustomUniqueValidator, CustomUniqueTogetherValidator
 
 
@@ -132,7 +132,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
         if "file" in self.validated_data:
-            copy_steps = change_string_bools(self.initial_data.get("run_last_job"))
+            copy_steps = self.initial_data.get("run_last_job", False)
             obj.schedule_update_meta(copy_steps)
         return obj
 
