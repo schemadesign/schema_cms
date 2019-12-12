@@ -104,7 +104,7 @@ def process_datasource_meta_source_file(data_source: dict):
             fields=fields,
             fields_names=fields_names,
             preview_data=preview_data,
-            rerun_scripts=data_source["rerun_scripts"],
+            copy_steps=data_source["copy_steps"],
         )
         logger.info(f"Meta created - DataSource # {datasource.id}")
     except Exception as e:

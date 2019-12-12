@@ -59,7 +59,7 @@ class MetaDataModel(models.Model):
         return json.loads(self.preview.read())
 
     @classmethod
-    def schedule_update_meta(cls, obj):
+    def schedule_update_meta(cls, obj, copy_steps=False):
         file = obj.get_source_file()
         if not file:
             raise ValueError("Cannot schedule meta processing without source file")
@@ -70,7 +70,9 @@ class MetaDataModel(models.Model):
             except models.ObjectDoesNotExist:
                 pass
             transaction.on_commit(
-                lambda: services.schedule_object_meta_processing(obj=obj, source_file_size=file.size)
+                lambda: services.schedule_object_meta_processing(
+                    obj=obj, source_file_size=file.size, copy_steps=copy_steps
+                )
             )
 
 
@@ -182,7 +184,7 @@ class DataSource(
                 condition=models.Q(deleted_at=None),
             )
         ]
-        ordering = ('-created',)
+        ordering = ('-modified',)
 
     def __str__(self):
         return self.name or str(self.id)
@@ -194,8 +196,8 @@ class DataSource(
     def meta_file_processing_type(self):
         return constants.WorkerProcessType.DATASOURCE_META_PROCESSING
 
-    def schedule_update_meta(self):
-        return MetaDataModel.schedule_update_meta(obj=self)
+    def schedule_update_meta(self, copy_steps):
+        return MetaDataModel.schedule_update_meta(obj=self, copy_steps=copy_steps)
 
     def update_meta(self, preview_data: dict, items: int, fields: int, fields_names: list):
         if not self.file:

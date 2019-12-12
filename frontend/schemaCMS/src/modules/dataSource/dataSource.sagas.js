@@ -1,12 +1,12 @@
 import { all, cancel, cancelled, delay, fork, put, take, takeLatest } from 'redux-saga/effects';
-import { all as ramdaAll, both, either, forEach, isEmpty, keys, omit, pipe, propEq, propIs, map } from 'ramda';
+import { all as ramdaAll, both, either, forEach, isEmpty, keys, omit, pipe, propEq, propIs, map, when } from 'ramda';
 import { camelize, decamelize } from 'humps';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
-import { FETCH_LIST_DELAY } from './dataSource.constants';
+import { DATA_SOURCE_RUN_LAST_JOB, FETCH_LIST_DELAY } from './dataSource.constants';
 
 const PAGE_SIZE = 1000;
 
@@ -110,6 +110,7 @@ function* updateOne({ payload: { dataSourceId, requestData } }) {
 
       pipe(
         omit(['name']),
+        when(propEq(DATA_SOURCE_RUN_LAST_JOB, false), omit([DATA_SOURCE_RUN_LAST_JOB])),
         keys,
         map(decamelize),
         forEach(name => formData.append(name, requestData[camelize(name)]))

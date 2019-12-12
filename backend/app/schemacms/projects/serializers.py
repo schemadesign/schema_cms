@@ -72,6 +72,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
             "file",
             "file_name",
             "created",
+            "modified",
             "meta_data",
             "error_log",
             "project",
@@ -131,7 +132,8 @@ class DataSourceSerializer(serializers.ModelSerializer):
     def save(self, *args, **kwargs):
         obj = super().save(*args, **kwargs)
         if "file" in self.validated_data:
-            obj.schedule_update_meta()
+            copy_steps = self.initial_data.get("run_last_job", False)
+            obj.schedule_update_meta(copy_steps)
         return obj
 
 
