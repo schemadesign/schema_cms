@@ -46,8 +46,6 @@ export class Source extends PureComponent {
 
   handleCloseModal = modalState => this.setState({ [modalState]: false });
 
-  handleCancelRemove = () => this.setState({ confirmationRemoveModalOpen: false });
-
   handleConfirmRemove = () => {
     const {
       dataSource: { project: projectId, id: dataSourceId },
