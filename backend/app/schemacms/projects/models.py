@@ -599,7 +599,7 @@ class Page(
                 "name": block.name,
                 "type": block.type,
                 "content": block.content,
-                "image": None if not block.image else block.image.url,
+                "images": [] if not hasattr(block, "images") else [i.image.url for i in block.images.all()],
             }
             blocks.append(data)
 
@@ -611,7 +611,6 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
     name = models.CharField(max_length=constants.BLOCK_NAME_MAX_LENGTH)
     type = models.CharField(max_length=25, choices=constants.BLOCK_TYPE_CHOICES)
     content = models.TextField(blank=True, default="")
-    image = models.ImageField(upload_to=file_upload_path, null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -625,17 +624,27 @@ class Block(utils_models.MetaGeneratorMixin, softdelete.models.SoftDeleteObject,
         ]
         ordering = ('created',)
 
+    def get_project(self):
+        return self.page.folder.project
+
+
+class BlockImage(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel):
+    block = models.ForeignKey(Block, on_delete=models.CASCADE, related_name="images")
+    image = models.ImageField(upload_to=file_upload_path, null=True, blank=True)
+    image_name = models.CharField(max_length=50, blank=True)
+
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
-        if not self.page_id:
+
+        if not self.block.page_id:
             raise ValueError("Page is not set")
-        return os.path.join(base_path, f"pages/{self.page_id}/{filename}")
+
+        return os.path.join(base_path, f"pages/{self.block.page_id}/{filename}")
 
     def get_original_image_name(self, file_name=None):
         if not file_name:
             file_name = self.image.name
-        name, ext = os.path.splitext(os.path.basename(file_name))
-        return name, os.path.basename(file_name)
 
-    def get_project(self):
-        return self.page.folder.project
+        name, ext = os.path.splitext(os.path.basename(file_name))
+
+        return name, os.path.basename(file_name)

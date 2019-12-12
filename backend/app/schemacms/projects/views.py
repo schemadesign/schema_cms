@@ -488,7 +488,7 @@ class BlockViewSet(
     mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = models.Block.objects.select_related("page").all()
+    queryset = models.Block.objects.prefetch_related("images").select_related("page").all()
     serializer_class = serializers.BlockSerializer
     permission_classes = (permissions.IsAuthenticated,)
 

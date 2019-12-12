@@ -6,16 +6,16 @@ from .constants import BlockTypes
 class BlockForm(forms.ModelForm):
     class Meta:
         model = Block
-        fields = ("page", "name", "type", "content", "image", "is_active")
+        fields = ("page", "name", "type", "content", "is_active")
 
     def clean(self):
         type_ = self.cleaned_data["type"]
-        image = self.cleaned_data["image"]
+        images = self.cleaned_data["images"]
 
-        if type_ == BlockTypes.IMAGE and not image:
+        if type_ == BlockTypes.IMAGE and not images:
             message = f"Please select image to upload."
             raise forms.ValidationError(message)
 
-        if image and type_ != BlockTypes.IMAGE:
+        if images and type_ != BlockTypes.IMAGE:
             message = f"For image upload use Image Uploaded block type."
             raise forms.ValidationError(message)
