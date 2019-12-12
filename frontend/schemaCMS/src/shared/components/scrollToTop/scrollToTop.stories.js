@@ -1,4 +1,5 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { Router } from 'react-router';
 import { createMemoryHistory } from 'history';
@@ -13,6 +14,12 @@ export const defaultProps = {
 };
 
 export class Wrapper extends PureComponent {
+  static propTypes = {
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }).isRequired,
+  };
+
   state = {
     path: '/init',
   };
