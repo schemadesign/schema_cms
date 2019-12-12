@@ -9,7 +9,7 @@ import schemacms.projects.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('projects', '0044_auto_20191211_0906'),
+        ('projects', '0045_auto_20191212_0951'),
     ]
 
     operations = [
