@@ -1,12 +1,12 @@
 import { defaultTheme } from '../../utils/theme';
 
 export const getStyles = (theme = defaultTheme) => {
-  const { table } = theme;
+  const { background, border, text } = theme.table;
 
   const cell = {
     padding: '7px 12px',
-    borderBottom: `2px solid ${table.border.body}`,
-    borderRight: `2px solid ${table.border.body}`,
+    borderBottom: `2px solid ${border.body}`,
+    borderRight: `2px solid ${border.body}`,
     maxWidth: '250px',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
@@ -16,13 +16,13 @@ export const getStyles = (theme = defaultTheme) => {
   const headerCell = {
     ...cell,
     padding: '12px',
-    borderRightColor: table.border.header,
-    borderBottomColor: table.border.header,
+    borderRightColor: border.header,
+    borderBottomColor: border.header,
   };
 
   const thead = {
-    color: table.text.header,
-    backgroundColor: table.background.header,
+    color: text.header,
+    backgroundColor: background.header,
     fontWeight: 600,
   };
 
@@ -42,17 +42,17 @@ export const getStyles = (theme = defaultTheme) => {
       borderCollapse: 'collapse',
       minWidth: '100%',
       fontSize: '14px',
-      color: table.text.body,
+      color: text.body,
     },
     thead,
     lastRow: {
-      borderBottomColor: table.border.body,
+      borderBottomColor: border.body,
       paddingBottom: '10px',
     },
     cell,
     cellCustom: {
       ...cell,
-      border: `2px solid ${table.border.body}`,
+      border: `2px solid ${border.body}`,
     },
     headerCell,
     headerFirstCell: {
@@ -61,12 +61,12 @@ export const getStyles = (theme = defaultTheme) => {
     },
     headerLastCell: {
       ...headerCell,
-      borderRightColor: table.border.body,
+      borderRightColor: border.body,
     },
     headerLeftCell,
     headerLastLeftCell: {
       ...headerLeftCell,
-      borderBottomColor: table.background.header,
+      borderBottomColor: background.header,
     },
   };
 };

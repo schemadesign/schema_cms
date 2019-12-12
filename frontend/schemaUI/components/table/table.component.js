@@ -27,7 +27,9 @@ class TableComponent extends PureComponent {
         ...headerFirstCell,
         width: countRows < ROWS_LIMIT ? headerNarrowWidth : headerBaseWidth,
       };
-    } else if (index === lastIndex) {
+    }
+
+    if (index === lastIndex) {
       return headerLastCell;
     }
 
