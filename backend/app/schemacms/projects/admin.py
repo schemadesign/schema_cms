@@ -60,7 +60,7 @@ class DataSource(utils_admin.SoftDeleteObjectAdmin):
     list_display = ("name", "deleted_at")
 
     def soft_undelete(self, request, queryset):
-        self.handle_conflicts_on_undelate(request, queryset, field="name", model_name="DataSource")
+        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="DataSource")
 
     @transaction.atomic()
     def save_model(self, request, obj, form, change):
