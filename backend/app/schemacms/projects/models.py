@@ -567,7 +567,9 @@ class Page(
     objects = managers.PageManager()
 
     def __str__(self):
-        return self.title or str(self.pk)
+        return (
+            f"{self.title or str(self.pk)} || Folder: {self.folder.name}, Project: {self.get_project().title}"
+        )
 
     class Meta:
         constraints = [

@@ -482,6 +482,7 @@ class BlockImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.BlockImage
         fields = ("id", "image", "image_name")
+        ordering = ("created",)
 
 
 class BlockSerializer(serializers.ModelSerializer):
