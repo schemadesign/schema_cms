@@ -61,7 +61,7 @@ export class SourceFormComponent extends PureComponent {
 
   renderCsvUploader = ({ setFieldValue, fileName, jobsInProcess, ...restProps }) => (
     <Uploader
-      fileNames={[fileName]}
+      fileNames={fileName}
       name={DATA_SOURCE_FILE}
       label={this.props.intl.formatMessage(messages.fileName)}
       type="file"

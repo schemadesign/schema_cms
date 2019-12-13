@@ -265,11 +265,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
             }
           }
           type="text"
-          value={
-            Array [
-              "fileName",
-            ]
-          }
+          value="fileName"
         />
         <div
           style={

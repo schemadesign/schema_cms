@@ -1271,11 +1271,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
               }
             }
             type="text"
-            value={
-              Array [
-                undefined,
-              ]
-            }
+            value="Select a file"
           />
           <div
             style={

@@ -48,7 +48,7 @@ export class FileUploadComponent extends PureComponent {
     <TextField
       name="fileNames"
       label={label}
-      value={fileNames || DEFAULT_TEXT_VALUE}
+      value={fileNames.length ? fileNames : DEFAULT_TEXT_VALUE}
       fullWidth
       disabled
       customStyles={customStyles}

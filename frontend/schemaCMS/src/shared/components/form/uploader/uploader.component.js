@@ -11,7 +11,7 @@ const { FileUpload } = Form;
 
 export class Uploader extends PureComponent {
   static propTypes = {
-    fileNames: PropTypes.array,
+    fileNames: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
     label: PropTypes.string,
     id: PropTypes.string,
     name: PropTypes.string,
