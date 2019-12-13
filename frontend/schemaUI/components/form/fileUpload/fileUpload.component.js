@@ -1,23 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  buttonStyles,
-  containerStyles,
-  getLabelStyles,
-  iconContainerStyles,
-  inputStyles,
-  itemContainerStyles,
-  itemStyles,
-  listContainerStyles,
-  removeIconStyles,
-} from './fileUpload.styles';
+import { buttonStyles, containerStyles, getLabelStyles, inputStyles } from './fileUpload.styles';
 import { getStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
 import { TextField } from '../textField';
 import { withStyles } from '../../styles/withStyles';
-import { Label } from '../label';
-import { CloseIcon } from '../../icons/closeIcon';
 
 const DEFAULT_TEXT_VALUE = 'Select a file';
 
@@ -56,30 +44,11 @@ export class FileUploadComponent extends PureComponent {
     </label>
   );
 
-  renderItem = ({ name, onRemoveItem, index }) => (
-    <div key={index} style={itemStyles}>
-      {name}
-      {onRemoveItem ? <CloseIcon customStyles={removeIconStyles} onClick={() => onRemoveItem(name)} /> : null}
-    </div>
-  );
-
-  renderList = ({ fileNames = [], label, id, onRemoveItem }) => (
-    <div style={listContainerStyles}>
-      <Label>{label}</Label>
-      <div style={itemContainerStyles}>
-        {fileNames.length
-          ? fileNames.map((name, index) => this.renderItem({ name, onRemoveItem, index }))
-          : DEFAULT_TEXT_VALUE}
-      </div>
-      <div style={iconContainerStyles}>{this.iconComponent({ id, label })}</div>
-    </div>
-  );
-
   renderTextField = ({ fileNames = [], label, id, customStyles, customLabelStyles, customInputStyles }) => (
     <TextField
       name="fileNames"
       label={label}
-      value={fileNames[0] || DEFAULT_TEXT_VALUE}
+      value={fileNames || DEFAULT_TEXT_VALUE}
       fullWidth
       disabled
       customStyles={customStyles}
@@ -89,17 +58,7 @@ export class FileUploadComponent extends PureComponent {
     />
   );
 
-  renderContent = data => {
-    if (data.multiple) {
-      return this.renderList(data);
-    }
-
-    if (data.label) {
-      return this.renderTextField(data);
-    }
-
-    return this.iconComponent(data);
-  };
+  renderContent = data => (data.label ? this.iconComponent(data) : this.renderTextField(data));
 
   render() {
     const {

@@ -44,7 +44,7 @@ export default compose(
       name,
       type,
       [`${type}-${BLOCK_CONTENT}`]: content,
-      imageNames: images.map(({ imageName }) => imageName),
+      imageNames: images,
     }),
     validationSchema: () => BLOCK_SCHEMA,
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {

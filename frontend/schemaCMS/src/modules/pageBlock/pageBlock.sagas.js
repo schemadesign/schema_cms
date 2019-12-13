@@ -7,12 +7,13 @@ import { BLOCK_PATH, PAGES_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { IMAGE_TYPE } from './pageBlock.constants';
 
-const convertImages = images => images.reduce((result, item, index) => ({ [`image_${index}`]: item, ...result }), {});
+const convertImages = images =>
+  images.reduce((result, { file }, index) => ({ [`image_${index}`]: file, ...result }), {});
 
-const getBlockData = ({ name, images, type, ...rest }, blockType) =>
+const getBlockData = ({ name, images, type, deleteImages, ...rest }, blockType) =>
   cond([
-    [both(equals(IMAGE_TYPE), () => isNil(images)), always({ name, type, content: '' })],
-    [equals(IMAGE_TYPE), always({ name, type, ...convertImages(images), content: '' })],
+    [both(equals(IMAGE_TYPE), () => isNil(images)), always({ name, type, content: '', deleteImages })],
+    [equals(IMAGE_TYPE), always({ name, type, ...convertImages(images), content: '', deleteImages })],
     [T, always({ name, type, content: rest[`${type}-content`] })],
   ])(blockType || type);
 

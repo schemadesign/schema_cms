@@ -19,21 +19,6 @@ const withFileName = {
   fileNames: ['name.csv'],
 };
 
-const withFileNames = {
-  id: 'id',
-  label: 'label',
-  multiple: true,
-  fileNames: ['name 1.csv', 'name 2.csv'],
-};
-
-const withRemovePossibility = {
-  id: 'id',
-  label: 'label',
-  multiple: true,
-  onRemoveItem: Function.prototype,
-  fileNames: ['name 1.csv', 'name 2.csv'],
-};
-
 const withCustomIcon = {
   ...withFileName,
   iconComponent: <span>icon</span>,
@@ -57,7 +42,5 @@ storiesOf('Form/FileUpload', module)
   .add('Default', () => <FileUpload {...defaultProps} />)
   .add('with label', () => <FileUpload {...withLabel} />)
   .add('with file name', () => <FileUpload {...withFileName} />)
-  .add('with file names', () => <FileUpload {...withFileNames} />)
-  .add('with remove possibility', () => <FileUpload {...withRemovePossibility} />)
   .add('with custom icon', () => <FileUpload {...withCustomIcon} />)
   .add('with custom styles', () => <FileUpload {...withCustomStyles} />);

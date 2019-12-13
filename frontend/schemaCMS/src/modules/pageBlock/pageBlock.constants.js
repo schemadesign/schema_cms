@@ -4,8 +4,10 @@ export const BLOCK_FORM = 'block_form';
 export const BLOCK_NAME = 'name';
 export const BLOCK_TYPE = 'type';
 export const BLOCK_CONTENT = 'content';
+export const BLOCK_INPUT_IMAGES = 'inputImages';
 export const BLOCK_IMAGES = 'images';
 export const BLOCK_IMAGE_NAMES = 'imageNames';
+export const BLOCK_DELETE_IMAGES = 'deleteImages';
 
 export const IMAGE_TYPE = 'image_uploaded';
 export const MARKDOWN_TYPE = 'markdown_text';
@@ -14,13 +16,15 @@ export const CODE_TYPE = 'code_snippet';
 export const NONE = 'none';
 
 export const INITIAL_VALUES = {
-  [BLOCK_NAME]: '',
+  [BLOCK_NAME]: 'Name',
   [`${MARKDOWN_TYPE}-${BLOCK_CONTENT}`]: '',
   [`${EMBED_TYPE}-${BLOCK_CONTENT}`]: '',
   [`${CODE_TYPE}-${BLOCK_CONTENT}`]: '',
   [BLOCK_IMAGES]: [],
+  [BLOCK_INPUT_IMAGES]: [],
   [BLOCK_IMAGE_NAMES]: [],
-  [BLOCK_TYPE]: NONE,
+  [BLOCK_DELETE_IMAGES]: [],
+  [BLOCK_TYPE]: IMAGE_TYPE,
 };
 
 export const VALID_TYPE_OPTIONS = [IMAGE_TYPE, MARKDOWN_TYPE, EMBED_TYPE, CODE_TYPE];
