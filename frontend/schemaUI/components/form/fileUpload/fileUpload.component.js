@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { cond, propIs, T, propEq, isEmpty } from 'ramda';
 
 import {
   buttonStyles,
@@ -68,9 +67,9 @@ export class FileUploadComponent extends PureComponent {
     <div style={listContainerStyles}>
       <Label>{label}</Label>
       <div style={itemContainerStyles}>
-        {isEmpty(fileNames)
-          ? DEFAULT_TEXT_VALUE
-          : fileNames.map((name, index) => this.renderItem({ name, onRemoveItem, index }))}
+        {fileNames.length
+          ? fileNames.map((name, index) => this.renderItem({ name, onRemoveItem, index }))
+          : DEFAULT_TEXT_VALUE}
       </div>
       <div style={iconContainerStyles}>{this.iconComponent({ id, label })}</div>
     </div>
@@ -90,11 +89,17 @@ export class FileUploadComponent extends PureComponent {
     />
   );
 
-  renderContent = cond([
-    [propEq('multiple', true), this.renderList],
-    [propIs(String, 'label'), this.renderTextField],
-    [T, ({ label, id }) => this.iconComponent({ id, label })],
-  ]);
+  renderContent = data => {
+    if (data.multiple) {
+      return this.renderList(data);
+    }
+
+    if (data.label) {
+      return this.renderTextField(data);
+    }
+
+    return this.iconComponent(data);
+  };
 
   render() {
     const {

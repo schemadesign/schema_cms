@@ -3,7 +3,7 @@ import { bindPromiseCreators, promisifyRoutine } from 'redux-saga-routines';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import { compose, path } from 'ramda';
+import { compose, path, pickBy } from 'ramda';
 import { injectIntl } from 'react-intl';
 import { withFormik } from 'formik';
 
@@ -39,12 +39,12 @@ export default compose(
   withFormik({
     displayName: BLOCK_FORM,
     enableReinitialize: true,
-    mapPropsToValues: ({ block: { name, type, content, imageName } }) => ({
+    mapPropsToValues: ({ block: { name, type, content, images = [] } }) => ({
       ...INITIAL_VALUES,
       name,
       type,
       [`${type}-${BLOCK_CONTENT}`]: content,
-      imageName,
+      imageNames: images.map(({ imageName }) => imageName),
     }),
     validationSchema: () => BLOCK_SCHEMA,
     handleSubmit: async (data, { props, setSubmitting, setErrors }) => {
@@ -52,8 +52,9 @@ export default compose(
         setSubmitting(true);
         const blockId = getMatchParam(props, 'blockId');
         const pageId = path(['block', 'page', 'id'], props);
+        const requestData = pickBy((val, key) => val !== props.block[key], data);
 
-        await props.updatePageBlock({ blockId, pageId, ...data });
+        await props.updatePageBlock({ blockId, pageId, blockType: data.type, ...requestData });
       } catch (errors) {
         const { formatMessage } = props.intl;
         const errorMessages = errorMessageParser({ errors, messages, formatMessage });

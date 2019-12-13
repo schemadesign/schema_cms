@@ -1,5 +1,5 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import { forEach, keys, pipe, cond, equals, always, isNil, both, T } from 'ramda';
+import { forEach, keys, pipe, cond, equals, always, isNil, both, T, pickBy, complement } from 'ramda';
 
 import { PageBlockRoutines } from './pageBlock.redux';
 import api from '../../shared/services/api';
@@ -9,12 +9,12 @@ import { IMAGE_TYPE } from './pageBlock.constants';
 
 const convertImages = images => images.reduce((result, item, index) => ({ [`image_${index}`]: item, ...result }), {});
 
-const getBlockData = ({ name, images, type, ...rest }) =>
+const getBlockData = ({ name, images, type, ...rest }, blockType) =>
   cond([
     [both(equals(IMAGE_TYPE), () => isNil(images)), always({ name, type, content: '' })],
     [equals(IMAGE_TYPE), always({ name, type, ...convertImages(images), content: '' })],
     [T, always({ name, type, content: rest[`${type}-content`] })],
-  ])(type);
+  ])(blockType || type);
 
 function* fetchList({ payload: { pageId } }) {
   try {
@@ -82,13 +82,14 @@ function* create({ payload: { pageId, ...restFields } }) {
   }
 }
 
-function* update({ payload: { pageId, blockId, ...restFields } }) {
+function* update({ payload: { pageId, blockId, blockType, ...restFields } }) {
   try {
     yield put(PageBlockRoutines.update.request());
     const formData = new FormData();
-    const fields = getBlockData(restFields);
+    const fields = getBlockData(restFields, blockType);
 
     pipe(
+      pickBy(complement(isNil)),
       keys,
       forEach(name => formData.append(name, fields[name]))
     )(fields);
