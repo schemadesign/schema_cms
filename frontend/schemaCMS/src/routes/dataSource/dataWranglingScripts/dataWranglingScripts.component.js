@@ -210,8 +210,8 @@ export class DataWranglingScripts extends PureComponent {
             </StepCounter>
             <UploadContainer>{this.renderUploadButton(isAdmin)}</UploadContainer>
           </Header>
-          <Formik initialValues={{ steps }} onSubmit={this.handleSubmit}>
-            {({ values: { steps }, setFieldValue, submitForm, isSubmitting, dirty }) => (
+          <Formik initialValues={{ steps }} isInitialValid enableReinitialize onSubmit={this.handleSubmit}>
+            {({ values: { steps }, setFieldValue, submitForm, isSubmitting }) => (
               <Fragment>
                 <CheckboxGroup
                   onChange={e => this.handleChange({ e, setFieldValue, steps })}
@@ -224,7 +224,7 @@ export class DataWranglingScripts extends PureComponent {
                 <NavigationContainer right>
                   <NextButton
                     onClick={submitForm}
-                    disabled={!dirty || isSubmitting || jobsInProcess || !steps.length}
+                    disabled={isSubmitting || jobsInProcess || !steps.length}
                     loading={isSubmitting}
                   >
                     <FormattedMessage {...messages.save} />
