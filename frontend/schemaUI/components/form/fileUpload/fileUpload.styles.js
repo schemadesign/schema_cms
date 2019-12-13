@@ -11,8 +11,6 @@ export const inputStyles = {
 
 export const buttonStyles = {
   fontSize: 0,
-  display: 'flex',
-  width: 60,
 };
 
 export const customInputStyles = {

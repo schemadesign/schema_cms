@@ -51,8 +51,8 @@ export const imageProps = {
   ...defaultProps,
   values: {
     name: 'name',
-    image: 'image',
-    imageName: 'image name',
+    image: [{ file: 'file', id: 1 }],
+    imageNames: [{ imageName: 'imageName.png', id: 1 }],
     type: IMAGE_TYPE,
   },
 };

@@ -16,7 +16,7 @@ export const CODE_TYPE = 'code_snippet';
 export const NONE = 'none';
 
 export const INITIAL_VALUES = {
-  [BLOCK_NAME]: 'Name',
+  [BLOCK_NAME]: '',
   [`${MARKDOWN_TYPE}-${BLOCK_CONTENT}`]: '',
   [`${EMBED_TYPE}-${BLOCK_CONTENT}`]: '',
   [`${CODE_TYPE}-${BLOCK_CONTENT}`]: '',
@@ -24,7 +24,7 @@ export const INITIAL_VALUES = {
   [BLOCK_INPUT_IMAGES]: [],
   [BLOCK_IMAGE_NAMES]: [],
   [BLOCK_DELETE_IMAGES]: [],
-  [BLOCK_TYPE]: IMAGE_TYPE,
+  [BLOCK_TYPE]: NONE,
 };
 
 export const VALID_TYPE_OPTIONS = [IMAGE_TYPE, MARKDOWN_TYPE, EMBED_TYPE, CODE_TYPE];

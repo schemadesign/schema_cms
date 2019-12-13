@@ -58,7 +58,7 @@ export class FileUploadComponent extends PureComponent {
     />
   );
 
-  renderContent = data => (data.label ? this.iconComponent(data) : this.renderTextField(data));
+  renderContent = data => (data.label ? this.renderTextField(data) : this.iconComponent(data));
 
   render() {
     const {

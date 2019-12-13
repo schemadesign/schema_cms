@@ -116,8 +116,9 @@ describe('PageBlock: sagas', () => {
       const payload = {
         pageId: 1,
         name: 'Title',
-        images: ['file'],
+        images: [{ file: 'file' }],
         type: IMAGE_TYPE,
+        deleteImages: [],
       };
 
       const options = {
@@ -125,10 +126,7 @@ describe('PageBlock: sagas', () => {
       };
 
       mockApi
-        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="images"[^]*file/m, options, {
-          name: 'Title',
-          type: [MARKDOWN_TYPE],
-        })
+        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="image_0"[^]*file/m, options)
         .reply(OK, response);
 
       await expectSaga(watchPageBlock)

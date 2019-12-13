@@ -13,7 +13,7 @@ const convertImages = images =>
 const getBlockData = ({ name, images, type, deleteImages, ...rest }, blockType) =>
   cond([
     [both(equals(IMAGE_TYPE), () => isNil(images)), always({ name, type, content: '', deleteImages })],
-    [equals(IMAGE_TYPE), always({ name, type, ...convertImages(images), content: '', deleteImages })],
+    [equals(IMAGE_TYPE), () => ({ name, type, ...convertImages(images), content: '', deleteImages })],
     [T, always({ name, type, content: rest[`${type}-content`] })],
   ])(blockType || type);
 
