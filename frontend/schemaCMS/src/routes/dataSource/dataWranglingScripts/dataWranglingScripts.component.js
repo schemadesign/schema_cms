@@ -21,7 +21,17 @@ import {
 } from 'ramda';
 import Helmet from 'react-helmet';
 
-import { Empty, Error, Header, Link, StepCounter, UploadContainer, Warning } from './dataWranglingScripts.styles';
+import {
+  Dot,
+  Empty,
+  Error,
+  Header,
+  Link,
+  StepCounter,
+  Type,
+  UploadContainer,
+  Warning,
+} from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import {
   IMAGE_SCRAPING_SCRIPT_TYPE,
@@ -142,9 +152,15 @@ export class DataWranglingScripts extends PureComponent {
     }
   };
 
-  renderCheckboxes = ({ id, name, specs }, index) => (
+  renderCheckboxes = ({ id, name, specs, type }, index) => (
     <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index}>
-      <Link to={this.getScriptLink(id, specs, getMatchParam(this.props, 'dataSourceId'), this.props)}>{name}</Link>
+      <Link to={this.getScriptLink(id, specs, getMatchParam(this.props, 'dataSourceId'), this.props)}>
+        {name}
+        <Dot />
+        <Type>
+          <FormattedMessage {...messages[type]} />
+        </Type>
+      </Link>
     </Checkbox>
   );
 

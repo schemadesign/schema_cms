@@ -35,3 +35,16 @@ export const Link = styled(RouterLink)`
   color: inherit;
   text-decoration: none;
 `;
+
+export const Dot = styled.div`
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin: 0 10px 2px 10px;
+  background-color: ${({ theme: { secondaryText } }) => secondaryText};
+`;
+
+export const Type = styled.span`
+  color: ${({ theme: { secondaryText } }) => secondaryText};
+`;
