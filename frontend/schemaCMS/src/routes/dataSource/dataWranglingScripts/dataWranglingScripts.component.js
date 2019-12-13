@@ -9,7 +9,7 @@ import {
   equals,
   find,
   ifElse,
-  insertAll,
+  insert,
   map,
   pathEq,
   pathOr,
@@ -18,6 +18,8 @@ import {
   propEq,
   reject,
   toString,
+  flatten,
+  uniq,
 } from 'ramda';
 import Helmet from 'react-helmet';
 
@@ -186,7 +188,9 @@ export class DataWranglingScripts extends PureComponent {
           toString
         )
       ),
-      insertAll(0, customScripts)
+      insert(0, customScripts),
+      flatten,
+      uniq
     )(dataSource);
 
     const { jobsInProcess, name } = dataSource;
