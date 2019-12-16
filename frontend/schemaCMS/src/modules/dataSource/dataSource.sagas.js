@@ -1,25 +1,20 @@
 import { all, cancel, cancelled, delay, fork, put, take, takeLatest } from 'redux-saga/effects';
-import { all as ramdaAll, both, either, forEach, isEmpty, keys, omit, pipe, propEq, propIs, map, when } from 'ramda';
-import { camelize, decamelize } from 'humps';
+import { all as ramdaAll, both, either, isEmpty, omit, pipe, propEq, propIs, when } from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { DATA_SOURCE_RUN_LAST_JOB, FETCH_LIST_DELAY, RESULT_PAGE } from './dataSource.constants';
+import { createFormData } from '../../shared/utils/helpers';
 
 const PAGE_SIZE = 1000;
 
 function* create({ payload }) {
   try {
     yield put(DataSourceRoutines.create.request());
-    const formData = new FormData();
     const requestData = { project: payload.projectId, ...payload.requestData };
-
-    pipe(
-      keys,
-      forEach(name => formData.append(name, requestData[name]))
-    )(requestData);
+    const formData = createFormData(requestData);
 
     const { data } = yield api.post(DATA_SOURCES_PATH, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
@@ -106,15 +101,12 @@ function* updateOne({ payload: { dataSourceId, requestData } }) {
     const response = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, { name: requestData.name });
 
     if (requestData.file) {
-      const formData = new FormData();
-
-      pipe(
+      const filteredData = pipe(
         omit(['name']),
-        when(propEq(DATA_SOURCE_RUN_LAST_JOB, false), omit([DATA_SOURCE_RUN_LAST_JOB])),
-        keys,
-        map(decamelize),
-        forEach(name => formData.append(name, requestData[camelize(name)]))
+        when(propEq(DATA_SOURCE_RUN_LAST_JOB, false), omit([DATA_SOURCE_RUN_LAST_JOB]))
       )(requestData);
+
+      const formData = createFormData(filteredData);
 
       const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
