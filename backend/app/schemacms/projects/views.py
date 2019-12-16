@@ -444,7 +444,12 @@ class PageViewSet(
         "set_blocks": serializers.BlockSerializer,
     }
 
-    @decorators.action(detail=True, url_path='blocks', methods=["GET", "POST"])
+    @decorators.action(
+        detail=True,
+        url_path='blocks',
+        parser_classes=(parsers.FormParser, parsers.MultiPartParser),
+        methods=["GET", "POST"],
+    )
     def blocks(self, request, pk=None, **kwargs):
         page = self.get_object()
 
