@@ -8,7 +8,10 @@ import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCES_PATH, DATA_WRANGLING_SCRIPTS_PATH } from '../../../shared/utils/api.constants';
 import { watchDataWranglingScripts } from '../dataWranglingScripts.sagas';
 import { DataWranglingScriptsRoutines } from '../dataWranglingScripts.redux';
+import { SCRIPT_TYPES } from '../dataWranglingScripts.constants';
 import { selectDataSource } from '../../dataSource';
+
+const { DEFAULT, UPLOADED } = SCRIPT_TYPES;
 
 describe('DataWranglingScripts: sagas', () => {
   const defaultState = Immutable({});
@@ -19,14 +22,21 @@ describe('DataWranglingScripts: sagas', () => {
 
   describe('fetchList', () => {
     it('should dispatch a success action', async () => {
-      const responseData = ['data 1', 'data 2'];
+      const responseData = [
+        { id: 1, name: 'name 1', specs: {}, isPredefined: true },
+        { id: 2, name: 'name 2', specs: {}, isPredefined: true },
+      ];
+      const fetchListData = [
+        {...responseData[0], type: DEFAULT },
+        {...responseData[1], type: DEFAULT },
+      ];
       const payload = { dataSourceId: 1 };
 
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`).reply(OK, responseData);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
-        .put(DataWranglingScriptsRoutines.fetchList.success(responseData))
+        .put(DataWranglingScriptsRoutines.fetchList.success(fetchListData))
         .dispatch(DataWranglingScriptsRoutines.fetchList(payload))
         .silentRun();
     });
@@ -54,7 +64,16 @@ describe('DataWranglingScripts: sagas', () => {
         headers: { 'Content-Type': 'multipart/form-data' },
       };
       const payload = { dataSourceId: '1', script: new File(['foo'], 'foo.py', { type: 'text/plain' }) };
-      const responseData = ['data 1', 'data 2', 'data 3'];
+      const responseData = [
+        { id: 1, name: 'name 1', specs: {}, isPredefined: true },
+        { id: 2, name: 'name 2', specs: {}, isPredefined: true },
+        { id: 3, name: 'name 3', specs: {}, isPredefined: false },
+      ];
+      const fetchListData = [
+        {...responseData[2], type: UPLOADED },
+        {...responseData[0], type: DEFAULT },
+        {...responseData[1], type: DEFAULT },
+      ];
 
       mockApi
         .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/script-upload`, /form-data; name="file"[^]*file/m, options)
@@ -63,7 +82,7 @@ describe('DataWranglingScripts: sagas', () => {
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
-        .put(DataWranglingScriptsRoutines.fetchList.success(responseData))
+        .put(DataWranglingScriptsRoutines.fetchList.success(fetchListData))
         .put(DataWranglingScriptsRoutines.uploadScript.success())
         .dispatch(DataWranglingScriptsRoutines.uploadScript(payload))
         .silentRun();

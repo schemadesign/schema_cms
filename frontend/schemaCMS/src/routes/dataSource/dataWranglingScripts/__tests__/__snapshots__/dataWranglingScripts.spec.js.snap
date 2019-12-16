@@ -39,13 +39,26 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
         Array [
           Object {
             "id": 1,
+            "isPredefined": false,
             "name": "name 1",
             "specs": Object {},
+            "type": "uploaded",
           },
           Object {
             "id": 2,
+            "isPredefined": true,
             "name": "name 2",
             "specs": Object {},
+            "type": "default",
+          },
+          Object {
+            "id": 3,
+            "isPredefined": true,
+            "name": "name 3",
+            "specs": Object {
+              "type": "type",
+            },
+            "type": "custom",
           },
         ]
       }
@@ -108,7 +121,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
           id="dataSource.dataWranglingScripts.steps"
           values={
             Object {
-              "length": 2,
+              "length": 3,
             }
           }
         />
@@ -201,6 +214,14 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         to="/script/1"
       >
         name 1
+        <styled.div />
+        <styled.span>
+          <FormattedMessage
+            defaultMessage="Uploaded"
+            id="dataSource.dataWranglingScripts.uploaded"
+            values={Object {}}
+          />
+        </styled.span>
       </Styled(Link)>
     </Component>
     <Component
@@ -212,6 +233,33 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         to="/script/2"
       >
         name 2
+        <styled.div />
+        <styled.span>
+          <FormattedMessage
+            defaultMessage="Default"
+            id="dataSource.dataWranglingScripts.default"
+            values={Object {}}
+          />
+        </styled.span>
+      </Styled(Link)>
+    </Component>
+    <Component
+      id="checkbox-2"
+      key="2"
+      value="3"
+    >
+      <Styled(Link)
+        to="/script/3"
+      >
+        name 3
+        <styled.div />
+        <styled.span>
+          <FormattedMessage
+            defaultMessage="Custom"
+            id="dataSource.dataWranglingScripts.custom"
+            values={Object {}}
+          />
+        </styled.span>
       </Styled(Link)>
     </Component>
   </Component>
@@ -244,13 +292,26 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
       Array [
         Object {
           "id": 1,
+          "isPredefined": false,
           "name": "name 1",
           "specs": Object {},
+          "type": "uploaded",
         },
         Object {
           "id": 2,
+          "isPredefined": true,
           "name": "name 2",
           "specs": Object {},
+          "type": "default",
+        },
+        Object {
+          "id": 3,
+          "isPredefined": true,
+          "name": "name 3",
+          "specs": Object {
+            "type": "type",
+          },
+          "type": "custom",
         },
       ]
     }
