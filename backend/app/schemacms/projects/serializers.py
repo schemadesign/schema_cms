@@ -482,7 +482,6 @@ class BlockImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.BlockImage
         fields = ("id", "image", "image_name")
-        ordering = ("created",)
 
 
 class BlockSerializer(serializers.ModelSerializer):
@@ -493,7 +492,7 @@ class BlockSerializer(serializers.ModelSerializer):
         fields = ("id", "page", "name", "type", "content", "images", "is_active")
         extra_kwargs = {
             "page": {"required": False, "allow_null": True},
-            "content": {"required": False, "allow_null": True, "allow_blank": True},
+            "content": {"required": False, "allow_null": True, "allow_blank": False},
         }
         validators = [
             CustomUniqueTogetherValidator(
@@ -546,6 +545,10 @@ class BlockSerializer(serializers.ModelSerializer):
 
         if new_type and (instance.type == BlockTypes.IMAGE and new_type != BlockTypes.IMAGE):
             instance.images.all().delete()
+
+        if new_type and (instance.type != BlockTypes.IMAGE and new_type == BlockTypes.IMAGE):
+            instance.content = ""
+            instance.save()
 
         return super().update(instance, validated_data)
 

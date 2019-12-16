@@ -635,6 +635,9 @@ class BlockImage(softdelete.models.SoftDeleteObject, ext_models.TimeStampedModel
     image = models.ImageField(upload_to=file_upload_path, null=True, blank=True)
     image_name = models.CharField(max_length=50, blank=True)
 
+    class Meta:
+        ordering = ("created",)
+
     def relative_path_to_save(self, filename):
         base_path = self.image.storage.location
 
