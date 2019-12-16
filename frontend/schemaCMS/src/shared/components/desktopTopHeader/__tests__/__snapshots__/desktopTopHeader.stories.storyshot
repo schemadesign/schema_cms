@@ -137,7 +137,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 950px;
+  width: 965px;
   height: 62px;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -742,7 +742,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 950px;
+  width: 965px;
   height: 62px;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -1376,7 +1376,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 950px;
+  width: 965px;
   height: 62px;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
