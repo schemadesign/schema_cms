@@ -1,5 +1,21 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import { forEach, keys, pipe, cond, equals, always, isNil, both, T, pickBy, complement } from 'ramda';
+import { camelize, decamelize } from 'humps';
+import {
+  forEach,
+  keys,
+  pipe,
+  cond,
+  equals,
+  always,
+  isNil,
+  both,
+  T,
+  pickBy,
+  complement,
+  either,
+  isEmpty,
+  map,
+} from 'ramda';
 
 import { PageBlockRoutines } from './pageBlock.redux';
 import api from '../../shared/services/api';
@@ -66,6 +82,7 @@ function* create({ payload: { pageId, ...restFields } }) {
     const fields = getBlockData(restFields);
 
     pipe(
+      pickBy(complement(either(isNil, isEmpty))),
       keys,
       forEach(name => formData.append(name, fields[name]))
     )(fields);
@@ -90,9 +107,10 @@ function* update({ payload: { pageId, blockId, blockType, ...restFields } }) {
     const fields = getBlockData(restFields, blockType);
 
     pipe(
-      pickBy(complement(isNil)),
+      pickBy(complement(either(isNil, isEmpty))),
       keys,
-      forEach(name => formData.append(name, fields[name]))
+      map(decamelize),
+      forEach(name => formData.append(name, fields[camelize(name)]))
     )(fields);
 
     const { data } = yield api.patch(`${BLOCK_PATH}/${blockId}`, formData, {

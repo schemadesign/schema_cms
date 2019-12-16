@@ -521,8 +521,8 @@ class BlockSerializer(serializers.ModelSerializer):
         images = self.context.get('view').request.FILES
         block = super().save(**kwargs)
 
-        if self.initial_data.getlist("deleteImages"):
-            block.images.filter(id__in=self.initial_data.getlist("deleteImages")).delete()
+        if self.initial_data.getlist("delete_images"):
+            block.images.filter(id__in=self.initial_data.getlist("delete_images")).delete()
 
         if images:
             models.BlockImage.objects.bulk_create(self.create_images(images, block))
