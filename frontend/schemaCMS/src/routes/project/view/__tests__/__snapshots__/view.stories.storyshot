@@ -82,6 +82,7 @@ exports[`Storyshots Project|View Default 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c6 a {
@@ -436,6 +437,58 @@ exports[`Storyshots Project|View Default 1`] = `
                 >
                   <span>
                     Projects
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c6"
+              >
+                <a
+                  href="/user"
+                  id="userBtn"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Users
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c6"
+              >
+                <a
+                  href="/project/100"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Project details
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c6"
+              >
+                <a
+                  href="/project/100/datasource"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Data Sources
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c6"
+              >
+                <a
+                  href="/project/100/folder"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Pages
                   </span>
                 </a>
               </li>
@@ -741,6 +794,7 @@ exports[`Storyshots Project|View No data 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c6 a {
@@ -1091,6 +1145,58 @@ exports[`Storyshots Project|View No data 1`] = `
                 >
                   <span>
                     Projects
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c6"
+              >
+                <a
+                  href="/user"
+                  id="userBtn"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Users
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c6"
+              >
+                <a
+                  href="/project/100"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Project details
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c6"
+              >
+                <a
+                  href="/project/100/datasource"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Data Sources
+                  </span>
+                </a>
+              </li>
+              <li
+                className="c6"
+              >
+                <a
+                  href="/project/100/folder"
+                  id={null}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Pages
                   </span>
                 </a>
               </li>

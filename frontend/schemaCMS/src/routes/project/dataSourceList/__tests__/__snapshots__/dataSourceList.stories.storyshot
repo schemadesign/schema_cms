@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Project|DataSourceList Empty 1`] = `
-.c18 {
+.c19 {
   height: 155px;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   width: 100%;
 }
 
-.c19 {
+.c20 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -58,7 +58,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   margin-bottom: 30px;
 }
 
-.c6 {
+.c7 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -82,6 +82,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c5 a {
@@ -95,7 +96,28 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c7 {
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -107,14 +129,14 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   display: inline-block;
 }
 
-.c7 a {
+.c8 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c7:hover {
+.c8:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -126,23 +148,23 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   word-break: break-word;
 }
 
-.c12 {
+.c13 {
   display: none;
 }
 
-.c13 {
-  margin-right: 20px;
-}
-
 .c14 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c15 {
   color: #FFF;
 }
 
-.c17 {
+.c16 {
+  color: #FFF;
+}
+
+.c18 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -150,11 +172,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   font-size: 20px;
 }
 
-.c8 {
+.c9 {
   display: none;
 }
 
-.c9 {
+.c10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -167,11 +189,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   cursor: pointer;
 }
 
-.c9:hover {
+.c10:hover {
   border-bottom-color: #FFF;
 }
 
-.c11 {
+.c12 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -184,11 +206,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
   cursor: pointer;
 }
 
-.c11:hover {
+.c12:hover {
   border-bottom-color: #FFF;
 }
 
-.c10 {
+.c11 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -197,13 +219,13 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c20 {
+  .c21 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c20 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -212,7 +234,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c17 {
     display: block;
   }
 }
@@ -238,7 +260,14 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c6 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -256,7 +285,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -456,6 +485,19 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               </a>
             </li>
             <li
+              className="c6"
+            >
+              <a
+                href="/user"
+                id="userBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </li>
+            <li
               className="c5"
             >
               <a
@@ -477,7 +519,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
                 onClick={[Function]}
               >
                 <span>
-                  Data sources
+                  Data Sources
                 </span>
               </a>
             </li>
@@ -505,10 +547,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             </li>
           </ul>
           <ul
-            className="c6"
+            className="c7"
           >
             <li
-              className="c7"
+              className="c8"
             >
               <a
                 href="/"
@@ -521,7 +563,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               </a>
             </li>
             <li
-              className="c7"
+              className="c8"
             >
               <a
                 href="/"
@@ -534,7 +576,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
               </a>
             </li>
             <li
-              className="c7"
+              className="c8"
             >
               <a
                 href="/"
@@ -595,13 +637,13 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
       className=""
     >
       <div
-        className="c8"
+        className="c9"
       >
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1"
             onClick={[Function]}
           >
@@ -611,10 +653,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="c11"
+          className="c12"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -624,10 +666,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -637,10 +679,10 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           </a>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1/folder"
             onClick={[Function]}
           >
@@ -652,13 +694,13 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className="c13"
     >
       <div
-        className="c13"
+        className="c14"
       >
         <h2
-          className="c14"
+          className="c15"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -672,7 +714,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
           Data Sources
         </h2>
         <h1
-          className="c15"
+          className="c16"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -692,7 +734,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
         className=""
       >
         <div
-          className="c16"
+          className="c17"
         >
           <button
             disabled={false}
@@ -738,20 +780,20 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
       </div>
     </div>
     <div
-      className="c17"
+      className="c18"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c18"
+      className="c19"
     >
       <div
-        className="c19"
+        className="c20"
       >
         <div
-          className="c20"
+          className="c21"
         >
           <button
             disabled={false}
@@ -793,7 +835,7 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
             </svg>
           </button>
           <div
-            className="c16"
+            className="c17"
           >
             <button
               disabled={false}
@@ -844,11 +886,11 @@ exports[`Storyshots Project|DataSourceList Empty 1`] = `
 `;
 
 exports[`Storyshots Project|DataSourceList With data source 1`] = `
-.c18 {
+.c19 {
   height: 155px;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -867,7 +909,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   width: 100%;
 }
 
-.c19 {
+.c20 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -901,7 +943,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   margin-bottom: 30px;
 }
 
-.c6 {
+.c7 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -925,6 +967,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c5 a {
@@ -938,7 +981,28 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c7 {
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -950,14 +1014,14 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   display: inline-block;
 }
 
-.c7 a {
+.c8 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c7:hover {
+.c8:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -969,23 +1033,23 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   word-break: break-word;
 }
 
-.c12 {
+.c13 {
   display: none;
 }
 
-.c13 {
-  margin-right: 20px;
-}
-
 .c14 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c15 {
   color: #FFF;
 }
 
-.c17 {
+.c16 {
+  color: #FFF;
+}
+
+.c18 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -993,11 +1057,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   font-size: 20px;
 }
 
-.c8 {
+.c9 {
   display: none;
 }
 
-.c9 {
+.c10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1010,11 +1074,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   cursor: pointer;
 }
 
-.c9:hover {
+.c10:hover {
   border-bottom-color: #FFF;
 }
 
-.c11 {
+.c12 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1027,11 +1091,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
   cursor: pointer;
 }
 
-.c11:hover {
+.c12:hover {
   border-bottom-color: #FFF;
 }
 
-.c10 {
+.c11 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -1040,13 +1104,13 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c20 {
+  .c21 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c20 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1055,7 +1119,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c17 {
     display: block;
   }
 }
@@ -1081,7 +1145,14 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c6 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1099,7 +1170,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1299,6 +1370,19 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               </a>
             </li>
             <li
+              className="c6"
+            >
+              <a
+                href="/user"
+                id="userBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </li>
+            <li
               className="c5"
             >
               <a
@@ -1320,7 +1404,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
                 onClick={[Function]}
               >
                 <span>
-                  Data sources
+                  Data Sources
                 </span>
               </a>
             </li>
@@ -1348,10 +1432,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             </li>
           </ul>
           <ul
-            className="c6"
+            className="c7"
           >
             <li
-              className="c7"
+              className="c8"
             >
               <a
                 href="/"
@@ -1364,7 +1448,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               </a>
             </li>
             <li
-              className="c7"
+              className="c8"
             >
               <a
                 href="/"
@@ -1377,7 +1461,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
               </a>
             </li>
             <li
-              className="c7"
+              className="c8"
             >
               <a
                 href="/"
@@ -1438,13 +1522,13 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
       className=""
     >
       <div
-        className="c8"
+        className="c9"
       >
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1"
             onClick={[Function]}
           >
@@ -1454,10 +1538,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="c11"
+          className="c12"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -1467,10 +1551,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -1480,10 +1564,10 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           </a>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1/folder"
             onClick={[Function]}
           >
@@ -1495,13 +1579,13 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className="c13"
     >
       <div
-        className="c13"
+        className="c14"
       >
         <h2
-          className="c14"
+          className="c15"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -1515,7 +1599,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
           Data Sources
         </h2>
         <h1
-          className="c15"
+          className="c16"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -1535,7 +1619,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
         className=""
       >
         <div
-          className="c16"
+          className="c17"
         >
           <button
             disabled={false}
@@ -1581,20 +1665,20 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
       </div>
     </div>
     <div
-      className="c17"
+      className="c18"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c18"
+      className="c19"
     >
       <div
-        className="c19"
+        className="c20"
       >
         <div
-          className="c20"
+          className="c21"
         >
           <button
             disabled={false}
@@ -1636,7 +1720,7 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
             </svg>
           </button>
           <div
-            className="c16"
+            className="c17"
           >
             <button
               disabled={false}
@@ -1687,11 +1771,11 @@ exports[`Storyshots Project|DataSourceList With data source 1`] = `
 `;
 
 exports[`Storyshots Project|DataSourceList With jobs 1`] = `
-.c18 {
+.c19 {
   height: 155px;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1710,7 +1794,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   width: 100%;
 }
 
-.c19 {
+.c20 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
@@ -1744,7 +1828,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   margin-bottom: 30px;
 }
 
-.c6 {
+.c7 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1768,6 +1852,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c5 a {
@@ -1781,7 +1866,28 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c7 {
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -1793,14 +1899,14 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   display: inline-block;
 }
 
-.c7 a {
+.c8 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c7:hover {
+.c8:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -1812,23 +1918,23 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   word-break: break-word;
 }
 
-.c12 {
+.c13 {
   display: none;
 }
 
-.c13 {
-  margin-right: 20px;
-}
-
 .c14 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c15 {
   color: #FFF;
 }
 
-.c17 {
+.c16 {
+  color: #FFF;
+}
+
+.c18 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -1836,11 +1942,11 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   font-size: 20px;
 }
 
-.c8 {
+.c9 {
   display: none;
 }
 
-.c9 {
+.c10 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1853,11 +1959,11 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   cursor: pointer;
 }
 
-.c9:hover {
+.c10:hover {
   border-bottom-color: #FFF;
 }
 
-.c11 {
+.c12 {
   display: block;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -1870,11 +1976,11 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
   cursor: pointer;
 }
 
-.c11:hover {
+.c12:hover {
   border-bottom-color: #FFF;
 }
 
-.c10 {
+.c11 {
   color: #FFF;
   display: block;
   padding: 16px;
@@ -1883,13 +1989,13 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c20 {
+  .c21 {
     display: none;
   }
 }
 
 @media (min-width:1040px) {
-  .c19 {
+  .c20 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -1898,7 +2004,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c16 {
+  .c17 {
     display: block;
   }
 }
@@ -1924,7 +2030,14 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c6 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1942,7 +2055,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2142,6 +2255,19 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
               </a>
             </li>
             <li
+              className="c6"
+            >
+              <a
+                href="/user"
+                id="userBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </li>
+            <li
               className="c5"
             >
               <a
@@ -2163,7 +2289,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
                 onClick={[Function]}
               >
                 <span>
-                  Data sources
+                  Data Sources
                 </span>
               </a>
             </li>
@@ -2191,10 +2317,10 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
             </li>
           </ul>
           <ul
-            className="c6"
+            className="c7"
           >
             <li
-              className="c7"
+              className="c8"
             >
               <a
                 href="/"
@@ -2207,7 +2333,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
               </a>
             </li>
             <li
-              className="c7"
+              className="c8"
             >
               <a
                 href="/"
@@ -2220,7 +2346,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
               </a>
             </li>
             <li
-              className="c7"
+              className="c8"
             >
               <a
                 href="/"
@@ -2281,13 +2407,13 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
       className=""
     >
       <div
-        className="c8"
+        className="c9"
       >
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1"
             onClick={[Function]}
           >
@@ -2297,10 +2423,10 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="c11"
+          className="c12"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1/datasource"
             onClick={[Function]}
           >
@@ -2310,10 +2436,10 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1/user"
             onClick={[Function]}
           >
@@ -2323,10 +2449,10 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           </a>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="/project/1/folder"
             onClick={[Function]}
           >
@@ -2338,13 +2464,13 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="c12"
+      className="c13"
     >
       <div
-        className="c13"
+        className="c14"
       >
         <h2
-          className="c14"
+          className="c15"
           id="desktopHeaderTitle"
           style={
             Object {
@@ -2358,7 +2484,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
           Data Sources
         </h2>
         <h1
-          className="c15"
+          className="c16"
           id="desktopHeaderSubtitle"
           style={
             Object {
@@ -2378,7 +2504,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
         className=""
       >
         <div
-          className="c16"
+          className="c17"
         >
           <button
             disabled={false}
@@ -2424,20 +2550,20 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
       </div>
     </div>
     <div
-      className="c17"
+      className="c18"
     >
       <span>
         Loading...
       </span>
     </div>
     <div
-      className="c18"
+      className="c19"
     >
       <div
-        className="c19"
+        className="c20"
       >
         <div
-          className="c20"
+          className="c21"
         >
           <button
             disabled={false}
@@ -2479,7 +2605,7 @@ exports[`Storyshots Project|DataSourceList With jobs 1`] = `
             </svg>
           </button>
           <div
-            className="c16"
+            className="c17"
           >
             <button
               disabled={false}

@@ -17,6 +17,7 @@ exports[`User List: Component should render correctly 1`] = `
         values={Object {}}
       />
     }
+    isAdmin={true}
     primaryMenuItems={Array []}
     secondaryMenuItems={Array []}
   />
@@ -93,6 +94,7 @@ exports[`User List: Component should render correctly with users data 1`] = `
         values={Object {}}
       />
     }
+    isAdmin={true}
     primaryMenuItems={Array []}
     secondaryMenuItems={Array []}
   />

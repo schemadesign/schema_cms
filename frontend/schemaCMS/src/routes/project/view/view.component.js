@@ -202,7 +202,12 @@ export class View extends PureComponent {
       <Container>
         <div>
           <Helmet title={this.formatMessage(messages.pageTitle)} />
-          <TopHeader headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+          <TopHeader
+            headerTitle={headerTitle}
+            headerSubtitle={headerSubtitle}
+            projectId={projectId}
+            isAdmin={isAdmin}
+          />
           <ProjectTabs active={SETTINGS} url={`/project/${projectId}`} />
           <LoadingWrapper loading={loading} noData={isEmpty(project)} error={error}>
             {this.renderContent({ project, isAdmin })}

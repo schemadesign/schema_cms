@@ -97,6 +97,8 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
       >
         <Styled(styled.ul)>
           <Styled(styled.li)
+            active={false}
+            hide={false}
             key="0"
           >
             <Link
@@ -110,9 +112,27 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
               />
             </Link>
           </Styled(styled.li)>
+          <Styled(styled.li)
+            active={false}
+            hide={true}
+            key="1"
+          >
+            <Link
+              id="userBtn"
+              to="/user"
+            >
+              <FormattedMessage
+                defaultMessage="Users"
+                id="shared.components.desktopTopHeader.users"
+                values={Object {}}
+              />
+            </Link>
+          </Styled(styled.li)>
         </Styled(styled.ul)>
         <Styled(styled.ul)>
           <Styled(styled.li)
+            active={false}
+            hide={false}
             key="0"
           >
             <Link
@@ -127,6 +147,8 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
             </Link>
           </Styled(styled.li)>
           <Styled(styled.li)
+            active={false}
+            hide={false}
             key="1"
           >
             <Link
@@ -141,6 +163,8 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
             </Link>
           </Styled(styled.li)>
           <Styled(styled.li)
+            active={false}
+            hide={false}
             key="2"
           >
             <Link
