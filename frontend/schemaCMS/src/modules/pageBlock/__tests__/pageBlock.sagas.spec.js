@@ -125,9 +125,7 @@ describe('PageBlock: sagas', () => {
         headers: { 'Content-Type': 'multipart/form-data' },
       };
 
-      mockApi
-        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="image_0"[^]*file/m, options)
-        .reply(OK, response);
+      mockApi.post(`/pages/${payload.pageId}/blocks`, /form-data; name="image0"[^]*file/m, options).reply(OK, response);
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)
