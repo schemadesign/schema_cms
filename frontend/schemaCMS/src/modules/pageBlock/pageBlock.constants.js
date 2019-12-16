@@ -38,14 +38,20 @@ export const BLOCK_SCHEMA = Yup.object().shape({
   [BLOCK_IMAGE_NAMES]: Yup.string().when(BLOCK_TYPE, { is: IMAGE_TYPE, then: Yup.string().required('Required') }),
   [`${MARKDOWN_TYPE}-${BLOCK_CONTENT}`]: Yup.string().when(BLOCK_TYPE, {
     is: MARKDOWN_TYPE,
-    then: Yup.string().required('Required'),
+    then: Yup.string()
+      .trim()
+      .required('Required'),
   }),
   [`${EMBED_TYPE}-${BLOCK_CONTENT}`]: Yup.string().when(BLOCK_TYPE, {
     is: EMBED_TYPE,
-    then: Yup.string().required('Required'),
+    then: Yup.string()
+      .trim()
+      .required('Required'),
   }),
   [`${CODE_TYPE}-${BLOCK_CONTENT}`]: Yup.string().when(BLOCK_TYPE, {
     is: CODE_TYPE,
-    then: Yup.string().required('Required'),
+    then: Yup.string()
+      .trim()
+      .required('Required'),
   }),
 });

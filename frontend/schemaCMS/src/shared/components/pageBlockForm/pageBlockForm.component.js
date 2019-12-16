@@ -80,7 +80,7 @@ export class PageBlockForm extends PureComponent {
     const updateNames = pipe(
       map(prop('name')),
       concat(imageNames),
-      data => data.map((item, id) => (item.imageName ? { ...item, id } : { imageName: item, id }))
+      data => data.map((item, id) => (item.imageName ? item : { imageName: item, id }))
     )([...files]);
     const updatedImages = pipe(
       concat(images),
