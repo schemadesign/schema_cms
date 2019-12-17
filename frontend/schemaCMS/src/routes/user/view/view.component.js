@@ -2,14 +2,14 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { Container } from './view.styles';
+import { Container, Link } from './view.styles';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { UserProfile } from '../../../shared/components/userProfile/userProfile.component';
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import messages from './view.messages';
 import { modalStyles, Modal, ModalActions, ModalTitle } from '../../../shared/components/modal/modal.styles';
-import { Link, LinkContainer } from '../../../theme/typography';
+import { LinkContainer } from '../../../theme/typography';
 import { ROLES } from '../../../modules/userProfile/userProfile.constants';
 import { BackButton, NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
