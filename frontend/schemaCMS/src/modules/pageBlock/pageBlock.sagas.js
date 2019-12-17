@@ -6,10 +6,10 @@ import api from '../../shared/services/api';
 import { BLOCK_PATH, PAGES_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { IMAGE_TYPE } from './pageBlock.constants';
-import { createFormData } from '../../shared/utils/helpers';
+import { formatFormData } from '../../shared/utils/helpers';
 
 const convertImages = images =>
-  images.reduce((result, { file }, index) => ({ [`image${index}`]: file, ...result }), {});
+  images.reverse().reduce((result, { file }, index) => ({ [`image${index}`]: file, ...result }), {});
 
 const getBlockData = ({ name, images, type, deleteImages, ...rest }, blockType) =>
   cond([
@@ -64,7 +64,7 @@ function* create({ payload: { pageId, ...restFields } }) {
   try {
     yield put(PageBlockRoutines.create.request());
     const fields = getBlockData(restFields);
-    const formData = createFormData(fields);
+    const formData = formatFormData(fields);
 
     const { data } = yield api.post(`${PAGES_PATH}/${pageId}/blocks`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
@@ -83,7 +83,7 @@ function* update({ payload: { pageId, blockId, blockType, ...restFields } }) {
   try {
     yield put(PageBlockRoutines.update.request());
     const fields = getBlockData(restFields, blockType);
-    const formData = createFormData(fields);
+    const formData = formatFormData(fields);
 
     const { data } = yield api.patch(`${BLOCK_PATH}/${blockId}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },

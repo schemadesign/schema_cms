@@ -6,7 +6,7 @@ import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
 import { DATA_SOURCE_RUN_LAST_JOB, FETCH_LIST_DELAY, RESULT_PAGE } from './dataSource.constants';
-import { createFormData } from '../../shared/utils/helpers';
+import { formatFormData } from '../../shared/utils/helpers';
 
 const PAGE_SIZE = 1000;
 
@@ -14,7 +14,7 @@ function* create({ payload }) {
   try {
     yield put(DataSourceRoutines.create.request());
     const requestData = { project: payload.projectId, ...payload.requestData };
-    const formData = createFormData(requestData);
+    const formData = formatFormData(requestData);
 
     const { data } = yield api.post(DATA_SOURCES_PATH, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
@@ -106,7 +106,7 @@ function* updateOne({ payload: { dataSourceId, requestData } }) {
         when(propEq(DATA_SOURCE_RUN_LAST_JOB, false), omit([DATA_SOURCE_RUN_LAST_JOB]))
       )(requestData);
 
-      const formData = createFormData(filteredData);
+      const formData = formatFormData(filteredData);
 
       const { data } = yield api.patch(`${DATA_SOURCES_PATH}/${dataSourceId}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },

@@ -28,7 +28,7 @@ export const getTableData = (data = []) => {
 
 export const getMatchParam = (props, param) => path(['match', 'params', param])(props);
 
-export const createFormData = data => {
+export const formatFormData = data => {
   const formData = new FormData();
   pipe(
     pickBy(complement(either(isNil, isEmpty))),

@@ -107,6 +107,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
         >
           <Link
             id="userBtn"
+            onClick={[Function]}
             to="/user"
           >
             <FormattedMessage
@@ -322,6 +323,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         >
           <Link
             id="userBtn"
+            onClick={[Function]}
             to="/user"
           >
             <FormattedMessage

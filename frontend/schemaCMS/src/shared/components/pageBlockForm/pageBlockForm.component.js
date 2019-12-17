@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, concat, cond, equals, map, path, pipe, prop } from 'ramda';
+import { addIndex, always, concat, cond, equals, has, ifElse, map, path, pipe } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import { Form, Icons } from 'schemaUI';
 
@@ -41,6 +41,7 @@ export class PageBlockForm extends PureComponent {
   static propTypes = {
     intl: PropTypes.object.isRequired,
     values: PropTypes.object.isRequired,
+    block: PropTypes.object,
     initialValues: PropTypes.object,
     handleChange: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
@@ -76,20 +77,26 @@ export class PageBlockForm extends PureComponent {
     }
   };
   handleUploadChange = ({ files }) => {
-    const { images, imageNames } = this.props.values;
-    const updateNames = pipe(
-      map(prop('name')),
-      concat(imageNames),
-      data => data.map((item, id) => (item.imageName ? item : { imageName: item, id }))
-    )([...files]);
+    const { values, block = { images: [] } } = this.props;
+    const { images } = values;
+    const mapIndexed = addIndex(map);
+    const imagesNames = block.images.filter(({ id }) => !this.props.values[BLOCK_DELETE_IMAGES].includes(id));
     const updatedImages = pipe(
       concat(images),
-      data => data.map((item, id) => (item.file ? { ...item, id } : { file: item, id }))
+      mapIndexed((item, id) =>
+        ifElse(has('file'), always({ file: item.file, id: `image-${id}` }), always({ file: item, id: `image-${id}` }))(
+          item
+        )
+      )
     )([...files]);
+    const updatedNames = pipe(
+      map(({ file, id }) => ({ imageName: file.name, id })),
+      concat(imagesNames)
+    )(updatedImages);
 
     this.props.setFieldValue(BLOCK_INPUT_IMAGES, []);
     this.props.setFieldValue(BLOCK_IMAGES, updatedImages);
-    this.props.setFieldValue(BLOCK_IMAGE_NAMES, updateNames);
+    this.props.setFieldValue(BLOCK_IMAGE_NAMES, updatedNames);
   };
 
   handleRemoveImage = ({ id: removeId, image }) => () => {

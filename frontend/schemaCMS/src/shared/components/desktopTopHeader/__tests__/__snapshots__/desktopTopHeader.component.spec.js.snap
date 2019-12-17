@@ -120,6 +120,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
           >
             <Link
               id="userBtn"
+              onClick={[Function]}
               to="/user"
             >
               <FormattedMessage
