@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotRegistered: Component should render correctly 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+    title="Revoked  access"
+  />
+  <TopHeader
+    noProject={true}
+    primaryMenuItems={Array []}
+    secondaryMenuItems={Array []}
+  />
+  <styled.div>
+    <FormattedMessage
+      defaultMessage="You {email} don't have access to Schema CMS."
+      id="notRegistered.info"
+      values={
+        Object {
+          "email": "(some-mail@example.com)",
+        }
+      }
+    />
+    <br />
+    <FormattedMessage
+      defaultMessage="If you believe this is an error, please contact your administrator."
+      id="notRegistered.contact"
+      values={Object {}}
+    />
+  </styled.div>
+</Fragment>
+`;

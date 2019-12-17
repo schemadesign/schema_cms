@@ -30,6 +30,7 @@ export class TopHeader extends PureComponent {
     primaryMenuItems: PropTypes.array,
     secondaryMenuItems: PropTypes.array,
     isAdmin: PropTypes.bool,
+    hideProjects: PropTypes.bool,
     projectId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   };
 
@@ -75,7 +76,12 @@ export class TopHeader extends PureComponent {
     )(!projectId);
 
   primaryMenuItems = [
-    { label: <FormattedMessage {...messages.project} />, to: '/project', page: 'projects' },
+    {
+      label: <FormattedMessage {...messages.projects} />,
+      to: '/project',
+      page: 'projects',
+      hide: this.props.hideProjects,
+    },
     {
       label: <FormattedMessage {...messages.users} />,
       to: '/user',

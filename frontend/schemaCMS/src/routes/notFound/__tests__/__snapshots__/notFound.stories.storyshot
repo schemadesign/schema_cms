@@ -7,6 +7,7 @@ exports[`Storyshots NotFound Default 1`] = `
   padding: 50px 10px;
   font-weight: 200;
   font-size: 20px;
+  line-height: 1.5em;
 }
 
 <div

@@ -605,6 +605,455 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Shared Components|Header/DesktopTopHeader No user 1`] = `
+.c9 {
+  overflow: auto;
+  max-height: calc(100vh - 70px);
+  padding: 40px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c10 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c11 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+  -webkit-transition: border 400ms;
+  transition: border 400ms;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.c11 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c11:hover {
+  border-bottom: 1px solid #FFF;
+}
+
+.c7 {
+  word-break: break-word;
+}
+
+.c8 {
+  word-break: break-word;
+}
+
+.c0 {
+  display: none;
+}
+
+.c1 {
+  width: 1000px;
+}
+
+.c6 {
+  display: none;
+  background: #1d1d20;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 965px;
+  height: 62px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 20px);
+  margin: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 0;
+}
+
+.c4 {
+  fill: #FFF;
+  width: 96px;
+  height: 16px;
+}
+
+@media (min-width:1040px) {
+  .c9 {
+    padding-bottom: 20px;
+    max-height: calc(100vh - 154px);
+  }
+}
+
+@media (min-width:1040px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-bottom: solid 2px #1d1d20;
+    width: 100%;
+  }
+}
+
+<div
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <style>
+    
+  body {
+    color: #FFF;
+    background-color: #000;
+  }
+
+  </style>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "color": "#FFF",
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": null,
+            "paddingBottom": "18px",
+            "width": "100%",
+          }
+        }
+      >
+        <div>
+          <div
+            className="c2"
+          >
+            <a
+              className="c3"
+              href="/"
+              onClick={[Function]}
+            >
+              <schemaLogo.svg
+                className="c4"
+              />
+            </a>
+            <div
+              className="c5"
+            >
+              <button
+                disabled={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "borderRadius": null,
+                    "color": "#FFF",
+                    "cursor": "pointer",
+                    "display": "flex",
+                    "fill": "#FFF",
+                    "fontSize": "18px",
+                    "height": "calc(100% - 20px)",
+                    "margin": "6px 0 10px 10px",
+                    "minHeight": "48px",
+                    "outline": "none",
+                    "padding": "0 7px",
+                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                  }
+                }
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "#FFF",
+                      "height": 21,
+                      "width": 24,
+                    }
+                  }
+                  viewBox="0 0 24 21"
+                >
+                  <path
+                    d="M0 0h15v6h-1V1H1v19h13v-5h1v6H0z"
+                  />
+                  <path
+                    d="M8 10h15v1H8z"
+                  />
+                  <path
+                    d="M24 10.5L19 6l-.5 1 4 3.5-4 3.5.5 1z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          disabled={false}
+          id="desktopTopHeaderOpenMenuButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "flex": "0 0 auto",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": null,
+              "right": 0,
+              "top": 6,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M30 37a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6zm0-10a3 3 0 110 6 3 3 0 010-6z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="c6"
+        onClick={[Function]}
+      />
+      <div
+        style={
+          Object {
+            "backgroundColor": "#000",
+            "color": "#FFF",
+            "maxWidth": 595,
+            "minHeight": null,
+            "padding": 50,
+            "position": "fixed",
+            "right": 0,
+            "textAlign": "left",
+            "top": 0,
+            "transform": "translateX(100%)",
+            "transition": "transform 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 0s linear 400ms",
+            "visibility": 0,
+            "width": "100%",
+            "zIndex": 9999,
+          }
+        }
+      >
+        <div
+          className=""
+        >
+          <div
+            className=""
+          >
+            <h2
+              className="c7"
+              id="headerTitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                  "margin": 0,
+                }
+              }
+            >
+              SchemaCMS
+            </h2>
+            <h1
+              className="c8"
+              id="headerSubtitle"
+              style={
+                Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                  "letterSpacing": "-0.12px",
+                  "lineHight": 1.25,
+                  "margin": 0,
+                }
+              }
+            >
+              Menu
+            </h1>
+          </div>
+        </div>
+        <div
+          className="c9"
+          onClick={[Function]}
+        >
+          <ul
+            className="c10"
+          >
+            <li
+              className="c11"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  About Schema CMS
+                </span>
+              </a>
+            </li>
+            <li
+              className="c11"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  API Doc
+                </span>
+              </a>
+            </li>
+            <li
+              className="c11"
+            >
+              <a
+                href="/"
+                id={null}
+                onClick={[Function]}
+              >
+                <span>
+                  GitHub Repository
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button
+          disabled={false}
+          id="desktopTopHeaderCloseMenuButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "border": "none",
+              "borderRadius": "48px",
+              "color": "#FFF",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fill": "#FFF",
+              "fontSize": "18px",
+              "margin": "0",
+              "minHeight": "48px",
+              "outline": "none",
+              "padding": "0",
+              "position": "absolute",
+              "right": 44,
+              "top": 44,
+              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+            }
+          }
+        >
+          <svg
+            style={
+              Object {
+                "fill": "#FFF",
+                "height": "60px",
+                "width": "60px",
+              }
+            }
+            viewBox="0 0 60 60"
+          >
+            <path
+              d="M39.192 17.98l2.829 2.828L32.828 30l9.193 9.192-2.829 2.829L30 32.828l-9.192 9.193-2.829-2.829L27.172 30l-9.193-9.192 2.829-2.829L30 27.172l9.192-9.193z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`] = `
 .c12 {
   overflow: auto;

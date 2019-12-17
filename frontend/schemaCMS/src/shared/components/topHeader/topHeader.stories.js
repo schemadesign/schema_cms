@@ -4,11 +4,19 @@ import { storiesOf } from '@storybook/react';
 import { withTheme } from '../../../.storybook/decorators';
 import { TopHeader } from './topHeader.component';
 
-export const defaultProps = {
+const header = {
   headerTitle: 'Projects',
   headerSubtitle: 'Overview',
-  primaryMenuItems: [{ label: 'Data Sources', to: '/path' }, { label: 'Charts', to: '/path' }],
-  secondaryMenuItems: [{ label: 'Log Out', to: '/logout' }, { label: 'Click action', onClick: () => {}, id: 'id' }],
+};
+
+export const defaultProps = {
+  ...header,
+};
+
+export const customMenuProps = {
+  ...header,
+  primaryMenuItems: [{ label: 'Primary', to: '/path' }, { label: 'Charts', to: '/path' }],
+  secondaryMenuItems: [{ label: 'Secondary', to: '/path' }, { label: 'Click action', onClick: () => {}, id: 'id' }],
 };
 
 const longText = `
@@ -24,7 +32,20 @@ const longProps = {
   projectId: 'projectId',
 };
 
+const noProjectProps = {
+  ...header,
+  hideProjects: true,
+};
+
+const usersProps = {
+  ...header,
+  isAdmin: true,
+};
+
 storiesOf('Shared Components|Header/TopHeader', module)
   .addDecorator(withTheme())
   .add('Default', () => <TopHeader {...defaultProps} />)
-  .add('Long title and subtitle', () => <TopHeader {...longProps} />);
+  .add('Header with custom menu', () => <TopHeader {...customMenuProps} />)
+  .add('Long title and subtitle', () => <TopHeader {...longProps} />)
+  .add('Menu without Projects', () => <TopHeader {...noProjectProps} />)
+  .add('Menu with Users', () => <TopHeader {...usersProps} />);

@@ -7,14 +7,14 @@ exports[`NotAuthorized: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Not authorized"
   />
-  <NoData>
+  <styled.div>
     <H1>
       <FormattedMessage
-        defaultMessage="Not authorized"
+        defaultMessage="You don't have permissions to see this content."
         id="notAuthorized.title"
         values={Object {}}
       />
     </H1>
-  </NoData>
+  </styled.div>
 </Fragment>
 `;

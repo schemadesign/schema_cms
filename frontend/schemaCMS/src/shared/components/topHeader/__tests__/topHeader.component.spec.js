@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { TopHeader } from '../topHeader.component';
-import { defaultProps } from '../topHeader.stories';
+import { defaultProps, customMenuProps } from '../topHeader.stories';
 
 describe('TopHeader: Component', () => {
   const component = props => <TopHeader {...defaultProps} {...props} />;
@@ -16,6 +16,11 @@ describe('TopHeader: Component', () => {
 
   it('should render correctly with project id', () => {
     const wrapper = render({ projectId: 'projectId' });
+    global.expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly with custom menu', () => {
+    const wrapper = render(customMenuProps);
     global.expect(wrapper).toMatchSnapshot();
   });
 });

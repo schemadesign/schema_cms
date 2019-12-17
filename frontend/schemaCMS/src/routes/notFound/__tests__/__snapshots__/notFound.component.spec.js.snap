@@ -7,7 +7,7 @@ exports[`NotFound: Component should render correctly 1`] = `
     encodeSpecialCharacters={true}
     title="Not found"
   />
-  <NoData>
+  <styled.div>
     <H1>
       <FormattedMessage
         defaultMessage="Error: 404"
@@ -15,6 +15,6 @@ exports[`NotFound: Component should render correctly 1`] = `
         values={Object {}}
       />
     </H1>
-  </NoData>
+  </styled.div>
 </Fragment>
 `;

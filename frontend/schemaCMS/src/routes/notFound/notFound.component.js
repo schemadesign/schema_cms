@@ -6,7 +6,7 @@ import { compose } from 'ramda';
 import { Typography } from 'schemaUI';
 
 import messages from './notFound.messages';
-import { NoData } from '../../shared/components/noData';
+import { InfoContainer } from '../../shared/components/container/container.styles';
 
 const { H1 } = Typography;
 
@@ -20,11 +20,11 @@ export class NotFoundComponent extends PureComponent {
       <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
 
-        <NoData>
+        <InfoContainer>
           <H1>
             <FormattedMessage {...messages.title} />
           </H1>
-        </NoData>
+        </InfoContainer>
       </Fragment>
     );
   }

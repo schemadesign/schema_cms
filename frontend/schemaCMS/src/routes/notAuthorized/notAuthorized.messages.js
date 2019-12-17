@@ -8,6 +8,6 @@ export default defineMessages({
   },
   title: {
     id: 'notAuthorized.title',
-    defaultMessage: 'Not authorized',
+    defaultMessage: "You don't have permissions to see this content.",
   },
 });
