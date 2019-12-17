@@ -67,7 +67,6 @@ exports[`H2: Component should render with custom theme 1`] = `
     Object {
       "color": "gray",
       "fontFamily": "serif",
-      "fontSize": "24px",
       "margin": 0,
       "size": "100px",
     }

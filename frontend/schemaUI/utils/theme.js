@@ -231,25 +231,30 @@ const typography = {
   h1: {
     fontFamily: INTER_FONT,
     fontWeight: 600,
+    fontSize: '24px',
   },
   h2: {
     fontFamily: INTER_FONT,
     fontWeight: 100,
+    fontSize: '24px',
   },
   h3: {
     fontFamily: INTER_FONT,
     fontWeight: 600,
-    color: light.label,
+    fontSize: '18px',
   },
   p: {
     fontFamily: INTER_FONT,
     fontWeight: 200,
+    fontSize: '18px',
   },
   pre: {
     fontFamily: MONOSPACE_FONT,
+    fontSize: '18px',
   },
   span: {
     fontFamily: INTER_FONT,
+    fontSize: '14px',
   },
 };
 
