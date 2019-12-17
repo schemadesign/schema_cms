@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Header, Menu } from 'schemaUI';
-import { always, equals, ifElse, last, path, pipe, split, nth } from 'ramda';
+import { always, equals, ifElse, last, nth, path, pipe, split } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import {
@@ -115,7 +115,7 @@ export class TopHeader extends PureComponent {
     renderWhenTrueOtherwise(
       always(
         <Item key={index} active={this.getIsActive(page)} hide={hide}>
-          <Link id={id} to={to}>
+          <Link id={id} to={to} onClick={this.handleToggleMenu}>
             {label}
           </Link>
         </Item>

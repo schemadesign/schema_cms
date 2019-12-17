@@ -95,16 +95,18 @@ exports[`PageBlock: Component should render correctly 1`] = `
         setFieldValue={[Function]}
         values={Object {}}
       />
-      <Styled(Span)
-        id="removePageBlockDesktopBtn"
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Remove Page Block"
-          id="pageBlock.removePageBlock"
-          values={Object {}}
-        />
-      </Styled(Span)>
+      <styled.div>
+        <Styled(Span)
+          id="removePageBlockDesktopBtn"
+          onClick={[Function]}
+        >
+          <FormattedMessage
+            defaultMessage="Remove Page Block"
+            id="pageBlock.removePageBlock"
+            values={Object {}}
+          />
+        </Styled(Span)>
+      </styled.div>
     </LoadingWrapper>
     <NavigationContainer
       fixed={true}
@@ -284,16 +286,18 @@ exports[`PageBlock: Component should render correctly with loader 1`] = `
         setFieldValue={[Function]}
         values={Object {}}
       />
-      <Styled(Span)
-        id="removePageBlockDesktopBtn"
-        onClick={[Function]}
-      >
-        <FormattedMessage
-          defaultMessage="Remove Page Block"
-          id="pageBlock.removePageBlock"
-          values={Object {}}
-        />
-      </Styled(Span)>
+      <styled.div>
+        <Styled(Span)
+          id="removePageBlockDesktopBtn"
+          onClick={[Function]}
+        >
+          <FormattedMessage
+            defaultMessage="Remove Page Block"
+            id="pageBlock.removePageBlock"
+            values={Object {}}
+          />
+        </Styled(Span)>
+      </styled.div>
     </LoadingWrapper>
     <NavigationContainer
       fixed={true}

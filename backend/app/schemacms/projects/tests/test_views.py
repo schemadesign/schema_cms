@@ -1207,7 +1207,7 @@ class TestBlockListCreateView:
         payload = dict(name=faker.word(), type=projects_constants.BlockTypes.CODE, content="<p>test</p>")
 
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(page.id), data=payload, format="json")
+        response = api_client.post(self.get_url(page.id), data=payload, format="multipart")
         page_blocks = page.blocks.all()
 
         assert response.status_code == status.HTTP_201_CREATED
@@ -1216,7 +1216,7 @@ class TestBlockListCreateView:
 
     def test_image_upload(self, api_client, admin, page, faker):
         payload = dict(
-            name=faker.word(), type=projects_constants.BlockTypes.IMAGE, image=faker.image_upload_file()
+            name=faker.word(), type=projects_constants.BlockTypes.IMAGE, image_0=faker.image_upload_file()
         )
 
         api_client.force_authenticate(admin)
@@ -1224,7 +1224,7 @@ class TestBlockListCreateView:
         block = page.blocks.get(pk=response.data["id"])
 
         assert response.status_code == status.HTTP_201_CREATED
-        assert block.image.name == f'/pages/{page.id}/test.png'
+        assert block.images.filter(image_name='test.png').exists()
 
     def test_400_on_image_upload_with_wrong_type(self, api_client, admin, page, faker):
         payload = dict(
@@ -1237,10 +1237,10 @@ class TestBlockListCreateView:
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
     def test_400_on_sending_type_image_without_file(self, api_client, admin, page, faker):
-        payload = dict(name=faker.word(), type=projects_constants.BlockTypes.IMAGE, image=None)
+        payload = dict(name=faker.word(), type=projects_constants.BlockTypes.IMAGE)
 
         api_client.force_authenticate(admin)
-        response = api_client.post(self.get_url(page.id), data=payload, format="json")
+        response = api_client.post(self.get_url(page.id), data=payload, format="multipart")
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
@@ -1269,7 +1269,7 @@ class TestBlockDetailView:
 
         api_client.force_authenticate(admin)
 
-        response = api_client.patch(self.get_url(block.id), data=payload, format="json")
+        response = api_client.patch(self.get_url(block.id), data=payload, format="multipart")
         block.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK
@@ -1280,11 +1280,11 @@ class TestBlockDetailView:
         """Test if its possible to change block name without uploading image again"""
         block = block_factory(type=projects_constants.BlockTypes.IMAGE)
         new_name = faker.word()
-        payload = dict(name=new_name, type=projects_constants.BlockTypes.IMAGE)
+        payload = dict(name=new_name)
 
         api_client.force_authenticate(admin)
 
-        response = api_client.patch(self.get_url(block.id), data=payload, format="json")
+        response = api_client.patch(self.get_url(block.id), data=payload, format="multipart")
         block.refresh_from_db()
 
         assert response.status_code == status.HTTP_200_OK

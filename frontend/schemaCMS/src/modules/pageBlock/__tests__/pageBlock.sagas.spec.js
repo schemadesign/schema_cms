@@ -91,7 +91,7 @@ describe('PageBlock: sagas', () => {
         pageId: 1,
         name: 'Title',
         type: MARKDOWN_TYPE,
-        image: null,
+        images: null,
         [`${MARKDOWN_TYPE}-content`]: 'content markdown type',
       };
 
@@ -116,20 +116,16 @@ describe('PageBlock: sagas', () => {
       const payload = {
         pageId: 1,
         name: 'Title',
-        image: 'file',
+        images: [{ file: 'file' }],
         type: IMAGE_TYPE,
+        deleteImages: [],
       };
 
       const options = {
         headers: { 'Content-Type': 'multipart/form-data' },
       };
 
-      mockApi
-        .post(`/pages/${payload.pageId}/blocks`, /form-data; name="image"[^]*file/m, options, {
-          name: 'Title',
-          type: [MARKDOWN_TYPE],
-        })
-        .reply(OK, response);
+      mockApi.post(`/pages/${payload.pageId}/blocks`, /form-data; name="image0"[^]*file/m, options).reply(OK, response);
 
       await expectSaga(watchPageBlock)
         .withState(defaultState)

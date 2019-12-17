@@ -1,14 +1,18 @@
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { always, cond, equals, path, pathOr } from 'ramda';
+import { addIndex, always, concat, cond, equals, has, ifElse, map, path, pipe } from 'ramda';
 import { FormattedMessage } from 'react-intl';
+import { Form, Icons } from 'schemaUI';
 
-import { modalStyles, Modal, ModalTitle, ModalActions } from '../modal/modal.styles';
+import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 import { BackButton, NextButton } from '../navigation';
 import { TextInput } from '../form/inputs/textInput';
 import {
   BLOCK_CONTENT,
-  BLOCK_IMAGE,
+  BLOCK_DELETE_IMAGES,
+  BLOCK_IMAGE_NAMES,
+  BLOCK_IMAGES,
+  BLOCK_INPUT_IMAGES,
   BLOCK_NAME,
   BLOCK_TYPE,
   CODE_TYPE,
@@ -21,11 +25,23 @@ import {
 import messages from './pageBlockForm.messages';
 import { Select } from '../form/select';
 import { Uploader } from '../form/uploader';
+import {
+  removeIconStyles,
+  UploaderContainer,
+  UploaderItem,
+  UploaderList,
+  UploaderWrapper,
+} from './pageBlockForm.styles';
+import { renderWhenTrueOtherwise } from '../../utils/rendering';
+
+const { Label } = Form;
+const { CloseIcon } = Icons;
 
 export class PageBlockForm extends PureComponent {
   static propTypes = {
     intl: PropTypes.object.isRequired,
     values: PropTypes.object.isRequired,
+    block: PropTypes.object,
     initialValues: PropTypes.object,
     handleChange: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
@@ -60,10 +76,41 @@ export class PageBlockForm extends PureComponent {
       this.props.setFieldValue(BLOCK_TYPE, selectedStatus);
     }
   };
+  handleUploadChange = ({ files }) => {
+    const { values, block = { images: [] } } = this.props;
+    const { images } = values;
+    const mapIndexed = addIndex(map);
+    const imagesNames = block.images.filter(({ id }) => !this.props.values[BLOCK_DELETE_IMAGES].includes(id));
+    const updatedImages = pipe(
+      concat(images),
+      mapIndexed((item, id) =>
+        ifElse(has('file'), always({ file: item.file, id: `image-${id}` }), always({ file: item, id: `image-${id}` }))(
+          item
+        )
+      )
+    )([...files]);
+    const updatedNames = pipe(
+      map(({ file, id }) => ({ imageName: file.name, id })),
+      concat(imagesNames)
+    )(updatedImages);
 
-  handleUploadChange = ({ files: [uploadFile] }) => {
-    this.props.setFieldValue(BLOCK_IMAGE, uploadFile);
-    this.props.setFieldValue('imageName', pathOr('', ['name'], uploadFile));
+    this.props.setFieldValue(BLOCK_INPUT_IMAGES, []);
+    this.props.setFieldValue(BLOCK_IMAGES, updatedImages);
+    this.props.setFieldValue(BLOCK_IMAGE_NAMES, updatedNames);
+  };
+
+  handleRemoveImage = ({ id: removeId, image }) => () => {
+    const { images, imageNames } = this.props.values;
+    const files = images.filter(({ id }) => id !== removeId);
+    const names = imageNames.filter(({ id }) => id !== removeId);
+
+    this.props.setFieldValue(BLOCK_IMAGES, files);
+    this.props.setFieldValue(BLOCK_IMAGE_NAMES, names);
+
+    if (image) {
+      const deleteImages = this.props.values[BLOCK_DELETE_IMAGES].concat(removeId);
+      this.props.setFieldValue(BLOCK_DELETE_IMAGES, deleteImages);
+    }
   };
 
   handleCancelTypeChange = () => {
@@ -97,18 +144,43 @@ export class PageBlockForm extends PureComponent {
     />
   );
 
+  renderUploaderItem = ({ imageName, id, image }, index) => (
+    <UploaderItem key={index}>
+      {imageName}
+      <CloseIcon
+        id={`removeImage-${index}`}
+        onClick={this.handleRemoveImage({ id, image })}
+        customStyles={removeIconStyles}
+      />
+    </UploaderItem>
+  );
+
+  renderUploaderList = list =>
+    renderWhenTrueOtherwise(
+      always(list.map(this.renderUploaderItem)),
+      always(<FormattedMessage {...messages.selectImage} />)
+    )(!!list.length);
+
   renderImage = () => (
-    <Uploader
-      fileName={this.props.values.imageName}
-      name={BLOCK_IMAGE}
-      label={this.props.intl.formatMessage(messages.pageBlockFieldImage)}
-      type="file"
-      id="fileUpload"
-      onChange={({ currentTarget }) => this.handleUploadChange(currentTarget)}
-      accept=".png, .jpg, .jpeg, .gif"
-      checkOnlyErrors
-      {...this.props}
-    />
+    <UploaderContainer>
+      <Label>
+        <FormattedMessage {...messages.pageBlockFieldImage} />
+      </Label>
+      <UploaderWrapper>
+        <Uploader
+          name={BLOCK_INPUT_IMAGES}
+          value={this.props.values[BLOCK_INPUT_IMAGES]}
+          type="file"
+          id="fileUpload"
+          onChange={({ currentTarget }) => this.handleUploadChange(currentTarget)}
+          accept=".png, .jpg, .jpeg, .gif"
+          checkOnlyErrors
+          multiple
+          {...this.props}
+        />
+      </UploaderWrapper>
+      <UploaderList>{this.renderUploaderList(this.props.values.imageNames)}</UploaderList>
+    </UploaderContainer>
   );
 
   renderBlockContent = cond([

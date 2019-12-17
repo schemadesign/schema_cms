@@ -233,7 +233,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
         }
       >
         <label
-          htmlFor="fileName"
+          htmlFor="fileNames"
           style={
             Object {
               "border": "none",
@@ -251,8 +251,8 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
         </label>
         <input
           disabled={true}
-          id="fileName"
-          name="fileName"
+          id="fileNames"
+          name="fileNames"
           style={
             Object {
               "backgroundColor": "transparent",
