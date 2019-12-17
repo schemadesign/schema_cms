@@ -20,6 +20,8 @@ import {
   toString,
 } from 'ramda';
 import Helmet from 'react-helmet';
+import { DndProvider } from 'react-dnd';
+import Backend from 'react-dnd-html5-backend';
 
 import { Empty, Error, Header, Link, StepCounter, UploadContainer, Warning } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
@@ -34,6 +36,7 @@ import { DataSourceNavigation } from '../../../shared/components/dataSourceNavig
 import { NavigationContainer, NextButton } from '../../../shared/components/navigation';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import { Draggable } from '../../../shared/components/draggable';
 
 const { CheckboxGroup, Checkbox, FileUpload } = Form;
 
@@ -61,6 +64,7 @@ export class DataWranglingScripts extends PureComponent {
     uploading: false,
     errorMessage: '',
     error: null,
+    orderedDataWranglingScripts: [],
   };
 
   async componentDidMount() {
@@ -72,7 +76,10 @@ export class DataWranglingScripts extends PureComponent {
       console.error(error);
       this.setState({ error });
     } finally {
-      this.setState({ loading: false });
+      this.setState({
+        loading: false,
+        orderedDataWranglingScripts: this.props.dataWranglingScripts.asMutable({ deep: true }).splice(0, 4),
+      });
     }
   }
 
@@ -82,9 +89,9 @@ export class DataWranglingScripts extends PureComponent {
   parseSteps = (script, index) =>
     ifElse(
       pathEq(['specs', 'type'], IMAGE_SCRAPING_SCRIPT_TYPE),
-      always({ script, execOrder: index, options: { columns: this.props.imageScrapingFields } }),
+      always({ script, execOrder: index, options: { columns: this.state.orderedDataWranglingScripts } }),
       always({ script, execOrder: index })
-    )(find(propEq('id', parseInt(script, 10)), this.props.dataWranglingScripts));
+    )(find(propEq('id', parseInt(script, 10)), this.state.orderedDataWranglingScripts));
 
   handleUploadScript = async ({ target }) => {
     const [file] = target.files;
@@ -114,7 +121,7 @@ export class DataWranglingScripts extends PureComponent {
   handleChange = ({ e, setFieldValue, steps }) => {
     const { value, checked } = e.target;
     const setScripts = ifElse(equals(true), always(append(value, steps)), always(reject(equals(value), steps)));
-    const script = find(propEq('id', parseInt(value, 10)), this.props.dataWranglingScripts);
+    const script = find(propEq('id', parseInt(value, 10)), this.state.orderedDataWranglingScripts);
 
     if (checked && script.specs.type === IMAGE_SCRAPING_SCRIPT_TYPE) {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
@@ -142,10 +149,28 @@ export class DataWranglingScripts extends PureComponent {
     }
   };
 
+  handleMove = (dragIndex, hoverIndex) => {
+    const { orderedDataWranglingScripts } = this.state;
+    const dragCard = orderedDataWranglingScripts[dragIndex];
+
+    let tempScripts = [...orderedDataWranglingScripts];
+
+    tempScripts.splice(dragIndex, 1);
+    tempScripts.splice(hoverIndex, 0, dragCard);
+
+    // console.log(tempScripts);
+
+    this.setState({
+      orderedDataWranglingScripts: tempScripts,
+    });
+  };
+
   renderCheckboxes = ({ id, name, specs }, index) => (
-    <Checkbox id={`checkbox-${index}`} value={id.toString()} key={index}>
-      <Link to={this.getScriptLink(id, specs, getMatchParam(this.props, 'dataSourceId'), this.props)}>{name}</Link>
-    </Checkbox>
+    <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index} name={name}>
+      <Checkbox id={`checkbox-${index}`} value={id.toString()}>
+        <Link to={this.getScriptLink(id, specs, getMatchParam(this.props, 'dataSourceId'), this.props)}>{name}</Link>
+      </Checkbox>
+    </Draggable>
   );
 
   renderUploadingError = errorMessage =>
@@ -176,8 +201,8 @@ export class DataWranglingScripts extends PureComponent {
   );
 
   render() {
-    const { dataWranglingScripts, dataSource, isAdmin, customScripts } = this.props;
-    const { errorMessage, loading, error } = this.state;
+    const { dataSource, isAdmin, customScripts } = this.props;
+    const { errorMessage, loading, error, orderedDataWranglingScripts } = this.state;
     const steps = pipe(
       pathOr([], ['activeJob', 'scripts']),
       map(
@@ -194,7 +219,7 @@ export class DataWranglingScripts extends PureComponent {
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
-      <Fragment>
+      <DndProvider backend={Backend}>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader headerTitle={name} headerSubtitle={headerSubtitle} projectId={dataSource.project} />
         <ContextHeader title={name} subtitle={headerSubtitle}>
@@ -204,7 +229,7 @@ export class DataWranglingScripts extends PureComponent {
           <Header>
             <Empty />
             <StepCounter>
-              <FormattedMessage values={{ length: dataWranglingScripts.length }} {...messages.steps} />
+              <FormattedMessage values={{ length: orderedDataWranglingScripts.length }} {...messages.steps} />
               {this.renderUploadingError(errorMessage)}
               {this.renderProcessingWarning(jobsInProcess)}
             </StepCounter>
@@ -219,7 +244,7 @@ export class DataWranglingScripts extends PureComponent {
                   name="steps"
                   id="fieldStepsCheckboxGroup"
                 >
-                  {dataWranglingScripts.map(this.renderCheckboxes)}
+                  {orderedDataWranglingScripts.map(this.renderCheckboxes)}
                 </CheckboxGroup>
                 <NavigationContainer right>
                   <NextButton
@@ -235,7 +260,7 @@ export class DataWranglingScripts extends PureComponent {
             )}
           </Formik>
         </LoadingWrapper>
-      </Fragment>
+      </DndProvider>
     );
   }
 }
