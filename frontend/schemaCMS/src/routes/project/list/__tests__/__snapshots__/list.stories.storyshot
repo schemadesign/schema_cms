@@ -581,14 +581,14 @@ exports[`Storyshots Project|List List (admin) 1`] = `
                 Object {
                   "fill": "#000",
                   "height": "60px",
+                  "shapeRendering": "crispEdges",
                   "width": "60px",
                 }
               }
               viewBox="0 0 60 60"
             >
               <path
-                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                fillRule="evenodd"
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
               />
             </svg>
           </button>
@@ -643,14 +643,14 @@ exports[`Storyshots Project|List List (admin) 1`] = `
                   Object {
                     "fill": "#000",
                     "height": "60px",
+                    "shapeRendering": "crispEdges",
                     "width": "60px",
                   }
                 }
                 viewBox="0 0 60 60"
               >
                 <path
-                  d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                  fillRule="evenodd"
+                  d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
                 />
               </svg>
             </button>
@@ -1837,14 +1837,14 @@ exports[`Storyshots Project|List No data 1`] = `
                 Object {
                   "fill": "#000",
                   "height": "60px",
+                  "shapeRendering": "crispEdges",
                   "width": "60px",
                 }
               }
               viewBox="0 0 60 60"
             >
               <path
-                d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                fillRule="evenodd"
+                d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
               />
             </svg>
           </button>
@@ -1899,14 +1899,14 @@ exports[`Storyshots Project|List No data 1`] = `
                   Object {
                     "fill": "#000",
                     "height": "60px",
+                    "shapeRendering": "crispEdges",
                     "width": "60px",
                   }
                 }
                 viewBox="0 0 60 60"
               >
                 <path
-                  d="M32 15v12.999L45 28v4H32v13h-4V32H15v-4h13V15h4z"
-                  fillRule="evenodd"
+                  d="M32 15v13h13v4H32v13h-4V32H15v-4h13V15h4z"
                 />
               </svg>
             </button>

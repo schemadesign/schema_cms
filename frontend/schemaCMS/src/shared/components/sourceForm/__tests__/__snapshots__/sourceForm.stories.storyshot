@@ -456,29 +456,31 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
             "typography": Object {
               "h1": Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
                 "fontWeight": 600,
               },
               "h2": Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "24px",
                 "fontWeight": 100,
               },
               "h3": Object {
-                "color": Object {
-                  "border": "#f0efef",
-                  "text": "#a6a7aa",
-                },
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
                 "fontWeight": 600,
               },
               "p": Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "18px",
                 "fontWeight": 200,
               },
               "pre": Object {
                 "fontFamily": "Hack, monospace",
+                "fontSize": "18px",
               },
               "span": Object {
                 "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                "fontSize": "14px",
               },
             },
             "warning": "#be8f00",
