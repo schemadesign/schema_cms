@@ -1,1 +1,3 @@
-df = df.fillna(method="ffill")
+# Fill NaN's using previous value
+
+df.fillna(method="ffill", inplace=True)

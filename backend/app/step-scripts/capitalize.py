@@ -1,14 +1,12 @@
 # # Only First word of first sentense is capatalised and everything else is converted to lowercase.
 
-df_subset = df.select_dtypes(exclude=["bool", np.number])
-text_columns = df_subset.columns.tolist()
+text_columns = df.select_dtypes(
+    exclude=["bool", "category", "datetime", "datetimetz", "timedelta", "number"]
+).columns.tolist()
 
+category_columns = df.select_dtypes(include=["category"]).columns.tolist()
 
-def cap(match):
-    return match.group().capitalize()
+df[text_columns] = df[text_columns].apply(lambda x: x.str.capitalize())
 
-
-for column in text_columns:
-    df[column] = df[column].astype(str)
-    df[column] = df[column].str.replace(r'\s+', ' ').str.strip()
-    df[column] = df[column].apply(lambda x: re.sub(r'((?<=[\.\?!]\s)(\w+)|(^\w+))', cap, x))
+for category in category_columns:
+    df[category].cat.rename_categories(lambda x: x.capitalize(), inplace=True)

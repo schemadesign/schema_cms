@@ -22,26 +22,6 @@ def file_upload_path(instance, filename):
     return instance.relative_path_to_save(filename)
 
 
-def map_dataframe_dtypes(dtype):
-    if dtype == "object":
-        return "string"
-    else:
-        return dtype
-
-
-def map_general_dtypes(dtype):
-    if dtype.startswith("float") or dtype.startswith("int"):
-        return constants.FieldType.NUMBER
-    elif dtype.startswith("str"):
-        return constants.FieldType.STRING
-    elif dtype.startswith("bool"):
-        return constants.FieldType.BOOLEAN
-    elif dtype.startswith("date") or dtype.startswith("time"):
-        return constants.FieldType.DATE
-    else:
-        return dtype
-
-
 class MetaDataModel(models.Model):
     items = models.PositiveIntegerField()
     fields = models.PositiveSmallIntegerField()
@@ -234,7 +214,7 @@ class DataSource(
     def available_scripts(self):
         return WranglingScript.objects.filter(
             models.Q(is_predefined=True) | models.Q(datasource=self)
-        ).order_by("-is_predefined")
+        ).order_by("-is_predefined", "name")
 
     @property
     def jobs_history(self):
@@ -283,7 +263,7 @@ class DataSource(
         except (DataSourceJobMetaData.DoesNotExist, json.JSONDecodeError, KeyError, OSError):
             return []
 
-        data = [{"name": key, "type": map_general_dtypes(value["dtype"])} for key, value in fields.items()]
+        data = [{"name": key, "type": value["dtype"]} for key, value in fields.items()]
 
         return data
 
