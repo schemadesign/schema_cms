@@ -113,6 +113,7 @@ export class UserCreate extends PureComponent {
             value={this.props.values[FIRST_NAME]}
             onChange={this.props.handleChange}
             disabled={!isInvitation}
+            isEdit={isInvitation}
             {...restProps}
           />
           <TextInput
@@ -122,6 +123,7 @@ export class UserCreate extends PureComponent {
             value={this.props.values[LAST_NAME]}
             onChange={this.props.handleChange}
             disabled={!isInvitation}
+            isEdit={isInvitation}
             {...restProps}
           />
           {this.renderEmailField(isInvitation)}

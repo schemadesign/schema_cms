@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { darcula, defaultStyle } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { STEPS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import {
@@ -11,10 +11,11 @@ import {
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { TextInput } from '../../../shared/components/form/inputs/textInput';
 import { TopHeader } from '../../../shared/components/topHeader';
-import { Container, Form, customInputStyles } from './dataWranglingDefaultScript.styles';
+import { Container, customInputStyles, Form } from './dataWranglingDefaultScript.styles';
 import messages from './dataWranglingDefaultScript.messages';
 import { BackButton, NavigationContainer } from '../../../shared/components/navigation';
 import { ContextHeader } from '../../../shared/components/contextHeader';
+import { getMatchParam } from '../../../shared/utils/helpers';
 
 export class DataWranglingDefaultScript extends PureComponent {
   static propTypes = {
@@ -36,12 +37,9 @@ export class DataWranglingDefaultScript extends PureComponent {
 
   handleGoToDataWranglingList = (match, history) => () => {
     const { dataWranglingScript } = this.props;
+    const dataSourceId = dataWranglingScript.datasource || getMatchParam(this.props, 'dataSourceId');
 
-    if (dataWranglingScript.isPredefined) {
-      return history.goBack();
-    }
-
-    return history.push(`/datasource/${dataWranglingScript.datasource}/${STEPS_PAGE}`);
+    return history.push(`/datasource/${dataSourceId}/${STEPS_PAGE}`, { fromScript: true });
   };
 
   render() {

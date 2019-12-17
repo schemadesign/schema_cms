@@ -17,7 +17,11 @@ export const defaultProps = {
   isAdmin: true,
   history,
   intl,
-  match: {},
+  match: {
+    params: {
+      dataSourceId: 'dataSourceId',
+    },
+  },
 };
 
 export const editorProps = {

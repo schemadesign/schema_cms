@@ -8,6 +8,14 @@ import mockScripts, { CASE_CONVERSION } from '../../../../modules/dataWranglingS
 import { STEPS_PAGE } from '../../../../modules/dataSource/dataSource.constants';
 
 describe('DataWranglingScript: Component', () => {
+  defaultProps.fetchDataSource = jest.fn().mockReturnValue(
+    Promise.resolve({
+      activeJob: {
+        scripts: {},
+      },
+    })
+  );
+
   const component = props => <ImageScrapingScript {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
@@ -18,7 +26,6 @@ describe('DataWranglingScript: Component', () => {
   });
 
   it('should render correctly', async () => {
-    defaultProps.fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render(defaultProps);
     await Promise.resolve();
     global.expect(wrapper).toMatchSnapshot();
@@ -26,7 +33,6 @@ describe('DataWranglingScript: Component', () => {
 
   it('should go back on history', async () => {
     jest.spyOn(defaultProps.history, 'goBack');
-    defaultProps.fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render(defaultProps);
     await Promise.resolve();
     wrapper.find(BackButton).simulate('click');
@@ -36,8 +42,6 @@ describe('DataWranglingScript: Component', () => {
 
   it('should go to data wrangling step', async () => {
     jest.spyOn(defaultProps.history, 'push');
-    defaultProps.fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
-
     const dataWranglingScript = {
       // eslint-disable-next-line import/no-named-as-default-member
       ...mockScripts[CASE_CONVERSION],
@@ -51,7 +55,6 @@ describe('DataWranglingScript: Component', () => {
 
   it('should call setImageScrapingFields', async () => {
     jest.spyOn(defaultProps, 'setImageScrapingFields');
-    defaultProps.fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
     const wrapper = render(defaultProps);
     await Promise.resolve();
     wrapper.find(NextButton).simulate('click');

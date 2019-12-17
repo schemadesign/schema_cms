@@ -24,16 +24,7 @@ describe('DataWranglingDefaultScript: Component', () => {
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should go back on history', async () => {
-    jest.spyOn(defaultProps.history, 'goBack');
-    defaultProps.fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render(defaultProps);
-    await Promise.resolve();
-    wrapper.find(BackButton).simulate('click');
-    expect(defaultProps.history.goBack).toHaveBeenCalled();
-  });
-
-  it('should go to data wrangling step', async () => {
+  it('should go to data wrangling page', async () => {
     jest.spyOn(defaultProps.history, 'push');
     defaultProps.fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
 
@@ -45,6 +36,18 @@ describe('DataWranglingDefaultScript: Component', () => {
     await Promise.resolve();
 
     wrapper.find(BackButton).simulate('click');
-    expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/2/${STEPS_PAGE}`);
+    expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/2/${STEPS_PAGE}`, { fromScript: true });
+  });
+
+  it('should go to data wrangling page with id from match params', async () => {
+    jest.spyOn(defaultProps.history, 'push');
+    defaultProps.fetchDataSource = jest.fn().mockReturnValue(Promise.resolve());
+    const wrapper = render();
+    await Promise.resolve();
+
+    wrapper.find(BackButton).simulate('click');
+    expect(defaultProps.history.push).toHaveBeenCalledWith(`/datasource/dataSourceId/${STEPS_PAGE}`, {
+      fromScript: true,
+    });
   });
 });

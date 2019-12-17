@@ -38,6 +38,10 @@ export const getStyles = (theme = defaultTheme) => {
       overflowX: 'auto',
       paddingBottom: '10px',
     },
+    iOSStyles: {
+      overflowX: 'scroll',
+      WebkitOverflowScrolling: 'touch',
+    },
     table: {
       borderCollapse: 'collapse',
       minWidth: '100%',
