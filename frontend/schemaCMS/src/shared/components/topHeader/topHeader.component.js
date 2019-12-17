@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Header, Menu } from 'schemaUI';
-import { always, equals, ifElse } from 'ramda';
+import { always, equals, ifElse, last, path, pipe, split, nth } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import {
@@ -29,6 +29,7 @@ export class TopHeader extends PureComponent {
     headerSubtitle: PropTypes.node,
     primaryMenuItems: PropTypes.array,
     secondaryMenuItems: PropTypes.array,
+    isAdmin: PropTypes.bool,
     projectId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   };
 
@@ -42,6 +43,14 @@ export class TopHeader extends PureComponent {
     logoutModalOpen: false,
   };
 
+  getIsActive = page =>
+    pipe(
+      path(['location', 'pathname']),
+      split('/'),
+      ifElse(data => !parseInt(last(data), 10), data => `${last(data)}s`, nth(-2)),
+      equals(page)
+    )(window);
+
   getProjectRoutes = ({ projectId }) =>
     ifElse(
       equals(true),
@@ -50,19 +59,31 @@ export class TopHeader extends PureComponent {
         {
           label: <FormattedMessage {...messages.projectDetails} />,
           to: `/project/${projectId}`,
+          page: 'project',
         },
         {
           label: <FormattedMessage {...messages.projectDataSources} />,
           to: `/project/${projectId}/datasource`,
+          page: 'datasources',
         },
         {
           label: <FormattedMessage {...messages.projectPages} />,
           to: `/project/${projectId}/folder`,
+          page: 'folders',
         },
       ])
     )(!projectId);
 
-  primaryMenuItems = [{ label: <FormattedMessage {...messages.project} />, to: '/project' }];
+  primaryMenuItems = [
+    { label: <FormattedMessage {...messages.project} />, to: '/project', page: 'projects' },
+    {
+      label: <FormattedMessage {...messages.users} />,
+      to: '/user',
+      id: 'userBtn',
+      page: 'users',
+      hide: !this.props.isAdmin,
+    },
+  ];
 
   secondaryMenuItems = [
     { label: <FormattedMessage {...messages.about} />, to: '/' },
@@ -90,17 +111,17 @@ export class TopHeader extends PureComponent {
     });
   };
 
-  renderItem = Item => ({ label = '', to = '', onClick, id = null }, index) =>
+  renderItem = Item => ({ label = '', to = '', onClick, id = null, page = '', hide = false }, index) =>
     renderWhenTrueOtherwise(
       always(
-        <Item key={index}>
+        <Item key={index} active={this.getIsActive(page)} hide={hide}>
           <Link id={id} to={to}>
             {label}
           </Link>
         </Item>
       ),
       always(
-        <Item id={id} key={index} onClick={onClick}>
+        <Item id={id} key={index} onClick={onClick} active={this.getIsActive(page)} hide={hide}>
           {label}
         </Item>
       )
@@ -157,9 +178,7 @@ export class TopHeader extends PureComponent {
   render() {
     const { headerTitle, headerSubtitle } = this.props;
     const { logoutModalOpen } = this.state;
-
     const headerContent = this.renderHeader(headerTitle, headerSubtitle);
-
     const buttonProps = {
       onClick: this.handleToggleMenu,
       id: 'topHeaderOpenMenuBtn',

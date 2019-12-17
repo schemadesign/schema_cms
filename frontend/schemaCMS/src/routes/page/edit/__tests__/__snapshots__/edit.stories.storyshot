@@ -26,7 +26,7 @@ exports[`Storyshots Page|Edit Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c6 {
+.c7 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -50,6 +50,7 @@ exports[`Storyshots Page|Edit Default 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c5 a {
@@ -63,7 +64,28 @@ exports[`Storyshots Page|Edit Default 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c7 {
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -75,14 +97,14 @@ exports[`Storyshots Page|Edit Default 1`] = `
   display: inline-block;
 }
 
-.c7 a {
+.c8 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c7:hover {
+.c8:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -94,16 +116,12 @@ exports[`Storyshots Page|Edit Default 1`] = `
   word-break: break-word;
 }
 
-.c8 {
+.c9 {
   display: none;
 }
 
-.c9 {
-  margin-right: 20px;
-}
-
 .c10 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c11 {
@@ -111,6 +129,10 @@ exports[`Storyshots Page|Edit Default 1`] = `
 }
 
 .c12 {
+  color: #FFF;
+}
+
+.c13 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -139,7 +161,14 @@ exports[`Storyshots Page|Edit Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c6 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -351,6 +380,19 @@ exports[`Storyshots Page|Edit Default 1`] = `
             </a>
           </li>
           <li
+            className="c6"
+          >
+            <a
+              href="/user"
+              id="userBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Users
+              </span>
+            </a>
+          </li>
+          <li
             className="c5"
             id="logoutBtn"
             onClick={[Function]}
@@ -361,10 +403,10 @@ exports[`Storyshots Page|Edit Default 1`] = `
           </li>
         </ul>
         <ul
-          className="c6"
+          className="c7"
         >
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -377,7 +419,7 @@ exports[`Storyshots Page|Edit Default 1`] = `
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -390,7 +432,7 @@ exports[`Storyshots Page|Edit Default 1`] = `
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -448,13 +490,13 @@ exports[`Storyshots Page|Edit Default 1`] = `
     </div>
   </div>
   <div
-    className="c8"
+    className="c9"
   >
     <div
-      className="c9"
+      className="c10"
     >
       <h2
-        className="c10"
+        className="c11"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -470,7 +512,7 @@ exports[`Storyshots Page|Edit Default 1`] = `
         </span>
       </h2>
       <h1
-        className="c11"
+        className="c12"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -493,7 +535,7 @@ exports[`Storyshots Page|Edit Default 1`] = `
     />
   </div>
   <div
-    className="c12"
+    className="c13"
   >
     <span>
       Loading...

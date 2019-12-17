@@ -22,7 +22,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c13 {
+.c14 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -46,6 +46,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c12 a {
@@ -59,7 +60,28 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c14 {
+.c13 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c13 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c13:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c15 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -71,14 +93,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   display: inline-block;
 }
 
-.c14 a {
+.c15 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c14:hover {
+.c15:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -115,7 +137,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 950px;
+  width: 965px;
   height: 62px;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -185,6 +207,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
 
 @media (min-width:1040px) {
   .c12 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c13 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -471,12 +500,25 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
                 </span>
               </a>
             </li>
+            <li
+              className="c13"
+            >
+              <a
+                href="/user"
+                id="userBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </li>
           </ul>
           <ul
-            className="c13"
+            className="c14"
           >
             <li
-              className="c14"
+              className="c15"
             >
               <a
                 href="/"
@@ -489,7 +531,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
             </li>
             <li
-              className="c14"
+              className="c15"
             >
               <a
                 href="/"
@@ -502,7 +544,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader Default 1`] = `
               </a>
             </li>
             <li
-              className="c14"
+              className="c15"
             >
               <a
                 href="/"
@@ -585,7 +627,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   margin-bottom: 30px;
 }
 
-.c15 {
+.c16 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -609,6 +651,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c14 a {
@@ -622,7 +665,28 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   border-top: 2.4px solid #2F2F36;
 }
 
-.c16 {
+.c15 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c15 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c15:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c17 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -634,14 +698,14 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   display: inline-block;
 }
 
-.c16 a {
+.c17 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c16:hover {
+.c17:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -678,7 +742,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 950px;
+  width: 965px;
   height: 62px;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -775,6 +839,13 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
 
 @media (min-width:1040px) {
   .c14 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c15 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -1084,12 +1155,25 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
                 </span>
               </a>
             </li>
+            <li
+              className="c15"
+            >
+              <a
+                href="/user"
+                id="userBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
+                </span>
+              </a>
+            </li>
           </ul>
           <ul
-            className="c15"
+            className="c16"
           >
             <li
-              className="c16"
+              className="c17"
             >
               <a
                 href="/"
@@ -1102,7 +1186,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
             </li>
             <li
-              className="c16"
+              className="c17"
             >
               <a
                 href="/"
@@ -1115,7 +1199,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With long title 1`
               </a>
             </li>
             <li
-              className="c16"
+              className="c17"
             >
               <a
                 href="/"
@@ -1222,6 +1306,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c14 a {
@@ -1291,7 +1376,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 950px;
+  width: 965px;
   height: 62px;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -1698,7 +1783,7 @@ exports[`Storyshots Shared Components|Header/DesktopTopHeader With title 1`] = `
             >
               <a
                 href="/user"
-                id={null}
+                id="userBtn"
                 onClick={[Function]}
               >
                 <span>

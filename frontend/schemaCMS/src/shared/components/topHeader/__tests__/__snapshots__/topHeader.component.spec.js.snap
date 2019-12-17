@@ -58,6 +58,8 @@ exports[`TopHeader: Component should render correctly 1`] = `
     <styled.div>
       <Styled(styled.ul)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="0"
         >
           <Link
@@ -68,6 +70,8 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="1"
         >
           <Link
@@ -78,6 +82,8 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="2"
         >
           <Link
@@ -92,8 +98,26 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          id="logoutBtn"
+          active={false}
+          hide={true}
           key="3"
+        >
+          <Link
+            id="userBtn"
+            to="/user"
+          >
+            <FormattedMessage
+              defaultMessage="Users"
+              id="shared.components.desktopTopHeader.users"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          active={false}
+          hide={false}
+          id="logoutBtn"
+          key="4"
           onClick={[Function]}
         >
           <FormattedMessage
@@ -105,6 +129,8 @@ exports[`TopHeader: Component should render correctly 1`] = `
       </Styled(styled.ul)>
       <Styled(styled.ul)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="0"
         >
           <Link
@@ -115,6 +141,8 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           id="id"
           key="1"
           onClick={[Function]}
@@ -122,6 +150,8 @@ exports[`TopHeader: Component should render correctly 1`] = `
           Click action
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="2"
         >
           <Link
@@ -136,6 +166,8 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="3"
         >
           <Link
@@ -150,6 +182,8 @@ exports[`TopHeader: Component should render correctly 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="4"
         >
           <Link
@@ -232,6 +266,8 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
     <styled.div>
       <Styled(styled.ul)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="0"
         >
           <Link
@@ -242,6 +278,8 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="1"
         >
           <Link
@@ -252,6 +290,8 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="2"
         >
           <Link
@@ -266,7 +306,25 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={true}
           key="3"
+        >
+          <Link
+            id="userBtn"
+            to="/user"
+          >
+            <FormattedMessage
+              defaultMessage="Users"
+              id="shared.components.desktopTopHeader.users"
+              values={Object {}}
+            />
+          </Link>
+        </Styled(styled.li)>
+        <Styled(styled.li)
+          active={false}
+          hide={false}
+          key="4"
         >
           <Link
             id={null}
@@ -280,21 +338,25 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          key="4"
+          active={false}
+          hide={false}
+          key="5"
         >
           <Link
             id={null}
             to="/project/projectId/datasource"
           >
             <FormattedMessage
-              defaultMessage="Data sources"
+              defaultMessage="Data Sources"
               id="shared.components.desktopTopHeader.projectDataSources"
               values={Object {}}
             />
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
-          key="5"
+          active={false}
+          hide={false}
+          key="6"
         >
           <Link
             id={null}
@@ -308,8 +370,10 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           id="logoutBtn"
-          key="6"
+          key="7"
           onClick={[Function]}
         >
           <FormattedMessage
@@ -321,6 +385,8 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
       </Styled(styled.ul)>
       <Styled(styled.ul)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="0"
         >
           <Link
@@ -331,6 +397,8 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           id="id"
           key="1"
           onClick={[Function]}
@@ -338,6 +406,8 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           Click action
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="2"
         >
           <Link
@@ -352,6 +422,8 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="3"
         >
           <Link
@@ -366,6 +438,8 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
           </Link>
         </Styled(styled.li)>
         <Styled(styled.li)
+          active={false}
+          hide={false}
           key="4"
         >
           <Link

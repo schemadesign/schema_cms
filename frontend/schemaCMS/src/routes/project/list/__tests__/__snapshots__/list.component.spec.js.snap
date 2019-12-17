@@ -10,15 +10,8 @@ exports[`List: Component should render correctly 1`] = `
   <TopHeader
     headerSubtitle="Overview"
     headerTitle="Projects"
-    primaryMenuItems={
-      Array [
-        Object {
-          "id": "userBtn",
-          "label": "Users",
-          "to": "/user",
-        },
-      ]
-    }
+    isAdmin={true}
+    primaryMenuItems={Array []}
     secondaryMenuItems={Array []}
   />
   <ContextHeader
@@ -176,15 +169,8 @@ exports[`List: Component should render correctly with loading 1`] = `
   <TopHeader
     headerSubtitle="Overview"
     headerTitle="Projects"
-    primaryMenuItems={
-      Array [
-        Object {
-          "id": "userBtn",
-          "label": "Users",
-          "to": "/user",
-        },
-      ]
-    }
+    isAdmin={true}
+    primaryMenuItems={Array []}
     secondaryMenuItems={Array []}
   />
   <ContextHeader
@@ -342,15 +328,8 @@ exports[`List: Component should render without data 1`] = `
   <TopHeader
     headerSubtitle="Overview"
     headerTitle="Projects"
-    primaryMenuItems={
-      Array [
-        Object {
-          "id": "userBtn",
-          "label": "Users",
-          "to": "/user",
-        },
-      ]
-    }
+    isAdmin={true}
+    primaryMenuItems={Array []}
     secondaryMenuItems={Array []}
   />
   <ContextHeader

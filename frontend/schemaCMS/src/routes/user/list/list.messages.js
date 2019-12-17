@@ -14,4 +14,8 @@ export default defineMessages({
     id: 'userList.cancel',
     defaultMessage: 'Cancel',
   },
+  users: {
+    id: 'userList.users',
+    defaultMessage: 'Users',
+  },
 });
