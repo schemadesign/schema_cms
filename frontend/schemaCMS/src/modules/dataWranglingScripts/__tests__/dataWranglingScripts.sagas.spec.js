@@ -26,17 +26,26 @@ describe('DataWranglingScripts: sagas', () => {
         { id: 1, name: 'name 1', specs: {}, isPredefined: true },
         { id: 2, name: 'name 2', specs: {}, isPredefined: true },
       ];
-      const fetchListData = [
-        {...responseData[0], type: DEFAULT },
-        {...responseData[1], type: DEFAULT },
-      ];
-      const payload = { dataSourceId: 1 };
+      const fetchListData = [{ ...responseData[0], type: DEFAULT }, { ...responseData[1], type: DEFAULT }];
+      const payload = { dataSourceId: 1, fromScript: true };
 
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`).reply(OK, responseData);
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
         .put(DataWranglingScriptsRoutines.fetchList.success(fetchListData))
+        .dispatch(DataWranglingScriptsRoutines.fetchList(payload))
+        .silentRun();
+    });
+
+    it('should trigger clearCustomScripts', async () => {
+      const payload = { dataSourceId: 1, fromScript: false };
+
+      mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`).reply(OK);
+
+      await expectSaga(watchDataWranglingScripts)
+        .withState(defaultState)
+        .put(DataWranglingScriptsRoutines.clearCustomScripts.trigger())
         .dispatch(DataWranglingScriptsRoutines.fetchList(payload))
         .silentRun();
     });
@@ -70,9 +79,9 @@ describe('DataWranglingScripts: sagas', () => {
         { id: 3, name: 'name 3', specs: {}, isPredefined: false },
       ];
       const fetchListData = [
-        {...responseData[2], type: UPLOADED },
-        {...responseData[0], type: DEFAULT },
-        {...responseData[1], type: DEFAULT },
+        { ...responseData[2], type: UPLOADED },
+        { ...responseData[0], type: DEFAULT },
+        { ...responseData[1], type: DEFAULT },
       ];
 
       mockApi

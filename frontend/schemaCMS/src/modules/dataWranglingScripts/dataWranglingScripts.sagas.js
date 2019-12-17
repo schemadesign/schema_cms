@@ -16,9 +16,13 @@ import { SCRIPT_TYPES } from './dataWranglingScripts.constants';
 
 const { CUSTOM, DEFAULT, UPLOADED } = SCRIPT_TYPES;
 
-function* fetchList({ payload: { dataSourceId } }) {
+function* fetchList({ payload: { dataSourceId, fromScript } }) {
   try {
     yield put(DataWranglingScriptsRoutines.fetchList.request());
+
+    if (!fromScript) {
+      yield put(DataWranglingScriptsRoutines.clearCustomScripts());
+    }
 
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
 
@@ -102,7 +106,7 @@ function* setImageScrapingFields({ payload }) {
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.request());
 
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.success(payload));
-    browserHistory.push(`/datasource/${payload.dataSourceId}/${STEPS_PAGE}`);
+    browserHistory.push(`/datasource/${payload.dataSourceId}/${STEPS_PAGE}`, { fromScript: true });
   } catch (error) {
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.failure(error));
   } finally {

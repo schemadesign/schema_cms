@@ -6,7 +6,7 @@ import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
-import { DATA_SOURCE_RUN_LAST_JOB, FETCH_LIST_DELAY } from './dataSource.constants';
+import { DATA_SOURCE_RUN_LAST_JOB, FETCH_LIST_DELAY, RESULT_PAGE } from './dataSource.constants';
 
 const PAGE_SIZE = 1000;
 
@@ -170,7 +170,7 @@ function* revertToJob({ payload: { dataSourceId, jobId } }) {
     const { data } = yield api.post(`${DATA_SOURCES_PATH}/${dataSourceId}/revert-job`, { id: jobId });
 
     yield put(DataSourceRoutines.revertToJob.success(data));
-    browserHistory.push(`/datasource/${dataSourceId}/4`);
+    browserHistory.push(`/datasource/${dataSourceId}/${RESULT_PAGE}`);
   } catch (error) {
     yield put(DataSourceRoutines.revertToJob.failure(error));
   } finally {
