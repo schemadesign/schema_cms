@@ -50,7 +50,7 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         Total Count (N)
       </styled.span>
       <styled.span
-        title={127}
+        title="127"
       >
         127
       </styled.span>
@@ -62,7 +62,7 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         Unique
       </styled.span>
       <styled.span
-        title={99}
+        title="99"
       >
         99
       </styled.span>
@@ -74,7 +74,7 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         Mean
       </styled.span>
       <styled.span
-        title={4}
+        title="4"
       >
         4
       </styled.span>
@@ -86,7 +86,7 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         Min
       </styled.span>
       <styled.span
-        title={1}
+        title="1"
       >
         1
       </styled.span>
@@ -98,7 +98,7 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         Max
       </styled.span>
       <styled.span
-        title={100}
+        title="100"
       >
         100
       </styled.span>
@@ -110,9 +110,9 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         Std. Dev.
       </styled.span>
       <styled.span
-        title={23.033282731964}
+        title="23.03"
       >
-        23.033282731964
+        23.03
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
@@ -142,9 +142,9 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         25th Percentile
       </styled.span>
       <styled.span
-        title={100283.30095}
+        title="100.28k"
       >
-        100283.30095
+        100.28k
       </styled.span>
     </Styled(styled.li)>
   </styled.ul>
