@@ -32,7 +32,7 @@ export default defineMessages({
   },
   projectDataSources: {
     id: 'shared.components.desktopTopHeader.projectDataSources',
-    defaultMessage: 'Data sources',
+    defaultMessage: 'Data Sources',
   },
   projectPages: {
     id: 'shared.components.desktopTopHeader.projectPages',

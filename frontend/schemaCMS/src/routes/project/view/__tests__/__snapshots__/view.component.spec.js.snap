@@ -17,7 +17,9 @@ exports[`View: Component should render correctly 1`] = `
           values={Object {}}
         />
       }
+      isAdmin={true}
       primaryMenuItems={Array []}
+      projectId="100"
       secondaryMenuItems={Array []}
     />
     <ProjectTabs

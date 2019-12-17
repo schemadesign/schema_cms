@@ -15,6 +15,7 @@ export class List extends PureComponent {
   static propTypes = {
     fetchUsers: PropTypes.func.isRequired,
     users: PropTypes.array.isRequired,
+    isAdmin: PropTypes.bool.isRequired,
   };
 
   state = {
@@ -40,10 +41,12 @@ export class List extends PureComponent {
 
   render() {
     const { loading, error } = this.state;
-    const { users } = this.props;
+    const { users, isAdmin } = this.props;
+
     const headerConfig = {
       headerTitle: <FormattedMessage {...messages.headerTitle} />,
       headerSubtitle: <FormattedMessage {...messages.headerSubtitle} />,
+      isAdmin,
     };
 
     return (

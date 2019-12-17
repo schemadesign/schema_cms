@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withTheme } from '../../../.storybook/decorators';
+import { withTheme } from '../../.storybook/decorators';
 import { Table } from './table.component';
 
 const longValue = `Sed eu dictum orci. In hac habitasse platea dictumst.
@@ -27,8 +27,14 @@ const tableWithHeader = { header, rows };
 
 export const tableWithNumberedRows = { header, rows, numberedRows: true };
 
-storiesOf('Shared Components|Table', module)
+export const TableWrapper = props => (
+  <div style={{ padding: 50 }}>
+    <Table {...props} />
+  </div>
+);
+
+storiesOf('Table', module)
   .addDecorator(withTheme())
-  .add('Default', () => <Table {...table} />)
-  .add('with header', () => <Table {...tableWithHeader} />)
-  .add('with numbered rows', () => <Table {...tableWithNumberedRows} />);
+  .add('Default', () => <TableWrapper {...table} />)
+  .add('with header', () => <TableWrapper {...tableWithHeader} />)
+  .add('with numbered rows', () => <TableWrapper {...tableWithNumberedRows} />);

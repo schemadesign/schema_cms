@@ -8,5 +8,5 @@ export { Menu } from './menu';
 export Typography from './typography';
 export Form from './form';
 export { Stepper } from './stepper';
-export { DataGrid } from './dataGrid';
+export { Table } from './table';
 export { ThemeProvider } from './styles/themeProvider';

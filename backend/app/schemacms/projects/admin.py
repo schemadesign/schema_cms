@@ -56,11 +56,11 @@ class Project(utils_admin.SoftDeleteObjectAdmin):
 
 @admin.register(models.DataSource)
 class DataSource(utils_admin.SoftDeleteObjectAdmin):
-    actions = (update_meta_file, update_meta)
+    actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta_file]
     list_display = ("name", "deleted_at")
 
     def soft_undelete(self, request, queryset):
-        self.handle_conflicts_on_undelate(request, queryset, field="name", model_name="DataSource")
+        self.handle_unique_conflicts_on_undelete(request, queryset, field="name", model_name="DataSource")
 
     @transaction.atomic()
     def save_model(self, request, obj, form, change):
@@ -69,7 +69,6 @@ class DataSource(utils_admin.SoftDeleteObjectAdmin):
             obj.file = None
             super().save_model(request, obj, form, change)
             obj.file.save(file.name, file)
-            obj.update_meta()
         else:
             super().save_model(request, obj, form, change)
 
@@ -82,7 +81,7 @@ class DataSourceJobStepInline(admin.TabularInline):
 
 @admin.register(models.DataSourceJob)
 class DataSourceJobAdmin(utils_admin.SoftDeleteObjectAdmin):
-    actions = (update_meta,)
+    actions = utils_admin.SoftDeleteObjectAdmin.actions + [update_meta]
     list_display = ('pk', 'datasource', 'job_state', 'created', 'deleted_at')
     inlines = [DataSourceJobStepInline]
 

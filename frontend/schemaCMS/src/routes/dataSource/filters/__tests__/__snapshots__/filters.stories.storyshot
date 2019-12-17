@@ -26,7 +26,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c6 {
+.c7 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -50,6 +50,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c5 a {
@@ -63,7 +64,28 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c7 {
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -75,14 +97,14 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   display: inline-block;
 }
 
-.c7 a {
+.c8 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c7:hover {
+.c8:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -94,23 +116,23 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   word-break: break-word;
 }
 
-.c8 {
+.c9 {
   display: none;
 }
 
-.c9 {
-  margin-right: 20px;
-}
-
 .c10 {
-  color: #FFF;
+  margin-right: 20px;
 }
 
 .c11 {
   color: #FFF;
 }
 
-.c16 {
+.c12 {
+  color: #FFF;
+}
+
+.c17 {
   color: #FFF;
   text-align: center;
   padding: 50px 10px;
@@ -118,7 +140,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   font-size: 20px;
 }
 
-.c12 {
+.c13 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -142,11 +164,11 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c12 svg {
+.c13 svg {
   cursor: pointer;
 }
 
-.c17 {
+.c18 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -170,11 +192,11 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c17 svg {
+.c18 svg {
   cursor: pointer;
 }
 
-.c14 {
+.c15 {
   background-color: #1d1d20;
   border-radius: 50%;
   display: -webkit-box;
@@ -191,11 +213,11 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   align-items: center;
 }
 
-.c14 svg {
+.c15 svg {
   opacity: 0.4;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -209,7 +231,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
   align-items: center;
 }
 
-.c15 {
+.c16 {
   padding-top: 9px;
   color: #71737e;
   font-size: 12px;
@@ -237,7 +259,14 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c8 {
+  .c6 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c9 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -255,7 +284,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c12 {
+  .c13 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -267,7 +296,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c17 {
+  .c18 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -276,20 +305,20 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c14 {
+  .c15 {
     width: 60px;
     height: 60px;
   }
 }
 
 @media (min-width:1040px) {
-  .c13 {
+  .c14 {
     margin-left: 15px;
   }
 }
 
 @media (min-width:1040px) {
-  .c15 {
+  .c16 {
     display: block;
   }
 }
@@ -481,6 +510,19 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             </a>
           </li>
           <li
+            className="c6"
+          >
+            <a
+              href="/user"
+              id="userBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Users
+              </span>
+            </a>
+          </li>
+          <li
             className="c5"
           >
             <a
@@ -502,7 +544,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
               onClick={[Function]}
             >
               <span>
-                Data sources
+                Data Sources
               </span>
             </a>
           </li>
@@ -530,10 +572,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           </li>
         </ul>
         <ul
-          className="c6"
+          className="c7"
         >
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -546,7 +588,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -559,7 +601,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -617,13 +659,13 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
     </div>
   </div>
   <div
-    className="c8"
+    className="c9"
   >
     <div
-      className="c9"
+      className="c10"
     >
       <h2
-        className="c10"
+        className="c11"
         id="desktopHeaderTitle"
         style={
           Object {
@@ -635,7 +677,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         }
       />
       <h1
-        className="c11"
+        className="c12"
         id="desktopHeaderSubtitle"
         style={
           Object {
@@ -657,13 +699,13 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       className=""
     >
       <div
-        className="c12"
+        className="c13"
       >
         <div
-          className="c13"
+          className="c14"
         >
           <div
-            className="c14"
+            className="c15"
             disabled={false}
             onClick={[Function]}
           >
@@ -683,7 +725,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             </svg>
           </div>
           <div
-            className="c15"
+            className="c16"
           >
             <span>
               Source
@@ -691,10 +733,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           </div>
         </div>
         <div
-          className="c13"
+          className="c14"
         >
           <div
-            className="c14"
+            className="c15"
             disabled={false}
             onClick={[Function]}
           >
@@ -715,7 +757,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             </svg>
           </div>
           <div
-            className="c15"
+            className="c16"
           >
             <span>
               Fields
@@ -723,10 +765,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           </div>
         </div>
         <div
-          className="c13"
+          className="c14"
         >
           <div
-            className="c14"
+            className="c15"
             disabled={false}
             onClick={[Function]}
           >
@@ -765,7 +807,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             </svg>
           </div>
           <div
-            className="c15"
+            className="c16"
           >
             <span>
               Steps
@@ -773,10 +815,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           </div>
         </div>
         <div
-          className="c13"
+          className="c14"
         >
           <div
-            className="c14"
+            className="c15"
             disabled={false}
             onClick={[Function]}
           >
@@ -815,7 +857,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             </svg>
           </div>
           <div
-            className="c15"
+            className="c16"
           >
             <span>
               Results
@@ -823,10 +865,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           </div>
         </div>
         <div
-          className="c13"
+          className="c14"
         >
           <div
-            className="c14"
+            className="c15"
             disabled={false}
             onClick={[Function]}
           >
@@ -849,7 +891,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             </svg>
           </div>
           <div
-            className="c15"
+            className="c16"
           >
             <span>
               Filters
@@ -857,10 +899,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
           </div>
         </div>
         <div
-          className="c13"
+          className="c14"
         >
           <div
-            className="c14"
+            className="c15"
             disabled={false}
             onClick={[Function]}
           >
@@ -883,7 +925,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
             </svg>
           </div>
           <div
-            className="c15"
+            className="c16"
           >
             <span>
               Views
@@ -894,20 +936,20 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
     </div>
   </div>
   <div
-    className="c16"
+    className="c17"
   >
     <span>
       Loading...
     </span>
   </div>
   <div
-    className="c17"
+    className="c18"
   >
     <div
-      className="c13"
+      className="c14"
     >
       <div
-        className="c14"
+        className="c15"
         disabled={false}
         onClick={[Function]}
       >
@@ -927,7 +969,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         </svg>
       </div>
       <div
-        className="c15"
+        className="c16"
       >
         <span>
           Source
@@ -935,10 +977,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className="c14"
     >
       <div
-        className="c14"
+        className="c15"
         disabled={false}
         onClick={[Function]}
       >
@@ -959,7 +1001,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         </svg>
       </div>
       <div
-        className="c15"
+        className="c16"
       >
         <span>
           Fields
@@ -967,10 +1009,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className="c14"
     >
       <div
-        className="c14"
+        className="c15"
         disabled={false}
         onClick={[Function]}
       >
@@ -1009,7 +1051,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         </svg>
       </div>
       <div
-        className="c15"
+        className="c16"
       >
         <span>
           Steps
@@ -1017,10 +1059,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className="c14"
     >
       <div
-        className="c14"
+        className="c15"
         disabled={false}
         onClick={[Function]}
       >
@@ -1059,7 +1101,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         </svg>
       </div>
       <div
-        className="c15"
+        className="c16"
       >
         <span>
           Results
@@ -1067,10 +1109,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className="c14"
     >
       <div
-        className="c14"
+        className="c15"
         disabled={false}
         onClick={[Function]}
       >
@@ -1093,7 +1135,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         </svg>
       </div>
       <div
-        className="c15"
+        className="c16"
       >
         <span>
           Filters
@@ -1101,10 +1143,10 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
       </div>
     </div>
     <div
-      className="c13"
+      className="c14"
     >
       <div
-        className="c14"
+        className="c15"
         disabled={false}
         onClick={[Function]}
       >
@@ -1127,7 +1169,7 @@ exports[`Storyshots Data Source|Filters Default 1`] = `
         </svg>
       </div>
       <div
-        className="c15"
+        className="c16"
       >
         <span>
           Views

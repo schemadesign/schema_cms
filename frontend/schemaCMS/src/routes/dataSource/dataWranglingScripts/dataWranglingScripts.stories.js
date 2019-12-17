@@ -4,9 +4,14 @@ import { storiesOf } from '@storybook/react';
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { DataWranglingScripts } from './dataWranglingScripts.component';
+import { SCRIPT_TYPES } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 
 export const defaultProps = {
-  dataWranglingScripts: [{ id: 1, name: 'name 1', specs: {} }, { id: 2, name: 'name 2', specs: {} }],
+  dataWranglingScripts: [
+    { id: 1, name: 'name 1', specs: {}, isPredefined: false, type: SCRIPT_TYPES.UPLOADED, },
+    { id: 2, name: 'name 2', specs: {}, isPredefined: true, type: SCRIPT_TYPES.DEFAULT },
+    { id: 3, name: 'name 3', specs: { type: 'type' }, isPredefined: true, type: SCRIPT_TYPES.CUSTOM },
+  ],
   dataSource: { metaData: {} },
   bindSubmitForm: Function.prototype,
   fetchDataWranglingScripts: Function.prototype,

@@ -9,7 +9,7 @@ import {
   equals,
   find,
   ifElse,
-  insertAll,
+  insert,
   map,
   pathEq,
   pathOr,
@@ -18,12 +18,24 @@ import {
   propEq,
   reject,
   toString,
+  flatten,
+  uniq,
 } from 'ramda';
 import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
 import Backend from 'react-dnd-html5-backend';
 
-import { Empty, Error, Header, Link, StepCounter, UploadContainer, Warning } from './dataWranglingScripts.styles';
+import {
+  Dot,
+  Empty,
+  Error,
+  Header,
+  Link,
+  StepCounter,
+  Type,
+  UploadContainer,
+  Warning,
+} from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import {
   IMAGE_SCRAPING_SCRIPT_TYPE,
@@ -168,7 +180,13 @@ export class DataWranglingScripts extends PureComponent {
   renderCheckboxes = ({ id, name, specs }, index) => (
     <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index} name={name}>
       <Checkbox id={`checkbox-${index}`} value={id.toString()}>
-        <Link to={this.getScriptLink(id, specs, getMatchParam(this.props, 'dataSourceId'), this.props)}>{name}</Link>
+        <Link to={this.getScriptLink(id, specs, getMatchParam(this.props, 'dataSourceId'), this.props)}>
+          {name}
+          <Dot />
+          <Type>
+            <FormattedMessage {...messages[type]} />
+          </Type>
+        </Link>
       </Checkbox>
     </Draggable>
   );
@@ -211,7 +229,9 @@ export class DataWranglingScripts extends PureComponent {
           toString
         )
       ),
-      insertAll(0, customScripts)
+      insert(0, customScripts),
+      flatten,
+      uniq
     )(dataSource);
 
     const { jobsInProcess, name } = dataSource;
@@ -235,8 +255,8 @@ export class DataWranglingScripts extends PureComponent {
             </StepCounter>
             <UploadContainer>{this.renderUploadButton(isAdmin)}</UploadContainer>
           </Header>
-          <Formik initialValues={{ steps }} onSubmit={this.handleSubmit}>
-            {({ values: { steps }, setFieldValue, submitForm, isSubmitting, dirty }) => (
+          <Formik initialValues={{ steps }} isInitialValid enableReinitialize onSubmit={this.handleSubmit}>
+            {({ values: { steps }, setFieldValue, submitForm, isSubmitting }) => (
               <Fragment>
                 <CheckboxGroup
                   onChange={e => this.handleChange({ e, setFieldValue, steps })}
@@ -249,7 +269,7 @@ export class DataWranglingScripts extends PureComponent {
                 <NavigationContainer right>
                   <NextButton
                     onClick={submitForm}
-                    disabled={!dirty || isSubmitting || jobsInProcess || !steps.length}
+                    disabled={isSubmitting || jobsInProcess || !steps.length}
                     loading={isSubmitting}
                   >
                     <FormattedMessage {...messages.save} />

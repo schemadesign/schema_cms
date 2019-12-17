@@ -26,7 +26,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c6 {
+.c7 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -50,6 +50,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c5 a {
@@ -63,7 +64,28 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   border-top: 2.4px solid #2F2F36;
 }
 
-.c7 {
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -75,14 +97,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
   display: inline-block;
 }
 
-.c7 a {
+.c8 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c7:hover {
+.c8:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -109,6 +131,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
 
 @media (min-width:1040px) {
   .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c6 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -323,6 +352,19 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
+            className="c6"
+          >
+            <a
+              href="/user"
+              id="userBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Users
+              </span>
+            </a>
+          </li>
+          <li
             className="c5"
             id="logoutBtn"
             onClick={[Function]}
@@ -333,10 +375,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
           </li>
         </ul>
         <ul
-          className="c6"
+          className="c7"
         >
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/logout"
@@ -347,14 +389,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
             id="id"
             onClick={[Function]}
           >
             Click action
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -367,7 +409,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -380,7 +422,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Default 1`] = `
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -466,7 +508,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
   margin-bottom: 30px;
 }
 
-.c6 {
+.c7 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -490,6 +532,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c5 a {
@@ -503,7 +546,28 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
   border-top: 2.4px solid #2F2F36;
 }
 
-.c7 {
+.c6 {
+  line-height: 1.5;
+  margin: 2px 0;
+  cursor: pointer;
+  font-size: 24px;
+  border-bottom: 2.4px solid #2F2F36;
+  padding: 8px 0 13px;
+  display: none;
+}
+
+.c6 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+}
+
+.c6:first-of-type {
+  border-top: 2.4px solid #2F2F36;
+}
+
+.c8 {
   line-height: 1.5;
   margin: 2px 0;
   cursor: pointer;
@@ -515,14 +579,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
   display: inline-block;
 }
 
-.c7 a {
+.c8 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #FFF;
   display: block;
 }
 
-.c7:hover {
+.c8:hover {
   border-bottom: 1px solid #FFF;
 }
 
@@ -549,6 +613,13 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
 
 @media (min-width:1040px) {
   .c5 {
+    padding: 22px 0 27px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:1040px) {
+  .c6 {
     padding: 22px 0 27px;
     font-size: 20px;
   }
@@ -779,6 +850,19 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
             </a>
           </li>
           <li
+            className="c6"
+          >
+            <a
+              href="/user"
+              id="userBtn"
+              onClick={[Function]}
+            >
+              <span>
+                Users
+              </span>
+            </a>
+          </li>
+          <li
             className="c5"
           >
             <a
@@ -800,7 +884,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
               onClick={[Function]}
             >
               <span>
-                Data sources
+                Data Sources
               </span>
             </a>
           </li>
@@ -828,10 +912,10 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
           </li>
         </ul>
         <ul
-          className="c6"
+          className="c7"
         >
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/logout"
@@ -842,14 +926,14 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
             id="id"
             onClick={[Function]}
           >
             Click action
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -862,7 +946,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"
@@ -875,7 +959,7 @@ exports[`Storyshots Shared Components|Header/TopHeader Long title and subtitle 1
             </a>
           </li>
           <li
-            className="c7"
+            className="c8"
           >
             <a
               href="/"

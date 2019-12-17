@@ -1,4 +1,5 @@
 import { all, put, takeLatest, select } from 'redux-saga/effects';
+import { always, cond, isEmpty, groupBy, map, pipe, propEq, propOr, T } from 'ramda';
 
 import { DataWranglingScriptsRoutines } from './dataWranglingScripts.redux';
 import api from '../../shared/services/api';
@@ -11,6 +12,9 @@ import browserHistory from '../../shared/utils/history';
 
 import { selectDataSource } from '../dataSource';
 import { STEPS_PAGE } from '../dataSource/dataSource.constants';
+import { SCRIPT_TYPES } from './dataWranglingScripts.constants';
+
+const { CUSTOM, DEFAULT, UPLOADED } = SCRIPT_TYPES;
 
 function* fetchList({ payload: { dataSourceId } }) {
   try {
@@ -18,7 +22,24 @@ function* fetchList({ payload: { dataSourceId } }) {
 
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
 
-    yield put(DataWranglingScriptsRoutines.fetchList.success(data));
+    const getScriptType = cond([
+      [propEq('isPredefined', false), always(UPLOADED)],
+      [({ specs }) => !isEmpty(specs), always(CUSTOM)],
+      [T, always(DEFAULT)],
+    ]);
+
+    const getList = (type, list) =>
+      pipe(
+        propOr([], type),
+        map(item => ({ ...item, type }))
+      )(list);
+
+    const updatedData = pipe(
+      groupBy(getScriptType),
+      list => [...getList(UPLOADED, list), ...getList(DEFAULT, list), ...getList(CUSTOM, list)]
+    )(data);
+
+    yield put(DataWranglingScriptsRoutines.fetchList.success(updatedData));
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.fetchList.failure());
   } finally {

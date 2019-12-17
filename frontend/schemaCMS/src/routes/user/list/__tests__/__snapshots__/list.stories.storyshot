@@ -87,6 +87,7 @@ exports[`Storyshots User|List List 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c5 a {
@@ -414,6 +415,19 @@ exports[`Storyshots User|List List 1`] = `
               >
                 <span>
                   Projects
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+            >
+              <a
+                href="/user"
+                id="userBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
                 </span>
               </a>
             </li>
@@ -784,6 +798,7 @@ exports[`Storyshots User|List No data 1`] = `
   font-size: 24px;
   border-bottom: 2.4px solid #2F2F36;
   padding: 8px 0 13px;
+  display: block;
 }
 
 .c5 a {
@@ -1111,6 +1126,19 @@ exports[`Storyshots User|List No data 1`] = `
               >
                 <span>
                   Projects
+                </span>
+              </a>
+            </li>
+            <li
+              className="c5"
+            >
+              <a
+                href="/user"
+                id="userBtn"
+                onClick={[Function]}
+              >
+                <span>
+                  Users
                 </span>
               </a>
             </li>

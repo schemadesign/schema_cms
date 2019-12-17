@@ -10,10 +10,12 @@ const { ADMIN, EDITOR } = ROLES;
 export const noDataProps = {
   fetchUsers: Function.prototype,
   users: [],
+  isAdmin: true,
 };
 
 export const defaultProps = {
   fetchUsers: Function.prototype,
+  isAdmin: true,
   users: [
     { id: '1', firstName: 'Alan', lastName: 'Watts', role: EDITOR },
     { id: '2', firstName: 'Dale', lastName: 'Chihuly', role: ADMIN },

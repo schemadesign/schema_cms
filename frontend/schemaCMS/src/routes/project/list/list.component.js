@@ -43,20 +43,6 @@ export class List extends PureComponent {
     }
   }
 
-  getHeaderAndMenuConfig = (headerTitle, headerSubtitle) => {
-    const primaryMenuItems = [];
-
-    if (this.props.isAdmin) {
-      primaryMenuItems.push({ label: this.formatMessage(messages.users), to: '/user', id: 'userBtn' });
-    }
-
-    return {
-      headerTitle,
-      headerSubtitle,
-      primaryMenuItems,
-    };
-  };
-
   getLoadingConfig = (list, loading, error) => ({
     loading,
     error,
@@ -117,13 +103,12 @@ export class List extends PureComponent {
     const title = this.formatMessage(messages.title);
     const subtitle = this.formatMessage(messages.overview);
 
-    const topHeaderConfig = this.getHeaderAndMenuConfig(title, subtitle);
     const loadingConfig = this.getLoadingConfig(list, loading, error);
 
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-        <TopHeader {...topHeaderConfig} />
+        <TopHeader headerTitle={title} headerSubtitle={subtitle} isAdmin={isAdmin} />
         <ContextHeader title={title} subtitle={subtitle}>
           {this.renderAddButton(isAdmin, 'addProjectDesktopBtn')}
         </ContextHeader>

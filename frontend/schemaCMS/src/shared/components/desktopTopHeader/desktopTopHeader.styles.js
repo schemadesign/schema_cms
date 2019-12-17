@@ -35,7 +35,7 @@ export const Overlayer = styled.div`
 
 export const HeaderWrapper = styled.div`
   display: flex;
-  width: ${contentSizes.desktop - 50}px;
+  width: ${contentSizes.desktop - 35}px;
   height: 62px;
   flex: 1 1 auto;
   justify-content: space-between;

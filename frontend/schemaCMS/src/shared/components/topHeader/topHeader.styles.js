@@ -57,8 +57,9 @@ export const Item = styled.li`
 
 export const PrimaryItem = styled(Item)`
   font-size: 24px;
-  border-bottom: 2.4px solid ${({ theme }) => theme.header.border};
+  border-bottom: 2.4px solid ${({ theme, active }) => (active ? theme.header.text : theme.header.border)};
   padding: 8px 0 13px;
+  display: ${({ hide }) => (hide ? 'none' : 'block')};
 
   &:first-of-type {
     border-top: 2.4px solid ${({ theme }) => theme.header.border};

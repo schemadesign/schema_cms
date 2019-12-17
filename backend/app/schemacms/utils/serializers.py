@@ -1,13 +1,6 @@
 from rest_framework import serializers
 
 
-def change_string_bools(string):
-    if string == "true":
-        return True
-    else:
-        return False
-
-
 class NestedRelatedModelSerializer(serializers.PrimaryKeyRelatedField):
     def __init__(self, serializer, **kwargs):
         self.serializer = serializer

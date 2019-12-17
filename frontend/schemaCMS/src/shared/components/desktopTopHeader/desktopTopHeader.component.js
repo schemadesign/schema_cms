@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Header, Icons, Menu } from 'schemaUI';
-import { FormattedMessage } from 'react-intl';
-import { always, ifElse, equals } from 'ramda';
 
 import { renderWhenTrue } from '../../utils/rendering';
 import { LogoutModal } from '../logoutModal';
@@ -32,7 +30,6 @@ import {
   TitleWrapper,
   TopContainer,
 } from './desktopTopHeader.styles';
-import messages from './desktopTopHeader.messages';
 
 const { ExitIcon, UserIcon } = Icons;
 
@@ -81,16 +78,9 @@ export class DesktopTopHeader extends TopHeader {
     </HeaderWrapper>
   );
 
-  getTopItems = ifElse(
-    equals(true),
-    always([...this.primaryMenuItems, { label: <FormattedMessage {...messages.users} />, to: '/user' }]),
-    always(this.primaryMenuItems)
-  );
-
   render() {
     const { logoutModalOpen } = this.state;
-    const { title, isAdmin } = this.props;
-    const primaryMenuItems = this.getTopItems(isAdmin);
+    const { title } = this.props;
 
     const buttonProps = {
       onClick: this.handleToggleMenu,
@@ -101,7 +91,7 @@ export class DesktopTopHeader extends TopHeader {
       id: 'desktopTopHeaderCloseMenuButton',
     };
 
-    const primaryMenu = this.renderMenuItems(primaryMenuItems, PrimaryList, PrimaryItem);
+    const primaryMenu = this.renderMenuItems(this.primaryMenuItems, PrimaryList, PrimaryItem);
     const secondaryMenu = this.renderMenuItems(this.secondaryMenuItems, SecondaryList, SecondaryItem);
 
     return (

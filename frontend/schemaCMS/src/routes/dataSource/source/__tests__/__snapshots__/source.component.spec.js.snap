@@ -38,6 +38,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
         }
       }
       dirty={false}
+      handleChange={[Function]}
       handleSubmit={[Function]}
       hideOnDesktop={false}
       intl={
@@ -225,6 +226,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
           "project": "projectId",
         }
       }
+      handleChange={[Function]}
       intl={
         Object {
           "formatMessage": [Function],
@@ -446,6 +448,7 @@ exports[`SourceComponent: Component should render correctly 1`] = `
       }
     }
     dirty={false}
+    handleChange={[Function]}
     handleSubmit={[Function]}
     hideOnDesktop={true}
     intl={
@@ -792,6 +795,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
         }
       }
       dirty={false}
+      handleChange={[Function]}
       handleSubmit={[Function]}
       hideOnDesktop={false}
       intl={
@@ -976,6 +980,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
           "type": "file",
         }
       }
+      handleChange={[Function]}
       intl={
         Object {
           "formatMessage": [Function],
@@ -1173,6 +1178,7 @@ exports[`SourceComponent: Component should render file uploader 1`] = `
       }
     }
     dirty={false}
+    handleChange={[Function]}
     handleSubmit={[Function]}
     hideOnDesktop={true}
     intl={
