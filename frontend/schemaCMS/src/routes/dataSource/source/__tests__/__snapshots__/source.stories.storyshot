@@ -1239,7 +1239,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           }
         >
           <label
-            htmlFor="fileName"
+            htmlFor="fileNames"
             style={
               Object {
                 "border": "none",
@@ -1257,8 +1257,8 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           </label>
           <input
             disabled={true}
-            id="fileName"
-            name="fileName"
+            id="fileNames"
+            name="fileNames"
             style={
               Object {
                 "backgroundColor": "transparent",

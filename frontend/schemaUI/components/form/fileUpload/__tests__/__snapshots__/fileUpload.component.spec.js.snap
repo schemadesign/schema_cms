@@ -79,7 +79,7 @@ exports[`FileUpload: Component should render with custom icon 1`] = `
       </label>
     }
     label="label"
-    name="fileName"
+    name="fileNames"
     value="Select a file"
   />
   <input
@@ -156,7 +156,7 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
       </label>
     }
     label="label"
-    name="fileName"
+    name="fileNames"
     value="Select a file"
   />
   <input
@@ -221,7 +221,7 @@ exports[`FileUpload: Component should render with file name 1`] = `
       </label>
     }
     label="label"
-    name="fileName"
+    name="fileNames"
     value="Select a file"
   />
   <input
@@ -287,7 +287,7 @@ exports[`FileUpload: Component should render with label 1`] = `
       </label>
     }
     label="label"
-    name="fileName"
+    name="fileNames"
     value="Select a file"
   />
   <input

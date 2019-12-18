@@ -1,5 +1,5 @@
-import { is, isEmpty, keys, map, path } from 'ramda';
-import { camelize } from 'humps';
+import { complement, either, forEach, is, isEmpty, isNil, keys, map, path, pickBy, pipe } from 'ramda';
+import { camelize, decamelize } from 'humps';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
 
@@ -27,3 +27,15 @@ export const getTableData = (data = []) => {
 };
 
 export const getMatchParam = (props, param) => path(['match', 'params', param])(props);
+
+export const formatFormData = data => {
+  const formData = new FormData();
+  pipe(
+    pickBy(complement(either(isNil, isEmpty))),
+    keys,
+    map(decamelize),
+    forEach(name => formData.append(name, data[camelize(name)]))
+  )(data);
+
+  return formData;
+};

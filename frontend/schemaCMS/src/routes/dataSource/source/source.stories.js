@@ -37,6 +37,7 @@ export const defaultProps = {
   },
   handleChange: Function.prototype,
   handleSubmit: Function.prototype,
+  handleChange: Function.prototype,
   setFieldValue: Function.prototype,
   removeDataSource: Function.prototype,
   onDataSourceChange: Function.prototype,

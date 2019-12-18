@@ -73,4 +73,20 @@ describe('DataWranglingScripts: redux', () => {
       expect(resultState.customScripts).to.deep.equal([payload.scriptId]);
     });
   });
+
+  describe('when CLEAR_CUSTOM_SCRIPTS/SUCCESS action is received', () => {
+    it('should set clearCustomScripts', () => {
+      const state = Immutable({
+        script: {
+          specs: {},
+        },
+        scripts: [],
+        imageScrapingFields: [1],
+        customScripts: [1],
+      });
+      const resultState = dataWranglingReducer(state, DataWranglingScriptsRoutines.clearCustomScripts.trigger());
+
+      expect(defaultState).to.deep.equal(resultState);
+    });
+  });
 });

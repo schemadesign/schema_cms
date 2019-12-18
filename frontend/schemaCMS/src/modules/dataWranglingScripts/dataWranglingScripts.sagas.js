@@ -12,9 +12,13 @@ import browserHistory from '../../shared/utils/history';
 import { selectDataSource } from '../dataSource';
 import { STEPS_PAGE } from '../dataSource/dataSource.constants';
 
-function* fetchList({ payload: { dataSourceId } }) {
+function* fetchList({ payload: { dataSourceId, fromScript } }) {
   try {
     yield put(DataWranglingScriptsRoutines.fetchList.request());
+
+    if (!fromScript) {
+      yield put(DataWranglingScriptsRoutines.clearCustomScripts());
+    }
 
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
     const dataSource = yield select(selectDataSource);
@@ -82,7 +86,7 @@ function* setImageScrapingFields({ payload }) {
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.request());
 
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.success(payload));
-    browserHistory.push(`/datasource/${payload.dataSourceId}/${STEPS_PAGE}`);
+    browserHistory.push(`/datasource/${payload.dataSourceId}/${STEPS_PAGE}`, { fromScript: true });
   } catch (error) {
     yield put(DataWranglingScriptsRoutines.setImageScrapingFields.failure(error));
   } finally {

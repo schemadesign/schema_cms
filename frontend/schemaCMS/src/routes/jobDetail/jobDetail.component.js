@@ -78,13 +78,14 @@ export class JobDetail extends PureComponent {
       )
     )(!!error);
 
-  renderResultLink = renderWhenTrue(
-    always(
-      <Download href={this.props.job.result} download>
-        <FormattedMessage {...messages.resultFile} />
-      </Download>
-    )
-  );
+  renderResultLink = cond =>
+    renderWhenTrue(
+      always(
+        <Download href={this.props.job.result} download>
+          <FormattedMessage {...messages.resultFile} />
+        </Download>
+      )
+    )(cond);
 
   renderSuccessLinks = isSuccess =>
     renderWhenTrue(

@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import { path } from 'ramda';
 
-import { Container, Form } from './pageBlock.styles';
+import { Container, Form, LinkWrapper } from './pageBlock.styles';
 import messages from './pageBlock.messages';
 import { TopHeader } from '../../shared/components/topHeader';
 import { ContextHeader } from '../../shared/components/contextHeader';
@@ -71,9 +71,11 @@ export class PageBlock extends PureComponent {
         <Form onSubmit={handleSubmit}>
           <LoadingWrapper loading={loading} error={error}>
             <PageBlockForm {...this.props} />
-            <Link id="removePageBlockDesktopBtn" onClick={this.handleRemoveClick}>
-              <FormattedMessage {...messages.removePageBlock} />
-            </Link>
+            <LinkWrapper>
+              <Link id="removePageBlockDesktopBtn" onClick={this.handleRemoveClick}>
+                <FormattedMessage {...messages.removePageBlock} />
+              </Link>
+            </LinkWrapper>
           </LoadingWrapper>
           <NavigationContainer fixed>
             <BackButton id="backBtn" type="button" onClick={this.handleBackClick}>

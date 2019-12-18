@@ -30,6 +30,7 @@ export const DataWranglingScriptsRoutines = {
   sendList: createRoutine(`${prefix}SEND_LIST`),
   uploadScript: createRoutine(`${prefix}UPLOAD_SCRIPT`),
   setImageScrapingFields: createRoutine(`${prefix}SET_IMAGE_SCRAPING_FIELDS`),
+  clearCustomScripts: createRoutine(`${prefix}CLEAR_CUSTOM_SCRIPTS`),
 };
 
 export const INITIAL_STATE = new Immutable({
@@ -74,8 +75,12 @@ const updateDataWranglingScripts = (state = INITIAL_STATE, { payload, dataSource
 const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId } }) =>
   state.set('imageScrapingFields', imageScrapingFields).update('customScripts', x => [...x, scriptId]);
 
+const clearCustomScripts = (state = INITIAL_STATE) =>
+  state.set('imageScrapingFields', INITIAL_STATE.imageScrapingFields).set('customScripts', INITIAL_STATE.customScripts);
+
 export const reducer = createReducer(INITIAL_STATE, {
   [DataWranglingScriptsRoutines.fetchOne.SUCCESS]: updateDataWranglingScript,
   [DataWranglingScriptsRoutines.fetchList.SUCCESS]: updateDataWranglingScripts,
   [DataWranglingScriptsRoutines.setImageScrapingFields.SUCCESS]: setImageScrapingFields,
+  [DataWranglingScriptsRoutines.clearCustomScripts.TRIGGER]: clearCustomScripts,
 });

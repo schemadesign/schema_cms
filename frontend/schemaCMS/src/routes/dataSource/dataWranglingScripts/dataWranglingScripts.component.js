@@ -40,6 +40,7 @@ import messages from './dataWranglingScripts.messages';
 import {
   IMAGE_SCRAPING_SCRIPT_TYPE,
   SCRIPT_NAME_MAX_LENGTH,
+  SCRIPT_TYPES,
 } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 import { renderWhenTrue } from '../../../shared/utils/rendering';
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -82,7 +83,9 @@ export class DataWranglingScripts extends PureComponent {
   async componentDidMount() {
     try {
       const dataSourceId = getMatchParam(this.props, 'dataSourceId');
-      await this.props.fetchDataWranglingScripts({ dataSourceId });
+      const fromScript = pathOr(false, ['history', 'location', 'state', 'fromScript'], this.props);
+
+      await this.props.fetchDataWranglingScripts({ dataSourceId, fromScript });
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
@@ -96,8 +99,11 @@ export class DataWranglingScripts extends PureComponent {
     }
   }
 
-  getScriptLink = (scriptId, specs, dataSourceId) =>
-    specs.type === IMAGE_SCRAPING_SCRIPT_TYPE ? `/script/${scriptId}/${dataSourceId}` : `/script/${scriptId}`;
+  getScriptLink = ({ id, type }) => {
+    return type === SCRIPT_TYPES.UPLOADED
+      ? `/script/${id}`
+      : `/script/${id}/${getMatchParam(this.props, 'dataSourceId')}`;
+  };
 
   parseSteps = (script, index) =>
     ifElse(

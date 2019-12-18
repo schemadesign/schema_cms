@@ -6,7 +6,7 @@ import { prepareFontSet } from './fonts';
 
 export const withTheme = (theme = Theme.dark) => story => (
   <ThemeProvider theme={theme}>
-    <div style={{ color: theme.text, backgroundColor: theme.background }}>{story()}</div>
+    <div style={{ color: theme.text, backgroundColor: theme.background, padding: 20 }}>{story()}</div>
   </ThemeProvider>
 );
 

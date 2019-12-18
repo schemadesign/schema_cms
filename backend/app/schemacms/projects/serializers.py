@@ -46,7 +46,10 @@ class ActiveJobSerializer(serializers.ModelSerializer):
         fields = ("id", "scripts")
 
     def get_scripts(self, obj):
-        return [{"id": step.script_id, "options": step.options} for step in obj.steps.all()]
+        return [
+            {"id": step.script_id, "options": step.options, "exec_order": step.exec_order}
+            for step in obj.steps.all()
+        ]
 
 
 class DataSourceSerializer(serializers.ModelSerializer):
@@ -476,16 +479,23 @@ class PageDetailSerializer(PageSerializer):
     folder = NestedRelatedModelSerializer(serializer=PageFolderSerializer(), read_only=True)
 
 
+class BlockImageSerializer(serializers.ModelSerializer):
+    image_name = serializers.CharField(max_length=50, read_only=True)
+
+    class Meta:
+        model = models.BlockImage
+        fields = ("id", "image", "image_name")
+
+
 class BlockSerializer(serializers.ModelSerializer):
-    image_name = serializers.SerializerMethodField(read_only=True)
+    images = BlockImageSerializer(many=True, required=False)
 
     class Meta:
         model = models.Block
-        fields = ("id", "page", "name", "type", "content", "image", "image_name", "is_active")
+        fields = ("id", "page", "name", "type", "content", "images", "is_active")
         extra_kwargs = {
             "page": {"required": False, "allow_null": True},
-            "content": {"required": False, "allow_null": True, "allow_blank": True},
-            "image": {"required": False, "allow_null": True},
+            "content": {"required": False, "allow_null": True, "allow_blank": False},
         }
         validators = [
             CustomUniqueTogetherValidator(
@@ -498,31 +508,52 @@ class BlockSerializer(serializers.ModelSerializer):
         ]
 
     def validate_type(self, type_):
-        if type_ == BlockTypes.IMAGE and "image" in self.initial_data:
-            if not self.initial_data["image"]:
-                message = f"Please select image to upload."
-                raise serializers.ValidationError({"image": message}, code="noImage")
+        if type_ == BlockTypes.IMAGE and not self.context.get('view').request.FILES:
+            message = f"Please select images to upload."
+            raise serializers.ValidationError({"images": message}, code="noImages")
 
-        if self.initial_data.get("image", None) and type_ != BlockTypes.IMAGE:
+        if self.context.get('view').request.FILES and type_ != BlockTypes.IMAGE:
             message = f"For image upload use Image Uploaded block type."
             raise serializers.ValidationError({"type": message}, code="invalidType")
 
         return type_
 
     @transaction.atomic()
+    def save(self, *args, **kwargs):
+        images = self.context.get('view').request.FILES
+        block = super().save(**kwargs)
+
+        delete_images = self.initial_data.get("delete_images")
+
+        if delete_images:
+            block.images.filter(id__in=delete_images.split(",")).delete()
+
+        if images:
+            models.BlockImage.objects.bulk_create(self.create_images(images, block))
+
+        return block
+
+    @staticmethod
+    def create_images(images, block):
+        for image in images.values():
+            image_instance = models.BlockImage()
+            image_instance.image = image
+            image_instance.image_name = image.name
+            image_instance.block = block
+            yield image_instance
+
+    @transaction.atomic()
     def update(self, instance, validated_data):
         new_type = validated_data.get("type")
 
         if new_type and (instance.type == BlockTypes.IMAGE and new_type != BlockTypes.IMAGE):
-            instance.image.delete()
+            instance.images.all().delete()
+
+        if new_type and (instance.type != BlockTypes.IMAGE and new_type == BlockTypes.IMAGE):
+            instance.content = ""
+            instance.save()
 
         return super().update(instance, validated_data)
-
-    def get_image_name(self, obj):
-        if obj.image:
-            _, file_name = obj.get_original_image_name()
-            return file_name
-        return ""
 
 
 class BlockPageSerializer(serializers.ModelSerializer):

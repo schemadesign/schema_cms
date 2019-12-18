@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { withStyles } from '../styles/withStyles';
 import { getStyles, headerBaseWidth, headerNarrowWidth } from './table.styles';
+import { isIOS } from '../../utils/is';
 
 const NUMBERED_COLUMN_NAME = '#';
 const ROWS_LIMIT = 10;
@@ -96,11 +97,11 @@ class TableComponent extends PureComponent {
   };
 
   render() {
-    const { theme, rows } = this.props;
+    const { theme } = this.props;
     const styles = getStyles(theme);
-    const table = rows.length ? this.renderTable(styles) : null;
+    const wrapperStyles = isIOS() ? { ...styles.table, ...styles.iOSStyles } : styles.tableWrapper;
 
-    return <div style={styles.tableWrapper}>{this.renderTable(styles)}</div>;
+    return <div style={wrapperStyles}>{this.renderTable(styles)}</div>;
   }
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { FileUpload } from './fileUpload.component';
+import { withTheme } from '../../../.storybook/decorators';
 
 const defaultProps = {
   id: 'id',
@@ -15,7 +16,7 @@ const withLabel = {
 const withFileName = {
   id: 'id',
   label: 'label',
-  name: 'name.csv',
+  fileNames: ['name.csv'],
 };
 
 const withCustomIcon = {
@@ -37,6 +38,7 @@ const withCustomStyles = {
 };
 
 storiesOf('Form/FileUpload', module)
+  .addDecorator(withTheme())
   .add('Default', () => <FileUpload {...defaultProps} />)
   .add('with label', () => <FileUpload {...withLabel} />)
   .add('with file name', () => <FileUpload {...withFileName} />)

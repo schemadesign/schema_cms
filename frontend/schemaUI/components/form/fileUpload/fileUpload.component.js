@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { equals, ifElse } from 'ramda';
 
 import { buttonStyles, containerStyles, getLabelStyles, inputStyles } from './fileUpload.styles';
 import { getStyles } from '../../button/button.styles';
@@ -13,11 +12,12 @@ const DEFAULT_TEXT_VALUE = 'Select a file';
 export class FileUploadComponent extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
-    fileName: PropTypes.string,
+    fileNames: PropTypes.array,
     label: PropTypes.string,
     id: PropTypes.string.isRequired,
     accept: PropTypes.string,
     onChange: PropTypes.func,
+    onRemoveItem: PropTypes.func,
     customStyles: PropTypes.object,
     customInputStyles: PropTypes.object,
     customLabelStyles: PropTypes.object,
@@ -44,41 +44,49 @@ export class FileUploadComponent extends PureComponent {
     </label>
   );
 
-  renderTextField = ({ fileName, label, id, customStyles, customLabelStyles, customInputStyles }) =>
-    ifElse(
-      equals(true),
-      () => (
-        <TextField
-          name="fileName"
-          label={label}
-          value={fileName || DEFAULT_TEXT_VALUE}
-          fullWidth
-          disabled
-          customStyles={customStyles}
-          customLabelStyles={customLabelStyles}
-          customInputStyles={customInputStyles}
-          iconComponent={this.iconComponent({ id, label })}
-        />
-      ),
-      () => this.iconComponent({ id, label })
-    )(!!label);
+  renderTextField = ({ fileNames = [], label, id, customStyles, customLabelStyles, customInputStyles }) => (
+    <TextField
+      name="fileNames"
+      label={label}
+      value={fileNames.length ? fileNames : DEFAULT_TEXT_VALUE}
+      fullWidth
+      disabled
+      customStyles={customStyles}
+      customLabelStyles={customLabelStyles}
+      customInputStyles={customInputStyles}
+      iconComponent={this.iconComponent({ id, label })}
+    />
+  );
+
+  renderContent = data => (data.label ? this.renderTextField(data) : this.iconComponent(data));
 
   render() {
     const {
       id,
-      fileName,
+      fileNames,
       label,
       customStyles,
       customLabelStyles,
       customInputStyles,
       iconComponent,
+      multiple,
+      onRemoveItem,
       ...props
     } = this.props;
 
     return (
       <div style={containerStyles}>
-        {this.renderTextField({ fileName, label, id, customStyles, customLabelStyles, customInputStyles })}
-        <input style={inputStyles} aria-hidden id={id} type="file" {...props} />
+        {this.renderContent({
+          fileNames,
+          label,
+          id,
+          customStyles,
+          customLabelStyles,
+          customInputStyles,
+          multiple,
+          onRemoveItem,
+        })}
+        <input style={inputStyles} aria-hidden id={id} multiple={multiple} type="file" {...props} />
       </div>
     );
   }

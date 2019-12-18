@@ -109,12 +109,22 @@ class PageAdmin(utils_admin.SoftDeleteObjectAdmin):
         self.handle_unique_conflicts_on_undelete(request, queryset, field="title", model_name="Page")
 
 
+class BlockImageInline(admin.TabularInline):
+    model = models.BlockImage
+    exclude = ("deleted_at",)
+    extra = 0
+
+
 @admin.register(models.Block)
 class BlockAdmin(utils_admin.SoftDeleteObjectAdmin):
     form = forms.BlockForm
-    list_display = ('id', 'name', 'page', 'folder', 'project', 'deleted_at')
+    list_display = ('id', 'name', 'page_title', 'folder', 'project', 'deleted_at')
     search_fields = ('name',)
     list_filter = ('page',)
+    inlines = (BlockImageInline,)
+
+    def page_title(self, obj):
+        return f"{obj.page.title}"
 
     def folder(self, obj):
         return obj.page.folder.name

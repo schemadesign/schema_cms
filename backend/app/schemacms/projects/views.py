@@ -444,7 +444,12 @@ class PageViewSet(
         "set_blocks": serializers.BlockSerializer,
     }
 
-    @decorators.action(detail=True, url_path='blocks', methods=["GET", "POST"])
+    @decorators.action(
+        detail=True,
+        url_path='blocks',
+        parser_classes=(parsers.FormParser, parsers.MultiPartParser),
+        methods=["GET", "POST"],
+    )
     def blocks(self, request, pk=None, **kwargs):
         page = self.get_object()
 
@@ -488,7 +493,7 @@ class BlockViewSet(
     mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = models.Block.objects.select_related("page").all()
+    queryset = models.Block.objects.prefetch_related("images").select_related("page").all()
     serializer_class = serializers.BlockSerializer
     permission_classes = (permissions.IsAuthenticated,)
 

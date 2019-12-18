@@ -1,18 +1,22 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
-import { forEach, keys, pipe, cond, equals, always, isNil, both, T } from 'ramda';
+import { cond, equals, always, isNil, both, T } from 'ramda';
 
 import { PageBlockRoutines } from './pageBlock.redux';
 import api from '../../shared/services/api';
 import { BLOCK_PATH, PAGES_PATH } from '../../shared/utils/api.constants';
 import browserHistory from '../../shared/utils/history';
 import { IMAGE_TYPE } from './pageBlock.constants';
+import { formatFormData } from '../../shared/utils/helpers';
 
-const getBlockData = ({ name, image, type, ...rest }) =>
+const convertImages = images =>
+  images.reverse().reduce((result, { file }, index) => ({ [`image${index}`]: file, ...result }), {});
+
+const getBlockData = ({ name, images, type, deleteImages, ...rest }, blockType) =>
   cond([
-    [both(equals(IMAGE_TYPE), () => isNil(image)), always({ name, type, content: '' })],
-    [equals(IMAGE_TYPE), always({ name, type, image, content: '' })],
-    [T, always({ name, type, content: rest[`${type}-content`] })],
-  ])(type);
+    [both(equals(IMAGE_TYPE), () => isNil(images)), always({ name, type, deleteImages })],
+    [equals(IMAGE_TYPE), () => ({ name, type, ...convertImages(images), deleteImages })],
+    [T, always({ name, type, content: rest[`${blockType || type}-content`] })],
+  ])(blockType || type);
 
 function* fetchList({ payload: { pageId } }) {
   try {
@@ -59,13 +63,8 @@ function* setBlocks({ payload: { pageId, active, inactive } }) {
 function* create({ payload: { pageId, ...restFields } }) {
   try {
     yield put(PageBlockRoutines.create.request());
-    const formData = new FormData();
     const fields = getBlockData(restFields);
-
-    pipe(
-      keys,
-      forEach(name => formData.append(name, fields[name]))
-    )(fields);
+    const formData = formatFormData(fields);
 
     const { data } = yield api.post(`${PAGES_PATH}/${pageId}/blocks`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
@@ -80,16 +79,11 @@ function* create({ payload: { pageId, ...restFields } }) {
   }
 }
 
-function* update({ payload: { pageId, blockId, ...restFields } }) {
+function* update({ payload: { pageId, blockId, blockType, ...restFields } }) {
   try {
     yield put(PageBlockRoutines.update.request());
-    const formData = new FormData();
-    const fields = getBlockData(restFields);
-
-    pipe(
-      keys,
-      forEach(name => formData.append(name, fields[name]))
-    )(fields);
+    const fields = getBlockData(restFields, blockType);
+    const formData = formatFormData(fields);
 
     const { data } = yield api.patch(`${BLOCK_PATH}/${blockId}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },

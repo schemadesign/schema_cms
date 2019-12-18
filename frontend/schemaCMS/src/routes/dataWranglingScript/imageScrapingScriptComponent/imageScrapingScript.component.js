@@ -5,7 +5,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { FormattedMessage } from 'react-intl';
 import { defaultStyle, darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { Form as FormUI, Typography } from 'schemaUI';
-import { always, append, equals, ifElse, path, reject } from 'ramda';
+import { always, append, equals, ifElse, path, reject, pipe, propEq, find, isNil, pathOr } from 'ramda';
 
 import { STEPS_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import {
@@ -49,8 +49,15 @@ export class ImageScrapingScript extends PureComponent {
 
   async componentDidMount() {
     try {
-      await this.props.fetchDataSource(path(['match', 'params'], this.props));
-      this.setState({ loading: false, selectedFields: this.props.imageScrapingFields });
+      const dataSource = await this.props.fetchDataSource(path(['match', 'params'], this.props));
+      const scriptId = parseInt(getMatchParam(this.props, 'scriptId'), 10);
+      const selectedFields = pipe(
+        pathOr([], ['activeJob', 'scripts']),
+        find(propEq('id', scriptId)),
+        ifElse(isNil, always(this.props.imageScrapingFields), path(['options', 'columns']))
+      )(dataSource);
+
+      this.setState({ loading: false, selectedFields });
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
