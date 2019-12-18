@@ -22,9 +22,3 @@ export const getLabelStyles = label => ({
   top: label ? 10 : 0,
   position: 'relative',
 });
-
-export const iconContainerStyles = {
-  position: 'absolute',
-  right: 0,
-  top: 0,
-};

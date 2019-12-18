@@ -17,7 +17,6 @@ export class FileUploadComponent extends PureComponent {
     id: PropTypes.string.isRequired,
     accept: PropTypes.string,
     onChange: PropTypes.func,
-    onRemoveItem: PropTypes.func,
     customStyles: PropTypes.object,
     customInputStyles: PropTypes.object,
     customLabelStyles: PropTypes.object,
@@ -70,7 +69,6 @@ export class FileUploadComponent extends PureComponent {
       customInputStyles,
       iconComponent,
       multiple,
-      onRemoveItem,
       ...props
     } = this.props;
 
@@ -84,7 +82,6 @@ export class FileUploadComponent extends PureComponent {
           customLabelStyles,
           customInputStyles,
           multiple,
-          onRemoveItem,
         })}
         <input style={inputStyles} aria-hidden id={id} multiple={multiple} type="file" {...props} />
       </div>
