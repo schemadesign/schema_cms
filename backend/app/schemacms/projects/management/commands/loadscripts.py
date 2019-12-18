@@ -62,6 +62,7 @@ class Command(BaseCommand):
     @staticmethod
     def update_script(script, filepath, modified, specs=None):
         with open(filepath, "rb") as f:
+            script.body = f.read().decode()
             script.file = File(f)
             script.last_file_modification = modified
             script.specs = specs or {}
