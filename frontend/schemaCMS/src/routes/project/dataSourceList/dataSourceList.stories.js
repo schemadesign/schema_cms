@@ -19,7 +19,7 @@ const dataSourceWithFakeJob = {
   ...dataSource,
   metaData: {
     fields: 11,
-    items: 246,
+    items: 46200,
   },
   activeJob: {
     scripts: [],

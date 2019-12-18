@@ -29,6 +29,7 @@ import { ListItemTitle } from '../../../shared/components/listComponents/listIte
 import { PREVIEW_PAGE, RESULT_PAGE, SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { getMatchParam } from '../../../shared/utils/helpers';
+import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
 
 const { CsvIcon, IntersectIcon } = Icons;
 const DEFAULT_VALUE = '—';
@@ -114,7 +115,7 @@ export class DataSourceList extends PureComponent {
     const { formatMessage } = this.props.intl;
     const list = [
       { name: formatMessage(messages.source), value: <CsvIcon customStyles={iconSourceStyles} /> },
-      { name: formatMessage(messages.items), value: items },
+      { name: formatMessage(messages.items), value: formatPrefixedNumber(items, 1) },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
       { name: formatMessage(messages.views), value: views },
