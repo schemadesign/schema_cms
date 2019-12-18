@@ -17,7 +17,7 @@ export default defineMessages({
   },
   selectImage: {
     id: 'shared.components.pageBlockForm.selectImage',
-    defaultMessage: 'Please select image(s)',
+    defaultMessage: 'Please select image(s) or drop here',
   },
   pageBlockFieldMarkdownPlaceholder: {
     id: 'shared.components.pageBlockForm.pageBlockFieldMarkdownPlaceholder',

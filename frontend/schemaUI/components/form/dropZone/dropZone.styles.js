@@ -3,9 +3,11 @@ import { defaultTheme } from '../../../utils/theme';
 export const getStyles = (theme = defaultTheme) => ({
   containerStyles: {
     border: `2px dashed ${theme.border}`,
-    width: 500,
+    width: '100%',
     height: 50,
-    display: 'block',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     cursor: 'copy',
     textAlign: 'center',
     borderRadius: 10,
@@ -13,10 +15,12 @@ export const getStyles = (theme = defaultTheme) => ({
   },
   hiddenStyles: {
     position: 'absolute',
-    display: 'none',
-    top: 0,
+    top: 5,
     left: 0,
-    width: '100%',
-    height: '100%',
+    height: 'calc(100% - 10px)',
+    background: theme.background,
+    transition: 'opacity 200ms ease-in-out',
+    opacity: 0,
+    visibility: 'hidden',
   },
 });

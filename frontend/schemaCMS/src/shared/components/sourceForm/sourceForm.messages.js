@@ -18,6 +18,10 @@ export default defineMessages({
     id: 'dataSource.view.source.fileName',
     defaultMessage: 'File Name',
   },
+  filePlaceholder: {
+    id: 'dataSource.view.source.fileName',
+    defaultMessage: 'Select file or drop here',
+  },
   processing: {
     id: 'dataSource.view.source.processing',
     defaultMessage: 'There is a script processing ongoing. Please wait until it finishes to try and upload a new file.',

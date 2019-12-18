@@ -448,62 +448,58 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
     value="image_uploaded"
   />
   <styled.div>
-    <Component>
-      <FormattedMessage
-        defaultMessage="File Name"
-        id="shared.components.pageBlockForm.pageBlockFieldImage"
-        values={Object {}}
-      />
-    </Component>
-    <styled.div>
-      <Uploader
-        accept=".png, .jpg, .jpeg, .gif"
-        checkOnlyErrors={true}
-        errors={Object {}}
-        handleChange={[Function]}
-        id="fileUpload"
-        intl={
-          Object {
-            "formatMessage": [Function],
-          }
+    <Uploader
+      accept=".png, .jpg, .jpeg, .gif"
+      checkOnlyErrors={true}
+      errors={Object {}}
+      handleChange={[Function]}
+      id="fileUpload"
+      intl={
+        Object {
+          "formatMessage": [Function],
         }
-        multiple={true}
-        name="inputImages"
-        onChange={[Function]}
-        setFieldValue={[Function]}
-        touched={Object {}}
-        type="file"
-        values={
-          Object {
-            "image": Array [
-              Object {
-                "file": "file",
-                "id": 1,
-              },
-            ],
-            "imageNames": Array [
-              Object {
-                "id": 1,
-                "imageName": "imageName.png",
-              },
-            ],
-            "name": "name",
-            "type": "image_uploaded",
-          }
+      }
+      label="File Name"
+      multiple={true}
+      name="inputImages"
+      onChange={[Function]}
+      placeholder="Please select image(s) or drop here"
+      setFieldValue={[Function]}
+      touched={Object {}}
+      type="file"
+      values={
+        Object {
+          "image": Array [
+            Object {
+              "file": "file",
+              "id": 1,
+            },
+          ],
+          "imageNames": Array [
+            Object {
+              "id": 1,
+              "imageName": "imageName.png",
+            },
+          ],
+          "name": "name",
+          "type": "image_uploaded",
         }
-      />
-    </styled.div>
+      }
+    />
     <styled.div>
       <styled.div
         key="0"
       >
-        imageName.png
+        <styled.span>
+          imageName.png
+        </styled.span>
         <Component
           customStyles={
             Object {
               "cursor": "pointer",
               "height": 30,
               "marginLeft": 20,
+              "minWidth": 30,
               "width": 30,
             }
           }

@@ -1,11 +1,18 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { buttonStyles, containerStyles, getLabelStyles, inputStyles } from './fileUpload.styles';
+import {
+  buttonStyles,
+  iconContainerStyles,
+  getLabelStyles,
+  inputStyles,
+  valueStyles,
+  containerStyles,
+} from './fileUpload.styles';
 import { getStyles } from '../../button/button.styles';
 import { UploadIcon } from '../../icons/uploadIcon';
-import { TextField } from '../textField';
 import { withStyles } from '../../styles/withStyles';
+import { Label } from '../label';
 
 const DEFAULT_TEXT_VALUE = 'Select a file';
 
@@ -14,12 +21,14 @@ export class FileUploadComponent extends PureComponent {
     name: PropTypes.string,
     fileNames: PropTypes.array,
     label: PropTypes.string,
+    placeholder: PropTypes.string,
     id: PropTypes.string.isRequired,
     accept: PropTypes.string,
     onChange: PropTypes.func,
     customStyles: PropTypes.object,
     customInputStyles: PropTypes.object,
     customLabelStyles: PropTypes.object,
+    customIconContainerStyles: PropTypes.object,
     iconComponent: PropTypes.element,
   };
 
@@ -43,18 +52,24 @@ export class FileUploadComponent extends PureComponent {
     </label>
   );
 
-  renderTextField = ({ fileNames = [], label, id, customStyles, customLabelStyles, customInputStyles }) => (
-    <TextField
-      name="fileNames"
-      label={label}
-      value={fileNames.length ? fileNames : DEFAULT_TEXT_VALUE}
-      fullWidth
-      disabled
-      customStyles={customStyles}
-      customLabelStyles={customLabelStyles}
-      customInputStyles={customInputStyles}
-      iconComponent={this.iconComponent({ id, label })}
-    />
+  renderTextField = ({
+    fileNames = [],
+    label,
+    id,
+    customLabelStyles,
+    customInputStyles,
+    customIconContainerStyles,
+    placeholder,
+  }) => (
+    <Fragment>
+      <Label htmlFor={id} customStyles={customLabelStyles}>
+        {label}
+      </Label>
+      <label htmlFor={id} style={{ ...valueStyles, ...customInputStyles }}>
+        {(fileNames.length && fileNames) || placeholder || DEFAULT_TEXT_VALUE}
+      </label>
+      <div style={{ ...iconContainerStyles, ...customIconContainerStyles }}>{this.iconComponent({ id, label })}</div>
+    </Fragment>
   );
 
   renderContent = data => (data.label ? this.renderTextField(data) : this.iconComponent(data));
@@ -67,13 +82,15 @@ export class FileUploadComponent extends PureComponent {
       customStyles,
       customLabelStyles,
       customInputStyles,
+      customIconContainerStyles,
       iconComponent,
       multiple,
+      placeholder,
       ...props
     } = this.props;
 
     return (
-      <div style={containerStyles}>
+      <div style={{ ...containerStyles, ...customStyles }}>
         {this.renderContent({
           fileNames,
           label,
@@ -81,7 +98,9 @@ export class FileUploadComponent extends PureComponent {
           customStyles,
           customLabelStyles,
           customInputStyles,
+          customIconContainerStyles,
           multiple,
+          placeholder,
         })}
         <input style={inputStyles} aria-hidden id={id} multiple={multiple} type="file" {...props} />
       </div>

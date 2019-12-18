@@ -2,7 +2,11 @@
 
 exports[`FileUpload: Component should render correctly 1`] = `
 <div
-  style={Object {}}
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
 >
   <label
     htmlFor="id"
@@ -55,33 +59,56 @@ exports[`FileUpload: Component should render correctly 1`] = `
 
 exports[`FileUpload: Component should render with custom icon 1`] = `
 <div
-  style={Object {}}
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
 >
   <Component
-    customInputStyles={Object {}}
-    customLabelStyles={Object {}}
     customStyles={Object {}}
-    disabled={true}
-    fullWidth={true}
-    iconComponent={
-      <label
-        htmlFor="id"
-        style={
-          Object {
-            "position": "relative",
-            "top": 10,
-          }
-        }
-      >
-        <span>
-          icon
-        </span>
-      </label>
+    htmlFor="id"
+  >
+    label
+  </Component>
+  <label
+    htmlFor="id"
+    style={
+      Object {
+        "cursor": "pointer",
+        "display": "block",
+        "fontSize": 18,
+        "lineHeight": "24px",
+        "paddingBottom": 30,
+        "width": "calc(100% - 70px)",
+      }
     }
-    label="label"
-    name="fileNames"
-    value="Select a file"
-  />
+  >
+    Select a file
+  </label>
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <label
+      htmlFor="id"
+      style={
+        Object {
+          "position": "relative",
+          "top": 10,
+        }
+      }
+    >
+      <span>
+        icon
+      </span>
+    </label>
+  </div>
   <input
     aria-hidden={true}
     id="id"
@@ -102,63 +129,80 @@ exports[`FileUpload: Component should render with custom icon 1`] = `
 
 exports[`FileUpload: Component should render with custom styles 1`] = `
 <div
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "red",
+      "position": "relative",
+    }
+  }
 >
   <Component
-    customInputStyles={
-      Object {
-        "backgroundColor": "green",
-      }
-    }
-    customLabelStyles={
+    customStyles={
       Object {
         "backgroundColor": "blue",
       }
     }
-    customStyles={
+    htmlFor="id"
+  >
+    label
+  </Component>
+  <label
+    htmlFor="id"
+    style={
       Object {
-        "backgroundColor": "red",
+        "backgroundColor": "green",
+        "cursor": "pointer",
+        "display": "block",
+        "fontSize": 18,
+        "lineHeight": "24px",
+        "paddingBottom": 30,
+        "width": "calc(100% - 70px)",
       }
     }
-    disabled={true}
-    fullWidth={true}
-    iconComponent={
-      <label
-        htmlFor="id"
+  >
+    Select a file
+  </label>
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <label
+      htmlFor="id"
+      style={
+        Object {
+          "position": "relative",
+          "top": 10,
+        }
+      }
+    >
+      <div
         style={
           Object {
-            "position": "relative",
-            "top": 10,
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": 0,
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
-        <div
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": 0,
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <Unknown />
-        </div>
-      </label>
-    }
-    label="label"
-    name="fileNames"
-    value="Select a file"
-  />
+        <Component />
+      </div>
+    </label>
+  </div>
   <input
     aria-hidden={true}
     id="id"
@@ -179,51 +223,74 @@ exports[`FileUpload: Component should render with custom styles 1`] = `
 
 exports[`FileUpload: Component should render with file name 1`] = `
 <div
-  style={Object {}}
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
 >
   <Component
-    customInputStyles={Object {}}
-    customLabelStyles={Object {}}
     customStyles={Object {}}
-    disabled={true}
-    fullWidth={true}
-    iconComponent={
-      <label
-        htmlFor="id"
+    htmlFor="id"
+  >
+    label
+  </Component>
+  <label
+    htmlFor="id"
+    style={
+      Object {
+        "cursor": "pointer",
+        "display": "block",
+        "fontSize": 18,
+        "lineHeight": "24px",
+        "paddingBottom": 30,
+        "width": "calc(100% - 70px)",
+      }
+    }
+  >
+    Select a file
+  </label>
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <label
+      htmlFor="id"
+      style={
+        Object {
+          "position": "relative",
+          "top": 10,
+        }
+      }
+    >
+      <div
         style={
           Object {
-            "position": "relative",
-            "top": 10,
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": 0,
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
-        <div
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": 0,
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <Unknown />
-        </div>
-      </label>
-    }
-    label="label"
-    name="fileNames"
-    value="Select a file"
-  />
+        <Component />
+      </div>
+    </label>
+  </div>
   <input
     aria-hidden={true}
     id="id"
@@ -245,51 +312,74 @@ exports[`FileUpload: Component should render with file name 1`] = `
 
 exports[`FileUpload: Component should render with label 1`] = `
 <div
-  style={Object {}}
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
 >
   <Component
-    customInputStyles={Object {}}
-    customLabelStyles={Object {}}
     customStyles={Object {}}
-    disabled={true}
-    fullWidth={true}
-    iconComponent={
-      <label
-        htmlFor="id"
+    htmlFor="id"
+  >
+    label
+  </Component>
+  <label
+    htmlFor="id"
+    style={
+      Object {
+        "cursor": "pointer",
+        "display": "block",
+        "fontSize": 18,
+        "lineHeight": "24px",
+        "paddingBottom": 30,
+        "width": "calc(100% - 70px)",
+      }
+    }
+  >
+    Select a file
+  </label>
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <label
+      htmlFor="id"
+      style={
+        Object {
+          "position": "relative",
+          "top": 10,
+        }
+      }
+    >
+      <div
         style={
           Object {
-            "position": "relative",
-            "top": 10,
+            "backgroundColor": "#1d1d20",
+            "border": "none",
+            "borderRadius": "48px",
+            "color": "#FFF",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#FFF",
+            "fontSize": 0,
+            "margin": "0",
+            "minHeight": "48px",
+            "outline": "none",
+            "padding": "0",
+            "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
           }
         }
       >
-        <div
-          style={
-            Object {
-              "backgroundColor": "#1d1d20",
-              "border": "none",
-              "borderRadius": "48px",
-              "color": "#FFF",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "fill": "#FFF",
-              "fontSize": 0,
-              "margin": "0",
-              "minHeight": "48px",
-              "outline": "none",
-              "padding": "0",
-              "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
-            }
-          }
-        >
-          <Unknown />
-        </div>
-      </label>
-    }
-    label="label"
-    name="fileNames"
-    value="Select a file"
-  />
+        <Component />
+      </div>
+    </label>
+  </div>
   <input
     aria-hidden={true}
     id="id"

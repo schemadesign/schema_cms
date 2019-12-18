@@ -1,4 +1,12 @@
-export const containerStyles = {};
+export const containerStyles = {
+  position: 'relative',
+};
+
+export const iconContainerStyles = {
+  position: 'absolute',
+  right: 0,
+  top: 0,
+};
 
 export const inputStyles = {
   visibility: 'hidden',
@@ -13,9 +21,13 @@ export const buttonStyles = {
   fontSize: 0,
 };
 
-export const customInputStyles = {
+export const valueStyles = {
+  fontSize: 18,
+  lineHeight: '24px',
   width: 'calc(100% - 70px)',
-  textOverflow: 'ellipsis',
+  paddingBottom: 30,
+  display: 'block',
+  cursor: 'pointer',
 };
 
 export const getLabelStyles = label => ({

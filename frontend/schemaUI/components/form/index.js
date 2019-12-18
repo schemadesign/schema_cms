@@ -8,6 +8,7 @@ import { FileUpload } from './fileUpload';
 import { Checkbox } from './checkbox';
 import { CheckboxGroup } from './checkboxGroup';
 import { Select } from './select';
+import { DropZone } from './dropZone';
 
 const Form = {
   Input,
@@ -21,6 +22,7 @@ const Form = {
   Checkbox,
   CheckboxGroup,
   Select,
+  DropZone,
 };
 
 export {
@@ -35,5 +37,6 @@ export {
   Checkbox,
   CheckboxGroup,
   Select,
+  DropZone,
 };
 export default Form;

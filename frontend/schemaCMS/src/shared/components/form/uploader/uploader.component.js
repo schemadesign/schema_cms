@@ -7,11 +7,12 @@ import elementAttributes from 'html-element-attributes/index.json';
 import { Container, ErrorWrapper } from './uploader.styles';
 import { renderWhenTrue } from '../../../utils/rendering';
 
-const { FileUpload } = Form;
+const { FileUpload, DropZone } = Form;
 
 export class Uploader extends PureComponent {
   static propTypes = {
     fileNames: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+    placeholder: PropTypes.string,
     label: PropTypes.string,
     id: PropTypes.string,
     name: PropTypes.string,
@@ -19,7 +20,6 @@ export class Uploader extends PureComponent {
     touched: PropTypes.object,
     checkOnlyErrors: PropTypes.bool,
     onChange: PropTypes.func,
-    onRemoveItem: PropTypes.func,
   };
 
   static defaultProps = {
@@ -32,7 +32,7 @@ export class Uploader extends PureComponent {
 
   render() {
     const allowedAttributes = [...elementAttributes['*'], ...elementAttributes.input];
-    const { errors, touched, checkOnlyErrors, fileNames, label, id, onChange, onRemoveItem, ...restProps } = this.props;
+    const { errors, touched, checkOnlyErrors, fileNames, label, id, onChange, ...restProps } = this.props;
     const filteredProps = pick(allowedAttributes, restProps);
     const isError = !!errors[filteredProps.name];
     const isTouched = touched[filteredProps.name];
@@ -40,14 +40,8 @@ export class Uploader extends PureComponent {
 
     return (
       <Container>
-        <FileUpload
-          fileNames={fileNames}
-          label={label}
-          id={id}
-          onChange={onChange}
-          onRemoveItem={onRemoveItem}
-          {...filteredProps}
-        />
+        <FileUpload fileNames={fileNames} label={label} id={id} onChange={onChange} {...filteredProps} />
+        <DropZone id={id} onChange={onChange} {...filteredProps} hidden />
         {this.renderError(error)}
       </Container>
     );

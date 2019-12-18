@@ -4,20 +4,24 @@ import PropTypes from 'prop-types';
 import { getStyles } from './dropZone.styles';
 import { withStyles } from '../../styles/withStyles';
 
+const DEFAULT_LABEL = 'Drop here';
+
 export class DropZoneComponent extends PureComponent {
   static propTypes = {
     hidden: PropTypes.bool,
     multiple: PropTypes.bool,
     label: PropTypes.string,
     accept: PropTypes.string,
-    onChange: Function.prototype.isRequired,
+    customStyles: PropTypes.object,
+    onChange: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     hidden: false,
     multiple: false,
     accept: '',
-    label: '',
+    label: DEFAULT_LABEL,
+    customStyles: {},
   };
 
   counter = 0;
@@ -42,18 +46,30 @@ export class DropZoneComponent extends PureComponent {
     document.removeEventListener('dragleave', this.handleDragLeave);
   }
 
+  hideDropZone = () => {
+    if (this.dropRef.current && this.props.hidden) {
+      this.dropRef.current.style.visibility = 'hidden';
+      this.dropRef.current.style.opacity = 0;
+    }
+  };
+
+  showDropZone = () => {
+    if (this.dropRef.current && this.props.hidden) {
+      this.dropRef.current.style.visibility = 'visible';
+      this.dropRef.current.style.opacity = 0.9;
+    }
+  };
+
   handleDragLeave = () => {
     this.counter--;
-    if (this.dropRef.current && this.props.hidden && this.counter === 0) {
-      this.dropRef.current.style.display = 'none';
+    if (this.counter === 0) {
+      this.hideDropZone();
     }
   };
 
   handleDragEnter = () => {
     this.counter++;
-    if (this.dropRef.current && this.props.hidden) {
-      this.dropRef.current.style.display = 'block';
-    }
+    this.showDropZone();
   };
 
   handleDragOver = e => {
@@ -75,9 +91,7 @@ export class DropZoneComponent extends PureComponent {
     const files = this.props.multiple ? acceptFiles : [acceptFiles[0]];
     this.props.onChange(files);
 
-    if (this.dropRef.current && this.props.hidden) {
-      this.dropRef.current.style.display = 'none';
-    }
+    this.hideDropZone();
   };
 
   getAcceptFiles = files => {
@@ -93,9 +107,10 @@ export class DropZoneComponent extends PureComponent {
   };
 
   render() {
-    const { hidden, id, theme, label } = this.props;
+    const { hidden, id, theme, label, customStyles } = this.props;
     const styles = getStyles(theme);
-    const containerStyles = hidden ? { ...styles.containerStyles, ...styles.hiddenStyles } : styles.containerStyles;
+    const mainStyles = { ...styles.containerStyles, ...customStyles };
+    const containerStyles = hidden ? { ...mainStyles, ...styles.hiddenStyles } : mainStyles;
 
     return (
       <label style={containerStyles} onDrop={this.handleDrop} ref={this.dropRef} id={`dropZone-${id}`} htmlFor={id}>
