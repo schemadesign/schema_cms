@@ -5,7 +5,7 @@ import numpy as np
 
 class FieldType:
     STRING = "string"
-    DATE = "date"
+    DATE_TIME = "datetime"
     BOOLEAN = "boolean"
     NUMBER = "number"
 

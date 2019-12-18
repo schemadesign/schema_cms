@@ -50,7 +50,7 @@ def map_general_dtypes(dtype):
     elif dtype.startswith("bool"):
         return FieldType.BOOLEAN
     elif dtype.startswith("date") or dtype.startswith("time"):
-        return FieldType.DATE
+        return FieldType.DATE_TIME
     else:
         raise ValueError("Unknown data type")
 
@@ -68,10 +68,28 @@ def get_preview_data(data_frame):
         return json.dumps({"data": [], "fields": {}}).encode(), items, fields
 
     sample_of_5 = data_frame.head(5)
-    table_preview = json.loads(sample_of_5.to_json(orient="records", date_format=None))
-    fields_info = json.loads(data_frame.describe(include="all").to_json(orient="columns", double_precision=2))
-    samples = json.loads(sample_of_5.head(1).to_json(orient="records", date_format=None))
+    table_preview = json.loads(sample_of_5.to_json(orient="records"))
+    samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
+
+    mean = data_frame.mean(numeric_only=True).to_dict()
+    min_ = data_frame.min(numeric_only=True).to_dict()
+    max_ = data_frame.max(numeric_only=True).to_dict()
+    std = data_frame.std(numeric_only=True).to_dict()
+    unique = data_frame.nunique().to_dict()
+    nan = data_frame.isna().sum()
     columns = data_frame.columns.to_list()
+
+    fields_info = {}
+
+    for i in columns:
+        fields_info[i] = {}
+        fields_info[i]["mean"] = mean.get(i, None)
+        fields_info[i]["min"] = min_.get(i, None)
+        fields_info[i]["max"] = max_.get(i, None)
+        fields_info[i]["std"] = std.get(i, None)
+        fields_info[i]["unique"] = unique.get(i, None)
+        fields_info[i]["nan"] = nan.get(i, None)
+        fields_info[i]["count"] = items
 
     dtypes = {i: k for i, k in zip(columns, data_frame.dtypes)}
     for key, value in dtypes.items():
