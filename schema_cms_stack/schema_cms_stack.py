@@ -27,7 +27,7 @@ APP_S3_BUCKET_NAME = "schemacms"
 IMAGE_S3_BUCKET_NAME = "schemacms-images"
 LAMBDA_AUTH_TOKEN_ENV_NAME = "LAMBDA_AUTH_TOKEN"
 JOB_PROCESSING_MAX_RETRIES = 3
-JOB_PROCESSING_MEMORY_SIZES = [512, 1280]
+JOB_PROCESSING_MEMORY_SIZES = [512, 1536]
 
 INSTALLATION_MODE_CONTEXT_KEY = "installation_mode"
 DOMAIN_NAME_CONTEXT_KEY = "domain_name"
@@ -338,7 +338,7 @@ class LambdaWorker(core.Stack):
                 LAMBDA_AUTH_TOKEN_ENV_NAME: scope.api.api_lambda_token,
             },
             memory_size=memory_size,
-            timeout=core.Duration.seconds(180),
+            timeout=core.Duration.seconds(300),
             tracing=aws_lambda.Tracing.ACTIVE,
         )
         lambda_fn.add_event_source(aws_lambda_event_sources.SqsEventSource(queue, batch_size=1))

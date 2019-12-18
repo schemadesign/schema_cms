@@ -9,4 +9,8 @@ category_columns = df.select_dtypes(include=["category"]).columns.tolist()
 df[text_columns] = df[text_columns].apply(lambda x: x.str.title())
 
 for category in category_columns:
-    df[category].cat.rename_categories(lambda x: x.title(), inplace=True)
+    try:
+        df[category].cat.rename_categories(lambda x: x.title(), inplace=True)
+    except ValueError as e:
+        df[category] = df[category].str.title().astype("category")
+        continue
