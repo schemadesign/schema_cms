@@ -23,7 +23,7 @@ function* fetchList({ payload: { dataSourceId, fromScript } }) {
     const { data } = yield api.get(`${DATA_SOURCES_PATH}/${dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`);
     const dataSource = yield select(selectDataSource);
 
-    yield put(DataWranglingScriptsRoutines.fetchList.success(data, dataSource));
+    yield put(DataWranglingScriptsRoutines.fetchList.success({ data, dataSource }));
   } catch (e) {
     yield put(DataWranglingScriptsRoutines.fetchList.failure());
   } finally {

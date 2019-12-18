@@ -16,6 +16,8 @@ import {
   sortWith,
   ifElse,
   ascend,
+  find,
+  defaultTo,
 } from 'ramda';
 
 import { SCRIPT_TYPES } from './dataWranglingScripts.constants';
@@ -53,23 +55,24 @@ const addScriptType = script =>
   )(script);
 
 const addOrder = dataSourceScripts => script => {
-  const dataSourceScript = find(propEq('id', script.id))(dataSourceScripts);
+  const dataSourceScript = defaultTo({}, find(propEq('id', script.id))(dataSourceScripts));
+
   return ifElse(
     propEq('id', dataSourceScript.id),
     set(lensProp('order'), dataSourceScript.execOrder),
-    set(lensProp('order'), Infinity)
-  );
+    set(lensProp('order'), Number.MAX_SAFE_INTEGER)
+  )(script);
 };
 
 const updateDataWranglingScript = (state = INITIAL_STATE, { payload }) => state.set('script', payload);
-const updateDataWranglingScripts = (state = INITIAL_STATE, { payload, dataSource }) =>
+const updateDataWranglingScripts = (state = INITIAL_STATE, { payload: { data, dataSource } }) =>
   state.set(
     'scripts',
     pipe(
       map(addScriptType),
-      map(addOrder(pathOr([], ['activeJob', 'scripts'])(dataSource))),
-      sortWith([ascend(prop('type')), ascend(prop('order'))])
-    )(payload)
+      map(addOrder(pathOr([], ['activeJob', 'scripts'], dataSource))),
+      sortWith([ascend(prop('order')), ascend(prop('type'))])
+    )(data)
   );
 
 const setImageScrapingFields = (state = INITIAL_STATE, { payload: { imageScrapingFields, scriptId } }) =>
