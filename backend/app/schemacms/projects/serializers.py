@@ -2,7 +2,7 @@ from django.db import transaction
 from rest_framework import serializers, exceptions
 
 from schemacms.projects import models
-from .constants import DataSourceJobState, BlockTypes
+from .constants import ProcessingState, PROCESSING_STATE_CHOICES, BlockTypes
 from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer
@@ -14,7 +14,7 @@ class DataSourceMetaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DataSourceMeta
-        fields = ("items", "fields", "fields_names", "preview", "filters")
+        fields = ("items", "fields", "fields_names", "preview", "filters", "status", "error")
 
     def get_filters(self, meta):
         return meta.datasource.filters_count
@@ -101,7 +101,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         ]
 
     def validate(self, attrs):
-        states = [DataSourceJobState.PROCESSING, DataSourceJobState.PENDING]
+        states = [ProcessingState.PROCESSING, ProcessingState.PENDING]
 
         if not self.instance:
             return super().validate(attrs)
@@ -296,19 +296,25 @@ class DataSourceJobSerializer(serializers.ModelSerializer):
         return obj.datasource.project_id
 
 
-class PublicApiUpdateMetaSerializer(serializers.Serializer):
-    items = serializers.IntegerField(min_value=0)
-    fields = serializers.IntegerField(min_value=0)
-    fields_names = serializers.ListField()
-    preview_data = serializers.DictField()
+class PublicApiUpdateMetaSerializer(serializers.ModelSerializer):
+    preview = serializers.DictField(required=False)
 
     class Meta:
-        fields = ("items", "fields", "fields_names", "preview_data")
+        model = models.DataSourceMeta
+        fields = ("items", "fields", "fields_names", "preview", "status", "error")
+
+
+class PublicApiUpdateJobMetaSerializer(serializers.ModelSerializer):
+    preview = serializers.DictField(required=True)
+
+    class Meta:
+        model = models.DataSourceJobMetaData
+        fields = ("items", "fields", "fields_names", "preview")
 
 
 class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
     job_state = serializers.ChoiceField(
-        choices=[DataSourceJobState.PROCESSING, DataSourceJobState.SUCCESS, DataSourceJobState.FAILED]
+        choices=[ProcessingState.PROCESSING, ProcessingState.SUCCESS, ProcessingState.FAILED]
     )
     result = serializers.CharField()
 
@@ -320,9 +326,9 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
         super().__init__(*args, **kwargs)
         job_state = self.initial_data.get("job_state")
         job_state_available_fields = {
-            DataSourceJobState.PROCESSING: [],
-            DataSourceJobState.SUCCESS: ["result"],
-            DataSourceJobState.FAILED: ["error"],
+            ProcessingState.PROCESSING: [],
+            ProcessingState.SUCCESS: ["result"],
+            ProcessingState.FAILED: ["error"],
         }
         available_fields = job_state_available_fields.get(job_state, []) + ["job_state"]
         exclude_fields = self.fields.keys() - available_fields
@@ -342,9 +348,9 @@ class PublicApiDataSourceJobStateSerializer(serializers.ModelSerializer):
         for field_name, val in self.validated_data.items():
             setattr(self.instance, field_name, val)
         job_state_action = {
-            DataSourceJobState.PROCESSING: self.instance.processing,
-            DataSourceJobState.SUCCESS: self.instance.success,
-            DataSourceJobState.FAILED: self.instance.fail,
+            ProcessingState.PROCESSING: self.instance.processing,
+            ProcessingState.SUCCESS: self.instance.success,
+            ProcessingState.FAILED: self.instance.fail,
         }
         job_state_action[job_state]()
         return super().save(**kwargs)

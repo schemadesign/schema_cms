@@ -18,30 +18,6 @@ def copy_steps_from_active_job(steps, job):
         step.save()
 
 
-def update_meta(view, model_class, request, pk, *args, **kwargs):
-    copy_steps = request.data.pop("copy_steps", None)
-
-    serializer = view.get_serializer(data=request.data)
-    serializer.is_valid(raise_exception=True)
-
-    with transaction.atomic():
-        obj = get_object_or_404(model_class.objects.select_for_update(), pk=pk)
-        obj.update_meta(**serializer.validated_data)
-
-        if isinstance(model_class(), models.DataSource):
-            fake_job = obj.create_job(description=f"DataSource {obj.id} file upload")
-
-            if copy_steps:
-                copy_steps_from_active_job(obj.active_job.steps.all(), fake_job)
-
-            obj.active_job = None
-            obj.save(update_fields=["active_job"])
-
-            transaction.on_commit(fake_job.schedule)
-
-    return response.Response(status=status.HTTP_204_NO_CONTENT)
-
-
 class ProjectViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets.ModelViewSet):
     serializer_class = serializers.ProjectSerializer
     permission_classes = (permissions.IsAuthenticated, user_permissions.IsAdminOrReadOnly)
@@ -259,7 +235,7 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
 
         data = dict()
         for key, value in fields.items():
-            data[key] = dict(field_type=models.map_general_dtypes(value["dtype"]), unique=value["unique"])
+            data[key] = dict(field_type=value["dtype"], unique=value["unique"])
             data[key]["filter_type"] = getattr(constants.FilterTypesGroups, data[key]["field_type"])
 
         return response.Response(data=data)
@@ -319,8 +295,30 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         permission_classes=[permissions.IsAuthenticated],
         authentication_classes=[authentication.EnvTokenAuthentication],
     )
-    def update_meta(self, *args, **kwargs):
-        return update_meta(self, models.DataSource, *args, **kwargs)
+    def update_meta(self, request, *args, **kwargs):
+        # breakpoint()
+        data_source = self.get_object()
+        copy_steps = request.data.pop("copy_steps", None)
+        status_ = request.data.get("status")
+
+        serializer = self.get_serializer(data=request.data, context=data_source.meta_data)
+        serializer.is_valid(raise_exception=True)
+
+        data_source.update_meta(**serializer.validated_data)
+
+        if status_ == constants.ProcessingState.SUCCESS:
+            with transaction.atomic():
+                fake_job = data_source.create_job(description=f"DataSource {data_source.id} file upload")
+
+                if copy_steps:
+                    copy_steps_from_active_job(data_source.active_job.steps.all(), fake_job)
+
+                    data_source.active_job = None
+                    data_source.save(update_fields=["active_job"])
+
+                transaction.on_commit(fake_job.schedule)
+
+        return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class DataSourceJobDetailViewSet(
@@ -334,7 +332,7 @@ class DataSourceJobDetailViewSet(
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class_mapping = {
         "update_state": serializers.PublicApiDataSourceJobStateSerializer,
-        "update_meta": serializers.PublicApiUpdateMetaSerializer,
+        "update_meta": serializers.PublicApiUpdateJobMetaSerializer,
     }
 
     def get_queryset(self):
@@ -373,8 +371,14 @@ class DataSourceJobDetailViewSet(
         permission_classes=[permissions.IsAuthenticated],
         authentication_classes=[authentication.EnvTokenAuthentication],
     )
-    def update_meta(self, *args, **kwargs):
-        return update_meta(self, models.DataSourceJob, *args, **kwargs)
+    def update_meta(self, request, *args, **kwargs):
+        job = self.get_object()
+
+        serializer = self.get_serializer(data=request.data, context=job)
+        serializer.is_valid(raise_exception=True)
+        job.update_meta(**serializer.validated_data)
+
+        return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class DataSourceScriptDetailView(generics.RetrieveAPIView, generics.UpdateAPIView):

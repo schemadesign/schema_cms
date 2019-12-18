@@ -98,7 +98,7 @@ class TestDataSource:
                 'col_2': {'dtype': 'number'},
             }
         }
-        ds.active_job.update_meta(preview_data=preview_data, items=0, fields=0, fields_names=[])
+        ds.active_job.update_meta(preview=preview_data, items=0, fields=0, fields_names=[])
 
         ds.save(update_fields=["active_job"])
         ds.refresh_from_db()
@@ -123,7 +123,9 @@ class TestDataSourceMeta:
     @pytest.mark.parametrize("offset, whence", [(0, 0), (0, 2)])  # test different file cursor positions
     def test_data(self, data_source_factory, offset, whence):
         ds = data_source_factory()
-        ds.update_meta(preview_data={}, items=0, fields=0, fields_names=[])
+        ds.update_meta(preview={"test": "test"}, items=0, fields=0, fields_names=[])
+
+        ds.meta_data.refresh_from_db()
         expected = json.loads(ds.meta_data.preview.read())
         ds.meta_data.preview.seek(offset, whence)
 

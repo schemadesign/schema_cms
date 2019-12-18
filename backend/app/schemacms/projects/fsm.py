@@ -6,32 +6,26 @@ from . import constants
 
 class DataSourceJobFSM(models.Model):
     job_state = django_fsm.FSMField(
-        choices=constants.DATA_SOURCE_JOB_STATE_CHOICES, default=constants.DataSourceJobState.PENDING
+        choices=constants.PROCESSING_STATE_CHOICES, default=constants.ProcessingState.PENDING
     )
 
     class Meta:
         abstract = True
 
     @django_fsm.transition(
-        job_state,
-        source=[constants.DataSourceJobState.PENDING],
-        target=constants.DataSourceJobState.PROCESSING,
+        job_state, source=[constants.ProcessingState.PENDING], target=constants.ProcessingState.PROCESSING,
     )
     def processing(self):
         pass
 
     @django_fsm.transition(
-        job_state,
-        source=[constants.DataSourceJobState.PROCESSING],
-        target=constants.DataSourceJobState.SUCCESS,
+        job_state, source=[constants.ProcessingState.PROCESSING], target=constants.ProcessingState.SUCCESS,
     )
     def success(self):
         self.datasource.set_active_job(self)
 
     @django_fsm.transition(
-        job_state,
-        source=[constants.DataSourceJobState.PROCESSING],
-        target=constants.DataSourceJobState.FAILED,
+        job_state, source=[constants.ProcessingState.PROCESSING], target=constants.ProcessingState.FAILED,
     )
     def fail(self):
         pass

@@ -1,4 +1,5 @@
 import json
+import logging
 
 import boto3
 from django.utils import functional
@@ -43,7 +44,15 @@ def schedule_object_meta_processing(obj, source_file_size, copy_steps):
         "data": obj.meta_file_serialization(),
         "copy_steps": copy_steps,
     }
-    return schedule_worker_with(data=data, source_file_size=source_file_size)
+
+    try:
+        message_id = schedule_worker_with(data=data, source_file_size=source_file_size)
+    except Exception as e:
+        obj.meta_data.status = constants.ProcessingState.FAILED
+        obj.meta_data.save(update_fields=["status"])
+        return logging.error(f"Scheduling *DataSource Update Meta fail - {e}")
+
+    return message_id
 
 
 def schedule_job_scripts_processing(datasource_job, source_file_size):
