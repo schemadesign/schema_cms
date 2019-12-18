@@ -1,4 +1,4 @@
-import { is, identity, memoizeWith, until } from 'ramda';
+import { is, identity, memoizeWith } from 'ramda';
 
 const METRICS = [
   { value: 1, symbol: '' },
