@@ -1,1 +1,1 @@
-df = df.fillna(method="bfill")
+df.fillna(method="bfill", inplace=True)

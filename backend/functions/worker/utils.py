@@ -3,6 +3,13 @@ import json
 import numpy as np
 
 
+class FieldType:
+    STRING = "string"
+    DATE = "date"
+    BOOLEAN = "boolean"
+    NUMBER = "number"
+
+
 class NumpyEncoder(json.JSONEncoder):
     """ Special json encoder for numpy types """
 

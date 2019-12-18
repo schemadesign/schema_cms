@@ -21,6 +21,12 @@ from schemacms.utils import error
 pytestmark = [pytest.mark.django_db]
 
 
+def multisort(xs, specs):
+    for key, reverse_ in reversed(specs):
+        xs.sort(key=operator.attrgetter(key), reverse=reverse_)
+    return xs
+
+
 class TestListCreateProjectView:
     """
     Tests /api/v1/projects/ create operation
@@ -781,7 +787,7 @@ class TestDataSourceScriptsView:
 
     @staticmethod
     def sort_scripts(scripts):
-        return sorted(scripts, key=operator.attrgetter("is_predefined"), reverse=True)
+        return multisort(scripts, (("is_predefined", True), ("name", False)))
 
 
 class TestDataSourceScriptUploadView:
