@@ -59,7 +59,6 @@ exports[`Pre: Component should render with custom theme 1`] = `
     Object {
       "color": "gray",
       "fontFamily": "sans-serif",
-      "fontSize": "18px",
       "size": "100px",
     }
   }

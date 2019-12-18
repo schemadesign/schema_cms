@@ -59,7 +59,6 @@ exports[`Span: Component should render with custom theme 1`] = `
     Object {
       "color": "gray",
       "fontFamily": "serif",
-      "fontSize": "14px",
       "size": "100px",
     }
   }

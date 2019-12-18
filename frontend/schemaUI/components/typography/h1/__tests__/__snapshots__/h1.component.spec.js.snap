@@ -75,7 +75,6 @@ exports[`H1: Component should render with custom theme 1`] = `
     Object {
       "color": "gray",
       "fontFamily": "serif",
-      "fontSize": "24px",
       "letterSpacing": "-0.12px",
       "lineHight": 1.25,
       "margin": 0,
