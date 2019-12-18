@@ -1,12 +1,14 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import { compose } from 'ramda';
+import { Typography } from 'schemaUI';
 
 import messages from './notFound.messages';
-import { Container } from './notFound.styles';
-import { H1 } from '../../theme/typography';
+import { InfoContainer } from '../../shared/components/container/container.styles';
+
+const { H1 } = Typography;
 
 export class NotFoundComponent extends PureComponent {
   static propTypes = {
@@ -15,13 +17,15 @@ export class NotFoundComponent extends PureComponent {
 
   render() {
     return (
-      <Container>
+      <Fragment>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
 
-        <H1>
-          <FormattedMessage {...messages.title} />
-        </H1>
-      </Container>
+        <InfoContainer>
+          <H1>
+            <FormattedMessage {...messages.title} />
+          </H1>
+        </InfoContainer>
+      </Fragment>
     );
   }
 }

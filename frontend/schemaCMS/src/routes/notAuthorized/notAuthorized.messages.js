@@ -2,8 +2,12 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  notAuthorized: {
-    id: 'notAuthorized.notAuthorized',
+  pageTitle: {
+    id: 'notAuthorized.pageTitle',
     defaultMessage: 'Not authorized',
+  },
+  title: {
+    id: 'notAuthorized.title',
+    defaultMessage: "You don't have permissions to see this content.",
   },
 });

@@ -6,6 +6,12 @@ import { DesktopTopHeader } from './desktopTopHeader.component';
 
 export const defaultProps = {
   isAdmin: false,
+  userId: 'userId',
+};
+
+const noUserProps = {
+  isAdmin: true,
+  userId: null,
 };
 
 const titleProps = {
@@ -28,5 +34,6 @@ const longProps = {
 storiesOf('Shared Components|Header/DesktopTopHeader', module)
   .addDecorator(withTheme())
   .add('Default', () => <DesktopTopHeader {...defaultProps} />)
+  .add('No user', () => <DesktopTopHeader {...noUserProps} />)
   .add('With title', () => <DesktopTopHeader {...titleProps} />)
   .add('With long title', () => <DesktopTopHeader {...longProps} />);

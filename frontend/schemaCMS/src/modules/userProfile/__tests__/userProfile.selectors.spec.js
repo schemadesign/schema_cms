@@ -7,6 +7,7 @@ import {
   selectIsAdmin,
   selectDataWranglingDetail,
   selectUserData,
+  selectUserId,
 } from '../userProfile.selectors';
 import { ROLES } from '../userProfile.constants';
 
@@ -15,7 +16,7 @@ describe('UserProfile: selectors', () => {
     userProfile: {
       isFetched: false,
       isAdmin: true,
-      user: { role: ROLES.ADMIN },
+      user: { id: '1', role: ROLES.ADMIN },
       dataWranglingDetail: { data: 'data' },
     },
   });
@@ -46,6 +47,12 @@ describe('UserProfile: selectors', () => {
     describe('selectIsAdmin', () => {
       it('should select if user is admin', () => {
         expect(selectIsAdmin(state)).to.equal(state.userProfile.user.role === ROLES.ADMIN);
+      });
+    });
+
+    describe('selectUserId', () => {
+      it('should select user id', () => {
+        expect(selectUserId(state)).to.equal(state.userProfile.user.id);
       });
     });
   });

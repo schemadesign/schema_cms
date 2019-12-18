@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { prop } from 'ramda';
+import { prop, path } from 'ramda';
 
 export const selectUserProfileDomain = prop('userProfile');
 
@@ -21,4 +21,9 @@ export const selectDataWranglingDetail = createSelector(
 export const selectIsAdmin = createSelector(
   selectUserProfileDomain,
   prop('isAdmin')
+);
+
+export const selectUserId = createSelector(
+  selectUserProfileDomain,
+  path(['user', 'id'])
 );

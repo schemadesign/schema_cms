@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Header, Icons, Menu } from 'schemaUI';
+import { always } from 'ramda';
 
 import { renderWhenTrue } from '../../utils/rendering';
 import { LogoutModal } from '../logoutModal';
@@ -37,6 +38,7 @@ export class DesktopTopHeader extends TopHeader {
   static propTypes = {
     title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     isAdmin: PropTypes.bool.isRequired,
+    userId: PropTypes.string,
   };
 
   state = {
@@ -55,32 +57,42 @@ export class DesktopTopHeader extends TopHeader {
     });
   };
 
-  renderTitle = renderWhenTrue((_, title) => (
-    <TitleWrapper>
-      <Title>{title}</Title>
-    </TitleWrapper>
-  ));
+  renderTitle = title =>
+    renderWhenTrue(
+      always(
+        <TitleWrapper>
+          <Title>{title}</Title>
+        </TitleWrapper>
+      )
+    )(!!title);
 
-  renderHeaderBar = title => (
+  renderUserIcon = userId =>
+    renderWhenTrue(
+      always(
+        <IconLink to="/settings">
+          <UserIcon />
+        </IconLink>
+      )
+    )(!!userId);
+
+  renderHeaderBar = (title, userId) => (
     <HeaderWrapper>
       <LogoLink to="/">
         <Logo />
       </LogoLink>
-      {this.renderTitle(!!title, title)}
+      {this.renderTitle(title)}
       <Actions>
         <Button onClick={this.handleLogout} customStyles={logoutButtonStyles}>
           <ExitIcon />
         </Button>
-        <IconLink to="/settings">
-          <UserIcon />
-        </IconLink>
+        {this.renderUserIcon(userId)}
       </Actions>
     </HeaderWrapper>
   );
 
   render() {
     const { logoutModalOpen } = this.state;
-    const { title } = this.props;
+    const { title, userId } = this.props;
 
     const buttonProps = {
       onClick: this.handleToggleMenu,
@@ -91,14 +103,14 @@ export class DesktopTopHeader extends TopHeader {
       id: 'desktopTopHeaderCloseMenuButton',
     };
 
-    const primaryMenu = this.renderMenuItems(this.primaryMenuItems, PrimaryList, PrimaryItem);
+    const primaryMenu = userId && this.renderMenuItems(this.primaryMenuItems, PrimaryList, PrimaryItem);
     const secondaryMenu = this.renderMenuItems(this.secondaryMenuItems, SecondaryList, SecondaryItem);
 
     return (
       <TopContainer>
         <Container>
           <Header buttonProps={buttonProps} customStyles={headerCustomStyles} customButtonStyles={customButtonStyles}>
-            {this.renderHeaderBar(title)}
+            {this.renderHeaderBar(title, userId)}
           </Header>
           <Overlayer visible={this.state.isMenuOpen} onClick={this.handleToggleMenu} />
           <Menu

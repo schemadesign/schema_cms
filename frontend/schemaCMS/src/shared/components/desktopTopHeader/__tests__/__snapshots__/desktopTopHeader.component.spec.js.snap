@@ -108,7 +108,7 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
             >
               <FormattedMessage
                 defaultMessage="Projects"
-                id="shared.components.desktopTopHeader.project"
+                id="shared.components.desktopTopHeader.projects"
                 values={Object {}}
               />
             </Link>
@@ -131,6 +131,160 @@ exports[`DesktopTopHeader: Component should render correctly 1`] = `
             </Link>
           </Styled(styled.li)>
         </Styled(styled.ul)>
+        <Styled(styled.ul)>
+          <Styled(styled.li)
+            active={false}
+            hide={false}
+            key="0"
+          >
+            <Link
+              id={null}
+              onClick={[Function]}
+              to="/"
+            >
+              <FormattedMessage
+                defaultMessage="About Schema CMS"
+                id="shared.components.desktopTopHeader.about"
+                values={Object {}}
+              />
+            </Link>
+          </Styled(styled.li)>
+          <Styled(styled.li)
+            active={false}
+            hide={false}
+            key="1"
+          >
+            <Link
+              id={null}
+              onClick={[Function]}
+              to="/"
+            >
+              <FormattedMessage
+                defaultMessage="API Doc"
+                id="shared.components.desktopTopHeader.api"
+                values={Object {}}
+              />
+            </Link>
+          </Styled(styled.li)>
+          <Styled(styled.li)
+            active={false}
+            hide={false}
+            key="2"
+          >
+            <Link
+              id={null}
+              onClick={[Function]}
+              to="/"
+            >
+              <FormattedMessage
+                defaultMessage="GitHub Repository"
+                id="shared.components.desktopTopHeader.repository"
+                values={Object {}}
+              />
+            </Link>
+          </Styled(styled.li)>
+        </Styled(styled.ul)>
+      </styled.div>
+    </Component>
+  </styled.div>
+  <LogoutModal
+    logoutModalOpen={false}
+    onAction={[Function]}
+    redirectUrl="/logout"
+  />
+</styled.div>
+`;
+
+exports[`DesktopTopHeader: Component should render correctly when no user 1`] = `
+<styled.div>
+  <styled.div>
+    <Component
+      buttonProps={
+        Object {
+          "id": "desktopTopHeaderOpenMenuButton",
+          "onClick": [Function],
+        }
+      }
+      customButtonStyles={
+        Object {
+          "flex": "0 0 auto",
+          "position": null,
+        }
+      }
+      customStyles={
+        Object {
+          "padding": null,
+        }
+      }
+    >
+      <styled.div>
+        <Styled(Styled(Link))
+          to="/"
+        >
+          <styled.schemaLogo.svg />
+        </Styled(Styled(Link))>
+        <styled.div>
+          <Component
+            customStyles={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderRadius": null,
+                "display": "flex",
+                "height": "calc(100% - 20px)",
+                "margin": "6px 0 10px 10px",
+                "padding": "0 7px",
+              }
+            }
+            onClick={[Function]}
+          >
+            <Component />
+          </Component>
+        </styled.div>
+      </styled.div>
+    </Component>
+    <styled.div
+      onClick={[Function]}
+    />
+    <Component
+      closeButtonProps={
+        Object {
+          "customStyles": Object {
+            "backgroundColor": "transparent",
+            "right": 44,
+            "top": 44,
+          },
+          "id": "desktopTopHeaderCloseMenuButton",
+        }
+      }
+      customStyles={
+        Object {
+          "maxWidth": 595,
+          "minHeight": null,
+          "padding": 50,
+          "transform": "translateX(calc((100vw - 1000px) / -2 + 8px))",
+          "zIndex": 9999,
+        }
+      }
+      onClose={[Function]}
+    >
+      <styled.div>
+        <styled.div>
+          <Styled(H2)
+            id="headerTitle"
+          >
+            SchemaCMS
+          </Styled(H2)>
+          <Styled(H1)
+            id="headerSubtitle"
+          >
+            Menu
+          </Styled(H1)>
+        </styled.div>
+      </styled.div>
+      <styled.div
+        onClick={[Function]}
+      >
         <Styled(styled.ul)>
           <Styled(styled.li)
             active={false}
