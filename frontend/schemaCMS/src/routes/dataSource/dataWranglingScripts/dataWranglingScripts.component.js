@@ -86,11 +86,12 @@ export class DataWranglingScripts extends PureComponent {
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
+      debugger;
       this.setState({ error });
     } finally {
       this.setState({
         loading: false,
-        orderedDataWranglingScripts: this.props.dataWranglingScripts.asMutable({ deep: true }).splice(0, 4),
+        orderedDataWranglingScripts: this.props.dataWranglingScripts.asMutable({ deep: true }),
       });
     }
   }
@@ -177,8 +178,8 @@ export class DataWranglingScripts extends PureComponent {
     });
   };
 
-  renderCheckboxes = ({ id, name, specs }, index) => (
-    <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index} name={name}>
+  renderCheckboxes = ({ id, name, specs, type = 'custom' }, index) => (
+    <Draggable key={id} accept="CHECKBOX" onMove={this.handleMove} id={id} index={index}>
       <Checkbox id={`checkbox-${index}`} value={id.toString()}>
         <Link to={this.getScriptLink(id, specs, getMatchParam(this.props, 'dataSourceId'), this.props)}>
           {name}

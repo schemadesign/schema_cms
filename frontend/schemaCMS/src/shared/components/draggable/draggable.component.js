@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { Container } from './draggable.styles';
 
-export const Draggable = ({ onMove, children, accept, id, index, name }) => {
+export const Draggable = ({ onMove, children, accept, id, index }) => {
   const ref = useRef(null);
   const [, drop] = useDrop({
     accept: accept,
@@ -55,7 +55,6 @@ export const Draggable = ({ onMove, children, accept, id, index, name }) => {
   });
 
   const opacity = isDragging ? 0.4 : 1;
-  console.log(opacity, name);
   drag(drop(ref));
 
   return (
@@ -67,7 +66,6 @@ export const Draggable = ({ onMove, children, accept, id, index, name }) => {
 
 Draggable.propTypes = {
   accept: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
   id: PropTypes.any.isRequired,
   index: PropTypes.number.isRequired,
   children: PropTypes.any,
