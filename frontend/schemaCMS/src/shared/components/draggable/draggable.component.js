@@ -2,12 +2,13 @@ import React, { useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import PropTypes from 'prop-types';
 
-import { Container } from './draggable.styles';
+const DRAGGING_OPACITY = 0.4;
+const DEFAULT_OPACITY = 1;
 
 export const Draggable = ({ onMove, children, accept, id, index }) => {
   const ref = useRef(null);
   const [, drop] = useDrop({
-    accept: accept,
+    accept,
     hover(item, monitor) {
       if (!ref.current) {
         return;
@@ -54,7 +55,7 @@ export const Draggable = ({ onMove, children, accept, id, index }) => {
     }),
   });
 
-  const opacity = isDragging ? 0.4 : 1;
+  const opacity = isDragging ? DRAGGING_OPACITY : DEFAULT_OPACITY;
   drag(drop(ref));
 
   return (

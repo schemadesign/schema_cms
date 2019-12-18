@@ -176,8 +176,6 @@ export class DataWranglingScripts extends PureComponent {
     tempScripts.splice(dragIndex, 1);
     tempScripts.splice(hoverIndex, 0, dragCard);
 
-    // console.log(tempScripts);
-
     this.setState({
       orderedDataWranglingScripts: tempScripts,
     });
