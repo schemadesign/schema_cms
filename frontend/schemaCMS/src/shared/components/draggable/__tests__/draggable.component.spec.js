@@ -1,12 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { DndProvider } from 'react-dnd';
+import Backend from 'react-dnd-html5-backend';
 
-import { DraggableComponent as Draggable } from '../draggable.component';
+import { Draggable } from '../draggable.component';
+import { defaultProps } from '../draggable.stories';
 
 describe('Draggable: Component', () => {
-  const defaultProps = {};
-
-  const component = props => <Draggable {...defaultProps} {...props} />;
+  const component = props => (
+    <DndProvider backend={Backend}>
+      <Draggable {...defaultProps} {...props} />
+    </DndProvider>
+  );
 
   const render = (props = {}) => shallow(component(props));
 

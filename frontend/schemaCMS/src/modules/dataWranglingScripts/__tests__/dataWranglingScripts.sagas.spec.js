@@ -26,14 +26,23 @@ describe('DataWranglingScripts: sagas', () => {
         { id: 1, name: 'name 1', specs: {}, isPredefined: true },
         { id: 2, name: 'name 2', specs: {}, isPredefined: true },
       ];
-      const fetchListData = [{ ...responseData[0], type: DEFAULT }, { ...responseData[1], type: DEFAULT }];
+
+      const dataSource = {
+        activeJob: {
+          scripts: [{ id: 1, execOrder: 0 }],
+        },
+      };
+
       const payload = { dataSourceId: 1, fromScript: true };
 
       mockApi.get(`${DATA_SOURCES_PATH}/${payload.dataSourceId}${DATA_WRANGLING_SCRIPTS_PATH}`).reply(OK, responseData);
 
+      const successPayload = { data: responseData, dataSource };
+
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
-        .put(DataWranglingScriptsRoutines.fetchList.success(fetchListData))
+        .provide([[select(selectDataSource), dataSource]])
+        .put(DataWranglingScriptsRoutines.fetchList.success(successPayload))
         .dispatch(DataWranglingScriptsRoutines.fetchList(payload))
         .silentRun();
     });
@@ -78,11 +87,17 @@ describe('DataWranglingScripts: sagas', () => {
         { id: 2, name: 'name 2', specs: {}, isPredefined: true },
         { id: 3, name: 'name 3', specs: {}, isPredefined: false },
       ];
-      const fetchListData = [
-        { ...responseData[2], type: UPLOADED },
-        { ...responseData[0], type: DEFAULT },
-        { ...responseData[1], type: DEFAULT },
-      ];
+
+      const dataSource = {
+        activeJob: {
+          scripts: [{ id: 1, execOrder: 0 }],
+        },
+      };
+
+      const fetchListSuccessPayload = {
+        data: responseData,
+        dataSource,
+      };
 
       mockApi
         .post(`${DATA_SOURCES_PATH}/${payload.dataSourceId}/script-upload`, /form-data; name="file"[^]*file/m, options)
@@ -91,7 +106,8 @@ describe('DataWranglingScripts: sagas', () => {
 
       await expectSaga(watchDataWranglingScripts)
         .withState(defaultState)
-        .put(DataWranglingScriptsRoutines.fetchList.success(fetchListData))
+        .provide([[select(selectDataSource), dataSource]])
+        .put(DataWranglingScriptsRoutines.fetchList.success(fetchListSuccessPayload))
         .put(DataWranglingScriptsRoutines.uploadScript.success())
         .dispatch(DataWranglingScriptsRoutines.uploadScript(payload))
         .silentRun();

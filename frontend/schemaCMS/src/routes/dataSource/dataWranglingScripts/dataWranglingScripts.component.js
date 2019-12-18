@@ -89,7 +89,6 @@ export class DataWranglingScripts extends PureComponent {
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
-      debugger;
       this.setState({ error });
     } finally {
       this.setState({

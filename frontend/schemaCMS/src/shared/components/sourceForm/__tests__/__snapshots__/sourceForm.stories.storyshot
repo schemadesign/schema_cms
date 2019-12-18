@@ -233,7 +233,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
         }
       >
         <label
-          htmlFor="fileNames"
+          htmlFor="fileName"
           style={
             Object {
               "border": "none",
@@ -251,8 +251,8 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
         </label>
         <input
           disabled={true}
-          id="fileNames"
-          name="fileNames"
+          id="fileName"
+          name="fileName"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -265,7 +265,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
             }
           }
           type="text"
-          value="fileName"
+          value="Select a file"
         />
         <div
           style={
@@ -325,6 +325,7 @@ exports[`Storyshots Shared Components|Source Form Default 1`] = `
       <input
         accept=".csv"
         aria-hidden={true}
+        fileNames="fileName"
         id="fileUpload"
         name="file"
         onChange={[Function]}

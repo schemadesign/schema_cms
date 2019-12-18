@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataWranglingScripts: Component should render correctly 1`] = `
-<Fragment>
+<DndProvider
+  backend={[Function]}
+>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
@@ -62,24 +64,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
           },
         ]
       }
-      fetchDataWranglingScripts={
-        [MockFunction] {
-          "calls": Array [
-            Array [
-              Object {
-                "dataSourceId": "1",
-                "fromScript": false,
-              },
-            ],
-          ],
-          "results": Array [
-            Object {
-              "type": "return",
-              "value": Promise {},
-            },
-          ],
-        }
-      }
+      fetchDataWranglingScripts={[Function]}
       hideOnDesktop={false}
       history={
         Object {
@@ -152,7 +137,7 @@ exports[`DataWranglingScripts: Component should render correctly 1`] = `
       <Component />
     </Formik>
   </LoadingWrapper>
-</Fragment>
+</DndProvider>
 `;
 
 exports[`DataWranglingScripts: Component should render correctly form 1`] = `
@@ -205,65 +190,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
     name="steps"
     onChange={[Function]}
     value={Array []}
-  >
-    <Component
-      id="checkbox-0"
-      key="0"
-      value="1"
-    >
-      <Styled(Link)
-        to="/script/1"
-      >
-        name 1
-        <styled.div />
-        <styled.span>
-          <FormattedMessage
-            defaultMessage="Uploaded"
-            id="dataSource.dataWranglingScripts.uploaded"
-            values={Object {}}
-          />
-        </styled.span>
-      </Styled(Link)>
-    </Component>
-    <Component
-      id="checkbox-1"
-      key="1"
-      value="2"
-    >
-      <Styled(Link)
-        to="/script/2/1"
-      >
-        name 2
-        <styled.div />
-        <styled.span>
-          <FormattedMessage
-            defaultMessage="Default"
-            id="dataSource.dataWranglingScripts.default"
-            values={Object {}}
-          />
-        </styled.span>
-      </Styled(Link)>
-    </Component>
-    <Component
-      id="checkbox-2"
-      key="2"
-      value="3"
-    >
-      <Styled(Link)
-        to="/script/3/1"
-      >
-        name 3
-        <styled.div />
-        <styled.span>
-          <FormattedMessage
-            defaultMessage="Custom"
-            id="dataSource.dataWranglingScripts.custom"
-            values={Object {}}
-          />
-        </styled.span>
-      </Styled(Link)>
-    </Component>
-  </Component>
+  />
   <NavigationContainer
     fixed={false}
     hideOnDesktop={false}
@@ -316,34 +243,7 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
         },
       ]
     }
-    fetchDataWranglingScripts={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "dataSourceId": "1",
-              "fromScript": false,
-            },
-          ],
-          Array [
-            Object {
-              "dataSourceId": "1",
-              "fromScript": false,
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-        ],
-      }
-    }
+    fetchDataWranglingScripts={[Function]}
     hideOnDesktop={true}
     history={
       Object {

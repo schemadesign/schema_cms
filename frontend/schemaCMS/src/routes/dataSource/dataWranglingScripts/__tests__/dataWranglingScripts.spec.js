@@ -11,14 +11,12 @@ describe('DataWranglingScripts: Component', () => {
   const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', async () => {
-    defaultProps.fetchDataWranglingScripts = jest.fn().mockReturnValue(Promise.resolve());
-    const wrapper = render();
-    await Promise.resolve();
+    const wrapper = await render();
     global.expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly form', () => {
-    const wrapper = render()
+  it('should render correctly form', async () => {
+    const wrapper = await render()
       .find(Formik)
       .dive();
     global.expect(wrapper).toMatchSnapshot();

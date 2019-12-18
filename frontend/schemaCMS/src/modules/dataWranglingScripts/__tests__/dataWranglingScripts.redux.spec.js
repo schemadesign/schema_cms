@@ -37,10 +37,17 @@ describe('DataWranglingScripts: redux', () => {
 
   describe('when FETCH_LIST/SUCCESS action is received', () => {
     it('should set dataWranglings', () => {
-      const scripts = ['data 1', 'data 2'];
-      const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchList.success(scripts));
+      const data = [{ id: 1 }];
+      const dataSource = {
+        activeJob: {
+          scripts: [{ id: 1, execOrder: 0 }],
+        },
+      };
 
-      expect(resultState.scripts).to.deep.equal(scripts);
+      const payload = { data, dataSource };
+      const resultState = dataWranglingReducer(defaultState, DataWranglingScriptsRoutines.fetchList.success(payload));
+
+      expect(resultState.scripts).to.deep.equal([{ ...data[0], order: 0, type: 'custom' }]);
     });
   });
 

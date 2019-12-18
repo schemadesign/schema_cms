@@ -1,20 +1,24 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import Immutable from 'seamless-immutable';
 
 import { withTheme } from '../../../.storybook/decorators';
 import { history, intl } from '../../../.storybook/helpers';
 import { DataWranglingScripts } from './dataWranglingScripts.component';
 import { SCRIPT_TYPES } from '../../../modules/dataWranglingScripts/dataWranglingScripts.constants';
 
+
+const dataWranglingScripts = new Immutable([
+  { id: 1, name: 'name 1', specs: {}, isPredefined: false, type: SCRIPT_TYPES.UPLOADED, },
+  { id: 2, name: 'name 2', specs: {}, isPredefined: true, type: SCRIPT_TYPES.DEFAULT },
+  { id: 3, name: 'name 3', specs: { type: 'type' }, isPredefined: true, type: SCRIPT_TYPES.CUSTOM },
+]);
+
 export const defaultProps = {
-  dataWranglingScripts: [
-    { id: 1, name: 'name 1', specs: {}, isPredefined: false, type: SCRIPT_TYPES.UPLOADED, },
-    { id: 2, name: 'name 2', specs: {}, isPredefined: true, type: SCRIPT_TYPES.DEFAULT },
-    { id: 3, name: 'name 3', specs: { type: 'type' }, isPredefined: true, type: SCRIPT_TYPES.CUSTOM },
-  ],
+  dataWranglingScripts,
   dataSource: { metaData: {} },
   bindSubmitForm: Function.prototype,
-  fetchDataWranglingScripts: Function.prototype,
+  fetchDataWranglingScripts: () => Promise.resolve(),
   uploadScript: Function.prototype,
   imageScrapingFields: [],
   customScripts: [],
