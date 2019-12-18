@@ -293,6 +293,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
           >
             <Link
               id={null}
+              onClick={[Function]}
               to="/"
             >
               <FormattedMessage
@@ -309,6 +310,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
           >
             <Link
               id={null}
+              onClick={[Function]}
               to="/"
             >
               <FormattedMessage
@@ -325,6 +327,7 @@ exports[`DesktopTopHeader: Component should render correctly when no user 1`] = 
           >
             <Link
               id={null}
+              onClick={[Function]}
               to="/"
             >
               <FormattedMessage

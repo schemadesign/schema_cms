@@ -64,6 +64,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/project"
           >
             <FormattedMessage
@@ -80,6 +81,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
         >
           <Link
             id="userBtn"
+            onClick={[Function]}
             to="/user"
           >
             <FormattedMessage
@@ -111,6 +113,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/"
           >
             <FormattedMessage
@@ -127,6 +130,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/"
           >
             <FormattedMessage
@@ -143,6 +147,7 @@ exports[`TopHeader: Component should render correctly 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/"
           >
             <FormattedMessage
@@ -227,6 +232,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/path"
           >
             Primary
@@ -239,6 +245,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/path"
           >
             Charts
@@ -251,6 +258,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/project"
           >
             <FormattedMessage
@@ -267,6 +275,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
         >
           <Link
             id="userBtn"
+            onClick={[Function]}
             to="/user"
           >
             <FormattedMessage
@@ -298,6 +307,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/path"
           >
             Secondary
@@ -319,6 +329,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/"
           >
             <FormattedMessage
@@ -335,6 +346,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/"
           >
             <FormattedMessage
@@ -351,6 +363,7 @@ exports[`TopHeader: Component should render correctly with custom menu 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/"
           >
             <FormattedMessage
@@ -435,6 +448,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/project"
           >
             <FormattedMessage
@@ -451,6 +465,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         >
           <Link
             id="userBtn"
+            onClick={[Function]}
             to="/user"
           >
             <FormattedMessage
@@ -467,6 +482,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/project/projectId"
           >
             <FormattedMessage
@@ -483,6 +499,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/project/projectId/datasource"
           >
             <FormattedMessage
@@ -499,6 +516,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/project/projectId/folder"
           >
             <FormattedMessage
@@ -530,6 +548,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/"
           >
             <FormattedMessage
@@ -546,6 +565,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/"
           >
             <FormattedMessage
@@ -562,6 +582,7 @@ exports[`TopHeader: Component should render correctly with project id 1`] = `
         >
           <Link
             id={null}
+            onClick={[Function]}
             to="/"
           >
             <FormattedMessage
