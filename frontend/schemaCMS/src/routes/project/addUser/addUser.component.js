@@ -2,14 +2,15 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { always, find, ifElse, propEq } from 'ramda';
 import { FormattedMessage } from 'react-intl';
+import { Icons } from 'schemaUI';
 
 import {
   Action,
-  AddIcon,
   Button,
+  buttonStyles,
   Container,
   Email,
-  RemoveIcon,
+  iconStyles,
   UserFullName,
   UserItem,
   UserItemDescription,
@@ -99,13 +100,17 @@ export class AddUser extends PureComponent {
     return ifElse(
       find(propEq('id', id)),
       always(
-        <Button id={`removeUserPlusButton${index}`} onClick={() => this.handleRemoveUser(id)}>
-          <RemoveIcon />
+        <Button
+          id={`removeUserPlusButton${index}`}
+          onClick={() => this.handleRemoveUser(id)}
+          customStyles={buttonStyles}
+        >
+          <Icons.MinusIcon customStyles={iconStyles} />
         </Button>
       ),
       always(
-        <Button id={`addUserPlusButton${index}`} onClick={() => this.handleAddUser(id)}>
-          <AddIcon />
+        <Button id={`addUserPlusButton${index}`} onClick={() => this.handleAddUser(id)} customStyles={buttonStyles}>
+          <Icons.PlusIcon customStyles={iconStyles} />
         </Button>
       )
     )(usersInProject);

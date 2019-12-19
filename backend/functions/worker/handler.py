@@ -3,6 +3,7 @@ try:
 except ImportError:
     pass
 
+import csv
 import json
 import logging
 import os
@@ -20,14 +21,13 @@ import scipy as sp
 import sentry_sdk
 from sentry_sdk.integrations.aws_lambda import AwsLambdaIntegration
 
-import pyarrow.parquet as pq
-from pyarrow import BufferReader, csv as pa_csv
+from pyarrow import BufferReader, Table
 
 from common import api, db, services, settings, types
 import errors
 import mocks
 from image_scraping import image_scraping  # noqa
-from utils import NumpyEncoder
+from utils import FieldType, NumpyEncoder
 
 
 logger = logging.getLogger()
@@ -42,8 +42,23 @@ current_job = None
 current_step = None
 
 
+def map_general_dtypes(dtype):
+    if dtype.startswith("float") or dtype.startswith("int"):
+        return FieldType.NUMBER
+    elif dtype.startswith("str") or dtype.startswith("object") or dtype.startswith("category"):
+        return FieldType.STRING
+    elif dtype.startswith("bool"):
+        return FieldType.BOOLEAN
+    elif dtype.startswith("date") or dtype.startswith("time"):
+        return FieldType.DATE_TIME
+    else:
+        raise ValueError("Unknown data type")
+
+
 def read_file_to_data_frame(file):
-    return dt.fread(file, na_strings=["", ""], fill=True)
+    table = Table.from_pydict(dt.fread(file, na_strings=[""], fill=True).to_dict())
+
+    return table.to_pandas(date_as_object=True, strings_to_categorical=True)
 
 
 def get_preview_data(data_frame):
@@ -52,31 +67,33 @@ def get_preview_data(data_frame):
     if items == 0:
         return json.dumps({"data": [], "fields": {}}).encode(), items, fields
 
-    sample_of_5 = data_frame.head(5).to_pandas()
+    sample_of_5 = data_frame.head(5)
     table_preview = json.loads(sample_of_5.to_json(orient="records"))
     samples = json.loads(sample_of_5.head(1).to_json(orient="records"))
 
-    mean = data_frame.mean().to_dict()
-    min_ = data_frame.min().to_dict()
-    max_ = data_frame.max().to_dict()
-    std = data_frame.sd().to_dict()
+    mean = data_frame.mean(numeric_only=True).to_dict()
+    min_ = data_frame.min(numeric_only=True).to_dict()
+    max_ = data_frame.max(numeric_only=True).to_dict()
+    std = data_frame.std(numeric_only=True).to_dict()
     unique = data_frame.nunique().to_dict()
-    columns = data_frame.names
+    nan = data_frame.isna().sum()
+    columns = data_frame.columns.to_list()
 
     fields_info = {}
 
     for i in columns:
         fields_info[i] = {}
-        fields_info[i]["mean"] = mean[i][0]
-        fields_info[i]["min"] = min_[i][0]
-        fields_info[i]["max"] = max_[i][0]
-        fields_info[i]["std"] = std[i][0]
-        fields_info[i]["unique"] = unique[i][0]
+        fields_info[i]["mean"] = mean.get(i, None)
+        fields_info[i]["min"] = min_.get(i, None)
+        fields_info[i]["max"] = max_.get(i, None)
+        fields_info[i]["std"] = std.get(i, None)
+        fields_info[i]["unique"] = unique.get(i, None)
+        fields_info[i]["nan"] = nan.get(i, None)
         fields_info[i]["count"] = items
 
-    dtypes = {i: k for i, k in zip(columns, data_frame.stypes)}
+    dtypes = {i: k for i, k in zip(columns, data_frame.dtypes)}
     for key, value in dtypes.items():
-        fields_info[key]["dtype"] = value.name
+        fields_info[key]["dtype"] = map_general_dtypes(value.name)
 
     for key, value in samples[0].items():
         fields_info[key]["sample"] = value
@@ -111,24 +128,17 @@ def process_datasource_meta_source_file(data_source: dict):
         return logging.error(f"Data Source {datasource.id} fail to create meta data - {e}")
 
 
-def write_dataframe_to_csv_on_s3(dataframe, filename, is_pandas):
+def write_data_frame_to_csv_on_s3(data_frame, filename):
     csv_buffer = StringIO()
 
-    if is_pandas:
-        csv_buffer.write(dataframe.to_csv(index=False, encoding="utf-8"))
-    else:
-        csv_buffer.write(dataframe.to_csv())
+    csv_buffer.write(data_frame.to_csv(index=False))
     services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename).put(Body=csv_buffer.getvalue())
 
-    return services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, filename)
 
-
-def csv_to_parquet(file, file_name):
+def write_data_frame_to_parquet_on_s3(data_frame, file_name):
     buffer = BytesIO()
-    convert_options = pa_csv.ConvertOptions(strings_can_be_null=True)
 
-    table = pa_csv.read_csv(BufferReader(file.get()["Body"].read()), convert_options=convert_options)
-    pq.write_table(table, buffer, compression="snappy")
+    data_frame.to_parquet(buffer, engine="pyarrow")
 
     services.s3_resource.Object(settings.AWS_STORAGE_BUCKET_NAME, file_name.replace(".csv", ".parquet")).put(
         Body=buffer.getvalue()
@@ -155,12 +165,7 @@ def process_job(job_data: dict):
         logger.info(f"Loading source file: {source_file_path} ver. {source_file_version}")
 
         try:
-            if current_job.steps:
-                df = read_file_to_data_frame(source_file["Body"]).to_pandas()
-                is_pandas = True
-            else:
-                df = read_file_to_data_frame(source_file["Body"])
-                is_pandas = False
+            df = read_file_to_data_frame(source_file["Body"])
         except Exception as e:
             raise errors.JobLoadingSourceFileError(f"{e} @ loading source file")
 
@@ -179,11 +184,8 @@ def process_job(job_data: dict):
         )
 
         try:
-
-            new_csv = write_dataframe_to_csv_on_s3(df, result_file_name, is_pandas)
-            csv_to_parquet(new_csv, result_file_name)
-            df = dt.Frame(df)
-
+            write_data_frame_to_csv_on_s3(df, result_file_name)
+            write_data_frame_to_parquet_on_s3(df, result_file_name)
         except Exception as e:
             raise errors.JobSavingFilesError(f"{e} @ saving results files")
 
@@ -224,7 +226,7 @@ def process_job(job_data: dict):
         return logging.critical(f"Error while saving results - {e}")
 
     except Exception as e:
-        return logging.critical(str(e))
+        return logging.critical(str(e), exc_info=True)
 
 
 def main(event, context):

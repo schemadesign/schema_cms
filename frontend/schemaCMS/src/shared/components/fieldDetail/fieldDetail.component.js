@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { defaultTo, innerJoin, isNil } from 'ramda';
+import { defaultTo, innerJoin, isNil, pipe } from 'ramda';
 
+import { formatPrefixedNumber } from '../../utils/numberFormating';
 import { renderWhenTrue } from '../../utils/rendering';
 import messages from './fieldDetail.messages';
 import { EDITABLE_FIELDS, EMPTY, DEFAULT_STRUCTURE, INFORMATION_FIELDS } from './fieldDetail.constants';
@@ -14,7 +15,10 @@ export class FieldDetail extends PureComponent {
     intl: PropTypes.object.isRequired,
   };
 
-  getTextValue = defaultTo('');
+  getTextValue = pipe(
+    formatPrefixedNumber,
+    defaultTo('')
+  );
 
   renderEditIcon = renderWhenTrue(() => <EditIcon />);
 

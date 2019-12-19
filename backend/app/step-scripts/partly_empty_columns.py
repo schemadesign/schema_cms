@@ -1,1 +1,1 @@
-df = df.dropna(how="any", axis=1)
+df.dropna(how="any", axis=1, inplace=True)

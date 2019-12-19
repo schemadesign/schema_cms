@@ -18,8 +18,8 @@ export default defineMessages({
     id: 'shared.components.desktopTopHeader.repository',
     defaultMessage: 'GitHub Repository',
   },
-  project: {
-    id: 'shared.components.desktopTopHeader.project',
+  projects: {
+    id: 'shared.components.desktopTopHeader.projects',
     defaultMessage: 'Projects',
   },
   logOut: {

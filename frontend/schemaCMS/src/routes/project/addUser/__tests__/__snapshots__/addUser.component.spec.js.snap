@@ -172,17 +172,31 @@ exports[`AddUser: Component should render correctly with users 1`] = `
       key="0"
     >
       <styled.div>
-        <Styled(H2)>
+        <styled.div>
           Alan Watts
-        </Styled(H2)>
-        <Styled(H3) />
+        </styled.div>
+        <styled.div />
       </styled.div>
       <styled.div>
         <Styled(Component)
+          customStyles={
+            Object {
+              "height": 42,
+              "minHeight": 42,
+              "width": 42,
+            }
+          }
           id="removeUserPlusButton0"
           onClick={[Function]}
         >
-          <styled.div />
+          <Component
+            customStyles={
+              Object {
+                "height": 42,
+                "width": 42,
+              }
+            }
+          />
         </Styled(Component)>
       </styled.div>
     </styled.div>
@@ -190,19 +204,33 @@ exports[`AddUser: Component should render correctly with users 1`] = `
       key="1"
     >
       <styled.div>
-        <Styled(H2)>
+        <styled.div>
           Dale Chihuly
-        </Styled(H2)>
-        <Styled(H3)>
+        </styled.div>
+        <styled.div>
           loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
-        </Styled(H3)>
+        </styled.div>
       </styled.div>
       <styled.div>
         <Styled(Component)
+          customStyles={
+            Object {
+              "height": 42,
+              "minHeight": 42,
+              "width": 42,
+            }
+          }
           id="addUserPlusButton1"
           onClick={[Function]}
         >
-          <styled.div />
+          <Component
+            customStyles={
+              Object {
+                "height": 42,
+                "width": 42,
+              }
+            }
+          />
         </Styled(Component)>
       </styled.div>
     </styled.div>
@@ -210,17 +238,31 @@ exports[`AddUser: Component should render correctly with users 1`] = `
       key="2"
     >
       <styled.div>
-        <Styled(H2)>
+        <styled.div>
           Dave Bowie
-        </Styled(H2)>
-        <Styled(H3) />
+        </styled.div>
+        <styled.div />
       </styled.div>
       <styled.div>
         <Styled(Component)
+          customStyles={
+            Object {
+              "height": 42,
+              "minHeight": 42,
+              "width": 42,
+            }
+          }
           id="addUserPlusButton2"
           onClick={[Function]}
         >
-          <styled.div />
+          <Component
+            customStyles={
+              Object {
+                "height": 42,
+                "width": 42,
+              }
+            }
+          />
         </Styled(Component)>
       </styled.div>
     </styled.div>
@@ -228,19 +270,33 @@ exports[`AddUser: Component should render correctly with users 1`] = `
       key="3"
     >
       <styled.div>
-        <Styled(H2)>
+        <styled.div>
           Pellentesque a massa at purus cursus egestas. Aliquam ut vehicula. Praesent est erat, laoreet et ornare ullamcorper, finibus id nisl. Etiam tempor, ligula a sagittis
-        </Styled(H2)>
-        <Styled(H3)>
+        </styled.div>
+        <styled.div>
           loremipsumdolorsitametconsecteturadipiscinglitdonecobortis@nisitnullalobortisiaculis.com
-        </Styled(H3)>
+        </styled.div>
       </styled.div>
       <styled.div>
         <Styled(Component)
+          customStyles={
+            Object {
+              "height": 42,
+              "minHeight": 42,
+              "width": 42,
+            }
+          }
           id="addUserPlusButton3"
           onClick={[Function]}
         >
-          <styled.div />
+          <Component
+            customStyles={
+              Object {
+                "height": 42,
+                "width": 42,
+              }
+            }
+          />
         </Styled(Component)>
       </styled.div>
     </styled.div>

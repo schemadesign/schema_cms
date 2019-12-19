@@ -6,6 +6,7 @@ import { EditIcon } from './editIcon';
 import { ExitIcon } from './exitIcon';
 import { IntersectIcon } from './intersectIcon';
 import { MenuIcon } from './menuIcon';
+import { MinusIcon } from './minusIcon';
 import { PlusIcon } from './plusIcon';
 import { UserIcon } from './userIcon';
 import { UploadIcon } from './uploadIcon';
@@ -32,6 +33,7 @@ const Icons = {
   ExitIcon,
   IntersectIcon,
   MenuIcon,
+  MinusIcon,
   PlusIcon,
   UserIcon,
   UploadIcon,
@@ -49,6 +51,7 @@ export {
   ExitIcon,
   IntersectIcon,
   MenuIcon,
+  MinusIcon,
   PlusIcon,
   UserIcon,
   UploadIcon,

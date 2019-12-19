@@ -1,18 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotFound: Component should render correctly 1`] = `
-<styled.div>
+<Fragment>
   <HelmetWrapper
     defer={true}
     encodeSpecialCharacters={true}
     title="Not found"
   />
-  <styled.h1>
-    <FormattedMessage
-      defaultMessage="Error: 404"
-      id="notFound.title"
-      values={Object {}}
-    />
-  </styled.h1>
-</styled.div>
+  <styled.div>
+    <H1>
+      <FormattedMessage
+        defaultMessage="Error: 404"
+        id="notFound.title"
+        values={Object {}}
+      />
+    </H1>
+  </styled.div>
+</Fragment>
 `;

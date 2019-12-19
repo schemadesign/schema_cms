@@ -2,28 +2,48 @@
 
 exports[`Storyshots NotAuthorized Default 1`] = `
 .c0 {
+  color: #1d1d20;
   text-align: center;
-  margin: 50px;
+  padding: 50px 10px;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 1.5em;
 }
 
 <div
-  className="c0"
->
-  <h1
-    style={
-      Object {
-        "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-        "fontSize": "24px",
-        "fontWeight": 600,
-        "letterSpacing": "-0.12px",
-        "lineHight": 1.25,
-        "margin": 0,
-      }
+  style={
+    Object {
+      "minHeight": "100vh",
     }
+  }
+>
+  <style>
+    
+  body {
+    color: #1d1d20;
+    background-color: #FFF;
+  }
+
+  </style>
+  <div
+    className="c0"
   >
-    <span>
-      Not authorized
-    </span>
-  </h1>
+    <h1
+      style={
+        Object {
+          "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": "24px",
+          "fontWeight": 600,
+          "letterSpacing": "-0.12px",
+          "lineHight": 1.25,
+          "margin": 0,
+        }
+      }
+    >
+      <span>
+        You don't have permissions to see this content.
+      </span>
+    </h1>
+  </div>
 </div>
 `;

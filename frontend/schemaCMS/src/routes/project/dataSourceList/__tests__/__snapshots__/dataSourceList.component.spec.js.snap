@@ -297,7 +297,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-1"
               >
-                246
+                46.2k
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)>
@@ -397,7 +397,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-1"
               >
-                246
+                46.2k
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)>

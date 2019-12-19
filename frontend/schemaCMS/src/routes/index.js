@@ -2,29 +2,31 @@ import React, { Component } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import browserHistory from '../shared/utils/history';
+import { AUTH_PATH } from '../shared/utils/api.constants';
 import App from './app.container';
 import AuthRoute from './authRoute/authRoute.container';
 import JWT from './jwt/jwt.container';
-import { NotFound } from './notFound';
-import { AUTH_PATH } from '../shared/utils/api.constants';
-import { Project } from './project';
-import { ResetPassword } from './resetPassword';
-import { Logout } from './logout';
 import { DataSource } from './dataSource';
 import { DataWranglingScript } from './dataWranglingScript';
-import { User } from './user';
-import { Settings } from './settings';
-import { JobDetail } from './jobDetail';
 import { Filter } from './filter';
-import { Preview as JobPreview } from './jobDetail/preview';
-import { NotAuthorized } from './notAuthorized';
 import { Folder } from './folder';
+import { JobDetail } from './jobDetail';
+import { Logout } from './logout';
+import { NotAuthorized } from './notAuthorized';
+import { NotFound } from './notFound';
+import { NotRegistered } from './notRegistered';
 import { Page } from './page';
 import { PageBlock } from './pageBlock';
+import { Preview as JobPreview } from './jobDetail/preview';
+import { Project } from './project';
+import { ResetPassword } from './resetPassword';
+import { Settings } from './settings';
+import { User } from './user';
 
 export const ROUTES = {
   HOME: '/',
   NOT_FOUND: '/404',
+  AUTH: '/auth',
   NOT_AUTHORIZED: '/not-authorized',
   PROJECT: '/project',
   RESET_PASSWORD: '/reset-password',
@@ -84,11 +86,13 @@ export default class RootContainer extends Component {
 
             <Route exact path="/login" render={() => browserHistory.push(AUTH_PATH)} />
 
-            <Route exact path="/auth/confirm/" component={JWT} />
+            <Route exact path={`${ROUTES.AUTH}/confirm`} component={JWT} />
+
+            <Route exact path={`${ROUTES.AUTH}/not-registered`} component={NotRegistered} />
 
             <Route
               exact
-              path="/auth/confirm/:user/:token/"
+              path={`${ROUTES.AUTH}/confirm/:user/:token/`}
               render={({ match }) => {
                 const location = {
                   pathname: '/auth/confirm/',
