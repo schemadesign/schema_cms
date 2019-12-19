@@ -21,3 +21,5 @@ class BlockForm(SoftDeleteObjectAdminForm):
         if self.files and type_ != BlockTypes.IMAGE:
             message = f"For image upload use Image Uploaded block type."
             raise forms.ValidationError(message)
+
+        return type_
