@@ -110,9 +110,9 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         Std. Dev.
       </styled.span>
       <styled.span
-        title="23.03"
+        title="23.3"
       >
-        23.03
+        23.3
       </styled.span>
     </Styled(styled.li)>
     <Styled(styled.li)
@@ -142,9 +142,9 @@ exports[`FieldDetail: Component should render correctly 1`] = `
         25th Percentile
       </styled.span>
       <styled.span
-        title="100.28k"
+        title="100.3k"
       >
-        100.28k
+        100.3k
       </styled.span>
     </Styled(styled.li)>
   </styled.ul>

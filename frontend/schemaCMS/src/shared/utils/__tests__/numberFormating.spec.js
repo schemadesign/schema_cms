@@ -9,10 +9,10 @@ describe('PrefixedNumber', () => {
     expect(formatPrefixedNumber(-100.3, 0)).toEqual('-100');
     expect(formatPrefixedNumber(560.3, 4)).toEqual('560.3');
 
-    expect(formatPrefixedNumber(1234)).toEqual('1.23k');
-    expect(formatPrefixedNumber(1234, 1)).toEqual('1.2k');
+    expect(formatPrefixedNumber(1234)).toEqual('1.2k');
+    expect(formatPrefixedNumber(1234, 2)).toEqual('1.23k');
 
-    expect(formatPrefixedNumber(1567000)).toEqual('1.57M');
+    expect(formatPrefixedNumber(1567000)).toEqual('1.6M');
     expect(formatPrefixedNumber(156700000.8)).toEqual('156.7M');
     expect(formatPrefixedNumber(-156700000)).toEqual('-156.7M');
 
