@@ -11,6 +11,8 @@ import chaiJestDiff from 'chai-jest-diff';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import ReactModal from 'react-modal';
+import React from 'react';
+import { useDrag } from 'react-dnd';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -30,7 +32,14 @@ jest.doMock('react-syntax-highlighter/dist/esm/styles/hljs', () => ({
   docco: {},
 }));
 
-window.scrollTo = jest.fn();
+jest.doMock('react-dnd-multi-backend/dist/esm/HTML5toTouch', () => ({}));
+
+jest.mock('react-dnd', () => ({
+  // eslint-disable-next-line react/prop-types
+  DndProvider: ({ children }) => <span>{children}</span>,
+  useDrop: () => [null, Function.prototype],
+  useDrag: () => [{ isDragging: false }, Function.prototype],
+}));
 
 afterEach(() => {
   nock.cleanAll();

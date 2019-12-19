@@ -38,6 +38,7 @@ import {
   Warning,
   CheckboxContent,
   IconWrapper,
+  CheckBoxStyles,
 } from './dataWranglingScripts.styles';
 import messages from './dataWranglingScripts.messages';
 import {
@@ -283,7 +284,7 @@ export class DataWranglingScripts extends PureComponent {
               <Fragment>
                 <CheckboxGroup
                   onChange={e => this.handleChange({ e, setFieldValue, steps })}
-                  customCheckboxStyles={{ width: '100%' }}
+                  customCheckboxStyles={CheckBoxStyles}
                   value={steps}
                   name="steps"
                   id="fieldStepsCheckboxGroup"

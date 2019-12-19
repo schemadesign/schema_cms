@@ -3,6 +3,7 @@
 exports[`DataWranglingScripts: Component should render correctly 1`] = `
 <DndProvider
   backend={[Function]}
+  options={Object {}}
 >
   <HelmetWrapper
     defer={true}
@@ -186,6 +187,11 @@ exports[`DataWranglingScripts: Component should render correctly form 1`] = `
   }
 >
   <Component
+    customCheckboxStyles={
+      Object {
+        "width": "100%",
+      }
+    }
     id="fieldStepsCheckboxGroup"
     name="steps"
     onChange={[Function]}

@@ -9,7 +9,9 @@ import { defaultProps } from '../draggable.stories';
 describe('Draggable: Component', () => {
   const component = props => (
     <DndProvider backend={Backend}>
-      <Draggable {...defaultProps} {...props} />
+      <Draggable {...defaultProps} {...props}>
+        {() => {}}
+      </Draggable>
     </DndProvider>
   );
 

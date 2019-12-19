@@ -58,3 +58,5 @@ export const IconWrapper = styled.div`
   display: flex;
   cursor: move;
 `;
+
+export const CheckBoxStyles = { width: '100%' };
