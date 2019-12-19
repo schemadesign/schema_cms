@@ -1,163 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataSourceList: Component should render card with job 1`] = `
-<styled.div>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-    title="Data Sources"
-  />
-  <TopHeader
-    headerSubtitle="Overview"
-    headerTitle="Data Sources"
-    primaryMenuItems={Array []}
-    projectId="1"
-    secondaryMenuItems={Array []}
-  />
-  <ProjectTabs
-    active="sources"
-    url="/project/1"
-  />
-  <ContextHeader
-    subtitle="Overview"
-    title="Data Sources"
-  >
-    <PlusButton
-      hideOnDesktop={false}
-      id="createDataSourceDesktopBtn"
-      onClick={[Function]}
-    />
-  </ContextHeader>
-  <LoadingWrapper
-    error={null}
-    loading={true}
-    noData={false}
-    noDataContent="No Data Sources"
-  >
-    <styled.section>
-      <Styled(Component)
-        footerComponent={
-          <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              loading={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-0"
-              >
-                Source
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-0"
-              >
-                <Unknown
-                  customStyles={
-                    Object {
-                      "fill": "#71737e",
-                      "height": 40,
-                      "width": 40,
-                    }
-                  }
-                />
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              loading={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-1"
-              >
-                Items
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-1"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              loading={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-2"
-              >
-                Fields
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-2"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              loading={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-3"
-              >
-                Filters
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-3"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              loading={true}
-            >
-              <ForwardRef(styled.span)
-                id="metaItem-4"
-              >
-                Views
-              </ForwardRef(styled.span)>
-              <ForwardRef(styled.span)
-                id="metaItemValue-4"
-              >
-                —
-              </ForwardRef(styled.span)>
-            </ForwardRef(styled.div)>
-          </ForwardRef(styled.div)>
-        }
-        headerComponent={
-          <ForwardRef(styled.span)
-            loading={true}
-          >
-            <FormattedMessage
-              defaultMessage="Loading..."
-              id="project.dataSourceList.loading"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
-        }
-        key="0"
-      >
-        <Styled(H1)
-          id="dataSourceTitle"
-          onClick={[Function]}
-        >
-          name
-        </Styled(H1)>
-      </Styled(Component)>
-    </styled.section>
-  </LoadingWrapper>
-  <NavigationContainer
-    fixed={true}
-    hideOnDesktop={true}
-    right={false}
-  >
-    <BackArrowButton
-      id="backBtn"
-      onClick={[Function]}
-    />
-    <PlusButton
-      hideOnDesktop={false}
-      id="createDataSourceBtn"
-      onClick={[Function]}
-    />
-  </NavigationContainer>
-</styled.div>
-`;
-
 exports[`DataSourceList: Component should render correctly 1`] = `
 <styled.div>
   <HelmetWrapper
@@ -196,9 +38,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              loading={true}
-            >
+            <ForwardRef(styled.div)>
               <ForwardRef(styled.span)
                 id="metaItem-0"
               >
@@ -210,7 +50,6 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
-                      "fill": "#71737e",
                       "height": 40,
                       "width": 40,
                     }
@@ -218,9 +57,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 />
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              loading={true}
-            >
+            <ForwardRef(styled.div)>
               <ForwardRef(styled.span)
                 id="metaItem-1"
               >
@@ -232,9 +69,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              loading={true}
-            >
+            <ForwardRef(styled.div)>
               <ForwardRef(styled.span)
                 id="metaItem-2"
               >
@@ -246,9 +81,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              loading={true}
-            >
+            <ForwardRef(styled.div)>
               <ForwardRef(styled.span)
                 id="metaItem-3"
               >
@@ -260,9 +93,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)
-              loading={true}
-            >
+            <ForwardRef(styled.div)>
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
@@ -277,15 +108,11 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <ForwardRef(styled.span)
-            loading={true}
-          >
-            <FormattedMessage
-              defaultMessage="Loading..."
-              id="project.dataSourceList.loading"
-              values={Object {}}
-            />
-          </ForwardRef(styled.span)>
+          <FormattedMessage
+            defaultMessage="Processing data source..."
+            id="project.dataSourceList.jobProcessing"
+            values={Object {}}
+          />
         }
         key="0"
       >
@@ -311,7 +138,6 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
-                      "fill": "#FFF",
                       "height": 40,
                       "width": 40,
                     }
@@ -328,7 +154,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-1"
               >
-                46.2k
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)>
@@ -340,7 +166,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-2"
               >
-                11
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)>
@@ -412,7 +238,6 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
-                      "fill": "#FFF",
                       "height": 40,
                       "width": 40,
                     }
@@ -429,7 +254,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-1"
               >
-                46.2k
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)>
@@ -441,7 +266,95 @@ exports[`DataSourceList: Component should render correctly 1`] = `
               <ForwardRef(styled.span)
                 id="metaItemValue-2"
               >
-                11
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
+        headerComponent={
+          <FormattedMessage
+            defaultMessage="Processing data source..."
+            id="project.dataSourceList.jobProcessing"
+            values={Object {}}
+          />
+        }
+        key="2"
+      >
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          name
+        </Styled(H1)>
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
             <ForwardRef(styled.div)>
@@ -489,7 +402,271 @@ exports[`DataSourceList: Component should render correctly 1`] = `
             </ForwardRef(styled.div)>
           </ForwardRef(styled.div)>
         }
-        key="2"
+        key="3"
+      >
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          name
+        </Styled(H1)>
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
+        headerComponent={
+          <FormattedMessage
+            defaultMessage="Processing meta data..."
+            id="project.dataSourceList.metaProcessing"
+            values={Object {}}
+          />
+        }
+        key="4"
+      >
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          name
+        </Styled(H1)>
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
+        headerComponent={
+          <FormattedMessage
+            defaultMessage="Processing meta data..."
+            id="project.dataSourceList.metaProcessing"
+            values={Object {}}
+          />
+        }
+        key="5"
+      >
+        <Styled(H1)
+          id="dataSourceTitle"
+          onClick={[Function]}
+        >
+          name
+        </Styled(H1)>
+      </Styled(Component)>
+      <Styled(Component)
+        footerComponent={
+          <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-0"
+              >
+                Source
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-0"
+              >
+                <Unknown
+                  customStyles={
+                    Object {
+                      "height": 40,
+                      "width": 40,
+                    }
+                  }
+                />
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-1"
+              >
+                Items
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-1"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-2"
+              >
+                Fields
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-2"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-3"
+              >
+                Filters
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-3"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+            <ForwardRef(styled.div)>
+              <ForwardRef(styled.span)
+                id="metaItem-4"
+              >
+                Views
+              </ForwardRef(styled.span)>
+              <ForwardRef(styled.span)
+                id="metaItemValue-4"
+              >
+                —
+              </ForwardRef(styled.span)>
+            </ForwardRef(styled.div)>
+          </ForwardRef(styled.div)>
+        }
+        headerComponent={
+          <FormattedMessage
+            defaultMessage="Processing meta data failed"
+            id="project.dataSourceList.metaFailed"
+            values={Object {}}
+          />
+        }
+        key="6"
       >
         <Styled(H1)
           id="dataSourceTitle"

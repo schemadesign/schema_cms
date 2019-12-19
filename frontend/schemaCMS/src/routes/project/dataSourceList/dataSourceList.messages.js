@@ -18,9 +18,17 @@ export default defineMessages({
     id: 'project.dataSourceList.error',
     defaultMessage: 'Error',
   },
-  processing: {
-    id: 'project.dataSourceList.processing',
-    defaultMessage: 'Loading...',
+  jobProcessing: {
+    id: 'project.dataSourceList.jobProcessing',
+    defaultMessage: 'Processing data source...',
+  },
+  metaProcessing: {
+    id: 'project.dataSourceList.metaProcessing',
+    defaultMessage: 'Processing meta data...',
+  },
+  metaFailed: {
+    id: 'project.dataSourceList.metaFailed',
+    defaultMessage: 'Processing meta data failed',
   },
   draft: {
     id: 'project.dataSourceList.draft',
@@ -49,9 +57,5 @@ export default defineMessages({
   noData: {
     id: 'project.dataSourceList.noData',
     defaultMessage: 'No Data Sources',
-  },
-  loading: {
-    id: 'project.dataSourceList.loading',
-    defaultMessage: 'Loading...',
   },
 });

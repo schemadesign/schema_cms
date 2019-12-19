@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, equals, T, propEq } from 'ramda';
+import { always, cond, equals, T, propEq, either } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../shared/components/topHeader';
@@ -26,8 +26,14 @@ import {
 import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../list/list.styles';
-import { PREVIEW_PAGE, RESULT_PAGE, SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
-import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import {
+  META_FAILED,
+  META_PENDING,
+  META_PROCESSING,
+  PREVIEW_PAGE,
+  RESULT_PAGE,
+  SOURCE_PAGE,
+} from '../../../modules/dataSource/dataSource.constants';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
 
@@ -136,23 +142,30 @@ export class DataSourceList extends PureComponent {
     return <MetaDataWrapper>{elements}</MetaDataWrapper>;
   };
 
-  renderHeader = ({ whenCreated, firstName, lastName, loading }) =>
-    renderWhenTrueOtherwise(
-      always(
-        <Loading loading={loading}>
-          <FormattedMessage {...messages.loading} />
-        </Loading>
-      ),
-      always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))
-    )(loading);
+  renderLoading = message => (
+    <Loading loading>
+      {message}
+    </Loading>
+  );
+
+  renderHeader = ({ whenCreated, firstName, lastName, jobProcessing, metaData }) =>
+    cond([
+      [
+        either(propEq('metaStatus', META_PENDING), propEq('metaStatus', META_PROCESSING)),
+        always(this.renderLoading(<FormattedMessage {...messages.metaProcessing} />)),
+      ],
+      [propEq('jobProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.jobProcessing} />))],
+      [propEq('metaStatus', META_FAILED), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
+      [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
+    ])({ metaStatus: metaData.status, jobProcessing });
 
   renderItem = (
     { name, created, createdBy: { firstName, lastName }, id, metaData, activeJob, jobsInProcess },
     index
   ) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
-    const loading = !activeJob || jobsInProcess;
-    const header = this.renderHeader({ whenCreated, firstName, lastName, loading });
+    const jobProcessing = !activeJob || jobsInProcess;
+    const header = this.renderHeader({ whenCreated, firstName, lastName, jobProcessing, metaData });
     const footer = this.renderMetaData(metaData || {}, loading);
 
     return (

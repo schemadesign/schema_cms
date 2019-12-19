@@ -9,6 +9,7 @@ import { DataSourceRoutines } from '../dataSource.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCES_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
 import browserHistory from '../../../shared/utils/history';
+import { META_PROCESSING, META_SUCCESS } from '../dataSource.constants';
 
 describe('DataSource: sagas', () => {
   const defaultState = Immutable({});
@@ -58,11 +59,25 @@ describe('DataSource: sagas', () => {
 
   describe('fetchList', () => {
     const payload = { projectId: '1' };
-    const responseData = {
+    const responseJobProcessingData = {
       results: [
         {
           activeJob: null,
           jobsInProcess: true,
+          metaData: {
+            status: META_SUCCESS,
+          },
+        },
+      ],
+    };
+    const responseMetaProcessingData = {
+      results: [
+        {
+          activeJob: null,
+          jobsInProcess: true,
+          metaData: {
+            status: META_PROCESSING,
+          },
         },
       ],
     };
@@ -71,6 +86,9 @@ describe('DataSource: sagas', () => {
         {
           activeJob: { id: 'id' },
           jobsInProcess: false,
+          metaData: {
+            status: META_SUCCESS,
+          },
         },
       ],
     };
@@ -91,16 +109,32 @@ describe('DataSource: sagas', () => {
         .silentRun();
     });
 
-    it('should dispatch a success action until processing of some elements finish', async () => {
+    it('should dispatch a success action until job processing finished', async () => {
       mockApi
         .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
-        .reply(OK, responseData)
+        .reply(OK, responseJobProcessingData)
         .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
         .reply(OK, responseDoneData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
-        .put(DataSourceRoutines.fetchList.success(responseData.results))
+        .put(DataSourceRoutines.fetchList.success(responseJobProcessingData.results))
+        .put(DataSourceRoutines.fetchList.success(responseDoneData.results))
+        .put(DataSourceRoutines.fetchList.fulfill())
+        .dispatch(DataSourceRoutines.fetchList(payload))
+        .silentRun();
+    });
+
+    it('should dispatch a success action until meta finished', async () => {
+      mockApi
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
+        .reply(OK, responseMetaProcessingData)
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
+        .reply(OK, responseDoneData);
+
+      await expectSaga(watchDataSource)
+        .withState(defaultState)
+        .put(DataSourceRoutines.fetchList.success(responseMetaProcessingData.results))
         .put(DataSourceRoutines.fetchList.success(responseDoneData.results))
         .put(DataSourceRoutines.fetchList.fulfill())
         .dispatch(DataSourceRoutines.fetchList(payload))
@@ -108,7 +142,9 @@ describe('DataSource: sagas', () => {
     });
 
     it('should dispatch once fulfill actions after cancel', async () => {
-      mockApi.get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`).reply(OK, responseData);
+      mockApi
+        .get(`${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=1000`)
+        .reply(OK, responseJobProcessingData);
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
