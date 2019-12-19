@@ -23,7 +23,8 @@ import {
 } from 'ramda';
 import Helmet from 'react-helmet';
 import { DndProvider } from 'react-dnd';
-import Backend from 'react-dnd-html5-backend';
+import MultiBackend from 'react-dnd-multi-backend';
+import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 
 import {
   Dot,
@@ -261,7 +262,7 @@ export class DataWranglingScripts extends PureComponent {
     const headerSubtitle = <FormattedMessage {...messages.subTitle} />;
 
     return (
-      <DndProvider backend={Backend}>
+      <DndProvider backend={MultiBackend} options={HTML5toTouch}>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
         <TopHeader headerTitle={name} headerSubtitle={headerSubtitle} projectId={dataSource.project} />
         <ContextHeader title={name} subtitle={headerSubtitle}>

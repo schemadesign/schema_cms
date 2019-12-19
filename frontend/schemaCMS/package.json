@@ -88,6 +88,7 @@
     "react-dev-utils": "^8.0.0",
     "react-dnd": "^10.0.2",
     "react-dnd-html5-backend": "^10.0.2",
+    "react-dnd-multi-backend": "^5.0.0",
     "react-dnd-touch-backend": "^10.0.2",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
