@@ -10,6 +10,8 @@ export class DropZoneComponent extends PureComponent {
   static propTypes = {
     hidden: PropTypes.bool,
     multiple: PropTypes.bool,
+    inputId: PropTypes.string,
+    id: PropTypes.string,
     label: PropTypes.string,
     accept: PropTypes.string,
     customStyles: PropTypes.object,
@@ -20,17 +22,14 @@ export class DropZoneComponent extends PureComponent {
     hidden: false,
     multiple: false,
     accept: '',
+    inputId: '',
+    id: 'dropZone-schema-ui',
     label: DEFAULT_LABEL,
     customStyles: {},
   };
 
   counter = 0;
-
-  constructor(props) {
-    super(props);
-
-    this.dropRef = createRef();
-  }
+  dropRef = createRef();
 
   componentDidMount() {
     document.addEventListener('drop', this.handleDragLeave);
@@ -107,13 +106,13 @@ export class DropZoneComponent extends PureComponent {
   };
 
   render() {
-    const { hidden, id, theme, label, customStyles } = this.props;
+    const { hidden, id, theme, label, customStyles, inputId } = this.props;
     const styles = getStyles(theme);
     const mainStyles = { ...styles.containerStyles, ...customStyles };
     const containerStyles = hidden ? { ...mainStyles, ...styles.hiddenStyles } : mainStyles;
 
     return (
-      <label style={containerStyles} onDrop={this.handleDrop} ref={this.dropRef} id={`dropZone-${id}`} htmlFor={id}>
+      <label style={containerStyles} onDrop={this.handleDrop} ref={this.dropRef} id={id} htmlFor={inputId}>
         {label}
       </label>
     );

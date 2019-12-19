@@ -283,7 +283,7 @@ exports[`Storyshots Shared Components|Form/Uploader Default 1`] = `
     </div>
     <label
       htmlFor="id"
-      id="dropZone-id"
+      id="dropZone-schema-ui"
       onDrop={[Function]}
       style={
         Object {
@@ -606,7 +606,7 @@ exports[`Storyshots Shared Components|Form/Uploader With error 1`] = `
     </div>
     <label
       htmlFor="id"
-      id="dropZone-id"
+      id="dropZone-schema-ui"
       onDrop={[Function]}
       style={
         Object {

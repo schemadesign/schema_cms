@@ -705,9 +705,9 @@ exports[`Storyshots Shared Components|PageBlockForm Embed type 1`] = `
         id="youtube_embed-content"
         onChange={[Function]}
         placeholder="
-    <iframe 
-        width=\\"560\\" 
-        height=\\"315\\" 
+    <iframe
+        width=\\"560\\"
+        height=\\"315\\"
         src=\\"https://www.youtube.com/embed/avideo\\"
         frameborder=\\"0\\"
         allowfullscreen
@@ -1125,7 +1125,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
             }
           }
         >
-          Please select image(s) or drop here
+          Please select image(s) or Drag and Drop it here
         </label>
         <div
           style={
@@ -1351,7 +1351,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
       </div>
       <label
         htmlFor="fileUpload"
-        id="dropZone-fileUpload"
+        id="dropZone-schema-ui"
         onDrop={[Function]}
         style={
           Object {
@@ -1739,9 +1739,9 @@ exports[`Storyshots Shared Components|PageBlockForm Markdown type 1`] = `
         onChange={[Function]}
         placeholder="
     # My Cool Title
-    
+
     ## Awesome subtitle
-    
+
     Description **bold**
     "
         style={

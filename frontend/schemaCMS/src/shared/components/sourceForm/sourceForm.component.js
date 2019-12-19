@@ -24,6 +24,7 @@ import {
 } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
 import { renderWhenTrue } from '../../utils/rendering';
+import { getEventFiles } from '../../utils/helpers';
 
 const { RadioGroup, RadioBaseComponent, Label } = Form;
 const { CsvIcon } = Icons;
@@ -42,7 +43,7 @@ export class SourceFormComponent extends PureComponent {
   };
 
   handleUploadChange = (data, { setFieldValue }) => {
-    const uploadFile = data.currentTarget ? data.currentTarget.files : data;
+    const uploadFile = getEventFiles(data);
     setFieldValue('file', uploadFile[0]);
     setFieldValue('fileName', pathOr('', ['name'], uploadFile[0]));
   };

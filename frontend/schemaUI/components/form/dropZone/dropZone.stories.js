@@ -6,7 +6,10 @@ import { DropZone } from './dropZone.component';
 import { FileUpload } from '../fileUpload/fileUpload.component';
 import { withTheme } from '../../../.storybook/decorators';
 
-const id = 'file';
+export const defaultProps = {
+  inputId: 'file',
+  onChange: Function.prototype,
+};
 
 class DropZoneWapper extends PureComponent {
   static propTypes = {
@@ -31,9 +34,9 @@ class DropZoneWapper extends PureComponent {
     const { multiple, hidden, accept } = this.props;
     return (
       <div style={{ position: 'relative' }}>
-        <FileUpload id={id} onChange={this.onChange} multiple={multiple} accept={accept} />
+        <FileUpload id={defaultProps.inputId} onChange={this.onChange} multiple={multiple} accept={accept} />
         <DropZone
-          id={id}
+          {...defaultProps}
           onChange={this.onChange}
           hidden={hidden}
           multiple={multiple}

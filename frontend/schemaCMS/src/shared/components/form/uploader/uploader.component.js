@@ -41,7 +41,7 @@ export class Uploader extends PureComponent {
     return (
       <Container>
         <FileUpload fileNames={fileNames} label={label} id={id} onChange={onChange} {...filteredProps} />
-        <DropZone id={id} onChange={onChange} {...filteredProps} hidden />
+        <DropZone inputId={id} onChange={onChange} {...filteredProps} hidden />
         {this.renderError(error)}
       </Container>
     );

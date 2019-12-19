@@ -17,15 +17,15 @@ export default defineMessages({
   },
   selectImage: {
     id: 'shared.components.pageBlockForm.selectImage',
-    defaultMessage: 'Please select image(s) or drop here',
+    defaultMessage: 'Please select image(s) or Drag and Drop it here',
   },
   pageBlockFieldMarkdownPlaceholder: {
     id: 'shared.components.pageBlockForm.pageBlockFieldMarkdownPlaceholder',
     defaultMessage: `
     # My Cool Title
-    
+
     ## Awesome subtitle
-    
+
     Description **bold**
     `,
   },
@@ -51,9 +51,9 @@ export default defineMessages({
   pageBlockFieldEmbedPlaceholder: {
     id: 'shared.components.pageBlockForm.pageBlockFieldEmbedPlaceholder',
     defaultMessage: `
-    <iframe 
-        width="560" 
-        height="315" 
+    <iframe
+        width="560"
+        height="315"
         src="https://www.youtube.com/embed/avideo"
         frameborder="0"
         allowfullscreen

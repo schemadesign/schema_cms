@@ -10,7 +10,7 @@ exports[`Uploader: Component should render correctly 1`] = `
   />
   <Component
     hidden={true}
-    id="id"
+    inputId="id"
     name="name"
     onChange={[Function]}
   />
@@ -27,7 +27,7 @@ exports[`Uploader: Component should render with error 1`] = `
   />
   <Component
     hidden={true}
-    id="id"
+    inputId="id"
     name="name"
     onChange={[Function]}
   />

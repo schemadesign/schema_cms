@@ -2,12 +2,9 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 
 import { DropZoneComponent } from '../dropZone.component';
+import { defaultProps } from '../dropZone.stories';
 
 describe('DropZone: Component', () => {
-  const defaultProps = {
-    onChange: Function.prototype,
-  };
-
   const component = props => <DropZoneComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));

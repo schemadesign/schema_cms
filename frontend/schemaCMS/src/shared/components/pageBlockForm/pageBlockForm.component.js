@@ -26,6 +26,7 @@ import messages from './pageBlockForm.messages';
 import { Select } from '../form/select';
 import { Uploader } from '../form/uploader';
 import { removeIconStyles, UploaderContainer, UploaderItem, UploaderList, ImageName } from './pageBlockForm.styles';
+import { getEventFiles } from '../../utils/helpers';
 
 const { CloseIcon } = Icons;
 
@@ -69,7 +70,7 @@ export class PageBlockForm extends PureComponent {
     }
   };
   handleUploadChange = data => {
-    const files = data.currentTarget ? data.currentTarget.files : data;
+    const files = getEventFiles(data);
     const { values, block = { images: [] } } = this.props;
     const { images } = values;
     const mapIndexed = addIndex(map);

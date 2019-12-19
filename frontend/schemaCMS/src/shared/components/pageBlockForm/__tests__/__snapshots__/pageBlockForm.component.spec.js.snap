@@ -317,9 +317,9 @@ exports[`PageBlockForm: Component should render correctly with embed type 1`] = 
     name="youtube_embed-content"
     onChange={[Function]}
     placeholder="
-    <iframe 
-        width=\\"560\\" 
-        height=\\"315\\" 
+    <iframe
+        width=\\"560\\"
+        height=\\"315\\"
         src=\\"https://www.youtube.com/embed/avideo\\"
         frameborder=\\"0\\"
         allowfullscreen
@@ -463,7 +463,7 @@ exports[`PageBlockForm: Component should render correctly with image type 1`] = 
       multiple={true}
       name="inputImages"
       onChange={[Function]}
-      placeholder="Please select image(s) or drop here"
+      placeholder="Please select image(s) or Drag and Drop it here"
       setFieldValue={[Function]}
       touched={Object {}}
       type="file"
@@ -638,9 +638,9 @@ exports[`PageBlockForm: Component should render correctly with markdown type 1`]
     onChange={[Function]}
     placeholder="
     # My Cool Title
-    
+
     ## Awesome subtitle
-    
+
     Description **bold**
     "
     setFieldValue={[Function]}

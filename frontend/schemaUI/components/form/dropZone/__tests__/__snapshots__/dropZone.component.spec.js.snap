@@ -2,7 +2,8 @@
 
 exports[`DropZone: Component should render correctly 1`] = `
 <label
-  id="dropZone-undefined"
+  htmlFor="file"
+  id="dropZone-schema-ui"
   onDrop={[Function]}
   style={
     Object {
@@ -25,7 +26,8 @@ exports[`DropZone: Component should render correctly 1`] = `
 
 exports[`DropZone: Component should render hidden 1`] = `
 <label
-  id="dropZone-undefined"
+  htmlFor="file"
+  id="dropZone-schema-ui"
   onDrop={[Function]}
   style={
     Object {

@@ -1264,7 +1264,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
             }
           }
         >
-          Select file or drop here
+          Select file or Drag and Drop it here
         </label>
         <div
           style={
@@ -1489,7 +1489,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
       <label
         htmlFor="fileUpload"
-        id="dropZone-fileUpload"
+        id="dropZone-schema-ui"
         onDrop={[Function]}
         style={
           Object {
