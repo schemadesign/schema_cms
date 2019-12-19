@@ -3,6 +3,8 @@ try:
 except ImportError:
     pass
 
+
+from memory_profiler import profile
 import csv
 import json
 import logging
@@ -21,7 +23,7 @@ import scipy as sp
 import sentry_sdk
 from sentry_sdk.integrations.aws_lambda import AwsLambdaIntegration
 
-from pyarrow import BufferReader, Table
+from pyarrow import BufferReader, csv as pa_csv, Table
 
 from common import api, db, services, settings, types
 import errors
@@ -33,6 +35,7 @@ from utils import FieldType, NumpyEncoder
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
+convert_options = pa_csv.ConvertOptions(strings_can_be_null=True)
 
 if settings.SENTRY_DNS:
     sentry_sdk.init(settings.SENTRY_DNS, integrations=[AwsLambdaIntegration()])
@@ -55,10 +58,11 @@ def map_general_dtypes(dtype):
         raise ValueError("Unknown data type")
 
 
+@profile
 def read_file_to_data_frame(file):
-    table = Table.from_pydict(dt.fread(file, na_strings=[""], fill=True).to_dict())
-
-    return table.to_pandas(date_as_object=True, strings_to_categorical=True)
+    dt.fread(file, na_strings=[""], fill=True).to_csv("/tmp/file.csv")
+    del file
+    return pa_csv.read_csv("/tmp/file.csv", convert_options=convert_options).to_pandas(strings_to_categorical=True)
 
 
 def get_preview_data(data_frame):
@@ -113,6 +117,7 @@ def process_datasource_meta_source_file(data_source: dict):
 
     s3obj = services.get_s3_object(datasource.file)
     data_frame = read_file_to_data_frame(s3obj["Body"])
+
     try:
         preview_data, items, fields, fields_names = get_preview_data(data_frame)
         api.schemacms_api.update_datasource_meta(
@@ -144,7 +149,7 @@ def write_data_frame_to_parquet_on_s3(data_frame, file_name):
         Body=buffer.getvalue()
     )
 
-
+@profile
 def process_job(job_data: dict):
     global df
     global current_job
