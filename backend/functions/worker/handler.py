@@ -60,9 +60,14 @@ def map_general_dtypes(dtype):
 
 @profile
 def read_file_to_data_frame(file):
-    dt.fread(file, na_strings=[""], fill=True).to_csv("/tmp/file.csv")
-    del file
-    return pa_csv.read_csv("/tmp/file.csv", convert_options=convert_options).to_pandas(strings_to_categorical=True)
+    buffer = BytesIO()
+    buffer.write(dt.fread(file, na_strings=[""], fill=True).to_csv().encode("utf-8"))
+
+    table = pa_csv.read_csv(
+        BufferReader(buffer.getvalue()), convert_options=convert_options
+    ).to_pandas(strings_to_categorical=True)
+
+    return table
 
 
 def get_preview_data(data_frame):
