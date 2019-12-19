@@ -22,6 +22,7 @@ export class PageBlock extends PureComponent {
     fetchPageBlock: PropTypes.func.isRequired,
     removePageBlock: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
+    intl: PropTypes.object.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         blockId: PropTypes.string.isRequired,

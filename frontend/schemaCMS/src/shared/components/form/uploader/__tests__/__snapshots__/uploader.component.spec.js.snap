@@ -8,6 +8,12 @@ exports[`Uploader: Component should render correctly 1`] = `
     name="name"
     onChange={[Function]}
   />
+  <Component
+    hidden={true}
+    inputId="id"
+    name="name"
+    onChange={[Function]}
+  />
 </styled.div>
 `;
 
@@ -16,6 +22,12 @@ exports[`Uploader: Component should render with error 1`] = `
   <Component
     id="id"
     label="label"
+    name="name"
+    onChange={[Function]}
+  />
+  <Component
+    hidden={true}
+    inputId="id"
     name="name"
     onChange={[Function]}
   />

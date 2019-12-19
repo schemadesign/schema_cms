@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropZone: Component should render correctly 1`] = `
+<label
+  htmlFor="file"
+  id="dropZone-schema-ui"
+  onDrop={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "border": "2px dashed #2F2F36",
+      "borderRadius": 10,
+      "cursor": "copy",
+      "display": "flex",
+      "height": 50,
+      "justifyContent": "center",
+      "lineHeight": "50px",
+      "textAlign": "center",
+      "width": "100%",
+    }
+  }
+>
+  Drop here
+</label>
+`;
+
+exports[`DropZone: Component should render hidden 1`] = `
+<label
+  htmlFor="file"
+  id="dropZone-schema-ui"
+  onDrop={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "background": "#000",
+      "border": "2px dashed #2F2F36",
+      "borderRadius": 10,
+      "cursor": "copy",
+      "display": "flex",
+      "height": "calc(100% - 10px)",
+      "justifyContent": "center",
+      "left": 0,
+      "lineHeight": "50px",
+      "opacity": 0,
+      "position": "absolute",
+      "textAlign": "center",
+      "top": 5,
+      "transition": "opacity 200ms ease-in-out",
+      "visibility": "hidden",
+      "width": "100%",
+    }
+  }
+>
+  Drop here
+</label>
+`;

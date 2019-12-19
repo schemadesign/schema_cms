@@ -9,20 +9,21 @@ export const UploaderList = styled.div`
   font-size: 18px;
 `;
 
-export const UploaderWrapper = styled.div`
-  position: absolute;
-  right: 0;
-  top: 10px;
-`;
-
 export const UploaderItem = styled.div`
   display: flex;
   align-items: center;
 `;
 
+export const ImageName = styled.span`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
 export const removeIconStyles = {
   width: 30,
   height: 30,
+  minWidth: 30,
   marginLeft: 20,
   cursor: 'pointer',
 };

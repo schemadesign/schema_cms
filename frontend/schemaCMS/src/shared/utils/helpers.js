@@ -1,4 +1,4 @@
-import { complement, either, forEach, is, isEmpty, isNil, keys, map, path, pickBy, pipe } from 'ramda';
+import { complement, either, forEach, is, isEmpty, isNil, keys, map, path, pathOr, pickBy, pipe } from 'ramda';
 import { camelize, decamelize } from 'humps';
 
 export const generateApiUrl = (slug = '') => (isEmpty(slug) ? '' : `schemacms/api/${slug}`);
@@ -39,3 +39,5 @@ export const formatFormData = data => {
 
   return formData;
 };
+
+export const getEventFiles = data => pathOr(data, ['currentTarget', 'files'])(data);

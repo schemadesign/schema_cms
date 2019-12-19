@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { addIndex, always, concat, cond, equals, has, ifElse, map, path, pipe } from 'ramda';
 import { FormattedMessage } from 'react-intl';
-import { Form, Icons } from 'schemaUI';
+import { Icons } from 'schemaUI';
 
 import { Modal, ModalActions, modalStyles, ModalTitle } from '../modal/modal.styles';
 import { BackButton, NextButton } from '../navigation';
@@ -25,16 +25,9 @@ import {
 import messages from './pageBlockForm.messages';
 import { Select } from '../form/select';
 import { Uploader } from '../form/uploader';
-import {
-  removeIconStyles,
-  UploaderContainer,
-  UploaderItem,
-  UploaderList,
-  UploaderWrapper,
-} from './pageBlockForm.styles';
-import { renderWhenTrueOtherwise } from '../../utils/rendering';
+import { removeIconStyles, UploaderContainer, UploaderItem, UploaderList, ImageName } from './pageBlockForm.styles';
+import { getEventFiles } from '../../utils/helpers';
 
-const { Label } = Form;
 const { CloseIcon } = Icons;
 
 export class PageBlockForm extends PureComponent {
@@ -76,7 +69,8 @@ export class PageBlockForm extends PureComponent {
       this.props.setFieldValue(BLOCK_TYPE, selectedStatus);
     }
   };
-  handleUploadChange = ({ files }) => {
+  handleUploadChange = data => {
+    const files = getEventFiles(data);
     const { values, block = { images: [] } } = this.props;
     const { images } = values;
     const mapIndexed = addIndex(map);
@@ -146,7 +140,7 @@ export class PageBlockForm extends PureComponent {
 
   renderUploaderItem = ({ imageName, id, image }, index) => (
     <UploaderItem key={index}>
-      {imageName}
+      <ImageName>{imageName}</ImageName>
       <CloseIcon
         id={`removeImage-${index}`}
         onClick={this.handleRemoveImage({ id, image })}
@@ -155,31 +149,22 @@ export class PageBlockForm extends PureComponent {
     </UploaderItem>
   );
 
-  renderUploaderList = list =>
-    renderWhenTrueOtherwise(
-      always(list.map(this.renderUploaderItem)),
-      always(<FormattedMessage {...messages.selectImage} />)
-    )(!!list.length);
-
   renderImage = () => (
     <UploaderContainer>
-      <Label>
-        <FormattedMessage {...messages.pageBlockFieldImage} />
-      </Label>
-      <UploaderWrapper>
-        <Uploader
-          name={BLOCK_INPUT_IMAGES}
-          value={this.props.values[BLOCK_INPUT_IMAGES]}
-          type="file"
-          id="fileUpload"
-          onChange={({ currentTarget }) => this.handleUploadChange(currentTarget)}
-          accept=".png, .jpg, .jpeg, .gif"
-          checkOnlyErrors
-          multiple
-          {...this.props}
-        />
-      </UploaderWrapper>
-      <UploaderList>{this.renderUploaderList(this.props.values.imageNames)}</UploaderList>
+      <Uploader
+        name={BLOCK_INPUT_IMAGES}
+        value={this.props.values[BLOCK_INPUT_IMAGES]}
+        type="file"
+        id="fileUpload"
+        label={this.props.intl.formatMessage(messages.pageBlockFieldImage)}
+        placeholder={this.props.intl.formatMessage(messages.selectImage)}
+        onChange={this.handleUploadChange}
+        accept=".png, .jpg, .jpeg, .gif"
+        checkOnlyErrors
+        multiple
+        {...this.props}
+      />
+      <UploaderList>{this.props.values.imageNames.map(this.renderUploaderItem)}</UploaderList>
     </UploaderContainer>
   );
 

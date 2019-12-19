@@ -24,6 +24,7 @@ import {
 } from '../../../modules/dataSource/dataSource.constants';
 import { Uploader } from '../form/uploader';
 import { renderWhenTrue } from '../../utils/rendering';
+import { getEventFiles } from '../../utils/helpers';
 
 const { RadioGroup, RadioBaseComponent, Label } = Form;
 const { CsvIcon } = Icons;
@@ -41,14 +42,10 @@ export class SourceFormComponent extends PureComponent {
     dataSource: {},
   };
 
-  handleUploadChange = ({
-    currentTarget: {
-      files: [uploadFile],
-    },
-    setFieldValue,
-  }) => {
-    setFieldValue('file', uploadFile);
-    setFieldValue('fileName', pathOr('', ['name'], uploadFile));
+  handleUploadChange = (data, { setFieldValue }) => {
+    const uploadFile = getEventFiles(data);
+    setFieldValue('file', uploadFile[0]);
+    setFieldValue('fileName', pathOr('', ['name'], uploadFile[0]));
   };
 
   renderProcessingMessage = renderWhenTrue(
@@ -64,9 +61,10 @@ export class SourceFormComponent extends PureComponent {
       fileNames={fileName}
       name={DATA_SOURCE_FILE}
       label={this.props.intl.formatMessage(messages.fileName)}
+      placeholder={this.props.intl.formatMessage(messages.filePlaceholder)}
       type="file"
       id="fileUpload"
-      onChange={({ currentTarget }) => this.handleUploadChange({ currentTarget, setFieldValue })}
+      onChange={data => this.handleUploadChange(data, { setFieldValue })}
       accept=".csv"
       disabled={jobsInProcess}
       checkOnlyErrors

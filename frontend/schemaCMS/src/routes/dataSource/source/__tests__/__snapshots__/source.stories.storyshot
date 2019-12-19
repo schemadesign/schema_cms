@@ -5,11 +5,11 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   padding-top: 7px;
 }
 
-.c20 {
+.c21 {
   height: 155px;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,18 +28,18 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   width: 100%;
 }
 
-.c21 {
+.c22 {
   bottom: 0;
   width: 100%;
   padding: 40px 0 36px;
 }
 
-.c23 {
+.c24 {
   width: calc(50% - 5px);
   max-width: 240px;
 }
 
-.c18 {
+.c19 {
   border-top: 2px solid #2F2F36;
   padding-top: 35px;
   display: -webkit-box;
@@ -186,7 +186,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   color: #FFF;
 }
 
-.c19 {
+.c20 {
   cursor: pointer;
   color: #FFF;
   -webkit-transition: border 400ms;
@@ -195,12 +195,16 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   margin-bottom: 30px;
 }
 
-.c19:hover {
+.c20:hover {
   border-bottom: 1px solid #FFF;
 }
 
-.c19:last-child {
+.c20:last-child {
   margin-bottom: 0;
+}
+
+.c18 {
+  position: relative;
 }
 
 .c13 {
@@ -231,7 +235,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   cursor: pointer;
 }
 
-.c24 {
+.c25 {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -255,7 +259,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
   background-color: #1d1d20;
 }
 
-.c24 svg {
+.c25 svg {
   cursor: pointer;
 }
 
@@ -302,7 +306,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c22 {
+  .c23 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -311,7 +315,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c21 {
+  .c22 {
     position: fixed;
     width: calc(100% - 40px);
     background-image: linear-gradient( to top, #000,#000 30%, rgba(0,0,0,0) );
@@ -320,7 +324,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c23 {
+  .c24 {
     width: 240px;
   }
 }
@@ -383,7 +387,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
 }
 
 @media (min-width:1040px) {
-  .c24 {
+  .c25 {
     position: static;
     background-color: transparent;
     padding: 0;
@@ -1222,111 +1226,99 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </div>
     </div>
     <div
-      className=""
+      className="c18"
     >
       <div
-        style={Object {}}
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
       >
+        <label
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          File Name
+        </label>
+        <label
+          htmlFor="fileUpload"
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "block",
+              "fontSize": 18,
+              "lineHeight": "24px",
+              "paddingBottom": 30,
+              "width": "calc(100% - 70px)",
+            }
+          }
+        >
+          Select file or Drag and Drop it here
+        </label>
         <div
           style={
             Object {
-              "display": "flex",
-              "flexDirection": "column",
-              "maxWidth": "100%",
-              "paddingBottom": "30px",
-              "position": "relative",
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
           <label
-            htmlFor="fileNames"
+            htmlFor="fileUpload"
             style={
               Object {
-                "border": "none",
-                "borderTop": "2px solid #2F2F36",
-                "color": "#71737e",
-                "display": "block",
-                "fontSize": "14px",
-                "outline": "none",
-                "paddingTop": "8px",
-                "width": "100%",
+                "position": "relative",
+                "top": 10,
               }
             }
           >
-            File Name
-          </label>
-          <input
-            disabled={true}
-            id="fileNames"
-            name="fileNames"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "border": "none",
-                "color": "#FFF",
-                "fontSize": "18px",
-                "lineHeight": "24px",
-                "outline": "none",
-                "padding": 0,
-              }
-            }
-            type="text"
-            value="Select a file"
-          />
-          <div
-            style={
-              Object {
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <label
-              htmlFor="fileUpload"
+            <div
               style={
                 Object {
-                  "position": "relative",
-                  "top": 10,
+                  "backgroundColor": "#1d1d20",
+                  "border": "none",
+                  "borderRadius": "48px",
+                  "color": "#FFF",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fill": "#FFF",
+                  "fontSize": 0,
+                  "margin": "0",
+                  "minHeight": "48px",
+                  "outline": "none",
+                  "padding": "0",
+                  "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
                 }
               }
             >
-              <div
+              <svg
                 style={
                   Object {
-                    "backgroundColor": "#1d1d20",
-                    "border": "none",
-                    "borderRadius": "48px",
-                    "color": "#FFF",
-                    "cursor": "pointer",
-                    "display": "inline-block",
                     "fill": "#FFF",
-                    "fontSize": 0,
-                    "margin": "0",
-                    "minHeight": "48px",
-                    "outline": "none",
-                    "padding": "0",
-                    "transition": "background 0.25s ease-in-out, color 0.25s ease-in-out",
+                    "height": "60px",
+                    "width": "60px",
                   }
                 }
+                viewBox="0 0 60 60"
               >
-                <svg
-                  style={
-                    Object {
-                      "fill": "#FFF",
-                      "height": "60px",
-                      "width": "60px",
-                    }
-                  }
-                  viewBox="0 0 60 60"
-                >
-                  <path
-                    d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
-                  />
-                </svg>
-              </div>
-            </label>
-          </div>
+                <path
+                  d="M16 42V32h3v7h23v-7h3v10H16zm14.5-30.121l9.06 9.06-2.12 2.122-5.441-5.441L32 33h-3l-.001-15.378-5.438 5.439-2.122-2.122 9.061-9.06z"
+                />
+              </svg>
+            </div>
+          </label>
         </div>
         <input
           accept=".csv"
@@ -1495,12 +1487,40 @@ exports[`Storyshots Data Source|Source Default 1`] = `
           type="file"
         />
       </div>
+      <label
+        htmlFor="fileUpload"
+        id="dropZone-schema-ui"
+        onDrop={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "background": "#000",
+            "border": "2px dashed #2F2F36",
+            "borderRadius": 10,
+            "cursor": "copy",
+            "display": "flex",
+            "height": "calc(100% - 10px)",
+            "justifyContent": "center",
+            "left": 0,
+            "lineHeight": "50px",
+            "opacity": 0,
+            "position": "absolute",
+            "textAlign": "center",
+            "top": 5,
+            "transition": "opacity 200ms ease-in-out",
+            "visibility": "hidden",
+            "width": "100%",
+          }
+        }
+      >
+        Drop here
+      </label>
     </div>
     <div
-      className="c18"
+      className="c19"
     >
       <span
-        className="c19"
+        className="c20"
         onClick={[Function]}
         style={
           Object {
@@ -1514,7 +1534,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
         </span>
       </span>
       <span
-        className="c19"
+        className="c20"
         id="removeDataSourceDesktopBtn"
         onClick={[Function]}
         style={
@@ -1530,16 +1550,16 @@ exports[`Storyshots Data Source|Source Default 1`] = `
       </span>
     </div>
     <div
-      className="c20"
+      className="c21"
     >
       <div
-        className="c21"
+        className="c22"
       >
         <div
-          className="c22"
+          className="c23"
         >
           <button
-            className="c23"
+            className="c24"
             disabled={true}
             onClick={[Function]}
             style={
@@ -1570,7 +1590,7 @@ exports[`Storyshots Data Source|Source Default 1`] = `
     </div>
   </form>
   <div
-    className="c24"
+    className="c25"
   >
     <div
       className="c14"
