@@ -1,36 +1,31 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
-import { DropZone } from '../dropZone.component';
+import { DropZoneComponent } from '../dropZone.component';
 
 describe('DropZone: Component', () => {
   const defaultProps = {
     onChange: Function.prototype,
   };
 
-  const component = props => <DropZone {...defaultProps} {...props} />;
+  const component = props => <DropZoneComponent {...defaultProps} {...props} />;
 
   const render = (props = {}) => shallow(component(props));
 
   it('should render correctly', () => {
-    const wrapper = render()
-      .dive()
-      .dive();
+    const wrapper = render();
+
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render hidden', () => {
-    const wrapper = render({ hidden: true })
-      .dive()
-      .dive();
+    const wrapper = render({ hidden: true });
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should not call onChange', () => {
     jest.spyOn(defaultProps, 'onChange');
-    const wrapper = render()
-      .dive()
-      .dive();
+    const wrapper = render();
     const args = { preventDefault: Function.prototype, dataTransfer: { files: [] } };
 
     wrapper.find('label').simulate('drop', args);
@@ -40,9 +35,7 @@ describe('DropZone: Component', () => {
 
   it('should call onChange', () => {
     jest.spyOn(defaultProps, 'onChange');
-    const wrapper = render()
-      .dive()
-      .dive();
+    const wrapper = render();
     const files = [{ name: 'name.png', file: 'file', type: 'image/png' }];
     const args = { preventDefault: Function.prototype, dataTransfer: { files } };
 
@@ -53,9 +46,7 @@ describe('DropZone: Component', () => {
 
   it('should call onChange with accept fromats', () => {
     jest.spyOn(defaultProps, 'onChange');
-    const wrapper = render({ accept: '.jpg, .gif', multiple: true })
-      .dive()
-      .dive();
+    const wrapper = render({ accept: '.jpg, .gif', multiple: true });
     const acceptFiles = [
       { name: 'name.jpg', file: 'file', type: 'image/jpg' },
       { name: 'name.gif', file: 'file', type: 'image/gif' },
@@ -70,9 +61,7 @@ describe('DropZone: Component', () => {
 
   it('should call onChange with one file', () => {
     jest.spyOn(defaultProps, 'onChange');
-    const wrapper = render()
-      .dive()
-      .dive();
+    const wrapper = render();
     const files = [
       { name: 'name.jpg', file: 'file', type: 'image/jpg' },
       { name: 'name.gif', file: 'file', type: 'image/gif' },
@@ -82,5 +71,60 @@ describe('DropZone: Component', () => {
     wrapper.find('label').simulate('drop', args);
 
     expect(defaultProps.onChange).toHaveBeenCalledWith([files[0]]);
+  });
+
+  it('should drop zone be hidden', () => {
+    const wrapper = mount(component({ hidden: true }));
+    const dropZoneStyles = wrapper.instance().dropRef.current.style;
+
+    expect(dropZoneStyles.opacity).toBe('0');
+    expect(dropZoneStyles.visibility).toBe('hidden');
+  });
+
+  it('should drop zone be visible on dragover', () => {
+    const wrapper = mount(component({ hidden: true }));
+    const event = new Event('dragenter');
+    event.dataTransfer = {};
+    const dropZoneStyles = wrapper.instance().dropRef.current.style;
+    document.dispatchEvent(event);
+    expect(dropZoneStyles.opacity).toBe('0.9');
+    expect(dropZoneStyles.visibility).toBe('visible');
+  });
+
+  it('should drop zone be hidden on dragleave', () => {
+    const wrapper = mount(component({ hidden: true }));
+    const dragEnterEvent = new Event('dragenter');
+    const dragLeaveEvent = new Event('dragleave');
+    dragEnterEvent.dataTransfer = {};
+    const dropZoneStyles = wrapper.instance().dropRef.current.style;
+    document.dispatchEvent(dragEnterEvent);
+    document.dispatchEvent(dragLeaveEvent);
+    expect(dropZoneStyles.opacity).toBe('0');
+    expect(dropZoneStyles.visibility).toBe('hidden');
+  });
+
+  it('should drop zone be hidden on drop', () => {
+    const wrapper = mount(component({ hidden: true }));
+    const dragEnterEvent = new Event('dragenter');
+    const dropEvent = new Event('drop');
+    dragEnterEvent.dataTransfer = {};
+    const dropZoneStyles = wrapper.instance().dropRef.current.style;
+    document.dispatchEvent(dragEnterEvent);
+    document.dispatchEvent(dropEvent);
+    expect(dropZoneStyles.opacity).toBe('0');
+    expect(dropZoneStyles.visibility).toBe('hidden');
+  });
+
+  it('should drop zone still be visible', () => {
+    const wrapper = mount(component({ hidden: true }));
+    const dragEnterEvent = new Event('dragenter');
+    const dragLeaveEvent = new Event('dragleave');
+    dragEnterEvent.dataTransfer = {};
+    const dropZoneStyles = wrapper.instance().dropRef.current.style;
+    document.dispatchEvent(dragEnterEvent);
+    document.dispatchEvent(dragEnterEvent);
+    document.dispatchEvent(dragLeaveEvent);
+    expect(dropZoneStyles.opacity).toBe('0.9');
+    expect(dropZoneStyles.visibility).toBe('visible');
   });
 });

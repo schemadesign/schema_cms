@@ -792,6 +792,10 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   top: 5px;
 }
 
+.c4 {
+  position: relative;
+}
+
 .c3 {
   position: relative;
 }
@@ -799,12 +803,6 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
 .c5 {
   line-height: 24px;
   font-size: 18px;
-}
-
-.c4 {
-  position: absolute;
-  right: 0;
-  top: 10px;
 }
 
 .c6 {
@@ -816,6 +814,12 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.c7 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 <div
@@ -1082,39 +1086,62 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
   <div
     className="c3"
   >
-    <label
-      style={
-        Object {
-          "border": "none",
-          "borderTop": "2px solid #2F2F36",
-          "color": "#71737e",
-          "display": "block",
-          "fontSize": "14px",
-          "outline": "none",
-          "paddingTop": "8px",
-          "width": "100%",
-        }
-      }
-    >
-      <span>
-        File Name
-      </span>
-    </label>
     <div
       className="c4"
     >
       <div
-        className=""
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
       >
+        <label
+          style={
+            Object {
+              "border": "none",
+              "borderTop": "2px solid #2F2F36",
+              "color": "#71737e",
+              "display": "block",
+              "fontSize": "14px",
+              "outline": "none",
+              "paddingTop": "8px",
+              "width": "100%",
+            }
+          }
+        >
+          File Name
+        </label>
+        <label
+          htmlFor="fileUpload"
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "block",
+              "fontSize": 18,
+              "lineHeight": "24px",
+              "paddingBottom": 30,
+              "width": "calc(100% - 70px)",
+            }
+          }
+        >
+          Please select image(s) or drop here
+        </label>
         <div
-          style={Object {}}
+          style={
+            Object {
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
         >
           <label
             htmlFor="fileUpload"
             style={
               Object {
                 "position": "relative",
-                "top": 0,
+                "top": 10,
               }
             }
           >
@@ -1153,175 +1180,203 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               </svg>
             </div>
           </label>
-          <input
-            accept=".png, .jpg, .jpeg, .gif"
-            aria-hidden={true}
-            id="fileUpload"
-            multiple={true}
-            name="inputImages"
-            onChange={[Function]}
-            style={
-              Object {
-                "height": 0,
-                "left": 0,
-                "overflow": "hidden",
-                "position": "absolute",
-                "top": 0,
-                "visibility": "hidden",
-              }
-            }
-            theme={
-              Object {
-                "background": "#000",
-                "border": "#2F2F36",
-                "button": Object {
-                  "background": "#1d1d20",
-                  "text": "#FFF",
-                },
-                "buttonDisabled": Object {
-                  "background": "#1d1d20",
-                  "text": "#71737e",
-                },
-                "card": Object {
-                  "background": "#1d1d20",
-                  "border": "#FFF",
-                  "label": "#71737e",
-                  "text": "#FFF",
-                },
-                "checkbox": Object {
-                  "border": "#2F2F36",
-                  "text": "#FFF",
-                },
-                "colors": Object {
-                  "black": "#000",
-                  "coolGray": "#a6a7aa",
-                  "darkGrey": "#1d1d20",
-                  "lightGrey": "#71737e",
-                  "mediumGray": "#2F2F36",
-                  "red": "#f21e29",
-                  "veryLightPink": "#f0efef",
-                  "white": "#FFF",
-                  "yellow": "#be8f00",
-                },
-                "dataGrid": Object {
-                  "background": "#000",
-                  "text": "#71737e",
-                },
-                "error": "#f21e29",
-                "header": Object {
-                  "border": "#2F2F36",
-                  "text": "#FFF",
-                },
-                "icon": Object {
-                  "background": "#1d1d20",
-                  "fill": "#FFF",
-                  "fillInverse": "#000",
-                },
-                "input": Object {
-                  "text": "#FFF",
-                },
-                "inverseButton": Object {
-                  "background": "#FFF",
-                  "text": "#000",
-                },
-                "label": Object {
-                  "border": "#2F2F36",
-                  "text": "#71737e",
-                },
-                "menu": Object {
-                  "background": "#000",
-                  "text": "#FFF",
-                },
-                "providerContainer": Object {
-                  "minHeight": "100vh",
-                },
-                "radioButton": Object {
-                  "active": Object {
-                    "background": "#FFF",
-                    "fill": "#1d1d20",
-                  },
-                  "border": "#FFF",
-                  "text": "#FFF",
-                  "unActive": Object {
-                    "background": "#1d1d20",
-                    "dot": "#FFF",
-                    "fill": "#FFF",
-                  },
-                },
-                "secondaryText": "#71737e",
-                "select": Object {
-                  "background": "#1d1d20",
-                  "border": "#000",
-                },
-                "stepper": Object {
-                  "active": "#FFF",
-                  "background": "#1d1d20",
-                },
-                "tab": Object {
-                  "active": "#FFF",
-                  "hover": "#FFF",
-                  "normal": "#2F2F36",
-                },
-                "table": Object {
-                  "background": Object {
-                    "body": "#000",
-                    "header": "#1d1d20",
-                  },
-                  "border": Object {
-                    "body": "#1d1d20",
-                    "header": "#000",
-                  },
-                  "text": Object {
-                    "body": "#FFF",
-                    "header": "#71737e",
-                  },
-                },
-                "text": "#FFF",
-                "textArea": Object {
-                  "background": "#000",
-                  "text": "#FFF",
-                },
-                "textField": Object {
-                  "error": "#f21e29",
-                  "label": "#71737e",
-                },
-                "typography": Object {
-                  "h1": Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "24px",
-                    "fontWeight": 600,
-                  },
-                  "h2": Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "24px",
-                    "fontWeight": 100,
-                  },
-                  "h3": Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "18px",
-                    "fontWeight": 600,
-                  },
-                  "p": Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "18px",
-                    "fontWeight": 200,
-                  },
-                  "pre": Object {
-                    "fontFamily": "Hack, monospace",
-                    "fontSize": "18px",
-                  },
-                  "span": Object {
-                    "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
-                    "fontSize": "14px",
-                  },
-                },
-                "warning": "#be8f00",
-              }
-            }
-            type="file"
-          />
         </div>
+        <input
+          accept=".png, .jpg, .jpeg, .gif"
+          aria-hidden={true}
+          id="fileUpload"
+          multiple={true}
+          name="inputImages"
+          onChange={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "top": 0,
+              "visibility": "hidden",
+            }
+          }
+          theme={
+            Object {
+              "background": "#000",
+              "border": "#2F2F36",
+              "button": Object {
+                "background": "#1d1d20",
+                "text": "#FFF",
+              },
+              "buttonDisabled": Object {
+                "background": "#1d1d20",
+                "text": "#71737e",
+              },
+              "card": Object {
+                "background": "#1d1d20",
+                "border": "#FFF",
+                "label": "#71737e",
+                "text": "#FFF",
+              },
+              "checkbox": Object {
+                "border": "#2F2F36",
+                "text": "#FFF",
+              },
+              "colors": Object {
+                "black": "#000",
+                "coolGray": "#a6a7aa",
+                "darkGrey": "#1d1d20",
+                "lightGrey": "#71737e",
+                "mediumGray": "#2F2F36",
+                "red": "#f21e29",
+                "veryLightPink": "#f0efef",
+                "white": "#FFF",
+                "yellow": "#be8f00",
+              },
+              "dataGrid": Object {
+                "background": "#000",
+                "text": "#71737e",
+              },
+              "error": "#f21e29",
+              "header": Object {
+                "border": "#2F2F36",
+                "text": "#FFF",
+              },
+              "icon": Object {
+                "background": "#1d1d20",
+                "fill": "#FFF",
+                "fillInverse": "#000",
+              },
+              "input": Object {
+                "text": "#FFF",
+              },
+              "inverseButton": Object {
+                "background": "#FFF",
+                "text": "#000",
+              },
+              "label": Object {
+                "border": "#2F2F36",
+                "text": "#71737e",
+              },
+              "menu": Object {
+                "background": "#000",
+                "text": "#FFF",
+              },
+              "providerContainer": Object {
+                "minHeight": "100vh",
+              },
+              "radioButton": Object {
+                "active": Object {
+                  "background": "#FFF",
+                  "fill": "#1d1d20",
+                },
+                "border": "#FFF",
+                "text": "#FFF",
+                "unActive": Object {
+                  "background": "#1d1d20",
+                  "dot": "#FFF",
+                  "fill": "#FFF",
+                },
+              },
+              "secondaryText": "#71737e",
+              "select": Object {
+                "background": "#1d1d20",
+                "border": "#000",
+              },
+              "stepper": Object {
+                "active": "#FFF",
+                "background": "#1d1d20",
+              },
+              "tab": Object {
+                "active": "#FFF",
+                "hover": "#FFF",
+                "normal": "#2F2F36",
+              },
+              "table": Object {
+                "background": Object {
+                  "body": "#000",
+                  "header": "#1d1d20",
+                },
+                "border": Object {
+                  "body": "#1d1d20",
+                  "header": "#000",
+                },
+                "text": Object {
+                  "body": "#FFF",
+                  "header": "#71737e",
+                },
+              },
+              "text": "#FFF",
+              "textArea": Object {
+                "background": "#000",
+                "text": "#FFF",
+              },
+              "textField": Object {
+                "error": "#f21e29",
+                "label": "#71737e",
+              },
+              "typography": Object {
+                "h1": Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 600,
+                },
+                "h2": Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": 100,
+                },
+                "h3": Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "18px",
+                  "fontWeight": 600,
+                },
+                "p": Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "18px",
+                  "fontWeight": 200,
+                },
+                "pre": Object {
+                  "fontFamily": "Hack, monospace",
+                  "fontSize": "18px",
+                },
+                "span": Object {
+                  "fontFamily": "Inter, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": "14px",
+                },
+              },
+              "warning": "#be8f00",
+            }
+          }
+          type="file"
+        />
       </div>
+      <label
+        htmlFor="fileUpload"
+        id="dropZone-fileUpload"
+        onDrop={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "background": "#000",
+            "border": "2px dashed #2F2F36",
+            "borderRadius": 10,
+            "cursor": "copy",
+            "display": "flex",
+            "height": "calc(100% - 10px)",
+            "justifyContent": "center",
+            "left": 0,
+            "lineHeight": "50px",
+            "opacity": 0,
+            "position": "absolute",
+            "textAlign": "center",
+            "top": 5,
+            "transition": "opacity 200ms ease-in-out",
+            "visibility": "hidden",
+            "width": "100%",
+          }
+        }
+      >
+        Drop here
+      </label>
     </div>
     <div
       className="c5"
@@ -1329,7 +1384,11 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
       <div
         className="c6"
       >
-        imageName.png
+        <span
+          className="c7"
+        >
+          imageName.png
+        </span>
         <svg
           id="removeImage-0"
           onClick={[Function]}
@@ -1339,6 +1398,7 @@ exports[`Storyshots Shared Components|PageBlockForm Image type 1`] = `
               "fill": "#FFF",
               "height": 30,
               "marginLeft": 20,
+              "minWidth": 30,
               "width": 30,
             }
           }
