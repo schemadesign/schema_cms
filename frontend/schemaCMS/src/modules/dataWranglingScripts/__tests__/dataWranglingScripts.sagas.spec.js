@@ -8,10 +8,7 @@ import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCES_PATH, DATA_WRANGLING_SCRIPTS_PATH } from '../../../shared/utils/api.constants';
 import { watchDataWranglingScripts } from '../dataWranglingScripts.sagas';
 import { DataWranglingScriptsRoutines } from '../dataWranglingScripts.redux';
-import { SCRIPT_TYPES } from '../dataWranglingScripts.constants';
 import { selectDataSource } from '../../dataSource';
-
-const { DEFAULT, UPLOADED } = SCRIPT_TYPES;
 
 describe('DataWranglingScripts: sagas', () => {
   const defaultState = Immutable({});

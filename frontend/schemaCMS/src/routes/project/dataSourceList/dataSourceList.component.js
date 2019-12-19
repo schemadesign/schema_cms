@@ -9,14 +9,15 @@ import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { ListItem, ListContainer } from '../../../shared/components/listComponents';
+import { ListItem, ListContainer, ListItemTitle } from '../../../shared/components/listComponents';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import {
   Container,
+  getSourceIconStyles,
   Header,
   HeaderIcon,
-  iconSourceStyles,
+  Loading,
   MetaData,
   MetaDataName,
   MetaDataValue,
@@ -25,7 +26,6 @@ import {
 import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../list/list.styles';
-import { ListItemTitle } from '../../../shared/components/listComponents/listItem.styles';
 import { PREVIEW_PAGE, RESULT_PAGE, SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
 import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
 import { getMatchParam } from '../../../shared/utils/helpers';
@@ -40,6 +40,7 @@ export class DataSourceList extends PureComponent {
     fetchDataSources: PropTypes.func.isRequired,
     cancelFetchListLoop: PropTypes.func.isRequired,
     dataSources: PropTypes.array.isRequired,
+    theme: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     match: PropTypes.shape({
@@ -111,10 +112,14 @@ export class DataSourceList extends PureComponent {
     </Header>
   );
 
-  renderMetaData = ({ items, fields, filters, views }) => {
-    const { formatMessage } = this.props.intl;
+  renderMetaData = ({ items, fields, filters, views }, loading) => {
+    const {
+      intl: { formatMessage },
+      theme,
+    } = this.props;
+
     const list = [
-      { name: formatMessage(messages.source), value: <CsvIcon customStyles={iconSourceStyles} /> },
+      { name: formatMessage(messages.source), value: <CsvIcon customStyles={getSourceIconStyles(theme, loading)} /> },
       { name: formatMessage(messages.items), value: formatPrefixedNumber(items, 1) },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
@@ -122,7 +127,7 @@ export class DataSourceList extends PureComponent {
     ];
 
     const elements = list.map(({ name, value }, index) => (
-      <MetaData key={index}>
+      <MetaData key={index} loading={loading}>
         <MetaDataName id={`metaItem-${index}`}>{name}</MetaDataName>
         <MetaDataValue id={`metaItemValue-${index}`}>{value || DEFAULT_VALUE}</MetaDataValue>
       </MetaData>
@@ -133,7 +138,11 @@ export class DataSourceList extends PureComponent {
 
   renderHeader = ({ whenCreated, firstName, lastName, loading }) =>
     renderWhenTrueOtherwise(
-      always(<FormattedMessage {...messages.loading} />),
+      always(
+        <Loading loading={loading}>
+          <FormattedMessage {...messages.loading} />
+        </Loading>
+      ),
       always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))
     )(loading);
 
@@ -144,7 +153,7 @@ export class DataSourceList extends PureComponent {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const loading = !activeJob || jobsInProcess;
     const header = this.renderHeader({ whenCreated, firstName, lastName, loading });
-    const footer = this.renderMetaData(metaData || {});
+    const footer = this.renderMetaData(metaData || {}, loading);
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>

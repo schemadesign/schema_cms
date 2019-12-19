@@ -38,7 +38,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
       <Styled(Component)
         footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              loading={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-0"
               >
@@ -50,6 +52,7 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#71737e",
                       "height": 40,
                       "width": 40,
                     }
@@ -57,7 +60,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 />
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              loading={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-1"
               >
@@ -69,7 +74,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              loading={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-2"
               >
@@ -81,7 +88,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              loading={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-3"
               >
@@ -93,7 +102,9 @@ exports[`DataSourceList: Component should render card with job 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              loading={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
@@ -108,11 +119,15 @@ exports[`DataSourceList: Component should render card with job 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <FormattedMessage
-            defaultMessage="Loading..."
-            id="project.dataSourceList.loading"
-            values={Object {}}
-          />
+          <ForwardRef(styled.span)
+            loading={true}
+          >
+            <FormattedMessage
+              defaultMessage="Loading..."
+              id="project.dataSourceList.loading"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
         }
         key="0"
       >
@@ -181,7 +196,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              loading={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-0"
               >
@@ -193,6 +210,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#71737e",
                       "height": 40,
                       "width": 40,
                     }
@@ -200,7 +218,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 />
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              loading={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-1"
               >
@@ -212,7 +232,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              loading={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-2"
               >
@@ -224,7 +246,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              loading={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-3"
               >
@@ -236,7 +260,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              loading={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
@@ -251,11 +277,15 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <FormattedMessage
-            defaultMessage="Loading..."
-            id="project.dataSourceList.loading"
-            values={Object {}}
-          />
+          <ForwardRef(styled.span)
+            loading={true}
+          >
+            <FormattedMessage
+              defaultMessage="Loading..."
+              id="project.dataSourceList.loading"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
         }
         key="0"
       >
@@ -281,6 +311,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#FFF",
                       "height": 40,
                       "width": 40,
                     }
@@ -381,6 +412,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#FFF",
                       "height": 40,
                       "width": 40,
                     }

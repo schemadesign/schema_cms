@@ -1,8 +1,10 @@
-import styled, { css } from 'styled-components';
-import { Theme } from 'schemaUI';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { styleWhenTrue } from '../../../shared/utils/rendering';
+
 import { media } from '../../../theme/media';
+
+const setColor = (loading, { label, text }) => (loading ? label : text);
+const setColorWithTheme = inverse => ({ theme: { card }, loading }) => setColor(inverse ? !loading : loading, card);
 
 export const Container = styled.div``;
 
@@ -21,7 +23,7 @@ export const MetaDataWrapper = styled.div`
 export const MetaData = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${({ theme: { card } }) => card.text};
+  color: ${setColorWithTheme()};
 `;
 
 export const MetaDataName = styled.span`
@@ -30,20 +32,17 @@ export const MetaDataName = styled.span`
   margin-bottom: 10px;
 `;
 
-const lockStyles = styleWhenTrue(
-  ({ isLock }) => isLock,
-  css`
-    color: ${Theme.colors.coolGray};
-  `
-);
-
 export const MetaDataValue = styled.span`
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
-
-  ${lockStyles}
 `;
+
+export const getSourceIconStyles = ({ card }, loading) => ({
+  width: 40,
+  height: 40,
+  fill: setColor(loading, card),
+});
 
 export const Header = styled.div`
   display: flex;
@@ -55,10 +54,9 @@ export const HeaderIcon = styled.div`
   margin-top: -8px;
 `;
 
-export const iconSourceStyles = {
-  width: 40,
-  height: 40,
-};
+export const Loading = styled.span`
+  color: ${setColorWithTheme(true)};
+`;
 
 export const Job = styled(Link)`
   background-color: ${({ theme }) => theme.background};
