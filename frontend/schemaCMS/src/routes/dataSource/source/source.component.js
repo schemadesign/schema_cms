@@ -32,6 +32,7 @@ export class Source extends PureComponent {
     dirty: PropTypes.bool.isRequired,
     values: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
+    handleChange: PropTypes.func.isRequired,
     setFieldValue: PropTypes.func.isRequired,
     removeDataSource: PropTypes.func.isRequired,
     onDataSourceChange: PropTypes.func.isRequired,

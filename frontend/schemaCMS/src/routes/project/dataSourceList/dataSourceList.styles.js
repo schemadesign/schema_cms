@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { media } from '../../../theme/media';
 
 const setColor = (loading, { label, text }) => (loading ? label : text);
-const setColorWithTheme = inverse => ({ theme: { card }, loading }) => setColor(inverse ? !loading : loading, card);
+const setColorWithTheme = inverse => ({ theme: { card }, metaProcessing }) =>
+  setColor(inverse ? !metaProcessing : metaProcessing, card);
 
 export const Container = styled.div``;
 

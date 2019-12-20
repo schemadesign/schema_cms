@@ -1,11 +1,17 @@
 import { all, cancel, cancelled, delay, fork, put, take, takeLatest } from 'redux-saga/effects';
-import { all as ramdaAll, both, either, isEmpty, omit, pipe, propEq, propIs, when } from 'ramda';
+import { all as ramdaAll, both, either, includes, isEmpty, omit, pipe, propEq, propIs, when, pathOr } from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
 import api from '../../shared/services/api';
 import { DATA_SOURCES_PATH, PREVIEW_PATH, PROJECTS_PATH } from '../../shared/utils/api.constants';
-import { DATA_SOURCE_RUN_LAST_JOB, FETCH_LIST_DELAY, RESULT_PAGE } from './dataSource.constants';
+import {
+  DATA_SOURCE_RUN_LAST_JOB,
+  FETCH_LIST_DELAY,
+  META_FAILED,
+  META_SUCCESS,
+  RESULT_PAGE,
+} from './dataSource.constants';
 import { formatFormData } from '../../shared/utils/helpers';
 
 const PAGE_SIZE = 1000;
@@ -59,7 +65,15 @@ function* fetchOne({ payload: { dataSourceId } }) {
 
 const getIfAllDataSourceProcessed = either(
   isEmpty,
-  ramdaAll(both(propIs(Object, 'activeJob'), propEq('jobsInProcess', false)))
+  ramdaAll(
+    both(
+      both(propIs(Object, 'activeJob'), propEq('jobsInProcess', false)),
+      pipe(
+        pathOr('', ['metaData', 'status']),
+        status => includes(status, [META_FAILED, META_SUCCESS])
+      )
+    )
+  )
 );
 
 function* fetchListLoop(payload) {

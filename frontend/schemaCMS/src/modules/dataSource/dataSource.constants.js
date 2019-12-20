@@ -20,6 +20,11 @@ export const RESULT_PAGE = 'result';
 export const FILTERS_PAGE = 'filters';
 export const VIEWS_PAGE = 'views';
 
+export const META_PENDING = 'pending';
+export const META_PROCESSING = 'processing';
+export const META_FAILED = 'failed';
+export const META_SUCCESS = 'success';
+
 export const DATA_SOURCE_FIELDS = ['fileName', 'type', 'name'];
 
 const FILE_SIZE = 300000000;

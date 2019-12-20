@@ -8,7 +8,7 @@ from .services import secret_manager
 db = Proxy()
 
 
-class JobState:
+class ProcessState:
     PENDING = "pending"
     PROCESSING = "processing"
     FAILED = "failed"

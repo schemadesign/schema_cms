@@ -23,8 +23,8 @@ def file_upload_path(instance, filename):
 
 
 class MetaDataModel(models.Model):
-    items = models.PositiveIntegerField()
-    fields = models.PositiveSmallIntegerField()
+    items = models.PositiveIntegerField(null=True)
+    fields = models.PositiveSmallIntegerField(null=True)
     preview = models.FileField(null=True, upload_to=file_upload_path)
     fields_names = pg_fields.ArrayField(models.CharField(max_length=200), blank=True, default=list)
 
@@ -37,23 +37,6 @@ class MetaDataModel(models.Model):
             return {}
         self.preview.seek(0)
         return json.loads(self.preview.read())
-
-    @classmethod
-    def schedule_update_meta(cls, obj, copy_steps=False):
-        file = obj.get_source_file()
-        if not file:
-            raise ValueError("Cannot schedule meta processing without source file")
-        with transaction.atomic():
-            try:
-                obj.meta_data.deleted = True  # set flag to hard delete later
-                obj.meta_data.delete()  # hard delete
-            except models.ObjectDoesNotExist:
-                pass
-            transaction.on_commit(
-                lambda: services.schedule_object_meta_processing(
-                    obj=obj, source_file_size=file.size, copy_steps=copy_steps
-                )
-            )
 
 
 class Project(
@@ -177,22 +160,34 @@ class DataSource(
         return constants.WorkerProcessType.DATASOURCE_META_PROCESSING
 
     def schedule_update_meta(self, copy_steps):
-        return MetaDataModel.schedule_update_meta(obj=self, copy_steps=copy_steps)
+        file = self.get_source_file()
+        if not file:
+            raise ValueError("Cannot schedule meta processing without source file")
 
-    def update_meta(self, preview_data: dict, items: int, fields: int, fields_names: list):
+        with transaction.atomic():
+            self.meta_data.status = constants.ProcessingState.PENDING
+            self.meta_data.save(update_fields=["status"])
+
+            transaction.on_commit(
+                lambda: services.schedule_object_meta_processing(
+                    obj=self, source_file_size=file.size, copy_steps=copy_steps
+                )
+            )
+
+    def update_meta(self, **kwargs):
         if not self.file:
             return
+
         with transaction.atomic():
-            meta, _ = DataSourceMeta.objects.update_or_create(
-                datasource_id=self.id,
-                defaults={"fields": fields, "items": items, "fields_names": fields_names},
-            )
-            file_name, _ = self.get_original_file_name(self.file.name)
-            meta.preview.save(
-                f"{file_name}_preview.json",
-                django.core.files.base.ContentFile(content=json.dumps(preview_data).encode()),
-            )
-            meta.save(update_fields=["preview"])
+            preview = kwargs.pop("preview", {})
+
+            meta, _ = DataSourceMeta.objects.update_or_create(datasource_id=self.id, defaults=kwargs)
+            if preview:
+                file_name, _ = self.get_original_file_name(self.file.name)
+                meta.preview.save(
+                    f"{file_name}_preview.json",
+                    django.core.files.base.ContentFile(content=json.dumps(preview).encode()),
+                )
 
     def relative_path_to_save(self, filename):
         base_path = self.file.storage.location
@@ -252,7 +247,7 @@ class DataSource(
 
     def get_last_success_job(self):
         try:
-            return self.jobs.filter(job_state=constants.DataSourceJobState.SUCCESS).latest("created")
+            return self.jobs.filter(job_state=constants.ProcessingState.SUCCESS).latest("created")
         except DataSourceJob.DoesNotExist:
             return None
 
@@ -297,6 +292,10 @@ class DataSource(
 
 class DataSourceMeta(softdelete.models.SoftDeleteObject, MetaDataModel):
     datasource = models.OneToOneField(DataSource, on_delete=models.CASCADE, related_name="meta_data")
+    status = models.CharField(
+        max_length=25, choices=constants.PROCESSING_STATE_CHOICES, default=constants.ProcessingState.PENDING
+    )
+    error = models.TextField(blank=True, default="")
 
     def __str__(self):
         return f"DataSource {self.datasource} meta"
@@ -327,8 +326,7 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
         return self.name
 
     def save(self, *args, **kwargs):
-        if not self.body:
-            self.body = self.file.read().decode()
+        self.body = self.file.read().decode()
         super(WranglingScript, self).save(*args, **kwargs)
 
     def relative_path_to_save(self, filename):
@@ -389,7 +387,7 @@ class DataSourceJob(
             raise ValueError("Job or DataSource ID is not set")
         return os.path.join(base_path, f"{self.datasource_id}/jobs/{self.id}/outputs/{filename}")
 
-    def update_meta(self, preview_data: dict, items: int, fields: int, fields_names: list):
+    def update_meta(self, preview: dict, items: int, fields: int, fields_names: list):
         with transaction.atomic():
             meta, _ = DataSourceJobMetaData.objects.update_or_create(
                 job=self, defaults={"fields": fields, "items": items, "fields_names": fields_names}
@@ -397,7 +395,7 @@ class DataSourceJob(
 
             meta.preview.save(
                 f"job_{self.id}_preview.json",
-                django.core.files.base.ContentFile(content=json.dumps(preview_data).encode()),
+                django.core.files.base.ContentFile(content=json.dumps(preview).encode()),
             )
 
     def meta_file_serialization(self):
@@ -438,7 +436,7 @@ class DataSourceJobStep(softdelete.models.SoftDeleteObject, models.Model):
         DataSourceJob, on_delete=models.CASCADE, related_name='steps'
     )
     script: WranglingScript = models.ForeignKey(
-        WranglingScript, on_delete=models.CASCADE, related_name='steps', null=True
+        WranglingScript, on_delete=models.SET_NULL, related_name='steps', null=True
     )
     body = models.TextField(blank=True)
     exec_order = models.IntegerField(default=0)

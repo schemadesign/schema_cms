@@ -117,6 +117,9 @@ def get_preview_data(data_frame):
 def process_datasource_meta_source_file(data_source: dict):
     try:
         datasource = types.DataSource.from_json(data_source["data"])
+        api.schemacms_api.update_datasource_meta(
+            datasource_pk=datasource.id, status=db.ProcessState.PROCESSING,
+        )
     except Exception as e:
         return logging.critical(f"Invalid message body - {e}")
 
@@ -130,11 +133,15 @@ def process_datasource_meta_source_file(data_source: dict):
             items=items,
             fields=fields,
             fields_names=fields_names,
-            preview_data=preview_data,
+            preview=json.loads(preview_data),
             copy_steps=data_source["copy_steps"],
+            status=db.ProcessState.SUCCESS,
         )
         logger.info(f"Meta created - DataSource # {datasource.id}")
     except Exception as e:
+        api.schemacms_api.update_datasource_meta(
+            datasource_pk=datasource.id, status=db.ProcessState.FAILED, error=f"{e} @ update data source meta"
+        )
         return logging.error(f"Data Source {datasource.id} fail to create meta data - {e}")
 
 
@@ -166,7 +173,7 @@ def process_job(job_data: dict):
         return logging.critical(f"Invalid message body - {e}")
 
     try:
-        api.schemacms_api.update_job_state(job_pk=current_job.id, state=db.JobState.PROCESSING)
+        api.schemacms_api.update_job_state(job_pk=current_job.id, state=db.ProcessState.PROCESSING)
 
         source_file = current_job.source_file
         source_file_path = current_job.source_file_path
@@ -206,31 +213,31 @@ def process_job(job_data: dict):
             items=items,
             fields=fields,
             fields_names=fields_names,
-            preview_data=preview_data,
+            preview=preview_data,
         )
 
         logger.info(f"Meta created - Job # {current_job.id}")
 
         api.schemacms_api.update_job_state(
-            job_pk=current_job.id, state=db.JobState.SUCCESS, result=result_file_name, error="",
+            job_pk=current_job.id, state=db.ProcessState.SUCCESS, result=result_file_name, error="",
         )
     except errors.JobLoadingSourceFileError as e:
         api.schemacms_api.update_job_state(
-            job_pk=current_job.id, state=db.JobState.FAILED, error=f"{e} @ loading source file",
+            job_pk=current_job.id, state=db.ProcessState.FAILED, error=f"{e} @ loading source file",
         )
         logging.error(e, exc_info=True)
         return logging.critical(f"Error while loading source file - {e}")
 
     except errors.JobSetExecutionError as e:
         api.schemacms_api.update_job_state(
-            job_pk=current_job.id, state=db.JobState.FAILED, error=f"{e.msg} @ {e.step.id}",
+            job_pk=current_job.id, state=db.ProcessState.FAILED, error=f"{e.msg} @ {e.step.id}",
         )
         logging.error(e, exc_info=True)
         return logging.critical(f"Error while executing {e.step.script.name}")
 
     except errors.JobSavingFilesError as e:
         api.schemacms_api.update_job_state(
-            job_pk=current_job.id, state=db.JobState.FAILED, error=f"{e} @ saving results files",
+            job_pk=current_job.id, state=db.ProcessState.FAILED, error=f"{e} @ saving results files",
         )
         logging.error(e, exc_info=True)
         return logging.critical(f"Error while saving results - {e}")

@@ -220,7 +220,7 @@ class TestProjectDataSourcesView:
         for data_source in data_sources:
             step = job_step_factory(
                 datasource_job__datasource=data_source,
-                datasource_job__job_state=projects_constants.DataSourceJobState.SUCCESS,
+                datasource_job__job_state=projects_constants.ProcessingState.SUCCESS,
                 options={"columns": ["imageurl"]},
             )
             data_source.active_job = step.datasource_job
@@ -512,7 +512,7 @@ class TestUpdateDataSourceView:
 
     @pytest.mark.parametrize(
         "job_status",
-        [projects_constants.DataSourceJobState.PENDING, projects_constants.DataSourceJobState.PROCESSING],
+        [projects_constants.ProcessingState.PENDING, projects_constants.ProcessingState.PROCESSING],
     )
     def test_error_file_reupload_when_job_is_processing(
         self, api_client, faker, admin, data_source_factory, job_factory, job_status
@@ -551,9 +551,9 @@ class TestUpdateDataSourceView:
 class TestDataSourcePreview:
     def test_response(self, api_client, admin, data_source):
         api_client.force_authenticate(admin)
-        data_source.update_meta(
-            preview_data={"test": "test"}, items=2, fields=2, fields_names=["col1", "col2"]
-        )
+        data_source.update_meta(preview={"test": "test"}, items=2, fields=2, fields_names=["col1", "col2"])
+
+        data_source.meta_data.refresh_from_db()
         expected_data = json.loads(data_source.meta_data.preview.read())
         expected_data["data_source"] = {"name": data_source.name}
 
@@ -625,11 +625,9 @@ class TestDataSourceJobUpdateState:
         return settings.LAMBDA_AUTH_TOKEN
 
     def test_job_state_from_pending_to_processing(self, api_client, job_factory, lambda_auth_token):
-        job = job_factory(job_state=projects_constants.DataSourceJobState.PENDING, result=None, error="")
+        job = job_factory(job_state=projects_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=projects_constants.DataSourceJobState.PROCESSING,
-            result="path/to/result.csv",
-            error="test",
+            job_state=projects_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(
@@ -645,10 +643,10 @@ class TestDataSourceJobUpdateState:
     def test_job_state_from_processing_to_success(
         self, api_client, job_factory, mocker, lambda_auth_token, default_storage
     ):
-        job = job_factory(job_state=projects_constants.DataSourceJobState.PROCESSING, result=None, error="")
+        job = job_factory(job_state=projects_constants.ProcessingState.PROCESSING, result=None, error="")
         default_storage.save(name="path/to/result.csv", content=base.ContentFile("test,1,2".encode()))
         payload = dict(
-            job_state=projects_constants.DataSourceJobState.SUCCESS, result="path/to/result.csv", error="test"
+            job_state=projects_constants.ProcessingState.SUCCESS, result="path/to/result.csv", error="test"
         )
         set_active_job_mock = mocker.patch("schemacms.projects.models.DataSource.set_active_job")
 
@@ -667,9 +665,9 @@ class TestDataSourceJobUpdateState:
         set_active_job_mock.assert_called_with(job)
 
     def test_job_state_from_processing_to_failed(self, api_client, job_factory, lambda_auth_token):
-        job = job_factory(job_state=projects_constants.DataSourceJobState.PROCESSING, result=None)
+        job = job_factory(job_state=projects_constants.ProcessingState.PROCESSING, result=None)
         payload = dict(
-            job_state=projects_constants.DataSourceJobState.FAILED,
+            job_state=projects_constants.ProcessingState.FAILED,
             result="path/to/result.csv",
             error="Something goes wrong",
         )
@@ -685,12 +683,11 @@ class TestDataSourceJobUpdateState:
         assert not job.result
 
     @pytest.mark.parametrize(
-        "job_state",
-        [projects_constants.DataSourceJobState.SUCCESS, projects_constants.DataSourceJobState.FAILED],
+        "job_state", [projects_constants.ProcessingState.SUCCESS, projects_constants.ProcessingState.FAILED]
     )
     def test_job_state_to_pending(self, api_client, job_factory, job_state, lambda_auth_token):
         job = job_factory(job_state=job_state)
-        payload = dict(job_state=projects_constants.DataSourceJobState.PENDING)
+        payload = dict(job_state=projects_constants.ProcessingState.PENDING)
 
         response = api_client.post(
             self.get_url(job.pk), payload, HTTP_AUTHORIZATION="Token {}".format(lambda_auth_token)
@@ -704,10 +701,10 @@ class TestDataSourceJobUpdateState:
     @pytest.mark.parametrize(
         "initial_job_state, new_job_state",
         [
-            (projects_constants.DataSourceJobState.SUCCESS, projects_constants.DataSourceJobState.SUCCESS),
-            (projects_constants.DataSourceJobState.FAILED, projects_constants.DataSourceJobState.FAILED),
-            (projects_constants.DataSourceJobState.SUCCESS, projects_constants.DataSourceJobState.FAILED),
-            (projects_constants.DataSourceJobState.FAILED, projects_constants.DataSourceJobState.SUCCESS),
+            (projects_constants.ProcessingState.SUCCESS, projects_constants.ProcessingState.SUCCESS),
+            (projects_constants.ProcessingState.FAILED, projects_constants.ProcessingState.FAILED),
+            (projects_constants.ProcessingState.SUCCESS, projects_constants.ProcessingState.FAILED),
+            (projects_constants.ProcessingState.FAILED, projects_constants.ProcessingState.SUCCESS),
         ],
     )
     def test_changing_data_with_same_job_state(
@@ -727,11 +724,9 @@ class TestDataSourceJobUpdateState:
         assert job.error == initial["error"]
 
     def test_job_state_not_authenticated(self, api_client, job_factory):
-        job = job_factory(job_state=projects_constants.DataSourceJobState.PENDING, result=None, error="")
+        job = job_factory(job_state=projects_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=projects_constants.DataSourceJobState.PROCESSING,
-            result="path/to/result.csv",
-            error="test",
+            job_state=projects_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(self.get_url(job.pk), payload)
@@ -740,11 +735,9 @@ class TestDataSourceJobUpdateState:
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
     def test_job_state_not_authenticated_by_jwt_token(self, api_client, job_factory, admin):
-        job = job_factory(job_state=projects_constants.DataSourceJobState.PENDING, result=None, error="")
+        job = job_factory(job_state=projects_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=projects_constants.DataSourceJobState.PROCESSING,
-            result="path/to/result.csv",
-            error="test",
+            job_state=projects_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(
@@ -881,11 +874,11 @@ class TestJobDetailView:
 
 class TestJobResultPreviewView:
     def test_response(self, api_client, admin, job_factory, job_step_factory, faker):
-        job = job_factory(job_state=projects_constants.DataSourceJobState.SUCCESS)
+        job = job_factory(job_state=projects_constants.ProcessingState.SUCCESS)
         job_step_factory.create_batch(2, datasource_job=job)
         job.result = faker.csv_upload_file(filename="test_result.csv")
         job.save()
-        job.update_meta(preview_data={"test": "test"}, items=3, fields=2, fields_names=["col1", "col2"])
+        job.update_meta(preview={"test": "test"}, items=3, fields=2, fields_names=["col1", "col2"])
 
         api_client.force_authenticate(admin)
         response = api_client.get(self.get_url(job.id))
@@ -965,7 +958,7 @@ class TestFilterDetailView:
 class TestRevertJobView:
     def test_response(self, api_client, data_source, admin, job_factory, mocker):
         jobs = job_factory.create_batch(
-            3, datasource=data_source, job_state=projects_constants.DataSourceJobState.SUCCESS
+            3, datasource=data_source, job_state=projects_constants.ProcessingState.SUCCESS
         )
         payload = dict(id=jobs[1].id)
         old_active_job = data_source.active_job

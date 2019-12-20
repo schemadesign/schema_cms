@@ -39,18 +39,18 @@ DATA_SOURCE_TYPE_CHOICES = (
 )
 
 
-class DataSourceJobState:
+class ProcessingState:
     PENDING = 'pending'
     PROCESSING = 'processing'
     FAILED = 'failed'
     SUCCESS = 'success'
 
 
-DATA_SOURCE_JOB_STATE_CHOICES = (
-    (DataSourceJobState.PENDING, 'Pending'),
-    (DataSourceJobState.PROCESSING, 'Processing'),
-    (DataSourceJobState.FAILED, 'Failed'),
-    (DataSourceJobState.SUCCESS, 'Success'),
+PROCESSING_STATE_CHOICES = (
+    (ProcessingState.PENDING, 'Pending'),
+    (ProcessingState.PROCESSING, 'Processing'),
+    (ProcessingState.FAILED, 'Failed'),
+    (ProcessingState.SUCCESS, 'Success'),
 )
 
 

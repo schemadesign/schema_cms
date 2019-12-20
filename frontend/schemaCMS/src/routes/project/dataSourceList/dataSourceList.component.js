@@ -2,14 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, equals, T, propEq } from 'ramda';
+import { always, cond, either, equals, propEq, propOr, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { ListItem, ListContainer, ListItemTitle } from '../../../shared/components/listComponents';
+import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import {
@@ -26,8 +26,14 @@ import {
 import messages from './dataSourceList.messages';
 import extendedDayjs, { BASE_DATE_FORMAT } from '../../../shared/utils/extendedDayjs';
 import { HeaderItem, HeaderList } from '../list/list.styles';
-import { PREVIEW_PAGE, RESULT_PAGE, SOURCE_PAGE } from '../../../modules/dataSource/dataSource.constants';
-import { renderWhenTrueOtherwise } from '../../../shared/utils/rendering';
+import {
+  META_FAILED,
+  META_PENDING,
+  META_PROCESSING,
+  PREVIEW_PAGE,
+  RESULT_PAGE,
+  SOURCE_PAGE,
+} from '../../../modules/dataSource/dataSource.constants';
 import { getMatchParam } from '../../../shared/utils/helpers';
 import { formatPrefixedNumber } from '../../../shared/utils/numberFormating';
 
@@ -112,22 +118,24 @@ export class DataSourceList extends PureComponent {
     </Header>
   );
 
-  renderMetaData = ({ items, fields, filters, views }, loading) => {
+  renderMetaData = ({ metaData: { items, fields, filters, views }, metaProcessing }) => {
     const {
       intl: { formatMessage },
       theme,
     } = this.props;
 
     const list = [
-      { name: formatMessage(messages.source), value: <CsvIcon customStyles={getSourceIconStyles(theme, loading)} /> },
+      {
+        name: formatMessage(messages.source),
+        value: <CsvIcon customStyles={getSourceIconStyles(theme, metaProcessing)} />,
+      },
       { name: formatMessage(messages.items), value: formatPrefixedNumber(items) },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
       { name: formatMessage(messages.views), value: views },
     ];
-
     const elements = list.map(({ name, value }, index) => (
-      <MetaData key={index} loading={loading}>
+      <MetaData key={index} metaProcessing={metaProcessing}>
         <MetaDataName id={`metaItem-${index}`}>{name}</MetaDataName>
         <MetaDataValue id={`metaItemValue-${index}`}>{value || DEFAULT_VALUE}</MetaDataValue>
       </MetaData>
@@ -136,24 +144,27 @@ export class DataSourceList extends PureComponent {
     return <MetaDataWrapper>{elements}</MetaDataWrapper>;
   };
 
-  renderHeader = ({ whenCreated, firstName, lastName, loading }) =>
-    renderWhenTrueOtherwise(
-      always(
-        <Loading loading={loading}>
-          <FormattedMessage {...messages.loading} />
-        </Loading>
-      ),
-      always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))
-    )(loading);
+  renderLoading = message => <Loading metaProcessing>{message}</Loading>;
+
+  renderHeader = ({ whenCreated, firstName, lastName, jobProcessing, metaProcessing, metaFailed }) =>
+    cond([
+      [propEq('metaProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.metaProcessing} />))],
+      [propEq('jobProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.jobProcessing} />))],
+      [propEq('metaFailed', true), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
+      [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
+    ])({ metaFailed, jobProcessing, metaProcessing });
 
   renderItem = (
     { name, created, createdBy: { firstName, lastName }, id, metaData, activeJob, jobsInProcess },
     index
   ) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
-    const loading = !activeJob || jobsInProcess;
-    const header = this.renderHeader({ whenCreated, firstName, lastName, loading });
-    const footer = this.renderMetaData(metaData || {}, loading);
+    const jobProcessing = !activeJob || jobsInProcess;
+    const metaStatus = propOr('', 'status', metaData);
+    const metaProcessing = either(equals(META_PENDING), equals(META_PROCESSING))(metaStatus);
+    const metaFailed = equals(META_FAILED)(metaStatus);
+    const header = this.renderHeader({ whenCreated, firstName, lastName, jobProcessing, metaProcessing, metaFailed });
+    const footer = this.renderMetaData({ metaData, metaProcessing });
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>
