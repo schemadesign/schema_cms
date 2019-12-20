@@ -38,7 +38,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-0"
               >
@@ -50,6 +52,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#FFF",
                       "height": 40,
                       "width": 40,
                     }
@@ -57,7 +60,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 />
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-1"
               >
@@ -69,7 +74,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-2"
               >
@@ -81,7 +88,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-3"
               >
@@ -93,7 +102,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
@@ -108,11 +119,15 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <FormattedMessage
-            defaultMessage="Processing data source..."
-            id="project.dataSourceList.jobProcessing"
-            values={Object {}}
-          />
+          <ForwardRef(styled.span)
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="Processing data source..."
+              id="project.dataSourceList.jobProcessing"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
         }
         key="0"
       >
@@ -126,7 +141,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-0"
               >
@@ -138,6 +155,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#FFF",
                       "height": 40,
                       "width": 40,
                     }
@@ -145,7 +163,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 />
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-1"
               >
@@ -157,7 +177,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-2"
               >
@@ -169,7 +191,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-3"
               >
@@ -181,7 +205,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
@@ -226,7 +252,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-0"
               >
@@ -238,6 +266,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#FFF",
                       "height": 40,
                       "width": 40,
                     }
@@ -245,7 +274,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 />
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-1"
               >
@@ -257,7 +288,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-2"
               >
@@ -269,7 +302,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-3"
               >
@@ -281,7 +316,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
@@ -296,11 +333,15 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <FormattedMessage
-            defaultMessage="Processing data source..."
-            id="project.dataSourceList.jobProcessing"
-            values={Object {}}
-          />
+          <ForwardRef(styled.span)
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="Processing data source..."
+              id="project.dataSourceList.jobProcessing"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
         }
         key="2"
       >
@@ -314,7 +355,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-0"
               >
@@ -326,6 +369,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#FFF",
                       "height": 40,
                       "width": 40,
                     }
@@ -333,7 +377,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 />
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-1"
               >
@@ -345,7 +391,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-2"
               >
@@ -357,7 +405,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-3"
               >
@@ -369,7 +419,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
@@ -414,7 +466,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-0"
               >
@@ -426,6 +480,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#71737e",
                       "height": 40,
                       "width": 40,
                     }
@@ -433,7 +488,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 />
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-1"
               >
@@ -445,7 +502,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-2"
               >
@@ -457,7 +516,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-3"
               >
@@ -469,7 +530,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
@@ -484,11 +547,15 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <FormattedMessage
-            defaultMessage="Processing meta data..."
-            id="project.dataSourceList.metaProcessing"
-            values={Object {}}
-          />
+          <ForwardRef(styled.span)
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="Processing meta data..."
+              id="project.dataSourceList.metaProcessing"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
         }
         key="4"
       >
@@ -502,7 +569,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-0"
               >
@@ -514,6 +583,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#71737e",
                       "height": 40,
                       "width": 40,
                     }
@@ -521,7 +591,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 />
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-1"
               >
@@ -533,7 +605,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-2"
               >
@@ -545,7 +619,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-3"
               >
@@ -557,7 +633,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={true}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
@@ -572,11 +650,15 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <FormattedMessage
-            defaultMessage="Processing meta data..."
-            id="project.dataSourceList.metaProcessing"
-            values={Object {}}
-          />
+          <ForwardRef(styled.span)
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="Processing meta data..."
+              id="project.dataSourceList.metaProcessing"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
         }
         key="5"
       >
@@ -590,7 +672,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
       <Styled(Component)
         footerComponent={
           <ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-0"
               >
@@ -602,6 +686,7 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 <Unknown
                   customStyles={
                     Object {
+                      "fill": "#FFF",
                       "height": 40,
                       "width": 40,
                     }
@@ -609,7 +694,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 />
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-1"
               >
@@ -621,7 +708,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-2"
               >
@@ -633,7 +722,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-3"
               >
@@ -645,7 +736,9 @@ exports[`DataSourceList: Component should render correctly 1`] = `
                 —
               </ForwardRef(styled.span)>
             </ForwardRef(styled.div)>
-            <ForwardRef(styled.div)>
+            <ForwardRef(styled.div)
+              metaProcessing={false}
+            >
               <ForwardRef(styled.span)
                 id="metaItem-4"
               >
@@ -660,11 +753,15 @@ exports[`DataSourceList: Component should render correctly 1`] = `
           </ForwardRef(styled.div)>
         }
         headerComponent={
-          <FormattedMessage
-            defaultMessage="Processing meta data failed"
-            id="project.dataSourceList.metaFailed"
-            values={Object {}}
-          />
+          <ForwardRef(styled.span)
+            metaProcessing={true}
+          >
+            <FormattedMessage
+              defaultMessage="Processing meta data failed"
+              id="project.dataSourceList.metaFailed"
+              values={Object {}}
+            />
+          </ForwardRef(styled.span)>
         }
         key="6"
       >

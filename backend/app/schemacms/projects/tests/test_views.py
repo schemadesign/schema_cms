@@ -627,9 +627,7 @@ class TestDataSourceJobUpdateState:
     def test_job_state_from_pending_to_processing(self, api_client, job_factory, lambda_auth_token):
         job = job_factory(job_state=projects_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=projects_constants.ProcessingState.PROCESSING,
-            result="path/to/result.csv",
-            error="test",
+            job_state=projects_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(
@@ -685,7 +683,7 @@ class TestDataSourceJobUpdateState:
         assert not job.result
 
     @pytest.mark.parametrize(
-        "job_state", [projects_constants.ProcessingState.SUCCESS, projects_constants.ProcessingState.FAILED],
+        "job_state", [projects_constants.ProcessingState.SUCCESS, projects_constants.ProcessingState.FAILED]
     )
     def test_job_state_to_pending(self, api_client, job_factory, job_state, lambda_auth_token):
         job = job_factory(job_state=job_state)
@@ -728,9 +726,7 @@ class TestDataSourceJobUpdateState:
     def test_job_state_not_authenticated(self, api_client, job_factory):
         job = job_factory(job_state=projects_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=projects_constants.ProcessingState.PROCESSING,
-            result="path/to/result.csv",
-            error="test",
+            job_state=projects_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(self.get_url(job.pk), payload)
@@ -741,9 +737,7 @@ class TestDataSourceJobUpdateState:
     def test_job_state_not_authenticated_by_jwt_token(self, api_client, job_factory, admin):
         job = job_factory(job_state=projects_constants.ProcessingState.PENDING, result=None, error="")
         payload = dict(
-            job_state=projects_constants.ProcessingState.PROCESSING,
-            result="path/to/result.csv",
-            error="test",
+            job_state=projects_constants.ProcessingState.PROCESSING, result="path/to/result.csv", error="test"
         )
 
         response = api_client.post(

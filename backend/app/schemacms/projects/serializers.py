@@ -2,7 +2,7 @@ from django.db import transaction
 from rest_framework import serializers, exceptions
 
 from schemacms.projects import models
-from .constants import ProcessingState, PROCESSING_STATE_CHOICES, BlockTypes
+from .constants import ProcessingState, BlockTypes
 from .models import DataSource, DataSourceMeta, Project, WranglingScript
 from ..users.models import User
 from ..utils.serializers import NestedRelatedModelSerializer

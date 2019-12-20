@@ -181,7 +181,7 @@ class DataSource(
         with transaction.atomic():
             preview = kwargs.pop("preview", {})
 
-            meta, _ = DataSourceMeta.objects.update_or_create(datasource_id=self.id, defaults=kwargs,)
+            meta, _ = DataSourceMeta.objects.update_or_create(datasource_id=self.id, defaults=kwargs)
             if preview:
                 file_name, _ = self.get_original_file_name(self.file.name)
                 meta.preview.save(

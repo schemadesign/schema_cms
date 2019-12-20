@@ -2,14 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Icons } from 'schemaUI';
-import { always, cond, equals, T, propEq, either } from 'ramda';
+import { always, cond, either, equals, propEq, propOr, T } from 'ramda';
 import { FormattedMessage } from 'react-intl';
 
 import { TopHeader } from '../../../shared/components/topHeader';
 import { ProjectTabs } from '../../../shared/components/projectTabs';
 import { ContextHeader } from '../../../shared/components/contextHeader';
 import { LoadingWrapper } from '../../../shared/components/loadingWrapper';
-import { ListItem, ListContainer, ListItemTitle } from '../../../shared/components/listComponents';
+import { ListContainer, ListItem, ListItemTitle } from '../../../shared/components/listComponents';
 import { BackArrowButton, NavigationContainer, PlusButton } from '../../../shared/components/navigation';
 import { SOURCES } from '../../../shared/components/projectTabs/projectTabs.constants';
 import {
@@ -118,22 +118,24 @@ export class DataSourceList extends PureComponent {
     </Header>
   );
 
-  renderMetaData = ({ items, fields, filters, views }, loading) => {
+  renderMetaData = ({ metaData: { items, fields, filters, views }, metaProcessing }) => {
     const {
       intl: { formatMessage },
       theme,
     } = this.props;
 
     const list = [
-      { name: formatMessage(messages.source), value: <CsvIcon customStyles={getSourceIconStyles(theme, loading)} /> },
+      {
+        name: formatMessage(messages.source),
+        value: <CsvIcon customStyles={getSourceIconStyles(theme, metaProcessing)} />,
+      },
       { name: formatMessage(messages.items), value: formatPrefixedNumber(items) },
       { name: formatMessage(messages.fields), value: fields },
       { name: formatMessage(messages.filters), value: filters },
       { name: formatMessage(messages.views), value: views },
     ];
-
     const elements = list.map(({ name, value }, index) => (
-      <MetaData key={index} loading={loading}>
+      <MetaData key={index} metaProcessing={metaProcessing}>
         <MetaDataName id={`metaItem-${index}`}>{name}</MetaDataName>
         <MetaDataValue id={`metaItemValue-${index}`}>{value || DEFAULT_VALUE}</MetaDataValue>
       </MetaData>
@@ -142,22 +144,15 @@ export class DataSourceList extends PureComponent {
     return <MetaDataWrapper>{elements}</MetaDataWrapper>;
   };
 
-  renderLoading = message => (
-    <Loading loading>
-      {message}
-    </Loading>
-  );
+  renderLoading = message => <Loading metaProcessing>{message}</Loading>;
 
-  renderHeader = ({ whenCreated, firstName, lastName, jobProcessing, metaData }) =>
+  renderHeader = ({ whenCreated, firstName, lastName, jobProcessing, metaProcessing, metaFailed }) =>
     cond([
-      [
-        either(propEq('metaStatus', META_PENDING), propEq('metaStatus', META_PROCESSING)),
-        always(this.renderLoading(<FormattedMessage {...messages.metaProcessing} />)),
-      ],
+      [propEq('metaProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.metaProcessing} />))],
       [propEq('jobProcessing', true), always(this.renderLoading(<FormattedMessage {...messages.jobProcessing} />))],
-      [propEq('metaStatus', META_FAILED), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
+      [propEq('metaFailed', true), always(this.renderLoading(<FormattedMessage {...messages.metaFailed} />))],
       [T, always(this.renderCreatedInformation([whenCreated, `${firstName} ${lastName}`]))],
-    ])({ metaStatus: metaData.status, jobProcessing });
+    ])({ metaFailed, jobProcessing, metaProcessing });
 
   renderItem = (
     { name, created, createdBy: { firstName, lastName }, id, metaData, activeJob, jobsInProcess },
@@ -165,8 +160,11 @@ export class DataSourceList extends PureComponent {
   ) => {
     const whenCreated = extendedDayjs(created, BASE_DATE_FORMAT).fromNow();
     const jobProcessing = !activeJob || jobsInProcess;
-    const header = this.renderHeader({ whenCreated, firstName, lastName, jobProcessing, metaData });
-    const footer = this.renderMetaData(metaData || {}, loading);
+    const metaStatus = propOr('', 'status', metaData);
+    const metaProcessing = either(equals(META_PENDING), equals(META_PROCESSING))(metaStatus);
+    const metaFailed = equals(META_FAILED)(metaStatus);
+    const header = this.renderHeader({ whenCreated, firstName, lastName, jobProcessing, metaProcessing, metaFailed });
+    const footer = this.renderMetaData({ metaData, metaProcessing });
 
     return (
       <ListItem key={index} headerComponent={header} footerComponent={footer}>

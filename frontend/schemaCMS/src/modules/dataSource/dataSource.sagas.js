@@ -1,5 +1,5 @@
 import { all, cancel, cancelled, delay, fork, put, take, takeLatest } from 'redux-saga/effects';
-import { all as ramdaAll, both, either, includes, isEmpty, omit, pipe, path, propEq, propIs, when } from 'ramda';
+import { all as ramdaAll, both, either, includes, isEmpty, omit, pipe, propEq, propIs, when, pathOr } from 'ramda';
 
 import { DataSourceRoutines } from './dataSource.redux';
 import browserHistory from '../../shared/utils/history';
@@ -69,7 +69,7 @@ const getIfAllDataSourceProcessed = either(
     both(
       both(propIs(Object, 'activeJob'), propEq('jobsInProcess', false)),
       pipe(
-        path(['metaData', 'status']),
+        pathOr('', ['metaData', 'status']),
         status => includes(status, [META_FAILED, META_SUCCESS])
       )
     )

@@ -296,7 +296,6 @@ class DataSourceViewSet(utils_serializers.ActionSerializerViewSetMixin, viewsets
         authentication_classes=[authentication.EnvTokenAuthentication],
     )
     def update_meta(self, request, *args, **kwargs):
-        # breakpoint()
         data_source = self.get_object()
         copy_steps = request.data.pop("copy_steps", None)
         status_ = request.data.get("status")
