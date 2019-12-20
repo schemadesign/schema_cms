@@ -35,6 +35,7 @@ export const defaultProps = {
     [DATA_SOURCE_FILE]: 'file',
     [DATA_SOURCE_RUN_LAST_JOB]: true,
   },
+  handleChange: Function.prototype,
   handleSubmit: Function.prototype,
   handleChange: Function.prototype,
   setFieldValue: Function.prototype,
