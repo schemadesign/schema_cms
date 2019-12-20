@@ -192,13 +192,18 @@ describe('Project: sagas', () => {
       const payload = {
         projectId: '1',
       };
-      const response = { id: '1' };
+      const response = {
+        id: 1,
+        results: [],
+        project: { id: 1, name: 'projectName' },
+      };
 
       mockApi.get(`${PROJECTS_PATH}/${payload.projectId}/users`).reply(OK, response);
 
       await expectSaga(watchProject)
         .withState(defaultState)
-        .put(ProjectRoutines.fetchEditors.success())
+        .put(ProjectRoutines.setProject.trigger(response.project))
+        .put(ProjectRoutines.fetchEditors.success(response.results))
         .dispatch(ProjectRoutines.fetchEditors(payload))
         .silentRun();
     });

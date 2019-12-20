@@ -13,6 +13,7 @@ import {
   RESULT_PAGE,
 } from './dataSource.constants';
 import { formatFormData } from '../../shared/utils/helpers';
+import { ProjectRoutines } from '../project';
 
 const PAGE_SIZE = 1000;
 
@@ -85,6 +86,7 @@ function* fetchListLoop(payload) {
         `${PROJECTS_PATH}/${payload.projectId}${DATA_SOURCES_PATH}?page_size=${PAGE_SIZE}`
       );
 
+      yield put(ProjectRoutines.setProject.trigger(data.project));
       yield put(DataSourceRoutines.fetchList.success(data.results));
 
       if (getIfAllDataSourceProcessed(data.results)) {

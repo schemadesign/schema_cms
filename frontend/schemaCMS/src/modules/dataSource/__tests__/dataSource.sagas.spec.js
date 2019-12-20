@@ -9,6 +9,7 @@ import { DataSourceRoutines } from '../dataSource.redux';
 import mockApi from '../../../shared/utils/mockApi';
 import { DATA_SOURCES_PATH, PROJECTS_PATH } from '../../../shared/utils/api.constants';
 import browserHistory from '../../../shared/utils/history';
+import { ProjectRoutines } from '../../project';
 import { META_PROCESSING, META_SUCCESS } from '../dataSource.constants';
 
 describe('DataSource: sagas', () => {
@@ -91,6 +92,7 @@ describe('DataSource: sagas', () => {
           },
         },
       ],
+      project: { id: 1, name: 'projectName' },
     };
 
     beforeEach(() => {
@@ -104,6 +106,7 @@ describe('DataSource: sagas', () => {
 
       await expectSaga(watchDataSource)
         .withState(defaultState)
+        .put(ProjectRoutines.setProject.trigger(responseDoneData.project))
         .put(DataSourceRoutines.fetchList.success(responseDoneData.results))
         .dispatch(DataSourceRoutines.fetchList(payload))
         .silentRun();
