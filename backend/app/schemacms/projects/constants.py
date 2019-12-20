@@ -98,7 +98,7 @@ class FilterTypesGroups:
     string = STRING_FILTER_TYPES
     number = NUMBER_FILTER_TYPES
     boolean = BOOL_FILTER_TYPES
-    date = DATE_FILTER_TYPES
+    datetime = DATE_FILTER_TYPES
 
 
 class FieldType:

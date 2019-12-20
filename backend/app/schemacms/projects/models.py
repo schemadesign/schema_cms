@@ -326,7 +326,8 @@ class WranglingScript(softdelete.models.SoftDeleteObject, ext_models.TimeStamped
         return self.name
 
     def save(self, *args, **kwargs):
-        self.body = self.file.read().decode()
+        if not self.body:
+            self.body = self.file.read().decode()
         super(WranglingScript, self).save(*args, **kwargs)
 
     def relative_path_to_save(self, filename):
